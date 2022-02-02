@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_new_tab_button_cc,v 1.26 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/ui/views/tabs/new_tab_button.cc
 --- chrome/browser/ui/views/tabs/new_tab_button.cc.orig
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc

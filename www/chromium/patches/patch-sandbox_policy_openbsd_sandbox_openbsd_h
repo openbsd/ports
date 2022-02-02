@@ -1,5 +1,3 @@
-$OpenBSD: patch-sandbox_policy_openbsd_sandbox_openbsd_h,v 1.5 2022/01/06 06:24:05 robert Exp $
-
 Index: sandbox/policy/openbsd/sandbox_openbsd.h
 --- sandbox/policy/openbsd/sandbox_openbsd.h.orig
 +++ sandbox/policy/openbsd/sandbox_openbsd.h
@@ -15,7 +13,6 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +#include <vector>
 +
 +#include "base/logging.h"
-+#include "base/macros.h"
 +#include "base/posix/global_descriptors.h"
 +#include "sandbox/policy/export.h"
 +#include "sandbox/policy/linux/sandbox_seccomp_bpf_linux.h"
@@ -122,6 +119,9 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +
 +  // Get our singleton instance.
 +  static SandboxLinux* GetInstance();
++
++  SandboxLinux(const SandboxLinux&) = delete;
++  SandboxLinux& operator=(const SandboxLinux&) = delete;
 +
 +  bool SetPledge(const char *pstring, const char *ppath);
 +  bool SetUnveil(const std::string process_type, sandbox::mojom::Sandbox sandbox_type);
@@ -274,8 +274,6 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  std::unique_ptr<__sanitizer_sandbox_arguments> sanitizer_args_;
 +#endif
 +  sandbox::syscall_broker::BrokerProcess* broker_process_;  // Leaked as global.
-+
-+  DISALLOW_COPY_AND_ASSIGN(SandboxLinux);
 +};
 +
 +}  // namespace policy

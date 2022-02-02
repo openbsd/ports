@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_message_loop_message_pump_glib_cc,v 1.2 2021/09/01 16:54:38 robert Exp $
-
 Index: base/message_loop/message_pump_glib.cc
 --- base/message_loop/message_pump_glib.cc.orig
 +++ base/message_loop/message_pump_glib.cc

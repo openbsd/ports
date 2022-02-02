@@ -1,21 +1,23 @@
-$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_thread_checker_h,v 1.1 2016/05/27 06:28:21 robert Exp $
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h.orig.port	Thu May 26 13:06:45 2016
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h	Thu May 26 13:07:03 2016
-@@ -23,7 +23,7 @@
+Index: third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h.orig
++++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h
+@@ -23,7 +23,8 @@
  // user of the library know that it can't be used in a thread-safe manner when
  // it is not depending on Boost.
  #if !defined(__linux__) && !defined(__APPLE__) && \
 -    !defined(I18N_PHONENUMBERS_NO_THREAD_SAFETY)
-+    !defined(I18N_PHONENUMBERS_NO_THREAD_SAFETY) && !defined(__OpenBSD__)
++    !defined(I18N_PHONENUMBERS_NO_THREAD_SAFETY) && !defined(__OpenBSD__) && \
++    !defined(__FreeBSD__)
  #error Building without Boost, please provide \
         -DI18N_PHONENUMBERS_NO_THREAD_SAFETY
  #endif
-@@ -31,7 +31,7 @@
+@@ -31,7 +32,8 @@
  #endif
  
  #if !defined(NDEBUG) && !defined(I18N_PHONENUMBERS_USE_BOOST) && \
 -    (defined(__linux__) || defined(__apple__))
-+    (defined(__linux__) || defined(__apple__) || defined(__OpenBSD__))
++    (defined(__linux__) || defined(__apple__) || defined(__OpenBSD__) || \
++     defined(__FreeBSD__))
  
  #include <pthread.h>
  

@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.23 2022/01/06 06:24:05 robert Exp $
-
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig
 +++ content/renderer/render_process_impl.cc
@@ -22,8 +20,8 @@ Index: content/renderer/render_process_impl.cc
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
 @@ -240,7 +240,7 @@ RenderProcessImpl::RenderProcessImpl()
-   SetV8FlagIfFeature(features::kWebAssemblyTiering, "--wasm-tier-up");
-   SetV8FlagIfNotFeature(features::kWebAssemblyTiering, "--no-wasm-tier-up");
+   SetV8FlagIfFeature(features::kWebAssemblyDynamicTiering,
+                      "--wasm-dynamic-tiering");
  
 -#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
 +#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)

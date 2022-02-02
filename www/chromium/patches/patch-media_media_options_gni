@@ -1,9 +1,7 @@
-$OpenBSD: patch-media_media_options_gni,v 1.37 2022/01/06 06:24:05 robert Exp $
-
 Index: media/media_options.gni
 --- media/media_options.gni.orig
 +++ media/media_options.gni
-@@ -113,9 +113,12 @@ declare_args() {
+@@ -124,9 +124,12 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  
@@ -13,11 +11,11 @@ Index: media/media_options.gni
    # Alsa should be used on non-Android, non-Mac POSIX systems.
    # Alsa should be used on desktop Chromecast and audio-only Chromecast builds.
 -  if (is_posix && !is_android && !is_mac &&
-+  if (is_posix && !is_android && !is_mac && !is_openbsd &&
++  if (is_posix && !is_android && !is_mac && !is_bsd &&
        (!is_chromecast || is_cast_desktop_build || is_cast_audio_only)) {
      use_alsa = true
  
-@@ -130,6 +133,10 @@ declare_args() {
+@@ -141,6 +144,10 @@ declare_args() {
      if (!use_cras && !is_chromecast && !is_asan && !is_tsan) {
        use_pulseaudio = true
      }

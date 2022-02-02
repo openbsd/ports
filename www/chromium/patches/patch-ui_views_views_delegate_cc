@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_views_views_delegate_cc,v 1.24 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/views/views_delegate.cc
 --- ui/views/views_delegate.cc.orig
 +++ ui/views/views_delegate.cc

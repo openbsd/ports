@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_task_manager_task_manager_table_model_cc,v 1.16 2021/09/01 16:54:38 robert Exp $
-
 Index: chrome/browser/ui/task_manager/task_manager_table_model.cc
 --- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc

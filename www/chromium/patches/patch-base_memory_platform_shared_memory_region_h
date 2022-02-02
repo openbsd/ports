@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_memory_platform_shared_memory_region_h,v 1.7 2022/01/06 06:24:03 robert Exp $
-
 Index: base/memory/platform_shared_memory_region.h
 --- base/memory/platform_shared_memory_region.h.orig
 +++ base/memory/platform_shared_memory_region.h

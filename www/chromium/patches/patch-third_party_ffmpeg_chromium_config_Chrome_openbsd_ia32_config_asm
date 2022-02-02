@@ -1,4 +1,3 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_asm,v 1.32 2021/09/04 08:59:46 robert Exp $
 Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm
 --- third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm.orig
 +++ third_party/ffmpeg/chromium/config/Chrome/openbsd/ia32/config.asm

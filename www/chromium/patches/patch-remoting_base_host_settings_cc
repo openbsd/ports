@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_base_host_settings_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
-
 Index: remoting/base/host_settings.cc
 --- remoting/base/host_settings.cc.orig
 +++ remoting/base/host_settings.cc

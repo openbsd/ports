@@ -1,18 +1,16 @@
-$OpenBSD: patch-cc_BUILD_gn,v 1.45 2022/01/06 06:24:03 robert Exp $
-
 Index: cc/BUILD.gn
 --- cc/BUILD.gn.orig
 +++ cc/BUILD.gn
-@@ -655,7 +655,7 @@ cc_test_static_library("test_support") {
+@@ -659,7 +659,7 @@ cc_test_static_library("test_support") {
    if (enable_vulkan) {
      deps += [ "//gpu/vulkan/init" ]
    }
 -  if (!is_android) {
-+  if (!is_android && !is_openbsd) {
++  if (!is_android && !is_bsd) {
      data_deps = [ "//third_party/mesa_headers" ]
    }
  }
-@@ -879,7 +879,6 @@ cc_test("cc_unittests") {
+@@ -884,7 +884,6 @@ cc_test("cc_unittests") {
    ]
    data_deps = [
      "//testing/buildbot/filters:cc_unittests_filters",

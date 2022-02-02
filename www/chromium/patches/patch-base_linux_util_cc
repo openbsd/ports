@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_linux_util_cc,v 1.15 2021/09/01 16:54:38 robert Exp $
-
 Index: base/linux_util.cc
 --- base/linux_util.cc.orig
 +++ base/linux_util.cc

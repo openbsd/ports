@@ -1,9 +1,7 @@
-$OpenBSD: patch-third_party_angle_src_common_platform_h,v 1.3 2020/02/22 12:33:22 robert Exp $
-
 Index: third_party/angle/src/common/platform.h
 --- third_party/angle/src/common/platform.h.orig
 +++ third_party/angle/src/common/platform.h
-@@ -26,7 +26,10 @@
+@@ -26,7 +26,15 @@
  #elif defined(__linux__) || defined(EMSCRIPTEN)
  #    define ANGLE_PLATFORM_LINUX 1
  #    define ANGLE_PLATFORM_POSIX 1
@@ -11,7 +9,12 @@ Index: third_party/angle/src/common/platform.h
 +#elif defined(__OpenBSD__)
 +#    define ANGLE_PLATFORM_OPENBSD 1
 +#    define ANGLE_PLATFORM_POSIX 1
-+#elif defined(__FreeBSD__) || defined(__NetBSD__) ||              \
++#    define ANGLE_PLATFORM_BSD 1
++#elif defined(__FreeBSD__)
++#    define ANGLE_PLATFORM_FREEBSD 1
++#    define ANGLE_PLATFORM_POSIX 1
++#    define ANGLE_PLATFORM_BSD 1
++#elif defined(__NetBSD__) ||              \
      defined(__DragonFly__) || defined(__sun) || defined(__GLIBC__) || defined(__GNU__) || \
      defined(__QNX__) || defined(__Fuchsia__) || defined(__HAIKU__)
  #    define ANGLE_PLATFORM_POSIX 1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_base_cursor_cursor_factory_cc,v 1.4 2021/09/01 16:54:40 robert Exp $
-
 Index: ui/base/cursor/cursor_factory.cc
 --- ui/base/cursor/cursor_factory.cc.orig
 +++ ui/base/cursor/cursor_factory.cc

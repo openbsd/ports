@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_media_router_discovery_discovery_network_list_wifi_linux_cc,v 1.4 2020/07/17 20:23:07 robert Exp $
-
 Index: chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc
 --- chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc.orig
 +++ chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc

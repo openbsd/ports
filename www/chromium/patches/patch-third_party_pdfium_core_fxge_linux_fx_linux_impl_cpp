@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_pdfium_core_fxge_linux_fx_linux_impl_cpp,v 1.6 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 --- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
@@ -12,13 +10,14 @@ Index: third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
  #error "Included on the wrong platform"
  #endif
  
-@@ -165,9 +165,8 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
+@@ -165,9 +165,9 @@ class CLinuxPlatform : public CFX_GEModule::PlatformIf
    std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
      auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
      if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {
 -      pInfo->AddPath("/usr/share/fonts");
 -      pInfo->AddPath("/usr/share/X11/fonts/Type1");
 -      pInfo->AddPath("/usr/share/X11/fonts/TTF");
++	    /* XXXROBERT */
 +      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
 +      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
        pInfo->AddPath("/usr/local/share/fonts");

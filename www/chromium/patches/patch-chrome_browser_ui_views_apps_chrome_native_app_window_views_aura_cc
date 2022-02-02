@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.16 2021/09/01 16:54:38 robert Exp $
-
 Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 --- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
  #include "ui/gfx/image/image_skia.h"
  #include "ui/views/widget/widget.h"
  
@@ -12,7 +10,7 @@ Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -57,7 +57,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
+@@ -56,7 +56,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
      const AppWindow::CreateParams& create_params,
      views::Widget::InitParams* init_params,
      views::Widget* widget) {

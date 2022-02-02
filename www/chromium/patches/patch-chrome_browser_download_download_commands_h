@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_download_download_commands_h,v 1.17 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/download/download_commands.h
 --- chrome/browser/download/download_commands.h.orig
 +++ chrome/browser/download/download_commands.h

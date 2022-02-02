@@ -1,14 +1,12 @@
-$OpenBSD: patch-chrome_browser_shutdown_signal_handlers_posix_cc,v 1.3 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/shutdown_signal_handlers_posix.cc
 --- chrome/browser/shutdown_signal_handlers_posix.cc.orig
 +++ chrome/browser/shutdown_signal_handlers_posix.cc
-@@ -188,12 +188,18 @@ void InstallShutdownSignalHandlers(
+@@ -187,12 +187,18 @@ void InstallShutdownSignalHandlers(
    g_pipe_pid = getpid();
    g_shutdown_pipe_read_fd = pipefd[0];
    g_shutdown_pipe_write_fd = pipefd[1];
-+#if defined(OS_OPENBSD)
-+  // PTHREAD_STACK_MIN causes chromium to crash under FreeBSD,
++#if defined(OS_BSD)
++  // PTHREAD_STACK_MIN causes chromium to crash under *BSD,
 +  // we request the default pthread stack size by specifying 0 here.
 +  const size_t kShutdownDetectorThreadStackSize = 0;
 +#else

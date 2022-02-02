@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.67 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/common/chrome_paths.cc
 --- chrome/common/chrome_paths.cc.orig
 +++ chrome/common/chrome_paths.cc
@@ -21,7 +19,7 @@ Index: chrome/common/chrome_paths.cc
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
  #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
-@@ -179,7 +179,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -178,7 +178,7 @@ bool PathProvider(int key, base::FilePath* result) {
          return false;
        break;
      case chrome::DIR_DEFAULT_DOWNLOADS_SAFE:
@@ -30,7 +28,7 @@ Index: chrome/common/chrome_paths.cc
        if (!GetUserDownloadsDirectorySafe(&cur))
          return false;
        break;
-@@ -412,7 +412,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -411,7 +411,7 @@ bool PathProvider(int key, base::FilePath* result) {
        if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
@@ -39,7 +37,7 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_POLICY_FILES: {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));
-@@ -425,7 +425,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -424,7 +424,7 @@ bool PathProvider(int key, base::FilePath* result) {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                            \
@@ -48,7 +46,7 @@ Index: chrome/common/chrome_paths.cc
       BUILDFLAG(CHROMIUM_BRANDING)) ||                        \
      defined(OS_MAC)
      case chrome::DIR_USER_EXTERNAL_EXTENSIONS: {
-@@ -435,7 +435,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -434,7 +434,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
      }
  #endif
@@ -57,7 +55,7 @@ Index: chrome/common/chrome_paths.cc
      case chrome::DIR_STANDALONE_EXTERNAL_EXTENSIONS: {
        cur = base::FilePath(kFilepathSinglePrefExtensions);
        break;
-@@ -480,7 +480,7 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -479,7 +479,7 @@ bool PathProvider(int key, base::FilePath* result) {
        break;
  #endif
  

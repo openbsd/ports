@@ -1,9 +1,7 @@
-$OpenBSD: patch-ui_gtk_printing_print_dialog_gtk_cc,v 1.8 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/gtk/printing/print_dialog_gtk.cc
 --- ui/gtk/printing/print_dialog_gtk.cc.orig
 +++ ui/gtk/printing/print_dialog_gtk.cc
-@@ -396,7 +396,7 @@ void PrintDialogGtk::ShowDialog(
+@@ -395,7 +395,7 @@ void PrintDialogGtk::ShowDialog(
    GtkPrintCapabilities cap = static_cast<GtkPrintCapabilities>(
        GTK_PRINT_CAPABILITY_GENERATE_PDF | GTK_PRINT_CAPABILITY_PAGE_SET |
        GTK_PRINT_CAPABILITY_COPIES | GTK_PRINT_CAPABILITY_COLLATE |

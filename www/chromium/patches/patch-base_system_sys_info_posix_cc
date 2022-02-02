@@ -1,9 +1,7 @@
-$OpenBSD: patch-base_system_sys_info_posix_cc,v 1.9 2021/09/01 16:54:38 robert Exp $
-
 Index: base/system/sys_info_posix.cc
 --- base/system/sys_info_posix.cc.orig
 +++ base/system/sys_info_posix.cc
-@@ -239,6 +239,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -252,6 +252,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

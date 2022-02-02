@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_BUILD_gn,v 1.47 2022/01/06 06:24:05 robert Exp $
-
 Index: net/BUILD.gn
 --- net/BUILD.gn.orig
 +++ net/BUILD.gn
@@ -8,7 +6,7 @@ Index: net/BUILD.gn
  ]
  
 -if (is_linux || is_chromeos) {
-+if ((is_linux || is_chromeos) && !is_openbsd) {
++if ((is_linux || is_chromeos) && !is_bsd) {
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
@@ -16,7 +14,7 @@ Index: net/BUILD.gn
      ]
    }
  
-+  if (is_openbsd) {
++  if (is_bsd) {
 +    sources -= [
 +      "base/address_tracker_linux.cc",
 +      "base/address_tracker_linux.h",
@@ -33,7 +31,7 @@ Index: net/BUILD.gn
    }
  
 -  if (is_android || is_chromeos_ash) {
-+  if (is_android || is_chromeos_ash || is_openbsd) {
++  if (is_android || is_chromeos_ash || is_bsd) {
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
@@ -42,16 +40,16 @@ Index: net/BUILD.gn
  
    # Use getifaddrs() on POSIX platforms, except Linux.
 -  if (is_posix && !is_linux && !is_chromeos) {
-+  if ((is_posix && !is_linux && !is_chromeos) || is_openbsd) {
++  if ((is_posix && !is_linux && !is_chromeos) || is_bsd) {
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4729,7 +4738,7 @@ test("net_unittests") {
+@@ -4713,7 +4722,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux and Android.
 -  if (is_posix && !is_linux && !is_chromeos && !is_android) {
-+  if (is_posix && !is_linux && !is_chromeos && !is_android && !is_openbsd) {
++  if (is_posix && !is_linux && !is_chromeos && !is_android && !is_bsd) {
      sources += [ "base/network_interfaces_getifaddrs_unittest.cc" ]
    }
  

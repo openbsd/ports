@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_startup_startup_browser_creator_cc,v 1.45 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/ui/startup/startup_browser_creator.cc
 --- chrome/browser/ui/startup/startup_browser_creator.cc.orig
 +++ chrome/browser/ui/startup/startup_browser_creator.cc
@@ -12,7 +10,7 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/ui/startup/web_app_url_handling_startup_utils.h"
  #endif
-@@ -402,7 +402,7 @@ bool MaybeLaunchAppShortcutWindow(const base::CommandL
+@@ -403,7 +403,7 @@ bool MaybeLaunchAppShortcutWindow(const base::CommandL
    return false;
  }
  
@@ -21,7 +19,7 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
  bool MaybeLaunchUrlHandlerWebAppFromCmd(
      const base::CommandLine& command_line,
      const base::FilePath& cur_dir,
-@@ -1025,7 +1025,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+@@ -1038,7 +1038,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
  
    if (command_line.HasSwitch(switches::kAppId)) {
      std::string app_id = command_line.GetSwitchValueASCII(switches::kAppId);
@@ -30,9 +28,9 @@ Index: chrome/browser/ui/startup/startup_browser_creator.cc
      // If Chrome Apps are deprecated and |app_id| is a Chrome App, display the
      // deprecation UI instead of launching the app.
      if (apps::OpenDeprecatedApplicationPrompt(privacy_safe_profile, app_id))
-@@ -1061,7 +1061,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
-       web_app::startup::MaybeHandleWebAppLaunch(command_line, cur_dir,
-                                                 privacy_safe_profile);
+@@ -1074,7 +1074,7 @@ bool StartupBrowserCreator::ProcessCmdLineImpl(
+       web_app::startup::MaybeHandleWebAppLaunch(
+           command_line, cur_dir, privacy_safe_profile, is_first_run);
  
 -#if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
 +#if defined(OS_WIN) || (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS)) || defined(OS_BSD)

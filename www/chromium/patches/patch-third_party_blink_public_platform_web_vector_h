@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_public_platform_web_vector_h,v 1.1 2018/11/11 13:50:57 robert Exp $
-
 Index: third_party/blink/public/platform/web_vector.h
 --- third_party/blink/public/platform/web_vector.h.orig
 +++ third_party/blink/public/platform/web_vector.h
@@ -8,7 +6,7 @@ Index: third_party/blink/public/platform/web_vector.h
    WebVector() = default;
  
 -#if defined(ARCH_CPU_64_BITS)
-+#if defined(ARCH_CPU_64_BITS) || defined(__OpenBSD__)
++#if defined(ARCH_CPU_64_BITS) || defined(__OpenBSD__) || defined(__FreeBSD__)
    // Create a vector with |size| default-constructed elements. We define
    // a constructor with size_t otherwise we'd have a duplicate define.
    explicit WebVector(size_t size) : data_(size) {}

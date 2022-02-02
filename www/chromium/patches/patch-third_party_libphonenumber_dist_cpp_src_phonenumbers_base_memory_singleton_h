@@ -1,12 +1,13 @@
-$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_memory_singleton_h,v 1.1 2016/05/27 06:28:21 robert Exp $
---- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig.port	Thu May 26 13:05:44 2016
-+++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h	Thu May 26 13:06:40 2016
-@@ -56,7 +56,7 @@ template <class T> boost::once_flag Singleton<T>::flag
+Index: third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h
+--- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h.orig
++++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/memory/singleton.h
+@@ -56,7 +56,8 @@ template <class T> boost::once_flag Singleton<T>::flag
  #include "phonenumbers/base/logging.h"
  #include "phonenumbers/base/thread_checker.h"
  
 -#if !defined(__linux__) && !defined(__APPLE__)
-+#if !defined(__linux__) && !defined(__APPLE__) && !defined(__OpenBSD__)
++#if !defined(__linux__) && !defined(__APPLE__) && !defined(__OpenBSD__) && \
++    !defined(__FreeBSD__)
  
  namespace i18n {
  namespace phonenumbers {

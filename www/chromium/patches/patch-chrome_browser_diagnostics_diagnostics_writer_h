@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_browser_diagnostics_diagnostics_writer_h,v 1.1 2018/09/20 08:43:54 robert Exp $
-
 Index: chrome/browser/diagnostics/diagnostics_writer.h
 --- chrome/browser/diagnostics/diagnostics_writer.h.orig
 +++ chrome/browser/diagnostics/diagnostics_writer.h
-@@ -15,6 +15,8 @@ namespace diagnostics {
+@@ -14,6 +14,8 @@ namespace diagnostics {
  // Console base class used internally.
  class SimpleConsole;
  

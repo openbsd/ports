@@ -1,13 +1,13 @@
-$OpenBSD: patch-third_party_angle_src_gpu_info_util_SystemInfo_internal_h,v 1.1 2017/06/25 21:53:56 robert Exp $
-
 Index: third_party/angle/src/gpu_info_util/SystemInfo_internal.h
 --- third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig
 +++ third_party/angle/src/gpu_info_util/SystemInfo_internal.h
-@@ -14,6 +14,8 @@
+@@ -14,6 +14,10 @@
  namespace angle
  {
  
-+bool CollectMesaCardInfo(std::vector<GPUDeviceInfo> *devices);
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
++bool CollectMesaCardInfo(std::vector<GPUDeviceInfo> *devices);                
++#endif
 +
  // Defined in SystemInfo_libpci when GPU_INFO_USE_LIBPCI is defined.
  bool GetPCIDevicesWithLibPCI(std::vector<GPUDeviceInfo> *devices);

@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_abseil-cpp_absl_base_internal_sysinfo_cc,v 1.3 2022/01/06 18:42:52 robert Exp $
-
 Index: third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 --- third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig
 +++ third_party/abseil-cpp/absl/base/internal/sysinfo.cc
@@ -16,7 +14,7 @@ Index: third_party/abseil-cpp/absl/base/internal/sysinfo.cc
    // a new mode (turbo mode). Essentially, those frequencies cannot
    // always be relied upon. The same reasons apply to /proc/cpuinfo as
    // well.
-+#if !defined(__OpenBSD__) // pledge violation
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__) // pledge violation
    if (ReadLongFromFile("/sys/devices/system/cpu/cpu0/tsc_freq_khz", &freq)) {
      return freq * 1e3;  // Value is kHz.
    }

@@ -1,5 +1,3 @@
-$OpenBSD: patch-sandbox_policy_sandbox_cc,v 1.5 2022/01/06 06:24:05 robert Exp $
-
 Index: sandbox/policy/sandbox.cc
 --- sandbox/policy/sandbox.cc.orig
 +++ sandbox/policy/sandbox.cc

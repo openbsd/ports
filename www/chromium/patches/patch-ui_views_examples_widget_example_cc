@@ -1,9 +1,7 @@
-$OpenBSD: patch-ui_views_examples_widget_example_cc,v 1.16 2021/01/20 07:28:12 robert Exp $
-
 Index: ui/views/examples/widget_example.cc
 --- ui/views/examples/widget_example.cc.orig
 +++ ui/views/examples/widget_example.cc
-@@ -50,7 +50,7 @@ void WidgetExample::CreateExampleView(View* container)
+@@ -49,7 +49,7 @@ void WidgetExample::CreateExampleView(View* container)
    modal_button->SetCallback(
        base::BindRepeating(&WidgetExample::CreateDialogWidget,
                            base::Unretained(this), modal_button, true));

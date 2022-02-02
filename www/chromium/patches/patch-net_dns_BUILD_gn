@@ -1,14 +1,12 @@
-$OpenBSD: patch-net_dns_BUILD_gn,v 1.5 2022/01/06 06:24:05 robert Exp $
-
 Index: net/dns/BUILD.gn
 --- net/dns/BUILD.gn.orig
 +++ net/dns/BUILD.gn
-@@ -111,7 +111,7 @@ source_set("dns") {
+@@ -112,7 +112,7 @@ source_set("dns") {
        "dns_config_service_android.cc",
        "dns_config_service_android.h",
      ]
 -  } else if (is_linux) {
-+  } else if (is_linux && !is_openbsd) {
++  } else if (is_linux && !is_bsd) {
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",

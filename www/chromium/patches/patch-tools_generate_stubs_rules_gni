@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_generate_stubs_rules_gni,v 1.1 2021/01/20 07:28:12 robert Exp $
-
 Index: tools/generate_stubs/rules.gni
 --- tools/generate_stubs/rules.gni.orig
 +++ tools/generate_stubs/rules.gni

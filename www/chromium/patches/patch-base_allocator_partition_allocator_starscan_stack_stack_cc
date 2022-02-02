@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_allocator_partition_allocator_starscan_stack_stack_cc,v 1.2 2021/09/01 16:54:37 robert Exp $
-
 Index: base/allocator/partition_allocator/starscan/stack/stack.cc
 --- base/allocator/partition_allocator/starscan/stack/stack.cc.orig
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc
@@ -14,19 +12,40 @@ Index: base/allocator/partition_allocator/starscan/stack/stack.cc
  #if defined(LIBC_GLIBC)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -48,6 +52,15 @@ void* GetStackTop() {
+@@ -48,6 +52,36 @@ void* GetStackTop() {
  
  void* GetStackTop() {
    return pthread_get_stackaddr_np(pthread_self());
 +}
 +
-+#elif defined(OS_BSD)
++#elif defined(OS_OPENBSD)
 +
 +void* GetStackTop() {
 +  stack_t ss;
 +  if (pthread_stackseg_np(pthread_self(), &ss) != 0)
 +    return nullptr;
 +  return reinterpret_cast<uint8_t*>(ss.ss_sp);
++}
++
++#elif defined(OS_FREEBSD)
++
++void* GetStackTop() {
++   pthread_attr_t attr;
++   int error = pthread_attr_init(&attr);
++   if (error) {
++     return nullptr;
++   }
++   error = pthread_attr_get_np(pthread_self(), &attr);
++   if (!error) {
++     void* base;
++     size_t size;
++     error = pthread_attr_getstack(&attr, &base, &size);
++     PA_CHECK(!error);
++     pthread_attr_destroy(&attr);
++     return reinterpret_cast<uint8_t*>(base) + size;
++   }
++  pthread_attr_destroy(&attr);
++  return nullptr;
  }
  
  #elif defined(OS_POSIX) || defined(OS_FUCHSIA)

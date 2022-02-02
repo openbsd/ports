@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_gn_src_util_exe_path_cc,v 1.7 2022/01/06 06:24:05 robert Exp $
-
 Index: tools/gn/src/util/exe_path.cc
 --- tools/gn/src/util/exe_path.cc.orig
 +++ tools/gn/src/util/exe_path.cc

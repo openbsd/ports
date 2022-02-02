@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_common_features_feature_cc,v 1.4 2022/01/06 06:24:05 robert Exp $
-
 Index: extensions/common/features/feature.cc
 --- extensions/common/features/feature.cc.orig
 +++ extensions/common/features/feature.cc
@@ -7,7 +5,7 @@ Index: extensions/common/features/feature.cc
    return WIN_PLATFORM;
  #elif defined(OS_FUCHSIA)
    return FUCHSIA_PLATFORM;
-+#elif defined(OS_OPENBSD)
++#elif defined(OS_BSD)
 +  return LINUX_PLATFORM;
  #else
    return UNSPECIFIED_PLATFORM;

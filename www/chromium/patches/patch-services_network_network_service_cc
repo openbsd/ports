@@ -1,9 +1,7 @@
-$OpenBSD: patch-services_network_network_service_cc,v 1.26 2022/01/06 06:24:05 robert Exp $
-
 Index: services/network/network_service.cc
 --- services/network/network_service.cc.orig
 +++ services/network/network_service.cc
-@@ -73,7 +73,7 @@
+@@ -76,7 +76,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -12,7 +10,7 @@ Index: services/network/network_service.cc
      !BUILDFLAG(IS_CHROMECAST)
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
-@@ -622,7 +622,7 @@ void NetworkService::OnCertDBChanged() {
+@@ -625,7 +625,7 @@ void NetworkService::OnCertDBChanged() {
    net::CertDatabase::GetInstance()->NotifyObserversCertDBChanged();
  }
  

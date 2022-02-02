@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_host_remote_open_url_remote_open_url_util_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
-
 Index: remoting/host/remote_open_url/remote_open_url_util.cc
 --- remoting/host/remote_open_url/remote_open_url_util.cc.orig
 +++ remoting/host/remote_open_url/remote_open_url_util.cc

@@ -1,17 +1,15 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.58 2022/01/06 06:24:05 robert Exp $
-
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h
-@@ -113,6 +113,7 @@ CONTENT_EXPORT extern const char kEnableBlinkTestFeatu
+@@ -114,6 +114,7 @@ CONTENT_EXPORT extern const char kEnableBlinkTestFeatu
  CONTENT_EXPORT extern const char kEnableGpuMemoryBufferVideoFrames[];
  CONTENT_EXPORT extern const char kEnableLCDText[];
  CONTENT_EXPORT extern const char kEnableLogging[];
 +CONTENT_EXPORT extern const char kDisableUnveil[];
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
- CONTENT_EXPORT extern const char kEnableNewCanvas2DAPI[];
-@@ -274,7 +275,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
+ CONTENT_EXPORT extern const char kEnableCanvasContextLostInBackground[];
+@@ -276,7 +277,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

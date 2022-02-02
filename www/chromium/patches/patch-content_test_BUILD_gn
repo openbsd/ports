@@ -1,23 +1,21 @@
-$OpenBSD: patch-content_test_BUILD_gn,v 1.16 2022/01/06 06:24:05 robert Exp $
-
 Index: content/test/BUILD.gn
 --- content/test/BUILD.gn.orig
 +++ content/test/BUILD.gn
-@@ -1865,7 +1865,7 @@ static_library("run_all_unittests") {
+@@ -1878,7 +1878,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2774,7 +2774,7 @@ test("content_unittests") {
+@@ -2806,7 +2806,7 @@ test("content_unittests") {
      deps += [ "//third_party/boringssl" ]
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [ "../common/set_process_title_linux_unittest.cc" ]
      deps += [ "//content/common:set_process_title_linux" ]
    }

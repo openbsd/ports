@@ -1,5 +1,3 @@
-$OpenBSD: patch-headless_lib_headless_macros_h,v 1.4 2020/10/22 13:52:54 robert Exp $
-
 Index: headless/lib/headless_macros.h
 --- headless/lib/headless_macros.h.orig
 +++ headless/lib/headless_macros.h

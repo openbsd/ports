@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_webrtc_rtc_base_platform_thread_types_cc,v 1.4 2020/09/22 11:47:42 robert Exp $
-
 Index: third_party/webrtc/rtc_base/platform_thread_types.cc
 --- third_party/webrtc/rtc_base/platform_thread_types.cc.orig
 +++ third_party/webrtc/rtc_base/platform_thread_types.cc
@@ -7,7 +5,7 @@ Index: third_party/webrtc/rtc_base/platform_thread_types.cc
  #include "rtc_base/platform_thread_types.h"
  
  #if defined(WEBRTC_LINUX)
-+#if !defined(__OpenBSD__)
++#if !defined(WEBRTC_BSD)
  #include <sys/prctl.h>
 +#endif
  #include <sys/syscall.h>
@@ -18,9 +16,9 @@ Index: third_party/webrtc/rtc_base/platform_thread_types.cc
  #elif defined(WEBRTC_FUCHSIA)
    return zx_thread_self();
 -#elif defined(WEBRTC_LINUX)
-+#elif defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
++#elif defined(WEBRTC_LINUX) && !defined(WEBRTC_BSD)
    return syscall(__NR_gettid);
-+#elif defined(__OpenBSD__)
++#elif defined(WEBRTC_BSD)
 +  return reinterpret_cast<uint64_t>(pthread_self());
  #elif defined(__EMSCRIPTEN__)
    return static_cast<PlatformThreadId>(pthread_self());
@@ -29,7 +27,7 @@ Index: third_party/webrtc/rtc_base/platform_thread_types.cc
  }
  
  void SetCurrentThreadName(const char* name) {
-+#if !defined(__OpenBSD__)
++#if !defined(WEBRTC_BSD)
  #if defined(WEBRTC_WIN)
    // The SetThreadDescription API works even if no debugger is attached.
    // The names set with this API also show up in ETW traces. Very handy.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_zlib_BUILD_gn,v 1.24 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/zlib/BUILD.gn
 --- third_party/zlib/BUILD.gn.orig
 +++ third_party/zlib/BUILD.gn
@@ -8,7 +6,7 @@ Index: third_party/zlib/BUILD.gn
      #  "All implementations of the ARMv8.1 architecture are required to
      #   implement the CRC32* instructions. These are optional in ARMv8.0."
 -    if (!is_ios) {
-+    if (!is_ios && !is_openbsd) {
++    if (!is_ios && !is_bsd) {
        defines = [ "CRC32_ARMV8_CRC32" ]
        if (is_android) {
          defines += [ "ARMV8_OS_ANDROID" ]
@@ -17,7 +15,7 @@ Index: third_party/zlib/BUILD.gn
      visibility = [ ":*" ]
  
 -    if (!is_ios) {
-+    if (!is_ios && !is_openbsd) {
++    if (!is_ios && !is_bsd) {
        include_dirs = [ "." ]
  
        if (!is_win && !is_clang) {
@@ -26,7 +24,7 @@ Index: third_party/zlib/BUILD.gn
    }
  
 -  if (is_apple || is_android || is_nacl) {
-+  if (is_apple || is_android || is_nacl || is_openbsd) {
++  if (is_apple || is_android || is_nacl || is_bsd) {
      # Mac, Android and the BSDs don't have fopen64, ftello64, or fseeko64. We
      # use fopen, ftell, and fseek instead on these systems.
      defines = [ "USE_FILE32API" ]

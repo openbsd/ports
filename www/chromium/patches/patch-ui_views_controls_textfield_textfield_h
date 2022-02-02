@@ -1,9 +1,7 @@
-$OpenBSD: patch-ui_views_controls_textfield_textfield_h,v 1.2 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/views/controls/textfield/textfield.h
 --- ui/views/controls/textfield/textfield.h.orig
 +++ ui/views/controls/textfield/textfield.h
-@@ -442,7 +442,7 @@ class VIEWS_EXPORT Textfield : public View,
+@@ -443,7 +443,7 @@ class VIEWS_EXPORT Textfield : public View,
    // Set whether the text should be used to improve typing suggestions.
    void SetShouldDoLearning(bool value) { should_do_learning_ = value; }
  

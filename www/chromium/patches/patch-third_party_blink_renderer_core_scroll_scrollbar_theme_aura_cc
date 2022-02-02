@@ -1,9 +1,7 @@
-$OpenBSD: patch-third_party_blink_renderer_core_scroll_scrollbar_theme_aura_cc,v 1.13 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
 --- third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc.orig
 +++ third_party/blink/renderer/core/scroll/scrollbar_theme_aura.cc
-@@ -151,7 +151,7 @@ bool ScrollbarThemeAura::SupportsDragSnapBack() const 
+@@ -152,7 +152,7 @@ bool ScrollbarThemeAura::SupportsDragSnapBack() const 
  // is true for at least GTK and QT apps).
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

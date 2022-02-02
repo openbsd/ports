@@ -1,5 +1,3 @@
-$OpenBSD: patch-services_audio_audio_sandbox_hook_linux_h,v 1.1 2020/10/22 13:52:54 robert Exp $
-
 Index: services/audio/audio_sandbox_hook_linux.h
 --- services/audio/audio_sandbox_hook_linux.h.orig
 +++ services/audio/audio_sandbox_hook_linux.h

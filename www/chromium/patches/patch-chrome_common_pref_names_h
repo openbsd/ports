@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.73 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/common/pref_names.h
 --- chrome/common/pref_names.h.orig
 +++ chrome/common/pref_names.h
@@ -30,7 +28,7 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if defined(OS_ANDROID)
-@@ -690,7 +690,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -689,7 +689,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -39,7 +37,7 @@ Index: chrome/common/pref_names.h
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -831,7 +831,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -830,7 +830,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -48,7 +46,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // defined(OS_LINUX) || defined(OS_MAC) || defined(OS_CHROMEOS)
  
-@@ -1079,7 +1079,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1074,7 +1074,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
  extern const char kSandboxExternalProtocolBlocked[];
  

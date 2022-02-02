@@ -1,12 +1,11 @@
-$OpenBSD: patch-chrome_browser_extensions_BUILD_gn,v 1.45 2022/01/06 06:24:04 robert Exp $
 Index: chrome/browser/extensions/BUILD.gn
 --- chrome/browser/extensions/BUILD.gn.orig
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1301,6 +1301,10 @@ static_library("extensions") {
+@@ -1303,6 +1303,10 @@ static_library("extensions") {
      deps += [ "//chrome/services/printing/public/mojom" ]
    }
  
-+  if (is_openbsd) {
++  if (is_bsd) {
 +    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
 +  }
 +

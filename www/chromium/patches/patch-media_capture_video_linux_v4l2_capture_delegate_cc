@@ -1,4 +1,3 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_delegate_cc,v 1.16 2021/09/01 16:54:40 robert Exp $
 Index: media/capture/video/linux/v4l2_capture_delegate.cc
 --- media/capture/video/linux/v4l2_capture_delegate.cc.orig
 +++ media/capture/video/linux/v4l2_capture_delegate.cc

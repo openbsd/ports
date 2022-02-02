@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_file_handler_registration_h,v 1.3 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/web_applications/web_app_file_handler_registration.h
 --- chrome/browser/web_applications/web_app_file_handler_registration.h.orig
 +++ chrome/browser/web_applications/web_app_file_handler_registration.h

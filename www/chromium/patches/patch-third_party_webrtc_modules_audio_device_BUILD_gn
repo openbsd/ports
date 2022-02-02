@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_webrtc_modules_audio_device_BUILD_gn,v 1.31 2021/09/01 16:54:40 robert Exp $
-
 Index: third_party/webrtc/modules/audio_device/BUILD.gn
 --- third_party/webrtc/modules/audio_device/BUILD.gn.orig
 +++ third_party/webrtc/modules/audio_device/BUILD.gn
@@ -8,7 +6,7 @@ Index: third_party/webrtc/modules/audio_device/BUILD.gn
        defines += [ "WEBRTC_DUMMY_FILE_DEVICES" ]
      } else {
 -      if (is_linux || is_chromeos) {
-+      if ((is_linux || is_chromeos) && !is_openbsd) {
++      if ((is_linux || is_chromeos) && !is_bsd) {
          sources += [
            "linux/alsasymboltable_linux.cc",
            "linux/alsasymboltable_linux.h",

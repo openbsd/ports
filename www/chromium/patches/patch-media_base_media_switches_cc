@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_base_media_switches_cc,v 1.18 2022/01/06 06:24:05 robert Exp $
-
 Index: media/base/media_switches.cc
 --- media/base/media_switches.cc.orig
 +++ media/base/media_switches.cc
@@ -12,7 +10,7 @@ Index: media/base/media_switches.cc
  #include "base/cpu.h"
  #endif
  
-@@ -419,7 +419,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
+@@ -397,7 +397,7 @@ const base::Feature kGav1VideoDecoder{"Gav1VideoDecode
  const base::Feature kGlobalMediaControls {
    "GlobalMediaControls",
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -21,7 +19,7 @@ Index: media/base/media_switches.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -456,7 +456,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
+@@ -429,7 +429,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
  const base::Feature kGlobalMediaControlsPictureInPicture {
    "GlobalMediaControlsPictureInPicture",
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -30,7 +28,7 @@ Index: media/base/media_switches.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -497,7 +497,7 @@ const base::Feature kUseR16Texture{"use-r16-texture",
+@@ -470,7 +470,7 @@ const base::Feature kUseR16Texture{"use-r16-texture",
  const base::Feature kUnifiedAutoplay{"UnifiedAutoplay",
                                       base::FEATURE_ENABLED_BY_DEFAULT};
  
@@ -39,7 +37,7 @@ Index: media/base/media_switches.cc
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  const base::Feature kVaapiVideoDecodeLinux{"VaapiVideoDecoder",
-@@ -944,7 +944,7 @@ bool IsLiveCaptionFeatureEnabled() {
+@@ -926,7 +926,7 @@ bool IsLiveCaptionFeatureEnabled() {
      return false;
  #endif
  

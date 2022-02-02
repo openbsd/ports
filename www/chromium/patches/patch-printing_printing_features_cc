@@ -1,5 +1,3 @@
-$OpenBSD: patch-printing_printing_features_cc,v 1.9 2022/01/06 06:24:05 robert Exp $
-
 Index: printing/printing_features.cc
 --- printing/printing_features.cc.orig
 +++ printing/printing_features.cc

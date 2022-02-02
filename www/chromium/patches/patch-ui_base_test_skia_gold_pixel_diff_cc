@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_base_test_skia_gold_pixel_diff_cc,v 1.13 2022/01/06 06:24:05 robert Exp $
-
 Index: ui/base/test/skia_gold_pixel_diff.cc
 --- ui/base/test/skia_gold_pixel_diff.cc.orig
 +++ ui/base/test/skia_gold_pixel_diff.cc

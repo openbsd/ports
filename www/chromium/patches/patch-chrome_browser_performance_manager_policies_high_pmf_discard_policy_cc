@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_performance_manager_policies_high_pmf_discard_policy_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
-
 Index: chrome/browser/performance_manager/policies/high_pmf_discard_policy.cc
 --- chrome/browser/performance_manager/policies/high_pmf_discard_policy.cc.orig
 +++ chrome/browser/performance_manager/policies/high_pmf_discard_policy.cc

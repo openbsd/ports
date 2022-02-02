@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_host_setup_start_host_main_cc,v 1.5 2022/01/06 06:24:05 robert Exp $
-
 Index: remoting/host/setup/start_host_main.cc
 --- remoting/host/setup/start_host_main.cc.orig
 +++ remoting/host/setup/start_host_main.cc

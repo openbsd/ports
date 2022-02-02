@@ -1,5 +1,3 @@
-$OpenBSD: patch-sandbox_policy_sandbox_type_cc,v 1.3 2022/01/06 06:24:05 robert Exp $
-
 Index: sandbox/policy/sandbox_type.cc
 --- sandbox/policy/sandbox_type.cc.orig
 +++ sandbox/policy/sandbox_type.cc
@@ -12,7 +10,7 @@ Index: sandbox/policy/sandbox_type.cc
      case Sandbox::kVideoCapture:
        return false;
  #endif
-@@ -124,7 +124,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -120,7 +120,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
  #endif
      case Sandbox::kPrintCompositor:
      case Sandbox::kAudio:
@@ -21,7 +19,7 @@ Index: sandbox/policy/sandbox_type.cc
      case Sandbox::kVideoCapture:
  #endif
  #if defined(OS_WIN)
-@@ -251,7 +251,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
+@@ -248,7 +248,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
        return switches::kUtilitySandbox;
      case Sandbox::kAudio:
        return switches::kAudioSandbox;
@@ -30,7 +28,7 @@ Index: sandbox/policy/sandbox_type.cc
      case Sandbox::kVideoCapture:
        return switches::kVideoCaptureSandbox;
  #endif
-@@ -356,7 +356,7 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+@@ -352,7 +352,7 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
      return Sandbox::kAudio;
    if (sandbox_string == switches::kSpeechRecognitionSandbox)
      return Sandbox::kSpeechRecognition;

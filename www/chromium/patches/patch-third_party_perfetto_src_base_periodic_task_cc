@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_perfetto_src_base_periodic_task_cc,v 1.2 2021/09/01 16:54:40 robert Exp $
-
 Index: third_party/perfetto/src/base/periodic_task.cc
 --- third_party/perfetto/src/base/periodic_task.cc.orig
 +++ third_party/perfetto/src/base/periodic_task.cc
@@ -8,7 +6,7 @@ Index: third_party/perfetto/src/base/periodic_task.cc
  #include "perfetto/ext/base/file_utils.h"
  
 -#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) && __ANDROID_API__ >= 19)
  #include <sys/timerfd.h>
  #endif
@@ -17,7 +15,7 @@ Index: third_party/perfetto/src/base/periodic_task.cc
  namespace {
  base::ScopedPlatformHandle CreateTimerFd(uint32_t period_ms) {
 -#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \
++#if (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      (PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID) && __ANDROID_API__ >= 19)
    base::ScopedPlatformHandle tfd(
        timerfd_create(CLOCK_BOOTTIME, TFD_CLOEXEC | TFD_NONBLOCK));

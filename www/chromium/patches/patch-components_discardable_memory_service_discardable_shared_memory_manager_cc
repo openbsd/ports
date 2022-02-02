@@ -1,9 +1,7 @@
-$OpenBSD: patch-components_discardable_memory_service_discardable_shared_memory_manager_cc,v 1.7 2022/01/06 06:24:04 robert Exp $
-
 Index: components/discardable_memory/service/discardable_shared_memory_manager.cc
 --- components/discardable_memory/service/discardable_shared_memory_manager.cc.orig
 +++ components/discardable_memory/service/discardable_shared_memory_manager.cc
-@@ -172,7 +172,7 @@ int64_t GetDefaultMemoryLimit() {
+@@ -171,7 +171,7 @@ int64_t GetDefaultMemoryLimit() {
    // Limits the number of FDs used to 32, assuming a 4MB allocation size.
    int64_t max_default_memory_limit = 128 * kMegabyte;
  #else

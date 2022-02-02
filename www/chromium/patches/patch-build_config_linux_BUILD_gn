@@ -1,14 +1,12 @@
-$OpenBSD: patch-build_config_linux_BUILD_gn,v 1.11 2022/01/06 06:24:03 robert Exp $
-
 Index: build/config/linux/BUILD.gn
 --- build/config/linux/BUILD.gn.orig
 +++ build/config/linux/BUILD.gn
-@@ -39,7 +39,7 @@ config("runtime_library") {
+@@ -42,7 +42,7 @@ config("runtime_library") {
  
    if ((!(is_chromeos_ash || is_chromeos_lacros) ||
         default_toolchain != "//build/toolchain/cros:target") &&
 -      (!use_custom_libcxx || current_cpu == "mipsel")) {
-+      (!use_custom_libcxx || current_cpu == "mipsel") && !is_openbsd) {
++      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
      libs = [ "atomic" ]
    }
  }

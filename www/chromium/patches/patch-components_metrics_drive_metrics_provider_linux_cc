@@ -1,6 +1,6 @@
-$OpenBSD: patch-components_metrics_drive_metrics_provider_linux_cc,v 1.1 2015/10/14 16:42:07 robert Exp $
---- components/metrics/drive_metrics_provider_linux.cc.orig.port	Wed Oct 14 07:45:52 2015
-+++ components/metrics/drive_metrics_provider_linux.cc	Wed Oct 14 07:46:06 2015
+Index: components/metrics/drive_metrics_provider_linux.cc
+--- components/metrics/drive_metrics_provider_linux.cc.orig
++++ components/metrics/drive_metrics_provider_linux.cc
 @@ -4,7 +4,13 @@
  
  #include "components/metrics/drive_metrics_provider.h"

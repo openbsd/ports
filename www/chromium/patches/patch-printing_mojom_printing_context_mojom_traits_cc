@@ -1,5 +1,3 @@
-$OpenBSD: patch-printing_mojom_printing_context_mojom_traits_cc,v 1.3 2022/01/06 06:24:05 robert Exp $
-
 Index: printing/mojom/printing_context_mojom_traits.cc
 --- printing/mojom/printing_context_mojom_traits.cc.orig
 +++ printing/mojom/printing_context_mojom_traits.cc
@@ -12,7 +10,7 @@ Index: printing/mojom/printing_context_mojom_traits.cc
  #include "mojo/public/mojom/base/values.mojom.h"
  #endif
  
-@@ -163,7 +163,7 @@ bool StructTraits<
+@@ -162,7 +162,7 @@ bool StructTraits<
    }
  
    out->set_pages_per_sheet(data.pages_per_sheet());

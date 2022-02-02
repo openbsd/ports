@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_base_video_frame_cc,v 1.38 2022/01/06 06:24:05 robert Exp $
-
 Index: media/base/video_frame.cc
 --- media/base/video_frame.cc.orig
 +++ media/base/video_frame.cc
@@ -30,6 +28,15 @@ Index: media/base/video_frame.cc
  // This class allows us to embed a vector<ScopedFD> into a scoped_refptr, and
  // thus to have several VideoFrames share the same set of DMABUF FDs.
  class VideoFrame::DmabufHolder
+@@ -617,7 +617,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+   for (size_t i = 0; i < num_planes; ++i)
+     planes[i].stride = gpu_memory_buffer->stride(i);
+   uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (gpu_memory_buffer->GetType() == gfx::NATIVE_PIXMAP) {
+     const auto gmb_handle = gpu_memory_buffer->CloneHandle();
+     if (gmb_handle.is_null() ||
 @@ -663,7 +663,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }

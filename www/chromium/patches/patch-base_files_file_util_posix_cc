@@ -1,9 +1,7 @@
-$OpenBSD: patch-base_files_file_util_posix_cc,v 1.17 2021/09/01 16:54:38 robert Exp $
-
 Index: base/files/file_util_posix.cc
 --- base/files/file_util_posix.cc.orig
 +++ base/files/file_util_posix.cc
-@@ -708,32 +708,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
+@@ -694,32 +694,34 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
                                  File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().

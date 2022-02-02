@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_host_me2me_desktop_environment_cc,v 1.16 2022/01/06 06:24:05 robert Exp $
-
 Index: remoting/host/me2me_desktop_environment.cc
 --- remoting/host/me2me_desktop_environment.cc.orig
 +++ remoting/host/me2me_desktop_environment.cc

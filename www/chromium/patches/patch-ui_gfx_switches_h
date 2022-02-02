@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gfx_switches_h,v 1.1 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/gfx/switches.h
 --- ui/gfx/switches.h.orig
 +++ ui/gfx/switches.h

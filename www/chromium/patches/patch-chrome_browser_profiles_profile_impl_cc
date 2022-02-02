@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_profiles_profile_impl_cc,v 1.25 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/profiles/profile_impl.cc
 --- chrome/browser/profiles/profile_impl.cc.orig
 +++ chrome/browser/profiles/profile_impl.cc

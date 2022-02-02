@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_libusb_BUILD_gn,v 1.15 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/libusb/BUILD.gn
 --- third_party/libusb/BUILD.gn.orig
 +++ third_party/libusb/BUILD.gn
@@ -8,7 +6,7 @@ Index: third_party/libusb/BUILD.gn
  
  # libusb is only used by //services/device/usb on macOS.
 -assert(is_mac)
-+assert(is_mac || is_openbsd)
++assert(is_mac || is_bsd)
  
  import("//build/config/chromeos/ui_mode.gni")
  import("//build/config/features.gni")
@@ -17,7 +15,7 @@ Index: third_party/libusb/BUILD.gn
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "src/libusb/os/linux_usbfs.c",
        "src/libusb/os/linux_usbfs.h",
@@ -43,7 +41,7 @@ Index: third_party/libusb/BUILD.gn
    }
  
 -  if ((is_linux || is_chromeos) && !use_udev) {
-+  if ((is_linux || is_chromeos) && !use_udev && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !use_udev && !is_bsd) {
      sources += [ "src/libusb/os/linux_netlink.c" ]
      defines += [ "HAVE_LINUX_NETLINK_H" ]
    }

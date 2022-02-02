@@ -1,9 +1,7 @@
-$OpenBSD: patch-v8_src_compiler_backend_ia32_instruction-selector-ia32_cc,v 1.5 2022/01/06 06:24:06 robert Exp $
-
 Index: v8/src/compiler/backend/ia32/instruction-selector-ia32.cc
 --- v8/src/compiler/backend/ia32/instruction-selector-ia32.cc.orig
 +++ v8/src/compiler/backend/ia32/instruction-selector-ia32.cc
-@@ -3007,6 +3007,7 @@ void InstructionSelector::VisitI8x16Shuffle(Node* node
+@@ -3019,6 +3019,7 @@ void InstructionSelector::VisitI8x16Shuffle(Node* node
    Emit(opcode, 1, &dst, input_count, inputs, temp_count, temps);
  }
  
@@ -11,13 +9,13 @@ Index: v8/src/compiler/backend/ia32/instruction-selector-ia32.cc
  void InstructionSelector::VisitI8x16Swizzle(Node* node) {
    InstructionCode op = kIA32I8x16Swizzle;
  
-@@ -3048,6 +3049,9 @@ void VisitPminOrPmax(InstructionSelector* selector, No
+@@ -3072,6 +3073,9 @@ void VisitMinOrMax(InstructionSelector* selector, Node
  void InstructionSelector::VisitF32x4Pmin(Node* node) {
-   VisitPminOrPmax(this, node, kIA32F32x4Pmin);
+   VisitMinOrMax(this, node, kIA32Minps, true);
  }
 +#else
 +void InstructionSelector::VisitI8x16Swizzle(Node* node) { UNREACHABLE(); }
 +#endif  // V8_ENABLE_WEBASSEMBLY
  
  void InstructionSelector::VisitF32x4Pmax(Node* node) {
-   VisitPminOrPmax(this, node, kIA32F32x4Pmax);
+   VisitMinOrMax(this, node, kIA32Maxps, true);

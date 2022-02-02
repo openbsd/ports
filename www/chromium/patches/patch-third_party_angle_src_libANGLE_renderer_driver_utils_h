@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_angle_src_libANGLE_renderer_driver_utils_h,v 1.17 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/angle/src/libANGLE/renderer/driver_utils.h
 --- third_party/angle/src/libANGLE/renderer/driver_utils.h.orig
 +++ third_party/angle/src/libANGLE/renderer/driver_utils.h
@@ -8,7 +6,7 @@ Index: third_party/angle/src/libANGLE/renderer/driver_utils.h
  inline bool IsLinux()
  {
 -#if defined(ANGLE_PLATFORM_LINUX)
-+#if defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_OPENBSD)
++#if defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_BSD)
      return true;
  #else
      return false;

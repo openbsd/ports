@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_process_process_posix_cc,v 1.34 2021/09/01 16:54:38 robert Exp $
-
 Index: base/process/process_posix.cc
 --- base/process/process_posix.cc.orig
 +++ base/process/process_posix.cc
@@ -15,7 +13,7 @@ Index: base/process/process_posix.cc
  #if BUILDFLAG(CLANG_PROFILING)
  #include "base/test/clang_profiling.h"
  #endif
-@@ -363,7 +368,55 @@ void Process::Exited(int exit_code) const {}
+@@ -358,7 +363,55 @@ void Process::Exited(int exit_code) const {}
  
  int Process::GetPriority() const {
    DCHECK(IsValid());
@@ -29,7 +27,7 @@ Index: base/process/process_posix.cc
 +
 +Time Process::CreationTime() const {
 +// avoid ps pledge in the network process
-+#if !defined(OS_OPENBSD)
++#if !defined(OS_BSD)
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, getpid(),
 +               sizeof(struct kinfo_proc), 0 };
 +  struct kinfo_proc *info = nullptr;
@@ -37,7 +35,7 @@ Index: base/process/process_posix.cc
 +#endif
 +  Time ct = Time();
 +
-+#if !defined(OS_OPENBSD)
++#if !defined(OS_BSD)
 +  if (sysctl(mib, base::size(mib), NULL, &info_size, NULL, 0) < 0)
 +    goto out;
 +

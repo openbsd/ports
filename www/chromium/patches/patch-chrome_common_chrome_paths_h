@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.33 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/common/chrome_paths.h
 --- chrome/common/chrome_paths.h.orig
 +++ chrome/common/chrome_paths.h

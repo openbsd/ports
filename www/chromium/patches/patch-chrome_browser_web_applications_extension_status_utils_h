@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_browser_web_applications_extension_status_utils_h,v 1.4 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/web_applications/extension_status_utils.h
 --- chrome/browser/web_applications/extension_status_utils.h.orig
 +++ chrome/browser/web_applications/extension_status_utils.h
-@@ -37,7 +37,7 @@ bool IsExtensionForceInstalled(content::BrowserContext
+@@ -42,7 +42,7 @@ bool IsExtensionDefaultInstalled(content::BrowserConte
  bool IsExternalExtensionUninstalled(content::BrowserContext* context,
                                      const std::string& extension_id);
  

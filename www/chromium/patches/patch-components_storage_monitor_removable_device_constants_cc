@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_storage_monitor_removable_device_constants_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
-
 Index: components/storage_monitor/removable_device_constants.cc
 --- components/storage_monitor/removable_device_constants.cc.orig
 +++ components/storage_monitor/removable_device_constants.cc

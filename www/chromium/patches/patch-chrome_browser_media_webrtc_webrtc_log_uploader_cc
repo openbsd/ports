@@ -1,14 +1,14 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_log_uploader_cc,v 1.22 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/media/webrtc/webrtc_log_uploader.cc
 --- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig
 +++ chrome/browser/media/webrtc/webrtc_log_uploader.cc
-@@ -363,6 +363,8 @@ void WebRtcLogUploader::SetupMultipart(
+@@ -363,6 +363,10 @@ void WebRtcLogUploader::SetupMultipart(
    const char product[] = "Chrome_ChromeOS";
  #elif defined(OS_FUCHSIA)
    const char product[] = "Chrome_Fuchsia";
 +#elif defined(OS_OPENBSD)
 +  const char product[] = "Chrome_OpenBSD";
++#elif defined(OS_FREEBSD)
++  const char product[] = "Chrome_FreeBSD";
  #else
  #error Platform not supported.
  #endif

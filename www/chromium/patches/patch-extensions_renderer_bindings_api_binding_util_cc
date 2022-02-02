@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_renderer_bindings_api_binding_util_cc,v 1.3 2022/01/06 06:24:05 robert Exp $
-
 Index: extensions/renderer/bindings/api_binding_util.cc
 --- extensions/renderer/bindings/api_binding_util.cc.orig
 +++ extensions/renderer/bindings/api_binding_util.cc

@@ -1,9 +1,7 @@
-$OpenBSD: patch-base_process_kill_h,v 1.5 2021/01/20 07:28:07 robert Exp $
-
 Index: base/process/kill.h
 --- base/process/kill.h.orig
 +++ base/process/kill.h
-@@ -113,7 +113,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
+@@ -112,7 +112,7 @@ BASE_EXPORT TerminationStatus GetTerminationStatus(Pro
  BASE_EXPORT TerminationStatus GetKnownDeadTerminationStatus(
      ProcessHandle handle, int* exit_code);
  

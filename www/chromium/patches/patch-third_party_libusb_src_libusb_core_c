@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_libusb_src_libusb_core_c,v 1.1 2015/08/16 20:42:46 robert Exp $
---- third_party/libusb/src/libusb/core.c.orig.port	Sun Aug 16 11:07:28 2015
-+++ third_party/libusb/src/libusb/core.c	Sun Aug 16 11:07:39 2015
+Index: third_party/libusb/src/libusb/core.c
+--- third_party/libusb/src/libusb/core.c.orig
++++ third_party/libusb/src/libusb/core.c
 @@ -448,7 +448,7 @@ libusb_free_device_list(list, 1);
   * which grows when required. it can be freed once discovery has completed,
   * eliminating the need for a list node in the libusb_device structure

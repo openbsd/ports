@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_test_chromedriver_chrome_chrome_finder_cc,v 1.10 2021/09/01 16:54:39 robert Exp $
-
 Index: chrome/test/chromedriver/chrome/chrome_finder.cc
 --- chrome/test/chromedriver/chrome/chrome_finder.cc.orig
 +++ chrome/test/chromedriver/chrome/chrome_finder.cc
-@@ -53,7 +53,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* l
+@@ -54,7 +54,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* l
          installation_locations[i].Append(L"Chromium\\Application"));
    }
  }
@@ -12,7 +10,7 @@ Index: chrome/test/chromedriver/chrome/chrome_finder.cc
  void GetApplicationDirs(std::vector<base::FilePath>* locations) {
    // TODO: Respect users' PATH variables.
    // Until then, we use an approximation of the most common defaults.
-@@ -138,7 +138,7 @@ bool FindChrome(base::FilePath* browser_exe) {
+@@ -139,7 +139,7 @@ bool FindChrome(base::FilePath* browser_exe) {
    base::FilePath browser_exes_array[] = {
  #if defined(OS_WIN) || defined(OS_MAC)
      base::FilePath(chrome::kBrowserProcessExecutablePath),

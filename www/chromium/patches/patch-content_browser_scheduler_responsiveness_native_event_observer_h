@@ -1,9 +1,7 @@
-$OpenBSD: patch-content_browser_scheduler_responsiveness_native_event_observer_h,v 1.7 2022/01/06 06:24:05 robert Exp $
-
 Index: content/browser/scheduler/responsiveness/native_event_observer.h
 --- content/browser/scheduler/responsiveness/native_event_observer.h.orig
 +++ content/browser/scheduler/responsiveness/native_event_observer.h
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "content/public/browser/native_event_processor_observer_mac.h"
  #endif
  
@@ -12,7 +10,7 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.h
  #include "ui/aura/window_event_dispatcher_observer.h"
  #endif
  
-@@ -41,7 +41,7 @@ namespace responsiveness {
+@@ -40,7 +40,7 @@ namespace responsiveness {
  class CONTENT_EXPORT NativeEventObserver
  #if defined(OS_MAC)
      : public NativeEventProcessorObserver
@@ -21,7 +19,7 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.h
      : public aura::WindowEventDispatcherObserver
  #elif defined(OS_WIN)
      : public base::MessagePumpForUI::Observer
-@@ -58,7 +58,7 @@ class CONTENT_EXPORT NativeEventObserver
+@@ -57,7 +57,7 @@ class CONTENT_EXPORT NativeEventObserver
    NativeEventObserver(WillRunEventCallback will_run_event_callback,
                        DidRunEventCallback did_run_event_callback);
  
@@ -30,7 +28,7 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.h
  
    NativeEventObserver(const NativeEventObserver&) = delete;
    NativeEventObserver& operator=(const NativeEventObserver&) = delete;
-@@ -74,7 +74,7 @@ class CONTENT_EXPORT NativeEventObserver
+@@ -73,7 +73,7 @@ class CONTENT_EXPORT NativeEventObserver
    // Exposed for tests.
    void WillRunNativeEvent(const void* opaque_identifier) override;
    void DidRunNativeEvent(const void* opaque_identifier) override;
@@ -39,7 +37,7 @@ Index: content/browser/scheduler/responsiveness/native_event_observer.h
    // aura::WindowEventDispatcherObserver overrides:
    void OnWindowEventDispatcherStartedProcessing(
        aura::WindowEventDispatcher* dispatcher,
-@@ -91,7 +91,7 @@ class CONTENT_EXPORT NativeEventObserver
+@@ -90,7 +90,7 @@ class CONTENT_EXPORT NativeEventObserver
    void RegisterObserver();
    void DeregisterObserver();
  

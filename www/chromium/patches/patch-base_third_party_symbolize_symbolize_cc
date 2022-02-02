@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.6 2020/04/10 18:51:30 robert Exp $
-
 Index: base/third_party/symbolize/symbolize.cc
 --- base/third_party/symbolize/symbolize.cc.orig
 +++ base/third_party/symbolize/symbolize.cc

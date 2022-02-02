@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_config_linux_pkg-config_py,v 1.2 2019/08/01 08:31:59 robert Exp $
-
 Index: build/config/linux/pkg-config.py
 --- build/config/linux/pkg-config.py.orig
 +++ build/config/linux/pkg-config.py
@@ -8,7 +6,7 @@ Index: build/config/linux/pkg-config.py
    # success. This allows us to "kind of emulate" a Linux build from other
    # platforms.
 -  if "linux" not in sys.platform:
-+  if "openbsd" not in sys.platform:
++  if not sys.platform.startswith(tuple(['linux', 'openbsd', 'freebsd'])):
      print("[[],[],[],[],[]]")
      return 0
  

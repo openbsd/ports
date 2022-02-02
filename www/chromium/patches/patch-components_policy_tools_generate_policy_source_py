@@ -1,16 +1,15 @@
-$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.25 2022/01/06 06:24:04 robert Exp $
-
 Index: components/policy/tools/generate_policy_source.py
 --- components/policy/tools/generate_policy_source.py.orig
 +++ components/policy/tools/generate_policy_source.py
-@@ -47,8 +47,9 @@ PLATFORM_STRINGS = {
+@@ -47,8 +47,10 @@ PLATFORM_STRINGS = {
      'ios': ['ios'],
      'chrome.win': ['win'],
      'chrome.linux': ['linux'],
 +    'chrome.openbsd': ['openbsd'],
++    'chrome.freebsd': ['freebsd'],
      'chrome.mac': ['mac'],
 -    'chrome.*': ['win', 'mac', 'linux', 'fuchsia'],
-+    'chrome.*': ['win', 'mac', 'linux', 'fuchsia', 'openbsd'],
++    'chrome.*': ['win', 'mac', 'linux', 'fuchsia', 'openbsd', 'freebsd'],
      'chrome.win7': ['win'],
  }
  

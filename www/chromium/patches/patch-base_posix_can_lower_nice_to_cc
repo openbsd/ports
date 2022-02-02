@@ -1,11 +1,14 @@
-$OpenBSD: patch-base_posix_can_lower_nice_to_cc,v 1.1 2018/12/07 11:07:35 robert Exp $
-
 Index: base/posix/can_lower_nice_to.cc
 --- base/posix/can_lower_nice_to.cc.orig
 +++ base/posix/can_lower_nice_to.cc
-@@ -12,7 +12,7 @@
+@@ -11,8 +11,12 @@
+ 
  #include "build/build_config.h"
  
++#if defined(OS_FREEBSD)
++#include <sys/param.h>
++#endif
++
  // Not defined on AIX by default.
 -#if defined(OS_AIX)
 +#if defined(OS_AIX) || defined(OS_BSD)

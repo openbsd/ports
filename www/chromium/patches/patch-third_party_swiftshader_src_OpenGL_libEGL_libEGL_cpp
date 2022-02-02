@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_cpp,v 1.15 2021/01/20 07:28:12 robert Exp $
-
 Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
 --- third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp.orig
 +++ third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
@@ -8,8 +6,8 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
  	}
  
 -	#if defined(__linux__) && !defined(__ANDROID__)
-+	#if (defined(__OpenBSD__) || defined(__linux__)) && !defined(__ANDROID__)
- 		#if defined(USE_X11)
++	#if (defined(__OpenBSD__) || defined(__linux__) || defined(__FreeBSD__)) && !defined(__ANDROID__)
+ 		#if defined(SWIFTSHADER_USE_X11)
  		if(!libX11)
  		#endif  // Non X11 linux is headless only
 @@ -216,7 +216,7 @@ const char *EGLAPIENTRY QueryString(EGLDisplay dpy, EG
@@ -17,16 +15,16 @@ Index: third_party/swiftshader/src/OpenGL/libEGL/libEGL.cpp
  		return success(
  			"EGL_KHR_client_get_all_proc_addresses "
 -#if defined(__linux__) && !defined(__ANDROID__)
-+#if (defined(__OpenBSD__) || defined(__linux__)) && !defined(__ANDROID__)
++#if (defined(__OpenBSD__) || defined(__linux__) || defined(__FreeBSD__)) && !defined(__ANDROID__)
  			"EGL_KHR_platform_gbm "
  #endif
- #if defined(USE_X11)
+ #if defined(SWIFTSHADER_USE_X11)
 @@ -1307,7 +1307,7 @@ EGLDisplay EGLAPIENTRY GetPlatformDisplay(EGLenum plat
  {
  	TRACE("(EGLenum platform = 0x%X, void *native_display = %p, const EGLAttrib *attrib_list = %p)", platform, native_display, attrib_list);
  
 -	#if defined(__linux__) && !defined(__ANDROID__)
-+        #if (defined(__OpenBSD__) || defined(__linux__)) && !defined(__ANDROID__)
++	#if (defined(__OpenBSD__) || defined(__linux__) || defined(__FreeBSD__)) && !defined(__ANDROID__)
  		switch(platform)
  		{
- 		#if defined(USE_X11)
+ 		#if defined(SWIFTSHADER_USE_X11)

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_message_center_views_message_popup_view_cc,v 1.17 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/message_center/views/message_popup_view.cc
 --- ui/message_center/views/message_popup_view.cc.orig
 +++ ui/message_center/views/message_popup_view.cc

@@ -1,9 +1,7 @@
-$OpenBSD: patch-base_base_switches_h,v 1.12 2021/09/01 16:54:37 robert Exp $
-
 Index: base/base_switches.h
 --- base/base_switches.h.orig
 +++ base/base_switches.h
-@@ -59,7 +59,7 @@ extern const char kEnableIdleTracing[];
+@@ -60,7 +60,7 @@ extern const char kEnableIdleTracing[];
  extern const char kForceFieldTrialParams[];
  #endif
  

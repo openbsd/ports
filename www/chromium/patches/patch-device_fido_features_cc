@@ -1,5 +1,3 @@
-$OpenBSD: patch-device_fido_features_cc,v 1.10 2022/01/06 06:24:05 robert Exp $
-
 Index: device/fido/features.cc
 --- device/fido/features.cc.orig
 +++ device/fido/features.cc

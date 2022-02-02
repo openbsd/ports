@@ -1,5 +1,3 @@
-$OpenBSD: patch-v8_tools_run_py,v 1.10 2020/09/22 11:47:43 robert Exp $
-
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig
 +++ v8/tools/run.py

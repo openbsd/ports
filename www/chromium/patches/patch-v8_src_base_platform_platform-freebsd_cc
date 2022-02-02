@@ -1,0 +1,19 @@
+Index: v8/src/base/platform/platform-freebsd.cc
+--- v8/src/base/platform/platform-freebsd.cc.orig
++++ v8/src/base/platform/platform-freebsd.cc
+@@ -43,14 +43,10 @@ TimezoneCache* OS::CreateTimezoneCache() {
+   return new PosixDefaultTimezoneCache();
+ }
+ 
+-static unsigned StringToLong(char* buffer) {
+-  return static_cast<unsigned>(strtol(buffer, nullptr, 16));
+-}
+-
+ std::vector<OS::SharedLibraryAddress> OS::GetSharedLibraryAddresses() {
+   std::vector<SharedLibraryAddress> result;
+   int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_VMMAP, getpid()};
+-  size_t miblen = sizeof(mib) / sizeof(mib[0]);
++  unsigned int miblen = sizeof(mib) / sizeof(mib[0]);
+   size_t buffer_size;
+   if (sysctl(mib, miblen, nullptr, &buffer_size, nullptr, 0) == 0) {
+     // Overallocate the buffer by 1/3 to account for concurrent

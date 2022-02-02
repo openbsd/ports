@@ -1,11 +1,7 @@
-$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.22 2022/01/06 06:24:03 robert Exp $
-
-XXX pledge(2)
-
 Index: base/threading/platform_thread_posix.cc
 --- base/threading/platform_thread_posix.cc.orig
 +++ base/threading/platform_thread_posix.cc
-@@ -72,7 +72,7 @@ void* ThreadFunc(void* params) {
+@@ -74,7 +74,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
@@ -14,7 +10,7 @@ Index: base/threading/platform_thread_posix.cc
  #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC)
      internal::PCScan::NotifyThreadCreated(internal::GetStackPointer());
  #endif
-@@ -331,6 +331,9 @@ bool PlatformThread::CanChangeThreadPriority(ThreadPri
+@@ -333,6 +333,9 @@ bool PlatformThread::CanChangeThreadPriority(ThreadPri
  // static
  void PlatformThread::SetCurrentThreadPriorityImpl(ThreadPriority priority) {
  #if defined(OS_NACL)

@@ -1,9 +1,7 @@
-$OpenBSD: patch-weblayer_browser_content_browser_client_impl_cc,v 1.20 2022/01/06 06:24:06 robert Exp $
-
 Index: weblayer/browser/content_browser_client_impl.cc
 --- weblayer/browser/content_browser_client_impl.cc.orig
 +++ weblayer/browser/content_browser_client_impl.cc
-@@ -154,7 +154,7 @@
+@@ -152,7 +152,7 @@
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -12,7 +10,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
  #include "content/public/common/content_descriptors.h"
  #endif
  
-@@ -494,7 +494,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
+@@ -492,7 +492,7 @@ void ContentBrowserClientImpl::OnNetworkServiceCreated
          embedder_support::GetUserAgent());
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
@@ -21,7 +19,7 @@ Index: weblayer/browser/content_browser_client_impl.cc
    network::mojom::CryptConfigPtr config = network::mojom::CryptConfig::New();
    content::GetNetworkService()->SetCryptConfig(std::move(config));
  #endif
-@@ -1005,7 +1005,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
+@@ -998,7 +998,7 @@ SafeBrowsingService* ContentBrowserClientImpl::GetSafe
  
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.

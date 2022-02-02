@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gfx_x_xlib_support_cc,v 1.6 2021/09/01 16:54:41 robert Exp $
-
 Index: ui/gfx/x/xlib_support.cc
 --- ui/gfx/x/xlib_support.cc.orig
 +++ ui/gfx/x/xlib_support.cc

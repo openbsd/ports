@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.12 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/blink/renderer/platform/wtf/stack_util.cc
 --- third_party/blink/renderer/platform/wtf/stack_util.cc.orig
 +++ third_party/blink/renderer/platform/wtf/stack_util.cc
@@ -7,7 +5,7 @@ Index: third_party/blink/renderer/platform/wtf/stack_util.cc
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  
-+#if defined(OS_OPENBSD)
++#if defined(OS_BSD)
 +#include <sys/signal.h>
 +#include <pthread_np.h>
 +#endif

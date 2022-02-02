@@ -1,12 +1,10 @@
-$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_hover_card_controller_cc,v 1.4 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
 --- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -302,7 +302,7 @@ void TabHoverCardController::ShowHoverCard(bool is_ini
-   slide_animator_->UpdateTargetBounds();
-   MaybeStartThumbnailObservation(target_tab_, is_initial);
- 
+@@ -36,7 +36,7 @@ namespace {
+ // Fetches the Omnibox drop-down widget, or returns null if the drop-down is
+ // not visible.
+ void FixWidgetStackOrder(views::Widget* widget, const Browser* browser) {
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
    // Ensure the hover card Widget assumes the highest z-order to avoid occlusion

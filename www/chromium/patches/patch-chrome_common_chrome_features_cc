@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_features_cc,v 1.38 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/common/chrome_features.cc
 --- chrome/common/chrome_features.cc.orig
 +++ chrome/common/chrome_features.cc
-@@ -102,7 +102,7 @@ const base::Feature kAsyncDns {
+@@ -110,7 +110,7 @@ const base::Feature kAsyncDns {
  };
  
  #if defined(OS_WIN) || defined(OS_MAC) || defined(OS_LINUX) || \
@@ -12,7 +10,7 @@ Index: chrome/common/chrome_features.cc
  // Enables or disables the Autofill survey triggered by opening a prompt to
  // save address info.
  const base::Feature kAutofillAddressSurvey{"AutofillAddressSurvey",
-@@ -117,7 +117,7 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
+@@ -125,7 +125,7 @@ const base::Feature kAutofillPasswordSurvey{"AutofillP
                                              base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  
@@ -21,7 +19,7 @@ Index: chrome/common/chrome_features.cc
  // Enables the Restart background mode optimization. When all Chrome UI is
  // closed and it goes in the background, allows to restart the browser to
  // discard memory.
-@@ -134,7 +134,7 @@ const base::Feature kBorealis{"Borealis", base::FEATUR
+@@ -142,7 +142,7 @@ const base::Feature kBorealis{"Borealis", base::FEATUR
  const base::Feature kChangePictureVideoMode{"ChangePictureVideoMode",
                                              base::FEATURE_ENABLED_BY_DEFAULT};
  
@@ -30,25 +28,16 @@ Index: chrome/common/chrome_features.cc
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -245,7 +245,7 @@ const base::Feature kDefaultPinnedAppsUpdate2021Q2{
-     "DefaultPinnedAppsUpdate2021Q2", base::FEATURE_ENABLED_BY_DEFAULT};
+@@ -255,7 +255,7 @@ const base::Feature kPreinstalledWebAppInstallation{
  #endif
  
--#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX) || defined(OS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS_ASH) || defined(OS_MAC) || defined(OS_LINUX) || \
+-    defined(OS_FUCHSIA)
++    defined(OS_FUCHSIA) || defined(OS_BSD)
  // Enables Desktop PWAs shortcuts menu to be visible and executable in ChromeOS,
  // MacOS and Linux.
  const base::Feature kDesktopPWAsAppIconShortcutsMenuUI{
-@@ -277,7 +277,7 @@ const base::Feature kDesktopPWAsElidedExtensionsMenu{
- // Handling API.
- const base::Feature kDesktopPWAsFileHandlingSettingsGated{
-   "DesktopPWAsFileHandlingSettingsGated",
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MAC) || defined(OS_BSD)
-       base::FEATURE_ENABLED_BY_DEFAULT
- #else
-       base::FEATURE_DISABLED_BY_DEFAULT
-@@ -304,7 +304,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
+@@ -303,7 +303,7 @@ const base::Feature kDesktopPWAsNotificationIconAndTit
  // Enables or disables Desktop PWAs to be auto-started on OS login.
  const base::Feature kDesktopPWAsRunOnOsLogin {
    "DesktopPWAsRunOnOsLogin",
@@ -57,7 +46,7 @@ Index: chrome/common/chrome_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -334,7 +334,7 @@ const base::Feature kDesktopPWAsWebBundles{"DesktopPWA
+@@ -337,7 +337,7 @@ const base::FeatureParam<int> kDisableHttpDiskCacheMem
  const base::Feature kDnsOverHttps {
    "DnsOverHttps",
  #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -66,7 +55,7 @@ Index: chrome/common/chrome_features.cc
        base::FEATURE_ENABLED_BY_DEFAULT
  #else
        base::FEATURE_DISABLED_BY_DEFAULT
-@@ -356,7 +356,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+@@ -359,7 +359,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
  const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
    &kDnsOverHttps, "ShowUi",
  #if defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
@@ -75,7 +64,7 @@ Index: chrome/common/chrome_features.cc
        true
  #else
        false
-@@ -629,7 +629,7 @@ const base::Feature kIncognitoNtpRevamp{"IncognitoNtpR
+@@ -633,7 +633,7 @@ const base::Feature kIncognitoNtpRevamp{"IncognitoNtpR
                                          base::FEATURE_DISABLED_BY_DEFAULT};
  
  #if defined(OS_MAC) || defined(OS_WIN) || defined(OS_LINUX) || \
@@ -84,7 +73,7 @@ Index: chrome/common/chrome_features.cc
  // When enabled, removes any theme or background customization done by the user
  // on the Incognito UI.
  const base::Feature kIncognitoBrandConsistencyForDesktop{
-@@ -667,7 +667,7 @@ const base::Feature kKernelnextVMs{"KernelnextVMs",
+@@ -675,7 +675,7 @@ const base::Feature kKernelnextVMs{"KernelnextVMs",
                                     base::FEATURE_DISABLED_BY_DEFAULT};
  #endif
  

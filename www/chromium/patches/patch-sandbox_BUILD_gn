@@ -1,5 +1,3 @@
-$OpenBSD: patch-sandbox_BUILD_gn,v 1.8 2020/10/22 13:52:54 robert Exp $
-
 Index: sandbox/BUILD.gn
 --- sandbox/BUILD.gn.orig
 +++ sandbox/BUILD.gn
@@ -8,7 +6,7 @@ Index: sandbox/BUILD.gn
        "//sandbox/mac/mojom",
      ]
 -  } else if (is_linux || is_chromeos || is_android) {
-+  } else if ((is_linux && !is_openbsd) || is_chromeos || is_android) {
++  } else if ((is_linux && !is_bsd) || is_chromeos || is_android) {
      public_deps = [ "//sandbox/linux:sandbox" ]
    }
  }

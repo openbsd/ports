@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_viz_host_host_display_client_cc,v 1.7 2021/09/01 16:54:39 robert Exp $
-
 Index: components/viz/host/host_display_client.cc
 --- components/viz/host/host_display_client.cc.orig
 +++ components/viz/host/host_display_client.cc

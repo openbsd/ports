@@ -1,9 +1,7 @@
-$OpenBSD: patch-components_os_crypt_os_crypt_h,v 1.14 2022/01/06 06:24:04 robert Exp $
-
 Index: components/os_crypt/os_crypt.h
 --- components/os_crypt/os_crypt.h.orig
 +++ components/os_crypt/os_crypt.h
-@@ -17,7 +17,7 @@
+@@ -16,7 +16,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +10,7 @@ Index: components/os_crypt/os_crypt.h
  class KeyStorageLinux;
  #endif  // defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
  
-@@ -42,7 +42,7 @@ class OSCrypt {
+@@ -41,7 +41,7 @@ class OSCrypt {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -21,7 +19,7 @@ Index: components/os_crypt/os_crypt.h
    // Set the configuration of OSCrypt.
    static COMPONENT_EXPORT(OS_CRYPT) void SetConfig(
        std::unique_ptr<os_crypt::Config> config);
-@@ -50,7 +50,7 @@ class OSCrypt {
+@@ -49,7 +49,7 @@ class OSCrypt {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -30,7 +28,7 @@ Index: components/os_crypt/os_crypt.h
      (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    // On Linux returns true iff the real secret key (not hardcoded one) is
    // available. On MacOS returns true if Keychain is available (for mock
-@@ -142,7 +142,7 @@ class OSCrypt {
+@@ -141,7 +141,7 @@ class OSCrypt {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

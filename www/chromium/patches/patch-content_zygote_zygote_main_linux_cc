@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_zygote_zygote_main_linux_cc,v 1.15 2021/01/20 07:28:10 robert Exp $
-
 Index: content/zygote/zygote_main_linux.cc
 --- content/zygote/zygote_main_linux.cc.orig
 +++ content/zygote/zygote_main_linux.cc

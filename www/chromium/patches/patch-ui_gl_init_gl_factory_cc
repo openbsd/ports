@@ -1,9 +1,7 @@
-$OpenBSD: patch-ui_gl_init_gl_factory_cc,v 1.5 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/gl/init/gl_factory.cc
 --- ui/gl/init/gl_factory.cc.orig
 +++ ui/gl/init/gl_factory.cc
-@@ -167,7 +167,7 @@ bool InitializeGLOneOffPlatformHelper(bool init_extens
+@@ -171,7 +171,7 @@ bool InitializeGLOneOffPlatformHelper(bool init_extens
  }  // namespace
  
  GLImplementationParts GetSoftwareGLImplementationForPlatform() {

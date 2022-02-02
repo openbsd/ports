@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.609 2022/01/20 18:12:10 robert Exp $
+# $OpenBSD: Makefile,v 1.610 2022/02/02 17:36:36 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
@@ -8,7 +8,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			97.0.4692.99
+V=			98.0.4758.80
 
 DISTNAME=		chromium-${V}
 
@@ -143,7 +143,11 @@ GN_ARGS=	enable_nacl=false \
 		use_allocator_shim=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		fatal_linker_warnings=false
+		fatal_linker_warnings=false \
+		use_custom_libcxx=false \
+		enable_wmax_tokens=false \
+		use_thin_lto=false \
+		use_udev=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false
@@ -194,10 +198,6 @@ pre-configure:
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
 .  endfor
 .endfor
-	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
-	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${WRKSRC}/services/device/hid
-	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
-	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \

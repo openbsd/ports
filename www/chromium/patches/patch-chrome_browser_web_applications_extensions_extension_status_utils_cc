@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_browser_web_applications_extensions_extension_status_utils_cc,v 1.4 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
 --- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig
 +++ chrome/browser/web_applications/extensions/extension_status_utils.cc
-@@ -75,7 +75,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
+@@ -87,7 +87,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
    return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
  }
  

@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_safe_browsing_download_protection_file_analyzer_h,v 1.3 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/safe_browsing/download_protection/file_analyzer.h
 --- chrome/browser/safe_browsing/download_protection/file_analyzer.h.orig
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.h
@@ -21,7 +19,7 @@ Index: chrome/browser/safe_browsing/download_protection/file_analyzer.h
    void StartExtractDocumentFeatures();
    void OnDocumentAnalysisFinished(
        const DocumentAnalyzerResults& document_results);
-@@ -132,7 +132,7 @@ class FileAnalyzer {
+@@ -131,7 +131,7 @@ class FileAnalyzer {
    scoped_refptr<SandboxedDMGAnalyzer> dmg_analyzer_;
  #endif
  

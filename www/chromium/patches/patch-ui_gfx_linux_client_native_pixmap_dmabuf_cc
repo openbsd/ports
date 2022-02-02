@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gfx_linux_client_native_pixmap_dmabuf_cc,v 1.14 2021/09/01 16:54:41 robert Exp $
-
 Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
 --- ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig
 +++ ui/gfx/linux/client_native_pixmap_dmabuf.cc
@@ -7,7 +5,7 @@ Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
  #include "ui/gfx/linux/client_native_pixmap_dmabuf.h"
  
  #include <fcntl.h>
-+#if !defined(__OpenBSD__)
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
  #include <linux/version.h>
 +#endif
  #include <stddef.h>
@@ -22,7 +20,7 @@ Index: ui/gfx/linux/client_native_pixmap_dmabuf.cc
 -#else
 -#include <linux/types.h>
 -
-+#if defined(__OpenBSD__)
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
  struct dma_buf_sync {
    __u64 flags;
  };

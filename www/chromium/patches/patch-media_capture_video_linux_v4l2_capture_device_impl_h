@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_capture_video_linux_v4l2_capture_device_impl_h,v 1.1 2019/06/26 17:22:41 robert Exp $
-
 Index: media/capture/video/linux/v4l2_capture_device_impl.h
 --- media/capture/video/linux/v4l2_capture_device_impl.h.orig
 +++ media/capture/video/linux/v4l2_capture_device_impl.h

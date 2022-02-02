@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_third_party_libevent_openbsd_config_h,v 1.1 2016/08/17 11:06:50 robert Exp $
---- base/third_party/libevent/openbsd/config.h.orig.port	Sun Aug 14 16:14:00 2016
-+++ base/third_party/libevent/openbsd/config.h	Sun Aug 14 16:14:07 2016
+Index: base/third_party/libevent/openbsd/config.h
+--- base/third_party/libevent/openbsd/config.h.orig
++++ base/third_party/libevent/openbsd/config.h
 @@ -0,0 +1,276 @@
 +/* config.h.  Generated from config.h.in by configure.  */
 +/* config.h.in.  Generated from configure.in by autoheader.  */

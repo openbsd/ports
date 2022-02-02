@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_resources_settings_appearance_page_appearance_page_html,v 1.21 2021/09/01 16:54:38 robert Exp $
-
 Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
 --- chrome/browser/resources/settings/appearance_page/appearance_page.html.orig
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.html

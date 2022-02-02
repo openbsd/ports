@@ -1,14 +1,13 @@
-$OpenBSD: patch-third_party_vulkan-deps_vulkan-validation-layers_src_layers_vk_mem_alloc_h,v 1.3 2021/09/01 16:54:40 robert Exp $
-
 Index: third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
 --- third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h.orig
 +++ third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
-@@ -3181,7 +3181,7 @@ void *aligned_alloc(size_t alignment, size_t size)
+@@ -3181,7 +3181,8 @@ void *aligned_alloc(size_t alignment, size_t size)
  
      return memalign(alignment, size);
  }
 -#elif defined(__APPLE__) || defined(__ANDROID__)
-+#elif defined(__APPLE__) || defined(__ANDROID__) || defined(__OpenBSD__)
++#elif defined(__APPLE__) || defined(__ANDROID__) || defined(__OpenBSD__) || \
++      defined(__FreeBSD__)
  #  define ALIGNED_ALLOC_WITH_POSIX_MEMALIGN
  #elif defined(__GNU_LIBRARY__)
  #  if !defined(__GLIBC_PREREQ) || !__GLIBC_PREREQ(2, 16)

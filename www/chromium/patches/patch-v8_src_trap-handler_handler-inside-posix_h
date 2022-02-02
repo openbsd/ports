@@ -1,5 +1,3 @@
-$OpenBSD: patch-v8_src_trap-handler_handler-inside-posix_h,v 1.4 2021/09/01 16:54:41 robert Exp $
-
 Index: v8/src/trap-handler/handler-inside-posix.h
 --- v8/src/trap-handler/handler-inside-posix.h.orig
 +++ v8/src/trap-handler/handler-inside-posix.h

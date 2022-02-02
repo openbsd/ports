@@ -1,9 +1,7 @@
-$OpenBSD: patch-net_proxy_resolution_configured_proxy_resolution_service_cc,v 1.13 2022/01/06 06:24:05 robert Exp $
-
 Index: net/proxy_resolution/configured_proxy_resolution_service.cc
 --- net/proxy_resolution/configured_proxy_resolution_service.cc.orig
 +++ net/proxy_resolution/configured_proxy_resolution_service.cc
-@@ -51,7 +51,7 @@
+@@ -52,7 +52,7 @@
  #elif defined(OS_MAC)
  #include "net/proxy_resolution/proxy_config_service_mac.h"
  #include "net/proxy_resolution/proxy_resolver_mac.h"
@@ -12,7 +10,7 @@ Index: net/proxy_resolution/configured_proxy_resolution_service.cc
  #include "net/proxy_resolution/proxy_config_service_linux.h"
  #elif defined(OS_ANDROID)
  #include "net/proxy_resolution/proxy_config_service_android.h"
-@@ -63,7 +63,7 @@ namespace net {
+@@ -64,7 +64,7 @@ namespace net {
  
  namespace {
  
@@ -21,7 +19,7 @@ Index: net/proxy_resolution/configured_proxy_resolution_service.cc
  constexpr net::NetworkTrafficAnnotationTag kSystemProxyConfigTrafficAnnotation =
      net::DefineNetworkTrafficAnnotation("proxy_config_system", R"(
        semantics {
-@@ -1421,7 +1421,7 @@ ConfiguredProxyResolutionService::CreateSystemProxyCon
+@@ -1422,7 +1422,7 @@ ConfiguredProxyResolutionService::CreateSystemProxyCon
               << "profile_io_data.cc::CreateProxyConfigService and this should "
               << "be used only for examples.";
    return std::make_unique<UnsetProxyConfigService>();

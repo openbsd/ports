@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.43 2022/01/06 06:24:03 robert Exp $
-
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig
 +++ base/debug/stack_trace_posix.cc
@@ -12,7 +10,7 @@ Index: base/debug/stack_trace_posix.cc
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -692,6 +692,9 @@ class SandboxSymbolizeHelper {
+@@ -693,6 +693,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -22,7 +20,7 @@ Index: base/debug/stack_trace_posix.cc
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -709,6 +712,7 @@ class SandboxSymbolizeHelper {
+@@ -710,6 +713,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
@@ -30,7 +28,7 @@ Index: base/debug/stack_trace_posix.cc
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -865,7 +869,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
+@@ -866,7 +870,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
    // If we do not have unwind tables, then try tracing using frame pointers.
    return base::debug::TraceStackFramePointers(const_cast<const void**>(trace),
                                                count, 0);

@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_shell_browser_api_runtime_shell_runtime_api_delegate_cc,v 1.7 2021/09/01 16:54:39 robert Exp $
-
 Index: extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc
 --- extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc.orig
 +++ extensions/shell/browser/api/runtime/shell_runtime_api_delegate.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_resources_remoting_strings_grd,v 1.13 2022/01/06 06:24:05 robert Exp $
-
 Index: remoting/resources/remoting_strings.grd
 --- remoting/resources/remoting_strings.grd.orig
 +++ remoting/resources/remoting_strings.grd

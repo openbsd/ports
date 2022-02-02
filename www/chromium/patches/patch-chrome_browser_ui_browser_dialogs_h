@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_browser_dialogs_h,v 1.6 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/ui/browser_dialogs.h
 --- chrome/browser/ui/browser_dialogs.h.orig
 +++ chrome/browser/ui/browser_dialogs.h

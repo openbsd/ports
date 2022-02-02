@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_vulkan-deps_vulkan-loader_src_loader_get_environment_h,v 1.1 2022/01/06 06:40:47 robert Exp $
-
 Index: third_party/vulkan-deps/vulkan-loader/src/loader/get_environment.h
 --- third_party/vulkan-deps/vulkan-loader/src/loader/get_environment.h.orig
 +++ third_party/vulkan-deps/vulkan-loader/src/loader/get_environment.h

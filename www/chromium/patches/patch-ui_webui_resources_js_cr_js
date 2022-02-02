@@ -1,8 +1,7 @@
-$OpenBSD: patch-ui_webui_resources_js_cr_js,v 1.12 2021/01/20 07:28:12 robert Exp $
 Index: ui/webui/resources/js/cr.js
 --- ui/webui/resources/js/cr.js.orig
 +++ ui/webui/resources/js/cr.js
-@@ -478,6 +478,11 @@ var cr = cr || function(global) {
+@@ -441,6 +441,11 @@ var cr = cr || function(global) {
        return returnValue;
      },
  

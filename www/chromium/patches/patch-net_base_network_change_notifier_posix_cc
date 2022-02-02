@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_base_network_change_notifier_posix_cc,v 1.11 2022/01/06 06:24:05 robert Exp $
-
 Index: net/base/network_change_notifier_posix.cc
 --- net/base/network_change_notifier_posix.cc.orig
 +++ net/base/network_change_notifier_posix.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_vulkan-deps_vulkan-loader_src_loader_vk_loader_platform_h,v 1.6 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
 --- third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h.orig
 +++ third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
@@ -26,7 +24,7 @@ Index: third_party/vulkan-deps/vulkan-loader/src/loader/vk_loader_platform.h
      return buffer;
  }
 -#elif defined(__Fuchsia__)
-+#elif defined(__Fuchsia__) || defined(__OpenBSD__)
++#elif defined(__Fuchsia__) || defined(__OpenBSD__) || defined(__FreeBSD__)
  static inline char *loader_platform_executable_path(char *buffer, size_t size) { return NULL; }
  #elif defined(__QNXNTO__)
  

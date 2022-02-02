@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_defaults_cc,v 1.16 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/defaults.cc
 --- chrome/browser/defaults.cc.orig
 +++ chrome/browser/defaults.cc

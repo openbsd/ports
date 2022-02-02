@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_http_http_network_session_cc,v 1.22 2022/01/06 06:24:05 robert Exp $
-
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig
 +++ net/http/http_network_session.cc

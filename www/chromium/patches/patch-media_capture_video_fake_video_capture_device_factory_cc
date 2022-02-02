@@ -1,9 +1,7 @@
-$OpenBSD: patch-media_capture_video_fake_video_capture_device_factory_cc,v 1.18 2021/01/20 07:28:10 robert Exp $
-
 Index: media/capture/video/fake_video_capture_device_factory.cc
 --- media/capture/video/fake_video_capture_device_factory.cc.orig
 +++ media/capture/video/fake_video_capture_device_factory.cc
-@@ -208,7 +208,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
+@@ -213,7 +213,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
    int entry_index = 0;
    for (const auto& entry : devices_config_) {
      VideoCaptureApi api =

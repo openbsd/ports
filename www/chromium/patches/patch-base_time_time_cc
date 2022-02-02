@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_time_time_cc,v 1.2 2021/09/01 16:54:38 robert Exp $
-
 Index: base/time/time.cc
 --- base/time/time.cc.orig
 +++ base/time/time.cc

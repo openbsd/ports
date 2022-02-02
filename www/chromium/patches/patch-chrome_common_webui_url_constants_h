@@ -1,10 +1,8 @@
-$OpenBSD: patch-chrome_common_webui_url_constants_h,v 1.32 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/common/webui_url_constants.h
 --- chrome/common/webui_url_constants.h.orig
 +++ chrome/common/webui_url_constants.h
-@@ -324,18 +324,18 @@ extern const char kChromeUIOSSettingsHost[];
- extern const char kChromeUIOSSettingsURL[];
+@@ -368,18 +368,18 @@ extern const char kOsUIFlagsURL[];
+ extern const char kOsUIVersionURL[];
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_CHROMEOS)
@@ -25,7 +23,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIDiscardsHost[];
  extern const char kChromeUIDiscardsURL[];
  #endif
-@@ -350,14 +350,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -394,14 +394,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
@@ -42,7 +40,7 @@ Index: chrome/common/webui_url_constants.h
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  extern const char kChromeUIEnterpriseProfileWelcomeHost[];
-@@ -369,7 +369,7 @@ extern const char kChromeUIProfilePickerUrl[];
+@@ -413,7 +413,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

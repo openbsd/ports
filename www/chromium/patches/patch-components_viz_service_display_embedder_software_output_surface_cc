@@ -1,9 +1,7 @@
-$OpenBSD: patch-components_viz_service_display_embedder_software_output_surface_cc,v 1.9 2021/09/01 16:54:39 robert Exp $
-
 Index: components/viz/service/display_embedder/software_output_surface.cc
 --- components/viz/service/display_embedder/software_output_surface.cc.orig
 +++ components/viz/service/display_embedder/software_output_surface.cc
-@@ -115,7 +115,7 @@ void SoftwareOutputSurface::SwapBuffersCallback(base::
+@@ -118,7 +118,7 @@ void SoftwareOutputSurface::SwapBuffersCallback(base::
        now.SnappedToNextTick(refresh_timebase_, refresh_interval_) - now;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,7 +10,7 @@ Index: components/viz/service/display_embedder/software_output_surface.cc
    if (needs_swap_size_notifications_)
      client_->DidSwapWithSize(pixel_size);
  #endif
-@@ -146,7 +146,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
+@@ -149,7 +149,7 @@ gfx::OverlayTransform SoftwareOutputSurface::GetDispla
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

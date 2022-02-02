@@ -1,4 +1,3 @@
-$OpenBSD: patch-base_atomicops_h,v 1.16 2019/08/01 08:31:59 robert Exp $
 Index: base/atomicops.h
 --- base/atomicops.h.orig
 +++ base/atomicops.h
@@ -6,11 +5,11 @@ Index: base/atomicops.h
  
  // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
  // Atomic64 routines below, depending on your architecture.
-+//#if defined(OS_OPENBSD) && defined(__i386__)
-+//typedef Atomic32 AtomicWord;
-+//#else
++#if !defined(OS_OPENBSD) && defined(__i386__)
++typedef Atomic32 AtomicWord;
++#else
  typedef intptr_t AtomicWord;
-+//#endif
++#endif
  
  // Atomically execute:
  //      result = *ptr;

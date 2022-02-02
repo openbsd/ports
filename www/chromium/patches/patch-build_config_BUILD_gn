@@ -1,14 +1,23 @@
-$OpenBSD: patch-build_config_BUILD_gn,v 1.30 2022/01/06 06:24:03 robert Exp $
-
 Index: build/config/BUILD.gn
 --- build/config/BUILD.gn.orig
 +++ build/config/BUILD.gn
-@@ -225,7 +225,7 @@ config("default_libs") {
+@@ -222,13 +222,17 @@ config("default_libs") {
        "CoreText.framework",
        "Foundation.framework",
      ]
 -  } else if (is_linux || is_chromeos) {
-+  } else if ((is_linux && !is_openbsd) || is_chromeos) {
++  } else if ((is_linux && !is_bsd) || is_chromeos) {
      libs = [
        "dl",
        "pthread",
+       "rt",
+     ]
+-  }
++  } else if (is_bsd) {
++    libs = [
++      "pthread",
++    ]
++ }
+ }
+ 
+ group("common_deps") {

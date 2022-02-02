@@ -1,4 +1,3 @@
-$OpenBSD: patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_x64_config_h,v 1.36 2021/09/01 16:54:40 robert Exp $
 Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h
 --- third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h.orig
 +++ third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h
@@ -603,7 +602,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h
 +#define CONFIG_THUMB 0
 +#define CONFIG_VALGRIND_BACKTRACE 0
 +#define CONFIG_XMM_CLOBBER_TEST 0
-+#define CONFIG_BSFS 1
++#define CONFIG_BSFS 0
 +#define CONFIG_DECODERS 1
 +#define CONFIG_ENCODERS 0
 +#define CONFIG_HWACCELS 0
@@ -729,7 +728,7 @@ Index: third_party/ffmpeg/chromium/config/Chrome/openbsd/x64/config.h
 +#define CONFIG_MPEG4_UNPACK_BFRAMES_BSF 0
 +#define CONFIG_MOV2TEXTSUB_BSF 0
 +#define CONFIG_NOISE_BSF 0
-+#define CONFIG_NULL_BSF 1
++#define CONFIG_NULL_BSF 0
 +#define CONFIG_OPUS_METADATA_BSF 0
 +#define CONFIG_PCM_RECHUNK_BSF 0
 +#define CONFIG_PRORES_METADATA_BSF 0

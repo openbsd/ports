@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_media_galleries_fileapi_mtp_device_map_service_cc,v 1.9 2021/09/01 16:54:38 robert Exp $
-
 Index: chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc
 --- chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc.orig
 +++ chrome/browser/media_galleries/fileapi/mtp_device_map_service.cc

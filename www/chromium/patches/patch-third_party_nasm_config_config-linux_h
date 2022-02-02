@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_nasm_config_config-linux_h,v 1.2 2020/10/22 13:52:55 robert Exp $
-
 Index: third_party/nasm/config/config-linux.h
 --- third_party/nasm/config/config-linux.h.orig
 +++ third_party/nasm/config/config-linux.h
@@ -21,6 +19,15 @@ Index: third_party/nasm/config/config-linux.h
  
  /* Define to 1 if you have the declaration of `strncasecmp', and to 0 if you
     don't. */
+@@ -183,7 +183,7 @@
+ #define HAVE_DECL_STRSEP 1
+ 
+ /* Define to 1 if you have the <endian.h> header file. */
+-#define HAVE_ENDIAN_H 1
++/* #undef HAVE_ENDIAN_H */
+ 
+ /* Define to 1 if you have the `faccessat' function. */
+ #define HAVE_FACCESSAT 1
 @@ -327,16 +327,16 @@
  #define HAVE_ISASCII 1
  

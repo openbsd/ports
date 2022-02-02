@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_views_window_custom_frame_view_cc,v 1.22 2022/01/06 06:24:06 robert Exp $
-
 Index: ui/views/window/custom_frame_view.cc
 --- ui/views/window/custom_frame_view.cc.orig
 +++ ui/views/window/custom_frame_view.cc

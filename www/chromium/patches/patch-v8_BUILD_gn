@@ -1,28 +1,31 @@
-$OpenBSD: patch-v8_BUILD_gn,v 1.48 2022/01/06 06:24:06 robert Exp $
-
 Index: v8/BUILD.gn
 --- v8/BUILD.gn.orig
 +++ v8/BUILD.gn
-@@ -1194,6 +1194,9 @@ config("toolchain") {
+@@ -1181,6 +1181,14 @@ config("toolchain") {
    } else if (target_os == "win") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_WIN" ]
 +  } else if (target_os == "openbsd") {
 +    defines += [ "V8_HAVE_TARGET_OS" ]
 +    defines += [ "V8_TARGET_OS_OPENBSD" ]
++    defines += [ "V8_TARGET_OS_BSD" ]
++  } else if (target_os == "freebsd") {
++    defines += [ "V8_HAVE_TARGET_OS" ]
++    defines += [ "V8_TARGET_OS_FREEBSD" ]
++    defines += [ "V8_TARGET_OS_BSD" ]
    }
  
    # TODO(jochen): Support v8_enable_prof on Windows.
-@@ -5090,7 +5093,7 @@ v8_component("v8_libbase") {
+@@ -5094,7 +5102,7 @@ v8_component("v8_libbase") {
      }
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -5100,6 +5103,12 @@ v8_component("v8_libbase") {
+@@ -5104,6 +5112,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]
@@ -30,6 +33,12 @@ Index: v8/BUILD.gn
 +    sources += [
 +      "src/base/debug/stack_trace_posix.cc",
 +      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
++  } else if (is_freebsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-freebsd.cc",
 +    ]
 +    libs = [ "execinfo" ]
    } else if (current_os == "aix") {

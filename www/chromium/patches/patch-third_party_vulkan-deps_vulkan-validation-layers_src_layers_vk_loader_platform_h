@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_vulkan-deps_vulkan-validation-layers_src_layers_vk_loader_platform_h,v 1.4 2022/01/06 06:24:05 robert Exp $
-
 Index: third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_loader_platform.h
 --- third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_loader_platform.h.orig
 +++ third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_loader_platform.h

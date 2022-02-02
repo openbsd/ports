@@ -1,9 +1,7 @@
-$OpenBSD: patch-content_gpu_gpu_main_cc,v 1.54 2022/01/06 06:24:05 robert Exp $
-
 Index: content/gpu/gpu_main.cc
 --- content/gpu/gpu_main.cc.orig
 +++ content/gpu/gpu_main.cc
-@@ -82,7 +82,7 @@
+@@ -83,7 +83,7 @@
  #include "sandbox/win/src/sandbox.h"
  #endif
  
@@ -12,7 +10,7 @@ Index: content/gpu/gpu_main.cc
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "content/public/common/sandbox_init.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
-@@ -105,7 +105,7 @@ namespace content {
+@@ -106,7 +106,7 @@ namespace content {
  
  namespace {
  
@@ -21,7 +19,7 @@ Index: content/gpu/gpu_main.cc
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -167,7 +167,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -168,7 +168,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -30,7 +28,7 @@ Index: content/gpu/gpu_main.cc
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif defined(OS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -263,7 +263,7 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -264,7 +264,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
@@ -39,7 +37,7 @@ Index: content/gpu/gpu_main.cc
  #error "Unsupported Linux platform."
  #elif defined(OS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -406,17 +406,19 @@ int GpuMain(const MainFunctionParams& parameters) {
+@@ -407,17 +407,19 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  
@@ -60,7 +58,7 @@ Index: content/gpu/gpu_main.cc
  
    // SandboxLinux::InitializeSandbox() must always be called
    // with only one thread.
-@@ -437,11 +439,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
+@@ -438,11 +440,13 @@ bool StartSandboxLinux(gpu::GpuWatchdogThread* watchdo
            *base::CommandLine::ForCurrentProcess()),
        base::BindOnce(GpuProcessPreSandboxHook), sandbox_options);
  

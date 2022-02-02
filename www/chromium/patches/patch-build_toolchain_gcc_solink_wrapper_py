@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_toolchain_gcc_solink_wrapper_py,v 1.5 2022/01/06 06:24:03 robert Exp $
-
 Index: build/toolchain/gcc_solink_wrapper.py
 --- build/toolchain/gcc_solink_wrapper.py.orig
 +++ build/toolchain/gcc_solink_wrapper.py

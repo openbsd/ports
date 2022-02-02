@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_new_tab_page_modules_drive_drive_service_cc,v 1.1 2021/09/01 16:54:38 robert Exp $
-
 Index: chrome/browser/new_tab_page/modules/drive/drive_service.cc
 --- chrome/browser/new_tab_page/modules/drive/drive_service.cc.orig
 +++ chrome/browser/new_tab_page/modules/drive/drive_service.cc

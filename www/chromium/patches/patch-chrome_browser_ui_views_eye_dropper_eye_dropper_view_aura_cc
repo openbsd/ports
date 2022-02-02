@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_eye_dropper_eye_dropper_view_aura_cc,v 1.7 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc
 --- chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc.orig
 +++ chrome/browser/ui/views/eye_dropper/eye_dropper_view_aura.cc
-@@ -80,7 +80,7 @@ void EyeDropperView::MoveViewToFront() {
+@@ -81,7 +81,7 @@ void EyeDropperView::MoveViewToFront() {
  }
  
  void EyeDropperView::CaptureInputIfNeeded() {

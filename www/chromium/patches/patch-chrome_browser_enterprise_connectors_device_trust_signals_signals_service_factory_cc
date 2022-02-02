@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_enterprise_connectors_device_trust_signals_signals_service_factory_cc,v 1.3 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
 --- chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc.orig
 +++ chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
@@ -11,8 +9,8 @@ Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD)
  #include "base/check.h"
  #include "chrome/browser/enterprise/connectors/device_trust/signals/decorators/browser/browser_signals_decorator.h"
- #include "chrome/browser/enterprise/signals/device_info_fetcher.h"
-@@ -45,7 +45,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(
+ #include "chrome/browser/policy/chrome_browser_policy_connector.h"
+@@ -44,7 +44,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(
    decorators.push_back(
        std::make_unique<ContentSignalsDecorator>(policy_blocklist_service));
  

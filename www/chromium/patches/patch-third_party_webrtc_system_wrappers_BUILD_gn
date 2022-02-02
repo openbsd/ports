@@ -1,4 +1,3 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_BUILD_gn,v 1.21 2021/01/20 07:28:12 robert Exp $
 Index: third_party/webrtc/system_wrappers/BUILD.gn
 --- third_party/webrtc/system_wrappers/BUILD.gn.orig
 +++ third_party/webrtc/system_wrappers/BUILD.gn

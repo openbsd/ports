@@ -1,23 +1,23 @@
-$OpenBSD: patch-third_party_perfetto_src_base_event_fd_cc,v 1.5 2021/09/01 16:54:40 robert Exp $
-
 Index: third_party/perfetto/src/base/event_fd.cc
 --- third_party/perfetto/src/base/event_fd.cc.orig
 +++ third_party/perfetto/src/base/event_fd.cc
-@@ -22,7 +22,7 @@
+@@ -22,7 +22,8 @@
  #if PERFETTO_BUILDFLAG(PERFETTO_OS_WIN)
  #include <Windows.h>
  #include <synchapi.h>
 -#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \
++#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/eventfd.h>
  #include <unistd.h>
-@@ -57,7 +57,7 @@ void EventFd::Clear() {
+@@ -57,7 +58,8 @@ void EventFd::Clear() {
      PERFETTO_DFATAL("EventFd::Clear()");
  }
  
 -#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && !PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)) || \
++#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
++    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  
  EventFd::EventFd() {

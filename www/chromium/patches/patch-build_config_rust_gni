@@ -1,14 +1,12 @@
-$OpenBSD: patch-build_config_rust_gni,v 1.3 2022/01/06 06:24:03 robert Exp $
-
 Index: build/config/rust.gni
 --- build/config/rust.gni.orig
 +++ build/config/rust.gni
-@@ -81,7 +81,7 @@ if (use_unverified_rust_toolchain) {
-   assert(rust_bin_dir != "")
-   rust_prefix = "$rust_bin_dir/"
- } else if (toolchain_has_official_rust) {
--  if (host_os != "linux") {
-+  if (host_os != "linux" && host_os != "openbsd") {
-     assert(false,
-            "Attempt to use standard Rust toolchain on an unsupported platform")
-   }
+@@ -84,7 +84,7 @@ if (enable_rust) {
+     rust_sysroot = get_path_info(rust_sysroot_absolute, "abspath")
+     use_unverified_rust_toolchain = true
+   } else {
+-    if (host_os != "linux") {
++    if (host_os != "linux" && host_os != "openbsd" && host_os != "freebsd") {
+       assert(
+           false,
+           "Attempt to use standard Rust toolchain on an unsupported platform")

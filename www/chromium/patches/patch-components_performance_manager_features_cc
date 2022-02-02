@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_performance_manager_features_cc,v 1.5 2022/01/06 06:24:04 robert Exp $
-
 Index: components/performance_manager/features.cc
 --- components/performance_manager/features.cc.orig
 +++ components/performance_manager/features.cc

@@ -1,9 +1,7 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_uuid_cc,v 1.4 2021/01/20 07:28:11 robert Exp $
-
 Index: third_party/crashpad/crashpad/util/misc/uuid.cc
 --- third_party/crashpad/crashpad/util/misc/uuid.cc.orig
 +++ third_party/crashpad/crashpad/util/misc/uuid.cc
-@@ -96,7 +96,7 @@ bool UUID::InitializeWithNew() {
+@@ -100,7 +100,7 @@ bool UUID::InitializeWithNew() {
    InitializeFromBytes(uuid);
    return true;
  #elif defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \

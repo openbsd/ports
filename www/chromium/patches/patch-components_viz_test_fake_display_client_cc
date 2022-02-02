@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_viz_test_fake_display_client_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
-
 Index: components/viz/test/fake_display_client.cc
 --- components/viz/test/fake_display_client.cc.orig
 +++ components/viz/test/fake_display_client.cc

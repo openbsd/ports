@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_common_sandbox_init_linux_cc,v 1.2 2020/10/22 13:52:54 robert Exp $
-
 Index: content/common/sandbox_init_linux.cc
 --- content/common/sandbox_init_linux.cc.orig
 +++ content/common/sandbox_init_linux.cc

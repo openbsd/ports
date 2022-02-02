@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_browser_font_access_font_enumeration_cache_h,v 1.8 2022/01/06 06:24:05 robert Exp $
-
 Index: content/browser/font_access/font_enumeration_cache.h
 --- content/browser/font_access/font_enumeration_cache.h.orig
 +++ content/browser/font_access/font_enumeration_cache.h
@@ -7,8 +5,8 @@ Index: content/browser/font_access/font_enumeration_cache.h
  #include "third_party/blink/public/mojom/font_access/font_access.mojom.h"
  
  #if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
--    defined(OS_MAC)
-+    defined(OS_MAC) || defined(OS_BSD)
+-    defined(OS_MAC) || defined(OS_FUCHSIA)
++    defined(OS_MAC) || defined(OS_FUCHSIA) || defined(OS_BSD)
  #define PLATFORM_HAS_LOCAL_FONT_ENUMERATION_IMPL 1
  #endif
  

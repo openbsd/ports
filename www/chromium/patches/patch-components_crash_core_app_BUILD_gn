@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_crash_core_app_BUILD_gn,v 1.14 2022/01/06 06:24:04 robert Exp $
-
 Index: components/crash/core/app/BUILD.gn
 --- components/crash/core/app/BUILD.gn.orig
 +++ components/crash/core/app/BUILD.gn
@@ -8,7 +6,7 @@ Index: components/crash/core/app/BUILD.gn
    ]
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "breakpad_linux.cc",
        "breakpad_linux.h",
@@ -16,7 +14,7 @@ Index: components/crash/core/app/BUILD.gn
      ]
    }
  
-+  if (is_openbsd) {
++  if (is_bsd) {
 +    sources -= [ "crashpad.cc" ]
 +  }
 +
@@ -28,7 +26,7 @@ Index: components/crash/core/app/BUILD.gn
    }
  
 -  if (is_android || is_linux || is_chromeos) {
-+  if ((is_android || is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_android || is_linux || is_chromeos) && !is_bsd) {
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
@@ -37,7 +35,7 @@ Index: components/crash/core/app/BUILD.gn
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      deps += [ "//third_party/breakpad:client" ]
    }
  

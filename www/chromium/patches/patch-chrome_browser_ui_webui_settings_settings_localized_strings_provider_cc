@@ -1,9 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_settings_settings_localized_strings_provider_cc,v 1.21 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 --- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -117,7 +117,7 @@
+@@ -116,7 +116,7 @@
  #include "chrome/browser/ui/webui/settings/chromeos/constants/routes.mojom.h"
  #endif
  
@@ -12,7 +10,7 @@ Index: chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
  #include "ui/display/screen.h"
  #endif
  
-@@ -137,7 +137,7 @@
+@@ -136,7 +136,7 @@
  #include "chrome/browser/ui/webui/certificate_manager_localized_strings_provider.h"
  #endif
  

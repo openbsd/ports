@@ -1,4 +1,3 @@
-$OpenBSD: patch-ui_gfx_font_fallback_linux_cc,v 1.4 2019/12/15 12:03:47 robert Exp $
 Index: ui/gfx/font_fallback_linux.cc
 --- ui/gfx/font_fallback_linux.cc.orig
 +++ ui/gfx/font_fallback_linux.cc

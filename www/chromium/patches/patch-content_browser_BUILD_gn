@@ -1,14 +1,17 @@
-$OpenBSD: patch-content_browser_BUILD_gn,v 1.29 2022/01/06 06:24:05 robert Exp $
-
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -2284,8 +2284,6 @@ source_set("browser") {
-       "memory/swap_metrics_driver_impl_linux.h",
-       "sandbox_host_linux.cc",
-       "sandbox_host_linux.h",
--      "sandbox_ipc_linux.cc",
--      "sandbox_ipc_linux.h",
-       "zygote_host/zygote_host_impl_linux.cc",
-       "zygote_host/zygote_host_impl_linux.h",
+@@ -2317,6 +2317,13 @@ source_set("browser") {
      ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     sources += [
+       "handwriting/handwriting_recognition_service_impl_cros.cc",

@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_dns_public_BUILD_gn,v 1.3 2022/01/06 06:24:05 robert Exp $
-
 Index: net/dns/public/BUILD.gn
 --- net/dns/public/BUILD.gn.orig
 +++ net/dns/public/BUILD.gn
@@ -8,7 +6,7 @@ Index: net/dns/public/BUILD.gn
    ]
  
 -  if (is_linux) {
-+  if (is_linux && !is_openbsd) {
++  if (is_linux && !is_bsd) {
      sources += [
        "resolv_reader.cc",
        "resolv_reader.h",

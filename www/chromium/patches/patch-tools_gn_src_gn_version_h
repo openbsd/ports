@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_gn_src_gn_version_h,v 1.2 2021/09/01 16:54:40 robert Exp $
-
 Index: tools/gn/src/gn/version.h
 --- tools/gn/src/gn/version.h.orig
 +++ tools/gn/src/gn/version.h

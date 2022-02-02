@@ -1,5 +1,3 @@
-$OpenBSD: patch-services_device_serial_BUILD_gn,v 1.7 2021/09/01 16:54:40 robert Exp $
-
 Index: services/device/serial/BUILD.gn
 --- services/device/serial/BUILD.gn.orig
 +++ services/device/serial/BUILD.gn
@@ -7,7 +5,7 @@ Index: services/device/serial/BUILD.gn
        ]
      }
  
-+    if (is_openbsd) {
++    if (is_bsd) {
 +      sources -= [
 +        "serial_device_enumerator_linux.cc",
 +        "serial_device_enumerator_linux.h"

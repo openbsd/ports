@@ -1,12 +1,10 @@
-$OpenBSD: patch-chrome_browser_web_applications_externally_managed_app_install_task_cc,v 1.5 2022/01/06 06:24:04 robert Exp $
-
 Index: chrome/browser/web_applications/externally_managed_app_install_task.cc
 --- chrome/browser/web_applications/externally_managed_app_install_task.cc.orig
 +++ chrome/browser/web_applications/externally_managed_app_install_task.cc
-@@ -306,7 +306,7 @@ void ExternallyManagedAppInstallTask::OnWebAppInstalle
-   options.os_hooks[OsHookType::kFileHandlers] = true;
-   options.os_hooks[OsHookType::kProtocolHandlers] = true;
-   options.os_hooks[OsHookType::kUninstallationViaOsSettings] = true;
+@@ -310,7 +310,7 @@ void ExternallyManagedAppInstallTask::OnWebAppInstalle
+   const WebApp* web_app = registrar_->GetAppById(app_id);
+   options.os_hooks[OsHookType::kUninstallationViaOsSettings] =
+       web_app->CanUserUninstallWebApp();
 -#if defined(OS_WIN) || defined(OS_MAC) || \
 +#if defined(OS_WIN) || defined(OS_MAC) || defined(OS_BSD) || \
      (defined(OS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))

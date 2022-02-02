@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_perf_chrome_telemetry_build_BUILD_gn,v 1.13 2022/01/06 06:24:05 robert Exp $
-
 Index: tools/perf/chrome_telemetry_build/BUILD.gn
 --- tools/perf/chrome_telemetry_build/BUILD.gn.orig
 +++ tools/perf/chrome_telemetry_build/BUILD.gn
@@ -8,7 +6,7 @@ Index: tools/perf/chrome_telemetry_build/BUILD.gn
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
  
      # CrOS currently has issues with the locally compiled version of
@@ -17,7 +15,7 @@ Index: tools/perf/chrome_telemetry_build/BUILD.gn
  
    # Cr-Fuchsia doesn't support breakpad.
 -  if (!is_win && !is_fuchsia) {
-+  if (!is_win && !is_fuchsia && !is_openbsd) {
++  if (!is_win && !is_fuchsia && !is_bsd) {
      data_deps += [
        # This is defined for Windows, but is unused by Telemetry on
        # Windows, and including it can have issues when cross-compiling

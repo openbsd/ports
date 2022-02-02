@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_safe_browsing_core_browser_db_v4_protocol_manager_util_cc,v 1.3 2022/01/06 06:24:04 robert Exp $
-
 Index: components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc
 --- components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc.orig
 +++ components/safe_browsing/core/browser/db/v4_protocol_manager_util.cc

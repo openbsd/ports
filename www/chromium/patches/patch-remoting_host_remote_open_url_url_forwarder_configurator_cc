@@ -1,9 +1,7 @@
-$OpenBSD: patch-remoting_host_remote_open_url_url_forwarder_configurator_cc,v 1.2 2022/01/06 06:24:05 robert Exp $
-
 Index: remoting/host/remote_open_url/url_forwarder_configurator.cc
 --- remoting/host/remote_open_url/url_forwarder_configurator.cc.orig
 +++ remoting/host/remote_open_url/url_forwarder_configurator.cc
-@@ -13,7 +13,7 @@ UrlForwarderConfigurator::UrlForwarderConfigurator() =
+@@ -12,7 +12,7 @@ UrlForwarderConfigurator::UrlForwarderConfigurator() =
  
  UrlForwarderConfigurator::~UrlForwarderConfigurator() = default;
  

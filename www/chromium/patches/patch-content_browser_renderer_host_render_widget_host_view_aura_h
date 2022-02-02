@@ -1,9 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_host_view_aura_h,v 1.2 2022/01/06 06:24:05 robert Exp $
-
 Index: content/browser/renderer_host/render_widget_host_view_aura.h
 --- content/browser/renderer_host/render_widget_host_view_aura.h.orig
 +++ content/browser/renderer_host/render_widget_host_view_aura.h
-@@ -236,7 +236,7 @@ class CONTENT_EXPORT RenderWidgetHostViewAura
+@@ -235,7 +235,7 @@ class CONTENT_EXPORT RenderWidgetHostViewAura
    ukm::SourceId GetClientSourceForMetrics() const override;
    bool ShouldDoLearning() override;
  

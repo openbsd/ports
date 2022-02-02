@@ -1,5 +1,3 @@
-$OpenBSD: patch-services_network_network_service_h,v 1.27 2022/01/06 06:24:05 robert Exp $
-
 Index: services/network/network_service.h
 --- services/network/network_service.h.orig
 +++ services/network/network_service.h

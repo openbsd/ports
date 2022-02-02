@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_browser_utility_process_host_receiver_bindings_cc,v 1.3 2020/10/22 13:52:54 robert Exp $
-
 Index: content/browser/utility_process_host_receiver_bindings.cc
 --- content/browser/utility_process_host_receiver_bindings.cc.orig
 +++ content/browser/utility_process_host_receiver_bindings.cc

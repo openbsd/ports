@@ -1,9 +1,7 @@
-$OpenBSD: patch-mojo_public_c_system_thunks_cc,v 1.6 2021/09/01 16:54:40 robert Exp $
-
 Index: mojo/public/c/system/thunks.cc
 --- mojo/public/c/system/thunks.cc.orig
 +++ mojo/public/c/system/thunks.cc
-@@ -20,7 +20,7 @@
+@@ -19,7 +19,7 @@
  #include "mojo/public/c/system/core.h"
  #include "mojo/public/c/system/macros.h"
  
@@ -12,7 +10,7 @@ Index: mojo/public/c/system/thunks.cc
  #include "base/environment.h"
  #include "base/files/file_path.h"
  #include "base/scoped_native_library.h"
-@@ -68,7 +68,7 @@ class CoreLibraryInitializer {
+@@ -67,7 +67,7 @@ class CoreLibraryInitializer {
    ~CoreLibraryInitializer() = default;
  
    MojoResult LoadLibrary(base::FilePath library_path) {
@@ -21,7 +19,7 @@ Index: mojo/public/c/system/thunks.cc
      if (library_ && library_->is_valid())
        return MOJO_RESULT_OK;
  
-@@ -82,7 +82,7 @@ class CoreLibraryInitializer {
+@@ -81,7 +81,7 @@ class CoreLibraryInitializer {
  
      if (library_path.empty()) {
        // Default to looking for the library in the current working directory.
@@ -30,7 +28,7 @@ Index: mojo/public/c/system/thunks.cc
        const base::FilePath::CharType kDefaultLibraryPathValue[] =
            FILE_PATH_LITERAL("./libmojo_core.so");
  #elif defined(OS_WIN)
-@@ -132,7 +132,7 @@ class CoreLibraryInitializer {
+@@ -131,7 +131,7 @@ class CoreLibraryInitializer {
    }
  
   private:
