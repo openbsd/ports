@@ -1,13 +1,10 @@
-$OpenBSD: patch-cmake_options__linux_cmake,v 1.2 2022/02/02 15:19:33 kn Exp $
+$OpenBSD: patch-cmake_options__linux_cmake,v 1.3 2022/02/02 22:04:29 kn Exp $
 
 1) remove unknown -fstack-clash-protection (produces warnings spam)
 
 2) We prefer to use the system malloc instead of jemalloc. The problem
 that is solved with it has never been reproduced with OpenBSD malloc.
 more: https://github.com/telegramdesktop/tdesktop/issues/16084
-
-3) Turn on '-pie' - the bug that caused it to be disabled is solved.
-more: https://gitlab.gnome.org/GNOME/nautilus/-/issues/1601
 
 Index: cmake/options_linux.cmake
 --- cmake/options_linux.cmake.orig
@@ -33,11 +30,3 @@ Index: cmake/options_linux.cmake
  if (DESKTOP_APP_USE_ALLOCATION_TRACER)
      target_link_options(common_options
      INTERFACE
-@@ -122,6 +115,6 @@ else()
-         -fwhole-program
-         -Wl,-z,relro
-         -Wl,-z,now
--        # -pie # https://gitlab.gnome.org/GNOME/nautilus/-/issues/1601
-+        -pie
-     )
- endif()
