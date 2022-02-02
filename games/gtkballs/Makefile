@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/12/07 10:25:27 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2022/02/02 11:36:34 sthen Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
@@ -19,6 +19,10 @@ LIB_DEPENDS=	x11/gtk+3
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
+
+# for gettext.m4
+BUILD_DEPENDS+=	devel/gettext,-tools
+
 CONFIGURE_STYLE=autoreconf
 AUTORECONF=	./autogen.sh
 AUTOMAKE_VERSION=1.16
