@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.135 2021/11/18 21:36:21 tb Exp $
+# $OpenBSD: Makefile,v 1.136 2022/02/02 10:46:37 ajacoutot Exp $
 
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.4.2
+V=			3.4.3
 DISTNAME=		cyrus-imapd-${V}
-REVISION=		0
 
 SHARED_LIBS +=	cyrus                     0.0 # 0.0
 SHARED_LIBS +=	cyrus_imap                0.0 # 0.0

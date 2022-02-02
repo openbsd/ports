@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2021/09/01 09:00:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2022/02/02 10:46:38 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -508,6 +508,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.0.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.4/x/3.4.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.5/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/index.html
@@ -771,7 +772,6 @@ share/examples/cyrus-imapd/tools/config2rst
 share/examples/cyrus-imapd/tools/config2sample
 share/examples/cyrus-imapd/tools/fixsearchpath.pl
 share/examples/cyrus-imapd/tools/git-version.sh
-share/examples/cyrus-imapd/tools/jenkins-build.sh
 share/examples/cyrus-imapd/tools/masssievec
 share/examples/cyrus-imapd/tools/mkimap
 share/examples/cyrus-imapd/tools/mknewsgroups
