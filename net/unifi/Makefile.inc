@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.33 2022/02/02 18:01:20 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.34 2022/02/02 18:07:08 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -50,7 +50,7 @@ MODJAVA_VER =	1.8
 # building snappy-java for i386 is even more of a pain than for amd64)
 ONLY_FOR_ARCHS =	amd64
 
-RUN_DEPENDS =	databases/mongodb<3.6.0 \
+RUN_DEPENDS =	databases/mongodb \
 		java/javaPathHelper
 
 # disable dup file check, embedded version numbers in PLISTs result
