@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_mongo_db_repl_master_slave_cpp,v 1.1 2017/10/23 07:44:22 kili Exp $
+$OpenBSD: patch-src_mongo_db_repl_master_slave_cpp,v 1.2 2022/02/02 18:14:58 sthen Exp $
 
 pcrecpp.h used to expose std::string, which is no longer the case
 starting with pcre-8.41.
@@ -6,7 +6,7 @@ starting with pcre-8.41.
 Index: src/mongo/db/repl/master_slave.cpp
 --- src/mongo/db/repl/master_slave.cpp.orig
 +++ src/mongo/db/repl/master_slave.cpp
-@@ -77,6 +77,7 @@ using std::endl;
+@@ -78,6 +78,7 @@ using std::endl;
  using std::max;
  using std::min;
  using std::set;

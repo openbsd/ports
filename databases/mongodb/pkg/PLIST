@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/02/20 17:58:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/02 18:14:59 sthen Exp $
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/mongod
@@ -16,12 +16,10 @@
 @bin bin/mongod
 @bin bin/mongoperf
 @bin bin/mongos
-@bin bin/mongosniff
 @man man/man1/mongo.1
 @man man/man1/mongod.1
 @man man/man1/mongoperf.1
 @man man/man1/mongos.1
-@man man/man1/mongosniff.1
 share/examples/mongodb/
 share/examples/mongodb/mongodb.conf
 @sample ${SYSCONFDIR}/mongodb.conf

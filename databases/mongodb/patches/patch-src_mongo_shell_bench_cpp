@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_mongo_shell_bench_cpp,v 1.1 2017/10/23 07:44:22 kili Exp $
+$OpenBSD: patch-src_mongo_shell_bench_cpp,v 1.2 2022/02/02 18:14:58 sthen Exp $
+
+XXX still needed?
+
 
 pcrecpp.h used to expose std::string, which is no longer the case
 starting with pcre-8.41.
@@ -6,9 +9,9 @@ starting with pcre-8.41.
 Index: src/mongo/shell/bench.cpp
 --- src/mongo/shell/bench.cpp.orig
 +++ src/mongo/shell/bench.cpp
-@@ -79,6 +79,7 @@ using std::unique_ptr;
+@@ -78,6 +78,7 @@ namespace mongo {
+ using std::unique_ptr;
  using std::cout;
- using std::endl;
  using std::map;
 +using std::string;
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/27 14:17:02 tb Exp $
+# $OpenBSD: Makefile,v 1.46 2022/02/02 18:14:58 sthen Exp $
 
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
@@ -9,31 +9,37 @@ DPB_PROPERTIES = parallel
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r3.2.22
+# db upgrades are only supported across one major version (3.2-3.4,
+# 3.4-3.6, etc) so holding off on 3.6 until after OpenBSD 7.1.
+DISTNAME =	mongodb-src-r3.4.24
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
-REVISION =	5
 
 HOMEPAGE =	https://www.mongodb.com/
 
-# mongodb itself: AGPLv3
-# client/utils:   Apache 2.0
+# mongodb itself: SSPLv1
+# abseil-cpp: Apache
+# asio: Boost
+# mozjs-60: MPL
+# wiredtiger: GPLv2 or v3
+# (later versions: fmt: MIT)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += boost_chrono-mt boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
-WANTLIB += execinfo kvm m pcap pcre pcrecpp pthread ssl yaml-cpp
-WANTLIB += z ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += boost_chrono-mt boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt c crypto execinfo icudata icui18n icuuc
+WANTLIB += kvm m pcre pcrecpp snappy ssl stemmer yaml-cpp z
 
 MASTER_SITES =	https://fastdl.mongodb.org/src/
+FIX_CRLF_FILES = src/third_party/IntelRDFPMathLib20U1/LIBRARY/src/bid_functions.h
 
 MODULES =	devel/scons \
 		lang/python
 
-# XXX should come from scons module, but broken when gcc module also used:
-NO_CCACHE =	Yes
-
+# C++14 (newer versions: C++17)
 COMPILER =	base-clang ports-gcc
+
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
 MODSCONS_USE_V2 = Yes
@@ -45,28 +51,41 @@ MODSCONS_ENV =	CC="${CC}" \
 		CPPPATH="${LOCALBASE}/include" \
 		LIBPATH="${LOCALBASE}/lib" \
 		VERBOSE=true
+# (later versions: add -DBOOST_LOG_DYN_LINK to CXXFLAGS)
 MODSCONS_FLAGS += --prefix="${PREFIX}" \
 		  --opt=on \
-		  --ssl=SSL \
+		  --ssl=on \
 		  --allocator=system \
 		  --use-system-boost \
+		  --use-system-icu \
 		  --use-system-pcre \
+		  --use-system-snappy \
+		  --use-system-stemmer \
 		  --use-system-yaml \
 		  --use-system-zlib \
 		  -j${MAKE_JOBS}
+# (later versions: --use-system-zstd; also have --use-system-fmt but
+# "fails at linking because mongo reaches into fmt internals; see
+# src/mongo/logv2/log_attr.h)
 
 ALL_TARGET =	core tools
-LIB_DEPENDS =	devel/boost \
+# (later versions: ALL_TARGET =	install-core)
+LIB_DEPENDS =	archivers/snappy \
+		devel/boost \
 		devel/pcre \
-		devel/yaml-cpp
-TEST_DEPENDS =	textproc/py-yaml \
-		databases/py-mongo
-# icu4c support is not actually compiled in, but scons picks up the
-# headers and patching this away is intrusive
-BUILD_DEPENDS =	textproc/icu4c
+		devel/yaml-cpp \
+		textproc/icu4c \
+		textproc/libstemmer
+TEST_DEPENDS =	databases/py-mongo${MODPY_FLAVOR}
+BUILD_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
+# later versions: BDEPs on devel/py-cheetah${MODPY_FLAVOR}
+#		sysutils/py-psutil${MODPY_FLAVOR}
+
+# later versions: post-extract:
+# cd ${WRKSRC}/src/third_party/mozjs-60/platform/x86_64/ && cp -R freebsd openbsd
 
 do-install:
-.for bin in mongo mongod mongos mongosniff mongobridge mongoperf
+.for bin in mongo mongod mongos mongobridge mongoperf
 	${INSTALL_PROGRAM} ${WRKSRC}/${bin} ${PREFIX}/bin/
 	if [ -f ${WRKSRC}/debian/${bin}.1 ]; then \
 	  ${INSTALL_MAN} ${WRKSRC}/debian/${bin}.1 ${PREFIX}/man/man1; \

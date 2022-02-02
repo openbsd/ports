@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mongo_db_repl_oplog_fetcher_cpp,v 1.1 2022/02/02 18:14:58 sthen Exp $
+
+from https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=224090
+
+Index: src/mongo/db/repl/oplog_fetcher.cpp
+--- src/mongo/db/repl/oplog_fetcher.cpp.orig
++++ src/mongo/db/repl/oplog_fetcher.cpp
+@@ -282,7 +282,7 @@ StatusWith<boost::optional<rpc::OplogQueryMetadata>> p
+         if (!metadataResult.isOK()) {
+             return metadataResult.getStatus();
+         }
+-        oqMetadata = boost::make_optional<rpc::OplogQueryMetadata>(metadataResult.getValue());
++        oqMetadata = boost::optional<rpc::OplogQueryMetadata>(metadataResult.getValue());
+     }
+     return oqMetadata;
+ }
