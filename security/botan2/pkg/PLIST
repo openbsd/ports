@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/11/12 22:02:51 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.21 2022/02/02 18:21:43 bluhm Exp $
 @bin bin/botan
 @bin bin/botan-test
 include/botan-2/
@@ -311,6 +311,7 @@ include/botan-2/botan/xmss_wots_privatekey.h
 include/botan-2/botan/xmss_wots_publickey.h
 include/botan-2/botan/xtea.h
 include/botan-2/botan/xts.h
+include/botan-2/botan/zfec.h
 include/botan-2/botan/zlib.h
 @static-lib lib/libbotan-2.a
 @lib lib/libbotan-2.so.${LIBbotan-2_VERSION}
@@ -1967,6 +1968,7 @@ share/botan-2/data/x509/xmss/
 share/botan-2/data/x509/xmss/xmss_bouncycastle_sha256_10_root.pem
 share/botan-2/data/x509/xmss/xmss_isara_root.pem
 share/botan-2/data/x509_dn.vec
+share/botan-2/data/zfec.vec
 share/doc/botan-2/
 share/doc/botan-2/authors.txt
 share/doc/botan-2/handbook/
@@ -2005,6 +2007,7 @@ share/doc/botan-2/handbook/api_ref/tpm.rst
 share/doc/botan-2/handbook/api_ref/tss.rst
 share/doc/botan-2/handbook/api_ref/versions.rst
 share/doc/botan-2/handbook/api_ref/x509.rst
+share/doc/botan-2/handbook/api_ref/zfec.rst
 share/doc/botan-2/handbook/authors.txt
 share/doc/botan-2/handbook/building.rst
 share/doc/botan-2/handbook/cli.rst
