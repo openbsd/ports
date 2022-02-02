@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/01 16:40:42 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/02 15:19:30 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -13,12 +13,11 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		6372a0848f8dd84013e291b44f9d1427fde3a90e
-DISTNAME =		${GH_PROJECT}-0.0.0.20220123
-REVISION =		3
+GH_COMMIT =		d618d0b5ff3e59bea0143e6070481f8f4316a428
+DISTNAME =		${GH_PROJECT}-0.0.0.20220202
 CATEGORIES =		net
 
-SHARED_LIBS =		tg_owt	0.0	# 0.0.0
+SHARED_LIBS =		tg_owt	1.0	# 0.0.0
 
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
@@ -46,9 +45,6 @@ PATCHFILES +=		tg_owt-rtc_base-pthread-{}8207a87c.patch:1
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		tg_owt-defer-third-party-sources-{}bf55efe3.patch:1
-# Pending "Fix TG_OWT_USE_PIPEWIRE=OFF build (on unix systems without Pipewire)"
-# https://github.com/desktop-app/tg_owt/pull/86
-PATCHFILES +=		tg_owt-fix-build-without-pipewire-{}4263c7b7.patch:1
 # Pending "libabsl: Use system include directories"
 # https://github.com/desktop-app/tg_owt/pull/87
 PATCHFILES +=		tg_owt-libabsl-use-includes-{}fb12b4bd.patch:1
@@ -85,8 +81,8 @@ WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
 WANTLIB += absl_str_format_internal absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone avcodec avformat avutil crypto
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl jpeg m openh264 opus protobuf
-WANTLIB += ssl swresample swscale usrsctp vpx
+WANTLIB += jpeg m openh264 opus protobuf ssl swresample swscale
+WANTLIB += usrsctp vpx
 
 # C++17 set below, some components use -std=gnu++20
 COMPILER =		base-clang ports-gcc
@@ -99,8 +95,6 @@ BUILD_DEPENDS =		devel/yasm
 
 LIB_DEPENDS =		audio/opus \
 			devel/abseil-cpp \
-			devel/gettext,-runtime \
-			devel/glib2 \
 			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/jpeg \
@@ -138,7 +132,6 @@ post-extract:
 	# all source headers get packaged, so remove those not needed at
 	# build-time by tg_owt and tdesktop
 	cd ${WRKSRC}/src/ && rm -r -- \
-	    base/android/ \
 	    sdk/{android,objc}/
 
 post-install:

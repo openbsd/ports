@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2022/01/26 18:56:45 kn Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2022/02/02 15:19:30 kn Exp $
 
 - attempt to fix undefined references to dcsctp by removing dcsctp_transport.*
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -809,8 +809,6 @@ PRIVATE
+@@ -826,8 +826,6 @@ PRIVATE
      media/engine/webrtc_media_engine_defaults.cc
      media/engine/webrtc_video_engine.cc
      media/engine/webrtc_voice_engine.cc
