@@ -1,4 +1,4 @@
-$OpenBSD: patch-cmake_options__linux_cmake,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+$OpenBSD: patch-cmake_options__linux_cmake,v 1.2 2022/02/02 15:19:33 kn Exp $
 
 1) remove unknown -fstack-clash-protection (produces warnings spam)
 
@@ -20,7 +20,7 @@ Index: cmake/options_linux.cmake
      -fPIC
      $<IF:$<CONFIG:Debug>,,-fno-strict-aliasing>
      -pipe
-@@ -63,12 +62,6 @@ if (DESKTOP_APP_SPECIAL_TARGET)
+@@ -62,12 +61,6 @@ if (DESKTOP_APP_SPECIAL_TARGET)
      target_link_options(common_options INTERFACE $<IF:$<CONFIG:Debug>,,-g -flto -fuse-linker-plugin>)
  endif()
  
@@ -33,7 +33,7 @@ Index: cmake/options_linux.cmake
  if (DESKTOP_APP_USE_ALLOCATION_TRACER)
      target_link_options(common_options
      INTERFACE
-@@ -116,6 +109,6 @@ if (NOT DESKTOP_APP_USE_PACKAGED)
+@@ -122,6 +115,6 @@ else()
          -fwhole-program
          -Wl,-z,relro
          -Wl,-z,now

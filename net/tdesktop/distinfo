@@ -1,2 +1,4 @@
-SHA256 (tdesktop-3.4.8-full.tar.gz) = apYqERC8FcIZmYMrAVGvgSXzOjtul4RhuPRGIXx2h24=
-SIZE (tdesktop-3.4.8-full.tar.gz) = 41220984
+SHA256 (tdesktop-3.5.0-full.tar.gz) = O1dC0FqXvZqWAkGSk8/rUCO5j7qB+0ZdsNiBzoEfZwY=
+SHA256 (tdesktop-fix-qt5-includes-f552ccb.patch) = sWqFU90d6ZlfoGamuZxK/Q/G0cGVvW9MJwBKPb8CplY=
+SIZE (tdesktop-3.5.0-full.tar.gz) = 41200724
+SIZE (tdesktop-fix-qt5-includes-f552ccb.patch) = 675

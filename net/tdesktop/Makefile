@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/30 13:34:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/02 15:19:33 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -7,14 +7,21 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.4.8
-REVISION =		0
+V =			3.5.0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
+
+# Merged "Use QtWidgets private include directories with Qt 5"
+MASTER_SITES0 =		https://github.com/desktop-app/cmake_helpers/commit/
+PATCHFILES +=		tdesktop-fix-qt5-includes-{}f552ccb.patch:0
+PATCH_CASES +=		tdesktop-fix-qt5-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/cmake/ <$$patchfile ;;
+
+PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -47,7 +54,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/abseil-cpp \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt \
+			net/tg_owt>=0.0.0.20220202 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt5/qtsvg
