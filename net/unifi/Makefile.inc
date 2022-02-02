@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.32 2022/01/24 16:35:12 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.33 2022/02/02 18:01:20 sthen Exp $
 
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
@@ -97,7 +97,12 @@ do-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}{,/backup,/data,/run,/work}
 	cp -Rp ${WRKSRC}/* ${INSTDIR}
+.if ${V:M5.6*}
+	printf '#!/bin/ksh\nexec ${LOCALBASE}/bin/mongod $$(echo $$* | sed -e s/--nohttpinterface//)\n' > ${WRKDIR}/mongod
+	${INSTALL_SCRIPT} ${WRKDIR}/mongod ${INSTDIR}/bin/mongod
+.else
 	ln -fs ${LOCALBASE}/bin/mongod ${INSTDIR}/bin/mongod
+.endif
 	ln -s /var/log/unifi ${INSTDIR}/logs
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 	find ${INSTDIR} -type f -exec chmod ${SHAREMODE} {} +
@@ -110,5 +115,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs/
 	${INSTALL_DATA} ${FULLDISTDIR}/UBNT-{UniFi-,}MIB \
 		${PREFIX}/share/snmp/mibs/
-	@echo;echo 'Note: ignore the "symlink(s) point to non-existent" warnings during packaging.';echo
+	@echo;echo 'Note: ignore "symlink(s) point to non-existent" warnings during packaging.';echo
 .endif
