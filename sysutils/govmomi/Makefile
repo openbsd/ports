@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/27 09:47:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2022/02/03 09:59:18 ajacoutot Exp $
 
 COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
 MODGO_MODNAME=		github.com/vmware/govmomi
-MODGO_VERSION=		v0.27.2
+MODGO_VERSION=		v0.27.3
 DISTNAME=		govmomi-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/vmware/govmomi@${MODGO_VERSION}
