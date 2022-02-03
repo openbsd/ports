@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/12/22 17:37:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/03 07:10:24 landry Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap
 bin/web2ldap
-bin/web2ldap.wsgi
 lib/python${MODPY_VERSION}/site-packages/web2ldap/
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -195,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}pk
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}pkcschema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}posixautogen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}posixautogen.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}powerdns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}powerdns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}ppolicy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}ppolicy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/${MODPY_PYCACHE}quirks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -252,6 +253,7 @@ lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/pgpkeysrv.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/pilotperson.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/pkcschema.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/posixautogen.py
+lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/powerdns.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/ppolicy.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/quirks.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/app/plugins/samba.py
@@ -346,6 +348,7 @@ share/doc/web2ldap/changes-1.3.html
 share/doc/web2ldap/changes-1.4.html
 share/doc/web2ldap/changes-1.5.html
 share/doc/web2ldap/changes-1.6.html
+share/doc/web2ldap/changes-1.7.html
 share/doc/web2ldap/changes-ancient.html
 share/doc/web2ldap/changes.html
 share/doc/web2ldap/compatibility.html
@@ -370,7 +373,6 @@ share/doc/web2ldap/ssi/changes_navigation.html
 share/doc/web2ldap/ssi/footer.html
 share/doc/web2ldap/ssi/head.html
 share/doc/web2ldap/ssi/navigation.html
-share/doc/web2ldap/todo.html
 share/doc/web2ldap/usability.html
 share/doc/web2ldap/web2ldap.html
 share/doc/web2ldap/web2ldapcnf.html
@@ -395,10 +397,6 @@ share/examples/web2ldap/logging.conf
 @sample ${SYSCONFDIR}/web2ldap/logging.conf
 share/examples/web2ldap/properties/
 @sample ${SYSCONFDIR}/web2ldap/properties/
-share/examples/web2ldap/properties/attribute_select_c.properties
-@sample ${SYSCONFDIR}/web2ldap/properties/attribute_select_c.properties
-share/examples/web2ldap/properties/attribute_select_countryCode.properties
-@sample ${SYSCONFDIR}/web2ldap/properties/attribute_select_countryCode.properties
 share/examples/web2ldap/properties/attribute_select_demailMaxAuthLevel.properties
 @sample ${SYSCONFDIR}/web2ldap/properties/attribute_select_demailMaxAuthLevel.properties
 share/examples/web2ldap/properties/attribute_select_gender.properties
@@ -500,6 +498,8 @@ share/examples/web2ldap/templates/dhcp/read_dhcpHost.html
 share/examples/web2ldap/templates/dhcp/read_dhcpServer.html
 share/examples/web2ldap/templates/dhcp/read_dhcpService.html
 share/examples/web2ldap/templates/dhcp/read_dhcpSubnet.html
+share/examples/web2ldap/templates/inputform_PdnsDomain.html
+share/examples/web2ldap/templates/inputform_PdnsRecordData.html
 share/examples/web2ldap/templates/inputform_account.html
 share/examples/web2ldap/templates/inputform_dNSDomain2.html
 share/examples/web2ldap/templates/inputform_eduPerson.html

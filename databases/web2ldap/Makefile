@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/03 09:29:37 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/03 07:10:24 landry Exp $
 
 COMMENT =	full-featured LDAP client running as web application
 
-MODPY_EGG_VERSION =	1.6.27
+MODPY_EGG_VERSION =	1.7.0
 DISTNAME =	web2ldap-${MODPY_EGG_VERSION}
 
 CATEGORIES =	databases www sysutils
@@ -22,13 +22,16 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =	Yes
 
-BUILD_DEPENDS =	databases/py-ldap0${MODPY_FLAVOR}>=1.2.8 \
+BUILD_DEPENDS =	databases/py-ldap0${MODPY_FLAVOR}>=1.4.7 \
+		devel/py-iso3166${MODPY_FLAVOR} \
 		textproc/py-xlwt${MODPY_FLAVOR} \
 		net/py-dnspython${MODPY_FLAVOR} \
 		security/py-asn1crypto${MODPY_FLAVOR} \
 		security/py-paramiko${MODPY_FLAVOR}
 RUN_DEPENDS =	${BUILD_DEPENDS} \
 		graphics/py-Pillow${MODPY_FLAVOR} \
+		sysutils/py-prometheus_client${MODPY_FLAVOR} \
+		telephony/py-phonenumbers${MODPY_FLAVOR} \
 		textproc/py-defusedxml${MODPY_FLAVOR}
 
 CONFDIR =	${PREFIX}/share/examples/web2ldap
