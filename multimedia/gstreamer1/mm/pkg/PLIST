@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/14 06:03:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/03 09:35:18 ajacoutot Exp $
 include/gstreamermm-${API}/
 include/gstreamermm-${API}/gstreamermm/
 include/gstreamermm-${API}/gstreamermm.h
@@ -317,6 +317,8 @@ lib/gstreamermm-${API}/include/gstreamermmconfig.h
 lib/libgstreamermm-${API}.la
 @lib lib/libgstreamermm-${API}.so.${LIBgstreamermm-${API}_VERSION}
 lib/pkgconfig/gstreamermm-${API}.pc
+share/devhelp/
+share/devhelp/books/
 share/devhelp/books/gstreamermm-${API}/
 share/devhelp/books/gstreamermm-${API}/gstreamermm-${API}.devhelp2
 share/doc/gstreamermm-${API}/

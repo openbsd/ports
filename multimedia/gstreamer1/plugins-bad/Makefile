@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.85 2021/10/30 15:05:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2022/02/03 09:35:18 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
-SHARED_LIBS += gsturidownloader-1.0      4.0 # 0.1805.0
-SHARED_LIBS += gstadaptivedemux-1.0      3.0 # 0.1805.0
-SHARED_LIBS += gstbadaudio-1.0           2.0 # 0.1805.0
-SHARED_LIBS += gstbasecamerabinsrc-1.0   5.0 # 0.1805.0
-SHARED_LIBS += gstcodecparsers-1.0       5.0 # 0.1805.0
-SHARED_LIBS += gstcodecs-1.0             0.0 # 0.1805.0
-SHARED_LIBS += gstinsertbin-1.0          4.0 # 0.1805.0
-SHARED_LIBS += gstphotography-1.0        5.0 # 0.1805.0
-SHARED_LIBS += gstisoff-1.0              2.0 # 0.1805.0
-SHARED_LIBS += gstmpegts-1.0             4.0 # 0.1805.0
-SHARED_LIBS += gstplayer-1.0             2.0 # 0.1805.0
-SHARED_LIBS += gstsctp-1.0               2.0 # 0.1805.0
+SHARED_LIBS += gsturidownloader-1.0      4.0 # 0.1806.0
+SHARED_LIBS += gstadaptivedemux-1.0      3.0 # 0.1806.0
+SHARED_LIBS += gstbadaudio-1.0           2.0 # 0.1806.0
+SHARED_LIBS += gstbasecamerabinsrc-1.0   5.0 # 0.1806.0
+SHARED_LIBS += gstcodecparsers-1.0       5.0 # 0.1806.0
+SHARED_LIBS += gstcodecs-1.0             0.0 # 0.1806.0
+SHARED_LIBS += gstinsertbin-1.0          4.0 # 0.1806.0
+SHARED_LIBS += gstphotography-1.0        5.0 # 0.1806.0
+SHARED_LIBS += gstisoff-1.0              2.0 # 0.1806.0
+SHARED_LIBS += gstmpegts-1.0             4.0 # 0.1806.0
+SHARED_LIBS += gstplayer-1.0             2.0 # 0.1806.0
+SHARED_LIBS += gstsctp-1.0               2.0 # 0.1806.0
 SHARED_LIBS += gsttranscoder-1.0         0.0 # 0
-SHARED_LIBS += gstwebrtc-1.0             2.0 # 0.1805.0
+SHARED_LIBS += gstwebrtc-1.0             2.0 # 0.1806.0
 
 WANTLIB += ${COMPILER_LIBCXX} SoundTouch X11 ass bs2b bz2 c cairo
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/09/09 10:12:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2022/02/03 09:35:18 ajacoutot Exp $
 
 COMMENT=		C++ bindings for GStreamer
 
 GNOME_PROJECT=		gstreamermm
 GNOME_VERSION=		1.10.0
 PKGNAME=		gstreamer1mm-${GNOME_VERSION}
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  gstreamermm-1.0      1.1      # 1.0
 
