@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/10/24 13:35:05 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/03 13:38:19 pvk Exp $
 @conflict py-elasticsearch-curator-*
 bin/curator
 bin/curator_cli
 bin/es_repo_mgr
 lib/python${MODPY_VERSION}/site-packages/curator/
 lib/python${MODPY_VERSION}/site-packages/curator/__init__.py
-lib/python${MODPY_VERSION}/site-packages/curator/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/curator/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
