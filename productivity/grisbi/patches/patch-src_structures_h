@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_structures_h,v 1.1 2022/02/03 10:53:15 landry Exp $
+
+Index: src/structures.h
+--- src/structures.h.orig
++++ src/structures.h
+@@ -304,6 +304,7 @@ struct _GrisbiAppConf
+ /* scheduled part */
+     gboolean    balances_with_scheduled;                    /* TRUE = the balance incorporates the scheduled operations */
+     gboolean    execute_scheduled_of_month;                 /* warn/execute scheduled at expiration (FALSE) or of the month (TRUE) */
++gboolean	last_selected_scheduler;					/* TRUE = last scheduler selected in list = default */
+ 	gboolean	select_scheduled_in_list;					/* TRUE = select last scheduled in list TRUE by default */
+ 	gint		nb_days_before_scheduled;					/* nombre de jours avant relance des opérations planifiées */
+ 	gboolean	scheduler_set_fixed_day;					/* Si coché le nombre est considéré comme un jour fixe */
