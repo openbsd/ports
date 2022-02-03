@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/03 09:32:30 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.16 2022/02/03 08:52:06 gonzalo Exp $
 
 COMMENT=	tiny download accelerator
 
-V=		2.17.10
+V=		2.17.11
 DISTNAME=	axel-$V
 
 CATEGORIES=	net
