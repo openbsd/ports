@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2021/02/28 12:40:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2022/02/03 22:17:27 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule
 
-V =		2.3.2
+V =		2.3.3
 DISTNAME =	aMule-$V
-REVISION =	19
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
@@ -37,7 +36,6 @@ BUILD_DEPENDS =		devel/bison \
 commonLIB_DEPENDS =	x11/wxWidgets>=3.0.4
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
-			converters/libiconv \
 			devel/cryptopp>=5.6.0 \
 			graphics/gd
 
@@ -45,16 +43,16 @@ LIB_DEPENDS-daemon =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			devel/cryptopp>=5.6.0
 
 LIB_DEPENDS-web =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+			converters/libiconv \
 			devel/gettext,-runtime
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils
 
-commonWANTLIB =		c iberty m pthread ${COMPILER_LIBCXX} \
-			z wx_baseu-3.0 wx_baseu_net-3.0
+commonWANTLIB =		c execinfo m pthread ${COMPILER_LIBCXX} \
+			wx_baseu-3.0 wx_baseu_net-3.0 z
 WANTLIB-main =		${WANTLIB} ${commonWANTLIB} \
-			X11 cryptopp fontconfig tiff webp \
-			freetype gd iconv jpeg png wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
+			cryptopp gd readline wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0
 
 WANTLIB-daemon =	${WANTLIB} ${commonWANTLIB} \
 			cryptopp readline
@@ -65,7 +63,7 @@ WANTLIB-web =		${WANTLIB} ${commonWANTLIB} \
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.65
+AUTOCONF_VERSION =	2.69
 
 CONFIGURE_ARGS =	--disable-optimize \
 			--disable-profile \
@@ -91,8 +89,10 @@ CONFIGURE_ARGS +=	--enable-debug
 .endif
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS=-lexecinfo \
 			LOCALDIR="${LOCALBASE}" \
-			X11R6DIR="${X11BASE}"
+			X11R6DIR="${X11BASE}" \
+			ac_cv_header_bfd_h=false
 
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -Wno-deprecated \
 				  -Wno-shadow -Wno-sign-compare \

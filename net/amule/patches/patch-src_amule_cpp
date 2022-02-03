@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_amule_cpp,v 1.7 2016/09/19 14:06:53 dcoppa Exp $
+$OpenBSD: patch-src_amule_cpp,v 1.8 2022/02/03 22:17:27 sthen Exp $
 
 Disable checking for new versions at startup.
 
---- src/amule.cpp.orig	Fri Sep 16 09:55:07 2016
-+++ src/amule.cpp	Sun Sep 18 15:31:21 2016
-@@ -527,6 +527,7 @@ bool CamuleApp::OnInit()
+Index: src/amule.cpp
+--- src/amule.cpp.orig
++++ src/amule.cpp
+@@ -524,6 +524,7 @@ bool CamuleApp::OnInit()
  		AddLogLineNS(msg);
  	}
  
@@ -12,7 +13,7 @@ Disable checking for new versions at startup.
  	// Test if there's any new version
  	if (thePrefs::GetCheckNewVersion()) {
  		// We use the thread base because I don't want a dialog to pop up.
-@@ -536,6 +537,7 @@ bool CamuleApp::OnInit()
+@@ -533,6 +534,7 @@ bool CamuleApp::OnInit()
  		version_check->Create();
  		version_check->Run();
  	}

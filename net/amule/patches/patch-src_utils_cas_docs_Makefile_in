@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_utils_cas_docs_Makefile_in,v 1.1 2016/09/19 14:06:53 dcoppa Exp $
---- src/utils/cas/docs/Makefile.in.orig	Mon Sep 19 12:55:00 2016
-+++ src/utils/cas/docs/Makefile.in	Mon Sep 19 12:59:08 2016
-@@ -486,39 +486,20 @@ uninstall-am:
+$OpenBSD: patch-src_utils_cas_docs_Makefile_in,v 1.2 2022/02/03 22:17:27 sthen Exp $
+
+Index: src/utils/cas/docs/Makefile.in
+--- src/utils/cas/docs/Makefile.in.orig
++++ src/utils/cas/docs/Makefile.in
+@@ -556,39 +556,20 @@ uninstall-am:
  install-data-hook:
  	@test -z "`echo $(SELECTED_MANPAGES)`" || \
  	for file in $(SELECTED_MANPAGES); do \

@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_libs_ec_cpp_ECSocket_cpp,v 1.1 2016/09/19 14:06:53 dcoppa Exp $
---- src/libs/ec/cpp/ECSocket.cpp.orig	Mon Sep 19 15:36:33 2016
-+++ src/libs/ec/cpp/ECSocket.cpp	Mon Sep 19 15:45:43 2016
-@@ -521,8 +521,8 @@ void ShowZError(int zerror, z_streamp strm)
+$OpenBSD: patch-src_libs_ec_cpp_ECSocket_cpp,v 1.2 2022/02/03 22:17:27 sthen Exp $
+
+Index: src/libs/ec/cpp/ECSocket.cpp
+--- src/libs/ec/cpp/ECSocket.cpp.orig
++++ src/libs/ec/cpp/ECSocket.cpp
+@@ -523,8 +523,8 @@ static void ShowZError(int zerror, z_streamp strm)
  	}
  	printf("ZLib operation returned %s\n", p);
  	printf("ZLib error message: %s\n", strm->msg);

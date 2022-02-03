@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_utils_wxCas_docs_Makefile_in,v 1.1 2016/09/19 14:06:53 dcoppa Exp $
---- src/utils/wxCas/docs/Makefile.in.orig	Mon Sep 19 12:54:52 2016
-+++ src/utils/wxCas/docs/Makefile.in	Mon Sep 19 12:58:44 2016
-@@ -486,39 +486,20 @@ uninstall-am:
+$OpenBSD: patch-src_utils_wxCas_docs_Makefile_in,v 1.2 2022/02/03 22:17:27 sthen Exp $
+
+Index: src/utils/wxCas/docs/Makefile.in
+--- src/utils/wxCas/docs/Makefile.in.orig
++++ src/utils/wxCas/docs/Makefile.in
+@@ -556,39 +556,20 @@ uninstall-am:
  install-data-hook:
  	@test -z "`echo $(SELECTED_MANPAGES)`" || \
  	for file in $(SELECTED_MANPAGES); do \
