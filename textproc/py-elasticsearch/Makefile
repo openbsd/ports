@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:02:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2022/02/03 13:36:57 pvk Exp $
 
 COMMENT=	Python client for Elasticsearch
 
-MODPY_EGG_VERSION=7.5.1
+MODPY_EGG_VERSION=7.17.0
 DISTNAME=	elasticsearch-${MODPY_EGG_VERSION}
 PKGNAME=	py-elasticsearch-${MODPY_EGG_VERSION}
-REVISION=	2
 
 CATEGORIES=	textproc
 
