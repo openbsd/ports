@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1 2022/01/21 09:00:05 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.2 2022/02/03 10:34:14 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	bazil.org/fuse							 v0.0.0-20160811212531-371fbbdaa898 \
@@ -36,7 +36,6 @@ MODGO_MODULES =	\
 	github.com/!proton!mail/go-crypto				 v0.0.0-20210428141323-04723f9f07d7 \
 	github.com/!puerkito!bio/purell					 v1.1.1 \
 	github.com/!puerkito!bio/urlesc					 v0.0.0-20170810143723-de5bf2ad4578 \
-	github.com/!stack!exchange/wmi					 v1.2.1 \
 	github.com/!telmate/proxmox-api-go				 v0.0.0-20210804143723-a6998deceba2 \
 	github.com/1and1/oneandone-cloudserver-sdk-go			 v1.0.1 \
 	github.com/a8m/tree						 v0.0.0-20210115125333-10a5fd5b637d \
@@ -149,7 +148,7 @@ MODGO_MODULES =	\
 	github.com/go-ldap/ldap						 v3.0.2+incompatible \
 	github.com/go-ldap/ldap/v3					 v3.1.10 \
 	github.com/go-logfmt/logfmt					 v0.4.0 \
-	github.com/go-ole/go-ole					 v1.2.5 \
+	github.com/go-ole/go-ole					 v1.2.6 \
 	github.com/go-openapi/analysis					 v0.20.0 \
 	github.com/go-openapi/errors					 v0.19.9 \
 	github.com/go-openapi/jsonpointer				 v0.19.5 \
@@ -404,7 +403,7 @@ MODGO_MODULES =	\
 	github.com/sean-/pager						 v0.0.0-20180208200047-666be9bf53b5 \
 	github.com/sean-/seed						 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/sergi/go-diff					 v1.1.0 \
-	github.com/shirou/gopsutil					 v3.21.1+incompatible \
+	github.com/shirou/gopsutil					 v3.21.11+incompatible \
 	github.com/shopspring/decimal					 v0.0.0-20180709203117-cd690d0c9e24 \
 	github.com/sirupsen/logrus					 v1.4.2 \
 	github.com/smartystreets/assertions				 v0.0.0-20180927180507-b2de0cb4f26d \
@@ -423,6 +422,8 @@ MODGO_MODULES =	\
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/cvm	 v1.0.283 \
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/vpc	 v1.0.283 \
 	github.com/tidwall/pretty					 v1.0.0 \
+	github.com/tklauser/go-sysconf					 v0.3.9 \
+	github.com/tklauser/numcpus					 v0.4.0 \
 	github.com/tmc/grpc-websocket-proxy				 v0.0.0-20190109142713-0ad062ec5ee5 \
 	github.com/tv42/httpunix					 v0.0.0-20150427012821-b75d8614f926 \
 	github.com/ucloud/ucloud-sdk-go					 v0.20.2 \
@@ -446,6 +447,7 @@ MODGO_MODULES =	\
 	github.com/yandex-cloud/go-genproto				 v0.0.0-20211202135052-789603780fb2 \
 	github.com/yandex-cloud/go-sdk					 v0.0.0-20211206101223-7c4e7926bf53 \
 	github.com/yuin/goldmark					 v1.3.5 \
+	github.com/yusufpapurcu/wmi					 v1.2.2 \
 	github.com/zclconf/go-cty					 v1.10.0 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.1 \
@@ -465,7 +467,7 @@ MODGO_MODULES =	\
 	golang.org/x/net						 v0.0.0-20210902165921-8d991716f632 \
 	golang.org/x/oauth2						 v0.0.0-20211005180243-6b3c2da341f1 \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys						 v0.0.0-20210917161153-d61c044b1678 \
+	golang.org/x/sys						 v0.0.0-20220128215802-99c3d69c2c27 \
 	golang.org/x/term						 v0.0.0-20210615171337-6886f2dfbf5b \
 	golang.org/x/text						 v0.3.7 \
 	golang.org/x/time						 v0.0.0-20210723032227-1f47c861a9ac \
@@ -947,6 +949,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify				 v1.4.0 \
 	github.com/stretchr/testify				 v1.5.1 \
 	github.com/stretchr/testify				 v1.6.1 \
+	github.com/tklauser/numcpus				 v0.3.0 \
 	github.com/ugorji/go					 v1.1.4 \
 	github.com/ugorji/go					 v1.2.4 \
 	github.com/ugorji/go/codec				 v0.0.0-20181204163529-d75b2dcb6bc8 \
@@ -1205,9 +1208,11 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20210616094352-59db8d763f22 \
 	golang.org/x/sys					 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys					 v0.0.0-20210806184541-e5e7981a1069 \
+	golang.org/x/sys					 v0.0.0-20210816074244-15123e1e1f71 \
 	golang.org/x/sys					 v0.0.0-20210823070655-63515b42dcdf \
 	golang.org/x/sys					 v0.0.0-20210831042530-f4d43177bf5e \
 	golang.org/x/sys					 v0.0.0-20210908233432-aa78b53d3365 \
+	golang.org/x/sys					 v0.0.0-20210917161153-d61c044b1678 \
 	golang.org/x/term					 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text					 v0.0.0-20170915032832-14c0d48ead0c \
