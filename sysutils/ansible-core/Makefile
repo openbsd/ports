@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/07 13:38:26 pvk Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/03 11:03:48 pvk Exp $
 
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.12.1
+MODPY_EGG_VERSION =	2.12.2
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -28,6 +28,7 @@ RUN_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nose${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
+			devel/py-test-forked${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR} \
