@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2022/02/01 22:17:58 abieber Exp $
+# $OpenBSD: Makefile,v 1.95 2022/02/03 18:32:35 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
 DPB_PROPERTIES =	parallel
@@ -15,6 +15,7 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
+REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
