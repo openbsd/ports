@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1 2022/01/21 09:14:13 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.2 2022/02/03 10:28:26 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.79.0 \
@@ -51,7 +51,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-metrics					 v0.0.0-20180917152333-f0300d1749da \
 	github.com/armon/go-radix					 v1.0.0 \
 	github.com/asaskevich/govalidator				 v0.0.0-20190424111038-f61b66f89f4a \
-	github.com/aws/aws-sdk-go					 v1.40.25 \
+	github.com/aws/aws-sdk-go					 v1.42.35 \
 	github.com/baiyubin/aliyun-sts-go-sdk				 v0.0.0-20180326062324-cfa1a18b161f \
 	github.com/beorn7/perks						 v1.0.0 \
 	github.com/bgentry/go-netrc					 v0.0.0-20140422174119-9fd32a8b3d3d \
@@ -277,7 +277,7 @@ MODGO_MODULES =	\
 	golang.org/x/lint						 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile						 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod						 v0.4.2 \
-	golang.org/x/net						 v0.0.0-20210805182204-aaa1db679c0d \
+	golang.org/x/net						 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2						 v0.0.0-20210514164344-f6687ab2804c \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sys						 v0.0.0-20210809222454-d867a43fc93e \
@@ -646,7 +646,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net						 v0.0.0-20210405180319-a5a99cb37ef4 \
 	golang.org/x/net						 v0.0.0-20210525063256-abc453219eb5 \
-	golang.org/x/net						 v0.0.0-20210614182718-04defd469f4e \
+	golang.org/x/net						 v0.0.0-20210805182204-aaa1db679c0d \
 	golang.org/x/oauth2						 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2						 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2						 v0.0.0-20190604053449-0f29369cfe45 \
