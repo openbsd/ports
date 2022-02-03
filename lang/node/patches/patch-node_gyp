@@ -1,0 +1,36 @@
+$OpenBSD: patch-node_gyp,v 1.8 2022/02/03 19:39:49 sthen Exp $
+
+Index: node.gyp
+--- node.gyp.orig
++++ node.gyp
+@@ -356,7 +356,7 @@
+         '<(SHARED_INTERMEDIATE_DIR)' # for node_natives.h
+       ],
+       'dependencies': [
+-        'deps/googletest/googletest.gyp:gtest_prod',
++        # 'deps/googletest/googletest.gyp:gtest_prod',
+         'deps/histogram/histogram.gyp:histogram',
+         'deps/uvwasi/uvwasi.gyp:uvwasi',
+       ],
+@@ -1080,8 +1080,8 @@
+ 
+       'dependencies': [
+         '<(node_lib_target_name)',
+-        'deps/googletest/googletest.gyp:gtest',
+-        'deps/googletest/googletest.gyp:gtest_main',
++        #'deps/googletest/googletest.gyp:gtest',
++        #'deps/googletest/googletest.gyp:gtest_main',
+         'deps/histogram/histogram.gyp:histogram',
+         'deps/uvwasi/uvwasi.gyp:uvwasi',
+         'node_dtrace_header',
+@@ -1155,6 +1155,10 @@
+         }],
+         ['OS=="solaris"', {
+           'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]
++        }],
++        # Skip cctest while building for OpenBSD
++        [ 'OS=="openbsd"', {
++          'type': 'none',
+         }],
+         # Skip cctest while building shared lib node for Windows
+         [ 'OS=="win" and node_shared=="true"', {

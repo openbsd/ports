@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2022/02/03 18:32:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2022/02/03 19:39:49 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
 DPB_PROPERTIES =	parallel
@@ -40,6 +40,7 @@ COMPILER =		base-clang ports-gcc
 
 USE_GMAKE =		Yes
 
+CXXFLAGS +=		-I${WRKSRC}/deps/googletest/include
 MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
 BUILD_DEPENDS =		sysutils/flock
