@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/29 15:38:42 sthen Exp $
-@pkgpath devel/py-cheetah
+@comment $OpenBSD: PLIST,v 1.15 2022/02/03 16:06:26 sthen Exp $
 @conflict py-cheetah-<3.1.0p4
+@pkgpath devel/py-cheetah
 bin/cheetah
 bin/cheetah-analyze
 bin/cheetah-compile
@@ -17,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/FileUtils.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Filters.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/ImportHooks.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/ImportManager.py
+lib/python${MODPY_VERSION}/site-packages/Cheetah/LoadTemplate.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/I18n.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Macros/__init__.py
@@ -45,6 +46,11 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Boinker.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/CheetahWrapper.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Cheps.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Filters.py
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/ImportHooks.py
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/ImportHooksTemplates/
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/ImportHooksTemplates/index.tmpl
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/ImportHooksTemplates/layout.tmpl
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/LoadTemplate.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Misc.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/NameMapper.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/NameMapper_pure.py
@@ -54,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Pinger.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Regressions.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/SyntaxAndOutput.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Template.py
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/TemplateCmdLineIface.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Test.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/Unicode.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/__init__.py
@@ -63,6 +70,8 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Boinker.$
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}CheetahWrapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Cheps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Filters.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}ImportHooks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}LoadTemplate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}NameMapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}NameMapper_pure.${MODPY_PYC_MAGIC_TAG}pyc
@@ -72,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Pinger.${
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Regressions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}SyntaxAndOutput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Template.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}TemplateCmdLineIface.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}Unicode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/Tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -122,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}FileUtils.${MOD
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}Filters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}ImportHooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}ImportManager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}LoadTemplate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}NameMapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}Parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}Servlet.${MODPY_PYC_MAGIC_TAG}pyc
@@ -141,4 +152,5 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

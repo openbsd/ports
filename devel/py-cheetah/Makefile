@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/02 00:00:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2022/02/03 16:06:26 sthen Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
-MODPY_EGG_VERSION=	3.1.0
+MODPY_EGG_VERSION=	3.2.6
 DISTNAME=		Cheetah3-${MODPY_EGG_VERSION}
 PKGNAME=		py-cheetah-${MODPY_EGG_VERSION}
 CATEGORIES=		devel textproc
-REVISION=		7
 
-HOMEPAGE=		http://www.cheetahtemplate.org/
+HOMEPAGE=		https://cheetahtemplate.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += pthread
+WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES=		lang/python
-MODPY_PI =		Yes
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			textproc/py-markdown${MODPY_FLAVOR} \
+TEST_DEPENDS=		textproc/py-markdown${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
 
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
@@ -29,7 +26,9 @@ MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 FLAVORS=		python3
 FLAVOR=			python3
 
-do-test:
+MODPY_PYTEST=		Yes
+
+xxdo-test:
 	cd ${WRKSRC} && ${MODPY_BIN} Cheetah/Tests/Test.py
 
 .include <bsd.port.mk>
