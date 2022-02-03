@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/07/13 11:53:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/03 17:33:12 sthen Exp $
 include/bind/
 include/bind/arpa/
 include/bind/arpa/inet.h
@@ -28,7 +28,7 @@ include/bind/resolv.h
 include/bind/sys/
 include/bind/sys/bitypes.h
 lib/libbind/
-lib/libbind/libbind.a
+@static-lib lib/libbind/libbind.a
 lib/libbind/libbind.la
 @lib lib/libbind/libbind.so.${LIBbind_VERSION}
 @man man/man3/getaddrinfo.3

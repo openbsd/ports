@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2020/02/03 20:40:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2022/02/03 17:33:12 sthen Exp $
 
 COMMENT=	BIND stub resolver library for special use cases
 
@@ -13,13 +13,13 @@ COMMENT=	BIND stub resolver library for special use cases
 V=		6.0
 DISTNAME=	libbind-6.0
 EPOCH=		0
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=	bind                      6.0 # 6.1
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.isc.org/software/libbind
+HOMEPAGE=	https://wiki.netbsd.org/individual-software-releases/netresolv/
 
 # ISC
 PERMIT_PACKAGE=	Yes
