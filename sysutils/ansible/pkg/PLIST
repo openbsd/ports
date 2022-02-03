@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2022/01/20 22:08:16 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.40 2022/02/03 11:04:14 pvk Exp $
 @pkgpath sysutils/ansible,-main
 lib/python${MODPY_VERSION}/site-packages/ansible-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -1847,6 +1847,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_apimanagementservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_apimanagementservice_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_appgateway.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_appgateway_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_applicationsecuritygroup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_applicationsecuritygroup_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_appserviceplan.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1924,6 +1925,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_galleryimageversion_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_hdinsightcluster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_hdinsightcluster_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_hostgroup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_hostgroup_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_image_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_iotdevice.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1958,6 +1961,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_mariadbfirewallrule_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_mariadbserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_mariadbserver_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_monitordiagnosticsetting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_monitordiagnosticsetting_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_monitorlogprofile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_mysqlconfiguration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_mysqlconfiguration_info.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1988,6 +1993,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_privatednszonelink_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_privateendpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_privateendpoint_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_privateendpointdnszonegroup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_privateendpointdnszonegroup_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_proximityplacementgroup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_proximityplacementgroup_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_publicipaddress.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2031,6 +2038,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_storageaccount.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_storageaccount_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_storageblob.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_storageshare.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_storageshare_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_subnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_subnet_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_subscription_info.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2039,6 +2048,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_trafficmanagerendpoint_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_trafficmanagerprofile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_trafficmanagerprofile_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_virtualhub.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_virtualhub_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_virtualmachine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_virtualmachine_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/${MODPY_PYCACHE}azure_rm_virtualmachineextension.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2089,6 +2100,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_apimanagementservice.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_apimanagementservice_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_appgateway.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_appgateway_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_applicationsecuritygroup.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_applicationsecuritygroup_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_appserviceplan.py
@@ -2166,6 +2178,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_galleryimageversion_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_hdinsightcluster.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_hdinsightcluster_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_hostgroup.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_hostgroup_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_image.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_image_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_iotdevice.py
@@ -2200,6 +2214,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_mariadbfirewallrule_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_mariadbserver.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_mariadbserver_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_monitordiagnosticsetting.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_monitordiagnosticsetting_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_monitorlogprofile.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_mysqlconfiguration.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_mysqlconfiguration_info.py
@@ -2230,6 +2246,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_privatednszonelink_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_privateendpoint.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_privateendpoint_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_privateendpointdnszonegroup.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_privateendpointdnszonegroup_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_proximityplacementgroup.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_proximityplacementgroup_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_publicipaddress.py
@@ -2273,6 +2291,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_storageaccount.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_storageaccount_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_storageblob.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_storageshare.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_storageshare_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_subnet.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_subnet_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_subscription_info.py
@@ -2281,6 +2301,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_trafficmanagerendpoint_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_trafficmanagerprofile.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_trafficmanagerprofile_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualhub.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualhub_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualmachine.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualmachine_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/azure/azcollection/plugins/modules/azure_rm_virtualmachineextension.py
@@ -7292,6 +7314,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugi
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_asg_facts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_asg_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_asg_lifecycle_hook.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_asg_scheduled_action.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_customer_gateway.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_customer_gateway_facts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/${MODPY_PYCACHE}ec2_customer_gateway_info.${MODPY_PYC_MAGIC_TAG}pyc
@@ -7506,6 +7529,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugi
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_asg_facts.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_asg_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_asg_lifecycle_hook.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_asg_scheduled_action.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_customer_gateway.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_customer_gateway_facts.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/aws/plugins/modules/ec2_customer_gateway_info.py
@@ -8273,6 +8297,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitaloc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_snapshot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_snapshot_facts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_snapshot_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_spaces.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_spaces_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_sshkey.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_sshkey_facts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/${MODPY_PYCACHE}digital_ocean_sshkey_info.${MODPY_PYC_MAGIC_TAG}pyc
@@ -8325,6 +8351,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitaloc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_snapshot.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_snapshot_facts.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_snapshot_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_spaces.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_spaces_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_sshkey.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_sshkey_facts.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/plugins/modules/digital_ocean_sshkey_info.py
@@ -9256,6 +9284,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}homebrew.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}homebrew_cask.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}homebrew_tap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}homectl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}honeybadger_deployment.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}hpilo_boot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/${MODPY_PYCACHE}hpilo_info.${MODPY_PYC_MAGIC_TAG}pyc
@@ -10248,6 +10277,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/homebrew.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/homebrew_cask.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/homebrew_tap.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/homectl.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/honeybadger_deployment.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/hpilo_boot.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/hpilo_info.py
@@ -11208,6 +11238,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}facter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}filesystem.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}gconftool2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}homectl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}interfaces_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}iptables_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/${MODPY_PYCACHE}java_cert.${MODPY_PYC_MAGIC_TAG}pyc
@@ -11269,6 +11300,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/facter.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/gconftool2.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/homectl.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/interfaces_file.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/iptables_state.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/modules/system/java_cert.py
@@ -12076,9 +12108,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/doc_fragments/mysql.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/${MODPY_PYCACHE}mysql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/${MODPY_PYCACHE}user.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/_version.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/database.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/implementations/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/implementations/mariadb/
@@ -12099,6 +12134,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/implementations/mysql/user.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/mysql.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/user.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/module_utils/version.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/modules/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/modules/${MODPY_PYCACHE}mysql_db.${MODPY_PYC_MAGIC_TAG}pyc
@@ -14017,12 +14053,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresq
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/doc_fragments/postgres.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/${MODPY_PYCACHE}database.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/${MODPY_PYCACHE}postgres.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/${MODPY_PYCACHE}saslprep.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/_version.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/database.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/postgres.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/saslprep.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/module_utils/version.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/modules/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/postgresql/plugins/modules/${MODPY_PYCACHE}postgresql_copy.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23556,6 +23596,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_aggregate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_aws_fsx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_cifs_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_connector_aws.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_connector_azure.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23568,6 +23609,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_snapmirror.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/${MODPY_PYCACHE}na_cloudmanager_volume.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/na_cloudmanager_aggregate.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/na_cloudmanager_aws_fsx.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/na_cloudmanager_cifs_server.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/na_cloudmanager_connector_aws.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/netapp/cloudmanager/plugins/modules/na_cloudmanager_connector_azure.py
@@ -24834,6 +24876,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}coe_cluster_template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}compute_flavor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}compute_flavor_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}compute_service_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}container.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}dns_zone.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24868,6 +24911,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}loadbalancer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}network.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}networks_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}neutron_rbac_policies_info.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}neutron_rbac_policy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}object_container.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/${MODPY_PYCACHE}os_auth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24971,6 +25016,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/coe_cluster_template.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/compute_flavor.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/compute_flavor_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/compute_service_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/config.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/container.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/dns_zone.py
@@ -25005,6 +25051,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/loadbalancer.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/network.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/networks_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/neutron_rbac_policies_info.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/neutron_rbac_policy.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/object.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/object_container.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/openstack/cloud/plugins/modules/os_auth.py
