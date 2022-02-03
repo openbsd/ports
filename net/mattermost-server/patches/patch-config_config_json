@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.22 2022/01/20 22:11:37 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.23 2022/02/03 11:38:17 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -108,8 +108,8 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -586,11 +586,11 @@
-     "InviteToTeam": "none"
+@@ -588,11 +588,11 @@
+     "NormalizeLdapDNs": false
    },
    "ImportSettings": {
 -    "Directory": "./import",
