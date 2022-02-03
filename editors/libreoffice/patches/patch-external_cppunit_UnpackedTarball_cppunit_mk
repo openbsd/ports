@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.8 2021/07/11 13:14:06 robert Exp $
+$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.9 2022/02/03 20:09:24 robert Exp $
 
 Index: external/cppunit/UnpackedTarball_cppunit.mk
 --- external/cppunit/UnpackedTarball_cppunit.mk.orig
 +++ external/cppunit/UnpackedTarball_cppunit.mk
-@@ -21,6 +21,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
+@@ -23,6 +23,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
  	external/cppunit/rtti.patch.0 \
  	external/cppunit/order.patch.0 \
  	external/cppunit/windows-arm64.patch.1 \

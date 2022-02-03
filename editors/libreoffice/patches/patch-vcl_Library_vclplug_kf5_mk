@@ -1,9 +1,9 @@
-$OpenBSD: patch-vcl_Library_vclplug_kf5_mk,v 1.1 2020/02/05 19:58:10 robert Exp $
+$OpenBSD: patch-vcl_Library_vclplug_kf5_mk,v 1.2 2022/02/03 20:09:24 robert Exp $
 
 Index: vcl/Library_vclplug_kf5.mk
 --- vcl/Library_vclplug_kf5.mk.orig
 +++ vcl/Library_vclplug_kf5.mk
-@@ -81,6 +81,12 @@ $(eval $(call gb_Library_add_libs,vclplug_kf5,\
+@@ -74,6 +74,12 @@ $(eval $(call gb_Library_add_libs,vclplug_kf5,\
  ))
  endif
  

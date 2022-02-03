@@ -1,6 +1,7 @@
-$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.4 2016/09/04 12:02:49 robert Exp $
---- external/liborcus/ExternalProject_liborcus.mk.orig.port	Sat Sep  3 17:06:33 2016
-+++ external/liborcus/ExternalProject_liborcus.mk	Sat Sep  3 17:06:55 2016
+$OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.5 2022/02/03 20:09:24 robert Exp $
+Index: external/liborcus/ExternalProject_liborcus.mk
+--- external/liborcus/ExternalProject_liborcus.mk.orig
++++ external/liborcus/ExternalProject_liborcus.mk
 @@ -39,7 +39,7 @@ ifneq ($(SYSTEM_ZLIB),)
  liborcus_LIBS+=-lz
  endif
@@ -10,7 +11,17 @@ $OpenBSD: patch-external_liborcus_ExternalProject_liborcus_mk,v 1.4 2016/09/04 1
  else
  liborcus_LIBS+=-L$(gb_StaticLibrary_WORKDIR) -lboost_system -lboost_iostreams -lboost_filesystem
  endif
-@@ -77,6 +77,9 @@ endif
+@@ -51,6 +51,9 @@ liborcus_CPPCLAGS=$(CPPFLAGS)
+ ifeq ($(SYSTEM_ZLIB),)
+ liborcus_CPPFLAGS+=$(ZLIB_CFLAGS)
+ endif
++
++liborcus_CPPFLAGS+=$(BOOST_CPPFLAGS)
++
+ #
+ # OSes that use the GNU C++ library need to use -D_GLIBCXX_DEBUG in
+ # sync with the rest of LibreOffice, i.e. depending on
+@@ -73,6 +76,9 @@ endif
  ifneq (,$(PTHREAD_LIBS))
  liborcus_LDFLAGS+=$(PTHREAD_LIBS)
  endif

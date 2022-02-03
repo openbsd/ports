@@ -1,11 +1,11 @@
-$OpenBSD: patch-external_libnumbertext_ExternalProject_libnumbertext_mk,v 1.1 2021/07/11 13:14:06 robert Exp $
+$OpenBSD: patch-external_libnumbertext_ExternalProject_libnumbertext_mk,v 1.2 2022/02/03 20:09:24 robert Exp $
 
 Index: external/libnumbertext/ExternalProject_libnumbertext.mk
 --- external/libnumbertext/ExternalProject_libnumbertext.mk.orig
 +++ external/libnumbertext/ExternalProject_libnumbertext.mk
-@@ -24,6 +24,8 @@ libnumbertext_CPPFLAGS+=-D_GLIBCXX_DEBUG
- endif
- endif
+@@ -20,6 +20,8 @@ libnumbertext_CXXFLAGS=$(CXXFLAGS) $(CXXFLAGS_CXX11)
+ 
+ libnumbertext_CPPFLAGS+=$(gb_COMPILERDEFS_STDLIB_DEBUG)
  
 +libnumbertext_CPPFLAGS+=-fPIC
 +

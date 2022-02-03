@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2021/12/07 20:44:07 robert Exp $
+# $OpenBSD: Makefile,v 1.258 2022/02/03 20:09:24 robert Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -10,10 +10,10 @@ COMMENT-java=	optional integration of LibreOffice java features
 
 SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
-SHARED_LIBS +=  mwaw-0.3-lo               3.19 # 3.19
+SHARED_LIBS +=  mwaw-0.3-lo               3.21 # 3.21
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
-SHARED_LIBS +=  orcus-0.16                0.0 # 0.0
-SHARED_LIBS +=  orcus-parser-0.16         0.0 # 0.0
+SHARED_LIBS +=  orcus-0.17                0.0 # 0.0
+SHARED_LIBS +=  orcus-parser-0.17         0.0 # 0.0
 SHARED_LIBS +=  revenge-0.0-lo            0.4 # 0.4
 SHARED_LIBS +=  staroffice-0.0-lo         0.0 # 0.0
 SHARED_LIBS +=  uno_cppu                  3.0 # 3.0
@@ -25,8 +25,8 @@ SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
 SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
-BV=		7.2
-VERSION=	${BV}.4.1
+BV=		7.3
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -103,18 +103,19 @@ DISTFILES += language-subtag-registry-2021-08-06.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.7.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
+DISTFILES += libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz:0
 DISTFILES += libe-book-0.1.3.tar.xz:0
 DISTFILES += libepubgen-0.1.1.tar.xz:0
 DISTFILES += liberation-fonts-ttf-2.1.4.tar.gz:0
 DISTFILES += liberation-narrow-fonts-ttf-1.07.6.tar.gz:0
 DISTFILES += libetonyek-0.1.10.tar.xz:0
-DISTFILES += libexttextcat-3.4.5.tar.xz:0
+DISTFILES += libexttextcat-3.4.6.tar.xz:0
 DISTFILES += libfreehand-0.1.2.tar.xz:0
-DISTFILES += liblangtag-0.6.2.tar.bz2:0
+DISTFILES += liblangtag-0.6.3.tar.bz2:0
 DISTFILES += libmspub-0.1.4.tar.xz:0
-DISTFILES += libmwaw-0.3.19.tar.xz:0
+DISTFILES += libmwaw-0.3.21.tar.xz:0
 DISTFILES += libodfgen-0.1.8.tar.xz:0
-DISTFILES += liborcus-0.16.1.tar.bz2:0
+DISTFILES += liborcus-0.17.2.tar.bz2:0
 DISTFILES += libpagemaker-0.0.4.tar.xz:0
 DISTFILES += libqxp-0.0.2.tar.xz:0
 DISTFILES += libre-hebrew-1.0.tar.gz:0
@@ -125,16 +126,16 @@ DISTFILES += libwpd-0.10.3.tar.xz:0
 DISTFILES += libwpg-0.3.3.tar.xz:0
 DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-1.7.0.tar.bz2:0
+DISTFILES += mdds-2.0.1.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
-DISTFILES += pdfium-4500.tar.bz2:0
-DISTFILES += skia-m90-45c57e116ee0ce214bdf78405a4762722e4507d9.tar.xz:0
+DISTFILES += pdfium-4699.tar.bz2:0
+DISTFILES += skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
-DISTFILES += xmlsec1-1.2.32.tar.gz:0
-DISTFILES += libnumbertext-1.0.7.tar.xz:0
+DISTFILES += xmlsec1-1.2.33.tar.gz:0
+DISTFILES += libnumbertext-1.0.8.tar.xz:0
 DISTFILES += box2d-2.3.1.tar.gz:0
-DISTFILES += zxing-cpp-1.1.1.tar.gz:0
+DISTFILES += zxing-cpp-1.2.0.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -205,13 +206,12 @@ LIB_DEPENDS-main=databases/openldap \
 		textproc/libxslt \
 		textproc/raptor \
 		net/curl \
-		net/neon>=0.31.2 \
 		textproc/icu4c \
 		textproc/redland \
 		textproc/hunspell
 
 WANTLIB-main=	${COMPILER_LIBCXX}
-WANTLIB-main+=	xslt>=3 curl>=7 neon>=31 pq>=2 icuuc>=0 icui18n rdf>=0
+WANTLIB-main+=	xslt>=3 curl>=7 pq>=2 icuuc>=0 icui18n rdf>=0
 WANTLIB-main+=	ICE SM X11
 WANTLIB-main+=	Xext Xrandr Xrender atk-1.0 c cairo
 WANTLIB-main+=	crypto expat fontconfig freetype gio-2.0 glib-2.0
@@ -229,6 +229,7 @@ WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
 WANTLIB-main+=	X11-xcb
 WANTLIB-main+=	gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstpbutils-1.0
 WANTLIB-main+=	gsttag-1.0 gstvideo-1.0
+WANTLIB-main+=	boost_atomic-mt poppler-cpp
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -325,7 +326,6 @@ CONFIGURE_ARGS+=\
 		--with-system-lcms2 \
 		--with-system-libpng \
 		--with-system-mariadb \
-		--with-system-neon \
 		--with-system-nss \
 		--with-system-openldap \
 		--with-system-openssl \
@@ -335,14 +335,15 @@ CONFIGURE_ARGS+=\
 		--with-system-zlib \
 		--with-vendor="The OpenBSD project" \
 		--with-tls="openssl" \
+		--with-webdav="curl" \
 		--without-junit \
 		--without-krb5 \
 		--without-gssapi \
-		--without-system-apache-commons \
 		--without-system-beanshell \
 		--without-system-hsqldb \
 		--without-system-jfreereport \
 		--without-system-libwpd \
+		--without-system-neon \
 		--without-system-orcus
 
 .if ${BUILD_PACKAGES:M-java}

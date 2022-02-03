@@ -1,12 +1,12 @@
-$OpenBSD: patch-sal_cppunittester_cppunittester_cxx,v 1.10 2021/09/02 11:11:58 robert Exp $
+$OpenBSD: patch-sal_cppunittester_cppunittester_cxx,v 1.11 2022/02/03 20:09:24 robert Exp $
 Index: sal/cppunittester/cppunittester.cxx
 --- sal/cppunittester/cppunittester.cxx.orig
 +++ sal/cppunittester/cppunittester.cxx
-@@ -380,6 +380,7 @@ void reportResourceUsage([[maybe_unused]] const OUStri
+@@ -385,6 +385,7 @@ void reportResourceUsage([[maybe_unused]] const OUStri
  
- SAL_IMPLEMENT_MAIN()
+ static bool main2()
  {
 +    return EXIT_SUCCESS;
      bool ok = false;
      OUString path;
-     try
+ 

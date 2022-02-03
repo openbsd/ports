@@ -1,45 +1,7 @@
-$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.13 2021/09/02 11:11:58 robert Exp $
-
 Index: solenv/gbuild/platform/unxgcc.mk
 --- solenv/gbuild/platform/unxgcc.mk.orig
 +++ solenv/gbuild/platform/unxgcc.mk
-@@ -115,6 +115,15 @@ gb_LinkTarget_CXXFLAGS := $(gb_CXXFLAGS)
- # contains .c sources:
- define gb_LinkTarget__command_dynamiclink
- $(call gb_Helper_abbreviate_dirs,\
-+	FILELIST=$(call var2file,$(shell $(gb_MKTEMP)),200, \
-+		$(foreach object,$(COBJECTS),$(call gb_CObject_get_target,$(object))) \
-+		$(foreach object,$(CXXOBJECTS),$(call gb_CxxObject_get_target,$(object))) \
-+		$(foreach object,$(ASMOBJECTS),$(call gb_AsmObject_get_target,$(object))) \
-+		$(foreach object,$(GENCOBJECTS),$(call gb_GenCObject_get_target,$(object))) \
-+		$(foreach object,$(GENCXXOBJECTS),$(call gb_GenCxxObject_get_target,$(object))) \
-+		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),$(shell cat $(extraobjectlist)))) && \
-+	cat $${FILELIST} | tr "[:space:]" "\n" | grep -v '^$$' > $${FILELIST}.1 && \
-+	mv $${FILELIST}.1 $${FILELIST} && \
- 	$(if $(CXXOBJECTS)$(GENCXXOBJECTS)$(EXTRAOBJECTLISTS)$(filter-out XTRUE,X$(ENABLE_RUNTIME_OPTIMIZATIONS)),$(or $(T_CXX),$(gb_CXX)) $(gb_CXX_LINKFLAGS),$(or $(T_CC),$(gb_CC))) \
- 		$(if $(filter Library CppunitTest,$(TARGETTYPE)),$(gb_Library_TARGETTYPEFLAGS)) \
- 		$(gb_LTOFLAGS) \
-@@ -122,12 +131,7 @@ $(call gb_Helper_abbreviate_dirs,\
- 			-Wl$(COMMA)--version-script=$(SOVERSIONSCRIPT)) \
- 		$(subst \d,$$,$(RPATH)) \
- 		$(T_USE_LD) $(T_LDFLAGS) \
--		$(foreach object,$(COBJECTS),$(call gb_CObject_get_target,$(object))) \
--		$(foreach object,$(CXXOBJECTS),$(call gb_CxxObject_get_target,$(object))) \
--		$(foreach object,$(ASMOBJECTS),$(call gb_AsmObject_get_target,$(object))) \
--		$(foreach object,$(GENCOBJECTS),$(call gb_GenCObject_get_target,$(object))) \
--		$(foreach object,$(GENCXXOBJECTS),$(call gb_GenCxxObject_get_target,$(object))) \
--		$(foreach extraobjectlist,$(EXTRAOBJECTLISTS),`cat $(extraobjectlist)`) \
-+		@$${FILELIST} \
- 		$(if $(filter TRUE,$(DISABLE_DYNLOADING)), \
- 		    -Wl$(COMMA)--start-group \
- 		    $(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
-@@ -144,12 +148,12 @@ $(call gb_Helper_abbreviate_dirs,\
- 		    -Wl$(COMMA)--no-as-needed \
- 		    $(patsubst lib%.a,-l%,$(patsubst lib%.so,-l%,$(patsubst %.$(gb_Library_UDK_MAJORVER),%,$(foreach lib,$(LINKED_LIBS),$(call gb_Library_get_filename,$(lib)))))) \
-                 ) \
--		-o $(1) \
-+		-o $(1) && \
-+	rm -f $${FILELIST} \
+@@ -144,8 +144,7 @@ $(call gb_Helper_abbreviate_dirs,\
  	$(if $(SOVERSIONSCRIPT),&& ln -sf ../../program/$(notdir $(1)) $(ILIBTARGET)))
  	$(if $(filter Library,$(TARGETTYPE)), $(call gb_Helper_abbreviate_dirs,\
  		$(READELF) -d $(1) | grep SONAME > $(WORKDIR)/LinkTarget/$(2).exports.tmp; \
@@ -49,7 +11,7 @@ Index: solenv/gbuild/platform/unxgcc.mk
  			>> $(WORKDIR)/LinkTarget/$(2).exports.tmp && \
  		$(call gb_Helper_replace_if_different_and_touch,$(WORKDIR)/LinkTarget/$(2).exports.tmp, \
  			$(WORKDIR)/LinkTarget/$(2).exports,$(1))))
-@@ -194,7 +198,7 @@ gb_Library_DLLEXT := .a
+@@ -190,7 +189,7 @@ gb_Library_DLLEXT := .a
  else
  
  gb_Library_TARGETTYPEFLAGS := -shared -Wl,-z,noexecstack

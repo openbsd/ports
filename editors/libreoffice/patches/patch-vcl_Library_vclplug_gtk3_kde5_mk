@@ -1,9 +1,7 @@
-$OpenBSD: patch-vcl_Library_vclplug_gtk3_kde5_mk,v 1.4 2021/09/02 11:11:58 robert Exp $
-
 Index: vcl/Library_vclplug_gtk3_kde5.mk
 --- vcl/Library_vclplug_gtk3_kde5.mk.orig
 +++ vcl/Library_vclplug_gtk3_kde5.mk
-@@ -118,10 +118,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+@@ -119,10 +119,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
  	vcl/unx/gtk3_kde5/gtk3_kde5_hudawareness \
  ))
  
@@ -12,7 +10,7 @@ Index: vcl/Library_vclplug_gtk3_kde5.mk
  $(eval $(call gb_Library_add_libs,vclplug_gtk3_kde5,\
  	-lm \
 -	-ldl \
-+        $(if $(filter LINUX,$(OS)),-ldl) \
- 	$(KF5_LIBS) \
++	$(if $(filter LINUX,$(OS)),-ldl) \
  ))
  endif
+ 

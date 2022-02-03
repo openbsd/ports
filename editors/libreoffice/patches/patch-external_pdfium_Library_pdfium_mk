@@ -1,9 +1,9 @@
-$OpenBSD: patch-external_pdfium_Library_pdfium_mk,v 1.2 2021/09/02 11:11:58 robert Exp $
+$OpenBSD: patch-external_pdfium_Library_pdfium_mk,v 1.3 2022/02/03 20:09:24 robert Exp $
 
 Index: external/pdfium/Library_pdfium.mk
 --- external/pdfium/Library_pdfium.mk.orig
 +++ external/pdfium/Library_pdfium.mk
-@@ -685,7 +685,7 @@ $(eval $(call gb_Library_add_generated_exception_objec
+@@ -726,7 +726,7 @@ $(eval $(call gb_Library_add_generated_exception_objec
  ))
  endif
  

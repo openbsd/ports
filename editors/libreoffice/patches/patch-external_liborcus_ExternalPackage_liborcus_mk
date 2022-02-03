@@ -1,16 +1,14 @@
-$OpenBSD: patch-external_liborcus_ExternalPackage_liborcus_mk,v 1.5 2021/07/11 13:14:06 robert Exp $
-
 Index: external/liborcus/ExternalPackage_liborcus.mk
 --- external/liborcus/ExternalPackage_liborcus.mk.orig
 +++ external/liborcus/ExternalPackage_liborcus.mk
 @@ -15,8 +15,8 @@ ifeq ($(OS),MACOSX)
- $(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-0.16.0.dylib,src/liborcus/.libs/liborcus-0.16.0.dylib))
- $(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-parser-0.16.0.dylib,src/parser/.libs/liborcus-parser-0.16.0.dylib))
+ $(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-0.17.0.dylib,src/liborcus/.libs/liborcus-0.17.0.dylib))
+ $(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-parser-0.17.0.dylib,src/parser/.libs/liborcus-parser-0.17.0.dylib))
  else ifeq ($(DISABLE_DYNLOADING),)
--$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-0.16.so.0,src/liborcus/.libs/liborcus-0.16.so.0.0.0))
--$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-parser-0.16.so.0,src/parser/.libs/liborcus-parser-0.16.so.0.0.0))
-+$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-0.16.so.0.0,src/liborcus/.libs/liborcus-0.16.so.0.0))
-+$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-parser-0.16.so.0.0,src/parser/.libs/liborcus-parser-0.16.so.0.0))
+-$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-0.17.so.0,src/liborcus/.libs/liborcus-0.17.so.0.0.0))
+-$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-parser-0.17.so.0,src/parser/.libs/liborcus-parser-0.17.so.0.0.0))
++$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-0.17.so.0.0,src/liborcus/.libs/liborcus-0.17.so.0.0))
++$(eval $(call gb_ExternalPackage_add_file,liborcus,$(LIBO_LIB_FOLDER)/liborcus-parser-0.17.so.0.0,src/parser/.libs/liborcus-parser-0.17.so.0.0))
  endif
  
  # vim: set noet sw=4 ts=4:
