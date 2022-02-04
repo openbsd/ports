@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gui_CMakeLists_txt,v 1.7 2022/02/04 17:32:53 sthen Exp $
+
+Index: src/gui/CMakeLists.txt
+--- src/gui/CMakeLists.txt.orig
++++ src/gui/CMakeLists.txt
+@@ -266,7 +266,7 @@ endif()
+ 
+ # Generate png icons from svg
+ find_program(SVG_CONVERTER
+-  NAMES inkscape inkscape.exe rsvg-convert
++  NAMES rsvg-convert
+   REQUIRED
+   HINTS "C:\\Program Files\\Inkscape\\bin" "/usr/bin" ENV SVG_CONVERTER_DIR)
+ # REQUIRED keyword is only supported on CMake 3.18 and above

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2021/12/22 07:26:22 rsadowski Exp $ #
+# $OpenBSD: Makefile,v 1.28 2022/02/04 17:32:53 sthen Exp $ #
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.4.1
+V =		3.4.2
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -21,23 +21,22 @@ MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickControls2 Qt5Svg Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5WebSockets Qt5Widgets Qt5Xml
-WANTLIB += c crypto gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain
-WANTLIB += secret-1 sqlite3 ssl z lib/inotify/inotify
+WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5Svg Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5WebSockets Qt5Widgets Qt5Xml c crypto m qt5keychain
+WANTLIB += sqlite3 ssl z
 
 MODULES =		devel/cmake \
 			x11/qt5
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
-# Generate png icons with inkscape
-# https://github.com/nextcloud/desktop/pull/3466
-BUILD_DEPENDS +=	graphics/inkscape
+# for converting svg icons to png
+BUILD_DEPENDS +=	x11/gnome/librsvg
 
-# Needs for test at build-time
+# for tests, but detected during configure
 BUILD_DEPENDS +=	devel/cmocka
 
 RUN_DEPENDS =		devel/desktop-file-utils \
