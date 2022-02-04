@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2021/12/04 21:22:58 tb Exp $
+# $OpenBSD: Makefile,v 1.51 2022/02/04 16:44:03 tb Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -69,7 +69,8 @@ MAKE_FLAGS =	LIBDIR=lib \
 		group_include="${KAMAILIO_GROUPS}" \
 		LIBsrdb1_VERSION=${LIBsrdb1_VERSION} \
 		LIBsrdb2_VERSION=${LIBsrdb2_VERSION} \
-		LIBtrie_VERSION=${LIBtrie_VERSION}
+		LIBtrie_VERSION=${LIBtrie_VERSION} \
+		LIBSSL_SET_MUTEX_SHARED=0
 
 PSEUDO_FLAVORS +=	no_berkeley
 .if !${FLAVOR:Mno_berkeley}
