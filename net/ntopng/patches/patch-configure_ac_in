@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure_seed,v 1.9 2021/12/07 09:47:38 sthen Exp $
+$OpenBSD: patch-configure_ac_in,v 1.1 2022/02/04 11:41:02 sthen Exp $
 
-Index: configure.seed
---- configure.seed.orig
-+++ configure.seed
-@@ -442,10 +442,10 @@ fi
+Index: configure.ac.in
+--- configure.ac.in.orig
++++ configure.ac.in
+@@ -432,10 +432,10 @@ fi
  
  DATE=`date +"%Y-%m-%d"`
  

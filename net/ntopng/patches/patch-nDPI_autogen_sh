@@ -1,9 +1,9 @@
-$OpenBSD: patch-nDPI_autogen_sh,v 1.5 2021/07/27 10:27:48 sthen Exp $
+$OpenBSD: patch-nDPI_autogen_sh,v 1.6 2022/02/04 11:41:02 sthen Exp $
 
 Index: nDPI/autogen.sh
 --- nDPI/autogen.sh.orig
 +++ nDPI/autogen.sh
-@@ -59,5 +59,4 @@ cat configure.tmp > configure
+@@ -38,5 +38,4 @@ autoreconf -ivf
  
  echo "./configure $@"
  chmod +x configure

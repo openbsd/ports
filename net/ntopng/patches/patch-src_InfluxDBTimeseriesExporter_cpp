@@ -1,25 +1,18 @@
-$OpenBSD: patch-src_InfluxDBTimeseriesExporter_cpp,v 1.1 2020/10/02 18:47:15 sthen Exp $
+$OpenBSD: patch-src_InfluxDBTimeseriesExporter_cpp,v 1.2 2022/02/04 11:41:02 sthen Exp $
 
 64-bit time_t
 
 Index: src/InfluxDBTimeseriesExporter.cpp
 --- src/InfluxDBTimeseriesExporter.cpp.orig
 +++ src/InfluxDBTimeseriesExporter.cpp
-@@ -65,7 +65,7 @@ void InfluxDBTimeseriesExporter::createDump() {
+@@ -68,8 +68,8 @@ void InfluxDBTimeseriesExporter::createDump() {
    cursize = 0;
  
    /* Use the flushTime as the fname */
--  snprintf(fname, sizeof(fname), "%s%u_%lu", fbase, num_exports, flushTime);
-+  snprintf(fname, sizeof(fname), "%s%u_%lld", fbase, num_exports, (long long)flushTime);
+-  snprintf(fname, sizeof(fname), "%s%u_%u_%lu%s", fbase, (u_int16_t)iface->get_id(),
+-	   num_exports, flushTime, TMP_TRAILER);
++  snprintf(fname, sizeof(fname), "%s%u_%u_%lld%s", fbase, (u_int16_t)iface->get_id(),
++	   num_exports, (long long)flushTime, TMP_TRAILER);
  
    if(!(fp = fopen(fname, "wb")))
      ntop->getTrace()->traceEvent(TRACE_ERROR, "[%s] Unable to dump TS data onto %s: %s",
-@@ -132,7 +132,7 @@ void InfluxDBTimeseriesExporter::flush() {
-     fclose(fp);
-     fp = NULL;
-     char buf[32];
--    snprintf(buf, sizeof(buf), "%d|%lu|%u|%u", iface->get_id(), flushTime,
-+    snprintf(buf, sizeof(buf), "%d|%lld|%u|%u", iface->get_id(), (long long)flushTime,
- 				   num_exports, num_cached_entries);
-     cursize = 0;
-     num_exports++;

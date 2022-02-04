@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Ntop_cpp,v 1.4 2021/12/07 09:47:38 sthen Exp $
+$OpenBSD: patch-src_Ntop_cpp,v 1.5 2022/02/04 11:41:02 sthen Exp $
 
 64-bit time_t
 
 Index: src/Ntop.cpp
 --- src/Ntop.cpp.orig
 +++ src/Ntop.cpp
-@@ -3066,7 +3066,7 @@ void Ntop::resetStats() {
+@@ -3044,7 +3044,7 @@ void Ntop::resetStats() {
    char buf[32];
    last_stats_reset = time(NULL);
  

@@ -1,0 +1,14 @@
+$OpenBSD: patch-nDPI_src_lib_third_party_src_roaring_cc,v 1.1 2022/02/04 11:41:02 sthen Exp $
+
+Index: nDPI/src/lib/third_party/src/roaring.cc
+--- nDPI/src/lib/third_party/src/roaring.cc.orig
++++ nDPI/src/lib/third_party/src/roaring.cc
+@@ -292,7 +292,7 @@ static inline uint32_t croaring_detect_supported_archi
+ #include <stdbool.h>
+ #include <stdint.h>
+ #include <stdlib.h>  // will provide posix_memalign with _POSIX_C_SOURCE as defined above
+-#if !(defined(__APPLE__)) && !(defined(__FreeBSD__))
++#if !(defined(__APPLE__)) && !(defined(__FreeBSD__)) && !defined(__OpenBSD__)
+ #include <malloc.h>  // this should never be needed but there are some reports that it is needed.
+ #endif
+ 

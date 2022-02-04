@@ -1,9 +1,9 @@
-$OpenBSD: patch-nDPI_src_lib_Makefile_in,v 1.5 2021/07/27 10:27:48 sthen Exp $
+$OpenBSD: patch-nDPI_src_lib_Makefile_in,v 1.6 2022/02/04 11:41:02 sthen Exp $
 
 Index: nDPI/src/lib/Makefile.in
 --- nDPI/src/lib/Makefile.in.orig
 +++ nDPI/src/lib/Makefile.in
-@@ -22,7 +22,7 @@ HEADERS   = $(wildcard ../include/*.h)
+@@ -23,7 +23,7 @@ HEADERS   = $(wildcard ../include/*.h)
  NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
  NDPI_LIB_STATIC      = libndpi.a
  NDPI_LIB_SHARED_BASE = libndpi.so
@@ -12,7 +12,7 @@ Index: nDPI/src/lib/Makefile.in
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
  
  ifneq ($(OS),Windows_NT)
-@@ -38,7 +38,7 @@ ifneq ($(BUILD_MINGW),)
+@@ -39,7 +39,7 @@ ifneq ($(BUILD_MINGW),)
  NDPI_LIB_SHARED_BASE = libndpi
  NDPI_LIB_SHARED      = $(NDPI_LIB_SHARED_BASE)-@NDPI_VERSION_SHORT@.dll
  else
@@ -21,24 +21,20 @@ Index: nDPI/src/lib/Makefile.in
  endif
  endif
  
-@@ -52,8 +52,8 @@ $(NDPI_LIB_STATIC): $(OBJECTS)
+@@ -53,8 +53,6 @@ $(NDPI_LIB_STATIC): $(OBJECTS)
  
  $(NDPI_LIB_SHARED): $(OBJECTS)
- 	$(CC) -shared -fPIC $(SONAME_FLAG) -o $@ $(OBJECTS) $(LDFLAGS)
+ 	$(CC) -shared -fPIC $(SONAME_FLAG) -o $@ $(LDFLAGS) $(OBJECTS) $(LIBS)
 -	ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE)
 -	ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
-+	#ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE)
-+	#ln -fs $(NDPI_LIB_SHARED) $(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR)
  
  %.o: %.c $(HEADERS) Makefile
- 	$(CC) $(CFLAGS) -c $< -o $@
-@@ -76,7 +76,7 @@ cppcheck:
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+@@ -77,7 +75,5 @@ cppcheck:
  install: $(NDPI_LIBS)
  	mkdir -p $(DESTDIR)$(libdir)
  	cp $(NDPI_LIBS) $(DESTDIR)$(libdir)/
 -	cp -P $(NDPI_LIB_SHARED_BASE) $(DESTDIR)$(libdir)/
 -	cp -P $(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR) $(DESTDIR)$(libdir)/
-+	#cp -P $(NDPI_LIB_SHARED_BASE) $(DESTDIR)$(libdir)/
-+	#cp -P $(NDPI_LIB_SHARED_BASE).$(NDPI_VERSION_MAJOR) $(DESTDIR)$(libdir)/
  	mkdir -p $(DESTDIR)$(includedir)
  	cp ../include/*.h $(DESTDIR)$(includedir)

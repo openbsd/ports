@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.31 2021/12/08 21:12:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2022/02/04 11:41:02 sthen Exp $
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
-GH_TAGNAME=	5.0
+GH_TAGNAME=	5.2.1
+# if using a branch commit of ntopng, comment GH_TAGNAME and
+# update/uncomment the below 4 lines:
 #NTOPNG_V=	4.2
 #GH_COMMIT=	025e96e6cbb61e0f7320acf1d4038fafbbf836fa
 #NTOPNG_D=	20210727
 #DISTNAME=	ntopng-${NTOPNG_V}.${NTOPNG_D}
 
-# ndpi does not have a particularly stable API so is pulled in directly
-# to this port; the shared lib for ndpi is built but not installed
-# so it seems easier to keep the SHARED_LIBS infrastructure here.
-SHARED_LIBS=	ndpi 1.0
-NDPI_V=		4.0pl20211111
-NDPI_COMMIT=	92a1be258117c6e68c5f5b92ce688e2cea089495
+NDPI_V=		4.2
 DISTFILES=	${GH_DISTFILE} \
-		ndpi-${NDPI_V}-{}${NDPI_COMMIT}.tar.gz:0
+		ndpi-{}${NDPI_V}.tar.gz:0
+# if using a branch commit of ndpi, comment above and update/uncomment below:
+#NDPI_V=		4.0pl20211111
+#NDPI_COMMIT=	92a1be258117c6e68c5f5b92ce688e2cea089495
+#DISTFILES=	${GH_DISTFILE} \
+#		ndpi-${NDPI_V}-{}${NDPI_COMMIT}.tar.gz:0
 
 CATEGORIES=	net
 
@@ -67,6 +69,11 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		ac_cv_lib_ldap_ldap_initialize=no \
 		ac_cv_lib_atomic___atomic_exchange_8=no
+
+# ndpi does not have a particularly stable API so is pulled in directly
+# to this port; the shared lib for ndpi is built but not installed
+# so it seems easier to keep the SHARED_LIBS infrastructure here.
+SHARED_LIBS=	ndpi 1.0
 
 AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16

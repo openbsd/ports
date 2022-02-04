@@ -1,4 +1,6 @@
-$OpenBSD: patch-src_DummyInterface_cpp,v 1.4 2020/10/02 18:47:15 sthen Exp $
+$OpenBSD: patch-src_DummyInterface_cpp,v 1.5 2022/02/04 11:41:02 sthen Exp $
+
+64-bit time_t
 
 Index: src/DummyInterface.cpp
 --- src/DummyInterface.cpp.orig

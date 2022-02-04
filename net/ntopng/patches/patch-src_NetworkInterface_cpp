@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_NetworkInterface_cpp,v 1.8 2021/12/07 09:47:38 sthen Exp $
+$OpenBSD: patch-src_NetworkInterface_cpp,v 1.9 2022/02/04 11:41:02 sthen Exp $
+
+cope with openbsd nonstandard bpf_timeval
 
 Index: src/NetworkInterface.cpp
 --- src/NetworkInterface.cpp.orig
 +++ src/NetworkInterface.cpp
-@@ -1769,9 +1769,13 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
+@@ -1997,9 +1997,13 @@ bool NetworkInterface::processPacket(u_int32_t bridge_
       (2) ensures that periodic_stats_update is not performed too frequently as it could be detrimental for performances and lead
           to packet drops.
     */

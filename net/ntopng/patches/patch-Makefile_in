@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2021/12/07 09:47:38 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.9 2022/02/04 11:41:02 sthen Exp $
 
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -40,6 +40,9 @@ else ifeq ($(OS),Darwin)
+@@ -45,6 +45,9 @@ else ifeq ($(OS),Darwin)
  else ifeq ($(OS), $(filter $(OS), FreeBSD))
  	LUA_PLATFORM=freebsd
  	LUA_LIB=/usr/local/lib/liblua-5.3.a
@@ -13,17 +13,3 @@ Index: Makefile.in
  endif
  
  
-@@ -87,12 +90,7 @@ ifeq (@NEDGE@, 0)
-  HAS_ZEROMQ=$(shell pkg-config --exists libzmq && echo 0)
-  ifeq ($(HAS_ZEROMQ), 0)
- 	ZEROMQ_INC = $(shell pkg-config --cflags libzmq)
--	ZMQ_STATIC=/usr/local/lib/libzmq.a
--	ifeq ($(wildcard $(ZMQ_STATIC)),)
--		ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
--	else
--		ZEROMQ_LIB = $(ZMQ_STATIC)
--	endif
-+	ZEROMQ_LIB = $(shell pkg-config --libs libzmq)
-  else
- 	ZEROMQ_HOME=${PWD}/third-party/zeromq-4.1.7
- 	ZEROMQ_INC=-I$(ZEROMQ_HOME)/include
