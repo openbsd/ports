@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/09 14:40:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/04 11:44:03 sthen Exp $
 @bin bin/ipv6calc
 @bin bin/ipv6loganon
 @bin bin/ipv6logconv
@@ -14,6 +14,7 @@ share/ipv6calc/tools/GeoIP-update.sh
 share/ipv6calc/tools/IP2Location-update.sh
 share/ipv6calc/tools/ipv6calc-create-registry-list-ipv4.pl
 share/ipv6calc/tools/ipv6calc-create-registry-list-ipv6.pl
+share/ipv6calc/tools/ipv6calc-create-update-ipset.sh
 share/ipv6calc/tools/ipv6calc-db-update.sh
 share/ipv6calc/tools/ipv6calc-registries-check-run-create.sh
 share/ipv6calc/tools/ipv6calc-update-registries.sh

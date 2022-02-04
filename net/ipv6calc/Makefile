@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2021/07/19 07:37:57 fcambus Exp $
+# $OpenBSD: Makefile,v 1.29 2022/02/04 11:44:03 sthen Exp $
 
 COMMENT=	tool for manipulating IPv6 addresses
 
-GH_TAGNAME =	3.2.0
+GH_TAGNAME =	4.0.1
 GH_PROJECT =	ipv6calc
 GH_ACCOUNT =	pbiering
 CATEGORIES=	net
@@ -21,7 +21,8 @@ USE_GMAKE=	Yes
 MAKE_FLAGS=	DEFAULT_CFLAGS=
 
 TEST_TARGET=	test
-TEST_DEPENDS=	shells/bash
+TEST_DEPENDS=	shells/bash \
+		security/p5-Digest-SHA1
 
 pre-test:
 	sed -i 's,^#!/bin/sh,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/*/test*.sh
