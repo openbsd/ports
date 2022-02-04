@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/02 15:19:30 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/04 06:32:54 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -15,9 +15,10 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		d618d0b5ff3e59bea0143e6070481f8f4316a428
 DISTNAME =		${GH_PROJECT}-0.0.0.20220202
+REVISION =		0
 CATEGORIES =		net
 
-SHARED_LIBS =		tg_owt	1.0	# 0.0.0
+SHARED_LIBS =		tg_owt	1.1	# 0.0.0
 
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
@@ -25,8 +26,8 @@ SHARED_LIBS =		tg_owt	1.0	# 0.0.0
 # or tags, main/master/stable/<commit> tarballs are *unstable*;
 # use Andrew's mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
-LIBYUV_COMMIT =		78625492cb0ff43faebbb6cb6db2209cd4ccb785
-LIBYUV_DISTNAME =	libyuv-20211214-${LIBYUV_COMMIT:C/(........).*/\1/}
+LIBYUV_COMMIT =		804980bbab748fd0e180cd6e7d9292ff49baf704
+LIBYUV_DISTNAME =	libyuv-20220131-${LIBYUV_COMMIT:C/(........).*/\1/}
 DISTFILES =		${GH_DISTFILE} \
 			${LIBYUV_DISTNAME}{${LIBYUV_COMMIT}}.tar.gz:0
 EXTRACT_CASES =		${LIBYUV_DISTNAME}.tar.gz) ${TAR} -xz \
