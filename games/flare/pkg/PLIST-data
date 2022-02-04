@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.4 2021/08/09 09:10:14 kirby Exp $
+@comment $OpenBSD: PLIST-data,v 1.5 2022/02/04 14:20:45 kirby Exp $
 @conflict flare-<0.19p3
 share/flare/mods/
 share/flare/mods/alpha_demo/
@@ -417,6 +417,7 @@ share/flare/mods/empyrean_campaign/engine/damage_types.txt
 share/flare/mods/empyrean_campaign/engine/elements.txt
 share/flare/mods/empyrean_campaign/engine/equip_flags.txt
 share/flare/mods/empyrean_campaign/engine/font_settings.txt
+share/flare/mods/empyrean_campaign/engine/fow_mask.txt
 share/flare/mods/empyrean_campaign/engine/gameplay.txt
 share/flare/mods/empyrean_campaign/engine/icons.txt
 share/flare/mods/empyrean_campaign/engine/loot.txt
@@ -643,6 +644,7 @@ share/flare/mods/empyrean_campaign/maps/wizards_tower_3.txt
 share/flare/mods/empyrean_campaign/menus/
 share/flare/mods/empyrean_campaign/menus/actionbar.txt
 share/flare/mods/empyrean_campaign/menus/character.txt
+share/flare/mods/empyrean_campaign/menus/inventory.txt
 share/flare/mods/empyrean_campaign/npcs/
 share/flare/mods/empyrean_campaign/npcs/abasi.txt
 share/flare/mods/empyrean_campaign/npcs/abasi_2.txt
@@ -679,8 +681,16 @@ share/flare/mods/empyrean_campaign/npcs/yora.txt
 share/flare/mods/empyrean_campaign/powers/
 share/flare/mods/empyrean_campaign/powers/base/
 share/flare/mods/empyrean_campaign/powers/base/items/
+share/flare/mods/empyrean_campaign/powers/base/items/elemental_potion.txt
 share/flare/mods/empyrean_campaign/powers/base/items/health_potion.txt
 share/flare/mods/empyrean_campaign/powers/base/items/mana_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/restoration_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/stamina_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/super_health_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/super_mana_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/treasure_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/ultra_health_potion.txt
+share/flare/mods/empyrean_campaign/powers/base/items/ultra_mana_potion.txt
 share/flare/mods/empyrean_campaign/powers/base/magician/
 share/flare/mods/empyrean_campaign/powers/base/magician/burn.txt
 share/flare/mods/empyrean_campaign/powers/base/magician/energy_flow.txt
@@ -810,8 +820,17 @@ share/flare/mods/empyrean_campaign/scripts/maps/st_maria_3/torch_all.txt
 share/flare/mods/empyrean_campaign/scripts/maps/the_pit/
 share/flare/mods/empyrean_campaign/scripts/maps/the_pit/locked_chest.txt
 share/flare/mods/empyrean_campaign/scripts/powers/
-share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt_hp.txt
-share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt_mp.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/elemental.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/hp.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/mp.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/restoration.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/stamina.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/super_hp.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/super_mp.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/treasure.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/ultra_hp.txt
+share/flare/mods/empyrean_campaign/scripts/powers/alchemist_skirt/ultra_mp.txt
 share/flare/mods/empyrean_campaign/scripts/powers/dev_tome.txt
 share/flare/mods/empyrean_campaign/scripts/powers/goblin_steal.txt
 share/flare/mods/empyrean_campaign/scripts/powers/mortar_and_pestle.txt
@@ -1326,7 +1345,6 @@ share/flare/mods/fantasycore/images/loot/wand.png
 share/flare/mods/fantasycore/images/loot/war_hammer.png
 share/flare/mods/fantasycore/images/loot/zweihander.png
 share/flare/mods/fantasycore/images/menus/
-share/flare/mods/fantasycore/images/menus/actionbar_labels.png
 share/flare/mods/fantasycore/images/menus/actionbar_trim.png
 share/flare/mods/fantasycore/images/menus/attention_glow.png
 share/flare/mods/fantasycore/images/menus/backgrounds/
@@ -1357,14 +1375,12 @@ share/flare/mods/fantasycore/images/menus/buttons/up.png
 share/flare/mods/fantasycore/images/menus/buttons/upgrade.png
 share/flare/mods/fantasycore/images/menus/character.png
 share/flare/mods/fantasycore/images/menus/config.png
-share/flare/mods/fantasycore/images/menus/confirm_bg.png
 share/flare/mods/fantasycore/images/menus/credits_fantasycore.png
 share/flare/mods/fantasycore/images/menus/dev_console.png
 share/flare/mods/fantasycore/images/menus/dialog_box.png
 share/flare/mods/fantasycore/images/menus/disabled.png
 share/flare/mods/fantasycore/images/menus/enemy_bar.png
 share/flare/mods/fantasycore/images/menus/enemy_bar_hp.png
-share/flare/mods/fantasycore/images/menus/game_over.png
 share/flare/mods/fantasycore/images/menus/game_slot_select.png
 share/flare/mods/fantasycore/images/menus/game_slots.png
 share/flare/mods/fantasycore/images/menus/input.png
@@ -1372,9 +1388,8 @@ share/flare/mods/fantasycore/images/menus/input_console.png
 share/flare/mods/fantasycore/images/menus/inventory.png
 share/flare/mods/fantasycore/images/menus/log.png
 share/flare/mods/fantasycore/images/menus/minimap.png
+share/flare/mods/fantasycore/images/menus/modal_window.png
 share/flare/mods/fantasycore/images/menus/movement_type.png
-share/flare/mods/fantasycore/images/menus/num_picker_bg.png
-share/flare/mods/fantasycore/images/menus/pause_menu.png
 share/flare/mods/fantasycore/images/menus/portrait_border.png
 share/flare/mods/fantasycore/images/menus/powers.png
 share/flare/mods/fantasycore/images/menus/powers_unlock.png
@@ -1630,7 +1645,6 @@ share/flare/mods/fantasycore/menus/character.txt
 share/flare/mods/fantasycore/menus/confirm.txt
 share/flare/mods/fantasycore/menus/devconsole.txt
 share/flare/mods/fantasycore/menus/enemy.txt
-share/flare/mods/fantasycore/menus/exit.txt
 share/flare/mods/fantasycore/menus/game_over.txt
 share/flare/mods/fantasycore/menus/gamenew.txt
 share/flare/mods/fantasycore/menus/hp.txt
