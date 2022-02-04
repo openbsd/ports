@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2022/01/13 15:59:34 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2022/02/04 23:29:30 sthen Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
+@conflict postgresql-docs-<12.1
 @pkgpath databases/postgresql
 @bin bin/clusterdb
 @bin bin/createdb
