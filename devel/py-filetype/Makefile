@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:00:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/04 10:28:52 sthen Exp $
 
 COMMENT =		infer file type and MIME type
 
-MODPY_EGG_VERSION =	1.0.7
+MODPY_EGG_VERSION =	1.0.10
 
 DISTNAME =		filetype-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
