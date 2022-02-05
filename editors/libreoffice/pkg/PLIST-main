@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.64 2022/02/03 20:09:24 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.65 2022/02/05 17:19:05 robert Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -386,20 +386,6 @@ lib/libreoffice/readmes/
 lib/libreoffice/readmes/README_en-US
 lib/libreoffice/share/
 lib/libreoffice/share/Scripts/
-lib/libreoffice/share/Scripts/beanshell/Calc/
-lib/libreoffice/share/Scripts/beanshell/Calc/CopyRange.bsh
-lib/libreoffice/share/Scripts/beanshell/Calc/FixView.bsh
-lib/libreoffice/share/Scripts/beanshell/Calc/InsertSheet.bsh
-lib/libreoffice/share/Scripts/beanshell/Calc/ProtectSheet.bsh
-lib/libreoffice/share/Scripts/beanshell/Calc/SelectCell.bsh
-lib/libreoffice/share/Scripts/beanshell/Calc/parcel-descriptor.xml
-lib/libreoffice/share/Scripts/beanshell/Writer/
-lib/libreoffice/share/Scripts/beanshell/Writer/ChangeFont.bsh
-lib/libreoffice/share/Scripts/beanshell/Writer/ChangeParaAdjust.bsh
-lib/libreoffice/share/Scripts/beanshell/Writer/InsertTable.bsh
-lib/libreoffice/share/Scripts/beanshell/Writer/InsertText.bsh
-lib/libreoffice/share/Scripts/beanshell/Writer/SetText.bsh
-lib/libreoffice/share/Scripts/beanshell/Writer/parcel-descriptor.xml
 lib/libreoffice/share/Scripts/python/
 lib/libreoffice/share/Scripts/python/Capitalise.py
 lib/libreoffice/share/Scripts/python/HelloWorld.py

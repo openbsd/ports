@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.23 2021/09/17 06:31:57 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.24 2022/02/05 17:19:05 robert Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
@@ -54,6 +54,13 @@ lib/libreoffice/program/jvmfwk3rc
 lib/libreoffice/program/services/scriptproviderforbeanshell.rdb
 lib/libreoffice/program/services/scriptproviderforjavascript.rdb
 lib/libreoffice/share/Scripts/beanshell/
+lib/libreoffice/share/Scripts/beanshell/Calc/
+lib/libreoffice/share/Scripts/beanshell/Calc/CopyRange.bsh
+lib/libreoffice/share/Scripts/beanshell/Calc/FixView.bsh
+lib/libreoffice/share/Scripts/beanshell/Calc/InsertSheet.bsh
+lib/libreoffice/share/Scripts/beanshell/Calc/ProtectSheet.bsh
+lib/libreoffice/share/Scripts/beanshell/Calc/SelectCell.bsh
+lib/libreoffice/share/Scripts/beanshell/Calc/parcel-descriptor.xml
 lib/libreoffice/share/Scripts/beanshell/Capitalise/
 lib/libreoffice/share/Scripts/beanshell/Capitalise/capitalise.bsh
 lib/libreoffice/share/Scripts/beanshell/Capitalise/parcel-descriptor.xml
@@ -71,6 +78,13 @@ lib/libreoffice/share/Scripts/beanshell/MemoryUsage/parcel-descriptor.xml
 lib/libreoffice/share/Scripts/beanshell/WordCount/
 lib/libreoffice/share/Scripts/beanshell/WordCount/parcel-descriptor.xml
 lib/libreoffice/share/Scripts/beanshell/WordCount/wordcount.bsh
+lib/libreoffice/share/Scripts/beanshell/Writer/
+lib/libreoffice/share/Scripts/beanshell/Writer/ChangeFont.bsh
+lib/libreoffice/share/Scripts/beanshell/Writer/ChangeParaAdjust.bsh
+lib/libreoffice/share/Scripts/beanshell/Writer/InsertTable.bsh
+lib/libreoffice/share/Scripts/beanshell/Writer/InsertText.bsh
+lib/libreoffice/share/Scripts/beanshell/Writer/SetText.bsh
+lib/libreoffice/share/Scripts/beanshell/Writer/parcel-descriptor.xml
 lib/libreoffice/share/Scripts/java/
 lib/libreoffice/share/Scripts/java/HelloWorld/
 lib/libreoffice/share/Scripts/java/HelloWorld/HelloWorld.jar
