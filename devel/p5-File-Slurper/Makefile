@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/05 08:54:52 benoit Exp $
 
 COMMENT=	simple, sane and efficient module to slurp a file
 
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	File-Slurper-0.012
-REVISION=	0
+DISTNAME=	File-Slurper-0.013
 
 CATEGORIES=	devel
 
