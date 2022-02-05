@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/05 16:38:31 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/05 17:44:36 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -8,6 +8,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			3.5.1
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
@@ -32,7 +33,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Svg
 WANTLIB += Qt5Widgets absl_strings avcodec avformat avutil c crypto
-WANTLIB += hunspell-1.7 lz4 m openal qrcodegencpp rnnoise swresample
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7
+WANTLIB += lz4 m openal qrcodegencpp rnnoise sigc-2.0 swresample
 WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
 WANTLIB += xxhash z
 
@@ -52,6 +54,9 @@ LIB_DEPENDS =		archivers/lz4 \
 			audio/rnnoise \
 			audio/openal \
 			devel/abseil-cpp \
+			devel/glib2 \
+			devel/glib2mm \
+			devel/libsigc++-2 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
 			net/tg_owt>=0.0.0.20220202 \
@@ -75,7 +80,6 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
-			-DDESKTOP_APP_DISABLE_DBUS_INTEGRATION=ON \
 			-DDESKTOP_APP_QT6=OFF
 
 # match standard version with abseil
