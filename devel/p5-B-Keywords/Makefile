@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/12 09:42:03 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2022/02/05 08:30:31 benoit Exp $
 
 COMMENT =	lists of Perl keywords for use in backend modules
 
-DISTNAME =	B-Keywords-1.22
+DISTNAME =	B-Keywords-1.23
 CATEGORIES =	devel
 
 # perl
