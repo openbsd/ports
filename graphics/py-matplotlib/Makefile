@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.87 2021/11/02 00:01:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2022/02/05 22:21:01 daniel Exp $
 
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	3.1.3
+MODPY_EGG_VERSION =	3.2.2
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		graphics devel math
 
@@ -26,26 +25,26 @@ FLAVOR =	python3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-COMMON_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
+BUILD_DEPENDS =	math/py-numpy${MODPY_FLAVOR} \
+		textproc/py-sphinx${MODPY_FLAVOR}
+
+RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-kiwisolver${MODPY_FLAVOR} \
 		devel/py-parsing${MODPY_FLAVOR} \
+		devel/py-gobject3${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
 		graphics/py-Pillow${MODPY_FLAVOR} \
+		graphics/py-cairo${MODPY_FLAVOR} \
 		graphics/py-cycler${MODPY_FLAVOR} \
 		${MODPY_TKINTER_DEPENDS}
 
-BUILD_DEPENDS=	${COMMON_DEPENDS} \
-		textproc/py-sphinx${MODPY_FLAVOR}
-RUN_DEPENDS=	${COMMON_DEPENDS}
-LIB_DEPENDS=	graphics/png
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
-
-
-COMMON_DEPENDS +=	graphics/py-cairo${MODPY_FLAVOR} \
-			devel/py-gobject3${MODPY_FLAVOR}
 # pygobject GTK3 introspection (not provided by indirect dependencies)
-COMMON_DEPENDS +=	x11/gtk+3
+RUN_DEPENDS +=	x11/gtk+3
+
+LIB_DEPENDS =	graphics/png
+
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 MAKE_ENV+=	LDSHARED="${CC} -shared -fPIC"
 
@@ -68,6 +67,6 @@ post-install:
 
 do-test: fake
 	cd ${WRKSRC} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} tests.py --no-network --verbose
+		${MODPY_BIN} tests.py --verbose
 
 .include <bsd.port.mk>

@@ -1,21 +1,19 @@
-$OpenBSD: patch-setup_cfg_template,v 1.2 2021/02/22 22:46:09 daniel Exp $
+$OpenBSD: patch-setup_cfg_template,v 1.3 2022/02/05 22:21:01 daniel Exp $
 
 Index: setup.cfg.template
 --- setup.cfg.template.orig
 +++ setup.cfg.template
-@@ -8,7 +8,7 @@
+@@ -8,14 +8,14 @@
  # set this to True.  It will download and build a specific version of
  # FreeType, and then use that to build the ft2font extension.  This
  # ensures that test images are exactly reproducible.
 -#local_freetype = False
 +local_freetype = False
  
- [status]
- # To suppress display of the dependencies and their versions
-@@ -20,8 +20,8 @@
- # optional. All except tests are installed by default, but that can
- # be changed here.
- #
+ [packages]
+ # There are a number of data subpackages from Matplotlib that are
+ # considered optional. All except 'tests' data (meaning the baseline
+ # image files) are installed by default, but that can be changed here.
 -#tests = False
 -#sample_data = True
 +tests = True
