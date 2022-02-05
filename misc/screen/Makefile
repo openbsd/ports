@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.75 2021/02/09 20:17:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2022/02/05 11:57:36 op Exp $
 
 COMMENT=	multi-screen window manager
 
-DISTNAME=	screen-4.8.0
-REVISION=	0
+DISTNAME=	screen-4.9.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 

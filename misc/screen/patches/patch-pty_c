@@ -1,15 +1,14 @@
-$OpenBSD: patch-pty_c,v 1.4 2019/09/05 17:35:06 sthen Exp $
-
-for openpty()
+$OpenBSD: patch-pty_c,v 1.5 2022/02/05 11:57:36 op Exp $
 
 Index: pty.c
 --- pty.c.orig
 +++ pty.c
-@@ -30,6 +30,7 @@
- #include <sys/stat.h>
- #include <fcntl.h>
+@@ -32,7 +32,7 @@
  #include <signal.h>
-+#include <util.h>
+ 
+ #if defined(__OpenBSD__)
+-#include <utils.h>  /* for openpty() */
++#include <util.h>  /* for openpty() */
+ #endif
  
  #include "config.h"
- #include "screen.h"
