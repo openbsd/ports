@@ -1,4 +1,4 @@
-$OpenBSD: patch-Telegram_SourceFiles_calls_calls_call_cpp,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
+$OpenBSD: patch-Telegram_SourceFiles_calls_calls_call_cpp,v 1.2 2022/02/05 16:38:31 kn Exp $
 
 Disable unneeded libtgvoip, tgcalls provide everything we need; from alt linux
 http://www.sisyphus.ru/cgi-bin/srpm.pl/Sisyphus/telegram-desktop/getpatch/1
@@ -23,7 +23,7 @@ Index: Telegram/SourceFiles/calls/calls_call.cpp
  
  void AppendEndpoint(
  		std::vector<tgcalls::Endpoint> &list,
-@@ -1269,7 +1266,6 @@ Call::~Call() {
+@@ -1268,7 +1265,6 @@ Call::~Call() {
  }
  
  void UpdateConfig(const std::string &data) {

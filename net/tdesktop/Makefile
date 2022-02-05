@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/02 23:25:53 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/05 16:38:31 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.5.0
+V =			3.5.1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
@@ -15,11 +15,11 @@ CATEGORIES =		net
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
-# Merged "Use QtWidgets private include directories with Qt 5"
-MASTER_SITES0 =		https://github.com/desktop-app/cmake_helpers/commit/
-PATCHFILES +=		tdesktop-fix-qt5-includes-{}f552ccb.patch:0
-PATCH_CASES +=		tdesktop-fix-qt5-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
-			    -d ${WRKSRC}/cmake/ <$$patchfile ;;
+# Merged "Fix namespace in dummy Wayland integration"
+MASTER_SITES0 =		https://github.com/desktop-app/lib_base/commit/
+PATCHFILES +=		tdesktop-wayland-fix-dummy-{}eb631e9.patch:0
+PATCH_CASES +=		tdesktop-wayland-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
 
 PATCH_DIST_STRIP =	-p1
 
