@@ -1,0 +1,24 @@
+$OpenBSD: patch-sys_v4l2_v4l2_calls_c,v 1.3 2022/02/05 14:49:41 ajacoutot Exp $
+
+Index: sys/v4l2/v4l2_calls.c
+--- sys/v4l2/v4l2_calls.c.orig
++++ sys/v4l2/v4l2_calls.c
+@@ -1329,14 +1329,18 @@ gst_v4l2_query_dv_timings (GstV4l2Object * v4l2object,
+ 
+   if (ret < 0) {
+     switch (errno) {
++#ifdef ENODATA
+       case ENODATA:
+         GST_DEBUG_OBJECT (v4l2object->dbg_obj,
+             "QUERY_DV_TIMINGS not supported for this input/output");
+         break;
++#endif
++#ifdef ENOLINK
+       case ENOLINK:
+         GST_DEBUG_OBJECT (v4l2object->dbg_obj,
+             "No timings could be detected because no signal was found.");
+         break;
++#endif
+       case ENOLCK:
+         GST_INFO_OBJECT (v4l2object->dbg_obj,
+             "The signal was unstable and the hardware could not lock on to it.");

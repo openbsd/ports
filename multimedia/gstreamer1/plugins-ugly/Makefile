@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/09/14 06:03:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2022/02/05 14:49:41 ajacoutot Exp $
 
 COMMENT=		ugly elements for GStreamer
 
@@ -17,7 +17,8 @@ LIB_DEPENDS=		${P}/plugins-base=${V} \
 			devel/libdvdread \
 			multimedia/x264
 
-CONFIGURE_ARGS=		-Da52dec=disabled \
+CONFIGURE_ARGS=		-Dgpl=enabled \
+			-Da52dec=disabled \
 			-Damrnb=disabled \
 			-Damrwbdec=disabled \
 			-Dmpeg2dec=disabled \

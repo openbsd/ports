@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.33 2020/09/14 06:03:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2022/02/05 14:49:40 ajacoutot Exp $
 @bin bin/gst-transcoder-${API}
+include/gstreamer-${API}/
+include/gstreamer-${API}/gst/
+include/gstreamer-${API}/gst/audio/
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/audio/gstplanaraudioadapter.h
@@ -31,15 +34,28 @@ include/gstreamer-${API}/gst/interfaces/photography.h
 include/gstreamer-${API}/gst/isoff/
 include/gstreamer-${API}/gst/isoff/gstisoff.h
 include/gstreamer-${API}/gst/mpegts/
+include/gstreamer-${API}/gst/mpegts/gst-atsc-descriptor.h
 include/gstreamer-${API}/gst/mpegts/gst-atsc-section.h
 include/gstreamer-${API}/gst/mpegts/gst-dvb-descriptor.h
 include/gstreamer-${API}/gst/mpegts/gst-dvb-section.h
+include/gstreamer-${API}/gst/mpegts/gst-hdmv-section.h
+include/gstreamer-${API}/gst/mpegts/gst-isdb-descriptor.h
 include/gstreamer-${API}/gst/mpegts/gst-scte-section.h
 include/gstreamer-${API}/gst/mpegts/gstmpegts-enumtypes.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtsdescriptor.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtssection.h
 include/gstreamer-${API}/gst/mpegts/mpegts-prelude.h
 include/gstreamer-${API}/gst/mpegts/mpegts.h
+include/gstreamer-${API}/gst/play/
+include/gstreamer-${API}/gst/play/gstplay-media-info.h
+include/gstreamer-${API}/gst/play/gstplay-signal-adapter.h
+include/gstreamer-${API}/gst/play/gstplay-types.h
+include/gstreamer-${API}/gst/play/gstplay-video-overlay-video-renderer.h
+include/gstreamer-${API}/gst/play/gstplay-video-renderer.h
+include/gstreamer-${API}/gst/play/gstplay-visualization.h
+include/gstreamer-${API}/gst/play/gstplay.h
+include/gstreamer-${API}/gst/play/play-prelude.h
+include/gstreamer-${API}/gst/play/play.h
 include/gstreamer-${API}/gst/player/
 include/gstreamer-${API}/gst/player/gstplayer-g-main-context-signal-dispatcher.h
 include/gstreamer-${API}/gst/player/gstplayer-media-info.h
@@ -56,7 +72,9 @@ include/gstreamer-${API}/gst/sctp/sctp-prelude.h
 include/gstreamer-${API}/gst/sctp/sctpreceivemeta.h
 include/gstreamer-${API}/gst/sctp/sctpsendmeta.h
 include/gstreamer-${API}/gst/transcoder/
+include/gstreamer-${API}/gst/transcoder/gsttranscoder-signal-adapter.h
 include/gstreamer-${API}/gst/transcoder/gsttranscoder.h
+include/gstreamer-${API}/gst/transcoder/transcoder-enumtypes.h
 include/gstreamer-${API}/gst/transcoder/transcoder-prelude.h
 include/gstreamer-${API}/gst/uridownloader/
 include/gstreamer-${API}/gst/uridownloader/gstfragment.h
@@ -71,19 +89,24 @@ include/gstreamer-${API}/gst/webrtc/rtcsessiondescription.h
 include/gstreamer-${API}/gst/webrtc/rtpreceiver.h
 include/gstreamer-${API}/gst/webrtc/rtpsender.h
 include/gstreamer-${API}/gst/webrtc/rtptransceiver.h
+include/gstreamer-${API}/gst/webrtc/sctptransport.h
 include/gstreamer-${API}/gst/webrtc/webrtc-enumtypes.h
 include/gstreamer-${API}/gst/webrtc/webrtc.h
 include/gstreamer-${API}/gst/webrtc/webrtc_fwd.h
+lib/girepository-${API}/
 lib/girepository-${API}/GstBadAudio-${API}.typelib
 lib/girepository-${API}/GstCodecs-${API}.typelib
 lib/girepository-${API}/GstInsertBin-${API}.typelib
 lib/girepository-${API}/GstMpegts-${API}.typelib
+lib/girepository-${API}/GstPlay-${API}.typelib
 lib/girepository-${API}/GstPlayer-${API}.typelib
 lib/girepository-${API}/GstTranscoder-${API}.typelib
 lib/girepository-${API}/GstWebRTC-${API}.typelib
+lib/gstreamer-${API}/
 @so lib/gstreamer-${API}/libgstaccurip.so
 @so lib/gstreamer-${API}/libgstadpcmdec.so
 @so lib/gstreamer-${API}/libgstadpcmenc.so
+@so lib/gstreamer-${API}/libgstaes.so
 @so lib/gstreamer-${API}/libgstaiff.so
 @so lib/gstreamer-${API}/libgstasfmux.so
 @so lib/gstreamer-${API}/libgstassrender.so
@@ -98,6 +121,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstbz2.so
 @so lib/gstreamer-${API}/libgstcamerabin.so
 @so lib/gstreamer-${API}/libgstclosedcaption.so
+@so lib/gstreamer-${API}/libgstcodecalpha.so
 @so lib/gstreamer-${API}/libgstcoloreffects.so
 @so lib/gstreamer-${API}/libgstcolormanagement.so
 @so lib/gstreamer-${API}/libgstdash.so
@@ -124,7 +148,6 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstjpegformat.so
 @so lib/gstreamer-${API}/libgstlegacyrawparse.so
 @so lib/gstreamer-${API}/libgstmidi.so
-@so lib/gstreamer-${API}/libgstmms.so
 @so lib/gstreamer-${API}/libgstmpegpsdemux.so
 @so lib/gstreamer-${API}/libgstmpegpsmux.so
 @so lib/gstreamer-${API}/libgstmpegtsdemux.so
@@ -171,6 +194,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @lib lib/libgstisoff-${API}.so.${LIBgstisoff-${API}_VERSION}
 @lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-${API}_VERSION}
 @lib lib/libgstphotography-${API}.so.${LIBgstphotography-${API}_VERSION}
+@lib lib/libgstplay-${API}.so.${LIBgstplay-${API}_VERSION}
 @lib lib/libgstplayer-${API}.so.${LIBgstplayer-${API}_VERSION}
 @lib lib/libgstsctp-${API}.so.${LIBgstsctp-${API}_VERSION}
 @lib lib/libgsttranscoder-${API}.so.${LIBgsttranscoder-${API}_VERSION}
@@ -181,18 +205,22 @@ lib/pkgconfig/gstreamer-codecparsers-${API}.pc
 lib/pkgconfig/gstreamer-insertbin-${API}.pc
 lib/pkgconfig/gstreamer-mpegts-${API}.pc
 lib/pkgconfig/gstreamer-photography-${API}.pc
+lib/pkgconfig/gstreamer-play-${API}.pc
 lib/pkgconfig/gstreamer-player-${API}.pc
 lib/pkgconfig/gstreamer-plugins-bad-${API}.pc
 lib/pkgconfig/gstreamer-sctp-${API}.pc
 lib/pkgconfig/gstreamer-transcoder-${API}.pc
 lib/pkgconfig/gstreamer-webrtc-${API}.pc
+share/gir-${API}/
 share/gir-${API}/GstBadAudio-${API}.gir
 share/gir-${API}/GstCodecs-${API}.gir
 share/gir-${API}/GstInsertBin-${API}.gir
 share/gir-${API}/GstMpegts-${API}.gir
+share/gir-${API}/GstPlay-${API}.gir
 share/gir-${API}/GstPlayer-${API}.gir
 share/gir-${API}/GstTranscoder-${API}.gir
 share/gir-${API}/GstWebRTC-${API}.gir
+share/gstreamer-${API}/
 share/gstreamer-${API}/encoding-profiles/
 share/gstreamer-${API}/encoding-profiles/device/
 share/gstreamer-${API}/encoding-profiles/device/dvd.gep
@@ -204,50 +232,139 @@ share/gstreamer-${API}/encoding-profiles/file-extension/mp3.gep
 share/gstreamer-${API}/encoding-profiles/file-extension/mp4.gep
 share/gstreamer-${API}/encoding-profiles/file-extension/oga.gep
 share/gstreamer-${API}/encoding-profiles/file-extension/ogv.gep
+share/gstreamer-${API}/encoding-profiles/file-extension/ts.gep
 share/gstreamer-${API}/encoding-profiles/file-extension/webm.gep
 share/gstreamer-${API}/encoding-profiles/online-services/
 share/gstreamer-${API}/encoding-profiles/online-services/youtube.gep
 share/gstreamer-${API}/presets/
 share/gstreamer-${API}/presets/GstFreeverb.prs
+share/locale/
+share/locale/af/
+share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/az/
+share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/el/
+share/locale/el/LC_MESSAGES/
 share/locale/el/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/hr/
+share/locale/hr/LC_MESSAGES/
 share/locale/hr/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/id/
+share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/lv/
+share/locale/lv/LC_MESSAGES/
 share/locale/lv/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/mt/
+share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ro/
+share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/sk/
+share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/sl/
+share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
 share/locale/sr/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-${API}.mo
+share/locale/zh_TW/
+share/locale/zh_TW/LC_MESSAGES/
+share/locale/zh_TW/LC_MESSAGES/gst-plugins-bad-${API}.mo

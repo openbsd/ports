@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2021/09/09 10:12:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2022/02/05 14:49:41 ajacoutot Exp $
 
 # Reenable that port on non-rust archs at the cost of pulseaudio support:
 # pulseaudio -> [...] -> spidermonkey>=78 -> rust
@@ -19,18 +19,12 @@ WANTLIB += glib-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += intl
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += FLAC X11 Xdamage Xext Xfixes bz2 cairo cairo-gobject
-WANTLIB-main += gdk-3 gdk_pixbuf-2.0 gio-2.0 gstallocators-1.0 gstfft-1.0
-WANTLIB-main += gstgl-1.0 gstnet-1.0 gstpbutils-1.0 gstriff-1.0 gstrtp-1.0
-WANTLIB-main += gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gtk-3 jpeg m orc-0.4 png
-WANTLIB-main += shout soup-2.4 speex tag twolame v4l2 vpx wavpack z
-WANTLIB-main +=	gstvideo-1.0
-
-# comes from multimedia/libvpx using lang/clang MODULE on i386|amd64 only
-# which includes gcc4 MODULE with adds gcc-libs in dependency scope
-.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
-WANTLIB-main += ${COMPILER_LIBCXX}
-.endif
+WANTLIB-main += ${COMPILER_LIBCXX} FLAC X11 Xdamage Xext Xfixes bz2
+WANTLIB-main += cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0
+WANTLIB-main += gstallocators-1.0 gstfft-1.0 gstgl-1.0 gstnet-1.0 gstpbutils-1.0
+WANTLIB-main += gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0
+WANTLIB-main += gstvideo-1.0 gtk-3 jpeg m mp3lame orc-0.4 png shout
+WANTLIB-main += speex tag twolame v4l2 vpx wavpack z
 
 WANTLIB-pulse += ${WANTLIB} pulse
 
@@ -41,15 +35,20 @@ LIB_DEPENDS=		${P}/plugins-base=${V}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			audio/flac \
+			audio/lame \
 			audio/speex \
 			audio/taglib \
 			audio/twolame \
 			audio/wavpack \
-			devel/libsoup \
 			multimedia/libv4l \
 			multimedia/libvpx \
 			net/libshout \
 			x11/gtk+3
+
+# dlopen()
+WANTLIB-main += soup-3.0
+BUILD_DEPENDS +=	devel/libsoup3
+RUN_DEPENDS-main +=	devel/libsoup3
 
 LIB_DEPENDS-pulse=	${LIB_DEPENDS} \
 			audio/pulseaudio
@@ -61,7 +60,6 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Ddv1394=disabled \
 			-Dwaveform=disabled \
 			-Djack=disabled \
-			-Dlame=disabled \
 			-Dlibcaca=disabled \
 			-Dmpg123=disabled \
 			-Doss=disabled \

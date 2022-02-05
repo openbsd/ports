@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2020/09/14 06:03:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2022/02/05 14:49:40 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.14.0
 @bin bin/gst-device-monitor-${API}
 @bin bin/gst-discoverer-${API}
@@ -65,6 +65,7 @@ include/gstreamer-${API}/gst/gl/glprototypes/
 include/gstreamer-${API}/gst/gl/glprototypes/all_functions.h
 include/gstreamer-${API}/gst/gl/glprototypes/base.h
 include/gstreamer-${API}/gst/gl/glprototypes/blending.h
+include/gstreamer-${API}/gst/gl/glprototypes/buffer_storage.h
 include/gstreamer-${API}/gst/gl/glprototypes/buffers.h
 include/gstreamer-${API}/gst/gl/glprototypes/debug.h
 include/gstreamer-${API}/gst/gl/glprototypes/eglimage.h
@@ -88,6 +89,7 @@ include/gstreamer-${API}/gst/gl/gstglbuffer.h
 include/gstreamer-${API}/gst/gl/gstglbufferpool.h
 include/gstreamer-${API}/gst/gl/gstglcolorconvert.h
 include/gstreamer-${API}/gst/gl/gstglcontext.h
+include/gstreamer-${API}/gst/gl/gstglcontextconfig.h
 include/gstreamer-${API}/gst/gl/gstgldebug.h
 include/gstreamer-${API}/gst/gl/gstgldisplay.h
 include/gstreamer-${API}/gst/gl/gstglfeature.h
@@ -174,6 +176,7 @@ include/gstreamer-${API}/gst/video/colorbalance.h
 include/gstreamer-${API}/gst/video/colorbalancechannel.h
 include/gstreamer-${API}/gst/video/gstvideoaffinetransformationmeta.h
 include/gstreamer-${API}/gst/video/gstvideoaggregator.h
+include/gstreamer-${API}/gst/video/gstvideocodecalphameta.h
 include/gstreamer-${API}/gst/video/gstvideodecoder.h
 include/gstreamer-${API}/gst/video/gstvideoencoder.h
 include/gstreamer-${API}/gst/video/gstvideofilter.h

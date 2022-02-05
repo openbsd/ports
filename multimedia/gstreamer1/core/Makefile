@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.66 2022/02/03 09:35:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2022/02/05 14:49:40 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
 
-SHARED_LIBS += gstreamer-1.0             6.0 # 0.1806.0
-SHARED_LIBS += gstbase-1.0               6.0 # 0.1806.0
-SHARED_LIBS += gstcontroller-1.0         6.0 # 0.1806.0
-SHARED_LIBS += gstnet-1.0                6.0 # 0.1806.0
-SHARED_LIBS += gstcheck-1.0              6.0 # 0.1806.0
+SHARED_LIBS += gstreamer-1.0             7.0 # 0.2000.0
+SHARED_LIBS += gstbase-1.0               7.0 # 0.2000.0
+SHARED_LIBS += gstcontroller-1.0         7.0 # 0.2000.0
+SHARED_LIBS += gstnet-1.0                7.0 # 0.2000.0
+SHARED_LIBS += gstcheck-1.0              7.0 # 0.2000.0
 
 WANTLIB += c execinfo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl m
 
@@ -21,8 +21,7 @@ BUILD_DEPENDS=		devel/bison \
 
 LIB_DEPENDS=		devel/glib2
 
-CONFIGURE_ARGS=		-Dgtk_doc=disabled \
-			-Dbenchmarks=disabled \
+CONFIGURE_ARGS=		-Dbenchmarks=disabled \
 			-Dlibunwind=disabled \
 			-Dlibdw=disabled \
 			-Ddbghelp=disabled
