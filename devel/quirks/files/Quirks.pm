@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1361 2022/01/23 17:10:07 remi Exp $
+# $OpenBSD: Quirks.pm,v 1.1362 2022/02/06 15:05:49 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1840,6 +1840,7 @@ my $cve = {
 	'net/libssh' => 'libssh-<0.9.5',
 	'net/libssh2' => 'libssh2-<1.8.2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
+	'net/miniupnp/miniupnpd' => 'miniupnpd-<2.3.0',
 	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'net/ntp' => 'ntp-<4.2.8pl7',
 	'net/openconnect' => 'openconnect-<8.10',
