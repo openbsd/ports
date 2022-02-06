@@ -1,8 +1,8 @@
-$OpenBSD: patch-miniupnpd_conf,v 1.5 2019/03/11 04:06:37 bket Exp $
+$OpenBSD: patch-miniupnpd_conf,v 1.6 2022/02/06 15:04:46 bket Exp $
 Index: miniupnpd.conf
 --- miniupnpd.conf.orig
 +++ miniupnpd.conf
-@@ -121,7 +121,7 @@ clean_ruleset_interval=600
+@@ -155,7 +155,7 @@ clean_ruleset_interval=600
  # active when compiled with PF_ENABLE_FILTER_RULES (see config.h file)
  #quickrules=no
  
@@ -11,7 +11,7 @@ Index: miniupnpd.conf
  uuid=00000000-0000-0000-0000-000000000000
  
  # Daemon's serial and model number when reporting to clients
-@@ -145,8 +145,8 @@ uuid=00000000-0000-0000-0000-000000000000
+@@ -179,8 +179,8 @@ uuid=00000000-0000-0000-0000-000000000000
  # modify the IP ranges to match their own internal networks, and
  # also consider implementing network-specific restrictions
  # CAUTION: failure to enforce any rules may permit insecure requests to be made!

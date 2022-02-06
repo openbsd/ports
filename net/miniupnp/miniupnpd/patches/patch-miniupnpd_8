@@ -1,8 +1,8 @@
-$OpenBSD: patch-miniupnpd_8,v 1.2 2019/03/11 04:06:37 bket Exp $
+$OpenBSD: patch-miniupnpd_8,v 1.3 2022/02/06 15:04:46 bket Exp $
 Index: miniupnpd.8
 --- miniupnpd.8.orig
 +++ miniupnpd.8
-@@ -17,7 +17,7 @@ clients on the LAN to ask for port redirections.
+@@ -18,7 +18,7 @@ clients on the LAN to ask for port redirections.
  .SH OPTIONS
  .TP
  .BI \-f " config_file"

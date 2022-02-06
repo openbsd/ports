@@ -1,9 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.6 2019/03/11 04:06:37 bket Exp $
-Index: Makefile
---- Makefile.orig
-+++ Makefile
-@@ -176,7 +176,7 @@ clean:
- 	$(PFOBJS) $(IPFOBJS) $(IPFWOBJS)
+$OpenBSD: patch-Makefile_bsd,v 1.1 2022/02/06 15:04:46 bket Exp $
+
+Index: Makefile.bsd
+--- Makefile.bsd.orig
++++ Makefile.bsd
+@@ -145,7 +145,7 @@ clean:
+ 	$(RM) $(TESTMINISSDPOBJS)
  	$(RM) validateupnppermissions validategetifaddr validatessdppktgen
  
 -install:	miniupnpd genuuid
