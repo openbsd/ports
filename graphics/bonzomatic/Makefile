@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/08 21:55:36 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/06 17:41:43 kn Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -6,7 +6,7 @@ COMMENT =		tool for live-coding pixel shaders
 
 GH_ACCOUNT =		Gargaj
 GH_PROJECT =		Bonzomatic
-GH_TAGNAME =		2021-03-07
+GH_TAGNAME =		2022-02-05
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
 
 CATEGORIES =		graphics
