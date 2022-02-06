@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2022/01/16 19:38:14 kmos Exp $
+# $OpenBSD: Makefile,v 1.46 2022/02/06 09:12:20 ajacoutot Exp $
 
 COMMENT=		libgit2 bindings in Python
 
-MODPY_EGG_VERSION=	1.7.2
+MODPY_EGG_VERSION=	1.8.0
 DISTNAME=		pygit2-${MODPY_EGG_VERSION}
 PKGNAME=		py-git2-${MODPY_EGG_VERSION}
 
