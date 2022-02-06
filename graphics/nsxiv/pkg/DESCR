@@ -1,0 +1,4 @@
+nsxiv is a fork of now unmaintained sxiv (Simple X Image Viewer) with the
+purpose of being a drop-in replacement that adds simple, sensible features.
+Some of nsxiv's key features are auto-reloading images on change, freetype2
+for the status bar, gif and webp playbacks.
