@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.571 2022/02/06 17:15:49 op Exp $
+# $OpenBSD: Makefile,v 1.572 2022/02/06 17:22:46 op Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -299,7 +299,6 @@
      SUBDIR += slop
      SUBDIR += spirv-headers
      SUBDIR += spirv-tools
-     SUBDIR += sxiv
      SUBDIR += termtosvg
      SUBDIR += tesseract
      SUBDIR += tgif
