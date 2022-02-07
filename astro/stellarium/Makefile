@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2022/01/19 15:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2022/02/07 16:11:53 sthen Exp $
 
 COMMENT=		free open source planetarium
 
 GH_TAGNAME=		v0.21.3
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		astro x11
 
@@ -45,6 +45,7 @@ CONFIGURE_ENV=		HOME=${WRKDIR}
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DENABLE_LIBGPS=0 \
 			-DSTELLARIUM_RELEASE_BUILD=1
 
 PORTHOME=		${WRKDIR}
