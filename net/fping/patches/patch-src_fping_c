@@ -1,33 +1,9 @@
-$OpenBSD: patch-src_fping_c,v 1.10 2021/03/07 19:34:19 sthen Exp $
-
-hunk 1, CLOCK_MONOTONIC doesn't work well if you want real clock time
-(e.g. for fping -D).
-
-remaining: mostly pledge
+$OpenBSD: patch-src_fping_c,v 1.11 2022/02/07 09:48:59 sthen Exp $
 
 Index: src/fping.c
 --- src/fping.c.orig
 +++ src/fping.c
-@@ -118,18 +118,8 @@ extern int h_errno;
- 
- /*** Constants ***/
- 
--#if HAVE_SO_TIMESTAMPNS
- #define CLOCKID CLOCK_REALTIME
--#endif
- 
--#if !defined(CLOCKID)
--#if defined(CLOCK_MONOTONIC)
--#define CLOCKID CLOCK_MONOTONIC
--#else
--#define CLOCKID CLOCK_REALTIME
--#endif
--#endif
--
- /*** Ping packet defines ***/
- 
- #define MAX_IP_PACKET 65536 /* (theoretical) max IP packet size */
-@@ -419,6 +409,9 @@ int main(int argc, char** argv)
+@@ -456,6 +456,9 @@ int main(int argc, char** argv)
      struct sigaction act;
  #endif
  
@@ -37,19 +13,19 @@ Index: src/fping.c
      /* pre-parse -h/--help, so that we also can output help information
       * without trying to open the socket, which might fail */
      prog = argv[0];
-@@ -455,6 +448,10 @@ int main(int argc, char** argv)
+@@ -492,6 +495,10 @@ int main(int argc, char** argv)
      }
  
      optparse_init(&optparse_state, argv);
 +
-+    if (pledge("stdio inet rpath dns", NULL) == -1)
++    if (pledge("stdio inet rpath dns id", NULL) == -1)
 +        perror("pledge");
 +
      ident4 = ident6 = htons(getpid() & 0xFFFF);
      verbose_flag = 1;
      backoff_flag = 1;
-@@ -796,6 +793,11 @@ int main(int argc, char** argv)
-         }
+@@ -840,6 +847,11 @@ int main(int argc, char** argv)
+ 	exit(4);
      }
  
 +    if (!filename) { /* drop rpath if not reading addrs from file */
@@ -60,31 +36,18 @@ Index: src/fping.c
      /* validate various option settings */
  
  #ifndef IPV6
-@@ -1060,6 +1062,10 @@ int main(int argc, char** argv)
+@@ -1104,6 +1116,10 @@ int main(int argc, char** argv)
          exit(num_noaddress ? 2 : 1);
      }
  
-+    /* done with file and dns/rdns lookups */
++    /* finished with file and dns/rdns lookups */
 +    if (pledge("stdio inet", NULL) == -1)
 +        perror("pledge");
 +
-     if (socket4 >= 0) {
+     if (src_addr_set && socket4 >= 0) {
          socket_set_src_addr_ipv4(socket4, &src_addr, (socktype4 == SOCK_DGRAM) ? &ident4 : NULL);
      }
-@@ -1656,9 +1662,9 @@ void print_netdata(void)
-         printf("BEGIN fping.%s_latency\n", h->name);
-         if (h->num_recv_i) {
-             avg = h->total_time_i / h->num_recv_i;
--            printf("SET min = %ld\n", h->min_reply_i);
--            printf("SET avg = %ld\n", avg);
--            printf("SET max = %ld\n", h->max_reply_i);
-+            printf("SET min = %lld\n", (long long)h->min_reply_i);
-+            printf("SET avg = %lld\n", (long long)avg);
-+            printf("SET max = %lld\n", (long long)h->max_reply_i);
-         }
-         printf("END\n");
- 
-@@ -2043,7 +2049,7 @@ int decode_icmp_ipv4(
+@@ -2087,7 +2103,7 @@ int decode_icmp_ipv4(
      if (!using_sock_dgram4) {
          struct ip* ip = (struct ip*)reply_buf;
  
