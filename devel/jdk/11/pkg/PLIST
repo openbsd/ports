@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/01/21 19:29:02 kurt Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/02/07 00:15:31 kurt Exp $
 @option no-default-conflict
 @option is-branch
 @conflict jdk->=11v0,<12v0
@@ -640,7 +640,7 @@ jdk-11/lib/modules
 jdk-11/lib/psfont.properties.ja
 jdk-11/lib/psfontj2d.properties
 jdk-11/lib/security/
-jdk-11/lib/security/blacklisted.certs
+jdk-11/lib/security/blocked.certs
 jdk-11/lib/security/cacerts
 jdk-11/lib/security/default.policy
 jdk-11/lib/security/public_suffix_list.dat
