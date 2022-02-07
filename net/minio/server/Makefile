@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2021/12/29 03:07:41 danj Exp $
+# $OpenBSD: Makefile,v 1.44 2022/02/07 23:51:52 danj Exp $
 
 BROKEN-i386 =	github.com/tklauser/go-sysconf@v0.3.4/sysconf_openbsd.go:22:28: undefined: unix.RLIMIT_NPROC
 
 COMMENT =	object storage server compatible with Amazon S3 APIs
 
-V =		2021-12-27T07-23-18Z
-CID =		bb97eafa82544de7d78e8b614fe13f9754f58d6c
+V =		2022-02-05T04-40-59Z
+CID =		22b72265816b6dff28b915d5a078f10dfa186c40
 SHORTCID =	${CID:C/(............).*/\1/}
 
 MODGO_MODNAME =	github.com/minio/minio
