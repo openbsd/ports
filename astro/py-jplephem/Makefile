@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/03 22:28:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/07 09:03:24 sthen Exp $
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =	use a JPL ephemeris to predict planet positions
 
-MODPY_EGG_VERSION =	2.16
+MODPY_EGG_VERSION =	2.17
 
 DISTNAME =	jplephem-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
