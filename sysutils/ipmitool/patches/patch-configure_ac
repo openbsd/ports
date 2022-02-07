@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.5 2017/09/25 10:06:12 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2022/02/07 16:40:36 sthen Exp $
 
 Disable the noisy warnings, it makes it hard to see the more important basic
 problems (missing prototypes for internal functions, etc - lots of sloppiness)
@@ -11,25 +11,25 @@ Fix bad AC_TRY_COMPILE check.
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -32,7 +32,7 @@ AC_CHECK_FUNCS([alarm gethostbyname getaddrinfo getifa
+@@ -36,7 +36,7 @@ AC_CHECK_FUNCS([alarm gethostbyname getaddrinfo getifa
  AC_CHECK_FUNCS([memmove memset strchr strdup strerror])
  AC_CHECK_FUNCS([getpassphrase])
  
--CFLAGS="$CFLAGS -Wall -Wextra -std=gnu99 -pedantic -Wformat -Wformat-nonliteral"
-+CFLAGS="$CFLAGS -std=gnu99 -Wformat"
+-CFLAGS="$CFLAGS -Wall -Wextra -std=gnu11 -pedantic -Wformat -Wformat-nonliteral"
++CFLAGS="$CFLAGS -std=gnu11 -pedantic -Wformat"
  
  AM_PROG_LIBTOOL
  LIBTOOL="$LIBTOOL --silent"
-@@ -570,7 +570,7 @@ AC_SUBST(IPMITOOL_INTF_LIB)
+@@ -624,7 +624,7 @@ AC_ARG_ENABLE([ipmishell],
+ 
+ dnl check for readline library to enable ipmi shell
  if test "x$xenable_ipmishell" = "xyes"; then
- 	AC_SEARCH_LIBS([tgetent], [tinfo ncurses curses readline termcap])
- 	AC_SEARCH_LIBS([initscr], [ncurses curses], [have_curses=yes])
 -	AC_SEARCH_LIBS([readline], [readline edit], [have_readline=yes])
 +	AC_SEARCH_LIBS([readline], [edit readline], [have_readline=yes])
- 	if test "x$have_curses" != "xyes" || test "x$have_readline" != "xyes"; then
+ 	if test "x$have_readline" != "xyes"; then
+ 		AC_MSG_ERROR([** Unable to find readline required by ipmishell.])
  		xenable_ipmishell=no
- 	fi
-@@ -617,9 +617,7 @@ if test "x$xenable_file_security" != "xno"; then
+@@ -654,9 +654,7 @@ if test "x$xenable_file_security" != "xno"; then
  fi
  
  
@@ -40,7 +40,7 @@ Index: configure.ac
  	struct packstruct {
  		unsigned char t0       :5;
  		unsigned char t1       :5;
-@@ -628,14 +626,10 @@ AC_TRY_COMPILE([],[
+@@ -665,14 +663,10 @@ AC_TRY_COMPILE([],[
  		unsigned char t4       :4;
  	} __attribute__ ((packed));
  	

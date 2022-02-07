@@ -1,27 +1,9 @@
-$OpenBSD: patch-lib_ipmi_hpmfwupg_c,v 1.3 2021/01/31 19:36:23 sthen Exp $
-
-#1:
-From c3939dac2c060651361fc71516806f9ab8c38901 Mon Sep 17 00:00:00 2001
-From: Vaclav Dolezal <vdolezal@redhat.com>
-Date: Thu, 23 Jan 2020 11:26:32 +0100
-Subject: [PATCH] hpmfwupg: move variable definition to .c file
-
-Rest: 64-bit time_t
-
+$OpenBSD: patch-lib_ipmi_hpmfwupg_c,v 1.4 2022/02/07 16:40:36 sthen Exp $
 
 Index: lib/ipmi_hpmfwupg.c
 --- lib/ipmi_hpmfwupg.c.orig
 +++ lib/ipmi_hpmfwupg.c
-@@ -58,6 +58,8 @@ ipmi_intf_get_max_request_data_size(struct ipmi_intf *
- 
- extern int verbose;
- 
-+VERSIONINFO gVersionInfo[HPMFWUPG_COMPONENT_ID_MAX];
-+
- int HpmfwupgUpgrade(struct ipmi_intf *intf, char *imageFilename,
- 		int activate, int, int);
- int HpmfwupgValidateImageIntegrity(struct HpmfwupgUpgradeCtx *pFwupgCtx);
-@@ -194,8 +196,8 @@ HpmDisplayUpgrade(int skip, unsigned int totalSent,
+@@ -206,8 +206,8 @@ HpmDisplayUpgrade(int skip, unsigned int totalSent,
  	if (totalSent == displayFWLength) {
  		/* Display the time taken to complete the upgrade */
  		printf(
@@ -32,7 +14,7 @@ Index: lib/ipmi_hpmfwupg.c
  		old_percent = -1;
  	}
  }
-@@ -1285,8 +1287,8 @@ HpmFwupgActionUploadFirmware(struct HpmfwupgComponentB
+@@ -1296,8 +1296,8 @@ HpmFwupgActionUploadFirmware(struct HpmfwupgComponentB
  								imageOffset,blockLength);
  					}
  					if (displayFWLength == totalSent) {
