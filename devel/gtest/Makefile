@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/31 16:09:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2022/02/08 09:31:46 kn Exp $
 
 # http://build-failures.rhaalovely.net//alpha/2017-11-19/devel/gtest.log
 BROKEN-alpha =	googletest/test/gtest_unittest.cc:2730: error: unrecognizable insn:
@@ -34,7 +34,10 @@ WANTLIB =		m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MODULES +=		devel/cmake
+MODULES =		devel/cmake \
+			lang/python
+MODPY_RUNDEP =		No
+
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-Dgtest_build_tests=ON
 
