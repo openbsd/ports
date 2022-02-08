@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2022/01/13 17:58:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2022/02/08 12:34:29 sthen Exp $
 
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
 MODPY_EGG_VERSION =	2.7.3
 DISTNAME =		picard-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -29,6 +30,7 @@ RUN_DEPENDS =		audio/chromaprint \
 			devel/desktop-file-utils \
 			devel/py-fasteners${MODPY_FLAVOR} \
 			textproc/py-markdown${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
 			x11/gtk+3,-guic \
 			x11/py-qt5${MODPY_FLAVOR}
 
