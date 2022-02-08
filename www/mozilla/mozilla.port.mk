@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.143 2021/12/07 14:56:58 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.144 2022/02/08 14:00:16 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -118,7 +118,6 @@ AUTOCONF_VERSION =	2.13
 CONFIGURE_ARGS +=	--with-system-zlib	\
 		--enable-official-branding	\
 		--enable-optimize="${CFLAGS}"	\
-		--disable-necko-wifi		\
 		--disable-tests			\
 		--disable-updater		\
 		--disable-dbus
