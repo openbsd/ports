@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.9 2021/07/13 15:25:30 landry Exp $
+$OpenBSD: patch-toolkit_system_gnome_nsGIOService_cpp,v 1.10 2022/02/08 14:02:28 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=1714919
 
@@ -12,7 +12,7 @@ unveiled.
 Index: toolkit/system/gnome/nsGIOService.cpp
 --- toolkit/system/gnome/nsGIOService.cpp.orig
 +++ toolkit/system/gnome/nsGIOService.cpp
-@@ -240,10 +240,21 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
+@@ -220,10 +220,21 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
    uris.data = const_cast<char*>(spec.get());
  
    GError* error = nullptr;
@@ -36,7 +36,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
      g_error_free(error);
      return NS_ERROR_FAILURE;
    }
-@@ -497,20 +508,15 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
+@@ -477,20 +488,15 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
      return NS_ERROR_NOT_AVAILABLE;
    }
  
@@ -64,7 +64,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
      nsGIOMimeApp* mozApp = new nsGIOMimeApp(app_info);
      NS_ADDREF(*aApp = mozApp);
    } else {
-@@ -546,7 +552,24 @@ nsGIOService::ShowURI(nsIURI* aURI) {
+@@ -526,7 +532,24 @@ nsGIOService::ShowURI(nsIURI* aURI) {
    nsresult rv = aURI->GetSpec(spec);
    NS_ENSURE_SUCCESS(rv, rv);
    GError* error = nullptr;
@@ -90,7 +90,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
      g_warning("Could not launch default application for URI: %s",
                error->message);
      g_error_free(error);
-@@ -562,7 +585,22 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
+@@ -542,7 +565,22 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
    nsresult rv = NS_ERROR_FAILURE;
    GError* error = nullptr;
  
@@ -114,7 +114,7 @@ Index: toolkit/system/gnome/nsGIOService.cpp
    if (error) {
      g_warning("Cannot launch default application: %s", error->message);
      g_error_free(error);
-@@ -571,6 +609,7 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
+@@ -551,6 +589,7 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
    }
    g_object_unref(file);
    g_free(spec);

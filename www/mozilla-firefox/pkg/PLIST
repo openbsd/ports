@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.92 2021/07/13 15:25:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.93 2022/02/08 14:02:28 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -68,6 +68,7 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
+@lib lib/${MOZILLA_PROJECT}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}

@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_makefiles_rust_mk,v 1.9 2022/01/11 15:18:01 landry Exp $
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.10 2022/02/08 14:02:28 landry Exp $
 
 use lto=thin to reduce memory pressure when building gkrust
 https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
@@ -7,7 +7,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
 Index: config/makefiles/rust.mk
 --- config/makefiles/rust.mk.orig
 +++ config/makefiles/rust.mk
-@@ -97,7 +97,8 @@ ifndef rustflags_sancov
+@@ -90,7 +90,8 @@ ifndef rustflags_sancov
  # Never enable when coverage is enabled to work around https://github.com/rust-lang/rust/issues/90045.
  ifndef MOZ_CODE_COVERAGE
  ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))

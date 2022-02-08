@@ -1,4 +1,4 @@
-$OpenBSD: patch-widget_nsPrintSettingsImpl_cpp,v 1.13 2022/01/11 15:18:01 landry Exp $
+$OpenBSD: patch-widget_nsPrintSettingsImpl_cpp,v 1.14 2022/02/08 14:02:28 landry Exp $
 Index: widget/nsPrintSettingsImpl.cpp
 --- widget/nsPrintSettingsImpl.cpp.orig
 +++ widget/nsPrintSettingsImpl.cpp
@@ -8,6 +8,6 @@ Index: widget/nsPrintSettingsImpl.cpp
        mPrintSilent(false),
 -      mShrinkToFit(true),
 +      mShrinkToFit(false),
-       mShowPrintProgress(true),
        mShowMarginGuides(false),
        mHonorPageRuleMargins(true),
+       mIsPrintSelectionRBEnabled(false),
