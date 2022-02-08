@@ -1,14 +1,11 @@
-#$OpenBSD: Makefile,v 1.3 2020/11/22 13:41:11 kevlo Exp $
+#$OpenBSD: Makefile,v 1.4 2022/02/08 16:18:54 sthen Exp $
 
 COMMENT =	hardware probe tool
 CATEGORIES =	sysutils
 
-PKGNAME =	hw-probe-1.6beta
-REVISION =	1
-
 GH_ACCOUNT =	linuxhw
 GH_PROJECT =	hw-probe
-GH_TAGNAME =	1.6-beta
+GH_TAGNAME =	1.6
 
 MAINTAINER =	David Dahlberg <david+bsd@dahlberg.cologne>
 

@@ -3,6 +3,7 @@ with the help of Linux hardware database: https://linux-hardware.org
 
 For BSD users: https://bsd-hardware.info
 
-Please be aware that running hw-probe without parameters implies
-"-all -upload" and will upload a lot of information about your
-current OS and hardware configuration to the online database.
+Please be aware that running hw-probe with parameter "-upload" will
+upload a lot of information about your current OS and hardware
+configuration informationto the online database. This might include
+identifiable information like UIDs and hardware serial numbers.
