@@ -1,11 +1,11 @@
-$OpenBSD: patch-src__cffi_src_openssl_dh_py,v 1.1 2022/01/14 10:59:10 tb Exp $
+$OpenBSD: patch-src__cffi_src_openssl_dh_py,v 1.2 2022/02/09 12:31:04 sthen Exp $
 
 LibreSSL 3.5 provides this define.
 
 Index: src/_cffi_src/openssl/dh.py
 --- src/_cffi_src/openssl/dh.py.orig
 +++ src/_cffi_src/openssl/dh.py
-@@ -37,7 +37,7 @@ int Cryptography_i2d_DHxparams_bio(BIO *bp, DH *x);
+@@ -36,7 +36,7 @@ int Cryptography_i2d_DHxparams_bio(BIO *, DH *);
  """
  
  CUSTOMIZATIONS = """
