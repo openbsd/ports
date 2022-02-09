@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2176 2022/02/09 08:40:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.2177 2022/02/09 10:01:43 landry Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -452,6 +452,7 @@
      SUBDIR += openocd
      SUBDIR += ophis
      SUBDIR += orc
+     SUBDIR += orcania
      SUBDIR += p5-Acme-Damn
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
@@ -1827,6 +1828,7 @@
      SUBDIR += yaml-cpp
      SUBDIR += yarn
      SUBDIR += yasm
+     SUBDIR += yder
      SUBDIR += z80ex
      SUBDIR += zeal
      SUBDIR += zmac

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2021/12/21 14:24:05 kn Exp $
+# $OpenBSD: Makefile,v 1.147 2022/02/09 10:01:42 landry Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -21,6 +21,8 @@
      SUBDIR += imagination
      SUBDIR += kguitar
      SUBDIR += kid3
+     SUBDIR += lebiniou
+     SUBDIR += lebiniou-data
      SUBDIR += libaacs
      SUBDIR += libass
      SUBDIR += libbdplus

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1059 2022/01/06 19:06:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1060 2022/02/09 10:01:42 landry Exp $
 
      SUBDIR =
      SUBDIR += analog
@@ -573,6 +573,7 @@
      SUBDIR += tuir
      SUBDIR += twill
      SUBDIR += uget
+     SUBDIR += ulfius
      SUBDIR += unit
      SUBDIR += uriparser
      SUBDIR += urlwatch
