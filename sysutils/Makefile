@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.636 2022/01/27 00:22:15 kmos Exp $
+# $OpenBSD: Makefile,v 1.637 2022/02/09 00:14:08 abieber Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -119,6 +119,7 @@
      SUBDIR += gitlab-runner
      SUBDIR += gitmux
      SUBDIR += gitolite
+     SUBDIR += gitsync
      SUBDIR += gkrellm
      SUBDIR += glances
      SUBDIR += glastree
