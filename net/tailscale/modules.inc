@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.5 2022/01/20 13:31:16 abieber Exp $
+# $OpenBSD: modules.inc,v 1.6 2022/02/09 17:50:25 abieber Exp $
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals					 v0.1.0 \

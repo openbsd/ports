@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/21 18:03:42 abieber Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/09 17:50:25 abieber Exp $
 
 BROKEN-i386 =	unix.EPROTO not defined
 
 COMMENT =	modern overlay-like VPN built on top of WireGuard
 
 MODGO_MODNAME =	tailscale.com
-MODGO_VERSION =	v1.20.2
+MODGO_VERSION =	v1.20.4
 
 DISTNAME =	tailscale.com-${MODGO_VERSION}
 PKGNAME =	tailscale-${MODGO_VERSION:S/v//}

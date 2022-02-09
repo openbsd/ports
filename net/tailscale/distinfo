@@ -2072,7 +2072,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = oNOSUuhmWkKKjLnU38nL6ge3rpC
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.0.0-20180114231543-2291e8f0f237.mod) = hDis3IwkMaQchQUg/o6pq9oAzeb4Wq69HlhVpdQeRag=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.0.0-20210415151418-c5206de65a78.mod) = UNiAn3iN3h24FejlNkeskMKtawHN65Dj8YyPvkRoroo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.0.0-20210415151418-c5206de65a78.zip) = 0pV2R/W4dgDT4ApqeszP5yC7b4i6HyXNAYHCMPcALVQ=
-SHA256 (tailscale.com-v1.20.2.zip) = GiMmNZ5saQBwfgaPMH/p5pUk5EFEXrJnIPR2tHOxZJ0=
+SHA256 (tailscale.com-v1.20.4.zip) = TQ/PrB0g3ult2xbaUJjNdof/B9tgSzE+auImSPdZ3fg=
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.0.0-20201008074935-acfc0b28355a.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.1.0.mod) = 105
 SIZE (go_modules/4d63.com/gochecknoglobals/@v/v0.1.0.zip) = 13354
@@ -4147,4 +4147,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.zip) = 18120
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.0.0-20180114231543-2291e8f0f237.mod) = 42
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.0.0-20210415151418-c5206de65a78.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.0.0-20210415151418-c5206de65a78.zip) = 36856
-SIZE (tailscale.com-v1.20.2.zip) = 1297557
+SIZE (tailscale.com-v1.20.4.zip) = 1300525
