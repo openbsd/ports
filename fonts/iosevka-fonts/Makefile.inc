@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2021/08/06 09:55:26 edd Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2022/02/09 21:05:13 edd Exp $
 
-V =			    9.0.1
+V =			    11.3.0
 CATEGORIES =	fonts x11
 HOMEPAGE =		https://github.com/be5invis/iosevka
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
