@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/25 10:44:22 paco Exp $
+# $OpenBSD: Makefile,v 1.26 2022/02/09 09:24:13 edd Exp $
 
 # Use LuaJIT where possible, as some plugins assume it's available. Arches
 # that can't use LuaJIT have to use the system Lua (and some plugins may not
@@ -15,7 +15,7 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.6.0
+GH_TAGNAME =	v0.6.1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
