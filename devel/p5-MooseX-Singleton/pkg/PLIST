@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/09 08:39:40 sthen Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/Singleton/
+${P5SITE}/MooseX/Singleton.pm
+${P5SITE}/MooseX/Singleton/Role/
+${P5SITE}/MooseX/Singleton/Role/Meta/
+${P5SITE}/MooseX/Singleton/Role/Meta/Class.pm
+${P5SITE}/MooseX/Singleton/Role/Meta/Instance.pm
+${P5SITE}/MooseX/Singleton/Role/Meta/Method/
+${P5SITE}/MooseX/Singleton/Role/Meta/Method/Constructor.pm
+${P5SITE}/MooseX/Singleton/Role/Object.pm
+@man man/man3p/MooseX::Singleton.3p
+@man man/man3p/MooseX::Singleton::Role::Meta::Class.3p
+@man man/man3p/MooseX::Singleton::Role::Meta::Instance.3p
+@man man/man3p/MooseX::Singleton::Role::Meta::Method::Constructor.3p
+@man man/man3p/MooseX::Singleton::Role::Object.3p

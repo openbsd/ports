@@ -1,0 +1,7 @@
+A singleton is a class that has only one instance in an application.
+MooseX::Singleton lets you easily upgrade (or downgrade, as it were)
+your Moose class to a singleton.
+
+All you should need to do to transform your class is to change use Moose
+to use MooseX::Singleton. This module uses metaclass roles to do its
+magic, so it should cooperate with most other MooseX modules.
