@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/05 17:44:36 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/09 09:54:59 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -7,22 +7,13 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.5.1
-REVISION =		0
+V =			3.5.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		tdesktop-${V}
 CATEGORIES =		net
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
-
-# Merged "Fix namespace in dummy Wayland integration"
-MASTER_SITES0 =		https://github.com/desktop-app/lib_base/commit/
-PATCHFILES +=		tdesktop-wayland-fix-dummy-{}eb631e9.patch:0
-PATCH_CASES +=		tdesktop-wayland-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
-			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
-
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
