@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2175 2022/01/06 19:06:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2176 2022/02/09 08:40:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -915,6 +915,7 @@
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
+     SUBDIR += p5-MooseX-Singleton
      SUBDIR += p5-MooseX-Storage
      SUBDIR += p5-MooseX-StrictConstructor
      SUBDIR += p5-MooseX-Traits
