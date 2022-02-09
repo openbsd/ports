@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2022/01/13 16:35:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2022/02/09 12:09:07 sthen Exp $
 
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
-MODPY_EGG_VERSION=	9.0.0
+MODPY_EGG_VERSION=	9.0.1
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
