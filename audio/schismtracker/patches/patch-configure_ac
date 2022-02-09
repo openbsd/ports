@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.14 2021/11/17 10:26:48 fcambus Exp $
+$OpenBSD: patch-configure_ac,v 1.15 2022/02/09 10:28:13 fcambus Exp $
 
 Prevent calling Git to obtain date of the last commit, and hardcode
 [last_git_commit] value to match package version.
@@ -11,8 +11,8 @@ Index: configure.ac
  
  dnl PACKAGE_VERSION will be either "" if not using git, or date of the last git commit in the form YYYYMMDD
 -m4_define([last_git_commit], patsubst(m4_esyscmd([git log -n 1 --date=short --format=format:%cd]), [[^0-9]]))
--AC_INIT([schismtracker], [last_git_commit])
-+AC_INIT([schismtracker], [20211116])
+-AC_INIT([schismtracker],[last_git_commit])
++AC_INIT([schismtracker],[20220125])
  
  AC_CONFIG_SRCDIR([schism/main.c])
  
