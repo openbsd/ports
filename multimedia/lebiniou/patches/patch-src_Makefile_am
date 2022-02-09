@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -1,11 +1,11 @@
+ if OS_DARWIN
+ lebiniou_PROGRAMS = liblebiniou.dylib
+ else
+-lebiniou_PROGRAMS = liblebiniou.so.0
++lebiniou_PROGRAMS = liblebiniou.so
+ endif
+ lebinioudir = $(libdir)
+-liblebiniou_so_0_CFLAGS = -fPIC ${MAGICKWAND_CFLAGS}
+-liblebiniou_so_0_SOURCES = alarm.c alarm.h \
++liblebiniou_so_CFLAGS = -fPIC ${MAGICKWAND_CFLAGS}
++liblebiniou_so_SOURCES = alarm.c alarm.h \
+ 	brandom.c brandom.h \
+ 	btimer.c btimer.h \
+ 	buffer_8bits.c buffer_8bits.h \
+@@ -73,22 +73,22 @@ liblebiniou_so_0_SOURCES = alarm.c alarm.h \
+ 
+ 
+ if EXTRA_OPENGL
+-liblebiniou_so_0_SOURCES += context_gl.c
++liblebiniou_so_SOURCES += context_gl.c
+ endif
+ 
+ if EXTRA_WEBCAM
+-liblebiniou_so_0_SOURCES += webcam_controls.c webcam_start_stop.c webcam_loop.c \
++liblebiniou_so_SOURCES += webcam_controls.c webcam_start_stop.c webcam_loop.c \
+ 	webcam_open_close.c webcam_init_uninit.c webcam_options.c webcam.h
+ endif
+ 
+-liblebiniou_so_0_LDFLAGS = -shared -Wl,-soname,liblebiniou.so.0
+-liblebiniou_so_0_LDADD = ${SWSCALE_LIBS} ${FFTW3_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
++liblebiniou_so_LDFLAGS = -shared -Wl,-soname,liblebiniou.so
++liblebiniou_so_LDADD = ${SWSCALE_LIBS} ${FFTW3_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
+ 
+ if OS_DARWIN
+-liblebiniou_dylib_CFLAGS = ${liblebiniou_so_0_CFLAGS}
+-liblebiniou_dylib_SOURCES = ${liblebiniou_so_0_SOURCES}
++liblebiniou_dylib_CFLAGS = ${liblebiniou_so_CFLAGS}
++liblebiniou_dylib_SOURCES = ${liblebiniou_so_SOURCES}
+ liblebiniou_dylib_LDFLAGS = -shared
+-liblebiniou_dylib_LDADD = ${liblebiniou_so_0_LDADD}
++liblebiniou_dylib_LDADD = ${liblebiniou_so_LDADD}
+ endif
+ 
+ bin_PROGRAMS = lebiniou
+@@ -146,14 +146,14 @@ nodist_lebiniou_SOURCES += bulfius_get_commands.c bulf
+ if OS_DARWIN
+ lebiniou_DEPENDENCIES = liblebiniou.dylib
+ else
+-lebiniou_DEPENDENCIES = liblebiniou.so.0
++lebiniou_DEPENDENCIES = liblebiniou.so
+ endif
+ lebiniou_CFLAGS = -fPIE -fPIC ${MAGICKWAND_CFLAGS}
+ lebiniou_LDFLAGS = -pthread
+ if OS_DARWIN
+ lebiniou_LDADD = -L. -llebiniou ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
+ else
+-lebiniou_LDADD = -L. -l:liblebiniou.so.0 ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
++lebiniou_LDADD = -L. -l:liblebiniou.so ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
+ endif
+ 
+ commands.h: commands.h.head commands.c.in commands.h.tail commands_enum.awk

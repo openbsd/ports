@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -697,8 +697,8 @@ AC_DEFINE_UNQUOTED([OUTPUT_PLUGINS], ["$OUTPUT_PLUGINS
+ PLUGIN_CFLAGS="-fPIC"
+ 
+ if test "x${os_flavor}" != "xdarwin"; then
+-PLUGIN_LDFLAGS="-shared -fPIC -Wl,-z,defs -pthread -Wl,--no-as-needed"
+-PLUGIN_LDADD="-l:liblebiniou.so.0"
++PLUGIN_LDFLAGS="-shared -fPIC -pthread"
++PLUGIN_LDADD="-llebiniou"
+ else
+ PLUGIN_LDFLAGS="-shared -fPIC -pthread"
+ PLUGIN_LDADD="-llebiniou"

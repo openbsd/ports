@@ -1,0 +1,38 @@
+Le Biniou is open-source, user-friendly, powerful music visualization
+& VJing tool.
+
+Are you an artist, composer, or VJ ? Create live visuals based on your
+audio performances or existing tracks.
+
+As a music fan, watch an everlasting, mesmerizing and totally unseen
+creation reacting to the music.
+
+- Rendering and Output
+  - Work with any number of plugins/layers at a time
+  - Display your final output fullscreen across a dedicated window
+  - Record any video stream directly to disk as MP4
+  - Capture any video image directly to disk as PNG
+  - Broadcast video streams as RTMP or HLS, or to a V4L2 loopback
+    device
+
+- Visual Effects
+  - 100+ total plugins
+  - 40+ plugins reacting to sound
+  - Quickly save and restore effects presets
+  - Possibilility to select favorite plugins
+  - Mixing and Composition
+  - Per layer pixel operations
+  - Band-pass filter to apply 'green screen' transparency effect for
+    e.g. videos or webcams
+  - Built-in preview window
+
+- Media Playback
+  - Play any video type supported by FFmpeg
+  - Video rescaling using Libswscale
+
+- Supported Media Types
+  - All image types supported by Image Magick
+  - Live cameras
+
+- Connectivity and Automation
+  - REST API and WebSocket communications powered by Ulfius

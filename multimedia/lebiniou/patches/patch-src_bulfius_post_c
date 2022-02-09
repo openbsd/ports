@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_bulfius_post_c,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
+Disable statistic reporting.
+
+Index: src/bulfius_post.c
+--- src/bulfius_post.c.orig
++++ src/bulfius_post.c
+@@ -62,6 +62,8 @@ bulfius_post(const char *endpoint, json_t *body)
+ void
+ bulfius_post_report(const char *endpoint, json_t *fields, json_t *tags)
+ {
++  return;
++  
+   if (NULL == json_object_get(fields, "time")) {
+     json_object_set_new(fields, "time", json_integer(unix_timestamp() * 1e9));
+   }
