@@ -1,27 +1,27 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2021/02/20 13:22:02 fcambus Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2022/02/09 10:43:27 fcambus Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -26,14 +26,14 @@ all : $(progname_static) $(progname_shared)
+@@ -25,14 +25,14 @@ all : $(progname_static) $(progname_shared)
  lib$(libname).a : lzlib.o
- 	$(AR) -rcs $@ $<
+ 	$(AR) $(ARFLAGS) $@ $<
  
 -lib$(libname).so.$(pkgversion) : lzlib_sh.o
--	$(CC) $(LDFLAGS) $(CFLAGS) -fpic -fPIC -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
+-	$(CC) $(CFLAGS) $(LDFLAGS) -fpic -fPIC -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
 +lib$(libname).so.$(LIBlz_VERSION) : lzlib_sh.o
-+	$(CC) $(LDFLAGS) $(CFLAGS) -fPIC -shared -o $@ $<
++	$(CC) $(CFLAGS) $(LDFLAGS) -fPIC -shared -o $@ $<
  
  $(progname) : $(objs) lib$(libname).a
- 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(objs) lib$(libname).a
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).a
  
 -$(progname)_shared : $(objs) lib$(libname).so.$(pkgversion)
--	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
 +$(progname)_shared : $(objs) lib$(libname).so.$(LIBlz_VERSION)
-+	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
  
  bbexample : bbexample.o lib$(libname).a
- 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ bbexample.o lib$(libname).a
-@@ -48,7 +48,7 @@ main.o : main.c
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ bbexample.o lib$(libname).a
+@@ -47,7 +47,7 @@ minilzip.o : minilzip.c
  	$(CC) $(CPPFLAGS) $(CFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
  
  lzlib_sh.o : lzlib.c
@@ -30,7 +30,7 @@ Index: Makefile.in
  
  %.o : %.c
  	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
-@@ -106,15 +106,13 @@ install-lib : all
+@@ -105,15 +105,13 @@ install-lib : all
  	  $(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a" ; \
  	fi
  	if [ -n "$(progname_shared)" ] ; then \
@@ -47,7 +47,7 @@ Index: Makefile.in
  	  if [ "${disable_ldconfig}" != yes ] && [ $${run_ldconfig} = yes ] && \
  	     [ -x "$(LDCONFIG)" ] ; then "$(LDCONFIG)" -n "$(DESTDIR)$(libdir)" || true ; fi ; \
  	fi
-@@ -155,7 +153,7 @@ uninstall-lib :
+@@ -154,7 +152,7 @@ uninstall-lib :
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).a"
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so"
  	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)"

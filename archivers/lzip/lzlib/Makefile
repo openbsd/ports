@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/20 13:22:02 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2022/02/09 10:43:27 fcambus Exp $
 
 COMMENT =		lzip compression library
 
-DISTNAME =		lzlib-1.12
+DISTNAME =		lzlib-1.13
 
-SHARED_LIBS +=		lz	1.4 # 1.12
+SHARED_LIBS +=		lz	1.4 # 1.13
 
 HOMEPAGE =		http://lzip.nongnu.org/lzlib.html
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lzlib/}
