@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/09 10:23:23 landry Exp $
 
 COMMENT =	music visualization & VJing tool
 
 PKGNAME =	${DISTNAME:S/-version//}
 DISTNAME =	lebiniou-${V}
-V = 		version-3.64.0
+V = 		version-3.65.0
 
 CATEGORIES =	multimedia
 

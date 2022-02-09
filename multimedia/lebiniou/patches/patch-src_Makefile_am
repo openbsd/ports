@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.2 2022/02/09 10:23:23 landry Exp $
 
 Index: src/Makefile.am
 --- src/Makefile.am.orig
@@ -18,8 +18,8 @@ Index: src/Makefile.am
  	brandom.c brandom.h \
  	btimer.c btimer.h \
  	buffer_8bits.c buffer_8bits.h \
-@@ -73,22 +73,22 @@ liblebiniou_so_0_SOURCES = alarm.c alarm.h \
- 
+@@ -73,16 +73,16 @@ liblebiniou_so_0_SOURCES = alarm.c alarm.h \
+ 	vui_use_sequence.c
  
  if EXTRA_OPENGL
 -liblebiniou_so_0_SOURCES += context_gl.c
@@ -33,21 +33,12 @@ Index: src/Makefile.am
  endif
  
 -liblebiniou_so_0_LDFLAGS = -shared -Wl,-soname,liblebiniou.so.0
--liblebiniou_so_0_LDADD = ${SWSCALE_LIBS} ${FFTW3_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
+-liblebiniou_so_0_LDADD = ${SWSCALE_LIBS} ${FFTW3_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS} ${MAGICKWAND_LIBS}
 +liblebiniou_so_LDFLAGS = -shared -Wl,-soname,liblebiniou.so
-+liblebiniou_so_LDADD = ${SWSCALE_LIBS} ${FFTW3_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
++liblebiniou_so_LDADD = ${SWSCALE_LIBS} ${FFTW3_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS} ${MAGICKWAND_LIBS}
  
  if OS_DARWIN
--liblebiniou_dylib_CFLAGS = ${liblebiniou_so_0_CFLAGS}
--liblebiniou_dylib_SOURCES = ${liblebiniou_so_0_SOURCES}
-+liblebiniou_dylib_CFLAGS = ${liblebiniou_so_CFLAGS}
-+liblebiniou_dylib_SOURCES = ${liblebiniou_so_SOURCES}
- liblebiniou_dylib_LDFLAGS = -shared
--liblebiniou_dylib_LDADD = ${liblebiniou_so_0_LDADD}
-+liblebiniou_dylib_LDADD = ${liblebiniou_so_LDADD}
- endif
- 
- bin_PROGRAMS = lebiniou
+ liblebiniou_dylib_CFLAGS = ${liblebiniou_so_0_CFLAGS}
 @@ -146,14 +146,14 @@ nodist_lebiniou_SOURCES += bulfius_get_commands.c bulf
  if OS_DARWIN
  lebiniou_DEPENDENCIES = liblebiniou.dylib
