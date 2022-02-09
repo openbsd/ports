@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/12/19 17:42:24 fcambus Exp $
+@comment $OpenBSD: PLIST,v 1.24 2022/02/09 10:30:16 fcambus Exp $
 ${GEM_BIN}/rougify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -68,6 +68,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/erlang
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/escape
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/factor
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fluent
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fortran
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/freefem
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/fsharp
@@ -187,6 +188,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sparql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sqf
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/sql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ssh
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/stan
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/stata
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/supercollider
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/swift
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/systemd
@@ -301,6 +304,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/erb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/erlang.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/escape.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/factor.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fluent.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fortran.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/freefem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/fsharp.rb
@@ -444,6 +448,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sqf/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/sql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ssh.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/stan.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/stata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/supercollider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/swift.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/systemd.rb
