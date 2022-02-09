@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/07/26 16:13:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/09 08:41:43 sthen Exp $
 ${P5SITE}/Zonemaster/
 ${P5SITE}/Zonemaster/Engine/
 ${P5SITE}/Zonemaster/Engine.pm
@@ -35,25 +35,31 @@ ${P5SITE}/Zonemaster/Engine/Translator.pm
 ${P5SITE}/Zonemaster/Engine/Util.pm
 ${P5SITE}/Zonemaster/Engine/Zone.pm
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/
-${P5SITE}/auto/share/dist/Zonemaster-Engine/config_example_logfilter.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/GNUmakefile
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv4-special-registry.csv
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/iana-ipv6-special-registry.csv
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/da/LC_MESSAGES/Zonemaster-Engine.mo
-${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/en/
-${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/en/LC_MESSAGES/
-${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/en/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/es/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/es/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/es/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fi/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fi/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fi/LC_MESSAGES/Zonemaster-Engine.mo
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/nb/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/nb/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/nb/LC_MESSAGES/Zonemaster-Engine.mo
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Engine.mo
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/modules.txt
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile.json
-${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_example_logfilter.json
+${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_example.json
 @man man/man3p/Zonemaster::Engine.3p
 @man man/man3p/Zonemaster::Engine::ASNLookup.3p
 @man man/man3p/Zonemaster::Engine::Constants.3p
