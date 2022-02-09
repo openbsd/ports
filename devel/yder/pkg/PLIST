@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/09 09:53:14 landry Exp $
+include/yder-cfg.h
+include/yder.h
+@lib lib/libyder.so.${LIByder_VERSION}
+lib/pkgconfig/libyder.pc
+share/doc/yder/
+share/doc/yder/README.md
+share/doc/yder/examples/
+share/doc/yder/examples/Makefile
+share/doc/yder/examples/log_callback.c
+share/doc/yder/examples/log_combined.c
+share/doc/yder/examples/log_console.c
+share/doc/yder/examples/log_file.c
+share/doc/yder/examples/log_journald.c
+share/doc/yder/examples/log_syslog.c
