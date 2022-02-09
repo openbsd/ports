@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_debug_h,v 1.1 2022/02/09 13:22:06 sthen Exp $
+
+Index: src/debug.h
+--- src/debug.h.orig
++++ src/debug.h
+@@ -164,7 +164,7 @@ static inline gpgme_off_t
+ _trace_sysres_off_t (gpgme_off_t res, int lvl, const char *func, int line)
+ {
+   if (res >= 0)
+-    _gpgme_debug (NULL, lvl, 3, func, NULL, NULL, "result=%ld", res);
++    _gpgme_debug (NULL, lvl, 3, func, NULL, NULL, "result=%lld", res);
+   else
+     _gpgme_debug (NULL, lvl, -1, NULL, NULL, NULL,
+                   "%s:%d: error: %s (%d)\n",

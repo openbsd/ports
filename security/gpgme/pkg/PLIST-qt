@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-qt,v 1.3 2021/02/06 18:39:11 sthen Exp $
+@comment $OpenBSD: PLIST-qt,v 1.4 2022/02/09 13:22:06 sthen Exp $
 include/QGpgME/
 include/QGpgME/AbstractImportJob
+include/QGpgME/AddExistingSubkeyJob
 include/QGpgME/AddUserIDJob
 include/QGpgME/ChangeExpiryJob
 include/QGpgME/ChangeOwnerTrustJob
@@ -29,6 +30,7 @@ include/QGpgME/MultiDeleteJob
 include/QGpgME/Protocol
 include/QGpgME/QGpgMENewCryptoConfig
 include/QGpgME/QuickJob
+include/QGpgME/ReceiveKeysJob
 include/QGpgME/RefreshKeysJob
 include/QGpgME/SignEncryptJob
 include/QGpgME/SignJob
@@ -37,6 +39,8 @@ include/QGpgME/SpecialJob
 include/QGpgME/TofuPolicyJob
 include/QGpgME/VerifyDetachedJob
 include/QGpgME/VerifyOpaqueJob
+include/QGpgME/WKDLookupJob
+include/QGpgME/WKDLookupResult
 include/QGpgME/WKSPublishJob
 include/gpgme++/
 include/gpgme++/configuration.h
@@ -51,6 +55,7 @@ include/gpgme++/error.h
 include/gpgme++/eventloopinteractor.h
 include/gpgme++/exception.h
 include/gpgme++/global.h
+include/gpgme++/gpgaddexistingsubkeyeditinteractor.h
 include/gpgme++/gpgadduserideditinteractor.h
 include/gpgme++/gpgagentgetinfoassuantransaction.h
 include/gpgme++/gpggencardkeyinteractor.h
@@ -82,6 +87,7 @@ include/gpgme++/verificationresult.h
 include/gpgme++/vfsmountresult.h
 include/qgpgme/
 include/qgpgme/abstractimportjob.h
+include/qgpgme/addexistingsubkeyjob.h
 include/qgpgme/adduseridjob.h
 include/qgpgme/changeexpiryjob.h
 include/qgpgme/changeownertrustjob.h
@@ -112,6 +118,7 @@ include/qgpgme/qgpgme_export.h
 include/qgpgme/qgpgme_version.h
 include/qgpgme/qgpgmenewcryptoconfig.h
 include/qgpgme/quickjob.h
+include/qgpgme/receivekeysjob.h
 include/qgpgme/refreshkeysjob.h
 include/qgpgme/signencryptjob.h
 include/qgpgme/signjob.h
@@ -120,6 +127,8 @@ include/qgpgme/specialjob.h
 include/qgpgme/tofupolicyjob.h
 include/qgpgme/verifydetachedjob.h
 include/qgpgme/verifyopaquejob.h
+include/qgpgme/wkdlookupjob.h
+include/qgpgme/wkdlookupresult.h
 include/qgpgme/wkspublishjob.h
 lib/cmake/Gpgmepp/
 lib/cmake/Gpgmepp/GpgmeppConfig.cmake

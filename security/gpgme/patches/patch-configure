@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.4 2022/02/09 13:22:06 sthen Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -25152,7 +25152,6 @@ $as_echo "$_gcc_wopt" >&6; }
+       CFLAGS="$CFLAGS -Wno-missing-field-initializers"
+       CFLAGS="$CFLAGS -Wno-sign-compare"
+       CFLAGS="$CFLAGS -Wno-format-zero-length"
+-      CFLAGS="$CFLAGS -Wno-format-truncation"
+       CFLAGS="$CFLAGS -Wno-sizeof-pointer-div"
+     fi
+     if test "$USE_MAINTAINER_MODE" = "yes"; then

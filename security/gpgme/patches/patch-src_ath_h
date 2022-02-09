@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ath_h,v 1.1 2022/02/09 13:22:06 sthen Exp $
+
+Index: src/ath.h
+--- src/ath.h.orig
++++ src/ath.h
+@@ -46,6 +46,9 @@
+ # ifdef HAVE_SYS_TYPES_H
+ #  include <sys/types.h>
+ # endif
++# ifdef HAVE_SYS_SELECT_H
++#  include <sys/select.h>
++# endif
+ # include <sys/socket.h>
+ 
+ #endif  /*!HAVE_W32_SYSTEM*/

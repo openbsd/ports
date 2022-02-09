@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.61 2021/07/07 09:53:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2022/02/09 13:22:05 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
-VERSION =		1.16.0
+VERSION =		1.17.0
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
 
 CATEGORIES =		security devel
 
-SHARED_LIBS +=  gpgme                22.1     # 36.0
-SHARED_LIBS +=  gpgmepp              1.0      # 19.0
-SHARED_LIBS +=  qgpgme               0.0      # 12.1
+SHARED_LIBS +=  gpgme                23.0     # 37.0
+SHARED_LIBS +=  gpgmepp              2.0      # 20.0
+SHARED_LIBS +=  qgpgme               1.0      # 14.0
 
 HOMEPAGE =		https://www.gnupg.org/software/gpgme/
 
@@ -24,8 +24,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =	assuan gpg-error iconv intl
 WANTLIB-main =	${WANTLIB} c m
-WANTLIB-qt =	${COMPILER_LIBCXX} ${WANTLIB} Qt5Core execinfo glib-2.0
-WANTLIB-qt +=	gthread-2.0 icudata icui18n icuuc m pcre pcre2-16 z gpgme
+WANTLIB-qt =	${COMPILER_LIBCXX} ${WANTLIB} Qt5Core double-conversion
+WANTLIB-qt +=	execinfo glib-2.0 gpgme gthread-2.0 icudata icui18n icuuc
+WANTLIB-qt +=	m pcre pcre2-16 z zstd
 
 COMPILER =		base-clang ports-gcc
 
