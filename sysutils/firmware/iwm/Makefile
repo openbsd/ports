@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/03 12:50:50 stsp Exp $
+# $OpenBSD: Makefile,v 1.18 2022/02/09 15:38:07 sthen Exp $
 
+V=		2022-01-11
 FW_DRIVER=	iwm
-FW_VER=		20211101
-DISTNAME=	linux-firmware-iwlwifi-fw-2021-11-01
-EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,iwlwifi-\*-\*.ucode}
+FW_VER=		${V:S/-//g}
+DISTNAME=	linux-firmware-iwlwifi-fw-$V
 
 HOMEPAGE=	https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi
 
-# MASTER_SITES was https://cdn.kernel.org/pub/linux/kernel/firmware/
-# but the latest available release (20210511) contains outdated images
-# which probably don't contain fixes for fragattacks
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git/snapshot/
+EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,iwlwifi-\*-\*.ucode}
 
 FW+=	3160	17 \
 	7260	17 \
