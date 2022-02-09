@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/09 09:52:02 landry Exp $
+include/orcania-cfg.h
+include/orcania.h
+@lib lib/liborcania.so.${LIBorcania_VERSION}
+lib/pkgconfig/liborcania.pc

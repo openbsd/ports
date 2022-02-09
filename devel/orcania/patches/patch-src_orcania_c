@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_orcania_c,v 1.1.1.1 2022/02/09 09:52:02 landry Exp $
+
+Index: src/orcania.c
+--- src/orcania.c.orig
++++ src/orcania.c
+@@ -355,7 +355,7 @@ const char * o_strrnchr(const char * haystack, size_t 
+   return NULL;
+ }
+ 
+-#if defined(__linux__) || defined(__GLIBC__) || defined(_WIN32) || defined(O_STRSTR)
++#if defined(__linux__) || defined(__GLIBC__) || defined(_WIN32) || defined(O_STRSTR) || defined(__OpenBSD__)
+ static char *strnstr(const char *haystack, const char *needle, size_t len) {
+   int i;
+   size_t needle_len;
