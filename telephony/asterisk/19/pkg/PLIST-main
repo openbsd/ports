@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2022/01/07 20:06:27 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2022/02/10 22:07:07 sthen Exp $
 @option is-branch
 @ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf
 @newgroup _asterisk:545
@@ -286,6 +286,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_sayunixtime.so
 @so lib/asterisk/modules/app_senddtmf.so
 @so lib/asterisk/modules/app_sendtext.so
+@so lib/asterisk/modules/app_sf.so
 @so lib/asterisk/modules/app_sms.so
 @so lib/asterisk/modules/app_softhangup.so
 @so lib/asterisk/modules/app_speech_utils.so
@@ -379,6 +380,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_holdintercept.so
 @so lib/asterisk/modules/func_iconv.so
 @so lib/asterisk/modules/func_jitterbuffer.so
+@so lib/asterisk/modules/func_json.so
 @so lib/asterisk/modules/func_lock.so
 @so lib/asterisk/modules/func_logic.so
 @so lib/asterisk/modules/func_math.so

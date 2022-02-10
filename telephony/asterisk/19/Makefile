@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/07 20:06:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/10 22:07:07 sthen Exp $
 
-VER=		19.1.0
+VER=		19.2.0
 PJ_V=		2.10
 SHLIB_V=	0.0
 VERSION_SPEC=	>=19.0,<20.0
-# skip PORTROACH marker for the highest branch, to allow finding new branches
-REVISION=	0
-REVISION-main=	1
+# no PORTROACH marker for the highest branch, to allow finding new branches
 
 .include <bsd.port.mk>
