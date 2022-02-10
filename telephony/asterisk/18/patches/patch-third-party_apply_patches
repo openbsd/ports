@@ -1,11 +1,11 @@
-$OpenBSD: patch-third-party_apply_patches,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+$OpenBSD: patch-third-party_apply_patches,v 1.2 2022/02/10 22:06:59 sthen Exp $
 
 Index: third-party/apply_patches
 --- third-party/apply_patches.orig
 +++ third-party/apply_patches
-@@ -27,7 +27,7 @@ fi
+@@ -29,7 +29,7 @@ fi
  
- for patchfile in "$patchdir"/*.patch ; do
+ for patchfile in ${patches} ; do
  	[ -z $quiet ] && echo "Applying patch $(basename $patchfile)"
 -	${PATCH} -d "$sourcedir" -p1 -s -i "$patchfile" || exit 1
 +	${PATCH} -d "$sourcedir" -z.orig.ast -p1 -s -i "$patchfile" || exit 1

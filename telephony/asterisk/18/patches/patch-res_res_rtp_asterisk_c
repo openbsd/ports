@@ -1,4 +1,4 @@
-$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.2 2021/11/02 12:40:57 sthen Exp $
+$OpenBSD: patch-res_res_rtp_asterisk_c,v 1.3 2022/02/10 22:06:59 sthen Exp $
 
 libressl *does* have this now
 
@@ -14,7 +14,7 @@ Index: res/res_rtp_asterisk.c
  	return DTLSv1_method();
  #else
  	return DTLS_method();
-@@ -9071,7 +9071,7 @@ static int store_stunaddr_resolved(const struct ast_dn
+@@ -9073,7 +9073,7 @@ static int store_stunaddr_resolved(const struct ast_dn
  		const unsigned char *data = (unsigned char *)ast_dns_record_get_data(record);
  		const int rr_type = ast_dns_record_get_rr_type(record);
  

@@ -1,11 +1,11 @@
-$OpenBSD: patch-third-party_pjproject_Makefile,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
+$OpenBSD: patch-third-party_pjproject_Makefile,v 1.2 2022/02/10 22:06:59 sthen Exp $
 
 Index: third-party/pjproject/Makefile
 --- third-party/pjproject/Makefile.orig
 +++ third-party/pjproject/Makefile
-@@ -98,7 +98,7 @@ _all: $(TARGETS)
+@@ -98,7 +98,7 @@ SHELL_ECHO_PREFIX := echo '[pjproject] '
  
- .DELETE_ON_ERROR:
+ _all: $(TARGETS)
  
 -$(DOWNLOAD_DIR)/$(TARBALL_FILE): ../versions.mak
 +$(DOWNLOAD_DIR)/$(TARBALL_FILE): 
