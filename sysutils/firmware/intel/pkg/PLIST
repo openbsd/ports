@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/06/09 13:58:59 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.17 2022/02/10 22:27:32 jsg Exp $
 firmware/intel/
 firmware/intel-ucode-license
 firmware/intel/06-03-02
@@ -89,8 +89,6 @@ firmware/intel/06-6a-06
 firmware/intel/06-7a-01
 firmware/intel/06-7a-08
 firmware/intel/06-7e-05
-firmware/intel/06-86-04
-firmware/intel/06-86-05
 firmware/intel/06-8a-01
 firmware/intel/06-8c-01
 firmware/intel/06-8c-02
