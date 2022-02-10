@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2021/11/02 12:47:09 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2022/02/10 22:06:51 sthen Exp $
 @option is-branch
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
@@ -283,6 +283,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/app_sayunixtime.so
 @so lib/asterisk/modules/app_senddtmf.so
 @so lib/asterisk/modules/app_sendtext.so
+@so lib/asterisk/modules/app_sf.so
 @so lib/asterisk/modules/app_sms.so
 @so lib/asterisk/modules/app_softhangup.so
 @so lib/asterisk/modules/app_speech_utils.so
@@ -379,6 +380,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_holdintercept.so
 @so lib/asterisk/modules/func_iconv.so
 @so lib/asterisk/modules/func_jitterbuffer.so
+@so lib/asterisk/modules/func_json.so
 @so lib/asterisk/modules/func_lock.so
 @so lib/asterisk/modules/func_logic.so
 @so lib/asterisk/modules/func_math.so
