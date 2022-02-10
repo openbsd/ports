@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/01 17:01:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/10 21:34:07 kn Exp $
 include/scintilla/
 include/scintilla/ILexer.h
 include/scintilla/ILoader.h
@@ -7,7 +7,7 @@ include/scintilla/SciLexer.h
 include/scintilla/Sci_Position.h
 include/scintilla/Scintilla.h
 include/scintilla/ScintillaWidget.h
-lib/libscintilla.a
+@static-lib lib/libscintilla.a
 @lib lib/libscintilla.so.${LIBscintilla_VERSION}
-lib/libscintilla_lexers.a
+@static-lib lib/libscintilla_lexers.a
 @lib lib/libscintilla_lexers.so.${LIBscintilla_lexers_VERSION}
