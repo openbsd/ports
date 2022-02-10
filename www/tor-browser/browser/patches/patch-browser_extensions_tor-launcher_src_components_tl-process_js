@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_extensions_tor-launcher_src_components_tl-process_js,v 1.5 2021/11/17 21:29:31 sdk Exp $
+$OpenBSD: patch-browser_extensions_tor-launcher_src_components_tl-process_js,v 1.6 2022/02/10 21:17:03 sdk Exp $
 
 Let geoip/geoip6 file paths be set by prefs like everything else and let
 the new getTorFile() deal with it.
@@ -6,7 +6,7 @@ the new getTorFile() deal with it.
 Index: browser/extensions/tor-launcher/src/components/tl-process.js
 --- browser/extensions/tor-launcher/src/components/tl-process.js.orig
 +++ browser/extensions/tor-launcher/src/components/tl-process.js
-@@ -377,6 +377,8 @@ TorProcessService.prototype =
+@@ -381,6 +381,8 @@ TorProcessService.prototype =
        var torrcFile = TorLauncherUtil.getTorFile("torrc", true);
        var torrcDefaultsFile =
                      TorLauncherUtil.getTorFile("torrc-defaults", false);
@@ -15,7 +15,7 @@ Index: browser/extensions/tor-launcher/src/components/tl-process.js
        var hashedPassword = this.mProtocolSvc.TorGetPassword(true);
        var controlIPCFile = this.mProtocolSvc.TorGetControlIPCFile();
        var controlPort = this.mProtocolSvc.TorGetControlPort();
-@@ -404,19 +406,14 @@ TorProcessService.prototype =
+@@ -408,19 +410,14 @@ TorProcessService.prototype =
          return;
        }
  
