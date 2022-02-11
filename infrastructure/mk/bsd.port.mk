@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1568 2022/02/11 12:42:10 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1569 2022/02/11 17:17:27 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -140,7 +140,7 @@ _ALL_VARIABLES += BROKEN COMES_WITH \
 	MAKEFILE_LIST USE_LLD USE_WXNEEDED COMPILER \
 	COMPILER_LANGS COMPILER_LINKS SUBST_VARS UPDATE_PLIST_ARGS \
 	PKGPATHS DEBUG_PACKAGES DEBUG_CONFIGURE_ARGS \
-	FIX_CRLF_FILES LOGIN_CONF
+	FIX_CRLF_FILES
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -382,7 +382,6 @@ PATCHDIR ?= ${.CURDIR}/patches
 PATCH_LIST ?= patch-*
 FILESDIR ?= ${.CURDIR}/files
 PKGDIR ?= ${.CURDIR}/pkg
-LOGIN_CONF ?=
 
 PREFIX ?= ${LOCALBASE}
 TRUEPREFIX ?= ${PREFIX}
@@ -3050,12 +3049,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .if target(post-install)
 	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
-.if !empty(LOGIN_CONF)
-	@${_PBUILD} ${INSTALL_DATA_DIR} \
-	    ${WRKINST}${PREFIX}/share/examples/login.conf.d
-	@cd ${PKGDIR} && ${_PBUILD} ${INSTALL_DATA} ${LOGIN_CONF} \
-	    ${WRKINST}${PREFIX}/share/examples/login.conf.d/
-.endif
 	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_PBUILD} ${_MAKE_COOKIE} $@
@@ -3100,6 +3093,14 @@ _internal-generate-readmes: ${_FAKE_COOKIE}
 			r=${WRKINST}${RCDIR}/$${i%.rc}; \
 			echo "Installing ${PKGDIR}/$$i as $$r"; \
 			${_PBUILD} ${SUBST_CMD} -m ${BINMODE} -c $$i $$r; \
+		fi; \
+	done
+	@cd ${PKGDIR} && for i in *.login; do \
+		if test X"$$i" != "X*.login"; then \
+			r=${WRKINST}${PREFIX}/share/examples/login.conf.d/$${i%.login}; \
+			echo "Installing ${PKGDIR}/$$i as $$r"; \
+			${_PBUILD} ${INSTALL_DATA_DIR} $${r%/*} ; \
+			${_PBUILD} ${INSTALL_DATA} $$i $$r; \
 		fi; \
 	done
 
