@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.204 2022/01/29 09:30:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.205 2022/02/11 16:34:27 sthen Exp $
 
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
 COMMENT=		image processing tools
 
 VER=			6.9.12
-DASHVER=		36
+DASHVER=		38
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
