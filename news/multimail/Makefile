@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/14 21:55:22 fcambus Exp $
+# $OpenBSD: Makefile,v 1.14 2022/02/11 09:12:59 fcambus Exp $
 
 COMMENT =	offline mail reader for Blue Wave, QWK, OMEN, SOUP and OPX
 
 V =		0.52
 DISTNAME =	mmail-${V}
 PKGNAME =	multimail-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	news
 
-HOMEPAGE =	https://multimail.sourceforge.io/
+HOMEPAGE =	https://wmcbrine.com/MultiMail/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
