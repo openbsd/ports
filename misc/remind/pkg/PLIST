@@ -1,13 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/15 10:50:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/02/11 12:45:05 sthen Exp $
 bin/rem
 bin/rem2html
+bin/rem2pdf
 @bin bin/rem2ps
 @bin bin/remind
 bin/tkremind
+libdata/perl5/site_perl/Remind/
+libdata/perl5/site_perl/Remind/PDF/
+libdata/perl5/site_perl/Remind/PDF.pm
+libdata/perl5/site_perl/Remind/PDF/Entry.pm
 @man man/man1/rem.1
+@man man/man1/rem2pdf.1
 @man man/man1/rem2ps.1
 @man man/man1/remind.1
 @man man/man1/tkremind.1
+@man man/man3p/Remind::PDF.3p
+@man man/man3p/Remind::PDF::Entry.3p
 share/examples/remind/
 share/examples/remind/defs.rem
 share/examples/remind/remind.vim
