@@ -1,4 +1,8 @@
-$OpenBSD: patch-build_main_mk,v 1.4 2021/08/06 08:02:10 mestre Exp $
+$OpenBSD: patch-build_main_mk,v 1.5 2022/02/12 13:36:18 kn Exp $
+
+Fix compiler detection by using CHOSEN_COMPILER not CXX
+(ports-gcc does not know `-fconstexpr-steps`)
+
 Index: build/main.mk
 --- build/main.mk.orig
 +++ build/main.mk
@@ -7,16 +11,16 @@ Index: build/main.mk
  WINDRES?=windres
  DEPEND_FLAGS:=
 -ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CXX)),)
-+ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CXX))$(filter c++,$(CXX)),)
++ifeq ($(CHOSEN_COMPILER),base-clang)
    # Enable C++17 (for the most part supported since clang-5)
    COMPILE_FLAGS+=-std=c++17 -fconstexpr-steps=2000000
    COMPILE_FLAGS+=-Wall -Wextra -Wundef -Wno-invalid-offsetof -Wunused-macros -Wdouble-promotion -Wmissing-declarations -Wshadow -Wold-style-cast -Wzero-as-null-pointer-constant
-@@ -361,6 +361,8 @@ else
-   else
-     $(warning Unsupported compiler: $(CXX), please update Makefile)
-   endif
-+  # Enable C++11
-+  COMPILE_FLAGS+=-std=c++11
- endif
- endif
- 
+@@ -344,7 +344,7 @@ ifneq ($(filter %clang++,$(CXX))$(filter clang++%,$(CX
+   CC:=$(subst clang++,clang,$(CXX))
+   DEPEND_FLAGS+=-MP
+ else
+-ifneq ($(filter %g++,$(CXX))$(filter g++%,$(CXX))$(findstring /g++-,$(CXX)),)
++ifeq ($(CHOSEN_COMPILER),ports-gcc)
+   # Generic compilation flags.
+   COMPILE_FLAGS+=-pipe
+   # Enable C++17  (almost fully supported since gcc-7)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2021/08/06 08:02:10 mestre Exp $
+# $OpenBSD: Makefile,v 1.32 2022/02/12 13:36:18 kn Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -7,6 +7,7 @@ BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
 COMMENT =	MSX home computer emulator
 
 V =		17.0
+REVISION =	0
 DISTNAME =	openmsx-$V
 
 CATEGORIES =	emulators
@@ -41,7 +42,6 @@ NO_TEST =	Yes
 
 MODULES =	lang/python \
 		lang/tcl
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 MODPY_RUNDEP =	No
 MAKE_FILE =	GNUmakefile
@@ -51,6 +51,7 @@ MAKE_FLAGS =	CC="${CC}" \
 		CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}" \
+		CHOSEN_COMPILER=${CHOSEN_COMPILER} \
 		OPENMSX_STRIP=false \
 		V=1
 
