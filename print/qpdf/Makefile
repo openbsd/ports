@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2022/02/10 15:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2022/02/12 10:12:49 ajacoutot Exp $
 
 # XXX usually fails to build when an earlier version is installed
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-10.6.0
+DISTNAME=	qpdf-10.6.1
 
-SHARED_LIBS +=  qpdf                 9.4      # 34.0
+SHARED_LIBS +=  qpdf                 9.4      # 34.1
 
 CATEGORIES=	print graphics
 
