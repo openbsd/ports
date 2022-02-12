@@ -1,10 +1,23 @@
-@comment $OpenBSD: PFRAG.native,v 1.9 2021/12/04 04:33:45 daniel Exp $
+@comment $OpenBSD: PFRAG.native,v 1.10 2022/02/12 22:29:22 kn Exp $
 %%dynlink%%
+@bin bin/coq-tex
+@bin bin/coq_makefile
+@bin bin/coqc
+@bin bin/coqchk
+@bin bin/coqdep
+@bin bin/coqdoc
+@bin bin/coqide
+@bin bin/coqidetop
 @bin bin/coqidetop.opt
 @bin bin/coqproofworker.opt
 @bin bin/coqqueryworker.opt
 @bin bin/coqtacticworker.opt
+@bin bin/coqtop
 @bin bin/coqtop.opt
+@bin bin/coqwc
+@bin bin/coqworkmgr
+@bin bin/ocamllibdep
+@bin bin/votour
 lib/ocaml/coq/clib/cArray.cmx
 lib/ocaml/coq/clib/cEphemeron.cmx
 lib/ocaml/coq/clib/cList.cmx
@@ -14,7 +27,7 @@ lib/ocaml/coq/clib/cSet.cmx
 lib/ocaml/coq/clib/cString.cmx
 lib/ocaml/coq/clib/cThread.cmx
 lib/ocaml/coq/clib/cUnix.cmx
-lib/ocaml/coq/clib/clib.a
+@static-lib lib/ocaml/coq/clib/clib.a
 lib/ocaml/coq/clib/clib.cmxa
 lib/ocaml/coq/clib/diff2.cmx
 lib/ocaml/coq/clib/dyn.cmx
@@ -38,11 +51,11 @@ lib/ocaml/coq/clib/trie.cmx
 lib/ocaml/coq/clib/unicode.cmx
 lib/ocaml/coq/clib/unicodetable.cmx
 lib/ocaml/coq/clib/unionfind.cmx
-lib/ocaml/coq/config/config.a
+@static-lib lib/ocaml/coq/config/config.a
 lib/ocaml/coq/config/config.cmxa
 lib/ocaml/coq/config/coq_config.cmx
 lib/ocaml/coq/engine/eConstr.cmx
-lib/ocaml/coq/engine/engine.a
+@static-lib lib/ocaml/coq/engine/engine.a
 lib/ocaml/coq/engine/engine.cmxa
 lib/ocaml/coq/engine/evar_kinds.cmx
 lib/ocaml/coq/engine/evarutil.cmx
@@ -61,14 +74,14 @@ lib/ocaml/coq/engine/univNames.cmx
 lib/ocaml/coq/engine/univProblem.cmx
 lib/ocaml/coq/engine/univSubst.cmx
 lib/ocaml/coq/engine/univops.cmx
-lib/ocaml/coq/gramlib/.pack/gramlib.a
+@static-lib lib/ocaml/coq/gramlib/.pack/gramlib.a
 lib/ocaml/coq/gramlib/.pack/gramlib.cmx
 lib/ocaml/coq/gramlib/.pack/gramlib.cmxa
 lib/ocaml/coq/gramlib/.pack/gramlib__Gramext.cmx
 lib/ocaml/coq/gramlib/.pack/gramlib__Grammar.cmx
 lib/ocaml/coq/gramlib/.pack/gramlib__Plexing.cmx
 lib/ocaml/coq/gramlib/.pack/gramlib__Ploc.cmx
-lib/ocaml/coq/ide/coqide/ide.a
+@static-lib lib/ocaml/coq/ide/coqide/ide.a
 lib/ocaml/coq/ide/coqide/ide.cmxa
 lib/ocaml/coq/interp/constrexpr.cmx
 lib/ocaml/coq/interp/constrexpr_ops.cmx
@@ -80,7 +93,7 @@ lib/ocaml/coq/interp/dumpglob.cmx
 lib/ocaml/coq/interp/genintern.cmx
 lib/ocaml/coq/interp/impargs.cmx
 lib/ocaml/coq/interp/implicit_quantifiers.cmx
-lib/ocaml/coq/interp/interp.a
+@static-lib lib/ocaml/coq/interp/interp.a
 lib/ocaml/coq/interp/interp.cmxa
 lib/ocaml/coq/interp/modintern.cmx
 lib/ocaml/coq/interp/notation.cmx
@@ -91,6 +104,7 @@ lib/ocaml/coq/interp/reserve.cmx
 lib/ocaml/coq/interp/smartlocate.cmx
 lib/ocaml/coq/interp/stdarg.cmx
 lib/ocaml/coq/interp/syntax_def.cmx
+@static-lib lib/ocaml/coq/kernel/byterun/libcoqrun.a
 lib/ocaml/coq/kernel/cClosure.cmx
 lib/ocaml/coq/kernel/cPrimitives.cmx
 lib/ocaml/coq/kernel/constr.cmx
@@ -109,7 +123,7 @@ lib/ocaml/coq/kernel/indTyping.cmx
 lib/ocaml/coq/kernel/indtypes.cmx
 lib/ocaml/coq/kernel/inductive.cmx
 lib/ocaml/coq/kernel/inferCumulativity.cmx
-lib/ocaml/coq/kernel/kernel.a
+@static-lib lib/ocaml/coq/kernel/kernel.a
 lib/ocaml/coq/kernel/kernel.cmxa
 lib/ocaml/coq/kernel/mod_subst.cmx
 lib/ocaml/coq/kernel/mod_typing.cmx
@@ -165,7 +179,7 @@ lib/ocaml/coq/lib/flags.cmx
 lib/ocaml/coq/lib/future.cmx
 lib/ocaml/coq/lib/genarg.cmx
 lib/ocaml/coq/lib/hook.cmx
-lib/ocaml/coq/lib/lib.a
+@static-lib lib/ocaml/coq/lib/lib.a
 lib/ocaml/coq/lib/lib.cmxa
 lib/ocaml/coq/lib/loc.cmx
 lib/ocaml/coq/lib/objFile.cmx
@@ -194,7 +208,7 @@ lib/ocaml/coq/parsing/g_constr.cmx
 lib/ocaml/coq/parsing/g_prim.cmx
 lib/ocaml/coq/parsing/notation_gram.cmx
 lib/ocaml/coq/parsing/notgram_ops.cmx
-lib/ocaml/coq/parsing/parsing.a
+@static-lib lib/ocaml/coq/parsing/parsing.a
 lib/ocaml/coq/parsing/parsing.cmxa
 lib/ocaml/coq/parsing/pcoq.cmx
 lib/ocaml/coq/parsing/ppextend.cmx
@@ -283,6 +297,7 @@ lib/ocaml/coq/plugins/ltac/tauto_plugin.cmx
 lib/ocaml/coq/plugins/ltac/tauto_plugin.o
 lib/ocaml/coq/plugins/micromega/certificate.cmx
 lib/ocaml/coq/plugins/micromega/coq_micromega.cmx
+@bin lib/ocaml/coq/plugins/micromega/csdpcert
 lib/ocaml/coq/plugins/micromega/csdpcert.cmx
 lib/ocaml/coq/plugins/micromega/g_micromega.cmx
 lib/ocaml/coq/plugins/micromega/g_zify.cmx
@@ -382,7 +397,7 @@ lib/ocaml/coq/pretyping/nativenorm.cmx
 lib/ocaml/coq/pretyping/pattern.cmx
 lib/ocaml/coq/pretyping/patternops.cmx
 lib/ocaml/coq/pretyping/pretype_errors.cmx
-lib/ocaml/coq/pretyping/pretyping.a
+@static-lib lib/ocaml/coq/pretyping/pretyping.a
 lib/ocaml/coq/pretyping/pretyping.cmx
 lib/ocaml/coq/pretyping/pretyping.cmxa
 lib/ocaml/coq/pretyping/program.cmx
@@ -399,7 +414,7 @@ lib/ocaml/coq/printing/genprint.cmx
 lib/ocaml/coq/printing/ppconstr.cmx
 lib/ocaml/coq/printing/pputils.cmx
 lib/ocaml/coq/printing/printer.cmx
-lib/ocaml/coq/printing/printing.a
+@static-lib lib/ocaml/coq/printing/printing.a
 lib/ocaml/coq/printing/printing.cmxa
 lib/ocaml/coq/printing/proof_diffs.cmx
 lib/ocaml/coq/proofs/clenv.cmx
@@ -410,7 +425,7 @@ lib/ocaml/coq/proofs/logic.cmx
 lib/ocaml/coq/proofs/miscprint.cmx
 lib/ocaml/coq/proofs/proof.cmx
 lib/ocaml/coq/proofs/proof_bullet.cmx
-lib/ocaml/coq/proofs/proofs.a
+@static-lib lib/ocaml/coq/proofs/proofs.a
 lib/ocaml/coq/proofs/proofs.cmxa
 lib/ocaml/coq/proofs/refine.cmx
 lib/ocaml/coq/proofs/tacmach.cmx
@@ -422,7 +437,7 @@ lib/ocaml/coq/stm/dag.cmx
 lib/ocaml/coq/stm/partac.cmx
 lib/ocaml/coq/stm/proofBlockDelimiter.cmx
 lib/ocaml/coq/stm/spawned.cmx
-lib/ocaml/coq/stm/stm.a
+@static-lib lib/ocaml/coq/stm/stm.a
 lib/ocaml/coq/stm/stm.cmx
 lib/ocaml/coq/stm/stm.cmxa
 lib/ocaml/coq/stm/tQueue.cmx
@@ -456,7 +471,7 @@ lib/ocaml/coq/tactics/ppred.cmx
 lib/ocaml/coq/tactics/redexpr.cmx
 lib/ocaml/coq/tactics/redops.cmx
 lib/ocaml/coq/tactics/tacticals.cmx
-lib/ocaml/coq/tactics/tactics.a
+@static-lib lib/ocaml/coq/tactics/tactics.a
 lib/ocaml/coq/tactics/tactics.cmx
 lib/ocaml/coq/tactics/tactics.cmxa
 lib/ocaml/coq/tactics/term_dnet.cmx
@@ -474,7 +489,7 @@ lib/ocaml/coq/toplevel/coqinit.cmx
 lib/ocaml/coq/toplevel/coqloop.cmx
 lib/ocaml/coq/toplevel/coqtop.cmx
 lib/ocaml/coq/toplevel/g_toplevel.cmx
-lib/ocaml/coq/toplevel/toplevel.a
+@static-lib lib/ocaml/coq/toplevel/toplevel.a
 lib/ocaml/coq/toplevel/toplevel.cmxa
 lib/ocaml/coq/toplevel/usage.cmx
 lib/ocaml/coq/toplevel/vernac.cmx
@@ -536,7 +551,7 @@ lib/ocaml/coq/vernac/record.cmx
 lib/ocaml/coq/vernac/retrieveObl.cmx
 lib/ocaml/coq/vernac/search.cmx
 lib/ocaml/coq/vernac/topfmt.cmx
-lib/ocaml/coq/vernac/vernac.a
+@static-lib lib/ocaml/coq/vernac/vernac.a
 lib/ocaml/coq/vernac/vernac.cmxa
 lib/ocaml/coq/vernac/vernacentries.cmx
 lib/ocaml/coq/vernac/vernacexpr.cmx

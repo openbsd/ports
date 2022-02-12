@@ -1,25 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/12/04 04:33:45 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/02/12 22:29:22 kn Exp $
 %%native%%
 !%%native%%
-@bin bin/coq-tex
-@bin bin/coq_makefile
-@bin bin/coqc
-@bin bin/coqchk
-@bin bin/coqdep
-@bin bin/coqdoc
-@bin bin/coqide
-@bin bin/coqidetop
-@comment bin/coqidetop.byte
 bin/coqpp
-@comment bin/coqproofworker.byte
-@comment bin/coqqueryworker.byte
-@comment bin/coqtacticworker.byte
-@bin bin/coqtop
-@comment bin/coqtop.byte
-@bin bin/coqwc
-@bin bin/coqworkmgr
-@bin bin/ocamllibdep
-@bin bin/votour
 lib/ocaml/coq/
 lib/ocaml/coq/META
 lib/ocaml/coq/clib/
@@ -62,10 +44,9 @@ lib/ocaml/coq/coqpp/coqpp_ast.cmi
 lib/ocaml/coq/coqpp/coqpp_parse.cmi
 lib/ocaml/coq/coqpp/coqpp_parser.cmi
 lib/ocaml/coq/dev/
-@comment lib/ocaml/coq/dllcoqrun.so
-lib/ocaml/coq/doc/
-lib/ocaml/coq/doc/tools/
-lib/ocaml/coq/doc/tools/docgram/
+@comment lib/ocaml/coq/doc/
+@comment lib/ocaml/coq/doc/tools/
+@comment lib/ocaml/coq/doc/tools/docgram/
 lib/ocaml/coq/engine/
 lib/ocaml/coq/engine/eConstr.cmi
 lib/ocaml/coq/engine/evar_kinds.cmi
@@ -149,7 +130,6 @@ lib/ocaml/coq/interp/syntax_def.cmi
 lib/ocaml/coq/kernel/
 lib/ocaml/coq/kernel/byterun/
 @so lib/ocaml/coq/kernel/byterun/dllcoqrun.so
-@comment lib/ocaml/coq/kernel/byterun/libcoqrun.a
 lib/ocaml/coq/kernel/cClosure.cmi
 lib/ocaml/coq/kernel/cPrimitives.cmi
 lib/ocaml/coq/kernel/constr.cmi
@@ -324,7 +304,6 @@ lib/ocaml/coq/plugins/ltac/tauto_plugin.cmi
 lib/ocaml/coq/plugins/micromega/
 lib/ocaml/coq/plugins/micromega/certificate.cmi
 lib/ocaml/coq/plugins/micromega/coq_micromega.cmi
-@bin lib/ocaml/coq/plugins/micromega/csdpcert
 lib/ocaml/coq/plugins/micromega/csdpcert.cmi
 lib/ocaml/coq/plugins/micromega/g_micromega.cmi
 lib/ocaml/coq/plugins/micromega/itv.cmi
