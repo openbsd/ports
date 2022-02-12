@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/05 08:02:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/12 09:21:05 ajacoutot Exp $
 bin/mm-common-get
 bin/mm-common-prepare
 @man man/man1/mm-common-get.1
@@ -31,6 +31,8 @@ share/mm-common/doctags/libstdc++.tag
 share/mm-common/doctool/
 share/mm-common/doctool/doc-install.pl
 share/mm-common/doctool/doc-postprocess.pl
+share/mm-common/doctool/doc_install.py
+share/mm-common/doctool/doc_postprocess.py
 share/mm-common/doctool/doxygen-extra.css
 share/mm-common/doctool/doxygen.css
 share/mm-common/doctool/tagfile-to-devhelp2.xsl
