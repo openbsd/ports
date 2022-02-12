@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/03 07:10:24 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2022/02/12 07:39:49 landry Exp $
 
 COMMENT =	full-featured LDAP client running as web application
 
-MODPY_EGG_VERSION =	1.7.0
+MODPY_EGG_VERSION =	1.7.3
 DISTNAME =	web2ldap-${MODPY_EGG_VERSION}
 
 CATEGORIES =	databases www sysutils
