@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/09 09:55:12 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/12 18:06:48 landry Exp $
 
 COMMENT =	HTTP Framework for REST Applications in C
 
 GH_ACCOUNT =	babelouest
 GH_PROJECT =	ulfius
-GH_TAGNAME =	v2.7.3
+GH_TAGNAME =	v2.7.7
 
 SHARED_LIBS =	ulfius	0.0
 
