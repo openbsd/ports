@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2021/12/16 20:58:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.75 2022/02/12 10:23:23 rsadowski Exp $
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.4.0
+V =		7.5.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
@@ -11,25 +11,25 @@ HOMEPAGE =	https://www.digikam.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  digikamcore               3.0 # 7.3
-SHARED_LIBS +=  digikamdatabase           4.0 # 7.3
+SHARED_LIBS +=  digikamcore               4.0 # 7.3
+SHARED_LIBS +=  digikamdatabase           5.0 # 7.3
 SHARED_LIBS +=  digikamgui                4.0 # 7.3
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF5AkonadiContact KF5AkonadiCore
-WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5CalendarCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5FileMetaData
-WANTLIB += KF5GrantleeTheme KF5I18n KF5IconThemes KF5ItemModels
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Notifications
-WANTLIB += KF5NotifyConfig KF5Sane KF5Service KF5Solid KF5ThreadWeaver
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Magick++-6.Q16
-WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql
-WANTLIB += Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Grantlee_Templates ICE KF5AkonadiContact
+WANTLIB += KF5AkonadiCore KF5AkonadiWidgets KF5Auth KF5AuthCore
+WANTLIB += KF5CalendarCore KF5Codecs KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
+WANTLIB += KF5FileMetaData KF5GrantleeTheme KF5I18n KF5IconThemes
+WANTLIB += KF5ItemModels KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Notifications KF5NotifyConfig KF5Sane KF5Service
+WANTLIB += KF5Solid KF5ThreadWeaver KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Magick++-6.Q16 MagickCore-6.Q16 MagickWand-6.Q16
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Sql Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns SM X11
 WANTLIB += Xext avcodec avdevice avfilter avformat avutil c exiv2
 WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port intl jasper
@@ -37,7 +37,6 @@ WANTLIB += jpeg lcms2 lensfun lqr-1 m marblewidget-qt5 opencv_calib3d
 WANTLIB += opencv_core opencv_dnn opencv_features2d opencv_flann
 WANTLIB += opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect
 WANTLIB += png swscale tiff usb-1.0 x265 xml2 xslt z
-
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
