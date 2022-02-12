@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2022/02/07 20:47:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2022/02/12 18:14:43 sthen Exp $
 
 COMMENT=	manage and configure devices that support IPMI
 
@@ -56,6 +56,9 @@ CONFIGURE_ARGS+=	--disable-intf-open
 pre-configure:
 	cd ${WRKSRC}/contrib; sed -i 's,^#!/bin/bash,#!/bin/sh,' bmclanconf *.sh
 
+# hopefully there is a bundled file when there's a new release and
+# we can get rid of this mess
+CONFIGURE_ENV+=	ac_cv_prog_CURL=curl
 post-configure:
 	gzcat < ${FULLDISTDIR}/enterprise-numbers.20220204.gz > ${WRKBUILD}/enterprise-numbers
 
