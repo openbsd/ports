@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/22 00:25:51 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/12 13:23:37 benoit Exp $
 
 COMMENT =	base classes for Alien:: modules
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-V =		2.37
-
-REVISION =	1
+V =		2.46
 
 PKGNAME =	p5-Alien-Base-${V}
 DISTNAME =	Alien-Build-${V}
@@ -17,6 +15,7 @@ CATEGORIES =	devel
 # perl
 PERMIT_PACKAGE =	Yes
 
+BUILD_DEPENDS =	sysutils/p5-File-Which
 RUN_DEPENDS =	devel/p5-FFI-CheckLib \
 		devel/p5-File-chdir \
 		devel/p5-Path-Tiny \
@@ -25,6 +24,5 @@ RUN_DEPENDS =	devel/p5-FFI-CheckLib \
 		sysutils/p5-Capture-Tiny
 TEST_DEPENDS =	devel/p5-Alien-Base-ModuleBuild
 
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
