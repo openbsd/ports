@@ -1,4 +1,4 @@
-$OpenBSD: patch-EnginePl_machine_h,v 1.3 2018/11/23 09:11:15 jca Exp $
+$OpenBSD: patch-EnginePl_machine_h,v 1.4 2022/02/12 14:13:08 sthen Exp $
 
 Hunk 1:
 XXX not quite sure why this is needed as it's built without PIE anyway, but
@@ -29,7 +29,7 @@ Index: EnginePl/machine.h
  
  #ifdef NO_USE_EBP
  #    define M_USED_REGS            {"ebx", 0}
-@@ -196,7 +196,7 @@ void M_Check_Magic_Words(void); /* not compiled if not
+@@ -224,7 +224,7 @@ void M_Check_Magic_Words(void); /* not compiled if not
   *---------------------------------*/
  
  #if defined(__OpenBSD__) || defined(M_bsd)

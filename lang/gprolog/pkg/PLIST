@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/11/12 19:15:40 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/12 14:13:08 sthen Exp $
 bin/fd2c
 bin/gplc
 bin/gprolog
@@ -28,26 +28,27 @@ libdata/gprolog/lib/
 libdata/gprolog/lib/all_fd_bips.o
 libdata/gprolog/lib/all_pl_bips.o
 libdata/gprolog/lib/debugger.o
-libdata/gprolog/lib/libbips_fd.a
-libdata/gprolog/lib/libbips_pl.a
-libdata/gprolog/lib/libengine_fd.a
-libdata/gprolog/lib/libengine_pl.a
-libdata/gprolog/lib/liblinedit.a
+@static-lib libdata/gprolog/lib/libbips_fd.a
+@static-lib libdata/gprolog/lib/libbips_pl.a
+@static-lib libdata/gprolog/lib/libengine_fd.a
+@static-lib libdata/gprolog/lib/libengine_pl.a
+@static-lib libdata/gprolog/lib/liblinedit.a
 libdata/gprolog/lib/top_level.o
 libdata/gprolog/lib/top_level_main.o
 share/doc/gprolog/
 share/doc/gprolog/compil-scheme.eps
 share/doc/gprolog/compil-scheme.pdf
-share/doc/gprolog/contents_motif.gif
+share/doc/gprolog/compil-scheme.png
 share/doc/gprolog/debug-box.eps
 share/doc/gprolog/debug-box.pdf
+share/doc/gprolog/debug-box.png
 share/doc/gprolog/gprolog.chm
 share/doc/gprolog/gprolog.dvi
 share/doc/gprolog/gprolog.html
 share/doc/gprolog/gprolog.pdf
 share/doc/gprolog/gprolog.ps
 share/doc/gprolog/html/
-share/doc/gprolog/html/contents_motif.gif
+share/doc/gprolog/html/contents_motif.svg
 share/doc/gprolog/html/gprolog-idx.html
 share/doc/gprolog/html/gprolog.css
 share/doc/gprolog/html/gprolog001.html
@@ -124,10 +125,11 @@ share/doc/gprolog/html/gprolog071.html
 share/doc/gprolog/html/gprolog072.html
 share/doc/gprolog/html/gprolog073.html
 share/doc/gprolog/html/index.html
-share/doc/gprolog/html/next_motif.gif
-share/doc/gprolog/html/previous_motif.gif
+share/doc/gprolog/html/next_motif.svg
+share/doc/gprolog/html/previous_motif.svg
 share/doc/gprolog/logo.eps
 share/doc/gprolog/logo.pdf
+share/doc/gprolog/logo.png
 share/examples/gprolog/
 share/examples/gprolog/ExamplesC/
 share/examples/gprolog/ExamplesC/Makefile

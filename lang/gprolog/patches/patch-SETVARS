@@ -1,8 +1,10 @@
-$OpenBSD: patch-SETVARS,v 1.1 2009/12/27 19:30:21 jasper Exp $
---- SETVARS.orig	Wed May  9 03:32:07 2007
-+++ SETVARS	Wed May  9 03:32:12 2007
+$OpenBSD: patch-SETVARS,v 1.2 2022/02/12 14:13:08 sthen Exp $
+
+Index: SETVARS
+--- SETVARS.orig
++++ SETVARS
 @@ -1,4 +1,3 @@
  a=`pwd`
- PATH=$a/TopComp:$a/EnginePl:$a/Pl2Wam:$a/Wam2Ma:$a/Ma2Asm:$a/Fd2C:$a/DevUtils:$a/W32GUICons:$PATH:/usr/ucb/:/usr/ccs/bin/
+ PATH=$a/TopComp:$a/EnginePl:$a/Pl2Wam:$a/Wam2Ma:$a/Ma2Asm:$a/Fd2C:$a/DevUtils:$a/W32GUICons:$PATH
  
 -export PATH

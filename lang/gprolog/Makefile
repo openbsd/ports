@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.29 2020/06/13 12:07:22 cwen Exp $
+# $OpenBSD: Makefile,v 1.30 2022/02/12 14:13:08 sthen Exp $
 
-BROKEN-i386=		various errors from gplc during build (segv, "fatal error", etc at various different points)
-BROKEN-powerpc=		ld.so: pl2wam: relocation failed
+BROKEN-i386=		linking problems
+# - with USE_LLD=No or LDFLAGS=--Wl,-z,notext, build fails with
+# Fatal Error: if_no_fd.c: FD Solver not linked
+#
+# - without the above, build fails with
+# ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 
-ONLY_FOR_ARCHS=		amd64 i386 powerpc sparc64
+ONLY_FOR_ARCHS=		amd64 i386 sparc64
 
 COMMENT=		Prolog compiler
 
-DISTNAME=		gprolog-1.4.5
-REVISION=		3
+DISTNAME=		gprolog-1.5.0
 
 CATEGORIES=		lang
 
@@ -23,8 +26,6 @@ MASTER_SITES=		http://www.gprolog.org/ \
 			http://www.gprolog.org/old_versions/ \
 			${MASTER_SITE_GNU:=gprolog/}
 
-COMPILER =		base-gcc ports-gcc
-COMPILER_LANGS =	c
 CONFIGURE_STYLE=	gnu dest no-autoheader
 
 CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
@@ -36,12 +37,6 @@ CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
 	--with-html-dir='${PREFIX}/share/doc/gprolog/html' \
 	--with-doc-dir='${PREFIX}/share/doc/gprolog' \
 	--with-c-flags="${CFLAGS}"
-CONFIGURE_ENV=		LDFLAGS="${LDFLAGS}"
-
-.include <bsd.port.arch.mk>
-.if ${MACHINE_ARCH:Mi386}
-LDFLAGS+=		-Wl,-znotext
-.endif
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 
