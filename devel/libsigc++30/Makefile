@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/21 04:40:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/12 09:29:39 ajacoutot Exp $
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		3.0.7
+GNOME_VERSION=		3.2.0
 GNOME_PROJECT=		libsigc++
 PKGNAME=		libsigc++30-${GNOME_VERSION}
 
