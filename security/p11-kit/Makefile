@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2022/01/18 10:58:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2022/02/12 11:08:57 ajacoutot Exp $
 
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
@@ -29,8 +29,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 LIB_DEPENDS=		devel/libffi \
 			security/libtasn1
 
-CONFIGURE_ARGS=		-Dmodule_path=${PREFIX}/lib/pkcs11 \
-			-Dtrust_paths=/etc/ssl/cert.pem \
+CONFIGURE_ARGS=		-Dtrust_paths=/etc/ssl/cert.pem \
 			-Dsystemd=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
