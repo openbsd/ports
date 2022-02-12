@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/12 11:52:19 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/12 12:39:09 kn Exp $
 
 COMMENT =	binary newsreader supporting NZB files
 
@@ -39,7 +39,7 @@ CONFIGURE_ARGS =	--with-libcurses-includes=/usr/include \
 
 NO_TEST =	Yes
 
-post-patch:
+pre-configure:
 	${SUBST_CMD} ${WRKSRC}/nzbget.conf
 
 .include <bsd.port.mk>
