@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.8 2022/02/04 10:33:36 denis Exp $
+# $OpenBSD: modules.inc,v 1.9 2022/02/12 21:38:46 denis Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.100.2 \
@@ -11,9 +11,9 @@ MODGO_MODULES =	\
 	contrib.go.opencensus.io/exporter/prometheus		 v0.4.0 \
 	dmitri.shuralyov.com/gpu/mtl				 v0.0.0-20201218220906-28db891af037 \
 	github.com/!azure/azure-pipeline-go			 v0.2.3 \
-	github.com/!azure/azure-sdk-for-go/sdk/azcore		 v0.20.0 \
-	github.com/!azure/azure-sdk-for-go/sdk/internal		 v0.8.1 \
-	github.com/!azure/azure-sdk-for-go/sdk/storage/azblob	 v0.2.0 \
+	github.com/!azure/azure-sdk-for-go/sdk/azcore		 v0.21.1 \
+	github.com/!azure/azure-sdk-for-go/sdk/internal		 v0.8.3 \
+	github.com/!azure/azure-sdk-for-go/sdk/storage/azblob	 v0.3.0 \
 	github.com/!azure/azure-storage-blob-go			 v0.14.0 \
 	github.com/!azure/go-autorest				 v14.2.0+incompatible \
 	github.com/!azure/go-autorest/autorest/adal		 v0.9.16 \
@@ -106,7 +106,7 @@ MODGO_MODULES =	\
 	github.com/klauspost/cpuid/v2				 v2.0.9 \
 	github.com/klauspost/pgzip				 v1.2.5 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.3 \
-	github.com/kopia/htmluibuild				 v0.0.0-20220131042136-3e252f22c951 \
+	github.com/kopia/htmluibuild				 v0.0.0-20220212024129-c944ece3b4d0 \
 	github.com/kr/fs					 v0.1.0 \
 	github.com/kr/logfmt					 v0.0.0-20140226030751-b84e30acd515 \
 	github.com/kr/pretty					 v0.3.0 \
