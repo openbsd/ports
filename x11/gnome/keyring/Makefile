@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2022/01/19 10:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2022/02/12 11:29:31 ajacoutot Exp $
 
 # XXX GNOME keyring ssh-agent segfaults with llvm >=13.0.0
 CFLAGS +=		-O0
@@ -12,7 +12,7 @@ COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		40.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -42,17 +42,11 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-pam \
 			--disable-valgrind
 
-# default to /etc/pkcs11/modules
-# pkg-config p11-kit-1 --variable=p11_system_config_modules
-CONFIGURE_ARGS +=	--with-pkcs11-config=${LOCALBASE}/share/p11-kit/modules/
-
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-FAKE_FLAGS=		configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-keyring
-	mv ${WRKINST}/etc/xdg ${PREFIX}/share/examples/gnome-keyring
+	mv ${WRKINST}/etc/{pkcs11,xdg} ${PREFIX}/share/examples/gnome-keyring
 	rm ${PREFIX}/lib/gnome-keyring/devel/*.{a,la}
 	rm ${PREFIX}/lib/pkcs11/*.{a,la}
 
