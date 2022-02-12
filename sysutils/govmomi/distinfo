@@ -16,7 +16,7 @@ SHA256 (go_modules/github.com/rasky/go-xdr/@v/v0.0.0-20170217172119-4930550ba2e2
 SHA256 (go_modules/github.com/rasky/go-xdr/@v/v0.0.0-20170217172119-4930550ba2e2.zip) = vaHpVh4FxV56c5BaEai2D4ulihem5MDq4GDxBroWXnE=
 SHA256 (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.mod) = tZSLvlG002X8sZ5zcF5gj2E/OGkSNuquPPwhUnMJqp4=
 SHA256 (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.zip) = Kcc7pErDFUYWQHl9br/aLZBsKNviHCBlbG5fofUV8iA=
-SHA256 (govmomi-v0.27.3.zip) = pCWtJd7X9aagI+lFdqyuvgDhMWGGzjQcln7HwUTvXWo=
+SHA256 (govmomi-v0.27.4.zip) = +XRW+RgiuFwGmnqFerao1UYHVOdk7S+6+6BRCAa0hRk=
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.mod) = 27
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.zip) = 18668
 SIZE (go_modules/github.com/davecgh/go-xdr/@v/v0.0.0-20161123171359-e6a2ba005892.mod) = 33
@@ -35,4 +35,4 @@ SIZE (go_modules/github.com/rasky/go-xdr/@v/v0.0.0-20170217172119-4930550ba2e2.m
 SIZE (go_modules/github.com/rasky/go-xdr/@v/v0.0.0-20170217172119-4930550ba2e2.zip) = 74470
 SIZE (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.mod) = 39
 SIZE (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.zip) = 28602
-SIZE (govmomi-v0.27.3.zip) = 2331662
+SIZE (govmomi-v0.27.4.zip) = 2341022
