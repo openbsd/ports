@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2021/05/21 04:40:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2022/02/12 09:25:52 ajacoutot Exp $
 
 PORTROACH=		limit:^2
 
 COMMENT=		callback framework for C++
 
-GNOME_VERSION=		2.10.7
+GNOME_VERSION=		2.10.8
 GNOME_PROJECT=		libsigc++
 
 CATEGORIES=		devel
