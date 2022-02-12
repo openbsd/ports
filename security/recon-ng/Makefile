@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/12 20:47:28 sebastia Exp $
 
 COMMENT =		web reconnaissance framework
 
 GH_ACCOUNT =		lanmaster53
 GH_PROJECT =		recon-ng
-GH_TAGNAME =		v5.1.1
-REVISION =		0
+GH_TAGNAME =		v5.1.2
 
 HOMEPAGE =		https://github.com/lanmaster53/recon-ng
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
 CATEGORIES =		security
 
