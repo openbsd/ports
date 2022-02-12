@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2021/12/04 10:39:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2022/02/12 17:43:17 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -156,6 +156,7 @@ share/help/C/gnome-help/figures/keyboard-key-volup.svg
 share/help/C/gnome-help/figures/keyboard-key-world.svg
 share/help/C/gnome-help/figures/nautilus-icons.png
 share/help/C/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/C/gnome-help/figures/network-wired-symbolic.svg
 share/help/C/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/C/gnome-help/figures/printing-select.png
 share/help/C/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -653,6 +654,7 @@ share/help/as/gnome-help/figures/keyboard-key-volup.svg
 share/help/as/gnome-help/figures/keyboard-key-world.svg
 share/help/as/gnome-help/figures/nautilus-icons.png
 share/help/as/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/as/gnome-help/figures/network-wired-symbolic.svg
 share/help/as/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/as/gnome-help/figures/printing-select.png
 share/help/as/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -1092,6 +1094,7 @@ share/help/ca/gnome-help/figures/keyboard-key-volup.svg
 share/help/ca/gnome-help/figures/keyboard-key-world.svg
 share/help/ca/gnome-help/figures/nautilus-icons.png
 share/help/ca/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/ca/gnome-help/figures/network-wired-symbolic.svg
 share/help/ca/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ca/gnome-help/figures/printing-select.png
 share/help/ca/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -1589,6 +1592,7 @@ share/help/cs/gnome-help/figures/keyboard-key-volup.svg
 share/help/cs/gnome-help/figures/keyboard-key-world.svg
 share/help/cs/gnome-help/figures/nautilus-icons.png
 share/help/cs/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/cs/gnome-help/figures/network-wired-symbolic.svg
 share/help/cs/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/cs/gnome-help/figures/printing-select.png
 share/help/cs/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -2086,6 +2090,7 @@ share/help/da/gnome-help/figures/keyboard-key-volup.svg
 share/help/da/gnome-help/figures/keyboard-key-world.svg
 share/help/da/gnome-help/figures/nautilus-icons.png
 share/help/da/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/da/gnome-help/figures/network-wired-symbolic.svg
 share/help/da/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/da/gnome-help/figures/printing-select.png
 share/help/da/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -2525,6 +2530,7 @@ share/help/de/gnome-help/figures/keyboard-key-volup.svg
 share/help/de/gnome-help/figures/keyboard-key-world.svg
 share/help/de/gnome-help/figures/nautilus-icons.png
 share/help/de/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/de/gnome-help/figures/network-wired-symbolic.svg
 share/help/de/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/de/gnome-help/figures/printing-select.png
 share/help/de/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -3022,6 +3028,7 @@ share/help/el/gnome-help/figures/keyboard-key-volup.svg
 share/help/el/gnome-help/figures/keyboard-key-world.svg
 share/help/el/gnome-help/figures/nautilus-icons.png
 share/help/el/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/el/gnome-help/figures/network-wired-symbolic.svg
 share/help/el/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/el/gnome-help/figures/printing-select.png
 share/help/el/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -3461,6 +3468,7 @@ share/help/es/gnome-help/figures/keyboard-key-volup.svg
 share/help/es/gnome-help/figures/keyboard-key-world.svg
 share/help/es/gnome-help/figures/nautilus-icons.png
 share/help/es/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/es/gnome-help/figures/network-wired-symbolic.svg
 share/help/es/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/es/gnome-help/figures/printing-select.png
 share/help/es/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -3958,6 +3966,7 @@ share/help/fa/gnome-help/figures/keyboard-key-volup.svg
 share/help/fa/gnome-help/figures/keyboard-key-world.svg
 share/help/fa/gnome-help/figures/nautilus-icons.png
 share/help/fa/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/fa/gnome-help/figures/network-wired-symbolic.svg
 share/help/fa/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fa/gnome-help/figures/printing-select.png
 share/help/fa/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -4397,6 +4406,7 @@ share/help/fi/gnome-help/figures/keyboard-key-volup.svg
 share/help/fi/gnome-help/figures/keyboard-key-world.svg
 share/help/fi/gnome-help/figures/nautilus-icons.png
 share/help/fi/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/fi/gnome-help/figures/network-wired-symbolic.svg
 share/help/fi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fi/gnome-help/figures/printing-select.png
 share/help/fi/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -4836,6 +4846,7 @@ share/help/fr/gnome-help/figures/keyboard-key-volup.svg
 share/help/fr/gnome-help/figures/keyboard-key-world.svg
 share/help/fr/gnome-help/figures/nautilus-icons.png
 share/help/fr/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/fr/gnome-help/figures/network-wired-symbolic.svg
 share/help/fr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/fr/gnome-help/figures/printing-select.png
 share/help/fr/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -5275,6 +5286,7 @@ share/help/gl/gnome-help/figures/keyboard-key-volup.svg
 share/help/gl/gnome-help/figures/keyboard-key-world.svg
 share/help/gl/gnome-help/figures/nautilus-icons.png
 share/help/gl/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/gl/gnome-help/figures/network-wired-symbolic.svg
 share/help/gl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/gl/gnome-help/figures/printing-select.png
 share/help/gl/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -5772,6 +5784,7 @@ share/help/gu/gnome-help/figures/keyboard-key-volup.svg
 share/help/gu/gnome-help/figures/keyboard-key-world.svg
 share/help/gu/gnome-help/figures/nautilus-icons.png
 share/help/gu/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/gu/gnome-help/figures/network-wired-symbolic.svg
 share/help/gu/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/gu/gnome-help/figures/printing-select.png
 share/help/gu/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -6211,6 +6224,7 @@ share/help/he/gnome-help/figures/keyboard-key-volup.svg
 share/help/he/gnome-help/figures/keyboard-key-world.svg
 share/help/he/gnome-help/figures/nautilus-icons.png
 share/help/he/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/he/gnome-help/figures/network-wired-symbolic.svg
 share/help/he/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/he/gnome-help/figures/printing-select.png
 share/help/he/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -6650,6 +6664,7 @@ share/help/hi/gnome-help/figures/keyboard-key-volup.svg
 share/help/hi/gnome-help/figures/keyboard-key-world.svg
 share/help/hi/gnome-help/figures/nautilus-icons.png
 share/help/hi/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/hi/gnome-help/figures/network-wired-symbolic.svg
 share/help/hi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hi/gnome-help/figures/printing-select.png
 share/help/hi/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -7089,6 +7104,7 @@ share/help/hr/gnome-help/figures/keyboard-key-volup.svg
 share/help/hr/gnome-help/figures/keyboard-key-world.svg
 share/help/hr/gnome-help/figures/nautilus-icons.png
 share/help/hr/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/hr/gnome-help/figures/network-wired-symbolic.svg
 share/help/hr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hr/gnome-help/figures/printing-select.png
 share/help/hr/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -7528,6 +7544,7 @@ share/help/hu/gnome-help/figures/keyboard-key-volup.svg
 share/help/hu/gnome-help/figures/keyboard-key-world.svg
 share/help/hu/gnome-help/figures/nautilus-icons.png
 share/help/hu/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/hu/gnome-help/figures/network-wired-symbolic.svg
 share/help/hu/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/hu/gnome-help/figures/printing-select.png
 share/help/hu/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -8025,6 +8042,7 @@ share/help/id/gnome-help/figures/keyboard-key-volup.svg
 share/help/id/gnome-help/figures/keyboard-key-world.svg
 share/help/id/gnome-help/figures/nautilus-icons.png
 share/help/id/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/id/gnome-help/figures/network-wired-symbolic.svg
 share/help/id/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/id/gnome-help/figures/printing-select.png
 share/help/id/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -8522,6 +8540,7 @@ share/help/it/gnome-help/figures/keyboard-key-volup.svg
 share/help/it/gnome-help/figures/keyboard-key-world.svg
 share/help/it/gnome-help/figures/nautilus-icons.png
 share/help/it/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/it/gnome-help/figures/network-wired-symbolic.svg
 share/help/it/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/it/gnome-help/figures/printing-select.png
 share/help/it/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -8961,6 +8980,7 @@ share/help/ja/gnome-help/figures/keyboard-key-volup.svg
 share/help/ja/gnome-help/figures/keyboard-key-world.svg
 share/help/ja/gnome-help/figures/nautilus-icons.png
 share/help/ja/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/ja/gnome-help/figures/network-wired-symbolic.svg
 share/help/ja/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ja/gnome-help/figures/printing-select.png
 share/help/ja/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -9400,6 +9420,7 @@ share/help/kn/gnome-help/figures/keyboard-key-volup.svg
 share/help/kn/gnome-help/figures/keyboard-key-world.svg
 share/help/kn/gnome-help/figures/nautilus-icons.png
 share/help/kn/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/kn/gnome-help/figures/network-wired-symbolic.svg
 share/help/kn/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/kn/gnome-help/figures/printing-select.png
 share/help/kn/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -9839,6 +9860,7 @@ share/help/ko/gnome-help/figures/keyboard-key-volup.svg
 share/help/ko/gnome-help/figures/keyboard-key-world.svg
 share/help/ko/gnome-help/figures/nautilus-icons.png
 share/help/ko/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/ko/gnome-help/figures/network-wired-symbolic.svg
 share/help/ko/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ko/gnome-help/figures/printing-select.png
 share/help/ko/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -10336,6 +10358,7 @@ share/help/lt/gnome-help/figures/keyboard-key-volup.svg
 share/help/lt/gnome-help/figures/keyboard-key-world.svg
 share/help/lt/gnome-help/figures/nautilus-icons.png
 share/help/lt/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/lt/gnome-help/figures/network-wired-symbolic.svg
 share/help/lt/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/lt/gnome-help/figures/printing-select.png
 share/help/lt/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -10775,6 +10798,7 @@ share/help/lv/gnome-help/figures/keyboard-key-volup.svg
 share/help/lv/gnome-help/figures/keyboard-key-world.svg
 share/help/lv/gnome-help/figures/nautilus-icons.png
 share/help/lv/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/lv/gnome-help/figures/network-wired-symbolic.svg
 share/help/lv/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/lv/gnome-help/figures/printing-select.png
 share/help/lv/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -11214,6 +11238,7 @@ share/help/mr/gnome-help/figures/keyboard-key-volup.svg
 share/help/mr/gnome-help/figures/keyboard-key-world.svg
 share/help/mr/gnome-help/figures/nautilus-icons.png
 share/help/mr/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/mr/gnome-help/figures/network-wired-symbolic.svg
 share/help/mr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/mr/gnome-help/figures/printing-select.png
 share/help/mr/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -11653,6 +11678,7 @@ share/help/nl/gnome-help/figures/keyboard-key-volup.svg
 share/help/nl/gnome-help/figures/keyboard-key-world.svg
 share/help/nl/gnome-help/figures/nautilus-icons.png
 share/help/nl/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/nl/gnome-help/figures/network-wired-symbolic.svg
 share/help/nl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/nl/gnome-help/figures/printing-select.png
 share/help/nl/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -12092,6 +12118,7 @@ share/help/pa/gnome-help/figures/keyboard-key-volup.svg
 share/help/pa/gnome-help/figures/keyboard-key-world.svg
 share/help/pa/gnome-help/figures/nautilus-icons.png
 share/help/pa/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/pa/gnome-help/figures/network-wired-symbolic.svg
 share/help/pa/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pa/gnome-help/figures/printing-select.png
 share/help/pa/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -12531,6 +12558,7 @@ share/help/pl/gnome-help/figures/keyboard-key-volup.svg
 share/help/pl/gnome-help/figures/keyboard-key-world.svg
 share/help/pl/gnome-help/figures/nautilus-icons.png
 share/help/pl/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/pl/gnome-help/figures/network-wired-symbolic.svg
 share/help/pl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pl/gnome-help/figures/printing-select.png
 share/help/pl/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -12970,6 +12998,7 @@ share/help/pt/gnome-help/figures/keyboard-key-volup.svg
 share/help/pt/gnome-help/figures/keyboard-key-world.svg
 share/help/pt/gnome-help/figures/nautilus-icons.png
 share/help/pt/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/pt/gnome-help/figures/network-wired-symbolic.svg
 share/help/pt/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pt/gnome-help/figures/printing-select.png
 share/help/pt/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -13409,6 +13438,7 @@ share/help/pt_BR/gnome-help/figures/keyboard-key-volup.svg
 share/help/pt_BR/gnome-help/figures/keyboard-key-world.svg
 share/help/pt_BR/gnome-help/figures/nautilus-icons.png
 share/help/pt_BR/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/pt_BR/gnome-help/figures/network-wired-symbolic.svg
 share/help/pt_BR/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/pt_BR/gnome-help/figures/printing-select.png
 share/help/pt_BR/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -13906,6 +13936,7 @@ share/help/ro/gnome-help/figures/keyboard-key-volup.svg
 share/help/ro/gnome-help/figures/keyboard-key-world.svg
 share/help/ro/gnome-help/figures/nautilus-icons.png
 share/help/ro/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/ro/gnome-help/figures/network-wired-symbolic.svg
 share/help/ro/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ro/gnome-help/figures/printing-select.png
 share/help/ro/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -14345,6 +14376,7 @@ share/help/ru/gnome-help/figures/keyboard-key-volup.svg
 share/help/ru/gnome-help/figures/keyboard-key-world.svg
 share/help/ru/gnome-help/figures/nautilus-icons.png
 share/help/ru/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/ru/gnome-help/figures/network-wired-symbolic.svg
 share/help/ru/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ru/gnome-help/figures/printing-select.png
 share/help/ru/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -14784,6 +14816,7 @@ share/help/sl/gnome-help/figures/keyboard-key-volup.svg
 share/help/sl/gnome-help/figures/keyboard-key-world.svg
 share/help/sl/gnome-help/figures/nautilus-icons.png
 share/help/sl/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/sl/gnome-help/figures/network-wired-symbolic.svg
 share/help/sl/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sl/gnome-help/figures/printing-select.png
 share/help/sl/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -15223,6 +15256,7 @@ share/help/sr/gnome-help/figures/keyboard-key-volup.svg
 share/help/sr/gnome-help/figures/keyboard-key-world.svg
 share/help/sr/gnome-help/figures/nautilus-icons.png
 share/help/sr/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/sr/gnome-help/figures/network-wired-symbolic.svg
 share/help/sr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sr/gnome-help/figures/printing-select.png
 share/help/sr/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -15662,6 +15696,7 @@ share/help/sr@latin/gnome-help/figures/keyboard-key-volup.svg
 share/help/sr@latin/gnome-help/figures/keyboard-key-world.svg
 share/help/sr@latin/gnome-help/figures/nautilus-icons.png
 share/help/sr@latin/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/sr@latin/gnome-help/figures/network-wired-symbolic.svg
 share/help/sr@latin/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sr@latin/gnome-help/figures/printing-select.png
 share/help/sr@latin/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -16101,6 +16136,7 @@ share/help/sv/gnome-help/figures/keyboard-key-volup.svg
 share/help/sv/gnome-help/figures/keyboard-key-world.svg
 share/help/sv/gnome-help/figures/nautilus-icons.png
 share/help/sv/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/sv/gnome-help/figures/network-wired-symbolic.svg
 share/help/sv/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/sv/gnome-help/figures/printing-select.png
 share/help/sv/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -16598,6 +16634,7 @@ share/help/ta/gnome-help/figures/keyboard-key-volup.svg
 share/help/ta/gnome-help/figures/keyboard-key-world.svg
 share/help/ta/gnome-help/figures/nautilus-icons.png
 share/help/ta/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/ta/gnome-help/figures/network-wired-symbolic.svg
 share/help/ta/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/ta/gnome-help/figures/printing-select.png
 share/help/ta/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -17037,6 +17074,7 @@ share/help/te/gnome-help/figures/keyboard-key-volup.svg
 share/help/te/gnome-help/figures/keyboard-key-world.svg
 share/help/te/gnome-help/figures/nautilus-icons.png
 share/help/te/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/te/gnome-help/figures/network-wired-symbolic.svg
 share/help/te/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/te/gnome-help/figures/printing-select.png
 share/help/te/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -17476,6 +17514,7 @@ share/help/tr/gnome-help/figures/keyboard-key-volup.svg
 share/help/tr/gnome-help/figures/keyboard-key-world.svg
 share/help/tr/gnome-help/figures/nautilus-icons.png
 share/help/tr/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/tr/gnome-help/figures/network-wired-symbolic.svg
 share/help/tr/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/tr/gnome-help/figures/printing-select.png
 share/help/tr/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -17973,6 +18012,7 @@ share/help/uk/gnome-help/figures/keyboard-key-volup.svg
 share/help/uk/gnome-help/figures/keyboard-key-world.svg
 share/help/uk/gnome-help/figures/nautilus-icons.png
 share/help/uk/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/uk/gnome-help/figures/network-wired-symbolic.svg
 share/help/uk/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/uk/gnome-help/figures/printing-select.png
 share/help/uk/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -18470,6 +18510,7 @@ share/help/vi/gnome-help/figures/keyboard-key-volup.svg
 share/help/vi/gnome-help/figures/keyboard-key-world.svg
 share/help/vi/gnome-help/figures/nautilus-icons.png
 share/help/vi/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/vi/gnome-help/figures/network-wired-symbolic.svg
 share/help/vi/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/vi/gnome-help/figures/printing-select.png
 share/help/vi/gnome-help/figures/rotation-allowed-symbolic.svg
@@ -18909,6 +18950,7 @@ share/help/zh_CN/gnome-help/figures/keyboard-key-volup.svg
 share/help/zh_CN/gnome-help/figures/keyboard-key-world.svg
 share/help/zh_CN/gnome-help/figures/nautilus-icons.png
 share/help/zh_CN/gnome-help/figures/net-wired-ethernet-diagram.svg
+share/help/zh_CN/gnome-help/figures/network-wired-symbolic.svg
 share/help/zh_CN/gnome-help/figures/preferences-desktop-accessibility-symbolic.svg
 share/help/zh_CN/gnome-help/figures/printing-select.png
 share/help/zh_CN/gnome-help/figures/rotation-allowed-symbolic.svg
