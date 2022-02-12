@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/04 03:18:47 bket Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/12 11:52:19 kn Exp $
 
 COMMENT =	binary newsreader supporting NZB files
 
 VERSION =	21.1
+REVISION =	0
 DISTNAME =	nzbget-${VERSION}
 
 CATEGORIES =	news
@@ -20,7 +21,7 @@ MASTER_SITES =	https://github.com/nzbget/nzbget/releases/download/v${VERSION}/
 EXTRACT_SUFX =	-src.tar.gz
 
 # C++14
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 RUN_DEPENDS =	archivers/p7zip \
 		archivers/unrar
@@ -38,7 +39,7 @@ CONFIGURE_ARGS =	--with-libcurses-includes=/usr/include \
 
 NO_TEST =	Yes
 
-pre-configure:
+post-patch:
 	${SUBST_CMD} ${WRKSRC}/nzbget.conf
 
 .include <bsd.port.mk>
