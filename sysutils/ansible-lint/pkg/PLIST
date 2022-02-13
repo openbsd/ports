@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/06/15 19:43:06 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2022/02/13 13:25:01 sthen Exp $
 bin/ansible-lint
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ansible_lint-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -30,6 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}skip_utils.
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/${MODPY_PYCACHE}yaml_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansiblelint/_internal/${MODPY_PYCACHE}/
@@ -62,6 +63,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/ComparisonToEmptyStri
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/ComparisonToLiteralBoolRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/DeprecatedModuleRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/EnvVarsInCommandRule.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/FQCNBuiltinsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/GitHasVersionRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/IgnoreErrorsRule.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/MercurialHasRevisionRule.py
@@ -101,6 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}Compa
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}ComparisonToLiteralBoolRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}DeprecatedModuleRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}EnvVarsInCommandRule.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}FQCNBuiltinsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}GitHasVersionRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}IgnoreErrorsRule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/rules/${MODPY_PYCACHE}MercurialHasRevisionRule.${MODPY_PYC_MAGIC_TAG}pyc
@@ -145,3 +148,4 @@ lib/python${MODPY_VERSION}/site-packages/ansiblelint/testing/fixtures.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/text.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/utils.py
 lib/python${MODPY_VERSION}/site-packages/ansiblelint/version.py
+lib/python${MODPY_VERSION}/site-packages/ansiblelint/yaml_utils.py
