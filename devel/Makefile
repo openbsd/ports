@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2177 2022/02/09 10:01:43 landry Exp $
+# $OpenBSD: Makefile,v 1.2178 2022/02/13 12:00:51 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -283,6 +283,7 @@
      SUBDIR += libgsf
      SUBDIR += libgtop2
      SUBDIR += libguess
+     SUBDIR += libgusb
      SUBDIR += libhid
      SUBDIR += libidn
      SUBDIR += libidn2
