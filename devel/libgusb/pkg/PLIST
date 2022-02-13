@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/13 12:00:19 ajacoutot Exp $
+@bin bin/gusbcmd
+include/gusb-1/
+include/gusb-1/gusb/
+include/gusb-1/gusb.h
+include/gusb-1/gusb/gusb-autocleanups.h
+include/gusb-1/gusb/gusb-context-private.h
+include/gusb-1/gusb/gusb-context.h
+include/gusb-1/gusb/gusb-device-list.h
+include/gusb-1/gusb/gusb-device-private.h
+include/gusb-1/gusb/gusb-device.h
+include/gusb-1/gusb/gusb-endpoint-private.h
+include/gusb-1/gusb/gusb-endpoint.h
+include/gusb-1/gusb/gusb-interface-private.h
+include/gusb-1/gusb/gusb-interface.h
+include/gusb-1/gusb/gusb-source.h
+include/gusb-1/gusb/gusb-util.h
+include/gusb-1/gusb/gusb-version.h
+lib/girepository-1.0/
+lib/girepository-1.0/GUsb-1.0.typelib
+@lib lib/libgusb.so.${LIBgusb_VERSION}
+lib/pkgconfig/gusb.pc
+share/gir-1.0/
+share/gir-1.0/GUsb-1.0.gir
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gusb.deps
+share/vala/vapi/gusb.vapi
