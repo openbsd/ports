@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/07 21:44:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/13 13:07:05 sthen Exp $
 
 COMMENT=	reusable library for GPU-accelerated video/image rendering
 
 GH_ACCOUNT=	haasn
 GH_PROJECT=	libplacebo
-GH_TAGNAME=	v4.157.0
+GH_TAGNAME=	v4.192.1
 CATEGORIES=	graphics
 
-SHARED_LIBS=	placebo	5.0
+SHARED_LIBS=	placebo	6.0
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	epoxy lcms2 m pthread
+WANTLIB=	epoxy execinfo lcms2 m pthread
 
 MODULES=	devel/meson
 
@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=-Ddefault_library=both \
 		-Ddemos=false \
 		-Dglslang=disabled \
 		-Dshaderc=disabled \
+		-Dunwind=disabled \
 		-Dvulkan=disabled
 
 .include <bsd.port.mk>
