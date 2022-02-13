@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1364 2022/02/13 12:02:29 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1365 2022/02/13 15:24:27 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -727,7 +727,6 @@ setup_obsolete_reason(
 	3 => 'telepathy-qt',
 	3 => 'telepathy-farstream',
 	3 => 'farstream',
-	6 => 'libnice',
 	5 => 'ardour',
 	5 => 'aubio',
 	5 => 'liblo',
