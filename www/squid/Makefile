@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.239 2022/02/09 13:07:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.240 2022/02/13 13:40:26 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-V=		5.4
+V=		5.4.1
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
@@ -35,7 +35,7 @@ cWANTLIB+=	idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
 
 # repo at https://github.com/squid-cache/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
-		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R}/
+		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
 
 # C++11
 COMPILER=	base-clang ports-gcc
