@@ -1,11 +1,11 @@
-$OpenBSD: patch-mutt_sasl_c,v 1.6 2017/05/30 21:21:47 sthen Exp $
+$OpenBSD: patch-mutt_sasl_c,v 1.7 2022/02/13 13:07:36 sthen Exp $
 
 Pledge.
 
 Index: mutt_sasl.c
 --- mutt_sasl.c.orig
 +++ mutt_sasl.c
-@@ -86,7 +86,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
+@@ -89,7 +89,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
  
  static sasl_secret_t *secret_ptr = NULL;
  
