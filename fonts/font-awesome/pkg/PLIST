@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/06/28 05:16:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/13 07:18:33 rsadowski Exp $
 share/doc/font-awesome/
 share/doc/font-awesome/LICENSE.txt
 share/fonts/
 @fontdir share/fonts/font-awesome/
-share/fonts/font-awesome/Font Awesome 5 Brands-Regular-400.otf
-share/fonts/font-awesome/Font Awesome 5 Free-Regular-400.otf
-share/fonts/font-awesome/Font Awesome 5 Free-Solid-900.otf
+share/fonts/font-awesome/Font Awesome 6 Brands-Regular-400.otf
+share/fonts/font-awesome/Font Awesome 6 Free-Regular-400.otf
+share/fonts/font-awesome/Font Awesome 6 Free-Solid-900.otf
