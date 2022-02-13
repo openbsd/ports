@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/14 11:11:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/13 11:15:45 kn Exp $
 
 COMMENT =		MessagePack implementation for C and C++
 
@@ -7,6 +7,7 @@ GH_ACCOUNT =		msgpack
 GH_PROJECT =		msgpack-c
 GH_TAGNAME =		cpp-${V}
 DISTNAME =		msgpack-${V}
+REVISION =		0
 
 SHARED_LIBS +=	msgpackc                  1.0 # 2.0
 
@@ -20,8 +21,11 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		devel/gtest
-TEST_DEPENDS =		devel/gtest
+BUILD_DEPENDS =		devel/gtest>=1.11.0pl20220208
+TEST_DEPENDS =		devel/gtest>=1.11.0pl20220208
+
+# match standard version with gtest
+CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 
 pre-configure:
 	cd ${WRKSRC} && sed -i 's,-Werror -g -O3,,' CMakeLists.txt \
