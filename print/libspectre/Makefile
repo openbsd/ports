@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.32 2022/01/29 07:37:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2022/02/13 08:52:26 ajacoutot Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 
 COMMENT=	library for rendering Postscript documents
 
-DISTNAME=	libspectre-0.2.9
-REVISION=	0
+DISTNAME=	libspectre-0.2.10
 
 CATEGORIES=	print
 
-SHARED_LIBS +=  spectre              1.0      # 2.8
+SHARED_LIBS +=  spectre              1.0      # 2.10
 
 HOMEPAGE=	http://libspectre.freedesktop.org/
 
