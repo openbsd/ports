@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/13 19:54:09 kmos Exp $
 
 COMMENT =		parser for and generator of the Git fastimport format
 
-MODPY_EGG_VERSION =	0.9.8
+MODPY_EGG_VERSION =	0.9.14
 DISTNAME =		fastimport-${MODPY_EGG_VERSION}
 PKGNAME =		py-fastimport-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	fastimport
 

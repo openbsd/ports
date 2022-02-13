@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/29 22:51:12 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/13 19:54:09 kmos Exp $
 @conflict py-fastimport-*
 @pkgpath devel/py-fastimport
 bin/fast-import-filter
 bin/fast-import-info
 bin/fast-import-query
 lib/python${MODPY_VERSION}/site-packages/fastimport/
-lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/fastimport/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
