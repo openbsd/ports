@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1363 2022/02/06 17:27:53 op Exp $
+# $OpenBSD: Quirks.pm,v 1.1364 2022/02/13 12:02:29 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1671,7 +1671,7 @@ my $obsolete_message = {
 	22 => "the original GeoIP database is end of life; use libmaxminddb/GeoIP2",
 	23 => "no longer maintained upstream, became commercial over ten years ago",
 	26 => "outdated Qt4 application",
-	27 => "requires GUdev or GUsb",
+	27 => "requires GUdev",
 	28 => "consider migrating MCollective agents and filters using tools like Bolt and PuppetDB's Puppet Query Language",
 	29 => "unmaintained port that was blocking other changes in ports",
 	30 => "crashes in many different ways at runtime, does not build with '-fno-common'",
