@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/11/14 12:41:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.22 2022/02/13 07:50:48 rsadowski Exp $
 @conflict kde-l10n-*
 @conflict kde-i18n-*
 @pkgpath x11/kde4/kstars
@@ -242,6 +242,10 @@ share/doc/HTML/en/kstars/ekos-guide.docbook
 share/doc/HTML/en/kstars/ekos-logs.docbook
 share/doc/HTML/en/kstars/ekos-profile-editor.docbook
 share/doc/HTML/en/kstars/ekos-profile-wizard.docbook
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-atpole.png
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-rotation.png
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-std.png
+share/doc/HTML/en/kstars/ekos-scheduler-mosaic-threequarteroverlap.png
 share/doc/HTML/en/kstars/ekos-scheduler.docbook
 share/doc/HTML/en/kstars/ekos-setup.docbook
 share/doc/HTML/en/kstars/ekos-tutorials.docbook
