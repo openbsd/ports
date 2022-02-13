@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/07/25 14:15:19 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/13 09:14:58 rsadowski Exp $
 bin/clazy
 @bin bin/clazy-standalone
 @so lib/libClazyPlugin.so
@@ -33,6 +33,7 @@ share/doc/clazy/level0/README-qt-macros.md
 share/doc/clazy/level0/README-strict-iterators.md
 share/doc/clazy/level0/README-temporary-iterator.md
 share/doc/clazy/level0/README-unused-non-trivial-variable.md
+share/doc/clazy/level0/README-use-static-qregularexpression.md
 share/doc/clazy/level0/README-writing-to-temporary.md
 share/doc/clazy/level0/README-wrong-qevent-cast.md
 share/doc/clazy/level0/README-wrong-qglobalstatic.md
@@ -44,7 +45,6 @@ share/doc/clazy/level1/README-const-signal-or-slot.md
 share/doc/clazy/level1/README-detaching-temporary.md
 share/doc/clazy/level1/README-foreach.md
 share/doc/clazy/level1/README-incorrect-emit.md
-share/doc/clazy/level1/README-inefficient-qlist-soft.md
 share/doc/clazy/level1/README-install-event-filter.md
 share/doc/clazy/level1/README-non-pod-global-static.md
 share/doc/clazy/level1/README-overridden-signal.md
@@ -82,7 +82,6 @@ share/doc/clazy/manuallevel/README-container-inside-loop.md
 share/doc/clazy/manuallevel/README-detaching-member.md
 share/doc/clazy/manuallevel/README-heap-allocated-small-trivial-type.md
 share/doc/clazy/manuallevel/README-ifndef-define-typo.md
-share/doc/clazy/manuallevel/README-inefficient-qlist.md
 share/doc/clazy/manuallevel/README-isempty-vs-count.md
 share/doc/clazy/manuallevel/README-jni-signatures.md
 share/doc/clazy/manuallevel/README-qhash-with-char-pointer-key.md
@@ -102,7 +101,9 @@ share/doc/clazy/manuallevel/README-reserve-candidates.md
 share/doc/clazy/manuallevel/README-signal-with-return-value.md
 share/doc/clazy/manuallevel/README-thread-with-slots.md
 share/doc/clazy/manuallevel/README-tr-non-literal.md
+share/doc/clazy/manuallevel/README-unexpected-flag-enumerator-value.md
 share/doc/clazy/manuallevel/README-unneeded-cast.md
+share/doc/clazy/manuallevel/README-use-arrow-operator-instead-of-data.md
 share/doc/clazy/manuallevel/README-use-chrono-in-qtimer.md
 share/metainfo/
 share/metainfo/org.kde.clazy.metainfo.xml
