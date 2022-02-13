@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2022/02/13 12:03:25 ajacoutot Exp $
+
+# when updating, add support for GUsb (devel/libgusb)
 
 COMMENT=		library for fingerprint reader devices
 
