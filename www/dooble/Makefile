@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/23 14:00:45 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	small, lightweight QtWebEngine web browser
 CATEGORIES =	www x11
@@ -6,6 +8,7 @@ CATEGORIES =	www x11
 GH_ACCOUNT =	textbrowser
 GH_PROJECT =	dooble
 GH_TAGNAME =	2021.11.05
+REVISION =	0
 
 HOMEPAGE =	https://textbrowser.github.io/dooble/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

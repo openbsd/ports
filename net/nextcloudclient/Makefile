@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/04 17:32:53 sthen Exp $ #
+# $OpenBSD: Makefile,v 1.29 2022/02/13 16:38:30 rsadowski Exp $ #
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
 V =		3.4.2
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop

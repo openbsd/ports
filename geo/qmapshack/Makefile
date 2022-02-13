@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/10 19:07:11 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	map management tool
 
 GH_ACCOUNT =	Maproom
 GH_PROJECT =	qmapshack
 GH_TAGNAME =	V_1.16.0
+REVISION =	0
 
 CATEGORIES =	geo
 

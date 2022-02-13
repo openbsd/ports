@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2021/06/05 04:28:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.39 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 BROKEN = Connection Error: Unable to connect to server
 
@@ -7,6 +9,7 @@ COMMENT=	multiplatform Jabber client
 V=		1.5
 DISTNAME=	psi-${V}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://psi-im.org/
 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2021/11/10 11:55:27 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.42 2022/02/13 16:38:30 rsadowski Exp $
 
+USE_WXNEEDED =	Yes
 
 COMMENT =		accounting for KDE 5
 
 VERSION =		5.1.2
 DISTNAME =		kmymoney-${VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity x11
 

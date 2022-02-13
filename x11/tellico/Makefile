@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2021/11/09 10:48:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.71 2022/02/13 16:38:31 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-3.4.2
+REVISION =	0
 
 CATEGORIES =	x11
 

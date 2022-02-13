@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/06 07:36:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/13 16:38:31 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  KF5Konq              1.1 # 5.97.0
 SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0

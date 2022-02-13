@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.27 2021/05/09 14:46:15 rsadowski Exp $
+$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.28 2022/02/13 16:38:29 rsadowski Exp $
 Index: Source/cmComputeLinkInformation.cxx
 --- Source/cmComputeLinkInformation.cxx.orig
 +++ Source/cmComputeLinkInformation.cxx
@@ -13,33 +13,7 @@ Index: Source/cmComputeLinkInformation.cxx
    this->OrderRuntimeSearchPath->SetImplicitDirectories(this->ImplicitLinkDirs);
    if (this->OrderDependentRPath) {
      this->OrderDependentRPath->SetImplicitDirectories(this->ImplicitLinkDirs);
-@@ -488,6 +489,7 @@ cmComputeLinkInformation::GetSharedLibrariesLinked() c
- 
- bool cmComputeLinkInformation::Compute()
- {
-+  bool use_wxneeded = false;
-   // Skip targets that do not link.
-   if (!(this->Target->GetType() == cmStateEnums::EXECUTABLE ||
-         this->Target->GetType() == cmStateEnums::SHARED_LIBRARY ||
-@@ -514,10 +516,17 @@ bool cmComputeLinkInformation::Compute()
-     if (linkEntry.IsSharedDep) {
-       this->AddSharedDepItem(linkEntry.Item, linkEntry.Target);
-     } else {
-+      std::string litem_tolower = linkEntry.Item.Value;
-+      transform(litem_tolower.begin(), litem_tolower.end(), litem_tolower.begin(), ::tolower);
-+      if (litem_tolower.find("webkit") != std::string::npos || litem_tolower.find("webengine") != std::string::npos)
-+         use_wxneeded = true;
-       this->AddItem(linkEntry.Item, linkEntry.Target);
-     }
-   }
- 
-+  if (use_wxneeded == true)
-+    this->AddUserItem(std::string("-Wl,-z,wxneeded"), false);
-+
-   // Restore the target link type so the correct system runtime
-   // libraries are found.
-   cmProp lss = this->Target->GetProperty("LINK_SEARCH_END_STATIC");
-@@ -713,10 +722,16 @@ void cmComputeLinkInformation::AddItem(BT<std::string>
+@@ -713,10 +714,16 @@ void cmComputeLinkInformation::AddItem(BT<std::string>
          // This is a directory.
          this->DropDirectoryItem(item.Value);
        } else {
@@ -59,7 +33,7 @@ Index: Source/cmComputeLinkInformation.cxx
        }
      } else {
        // This is a library or option specified by the user.
-@@ -1049,11 +1064,18 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
+@@ -1049,11 +1056,18 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
      this->SharedLibrariesLinked.insert(target);
    }
  
@@ -82,7 +56,7 @@ Index: Source/cmComputeLinkInformation.cxx
    }
  
    // For compatibility with CMake 2.4 include the item's directory in
-@@ -1066,6 +1088,27 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
+@@ -1066,6 +1080,27 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
  
    // Now add the full path to the library.
    this->Items.emplace_back(item, true, target);

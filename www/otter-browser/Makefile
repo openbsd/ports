@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/19 06:27:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	browser aiming to recreate classic Opera (12.x) UI using Qt5
 
 DISTNAME =	otter-browser-1.0.02
+REVISION =	0
 
 CATEGORIES =	www
 

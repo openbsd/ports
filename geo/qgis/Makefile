@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.158 2022/01/15 07:47:37 landry Exp $
+# $OpenBSD: Makefile,v 1.159 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
 
@@ -7,6 +9,7 @@ COMMENT =	desktop geographical information system
 DPB_PROPERTIES =	parallel
 
 DISTNAME =	qgis-3.22.3
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}

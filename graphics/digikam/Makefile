@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.75 2022/02/12 10:23:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.76 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
@@ -6,6 +8,7 @@ V =		7.5.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 

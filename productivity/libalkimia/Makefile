@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/15 06:28:05 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	KDE financial data handling library
 CATEGORIES =	productivity x11
@@ -6,7 +8,7 @@ CATEGORIES =	productivity x11
 V =		8.0.4
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =  alkimia5  1.0 # 8.0.4
 

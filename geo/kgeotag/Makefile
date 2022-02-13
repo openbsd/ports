@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/04 06:28:02 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	stand-alone photo geotagging program
 
 V =		1.2.0
 DISTNAME =	kgeotag-${V}
 CATEGORIES =	geo x11
+REVISION =	0
 
 HOMEPAGE =	https://kgeotag.kde.org
 

@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2022/01/05 08:02:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.63 2022/02/13 16:38:30 rsadowski Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    2.1 # 0.0
 
