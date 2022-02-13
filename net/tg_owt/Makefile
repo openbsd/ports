@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/04 06:32:54 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/13 21:21:02 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -15,7 +15,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		d618d0b5ff3e59bea0143e6070481f8f4316a428
 DISTNAME =		${GH_PROJECT}-0.0.0.20220202
-REVISION =		0
+REVISION =		1
 CATEGORIES =		net
 
 SHARED_LIBS =		tg_owt	1.1	# 0.0.0
@@ -52,7 +52,7 @@ PATCHFILES +=		tg_owt-libabsl-use-includes-{}fb12b4bd.patch:1
 
 # Pending "Bundled libsrtp 2.2.0 will require LibreSSL fix to build"
 # https://github.com/desktop-app/tg_owt/issues/84
-# https://github.com/cisco/libsrtp/pull/593
+# https://github.com/cisco/libsrtp/pull/593 (merged upstream)
 MASTER_SITES2 =		https://github.com/cisco/libsrtp/commit/
 PATCHFILES +=		tg_owt-libsrtp-fix-libressl-build-{}16483b1.patch:2
 PATCH_CASES +=		tg_owt-libsrtp-*.patch) ${PATCH} ${PATCH_DIST_ARGS} \
@@ -122,6 +122,10 @@ NEEDED_BUNDLES +=	rnnoise
 NEEDED_BUNDLES +=	libsrtp
 # unported and required
 NEEDED_BUNDLES +=	libyuv pffft
+
+.ifndef DEBUG
+INSTALL_TARGET =	install/strip
+.endif
 
 post-extract:
 	# All bundles:

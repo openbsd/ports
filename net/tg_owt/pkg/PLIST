@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/02/02 15:19:30 kn Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/13 21:21:03 kn Exp $
 include/tg_owt/
 include/tg_owt/api/
 include/tg_owt/api/adaptation/
@@ -2133,6 +2133,7 @@ include/tg_owt/third_party/libyuv/include/libyuv/convert_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/convert_from.h
 include/tg_owt/third_party/libyuv/include/libyuv/convert_from_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/cpu_id.h
+include/tg_owt/third_party/libyuv/include/libyuv/loongson_intrinsics.h
 include/tg_owt/third_party/libyuv/include/libyuv/macros_msa.h
 include/tg_owt/third_party/libyuv/include/libyuv/mjpeg_decoder.h
 include/tg_owt/third_party/libyuv/include/libyuv/planar_functions.h
