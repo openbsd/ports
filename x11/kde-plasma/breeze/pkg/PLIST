@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/14 18:06:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/02/13 08:34:52 rsadowski Exp $
 @bin bin/breeze-settings5
 lib/cmake/Breeze/
 lib/cmake/Breeze/BreezeConfig.cmake
 lib/cmake/Breeze/BreezeConfigVersion.cmake
 lib/kconf_update_bin/
+@bin lib/kconf_update_bin/breezehighcontrasttobreezedark
+@bin lib/kconf_update_bin/breezetobreezeclassic
 @bin lib/kconf_update_bin/breezetobreezelight
-@bin lib/kconf_update_bin/kde4breeze
 @lib lib/libbreezecommon5.so.${LIBbreezecommon5_VERSION}
 @so lib/qt5/plugins/kstyle_breeze_config.so
 lib/qt5/plugins/org.kde.kdecoration2/
@@ -15,9 +16,8 @@ lib/qt5/plugins/styles/
 share/QtCurve/
 share/QtCurve/Breeze.qtcurve
 share/color-schemes/
-share/color-schemes/Breeze.colors
+share/color-schemes/BreezeClassic.colors
 share/color-schemes/BreezeDark.colors
-share/color-schemes/BreezeHighContrast.colors
 share/color-schemes/BreezeLight.colors
 share/icons/Breeze_Snow/
 share/icons/Breeze_Snow/cursors/
@@ -254,8 +254,9 @@ share/icons/breeze_cursors/cursors/zoom-in
 share/icons/breeze_cursors/cursors/zoom-out
 share/icons/breeze_cursors/index.theme
 share/icons/hicolor/scalable/apps/breeze-settings.svgz
+share/kconf_update/breezehighcontrasttobreezedark.upd
+share/kconf_update/breezetobreezeclassic.upd
 share/kconf_update/breezetobreezelight.upd
-share/kconf_update/kde4breeze.upd
 share/kservices5/breezedecorationconfig.desktop
 share/kservices5/breezestyleconfig.desktop
 share/kstyle/
@@ -360,27 +361,25 @@ share/wallpapers/
 share/wallpapers/Next/
 share/wallpapers/Next/contents/
 share/wallpapers/Next/contents/images/
-share/wallpapers/Next/contents/images/1024x768.png
-share/wallpapers/Next/contents/images/1080x1920.png
-share/wallpapers/Next/contents/images/1280x1024.png
-share/wallpapers/Next/contents/images/1280x800.png
-share/wallpapers/Next/contents/images/1366x768.png
-share/wallpapers/Next/contents/images/1440x900.png
-share/wallpapers/Next/contents/images/1600x1200.png
-share/wallpapers/Next/contents/images/1680x1050.png
-share/wallpapers/Next/contents/images/1920x1080.png
-share/wallpapers/Next/contents/images/1920x1200.png
-share/wallpapers/Next/contents/images/2560x1440.png
-share/wallpapers/Next/contents/images/2560x1600.png
-share/wallpapers/Next/contents/images/3200x1800.png
-share/wallpapers/Next/contents/images/3200x2000.png
-share/wallpapers/Next/contents/images/360x720.png
-share/wallpapers/Next/contents/images/3840x2160.png
-share/wallpapers/Next/contents/images/440x247.png
-share/wallpapers/Next/contents/images/5120x2880.png
-share/wallpapers/Next/contents/images/720x1440.png
-share/wallpapers/Next/contents/images/base_size.png
-share/wallpapers/Next/contents/images/vertical_base_size.png
+share/wallpapers/Next/contents/images/1024x768.jpg
+share/wallpapers/Next/contents/images/1080x1920.jpg
+share/wallpapers/Next/contents/images/1280x1024.jpg
+share/wallpapers/Next/contents/images/1280x800.jpg
+share/wallpapers/Next/contents/images/1366x768.jpg
+share/wallpapers/Next/contents/images/1440x900.jpg
+share/wallpapers/Next/contents/images/1600x1200.jpg
+share/wallpapers/Next/contents/images/1680x1050.jpg
+share/wallpapers/Next/contents/images/1920x1080.jpg
+share/wallpapers/Next/contents/images/1920x1200.jpg
+share/wallpapers/Next/contents/images/2560x1440.jpg
+share/wallpapers/Next/contents/images/2560x1600.jpg
+share/wallpapers/Next/contents/images/3200x1800.jpg
+share/wallpapers/Next/contents/images/3200x2000.jpg
+share/wallpapers/Next/contents/images/360x720.jpg
+share/wallpapers/Next/contents/images/3840x2160.jpg
+share/wallpapers/Next/contents/images/440x247.jpg
+share/wallpapers/Next/contents/images/5120x2880.jpg
+share/wallpapers/Next/contents/images/720x1440.jpg
 share/wallpapers/Next/contents/screenshot.png
 share/wallpapers/Next/metadata.desktop
 @tag gtk-update-icon-cache %D/share/icons/breeze_cursors

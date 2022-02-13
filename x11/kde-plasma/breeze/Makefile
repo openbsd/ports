@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/14 18:06:58 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/13 08:34:52 rsadowski Exp $
 
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
 
-SHARED_LIBS +=  breezecommon5         0.0 # 5.12.0
+SHARED_LIBS +=  breezecommon5         1.0 # 5.12.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons

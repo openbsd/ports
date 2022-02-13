@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/08/08 12:22:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/02/13 08:34:52 rsadowski Exp $
 include/KDecoration2/
 include/KDecoration2/KDecoration2/
 include/KDecoration2/KDecoration2/DecoratedClient
@@ -7,6 +7,7 @@ include/KDecoration2/KDecoration2/DecorationButton
 include/KDecoration2/KDecoration2/DecorationButtonGroup
 include/KDecoration2/KDecoration2/DecorationSettings
 include/KDecoration2/KDecoration2/DecorationShadow
+include/KDecoration2/KDecoration2/DecorationThemeProvider
 include/KDecoration2/KDecoration2/Private/
 include/KDecoration2/KDecoration2/Private/DecoratedClientPrivate
 include/KDecoration2/KDecoration2/Private/DecorationBridge
@@ -19,6 +20,7 @@ include/KDecoration2/kdecoration2/decorationbuttongroup.h
 include/KDecoration2/kdecoration2/decorationdefines.h
 include/KDecoration2/kdecoration2/decorationsettings.h
 include/KDecoration2/kdecoration2/decorationshadow.h
+include/KDecoration2/kdecoration2/decorationthemeprovider.h
 include/KDecoration2/kdecoration2/kdecoration2_export.h
 include/KDecoration2/kdecoration2/private/
 include/KDecoration2/kdecoration2/private/decoratedclientprivate.h
