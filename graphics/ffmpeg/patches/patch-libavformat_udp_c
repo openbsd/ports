@@ -1,0 +1,84 @@
+$OpenBSD: patch-libavformat_udp_c,v 1.1 2022/02/13 19:42:11 sthen Exp $
+
+- avformat/udp: set ttl upper bound to 255
+- avformat/udp: properly check for valid ttl in url
+- avformat/udp: use one setsockopt for ipv4/ipv6
+- avformat/udp: Fix IP_MULTICAST_TTL for BSD compatibility
+- avformat/udp: remove IPPROTO_IPV6 macro
+
+Index: libavformat/udp.c
+--- libavformat/udp.c.orig
++++ libavformat/udp.c
+@@ -134,7 +134,7 @@ static const AVOption options[] = {
+     { "reuse",          "explicitly allow reusing UDP sockets",            OFFSET(reuse_socket),   AV_OPT_TYPE_BOOL,   { .i64 = -1 },    -1, 1,       D|E },
+     { "reuse_socket",   "explicitly allow reusing UDP sockets",            OFFSET(reuse_socket),   AV_OPT_TYPE_BOOL,   { .i64 = -1 },    -1, 1,       .flags = D|E },
+     { "broadcast", "explicitly allow or disallow broadcast destination",   OFFSET(is_broadcast),   AV_OPT_TYPE_BOOL,   { .i64 = 0  },     0, 1,       E },
+-    { "ttl",            "Time to live (multicast only)",                   OFFSET(ttl),            AV_OPT_TYPE_INT,    { .i64 = 16 },     0, INT_MAX, E },
++    { "ttl",            "Time to live (multicast only)",                   OFFSET(ttl),            AV_OPT_TYPE_INT,    { .i64 = 16 },     0, 255,     E },
+     { "connect",        "set if connect() should be called on socket",     OFFSET(is_connected),   AV_OPT_TYPE_BOOL,   { .i64 =  0 },     0, 1,       .flags = D|E },
+     { "fifo_size",      "set the UDP receiving circular buffer size, expressed as a number of packets with size of 188 bytes", OFFSET(circular_buffer_size), AV_OPT_TYPE_INT, {.i64 = 7*4096}, 0, INT_MAX, D },
+     { "overrun_nonfatal", "survive in case of UDP receiving circular buffer overrun", OFFSET(overrun_nonfatal), AV_OPT_TYPE_BOOL, {.i64 = 0}, 0, 1,    D },
+@@ -161,22 +161,40 @@ static const AVClass udplite_context_class = {
+ static int udp_set_multicast_ttl(int sockfd, int mcastTTL,
+                                  struct sockaddr *addr)
+ {
++    int protocol, cmd;
++
++    /* There is some confusion in the world whether IP_MULTICAST_TTL
++     * takes a byte or an int as an argument.
++     * BSD seems to indicate byte so we are going with that and use
++     * int and fall back to byte to be safe */
++    switch (addr->sa_family) {
+ #ifdef IP_MULTICAST_TTL
+-    if (addr->sa_family == AF_INET) {
+-        if (setsockopt(sockfd, IPPROTO_IP, IP_MULTICAST_TTL, &mcastTTL, sizeof(mcastTTL)) < 0) {
+-            ff_log_net_error(NULL, AV_LOG_ERROR, "setsockopt(IP_MULTICAST_TTL)");
+-            return ff_neterrno();
+-        }
+-    }
++        case AF_INET:
++            protocol = IPPROTO_IP;
++            cmd      = IP_MULTICAST_TTL;
++            break;
+ #endif
+-#if defined(IPPROTO_IPV6) && defined(IPV6_MULTICAST_HOPS)
+-    if (addr->sa_family == AF_INET6) {
+-        if (setsockopt(sockfd, IPPROTO_IPV6, IPV6_MULTICAST_HOPS, &mcastTTL, sizeof(mcastTTL)) < 0) {
+-            ff_log_net_error(NULL, AV_LOG_ERROR, "setsockopt(IPV6_MULTICAST_HOPS)");
++#ifdef IPV6_MULTICAST_HOPS
++        case AF_INET6:
++            protocol = IPPROTO_IPV6;
++            cmd      = IPV6_MULTICAST_HOPS;
++            break;
++#endif
++        default:
++            return 0;
++    }
++
++    if (setsockopt(sockfd, protocol, cmd, &mcastTTL, sizeof(mcastTTL)) < 0) {
++        /* BSD compatibility */
++        unsigned char ttl = (unsigned char) mcastTTL;
++
++        ff_log_net_error(NULL, AV_LOG_DEBUG, "setsockopt(IPV4/IPV6 MULTICAST TTL)");
++        if (setsockopt(sockfd, protocol, cmd, &ttl, sizeof(ttl)) < 0) {
++            ff_log_net_error(NULL, AV_LOG_ERROR, "setsockopt(IPV4/IPV6 MULTICAST TTL)");
+             return ff_neterrno();
+         }
+     }
+-#endif
++
+     return 0;
+ }
+ 
+@@ -673,6 +691,11 @@ static int udp_open(URLContext *h, const char *uri, in
+         }
+         if (av_find_info_tag(buf, sizeof(buf), "ttl", p)) {
+             s->ttl = strtol(buf, NULL, 10);
++            if (s->ttl < 0 || s->ttl > 255) {
++                av_log(h, AV_LOG_ERROR, "ttl(%d) should be in range [0,255]\n", s->ttl);
++                ret = AVERROR(EINVAL);
++                goto fail;
++            }
+         }
+         if (av_find_info_tag(buf, sizeof(buf), "udplite_coverage", p)) {
+             s->udplite_coverage = strtol(buf, NULL, 10);
