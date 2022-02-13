@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/12/29 22:09:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/13 07:47:14 ajacoutot Exp $
 
 COMMENT =	GNOME Shell style for Qt applications
 
@@ -19,6 +19,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake \
 			x11/qt5
+
+BUILD_DEPENDS =		www/sassc
 
 LIB_DEPENDS =		x11/qt5/qtx11extras
 
