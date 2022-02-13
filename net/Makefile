@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1288 2022/01/26 19:50:24 kn Exp $
+# $OpenBSD: Makefile,v 1.1289 2022/02/13 18:14:22 kn Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -210,6 +210,7 @@
      SUBDIR += libmaxminddb
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
+     SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += liboauth
      SUBDIR += liboping
