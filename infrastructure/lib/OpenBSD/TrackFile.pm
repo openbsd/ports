@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.2 2022/01/21 09:38:48 espie Exp $
+# $OpenBSD: TrackFile.pm,v 1.3 2022/02/13 17:42:28 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -324,6 +324,20 @@ sub write_backsubst
 		print {$f->fh} "\@comment no debug\n";
 	}
 	$self->SUPER::write_backsubst($f, $p);
+}
+
+package OpenBSD::PackingElement::LoginClass;
+use File::Basename;
+
+sub prepare_backsubst
+{
+	my ($self, $f, $p) = @_;
+	$self->SUPER::prepare_backsubst($f, $p);
+	if (!defined $self->{mytags}) {
+		my $n = OpenBSD::PackingElement::Sample->new(
+		    "/etc/login.conf.d/".basename($self->name));
+		$n->prepare_backsubst($f, $p);
+	}
 }
 
 package OpenBSD::PackingElement::Lib;
