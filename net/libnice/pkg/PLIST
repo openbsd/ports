@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.14 2022/02/13 18:13:31 kn Exp $
+@bin bin/stunbdc
+@bin bin/stund
+include/nice/
+include/nice/address.h
+include/nice/agent.h
+include/nice/candidate.h
+include/nice/debug.h
+include/nice/interfaces.h
+include/nice/nice.h
+include/nice/pseudotcp.h
+include/stun/
+include/stun/constants.h
+include/stun/debug.h
+include/stun/stunagent.h
+include/stun/stunmessage.h
+include/stun/usages/
+include/stun/usages/bind.h
+include/stun/usages/ice.h
+include/stun/usages/timer.h
+include/stun/usages/turn.h
+include/stun/win32_common.h
+lib/girepository-1.0/Nice-0.1.typelib
+@so lib/gstreamer-1.0/libgstnice.so
+@lib lib/libnice.so.${LIBnice_VERSION}
+lib/pkgconfig/nice.pc
+share/gir-1.0/Nice-0.1.gir
