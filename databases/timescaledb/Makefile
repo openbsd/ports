@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/04 17:21:20 denis Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/13 08:26:39 denis Exp $
 
 COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.5.1
+GH_TAGNAME =	2.5.2
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.timescale.com/
