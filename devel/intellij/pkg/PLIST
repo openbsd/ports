@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2022/01/03 07:57:53 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.53 2022/02/13 07:46:38 rsadowski Exp $
 bin/idea
 bin/idea-lightedit
 bin/intellij
@@ -100,7 +100,7 @@ intellij/lib/asm-tree-7.1.jar
 intellij/lib/asm-util-7.1.jar
 intellij/lib/async-profiler.jar
 intellij/lib/bootstrap.jar
-intellij/lib/build-marker-IC-213.6461.79
+intellij/lib/build-marker-IC-213.6777.52
 intellij/lib/byte-buddy-agent.jar
 intellij/lib/cds/
 intellij/lib/cds/classesLogAgent.jar
@@ -417,7 +417,6 @@ intellij/plugins/cwm-plugin/lib/cwm-common.jar
 intellij/plugins/cwm-plugin/lib/cwm-host-unattended.jar
 intellij/plugins/cwm-plugin/lib/cwm-host.jar
 intellij/plugins/cwm-plugin/lib/cwm-lobby-common.jar
-intellij/plugins/cwm-plugin/lib/cwm-plugin-android.jar
 intellij/plugins/cwm-plugin/lib/cwm-plugin-terminal.jar
 intellij/plugins/cwm-plugin/lib/cwm-plugin.jar
 intellij/plugins/cwm-plugin/lib/cwm-unattended-common.jar
@@ -429,7 +428,7 @@ intellij/plugins/cwm-plugin/lib/kotlinx-serialization-protobuf.jar
 intellij/plugins/cwm-plugin/lib/projector-client-common.jar
 intellij/plugins/cwm-plugin/lib/projector-client-swing.jar
 intellij/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
-intellij/plugins/cwm-plugin/lib/rd-text-2021.3.4.jar
+intellij/plugins/cwm-plugin/lib/rd-text-2021.3.5.jar
 intellij/plugins/cwm-plugin/lib/tls-channel.jar
 intellij/plugins/cwm-plugin/quiche-native/
 intellij/plugins/cwm-plugin/quiche-native/linux-x86-64/
@@ -711,6 +710,7 @@ intellij/plugins/space/lib/
 intellij/plugins/space/lib/3rd-party.jar
 intellij/plugins/space/lib/jackson-datatype-joda-2.13.0.jar
 intellij/plugins/space/lib/joda-time-2.10.8.jar
+intellij/plugins/space/lib/kotlinx-coroutines-slf4j-1.5.2.jar
 intellij/plugins/space/lib/space-idea-sdk-1.1.83546.jar
 intellij/plugins/space/lib/space-java-jps.jar
 intellij/plugins/space/lib/space.jar
@@ -1305,6 +1305,7 @@ intellij/plugins/wsl-fs-helper/lib/
 intellij/plugins/wsl-fs-helper/lib/bifurcan-0.2.0-alpha6.jar
 intellij/plugins/wsl-fs-helper/lib/java-diff-utils-4.9.jar
 intellij/plugins/wsl-fs-helper/lib/kotlinx-coroutines-debug-1.5.1.jar
+intellij/plugins/wsl-fs-helper/lib/kotlinx-coroutines-slf4j-1.5.2.jar
 intellij/plugins/wsl-fs-helper/lib/okhttp-4.9.2.jar
 intellij/plugins/wsl-fs-helper/lib/okio-2.8.0.jar
 intellij/plugins/wsl-fs-helper/lib/wsl-fs-helper.jar
