@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2022/02/12 22:29:22 kn Exp $
+# $OpenBSD: Makefile,v 1.59 2022/02/13 11:10:56 kn Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
@@ -6,8 +6,6 @@ V=			8.13.2
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
-DISTNAME =		${GH_PROJECT}-${V}
-WRKDIST =		${WRKDIR}/${GH_PROJECT}-${V}
 REVISION =		1
 
 CATEGORIES=		math
