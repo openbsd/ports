@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.9 2021/05/17 05:17:42 rsadowski Exp $
+$OpenBSD: patch-configure,v 1.10 2022/02/13 07:28:33 rsadowski Exp $
 Index: configure
 --- configure.orig
 +++ configure
-@@ -5294,7 +5294,7 @@ if ${ac_cv_lib_ofx_ofx_set_status_cb+:} false; then :
+@@ -5311,7 +5311,7 @@ if ${ac_cv_lib_ofx_ofx_set_status_cb+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -11,7 +11,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5328,7 +5328,7 @@ if test "x$ac_cv_lib_ofx_ofx_set_status_cb" = xyes; th
+@@ -5345,7 +5345,7 @@ if test "x$ac_cv_lib_ofx_ofx_set_status_cb" = xyes; th
    OFX_0_7="-DOFX_ENABLE"
  fi
  
