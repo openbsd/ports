@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/30 10:58:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/13 20:04:03 sthen Exp $
 @bin bin/nfs-cat
 @bin bin/nfs-cp
 @bin bin/nfs-ls
+@bin bin/nfs-stat
 include/nfsc/
 include/nfsc/libnfs-raw-mount.h
 include/nfsc/libnfs-raw-nfs.h
@@ -13,7 +14,7 @@ include/nfsc/libnfs-raw-rquota.h
 include/nfsc/libnfs-raw.h
 include/nfsc/libnfs-zdr.h
 include/nfsc/libnfs.h
-lib/libnfs.a
+@static-lib lib/libnfs.a
 lib/libnfs.la
 @lib lib/libnfs.so.${LIBnfs_VERSION}
 lib/pkgconfig/libnfs.pc
