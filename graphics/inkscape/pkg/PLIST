@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/10/28 11:01:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.23 2022/02/13 07:53:45 rsadowski Exp $
 @bin bin/inkscape
 @bin bin/inkview
 lib/inkscape/
@@ -110,7 +110,6 @@ share/inkscape/extensions/Poly3DObjects/trunc_icos.obj
 share/inkscape/extensions/Poly3DObjects/trunc_oct.obj
 share/inkscape/extensions/Poly3DObjects/trunc_tet.obj
 share/inkscape/extensions/README.md
-share/inkscape/extensions/STYLEGUIDE.md
 share/inkscape/extensions/TESTING.md
 ${MODPY_COMMENT}share/inkscape/extensions/${MODPY_PYCACHE}/
 share/inkscape/extensions/${MODPY_PYCACHE}addnodes.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2730,6 +2729,7 @@ share/inkscape/screens/start-welcome-text.ja.svg
 share/inkscape/screens/start-welcome-text.pl.svg
 share/inkscape/screens/start-welcome-text.pt.svg
 share/inkscape/screens/start-welcome-text.pt_BR.svg
+share/inkscape/screens/start-welcome-text.ro.svg
 share/inkscape/screens/start-welcome-text.ru.svg
 share/inkscape/screens/start-welcome-text.sk.svg
 share/inkscape/screens/start-welcome-text.svg
@@ -2790,6 +2790,7 @@ share/inkscape/templates/default.kok.svg
 share/inkscape/templates/default.kok@latin.svg
 share/inkscape/templates/default.ks@aran.svg
 share/inkscape/templates/default.ks@deva.svg
+share/inkscape/templates/default.lt.svg
 share/inkscape/templates/default.lv.svg
 share/inkscape/templates/default.mai.svg
 share/inkscape/templates/default.ml.svg
@@ -3526,8 +3527,6 @@ share/locale/az/LC_MESSAGES/inkscape.mo
 share/locale/be/LC_MESSAGES/inkscape.mo
 share/locale/bg/LC_MESSAGES/inkscape.mo
 share/locale/bn/LC_MESSAGES/inkscape.mo
-share/locale/bn_BD/
-share/locale/bn_BD/LC_MESSAGES/
 share/locale/bn_BD/LC_MESSAGES/inkscape.mo
 share/locale/br/LC_MESSAGES/inkscape.mo
 share/locale/brx/
@@ -3573,8 +3572,6 @@ share/locale/ja/LC_MESSAGES/inkscape.mo
 share/locale/km/LC_MESSAGES/inkscape.mo
 share/locale/kn/LC_MESSAGES/inkscape.mo
 share/locale/ko/LC_MESSAGES/inkscape.mo
-share/locale/kok/
-share/locale/kok/LC_MESSAGES/
 share/locale/kok/LC_MESSAGES/inkscape.mo
 share/locale/kok@latin/
 share/locale/kok@latin/LC_MESSAGES/
@@ -3619,8 +3616,6 @@ share/locale/sat/LC_MESSAGES/inkscape.mo
 share/locale/sat@deva/
 share/locale/sat@deva/LC_MESSAGES/
 share/locale/sat@deva/LC_MESSAGES/inkscape.mo
-share/locale/sd/
-share/locale/sd/LC_MESSAGES/
 share/locale/sd/LC_MESSAGES/inkscape.mo
 share/locale/sd@deva/
 share/locale/sd@deva/LC_MESSAGES/
