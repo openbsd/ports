@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2022/01/03 07:58:15 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.30 2022/02/13 07:46:02 rsadowski Exp $
 bin/pycharm
 bin/pycharm-lightedit
 @man man/man1/pycharm.1
@@ -36,7 +36,7 @@ pycharm/lib/asm-tree-7.1.jar
 pycharm/lib/asm-util-7.1.jar
 pycharm/lib/async-profiler.jar
 pycharm/lib/bootstrap.jar
-pycharm/lib/build-marker-PC-213.6461.77
+pycharm/lib/build-marker-PC-213.6777.50
 pycharm/lib/byte-buddy-agent.jar
 pycharm/lib/cds/
 pycharm/lib/cds/classesLogAgent.jar
@@ -157,7 +157,6 @@ pycharm/plugins/cwm-plugin/lib/cwm-common.jar
 pycharm/plugins/cwm-plugin/lib/cwm-host-unattended.jar
 pycharm/plugins/cwm-plugin/lib/cwm-host.jar
 pycharm/plugins/cwm-plugin/lib/cwm-lobby-common.jar
-pycharm/plugins/cwm-plugin/lib/cwm-plugin-android.jar
 pycharm/plugins/cwm-plugin/lib/cwm-plugin-terminal.jar
 pycharm/plugins/cwm-plugin/lib/cwm-plugin.jar
 pycharm/plugins/cwm-plugin/lib/cwm-unattended-common.jar
@@ -169,7 +168,7 @@ pycharm/plugins/cwm-plugin/lib/kotlinx-serialization-protobuf.jar
 pycharm/plugins/cwm-plugin/lib/projector-client-common.jar
 pycharm/plugins/cwm-plugin/lib/projector-client-swing.jar
 pycharm/plugins/cwm-plugin/lib/quiche-jna-stubs.jar
-pycharm/plugins/cwm-plugin/lib/rd-text-2021.3.4.jar
+pycharm/plugins/cwm-plugin/lib/rd-text-2021.3.5.jar
 pycharm/plugins/cwm-plugin/lib/tls-channel.jar
 pycharm/plugins/cwm-plugin/quiche-native/
 pycharm/plugins/cwm-plugin/quiche-native/linux-x86-64/
@@ -221,8 +220,8 @@ pycharm/plugins/pycharm-community-sharedIndexes-bundled/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-22e0e7d7a2a5-eb8d386cac10.ijx
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-22e0e7d7a2a5-eb8d386cac10.txt
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-8628e36dc4f1-eb8d386cac10.ijx
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-8628e36dc4f1-eb8d386cac10.txt
 pycharm/plugins/python-ce/
 pycharm/plugins/python-ce/helpers/
 pycharm/plugins/python-ce/helpers/MathJax/
@@ -4870,6 +4869,7 @@ pycharm/plugins/space/lib/
 pycharm/plugins/space/lib/3rd-party.jar
 pycharm/plugins/space/lib/jackson-datatype-joda-2.13.0.jar
 pycharm/plugins/space/lib/joda-time-2.10.8.jar
+pycharm/plugins/space/lib/kotlinx-coroutines-slf4j-1.5.2.jar
 pycharm/plugins/space/lib/space-idea-sdk-1.1.83546.jar
 pycharm/plugins/space/lib/space-java-jps.jar
 pycharm/plugins/space/lib/space.jar

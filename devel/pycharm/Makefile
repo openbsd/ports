@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2022/01/03 07:58:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.40 2022/02/13 07:46:01 rsadowski Exp $
 
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2021.3.1
+V=			2021.3.2
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
