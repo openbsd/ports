@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.37 2022/01/21 10:55:18 espie Exp $
+# $OpenBSD: FS2.pm,v 1.38 2022/02/13 12:42:46 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -68,6 +68,7 @@ sub classes
 		OpenBSD::FS::File::IbusComponent
 		OpenBSD::FS::File::PkgConfig
 		OpenBSD::FS::File::MimeInfo
+		OpenBSD::FS::File::LoginClass
 		OpenBSD::FS::File::Icon
 		OpenBSD::FS::File::IconTheme
 		OpenBSD::FS::File::Ocaml::Cmx
@@ -187,6 +188,21 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Desktop';
+}
+
+package OpenBSD::FS::File::LoginClass;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,/share/examples/login\.conf\.d/, 
+	    && -f $fs->destdir($filename);
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::LoginClass';
 }
 
 package OpenBSD::FS::File::Glib2Schema;

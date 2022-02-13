@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.202 2022/01/21 10:55:18 espie Exp $
+# $OpenBSD: update-plist,v 1.203 2022/02/13 12:42:46 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -796,6 +796,9 @@ package OpenBSD::PackingElement::File::Ocaml::o;
 our @ISA = qw(OpenBSD::PackingElement::File::Ocaml);
 package OpenBSD::PackingElement::File::Ocaml::Cmxs;
 our @ISA = qw(OpenBSD::PackingElement::File::Ocaml);
+
+package OpenBSD::PackingElement::LoginClass;
+our @ISA = qw(OpenBSD::PackingElement::File);
 
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
