@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/29 11:20:03 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/14 10:56:38 sthen Exp $
+
+BROKEN-arm64=	system/dumpcapext_arm64.go:25:6: DumpcapExt redeclared in this block
 
 COMMENT=	terminal UI for tshark, inspired by Wireshark
 
