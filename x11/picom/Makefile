@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/19 17:16:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/14 13:04:05 op Exp $
 
 COMMENT =	lightweight compositor for X11
 
 GH_ACCOUNT =	yshui
 GH_PROJECT =	picom
-GH_TAGNAME =	v8.2
-REVISION =	0
+GH_TAGNAME =	v9.1
 
 CATEGORIES =	x11
 
@@ -35,12 +34,19 @@ LIB_DEPENDS =		devel/libconfig \
 			x11/dbus
 
 CONFIGURE_ARGS	+=	-Dwith_docs=true \
-			-Dunittest=true
+			-Dunittest=true \
+			-Dcompton=false
 CONFIGURE_ENV	+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-pre-patch:
-	cd ${WRKSRC}/media && mv compton.svg picom.svg
-	cd ${WRKSRC}/media/icons/48x48 && mv compton.png picom.png
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/{48x48,scalable}/apps
+	${INSTALL_DATA} ${WRKSRC}/media/icons/48x48/compton.png \
+		${PREFIX}/share/icons/hicolor/48x48/apps/picom.png
+	${INSTALL_DATA} ${WRKSRC}/media/compton.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps/picom.svg
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/picom
+	${INSTALL_DATA} ${WRKSRC}/picom.sample.conf \
+		${PREFIX}/share/examples/picom
 
 .include <bsd.port.mk>
