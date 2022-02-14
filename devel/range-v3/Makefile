@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/05 10:01:56 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/14 10:31:22 kn Exp $
 
 COMMENT =		range library for C++14/17/20
 
 GH_ACCOUNT =		ericniebler
 GH_PROJECT =		range-v3
 GH_TAGNAME =		0.11.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MASTER_SITES0 =		https://github.com/ericniebler/range-v3/commit/
-PATCHFILES =		clang13-libcpp-fix-{}0487cca2.patch:0
+# both merged upstream
+PATCHFILES +=		range-v3-clang13-libcpp-fix-{}0487cca2.patch:0
+PATCHFILES +=		range-v3-recognise-openbsd-{}badc97b4.patch:0
 PATCH_DIST_STRIP =	-p1
 
 # BSL 1.0 (boost software license)
@@ -23,7 +25,10 @@ COMPILER_LANGS =	c++
 
 MODULES =		devel/cmake
 
-# disable hardare specific optimizations
+# print more configure results, e.g. CXXFLAGS used
+CONFIGURE_ARGS +=	-DRANGES_VERBOSE_BUILD=ON
+
+# disable hardware specific optimizations
 CONFIGURE_ARGS +=	-DRANGES_NATIVE=OFF
 
 # avoid using doxygen (configure would still detect it)
