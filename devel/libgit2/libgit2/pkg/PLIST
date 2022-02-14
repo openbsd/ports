@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/11/19 08:01:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2022/02/14 19:45:57 ajacoutot Exp $
 include/git2/
 include/git2.h
 include/git2/annotated_commit.h
@@ -81,6 +81,7 @@ include/git2/sys/path.h
 include/git2/sys/refdb_backend.h
 include/git2/sys/reflog.h
 include/git2/sys/refs.h
+include/git2/sys/remote.h
 include/git2/sys/repository.h
 include/git2/sys/stream.h
 include/git2/sys/transport.h
