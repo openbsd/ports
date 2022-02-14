@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/13 18:13:31 kn Exp $
+# $OpenBSD: Makefile,v 1.41 2022/02/14 07:47:41 tb Exp $
 
 COMMENT =		GLib ICE implementation
 DISTNAME =		libnice-0.1.18
@@ -33,5 +33,12 @@ CONFIGURE_ARGS +=	-Dignored-network-interface-prefix=''
 
 CONFIGURE_ARGS +=	-Dexamples=disabled \
 			-Dgtk_doc=disabled
+
+.include <bsd.port.arch.mk>
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
+.endif
 
 .include <bsd.port.mk>
