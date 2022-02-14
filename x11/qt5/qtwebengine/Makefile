@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2022/01/20 23:56:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2022/02/14 17:42:03 sthen Exp $
 
 USE_WXNEEDED =		Yes
 
@@ -6,8 +6,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
 DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
-# override parallel
-DPB_PROPERTIES=		lonesome
+DPB_PROPERTIES+=	lonesome
 .endif
 
 COMMENT =		Chromium-based web engine for Qt5

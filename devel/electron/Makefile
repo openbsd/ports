@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2021/10/04 18:47:25 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/14 17:42:03 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -8,8 +8,7 @@ USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH} == "i386"
-# override parallel
-DPB_PROPERTIES=		lonesome
+DPB_PROPERTIES+=	lonesome
 .endif
 
 COMMENT=		cross-platform desktop applications

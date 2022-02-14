@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.128 2021/12/28 15:49:54 robert Exp $
+# $OpenBSD: Makefile,v 1.129 2022/02/14 17:42:03 sthen Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
+.if ${MACHINE_ARCH} == "i386"
+DPB_PROPERTIES+=	lonesome
+.endif
 
 COMMENT=		Iridium browser
 
