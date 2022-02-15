@@ -1,4 +1,4 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/05/31 10:36:21 ajacoutot Exp $
+$OpenBSD: patch-meson_build,v 1.2 2022/02/15 10:30:23 ajacoutot Exp $
 
 XXX
 ld: error: undefined symbol: _Unwind_Resume
@@ -8,7 +8,7 @@ ld: error: undefined symbol: _Unwind_Resume
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -202,7 +202,6 @@ osinfo_db_tools_check_cflags = [
+@@ -206,7 +206,6 @@ osinfo_db_tools_check_cflags = [
    '-Wno-overlength-strings',
    '-Wp,-D_FORTIFY_SOURCE=2',
    '--param=ssp-buffer-size=4',
