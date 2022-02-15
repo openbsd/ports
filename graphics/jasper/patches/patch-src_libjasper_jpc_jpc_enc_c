@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_libjasper_jpc_jpc_enc_c,v 1.3 2021/05/23 19:28:08 sthen Exp $
+$OpenBSD: patch-src_libjasper_jpc_jpc_enc_c,v 1.4 2022/02/15 17:26:10 sthen Exp $
 
 Index: src/libjasper/jpc/jpc_enc.c
 --- src/libjasper/jpc/jpc_enc.c.orig
 +++ src/libjasper/jpc/jpc_enc.c
-@@ -951,7 +951,8 @@ startoff = jas_stream_getrwcount(enc->out);
- 		jas_eprintf("cannot create COM marker\n");
+@@ -964,7 +964,8 @@ static int jpc_enc_encodemainhdr(jpc_enc_t *enc)
+ 		jas_logerrorf("cannot create COM marker\n");
  		return -1;
  	}
 -	sprintf(buf, "Creator: JasPer Version %s", jas_getversion());

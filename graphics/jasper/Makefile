@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/22 09:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2022/02/15 17:26:10 sthen Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
-V =		2.0.33
+V =		3.0.2
 DISTNAME =	jasper-$V
 
-SHARED_LIBS =	jasper		4.0
+SHARED_LIBS =	jasper		5.0
 
 CATEGORIES =	graphics
 
@@ -20,7 +20,7 @@ MASTER_SITES =	https://github.com/jasper-software/jasper/releases/download/versi
 
 # -stdc=gnu11
 COMPILER =	base-clang ports-gcc
-COMPILER_LANGS = c
+COMPILER_LANGS = c pthread
 
 MODULES =	devel/cmake
 
@@ -28,6 +28,8 @@ MODULES =	devel/cmake
 TEST_DEPENDS =	shells/bash
 
 CONFIGURE_ARGS = -DJAS_ENABLE_AUTOMATIC_DEPENDENCIES=false \
+		-DJAS_ENABLE_DOC=false \
+		-DJAS_ENABLE_LATEX=false \
 		-DJAS_ENABLE_LIBJPEG=false \
 		-DJAS_ENABLE_OPENGL=false
 
