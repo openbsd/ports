@@ -1,0 +1,20 @@
+$OpenBSD: patch-pygit2_decl_buffer_h,v 1.1 2022/02/15 14:51:46 ajacoutot Exp $
+
+From 935e2b5b4cd36bfbc8c15b5498a4f80df77c3176 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=2E=20David=20Ib=C3=A1=C3=B1ez?= <jdavid.ibp@gmail.com>
+Date: Mon, 14 Feb 2022 09:19:44 +0100
+Subject: [PATCH] Upgrade to libgit2 v1.4.0 (wip)
+
+Index: pygit2/decl/buffer.h
+--- pygit2/decl/buffer.h.orig
++++ pygit2/decl/buffer.h
+@@ -1,6 +1,7 @@
+ typedef struct {
+-	char   *ptr;
+-	size_t asize, size;
++	char *ptr;
++	size_t reserved;
++	size_t size;
+ } git_buf;
+ 
+ void git_buf_dispose(git_buf *buffer);
