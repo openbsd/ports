@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.29 2021/04/28 04:03:24 rsadowski Exp $
+$OpenBSD: patch-configure,v 1.30 2022/02/15 17:22:35 sthen Exp $
 
 Index: configure
 --- configure.orig
@@ -34,18 +34,7 @@ Index: configure
      fi
  fi
  [ "$lto" = "auto" ] && lto="no"
-@@ -1367,10 +1363,6 @@ if cc_check '' -Wshadow ; then
-     CFLAGS="-Wshadow $CFLAGS"
- fi
- 
--if cc_check '' -Wmaybe-uninitialized ; then
--    CFLAGS="-Wno-maybe-uninitialized $CFLAGS"
--fi
--
- if [ $compiler = GNU ] && cc_check '' -fvisibility=hidden ; then
-     CFLAGS="$CFLAGS -fvisibility=hidden"
- fi
-@@ -1570,7 +1562,6 @@ if [ "$cli" = "yes" ]; then
+@@ -1570,7 +1566,6 @@ if [ "$cli" = "yes" ]; then
  fi
  
  if [ "$shared" = "yes" ]; then
@@ -53,7 +42,7 @@ Index: configure
      if [ "$SYS" = "WINDOWS" -o "$SYS" = "CYGWIN" ]; then
          echo "SONAME=libx264-$API.dll" >> config.mak
          if [ $compiler_style = MS ]; then
-@@ -1591,7 +1582,7 @@ if [ "$shared" = "yes" ]; then
+@@ -1591,7 +1586,7 @@ if [ "$shared" = "yes" ]; then
      else
          echo "SOSUFFIX=so" >> config.mak
          echo "SONAME=libx264.so.$API" >> config.mak
