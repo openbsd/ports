@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2178 2022/02/13 12:00:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2179 2022/02/15 04:27:24 abieber Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1427,6 +1427,7 @@
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common,python3
      SUBDIR += py-magic,python3
+     SUBDIR += py-matrix-common,python3
      SUBDIR += py-mccabe,python3
      SUBDIR += py-minidump,python3
      SUBDIR += py-minimock,python3
