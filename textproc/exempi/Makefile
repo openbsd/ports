@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/15 17:25:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2022/02/15 17:27:03 sthen Exp $
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.6.1
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -15,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c expat m pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc
-COMPILER =		ports-gcc
 
 # configure checks for libiconv but it's unused
 BUILD_DEPENDS =		converters/libiconv
