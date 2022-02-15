@@ -1,8 +1,10 @@
-$OpenBSD: patch-xvgif_c,v 1.2 2021/05/23 19:28:13 sthen Exp $
+$OpenBSD: patch-src_xvgif_c,v 1.1 2022/02/15 17:26:29 sthen Exp $
 
-Index: xvgif.c
---- xvgif.c.orig
-+++ xvgif.c
+prevent segfault on some invalid gif, from patch-xvgif_c r1.1
+
+Index: src/xvgif.c
+--- src/xvgif.c.orig
++++ src/xvgif.c
 @@ -75,6 +75,7 @@ static boolean Interlace, HasGlobalColormap;
  static byte *RawGIF;		/* The heap array to hold it, raw */
  static byte *Raster;		/* The raster data stream, unblocked */
@@ -11,22 +13,22 @@ Index: xvgif.c
  
      /* The hash table used by the decompressor */
  static int Prefix[4096];
-@@ -148,7 +149,8 @@ int LoadGIF(fname, pinfo)
-   if (!(dataptr = RawGIF = (byte *) calloc((size_t) filesize+256, (size_t) 1)))
-     FatalError("LoadGIF: not enough memory to read GIF file");
+@@ -145,7 +146,8 @@ int LoadGIF(fname, pinfo)
  
--  if (!(Raster = (byte *) calloc((size_t) filesize+256,(size_t) 1)))
+   /* the +256's are so we can read truncated GIF files without fear of
+      segmentation violation */
+-  if (!(dataptr = RawGIF = (byte *) calloc((size_t) filesize+256, (size_t) 1)))
 +  rasterSize = filesize+256;
 +  if (!(Raster = (byte *) calloc(rasterSize, (size_t) 1)))
      FatalError("LoadGIF: not enough memory to read GIF file");
  
-   if (fread(dataptr, (size_t) filesize, (size_t) 1, fp) != 1)
+   if (!(Raster = (byte *) calloc((size_t) filesize+256,(size_t) 1)))
 @@ -796,6 +798,8 @@ static int readCode()
    int RawCode, ByteOffset;
  
    ByteOffset = BitOffset / 8;
 +  if (ByteOffset >= rasterSize-2)
-+  	return 0;
++    return 0;
    RawCode = Raster[ByteOffset] + (Raster[ByteOffset + 1] << 8);
    if (CodeSize >= 8)
      RawCode += ( ((int) Raster[ByteOffset + 2]) << 16);

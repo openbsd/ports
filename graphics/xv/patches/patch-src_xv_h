@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_xv_h,v 1.1 2022/02/15 17:26:29 sthen Exp $
+
+fix problems with Nikon D7100 pictures, they don't create correct exif
+information (multiple APP1 chunks). xv reads them all, but libjpeg frowns
+about writing multiple APP1.
+
+So,
+- ignore subsequent chunks (like exiv2 does)
+- add a small framework to report error messages from libjpeg
+(might be adaptable to other gfx formats).
+
+Index: src/xv.h
+--- src/xv.h.orig
++++ src/xv.h
+@@ -181,7 +181,7 @@
+ #ifndef VMS
+ #  include <errno.h>
+ #  ifndef __NetBSD__
+-#    if !(defined(__GLIBC__) && __GLIBC__ >= 2)
++#    if !(defined(__GLIBC__) && __GLIBC__ >= 2) && !defined(__OpenBSD__)
+        extern int   errno;         /* SHOULD be in errno.h, but often isn't */
+ #      ifndef XV_HAVE_SYSERRLISTDECL
+          extern char *sys_errlist[]; /* this too... */
+@@ -1746,7 +1746,8 @@ char *GetDirFullName       PARM((void));
+ void SetDirSaveMode        PARM((int, int));
+ int  Globify               PARM((char *));
+ FILE *OpenOutFile          PARM((const char *));
+-int  CloseOutFile          PARM((FILE *, const char *, int));
++int  CloseOutFileWhy          PARM((FILE *, const char *, int, const char *));
++#define CloseOutFile(fp, name, fail) CloseOutFileWhy((fp), (name), (fail), NULL)
+ 
+ byte *GenSavePic           PARM((int*, int*,int*, int*, int*,
+ 				 byte**, byte**, byte**));

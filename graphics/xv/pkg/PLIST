@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/03/22 10:02:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/15 17:26:29 sthen Exp $
 @bin bin/bggen
 @bin bin/vdcomp
 @bin bin/xcmap
@@ -10,5 +10,6 @@
 @man man/man1/xv.1
 @man man/man1/xvpictoppm.1
 share/doc/xv/
+share/doc/xv/README.jumbo
 share/doc/xv/xvdocs.pdf
 share/doc/xv/xvdocs.ps

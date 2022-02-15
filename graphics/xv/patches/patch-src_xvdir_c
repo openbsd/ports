@@ -1,9 +1,18 @@
-$OpenBSD: patch-xvdir_c,v 1.4 2021/05/23 19:28:13 sthen Exp $
+$OpenBSD: patch-src_xvdir_c,v 1.1 2022/02/15 17:26:29 sthen Exp $
 
-Index: xvdir.c
---- xvdir.c.orig
-+++ xvdir.c
-@@ -1875,18 +1875,23 @@ FILE *OpenOutFile(filename)
+fix problems with Nikon D7100 pictures, they don't create correct exif
+information (multiple APP1 chunks). xv reads them all, but libjpeg frowns
+about writing multiple APP1.
+
+So,
+- ignore subsequent chunks (like exiv2 does)
+- add a small framework to report error messages from libjpeg
+(might be adaptable to other gfx formats).
+
+Index: src/xvdir.c
+--- src/xvdir.c.orig
++++ src/xvdir.c
+@@ -1879,18 +1879,23 @@ FILE *OpenOutFile(filename)
  
  
  /***************************************/
