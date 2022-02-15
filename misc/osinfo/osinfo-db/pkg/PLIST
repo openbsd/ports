@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2021/12/18 08:58:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2022/02/15 10:30:00 ajacoutot Exp $
 share/osinfo/
 share/osinfo/LICENSE
 share/osinfo/VERSION
@@ -137,6 +137,7 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.8.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.9.xml
 share/osinfo/os/altlinux.org/
+share/osinfo/os/altlinux.org/alt-10.0.xml
 share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
@@ -624,6 +625,7 @@ share/osinfo/os/openbsd.org/openbsd-6.6.xml
 share/osinfo/os/openbsd.org/openbsd-6.7.xml
 share/osinfo/os/openbsd.org/openbsd-6.8.xml
 share/osinfo/os/openbsd.org/openbsd-6.9.xml
+share/osinfo/os/openbsd.org/openbsd-7.0.xml
 share/osinfo/os/opensuse.org/
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -695,7 +697,9 @@ share/osinfo/os/oracle.com/ol-8.4.xml
 share/osinfo/os/oracle.com/ol-8.5.xml
 share/osinfo/os/oracle.com/solaris-11.xml
 share/osinfo/os/pureos.net/
+share/osinfo/os/pureos.net/pureos-10.xml
 share/osinfo/os/pureos.net/pureos-8.xml
+share/osinfo/os/pureos.net/pureos-9.xml
 share/osinfo/os/redhat.com/
 share/osinfo/os/redhat.com/rhel-2.1.1.xml
 share/osinfo/os/redhat.com/rhel-2.1.2.xml
