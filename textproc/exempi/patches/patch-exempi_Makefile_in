@@ -1,0 +1,22 @@
+$OpenBSD: patch-exempi_Makefile_in,v 1.1 2022/02/15 17:25:24 sthen Exp $
+
+Index: exempi/Makefile.in
+--- exempi/Makefile.in.orig
++++ exempi/Makefile.in
+@@ -128,7 +128,6 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ bin_PROGRAMS = exempi$(EXEEXT)
+-@UNIX_ENV_TRUE@am__append_1 = -lrt
+ @HAVE_SYMBOLS_FILE_TRUE@am__append_2 = -Wl,--retain-symbols-file=$(srcdir)/libexempi.sym
+ @WITH_UNIT_TEST_TRUE@check_PROGRAMS = testexempicore$(EXEEXT) \
+ @WITH_UNIT_TEST_TRUE@	testserialise$(EXEEXT) \
+@@ -802,7 +801,7 @@ libexempi_la_LIBADD = $(top_builddir)/source/libxmpcom
+ 	$(top_builddir)/XMPCore/source/libXMPCore.la \
+ 	$(top_builddir)/XMPFiles/source/libXMPFiles.la \
+ 	$(top_builddir)/third-party/zuid/interfaces/libmd5.la -lexpat \
+-	-lz -ldl $(am__append_1)
++	-lz $(am__append_1)
+ libexempi_la_LDFLAGS = -version-info @EXEMPI_VERSION_INFO@ \
+ 	$(am__append_2)
+ dist_man1_MANS = exempi.1

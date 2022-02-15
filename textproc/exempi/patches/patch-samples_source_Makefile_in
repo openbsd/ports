@@ -1,0 +1,22 @@
+$OpenBSD: patch-samples_source_Makefile_in,v 1.1 2022/02/15 17:25:24 sthen Exp $
+
+Index: samples/source/Makefile.in
+--- samples/source/Makefile.in.orig
++++ samples/source/Makefile.in
+@@ -129,7 +129,6 @@ noinst_PROGRAMS = xmpcoverage$(EXEEXT) xmpfilescoverag
+ 	dumpxmp$(EXEEXT) dumpmainxmp$(EXEEXT) customschema$(EXEEXT) \
+ 	modifyingxmp$(EXEEXT) readingxmp$(EXEEXT) \
+ 	xmpcommandtool$(EXEEXT)
+-@UNIX_ENV_TRUE@am__append_1 = -lrt
+ subdir = samples/source
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_append_compile_flags.m4 \
+@@ -439,7 +438,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/public/include -I$(top_s
+ XMPLIBS = $(top_builddir)/XMPCore/source/libXMPCore.la \
+ 	$(top_builddir)/XMPFiles/source/libXMPFiles.la \
+ 	$(top_builddir)/source/libxmpcommon.la -lexpat -lz \
+-	$(top_builddir)/third-party/zuid/interfaces/libmd5.la -ldl \
++	$(top_builddir)/third-party/zuid/interfaces/libmd5.la \
+ 	$(am__append_1)
+ noinst_LTLIBRARIES = libsamplescommon.la
+ libsamplescommon_la_SOURCES = common/DumpFile.cpp common/DumpFile.h \

@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:57 sthen Exp $
-
-# g++3 chokes on the code
-NOT_FOR_ARCHS=	${GCC3_ARCHS}
+# $OpenBSD: Makefile,v 1.18 2022/02/15 17:25:24 sthen Exp $
 
 COMMENT =		implementation of XMP
-DISTNAME =		exempi-2.2.1
-REVISION =		2
+DISTNAME =		exempi-2.6.1
 
 CATEGORIES =		textproc
 
-SHARED_LIBS +=  exempi               1.1      # 5.3
+SHARED_LIBS +=  exempi               2.0      # 9.1
 
 HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 
@@ -18,19 +14,19 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c expat m pthread ${COMPILER_LIBCXX} z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
+COMPILER =		ports-gcc
 
 # configure checks for libiconv but it's unused
 BUILD_DEPENDS =		converters/libiconv
 
 MASTER_SITES =		http://libopenraw.freedesktop.org/download/
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+USE_GMAKE =		yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-unittest=no
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
-
-# XXX remove when we have thread local storage
-CONFIGURE_ENV +=	ac_cv_tls=none
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
