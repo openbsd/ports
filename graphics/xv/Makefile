@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2022/02/15 17:26:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2022/02/15 19:26:42 sthen Exp $
 
 COMMENT=	X11 image display and modification tool
 
 GH_ACCOUNT=	jasper-software
 GH_PROJECT=	xv
-GH_COMMIT=	652de61ab332496251f6e80a50352e6ebbefe489
-DISTNAME=	xv-3.10a.20220205
+GH_COMMIT=	d84be152ca495f65837758b0fd06118d84646db5
+DISTNAME=	xv-3.10a.20220215
 
 CATEGORIES=	graphics x11
 
