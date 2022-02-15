@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/17 08:44:05 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/15 12:32:23 bentley Exp $
 @bin bin/opencc
 @bin bin/opencc_dict
 @bin bin/opencc_phrase_extract
@@ -30,6 +30,7 @@ include/opencc/TextDict.hpp
 include/opencc/UTF8StringSlice.hpp
 include/opencc/UTF8Util.hpp
 include/opencc/opencc.h
+include/opencc/opencc_config.h
 @lib lib/libopencc.so.${LIBopencc_VERSION}
 lib/pkgconfig/opencc.pc
 share/opencc/
@@ -50,6 +51,7 @@ share/opencc/TWVariants.ocd2
 share/opencc/TWVariantsRev.ocd2
 share/opencc/TWVariantsRevPhrases.ocd2
 share/opencc/hk2s.json
+share/opencc/hk2t.json
 share/opencc/jp2t.json
 share/opencc/s2hk.json
 share/opencc/s2t.json
@@ -61,3 +63,4 @@ share/opencc/t2s.json
 share/opencc/t2tw.json
 share/opencc/tw2s.json
 share/opencc/tw2sp.json
+share/opencc/tw2t.json
