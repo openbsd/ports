@@ -6,7 +6,7 @@ OpenBSD: patch-configure_ac,v 1.1 2021/01/10 16:10:37 sthen Exp $
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -152,7 +152,7 @@ AC_CHECK_PROGS([DOXYGEN], [doxygen])
+@@ -146,7 +146,7 @@ AC_CHECK_PROGS([DOXYGEN], [doxygen])
  if test -z "$DOXYGEN"; then
     AC_MSG_WARN([Doxygen not found - API documentation will not be generated])
  fi
@@ -15,7 +15,7 @@ Index: configure.ac
  
  dnl  --------------------------------
  dnl | check for readline            |-----------------------------------------
-@@ -175,6 +175,8 @@ if test "x$enable_textport" = "xyes" ; then
+@@ -169,6 +169,8 @@ if test "x$enable_textport" = "xyes" ; then
        only) USE_READLINE="yes"
              EXTRA_LIBREADLINE_DEPS=" "
              AC_MSG_RESULT([yes (using only readline)]) ;;
@@ -24,7 +24,7 @@ Index: configure.ac
        *) USE_READLINE="yes"
           EXTRA_LIBREADLINE_DEPS="${withval}"
           AC_MSG_RESULT([yes (using extra libraries ${withval})]) ;;
-@@ -184,7 +186,11 @@ if test "x$enable_textport" = "xyes" ; then
+@@ -178,7 +180,11 @@ if test "x$enable_textport" = "xyes" ; then
    dnl When checking readline, check using extra libraries first.
    dnl We want to protect against the link somehow succeeding, but only
    dnl failing at runtime, as seems to happen on some BSD systems.
@@ -37,7 +37,7 @@ Index: configure.ac
     AC_CHECK_HEADERS(readline/readline.h readline/history.h)
     if test "x${ac_cv_header_readline_readline_h}" != "xyes" -o "x${ac_cv_header_readline_history_h}" != "xyes"; then
       AC_MSG_WARN([Could not find the headers for libreadline.])
-@@ -238,6 +244,7 @@ if test "x$enable_textport" = "xyes" ; then
+@@ -232,6 +238,7 @@ if test "x$enable_textport" = "xyes" ; then
        AC_MSG_WARN([Could not find libreadline.])
      fi
     fi

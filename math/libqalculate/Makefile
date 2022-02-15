@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2021/09/02 13:30:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2022/02/15 19:20:50 sthen Exp $
 
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 
-V =		3.20.1
+V =		4.0.0
 DISTNAME =	libqalculate-$V
 HOMEPAGE =	https://qalculate.github.io/
 
-SHARED_LIBS =	qalculate		1.2	# .36.1
+SHARED_LIBS =	qalculate		2.0	# .36.1
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
