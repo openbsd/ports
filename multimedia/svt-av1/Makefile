@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/02 08:15:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/15 17:24:11 sthen Exp $
 
 ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	scalable AV1 encoder/decoder
 
-GH_ACCOUNT=	OpenVisualCloud
-GH_PROJECT=	SVT-AV1
-GH_TAGNAME=	v0.8.4
-PKGNAME=	${DISTNAME:L}
+VER=		0.9.0
+DISTNAME=	SVT-AV1-v${VER}
+PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
+MASTER_SITES=	https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${VER}/
+EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	SvtAv1Dec	1.0 \
-		SvtAv1Enc	1.0
+SHARED_LIBS=	SvtAv1Dec	2.0 \
+		SvtAv1Enc	2.0
 
-HOMEPAGE=	https://github.com/OpenVisualCloud/SVT-AV1
+HOMEPAGE=	https://gitlab.com/AOMediaCodec/SVT-AV1
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
