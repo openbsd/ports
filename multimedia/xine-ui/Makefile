@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2021/07/08 10:43:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2022/02/15 17:21:39 sthen Exp $
 
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -13,7 +13,7 @@ HOMEPAGE=	https://www.xine-project.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xext Xft Xinerama Xss Xtst Xv Xxf86vm c curl execinfo
+WANTLIB += X11 Xext Xft Xinerama Xss Xtst Xv Xxf86vm c curl
 WANTLIB += iconv intl jpeg m curses png pthread readline xine z
 
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -34,6 +34,6 @@ CONFIGURE_ARGS+=--disable-lirc \
 		--without-aalib \
 		--without-caca
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lexecinfo"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
