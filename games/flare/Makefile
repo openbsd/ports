@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2022/02/04 14:20:45 kirby Exp $
+# $OpenBSD: Makefile,v 1.20 2022/02/15 07:22:35 kirby Exp $
 
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
 
-V = 			1.13
+V = 			1.13.04
 DISTNAME = 		flare.${V}
 PKGNAME =		flare-${V}
 

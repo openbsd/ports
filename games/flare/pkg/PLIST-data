@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.5 2022/02/04 14:20:45 kirby Exp $
+@comment $OpenBSD: PLIST-data,v 1.6 2022/02/15 07:22:35 kirby Exp $
 @conflict flare-<0.19p3
 share/flare/mods/
 share/flare/mods/alpha_demo/
@@ -1379,8 +1379,6 @@ share/flare/mods/fantasycore/images/menus/credits_fantasycore.png
 share/flare/mods/fantasycore/images/menus/dev_console.png
 share/flare/mods/fantasycore/images/menus/dialog_box.png
 share/flare/mods/fantasycore/images/menus/disabled.png
-share/flare/mods/fantasycore/images/menus/enemy_bar.png
-share/flare/mods/fantasycore/images/menus/enemy_bar_hp.png
 share/flare/mods/fantasycore/images/menus/game_slot_select.png
 share/flare/mods/fantasycore/images/menus/game_slots.png
 share/flare/mods/fantasycore/images/menus/input.png
@@ -1396,11 +1394,10 @@ share/flare/mods/fantasycore/images/menus/powers_unlock.png
 share/flare/mods/fantasycore/images/menus/slot_checked.png
 share/flare/mods/fantasycore/images/menus/slot_empty.png
 share/flare/mods/fantasycore/images/menus/slot_selected.png
-share/flare/mods/fantasycore/images/menus/stash.png
+share/flare/mods/fantasycore/images/menus/storage_generic.png
 share/flare/mods/fantasycore/images/menus/tab_active.png
 share/flare/mods/fantasycore/images/menus/tab_inactive.png
 share/flare/mods/fantasycore/images/menus/tooltips.png
-share/flare/mods/fantasycore/images/menus/vendor.png
 share/flare/mods/fantasycore/images/npcs/
 share/flare/mods/fantasycore/images/npcs/clint_bellanger.png
 share/flare/mods/fantasycore/images/npcs/guild_man1.png
@@ -1681,7 +1678,6 @@ share/flare/mods/fantasycore/soundfx/enemies/antlion_critdie.ogg
 share/flare/mods/fantasycore/soundfx/enemies/antlion_die.ogg
 share/flare/mods/fantasycore/soundfx/enemies/antlion_hit.ogg
 share/flare/mods/fantasycore/soundfx/enemies/antlion_phys.ogg
-share/flare/mods/fantasycore/soundfx/enemies/goblin_critdie.ogg
 share/flare/mods/fantasycore/soundfx/enemies/goblin_die.ogg
 share/flare/mods/fantasycore/soundfx/enemies/goblin_hit.ogg
 share/flare/mods/fantasycore/soundfx/enemies/goblin_ment.ogg
@@ -1696,9 +1692,7 @@ share/flare/mods/fantasycore/soundfx/enemies/minotaur_phys.ogg
 share/flare/mods/fantasycore/soundfx/enemies/skeleton_critdie.ogg
 share/flare/mods/fantasycore/soundfx/enemies/skeleton_die.ogg
 share/flare/mods/fantasycore/soundfx/enemies/skeleton_hit.ogg
-share/flare/mods/fantasycore/soundfx/enemies/skeleton_ment.ogg
 share/flare/mods/fantasycore/soundfx/enemies/skeleton_phys.ogg
-share/flare/mods/fantasycore/soundfx/enemies/wyvern_critdie.ogg
 share/flare/mods/fantasycore/soundfx/enemies/wyvern_die.ogg
 share/flare/mods/fantasycore/soundfx/enemies/wyvern_hit.ogg
 share/flare/mods/fantasycore/soundfx/enemies/wyvern_ment.ogg
