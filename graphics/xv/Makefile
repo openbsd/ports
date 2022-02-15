@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2022/02/15 19:26:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2022/02/15 19:27:37 sthen Exp $
 
 COMMENT=	X11 image display and modification tool
 
@@ -26,8 +26,5 @@ LIB_DEPENDS=	graphics/jpeg \
 CFLAGS+=	-I${X11BASE}/include
 
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
-
-post-install:
-	mv ${PREFIX}/man/man1/xvp2p.1 ${PREFIX}/man/man1/xvpictoppm.1
 
 .include <bsd.port.mk>
