@@ -1,14 +1,77 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
+$OpenBSD: patch-configure,v 1.2 2022/02/16 18:28:34 jeremy Exp $
 
 Set correct shared library name.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
+Remove capstone detection, only needed for debugging YJIT, and
+not used on most arches.
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -30742,7 +30742,7 @@ fi
+@@ -12539,59 +12539,6 @@ _ACEOF
+ fi
+   # SunOS/Solaris
+ 
+-if pkg-config --exists capstone; then
+-   CAPSTONE_CFLAGS=`pkg-config --cflags capstone`
+-   CAPSTONE_LIB_L=`pkg-config --libs-only-L capstone`
+-   LDFLAGS="$LDFLAGS $CAPSTONE_LIB_L"
+-   CFLAGS="$CFLAGS $CAPSTONE_CFLAGS"
+-fi
+-
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for cs_open in -lcapstone" >&5
+-$as_echo_n "checking for cs_open in -lcapstone... " >&6; }
+-if ${ac_cv_lib_capstone_cs_open+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lcapstone  $LIBS"
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-/* Override any GCC internal prototype to avoid an error.
+-   Use char because int might match the return type of a GCC
+-   builtin and then its argument prototype would still apply.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-char cs_open ();
+-int
+-main ()
+-{
+-return cs_open ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_capstone_cs_open=yes
+-else
+-  ac_cv_lib_capstone_cs_open=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_capstone_cs_open" >&5
+-    colorize_result "$ac_cv_lib_capstone_cs_open" ; }
+-if test "x$ac_cv_lib_capstone_cs_open" = xyes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBCAPSTONE 1
+-_ACEOF
+-
+-  LIBS="-lcapstone $LIBS"
+-
+-fi
+- # Capstone disassembler for debugging YJIT
+-
+ ac_header_dirent=no
+ for ac_hdr in dirent.h sys/ndir.h sys/dir.h ndir.h; do
+   as_ac_Header=`$as_echo "ac_cv_header_dirent_$ac_hdr" | $as_tr_sh`
+@@ -30742,7 +30689,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
  
@@ -17,7 +80,7 @@ Index: configure
  	 ;; #(
    solaris*) :
  
-@@ -32366,7 +32366,7 @@ else
+@@ -32366,7 +32313,7 @@ else
  
  else
  
