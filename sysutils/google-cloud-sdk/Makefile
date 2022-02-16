@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.249 2022/02/10 12:16:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.250 2022/02/16 10:55:45 ajacoutot Exp $
 
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			372.0.0
+V=			373.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
