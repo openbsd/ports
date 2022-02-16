@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2022/02/09 13:06:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2022/02/16 22:37:31 gkoehler Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -141,8 +141,6 @@ LDFLAGS +=		-Wl,--no-keep-memory
 .if ${MACHINE_ARCH} == "powerpc"
 # Don't make LLVM run out of memory
 DPB_PROPERTIES =       lonesome
-# XXX fix colors being off, it would be nice to fix the code
-CONFIGURE_ARGS +=	-DUSE_OPENGL_OR_ES=OFF
 .endif
 
 post-extract:
