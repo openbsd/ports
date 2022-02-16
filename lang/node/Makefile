@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2022/02/03 19:39:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2022/02/16 14:24:37 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
 DPB_PROPERTIES =	parallel
@@ -7,7 +7,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v16.13.2
+NODE_VERSION =		v16.14.0
 PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
@@ -15,7 +15,6 @@ DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
-REVISION =		0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-node_gyp,v 1.8 2022/02/03 19:39:49 sthen Exp $
+$OpenBSD: patch-node_gyp,v 1.9 2022/02/16 14:24:37 sthen Exp $
 
 Index: node.gyp
 --- node.gyp.orig
@@ -12,7 +12,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
        ],
-@@ -1080,8 +1080,8 @@
+@@ -1081,8 +1081,8 @@
  
        'dependencies': [
          '<(node_lib_target_name)',
@@ -23,7 +23,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
          'node_dtrace_header',
-@@ -1155,6 +1155,10 @@
+@@ -1156,6 +1156,10 @@
          }],
          ['OS=="solaris"', {
            'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]

@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_internal_modules_cjs_loader_js,v 1.1 2022/02/01 22:17:58 abieber Exp $
+$OpenBSD: patch-lib_internal_modules_cjs_loader_js,v 1.2 2022/02/16 14:24:37 sthen Exp $
 
 Index: lib/internal/modules/cjs/loader.js
 --- lib/internal/modules/cjs/loader.js.orig
 +++ lib/internal/modules/cjs/loader.js
-@@ -1234,7 +1234,10 @@ Module._initPaths = function() {
+@@ -1236,7 +1236,10 @@ Module._initPaths = function() {
      path.resolve(process.execPath, '..') :
      path.resolve(process.execPath, '..', '..');
  
