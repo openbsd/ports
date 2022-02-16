@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2022/02/15 17:26:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2022/02/16 19:34:23 sthen Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
 V =		3.0.2
 DISTNAME =	jasper-$V
+REVISION =	0
 
 SHARED_LIBS =	jasper		5.0
 
@@ -14,13 +15,13 @@ HOMEPAGE =	https://www.ece.uvic.ca/~frodo/jasper/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m
+WANTLIB =	c m pthread
 
 MASTER_SITES =	https://github.com/jasper-software/jasper/releases/download/version-$V/
 
 # -stdc=gnu11
 COMPILER =	base-clang ports-gcc
-COMPILER_LANGS = c pthread
+COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 
