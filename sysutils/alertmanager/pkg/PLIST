@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/16 18:26:58 denis Exp $
+@newgroup _alertmanager:873
+@newuser _alertmanager:873:_alertmanager:daemon:Prometheus Alertmanager:/nonexistent:/sbin/nologin
+@sample ${SYSCONFDIR}/alertmanager/
+@rcscript ${RCDIR}/alertmanager
+@bin bin/alertmanager
+@bin bin/amtool
+share/doc/alertmanager/
+share/doc/alertmanager/alertmanager.md
+share/doc/alertmanager/clients.md
+share/doc/alertmanager/configuration.md
+share/doc/alertmanager/https.md
+share/doc/alertmanager/index.md
+share/doc/alertmanager/management_api.md
+share/doc/alertmanager/notification_examples.md
+share/doc/alertmanager/notifications.md
+share/doc/alertmanager/overview.md
+share/examples/alertmanager/
+share/examples/alertmanager/default.tmpl
+share/examples/alertmanager/simple.yml
+@sample ${SYSCONFDIR}/alertmanager/alertmanager.yml
+@mode 0755
+@owner _alertmanager
+@group _alertmanager
+@sample ${LOCALSTATEDIR}/alertmanager/
