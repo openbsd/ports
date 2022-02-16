@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.638 2022/02/09 14:32:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.639 2022/02/16 18:27:51 denis Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
+     SUBDIR += alertmanager
      SUBDIR += amazon-ecs-cli
      SUBDIR += amazon-ssm-agent
      SUBDIR += anacron
