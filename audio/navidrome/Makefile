@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/30 22:59:28 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/16 12:32:06 abieber Exp $
 
 COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
-MODGO_VERSION =	v0.47.0
+MODGO_VERSION =	v0.47.5
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
