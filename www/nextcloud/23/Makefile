@@ -1,5 +1,5 @@
-# $OpenBSD: Makefile,v 1.1 2021/12/09 11:26:22 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/16 15:18:48 gonzalo Exp $
 
-NC_VERSION=	23.0.0
+NC_VERSION=	23.0.2
 
 .include <bsd.port.mk>
