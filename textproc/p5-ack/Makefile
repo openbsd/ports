@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2021/07/29 10:59:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2022/02/16 10:52:34 sthen Exp $
 
 COMMENT=	grep like tool, aimed at programmers
 
+PORTROACH=	limit:v?[3-9].*
 MODULES=	cpan
 PKG_ARCH=	*
 V=		3.5.0
