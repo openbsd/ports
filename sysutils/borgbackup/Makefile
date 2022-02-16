@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2021/11/02 00:02:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2022/02/16 14:43:39 bket Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -19,7 +19,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	--ignore lib* --ignore src/borg/testsuite/benchmark.py
+MODPY_PYTEST_ARGS =	--ignore src/borg/testsuite/benchmark.py
+MODPY_TEST_DIR =	${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 
 WANTLIB +=		${COMPILER_LIBCXX} b2 crypto lz4 m xxhash zstd
 
@@ -31,14 +32,13 @@ LIB_DEPENDS +=		archivers/lz4 \
 			sysutils/xxhash
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS +=		sysutils/py-packaging${MODPY_FLAVOR}
+TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH}
 
 # XXX pytest-benchmark is currently not picked up as plugin by pytest, as result
 # benchmarking fails during 'make test'. For now ignore benchmarking (see
 # MODPY_PYTEST_ARGS), and comment out py-test-benchmark as TDEP.
 #TEST_DEPENDS +=		devel/py-test-benchmark${MODPY_FLAVOR}
 
-TEST_ENV +=		PATH=${WRKINST}/usr/local/bin:${PATH} \
-			PYTHONPATH=${WRKSRC}/src
 PORTHOME =		${WRKDIR}
 
 post-install:
@@ -55,8 +55,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/zsh/_borg \
 		${PREFIX}/share/zsh/site-functions/
-
-pre-test:
-	${MODPY_CMD} build_ext --inplace
 
 .include <bsd.port.mk>
