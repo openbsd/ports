@@ -1,22 +1,27 @@
-# $OpenBSD: Makefile,v 1.34 2020/07/03 21:44:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2022/02/16 21:09:28 bluhm Exp $
 
-COMMENT=		Berkeley DB module
+COMMENT =	Berkeley DB module
 
-DISTNAME=		BerkeleyDB-0.55
-CATEGORIES=		databases
-MODULES=		cpan
-REVISION=		1
+DISTNAME =	BerkeleyDB-0.64
+
+CATEGORIES =	databases
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c lib/db4/db>=4 perl
+WANTLIB =		c lib/db4/db>=4 perl
 
-CONFIGURE_ENV+=		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
-			BERKELEYDB_LIB=${LOCALBASE}/lib/db4
+MODULES =		cpan
 
 LIB_DEPENDS =		databases/db/v4
+TEST_DEPENDS =		devel/p5-MLDBM \
+			devel/p5-Test-CPAN-Meta
+
 MAKE_ENV =		TEST_POD=1
-TEST_DEPENDS =		devel/p5-MLDBM
+
+CONFIGURE_ENV =		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
+			BERKELEYDB_LIB=${LOCALBASE}/lib/db4
 
 .include <bsd.port.mk>

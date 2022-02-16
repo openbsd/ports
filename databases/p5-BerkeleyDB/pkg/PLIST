@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/05/01 13:20:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/16 21:09:28 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/BerkeleyDB/
 ${P5ARCH}/BerkeleyDB.pm
@@ -7,7 +7,7 @@ ${P5ARCH}/BerkeleyDB/Btree.pm
 ${P5ARCH}/BerkeleyDB/Hash.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/BerkeleyDB/
-${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.so
+@so ${P5ARCH}/auto/BerkeleyDB/BerkeleyDB.so
 ${P5ARCH}/mkconsts.pl
 ${P5ARCH}/scan.pl
 @man man/man3p/BerkeleyDB.3p
