@@ -1,0 +1,14 @@
+$OpenBSD: patch-ykman_driver_fido_py,v 1.1 2022/02/16 16:35:09 sthen Exp $
+
+Index: ykman/driver_fido.py
+--- ykman/driver_fido.py.orig
++++ ykman/driver_fido.py
+@@ -29,7 +29,7 @@ from __future__ import absolute_import
+ 
+ from .driver import AbstractDriver, NotSupportedError
+ from .util import TRANSPORT, PID, YUBIKEY, Mode
+-from fido2.hid import CtapHidDevice, CTAPHID
++from .fido2.hid import CtapHidDevice, CTAPHID
+ from enum import IntEnum, unique
+ import logging
+ import struct

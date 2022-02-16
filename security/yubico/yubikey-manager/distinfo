@@ -1,2 +1,4 @@
-SHA256 (yubikey-manager-3.1.2.tar.gz) = XTnIqJIsLl7iLECjVcz8eo0j7LNZRZjafAuNcZb0Yr0=
-SIZE (yubikey-manager-3.1.2.tar.gz) = 119291
+SHA256 (py-fido2-0.8.2pre20200313-46a0b649.tar.gz) = WH4RUQ6IOeruJ8Zp0iBIaI6buEPJmdvU8mPpXXhrPu4=
+SHA256 (yubikey-manager-yubikey-manager-3.1.2.tar.gz) = XTnIqJIsLl7iLECjVcz8eo0j7LNZRZjafAuNcZb0Yr0=
+SIZE (py-fido2-0.8.2pre20200313-46a0b649.tar.gz) = 210085
+SIZE (yubikey-manager-yubikey-manager-3.1.2.tar.gz) = 119291

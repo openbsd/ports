@@ -1,0 +1,16 @@
+$OpenBSD: patch-ykman_cli_fido_py,v 1.1 2022/02/16 16:35:09 sthen Exp $
+
+Index: ykman/cli/fido.py
+--- ykman/cli/fido.py.orig
++++ ykman/cli/fido.py
+@@ -28,8 +28,8 @@
+ from __future__ import absolute_import
+ import click
+ import logging
+-from fido2.ctap1 import ApduError
+-from fido2.ctap import CtapError
++from ..fido2.ctap1 import ApduError
++from ..fido2.ctap import CtapError
+ from time import sleep
+ from .util import click_postpone_execution, prompt_for_touch, click_force_option
+ from ..driver_ccid import SW

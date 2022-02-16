@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/08 21:51:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/16 16:35:09 sthen Exp $
 
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
@@ -7,15 +7,18 @@ COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 PORTROACH =	site:https://github.com/Yubico/yubikey-manager/releases/
 
 MODPY_EGG_VERSION =	3.1.2
-REVISION =	3
+REVISION =	4
 
-DISTNAME =	yubikey-manager-${MODPY_EGG_VERSION}
+GH_ACCOUNT =	Yubico
+GH_PROJECT =	yubikey-manager
+GH_TAGNAME =	yubikey-manager-${MODPY_EGG_VERSION}
+
+DISTNAME =	${GH_TAGNAME}
 YK_PROJECT =	yubikey-manager
 
-# normally would be GH_* with a url like this, but MASTER_SITES is overridden
-# in ../Makefile.inc
-MASTER_SITES =	https://github.com/Yubico/yubikey-manager/archive/
-WRKDIST =	${WRKDIR}/yubikey-manager-${DISTNAME}
+MASTER_SITES0 =	https://github.com/Yubico/python-fido2/archive/
+DISTFILES =	${GH_DISTFILE} \
+		py-fido2-0.8.2pre20200313-46a0b649.tar.gz{46a0b649b9aa9af79566e6e3961021e070d98b1c.tar.gz}:0
 
 CATEGORIES =	sysutils
 
@@ -33,9 +36,12 @@ RUN_DEPENDS =	devel/py-click${MODPY_FLAVOR} \
 		devel/pyusb${MODPY_FLAVOR} \
 		security/pcsc-lite \
 		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-fido2${MODPY_FLAVOR}<=0.9 \
 		security/py-openssl${MODPY_FLAVOR} \
 		security/py-pyscard${MODPY_FLAVOR}
+
+post-extract:
+	mv ${WRKDIR}/python-fido2-*/fido2 ${WRKSRC}/ykman/
+	rm -r ${WRKDIR}/python-fido2-*
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
