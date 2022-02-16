@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/01/06 09:08:40 semarie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/02/16 07:17:21 semarie Exp $
 @bin bin/zig
 lib/zig/
 lib/zig/include/
@@ -203,6 +203,7 @@ lib/zig/libc/glibc/bits/waitstatus.h
 lib/zig/libc/glibc/csu/
 lib/zig/libc/glibc/csu/abi-note.S
 lib/zig/libc/glibc/csu/abi-tag.h
+lib/zig/libc/glibc/csu/elf-init-2.33.c
 lib/zig/libc/glibc/csu/errno.c
 lib/zig/libc/glibc/debug/
 lib/zig/libc/glibc/debug/stack_chk_fail_local.c
@@ -306,6 +307,7 @@ lib/zig/libc/glibc/sysdeps/aarch64/dl-sysdep.h
 lib/zig/libc/glibc/sysdeps/aarch64/nptl/
 lib/zig/libc/glibc/sysdeps/aarch64/nptl/bits/
 lib/zig/libc/glibc/sysdeps/aarch64/nptl/bits/pthreadtypes-arch.h
+lib/zig/libc/glibc/sysdeps/aarch64/start-2.33.S
 lib/zig/libc/glibc/sysdeps/aarch64/start.S
 lib/zig/libc/glibc/sysdeps/aarch64/sysdep.h
 lib/zig/libc/glibc/sysdeps/alpha/
@@ -315,6 +317,7 @@ lib/zig/libc/glibc/sysdeps/alpha/crti.S
 lib/zig/libc/glibc/sysdeps/alpha/crtn.S
 lib/zig/libc/glibc/sysdeps/alpha/dl-dtprocnum.h
 lib/zig/libc/glibc/sysdeps/alpha/dl-sysdep.h
+lib/zig/libc/glibc/sysdeps/alpha/start-2.33.S
 lib/zig/libc/glibc/sysdeps/alpha/start.S
 lib/zig/libc/glibc/sysdeps/arc/
 lib/zig/libc/glibc/sysdeps/arc/sysdep.h
@@ -324,6 +327,7 @@ lib/zig/libc/glibc/sysdeps/arm/bits/endianness.h
 lib/zig/libc/glibc/sysdeps/arm/crti.S
 lib/zig/libc/glibc/sysdeps/arm/crtn.S
 lib/zig/libc/glibc/sysdeps/arm/dl-sysdep.h
+lib/zig/libc/glibc/sysdeps/arm/start-2.33.S
 lib/zig/libc/glibc/sysdeps/arm/start.S
 lib/zig/libc/glibc/sysdeps/arm/sysdep.h
 lib/zig/libc/glibc/sysdeps/csky/
@@ -352,6 +356,7 @@ lib/zig/libc/glibc/sysdeps/hppa/entry.h
 lib/zig/libc/glibc/sysdeps/hppa/nptl/
 lib/zig/libc/glibc/sysdeps/hppa/nptl/bits/
 lib/zig/libc/glibc/sysdeps/hppa/nptl/bits/pthreadtypes-arch.h
+lib/zig/libc/glibc/sysdeps/hppa/start-2.33.S
 lib/zig/libc/glibc/sysdeps/hppa/start.S
 lib/zig/libc/glibc/sysdeps/hppa/sysdep.h
 lib/zig/libc/glibc/sysdeps/htl/
@@ -366,6 +371,7 @@ lib/zig/libc/glibc/sysdeps/i386/crtn.S
 lib/zig/libc/glibc/sysdeps/i386/htl/
 lib/zig/libc/glibc/sysdeps/i386/htl/bits/
 lib/zig/libc/glibc/sysdeps/i386/htl/bits/pthreadtypes-arch.h
+lib/zig/libc/glibc/sysdeps/i386/start-2.33.S
 lib/zig/libc/glibc/sysdeps/i386/start.S
 lib/zig/libc/glibc/sysdeps/i386/symbol-hacks.h
 lib/zig/libc/glibc/sysdeps/i386/sysdep.h
@@ -375,6 +381,7 @@ lib/zig/libc/glibc/sysdeps/ia64/crtn.S
 lib/zig/libc/glibc/sysdeps/ia64/dl-dtprocnum.h
 lib/zig/libc/glibc/sysdeps/ia64/dl-sysdep.h
 lib/zig/libc/glibc/sysdeps/ia64/entry.h
+lib/zig/libc/glibc/sysdeps/ia64/start-2.33.S
 lib/zig/libc/glibc/sysdeps/ia64/start.S
 lib/zig/libc/glibc/sysdeps/ia64/sysdep.h
 lib/zig/libc/glibc/sysdeps/m68k/
@@ -389,6 +396,7 @@ lib/zig/libc/glibc/sysdeps/m68k/m680x0/sysdep.h
 lib/zig/libc/glibc/sysdeps/m68k/nptl/
 lib/zig/libc/glibc/sysdeps/m68k/nptl/bits/
 lib/zig/libc/glibc/sysdeps/m68k/nptl/bits/pthreadtypes-arch.h
+lib/zig/libc/glibc/sysdeps/m68k/start-2.33.S
 lib/zig/libc/glibc/sysdeps/m68k/start.S
 lib/zig/libc/glibc/sysdeps/m68k/symbol-hacks.h
 lib/zig/libc/glibc/sysdeps/m68k/sysdep.h
@@ -404,6 +412,7 @@ lib/zig/libc/glibc/sysdeps/microblaze/bits/
 lib/zig/libc/glibc/sysdeps/microblaze/bits/endianness.h
 lib/zig/libc/glibc/sysdeps/microblaze/crti.S
 lib/zig/libc/glibc/sysdeps/microblaze/crtn.S
+lib/zig/libc/glibc/sysdeps/microblaze/start-2.33.S
 lib/zig/libc/glibc/sysdeps/microblaze/start.S
 lib/zig/libc/glibc/sysdeps/microblaze/sysdep.h
 lib/zig/libc/glibc/sysdeps/mips/
@@ -423,6 +432,7 @@ lib/zig/libc/glibc/sysdeps/mips/mips64/n64/crtn.S
 lib/zig/libc/glibc/sysdeps/mips/nptl/
 lib/zig/libc/glibc/sysdeps/mips/nptl/bits/
 lib/zig/libc/glibc/sysdeps/mips/nptl/bits/pthreadtypes-arch.h
+lib/zig/libc/glibc/sysdeps/mips/start-2.33.S
 lib/zig/libc/glibc/sysdeps/mips/start.S
 lib/zig/libc/glibc/sysdeps/nios2/
 lib/zig/libc/glibc/sysdeps/nios2/sysdep.h
@@ -440,6 +450,7 @@ lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/crti.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/crtn.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/dl-dtprocnum.h
+lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/start-2.33.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/start.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/symbol-hacks.h
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc32/sysdep.h
@@ -448,6 +459,7 @@ lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/crti.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/crtn.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/dl-dtprocnum.h
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/entry.h
+lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/start-2.33.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/start.S
 lib/zig/libc/glibc/sysdeps/powerpc/powerpc64/sysdep.h
 lib/zig/libc/glibc/sysdeps/powerpc/sysdep.h
@@ -459,6 +471,7 @@ lib/zig/libc/glibc/sysdeps/riscv/bits/endianness.h
 lib/zig/libc/glibc/sysdeps/riscv/nptl/
 lib/zig/libc/glibc/sysdeps/riscv/nptl/bits/
 lib/zig/libc/glibc/sysdeps/riscv/nptl/bits/pthreadtypes-arch.h
+lib/zig/libc/glibc/sysdeps/riscv/start-2.33.S
 lib/zig/libc/glibc/sysdeps/riscv/start.S
 lib/zig/libc/glibc/sysdeps/s390/
 lib/zig/libc/glibc/sysdeps/s390/bits/
@@ -467,12 +480,14 @@ lib/zig/libc/glibc/sysdeps/s390/s390-32/
 lib/zig/libc/glibc/sysdeps/s390/s390-32/crti.S
 lib/zig/libc/glibc/sysdeps/s390/s390-32/crtn.S
 lib/zig/libc/glibc/sysdeps/s390/s390-32/dl-sysdep.h
+lib/zig/libc/glibc/sysdeps/s390/s390-32/start-2.33.S
 lib/zig/libc/glibc/sysdeps/s390/s390-32/start.S
 lib/zig/libc/glibc/sysdeps/s390/s390-32/symbol-hacks.h
 lib/zig/libc/glibc/sysdeps/s390/s390-32/sysdep.h
 lib/zig/libc/glibc/sysdeps/s390/s390-64/
 lib/zig/libc/glibc/sysdeps/s390/s390-64/crti.S
 lib/zig/libc/glibc/sysdeps/s390/s390-64/crtn.S
+lib/zig/libc/glibc/sysdeps/s390/s390-64/start-2.33.S
 lib/zig/libc/glibc/sysdeps/s390/s390-64/start.S
 lib/zig/libc/glibc/sysdeps/s390/s390-64/sysdep.h
 lib/zig/libc/glibc/sysdeps/sh/
@@ -480,6 +495,7 @@ lib/zig/libc/glibc/sysdeps/sh/bits/
 lib/zig/libc/glibc/sysdeps/sh/bits/endianness.h
 lib/zig/libc/glibc/sysdeps/sh/crti.S
 lib/zig/libc/glibc/sysdeps/sh/crtn.S
+lib/zig/libc/glibc/sysdeps/sh/start-2.33.S
 lib/zig/libc/glibc/sysdeps/sh/start.S
 lib/zig/libc/glibc/sysdeps/sh/sysdep.h
 lib/zig/libc/glibc/sysdeps/sparc/
@@ -490,8 +506,10 @@ lib/zig/libc/glibc/sysdeps/sparc/crtn.S
 lib/zig/libc/glibc/sysdeps/sparc/dl-dtprocnum.h
 lib/zig/libc/glibc/sysdeps/sparc/dl-sysdep.h
 lib/zig/libc/glibc/sysdeps/sparc/sparc32/
+lib/zig/libc/glibc/sysdeps/sparc/sparc32/start-2.33.S
 lib/zig/libc/glibc/sysdeps/sparc/sparc32/start.S
 lib/zig/libc/glibc/sysdeps/sparc/sparc64/
+lib/zig/libc/glibc/sysdeps/sparc/sparc64/start-2.33.S
 lib/zig/libc/glibc/sysdeps/sparc/sparc64/start.S
 lib/zig/libc/glibc/sysdeps/sparc/sysdep.h
 lib/zig/libc/glibc/sysdeps/unix/
@@ -676,6 +694,7 @@ lib/zig/libc/glibc/sysdeps/x86/sysdep.h
 lib/zig/libc/glibc/sysdeps/x86_64/
 lib/zig/libc/glibc/sysdeps/x86_64/crti.S
 lib/zig/libc/glibc/sysdeps/x86_64/crtn.S
+lib/zig/libc/glibc/sysdeps/x86_64/start-2.33.S
 lib/zig/libc/glibc/sysdeps/x86_64/start.S
 lib/zig/libc/glibc/sysdeps/x86_64/sysdep.h
 lib/zig/libc/glibc/sysdeps/x86_64/x32/
@@ -693,6 +712,27 @@ lib/zig/libc/glibc/time/bits/types/struct_tm.h
 lib/zig/libc/glibc/time/bits/types/time_t.h
 lib/zig/libc/glibc/time/bits/types/timer_t.h
 lib/zig/libc/include/
+lib/zig/libc/include/aarch64-linux-any/
+lib/zig/libc/include/aarch64-linux-any/asm/
+lib/zig/libc/include/aarch64-linux-any/asm/auxvec.h
+lib/zig/libc/include/aarch64-linux-any/asm/bitsperlong.h
+lib/zig/libc/include/aarch64-linux-any/asm/bpf_perf_event.h
+lib/zig/libc/include/aarch64-linux-any/asm/byteorder.h
+lib/zig/libc/include/aarch64-linux-any/asm/fcntl.h
+lib/zig/libc/include/aarch64-linux-any/asm/hwcap.h
+lib/zig/libc/include/aarch64-linux-any/asm/kvm.h
+lib/zig/libc/include/aarch64-linux-any/asm/mman.h
+lib/zig/libc/include/aarch64-linux-any/asm/param.h
+lib/zig/libc/include/aarch64-linux-any/asm/perf_regs.h
+lib/zig/libc/include/aarch64-linux-any/asm/posix_types.h
+lib/zig/libc/include/aarch64-linux-any/asm/ptrace.h
+lib/zig/libc/include/aarch64-linux-any/asm/setup.h
+lib/zig/libc/include/aarch64-linux-any/asm/sigcontext.h
+lib/zig/libc/include/aarch64-linux-any/asm/signal.h
+lib/zig/libc/include/aarch64-linux-any/asm/statfs.h
+lib/zig/libc/include/aarch64-linux-any/asm/sve_context.h
+lib/zig/libc/include/aarch64-linux-any/asm/ucontext.h
+lib/zig/libc/include/aarch64-linux-any/asm/unistd.h
 lib/zig/libc/include/aarch64-linux-gnu/
 lib/zig/libc/include/aarch64-linux-gnu/bits/
 lib/zig/libc/include/aarch64-linux-gnu/bits/endianness.h
@@ -4031,27 +4071,6 @@ lib/zig/libc/include/arm-linux-musl/bits/stat.h
 lib/zig/libc/include/arm-linux-musl/bits/stdint.h
 lib/zig/libc/include/arm-linux-musl/bits/syscall.h
 lib/zig/libc/include/arm-linux-musl/bits/user.h
-lib/zig/libc/include/arm64-linux-any/
-lib/zig/libc/include/arm64-linux-any/asm/
-lib/zig/libc/include/arm64-linux-any/asm/auxvec.h
-lib/zig/libc/include/arm64-linux-any/asm/bitsperlong.h
-lib/zig/libc/include/arm64-linux-any/asm/bpf_perf_event.h
-lib/zig/libc/include/arm64-linux-any/asm/byteorder.h
-lib/zig/libc/include/arm64-linux-any/asm/fcntl.h
-lib/zig/libc/include/arm64-linux-any/asm/hwcap.h
-lib/zig/libc/include/arm64-linux-any/asm/kvm.h
-lib/zig/libc/include/arm64-linux-any/asm/mman.h
-lib/zig/libc/include/arm64-linux-any/asm/param.h
-lib/zig/libc/include/arm64-linux-any/asm/perf_regs.h
-lib/zig/libc/include/arm64-linux-any/asm/posix_types.h
-lib/zig/libc/include/arm64-linux-any/asm/ptrace.h
-lib/zig/libc/include/arm64-linux-any/asm/setup.h
-lib/zig/libc/include/arm64-linux-any/asm/sigcontext.h
-lib/zig/libc/include/arm64-linux-any/asm/signal.h
-lib/zig/libc/include/arm64-linux-any/asm/statfs.h
-lib/zig/libc/include/arm64-linux-any/asm/sve_context.h
-lib/zig/libc/include/arm64-linux-any/asm/ucontext.h
-lib/zig/libc/include/arm64-linux-any/asm/unistd.h
 lib/zig/libc/include/armeb-linux-gnueabi/
 lib/zig/libc/include/armeb-linux-gnueabi/bits/
 lib/zig/libc/include/armeb-linux-gnueabi/bits/endianness.h
@@ -13449,7 +13468,10 @@ lib/zig/std/build/WriteFileStep.zig
 lib/zig/std/builtin.zig
 lib/zig/std/c/
 lib/zig/std/c.zig
+lib/zig/std/c/darwin/
 lib/zig/std/c/darwin.zig
+lib/zig/std/c/darwin/aarch64.zig
+lib/zig/std/c/darwin/x86_64.zig
 lib/zig/std/c/dragonfly.zig
 lib/zig/std/c/emscripten.zig
 lib/zig/std/c/freebsd.zig
@@ -13739,6 +13761,7 @@ lib/zig/std/os/plan9/x86_64.zig
 lib/zig/std/os/test.zig
 lib/zig/std/os/uefi/
 lib/zig/std/os/uefi.zig
+lib/zig/std/os/uefi/pool_allocator.zig
 lib/zig/std/os/uefi/protocols/
 lib/zig/std/os/uefi/protocols.zig
 lib/zig/std/os/uefi/protocols/absolute_pointer_protocol.zig

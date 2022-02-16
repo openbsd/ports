@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/06 15:58:19 semarie Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/16 07:17:21 semarie Exp $
 
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
@@ -9,11 +9,11 @@ BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.9.0
+DISTNAME =	zig-0.9.1
 
 # see https://github.com/ziglang/zig/tree/0.9.x
-ZIG_VERSION =	0.9.0
-ZIG_COMMIT =	a18bf7a7bfa4e8c32aa25295cfa1ca768e5f5b74
+ZIG_VERSION =	0.9.1
+ZIG_COMMIT =	6d44a6222d6eba600deb7f16c124bfa30628fb60
 
 CATEGORIES =	lang
 
