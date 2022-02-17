@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2022/02/03 10:28:26 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.3 2022/02/17 09:38:17 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.79.0 \
@@ -144,7 +144,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-slug					 v0.7.0 \
 	github.com/hashicorp/go-sockaddr				 v1.0.0 \
 	github.com/hashicorp/go-syslog					 v1.0.0 \
-	github.com/hashicorp/go-tfe					 v0.19.1-0.20211020175229-e52963e079d0 \
+	github.com/hashicorp/go-tfe					 v0.21.0 \
 	github.com/hashicorp/go-uuid					 v1.0.2 \
 	github.com/hashicorp/go-version					 v1.3.0 \
 	github.com/hashicorp/golang-lru					 v0.5.1 \
@@ -283,7 +283,7 @@ MODGO_MODULES =	\
 	golang.org/x/sys						 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/term						 v0.0.0-20210220032956-6a3ed077a48d \
 	golang.org/x/text						 v0.3.6 \
-	golang.org/x/time						 v0.0.0-20210220033141-f8bda1e9f3ba \
+	golang.org/x/time						 v0.0.0-20211116232009-f0f3c7e86c11 \
 	golang.org/x/tools						 v0.1.7 \
 	golang.org/x/xerrors						 v0.0.0-20200804184101-5ec99f83aff1 \
 	google.golang.org/api						 v0.44.0-impersonate-preview \
@@ -740,6 +740,7 @@ MODGO_MODFILES =	\
 	golang.org/x/time						 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time						 v0.0.0-20190308202827-9d24e82272b4 \
 	golang.org/x/time						 v0.0.0-20191024005414-555d28b269f0 \
+	golang.org/x/time						 v0.0.0-20210220033141-f8bda1e9f3ba \
 	golang.org/x/tools						 v0.0.0-20180221164845-07fd8470d635 \
 	golang.org/x/tools						 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools						 v0.0.0-20190114222345-bf090417da8b \
