@@ -1,0 +1,4 @@
+i3's interprocess communication (or ipc) is the interface i3wm uses
+to receive commands from client applications such as i3-msg. It also
+features a publish/subscribe mechanism for notifying interested parties
+of window manager events.
