@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.8 2021/08/16 17:49:56 sthen Exp $
+$OpenBSD: README-server,v 1.9 2022/02/17 09:51:58 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -14,21 +14,16 @@ ${TRUEPREFIX}/bin/mariadb-install-db
 You will need to tune the values in the my.cnf file (examples
 available in ${TRUEPREFIX}/share/examples/mysql).
 
-By default, the _mysql user, and so the MariaDB processes run in the
-login(1) class of "daemon". On a busy server, it may be advisable
-to put the _mysql user and processes in their own login(1) class
-with tuned resources, such as more open file descriptors etc.
+By default, the MariaDB processes run in the login(1) class of "mysqld".
+On a busy server, it may be advisable to tune the resources, such as more
+open file descriptors etc.
 
-For example, add this to the login.conf(5) file:
+The capability database file is located at /etc/login.conf.d/mysqld
 
-        mysqld:\
-                :openfiles-cur=1024:\
-                :openfiles-max=2048:\
-                :tc=daemon:
+Rebuild the capability database file if necessary:
 
-Rebuild the login.conf.db file if necessary:
-
-	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+	# [ -f /etc/login.conf.d/mysqld.db ] && \
+		cap_mkdb /etc/login.conf.d/mysqld
 
 If you are using InnoDB and experience an error such as "doesn't exist
 in engine" you will need to increase kern.maxlocksperuid.

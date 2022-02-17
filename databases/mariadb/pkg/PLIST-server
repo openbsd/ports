@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.41 2021/11/16 20:29:52 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.42 2022/02/17 09:51:58 robert Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
@@ -563,6 +563,8 @@ share/doc/mysql/README-wsrep
 share/doc/mysql/README.md
 share/doc/mysql/THIRDPARTY
 share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/mysqld
+@sample ${SYSCONFDIR}/login.conf.d/mysqld
 share/examples/mysql/
 share/examples/mysql/binary-configure
 share/examples/mysql/magic
