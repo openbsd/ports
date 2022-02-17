@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-server,v 1.42 2022/02/17 09:51:58 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.43 2022/02/17 09:52:20 robert Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
-@newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin
+@newuser _mysql:502:_mysql::MySQL Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/mysqld
 @bin bin/aria_chk
 @bin bin/aria_dump_log
