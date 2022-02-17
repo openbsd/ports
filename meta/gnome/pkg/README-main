@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.46 2021/01/08 09:06:39 ajacoutot Exp $
+$OpenBSD: README-main,v 1.47 2022/02/17 13:15:30 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -63,21 +63,12 @@ is needed, `doas pkg_add unoconv` will take care of it.
 Default limits
 ==============
 
-Users
------
 The default limits set in login.conf(5) are not high enough to properly run
 GNOME. The default "datasize" must be bumped. There are several ways to do this:
 
 - bump the "default" class "datasize-cur" to 1024M (*not* recommended)
 - add users to the "staff" class (*not* recommended)
 - create a "gnome" login class and add users to it (recommended, see below)
-
-X / Login manager
------------------
-To avoid running out of file descriptors, the Xorg(1) session should run with
-higher limits.
-When using the GNOME Display Manager (GDM), this can be done creating a "gdm"
-login class and expand it from the xenodm one (see below).
 
 Cheat sheet
 ===========
@@ -87,8 +78,6 @@ gnome:\
 	:datasize-cur=1024M:\
 	:tc=default:
 
-gdm:\
-	:tc=xenodm:
 EOF
 # usermod -L gnome ${username}
 # rcctl disable xenodm
