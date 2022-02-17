@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.33 2021/03/01 13:40:08 sthen Exp $
+$OpenBSD: README-server,v 1.34 2022/02/17 21:26:31 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -75,22 +75,13 @@ postgresql.conf file to increase the number of connections to the
 backend.
 
 By default, the _postgresql user, and so the postmaster and backend
-processes run in the login(1) class of "daemon". On a busy server,
-it may be advisable to put the _postgresql user and processes in
-their own login(1) class with tuned resources, such as more open
-file descriptors (used for network connections as well as files),
-possibly more memory, etc.
+processes run in the login(1) class of "postgresql". On a busy server,
+it may be advisable to tune resources, such as more open file
+descriptors (used for network connections as well as files), possibly
+more memory, etc.
 
-For example, add this to the login.conf(5) file:
-
-	postgresql:\
-		:openfiles=768:\
-		:tc=daemon:
-
-Rebuild the login.conf.db file if necessary:
-
-	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
-
+The capability database file is located at /etc/login.conf.d/postgresql
+ 
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
