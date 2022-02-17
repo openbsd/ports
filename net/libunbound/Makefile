@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2022/01/09 18:50:06 tb Exp $
+# $OpenBSD: Makefile,v 1.21 2022/02/17 10:10:09 sthen Exp $
 
 COMMENT=	validating DNS resolver library
 
-DISTNAME=	unbound-1.14.0
+DISTNAME=	unbound-1.15.0
 PKGNAME=	lib${DISTNAME}
-REVISION=	0
 
 SHARED_LIBS +=  unbound              4.1      # 9.3
 
