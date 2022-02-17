@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/08/31 09:57:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2022/02/17 13:55:51 landry Exp $
 
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
@@ -12,7 +12,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		1
+REVISION =		2
 
 SUBST_VARS +=		V
 
@@ -57,6 +57,7 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl \
 			graphics/openexr \
 			graphics/ffmpeg \
+			graphics/jasper \
 			graphics/gdk-pixbuf2 \
 			graphics/giflib \
 			geo/gdal \
