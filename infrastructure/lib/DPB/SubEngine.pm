@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.34 2020/04/07 15:18:33 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.35 2022/02/17 12:42:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -320,6 +320,72 @@ sub preempt_core
 	return 0;
 }
 
+sub smart_dump
+{
+	my ($self, $fh) = @_;
+
+	my $h = {};
+	my $engine = $self->{engine};
+
+	for my $v (values %{$engine->{tobuild}}) {
+		$v->{info}{problem} = 'not built';
+		$v->{info}{missing} = $v->{info}{DEPENDS};
+		$h->{$v} = $v;
+	}
+
+	for my $v (values %{$engine->{built}}) {
+		$v->{info}{problem} = 'not installable';
+		$v->{info}{missing} = $v->{info}{RDEPENDS};
+		$h->{$v} = $v;
+	}
+	for my $v (@{$engine->{errors}}) {
+		$v->{info}{problem} = "errored";
+		$h->{$v} = $v;
+	}
+	for my $v (@{$engine->{locks}}) {
+		$v->{info}{problem} = "locked";
+		$h->{$v} = $v;
+	}
+	my $cache = {};
+	for my $v (sort {$a->fullpkgpath cmp $b->fullpkgpath}
+	    values %$h) {
+		if (defined $cache->{$v->{info}}) {
+			print $fh $v->fullpkgpath, " same as ",
+			    $cache->{$v->{info}}, "\n";
+			next;
+		}
+		print $fh $v->fullpkgpath, " ", $v->{info}{problem};
+		if (defined $v->{info}{missing}) {
+			$self->follow_thru($v, $fh, $v->{info}{missing});
+			#print $fh " ", $v->{info}{missing}->string;
+		}
+		print $fh "\n";
+		$cache->{$v->{info}} = $v->fullpkgpath;
+	}
+	print $fh '-'x70, "\n";
+}
+
+sub follow_thru
+{
+	my ($self, $v, $fh, $list) = @_;
+	my @d = ();
+	my $known = {$v => $v};
+	while (1) {
+		my $w = (values %$list)[0];
+		push(@d, $w);
+		if (defined $known->{$w}) {
+			last;
+		}
+		$known->{$w} = $w;
+		if (defined $w->{info}{missing}) {
+			$list = $w->{info}{missing};
+		} else {
+			last;
+		}
+	}
+	print $fh " ", join(' -> ', map {$_->logname} @d);
+}
+
 # for parts of dpb that won't run
 package DPB::SubEngine::Dummy;
 our @ISA = qw(DPB::SubEngine::BuildBase);
@@ -346,5 +412,10 @@ sub start_wipe
 sub is_dummy
 {
 	return 1;
+}
+
+sub smart_dump
+{
+	# don't bother
 }
 1;
