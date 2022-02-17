@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.104 2021/05/15 15:49:02 ajacoutot Exp $
-@newuser _gdm:676:_x11:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.105 2022/02/17 13:12:08 ajacoutot Exp $
+@newuser _gdm:676:_x11::GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @extraunexec rm -rf /var/db/gdm
 @extraunexec rm -rf /var/log/gdm/*
@@ -72,6 +72,8 @@ share/examples/gdm/etc/pam.d/gdm-launch-environment
 share/examples/gdm/etc/pam.d/gdm-password
 @sample ${SYSCONFDIR}/pam.d/gdm-password
 @mode
+share/examples/login.conf.d/gdm
+@sample ${SYSCONFDIR}/login.conf.d/gdm
 share/gdm/gdb-cmd
 share/gdm/gdm.schemas
 share/gdm/greeter/
