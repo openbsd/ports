@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2019/04/24 16:26:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/17 04:34:03 kirby Exp $
 
 COMMENT =	NAT Port Mapping Protocol client library
 
 DISTNAME =	libnatpmp-20150609
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	natpmp 0.1
 

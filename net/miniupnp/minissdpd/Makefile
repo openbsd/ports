@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/11 04:04:53 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/17 04:34:03 kirby Exp $
 
 COMMENT=	daemon keeping track of UPnP devices up
 
 DISTNAME=	minissdpd-1.5
+REVISION=	0
 
 WANTLIB += c
 

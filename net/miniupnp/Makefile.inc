@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:48:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2022/02/17 04:34:03 kirby Exp $
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://miniupnp.free.fr/
+HOMEPAGE=	https://miniupnp.tuxfamily.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://miniupnp.free.fr/files/
+MASTER_SITES=	https://miniupnp.tuxfamily.org/files/
 NO_TEST=	Yes
