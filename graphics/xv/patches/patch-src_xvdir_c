@@ -1,13 +1,15 @@
-$OpenBSD: patch-src_xvdir_c,v 1.1 2022/02/15 17:26:29 sthen Exp $
+$OpenBSD: patch-src_xvdir_c,v 1.2 2022/02/17 10:38:26 sthen Exp $
 
 fix problems with Nikon D7100 pictures, they don't create correct exif
 information (multiple APP1 chunks). xv reads them all, but libjpeg frowns
-about writing multiple APP1.
+about writing multiple APP1; saving these from xv results in an error.
 
 So,
 - ignore subsequent chunks (like exiv2 does)
 - add a small framework to report error messages from libjpeg
 (might be adaptable to other gfx formats).
+
+https://www.kenrockwell.com/nikon/d7100/sample-images/D71_0346.JPG
 
 Index: src/xvdir.c
 --- src/xvdir.c.orig
