@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/04/27 11:16:48 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.30 2022/02/17 13:43:35 ajacoutot Exp $
 @pkgpath textproc/libxslt,-main
 bin/xslt-config
 @bin bin/xsltproc
@@ -28,6 +28,9 @@ include/libxslt/xsltconfig.h
 include/libxslt/xsltexports.h
 include/libxslt/xsltlocale.h
 include/libxslt/xsltutils.h
+lib/cmake/libxslt/
+lib/cmake/libxslt/FindGcrypt.cmake
+lib/cmake/libxslt/libxslt-config.cmake
 @static-lib lib/libexslt.a
 lib/libexslt.la
 @lib lib/libexslt.so.${LIBexslt_VERSION}
@@ -137,3 +140,43 @@ share/doc/libxslt/html/tutorial2/libxslt_pipes.xml
 share/doc/libxslt/html/xslt.html
 share/doc/libxslt/html/xsltproc.html
 share/doc/libxslt/html/xsltproc2.html
+share/gtk-doc/html/libexslt/
+share/gtk-doc/html/libexslt/general.html
+share/gtk-doc/html/libexslt/home.png
+share/gtk-doc/html/libexslt/index.html
+share/gtk-doc/html/libexslt/left.png
+share/gtk-doc/html/libexslt/libexslt-exslt.html
+share/gtk-doc/html/libexslt/libexslt-exsltexports.html
+share/gtk-doc/html/libexslt/libexslt.devhelp2
+share/gtk-doc/html/libexslt/right.png
+share/gtk-doc/html/libexslt/style.css
+share/gtk-doc/html/libexslt/up.png
+share/gtk-doc/html/libxslt/
+share/gtk-doc/html/libxslt/general.html
+share/gtk-doc/html/libxslt/home.png
+share/gtk-doc/html/libxslt/index.html
+share/gtk-doc/html/libxslt/left.png
+share/gtk-doc/html/libxslt/libxslt-attributes.html
+share/gtk-doc/html/libxslt/libxslt-documents.html
+share/gtk-doc/html/libxslt/libxslt-extensions.html
+share/gtk-doc/html/libxslt/libxslt-extra.html
+share/gtk-doc/html/libxslt/libxslt-functions.html
+share/gtk-doc/html/libxslt/libxslt-imports.html
+share/gtk-doc/html/libxslt/libxslt-keys.html
+share/gtk-doc/html/libxslt/libxslt-namespaces.html
+share/gtk-doc/html/libxslt/libxslt-numbersInternals.html
+share/gtk-doc/html/libxslt/libxslt-pattern.html
+share/gtk-doc/html/libxslt/libxslt-preproc.html
+share/gtk-doc/html/libxslt/libxslt-security.html
+share/gtk-doc/html/libxslt/libxslt-templates.html
+share/gtk-doc/html/libxslt/libxslt-transform.html
+share/gtk-doc/html/libxslt/libxslt-variables.html
+share/gtk-doc/html/libxslt/libxslt-xslt.html
+share/gtk-doc/html/libxslt/libxslt-xsltInternals.html
+share/gtk-doc/html/libxslt/libxslt-xsltexports.html
+share/gtk-doc/html/libxslt/libxslt-xsltlocale.html
+share/gtk-doc/html/libxslt/libxslt-xsltutils.html
+share/gtk-doc/html/libxslt/libxslt.devhelp2
+share/gtk-doc/html/libxslt/right.png
+share/gtk-doc/html/libxslt/style.css
+share/gtk-doc/html/libxslt/up.png
