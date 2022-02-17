@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.9 2022/02/17 09:51:58 robert Exp $
+$OpenBSD: README-server,v 1.10 2022/02/17 14:01:27 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -19,11 +19,6 @@ On a busy server, it may be advisable to tune the resources, such as more
 open file descriptors etc.
 
 The capability database file is located at /etc/login.conf.d/mysqld
-
-Rebuild the capability database file if necessary:
-
-	# [ -f /etc/login.conf.d/mysqld.db ] && \
-		cap_mkdb /etc/login.conf.d/mysqld
 
 If you are using InnoDB and experience an error such as "doesn't exist
 in engine" you will need to increase kern.maxlocksperuid.
