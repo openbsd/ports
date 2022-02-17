@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/05 12:34:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/17 09:44:07 sthen Exp $
 
 COMMENT =		socket library providing multiple communication patterns
 
@@ -17,6 +17,7 @@ HOMEPAGE =		https://nanomsg.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
+CONFIGURE_ARGS =	-DNN_ENABLE_DOC=false
 
 WANTLIB +=		c pthread
 
