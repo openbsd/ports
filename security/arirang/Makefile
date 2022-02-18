@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2021/09/02 14:59:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.42 2022/02/18 22:45:39 kmos Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
@@ -27,5 +27,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${PREFIX}/share/arirang
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CFLAGS +=	-fdeclspec
+.endif
 
 .include <bsd.port.mk>
