@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.446 2021/11/27 18:36:18 thfr Exp $
+# $OpenBSD: Makefile,v 1.447 2022/02/18 08:37:23 phessler Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -31,6 +31,7 @@
      SUBDIR += beret
      SUBDIR += blobby
      SUBDIR += blobwars
+     SUBDIR += blockgame
      SUBDIR += blockrage
      SUBDIR += bluemoon
      SUBDIR += bomberclone
