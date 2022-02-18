@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.91 2022/01/15 10:19:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2022/02/18 14:04:49 ajacoutot Exp $
 
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-8.0.0
+REVISION=		0
 
 CATEGORIES=		sysutils devel emulators
 
