@@ -1,0 +1,5 @@
+A static analyzer for Python code.
+
+Beniget provides a static over-approximation of the global and local
+definitions inside Python Module/Class/Function. It can also compute
+def-use chains from each definition.
