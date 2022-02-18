@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_am,v 1.2 2022/02/09 10:23:23 landry Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.3 2022/02/18 20:51:13 kmos Exp $
 
 Index: src/Makefile.am
 --- src/Makefile.am.orig
@@ -52,7 +52,7 @@ Index: src/Makefile.am
  lebiniou_LDADD = -L. -llebiniou ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
  else
 -lebiniou_LDADD = -L. -l:liblebiniou.so.0 ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
-+lebiniou_LDADD = -L. -l:liblebiniou.so ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
++lebiniou_LDADD = -L. -llebiniou ${MAGICKWAND_LIBS} ${ULFIUS_LIBS} ${ORCANIA_LIBS} ${YDER_LIBS}
  endif
  
  commands.h: commands.h.head commands.c.in commands.h.tail commands_enum.awk

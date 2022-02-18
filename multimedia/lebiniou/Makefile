@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/09 10:23:23 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/18 20:51:13 kmos Exp $
 
 COMMENT =	music visualization & VJing tool
 
 PKGNAME =	${DISTNAME:S/-version//}
 DISTNAME =	lebiniou-${V}
 V = 		version-3.65.0
+REVISION =      0
 
 CATEGORIES =	multimedia
 
@@ -19,6 +20,10 @@ WANTLIB +=	pthread pulse pulse-simple sndfile sndio swscale ulfius
 WANTLIB +=	yder
 
 MASTER_SITES =	https://gitlab.com/lebiniou/lebiniou/-/archive/${V}/
+
+# C11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+3,-guic
