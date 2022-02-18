@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2022/02/12 09:57:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2022/02/18 07:17:02 ajacoutot Exp $
 
 # XXX no i386 equivalent to mem_openbsd_amd64.go
 ONLY_FOR_ARCHS=		amd64
@@ -11,6 +11,7 @@ VERSION=		1.11.3
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		consul-vendored-${VERSION}
 PKGNAME=		consul-${VERSION}
+REVISION=		0
 
 CATEGORIES=		sysutils net
 

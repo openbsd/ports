@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/25 08:43:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/02/18 07:17:02 ajacoutot Exp $
 @newgroup _consul:773
-@newuser _consul:773:_consul:daemon:Consul Agent:/nonexistent:/sbin/nologin
+@newuser _consul:773:_consul::Consul Agent:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/consul
 @bin bin/consul
-share/doc/pkg-readmes/${PKGSTEM}
 share/examples/consul/
 @sample ${SYSCONFDIR}/consul.d/
 @mode 0640
@@ -13,3 +12,7 @@ share/examples/consul/config.json
 @sample ${SYSCONFDIR}/consul.d/config.json
 @mode
 @sample ${LOCALSTATEDIR}/consul/
+@owner
+@group
+share/examples/login.conf.d/consul
+@sample ${SYSCONFDIR}/login.conf.d/consul
