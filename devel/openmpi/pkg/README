@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2020/01/28 13:50:08 martin Exp $
+$OpenBSD: README,v 1.2 2022/02/18 19:33:53 martin Exp $
 
 +-----------------------------------------------------------------------
 | Customizing ${PKGSTEM} execution on OpenBSD
@@ -12,7 +12,7 @@ ompi_info(1).  Example**:
     $ mpirun -np 2 -H localhost:2 \
              -mca btl tcp,self \
              -mca mpi_yield_when_idle 1 -- \
-            ./mpitest
+             ./mpitest
 
 These values (at least) are useful:
 
@@ -29,8 +29,12 @@ These values (at least) are useful:
    PMIX_MCA_gds=hash
       This is the one gds (general data service) that works on OpenBSD.
 
+   OMPI_MCA_io=romio321
+      This is the prefered IO component on OpenBSD.
+
 **Example code taken from:
 https://hpcc.usc.edu/support/documentation/examples-of-mpi-programs/
+(now only available via waybackmachine)
 
 Compile with:
 
