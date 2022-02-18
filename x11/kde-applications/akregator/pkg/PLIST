@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/01/05 08:02:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/18 09:49:47 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @pkgpath x11/kde4/akregator
 @bin bin/akregator
@@ -91,6 +91,9 @@ share/doc/HTML/pt/akregator/index.docbook
 share/doc/HTML/pt_BR/akregator/
 share/doc/HTML/pt_BR/akregator/index.cache.bz2
 share/doc/HTML/pt_BR/akregator/index.docbook
+share/doc/HTML/ru/akregator/
+share/doc/HTML/ru/akregator/index.cache.bz2
+share/doc/HTML/ru/akregator/index.docbook
 share/doc/HTML/sv/akregator/
 share/doc/HTML/sv/akregator/index.cache.bz2
 share/doc/HTML/sv/akregator/index.docbook

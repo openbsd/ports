@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:49 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/18 09:49:48 rsadowski Exp $
 @pkgpath x11/kde4/granatier
 @bin bin/granatier
 share/applications/org.kde.granatier.desktop
@@ -73,6 +73,9 @@ share/doc/HTML/pt/granatier/index.docbook
 share/doc/HTML/pt_BR/granatier/
 share/doc/HTML/pt_BR/granatier/index.cache.bz2
 share/doc/HTML/pt_BR/granatier/index.docbook
+share/doc/HTML/ru/granatier/
+share/doc/HTML/ru/granatier/index.cache.bz2
+share/doc/HTML/ru/granatier/index.docbook
 share/doc/HTML/sv/granatier/
 share/doc/HTML/sv/granatier/index.cache.bz2
 share/doc/HTML/sv/granatier/index.docbook

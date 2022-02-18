@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2022/01/05 08:03:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/02/18 09:49:57 rsadowski Exp $
 @pkgpath x11/kde4/step
 @bin bin/step
 share/applications/org.kde.step.desktop
@@ -198,6 +198,7 @@ share/locale/sk/LC_MESSAGES/step.mo
 share/locale/sk/LC_MESSAGES/step_example_files.mo
 share/locale/sk/LC_MESSAGES/step_objinfo_files.mo
 share/locale/sl/LC_MESSAGES/step.mo
+share/locale/sl/LC_MESSAGES/step_example_files.mo
 share/locale/sl/LC_MESSAGES/step_objinfo_files.mo
 share/locale/sq/LC_MESSAGES/step.mo
 share/locale/sv/LC_MESSAGES/step.mo
@@ -628,6 +629,24 @@ share/step/examples/sk/softbody.step
 share/step/examples/sk/solar.step
 share/step/examples/sk/springs.step
 share/step/examples/sk/wave.step
+share/step/examples/sl/
+share/step/examples/sl/brownian.step
+share/step/examples/sl/doublependulum.step
+share/step/examples/sl/eightpendula.step
+share/step/examples/sl/first.step
+share/step/examples/sl/fourpendula.step
+share/step/examples/sl/gas.step
+share/step/examples/sl/graph.step
+share/step/examples/sl/liquid.step
+share/step/examples/sl/lissajous.step
+share/step/examples/sl/motor.step
+share/step/examples/sl/motor1.step
+share/step/examples/sl/note.step
+share/step/examples/sl/resonance.step
+share/step/examples/sl/softbody.step
+share/step/examples/sl/solar.step
+share/step/examples/sl/springs.step
+share/step/examples/sl/wave.step
 share/step/examples/softbody.step
 share/step/examples/solar.step
 share/step/examples/springs.step
@@ -1418,6 +1437,12 @@ share/step/tutorials/sk/tutorial2.step
 share/step/tutorials/sk/tutorial3.step
 share/step/tutorials/sk/tutorial4.step
 share/step/tutorials/sk/tutorial5.step
+share/step/tutorials/sl/
+share/step/tutorials/sl/tutorial1.step
+share/step/tutorials/sl/tutorial2.step
+share/step/tutorials/sl/tutorial3.step
+share/step/tutorials/sl/tutorial4.step
+share/step/tutorials/sl/tutorial5.step
 share/step/tutorials/sv/
 share/step/tutorials/sv/tutorial1.step
 share/step/tutorials/sv/tutorial2.step

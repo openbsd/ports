@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:39 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/02/18 09:49:52 rsadowski Exp $
 @pkgpath x11/kde4/kmag
 @bin bin/kmag
 @man man/man1/kmag.1
@@ -40,6 +40,9 @@ share/doc/HTML/pt_BR/kmag/
 share/doc/HTML/pt_BR/kmag/index.cache.bz2
 share/doc/HTML/pt_BR/kmag/index.docbook
 share/doc/HTML/pt_BR/kmag/screenshot.png
+share/doc/HTML/ru/kmag/
+share/doc/HTML/ru/kmag/index.cache.bz2
+share/doc/HTML/ru/kmag/index.docbook
 share/doc/HTML/sv/kmag/
 share/doc/HTML/sv/kmag/index.cache.bz2
 share/doc/HTML/sv/kmag/index.docbook

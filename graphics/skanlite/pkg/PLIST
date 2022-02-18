@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/01/05 08:02:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/18 09:49:46 rsadowski Exp $
 @bin bin/skanlite
 share/applications/org.kde.skanlite.desktop
 share/doc/HTML/ca/skanlite/
@@ -63,6 +63,9 @@ share/doc/HTML/pt/skanlite/index.docbook
 share/doc/HTML/pt_BR/skanlite/
 share/doc/HTML/pt_BR/skanlite/index.cache.bz2
 share/doc/HTML/pt_BR/skanlite/index.docbook
+share/doc/HTML/ru/skanlite/
+share/doc/HTML/ru/skanlite/index.cache.bz2
+share/doc/HTML/ru/skanlite/index.docbook
 share/doc/HTML/sv/skanlite/
 share/doc/HTML/sv/skanlite/index.cache.bz2
 share/doc/HTML/sv/skanlite/index.docbook

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/05 20:50:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/18 09:49:54 rsadowski Exp $
 
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
-REVISION =	0
 
 SHARED_LIBS +=  krfbprivate               2.1 # 5.0
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/09/10 08:44:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2022/02/18 09:49:57 rsadowski Exp $
 @pkgpath x11/kde4/umbrello
 @bin bin/po2xmi5
 @bin bin/umbrello5
@@ -192,6 +192,20 @@ share/doc/HTML/pt_BR/umbrello/umbrello-ui.png
 share/doc/HTML/pt_BR/umbrello/uml_basics.docbook
 share/doc/HTML/pt_BR/umbrello/use-case-diagram.png
 share/doc/HTML/pt_BR/umbrello/working_with_umbrello.docbook
+share/doc/HTML/ru/umbrello/
+share/doc/HTML/ru/umbrello/apphelp/
+share/doc/HTML/ru/umbrello/apphelp/index.cache.bz2
+share/doc/HTML/ru/umbrello/apphelp/index.docbook
+share/doc/HTML/ru/umbrello/authors.docbook
+share/doc/HTML/ru/umbrello/code_import_and_generation.docbook
+share/doc/HTML/ru/umbrello/credits.docbook
+share/doc/HTML/ru/umbrello/index.cache.bz2
+share/doc/HTML/ru/umbrello/index.docbook
+share/doc/HTML/ru/umbrello/introduction.docbook
+share/doc/HTML/ru/umbrello/other_features.docbook
+share/doc/HTML/ru/umbrello/settings.docbook
+share/doc/HTML/ru/umbrello/uml_basics.docbook
+share/doc/HTML/ru/umbrello/working_with_umbrello.docbook
 share/doc/HTML/sv/umbrello/
 share/doc/HTML/sv/umbrello/apphelp/
 share/doc/HTML/sv/umbrello/apphelp/index.cache.bz2
@@ -303,6 +317,7 @@ share/locale/hi/LC_MESSAGES/umbrello.mo
 share/locale/hr/LC_MESSAGES/umbrello.mo
 share/locale/hr/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/hu/LC_MESSAGES/umbrello.mo
+share/locale/hu/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/hu/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/it/LC_MESSAGES/umbrello.mo
 share/locale/it/LC_MESSAGES/umbrello_kdevphp.mo

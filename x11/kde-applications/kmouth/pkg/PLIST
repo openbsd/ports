@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/02/18 09:49:53 rsadowski Exp $
 @pkgpath x11/kde4/kmouth
 @bin bin/kmouth
 @man man/man1/kmouth.1
@@ -81,6 +81,9 @@ share/doc/HTML/pt_BR/kmouth/kmouthmain.png
 share/doc/HTML/pt_BR/kmouth/kmouthwizard1.png
 share/doc/HTML/pt_BR/kmouth/kmouthwizard2.png
 share/doc/HTML/pt_BR/kmouth/kmouthwizard3.png
+share/doc/HTML/ru/kmouth/
+share/doc/HTML/ru/kmouth/index.cache.bz2
+share/doc/HTML/ru/kmouth/index.docbook
 share/doc/HTML/sv/kmouth/
 share/doc/HTML/sv/kmouth/index.cache.bz2
 share/doc/HTML/sv/kmouth/index.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2022/01/05 08:02:57 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/18 09:49:52 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_followupreminder_agent
@@ -324,6 +324,18 @@ share/doc/HTML/pt_BR/kmail2/using-kmail.docbook
 share/doc/HTML/pt_BR/ktnef/
 share/doc/HTML/pt_BR/ktnef/index.cache.bz2
 share/doc/HTML/pt_BR/ktnef/index.docbook
+share/doc/HTML/ru/akonadi_archivemail_agent/
+share/doc/HTML/ru/akonadi_archivemail_agent/index.cache.bz2
+share/doc/HTML/ru/akonadi_archivemail_agent/index.docbook
+share/doc/HTML/ru/akonadi_followupreminder_agent/
+share/doc/HTML/ru/akonadi_followupreminder_agent/index.cache.bz2
+share/doc/HTML/ru/akonadi_followupreminder_agent/index.docbook
+share/doc/HTML/ru/akonadi_sendlater_agent/
+share/doc/HTML/ru/akonadi_sendlater_agent/index.cache.bz2
+share/doc/HTML/ru/akonadi_sendlater_agent/index.docbook
+share/doc/HTML/ru/ktnef/
+share/doc/HTML/ru/ktnef/index.cache.bz2
+share/doc/HTML/ru/ktnef/index.docbook
 share/doc/HTML/sv/akonadi_archivemail_agent/
 share/doc/HTML/sv/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/sv/akonadi_archivemail_agent/index.docbook

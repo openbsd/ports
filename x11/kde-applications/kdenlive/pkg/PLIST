@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2022/01/05 08:02:55 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/02/18 09:49:50 rsadowski Exp $
 @pkgpath multimedia/kdenlive
 @bin bin/kdenlive
 @bin bin/kdenlive_render
@@ -226,6 +226,7 @@ share/kdenlive/effects/acompressor.xml
 share/kdenlive/effects/aecho.xml
 share/kdenlive/effects/agate.xml
 share/kdenlive/effects/audiobalance.xml
+share/kdenlive/effects/audiolevelgraph.xml
 share/kdenlive/effects/audiomap.xml
 share/kdenlive/effects/audiopan.xml
 share/kdenlive/effects/audiospectrum.xml
@@ -581,6 +582,11 @@ share/kdenlive/lumas/PAL/square.pgm
 share/kdenlive/lumas/PAL/square2-bars.pgm
 share/kdenlive/lumas/PAL/square2.pgm
 share/kdenlive/lumas/PAL/symmetric_clock.pgm
+share/kdenlive/luts/
+share/kdenlive/luts/BLUE_TINT.cube
+share/kdenlive/luts/CINEMATIC.cube
+share/kdenlive/luts/GREEN_TINT.cube
+share/kdenlive/luts/TEAL_ORANGE.cube
 share/kdenlive/profiles/
 share/kdenlive/profiles/dci_2160p_2398
 share/kdenlive/profiles/dci_2160p_24

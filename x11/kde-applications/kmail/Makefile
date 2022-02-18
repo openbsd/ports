@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/13 16:38:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2022/02/18 09:49:52 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
-REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       5.0 # 5.13.2
 

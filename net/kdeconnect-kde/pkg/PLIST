@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/01/05 08:02:50 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/18 09:49:46 rsadowski Exp $
 @bin bin/kdeconnect-app
 @bin bin/kdeconnect-cli
 @bin bin/kdeconnect-handler
@@ -49,11 +49,11 @@ lib/qt5/qml/org/kde/kdeconnect/qmldir
 share/Thunar/
 share/Thunar/sendto/
 share/Thunar/sendto/kdeconnect-thunar.desktop
+share/applications/org.kde.kdeconnect-settings.desktop
 share/applications/org.kde.kdeconnect.app.desktop
 share/applications/org.kde.kdeconnect.daemon.desktop
 share/applications/org.kde.kdeconnect.handler.desktop
 share/applications/org.kde.kdeconnect.nonplasma.desktop
-share/applications/org.kde.kdeconnect.settings.desktop
 share/applications/org.kde.kdeconnect.sms.desktop
 share/applications/org.kde.kdeconnect_open.desktop
 share/contractor/
@@ -781,7 +781,6 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.desktop
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.json
 share/qlogging-categories5/kdeconnect-kde.categories
-share/zsh/site-functions/
 share/zsh/site-functions/_kdeconnect
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

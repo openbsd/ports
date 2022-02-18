@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/13 16:38:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/18 09:49:51 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE-based HTML image map editor
 DISTNAME =	kimagemapeditor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

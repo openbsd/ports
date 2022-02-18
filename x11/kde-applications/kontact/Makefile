@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/13 16:38:31 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.16 2022/02/18 09:49:53 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  kontactprivate       0.1 # 5.13.2
 

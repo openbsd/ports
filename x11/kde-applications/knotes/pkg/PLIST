@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/01/05 08:02:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/02/18 09:49:53 rsadowski Exp $
 @bin bin/akonadi_notes_agent
 @bin bin/knotes
 @lib lib/libknotesprivate.so.${LIBknotesprivate_VERSION}
@@ -82,6 +82,12 @@ share/doc/HTML/pt_BR/akonadi_notes_agent/index.docbook
 share/doc/HTML/pt_BR/knotes/
 share/doc/HTML/pt_BR/knotes/index.cache.bz2
 share/doc/HTML/pt_BR/knotes/index.docbook
+share/doc/HTML/ru/akonadi_notes_agent/
+share/doc/HTML/ru/akonadi_notes_agent/index.cache.bz2
+share/doc/HTML/ru/akonadi_notes_agent/index.docbook
+share/doc/HTML/ru/knotes/
+share/doc/HTML/ru/knotes/index.cache.bz2
+share/doc/HTML/ru/knotes/index.docbook
 share/doc/HTML/sv/akonadi_notes_agent/
 share/doc/HTML/sv/akonadi_notes_agent/index.cache.bz2
 share/doc/HTML/sv/akonadi_notes_agent/index.docbook

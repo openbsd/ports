@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2022/02/13 16:38:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.30 2022/02/18 09:49:48 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
 
 SHARED_LIBS +=  cantorlibs                54.0 # 17.08
 

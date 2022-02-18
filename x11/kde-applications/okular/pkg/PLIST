@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2022/01/05 08:03:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2022/02/18 09:49:56 rsadowski Exp $
 @pkgpath x11/kde4/okular
 @bin bin/okular
 include/okular/
@@ -251,6 +251,34 @@ share/doc/HTML/pt_BR/okular/mainwindow.png
 share/doc/HTML/pt_BR/okular/presentation.png
 share/doc/HTML/pt_BR/okular/signatures-bar.png
 share/doc/HTML/pt_BR/okular/signatures-panel.png
+share/doc/HTML/ru/okular/
+share/doc/HTML/ru/okular/annotation-properties.png
+share/doc/HTML/ru/okular/annotations.png
+share/doc/HTML/ru/okular/bookmark-management.png
+share/doc/HTML/ru/okular/configure-annotations.png
+share/doc/HTML/ru/okular/configure-backends.png
+share/doc/HTML/ru/okular/configure-editor.png
+share/doc/HTML/ru/okular/configure.png
+share/doc/HTML/ru/okular/embedded-files-bar.png
+share/doc/HTML/ru/okular/enhance-lowcontrast.png
+share/doc/HTML/ru/okular/enhance-shape.png
+share/doc/HTML/ru/okular/enhance-solid.png
+share/doc/HTML/ru/okular/enhance-thinline.png
+share/doc/HTML/ru/okular/forms-bar.png
+share/doc/HTML/ru/okular/index.cache.bz2
+share/doc/HTML/ru/okular/index.docbook
+share/doc/HTML/ru/okular/mainwindow.png
+share/doc/HTML/ru/okular/presentation.png
+share/doc/HTML/ru/okular/rating.png
+share/doc/HTML/ru/okular/tool-ellipse-okular.png
+share/doc/HTML/ru/okular/tool-highlighter-okular.png
+share/doc/HTML/ru/okular/tool-ink-okular.png
+share/doc/HTML/ru/okular/tool-line-okular.png
+share/doc/HTML/ru/okular/tool-note-inline-okular.png
+share/doc/HTML/ru/okular/tool-note-okular.png
+share/doc/HTML/ru/okular/tool-polygon-okular.png
+share/doc/HTML/ru/okular/tool-stamp-okular.png
+share/doc/HTML/ru/okular/tool-underline-okular.png
 share/doc/HTML/sv/okular/
 share/doc/HTML/sv/okular/configure.png
 share/doc/HTML/sv/okular/index.cache.bz2
