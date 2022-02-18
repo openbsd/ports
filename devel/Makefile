@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2179 2022/02/15 04:27:24 abieber Exp $
+# $OpenBSD: Makefile,v 1.2180 2022/02/18 13:22:45 daniel Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1303,6 +1303,7 @@
      SUBDIR += py-babel,python3
      SUBDIR += py-backcall,python3
      SUBDIR += py-bencode,python3
+     SUBDIR += py-beniget,python3
      SUBDIR += py-biplist,python3
      SUBDIR += py-bitcoinlib		# unflavoured but uses python3
      SUBDIR += py-bitstring,python3
@@ -1386,6 +1387,7 @@
      SUBDIR += py-future
      SUBDIR += py-future,python3
      SUBDIR += py-futures
+     SUBDIR += py-gast,python3
      SUBDIR += py-gevent,python3
      SUBDIR += py-gitdb,python3
      SUBDIR += py-gitpython,python3
