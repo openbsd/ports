@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2021/07/27 05:08:39 semarie Exp $
+# $OpenBSD: Makefile,v 1.34 2022/02/18 07:47:20 semarie Exp $
 
 COMMENT =		infinite-world block sandbox game
-GAME_V =		5.4.1
-V =			${GAME_V}
+
+V =			5.5.0
+GAME_V =		5.5.0
+IRRLICHTMT_V =		1.9.0mt4
+
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
 
@@ -11,17 +14,18 @@ HOMEPAGE =		https://www.minetest.net/
 # source LGPLv2.1/ datas CC BY-SA 3.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Irrlicht SM X11 Xext
-WANTLIB += Xxf86vm bz2 c curl curses form freetype gmp iconv intl
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 Xext
+WANTLIB += Xxf86vm c curl curses form freetype gmp iconv intl
 WANTLIB += jsoncpp jpeg ${MODLUA_WANTLIB} m ogg openal png pq
-WANTLIB += spatialindex sqlite3 vorbis vorbisfile z
+WANTLIB += spatialindex sqlite3 vorbis vorbisfile z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		https://github.com/minetest/
 
 DISTFILES =		minetest-{minetest/archive/}${V}${EXTRACT_SUFX} \
-			minetest-game-{minetest_game/archive/}${GAME_V}${EXTRACT_SUFX}
+			minetest-game-{minetest_game/archive/}${GAME_V}${EXTRACT_SUFX} \
+			irrlichtmt-{irrlicht/archive/}${IRRLICHTMT_V}${EXTRACT_SUFX}
 
 MODULES =		devel/cmake \
 			lang/lua
@@ -39,18 +43,25 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
 			audio/openal \
+			audio/libvorbis \
+			archivers/zstd \
+			devel/gettext,-runtime \
 			devel/jsoncpp \
 			devel/gmp \
 			databases/sqlite3 \
 			databases/postgresql \
 			geo/spatialindex \
-			audio/libvorbis \
-			net/curl \
-			x11/irrlicht
+			graphics/png \
+			graphics/jpeg \
+			net/curl
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 TEST_ENV +=		HOME=${WRKBUILD}/test \
 			LC_CTYPE="en_US.UTF-8"
+
+post-extract:
+	mv ${WRKDIR}/irrlicht-${IRRLICHTMT_V} \
+		${WRKSRC}/lib/irrlichtmt
 
 # Use system cmake modules
 post-patch:
