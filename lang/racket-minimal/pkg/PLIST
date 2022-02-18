@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/11/29 17:05:45 juanfra Exp $
+@comment $OpenBSD: PLIST,v 1.28 2022/02/18 22:31:06 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 %%bc%%
@@ -375,6 +375,8 @@ lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/git-url
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/git-url-scheme_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/git_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/git_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/github-url_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/github-url_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/info-to-desc_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/info-to-desc_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/pkg/private/compiled/install_rkt.dep
@@ -514,6 +516,8 @@ lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/info_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/info_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/init_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/init_rkt.zo
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/interaction-info_rkt.dep
+lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/interaction-info_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/interactive_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/interactive_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/racket/compiled/kernel_rkt.dep
@@ -1613,6 +1617,7 @@ share/racket/collects/pkg/private/download.rkt
 share/racket/collects/pkg/private/get-info.rkt
 share/racket/collects/pkg/private/git-url-scheme.rkt
 share/racket/collects/pkg/private/git.rkt
+share/racket/collects/pkg/private/github-url.rkt
 share/racket/collects/pkg/private/info-to-desc.rkt
 share/racket/collects/pkg/private/install.rkt
 share/racket/collects/pkg/private/lock.rkt
@@ -1748,6 +1753,7 @@ share/racket/collects/racket/help.rkt
 share/racket/collects/racket/include.rkt
 share/racket/collects/racket/info.rkt
 share/racket/collects/racket/init.rkt
+share/racket/collects/racket/interaction-info.rkt
 share/racket/collects/racket/interactive.rkt
 share/racket/collects/racket/kernel/
 share/racket/collects/racket/kernel.rkt
@@ -2153,6 +2159,9 @@ share/racket/collects/xml/xml.rkt
 share/racket/links.rktd
 share/racket/pkgs/
 share/racket/pkgs/.LOCKpkgs.rktd
+share/racket/pkgs/base/
+share/racket/pkgs/base/LICENSE
+share/racket/pkgs/base/info.rkt
 share/racket/pkgs/pkgs.rktd
 share/racket/pkgs/racket-lib/
 share/racket/pkgs/racket-lib/LICENSE
