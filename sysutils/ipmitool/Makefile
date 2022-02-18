@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/12 18:14:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2022/02/18 15:21:12 kn Exp $
 
 COMMENT=	manage and configure devices that support IPMI
 
@@ -10,6 +10,7 @@ GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
 GH_COMMIT=	39ca56bf33975b8a8b7e87928d67dc66366161da
 DISTNAME=	ipmitool-1.8.18pl20220207
+REVISION=	0
 DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
 EXTRACT_ONLY=	${GH_DISTFILE:C/{.*//}
 
@@ -26,6 +27,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m curses edit crypto c
+
+# -std=gnu11
+COMPILER = 	base-clang ports-gcc
 
 #MASTER_SITES=	https://github.com/ipmitool/ipmitool/releases/download/IPMITOOL_${V:C/\./_/g}/
 MASTER_SITES0=	https://spacehopper.org/mirrors/
