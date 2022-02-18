@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_json,v 1.23 2022/02/03 11:38:17 pvk Exp $
+$OpenBSD: patch-config_config_json,v 1.24 2022/02/18 15:01:13 pvk Exp $
 
 Index: config/config.json
 --- config/config.json.orig
@@ -21,7 +21,7 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -140,14 +140,14 @@
+@@ -141,14 +141,14 @@
      "ReplicaLagSettings": []
    },
    "LogSettings": {
@@ -38,7 +38,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -164,14 +164,14 @@
+@@ -165,14 +165,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -55,7 +55,7 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -188,7 +188,7 @@
+@@ -189,7 +189,7 @@
      "MaxFileSize": 104857600,
      "MaxImageResolution": 33177600,
      "DriverName": "local",
@@ -64,7 +64,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -219,11 +219,11 @@
+@@ -220,11 +220,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -79,7 +79,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -259,7 +259,7 @@
+@@ -260,7 +260,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -88,7 +88,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -365,7 +365,7 @@
+@@ -366,7 +366,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -97,7 +97,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -519,8 +519,8 @@
+@@ -522,8 +522,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -108,7 +108,7 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -588,11 +588,11 @@
+@@ -591,11 +591,11 @@
      "NormalizeLdapDNs": false
    },
    "ImportSettings": {
