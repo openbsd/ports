@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2021/12/16 21:44:38 juanfra Exp $
+# $OpenBSD: Makefile,v 1.43 2022/02/18 22:34:47 juanfra Exp $
 
 BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.9.3
-REVISION=	4
+V=		4.9.4
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -13,14 +12,14 @@ SUBST_VARS+=	API_V
 
 CATEGORIES=	lang
 
-HOMEPAGE=	http://dynamo.iro.umontreal.ca/wiki/index.php/Main_Page
+HOMEPAGE=	https://www.gambitscheme.org
 
 MAINTAINER=	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 # LGPLv2.1 / Apachev2.0
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v${V:R}/source/
+MASTER_SITES=	https://www.gambitscheme.org/$V/
 EXTRACT_SUFX=	.tgz
 
 WANTLIB +=	c crypto m ssl util
@@ -39,6 +38,8 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--enable-poll
 
 CONFIGURE_ENV=	CC=${CC} CXX=${CXX} CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
+WRKDIST=	${WRKDIR}/gambit-$V
 
 MAKE_FILE=	${WRKSRC}/makefile
 

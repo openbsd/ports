@@ -1,12 +1,12 @@
-$OpenBSD: patch-gsc_makefile_in,v 1.1 2021/12/16 21:44:38 juanfra Exp $
+$OpenBSD: patch-gsc_makefile_in,v 1.2 2022/02/18 22:34:47 juanfra Exp $
 
 Clang 13 workaround
 
 Index: gsc/makefile.in
 --- gsc/makefile.in.orig
 +++ gsc/makefile.in
-@@ -229,6 +229,12 @@ _gsc@obj@: _gsc.c
- _gsc_@obj@: _gsc_.c
+@@ -301,6 +301,12 @@ $(LINKFILE_O): $(LINKFILE_C)
+ _gsc@obj@: _gsc.c
  	@BUILD_OBJ@
  
 +_t-univ-2@obj@:
