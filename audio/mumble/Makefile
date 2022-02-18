@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2022/02/18 12:59:18 kn Exp $
+# $OpenBSD: Makefile,v 1.62 2022/02/18 13:11:27 kn Exp $
 
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
@@ -63,6 +63,7 @@ LIB_DEPENDS-main =	audio/libsndfile>=1.0.25p0 \
 			x11/qt5/qtsvg
 LIB_DEPENDS-server =	devel/protobuf \
 			x11/qt5/qtbase
+TEST_DEPENDS =		x11/qt5/qtbase
 
 RUN_DEPENDS-main =	devel/desktop-file-utils \
 			x11/gtk+3,-guic
