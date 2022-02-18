@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/18 08:36:39 phessler Exp $
+@bin bin/Blockgame
+@so lib/libLauncher_iconfix.so
+@so lib/libLauncher_nbt++.so
+@so lib/libLauncher_quazip.so
+@so lib/libLauncher_rainbow.so
+share/bgl/
+share/bgl/jars/
+share/bgl/jars/JavaCheck.jar
+share/bgl/jars/NewLaunch.jar
+share/doc/pkg-readmes/${PKGSTEM}

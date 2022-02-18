@@ -1,0 +1,53 @@
+$OpenBSD: README,v 1.1.1.1 2022/02/18 08:36:39 phessler Exp $
+
++-------------------------------------------------------------------------------
+| Running games/blockgame on OpenBSD
++-------------------------------------------------------------------------------
+
+Minecraft and Java compatibility
+================================
+
+Starting with Minecraft 1.13, Minecraft recommends using newer
+versions of the Java runtime instead of Java 1.8.
+
+However, it is important to note that older versions of Minecraft
+(especially with mods) will not play well with the latest version of
+Java.
+
+By default, games/blockgame is configured to play the latest version
+of Minecraft (use games/lwjgl3 and devel/jdk%17 as runtime dependencies).
+
+Running older versions of Minecraft
+-----------------------------------
+
+- For Minecraft <= 1.12.2, use Java 1.8 and make sure LWJGL 2 is
+  installed.
+
+  # pkg_add jdk%1.8 lwjgl
+
+- While Minecraft 1.13 - 1.16.5 can run on newer versions, mod loaders
+  are known to be broken on versions newer than 11:
+
+  # pkg_add jdk%11
+
+- Since Minecraft 1.17, it is required to use the latest version of
+  Java.
+
+Change Java installation for a Minecraft instance
+-------------------------------------------------
+
+1. Right click the instance and select "Edit Instance".
+2. Go to "Settings" and click on "Auto-detect..." under "Java
+   installation".
+3. Select which version of Java you want to use.
+
+Migrating from MultiMC to Blockgame
+===================================
+
+Due to the name change, Blockgame data directory is changed to
+~/.local/share/Blockgame.
+
+To migrate your existing MultiMC instances to Blockgame, simply move
+~/.local/share/multimc to ~/.local/share/Blockgame.
+
+$ mv ~/.local/share/multimc ~/.local/share/Blockgame
