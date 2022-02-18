@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/18 16:37:21 kn Exp $
 @conflict docbook2x-<0.8.8p4
 bin/docbook2dvi
 bin/docbook2html
@@ -40,8 +40,6 @@ share/doc/html/docbook-utils-0.6.14/intro-sgmldiff.html
 share/doc/html/docbook-utils-0.6.14/introduction.html
 share/doc/html/docbook-utils-0.6.14/jw.html
 share/doc/html/docbook-utils-0.6.14/sgmldiff.html
-share/sgml/
-share/sgml/docbook/
 share/sgml/docbook/utils-0.6.14/
 share/sgml/docbook/utils-0.6.14/backends/
 share/sgml/docbook/utils-0.6.14/backends/dvi

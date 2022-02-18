@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2021/09/10 17:41:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2022/02/18 16:37:21 kn Exp $
 
 COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1
 PKGNAME=	openjade-1.3.3pre1
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	textproc
 
@@ -22,6 +22,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openjade/}
 WANTLIB += c iconv intl m pthread ${COMPILER_LIBCXX} osp
 
 COMPILER=		base-clang ports-gcc base-gcc
+
+.if ${MACHINE_ARCH:Msparc64}
+# -O[12] make openjade segfault in textproc/docbook-utils 0.6.14 build
+CXXFLAGS +=		-O0
+.endif
 
 LIB_DEPENDS=		textproc/opensp
 
