@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/12 17:22:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2022/02/18 13:27:56 sthen Exp $
 
 COMMENT =		library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION =	5.8.0
+REVISION =		0
+
 GH_ACCOUNT =		giampaolo
 GH_PROJECT =		psutil
 GH_TAGNAME =		release-${MODPY_EGG_VERSION}
