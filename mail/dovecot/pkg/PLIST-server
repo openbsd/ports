@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.84 2021/12/08 14:10:07 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.85 2022/02/18 16:11:27 robert Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -1142,3 +1142,5 @@ share/examples/dovecot/example-config/dovecot.conf
 @group
 @extra /etc/ssl/dovecotcert.pem
 @extra /etc/ssl/private/dovecot.pem
+share/examples/login.conf.d/dovecot
+@sample ${SYSCONFDIR}/login.conf.d/dovecot
