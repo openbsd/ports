@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2018/07/09 09:56:27 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2022/02/18 06:42:35 robert Exp $
 @pkgpath net/zabbix,-main,mysql
 @pkgpath net/zabbix,-main,pgsql
 @pkgpath net/zabbix,-doc,mysql
 @pkgpath net/zabbix,-doc,pgsql
 @pkgpath net/zabbix,-doc
 @newgroup _zabbix:623
-@newuser _zabbix:623:_zabbix:daemon:zabbix user:/nonexistent:/sbin/nologin
+@newuser _zabbix:623:_zabbix::zabbix user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/zabbix/*
 @bin bin/zabbix_get
 @bin bin/zabbix_sender

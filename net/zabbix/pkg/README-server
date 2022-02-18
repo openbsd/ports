@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.15 2020/04/15 05:58:12 robert Exp $
+$OpenBSD: README-server,v 1.16 2022/02/18 06:42:35 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -36,16 +36,6 @@ On OpenBSD, the default shared memory value is too low for the Zabbix
 Server and Proxy to work properly. You should set kern.shminfo.shmall
 according to your needs ("32768" is a good value for starter) -- see
 sysctl(8) and sysctl.conf(5).
-
-On a busy server, it may be advisable to put the zabbix processes into
-their own login(1) class with tuned resources, such as more open file
-descriptors etc.
-e.g. add the following lines to login.conf(5):
-
-zabbix_server:\
-	:openfiles-cur=1024:\
-	:openfiles-max=2048:\
-	:tc=daemon
 
 Next you must create the database following the relevant set of
 instructions below. When this is done you can proceed to configure
