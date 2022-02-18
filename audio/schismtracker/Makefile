@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2022/02/09 10:28:13 fcambus Exp $
+# $OpenBSD: Makefile,v 1.28 2022/02/18 15:32:26 kmos Exp $
 
 COMMENT =	open-source reimplementation of Impulse Tracker
 
@@ -26,5 +26,10 @@ LIB_DEPENDS =	devel/sdl
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
