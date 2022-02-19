@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2021/08/23 05:39:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2022/02/19 07:53:44 ajacoutot Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
-DISTNAME=		libgcrypt-1.9.4
+DISTNAME=		libgcrypt-1.10.0
 CATEGORIES=		security
 
-SHARED_LIBS +=  gcrypt               20.0     # 23.4
+SHARED_LIBS +=  gcrypt               21.0     # 24.0
 
 HOMEPAGE=		https://www.gnupg.org/software/libgcrypt/index.html
 
@@ -20,10 +20,7 @@ MASTER_SITES=		${MASTER_SITE_GNUPG:=libgcrypt/}
 
 LIB_DEPENDS=		security/libgpg-error
 
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.14
-
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--disable-drng-support
 
