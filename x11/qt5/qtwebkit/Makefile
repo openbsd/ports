@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2021/05/11 15:33:59 cwen Exp $
+# $OpenBSD: Makefile,v 1.33 2022/02/19 20:25:06 rsadowski Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -15,7 +15,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH =			0
-REVISION =		4
+REVISION =		5
 
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
@@ -57,11 +57,11 @@ MODRUBY_RUNDEP =	No
 
 BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
-			devel/libsoup \
+			devel/libsoup2 \
 			geo/geoclue \
 			x11/dbus
 
-RUN_DEPENDS =		geo/geoclue \
+RUN_DEPENDS =		geo/geoclue2 \
 			x11/dbus
 
 # avoid using wrong $VERSION
