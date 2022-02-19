@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/11/16 14:31:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/19 09:45:43 rsadowski Exp $
 @bin bin/kiconfinder5
 include/KF5/KIconThemes/
 include/KF5/KIconThemes/KIconButton
@@ -16,7 +16,7 @@ include/KF5/KIconThemes/kiconengine.h
 include/KF5/KIconThemes/kiconloader.h
 include/KF5/KIconThemes/kicontheme.h
 include/KF5/KIconThemes/kiconthemes_export.h
-include/KF5/kiconthemes_version.h
+include/KF5/KIconThemes/kiconthemes_version.h
 lib/cmake/KF5IconThemes/
 lib/cmake/KF5IconThemes/KF5IconThemesConfig.cmake
 lib/cmake/KF5IconThemes/KF5IconThemesConfigVersion.cmake

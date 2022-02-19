@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/09/07 14:48:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/02/19 09:45:40 rsadowski Exp $
 include/KF5/KActivitiesStats/
 include/KF5/KActivitiesStats/KActivities/
 include/KF5/KActivitiesStats/KActivities/Stats/
@@ -16,7 +16,7 @@ include/KF5/KActivitiesStats/kactivitiesstats/resultmodel.h
 include/KF5/KActivitiesStats/kactivitiesstats/resultset.h
 include/KF5/KActivitiesStats/kactivitiesstats/resultwatcher.h
 include/KF5/KActivitiesStats/kactivitiesstats/terms.h
-include/KF5/kactivitiesstats_version.h
+include/KF5/KActivitiesStats/kactivitiesstats_version.h
 lib/cmake/KF5ActivitiesStats/
 lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsConfig.cmake
 lib/cmake/KF5ActivitiesStats/KF5ActivitiesStatsConfigVersion.cmake

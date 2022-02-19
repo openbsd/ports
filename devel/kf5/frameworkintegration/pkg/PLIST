@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/23 18:01:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/02/19 09:45:40 rsadowski Exp $
+include/KF5/FrameworkIntegration/
+include/KF5/FrameworkIntegration/frameworkintegration_version.h
 include/KF5/KStyle/
 include/KF5/KStyle/KStyle
 include/KF5/KStyle/kstyle.h
 include/KF5/KStyle/kstyle_export.h
-include/KF5/frameworkintegration_version.h
 lib/cmake/KF5FrameworkIntegration/
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationConfig.cmake
 lib/cmake/KF5FrameworkIntegration/KF5FrameworkIntegrationConfigVersion.cmake

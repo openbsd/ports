@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2021/12/19 10:51:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2022/02/19 09:45:43 rsadowski Exp $
 
 COMMENT =		KDE icon GUI utility library
 DISTNAME =		kiconthemes-${VERSION}
 
-SHARED_LIBS =		KF5IconThemes		5.5
+SHARED_LIBS =		KF5IconThemes		5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/09/10 08:42:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.15 2022/02/19 09:45:44 rsadowski Exp $
 @bin bin/knewstuff-dialog
 include/KF5/KNewStuff3/
 include/KF5/KNewStuff3/KNS3/
@@ -30,6 +30,9 @@ include/KF5/KNewStuff3/KNSCore/QuestionManager
 include/KF5/KNewStuff3/KNSCore/Security
 include/KF5/KNewStuff3/KNSCore/TagsFilterChecker
 include/KF5/KNewStuff3/KNSCore/XmlLoader
+include/KF5/KNewStuff3/KNSWidgets/
+include/KF5/KNewStuff3/KNSWidgets/Action
+include/KF5/KNewStuff3/KNSWidgets/Button
 include/KF5/KNewStuff3/kns3/
 include/KF5/KNewStuff3/kns3/button.h
 include/KF5/KNewStuff3/kns3/downloaddialog.h
@@ -62,6 +65,10 @@ include/KF5/KNewStuff3/knscore/questionmanager.h
 include/KF5/KNewStuff3/knscore/security.h
 include/KF5/KNewStuff3/knscore/tagsfilterchecker.h
 include/KF5/KNewStuff3/knscore/xmlloader.h
+include/KF5/KNewStuff3/knswidgets/
+include/KF5/KNewStuff3/knswidgets/action.h
+include/KF5/KNewStuff3/knswidgets/button.h
+include/KF5/KNewStuff3/knswidgets/knewstuffwidgets_export.h
 include/KF5/knewstuff_version.h
 include/KF5/knewstuffcore_version.h
 include/KF5/knewstuffquick_version.h
@@ -80,6 +87,7 @@ lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfig.cmake
 lib/cmake/KF5NewStuffQuick/KF5NewStuffQuickConfigVersion.cmake
 @lib lib/libKF5NewStuff.so.${LIBKF5NewStuff_VERSION}
 @lib lib/libKF5NewStuffCore.so.${LIBKF5NewStuffCore_VERSION}
+@lib lib/libKF5NewStuffWidgets.so.${LIBKF5NewStuffWidgets_VERSION}
 lib/qt5/qml/org/kde/newstuff/
 @so lib/qt5/qml/org/kde/newstuff/libnewstuffqmlplugin.so
 lib/qt5/qml/org/kde/newstuff/qml/

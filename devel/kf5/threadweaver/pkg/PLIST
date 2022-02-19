@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/26 23:58:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/19 09:45:47 rsadowski Exp $
 include/KF5/
 include/KF5/ThreadWeaver/
 include/KF5/ThreadWeaver/ThreadWeaver/
@@ -70,7 +70,7 @@ include/KF5/ThreadWeaver/threadweaver/weaver.h
 include/KF5/ThreadWeaver/threadweaver/weaverimplstate.h
 include/KF5/ThreadWeaver/threadweaver/weaverinterface.h
 include/KF5/ThreadWeaver/threadweaver/workinghardstate.h
-include/KF5/threadweaver_version.h
+include/KF5/ThreadWeaver/threadweaver_version.h
 lib/cmake/KF5ThreadWeaver/
 lib/cmake/KF5ThreadWeaver/KF5ThreadWeaverConfig.cmake
 lib/cmake/KF5ThreadWeaver/KF5ThreadWeaverConfigVersion.cmake

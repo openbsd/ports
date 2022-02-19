@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/19 09:45:42 rsadowski Exp $
 include/KF5/KDEWebKit/
 include/KF5/KDEWebKit/KGraphicsWebView
 include/KF5/KDEWebKit/KWebPage
@@ -6,12 +6,12 @@ include/KF5/KDEWebKit/KWebPluginFactory
 include/KF5/KDEWebKit/KWebView
 include/KF5/KDEWebKit/KWebWallet
 include/KF5/KDEWebKit/kdewebkit_export.h
+include/KF5/KDEWebKit/kdewebkit_version.h
 include/KF5/KDEWebKit/kgraphicswebview.h
 include/KF5/KDEWebKit/kwebpage.h
 include/KF5/KDEWebKit/kwebpluginfactory.h
 include/KF5/KDEWebKit/kwebview.h
 include/KF5/KDEWebKit/kwebwallet.h
-include/KF5/kdewebkit_version.h
 lib/cmake/KF5WebKit/
 lib/cmake/KF5WebKit/KF5WebKitConfig.cmake
 lib/cmake/KF5WebKit/KF5WebKitConfigVersion.cmake

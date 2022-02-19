@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/13 15:02:07 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/KXmlGui/
 include/KF5/KXmlGui/KAboutApplicationDialog
 include/KF5/KXmlGui/KAboutPluginDialog
@@ -37,11 +37,11 @@ include/KF5/KXmlGui/ktoolbar.h
 include/KF5/KXmlGui/ktooltiphelper.h
 include/KF5/KXmlGui/kundoactions.h
 include/KF5/KXmlGui/kxmlgui_export.h
+include/KF5/KXmlGui/kxmlgui_version.h
 include/KF5/KXmlGui/kxmlguibuilder.h
 include/KF5/KXmlGui/kxmlguiclient.h
 include/KF5/KXmlGui/kxmlguifactory.h
 include/KF5/KXmlGui/kxmlguiwindow.h
-include/KF5/kxmlgui_version.h
 lib/cmake/KF5XmlGui/
 lib/cmake/KF5XmlGui/KF5XmlGuiConfig.cmake
 lib/cmake/KF5XmlGui/KF5XmlGuiConfigVersion.cmake

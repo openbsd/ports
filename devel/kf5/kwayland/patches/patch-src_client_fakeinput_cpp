@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_client_fakeinput_cpp,v 1.1 2022/02/19 09:45:45 rsadowski Exp $
+
+Index: src/client/fakeinput.cpp
+--- src/client/fakeinput.cpp.orig
++++ src/client/fakeinput.cpp
+@@ -10,8 +10,6 @@
+ #include <QPointF>
+ #include <QSizeF>
+ 
+-#include <linux/input.h>
+-
+ #include <wayland-fake-input-client-protocol.h>
+ 
+ namespace KWayland
+@@ -98,13 +96,13 @@ void FakeInput::Private::sendPointerButtonState(Qt::Mo
+     uint32_t b = 0;
+     switch (button) {
+     case Qt::LeftButton:
+-        b = BTN_LEFT;
++        //b = BTN_LEFT;
+         break;
+     case Qt::RightButton:
+-        b = BTN_RIGHT;
++        //b = BTN_RIGHT;
+         break;
+     case Qt::MiddleButton:
+-        b = BTN_MIDDLE;
++        //b = BTN_MIDDLE;
+         break;
+     default:
+         // TODO: more buttons, check implementation in QtWayland

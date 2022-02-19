@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/19 09:45:46 rsadowski Exp $
 @conflict prison-<=5.68.0
 @pkgpath graphics/prison
 include/KF5/
@@ -8,7 +8,7 @@ include/KF5/prison/Prison
 include/KF5/prison/abstractbarcode.h
 include/KF5/prison/prison.h
 include/KF5/prison/prison_export.h
-include/KF5/prison_version.h
+include/KF5/prison/prison_version.h
 lib/cmake/KF5Prison/
 lib/cmake/KF5Prison/KF5PrisonConfig.cmake
 lib/cmake/KF5Prison/KF5PrisonConfigVersion.cmake

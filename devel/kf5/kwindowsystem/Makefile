@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/19 10:51:03 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.19 2022/02/19 09:45:45 rsadowski Exp $
 
 COMMENT =		access to the windowing system for KDE apps
 DISTNAME =		kwindowsystem-${VERSION}
 
-SHARED_LIBS =		KF5WindowSystem		6.5
+SHARED_LIBS =		KF5WindowSystem		6.6
 
 WANTLIB += ${COMPILER_LIBCXX} ICE Qt5Core Qt5Gui Qt5Widgets Qt5X11Extras
 WANTLIB += SM X11 Xext Xfixes m xcb xcb-keysyms xcb-res

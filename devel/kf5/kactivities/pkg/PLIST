@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/02/19 09:45:40 rsadowski Exp $
 @bin bin/kactivities-cli
 include/KF5/KActivities/
 include/KF5/KActivities/KActivities/
@@ -16,7 +16,7 @@ include/KF5/KActivities/kactivities/info.h
 include/KF5/KActivities/kactivities/kactivities_export.h
 include/KF5/KActivities/kactivities/resourceinstance.h
 include/KF5/KActivities/kactivities/version.h
-include/KF5/kactivities_version.h
+include/KF5/KActivities/kactivities_version.h
 lib/cmake/KF5Activities/
 lib/cmake/KF5Activities/KF5ActivitiesConfig.cmake
 lib/cmake/KF5Activities/KF5ActivitiesConfigVersion.cmake

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/16 14:31:01 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/19 09:45:45 rsadowski Exp $
 
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
 
-SHARED_LIBS +=  KF5WaylandClient   0.0
+SHARED_LIBS +=  KF5WaylandClient   0.1
 SHARED_LIBS +=  KF5WaylandServer   0.0
 
 WANTLIB += ${COMPILER_LIBCXX} EGL Qt5Concurrent Qt5Core Qt5Gui
@@ -18,5 +18,6 @@ BUILD_DEPENDS =		x11/qt5/qtwayland \
 
 LIB_DEPENDS =		wayland/wayland
 
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 .include <bsd.port.mk>

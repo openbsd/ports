@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/11/16 14:30:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/19 09:45:41 rsadowski Exp $
 @conflict kcalcore-*
 @pkgpath x11/kde-applications/kcalcore
 include/KF5/
@@ -137,8 +137,8 @@ include/KF5/KCalendarCore/kcalendarcore/sorting.h
 include/KF5/KCalendarCore/kcalendarcore/todo.h
 include/KF5/KCalendarCore/kcalendarcore/vcalformat.h
 include/KF5/KCalendarCore/kcalendarcore/visitor.h
+include/KF5/KCalendarCore/kcalendarcore_version.h
 include/KF5/kcalcore_version.h
-include/KF5/kcalendarcore_version.h
 lib/cmake/KF5CalendarCore/
 lib/cmake/KF5CalendarCore/KF5CalendarCoreConfig.cmake
 lib/cmake/KF5CalendarCore/KF5CalendarCoreConfigVersion.cmake

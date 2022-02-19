@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/19 16:25:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/19 09:45:44 rsadowski Exp $
 include/KF5/KMediaPlayer/
 include/KF5/KMediaPlayer/KMediaPlayer/
 include/KF5/KMediaPlayer/KMediaPlayer/Player
@@ -7,7 +7,7 @@ include/KF5/KMediaPlayer/kmediaplayer/
 include/KF5/KMediaPlayer/kmediaplayer/kmediaplayer_export.h
 include/KF5/KMediaPlayer/kmediaplayer/player.h
 include/KF5/KMediaPlayer/kmediaplayer/view.h
-include/KF5/kmediaplayer_version.h
+include/KF5/KMediaPlayer/kmediaplayer_version.h
 lib/cmake/KF5MediaPlayer/
 lib/cmake/KF5MediaPlayer/KF5MediaPlayerConfig.cmake
 lib/cmake/KF5MediaPlayer/KF5MediaPlayerConfigVersion.cmake

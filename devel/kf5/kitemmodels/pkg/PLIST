@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/
 include/KF5/KItemModels/
 include/KF5/KItemModels/KBreadcrumbSelectionModel
@@ -20,13 +20,13 @@ include/KF5/KItemModels/kconcatenaterowsproxymodel.h
 include/KF5/KItemModels/kdescendantsproxymodel.h
 include/KF5/KItemModels/kextracolumnsproxymodel.h
 include/KF5/KItemModels/kitemmodels_export.h
+include/KF5/KItemModels/kitemmodels_version.h
 include/KF5/KItemModels/klinkitemselectionmodel.h
 include/KF5/KItemModels/kmodelindexproxymapper.h
 include/KF5/KItemModels/knumbermodel.h
 include/KF5/KItemModels/krearrangecolumnsproxymodel.h
 include/KF5/KItemModels/krecursivefilterproxymodel.h
 include/KF5/KItemModels/kselectionproxymodel.h
-include/KF5/kitemmodels_version.h
 lib/cmake/KF5ItemModels/
 lib/cmake/KF5ItemModels/KF5ItemModelsConfig.cmake
 lib/cmake/KF5ItemModels/KF5ItemModelsConfigVersion.cmake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/07 14:48:45 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/19 09:45:41 rsadowski Exp $
 @pkgpath x11/kde-applications/kcontacts
 include/KF5/KContacts/
 include/KF5/KContacts/KContacts/
@@ -64,7 +64,7 @@ include/KF5/KContacts/kcontacts/timezone.h
 include/KF5/KContacts/kcontacts/title.h
 include/KF5/KContacts/kcontacts/vcardconverter.h
 include/KF5/KContacts/kcontacts/vcarddrag.h
-include/KF5/kcontacts_version.h
+include/KF5/KContacts/kcontacts_version.h
 lib/cmake/KF5Contacts/
 lib/cmake/KF5Contacts/KF5ContactsConfig.cmake
 lib/cmake/KF5Contacts/KF5ContactsConfigVersion.cmake

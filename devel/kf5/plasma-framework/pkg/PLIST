@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/12/20 05:49:52 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.24 2022/02/19 09:45:46 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet
@@ -17,6 +17,7 @@ include/KF5/Plasma/Service
 include/KF5/Plasma/ServiceJob
 include/KF5/Plasma/Svg
 include/KF5/Plasma/Theme
+include/KF5/Plasma/plasma_version.h
 include/KF5/PlasmaQuick/
 include/KF5/PlasmaQuick/AppletQuickItem
 include/KF5/PlasmaQuick/ConfigModel
@@ -46,7 +47,6 @@ include/KF5/plasma/servicejob.h
 include/KF5/plasma/svg.h
 include/KF5/plasma/theme.h
 include/KF5/plasma/version.h
-include/KF5/plasma_version.h
 include/KF5/plasmaquick/
 include/KF5/plasmaquick/appletquickitem.h
 include/KF5/plasmaquick/configmodel.h
@@ -629,6 +629,7 @@ share/plasma/desktoptheme/default/icons/view.svgz
 share/plasma/desktoptheme/default/icons/vlc.svgz
 share/plasma/desktoptheme/default/icons/wallet.svgz
 share/plasma/desktoptheme/default/icons/window.svgz
+share/plasma/desktoptheme/default/icons/yakuake.svgz
 share/plasma/desktoptheme/default/icons/zoom.svgz
 share/plasma/desktoptheme/default/metadata.desktop
 share/plasma/desktoptheme/default/opaque/
@@ -641,6 +642,7 @@ share/plasma/desktoptheme/default/solid/
 share/plasma/desktoptheme/default/solid/dialogs/
 share/plasma/desktoptheme/default/solid/dialogs/background.svgz
 share/plasma/desktoptheme/default/solid/widgets/
+share/plasma/desktoptheme/default/solid/widgets/background.svgz
 share/plasma/desktoptheme/default/solid/widgets/panel-background.svgz
 share/plasma/desktoptheme/default/solid/widgets/tooltip.svgz
 share/plasma/desktoptheme/default/translucent/

@@ -1,11 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/12/19 10:51:02 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.19 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/
 include/KF5/Kirigami2/
+include/KF5/Kirigami2/Kirigami/
+include/KF5/Kirigami2/Kirigami/KirigamiPluginFactory
+include/KF5/Kirigami2/Kirigami/PlatformTheme
+include/KF5/Kirigami2/Kirigami/TabletModeWatcher
+include/KF5/Kirigami2/Kirigami/Units
+include/KF5/Kirigami2/Kirigami/VirtualKeyboardWatcher
 include/KF5/Kirigami2/KirigamiPluginFactory
 include/KF5/Kirigami2/PlatformTheme
 include/KF5/Kirigami2/TabletModeWatcher
 include/KF5/Kirigami2/Units
-include/KF5/Kirigami2/kirigami2_export.h
+include/KF5/Kirigami2/kirigami/
+include/KF5/Kirigami2/kirigami/kirigami2_export.h
+include/KF5/Kirigami2/kirigami/kirigamipluginfactory.h
+include/KF5/Kirigami2/kirigami/platformtheme.h
+include/KF5/Kirigami2/kirigami/tabletmodewatcher.h
+include/KF5/Kirigami2/kirigami/units.h
+include/KF5/Kirigami2/kirigami/virtualkeyboardwatcher.h
 include/KF5/Kirigami2/kirigamipluginfactory.h
 include/KF5/Kirigami2/platformtheme.h
 include/KF5/Kirigami2/tabletmodewatcher.h
@@ -26,6 +38,7 @@ lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationItem.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractApplicationWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractCard.qml
+lib/qt5/qml/org/kde/kirigami.2/AbstractChip.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractItemViewHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/Action.qml
@@ -41,6 +54,7 @@ lib/qt5/qml/org/kde/kirigami.2/CardsGridView.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsLayout.qml
 lib/qt5/qml/org/kde/kirigami.2/CardsListView.qml
 lib/qt5/qml/org/kde/kirigami.2/CheckableListItem.qml
+lib/qt5/qml/org/kde/kirigami.2/Chip.qml
 lib/qt5/qml/org/kde/kirigami.2/ContextDrawer.qml
 lib/qt5/qml/org/kde/kirigami.2/Dialog.qml
 lib/qt5/qml/org/kde/kirigami.2/FlexColumn.qml
@@ -73,7 +87,7 @@ lib/qt5/qml/org/kde/kirigami.2/ShadowedImage.qml
 lib/qt5/qml/org/kde/kirigami.2/SwipeListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/ToolBarApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/UrlButton.qml
-@so lib/qt5/qml/org/kde/kirigami.2/libkirigamiplugin.so
+@so lib/qt5/qml/org/kde/kirigami.2/libKirigamiPlugin.so
 lib/qt5/qml/org/kde/kirigami.2/plugins.qmltypes
 lib/qt5/qml/org/kde/kirigami.2/private/
 lib/qt5/qml/org/kde/kirigami.2/private/ActionButton.qml
@@ -85,6 +99,7 @@ lib/qt5/qml/org/kde/kirigami.2/private/CardsGridViewPrivate.qml
 lib/qt5/qml/org/kde/kirigami.2/private/ContextDrawerActionItem.qml
 lib/qt5/qml/org/kde/kirigami.2/private/CornerShadow.qml
 lib/qt5/qml/org/kde/kirigami.2/private/DefaultCardBackground.qml
+lib/qt5/qml/org/kde/kirigami.2/private/DefaultChipBackground.qml
 lib/qt5/qml/org/kde/kirigami.2/private/DefaultListItemBackground.qml
 lib/qt5/qml/org/kde/kirigami.2/private/EdgeShadow.qml
 lib/qt5/qml/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
@@ -130,6 +145,7 @@ lib/qt5/qml/org/kde/kirigami.2/swipenavigator/templates/PageTab.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractCard.qml
+lib/qt5/qml/org/kde/kirigami.2/templates/AbstractChip.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/AbstractListItem.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/ApplicationHeader.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/InlineMessage.qml

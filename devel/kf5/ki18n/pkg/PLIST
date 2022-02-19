@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/12/19 10:51:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/
 include/KF5/KI18n/
 include/KF5/KI18n/KLazyLocalizedString
@@ -8,6 +8,7 @@ include/KF5/KI18n/KLocalizedTranslator
 include/KF5/KI18n/KuitMarkup
 include/KF5/KI18n/KuitSetup
 include/KF5/KI18n/ki18n_export.h
+include/KF5/KI18n/ki18n_version.h
 include/KF5/KI18n/klazylocalizedstring.h
 include/KF5/KI18n/klocalizedcontext.h
 include/KF5/KI18n/klocalizedstring.h
@@ -22,7 +23,6 @@ include/KF5/KI18nLocaleData/kcountry.h
 include/KF5/KI18nLocaleData/kcountrysubdivision.h
 include/KF5/KI18nLocaleData/ki18nlocaledata_export.h
 include/KF5/KI18nLocaleData/ktimezone.h
-include/KF5/ki18n_version.h
 lib/cmake/KF5I18n/
 lib/cmake/KF5I18n/KF5I18nConfig.cmake
 lib/cmake/KF5I18n/KF5I18nConfigVersion.cmake

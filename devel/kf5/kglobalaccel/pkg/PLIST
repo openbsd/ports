@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/13 15:02:05 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/02/19 09:45:42 rsadowski Exp $
 @bin bin/kglobalaccel5
 include/KF5/KGlobalAccel/
 include/KF5/KGlobalAccel/KGlobalAccel
 include/KF5/KGlobalAccel/KGlobalShortcutInfo
 include/KF5/KGlobalAccel/kglobalaccel.h
 include/KF5/KGlobalAccel/kglobalaccel_export.h
+include/KF5/KGlobalAccel/kglobalaccel_version.h
 include/KF5/KGlobalAccel/kglobalshortcutinfo.h
 include/KF5/KGlobalAccel/private/
 include/KF5/KGlobalAccel/private/kf5globalaccelprivate_export.h
 include/KF5/KGlobalAccel/private/kglobalaccel_interface.h
 include/KF5/KGlobalAccel/private/kglobalacceld.h
-include/KF5/kglobalaccel_version.h
 lib/cmake/KF5GlobalAccel/
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfig.cmake
 lib/cmake/KF5GlobalAccel/KF5GlobalAccelConfigVersion.cmake

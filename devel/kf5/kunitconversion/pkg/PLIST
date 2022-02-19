@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/10 08:42:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/KUnitConversion/
 include/KF5/KUnitConversion/KUnitConversion/
 include/KF5/KUnitConversion/KUnitConversion/Converter
@@ -11,7 +11,7 @@ include/KF5/KUnitConversion/kunitconversion/kunitconversion_export.h
 include/KF5/KUnitConversion/kunitconversion/unit.h
 include/KF5/KUnitConversion/kunitconversion/unitcategory.h
 include/KF5/KUnitConversion/kunitconversion/value.h
-include/KF5/kunitconversion_version.h
+include/KF5/KUnitConversion/kunitconversion_version.h
 lib/cmake/KF5UnitConversion/
 lib/cmake/KF5UnitConversion/KF5UnitConversionConfig.cmake
 lib/cmake/KF5UnitConversion/KF5UnitConversionConfigVersion.cmake

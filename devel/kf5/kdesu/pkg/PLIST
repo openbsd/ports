@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/08/08 12:21:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/19 09:45:42 rsadowski Exp $
 include/KF5/KDESu/
 include/KF5/KDESu/KDESu/
 include/KF5/KDESu/KDESu/Client
@@ -18,7 +18,7 @@ include/KF5/KDESu/kdesu/stub.h
 include/KF5/KDESu/kdesu/stubprocess.h
 include/KF5/KDESu/kdesu/su.h
 include/KF5/KDESu/kdesu/suprocess.h
-include/KF5/kdesu_version.h
+include/KF5/KDESu/kdesu_version.h
 lib/cmake/KF5Su/
 lib/cmake/KF5Su/KF5SuConfig.cmake
 lib/cmake/KF5Su/KF5SuConfigVersion.cmake

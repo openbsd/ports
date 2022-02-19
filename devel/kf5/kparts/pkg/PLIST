@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/10/13 15:02:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2022/02/19 09:45:44 rsadowski Exp $
 include/KF5/KParts/
 include/KF5/KParts/KParts/
 include/KF5/KParts/KParts/BrowserArguments
@@ -68,7 +68,7 @@ include/KF5/KParts/kparts/selectorinterface.h
 include/KF5/KParts/kparts/statusbarextension.h
 include/KF5/KParts/kparts/textextension.h
 include/KF5/KParts/kparts/windowargs.h
-include/KF5/kparts_version.h
+include/KF5/KParts/kparts_version.h
 lib/cmake/KF5Parts/
 lib/cmake/KF5Parts/KF5PartsConfig.cmake
 lib/cmake/KF5Parts/KF5PartsConfigVersion.cmake
@@ -76,6 +76,8 @@ lib/cmake/KF5Parts/KF5PartsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Parts/KF5PartsTargets.cmake
 @lib lib/libKF5Parts.so.${LIBKF5Parts_VERSION}
 @so lib/qt5/plugins/spellcheckplugin.so
+share/kdevappwizard/
+share/kdevappwizard/templates/
 share/kdevappwizard/templates/kpartsapp.tar.bz2
 share/kf5/mkspecs/qt_KParts.pri
 share/kservicetypes5/browserview.desktop

@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/09/07 14:48:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/19 09:45:46 rsadowski Exp $
 include/KF5/KXmlRpcClient/
 include/KF5/KXmlRpcClient/KXmlRpcClient/
 include/KF5/KXmlRpcClient/KXmlRpcClient/Client
 include/KF5/KXmlRpcClient/kxmlrpcclient/
 include/KF5/KXmlRpcClient/kxmlrpcclient/client.h
 include/KF5/KXmlRpcClient/kxmlrpcclient/kxmlrpcclient_export.h
-include/KF5/kxmlrpcclient_version.h
+include/KF5/KXmlRpcClient/kxmlrpcclient_version.h
 lib/cmake/KF5XmlRpcClient/
 lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientConfig.cmake
 lib/cmake/KF5XmlRpcClient/KF5XmlRpcClientConfigVersion.cmake

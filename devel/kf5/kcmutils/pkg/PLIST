@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/12/19 10:51:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/19 09:45:41 rsadowski Exp $
 include/KF5/KCMUtils/
 include/KF5/KCMUtils/KCModuleContainer
 include/KF5/KCMUtils/KCModuleData
@@ -15,6 +15,7 @@ include/KF5/KCMUtils/kcmoduleloader.h
 include/KF5/KCMUtils/kcmoduleproxy.h
 include/KF5/KCMUtils/kcmultidialog.h
 include/KF5/KCMUtils/kcmutils_export.h
+include/KF5/KCMUtils/kcmutils_version.h
 include/KF5/KCMUtils/kpluginselector.h
 include/KF5/KCMUtils/kpluginwidget.h
 include/KF5/KCMUtils/ksettings/
@@ -24,7 +25,6 @@ include/KF5/KCMUtils/ksettings/PluginPage
 include/KF5/KCMUtils/ksettings/dialog.h
 include/KF5/KCMUtils/ksettings/dispatcher.h
 include/KF5/KCMUtils/ksettings/pluginpage.h
-include/KF5/kcmutils_version.h
 lib/cmake/KF5KCMUtils/
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfig.cmake
 lib/cmake/KF5KCMUtils/KF5KCMUtilsConfigVersion.cmake

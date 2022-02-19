@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/12/19 10:51:01 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/02/19 09:45:42 rsadowski Exp $
+@bin bin/kde-geo-uri-handler
 include/KF5/
 include/KF5/KGuiAddons/
 include/KF5/KGuiAddons/KColorCollection
@@ -21,6 +22,7 @@ include/KF5/KGuiAddons/kdatevalidator.h
 include/KF5/KGuiAddons/keysequencerecorder.h
 include/KF5/KGuiAddons/kfontutils.h
 include/KF5/KGuiAddons/kguiaddons_export.h
+include/KF5/KGuiAddons/kguiaddons_version.h
 include/KF5/KGuiAddons/kiconutils.h
 include/KF5/KGuiAddons/kimagecache.h
 include/KF5/KGuiAddons/klocalimagecacheimpl.h
@@ -28,7 +30,6 @@ include/KF5/KGuiAddons/kmodifierkeyinfo.h
 include/KF5/KGuiAddons/kmodifierkeyinfoprovider_p.h
 include/KF5/KGuiAddons/ksystemclipboard.h
 include/KF5/KGuiAddons/kwordwrap.h
-include/KF5/kguiaddons_version.h
 lib/cmake/KF5GuiAddons/
 lib/cmake/KF5GuiAddons/KF5GuiAddonsConfig.cmake
 lib/cmake/KF5GuiAddons/KF5GuiAddonsConfigVersion.cmake
@@ -39,8 +40,13 @@ lib/qt5/plugins/kf5/
 lib/qt5/plugins/kf5/kguiaddons/
 lib/qt5/plugins/kf5/kguiaddons/kmodifierkey/
 @so lib/qt5/plugins/kf5/kguiaddons/kmodifierkey/kmodifierkey_xcb.so
+share/applications/google-maps-geo-handler.desktop
+share/applications/openstreetmap-geo-handler.desktop
+share/applications/qwant-maps-geo-handler.desktop
+share/applications/wheelmap-geo-handler.desktop
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KGuiAddons.pri
 share/qlogging-categories5/
 share/qlogging-categories5/kguiaddons.categories
+@tag update-desktop-database

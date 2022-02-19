@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:46 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/19 09:45:41 rsadowski Exp $
 include/KF5/KCrash/
 include/KF5/KCrash/KCrash
 include/KF5/KCrash/kcrash.h
 include/KF5/KCrash/kcrash_export.h
-include/KF5/kcrash_version.h
+include/KF5/KCrash/kcrash_version.h
 lib/cmake/KF5Crash/
 lib/cmake/KF5Crash/KF5CrashConfig.cmake
 lib/cmake/KF5Crash/KF5CrashConfigVersion.cmake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/12/19 10:51:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.17 2022/02/19 09:45:41 rsadowski Exp $
 @bin bin/desktoptojson
 include/KF5/
 include/KF5/KCoreAddons/
@@ -17,6 +17,7 @@ include/KF5/KCoreAddons/KJob
 include/KF5/KCoreAddons/KJobTrackerInterface
 include/KF5/KCoreAddons/KJobUiDelegate
 include/KF5/KCoreAddons/KJsonUtils
+include/KF5/KCoreAddons/KLibexec
 include/KF5/KCoreAddons/KListOpenFilesJob
 include/KF5/KCoreAddons/KMacroExpander
 include/KF5/KCoreAddons/KMessage
@@ -45,6 +46,7 @@ include/KF5/KCoreAddons/kbackup.h
 include/KF5/KCoreAddons/kcompositejob.h
 include/KF5/KCoreAddons/kcoreaddons.h
 include/KF5/KCoreAddons/kcoreaddons_export.h
+include/KF5/KCoreAddons/kcoreaddons_version.h
 include/KF5/KCoreAddons/kdelibs4configmigrator.h
 include/KF5/KCoreAddons/kdelibs4migration.h
 include/KF5/KCoreAddons/kdirwatch.h
@@ -57,6 +59,7 @@ include/KF5/KCoreAddons/kjob.h
 include/KF5/KCoreAddons/kjobtrackerinterface.h
 include/KF5/KCoreAddons/kjobuidelegate.h
 include/KF5/KCoreAddons/kjsonutils.h
+include/KF5/KCoreAddons/klibexec.h
 include/KF5/KCoreAddons/klistopenfilesjob.h
 include/KF5/KCoreAddons/kmacroexpander.h
 include/KF5/KCoreAddons/kmessage.h
@@ -77,7 +80,6 @@ include/KF5/KCoreAddons/ktexttohtml.h
 include/KF5/KCoreAddons/ktexttohtmlemoticonsinterface.h
 include/KF5/KCoreAddons/kurlmimedata.h
 include/KF5/KCoreAddons/kuser.h
-include/KF5/kcoreaddons_version.h
 lib/cmake/KF5CoreAddons/
 lib/cmake/KF5CoreAddons/KF5CoreAddonsConfig.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsConfigVersion.cmake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/07 14:48:51 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/02/19 09:45:46 rsadowski Exp $
 @bin bin/solid-hardware5
 include/KF5/
 include/KF5/Solid/
@@ -39,7 +39,7 @@ include/KF5/Solid/solid/solidnamespace.h
 include/KF5/Solid/solid/storageaccess.h
 include/KF5/Solid/solid/storagedrive.h
 include/KF5/Solid/solid/storagevolume.h
-include/KF5/solid_version.h
+include/KF5/Solid/solid_version.h
 lib/cmake/KF5Solid/
 lib/cmake/KF5Solid/KF5SolidConfig.cmake
 lib/cmake/KF5Solid/KF5SolidConfigVersion.cmake

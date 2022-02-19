@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/12 14:29:54 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/
 include/KF5/KWayland/
 include/KF5/KWayland/Client/
@@ -106,7 +106,7 @@ include/KF5/KWayland/Server/xdgdecoration_interface.h
 include/KF5/KWayland/Server/xdgforeign_interface.h
 include/KF5/KWayland/Server/xdgoutput_interface.h
 include/KF5/KWayland/Server/xdgshell_interface.h
-include/KF5/kwayland_version.h
+include/KF5/KWayland/kwayland_version.h
 lib/cmake/KF5Wayland/
 lib/cmake/KF5Wayland/KF5WaylandConfig.cmake
 lib/cmake/KF5Wayland/KF5WaylandConfigVersion.cmake
@@ -114,6 +114,7 @@ lib/cmake/KF5Wayland/KF5WaylandTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5Wayland/KF5WaylandTargets.cmake
 @lib lib/libKF5WaylandClient.so.${LIBKF5WaylandClient_VERSION}
 @lib lib/libKF5WaylandServer.so.${LIBKF5WaylandServer_VERSION}
+lib/pkgconfig/KF5WaylandClient.pc
 @bin libexec/org-kde-kf5-kwayland-testserver
 share/kf5/
 share/kf5/mkspecs/

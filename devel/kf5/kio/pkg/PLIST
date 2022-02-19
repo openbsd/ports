@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/11/16 14:31:00 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.24 2022/02/19 09:45:43 rsadowski Exp $
 @bin bin/kcookiejar5
 @bin bin/ktelnetservice5
 @bin bin/ktrash5
 @bin bin/protocoltojson
+include/KF5/KIO/
+include/KF5/KIO/kio_version.h
 include/KF5/KIOCore/
 include/KF5/KIOCore/KACL
 include/KF5/KIOCore/KCoreDirLister
@@ -281,7 +283,6 @@ include/KF5/KIOWidgets/kurlrequesterdialog.h
 include/KF5/kio/
 include/KF5/kio/kntlm.h
 include/KF5/kio/kntlm_export.h
-include/KF5/kio_version.h
 lib/cmake/KF5KIO/
 lib/cmake/KF5KIO/KF5KIOConfig.cmake
 lib/cmake/KF5KIO/KF5KIOConfigVersion.cmake
@@ -1048,9 +1049,9 @@ share/examples/kio/xdg/kshorturifilterrc
 @sample ${SYSCONFDIR}/xdg/kshorturifilterrc
 share/kconf_update/
 share/kconf_update/filepicker.upd
-share/kdevappwizard/
-share/kdevappwizard/templates/
-share/kdevappwizard/templates/ioslave.tar.bz2
+share/kdevfiletemplates/
+share/kdevfiletemplates/templates/
+share/kdevfiletemplates/templates/ioslave.tar.bz2
 share/kf5/kcookiejar/
 share/kf5/kcookiejar/domain_info
 share/kf5/mkspecs/qt_KIOCore.pri

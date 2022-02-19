@@ -1,0 +1,42 @@
+$OpenBSD: patch-autotests_client_test_fake_input_cpp,v 1.1 2022/02/19 09:45:45 rsadowski Exp $
+
+Index: autotests/client/test_fake_input.cpp
+--- autotests/client/test_fake_input.cpp.orig
++++ autotests/client/test_fake_input.cpp
+@@ -15,8 +15,6 @@
+ #include "../../src/server/display.h"
+ #include "../../src/server/fakeinput_interface.h"
+ 
+-#include <linux/input.h>
+-
+ using namespace KWayland::Client;
+ using namespace KWayland::Server;
+ 
+@@ -198,9 +196,11 @@ void FakeInputTest::testPointerButtonQt_data()
+     QTest::addColumn<Qt::MouseButton>("qtButton");
+     QTest::addColumn<quint32>("linuxButton");
+ 
++/*
+     QTest::newRow("left") << Qt::LeftButton << quint32(BTN_LEFT);
+     QTest::newRow("right") << Qt::RightButton << quint32(BTN_RIGHT);
+     QTest::newRow("middle") << Qt::MiddleButton << quint32(BTN_MIDDLE);
++*/
+ }
+ 
+ void FakeInputTest::testPointerButtonQt()
+@@ -247,6 +247,7 @@ void FakeInputTest::testPointerButtonLinux_data()
+ {
+     QTest::addColumn<quint32>("linuxButton");
+ 
++/*
+     QTest::newRow("left") << quint32(BTN_LEFT);
+     QTest::newRow("right") << quint32(BTN_RIGHT);
+     QTest::newRow("middle") << quint32(BTN_MIDDLE);
+@@ -255,6 +256,7 @@ void FakeInputTest::testPointerButtonLinux_data()
+     QTest::newRow("forward") << quint32(BTN_FORWARD);
+     QTest::newRow("back") << quint32(BTN_BACK);
+     QTest::newRow("task") << quint32(BTN_TASK);
++*/
+ }
+ 
+ void FakeInputTest::testPointerButtonLinux()

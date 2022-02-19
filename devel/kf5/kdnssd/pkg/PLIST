@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/08 12:21:36 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/19 09:45:42 rsadowski Exp $
 include/KF5/
 include/KF5/KDNSSD/
 include/KF5/KDNSSD/DNSSD/
@@ -38,7 +38,7 @@ include/KF5/KDNSSD/kdnssd/servicebase.h
 include/KF5/KDNSSD/kdnssd/servicebrowser.h
 include/KF5/KDNSSD/kdnssd/servicemodel.h
 include/KF5/KDNSSD/kdnssd/servicetypebrowser.h
-include/KF5/kdnssd_version.h
+include/KF5/KDNSSD/kdnssd_version.h
 lib/cmake/KF5DNSSD/
 lib/cmake/KF5DNSSD/KF5DNSSDConfig.cmake
 lib/cmake/KF5DNSSD/KF5DNSSDConfigVersion.cmake

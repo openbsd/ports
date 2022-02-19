@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/11/03 16:12:08 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/19 09:45:45 rsadowski Exp $
 @bin bin/kwallet-query
 @bin bin/kwalletd5
 include/KF5/KWallet/
 include/KF5/KWallet/KWallet
 include/KF5/KWallet/kwallet.h
 include/KF5/KWallet/kwallet_export.h
-include/KF5/kwallet_version.h
+include/KF5/KWallet/kwallet_version.h
 lib/cmake/KF5Wallet/
 lib/cmake/KF5Wallet/KF5WalletConfig.cmake
 lib/cmake/KF5Wallet/KF5WalletConfigVersion.cmake
@@ -14,11 +14,12 @@ lib/cmake/KF5Wallet/KF5WalletTargets.cmake
 @lib lib/libKF5Wallet.so.${LIBKF5Wallet_VERSION}
 @lib lib/libkwalletbackend5.so.${LIBkwalletbackend5_VERSION}
 @man man/man1/kwallet-query.1
+share/applications/org.kde.kwalletd5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KWallet.xml
 share/dbus-1/services/org.kde.kwalletd5.service
 share/kf5/mkspecs/qt_KWallet.pri
 share/knotifications5/
-share/knotifications5/kwalletd.notifyrc
+share/knotifications5/kwalletd5.notifyrc
 share/kservices5/
 share/kservices5/kwalletd5.desktop
 share/locale/ar/LC_MESSAGES/kwallet-query.mo

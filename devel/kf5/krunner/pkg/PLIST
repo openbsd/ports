@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/14 14:35:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/KRunner/
 include/KF5/KRunner/KRunner/
 include/KF5/KRunner/KRunner/AbstractRunner
@@ -15,7 +15,7 @@ include/KF5/KRunner/krunner/querymatch.h
 include/KF5/KRunner/krunner/runnercontext.h
 include/KF5/KRunner/krunner/runnermanager.h
 include/KF5/KRunner/krunner/runnersyntax.h
-include/KF5/krunner_version.h
+include/KF5/KRunner/krunner_version.h
 lib/cmake/KF5Runner/
 lib/cmake/KF5Runner/KF5KRunnerMacros.cmake
 lib/cmake/KF5Runner/KF5RunnerConfig.cmake
@@ -27,8 +27,8 @@ lib/qt5/qml/org/kde/runnermodel/
 @so lib/qt5/qml/org/kde/runnermodel/librunnermodelplugin.so
 lib/qt5/qml/org/kde/runnermodel/qmldir
 share/dbus-1/interfaces/kf5_org.kde.krunner1.xml
-share/kdevappwizard/templates/runner.tar.bz2
-share/kdevappwizard/templates/runnerpython.tar.bz2
+share/kdevfiletemplates/templates/runner.tar.bz2
+share/kdevfiletemplates/templates/runnerpython.tar.bz2
 share/kf5/mkspecs/qt_KRunner.pri
 share/kservicetypes5/plasma-runner.desktop
 share/qlogging-categories5/krunner.categories

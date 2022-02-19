@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/08/08 12:21:38 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/
 include/KF5/KWidgetsAddons/
 include/KF5/KWidgetsAddons/KAcceleratorManager
@@ -155,9 +155,9 @@ include/KF5/KWidgetsAddons/kurllabel.h
 include/KF5/KWidgetsAddons/kviewstatemaintainerbase.h
 include/KF5/KWidgetsAddons/kviewstateserializer.h
 include/KF5/KWidgetsAddons/kwidgetsaddons_export.h
+include/KF5/KWidgetsAddons/kwidgetsaddons_version.h
 include/KF5/KWidgetsAddons/kxyselector.h
 include/KF5/KWidgetsAddons/lineediturldropeventfilter.h
-include/KF5/kwidgetsaddons_version.h
 lib/cmake/KF5WidgetsAddons/
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfig.cmake
 lib/cmake/KF5WidgetsAddons/KF5WidgetsAddonsConfigVersion.cmake

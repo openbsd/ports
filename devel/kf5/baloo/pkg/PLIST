@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/12/19 10:50:59 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2022/02/19 09:45:39 rsadowski Exp $
 @conflict baloo->=4
 @conflict kde-i18n-*
 @conflict kde-l10n-*
@@ -24,7 +24,7 @@ include/KF5/Baloo/baloo/query.h
 include/KF5/Baloo/baloo/queryrunnable.h
 include/KF5/Baloo/baloo/resultiterator.h
 include/KF5/Baloo/baloo/taglistjob.h
-include/KF5/baloo_version.h
+include/KF5/Baloo/baloo_version.h
 lib/cmake/KF5Baloo/
 lib/cmake/KF5Baloo/KF5BalooConfig.cmake
 lib/cmake/KF5Baloo/KF5BalooConfigVersion.cmake
@@ -62,8 +62,14 @@ share/locale/az/LC_MESSAGES/balooshow5.mo
 share/locale/az/LC_MESSAGES/kio5_baloosearch.mo
 share/locale/az/LC_MESSAGES/kio5_tags.mo
 share/locale/az/LC_MESSAGES/kio5_timeline.mo
+share/locale/bg/LC_MESSAGES/balooctl5.mo
+share/locale/bg/LC_MESSAGES/baloodb5.mo
+share/locale/bg/LC_MESSAGES/balooengine5.mo
 share/locale/bg/LC_MESSAGES/baloosearch5.mo
 share/locale/bg/LC_MESSAGES/balooshow5.mo
+share/locale/bg/LC_MESSAGES/kio5_baloosearch.mo
+share/locale/bg/LC_MESSAGES/kio5_tags.mo
+share/locale/bg/LC_MESSAGES/kio5_timeline.mo
 share/locale/bs/LC_MESSAGES/balooctl5.mo
 share/locale/bs/LC_MESSAGES/baloosearch5.mo
 share/locale/bs/LC_MESSAGES/balooshow5.mo

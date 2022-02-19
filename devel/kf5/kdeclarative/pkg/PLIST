@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/09/10 08:42:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.13 2022/02/19 09:45:42 rsadowski Exp $
 @bin bin/kpackagelauncherqml
 include/KF5/KDeclarative/
 include/KF5/KDeclarative/CalendarEvents/
@@ -27,6 +27,7 @@ include/KF5/KDeclarative/kdeclarative/kdeclarative.h
 include/KF5/KDeclarative/kdeclarative/kdeclarative_export.h
 include/KF5/KDeclarative/kdeclarative/qmlobject.h
 include/KF5/KDeclarative/kdeclarative/qmlobjectsharedengine.h
+include/KF5/KDeclarative/kdeclarative_version.h
 include/KF5/KDeclarative/kquickaddons/
 include/KF5/KDeclarative/kquickaddons/configmodule.h
 include/KF5/KDeclarative/kquickaddons/imagetexturescache.h
@@ -39,7 +40,6 @@ include/KF5/KDeclarative/quickaddons/
 include/KF5/KDeclarative/quickaddons/imagetexturescache.h
 include/KF5/KDeclarative/quickaddons/managedtexturenode.h
 include/KF5/KDeclarative/quickaddons/quickaddons_export.h
-include/KF5/kdeclarative_version.h
 lib/cmake/KF5Declarative/
 lib/cmake/KF5Declarative/KF5DeclarativeConfig.cmake
 lib/cmake/KF5Declarative/KF5DeclarativeConfigVersion.cmake

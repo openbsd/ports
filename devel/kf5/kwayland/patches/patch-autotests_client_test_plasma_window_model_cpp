@@ -1,0 +1,13 @@
+$OpenBSD: patch-autotests_client_test_plasma_window_model_cpp,v 1.1 2022/02/19 09:45:45 rsadowski Exp $
+
+Index: autotests/client/test_plasma_window_model.cpp
+--- autotests/client/test_plasma_window_model.cpp.orig
++++ autotests/client/test_plasma_window_model.cpp
+@@ -17,7 +17,6 @@
+ #include "../../src/server/plasmavirtualdesktop_interface.h"
+ #include "../../src/server/plasmawindowmanagement_interface.h"
+ 
+-#include <linux/input.h>
+ 
+ using namespace KWayland::Client;
+ using namespace KWayland::Server;

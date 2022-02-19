@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/02/14 06:22:31 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/
 include/KF5/KTextEditor/KTextEditor/AbstractAnnotationItemDelegate
@@ -65,7 +65,7 @@ include/KF5/KTextEditor/ktexteditor/sessionconfiginterface.h
 include/KF5/KTextEditor/ktexteditor/texthintinterface.h
 include/KF5/KTextEditor/ktexteditor/view.h
 include/KF5/KTextEditor/ktexteditor_export.h
-include/KF5/ktexteditor_version.h
+include/KF5/KTextEditor/ktexteditor_version.h
 lib/cmake/KF5TextEditor/
 lib/cmake/KF5TextEditor/KF5TextEditorConfig.cmake
 lib/cmake/KF5TextEditor/KF5TextEditorConfigVersion.cmake
@@ -81,7 +81,7 @@ share/dbus-1/system.d/org.kde.ktexteditor.katetextbuffer.conf
 share/katepart5/
 share/katepart5/script/
 share/katepart5/script/README.md
-share/kdevappwizard/templates/ktexteditor-plugin.tar.bz2
+share/kdevfiletemplates/templates/ktexteditor-plugin.tar.bz2
 share/kf5/mkspecs/qt_KTextEditor.pri
 share/kservices5/katepart.desktop
 share/kservicetypes5/ktexteditor.desktop

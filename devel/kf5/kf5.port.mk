@@ -1,6 +1,6 @@
-# $OpenBSD: kf5.port.mk,v 1.30 2021/12/19 10:50:59 rsadowski Exp $
+# $OpenBSD: kf5.port.mk,v 1.31 2022/02/19 09:45:39 rsadowski Exp $
 
-MODKF5_VERSION =	5.89.0
+MODKF5_VERSION =	5.91.0
 
 EXTRACT_SUFX ?=		.tar.xz
 

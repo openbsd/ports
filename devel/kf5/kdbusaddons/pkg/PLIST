@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/10/13 15:02:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.12 2022/02/19 09:45:41 rsadowski Exp $
 @bin bin/kquitapp5
 include/KF5/
 include/KF5/KDBusAddons/
@@ -9,13 +9,13 @@ include/KF5/KDBusAddons/KDEDModule
 include/KF5/KDBusAddons/KDEInitInterface
 include/KF5/KDBusAddons/UpdateLaunchEnvironmentJob
 include/KF5/KDBusAddons/kdbusaddons_export.h
+include/KF5/KDBusAddons/kdbusaddons_version.h
 include/KF5/KDBusAddons/kdbusconnectionpool.h
 include/KF5/KDBusAddons/kdbusinterprocesslock.h
 include/KF5/KDBusAddons/kdbusservice.h
 include/KF5/KDBusAddons/kdedmodule.h
 include/KF5/KDBusAddons/kdeinitinterface.h
 include/KF5/KDBusAddons/updatelaunchenvironmentjob.h
-include/KF5/kdbusaddons_version.h
 lib/cmake/KF5DBusAddons/
 lib/cmake/KF5DBusAddons/KF5DBusAddonsConfig.cmake
 lib/cmake/KF5DBusAddons/KF5DBusAddonsConfigVersion.cmake

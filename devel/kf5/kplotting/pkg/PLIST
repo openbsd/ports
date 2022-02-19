@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/23 18:01:10 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/19 09:45:44 rsadowski Exp $
 include/KF5/
 include/KF5/KPlotting/
 include/KF5/KPlotting/KPlotAxis
@@ -9,8 +9,8 @@ include/KF5/KPlotting/kplotaxis.h
 include/KF5/KPlotting/kplotobject.h
 include/KF5/KPlotting/kplotpoint.h
 include/KF5/KPlotting/kplotting_export.h
+include/KF5/KPlotting/kplotting_version.h
 include/KF5/KPlotting/kplotwidget.h
-include/KF5/kplotting_version.h
 lib/cmake/KF5Plotting/
 lib/cmake/KF5Plotting/KF5PlottingConfig.cmake
 lib/cmake/KF5Plotting/KF5PlottingConfigVersion.cmake

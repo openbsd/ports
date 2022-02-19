@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2021/12/19 10:51:03 rsadowski Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2022/02/19 09:45:46 rsadowski Exp $
 @bin bin/gentrigrams
 @bin bin/parsetrigrams
 include/KF5/
+include/KF5/Sonnet/
+include/KF5/Sonnet/sonnet_version.h
 include/KF5/SonnetCore/
 include/KF5/SonnetCore/Sonnet/
 include/KF5/SonnetCore/Sonnet/BackgroundChecker
@@ -32,7 +34,6 @@ include/KF5/SonnetUi/sonnet/dictionarycombobox.h
 include/KF5/SonnetUi/sonnet/highlighter.h
 include/KF5/SonnetUi/sonnet/sonnetui_export.h
 include/KF5/SonnetUi/sonnet/spellcheckdecorator.h
-include/KF5/sonnet_version.h
 lib/cmake/KF5Sonnet/
 lib/cmake/KF5Sonnet/KF5SonnetConfig.cmake
 lib/cmake/KF5Sonnet/KF5SonnetConfigVersion.cmake

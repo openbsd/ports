@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/11/16 14:30:58 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/19 09:45:40 rsadowski Exp $
 include/KF5/
 include/KF5/BluezQt/
 include/KF5/BluezQt/BluezQt/
@@ -80,7 +80,7 @@ include/KF5/BluezQt/bluezqt/rfkill.h
 include/KF5/BluezQt/bluezqt/services.h
 include/KF5/BluezQt/bluezqt/tpendingcall.h
 include/KF5/BluezQt/bluezqt/types.h
-include/KF5/bluezqt_version.h
+include/KF5/BluezQt/bluezqt_version.h
 lib/cmake/KF5BluezQt/
 lib/cmake/KF5BluezQt/KF5BluezQtConfig.cmake
 lib/cmake/KF5BluezQt/KF5BluezQtConfigVersion.cmake

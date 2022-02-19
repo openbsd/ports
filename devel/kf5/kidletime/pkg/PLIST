@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:48 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/
 include/KF5/KIdleTime/
 include/KF5/KIdleTime/KIdleTime
 include/KF5/KIdleTime/kidletime.h
 include/KF5/KIdleTime/kidletime_export.h
+include/KF5/KIdleTime/kidletime_version.h
 include/KF5/KIdleTime/private/
 include/KF5/KIdleTime/private/abstractsystempoller.h
-include/KF5/kidletime_version.h
 lib/cmake/KF5IdleTime/
 lib/cmake/KF5IdleTime/KF5IdleTimeConfig.cmake
 lib/cmake/KF5IdleTime/KF5IdleTimeConfigVersion.cmake

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/09/07 14:48:44 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/19 09:45:40 rsadowski Exp $
 include/KF5/
 include/KF5/KArchive/
 include/KF5/KArchive/K7Zip
@@ -18,6 +18,7 @@ include/KF5/KArchive/k7zip.h
 include/KF5/KArchive/kar.h
 include/KF5/KArchive/karchive.h
 include/KF5/KArchive/karchive_export.h
+include/KF5/KArchive/karchive_version.h
 include/KF5/KArchive/karchivedirectory.h
 include/KF5/KArchive/karchiveentry.h
 include/KF5/KArchive/karchivefile.h
@@ -28,7 +29,6 @@ include/KF5/KArchive/krcc.h
 include/KF5/KArchive/ktar.h
 include/KF5/KArchive/kzip.h
 include/KF5/KArchive/kzipfileentry.h
-include/KF5/karchive_version.h
 lib/cmake/KF5Archive/
 lib/cmake/KF5Archive/KF5ArchiveConfig.cmake
 lib/cmake/KF5Archive/KF5ArchiveConfigVersion.cmake

@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_server_seat_interface_cpp,v 1.1 2022/02/19 09:45:45 rsadowski Exp $
+
+Index: src/server/seat_interface.cpp
+--- src/server/seat_interface.cpp.orig
++++ src/server/seat_interface.cpp
+@@ -19,8 +19,6 @@
+ #define WL_SEAT_NAME_SINCE_VERSION 2
+ #endif
+ 
+-#include <linux/input.h>
+-
+ #include <functional>
+ 
+ namespace KWayland
+@@ -38,6 +36,8 @@ SeatInterface::Private::Private(SeatInterface *q, Disp
+ {
+ }
+ 
++enum mouse_button { BTN_LEFT, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };
++
+ #ifndef K_DOXYGEN
+ const struct wl_seat_interface SeatInterface::Private::s_interface = {getPointerCallback, getKeyboardCallback, getTouchCallback, releaseCallback};
+ #endif
+@@ -753,6 +753,7 @@ namespace
+ static quint32 qtToWaylandButton(Qt::MouseButton button)
+ {
+     static const QHash<Qt::MouseButton, quint32> s_buttons({
++        /*
+         {Qt::LeftButton, BTN_LEFT},
+         {Qt::RightButton, BTN_RIGHT},
+         {Qt::MiddleButton, BTN_MIDDLE},
+@@ -769,6 +770,7 @@ static quint32 qtToWaylandButton(Qt::MouseButton butto
+         {Qt::ExtraButton11, BTN_TASK + 6},
+         {Qt::ExtraButton12, BTN_TASK + 7},
+         {Qt::ExtraButton13, BTN_TASK + 8}
++        */
+         // further mapping not possible, 0x120 is BTN_JOYSTICK
+     });
+     return s_buttons.value(button, 0);

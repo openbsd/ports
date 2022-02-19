@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/03 16:12:06 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings
@@ -39,11 +39,11 @@ include/KF5/KHtml/khtml_events.h
 include/KF5/KHtml/khtml_export.h
 include/KF5/KHtml/khtml_part.h
 include/KF5/KHtml/khtml_settings.h
+include/KF5/KHtml/khtml_version.h
 include/KF5/KHtml/khtmldefaults.h
 include/KF5/KHtml/khtmlpart.h
 include/KF5/KHtml/khtmlsettings.h
 include/KF5/KHtml/khtmlview.h
-include/KF5/khtml_version.h
 lib/cmake/KF5KHtml/
 lib/cmake/KF5KHtml/KF5KHtmlConfig.cmake
 lib/cmake/KF5KHtml/KF5KHtmlConfigVersion.cmake
