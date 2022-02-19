@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2021/11/02 00:00:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2022/02/19 06:31:21 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
@@ -9,7 +9,7 @@ CATEGORIES =	devel x11
 
 VERSION =	5.6.2
 DISTNAME =	kdevelop-${VERSION}
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://www.kdevelop.org/
 
@@ -70,7 +70,6 @@ BUILD_DEPENDS =	archivers/gtar \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/clang-tools-extra \
-		devel/cmake \
 		devel/cppcheck \
 		devel/desktop-file-utils \
 		devel/gmake \
