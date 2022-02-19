@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2021/01/14 23:42:58 bcallah Exp $
+$OpenBSD: patch-configure,v 1.2 2022/02/19 14:11:07 bcallah Exp $
 
 Remove these hardcoded bits
 
@@ -13,6 +13,6 @@ Index: configure
 -CPPFLAGS=
 -CXXFLAGS='-Wall -W -O2'
 -LDFLAGS=
+ LIBS=-lncurses
  
  # checking whether we are using GNU C++.
- /bin/sh -c "${CXX} --version" > /dev/null 2>&1 || { CXX=c++ ; CXXFLAGS=-O2 ; }
