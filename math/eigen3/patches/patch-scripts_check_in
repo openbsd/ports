@@ -1,0 +1,11 @@
+$OpenBSD: patch-scripts_check_in,v 1.1 2022/02/19 21:10:57 rsadowski Exp $
+
+Index: scripts/check.in
+--- scripts/check.in.orig
++++ scripts/check.in
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # check : shorthand for make and ctest -R
+ 
+ if [[ $# != 1 || $1 == *help ]]

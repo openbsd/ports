@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.11 2020/01/26 07:30:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/19 21:10:57 rsadowski Exp $
 
 PKG_ARCH =	*
+
 COMMENT =	lightweight C++ template library for linear algebra
+
 CATEGORIES =	math devel
-HOMEPAGE =	http://eigen.tuxfamily.org/
-DIST_SUBDIR =	eigen
-VERSION =	3.2.2
-DISTNAME =	${VERSION}
+
+HOMEPAGE =	https://eigen.tuxfamily.org
+
+VERSION =	3.3.9
+DISTNAME =	eigen-${VERSION}
 PKGNAME =	eigen3-${VERSION}
-WRKDIST =	${WRKDIR}/eigen-eigen-1306d75b4a21
-REVISION =	5
 
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	http://bitbucket.org/eigen/eigen/get/ \
-		https://spacehopper.org/mirrors/eigen/
+MASTER_SITES =	https://gitlab.com/libeigen/eigen/-/archive/${VERSION}/
 
 # Many dependencies are only needed for tests
 PSEUDO_FLAVORS =	test
@@ -25,6 +25,7 @@ FLAVOR ?=
 WANTLIB- =
 
 BUILD_DEPENDS =		devel/sparsehash \
+			math/blas \
 			math/suitesparse
 
 RUN_DEPENDS =		devel/sparsehash \
@@ -32,28 +33,23 @@ RUN_DEPENDS =		devel/sparsehash \
 
 MODULES =		devel/cmake
 
-# Needs Fortran support
-USE_NINJA =		No
-
 # Unported stuff, mostly needed for tests
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Adolc=Yes \
+CONFIGURE_ARGS =	-DBLAS_DIR:PATH="${LOCALBASE}" \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Adolc=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Cholmod=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Metis=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Pastix=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SPQR=Yes \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Scotch=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_SuperLU=Yes \
+			-DEIGEN_TEST_CXX11=ON \
 			-DEIGEN_TEST_NOQT=ON
 
 .if ${FLAVOR:Mtest}
 CONFIGURE_ARGS +=	-DEIGEN_FAILTEST=Yes
-BUILD_DEPENDS +=	devel/gmp \
+BUILD_DEPENDS +=	devel/boost \
+			devel/gmp \
 			devel/mpfr \
 			graphics/freeglut \
 			graphics/glew \
 			math/fftw
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -ggdb"
-
 TEST_DEPENDS =		shells/bash
 .else
 NO_TEST =		Yes
