@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2022/01/08 22:41:06 kurt Exp $
+# $OpenBSD: Makefile,v 1.69 2022/02/19 19:18:59 kurt Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
@@ -6,14 +6,13 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	312
-BUILD_VER=	b07
+UPDATE_VER=	322
+BUILD_VER=	b06
 BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
 PKGSTEM=	jdk-${BASE_VER}
 EPOCH=		0
-REVISION=	1
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
