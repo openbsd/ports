@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2021/07/10 14:05:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2022/02/19 13:12:02 bentley Exp $
 
 COMMENT=	barcode image processing library
 
@@ -9,7 +9,7 @@ GH_PROJECT=	zxing-cpp
 GH_COMMIT=	e0e40ddec63f38405aca5c8c1ff60b85ec8b1f10
 
 DISTNAME=	zxing-20190320
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -18,6 +18,7 @@ CATEGORIES=	graphics
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB += ${COMPILER_LIBCXX} c iconv m
 
 COMPILER=	base-clang ports-gcc
