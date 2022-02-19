@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2022/02/19 20:25:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.34 2022/02/19 20:25:51 rsadowski Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -15,8 +15,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH =			0
-REVISION =		5
-
+REVISION =		6
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
 SHARED_LIBS +=  Qt5WebKitWidgets        3.1 # 5.9
@@ -33,11 +32,12 @@ SHARED_LIBS +=  WTF                     0.0 # 5.212.9
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5Sensors Qt5WebChannel
-WANTLIB += Qt5Widgets X11 Xcomposite Xrender c gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += hyphen icui18n icuuc jpeg m png sqlite3 webp xml2 xslt
+WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5Sensors
+WANTLIB += Qt5WebChannel Qt5Widgets X11 Xcomposite Xrender c gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 hyphen icui18n icuuc jpeg m png sqlite3
+WANTLIB += webp xml2 xslt z
 
 MASTER_SITES =		https://github.com/annulen/webkit/releases/download/${DISTNAME}/
 
