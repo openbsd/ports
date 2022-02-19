@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.145 2022/02/17 09:11:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2022/02/19 10:06:06 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.2.0
+GH_TAGNAME=	22.2.1
 REVISION=	0
 
 DISTFILES=	${GH_DISTFILE} \
