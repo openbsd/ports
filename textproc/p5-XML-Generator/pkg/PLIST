@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/13 09:56:15 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/19 10:04:54 sthen Exp $
 ${P5SITE}/XML/Generator/
 ${P5SITE}/XML/Generator.pm
 ${P5SITE}/XML/Generator/DOM.pm
-@man man/man3p/XML::Generator.3
-@man man/man3p/XML::Generator::DOM.3
+@man man/man3p/XML::Generator.3p
+@man man/man3p/XML::Generator::DOM.3p
