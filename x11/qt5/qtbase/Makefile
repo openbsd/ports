@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2022/02/19 19:04:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.50 2022/02/19 21:49:53 rsadowski Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -239,7 +239,6 @@ CONFIGURE_ARGS +=	-platform openbsd-g++
 
 # See qtbase/tests/README for details
 TEST_IS_INTERACTIVE =	X11
-TEST_DEPENDS =		audio/sox
 
 post-extract:
 	mkdir -p ${WRKDIST}/mkspecs/openbsd-clang
