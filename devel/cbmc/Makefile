@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.13 2021/11/30 10:10:06 sthen Exp $
+#$OpenBSD: Makefile,v 1.14 2022/02/19 20:02:39 kn Exp $
 
 COMMENT =	Bounded Model Checker for C and C++ programs
 
@@ -6,7 +6,7 @@ GH_ACCOUNT =	diffblue
 GH_PROJECT =	cbmc
 GH_TAGNAME =	cbmc-5.5
 PKGNAME =	${GH_TAGNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 
@@ -23,13 +23,16 @@ DISTFILES =	${GH_DISTFILE} \
 		minisat2_2.2.1.orig.tar.gz:0
 MASTER_SITES0 =	${MASTER_SITE_DEBIAN:=main/m/minisat2/}
 
-COMPILER =	base-clang ports-clang
+# C++11
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/bison
 
 USE_GMAKE =	Yes
 
-MAKE_FLAGS =	CFLAGS="-Wall ${CFLAGS}" \
+MAKE_FLAGS =	CC="${CC}" \
+		CXX="${CXX}" \
+		CFLAGS="-Wall ${CFLAGS}" \
 		CXXFLAGS="-Wall ${CXXFLAGS}" \
 		LINKFLAGS="${LDFLAGS}"
 
