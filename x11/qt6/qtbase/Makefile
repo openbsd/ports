@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/14 11:12:32 tb Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/19 19:05:46 rsadowski Exp $
 
 QT6NAME =		QtBase
 
@@ -7,7 +7,7 @@ COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
-REVISION =		3
+REVISION =		4
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
@@ -80,12 +80,10 @@ LIB_DEPENDS-psql =	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 
-BUILD_DEPENDS =		geo/geoclue \
-			graphics/vulkan-loader \
+BUILD_DEPENDS =		graphics/vulkan-loader \
 			x11/gnome/at-spi2-core
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			geo/geoclue \
 			x11/gnome/at-spi2-core
 
 RUN_DEPENDS-global =
