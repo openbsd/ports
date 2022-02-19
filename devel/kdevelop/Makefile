@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2022/02/19 06:31:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.49 2022/02/19 13:19:29 rsadowski Exp $
 
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
@@ -7,26 +7,24 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 CATEGORIES =	devel x11
 
-VERSION =	5.6.2
-DISTNAME =	kdevelop-${VERSION}
-REVISION =	4
+DISTNAME =	kdevelop-${MODKDE_VERSION}
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      2.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDebugger      3.0 # 5.2
 SHARED_LIBS +=  KDevPlatformDocumentation 2.0 # 5.2
 SHARED_LIBS +=  KDevPlatformInterfaces    2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformLanguage      3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformLanguage      4.0 # 5.2
 SHARED_LIBS +=  KDevPlatformOutputView    2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformProject       2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSerialization 2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformShell         2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSublime       2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformTests         2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformUtil          2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformVcs           2.0 # 5.2
-SHARED_LIBS +=  KDevClangPrivate          0.0 # 5.5
-SHARED_LIBS +=  KDevCMakeCommon           0.0 # 5.5
+SHARED_LIBS +=  KDevPlatformProject       3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSerialization 3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformShell         3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSublime       3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformTests         3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformUtil          3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformVcs           2.1 # 5.2
+SHARED_LIBS +=  KDevClangPrivate          1.0 # 5.5
+SHARED_LIBS +=  KDevCMakeCommon           1.0 # 5.5
 SHARED_LIBS +=  KDevCompileAnalyzerCommon 0.0 # 5.5
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -50,13 +48,14 @@ WANTLIB += Kasten4Okteta2Gui Okteta3Core Okteta3Gui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network Qt5Positioning
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
 WANTLIB += Qt5Sql Qt5Test Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets Qt5Xml apr-1 aprutil-1 c clang komparediff2
+WANTLIB += Qt5Widgets Qt5Xml X11 apr-1 aprutil-1 c clang komparediff2
 WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
 WANTLIB += svn_wc-1
 
-MASTER_SITES =	${MASTER_SITE_KDE:=stable/kdevelop/${VERSION}/src/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-MODULES =	devel/kf5 \
+MODULES =	x11/kde-applications \
+		devel/kf5 \
 		lang/python
 
 MODPY_BUILDDEP =	No
@@ -108,6 +107,7 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		x11/grantlee-qt5>=5.2 \
 		x11/kde-applications/libkomparediff2 \
 		x11/kde-applications/okteta>=0.26.1v0 \
+		x11/qt5/qtdeclarative \
 		x11/qt5/qttools \
 		x11/qt5/qtwebengine
 
