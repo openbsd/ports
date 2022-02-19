@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_mk,v 1.11 2019/04/20 06:24:12 tim Exp $
+$OpenBSD: patch-config_mk,v 1.12 2022/02/19 21:30:49 bcallah Exp $
 
 zap redundant CFLAGS
 
@@ -7,7 +7,7 @@ fix "filelist.c:253:45: error: use of undeclared identifier 'alphasort'"
 Index: config.mk
 --- config.mk.orig
 +++ config.mk
-@@ -35,10 +35,6 @@ scalable_icon_dir = ${icon_dir}/scalable/apps
+@@ -36,10 +36,6 @@ scalable_icon_dir = ${icon_dir}/scalable/apps
  
  # default CFLAGS
  CFLAGS ?= -g -O2
