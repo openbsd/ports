@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2022/01/15 14:47:16 bcallah Exp $
+# $OpenBSD: Makefile,v 1.33 2022/02/19 14:35:40 bcallah Exp $
 
 COMMENT =	ultra fast universal grep
 CATEGORIES =	sysutils
 
 GH_ACCOUNT =	Genivia
 GH_PROJECT =	ugrep
-GH_TAGNAME =	v3.6.0
+GH_TAGNAME =	v3.7.2
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
