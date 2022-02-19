@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2022/01/14 11:11:02 tb Exp $
+# $OpenBSD: Makefile,v 1.49 2022/02/19 19:04:17 rsadowski Exp $
 
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
@@ -9,8 +9,8 @@ COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-REVISION-main =		7
-REVISION-examples =		0
+REVISION-main =		8
+REVISION-examples =	0
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
 PKGNAME-global =	qt5-global-${VERSION}
@@ -103,11 +103,9 @@ LIB_DEPENDS-tds =	${BASE_PKGPATH},-main>=${VERSION:R},<${QT5_NEXT_VERSION} \
 			databases/freetds
 
 # The atspi is checked at configure time and used via D-Bus.
-BUILD_DEPENDS =		geo/geoclue \
-			x11/gnome/at-spi2-core
+BUILD_DEPENDS =		x11/gnome/at-spi2-core
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
-			geo/geoclue \
 			x11/gnome/at-spi2-core
 RUN_DEPENDS-global =
 RUN_DEPENDS-examples =
