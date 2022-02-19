@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2180 2022/02/18 13:22:45 daniel Exp $
+# $OpenBSD: Makefile,v 1.2181 2022/02/19 20:50:22 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1504,6 +1504,7 @@
      SUBDIR += py-rich,python3
      SUBDIR += py-robotframework,python3
      SUBDIR += py-rope,python3
+     SUBDIR += py-rx,python3
      SUBDIR += py-schema,python3
      SUBDIR += py-semantic-version,python3
      SUBDIR += py-send2trash,python3
