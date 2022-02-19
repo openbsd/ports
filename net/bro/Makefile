@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2022/01/26 12:55:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2022/02/19 11:10:29 kn Exp $
 
 PORTROACH=		skipv:4.1.0,4.1.1,4.2.0
 
@@ -39,6 +39,10 @@ MODULES=		lang/python
 #COMPILER=		base-clang ports-gcc
 # XXX src/modp_numtoa.c:174:30: error: use of undeclared identifier 'DBL_DECIMAL_DIG'
 COMPILER=		ports-clang
+# XXX sparc64 and ports-clang don't go well together:
+# /tmp/sqlite3-1f089a.s:544060: Error: operation combines symbols in different segments
+# clang-13: error: assembler command failed with exit code 1 (use -v to see invocation)
+ONLY_FOR_ARCHS=		${CLANG_ARCHS}
 
 MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/bin/stats-to-csv \
