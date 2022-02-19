@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/14 19:45:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2022/02/19 08:12:31 ajacoutot Exp $
 
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v1.4.0
+GH_TAGNAME =		v1.4.1
 
 SHARED_LIBS +=  git2                      14.0 # 0.28
 
@@ -20,12 +20,15 @@ MODGCC4_ARCHS=		hppa
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		devel/http-parser \
+			devel/pcre \
 			security/libssh2
 
-WANTLIB += crypto pcre pcreposix pthread ssh2 ssl z
+WANTLIB += crypto http_parser pcre pcreposix pthread ssh2 ssl
+WANTLIB += z
 
 CONFIGURE_ARGS=		-DUSE_SSH=ON \
+			-DUSE_HTTP_PARSER=system \
 			-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
 			-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
 
@@ -33,11 +36,5 @@ CONFIGURE_ARGS=		-DUSE_SSH=ON \
 # libgit2-1.4.0/libgit2-1.4.0/deps/ntlmclient/unicode_builtin.h:13:10:
 # fatal error: 'iconv.h' file not found
 CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
-
-# XXX
-# By not providing "FindHTTP_Parser.cmake" in CMAKE_MODULE_PATH this project
-# has asked CMake to find a package configuration file provided by
-#  "HTTP_Parser", but CMake did not find one.
-#CONFIGURE_ARGS +=	-DUSE_HTTP_PARSER=system
 
 .include <bsd.port.mk>
