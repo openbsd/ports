@@ -1,3 +1,3 @@
-Cdiff is a term based tool to view colored, incremental diff in a Git,
-Mercurial, Svn workspace or from stdin, with side by side and auto pager
-support.
+ydiff is a term based tool to view colored, incremental diff in a
+version controlled workspace (git, Mercurial or Subversion) or from
+stdin, with side by side and auto pager support.
