@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/02/10 00:32:06 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/02/20 12:47:30 sthen Exp $
 ${P5SITE}/MCE/
 ${P5SITE}/MCE.pm
 ${P5SITE}/MCE.pod
@@ -6,8 +6,11 @@ ${P5SITE}/MCE/Candy.pm
 ${P5SITE}/MCE/Channel/
 ${P5SITE}/MCE/Channel.pm
 ${P5SITE}/MCE/Channel/Mutex.pm
+${P5SITE}/MCE/Channel/MutexFast.pm
 ${P5SITE}/MCE/Channel/Simple.pm
+${P5SITE}/MCE/Channel/SimpleFast.pm
 ${P5SITE}/MCE/Channel/Threads.pm
+${P5SITE}/MCE/Channel/ThreadsFast.pm
 ${P5SITE}/MCE/Child.pm
 ${P5SITE}/MCE/Core/
 ${P5SITE}/MCE/Core.pod
@@ -41,8 +44,11 @@ ${P5SITE}/MCE/Util.pm
 @man man/man3p/MCE::Candy.3p
 @man man/man3p/MCE::Channel.3p
 @man man/man3p/MCE::Channel::Mutex.3p
+@man man/man3p/MCE::Channel::MutexFast.3p
 @man man/man3p/MCE::Channel::Simple.3p
+@man man/man3p/MCE::Channel::SimpleFast.3p
 @man man/man3p/MCE::Channel::Threads.3p
+@man man/man3p/MCE::Channel::ThreadsFast.3p
 @man man/man3p/MCE::Child.3p
 @man man/man3p/MCE::Core.3p
 @man man/man3p/MCE::Core::Input::Generator.3p
