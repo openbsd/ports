@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2022/02/20 13:27:47 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.51 2022/02/20 13:29:13 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0

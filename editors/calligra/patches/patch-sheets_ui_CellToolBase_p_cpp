@@ -1,0 +1,118 @@
+$OpenBSD: patch-sheets_ui_CellToolBase_p_cpp,v 1.1 2022/02/20 13:29:13 rsadowski Exp $
+
+Index: sheets/ui/CellToolBase_p.cpp
+--- sheets/ui/CellToolBase_p.cpp.orig
++++ sheets/ui/CellToolBase_p.cpp
+@@ -246,7 +246,7 @@ void CellToolBase::Private::processArrowKey(QKeyEvent 
+     /* NOTE:  hitting the tab key also calls this function.  Don't forget
+         to account for it
+     */
+-    register Sheet * const sheet = q->selection()->activeSheet();
++     Sheet * const sheet = q->selection()->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -300,7 +300,7 @@ void CellToolBase::Private::processEscapeKey(QKeyEvent
+ 
+ bool CellToolBase::Private::processHomeKey(QKeyEvent* event)
+ {
+-    register Sheet * const sheet = q->selection()->activeSheet();
++     Sheet * const sheet = q->selection()->activeSheet();
+     if (!sheet)
+         return false;
+ 
+@@ -355,7 +355,7 @@ bool CellToolBase::Private::processHomeKey(QKeyEvent* 
+ 
+ bool CellToolBase::Private::processEndKey(QKeyEvent *event)
+ {
+-    register Sheet * const sheet = q->selection()->activeSheet();
++     Sheet * const sheet = q->selection()->activeSheet();
+     if (!sheet)
+         return false;
+ 
+@@ -438,7 +438,7 @@ bool CellToolBase::Private::processNextKey(QKeyEvent *
+ 
+ void CellToolBase::Private::processOtherKey(QKeyEvent *event)
+ {
+-    register Sheet * const sheet = q->selection()->activeSheet();
++     Sheet * const sheet = q->selection()->activeSheet();
+ 
+     // No null character ...
+     if (event->text().isEmpty() || !q->selection()->activeSheet()->map()->isReadWrite() ||
+@@ -456,7 +456,7 @@ void CellToolBase::Private::processOtherKey(QKeyEvent 
+ 
+ bool CellToolBase::Private::processControlArrowKey(QKeyEvent *event)
+ {
+-    register Sheet * const sheet = q->selection()->activeSheet();
++     Sheet * const sheet = q->selection()->activeSheet();
+     if (!sheet)
+         return false;
+ 
+@@ -801,7 +801,7 @@ QRect CellToolBase::Private::moveDirection(Calligra::S
+ {
+     debugSheetsUI << "Canvas::moveDirection";
+ 
+-    register Sheet * const sheet = q->selection()->activeSheet();
++     Sheet * const sheet = q->selection()->activeSheet();
+     if (!sheet)
+         return QRect();
+ 
+@@ -1260,47 +1260,47 @@ void CellToolBase::Private::createPopupMenuActions()
+     }
+ 
+     action = new QAction(koIcon("insertcell"), i18n("Insert Cells..."), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(insertCells()));
++    connect(action, &QAction::triggered, q, &CellToolBase::insertCells);
+     popupMenuActions.insert("insertCell", action);
+ 
+     action = new QAction(koIcon("removecell"), i18n("Delete Cells..."), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(deleteCells()));
++    connect(action, &QAction::triggered, q, &CellToolBase::deleteCells);
+     popupMenuActions.insert("deleteCell", action);
+ 
+     action = new QAction(koIcon("adjustcol"), i18n("Adjust Column"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(adjustColumn()));
++    connect(action, &QAction::triggered, q, &CellToolBase::adjustColumn);
+     popupMenuActions.insert("adjustColumn", action);
+ 
+     action = new QAction(koIcon("edit-table-insert-column-left"), i18n("Insert Columns"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(insertColumn()));
++    connect(action, &QAction::triggered, q, &CellToolBase::insertColumn);
+     popupMenuActions.insert("insertColumn", action);
+ 
+     action = new QAction(koIcon("edit-table-delete-column"), i18n("Delete Columns"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(deleteColumn()));
++    connect(action, &QAction::triggered, q, &CellToolBase::deleteColumn);
+     popupMenuActions.insert("deleteColumn", action);
+ 
+     action = new QAction(koIcon("adjustrow"), i18n("Adjust Row"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(adjustRow()));
++    connect(action, &QAction::triggered, q, &CellToolBase::adjustRow);
+     popupMenuActions.insert("adjustRow", action);
+ 
+     action = new QAction(koIcon("edit-table-insert-row-above"), i18n("Insert Rows"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(insertRow()));
++    connect(action, &QAction::triggered, q, &CellToolBase::insertRow);
+     popupMenuActions.insert("insertRow", action);
+ 
+     action = new QAction(koIcon("edit-table-delete-row"), i18n("Delete Rows"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(deleteRow()));
++    connect(action, &QAction::triggered, q, &CellToolBase::deleteRow);
+     popupMenuActions.insert("deleteRow", action);
+ 
+     action = new QAction(i18n("Selection List..."), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(listChoosePopupMenu()));
++    connect(action, &QAction::triggered, q, &CellToolBase::listChoosePopupMenu);
+     popupMenuActions.insert("listChoose", action);
+ 
+     action = new QAction(koIcon("edit-comment"), i18n("Comment"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(comment()));
++    connect(action, &QAction::triggered, q, &CellToolBase::comment);
+     popupMenuActions.insert("comment", action);
+ 
+     action = new QAction(koIcon("delete-comment"),i18n("Clear Comment"), q);
+-    connect(action, SIGNAL(triggered(bool)), q, SLOT(clearComment()));
++    connect(action, &QAction::triggered, q, &CellToolBase::clearComment);
+     popupMenuActions.insert("clearComment", action);
+ 
+ }
