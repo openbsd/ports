@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2021/11/02 00:00:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2022/02/20 23:16:32 afresh1 Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		cad
 
@@ -15,12 +15,12 @@ HOMEPAGE =		https://www.openscad.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Widgets X11 boost_filesystem-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c cairo
-WANTLIB += double-conversion fontconfig freetype glib-2.0 gmp
-WANTLIB += harfbuzz intl m mpfr opencsg qscintilla2_qt5 xml2 z
-WANTLIB += zip
+WANTLIB += Qt5DBus Qt5Gamepad Qt5Gui Qt5Multimedia Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Widgets X11 boost_filesystem-mt
+WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt c cairo double-conversion fontconfig
+WANTLIB += freetype glib-2.0 gmp harfbuzz intl m mpfr opencsg
+WANTLIB += qscintilla2_qt5 xml2 z zi
 
 MASTER_SITES =		https://files.openscad.org/
 EXTRACT_SUFX =		.src.tar.gz
@@ -43,6 +43,7 @@ LIB_DEPENDS =		archivers/libzip \
 			graphics/glew \
 			graphics/opencsg \
 			math/double-conversion \
+			x11/qt5/qtgamepad \
 			x11/qt5/qtmultimedia
 
 RUN_DEPENDS =		devel/desktop-file-utils \
