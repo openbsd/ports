@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/10 06:44:11 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/20 19:23:23 rsadowski Exp $
 @bin bin/UserFeedbackConsole
 @bin bin/userfeedbackctl
 include/KUserFeedback/
@@ -56,12 +56,13 @@ lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/userfeedback/
 @so lib/qt5/qml/org/kde/userfeedback/libKUserFeedbackQml.so
 lib/qt5/qml/org/kde/userfeedback/qmldir
-share/applications/UserFeedbackConsole.desktop
-share/examples/kuserfeedback/
-share/examples/kuserfeedback/xdg/
-share/examples/kuserfeedback/xdg/org_kde_UserFeedback.categories
+share/applications/org.kde.kuserfeedback-console.desktop
 share/kf5/
 share/kf5/mkspecs/
 share/kf5/mkspecs/qt_KUserFeedbackCore.pri
 share/kf5/mkspecs/qt_KUserFeedbackWidgets.pri
+share/metainfo/
+share/metainfo/org.kde.kuserfeedback-console.appdata.xml
+share/qlogging-categories5/
+share/qlogging-categories5/org_kde_UserFeedback.categories
 @tag update-desktop-database

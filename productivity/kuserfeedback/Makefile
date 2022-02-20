@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/10 06:44:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/20 19:23:23 rsadowski Exp $
 #
 COMMENT =	KDE framework for collecting user feedback
 #
 GH_ACCOUNT =	KDE
 GH_PROJECT =	kuserfeedback
-GH_TAGNAME =	v1.0.0
+GH_TAGNAME =	v1.2.0
 
-SHARED_LIBS =	KUserFeedbackCore	0.0
+SHARED_LIBS =	KUserFeedbackCore	0.1
 SHARED_LIBS +=	KUserFeedbackWidgets	0.0
 
 CATEGORIES =	productivity
