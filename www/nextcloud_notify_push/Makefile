@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/17 14:58:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/20 14:10:10 kn Exp $
 
 # 20220112 - build often fails due to out of memory
 # memory allocation of 402653184 bytes failed
 # error: could not compile `notify_push`
 NOT_FOR_ARCHS= =	i386
+
+BROKEN-sparc64 =        ring-0.16.20 does not build on sparc64
 
 COMMENT =		update notifications for nextcloud clients
 
