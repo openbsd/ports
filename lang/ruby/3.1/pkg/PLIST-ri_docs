@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2022/01/04 19:46:43 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2022/02/20 18:24:40 jeremy Exp $
 share/ri/
 share/ri/${REV}/
 share/ri/${REV}/system/
@@ -3110,6 +3110,7 @@ share/ri/${REV}/system/Gem/Installer/FakePackage/prog_mode-i.ri
 share/ri/${REV}/system/Gem/Installer/FakePackage/spec-i.ri
 share/ri/${REV}/system/Gem/Installer/app_script_text-i.ri
 share/ri/${REV}/system/Gem/Installer/at-c.ri
+share/ri/${REV}/system/Gem/Installer/bash_prolog_script-i.ri
 share/ri/${REV}/system/Gem/Installer/bin_dir-i.ri
 share/ri/${REV}/system/Gem/Installer/build_args-i.ri
 share/ri/${REV}/system/Gem/Installer/build_extensions-i.ri
@@ -3135,11 +3136,14 @@ share/ri/${REV}/system/Gem/Installer/inherited-c.ri
 share/ri/${REV}/system/Gem/Installer/install-i.ri
 share/ri/${REV}/system/Gem/Installer/installation_satisfies_dependency%3f-i.ri
 share/ri/${REV}/system/Gem/Installer/installed_specs-i.ri
+share/ri/${REV}/system/Gem/Installer/load_relative_enabled%3f-i.ri
 share/ri/${REV}/system/Gem/Installer/new-c.ri
 share/ri/${REV}/system/Gem/Installer/options-i.ri
 share/ri/${REV}/system/Gem/Installer/package-i.ri
 share/ri/${REV}/system/Gem/Installer/path_warning-c.ri
 share/ri/${REV}/system/Gem/Installer/pre_install_checks-i.ri
+share/ri/${REV}/system/Gem/Installer/rb_config-i.ri
+share/ri/${REV}/system/Gem/Installer/ruby_install_name-i.ri
 share/ri/${REV}/system/Gem/Installer/shebang-i.ri
 share/ri/${REV}/system/Gem/Installer/spec-i.ri
 share/ri/${REV}/system/Gem/Installer/spec_file-i.ri
@@ -4627,7 +4631,7 @@ share/ri/${REV}/system/Gem/loaded_specs-c.ri
 share/ri/${REV}/system/Gem/location_of_caller-c.ri
 share/ri/${REV}/system/Gem/marshal_version-c.ri
 share/ri/${REV}/system/Gem/needs-c.ri
-share/ri/${REV}/system/Gem/open_with_flock-c.ri
+share/ri/${REV}/system/Gem/open_file-c.ri
 share/ri/${REV}/system/Gem/operating_system_defaults-c.ri
 share/ri/${REV}/system/Gem/path-c.ri
 share/ri/${REV}/system/Gem/path_separator-c.ri

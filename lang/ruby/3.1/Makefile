@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/16 18:28:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/20 18:24:40 jeremy Exp $
 
-VERSION =		3.1.0
+VERSION =		3.1.1
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby31	0.0
 NEXTVER =		3.2
 PKGSPEC-main ?=         ruby->=3.1.0,<${NEXTVER}
-REVISION-main =		2
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
