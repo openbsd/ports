@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/20 15:37:07 rsadowski Exp $
 
 COMMENT =	RE platform powered by radare2
 
 GH_ACCOUNT =	radareorg
 GH_PROJECT =	cutter
 GH_TAGNAME =	v1.12.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -44,6 +44,9 @@ CONFIGURE_ARGS =-DCUTTER_ENABLE_GRAPHVIZ=ON \
 		-DCUTTER_USE_BUNDLED_RADARE2=OFF
 
 NO_TEST =	Yes
+
+CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include/KF5" \
+                   	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/KF5"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/Cutter ${PREFIX}/bin/cutter
