@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.43 2021/09/03 12:51:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2022/02/20 08:46:20 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.4.13
+VERSION=		2.6.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
-REVISION=		1
 
 CATEGORIES=		geo devel
 
-SHARED_LIBS +=  geoclue-2                 0.1 # 0.0
+SHARED_LIBS += geoclue-2                 0.2 # 0.0.0
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -22,14 +21,13 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += brotlicommon brotlidec execinfo idn2 jpeg psl unistring
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 json-glib-1.0
-WANTLIB += lzma m pcre pthread soup-2.4 sqlite3 xml2 z iconv intl
-WANTLIB += avahi-client avahi-common avahi-glib dbus-1 notify png
-WANTLIB += gdk_pixbuf-2.0
+WANTLIB += avahi-client avahi-common avahi-glib c gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 intl json-glib-1.0 m notify soup-2.4
 
-MODULES=		textproc/intltool \
+MODULES=		devel/meson \
 			x11/gnome
+
+BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		devel/libsoup \
 			devel/libnotify \
@@ -45,33 +43,17 @@ RUN_DEPENDS +=		x11/dbus,-suid
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 
-USE_GMAKE=		Yes
+CONFIGURE_ARGS=		-Dgtk-doc=false \
+			-Ddbus-srv-user=_geoclue
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-dbus-service-user=_geoclue
+# disable all components requiring ModemManager                                 
+CONFIGURE_ARGS +=	-D3g-source=false \
+			-Dcdma-source=false \
+			-Dmodem-gps-source=false
 
-# disable all components requiring ModemManager
-CONFIGURE_ARGS +=	--disable-3g-source \
-			--disable-modem-gps-source \
-			--disable-cdma-source
-
-FAKE_FLAGS=		DBUS_SYS_DIR=${PREFIX}/share/examples/geoclue/dbus-1/system.d \
-			sysconfdir=${PREFIX}/share/examples/geoclue/
-
-# don't install the demo agent .desktop file (agent requires MM)
-FAKE_FLAGS +=		apps_DATA=geoclue-where-am-i.desktop
-
-AUTOCONF_VERSION=	2.65
-AUTOMAKE_VERSION=	1.16
-
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			textproc/gtk-doc
-
-pre-configure:
-	cd ${WRKSRC} && gtkdocize && \
-		${SETENV} ${AUTOCONF_ENV} autoreconf -fi && \
-		intltoolize -f
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/geoclue2
+	mv ${WRKINST}${SYSCONFDIR}/{dbus-1,geoclue,xdg} \
+		${PREFIX}/share/examples/geoclue2
 
 .include <bsd.port.mk>

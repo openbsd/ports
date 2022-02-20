@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/07/27 18:31:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2022/02/20 08:46:20 ajacoutot Exp $
 @newgroup _geoclue:731
 @newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
 include/libgeoclue-2.0/
@@ -11,8 +11,6 @@ include/libgeoclue-2.0/gclue-manager.h
 include/libgeoclue-2.0/gclue-simple.h
 include/libgeoclue-2.0/geoclue.h
 lib/girepository-1.0/Geoclue-2.0.typelib
-lib/libgeoclue-2.a
-lib/libgeoclue-2.la
 @lib lib/libgeoclue-2.so.${LIBgeoclue-2_VERSION}
 lib/pkgconfig/geoclue-2.0.pc
 lib/pkgconfig/libgeoclue-2.0.pc
@@ -21,29 +19,32 @@ libexec/geoclue-2.0/
 libexec/geoclue-2.0/demos/
 @bin libexec/geoclue-2.0/demos/agent
 @bin libexec/geoclue-2.0/demos/where-am-i
+@man man/man5/geoclue.5
+share/applications/geoclue-demo-agent.desktop
 share/applications/geoclue-where-am-i.desktop
+share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Client.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Location.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Manager.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.xml
 share/dbus-1/system-services/org.freedesktop.GeoClue2.service
-share/examples/geoclue/
-share/examples/geoclue/dbus-1/
-share/examples/geoclue/dbus-1/system.d/
-share/examples/geoclue/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
+share/examples/geoclue2/
+share/examples/geoclue2/dbus-1/
+share/examples/geoclue2/dbus-1/system.d/
+share/examples/geoclue2/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
-share/examples/geoclue/dbus-1/system.d/org.freedesktop.GeoClue2.conf
+share/examples/geoclue2/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.conf
-share/examples/geoclue/geoclue/
+share/examples/geoclue2/geoclue/
 @sample ${SYSCONFDIR}/geoclue/
-share/examples/geoclue/geoclue/geoclue.conf
+share/examples/geoclue2/geoclue/geoclue.conf
 @sample ${SYSCONFDIR}/geoclue/geoclue.conf
-share/examples/geoclue/xdg/
+share/examples/geoclue2/xdg/
 @sample ${SYSCONFDIR}/xdg/
-share/examples/geoclue/xdg/autostart/
+share/examples/geoclue2/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/geoclue/xdg/autostart/geoclue-demo-agent.desktop
+share/examples/geoclue2/xdg/autostart/geoclue-demo-agent.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/geoclue-demo-agent.desktop
 share/gir-1.0/Geoclue-2.0.gir
 share/vala/vapi/libgeoclue-2.0.deps
