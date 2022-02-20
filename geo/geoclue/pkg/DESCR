@@ -1,6 +1,0 @@
-Geoclue is a modular geoinformation service built on top of the D-Bus
-messaging system. The goal of the Geoclue project is to make creating
-location-aware applications as simple as possible.
-
-Geoclue defines a set of geoinformation APIs, but it also includes some
-providers that implement those APIs.

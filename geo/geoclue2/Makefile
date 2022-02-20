@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2022/02/20 08:46:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2022/02/20 08:54:24 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
 VERSION=		2.6.0
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
+REVISION=		0
 
 CATEGORIES=		geo devel
 
