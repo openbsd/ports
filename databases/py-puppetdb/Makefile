@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2022/01/05 12:47:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.28 2022/02/20 15:05:11 bket Exp $
 
 COMMENT=		library for working with the PuppetDB API
 
@@ -18,7 +18,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PI =		Yes
 
 FLAVORS =		python3
-FLAVOR?=		python3
+FLAVOR=		python3
 
 RUN_DEPENDS=		www/py-requests${MODPY_FLAVOR}>=2.22.0
 BUILD_DEPENDS=		${RUN_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/20 15:05:11 bket Exp $
 
 COMMENT =		Python wrapper for pandoc
 
@@ -23,7 +23,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		textproc/pandoc
 

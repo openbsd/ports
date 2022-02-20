@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/20 15:05:11 bket Exp $
 
 COMMENT =	SPAKE2 password-authenticated key exchange (pure python)
 
@@ -21,6 +21,6 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		security/py-hkdf${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

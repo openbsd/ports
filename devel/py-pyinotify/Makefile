@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/20 15:05:11 bket Exp $
 
 COMMENT =		filesystem events monitoring
 
@@ -26,7 +26,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/python*/pyinotify.py

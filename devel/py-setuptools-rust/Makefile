@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/08 14:09:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/20 15:05:11 bket Exp $
 
 COMMENT=		setuptools Rust extension plugin
 
@@ -20,7 +20,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 

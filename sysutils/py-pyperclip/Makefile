@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/26 08:54:08 op Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/20 15:05:11 bket Exp $
 
 COMMENT =		cross-platform clipboard module for Python
 
@@ -23,6 +23,6 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		x11/xclip
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 .include <bsd.port.mk>

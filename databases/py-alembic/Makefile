@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/20 14:53:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/20 15:05:11 bket Exp $
 
 COMMENT =		database migration tool for sqlalchemy
 
@@ -20,7 +20,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
-FLAVOR ?=		python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		databases/py-sqlalchemy${MODPY_FLAVOR}>=1.3.0 \
 			devel/py-importlib_resources${MODPY_FLAVOR} \
