@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.74 2022/02/15 10:39:11 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.75 2022/02/20 11:21:06 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.61.2v0
 SEPARATE_BUILD ?=	Yes
@@ -20,6 +20,9 @@ CONFIGURE_ENV +=	AR="ar"
 
 MODMESON_CONFIGURE_ENV +=	CC="${CC}" CFLAGS="${CFLAGS}" \
 				CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+# SHARED_LIBS: default to '0.0' if unset
+MODMESON_CONFIGURE_ENV +=	MODMESON_PORT_BUILD=yes
 
 MODMESON_CONFIGURE_ARGS +=	--buildtype=plain \
 				--prefix "${PREFIX}" \
