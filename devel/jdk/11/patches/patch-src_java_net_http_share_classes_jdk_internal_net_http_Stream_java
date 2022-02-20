@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_java_net_http_share_classes_jdk_internal_net_http_Stream_java,v 1.1 2022/02/20 13:51:03 kurt Exp $
+
+Backport 10.0.14.1 bugfix:
+8218546: Unable to connect to https://google.com using java.net.HttpClient
+
+Index: src/java.net.http/share/classes/jdk/internal/net/http/Stream.java
+--- src/java.net.http/share/classes/jdk/internal/net/http/Stream.java.orig
++++ src/java.net.http/share/classes/jdk/internal/net/http/Stream.java
+@@ -614,10 +614,6 @@ class Stream<T> extends ExchangeImpl<T> {
+         if (contentLength > 0) {
+             h.setHeader("content-length", Long.toString(contentLength));
+         }
+-        URI uri = request.uri();
+-        if (uri != null) {
+-            h.setHeader("host", Utils.hostString(request));
+-        }
+         HttpHeaders sysh = filterHeaders(h.build());
+         HttpHeaders userh = filterHeaders(request.getUserHeaders());
+         // Filter context restricted from userHeaders
