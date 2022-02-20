@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/24 16:45:24 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2022/02/20 18:27:35 jca Exp $
 
 COMMENT =		user-level RCU implementation
 
-DISTNAME =		userspace-rcu-0.13.0
-PKGNAME =		liburcu-0.13.0
+DISTNAME =		userspace-rcu-0.13.1
+PKGNAME =		liburcu-0.13.1
 
 SHARED_LIBS +=  urcu-bp                   2.0 # 8.0
 SHARED_LIBS +=  urcu-cds                  2.0 # 8.0

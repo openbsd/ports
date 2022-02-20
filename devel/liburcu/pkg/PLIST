@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/07/24 16:45:24 jca Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/20 18:27:35 jca Exp $
 include/urcu/
 include/urcu-bp.h
 include/urcu-call-rcu.h
@@ -127,6 +127,7 @@ lib/liburcu.la
 lib/pkgconfig/liburcu-bp.pc
 lib/pkgconfig/liburcu-cds.pc
 lib/pkgconfig/liburcu-mb.pc
+lib/pkgconfig/liburcu-memb.pc
 lib/pkgconfig/liburcu-qsbr.pc
 lib/pkgconfig/liburcu-signal.pc
 lib/pkgconfig/liburcu.pc
