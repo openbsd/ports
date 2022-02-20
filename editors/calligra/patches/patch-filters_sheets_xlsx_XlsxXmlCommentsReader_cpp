@@ -1,0 +1,25 @@
+$OpenBSD: patch-filters_sheets_xlsx_XlsxXmlCommentsReader_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/sheets/xlsx/XlsxXmlCommentsReader.cpp
+--- filters/sheets/xlsx/XlsxXmlCommentsReader.cpp.orig
++++ filters/sheets/xlsx/XlsxXmlCommentsReader.cpp
+@@ -259,7 +259,7 @@ KoFilter::ConversionStatus XlsxXmlCommentsReader::read
+     READ_ATTR_WITHOUT_NS(authorId)
+     int authorIdInt = -1;
+     STRING_TO_INT(authorId, authorIdInt, "comment@authorId")
+-    std::auto_ptr<XlsxComment> comment(authorIdInt < 0 ? 0 : new XlsxComment(authorIdInt));
++    std::unique_ptr<XlsxComment> comment(authorIdInt < 0 ? 0 : new XlsxComment(authorIdInt));
+     while (!atEnd()) {
+         readNext();
+         BREAK_IF_END_OF(CURRENT_EL)
+@@ -269,8 +269,8 @@ KoFilter::ConversionStatus XlsxXmlCommentsReader::read
+             ELSE_WRONG_FORMAT
+         }
+     }
+-    if (comment.get()) {
+-        comment.get()->texts = m_currentCommentText;
++    if (comment) {
++        comment->texts = m_currentCommentText;
+         m_context->comments->insert(ref, comment.release());
+         qCDebug(lcXlsxImport) << "Added comment for" << ref;
+     }

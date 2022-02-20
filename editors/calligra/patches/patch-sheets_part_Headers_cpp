@@ -1,0 +1,104 @@
+$OpenBSD: patch-sheets_part_Headers_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: sheets/part/Headers.cpp
+--- sheets/part/Headers.cpp.orig
++++ sheets/part/Headers.cpp
+@@ -102,7 +102,7 @@ void RowHeader::mousePress(KoPointerEvent * _ev)
+     if (!m_cellToolIsActive)
+         return;
+ 
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -192,7 +192,7 @@ void RowHeader::mouseRelease(KoPointerEvent * _ev)
+ 
+     m_bMousePressed = false;
+ 
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -295,7 +295,7 @@ void RowHeader::mouseDoubleClick(KoPointerEvent*)
+ {
+     if (!m_cellToolIsActive)
+         return;
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -317,7 +317,7 @@ void RowHeader::mouseMove(KoPointerEvent* _ev)
+         return;
+     }
+ 
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -379,7 +379,7 @@ void RowHeader::mouseMove(KoPointerEvent* _ev)
+ 
+ void RowHeader::paint(QPainter* painter, const QRectF& painterRect)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -545,7 +545,7 @@ void ColumnHeader::mousePress(KoPointerEvent * _ev)
+         m_pCanvas->enableAutoScroll();
+     }
+ 
+-    const register Sheet * const sheet = m_pCanvas->activeSheet();
++    const  Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -682,7 +682,7 @@ void ColumnHeader::mouseRelease(KoPointerEvent * _ev)
+ 
+     m_bMousePressed = false;
+ 
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -794,7 +794,7 @@ void ColumnHeader::mouseDoubleClick(KoPointerEvent*)
+ {
+     if (!m_cellToolIsActive)
+         return;
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -813,7 +813,7 @@ void ColumnHeader::mouseMove(KoPointerEvent* _ev)
+     if (!m_cellToolIsActive)
+         return;
+ 
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+ 
+     if (!sheet)
+         return;
+@@ -911,7 +911,7 @@ void ColumnHeader::mouseMove(KoPointerEvent* _ev)
+ 
+ void ColumnHeader::resize(const QSizeF& size, const QSizeF& oldSize)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -929,7 +929,7 @@ void ColumnHeader::resize(const QSizeF& size, const QS
+ 
+ void ColumnHeader::paint(QPainter* painter, const QRectF& painterRect)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 

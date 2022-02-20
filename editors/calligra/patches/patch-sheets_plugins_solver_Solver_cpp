@@ -1,0 +1,30 @@
+$OpenBSD: patch-sheets_plugins_solver_Solver_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: sheets/plugins/solver/Solver.cpp
+--- sheets/plugins/solver/Solver.cpp.orig
++++ sheets/plugins/solver/Solver.cpp
+@@ -70,7 +70,7 @@ Solver::Solver(QObject* parent, const QVariantList& ar
+ 
+     QAction* solver = actionCollection()->addAction("sheetssolver");
+     solver->setText(i18n("Function Optimizer..."));
+-    connect(solver, SIGNAL(triggered(bool)), this, SLOT(showDialog()));
++    connect(solver, &QAction::triggered, this, &Solver::showDialog);
+ }
+ 
+ Solver::~Solver()
+@@ -81,13 +81,13 @@ Solver::~Solver()
+ void Solver::showDialog()
+ {
+     d->dialog = new SolverDialog(d->view->selection(), d->view);
+-    connect(d->dialog, SIGNAL(okClicked()), this, SLOT(optimize()));
++    connect(d->dialog, &KoDialog::okClicked, this, &Solver::optimize);
+     d->dialog->show();
+ }
+ 
+ void Solver::optimize()
+ {
+-    register Sheet * const sheet = d->view->activeSheet();
++     Sheet * const sheet = d->view->activeSheet();
+     if (!sheet)
+         return;
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2021/12/17 11:00:26 namn Exp $
+# $OpenBSD: Makefile,v 1.50 2022/02/20 13:27:47 rsadowski Exp $
 
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
@@ -69,7 +69,7 @@ WANTLIB += poppler-qt5 qca-qt5 z
 
 MODULES =	devel/kf5
 
-# c++-14
+# c++-17
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/boost \

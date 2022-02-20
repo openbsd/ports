@@ -1,0 +1,27 @@
+$OpenBSD: patch-filters_words_msword-odf_wv2_src_word_helper_h,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/words/msword-odf/wv2/src/word_helper.h
+--- filters/words/msword-odf/wv2/src/word_helper.h.orig
++++ filters/words/msword-odf/wv2/src/word_helper.h
+@@ -322,6 +322,11 @@ namespace wvWare
+     {
+         friend PLCFIterator<T> PLCF<T>::at( unsigned int ) const;
+     public:
++        PLCFIterator(PLCFIterator &&other)
++            : m_plcf(std::move(other.m_plcf)),
++              m_itemIt(std::move(other.m_itemIt)),
++              m_indexIt(std::move(other.m_indexIt)) {}
++
+         PLCFIterator( const PLCF<T>& plcf ) : m_plcf( plcf )
+         {
+             m_itemIt = m_plcf.m_items.begin();
+@@ -345,7 +350,8 @@ namespace wvWare
+ 
+     private:
+         // don't assign it
+-        PLCFIterator<T>& operator=( const PLCFIterator<T>& rhs );
++        PLCFIterator( const PLCFIterator<T> &other) = delete;
++        PLCFIterator<T>& operator=( const PLCFIterator<T>& rhs ) = delete;
+ 
+         const PLCF<T>& m_plcf;
+         typename std::vector<T*>::const_iterator m_itemIt;

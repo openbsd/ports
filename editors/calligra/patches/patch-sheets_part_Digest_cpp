@@ -1,0 +1,44 @@
+$OpenBSD: patch-sheets_part_Digest_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: sheets/part/Digest.cpp
+--- sheets/part/Digest.cpp.orig
++++ sheets/part/Digest.cpp
+@@ -250,8 +250,8 @@ typedef struct digest_impl_st {
+  */
+ static void __rtl_digest_swapLong(sal_uInt32 *pData, sal_uInt32 nDatLen)
+ {
+-    register sal_uInt32 *X;
+-    register int         i, n;
++     sal_uInt32 *X;
++     int         i, n;
+ 
+     X = pData;
+     n = nDatLen;
+@@ -465,10 +465,10 @@ static void __rtl_digest_initSHA(
+  */
+ static void __rtl_digest_updateSHA(DigestContextSHA *ctx)
+ {
+-    register sal_uInt32  A, B, C, D, E, T;
+-    register sal_uInt32 *X;
++     sal_uInt32  A, B, C, D, E, T;
++     sal_uInt32 *X;
+ 
+-    register DigestSHA_update_t *U;
++     DigestSHA_update_t *U;
+     U = ctx->m_update;
+ 
+     A = ctx->m_nA;
+@@ -577,10 +577,10 @@ static void __rtl_digest_endSHA(DigestContextSHA *ctx)
+     static const sal_uInt8 end[4] = {
+         0x80, 0x00, 0x00, 0x00
+     };
+-    register const sal_uInt8 *p = end;
++     const sal_uInt8 *p = end;
+ 
+-    register sal_uInt32 *X;
+-    register int         i;
++     sal_uInt32 *X;
++     int         i;
+ 
+     X = ctx->m_pData;
+     i = (ctx->m_nDatLen >> 2);

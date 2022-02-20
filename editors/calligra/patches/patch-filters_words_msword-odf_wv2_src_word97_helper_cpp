@@ -1,0 +1,44 @@
+$OpenBSD: patch-filters_words_msword-odf_wv2_src_word97_helper_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/words/msword-odf/wv2/src/word97_helper.cpp
+--- filters/words/msword-odf/wv2/src/word97_helper.cpp.orig
++++ filters/words/msword-odf/wv2/src/word97_helper.cpp
+@@ -30,7 +30,7 @@
+ 
+ #include <string.h> // memcpy
+ #include <algorithm>
+-#include <functional> // std::bind2nd for gcc 2.9x
++#include <functional>
+ #include <cstdlib>
+ 
+ #include "wvlog.h"
+@@ -921,7 +921,8 @@ S16 PAP::applyPAPSPRM( const U8* ptr, const Style* sty
+             std::vector<TabDescriptor>::iterator newEnd = rgdxaTab.end();
+             for ( U8 i = 0; i < itbdDelMax; ++i ) {
+                 newEnd = std::remove_if ( rgdxaTab.begin(), newEnd,
+-                                          std::bind2nd( InZone(), Zone( myPtr, i, itbdDelMax ) ) );
++                                          [z=Zone(myPtr, i, itbdDelMax ), f=InZone()](const TabDescriptor& t){ return f(t, z); }
++                                         );
+             }
+             rgdxaTab.erase( newEnd, rgdxaTab.end() ); // really get rid of them
+             myPtr += itbdDelMax * 4;
+@@ -2361,7 +2362,8 @@ S16 TAP::applyTAPSPRM( const U8* ptr, const Style* sty
+             // Adjust all successive items (+= ctc * dxaCol)
+             std::transform( rgdxaCenter.begin() + itcFirst + ctc, rgdxaCenter.end(),
+                             rgdxaCenter.begin() + itcFirst + ctc, 
+-                            std::bind1st( std::plus<S16>(), ctc * dxaCol ) );
++                            [x = ctc * dxaCol, f=std::plus<S16>()](S16 y){ return f(x, y); }
++                          );
+         }
+         break;
+     }
+@@ -2400,7 +2402,8 @@ S16 TAP::applyTAPSPRM( const U8* ptr, const Style* sty
+         ++itcFirst;
+         std::transform( rgdxaCenter.begin() + itcFirst, rgdxaCenter.end(),
+                         rgdxaCenter.begin() + itcFirst, 
+-                        std::bind2nd( std::minus<S16>(), shift ) );
++                        [y=shift, f=std::minus<S16>()](S16 x){ return f(x, y); }
++                       );
+         break;
+     }
+     case SPRM::sprmTMerge:

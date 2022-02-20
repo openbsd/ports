@@ -1,0 +1,30 @@
+$OpenBSD: patch-filters_words_msword-odf_wv2_src_styles_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/words/msword-odf/wv2/src/styles.cpp
+--- filters/words/msword-odf/wv2/src/styles.cpp.orig
++++ filters/words/msword-odf/wv2/src/styles.cpp
+@@ -42,7 +42,6 @@ STD::STD()
+ }
+ 
+ STD::STD( U16 baseSize, U16 totalSize, OLEStreamReader* stream, bool preservePos )
+-throw(InvalidFormatException)
+ {
+     clearInternal();
+     if (!read( baseSize, totalSize, stream, preservePos )) {
+@@ -112,7 +111,6 @@ STD& STD::operator=( const STD& rhs )
+ }
+ 
+ bool STD::read( const U16 cbStd, const U16 stdfSize, OLEStreamReader* stream, bool preservePos )
+-throw(InvalidFormatException)
+ {
+     U16 shifterU16;
+     S32 startOffset=stream->tell();  // address where the STD starts
+@@ -938,7 +936,7 @@ void Style::mergeUpechpx( const Style* parentStyle, Wo
+ }
+ 
+ 
+-StyleSheet::StyleSheet( OLEStreamReader* tableStream, U32 fcStshf, U32 lcbStshf ) throw(InvalidFormatException)
++StyleSheet::StyleSheet( OLEStreamReader* tableStream, U32 fcStshf, U32 lcbStshf )
+     : m_udsNum(0)
+ {
+     WordVersion version = Word8;

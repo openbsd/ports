@@ -1,0 +1,68 @@
+$OpenBSD: patch-sheets_part_CanvasBase_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: sheets/part/CanvasBase.cpp
+--- sheets/part/CanvasBase.cpp.orig
++++ sheets/part/CanvasBase.cpp
+@@ -230,7 +230,7 @@ bool CanvasBase::eventFilter(QObject *o, QEvent *e)
+ 
+ void CanvasBase::validateSelection()
+ {
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     if (!sheet)
+         return;
+ #if 0
+@@ -443,7 +443,7 @@ void CanvasBase::paint(QPainter* painter, const QRectF
+     if (doc()->map()->isLoading() || isViewLoading())
+         return;
+ 
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -513,7 +513,7 @@ bool CanvasBase::dragEnter(const QMimeData* mimeData)
+ 
+ bool CanvasBase::dragMove(const QMimeData* mimeData, const QPointF& eventPos, const QObject *source)
+ {
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     if (!sheet) {
+         return false;
+     }
+@@ -596,7 +596,7 @@ void CanvasBase::dragLeave()
+ 
+ bool CanvasBase::drop(const QMimeData* mimeData, const QPointF& eventPos, const QObject *source)
+ {
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     // FIXME Sheet protection: Not all cells have to be protected.
+     if (!sheet || sheet->isProtected()) {
+         return false;
+@@ -656,7 +656,7 @@ bool CanvasBase::drop(const QMimeData* mimeData, const
+ 
+ QRect CanvasBase::viewToCellCoordinates(const QRectF& viewRect) const
+ {
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     if (!sheet)
+         return QRect();
+ 
+@@ -685,7 +685,7 @@ QRect CanvasBase::visibleCells() const
+ 
+ QRectF CanvasBase::cellCoordinatesToView(const QRect& cellRange) const
+ {
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     if (!sheet)
+         return QRectF();
+ 
+@@ -706,7 +706,7 @@ QRectF CanvasBase::cellCoordinatesToView(const QRect& 
+ 
+ void CanvasBase::showToolTip(const QPoint& p)
+ {
+-    register Sheet * const sheet = activeSheet();
++     Sheet * const sheet = activeSheet();
+     if (!sheet)
+         return;
+     SheetView * const sheetView = this->sheetView(sheet);

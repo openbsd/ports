@@ -1,0 +1,16 @@
+$OpenBSD: patch-filters_libmsooxml_MsooXmlImport_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/libmsooxml/MsooXmlImport.cpp
+--- filters/libmsooxml/MsooXmlImport.cpp.orig
++++ filters/libmsooxml/MsooXmlImport.cpp
+@@ -594,8 +594,8 @@ KoFilter::ConversionStatus MsooXmlImport::imageFromFil
+     QString errorMessage;
+     KoFilter::ConversionStatus status = KoFilter::OK;
+ 
+-    std::auto_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(m_zip, errorMessage, sourceName, status));
+-    if (!inputDevice.get()) {
++    std::unique_ptr<QIODevice> inputDevice(Utils::openDeviceForFile(m_zip, errorMessage, sourceName, status));
++    if (!inputDevice) {
+         return status;
+     }
+     QImageReader r(inputDevice.get(), QFileInfo(sourceName).suffix().toLatin1());

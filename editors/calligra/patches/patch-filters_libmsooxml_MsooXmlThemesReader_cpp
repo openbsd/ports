@@ -1,0 +1,48 @@
+$OpenBSD: patch-filters_libmsooxml_MsooXmlThemesReader_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/libmsooxml/MsooXmlThemesReader.cpp
+--- filters/libmsooxml/MsooXmlThemesReader.cpp.orig
++++ filters/libmsooxml/MsooXmlThemesReader.cpp
+@@ -736,14 +736,14 @@ KoFilter::ConversionStatus MsooXmlThemesReader::read_c
+ */
+ KoFilter::ConversionStatus MsooXmlThemesReader::read_srgbClr_local()
+ {
+-    std::auto_ptr<DrawingMLColorSchemeItem> color(new DrawingMLColorSchemeItem);
++    std::unique_ptr<DrawingMLColorSchemeItem> color(new DrawingMLColorSchemeItem);
+     m_currentColor_local = 0;
+     READ_PROLOGUE
+     const QXmlStreamAttributes attrs(attributes());
+ 
+     READ_ATTR_WITHOUT_NS(val)
+-    color.get()->color = Utils::ST_HexColorRGB_to_QColor(val);
+-    //debugMsooXml << color.get()->color;
++    color->color = Utils::ST_HexColorRGB_to_QColor(val);
++    //debugMsooXml << color->color;
+ 
+     readNext();
+     READ_EPILOGUE_WITHOUT_RETURN
+@@ -841,19 +841,19 @@ KoFilter::ConversionStatus MsooXmlThemesReader::read_s
+ */
+ KoFilter::ConversionStatus MsooXmlThemesReader::read_sysClr_local()
+ {
+-    std::auto_ptr<DrawingMLColorSchemeSystemItem> color(new DrawingMLColorSchemeSystemItem);
++    std::unique_ptr<DrawingMLColorSchemeSystemItem> color(new DrawingMLColorSchemeSystemItem);
+     m_currentColor_local = 0;
+     READ_PROLOGUE
+     const QXmlStreamAttributes attrs(attributes());
+ 
+     READ_ATTR_WITHOUT_NS(lastClr)
+-    color.get()->lastColor = Utils::ST_HexColorRGB_to_QColor(lastClr);
+-//     debugMsooXml << "lastClr:" << color.get()->lastColor.name();
++    color->lastColor = Utils::ST_HexColorRGB_to_QColor(lastClr);
++//     debugMsooXml << "lastClr:" << color->lastColor.name();
+ 
+     // System color value. This color is based upon the value that this color
+     // currently has within the system on which the document is being viewed.
+-    READ_ATTR_WITHOUT_NS_INTO(val, color.get()->systemColor)
+-//     debugMsooXml << "val:" << color.get()->systemColor;
++    READ_ATTR_WITHOUT_NS_INTO(val, color->systemColor)
++//     debugMsooXml << "val:" << color->systemColor;
+ 
+     readNext();
+     READ_EPILOGUE_WITHOUT_RETURN

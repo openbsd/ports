@@ -1,0 +1,17 @@
+$OpenBSD: patch-filters_libmsooxml_CMakeLists_txt,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: filters/libmsooxml/CMakeLists.txt
+--- filters/libmsooxml/CMakeLists.txt.orig
++++ filters/libmsooxml/CMakeLists.txt
+@@ -2,11 +2,6 @@ if(Qca-qt5_FOUND)
+     add_definitions( -DHAVE_QCA2 )
+ endif()
+ 
+-# TEMPORARY: for std::auto_ptr deprecation warnings are only annoying noise
+-if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_COMPILER_IS_GNUC)
+-    add_definitions(-Wno-deprecated-declarations)
+-endif ()
+-
+ include_directories(
+     ${KOMAIN_INCLUDES}
+     ${KOODF2_INCLUDES} # For charts

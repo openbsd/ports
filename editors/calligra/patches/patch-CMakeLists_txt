@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/12/17 11:00:26 namn Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2022/02/20 13:27:47 rsadowski Exp $
 
 Fix build with OpenEXR>=3
 
@@ -7,13 +7,29 @@ From: =?UTF-8?q?=C3=96mer=20Fad=C4=B1l=20Usta?= <omerusta@gmail.com>
 Date: Sun, 6 Jun 2021 08:41:05 +0000
 Subject: [PATCH] Update Cmake and deps, Fix Freetype and FontConfig Linkage
 
-Enforce -std=c++14 *after* -std=c++0x to let it build with poppler.
-From sthen@
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -391,8 +391,14 @@ endif ()
+@@ -105,11 +105,12 @@ endif()
+ message(STATUS "Release build: ${RELEASE_BUILD}")
+ 
+ # use CPP-11
+-if (CMAKE_VERSION VERSION_LESS "3.1")
+-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+-else ()
+-    set (CMAKE_CXX_STANDARD 11)
+-endif ()
++#if (CMAKE_VERSION VERSION_LESS "3.1")
++#    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
++#else ()
++#    set (CMAKE_CXX_STANDARD 11)
++#endif ()
++set (CMAKE_CXX_STANDARD 11)
+ 
+ ############
+ #############
+@@ -391,8 +392,14 @@ endif ()
  ## Check for OpenEXR
  ##
  
@@ -30,7 +46,7 @@ Index: CMakeLists.txt
  
  ##
  ## Test for GNU Scientific Library
-@@ -641,8 +647,8 @@ if(NOT WIN32 AND NOT APPLE)
+@@ -641,8 +648,8 @@ if(NOT WIN32 AND NOT APPLE)
  	)
  endif()
  
@@ -41,13 +57,12 @@ Index: CMakeLists.txt
      set(FREETYPE_INCLUDE_DIRS "")
  else()
      add_definitions( -DSHOULD_BUILD_FONT_CONVERSION )
-@@ -912,6 +918,9 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
+@@ -912,6 +919,8 @@ set(KOPAGEAPP_INCLUDES ${TEXTLAYOUT_INCLUDES}
      ${CMAKE_SOURCE_DIR}/libs/pageapp
      ${CMAKE_SOURCE_DIR}/libs/pageapp/commands
      ${CMAKE_BINARY_DIR}/libs/pageapp )
 +
 +
-+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
  
  #############################################
  ####           filter libraries          ####

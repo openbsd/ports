@@ -1,0 +1,82 @@
+$OpenBSD: patch-sheets_part_HeaderWidgets_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: sheets/part/HeaderWidgets.cpp
+--- sheets/part/HeaderWidgets.cpp.orig
++++ sheets/part/HeaderWidgets.cpp
+@@ -93,10 +93,10 @@ RowHeaderWidget::RowHeaderWidget(QWidget *_parent, Can
+     setAttribute(Qt::WA_StaticContents);
+     setMouseTracking(true);
+ 
+-    connect(_view, SIGNAL(autoScroll(QPoint)),
+-            this, SLOT(slotAutoScroll(QPoint)));
+-    connect(m_pCanvas->toolProxy(), SIGNAL(toolChanged(QString)),
+-            this, SLOT(toolChanged(QString)));
++    connect(_view, &View::autoScroll,
++            this, &RowHeaderWidget::slotAutoScroll);
++    connect(m_pCanvas->toolProxy(), &KoToolProxy::toolChanged,
++            this, &RowHeaderWidget::toolChanged);
+ }
+ 
+ 
+@@ -155,7 +155,7 @@ void RowHeaderWidget::wheelEvent(QWheelEvent* _ev)
+ 
+ void RowHeaderWidget::paintSizeIndicator(int mouseY)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -209,7 +209,7 @@ void RowHeaderWidget::removeSizeIndicator()
+ 
+ void RowHeaderWidget::updateRows(int from, int to)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -247,10 +247,10 @@ ColumnHeaderWidget::ColumnHeaderWidget(QWidget *_paren
+     setAttribute(Qt::WA_StaticContents);
+     setMouseTracking(true);
+ 
+-    connect(_view, SIGNAL(autoScroll(QPoint)),
+-            this, SLOT(slotAutoScroll(QPoint)));
+-    connect(m_pCanvas->toolProxy(), SIGNAL(toolChanged(QString)),
+-            this, SLOT(toolChanged(QString)));
++    connect(_view, &View::autoScroll,
++            this, &ColumnHeaderWidget::slotAutoScroll);
++    connect(m_pCanvas->toolProxy(), &KoToolProxy::toolChanged,
++            this, &ColumnHeaderWidget::toolChanged);
+ }
+ 
+ 
+@@ -314,7 +314,7 @@ void ColumnHeaderWidget::resizeEvent(QResizeEvent* _ev
+ 
+ void ColumnHeaderWidget::paintSizeIndicator(int mouseX)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -379,7 +379,7 @@ void ColumnHeaderWidget::removeSizeIndicator()
+ 
+ void ColumnHeaderWidget::updateColumns(int from, int to)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -416,8 +416,8 @@ SelectAllButtonWidget::SelectAllButtonWidget(CanvasBas
+         : QWidget(canvasBase->canvasWidget())
+         , SelectAllButton(canvasBase)
+ {
+-    connect(canvasBase->toolProxy(), SIGNAL(toolChanged(QString)),
+-            this, SLOT(toolChanged(QString)));
++    connect(canvasBase->toolProxy(), &KoToolProxy::toolChanged,
++            this, &SelectAllButtonWidget::toolChanged);
+ }
+ 
+ SelectAllButtonWidget::~SelectAllButtonWidget()

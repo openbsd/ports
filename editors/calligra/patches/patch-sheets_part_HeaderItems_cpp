@@ -1,0 +1,74 @@
+$OpenBSD: patch-sheets_part_HeaderItems_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
+
+Index: sheets/part/HeaderItems.cpp
+--- sheets/part/HeaderItems.cpp.orig
++++ sheets/part/HeaderItems.cpp
+@@ -96,8 +96,8 @@ RowHeaderItem::RowHeaderItem(QGraphicsItem *_parent, C
+ 
+     //connect(m_pView, SIGNAL(autoScroll(QPoint)),
+             //this, SLOT(slotAutoScroll(QPoint)));
+-    connect(m_pCanvas->toolProxy(), SIGNAL(toolChanged(QString)),
+-            this, SLOT(toolChanged(QString)));
++    connect(m_pCanvas->toolProxy(), &KoToolProxy::toolChanged,
++            this, &RowHeaderItem::toolChanged);
+ 
+     setFlag(ItemClipsToShape, true);
+ }
+@@ -161,7 +161,7 @@ void RowHeaderItem::wheelEvent(QGraphicsSceneWheelEven
+ 
+ void RowHeaderItem::paintSizeIndicator(int mouseY)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -216,7 +216,7 @@ void RowHeaderItem::removeSizeIndicator()
+ 
+ void RowHeaderItem::updateRows(int from, int to)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -256,8 +256,8 @@ ColumnHeaderItem::ColumnHeaderItem(QGraphicsItem *_par
+ 
+     //connect(_view, SIGNAL(autoScroll(QPoint)),
+             //this, SLOT(slotAutoScroll(QPoint)));
+-    connect(_canvas->toolProxy(), SIGNAL(toolChanged(QString)),
+-            this, SLOT(toolChanged(QString)));
++    connect(_canvas->toolProxy(), &KoToolProxy::toolChanged,
++            this, &ColumnHeaderItem::toolChanged);
+ 
+     setFlag(ItemClipsToShape, true);
+ }
+@@ -324,7 +324,7 @@ void ColumnHeaderItem::resizeEvent(QGraphicsSceneResiz
+ 
+ void ColumnHeaderItem::paintSizeIndicator(int mouseX)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -389,7 +389,7 @@ void ColumnHeaderItem::removeSizeIndicator()
+ 
+ void ColumnHeaderItem::updateColumns(int from, int to)
+ {
+-    register Sheet * const sheet = m_pCanvas->activeSheet();
++     Sheet * const sheet = m_pCanvas->activeSheet();
+     if (!sheet)
+         return;
+ 
+@@ -434,8 +434,8 @@ SelectAllButtonItem::SelectAllButtonItem(QGraphicsItem
+         : QGraphicsWidget(_parent)
+         , SelectAllButton(canvasBase)
+ {
+-    connect(canvasBase->toolProxy(), SIGNAL(toolChanged(QString)),
+-            this, SLOT(toolChanged(QString)));
++    connect(canvasBase->toolProxy(), &KoToolProxy::toolChanged,
++            this, &SelectAllButtonItem::toolChanged);
+ }
+ 
+ SelectAllButtonItem::~SelectAllButtonItem()
