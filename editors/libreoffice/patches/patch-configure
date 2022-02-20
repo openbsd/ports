@@ -1,4 +1,5 @@
-$OpenBSD: patch-configure,v 1.47 2022/02/03 20:09:24 robert Exp $
+$OpenBSD: patch-configure,v 1.48 2022/02/20 08:58:54 robert Exp $
+
 
 Index: configure
 --- configure.orig
@@ -90,6 +91,17 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
+@@ -41745,8 +41746,8 @@ then
+         kf5_libdirs="$kf5_libdirs /usr/lib64 /usr/lib64/kf5 /usr/lib64/kf5/devel"
+     fi
+ 
+-    kf5_test_include="KF5/kcoreaddons_version.h"
+-    kf5_test_library="libKF5CoreAddons.so"
++    kf5_test_include="KF5/KIOFileWidgets/KFileWidget"
++    kf5_test_library="libKF5KIOFileWidgets.so"
+     kf5_libdirs="$qt5_libdir $kf5_libdirs"
+ 
+         # Extract the first word of "$KF5_CONFIG", so it can be a program name with args.
 @@ -41819,7 +41820,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
  printf %s "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
