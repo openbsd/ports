@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_libs_zbxembed_duk_config_h,v 1.1 2022/02/20 13:50:33 kn Exp $
+
+Fix sparc and sparc64 detection for intptr type
+
+Index: src/libs/zbxembed/duk_config.h
+--- src/libs/zbxembed/duk_config.h.orig
++++ src/libs/zbxembed/duk_config.h
+@@ -1617,7 +1617,7 @@
+  */
+ #if defined(DUK_F_X86) || defined(DUK_F_X32) || \
+     defined(DUK_F_M68K) || defined(DUK_F_PPC32) || \
+-    defined(DUK_F_BCC) || \
++    defined(DUK_F_BCC) || defined(DUK_F_SPARC32) || \
+     (defined(__WORDSIZE) && (__WORDSIZE == 32)) || \
+     ((defined(DUK_F_OLD_SOLARIS) || defined(DUK_F_AIX) || \
+       defined(DUK_F_HPUX)) && defined(_ILP32)) || \
+@@ -1627,7 +1627,7 @@
+       (defined(__WORDSIZE) && (__WORDSIZE == 64)) || \
+    ((defined(DUK_F_OLD_SOLARIS) || defined(DUK_F_AIX) || \
+      defined(DUK_F_HPUX)) && defined(_LP64)) || \
+-    defined(DUK_F_ARM64)
++    defined(DUK_F_ARM64) || defined(DUK_F_SPARC64)
+ #define DUK_F_64BIT_PTRS
+ #else
+ /* not sure, not needed with C99 anyway */
