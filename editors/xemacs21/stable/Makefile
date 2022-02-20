@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2021/08/17 20:22:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2022/02/20 18:54:09 naddy Exp $
 
 BRANCH=		21.4
 VERSION=	22
-REVISION=	30
+REVISION=	31
 
 WANTLIB=	c m curses util
 
