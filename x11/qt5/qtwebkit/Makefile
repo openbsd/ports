@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/19 20:25:51 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.35 2022/02/20 08:49:04 ajacoutot Exp $
 
 COMMENT =		QtWebKit with a more modern WebKit code base
 
@@ -57,8 +57,8 @@ MODRUBY_RUNDEP =	No
 
 BUILD_DEPENDS =		devel/bison \
 			devel/gperf \
-			devel/libsoup2 \
-			geo/geoclue \
+			devel/libsoup \
+			geo/geoclue2 \
 			x11/dbus
 
 RUN_DEPENDS =		geo/geoclue2 \
