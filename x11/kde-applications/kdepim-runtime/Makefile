@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/18 09:49:50 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.17 2022/02/20 13:30:48 rsadowski Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  1.0 # 5.13.2
@@ -92,6 +93,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtnetworkauth \
 		x11/qt5/qtspeech \
 		x11/qt5/qtwebchannel \
+		x11/qt5/qtxmlpatterns \
 		x11/qt5/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
