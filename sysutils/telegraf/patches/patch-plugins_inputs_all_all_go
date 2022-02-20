@@ -1,8 +1,6 @@
-$OpenBSD: patch-plugins_inputs_all_all_go,v 1.3 2022/01/11 08:17:22 martin Exp $
+$OpenBSD: patch-plugins_inputs_all_all_go,v 1.4 2022/02/20 19:22:03 martin Exp $
 
 Remove linux only plugins
-
-modbus removed because of https://github.com/influxdata/telegraf/issues/10034
 
 Index: plugins/inputs/all/all.go
 --- plugins/inputs/all/all.go.orig
@@ -47,15 +45,7 @@ Index: plugins/inputs/all/all.go
  	_ "github.com/influxdata/telegraf/plugins/inputs/logparser"
  	_ "github.com/influxdata/telegraf/plugins/inputs/logstash"
  	_ "github.com/influxdata/telegraf/plugins/inputs/lustre2"
-@@ -110,7 +103,6 @@ import (
- 	_ "github.com/influxdata/telegraf/plugins/inputs/memcached"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/mesos"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/minecraft"
--	_ "github.com/influxdata/telegraf/plugins/inputs/modbus"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/mongodb"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/monit"
- 	_ "github.com/influxdata/telegraf/plugins/inputs/mqtt_consumer"
-@@ -131,7 +123,6 @@ import (
+@@ -131,7 +124,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/nsd"
  	_ "github.com/influxdata/telegraf/plugins/inputs/nsq"
  	_ "github.com/influxdata/telegraf/plugins/inputs/nsq_consumer"
@@ -63,7 +53,7 @@ Index: plugins/inputs/all/all.go
  	_ "github.com/influxdata/telegraf/plugins/inputs/ntpq"
  	_ "github.com/influxdata/telegraf/plugins/inputs/nvidia_smi"
  	_ "github.com/influxdata/telegraf/plugins/inputs/opcua"
-@@ -184,7 +175,6 @@ import (
+@@ -184,7 +176,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/syslog"
  	_ "github.com/influxdata/telegraf/plugins/inputs/sysstat"
  	_ "github.com/influxdata/telegraf/plugins/inputs/system"
@@ -71,7 +61,7 @@ Index: plugins/inputs/all/all.go
  	_ "github.com/influxdata/telegraf/plugins/inputs/tail"
  	_ "github.com/influxdata/telegraf/plugins/inputs/tcp_listener"
  	_ "github.com/influxdata/telegraf/plugins/inputs/teamspeak"
-@@ -203,7 +193,6 @@ import (
+@@ -203,7 +194,6 @@ import (
  	_ "github.com/influxdata/telegraf/plugins/inputs/win_perf_counters"
  	_ "github.com/influxdata/telegraf/plugins/inputs/win_services"
  	_ "github.com/influxdata/telegraf/plugins/inputs/wireguard"
