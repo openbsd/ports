@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/02/24 07:42:16 feinerer Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/02/21 14:18:07 sthen Exp $
 @option is-branch
 @pkgpath x11/enlightenment
 @bin bin/e16
@@ -2739,9 +2739,9 @@ share/locale/sv/LC_MESSAGES/e16.mo
 share/locale/tr/LC_MESSAGES/e16.mo
 share/locale/uk/LC_MESSAGES/e16.mo
 share/locale/zh_CN/LC_MESSAGES/e16.mo
+@tag update-desktop-database
 @comment share/xsessions/
 @comment share/xsessions/e16-gnome2-session.desktop
 @comment share/xsessions/e16-gnome3-session.desktop
 @comment share/xsessions/e16-kde-session.desktop
 @comment share/xsessions/e16-session.desktop
-@tag update-desktop-database
