@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/02/18 07:35:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2022/02/21 13:22:59 ajacoutot Exp $
 @newgroup _consul:773
 @newuser _consul:773:_consul::Consul Agent:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/consul
@@ -12,3 +12,7 @@ share/examples/consul/config.json
 @sample ${SYSCONFDIR}/consul.d/config.json
 @mode
 @sample ${LOCALSTATEDIR}/consul/
+@owner
+@group
+share/examples/login.conf.d/consul
+@sample ${SYSCONFDIR}/login.conf.d/consul
