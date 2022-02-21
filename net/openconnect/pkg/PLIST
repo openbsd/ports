@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/05/16 10:22:48 bket Exp $
+@comment $OpenBSD: PLIST,v 1.20 2022/02/21 11:13:34 sthen Exp $
 include/openconnect.h
 @static-lib lib/libopenconnect.a
 lib/libopenconnect.la
@@ -8,6 +8,7 @@ lib/pkgconfig/openconnect.pc
 @bin sbin/openconnect
 share/doc/openconnect/
 share/doc/openconnect/anyconnect.html
+share/doc/openconnect/array.html
 share/doc/openconnect/building.html
 share/doc/openconnect/changelog.html
 share/doc/openconnect/charset.html
@@ -15,7 +16,9 @@ share/doc/openconnect/connecting.html
 share/doc/openconnect/contribute.html
 share/doc/openconnect/csd.html
 share/doc/openconnect/download.html
+share/doc/openconnect/f5.html
 share/doc/openconnect/features.html
+share/doc/openconnect/fortinet.html
 share/doc/openconnect/globalprotect.html
 share/doc/openconnect/gui.html
 share/doc/openconnect/hip.html
@@ -39,10 +42,12 @@ share/doc/openconnect/juniper.html
 share/doc/openconnect/licence.html
 share/doc/openconnect/mail.html
 share/doc/openconnect/manual.html
+share/doc/openconnect/mitm.html
 share/doc/openconnect/nonroot.html
 share/doc/openconnect/packages.html
 share/doc/openconnect/pkcs11.html
 share/doc/openconnect/platforms.html
+share/doc/openconnect/protocols.html
 share/doc/openconnect/pulse.html
 share/doc/openconnect/styles/
 share/doc/openconnect/styles/main.css
@@ -71,6 +76,7 @@ share/locale/eu/LC_MESSAGES/openconnect.mo
 share/locale/fi/LC_MESSAGES/openconnect.mo
 share/locale/fr/LC_MESSAGES/openconnect.mo
 share/locale/gl/LC_MESSAGES/openconnect.mo
+share/locale/hr/LC_MESSAGES/openconnect.mo
 share/locale/hu/LC_MESSAGES/openconnect.mo
 share/locale/id/LC_MESSAGES/openconnect.mo
 share/locale/it/LC_MESSAGES/openconnect.mo
