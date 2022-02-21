@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_args_c,v 1.1 2022/01/05 15:44:02 op Exp $
+$OpenBSD: patch-src_args_c,v 1.2 2022/02/21 08:25:55 op Exp $
 
 gcc: error: '__SIZEOF_WCHAR_T__' undeclared
 
@@ -10,7 +10,7 @@ Index: src/args.c
  #endif
  
 -	fprintf(stdout, "wchar_t width: %d, max: %d\n", __SIZEOF_WCHAR_T__, __WCHAR_MAX__);
-+	fprintf(stdout, "wchar_t width: %d, max: %d\n", sizeof(wchar_t), __WCHAR_MAX__);
++	fprintf(stdout, "wchar_t width: %zu, max: %d\n", sizeof(wchar_t), __WCHAR_MAX__);
  
  #ifdef HAVE_POSTGRESQL
  
