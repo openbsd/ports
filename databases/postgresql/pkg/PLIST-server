@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.44 2022/02/17 21:26:31 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.45 2022/02/21 12:51:50 robert Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -7,7 +7,7 @@
 @ask-update postgresql-server-<${V_MAJOR} Updating across a major version - data migration needed, see the pkg-readme
 @ask-update postgresql-server-<${PREV_MAJOR} CAUTION! Version before ${PREV_MAJOR} is too old for pg_upgrade. Make sure your database is backed up
 @newgroup _postgresql:503
-@newuser _postgresql:503:_postgresql::PostgreSQL Manager:/var/postgresql:/bin/sh
+@newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
 @rcscript ${RCDIR}/postgresql
 @mode 755
 @owner _postgresql

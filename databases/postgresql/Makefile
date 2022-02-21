@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2022/02/17 21:26:30 robert Exp $
+# $OpenBSD: Makefile,v 1.284 2022/02/21 12:51:50 robert Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -12,7 +12,7 @@ PREV_MAJOR=	13
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 
-REVISION-server=0
+REVISION-server=1
 
 DPB_PROPERTIES=	parallel
 
