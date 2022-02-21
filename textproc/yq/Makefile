@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/03 11:00:12 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/21 16:48:03 kn Exp $
 
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	2.13.0
+MODPY_EGG_VERSION =	2.14.0
 DISTNAME =		yq-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
@@ -19,6 +19,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	test/test.py
+
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
 			textproc/jq \
