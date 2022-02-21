@@ -1,11 +1,11 @@
-$OpenBSD: patch-libdino_CMakeLists_txt,v 1.2 2021/01/16 21:08:39 kn Exp $
+$OpenBSD: patch-libdino_CMakeLists_txt,v 1.3 2022/02/21 16:33:33 kn Exp $
 
 avoid stupid links to libraries
 
 Index: libdino/CMakeLists.txt
 --- libdino/CMakeLists.txt.orig
 +++ libdino/CMakeLists.txt
-@@ -84,7 +84,7 @@ add_definitions(${VALA_CFLAGS} -DDINO_SYSTEM_PLUGIN_DI
+@@ -93,7 +93,7 @@ add_definitions(${VALA_CFLAGS} -DDINO_SYSTEM_PLUGIN_DI
  add_library(libdino SHARED ${LIBDINO_VALA_C} ${CMAKE_BINARY_DIR}/exports/dino_i18n.h)
  add_dependencies(libdino dino-vapi)
  target_link_libraries(libdino xmpp-vala qlite ${LIBDINO_PACKAGES} m)

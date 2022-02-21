@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/11 09:31:25 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/21 16:33:33 kn Exp $
 
 COMMENT=	XMPP desktop client
-VERSION=	0.2.2
+VERSION=	0.3.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
-REVISION=	0
 
-SHARED_LIBS +=	dino                      0.0 # 0.0
+SHARED_LIBS +=	crypto-vala               0.0 # 0.0
+SHARED_LIBS +=	dino                      1.0 # 0.0
 SHARED_LIBS +=	qlite                     0.0 # 0.1
-SHARED_LIBS +=	xmpp-vala                 0.0 # 0.1
+SHARED_LIBS +=	xmpp-vala                 1.0 # 0.1
 
 HOMEPAGE=	https://dino.im/
 
@@ -24,21 +24,36 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	x11/gtk+3 \
-		devel/libgee \
+LIB_DEPENDS=	devel/libgee \
 		devel/libsoup \
+		graphics/libqrencode \
+		multimedia/gstreamer1/plugins-base \
+		net/libnice \
+		net/libsignal-protocol-c \
+		security/gnutls \
 		security/gpgme \
 		security/libgcrypt \
-		graphics/libqrencode \
+		security/libsrtp \
+		textproc/gspell \
 		textproc/icu4c \
-		net/libsignal-protocol-c
+		x11/gtk+3
 
-WANTLIB += assuan atk-1.0 c cairo cairo-gobject gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gpgme
-WANTLIB += gtk-3 harfbuzz icudata icuuc intl m pango-1.0 pangocairo-1.0
-WANTLIB += qrencode signal-protocol-c soup-2.4 sqlite3
+# links against plugins-base, dlopen()s plugins-good
+LIB_DEPENDS +=	multimedia/gstreamer1/plugins-good
+
+WANTLIB += atk-1.0 c cairo cairo-gobject enchant-2 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gnutls gobject-2.0 gpgme gspell-1 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstreamer-1.0 gstrtp-1.0 gtk-3 harfbuzz
+WANTLIB += icudata icuuc intl m nice pango-1.0 pangocairo-1.0
+WANTLIB += qrencode signal-protocol-c soup-2.4 sqlite3 srtp2
+
+CONFIGURE_ARGS =	-DBUILD_TESTS=ON
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/libdino/CMakeLists.txt
+
+do-test:
+	find ${WRKBUILD} -type f -perm -+x -name \*-test -print -exec {} \;
 
 .include <bsd.port.mk>

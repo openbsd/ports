@@ -1,11 +1,11 @@
-$OpenBSD: patch-main_CMakeLists_txt,v 1.2 2021/01/16 21:08:39 kn Exp $
+$OpenBSD: patch-main_CMakeLists_txt,v 1.3 2022/02/21 16:33:33 kn Exp $
 
-https://github.com/dino/dino/issues/438
+Fix crash on startup, see https://github.com/dino/dino/issues/438
 
 Index: main/CMakeLists.txt
 --- main/CMakeLists.txt.orig
 +++ main/CMakeLists.txt
-@@ -191,6 +191,7 @@ add_executable(dino ${MAIN_VALA_C} ${MAIN_GRESOURCES_T
+@@ -217,6 +217,7 @@ add_executable(dino ${MAIN_VALA_C} ${MAIN_GRESOURCES_T
  add_dependencies(dino ${GETTEXT_PACKAGE}-translations)
  target_include_directories(dino PRIVATE src)
  target_link_libraries(dino libdino ${MAIN_PACKAGES})
