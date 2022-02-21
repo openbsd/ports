@@ -1,7 +1,9 @@
-$OpenBSD: patch-sysdep_unix_random_c,v 1.1 2018/09/18 19:21:05 sthen Exp $
---- sysdep/unix/random.c.orig	Thu Jul 10 00:02:44 2014
-+++ sysdep/unix/random.c	Thu Jul 10 00:03:33 2014
-@@ -13,9 +13,5 @@
+$OpenBSD: patch-sysdep_unix_random_c,v 1.2 2022/02/21 11:13:28 sthen Exp $
+
+Index: sysdep/unix/random.c
+--- sysdep/unix/random.c.orig
++++ sysdep/unix/random.c
+@@ -24,11 +24,7 @@
  u32
  random_u32(void)
  {
@@ -12,3 +14,5 @@ $OpenBSD: patch-sysdep_unix_random_c,v 1.1 2018/09/18 19:21:05 sthen Exp $
 -  return (rand_low & 0xffff) | ((rand_high & 0xffff) << 16);
 +  return arc4random();
  }
+ 
+ 
