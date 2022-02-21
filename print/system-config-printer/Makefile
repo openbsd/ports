@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2021/11/02 00:01:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2022/02/21 09:17:20 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-V=			1.5.15
+V=			1.5.16
 DISTNAME=		system-config-printer-${V}
-REVISION=		0
 
 CATEGORIES=		print sysutils
 
@@ -15,10 +14,10 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://github.com/OpenPrinting/system-config-printer/releases/download/v${V}/
 
-MODULES=		lang/python \
-			textproc/intltool
+MODULES=		lang/python
 
-BUILD_DEPENDS=		textproc/xmlto
+BUILD_DEPENDS=		devel/gettext,-tools \
+			textproc/xmlto
 
 # desktop-file-install(1)
 BUILD_DEPENDS +=	devel/desktop-file-utils
@@ -29,7 +28,6 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			net/py-curl${MODPY_FLAVOR} \
 			print/cups-pk-helper \
 			print/py-cups${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR}
 
 # pygobject introspections (not provided by indirect dependencies)
