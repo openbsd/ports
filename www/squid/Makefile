@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2022/02/13 13:40:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.241 2022/02/21 13:43:56 sthen Exp $
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
@@ -11,6 +11,7 @@ PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
 DPB_PROPERTIES=	parallel
+REVISION-main=	0
 
 .for i in -ldap -ntlm
 # subpackages aren't flavoured, so overwrite the default name/path

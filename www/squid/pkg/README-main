@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2021/02/01 12:57:26 sthen Exp $
+$OpenBSD: README-main,v 1.10 2022/02/21 13:43:56 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
@@ -26,21 +26,10 @@ ${SYSCONFDIR}/errorpage.css.
 
 System resource limits
 ======================
-The default system resource limits for file-descriptors are insufficient
-for a moderately busy proxy. It may also be necessary to increase the
-memory limits. You can add a service-specific class to /etc/login.conf:
-
-squid:\
-	:datasize=1500M:\
-	:openfiles=4096:\
-	:tc=daemon:
-
-When started by rc.d(8) (i.e. via pkg_scripts in rc.conf.local or from
-"${RCDIR}/squid start") the appropriately-named login class is used
-automatically.
-
-If you are using /etc/login.conf.db (not usually recommended) then be
-sure to rebuild it.
+When started from rc.d(8) (i.e. via pkg_scripts in rc.conf.local or
+from "${RCDIR}/squid start"), the Squid processes run in the login(1)
+class of "squid". On a busy server, you may need to adjust the limits in
+/etc/login.conf.d/squid.
 
 There is also a kernel limit on the number of open file descriptors,
 sysctl kern.maxfiles. In some circumstances you may also need to raise
