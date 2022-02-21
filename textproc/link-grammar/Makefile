@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2021/11/02 00:02:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2022/02/21 16:30:16 kn Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
@@ -8,7 +8,8 @@ COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
 VERSION =		5.10.2
-REVISION-python=	0
+REVISION-main =		0
+REVISION-python =	1
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -42,8 +43,8 @@ MODPY_ADJ_FILES =	bindings/python-examples/tests.py
 
 USE_GMAKE =		Yes
 
-# -std=c++03
-COMPILER =		base-clang ports-clang
+# -std=c++03 -std=c11
+COMPILER =		base-clang ports-gcc
 
 MULTI_PACKAGES =	-main -java -python
 PSEUDO_FLAVORS =	no_java
@@ -65,7 +66,7 @@ LIB_DEPENDS-python =	${MODPY_LIB_DEPENDS} \
 
 RUN_DEPENDS-main =	# empty
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
-RUN_DEPENDS-python =	${MODPYTHON_RUN_DEPENDS}
+RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 
 TEST_DEPENDS =		${BUILD_PKGPATH},-python
 
