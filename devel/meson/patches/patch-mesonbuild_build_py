@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.31 2022/02/20 11:21:06 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.32 2022/02/21 12:58:09 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -18,9 +18,9 @@ Index: mesonbuild/build.py
                  self.darwin_versions = 2 * [self.soversion]
 +        if is_openbsd():
 +            self.libversion = os.getenv('LIB' + self.name + '_VERSION')
-+            if (self.libversion is None and
-+                    str(os.getenv('MODMESON_PORT_BUILD')).casefold() == 'yes'):
-+                self.libversion = '0.0'
++#            if (self.libversion is None and
++#                    str(os.getenv('MODMESON_PORT_BUILD')).casefold() == 'yes'):
++#                self.libversion = '0.0'
 +            if self.libversion is not None:
 +                self.ltversion_orig = self.ltversion if self.ltversion is not None else self.soversion
 +                self.ltversion = self.libversion.format(self)
