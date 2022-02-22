@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Standard_Standard_StackTrace_cxx,v 1.1 2022/02/22 15:20:11 tracey Exp $
+
+Index: src/Standard/Standard_StackTrace.cxx
+--- src/Standard/Standard_StackTrace.cxx.orig
++++ src/Standard/Standard_StackTrace.cxx
+@@ -193,7 +193,10 @@ Standard_Boolean Standard::StackTrace (char* theBuffer
+   {
+     return false;
+   }
+-
++#if defined(__OpenBSD__)
++  Message::SendTrace ("Standard::StackTrace() is not implemented for this platform");
++  return false;
++#endif
+ #if defined(__EMSCRIPTEN__)
+   // theNbTraces is ignored
+   // EM_LOG_JS_STACK?

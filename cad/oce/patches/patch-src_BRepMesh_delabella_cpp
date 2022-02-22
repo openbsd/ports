@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_BRepMesh_delabella_cpp,v 1.1 2022/02/22 15:20:11 tracey Exp $
+
+Index: src/BRepMesh/delabella.cpp
+--- src/BRepMesh/delabella.cpp.orig
++++ src/BRepMesh/delabella.cpp
+@@ -36,7 +36,9 @@ SOFTWARE.
+ #if (defined(__APPLE__))
+ #include <malloc/malloc.h>
+ #else
+-#include <malloc.h>
++  #ifndef __OpenBSD__
++    #include <malloc.h>
++  #endif
+ #endif
+ 
+ #include <algorithm>

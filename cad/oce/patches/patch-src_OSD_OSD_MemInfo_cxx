@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_OSD_OSD_MemInfo_cxx,v 1.1.1.1 2019/11/06 17:23:22 sthen Exp $
+$OpenBSD: patch-src_OSD_OSD_MemInfo_cxx,v 1.2 2022/02/22 15:20:11 tracey Exp $
 
 Index: src/OSD/OSD_MemInfo.cxx
 --- src/OSD/OSD_MemInfo.cxx.orig
 +++ src/OSD/OSD_MemInfo.cxx
-@@ -31,7 +31,9 @@
+@@ -28,7 +28,9 @@
    #include <malloc/malloc.h>
  #else
    #include <unistd.h>
