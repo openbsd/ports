@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.71 2021/10/23 09:18:52 landry Exp $
+@comment $OpenBSD: PLIST,v 1.72 2022/02/22 14:40:41 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -61,6 +61,8 @@ include/qgis/qgsabstract3dsymbol.h
 include/qgis/qgsabstractcontentcache.h
 include/qgis/qgsabstractdatabaseproviderconnection.h
 include/qgis/qgsabstractdatasourcewidget.h
+include/qgis/qgsabstractdbsourceselect.h
+include/qgis/qgsabstractdbtablemodel.h
 include/qgis/qgsabstractgeocoderlocatorfilter.h
 include/qgis/qgsabstractgeometry.h
 include/qgis/qgsabstractgeopdfexporter.h
@@ -258,6 +260,7 @@ include/qgis/qgscolordialog.h
 include/qgis/qgscoloreffect.h
 include/qgis/qgscolorramp.h
 include/qgis/qgscolorrampbutton.h
+include/qgis/qgscolorrampimpl.h
 include/qgis/qgscolorramplegendnode.h
 include/qgis/qgscolorramplegendnodesettings.h
 include/qgis/qgscolorramplegendnodewidget.h
@@ -296,6 +299,7 @@ include/qgis/qgscptcitycolorrampdialog.h
 include/qgis/qgscreateannotationitemmaptool.h
 include/qgis/qgscredentialdialog.h
 include/qgis/qgscredentials.h
+include/qgis/qgscrsdefinitionwidget.h
 include/qgis/qgscubicrasterresampler.h
 include/qgis/qgscurrencynumericformat.h
 include/qgis/qgscurve.h
@@ -566,6 +570,8 @@ include/qgis/qgsgraphbuilderinterface.h
 include/qgis/qgsgraphdirector.h
 include/qgis/qgsgraphicsviewmousehandles.h
 include/qgis/qgsgridfilewriter.h
+include/qgis/qgsgrouplayer.h
+include/qgis/qgsgrouplayerrenderer.h
 include/qgis/qgsgroupwmsdatadialog.h
 include/qgis/qgsgui.h
 include/qgis/qgsguiutils.h
@@ -583,11 +589,15 @@ include/qgis/qgshillshaderendererwidget.h
 include/qgis/qgshistogram.h
 include/qgis/qgshistogramdiagram.h
 include/qgis/qgshistogramwidget.h
+include/qgis/qgshistoryprovider.h
+include/qgis/qgshistoryproviderregistry.h
 include/qgis/qgshollowscalebarrenderer.h
 include/qgis/qgshstoreutils.h
 include/qgis/qgshtmlannotation.h
 include/qgis/qgshtmlutils.h
 include/qgis/qgshtmlwidgetwrapper.h
+include/qgis/qgshttpheaders.h
+include/qgis/qgshttpheaderwidget.h
 include/qgis/qgshuesaturationfilter.h
 include/qgis/qgsiconutils.h
 include/qgis/qgsidentifycontext.h
@@ -632,6 +642,7 @@ include/qgis/qgslabelobstaclesettingswidget.h
 include/qgis/qgslabelposition.h
 include/qgis/qgslabelsearchtree.h
 include/qgis/qgslabelsettingswidgetbase.h
+include/qgis/qgslabelsink.h
 include/qgis/qgslabelthinningsettings.h
 include/qgis/qgslayerdefinition.h
 include/qgis/qgslayeritem.h
@@ -848,6 +859,7 @@ include/qgis/qgsmaptip.h
 include/qgis/qgsmaptool.h
 include/qgis/qgsmaptooladvanceddigitizing.h
 include/qgis/qgsmaptoolcapture.h
+include/qgis/qgsmaptoolcapturerubberband.h
 include/qgis/qgsmaptooldigitizefeature.h
 include/qgis/qgsmaptooledit.h
 include/qgis/qgsmaptoolemitpoint.h
@@ -860,6 +872,7 @@ include/qgis/qgsmaptoolzoom.h
 include/qgis/qgsmaptopixel.h
 include/qgis/qgsmaptopixelgeometrysimplifier.h
 include/qgis/qgsmapunitscale.h
+include/qgis/qgsmapviewsmanager.h
 include/qgis/qgsmargins.h
 include/qgis/qgsmarkersymbol.h
 include/qgis/qgsmarkersymbollayer.h
@@ -984,6 +997,7 @@ include/qgis/qgsninecellfilter.h
 include/qgis/qgsnmeaconnection.h
 include/qgis/qgsnominatimgeocoder.h
 include/qgis/qgsnullmaterialsettings.h
+include/qgis/qgsnullpainterdevice.h
 include/qgis/qgsnullsymbolrenderer.h
 include/qgis/qgsnullsymbolrendererwidget.h
 include/qgis/qgsnumericformat.h
@@ -1109,6 +1123,7 @@ include/qgis/qgsprocessingfeedback.h
 include/qgis/qgsprocessingfieldmapwidgetwrapper.h
 include/qgis/qgsprocessinggui.h
 include/qgis/qgsprocessingguiregistry.h
+include/qgis/qgsprocessinghistoryprovider.h
 include/qgis/qgsprocessingmaplayercombobox.h
 include/qgis/qgsprocessingmatrixmodelerwidget.h
 include/qgis/qgsprocessingmatrixparameterdialog.h
@@ -1486,6 +1501,7 @@ include/qgis/qgsvaluerelationsearchwidgetwrapper.h
 include/qgis/qgsvaluerelationwidgetfactory.h
 include/qgis/qgsvaluerelationwidgetwrapper.h
 include/qgis/qgsvariableeditorwidget.h
+include/qgis/qgsvariantutils.h
 include/qgis/qgsvector.h
 include/qgis/qgsvector3d.h
 include/qgis/qgsvectordataprovider.h
@@ -1590,6 +1606,7 @@ include/qgis/ui_qgsauthsslimportdialog.h
 include/qgis/ui_qgsauthsslimporterrors.h
 include/qgis/ui_qgsauthtrustedcasdialog.h
 include/qgis/ui_qgscredentialdialog.h
+include/qgis/ui_qgscrsdefinitionwidgetbase.h
 include/qgis/ui_qgsdetaileditemwidgetbase.h
 include/qgis/ui_qgseffectstackpropertieswidgetbase.h
 include/qgis/ui_qgsexpressionbuilder.h
@@ -1599,6 +1616,7 @@ include/qgis/ui_qgsexpressionselectiondialogbase.h
 include/qgis/ui_qgsexpressionstoredialogbase.h
 include/qgis/ui_qgsfeaturefilterwidget.h
 include/qgis/ui_qgsgenericprojectionselectorbase.h
+include/qgis/ui_qgshttpheaderwidget.h
 include/qgis/ui_qgslayertreeembeddedconfigwidgetbase.h
 include/qgis/ui_qgslayoutguidewidgetbase.h
 include/qgis/ui_qgslayoutimageexportoptions.h
@@ -1639,14 +1657,17 @@ include/qgis/vector_tile.pb.h
 lib/qgis/
 @bin lib/qgis/crssync
 lib/qgis/plugins/
+@so lib/qgis/plugins/libauthmethod_apiheader.so
 @so lib/qgis/plugins/libauthmethod_basic.so
 @so lib/qgis/plugins/libauthmethod_esritoken.so
 @so lib/qgis/plugins/libauthmethod_identcert.so
+@so lib/qgis/plugins/libauthmethod_maptilerhmacsha256.so
 @so lib/qgis/plugins/libauthmethod_oauth2.so
 @so lib/qgis/plugins/libauthmethod_pkcs12.so
 @so lib/qgis/plugins/libauthmethod_pkipaths.so
-@so lib/qgis/plugins/libgeometrycheckerplugin.so
-@so lib/qgis/plugins/libofflineeditingplugin.so
+@so lib/qgis/plugins/libplugin_geometrychecker.so
+@so lib/qgis/plugins/libplugin_offlineediting.so
+@so lib/qgis/plugins/libplugin_topology.so
 @so lib/qgis/plugins/libprovider_arcgisfeatureserver.so
 @so lib/qgis/plugins/libprovider_arcgismapserver.so
 @so lib/qgis/plugins/libprovider_db2.so
@@ -1664,7 +1685,7 @@ lib/qgis/plugins/
 @so lib/qgis/plugins/libprovider_wcs.so
 @so lib/qgis/plugins/libprovider_wfs.so
 @so lib/qgis/plugins/libprovider_wms.so
-@so lib/qgis/plugins/libtopolplugin.so
+@bin lib/qgis/qgiscrashhandler
 lib/qgis/server/
 @so lib/qgis/server/libdummy.so
 @so lib/qgis/server/liblandingpage.so
@@ -1857,6 +1878,7 @@ share/qgis/i18n/qgis_cs.qm
 share/qgis/i18n/qgis_da.qm
 share/qgis/i18n/qgis_de.qm
 share/qgis/i18n/qgis_el.qm
+share/qgis/i18n/qgis_en_US.qm
 share/qgis/i18n/qgis_es.qm
 share/qgis/i18n/qgis_et.qm
 share/qgis/i18n/qgis_eu.qm
@@ -1865,7 +1887,6 @@ share/qgis/i18n/qgis_fi.qm
 share/qgis/i18n/qgis_fr.qm
 share/qgis/i18n/qgis_gl.qm
 share/qgis/i18n/qgis_hu.qm
-share/qgis/i18n/qgis_id.qm
 share/qgis/i18n/qgis_is.qm
 share/qgis/i18n/qgis_it.qm
 share/qgis/i18n/qgis_ja.qm
@@ -1881,7 +1902,6 @@ share/qgis/i18n/qgis_pt_PT.qm
 share/qgis/i18n/qgis_ro.qm
 share/qgis/i18n/qgis_ru.qm
 share/qgis/i18n/qgis_sc.qm
-share/qgis/i18n/qgis_sl.qm
 share/qgis/i18n/qgis_sv.qm
 share/qgis/i18n/qgis_tr.qm
 share/qgis/i18n/qgis_uk.qm
@@ -1926,11 +1946,11 @@ share/qgis/python/plugins/MetaSearch/LICENSE.txt
 share/qgis/python/plugins/MetaSearch/__init__.py
 share/qgis/python/plugins/MetaSearch/dialogs/
 share/qgis/python/plugins/MetaSearch/dialogs/__init__.py
+share/qgis/python/plugins/MetaSearch/dialogs/apidialog.py
 share/qgis/python/plugins/MetaSearch/dialogs/maindialog.py
 share/qgis/python/plugins/MetaSearch/dialogs/manageconnectionsdialog.py
 share/qgis/python/plugins/MetaSearch/dialogs/newconnectiondialog.py
 share/qgis/python/plugins/MetaSearch/dialogs/recorddialog.py
-share/qgis/python/plugins/MetaSearch/dialogs/xmldialog.py
 share/qgis/python/plugins/MetaSearch/images/
 share/qgis/python/plugins/MetaSearch/images/MetaSearch.svg
 share/qgis/python/plugins/MetaSearch/link_types.py
@@ -1939,15 +1959,18 @@ share/qgis/python/plugins/MetaSearch/plugin.py
 share/qgis/python/plugins/MetaSearch/resources/
 share/qgis/python/plugins/MetaSearch/resources/connections-default.xml
 share/qgis/python/plugins/MetaSearch/resources/templates/
+share/qgis/python/plugins/MetaSearch/resources/templates/api_highlight.html
+share/qgis/python/plugins/MetaSearch/resources/templates/csw_service_metadata.html
+share/qgis/python/plugins/MetaSearch/resources/templates/oarec_service_metadata.html
 share/qgis/python/plugins/MetaSearch/resources/templates/record_metadata_dc.html
-share/qgis/python/plugins/MetaSearch/resources/templates/service_metadata.html
-share/qgis/python/plugins/MetaSearch/resources/templates/xml_highlight.html
+share/qgis/python/plugins/MetaSearch/resources/templates/record_metadata_oarec.html
+share/qgis/python/plugins/MetaSearch/search_backend.py
 share/qgis/python/plugins/MetaSearch/ui/
+share/qgis/python/plugins/MetaSearch/ui/apidialog.ui
 share/qgis/python/plugins/MetaSearch/ui/maindialog.ui
 share/qgis/python/plugins/MetaSearch/ui/manageconnectionsdialog.ui
 share/qgis/python/plugins/MetaSearch/ui/newconnectiondialog.ui
 share/qgis/python/plugins/MetaSearch/ui/recorddialog.ui
-share/qgis/python/plugins/MetaSearch/ui/xmldialog.ui
 share/qgis/python/plugins/MetaSearch/util.py
 share/qgis/python/plugins/db_manager/
 share/qgis/python/plugins/db_manager/LICENSE
@@ -2589,7 +2612,6 @@ share/qgis/python/plugins/processing/algs/qgis/HubDistanceLines.py
 share/qgis/python/plugins/processing/algs/qgis/HubDistancePoints.py
 share/qgis/python/plugins/processing/algs/qgis/HypsometricCurves.py
 share/qgis/python/plugins/processing/algs/qgis/IdwInterpolation.py
-share/qgis/python/plugins/processing/algs/qgis/ImportIntoPostGIS.py
 share/qgis/python/plugins/processing/algs/qgis/ImportIntoSpatialite.py
 share/qgis/python/plugins/processing/algs/qgis/KNearestConcaveHull.py
 share/qgis/python/plugins/processing/algs/qgis/KeepNBiggestParts.py
@@ -2649,7 +2671,6 @@ share/qgis/python/plugins/processing/algs/qgis/voronoi.py
 share/qgis/python/plugins/processing/core/
 share/qgis/python/plugins/processing/core/Processing.py
 share/qgis/python/plugins/processing/core/ProcessingConfig.py
-share/qgis/python/plugins/processing/core/ProcessingLog.py
 share/qgis/python/plugins/processing/core/ProcessingResults.py
 share/qgis/python/plugins/processing/core/__init__.py
 share/qgis/python/plugins/processing/core/defaultproviders.py
@@ -2745,14 +2766,6 @@ share/qgis/python/plugins/processing/modeler/OpenModelFromFileAction.py
 share/qgis/python/plugins/processing/modeler/ProjectProvider.py
 share/qgis/python/plugins/processing/modeler/__init__.py
 share/qgis/python/plugins/processing/modeler/exceptions.py
-share/qgis/python/plugins/processing/preconfigured/
-share/qgis/python/plugins/processing/preconfigured/DeletePreconfiguredAlgorithmAction.py
-share/qgis/python/plugins/processing/preconfigured/NewPreconfiguredAlgorithmAction.py
-share/qgis/python/plugins/processing/preconfigured/PreconfiguredAlgorithm.py
-share/qgis/python/plugins/processing/preconfigured/PreconfiguredAlgorithmDialog.py
-share/qgis/python/plugins/processing/preconfigured/PreconfiguredAlgorithmProvider.py
-share/qgis/python/plugins/processing/preconfigured/PreconfiguredUtils.py
-share/qgis/python/plugins/processing/preconfigured/__init__.py
 share/qgis/python/plugins/processing/script/
 share/qgis/python/plugins/processing/script/AddScriptFromFileAction.py
 share/qgis/python/plugins/processing/script/AddScriptFromTemplateAction.py
@@ -4620,27 +4633,6 @@ share/qgis/resources/server/api/ogc/static/jsonFormatter/jsonFormatter.css
 share/qgis/resources/server/api/ogc/static/jsonFormatter/jsonFormatter.js
 share/qgis/resources/server/api/ogc/static/jsonFormatter/jsonFormatter.min.css
 share/qgis/resources/server/api/ogc/static/jsonFormatter/jsonFormatter.min.js
-share/qgis/resources/server/api/ogc/static/landingpage/
-share/qgis/resources/server/api/ogc/static/landingpage/README
-share/qgis/resources/server/api/ogc/static/landingpage/css/
-share/qgis/resources/server/api/ogc/static/landingpage/css/app.ca3f5643.css
-share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-123bc409.8679d8ba.css
-share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-a28d6c70.162a27d1.css
-share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-e7ca2a40.0c5dbbc5.css
-share/qgis/resources/server/api/ogc/static/landingpage/css/chunk-vendors.a728f495.css
-share/qgis/resources/server/api/ogc/static/landingpage/favicon.ico
-share/qgis/resources/server/api/ogc/static/landingpage/index.html
-share/qgis/resources/server/api/ogc/static/landingpage/js/
-share/qgis/resources/server/api/ogc/static/landingpage/js/app.f9f4e567.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/app.f9f4e567.js.map
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-123bc409.ec41f71a.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-123bc409.ec41f71a.js.map
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-a28d6c70.7ed0c6db.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-a28d6c70.7ed0c6db.js.map
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-e7ca2a40.c6c8ec03.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-e7ca2a40.c6c8ec03.js.map
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-vendors.573fc8d0.js
-share/qgis/resources/server/api/ogc/static/landingpage/js/chunk-vendors.573fc8d0.js.map
 share/qgis/resources/server/api/ogc/static/style.css
 share/qgis/resources/server/api/ogc/templates/
 share/qgis/resources/server/api/ogc/templates/wfs3/
@@ -4662,6 +4654,7 @@ share/qgis/resources/server/src/landingpage/README.md
 share/qgis/resources/server/src/landingpage/babel.config.js
 share/qgis/resources/server/src/landingpage/package.json
 share/qgis/resources/server/src/landingpage/public/
+share/qgis/resources/server/src/landingpage/public/README
 share/qgis/resources/server/src/landingpage/public/favicon.ico
 share/qgis/resources/server/src/landingpage/public/index.html
 share/qgis/resources/server/src/landingpage/src/

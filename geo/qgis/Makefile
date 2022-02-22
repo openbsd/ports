@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2022/02/13 16:38:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.160 2022/02/22 14:40:41 landry Exp $
 
 USE_WXNEEDED =	Yes
 
@@ -8,19 +8,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.22.3
-REVISION =	0
+DISTNAME =	qgis-3.24.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	57.0 \
-		qgis_app	37.1 \
-		qgis_gui	46.0 \
-		qgis_analysis	19.0 \
-		qgis_server	17.1 \
+SHARED_LIBS =	qgis_core	58.0 \
+		qgis_app	38.0 \
+		qgis_gui	47.0 \
+		qgis_analysis	19.1 \
+		qgis_server	17.2 \
 		qgispython	6.0 \
-		qgis_3d		11.0 \
+		qgis_3d		12.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	http://www.qgis.org/
