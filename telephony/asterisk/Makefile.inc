@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2022/01/07 20:06:26 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2022/02/22 21:21:07 jca Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -47,6 +47,9 @@ DPB_PROPERTIES=	parallel
 #
 # If this is fixed and moved to clang, update telephony/asterisk-g729 in sync.
 COMPILER=		ports-gcc
+# XXX bsd.port.arch.mk is included below, before compiler.port.mk can set
+# ONLY_FOR_ARCHS
+ONLY_FOR_ARCHS=		${GCC49_ARCHS}
 
 SHARED_LIBS+=		asteriskssl ${SHLIB_V}
 SHARED_LIBS+=		asteriskpj ${SHLIB_V}
