@@ -1,0 +1,11 @@
+@comment $OpenBSD: PFRAG.amd64,v 1.1 2022/02/22 15:49:06 ajacoutot Exp $
+@so lib/gegl-${API_VERSION}/gegl-common-cxx-x86_64-v2.so
+@so lib/gegl-${API_VERSION}/gegl-common-cxx-x86_64-v3.so
+@so lib/gegl-${API_VERSION}/gegl-common-gpl3-x86_64-v2.so
+@so lib/gegl-${API_VERSION}/gegl-common-gpl3-x86_64-v3.so
+@so lib/gegl-${API_VERSION}/gegl-common-x86_64-v2.so
+@so lib/gegl-${API_VERSION}/gegl-common-x86_64-v3.so
+@so lib/gegl-${API_VERSION}/gegl-generated-x86_64-v2.so
+@so lib/gegl-${API_VERSION}/gegl-generated-x86_64-v3.so
+@so lib/gegl-${API_VERSION}/gegl-transformops-x86_64-v2.so
+@so lib/gegl-${API_VERSION}/gegl-transformops-x86_64-v3.so

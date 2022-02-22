@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/12/19 10:32:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2022/02/22 15:49:06 ajacoutot Exp $
 @conflict gegl-*
 @conflict gegl03-*
 @pkgpath graphics/gegl,-main
@@ -177,3 +177,4 @@ share/locale/uk/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/vala/vapi/gegl-${API_VERSION}.deps
 share/vala/vapi/gegl-${API_VERSION}.vapi
+%%amd64%%
