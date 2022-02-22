@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.42 2021/04/28 20:14:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2022/02/22 23:17:50 sthen Exp $
 
 COMMENT =	network switch style shell
 
-DISTNAME =	nsh-1.0.20210416
+DISTNAME =	nsh-1.0.20210509
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
-GH_COMMIT =	5a237b068794446a016e5a394a802922b9c668cf
+GH_COMMIT =	a18420dac8fa3aea55b9b9e9388ac07438816274
 
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
