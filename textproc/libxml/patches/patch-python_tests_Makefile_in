@@ -1,8 +1,9 @@
-$OpenBSD: patch-python_tests_Makefile_in,v 1.19 2019/11/01 15:37:45 jasper Exp $
+$OpenBSD: patch-python_tests_Makefile_in,v 1.20 2022/02/22 10:46:51 ajacoutot Exp $
+
 Index: python/tests/Makefile.in
 --- python/tests/Makefile.in.orig
 +++ python/tests/Makefile.in
-@@ -425,7 +425,6 @@ PYTESTS = \
+@@ -424,7 +424,6 @@ PYTESTS = \
      readererr.py\
      relaxng.py	\
      schema.py	\

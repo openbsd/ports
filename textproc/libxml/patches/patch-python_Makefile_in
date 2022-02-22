@@ -1,8 +1,9 @@
-$OpenBSD: patch-python_Makefile_in,v 1.19 2019/11/01 15:37:45 jasper Exp $
+$OpenBSD: patch-python_Makefile_in,v 1.20 2022/02/22 10:46:51 ajacoutot Exp $
+
 Index: python/Makefile.in
 --- python/Makefile.in.orig
 +++ python/Makefile.in
-@@ -909,7 +909,7 @@ info: info-recursive
+@@ -911,7 +911,7 @@ info: info-recursive
  
  info-am:
  

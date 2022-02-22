@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.5 2021/06/20 22:11:16 bluhm Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2022/02/22 10:46:51 ajacoutot Exp $
+
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -544,7 +544,7 @@ dnl Checks for library functions.
+@@ -527,7 +527,7 @@ dnl Checks for library functions.
  AC_FUNC_STRFTIME
  AC_CHECK_FUNCS(strftime localtime gettimeofday ftime)
  AC_CHECK_FUNCS(stat signal)

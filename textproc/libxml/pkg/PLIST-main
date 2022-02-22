@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2020/02/01 20:35:32 bluhm Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2022/02/22 10:46:51 ajacoutot Exp $
 @pkgpath textproc/libxml
 @define-tag libxml2/rebuild at-end %D/share/libxml2/rebuild
 @tag libxml2/rebuild
@@ -71,6 +71,7 @@ share/aclocal/libxml.m4
 share/doc/libxml2/
 share/doc/libxml2/Copyright
 share/doc/libxml2/examples/
+share/doc/libxml2/examples/README
 share/doc/libxml2/examples/testHTML.c
 share/doc/libxml2/examples/testSAX.c
 share/doc/libxml2/examples/testXPath.c
@@ -81,8 +82,39 @@ share/doc/libxml2/html/FAQ.html
 share/doc/libxml2/html/Libxml2-Logo-180x168.gif
 share/doc/libxml2/html/Libxml2-Logo-90x34.gif
 share/doc/libxml2/html/encoding.html
-share/doc/libxml2/html/examples.xml
-share/doc/libxml2/html/examples.xsl
+share/doc/libxml2/html/examples/
+share/doc/libxml2/html/examples/examples.xml
+share/doc/libxml2/html/examples/examples.xsl
+share/doc/libxml2/html/examples/index.html
+share/doc/libxml2/html/examples/io1.c
+share/doc/libxml2/html/examples/io1.res
+share/doc/libxml2/html/examples/io2.c
+share/doc/libxml2/html/examples/io2.res
+share/doc/libxml2/html/examples/parse1.c
+share/doc/libxml2/html/examples/parse2.c
+share/doc/libxml2/html/examples/parse3.c
+share/doc/libxml2/html/examples/parse4.c
+share/doc/libxml2/html/examples/reader1.c
+share/doc/libxml2/html/examples/reader1.res
+share/doc/libxml2/html/examples/reader2.c
+share/doc/libxml2/html/examples/reader3.c
+share/doc/libxml2/html/examples/reader3.res
+share/doc/libxml2/html/examples/reader4.c
+share/doc/libxml2/html/examples/reader4.res
+share/doc/libxml2/html/examples/test1.xml
+share/doc/libxml2/html/examples/test2.xml
+share/doc/libxml2/html/examples/test3.xml
+share/doc/libxml2/html/examples/testWriter.c
+share/doc/libxml2/html/examples/tree1.c
+share/doc/libxml2/html/examples/tree1.res
+share/doc/libxml2/html/examples/tree2.c
+share/doc/libxml2/html/examples/tree2.res
+share/doc/libxml2/html/examples/tst.xml
+share/doc/libxml2/html/examples/writer.xml
+share/doc/libxml2/html/examples/xpath1.c
+share/doc/libxml2/html/examples/xpath1.res
+share/doc/libxml2/html/examples/xpath2.c
+share/doc/libxml2/html/examples/xpath2.res
 share/doc/libxml2/html/html/
 share/doc/libxml2/html/html/book1.html
 share/doc/libxml2/html/html/home.png
@@ -138,35 +170,10 @@ share/doc/libxml2/html/html/libxml-xpathInternals.html
 share/doc/libxml2/html/html/libxml-xpointer.html
 share/doc/libxml2/html/html/right.png
 share/doc/libxml2/html/html/up.png
-share/doc/libxml2/html/index.html
-share/doc/libxml2/html/io1.c
-share/doc/libxml2/html/io1.res
-share/doc/libxml2/html/io2.c
-share/doc/libxml2/html/io2.res
 share/doc/libxml2/html/libxml.gif
-share/doc/libxml2/html/parse1.c
-share/doc/libxml2/html/parse2.c
-share/doc/libxml2/html/parse3.c
-share/doc/libxml2/html/parse4.c
-share/doc/libxml2/html/reader1.c
-share/doc/libxml2/html/reader1.res
-share/doc/libxml2/html/reader2.c
-share/doc/libxml2/html/reader3.c
-share/doc/libxml2/html/reader3.res
-share/doc/libxml2/html/reader4.c
-share/doc/libxml2/html/reader4.res
 share/doc/libxml2/html/redhat.gif
 share/doc/libxml2/html/smallfootonly.gif
 share/doc/libxml2/html/structure.gif
-share/doc/libxml2/html/test1.xml
-share/doc/libxml2/html/test2.xml
-share/doc/libxml2/html/test3.xml
-share/doc/libxml2/html/testWriter.c
-share/doc/libxml2/html/tree1.c
-share/doc/libxml2/html/tree1.res
-share/doc/libxml2/html/tree2.c
-share/doc/libxml2/html/tree2.res
-share/doc/libxml2/html/tst.xml
 share/doc/libxml2/html/tutorial/
 share/doc/libxml2/html/tutorial/apa.html
 share/doc/libxml2/html/tutorial/apb.html
@@ -219,14 +226,8 @@ share/doc/libxml2/html/tutorial/includekeyword.c
 share/doc/libxml2/html/tutorial/includexpath.c
 share/doc/libxml2/html/tutorial/index.html
 share/doc/libxml2/html/tutorial/ix01.html
-share/doc/libxml2/html/tutorial/xmltutorial.pdf
 share/doc/libxml2/html/w3c.png
-share/doc/libxml2/html/writer.xml
 share/doc/libxml2/html/xml.html
-share/doc/libxml2/html/xpath1.c
-share/doc/libxml2/html/xpath1.res
-share/doc/libxml2/html/xpath2.c
-share/doc/libxml2/html/xpath2.res
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libxml2/
@@ -281,7 +282,7 @@ share/gtk-doc/html/libxml2/libxml2-xmlwriter.html
 share/gtk-doc/html/libxml2/libxml2-xpath.html
 share/gtk-doc/html/libxml2/libxml2-xpathInternals.html
 share/gtk-doc/html/libxml2/libxml2-xpointer.html
-share/gtk-doc/html/libxml2/libxml2.devhelp
+share/gtk-doc/html/libxml2/libxml2.devhelp2
 share/gtk-doc/html/libxml2/right.png
 share/gtk-doc/html/libxml2/style.css
 share/gtk-doc/html/libxml2/up.png
