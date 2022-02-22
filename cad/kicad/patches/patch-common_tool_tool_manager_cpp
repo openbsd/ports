@@ -1,13 +1,14 @@
-$OpenBSD: patch-common_tool_tool_manager_cpp,v 1.1 2019/11/08 14:43:53 sthen Exp $
+$OpenBSD: patch-common_tool_tool_manager_cpp,v 1.2 2022/02/22 15:38:39 tracey Exp $
 
 Index: common/tool/tool_manager.cpp
 --- common/tool/tool_manager.cpp.orig
 +++ common/tool/tool_manager.cpp
-@@ -27,6 +27,7 @@
- #include <map>
- #include <stack>
- #include <algorithm>
+@@ -45,6 +45,8 @@
+ 
+ #include <class_draw_panel_gal.h>
+ 
 +#include <functional>
- 
- #include <core/optional.h>
- 
++
+ /// Struct describing the current execution state of a TOOL
+ struct TOOL_MANAGER::TOOL_STATE
+ {

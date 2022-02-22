@@ -1,14 +1,16 @@
-$OpenBSD: patch-include_system_libcontext_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
+$OpenBSD: patch-thirdparty_libcontext_libcontext_h,v 1.1 2022/02/22 15:38:39 tracey Exp $
 
-Index: include/system/libcontext.h
---- include/system/libcontext.h.orig
-+++ include/system/libcontext.h
-@@ -22,11 +22,11 @@
- #include <stddef.h>
+Index: thirdparty/libcontext/libcontext.h
+--- thirdparty/libcontext/libcontext.h.orig
++++ thirdparty/libcontext/libcontext.h
+@@ -22,13 +22,13 @@
+ #include <cstdio>
  
  
 -#if defined(__GNUC__) || defined(__APPLE__) || defined(__FreeBSD__)
 +#if defined(__GNUC__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+     #undef LIBCONTEXT_HAS_OWN_STACK
  
      #define LIBCONTEXT_COMPILER_gcc
  

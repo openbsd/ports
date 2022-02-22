@@ -1,29 +1,35 @@
-$OpenBSD: patch-include_tool_coroutine_h,v 1.2 2020/04/02 14:48:27 tracey Exp $
-# otto@ patch for building proper stack
+$OpenBSD: patch-include_tool_coroutine_h,v 1.3 2022/02/22 15:38:39 tracey Exp $
+
+this is the otto-fu that makes this software work
+
 Index: include/tool/coroutine.h
 --- include/tool/coroutine.h.orig
 +++ include/tool/coroutine.h
-@@ -33,6 +33,7 @@
+@@ -49,6 +49,8 @@
+ #include <trace_helpers.h>
+ #include <wx/log.h>
  
- #include <system/libcontext.h>
- #include <memory>
 +#include <sys/mman.h>
- 
++
  /**
-  *  Class COROUNTINE.
-@@ -145,6 +146,8 @@ class COROUTINE (public)
+  *  Implement a coroutine.
+  *
+@@ -206,6 +208,8 @@ class COROUTINE (public)
  
      ~COROUTINE()
      {
-+        if (m_stack)
-+            munmap(m_stack.release(), c_defaultStackSize);
-     }
++	if (m_stack)
++		munmap(m_stack.release(), m_stacksize);
+ #ifdef KICAD_USE_VALGRIND
+         VALGRIND_STACK_DEREGISTER( m_valgrind_stack );
+ #endif
+@@ -374,10 +378,11 @@ class COROUTINE (public)
+         size_t stackSize = m_stacksize;
+         void* sp = nullptr;
  
- public:
-@@ -296,7 +299,10 @@ class COROUTINE (public)
- 
+-#ifndef LIBCONTEXT_HAS_OWN_STACK
+-
          // fixme: Clean up stack stuff. Add a guard
-         size_t stackSize = c_defaultStackSize;
 -        m_stack.reset( new char[stackSize] );
 +	void *p = mmap(NULL, stackSize, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON | MAP_STACK, -1, 0);
 +	if (p == MAP_FAILED)
@@ -31,4 +37,12 @@ Index: include/tool/coroutine.h
 +        m_stack.reset( static_cast<char *>(p) );
  
          // align to 16 bytes
-         void* sp = (void*)((((ptrdiff_t) m_stack.get()) + stackSize - 0xf) & (~0x0f));
+         sp = (void*)((((ptrdiff_t) m_stack.get()) + stackSize - 0xf) & (~0x0f));
+@@ -387,7 +392,6 @@ class COROUTINE (public)
+ 
+ #ifdef KICAD_USE_VALGRIND
+         m_valgrind_stack = VALGRIND_STACK_REGISTER( sp, m_stack.get() );
+-#endif
+ #endif
+ 
+ #ifdef KICAD_SANITIZE_THREADS

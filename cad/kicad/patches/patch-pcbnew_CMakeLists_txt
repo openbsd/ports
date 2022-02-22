@@ -1,10 +1,10 @@
-$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.5 2021/07/14 16:28:06 tracey Exp $
-# multiple cmake changes to build, prevent multiple rules for _pcbnew.so
+$OpenBSD: patch-pcbnew_CMakeLists_txt,v 1.6 2022/02/22 15:38:39 tracey Exp $
+
 Index: pcbnew/CMakeLists.txt
 --- pcbnew/CMakeLists.txt.orig
 +++ pcbnew/CMakeLists.txt
-@@ -516,7 +516,7 @@ if( BUILD_GITHUB_PLUGIN )
- endif()
+@@ -493,7 +493,7 @@ add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}
+     )
  
  if( UNIX AND NOT APPLE )
 -    list( APPEND PCBNEW_EXTRA_LIBS rt )
@@ -12,21 +12,3 @@ Index: pcbnew/CMakeLists.txt
  endif()
  
  
-@@ -805,7 +805,7 @@ if( KICAD_SCRIPTING_MODULES )
-         add_dependencies( ScriptingModulesPcbnewSoCopy ScriptingPythonDirectoryCreation )
-         set( PYMOD_EXT "so" )
-     else()  # only linux remains among supported platforms
--        install( FILES ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.kiface DESTINATION ${PYTHON_DEST} COMPONENT binary RENAME "_pcbnew.so" )
-+        install( FILES ${CMAKE_CURRENT_BINARY_DIR}/libpcbnew.a DESTINATION ${PYTHON_DEST} COMPONENT binary RENAME "_pcbnew.so" )
-         set( PYMOD_EXT "so" )
-     endif()
- 
-@@ -823,7 +823,7 @@ if( KICAD_SCRIPTING_MODULES )
-         # For phase 1, copy _pcbnew.kiface to the python module.
-         add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/_pcbnew.${PYMOD_EXT}
-             DEPENDS pcbnew_kiface
--            COMMAND ${CMAKE_COMMAND} -E copy _pcbnew.kiface _pcbnew.${PYMOD_EXT}
-+            COMMAND ${CMAKE_COMMAND} -E copy libpcbnew.a _pcbnew.${PYMOD_EXT}
-             COMMENT "Creating python's pcbnew native module _pcbnew.${PYMOD_EXT} for command line use."
-             )
-         add_custom_target(

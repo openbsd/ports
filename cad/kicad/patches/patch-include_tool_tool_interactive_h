@@ -1,13 +1,14 @@
-$OpenBSD: patch-include_tool_tool_interactive_h,v 1.1 2019/11/08 14:43:53 sthen Exp $
+$OpenBSD: patch-include_tool_tool_interactive_h,v 1.2 2022/02/22 15:38:39 tracey Exp $
 
 Index: include/tool/tool_interactive.h
 --- include/tool/tool_interactive.h.orig
 +++ include/tool/tool_interactive.h
-@@ -27,6 +27,7 @@
- #define __TOOL_INTERACTIVE_H
- 
- #include <string>
-+#include <functional>
- 
- #include <tool/tool_event.h>
+@@ -32,6 +32,8 @@
+ #include <tool/tool_event.h>    // Needed for CONTEXT_MENU_TRIGGER
  #include <tool/tool_base.h>
+ 
++#include <functional>
++
+ class ACTION_MENU;
+ 
+ 
