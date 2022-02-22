@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2022/02/20 23:16:32 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.43 2022/02/22 10:29:23 ajacoutot Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller#'
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
 V =			2021.01
 DISTNAME =		openscad-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		cad
 
@@ -20,7 +20,7 @@ WANTLIB += Qt5PrintSupport Qt5Widgets X11 boost_filesystem-mt
 WANTLIB += boost_program_options-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c cairo double-conversion fontconfig
 WANTLIB += freetype glib-2.0 gmp harfbuzz intl m mpfr opencsg
-WANTLIB += qscintilla2_qt5 xml2 z zi
+WANTLIB += qscintilla2_qt5 xml2 z zip
 
 MASTER_SITES =		https://files.openscad.org/
 EXTRACT_SUFX =		.src.tar.gz
