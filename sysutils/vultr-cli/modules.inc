@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.3 2022/02/04 14:25:47 sthen Exp $
+# $OpenBSD: modules.inc,v 1.4 2022/02/22 22:39:30 sthen Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.99.0 \
@@ -137,7 +137,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify				 v1.7.0 \
 	github.com/subosito/gotenv				 v1.2.0 \
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
-	github.com/vultr/govultr/v2				 v2.14.0 \
+	github.com/vultr/govultr/v2				 v2.14.1 \
 	github.com/yuin/goldmark				 v1.3.5 \
 	go.etcd.io/etcd/api/v3					 v3.5.1 \
 	go.etcd.io/etcd/client/pkg/v3				 v3.5.1 \
