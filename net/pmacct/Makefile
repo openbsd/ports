@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/18 13:24:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2022/02/22 13:18:44 kn Exp $
 
 COMMENT=	passive IP network monitoring tools: traffic accounting, etc
 
 DISTNAME=	pmacct-1.7.6
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -30,8 +31,7 @@ AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CXXLIB="${CXXLIB}"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= --enable-geoipv2 \
 		--enable-jansson \
 		--enable-sqlite3 \
@@ -75,6 +75,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-.for i in ${COMPILER_LIBCXX}
-CXXLIB+= -l$i
-.endfor

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/22 13:18:44 kn Exp $
 
 COMMENT=	basic data structures in C (libstdc++ wrapper)
 
 GH_ACCOUNT=	msune
 GH_PROJECT=	libcdada
-GH_TAGNAME=	v0.3.4
-REVISION=	1
+GH_TAGNAME=	v0.3.5
 
 SHARED_LIBS +=	cdada                     0.0 # 0.0
 
@@ -27,13 +26,8 @@ AUTORECONF=		${WRKSRC}/autogen.sh
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_ARGS=		--disable-valgrind
+CONFIGURE_ARGS=		--disable-valgrind \
+			--without-examples
 SEPARATE_BUILD=		Yes
 
-post-patch:
-	sed -i 's,-lstdc++,${CXXLIB},' ${WRKSRC}/examples/Makefile.am
-
 .include <bsd.port.mk>
-.for i in ${COMPILER_LIBCXX}
-CXXLIB+= -l$i
-.endfor

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2022/02/22 13:18:44 kn Exp $
+
+Use C++ compiler when linking
+
+Index: src/Makefile.am
+--- src/Makefile.am.orig
++++ src/Makefile.am
+@@ -9,6 +9,8 @@ sbin_PROGRAMS =
+ bin_PROGRAMS =
+ EXTRA_PROGRAMS =
+ 
++CCLD = $(CXX)
++
+ AM_LDFLAGS = @GEOIP_LIBS@ @GEOIPV2_LIBS@
+ if WITH_JANSSON
+ AM_LDFLAGS += @JANSSON_LIBS@
