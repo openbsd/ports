@@ -1,0 +1,25 @@
+@comment $OpenBSD: PFRAG.amd64,v 1.1 2022/02/22 15:48:52 ajacoutot Exp $
+@so lib/babl-${API_VERSION}/x86-64-v2-CIE.so
+@so lib/babl-${API_VERSION}/x86-64-v2-cairo.so
+@so lib/babl-${API_VERSION}/x86-64-v2-double.so
+@so lib/babl-${API_VERSION}/x86-64-v2-float.so
+@so lib/babl-${API_VERSION}/x86-64-v2-gegl-fixups.so
+@so lib/babl-${API_VERSION}/x86-64-v2-gggl-lies.so
+@so lib/babl-${API_VERSION}/x86-64-v2-gggl.so
+@so lib/babl-${API_VERSION}/x86-64-v2-grey.so
+@so lib/babl-${API_VERSION}/x86-64-v2-simple.so
+@so lib/babl-${API_VERSION}/x86-64-v2-u16.so
+@so lib/babl-${API_VERSION}/x86-64-v2-u32.so
+@so lib/babl-${API_VERSION}/x86-64-v2-ycbcr.so
+@so lib/babl-${API_VERSION}/x86-64-v3-CIE.so
+@so lib/babl-${API_VERSION}/x86-64-v3-cairo.so
+@so lib/babl-${API_VERSION}/x86-64-v3-double.so
+@so lib/babl-${API_VERSION}/x86-64-v3-float.so
+@so lib/babl-${API_VERSION}/x86-64-v3-gegl-fixups.so
+@so lib/babl-${API_VERSION}/x86-64-v3-gggl-lies.so
+@so lib/babl-${API_VERSION}/x86-64-v3-gggl.so
+@so lib/babl-${API_VERSION}/x86-64-v3-grey.so
+@so lib/babl-${API_VERSION}/x86-64-v3-simple.so
+@so lib/babl-${API_VERSION}/x86-64-v3-u16.so
+@so lib/babl-${API_VERSION}/x86-64-v3-u32.so
+@so lib/babl-${API_VERSION}/x86-64-v3-ycbcr.so

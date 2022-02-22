@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.62 2021/11/29 17:31:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2022/02/22 15:48:52 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.88
+V=			0.1.90
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -11,7 +11,7 @@ SUBST_VARS=		API_VERSION
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS += babl-0.1                  1.8 # 0.185.1
+SHARED_LIBS += babl-0.1                  1.8 # 0.189.1
 
 HOMEPAGE=		http://gegl.org/babl/
 
@@ -41,6 +41,12 @@ CONFIGURE_ARGS=		-Dwith-docs=false \
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-Denable-sse=false \
 			-Denable-sse2=false
+.endif
+
+.if ${MACHINE_ARCH} == "amd64"
+PKG_ARGS +=		-Damd64=1
+.else
+PKG_ARGS +=		-Damd64=0
 .endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
