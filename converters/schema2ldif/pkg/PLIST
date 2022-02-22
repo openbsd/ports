@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/22 23:08:01 kmos Exp $
+bin/ldap-schema-manager
+bin/schema2ldif
+@man man/man1/ldap-schema-manager.1
+@man man/man1/schema2ldif.1
