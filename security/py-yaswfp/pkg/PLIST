@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/05 08:15:11 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/22 04:22:22 bket Exp $
+@pkgpath security/py-yaswfp
 bin/swfparser
 lib/python${MODPY_VERSION}/site-packages/yaswfp/
 lib/python${MODPY_VERSION}/site-packages/yaswfp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

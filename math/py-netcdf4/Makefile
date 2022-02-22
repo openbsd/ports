@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/05 20:25:28 martin Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/22 04:22:20 bket Exp $
 
 COMMENT=	Python interface to the netCDF C library
 
 MODPY_EGG_VERSION=	1.5.8
+REVISION=		1
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
@@ -38,6 +39,9 @@ TEST_ENV=		TMPDIR=${WRKDIR}/tmp
 
 CONFIGURE_ENV+=         LDFLAGS="-L${LOCALBASE}/lib" \
                         CPPFLAGS="-I${LOCALBASE}/include"
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 pre-test:
 	@mkdir -p ${WRKDIR}/tmp

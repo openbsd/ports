@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/22 04:22:22 bket Exp $
 
 COMMENT =	extensible network protocol fuzzer
 
 MODPY_EGG_VERSION =	0.2.1
 DISTNAME =	boofuzz-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -27,7 +27,7 @@ RUN_DEPENDS = 		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-future${MODPY_FLAVOR} \
 			devel/py-serial${MODPY_FLAVOR} \
 			graphics/py-dot${MODPY_FLAVOR} \
-			net/py-impacket \
+			net/py-impacket${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			www/py-flask${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}

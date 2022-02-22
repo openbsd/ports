@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:02:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2022/02/22 04:22:23 bket Exp $
 
 COMMENT =		http client/server for asyncio
 
 MODPY_EGG_VERSION =	3.7.4
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -23,7 +23,7 @@ MODPY_SETUPTOOLS =	Yes
 # XXX some tests fail as we don't have ports for re_assert and async_generator
 MODPY_PYTEST =		Yes
 
-RUN_DEPENDS =		devel/py-async-timeout \
+RUN_DEPENDS =		devel/py-async-timeout${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR}>=17.3.0 \
 			devel/py-typing-extensions${MODPY_FLAVOR}>=3.6.5 \
 			textproc/py-chardet${MODPY_FLAVOR}>=2.0 \

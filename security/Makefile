@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.650 2022/01/20 17:15:48 abieber Exp $
+# $OpenBSD: Makefile,v 1.651 2022/02/22 04:22:22 bket Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -316,7 +316,7 @@
      SUBDIR += py-trustme,python3
      SUBDIR += py-viv_utils
      SUBDIR += py-vivisect
-     SUBDIR += py-yaswfp		# unflavoured but uses python3
+     SUBDIR += py-yaswfp,python3
      SUBDIR += qca-qt5
      SUBDIR += qtkeychain
      SUBDIR += qtpass

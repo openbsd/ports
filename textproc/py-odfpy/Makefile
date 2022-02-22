@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/22 04:22:23 bket Exp $
 
 COMMENT=		Python API and tools to manipulate OpenDocument files
 
 MODPY_EGG_VERSION=	1.4.1
 DISTNAME=		odfpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-odfpy-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc devel
 
@@ -21,5 +21,8 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 
 RUN_DEPENDS=		textproc/py-defusedxml${MODPY_FLAVOR}
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

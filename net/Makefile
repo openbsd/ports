@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1289 2022/02/13 18:14:22 kn Exp $
+# $OpenBSD: Makefile,v 1.1290 2022/02/22 04:22:21 bket Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -554,7 +554,7 @@
      SUBDIR += py-idna
      SUBDIR += py-idna,python3
      SUBDIR += py-ifaddr,python3
-     SUBDIR += py-impacket		# unflavoured but uses python3
+     SUBDIR += py-impacket,python3
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
      SUBDIR += py-irclib,python3
@@ -568,7 +568,7 @@
      SUBDIR += py-netaddr,python3
      SUBDIR += py-netifaces,python3
      SUBDIR += py-netmiko,python3
-     SUBDIR += py-nmap			# unflavoured but uses python3
+     SUBDIR += py-nmap,python3
      SUBDIR += py-nxos,python3
      SUBDIR += py-paho-mqtt,python3
      SUBDIR += py-pcapy,python3

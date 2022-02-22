@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/22 04:22:23 bket Exp $
 
 COMMENT =		python helper for Semantic Versioning
 
 MODPY_EGG_VERSION =	2.13.0
 DISTNAME =		semver-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -23,5 +23,8 @@ MODPY_PYTEST_ARGS =	test_semver.py
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-tox${MODPY_FLAVOR} \
 			devel/py-virtualenv${MODPY_FLAVOR}
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

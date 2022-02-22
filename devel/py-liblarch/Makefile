@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/22 04:22:20 bket Exp $
 
 COMMENT=		python library to easily handle data structure
 
@@ -8,7 +8,7 @@ GH_TAGNAME=		v3.0
 MODPY_EGG_VERSION=	${GH_TAGNAME:S/v//}
 DISTNAME=		liblarch-${MODPY_EGG_VERSION}
 PKGNAME=		py-liblarch-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -23,5 +23,8 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 TEST_IS_INTERACTIVE=	x11
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

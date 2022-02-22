@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:01:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2022/02/22 04:22:21 bket Exp $
 
 COMMENT =		python interface to the nmap scan data
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		python-nmap-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 CATEGORIES =		net
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		http://xael.org/norman/python/python-nmap/
 MASTER_SITES =		http://xael.org/pages/
@@ -27,5 +27,8 @@ EXAMPLESDIR =		${PREFIX}/share/examples/${MODPY_PY_PREFIX}nmap
 post-install:
 			${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 			${INSTALL_SCRIPT} ${WRKSRC}/example.py ${EXAMPLESDIR}
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

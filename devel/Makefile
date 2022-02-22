@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2181 2022/02/19 20:50:22 bket Exp $
+# $OpenBSD: Makefile,v 1.2182 2022/02/22 04:22:19 bket Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1294,7 +1294,7 @@
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
      SUBDIR += py-astunparse,python3
-     SUBDIR += py-async-timeout		# unflavoured but uses python3
+     SUBDIR += py-async-timeout,python3
      SUBDIR += py-atomicwrites
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs
@@ -1305,7 +1305,7 @@
      SUBDIR += py-bencode,python3
      SUBDIR += py-beniget,python3
      SUBDIR += py-biplist,python3
-     SUBDIR += py-bitcoinlib		# unflavoured but uses python3
+     SUBDIR += py-bitcoinlib,python3
      SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings,python3
      SUBDIR += py-blinker,python3
@@ -1318,7 +1318,7 @@
      SUBDIR += py-certifi
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi,python3
-     SUBDIR += py-cflow2dot		# unflavoured but uses python3
+     SUBDIR += py-cflow2dot,python3
      SUBDIR += py-characteristic,python3
      SUBDIR += py-cheetah,python3
      SUBDIR += py-click,python3
@@ -1422,7 +1422,7 @@
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy,python3
-     SUBDIR += py-liblarch		# unflavoured but uses python3
+     SUBDIR += py-liblarch,python3
      SUBDIR += py-lief,python3
      SUBDIR += py-linecache2
      SUBDIR += py-llvmlite

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.639 2022/02/16 18:27:51 denis Exp $
+# $OpenBSD: Makefile,v 1.640 2022/02/22 04:22:22 bket Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -299,7 +299,7 @@
      SUBDIR += py-pynetbox,python3
      SUBDIR += py-pyperclip,python3
      SUBDIR += py-scandir		# not required for py3
-     SUBDIR += py-schedule		# unflavoured but uses python3
+     SUBDIR += py-schedule,python3
      SUBDIR += py-statgrab,python3
      SUBDIR += py-threadpoolctl,python3
      SUBDIR += py-tsk,python3

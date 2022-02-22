@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/23 09:59:31 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/22 04:22:20 bket Exp $
 
 COMMENT =		OGC API server implementation
 
 MODPY_EGG_VERSION =	0.11.0
+REVISION =		0
 DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
 
 CATEGORIES =		geo devel
@@ -28,7 +29,7 @@ RUN_DEPENDS =	devel/py-click${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		textproc/py-unicodecsv${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR} \
-		www/py-flask-cors
+		www/py-flask-cors${MODPY_FLAVOR}
 
 post-install:
 	rm -Rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/tests/

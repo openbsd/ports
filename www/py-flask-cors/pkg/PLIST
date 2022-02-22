@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/16 17:53:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/22 04:22:23 bket Exp $
+@pkgpath www/py-flask-cors
 lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

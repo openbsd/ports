@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/02 00:01:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2022/02/22 04:22:21 bket Exp $
 
 COMMENT=		GTD organizer for GNOME
 
@@ -7,7 +7,7 @@ GH_ACCOUNT =		getting-things-gnome
 GH_COMMIT =		54b2793be236da41549360c5aeb0da5e33a7ff60
 MODPY_EGG_VERSION =	0.4.0
 DISTNAME =		gtg-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		productivity
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-liblarch \
+			devel/py-liblarch${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
 			devel/py-gobject3${MODPY_FLAVOR} \

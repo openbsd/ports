@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/22 04:22:20 bket Exp $
 
 COMMENT =		timeout context manager for asyncio programs
 
 MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		async-timeout-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -21,5 +21,8 @@ MODPY_SETUPTOOLS =	Yes
 
 # requires newer py-test and py-test-aiohttp
 NO_TEST =		Yes
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

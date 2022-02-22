@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.705 2022/01/06 19:06:18 jeremy Exp $
+# $OpenBSD: Makefile,v 1.706 2022/02/22 04:22:22 bket Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -372,7 +372,7 @@
      SUBDIR += py-PEG2,python3
      SUBDIR += py-PyPDF2,python3
      SUBDIR += py-alabaster,python3
-     SUBDIR += py-black			# unflavoured but uses python3
+     SUBDIR += py-black,python3
      SUBDIR += py-bracex,python3
      SUBDIR += py-canonicaljson,python3
      SUBDIR += py-cchardet,python3
@@ -409,12 +409,12 @@
      SUBDIR += py-natsort,python3
      SUBDIR += py-nltk,python3
      SUBDIR += py-numpydoc,python3
-     SUBDIR += py-odfpy			# unflavoured but uses python3
+     SUBDIR += py-odfpy,python3
      SUBDIR += py-ofxparse,python3
      SUBDIR += py-openpyxl,python3
      SUBDIR += py-pandocfilters,python3
      SUBDIR += py-patiencediff,python3
-     SUBDIR += py-pdfminer		# unflavoured but uses python3
+     SUBDIR += py-pdfminer,python3
      SUBDIR += py-podcastparser,python3
      SUBDIR += py-polib,python3
      SUBDIR += py-precis_i18n,python3
@@ -430,7 +430,7 @@
      SUBDIR += py-ruamel.yaml,python3
      SUBDIR += py-ruamel.yaml.clib,python3
      SUBDIR += py-signedjson,python3
-     SUBDIR += py-semver		# unflavoured but uses python3
+     SUBDIR += py-semver,python3
      SUBDIR += py-snowballstemmer,python3
      SUBDIR += py-spdx,python3
      SUBDIR += py-spdx-lookup,python3

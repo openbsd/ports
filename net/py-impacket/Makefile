@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/02 00:01:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2022/02/22 04:22:21 bket Exp $
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -9,7 +9,7 @@ DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.secureauth.com/labs/open-source-tools/impacket
 
@@ -40,6 +40,9 @@ RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
 
 NO_TEST =		Yes
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \

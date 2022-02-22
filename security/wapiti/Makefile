@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/22 04:22:22 bket Exp $
 
 COMMENT =	web-application vulnerability scanner
 
 MODPY_EGG_VERSION =	3.0.1
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security www
 
@@ -28,6 +28,6 @@ RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR} \
 			net/py-socks${MODPY_FLAVOR} \
 			net/py-tld${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
-			security/py-yaswfp
+			security/py-yaswfp${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

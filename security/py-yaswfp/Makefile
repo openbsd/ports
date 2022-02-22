@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/22 04:22:22 bket Exp $
 
 COMMENT =	Yet Another SWF Parser
 
 MODPY_EGG_VERSION =	0.9.3
 DISTNAME =	yaswfp-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	facundobatista
 GH_PROJECT =	yaswfp
@@ -25,5 +25,8 @@ do-test:
 	sed -i "s/nosetests3/nosetests${MODPY_BIN_SUFFIX}/g" ${WRKSRC}/test
 	sed -i "s/flake8/pyflakes${MODPY_BIN_SUFFIX}/g" ${WRKSRC}/test
 	cd ${WRKSRC} && /bin/sh ./test
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/21 09:40:10 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/22 04:22:21 bket Exp $
+@pkgpath multimedia/py-pafy
 bin/ytdl
 lib/python${MODPY_VERSION}/site-packages/pafy/
 lib/python${MODPY_VERSION}/site-packages/pafy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2022/02/09 10:01:42 landry Exp $
+# $OpenBSD: Makefile,v 1.148 2022/02/22 04:22:21 bket Exp $
 
      SUBDIR =
      SUBDIR += aom
@@ -71,7 +71,7 @@
      SUBDIR += py-casttube,python3
      SUBDIR += py-chromecast,python3
      SUBDIR += py-guessit,python3
-     SUBDIR += py-pafy		# unflavoured but uses python3
+     SUBDIR += py-pafy,python3
      SUBDIR += qtav
      SUBDIR += regionset
      SUBDIR += sfml

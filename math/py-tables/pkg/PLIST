@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/22 04:22:21 bket Exp $
+@pkgpath math/py-tables
 bin/pt2to3
 bin/ptdump
 bin/ptrepack

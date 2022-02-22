@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/22 04:22:22 bket Exp $
 
 COMMENT =		python code formatter
 
 MODPY_EGG_VERSION =	19.3b0
 DISTNAME =		black-${MODPY_EGG_VERSION}
 PKGNAME =		py-black-${MODPY_EGG_VERSION:S/b/beta/}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc devel
 
@@ -24,5 +24,8 @@ RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
 TEST_DEPENDS =		www/py-aiohttp
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

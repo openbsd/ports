@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/22 04:22:21 bket Exp $
 
 COMMENT=	Python package to manage extremely large amounts of data
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	3.6.1
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://www.pytables.org/
 MAINTAINER=		Martin Reindl <martin@catai.org>
@@ -40,6 +40,9 @@ RUN_DEPENDS+=	math/netcdf
 
 TEST_DEPENDS=	math/py-numexpr${MODPY_FLAVOR} \
 		math/hdf5
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 do-test: fake
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/02/22 04:22:20 bket Exp $
 
 COMMENT =		C call graphs using Cflow producing linked PDF
 
 MODPY_EGG_VERSION =	0.2.2
 DISTNAME =		pycflow2dot-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -23,5 +23,8 @@ RUN_DEPENDS =		devel/cflow \
 			graphics/py-dot${MODPY_FLAVOR} \
 			math/py-networkx${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
+
+FLAVORS =	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>
