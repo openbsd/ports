@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/08 13:36:10 bmercer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/02/22 22:33:23 sthen Exp $
 @bin bin/teensyloader
 share/examples/teensy/
-share/examples/teensy/blink_slow_Teensy3.hex
-share/examples/teensy/blink_slow_Teensy31.hex
+share/examples/teensy/blink_slow_Teensy2.hex
+share/examples/teensy/blink_slow_Teensy2pp.hex
+share/examples/teensy/blink_slow_Teensy30.hex
+share/examples/teensy/blink_slow_Teensy32.hex
+share/examples/teensy/blink_slow_Teensy35.hex
+share/examples/teensy/blink_slow_Teensy36.hex
+share/examples/teensy/blink_slow_Teensy40.hex
+share/examples/teensy/blink_slow_Teensy41.hex
 share/examples/teensy/blink_slow_TeensyLC.hex
-share/examples/teensy/blinky-at90usb1286.hex
-share/examples/teensy/blinky-at90usb162.hex
-share/examples/teensy/blinky-at90usb646.hex
-share/examples/teensy/blinky-atmega32u4.hex
+share/examples/teensy/blink_slow_TeensyMM.hex
