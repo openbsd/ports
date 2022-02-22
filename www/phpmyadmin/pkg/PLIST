@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.73 2022/02/08 12:16:24 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.74 2022/02/22 07:28:43 giovanni Exp $
 @unexec-delete rm -f ${PREFIX}/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -2247,7 +2247,6 @@ phpMyAdmin/vendor/
 phpMyAdmin/vendor/autoload.php
 phpMyAdmin/vendor/bacon/
 phpMyAdmin/vendor/bacon/bacon-qr-code/
-phpMyAdmin/vendor/bacon/bacon-qr-code/CHANGELOG.md
 phpMyAdmin/vendor/bacon/bacon-qr-code/LICENSE
 phpMyAdmin/vendor/bacon/bacon-qr-code/README.md
 phpMyAdmin/vendor/bacon/bacon-qr-code/composer.json
