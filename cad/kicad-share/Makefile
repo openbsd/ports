@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/03 07:58:02 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/22 15:37:14 tracey Exp $
 
      SUBDIR += footprints
-     SUBDIR += i18n
      SUBDIR += packages3D
      SUBDIR += symbols
      SUBDIR += templates
