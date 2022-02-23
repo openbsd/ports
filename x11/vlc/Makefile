@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2021/09/03 11:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.253 2022/02/23 21:46:22 sthen Exp $
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
@@ -145,6 +145,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-libmpeg2 \
 		--disable-libva \
 		--disable-linsys \
+		--disable-live555 \
 		--disable-lua \
 		--disable-mad \
 		--disable-mfx \
@@ -183,10 +184,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--enable-smb2 \
 		--without-contrib \
 		--with-kde-solid=${LOCALBASE}/share/apps/solid/actions
-
-# too old for now
-CONFIGURE_ARGS+= --disable-live555
-
 CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
