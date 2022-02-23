@@ -7,8 +7,3 @@ may be written by the user in config files. Layouts are applied
 dynamically, and different layouts may be used on each workspace.
 Xinerama is fully supported, allowing windows to be tiled on several
 screens.
-
-Important note: if you want to configure xmonad without patching
-the default config file and rebuilding the package, you should also
-install the xmonad-lib package, which makes runtime configuration
-possible.
