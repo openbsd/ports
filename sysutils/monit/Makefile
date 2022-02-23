@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.70 2022/01/23 14:42:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2022/02/23 16:25:48 sthen Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.30.0
+DISTNAME=	monit-5.31.0
 
 CATEGORIES=	sysutils
 
