@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_build_py,v 1.32 2022/02/21 12:58:09 ajacoutot Exp $
+$OpenBSD: patch-mesonbuild_build_py,v 1.33 2022/02/23 08:58:43 ajacoutot Exp $
 
 Index: mesonbuild/build.py
 --- mesonbuild/build.py.orig
@@ -12,15 +12,17 @@ Index: mesonbuild/build.py
      OptionKey, PerMachineDefaultable,
      MesonBugException,
  )
-@@ -2176,6 +2176,24 @@ class SharedLibrary(BuildTarget):
+@@ -2176,6 +2176,26 @@ class SharedLibrary(BuildTarget):
              elif self.soversion:
                  # If unspecified, pick the soversion
                  self.darwin_versions = 2 * [self.soversion]
 +        if is_openbsd():
 +            self.libversion = os.getenv('LIB' + self.name + '_VERSION')
-+#            if (self.libversion is None and
-+#                    str(os.getenv('MODMESON_PORT_BUILD')).casefold() == 'yes'):
-+#                self.libversion = '0.0'
++            if (self.libversion is None and
++                    self.soversion is not None and
++                    len(self.soversion) != 0 and
++                    str(os.getenv('MODMESON_PORT_BUILD')).casefold() == 'yes'):
++                self.libversion = '0.0'
 +            if self.libversion is not None:
 +                self.ltversion_orig = self.ltversion if self.ltversion is not None else self.soversion
 +                self.ltversion = self.libversion.format(self)
@@ -37,7 +39,7 @@ Index: mesonbuild/build.py
  
          # Visual Studio module-definitions file
          if 'vs_module_defs' in kwargs:
-@@ -2245,6 +2263,8 @@ class SharedLibrary(BuildTarget):
+@@ -2245,6 +2265,8 @@ class SharedLibrary(BuildTarget):
          # filename. If ltversion != soversion we create an soversion alias:
          # libfoo.so.0 -> libfoo.so.0.100.0
          # Where libfoo.so.0.100.0 is the actual library
