@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/11/18 17:40:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.26 2022/02/23 12:25:24 sthen Exp $
 @pkgpath databases/freetds,-msdblib
 @pkgpath databases/freetds,-openssl
 @bin bin/bsqldb
@@ -14,7 +14,6 @@ include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
 include/ctpublic.h
-include/odbcss.h
 include/sqldb.h
 include/sqlfront.h
 include/sybdb.h
