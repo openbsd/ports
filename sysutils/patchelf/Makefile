@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/23 01:43:12 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/23 01:45:10 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 .include <bsd.port.arch.mk>
 
 # amd64:   TOTAL: 45, PASS: 44, FAIL:  1 (replace-add-needed.sh)
-# sparc64: TOTAL: 45, PASS: 32, FAIL: 13 (needs fixes/disabling to run)
+# sparc64: TOTAL: 45, PASS: 33, FAIL: 12 (XXX: mostly 'Abort trap')
 TEST_TARGET =		check
 
 .if !${PROPERTIES:Mclang}
@@ -37,6 +37,11 @@ TEST_TARGET =		check
 # links on all our archicture/compiler mixes with this workaorund.
 # (closed) https://github.com/NixOS/patchelf/issues/350
 TEST_DEPENDS +=		devel/gas
+
+# strip `--build-ld' since base ld.bfd(1) 2.17 is too old to know it;
+# this unbreaks the test build/allows to run tests in the first place.
+TEST_FLAGS +=		libbuildid_so_LDFLAGS='$$(LDFLAGS_sharedlib)'
+.endif
 
 pre-test:
 .if !${PROPERTIES:Mclang}
