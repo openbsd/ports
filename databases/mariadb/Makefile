@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.123 2022/02/21 10:22:37 robert Exp $
+# $OpenBSD: Makefile,v 1.124 2022/02/23 21:55:49 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.6.5
+VERSION=	10.6.7
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
-REVISION-main=	0
-REVISION-server=2
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
