@@ -1,19 +1,19 @@
-$OpenBSD: patch-src_borg__endian_h,v 1.2 2017/11/05 06:32:36 jca Exp $
+$OpenBSD: patch-src_borg__endian_h,v 1.1 2022/02/23 18:23:07 bket Exp $
 
 __builtin_bswap32 unavailable at least on sparc64
 
 Index: src/borg/_endian.h
 --- src/borg/_endian.h.orig
 +++ src/borg/_endian.h
-@@ -1,6 +1,7 @@
- #include <unistd.h>
+@@ -3,6 +3,7 @@
+ #endif
  #include <stdlib.h>
  #include <stdint.h>
 +#include <endian.h>
  
  #if defined (__SVR4) && defined (__sun)
  #include <sys/isa_defs.h>
-@@ -19,8 +20,8 @@
+@@ -22,8 +23,8 @@
  #endif
  
  #if BORG_BIG_ENDIAN

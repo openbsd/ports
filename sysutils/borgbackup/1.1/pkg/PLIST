@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/01/09 10:18:10 bket Exp $
+@comment $OpenBSD: PLIST,v 1.1 2022/02/23 18:23:07 bket Exp $
+@option is-branch
+@pkgpath sysutils/borgbackup
 bin/borg
 bin/borgfs
 lib/python${MODPY_VERSION}/site-packages/borg/
