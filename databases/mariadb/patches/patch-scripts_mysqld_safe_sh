@@ -1,25 +1,24 @@
-$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.21 2021/08/13 17:24:00 sthen Exp $
+$OpenBSD: patch-scripts_mysqld_safe_sh,v 1.22 2022/02/23 21:49:44 sthen Exp $
 
 Index: scripts/mysqld_safe.sh
 --- scripts/mysqld_safe.sh.orig
 +++ scripts/mysqld_safe.sh
-@@ -28,7 +28,8 @@ defaults_group_suffix=
+@@ -28,8 +28,8 @@ defaults_group_suffix=
  logging=init
  want_syslog=0
  syslog_tag=
 -user='@MYSQLD_USER@'
+-group='@MYSQLD_GROUP@'
 +user='_mysql'
 +group='_mysql'
  pid_file=
  err_log=
  err_log_base=
-@@ -724,8 +725,8 @@ then
-     log_error "Fatal error Can't create database directory '$mysql_unix_port'"
-     exit 1
+@@ -733,7 +733,7 @@ then
+     [ "$user" ] && chown $user $mysql_unix_port_dir
+     [ "$group" ] && chgrp $group $mysql_unix_port_dir
    fi
--  chown $user $mysql_unix_port_dir
 -  chmod 755 $mysql_unix_port_dir
-+  chown $user:$group $mysql_unix_port_dir
 +  chmod 711 $mysql_unix_port_dir
  fi
  

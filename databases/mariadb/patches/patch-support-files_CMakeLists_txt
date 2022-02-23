@@ -1,11 +1,11 @@
-$OpenBSD: patch-support-files_CMakeLists_txt,v 1.4 2021/07/09 11:35:29 sthen Exp $
+$OpenBSD: patch-support-files_CMakeLists_txt,v 1.5 2022/02/23 21:49:44 sthen Exp $
 
 Adjust the pkg-config file path since the port puts the shared libs in a sub directory.
 
 Index: support-files/CMakeLists.txt
 --- support-files/CMakeLists.txt.orig
 +++ support-files/CMakeLists.txt
-@@ -91,7 +91,7 @@ IF(UNIX AND NOT WITHOUT_SERVER)
+@@ -92,7 +92,7 @@ IF(UNIX AND NOT WITHOUT_SERVER)
    ENDIF()
  
    CONFIGURE_FILE(mariadb.pc.in ${CMAKE_CURRENT_BINARY_DIR}/mariadb.pc @ONLY)

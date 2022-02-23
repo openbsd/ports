@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2021/07/09 11:35:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2022/02/23 21:49:44 sthen Exp $
 @conflict mariadb-server-<10.5.5p0v1
 @conflict mytop-*
 @pkgpath databases/mytop
@@ -62,6 +62,7 @@ include/mysql/mysqld_error.h
 @lib lib/libmysqlclient.so.${LIBmysqlclient_VERSION}
 @lib lib/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 lib/mysql/
+@static-lib lib/mysql/libmariadb.a
 @lib lib/mysql/libmariadb.so.${LIBmariadb_VERSION}
 @static-lib lib/mysql/libmariadbclient.a
 @lib lib/mysql/libmysqlclient.so.${LIBmysqlclient_VERSION}

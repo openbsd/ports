@@ -1,28 +1,25 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.23 2021/08/13 17:24:00 sthen Exp $
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.24 2022/02/23 21:49:44 sthen Exp $
+
+Remove --group command-line handling as the option is not valid for
+mariadbd.
+
+https://jira.mariadb.org/browse/MDEV-27823
 
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
 +++ scripts/mysql_install_db.sh
-@@ -30,7 +30,8 @@ args=""
+@@ -30,8 +30,8 @@ args=""
  defaults=""
  defaults_group_suffix=""
  mysqld_opt=""
 -user=""
-+user=_mysql
-+group=_mysql
+-group=""
++user="_mysql"
++group="_mysql"
  silent_startup="--silent-startup"
  
  force=0
-@@ -149,6 +150,8 @@ parse_arguments()
-         # as 'user' (crucial e.g. if log-bin=/some_other_path/
-         # where a chown of datadir won't help)
-         user=`parse_arg "$arg"` ;;
-+      --group=*)
-+        group=`parse_arg "$arg"` ;;
-       --skip-name-resolve) ip_only=1 ;;
-       --verbose) verbose=1 ; silent_startup="" ;;
-       --rpm) in_rpm=1 ;;
-@@ -328,7 +331,6 @@ then
+@@ -334,7 +334,6 @@ then
    srcpkgdatadir="$srcdir/scripts"
    buildpkgdatadir="$builddir/scripts"
    plugindir="$builddir/plugin/auth_socket"
@@ -30,7 +27,7 @@ Index: scripts/mysql_install_db.sh
  elif test -n "$basedir"
  then
    bindir="$basedir/bin" # only used in the help text
-@@ -357,8 +359,7 @@ then
+@@ -363,8 +362,7 @@ then
      cannot_find_file fill_help_tables.sql @pkgdata_locations@
      exit 1
    fi
@@ -40,7 +37,7 @@ Index: scripts/mysql_install_db.sh
  # relative from where the script was run for a relocatable install
  elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mariadbd"
  then
-@@ -369,7 +370,6 @@ then
+@@ -375,7 +373,6 @@ then
    srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    buildpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    plugindir="$basedir/@INSTALL_PLUGINDIR@"
@@ -48,7 +45,7 @@ Index: scripts/mysql_install_db.sh
  else
    basedir="@prefix@"
    bindir="@bindir@"
-@@ -378,7 +378,6 @@ else
+@@ -384,7 +381,6 @@ else
    srcpkgdatadir="@pkgdatadir@"
    buildpkgdatadir="@pkgdatadir@"
    plugindir="@pkgplugindir@"
@@ -56,22 +53,24 @@ Index: scripts/mysql_install_db.sh
  fi
  
  # Set up paths to SQL scripts required for bootstrap
-@@ -468,11 +467,11 @@ do
-   fi
-   if test -n "$user"
+@@ -476,13 +472,13 @@ do
    then
--    chown $user "$dir"
-+    chown -f $user:$group "$dir"
+     if test -z "$group"
+     then
+-      chown $user $dir
++      chown -f $user $dir
+     else
+-      chown $user:$group $dir
++      chown -f $user:$group $dir
+     fi
      if test $? -ne 0
      then
 -      echo "Cannot change ownership of the database directories to the '$user'"
--      echo "user.  Check that you have the necessary permissions and try again."
-+      echo "Cannot change ownership of the database directories to '$user:$group'"
-+      echo "user/group.  Check that you have the necessary permissions and try again."
++      echo "Cannot change ownership of the database directories to the '$user:$group'"
+       echo "user.  Check that you have the necessary permissions and try again."
        exit 1
      fi
-   fi
-@@ -480,25 +479,6 @@ done
+@@ -491,33 +487,9 @@ done
  
  if test -n "$user"
  then
@@ -97,7 +96,15 @@ Index: scripts/mysql_install_db.sh
    args="$args --user=$user"
  fi
  
-@@ -603,10 +583,6 @@ fi
+-if test -n "$group"
+-then
+-  args="$args --group=$group"
+-fi
+-
+ if test -f "$ldata/mysql/user.frm"
+ then
+     echo "mysql.user table already exists!"
+@@ -620,10 +592,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -108,7 +115,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -639,10 +615,7 @@ then
+@@ -655,10 +623,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"

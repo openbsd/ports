@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_CMakeLists_txt,v 1.15 2021/07/09 11:35:29 sthen Exp $
+$OpenBSD: patch-scripts_CMakeLists_txt,v 1.16 2022/02/23 21:49:44 sthen Exp $
 
 Index: scripts/CMakeLists.txt
 --- scripts/CMakeLists.txt.orig
 +++ scripts/CMakeLists.txt
-@@ -185,25 +185,14 @@ ENDIF(UNIX)
+@@ -186,25 +186,14 @@ ENDIF(UNIX)
  # i.e. makes access relative the current directory. This matches
  # the documentation, so better not change this.
  
