@@ -1,7 +1,7 @@
 Index: base/allocator/partition_allocator/partition_alloc_constants.h
 --- base/allocator/partition_allocator/partition_alloc_constants.h.orig
 +++ base/allocator/partition_allocator/partition_alloc_constants.h
-@@ -361,7 +361,7 @@ constexpr size_t kBitsPerSizeT = sizeof(void*) * CHAR_
+@@ -371,7 +371,7 @@ constexpr size_t kBitsPerSizeT = sizeof(void*) * CHAR_
  // PartitionPurgeDecommitEmptySlotSpans flag will eagerly decommit all entries
  // in the ring buffer, so with periodic purge enabled, this typically happens
  // every few seconds.
