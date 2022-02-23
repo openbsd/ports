@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2022/02/16 12:19:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.153 2022/02/23 15:47:35 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -75,12 +75,10 @@ CONFIGURE_ARGS+= --disable-geoip
 # not strictly speaking interactive, but it configures temporary addresses on
 # lo0 as root, so let's try and avoid running it unintentionally
 TEST_IS_INTERACTIVE= Yes
-TEST_DEPENDS=	sysutils/coreutils
 
 pre-test:
 	@echo '*** tests still need more work in the port - server processes not starting'
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh up
-	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 post-test:
 	cd ${WRKSRC}/bin/tests/system && ${SUDO} ./ifconfig.sh down

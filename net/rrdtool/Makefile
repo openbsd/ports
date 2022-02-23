@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2021/09/02 14:59:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.120 2022/02/23 15:47:35 sthen Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -89,8 +89,7 @@ LIB_DEPENDS-ruby=	rrdtool-${VERSION}:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 
-TEST_DEPENDS=		shells/bash \
-			sysutils/coreutils
+TEST_DEPENDS=		shells/bash
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/librrd.pc.in
@@ -98,7 +97,6 @@ pre-configure:
 pre-test:
 	find ${WRKSRC}/tests -type f -perm -0111 \
 	    -exec sed -i '1s,#!.*bash,#!${LOCALBASE}/bin/bash,' {} +
-	ln -s ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} CHANGES COPYRIGHT \

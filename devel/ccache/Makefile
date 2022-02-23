@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2021/11/30 10:13:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2022/02/23 15:47:35 sthen Exp $
 
 COMMENT =	compiler cache
 
@@ -30,10 +30,6 @@ LIB_DEPENDS =		archivers/zstd \
 # Failure in cpp1 test suite appears to be due to an embedded filename
 # in a .o file present in one file, and not present in the file being
 # compared with.
-TEST_DEPENDS =		shells/bash \
-			sysutils/coreutils
-
-pre-test:
-	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
+TEST_DEPENDS =		shells/bash
 
 .include <bsd.port.mk>
