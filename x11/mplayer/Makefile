@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.317 2021/12/07 20:03:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.318 2022/02/23 21:45:23 sthen Exp $
 
 COMMENT=	movie player supporting many formats
 
 V=		20211106
 FFMPEG_V=	4.4.1
 DISTNAME=	mplayer-${V}
+REVISION=	0
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -48,7 +49,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 
 BUILD_DEPENDS=	audio/ladspa \
 		audio/rtunes \
-		net/livemedia \
 		textproc/docbook-xsl
 # MPlayer uses non-public interfaces to FFmpeg, so we still need
 # the FFmpeg source in the MPlayer tree at build time.
@@ -120,6 +120,7 @@ CONFIGURE_ARGS+=--disable-caca \
 		--disable-libopus \
 		--disable-librtmp \
 		--disable-libvorbis \
+		--disable-live \
 		--disable-mad \
 		--disable-mpg123 \
 		--disable-nas \
