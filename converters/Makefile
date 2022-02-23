@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2021/10/24 23:10:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.109 2022/02/23 00:06:59 kmos Exp $
 
      SUBDIR =
      SUBDIR += base64
@@ -83,6 +83,7 @@
      SUBDIR += rpm2cpio
      SUBDIR += ruby-multi_json
      SUBDIR += sqlite2mdoc
+     SUBDIR += schema2ldif
      SUBDIR += trans
      SUBDIR += unoconv
      SUBDIR += unsf
