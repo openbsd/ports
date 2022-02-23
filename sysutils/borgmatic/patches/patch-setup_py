@@ -1,4 +1,4 @@
-$OpenBSD: patch-setup_py,v 1.6 2019/12/28 14:33:14 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.7 2022/02/23 18:28:12 bket Exp $
 Permit to use the specific version of colorama we have in ports.
 
 Index: setup.py
@@ -6,10 +6,10 @@ Index: setup.py
 +++ setup.py
 @@ -34,7 +34,7 @@ setup(
          'requests',
-         'ruamel.yaml>0.15.0,<0.17.0',
+         'ruamel.yaml>0.15.0,<0.18.0',
          'setuptools',
 -        'colorama>=0.4.1,<0.5',
 +        'colorama',
      ),
      include_package_data=True,
- )
+     python_requires='>3.7.0',
