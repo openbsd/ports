@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/14 07:11:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/23 11:10:30 ajacoutot Exp $
 
 COMMENT=		GNOME's Tour & Greeter
 
 GNOME_PROJECT=		gnome-tour
-GNOME_VERSION=		40.0
+GNOME_VERSION=		40.1
 
 # needed due to the devel/cargo MODULE
 DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}

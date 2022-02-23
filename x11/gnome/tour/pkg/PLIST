@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/05/14 07:11:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/02/23 11:10:30 ajacoutot Exp $
 @bin bin/gnome-tour
 share/applications/org.gnome.Tour.desktop
 share/icons/hicolor/scalable/apps/org.gnome.Tour.svg
@@ -29,6 +29,7 @@ share/locale/lt/LC_MESSAGES/gnome-tour.mo
 share/locale/lv/LC_MESSAGES/gnome-tour.mo
 share/locale/nb/LC_MESSAGES/gnome-tour.mo
 share/locale/nl/LC_MESSAGES/gnome-tour.mo
+share/locale/oc/LC_MESSAGES/gnome-tour.mo
 share/locale/pa/LC_MESSAGES/gnome-tour.mo
 share/locale/pl/LC_MESSAGES/gnome-tour.mo
 share/locale/pt/LC_MESSAGES/gnome-tour.mo
@@ -40,6 +41,7 @@ share/locale/sr/LC_MESSAGES/gnome-tour.mo
 share/locale/sv/LC_MESSAGES/gnome-tour.mo
 share/locale/tr/LC_MESSAGES/gnome-tour.mo
 share/locale/uk/LC_MESSAGES/gnome-tour.mo
+share/locale/vi/LC_MESSAGES/gnome-tour.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tour.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-tour.mo
 share/metainfo/
