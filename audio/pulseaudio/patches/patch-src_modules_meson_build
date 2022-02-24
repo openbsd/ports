@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_meson_build,v 1.1 2021/08/15 16:36:56 ajacoutot Exp $
+$OpenBSD: patch-src_modules_meson_build,v 1.2 2022/02/24 13:46:20 ajacoutot Exp $
 
 2nd chunk:
 Should match b_lundef in meson(1).
@@ -12,7 +12,7 @@ Index: src/modules/meson.build
  
 +# sndio(7)
 +if host_machine.system() == 'openbsd'
-+  libsndio_dep = cc.find_library('sndio', required : true)
++  libsndio_dep = dependency('sndio', required: true)
 +  all_modules += [
 +    [ 'module-sndio', 'module-sndio.c', [], [], [libsndio_dep], [] ],
 +  ]
