@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2019/11/23 10:58:55 fcambus Exp $
+# $OpenBSD: Makefile,v 1.29 2022/02/24 08:48:27 sthen Exp $
 
 COMMENT=		Joe's Window Manager
 
-DISTNAME=		jwm-2.3.7
-REVISION=		0
+DISTNAME=		jwm-2.4.0
 
 CATEGORIES=		x11
 
@@ -12,9 +11,10 @@ HOMEPAGE=		https://www.joewing.net/projects/jwm/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo freetype
-WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += intl jpeg m png rsvg-2 z
+WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo fontconfig
+WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangoft2-1.0 pangoxft-1.0
+WANTLIB += png rsvg-2 z
 
 MASTER_SITES=		https://www.joewing.net/projects/jwm/releases/
 EXTRACT_SUFX=		.tar.xz
