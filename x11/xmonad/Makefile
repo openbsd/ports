@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2021/11/01 03:17:15 gnezdo Exp $
+# $OpenBSD: Makefile,v 1.61 2022/02/24 11:10:45 naddy Exp $
 
 COMMENT =		tiling window manager
 
@@ -6,6 +6,7 @@ MODCABAL_STEM =		xmonad
 MODCABAL_VERSION =	0.17.0
 
 PKGNAME =		${DISTNAME}
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
