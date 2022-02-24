@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.8 2022/01/03 10:33:25 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2022/02/24 17:53:12 bket Exp $
 
-V =			0.34.2
+V =			0.35
 DISTNAME =		notmuch-$V
 EXTRACT_SUFX =		.tar.xz
 

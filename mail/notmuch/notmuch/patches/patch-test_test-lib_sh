@@ -1,4 +1,4 @@
-$OpenBSD: patch-test_test-lib_sh,v 1.4 2021/10/14 04:18:26 bket Exp $
+$OpenBSD: patch-test_test-lib_sh,v 1.5 2022/02/24 17:53:12 bket Exp $
 
 we don't have libdl
 
@@ -16,7 +16,7 @@ Index: test/test-lib.sh
  
  # Protect ourselves from common misconfiguration to export
  # CDPATH into the environment
-@@ -939,7 +938,7 @@ notmuch_with_shim () {
+@@ -953,7 +952,7 @@ notmuch_with_shim () {
      base_name="$1"
      shift
      shim_file="${base_name}.so"
