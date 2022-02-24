@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_combined_ffmpeg_ff_audio_decoder_c,v 1.12 2022/01/25 18:10:36 sthen Exp $
+$OpenBSD: patch-src_combined_ffmpeg_ff_audio_decoder_c,v 1.13 2022/02/24 15:05:40 sthen Exp $
 
-ffmpeg 4 compatibility attempt.
-4e5ad7ebed6111ba9e1ea2eab4a6b94477b066a8
+- ffmpeg 4 compatibility attempt.
+  4e5ad7ebed6111ba9e1ea2eab4a6b94477b066a8
+- ff_audio_decoder: enable parser for AC3.
+  0562ea919530d540857f63268d3ccc12d6becf63
 
 Index: src/combined/ffmpeg/ff_audio_decoder.c
 --- src/combined/ffmpeg/ff_audio_decoder.c.orig
@@ -25,7 +27,15 @@ Index: src/combined/ffmpeg/ff_audio_decoder.c
  
    /* AAC ADTS */
    uint32_t          buftype;
-@@ -690,11 +693,9 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+@@ -298,6 +301,7 @@ static void ff_audio_init_codec(ff_audio_decoder_t *th
+ #if XFF_PARSE > 1
+   if (codec_type == BUF_AUDIO_AAC_LATM ||
+       codec_type == BUF_AUDIO_EAC3 ||
++      codec_type == BUF_AUDIO_A52 ||
+       codec_type == BUF_AUDIO_MPEG) {
+ 
+     xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+@@ -690,11 +694,9 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
    else parsed = 0;
  
  #if XFF_AUDIO > 2
@@ -40,7 +50,7 @@ Index: src/combined/ffmpeg/ff_audio_decoder.c
  #  if XFF_AUDIO > 3
    int got_frame;
    float gain = this->class->gain;
-@@ -702,7 +703,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+@@ -702,7 +704,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
      this->av_frame = XFF_ALLOC_FRAME ();
  #   if XFF_AUDIO == 5
    {
@@ -49,7 +59,7 @@ Index: src/combined/ffmpeg/ff_audio_decoder.c
      /* xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG, "ff_audio_dec: send (%d) = %d.\n", (int)size, err); */
      /* multiple frames per packet */
      consumed = (err >= 0) ? size : ((err == AVERROR (EAGAIN)) ? 0 : err);
-@@ -712,7 +713,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+@@ -712,7 +714,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
      got_frame = (err == 0);
    }
  #   else
@@ -58,7 +68,7 @@ Index: src/combined/ffmpeg/ff_audio_decoder.c
  #   endif
    if ((consumed >= 0) && got_frame) {
      /* setup may have altered while decoding */
-@@ -970,7 +971,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
+@@ -970,7 +972,7 @@ static int ff_audio_decode (ff_audio_decoder_t *this,
      }
    } else *decode_buffer_size = 0;
  #  else
@@ -67,7 +77,7 @@ Index: src/combined/ffmpeg/ff_audio_decoder.c
    ff_map_channels (this);
  #  endif
  #else
-@@ -1286,6 +1287,8 @@ static void ff_audio_dispose (audio_decoder_t *this_ge
+@@ -1286,6 +1288,8 @@ static void ff_audio_dispose (audio_decoder_t *this_ge
    this->context->extradata_size = 0;
    XFF_FREE_CONTEXT (this->context);
  
@@ -76,7 +86,7 @@ Index: src/combined/ffmpeg/ff_audio_decoder.c
    free (this_gen);
  }
  
-@@ -1311,6 +1314,10 @@ static audio_decoder_t *ff_audio_open_plugin (audio_de
+@@ -1311,6 +1315,10 @@ static audio_decoder_t *ff_audio_open_plugin (audio_de
  # if XFF_AUDIO > 3
    this->av_frame    = NULL;
  # endif

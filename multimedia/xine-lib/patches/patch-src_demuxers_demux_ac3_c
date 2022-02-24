@@ -1,0 +1,186 @@
+$OpenBSD: patch-src_demuxers_demux_ac3_c,v 1.1 2022/02/24 15:05:40 sthen Exp $
+
+- demux_ac3: fix framing
+  e8696b746454e1e089e93b1f2267eba5db3e6daf
+- Split function
+  580c6c6cfb73cd99f342b341ddf0546e8e17be57
+- demux_ac3: Fix frame size
+  5ca0195617b1e584c795caad4cd1fb277835bb63
+- demux_ac3: More accurate pts
+  778e9d14087f4d5efbba6bd9fb6cca23322ec9d0
+- demux_ac3: resync after seek/garbage
+  f85f6e1ec6f57c5dc321ecbf97f648587ff1c943
+
+Index: src/demuxers/demux_ac3.c
+--- src/demuxers/demux_ac3.c.orig
++++ src/demuxers/demux_ac3.c
+@@ -69,11 +69,41 @@ typedef struct {
+   int                  sample_rate;
+   int                  frame_size;
+   int                  running_time;
++  unsigned             frame_number;
+ 
+   uint32_t             buf_type;
+ 
++  unsigned             start_offset;
+ } demux_ac3_t;
+ 
++static int _frame_size(const uint8_t *buf)
++{
++  static const uint8_t byterates[19] = {
++    4,   5,   6,   7,   8,  10,  12,  14,
++    16,  20,  24,  28,  32,  40,  48,  56,
++    64,  72,  80
++  };
++  uint32_t idx, rate;
++  idx = buf[4];
++  if ((idx & 0x3f) > 37)
++    return -1;
++  rate = (uint32_t)byterates[(idx >> 1) & 0x1f];
++  if (idx & 0x80) {
++    if (idx & 0x40) {
++      return -1;
++    } else {
++      return rate * 24 * 2;
++    }
++  } else {
++    if (idx & 0x40) {
++      return ((rate * 16 * 48000 / 44100) + (idx & 0x01)) * 2;
++    } else {
++      return rate * 16 * 2;
++    }
++  }
++  return -1;
++}
++
+ /* returns 1 if the AC3 file was opened successfully, 0 otherwise */
+ static int open_ac3_file(demux_ac3_t *this) {
+   buf_element_t *buf = NULL;
+@@ -182,6 +212,8 @@ static int open_ac3_file(demux_ac3_t *this) {
+     if (offset >= bsize - 2)
+       break;
+ 
++    this->start_offset = offset;
++
+     if (spdif_mode) {
+       this->sample_rate = 44100;
+       this->frame_size = 256 * 6 * 4;
+@@ -190,35 +222,14 @@ static int open_ac3_file(demux_ac3_t *this) {
+       break;
+     }
+ 
++    this->frame_size = _frame_size(b + offset);
++    if (this->frame_size < 0)
++      break;
+     {
+-      static const uint8_t byterates[19] = {
+-         4,   5,   6,   7,   8,  10,  12,  14,
+-        16,  20,  24,  28,  32,  40,  48,  56,
+-        64,  72,  80
+-      };
+-      uint32_t idx, rate;
+-      if (offset >= bsize - 4)
++      const uint16_t srate[4] = { 48000, 44100, 32000, 0 };
++      this->sample_rate = srate[b[offset + 4] >> 6];
++      if (this->sample_rate == 0)
+         break;
+-      idx = b[offset + 4];
+-      if ((idx & 0x3f) > 37)
+-        break;
+-      rate = (uint32_t)byterates[(idx >> 1) & 0x1f];
+-      if (idx & 0x80) {
+-        if (idx & 0x40) {
+-          break;
+-        } else {
+-          this->frame_size = rate * 24 * 2;
+-          this->sample_rate = 32000;
+-        }
+-      } else {
+-        if (idx & 0x40) {
+-          this->frame_size = ((rate * 16 * 48000 / 44100) + (idx & 0x01)) * 2;
+-          this->sample_rate = 44100;
+-        } else {
+-          this->frame_size = rate * 16 * 2;
+-          this->sample_rate = 48000;
+-        }
+-      }
+     }
+ 
+     /* Look for a second sync word */
+@@ -254,11 +265,12 @@ static int demux_ac3_send_chunk (demux_plugin_t *this_
+   buf_element_t *buf = NULL;
+   off_t current_stream_pos;
+   int64_t audio_pts;
+-  int frame_number;
+   uint32_t blocksize;
+ 
+   current_stream_pos = this->input->get_current_pos(this->input);
+-  frame_number = current_stream_pos / this->frame_size;
++  if (this->seek_flag) {
++    this->frame_number = current_stream_pos / this->frame_size;
++  }
+ 
+   /*
+    * Each frame represents 256*6 new audio samples according to the a52 spec.
+@@ -268,10 +280,11 @@ static int demux_ac3_send_chunk (demux_plugin_t *this_
+    *                     -------------  *  -----------  *  ---------
+    *                        1 frame        sample rate       1 sec
+    */
+-  audio_pts = frame_number;
++  audio_pts = this->frame_number;
+   audio_pts *= 90000;
+   audio_pts *= 256 * 6;
+   audio_pts /= this->sample_rate;
++  this->frame_number++;
+ 
+   if (this->seek_flag) {
+     _x_demux_control_newpts(this->stream, audio_pts, BUF_FLAG_SEEK);
+@@ -288,8 +301,35 @@ static int demux_ac3_send_chunk (demux_plugin_t *this_
+     }
+   } else {
+     buf = this->audio_fifo->buffer_pool_alloc (this->audio_fifo);
+-    buf->size = this->input->read(this->input, buf->content,
+-                                  this->frame_size);
++    _x_assert(buf->max_size >= this->frame_size);
++
++    if (this->buf_type != BUF_AUDIO_A52) {
++      buf->size = this->input->read(this->input, buf->content, this->frame_size);
++    } else {
++
++      buf->size = this->input->read(this->input, buf->content, 8);
++      if (buf->size == 8) {
++
++        /* re-sync (rare case, usually after seek) */
++        while (buf->content[0] != 0x0b || buf->content[1] != 0x77) {
++          memmove(buf->content, buf->content + 1, buf->size);
++          if (this->input->read(this->input, buf->content + buf->size - 1, 1) != 1) {
++            buf->size -= 1;
++            break;
++          }
++        }
++
++        /* check frame size and read the rest */
++        if (buf->content[0] == 0x0b && buf->content[1] == 0x77) {
++          int got, frame_size = _frame_size(buf->content);
++          if (frame_size > 0)
++            this->frame_size = frame_size;
++          got = this->input->read(this->input, buf->content + buf->size, this->frame_size - buf->size);
++          if (got > 0)
++            buf->size += got;
++        }
++      }
++    }
+   }
+ 
+   if (buf->size <= 0) {
+@@ -360,6 +400,10 @@ static int demux_ac3_seek (demux_plugin_t *this_gen,
+    * multiply by the frame alignment to determine the new starting block */
+   start_pos /= this->frame_size;
+   start_pos *= this->frame_size;
++
++  /* skip possible file header */
++  start_pos += this->start_offset;
++
+   this->input->seek(this->input, start_pos, SEEK_SET);
+ 
+   return this->status;
