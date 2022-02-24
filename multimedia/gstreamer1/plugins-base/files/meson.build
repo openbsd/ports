@@ -4,9 +4,7 @@ sndio_sources = [
   'sndiosrc.c',
 ]
 
-#sndio_dep = declare_dependency(link_with : shared_library('sndio'))
-#sndio_dep = meson.get_compiler('c').find_library('sndio')
-sndio_dep = cc.find_library('sndio', required : get_option('sndio'))
+sndio_dep = dependency('sndio', required : get_option('sndio'))
 
 if sndio_dep.found()
   gstsndio = library('gstsndio',
