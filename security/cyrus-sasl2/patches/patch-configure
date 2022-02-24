@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.16 2018/11/19 08:24:23 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.17 2022/02/24 08:33:56 ajacoutot Exp $
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -17051,6 +17051,7 @@ if ${ac_cv_lib_gssapi_gss_unwrap+:} false; then :
+@@ -16879,6 +16879,7 @@ if ${ac_cv_lib_gssapi_gss_unwrap+:} false; then :
  else
    ac_check_lib_save_LIBS=$LIBS
  LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
@@ -11,7 +11,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17310,6 +17311,7 @@ fi
+@@ -17138,6 +17139,7 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS"

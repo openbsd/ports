@@ -1,15 +1,27 @@
-# $OpenBSD: Makefile,v 1.111 2022/01/10 23:58:49 daniel Exp $
+# $OpenBSD: Makefile,v 1.112 2022/02/24 08:33:56 ajacoutot Exp $
 
 # XXX merge this patch and rid of the dot.la files?
 https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
 
 COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
-V=			2.1.27
+V=			2.1.28
 DISTNAME=		cyrus-sasl-${V}
-REVISION=		3
 
 SHARED_LIBS +=  sasl2                3.1      # 3.0
+SHARED_LIBS +=	anonymous                 0.0 # 3.0
+SHARED_LIBS +=	crammd5                   0.0 # 3.0
+SHARED_LIBS +=	digestmd5                 0.0 # 3.0
+SHARED_LIBS +=	gs2                       0.0 # 3.0
+SHARED_LIBS +=	gssapiv2                  0.0 # 3.0
+SHARED_LIBS +=	ldapdb                    0.0 # 3.0
+SHARED_LIBS +=	login                     0.0 # 3.0
+SHARED_LIBS +=	ntlm                      0.0 # 3.0
+SHARED_LIBS +=	otp                       0.0 # 3.0
+SHARED_LIBS +=	plain                     0.0 # 3.0
+SHARED_LIBS +=	sasldb                    0.0 # 3.0
+SHARED_LIBS +=	scram                     0.0 # 3.0
+SHARED_LIBS +=	sql                       0.0 # 3.0
 
 CATEGORIES=		security
 
@@ -65,6 +77,7 @@ CONFIGURE_ARGS +=	--with-dblib=ndbm \
 .if ${FLAVOR:Mgssapi}
 CONFIGURE_ARGS +=	--enable-gssapi=${LOCALBASE}/heimdal
 MODULES +=		security/heimdal
+WANTLIB += execinfo
 WANTLIB += heimdal/lib/gssapi
 WANTLIB += heimdal/lib/heimntlm
 WANTLIB += heimdal/lib/heimsqlite
@@ -89,7 +102,7 @@ PKG_ARGS=		-Dsql=0
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS +=		databases/mariadb
-WANTLIB+= m pthread ssl z lib/mysql/mysqlclient
+WANTLIB+= m mariadb pthread ssl z
 CONFIGURE_ARGS +=	--with-mysql="${LOCALBASE}"
 .else
 CONFIGURE_ARGS +=	--without-mysql
@@ -98,14 +111,14 @@ CONFIGURE_ARGS +=	--without-mysql
 .if ${FLAVOR:Mpgsql}
 LIB_DEPENDS +=		databases/postgresql
 CFLAGS +=		-I${LOCALBASE}/include/postgresql
-WANTLIB += pq ssl
+WANTLIB += m pq ssl
 .else
 CONFIGURE_ARGS +=	--without-pgsql
 .endif
 
 .if ${FLAVOR:Msqlite3}
 LIB_DEPENDS +=		databases/sqlite3
-WANTLIB += m pthread sqlite3
+WANTLIB += m pthread sqlite3 z
 .else
 CONFIGURE_ARGS +=	--without-sqlite3
 .endif

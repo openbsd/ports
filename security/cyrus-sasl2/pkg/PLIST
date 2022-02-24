@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2022/01/10 23:58:49 daniel Exp $
+@comment $OpenBSD: PLIST,v 1.37 2022/02/24 08:33:56 ajacoutot Exp $
 @conflict cyrus-sasl-*
 @extraunexec rm -rf /var/sasl2/*
 @rcscript ${RCDIR}/saslauthd
@@ -16,23 +16,23 @@ lib/libsasl2.la
 lib/pkgconfig/libsasl2.pc
 lib/sasl2/
 lib/sasl2/libanonymous.la
-@so lib/sasl2/libanonymous.so
+@lib lib/sasl2/libanonymous.so.${LIBanonymous_VERSION}
 lib/sasl2/libcrammd5.la
-@so lib/sasl2/libcrammd5.so
+@lib lib/sasl2/libcrammd5.so.${LIBcrammd5_VERSION}
 lib/sasl2/libdigestmd5.la
-@so lib/sasl2/libdigestmd5.so
+@lib lib/sasl2/libdigestmd5.so.${LIBdigestmd5_VERSION}
 lib/sasl2/liblogin.la
-@so lib/sasl2/liblogin.so
+@lib lib/sasl2/liblogin.so.${LIBlogin_VERSION}
 lib/sasl2/libntlm.la
-@so lib/sasl2/libntlm.so
+@lib lib/sasl2/libntlm.so.${LIBntlm_VERSION}
 lib/sasl2/libotp.la
-@so lib/sasl2/libotp.so
+@lib lib/sasl2/libotp.so.${LIBotp_VERSION}
 lib/sasl2/libplain.la
-@so lib/sasl2/libplain.so
+@lib lib/sasl2/libplain.so.${LIBplain_VERSION}
 lib/sasl2/libsasldb.la
-@so lib/sasl2/libsasldb.so
+@lib lib/sasl2/libsasldb.so.${LIBsasldb_VERSION}
 lib/sasl2/libscram.la
-@so lib/sasl2/libscram.so
+@lib lib/sasl2/libscram.so.${LIBscram_VERSION}
 @man man/man3/sasl.3
 @man man/man3/sasl_authorize_t.3
 @man man/man3/sasl_auxprop.3
@@ -80,11 +80,14 @@ lib/sasl2/libscram.la
 @man man/man8/saslauthd.8
 @man man/man8/sasldblistusers2.8
 @man man/man8/saslpasswd2.8
+@man man/man8/testsaslauthd.8
 @bin sbin/pluginviewer
 @bin sbin/saslauthd
 @bin sbin/sasldblistusers2
 @bin sbin/saslpasswd2
 @bin sbin/testsaslauthd
+share/doc/cyrus-sasl/
+share/examples/cyrus-sasl/
 @sample ${SYSCONFDIR}/sasl2/
 @sample /var/sasl2/
 %%gssapi%%
