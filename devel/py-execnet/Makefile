@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/25 22:04:47 sthen Exp $
 
 COMMENT =		rapid multi-Python deployment
 
@@ -6,7 +6,7 @@ DISTNAME =		execnet-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	1.5.0
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =	devel
 
@@ -16,7 +16,7 @@ HOMEPAGE =	http://codespeak.net/execnet
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
