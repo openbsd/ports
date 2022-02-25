@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/30 12:19:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/02/25 13:54:49 ajacoutot Exp $
 @pkgpath textproc/py-ICU
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/PyICU.py
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}PyICU.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/_icu.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/icu/
 lib/python${MODPY_VERSION}/site-packages/icu/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/icu/_icu_.${MODPY_PYC_MAGIC_TAG}so
