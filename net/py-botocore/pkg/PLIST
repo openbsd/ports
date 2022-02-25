@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.179 2022/01/15 10:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.180 2022/02/25 07:37:02 ajacoutot Exp $
 @conflict py-botocore-*
 @pkgpath net/py-botocore
 lib/python${MODPY_VERSION}/site-packages/botocore/
@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}exceptions.${M
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}history.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}httpchecksum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}httpsession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}loaders.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}model.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1623,6 +1624,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/botocore/handlers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/history.py
 lib/python${MODPY_VERSION}/site-packages/botocore/hooks.py
+lib/python${MODPY_VERSION}/site-packages/botocore/httpchecksum.py
 lib/python${MODPY_VERSION}/site-packages/botocore/httpsession.py
 lib/python${MODPY_VERSION}/site-packages/botocore/loaders.py
 lib/python${MODPY_VERSION}/site-packages/botocore/model.py
