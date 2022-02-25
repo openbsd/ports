@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/06 14:19:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/25 14:07:42 ajacoutot Exp $
 
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		21.10.2
+GH_TAGNAME=		22.04.1
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
 
