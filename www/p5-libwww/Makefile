@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2021/07/15 16:53:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2022/02/25 22:07:48 sthen Exp $
 
 COMMENT=	library for WWW access in Perl
 
-DISTNAME=	libwww-perl-6.55
+DISTNAME=	libwww-perl-6.61
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
