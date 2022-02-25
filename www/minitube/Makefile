@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2021/06/23 17:04:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2022/02/25 19:51:30 sdk Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-V =		3.9
+V =		3.9.3
 DISTNAME =	minitube-$V
 EXTRACT_SUFX =	.tar.bz2
 
