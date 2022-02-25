@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/23 06:07:26 bket Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/25 17:56:26 bket Exp $
 
 COMMENT =	bash automated testing system
 
 GH_ACCOUNT =	bats-core
 GH_PROJECT =	bats-core
-GH_TAGNAME =	v1.5.0
+GH_TAGNAME =	v1.6.0
 PKGNAME =	${DISTNAME:S/-core//}
 
 CATEGORIES =	devel
@@ -26,7 +26,8 @@ post-extract:
 do-install:
 	cd ${WRKSRC} && ./install.sh ${PREFIX}
 
+# Test #102 fails as we do not have lsof or procstat
 do-test:
-	cd ${WRKSRC} && ./bin/bats --tap test
+	cd ${WRKSRC} && ./bin/bats --print-output-on-failure --formatter tap test
 
 .include <bsd.port.mk>
