@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/24 09:28:51 sthen Exp $
-@pkgpath www/py-CherryPy
+@comment $OpenBSD: PLIST,v 1.15 2022/02/25 12:15:41 sthen Exp $
 @conflict py-CherryPy-<17.4.2p1
 @conflict py-cherrypy2-*
+@pkgpath www/py-CherryPy
 bin/cherryd
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -32,6 +32,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}_cptree.${MODP
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}_cpwsgi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}_cpwsgi_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}_helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}daemon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpchecker.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpcompat.py
@@ -49,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/_cptree.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_cpwsgi_server.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/_helper.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/_json.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/daemon.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/
@@ -127,7 +129,6 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_auth
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_auth_digest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_bus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_caching.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_config_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/${MODPY_PYCACHE}test_conn.${MODPY_PYC_MAGIC_TAG}pyc
@@ -186,7 +187,6 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_auth_basic.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_auth_digest.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_bus.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_caching.py
-lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_compat.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_config.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_config_server.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/test/test_conn.py
