@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/25 18:29:32 sthen Exp $
 
 COMMENT=		documentation tool micro-framework
 
 MODPY_EGG_VERSION=	0.13.7
 DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
 #PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 
@@ -30,7 +30,6 @@ LIB_DEPENDS=		devel/json-glib \
 			textproc/libxml
 
 RUN_DEPENDS=		devel/py-appdirs${MODPY_FLAVOR} \
-			devel/py-contextlib2${MODPY_FLAVOR} \
 			devel/py-dbus-deviation${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-pkgconfig${MODPY_FLAVOR} \
