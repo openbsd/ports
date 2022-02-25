@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2022/01/06 21:24:07 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.27 2022/02/25 21:06:53 sebastia Exp $
 ${GEM_BIN}/r10k${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -371,6 +371,19 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/valid-forge-without-ve
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/Puppetfile
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/Puppetfile.new
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/apt/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/apt/.gitkeep
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/baz/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/baz/.gitkeep
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/buzz/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/buzz/.gitkeep
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/canary/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/canary/.gitkeep
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/fizz/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/fizz/.gitkeep
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/rpm/
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/puppetfile/various-modules/modules/rpm/.gitkeep
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/unit/util/purgeable/managed_one/
