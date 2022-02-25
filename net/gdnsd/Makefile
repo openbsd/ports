@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2019/12/09 15:34:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2022/02/25 12:21:18 jca Exp $
 
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.4.3
-REVISION=		0
+REVISION=		1
 DISTNAME=		gdnsd-$V
 EXTRACT_SUFX=		.tar.xz
 
@@ -44,7 +44,8 @@ LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS+=	--with-rundir=${VARBASE}/run/ \
-			--with-rootdir=${VARBASE}/gdnsd
+			--with-rootdir=${VARBASE}/gdnsd \
+			--without-urcu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
