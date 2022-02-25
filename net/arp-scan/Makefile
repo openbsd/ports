@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2022/01/07 21:05:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.66 2022/02/25 22:01:10 sthen Exp $
 
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
@@ -9,7 +9,7 @@ REVISION-main =	0
 COMMENT-main =	ARP scanning and fingerprinting tool
 PKGNAME-main =	${DISTNAME}
 
-M =		20220107
+M =		20220225
 COMMENT-mac =	MAC address vendor list
 PKGNAME-mac =	mac-vendor-$M
 
