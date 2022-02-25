@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/25 12:18:20 sthen Exp $
 
 COMMENT=		simple data validation library
 
-MODPY_EGG_VERSION=	0.7.4
+MODPY_EGG_VERSION=	0.7.5
 DISTNAME=		schema-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -18,11 +17,10 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
 
 FLAVORS=		python3
 FLAVOR=			python3
-
-RUN_DEPENDS=		devel/py-contextlib2${MODPY_FLAVOR}
 
 TEST_DEPENDS=		devel/py-mock${MODPY_FLAVOR}
 
