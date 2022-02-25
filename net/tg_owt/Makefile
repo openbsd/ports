@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/13 21:21:02 kn Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/25 20:16:59 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -13,9 +13,8 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		d618d0b5ff3e59bea0143e6070481f8f4316a428
-DISTNAME =		${GH_PROJECT}-0.0.0.20220202
-REVISION =		1
+GH_COMMIT =		a264028ec71d9096e0aa629113c49c25db89d260
+DISTNAME =		${GH_PROJECT}-0.0.0.20220216
 CATEGORIES =		net
 
 SHARED_LIBS =		tg_owt	1.1	# 0.0.0
@@ -36,13 +35,6 @@ EXTRACT_CASES =		${LIBYUV_DISTNAME}.tar.gz) ${TAR} -xz \
 			    -s ,^libyuv-${LIBYUV_COMMIT},libyuv, ;;
 
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
-# Pending "video_capture: Use correct V4L2 header on OpenBSD"
-# https://github.com/desktop-app/tg_owt/pull/81
-PATCHFILES +=		tg_owt-v4l2-header-fix-{}00102649.patch:1
-# Pending "Build on OpenBSD" https://github.com/desktop-app/tg_owt/pull/79
-PATCHFILES +=		tg_owt-libwebrtc-recognise-os-{}fca819e7.patch:1
-PATCHFILES +=		tg_owt-rtc_base-endianness-{}79c6ffeb.patch:1
-PATCHFILES +=		tg_owt-rtc_base-pthread-{}8207a87c.patch:1
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
 PATCHFILES +=		tg_owt-defer-third-party-sources-{}bf55efe3.patch:1
