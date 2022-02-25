@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/16 13:48:34 pamela Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/25 18:30:06 sthen Exp $
+@pkgpath devel/py-fixtures
 lib/python${MODPY_VERSION}/site-packages/fixtures/
 lib/python${MODPY_VERSION}/site-packages/fixtures-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/fixtures-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

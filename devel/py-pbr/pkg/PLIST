@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/11/14 12:15:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/25 18:30:05 sthen Exp $
 @conflict py-pbr-<4.0.2p2
+@pkgpath devel/py-pbr
 bin/pbr${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/pbr/
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

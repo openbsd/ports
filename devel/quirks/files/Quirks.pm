@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1366 2022/02/20 08:54:37 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1367 2022/02/25 18:30:06 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -697,6 +697,10 @@ my $stem_extensions = {
 	'pinentry-gtk2' => 'pinentry-gnome3',
 	'sxiv' => 'nsxiv',
 	'geoclue' => 'geoclue2',
+	'py-extras' => 'py3-extras',
+	'py-fixtures' => 'py3-fixtures',
+	'py-pbr' => 'py3-pbr',
+	'py-testtools' => 'py3-testtools',
 };
 
 my $obsolete_reason = {};
@@ -1630,6 +1634,10 @@ setup_obsolete_reason(
 	14 => 'ssvnc',
 	14 => 'ssvnc-viewer',
 	11 => 'netshot',
+	31 => 'py-contextlib2',
+	31 => 'py-linecache2',
+	31 => 'py-traceback2',
+	31 => 'py-unittest2',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

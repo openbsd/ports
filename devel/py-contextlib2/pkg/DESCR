@@ -1,2 +1,0 @@
-contextlib2 is a backport of the Python standard library's contextlib
-module to earlier Python versions.

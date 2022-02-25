@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2182 2022/02/22 04:22:19 bket Exp $
+# $OpenBSD: Makefile,v 1.2183 2022/02/25 18:30:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1285,7 +1285,6 @@
      SUBDIR += py-altgraph,python3
      SUBDIR += py-ana,python3
      SUBDIR += py-anytree,python3
-     SUBDIR += py-apipkg
      SUBDIR += py-apipkg,python3
      SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete,python3
@@ -1333,7 +1332,6 @@
      SUBDIR += py-configobj,python3
      SUBDIR += py-constantly,python3
      SUBDIR += py-construct,python3
-     SUBDIR += py-contextlib2
      SUBDIR += py-contextlib2,python3
      SUBDIR += py-cooldict,python3
      SUBDIR += py-country,python3
@@ -1365,16 +1363,13 @@
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
      SUBDIR += py-esptool,python3
-     SUBDIR += py-execnet
      SUBDIR += py-execnet,python3
-     SUBDIR += py-extras
      SUBDIR += py-extras,python3
      SUBDIR += py-fasteners,python3
      SUBDIR += py-fastimport,python3
      SUBDIR += py-fields,python3
      SUBDIR += py-filebytes,python3
      SUBDIR += py-filetype,python3
-     SUBDIR += py-fixtures
      SUBDIR += py-fixtures,python3
      SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock,python3
@@ -1424,7 +1419,6 @@
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch,python3
      SUBDIR += py-lief,python3
-     SUBDIR += py-linecache2
      SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common,python3
@@ -1464,7 +1458,6 @@
      SUBDIR += py-pathlib2
      SUBDIR += py-pathlib2,python3
      SUBDIR += py-pathspec,python3
-     SUBDIR += py-pbr
      SUBDIR += py-pbr,python3
      SUBDIR += py-pebble,python3
      SUBDIR += py-pexpect,python3
@@ -1558,17 +1551,14 @@
      SUBDIR += py-test-subtests,python3
      SUBDIR += py-test-timeout,python3
      SUBDIR += py-test-vcr,python3
-     SUBDIR += py-test-xdist
      SUBDIR += py-test-xdist,python3
      SUBDIR += py-test-xprocess,python3
      SUBDIR += py-testpath,python3
-     SUBDIR += py-testtools
      SUBDIR += py-testtools,python3
      SUBDIR += py-toolz,python3
      SUBDIR += py-toposort,python3
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
-     SUBDIR += py-traceback2
      SUBDIR += py-traitlets,python3
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio,python3
@@ -1579,7 +1569,6 @@
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
-     SUBDIR += py-unittest2
      SUBDIR += py-urwid,python3
      SUBDIR += py-uv,python3
      SUBDIR += py-vcversioner,python3

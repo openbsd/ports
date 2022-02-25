@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2022/02/25 18:30:05 sthen Exp $
 
 COMMENT=	extensions to the Python unit testing framework
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION= 1.8.1
 DISTNAME=	testtools-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	5
+REVISION=	6
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-extras${MODPY_FLAVOR}
 
 FLAVORS=	python3
-FLAVOR?=
+FLAVOR=		python3
 
 # needs traceback2, python-mimeparse, newer unittest2
 NO_TEST=	Yes

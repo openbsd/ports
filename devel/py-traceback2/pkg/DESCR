@@ -1,4 +1,0 @@
-A backport of traceback to older supported Pythons. This module
-provides a standard interface to extract, format and print stack
-traces of Python programs. It exactly mimics the behavior of the
-Python interpreter when it prints a stack trace.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/02/25 18:30:05 sthen Exp $
 
 COMMENT=		useful extra bits for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	1.0.0
 DISTNAME=		extras-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		3
+REVISION=		4
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -17,7 +17,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 TEST_DEPENDS=		devel/py-testtools${MODPY_FLAVOR}
 
