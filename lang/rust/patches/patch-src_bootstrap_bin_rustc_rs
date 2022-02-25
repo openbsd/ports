@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.17 2021/03/27 10:02:11 semarie Exp $
+$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.18 2022/02/25 07:28:46 semarie Exp $
 try to reduce memory usage on aarch64 and i386:
  - reduce memory use by retaining fewer names within compilation artifacts
  - divise (with codegen-units) the unit in smaller parts to manipulate it
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs
-@@ -104,6 +104,19 @@ fn main() {
+@@ -106,6 +106,19 @@ fn main() {
          {
              cmd.arg("-C").arg("panic=abort");
          }

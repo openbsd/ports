@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2022/01/21 07:20:20 semarie Exp $
+# $OpenBSD: Makefile,v 1.140 2022/02/25 07:28:46 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,14 +13,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.58.1
+V =			1.59.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.58.0-20220113
-BV-amd64 =		1.58.0-20220111
-BV-i386 =		1.58.0-20220112
-BV-sparc64 =		1.58.0-20220113
+BV-aarch64 =		1.59.0-20220224
+BV-amd64 =		1.59.0-20220223
+BV-i386 =		1.59.0-20220223
+BV-sparc64 =		1.59.0-20220223
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -40,7 +40,7 @@ MAINTAINER =		Sebastien Marie <semarie@online.fr>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl git2 m pthread ssh2 ssl z
+WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
 WANTLIB-gdb =
 WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
 WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
@@ -133,11 +133,9 @@ BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			devel/libgit2/libgit2 \
 			net/curl \
 			security/libssh2
 
-RUN_DEPENDS-main +=	devel/llvm
 RUN_DEPENDS-gdb +=	lang/rust,-main \
 			devel/gdb
 RUN_DEPENDS-clippy +=	lang/rust,-main
@@ -145,7 +143,6 @@ RUN_DEPENDS-rustfmt +=	lang/rust,-main
 
 MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
-		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
 # cargo assert() on i386 with standard libz
@@ -267,10 +264,6 @@ do-install:
 				${PREFIX}/lib/$${libname} ; \
 		fi ; \
 	done
-	# replace rust-llvm-dwp binary by a link
-	rm ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin/rust-llvm-dwp
-	ln -s ${LOCALBASE}/bin/llvm-dwp \
-		${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/bin/rust-llvm-dwp
 	# install cargo bash-completion
 	mkdir -p ${PREFIX}/share/bash-completion/completions
 	mv ${PREFIX}${SYSCONFDIR}/bash_completion.d/cargo \

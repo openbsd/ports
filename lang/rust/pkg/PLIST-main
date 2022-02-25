@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2021/12/14 10:57:11 semarie Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2022/02/25 07:28:46 semarie Exp $
 @conflict cargo-<0.20.0
 @pkgpath devel/cargo
 @bin bin/cargo
@@ -9,8 +9,6 @@
 @so lib/libtest-${LIBR_METADATA_test}.so
 lib/rustlib/
 lib/rustlib/${TRIPLE_ARCH}/
-lib/rustlib/${TRIPLE_ARCH}/bin/
-lib/rustlib/${TRIPLE_ARCH}/bin/rust-llvm-dwp
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/libaddr2line-${LIBR_METADATA_addr2line}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libadler-${LIBR_METADATA_adler}.rlib
@@ -59,6 +57,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBR_METADATA_unwind}.rlib
 @man man/man1/cargo-package.1
 @man man/man1/cargo-pkgid.1
 @man man/man1/cargo-publish.1
+@man man/man1/cargo-report.1
 @man man/man1/cargo-run.1
 @man man/man1/cargo-rustc.1
 @man man/man1/cargo-rustdoc.1

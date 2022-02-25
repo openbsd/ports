@@ -1,0 +1,18 @@
+$OpenBSD: patch-vendor_libgit2-sys_build_rs,v 1.1 2022/02/25 07:28:46 semarie Exp $
+libgit2: force embedded version
+
+Index: vendor/libgit2-sys/build.rs
+--- vendor/libgit2-sys/build.rs.orig
++++ vendor/libgit2-sys/build.rs
+@@ -9,9 +9,10 @@ fn main() {
+     let ssh = env::var("CARGO_FEATURE_SSH").is_ok();
+     let vendored = env::var("CARGO_FEATURE_VENDORED").is_ok();
+     let zlib_ng_compat = env::var("CARGO_FEATURE_ZLIB_NG_COMPAT").is_ok();
++    let force = true;
+ 
+     // To use zlib-ng in zlib-compat mode, we have to build libgit2 ourselves.
+-    let try_to_use_system_libgit2 = !vendored && !zlib_ng_compat;
++    let try_to_use_system_libgit2 = !force && !vendored && !zlib_ng_compat;
+     if try_to_use_system_libgit2 {
+         let mut cfg = pkg_config::Config::new();
+         if let Ok(lib) = cfg.atleast_version("1.1.0").probe("libgit2") {
