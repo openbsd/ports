@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/08 01:35:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/26 15:40:35 sthen Exp $
+
+.if ${MACHINE_ARCH} == i386
+DPB_PROPERTIES = lonesome
+.endif
 
 COMMENT =	Brave's adblock library
 
