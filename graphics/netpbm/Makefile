@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.93 2022/02/23 15:17:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.94 2022/02/26 22:36:48 naddy Exp $
 
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
-REVISION=	0
-
-DISTNAME=	netpbm-10.91.00
-SHARED_LIBS=	netpbm	5.2
+DISTNAME=	netpbm-10.97.04
+SHARED_LIBS=	netpbm	5.3
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
 
 PERMIT_PACKAGE=	Yes
-
-WANTLIB += X11 c iconv jasper jbig jpeg lzma m png pthread tiff xml2 z
 
 MASTER_SITES=	https://shell.uugrn.org/~naddy/
 EXTRACT_SUFX=	.tar.xz
@@ -23,6 +19,8 @@ LIB_DEPENDS=	graphics/tiff \
 		graphics/jasper \
 		textproc/libxml
 
+WANTLIB=	X11 c jasper jbig jpeg m png tiff xml2 z
+
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 USE_GMAKE=	Yes
@@ -32,8 +30,6 @@ INSTALL_TARGET=	install.bin install.lib install.data \
 
 MAKE_FLAGS=	CC="${CC}" \
 		LIBnetpbm_VERSION=${LIBnetpbm_VERSION}
-# programs can take seed on command line
-MAKE_FLAGS+=	CFLAGS_CONFIG="-Dsrand=srand_deterministic"
 
 FAKE_FLAGS=	pkgdir="${WRKINST}${TRUEPREFIX}"
 
@@ -41,18 +37,15 @@ do-configure:
 	cp ${FILESDIR}/config.mk ${WRKSRC}
 
 TEST_DEPENDS=	print/ghostscript/gnu \
-		shells/bash \
-		sysutils/coreutils
+		shells/bash
 TEST_TARGET=	check
 TEST_FLAGS=	pkgdir="${WRKINST}${PREFIX}" \
 		resultdir="${WRKDIR}/tests" \
           	RGBDEF="${WRKINST}${PREFIX}/share/netpbm/rgb.txt"
 
-# head -c, mv -T
 pre-test:
-	@for i in head mv; do \
-		ln -sf ${LOCALBASE}/bin/g$$i ${WRKDIR}/bin/$$i; \
-	done
+# head -c
+	${CC} ${CFLAGS} -o ${WRKDIR}/bin/head ${FILESDIR}/head.c
 	@sed -i '1 s:^.*bin/bash:#!${LOCALBASE}/bin/bash:' \
 	    ${WRKSRC}/test/Available-Testprog \
 	    ${WRKSRC}/test/Execute-Tests \
@@ -60,9 +53,6 @@ pre-test:
 
 # must run after fake
 test: fake
-
-# The pamdice, pamvalidate, pamexec, pj-roundtrip tests are known to be
-# broken and will be fixed in 10.92
 
 # Get the latest release in a release series from Netpbm Subversion.
 # Requires devel/subversion.

@@ -1,4 +1,4 @@
-# $OpenBSD: config.mk,v 1.2 2020/07/07 20:15:03 naddy Exp $
+# $OpenBSD: config.mk,v 1.3 2022/02/26 22:36:48 naddy Exp $
 # Indented variables are unchanged from the defaults in config.mk.in.
 # Commented out variables are set in MAKE_FLAGS.
 #
@@ -79,5 +79,4 @@ INSTALL_PERM_DATA = $(NONBINMODE)
  SHLIBPREFIXLIST = lib
  NETPBMSHLIBPREFIX = $(firstword $(SHLIBPREFIXLIST))
  DLLVER =
- NETPBM_DOCURL = http://netpbm.sourceforge.net/doc/
 RGB_DB_PATH = $(PREFIX)/share/netpbm/rgb.txt:/usr/X11R6/share/X11/rgb.txt

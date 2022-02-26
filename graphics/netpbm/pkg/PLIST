@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/12/14 22:03:16 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/02/26 22:36:48 naddy Exp $
 @bin bin/411toppm
 bin/anytopnm
 @bin bin/asciitopgm
@@ -69,6 +69,7 @@ bin/pamfixtrunc
 @bin bin/pamgauss
 @bin bin/pamgetcolor
 @bin bin/pamgradient
+@bin bin/pamhomography
 @bin bin/pamhue
 @bin bin/pamlevels
 @bin bin/pamlookup
@@ -133,6 +134,7 @@ bin/pamstretch-gen
 @bin bin/pbmmake
 @bin bin/pbmmask
 @bin bin/pbmminkowski
+@bin bin/pbmnoise
 @bin bin/pbmpage
 @bin bin/pbmpscale
 @bin bin/pbmreduce
@@ -272,7 +274,7 @@ bin/pnmtotiff
 @bin bin/pnmtotiffcmyk
 @bin bin/pnmtoxwd
 @bin bin/ppm3d
-@bin bin/ppmbrighten
+bin/ppmbrighten
 @bin bin/ppmchange
 @bin bin/ppmcie
 @bin bin/ppmcolormask

@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_Makefile,v 1.9 2019/08/25 20:29:40 naddy Exp $
+$OpenBSD: patch-lib_Makefile,v 1.10 2022/02/26 22:36:48 naddy Exp $
 Index: lib/Makefile
 --- lib/Makefile.orig
 +++ lib/Makefile
-@@ -53,6 +53,9 @@ LIBOBJECTS_X = \
+@@ -57,6 +57,9 @@ LIBOBJECTS_X = \
    util/token.o \
    util/vasprintf.o \
  
@@ -12,7 +12,7 @@ Index: lib/Makefile
  MANUALS3 = libnetpbm
  MANUALS5 = pbm pgm ppm pnm pam
  
-@@ -89,13 +92,16 @@ extra_staticlib: $(EXTRA_STATICLIB)
+@@ -93,13 +96,16 @@ extra_staticlib: $(EXTRA_STATICLIB)
  # type, but request a static library in addition.
  #----------------------------------------------------------------------------
  
@@ -30,7 +30,7 @@ Index: lib/Makefile
  MAJ = 11
  MIN = $(NETPBM_MINOR_RELEASE)
  
-@@ -120,7 +126,7 @@ endif
+@@ -124,7 +130,7 @@ endif
  
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # The libxxx.so link is needed to link the executables.
@@ -39,7 +39,7 @@ Index: lib/Makefile
  	rm -f $@
  	$(SYMLINK) $< $@
  # The $(SONAME) link is needed only to test the programs without
-@@ -129,8 +135,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
+@@ -133,8 +139,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
  $(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
  	rm -f $@
  	$(SYMLINK) $< $@
@@ -50,7 +50,7 @@ Index: lib/Makefile
            $(SHLIB_CLIB) -lm $(LADD)
  endif
  
-@@ -209,25 +215,21 @@ standardppmdfont.c:
+@@ -213,25 +219,21 @@ standardppmdfont.c:
  compile.h:
  	$(SRCDIR)/buildtools/stamp-date >$@ || rm $@
  
@@ -80,7 +80,7 @@ Index: lib/Makefile
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -263,9 +265,9 @@ $(INTERFACE_HEADERS:%=%_installhdr): $(PKGDIR)/include
+@@ -267,9 +269,9 @@ $(INTERFACE_HEADERS:%=%_installhdr): $(PKGDIR)/include
  	  $(SRCDIR)/lib/$(@:%_installhdr=%) $(PKGDIR)/include/netpbm/
  
  .PHONY: install.staticlib
