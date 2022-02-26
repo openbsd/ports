@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2021/09/02 19:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2022/02/26 08:39:11 ajacoutot Exp $
 
 # XXX merge on next major update
 # https://gitlab.freedesktop.org/dbus/dbus/merge_requests/124/diffs
@@ -9,17 +9,14 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-REVISION-main=		1
-REVISION-suid=		2
-
-V=			1.12.20
+V=			1.12.22
 DISTNAME=		dbus-${V}
 EPOCH-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
 
-SHARED_LIBS +=  dbus-1               11.2     # 22.13
+SHARED_LIBS +=  dbus-1               11.2     # 22.14
 
 CATEGORIES=		x11
 
