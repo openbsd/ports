@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1369 2022/02/26 20:55:45 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1370 2022/02/26 22:18:51 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -711,12 +711,14 @@ my $stem_extensions = {
 	'py-more-itertools' => 'py3-more-itertools',
 	'py-pathlib2' => 'py3-pathlib2',
 	'py-pluggy' => 'py3-pluggy',
+	'py-py' => 'py3-py',
 	'py-sortedcontainers' => 'py3-sortedcontainers',
 	'py-test' => 'py3-test',
 	'py-test-benchmark' => 'py3-test-benchmark',
 	'py-test-cov' => 'py3-test-cov',
 	'py-test-mock' => 'py3-test-mock',
 	'py-test-runner' => 'py3-test-runner',
+	'py-setuptools_scm' => 'py3-setuptools_scm',
 };
 
 my $obsolete_reason = {};
@@ -1654,7 +1656,6 @@ setup_obsolete_reason(
 	31 => 'py-linecache2',
 	31 => 'py-traceback2',
 	31 => 'py-unittest2',
-	31 => 'py-funcsigs',
 	31 => 'py-pathlib2',
 	6 => 'py3-pathlib2',
 	6 => 'py3-pathlib',
