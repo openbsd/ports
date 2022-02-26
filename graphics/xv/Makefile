@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2022/02/17 10:38:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2022/02/26 09:46:01 sthen Exp $
 
 COMMENT=	X11 image display and modification tool
 
 GH_ACCOUNT=	jasper-software
 GH_PROJECT=	xv
-GH_TAGNAME=	v4.0.0-alpha2
+GH_TAGNAME=	v4.0.0-alpha3
 PKGNAME=	${DISTNAME:S/-alpha/alpha/}
 
 CATEGORIES=	graphics x11
