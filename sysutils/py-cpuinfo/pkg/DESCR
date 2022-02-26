@@ -1,0 +1,2 @@
+Py-cpuinfo gets CPU info with pure Python. It should work without any
+extra programs or libraries beyond what your OS provides.
