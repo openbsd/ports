@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2185 2022/02/26 09:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2186 2022/02/26 20:47:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1294,9 +1294,7 @@
      SUBDIR += py-astroid,python3
      SUBDIR += py-astunparse,python3
      SUBDIR += py-async-timeout,python3
-     SUBDIR += py-atomicwrites
      SUBDIR += py-atomicwrites,python3
-     SUBDIR += py-attrs
      SUBDIR += py-attrs,python3
      SUBDIR += py-automat,python3
      SUBDIR += py-babel,python3
@@ -1334,7 +1332,6 @@
      SUBDIR += py-construct,python3
      SUBDIR += py-cooldict,python3
      SUBDIR += py-country,python3
-     SUBDIR += py-coverage
      SUBDIR += py-coverage,python3
      SUBDIR += py-coveralls,python3
      SUBDIR += py-cparser
@@ -1344,7 +1341,6 @@
      SUBDIR += py-crc32c,python3
      SUBDIR += py-cstruct,python3
      SUBDIR += py-curtsies,python3
-     SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
      SUBDIR += py-dbus-deviation,python3
      SUBDIR += py-decorator,python3
@@ -1372,10 +1368,8 @@
      SUBDIR += py-fixtures,python3
      SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock,python3
-     SUBDIR += py-freezegun
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
-     SUBDIR += py-funcsigs
      SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
      SUBDIR += py-future
@@ -1390,7 +1384,6 @@
      SUBDIR += py-greenlet,python3
      SUBDIR += py-hamcrest,python3
      SUBDIR += py-html5lib,python3
-     SUBDIR += py-hypothesis
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar,python3
      SUBDIR += py-importlib-metadata,python3
@@ -1430,7 +1423,6 @@
      SUBDIR += py-mock,python3
      SUBDIR += py-modulegraph
      SUBDIR += py-modulegraph,python3
-     SUBDIR += py-more-itertools
      SUBDIR += py-more-itertools,python3
      SUBDIR += py-mox3,python3
      SUBDIR += py-mulpyplexer,python3
@@ -1453,9 +1445,6 @@
      SUBDIR += py-parsing,python3
      SUBDIR += py-parso,python3
      SUBDIR += py-path.py,python3
-     SUBDIR += py-pathlib,python3
-     SUBDIR += py-pathlib2
-     SUBDIR += py-pathlib2,python3
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr,python3
      SUBDIR += py-pebble,python3
@@ -1463,7 +1452,6 @@
      SUBDIR += py-pip
      SUBDIR += py-pip,python3
      SUBDIR += py-pkgconfig,python3
-     SUBDIR += py-pluggy
      SUBDIR += py-pluggy,python3
      SUBDIR += py-plugnplay
      SUBDIR += py-plugnplay,python3
@@ -1520,7 +1508,6 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap,python3
-     SUBDIR += py-sortedcontainers
      SUBDIR += py-sortedcontainers,python3
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-speg,python3
@@ -1531,20 +1518,15 @@
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora,python3
      SUBDIR += py-tenacity,python3
-     SUBDIR += py-test
      SUBDIR += py-test,python3
-     SUBDIR += py-test-benchmark
      SUBDIR += py-test-benchmark,python3
-     SUBDIR += py-test-cov
      SUBDIR += py-test-cov,python3
      SUBDIR += py-test-expect,python3
      SUBDIR += py-test-forked,python3
      SUBDIR += py-test-httpbin,python3
      SUBDIR += py-test-localserver,python3
-     SUBDIR += py-test-mock
      SUBDIR += py-test-mock,python3
      SUBDIR += py-test-relaxed,python3
-     SUBDIR += py-test-runner
      SUBDIR += py-test-runner,python3
      SUBDIR += py-test-subtesthack,python3
      SUBDIR += py-test-subtests,python3
