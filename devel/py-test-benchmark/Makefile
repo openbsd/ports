@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/26 20:50:01 sthen Exp $
 
 COMMENT =		fixture for benchmarking code
 
-MODPY_EGG_VERSION =	3.2.2
+MODPY_EGG_VERSION =	3.4.1
 DISTNAME =		pytest-benchmark-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		4
 
-HOMEPAGE =		https://pytest-benchmark.readthedocs.org/en/stable/
+HOMEPAGE =		https://pytest-benchmark.readthedocs.io/en/stable/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -20,21 +19,14 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
 
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
+			sysutils/py-cpuinfo${MODPY_FLAVOR}
+# some tests want graphics/py-pygal (in ports) and pygaljs (not yet)
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-freezegun${MODPY_FLAVOR} \
 			textproc/py-elasticsearch${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
-
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		math/py-statistics
-.endif
-
-post-install:
-	for i in ${PREFIX}/bin/*; do \
-	    mv $${i} $${i}${MODPY_BIN_SUFFIX} ;\
-	done
+FLAVOR =		python3
 
 .include <bsd.port.mk>
