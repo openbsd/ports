@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/07/19 12:09:59 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/26 20:51:25 sthen Exp $
+@pkgpath devel/py-pluggy
 lib/python${MODPY_VERSION}/site-packages/pluggy/
 lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -9,13 +10,15 @@ lib/python${MODPY_VERSION}/site-packages/pluggy-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/pluggy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_callers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_hooks.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_result.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_tracing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}callers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pluggy/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pluggy/_callers.py
+lib/python${MODPY_VERSION}/site-packages/pluggy/_hooks.py
+lib/python${MODPY_VERSION}/site-packages/pluggy/_manager.py
+lib/python${MODPY_VERSION}/site-packages/pluggy/_result.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_tracing.py
 lib/python${MODPY_VERSION}/site-packages/pluggy/_version.py
-lib/python${MODPY_VERSION}/site-packages/pluggy/callers.py
-lib/python${MODPY_VERSION}/site-packages/pluggy/hooks.py
-lib/python${MODPY_VERSION}/site-packages/pluggy/manager.py
