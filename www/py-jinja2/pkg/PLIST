@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/10/24 09:28:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/26 15:24:55 sthen Exp $
 @pkgpath www/py-jinja2
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -11,10 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/jinja2/
 lib/python${MODPY_VERSION}/site-packages/jinja2/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}_identifier.${MODPY_PYC_MAGIC_TAG}pyc
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}asyncfilters.${MODPY_PYC_MAGIC_TAG}pyc
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}asyncsupport.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}async_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}bccache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}compiler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,10 +35,8 @@ lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}sandbox.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/${MODPY_PYCACHE}visitor.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_compat.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/_identifier.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jinja2/asyncfilters.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jinja2/asyncsupport.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/async_utils.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/bccache.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/compiler.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/constants.py
@@ -58,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/jinja2/nativetypes.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/nodes.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/optimizer.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/parser.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/py.typed
 lib/python${MODPY_VERSION}/site-packages/jinja2/runtime.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/sandbox.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/tests.py
