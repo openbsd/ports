@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.4 2022/02/22 13:18:44 kn Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2022/02/26 22:52:41 sthen Exp $
 
 - Drop forced -O2
 - Only Linux requires libnuma for MySQL
@@ -20,7 +20,7 @@ Index: configure.ac
  AC_CHECK_FUNCS([strlcpy])
  
  dnl: shared object handling
-@@ -406,10 +400,6 @@ AC_ARG_ENABLE(mysql,
+@@ -403,10 +397,6 @@ AC_ARG_ENABLE(mysql,
      CFLAGS="$CFLAGS $MYSQL_CFLAGS"
      AC_CHECK_HEADERS([mysql.h mysql/mysql.h])
      CFLAGS="$_save_CFLAGS"
@@ -31,7 +31,7 @@ Index: configure.ac
      ;;
    no)
      AC_MSG_RESULT(no)
-@@ -1138,10 +1128,9 @@ AC_LANG_PUSH([C++])
+@@ -1176,10 +1166,9 @@ AC_LANG_PUSH([C++])
  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([],[])],[AC_MSG_RESULT(yes)],[AC_MSG_ERROR([No C++ compiler found])])
  AC_LANG_POP([C++])
  
