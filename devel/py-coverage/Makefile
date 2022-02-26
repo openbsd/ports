@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/02 00:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2022/02/26 20:48:40 sthen Exp $
 
 COMMENT =	code coverage measurement for Python
 
-MODPY_EGG_VERSION =	4.5.1
+MODPY_EGG_VERSION =	6.3.2
 DISTNAME =	coverage-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://nedbatchelder.com/code/coverage
+HOMEPAGE =	https://coverage.readthedocs.io/en/stable/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -24,6 +23,6 @@ MODPY_SETUPTOOLS = Yes
 NO_TEST =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 .include <bsd.port.mk>

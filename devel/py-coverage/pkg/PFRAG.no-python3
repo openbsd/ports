@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.no-python3,v 1.1 2015/07/16 21:18:48 ajacoutot Exp $
-bin/coverage
-bin/coverage2
