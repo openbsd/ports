@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2184 2022/02/25 23:08:56 kmos Exp $
+# $OpenBSD: Makefile,v 1.2185 2022/02/26 09:44:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1604,7 +1604,6 @@
      SUBDIR += pygame,python3
      SUBDIR += pylint,python3
      SUBDIR += pyrex
-     SUBDIR += pyusb
      SUBDIR += pyusb,python3
      SUBDIR += qbs
      SUBDIR += qgit
