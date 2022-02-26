@@ -1,4 +1,4 @@
-# $OpenBSD: cargo.port.mk,v 1.25 2021/11/15 07:44:37 semarie Exp $
+# $OpenBSD: cargo.port.mk,v 1.26 2022/02/26 12:53:34 semarie Exp $
 
 CATEGORIES +=	lang/rust
 
@@ -258,6 +258,7 @@ MODCARGO_TARGET_DIR ?=	${WRKBUILD}/target
 #  - CARGO_HOME: local cache of the registry index
 #  - CARGO_BUILD_JOBS: configure number of jobs to run
 #  - CARGO_TARGET_DIR: location of where to place all generated artifacts
+#  - RUST_BACKTRACE: enable backtrace on error
 #  - RUSTC: path of rustc binary (default to lang/rust)
 #  - RUSTDOC: path of rustdoc binary (default to lang/rust)
 #  - RUSTFLAGS: custom flags to pass to all compiler invocations that Cargo performs
@@ -267,6 +268,7 @@ MODCARGO_ENV += \
 	CARGO_HOME=${WRKDIR}/cargo-home \
 	CARGO_BUILD_JOBS=${MAKE_JOBS} \
 	CARGO_TARGET_DIR=${MODCARGO_TARGET_DIR} \
+	RUST_BACKTRACE=full \
 	RUSTC=${LOCALBASE}/bin/rustc \
 	RUSTDOC=${LOCALBASE}/bin/rustdoc \
 	RUSTFLAGS="${MODCARGO_RUSTFLAGS}"
