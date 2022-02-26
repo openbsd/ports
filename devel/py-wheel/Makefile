@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/26 17:35:15 sthen Exp $
 
 COMMENT =		built-package format for Python
 
@@ -25,10 +25,12 @@ FLAVOR ?=
 BUILD_DEPENDS =		archivers/gtar
 TAR =			${LOCALBASE}/bin/gtar
 
+.if ${FLAVOR:Mpython3}
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-jsonschema${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR}
+.endif
 
 post-install:
 	mv ${PREFIX}/bin/wheel{,${MODPY_BIN_SUFFIX}}
