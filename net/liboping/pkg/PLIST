@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/28 14:29:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2022/02/26 12:29:54 sthen Exp $
 @mode 4555
 @bin bin/noping
 @bin bin/oping
 @mode
 include/oping.h
-lib/liboping.a
+@static-lib lib/liboping.a
 lib/liboping.la
 @lib lib/liboping.so.${LIBoping_VERSION}
 lib/pkgconfig/liboping.pc
@@ -16,7 +16,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/Oping.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Oping/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Oping/Oping.so
+@so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Oping/Oping.so
 @man man/man3/liboping.3
 @man man/man3/ping_construct.3
 @man man/man3/ping_get_error.3

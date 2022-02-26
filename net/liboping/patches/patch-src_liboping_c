@@ -1,11 +1,32 @@
-$OpenBSD: patch-src_liboping_c,v 1.3 2018/04/28 14:29:30 landry Exp $
+$OpenBSD: patch-src_liboping_c,v 1.4 2022/02/26 12:29:54 sthen Exp $
+
+#1:
+
+From b5c5091d0214dd2c6cc504c02e2f78907abdee00 Mon Sep 17 00:00:00 2001
+From: Gert Doering <gert@greenie.muc.de>
+Date: Fri, 29 May 2020 12:40:17 +0200
+Subject: [PATCH] Handle BSD specific error case (EHOSTDOWN) in ping_sendto()
+
+Others:
 
 https://github.com/tfheen/liboping/commit/a88c51f38dafa1fba9118045176754bec05d3c94.patch
 
 Index: src/liboping.c
 --- src/liboping.c.orig
 +++ src/liboping.c
-@@ -1344,43 +1344,12 @@ int ping_send (pingobj_t *obj)
+@@ -668,6 +668,11 @@ static ssize_t ping_sendto (pingobj_t *obj, pinghost_t
+ 		if (errno == ENETUNREACH)
+ 			return (0);
+ #endif
++		/* BSDs return EHOSTDOWN on ARP/ND failure */
++#if defined(EHOSTDOWN)
++		if (errno == EHOSTDOWN)
++			return (0);
++#endif
+ 		ping_set_errno (obj, errno);
+ 	}
+ 
+@@ -1344,43 +1349,12 @@ int ping_send (pingobj_t *obj)
  	struct timeval nowtime;
  	struct timeval timeout;
  
@@ -49,7 +70,7 @@ Index: src/liboping.c
  	if (gettimeofday (&nowtime, NULL) == -1)
  	{
  		ping_set_errno (obj, errno);
-@@ -1699,6 +1668,23 @@ int ping_host_add (pingobj_t *obj, const char *host)
+@@ -1699,6 +1673,23 @@ int ping_host_add (pingobj_t *obj, const char *host)
  
  	ph->table_next = obj->table[ph->ident % PING_TABLE_LEN];
  	obj->table[ph->ident % PING_TABLE_LEN] = ph;

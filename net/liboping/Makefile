@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/26 12:29:54 sthen Exp $
 
 COMMENT =	library and tools to generate ICMP echo requests
 
 DISTNAME =	liboping-1.10.0
+REVISION =	0
+
 SHARED_LIBS +=	oping 0.1 # 3.0
 
 CATEGORIES =	net
 
-HOMEPAGE =	http://noping.cc/
+HOMEPAGE =	https://noping.cc/
 
 # LGPL v2.1+ (lib) GPLv2+ (binaries)
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m curses perl
 
-MASTER_SITES =	http://noping.cc/files/
+MASTER_SITES =	https://noping.cc/files/
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>
