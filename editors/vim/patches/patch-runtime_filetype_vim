@@ -1,9 +1,9 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.34 2022/01/15 15:40:27 sthen Exp $
+$OpenBSD: patch-runtime_filetype_vim,v 1.35 2022/02/26 13:48:31 sthen Exp $
 
 Index: runtime/filetype.vim
 --- runtime/filetype.vim.orig
 +++ runtime/filetype.vim
-@@ -495,7 +495,7 @@ au BufNewFile,BufRead dictd*.conf		setf dictdconf
+@@ -500,7 +500,7 @@ au BufNewFile,BufRead dictd*.conf		setf dictdconf
  au BufNewFile,BufRead */debian/patches/*	call dist#ft#Dep3patch()
  
  " Diff files
@@ -12,7 +12,7 @@ Index: runtime/filetype.vim
  au BufNewFile,BufRead *.patch
  	\ if getline(1) =~# '^From [0-9a-f]\{40,\} Mon Sep 17 00:00:00 2001$' |
  	\   setf gitsendemail |
-@@ -1021,7 +1021,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
+@@ -1069,7 +1069,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_configure_ac,v 1.14 2022/01/15 15:40:27 sthen Exp $
+$OpenBSD: patch-src_configure_ac,v 1.15 2022/02/26 13:48:31 sthen Exp $
 
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac
-@@ -656,10 +656,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -662,10 +662,10 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
  	AC_MSG_RESULT(yes)
        else
  	AC_MSG_RESULT(no)
@@ -17,7 +17,7 @@ Index: src/configure.ac
  	else
  	  AC_MSG_RESULT(no)
  
-@@ -703,9 +703,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
+@@ -709,9 +709,9 @@ if test "$enable_luainterp" = "yes" -o "$enable_luaint
      else
        if test "X$LUA_INC" != "X"; then
  	dnl Test alternate location using version

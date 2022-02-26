@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_os_unix_c,v 1.1 2022/01/17 17:03:19 sthen Exp $
+$OpenBSD: patch-src_os_unix_c,v 1.2 2022/02/26 13:48:31 sthen Exp $
 
 backout ab16ad33ba "patch 8.2.3941: SIGTSTP is not handled"
 causes hangs on ^Z
 
+additional changes were stacked on top so it isn't just a plain revert
+of ab16ad33ba
+
+see https://github.com/vim/vim/pull/9422
+
 Index: src/os_unix.c
 --- src/os_unix.c.orig
 +++ src/os_unix.c
-@@ -157,11 +157,6 @@ static void handle_resize(void);
+@@ -173,11 +173,6 @@ static void handle_resize(void);
  #if defined(SIGWINCH)
  static RETSIGTYPE sig_winch SIGPROTOARG;
  #endif
@@ -18,7 +23,7 @@ Index: src/os_unix.c
  #if defined(SIGINT)
  static RETSIGTYPE catch_sigint SIGPROTOARG;
  #endif
-@@ -202,8 +197,6 @@ static int save_patterns(int num_pat, char_u **pat, in
+@@ -218,8 +213,6 @@ static int save_patterns(int num_pat, char_u **pat, in
  
  // volatile because it is used in signal handler sig_winch().
  static volatile sig_atomic_t do_resize = FALSE;
@@ -27,7 +32,7 @@ Index: src/os_unix.c
  static char_u	*extra_shell_arg = NULL;
  static int	show_shell_mess = TRUE;
  // volatile because it is used in signal handler deathtrap().
-@@ -858,24 +851,6 @@ sig_winch SIGDEFARG(sigarg)
+@@ -874,25 +867,6 @@ sig_winch SIGDEFARG(sigarg)
  }
  #endif
  
@@ -41,10 +46,11 @@ Index: src/os_unix.c
 -	signal(SIGTSTP, ignore_sigtstp ? SIG_IGN : SIG_DFL);
 -	raise(sigarg);
 -    }
+-    else
+-	got_tstp = TRUE;
 -
 -    // this is not required on all systems, but it doesn't hurt anybody
 -    signal(SIGTSTP, (RETSIGTYPE (*)())sig_tstp);
--    got_tstp = TRUE;
 -    SIGRETURN;
 -}
 -#endif
@@ -52,7 +58,7 @@ Index: src/os_unix.c
  #if defined(SIGINT)
      static RETSIGTYPE
  catch_sigint SIGDEFARG(sigarg)
-@@ -1183,6 +1158,7 @@ after_sigcont(void)
+@@ -1200,6 +1174,7 @@ after_sigcont(void)
  
  #if defined(SIGCONT)
  static RETSIGTYPE sigcont_handler SIGPROTOARG;
@@ -60,16 +66,20 @@ Index: src/os_unix.c
  
  /*
   * With multi-threading, suspending might not work immediately.  Catch the
-@@ -1377,7 +1353,7 @@ set_signals(void)
- 
- #ifdef SIGTSTP
-     // See mch_init() for the conditions under which we ignore SIGTSTP.
--    signal(SIGTSTP, ignore_sigtstp ? SIG_IGN : (RETSIGTYPE (*)())sig_tstp);
+@@ -1397,11 +1372,7 @@ set_signals(void)
+     // In the GUI default TSTP processing is OK.
+     // Checking both gui.in_use and gui.starting because gui.in_use is not set
+     // at this point (set after menus are displayed), but gui.starting is set.
+-    signal(SIGTSTP, ignore_sigtstp ? SIG_IGN
+-# ifdef FEAT_GUI
+-				: gui.in_use || gui.starting ? SIG_DFL
+-# endif
+-				    : (RETSIGTYPE (*)())sig_tstp);
 +    signal(SIGTSTP, ignore_sigtstp ? SIG_IGN : SIG_DFL);
  #endif
  #if defined(SIGCONT)
      signal(SIGCONT, sigcont_handler);
-@@ -6410,15 +6386,6 @@ select_eintr:
+@@ -6413,16 +6384,6 @@ select_eintr:
  # ifdef EINTR
  	if (ret == -1 && errno == EINTR)
  	{
@@ -77,6 +87,7 @@ Index: src/os_unix.c
 -	    if (got_tstp && !in_mch_suspend)
 -	    {
 -		exarg_T ea;
+-
 -		ea.forceit = TRUE;
 -		ex_stop(&ea);
 -		got_tstp = FALSE;
@@ -85,7 +96,7 @@ Index: src/os_unix.c
  	    // Check whether window has been resized, EINTR may be caused by
  	    // SIGWINCH.
  	    if (do_resize)
-@@ -7209,7 +7176,7 @@ gpm_open(void)
+@@ -7261,7 +7222,7 @@ gpm_open(void)
  	    // we are going to suspend or starting an external process
  	    // so we shouldn't  have problem with this
  # ifdef SIGTSTP

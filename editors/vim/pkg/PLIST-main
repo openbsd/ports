@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.52 2022/01/15 15:40:27 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.53 2022/02/26 13:48:32 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk3%%
 bin/ex
@@ -32,6 +32,8 @@ share/vim/${P}/autoload/csscomplete.vim
 share/vim/${P}/autoload/decada.vim
 share/vim/${P}/autoload/dist/
 share/vim/${P}/autoload/dist/ft.vim
+share/vim/${P}/autoload/dist/script.vim
+share/vim/${P}/autoload/freebasic.vim
 share/vim/${P}/autoload/getscript.vim
 share/vim/${P}/autoload/gnat.vim
 share/vim/${P}/autoload/gzip.vim
@@ -522,6 +524,7 @@ share/vim/${P}/ftplugin/ps1.vim
 share/vim/${P}/ftplugin/ps1xml.vim
 share/vim/${P}/ftplugin/pyrex.vim
 share/vim/${P}/ftplugin/python.vim
+share/vim/${P}/ftplugin/qb64.vim
 share/vim/${P}/ftplugin/qf.vim
 share/vim/${P}/ftplugin/quake.vim
 share/vim/${P}/ftplugin/r.vim
@@ -613,6 +616,7 @@ share/vim/${P}/indent/ant.vim
 share/vim/${P}/indent/automake.vim
 share/vim/${P}/indent/awk.vim
 share/vim/${P}/indent/bash.vim
+share/vim/${P}/indent/basic.vim
 share/vim/${P}/indent/bib.vim
 share/vim/${P}/indent/bst.vim
 share/vim/${P}/indent/bzl.vim
@@ -648,6 +652,7 @@ share/vim/${P}/indent/eterm.vim
 share/vim/${P}/indent/falcon.vim
 share/vim/${P}/indent/fortran.vim
 share/vim/${P}/indent/framescript.vim
+share/vim/${P}/indent/freebasic.vim
 share/vim/${P}/indent/gitconfig.vim
 share/vim/${P}/indent/gitolite.vim
 share/vim/${P}/indent/go.vim
@@ -694,6 +699,7 @@ share/vim/${P}/indent/prolog.vim
 share/vim/${P}/indent/ps1.vim
 share/vim/${P}/indent/pyrex.vim
 share/vim/${P}/indent/python.vim
+share/vim/${P}/indent/qb64.vim
 share/vim/${P}/indent/r.vim
 share/vim/${P}/indent/raku.vim
 share/vim/${P}/indent/raml.vim
@@ -1389,6 +1395,7 @@ share/vim/${P}/syntax/ptcap.vim
 share/vim/${P}/syntax/purifylog.vim
 share/vim/${P}/syntax/pyrex.vim
 share/vim/${P}/syntax/python.vim
+share/vim/${P}/syntax/qb64.vim
 share/vim/${P}/syntax/qf.vim
 share/vim/${P}/syntax/quake.vim
 share/vim/${P}/syntax/r.vim

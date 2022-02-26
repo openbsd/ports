@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_testdir_test_signals_vim,v 1.1 2022/01/17 17:03:19 sthen Exp $
+$OpenBSD: patch-src_testdir_test_signals_vim,v 1.2 2022/02/26 13:48:31 sthen Exp $
 
 backout ab16ad33ba "patch 8.2.3941: SIGTSTP is not handled"
 causes hangs on ^Z
+
+see https://github.com/vim/vim/pull/9422
 
 Index: src/testdir/test_signals.vim
 --- src/testdir/test_signals.vim.orig

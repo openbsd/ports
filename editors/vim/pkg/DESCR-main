@@ -11,11 +11,9 @@ ten fingers can work very fast. Additionally, function keys can be mapped to
 commands by the user, and the mouse can be used.
 
 Flavors:
-	gtk2       - build using the Gtk+2 toolkit
 	gtk3       - build using the Gtk+3 toolkit (default)
 	no_x11	   - build without X11 support
 	lua	   - build with Lua support
 	perl	   - build with Perl support
-	python	   - build with Python support
 	python3	   - build with Python3 support
 	ruby	   - build with Ruby support
