@@ -1,4 +1,10 @@
-$OpenBSD: patch-SConscript,v 1.2 2021/08/07 12:41:15 sthen Exp $
+$OpenBSD: patch-SConscript,v 1.3 2022/02/26 14:56:04 sthen Exp $
+
+#1, set lib version
+#2, our scons isn't setting CCVERSION
+#3, qt lib names
+#4, ???
+#5, set lib version
 
 Index: SConscript
 --- SConscript.orig
@@ -13,7 +19,16 @@ Index: SConscript
  #
  # Release identification ends here
  
-@@ -1343,6 +1342,10 @@ if not cleaning and not helping:
+@@ -878,7 +877,7 @@ have_valgrind = False
+ # per SCons 4.0.1 doc: Section 23.9. Not Configuring When Cleaning Targets
+ if not cleaning and not helping:
+     # OS X aliases gcc to clang
+-    announce("cc is %s, version %s" % (env['CC'], env['CCVERSION']))
++    announce("cc is %s" % (env['CC']))
+     # clang accepts -pthread, then warns it is unused.
+     if not config.CheckCC():
+         announce("ERROR: CC doesn't work")
+@@ -1348,6 +1347,10 @@ if not cleaning and not helping:
      # if not, force qt to off
      if config.env["qt"]:
          qt_net_name = 'Qt%sNetwork' % config.env["qt_versioned"]
@@ -24,7 +39,7 @@ Index: SConscript
          qt_network = config.CheckPKG(qt_net_name)
          if not qt_network:
              config.env["qt"] = False
-@@ -1508,20 +1511,6 @@ if not cleaning and not helping and config.env['python
+@@ -1537,20 +1540,6 @@ if not cleaning and not helping and config.env['python
  
          config.env['xgps_deps'] = True
  
@@ -45,7 +60,7 @@ Index: SConscript
          # gtk+ needed by pygobject
          if not config.CheckPKG('gtk+-3.0'):
              config.env['xgps_deps'] = False
-@@ -1748,7 +1737,7 @@ libgpsd_static = env.StaticLibrary(
+@@ -1777,7 +1766,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",
                                        source=packet_ffi_objects,
