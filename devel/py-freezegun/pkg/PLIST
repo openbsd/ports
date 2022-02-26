@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/07/04 18:57:50 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/26 20:54:24 sthen Exp $
+@pkgpath devel/py-freezegun
 lib/python${MODPY_VERSION}/site-packages/freezegun/
 lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/freezegun-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
