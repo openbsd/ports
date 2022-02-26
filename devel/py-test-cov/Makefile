@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2022/02/26 20:50:21 sthen Exp $
 
 COMMENT =		pytest plugin for measuring coverage
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	2.8.1
 DISTNAME =		pytest-cov-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://pytest-cov.readthedocs.org/en/latest/
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
