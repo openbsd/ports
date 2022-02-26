@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/01 19:16:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/26 09:40:57 sthen Exp $
 
 COMMENT =		access OpenSSL X509 API from Perl
 
-DISTNAME =		Crypt-OpenSSL-X509-1.908
+DISTNAME =		Crypt-OpenSSL-X509-1.913
 
 CATEGORIES =		security
 
