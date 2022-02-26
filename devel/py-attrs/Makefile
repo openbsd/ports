@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/26 20:48:26 sthen Exp $
 
 COMMENT =		classes without boilerplate
 
-MODPY_EGG_VERSION =	20.1.0
+MODPY_EGG_VERSION =	21.4.0
 
 DISTNAME =		attrs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -25,8 +24,6 @@ TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-zopeinterface${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
-
-TEST_ENV +=		PYTHONPATH=${WRKSRC}/lib
+FLAVOR =		python3
 
 .include <bsd.port.mk>
