@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xitk_xine-toolkit_backend_x11_c,v 1.1 2022/02/26 21:25:42 sthen Exp $
+
+Remove malloc.h include
+3ea5f5a563782e4f2f5230e9d8e3a658229536a4
+
+Index: src/xitk/xine-toolkit/backend_x11.c
+--- src/xitk/xine-toolkit/backend_x11.c.orig
++++ src/xitk/xine-toolkit/backend_x11.c
+@@ -30,7 +30,6 @@
+ #include <strings.h>
+ #include <unistd.h>
+ #include <pthread.h>
+-#include <malloc.h>
+ 
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
