@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1370 2022/02/26 22:18:51 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1371 2022/02/26 22:28:43 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -712,7 +712,6 @@ my $stem_extensions = {
 	'py-pathlib2' => 'py3-pathlib2',
 	'py-pluggy' => 'py3-pluggy',
 	'py-py' => 'py3-py',
-	'py-sortedcontainers' => 'py3-sortedcontainers',
 	'py-test' => 'py3-test',
 	'py-test-benchmark' => 'py3-test-benchmark',
 	'py-test-cov' => 'py3-test-cov',

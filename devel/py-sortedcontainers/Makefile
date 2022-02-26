@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/26 20:53:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/02/26 22:28:43 sthen Exp $
 
 COMMENT =	Python Sorted Container Types
 
 MODPY_EGG_VERSION =	2.4.0
+REVISION =	0
 DISTNAME =	sortedcontainers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -17,7 +18,7 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 
 FLAVORS =	python3
-FLAVOR =	python3
+FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
