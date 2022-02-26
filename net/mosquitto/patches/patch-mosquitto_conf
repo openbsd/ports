@@ -1,9 +1,9 @@
-$OpenBSD: patch-mosquitto_conf,v 1.9 2021/09/02 13:13:50 sthen Exp $
+$OpenBSD: patch-mosquitto_conf,v 1.10 2022/02/26 12:09:57 sthen Exp $
 
 Index: mosquitto.conf
 --- mosquitto.conf.orig
 +++ mosquitto.conf
-@@ -199,7 +199,7 @@
+@@ -204,7 +204,7 @@
  # If run as a non-root user, this setting has no effect.
  # Note that on Windows this has no effect and so mosquitto should be started by
  # the user you wish it to run as.
@@ -12,7 +12,7 @@ Index: mosquitto.conf
  
  # =================================================================
  # Listeners
-@@ -460,7 +460,7 @@
+@@ -465,7 +465,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.
