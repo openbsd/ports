@@ -1,0 +1,164 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/26 20:37:41 sdk Exp $
+bin/FvwmCommand3
+@bin bin/fvwm3
+bin/fvwm3-config
+bin/fvwm3-convert-2.6
+bin/fvwm3-menu-desktop
+bin/fvwm3-menu-directory
+bin/fvwm3-menu-xlock
+bin/fvwm3-perllib
+@bin bin/fvwm3-root
+libexec/fvwm3/
+libexec/fvwm3/${VERSION}/
+@bin libexec/fvwm3/${VERSION}/FvwmAnimate
+@bin libexec/fvwm3/${VERSION}/FvwmAuto
+@bin libexec/fvwm3/${VERSION}/FvwmBacker
+@bin libexec/fvwm3/${VERSION}/FvwmButtons
+libexec/fvwm3/${VERSION}/FvwmCommandS
+@bin libexec/fvwm3/${VERSION}/FvwmConsole
+@bin libexec/fvwm3/${VERSION}/FvwmConsoleC
+@bin libexec/fvwm3/${VERSION}/FvwmEvent
+@bin libexec/fvwm3/${VERSION}/FvwmForm
+@bin libexec/fvwm3/${VERSION}/FvwmIconMan
+@bin libexec/fvwm3/${VERSION}/FvwmIdent
+@bin libexec/fvwm3/${VERSION}/FvwmMFL
+@bin libexec/fvwm3/${VERSION}/FvwmPager
+libexec/fvwm3/${VERSION}/FvwmPerl
+@bin libexec/fvwm3/${VERSION}/FvwmRearrange
+@bin libexec/fvwm3/${VERSION}/FvwmScript
+libexec/fvwm3/${VERSION}/FvwmTalk
+@man man/man1/fvwm3-menu-directory.1
+@man man/man1/fvwm3-menu-xlock.1
+@man man/man1/fvwm3-perllib.1
+share/fvwm3/
+share/fvwm3/ConfigFvwmBacker
+share/fvwm3/ConfigFvwmButtons
+share/fvwm3/ConfigFvwmDefaults
+share/fvwm3/ConfigFvwmIconMan
+share/fvwm3/ConfigFvwmIdent
+share/fvwm3/ConfigFvwmPager
+share/fvwm3/FvwmForm-Capture
+share/fvwm3/FvwmForm-Desktop
+share/fvwm3/FvwmForm-Form
+share/fvwm3/FvwmForm-QuitVerify
+share/fvwm3/FvwmForm-Rlogin
+share/fvwm3/FvwmForm-RootCursor
+share/fvwm3/FvwmForm-Talk
+share/fvwm3/FvwmForm-TalkHelp
+share/fvwm3/FvwmForm-XDGMenuHelp
+share/fvwm3/FvwmForm-XDGOptionsHelp
+share/fvwm3/FvwmScript-BaseConfig
+share/fvwm3/FvwmScript-BellSetup
+share/fvwm3/FvwmScript-Buttons
+share/fvwm3/FvwmScript-Colorset
+share/fvwm3/FvwmScript-ComExample
+share/fvwm3/FvwmScript-ConfirmCopyConfig
+share/fvwm3/FvwmScript-ConfirmQuit
+share/fvwm3/FvwmScript-Date
+share/fvwm3/FvwmScript-DateTime
+share/fvwm3/FvwmScript-FileBrowser
+share/fvwm3/FvwmScript-Find
+share/fvwm3/FvwmScript-KeyboardSetup
+share/fvwm3/FvwmScript-PointerSetup
+share/fvwm3/FvwmScript-Quit
+share/fvwm3/FvwmScript-ScreenDump
+share/fvwm3/FvwmScript-ScreenSetup
+share/fvwm3/FvwmScript-WidgetDemo
+share/fvwm3/default-config/
+share/fvwm3/default-config/.stalonetrayrc
+share/fvwm3/default-config/config
+share/fvwm3/default-config/images/
+share/fvwm3/default-config/images/background/
+share/fvwm3/default-config/images/background/bg1.png
+share/fvwm3/default-config/images/background/bg2.png
+share/fvwm3/default-config/images/background/bg3.png
+share/fvwm3/default-config/images/bgicons/
+share/fvwm3/default-config/images/bgicons/bg1.png
+share/fvwm3/default-config/images/bgicons/bg2.png
+share/fvwm3/default-config/images/bgicons/bg3.png
+share/fvwm3/default-config/images/fvwm-logo-small.png
+share/fvwm3/default-config/images/icons/
+share/fvwm3/default-config/images/icons/apps.png
+share/fvwm3/default-config/images/icons/conf.png
+share/fvwm3/default-config/images/icons/help.png
+share/fvwm3/default-config/images/icons/info.png
+share/fvwm3/default-config/images/icons/programs.png
+share/fvwm3/default-config/images/icons/quit.png
+share/fvwm3/default-config/images/icons/refresh.png
+share/fvwm3/default-config/images/icons/restart.png
+share/fvwm3/default-config/images/icons/run_arrow.png
+share/fvwm3/default-config/images/icons/terminal.png
+share/fvwm3/default-config/images/icons/wallpaper.png
+share/fvwm3/default-config/images/icons/win/
+share/fvwm3/default-config/images/icons/win/bottom.png
+share/fvwm3/default-config/images/icons/win/close.png
+share/fvwm3/default-config/images/icons/win/destroy.png
+share/fvwm3/default-config/images/icons/win/done.png
+share/fvwm3/default-config/images/icons/win/iconify.png
+share/fvwm3/default-config/images/icons/win/lower.png
+share/fvwm3/default-config/images/icons/win/max.png
+share/fvwm3/default-config/images/icons/win/move.png
+share/fvwm3/default-config/images/icons/win/raise.png
+share/fvwm3/default-config/images/icons/win/resize.png
+share/fvwm3/default-config/images/icons/win/sendto.png
+share/fvwm3/default-config/images/icons/win/shade.png
+share/fvwm3/default-config/images/icons/win/stays.png
+share/fvwm3/default-config/images/icons/win/sticky.png
+share/fvwm3/default-config/images/icons/win/title.png
+share/fvwm3/default-config/images/icons/win/top.png
+share/fvwm3/fvwm-menu-desktop-config.fpl
+share/fvwm3/fvwm-script-ComExample.pl
+share/fvwm3/locale/
+share/fvwm3/locale/ar/
+share/fvwm3/locale/ar/LC_MESSAGES/
+share/fvwm3/locale/ar/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/ar/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/da/
+share/fvwm3/locale/da/LC_MESSAGES/
+share/fvwm3/locale/da/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/da/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/de/
+share/fvwm3/locale/de/LC_MESSAGES/
+share/fvwm3/locale/de/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/de/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/es/
+share/fvwm3/locale/es/LC_MESSAGES/
+share/fvwm3/locale/es/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/es/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/fr/
+share/fvwm3/locale/fr/LC_MESSAGES/
+share/fvwm3/locale/fr/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/fr/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/ru/
+share/fvwm3/locale/ru/LC_MESSAGES/
+share/fvwm3/locale/ru/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/ru/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/sv_SE/
+share/fvwm3/locale/sv_SE/LC_MESSAGES/
+share/fvwm3/locale/sv_SE/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/sv_SE/LC_MESSAGES/fvwm.mo
+share/fvwm3/locale/zh_CN/
+share/fvwm3/locale/zh_CN/LC_MESSAGES/
+share/fvwm3/locale/zh_CN/LC_MESSAGES/FvwmScript.mo
+share/fvwm3/locale/zh_CN/LC_MESSAGES/fvwm.mo
+share/fvwm3/perllib/
+share/fvwm3/perllib/FVWM/
+share/fvwm3/perllib/FVWM/Commands.pm
+share/fvwm3/perllib/FVWM/Constants.pm
+share/fvwm3/perllib/FVWM/Event.pm
+share/fvwm3/perllib/FVWM/EventNames.pm
+share/fvwm3/perllib/FVWM/Module/
+share/fvwm3/perllib/FVWM/Module.pm
+share/fvwm3/perllib/FVWM/Module/Terminal.pm
+share/fvwm3/perllib/FVWM/Module/Toolkit.pm
+share/fvwm3/perllib/FVWM/Tracker/
+share/fvwm3/perllib/FVWM/Tracker.pm
+share/fvwm3/perllib/FVWM/Tracker/Colorsets.pm
+share/fvwm3/perllib/FVWM/Tracker/GlobalConfig.pm
+share/fvwm3/perllib/FVWM/Tracker/ModuleConfig.pm
+share/fvwm3/perllib/FVWM/Tracker/PageInfo.pm
+share/fvwm3/perllib/FVWM/Tracker/Scheduler.pm
+share/fvwm3/perllib/FVWM/Tracker/WindowList.pm
+share/fvwm3/perllib/General/
+share/fvwm3/perllib/General/FileSystem.pm
+share/fvwm3/perllib/General/Parse.pm

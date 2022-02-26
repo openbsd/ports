@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2022/02/26 20:37:41 sdk Exp $
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -11077,7 +11077,7 @@ if test "${with_intl_library+set}" = set; then :
+ else
+ 
+     with_intl=maybe
+-    intl_LIBS="-l${smr_lib}"
++    intl_LIBS="-l${smr_lib} -liconv"
+ 
+ fi
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_FvwmScript_Instructions_c,v 1.1.1.1 2022/02/26 20:37:41 sdk Exp $
+
+Index: modules/FvwmScript/Instructions.c
+--- modules/FvwmScript/Instructions.c.orig
++++ modules/FvwmScript/Instructions.c
+@@ -669,7 +669,7 @@ static char *GetTime (int *NbArg,long *TabArg)
+ 
+   str = fxcalloc(20, sizeof(char));
+   t = time(NULL);
+-  sprintf(str,"%ld",(long)t-x11base->BeginTime);
++  sprintf(str,"%lld",(long)t-x11base->BeginTime);
+   return str;
+ }
+ 
