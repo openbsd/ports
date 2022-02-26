@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2022/02/13 16:38:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.204 2022/02/26 19:42:28 rsadowski Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -8,7 +8,7 @@ VER =		3.20.3
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://www.cmake.org/
 
@@ -68,9 +68,11 @@ SUBST_FILES =	${WRKSRC}/Source/cmLocalGenerator.cxx \
 
 post-patch:
 	find ${WRKSRC}/Modules -name "*.cmake" \
-		-exec perl -e 's,/usr/(local|X11R6),${LOCALBASE},g' {} +
+		-exec sed -i -e 's,/usr/local,${LOCALBASE},g' \
+		-e 's,/usr/X11R6,${X11BASE},g' {} +
 	find ${WRKSRC}/Tests -name "CMakeLists.txt" \
-		-exec perl -e 's,/usr/(local|X11R6),${LOCALBASE},g' {} +
+		-exec perl -e -i 's,/usr/local,${LOCALBASE},g' \
+		-e 's,/usr/X11R6,${X11BASE},g' {} +
 	perl -e 's,/usr/local,${LOCALBASE},g' \
 		${SUBST_FILES}
 	perl -e 's,/usr/include,${LOCALBASE}/include,' \
