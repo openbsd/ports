@@ -1,2 +1,6 @@
 Setup scripts can use pytest-runner to add setup.py test support
 for pytest runner.
+
+Depends on deprecated features of setuptools and relies on features that
+break security mechanisms in pip. It is recommended that you do not use
+this.
