@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2021/04/01 18:05:02 tb Exp $
+# $OpenBSD: Makefile,v 1.21 2022/02/26 19:59:53 sthen Exp $
 
 COMMENT =	reliable event logging protocol library
 
@@ -22,7 +22,6 @@ WANTLIB += tasn1 unistring crypto ssl
 MASTER_SITES =		http://download.rsyslog.com/librelp/
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
@@ -32,7 +31,7 @@ TEST_DEPENDS =		shells/bash \
 			sysutils/ggrep \
 			${MODPY_RUN_DEPENDS}
 
-SEPARATE_BUILD = 	Yes
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-valgrind
@@ -44,5 +43,6 @@ pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout
 	ln -sf ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
+	ln -sf ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
 
 .include <bsd.port.mk>
