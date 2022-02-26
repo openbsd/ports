@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/26 18:13:29 sthen Exp $
 
 COMMENT =	Python driver for mongodb
 
@@ -24,11 +24,14 @@ FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR}
-
+.if ${FLAVOR:Mpython3}
 # needs a running mongodb instance in 127.0.0.1:27017,
 # and increased kern.somaxconn
 TEST_IS_INTERACTIVE = Yes
+TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR}
+.else
+NO_TEST =		Yes
+.endif
 
 .include <bsd.port.arch.mk>
 
