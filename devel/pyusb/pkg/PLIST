@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/10/29 05:48:38 kmos Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/02/26 09:41:54 ajacoutot Exp $
+@conflict py-pyusb-*
+@pkgpath devel/pyusb
 lib/python${MODPY_VERSION}/site-packages/pyusb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyusb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/pyusb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
