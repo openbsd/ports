@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:01:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2022/02/26 22:03:18 sthen Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
 
@@ -25,6 +25,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	-v
 
+.if ${FLAVOR:Mpython3}
 TEST_DEPENDS =	devel/py-py${MODPY_FLAVOR}
+.endif
 
 .include <bsd.port.mk>
