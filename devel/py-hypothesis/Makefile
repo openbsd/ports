@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/02 00:00:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2022/02/26 20:53:38 sthen Exp $
 
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	4.57.1
+MODPY_EGG_VERSION =	6.38.0
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-REVISION =		1
 
 HOMEPAGE =		https://hypothesis.works/
 
@@ -19,7 +18,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-coverage${MODPY_FLAVOR} \
@@ -27,9 +26,5 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 
 # Primary author is completely uninterested in supplying tests via PyPI
 NO_TEST =		Yes
-
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-enum34
-.endif
 
 .include <bsd.port.mk>
