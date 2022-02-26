@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:00:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2022/02/26 14:19:47 sthen Exp $
 
 COMMENT =		Python interface to MySQL
 
-MODPY_EGG_VERSION =	2.0.3
+MODPY_EGG_VERSION =	2.1.0
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		databases
 
@@ -24,7 +23,7 @@ COMPILER_LANGS =	c
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests
 
 FLAVORS =		python3
 FLAVOR =		python3
