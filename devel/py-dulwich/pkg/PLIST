@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/01/04 14:06:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2022/02/26 14:57:50 sthen Exp $
 @conflict py-dulwich-*
 @pkgpath devel/py-dulwich
 bin/dul-receive-pack
@@ -9,18 +9,25 @@ lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dulwich/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}archive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}bundle.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}diff_tree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}fastexport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}greenthreads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/${MODPY_PYCACHE}ignore.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,7 +58,15 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/_objects.c
 lib/python${MODPY_VERSION}/site-packages/dulwich/_pack.c
 @so lib/python${MODPY_VERSION}/site-packages/dulwich/_pack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/dulwich/archive.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/bundle.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/cli.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/client.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/
+lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/${MODPY_PYCACHE}gcs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/cloud/gcs.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/config.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/README.md
@@ -62,6 +77,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}diffsta
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}paramiko_vendor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}release_robot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}swift.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}test_paramiko_vendor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}test_release_robot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}test_swift.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/${MODPY_PYCACHE}test_swift_smoke.${MODPY_PYC_MAGIC_TAG}pyc
@@ -69,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/diffstat.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/paramiko_vendor.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/release_robot.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/swift.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_paramiko_vendor.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_release_robot.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_swift.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/contrib/test_swift_smoke.py
@@ -76,6 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/diff_tree.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/errors.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/fastexport.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/file.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/graph.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/greenthreads.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/hooks.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/ignore.py
@@ -92,6 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/pack.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/patch.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/porcelain.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/protocol.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/py.typed
 lib/python${MODPY_VERSION}/site-packages/dulwich/reflog.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/refs.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/repo.py
@@ -104,12 +123,14 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_archive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_blackbox.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_bundle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_diff_tree.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_fastexport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_grafts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_graph.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_greenthreads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/${MODPY_PYCACHE}test_ignore.${MODPY_PYC_MAGIC_TAG}pyc
@@ -143,6 +164,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}se
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_pack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_patch.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_porcelain.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_repository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
@@ -152,6 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/server_utils.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_client.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_pack.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_patch.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_porcelain.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_repository.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_server.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/compat/test_utils.py
@@ -321,12 +344,14 @@ lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/trees/70/
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/data/trees/70/c190eb48fa8bbb50ddc692a17b44cb781af7f6
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_archive.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_blackbox.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_bundle.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_client.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_config.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_diff_tree.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_fastexport.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_file.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_grafts.py
+lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_graph.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_greenthreads.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_hooks.py
 lib/python${MODPY_VERSION}/site-packages/dulwich/tests/test_ignore.py

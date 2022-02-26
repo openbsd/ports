@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/02 00:00:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2022/02/26 14:57:49 sthen Exp $
 
 COMMENT =		pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.19.16
+MODPY_EGG_VERSION =	0.20.32
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.dulwich.io/
 
-# GPLv2
+# Apache v2 or GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
@@ -19,11 +18,13 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST_ARGS =	dulwich/tests/
 
 FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		net/py-geventhttpclient${MODPY_FLAVOR}
+# www/py-urllib3${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/git,-main \
 			devel/py-fastimport${MODPY_FLAVOR} \
