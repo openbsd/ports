@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/18 21:42:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/26 14:50:45 sthen Exp $
 @pkgpath net/py-geventhttpclient
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -23,30 +23,5 @@ lib/python${MODPY_VERSION}/site-packages/geventhttpclient/connectionpool.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/header.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/response.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_headers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_httplib.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_keep_alive.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_network_failures.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_no_module_ssl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_parser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_ssl.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_url.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/${MODPY_PYCACHE}test_useragent.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/oncert.pem
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/server.crt
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/server.key
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_client.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_headers.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_httplib.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_keep_alive.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_network_failures.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_no_module_ssl.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_parser.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_ssl.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_url.py
-lib/python${MODPY_VERSION}/site-packages/geventhttpclient/tests/test_useragent.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/url.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/useragent.py
