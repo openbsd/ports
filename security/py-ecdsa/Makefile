@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:02:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2022/02/26 17:31:39 sthen Exp $
 
 COMMENT =		Python implementation of ECDSA cryptography
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 	0.17.0
 DISTNAME = 		ecdsa-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
 CATEGORIES = 		security
-REVISION =              0
+REVISION =		1
 
 HOMEPAGE = 		https://github.com/warner/python-ecdsa
 
@@ -22,12 +22,12 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	src/ecdsa
 
+# used by py2-dnspython
 FLAVORS =		python3
-FLAVOR ?=		
+FLAVOR ?=
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
