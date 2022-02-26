@@ -1,8 +1,29 @@
-$OpenBSD: patch-src_FFmpeg_h,v 1.4 2021/02/14 08:36:20 ajacoutot Exp $
+$OpenBSD: patch-src_FFmpeg_h,v 1.5 2022/02/26 18:38:56 sthen Exp $
 
 Index: src/FFmpeg.h
 --- src/FFmpeg.h.orig
 +++ src/FFmpeg.h
+@@ -333,17 +333,17 @@ class FFmpegLibs (public)
+ 
+    wxString GetLibAVFormatName()
+    {
+-      return (wxT("libavformat.so.") wxT(AV_STRINGIFY(LIBAVFORMAT_VERSION_MAJOR)));
++      return (wxT("libavformat.so"));
+    }
+ 
+    wxString GetLibAVCodecName()
+    {
+-      return (wxT("libavcodec.so.") wxT(AV_STRINGIFY(LIBAVCODEC_VERSION_MAJOR)));
++      return (wxT("libavcodec.so"));
+    }
+ 
+    wxString GetLibAVUtilName()
+    {
+-      return (wxT("libavutil.so.") wxT(AV_STRINGIFY(LIBAVUTIL_VERSION_MAJOR)));
++      return (wxT("libavutil.so"));
+    }
+ #endif // (__WXMAC__) || (__WXMSW__)
+ 
 @@ -685,7 +685,7 @@ extern "C" {
     FFMPEG_FUNCTION_WITH_RETURN(
        AVOutputFormat*,

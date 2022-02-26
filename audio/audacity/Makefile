@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2021/10/23 20:40:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2022/02/26 18:38:56 sthen Exp $
 
 COMMENT=	free audio editor
 
@@ -8,7 +8,7 @@ GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
 GH_TAGNAME=	Audacity-2.4.2
 DISTNAME=	${GH_TAGNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
