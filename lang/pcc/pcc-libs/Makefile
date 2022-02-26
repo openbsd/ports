@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/20 18:54:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/26 22:59:45 naddy Exp $
 
 COMMENT =	libraries for the portable C compiler
 
 DISTNAME =	pcc-libs-${DISTVER}
 PKGNAME =	pcc-libs-${PKGVER}
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES =	http://pcc.ludd.ltu.se/ftp/pub/pcc-libs/ \
 		ftp://pcc.ludd.ltu.se/pub/pcc-libs/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/20 18:54:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/26 22:59:45 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 
@@ -7,7 +7,7 @@ DPB_PROPERTIES = parallel
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 1
+REVISION = 2
 
 COMMENT =	GNU Compiler Collection; bootstrap package
 PKGNAME =	bootgcc-${FULL_PKGVERSION}

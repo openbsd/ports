@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/20 18:54:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2022/02/26 22:59:45 naddy Exp $
 
 #
 # When updating/switching to a new version, remember to adapt devel/llvm!
@@ -19,8 +19,8 @@ DPB_PROPERTIES = parallel
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 1
-REVISION-dlang = 2
+REVISION = 2
+REVISION-dlang = 3
 
 ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
