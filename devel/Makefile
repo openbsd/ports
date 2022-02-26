@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2186 2022/02/26 20:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.2187 2022/02/26 22:18:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1370,6 +1370,7 @@
      SUBDIR += py-flexmock,python3
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
+     SUBDIR += py-funcsigs
      SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
      SUBDIR += py-future
@@ -1465,7 +1466,6 @@
      SUBDIR += py-protobuf,python3
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-puremagic,python3
-     SUBDIR += py-py
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
      SUBDIR += py-pyinotify,python3
@@ -1495,7 +1495,6 @@
      SUBDIR += py-setuptools-rust,python3
      SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_git,python3
-     SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-setuptools_scm_git_archive,python3
      SUBDIR += py-setuptools_trial,python3
