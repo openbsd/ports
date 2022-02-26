@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2021/11/02 21:04:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2022/02/26 15:08:50 sthen Exp $
 
      SUBDIR =
      SUBDIR += TeXmacs
@@ -71,10 +71,11 @@
      SUBDIR += vim,gtk3
      SUBDIR += vim,gtk3,lua
      SUBDIR += vim,gtk3,perl,python3,ruby
+     SUBDIR += vim,gtk3,python3
      SUBDIR += vim,no_x11
      SUBDIR += vim,no_x11,lua
-     SUBDIR += vim,no_x11,python3
      SUBDIR += vim,no_x11,perl,python3,ruby
+     SUBDIR += vim,no_x11,python3
      SUBDIR += vim-spell
      SUBDIR += vis
      SUBDIR += wordgrinder
