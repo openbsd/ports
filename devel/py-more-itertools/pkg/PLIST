@@ -1,23 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/12 07:45:00 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/26 20:52:52 sthen Exp $
+@pkgpath devel/py-more-itertools
 lib/python${MODPY_VERSION}/site-packages/more_itertools/
 lib/python${MODPY_VERSION}/site-packages/more_itertools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/more_itertools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/more_itertools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/more_itertools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/more_itertools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/more_itertools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/more_itertools/__init__.py
+lib/python${MODPY_VERSION}/site-packages/more_itertools/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/more_itertools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/more_itertools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/more_itertools/${MODPY_PYCACHE}more.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/more_itertools/${MODPY_PYCACHE}recipes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/more_itertools/more.py
+lib/python${MODPY_VERSION}/site-packages/more_itertools/more.pyi
+lib/python${MODPY_VERSION}/site-packages/more_itertools/py.typed
 lib/python${MODPY_VERSION}/site-packages/more_itertools/recipes.py
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/${MODPY_PYCACHE}test_more.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/${MODPY_PYCACHE}test_recipes.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/test_more.py
-lib/python${MODPY_VERSION}/site-packages/more_itertools/tests/test_recipes.py
+lib/python${MODPY_VERSION}/site-packages/more_itertools/recipes.pyi
