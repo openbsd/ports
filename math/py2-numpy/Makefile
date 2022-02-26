@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/20 07:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/26 17:32:06 sthen Exp $
 
 # XXX version 1.17.0 and up do not support python2 anymore;
 # python3 support lives in math/py-numpy
@@ -29,9 +29,8 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
 
-TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR}
+NO_TEST =		Yes
+
 MODFORTRAN_COMPILER =	gfortran
 
 BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
@@ -55,9 +54,5 @@ CFLAGS +=	-D CYTHON_SMALL_CODE=
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
-
-do-test:
-	cd ${WRKDIR} && ${MAKE_ENV} ${MODPY_BIN} -c \
-	    'import numpy ; numpy.test()'
 
 .include <bsd.port.mk>

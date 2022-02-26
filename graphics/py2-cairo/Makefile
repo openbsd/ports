@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:32 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/26 17:32:06 sthen Exp $
 
 # XXX version 1.19.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-cairo
@@ -28,16 +28,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODPY_WANTLIB} cairo pthread
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
+NO_TEST =		Yes
 
 MODPY_SETUPTOOLS=	Yes
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			graphics/cairo
-
-TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ./${MODPY_SETUP} test
 
 .include <bsd.port.mk>
