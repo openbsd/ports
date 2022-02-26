@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2021/11/14 12:05:58 sthen Exp $
-
-BROKEN-hppa=	OOM on src/lxml/lxml.etree.c
+# $OpenBSD: Makefile,v 1.41 2022/02/26 14:01:12 sthen Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_EGG_VERSION=	4.6.4
+MODPY_EGG_VERSION=	4.8.0
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
 
@@ -26,6 +24,7 @@ MODPY_PI=	Yes
 MODPY_SETUPTOOLS=Yes
 MODPY_PYTEST=	Yes
 
+# py2 still used by print/printrun
 FLAVORS=	python3
 FLAVOR?=
 
