@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/22 15:20:11 tracey Exp $
+# $OpenBSD: Makefile,v 1.5 2022/02/26 21:40:01 tracey Exp $
 
 BROKEN-powerpc = kicad is broken, this is the only consumer (save bulk time)
 
@@ -9,6 +9,7 @@ GH_ACCOUNT =	tpaviot
 GH_PROJECT =	oce
 GH_COMMIT =	98a788062f0f30593880b0df1bcf967408212ba4
 DISTNAME =	oce-7.6.0
+REVISION =	0
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
 	TKDCAF TKDraw TKFeat TKFillet TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR \
@@ -42,5 +43,48 @@ RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 
 CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include ${CXXFLAGS}" \
 			-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src"
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlp64}
+BITS=64
+.else
+BITS=32
+.endif
+SUBST_VARS += BITS
+
+# fix bash and make installed script names less generic
+pre-configure:
+	sed -i "s,custom,oce_custom,g" \
+		${WRKSRC}/adm/templates/*.sh*
+	sed -i "s,env,oce_env,g" \
+		${WRKSRC}/adm/templates/*.sh*
+	sed -i "s,env,oce_env,g" \
+		${WRKSRC}/gen*
+	sed -i "s,custom,oce_custom,g" \
+		${WRKSRC}/gen*
+	sed -i "s,env\.,oce_env\.,g" \
+		${WRKSRC}/CMakeLists.txt
+	sed -i "s,custom\.,oce_custom\.,g" \
+		${WRKSRC}/CMakeLists.txt
+	sed -i "s,custom_,oce_custom_,g" \
+		${WRKSRC}/CMakeLists.txt
+	sed -i "s,draw\.,oce_draw\.,g" \
+		${WRKSRC}/CMakeLists.txt
+	sed -i "s,/bin/bash,/usr/bin/env bash," \
+		${WRKSRC}/adm/templates/*.sh*
+	mv ${WRKSRC}/adm/templates/custom.sh.main \
+		${WRKSRC}/adm/templates/oce_custom.sh.main
+	mv ${WRKSRC}/adm/templates/custom.build.sh.in \
+		${WRKSRC}/adm/templates/oce_custom.build.sh.in
+	mv ${WRKSRC}/adm/templates/custom.install.sh.in \
+		${WRKSRC}/adm/templates/oce_custom.install.sh.in
+	mv ${WRKSRC}/adm/templates/draw.sh \
+		${WRKSRC}/adm/templates/oce_draw.sh
+	mv ${WRKSRC}/adm/templates/env.build.sh.in \
+		${WRKSRC}/adm/templates/oce_env.build.sh.in
+	mv ${WRKSRC}/adm/templates/env.install.sh.in \
+		${WRKSRC}/adm/templates/oce_env.install.sh.in
+	mv ${WRKSRC}/adm/templates/env.samples.sh.in \
+		${WRKSRC}/adm/templates/oce_env.samples.sh.in
 
 .include <bsd.port.mk>

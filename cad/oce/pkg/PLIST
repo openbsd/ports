@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/02/22 15:20:11 tracey Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/26 21:40:01 tracey Exp $
 bin/DRAWEXE
 @bin bin/DRAWEXE-7.6.0
-bin/custom.sh
-bin/custom_clang_64.sh
-bin/draw.sh
-bin/env.sh
+bin/oce_custom.sh
+bin/oce_custom_clang_${BITS}.sh
+bin/oce_draw.sh
+bin/oce_env.sh
 include/opencascade/
 include/opencascade/AIS.hxx
 include/opencascade/AIS_AngleDimension.hxx
