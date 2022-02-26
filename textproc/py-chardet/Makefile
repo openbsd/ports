@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/26 17:29:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2022/02/26 18:07:36 sthen Exp $
 
 COMMENT=		character encoding auto-detection in Python
 
@@ -6,7 +6,7 @@ COMMENT=		character encoding auto-detection in Python
 MODPY_EGG_VERSION=	4.0.0
 DISTNAME=		chardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-chardet-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -21,7 +21,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
 
 FLAVORS =		python3
