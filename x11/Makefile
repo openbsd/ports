@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.721 2022/02/17 18:43:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.722 2022/02/26 20:38:48 sdk Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -75,6 +75,7 @@
      SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
+     SUBDIR += fvwm3
      SUBDIR += gammapage
      SUBDIR += gbdfed
      SUBDIR += gcolor2
