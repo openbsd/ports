@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/26 22:17:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2022/02/27 12:40:15 sthen Exp $
 
 COMMENT =		plugin to manage your versions by scm tags
 
-# >=6.1 needs py-tomli
-MODPY_EGG_VERSION =	6.0.1
+MODPY_EGG_VERSION =	6.4.2
 DISTNAME =		setuptools_scm-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -24,7 +23,10 @@ TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/mercurial \
 			devel/py-pip${MODPY_FLAVOR}
 
-# >=6.1 needs py-tomli
-RUN_DEPENDS +=		textproc/py-toml${MODPY_FLAVOR}
+RUN_DEPENDS +=		textproc/py-tomli${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-tomli${MODPY_FLAVOR}
+
+pre-test:
+	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

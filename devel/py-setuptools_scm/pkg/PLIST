@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/02/26 22:17:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/27 12:40:16 sthen Exp $
 @pkgpath devel/py-setuptools_scm
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -14,6 +14,10 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_entrypoints.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_overrides.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}_version_cls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}discover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}file_finder.${MODPY_PYC_MAGIC_TAG}pyc
@@ -22,10 +26,16 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}file_fin
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}hacks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}hg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}hg_git.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}integration.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}scm_workdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 @comment lib/python${MODPY_VERSION}/site-packages/setuptools_scm/${MODPY_PYCACHE}win_py31_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_entrypoints.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_overrides.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_types.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_version_cls.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/config.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/discover.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/file_finder.py
@@ -34,7 +44,9 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/file_finder_hg.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/git.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/hacks.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/hg.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/hg_git.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/integration.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/scm_workdir.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/utils.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/version.py
 @comment lib/python${MODPY_VERSION}/site-packages/setuptools_scm/win_py31_compat.py
