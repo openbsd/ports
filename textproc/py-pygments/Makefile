@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2022/01/07 08:28:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2022/02/27 23:32:01 daniel Exp $
 
 COMMENT=	Python syntax highlighter
 
@@ -15,14 +15,17 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
-MODPY_PYTEST=	Yes
-
 FLAVORS=	python3
 FLAVOR=		python3
 
-# XXX requires py-test >= 6.0
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+
+TEST_DEPENDS =	textproc/py-iniconfig${MODPY_FLAVOR} \
+		textproc/py-lxml${MODPY_FLAVOR}
+
+# requires port for wcag_contrast_ratio
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
