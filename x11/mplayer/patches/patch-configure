@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.93 2022/02/27 12:41:51 sthen Exp $
+$OpenBSD: patch-configure,v 1.94 2022/02/27 20:26:31 sthen Exp $
 
 Index: configure
 --- configure.orig
@@ -157,7 +157,7 @@ Index: configure
    _sndio=no
 -  statement_check sndio.h 'sio_open(SIO_DEVANY, SIO_PLAY, 0)' -lsndio && _sndio=yes
 +  if $_pkg_config --exists 'sndio' ; then
-+    header_check sndio.h $($_pkg_config --libs --cflags sndio) &&
++    statement_check sndio.h 'sio_open(SIO_DEVANY, SIO_PLAY, 0)' $($_pkg_config --libs --cflags sndio) &&
 +      _sndio=yes
 +  fi
  fi
