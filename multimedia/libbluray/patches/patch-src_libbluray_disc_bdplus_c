@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libbluray_disc_bdplus_c,v 1.1 2022/02/27 12:43:24 sthen Exp $
+
+Fix dec_start() without menus
+8412dc1ee24b186a161902de1dd9f15f712041f5
+
+Index: src/libbluray/disc/bdplus.c
+--- src/libbluray/disc/bdplus.c.orig
++++ src/libbluray/disc/bdplus.c
+@@ -275,6 +275,10 @@ const uint8_t *libbdplus_get_data(BD_BDPLUS *p, int ty
+             if (libbdplus_is_mmbd(p)) {
+                 return (const uint8_t *)"mmbd";
+             }
++            if ((int32_t)_bdplus_get(p, "bdplus_is_cached") > 0) {
++                return (const uint8_t *)"mmbd;libbdplus";
++            }
++            break;
+     }
+ 
+     return NULL;

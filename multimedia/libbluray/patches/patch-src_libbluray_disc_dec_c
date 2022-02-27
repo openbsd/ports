@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_libbluray_disc_dec_c,v 1.1 2022/02/27 12:43:24 sthen Exp $
+
+Fix dec_start() without menus
+8412dc1ee24b186a161902de1dd9f15f712041f5
+
+Index: src/libbluray/disc/dec.c
+--- src/libbluray/disc/dec.c.orig
++++ src/libbluray/disc/dec.c
+@@ -369,6 +369,7 @@ void dec_start(BD_DEC *dec, uint32_t num_titles)
+         }
+     } else {
+         if (dec->bdplus) {
++            libbdplus_start(dec->bdplus);
+             libbdplus_event(dec->bdplus, 0xffffffff, num_titles, 0);
+         }
+     }
