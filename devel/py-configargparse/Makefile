@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/27 13:13:06 sthen Exp $
 
 COMMENT=		argparse replacement, allows options to be set via files/env
 
-MODPY_EGG_VERSION =	1.2.3
+MODPY_EGG_VERSION =	1.5.3
 DISTNAME=		ConfigArgParse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
 
 CATEGORIES=		devel
 
