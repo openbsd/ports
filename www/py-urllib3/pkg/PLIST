@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/11/11 09:47:04 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.10 2022/02/27 13:33:36 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/urllib3/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urllib3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -62,12 +62,6 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/${MODPY_PYCACHE}makefile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/backports/makefile.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/packages/six.py
-lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ssl_match_hostname/
-lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ssl_match_hostname/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ssl_match_hostname/${MODPY_PYCACHE}_implementation.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/urllib3/packages/ssl_match_hostname/_implementation.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/poolmanager.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/request.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/response.py
@@ -82,6 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}request.${
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}ssl_.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}ssl_match_hostname.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}ssltransport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}pyc
@@ -93,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/urllib3/util/request.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/response.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/retry.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssl_.py
+lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssl_match_hostname.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/ssltransport.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/timeout.py
 lib/python${MODPY_VERSION}/site-packages/urllib3/util/url.py
