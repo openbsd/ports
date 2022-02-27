@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/11/20 14:49:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2022/02/27 13:44:16 sthen Exp $
 @conflict py-sqlalchemy-<1.4
 @conflict py-sqlalchemy-docs-<1.4
 @conflict ${MODPY_PY_PREFIX}sqlalchemy-<1.4
@@ -713,6 +713,7 @@ share/doc/py-sqlalchemy/build/core/event.rst
 share/doc/py-sqlalchemy/build/core/events.rst
 share/doc/py-sqlalchemy/build/core/exceptions.rst
 share/doc/py-sqlalchemy/build/core/expression_api.rst
+share/doc/py-sqlalchemy/build/core/foundation.rst
 share/doc/py-sqlalchemy/build/core/functions.rst
 share/doc/py-sqlalchemy/build/core/future.rst
 share/doc/py-sqlalchemy/build/core/index.rst
@@ -887,6 +888,7 @@ share/doc/py-sqlalchemy/core/event.html
 share/doc/py-sqlalchemy/core/events.html
 share/doc/py-sqlalchemy/core/exceptions.html
 share/doc/py-sqlalchemy/core/expression_api.html
+share/doc/py-sqlalchemy/core/foundation.html
 share/doc/py-sqlalchemy/core/functions.html
 share/doc/py-sqlalchemy/core/future.html
 share/doc/py-sqlalchemy/core/index.html
