@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_dvdread_bitreader_h,v 1.1 2022/02/27 12:42:43 sthen Exp $
+
+avoid reading the next byte ahead
+f6774c386f404b49a13d9027567d57e104c5a415
+
+Index: src/dvdread/bitreader.h
+--- src/dvdread/bitreader.h.orig
++++ src/dvdread/bitreader.h
+@@ -26,13 +26,12 @@ extern "C" {
+ #endif
+ 
+ typedef struct {
+-  uint8_t *start;
++  const uint8_t *start;
+   uint32_t byte_position;
+   uint32_t bit_position;
+-  uint8_t byte;
+ } getbits_state_t;
+ 
+-int dvdread_getbits_init(getbits_state_t *state, uint8_t *start);
++int dvdread_getbits_init(getbits_state_t *state, const uint8_t *start);
+ uint32_t dvdread_getbits(getbits_state_t *state, uint32_t number_of_bits);
+ 
+ #ifdef __cplusplus

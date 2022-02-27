@@ -1,9 +1,10 @@
-#$OpenBSD: Makefile,v 1.34 2021/10/11 06:11:29 rsadowski Exp $
+#$OpenBSD: Makefile,v 1.35 2022/02/27 12:42:43 sthen Exp $
 
 COMMENT =	accessing DVD files
 
 VER =		6.1.2
 DISTNAME =	libdvdread-${VER}
+REVISION =	0
 CATEGORIES =	devel
 MASTER_SITES =	https://download.videolan.org/pub/videolan/libdvdread/${VER}/
 EXTRACT_SUFX =	.tar.bz2

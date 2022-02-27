@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_ifo_read_c,v 1.5 2022/02/27 12:42:43 sthen Exp $
+
+- ifo_read: allocate the right number of PTT
+  c227550889b4455bbfba51099306e78ce81b7df9
+- ifo_read: don't treat 0 PGCI SRP as an error
+  46754b9ea0090b9af0b5bbd5781b88de788e2aab
+
+Index: src/ifo_read.c
+--- src/ifo_read.c.orig
++++ src/ifo_read.c
+@@ -1240,7 +1240,7 @@ int ifoRead_VTS_PTT_SRPT(ifo_handle_t *ifofile) {
+     CHECK_VALUE(n % 4 == 0);
+ 
+     vts_ptt_srpt->title[i].nr_of_ptts = n / 4;
+-    vts_ptt_srpt->title[i].ptt = calloc(n, sizeof(ptt_info_t));
++    vts_ptt_srpt->title[i].ptt = calloc(n / 4, sizeof(ptt_info_t));
+     if(!vts_ptt_srpt->title[i].ptt) {
+       for(n = 0; n < i; n++)
+         free(vts_ptt_srpt->title[n].ptt);
+@@ -1890,6 +1890,11 @@ static int ifoRead_PGCIT_internal(ifo_handle_t *ifofil
+      Magic Knight Rayearth Daybreak is mastered very strange and has
+      Titles with 0 PTTs. */
+   CHECK_VALUE(pgcit->nr_of_pgci_srp < 10000); /* ?? seen max of 1338 */
++
++  if (pgcit->nr_of_pgci_srp == 0) {
++    pgcit->pgci_srp = NULL;
++    return 1;
++  }
+ 
+   info_length = pgcit->nr_of_pgci_srp * PGCI_SRP_SIZE;
+   data = calloc(1, info_length);

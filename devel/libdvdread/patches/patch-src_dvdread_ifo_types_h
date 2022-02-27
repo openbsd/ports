@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_dvdread_ifo_types_h,v 1.1 2022/02/27 12:42:43 sthen Exp $
+
+- ifo_types: Indent to clarify the conditions
+  7fc86bd0124d29130ad7d4afc10f3f4105e1c811
+- ifo_types.h: Don't use attribute gcc_struct with clang
+  3ac6979690e7b5446928a5354b3fb579016057dd
+
+Index: src/dvdread/ifo_types.h
+--- src/dvdread/ifo_types.h.orig
++++ src/dvdread/ifo_types.h
+@@ -31,14 +31,14 @@
+ #undef PRAGMA_PACK_END
+ 
+ #if defined(__GNUC__)
+-#if __GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 95)
+-#if __GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)
+-#define ATTRIBUTE_PACKED __attribute__ ((packed,gcc_struct))
+-#else
+-#define ATTRIBUTE_PACKED __attribute__ ((packed))
+-#endif
+-#define PRAGMA_PACK 0
+-#endif
++# if __GNUC__ > 2 || (__GNUC__ == 2 && __GNUC_MINOR__ >= 95)
++#  if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)) && !defined(__clang__)
++#   define ATTRIBUTE_PACKED __attribute__ ((packed,gcc_struct))
++#  else
++#   define ATTRIBUTE_PACKED __attribute__ ((packed))
++#  endif
++#  define PRAGMA_PACK 0
++# endif
+ #endif
+ 
+ #if !defined(ATTRIBUTE_PACKED)
