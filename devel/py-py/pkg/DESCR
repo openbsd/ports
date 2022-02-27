@@ -1,2 +1,4 @@
 The py lib is a development support library featuring py.test,
 ad-hoc distributed execution, micro-threads and svn abstractions.
+
+NOTE: this library is in maintenance mode and should not be used in new code.

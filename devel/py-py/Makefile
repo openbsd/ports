@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2022/02/26 20:49:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2022/02/27 22:27:26 sthen Exp $
 
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
 MODPY_EGG_VERSION =	1.11.0
+REVISION=		0
 DISTNAME=		py-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -18,7 +19,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 
