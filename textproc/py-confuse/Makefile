@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/16 16:18:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2022/02/27 12:14:41 sthen Exp $
 
 COMMENT =	painless YAML configuration
 
@@ -20,7 +20,6 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-pathlib${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR =	python3

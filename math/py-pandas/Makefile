@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/02 00:01:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2022/02/27 12:14:41 sthen Exp $
 
 COMMENT =		data analysis and manipulation library
 
@@ -42,7 +42,6 @@ TEST_DEPENDS +=		databases/py-mysqlclient${MODPY_FLAVOR} \
 			devel/py-html5lib${MODPY_FLAVOR} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-pathlib${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-matplotlib${MODPY_FLAVOR} \
 			math/py-bottleneck${MODPY_FLAVOR} \
