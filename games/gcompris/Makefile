@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.83 2022/02/24 10:53:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2022/02/27 11:03:52 ajacoutot Exp $
 
 COMMENT=	educational game for children
 
-V=		2.2
+V=		2.3
 DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
