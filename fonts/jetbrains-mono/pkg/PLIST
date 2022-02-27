@@ -1,11 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/14 14:55:32 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/27 22:14:14 gnezdo Exp $
 share/fonts/
 @fontdir share/fonts/JetBrainsMono/
-share/fonts/JetBrainsMono/JetBrainsMono-Bold-Italic.ttf
 share/fonts/JetBrainsMono/JetBrainsMono-Bold.ttf
-share/fonts/JetBrainsMono/JetBrainsMono-ExtraBold-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-BoldItalic.ttf
 share/fonts/JetBrainsMono/JetBrainsMono-ExtraBold.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-ExtraBoldItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-ExtraLight.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-ExtraLightItalic.ttf
 share/fonts/JetBrainsMono/JetBrainsMono-Italic.ttf
-share/fonts/JetBrainsMono/JetBrainsMono-Medium-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Light.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-LightItalic.ttf
 share/fonts/JetBrainsMono/JetBrainsMono-Medium.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-MediumItalic.ttf
 share/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-SemiBold.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-SemiBoldItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-Thin.ttf
+share/fonts/JetBrainsMono/JetBrainsMono-ThinItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-Bold.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-BoldItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraBold.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraBoldItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraLight.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-ExtraLightItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-Italic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-Light.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-LightItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-Medium.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-MediumItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-Regular.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-SemiBold.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-SemiBoldItalic.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-Thin.ttf
+share/fonts/JetBrainsMono/JetBrainsMonoNL-ThinItalic.ttf

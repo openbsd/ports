@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/18 12:45:05 fcambus Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/27 22:14:14 gnezdo Exp $
 
 COMMENT =	monotype font for developers
 
-V =		1.0.3
+V =		2.242
 DISTNAME =	${TYPEFACE}-$V
 PKGNAME =	jetbrains-mono-$V
 
@@ -17,7 +17,7 @@ MASTER_SITES =	https://download.jetbrains.com/fonts/
 
 TYPEFACE =	JetBrainsMono
 
-FONT_DISTSUBDIR =	${DISTNAME}/ttf
+FONT_DISTSUBDIR =	fonts/ttf
 MODULES =	font
 WRKDIST =	${WRKDIR}
 
