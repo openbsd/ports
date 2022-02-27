@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1371 2022/02/26 22:28:43 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1372 2022/02/27 12:21:37 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -341,7 +341,6 @@ my $stem_extensions = {
 	'py-unicodecsv' => 'py3-unicodecsv',
 	'py-enchant' => 'py3-enchant',
 	'py-sqlparse' => 'py3-sqlparse',
-	'py-sqlalchemy-migrate' => 'py3-sqlalchemy-migrate',
 	'py-pygresql' => 'py3-pygresql',
 	'py-tagpy' => 'py3-tagpy',
 	'py-mpd2' => 'py3-mpd2',
@@ -640,7 +639,6 @@ my $stem_extensions = {
 	'py-olefile' => 'py3-olefile',
 	'py-pandocfilters' => 'py3-pandocfilters',
 	'py-parallel' => 'py3-parallel',
-	'py-pathlib' => 'py3-pathlib',
 	'py-pathspec' => 'py3-pathspec',
 	'py-pbkdf2' => 'py3-pbkdf2',
 	'py-peewee' => 'py3-peewee',
@@ -709,7 +707,6 @@ my $stem_extensions = {
 	'py-freezegun' => 'py3-freezegun',
 	'py-hypothesis' => 'py3-hypothesis',
 	'py-more-itertools' => 'py3-more-itertools',
-	'py-pathlib2' => 'py3-pathlib2',
 	'py-pluggy' => 'py3-pluggy',
 	'py-py' => 'py3-py',
 	'py-test' => 'py3-test',
@@ -1550,6 +1547,7 @@ setup_obsolete_reason(
 	13 => 'gmapcatcher',
 	3 => 'childsplay',
 	6 => 'py-texscythe',
+	6 => 'py-sqlalchemy-migrate',
 	6 => 'py3-sqlalchemy-migrate',
 	13 => 'rawdog',
 	13 => 'charm',
@@ -1655,9 +1653,10 @@ setup_obsolete_reason(
 	31 => 'py-linecache2',
 	31 => 'py-traceback2',
 	31 => 'py-unittest2',
+	31 => 'py-pathlib',
 	31 => 'py-pathlib2',
-	6 => 'py3-pathlib2',
 	6 => 'py3-pathlib',
+	6 => 'py3-pathlib2',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
