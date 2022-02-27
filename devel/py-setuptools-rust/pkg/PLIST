@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/01 15:31:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2022/02/27 13:43:46 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,22 +12,16 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_rust/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}check.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}clean.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}setuptools_ext.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}tomlgen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/build.py
-lib/python${MODPY_VERSION}/site-packages/setuptools_rust/check.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/clean.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/command.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/extension.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/setuptools_ext.py
-lib/python${MODPY_VERSION}/site-packages/setuptools_rust/test.py
-lib/python${MODPY_VERSION}/site-packages/setuptools_rust/tomlgen.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/utils.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_rust/version.py

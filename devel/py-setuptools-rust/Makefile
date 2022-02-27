@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/20 15:05:11 bket Exp $
+# $OpenBSD: Makefile,v 1.8 2022/02/27 13:43:46 sthen Exp $
 
 COMMENT=		setuptools Rust extension plugin
 
-MODPY_EGG_VERSION=	0.12.1
+MODPY_EGG_VERSION=	1.1.2
 DISTNAME=		setuptools-rust-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
 
 CATEGORIES=		devel
 
