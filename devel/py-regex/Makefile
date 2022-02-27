@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/02/27 13:40:32 sthen Exp $
 
 COMMENT =		alternative regular expression module to replace re
 
-MODPY_EGG_VERSION =	2020.11.13
+MODPY_EGG_VERSION =	2022.1.18
 DISTNAME =		regex-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
-HOMEPAGE =		https://bitbucket.org/mrabarnett/mrab-regex
+HOMEPAGE =		https://github.com/mrabarnett/mrab-regex
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
@@ -22,6 +21,6 @@ FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-NO_TEST =		Yes
+MODPY_PYTEST_ARGS =	-v regex_3
 
 .include <bsd.port.mk>
