@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile,v 1.4 2021/06/09 09:22:34 sthen Exp $
+$OpenBSD: patch-GNUmakefile,v 1.5 2022/02/27 13:57:28 sthen Exp $
 
 Don't build wayland renderer.
 Correct shared library numbers.
@@ -11,7 +11,7 @@ Don't install library symlinks but do install the shared library.
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile
-@@ -22,7 +22,7 @@ libs = libbemenu.so
+@@ -23,7 +23,7 @@ libs = libbemenu.so
  pkgconfigs = bemenu.pc
  bins = bemenu bemenu-run
  mans = bemenu.1
@@ -20,7 +20,7 @@ Index: GNUmakefile
  all: $(bins) $(renderers) $(mans)
  clients: $(bins)
  curses: bemenu-renderer-curses.so
-@@ -37,12 +37,10 @@ wayland: bemenu-renderer-wayland.so
+@@ -38,12 +38,10 @@ wayland: bemenu-renderer-wayland.so
  %.a:
  	$(LINK.c) -c $(filter %.c,$^) $(LDLIBS) -o $@
  
@@ -35,20 +35,20 @@ Index: GNUmakefile
  
  $(pkgconfigs): %: VERSION %.in
  	sed "s/@VERSION@/$(VERSION)/;s,@PREFIX@,$(PREFIX),;s,@LIBDIR@,$(libdir),;s,@INCLUDEDIR@,$(includedir)," $(addsuffix .in, $@) > $@
-@@ -59,11 +57,9 @@ $(bins): %: | $(libs)
- cdl.a: private override LDFLAGS += -fPIC
- cdl.a: lib/3rdparty/cdl.c lib/3rdparty/cdl.h
+@@ -63,11 +61,9 @@ cdl.a: lib/3rdparty/cdl.c lib/3rdparty/cdl.h
+ util.a: private override LDFLAGS += -fPIC
+ util.a: lib/util.c lib/internal.h
  
 -libbemenu.so: private override LDLIBS += -ldl
- libbemenu.so: lib/bemenu.h lib/internal.h lib/filter.c lib/item.c lib/library.c lib/list.c lib/menu.c lib/util.c cdl.a
+ libbemenu.so: lib/bemenu.h lib/internal.h lib/filter.c lib/item.c lib/library.c lib/list.c lib/menu.c util.a cdl.a
  
 -bemenu-renderer-curses.so: private override LDLIBS += $(shell pkg-config --libs ncursesw) -lm
 -bemenu-renderer-curses.so: private override CPPFLAGS += $(shell pkg-config --cflags-only-I ncursesw)
 +bemenu-renderer-curses.so: private override LDLIBS += -lncursesw -lm
- bemenu-renderer-curses.so: lib/renderers/curses/curses.c
+ bemenu-renderer-curses.so: lib/renderers/curses/curses.c util.a
  
  bemenu-renderer-x11.so: private override LDLIBS += $(shell pkg-config --libs x11 xinerama cairo pango pangocairo)
-@@ -110,9 +106,9 @@ install-include: lib/bemenu.h
+@@ -114,9 +110,9 @@ install-include: lib/bemenu.h
  	mkdir -p "$(DESTDIR)$(PREFIX)$(includedir)"
  	cp $^ "$(DESTDIR)$(PREFIX)$(includedir)"
  
@@ -60,12 +60,12 @@ Index: GNUmakefile
  
  install-lib-symlinks: $(libs) | install-libs
  	cp -RP $^ $(addsuffix .$(firstword $(subst ., ,$(VERSION))), $^) "$(DESTDIR)$(PREFIX)$(libdir)"
-@@ -140,7 +136,7 @@ install-x11:
- 	mkdir -p "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
- 	-cp bemenu-renderer-x11.so "$(DESTDIR)$(PREFIX)$(libdir)/bemenu"
+@@ -146,7 +142,7 @@ install-x11:
  
--install-base: install-pkgconfig install-include install-lib-symlinks install-bins install-man
-+install-base: install-pkgconfig install-include install-libs install-bins install-man
+ install-docs: install-man
  
- install: install-base install-renderers
+-install-base: install-pkgconfig install-include install-lib-symlinks install-bins
++install-base: install-pkgconfig install-include install-libs install-bins
+ 
+ install: install-base install-renderers install-docs
  	@echo "Install OK!"
