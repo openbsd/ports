@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/26 18:13:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2022/02/27 13:06:30 sthen Exp $
 
 COMMENT =	Python driver for mongodb
 
-MODPY_EGG_VERSION = 3.4.0
+# 4.x drops py2; currently used in test target in databases/mongodb
+MODPY_EGG_VERSION = 3.12.0
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	4
 
 CATEGORIES =	databases devel
 
@@ -23,15 +23,11 @@ FLAVORS =	python3
 FLAVOR ?=
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
-.if ${FLAVOR:Mpython3}
 # needs a running mongodb instance in 127.0.0.1:27017,
 # and increased kern.somaxconn
 TEST_IS_INTERACTIVE = Yes
-TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR}
-.else
-NO_TEST =		Yes
-.endif
 
 .include <bsd.port.arch.mk>
 
