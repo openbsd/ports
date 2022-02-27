@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gps_functions_c,v 1.2 2021/01/13 05:57:44 kirby Exp $
+$OpenBSD: patch-src_gps_functions_c,v 1.3 2022/02/27 18:35:08 sthen Exp $
 
 Add support for gpsd API version 9 (gpsd 3.20)
 https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/320
@@ -8,6 +8,9 @@ https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/327
 
 gpsd API 9 has a different altitude reporting
 https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/328
+
+deprecated STATUS_NO_FIX has been removed from.gpsd, based on
+https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/329
 
 Index: src/gps_functions.c
 --- src/gps_functions.c.orig
@@ -26,7 +29,7 @@ Index: src/gps_functions.c
  			gpsdata->fix.time = (time_t) 0;
  		}
 +#if GPSD_API_MAJOR_VERSION >= 10
-+		gpsdata->valid = (libgps_gpsdata.fix.status != STATUS_NO_FIX);
++		gpsdata->valid = (libgps_gpsdata.fix.mode >= MODE_2D);
 +#else
  		gpsdata->valid = (libgps_gpsdata.status != STATUS_NO_FIX);
 +#endif
