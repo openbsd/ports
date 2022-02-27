@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2188 2022/02/26 22:28:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2189 2022/02/27 21:56:37 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1466,6 +1466,7 @@
      SUBDIR += py-protobuf,python3
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-puremagic,python3
+     SUBDIR += py-py
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
      SUBDIR += py-pyinotify,python3
