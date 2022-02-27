@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2022/02/19 08:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2022/02/27 10:57:02 ajacoutot Exp $
 
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2
 GH_PROJECT =		libgit2
-GH_TAGNAME =		v1.4.1
+GH_TAGNAME =		v1.4.2
 
 SHARED_LIBS +=  git2                      14.0 # 0.28
 
