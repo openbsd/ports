@@ -1,0 +1,26 @@
+$OpenBSD: patch-build_sh,v 1.4 2022/02/28 17:34:04 op Exp $
+
+ - don't hardcode -O3
+ - fix wrong usage of test(1)
+
+Index: build.sh
+--- build.sh.orig
++++ build.sh
+@@ -60,7 +60,7 @@ if [ "$parallel" -gt 1 ]; then
+   fi
+   CC="sem -j $parallel --id $$ ${CC}"
+ fi
+-COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fmax-errors=3 -O3 -fno-strict-aliasing -fno-ident $extraBuildArgs"
++COMP_FLAGS="${CPPFLAGS:-} ${CFLAGS:-} -w -fmax-errors=3 -fno-strict-aliasing -fno-ident $extraBuildArgs"
+ LINK_FLAGS="${LDFLAGS:-} "
+ PS4=""
+ # platform detection
+@@ -163,7 +163,7 @@ esac
+ 
+ case $ucpu in
+   *i386* | *i486* | *i586* | *i686* | *bepc* | *i86pc* )
+-    if [ isOpenIndiana -eq "yes" ] ; then
++    if [ isOpenIndiana == "yes" ] ; then
+       mycpu="amd64"
+     else
+       mycpu="i386"

@@ -1,0 +1,20 @@
+$OpenBSD: patch-dist_nimble_src_nimblepkg_options_nim,v 1.1 2022/02/28 17:34:04 op Exp $
+
+don't exec git
+
+Index: dist/nimble/src/nimblepkg/options.nim
+--- dist/nimble/src/nimblepkg/options.nim.orig
++++ dist/nimble/src/nimblepkg/options.nim
+@@ -161,12 +161,6 @@ proc writeHelp*(quit=true) =
+ proc writeVersion*() =
+   echo("nimble v$# compiled at $# $#" %
+       [nimbleVersion, CompileDate, CompileTime])
+-  const execResult = gorgeEx("git rev-parse HEAD")
+-  when execResult[0].len > 0 and execResult[1] == QuitSuccess:
+-    echo "git hash: ", execResult[0]
+-  else:
+-    {.warning: "Couldn't determine GIT hash: " & execResult[0].}
+-    echo "git hash: couldn't determine git hash"
+   raise NimbleQuit(msg: "")
+ 
+ proc parseActionType*(action: string): ActionType =

@@ -1,6 +1,11 @@
-$OpenBSD: patch-config_nim_cfg,v 1.4 2020/05/02 09:33:06 denis Exp $
---- config/nim.cfg.orig	Sun Jan  8 21:33:42 2017
-+++ config/nim.cfg	Mon Jan  9 02:28:32 2017
+$OpenBSD: patch-config_nim_cfg,v 1.5 2022/02/28 17:34:04 op Exp $
+
+ - use clang
+ - don't hardcode -O3 and respect ${CFLAGS}
+
+Index: config/nim.cfg
+--- config/nim.cfg.orig
++++ config/nim.cfg
 @@ -8,7 +8,7 @@
  # Environment variables can be accessed like so:
  #  gcc.path %= "$CC_PATH"
@@ -10,16 +15,43 @@ $OpenBSD: patch-config_nim_cfg,v 1.4 2020/05/02 09:33:06 denis Exp $
  
  # additional options always passed to the compiler:
  --parallel_build: "0" # 0 to auto-detect number of processors
-@@ -118,12 +118,6 @@ path="$lib/pure"
-     clang.options.linker = "-ldl"
-     clang.cpp.options.linker = "-ldl"
-     tcc.options.linker = "-ldl"
--  @end
--  @if bsd:
--    # BSD got posix_spawn only recently, so we deactivate it for osproc:
+@@ -111,7 +111,7 @@ nimblepath="$home/.nimble/pkgs/"
+ @if unix:
+   @if bsd:
+     # BSD got posix_spawn only recently, so we deactivate it for osproc:
 -    define:useFork
--    # at least NetBSD has problems with thread local storage:
--    tlsEmulation:on
-   @end
-   @if haiku:
++    # define:useFork
+   @elif haiku:
      gcc.options.linker = "-Wl,--as-needed -lnetwork"
+     gcc.cpp.options.linker = "-Wl,--as-needed -lnetwork"
+@@ -229,15 +229,15 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+   gcc.options.linker %= "-L $WIND_BASE/target/lib/usr/lib/ppc/PPC32/common -mrtp -fno-strict-aliasing -D_C99 -D_HAS_C9X -std=c99 -fasm -Wall -Wno-write-strings"
+ @end
+ 
+-gcc.options.speed = "-O3 -fno-strict-aliasing -fno-ident"
+-gcc.options.size = "-Os -fno-ident"
++gcc.options.speed = "${CFLAGS} -fno-strict-aliasing -fno-ident"
++gcc.options.size = "${CFLAGS} -Os -fno-ident"
+ @if windows:
+   gcc.options.debug = "-g3 -Og -gdwarf-3"
+ @else:
+   gcc.options.debug = "-g3 -Og"
+ @end
+-gcc.cpp.options.speed = "-O3 -fno-strict-aliasing -fno-ident"
+-gcc.cpp.options.size = "-Os -fno-ident"
++gcc.cpp.options.speed = "${CFLAGS} -fno-strict-aliasing -fno-ident"
++gcc.cpp.options.size = "${CFLAGS} -Os -fno-ident"
+ gcc.cpp.options.debug = "-g3 -Og"
+ #passl = "-pg"
+ 
+@@ -251,8 +251,8 @@ llvm_gcc.options.size = "-Os"
+ clang.options.debug = "-g"
+ clang.cpp.options.debug = "-g"
+ clang.options.always = "-w -ferror-limit=3"
+-clang.options.speed = "-O3"
+-clang.options.size = "-Os"
++clang.options.speed = "${CFLAGS}"
++clang.options.size = "${CFLAGS} -Os"
+ 
+ @if windows:
+   clang_cl.cpp.options.always %= "${clang_cl.options.always} /EHsc"
