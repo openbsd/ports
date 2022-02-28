@@ -1,11 +1,11 @@
-$OpenBSD: patch-ui5_wifisetupdialog_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
+$OpenBSD: patch-ui5_wifisetupdialog_py,v 1.2 2022/02/28 09:49:55 ajacoutot Exp $
 
 https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1718129
 
 Index: ui5/wifisetupdialog.py
 --- ui5/wifisetupdialog.py.orig
 +++ ui5/wifisetupdialog.py
-@@ -259,7 +259,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+@@ -253,7 +253,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
              try:
                  self.dev = device.Device(self.device_uri)
              except Error as e:
@@ -14,7 +14,7 @@ Index: ui5/wifisetupdialog.py
  
                  if self.dev is not None:
                      self.dev.close()
-@@ -840,7 +840,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
+@@ -834,7 +834,7 @@ class WifiSetupDialog(QDialog, Ui_Dialog):
  
  
      def showIOError(self, e):

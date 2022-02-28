@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.70 2021/12/18 09:52:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.71 2022/02/28 09:49:55 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -890,6 +890,12 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_professional_p1607dn.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_p1608dn.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_p1609dn.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_p_1102w.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_tank_1020.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_tank_150x.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_tank_250x.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_tank_mfp_1005.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_tank_mfp_160x.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_tank_mfp_260x.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-lj_300_400_color_m351_m451-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-lj_300_400_color_mfp_m375_m475-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-mopier_240-pcl3.ppd.gz
