@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:00:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2022/02/28 12:14:27 sthen Exp $
 
-COMMENT=		library used to interact with Git repositories
+COMMENT=	library used to interact with Git repositories
 
-MODPY_EGG_VERSION=	2.1.9
-DISTNAME=		GitPython-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
-REVISION=		3
+MODPY_EGG_VERSION=	3.1.27
+DISTNAME=	GitPython-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PI=	Yes
+MODPY_SETUPTOOLS= Yes
+NO_TEST=	Yes
 
-FLAVORS =		python3
-FLAVOR =	python3	
+FLAVORS=	python3
+FLAVOR=		python3
 
-RUN_DEPENDS=		devel/py-gitdb${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-gitdb${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
