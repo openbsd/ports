@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.395 2022/02/16 18:25:00 denis Exp $
+$OpenBSD: user.list,v 1.396 2022/02/28 16:54:55 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -382,3 +382,4 @@ id  user		group		port
 871 _gelatod		_gelatod	net/gelatod
 872 _vmetrics		_vmetrics	databases/victoriametrics
 873 _alertmanager	_alertmanager	sysutils/alertmanager
+874 _snowflakeproxy	_snowflakeproxy	net/snowflake_proxy

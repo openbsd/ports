@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1290 2022/02/22 04:22:21 bket Exp $
+# $OpenBSD: Makefile,v 1.1291 2022/02/28 16:54:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -656,6 +656,7 @@
      SUBDIR += sniproxy
      SUBDIR += snmptt
      SUBDIR += snort
+     SUBDIR += snowflake_proxy
      SUBDIR += socat
      SUBDIR += softflowd
      SUBDIR += spectrum-tools
