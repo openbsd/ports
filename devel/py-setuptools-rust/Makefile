@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/27 13:43:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/28 11:22:37 sthen Exp $
 
 COMMENT=		setuptools Rust extension plugin
 
 MODPY_EGG_VERSION=	1.1.2
+REVISION=		0
 DISTNAME=		setuptools-rust-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -24,6 +25,7 @@ FLAVOR =		python3
 BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-semantic-version${MODPY_FLAVOR} \
+			devel/py-typing-extensions${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
 
