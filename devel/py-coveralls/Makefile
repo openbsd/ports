@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:00:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2022/02/28 11:59:11 sthen Exp $
 
 COMMENT =	display coverage stats online via coveralls.io
 
-MODPY_EGG_VERSION =	1.6.0
+MODPY_EGG_VERSION =	3.3.1
 DISTNAME =	coveralls-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	8
 
 CATEGORIES =	devel
 
