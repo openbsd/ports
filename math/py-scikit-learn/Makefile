@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/02 22:42:56 daniel Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/28 03:47:03 daniel Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
@@ -39,8 +39,6 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}>=1.14.6 \
 			sysutils/py-joblib${MODPY_FLAVOR}>=0.11 \
 			sysutils/py-threadpoolctl${MODPY_FLAVOR}>=2.0.0
 
-# XXX: pytest >= 5.0.1 required
-NO_TEST =		Yes
 TEST_DEPENDS =		math/py-pandas${MODPY_FLAVOR}
 
 pre-test:
