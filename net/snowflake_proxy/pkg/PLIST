@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/28 16:54:13 sthen Exp $
-@newgroup _snowflakeproxy:874:_snowflakeproxy
+@comment $OpenBSD: PLIST,v 1.2 2022/02/28 18:01:53 sthen Exp $
+@newgroup _snowflakeproxy:874
 @newuser _snowflakeproxy:874:_snowflakeproxy::snowflake_proxy user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/snowflake_proxy
 @bin bin/snowflake_proxy
