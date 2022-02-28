@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/14 07:01:23 tb Exp $
+# $OpenBSD: Makefile,v 1.3 2022/02/28 12:57:34 op Exp $
 
 COMMENT=	terminal browser for gemini protocol
 
 MODGO_MODNAME=	github.com/makeworld-the-better-one/amfora
-MODGO_VERSION=	v1.8.0
+MODGO_VERSION=	v1.9.2
 
 DISTNAME=	amfora-${MODGO_VERSION}
 
