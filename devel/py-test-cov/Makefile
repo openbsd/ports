@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/26 20:50:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2022/02/28 12:37:55 sthen Exp $
 
 COMMENT =		pytest plugin for measuring coverage
 
-MODPY_EGG_VERSION =	2.8.1
+MODPY_EGG_VERSION =	3.0.0
 DISTNAME =		pytest-cov-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		3
 
 HOMEPAGE =		https://pytest-cov.readthedocs.org/en/latest/
 
@@ -16,15 +15,21 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
+MODPY_PYTEST_ARGS =	-v
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-test${MODPY_FLAVOR} \
+			textproc/py-tomli${MODPY_FLAVOR}
 
-# Missing py-fields, py-hunter and py-process-tests
-NO_TEST =		Yes
+TEST_DEPENDS =		devel/py-fields${MODPY_FLAVOR} \
+			devel/py-process-tests${MODPY_FLAVOR} \
+			devel/py-test-xdist${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
+			devel/py-virtualenv${MODPY_FLAVOR}
+# also wants py-hunter?
 
 .include <bsd.port.mk>
