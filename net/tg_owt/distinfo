@@ -2,9 +2,9 @@ SHA256 (libyuv-20220131-804980bb.tar.gz) = k4tROepP0FCCUWaOWFo1nv8AApkLJMGLtbb+y
 SHA256 (tg_owt-0.0.0.20220216-a264028e.tar.gz) = udI3bn1NouXt88LqhkdPqCHzkmnxuikB8wq3puODR7I=
 SHA256 (tg_owt-defer-third-party-sources-bf55efe3.patch) = ICD8QH8O3Y7LVn0dL/qOV6Fj7ZxOcA6yd/l9bp7F/Bk=
 SHA256 (tg_owt-libabsl-use-includes-fb12b4bd.patch) = oBg0O/NkbgRwkKkoLwPL/GgomRlOJupJiT8JxlZuzX4=
-SHA256 (tg_owt-libsrtp-fix-libressl-build-16483b1.patch) = c2uG9xJMaGf0XMKYFe8ehx8Xk7y7OZtW4BWpQf81OsY=
+SHA256 (tg_owt-libsrtp-libressl-fix-531dd25e.patch) = 5cqyYHhvMA4i69TaZ87QGiWW9qstBSojDNaqU9sSLv8=
 SIZE (libyuv-20220131-804980bb.tar.gz) = 525994
 SIZE (tg_owt-0.0.0.20220216-a264028e.tar.gz) = 16501527
 SIZE (tg_owt-defer-third-party-sources-bf55efe3.patch) = 2331
 SIZE (tg_owt-libabsl-use-includes-fb12b4bd.patch) = 3401
-SIZE (tg_owt-libsrtp-fix-libressl-build-16483b1.patch) = 2989
+SIZE (tg_owt-libsrtp-libressl-fix-531dd25e.patch) = 3532
