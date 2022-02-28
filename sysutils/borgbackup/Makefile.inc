@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2022/02/23 18:23:07 bket Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2022/02/28 11:01:14 bket Exp $
 
 COMMENT =		deduplicating backup program
 
@@ -19,7 +19,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	--ignore borg/testsuite/benchmark.py
 MODPY_TEST_DIR =	${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 
 LIB_DEPENDS +=		archivers/lz4 \
@@ -27,12 +26,8 @@ LIB_DEPENDS +=		archivers/lz4 \
 			sysutils/xxhash
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS +=		sysutils/py-packaging${MODPY_FLAVOR}
-TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH}
-
-# XXX pytest-benchmark is currently not picked up as plugin by pytest, as result
-# benchmarking fails during 'make test'. For now ignore benchmarking (see
-# MODPY_PYTEST_ARGS), and comment out py-test-benchmark as TDEP.
-#TEST_DEPENDS +=		devel/py-test-benchmark${MODPY_FLAVOR}
+TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH} \
+			devel/py-test-benchmark${MODPY_FLAVOR}
 
 PORTHOME =		${WRKDIR}
 
