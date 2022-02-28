@@ -1,0 +1,3 @@
+charset-normalizer is a library that helps you read text from an unknown
+charset encoding. Performs a similar role to 'chardet' but takes a different
+approach and performs better.
