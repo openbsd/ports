@@ -1,0 +1,16 @@
+Snowflake is a pluggable transport that can be used for Tor,
+usually for accessing the network when a user is on a connection
+with only partial internet access.
+
+It uses WebRTC negotiations for NAT traversal to connect to mostly
+short-lived volunteer proxies. These proxies can either be provided
+by running a web browser extension or a standalone proxy.
+
+Users behind restrictive access can use snowflake as a bridge,
+e.g. by configuring it in Tor Browser.
+
+Technical information is in
+https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/wikis/Technical%20Overview
+
+This package provides a proxy, for those who would like to use their
+internet connection to provide access to others via this protocol.
