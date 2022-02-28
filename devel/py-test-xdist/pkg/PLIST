@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/02/25 22:04:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2022/02/28 13:24:49 sthen Exp $
 @pkgpath devel/py-test-xdist
 lib/python${MODPY_VERSION}/site-packages/pytest_xdist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytest_xdist-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,18 +13,32 @@ lib/python${MODPY_VERSION}/site-packages/xdist/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}boxed.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}dsession.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}looponfail.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}newhooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}slavemanage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/${MODPY_PYCACHE}workermanage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xdist/_version.py
-lib/python${MODPY_VERSION}/site-packages/xdist/boxed.py
 lib/python${MODPY_VERSION}/site-packages/xdist/dsession.py
 lib/python${MODPY_VERSION}/site-packages/xdist/looponfail.py
 lib/python${MODPY_VERSION}/site-packages/xdist/newhooks.py
 lib/python${MODPY_VERSION}/site-packages/xdist/plugin.py
 lib/python${MODPY_VERSION}/site-packages/xdist/remote.py
-lib/python${MODPY_VERSION}/site-packages/xdist/slavemanage.py
+lib/python${MODPY_VERSION}/site-packages/xdist/report.py
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}each.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}load.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadfile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadgroup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/${MODPY_PYCACHE}loadscope.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/each.py
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/load.py
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/loadfile.py
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/loadgroup.py
+lib/python${MODPY_VERSION}/site-packages/xdist/scheduler/loadscope.py
+lib/python${MODPY_VERSION}/site-packages/xdist/workermanage.py
