@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/04 14:06:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/28 15:12:52 sthen Exp $
 @pkgpath www/py-multidict
 @pkgpath www/${MODPY_PY_PREFIX}multidict
 lib/python${MODPY_VERSION}/site-packages/multidict/
@@ -17,15 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_ba
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_py.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/_abc.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_compat.py
-lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.c
 @so lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_base.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_py.py
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/defs.h
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/dict.h
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/istr.h
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/iter.h
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/pair_list.h
-lib/python${MODPY_VERSION}/site-packages/multidict/_multilib/views.h
 lib/python${MODPY_VERSION}/site-packages/multidict/py.typed
