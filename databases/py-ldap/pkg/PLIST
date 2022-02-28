@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/02/18 12:21:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2022/02/28 11:38:00 sthen Exp $
 @conflict py-ldap-examples-*
 @conflict py3-ldap-examples-*
 @pkgpath databases/py-ldap,-main
 @pkgpath databases/py-ldap,-main,python3
 @pkgpath databases/py-ldap,-examples
 @pkgpath databases/py-ldap,-examples,python3
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldif.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
