@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:44 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/02/28 12:14:23 sthen Exp $
 @pkgpath devel/py-gitdb
 lib/python${MODPY_VERSION}/site-packages/gitdb/
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/gitdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gitdb/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gitdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -56,14 +63,5 @@ lib/python${MODPY_VERSION}/site-packages/gitdb/utils/
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gitdb/utils/compat.py
 lib/python${MODPY_VERSION}/site-packages/gitdb/utils/encoding.py
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/gitdb2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
