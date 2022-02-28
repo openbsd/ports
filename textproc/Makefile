@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.708 2022/02/28 10:46:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.709 2022/02/28 10:59:54 bket Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -392,6 +392,7 @@
      SUBDIR += py-dicttoxml,python3
      SUBDIR += py-docutils,python3
      SUBDIR += py-elasticsearch,python3
+     SUBDIR += py-elementpath,python3
      SUBDIR += py-emoji,python3
      SUBDIR += py-enchant,python3
      SUBDIR += py-et_xmlfile,python3
@@ -454,6 +455,7 @@
      SUBDIR += py-xlrd,python3
      SUBDIR += py-xlwt,python3
      SUBDIR += py-xmldiff		# unflavoured (standalone?) but uses python3
+     SUBDIR += py-xmlschema,python3
      SUBDIR += py-xmltodict,python3
      SUBDIR += py-yaml
      SUBDIR += py-yaml,python3
