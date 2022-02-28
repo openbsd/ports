@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/16 21:56:24 juanfra Exp $
+# $OpenBSD: Makefile,v 1.15 2022/02/28 18:26:48 naddy Exp $
 
+BROKEN=		segmentation fault with gambit 4.9.4
 BROKEN-powerpc64=gsc spins during build
 
 COMMENT =	dialect of Scheme designed for systems programming
