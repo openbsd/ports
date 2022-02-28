@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/22 04:22:22 bket Exp $
+# $OpenBSD: Makefile,v 1.13 2022/02/28 15:01:03 sthen Exp $
 
 COMMENT =		python code formatter
 
@@ -23,7 +23,7 @@ RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
-TEST_DEPENDS =		www/py-aiohttp
+TEST_DEPENDS =		www/py-aiohttp${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR =	python3
