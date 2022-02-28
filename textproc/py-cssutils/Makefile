@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/06 09:19:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2022/02/28 14:53:12 sthen Exp $
 
 COMMENT =	python package to parse and build CSS
 
 CATEGORIES =	textproc
 
-MODPY_EGG_VERSION =	2.3.0
+MODPY_EGG_VERSION =	2.4.0
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 MODPY_PI =	Yes
