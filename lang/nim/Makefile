@@ -1,26 +1,28 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/02 09:33:06 denis Exp $
+# $OpenBSD: Makefile,v 1.12 2022/02/28 13:16:10 op Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
-BROKEN-i386 = hardcodes gcc; see config/nim.cfg
-
 COMMENT =		statically typed, imperative programming language
 
-VERSION =		1.2.0
-DISTNAME =		nim-${VERSION}
+DISTNAME =		nim-1.6.4
 EXTRACT_SUFX =		.tar.xz
-REVISION =		0
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://nim-lang.org/
-MASTER_SITES =		http://nim-lang.org/download/ \
-			https://download.tuxfamily.org/jod/lang/nim/
+HOMEPAGE =		https://nim-lang.org/
+MASTER_SITES =		https://nim-lang.org/download/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c m
+WANTLIB =		c m pthread
+
+MODULES =		lang/python
+
+PORTHOME =		${WRKDIR}
+TEST_DEPENDS =		lang/node
+
+SUBST_VARS +=		CFLAGS
 
 post-patch:
 	mkdir -p ${WRKSRC}/nimcache-port
@@ -29,26 +31,30 @@ post-patch:
 	perl -i -pe "s#NIM_PORT_CACHE#${WRKSRC}/nimcache-port-test#" \
 		${WRKSRC}/koch.nim
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/config/nim.cfg
+
 do-build:
 	cd ${WRKSRC} && ${SETENV} CC="${CC}" LINKER="${CC}" \
+		COMP_FLAGS="${CPPFLAGS} ${CFLAGS}" LINK_FLAGS="${LDFLAGS}" \
 		CFLAGS="${CFLAGS}" sh build.sh
-	# slow machines can get a head of themselves and fail to link
-	cd ${WRKSRC} && bin/nim c -d:release --parallelBuild:1 \
+	cd ${WRKSRC} && bin/nim c -d:release --parallelBuild:${MAKE_JOBS} \
 		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
 		--listCmd --putenv:"PATH=${PATH}" koch
-	cd ${WRKSRC} && ./koch boot -d:release --parallelBuild:1 \
+.for t in boot nimble tools
+	cd ${WRKSRC} && ./koch $t -d:release --parallelBuild:${MAKE_JOBS} \
 		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
 		--listCmd --putenv:"PATH=${PATH}"
-	cd ${WRKSRC} && ./koch nimble -d:release --parallelBuild:1 \
-		--nimcache:"${WRKSRC}/nimcache-port" --listFullPaths \
-		--listCmd --putenv:"PATH=${PATH}"
+.endfor
 
 do-install:
-	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nim ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/nimble ${PREFIX}/bin
+.for b in nim nimble nimpretty nimgrep nimsuggest testament
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/$b ${PREFIX}/bin
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/nim
 	cp -R ${WRKSRC}/lib/* ${PREFIX}/lib/nim
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/nim/pure/unidecode/gen.py
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/nim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nim
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/nim
@@ -56,7 +62,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config/*.cfg ${PREFIX}/share/examples/nim
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release \
+	cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./koch tests all -d:release \
 		--parallelBuild:1 --listFullPaths --listCmd \
 		--nimcache:"${WRKSRC}/nimcache-port-test" \
 		--putenv:"PATH=${PATH}"
