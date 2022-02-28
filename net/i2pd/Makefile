@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/12 22:51:16 tb Exp $
+# $OpenBSD: Makefile,v 1.9 2022/02/28 10:49:54 sthen Exp $
 
 COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.38.0
-REVISION =	1
+GH_TAGNAME =	2.41.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -32,7 +31,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/i2pd
 	${INSTALL_DATA} ${WRKDIST}/libi2pd{,_client}/*.h \
 		 ${PREFIX}/include/i2pd
-.for dir in family reseed router
+.for dir in family reseed
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i2pd/certificates/${dir}
 	${INSTALL_DATA} ${WRKDIST}/contrib/certificates/${dir}/* \
 		${PREFIX}/share/examples/i2pd/certificates/${dir}

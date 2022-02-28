@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/18 17:32:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2022/02/28 10:49:54 sthen Exp $
 @newgroup _i2pd:838
 @newuser _i2pd:838:838:daemon:i2pd account:${LOCALSTATEDIR}/lib/i2pd:/sbin/nologin
 @rcscript ${RCDIR}/i2pd
@@ -48,6 +48,7 @@ include/i2pd/RouterInfo.h
 include/i2pd/SAM.h
 include/i2pd/SOCKS.h
 include/i2pd/SSU.h
+include/i2pd/SSU2.h
 include/i2pd/SSUData.h
 include/i2pd/SSUSession.h
 include/i2pd/Signature.h
@@ -79,6 +80,7 @@ include/i2pd/version.h
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/router/
 @owner
 @group
+@static-lib lib/libi2pdlang.a
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/i2pd/
 share/examples/i2pd/certificates/
@@ -131,16 +133,22 @@ share/examples/i2pd/certificates/reseed/creativecowpat_at_mail.i2p.crt
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/creativecowpat_at_mail.i2p.crt
 @owner
 @group
-share/examples/i2pd/certificates/reseed/echelon_at_mail.i2p.crt
+share/examples/i2pd/certificates/reseed/echelon3_at_mail.i2p.crt
 @owner _i2pd
 @group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/echelon_at_mail.i2p.crt
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/echelon3_at_mail.i2p.crt
 @owner
 @group
 share/examples/i2pd/certificates/reseed/hankhill19580_at_gmail.com.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hankhill19580_at_gmail.com.crt 
+@owner
+@group
+share/examples/i2pd/certificates/reseed/hiduser0_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hiduser0_at_mail.i2p.crt
 @owner
 @group
 share/examples/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
@@ -161,23 +169,28 @@ share/examples/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt
 @owner
 @group
+share/examples/i2pd/certificates/reseed/orignal_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/orignal_at_mail.i2p.crt
+@owner
+@group
 share/examples/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 @owner
 @group
+share/examples/i2pd/certificates/reseed/rambler_at_mail.i2p.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/rambler_at_mail.i2p.crt
+@owner
+@group
 share/examples/i2pd/certificates/reseed/reseed_at_diva.exchange.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/reseed_at_diva.exchange.crt 
-@owner
-@group
-share/examples/i2pd/certificates/router/
-share/examples/i2pd/certificates/router/orignal_at_mail.i2p.crt
-@owner _i2pd
-@group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/router/orignal_at_mail.i2p.crt
 @owner
 @group
 share/examples/i2pd/i2pd.conf

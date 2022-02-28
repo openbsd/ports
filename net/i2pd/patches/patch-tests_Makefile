@@ -1,14 +1,16 @@
-$OpenBSD: patch-tests_Makefile,v 1.4 2021/05/20 03:57:32 rsadowski Exp $
+$OpenBSD: patch-tests_Makefile,v 1.5 2022/02/28 10:49:54 sthen Exp $
 
---- tests/Makefile.orig	Mon Nov 30 23:20:15 2020
-+++ tests/Makefile	Sun Jan 24 22:43:16 2021
-@@ -1,4 +1,4 @@
--CXXFLAGS += -Wall -Wextra -pedantic -O0 -g -std=c++11 -D_GLIBCXX_USE_NANOSLEEP=1 -I../libi2pd/ -pthread -Wl,--unresolved-symbols=ignore-in-object-files
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -1,5 +1,5 @@
+ CXXFLAGS += -Wall -Wno-unused-parameter -Wextra -pedantic -O0 -g -std=c++11 -D_GLIBCXX_USE_NANOSLEEP=1 -pthread -Wl,--unresolved-symbols=ignore-in-object-files
+-INCFLAGS += -I../libi2pd
 +CXXFLAGS += -Wall -Wextra -pedantic -g -std=c++11 -D_GLIBCXX_USE_NANOSLEEP=1 -I../libi2pd/ -pthread -Wl,--unresolved-symbols=ignore-in-object-files
  
  TESTS = test-gost test-gost-sig test-base-64 test-x25519 test-aeadchacha20poly1305 test-blinding test-elligator
  
-@@ -13,8 +13,8 @@ test-base-%: ../libi2pd/Base.cpp test-base-%.cpp
+@@ -14,8 +14,8 @@ test-base-%: ../libi2pd/Base.cpp test-base-%.cpp
  test-gost: ../libi2pd/Gost.cpp ../libi2pd/I2PEndian.cpp test-gost.cpp
  	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto
  
@@ -19,7 +21,7 @@ $OpenBSD: patch-tests_Makefile,v 1.4 2021/05/20 03:57:32 rsadowski Exp $
  
  test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndian.cpp ../libi2pd/Log.cpp ../libi2pd/Crypto.cpp  test-x25519.cpp
  	$(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
-@@ -22,14 +22,14 @@ test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndi
+@@ -23,14 +23,14 @@ test-x25519: ../libi2pd/Ed25519.cpp ../libi2pd/I2PEndi
  test-aeadchacha20poly1305: ../libi2pd/Crypto.cpp ../libi2pd/ChaCha20.cpp ../libi2pd/Poly1305.cpp test-aeadchacha20poly1305.cpp
  	 $(CXX) $(CXXFLAGS) $(NEEDED_CXXFLAGS) $(INCFLAGS) -o $@ $^ -lcrypto -lssl -lboost_system
  
