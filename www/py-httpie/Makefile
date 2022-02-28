@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:02:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2022/02/28 10:47:55 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
-MODPY_EGG_VERSION =	2.5.0
+MODPY_EGG_VERSION =	3.0.2
 GH_TAGNAME =		${MODPY_EGG_VERSION}
-GH_ACCOUNT =		jakubroztocil
+GH_ACCOUNT =		httpie
 GH_PROJECT =		httpie
-REVISION =		0
 
 CATEGORIES =		www net
 
-HOMEPAGE =		https://httpie.org/
+HOMEPAGE =		https://httpie.io/
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -22,10 +21,12 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		net/py-socks${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-requests-toolbelt${MODPY_FLAVOR} \
+			textproc/py-charset-normalizer${MODPY_FLAVOR} \
 			textproc/py-defusedxml${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
+			textproc/py-pygments${MODPY_FLAVOR} \
+			www/py-multidict${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR} \
+			www/py-requests-toolbelt${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-test-httpbin${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR}
 TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
