@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/13 21:21:02 kn Exp $
+# $OpenBSD: Makefile,v 1.14 2022/02/28 22:48:48 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -76,9 +76,6 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
 
 # match standard version with abseil
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
-
-# disable use of unported dispatch library
-CXXFLAGS +=		-DCRL_FORCE_QT
 
 NO_TEST =		Yes
 
