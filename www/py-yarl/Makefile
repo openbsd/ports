@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2022/02/28 15:12:08 sthen Exp $
 
 COMMENT =		yet another URL library
 
@@ -24,6 +24,7 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		net/py-idna${MODPY_FLAVOR}>=2.0 \
 			www/py-multidict${MODPY_FLAVOR}>=4.0
