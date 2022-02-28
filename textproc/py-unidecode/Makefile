@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/15 14:10:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2022/02/28 12:47:50 sthen Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION =	1.3.2
+MODPY_EGG_VERSION =	1.3.3
 DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
