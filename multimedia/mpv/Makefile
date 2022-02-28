@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.79 2022/01/29 12:30:14 kn Exp $
+# $OpenBSD: Makefile,v 1.80 2022/02/28 02:02:11 gsoares Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.34.1
+
+REVISION =		0
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
@@ -54,6 +56,7 @@ LIB_DEPENDS =		archivers/libarchive \
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
+			www/yt-dlp \
 			x11/gtk+3,-guic
 
 SEPARATE_BUILD =	Yes
