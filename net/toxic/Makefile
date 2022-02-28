@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/17 01:35:46 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2022/02/28 12:51:57 op Exp $
 
 COMMENT =		ncurses-based Tox client
 
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
-GH_TAGNAME =		v0.11.1
-REVISION =		0
+GH_TAGNAME =		v0.11.3
 
 CATEGORIES =		net
 
