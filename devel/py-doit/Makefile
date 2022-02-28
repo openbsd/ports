@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/07 09:28:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2022/02/28 11:55:33 sthen Exp $
 
 COMMENT =		automation tool
 
-MODPY_EGG_VERSION =	0.33.1
+MODPY_EGG_VERSION =	0.34.1
 DISTNAME =		doit-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
