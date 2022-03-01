@@ -1,0 +1,18 @@
+Remove pins to old py2-supporting versions of ports
+
+Index: requirements.txt
+--- requirements.txt.orig
++++ requirements.txt
+@@ -1,6 +1,6 @@
+-lxml==4.6.3
+-pycryptodomex==3.10.1
+-construct==2.10.54
+-argon2-cffi==20.1.0
+-python-dateutil==2.8.1
+-future==0.18.2
++lxml
++pycryptodomex
++construct
++argon2-cffi
++python-dateutil
++future

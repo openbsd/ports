@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/03/01 10:23:58 sthen Exp $
 
 COMMENT =	interact with keepass databases from Python
 
 MODPY_EGG_VERSION =	4.0.1
+REVISION =	1
 
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
-
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/libkeepass/pykeepass
@@ -22,11 +21,13 @@ FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-# tests are not included in pypi tarballs
-NO_TEST =		Yes
+NO_PYTEST =		Yes
+# tests are not included in pypi tarballs; with a git checkout you can use
+#MODPY_PYTEST_ARGS =tests/tests.py
 
-RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-construct${MODPY_FLAVOR}-=2.10.54v0 \
+RUN_DEPENDS =	devel/py-construct${MODPY_FLAVOR} \
+		devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-future${MODPY_FLAVOR} \
 		security/py-argon2-cffi${MODPY_FLAVOR} \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR}
