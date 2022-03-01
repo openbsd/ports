@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2022/03/01 10:23:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/01 10:27:10 sthen Exp $
 
 COMMENT =	interact with keepass databases from Python
 
@@ -21,7 +21,7 @@ FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-NO_PYTEST =		Yes
+NO_TEST =		Yes
 # tests are not included in pypi tarballs; with a git checkout you can use
 #MODPY_PYTEST_ARGS =tests/tests.py
 
