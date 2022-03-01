@@ -1,5 +1,3 @@
-$OpenBSD: patch-awscli_help_py,v 1.3 2020/09/19 08:24:50 ajacoutot Exp $
-
 https://github.com/aws/aws-cli/pull/2635
 
 Index: awscli/help.py

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.142 2022/01/29 09:12:51 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
