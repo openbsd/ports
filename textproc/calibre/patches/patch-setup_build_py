@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_build_py,v 1.8 2021/10/25 13:11:46 sthen Exp $
+$OpenBSD: patch-setup_build_py,v 1.9 2022/03/01 20:30:56 sthen Exp $
 
 Index: setup/build.py
 --- setup/build.py.orig
 +++ setup/build.py
-@@ -72,15 +72,7 @@ class Extension:
+@@ -71,15 +71,7 @@ class Extension:
  
          self.ldflags = d['ldflags'] = kwargs.get('ldflags', [])
          self.optional = d['options'] = kwargs.get('optional', False)
@@ -19,12 +19,12 @@ Index: setup/build.py
  def lazy_load(name):
      if name.startswith('!'):
          name = name[1:]
-@@ -196,6 +188,8 @@ def init_env(debug=False, sanitize=False):
+@@ -206,6 +198,8 @@ def init_env(debug=False, sanitize=False):
      if isbsd:
          cflags.append('-pthread')
          ldflags.append('-shared')
-+        cflags.append('-I'+os.path.join(sysconfig.PREFIX, 'include'))
-+        ldflags.append('-L'+os.path.join(sysconfig.PREFIX, 'lib'))
++        cflags.append('-I${PREFIX}/include')
++        ldflags.append('-L${PREFIX}/lib')
  
      if ishaiku:
          cflags.append('-lpthread')

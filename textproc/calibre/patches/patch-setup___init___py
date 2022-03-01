@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup___init___py,v 1.9 2021/08/14 10:24:26 sthen Exp $
+$OpenBSD: patch-setup___init___py,v 1.10 2022/03/01 20:30:56 sthen Exp $
 
 Index: setup/__init__.py
 --- setup/__init__.py.orig
 +++ setup/__init__.py
-@@ -25,7 +25,8 @@ ismacos = 'darwin' in sys.platform
+@@ -24,7 +24,8 @@ ismacos = 'darwin' in sys.platform
  isfreebsd = 'freebsd' in sys.platform
  isnetbsd = 'netbsd' in sys.platform
  isdragonflybsd = 'dragonfly' in sys.platform

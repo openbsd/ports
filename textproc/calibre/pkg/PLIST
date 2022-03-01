@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2021/11/20 14:39:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.46 2022/03/01 20:30:56 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -20,12 +20,11 @@ bin/lrs2lrf
 bin/markdown-calibre
 bin/web2disk
 lib/calibre/
-${MODPY_COMMENT}lib/calibre/${MODPY_PYCACHE}/
-lib/calibre/${MODPY_PYCACHE}sgmllib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/
 lib/calibre/calibre/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/${MODPY_PYCACHE}/
 lib/calibre/calibre/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/${MODPY_PYCACHE}build_forms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/${MODPY_PYCACHE}gui_launch.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,6 +36,7 @@ lib/calibre/calibre/${MODPY_PYCACHE}ptempfile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/${MODPY_PYCACHE}rpdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/${MODPY_PYCACHE}startup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/${MODPY_PYCACHE}test_build.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/build_forms.py
 lib/calibre/calibre/constants.py
 lib/calibre/calibre/customize/
 lib/calibre/calibre/customize/__init__.py
@@ -1469,6 +1469,7 @@ lib/calibre/calibre/gui2/${MODPY_PYCACHE}dnd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}ebook_download.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}email.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}filename_pattern_ui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/${MODPY_PYCACHE}flow_toolbar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}font_family_chooser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}gestures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/${MODPY_PYCACHE}html_transform_rules.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1782,7 +1783,6 @@ lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}choose_library.${MODPY_PYC_MAGI
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}choose_library_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}choose_plugin_toolbars.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}comments_dialog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}comments_dialog_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}confirm_delete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}confirm_delete_location.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/dialogs/${MODPY_PYCACHE}confirm_delete_location_ui.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1849,7 +1849,6 @@ lib/calibre/calibre/gui2/dialogs/choose_library.py
 lib/calibre/calibre/gui2/dialogs/choose_library_ui.py
 lib/calibre/calibre/gui2/dialogs/choose_plugin_toolbars.py
 lib/calibre/calibre/gui2/dialogs/comments_dialog.py
-lib/calibre/calibre/gui2/dialogs/comments_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location.py
 lib/calibre/calibre/gui2/dialogs/confirm_delete_location_ui.py
@@ -1906,6 +1905,7 @@ lib/calibre/calibre/gui2/dnd.py
 lib/calibre/calibre/gui2/ebook_download.py
 lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
+lib/calibre/calibre/gui2/flow_toolbar.py
 lib/calibre/calibre/gui2/font_family_chooser.py
 lib/calibre/calibre/gui2/gestures.py
 lib/calibre/calibre/gui2/html_transform_rules.py
@@ -2186,7 +2186,6 @@ lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}smashwords_plugin.${MODPY_
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}swiatebookow_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}virtualo_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}weightless_books_plugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}whsmith_uk_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}woblink_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}wolnelektury_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}xinxii_plugin.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2253,7 +2252,6 @@ lib/calibre/calibre/gui2/store/stores/smashwords_plugin.py
 lib/calibre/calibre/gui2/store/stores/swiatebookow_plugin.py
 lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/whsmith_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
 lib/calibre/calibre/gui2/store/stores/wolnelektury_plugin.py
 lib/calibre/calibre/gui2/store/stores/xinxii_plugin.py
@@ -3129,7 +3127,6 @@ lib/calibre/qt/core_name_map.py
 lib/calibre/qt/loader.py
 lib/calibre/qt/webengine.py
 lib/calibre/qt/webengine_name_map.py
-lib/calibre/sgmllib.py
 lib/calibre/templite/
 lib/calibre/templite/__init__.py
 ${MODPY_COMMENT}lib/calibre/templite/${MODPY_PYCACHE}/
@@ -3212,6 +3209,7 @@ share/calibre/catalog/section_list_templates.conf
 share/calibre/catalog/stylesheet.css
 share/calibre/catalog/template.xhtml
 share/calibre/changelog.json
+share/calibre/common-english-words.txt
 share/calibre/content-server/
 share/calibre/content-server/calibre.png
 share/calibre/content-server/empty.html
@@ -3267,6 +3265,7 @@ share/calibre/hyphenation/
 share/calibre/hyphenation/dictionaries.tar.xz
 share/calibre/hyphenation/locales.json
 share/calibre/hyphenation/sha1sum
+share/calibre/icons.rcc
 share/calibre/images/
 share/calibre/images.qrc
 share/calibre/images/add_book.png
@@ -4143,6 +4142,7 @@ share/calibre/recipes/dunya_bulteni.recipe
 share/calibre/recipes/dunyahalleri.recipe
 share/calibre/recipes/dunyahalleri_haftaninozeti.recipe
 share/calibre/recipes/dvhn.recipe
+share/calibre/recipes/dw_de.recipe
 share/calibre/recipes/dwutygodnik.png
 share/calibre/recipes/dwutygodnik.recipe
 share/calibre/recipes/dzieje_pl.png
@@ -4274,7 +4274,9 @@ share/calibre/recipes/entrepeneur.png
 share/calibre/recipes/entrepeneur.recipe
 share/calibre/recipes/eos_wetenschap.recipe
 share/calibre/recipes/epl_talk.recipe
+share/calibre/recipes/epoch_times.recipe
 share/calibre/recipes/epw.recipe
+share/calibre/recipes/equestria_daily.recipe
 share/calibre/recipes/erdinger_anzeiger.png
 share/calibre/recipes/erdinger_anzeiger.recipe
 share/calibre/recipes/erhvervs_avisen_dk.png
@@ -5028,6 +5030,7 @@ share/calibre/recipes/medscape.recipe
 share/calibre/recipes/melbourne_herald_sun.png
 share/calibre/recipes/melbourne_herald_sun.recipe
 share/calibre/recipes/men24_gr.recipe
+share/calibre/recipes/mens_day_out.recipe
 share/calibre/recipes/mens_health.png
 share/calibre/recipes/mens_health.recipe
 share/calibre/recipes/merco_press.png
