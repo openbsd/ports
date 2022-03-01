@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.206 2022/03/01 13:14:27 espie Exp $
+# $OpenBSD: update-plist,v 1.207 2022/03/01 13:52:03 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -153,6 +153,16 @@ sub may_tag_along
 # or fuss with paths
 sub last_check
 {
+}
+
+# record every cvstag in existence and files that will be written
+# so that files without a cvstag will gain one
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	if (defined $self->{file}) {
+		$filenames->{$self->{file}} = 1;
+	}
 }
 
 sub show_unknown
@@ -352,13 +362,23 @@ sub copy_annotations
 	$self->clone->add_object($plist);
 }
 
-package OpenBSD::PackingElement::UniqueOption;
-
+# XXX we currently need CVSTags so that the first elements of each
+# packing-list (newuser and friends) have something to attach to
+# we can probably zap the complicated logic to add it or not,
+# and we definitely should rename it to something that makes it obvious
+# it should not get emitted, ever
 package OpenBSD::PackingElement::CVSTag;
 sub copy_annotations
 {
 	my ($self, $plist) = @_;
 	$self->copy_with_tags($plist);
+}
+
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	$existing->{$self->{file}} = 1;
+	$self->SUPER::find_existing_cvstags($filenames, $existing);
 }
 
 sub tie_objects
@@ -1007,6 +1027,21 @@ sub zap_debug_files
 	}
 }
 
+sub add_missing_cvstags
+{
+	my ($list, $base) = @_;
+	my $filenames = {};
+	$filenames->{$base} = 1;
+	my $existing = {};
+	$list->find_existing_cvstags($filenames, $existing);
+	for my $name (keys %$filenames) {
+		next if $existing->{$name};
+		my $o = OpenBSD::PackingElement::CVSTag->add($list, 
+		    '$'.'OpenBSD: '.basename($name).',v$');
+		$o->{file} = $name;
+	}
+}
+
 sub copy_from_old
 {
 	my ($self, $e, $o, $unexec) = @_;
@@ -1249,6 +1284,9 @@ sub adjust_final
 		# CWD that we added manually... this sucks a bit!!!
 		$p->nlist->{items}[0]{DONT} = 1;
 		$p->olist->copy_extra($p->nlist);
+		for my $i (@{$p->{base_plists}}) {
+			add_missing_cvstags($p->nlist, $i);
+		}
 		$p->nlist->last_check($p, $self->{state});
     	}
 }
