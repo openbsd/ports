@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/26 17:35:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2022/03/01 21:26:19 sthen Exp $
 
 COMMENT =		built-package format for Python
 
@@ -19,11 +19,6 @@ MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR ?=
-
-# With tar from base, some files are extracted with a timestamp of
-# Jan 1 1970, resulting in tests failing.
-BUILD_DEPENDS =		archivers/gtar
-TAR =			${LOCALBASE}/bin/gtar
 
 .if ${FLAVOR:Mpython3}
 TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
