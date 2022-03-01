@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2022/02/24 08:48:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2022/03/01 11:07:22 sthen Exp $
 
 COMMENT=		Joe's Window Manager
 
-DISTNAME=		jwm-2.4.0
+DISTNAME=		jwm-2.4.1
 
 CATEGORIES=		x11
 
@@ -21,8 +21,7 @@ EXTRACT_SUFX=		.tar.xz
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
-LIB_DEPENDS=		devel/fribidi \
-			devel/glib2 \
+LIB_DEPENDS=		devel/glib2 \
 			x11/gnome/librsvg
 
 NO_TEST=		Yes
