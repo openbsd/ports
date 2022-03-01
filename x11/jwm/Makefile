@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2022/03/01 11:07:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2022/03/01 11:10:14 sthen Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -18,6 +18,7 @@ WANTLIB += png rsvg-2 z
 
 MASTER_SITES=		https://www.joewing.net/projects/jwm/releases/
 EXTRACT_SUFX=		.tar.xz
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
