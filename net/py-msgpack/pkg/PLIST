@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/29 15:38:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/03/01 10:36:53 bket Exp $
 @pkgpath net/py-msgpack
 lib/python${MODPY_VERSION}/site-packages/msgpack/
 lib/python${MODPY_VERSION}/site-packages/msgpack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -11,8 +11,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}ext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/msgpack/${MODPY_PYCACHE}fallback.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/msgpack/_cmsgpack.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/msgpack/_version.py
 lib/python${MODPY_VERSION}/site-packages/msgpack/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/msgpack/ext.py
 lib/python${MODPY_VERSION}/site-packages/msgpack/fallback.py
