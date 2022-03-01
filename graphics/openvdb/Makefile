@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/25 20:56:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2022/03/01 20:14:42 sthen Exp $
 
 # devel/tbb does not support 64-bits atomics on ppc32, forcing them does
 # not help, see tbb's ${WRKSRC}/include/tbb/machine/mac_ppc.h
@@ -8,9 +8,9 @@ COMMENT=	tools for storage and manipulation of volumetric data
 
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	openvdb
-GH_TAGNAME=	v8.1.0
+GH_TAGNAME=	v9.0.0
 
-SHARED_LIBS +=  openvdb                   2.0 # 8.1
+SHARED_LIBS +=  openvdb                   3.0 # 9.0
 
 CATEGORIES=	graphics
 
