@@ -56,21 +56,3 @@ default.xml and reference that copy in traccar.xml configuration file. Also, you
 should ensure that at every upgrade, you track the changes in default.xml as
 the file contains important informations about SQL queries. This is definitely
 more complex than firewalling the unused ports.
-
-File-descriptor limits
-======================
-
-The default file-descriptor limit is likely to be too small for non-trivial
-use of traccar. One file handle is needed for every open file, listening port
-or active network connection.
-
-To raise the open file descriptor limit for traccar, add the following to
-the login.conf(5) file:
-
-	traccar:\
-		:openfiles=4096:\
-		:tc=daemon:
-
-Rebuild the login.conf.db file if necessary:
-
-	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
