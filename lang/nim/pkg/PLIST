@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/05/02 09:33:06 denis Exp $
+@comment $OpenBSD: PLIST,v 1.6 2022/03/01 08:51:00 op Exp $
 @conflict nimrod-<0.11.2
 @pkgpath lang/nimrod
 @sample ${SYSCONFDIR}/nim/
 @bin bin/nim
 @bin bin/nimble
+@bin bin/nimgrep
+@bin bin/nimpretty
+@bin bin/nimsuggest
+@bin bin/testament
 lib/nim/
 lib/nim/arch/
 lib/nim/arch/x86/
@@ -25,6 +29,7 @@ lib/nim/deprecated/pure/ospaths.nim
 lib/nim/deprecated/pure/parseopt2.nim
 lib/nim/deprecated/pure/securehash.nim
 lib/nim/deprecated/pure/sharedstrings.nim
+lib/nim/deps.txt
 lib/nim/experimental/
 lib/nim/experimental/diff.nim
 lib/nim/genode/
@@ -47,19 +52,19 @@ lib/nim/impure/re.nim
 lib/nim/js/
 lib/nim/js/asyncjs.nim
 lib/nim/js/dom.nim
+lib/nim/js/dom_extensions.nim
 lib/nim/js/jsconsole.nim
 lib/nim/js/jscore.nim
 lib/nim/js/jsffi.nim
+lib/nim/js/jsre.nim
 lib/nim/nimbase.h
 lib/nim/nimhcr.nim
 lib/nim/nimhcr.nim.cfg
 lib/nim/nimrtl.nim
 lib/nim/nimrtl.nim.cfg
-lib/nim/nintendoswitch/
-lib/nim/nintendoswitch/switch_memory.nim
 lib/nim/packages/
 lib/nim/packages/docutils/
-lib/nim/packages/docutils/docutils.nimble
+lib/nim/packages/docutils/docutils.nimble.old
 lib/nim/packages/docutils/highlite.nim
 lib/nim/packages/docutils/rst.nim
 lib/nim/packages/docutils/rstast.nim
@@ -70,6 +75,8 @@ lib/nim/posix/inotify.nim
 lib/nim/posix/kqueue.nim
 lib/nim/posix/linux.nim
 lib/nim/posix/posix.nim
+lib/nim/posix/posix_freertos_consts.nim
+lib/nim/posix/posix_haiku.nim
 lib/nim/posix/posix_linux_amd64.nim
 lib/nim/posix/posix_linux_amd64_consts.nim
 lib/nim/posix/posix_macos_amd64.nim
@@ -80,7 +87,6 @@ lib/nim/posix/posix_other.nim
 lib/nim/posix/posix_other_consts.nim
 lib/nim/posix/posix_utils.nim
 lib/nim/posix/termios.nim
-lib/nim/prelude.nim
 lib/nim/pure/
 lib/nim/pure/algorithm.nim
 lib/nim/pure/async.nim
@@ -176,6 +182,7 @@ lib/nim/pure/parseutils.nim
 lib/nim/pure/parsexml.nim
 lib/nim/pure/pathnorm.nim
 lib/nim/pure/pegs.nim
+lib/nim/pure/prelude.nim
 lib/nim/pure/punycode.nim
 lib/nim/pure/random.nim
 lib/nim/pure/rationals.nim
@@ -186,8 +193,10 @@ lib/nim/pure/selectors.nim
 lib/nim/pure/smtp.nim
 lib/nim/pure/smtp.nim.cfg
 lib/nim/pure/ssl_certs.nim
+lib/nim/pure/ssl_config.nim
 lib/nim/pure/stats.nim
 lib/nim/pure/streams.nim
+lib/nim/pure/streamwrapper.nim
 lib/nim/pure/strformat.nim
 lib/nim/pure/strmisc.nim
 lib/nim/pure/strscans.nim
@@ -199,6 +208,8 @@ lib/nim/pure/times.nim
 lib/nim/pure/typetraits.nim
 lib/nim/pure/unicode.nim
 lib/nim/pure/unidecode/
+${MODPY_COMMENT}lib/nim/pure/unidecode/${MODPY_PYCACHE}/
+lib/nim/pure/unidecode/${MODPY_PYCACHE}gen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/nim/pure/unidecode/gen.py
 lib/nim/pure/unidecode/unidecode.dat
 lib/nim/pure/unidecode/unidecode.nim
@@ -211,15 +222,47 @@ lib/nim/std/
 lib/nim/std/compilesettings.nim
 lib/nim/std/decls.nim
 lib/nim/std/editdistance.nim
+lib/nim/std/effecttraits.nim
+lib/nim/std/enumerate.nim
+lib/nim/std/enumutils.nim
+lib/nim/std/exitprocs.nim
+lib/nim/std/genasts.nim
+lib/nim/std/importutils.nim
+lib/nim/std/isolation.nim
+lib/nim/std/jsbigints.nim
+lib/nim/std/jsfetch.nim
+lib/nim/std/jsformdata.nim
+lib/nim/std/jsheaders.nim
+lib/nim/std/jsonutils.nim
 lib/nim/std/logic.nim
 lib/nim/std/monotimes.nim
+lib/nim/std/packedsets.nim
 lib/nim/std/private/
+lib/nim/std/private/asciitables.nim
+lib/nim/std/private/bitops_utils.nim
+lib/nim/std/private/dbutils.nim
+lib/nim/std/private/decode_helpers.nim
+lib/nim/std/private/digitsutils.nim
+lib/nim/std/private/gitutils.nim
+lib/nim/std/private/globs.nim
+lib/nim/std/private/jsutils.nim
+lib/nim/std/private/miscdollars.nim
+lib/nim/std/private/since.nim
+lib/nim/std/private/strimpl.nim
 lib/nim/std/private/underscored_calls.nim
+lib/nim/std/private/win_setenv.nim
+lib/nim/std/setutils.nim
 lib/nim/std/sha1.nim
+lib/nim/std/socketstreams.nim
 lib/nim/std/stackframes.nim
+lib/nim/std/strbasics.nim
 lib/nim/std/sums.nim
+lib/nim/std/sysrand.nim
+lib/nim/std/tasks.nim
+lib/nim/std/tempfiles.nim
 lib/nim/std/time_t.nim
 lib/nim/std/varints.nim
+lib/nim/std/vmutils.nim
 lib/nim/std/with.nim
 lib/nim/std/wordwrap.nim
 lib/nim/std/wrapnils.nim
@@ -228,6 +271,7 @@ lib/nim/system/
 lib/nim/system.nim
 lib/nim/system/alloc.nim
 lib/nim/system/ansi_c.nim
+lib/nim/system/arc.nim
 lib/nim/system/arithm.nim
 lib/nim/system/arithmetics.nim
 lib/nim/system/assertions.nim
@@ -235,15 +279,20 @@ lib/nim/system/assign.nim
 lib/nim/system/atomics.nim
 lib/nim/system/avltree.nim
 lib/nim/system/basic_types.nim
+lib/nim/system/bitmasks.nim
+lib/nim/system/cellseqs_v1.nim
+lib/nim/system/cellseqs_v2.nim
 lib/nim/system/cellsets.nim
 lib/nim/system/cgprocs.nim
-lib/nim/system/channels.nim
+lib/nim/system/channels_builtin.nim
 lib/nim/system/chcks.nim
 lib/nim/system/comparisons.nim
+lib/nim/system/coro_detection.nim
+lib/nim/system/countbits_impl.nim
 lib/nim/system/cyclebreaker.nim
-lib/nim/system/cyclicrefs_v2.nim
 lib/nim/system/deepcopy.nim
 lib/nim/system/dollars.nim
+lib/nim/system/dragonbox.nim
 lib/nim/system/dyncalls.nim
 lib/nim/system/embedded.nim
 lib/nim/system/exceptions.nim
@@ -275,16 +324,20 @@ lib/nim/system/mm/malloc.nim
 lib/nim/system/mm/none.nim
 lib/nim/system/mmdisp.nim
 lib/nim/system/nimscript.nim
+lib/nim/system/orc.nim
 lib/nim/system/osalloc.nim
 lib/nim/system/platforms.nim
 lib/nim/system/profiler.nim
-lib/nim/system/refs_v2.nim
 lib/nim/system/repr.nim
+lib/nim/system/repr_impl.nim
 lib/nim/system/repr_v2.nim
 lib/nim/system/reprjs.nim
+lib/nim/system/schubfach.nim
 lib/nim/system/seqs_v2.nim
+lib/nim/system/seqs_v2_reimpl.nim
 lib/nim/system/setops.nim
 lib/nim/system/sets.nim
+lib/nim/system/stacktraces.nim
 lib/nim/system/strmantle.nim
 lib/nim/system/strs_v2.nim
 lib/nim/system/syslocks.nim
@@ -299,7 +352,6 @@ lib/nim/windows/
 lib/nim/windows/registry.nim
 lib/nim/windows/winlean.nim
 lib/nim/wrappers/
-lib/nim/wrappers/iup.nim
 lib/nim/wrappers/linenoise/
 lib/nim/wrappers/linenoise/LICENSE.txt
 lib/nim/wrappers/linenoise/README.markdown
@@ -321,6 +373,7 @@ share/doc/nim/effects.txt
 share/doc/nim/filelist.txt
 share/doc/nim/grammar.txt
 share/doc/nim/keywords.txt
+share/doc/nim/nimgrep_cmdline.txt
 share/doc/nim/pegdocs.txt
 share/doc/nim/readme.txt
 share/doc/nim/regexprs.txt
@@ -334,3 +387,5 @@ share/examples/nim/nimdoc.cfg
 @sample ${SYSCONFDIR}/nim/nimdoc.cfg
 share/examples/nim/nimdoc.tex.cfg
 @sample ${SYSCONFDIR}/nim/nimdoc.tex.cfg
+share/examples/nim/rename.rules.cfg
+@sample ${SYSCONFDIR}/nim/rename.rules.cfg
