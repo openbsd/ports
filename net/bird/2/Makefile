@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/21 11:13:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/03/01 02:52:42 kmos Exp $
 
 DISTNAME=	bird-2.0.9
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB=	c curses pthread readline ssh
 
