@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/03/01 10:29:53 sthen Exp $
 
 COMMENT =	powerful declarative parser/builder for binary data
 
-# as of 2021/07/01, pykeepass needs this specific version
-MODPY_EGG_VERSION = 2.10.54
-EPOCH =		0
+MODPY_EGG_VERSION = 2.10.68
 
 DISTNAME =	construct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -16,6 +13,8 @@ HOMEPAGE =	https://construct.readthedocs.io/
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+EPOCH =		0
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
