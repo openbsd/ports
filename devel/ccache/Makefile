@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.78 2022/02/23 15:47:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2022/03/01 21:14:19 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		4.5.1
+V =		4.6
 DISTNAME =	ccache-$V
 
 CATEGORIES =	devel
@@ -27,9 +27,10 @@ BUILD_DEPENDS =		textproc/asciidoctor
 LIB_DEPENDS =		archivers/zstd \
 			databases/libhiredis
 
-# Failure in cpp1 test suite appears to be due to an embedded filename
+# Failure in cpp1 test appears to be due to an embedded filename
 # in a .o file present in one file, and not present in the file being
 # compared with.
 TEST_DEPENDS =		shells/bash
+TEST_ENV =		CC="${CC}"
 
 .include <bsd.port.mk>
