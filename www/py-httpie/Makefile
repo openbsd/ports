@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/28 10:47:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2022/03/01 09:56:40 sthen Exp $
 
 COMMENT =	command-line HTTP client
 
@@ -28,7 +28,8 @@ RUN_DEPENDS =		net/py-socks${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
 			www/py-requests-toolbelt${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-test-httpbin${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
+			devel/py-mock${MODPY_FLAVOR} \
+			www/py-responses${MODPY_FLAVOR}
 TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
 PORTHOME =		${WRKSRC}
 
