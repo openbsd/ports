@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/24 21:05:23 abieber Exp $
+# $OpenBSD: Makefile,v 1.28 2022/03/01 10:36:12 bket Exp $
 
 COMMENT =	open network for secure, decentralized communication
 
@@ -66,6 +66,6 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 		www/py-jwt${MODPY_FLAVOR}
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial-3 tests
+	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial tests
 
 .include <bsd.port.mk>
