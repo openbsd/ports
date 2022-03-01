@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/11/16 20:29:32 ajacoutot Exp $
 @pkgpath multimedia/py-chromecast
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyChromecast-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
