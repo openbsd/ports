@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.4 2022/02/28 22:38:30 espie Exp $
+# $OpenBSD: TrackFile.pm,v 1.5 2022/03/01 11:01:17 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -232,15 +232,6 @@ sub write_backsubst
 		}
 	}
 	print {$file->fh} $o->{prepared}, "\n";
-}
-
-package OpenBSD::PackingElement::CVSTag;
-# we will never do backsubst on CVSTags
-sub prepare_backsubst
-{
-	my ($o, $file, $p) = @_;
-	$o->{prepared} = $o->fullstring;
-	$file->add2($o, $p);
 }
 
 package OpenBSD::PackingElement::SpecialFile;
