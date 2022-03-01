@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2022/02/18 15:01:13 pvk Exp $
+@comment $OpenBSD: PLIST,v 1.50 2022/03/01 10:37:59 pvk Exp $
 @newgroup _mattermost:804
 @newuser _mattermost:804:_mattermost:daemon:Mattermost Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/mattermost/*
@@ -93,8 +93,8 @@ share/mattermost/client/565.df4841bd77b1e577ffa3.js.map
 share/mattermost/client/566.7727cdcb920ffde40da0.js
 share/mattermost/client/566.7727cdcb920ffde40da0.js.LICENSE.txt
 share/mattermost/client/566.7727cdcb920ffde40da0.js.map
-share/mattermost/client/572.591431aca5d3a9830de7.js
-share/mattermost/client/572.591431aca5d3a9830de7.js.map
+share/mattermost/client/572.2a50f0e9db3b66d22eac.js
+share/mattermost/client/572.2a50f0e9db3b66d22eac.js.map
 share/mattermost/client/572.d783933026cadbbce0d6.css
 share/mattermost/client/572.d783933026cadbbce0d6.css.map
 share/mattermost/client/594.baf32b4fbbe3e6d85374.js
@@ -3727,11 +3727,11 @@ share/mattermost/client/images/logo_email_dark.png
 share/mattermost/client/images/logo_email_gray.png
 share/mattermost/client/images/warning.png
 share/mattermost/client/images/welcome_illustration_new.png
-share/mattermost/client/main.18e8febabadb939152bb.js
-share/mattermost/client/main.18e8febabadb939152bb.js.LICENSE.txt
-share/mattermost/client/main.18e8febabadb939152bb.js.map
 share/mattermost/client/main.d46ff9e8aeb4cda85d42.css
 share/mattermost/client/main.d46ff9e8aeb4cda85d42.css.map
+share/mattermost/client/main.f8c5cd7179d4a300e98e.js
+share/mattermost/client/main.f8c5cd7179d4a300e98e.js.LICENSE.txt
+share/mattermost/client/main.f8c5cd7179d4a300e98e.js.map
 share/mattermost/client/manifest.json
 share/mattermost/client/pdfjsWorker.607c45ab589db9be5567.js
 share/mattermost/client/pdfjsWorker.607c45ab589db9be5567.js.LICENSE.txt
