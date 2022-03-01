@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: update-patches,v 1.21 2021/02/09 17:34:40 espie Exp $
+# $OpenBSD: update-patches,v 1.22 2022/03/01 11:15:31 espie Exp $
 # Copyright (c) 2017
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -206,12 +206,10 @@ sub create_patch
 			die "diff exited with an error";
 		}
 	}
-	my $comment = "!OpenBSD!\n";
-	$comment =~ tr/!/$/;
 	may_fuzz_patch($stem, \@lines);
 	return {stem => $stem, patch => \@lines, 
 		filename => patch_name($stem),
-		comment => [$comment, "\n"] };
+		comment => [] };
 }
 
 sub parse_existing_patch
@@ -239,6 +237,12 @@ sub parse_existing_patch
 			last;
 		}
 		push(@comment, $_);
+	}
+	if (@comment > 0 && $comment[0] =~ m/^\$OpenBSD/) {
+		shift @comment;
+	}
+	while (@comment > 0 && $comment[0] =~ m/^\s*$/) {
+		shift @comment;
 	}
 	return {stem => $src, filename => $filename, 
 	    comment => \@comment, patch => \@patch};
