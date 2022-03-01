@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_readline_check_version_m4,v 1.1.1.1 2013/04/18 15:08:17 sthen Exp $
---- config/readline_check_version.m4.orig	Thu Apr 18 11:13:56 2013
-+++ config/readline_check_version.m4	Thu Apr 18 11:14:01 2013
-@@ -60,7 +60,7 @@ fi
+Index: config/readline_check_version.m4
+--- config/readline_check_version.m4.orig
++++ config/readline_check_version.m4
+@@ -76,7 +76,7 @@ fi
  eval ac_cv_rl_includedir=${ac_cv_rl_prefix}/include
  eval ac_cv_rl_libdir=${ac_cv_rl_prefix}/lib
  
