@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/20 00:54:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2022/03/01 04:16:19 kevlo Exp $
 
 COMMENT =		Chinese truetype font derived from Klee One
 
-V =			0.910
+V =			0.940
 PKGNAME =		zh-iansui-${V}
 
 GH_ACCOUNT =		ButTaiwan
@@ -25,7 +25,7 @@ FONTDIR =		${PREFIX}/share/fonts/iansui
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/Iansui0.91-Regular.ttf \
+	${INSTALL_DATA} ${WRKSRC}/Iansui${V:S/.//:C/.$//}-Regular.ttf \
 		${FONTDIR}/Iansui-Regular.ttf
 
 .include <bsd.port.mk>
