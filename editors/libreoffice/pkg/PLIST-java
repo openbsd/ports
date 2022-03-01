@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.24 2022/02/05 17:19:05 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.25 2022/03/01 13:55:05 sthen Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
@@ -147,8 +147,12 @@ lib/libreoffice/share/extensions/wiki-publisher/help/bg-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/bg.done
 lib/libreoffice/share/extensions/wiki-publisher/help/ca-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/ca.done
+lib/libreoffice/share/extensions/wiki-publisher/help/cs-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/cs.done
 lib/libreoffice/share/extensions/wiki-publisher/help/de-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/de.done
+lib/libreoffice/share/extensions/wiki-publisher/help/el-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/el.done
 lib/libreoffice/share/extensions/wiki-publisher/help/en-US/
 lib/libreoffice/share/extensions/wiki-publisher/help/en-US-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/en-US.done
@@ -169,10 +173,14 @@ lib/libreoffice/share/extensions/wiki-publisher/help/fi-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/fi.done
 lib/libreoffice/share/extensions/wiki-publisher/help/fr-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/fr.done
+lib/libreoffice/share/extensions/wiki-publisher/help/hr-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/hr.done
 lib/libreoffice/share/extensions/wiki-publisher/help/hu-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/hu.done
 lib/libreoffice/share/extensions/wiki-publisher/help/it-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/it.done
+lib/libreoffice/share/extensions/wiki-publisher/help/ja-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/ja.done
 lib/libreoffice/share/extensions/wiki-publisher/help/kk-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/kk.done
 lib/libreoffice/share/extensions/wiki-publisher/help/lt-xhp.done
@@ -185,12 +193,16 @@ lib/libreoffice/share/extensions/wiki-publisher/help/pl-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/pl.done
 lib/libreoffice/share/extensions/wiki-publisher/help/pt-BR-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/pt-BR.done
+lib/libreoffice/share/extensions/wiki-publisher/help/ro-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/ro.done
 lib/libreoffice/share/extensions/wiki-publisher/help/ru-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/ru.done
 lib/libreoffice/share/extensions/wiki-publisher/help/sl-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/sl.done
 lib/libreoffice/share/extensions/wiki-publisher/help/sv-xhp.done
 lib/libreoffice/share/extensions/wiki-publisher/help/sv.done
+lib/libreoffice/share/extensions/wiki-publisher/help/uk-xhp.done
+lib/libreoffice/share/extensions/wiki-publisher/help/uk.done
 lib/libreoffice/share/extensions/wiki-publisher/license/
 lib/libreoffice/share/extensions/wiki-publisher/license/THIRDPARTYLICENSEREADME.html
 lib/libreoffice/share/extensions/wiki-publisher/mediawiki.jar

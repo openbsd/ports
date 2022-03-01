@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2022/02/05 17:19:05 robert Exp $
+# $OpenBSD: Makefile,v 1.260 2022/03/01 13:55:04 sthen Exp $
 
 USE_WXNEEDED=	Yes
 
@@ -34,8 +34,9 @@ DPB_PROPERTIES=	parallel
 
 EPOCH=		0
 
-REVISION-main=	0
-REVISION-java=	0
+REVISION-main=	1
+REVISION-java=	1
+REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -151,8 +152,8 @@ FLAVORS=	debug no_java
 FLAVOR?=
 
 .if !${FLAVOR:Mno_lang}
-LANGS=			ar bg ca de es fa fi fr hu it \
-			kk lt lv nl pl pt-BR ru sl sv
+LANGS=			ar bg ca cs de el es fa fi fr hr hu it \
+			ja kk lt lv nl pl pt-BR ro ru sl sv uk
 
 CONFIGURE_ARGS+=	--with-lang="en-US ${LANGS}"
 .for l in ${LANGS:L}

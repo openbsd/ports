@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.20 2021/07/11 13:14:07 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.21 2022/03/01 13:55:05 sthen Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/ru/
@@ -60,25 +60,31 @@ lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU.xdl
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ar.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_bg.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ca.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_cs.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_de.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_el.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_en_US.default
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_en_US.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_es.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fa.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fi.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_fr.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_hr.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_hu.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_it.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ja.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_kk.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_lt.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_lv.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_nl.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_pl.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_pt_BR.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ro.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ru.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_ru_RU.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sl.properties
 lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_sv.properties
+lib/libreoffice/share/extensions/dict-ru/dialog/ru_RU_uk.properties
 lib/libreoffice/share/extensions/dict-ru/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-ru/hyph_ru_RU.dic
 lib/libreoffice/share/extensions/dict-ru/pythonpath/

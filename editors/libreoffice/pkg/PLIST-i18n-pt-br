@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pt-br,v 1.21 2022/02/03 20:09:24 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pt-br,v 1.22 2022/03/01 13:55:05 sthen Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/pt_BR/
@@ -61,14 +61,18 @@ lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR.xdl
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ar.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_bg.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ca.properties
+lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_cs.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_de.properties
+lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_el.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_en_US.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_es.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fa.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fi.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_fr.properties
+lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hr.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_hu.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_it.properties
+lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ja.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_kk.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lt.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_lv.properties
@@ -76,9 +80,11 @@ lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_nl.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pl.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pt_BR.default
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_pt_BR.properties
+lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ro.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_ru.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sl.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_sv.properties
+lib/libreoffice/share/extensions/dict-pt-BR/dialog/pt_BR_uk.properties
 lib/libreoffice/share/extensions/dict-pt-BR/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-pt-BR/hyph_pt_BR.dic
 lib/libreoffice/share/extensions/dict-pt-BR/icons/

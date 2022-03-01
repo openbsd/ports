@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.65 2022/02/05 17:19:05 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.66 2022/03/01 13:55:05 sthen Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase
@@ -2764,19 +2764,6 @@ lib/libreoffice/share/extensions/dict-es/RLA-ES.png
 lib/libreoffice/share/extensions/dict-pt-BR/test_compile_rules.py
 lib/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.dat
 lib/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.idx
-@comment lib/libreoffice/share/extensions/dict-uk/
-@comment lib/libreoffice/share/extensions/dict-uk/META-INF/
-@comment lib/libreoffice/share/extensions/dict-uk/META-INF/manifest.xml
-@comment lib/libreoffice/share/extensions/dict-uk/README_hyph_uk_UA.txt
-@comment lib/libreoffice/share/extensions/dict-uk/README_th_uk_UA.txt
-@comment lib/libreoffice/share/extensions/dict-uk/README_uk_UA.txt
-@comment lib/libreoffice/share/extensions/dict-uk/description.xml
-@comment lib/libreoffice/share/extensions/dict-uk/dictionaries.xcu
-@comment lib/libreoffice/share/extensions/dict-uk/hyph_uk_UA.dic
-@comment lib/libreoffice/share/extensions/dict-uk/th_uk_UA.dat
-@comment lib/libreoffice/share/extensions/dict-uk/th_uk_UA.idx
-@comment lib/libreoffice/share/extensions/dict-uk/uk_UA.aff
-@comment lib/libreoffice/share/extensions/dict-uk/uk_UA.dic
 lib/libreoffice/share/filter/
 lib/libreoffice/share/filter/oox-drawingml-adj-names
 lib/libreoffice/share/filter/oox-drawingml-cs-presets

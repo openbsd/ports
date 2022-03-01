@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-hu,v 1.18 2020/02/05 19:58:10 robert Exp $
+@comment $OpenBSD: PLIST-i18n-hu,v 1.19 2022/03/01 13:55:04 sthen Exp $
 !%%no_java%%
 lib/libreoffice/program/resource/
 lib/libreoffice/program/resource/hu/
@@ -62,25 +62,31 @@ lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU.xdl
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ar.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_bg.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ca.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_cs.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_de.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_el.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_en_US.default
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_en_US.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_es.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fa.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fi.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_fr.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_hr.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_hu.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_hu_HU.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_it.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ja.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_kk.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_lt.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_lv.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_nl.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_pl.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_pt_BR.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ro.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_ru.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sl.properties
 lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_sv.properties
+lib/libreoffice/share/extensions/dict-hu/dialog/hu_HU_uk.properties
 lib/libreoffice/share/extensions/dict-hu/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-hu/help/
 lib/libreoffice/share/extensions/dict-hu/help/en/
