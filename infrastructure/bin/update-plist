@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.204 2022/03/01 11:01:17 espie Exp $
+# $OpenBSD: update-plist,v 1.205 2022/03/01 13:12:31 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -153,6 +153,16 @@ sub may_tag_along
 # or fuss with paths
 sub last_check
 {
+}
+
+# record every cvstag in existence and files that will be written
+# so that files without a cvstag will gain one
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	if (defined $self->{file}) {
+		$filenames->{$self->{file}} = 1;
+	}
 }
 
 sub show_unknown
@@ -353,6 +363,26 @@ sub copy_annotations
 }
 
 package OpenBSD::PackingElement::UniqueOption;
+
+package OpenBSD::PackingElement::CVSTag;
+sub copy_annotations
+{
+	my ($self, $plist) = @_;
+	$self->copy_with_tags($plist);
+}
+
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	$existing->{$self->{file}} = 1;
+	$self->SUPER::find_existing_cvstags($filenames, $existing);
+}
+
+sub tie_objects
+{
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
+}
 
 # this is extra stuff that PkgCreate  builds but that we don't want to copy
 package OpenBSD::PackingElement::Name;
@@ -994,6 +1024,21 @@ sub zap_debug_files
 	}
 }
 
+sub add_missing_cvstags
+{
+	my ($list, $base) = @_;
+	my $filenames = {};
+	$filenames->{$base} = 1;
+	my $existing = {};
+	$list->find_existing_cvstags($filenames, $existing);
+	for my $name (keys %$filenames) {
+		next if $existing->{$name};
+		my $o = OpenBSD::PackingElement::CVSTag->add($list, 
+		    '$'.'OpenBSD: '.basename($name).',v$');
+		$o->{file} = $name;
+	}
+}
+
 sub copy_from_old
 {
 	my ($self, $e, $o, $unexec) = @_;
@@ -1236,6 +1281,9 @@ sub adjust_final
 		# CWD that we added manually... this sucks a bit!!!
 		$p->nlist->{items}[0]{DONT} = 1;
 		$p->olist->copy_extra($p->nlist);
+		for my $i (@{$p->{base_plists}}) {
+			add_missing_cvstags($p->nlist, $i);
+		}
 		$p->nlist->last_check($p, $self->{state});
     	}
 }
