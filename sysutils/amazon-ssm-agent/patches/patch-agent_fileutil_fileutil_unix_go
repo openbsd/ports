@@ -1,5 +1,3 @@
-$OpenBSD: patch-agent_fileutil_fileutil_unix_go,v 1.4 2021/11/05 10:06:49 ajacoutot Exp $
-
 Index: agent/fileutil/fileutil_unix.go
 --- agent/fileutil/fileutil_unix.go.orig
 +++ agent/fileutil/fileutil_unix.go
