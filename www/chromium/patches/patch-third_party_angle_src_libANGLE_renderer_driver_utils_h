@@ -1,7 +1,7 @@
 Index: third_party/angle/src/libANGLE/renderer/driver_utils.h
 --- third_party/angle/src/libANGLE/renderer/driver_utils.h.orig
 +++ third_party/angle/src/libANGLE/renderer/driver_utils.h
-@@ -173,7 +173,7 @@ inline bool IsWindows()
+@@ -179,7 +179,7 @@ inline bool IsWindows()
  
  inline bool IsLinux()
  {

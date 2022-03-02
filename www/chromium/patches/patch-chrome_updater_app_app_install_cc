@@ -5,8 +5,8 @@ Index: chrome/updater/app/app_install.cc
        update_service_internal, base::WrapRefCounted(this)));
  }
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // TODO(crbug.com/1276114) - implement.
  void AppInstall::WakeCandidateDone() {
    NOTIMPLEMENTED();

@@ -26,12 +26,11 @@ Index: ui/gl/BUILD.gn
        ]
        if (enable_swiftshader) {
          data_deps += [ "//third_party/swiftshader" ]
-@@ -636,8 +632,6 @@ test("gl_unittests") {
-     "//ui/platform_window",
-     "//ui/platform_window:platform_impls",
+@@ -639,7 +635,6 @@ test("gl_unittests") {
+ 
+   data_deps = [
+     "//testing/buildbot/filters:gl_unittests_filters",
+-    "//third_party/mesa_headers",
    ]
--
--  data_deps = [ "//third_party/mesa_headers" ]
  
    # TODO(https://crbug.com/789065): this must be moved to Ozone.
-   if (ozone_platform_x11) {

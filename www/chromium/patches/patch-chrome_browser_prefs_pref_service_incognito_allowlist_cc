@@ -5,8 +5,8 @@ Index: chrome/browser/prefs/pref_service_incognito_allowlist.cc
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
      // Toggleing custom frames affects all open windows in the profile, hence
      // should be written to the regular profile when changed in incognito mode.
      prefs::kUseCustomChromeFrame,

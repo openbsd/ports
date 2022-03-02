@@ -7,6 +7,6 @@ Index: net/dns/dns_util.cc
  
 +#include <sys/socket.h>
 +
- #if defined(OS_POSIX)
+ #if BUILDFLAG(IS_POSIX)
  #include <netinet/in.h>
  #include <net/if.h>

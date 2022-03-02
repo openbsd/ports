@@ -11,4 +11,4 @@ Index: build/linux/chrome.map
 +
    # Memory allocation symbols.  We want chrome and any libraries to
    # share the same heap, so it is correct to export these symbols.
-   calloc;
+   aligned_alloc;

@@ -5,8 +5,8 @@ Index: remoting/host/chromoting_host.cc
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
    DCHECK(!ipc_server_);
  
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    ipc_server_ = std::make_unique<MojoIpcServer<mojom::ChromotingHostServices>>(
        GetChromotingHostServicesServerName(), this);
    ipc_server_->StartServer();

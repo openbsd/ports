@@ -5,8 +5,8 @@ Index: chrome/updater/lib_util.cc
  
  namespace updater {
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  
  std::string UnescapeURLComponent(base::StringPiece escaped_text) {
    return base::UnescapeURLComponent(

@@ -1,7 +1,7 @@
 Index: content/browser/BUILD.gn
 --- content/browser/BUILD.gn.orig
 +++ content/browser/BUILD.gn
-@@ -2317,6 +2317,13 @@ source_set("browser") {
+@@ -2318,6 +2318,13 @@ source_set("browser") {
      ]
    }
  
@@ -13,5 +13,5 @@ Index: content/browser/BUILD.gn
 +  }
 +
    if (is_chromeos) {
+     deps += [ "//components/value_store:value_store" ]
      sources += [
-       "handwriting/handwriting_recognition_service_impl_cros.cc",

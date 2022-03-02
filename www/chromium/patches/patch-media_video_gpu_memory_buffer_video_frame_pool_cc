@@ -5,8 +5,8 @@ Index: media/video/gpu_memory_buffer_video_frame_pool.cc
    }
  
    bool is_software_backed_video_frame = !video_frame->HasTextures();
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    is_software_backed_video_frame &= !video_frame->HasDmaBufs();
  #endif
  

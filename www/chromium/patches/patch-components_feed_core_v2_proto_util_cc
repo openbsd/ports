@@ -10,7 +10,7 @@ Index: components/feed/core/v2/proto_util.cc
 +  result.set_gmajor(major);
 +  result.set_gminor(minor);
    result.set_revision(revision);
- #if defined(OS_ANDROID)
+ #if BUILDFLAG(IS_ANDROID)
    result.set_api_version(base::android::BuildInfo::GetInstance()->sdk_int());
 @@ -104,8 +104,8 @@ feedwire::Version GetAppVersionMessage(const ChromeInf
    // Chrome's version is in the format: MAJOR,MINOR,BUILD,PATCH.

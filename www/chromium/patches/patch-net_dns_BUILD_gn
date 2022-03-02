@@ -10,3 +10,15 @@ Index: net/dns/BUILD.gn
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
+@@ -415,9 +415,9 @@ source_set("tests") {
+ 
+   if (is_android) {
+     sources += [ "dns_config_service_android_unittest.cc" ]
+-  } else if (is_linux) {
++  } else if (is_linux && !is_bsd) {
+     sources += [ "dns_config_service_linux_unittest.cc" ]
+-  } else if (is_posix) {
++  } else if (is_posix && !is_bsd) {
+     sources += [ "dns_config_service_posix_unittest.cc" ]
+   }
+ 

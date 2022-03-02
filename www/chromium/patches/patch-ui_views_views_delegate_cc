@@ -5,8 +5,8 @@ Index: ui/views/views_delegate.cc
    return false;
  }
  #elif BUILDFLAG(ENABLE_DESKTOP_AURA) && \
--    (defined(OS_LINUX) || defined(OS_CHROMEOS))
-+    (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD))
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  gfx::ImageSkia* ViewsDelegate::GetDefaultWindowIcon() const {
    return nullptr;
  }

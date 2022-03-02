@@ -5,17 +5,17 @@ Index: ui/views/style/platform_style.cc
  const bool PlatformStyle::kAdjustBubbleIfOffscreen =
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
      false;
  #else
      true;
 @@ -82,7 +82,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
- #endif  // OS_MAC
+ #endif  // !BUILDFLAG(IS_MAC)
  
  #if !BUILDFLAG(ENABLE_DESKTOP_AURA) || \
--    (!defined(OS_LINUX) && !defined(OS_CHROMEOS))
-+    (!defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD))
+-    (!BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS))
++    (!BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD))
  // static
  std::unique_ptr<Border> PlatformStyle::CreateThemedLabelButtonBorder(
      LabelButton* button) {

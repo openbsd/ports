@@ -1,7 +1,7 @@
 Index: mojo/public/js/mojo_bindings_resources.grd
 --- mojo/public/js/mojo_bindings_resources.grd.orig
 +++ mojo/public/js/mojo_bindings_resources.grd
-@@ -105,7 +105,7 @@
+@@ -110,7 +110,7 @@
            use_base_dir="false"
            resource_path="mojo/mojo/public/mojom/base/unguessable_token.mojom-webui.js"
            type="BINDATA" />

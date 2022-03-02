@@ -12,7 +12,7 @@ Index: third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
  #include <X11/Xlib.h>
  
  #include "common/debug.h"
-@@ -18,8 +22,44 @@
+@@ -18,8 +22,46 @@
  #    error SystemInfo_x11.cpp compiled without GPU_INFO_USE_X11
  #endif
  
@@ -38,6 +38,9 @@ Index: third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 +        (PFNGLXQUERYRENDERERINTEGERMESAPROC) glXGetProcAddressARB((const GLubyte *)
 +        "glXQueryRendererIntegerMESA");
 +
++    if (!queryInteger)
++        return false;
++
 +    bool vendor_ret =
 +        queryInteger(display, 0, 0, GLX_RENDERER_VENDOR_ID_MESA, vid);
 +    bool device_ret =
@@ -48,10 +51,9 @@ Index: third_party/angle/src/gpu_info_util/SystemInfo_x11.cpp
 +        info.vendorId = vid[0];
 +        info.deviceId = did[0];
 +        devices->push_back(info);
-+     }
++    }
 +
-+
-+     return true;
++    return true;
 +}
 +#endif
  

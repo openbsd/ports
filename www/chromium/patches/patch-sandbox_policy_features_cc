@@ -5,11 +5,11 @@ Index: sandbox/policy/features.cc
  // Enables network service sandbox.
  // (Only causes an effect when feature kNetworkService is enabled.)
  const base::Feature kNetworkServiceSandbox{"NetworkServiceSandbox",
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +                                           base::FEATURE_ENABLED_BY_DEFAULT};
 +#else
                                             base::FEATURE_DISABLED_BY_DEFAULT};
 +#endif
- #endif  // !defined(OS_MAC) && !defined(OS_FUCHSIA)
+ #endif  // !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_FUCHSIA)
  
- #if defined(OS_WIN)
+ #if BUILDFLAG(IS_WIN)

@@ -5,13 +5,13 @@ Index: gpu/ipc/service/x_util.h
  #include "build/build_config.h"
  #include "gpu/ipc/service/gpu_config.h"
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "ui/ozone/buildflags.h"
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #if BUILDFLAG(OZONE_PLATFORM_X11)
  
  namespace gpu {

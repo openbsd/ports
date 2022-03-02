@@ -1,7 +1,7 @@
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -33,6 +33,25 @@ source_set("hid") {
+@@ -35,6 +35,25 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  

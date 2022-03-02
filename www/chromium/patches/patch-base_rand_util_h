@@ -5,8 +5,8 @@ Index: base/rand_util.h
    std::shuffle(first, last, RandomBitGenerator());
  }
  
--#if defined(OS_POSIX)
-+#if defined(OS_POSIX) && !defined(OS_OPENBSD)
+-#if BUILDFLAG(IS_POSIX)
++#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_OPENBSD)
  BASE_EXPORT int GetUrandomFD();
  #endif
  

@@ -5,8 +5,8 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #include "net/base/network_change_notifier.h"
  #endif
  
--#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
+-#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
@@ -14,8 +14,8 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {
--#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+#if defined(USE_AURA) && (defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || defined(OS_BSD))
+-#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
++#if defined(USE_AURA) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
    ui::InitializeInputMethodForTesting();
  #endif
- #if defined(OS_ANDROID)
+ #if BUILDFLAG(IS_ANDROID)

@@ -5,8 +5,8 @@ Index: pdf/pdfium/pdfium_engine.cc
  #include "gin/public/cppgc.h"
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
@@ -14,8 +14,8 @@ Index: pdf/pdfium/pdfium_engine.cc
  
    FPDF_InitLibraryWithConfig(&config);
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    g_font_mapping_mode = font_mapping_mode;
    InitializeLinuxFontMapper();
  #endif

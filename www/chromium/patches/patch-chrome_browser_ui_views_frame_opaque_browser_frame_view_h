@@ -5,8 +5,8 @@ Index: chrome/browser/ui/views/frame/opaque_browser_frame_view.h
    // Background painter for the window frame.
    std::unique_ptr<views::FrameBackground> frame_background_;
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::unique_ptr<views::MenuRunner> menu_runner_;
  #endif
  

@@ -48,4 +48,4 @@ Index: base/allocator/partition_allocator/starscan/stack/stack.cc
 +  return nullptr;
  }
  
- #elif defined(OS_POSIX) || defined(OS_FUCHSIA)
+ #elif BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)

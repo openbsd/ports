@@ -5,7 +5,7 @@ Index: sandbox/policy/sandbox.h
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif
  
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +#include "sandbox/policy/openbsd/sandbox_openbsd.h"
 +#endif  
 +
@@ -16,8 +16,8 @@ Index: sandbox/policy/sandbox.h
  
  class SANDBOX_POLICY_EXPORT Sandbox {
   public:
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    static bool Initialize(sandbox::mojom::Sandbox sandbox_type,
                           SandboxLinux::PreSandboxHook hook,
                           const SandboxLinux::Options& options);

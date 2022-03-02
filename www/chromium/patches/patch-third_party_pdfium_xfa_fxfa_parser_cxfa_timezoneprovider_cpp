@@ -16,7 +16,7 @@ Index: third_party/pdfium/xfa/fxfa/parser/cxfa_timezoneprovider.cpp
 +static long g_lTimeZoneOffset = 0;
 +#endif
  
- #if defined(OS_WIN)
+ #if BUILDFLAG(IS_WIN)
  #define TIMEZONE _timezone
 @@ -24,9 +28,21 @@ static bool g_bProviderTimeZoneSet = false;
  CXFA_TimeZoneProvider::CXFA_TimeZoneProvider() {

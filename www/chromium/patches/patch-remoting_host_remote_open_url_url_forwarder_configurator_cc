@@ -5,8 +5,8 @@ Index: remoting/host/remote_open_url/url_forwarder_configurator.cc
  
  UrlForwarderConfigurator::~UrlForwarderConfigurator() = default;
  
--#if !defined(OS_LINUX) && !defined(OS_WIN)
-+#if !defined(OS_LINUX) && !defined(OS_WIN) && !defined(OS_BSD)
+-#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_WIN)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_WIN) && !BUILDFLAG(IS_BSD)
  
  // static
  std::unique_ptr<UrlForwarderConfigurator> UrlForwarderConfigurator::Create() {

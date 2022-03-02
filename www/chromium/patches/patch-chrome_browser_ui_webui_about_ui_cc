@@ -5,8 +5,8 @@ Index: chrome/browser/ui/webui/about_ui.cc
    return html;
  }
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OPENBSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data,
@@ -14,8 +14,8 @@ Index: chrome/browser/ui/webui/about_ui.cc
        response =
            ui::ResourceBundle::GetSharedInstance().LoadDataResourceString(idr);
      }
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_OPENBSD)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    } else if (source_name_ == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
  #endif

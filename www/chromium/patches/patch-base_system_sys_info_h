@@ -13,9 +13,9 @@ Index: base/system/sys_info.h
 @@ -246,7 +248,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
- #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
--    defined(OS_AIX)
-+    defined(OS_AIX) || defined(OS_BSD)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
+-    BUILDFLAG(IS_AIX)
++    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
    static int64_t AmountOfAvailablePhysicalMemory(
        const SystemMemoryInfoKB& meminfo);
  #endif

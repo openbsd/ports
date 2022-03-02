@@ -1,7 +1,7 @@
 Index: content/shell/BUILD.gn
 --- content/shell/BUILD.gn.orig
 +++ content/shell/BUILD.gn
-@@ -869,7 +869,7 @@ group("content_shell_crash_test") {
+@@ -872,7 +872,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

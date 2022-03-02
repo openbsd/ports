@@ -1,22 +1,24 @@
-# $OpenBSD: Makefile,v 1.615 2022/02/23 16:09:11 robert Exp $
+# $OpenBSD: Makefile,v 1.616 2022/03/02 06:14:44 robert Exp $
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
-.if ${MACHINE_ARCH} == "i386"
-DPB_PROPERTIES+=	lonesome
-.endif
 
 COMMENT=		Chromium browser
 
-V=			98.0.4758.102
-REVISION=		1
+V=			99.0.4844.51
 
 DISTNAME=		chromium-${V}
 
-DISTFILES+=		chromium-${V}${EXTRACT_SUFX}
+DISTFILES+=		${EXTRACT_ONLY} \
+			${REGRESS_DISTFILES}
+
+REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX} \
+			test_fonts-cd96fc55dc243f6c6f4cb63ad117cad6cd48dceb.tar.gz:0
+
+EXTRACT_ONLY=		chromium-${V}${EXTRACT_SUFX}
 
 CATEGORIES=		www
 
@@ -110,7 +112,19 @@ BUILDTYPE=	Release
 SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
 
 ALL_TARGET=		chrome chromedriver
-TEST_TARGET=		base_unittests
+TEST_TARGET=		base_unittests \
+			blink_unittests \
+			chromedriver_unittests \
+			components_unittests \
+			content_unittests \
+			crypto_unittests \
+			headless_unittests \
+			media_unittests \
+			mojo_unittests \
+			net_unittests \
+			printing_unittests \
+			url_unittests
+
 DIST_TARGET_DIR=	chrome
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
@@ -206,7 +220,8 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py \
+		${WRKSRC}/base/third_party/libevent/BUILD.gn
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -281,5 +296,20 @@ do-install:
     unveil.utility_network unveil.utility_video
 	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/chromium
 .endfor
+
+pre-test:
+.for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}
+	@${ECHO_MSG} "Extracting ${_d}"
+	@case ${_d} in \
+	*testdata*.tar.xz) \
+		xzdec <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIR} -xf -;; \
+	*font*.tar.gz) \
+		${GZIP_CMD} -d <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIST}/third_party/test_fonts -xf -;; \
+	esac;
+.endfor
+
+do-test:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${TEST_TARGET}
 
 .include <bsd.port.mk>

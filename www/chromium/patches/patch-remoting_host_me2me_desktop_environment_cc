@@ -5,8 +5,8 @@ Index: remoting/host/me2me_desktop_environment.cc
  
    // Otherwise, if the session is shared with the local user start monitoring
    // the local input and create the in-session UI.
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    bool want_user_interface = false;
- #elif defined(OS_APPLE)
+ #elif BUILDFLAG(IS_APPLE)
    // Don't try to display any UI on top of the system's login screen as this

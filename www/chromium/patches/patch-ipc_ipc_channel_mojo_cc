@@ -5,8 +5,8 @@ Index: ipc/ipc_channel_mojo.cc
  };
  
  base::ProcessId GetSelfPID() {
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    if (int global_pid = Channel::GetGlobalPid())
      return global_pid;
- #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

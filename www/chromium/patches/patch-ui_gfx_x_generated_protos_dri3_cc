@@ -1,7 +1,7 @@
 Index: ui/gfx/x/generated_protos/dri3.cc
 --- ui/gfx/x/generated_protos/dri3.cc.orig
 +++ ui/gfx/x/generated_protos/dri3.cc
-@@ -43,6 +43,8 @@
+@@ -44,6 +44,8 @@
  #include <xcb/xcb.h>
  #include <xcb/xcbext.h>
  

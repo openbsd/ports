@@ -49,7 +49,7 @@ Index: services/resource_coordinator/public/cpp/memory_instrumentation/os_metric
    // files. Refactor to get everything from /status using ProcessMetric.
    auto statm_file = GetProcPidDir(pid).Append("statm");
 @@ -336,10 +345,12 @@ bool OSMetrics::FillOSMemoryDump(base::ProcessId pid,
- #endif  //  defined(OS_ANDROID)
+ #endif  //  BUILDFLAG(IS_ANDROID)
  
    return true;
 +#endif

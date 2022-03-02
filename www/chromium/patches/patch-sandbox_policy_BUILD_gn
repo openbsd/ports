@@ -10,7 +10,7 @@ Index: sandbox/policy/BUILD.gn
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -88,6 +88,25 @@ component("policy") {
+@@ -88,6 +88,27 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
@@ -23,6 +23,7 @@ Index: sandbox/policy/BUILD.gn
 +    ]
 +    deps += [
 +      "//sandbox:sandbox_buildflags",
++      "//ui/gfx/x",
 +    ]
 +    libs = [ "util" ]
 +  }
@@ -33,6 +34,7 @@ Index: sandbox/policy/BUILD.gn
 +    ]
 +    deps += [
 +      "//sandbox:sandbox_buildflags",
++      "//ui/gfx/x",
      ]
    }
    if (is_chromeos_ash) {

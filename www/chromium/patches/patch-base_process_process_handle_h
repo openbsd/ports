@@ -5,8 +5,8 @@ Index: base/process/process_handle.h
  // processes may be reused.
  BASE_EXPORT UniqueProcId GetUniqueIdForProcess();
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // When a process is started in a different PID namespace from the browser
  // process, this function must be called with the process's PID in the browser's
  // PID namespace in order to initialize its unique ID. Not thread safe.

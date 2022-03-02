@@ -5,8 +5,8 @@ Index: remoting/host/ipc_constants.cc
  
  namespace {
  
--#if !defined(NDEBUG) && defined(OS_LINUX)
-+#if !defined(NDEBUG) && (defined(OS_LINUX) || defined(OS_BSD))
+-#if !defined(NDEBUG) && BUILDFLAG(IS_LINUX)
++#if !defined(NDEBUG) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
  // Use a different IPC name for Linux debug builds so that we can run the host
  // directly from out/Debug without interfering with the production host that
  // might also be running.

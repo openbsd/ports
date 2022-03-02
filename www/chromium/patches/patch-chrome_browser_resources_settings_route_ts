@@ -1,7 +1,7 @@
 Index: chrome/browser/resources/settings/route.ts
 --- chrome/browser/resources/settings/route.ts.orig
 +++ chrome/browser/resources/settings/route.ts
-@@ -177,7 +177,7 @@ function createBrowserSettingsRoutes(): SettingsRoutes
+@@ -179,7 +179,7 @@ function createBrowserSettingsRoutes(): SettingsRoutes
  
      r.ACCESSIBILITY = r.ADVANCED.createSection('/accessibility', 'a11y');
  
