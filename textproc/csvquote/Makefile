@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/29 18:10:29 thfr Exp $
+# $OpenBSD: Makefile,v 1.2 2022/03/02 11:12:22 sthen Exp $
 
 COMMENT =	filter for csv data containing delimiters and newlines
 
-DISTNAME =	csvquote-0.0.20180328
-
 GH_ACCOUNT =	dbro
 GH_PROJECT =	csvquote
-GH_COMMIT =	baf37fa4cccc656282551db4ea7ce4ec6b9c318e
+GH_TAGNAME =	v0.1.5
 
 CATEGORIES =	textproc
 
@@ -15,9 +13,10 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB = c
 
-NO_TEST =	Yes
-
+MAKE_FLAGS =	CFLAGS="${CFLAGS}" CC="${CC}"
 FAKE_FLAGS =	BINDIR=${DESTDIR}${PREFIX}/bin
+
+# tests are silent if successful
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/csvquote
