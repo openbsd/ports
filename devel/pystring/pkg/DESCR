@@ -1,0 +1,2 @@
+Pystring is a collection of C++ functions which match the interface and
+behavior of python's string class methods using std::string.

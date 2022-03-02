@@ -1,0 +1,5 @@
+include/pystring/
+include/pystring/pystring.h
+@static-lib lib/libpystring.a
+lib/libpystring.la
+@lib lib/libpystring.so.${LIBpystring_VERSION}
