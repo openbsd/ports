@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2022/03/02 11:46:58 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/03/02 21:42:10 kn Exp $
 
 COMMENT =	abseil common libraries (c++)
 REVISION =	0
@@ -108,6 +108,9 @@ NO_TEST =		Yes
 CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST:BOOL=${LOCALBASE}/include/gtest
 # turn on tests builds
 CONFIGURE_ARGS +=	-DBUILD_TESTING:BOOL=ON
+
+BUILD_DEPENDS +=	devel/gtest>=1.11.0pl20220208
+TEST_DEPENDS +=		devel/gtest>=1.11.0pl20220208
 
 # use TEST_TMPDIR instead of /tmp for tests temp data (like in bazel build)
 TEST_ENV +=		TEST_TMPDIR=${WRKBUILD}/test_tmp \
