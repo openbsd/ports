@@ -1,5 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2021/11/01 13:00:14 ajacoutot Exp $
-
+# $OpenBSD: modules.inc,v 1.3 2022/03/02 11:12:54 sthen Exp $
 MODCARGO_CRATES +=	adblock	0.3.13	# MPL-2.0
 MODCARGO_CRATES +=	addr	0.14.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
@@ -10,17 +9,13 @@ MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	byteorder	1.4.3	# Unlicense OR MIT
 MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	crc32fast	1.2.1	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	ctor	0.1.20	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	either	1.6.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	flate2	1.0.20	# MIT/Apache-2.0
 MODCARGO_CRATES +=	form_urlencoded	1.0.1	# MIT/Apache-2.0
-MODCARGO_CRATES +=	ghost	0.1.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	idna	0.2.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	indoc	0.3.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	indoc-impl	0.3.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	instant	0.1.9	# BSD-3-Clause
-MODCARGO_CRATES +=	inventory	0.1.10	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	inventory-impl	0.1.10	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	itertools	0.9.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libc	0.2.93	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	lock_api	0.4.3	# Apache-2.0/MIT
@@ -28,7 +23,7 @@ MODCARGO_CRATES +=	matches	0.1.8	# MIT
 MODCARGO_CRATES +=	memchr	2.4.0	# Unlicense/MIT
 MODCARGO_CRATES +=	miniz_oxide	0.4.4	# MIT OR Zlib OR Apache-2.0
 MODCARGO_CRATES +=	num-traits	0.2.14	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	once_cell	1.7.2	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	once_cell	1.8.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	parking_lot	0.11.1	# Apache-2.0/MIT
 MODCARGO_CRATES +=	parking_lot_core	0.8.3	# Apache-2.0/MIT
 MODCARGO_CRATES +=	paste	0.1.18	# MIT OR Apache-2.0
@@ -38,9 +33,10 @@ MODCARGO_CRATES +=	proc-macro-hack	0.5.19	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	proc-macro2	1.0.26	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	psl	2.0.18	# MIT/Apache-2.0
 MODCARGO_CRATES +=	psl-types	2.0.7	# MIT/Apache-2.0
-MODCARGO_CRATES +=	pyo3	0.13.2	# Apache-2.0
-MODCARGO_CRATES +=	pyo3-macros	0.13.2	# Apache-2.0
-MODCARGO_CRATES +=	pyo3-macros-backend	0.13.2	# Apache-2.0
+MODCARGO_CRATES +=	pyo3	0.15.1	# Apache-2.0
+MODCARGO_CRATES +=	pyo3-build-config	0.15.1	# Apache-2.0
+MODCARGO_CRATES +=	pyo3-macros	0.15.1	# Apache-2.0
+MODCARGO_CRATES +=	pyo3-macros-backend	0.15.1	# Apache-2.0
 MODCARGO_CRATES +=	quote	1.0.9	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	redox_syscall	0.2.5	# MIT
 MODCARGO_CRATES +=	regex	1.5.4	# MIT OR Apache-2.0
