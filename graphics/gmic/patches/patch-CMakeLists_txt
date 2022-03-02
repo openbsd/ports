@@ -1,16 +1,40 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/12/10 10:16:48 espie Exp $
-
 - remove flags that make no sense for us
+- fix CMake boo-boo (pr#364 on the gmic repo)
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -100,7 +100,7 @@ list(APPEND GMIC_CXX_COMPILE_FLAGS -Dgmic_build -Dcimg
+@@ -96,13 +96,13 @@ endif()
+ # compile flags
+ set(CMAKE_POSITION_INDEPENDENT_CODE True)
+ 
+-list(APPEND GMIC_CXX_COMPILE_FLAGS -Dgmic_core -Dcimg_use_vt100 -Dgmic_is_parallel -Dcimg_use_abort)
++list(APPEND GMIC_CXX_COMPILE_FLAGS -Dcimg_use_vt100 -Dgmic_is_parallel -Dcimg_use_abort)
  if(APPLE)
      list(APPEND GMIC_CXX_COMPILE_FLAGS -mmacosx-version-min=10.8 -stdlib=libc++ -Wno-error=c++11-narrowing -Wc++11-extensions -fpermissive)
+ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+     list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=c++11-narrowing -fpermissive)
  else()
 -    list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=narrowing -fno-ipa-sra -fpermissive)
 +    list(APPEND GMIC_CXX_COMPILE_FLAGS -Wno-error=narrowing -fpermissive)
  endif()
  
  if(NOT "${PRERELEASE_TAG}" STREQUAL "")
+@@ -149,7 +149,7 @@ set(CLI_Sources src/gmic.cpp)
+ 
+ if(BUILD_LIB)
+   add_library(libgmic SHARED ${CLI_Sources})
+-  target_compile_options(libgmic PRIVATE ${GMIC_CXX_COMPILE_FLAGS})
++  target_compile_options(libgmic PRIVATE ${GMIC_CXX_COMPILE_FLAGS} -Dgmic_core)
+   set_target_properties(libgmic PROPERTIES SOVERSION "1" OUTPUT_NAME "gmic")
+   target_link_libraries(libgmic
+     CImg::CImg
+@@ -173,7 +173,7 @@ endif()
+ 
+ if(BUILD_LIB_STATIC)
+   add_library(libgmicstatic STATIC ${CLI_Sources})
+-  target_compile_options(libgmicstatic PRIVATE ${GMIC_CXX_COMPILE_FLAGS})
++  target_compile_options(libgmicstatic PRIVATE ${GMIC_CXX_COMPILE_FLAGS} -Dgmic_core)
+   set_target_properties(libgmicstatic PROPERTIES OUTPUT_NAME "gmic")
+   target_link_libraries(libgmicstatic
+     CImg::CImg

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/16 09:40:38 espie Exp $
 @bin bin/gmic
+include/CImg.h
 include/gmic.h
 lib/cmake/gmic/
 lib/cmake/gmic/GmicConfig.cmake

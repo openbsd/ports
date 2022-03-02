@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/16 09:42:24 espie Exp $
 lib/gimp/2.0/plug-ins/gmic_gimp_qt/
 @bin lib/gimp/2.0/plug-ins/gmic_gimp_qt/gmic_gimp_qt

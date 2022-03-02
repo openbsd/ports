@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/16 09:42:24 espie Exp $
-
 QT_HOST =	gimp
 
 WANTLIB += gimp-2.0 gimpbase-2.0 gimpcolor-2.0 gimpconfig-2.0 gimpmath-2.0

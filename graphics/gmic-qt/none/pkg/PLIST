@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/09/06 14:54:05 espie Exp $
 @bin bin/gmic_qt
