@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/16 23:42:57 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.8 2022/03/02 07:31:01 sdk Exp $
 @newgroup _honk:833
 @newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
@@ -7,6 +7,7 @@
 @bin bin/honk
 @bin bin/saytheday
 @bin bin/sprayandpray
+@bin bin/wonkawonk
 @bin bin/youvegothonks
 @man man/man1/hfcs.1
 @man man/man1/honk.1
@@ -28,6 +29,7 @@
 @owner
 @group
 share/doc/honk/
+share/doc/honk/LICENSE
 share/doc/honk/README
 share/doc/honk/activitypub.7.html
 @sample ${VARBASE}/honk/docs/activitypub.7.html
@@ -98,5 +100,7 @@ share/examples/honk/views/pleroma.css
 @sample ${VARBASE}/honk/views/pleroma.css
 share/examples/honk/views/style.css
 @sample ${VARBASE}/honk/views/style.css
+share/examples/honk/views/wonk.js
+@sample ${VARBASE}/honk/views/wonk.js
 share/examples/honk/views/xzone.html
 @sample ${VARBASE}/honk/views/xzone.html

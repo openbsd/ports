@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/06 10:11:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2022/03/02 07:31:01 sdk Exp $
 
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-0.9.6
+DISTNAME =		honk-0.9.7
 CATEGORIES =		www
-REVISION =		0
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
 
@@ -31,9 +30,13 @@ DOCDIR ?=		${PREFIX}/share/doc/honk
 EXAMPLESDIR = 		${PREFIX}/share/examples/honk
 
 post-build:
-.for toy in autobonker gettoken saytheday sprayandpray youvegothonks
+.for toy in autobonker saytheday sprayandpray youvegothonks
 	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/${toy} \
 		${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/${toy}.go
+.endfor
+.for toy2 in gettoken wonkawonk
+	${MODGO_CMD} build ${MODGO_FLAGS} -o ${MODGO_WORKSPACE}/bin/${toy2} \
+		${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/{${toy2}.go,fetch.go}
 .endfor
 
 post-install:
@@ -45,7 +48,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}/toys
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/toys/README \
 		${DOCDIR}/toys
-	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/{README,docs/*} \
+	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/{LICENSE,README,docs/*} \
 		${DOCDIR}/
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/views
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/views/* \
