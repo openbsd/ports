@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.41 2022/01/15 10:19:35 ajacoutot Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate
@@ -68,6 +67,7 @@ libexec/libvirt-guests.sh
 @man man/man7/virkeyname-linux.7
 @man man/man7/virkeyname-osx.7
 @man man/man7/virkeyname-win32.7
+@man man/man8/libvirt-guests.8
 @man man/man8/libvirtd.8
 @man man/man8/virt-ssh-helper.8
 @man man/man8/virtlockd.8
@@ -292,7 +292,6 @@ share/doc/libvirt/html/images/migration-managed-p2p.png
 share/doc/libvirt/html/images/migration-native.png
 share/doc/libvirt/html/images/migration-tunnel.png
 share/doc/libvirt/html/images/migration-unmanaged-direct.png
-share/doc/libvirt/html/images/node.gif
 share/doc/libvirt/html/index.html
 share/doc/libvirt/html/internals/
 share/doc/libvirt/html/internals.html
@@ -348,9 +347,11 @@ share/doc/libvirt/html/logos/logo-square-powered.svg
 share/doc/libvirt/html/logos/logo-square.svg
 share/doc/libvirt/html/logos/logo-sticker-hexagon.svg
 share/doc/libvirt/html/logos/logo-sticker-square.svg
+share/doc/libvirt/html/macos.html
 share/doc/libvirt/html/manifest.json
 share/doc/libvirt/html/manpages/
 share/doc/libvirt/html/manpages/index.html
+share/doc/libvirt/html/manpages/libvirt-guests.html
 share/doc/libvirt/html/manpages/libvirtd.html
 share/doc/libvirt/html/manpages/virkeycode-atset1.html
 share/doc/libvirt/html/manpages/virkeycode-atset2.html
@@ -422,13 +423,23 @@ share/examples/libvirt/libvirt.conf
 @sample ${SYSCONFDIR}/libvirt/libvirt.conf
 share/examples/libvirt/libvirtd.conf
 @sample ${SYSCONFDIR}/libvirt/libvirtd.conf
+share/examples/libvirt/qemu/
+@sample ${SYSCONFDIR}/libvirt/qemu/
 share/examples/libvirt/qemu-lockd.conf
 @sample ${SYSCONFDIR}/libvirt/qemu-lockd.conf
 share/examples/libvirt/qemu.conf
 @sample ${SYSCONFDIR}/libvirt/qemu.conf
+share/examples/libvirt/qemu/autostart/
+@sample ${SYSCONFDIR}/libvirt/qemu/autostart/
 share/examples/libvirt/sasl2/
 share/examples/libvirt/sasl2/libvirt.conf
 @sample ${SYSCONFDIR}/sasl2/libvirt.conf
+share/examples/libvirt/secrets/
+@sample ${SYSCONFDIR}/libvirt/secrets/
+share/examples/libvirt/storage/
+@sample ${SYSCONFDIR}/libvirt/storage/
+share/examples/libvirt/storage/autostart/
+@sample ${SYSCONFDIR}/libvirt/storage/autostart/
 share/examples/libvirt/virtlockd.conf
 @sample ${SYSCONFDIR}/libvirt/virtlockd.conf
 share/examples/libvirt/virtlogd.conf
