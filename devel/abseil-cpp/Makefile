@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/18 19:38:17 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2022/03/02 11:46:58 kn Exp $
 
 COMMENT =	abseil common libraries (c++)
+REVISION =	0
 CATEGORIES =	devel
 
 GH_ACCOUNT =	abseil
@@ -99,6 +100,24 @@ CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
 # to ensure that our project builds correctly.
 CONFIGURE_ARGS +=	-DABSL_PROPAGATE_CXX_STD:BOOL=ON
 
+.if ${MACHINE_ARCH} == sparc64
+# XXX hash/hash_test.cc:614:22: error: use of deleted function 'absl::lts_20211102::hash_internal::PoisonedHash::PoisonedHash()'
 NO_TEST =		Yes
+.else
+# use googletest from ports
+CONFIGURE_ARGS +=	-DABSL_USE_EXTERNAL_GOOGLETEST:BOOL=${LOCALBASE}/include/gtest
+# turn on tests builds
+CONFIGURE_ARGS +=	-DBUILD_TESTING:BOOL=ON
+
+# use TEST_TMPDIR instead of /tmp for tests temp data (like in bazel build)
+TEST_ENV +=		TEST_TMPDIR=${WRKBUILD}/test_tmp \
+			LD_LIBRARY_PATH=/usr/lib:${WRKBUILD}/test_lib
+
+pre-test:
+	@mkdir -p ${WRKBUILD}/test_tmp
+	@mkdir -p ${WRKBUILD}/test_lib
+	cd ${WRKBUILD}/test_lib && \
+		 find ${WRKBUILD} -name "*\.so\.*\.*" | xargs -I {} ln -s {} .
+.endif
 
 .include <bsd.port.mk>
