@@ -1,8 +1,7 @@
-$OpenBSD: patch-modules_audio_output_sndio_c,v 1.1 2021/06/01 19:32:43 ratchov Exp $
+$OpenBSD: patch-modules_audio_output_sndio_c,v 1.2 2022/03/02 12:03:17 sthen Exp $
 
-Set volume/mute function pointers when handle is freed, to ensure
-sio_setvol() is not called on a freed handle. Fixes crashes when
-volume is adjusted while playback is stopped.
+sndio: fix crash when volume is adjusted while stopped
+e94b04c8f867382ce6835254d29ee54fe855c686
 
 Index: modules/audio_output/sndio.c
 --- modules/audio_output/sndio.c.orig

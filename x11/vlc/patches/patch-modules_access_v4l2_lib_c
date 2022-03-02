@@ -1,19 +1,34 @@
-$OpenBSD: patch-modules_access_v4l2_lib_c,v 1.2 2019/12/01 22:44:13 ajacoutot Exp $
+$OpenBSD: patch-modules_access_v4l2_lib_c,v 1.3 2022/03/02 12:03:17 sthen Exp $
 
-Linux driver doesn't exist on OpenBSD and adjust dlopen() use
-for OpenBSD.
+v4l2: dlopen proper library name on OpenBSD
+ed4a5feb243a201b7890672f3d376b4586a16593
 
 Index: modules/access/v4l2/lib.c
 --- modules/access/v4l2/lib.c.orig
 +++ modules/access/v4l2/lib.c
-@@ -54,9 +54,7 @@ static void v4l2_lib_load (void)
- {
-     void *h;
+@@ -31,6 +31,16 @@
  
--    h = dlopen ("libmediaclient.so", RTLD_LAZY | RTLD_LOCAL | RTLD_NOLOAD);
--    if (h == NULL)
+ #include "v4l2.h"
+ 
++#ifdef __OpenBSD__
++#define V4L2_LIB "libv4l2.so"
++#else
++#define V4L2_LIB "libv4l2.so.0"
++#endif
++
++#ifndef RTLD_NOLOAD
++#define RTLD_NOLOAD 0
++#endif
++
+ static int fd_open (int fd, int flags)
+ {
+     (void) flags;
+@@ -56,7 +66,7 @@ static void v4l2_lib_load (void)
+ 
+     h = dlopen ("libmediaclient.so", RTLD_LAZY | RTLD_LOCAL | RTLD_NOLOAD);
+     if (h == NULL)
 -        h = dlopen ("libv4l2.so.0", RTLD_LAZY | RTLD_LOCAL);
-+    h = dlopen ("libv4l2.so", RTLD_LAZY | RTLD_LOCAL);
++        h = dlopen (V4L2_LIB, RTLD_LAZY | RTLD_LOCAL);
      if (h == NULL)
          return;
  
