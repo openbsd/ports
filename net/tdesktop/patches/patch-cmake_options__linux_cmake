@@ -1,22 +1,12 @@
-$OpenBSD: patch-cmake_options__linux_cmake,v 1.4 2022/02/05 16:38:32 kn Exp $
+$OpenBSD: patch-cmake_options__linux_cmake,v 1.5 2022/03/02 00:40:09 kn Exp $
 
-1) remove unknown -fstack-clash-protection (produces warnings spam)
-
-2) We prefer to use the system malloc instead of jemalloc. The problem
+We prefer to use the system malloc instead of jemalloc. The problem
 that is solved with it has never been reproduced with OpenBSD malloc.
 more: https://github.com/telegramdesktop/tdesktop/issues/16084
 
 Index: cmake/options_linux.cmake
 --- cmake/options_linux.cmake.orig
 +++ cmake/options_linux.cmake
-@@ -7,7 +7,6 @@
- target_compile_options(common_options
- INTERFACE
-     -fstack-protector-all
--    -fstack-clash-protection
-     -fPIC
-     $<IF:$<CONFIG:Debug>,,-fno-strict-aliasing>
-     -pipe
 @@ -61,13 +60,6 @@ if (DESKTOP_APP_SPECIAL_TARGET)
      target_compile_options(common_options INTERFACE $<IF:$<CONFIG:Debug>,,-g -flto>)
      target_link_options(common_options INTERFACE $<IF:$<CONFIG:Debug>,,-g -flto -fuse-linker-plugin>)

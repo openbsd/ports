@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/28 22:48:48 kn Exp $
+# $OpenBSD: Makefile,v 1.15 2022/03/02 00:40:09 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -32,6 +32,10 @@ WANTLIB += xxhash z
 
 # C++17 set below
 COMPILER =		base-clang ports-gcc
+
+# cc/c++: warning: argument unused during compilation: '-fstack-clash-protection'
+CFLAGS +=		-Wno-unused-command-line-argument
+CXXFLAGS +=		-Wno-unused-command-line-argument
 
 MODULES =		devel/cmake \
 			lang/python \
