@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/27 13:40:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2022/03/02 13:00:55 sthen Exp $
 
 COMMENT =		alternative regular expression module to replace re
 
-MODPY_EGG_VERSION =	2022.1.18
+MODPY_EGG_VERSION =	2022.3.2
 DISTNAME =		regex-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
