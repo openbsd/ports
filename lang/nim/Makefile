@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/28 13:16:10 op Exp $
+# $OpenBSD: Makefile,v 1.13 2022/03/02 11:16:18 op Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -20,7 +20,10 @@ WANTLIB =		c m pthread
 MODULES =		lang/python
 
 PORTHOME =		${WRKDIR}
-TEST_DEPENDS =		lang/node
+TEST_DEPENDS =		archivers/p7zip,-main \
+			archivers/unzip \
+			lang/node \
+			multimedia/sfml
 
 SUBST_VARS +=		CFLAGS
 
@@ -61,9 +64,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nim
 	${INSTALL_DATA} ${WRKSRC}/config/*.cfg ${PREFIX}/share/examples/nim
 
+# note that for some tests an internet connection is required
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} ./koch tests all -d:release \
-		--parallelBuild:1 --listFullPaths --listCmd \
+		--parallelBuild:1
 		--nimcache:"${WRKSRC}/nimcache-port-test" \
 		--putenv:"PATH=${PATH}"
 
