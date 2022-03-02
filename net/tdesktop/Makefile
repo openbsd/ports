@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2022/03/02 00:40:09 kn Exp $
+# $OpenBSD: Makefile,v 1.16 2022/03/02 02:43:35 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -7,10 +7,9 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.5.2
-REVISION =		0
+V =			3.5.3
 DISTNAME =		tdesktop-${V}-full
-PKGNAME =		tdesktop-${V}
+PKGNAME =		${DISTNAME:-full=beta}
 CATEGORIES =		net
 
 HOMEPAGE =		https://desktop.telegram.org
@@ -75,7 +74,8 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
 
 # disable unported/unwanted components
-CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
+CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
+			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
 			-DDESKTOP_APP_QT6=OFF
 
 # match standard version with abseil
