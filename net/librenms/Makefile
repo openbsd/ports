@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2022/02/19 10:06:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2022/03/02 11:04:04 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
@@ -6,7 +6,7 @@ COMMENT=	auto-discovering network management/monitoring system
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	22.2.1
-REVISION=	0
+REVISION=	1
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
