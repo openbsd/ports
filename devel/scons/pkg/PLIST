@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/31 17:28:02 sthen Exp $
 bin/scons
 bin/scons-configure-cache
 bin/sconsign
 lib/python${MODPY_VERSION}/site-packages/SCons/
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/SCons-${VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/SCons/Action.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Builder.py
 lib/python${MODPY_VERSION}/site-packages/SCons/CacheDir.py
@@ -267,6 +266,10 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/dmd.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.cpython-35.pyc
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.cpython-36.pyc
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.cpython-37.pyc
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.cpython-38.pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/.CatalogManager.properties.example
