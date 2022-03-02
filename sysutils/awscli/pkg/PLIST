@@ -1876,6 +1876,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/authorize-security-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/authorize-security-group-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/bundle-instance.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-bundle-task.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-capacity-reservation-fleets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-conversion-task.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/cancel-export-task.rst
@@ -1887,6 +1888,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/confirm-product-ins
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/copy-fpga-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/copy-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/copy-snapshot.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-capacity-reservation-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-client-vpn-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/create-client-vpn-route.rst
@@ -2025,6 +2027,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-aggregate-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-availability-zones.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-bundle-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-byoip-cidrs.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-capacity-reservation-fleets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-capacity-reservations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-carrier-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-classic-link-instances.rst
@@ -2041,6 +2044,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-egress-onl
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-elastic-gpus.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-export-image-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-export-tasks.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-fast-launch-images.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-fast-snapshot-restores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-fleet-history.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-fleet-instances.rst
@@ -2108,6 +2112,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-g
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-group-rules.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshot-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshot-tier-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshots.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-datafeed-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-spot-fleet-instances.rst
@@ -2153,6 +2158,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-network-inte
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-volume.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/detach-vpn-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-ebs-encryption-by-default.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-fast-launch.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-fast-snapshot-restores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image-deprecation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-serial-console-access.rst
@@ -2170,6 +2176,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-transi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-transit-gateway-route-table.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-vpc-cidr-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ebs-encryption-by-default.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-launch.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-snapshot-restores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image-deprecation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ipam-organization-admin-account.rst
@@ -2193,6 +2200,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ebs-encryption-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-flow-logs-integration-template.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-groups-for-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-host-reservation-purchase-preview.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-instance-types-from-instance-requirements.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-address-history.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-pool-allocations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-ipam-pool-cidrs.rst
@@ -2205,6 +2213,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-network-insight
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-password-data.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-reserved-instances-exchange-quote.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-serial-console-access-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-spot-placement-scores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-subnet-cidr-reservations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-attachment-propagations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/get-transit-gateway-multicast-domain-associations.rst
@@ -2218,6 +2227,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/import-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/list-snapshots-in-recycle-bin.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-address-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-availability-zone-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-capacity-reservation-fleet.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-capacity-reservation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-client-vpn-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-default-credit-specification.rst
@@ -2244,6 +2254,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-network-inte
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-reserved-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-security-group-rules.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-snapshot-attribute.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-snapshot-tier.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-spot-fleet-request.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-subnet-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/modify-traffic-mirror-filter-network-services.rst
@@ -2305,6 +2316,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/reset-snapshot-attr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/restore-address-to-classic.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/restore-managed-prefix-list-version.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/restore-snapshot-from-recycle-bin.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/restore-snapshot-tier.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/revoke-client-vpn-ingress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/revoke-security-group-egress.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/revoke-security-group-ingress.rst
