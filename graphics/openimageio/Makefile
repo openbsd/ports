@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2021/11/02 00:01:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2022/03/02 19:55:18 sthen Exp $
 
 # XXX python module is linked with wrong libraries if an old version is
 # installed during build
@@ -11,12 +11,11 @@ COMMENT =		library for reading and writing images
 GH_ACCOUNT =		OpenImageIO
 GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
-V =			2.2.18.0
+V =			2.2.20.0
 DISTNAME =		openimageio-${V}
-REVISION =		0
 
-SHARED_LIBS +=		OpenImageIO		11.0 # 2.2.18
-SHARED_LIBS +=		OpenImageIO_Util	7.0 # 2.2.18
+SHARED_LIBS +=		OpenImageIO		11.1 # 2.2.20
+SHARED_LIBS +=		OpenImageIO_Util	7.0 # 2.2.20
 
 CATEGORIES =		graphics devel
 
@@ -28,12 +27,12 @@ MAINTAINER =		Dimitri Karamazov <deserter666@danwin1210.me>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL GLU Iex-3_1 IlmThread-3_1 OpenEXR-3_1
-WANTLIB += Imath-3_1 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
-WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_system-mt
-WANTLIB += boost_thread-mt bz2 c freetype gif heif iconv jpeg m
-WANTLIB += openjp2 png pugixml raw_r swscale tiff webp webpdemux z
+WANTLIB += GL GLU Iex-3_1 IlmThread-3_1 Imath-3_1 OpenColorIO
+WANTLIB += OpenEXR-3_1 Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets avcodec
+WANTLIB += avformat avutil boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_system-mt boost_thread-mt
+WANTLIB += bz2 c freetype gif heif jpeg m openjp2 png pugixml
+WANTLIB += raw_r swscale tiff webp webpdemux z
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -49,6 +48,7 @@ BUILD_DEPENDS =		devel/fmt \
 LIB_DEPENDS =		devel/boost \
 			graphics/ffmpeg \
 			graphics/giflib \
+			graphics/jpeg \
 			graphics/libraw \
 			graphics/libwebp \
 			graphics/opencolorio \
@@ -75,8 +75,5 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 WANTLIB +=		atomic
 .endif
-
-post-install:
-	find ${PREFIX} -name '*.orig' -delete
 
 .include <bsd.port.mk>
