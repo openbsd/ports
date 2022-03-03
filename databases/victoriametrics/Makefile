@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/23 09:03:39 denis Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/03 19:12:32 denis Exp $
 
 COMMENT =		fast, cost-effective and scalable time series database
 
-V =			1.73.1
+V =			1.74.0
 GH_ACCOUNT =		VictoriaMetrics
 GH_PROJECT =		VictoriaMetrics
 GH_TAGNAME =		v${V}
