@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/06 17:14:17 op Exp $
+# $OpenBSD: Makefile,v 1.2 2022/03/03 17:38:24 op Exp $
 
 COMMENT =	neo simple X Image Viewer
 
 GH_PROJECT =	nsxiv
 GH_ACCOUNT =	nsxiv
-GH_TAGNAME =	v28
+GH_TAGNAME =	v29
 
 CATEGORIES =	graphics x11
 

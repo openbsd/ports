@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/06 17:14:17 op Exp $
 @conflict sxiv-*
 @pkgpath graphics/sxiv
 @bin bin/nsxiv
@@ -9,4 +8,5 @@ share/doc/nsxiv/
 share/doc/nsxiv/examples/
 share/doc/nsxiv/examples/image-info
 share/doc/nsxiv/examples/key-handler
+share/doc/nsxiv/examples/win-title
 @tag update-desktop-database
