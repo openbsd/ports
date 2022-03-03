@@ -893,6 +893,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/2019-02-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/2019-02-03/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/2019-02-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/keyspaces/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/keyspaces/2022-02-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/keyspaces/2022-02-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/keyspaces/2022-02-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/keyspaces/2022-02-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-archived-media/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kinesis-video-archived-media/2017-09-30/
