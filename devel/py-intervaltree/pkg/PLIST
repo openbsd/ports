@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/16 13:08:35 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/intervaltree/
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

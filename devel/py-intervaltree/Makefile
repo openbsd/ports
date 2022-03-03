@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/26 17:30:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/03/03 10:04:24 sthen Exp $
 
 COMMENT =	editable interval tree data structure for Python 2 and 3
 
-MODPY_EGG_VERSION =	3.0.2
+MODPY_EGG_VERSION =	3.1.0
 DISTNAME =	intervaltree-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
 
 CATEGORIES =	devel
 
@@ -20,6 +19,7 @@ MODPY_PI =	Yes
 
 RUN_DEPENDS =	devel/py-sortedcontainers${MODPY_FLAVOR}
 
+# py2 used by security/py-vivisect
 FLAVORS =	python3
 FLAVOR ?=
 
