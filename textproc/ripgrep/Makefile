@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/24 17:42:14 fcambus Exp $
+# $OpenBSD: Makefile,v 1.21 2022/03/03 14:33:54 sthen Exp $
 
 COMMENT =		line oriented search tool using Rust's regex library #'
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
 GH_TAGNAME =		13.0.0
+REVISION =		0
 
 CATEGORIES =		textproc sysutils
 
@@ -17,7 +18,7 @@ WANTLIB +=		c c++abi pthread
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
-BUILD_DEPENDS =		textproc/asciidoc
+BUILD_DEPENDS =		textproc/asciidoctor
 
 CONFIGURE_STYLE =	cargo
 
@@ -33,11 +34,12 @@ OUT_DIR =		${RELEASE_DIR}/build/ripgrep-*/out
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/rg ${PREFIX}/bin/
 	${INSTALL_MAN} ${OUT_DIR}/rg.1 ${PREFIX}/man/man1/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions \
+	    ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${OUT_DIR}/rg.bash \
 	    ${PREFIX}/share/bash-completion/completions/rg
-	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${OUT_DIR}/_rg.ps1 ${PREFIX}/share/zsh/site-functions/_rg
+	${INSTALL_DATA} ${WRKSRC}/complete/_rg \
+	    ${PREFIX}/share/zsh/site-functions/_rg
 
 .include "crates.inc"
 
