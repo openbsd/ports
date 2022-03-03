@@ -1,0 +1,15 @@
+amd64_iopl(2) requires non-zero machdep.allowaperture sysctl(8).
+
+Index: util/nvramtool/accessors/cmos-hw-unix.c
+--- util/nvramtool/accessors/cmos-hw-unix.c.orig
++++ util/nvramtool/accessors/cmos-hw-unix.c
+@@ -159,8 +159,7 @@ static void cmos_set_iopl(int level)
+ 	}
+ #else
+ 	if (iopl(level)) {
+-		fprintf(stderr, "%s: iopl() system call failed.  "
+-			"You must be root to do this.\n", prog_name);
++		fprintf(stderr, "%s: You need to be root and machdep.allowaperture must be non-zero, see amd64_iopl(2).\n", prog_name);
+ 		exit(1);
+ 	}
+ #endif
