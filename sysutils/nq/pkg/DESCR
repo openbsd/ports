@@ -1,0 +1,3 @@
+nq is a set of small utilities that allows to create lightweight job
+queue system that requires no setup, maintenance, supervision, or any
+long-running process.
