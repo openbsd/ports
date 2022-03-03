@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/11/30 09:18:09 sthen Exp $
 @newgroup _kea:763
 @newuser _kea:763:_kea:daemon:Kea user:/nonexistent:/sbin/nologin
 @mode 0750

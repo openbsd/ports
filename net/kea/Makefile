@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2021/12/31 18:08:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2022/03/03 14:57:58 sthen Exp $
 
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	2.0.1
+VERSION=	2.0.2
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
