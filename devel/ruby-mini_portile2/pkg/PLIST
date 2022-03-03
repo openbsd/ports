@@ -1,0 +1,43 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.github/
+${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ci.yml
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/SECURITY.md
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_portile2/
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_portile2.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_portile2/mini_portile.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_portile2/mini_portile_cmake.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mini_portile2/version.rb
+${GEM_LIB}/gems/${DISTNAME}/mini_portile2.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/assets/
+${GEM_LIB}/gems/${DISTNAME}/test/assets/git/
+${GEM_LIB}/gems/${DISTNAME}/test/assets/git/config
+${GEM_LIB}/gems/${DISTNAME}/test/assets/gpg-fixtures/
+${GEM_LIB}/gems/${DISTNAME}/test/assets/gpg-fixtures/data
+${GEM_LIB}/gems/${DISTNAME}/test/assets/gpg-fixtures/data.asc
+${GEM_LIB}/gems/${DISTNAME}/test/assets/gpg-fixtures/data.invalid.asc
+${GEM_LIB}/gems/${DISTNAME}/test/assets/patch 1.diff
+${GEM_LIB}/gems/${DISTNAME}/test/assets/test mini portile-1.0.0/
+${GEM_LIB}/gems/${DISTNAME}/test/assets/test mini portile-1.0.0/configure
+${GEM_LIB}/gems/${DISTNAME}/test/assets/test-cmake-1.0/
+${GEM_LIB}/gems/${DISTNAME}/test/assets/test-cmake-1.0/CMakeLists.txt
+${GEM_LIB}/gems/${DISTNAME}/test/assets/test-cmake-1.0/hello.c
+${GEM_LIB}/gems/${DISTNAME}/test/assets/test-download-archive.tar.gz
+${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_cmake.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_cook.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_digest.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_download.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_execute.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_proxy.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
