@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2021/10/06 21:11:58 jeremy Exp $
-
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.11.7
+DISTNAME=		nokogiri-1.13.1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.org/
@@ -14,10 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		exslt xml2 xslt gcrypt gpg-error
 LIB_DEPENDS=		textproc/libxslt
+BUILD_DEPENDS=		devel/ruby-mini_portile2,${MODRUBY_FLAVOR}>=2.7.0,<3.0
 
 MODULES=		lang/ruby
-
-FLAVOR ?=
 
 CONFIGURE_STYLE=	ruby gem ext
 

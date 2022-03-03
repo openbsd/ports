@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/06/18 08:57:51 sebastia Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -13,6 +12,7 @@ ${GEM_LIB}/gems/${DISTNAME}/dependencies.yml
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/class_resolver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/node.rb
@@ -26,18 +26,25 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/css/xpath_visitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/decorators/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/decorators/slop.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/extension.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/gumbo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/builder.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/document.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/document_fragment.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/element_description.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/element_description_defaults.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/entity_lookup.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser_context.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/push_parser.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/builder.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/document.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/document_fragment.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/element_description.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/element_description_defaults.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/entity_lookup.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/sax/
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/sax/parser.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/sax/parser_context.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html4/sax/push_parser.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/document.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/document_fragment.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html5/node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/jruby/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/jruby/dependencies.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/nokogiri.so
@@ -94,17 +101,4 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xslt/stylesheet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/nokogiri.rb
-${GEM_LIB}/gems/${DISTNAME}/patches/
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0001-Remove-script-macro-support.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0002-Update-entities-to-remove-handling-of-ssi.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0003-libxml2.la-is-in-top_builddir.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0004-use-glibc-strlen.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0005-avoid-isnan-isinf.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0006-update-automake-files-for-arm64.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxml2/0007-Fix-XPath-recursion-limit.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/
-${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0001-update-automake-files-for-arm64.patch
-${GEM_LIB}/gems/${DISTNAME}/patches/libxslt/0002-Fix-xml2-config-check-in-configure-script.patch
-${GEM_LIB}/gems/${DISTNAME}/ports/
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
