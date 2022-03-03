@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.147 2022/03/02 11:04:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2022/03/03 10:09:17 sthen Exp $
 
 COMMENT=	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.2.1
-REVISION=	1
+GH_TAGNAME=	22.2.2
+REVISION=	0
+MASTER_SITES=	https://github.com/librenms/librenms/archive/refs/tags/
 
-DISTFILES=	${GH_DISTFILE} \
+DISTFILES=	librenms-{}22.2.2.tar.gz \
 		${PKGNAME}-vendor.tar.xz:0
 EPOCH=		0
 
