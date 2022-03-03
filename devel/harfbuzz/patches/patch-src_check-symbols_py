@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_check-symbols_py,v 1.2 2021/08/21 08:15:22 ajacoutot Exp $
-
 Index: src/check-symbols.py
 --- src/check-symbols.py.orig
 +++ src/check-symbols.py
