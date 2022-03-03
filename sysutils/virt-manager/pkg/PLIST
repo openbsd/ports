@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/02/17 19:06:43 ajacoutot Exp $
 bin/virt-clone
 bin/virt-install
 bin/virt-manager
@@ -54,6 +53,7 @@ share/locale/pt/LC_MESSAGES/virt-manager.mo
 share/locale/pt_BR/LC_MESSAGES/virt-manager.mo
 share/locale/ro/LC_MESSAGES/virt-manager.mo
 share/locale/ru/LC_MESSAGES/virt-manager.mo
+share/locale/si/LC_MESSAGES/virt-manager.mo
 share/locale/sk/LC_MESSAGES/virt-manager.mo
 share/locale/sr/LC_MESSAGES/virt-manager.mo
 share/locale/sr@latin/LC_MESSAGES/virt-manager.mo
@@ -135,6 +135,7 @@ share/virt-manager/ui/preferences.ui
 share/virt-manager/ui/snapshots.ui
 share/virt-manager/ui/snapshotsnew.ui
 share/virt-manager/ui/storagebrowse.ui
+share/virt-manager/ui/tpmdetails.ui
 share/virt-manager/ui/vmwindow.ui
 share/virt-manager/ui/vsockdetails.ui
 share/virt-manager/ui/xmleditor.ui
@@ -210,12 +211,14 @@ share/virt-manager/virtManager/device/${MODPY_PYCACHE}fsdetails.${MODPY_PYC_MAGI
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}gfxdetails.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}mediacombo.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}netlist.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtManager/device/${MODPY_PYCACHE}tpmdetails.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/device/${MODPY_PYCACHE}vsockdetails.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtManager/device/addstorage.py
 share/virt-manager/virtManager/device/fsdetails.py
 share/virt-manager/virtManager/device/gfxdetails.py
 share/virt-manager/virtManager/device/mediacombo.py
 share/virt-manager/virtManager/device/netlist.py
+share/virt-manager/virtManager/device/tpmdetails.py
 share/virt-manager/virtManager/device/vsockdetails.py
 share/virt-manager/virtManager/engine.py
 share/virt-manager/virtManager/error.py
@@ -272,6 +275,7 @@ share/virt-manager/virtinst/
 share/virt-manager/virtinst/__init__.py
 ${MODPY_COMMENT}share/virt-manager/virtinst/${MODPY_PYCACHE}/
 share/virt-manager/virtinst/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/${MODPY_PYCACHE}_progresspriv.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}buildconfig.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}capabilities.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
@@ -297,6 +301,7 @@ share/virt-manager/virtinst/${MODPY_PYCACHE}virtxml.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlapi.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlbuilder.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/${MODPY_PYCACHE}xmlutil.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/_progresspriv.py
 share/virt-manager/virtinst/buildconfig.py
 share/virt-manager/virtinst/capabilities.py
 share/virt-manager/virtinst/cli.py
@@ -306,6 +311,7 @@ share/virt-manager/virtinst/devices/
 share/virt-manager/virtinst/devices/__init__.py
 ${MODPY_COMMENT}share/virt-manager/virtinst/devices/${MODPY_PYCACHE}/
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/devices/${MODPY_PYCACHE}audio.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}char.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}controller.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}pyc
@@ -321,12 +327,14 @@ share/virt-manager/virtinst/devices/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}panic.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}redirdev.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}rng.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/devices/${MODPY_PYCACHE}shmem.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}smartcard.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}sound.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}tpm.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}video.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}vsock.${MODPY_PYC_MAGIC_TAG}pyc
 share/virt-manager/virtinst/devices/${MODPY_PYCACHE}watchdog.${MODPY_PYC_MAGIC_TAG}pyc
+share/virt-manager/virtinst/devices/audio.py
 share/virt-manager/virtinst/devices/char.py
 share/virt-manager/virtinst/devices/controller.py
 share/virt-manager/virtinst/devices/device.py
@@ -342,6 +350,7 @@ share/virt-manager/virtinst/devices/memory.py
 share/virt-manager/virtinst/devices/panic.py
 share/virt-manager/virtinst/devices/redirdev.py
 share/virt-manager/virtinst/devices/rng.py
+share/virt-manager/virtinst/devices/shmem.py
 share/virt-manager/virtinst/devices/smartcard.py
 share/virt-manager/virtinst/devices/sound.py
 share/virt-manager/virtinst/devices/tpm.py
