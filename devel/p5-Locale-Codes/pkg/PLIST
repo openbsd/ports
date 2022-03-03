@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/02 11:42:00 giovanni Exp $
 ${P5SITE}/Locale/
 ${P5SITE}/Locale/Codes/
 ${P5SITE}/Locale/Codes.pm
