@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.3 2022/02/17 09:38:17 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.4 2022/03/03 15:11:24 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.79.0 \
@@ -35,11 +35,11 @@ MODGO_MODULES =	\
 	github.com/agext/levenshtein					 v1.2.3 \
 	github.com/alecthomas/template					 v0.0.0-20160405071501-a0175ee3bccc \
 	github.com/alecthomas/units					 v0.0.0-20151022065526-2efee857e7cf \
-	github.com/aliyun/alibaba-cloud-sdk-go				 v0.0.0-20190329064014-6e358769c32a \
+	github.com/aliyun/alibaba-cloud-sdk-go				 v1.61.1501 \
 	github.com/aliyun/aliyun-oss-go-sdk				 v0.0.0-20190103054945-8205d1f41e70 \
 	github.com/aliyun/aliyun-tablestore-go-sdk			 v4.1.2+incompatible \
-	github.com/antchfx/xpath					 v0.0.0-20190129040759-c8489ed3251e \
-	github.com/antchfx/xquery					 v0.0.0-20180515051857-ad5b8c7a47b0 \
+	github.com/antchfx/xmlquery					 v1.3.5 \
+	github.com/antchfx/xpath					 v1.1.10 \
 	github.com/apparentlymart/go-cidr				 v1.1.0 \
 	github.com/apparentlymart/go-dump				 v0.0.0-20190214190832-042adf3cf4a0 \
 	github.com/apparentlymart/go-shquot				 v0.0.1 \
@@ -75,7 +75,7 @@ MODGO_MODULES =	\
 	github.com/docopt/docopt-go					 v0.0.0-20180111231733-ee0de3bc6815 \
 	github.com/dustin/go-humanize					 v0.0.0-20171111073723-bb3d318650d4 \
 	github.com/dylanmei/iso8601					 v0.1.0 \
-	github.com/dylanmei/winrmtest					 v0.0.0-20190225150635-99b7fe2fddf1 \
+	github.com/dylanmei/winrmtest					 v0.0.0-20210303004826-fbc9ae56efb6 \
 	github.com/elazarl/goproxy					 v0.0.0-20180725130230-947c36da3153 \
 	github.com/emicklei/go-restful					 v0.0.0-20170410110728-ff4f55a20633 \
 	github.com/envoyproxy/go-control-plane				 v0.9.9-0.20201210154907-fd9021fe5dad \
@@ -97,8 +97,9 @@ MODGO_MODULES =	\
 	github.com/go-sql-driver/mysql					 v1.5.0 \
 	github.com/go-stack/stack					 v1.8.0 \
 	github.com/go-test/deep						 v1.0.3 \
-	github.com/gofrs/uuid						 v3.3.0+incompatible \
+	github.com/gofrs/uuid						 v4.0.0+incompatible \
 	github.com/gogo/protobuf					 v1.3.2 \
+	github.com/goji/httpauth					 v0.0.0-20160601135302-2da839ab0f4d \
 	github.com/golang-jwt/jwt					 v3.2.1+incompatible \
 	github.com/golang-jwt/jwt/v4					 v4.1.0 \
 	github.com/golang/glog						 v0.0.0-20160126235308-23def4e6c14b \
@@ -118,7 +119,6 @@ MODGO_MODULES =	\
 	github.com/googleapis/gnostic					 v0.4.1 \
 	github.com/gophercloud/gophercloud				 v0.10.1-0.20200424014253-c3bfe50899e5 \
 	github.com/gophercloud/utils					 v0.0.0-20200423144003-7c72efc7435d \
-	github.com/gopherjs/gopherjs					 v0.0.0-20181017120253-0766667cb4d1 \
 	github.com/gorilla/websocket					 v1.4.2 \
 	github.com/gregjones/httpcache					 v0.0.0-20180305231024-9cad4c3443a7 \
 	github.com/grpc-ecosystem/go-grpc-middleware			 v1.0.1-0.20190118093823-f849b5445de4 \
@@ -141,7 +141,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-retryablehttp				 v0.7.0 \
 	github.com/hashicorp/go-rootcerts				 v1.0.2 \
 	github.com/hashicorp/go-safetemp				 v1.0.0 \
-	github.com/hashicorp/go-slug					 v0.7.0 \
+	github.com/hashicorp/go-slug					 v0.8.0 \
 	github.com/hashicorp/go-sockaddr				 v1.0.0 \
 	github.com/hashicorp/go-syslog					 v1.0.0 \
 	github.com/hashicorp/go-tfe					 v0.21.0 \
@@ -172,7 +172,6 @@ MODGO_MODULES =	\
 	github.com/joyent/triton-go					 v0.0.0-20180313100802-d8f9c0314926 \
 	github.com/json-iterator/go					 v1.1.10 \
 	github.com/jstemmer/go-junit-report				 v0.9.1 \
-	github.com/jtolds/gls						 v4.2.1+incompatible \
 	github.com/julienschmidt/httprouter				 v1.2.0 \
 	github.com/kardianos/osext					 v0.0.0-20190222173326-2bc1f35cddc0 \
 	github.com/kisielk/errcheck					 v1.5.0 \
@@ -239,8 +238,6 @@ MODGO_MODULES =	\
 	github.com/sean-/seed						 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/sergi/go-diff					 v1.2.0 \
 	github.com/sirupsen/logrus					 v1.7.0 \
-	github.com/smartystreets/assertions				 v0.0.0-20180927180507-b2de0cb4f26d \
-	github.com/smartystreets/goconvey				 v0.0.0-20180222194500-ef6db91d284a \
 	github.com/soheilhy/cmux					 v0.1.4 \
 	github.com/spf13/afero						 v1.2.2 \
 	github.com/spf13/cobra						 v0.0.3 \
@@ -299,11 +296,11 @@ MODGO_MODULES =	\
 	gopkg.in/errgo.v2						 v2.1.0 \
 	gopkg.in/fsnotify.v1						 v1.4.7 \
 	gopkg.in/inf.v0							 v0.9.1 \
-	gopkg.in/ini.v1							 v1.42.0 \
+	gopkg.in/ini.v1							 v1.66.2 \
 	gopkg.in/resty.v1						 v1.12.0 \
 	gopkg.in/tomb.v1						 v1.0.0-20141024135613-dd632973f1e7 \
 	gopkg.in/yaml.v2						 v2.4.0 \
-	gopkg.in/yaml.v3						 v3.0.0-20200313102051-9f266ea9e77c \
+	gopkg.in/yaml.v3						 v3.0.0-20210107192922-496545a6307b \
 	honnef.co/go/tools						 v0.3.0-0.dev \
 	k8s.io/api							 v0.21.3 \
 	k8s.io/apimachinery						 v0.21.3 \
@@ -464,6 +461,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-msgpack					 v0.5.3 \
 	github.com/hashicorp/go-multierror				 v1.0.0 \
 	github.com/hashicorp/go-multierror				 v1.1.0 \
+	github.com/hashicorp/go-slug					 v0.7.0 \
 	github.com/hashicorp/go-uuid					 v1.0.0 \
 	github.com/hashicorp/go-uuid					 v1.0.1 \
 	github.com/hashicorp/go-version					 v1.0.0 \
@@ -477,7 +475,9 @@ MODGO_MODFILES =	\
 	github.com/imdario/mergo					 v0.3.11 \
 	github.com/imdario/mergo					 v0.3.5 \
 	github.com/jmespath/go-jmespath					 v0.0.0-20160202185014-0b12d6b521d8 \
+	github.com/jmespath/go-jmespath					 v0.0.0-20180206201540-c2b33e8439af \
 	github.com/jmespath/go-jmespath					 v0.3.0 \
+	github.com/json-iterator/go					 v1.1.5 \
 	github.com/json-iterator/go					 v1.1.6 \
 	github.com/json-iterator/go					 v1.1.7 \
 	github.com/jstemmer/go-junit-report				 v0.0.0-20190106144839-af01ea7f8024 \
@@ -636,6 +636,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.0.0-20200520182314-0ba52f642ac2 \
 	golang.org/x/net						 v0.0.0-20200625001655-4c5254603344 \
 	golang.org/x/net						 v0.0.0-20200707034311-ab3426394381 \
+	golang.org/x/net						 v0.0.0-20200813134508-3edf25e44fcc \
 	golang.org/x/net						 v0.0.0-20200822124328-c89045814202 \
 	golang.org/x/net						 v0.0.0-20201021035429-f5854403a974 \
 	golang.org/x/net						 v0.0.0-20201031054903-ff519b6c9102 \
@@ -902,6 +903,7 @@ MODGO_MODFILES =	\
 	gopkg.in/yaml.v2						 v2.2.7 \
 	gopkg.in/yaml.v2						 v2.2.8 \
 	gopkg.in/yaml.v2						 v2.3.0 \
+	gopkg.in/yaml.v3						 v3.0.0-20200313102051-9f266ea9e77c \
 	honnef.co/go/tools						 v0.0.0-20190102054323-c2f93a96b099 \
 	honnef.co/go/tools						 v0.0.0-20190106161140-3f1c8253044a \
 	honnef.co/go/tools						 v0.0.0-20190418001031-e561f6794a2a \
