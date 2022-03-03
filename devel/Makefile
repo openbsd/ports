@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2191 2022/03/02 16:21:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2192 2022/03/03 22:32:15 jeremy Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1655,6 +1655,7 @@
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
+     SUBDIR += ruby-mini_portile2
      SUBDIR += ruby-mocha
      SUBDIR += ruby-narray,ruby27
      SUBDIR += ruby-narray,ruby30
