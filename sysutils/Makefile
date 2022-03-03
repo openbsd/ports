@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.641 2022/02/26 18:48:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.642 2022/03/03 13:38:43 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -210,6 +210,7 @@
      SUBDIR += monit
      SUBDIR += monitord
      SUBDIR += moreutils
+     SUBDIR += msktutil
      SUBDIR += mtools
      SUBDIR += multitail
      SUBDIR += multitime
