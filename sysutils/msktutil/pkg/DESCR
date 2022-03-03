@@ -1,0 +1,3 @@
+Msktutil creates user or computer accounts in Active Directory, creates
+Kerberos keytabs on Unix/Linux systems, adds and removes principals to
+and from keytabs and changes the user or computer account's password.
