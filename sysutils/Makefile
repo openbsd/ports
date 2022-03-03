@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.642 2022/03/03 13:38:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.643 2022/03/03 20:04:40 op Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -221,6 +221,7 @@
      SUBDIR += node_exporter
      SUBDIR += noice
      SUBDIR += nomad
+     SUBDIR += nq
      SUBDIR += ntfs-3g
      SUBDIR += nut
      SUBDIR += oc
