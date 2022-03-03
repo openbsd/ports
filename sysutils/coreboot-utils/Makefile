@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/12 12:36:20 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2022/03/03 18:04:46 kn Exp $
 
 # ectool requires amd64_iopl(2)
 # intelmetool requires <amd64/pio.h>
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		utilities to work on firmware images and hardware
 
-V =			4.15
+V =			4.16
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
 
@@ -39,7 +39,8 @@ FAKE_FLAGS =		PREFIX=${PREFIX}
 # XXX intelmetool requires unsupported pcilib access methods
 UTILS =			cbmem \
 			ectool \
-			ifdtool
+			ifdtool \
+			nvramtool
 
 do-build:
 .for u in ${UTILS}
@@ -52,5 +53,7 @@ do-install:
 	env -i ${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKSRC}/util/${u} \
 		${FAKE_FLAGS} ${INSTALL_TARGET}
 .endfor
+	mv    ${PREFIX}/share/man/* ${PREFIX}/man/
+	rmdir ${PREFIX}/share/man
 
 .include <bsd.port.mk>

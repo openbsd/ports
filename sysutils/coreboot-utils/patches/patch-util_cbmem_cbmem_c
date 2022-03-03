@@ -1,9 +1,9 @@
-$OpenBSD: patch-util_cbmem_cbmem_c,v 1.4 2021/11/12 12:36:20 kn Exp $
+Hint at mem(4) in error message
 
 Index: util/cbmem/cbmem.c
 --- util/cbmem/cbmem.c.orig
 +++ util/cbmem/cbmem.c
-@@ -1332,7 +1332,7 @@ int main(int argc, char** argv)
+@@ -1397,7 +1397,7 @@ int main(int argc, char** argv)
  
  	mem_fd = open("/dev/mem", O_RDONLY, 0);
  	if (mem_fd < 0) {

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/18 15:16:22 kn Exp $
 @bin bin/ifdtool
+@man man/man8/nvramtool.8
 @bin sbin/cbmem
 @bin sbin/ectool
+@bin sbin/nvramtool

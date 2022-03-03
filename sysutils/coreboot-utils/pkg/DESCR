@@ -8,3 +8,4 @@ communicate with hardware:
 * cbmem        CBMEM parser to read e.g. timestamps and console log
 * ectool       Dump the RAM of a laptop's Embedded/Environmental Controller (EC)
 * ifdtool      Extract and dump Intel Firmware Descriptor information
+* nvramtool    Read/Write coreboot parameters from coreboot table
