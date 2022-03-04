@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2022/03/04 21:50:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2022/03/04 21:56:22 sthen Exp $
 
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	2.0.3
 DISTNAME =		Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		www devel
 
-HOMEPAGE =		http://flask.pocoo.org/
+HOMEPAGE =		https://flask.palletsprojects.com/
 
 # BSD
 PERMIT_PACKAGE =	Yes
