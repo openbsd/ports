@@ -1,1 +1,1 @@
-missing share/doc/pkg-readmes/${FULLPKGNAME} in PLIST
+missing share/doc/pkg-readmes/${PKGSTEM} in PLIST
