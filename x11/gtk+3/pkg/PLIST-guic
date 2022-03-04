@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-guic,v 1.3 2018/07/09 15:39:30 ajacoutot Exp $
 @conflict gtk+2-<2.24.8p0
 @pkgpath x11/gtk+2,-guic
 @define-tag gtk-update-icon-cache at-end %D/bin/gtk-update-icon-cache -q -t %u
