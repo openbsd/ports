@@ -1,11 +1,9 @@
-$OpenBSD: patch-doc_dbus-specification_xml,v 1.5 2017/11/01 06:27:31 ajacoutot Exp $
-
 /lib -> /var/db
 
 Index: doc/dbus-specification.xml
 --- doc/dbus-specification.xml.orig
 +++ doc/dbus-specification.xml
-@@ -5266,7 +5266,7 @@
+@@ -5743,7 +5743,7 @@
            for .service files in
            <literal>/usr/local/share/dbus-1/system-services</literal>,
            <literal>/usr/share/dbus-1/system-services</literal> and

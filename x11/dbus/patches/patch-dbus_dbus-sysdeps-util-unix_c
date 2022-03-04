@@ -1,11 +1,9 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.18 2022/02/26 08:39:11 ajacoutot Exp $
-
 XXX push upstream
 
 Index: dbus/dbus-sysdeps-util-unix.c
 --- dbus/dbus-sysdeps-util-unix.c.orig
 +++ dbus/dbus-sysdeps-util-unix.c
-@@ -59,6 +59,10 @@
+@@ -64,6 +64,10 @@
  #include <systemd/sd-daemon.h>
  #endif
  
@@ -16,7 +14,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
  #ifndef O_BINARY
  #define O_BINARY 0
  #endif
-@@ -1138,7 +1142,13 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1161,7 +1165,13 @@ _dbus_command_for_pid (unsigned long  pid,
    /* This is all Linux-specific for now */
    DBusString path;
    DBusString cmdline;
@@ -30,7 +28,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
    
    if (!_dbus_string_init (&path)) 
      {
-@@ -1153,6 +1163,7 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1176,6 +1186,7 @@ _dbus_command_for_pid (unsigned long  pid,
        return FALSE;
      }
    
@@ -38,7 +36,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
    if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
      goto oom;
    
-@@ -1180,6 +1191,37 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1203,6 +1214,37 @@ _dbus_command_for_pid (unsigned long  pid,
    
    if (!_dbus_close (fd, error))
      goto fail;
@@ -76,7 +74,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
    
    string_squash_nonprintable (&cmdline);  
  
-@@ -1188,12 +1230,18 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1211,12 +1253,18 @@ _dbus_command_for_pid (unsigned long  pid,
  
    _dbus_string_free (&cmdline);  
    _dbus_string_free (&path);

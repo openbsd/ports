@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2021/09/02 19:32:39 ajacoutot Exp $
 @pkgpath x11/dbus
 @newgroup _dbus:572
-@newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
+@newuser _dbus:572:_dbus::dbus user:/nonexistent:/sbin/nologin
 @extra ${SYSCONFDIR}/machine-id
 @rcscript ${RCDIR}/messagebus
 @bin bin/dbus-cleanup-sockets
@@ -80,6 +79,7 @@ share/doc/dbus/examples/
 share/doc/dbus/examples/GetAllMatchRules.py
 share/doc/dbus/examples/example-session-disable-stats.conf
 share/doc/dbus/examples/example-system-enable-stats.conf
+share/doc/dbus/examples/example-system-hardening-without-traditional-activation.conf
 share/doc/dbus/system-activation.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dbus/
@@ -93,5 +93,6 @@ share/examples/dbus/dbus-1/system.conf
 share/xml/
 share/xml/dbus-1/
 share/xml/dbus-1/busconfig.dtd
+share/xml/dbus-1/catalog.xml
 share/xml/dbus-1/introspect.dtd
 @exec ${PREFIX}/bin/dbus-uuidgen --ensure=${SYSCONFDIR}/machine-id

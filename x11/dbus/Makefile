@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2022/02/26 08:39:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2022/03/04 07:01:46 ajacoutot Exp $
 
 # XXX merge on next major update
 # https://gitlab.freedesktop.org/dbus/dbus/merge_requests/124/diffs
@@ -9,14 +9,15 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-V=			1.12.22
+V=			1.14.0
 DISTNAME=		dbus-${V}
+EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
 
-SHARED_LIBS +=  dbus-1               11.2     # 22.14
+SHARED_LIBS +=  dbus-1               11.3     # 35.0
 
 CATEGORIES=		x11
 
@@ -29,7 +30,7 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c execinfo expat pthread
 
-WANTLIB-main += ${WANTLIB} ICE SM X11 xcb
+WANTLIB-main += ${WANTLIB} X11 xcb
 
 WANTLIB-suid +=	${WANTLIB} dbus-1
 
@@ -45,7 +46,7 @@ BUILD_DEPENDS=		textproc/xmlto
 
 LIB_DEPENDS-suid=	${BASE_PKGPATH},-main
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

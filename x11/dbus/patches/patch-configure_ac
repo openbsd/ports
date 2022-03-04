@@ -1,14 +1,78 @@
-$OpenBSD: patch-configure_ac,v 1.9 2018/08/05 19:12:05 ajacoutot Exp $
+From fdbb32bd1f3c972d3d5fd3998930749206a1095a Mon Sep 17 00:00:00 2001
+From: Lars Wendler <polynomial-c@gentoo.org>
+Date: Tue, 1 Mar 2022 15:56:30 +0100
+Subject: [PATCH] build: Treat --with-x[=yes] the same as --with-x=auto
+
+From 5f2577aea3c5291dbb97e77c7384924851b30102 Mon Sep 17 00:00:00 2001
+From: Lars Wendler <polynomial-c@gentoo.org>
+Date: Tue, 1 Mar 2022 16:01:29 +0100
+Subject: [PATCH] Move DBUS_X_* definitions into PKG_CHECK_MODULES block
+
+From 5dad12f34c54e2359adfe8e7f122681df1d24bcb Mon Sep 17 00:00:00 2001
+From: Lars Wendler <polynomial-c@gentoo.org>
+Date: Tue, 1 Mar 2022 16:05:52 +0100
+Subject: [PATCH] Emit an error when --with-x was given but no X11 libs were found
+
+From e03554eb0bf2731e39c06191403f7544df9bb307 Mon Sep 17 00:00:00 2001
+From: Lars Wendler <polynomial-c@gentoo.org>
+Date: Tue, 1 Mar 2022 16:08:06 +0100
+Subject: [PATCH] Add have_x11=no if --without-x was given to make later checks happy
+
+From 62361f47f9da2346a9ff9a8c4b4bd4a288dc44d5 Mon Sep 17 00:00:00 2001
+From: Lars Wendler <polynomial-c@gentoo.org>
+Date: Tue, 1 Mar 2022 16:11:05 +0100
+Subject: [PATCH] Convert "if" calls to AS_IF macro for the block that handles X11
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -567,7 +567,7 @@ fi
- AC_LANG_PUSH(C)
- AC_CACHE_CHECK([whether va_lists can be copied by value],
- 	dbus_cv_va_val_copy,
--	[AC_RUN_IFELSE([AC_LANG_PROGRAM(
-+	[AC_RUN_IFELSE([AC_LANG_SOURCE(
- [[
- 	#include <stdarg.h>
- 	#include <stdlib.h>
+@@ -1108,31 +1108,32 @@ AC_ARG_ENABLE([x11-autolaunch],
+   AS_HELP_STRING([--enable-x11-autolaunch], [build with X11 auto-launch support]),
+   [], [enable_x11_autolaunch=auto])
+ 
+-if test "x$dbus_win" = xyes; then
+-    if test "x$enable_x11_autolaunch" = xyes; then
++AS_IF([test "x$dbus_win" = xyes], [
++    AS_IF([test "x$enable_x11_autolaunch" = xyes], [
+         AC_MSG_ERROR([X11 auto-launch is not supported on Windows])
+-    fi
++    ])
+ 
+     enable_x11_autolaunch=no
+     have_x11=no
+-else if test "x$with_x" = xauto; then
++], [test "x$with_x" != xno], [
+     PKG_CHECK_MODULES([X], [x11],
+-            [AC_DEFINE([HAVE_X11], [1], [Define to 1 if you have X11 library])],
+-            [ have_x11=no ])
+-
+-    if test "x$have_x11" = xno; then
+-        AC_MSG_WARN([Couldn't found X11, tried with pkg-config.])
+-    else
+-        have_x11=yes
+-        DBUS_X_LIBS="$X_LIBS"
+-        DBUS_X_CFLAGS="$X_CFLAGS"
+-    fi
+-else
++            [AC_DEFINE([HAVE_X11], [1], [Define to 1 if you have X11 library])
++	     have_x11=yes
++	     DBUS_X_LIBS="$X_LIBS"
++	     DBUS_X_CFLAGS="$X_CFLAGS"
++            ], [
++             AS_IF([test "x$with_x" = xyes],
++                [AC_MSG_ERROR([Couldn't find X11, tried with pkg-config.])],
++                [AC_MSG_WARN([Couldn't find X11, tried with pkg-config.])]
++             )
++             have_x11=no
++            ])
++], [
++    have_x11=no
+     AS_IF([test "x$enable_x11_autolaunch" = "xyes"], [
+       AC_MSG_ERROR([--enable-x11-autolaunch and --without-x are not compatible])
+     ])
+-fi
+-fi
++])
+ 
+ if test "x$enable_x11_autolaunch,$have_x11" = xyes,no; then
+     AC_MSG_ERROR([X11 auto-launch requires X headers/libraries])
