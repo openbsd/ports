@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2022/03/04 08:51:09 sthen Exp $
 
-COMMENT = 	parse and examine a perl distribution MANIFEST file
+FIX_EXTRACT_PERMISSIONS = Yes
+
+COMMENT =	parse and examine a perl distribution MANIFEST file
 
 MODULES =	cpan
 PKG_ARCH =	*
