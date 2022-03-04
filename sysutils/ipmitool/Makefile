@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2022/02/18 15:21:12 kn Exp $
+# $OpenBSD: Makefile,v 1.34 2022/03/04 10:22:54 sthen Exp $
 
 COMMENT=	manage and configure devices that support IPMI
 
@@ -8,9 +8,9 @@ COMMENT=	manage and configure devices that support IPMI
 # and MASTER_SITES0 can go too.
 GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
-GH_COMMIT=	39ca56bf33975b8a8b7e87928d67dc66366161da
+GH_COMMIT=	4d4f29f0b60b395941c3e7768ce43ccb890da5f7
+REVISION=	1
 DISTNAME=	ipmitool-1.8.18pl20220207
-REVISION=	0
 DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
 EXTRACT_ONLY=	${GH_DISTFILE:C/{.*//}
 

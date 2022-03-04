@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/02/07 16:40:36 sthen Exp $
 @bin bin/ipmitool
 @man man/man1/ipmitool.1
 @man man/man8/ipmievd.8
