@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.46 2022/03/01 20:30:56 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2188,7 +2187,6 @@ lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}virtualo_plugin.${MODPY_PY
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}weightless_books_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}woblink_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}wolnelektury_plugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/calibre/calibre/gui2/store/stores/${MODPY_PYCACHE}xinxii_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/stores/amazon_au_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_ca_plugin.py
 lib/calibre/calibre/gui2/store/stores/amazon_de_plugin.py
@@ -2254,7 +2252,6 @@ lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
 lib/calibre/calibre/gui2/store/stores/wolnelektury_plugin.py
-lib/calibre/calibre/gui2/store/stores/xinxii_plugin.py
 lib/calibre/calibre/gui2/store/web_store.py
 lib/calibre/calibre/gui2/store/web_store_dialog.py
 lib/calibre/calibre/gui2/tag_browser/
@@ -4562,6 +4559,7 @@ share/calibre/recipes/hindu.recipe
 share/calibre/recipes/hindu_business_line.recipe
 share/calibre/recipes/hindu_human_rights.recipe
 share/calibre/recipes/hindu_post.recipe
+share/calibre/recipes/hindustan_times.recipe
 share/calibre/recipes/historia_pl.png
 share/calibre/recipes/historia_pl.recipe
 share/calibre/recipes/history_today.recipe
@@ -4656,6 +4654,7 @@ share/calibre/recipes/independent_australia.recipe
 share/calibre/recipes/index_hu.png
 share/calibre/recipes/index_hu.recipe
 share/calibre/recipes/india_facts.recipe
+share/calibre/recipes/india_legal_magazine.recipe
 share/calibre/recipes/india_speaks_reddit.recipe
 share/calibre/recipes/india_today.recipe
 share/calibre/recipes/indian_express.png
@@ -5537,6 +5536,7 @@ share/calibre/recipes/root.png
 share/calibre/recipes/root.recipe
 share/calibre/recipes/roskildelokalavisen_dk.png
 share/calibre/recipes/roskildelokalavisen_dk.recipe
+share/calibre/recipes/rt.recipe
 share/calibre/recipes/rte.png
 share/calibre/recipes/rte.recipe
 share/calibre/recipes/rtnews.png
