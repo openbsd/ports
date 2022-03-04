@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2022/01/03 07:16:37 landry Exp $
+# $OpenBSD: Makefile,v 1.42 2022/03/04 07:39:55 landry Exp $
 
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-8.2.1
+DISTNAME=	proj-9.0.0
 CATEGORIES=	devel geo
 SHARED_LIBS=	proj 16.3 # 23.1
 
