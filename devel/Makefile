@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2192 2022/03/03 22:32:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2193 2022/03/04 09:57:34 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1524,6 +1524,7 @@
      SUBDIR += py-test-expect,python3
      SUBDIR += py-test-forked,python3
      SUBDIR += py-test-httpbin,python3
+     SUBDIR += py-test-lazy-fixture,python3
      SUBDIR += py-test-localserver,python3
      SUBDIR += py-test-mock,python3
      SUBDIR += py-test-relaxed,python3
