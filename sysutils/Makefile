@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.643 2022/03/03 20:04:40 op Exp $
+# $OpenBSD: Makefile,v 1.644 2022/03/04 22:16:25 kmos Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -440,6 +440,7 @@
      SUBDIR += xbatt
      SUBDIR += xbattbar
      SUBDIR += xbattmon
+     SUBDIR += xdelta
      SUBDIR += xe
      SUBDIR += xjobs
      SUBDIR += xps

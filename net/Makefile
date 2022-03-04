@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1292 2022/03/01 10:34:41 bket Exp $
+# $OpenBSD: Makefile,v 1.1293 2022/03/04 22:16:25 kmos Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -165,6 +165,7 @@
      SUBDIR += ipfm
      SUBDIR += ipfreely
      SUBDIR += iplog
+     SUBDIR += iprange
      SUBDIR += ipsvd
      SUBDIR += ipv6-toolkit
      SUBDIR += ipv6calc
