@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2020/06/26 20:23:54 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2022/03/04 17:54:43 millert Exp $
 @pkgpath security/sudo${FLAVOR_STRING}
 @rcscript ${RCDIR}/sudo_logsrvd
 @bin bin/cvtsudoers
@@ -17,6 +17,8 @@ libexec/sudo/libsudo_util.la
 @lib libexec/sudo/libsudo_util.so.${LIBsudo_util_VERSION}
 libexec/sudo/sample_approval.la
 @so libexec/sudo/sample_approval.so
+libexec/sudo/sudo_intercept.la
+@so libexec/sudo/sudo_intercept.so
 libexec/sudo/sudo_noexec.la
 @so libexec/sudo/sudo_noexec.so
 libexec/sudo/sudoers.la
@@ -40,15 +42,19 @@ libexec/sudo/system_group.la
 @bin sbin/sudo_sendlog
 @bin sbin/visudo
 share/doc/sudo/
-share/doc/sudo/CONTRIBUTORS
+share/doc/sudo/CONTRIBUTING.md
+share/doc/sudo/CONTRIBUTORS.md
 share/doc/sudo/ChangeLog
-share/doc/sudo/HISTORY
-share/doc/sudo/LICENSE
+share/doc/sudo/HISTORY.md
+share/doc/sudo/LICENSE.md
 share/doc/sudo/NEWS
-share/doc/sudo/README
-share/doc/sudo/TROUBLESHOOTING
-share/doc/sudo/UPGRADE
+share/doc/sudo/README.md
+share/doc/sudo/SECURITY.md
+share/doc/sudo/TROUBLESHOOTING.md
+share/doc/sudo/UPGRADE.md
 share/examples/sudo/
+share/examples/sudo/cvtsudoers.conf
+@sample ${SYSCONFDIR}/cvtsudoers.conf
 share/examples/sudo/sudo.conf
 @sample ${SYSCONFDIR}/sudo.conf
 share/examples/sudo/sudo_logsrvd.conf
