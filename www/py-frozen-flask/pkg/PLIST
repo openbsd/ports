@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/07/06 16:55:34 daniel Exp $
 @conflict py-frozen-flask-*
 @pkgpath www/py-frozen-flask
 lib/python${MODPY_VERSION}/site-packages/Frozen_Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -30,34 +29,3 @@ lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/static/favicon.ic
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/static/main.js
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/test_app/static/style.css
 lib/python${MODPY_VERSION}/site-packages/flask_frozen/tests.py
-share/doc/${MODPY_PY_PREFIX}frozen-flask/
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_sources/
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_sources/index.rst.txt
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/LICENSE
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/frozen-flask.png
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/frozen-flask.svg
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/icon.png
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/artwork/icon.svg
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/basic.css
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/doctools.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/documentation_options.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/file.png
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/flasky.css
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/jquery-3.5.1.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/jquery.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/language_data.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/minus.png
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/plus.png
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/pygments.css
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/searchtools.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/small_flask.css
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/underscore-1.13.1.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/_static/underscore.js
-share/doc/${MODPY_PY_PREFIX}frozen-flask/genindex.html
-share/doc/${MODPY_PY_PREFIX}frozen-flask/index.html
-share/doc/${MODPY_PY_PREFIX}frozen-flask/objects.inv
-share/doc/${MODPY_PY_PREFIX}frozen-flask/py-modindex.html
-share/doc/${MODPY_PY_PREFIX}frozen-flask/search.html
-share/doc/${MODPY_PY_PREFIX}frozen-flask/searchindex.js
