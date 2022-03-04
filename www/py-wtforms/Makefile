@@ -1,41 +1,28 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:02:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2022/03/04 21:44:01 sthen Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
-MODPY_EGG_VERSION=2.1
+MODPY_EGG_VERSION=3.0.1
 DISTNAME=	WTForms-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
-REVISION=	6
 
-HOMEPAGE=	http://wtforms.simplecodes.com/
+HOMEPAGE=	https://wtforms.readthedocs.io/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
-MODPY_PI =		Yes
-EXTRACT_SUFX=		.zip
+MODPY_PI=		Yes
 
-FLAVORS =		python3
-FLAVOR  =		python3
+FLAVORS=		python3
+FLAVOR=			python3
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS=	Yes
-
+MODPY_PYTEST=		Yes
 USE_GMAKE=		Yes
-
-post-build:
-	@cd ${WRKSRC}/docs && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}wtforms
-	cd ${WRKSRC}/docs/_build/html && \
-		pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}wtforms
 
 .include <bsd.port.mk>
