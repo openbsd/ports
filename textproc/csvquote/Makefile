@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2022/03/02 11:12:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2022/03/04 21:42:00 kmos Exp $
 
 COMMENT =	filter for csv data containing delimiters and newlines
 
@@ -21,5 +21,10 @@ FAKE_FLAGS =	BINDIR=${DESTDIR}${PREFIX}/bin
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/csvquote
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/csvquote
+
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
 
 .include <bsd.port.mk>
