@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/25 11:19:40 kn Exp $
+# $OpenBSD: Makefile,v 1.9 2022/03/04 16:20:42 kn Exp $
 
-COMMENT =		command-line access to github pull requests, issues and more
+COMMENT =	command-line access to github pull requests, issues and more
 
-V =			2.4.0
-MODGO_MODNAME =		github.com/cli/cli/v2
-MODGO_VERSION =		v$V
+V =	2.5.2
+MODGO_MODNAME =	github.com/cli/cli/v2
+MODGO_VERSION =	v${V}
 
-DISTNAME =		cli-${MODGO_VERSION}
-PKGNAME =		github-cli-$V
+DISTNAME =	cli-${MODGO_VERSION}
+PKGNAME =	github-cli-${V}
 
-CATEGORIES =		devel
-HOMEPAGE =		https://cli.github.com/
+CATEGORIES =	devel
+HOMEPAGE =	https://cli.github.com/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c pthread
+WANTLIB +=	c pthread
 
-MODULES =		lang/go
+MODULES =	lang/go
 MODGO_LDFLAGS +=	-X "github.com/cli/cli/v${V:R:R}/internal/build.Version=$V"
 
 SEPARATE_BUILD =	Yes
@@ -30,5 +30,4 @@ post-install:
 	rm ${PREFIX}/bin/gen-docs
 
 .include "modules.inc"
-
 .include <bsd.port.mk>
