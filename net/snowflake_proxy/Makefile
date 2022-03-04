@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2022/03/01 09:58:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2022/03/04 10:46:34 sthen Exp $
 
 COMMENT=	proxy providing Tor access to others with censored net
 
 MODGO_MODNAME=	git.torproject.org/pluggable-transports/snowflake.git/v2
 V=		2.1.0
-REVISION=	2
+REVISION=	3
 MODGO_VERSION=	v$V
 
 DISTNAME=	snowflake.git-${MODGO_VERSION}
