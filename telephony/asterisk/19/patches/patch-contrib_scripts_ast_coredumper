@@ -1,5 +1,3 @@
-$OpenBSD: patch-contrib_scripts_ast_coredumper,v 1.3 2022/02/10 22:07:07 sthen Exp $
-
 Index: contrib/scripts/ast_coredumper
 --- contrib/scripts/ast_coredumper.orig
 +++ contrib/scripts/ast_coredumper

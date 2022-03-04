@@ -1,5 +1,3 @@
-$OpenBSD: patch-res_res_http_media_cache_c,v 1.1 2021/11/02 12:47:10 sthen Exp $
-
 Index: res/res_http_media_cache.c
 --- res/res_http_media_cache.c.orig
 +++ res/res_http_media_cache.c

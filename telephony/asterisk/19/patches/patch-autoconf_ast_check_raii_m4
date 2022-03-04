@@ -1,5 +1,3 @@
-$OpenBSD: patch-autoconf_ast_check_raii_m4,v 1.1 2021/11/02 12:47:10 sthen Exp $
-
 Index: autoconf/ast_check_raii.m4
 --- autoconf/ast_check_raii.m4.orig
 +++ autoconf/ast_check_raii.m4

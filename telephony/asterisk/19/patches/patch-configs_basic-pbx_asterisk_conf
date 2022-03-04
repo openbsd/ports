@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_basic-pbx_asterisk_conf,v 1.1 2022/01/07 20:06:27 sthen Exp $
-
 Index: configs/basic-pbx/asterisk.conf
 --- configs/basic-pbx/asterisk.conf.orig
 +++ configs/basic-pbx/asterisk.conf
