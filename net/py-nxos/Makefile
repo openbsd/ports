@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/03/04 09:03:35 sthen Exp $
 
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
@@ -18,6 +18,7 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
 			security/py-scp${MODPY_FLAVOR} \
