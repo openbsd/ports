@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2022/02/10 22:06:51 sthen Exp $
 @option is-branch
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin

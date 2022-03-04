@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-lua,v 1.1 2021/11/02 12:47:09 sthen Exp $
 @option is-branch
 @conflict asterisk-<16.9.0p0
 @so lib/asterisk/modules/pbx_lua.so

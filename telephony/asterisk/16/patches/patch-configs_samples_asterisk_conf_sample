@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_samples_asterisk_conf_sample,v 1.1 2021/11/02 12:47:08 sthen Exp $
-
 Index: configs/samples/asterisk.conf.sample
 --- configs/samples/asterisk.conf.sample.orig
 +++ configs/samples/asterisk.conf.sample

@@ -1,5 +1,3 @@
-$OpenBSD: patch-third-party_pjproject_source_pjmedia_src_pjmedia_sdp_c,v 1.1 2021/11/02 12:47:09 sthen Exp $
-
 asterisk: vfprintf %s NULL in "%.*s %.*s/%u%s%.*s"
 
 Index: third-party/pjproject/source/pjmedia/src/pjmedia/sdp.c

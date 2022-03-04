@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_samples_res_odbc_conf_sample,v 1.1 2021/11/02 12:47:08 sthen Exp $
-
 Index: configs/samples/res_odbc.conf.sample
 --- configs/samples/res_odbc.conf.sample.orig
 +++ configs/samples/res_odbc.conf.sample

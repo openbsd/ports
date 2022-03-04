@@ -1,5 +1,3 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.1 2021/11/02 12:47:08 sthen Exp $
-
 Index: contrib/scripts/safe_asterisk
 --- contrib/scripts/safe_asterisk.orig
 +++ contrib/scripts/safe_asterisk
