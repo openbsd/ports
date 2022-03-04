@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.141 2022/03/04 18:29:31 naddy Exp $
+# $OpenBSD: portcheck,v 1.142 2022/03/04 20:27:05 naddy Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -503,7 +503,7 @@ check_port_hier() {
 				err "VCS item detected: $F"
 			fi
 		elif [[ -d $F ]]; then
-			case "${F##*/}" in
+			case ${F##*/} in
 			files|patches)
 				check_${F##*/}_dir "$F"
 				;;
@@ -532,7 +532,7 @@ check_port_hier() {
 				;;
 			esac
 		else
-			case "${F##*/}" in
+			case ${F##*/} in
 			Makefile?(.inc)|*.port.mk)
 				check_makefile "$F"
 				;;
@@ -824,7 +824,7 @@ check_master_sites() {
 	local name
 
 	while (($# > 1)); do
-		case "$1" in
+		case $1 in
 		http?(s)://bitbucket.com/*)	name=BitBucket;;
 		http?(s)://gitorious.com/*)	name=Gitorious;;
 		*)				name=;;
@@ -1015,7 +1015,7 @@ check_plist() {
 	local app l theme varname py
 
 	while read -pr l; do
-		case "$l" in
+		case $l in
 		"@comment "*)
 			# ignore
 			;;
@@ -1304,7 +1304,7 @@ check_plist() {
 
 	if ! $readme_seen; then
 		local readme=pkg/README${subpkg}
-		if [ -e "$readme" ]; then
+		if [[ -e $readme ]]; then
 			err "${portref}missing share/doc/pkg-readmes/\${PKGSTEM} in PLIST${subpkg}"
 		fi
 	fi
@@ -1577,7 +1577,7 @@ check_patch() {
 		return
 	}
 
-	if [ -s "$F" ]; then
+	if [[ -s $F ]]; then
 		grep -q '\$OpenBSD.*\$' "$F" &&
 		    err "$F should not contain \$OpenBSD\$ tag"
 	else
@@ -1599,7 +1599,7 @@ check_patches_dir() {
 
 	check_perms_in_dir "$1"
 
-	for F in "$1"/* "$1"/.*; do case "${F##*/}" in
+	for F in "$1"/* "$1"/.*; do case ${F##*/} in
 	patch-*.orig)
 		handle_extra_file "$F"
 		;;
@@ -1641,7 +1641,7 @@ check_pkg_dir() {
 	check_perms_in_dir "$dir"
 
 	dir="${dir#./}"
-	for F in "$dir"/* "$dir"/.*; do case "${F##*/}" in
+	for F in "$dir"/* "$dir"/.*; do case ${F##*/} in
 	DESCR?(-*))
 		empty=false
 		[[ -f $F ]] ||
