@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/20 19:22:03 martin Exp $
+# $OpenBSD: Makefile,v 1.17 2022/03/04 11:23:53 landry Exp $
 
 COMMENT =	plugin-driven server agent for collecting metrics
 
 BROKEN-arm =	build fails, no error message
 
+REVISION=	0
 MODGO_VERSION=	v1.21.4
 MODGO_MODNAME=	github.com/influxdata/telegraf
 GH_ACCOUNT =	influxdata
