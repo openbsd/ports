@@ -1,0 +1,4 @@
+iprange is a utility to manage IPv4 ranges including various
+operations on lists of IPv4 addresses including merging/optimization,
+finding commonalities in lists, and finding the differences between
+lists of IPv4 addresses.

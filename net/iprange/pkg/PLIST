@@ -1,0 +1,2 @@
+@bin bin/iprange
+@man man/man1/iprange.1
