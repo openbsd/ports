@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2022/03/04 09:47:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2022/03/04 09:57:51 sthen Exp $
 
 COMMENT=		closed caption converter
 
@@ -24,9 +24,7 @@ RUN_DEPENDS=		textproc/py-cssutils${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			www/py-beautifulsoup4${MODPY_FLAVOR}
 
-NO_TEST=		Yes
-# needs this, not imported yet
-#TEST_DEPENDS=		devel/py-test-lazy-fixture${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-test-lazy-fixture${MODPY_FLAVOR}
 
 post-install:
 	rm -rf ${WRKINST}${MODPY_SITEPKG}/tests
