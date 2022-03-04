@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2022/02/10 22:06:59 sthen Exp $
 @option is-branch
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
@@ -13,9 +12,9 @@
 @pkgpath telephony/asterisk,-fax
 @pkgpath telephony/asterisk,-main
 @pkgpath telephony/asterisk,-main,imap
-@ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf
 @newgroup _asterisk:545
 @newuser _asterisk:545:_asterisk:daemon:asterisk user:/nonexistent:/sbin/nologin
+@ask-update asterisk-*-imap IMAP voicemail moved from a flavour to an optional module. Install asterisk-vm_imap and enable in modules.conf
 @rcscript ${RCDIR}/asterisk
 include/asterisk/
 include/asterisk.h

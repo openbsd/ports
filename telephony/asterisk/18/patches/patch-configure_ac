@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.3 2022/02/10 22:06:59 sthen Exp $
-
 test for alpine-2.22's c-client and cope with API change.
 parts borrowed from slackware patch for PHP with alpine-2.22.
 

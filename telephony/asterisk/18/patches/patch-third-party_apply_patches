@@ -1,5 +1,3 @@
-$OpenBSD: patch-third-party_apply_patches,v 1.2 2022/02/10 22:06:59 sthen Exp $
-
 Index: third-party/apply_patches
 --- third-party/apply_patches.orig
 +++ third-party/apply_patches

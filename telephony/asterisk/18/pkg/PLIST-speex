@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-speex,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
 @option is-branch
 @pkgpath telephony/asterisk,-speex
 @so lib/asterisk/modules/codec_speex.so
