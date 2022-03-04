@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2021/03/06 16:13:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2022/03/04 08:43:23 sthen Exp $
 
 COMMENT =	parse informal natural language date/time strings
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-Format-Natural-1.11
+DISTNAME =	DateTime-Format-Natural-1.13
 CATEGORIES =	devel
 
 # Perl

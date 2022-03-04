@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/07/24 01:27:18 afresh1 Exp $
 bin/dateparse
 ${P5SITE}/DateTime/Format/
 ${P5SITE}/DateTime/Format/Natural/
