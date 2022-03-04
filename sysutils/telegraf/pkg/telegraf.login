@@ -1,3 +1,3 @@
 telegraf:\
-	datasize=8G:\
-	tc=daemon:
+	:datasize=8G:\
+	:tc=daemon:
