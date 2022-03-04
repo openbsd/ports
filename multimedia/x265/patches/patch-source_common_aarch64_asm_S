@@ -1,0 +1,47 @@
+$OpenBSD: patch-source_common_aarch64_asm_S,v 1.1 2022/03/04 22:17:39 sthen Exp $
+
+- fix the compiling errors on MAC
+  0983cffc501e5279e7d9e9b2241b506cb332efcb
+- fix clang compile errors on linux
+  577b658105b90ec1c04b049e43a51384172fb8fc
+
+Index: source/common/aarch64/asm.S
+--- source/common/aarch64/asm.S.orig
++++ source/common/aarch64/asm.S
+@@ -25,22 +25,34 @@
+ 
+ #ifdef PREFIX
+ #define EXTERN_ASM _
++#define HAVE_AS_FUNC 0
++#elif defined __clang__
++#define EXTERN_ASM
++#define HAVE_AS_FUNC 0
++#define PREFIX 1
+ #else
+ #define EXTERN_ASM
++#define HAVE_AS_FUNC 1
+ #endif
+ 
+ #ifdef __ELF__
+ #define ELF
+ #else
++#ifdef PREFIX
++#define ELF #
++#else
+ #define ELF @
+ #endif
++#endif
+ 
+-#define HAVE_AS_FUNC 1
+-
+ #if HAVE_AS_FUNC
+ #define FUNC
+ #else
++#ifdef PREFIX
++#define FUNC #
++#else
+ #define FUNC @
++#endif
+ #endif
+ 
+ .macro function name, export=1
