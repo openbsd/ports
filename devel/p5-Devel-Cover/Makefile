@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2022/03/04 08:54:14 sthen Exp $
 
 COMMENT =	code coverage metrics for Perl
 
 MODULES =	cpan
-DISTNAME =	Devel-Cover-1.33
+DISTNAME =	Devel-Cover-1.36
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
@@ -17,6 +16,7 @@ RUN_DEPENDS =	devel/p5-Pod-Coverage \
 		textproc/p5-PPI-HTML \
 		textproc/p5-Template \
 		converters/p5-JSON-MaybeXS
-TEST_DEPENDS =	devel/p5-Test-Warn
+TEST_DEPENDS =	devel/p5-Test-Warn \
+		devel/p5-B-Debug
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/02/14 12:19:29 benoit Exp $
 bin/cover
 bin/cpancover
 bin/gcov2perl
