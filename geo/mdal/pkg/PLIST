@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/25 12:16:28 landry Exp $
 @bin bin/mdal_translate
 @bin bin/mdalinfo
 include/mdal.h
