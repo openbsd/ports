@@ -1,3 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2014/02/03 22:28:41 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2022/03/04 10:06:27 sthen Exp $
 CATEGORIES +=		${PKGPATH:C,/[^/]+$,,}
-PERMIT_PACKAGE_CDROM ?=	Yes
+PERMIT_PACKAGE ?=	Yes
