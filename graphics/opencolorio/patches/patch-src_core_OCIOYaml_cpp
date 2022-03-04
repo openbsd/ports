@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_core_OCIOYaml_cpp,v 1.6 2022/03/04 22:33:35 sthen Exp $
+
+Fix the build with newer yaml-cpp.
+
+Index: src/core/OCIOYaml.cpp
+--- src/core/OCIOYaml.cpp.orig	Thu Dec 24 17:16:21 2020
++++ src/core/OCIOYaml.cpp	Thu Dec 24 17:16:43 2020
+@@ -30,53 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY O
+ 
+ #include <OpenColorIO/OpenColorIO.h>
+ 
+-#ifndef WIN32
+-
+-// fwd declare yaml-cpp visibility
+-#pragma GCC visibility push(hidden)
+-namespace YAML {
+-    class Exception;
+-    class BadDereference;
+-    class RepresentationException;
+-    class EmitterException;
+-    class ParserException;
+-    class InvalidScalar;
+-    class KeyNotFound;
+-    template <typename T> class TypedKeyNotFound;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::ColorSpace>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::Config>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::Exception>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::GpuShaderDesc>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::ImageDesc>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::Look>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::Processor>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::Transform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::AllocationTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::CDLTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::ColorSpaceTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::DisplayTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::ExponentTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::FileTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::GroupTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::LogTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::LookTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::MatrixTransform>;
+-    template <> class TypedKeyNotFound<OCIO_NAMESPACE::TruelightTransform>;
+-}
+-#pragma GCC visibility pop
+-
+-#endif
+-
+-#ifdef WIN32
+-#pragma warning( push )
+-#pragma warning( disable: 4146 )
+-#endif
+-
+ #include <yaml-cpp/yaml.h>
+-
+-#ifdef WIN32
+-#pragma warning( pop )
+-#endif
+ 
+ #include "Logging.h"
+ #include "MathUtils.h"

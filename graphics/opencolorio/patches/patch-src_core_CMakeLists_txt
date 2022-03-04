@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_core_CMakeLists_txt,v 1.3 2022/03/04 22:33:35 sthen Exp $
+
+Strip -Werror to fix sparc64 build
+
+Index: src/core/CMakeLists.txt
+--- src/core/CMakeLists.txt.orig
++++ src/core/CMakeLists.txt
+@@ -24,7 +24,7 @@ if(WIN32)
+         set(EXTERNAL_COMPILE_FLAGS "${EXTERNAL_COMPILE_FLAGS} /WX")
+     endif()
+ else()
+-    set(EXTERNAL_COMPILE_FLAGS "${EXTERNAL_COMPILE_FLAGS} -Werror")
++    set(EXTERNAL_COMPILE_FLAGS "${EXTERNAL_COMPILE_FLAGS}")
+ endif()
+ 
+ # SHARED

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_pyglue_CMakeLists_txt,v 1.3 2022/03/04 22:33:35 sthen Exp $
+
+Strip -Werror to fix sparc64 build
+
+Index: src/pyglue/CMakeLists.txt
+--- src/pyglue/CMakeLists.txt.orig
++++ src/pyglue/CMakeLists.txt
+@@ -23,7 +23,7 @@ endif()
+ # Process all warnings as errors
+ # Unfortunately Windows still has a warning
+ if(UNIX)
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+ endif()
+ 
+ find_package(PythonLibs)
