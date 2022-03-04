@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/06 17:17:25 ajacoutot Exp $
 @bin bin/exo
