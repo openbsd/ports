@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:47 sthen Exp $
 @pkgpath devel/py-smmap
 lib/python${MODPY_VERSION}/site-packages/smmap/
+lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/smmap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/smmap/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}buf.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}exc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}mman.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smmap/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/smmap/buf.py
-lib/python${MODPY_VERSION}/site-packages/smmap/exc.py
 lib/python${MODPY_VERSION}/site-packages/smmap/mman.py
 lib/python${MODPY_VERSION}/site-packages/smmap/test/
 lib/python${MODPY_VERSION}/site-packages/smmap/test/__init__.py
@@ -26,9 +29,3 @@ lib/python${MODPY_VERSION}/site-packages/smmap/test/test_mman.py
 lib/python${MODPY_VERSION}/site-packages/smmap/test/test_tutorial.py
 lib/python${MODPY_VERSION}/site-packages/smmap/test/test_util.py
 lib/python${MODPY_VERSION}/site-packages/smmap/util.py
-lib/python${MODPY_VERSION}/site-packages/smmap2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/smmap2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/smmap2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/smmap2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/smmap2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/smmap2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
