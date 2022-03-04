@@ -1,0 +1,53 @@
+Index: xdelta3/Makefile.am
+--- xdelta3/Makefile.am.orig
++++ xdelta3/Makefile.am
+@@ -1,7 +1,7 @@
+ ACLOCAL_AMFLAGS = -I m4
+ 
+ bin_PROGRAMS = xdelta3
+-noinst_PROGRAMS = xdelta3regtest xdelta3decode
++noinst_PROGRAMS = xdelta3decode
+ 
+ export AFL_HARDEN
+ 
+@@ -25,18 +25,6 @@ xdelta3_SOURCES = $(common_SOURCES) xdelta3.c
+ 
+ xdelta3decode_SOURCES = $(common_SOURCES) xdelta3.c
+ 
+-xdelta3regtest_SOURCES = $(common_SOURCES) \
+-	testing/cmp.h \
+-	testing/delta.h \
+-	testing/file.h \
+-	testing/modify.h \
+-	testing/random.h \
+-	testing/regtest.cc \
+-	testing/regtest_c.c \
+-	testing/segment.h \
+-	testing/sizes.h \
+-	testing/test.h
+-
+ # Note: for extra sanity checks, enable -Wconversion. Note there
+ # are a lot of false positives.
+ WFLAGS = -Wall -Wshadow -fno-builtin -Wextra -Wsign-compare \
+@@ -74,12 +62,6 @@ xdelta3decode_CFLAGS = \
+ 	-DEXTERNAL_COMPRESSION=0 \
+ 	-DVCDIFF_TOOLS=0
+ 
+-xdelta3regtest_CXXFLAGS = \
+-	$(CXX_WFLAGS) $(common_CFLAGS) -DNOT_MAIN=1 -DXD3_DEBUG=1
+-xdelta3regtest_CFLAGS = \
+-	$(C_WFLAGS) $(common_CFLAGS) -DNOT_MAIN=1 -DXD3_DEBUG=1
+-xdelta3regtest_LDADD = -lm
+-
+ man1_MANS = xdelta3.1
+ 
+ EXTRA_DIST = \
+@@ -108,8 +90,6 @@ EXTRA_DIST = \
+ 	examples/iOS/xdelta3-ios-test/xdelta3-ios-test/main.m \
+ 	examples/iOS/xdelta3-ios-test/xdelta3-ios-test/xdelta3-ios-test-Info.plist \
+ 	examples/iOS/xdelta3-ios-test/xdelta3-ios-test/xdelta3-ios-test-Prefix.pch \
+-	testing/xdelta3-regtest.py \
+-	testing/xdelta3-test.py \
+ 	xdelta3.1 \
+ 	xdelta3.i \
+ 	xdelta3.vcxproj \

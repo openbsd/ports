@@ -1,0 +1,2 @@
+Xdelta version 3 is a command-line tool for delta compression using
+VCDIFF/RFC 3284 streams.
