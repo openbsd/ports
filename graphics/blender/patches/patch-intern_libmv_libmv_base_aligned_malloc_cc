@@ -1,7 +1,7 @@
-$OpenBSD: patch-intern_libmv_libmv_base_aligned_malloc_cc,v 1.2 2020/11/29 19:57:01 sthen Exp $
+$OpenBSD: patch-intern_libmv_libmv_base_aligned_malloc_cc,v 1.3 2022/03/05 14:35:47 sthen Exp $
 Index: intern/libmv/libmv/base/aligned_malloc.cc
---- intern/libmv/libmv/base/aligned_malloc.cc.orig	Wed Sep  2 16:39:54 2020
-+++ intern/libmv/libmv/base/aligned_malloc.cc	Sun Nov 22 13:12:51 2020
+--- intern/libmv/libmv/base/aligned_malloc.cc.orig
++++ intern/libmv/libmv/base/aligned_malloc.cc
 @@ -21,7 +21,8 @@
  #include "libmv/base/aligned_malloc.h"
  #include "libmv/logging/logging.h"
@@ -12,13 +12,12 @@ Index: intern/libmv/libmv/base/aligned_malloc.cc
  // Needed for memalign on Linux and _aligned_alloc on Windows.
  #  ifdef FREE_WINDOWS
  /* make sure _aligned_malloc is included */
-@@ -44,7 +45,8 @@ namespace libmv {
- void *aligned_malloc(int size, int alignment) {
+@@ -44,7 +45,7 @@ namespace libmv {
+ void* aligned_malloc(int size, int alignment) {
  #ifdef _WIN32
    return _aligned_malloc(size, alignment);
 -#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__)
-+#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__) || \
-+      defined(__OpenBSD__)
-   void *result;
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__APPLE__) || defined(__OpenBSD__)
+   void* result;
  
    if (posix_memalign(&result, alignment, size)) {

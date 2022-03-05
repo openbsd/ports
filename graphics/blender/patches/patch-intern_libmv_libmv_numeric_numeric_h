@@ -1,14 +1,14 @@
-$OpenBSD: patch-intern_libmv_libmv_numeric_numeric_h,v 1.3 2020/11/29 19:57:01 sthen Exp $
+$OpenBSD: patch-intern_libmv_libmv_numeric_numeric_h,v 1.4 2022/03/05 14:35:47 sthen Exp $
 
 Index: intern/libmv/libmv/numeric/numeric.h
---- intern/libmv/libmv/numeric/numeric.h.orig	Wed Sep  2 16:39:54 2020
-+++ intern/libmv/libmv/numeric/numeric.h	Sun Nov 22 13:12:51 2020
-@@ -36,7 +36,7 @@
+--- intern/libmv/libmv/numeric/numeric.h.orig
++++ intern/libmv/libmv/numeric/numeric.h
+@@ -35,7 +35,7 @@
+ 
  #if !defined(__MINGW64__)
- #  if defined(_WIN32) || defined(__APPLE__) || \
-       defined(__FreeBSD__) || defined(__NetBSD__) || \
--      defined(__HAIKU__)
-+      defined(__HAIKU__) || defined(__OpenBSD__)
- inline void sincos(double x, double *sinx, double *cosx) {
+ #  if defined(_WIN32) || defined(__APPLE__) || defined(__FreeBSD__) ||         \
+-      defined(__NetBSD__) || defined(__HAIKU__)
++      defined(__NetBSD__) || defined(__HAIKU__) || defined(__OpenBSD__)
+ inline void sincos(double x, double* sinx, double* cosx) {
    *sinx = sin(x);
    *cosx = cos(x);

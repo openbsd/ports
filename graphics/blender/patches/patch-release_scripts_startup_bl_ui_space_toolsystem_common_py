@@ -1,15 +1,15 @@
-$OpenBSD: patch-release_scripts_startup_bl_ui_space_toolsystem_common_py,v 1.1 2020/11/29 19:57:01 sthen Exp $
+$OpenBSD: patch-release_scripts_startup_bl_ui_space_toolsystem_common_py,v 1.2 2022/03/05 14:35:47 sthen Exp $
 
 Fix path to icons (XXX)
 
 Index: release/scripts/startup/bl_ui/space_toolsystem_common.py
---- release/scripts/startup/bl_ui/space_toolsystem_common.py.orig	Tue Sep 22 19:36:29 2020
-+++ release/scripts/startup/bl_ui/space_toolsystem_common.py	Sun Nov 22 13:12:51 2020
-@@ -218,8 +218,8 @@ class ToolSelectPanelHelper:
+--- release/scripts/startup/bl_ui/space_toolsystem_common.py.orig
++++ release/scripts/startup/bl_ui/space_toolsystem_common.py
+@@ -252,8 +252,8 @@ class ToolSelectPanelHelper:
              assert(type(icon_name) is str)
              icon_value = _icon_cache.get(icon_name)
              if icon_value is None:
--                dirname = bpy.utils.system_resource('DATAFILES', "icons")
+-                dirname = bpy.utils.system_resource('DATAFILES', path="icons")
 -                filename = os.path.join(dirname, icon_name + ".dat")
 +                dirname = os.environ['BLENDER_SYSTEM_DATAFILES']
 +                filename = os.path.join(dirname, "icons", icon_name + ".dat")

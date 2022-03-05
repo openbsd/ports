@@ -1,0 +1,13 @@
+$OpenBSD: patch-source_blender_blenlib_BLI_filereader_h,v 1.1 2022/03/05 14:35:47 sthen Exp $
+
+--- source/blender/blenlib/BLI_filereader.h.orig	Thu Mar  3 11:48:02 2022
++++ source/blender/blenlib/BLI_filereader.h	Thu Mar  3 11:48:30 2022
+@@ -33,7 +33,7 @@
+ #include "BLI_compiler_attrs.h"
+ #include "BLI_utildefines.h"
+ 
+-#if defined(_MSC_VER) || defined(__APPLE__) || defined(__HAIKU__) || defined(__NetBSD__)
++#if defined(_MSC_VER) || defined(__APPLE__) || defined(__HAIKU__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ typedef int64_t off64_t;
+ #endif
+ 
