@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/26 22:58:22 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2022/03/05 09:36:05 landry Exp $
 
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_EGG_VERSION =	1.8.0
+MODPY_EGG_VERSION =	1.8.1.post1
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	Toblerity
 GH_PROJECT =	Shapely
-DISTNAME =	py-shapely-${MODPY_EGG_VERSION}
+DISTNAME =	py-shapely-${MODPY_EGG_VERSION:S/.post/pl/}
 
 CATEGORIES =	geo
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
+WRKDIST =	${WRKDIR}/${GH_PROJECT:L}-${GH_TAGNAME}
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes

@@ -1,9 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.5 2020/10/09 16:25:21 landry Exp $
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -365,7 +365,7 @@ except ImportError:
+@@ -339,7 +339,7 @@ except ImportError:
  try:
      if force_cython:
          log.info("Updating C extension with Cython.")
