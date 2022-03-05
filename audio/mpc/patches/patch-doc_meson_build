@@ -1,12 +1,10 @@
-$OpenBSD: patch-doc_meson_build,v 1.4 2019/08/06 17:16:13 landry Exp $
-
 only build manpage, and install it in correct dir
 
 Index: doc/meson.build
 --- doc/meson.build.orig
 +++ doc/meson.build
-@@ -1,19 +1,9 @@
- custom_target(
+@@ -1,31 +1,9 @@
+-sphinx_output = custom_target(
 -  'HTML documentation',
 -  output: 'html',
 -  input: ['index.rst', 'conf.py'],
@@ -14,6 +12,18 @@ Index: doc/meson.build
 -  build_by_default: true,
 -  install: true,
 -  install_dir: join_paths(get_option('datadir'), 'doc', meson.project_name()),
+-)
+-
+ custom_target(
+-  'upload',
+-  input: sphinx_output,
+-  output: 'upload',
+-  build_always_stale: true,
+-  command: [
+-    'rsync', '-vpruz', '--delete', '@INPUT@',
+-    'www.musicpd.org:/var/www/mpd/doc/mpc/',
+-    '--chmod=a+rX',
+-  ],
 -)
 -
 -custom_target(
