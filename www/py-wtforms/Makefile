@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2022/03/04 21:44:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2022/03/05 16:36:35 ajacoutot Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
@@ -19,6 +19,7 @@ MODPY_PI=		Yes
 FLAVORS=		python3
 FLAVOR=			python3
 
+BUILD_DEPENDS=		devel/py-babel${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR}
 
 MODPY_SETUPTOOLS=	Yes
