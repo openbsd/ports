@@ -1,8 +1,7 @@
-$OpenBSD: patch-rijndael_hpp,v 1.4 2021/11/20 13:40:18 tb Exp $
 Index: rijndael.hpp
 --- rijndael.hpp.orig
 +++ rijndael.hpp
-@@ -16,6 +16,9 @@
+@@ -12,6 +12,9 @@
  class Rijndael
  { 
    private:
@@ -12,7 +11,7 @@ Index: rijndael.hpp
  #ifdef USE_SSE
      void blockEncryptSSE(const byte *input,size_t numBlocks,byte *outBuffer);
      void blockDecryptSSE(const byte *input, size_t numBlocks, byte *outBuffer);
-@@ -25,6 +28,7 @@ class Rijndael
+@@ -21,6 +24,7 @@ class Rijndael
      void keySched(byte key[_MAX_KEY_COLUMNS][4]);
      void keyEncToDec();
      void GenerateTables();
@@ -20,7 +19,7 @@ Index: rijndael.hpp
  
      // RAR always uses CBC, but we may need to turn it off when calling
      // this code from other archive formats with CTR and other modes.
-@@ -35,6 +39,9 @@ class Rijndael
+@@ -31,6 +35,9 @@ class Rijndael
      byte     m_expandedKey[_MAX_ROUNDS+1][4][4];
    public:
      Rijndael();

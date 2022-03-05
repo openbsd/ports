@@ -1,8 +1,7 @@
-$OpenBSD: patch-os_hpp,v 1.17 2020/04/06 16:10:11 naddy Exp $
 Index: os.hpp
 --- os.hpp.orig
 +++ os.hpp
-@@ -135,6 +135,7 @@
+@@ -137,6 +137,7 @@
  
  #define NM  2048
  
@@ -10,7 +9,7 @@ Index: os.hpp
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/stat.h>
-@@ -166,6 +167,10 @@
+@@ -168,6 +169,10 @@
  #include <locale.h>
  
  
@@ -21,7 +20,7 @@ Index: os.hpp
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
-@@ -261,7 +266,7 @@
+@@ -264,7 +269,7 @@
    #endif
  #endif
  

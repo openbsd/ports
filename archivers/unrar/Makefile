@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.85 2021/11/20 13:40:18 tb Exp $
-
 COMMENT=	extract, list, and test RAR archives
 
 # NB: The software version is different from the distfile version.
@@ -9,11 +7,10 @@ COMMENT=	extract, list, and test RAR archives
 # to 0 for a non-beta release, e.g., "5.00 beta 8" was succeeded
 # by "5.00".
 
-PKGNAME=	unrar-6.02
+PKGNAME=	unrar-6.10
 EPOCH=		2
-DISTNAME=	unrarsrc-6.0.7
+DISTNAME=	unrarsrc-6.1.4
 CATEGORIES=	archivers
-REVISION=	0
 
 HOMEPAGE=	https://www.rarlab.com/
 
@@ -32,6 +29,8 @@ WRKDIST=	${WRKDIR}/unrar
 
 MAKE_FILE=	makefile
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" STRIP=:
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/unrar ${PREFIX}/bin
