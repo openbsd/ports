@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/06/02 03:55:00 landry Exp $
 @bin bin/certutil
 @bin bin/cmsutil
 @bin bin/crlutil
