@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/05/16 14:09:10 ajacoutot Exp $
 @newgroup _consul-template:781
 @newuser _consul-template:781:_consul-template:daemon:Consul Template user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/consul_template
