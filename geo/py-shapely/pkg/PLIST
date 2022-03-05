@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/11/23 09:47:54 landry Exp $
 @conflict py-shapely-*
 @pkgpath geo/py-shapely
 lib/python${MODPY_VERSION}/site-packages/Shapely-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -89,7 +88,6 @@ lib/python${MODPY_VERSION}/site-packages/shapely/speedups/
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shapely/speedups/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/shapely/speedups/_speedups.c
 @so lib/python${MODPY_VERSION}/site-packages/shapely/speedups/_speedups.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/shapely/speedups/_speedups.pyx
 lib/python${MODPY_VERSION}/site-packages/shapely/strtree.py
