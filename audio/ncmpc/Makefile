@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2021/02/20 14:40:40 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2022/03/05 09:32:53 landry Exp $
 
 COMMENT=		curses based frontend for mpd
 
-VER=			0.45
+VER=			0.46
 DISTNAME=		ncmpc-${VER}
 EPOCH=			0
 CATEGORIES=		audio
@@ -13,7 +13,7 @@ HOMEPAGE=		https://www.musicpd.org/clients/ncmpc/
 PERMIT_PACKAGE=	Yes
 
 # make sure to regen WANTLIB on ld.lld arches (-Wl,--as-needed)
-WANTLIB=		c intl m mpdclient>=1 ${COMPILER_LIBCXX} curses pcre
+WANTLIB=		c intl m mpdclient>=1 ${COMPILER_LIBCXX} curses pcre2-8
 
 MASTER_SITES=		https://www.musicpd.org/download/ncmpc/${VER:R}/
 
@@ -29,8 +29,8 @@ BUILD_DEPENDS=		devel/boost \
 			textproc/py-sphinx,python3
 
 LIB_DEPENDS=		devel/gettext,-runtime \
-			devel/pcre \
-			audio/libmpdclient>=2.4
+			devel/pcre2 \
+			audio/libmpdclient>=2.20
 
 CONFIGURE_ARGS=		-Dlirc=disabled \
 			-Dhtml_manual=false \
