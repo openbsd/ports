@@ -1521,6 +1521,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/2018-11-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/2018-11-05/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/2018-11-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/transfer/2018-11-05/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/translate/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/translate/2017-07-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/translate/2017-07-01/examples-1.json
