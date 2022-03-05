@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.68 2022/01/06 15:41:57 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-m4_curl-compilers_m4,v 1.3 2021/07/21 19:17:02 naddy Exp $
-
 The curl configure script wants to take control of the compiler
 flags for optimization.  The actual interactions are more complex,
 but the gist is that the flags are stripped from CFLAGS, and if
@@ -11,7 +9,7 @@ Do not override optimization flags in CFLAGS.
 Index: m4/curl-compilers.m4
 --- m4/curl-compilers.m4.orig
 +++ m4/curl-compilers.m4
-@@ -731,7 +731,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
+@@ -691,7 +691,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
      tmp_options=""
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
