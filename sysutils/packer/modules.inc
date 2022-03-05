@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.2 2022/02/03 10:34:14 ajacoutot Exp $
+# $OpenBSD: modules.inc,v 1.3 2022/03/05 10:04:07 ajacoutot Exp $
 
 MODGO_MODULES =	\
 	bazil.org/fuse							 v0.0.0-20160811212531-371fbbdaa898 \
@@ -222,7 +222,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-getter					 v1.4.1 \
 	github.com/hashicorp/go-getter/gcs/v2				 v2.0.0-20200604122502-a6995fa1edad \
 	github.com/hashicorp/go-getter/s3/v2				 v2.0.0-20200604122502-a6995fa1edad \
-	github.com/hashicorp/go-getter/v2				 v2.0.0 \
+	github.com/hashicorp/go-getter/v2				 v2.0.1 \
 	github.com/hashicorp/go-hclog					 v0.16.2 \
 	github.com/hashicorp/go-immutable-radix				 v1.3.1 \
 	github.com/hashicorp/go-kms-wrapping/entropy			 v0.1.0 \
@@ -236,7 +236,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-sockaddr				 v1.0.2 \
 	github.com/hashicorp/go-syslog					 v1.0.0 \
 	github.com/hashicorp/go-uuid					 v1.0.2 \
-	github.com/hashicorp/go-version					 v1.3.0 \
+	github.com/hashicorp/go-version					 v1.4.0 \
 	github.com/hashicorp/go.net					 v0.0.1 \
 	github.com/hashicorp/golang-lru					 v0.5.4 \
 	github.com/hashicorp/hcl					 v1.0.0 \
@@ -246,9 +246,9 @@ MODGO_MODULES =	\
 	github.com/hashicorp/mdns					 v1.0.1 \
 	github.com/hashicorp/memberlist					 v0.2.2 \
 	github.com/hashicorp/packer-plugin-alicloud			 v1.0.1 \
-	github.com/hashicorp/packer-plugin-amazon			 v1.0.6 \
+	github.com/hashicorp/packer-plugin-amazon			 v1.0.8 \
 	github.com/hashicorp/packer-plugin-ansible			 v1.0.1 \
-	github.com/hashicorp/packer-plugin-azure			 v1.0.5 \
+	github.com/hashicorp/packer-plugin-azure			 v1.0.6 \
 	github.com/hashicorp/packer-plugin-chef				 v1.0.2 \
 	github.com/hashicorp/packer-plugin-cloudstack			 v1.0.0 \
 	github.com/hashicorp/packer-plugin-converge			 v1.0.1 \
@@ -257,7 +257,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/packer-plugin-googlecompute		 v1.0.9 \
 	github.com/hashicorp/packer-plugin-hcloud			 v1.0.2 \
 	github.com/hashicorp/packer-plugin-hyperone			 v1.0.0 \
-	github.com/hashicorp/packer-plugin-hyperv			 v1.0.1 \
+	github.com/hashicorp/packer-plugin-hyperv			 v1.0.2 \
 	github.com/hashicorp/packer-plugin-inspec			 v1.0.0 \
 	github.com/hashicorp/packer-plugin-jdcloud			 v1.0.0 \
 	github.com/hashicorp/packer-plugin-linode			 v1.0.1 \
@@ -272,16 +272,16 @@ MODGO_MODULES =	\
 	github.com/hashicorp/packer-plugin-profitbricks			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-proxmox			 v1.0.4 \
 	github.com/hashicorp/packer-plugin-puppet			 v1.0.1 \
-	github.com/hashicorp/packer-plugin-qemu				 v1.0.1 \
+	github.com/hashicorp/packer-plugin-qemu				 v1.0.2 \
 	github.com/hashicorp/packer-plugin-salt				 v1.0.0 \
-	github.com/hashicorp/packer-plugin-sdk				 v0.2.11 \
+	github.com/hashicorp/packer-plugin-sdk				 v0.2.12-0.20220216103740-f7d4bf877a45 \
 	github.com/hashicorp/packer-plugin-tencentcloud			 v1.0.3 \
 	github.com/hashicorp/packer-plugin-triton			 v1.0.0 \
 	github.com/hashicorp/packer-plugin-ucloud			 v1.0.0 \
 	github.com/hashicorp/packer-plugin-vagrant			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-virtualbox			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-vmware			 v1.0.5 \
-	github.com/hashicorp/packer-plugin-vsphere			 v1.0.2 \
+	github.com/hashicorp/packer-plugin-vsphere			 v1.0.3 \
 	github.com/hashicorp/packer-plugin-yandex			 v1.0.3 \
 	github.com/hashicorp/serf					 v0.9.5 \
 	github.com/hashicorp/vault/api					 v1.1.1 \
@@ -440,19 +440,23 @@ MODGO_MODULES =	\
 	github.com/vmware/vmw-guestinfo					 v0.0.0-20170707015358-25eff159a728 \
 	github.com/xanzy/go-cloudstack					 v2.4.1+incompatible \
 	github.com/xanzy/ssh-agent					 v0.3.0 \
+	github.com/xdg-go/pbkdf2					 v1.0.0 \
+	github.com/xdg-go/scram						 v1.0.2 \
+	github.com/xdg-go/stringprep					 v1.0.2 \
 	github.com/xdg/scram						 v0.0.0-20180814205039-7eeb5667e42c \
 	github.com/xdg/stringprep					 v0.0.0-20180714160509-73f8eece6fdc \
 	github.com/xiang90/probing					 v0.0.0-20190116061207-43a291ad63a2 \
 	github.com/xordataexchange/crypt				 v0.0.3-0.20170626215501-b2862e3d0a77 \
 	github.com/yandex-cloud/go-genproto				 v0.0.0-20211202135052-789603780fb2 \
 	github.com/yandex-cloud/go-sdk					 v0.0.0-20211206101223-7c4e7926bf53 \
+	github.com/youmark/pkcs8					 v0.0.0-20181117223130-1be2e3e5546d \
 	github.com/yuin/goldmark					 v1.3.5 \
 	github.com/yusufpapurcu/wmi					 v1.2.2 \
 	github.com/zclconf/go-cty					 v1.10.0 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.1 \
 	go.etcd.io/bbolt						 v1.3.2 \
-	go.mongodb.org/mongo-driver					 v1.4.6 \
+	go.mongodb.org/mongo-driver					 v1.5.1 \
 	go.opencensus.io						 v0.23.0 \
 	go.opentelemetry.io/proto/otlp					 v0.7.0 \
 	go.uber.org/atomic						 v1.6.0 \
@@ -790,6 +794,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/errwrap				 v1.0.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.1 \
+	github.com/hashicorp/go-getter/v2			 v2.0.0 \
 	github.com/hashicorp/go-getter/v2			 v2.0.0-20200511090339-3107ec4af37a \
 	github.com/hashicorp/go-hclog				 v0.0.0-20180709165350-ff2cf002a8dd \
 	github.com/hashicorp/go-hclog				 v0.12.0 \
@@ -813,6 +818,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-version				 v1.1.0 \
 	github.com/hashicorp/go-version				 v1.2.0 \
 	github.com/hashicorp/go-version				 v1.2.1 \
+	github.com/hashicorp/go-version				 v1.3.0 \
 	github.com/hashicorp/golang-lru				 v0.5.0 \
 	github.com/hashicorp/golang-lru				 v0.5.1 \
 	github.com/hashicorp/golang-lru				 v0.5.3 \
@@ -820,6 +826,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/hcl/v2				 v2.10.1 \
 	github.com/hashicorp/mdns				 v1.0.0 \
 	github.com/hashicorp/memberlist				 v0.1.3 \
+	github.com/hashicorp/packer-plugin-sdk			 v0.2.11 \
 	github.com/hashicorp/packer-plugin-sdk			 v0.2.3 \
 	github.com/hashicorp/packer-plugin-sdk			 v0.2.5 \
 	github.com/hashicorp/packer-plugin-sdk			 v0.2.7 \
@@ -974,6 +981,7 @@ MODGO_MODFILES =	\
 	go.mongodb.org/mongo-driver				 v1.3.4 \
 	go.mongodb.org/mongo-driver				 v1.4.3 \
 	go.mongodb.org/mongo-driver				 v1.4.4 \
+	go.mongodb.org/mongo-driver				 v1.4.6 \
 	go.opencensus.io					 v0.21.0 \
 	go.opencensus.io					 v0.22.0 \
 	go.opencensus.io					 v0.22.2 \
@@ -1001,6 +1009,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto					 v0.0.0-20191202143827-86a70503ff7e \
 	golang.org/x/crypto					 v0.0.0-20191206172530-e9b2fee46413 \
+	golang.org/x/crypto					 v0.0.0-20200302210943-78000ba7a073 \
 	golang.org/x/crypto					 v0.0.0-20200422194213-44a606286825 \
 	golang.org/x/crypto					 v0.0.0-20200604202706-70a84ac30bf9 \
 	golang.org/x/crypto					 v0.0.0-20200622213623-75b288015ac9 \

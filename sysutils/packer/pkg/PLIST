@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/04/28 10:09:22 ajacoutot Exp $
 @bin bin/packer
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_packer
