@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST-curl,v 1.1 2021/12/18 22:28:55 sthen Exp $
+@comment $OpenBSD: PLIST-curl,v 1.2 2022/03/05 14:23:43 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-curl-${PHP_PKGSPEC}
+@conflict php->8.1,<8.1.3p0
 @so lib/php-${PV}/modules/curl.so
 share/examples/php-${PV}/curl.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini
+share/php-${PV}/include/ext/curl/
+share/php-${PV}/include/ext/curl/php_curl.h

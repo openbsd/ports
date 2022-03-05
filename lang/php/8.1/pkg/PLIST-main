@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2022/01/23 13:50:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2022/03/05 14:23:43 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
@@ -160,8 +160,6 @@ share/php-${PV}/include/Zend/zend_vm_trace_map.h
 share/php-${PV}/include/Zend/zend_weakrefs.h
 share/php-${PV}/include/Zend/zend_weakrefs_arginfo.h
 share/php-${PV}/include/ext/
-share/php-${PV}/include/ext/curl/
-share/php-${PV}/include/ext/curl/php_curl.h
 share/php-${PV}/include/ext/date/
 share/php-${PV}/include/ext/date/lib/
 share/php-${PV}/include/ext/date/lib/timelib.h
@@ -171,7 +169,6 @@ share/php-${PV}/include/ext/dom/
 share/php-${PV}/include/ext/dom/xml_common.h
 share/php-${PV}/include/ext/filter/
 share/php-${PV}/include/ext/filter/php_filter.h
-share/php-${PV}/include/ext/gd/gd_arginfo.h
 share/php-${PV}/include/ext/hash/
 share/php-${PV}/include/ext/hash/php_hash.h
 share/php-${PV}/include/ext/hash/php_hash_adler32.h
