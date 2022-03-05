@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/08/10 13:36:32 kirby Exp $
 bin/seaf-cli
 @bin bin/seaf-daemon
 include/seafile/
