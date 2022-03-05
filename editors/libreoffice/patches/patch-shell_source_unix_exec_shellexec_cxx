@@ -1,9 +1,7 @@
-$OpenBSD: patch-shell_source_unix_exec_shellexec_cxx,v 1.17 2022/02/03 20:09:24 robert Exp $
-
 Index: shell/source/unix/exec/shellexec.cxx
 --- shell/source/unix/exec/shellexec.cxx.orig
 +++ shell/source/unix/exec/shellexec.cxx
-@@ -212,7 +212,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
+@@ -216,7 +216,7 @@ void SAL_CALL ShellExec::execute( const OUString& aCom
      }
  
      OString cmd =
