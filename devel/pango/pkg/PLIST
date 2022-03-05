@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.49 2022/02/10 10:09:42 ajacoutot Exp $
 @bin bin/pango-list
 @bin bin/pango-segmentation
 @bin bin/pango-view
