@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2022/03/04 21:50:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2022/03/05 08:43:34 sthen Exp $
 
 COMMENT =		WSGI utility collection
 
@@ -19,10 +19,8 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_PI =		Yes
-WRKDIST =		${WRKDIR}/${DISTNAME:L}
-
 MODPY_SETUPTOOLS =	Yes
+MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 # verbose for now, it has been seen hanging at times
 MODPY_PYTEST_ARGS =	-v
