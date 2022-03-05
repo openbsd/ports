@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/05/13 08:18:50 ajacoutot Exp $
 @conflict gnome-tweak-tool-*
 @pkgpath x11/gnome/tweak-tool
 bin/gnome-tweaks
