@@ -1,0 +1,13 @@
+#!/bin/ksh
+#
+# $OpenBSD: nostromo.rc,v 1.1 2022/03/06 22:03:10 mglocker Exp $
+
+daemon="${TRUEPREFIX}/sbin/nhttpd"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	install -d -o _nostromo /var/run/nostromo
+}
+
+rc_cmd $1

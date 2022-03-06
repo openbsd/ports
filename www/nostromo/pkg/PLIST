@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/06/23 22:50:30 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2022/03/06 22:03:10 mglocker Exp $
 @newgroup _nostromo:536
 @newuser _nostromo:536:_nostromo:daemon:Nostromo Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/nostromo
 @man man/man8/nhttpd.8
 @bin sbin/crypt
 @bin sbin/nhttpd
