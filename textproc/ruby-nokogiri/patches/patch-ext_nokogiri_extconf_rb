@@ -1,0 +1,16 @@
+$OpenBSD: patch-ext_nokogiri_extconf_rb,v 1.3 2022/03/06 22:42:07 jeremy Exp $
+
+Add -I flag position to work with already installed gumbo.h.
+
+Index: ext/nokogiri/extconf.rb
+--- ext/nokogiri/extconf.rb.orig
++++ ext/nokogiri/extconf.rb
+@@ -954,7 +954,7 @@ libgumbo_recipe = process_recipe("libgumbo", "1.0.0-no
+     end
+   end
+ end
+-append_cppflags("-I#{File.join(libgumbo_recipe.path, "include")}")
++$CPPFLAGS = "-I#{File.join(libgumbo_recipe.path, "include")} #{$CPPFLAGS}".dup
+ $libs = $libs + " " + File.join(libgumbo_recipe.path, "lib", "libgumbo.a")
+ $LIBPATH = $LIBPATH | [File.join(libgumbo_recipe.path, "lib")]
+ ensure_func("gumbo_parse_with_options", "gumbo.h")
