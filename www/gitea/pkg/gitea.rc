@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: gitea.rc,v 1.6 2021/01/17 21:07:41 pvk Exp $
 
 daemon="${TRUEPREFIX}/sbin/gitea"
 daemon_user="_gitea"

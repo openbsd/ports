@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.22 2022/02/03 11:03:13 pvk Exp $
 @newgroup _gitea:787
 @newuser _gitea:787:_gitea:daemon:Gitea Account:/var/gitea:/bin/sh
 @rcscript ${RCDIR}/gitea
