@@ -1,2 +1,4 @@
 SHA256 (tdesktop-3.5.5-full.tar.gz) = OcSj7mGEVybiOpsyEnFiI2sl/3G47001RAGumvyLJAY=
+SHA256 (tdesktop-lib_base-fix-restart-c1c95ec.patch) = kk1Ua4oWibgs3jZpORe1pNjEA7cDbgfG9KWXtY8j1iQ=
 SIZE (tdesktop-3.5.5-full.tar.gz) = 41218206
+SIZE (tdesktop-lib_base-fix-restart-c1c95ec.patch) = 2030

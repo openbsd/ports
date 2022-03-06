@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2022/03/06 16:50:40 kn Exp $
+# $OpenBSD: Makefile,v 1.20 2022/03/06 23:01:27 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -8,12 +8,22 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			3.5.5
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=beta}
 CATEGORIES =		net
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
+
+MASTER_SITES0 =		https://github.com/desktop-app/lib_base/commit/
+# Pending "Fix restarting tdesktop on *BSD"
+# https://github.com/desktop-app/lib_base/pull/114
+PATCHFILES +=		tdesktop-lib_base-fix-restart-{}c1c95ec.patch:0
+PATCH_CASES +=		tdesktop-lib_base-*) ${PATCH} ${PATCH_DIST_ARGS} \
+			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
+
+PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -37,7 +47,7 @@ CFLAGS +=		-Wno-unused-command-line-argument
 CXXFLAGS +=		-Wno-unused-command-line-argument
 
 # precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
-# CCACHE_ENV		+= CCACHE_SLOPPINESS=pch_defines,time_macros
+# CCACHE_ENV +=		CCACHE_SLOPPINESS=pch_defines,time_macros
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -75,6 +85,10 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_USE_PACKAGED=ON
 # https://github.com/telegramdesktop/tdesktop/issues/17435
 CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
+
+# hardcode path to fix restarts when started via PATH lookup since we have no
+# procfs(5) or sysctl(2) to get an absoloute path to the process image
+CONFIGURE_ARGS +=	-DDESKTOP_APP_EXECUTABLE_PATH_OVERRIDE=/usr/local/bin/telegram-desktop
 
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
