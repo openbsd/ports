@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.29 2022/01/07 10:36:03 rsadowski Exp $
 bin/gphoto2-config
 bin/gphoto2-port-config
 include/gphoto2/
@@ -693,6 +692,7 @@ share/locale/nl/LC_MESSAGES/libgphoto2_port-12.mo
 share/locale/pl/LC_MESSAGES/libgphoto2-6.mo
 share/locale/pl/LC_MESSAGES/libgphoto2_port-12.mo
 share/locale/pt_BR/LC_MESSAGES/libgphoto2_port-12.mo
+share/locale/ro/LC_MESSAGES/libgphoto2_port-12.mo
 share/locale/ru/LC_MESSAGES/libgphoto2-6.mo
 share/locale/ru/LC_MESSAGES/libgphoto2_port-12.mo
 share/locale/sk/LC_MESSAGES/libgphoto2_port-12.mo
