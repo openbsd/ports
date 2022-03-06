@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/30 22:13:47 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2022/03/06 00:54:37 kmos Exp $
+
+BROKEN-sparc64 = uses sse, but fails an assert even without sse
 
 V =		1.0.1
 COMMENT =	third person, 3D physics game
