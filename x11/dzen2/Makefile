@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2022/03/06 18:56:38 chrisz Exp $
 
 COMMENT-main=	general purpose messaging, notification and menu program
 COMMENT-gadgets=gadgets and scripts for dzen2
@@ -7,7 +7,7 @@ GH_COMMIT=		488ab66019f475e35e067646621827c18a879ba1
 GH_ACCOUNT=		robm
 GH_PROJECT=		dzen
 V=			0.9.5
-REVISION=		2
+REVISION=		3
 
 DISTNAME=		dzen2-$V
 PKGNAME-main=		${DISTNAME}
