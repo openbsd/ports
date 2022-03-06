@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT =	client library and CLI for Planet's public API
-#'
-MODPY_EGG_VERSION =	1.4.7
+
+MODPY_EGG_VERSION =	1.4.9
 DISTNAME =	planet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	geo
 
@@ -21,7 +18,8 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 # tests not bundled; test infrastructure left here for manual fetches
-#NO_TEST =	Yes
+# should be included after 1.5.0: https://github.com/planetlabs/planet-client-python/issues/199
+NO_TEST =	Yes
 
 MODPY_PYTEST =	Yes
 RUN_DEPENDS +=	devel/py-click${MODPY_FLAVOR} \
