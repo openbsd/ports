@@ -2,13 +2,10 @@ Below is a README template for use with ports that need further setup or
 configuration to run on OpenBSD. Please keep an eye out for the following
 details:
 - maximum width of 80 characters per column;
-- file must start with the RCS ID;
 - no trailing spaces or newlines;
 - rulers should be the length of the above string.
 
 ---------------------------------------8<---------------------------------------
-$OpenBSD: README.template,v 1.7 2019/05/09 17:45:05 ajacoutot Exp $
-
 +-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------

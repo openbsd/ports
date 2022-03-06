@@ -4,8 +4,6 @@ See rc.subr(8) for more information.
 
 -----------------------------------8<-----------------------------------
 #!/bin/ksh
-#
-# $OpenBSD: rc.template,v 1.13 2021/05/02 09:06:44 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
 #daemon_flags=
