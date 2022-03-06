@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2022/03/06 16:10:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2022/03/06 20:00:39 tb Exp $
 
 COMMENT =		color management library
 
@@ -28,8 +28,9 @@ MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/boost \
-			devel/py-pybind11${MODPY_FLAVOR}
-
+			devel/py-pybind11${MODPY_FLAVOR} \
+			devel/py-setuptools${MODPY_FLAVOR} \
+			devel/py-wheel${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/pystring \
 			devel/yaml-cpp \
 			math/imath
