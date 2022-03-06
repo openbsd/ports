@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: vault.rc,v 1.6 2021/02/27 09:28:51 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/vault server"
 daemon_flags="-config=${SYSCONFDIR}/vault/vault.hcl"

@@ -1,5 +1,3 @@
-# $OpenBSD: vault.hcl,v 1.3 2020/05/01 14:06:44 pvk Exp $
-
 api_addr          = "http://127.0.0.1:8200"
 cluster_addr      = "http://127.0.0.1:8201"
 #cluster_name      = "vault"
