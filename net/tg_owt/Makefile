@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/28 19:05:25 kn Exp $
+# $OpenBSD: Makefile,v 1.15 2022/03/06 16:38:21 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -74,6 +74,9 @@ WANTLIB += usrsctp vpx
 
 # C++17 set below, some components use -std=gnu++20
 COMPILER =		base-clang ports-gcc
+
+# precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
+# CCACHE_ENV +=		CCACHE_SLOPPINESS=pch_defines,time_macros
 
 MODULES =		devel/cmake \
 			lang/python

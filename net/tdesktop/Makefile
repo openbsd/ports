@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2022/03/05 18:22:29 kn Exp $
+# $OpenBSD: Makefile,v 1.18 2022/03/06 16:38:21 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -37,7 +37,7 @@ CFLAGS +=		-Wno-unused-command-line-argument
 CXXFLAGS +=		-Wno-unused-command-line-argument
 
 # precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
-# CCACHE_ENV		+= CCACHE_SLOPPINESS=pch_defines
+# CCACHE_ENV		+= CCACHE_SLOPPINESS=pch_defines,time_macros
 
 MODULES =		devel/cmake \
 			lang/python \
