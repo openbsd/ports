@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.124 2021/12/14 07:51:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.125 2022/03/06 10:53:45 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			5.1.4
+V=			5.1.7
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -23,9 +23,9 @@ PERMIT_PACKAGE=	Yes
 COMPILER =		base-clang ports-gcc
 
 WANTLIB=		c courierauth courierauthcommon courierauthsasl courier-unicode
-WANTLIB+=		gdbm iconv intl idn m pcre ${COMPILER_LIBCXX}
+WANTLIB+=		gdbm iconv intl idn m pcre2-8 ${COMPILER_LIBCXX}
 WANTLIB-pop3=		c courierauth courierauthcommon courierauthsasl courier-unicode
-WANTLIB-pop3+=		iconv intl idn m pcre ${COMPILER_LIBCXX}
+WANTLIB-pop3+=		iconv intl idn m pcre2-8 ${COMPILER_LIBCXX}
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
@@ -45,7 +45,7 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 
 LIB_DEPENDS=		mail/courier-authlib \
 			devel/libidn \
-			devel/pcre
+			devel/pcre2
 
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
 SYSCONFDIR=		/etc/courier
