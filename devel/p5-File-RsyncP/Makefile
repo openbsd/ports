@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2022/03/07 11:59:02 sthen Exp $
 
 COMMENT =	perl implementation of an Rsync client
 
 MODULES =	cpan
-DISTNAME =	File-RsyncP-0.74
+DISTNAME =	File-RsyncP-0.76
 CATEGORIES =	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
