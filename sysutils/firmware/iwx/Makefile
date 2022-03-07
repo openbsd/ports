@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/25 15:02:49 stsp Exp $
-
 FW_DRIVER=	iwx
 FW_VER=		20211101
 DISTNAME=	linux-firmware-iwlwifi-fw-2021-11-01

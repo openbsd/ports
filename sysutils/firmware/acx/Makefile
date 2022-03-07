@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/13 16:46:23 danj Exp $
-
 FW_DRIVER=	acx
 FW_VER=		1.4
 DISTNAME=	acx-firmware-${FW_VER}

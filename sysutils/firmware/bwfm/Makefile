@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/05 15:39:39 kurt Exp $
-
 FW_DRIVER=	bwfm
 LINUX_VER=	20200316
 SUP_VER=	1.3

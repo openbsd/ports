@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/11/25 15:02:50 stsp Exp $
 firmware/iwx-Qu-b0-hr-b0-63
 firmware/iwx-Qu-b0-jf-b0-63
 firmware/iwx-Qu-c0-hr-b0-63

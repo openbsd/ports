@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/01/10 09:53:55 jsg Exp $
 firmware/radeon/
 firmware/radeon/ARUBA_me.bin
 firmware/radeon/ARUBA_pfp.bin

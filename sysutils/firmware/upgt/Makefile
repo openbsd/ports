@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 16:46:23 danj Exp $
-
 FW_DRIVER=	upgt
 FW_VER=		1.1
 DISTNAME=	upgt-firmware-${FW_VER}

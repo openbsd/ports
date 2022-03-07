@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/20 06:46:45 jsg Exp $
-
 FW_DRIVER=	radeondrm
 FW_VER=		20201218
 DISTNAME=	linux-firmware-${FW_VER}

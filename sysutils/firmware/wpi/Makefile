@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2015/02/15 06:07:22 daniel Exp $
-
 FW_DRIVER=	wpi
 FW_VER=		3.2
 DISTNAME=	iwlwifi-3945-ucode-15.32.2.9

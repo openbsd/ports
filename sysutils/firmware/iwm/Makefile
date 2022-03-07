@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/09 15:38:07 sthen Exp $
-
 V=		2022-01-11
 FW_DRIVER=	iwm
 FW_VER=		${V:S/-//g}

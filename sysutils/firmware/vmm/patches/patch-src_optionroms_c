@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_optionroms_c,v 1.5 2021/09/01 11:04:21 sthen Exp $
-
 - Needed for SGABIOS option ROM for VMM. Normally these are setup based on
   the QEMU fw_cfg interface (or coreboot CBFS on hardware).
 - Turn off screen-and-debug to prevent double printing of chars.

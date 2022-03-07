@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/03/07 19:13:00 sthen Exp $
-
 # XXX
 #
 # This is a special-purpose directory. Packages produced from this should

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/05/19 11:52:01 stsp Exp $
 firmware/iwm-3160-17
 firmware/iwm-3168-29
 firmware/iwm-7260-17

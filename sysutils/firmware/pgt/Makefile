@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/05/13 16:46:23 danj Exp $
-
 FW_DRIVER=	pgt
 FW_VER=		1.2
 DISTNAME=	pgt-firmware-${FW_VER}

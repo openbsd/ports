@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:34:51 sthen Exp $
-
 FW_DRIVER=	athn
 FW_VER=		1.1
 REVISION=	4

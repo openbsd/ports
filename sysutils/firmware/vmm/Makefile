@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/09/01 11:04:21 sthen Exp $
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 USE_LLD=	No

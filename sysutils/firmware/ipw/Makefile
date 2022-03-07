@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/09 22:48:24 sthen Exp $
-
 FW_DRIVER=	ipw
 FW_VER=		1.3
 DISTNAME=	ipw2100-fw-${FW_VER}

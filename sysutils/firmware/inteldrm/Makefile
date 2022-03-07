@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/28 01:22:41 jsg Exp $
-
 FW_DRIVER=	inteldrm
 FW_VER=		20211027
 DISTNAME=	linux-firmware-${FW_VER}

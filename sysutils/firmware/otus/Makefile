@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/09 22:48:25 sthen Exp $
-
 FW_DRIVER=	otus
 FW_VER=		1.0
 REVISION=	1

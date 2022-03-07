@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/10 22:27:32 jsg Exp $
-
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 

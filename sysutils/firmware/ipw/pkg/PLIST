@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
 @pkgpath sysutils/ipw-firmware
 @pkgpath /home/damien/ipw-firmware
 @ask-update ipw-firmware-<1.3 Make sure you have a matching kernel

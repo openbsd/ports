@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/09 22:48:25 sthen Exp $
-
 FW_DRIVER=	iwi
 FW_VER=		3.1
 DISTNAME=	ipw2200-fw-${FW_VER}

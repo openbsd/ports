@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/13 16:46:23 danj Exp $
-
 FW_DRIVER=	uvideo
 FW_VER=		1.2
 DISTNAME=	uvideo-firmware-${FW_VER}

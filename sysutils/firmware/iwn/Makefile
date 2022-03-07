@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2015/02/15 06:07:22 daniel Exp $
-
 FW_DRIVER=	iwn
 FW_VER=		5.11
 REVISION=	1

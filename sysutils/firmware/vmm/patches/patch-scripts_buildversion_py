@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_buildversion_py,v 1.2 2021/09/01 11:04:21 sthen Exp $
-
 Fixup "clean version" strings for packaging; it only allows this if there's
 a consistent version number detected for all binutils tools, however this
 detection is too simplistic to cope with older binutils (mix of

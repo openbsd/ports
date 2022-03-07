@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:34:51 sthen Exp $
-
 FW_DRIVER =	ulpt
 FW_VER =	1.0
 REVISION =	0

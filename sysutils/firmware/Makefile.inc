@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2022/01/14 14:20:21 espie Exp $
-
 COMMENT ?=	firmware binary images for ${FW_DRIVER}(4) driver
 
 DISTNAME ?=	${FW_DRIVER}-${FW_VER}
