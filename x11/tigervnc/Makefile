@@ -11,6 +11,7 @@ DISTFILES=	${GH_DISTFILE} \
 		xorg-server-1.20.13.tar.xz:0
 
 CATEGORIES=	x11 net
+EPOCH=		0
 
 HOMEPAGE=	https://tigervnc.org/
 
