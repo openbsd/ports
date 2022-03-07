@@ -1,5 +1,3 @@
-" $OpenBSD: openbsd.vim,v 1.1 2013/03/16 22:56:44 sthen Exp $
-
 " Copyright (c) 2007-2008 Sean C. Farley <scf@FreeBSD.org>
 " All rights reserved.
 "

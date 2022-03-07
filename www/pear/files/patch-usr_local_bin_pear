@@ -1,4 +1,3 @@
-$OpenBSD: patch-usr_local_bin_pear,v 1.2 2011/11/16 13:29:13 robert Exp $
 --- usr/local/bin/pear.orig	Wed Nov 16 14:15:00 2011
 +++ usr/local/bin/pear	Wed Nov 16 14:15:49 2011
 @@ -4,10 +4,10 @@

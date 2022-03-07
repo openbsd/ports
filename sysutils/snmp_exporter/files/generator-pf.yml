@@ -1,4 +1,3 @@
-# $OpenBSD: generator-pf.yml,v 1.1 2021/03/23 19:42:28 sthen Exp $
 # Cut-down example of if_mib setup done using SNMPv3 (edit the various
 # $snmpv3-... as needed) and information from OPENBSD-PF-MIB, based on
 # https://yetiops.net/posts/openbsd-snmp-exporter/.

@@ -1,5 +1,4 @@
 #!/bin/ksh
-# $OpenBSD: unifi.sh,v 1.2 2021/12/13 22:15:00 sthen Exp $
 
 # Optionally symlink to things like unifi-discover
 cmd=${0##*unifi-}

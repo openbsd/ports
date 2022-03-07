@@ -1,4 +1,3 @@
-$OpenBSD: patch-var_www_pear_lib_PEAR_Config_php,v 1.3 2016/04/01 18:46:06 sthen Exp $
 --- var/www/pear/lib/PEAR/Config.php.orig	Wed Mar 30 22:25:04 2016
 +++ var/www/pear/lib/PEAR/Config.php	Wed Mar 30 22:25:05 2016
 @@ -79,11 +79,7 @@ if (getenv('PHP_PEAR_HTTP_PROXY')) {

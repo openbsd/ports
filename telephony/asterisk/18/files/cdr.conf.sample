@@ -1,4 +1,3 @@
-; $OpenBSD: cdr.conf.sample,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
 ; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
 
 [general]

@@ -1,5 +1,3 @@
-<!-- $OpenBSD: build.xml,v 1.1.1.1 2012/05/23 15:02:52 sthen Exp $ -->
-
 <project name="BCrypt" default="all" basedir=".">
 
   <!-- Properties -->

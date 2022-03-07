@@ -1,4 +1,3 @@
-$OpenBSD: patch-usr_local_bin_peardev,v 1.2 2011/11/16 13:29:13 robert Exp $
 --- usr/local/bin/peardev.orig	Wed Nov 16 14:16:34 2011
 +++ usr/local/bin/peardev	Wed Nov 16 14:17:14 2011
 @@ -4,10 +4,10 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: console.cf,v 1.2 2014/10/07 22:14:17 sthen Exp $
-
 config * {
 	port 3109;
 }

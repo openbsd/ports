@@ -1,5 +1,4 @@
-#!/bin/sh
-# $OpenBSD: unifi.sh,v 1.1 2021/03/30 10:15:42 sthen Exp $
+#!/bin/ksh
 
 # Optionally symlink to things like unifi-discover
 cmd=${0##*unifi-}
@@ -8,11 +7,11 @@ name=${0##*/}
 
 if [ "$cmd" = "" -o "$cmd" = "discover" -o "$cmd" = "info" ]; then
 	defines="$defines -Dlog4j.configuration=/dev/null"
-fi 
- 
+fi
+
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
 java="$(${LOCALBASE}/bin/javaPathHelper -c unifi)"
- 
+
 # with some filehandle trickery to do substition on stderr
 # 3>&1 - fh3 -> fh1 (stdout)
 # 1>&2 - fh1 -> fh2 (stderr)
