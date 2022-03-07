@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2022/02/26 09:46:01 sthen Exp $
 @bin bin/bggen
 @bin bin/vdcomp
 @bin bin/xcmap
@@ -289,3 +288,5 @@ share/doc/xv/manuals/html/x-resources.html
 share/doc/xv/manuals/xvdocs.pdf
 share/doc/xv/manuals/xvdocs.ps
 share/doc/xv/manuals/xvtitle.ps
+share/examples/xv/
+share/examples/xv/xv_mgcsfx
