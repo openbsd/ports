@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1293 2022/03/04 22:16:25 kmos Exp $
+# $OpenBSD: Makefile,v 1.1294 2022/03/07 00:09:46 jca Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -561,6 +561,7 @@
      SUBDIR += py-irclib,python3
      SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud,python3
+     SUBDIR += py-libknot,python3
      SUBDIR += py-libpcap
      SUBDIR += py-minimalmodbus,python3
      SUBDIR += py-msgpack,python3
