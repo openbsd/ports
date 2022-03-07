@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/07 10:48:05 sthen Exp $
+BROKEN-sparc64=	compile check for php-embed fails
+# see nxt_feature="PHP embed SAPI" check in auto/modules/php
+# doesn't fail on amd64 with USE_LLD=No or COMPILER=ports-gcc
 
 UNIT_MODNAME=	php${MODPHP_VERSION}
 UNIT_SHORTNAME=	${FLAVOR}
