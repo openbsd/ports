@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/18 13:12:18 sthen Exp $
-
 COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.12.0
-DISTNAME=	tigervnc-1.12.0
+REVISION=	0
 
 # update the post-patch target if moving to a new major branch of xorg-server
 # there's no patchset in tigervnc for xorg-server-21.1.1.tar.xz:0 yet
@@ -32,10 +30,11 @@ MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
 
 # the vncserver script in 1.11.0+ is no longer useful for us (systemd/pam
 # dependencies) so fetch an old working one from the v1.10.1 tag.
-MASTER_SITES1=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v1.10.1/unix/
+SCRIPTV=	1.10.1
+MASTER_SITES1=	https://raw.githubusercontent.com/TigerVNC/tigervnc/v${SCRIPTV}/unix/
 EXTRACT_ONLY=	${GH_DISTFILE} xorg-server-1.20.13.tar.xz
-DISTFILES+=	tigervnc-vncserver-1.10.1.pl{vncserver}:1 \
-		tigervnc-vncserver-1.10.1.man{vncserver.man}:1
+DISTFILES+=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver}:1 \
+		tigervnc-vncserver-${SCRIPTV}.man{vncserver.man}:1
 
 # main parts use cmake, Xvnc uses autoconf
 # Xvnc requires files generated in the cmake build stage that aren't
@@ -125,8 +124,8 @@ AC_ARGS+=	--sysconfdir='${SYSCONFDIR}' \
 
 post-extract:
 	cp -R ${WRKDIR}/xorg-server-*/* ${WRKDIST}/unix/xserver
-	cp ${FULLDISTDIR}/tigervnc-vncserver-1.10.1.pl ${WRKSRC}/vncserver
-	cp ${FULLDISTDIR}/tigervnc-vncserver-1.10.1.man ${WRKSRC}/vncserver.man
+	cp ${FULLDISTDIR}/tigervnc-vncserver-${SCRIPTV}.pl ${WRKSRC}/vncserver
+	cp ${FULLDISTDIR}/tigervnc-vncserver-${SCRIPTV}.man ${WRKSRC}/vncserver.man
 
 post-patch:
 	patch -d ${WRKDIST}/unix/xserver/ -p1 < ${WRKDIST}/unix/xserver120.patch
@@ -149,8 +148,6 @@ post-install:
 	    TIGERVNC_SRCDIR=${WRKDIST} TIGERVNC_BUILDDIR=${WRKBUILD}
 
 	rm -rf ${PREFIX}/lib/xorg
-	mv ${PREFIX}/bin/vncviewer{,.tigervnc} # avoid conflict
-	mv ${PREFIX}/man/man1/vncviewer{,.tigervnc}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/vncserver ${PREFIX}/bin/vncserver
 	${INSTALL_DATA} ${WRKSRC}/vncserver.man ${PREFIX}/man/man1/vncserver.1
 

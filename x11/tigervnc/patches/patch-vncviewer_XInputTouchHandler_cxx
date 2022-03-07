@@ -1,5 +1,3 @@
-$OpenBSD: patch-vncviewer_XInputTouchHandler_cxx,v 1.2 2022/01/18 13:12:18 sthen Exp $
-
 Index: vncviewer/XInputTouchHandler.cxx
 --- vncviewer/XInputTouchHandler.cxx.orig
 +++ vncviewer/XInputTouchHandler.cxx

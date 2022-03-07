@@ -1,6 +1,4 @@
-$OpenBSD: patch-unix_vncserver_CMakeLists_txt,v 1.2 2022/01/18 13:12:18 sthen Exp $
-
-vncsession requires pam
+- Disable vncsession, it requires pam
 
 Index: unix/vncserver/CMakeLists.txt
 --- unix/vncserver/CMakeLists.txt.orig

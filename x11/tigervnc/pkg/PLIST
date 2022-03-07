@@ -1,19 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/01/18 13:12:18 sthen Exp $
+@conflict ssvnc-viewer-*
+@pkgpath net/ssvnc,-main
 @bin bin/Xvnc
 @bin bin/vncconfig
 @bin bin/vncpasswd
 bin/vncserver
-@bin bin/vncviewer.tigervnc
+@bin bin/vncviewer
 @bin bin/x0vncserver
 @man man/man1/Xserver.1
 @man man/man1/Xvnc.1
 @man man/man1/vncconfig.1
 @man man/man1/vncpasswd.1
 @man man/man1/vncserver.1
-@man man/man1/vncviewer.tigervnc.1
+@man man/man1/vncviewer.1
 @man man/man1/x0vncserver.1
 share/applications/vncviewer.desktop
 share/doc/tigervnc/
+share/doc/tigervnc/HOWTO.md
 share/doc/tigervnc/LICENCE.TXT
 share/doc/tigervnc/README.rst
 share/icons/hicolor/16x16/apps/tigervnc.png
@@ -32,6 +34,7 @@ share/locale/es/LC_MESSAGES/tigervnc.mo
 share/locale/fi/LC_MESSAGES/tigervnc.mo
 share/locale/fr/LC_MESSAGES/tigervnc.mo
 share/locale/fur/LC_MESSAGES/tigervnc.mo
+share/locale/he/LC_MESSAGES/tigervnc.mo
 share/locale/hu/LC_MESSAGES/tigervnc.mo
 share/locale/id/LC_MESSAGES/tigervnc.mo
 share/locale/it/LC_MESSAGES/tigervnc.mo

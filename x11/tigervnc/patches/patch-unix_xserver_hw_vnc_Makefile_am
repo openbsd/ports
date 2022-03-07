@@ -1,5 +1,3 @@
-$OpenBSD: patch-unix_xserver_hw_vnc_Makefile_am,v 1.2 2021/11/14 22:45:25 sthen Exp $
-
 Index: unix/xserver/hw/vnc/Makefile.am
 --- unix/xserver/hw/vnc/Makefile.am.orig
 +++ unix/xserver/hw/vnc/Makefile.am

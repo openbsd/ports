@@ -1,14 +1,22 @@
-$OpenBSD: patch-vncserver,v 1.1 2022/01/04 15:39:50 sthen Exp $
-
-Patch away check which doesn't work on OpenBSD.
+- Don't set rfbwait; removed in newer Xvnc
+- Patch away check which doesn't work on OpenBSD.
 
 Index: vncserver
 --- vncserver.orig
 +++ vncserver
-@@ -524,22 +524,6 @@ sub CheckDisplayNumber
+@@ -205,7 +205,6 @@ $default_opts{auth} = &quotedString($xauthorityFile);
+ $default_opts{geometry} = $geometry if ($geometry);
+ $default_opts{depth} = $depth if ($depth);
+ $default_opts{pixelformat} = $pixelformat if ($pixelformat);
+-$default_opts{rfbwait} = 30000;
+ $default_opts{rfbauth} = "$vncUserDir/passwd";
+ $default_opts{rfbport} = $vncPort;
+ $default_opts{fp} = $fontPath if ($fontPath);
+@@ -523,22 +522,6 @@ sub GetDisplayNumber
+ sub CheckDisplayNumber
  {
      local ($n) = @_;
- 
+-
 -    socket(S, $AF_INET, $SOCK_STREAM, 0) || die "$prog: socket failed: $!\n";
 -    eval 'setsockopt(S, &SOL_SOCKET, &SO_REUSEADDR, pack("l", 1))';
 -    if (!bind(S, pack('S n x12', $AF_INET, 6000 + $n))) {
@@ -24,7 +32,6 @@ Index: vncserver
 -	return 0;
 -    }
 -    close(S);
--
+ 
      if (-e "/tmp/.X$n-lock") {
  	warn "\nWarning: $host:$n is taken because of /tmp/.X$n-lock\n";
- 	warn "Remove this file if there is no X server $host:$n\n";
