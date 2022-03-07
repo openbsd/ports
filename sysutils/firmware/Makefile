@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/17 09:51:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2022/03/07 19:13:00 sthen Exp $
 
 # XXX
 #
@@ -27,6 +27,7 @@
      SUBDIR += iwn
      SUBDIR += iwx
      SUBDIR += malo
+     SUBDIR += mtw
      SUBDIR += ogx
      SUBDIR += otus
      SUBDIR += pgt
