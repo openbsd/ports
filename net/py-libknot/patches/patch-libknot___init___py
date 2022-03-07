@@ -1,0 +1,16 @@
+$OpenBSD: patch-libknot___init___py,v 1.1.1.1 2022/03/07 00:07:32 jca Exp $
+
+Don't hardcode libknot.so version number.
+
+Index: libknot/__init__.py
+--- libknot/__init__.py.orig
++++ libknot/__init__.py
+@@ -46,7 +46,7 @@ class Knot(object):
+             if sys.platform == "darwin":
+                 path = "libknot%s.dylib" % version
+             else:
+-                path = "libknot.so%s" % version
++                path = "libknot.so"
+ 
+         cls.LIBKNOT = ctypes.cdll.LoadLibrary(path)
+ 

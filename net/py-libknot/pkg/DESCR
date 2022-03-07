@@ -1,0 +1,3 @@
+Python bindings for controlling and probing the Knot DNS server.
+These bindings provide an interface similar to knotc(8) and replies
+via JSON for easy parsing.

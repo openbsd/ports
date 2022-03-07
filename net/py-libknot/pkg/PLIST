@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2022/03/07 00:07:32 jca Exp $
+lib/python${MODPY_VERSION}/site-packages/libknot/
+lib/python${MODPY_VERSION}/site-packages/libknot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/libknot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/libknot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/libknot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/libknot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/libknot/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libknot/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/libknot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libknot/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libknot/${MODPY_PYCACHE}probe.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libknot/control.py
+lib/python${MODPY_VERSION}/site-packages/libknot/probe.py
