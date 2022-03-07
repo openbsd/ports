@@ -1,0 +1,5 @@
+PyOTP is a Python library for generating and verifying one-time passwords,
+used to implement two-factor (2FA) or multi-factor (MFA) authentication
+methods in web applications and other systems.
+
+PyOTP implements server-side support for HOTP (RFC 4226) and TOTP (RFC 6238).
