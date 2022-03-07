@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:40 sthen Exp $
-
 COMMENT=		module to interact with a Cisco router
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		Net-Telnet-Cisco-1.11
+DISTNAME=		Net-Telnet-Cisco-1.12
 CATEGORIES=		net
 
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
