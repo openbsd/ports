@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_update_sh,v 1.9 2021/10/19 07:55:12 sthen Exp $
-
 Index: bin/update.sh
 --- bin/update.sh.orig
 +++ bin/update.sh

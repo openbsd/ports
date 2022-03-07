@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.15 2021/10/19 07:55:12 sthen Exp $
-
 Index: config/defaults.inc.php
 --- config/defaults.inc.php.orig
 +++ config/defaults.inc.php

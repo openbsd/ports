@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.167 2022/03/07 12:32:27 sthen Exp $
-
 COMMENT=	imap4 webmail client
 
 V=		1.5.2
