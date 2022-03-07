@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2022/02/20 21:59:15 jca Exp $
+# $OpenBSD: Makefile,v 1.62 2022/03/07 00:12:28 jca Exp $
 
 COMMENT =		authoritative DNS server
 
+# update net/py-libknot when updating this
 DISTNAME =		knot-3.1.6
+REVISION =		0
 
 SHARED_LIBS +=	dnssec               3.1      # .8.0
 SHARED_LIBS +=	knot                 7.3      # .12.0
@@ -12,7 +14,8 @@ CATEGORIES =		net
 
 HOMEPAGE =		https://www.knot-dns.cz/
 
-MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
+MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>, \
+			Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
