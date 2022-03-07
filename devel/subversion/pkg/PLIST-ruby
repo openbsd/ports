@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ruby,v 1.12 2020/05/15 14:47:40 ajacoutot Exp $
 @pkgpath devel/subversion,-ruby,gnome_keyring
 @static-lib lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.a
 lib/libsvn_swig_ruby${MODRUBY_BINREV}-1.la

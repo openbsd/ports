@@ -1,4 +1,3 @@
-$OpenBSD: patch-textsuggest_processors_math_expression_cpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
 Adjust to match our changes in subprocess.hpp.
 Index: textsuggest/processors/math_expression.cpp
 --- textsuggest/processors/math_expression.cpp.orig

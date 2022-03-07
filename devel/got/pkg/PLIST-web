@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-web,v 1.3 2020/09/21 12:25:15 stsp Exp $
 cgi-bin/gotweb/
 @bin cgi-bin/gotweb/gotweb
 cgi-bin/gotweb/gw_tmpl/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cfgparser_local_mk,v 1.4 2021/05/15 22:04:12 millert Exp $
 Index: src/cfgparser/local.mk
 --- src/cfgparser/local.mk.orig
 +++ src/cfgparser/local.mk

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/05/15 22:04:12 millert Exp $
-
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
 

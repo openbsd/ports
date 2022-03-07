@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/12 20:44:03 sthen Exp $
-
 COMMENT=	companion library to APR
 
 V=		1.6.1

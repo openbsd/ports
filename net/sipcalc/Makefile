@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:15:35 sthen Exp $
-
 COMMENT = 	ipv4 and ipv6 subnet calculator
 
 VERSION = 	1.1.6

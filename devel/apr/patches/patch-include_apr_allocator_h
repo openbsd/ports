@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_apr_allocator_h,v 1.1 2019/01/22 11:55:20 stsp Exp $
 Add APR_ALLOCATOR_MAX_FREE_DEFAULT override to make APR pools call free(3).
 Index: include/apr_allocator.h
 --- include/apr_allocator.h.orig

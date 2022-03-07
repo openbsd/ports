@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_apr_hints_m4,v 1.1 2017/10/25 19:36:46 naddy Exp $
-
 Index: build/apr_hints.m4
 --- build/apr_hints.m4.orig
 +++ build/apr_hints.m4

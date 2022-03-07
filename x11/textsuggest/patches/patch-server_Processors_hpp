@@ -1,4 +1,3 @@
-$OpenBSD: patch-server_Processors_hpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
 Adjust to match our changes in subprocess.hpp.
 Index: server/Processors.hpp
 --- server/Processors.hpp.orig

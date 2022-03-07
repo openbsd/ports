@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT =	auto-complete and text expansion in X11
 
 V =		4.2.0

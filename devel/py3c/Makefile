@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:20 sthen Exp $
-
 COMMENT =	python 2/3 compatibility layer for C extensions
 
 GH_ACCOUNT =	encukou

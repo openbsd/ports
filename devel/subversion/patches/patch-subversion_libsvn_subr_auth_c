@@ -1,4 +1,3 @@
-$OpenBSD: patch-subversion_libsvn_subr_auth_c,v 1.10 2018/04/23 20:06:01 stsp Exp $
 Index: subversion/libsvn_subr/auth.c
 --- subversion/libsvn_subr/auth.c.orig
 +++ subversion/libsvn_subr/auth.c

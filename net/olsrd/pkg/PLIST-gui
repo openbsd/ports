@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-gui,v 1.1 2010/06/14 12:36:34 sebastia Exp $
 @bin sbin/olsrd-gui

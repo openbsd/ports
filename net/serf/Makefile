@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/31 17:30:22 sthen Exp $
-
 COMMENT =		high performance HTTP client library
 DISTNAME =		serf-1.3.9
 SHARED_LIBS = 		serf-1                    1.0 # 1.3.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_olsr_random_h,v 1.2 2017/06/04 11:45:04 stsp Exp $
-
 Index: src/olsr_random.h
 --- src/olsr_random.h.orig
 +++ src/olsr_random.h

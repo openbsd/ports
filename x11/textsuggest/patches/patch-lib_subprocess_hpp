@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_subprocess_hpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
 Get rid of GNU-specific C++ type.
 Trim down to features actually needed by Textsuggest.
 Index: lib/subprocess.hpp

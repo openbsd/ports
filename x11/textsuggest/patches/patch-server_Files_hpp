@@ -1,4 +1,3 @@
-$OpenBSD: patch-server_Files_hpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
 Adjust hard-coded paths.
 Index: server/Files.hpp
 --- server/Files.hpp.orig

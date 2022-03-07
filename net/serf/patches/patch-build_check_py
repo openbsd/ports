@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_check_py,v 1.1 2021/10/31 17:30:22 sthen Exp $
-
 Index: build/check.py
 --- build/check.py.orig
 +++ build/check.py

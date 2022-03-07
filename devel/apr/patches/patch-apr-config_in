@@ -1,4 +1,3 @@
-$OpenBSD: patch-apr-config_in,v 1.3 2017/10/25 19:36:46 naddy Exp $
 Index: apr-config.in
 --- apr-config.in.orig
 +++ apr-config.in

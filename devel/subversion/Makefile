@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.189 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
 COMMENT-python=		python interface to subversion

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2022/02/18 19:59:08 stsp Exp $
-
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 

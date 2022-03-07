@@ -1,5 +1,3 @@
-$OpenBSD: patch-misc_unix_rand_c,v 1.1 2017/10/25 19:36:46 naddy Exp $
-
 Index: misc/unix/rand.c
 --- misc/unix/rand.c.orig
 +++ misc/unix/rand.c

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: svnserve.rc,v 1.2 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/svnserve -d"
 daemon_user="_svnserve"

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-perl,v 1.10 2020/05/15 14:47:40 ajacoutot Exp $
 @pkgpath devel/subversion,-perl,gnome_keyring
 @static-lib lib/libsvn_swig_perl-1.a
 lib/libsvn_swig_perl-1.la

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_clip_clip_x11_cpp,v 1.1.1.1 2019/03/14 14:47:07 stsp Exp $
 Fix 2 heap buffer overwrites.
 Fix use-after-free.
 Fix abort() in librthread.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_hash_source_sh,v 1.1 2017/06/20 15:14:10 stsp Exp $
-
 Index: make/hash_source.sh
 --- make/hash_source.sh.orig
 +++ make/hash_source.sh
