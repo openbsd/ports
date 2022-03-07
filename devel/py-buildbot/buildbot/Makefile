@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2022/03/05 09:15:52 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2022/03/07 08:58:48 landry Exp $
 
 COMMENT =	continuous integration framework
 
@@ -12,6 +12,7 @@ RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
 		devel/py-twisted${MODPY_FLAVOR} \
 		devel/py-future${MODPY_FLAVOR} \
 		devel/py-txaio${MODPY_FLAVOR} \
+		net/py-msgpack${MODPY_FLAVOR} \
 		www/py-autobahn${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}

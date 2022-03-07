@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2022/03/05 09:15:51 landry Exp $
+# $OpenBSD: Makefile,v 1.68 2022/03/07 08:58:48 landry Exp $
 
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	3.4.1
+MODPY_EGG_VERSION=	3.5.0
 DISTNAME=	buildbot-worker-${MODPY_EGG_VERSION}
 
 CATEGORIES=	devel
@@ -21,7 +21,8 @@ MODULES=	lang/python
 MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}>=17.9.0 \
-		devel/py-future${MODPY_FLAVOR}
+		devel/py-future${MODPY_FLAVOR} \
+		net/py-msgpack${MODPY_FLAVOR}
 
 TEST_DEPENDS=	devel/py-setuptools_trial${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}

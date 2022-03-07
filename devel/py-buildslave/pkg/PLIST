@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}bot.${M
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}msgpack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}null.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}pb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}pbutil.${MODPY_PYC_MAGIC_TAG}pyc
@@ -64,6 +65,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeyp
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/${MODPY_PYCACHE}testcase_assert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/monkeypatches/testcase_assert.py
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/msgpack.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/null.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/pb.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/pbutil.py
@@ -119,6 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_commands_shell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_commands_transfer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_commands_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_msgpack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_runprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_scripts_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_scripts_create_worker.${MODPY_PYC_MAGIC_TAG}pyc
@@ -127,6 +130,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_scripts_start.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_scripts_stop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/${MODPY_PYCACHE}test_util_deferwaiter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/runprocess-scripts.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_bot.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_bot_Worker.py
@@ -136,6 +140,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_commands
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_commands_shell.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_commands_transfer.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_commands_utils.py
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_msgpack.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_runprocess.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_scripts_base.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_scripts_create_worker.py
@@ -144,6 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_scripts_
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_scripts_start.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_scripts_stop.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_util.py
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/unit/test_util_deferwaiter.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/util/
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_worker/test/util/${MODPY_PYCACHE}/
@@ -163,8 +169,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/${
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/${MODPY_PYCACHE}_hangcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/${MODPY_PYCACHE}_notifier.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/${MODPY_PYCACHE}deferwaiter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/_hangcheck.py
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/_notifier.py
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker/util/deferwaiter.py
 @man man/man1/buildbot-worker.1
 share/doc/buildbot-worker/
 share/doc/buildbot-worker/README
