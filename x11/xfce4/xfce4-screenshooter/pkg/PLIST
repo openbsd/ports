@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/05/20 11:28:59 landry Exp $
 @bin bin/xfce4-screenshooter
 @so lib/xfce4/panel/plugins/libscreenshooterplugin.so
 @man man/man1/xfce4-screenshooter.1
