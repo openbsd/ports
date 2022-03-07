@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.652 2022/03/07 17:04:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.653 2022/03/07 20:53:14 abieber Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -97,6 +97,7 @@
      SUBDIR += knockpy
      SUBDIR += kpcli
      SUBDIR += lastpass-cli
+     SUBDIR += lego
      SUBDIR += letsencrypt
      SUBDIR += libassuan
      SUBDIR += libb2
