@@ -1,22 +1,7 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2016/04/15 20:09:31 sthen Exp $
-
-Append to ccflags/libs, overriding at least CCFLAGS breaks with perl 5.22
-
---- Makefile.PL.orig	Tue Nov 27 23:06:02 2012
-+++ Makefile.PL	Fri Apr 15 21:08:23 2016
-@@ -22,9 +22,8 @@ elsif ($^O eq 'cygwin') {
-     cygwin_pcap_headers();
- }
- else {
--    $options{CCFLAGS} = "-Wall -Wwrite-strings"
--        if $Config{ccname} eq "gcc" and $] >= 5.006;
--    $options{LIBS}    = '-lpcap';
-+    $options{CCFLAGS} = "$Config{ccflags} -Wall -Wwrite-strings" if $Config{ccname} eq 'gcc' and $] >= 5.006;
-+    $options{LIBS}    = "$Config{libs} -lpcap";
- }
- 
- for my $arg (@ARGV) {
-@@ -536,8 +535,7 @@ sub have_functions {
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -563,8 +563,7 @@ sub have_functions {
      my @funcs = ();
      print "detecting available functions... ";
  
