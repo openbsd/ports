@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2022/02/09 13:22:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2022/03/07 13:29:39 sthen Exp $
 
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 
-VERSION =		1.17.0
+VERSION =		1.17.1
 DISTNAME =		gpgme-${VERSION}
 PKGNAME-main =		gpgme-${VERSION}
 PKGNAME-qt =		gpgme-qt-${VERSION}
@@ -47,7 +47,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS:N*qt*} \
 			security/libassuan
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_prog_DOXYGEN=false
 
 .include <bsd.port.arch.mk>
 

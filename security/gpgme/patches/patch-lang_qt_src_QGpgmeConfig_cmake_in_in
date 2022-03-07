@@ -1,5 +1,3 @@
-$OpenBSD: patch-lang_qt_src_QGpgmeConfig_cmake_in_in,v 1.1 2020/08/24 16:28:30 sthen Exp $
-
 Index: lang/qt/src/QGpgmeConfig.cmake.in.in
 --- lang/qt/src/QGpgmeConfig.cmake.in.in.orig
 +++ lang/qt/src/QGpgmeConfig.cmake.in.in

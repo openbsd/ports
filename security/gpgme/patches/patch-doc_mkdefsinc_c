@@ -1,6 +1,4 @@
-$OpenBSD: patch-doc_mkdefsinc_c,v 1.1 2021/08/31 17:34:57 jca Exp $
-
-Don't use printf %n.
+- Don't use printf %n.
 
 Index: doc/mkdefsinc.c
 --- doc/mkdefsinc.c.orig

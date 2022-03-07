@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-qt,v 1.4 2022/02/09 13:22:06 sthen Exp $
 include/QGpgME/
 include/QGpgME/AbstractImportJob
 include/QGpgME/AddExistingSubkeyJob
@@ -130,6 +129,7 @@ include/qgpgme/verifyopaquejob.h
 include/qgpgme/wkdlookupjob.h
 include/qgpgme/wkdlookupresult.h
 include/qgpgme/wkspublishjob.h
+lib/cmake/
 lib/cmake/Gpgmepp/
 lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake

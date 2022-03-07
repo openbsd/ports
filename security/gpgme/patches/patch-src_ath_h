@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ath_h,v 1.1 2022/02/09 13:22:06 sthen Exp $
-
 Index: src/ath.h
 --- src/ath.h.orig
 +++ src/ath.h

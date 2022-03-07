@@ -1,6 +1,4 @@
-$OpenBSD: patch-lang_cpp_tests_Makefile_in,v 1.3 2022/02/09 13:22:06 sthen Exp $
-
-do not hard-code libstdc++, it may not exist on all platforms
+- do not hard-code libstdc++, it may not exist on all platforms
 
 Index: lang/cpp/tests/Makefile.in
 --- lang/cpp/tests/Makefile.in.orig

@@ -1,0 +1,15 @@
+don't allow doxygen to run even if installed, something with the files
+(at least as of 1.17.1) is causing it to eat huge amounts of memory
+
+Index: lang/qt/Makefile.in
+--- lang/qt/Makefile.in.orig
++++ lang/qt/Makefile.in
+@@ -410,7 +410,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ @RUN_GPG_TESTS_FALSE@tests = 
+ @RUN_GPG_TESTS_TRUE@tests = tests
+-SUBDIRS = src ${tests} doc
++SUBDIRS = src ${tests}
+ EXTRA_DIST = README
+ all: all-recursive
+ 

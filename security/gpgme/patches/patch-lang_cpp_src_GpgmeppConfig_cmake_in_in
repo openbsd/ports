@@ -1,5 +1,3 @@
-$OpenBSD: patch-lang_cpp_src_GpgmeppConfig_cmake_in_in,v 1.1 2020/08/24 16:28:30 sthen Exp $
-
 Index: lang/cpp/src/GpgmeppConfig.cmake.in.in
 --- lang/cpp/src/GpgmeppConfig.cmake.in.in.orig
 +++ lang/cpp/src/GpgmeppConfig.cmake.in.in
