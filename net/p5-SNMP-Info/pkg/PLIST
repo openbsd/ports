@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/09/04 07:18:30 sthen Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
@@ -121,7 +120,9 @@ ${P5SITE}/SNMP/Info/Layer3/Pica8.pm
 ${P5SITE}/SNMP/Info/Layer3/Redlion.pm
 ${P5SITE}/SNMP/Info/Layer3/Scalance.pm
 ${P5SITE}/SNMP/Info/Layer3/SonicWALL.pm
+${P5SITE}/SNMP/Info/Layer3/Steelfusion.pm
 ${P5SITE}/SNMP/Info/Layer3/Steelhead.pm
+${P5SITE}/SNMP/Info/Layer3/SteelheadEx.pm
 ${P5SITE}/SNMP/Info/Layer3/Sun.pm
 ${P5SITE}/SNMP/Info/Layer3/Tasman.pm
 ${P5SITE}/SNMP/Info/Layer3/Teltonika.pm
@@ -261,7 +262,9 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::Redlion.3p
 @man man/man3p/SNMP::Info::Layer3::Scalance.3p
 @man man/man3p/SNMP::Info::Layer3::SonicWALL.3p
+@man man/man3p/SNMP::Info::Layer3::Steelfusion.3p
 @man man/man3p/SNMP::Info::Layer3::Steelhead.3p
+@man man/man3p/SNMP::Info::Layer3::SteelheadEx.3p
 @man man/man3p/SNMP::Info::Layer3::Sun.3p
 @man man/man3p/SNMP::Info::Layer3::Tasman.3p
 @man man/man3p/SNMP::Info::Layer3::Teltonika.3p
