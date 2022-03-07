@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: UpdatePlistReader.pm,v 1.2 2022/01/20 08:18:47 sthen Exp $
+# $OpenBSD: UpdatePlistReader.pm,v 1.3 2022/03/07 08:57:10 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -57,6 +57,12 @@ sub process_next_subpackage
 	my ($class, $o) = @_;
 	my $r = $class->SUPER::process_next_subpackage($o);
 
+	# we need to add a "fake" CVSTag as a placeholder for annotations
+	# at the top of the old list so they get copied along
+	# (TODO: add a better named PlaceHolder class to base PackingList
+	# PackingElement, one that is an error to write out, but that
+	# traverses first)
+	OpenBSD::PackingElement::CVSTag->add($r->{olist}, '$'.'OpenBSD$');
 	$r->nlist->set_pkgname($r->olist->pkgname);
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $r->{state}{prefix});
