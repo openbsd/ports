@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.148 2022/03/03 10:09:17 sthen Exp $
-
 COMMENT=	auto-discovering network management/monitoring system
 
 # changelogs at https://github.com/librenms/librenms/releases

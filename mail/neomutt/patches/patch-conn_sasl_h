@@ -1,5 +1,3 @@
-$OpenBSD: patch-conn_sasl_h,v 1.4 2020/11/20 17:17:21 sthen Exp $
-
 Index: conn/sasl.h
 --- conn/sasl.h.orig
 +++ conn/sasl.h

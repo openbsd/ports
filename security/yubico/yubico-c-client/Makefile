@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/11 22:54:39 sthen Exp $
-
 COMMENT=	C library to validate an Yubikey OTP against API servers
 
 YK_PROJECT=	yubico-c-client

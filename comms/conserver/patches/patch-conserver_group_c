@@ -1,5 +1,3 @@
-$OpenBSD: patch-conserver_group_c,v 1.10 2020/05/14 11:43:24 sthen Exp $
-
 Index: conserver/group.c
 --- conserver/group.c.orig
 +++ conserver/group.c

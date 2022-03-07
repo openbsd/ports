@@ -1,5 +1,3 @@
-$OpenBSD: patch-link-bpf_c,v 1.5 2021/09/08 21:49:05 sthen Exp $
-
 Index: link-bpf.c
 --- link-bpf.c.orig
 +++ link-bpf.c

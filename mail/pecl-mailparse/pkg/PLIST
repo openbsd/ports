@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/25 12:33:19 sthen Exp $
 @conflict pecl-mailparse-*
 ${MODPECL_DEFAULTV}@pkgpath mail/pecl56-mailparse
 ${MODPECL_DEFAULTV}@pkgpath mail/pecl-mailparse,php70

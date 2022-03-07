@@ -1,5 +1,3 @@
-$OpenBSD: patch-perl_SNMP_Makefile_PL,v 1.7 2020/09/04 19:46:15 sthen Exp $
-
 Index: perl/SNMP/Makefile.PL
 --- perl/SNMP/Makefile.PL.orig
 +++ perl/SNMP/Makefile.PL

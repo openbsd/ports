@@ -1,5 +1,3 @@
-$OpenBSD: patch-servers_slapd_Makefile_in,v 1.6 2021/09/10 20:44:27 sthen Exp $
-
 Index: servers/slapd/Makefile.in
 --- servers/slapd/Makefile.in.orig
 +++ servers/slapd/Makefile.in

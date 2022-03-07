@@ -1,5 +1,3 @@
-$OpenBSD: patch-library_Icinga_Application_Modules_Manager_php,v 1.4 2021/11/13 16:01:19 sthen Exp $
-
 Make icingacli <module> <command> available outside of chroot
 Index: library/Icinga/Application/Modules/Manager.php
 --- library/Icinga/Application/Modules/Manager.php.orig

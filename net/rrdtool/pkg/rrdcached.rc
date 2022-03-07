@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: rrdcached.rc,v 1.4 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/rrdcached"
 daemon_flags="-b /var/db/rrd -m 770 -l unix:/var/run/rrd/rrdcached.sock -j /var/db/rrd/journal -p /var/run/rrd/rrdcached.pid"

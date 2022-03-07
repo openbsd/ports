@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/04 21:40:53 sthen Exp $
-
 COMMENT=	lightweight C ACMEv2 client, uses external authenticators
 
 V=		1.7.1

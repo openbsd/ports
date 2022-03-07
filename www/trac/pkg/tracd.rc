@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: tracd.rc,v 1.2 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/tracd -d"
 daemon_flags="-p 8085 /var/www/trac"

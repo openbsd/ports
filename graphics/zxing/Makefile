@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/19 13:12:02 bentley Exp $
-
 COMMENT=	barcode image processing library
 
 SHARED_LIBS=	zxing 0.0

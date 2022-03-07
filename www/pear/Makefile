@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/08/01 21:06:54 sthen Exp $
-
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 

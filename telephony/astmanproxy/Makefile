@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/31 19:06:09 sthen Exp $
-
 COMMENT =	proxy for Asterisk Manager Interface
 
 # there is an active fork in davies147/astmanproxy, but it uses various

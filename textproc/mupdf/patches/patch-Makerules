@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makerules,v 1.25 2021/11/13 17:23:37 sthen Exp $
-
 Index: Makerules
 --- Makerules.orig
 +++ Makerules

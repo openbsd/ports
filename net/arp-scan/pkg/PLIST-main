@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2018/05/27 09:34:51 espie Exp $
 @pkgpath net/arp-scan
 @extra share/arp-scan/ieee-iab.txt.bak
 @extra share/arp-scan/ieee-oui.txt.bak

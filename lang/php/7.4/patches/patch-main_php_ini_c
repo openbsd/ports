@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_php_ini_c,v 1.3 2022/01/31 21:18:10 sthen Exp $
-
 Index: main/php_ini.c
 --- main/php_ini.c.orig
 +++ main/php_ini.c

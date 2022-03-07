@@ -1,5 +1,3 @@
-$OpenBSD: patch-hwaccess_h,v 1.2 2019/07/05 16:01:57 sthen Exp $
-
 use patched pciutils.
 
 Index: hwaccess.h

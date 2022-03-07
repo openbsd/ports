@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.224 2022/02/26 13:48:31 sthen Exp $
-
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 

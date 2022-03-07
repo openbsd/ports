@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: conserver.rc,v 1.11 2019/01/25 11:35:54 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/conserver -d"
 daemon_flags="-n"

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_Makefile_frag,v 1.1 2020/04/21 20:38:31 sthen Exp $
-
 Index: scripts/Makefile.frag
 --- scripts/Makefile.frag.orig
 +++ scripts/Makefile.frag

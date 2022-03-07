@@ -1,5 +1,3 @@
-$OpenBSD: patch-generator_net_snmp_go,v 1.2 2021/03/08 21:04:59 sthen Exp $
-
 this (which looks like a comment in net_snmp.go as it's wrapped in /* */)
 is used to initialise tclist which is a static array normally in
 net-snmp's object.

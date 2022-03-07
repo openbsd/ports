@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: rspamd.rc,v 1.4 2019/10/29 22:50:14 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/rspamd"
 daemon_flags="-u _rspamd -g _rspamd"

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rediff_c,v 1.2 2020/07/20 12:07:17 sthen Exp $
-
 Avoid use of unitialized variable.  Fixes addhunk2 test with vm.malloc_conf=J.
 
 Index: src/rediff.c

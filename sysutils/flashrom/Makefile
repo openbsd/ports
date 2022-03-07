@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/21 08:07:27 sthen Exp $
-
 COMMENT=	flash ROM programmer for BIOS etc
 
 V=		1.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.131 2022/02/10 21:17:50 sthen Exp $
-
 BROKEN-alpha =	.got subsegment exceeds 64K (size 101480)
 
 COMMENT-main =	graphical network protocol analyzer, Qt user-interface

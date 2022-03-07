@@ -1,4 +1,3 @@
-$OpenBSD: patch-check_sip,v 1.2 2009/11/13 15:30:51 sthen Exp $
 --- check_sip.orig	Fri Nov 13 15:21:23 2009
 +++ check_sip	Fri Nov 13 15:22:11 2009
 @@ -1,4 +1,4 @@

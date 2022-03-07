@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_doc_autocmd_txt,v 1.2 2022/02/26 13:48:31 sthen Exp $
-
 backout ab16ad33ba "patch 8.2.3941: SIGTSTP is not handled"
 causes hangs on ^Z
 

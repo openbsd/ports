@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_portability_freeipmi-portability_h,v 1.2 2019/08/23 20:18:13 sthen Exp $
-
 Index: common/portability/freeipmi-portability.h
 --- common/portability/freeipmi-portability.h.orig
 +++ common/portability/freeipmi-portability.h

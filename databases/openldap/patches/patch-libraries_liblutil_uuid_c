@@ -1,5 +1,3 @@
-$OpenBSD: patch-libraries_liblutil_uuid_c,v 1.1 2020/06/18 21:36:11 sthen Exp $
-
 OpenLDAP's first choice uuid functions are close to but not quite the same
 as we have in libc, differences being that we don't have uuid_to_str() (in
 fact I don't see which other OS might have it either, no other software in

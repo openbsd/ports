@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2021/11/23 09:33:09 sthen Exp $
-
 COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/08 11:24:20 sthen Exp $
-
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.24

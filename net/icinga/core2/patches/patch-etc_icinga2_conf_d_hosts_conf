@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_icinga2_conf_d_hosts_conf,v 1.2 2019/12/28 15:59:30 sthen Exp $
-
 Index: etc/icinga2/conf.d/hosts.conf
 --- etc/icinga2/conf.d/hosts.conf.orig
 +++ etc/icinga2/conf.d/hosts.conf

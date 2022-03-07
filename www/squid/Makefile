@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.241 2022/02/21 13:43:56 sthen Exp $
-
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid

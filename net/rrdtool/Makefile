@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.120 2022/02/23 15:47:35 sthen Exp $
-
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd

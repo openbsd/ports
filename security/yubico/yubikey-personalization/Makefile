@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/31 19:41:30 sthen Exp $
-
 COMMENT=	library and tools to program YubiKeys
 
 YK_PROJECT=	yubikey-personalization

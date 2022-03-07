@@ -1,5 +1,3 @@
-$OpenBSD: patch-sapi_fpm_fpm_fpm_children_c,v 1.2 2021/10/23 08:37:23 sthen Exp $
-
 Index: sapi/fpm/fpm/fpm_children.c
 --- sapi/fpm/fpm/fpm_children.c.orig
 +++ sapi/fpm/fpm/fpm_children.c

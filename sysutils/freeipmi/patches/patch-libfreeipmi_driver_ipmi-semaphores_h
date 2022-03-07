@@ -1,5 +1,3 @@
-$OpenBSD: patch-libfreeipmi_driver_ipmi-semaphores_h,v 1.2 2019/08/23 20:18:13 sthen Exp $
-
 Index: libfreeipmi/driver/ipmi-semaphores.h
 --- libfreeipmi/driver/ipmi-semaphores.h.orig
 +++ libfreeipmi/driver/ipmi-semaphores.h

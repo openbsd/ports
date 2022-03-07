@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_phpize_in,v 1.1 2020/04/21 20:38:31 sthen Exp $
-
 Index: scripts/phpize.in
 --- scripts/phpize.in.orig
 +++ scripts/phpize.in

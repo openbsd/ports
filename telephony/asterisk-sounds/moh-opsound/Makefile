@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/11 22:54:40 sthen Exp $
-
 MODULES +=	telephony/asterisk-sounds
 MODAS_NAME =	asterisk-moh-opsound
 MODAS_TAG =	asterisk-extra

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.86 2021/11/29 11:36:50 sthen Exp $
-
 COMMENT-main=	RADIUS server implementation
 COMMENT-freetds= freeradius freetds rlm addon
 COMMENT-iodbc=	freeradius iodbc rlm addon

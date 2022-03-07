@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_named_include_named_globals_h,v 1.16 2022/01/19 17:46:00 sthen Exp $
-
 Index: bin/named/include/named/globals.h
 --- bin/named/include/named/globals.h.orig
 +++ bin/named/include/named/globals.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.101 2021/12/26 13:30:01 sthen Exp $
-
 COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov

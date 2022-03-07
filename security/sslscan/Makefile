@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2022/02/10 21:01:52 sthen Exp $
-
 COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 
 GH_ACCOUNT=	rbsec

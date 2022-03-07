@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-readonly-main,v 1.1 2018/06/02 20:53:37 sthen Exp $
 @bin bin/encode_keychange
 @bin bin/snmpping
 @bin bin/snmpset

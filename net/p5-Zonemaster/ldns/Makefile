@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/07 09:50:29 sthen Exp $
-
 COMMENT=	module to interface the DNS resolver using the ldns library
 
 MODULES=	cpan

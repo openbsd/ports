@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: solr.rc,v 1.1.1.1 2018/03/06 11:06:22 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/solr"
 daemon_user="_solr"

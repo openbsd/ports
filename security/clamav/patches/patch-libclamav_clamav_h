@@ -1,5 +1,3 @@
-$OpenBSD: patch-libclamav_clamav_h,v 1.5 2021/10/19 11:17:24 sthen Exp $
-
 Index: libclamav/clamav.h
 --- libclamav/clamav.h.orig
 +++ libclamav/clamav.h

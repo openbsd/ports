@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_hscollider_CMakeLists_txt,v 1.1.1.1 2021/03/07 14:15:47 sthen Exp $
-
 Index: tools/hscollider/CMakeLists.txt
 --- tools/hscollider/CMakeLists.txt.orig
 +++ tools/hscollider/CMakeLists.txt

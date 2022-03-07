@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/04/28 19:10:16 sthen Exp $
-
 COMMENT=	bulk mail detection (Distributed Checksum Clearinghouses)
 
 DISTNAME=	dcc-2.3.168

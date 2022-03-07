@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/10/24 10:03:28 sthen Exp $
-
 V=		4.4.0
 COMMENT=	motion detection software for video
 

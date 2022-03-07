@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/04 11:41:02 sthen Exp $
-
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop

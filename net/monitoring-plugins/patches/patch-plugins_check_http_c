@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_check_http_c,v 1.2 2020/12/10 19:52:15 sthen Exp $
-
 avoid segfault with SSL errors, seen when connecting to an IIS host
 that only allowed SNI-based connections
 

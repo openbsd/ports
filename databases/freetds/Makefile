@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.130 2022/02/23 12:25:24 sthen Exp $
-
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-1.3.9

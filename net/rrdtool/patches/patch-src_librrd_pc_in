@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_librrd_pc_in,v 1.1 2018/10/05 11:02:51 sthen Exp $
-
 Index: src/librrd.pc.in
 --- src/librrd.pc.in.orig
 +++ src/librrd.pc.in

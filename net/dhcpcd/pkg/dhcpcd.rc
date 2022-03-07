@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: dhcpcd.rc,v 1.5 2021/07/11 10:13:25 bket Exp $
 
 daemon="${TRUEPREFIX}/sbin/dhcpcd"
 daemon_flags="-Mq"

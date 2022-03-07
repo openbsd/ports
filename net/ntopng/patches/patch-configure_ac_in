@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac_in,v 1.1 2022/02/04 11:41:02 sthen Exp $
-
 Index: configure.ac.in
 --- configure.ac.in.orig
 +++ configure.ac.in

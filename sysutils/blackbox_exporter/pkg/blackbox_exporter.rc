@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: blackbox_exporter.rc,v 1.2 2021/02/27 09:28:51 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/blackbox_exporter"
 daemon_flags="--config.file=${SYSCONFDIR}/blackbox_exporter/blackbox.yml"

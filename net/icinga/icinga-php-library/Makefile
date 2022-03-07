@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/23 09:31:53 sthen Exp $
-
 COMMENT=	Icinga PHP Library
 
 GH_PROJECT=	icinga-php-library

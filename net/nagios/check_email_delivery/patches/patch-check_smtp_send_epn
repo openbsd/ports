@@ -1,5 +1,3 @@
-$OpenBSD: patch-check_smtp_send_epn,v 1.1 2012/07/03 12:47:11 sthen Exp $
-
 - switch to Net::SMTP::TLS::ButMaintained instead of Net::SMTP::TLS
 - adapt to Net::SMTP::TLS' bad error handling
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/10/13 14:05:35 tb Exp $
-
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
 V=		2.4.0

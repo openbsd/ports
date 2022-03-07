@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_syntax_make_vim,v 1.12 2020/06/02 20:09:55 sthen Exp $
-
 Index: runtime/syntax/make.vim
 --- runtime/syntax/make.vim.orig
 +++ runtime/syntax/make.vim

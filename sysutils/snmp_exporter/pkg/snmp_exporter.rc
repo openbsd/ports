@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: snmp_exporter.rc,v 1.3 2021/02/27 09:28:51 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/snmp_exporter"
 daemon_flags="--config.file=${SYSCONFDIR}/snmp_exporter/snmp.yml"

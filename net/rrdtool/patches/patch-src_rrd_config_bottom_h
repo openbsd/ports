@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_rrd_config_bottom_h,v 1.2 2015/11/23 11:41:02 sthen Exp $
 --- src/rrd_config_bottom.h.orig	Fri May  1 09:45:47 2015
 +++ src/rrd_config_bottom.h	Fri May 15 14:37:54 2015
 @@ -16,12 +16,21 @@

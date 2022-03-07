@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_clamd_conf_sample,v 1.14 2021/11/03 22:22:14 sthen Exp $
-
 Index: etc/clamd.conf.sample
 --- etc/clamd.conf.sample.orig
 +++ etc/clamd.conf.sample

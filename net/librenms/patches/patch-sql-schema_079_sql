@@ -1,5 +1,3 @@
-$OpenBSD: patch-sql-schema_079_sql,v 1.1 2017/07/30 17:05:54 sthen Exp $
-
 Index: sql-schema/079.sql
 --- sql-schema/079.sql.orig
 +++ sql-schema/079.sql

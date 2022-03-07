@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.2 2014/08/14 15:49:38 sthen Exp $
 @conflict nagios-plugins-pgsql-*
 @pkgpath net/nagios/plugins,-pgsql
 @bin libexec/nagios/check_pgsql

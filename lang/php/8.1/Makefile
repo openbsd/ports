@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/03/05 14:23:43 sthen Exp $
-
 BROKEN-sparc64=	No fibers support for sparc64
 
 PHP_VERSION=	8.1.3

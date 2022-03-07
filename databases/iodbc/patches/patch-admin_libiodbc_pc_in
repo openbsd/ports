@@ -1,4 +1,3 @@
-$OpenBSD: patch-admin_libiodbc_pc_in,v 1.5 2014/09/18 21:16:24 sthen Exp $
 --- admin/libiodbc.pc.in.orig	Tue Apr 15 12:00:45 2014
 +++ admin/libiodbc.pc.in	Tue Sep 16 14:29:16 2014
 @@ -88,6 +88,6 @@ Name: iODBC

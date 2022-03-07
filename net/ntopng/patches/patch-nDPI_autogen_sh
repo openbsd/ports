@@ -1,5 +1,3 @@
-$OpenBSD: patch-nDPI_autogen_sh,v 1.6 2022/02/04 11:41:02 sthen Exp $
-
 Index: nDPI/autogen.sh
 --- nDPI/autogen.sh.orig
 +++ nDPI/autogen.sh

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/18 21:38:11 sthen Exp $
-
 ONLY_FOR_ARCHS=	amd64
 
 COMMENT=	high-performance regular expression matching library

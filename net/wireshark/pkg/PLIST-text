@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-text,v 1.15 2021/12/13 22:44:02 sthen Exp $
 @newgroup _wireshark:735
 @bin bin/capinfos
 @bin bin/captype

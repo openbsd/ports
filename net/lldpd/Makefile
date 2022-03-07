@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/11/14 11:25:41 sthen Exp $
-
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 DISTNAME=	lldpd-1.0.13

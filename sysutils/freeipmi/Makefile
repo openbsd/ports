@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2022/01/25 09:51:17 sthen Exp $
-
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
 DISTNAME=	freeipmi-1.6.9

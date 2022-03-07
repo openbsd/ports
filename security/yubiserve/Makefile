@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:02:20 sthen Exp $
-
 COMMENT=	standalone Yubikey validation server
 
 GH_ACCOUNT=	scumjr

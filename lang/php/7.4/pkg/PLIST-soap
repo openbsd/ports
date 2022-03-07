@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-soap,v 1.4 2021/11/19 10:31:13 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-soap-${PHP_PKGSPEC}

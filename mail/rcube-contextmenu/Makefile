@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/10/20 08:56:10 sthen Exp $
-
 COMMENT=	roundcube plugin: context-sensitive menus
 
 GH_ACCOUNT=	johndoh

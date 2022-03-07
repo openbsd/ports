@@ -1,5 +1,3 @@
-$OpenBSD: patch-epan_crypt_dot11decrypt_ccmp_compat_c,v 1.2 2021/11/17 21:18:49 sthen Exp $
-
 Index: epan/crypt/dot11decrypt_ccmp_compat.c
 --- epan/crypt/dot11decrypt_ccmp_compat.c.orig
 +++ epan/crypt/dot11decrypt_ccmp_compat.c

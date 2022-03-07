@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/14 11:03:35 tb Exp $
-
 COMMENT=	SIP packet capture tool with curses UI
 
 GH_ACCOUNT=	irontec

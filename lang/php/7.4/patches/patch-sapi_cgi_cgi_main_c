@@ -1,5 +1,3 @@
-$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.3 2021/08/27 08:51:18 sthen Exp $
-
 Index: sapi/cgi/cgi_main.c
 --- sapi/cgi/cgi_main.c.orig
 +++ sapi/cgi/cgi_main.c

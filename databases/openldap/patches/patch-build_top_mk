@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_top_mk,v 1.10 2021/09/10 20:44:27 sthen Exp $
-
 Index: build/top.mk
 --- build/top.mk.orig
 +++ build/top.mk

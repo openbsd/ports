@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.72 2021/10/29 14:56:50 sthen Exp $
-
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt

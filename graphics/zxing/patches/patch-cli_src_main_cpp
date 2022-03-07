@@ -1,5 +1,3 @@
-$OpenBSD: patch-cli_src_main_cpp,v 1.1 2022/02/19 13:12:02 bentley Exp $
-
 Index: cli/src/main.cpp
 --- cli/src/main.cpp.orig
 +++ cli/src/main.cpp

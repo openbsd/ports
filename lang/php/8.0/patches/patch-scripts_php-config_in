@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_php-config_in,v 1.1 2021/02/24 19:13:50 sthen Exp $
-
 Index: scripts/php-config.in
 --- scripts/php-config.in.orig
 +++ scripts/php-config.in

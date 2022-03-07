@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_TimeseriesExporter_cpp,v 1.3 2022/02/04 11:41:02 sthen Exp $
-
 64-bit time_t
 
 Index: src/TimeseriesExporter.cpp

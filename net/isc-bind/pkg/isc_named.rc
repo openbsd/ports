@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: isc_named.rc,v 1.4 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/named"
 daemon_flags="-t ${LOCALSTATEDIR}/named -u _bind -U 4"

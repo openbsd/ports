@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/21 08:37:10 sthen Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/API2/
 ${P5SITE}/PDF/API2.pm

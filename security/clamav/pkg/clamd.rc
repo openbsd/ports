@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: clamd.rc,v 1.5 2019/11/20 19:00:24 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/clamd"
 daemon_timeout="75"

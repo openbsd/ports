@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_imap_php_imap_c,v 1.1 2021/12/18 22:28:55 sthen Exp $
-
 Cope with newer alpine/c-client, from slackware
 https://git.slackware.nl/current/diff/source/n/php/php.imap.api.diff?id=4f9273afa49a94b04bccc088fb87fec9d80a3fc6
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/11 22:54:35 sthen Exp $
-
 COMMENT=	2D barcodes / DataMatrix creation tool
 
 V=		0.3.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-mutt_sasl_h,v 1.3 2017/05/30 21:21:47 sthen Exp $
-
 Pledge.
 
 Index: mutt_sasl.h

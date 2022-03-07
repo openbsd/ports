@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/01/05 11:11:43 sthen Exp $
-
 COMMENT =	miscellaneous unix tools
 
 V =		0.65

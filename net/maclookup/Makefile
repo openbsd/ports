@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/11 22:54:37 sthen Exp $
-
 COMMENT=	simple filter to look up MAC address vendors
 
 DISTNAME=	maclookup-1.7

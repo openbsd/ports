@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.117 2021/07/30 20:07:40 sthen Exp $
-
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 

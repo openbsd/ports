@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/02/08 12:52:17 sthen Exp $
 @newgroup _lldpd:720
 @newuser _lldpd:720:_lldpd:daemon:lldpd user:/nonexistent:/sbin/nologin
 %%snmp%%

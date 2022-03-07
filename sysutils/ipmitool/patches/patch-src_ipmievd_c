@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ipmievd_c,v 1.3 2022/02/07 16:40:36 sthen Exp $
-
 Index: src/ipmievd.c
 --- src/ipmievd.c.orig
 +++ src/ipmievd.c

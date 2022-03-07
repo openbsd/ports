@@ -1,5 +1,3 @@
-$OpenBSD: patch-trac_util_presentation_py,v 1.1 2022/02/27 12:06:45 sthen Exp $
-
 https://trac.edgewall.org/ticket/13404
 
 Index: trac/util/presentation.py

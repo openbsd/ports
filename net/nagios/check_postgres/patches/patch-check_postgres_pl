@@ -1,5 +1,3 @@
-$OpenBSD: patch-check_postgres_pl,v 1.6 2020/02/08 12:39:59 sthen Exp $
-
 Index: check_postgres.pl
 --- check_postgres.pl.orig
 +++ check_postgres.pl

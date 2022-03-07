@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins-scripts_check_ircd_pl,v 1.2 2017/01/30 20:32:12 sthen Exp $
-
 Fix unportable code which assumes sockaddr does not include a length field.
 https://github.com/monitoring-plugins/monitoring-plugins/pull/1463
 

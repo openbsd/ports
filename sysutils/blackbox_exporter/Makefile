@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/16 20:11:28 sthen Exp $
-
 COMMENT=	Prometheus exporter to test HTTP/DNS/TCP/ICMP endpoints
 
 MODGO_MODNAME=	github.com/prometheus/blackbox_exporter

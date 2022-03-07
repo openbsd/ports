@@ -1,5 +1,3 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2021/09/10 20:44:27 sthen Exp $
-
 Don't automatically run ldconfig -m.
 
 Index: aclocal.m4

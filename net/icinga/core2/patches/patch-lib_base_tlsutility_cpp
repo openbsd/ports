@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_base_tlsutility_cpp,v 1.1 2021/08/11 20:00:37 sthen Exp $
-
 Index: lib/base/tlsutility.cpp
 --- lib/base/tlsutility.cpp.orig
 +++ lib/base/tlsutility.cpp

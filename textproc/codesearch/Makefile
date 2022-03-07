@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:28 sthen Exp $
-
 COMMENT=	fast, indexed regexp search over large file trees
 
 V=		1.2.0

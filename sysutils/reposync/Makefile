@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/12/11 13:04:47 sthen Exp $
-
 COMMENT=	script to update an OpenBSD CVS repository via rsync
 
 DISTNAME=	reposync-20211211

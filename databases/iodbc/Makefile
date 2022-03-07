@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
 

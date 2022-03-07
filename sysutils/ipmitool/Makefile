@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/03/04 10:22:54 sthen Exp $
-
 COMMENT=	manage and configure devices that support IPMI
 
 # use a git archive for now, the last release is rather old

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/23 08:46:55 sthen Exp $
-
 COMMENT=	web-based config deployment tool for Icinga 2
 
 MODULE_NAME=	director

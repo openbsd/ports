@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_syntax_bindzone_vim,v 1.2 2020/12/03 21:35:56 sthen Exp $
-
 https://github.com/vim/vim/pull/7351
 https://github.com/sebastianw/vim-bindzone/blob/master/syntax/bindzone.vim
 

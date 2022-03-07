@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/05 10:56:21 sthen Exp $
 libexec/nagios/
 libexec/nagios/check_sip

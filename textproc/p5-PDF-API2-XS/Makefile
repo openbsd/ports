@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/26 14:24:40 sthen Exp $
-
 COMMENT =	XS module to speed some PDF::API2 operations
 
 DISTNAME =	PDF-API2-XS-1.002

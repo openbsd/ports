@@ -1,4 +1,3 @@
-$OpenBSD: patch-bindings_Makefile_in,v 1.6 2017/05/18 13:51:42 sthen Exp $
 Index: bindings/Makefile.in
 --- bindings/Makefile.in.orig
 +++ bindings/Makefile.in

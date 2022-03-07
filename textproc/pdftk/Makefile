@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/12/23 09:08:17 sthen Exp $
-
 COMMENT=	pdf swiss army knife
 
 V=		3.3.2

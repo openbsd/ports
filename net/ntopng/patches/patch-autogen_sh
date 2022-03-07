@@ -1,5 +1,3 @@
-$OpenBSD: patch-autogen_sh,v 1.4 2021/01/18 13:15:40 sthen Exp $
-
 Index: autogen.sh
 --- autogen.sh.orig
 +++ autogen.sh

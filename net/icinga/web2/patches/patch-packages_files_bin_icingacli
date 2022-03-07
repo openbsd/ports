@@ -1,5 +1,3 @@
-$OpenBSD: patch-packages_files_bin_icingacli,v 1.1 2021/11/13 16:01:19 sthen Exp $
-
 Index: packages/files/bin/icingacli
 --- packages/files/bin/icingacli.orig
 +++ packages/files/bin/icingacli

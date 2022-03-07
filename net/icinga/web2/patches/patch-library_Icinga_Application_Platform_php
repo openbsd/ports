@@ -1,5 +1,3 @@
-$OpenBSD: patch-library_Icinga_Application_Platform_php,v 1.1 2021/02/26 11:17:05 sthen Exp $
-
 OpenBSD chroot doesn't typically have a pwd.db including the user
 running the webserver, so posix_getpwuid() fails. With PHP 7.3 this
 is ignored, with 7.4+ this results in "Trying to access array

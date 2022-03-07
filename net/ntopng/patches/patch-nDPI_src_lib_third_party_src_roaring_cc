@@ -1,5 +1,3 @@
-$OpenBSD: patch-nDPI_src_lib_third_party_src_roaring_cc,v 1.1 2022/02/04 11:41:02 sthen Exp $
-
 Index: nDPI/src/lib/third_party/src/roaring.cc
 --- nDPI/src/lib/third_party/src/roaring.cc.orig
 +++ nDPI/src/lib/third_party/src/roaring.cc

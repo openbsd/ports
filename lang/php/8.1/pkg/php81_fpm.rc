@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: php81_fpm.rc,v 1.1 2021/12/18 22:28:55 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 

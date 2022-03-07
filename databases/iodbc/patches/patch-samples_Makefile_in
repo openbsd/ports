@@ -1,4 +1,3 @@
-$OpenBSD: patch-samples_Makefile_in,v 1.7 2017/11/15 15:45:12 sthen Exp $
 Index: samples/Makefile.in
 --- samples/Makefile.in.orig
 +++ samples/Makefile.in

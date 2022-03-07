@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_mysqlnd_config9_m4,v 1.1 2021/02/24 19:13:50 sthen Exp $
-
 Index: ext/mysqlnd/config9.m4
 --- ext/mysqlnd/config9.m4.orig
 +++ ext/mysqlnd/config9.m4

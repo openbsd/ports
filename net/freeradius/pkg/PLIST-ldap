@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ldap,v 1.8 2021/09/16 10:36:39 sthen Exp $
 @pkgpath net/freeradius3,-ldap
 @so lib/freeradius/rlm_ldap.so
 share/doc/freeradius/schemas/ldap/

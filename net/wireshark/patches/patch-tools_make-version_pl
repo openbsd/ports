@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_make-version_pl,v 1.2 2019/12/19 15:48:56 sthen Exp $
-
 avoid ugly "Git Rev Unknown from Unknown"
 
 Index: tools/make-version.pl

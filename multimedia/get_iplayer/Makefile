@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.134 2022/02/08 11:33:11 sthen Exp $
-
 COMMENT=		download/stream programmes from BBC iPlayer
 
 GH_ACCOUNT=		get-iplayer

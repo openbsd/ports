@@ -1,5 +1,3 @@
-$OpenBSD: patch-sapi_fpm_fpm_fpm_atomic_h,v 1.2 2021/06/05 20:30:14 sthen Exp $
-
 Add support for mips
 
 Index: sapi/fpm/fpm/fpm_atomic.h

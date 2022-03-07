@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-server,v 1.30 2021/09/10 20:44:27 sthen Exp $
 @option is-branch
 @conflict openldap-client-<=2.4.45p0
 @pkgpath databases/openldap,-server,bdb

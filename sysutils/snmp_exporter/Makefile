@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/03/23 19:42:28 sthen Exp $
-
 COMMENT=	Prometheus exporter for SNMP metrics
 
 # updating: bump V version, "make patch" (fix patches if needed),

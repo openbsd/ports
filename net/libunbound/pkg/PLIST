@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/12/12 22:29:35 sthen Exp $
 @conflict unbound-*
 include/unbound.h
 @static-lib lib/libunbound.a

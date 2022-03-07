@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/11 22:54:35 sthen Exp $
-
 COMMENT=	regular expressions for handling British postcodes
 
 MODULES=	cpan

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: asterisk.rc,v 1.1.1.1 2021/10/16 10:55:00 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/asterisk"
 

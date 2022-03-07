@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/11/13 17:23:38 sthen Exp $
 bin/mupdf
 %%js%%
 @bin bin/mupdf-x11

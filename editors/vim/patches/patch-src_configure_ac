@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_configure_ac,v 1.15 2022/02/26 13:48:31 sthen Exp $
-
 Index: src/configure.ac
 --- src/configure.ac.orig
 +++ src/configure.ac

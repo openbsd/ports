@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/12/09 08:33:26 sthen Exp $
-
 COMMENT =	create PDF documents with perl
 
 MODULES =	cpan

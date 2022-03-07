@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_php_h,v 1.1 2021/12/18 22:28:55 sthen Exp $
-
 Index: main/php.h
 --- main/php.h.orig
 +++ main/php.h

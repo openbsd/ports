@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/11 22:54:40 sthen Exp $
-
 COMMENT=	filter files for IP address matches
 
 # note there's also a "grepcidr-2" fork; this port is for the original

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/20 09:00:18 sthen Exp $
-
 COMMENT=	roundcube plugin: authenticate via Yubikey HTTPS API
 
 GH_ACCOUNT=	northox

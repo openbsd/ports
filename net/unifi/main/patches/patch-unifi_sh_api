@@ -1,5 +1,3 @@
-$OpenBSD: patch-unifi_sh_api,v 1.1 2021/11/01 09:58:57 sthen Exp $
-
 Index: unifi_sh_api
 --- unifi_sh_api.orig
 +++ unifi_sh_api

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_acl_external_wbinfo_group_ext_wbinfo_group_acl_pl_in,v 1.2 2021/08/20 21:25:05 sthen Exp $
-
 Index: src/acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in
 --- src/acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in.orig
 +++ src/acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in

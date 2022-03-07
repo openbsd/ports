@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_solr,v 1.16 2021/11/14 11:19:29 sthen Exp $
-
 Index: bin/solr
 --- bin/solr.orig
 +++ bin/solr

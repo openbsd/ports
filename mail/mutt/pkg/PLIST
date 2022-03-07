@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.42 2021/06/13 21:04:46 sthen Exp $
 @pkgpath mail/mutt/stable${FLAVOR_COMMA}
 @pkgpath mail/mutt/snapshot[,compressed][,hcache][,idn][,sidebar]${FLAVOR_COMMA}
 @pkgpath mail/mutt[,compressed][,idn][,sidebar]${FLAVOR_COMMA}

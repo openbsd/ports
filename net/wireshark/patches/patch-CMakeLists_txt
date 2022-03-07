@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.16 2021/12/13 22:44:01 sthen Exp $
-
 Avoid the broken libwsutil.so that gets generated with -pie -shared
 (probably following tools/clang/lib/Driver/Tools.cpp r1.13 "push back
 -pie to the linker if -pie is specified").

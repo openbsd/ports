@@ -1,4 +1,3 @@
-# $OpenBSD: pear.port.mk,v 1.7 2013/07/05 09:34:35 jasper Exp $
 # PHP PEAR module
 
 PKGNAME?=	pear-${DISTNAME:S/_/-/}

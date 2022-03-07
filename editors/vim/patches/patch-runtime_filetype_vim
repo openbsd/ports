@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.35 2022/02/26 13:48:31 sthen Exp $
-
 Index: runtime/filetype.vim
 --- runtime/filetype.vim.orig
 +++ runtime/filetype.vim

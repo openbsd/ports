@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_php_m4,v 1.1 2021/12/18 22:28:55 sthen Exp $
-
 - don't hardcode libstdc++
 
 - libressl uses a bogus version number in its pkgconfig file

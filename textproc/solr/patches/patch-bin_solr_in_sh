@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_solr_in_sh,v 1.9 2021/12/16 12:40:23 sthen Exp $
-
 Index: bin/solr.in.sh
 --- bin/solr.in.sh.orig
 +++ bin/solr.in.sh

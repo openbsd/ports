@@ -1,5 +1,3 @@
-$OpenBSD: patch-interface_README_md,v 1.2 2021/08/20 12:12:07 sthen Exp $
-
 Index: interface/README.md
 --- interface/README.md.orig
 +++ interface/README.md

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/03/05 14:23:42 sthen Exp $
-
 PORTROACH=	limit:^8\.0
 PHP_VERSION=	8.0.16
 PHP_PKGSPEC=	>=8.0,<8.1

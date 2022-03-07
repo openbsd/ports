@@ -1,5 +1,3 @@
-$OpenBSD: patch-conserver_main_c,v 1.6 2019/03/27 10:37:10 sthen Exp $
-
 - enable "setproctitle" option by default, for more information in ps listings
 
 Index: conserver/main.c

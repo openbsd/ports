@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/09 08:41:43 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	tool to check the quality of a DNS zone

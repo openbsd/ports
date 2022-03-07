@@ -1,4 +1,3 @@
-$OpenBSD: patch-bindings_ruby_extconf_rb,v 1.4 2015/11/23 11:41:02 sthen Exp $
 --- bindings/ruby/extconf.rb.orig	Thu Mar 26 12:34:34 2015
 +++ bindings/ruby/extconf.rb	Mon Apr 20 09:37:21 2015
 @@ -14,5 +14,6 @@ elsif /aix/ =~ RUBY_PLATFORM

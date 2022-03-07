@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2021/12/28 09:17:29 sthen Exp $
-
 COMMENT=	C-style arbitrary precision calculator
 
 V=		2.14.0.14

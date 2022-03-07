@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/02/10 11:05:37 sthen Exp $
 roundcubemail/plugins/sieverules/
 roundcubemail/plugins/sieverules/CHANGELOG
 roundcubemail/plugins/sieverules/README.md

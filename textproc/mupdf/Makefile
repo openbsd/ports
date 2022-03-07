@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.103 2022/01/11 12:50:30 jca Exp $
-
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.19.0

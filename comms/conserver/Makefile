@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.75 2020/11/06 14:38:27 sthen Exp $
-
 COMMENT=	manage remote serial consoles via TCP/IP
 
 V=		8.2.6

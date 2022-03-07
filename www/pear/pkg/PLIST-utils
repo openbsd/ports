@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-utils,v 1.5 2016/04/01 18:46:06 sthen Exp $
 @conflict php4-core-*
 @group daemon
 bin/pear

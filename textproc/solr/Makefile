@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/12/16 12:40:23 sthen Exp $
-
 COMMENT=	full-text search engine based on Lucene
 
 V=		8.11.1

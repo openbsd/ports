@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-ruby,v 1.5 2013/11/05 17:49:01 sthen Exp $
 ${MODRUBY_SITEARCHDIR}/RRD.so

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/20 13:35:27 sthen Exp $
-
 COMMENT=	small tools to operate on patch files
 
 DISTNAME=	patchutils-0.4.2

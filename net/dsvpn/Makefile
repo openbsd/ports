@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/11 22:54:37 sthen Exp $
-
 COMMENT=	small and simple TCP VPN with modern crypto
 
 GH_ACCOUNT=	jedisct1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/02/14 16:37:59 sthen Exp $
 include/freeipmi/
 include/freeipmi/api/
 include/freeipmi/api/ipmi-api.h

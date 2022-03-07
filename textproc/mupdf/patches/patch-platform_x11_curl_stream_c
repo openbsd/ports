@@ -1,5 +1,3 @@
-$OpenBSD: patch-platform_x11_curl_stream_c,v 1.3 2021/11/13 17:23:38 sthen Exp $
-
 Index: platform/x11/curl_stream.c
 --- platform/x11/curl_stream.c.orig
 +++ platform/x11/curl_stream.c

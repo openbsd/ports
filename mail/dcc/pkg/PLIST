@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/17 21:26:38 sthen Exp $
 @newgroup _dcc:863
 @newuser _dcc:863:_dcc:daemon:dcc user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dcc

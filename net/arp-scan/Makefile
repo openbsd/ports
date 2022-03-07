@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2022/02/25 22:01:10 sthen Exp $
-
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
 GH_COMMIT =	cbe828cfc9830b859fa525bc6ba7fed8631b62b1

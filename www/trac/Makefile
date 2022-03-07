@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2022/02/27 12:06:45 sthen Exp $
-
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=1.5.3

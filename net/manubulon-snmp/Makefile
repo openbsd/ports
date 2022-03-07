@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/11 22:54:37 sthen Exp $
-
 PKG_ARCH =		*
 
 COMMENT =		extended SNMP-based checks for Icinga/Nagios

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: slapd.rc,v 1.5 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/slapd"
 daemon_flags="-u _openldap"

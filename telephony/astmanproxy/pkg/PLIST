@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/20 10:51:21 sthen Exp $
 @newgroup _astmanproxy:640
 @newuser _astmanproxy:640:_astmanproxy:daemon:asterisk management proxy user:/nonexistent:/sbin/nologin
 lib/astmanproxy/

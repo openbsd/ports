@@ -1,5 +1,3 @@
-$OpenBSD: patch-physmap_c,v 1.3 2019/07/05 16:01:57 sthen Exp $
-
 Index: physmap.c
 --- physmap.c.orig
 +++ physmap.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_open_open_h,v 1.2 2022/02/07 16:40:36 sthen Exp $
-
 Index: src/plugins/open/open.h
 --- src/plugins/open/open.h.orig
 +++ src/plugins/open/open.h

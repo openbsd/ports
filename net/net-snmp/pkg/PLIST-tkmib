@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-tkmib,v 1.2 2018/06/02 20:53:37 sthen Exp $
 @conflict net-snmp-<5.8rc3
 bin/snmpcheck
 bin/tkmib

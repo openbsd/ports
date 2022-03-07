@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: php74_fpm.rc,v 1.1 2020/04/21 20:38:32 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 

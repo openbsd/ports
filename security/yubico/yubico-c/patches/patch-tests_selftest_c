@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_selftest_c,v 1.1.1.1 2015/11/12 15:18:47 sthen Exp $
 --- tests/selftest.c.orig	Wed Nov 26 13:47:43 2014
 +++ tests/selftest.c	Mon Mar 16 09:45:26 2015
 @@ -30,7 +30,7 @@

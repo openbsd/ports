@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_FindCURSES_cmake,v 1.1 2021/11/03 22:22:14 sthen Exp $
-
 revert upstream change that breaks build on systems which don't
 provide pkg-config files for curses.
 https://github.com/Cisco-Talos/clamav/commit/54829910d0254dfb1ec42085279774e202ea74dc

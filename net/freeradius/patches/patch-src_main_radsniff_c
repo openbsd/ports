@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_main_radsniff_c,v 1.4 2021/09/16 10:36:39 sthen Exp $
-
 OpenBSD libpcap uses nonstandard "bpf_timeval" variables which are a
 different size to timeval on some arch..
 

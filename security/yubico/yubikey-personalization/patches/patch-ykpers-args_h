@@ -1,5 +1,3 @@
-$OpenBSD: patch-ykpers-args_h,v 1.1 2021/01/31 19:41:30 sthen Exp $
-
 From 09ea16d9e2030e4da6ad00c1e5147e962aa7ff84 Mon Sep 17 00:00:00 2001
 From: Klas Lindfors <klas@yubico.com>
 Date: Mon, 17 Feb 2020 08:58:33 +0100

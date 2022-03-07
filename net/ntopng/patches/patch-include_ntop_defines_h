@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_ntop_defines_h,v 1.10 2022/02/04 11:41:02 sthen Exp $
-
 Index: include/ntop_defines.h
 --- include/ntop_defines.h.orig
 +++ include/ntop_defines.h

@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_odbc_ini_sample,v 1.2 2018/06/08 12:41:29 stu Exp $
 Index: etc/odbc.ini.sample
 --- etc/odbc.ini.sample.orig
 +++ etc/odbc.ini.sample

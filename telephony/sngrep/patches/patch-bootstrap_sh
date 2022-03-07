@@ -1,5 +1,3 @@
-$OpenBSD: patch-bootstrap_sh,v 1.1.1.1 2021/04/28 19:12:30 sthen Exp $
-
 Index: bootstrap.sh
 --- bootstrap.sh.orig
 +++ bootstrap.sh

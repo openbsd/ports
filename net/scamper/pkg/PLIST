@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/07/20 11:55:01 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 @bin bin/sc_ally

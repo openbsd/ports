@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_capture_openssl_h,v 1.1 2022/01/14 11:03:35 tb Exp $
-
 All the OpenSSL API has long been available in LibreSSL except for
 EVP_CIPHER_CTX_get_cipher_data().
 

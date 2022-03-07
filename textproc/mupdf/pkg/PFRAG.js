@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.js,v 1.2 2021/11/13 17:23:38 sthen Exp $
 @bin bin/mupdf-gl
 share/examples/mupdf/bbox-device.js
 share/examples/mupdf/create-thumbnail.js

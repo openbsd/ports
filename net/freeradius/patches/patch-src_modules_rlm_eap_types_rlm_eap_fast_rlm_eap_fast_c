@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_rlm_eap_types_rlm_eap_fast_rlm_eap_fast_c,v 1.1 2021/09/16 10:36:39 sthen Exp $
-
 Index: src/modules/rlm_eap/types/rlm_eap_fast/rlm_eap_fast.c
 --- src/modules/rlm_eap/types/rlm_eap_fast/rlm_eap_fast.c.orig
 +++ src/modules/rlm_eap/types/rlm_eap_fast/rlm_eap_fast.c

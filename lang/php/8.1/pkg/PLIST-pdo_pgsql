@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-pdo_pgsql,v 1.1 2021/12/18 22:28:55 sthen Exp $
 @option no-default-conflict
 @option is-branch
 @conflict php-pdo_pgsql-${PHP_PKGSPEC}

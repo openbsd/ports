@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ntlm,v 1.4 2019/02/05 23:03:16 sthen Exp $
 @conflict squid-<3
 @pkgpath www/squid/snapshot,-ntlm
 @pkgpath www/squid/stable,-ntlm

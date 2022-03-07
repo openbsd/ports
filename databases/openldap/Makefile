@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.192 2022/02/28 11:33:39 sthen Exp $
-
 DPB_PROPERTIES =	parallel
 
 COMMENT-main =		open-source LDAP software (client)

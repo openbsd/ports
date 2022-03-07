@@ -1,5 +1,3 @@
-$OpenBSD: patch-WEB-INF_web_xml,v 1.2 2016/11/14 17:31:39 sthen Exp $
-
 - Strip anything outside of <web-app> tag so this file can be used
 directly as an include in the main tomcat web.xml <web-app> section.
 

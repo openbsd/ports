@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_autoload_tar_vim,v 1.3 2019/09/05 18:47:53 sthen Exp $
-
 Index: runtime/autoload/tar.vim
 --- runtime/autoload/tar.vim.orig
 +++ runtime/autoload/tar.vim

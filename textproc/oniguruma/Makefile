@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/04/28 19:36:27 sthen Exp $
-
 COMMENT=	regular expressions library
 
 V=		6.9.7.1

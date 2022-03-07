@@ -1,5 +1,3 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.17 2021/10/08 20:20:21 sthen Exp $
-
 Index: raddb/radiusd.conf.in
 --- raddb/radiusd.conf.in.orig
 +++ raddb/radiusd.conf.in

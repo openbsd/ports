@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2021/12/15 12:05:23 sthen Exp $
-
 SHARED_LIBS +=  scamperfile               3.0 # 2.0
 
 COMMENT =	parallel internet measurement utility

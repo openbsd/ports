@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/12/20 15:06:34 sthen Exp $
 @option is-branch
 @pkgpath net/unifi
 @pkgpath net/unifi/5.7

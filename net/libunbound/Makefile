@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/17 10:10:09 sthen Exp $
-
 COMMENT=	validating DNS resolver library
 
 DISTNAME=	unbound-1.15.0

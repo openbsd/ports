@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: yubikeyedup.rc,v 1.1 2021/03/29 12:08:39 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/yubikeyedup"
 daemon_flags="--db /var/db/yubiserve/yubikeys.sqlite3"

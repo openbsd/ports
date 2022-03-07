@@ -1,5 +1,3 @@
-$OpenBSD: patch-platform_h,v 1.1 2020/11/20 12:48:58 sthen Exp $
-
 fix generic endian detection for openbsd (aarch64 falls through to
 the generic as we don't define __ARMEL__ or __ARMEB__).
 

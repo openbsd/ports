@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_base_library_cpp,v 1.2 2019/12/28 15:59:30 sthen Exp $
-
 Index: lib/base/library.cpp
 --- lib/base/library.cpp.orig
 +++ lib/base/library.cpp

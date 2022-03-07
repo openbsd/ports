@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.153 2022/02/23 15:47:35 sthen Exp $
-
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,

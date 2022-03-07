@@ -1,5 +1,3 @@
-$OpenBSD: patch-wsutil_inet_addr_h,v 1.1 2018/05/24 17:05:47 sthen Exp $
-
 partially revert https://github.com/wireshark/wireshark/commit/becc442da
 which breaks build on OpenBSD
 

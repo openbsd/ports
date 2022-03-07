@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/28 10:54:30 sthen Exp $
-
 COMMENT=	UDP latency tester, round-trip/1-way/jitter etc
 
 MODGO_MODNAME=	github.com/heistp/irtt

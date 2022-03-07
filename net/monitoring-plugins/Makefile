@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/02 13:31:06 sthen Exp $
-
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
 COMMENT-fping=	fping monitoring plugin

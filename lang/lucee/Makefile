@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/12 10:39:00 sthen Exp $
-
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
 V=		5.3.8.206

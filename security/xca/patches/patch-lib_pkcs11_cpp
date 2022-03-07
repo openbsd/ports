@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_pkcs11_cpp,v 1.4 2021/10/13 14:05:35 tb Exp $
-
 Index: lib/pkcs11.cpp
 --- lib/pkcs11.cpp.orig
 +++ lib/pkcs11.cpp

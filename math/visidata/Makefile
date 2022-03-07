@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/15 21:31:53 sdk Exp $
-
 COMMENT=	console-based multitool to explore and arrange tabular data
 
 MODPY_EGG_VERSION=	2.8
