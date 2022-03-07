@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/19 18:43:39 abieber Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/07 18:03:30 abieber Exp $
 
 COMMENT =	shell parser, formatter, and interpreter
 
 MODGO_MODNAME =	mvdan.cc/sh/v3
-MODGO_VERSION =	v3.4.2
+MODGO_VERSION =	v3.4.3
 
 DISTNAME =	shfmt-${MODGO_VERSION}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: modules.inc,v 1.1.1.1 2021/12/10 21:23:03 abieber Exp $
+# $OpenBSD: modules.inc,v 1.2 2022/03/07 18:03:30 abieber Exp $
 
 MODGO_MODULES =	\
 	github.com/creack/pty		 v1.1.15 \
