@@ -1,0 +1,18 @@
+Lego can be use as a Let's Encrypt/ACME CLI and can solve multiple ACME
+challenge types out of the box or use custom challenge solvers.
+
+Features:
+- ACME v2 RFC 8555
+- Register with CA
+- Obtain certificates, both from scratch or with an existing CSR
+- Renew certificates
+- Revoke certificates
+- Robust implementation of all ACME challenges
+- HTTP (http-01)
+- DNS (dns-01)
+- TLS (tls-alpn-01)
+- SAN certificate support
+- Comes with multiple optional DNS providers
+- Custom challenge solvers
+- Certificate bundling
+- OCSP helper function
