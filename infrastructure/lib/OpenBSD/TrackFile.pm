@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TrackFile.pm,v 1.5 2022/03/01 11:01:17 espie Exp $
+# $OpenBSD: TrackFile.pm,v 1.6 2022/03/07 16:34:26 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -348,12 +348,6 @@ sub prepare_backsubst
 	} else {
 		$self->SUPER::write_backsubst($f, $p);
 	}
-}
-
-package OpenBSD::PackingElement::CVSTag;
-sub prepare_restate
-{
-	undef;
 }
 
 1;
