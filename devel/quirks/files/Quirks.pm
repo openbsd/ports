@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1372 2022/02/27 12:21:37 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1373 2022/03/07 12:02:54 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -715,6 +715,7 @@ my $stem_extensions = {
 	'py-test-mock' => 'py3-test-mock',
 	'py-test-runner' => 'py3-test-runner',
 	'py-setuptools_scm' => 'py3-setuptools_scm',
+	'ssvnc-viewer' => 'tigervnc',
 };
 
 my $obsolete_reason = {};
@@ -1647,7 +1648,6 @@ setup_obsolete_reason(
 	31 => 'spe',
 	31 => 'py-Checker',
 	14 => 'ssvnc',
-	14 => 'ssvnc-viewer',
 	11 => 'netshot',
 	31 => 'py-contextlib2',
 	31 => 'py-linecache2',
