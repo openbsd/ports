@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.69 2021/12/31 08:54:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.70 2022/03/07 12:39:07 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -1233,6 +1233,7 @@ roundcubemail/plugins/markasjunk/
 roundcubemail/plugins/markasjunk/README.md
 roundcubemail/plugins/markasjunk/composer.json
 roundcubemail/plugins/markasjunk/config.inc.php.dist
+@sample roundcubemail/plugins/markasjunk/config.inc.php
 roundcubemail/plugins/markasjunk/drivers/
 roundcubemail/plugins/markasjunk/drivers/amavis_blacklist.php
 roundcubemail/plugins/markasjunk/drivers/cmd_learn.php
@@ -1594,6 +1595,7 @@ roundcubemail/plugins/password/password.php
 roundcubemail/plugins/reconnect/
 roundcubemail/plugins/reconnect/composer.json
 roundcubemail/plugins/reconnect/config.inc.php.dist
+@sample roundcubemail/plugins/reconnect/config.inc.php
 roundcubemail/plugins/reconnect/readme.md
 roundcubemail/plugins/reconnect/reconnect.php
 roundcubemail/plugins/redundant_attachments/
