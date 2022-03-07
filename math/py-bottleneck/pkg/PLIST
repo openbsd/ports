@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/04 14:06:33 sthen Exp $
 @conflict py-bottleneck-*
 @pkgpath math/py-bottleneck
 lib/python${MODPY_VERSION}/site-packages/Bottleneck-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -54,6 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}input_modification_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}list_input_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}memory_test.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,7 +62,9 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}nonred
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}nonreduce_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}reduce_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}scalar_input_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}test_template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/common.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/input_modification_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/list_input_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/memory_test.py
@@ -71,4 +73,5 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/nonreduce_axis_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/nonreduce_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/reduce_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/scalar_input_test.py
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/test_template.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/util.py

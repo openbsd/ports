@@ -1,8 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.3 2020/02/06 12:26:54 martin Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -108,7 +108,7 @@ def prepare_modules():
+@@ -111,7 +111,7 @@ def prepare_modules():
              "bottleneck.reduce",
              sources=["bottleneck/src/reduce.c"],
              depends=base_includes,
@@ -11,7 +10,7 @@ Index: setup.py
          )
      ]
      ext += [
-@@ -119,7 +119,7 @@ def prepare_modules():
+@@ -122,7 +122,7 @@ def prepare_modules():
                  "bottleneck/src/move_median/move_median.c",
              ],
              depends=base_includes + ["bottleneck/src/move_median/move_median.h"],
@@ -20,7 +19,7 @@ Index: setup.py
          )
      ]
      ext += [
-@@ -127,7 +127,7 @@ def prepare_modules():
+@@ -130,7 +130,7 @@ def prepare_modules():
              "bottleneck.nonreduce",
              sources=["bottleneck/src/nonreduce.c"],
              depends=base_includes,
@@ -29,7 +28,7 @@ Index: setup.py
          )
      ]
      ext += [
-@@ -135,7 +135,7 @@ def prepare_modules():
+@@ -138,7 +138,7 @@ def prepare_modules():
              "bottleneck.nonreduce_axis",
              sources=["bottleneck/src/nonreduce_axis.c"],
              depends=base_includes,

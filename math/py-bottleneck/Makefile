@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.3.2
+MODPY_EGG_VERSION =	1.3.4
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		2
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -37,6 +34,7 @@ TEST_DEPENDS =	devel/py-pluggy${MODPY_FLAVOR} \
 pre-test:
 	@${MODPY_CMD} build_ext --inplace
 
+# also needs data dir from github for one test
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -c "import bottleneck; bottleneck.test()"
 
