@@ -1,0 +1,14 @@
+Ignore usleep(3) return value.
+It can only fail with EINTR and shouldn't stop execution.
+
+Index: src/a68g/parallel.c
+--- src/a68g/parallel.c.orig
++++ src/a68g/parallel.c
+@@ -519,7 +519,6 @@ void genie_down_sema (NODE_T * p)
+         UNLOCK_THREAD;
+ // Waiting a bit relaxes overhead.
+         int rc = usleep (10);
+-        ASSERT (rc == 0 || rc == EINTR);
+         LOCK_THREAD;
+ // Garbage may be collected, so recalculate 'k'.
+         k = DEREF (A68_INT, &s);

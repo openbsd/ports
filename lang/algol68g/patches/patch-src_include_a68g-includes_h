@@ -1,0 +1,15 @@
+configure misdetects this but we need it to compile the compiler
+
+Index: src/include/a68g-includes.h
+--- src/include/a68g-includes.h.orig
++++ src/include/a68g-includes.h
+@@ -66,9 +66,7 @@
+ #include <dirent.h>
+ #endif
+ 
+-#if defined (HAVE_DL)
+ #include <dlfcn.h>
+-#endif
+ 
+ #if defined (HAVE_ERRNO_H)
+ #include <errno.h>

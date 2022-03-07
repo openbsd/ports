@@ -1,0 +1,58 @@
+Build the compiler
+Mention that we are IEEE 754 compliant
+Remove hardcoded optimization flags
+Remove broken configure tests
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -245,9 +245,8 @@ case "$host" in
+ #
+ *86-*-openbsd* | *86_64-*-openbsd*) 
+   AC_DEFINE(BUILD_BSD, 1, [Define this if OpenBSD was detected]) 
+-  AC_MSG_WARN([configuring interpreter-only])
++  AC_DEFINE(HAVE_IEEE_754, 1, [Define this if IEEE_754 compliant]) 
+   AC_MSG_RESULT([openbsd])
+-  enable_compiler=no
+   ;;
+ #
+ # Haiku.
+@@ -318,7 +317,6 @@ if test "x$GCC" != "xyes"; then
+   AC_MSG_WARN([gcc is the preferred C compiler; configuring interpreter-only])
+ else
+   AC_DEFINE(HAVE_GCC, 1, [Define this if GCC was detected]) 
+-  CFLAGS="-g -O2 -Wall"
+   A68G_AC_PROG_CC_CFLAGS([-Wshadow])
+   A68G_AC_PROG_CC_CFLAGS([-Wunused-variable])
+   A68G_AC_PROG_CC_CFLAGS([-Wunused-parameter])
+@@ -333,12 +331,6 @@ else
+   [AC_MSG_RESULT(no)
+    AC_MSG_FAILURE([stop -- C compiler does not support __attribute__aligned directive])],
+   [])
+-  AC_MSG_CHECKING([attribute inline supported])
+-  AC_RUN_IFELSE([AC_LANG_PROGRAM([], [inline void skip (void) {;}])],
+-  [AC_MSG_RESULT(yes)],
+-  [AC_MSG_RESULT(no)
+-   AC_MSG_FAILURE([stop -- C compiler does not support __attribute__aligned directive])],
+-  [])
+ #
+ # Check -Wl,--export-dynamic, needed for creating shared objects.
+ #
+@@ -732,17 +724,6 @@ if test "x$enable_postgresql" = "xyes"; then
+   AC_CHECK_LIB([pq], [PQbackendPID], [], [enable_postgresql=no])
+   if test "x$enable_postgresql" = "xyes"; then
+     AC_DEFINE(HAVE_POSTGRESQL, 1, [Define this if a good PostgreSQL installation was detected]) 
+-  fi
+-fi
+-
+-if test "x$enable_compiler" = "xyes"; then
+-  libdl_found=no
+-  AC_MSG_NOTICE([Dynamic loader via libdl...])
+-  AC_CHECK_HEADERS([dlfcn.h])
+-  AC_CHECK_LIB([dl], [dlopen], [], enable_compiler=no)
+-  if test "x$enable_compiler" = "xyes"; then
+-    AC_DEFINE(HAVE_DL, 1, [Define this if a good DL installation was detected]) 
+-    libdl_found=yes
+   fi
+ fi
+ 

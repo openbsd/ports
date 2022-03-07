@@ -1,0 +1,32 @@
+We built the compiler, so we need to be able to use it.
+
+Index: src/a68g/options.c
+--- src/a68g/options.c.orig
++++ src/a68g/options.c
+@@ -701,7 +701,7 @@ BOOL_T set_options (OPTION_LIST_T * i, BOOL_T cmd_line
+         }
+ // COMPILE and NOCOMPILE switch on/off compilation.
+         else if (eq (p, "Compile")) {
+-#if defined (BUILD_LINUX)
++#if defined (BUILD_LINUX) || defined (BUILD_BSD)
+           OPTION_COMPILE (&A68_JOB) = A68_TRUE;
+           OPTION_COMPILE_CHECK (&A68_JOB) = A68_TRUE;
+           if (OPTION_OPT_LEVEL (&A68_JOB) < OPTIMISE_1) {
+@@ -745,7 +745,7 @@ BOOL_T set_options (OPTION_LIST_T * i, BOOL_T cmd_line
+         }
+ // RUN-SCRIPT runs a compiled .sh script.
+         else if (eq (p, "RUN-SCRIPT")) {
+-#if defined (BUILD_LINUX)
++#if defined (BUILD_LINUX) || defined (BUILD_BSD)
+           FORWARD (i);
+           if (i != NO_OPTION_LIST) {
+             if (!name_set) {
+@@ -766,7 +766,7 @@ BOOL_T set_options (OPTION_LIST_T * i, BOOL_T cmd_line
+         }
+ // RUN-QUOTE-SCRIPT runs a compiled .sh script.
+         else if (eq (p, "RUN-QUOTE-SCRIPT")) {
+-#if defined (BUILD_LINUX)
++#if defined (BUILD_LINUX) || defined (BUILD_BSD)
+           FORWARD (i);
+           if (i != NO_OPTION_LIST) {
+             if (!name_set) {

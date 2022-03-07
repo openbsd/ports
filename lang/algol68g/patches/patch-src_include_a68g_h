@@ -1,0 +1,14 @@
+Build the compiler on OpenBSD.
+
+Index: src/include/a68g.h
+--- src/include/a68g.h.orig
++++ src/include/a68g.h
+@@ -32,7 +32,7 @@
+ 
+ // Build switches depending on platform.
+ 
+-#if (defined (BUILD_LINUX) && defined (HAVE_GCC) && defined (HAVE_DL))
++#if (defined (HAVE_GCC))
+ #  define BUILD_A68_COMPILER
+ #else
+ // Untested, so disabled.
