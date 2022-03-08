@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/07/08 12:05:36 sthen Exp $
 @so lib/libadblock.so
 lib/python${MODPY_VERSION}/site-packages/adblock/
 lib/python${MODPY_VERSION}/site-packages/adblock-${MODPY_EGG_VERSION}.dist-info/

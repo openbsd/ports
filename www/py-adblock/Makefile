@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2022/03/02 11:12:54 sthen Exp $
-
-.if ${MACHINE_ARCH} == i386
-DPB_PROPERTIES = lonesome
-.endif
+BROKEN-i386 =	fatal runtime error: Rust cannot catch foreign exceptions
+#.if ${MACHINE_ARCH} == i386
+#DPB_PROPERTIES = lonesome
+#.endif
 
 COMMENT =	Brave's adblock library
 
