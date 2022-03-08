@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/12 20:47:40 sthen Exp $
-
 COMMENT=	RPN and algebraic scientific calculator
 
 DISTNAME=	calcoo-1.3.18

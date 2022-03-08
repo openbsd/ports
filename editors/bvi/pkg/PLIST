@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/27 21:59:32 naddy Exp $
 @bin bin/bmore
 @bin bin/bvedit
 @bin bin/bvi

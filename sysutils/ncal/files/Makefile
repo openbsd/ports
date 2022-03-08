@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/09/09 13:31:23 naddy Exp $
-
 .PATH:	${.CURDIR}/../libcalendar
 
 PROG=	ncal

@@ -1,4 +1,3 @@
-$OpenBSD: patch-xloadimage.man,v 1.5 2013/12/12 13:22:41 naddy Exp $
 --- xloadimage.man.orig	Wed Dec 11 23:44:28 2013
 +++ xloadimage.man	Wed Dec 11 23:45:46 2013
 @@ -633,7 +633,7 @@ distribution.

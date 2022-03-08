@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:35 sthen Exp $
-
 COMMENT=	high-level API for encoding .opus files
 
 DISTNAME=	libopusenc-0.2.1

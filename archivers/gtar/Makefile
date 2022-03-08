@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.88 2021/02/16 21:20:07 naddy Exp $
-
 COMMENT=	GNU version of the traditional tape archiver
 
 DISTNAME=	tar-1.34

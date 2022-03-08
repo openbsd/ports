@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/09/10 18:44:55 jasper Exp $
-
 COMMENT=	GNU versions of grep pattern matching utilities
 
 DISTNAME=	grep-3.7

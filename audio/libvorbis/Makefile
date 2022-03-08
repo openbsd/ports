@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2020/07/05 15:45:00 tj Exp $
-
 COMMENT=	audio compression codec library
 
 DISTNAME=	libvorbis-1.3.7

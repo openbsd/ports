@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.126 2022/02/27 14:36:46 naddy Exp $
-
 COMMENT=	simple editor, inspired by Pico
 
 DISTNAME=	nano-6.2

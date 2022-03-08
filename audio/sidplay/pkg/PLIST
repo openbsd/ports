@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/12 10:00:24 espie Exp $
 @bin bin/sid2wav
 @bin bin/sidcon
 @bin bin/sidplay

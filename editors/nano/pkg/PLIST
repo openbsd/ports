@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.38 2021/12/20 15:23:36 mestre Exp $
 @pkgpath editors/nano,slang
 @bin bin/nano
 bin/rnano

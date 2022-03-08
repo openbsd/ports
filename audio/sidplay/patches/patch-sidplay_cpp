@@ -1,4 +1,3 @@
-$OpenBSD: patch-sidplay_cpp,v 1.1 2017/04/22 01:42:27 jsg Exp $
 --- sidplay.cpp.orig	Thu Apr 20 16:54:28 2017
 +++ sidplay.cpp	Thu Apr 20 16:58:52 2017
 @@ -18,8 +18,9 @@

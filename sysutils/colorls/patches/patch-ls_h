@@ -1,4 +1,3 @@
-$OpenBSD: patch-ls_h,v 1.4 2007/08/11 17:52:11 naddy Exp $
 --- ls.h.orig	Mon May  7 20:39:28 2007
 +++ ls.h	Sat Aug 11 19:28:48 2007
 @@ -51,6 +51,9 @@ extern int f_size;		/* list size in short listing */

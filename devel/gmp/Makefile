@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/22 15:00:41 espie Exp $
-
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
 

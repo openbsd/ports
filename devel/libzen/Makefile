@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/29 20:13:45 naddy Exp $
-
 COMMENT=	C++ utility library
 
 VERSION=	0.4.39

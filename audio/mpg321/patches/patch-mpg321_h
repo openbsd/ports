@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpg321_h,v 1.2 2021/01/31 20:18:25 naddy Exp $
 Index: mpg321.h
 --- mpg321.h.orig
 +++ mpg321.h

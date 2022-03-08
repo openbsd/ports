@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/12/08 20:45:16 naddy Exp $
 @pkgpath shells/bash,static
 @shell bin/bash
 bin/bashbug

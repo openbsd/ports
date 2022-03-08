@@ -1,5 +1,3 @@
-$OpenBSD: patch-compat_h,v 1.1 2018/01/19 23:01:41 espie Exp $
-
 Index: compat.h
 --- compat.h.orig
 +++ compat.h

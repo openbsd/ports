@@ -1,4 +1,3 @@
-$OpenBSD: patch-makeconcfile_c,v 1.1.1.1 2011/09/19 20:20:42 naddy Exp $
 --- makeconcfile.c.orig	Sun Sep 18 18:08:18 2011
 +++ makeconcfile.c	Sun Sep 18 18:08:40 2011
 @@ -201,7 +201,7 @@ int main(int argc,char **argv)

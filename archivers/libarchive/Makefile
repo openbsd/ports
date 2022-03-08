@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/02/24 22:54:43 naddy Exp $
-
 COMMENT=	multi-format archive and compression library
 
 DISTNAME=	libarchive-3.6.0

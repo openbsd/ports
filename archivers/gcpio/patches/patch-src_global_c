@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_global_c,v 1.3 2021/01/28 13:35:02 naddy Exp $
-
 Fix for -fno-common.
 https://git.savannah.gnu.org/cgit/cpio.git/commit/?id=641d3f489cf6238bb916368d4ba0d9325a235afb
 

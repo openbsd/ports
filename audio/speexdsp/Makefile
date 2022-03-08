@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/17 17:11:38 naddy Exp $
-
 COMMENT=	speech processing DSP library
 
 DISTNAME=	speexdsp-1.2.0

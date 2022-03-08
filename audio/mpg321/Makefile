@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/31 20:18:25 naddy Exp $
-
 COMMENT=	clone of mpg123, a command-line mp3 player
 
 VERSION=	0.3.2

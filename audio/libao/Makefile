@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2019/07/12 20:43:34 sthen Exp $
-
 COMMENT=	portable audio output library
 
 DISTNAME=	libao-1.2.0

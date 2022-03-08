@@ -1,5 +1,3 @@
-$OpenBSD: patch-gettext-runtime_intl_vasnprintf_c,v 1.1 2020/10/07 21:14:35 jca Exp $
-
 Don't use printf %n.
 
 Index: gettext-runtime/intl/vasnprintf.c

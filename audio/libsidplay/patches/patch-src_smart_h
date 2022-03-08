@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_smart_h,v 1.1 2010/05/11 21:19:25 espie Exp $
 --- src/smart.h.orig	Tue May 11 23:07:35 2010
 +++ src/smart.h	Tue May 11 23:16:56 2010
 @@ -211,16 +211,16 @@ class smartPtr : public smartPtrBase<T>

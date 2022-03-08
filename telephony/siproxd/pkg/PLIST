@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/10/02 19:22:09 naddy Exp $
 @newgroup _siproxd:574
 @newuser _siproxd:574:574:daemon:SIP proxy:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/siproxd

@@ -1,4 +1,3 @@
-# $OpenBSD: mad.pc.in,v 1.1 2005/06/04 15:30:58 naddy Exp $
 # libmad pkg-config source file
 
 prefix=@prefix@

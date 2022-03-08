@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/10 19:44:31 naddy Exp $
-
 COMMENT =		high-level decoding and seeking API for Opus files
 DISTNAME =		opusfile-0.12
 CATEGORIES =		audio

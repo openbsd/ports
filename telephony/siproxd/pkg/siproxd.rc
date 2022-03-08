@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: siproxd.rc,v 1.3 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/siproxd"
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_samples_cpp,v 1.1 2018/04/10 16:56:20 jasper Exp $
-
 error: constant expression evaluates to 208 which cannot be narrowed to type 'sbyte' (aka 'signed char')
 
 Index: src/samples.cpp

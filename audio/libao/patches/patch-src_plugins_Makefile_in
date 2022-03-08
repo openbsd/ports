@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_plugins_Makefile_in,v 1.7 2014/05/27 19:44:56 naddy Exp $
 --- src/plugins/Makefile.in.orig	Tue Jan 28 00:57:41 2014
 +++ src/plugins/Makefile.in	Tue May 27 17:06:54 2014
 @@ -388,7 +388,7 @@ $(am__recursive_targets):

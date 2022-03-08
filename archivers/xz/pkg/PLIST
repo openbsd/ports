@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/03/26 20:44:51 naddy Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 bin/lzcat

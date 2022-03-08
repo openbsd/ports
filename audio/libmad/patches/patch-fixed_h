@@ -1,5 +1,3 @@
-$OpenBSD: patch-fixed_h,v 1.1 2018/12/04 20:43:58 naddy Exp $
-
 Prevent multiple evaluation of macro argument.
 
 Index: fixed.h

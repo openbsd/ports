@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/12 20:51:29 sthen Exp $
-
 COMMENT=	graphics file viewer for X11
 
 VERSION=	4.1

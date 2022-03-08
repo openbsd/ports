@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/11/19 21:08:04 naddy Exp $
-
 COMMENT=	library for multiple-precision floating-point computations
 
 DISTNAME=	mpfr-4.1.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=	curses-based emulator for the Wyse 60 terminal
 
 DISTNAME=	wy60-2.0.9

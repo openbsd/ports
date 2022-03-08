@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/16 15:13:03 naddy Exp $
-
 COMMENT=	translate find command lines to Perl code
 
 V=		1.005

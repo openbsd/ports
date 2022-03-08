@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:54 sthen Exp $
-
 COMMENT=	analyze terminal control sequences
 
 DISTNAME=	teseq-1.1.1

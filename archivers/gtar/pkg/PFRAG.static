@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.static,v 1.1 2018/05/06 15:35:47 espie Exp $
 share/locale/
 share/locale/bg/
 share/locale/bg/LC_MESSAGES/

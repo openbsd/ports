@@ -1,5 +1,3 @@
-/*	$OpenBSD: audio_sndio.c,v 1.2 2009/06/20 14:56:18 martynas Exp $	*/
-
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
  *

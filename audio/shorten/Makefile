@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	fast compression for waveform files
 
 DISTNAME=	shorten-3.6.1

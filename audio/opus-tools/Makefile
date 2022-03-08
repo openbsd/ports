@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:37 sthen Exp $
-
 COMMENT=	encode, inspect, and decode Opus files
 
 DISTNAME=	opus-tools-0.2

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/13 16:52:40 nicm Exp $
 @bin bin/vttest
 @man man/man1/vttest.1

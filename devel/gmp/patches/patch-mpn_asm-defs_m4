@@ -1,5 +1,3 @@
-$OpenBSD: patch-mpn_asm-defs_m4,v 1.1 2021/09/10 20:29:04 gkoehler Exp $
-
 Fix libgmp.a on powerpc, which needs the PIC asm, because OpenBSD uses
 PIE position-independent executables.  powerpc and powerpc64 define
 PIC_ALWAYS to `yes', but the quotes on `PIC_ALWAYS' broke the macro

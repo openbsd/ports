@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 19:56:40 naddy Exp $
-
 COMMENT=	display a calendar and the date of Easter
 
 DISTNAME=	ncal-334873

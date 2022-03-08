@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT=	patent-free speech codec
 
 DISTNAME=	speex-1.2.0

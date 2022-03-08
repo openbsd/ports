@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.99 2021/11/22 15:00:41 espie Exp $
-
 COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
 COMMENT-tools=		GNU gettext development and translation tools

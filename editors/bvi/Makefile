@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/10/17 18:34:27 naddy Exp $
-
 COMMENT=	binary visual display editor, based on vi
 
 DISTNAME=	bvi-1.4.1

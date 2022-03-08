@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/27 14:41:06 naddy Exp $
-
 COMMENT=	test VT100-type terminal
 
 DISTNAME=	vttest-20220215

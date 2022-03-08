@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:37 sthen Exp $
-
 COMMENT=	IETF audio codec
 
 DISTNAME=	opus-1.3.1

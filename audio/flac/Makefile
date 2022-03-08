@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/02/25 20:45:09 naddy Exp $
-
 COMMENT=	free lossless audio codec
 
 DISTNAME=	flac-1.3.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2020/03/26 20:51:02 naddy Exp $
-
 COMMENT=	French and Italian conjugation system
 
 DISTNAME=	verbiste-0.1.47

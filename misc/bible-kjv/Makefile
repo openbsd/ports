@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/14 18:33:07 naddy Exp $
-
 COMMENT=	Bible reading, browsing, and searching tool
 
 DISTNAME=	bible-kjv_4.37

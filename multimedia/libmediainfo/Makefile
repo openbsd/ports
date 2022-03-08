@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/29 19:53:57 naddy Exp $
-
 COMMENT=	read metadata from media files
 
 VERSION=	21.09

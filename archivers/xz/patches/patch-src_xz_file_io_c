@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_xz_file_io_c,v 1.3 2021/11/02 15:47:53 bluhm Exp $
-
 fix a test failure in a Perl module
 https://github.com/PerlAlien/Alien-Build/issues/62
 https://git.tukaani.org/?p=xz.git;a=commitdiff;h=892b16cc282f5b4e1c49871b326f4db25c5b4d81

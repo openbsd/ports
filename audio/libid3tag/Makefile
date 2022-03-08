@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/07 16:21:58 naddy Exp $
-
 COMMENT=	library for reading ID3 tags
 
 DISTNAME=	libid3tag-0.15.1b

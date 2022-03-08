@@ -1,4 +1,3 @@
-$OpenBSD: patch-ogg123_Makefile_in,v 1.11 2021/01/23 22:13:14 naddy Exp $
 Index: ogg123/Makefile.in
 --- ogg123/Makefile.in.orig
 +++ ogg123/Makefile.in

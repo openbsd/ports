@@ -1,5 +1,3 @@
-$OpenBSD: patch-ncal_ncal_1,v 1.1.1.1 2018/09/09 13:31:23 naddy Exp $
-
 Index: ncal/ncal.1
 --- ncal/ncal.1.orig
 +++ ncal/ncal.1

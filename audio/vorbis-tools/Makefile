@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/01/23 22:13:14 naddy Exp $
-
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
 DISTNAME=	vorbis-tools-1.4.2

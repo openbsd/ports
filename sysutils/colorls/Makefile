@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/05/09 13:38:57 naddy Exp $
-
 COMMENT=	ls(1) that can use color to display file attributes
 
 VERSION=	6.9

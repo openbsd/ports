@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-textstyle,v 1.2 2020/02/13 20:50:13 naddy Exp $
 include/textstyle/
 include/textstyle.h
 include/textstyle/stdbool.h

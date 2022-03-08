@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.28 2021/12/20 15:23:35 mestre Exp $
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in

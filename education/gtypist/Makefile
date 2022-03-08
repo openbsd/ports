@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT=	interactive typing tutor
 
 DISTNAME=	gtypist-2.9.5

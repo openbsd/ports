@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/06/09 19:43:39 naddy Exp $
-
 COMMENT=	Ogg bitstream library
 
 DISTNAME=	libogg-1.3.5

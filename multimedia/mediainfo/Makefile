@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/29 19:53:57 naddy Exp $
-
 COMMENT=	utility for reading information from audio/video files
 
 VERSION=	21.09

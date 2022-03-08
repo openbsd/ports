@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.126 2022/01/05 21:59:59 naddy Exp $
-
 COMMENT=	GNU Bourne Again Shell
 
 DISTNAME=	bash-5.1.16

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/02 15:47:53 bluhm Exp $
-
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.2.5
