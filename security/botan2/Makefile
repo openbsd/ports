@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2022/02/02 18:21:43 bluhm Exp $
+# $OpenBSD: Makefile,v 1.39 2022/03/08 22:56:49 tb Exp $
 
 COMMENT =	crypto and TLS for C++11
 
 VERSION =	2.19.1
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	botan-2		15.0
 
@@ -51,6 +52,8 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 .if ${MACHINE_ARCH} == "aarch64"
 CONFIGURE_ARGS +=	--disable-armv8crypto
 .endif
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 PKG_ARGS =		-Dx86=1
