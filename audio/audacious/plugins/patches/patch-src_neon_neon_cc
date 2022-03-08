@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_neon_neon_cc,v 1.1 2020/04/15 15:50:16 bket Exp $
-
 Fix for ports gcc as feof() is a macro
 
 neon.cc:968:16: error: expected unqualified-id before '(' token

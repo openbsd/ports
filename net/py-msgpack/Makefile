@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/03/01 10:36:53 bket Exp $
-
 COMMENT =		messagepack (de)serializer
 
 MODPY_EGG_VERSION =	1.0.3

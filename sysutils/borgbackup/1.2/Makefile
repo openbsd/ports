@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2022/02/23 18:23:07 bket Exp $
-
 MODPY_EGG_VERSION =	1.2.0
 
 WANTLIB =		pthread

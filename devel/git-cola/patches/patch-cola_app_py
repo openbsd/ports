@@ -1,5 +1,3 @@
-$OpenBSD: patch-cola_app_py,v 1.8 2020/10/04 14:34:48 bket Exp $
-
 Use ssh-askpass implementation from xenocara.
 
 Index: cola/app.py

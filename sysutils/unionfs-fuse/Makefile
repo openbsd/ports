@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/04 04:27:06 bket Exp $
-
 COMMENT =	unionfs filesystem implementation
 
 GH_ACCOUNT =	rpodgorny

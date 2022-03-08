@@ -1,5 +1,3 @@
-$OpenBSD: patch-baraction_sh,v 1.1 2021/01/24 15:41:38 mglocker Exp $
-
 Index: baraction.sh
 --- baraction.sh.orig
 +++ baraction.sh

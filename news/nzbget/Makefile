@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/12 12:39:09 kn Exp $
-
 COMMENT =	binary newsreader supporting NZB files
 
 VERSION =	21.1

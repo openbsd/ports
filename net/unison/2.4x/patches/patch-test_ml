@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_ml,v 1.1 2018/04/26 21:34:23 bket Exp $
-
 Index: test.ml
 --- test.ml.orig
 +++ test.ml

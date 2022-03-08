@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/07 15:30:59 bket Exp $
 @newgroup _nzbget:805
 @newuser _nzbget:805:805:daemon:NZBGet Account:${LOCALSTATEDIR}/nzbget:/sbin/nologin
 @rcscript ${RCDIR}/nzbget

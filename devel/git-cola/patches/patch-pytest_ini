@@ -1,5 +1,3 @@
-$OpenBSD: patch-pytest_ini,v 1.1 2021/07/14 09:07:21 bket Exp $
-
 Avoid use of pytest --doctest-modules as this causes a regression test to fail
 with "ImportError (Could not load inotify functions from libc)". Failure is
 caused by the doctest module testing a piece of code that is linux-only. This

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_commonui_Makefile_am,v 1.1 2021/03/16 13:02:33 bket Exp $
-
 Index: src/commonui/Makefile.am
 --- src/commonui/Makefile.am.orig
 +++ src/commonui/Makefile.am

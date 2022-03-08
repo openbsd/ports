@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.87 2022/02/15 20:56:14 bket Exp $
-
 BROKEN-hppa=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initializer but incomplete type
 

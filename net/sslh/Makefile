@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/01/16 09:20:20 kmos Exp $
-
 COMMENT =	SSL/SSH multiplexer
 
 DISTNAME =	sslh-v1.22c

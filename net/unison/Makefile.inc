@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.33 2021/06/27 19:17:41 bket Exp $
-
 COMMENT=	multi-platform file synchronization tool
 
 GH_ACCOUNT=	bcpierce00

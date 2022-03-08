@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_impersonation_cpp,v 1.2 2021/12/11 06:43:19 bket Exp $
-
 Index: lib/impersonation.cpp
 --- lib/impersonation.cpp.orig
 +++ lib/impersonation.cpp

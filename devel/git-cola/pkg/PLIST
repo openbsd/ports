@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.22 2022/01/23 10:57:17 bket Exp $
 bin/git-cola
 bin/git-cola-sequence-editor
 bin/git-dag

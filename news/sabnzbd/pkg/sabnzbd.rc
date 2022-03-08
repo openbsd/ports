@@ -1,7 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: sabnzbd.rc,v 1.5 2019/05/06 18:29:59 bket Exp $
-
 daemon="${MODPY_BIN} ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py -d"
 daemon_flags="-b 0 -f /var/sabnzbd"
 daemon_timeout=120

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/08/27 09:25:26 bket Exp $
-
 COMMENT =		graphical audio player which supports lots of formats
 
 DISTNAME =		audacious-${VERSION}

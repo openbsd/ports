@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/25 17:56:26 bket Exp $
-
 COMMENT =	bash automated testing system
 
 GH_ACCOUNT =	bats-core

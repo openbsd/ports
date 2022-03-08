@@ -1,5 +1,3 @@
-$OpenBSD: patch-process_c,v 1.1 2021/02/03 15:27:00 bket Exp $
-
 Fix -fno-common build failure. Taken from
 https://github.com/lastpass/lastpass-cli/pull/576
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1 2022/02/23 18:23:07 bket Exp $
-
 do not package source files
 
 Index: setup.py

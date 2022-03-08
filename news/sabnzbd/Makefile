@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2022/02/22 17:07:24 bket Exp $
-
 COMMENT =			retrieve and process nzb-files via web interface
 
 VERSION =			3.5.1

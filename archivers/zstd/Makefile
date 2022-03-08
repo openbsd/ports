@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2022/01/23 15:05:55 bket Exp $
-
 COMMENT =		zstandard fast real-time compression algorithm
 
 V =			1.5.2

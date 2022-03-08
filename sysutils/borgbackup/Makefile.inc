@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2022/02/28 11:01:14 bket Exp $
-
 COMMENT =		deduplicating backup program
 
 DISTNAME =		borgbackup-${MODPY_EGG_VERSION}

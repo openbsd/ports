@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2021/12/11 11:50:55 bket Exp $
-
 Fix clang detection. Taken from
 https://github.com/rhash/RHash/commit/4dc506066cf1727b021e6352535a8bb315c3f8dc
 

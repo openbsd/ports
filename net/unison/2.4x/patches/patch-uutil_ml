@@ -1,5 +1,3 @@
-$OpenBSD: patch-uutil_ml,v 1.1 2021/12/04 01:31:33 daniel Exp $
-
 ocaml 4.12 compat
 
 Index: uutil.ml

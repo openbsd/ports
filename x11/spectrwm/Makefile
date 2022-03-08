@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/12/19 13:58:26 sdk Exp $
-
 COMMENT=		small tiling window manager
 
 V=			3.4.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_func_h,v 1.3 2019/11/24 04:43:26 bket Exp $
-
 Index: common_func.h
 --- common_func.h.orig
 +++ common_func.h

@@ -1,7 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: sslh_select.rc,v 1.6 2018/11/21 13:12:37 bket Exp $
-
 daemon="${TRUEPREFIX}/sbin/sslh-select"
 daemon_flags="--user=_sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --tls 127.0.0.1:443"
 

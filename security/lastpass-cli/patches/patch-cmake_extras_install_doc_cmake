@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_extras_install_doc_cmake,v 1.1 2018/03/16 17:15:46 bket Exp $
-
 Index: cmake_extras/install_doc.cmake
 --- cmake_extras/install_doc.cmake.orig
 +++ cmake_extras/install_doc.cmake

@@ -1,5 +1,3 @@
-$OpenBSD: patch-files_ml,v 1.1 2019/09/18 17:49:36 chrisz Exp $
-
 Index: files.ml
 --- files.ml.orig
 +++ files.ml

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/13 19:41:10 tb Exp $
-
 COMMENT =	LastPass command line interface tool
 
 V =		1.3.3

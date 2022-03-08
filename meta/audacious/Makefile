@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/28 05:40:32 bket Exp $
-
 COMMENT =	audacious meta-package
 
 VERSION =	4.1

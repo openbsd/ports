@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/11 11:50:55 bket Exp $
-
 COMMENT =	utility and library for computing hash sums
 
 DISTNAME =	rhash-1.4.2-src

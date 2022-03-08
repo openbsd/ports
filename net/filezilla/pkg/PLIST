@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/07/11 09:22:17 bket Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp

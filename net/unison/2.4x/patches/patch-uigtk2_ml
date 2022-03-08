@@ -1,5 +1,3 @@
-$OpenBSD: patch-uigtk2_ml,v 1.1 2019/03/04 12:51:16 chrisz Exp $
-
 Index: uigtk2.ml
 --- uigtk2.ml.orig
 +++ uigtk2.ml

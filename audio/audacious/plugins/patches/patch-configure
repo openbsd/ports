@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2021/02/03 21:44:37 edd Exp $
-
 Set AUDACIOUS_{CFLAGS,LIBS} only after the end of all plugin checks.
 This fixes some of the autoconf checks as the LIBS variable is being
 polluted very early on, breaking most of the checks using AC_CHECK_LIB.

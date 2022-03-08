@@ -1,5 +1,3 @@
-$OpenBSD: patch-system_system_generic_ml,v 1.1 2019/09/18 17:49:36 chrisz Exp $
-
 Index: system/system_generic.ml
 --- system/system_generic.ml.orig
 +++ system/system_generic.ml

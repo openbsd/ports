@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_borg__endian_h,v 1.1 2022/02/23 18:23:07 bket Exp $
-
 __builtin_bswap32 unavailable at least on sparc64
 
 Index: src/borg/_endian.h

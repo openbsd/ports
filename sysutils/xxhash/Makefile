@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/03 06:21:48 bket Exp $
-
 COMMENT =	extremely fast non-cryptographic hash algorithm
 
 GH_ACCOUNT =	Cyan4973

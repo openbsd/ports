@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:04 sthen Exp $
-
 COMMENT =	library providing BLAKE2b, BLAKE2s, BLAKE2bp, BLAKE2sp
 
 V =		0.98.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.10 2021/03/28 05:40:31 bket Exp $
-
 # Do not forget to sync meta/audacious
 VERSION =	4.1
 

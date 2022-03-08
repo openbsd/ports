@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_legacy_sh,v 1.1 2020/05/14 19:36:05 bket Exp $
-
 Index: test_legacy.sh
 --- test_legacy.sh.orig
 +++ test_legacy.sh

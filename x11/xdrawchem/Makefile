@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/08/18 06:47:04 bket Exp $
-
 COMMENT=	two-dimensional molecule drawing program
 
 DISTNAME=	xdrawchem-1.10.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/28 05:40:32 bket Exp $
 @conflict audacious-<4.0
 @pkgpath audio/audacious/player,qt5
 @bin bin/audacious

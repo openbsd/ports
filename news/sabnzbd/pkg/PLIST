@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/10/12 04:32:17 bket Exp $
 @newgroup _sabnzbd:810
 @newuser _sabnzbd:810:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
 @owner _sabnzbd

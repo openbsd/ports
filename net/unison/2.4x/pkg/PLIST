@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/11/03 19:45:30 bket Exp $
 @option is-branch
 @conflict unison-*
 @pkgpath net/unison/stable${FLAVOR_COMMA}

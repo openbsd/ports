@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/01/08 11:57:04 ajacoutot Exp $
-
 BROKEN-aarch64 =	SIGILL when running rclone
 BROKEN-arm =		SIGBUS when running rclone
 

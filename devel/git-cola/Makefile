@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/01/23 10:57:17 bket Exp $
-
 COMMENT =	python powered git gui
 
 MODPY_EGG_VERSION=	3.12.0

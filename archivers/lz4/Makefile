@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/05/21 17:06:23 tj Exp $
-
 COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4

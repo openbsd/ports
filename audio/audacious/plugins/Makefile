@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/28 05:40:32 bket Exp $
-
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}

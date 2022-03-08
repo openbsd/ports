@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/27 07:24:07 bket Exp $
-
 COMMENT =		encrypted and deduplicated backup tool
 
 V =			0.10.3

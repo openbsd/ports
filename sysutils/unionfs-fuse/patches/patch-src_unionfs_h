@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_unionfs_h,v 1.1.1.1 2019/11/12 15:15:09 bket Exp $
-
 Index: src/unionfs.h
 --- src/unionfs.h.orig
 +++ src/unionfs.h

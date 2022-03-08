@@ -1,5 +1,3 @@
-$OpenBSD: patch-xdrawchem_render2d_text_cpp,v 1.1 2019/08/18 06:47:05 bket Exp $
-
 Fix segfault when using (hot)key on bond twice in a row. Taken from
 https://github.com/bryanherger/xdrawchem/pull/12
 

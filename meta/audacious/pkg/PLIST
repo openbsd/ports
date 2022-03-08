@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/28 05:40:32 bket Exp $
 @pkgpath audio/audacious
 @pkgpath meta/audacious,qt5
