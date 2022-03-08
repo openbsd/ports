@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2021/10/16 08:09:23 rsadowski Exp $
-
 COMMENT=	i2p routing protocol
 
 GH_ACCOUNT=	i2p
 GH_PROJECT=	i2p.i2p
-GH_TAGNAME=	i2p-1.5.0
+GH_TAGNAME=	i2p-1.7.0
 DISTNAME=	${GH_TAGNAME}
 
 CATEGORIES=	net

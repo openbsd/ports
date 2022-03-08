@@ -1,5 +1,3 @@
-$OpenBSD: patch-installer_resources_i2prouter,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
-
 set correct base
 set proper path for log and temp dirs
 remove link to internal wrapper - doesn't work

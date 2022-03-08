@@ -1,5 +1,3 @@
-$OpenBSD: patch-installer_resources_eepget,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
-
 set correct path to base
 
 --- installer/resources/eepget.orig	Thu Jul 30 23:26:56 2020

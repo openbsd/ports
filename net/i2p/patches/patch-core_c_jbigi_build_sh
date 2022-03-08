@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_c_jbigi_build_sh,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
-
 use only local gmp
 change default lib to dynamic
 avoid tests

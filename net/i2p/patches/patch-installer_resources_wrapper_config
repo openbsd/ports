@@ -1,5 +1,3 @@
-$OpenBSD: patch-installer_resources_wrapper_config,v 1.1.1.1 2020/11/04 19:14:51 solene Exp $
-
 path to java binary
 add proper classpaths for i2p and wrapper
 add library path for wrapper

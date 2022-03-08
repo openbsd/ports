@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/05/21 13:19:59 kurt Exp $
 @newgroup _i2p:861
 @newuser _i2p:861:861:daemon:i2p account:${DB_DIR}:/sbin/nologin
 @rcscript ${RCDIR}/i2p
@@ -31,23 +30,24 @@ share/i2p/certificates/news/zzz_at_mail.i2p.crt
 share/i2p/certificates/plugin/
 share/i2p/certificates/plugin/backup_at_mail.i2p.crt
 share/i2p/certificates/plugin/cacapo_at_mail.i2p.crt
+share/i2p/certificates/plugin/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/plugin/str4d_at_mail.i2p.crt
 share/i2p/certificates/plugin/zab_at_mail.i2p.crt
 share/i2p/certificates/plugin/zzz-plugin_at_mail.i2p.crt
 share/i2p/certificates/reseed/
 share/i2p/certificates/reseed/creativecowpat_at_mail.i2p.crt
-share/i2p/certificates/reseed/echelon_at_mail.i2p.crt
+share/i2p/certificates/reseed/echelon3_at_mail.i2p.crt
 share/i2p/certificates/reseed/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/reseed/hottuna_at_mail.i2p.crt
 share/i2p/certificates/reseed/igor_at_novg.net.crt
 share/i2p/certificates/reseed/lazygravy_at_mail.i2p.crt
+share/i2p/certificates/reseed/rambler_at_mail.i2p.crt
 share/i2p/certificates/reseed/reseed_at_diva.exchange.crt
 share/i2p/certificates/router/
 share/i2p/certificates/router/echelon_at_mail.i2p.crt
 share/i2p/certificates/router/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/router/zzz_at_mail.i2p.crt
 share/i2p/certificates/ssl/
-share/i2p/certificates/ssl/echelon.reseed2017.crt
 share/i2p/certificates/ssl/i2pseed.creativecowpat.net.crt
 share/i2p/certificates/ssl/isrgrootx1.crt
 share/i2p/clients.config
@@ -388,7 +388,6 @@ share/i2p/hosts.txt
 share/i2p/i2psnark.config
 share/i2p/i2ptunnel.config
 share/i2p/lib/
-share/i2p/lib/BOB.jar
 share/i2p/lib/addressbook.jar
 share/i2p/lib/commons-el.jar
 share/i2p/lib/desktopgui.jar
