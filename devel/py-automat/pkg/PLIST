@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/16 23:02:07 sthen Exp $
-@pkgpath devel/py-automat
 @conflict py-automat-*
+@pkgpath devel/py-automat
 bin/automat-visualize
 lib/python${MODPY_VERSION}/site-packages/Automat-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Automat-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
