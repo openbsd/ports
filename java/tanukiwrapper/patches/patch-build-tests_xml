@@ -1,5 +1,3 @@
-$OpenBSD: patch-build-tests_xml,v 1.4 2021/07/18 15:34:18 kurt Exp $
-
 add OpenBSD target
 
 Index: build-tests.xml

@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_xml,v 1.6 2021/10/31 13:00:04 phessler Exp $
-
 define OpenBSD property
 
 Index: build.xml

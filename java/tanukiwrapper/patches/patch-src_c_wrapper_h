@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_c_wrapper_h,v 1.3 2020/11/04 20:45:00 solene Exp $
-
 OpenBSD doesn't support timeb api
 
 --- src/c/wrapper.h.orig	Fri Jul 31 18:19:37 2020
