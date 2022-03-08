@@ -1,5 +1,3 @@
-$OpenBSD: patch-sdl2-config_in,v 1.2 2020/04/01 20:43:08 naddy Exp $
-
 Index: sdl2-config.in
 --- sdl2-config.in.orig
 +++ sdl2-config.in

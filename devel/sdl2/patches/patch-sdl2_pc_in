@@ -1,5 +1,3 @@
-$OpenBSD: patch-sdl2_pc_in,v 1.4 2021/08/20 16:59:32 thfr Exp $
-
 Index: sdl2.pc.in
 --- sdl2.pc.in.orig
 +++ sdl2.pc.in
