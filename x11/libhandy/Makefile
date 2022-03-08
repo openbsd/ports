@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/13 08:54:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2022/03/08 09:35:15 ajacoutot Exp $
 
 COMMENT =		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT =		libhandy
-GNOME_VERSION =		1.5.90
+GNOME_VERSION =		1.5.91
 CATEGORIES =		x11
 
 API_V =			1
