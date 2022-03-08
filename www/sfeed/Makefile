@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/13 18:19:48 sdk Exp $
-
 COMMENT =		RSS/Atom newsreader and formatting programs
-DISTNAME =		sfeed-1.2
+DISTNAME =		sfeed-1.3
 CATEGORIES =		www
 
 HOMEPAGE =		https://codemadness.org/sfeed.html
