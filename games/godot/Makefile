@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2021/12/23 02:25:33 thfr Exp $
-
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
 COMMENT =	2D and 3D game engine
 
-V =		3.4.2
+V =		3.4.3
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
@@ -15,8 +13,8 @@ MAINTAINER =	Omar Polo <op@omarpolo.com>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
+WANTLIB += LinearMath GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
 WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio steam_api theora
 WANTLIB += theoradec vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
@@ -32,7 +30,7 @@ EXTRACT_SUFX =	.tar.xz
 DIST_SUBDIR =   ${PKGNAME}
 
 MODULES =		devel/scons
-# Can't disable builtin_bullet until devel/bullet has been updated to 2.88
+
 # Building with module_mono_enabled requires msbuild and to fix the
 # sharedlib_ext in modules/mono/config.py to '.so.1.0'
 MODSCONS_FLAGS =	CC="${CC}" \
@@ -40,6 +38,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
 			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec" \
+			builtin_bullet=no \
 			builtin_enet=no \
 			builtin_freetype=no \
 			builtin_glew=no \
@@ -73,6 +72,7 @@ LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \
 			audio/opusfile \
+			devel/bullet \
 			devel/gettext,-runtime \
 			devel/pcre2 \
 			games/goldberg_emulator \

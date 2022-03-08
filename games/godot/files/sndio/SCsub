@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# $OpenBSD: SCsub,v 1.1 2020/09/06 10:34:19 thfr Exp $
 
 Import('env')
 
