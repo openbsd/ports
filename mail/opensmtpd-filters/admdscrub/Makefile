@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/04 07:48:58 martijn Exp $
-
 COMMENT=	Administrative Management Domain scrubber for OpenSMTPD
 V=		0.1
 FILTER_NAME =	admdscrub

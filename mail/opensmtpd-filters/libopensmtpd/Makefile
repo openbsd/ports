@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/10 10:47:00 martijn Exp $
-
 COMMENT=	library for writing opensmtpd filters
 
 V=		0.7

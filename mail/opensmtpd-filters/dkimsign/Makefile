@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/10 10:58:51 martijn Exp $
-
 COMMENT=	dkim signer integration to the OpenSMTPD daemon
 
 V=		0.5

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 07:40:05 martijn Exp $
 include/opensmtpd.h
 @static-lib lib/libopensmtpd.a
 @lib lib/libopensmtpd.so.${LIBopensmtpd_VERSION}

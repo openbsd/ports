@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/27 13:57:08 martijn Exp $
-
 COMMENT=	dnsbl integration to the OpenSMTPD daemon
 
 V=		0.3
