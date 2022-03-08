@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.28 2022/03/01 10:36:12 bket Exp $
-
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.47.1
+MODPY_EGG_VERSION =	1.54.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -31,6 +29,7 @@ RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-blist${MODPY_FLAVOR} \
 		devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
+		devel/py-matrix-common${MODPY_FLAVOR} \
 		devel/py-twisted${MODPY_FLAVOR} \
 		devel/py-simplejson${MODPY_FLAVOR} \
 		devel/py-typing-extensions${MODPY_FLAVOR} \
@@ -67,5 +66,12 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial tests
+
+post-install:
+	cd ${WRKSRC} && \
+		${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+			${PREFIX}/share/synapse/generate_signing_key.py; \
+		${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+			${PREFIX}/share/synapse/move_remote_media_to_new_store.py
 
 .include <bsd.port.mk>
