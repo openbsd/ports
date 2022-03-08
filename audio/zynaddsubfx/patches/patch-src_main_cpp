@@ -1,20 +1,18 @@
-$OpenBSD: patch-src_main_cpp,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 Parse the correct address
 Look for zyn-fusion in out-of-path directory
 
 Index: src/main.cpp
 --- src/main.cpp.orig
 +++ src/main.cpp
-@@ -707,12 +707,15 @@ int main(int argc, char *argv[])
+@@ -711,12 +711,15 @@ int main(int argc, char *argv[])
  #endif
      if(!noui) {
          printf("[INFO] Launching Zyn-Fusion...\n");
--        const char *addr = middleware->getServerAddress();
+-        char *addr = middleware->getServerAddress();
 +        const char *raddr = middleware->getServerAddress();
-+	 char *address;
++        char *address;
 +        asprintf(&address, "osc.udp://127.0.0.1%s", strrchr(raddr, ':'));
-+	 const char *addr = address;
++        const char *addr = address;
  #ifndef WIN32
          gui_pid = fork();
          if(gui_pid == 0) {
@@ -24,7 +22,7 @@ Index: src/main.cpp
              if(fusion_dir && *fusion_dir)
              {
                  std::string fusion = fusion_dir;
-@@ -732,9 +735,7 @@ int main(int argc, char *argv[])
+@@ -736,9 +739,7 @@ int main(int argc, char *argv[])
                      exec_fusion(fusion.c_str());
                  }
              }
@@ -35,3 +33,11 @@ Index: src/main.cpp
              err(1,"Failed to launch Zyn-Fusion");
          }
  #else
+@@ -762,7 +763,6 @@ int main(int argc, char *argv[])
+             exit(1);
+         }
+ #endif
+-        free(addr);
+     }
+ #endif
+ 

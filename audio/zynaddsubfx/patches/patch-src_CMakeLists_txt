@@ -1,37 +1,24 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 Remove -O3 flag
 Add X11 libraries to LINK_PATH to fix build
 OpenBSD doesn't have librt 
 
---- src/CMakeLists.txt.orig	Sat Feb 23 21:13:37 2019
-+++ src/CMakeLists.txt	Sun Mar 21 20:27:19 2021
-@@ -208,7 +208,7 @@ set (BuildOptions_SSE
- )
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -261,7 +261,7 @@ set (BuildOptions_SSE
+ check_cxx_compiler_flag("${BuildOptions_SSE} -Werror" SUPPORT_SSE)
  
  set (BuildOptionsBasic
 -    "-std=c++11 -Wno-unused-parameter -O3 -ffast-math -fomit-frame-pointer"
 +    "-std=c++11 -Wno-unused-parameter -ffast-math -fomit-frame-pointer"
-     CACHE STRING "basic X86 complier options"
+     CACHE STRING "basic X86 compiler options"
  )
- 
-@@ -450,9 +450,10 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/zyn-version
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/zyn-config.h.in
-     ${CMAKE_CURRENT_BINARY_DIR}/zyn-config.h)
- 
--link_directories(${AUDIO_LIBRARY_DIRS} ${ZLIB_LIBRARY_DIRS} ${FFTW_LIBRARY_DIRS} ${MXML_LIBRARY_DIRS} ${FLTK_LIBRARY_DIRS} ${NTK_LIBRARY_DIRS})
-+link_directories(${AUDIO_LIBRARY_DIRS} ${ZLIB_LIBRARY_DIRS} ${FFTW_LIBRARY_DIRS} ${MXML_LIBRARY_DIRS} ${FLTK_LIBRARY_DIRS} ${NTK_LIBRARY_DIRS} /usr/X11R6/lib)
+ STRING(APPEND BuildOptionsBasic " ${BuildOptions_ExtendedWarnings}")
+@@ -521,6 +521,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/zyn-config.
+ link_directories(${AUDIO_LIBRARY_DIRS} ${ZLIB_LIBRARY_DIRS} ${FFTW3F_LIBRARY_DIRS} ${MXML_LIBRARY_DIRS} ${FLTK_LIBRARY_DIRS} ${NTK_LIBRARY_DIRS} ${X11_LIBRARY_DIRS})
  
  include_directories(
 +	/usr/X11R6/include
  	${CMAKE_CURRENT_SOURCE_DIR}
  	${CMAKE_CURRENT_BINARY_DIR}
  	)
-@@ -499,7 +500,6 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
- elseif(APPLE)
-     set(PTHREAD_LIBRARY pthread)
- else()
--    set(PLATFORM_LIBRARIES rt)
-     set(PTHREAD_LIBRARY pthread)
- endif()
- 

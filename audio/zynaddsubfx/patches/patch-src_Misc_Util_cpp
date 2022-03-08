@@ -1,9 +1,8 @@
-$OpenBSD: patch-src_Misc_Util_cpp,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 OpenBSD doesn't support sched_setscheduler
 
---- src/Misc/Util.cpp.orig	Sat Jul 25 18:00:34 2020
-+++ src/Misc/Util.cpp	Sat Jul 25 18:02:04 2020
+Index: src/Misc/Util.cpp
+--- src/Misc/Util.cpp.orig
++++ src/Misc/Util.cpp
 @@ -125,14 +125,6 @@ bool fileexists(const char *filename)
  
  void set_realtime()
@@ -12,7 +11,7 @@ OpenBSD doesn't support sched_setscheduler
 -    sched_param sc;
 -    sc.sched_priority = 60;
 -    //if you want get "sched_setscheduler undeclared" from compilation,
--    //you can safely remove the folowing line:
+-    //you can safely remove the following line:
 -    sched_setscheduler(0, SCHED_FIFO, &sc);
 -    //if (err==0) printf("Real-time");
 -#endif

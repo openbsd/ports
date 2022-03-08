@@ -1,18 +1,17 @@
-$OpenBSD: patch-DPF_dgl_src_sofd_libsofd_c,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 mntent.h not available on OpenBSD
 
---- DPF/dgl/src/sofd/libsofd.c.orig	Fri Oct 23 23:56:41 2015
-+++ DPF/dgl/src/sofd/libsofd.c	Tue Feb  9 14:45:34 2021
+Index: DPF/dgl/src/sofd/libsofd.c
+--- DPF/dgl/src/sofd/libsofd.c.orig
++++ DPF/dgl/src/sofd/libsofd.c
 @@ -338,7 +338,6 @@ const char *x_fib_recent_file(const char *appname) {
  }
  
- #ifdef SOFD_HAVE_X11
+ #ifdef HAVE_X11
 -#include <mntent.h>
  #include <dirent.h>
  
  #include <X11/Xlib.h>
-@@ -1770,6 +1769,7 @@ static const char *ignore_devices[] = {
+@@ -1793,6 +1792,7 @@ static const char *ignore_devices[] = {
  	"/dev/loop", "/dev/vn"
  };
  
@@ -20,7 +19,7 @@ mntent.h not available on OpenBSD
  static int check_mount (const char *mountpoint, const char *fs, const char *device) {
  	size_t i;
  	if (!mountpoint || !fs || !device) return -1;
-@@ -1817,6 +1817,7 @@ static int read_mtab (Display *dpy, const char *mtab) 
+@@ -1840,6 +1840,7 @@ static int read_mtab (Display *dpy, const char *mtab) 
  	fclose (mt);
  	return found;
  }
@@ -28,7 +27,7 @@ mntent.h not available on OpenBSD
  
  static void populate_places (Display *dpy) {
  	char tmp[1024];
-@@ -1845,9 +1846,11 @@ static void populate_places (Display *dpy) {
+@@ -1868,9 +1869,11 @@ static void populate_places (Display *dpy) {
  		parse_gtk_bookmarks (dpy, _fib_cfg_custom_places);
  	}
  

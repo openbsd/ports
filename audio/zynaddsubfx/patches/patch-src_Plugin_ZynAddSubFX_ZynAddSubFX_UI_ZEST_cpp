@@ -1,11 +1,9 @@
-$OpenBSD: patch-src_Plugin_ZynAddSubFX_ZynAddSubFX_UI_ZEST_cpp,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 set libzest.so location
 
 Index: src/Plugin/ZynAddSubFX/ZynAddSubFX-UI-Zest.cpp
 --- src/Plugin/ZynAddSubFX/ZynAddSubFX-UI-Zest.cpp.orig
 +++ src/Plugin/ZynAddSubFX/ZynAddSubFX-UI-Zest.cpp
-@@ -64,6 +64,8 @@ class ZynAddSubFXUI : public UI (public)
+@@ -65,6 +65,8 @@ class ZynAddSubFXUI : public UI (public)
          handle = dlopen("@loader_path/libzest.dylib", RTLD_NOW | RTLD_LOCAL);
          if(!handle) // VST
              handle = dlopen("@loader_path/../Resources/libzest.dylib", RTLD_LAZY);
