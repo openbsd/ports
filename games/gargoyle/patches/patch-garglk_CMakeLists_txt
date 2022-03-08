@@ -1,0 +1,22 @@
+workaround xlocale issues
+
+/usr/include/c++/v1/__bsd_locale_fallbacks.h:122:17: error: use of undeclared identifier 'vasprintf'; did you mean 'vsprintf'?
+https://marc.info/?l=openbsd-bugs&m=157758838031146&w=2
+
+Index: garglk/CMakeLists.txt
+--- garglk/CMakeLists.txt.orig
++++ garglk/CMakeLists.txt
+@@ -74,13 +74,11 @@ else()
+     target_sources(garglk PRIVATE sysqt.cpp)
+ endif()
+ 
+-target_compile_definitions(garglk PRIVATE "_XOPEN_SOURCE=600")
+ 
+ if(WITH_LAUNCHER)
+     add_executable(gargoyle WIN32 launcher.cpp)
+     target_include_directories(gargoyle PRIVATE cheapglk)
+     target_link_libraries(gargoyle PRIVATE garglk)
+-    target_compile_definitions(gargoyle PRIVATE "_XOPEN_SOURCE=600")
+     c_standard(gargoyle 11)
+     cxx_standard(gargoyle ${CXX_VERSION})
+     warnings(gargoyle)

@@ -1,0 +1,12 @@
+Index: garglk/cheapglk/cgdate.c
+--- garglk/cheapglk/cgdate.c.orig
++++ garglk/cheapglk/cgdate.c
+@@ -44,7 +44,7 @@
+ /* timegm() is non-standard (neither C nor POSIX), so unconditionally
+    use a replacement.
+ */
+-#define NO_TIMEGM_AVAIL
++/* #define NO_TIMEGM_AVAIL */
+ 
+ /* bzero() is deprecated */
+ #undef bzero
