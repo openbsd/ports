@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 COMMENT=	synth capable of making a countless number of instruments
 
 DISTNAME=	zynaddsubfx-3.0.6
+REVISION=	0
 
 CATEGORIES=	audio
 
@@ -40,8 +41,7 @@ CONFIGURE_ARGS=	-DGuiModule=zest \
 		-DLashEnable=OFF \
 		-DOssEnable=OFF \
 		-DPaEnable=OFF \
-		-DSndioEnable=ON \
-		-DCompileTests=OFF
+		-DSndioEnable=ON
 
 post-patch:
 	sed -i s,/usr/X11R6,${X11BASE}, ${WRKSRC}/src/CMakeLists.txt
