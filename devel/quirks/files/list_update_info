@@ -1,0 +1,108 @@
+#! /usr/bin/perl
+# $OpenBSD: list_update_info,v 1.1 2022/03/08 14:11:14 espie Exp $
+#
+# Copyright (c) 2022 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+
+use OpenBSD::AddCreateDelete;
+
+package OpenBSD::PackingElement;
+
+sub write_for_locate
+{
+	my ($self, $pkgname, $output) = @_;
+	print {$output} "$pkgname:";
+	$self->write($output);
+}
+
+package OpenBSD::PackingElement::SpecialFile;
+sub write_for_locate
+{}
+package Scanner;
+use OpenBSD::PackageInfo;
+use OpenBSD::AddCreateDelete;
+use OpenBSD::PackingList;
+use OpenBSD::PackageRepository;
+use File::Path;
+
+sub handle_file
+{
+	my ($self, $f) = @_;
+	my $plist = OpenBSD::PackingList->fromfile($f,
+	    \&OpenBSD::PackingList::UpdateInfoOnly);
+	$plist->write_for_locate($plist->pkgname, $self->{output});
+}
+
+sub handle_options
+{
+	my $self = shift;
+	$self->ui->handle_options('o:', "[-o outputfile] pkgdir");
+	my $filename = $self->ui->opt('o');
+	if (defined $filename) {
+		open($self->{output}, '>', $self->ui->opt('o')) or die;
+	} else {
+		$self->{output} = \*STDOUT;
+	}
+}
+
+sub new
+{
+	my ($class, $cmd) = @_;
+	my $ui = OpenBSD::AddCreateDelete::State->new($cmd);
+	$ui->{signature_style} = 'unsigned';
+	my $o = bless { ui => $ui }, $class;
+	$o->handle_options;
+	return $o;
+}
+
+sub progress
+{
+	return shift->ui->progress;
+}
+
+sub ui
+{
+	return shift->{ui};
+}
+
+sub scan
+{
+	my ($self, $d) = @_;
+	$self->progress->set_header("Scanning");
+	my $d = '/usr/ports/packages/amd64/all';
+	opendir(my $dir, $d);
+	my @l = readdir $dir;
+	closedir($dir);
+	my $repo = OpenBSD::PackageRepository->new($d, $self->ui);
+	$self->progress->for_list("Scanning", \@l,
+	    sub {
+		my $pkgname = shift;
+		return if $pkgname eq '.' or $pkgname eq '..';
+		my $true_package = $repo->find($pkgname);
+		return unless $true_package;
+		my $dir = $true_package->info;
+		$true_package->close;
+		#print $pkgname, "\n";
+		$self->handle_file($dir.CONTENTS);
+		rmtree($dir);
+	    });
+}
+
+package main;
+
+my $o = Scanner->new('list-update-info');
+$o->scan($ARGV[0]);
