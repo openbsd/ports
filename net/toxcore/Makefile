@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/28 12:50:52 op Exp $
-
 COMMENT =		Tox client library
 
 PKGNAME =		${DISTNAME:S/c-//}
 
 GH_ACCOUNT =		TokTok
 GH_PROJECT =		c-toxcore
-GH_TAGNAME =		v0.2.16
+GH_TAGNAME =		v0.2.17
 
-SHARED_LIBS +=		toxcore	2.0
+SHARED_LIBS +=		toxcore	3.0
 
 CATEGORIES =		net telephony
 
