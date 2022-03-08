@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/09 22:13:19 naddy Exp $
-
 COMMENT=	POSIX-compliant command line shell
 
-DISTNAME=	yash-2.51
-RELEASE=	74064
+DISTNAME=	yash-2.52
+RELEASE=	76153
 CATEGORIES=	shells
 HOMEPAGE=	https://yash.osdn.jp/index.html.en
 
