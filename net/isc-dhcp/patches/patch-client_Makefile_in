@@ -1,8 +1,7 @@
-$OpenBSD: patch-client_Makefile_in,v 1.10 2020/01/22 16:11:55 sthen Exp $
 Index: client/Makefile.in
 --- client/Makefile.in.orig
 +++ client/Makefile.in
-@@ -371,7 +371,8 @@ top_srcdir = @top_srcdir@
+@@ -372,7 +372,8 @@ top_srcdir = @top_srcdir@
  # production code. Sadly, we are not there yet.
  SUBDIRS = . tests
  AM_CPPFLAGS = -DCLIENT_PATH='"PATH=$(sbindir):/sbin:/bin:/usr/sbin:/usr/bin"' \

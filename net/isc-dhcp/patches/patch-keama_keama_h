@@ -1,47 +1,12 @@
-$OpenBSD: patch-keama_keama_h,v 1.2 2021/02/01 22:01:16 sthen Exp $
-
-From c666652e10e28558ed7b2b0025bf193478e98030 Mon Sep 17 00:00:00 2001
-From: Francis Dupont <fdupont@isc.org>
-Date: Fri, 3 Jul 2020 15:24:32 +0200
-Subject: [PATCH] Fixed gcc10 build
-
 Index: keama/keama.h
 --- keama/keama.h.orig
 +++ keama/keama.h
-@@ -29,14 +29,17 @@
+@@ -28,6 +28,8 @@
+ #include "data.h"
  #include "dhctoken.h"
  
- #include <time.h>
 +#include <sys/socket.h>
++#include <errno.h>
+ #include <time.h>
  
  /* Resolution of FQDNs into IPv4 addresses */
- enum resolve { 
- 	perform = 0,	/* resolve */
- 	fatal,		/* raise a fatal error */
- 	pass		/* pass the string wth a warning */
--} resolve;
-+};
- 
-+extern enum resolve resolve;
-+
- /* From includes/dhcp.h */
- 
- #define HTYPE_ETHER	1
-@@ -58,8 +61,6 @@ extern int local_family;
- 
- /* A parsing context. */
- 
--TAILQ_HEAD(parses, parse) parses;
--
- struct parse {
- 	int lexline;
- 	int lexchar;
-@@ -119,6 +120,8 @@ struct parse {
- 	TAILQ_ENTRY(parse) next;
- 
- };
-+
-+extern TAILQ_HEAD(parses, parse) parses;
- 
- #define PARAMETER	0
- #define TOPLEVEL	1

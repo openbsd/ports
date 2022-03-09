@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: isc_dhcpd.rc,v 1.3 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/dhcpd"
 daemon_flags="-user _isc-dhcp -group _isc-dhcp"

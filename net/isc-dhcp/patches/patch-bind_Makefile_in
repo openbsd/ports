@@ -1,4 +1,3 @@
-$OpenBSD: patch-bind_Makefile_in,v 1.5 2020/01/22 16:11:55 sthen Exp $
 Index: bind/Makefile.in
 --- bind/Makefile.in.orig
 +++ bind/Makefile.in
@@ -19,8 +18,8 @@ Index: bind/Makefile.in
 +                 ./configure ${bindconfig} 2>&1 | tee ${binddir}/configure.log); \
  	fi
  
- atf:
-@@ -66,7 +66,7 @@ atf:
+ atf: bind1
+@@ -66,7 +66,7 @@ atf: bind1
  	else                                          \
  		echo Building ATF support ;           \
  		(cd ${bindsrcdir}/unit;               \
@@ -29,7 +28,7 @@ Index: bind/Makefile.in
  		 cp -rp atf ${binddir}) ;             \
  	fi
  
-@@ -80,15 +80,15 @@ bind2:
+@@ -81,15 +81,15 @@ bind2: bind1
  		for libdir in ${bindlibs} ; do                            \
  		 (cd ${bindsrcdir}/lib/$$libdir ;                         \
  		  echo Building $$libdir library in `pwd` ;               \

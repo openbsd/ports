@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: dhclient-script,v 1.1 2012/10/31 23:21:05 brad Exp $
-#
 # Copyright (c) 2003 Kenneth R Westerback <krw@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any

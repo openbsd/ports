@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2020/01/22 16:11:55 sthen Exp $
 @conflict isc-dhcp-*
 @pkgpath net/isc-dhcp
 @newgroup _isc-dhcp:744
