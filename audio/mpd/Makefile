@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.139 2021/11/21 08:10:41 landry Exp $
+# $OpenBSD: Makefile,v 1.140 2022/03/09 09:52:23 landry Exp $
 
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.22.11
+VER =			0.23.5
 DISTNAME =		mpd-${VER}
-REVISION =		1
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/
@@ -14,9 +13,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		FLAC audiofile avcodec avfilter avformat avutil \
 			bz2 c cdio cdio_cdda cdio_paranoia curl \
-			expat faad icui18n icuuc \
+			expat faad fmt icui18n icuuc \
 			id3tag iso9660 m mikmod mp3lame mpcdec \
-			mpdclient ogg opus pcre pthread samplerate \
+			mpdclient ogg opus pcre2-8 pthread samplerate \
 			shout sndfile sndio sqlite3 \
 			vorbis vorbisenc yajl z ${COMPILER_LIBCXX}
 
@@ -41,9 +40,10 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/musepack \
 			audio/opus \
 			databases/sqlite3 \
+			devel/fmt \
 			devel/libaudiofile \
 			devel/libyajl \
-			devel/pcre \
+			devel/pcre2 \
 			graphics/ffmpeg \
 			net/curl \
 			net/libshout \
@@ -97,6 +97,7 @@ CONFIGURE_ARGS +=	-Dadplug=disabled \
 			-Dmodplug=disabled \
 			-Dmpcdec=enabled \
 			-Dmpg123=disabled \
+			-Dopenmpt=disabled \
 			-Dopus=enabled \
 			-Dsidplay=disabled \
 			-Dsndfile=enabled \
@@ -126,6 +127,7 @@ CONFIGURE_ARGS +=	-Dalsa=disabled \
 			-Doss=disabled \
 			-Dpipe=true \
 			-Dpulse=disabled \
+			-Dpipewire=disabled \
 			-Drecorder=true \
 			-Dshout=enabled \
 			-Dsndio=enabled \

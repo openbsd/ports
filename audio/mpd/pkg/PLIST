@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/04/28 17:16:21 jca Exp $
 @pkgpath audio/mpd,tremor
 @newgroup _mpd:560
 @newuser _mpd:560:560:daemon:Music Player Daemon:/var/spool/mpd:/sbin/nologin

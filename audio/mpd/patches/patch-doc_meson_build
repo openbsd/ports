@@ -1,9 +1,7 @@
-$OpenBSD: patch-doc_meson_build,v 1.2 2021/02/20 14:43:01 landry Exp $
-
 Index: doc/meson.build
 --- doc/meson.build.orig
 +++ doc/meson.build
-@@ -18,7 +18,7 @@ if get_option('html_manual')
+@@ -19,7 +19,7 @@ if get_option('html_manual')
        'conf.py',
      ],
      command: [sphinx, '-q', '-b', 'html', '-d', '@OUTDIR@/doctrees', meson.current_source_dir(), '@OUTPUT@'],
