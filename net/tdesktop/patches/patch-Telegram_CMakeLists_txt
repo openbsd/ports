@@ -1,5 +1,3 @@
-$OpenBSD: patch-Telegram_CMakeLists_txt,v 1.1.1.1 2022/01/26 19:38:06 kn Exp $
-
 Disable unneeded libtgvoip, tgcalls provide everything we need; from alt linux
 http://www.sisyphus.ru/cgi-bin/srpm.pl/Sisyphus/telegram-desktop/getpatch/1
 

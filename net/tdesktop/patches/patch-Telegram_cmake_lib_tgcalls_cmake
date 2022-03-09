@@ -1,12 +1,10 @@
-$OpenBSD: patch-Telegram_cmake_lib_tgcalls_cmake,v 1.2 2022/02/02 15:19:33 kn Exp $
-
 Disable unneeded libtgvoip, tgcalls provide everything we need; from alt linux
 http://www.sisyphus.ru/cgi-bin/srpm.pl/Sisyphus/telegram-desktop/getpatch/1
 
 Index: Telegram/cmake/lib_tgcalls.cmake
 --- Telegram/cmake/lib_tgcalls.cmake.orig
 +++ Telegram/cmake/lib_tgcalls.cmake
-@@ -237,6 +237,7 @@ PRIVATE
+@@ -243,6 +243,7 @@ PRIVATE
      ${tgcalls_loc}
  )
  

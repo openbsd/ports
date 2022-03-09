@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2022/03/06 23:01:27 kn Exp $
+# $OpenBSD: Makefile,v 1.21 2022/03/09 16:48:18 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -7,8 +7,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.5.5
-REVISION =		0
+V =			3.5.6
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=beta}
 CATEGORIES =		net
@@ -17,9 +16,9 @@ HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
 MASTER_SITES0 =		https://github.com/desktop-app/lib_base/commit/
-# Pending "Fix restarting tdesktop on *BSD"
-# https://github.com/desktop-app/lib_base/pull/114
-PATCHFILES +=		tdesktop-lib_base-fix-restart-{}c1c95ec.patch:0
+# Pending "Try to find executable in PATH if argv0 doesn't have path"
+# https://github.com/desktop-app/lib_base/pull/115
+PATCHFILES +=		tdesktop-lib_base-fix-restart-{}58a90ad.patch:0
 PATCH_CASES +=		tdesktop-lib_base-*) ${PATCH} ${PATCH_DIST_ARGS} \
 			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
 
