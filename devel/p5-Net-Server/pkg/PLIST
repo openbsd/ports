@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/28 14:39:50 giovanni Exp $
 bin/net-server
 ${P5SITE}/Net/
 ${P5SITE}/Net/Server/

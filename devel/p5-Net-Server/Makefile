@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.25 2021/05/15 15:29:35 giovanni Exp $
-
 COMMENT =	extensible framework for Perl server engines
 
-MODULES =	cpan
-PKG_ARCH =	*
-DISTNAME =	Net-Server-2.009
-CATEGORIES =	devel net
-REVISION =	1
+DISTNAME =	Net-Server-2.010
 
-# perl
+CATEGORIES =	devel net
+
+# Perl
 PERMIT_PACKAGE =	Yes
 
+MODULES =		cpan
 MODCPAN_EXAMPLES =	Yes
-RUN_DEPENDS =	net/p5-IO-Socket-INET6
-TEST_DEPENDS =	devel/p5-IO-Multiplex
+
+RUN_DEPENDS =		net/p5-IO-Socket-INET6
+TEST_DEPENDS =		devel/p5-IO-Multiplex \
+			security/p5-Net-SSLeay
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

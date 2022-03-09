@@ -1,10 +1,9 @@
-$OpenBSD: patch-lib_Net_Server_Proto_pm,v 1.1 2016/07/30 21:36:45 sthen Exp $
-
 We don't have the sysctl any more, resulting in this binding to v6 only.
 
---- lib/Net/Server/Proto.pm.orig	Sat Jul 30 22:30:09 2016
-+++ lib/Net/Server/Proto.pm	Sat Jul 30 22:31:49 2016
-@@ -166,10 +166,7 @@ sub get_addr_info {
+Index: lib/Net/Server/Proto.pm
+--- lib/Net/Server/Proto.pm.orig
++++ lib/Net/Server/Proto.pm
+@@ -162,10 +162,7 @@ sub get_addr_info {
  }
  
  sub _bindv6only {
