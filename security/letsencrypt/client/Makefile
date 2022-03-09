@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/20 14:41:41 sthen Exp $
-
 COMMENT=	client for certificate authorities using ACME protocols
 
 HOMEPAGE=	https://certbot.eff.org/
 
 DISTNAME=	certbot-${MODPY_EGG_VERSION}
 
-RUN_DEPENDS=	devel/py-configargparse${MODPY_FLAVOR} \
+RUN_DEPENDS=	security/letsencrypt/py-acme${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
+		devel/py-configargparse${MODPY_FLAVOR} \
 		devel/py-configobj${MODPY_FLAVOR} \
-		devel/py-parsedatetime${MODPY_FLAVOR} \
-		devel/py-zopecomponent${MODPY_FLAVOR} \
-		devel/py-zopeinterface${MODPY_FLAVOR} \
+		security/py-cryptography${MODPY_FLAVOR} \
+		sysutils/py-distro${MODPY_FLAVOR} \
 		security/py-josepy${MODPY_FLAVOR} \
-		security/letsencrypt/py-acme${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
-		sysutils/py-distro
-TEST_DEPENDS=	${RUN_DEPENDS}
+		devel/py-parsedatetime${MODPY_FLAVOR} \
+		textproc/py-pyRFC3339${MODPY_FLAVOR} \
+		devel/py-zopecomponent${MODPY_FLAVOR} \
+		devel/py-zopeinterface${MODPY_FLAVOR}
 MODPY_PYTEST=	Yes
 #MODPY_PYTEST_ARGS=	tests
 

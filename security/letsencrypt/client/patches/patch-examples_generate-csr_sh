@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_generate-csr_sh,v 1.2 2016/05/27 10:01:38 sthen Exp $
-
 environment parsing was removed from LibreSSL's libraries.
 
 --- examples/generate-csr.sh.orig	Thu May 12 01:42:39 2016

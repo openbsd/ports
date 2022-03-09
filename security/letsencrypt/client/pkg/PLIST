@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.33 2021/10/10 11:37:24 sthen Exp $
 @extraunexec rm -rf /var/log/certbot/* /var/lib/certbot/*
 bin/certbot
 bin/letsencrypt
@@ -153,6 +152,7 @@ lib/python${MODPY_VERSION}/site-packages/certbot/plugins/dns_test_common_lexicon
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/enhancements.py
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/storage.py
 lib/python${MODPY_VERSION}/site-packages/certbot/plugins/util.py
+lib/python${MODPY_VERSION}/site-packages/certbot/py.typed
 lib/python${MODPY_VERSION}/site-packages/certbot/reverter.py
 lib/python${MODPY_VERSION}/site-packages/certbot/ssl-dhparams.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/

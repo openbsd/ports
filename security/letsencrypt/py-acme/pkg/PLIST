@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/05/14 11:48:53 sthen Exp $
 @conflict py-acme-*
 @pkgpath security/py-acme
 @pkgpath security/py-acme,python3
@@ -33,5 +32,6 @@ lib/python${MODPY_VERSION}/site-packages/acme/jws.py
 lib/python${MODPY_VERSION}/site-packages/acme/magic_typing.py
 lib/python${MODPY_VERSION}/site-packages/acme/messages.py
 lib/python${MODPY_VERSION}/site-packages/acme/mixins.py
+lib/python${MODPY_VERSION}/site-packages/acme/py.typed
 lib/python${MODPY_VERSION}/site-packages/acme/standalone.py
 lib/python${MODPY_VERSION}/site-packages/acme/util.py

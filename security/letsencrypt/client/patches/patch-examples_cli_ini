@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_cli_ini,v 1.9 2021/03/31 20:46:19 sthen Exp $
-
 Index: examples/cli.ini
 --- examples/cli.ini.orig
 +++ examples/cli.ini
