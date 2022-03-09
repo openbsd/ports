@@ -1,7 +1,4 @@
-V=		6.5.55
+V=		7.0.23
 SNAPPY_V=	1.1.8.4
-REVISION=	3
-
-REPLACE_LOG4J=	Yes
 
 .include <bsd.port.mk>
