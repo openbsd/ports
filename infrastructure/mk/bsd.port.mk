@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1569 2022/02/11 17:17:27 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1570 2022/03/09 14:00:43 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2688,6 +2688,12 @@ ${_WRKDIR_COOKIE}:
 .  for name in a2x a2x.py asciidoc.py
 	@${_PBUILD} ln -sf asciidoc ${WRKDIR}/bin/${name}
 .  endfor
+.endif
+.if empty(_BUILD_DEP:Mtextproc/asciidoctor)
+	@printf '#!/bin/sh\n\
+		echo "*** $$0 was called without textproc/asciidoctor dependency ***" >&2\n\
+		exit 1\n' ${_PREDIR} ${WRKDIR}/bin/asciidoctor
+	@${_PBUILD} chmod 555 ${WRKDIR}/bin/asciidoctor
 .endif
 	@${_PMAKE_COOKIE} $@
 
