@@ -1,5 +1,3 @@
-$OpenBSD: patch-tor-browser_en-US_Browser_TorBrowser_Data_fontconfig_fonts_conf,v 1.1 2020/04/13 16:25:42 sthen Exp $
-
 Set path to bundled fonts.
 
 Index: tor-browser_en-US/Browser/TorBrowser/Data/fontconfig/fonts.conf

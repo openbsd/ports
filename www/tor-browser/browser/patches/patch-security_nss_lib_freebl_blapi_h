@@ -1,5 +1,3 @@
-$OpenBSD: patch-security_nss_lib_freebl_blapi_h,v 1.7 2021/11/17 21:29:31 sdk Exp $
-
 Taken from security/nss
 
 Index: security/nss/lib/freebl/blapi.h

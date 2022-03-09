@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/03/09 20:46:02 sthen Exp $
-
 COMMENT=	Tor Browser meta package
 
 MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>

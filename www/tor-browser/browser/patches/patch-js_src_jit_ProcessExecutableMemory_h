@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_h,v 1.4 2021/11/17 21:29:31 sdk Exp $
-
 Index: js/src/jit/ProcessExecutableMemory.h
 --- js/src/jit/ProcessExecutableMemory.h.orig
 +++ js/src/jit/ProcessExecutableMemory.h

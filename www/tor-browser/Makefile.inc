@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.49 2022/03/09 20:46:02 sthen Exp $
-
 MAINTAINER ?=		Caspar Schutijser <caspar@schutijser.com>
 HOMEPAGE ?=		https://www.torproject.org
 PERMIT_PACKAGE ?=	Yes

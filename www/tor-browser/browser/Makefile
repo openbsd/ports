@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.76 2022/03/09 20:46:02 sthen Exp $
 # Some of this comes from www/firefox-esr as apropos, since Tor
 # browser is a fork of ESR.  It is a good idea to look at that
 # Makefile when editing this one (ESR versions not always the same).
