@@ -340,6 +340,7 @@ share/vim/${P}/doc/version5.txt
 share/vim/${P}/doc/version6.txt
 share/vim/${P}/doc/version7.txt
 share/vim/${P}/doc/version8.txt
+share/vim/${P}/doc/version9.txt
 share/vim/${P}/doc/vi_diff.txt
 share/vim/${P}/doc/vim2html.pl
 share/vim/${P}/doc/vim9.txt
