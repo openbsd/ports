@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/31 22:31:14 sthen Exp $
 bin/acme-tiny
 share/doc/acme-tiny/
 share/doc/acme-tiny/README.md
