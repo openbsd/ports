@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/18 19:38:17 kn Exp $
 include/absl/
 include/absl/algorithm/
 include/absl/algorithm/algorithm.h
@@ -364,7 +363,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_cordz_functions.so.${LIBabsl_cordz_functions_VERSION}
 @lib lib/libabsl_cordz_handle.so.${LIBabsl_cordz_handle_VERSION}
 @lib lib/libabsl_cordz_info.so.${LIBabsl_cordz_info_VERSION}
-lib/libabsl_cordz_sample_token.so.2111.0.0
+@lib lib/libabsl_cordz_sample_token.so.${LIBabsl_cordz_sample_token_VERSION}
 @lib lib/libabsl_debugging_internal.so.${LIBabsl_debugging_internal_VERSION}
 @lib lib/libabsl_demangle_internal.so.${LIBabsl_demangle_internal_VERSION}
 @lib lib/libabsl_examine_stack.so.${LIBabsl_examine_stack_VERSION}

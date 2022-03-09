@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2022/03/02 21:42:10 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/09 11:23:52 kn Exp $
 
 COMMENT =	abseil common libraries (c++)
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 GH_ACCOUNT =	abseil
@@ -27,6 +27,7 @@ SHARED_LIBS +=	absl_cord_internal				0.0 # 2103.0.1
 SHARED_LIBS +=	absl_cordz_functions				0.0 # 2103.0.1
 SHARED_LIBS +=	absl_cordz_handle				0.0 # 2103.0.1
 SHARED_LIBS +=	absl_cordz_info					0.0 # 2103.0.1
+SHARED_LIBS +=	absl_cordz_sample_token				0.0 # 2103.0.1
 SHARED_LIBS +=	absl_debugging_internal				0.0 # 2103.0.1
 SHARED_LIBS +=	absl_demangle_internal				0.0 # 2103.0.1
 SHARED_LIBS +=	absl_examine_stack				0.0 # 2103.0.1
