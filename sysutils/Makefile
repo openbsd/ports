@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.644 2022/03/04 22:16:25 kmos Exp $
-
      SUBDIR =
      SUBDIR += accountsservice
      SUBDIR += alertmanager

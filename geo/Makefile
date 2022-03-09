@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.83 2022/02/20 08:54:24 ajacoutot Exp $
-
      SUBDIR =
      SUBDIR += foxtrotgps
      SUBDIR += garmindev

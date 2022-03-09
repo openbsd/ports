@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/10/25 12:30:12 sthen Exp $
-
      SUBDIR =
      SUBDIR += bash
      SUBDIR += bash-completion

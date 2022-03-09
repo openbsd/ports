@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.139 2021/11/20 08:24:48 landry Exp $
-
      SUBDIR =
      SUBDIR += a2ps
      SUBDIR += apsfilter

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/30 14:27:32 kn Exp $
-
      SUBDIR =
      SUBDIR += AcePerl
      SUBDIR += AcePerl,opt

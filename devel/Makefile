@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2193 2022/03/04 09:57:34 sthen Exp $
-
      SUBDIR =
      SUBDIR += 64tass
      SUBDIR += ElectricFence

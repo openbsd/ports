@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.416 2021/12/19 00:40:42 sthen Exp $
-
      SUBDIR =
      SUBDIR += abook
      SUBDIR += adcomplain

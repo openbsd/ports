@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1061 2022/02/22 04:22:23 bket Exp $
-
      SUBDIR =
      SUBDIR += analog
      SUBDIR += ap2-mod_dnssd

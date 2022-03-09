@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.653 2022/03/07 20:53:14 abieber Exp $
-
      SUBDIR =
      SUBDIR += ADMsnmp
      SUBDIR += ROPgadget

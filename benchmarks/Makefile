@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/16 14:36:26 thfr Exp $
-
      SUBDIR =
      SUBDIR += blogbench
      SUBDIR += bonnie++

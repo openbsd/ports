@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.206 2021/11/12 12:00:37 sthen Exp $
-
      SUBDIR =
      SUBDIR += WordGenerator
      SUBDIR += astrolog

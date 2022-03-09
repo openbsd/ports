@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.78 2022/01/20 00:55:43 kevlo Exp $
-
      SUBDIR =
      SUBDIR += abyssinica
      SUBDIR += adobe-fonts

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.448 2022/02/26 19:38:48 sthen Exp $
-
      SUBDIR =
      SUBDIR += architect
      SUBDIR += barman

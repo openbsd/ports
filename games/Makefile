@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.447 2022/02/18 08:37:23 phessler Exp $
-
      SUBDIR =
      SUBDIR += 0ad
      SUBDIR += 1oom

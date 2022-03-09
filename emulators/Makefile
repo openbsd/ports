@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.111 2021/11/02 21:04:58 sthen Exp $
-
      SUBDIR =
      SUBDIR += BasiliskII
      SUBDIR += advancemame

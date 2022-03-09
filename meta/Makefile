@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/03/29 19:52:37 sthen Exp $
-
      SUBDIR =
      SUBDIR += audacious
      SUBDIR += avr

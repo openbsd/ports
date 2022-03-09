@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.115 2021/12/19 00:40:42 sthen Exp $
-
      SUBDIR =
      SUBDIR += arc
      SUBDIR += blosc

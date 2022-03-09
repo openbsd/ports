@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/08/14 12:47:14 kmos Exp $
-
      SUBDIR =
      SUBDIR += c2t
      SUBDIR += cconv

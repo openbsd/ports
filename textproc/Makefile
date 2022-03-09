@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.709 2022/02/28 10:59:54 bket Exp $
-
      SUBDIR =
      SUBDIR += TclXML
      SUBDIR += antiword

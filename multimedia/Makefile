@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.148 2022/02/22 04:22:21 bket Exp $
-
      SUBDIR =
      SUBDIR += aom
      SUBDIR += assimp

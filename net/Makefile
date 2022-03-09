@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1294 2022/03/07 00:09:46 jca Exp $
-
      SUBDIR =
      SUBDIR += adns
      SUBDIR += adsuck

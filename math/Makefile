@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.210 2022/02/22 04:22:20 bket Exp $
-
      SUBDIR =
      SUBDIR += 4ti2
      SUBDIR += R

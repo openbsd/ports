@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.258 2022/02/18 13:23:08 daniel Exp $
-
      SUBDIR =
      SUBDIR += STk
      SUBDIR += a60

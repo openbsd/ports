@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/02 20:46:25 uaa Exp $
-
      SUBDIR =
      SUBDIR += anthy
      SUBDIR += cellwriter

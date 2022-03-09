@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/02 21:18:38 sthen Exp $
-
      SUBDIR =
      SUBDIR += asterisk
      SUBDIR += asterisk-g729

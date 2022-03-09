@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.474 2022/01/06 19:06:17 jeremy Exp $
-
      SUBDIR =
      SUBDIR += abcde
      SUBDIR += adplay

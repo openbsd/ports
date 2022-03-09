@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2018/04/20 20:40:39 bentley Exp $
-
      SUBDIR =
      SUBDIR += Wnn
      SUBDIR += canna

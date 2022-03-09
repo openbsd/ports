@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2015/11/20 18:27:59 jca Exp $
-
      SUBDIR =
      SUBDIR += algotutor
      SUBDIR += anki

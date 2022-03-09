@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2021/10/30 09:59:29 ajacoutot Exp $
-
      SUBDIR =
      SUBDIR += amtterm
      SUBDIR += birda

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.572 2022/02/06 17:22:46 op Exp $
-
      SUBDIR =
      SUBDIR += DevIL
      SUBDIR += GraphicsMagick

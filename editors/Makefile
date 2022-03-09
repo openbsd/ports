@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.151 2022/02/26 15:08:50 sthen Exp $
-
      SUBDIR =
      SUBDIR += TeXmacs
      SUBDIR += abiword

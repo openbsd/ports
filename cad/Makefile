@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/01/18 20:06:36 sebastia Exp $
-
      SUBDIR =
      SUBDIR += abc
      SUBDIR += dxf2gcode

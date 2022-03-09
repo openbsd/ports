@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/10/26 19:52:42 sthen Exp $
-
      SUBDIR =
      SUBDIR += aub
      SUBDIR += leafnode

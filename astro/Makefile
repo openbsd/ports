@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/22 04:22:19 bket Exp $
-
      SUBDIR =
      SUBDIR += ansiweather
      SUBDIR += celestia

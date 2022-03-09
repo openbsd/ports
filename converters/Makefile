@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.109 2022/02/23 00:06:59 kmos Exp $
-
      SUBDIR =
      SUBDIR += base64
      SUBDIR += bdf2psf

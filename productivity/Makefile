@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.105 2022/01/14 19:21:56 sdk Exp $
-
      SUBDIR =
      SUBDIR += aqbanking
      SUBDIR += baikal
