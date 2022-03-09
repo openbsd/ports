@@ -17,7 +17,7 @@
 @bin bin/deliverquota
 @bin bin/imapd
 @bin bin/maildiracl
-@bin bin/maildirkw
+@comment bin/maildirkw
 @bin bin/maildirmake
 bin/makeimapaccess
 @bin libexec/couriertcpd
@@ -27,7 +27,7 @@ libexec/makedat
 @bin libexec/makedatprog
 @man man/man1/couriertcpd.1
 @man man/man1/maildiracl.1
-@man man/man1/maildirkw.1
+@comment man/man1/maildirkw.1
 @man man/man1/maildirmake.1
 @man man/man8/deliverquota.8
 @man man/man8/imapd.8
