@@ -1,0 +1,12 @@
+Index: Radius/Packet.pm
+--- Radius/Packet.pm.orig
++++ Radius/Packet.pm
+@@ -998,6 +998,8 @@ implementation of a RADIUS server.
+ 
+ =head1 AUTHOR
+ 
++=encoding utf8
++
+ Christopher Masto, <chris@netmonger.net>. VSA support by Luis
+ E. Muñoz, <luismunoz@cpan.org>. Fix for unpacking 3COM VSAs
+ contributed by Ian Smith <iansmith@ncinter.net>. Information for

@@ -1,0 +1,12 @@
+Index: Radius/Dictionary.pm
+--- Radius/Dictionary.pm.orig
++++ Radius/Dictionary.pm
+@@ -376,6 +376,8 @@ may otherwise cause insanity and/or blindness if studi
+ 
+ =head1 AUTHOR
+ 
++=encoding utf8
++
+ Christopher Masto <chris@netmonger.net>, 
+ Luis E. Muñoz <luismunoz@cpan.org> contributed the VSA code.
+ 

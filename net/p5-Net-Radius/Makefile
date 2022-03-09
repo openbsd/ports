@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:35 sthen Exp $
+COMMENT =	Perl interface to Radius
 
-COMMENT=	Perl interface to Radius
+DISTNAME =	Net-Radius-2.103
+REVISION =	2
 
-DISTNAME=	Net-Radius-2.103
-REVISION=	1
+CATEGORIES =	net devel
 
-CATEGORIES=	net devel
+MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 
-MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
+# Perl
+PERMIT_PACKAGE =	Yes
 
-# perl artistic license
-PERMIT_PACKAGE=	Yes
+MODULES =		cpan
+MODCPAN_EXAMPLES =	Yes
 
-MODULES=		cpan
-PKG_ARCH=		*
-MODCPAN_EXAMPLES=	Yes
-TEST_DEPENDS=	devel/p5-Test-Warn
+TEST_DEPENDS =		devel/p5-Test-Pod \
+			devel/p5-Test-Warn
 
-DATADIR=	${PREFIX}/share/p5-Net-Radius
-DICTS=		dictionary \
+PKG_ARCH =		*
+
+DATADIR =	${PREFIX}/share/p5-Net-Radius
+DICTS =		dictionary \
 		dictionary.3com \
 		dictionary.3com-o \
 		dictionary.3gpp \
@@ -83,8 +84,8 @@ DICTS=		dictionary \
 		dictionary.versanet \
 		dictionary.wispr \
 		dictionary.xedia
-DOCDIR=		${PREFIX}/share/doc/p5-Net-Radius
-DOCS=		README \
+DOCDIR =	${PREFIX}/share/doc/p5-Net-Radius
+DOCS =		README \
 		README.3COM \
 		README.VSA \
 		README.broken \
