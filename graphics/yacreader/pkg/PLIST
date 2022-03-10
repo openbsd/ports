@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/26 04:30:40 rsadowski Exp $
 @bin bin/YACReader
 @bin bin/YACReaderLibrary
 @bin bin/YACReaderLibraryServer

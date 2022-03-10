@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/26 04:07:03 rsadowski Exp $
-
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/28 09:52:53 op Exp $
-
 COMMENT =	multi-client, TLS-only IRC bouncer
 
 DISTNAME =	pounce-3.0

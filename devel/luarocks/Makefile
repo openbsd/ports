@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/22 16:03:55 op Exp $
-
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
 V =		3.8.0

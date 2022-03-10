@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/21 08:31:37 op Exp $
-
 COMMENT =	UNIX pager optimized for tabular data
 
 GH_ACCOUNT =	okbob

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/29 22:13:18 kmos Exp $
-
 COMMENT =	decompression library for rar, tar, zip and 7z archives
 
 V =		1.0.1

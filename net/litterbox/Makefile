@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/28 08:20:51 op Exp $
-
 COMMENT =	TLS-only IRC logger
 
 DISTNAME =	litterbox-1.8

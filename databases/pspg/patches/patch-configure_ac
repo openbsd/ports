@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.3 2021/11/08 15:00:15 sthen Exp $
-
 AX_LIB_READLINE picks up base readline which is too old.  Force it to
 use readline from ports.
 

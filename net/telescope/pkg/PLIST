@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/15 20:27:52 op Exp $
 @bin bin/telescope
 @man man/man1/telescope.1

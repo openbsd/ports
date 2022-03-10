@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/26 04:30:40 rsadowski Exp $
-
 COMMENT =	read and manage your digital comic collection
 
 V =		9.8.2

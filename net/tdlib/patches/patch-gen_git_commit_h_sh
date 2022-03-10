@@ -1,5 +1,3 @@
-$OpenBSD: patch-gen_git_commit_h_sh,v 1.1.1.1 2021/06/09 10:42:16 landry Exp $
-
 Index: gen_git_commit_h.sh
 --- gen_git_commit_h.sh.orig
 +++ gen_git_commit_h.sh

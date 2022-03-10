@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/27 18:02:34 op Exp $
-
 # See https://github.com/tdlib/td/issues/364
 NOT_FOR_ARCHS =	${BE_ARCHS}
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/26 04:07:03 rsadowski Exp $
 include/unarr.h
 @lib lib/libunarr.so.${LIBunarr_VERSION}
 lib/pkgconfig/libunarr.pc

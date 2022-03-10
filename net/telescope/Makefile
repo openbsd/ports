@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/15 20:27:51 op Exp $
-
 COMMENT =	multi-protocol browser for the small internet
 V =		0.7.1
 DISTNAME =	telescope-${V}
