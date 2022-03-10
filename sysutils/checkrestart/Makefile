@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:40 sthen Exp $
-#
-
 COMMENT =	help to find programs that need restarting after upgrade
 
 V =		1.0

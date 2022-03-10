@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:05 sthen Exp $
-
 COMMENT =	help generating metadata for cargo vendoring
 
 V =		1.0

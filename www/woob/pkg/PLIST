@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/29 13:11:37 semarie Exp $
 @conflict weboob3-<1.5
 @pkgpath www/weboob3
 @conflict weboob-*

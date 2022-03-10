@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:57 sthen Exp $
-
 COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.0

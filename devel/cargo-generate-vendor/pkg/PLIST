@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/23 01:58:18 danj Exp $
 bin/cargo-generate-vendor
 share/cargo-vendor/

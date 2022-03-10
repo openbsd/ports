@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/07 08:10:21 semarie Exp $
-
 COMMENT =	list obsolete files between OpenBSD upgrades
 
 V =		3.1
