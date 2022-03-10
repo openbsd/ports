@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		carrier_percentage
-REVISION =		1
 
 TRYTON_DEPENDS +=	carrier \
 			currency

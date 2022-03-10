@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.5
+MODPY_EGG_VERSION =	5.0.10
 TRYTON_MODULE =		sale
-REVISION =		0
 
 TRYTON_DEPENDS +=	account \
 			account_invoice \

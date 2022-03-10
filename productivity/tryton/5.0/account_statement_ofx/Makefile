@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.4
+MODPY_EGG_VERSION =	5.0.5
 TRYTON_MODULE =		account_statement_ofx
-REVISION =		0
 
 TRYTON_DEPENDS +=	account_statement \
 			bank \

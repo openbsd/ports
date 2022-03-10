@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.5
+MODPY_EGG_VERSION =	5.0.6
 TRYTON_MODULE =		production_work
-REVISION =		0
 
 TRYTON_DEPENDS +=	company \
 			production \

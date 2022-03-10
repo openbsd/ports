@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.3
+MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		customs
-REVISION =		1
 
 TRYTON_DEPENDS +=	country \
 			currency \

@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.3
+MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		account_be
-REVISION =		0
 
 TRYTON_DEPENDS +=	account \
 			account_eu

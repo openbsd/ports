@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.3
+MODPY_EGG_VERSION =	5.0.4
 TRYTON_MODULE =		production_work_timesheet
-REVISION =		1
 
 TRYTON_DEPENDS +=	production_routing \
 			production_work \

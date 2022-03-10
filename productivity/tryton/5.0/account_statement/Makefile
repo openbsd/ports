@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.7
+MODPY_EGG_VERSION =	5.0.9
 TRYTON_MODULE =		account_statement
-REVISION =		0
 
 TRYTON_DEPENDS +=	account \
 			account_invoice \

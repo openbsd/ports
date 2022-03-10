@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.5
+MODPY_EGG_VERSION =	5.0.7
 TRYTON_MODULE =		account_payment_sepa
-REVISION =		0
 
 TRYTON_DEPENDS +=	account_payment \
 			company \

@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.12
+MODPY_EGG_VERSION =	5.0.18
 TRYTON_MODULE =		stock
-REVISION =		0
 
 TRYTON_DEPENDS +=	company \
 			currency \

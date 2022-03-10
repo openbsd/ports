@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.0.3
 TRYTON_MODULE =		account_stock_landed_cost
-REVISION =		1
 
 TRYTON_DEPENDS +=	account \
 			account_invoice \

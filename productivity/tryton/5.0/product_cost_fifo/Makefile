@@ -1,6 +1,5 @@
-MODPY_EGG_VERSION =	5.0.9
+MODPY_EGG_VERSION =	5.0.10
 TRYTON_MODULE =		product_cost_fifo
-REVISION =		0
 
 TRYTON_DEPENDS +=	product \
 			stock
