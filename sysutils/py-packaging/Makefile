@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/18 20:08:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2022/03/10 10:51:00 sthen Exp $
 
 COMMENT =	core utilities for Python packages
 
@@ -24,8 +24,12 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR}>=2.0.2
 
-TEST_DEPENDS =		devel/py-pretend${MODPY_FLAVOR}
 MODPY_PYTEST =		Yes
+
+.if ${FLAVOR:Mpython3}
+# no tests for py2
+TEST_DEPENDS =		devel/py-pretend${MODPY_FLAVOR}
+.endif
 
 FLAVORS =	python3
 FLAVOR ?=
