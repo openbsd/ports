@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/25 22:05:14 sthen Exp $
 @bin bin/convertzone
 @bin bin/dnscontrol
 share/doc/dnscontrol/
@@ -36,6 +35,7 @@ share/doc/dnscontrol/providers/digitalocean.md
 share/doc/dnscontrol/providers/dnsimple.md
 share/doc/dnscontrol/providers/dnsmadeeasy.md
 share/doc/dnscontrol/providers/doh.md
+share/doc/dnscontrol/providers/easyname.md
 share/doc/dnscontrol/providers/gandi_v5.md
 share/doc/dnscontrol/providers/gcloud.md
 share/doc/dnscontrol/providers/hedns.md
@@ -52,6 +52,7 @@ share/doc/dnscontrol/providers/netcup.md
 share/doc/dnscontrol/providers/ns1.md
 share/doc/dnscontrol/providers/oracle.md
 share/doc/dnscontrol/providers/ovh.md
+share/doc/dnscontrol/providers/packetframe.md
 share/doc/dnscontrol/providers/powerdns.md
 share/doc/dnscontrol/providers/route53.md
 share/doc/dnscontrol/providers/softlayer.md

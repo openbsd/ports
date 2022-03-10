@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/04 18:39:00 paco Exp $
-
 COMMENT =		manage DNS configuration across any number of DNS hosts
 
-MODGO_VERSION =		v3.12.0
+MODGO_VERSION =		v3.14.0
 MODGO_MODNAME =		github.com/StackExchange/dnscontrol/v3
 GH_ACCOUNT =		StackExchange
 GH_PROJECT =		dnscontrol
