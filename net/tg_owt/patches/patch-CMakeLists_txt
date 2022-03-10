@@ -1,6 +1,5 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2022/02/25 20:16:59 kn Exp $
-
-- attempt to fix undefined references to dcsctp by removing dcsctp_transport.*
+attempt to fix undefined references to dcsctp by removing dcsctp_transport.*
+https://github.com/desktop-app/tg_owt/pull/94
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2022/03/06 16:38:21 kn Exp $
+# $OpenBSD: Makefile,v 1.16 2022/03/10 11:23:52 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -15,7 +15,10 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		a264028ec71d9096e0aa629113c49c25db89d260
 DISTNAME =		${GH_PROJECT}-0.0.0.20220216
+REVISION =		0
 CATEGORIES =		net
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 SHARED_LIBS =		tg_owt	1.1	# 0.0.0
 
@@ -112,10 +115,6 @@ NEEDED_BUNDLES +=	rnnoise
 NEEDED_BUNDLES +=	libsrtp
 # unported and required
 NEEDED_BUNDLES +=	libyuv pffft
-
-.ifndef DEBUG
-INSTALL_TARGET =	install/strip
-.endif
 
 post-extract:
 	# All bundles:
