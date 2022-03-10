@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2022/03/10 11:23:52 kn Exp $
+# $OpenBSD: Makefile,v 1.17 2022/03/10 14:03:07 kn Exp $
 
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
@@ -128,15 +128,17 @@ post-extract:
 	cd ${WRKSRC}/src/ && rm -r -- \
 	    sdk/{android,objc}/
 
-post-install:
+post-configure:
 	# remove more sources not needed to build tdesktop, they are however
 	# required at tg_owt configure-time even though they are not built, see
 	# nice_target_sources()/remove_target_sources() calls in CMakeLists.txt
-	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
+	cd ${WRKSRC}/src/ && rm -r -- \
 	    modules/audio_device/{android,mac,win}/ \
 	    modules/desktop_capture/{mac,win}/ \
 	    modules/video_capture/windows/ \
 	    rtc_base/{win/,win32*.h}
+
+post-install:
 	# remove bundled sources not needed to build tdesktop
 	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
 	    third_party/{libsrtp,rnnoise,pffft}
