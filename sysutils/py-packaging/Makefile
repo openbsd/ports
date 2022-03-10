@@ -24,12 +24,12 @@ RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR}>=2.0.2
 
 MODPY_PYTEST =		Yes
 
+FLAVORS =	python3
+FLAVOR ?=
+
 .if ${FLAVOR:Mpython3}
 # no tests for py2
 TEST_DEPENDS =		devel/py-pretend${MODPY_FLAVOR}
 .endif
-
-FLAVORS =	python3
-FLAVOR ?=
 
 .include <bsd.port.mk>
