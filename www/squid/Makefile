@@ -1,22 +1,18 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
-COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 V=		5.4.1
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
-PKGNAME-ntlm=	squid-ntlm-$V
 DPB_PROPERTIES=	parallel
-REVISION-main=	0
+REVISION=	1
 
-.for i in -ldap -ntlm
 # subpackages aren't flavoured, so overwrite the default name/path
-FULLPKGNAME$i ?= squid$i-$V
-FULLPKGPATH$i ?= ${PKGPATH},$i
-RUN_DEPENDS$i += squid-$V:www/squid
-.endfor
+FULLPKGNAME-ldap = squid-ldap-$V
+FULLPKGPATH-ldap = ${PKGPATH},ldap
+RUN_DEPENDS-ldap += squid-$V:www/squid
 
 CATEGORIES=	www
 
@@ -52,7 +48,7 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--enable-ssl-crtd
 
 EXTERNAL_ACL=	SQL_session file_userip time_quota \
-		unix_group wbinfo_group
+		unix_group
 
 WANTLIB-main +=	${cWANTLIB} crypto expat lzma tdb xml2 z
 
@@ -66,8 +62,8 @@ LIB_DEPENDS-main += \
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
 
-MULTI_PACKAGES=	-main -ldap -ntlm
-PSEUDO_FLAVORS=	no_ldap no_ntlm
+MULTI_PACKAGES=	-main -ldap
+PSEUDO_FLAVORS=	no_ldap
 FLAVORS=	krb5
 FLAVOR?=
 
@@ -144,15 +140,6 @@ EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 LIB_DEPENDS-ldap=   databases/openldap \
 		    security/gnutls
 WANTLIB-ldap +=     ${cWANTLIB} crypto lber ldap sasl2 ssl
-
-RUN_DEPENDS-ntlm+=   net/samba
-LIB_DEPENDS-ntlm=   security/libnettle
-WANTLIB-ntlm=       ${COMPILER_LIBCXX} c execinfo m nettle pthread
-
-pre-build:
-	@cd ${WRKSRC}/src; sed -i 's,/usr/local,${LOCALBASE},g' \
-	    acl/external/wbinfo_group/ext_wbinfo_group_acl.pl.in \
-	    squid.8.in
 
 post-install:
 	rm -rf ${WRKINST}/var/squid

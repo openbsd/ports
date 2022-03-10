@@ -1,8 +1,0 @@
-@conflict squid-<3
-@pkgpath www/squid/snapshot,-ntlm
-@pkgpath www/squid/stable,-ntlm
-@bin libexec/squid/basic_smb_auth
-libexec/squid/basic_smb_auth.sh
-libexec/squid/ext_wbinfo_group_acl
-@bin libexec/squid/ntlm_fake_auth
-@man man/man8/ext_wbinfo_group_acl.8

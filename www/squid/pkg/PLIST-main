@@ -1,5 +1,9 @@
+@conflict squid-ntlm-*
 @pkgpath www/squid/snapshot,-main
+@pkgpath www/squid/snapshot,-ntlm
+@pkgpath www/squid/stable,-ntlm
 @pkgpath www/squid/stable,-main
+@pkgpath www/squid,-ntlm
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
@@ -14,6 +18,8 @@ libexec/squid/basic_db_auth
 @bin libexec/squid/basic_ncsa_auth
 libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_radius_auth
+@bin libexec/squid/basic_smb_auth
+libexec/squid/basic_smb_auth.sh
 @bin libexec/squid/cachemgr.cgi
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
@@ -25,6 +31,7 @@ libexec/squid/helper-mux
 libexec/squid/log_db_daemon
 @bin libexec/squid/log_file_daemon
 @bin libexec/squid/negotiate_wrapper_auth
+@bin libexec/squid/ntlm_fake_auth
 libexec/squid/security_fake_certverify
 @bin libexec/squid/security_file_certgen
 libexec/squid/storeid_file_rewrite
