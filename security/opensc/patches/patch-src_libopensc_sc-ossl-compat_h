@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libopensc_sc-ossl-compat_h,v 1.5 2021/10/31 17:19:13 tb Exp $
-
 Index: src/libopensc/sc-ossl-compat.h
 --- src/libopensc/sc-ossl-compat.h.orig
 +++ src/libopensc/sc-ossl-compat.h

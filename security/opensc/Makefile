@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2021/10/31 17:19:13 tb Exp $
-
 COMMENT=	set of libraries and utilities to access smart cards
 
-V=		0.21.0
+V=		0.22.0
 DISTNAME=	opensc-${V}
-REVISION=	0
 
-SHARED_LIBS +=	opensc 7.2	# 6.0
-SHARED_LIBS +=	smm-local 3.1	# 6.0
+SHARED_LIBS +=	opensc 7.3	# 8.0
+SHARED_LIBS +=	smm-local 3.1
 
 CATEGORIES=	security
 
@@ -25,7 +22,9 @@ BUILD_DEPENDS=	security/pcsc-lite \
 		textproc/docbook-xsl
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/ccid
+TEST_DEPENDS=	shells/bash
 LIB_DEPENDS=	devel/glib2
+LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
 
