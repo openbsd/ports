@@ -1,6 +1,4 @@
 #!/bin/sh
-# $OpenBSD: build.sh,v 1.5 2022/01/06 09:08:40 semarie Exp $
-
 set -eux
 
 LLVMINST="${LOCALBASE}"
