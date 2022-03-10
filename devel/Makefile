@@ -1544,7 +1544,6 @@
      SUBDIR += py-txaio,python3
      SUBDIR += py-typing
      SUBDIR += py-typing-extensions,python3
-     SUBDIR += py-tz
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6,python3
