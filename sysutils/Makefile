@@ -299,7 +299,6 @@
      SUBDIR += py-pushover,python3
      SUBDIR += py-pynetbox,python3
      SUBDIR += py-pyperclip,python3
-     SUBDIR += py-scandir		# not required for py3
      SUBDIR += py-schedule,python3
      SUBDIR += py-statgrab,python3
      SUBDIR += py-threadpoolctl,python3
