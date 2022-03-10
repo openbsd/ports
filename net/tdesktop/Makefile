@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2022/03/09 16:48:18 kn Exp $
+# $OpenBSD: Makefile,v 1.22 2022/03/10 12:22:41 kn Exp $
 
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
@@ -16,7 +16,7 @@ HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
 MASTER_SITES0 =		https://github.com/desktop-app/lib_base/commit/
-# Pending "Try to find executable in PATH if argv0 doesn't have path"
+# Merged "Try to find executable in PATH if argv0 doesn't have path"
 # https://github.com/desktop-app/lib_base/pull/115
 PATCHFILES +=		tdesktop-lib_base-fix-restart-{}58a90ad.patch:0
 PATCH_CASES +=		tdesktop-lib_base-*) ${PATCH} ${PATCH_DIST_ARGS} \
@@ -40,10 +40,6 @@ WANTLIB += xxhash z
 
 # C++17 set below
 COMPILER =		base-clang ports-gcc
-
-# cc/c++: warning: argument unused during compilation: '-fstack-clash-protection'
-CFLAGS +=		-Wno-unused-command-line-argument
-CXXFLAGS +=		-Wno-unused-command-line-argument
 
 # precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
 # CCACHE_ENV +=		CCACHE_SLOPPINESS=pch_defines,time_macros
@@ -121,3 +117,11 @@ post-extract:
 		mv .need/* . && rmdir .need/ && ls -x
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER:M*-clang}
+# `stack-clash-protecion' is explicitly disabled in base and ports clang and
+# thus spams the following while ports-gcc does not warn
+# cc/c++: warning: argument unused during compilation: '-fstack-clash-protection'
+CFLAGS +=		-Wno-unused-command-line-argument
+CXXFLAGS +=		-Wno-unused-command-line-argument
+.endif
