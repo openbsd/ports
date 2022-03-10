@@ -1,11 +1,9 @@
 COMMENT =		forward mail received via UUCP to the local MTA
 
 DISTNAME =		rmail-1.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		mail
-
-MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
