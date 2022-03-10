@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT =	python svg graph plotting library
 
-MODPY_EGG_VERSION = 2.4.0
+MODPY_EGG_VERSION = 3.0.0
 DISTNAME =	pygal-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
 
 CATEGORIES =	graphics
 
