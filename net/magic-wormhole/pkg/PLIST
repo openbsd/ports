@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/24 21:27:06 kn Exp $
 bin/wormhole
 lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

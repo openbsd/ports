@@ -1,6 +1,5 @@
 #!/bin/ksh
 #
-# $OpenBSD: murmurd.rc,v 1.3 2022/02/18 12:59:18 kn Exp $
 
 daemon="${TRUEPREFIX}/bin/murmurd"
 daemon_flags="-ini ${SYSCONFDIR}/murmur.ini"

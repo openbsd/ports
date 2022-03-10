@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 13:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2022/03/10 12:03:35 kn Exp $
 
 COMMENT =		count lines of codes in many languages
 
 V =			2.11
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://gitlab.com/esr/loccount
 

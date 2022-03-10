@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/23 01:45:10 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2022/03/10 12:03:34 kn Exp $
 
 COMMENT =	utility for modifying existing ELF executables and libraries
 
 V =			0.14.5
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
+REVISION =		0
 
 CATEGORIES =		sysutils
 

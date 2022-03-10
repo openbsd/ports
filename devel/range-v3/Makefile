@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/14 10:31:22 kn Exp $
+# $OpenBSD: Makefile,v 1.7 2022/03/10 12:03:30 kn Exp $
 
 COMMENT =		range library for C++14/17/20
 
 GH_ACCOUNT =		ericniebler
 GH_PROJECT =		range-v3
 GH_TAGNAME =		0.11.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 MASTER_SITES0 =		https://github.com/ericniebler/range-v3/commit/

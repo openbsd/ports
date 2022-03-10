@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/20 06:16:00 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/03/10 12:03:31 kn Exp $
 
 COMMENT =	c++11/14/17 std::expected with functional-style extensions
 
@@ -7,6 +7,7 @@ GH_PROJECT =		expected
 GH_TAGNAME =		v1.0.0
 PKGNAME =		tl-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 # cmake file for build and install;  no release or tags, use latest master
 ADD_TL_COMMIT =		284c6a3f0f61823cc3871b0f193e8df699e2c4ce

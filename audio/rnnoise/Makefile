@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/16 00:29:56 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:30 kn Exp $
 
 COMMENT =		recurrent neural network for audio noise reduction
 # no tag or release, use HEAD
 DISTNAME =		rnnoise-master-7f449bf8bd3b933891d12c30112268c4090e4d59
 V =			0.0.0.20210312
 PKGNAME =		rnnoise-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 
 SHARED_LIBS =		rnnoise	0.0	# 4.1

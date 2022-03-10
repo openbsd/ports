@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/27 16:12:16 kn Exp $
 @bin bin/patchelf
 @man man/man1/patchelf.1
 share/doc/patchelf/

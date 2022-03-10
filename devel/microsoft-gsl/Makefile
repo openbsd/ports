@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/26 15:27:11 kn Exp $
+# $OpenBSD: Makefile,v 1.3 2022/03/10 12:03:30 kn Exp $
 
 COMMENT =		guidelines support library
 GH_ACCOUNT =		microsoft
@@ -7,6 +7,7 @@ V =			4.0.0
 GH_TAGNAME =		v${V}
 DISTNAME =		microsoft-gsl-${V}
 CATEGORIES =		devel
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes

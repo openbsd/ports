@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/04/19 18:15:23 kn Exp $
 @conflict Xonotic-*
 @bin bin/xonotic-sdl

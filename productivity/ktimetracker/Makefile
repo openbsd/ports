@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/11 10:21:15 kn Exp $
+# $OpenBSD: Makefile,v 1.2 2022/03/10 12:03:33 kn Exp $
 
 COMMENT =		todo management and time tracker
 
 VERSION =		5.0.1
 DISTNAME =		ktimetracker-${VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity x11
 

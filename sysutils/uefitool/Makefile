@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2020/04/03 20:48:02 kn Exp $
+# $OpenBSD: Makefile,v 1.10 2022/03/10 12:03:35 kn Exp $
 
 # ignore A* and t* (pre) releases
 PORTROACH =		limit:^[0-9]
@@ -8,6 +8,7 @@ COMMENT =		parse, extract and modify UEFI firmware images
 GH_ACCOUNT =		LongSoft
 GH_PROJECT =		UEFITool
 GH_TAGNAME =		0.28.0
+REVISION =		0
 
 CATEGORIES =		sysutils
 

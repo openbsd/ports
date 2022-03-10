@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/11 22:12:03 kn Exp $
 bin/portroach-cli
 @man man/man1/portroach-cli.1

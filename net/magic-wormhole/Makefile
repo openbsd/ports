@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/29 06:59:14 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:33 kn Exp $
 
 COMMENT =		securely transfer data between computers
 
 MODPY_EGG_VERSION =	0.12.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 

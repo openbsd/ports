@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2020/10/18 22:00:52 kn Exp $
+# $OpenBSD: Makefile,v 1.18 2022/03/10 12:03:36 kn Exp $
 
 COMMENT=	provider bindings for Augeas
 
 DISTNAME=	ruby-augeas-0.5.0
 PKGNAME=	${DISTNAME:S/ruby-//}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://augeas.net/

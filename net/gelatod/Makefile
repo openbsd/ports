@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/23 23:48:05 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:32 kn Exp $
 
 COMMENT =		CLAT configuration daemon for OpenBSD
 V =			1.3
 DISTNAME =		gelatod-${V}
 CATEGORIES =		net
+REVISION =		0
 
 # BSD 2-clause
 PERMIT_PACKAGE =	Yes

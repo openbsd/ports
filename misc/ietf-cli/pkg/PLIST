@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/14 15:59:46 kn Exp $
 @extraunexec rm -rf ${LOCALSTATEDIR}/db/ietf-mirrors/*
 bin/ietf
 share/doc/ietf/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-svn,v 1.6 2020/01/27 23:49:12 abieber Exp $
 ${P5SITE}/Git/SVN/
 ${P5SITE}/Git/SVN.pm
 ${P5SITE}/Git/SVN/Editor.pm

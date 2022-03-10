@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/07 14:10:00 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2022/03/10 12:03:33 kn Exp $
 
 COMMENT =		portable SCTP userland stack
 GH_ACCOUNT =		sctplab
 GH_PROJECT =		usrsctp
 GH_TAGNAME =		0.9.5.0
 CATEGORIES =		net
-REVISION =		2
+REVISION =		3
 
 MASTER_SITES0 =		https://github.com/sctplab/usrsctp/commit/
 PATCHFILES =		usrsctplib-link-pthread-{}40e35a7.patch:0 \

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/19 20:47:10 kn Exp $
 bin/me_cleaner
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2-py${MODPY_VERSION}.egg-info/PKG-INFO

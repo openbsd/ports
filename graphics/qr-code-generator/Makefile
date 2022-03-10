@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/09 20:46:31 kn Exp $
+# $OpenBSD: Makefile,v 1.6 2022/03/10 12:03:31 kn Exp $
 
 COMMENT =		QR Code generator library
 GH_ACCOUNT =		nayuki
@@ -6,7 +6,7 @@ GH_PROJECT =		QR-Code-generator
 GH_TAGNAME =		v1.7.0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		1
+REVISION =		2
 
 # upstream has no shared library versions
 SHARED_LIBS +=		qrcodegen	0.0

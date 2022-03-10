@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/02/16 20:06:03 jasper Exp $
 @bin bin/tmate

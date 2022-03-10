@@ -1,6 +1,5 @@
 #!/bin/ksh
 #
-# $OpenBSD: gelatod.rc,v 1.1.1.1 2021/11/17 20:36:10 kn Exp $
 
 daemon="/usr/local/sbin/gelatod"
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/29 11:18:32 kn Exp $
+# $OpenBSD: Makefile,v 1.11 2022/03/10 12:03:32 kn Exp $
 
 COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
 GH_ACCOUNT=	paulehoffman
 GH_PROJECT=	ietf-cli
 GH_TAGNAME=	1.18
+REVISION=	0
 
 CATEGORIES=	misc net books
 

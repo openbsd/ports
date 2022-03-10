@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:31 kn Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -9,7 +9,7 @@ COMMENT-server =	fast-paced first person shooter, server
 MULTI_PACKAGES =	-main -data -server
 
 V =			0.8.2
-REVISION =		0
+REVISION =		1
 DISTNAME =		xonotic-${V}
 PKGNAME-main =		xonotic-${V}
 PKGNAME-data =		xonotic-data-${V}

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/11 12:58:20 kn Exp $
 @bin bin/mbsync
 bin/mbsync-get-cert
 @bin bin/mdconvert

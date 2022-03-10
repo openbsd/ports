@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/29 19:03:29 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:32 kn Exp $
 
 COMMENT =		Cisco implementation of H.264 codec
 GH_ACCOUNT =		cisco
 GH_PROJECT =		openh264
 GH_TAGNAME =		v2.2.0
 CATEGORIES =		multimedia
+REVISION =		0
 
 SHARED_LIBS =		openh264	1.0	# 6.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/16 14:43:49 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2022/03/10 12:03:30 kn Exp $
 
 # __builtin_clz
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -8,6 +8,7 @@ COMMENT =	parallel implementation of gzip utilizing multiple cores
 DISTNAME =	pigz-2.7
 CATEGORIES =	archivers
 HOMEPAGE =	https://zlib.net/pigz/
+REVISION =	0
 
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
