@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:47 sthen Exp $
 @pkgpath devel/py-simpleeval
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}simpleeval.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/simpleeval-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/simpleeval-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
