@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/10/18 09:55:08 semarie Exp $
 @conflict py-relatorio-*
 @pkgpath print/py-relatorio
+bin/relatorio-render
 lib/python${MODPY_VERSION}/site-packages/relatorio/
 lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
