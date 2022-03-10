@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/03 22:53:18 kn Exp $
-
 COMMENT =		Virtual Private Network (VPN) daemon
-DISTNAME =		tinc-1.1pre17
+DISTNAME =		tinc-1.1pre18
 CATEGORIES =		net security
 EPOCH =			0
 
@@ -16,7 +14,6 @@ MASTER_SITES =		https://www.tinc-vpn.org/packages/
 
 LIB_DEPENDS +=		archivers/lzo2
 
-SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
