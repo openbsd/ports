@@ -1455,7 +1455,6 @@
      SUBDIR += py-plugnplay
      SUBDIR += py-plugnplay,python3
      SUBDIR += py-ply,python3
-     SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
      SUBDIR += py-process-tests,python3
      SUBDIR += py-progress,python3

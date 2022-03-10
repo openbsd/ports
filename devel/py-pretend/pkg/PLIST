@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/10 21:00:16 danj Exp $
+@pkgpath devel/py-pretend
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pretend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pretend-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pretend-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

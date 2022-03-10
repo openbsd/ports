@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1374 2022/03/10 10:47:09 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1375 2022/03/10 10:52:15 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -717,6 +717,7 @@ my $stem_extensions = {
 	'py-setuptools_scm' => 'py3-setuptools_scm',
 	'ssvnc-viewer' => 'tigervnc',
 	'py-tz' => 'py3-tz',
+	'py-pretend' => 'py3-pretend',
 };
 
 my $obsolete_reason = {};
