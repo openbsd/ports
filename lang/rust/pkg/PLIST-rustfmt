@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-rustfmt,v 1.1 2018/12/16 09:19:57 semarie Exp $
 @bin bin/cargo-fmt
 @bin bin/rustfmt
 share/doc/rustfmt/

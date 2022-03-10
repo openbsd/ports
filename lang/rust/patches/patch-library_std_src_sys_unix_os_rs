@@ -1,5 +1,5 @@
-$OpenBSD: patch-library_std_src_sys_unix_os_rs,v 1.9 2022/02/25 07:28:46 semarie Exp $
 argv0 isn't suitable as current_exe() in all cases.
+
 Index: library/std/src/sys/unix/os.rs
 --- library/std/src/sys/unix/os.rs.orig
 +++ library/std/src/sys/unix/os.rs

@@ -1,6 +1,6 @@
-$OpenBSD: patch-compiler_rustc_target_src_spec_i686_unknown_openbsd_rs,v 1.5 2021/06/20 18:07:09 semarie Exp $
 i386 should be pentiumpro (no SSE2, no ...)
 pass -znotext to avoid relocation problem with __rust_probestack symbol
+
 Index: compiler/rustc_target/src/spec/i686_unknown_openbsd.rs
 --- compiler/rustc_target/src/spec/i686_unknown_openbsd.rs.orig
 +++ compiler/rustc_target/src/spec/i686_unknown_openbsd.rs

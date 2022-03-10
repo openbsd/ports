@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_test_ui-fulldeps_myriad-closures_rs,v 1.1 2019/09/29 08:23:17 semarie Exp $
-
 Index: src/test/ui-fulldeps/myriad-closures.rs
 --- src/test/ui-fulldeps/myriad-closures.rs.orig
 +++ src/test/ui-fulldeps/myriad-closures.rs

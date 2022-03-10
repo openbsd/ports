@@ -1,4 +1,3 @@
-$OpenBSD: patch-vendor_libgit2-sys_build_rs,v 1.1 2022/02/25 07:28:46 semarie Exp $
 libgit2: force embedded version
 
 Index: vendor/libgit2-sys/build.rs

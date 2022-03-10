@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.140 2022/02/25 07:28:46 semarie Exp $
-
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
 .if "${MACHINE_ARCH}" == "i386"

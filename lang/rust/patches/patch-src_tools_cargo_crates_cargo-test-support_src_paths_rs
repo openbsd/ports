@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tools_cargo_crates_cargo-test-support_src_paths_rs,v 1.6 2021/09/09 15:07:40 semarie Exp $
-
 Index: src/tools/cargo/crates/cargo-test-support/src/paths.rs
 --- src/tools/cargo/crates/cargo-test-support/src/paths.rs.orig
 +++ src/tools/cargo/crates/cargo-test-support/src/paths.rs

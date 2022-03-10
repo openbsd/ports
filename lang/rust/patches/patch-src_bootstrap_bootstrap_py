@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bootstrap_bootstrap_py,v 1.20 2022/02/25 07:28:46 semarie Exp $
 Workaround for sparc64: bootstrap segfaults without -O3
 
 Index: src/bootstrap/bootstrap.py

@@ -1,5 +1,5 @@
-$OpenBSD: patch-compiler_rustc_session_src_filesearch_rs,v 1.4 2021/12/02 14:59:19 semarie Exp $
 fallback to LOCALBASE as default sysroot.
+
 Index: compiler/rustc_session/src/filesearch.rs
 --- compiler/rustc_session/src/filesearch.rs.orig
 +++ compiler/rustc_session/src/filesearch.rs

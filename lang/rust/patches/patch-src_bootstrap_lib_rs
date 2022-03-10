@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_bootstrap_lib_rs,v 1.40 2022/02/25 07:28:46 semarie Exp $
 let us compilation choice to be honored.
 https://github.com/rust-lang/rust/issues/39900
+
 Index: src/bootstrap/lib.rs
 --- src/bootstrap/lib.rs.orig
 +++ src/bootstrap/lib.rs

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_test_ui_runtime_out-of-stack_rs,v 1.1 2022/01/14 07:18:46 semarie Exp $
-
 Index: src/test/ui/runtime/out-of-stack.rs
 --- src/test/ui/runtime/out-of-stack.rs.orig
 +++ src/test/ui/runtime/out-of-stack.rs

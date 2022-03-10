@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bootstrap_bin_rustc_rs,v 1.18 2022/02/25 07:28:46 semarie Exp $
 try to reduce memory usage on aarch64 and i386:
  - reduce memory use by retaining fewer names within compilation artifacts
  - divise (with codegen-units) the unit in smaller parts to manipulate it
+
 Index: src/bootstrap/bin/rustc.rs
 --- src/bootstrap/bin/rustc.rs.orig
 +++ src/bootstrap/bin/rustc.rs

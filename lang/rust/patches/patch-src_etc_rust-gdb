@@ -1,5 +1,5 @@
-$OpenBSD: patch-src_etc_rust-gdb,v 1.9 2020/06/09 06:39:30 semarie Exp $
 use egdb (gdb from ports)
+
 Index: src/etc/rust-gdb
 --- src/etc/rust-gdb.orig
 +++ src/etc/rust-gdb
