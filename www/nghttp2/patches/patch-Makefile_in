@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2021/11/14 15:25:18 sthen Exp $
-
 not very useful without tools, and the contrib Makefile has a gnu-ism
 
 Index: Makefile.in
