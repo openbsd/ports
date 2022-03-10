@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/10/29 15:38:50 sthen Exp $
 @pkgpath telephony/py-phonenumbers
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}-py${M
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/__init__.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}asyoutypeformatter.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,9 +23,12 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}timezone.$
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}unicode_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/asyoutypeformatter.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/asyoutypeformatter.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrier.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrier.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/__init__.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/${MODPY_PYCACHE}data0.${MODPY_PYC_MAGIC_TAG}pyc
@@ -36,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/data1.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/carrierdata/data2.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/__init__.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_255.${MODPY_PYC_MAGIC_TAG}pyc
@@ -67,7 +71,6 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_f
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_595.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_61.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_62.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_63.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_64.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_66.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/${MODPY_PYCACHE}alt_format_675.${MODPY_PYC_MAGIC_TAG}pyc
@@ -368,7 +371,6 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_58.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_595.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_61.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_62.py
-lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_63.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_64.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_66.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/alt_format_675.py
@@ -641,8 +643,10 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/region_ZA.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/region_ZM.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/data/region_ZW.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geocoder.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geocoder.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/__init__.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/${MODPY_PYCACHE}data0.${MODPY_PYC_MAGIC_TAG}pyc
@@ -705,14 +709,23 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data7.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data8.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/data9.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/locale.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/geodata/locale.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonemetadata.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonemetadata.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonenumber.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonenumber.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonenumbermatcher.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonenumbermatcher.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonenumberutil.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/phonenumberutil.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/prefix.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/prefix.pyi
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/py.typed
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/re_util.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/re_util.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/__init__.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/${MODPY_PYCACHE}region_AC.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1198,12 +1211,17 @@ lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_ZA.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_ZM.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortdata/region_ZW.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortnumberinfo.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/shortnumberinfo.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/timezone.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/timezone.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/__init__.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/${MODPY_PYCACHE}data0.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/tzdata/data0.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/unicode_util.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/unicode_util.pyi
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/util.py
+lib/python${MODPY_VERSION}/site-packages/phonenumbers/util.pyi
