@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:21:14 semarie Exp $
 @option is-branch
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_siret/__init__.py

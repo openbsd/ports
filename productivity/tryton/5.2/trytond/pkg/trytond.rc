@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: trytond.rc,v 1.1.1.1 2019/05/09 11:49:02 semarie Exp $
 
 daemon="${TRUEPREFIX}/bin/trytond"
 daemon_flags="--config ${SYSCONFDIR}/trytond/server.conf --logconf ${SYSCONFDIR}/trytond/logging.conf"

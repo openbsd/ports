@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:55 sthen Exp $
-
 MODPY_EGG_VERSION =	5.0.2
 TRYTON_MODULE =		account_dunning_fee
 REVISION =		1

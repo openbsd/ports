@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/09 11:38:36 semarie Exp $
-
 SUBDIR =
 
 # server, clients, library

@@ -1,4 +1,3 @@
-$OpenBSD: patch-move_xml,v 1.1 2019/07/18 07:49:58 semarie Exp $
 Backport for issue8469 https://hg.tryton.org/modules/account/rev/cd59f1314f97
 Correct domain for receivable action domain
 

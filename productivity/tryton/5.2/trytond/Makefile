@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:06 sthen Exp $
-
 COMMENT =		3-tiers general purpose business application framework
 
 MODPY_EGG_VERSION =	5.2.20
 DISTNAME =		trytond-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 TRYTON_PY =		Yes
 
@@ -25,6 +23,8 @@ RUN_DEPENDS +=		databases/py-psycopg2${MODPY_FLAVOR} \
 
 #RUN_DEPENDS +=		graphics/pydot	# optional, port is py2 only
 #RUN_DEPENDS +=		levenshtein	# optional, not ported
+
+TEST_DEPENDS +=		${RUN_DEPENDS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/trytond

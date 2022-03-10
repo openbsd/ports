@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.30 2021/02/23 19:39:37 sthen Exp $
-
 CATEGORIES ?=		productivity \
 			productivity/tryton
 

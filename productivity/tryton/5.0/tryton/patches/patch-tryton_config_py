@@ -1,5 +1,5 @@
-$OpenBSD: patch-tryton_config_py,v 1.1 2019/01/24 05:51:57 semarie Exp $
 Disable, by default, the check of a new client version.
+
 Index: tryton/config.py
 --- tryton/config.py.orig
 +++ tryton/config.py

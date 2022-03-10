@@ -1,0 +1,43 @@
+Backport werkzeug 2.0 support
+https://hg.tryton.org/trytond/raw-rev/691d0ad1b947
+
+Index: trytond/wsgi.py
+--- trytond/wsgi.py.orig
++++ trytond/wsgi.py
+@@ -10,13 +10,26 @@ import traceback
+ from werkzeug.wrappers import Response
+ from werkzeug.routing import Map, Rule
+ from werkzeug.exceptions import abort, HTTPException, InternalServerError
+-from werkzeug.contrib.fixers import ProxyFix
++
+ try:
++    from werkzeug.middleware.proxy_fix import ProxyFix
++
++    def NumProxyFix(app, num_proxies):
++        return ProxyFix(app,
++            x_for=num_proxies, x_proto=num_proxies, x_host=num_proxies,
++            x_port=num_proxies, x_prefix=num_proxies)
++except ImportError:
++    from werkzeug.contrib.fixers import ProxyFix as NumProxyFix
++
++try:
+     from werkzeug.security import safe_join
+ except ImportError:
+     safe_join = posixpath.join
+ 
+-from werkzeug.wsgi import SharedDataMiddleware
++try:
++    from werkzeug.middleware.shared_data import SharedDataMiddleware
++except ImportError:
++    from werkzeug.wsgi import SharedDataMiddleware
+ 
+ import wrapt
+ 
+@@ -157,6 +170,6 @@ if config.get('web', 'root'):
+     app.wsgi_app = SharedDataMiddlewareIndex(app.wsgi_app, static_files)
+ num_proxies = config.getint('web', 'num_proxies')
+ if num_proxies:
+-    app.wsgi_app = ProxyFix(app.wsgi_app, num_proxies=num_proxies)
++    app.wsgi_app = NumProxyFix(app.wsgi_app, num_proxies)
+ import trytond.protocols.dispatcher
+ import trytond.bus

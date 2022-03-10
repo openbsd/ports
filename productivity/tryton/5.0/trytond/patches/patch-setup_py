@@ -1,0 +1,14 @@
+Backport werkzeug 2.0 support
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -108,7 +108,7 @@ setup(name=name,
+         'python-dateutil',
+         'polib',
+         'python-sql >= 0.5',
+-        'werkzeug < 1.0',
++        'werkzeug',
+         'wrapt',
+         'passlib >= 1.7.0',
+         ],

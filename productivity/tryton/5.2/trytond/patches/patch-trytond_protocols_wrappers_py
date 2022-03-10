@@ -1,0 +1,56 @@
+Backport werkzeug 2.0
+https://hg.tryton.org/trytond/raw-rev/2132304259ee
+
+Index: trytond/protocols/wrappers.py
+--- trytond/protocols/wrappers.py.orig
++++ trytond/protocols/wrappers.py
+@@ -13,7 +13,6 @@ except ImportError:
+ 
+ from werkzeug.wrappers import Request as _Request, Response
+ from werkzeug.utils import cached_property
+-from werkzeug.http import wsgi_to_bytes, bytes_to_wsgi
+ from werkzeug.datastructures import Authorization
+ from werkzeug.exceptions import abort, HTTPException
+ 
+@@ -93,7 +92,8 @@ class Request(_Request):
+ def parse_authorization_header(value):
+     if not value:
+         return
+-    value = wsgi_to_bytes(value)
++    if not isinstance(value, bytes):
++        value = value.encode('latin1')
+     try:
+         auth_type, auth_info = value.split(None, 1)
+         auth_type = auth_type.lower()
+@@ -107,9 +107,9 @@ def parse_authorization_header(value):
+         except Exception:
+             return
+         return Authorization('session', {
+-                'username': bytes_to_wsgi(username),
++                'username': username.decode("latin1"),
+                 'userid': userid,
+-                'session': bytes_to_wsgi(session),
++                'session': session.decode("latin1"),
+                 })
+ 
+ 
+@@ -190,16 +190,16 @@ def user_application(name, json=True):
+             pool = Pool()
+             UserApplication = pool.get('res.user.application')
+ 
+-            authorization = wsgi_to_bytes(request.headers['Authorization'])
++            authorization = request.headers['Authorization']
+             try:
+                 auth_type, auth_info = authorization.split(None, 1)
+                 auth_type = auth_type.lower()
+             except ValueError:
+                 abort(HTTPStatus.UNAUTHORIZED)
+-            if auth_type != b'bearer':
++            if auth_type != 'bearer':
+                 abort(HTTPStatus.FORBIDDEN)
+ 
+-            application = UserApplication.check(bytes_to_wsgi(auth_info), name)
++            application = UserApplication.check(auth_info, name)
+             if not application:
+                 abort(HTTPStatus.FORBIDDEN)
+             transaction = Transaction()

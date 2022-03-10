@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:05 sthen Exp $
-
 COMMENT =		library to access Tryton models like a client
 
 MODPY_EGG_VERSION =	5.2.4

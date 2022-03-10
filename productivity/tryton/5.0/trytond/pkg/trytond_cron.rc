@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: trytond_cron.rc,v 1.1.1.1 2018/12/03 12:28:14 semarie Exp $
 
 daemon="${TRUEPREFIX}/bin/trytond-cron"
 daemon_flags="--config ${SYSCONFDIR}/trytond/server.conf --logconf ${SYSCONFDIR}/trytond/logging.conf"

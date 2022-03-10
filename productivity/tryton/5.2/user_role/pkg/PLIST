@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/10 15:22:50 semarie Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/user_role/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/user_role/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trytond/modules/user_role/${MODPY_PYCACHE}/

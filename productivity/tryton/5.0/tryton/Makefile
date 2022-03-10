@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:02:00 sthen Exp $
-
 COMMENT =		tryton desktop client
 
 MODPY_EGG_VERSION =	5.0.33

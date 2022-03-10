@@ -1,4 +1,3 @@
-$OpenBSD: patch-trytond_ir_lang_xml,v 1.1 2019/07/18 07:49:58 semarie Exp $
 Backport for issue8375 https://hg.tryton.org/trytond/rev/69c4e6981f14
 Evaluate n_sign_posn and p_sign_posn as integer instead of char in XML
 
