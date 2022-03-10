@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1375 2022/03/10 10:52:15 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1376 2022/03/10 10:55:46 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1659,6 +1659,7 @@ setup_obsolete_reason(
 	31 => 'py-pathlib2',
 	6 => 'py3-pathlib',
 	6 => 'py3-pathlib2',
+	31 => 'py-ipaddress',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
