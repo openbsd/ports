@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/03/10 10:51:00 sthen Exp $
-
 COMMENT =	core utilities for Python packages
 
 # if moving to >=21.0 this needs splitting off to py2-packaging
