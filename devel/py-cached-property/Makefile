@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:26 sthen Exp $
-
 COMMENT =	decorator for caching properties in classes
 
-MODPY_EGG_VERSION = 1.5.1
+MODPY_EGG_VERSION = 1.5.2
 DISTNAME =	cached-property-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
 
 CATEGORIES =	devel
 
