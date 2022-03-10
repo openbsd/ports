@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/14 16:09:34 jca Exp $
 @newgroup _iodine:598
 @newuser _iodine:598:598:daemon:Iodine User:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/iodined

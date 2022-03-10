@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.6 2021/05/12 23:33:24 jca Exp $
-
 Make Samba4 WAF respect OpenBSD shared libraries versioning conventions.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9774
 

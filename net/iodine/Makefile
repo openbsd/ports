@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/22 01:11:00 jca Exp $
-
 COMMENT=		tunnel IPv4 data through DNS
 
 DISTNAME=		iodine-0.7.0
 CATEGORIES=		net
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		https://code.kryo.se/iodine/
 

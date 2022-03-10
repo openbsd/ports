@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/11 14:38:44 jca Exp $
 @bin bin/pqiv
 @man man/man1/pqiv.1

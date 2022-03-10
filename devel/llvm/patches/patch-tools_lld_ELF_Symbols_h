@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_lld_ELF_Symbols_h,v 1.7 2022/01/03 21:33:52 jca Exp $
-
 Generate __data_start symbol that marks the start of .data when __data_start
 is referenced from code being linked.
 

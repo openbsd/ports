@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_X86_X86_h,v 1.5 2022/01/03 21:33:52 jca Exp $
-
 Add a clang pass that identifies potential ROP gadgets and replaces ROP
 friendly instructions with safe alternatives. This initial commit fixes
 3 instruction forms that will lower to include a c3 (return) byte.

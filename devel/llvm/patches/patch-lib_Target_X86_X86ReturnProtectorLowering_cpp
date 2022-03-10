@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_X86_X86ReturnProtectorLowering_cpp,v 1.2 2019/07/09 13:21:37 jca Exp $
-
 - Refactor retguard to make adding additional arches easier.
 - Do not store the retguard cookie in frame in leaf functions if possible.
   Makes things slightly faster and also improves security in these functions,

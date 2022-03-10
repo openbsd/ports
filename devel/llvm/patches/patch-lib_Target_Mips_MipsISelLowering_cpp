@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_Mips_MipsISelLowering_cpp,v 1.4 2022/01/03 21:33:51 jca Exp $
-
 - Implement the 'h' register constraint on mips64. This lets clang build
   pieces of software that use the constraint if the compiler claims
   to be compatible with GCC 4.2.1.

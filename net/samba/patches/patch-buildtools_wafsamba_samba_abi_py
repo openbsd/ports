@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_abi_py,v 1.1 2021/05/12 23:33:24 jca Exp $
-
 Drop fully fledged version script support, only use simpler version
 scripts to limit symbol visibility. Appending a version to all symbols
 breaks binutils-2.17 ld(1).

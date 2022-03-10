@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_urcu_syscall-compat_h,v 1.2 2021/07/24 16:45:24 jca Exp $
-
 Index: include/urcu/syscall-compat.h
 --- include/urcu/syscall-compat.h.orig
 +++ include/urcu/syscall-compat.h

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/11 21:00:23 sthen Exp $
 @bin bin/mawk
 @man man/man1/mawk.1

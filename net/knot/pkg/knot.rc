@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: knot.rc,v 1.6 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${PREFIX}/sbin/knotd -d"
 knotc="${PREFIX}/sbin/knotc"

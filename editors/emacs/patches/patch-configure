@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.21 2021/07/15 19:26:25 jca Exp $
-
 Don't disable SIGIO, it looks like an old workaround and it's suspected
 to be harmful.
   https://marc.info/?l=openbsd-ports&m=150996114220295&w=2

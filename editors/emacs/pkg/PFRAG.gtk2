@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.gtk2,v 1.1 2013/05/07 07:06:42 jasper Exp $
 @pkgpath editors/emacs23,-main,
 @pkgpath editors/emacs,

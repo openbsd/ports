@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/06 14:22:54 jca Exp $
 @bin bin/mdb_copy
 @bin bin/mdb_dump
 @bin bin/mdb_load

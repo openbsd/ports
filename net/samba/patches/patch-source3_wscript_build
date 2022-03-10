@@ -1,5 +1,3 @@
-$OpenBSD: patch-source3_wscript_build,v 1.5 2021/05/12 23:33:24 jca Exp $
-
 Hiding pdb_*_init would also hide pdb_search_init which is a public
 interface used at least by pdbedit.
 

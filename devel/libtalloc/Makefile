@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/02 00:00:24 sthen Exp $
-
 COMMENT-main=	hierarchical memory pool system with destructors
 COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 

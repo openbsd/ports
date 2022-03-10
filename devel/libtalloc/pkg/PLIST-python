@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-python,v 1.2 2021/05/12 23:31:39 jca Exp $
 @conflict libtalloc-<2.1.16p0
 include/pytalloc.h
 @comment @lib lib/libpytalloc-util.${PYTALLOC_UTIL_LIBSUFFIX}

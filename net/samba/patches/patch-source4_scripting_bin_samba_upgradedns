@@ -1,5 +1,3 @@
-$OpenBSD: patch-source4_scripting_bin_samba_upgradedns,v 1.7 2021/10/18 12:25:20 jca Exp $
-
 - net/isc-bind group name
 
 Index: source4/scripting/bin/samba_upgradedns

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_util_charset_wscript_configure,v 1.1 2021/05/12 23:33:24 jca Exp $
-
 Force-disable icu4c use for now. To be revisited if Spotlight support
 is reenabled.
 

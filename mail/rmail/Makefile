@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/27 22:35:42 jca Exp $
-
 COMMENT =		forward mail received via UUCP to the local MTA
 
 DISTNAME =		rmail-1.0

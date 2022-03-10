@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/04/04 23:43:25 jca Exp $
 @option is-branch
 @pkgpath editors/emacs21,-el
 @pkgpath editors/emacs21,-leim

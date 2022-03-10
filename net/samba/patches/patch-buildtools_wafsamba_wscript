@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_wscript,v 1.5 2021/05/12 23:33:24 jca Exp $
-
 Add a hack to force addition of -I/usr/include before any other include path discovered.
 
 Index: buildtools/wafsamba/wscript

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/20 18:27:35 jca Exp $
-
 COMMENT =		user-level RCU implementation
 
 DISTNAME =		userspace-rcu-0.13.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/06/19 15:06:46 danj Exp $
-
 COMMENT=		command line image viewer
 
 GH_ACCOUNT=		phillipberndt

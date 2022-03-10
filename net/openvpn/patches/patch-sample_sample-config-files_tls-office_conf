@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample_sample-config-files_tls-office_conf,v 1.2 2020/11/02 22:49:17 jca Exp $
 Index: sample/sample-config-files/tls-office.conf
 --- sample/sample-config-files/tls-office.conf.orig
 +++ sample/sample-config-files/tls-office.conf

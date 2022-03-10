@@ -1,5 +1,3 @@
-$OpenBSD: patch-pqiv_c,v 1.1 2021/06/19 15:06:46 danj Exp $
-
 Index: pqiv.c
 --- pqiv.c.orig
 +++ pqiv.c

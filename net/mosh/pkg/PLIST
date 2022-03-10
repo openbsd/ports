@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/21 19:46:37 sthen Exp $
 bin/mosh
 @bin bin/mosh-client
 @bin bin/mosh-server

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/05 09:59:58 jca Exp $
-
 COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.1

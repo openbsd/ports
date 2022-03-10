@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp,v 1.13 2022/01/03 21:33:51 jca Exp $
-
 - Use int3 trap padding between functions instead of trapsleds with a leading jump.
 - Emit trap alignment between basic blocks that are unreachable via
   fallthrough. Avoids unnecessary jmp instructions in the middle

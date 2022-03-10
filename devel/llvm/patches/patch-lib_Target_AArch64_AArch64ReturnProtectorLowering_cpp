@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64ReturnProtectorLowering_cpp,v 1.3 2020/11/18 21:13:37 jca Exp $
-
 - Add retguard for arm64.
 - Do not store the retguard cookie in frame in leaf functions if possible.
   Makes things slightly faster and also improves security in these functions,

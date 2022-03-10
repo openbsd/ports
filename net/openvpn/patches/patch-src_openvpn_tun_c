@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_openvpn_tun_c,v 1.18 2020/11/02 22:49:17 jca Exp $
-
 - no need for link0 any more, we have separate tap interfaces
 - fix memory leak (gc is unused)
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-source3_lib_sysquotas_c,v 1.2 2021/05/12 23:33:24 jca Exp $
-
 Avoid printf("%s", NULL);
 
 Index: source3/lib/sysquotas.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_tevent_wscript,v 1.6 2021/10/18 12:25:20 jca Exp $
-
 Force building standalone library (e.g., put headers in appropriate place).
 
 Index: lib/tevent/wscript

@@ -1,5 +1,3 @@
-$OpenBSD: patch-source3_wscript,v 1.13 2021/10/18 12:25:20 jca Exp $
-
 - avoid using glib (only useful for spotlight?)
 - use more generic check for OpenBSD.
 - avoid nested function error with clang

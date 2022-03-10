@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_autoconf_py,v 1.14 2021/10/18 12:25:20 jca Exp $
-
 1. Sort -L flags to unbreak linking when any other version of Samba is installed.
 
 2. Use -Wl,-no-undefined as on other platforms.

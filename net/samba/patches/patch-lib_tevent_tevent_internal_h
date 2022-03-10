@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_tevent_tevent_internal_h,v 1.1 2017/11/22 16:15:44 jca Exp $
-
 Index: lib/tevent/tevent_internal.h
 --- lib/tevent/tevent_internal.h.orig
 +++ lib/tevent/tevent_internal.h

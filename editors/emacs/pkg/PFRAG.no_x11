@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no_x11,v 1.3 2018/11/02 12:56:52 jca Exp $
 @pkgpath editors/emacs21,-main,no_x11
 @pkgpath editors/emacs22,-main,no_x11
 @pkgpath editors/emacs23,-main,no_x11

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/03/31 11:41:03 jca Exp $
-
 COMMENT =		mobile shell
 
 DISTNAME =		mosh-1.3.2

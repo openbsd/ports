@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2022/01/03 21:33:52 jca Exp $
 @conflict lldb-<10.0.0p0
 @pkgpath devel/llvm
 bin/analyze-build

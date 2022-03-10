@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.307 2022/02/02 12:33:52 jca Exp $
-
 VERSION =		4.15.5
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
+REVISION-main =		0
 REVISION-ldb =		1
 REVISION-tevent =	3
 

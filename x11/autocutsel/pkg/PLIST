@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/10 17:27:26 martynas Exp $
 @bin bin/autocutsel
 @bin bin/cutsel
 share/doc/autocutsel/

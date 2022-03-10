@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-tevent,v 1.6 2021/06/28 13:24:00 jca Exp $
 include/samba-4.0/
 include/samba-4.0/tevent.h
 @lib lib/libtevent.so.${LIBtevent_VERSION}

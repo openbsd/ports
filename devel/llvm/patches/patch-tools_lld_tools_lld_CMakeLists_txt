@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_lld_tools_lld_CMakeLists_txt,v 1.1 2022/01/03 21:33:52 jca Exp $
-
 Don't build MachO2 support in lld.  This code reaches into libunwind
 internals.
 

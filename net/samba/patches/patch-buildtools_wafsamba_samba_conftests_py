@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_conftests_py,v 1.6 2021/05/12 23:33:24 jca Exp $
-
 Reverse order of paths added to get reliable builds.
 BUG: https://bugzilla.samba.org/show_bug.cgi?id=9890
 

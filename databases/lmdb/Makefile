@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/12 23:37:31 jca Exp $
-
 COMMENT =	Symas Lightning Memory-Mapped Database
 
 VERSION =	0.9.29

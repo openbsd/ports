@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_lld_ELF_Writer_cpp,v 1.16 2022/01/03 21:33:52 jca Exp $
-
 - Merge '.openbsd.randomdata.*' sections into a single '.openbsd.randomdata'
   section when linking, as we do when using ld from binutils.
 - Generate __data_start symbol that marks the start of .data when __data_start

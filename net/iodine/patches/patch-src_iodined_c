@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_iodined_c,v 1.3 2014/06/19 22:45:56 chris Exp $
 --- src/iodined.c.orig	Mon Jun 16 13:28:43 2014
 +++ src/iodined.c	Thu Jun 19 15:16:45 2014
 @@ -771,7 +771,7 @@ handle_null_request(int tun_fd, int dns_fd, struct que

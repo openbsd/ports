@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: openvpn.rc,v 1.1 2018/03/09 12:37:12 jca Exp $
 
 daemon="${TRUEPREFIX}/sbin/openvpn --daemon"
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/01/19 21:50:12 jca Exp $
-
 COMMENT=		accumulates and displays statistics from a diff file
 
 DISTNAME=		diffstat-1.64

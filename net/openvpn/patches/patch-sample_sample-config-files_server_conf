@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample_sample-config-files_server_conf,v 1.4 2016/11/29 09:22:02 jca Exp $
 --- sample/sample-config-files/server.conf.orig	Thu Nov  3 09:52:28 2016
 +++ sample/sample-config-files/server.conf	Fri Nov 18 17:49:59 2016
 @@ -271,8 +271,8 @@ cipher AES-256-CBC

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/03/11 22:27:58 naddy Exp $
-
 COMMENT=	fast POSIX-compliant awk
 
 DISTNAME=	mawk-1.3.4-20200120

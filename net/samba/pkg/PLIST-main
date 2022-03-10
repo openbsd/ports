@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.60 2021/12/13 12:58:06 jca Exp $
 @conflict ldb-<1.4.8p0v0
 @pkgpath net/samba,ldap,-main
 @pkgpath net/samba,ads,-main

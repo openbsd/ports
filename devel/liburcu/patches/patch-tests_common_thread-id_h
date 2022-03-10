@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_common_thread-id_h,v 1.3 2018/11/27 12:04:36 jca Exp $
-
 XXX not portable, but used by tests only.
 
 Index: tests/common/thread-id.h

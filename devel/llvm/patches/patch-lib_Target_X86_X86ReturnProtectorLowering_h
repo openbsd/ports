@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_X86_X86ReturnProtectorLowering_h,v 1.1 2018/08/21 06:56:09 ajacoutot Exp $
-
 Refactor retguard to make adding additional arches easier.
 
 Index: lib/Target/X86/X86ReturnProtectorLowering.h

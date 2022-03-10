@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2020/03/22 01:05:54 jca Exp $
-
 COMMENT=	minimal wm based on GNU screen
 
 DISTNAME=	ratpoison-1.4.9

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_Mips_Mips_h,v 1.1 2020/12/21 21:38:51 jca Exp $
-
 Adapt the -mfix-loongson2f-btb workaround from as(1) to LLVM/clang.
 
 Index: lib/Target/Mips/Mips.h

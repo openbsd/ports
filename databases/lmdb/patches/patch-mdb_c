@@ -1,5 +1,3 @@
-$OpenBSD: patch-mdb_c,v 1.7 2021/05/12 23:37:31 jca Exp $
-
 enforce MDB_WRITEMAP, because we have no UBC (Unified Buffer Cache).
 
 Index: mdb.c

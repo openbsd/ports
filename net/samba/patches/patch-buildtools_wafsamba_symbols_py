@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_symbols_py,v 1.4 2021/05/12 23:33:24 jca Exp $
-
 Add a bunch of common symbols to allow tests to run. Those that added in
 safe_symbols initially should probably go upstream, _Jv_RegisterClasses is
 a strange one (weak symbol everywhere in the whole system) and others are
