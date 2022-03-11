@@ -5,25 +5,15 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.5.6
-REVISION =		0
+V =			3.6.0
 DISTNAME =		tdesktop-${V}-full
-PKGNAME =		${DISTNAME:-full=beta}
+PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
-
-MASTER_SITES0 =		https://github.com/desktop-app/lib_base/commit/
-# Merged "Try to find executable in PATH if argv0 doesn't have path"
-# https://github.com/desktop-app/lib_base/pull/115
-PATCHFILES +=		tdesktop-lib_base-fix-restart-{}58a90ad.patch:0
-PATCH_CASES +=		tdesktop-lib_base-*) ${PATCH} ${PATCH_DIST_ARGS} \
-			    -d ${WRKSRC}/Telegram/lib_base/ <$$patchfile ;;
-
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
