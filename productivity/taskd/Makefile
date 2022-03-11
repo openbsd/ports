@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:59 sthen Exp $
-
 COMMENT =	lightweight server providing access to task data
 
 DISTNAME =	taskd-1.1.0

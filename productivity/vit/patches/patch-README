@@ -1,4 +1,3 @@
-$OpenBSD: patch-README,v 1.2 2014/04/16 01:57:45 bcallah Exp $
 --- README.orig	Sun Apr  6 11:40:14 2014
 +++ README	Tue Apr 15 21:49:12 2014
 @@ -20,6 +20,9 @@

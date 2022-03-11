@@ -1,5 +1,3 @@
-$OpenBSD: patch-kmymoney_mymoney_mymoneycontact_cpp,v 1.1 2022/01/06 08:07:05 rsadowski Exp $
-
 "Fix Compile for Newer Akonadi Builds"
 a32357290129f1acc002623acc21c72ad00e37e7
 

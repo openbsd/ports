@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/20 19:23:23 rsadowski Exp $
-#
 COMMENT =	KDE framework for collecting user feedback
 #
 GH_ACCOUNT =	KDE

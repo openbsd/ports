@@ -1,4 +1,3 @@
-$OpenBSD: patch-pki_README,v 1.2 2016/01/28 17:15:03 kspillner Exp $
 --- pki/README.orig	Sun May 10 16:35:22 2015
 +++ pki/README	Tue Nov 10 15:35:03 2015
 @@ -21,7 +21,7 @@ and cert will not be trusted by anyone, for good reaso

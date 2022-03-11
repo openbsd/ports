@@ -1,5 +1,3 @@
-$OpenBSD: patch-tdl_1,v 1.1 2017/06/04 01:24:07 schwarze Exp $
-
 Fix wrong control character escaping.
 We cannot use \& because we are inside a tbl(7)
 that stupidly uses the ampersand as the tab character...

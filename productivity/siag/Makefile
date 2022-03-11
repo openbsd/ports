@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/18 23:34:05 kn Exp $
-
 COMMENT=		tightly integrated, free office package
 
 VERSION=		3.6.1

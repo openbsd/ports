@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugins_rubrica_Makefile_in,v 1.4 2009/12/31 10:27:30 ajacoutot Exp $
 --- plugins/rubrica/Makefile.in.orig	Sun Dec  6 10:04:26 2009
 +++ plugins/rubrica/Makefile.in	Thu Dec 31 11:12:41 2009
 @@ -298,7 +298,7 @@ librubrica_la_SOURCES = \

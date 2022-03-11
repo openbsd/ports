@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:36 sthen Exp $
-
 COMMENT=		Python-based presentation tool
 
 MODPY_EGG_VERSION=	1.2.1

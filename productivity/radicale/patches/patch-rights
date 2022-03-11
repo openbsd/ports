@@ -1,5 +1,3 @@
-$OpenBSD: patch-rights,v 1.1 2018/09/06 22:48:30 sthen Exp $
-
 File missing from distribution tar.gz, though still present in repo.
 
 Index: rights

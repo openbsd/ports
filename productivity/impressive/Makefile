@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:36 sthen Exp $
-
 COMMENT =		stylish PDF presentation generator
 
 MODPY_EGG_VERSION =	0.11.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/03 18:08:57 landry Exp $
-
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
 DISTNAME =	davical_1.1.10.orig

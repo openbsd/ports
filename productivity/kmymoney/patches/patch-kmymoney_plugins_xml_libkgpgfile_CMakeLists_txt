@@ -1,5 +1,3 @@
-$OpenBSD: patch-kmymoney_plugins_xml_libkgpgfile_CMakeLists_txt,v 1.1 2020/07/16 05:01:23 rsadowski Exp $
-
 Fix gpgmepp build
 
 Index: kmymoney/plugins/xml/libkgpgfile/CMakeLists.txt

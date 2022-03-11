@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/02 00:02:06 sthen Exp $
-
 COMMENT =		synchronize calendars and contacts
 
 MODPY_EGG_VERSION =	0.18.0

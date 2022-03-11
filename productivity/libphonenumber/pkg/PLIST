@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/23 14:26:04 rsadowski Exp $
 include/phonenumbers/
 include/phonenumbers/asyoutypeformatter.h
 include/phonenumbers/base/

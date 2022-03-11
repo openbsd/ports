@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/03/31 02:56:57 gnezdo Exp $
 @bin bin/${MODCABAL_STEM}
 @man man/man1/${MODCABAL_STEM}.1

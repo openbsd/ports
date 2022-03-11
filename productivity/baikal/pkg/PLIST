@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2022/01/27 14:20:42 martin Exp $
 baikal/
 baikal/Core/
 baikal/Core/Distrib.php

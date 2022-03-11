@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/04/29 08:13:07 jasper Exp $
 @bin bin/vym
 @man man/man1/vym.1
 share/doc/vym/

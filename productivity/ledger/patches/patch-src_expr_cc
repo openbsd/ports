@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_expr_cc,v 1.1 2021/06/22 04:19:25 rsadowski Exp $
-
 Fix compilation with Boost 1.76
 https://github.com/ledger/ledger/commit/69e6b89cf8d2820d28174e7ffaea1c59a0f84d3f
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-aqbanking-config_cmake_in,v 1.2 2020/07/16 05:01:19 rsadowski Exp $
-
 Index: aqbanking-config.cmake.in
 --- aqbanking-config.cmake.in.orig
 +++ aqbanking-config.cmake.in

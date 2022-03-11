@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/10/26 15:36:53 rsadowski Exp $
 @bin bin/onlinequoteseditor5
 include/alkimia/
 include/alkimia/Qt5/

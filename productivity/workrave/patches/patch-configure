@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.9 2021/03/04 13:22:58 ajacoutot Exp $
-
 Fix bashism.
 
 Index: configure

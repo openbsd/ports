@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/19 17:17:57 kmos Exp $
-
 COMMENT =	opinionated command line journal
 
 GH_ACCOUNT =	thexhr

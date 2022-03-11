@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: radicale.rc,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/radicale -d"
 daemon_user="_radicale"

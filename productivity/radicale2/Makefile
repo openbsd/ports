@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:55 sthen Exp $
-
 COMMENT =	simple CalDAV calendar server
 
 MODPY_EGG_VERSION = 2.1.12

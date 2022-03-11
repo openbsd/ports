@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:59 sthen Exp $
-
 COMMENT =		ncurses front-end for taskwarrior
 
 DISTNAME =		vit-1.2

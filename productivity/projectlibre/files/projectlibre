@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: projectlibre,v 1.1.1.1 2012/10/22 18:13:11 jasper Exp $
 
 JAVA_CMD=$(javaPathHelper -c projectlibre)
 

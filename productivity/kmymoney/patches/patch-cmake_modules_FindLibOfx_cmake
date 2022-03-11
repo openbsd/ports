@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_modules_FindLibOfx_cmake,v 1.2 2021/11/10 11:55:27 rsadowski Exp $
-
 Use CMake to find libofx instead of just relying on pkgconf.
 From FeeBSD
 

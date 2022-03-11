@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/11/12 16:59:21 paco Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5

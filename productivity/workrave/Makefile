@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2021/11/02 00:02:07 sthen Exp $
-
 COMMENT=		RSI prevention tool
 
 V=			1.10.44

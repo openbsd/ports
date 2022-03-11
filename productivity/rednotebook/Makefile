@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/11/02 00:01:55 sthen Exp $
-
 COMMENT=		diary and journal application
 
 MODPY_EGG_VERSION=	2.22

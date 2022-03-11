@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/17 23:22:21 sthen Exp $
 @bin bin/timew
 @man man/man1/timew.1
 share/doc/timewarrior/

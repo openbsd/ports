@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/12 14:46:04 sthen Exp $
-
 COMMENT =	lightweight GTK calendar applet
 
 GH_ACCOUNT =	dmedvinsky

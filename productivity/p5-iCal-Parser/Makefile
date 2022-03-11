@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/17 10:16:47 bluhm Exp $
-
 COMMENT =	parse iCalendar files into a data structure
 
 DISTNAME =	iCal-Parser-1.21

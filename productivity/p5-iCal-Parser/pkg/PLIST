@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/17 10:16:47 bluhm Exp $
 ${P5SITE}/iCal/
 ${P5SITE}/iCal/Parser.pm
 @man man/man3p/iCal::Parser.3p

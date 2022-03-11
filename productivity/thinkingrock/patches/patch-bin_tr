@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_tr,v 1.2 2008/06/14 16:48:22 sturm Exp $
 --- bin/tr.orig	Sat May 31 03:33:36 2008
 +++ bin/tr	Sun Jun  1 22:04:29 2008
 @@ -16,8 +16,14 @@ while [ -h "$PRG" ]; do

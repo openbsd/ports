@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/07/06 16:55:33 daniel Exp $
 bin/vdirsyncer
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer/
 lib/python${MODPY_VERSION}/site-packages/vdirsyncer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

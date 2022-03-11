@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/20 20:56:17 naddy Exp $
-
 COMMENT= 		personal finance tracking and performance tool
 
 DISTNAME=		xinvest-2.6.9

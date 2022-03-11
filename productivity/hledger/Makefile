@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/25 04:11:10 gnezdo Exp $
-
 COMMENT =		command-line interface for the hledger accounting system
 
 CATEGORIES =		productivity

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/03/10 12:03:33 kn Exp $
-
 COMMENT =		todo management and time tracker
 
 VERSION =		5.0.1

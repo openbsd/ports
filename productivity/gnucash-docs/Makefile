@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/22 18:48:05 ajacoutot Exp $
-
 COMMENT =		user documentation module for GnuCash
 
 GNOME_PROJECT =		gnucash-docs

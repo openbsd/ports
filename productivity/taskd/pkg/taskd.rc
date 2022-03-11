@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: taskd.rc,v 1.3 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/taskd server --daemon --data /var/taskd"
 daemon_user="_taskd"

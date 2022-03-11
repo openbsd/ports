@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/23 11:47:11 sthen Exp $
-
 COMMENT =	C++ library to parse/format/validate phone numbers
 
 GH_ACCOUNT =	google

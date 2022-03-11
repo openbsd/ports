@@ -1,4 +1,3 @@
-$OpenBSD: patch-stocks_http_c,v 1.1 2007/08/30 07:48:26 jasper Exp $
 --- stocks/http.c.orig	Wed Aug 29 16:14:41 2007
 +++ stocks/http.c	Wed Aug 29 16:17:14 2007
 @@ -20,13 +20,13 @@

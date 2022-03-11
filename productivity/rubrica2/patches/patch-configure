@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2009/12/31 10:27:30 ajacoutot Exp $
-
 checking whether build environment is sane... ./configure[2334]: syntax error: `&' unexpected
 
 --- configure.orig	Sun Dec  6 10:04:23 2009

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/06/09 07:14:45 jasper Exp $
-
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-2.6.0

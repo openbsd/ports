@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/10/05 09:40:39 solene Exp $
-
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.4.4

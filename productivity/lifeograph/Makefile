@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/04 11:14:13 solene Exp $
-
 COMMENT=	diary and journal application
 
 CATEGORIES=	productivity

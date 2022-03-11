@@ -1,5 +1,3 @@
-$OpenBSD: patch-aqbanking_pc_in,v 1.2 2020/09/14 07:58:02 jasper Exp $
-
 https://www.aquamaniac.de/rdm/issues/224
 
 Index: aqbanking.pc.in

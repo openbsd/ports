@@ -1,4 +1,3 @@
-$OpenBSD: patch-xinvest_h,v 1.2 2021/02/20 20:56:17 naddy Exp $
 Index: xinvest.h
 --- xinvest.h.orig
 +++ xinvest.h

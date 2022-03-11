@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/02/20 19:23:23 rsadowski Exp $
 @bin bin/UserFeedbackConsole
 @bin bin/userfeedbackctl
 include/KUserFeedback/

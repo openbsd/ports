@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/14 19:20:56 sdk Exp $
 @bin bin/jrnlc
 @man man/man1/jrnlc.1

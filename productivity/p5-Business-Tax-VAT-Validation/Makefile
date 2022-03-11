@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/29 22:01:53 sthen Exp $
-
 COMMENT=	European VAT number validator
 
 DISTNAME =	Business-Tax-VAT-Validation-1.21

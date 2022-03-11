@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/22 04:22:21 bket Exp $
-
 COMMENT=		GTD organizer for GNOME
 
 GH_PROJECT =		gtg

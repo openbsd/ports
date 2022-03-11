@@ -1,4 +1,3 @@
-$OpenBSD: patch-interface_MainWindow_glade,v 1.3 2009/12/29 23:25:58 jasper Exp $
 --- interface/MainWindow.glade.orig	Wed Apr 30 11:41:37 2008
 +++ interface/MainWindow.glade	Wed Oct  7 11:22:11 2009
 @@ -84,7 +84,7 @@

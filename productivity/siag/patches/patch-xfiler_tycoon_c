@@ -1,4 +1,3 @@
-$OpenBSD: patch-xfiler_tycoon_c,v 1.1 2008/12/01 19:23:55 jasper Exp $
 --- xfiler/tycoon.c.orig	Mon Dec  1 13:33:51 2008
 +++ xfiler/tycoon.c	Mon Dec  1 13:34:14 2008
 @@ -1,6 +1,7 @@

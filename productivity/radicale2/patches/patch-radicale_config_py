@@ -1,4 +1,3 @@
-$OpenBSD: patch-radicale_config_py,v 1.1.1.1 2018/09/11 08:55:27 sthen Exp $
 Index: radicale/config.py
 --- radicale/config.py.orig
 +++ radicale/config.py

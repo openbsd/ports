@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:59 sthen Exp $
-
 COMMENT =		HTML slide generator based on SlideML
 
 V =			1.1.0

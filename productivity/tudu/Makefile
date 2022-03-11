@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/19 16:10:02 fcambus Exp $
-
 COMMENT =	hierarchical todos manager
 
 DISTNAME =	tudu-0.10.4

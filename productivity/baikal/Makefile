@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/01/27 14:20:42 martin Exp $
-
 COMMENT=	lightweight CalDAV and CardDAV server
 
 VERSION=	0.9.1

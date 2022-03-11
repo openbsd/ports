@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2022/02/03 10:53:15 landry Exp $
-
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-2.0.5

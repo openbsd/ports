@@ -1,4 +1,3 @@
-$OpenBSD: patch-egon_fileio_ppt_c,v 1.1 2003/04/16 16:44:49 avsm Exp $
 --- egon/fileio_ppt.c.orig	Wed Apr 16 16:07:53 2003
 +++ egon/fileio_ppt.c	Wed Apr 16 16:08:36 2003
 @@ -479,7 +479,7 @@ static int load(char *fn, buffer *b)

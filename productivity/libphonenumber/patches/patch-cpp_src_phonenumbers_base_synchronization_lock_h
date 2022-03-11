@@ -1,5 +1,3 @@
-$OpenBSD: patch-cpp_src_phonenumbers_base_synchronization_lock_h,v 1.1.1.1 2021/05/23 14:26:04 rsadowski Exp $
-
 Index: cpp/src/phonenumbers/base/synchronization/lock.h
 --- cpp/src/phonenumbers/base/synchronization/lock.h.orig
 +++ cpp/src/phonenumbers/base/synchronization/lock.h

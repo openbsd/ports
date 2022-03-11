@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:07 sthen Exp $
-
 COMMENT =	command-line oriented todo list system
 
 CATEGORIES =	productivity

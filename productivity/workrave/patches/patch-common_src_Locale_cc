@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_src_Locale_cc,v 1.1 2021/03/03 09:35:08 ajacoutot Exp $
-
 Locale.cc:269:33: error: use of undeclared identifier '_NL_TIME_FIRST_WEEKDAY'
 
 Index: common/src/Locale.cc

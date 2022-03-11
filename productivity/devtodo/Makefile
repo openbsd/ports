@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:58 sthen Exp $
-
 COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.20

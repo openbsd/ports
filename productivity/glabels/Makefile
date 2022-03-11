@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.72 2021/02/13 16:45:19 ajacoutot Exp $
-
 COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels

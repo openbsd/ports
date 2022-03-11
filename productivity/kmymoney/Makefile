@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/02/13 16:38:30 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =		accounting for KDE 5

@@ -1,4 +1,3 @@
-$OpenBSD: patch-util_XML_cc,v 1.1 2007/12/17 19:55:48 okan Exp $
 --- util/XML.cc.orig	Mon Dec 10 22:26:55 2007
 +++ util/XML.cc	Mon Dec 10 22:27:07 2007
 @@ -49,7 +49,7 @@ void XML::init() {

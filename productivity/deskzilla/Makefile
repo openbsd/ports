@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/19 01:50:30 kurt Exp $
-
 COMMENT =	desktop bugzilla browser
 
 DISTNAME =	deskzilla-lite-2_1

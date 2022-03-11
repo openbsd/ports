@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2022/02/13 07:28:33 rsadowski Exp $
-
 COMMENT =	personal accounting application
 
 DISTNAME =	homebank-5.5.4

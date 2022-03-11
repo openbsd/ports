@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:59 sthen Exp $
-
 COMMENT =	three dimensional console spreadsheet
 V =		2.3.0
 DISTNAME =	teapot-${V}

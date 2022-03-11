@@ -1,4 +1,3 @@
-$OpenBSD: patch-platform9_lib_nbexec,v 1.1 2009/09/05 15:52:06 sturm Exp $
 --- platform9/lib/nbexec.orig	Thu Sep  3 07:44:10 2009
 +++ platform9/lib/nbexec	Thu Sep  3 07:44:43 2009
 @@ -362,18 +362,18 @@ detect_gnome_proxy () {

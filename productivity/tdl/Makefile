@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:59 sthen Exp $
-
 COMMENT=	to-do list manager
 
 DISTNAME=	tdl-1.5.2

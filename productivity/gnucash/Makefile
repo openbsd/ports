@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.134 2021/12/22 18:48:21 ajacoutot Exp $
-
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash

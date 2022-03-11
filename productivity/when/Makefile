@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=		simple but effective personal calendar
 
 DISTNAME=		when-1.1.36

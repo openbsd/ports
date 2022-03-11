@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/11/12 16:59:21 paco Exp $
-
 COMMENT =	command line todo list manager
 
 VERSION =	2.6.1

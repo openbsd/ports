@@ -1,5 +1,3 @@
-$OpenBSD: patch-frontend_common_src_ScreenLockCommandline_cc,v 1.1 2021/03/03 09:35:08 ajacoutot Exp $
-
 ScreenLockCommandline.cc:70:14: error: use of undeclared identifier 'WEXITSTATUS'
 
 Index: frontend/common/src/ScreenLockCommandline.cc

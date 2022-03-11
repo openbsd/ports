@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/02/13 16:45:19 ajacoutot Exp $
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
 include/libglabels-3.0/

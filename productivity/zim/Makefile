@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/12/25 10:21:25 sdk Exp $
-
 COMMENT =		desktop wiki
 
 MODPY_EGG_VERSION =	0.74.3

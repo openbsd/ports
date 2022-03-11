@@ -1,5 +1,3 @@
-$OpenBSD: patch-scanner_c,v 1.1 2018/12/06 16:25:04 jca Exp $
-
 Missing include.
 
 Index: scanner.c

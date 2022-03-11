@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/08/31 11:56:51 ajacoutot Exp $
-
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.8

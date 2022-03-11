@@ -1,5 +1,3 @@
-$OpenBSD: patch-vit_pl,v 1.2 2014/04/16 01:57:45 bcallah Exp $
-
 List of keybindings doesn't belong under /etc.
 --- vit.pl.orig	Sun Apr  6 11:40:14 2014
 +++ vit.pl	Tue Apr 15 21:49:12 2014

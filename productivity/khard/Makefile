@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:54 sthen Exp $
-
 COMMENT =		console CardDAV client
 
 MODPY_EGG_VERSION =	0.17.0

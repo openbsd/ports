@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/05/19 13:22:57 sthen Exp $
 @option is-branch
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin

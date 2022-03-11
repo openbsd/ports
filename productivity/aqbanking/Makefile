@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/08/23 08:23:47 ajacoutot Exp $
-
 COMMENT=	online banking interface and financial data framework
 
 DISTNAME=	aqbanking-6.2.2

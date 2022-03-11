@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/02/02 06:52:39 rsadowski Exp $
 @bin bin/fet
 share/doc/fet/
 share/doc/fet/algorithm-code.txt

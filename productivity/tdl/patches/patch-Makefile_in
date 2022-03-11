@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2017/06/04 01:24:07 schwarze Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in

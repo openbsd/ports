@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:54 sthen Exp $
-
 COMMENT =		standards based terminal calendar
 
 MODPY_EGG_VERSION =	0.10.4

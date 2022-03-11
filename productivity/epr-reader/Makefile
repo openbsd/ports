@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:54 sthen Exp $
-
 COMMENT =		Terminal/CLI Epub Reader
 
 MODPY_EGG_VERSION =	2.4.8

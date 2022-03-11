@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:58 sthen Exp $
 COMMENT =	library for resource constrained project scheduling
 CATEGORIES =	productivity
 DISTNAME =	librcps-0.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/07/15 07:04:45 jasper Exp $
-
 COMMENT =	command line tracking time tool
 
 VERSION =	1.1.1

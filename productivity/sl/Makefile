@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:59 sthen Exp $
-
 COMMENT =	substantially more useful ls
 DISTNAME =	sl-ls-1.1.2
 REVISION =	1

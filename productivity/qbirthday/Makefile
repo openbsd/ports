@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/08 08:53:58 kirby Exp $
-
 COMMENT =		birthday reminder with tray notification
 
 GH_ACCOUNT = 		lafrech

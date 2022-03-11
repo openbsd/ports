@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/05 19:46:17 jca Exp $
-
 COMMENT =		tty-based CardDav search tool
 
 V =			1.6

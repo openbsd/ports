@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/19 01:50:31 kurt Exp $
-
 COMMENT=	collecting and processing thoughts according to GTD
 
 V=		2.2.1

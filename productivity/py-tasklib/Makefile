@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/26 18:19:46 paco Exp $
-
 COMMENT =		Python library to interact with Task Warrior
 
 MODPY_EGG_VERSION =	2.4.3

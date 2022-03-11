@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugins_vcard_Makefile_in,v 1.4 2009/12/31 10:27:30 ajacoutot Exp $
 --- plugins/vcard/Makefile.in.orig	Sun Dec  6 10:04:27 2009
 +++ plugins/vcard/Makefile.in	Thu Dec 31 11:12:41 2009
 @@ -293,7 +293,7 @@ libvcard_la_LTLIBRARIES = libvcard.la

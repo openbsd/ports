@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/08 03:45:23 bcallah Exp $
-
 COMMENT =	graphical wordcount grapher
 DISTNAME =	novprog-3.2.0
 EXTRACT_SUFX =	-src.tar.bz2

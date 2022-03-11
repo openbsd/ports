@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/02/02 06:52:38 rsadowski Exp $
-
 COMMENT=		automatically create timetables
 
 DISTNAME=		fet-5.42.3

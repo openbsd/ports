@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/20 21:08:07 naddy Exp $
-
 COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/02 00:01:54 sthen Exp $
-
 COMMENT =		command line double-entry accounting ledger
 
 GH_TAGNAME =		v3.2.1
