@@ -2,6 +2,8 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
+# !!! check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
+# major upgrade
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		41.4
 
