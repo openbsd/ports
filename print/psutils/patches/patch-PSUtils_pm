@@ -1,4 +1,4 @@
-$OpenBSD: patch-PSUtils_pm,v 1.7 2021/12/28 08:36:23 ajacoutot Exp $
+$OpenBSD: patch-PSUtils_pm,v 1.8 2022/03/11 16:13:58 claudio Exp $
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1072371
 
@@ -14,12 +14,14 @@ Index: PSUtils.pm
    my $out;
    run3 $cmd, undef, \$out, $silent ? \undef : undef, {return_if_system_error=>1};
    Die("could not run `paper' command") if $? == -1;
-@@ -73,7 +73,7 @@ sub paper {
+@@ -73,8 +73,8 @@ sub paper {
  sub paper_size {
    my ($paper_name) = @_;
    chomp($paper_name = paper([])) unless defined($paper_name);
 -  my $dimensions = paper(["--unit=pt", "$paper_name"], 1) or return;
+-  $dimensions =~ / ([.0-9]+)x([.0-9]+) pt$/;
 +  my $dimensions = paper(["-s", "$paper_name"], 1) or return;
-   $dimensions =~ / ([.0-9]+)x([.0-9]+) pt$/;
++  $dimensions =~ /^([.0-9]+) ([.0-9]+)$/;
    my $old_locale = setlocale(LC_ALL);
    setlocale(LC_ALL, "");
+   my ($w, $w_unparsed) = strtod($1);
