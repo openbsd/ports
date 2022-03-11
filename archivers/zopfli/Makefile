@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/28 14:36:32 sthen Exp $
-
 SHARED_LIBS += zopfli		0.0
 SHARED_LIBS += zopflipng	0.0
 

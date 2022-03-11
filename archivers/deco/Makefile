@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/23 19:17:38 ajacoutot Exp $
-
 COMMENT=	extract various archive file formats
 
 V=		1.6.4

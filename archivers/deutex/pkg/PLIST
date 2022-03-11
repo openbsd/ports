@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/15 07:19:50 bentley Exp $
 @bin bin/deutex
 @man man/man6/deutex.6

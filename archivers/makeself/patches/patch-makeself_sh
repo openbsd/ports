@@ -1,5 +1,3 @@
-$OpenBSD: patch-makeself_sh,v 1.2 2021/09/11 18:02:15 rsadowski Exp $
-
 Our utility is called sha256.
 
 Index: makeself.sh

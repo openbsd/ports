@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/11/26 15:22:07 jca Exp $
-
 COMMENT=	file compressor with a high compression ratio
 
 DISTNAME=	rzip-2.1

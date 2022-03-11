@@ -1,4 +1,3 @@
-$OpenBSD: patch-zzipwrap_Makefile_in,v 1.5 2011/03/08 15:37:28 giovanni Exp $
 --- zzipwrap/Makefile.in.orig	Wed Dec 29 17:07:18 2010
 +++ zzipwrap/Makefile.in	Mon Jan 10 11:58:00 2011
 @@ -200,7 +200,7 @@ PERL = @PERL@

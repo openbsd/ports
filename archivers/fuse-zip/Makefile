@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/21 16:27:15 kn Exp $
-
 COMMENT =		navigate zip archives through FUSE
 
 DISTNAME =		fuse-zip-0.7.2

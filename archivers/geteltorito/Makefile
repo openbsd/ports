@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:28 sthen Exp $
-
 COMMENT =	el torito boot image extractor
 
 DISTNAME =	geteltorito-0.6

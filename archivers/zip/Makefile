@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:43:30 sthen Exp $
-
 COMMENT=	create/update ZIP files compatible with PKZip(tm)
 
 VERSION=	3.0

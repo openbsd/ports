@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_common_h,v 1.1.1.1 2019/12/19 07:00:24 feinerer Exp $
-
 Our aligned_alloc(3) is C11, but more strict than on other platforms. Many tests
 here fail with EINVAL if 'size' is not a multiple of 'alignment' _and_
 alignment is not a power of 2. To better identify these cases, extend the error

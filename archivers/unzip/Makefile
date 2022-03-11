@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2020/11/14 17:45:17 jcs Exp $
-
 PORTROACH =	skipv:551,552
 
 COMMENT =	extract, list & test files in a ZIP archive

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:29 sthen Exp $
-
 COMMENT =	command line implementation of the PAR v2.0 specification
 
 V =		0.7.4

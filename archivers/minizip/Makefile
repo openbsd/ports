@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/12 04:11:25 rsadowski Exp $
-
 COMMENT =	zip manipulation library
 
 GH_ACCOUNT =	zlib-ng

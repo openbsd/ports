@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_unshar_1,v 1.2 2015/09/07 17:57:07 jasper Exp $
 --- doc/unshar.1.orig	Sat May 30 17:34:19 2015
 +++ doc/unshar.1	Mon Sep  7 19:34:56 2015
 @@ -1,4 +1,4 @@

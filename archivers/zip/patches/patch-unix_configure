@@ -1,4 +1,3 @@
-$OpenBSD: patch-unix_configure,v 1.2 2009/01/14 16:59:51 sturm Exp $
 --- unix/configure.orig	Fri Dec 12 22:58:30 2008
 +++ unix/configure	Fri Dec 12 22:59:38 2008
 @@ -98,7 +98,6 @@ int main()

@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_roundtrip_test_sh,v 1.3 2018/12/25 14:50:27 pascal Exp $
 Index: tests/roundtrip_test.sh
 --- tests/roundtrip_test.sh.orig
 +++ tests/roundtrip_test.sh

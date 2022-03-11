@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/09 11:03:58 fcambus Exp $
-
 COMMENT =		archiver based on tar and lzip multimembers
 
 DISTNAME =		tarlz-0.22

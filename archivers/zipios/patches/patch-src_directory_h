@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_directory_h,v 1.1 2018/10/28 07:48:25 bentley Exp $
-
 Index: src/directory.h
 --- src/directory.h.orig
 +++ src/directory.h

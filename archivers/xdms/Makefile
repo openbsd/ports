@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:30 sthen Exp $
-
 COMMENT =		Amiga DMS unpacker
 DISTNAME =		xdms-1.3.2
 EXTRACT_SUFX =		.tar.bz2

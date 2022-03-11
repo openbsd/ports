@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/26 12:14:14 sthen Exp $
-
 COMMENT =	fast compression/decompression library
 
 GH_TAGNAME =	1.1.9

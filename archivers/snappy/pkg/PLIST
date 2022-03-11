@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/11/09 15:07:08 jasper Exp $
 include/snappy-c.h
 include/snappy-sinksource.h
 include/snappy-stubs-public.h

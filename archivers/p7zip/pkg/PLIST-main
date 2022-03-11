@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2016/08/14 16:29:20 jca Exp $
 bin/7z
 bin/7za
 bin/7zr

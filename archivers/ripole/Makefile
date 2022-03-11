@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:29 sthen Exp $
-
 COMMENT=		extract attachments from OLE2 data files
 
 DISTNAME=		ripole-0.2.2

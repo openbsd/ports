@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.78 2020/10/30 16:21:12 naddy Exp $
-
 COMMENT=	block-sorting file compressor, unencumbered
 
 DISTNAME=	bzip2-1.0.8

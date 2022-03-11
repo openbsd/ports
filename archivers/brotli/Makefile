@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/11 12:43:58 ajacoutot Exp $
-
 COMMENT =		generic lossless compressor
 
 GH_ACCOUNT =		google

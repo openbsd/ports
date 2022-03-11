@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/25 12:33:19 sthen Exp $
 @conflict pecl-lzf-*
 ${MODPECL_DEFAULTV}@pkgpath archivers/pecl-lzf
 ${MODPECL_DEFAULTV}@pkgpath archivers/pecl-lzf,php56

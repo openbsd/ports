@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/09 10:57:35 fcambus Exp $
-
 COMMENT =		public domain implementation of the lzip data compressor
 
 DISTNAME =		pdlzip-1.12

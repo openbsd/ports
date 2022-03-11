@@ -1,4 +1,3 @@
-$OpenBSD: iconv-unzip_c,v 1.1 2015/05/11 21:19:23 czarkoff Exp $
 --- unzip.c.orig	Thu Apr 16 20:26:52 2009
 +++ unzip.c	Sat May  9 13:31:20 2015
 @@ -327,11 +327,21 @@ static ZCONST char Far ZipInfoUsageLine2[] = "\nmain\

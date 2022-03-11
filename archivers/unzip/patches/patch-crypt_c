@@ -1,5 +1,3 @@
-$OpenBSD: patch-crypt_c,v 1.1 2017/03/23 17:26:17 bluhm Exp $
-
 Fix CVE-2015-7696: upstream fix for heap overflow
     https://bugs.debian.org/802162
     https://bugzilla.redhat.com/show_bug.cgi?id=1260944

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/26 06:41:33 sebastia Exp $
-
 COMMENT =	command-line utility for POSIX tar(1) archive files
 
 DISTNAME =	minitar-0.9

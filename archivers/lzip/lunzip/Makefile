@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/09 10:46:41 fcambus Exp $
-
 COMMENT =		decompressor written in C for lzip files
 
 DISTNAME =		lunzip-1.13

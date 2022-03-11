@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/14 02:16:50 naddy Exp $
-
 COMMENT=	FREEZE / MELT compression program - often used in QNX
 
 DISTNAME=	freeze-2.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/01/23 09:14:46 jsg Exp $
-
 COMMENT=	extract files from InstallShield CAB archives
 
 GH_ACCOUNT=	twogood

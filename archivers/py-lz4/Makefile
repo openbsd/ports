@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/27 08:51:23 sthen Exp $
-
 COMMENT =		lz4 bindings for Python
 
 MODPY_EGG_VERSION =	3.1.10

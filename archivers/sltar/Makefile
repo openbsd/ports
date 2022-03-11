@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:30 sthen Exp $
-
 COMMENT=		simple tar implementation
 
 DISTNAME=		sltar-0.5

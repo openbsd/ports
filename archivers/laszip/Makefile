@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/23 13:15:22 landry Exp $
-
 COMMENT =	lossless LiDAR compression
 
 V = 3.4.3

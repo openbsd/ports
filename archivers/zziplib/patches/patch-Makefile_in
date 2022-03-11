@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2011/03/08 15:37:28 giovanni Exp $
 --- Makefile.in.orig	Wed Dec 29 17:07:18 2010
 +++ Makefile.in	Mon Jan 10 11:57:59 2011
 @@ -281,8 +281,8 @@ AUTOMAKE_OPTIONS = 1.4 foreign dist-bzip2

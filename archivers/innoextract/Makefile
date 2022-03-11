@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/09/19 05:24:30 rsadowski Exp $
-
 COMMENT=	unpack Inno Setup installers
 
 DISTNAME=	innoextract-1.9

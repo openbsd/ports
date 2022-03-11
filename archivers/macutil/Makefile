@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/14 02:16:50 naddy Exp $
-
 COMMENT=		several programs to handle macintosh files and archives
 DISTNAME=		macutil2.0b3
 PKGNAME=		macutil-2.0b3

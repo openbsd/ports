@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/09 10:48:17 fcambus Exp $
-
 COMMENT =		lossless data compressor
 
 DISTNAME =		lzip-1.23

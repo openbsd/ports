@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/03/04 12:44:50 sebastia Exp $
 @conflict ruby21-archive-tar-minitar-*
 @pkgpath archivers/ruby-archive-tar-minitar
 ${GEM_LIB}/cache/${DISTNAME}.gem

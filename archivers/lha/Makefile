@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/11/04 12:29:11 mestre Exp $
-
 COMMENT=	archive files using LZW compression (.lzh files)
 
 VERSION=	1.14i-ac20210926

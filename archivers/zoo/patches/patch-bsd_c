@@ -1,4 +1,3 @@
-$OpenBSD: patch-bsd_c,v 1.2 2017/04/12 23:17:57 jca Exp $
 --- bsd.c.orig	Sat May  1 06:21:53 1993
 +++ bsd.c	Thu Apr 13 01:16:06 2017
 @@ -74,26 +74,16 @@ long gettz()

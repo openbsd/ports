@@ -1,4 +1,3 @@
-$OpenBSD: patch-zzipwrap_wrap_h,v 1.1 2012/05/29 15:57:32 pascal Exp $
 --- zzipwrap/wrap.h.orig	Sat May 26 20:50:01 2012
 +++ zzipwrap/wrap.h	Sat May 26 20:50:15 2012
 @@ -29,7 +29,7 @@ zzipwrap_use_memory_io(int blocksize, zzipwrap_pfn_t c

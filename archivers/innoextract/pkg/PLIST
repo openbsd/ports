@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/21 19:04:14 jca Exp $
 @bin bin/innoextract
 @man man/man1/innoextract.1

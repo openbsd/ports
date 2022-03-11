@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:29 sthen Exp $
-
 COMMENT=		POE filter wrapped around Compress::Zlib
 
 DISTNAME=		POE-Filter-Zlib-2.04

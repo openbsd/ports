@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:29 sthen Exp $
-
 COMMENT=	command line implementation of the PAR v1.0 specification
 DISTNAME=	par-v1.1
 PKGNAME=	par1cmdline-1.1

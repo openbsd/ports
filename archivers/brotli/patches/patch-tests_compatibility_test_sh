@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_compatibility_test_sh,v 1.2 2017/04/18 16:37:46 pascal Exp $
 --- tests/compatibility_test.sh.orig	Mon Apr 10 10:42:24 2017
 +++ tests/compatibility_test.sh	Tue Apr 18 18:31:26 2017
 @@ -1,4 +1,4 @@

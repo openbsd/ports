@@ -1,5 +1,3 @@
-$OpenBSD: patch-CPP_Windows_ErrorMsg_cpp,v 1.1 2018/04/09 15:58:26 bket Exp $
-
 Index: CPP/Windows/ErrorMsg.cpp
 --- CPP/Windows/ErrorMsg.cpp.orig
 +++ CPP/Windows/ErrorMsg.cpp

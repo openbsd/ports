@@ -1,5 +1,3 @@
-$OpenBSD: patch-C_CpuArch_h,v 1.3 2017/07/02 18:38:24 jca Exp $
-
 Use <endian.h> to determine endianness, instead of a complex and 
 incorrect list of architectures.
 

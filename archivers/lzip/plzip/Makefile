@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/09 11:03:05 fcambus Exp $
-
 COMMENT =		multi-threaded data compressor based on lzlib
 
 DISTNAME =		plzip-1.10

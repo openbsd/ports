@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2018/10/01 21:33:46 juanfra Exp $
-
 # This directory contain every lzip project.
 # lzd isn't included due to the educational purpose of this and the author
 # doesn't recommend the use of lzd in production.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-match_S,v 1.1 2018/11/09 16:23:02 naddy Exp $
-
 Do not use i386 non-PIC assembly code.
 
 Index: match.S

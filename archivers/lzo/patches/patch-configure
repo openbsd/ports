@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2002/10/09 14:14:40 brad Exp $
 --- configure.orig	Wed Oct  9 09:44:30 2002
 +++ configure	Wed Oct  9 09:45:01 2002
 @@ -6024,7 +6024,7 @@ else

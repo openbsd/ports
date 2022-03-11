@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/08 18:17:14 jung Exp $
 @bin bin/sltar
 @man man/man1/sltar.1

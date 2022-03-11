@@ -1,5 +1,3 @@
-$OpenBSD: patch-CPP_7zip_Bundles_SFXCon_SfxCon_cpp,v 1.3 2016/08/14 16:29:20 jca Exp $
-
 Pledge self-extracting archives
 
 --- CPP/7zip/Bundles/SFXCon/SfxCon.cpp.orig	Fri May 20 04:38:40 2016

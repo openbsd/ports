@@ -1,5 +1,3 @@
-$OpenBSD: patch-minizip_pc_cmakein,v 1.1 2021/10/12 04:11:25 rsadowski Exp $
-
 Index: minizip.pc.cmakein
 --- minizip.pc.cmakein.orig
 +++ minizip.pc.cmakein

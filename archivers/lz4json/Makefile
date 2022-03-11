@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/28 17:00:20 sthen Exp $
-
 COMMENT =	decompressor for mozilla lz4json format
 
 GH_ACCOUNT =	andikleen

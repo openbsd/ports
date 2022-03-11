@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/19 07:00:24 feinerer Exp $
 include/blosc-export.h
 include/blosc.h
 @static-lib lib/libblosc.a

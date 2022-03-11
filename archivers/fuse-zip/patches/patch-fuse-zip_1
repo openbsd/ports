@@ -1,4 +1,3 @@
-$OpenBSD: patch-fuse-zip_1,v 1.3 2021/10/13 08:49:03 sdk Exp $
 Index: fuse-zip.1
 --- fuse-zip.1.orig
 +++ fuse-zip.1

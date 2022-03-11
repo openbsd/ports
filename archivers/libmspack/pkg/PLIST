@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/01/21 15:27:29 sthen Exp $
 include/mspack.h
 lib/libmspack.a
 lib/libmspack.la

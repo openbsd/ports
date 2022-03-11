@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
 

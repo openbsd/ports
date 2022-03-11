@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/26 19:55:08 jca Exp $
-
 COMMENT=	library for handling Microsoft compression formats
 
 DISTNAME=	libmspack-0.10.1alpha

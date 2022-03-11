@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/01/07 10:03:42 sthen Exp $
-
 COMMENT=		library for reading, creating and modifying zip archives
 
 DISTNAME=		libzip-1.8.0

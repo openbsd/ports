@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/09 10:44:28 fcambus Exp $
-
 COMMENT =		C implementation of lzip
 
 DISTNAME =		clzip-1.13

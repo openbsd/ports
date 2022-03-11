@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:28 sthen Exp $
-
 COMMENT=	C library for manipulating tar files
 
 GH_ACCOUNT=	tklauser

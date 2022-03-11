@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/07/24 13:34:56 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Compress/
 ${P5ARCH}/Compress/Bzip2.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/09 10:43:27 fcambus Exp $
-
 COMMENT =		lzip compression library
 
 DISTNAME =		lzlib-1.13

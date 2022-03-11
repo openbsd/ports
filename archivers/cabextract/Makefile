@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/10/25 16:56:27 fcambus Exp $
-
 COMMENT=		extracts files from Microsoft CAB archives
 
 DISTNAME=		cabextract-1.9.1

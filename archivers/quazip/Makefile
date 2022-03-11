@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/01/25 22:57:56 bcallah Exp $
-
 COMMENT =	Qt/C++ wrapper for ZIP/UNZIP package
 CATEGORIES =	archivers
 

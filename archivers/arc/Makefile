@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/01 16:51:22 kn Exp $
-
 COMMENT=	create & extract files from DOS .ARC files
 
 DISTNAME=	arc-5.21p

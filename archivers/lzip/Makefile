@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2018/05/20 12:36:33 juanfra Exp $
-
 SUBDIR =
 SUBDIR += clzip
 SUBDIR += lunzip

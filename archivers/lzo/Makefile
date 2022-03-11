@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2019/07/12 20:43:29 sthen Exp $
-
 COMMENT=	portable speedy lossless data compression library
 
 DISTNAME=	lzo-1.08

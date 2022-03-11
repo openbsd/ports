@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:29 jasper Exp $
-
 COMMENT=	java-like zip interface
 
 DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07

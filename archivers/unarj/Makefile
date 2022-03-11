@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/14 02:16:50 naddy Exp $
-
 COMMENT=	extract files from ARJ archives
 
 DISTNAME=	unarj-2.43

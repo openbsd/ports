@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:30 sthen Exp $
-
 COMMENT=	handle the old .ZOO archive format
 
 DISTNAME=	zoo-2.10pl1

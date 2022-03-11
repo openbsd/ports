@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/03 21:44:29 sthen Exp $
-
 COMMENT=	interface to the LZO compression library
 
 DISTNAME=	Compress-LZO-1.09

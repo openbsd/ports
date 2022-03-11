@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/09 10:52:04 fcambus Exp $
-
 COMMENT =		data recovery tool and decompressor for lzip files
 
 DISTNAME =		lziprecover-1.23

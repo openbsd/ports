@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/11/06 19:45:59 jasper Exp $
-
 COMMENT =	perl interface to ZIP files
 
 MODULES =	cpan

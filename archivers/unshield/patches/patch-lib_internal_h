@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_internal_h,v 1.4 2022/01/23 09:14:46 jsg Exp $
 Index: lib/internal.h
 --- lib/internal.h.orig
 +++ lib/internal.h

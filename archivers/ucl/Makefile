@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/26 22:20:05 sthen Exp $
-
 COMMENT=	portable lossless data compression library
 
 DISTNAME=	ucl-1.03

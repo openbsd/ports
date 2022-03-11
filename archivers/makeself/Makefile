@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/09/11 18:02:15 rsadowski Exp $
-
 COMMENT=		script generating a self-extractible .tgz from a directory
 
 GH_ACCOUNT=		megastep

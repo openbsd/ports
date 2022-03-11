@@ -1,4 +1,3 @@
-$OpenBSD: patch-zzip_zzip_h,v 1.1 2012/05/29 15:57:32 pascal Exp $
 --- zzip/zzip.h.orig	Sat May 26 20:26:17 2012
 +++ zzip/zzip.h	Sat May 26 20:26:31 2012
 @@ -256,7 +256,7 @@ ZZIP_DIR *  zzip_dir_open_ext_io(zzip_char_t* filename

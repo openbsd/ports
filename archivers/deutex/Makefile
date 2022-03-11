@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/09 17:11:49 sthen Exp $
-
 V =		5.2.2
 COMMENT =	WAD composer for Doom, Heretic, Hexen, and Strife
 DISTNAME =	deutex-${V}

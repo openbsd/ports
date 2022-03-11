@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/13 07:45:00 benoit Exp $
-
 COMMENT=	generic archive extracting mechanism for Perl
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/24 13:34:56 benoit Exp $
-
 COMMENT =	interface to bzip2 compression library
 
 DISTNAME =	Compress-Bzip2-2.28

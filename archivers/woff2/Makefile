@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:30 sthen Exp $
-
 COMMENT=		Web Open Font Format 2.0 library
 
 GH_ACCOUNT=		google

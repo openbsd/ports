@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/10/19 09:29:09 ajacoutot Exp $
 @bin bin/gcab
 include/libgcab-1.0/
 include/libgcab-1.0/libgcab/

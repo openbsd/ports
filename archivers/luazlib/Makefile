@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:29 jasper Exp $
-
 COMMENT=	lua binding of zlib
 DISTNAME=	luazlib-20100731
 REVISION=	2

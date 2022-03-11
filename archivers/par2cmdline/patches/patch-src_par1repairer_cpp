@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_par1repairer_cpp,v 1.1 2017/12/12 01:10:50 jca Exp $
-
 pledge:
     'par2 repair' with par1 files - stdio rpath cpath
         once the target files have been opened for writing, wpath is no

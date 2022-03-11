@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/01 17:17:28 naddy Exp $
-
 COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.15.2

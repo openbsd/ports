@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/03/10 12:03:30 kn Exp $
-
 # __builtin_clz
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 

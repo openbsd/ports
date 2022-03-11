@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2022/02/09 10:43:27 fcambus Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in

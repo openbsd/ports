@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_lzo_lzodefs_h,v 1.1 2014/06/27 20:51:42 sthen Exp $
 --- include/lzo/lzodefs.h.orig	Fri Jun 27 14:48:22 2014
 +++ include/lzo/lzodefs.h	Fri Jun 27 14:48:48 2014
 @@ -29,6 +29,8 @@

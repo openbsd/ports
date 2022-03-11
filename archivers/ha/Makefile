@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:28 sthen Exp $
-
 COMMENT=	archive files using the HSC compression method
 
 DISTNAME=	ha0999
