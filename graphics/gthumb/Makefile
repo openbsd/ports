@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.124 2022/01/13 08:06:39 ajacoutot Exp $
-
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb

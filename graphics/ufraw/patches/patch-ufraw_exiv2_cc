@@ -1,5 +1,3 @@
-$OpenBSD: patch-ufraw_exiv2_cc,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
-
 unbreak with exiv2 0.27
 
 Index: ufraw_exiv2.cc

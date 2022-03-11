@@ -1,5 +1,3 @@
-$OpenBSD: patch-loader_unknown_ext_chain_gas_aarch64_S,v 1.1 2022/01/03 05:10:10 jsg Exp $
-
 loader/aarch64: attempt to avoid text relocations in the unknown code
 a11162fcaca808eb91c0fa4fbcce99bbcd5d3be2
 

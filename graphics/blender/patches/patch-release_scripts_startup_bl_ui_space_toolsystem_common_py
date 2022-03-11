@@ -1,5 +1,3 @@
-$OpenBSD: patch-release_scripts_startup_bl_ui_space_toolsystem_common_py,v 1.2 2022/03/05 14:35:47 sthen Exp $
-
 Fix path to icons (XXX)
 
 Index: release/scripts/startup/bl_ui/space_toolsystem_common.py

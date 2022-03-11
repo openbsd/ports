@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:03 sthen Exp $
-
 COMMENT =		3D fractal renderer
 
 V =			1.21

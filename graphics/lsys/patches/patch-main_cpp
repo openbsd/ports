@@ -1,4 +1,3 @@
-$OpenBSD: patch-main_cpp,v 1.2 2018/04/25 16:25:34 naddy Exp $
 const char* for ""
 
 Index: main.cpp

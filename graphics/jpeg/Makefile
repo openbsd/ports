@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2021/08/28 08:26:14 sthen Exp $
-
 COMMENT=	SIMD-accelerated JPEG codec replacement of libjpeg
 
 V=		2.1.1

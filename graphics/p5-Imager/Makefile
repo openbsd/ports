@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT=	generate and manipulate images
 
 DISTNAME=	Imager-1.012

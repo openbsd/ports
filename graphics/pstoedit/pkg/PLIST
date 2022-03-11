@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/11/13 11:09:22 steven Exp $
 @bin bin/pstoedit
 include/pstoedit/
 include/pstoedit/base64writer.h

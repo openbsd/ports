@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.gimp,v 1.2 2007/09/08 18:41:51 ajacoutot Exp $
 @exec ln -sf ${PREFIX}/bin/xsane ${LOCALBASE}/lib/gimp/2.0/plug-ins/
 @unexec rm -f ${LOCALBASE}/lib/gimp/2.0/plug-ins/xsane

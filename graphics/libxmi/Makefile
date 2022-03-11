@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:03 sthen Exp $
-
 COMMENT =		library for rasterizing 2-D vector graphics
 
 DISTNAME =		libxmi-1.2

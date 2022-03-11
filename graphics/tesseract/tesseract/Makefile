@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/09/06 21:18:21 ajacoutot Exp $
-
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract

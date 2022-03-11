@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.30 2022/01/21 07:09:33 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*

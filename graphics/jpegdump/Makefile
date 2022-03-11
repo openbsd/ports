@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:01 sthen Exp $
-
 COMMENT =	dump raw jpeg exif information
 CATEGORIES =	graphics devel
 

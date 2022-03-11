@@ -1,5 +1,3 @@
-$OpenBSD: patch-cube_cube_cpp,v 1.5 2021/10/16 14:50:40 thfr Exp $
-
 Index: cube/cube.cpp
 --- cube/cube.cpp.orig
 +++ cube/cube.cpp

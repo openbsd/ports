@@ -1,5 +1,3 @@
-$OpenBSD: patch-libdjvu_IW44Image_cpp,v 1.1 2021/10/20 16:31:58 mbuhl Exp $
-
 Fix CVE-2021-32490: out of bounds write
 https://sourceforge.net/p/djvu/djvulibre-git/ci/cd8b5c97b27a5c1dc83046498b6ca49ad20aa9b6
 

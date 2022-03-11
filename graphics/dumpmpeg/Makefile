@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:21 sthen Exp $
-
 COMMENT=	dump frames from mpeg-1 movies
 
 VERSION=	0.6

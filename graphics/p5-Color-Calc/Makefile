@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT=	simple calculations with RGB colors
 
 MODULES=	cpan

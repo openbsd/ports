@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_options_c,v 1.17 2021/07/08 13:55:37 bcallah Exp $
 Index: src/options.c
 --- src/options.c.orig
 +++ src/options.c

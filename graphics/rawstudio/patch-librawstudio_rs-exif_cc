@@ -1,5 +1,3 @@
-$OpenBSD: patch-librawstudio_rs-exif_cc,v 1.1 2020/05/14 19:16:25 rsadowski Exp $
-
 Index: librawstudio/rs-exif.cc
 --- librawstudio/rs-exif.cc.orig
 +++ librawstudio/rs-exif.cc

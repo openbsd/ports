@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:09 sthen Exp $
-
 COMMENT =	color value conversion and modification
 
 DISTNAME =	color-1.8

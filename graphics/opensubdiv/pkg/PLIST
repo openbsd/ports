@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/26 13:16:46 sthen Exp $
 @bin bin/stringify
 include/opensubdiv/
 include/opensubdiv/far/

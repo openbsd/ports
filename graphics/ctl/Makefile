@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/31 07:32:17 ajacoutot Exp $
-
 COMMENT =		Color Transformation Language interpreter
 
 GH_ACCOUNT =		ampas

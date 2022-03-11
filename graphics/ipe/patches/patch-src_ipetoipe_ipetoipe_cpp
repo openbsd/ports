@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ipetoipe_ipetoipe_cpp,v 1.3 2019/04/30 06:44:29 bentley Exp $
-
 Index: src/ipetoipe/ipetoipe.cpp
 --- src/ipetoipe/ipetoipe.cpp.orig
 +++ src/ipetoipe/ipetoipe.cpp

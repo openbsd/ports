@@ -1,4 +1,3 @@
-$OpenBSD: patch-rw_libpnmrw_c,v 1.4 2005/05/24 19:49:28 naddy Exp $
 --- rw/libpnmrw.c.orig	Mon May 23 22:58:49 2005
 +++ rw/libpnmrw.c	Mon May 23 23:01:23 2005
 @@ -132,6 +132,7 @@ pm_freearray(char **its, int rows)

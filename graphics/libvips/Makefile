@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/15 07:58:41 denis Exp $
-
 COMMENT =	fast image processing library with low memory needs
 
 VERSION =	8.9.2

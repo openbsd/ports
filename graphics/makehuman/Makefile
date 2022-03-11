@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/11/02 00:01:15 sthen Exp $
-
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 GH_ACCOUNT=	makehumancommunity

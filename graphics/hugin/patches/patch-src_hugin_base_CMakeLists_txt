@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_hugin_base_CMakeLists_txt,v 1.6 2021/01/30 10:05:43 kirby Exp $
-
 /usr/local/include/boost/config/requires_threads.hpp:47:5: error:
 #error "Compiler threading support is not turned on. Please set the
 correct command line options for threading: -pthread (Linux),

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT =	RGB color model for Perl
 
 DISTNAME =	Graphics-Color-0.31

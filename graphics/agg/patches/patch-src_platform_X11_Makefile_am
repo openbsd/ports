@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_platform_X11_Makefile_am,v 1.2 2008/01/20 19:31:56 deanna Exp $
 --- src/platform/X11/Makefile.am.orig	Sun Dec 10 19:59:45 2006
 +++ src/platform/X11/Makefile.am	Thu Dec 20 19:27:01 2007
 @@ -3,6 +3,6 @@ lib_LTLIBRARIES = libaggplatformX11.la

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_FindGLFW_cmake,v 1.1.1.1 2021/01/26 13:16:46 sthen Exp $
-
 -lrt and -ldl not supported on OpenBSD
 
 --- cmake/FindGLFW.cmake.orig	Sun Dec 13 23:02:51 2020

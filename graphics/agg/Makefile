@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:56 sthen Exp $
-
 COMMENT=	anti-grain geometry graphics library
 
 DISTNAME=	agg-2.5

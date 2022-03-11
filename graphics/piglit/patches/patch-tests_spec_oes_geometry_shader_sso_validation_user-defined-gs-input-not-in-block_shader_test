@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_spec_oes_geometry_shader_sso_validation_user-defined-gs-input-not-in-block_shader_test,v 1.1.1.1 2018/01/14 21:49:14 sthen Exp $
-
 from FreeBSD
 
 Index: tests/spec/oes_geometry_shader/sso_validation/user-defined-gs-input-not-in-block.shader_test

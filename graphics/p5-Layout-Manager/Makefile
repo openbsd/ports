@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT =	2D layout management for Perl
 
 DISTNAME =	Layout-Manager-0.35

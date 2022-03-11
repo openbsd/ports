@@ -1,5 +1,3 @@
-$OpenBSD: patch-rw_readWritePS_c,v 1.1 2017/05/17 22:39:53 espie Exp $
-
 Index: rw/readWritePS.c
 --- rw/readWritePS.c.orig
 +++ rw/readWritePS.c

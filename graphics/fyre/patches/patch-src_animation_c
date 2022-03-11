@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_animation_c,v 1.1.1.1 2007/05/21 14:24:06 jasper Exp $
 --- src/animation.c.orig	Fri May 18 22:57:11 2007
 +++ src/animation.c	Fri May 18 22:57:16 2007
 @@ -312,6 +312,7 @@ void animation_store_chunk(AnimChunkState *state,

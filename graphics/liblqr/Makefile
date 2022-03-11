@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/06 15:26:18 espie Exp $
-
 COMMENT = 			seam-carving smart rescale library
 CATEGORIES =			graphics devel
 

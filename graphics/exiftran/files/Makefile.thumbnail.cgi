@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.thumbnail.cgi,v 1.2 2012/08/19 22:59:06 ajacoutot Exp $
-
 PROG=	thumbnail.cgi
 
 .PATH: ${.CURDIR}/../..

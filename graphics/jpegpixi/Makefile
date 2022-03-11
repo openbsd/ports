@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:01 sthen Exp $
-
 COMMENT=	jpeg pixel interpolator
 
 DISTNAME=	jpegpixi-1.1.1

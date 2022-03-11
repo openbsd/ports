@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Hotspot_cpp,v 1.1 2018/11/29 20:41:54 naddy Exp $
-
 Index: src/Hotspot.cpp
 --- src/Hotspot.cpp.orig
 +++ src/Hotspot.cpp

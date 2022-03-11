@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/19 11:35:54 sthen Exp $
-
 COMMENT =		character art facsimile generator
 DISTNAME =		chafa-1.6.1
 

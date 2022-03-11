@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/23 19:39:26 sthen Exp $
-
 COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		2.0

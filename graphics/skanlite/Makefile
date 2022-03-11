@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/19 20:08:35 rsadowski Exp $
-
 COMMENT =	scanning application for KDE
 
 DISTNAME =	skanlite-${MODKDE_VERSION}

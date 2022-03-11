@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/17 13:55:51 landry Exp $
-
 # No consumers on macppc, saves 17 build hours in bulks
 NOT_FOR_ARCHS =		powerpc
 

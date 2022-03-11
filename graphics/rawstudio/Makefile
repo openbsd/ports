@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/05/14 19:16:25 rsadowski Exp $
-
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2

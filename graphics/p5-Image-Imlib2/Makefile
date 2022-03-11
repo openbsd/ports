@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT=	Perl interface to the Imlib2 image library
 
 DISTNAME=	Image-Imlib2-2.03

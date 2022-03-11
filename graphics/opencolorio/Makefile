@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/03/06 20:00:39 tb Exp $
-
 COMMENT =		color management library
 
 EPOCH =			1

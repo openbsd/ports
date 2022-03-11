@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.88 2022/02/05 22:21:01 daniel Exp $
-
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	3.2.2

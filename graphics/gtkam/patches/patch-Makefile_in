@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2016/08/27 15:37:55 ajacoutot Exp $
 --- Makefile.in.orig	Fri May 27 09:33:16 2016
 +++ Makefile.in	Sat Aug 27 17:35:14 2016
 @@ -439,7 +439,7 @@ target_alias = @target_alias@

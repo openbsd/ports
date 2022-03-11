@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:58 sthen Exp $
-
 COMMENT =		font rendering library for OpenGL applications
 
 V =			2.1.3

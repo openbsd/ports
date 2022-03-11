@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/13 19:05:04 bket Exp $
-
 COMMENT =		statistical data visualization
 
 MODPY_EGG_VERSION =	0.11.2

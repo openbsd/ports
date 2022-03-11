@@ -1,5 +1,3 @@
-$OpenBSD: patch-Pinta_Install_proj,v 1.2 2021/10/31 20:30:03 ajacoutot Exp $
-
 Do not gzip man page.
 
 Index: Pinta.Install.proj

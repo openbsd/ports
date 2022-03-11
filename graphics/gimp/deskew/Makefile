@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:59 sthen Exp $
-
 COMMENT =		deskew plug-in for GIMP
 DISTNAME =		gimp-deskew-plugin-0.0.20141025
 GH_ACCOUNT =		prokoudine

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/11/10 16:54:50 giovanni Exp $
 ${P5SITE}/Image/
 ${P5SITE}/Image/MetaData/
 ${P5SITE}/Image/MetaData/JPEG/

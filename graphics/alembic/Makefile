@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/28 10:59:51 sthen Exp $
-
 COMMENT=	open framework for storing and sharing scene data
 
 GH_ACCOUNT=	alembic

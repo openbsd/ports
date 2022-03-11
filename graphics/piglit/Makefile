@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/15 19:39:27 rsadowski Exp $
-
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 

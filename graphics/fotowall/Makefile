@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/19 06:42:43 rsadowski Exp $
-
 COMMENT =	Pictures collage & creativity tool
 
 V =		1.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:10 sthen Exp $
-
 COMMENT =	two-dimensional drawing tool and hyper-object browser
 
 VERSION =	4.2.5

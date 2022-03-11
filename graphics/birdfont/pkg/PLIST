@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.27 2019/10/25 19:26:49 jasper Exp $
 @bin bin/birdfont
 @bin bin/birdfont-autotrace
 @bin bin/birdfont-export

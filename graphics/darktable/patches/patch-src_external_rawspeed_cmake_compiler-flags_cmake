@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_external_rawspeed_cmake_compiler-flags_cmake,v 1.1 2021/03/15 20:15:10 sthen Exp $
-
 Index: src/external/rawspeed/cmake/compiler-flags.cmake
 --- src/external/rawspeed/cmake/compiler-flags.cmake.orig
 +++ src/external/rawspeed/cmake/compiler-flags.cmake

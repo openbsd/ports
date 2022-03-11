@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT =	package for creating PostScript/PDF graphics
 
 MODPY_EGG_VERSION = 0.15

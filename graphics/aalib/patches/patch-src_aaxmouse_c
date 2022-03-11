@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_aaxmouse_c,v 1.1 2008/04/03 12:42:46 jasper Exp $
 --- src/aaxmouse.c.orig	Wed Apr  2 00:10:41 2008
 +++ src/aaxmouse.c	Wed Apr  2 00:10:46 2008
 @@ -1,4 +1,3 @@

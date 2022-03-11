@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.150 2022/02/03 20:39:25 espie Exp $
-
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.30

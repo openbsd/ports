@@ -1,5 +1,3 @@
-$OpenBSD: patch-registry_reg_py,v 1.4 2021/06/29 03:48:21 thfr Exp $
-
 Index: registry/reg.py
 --- registry/reg.py.orig
 +++ registry/reg.py

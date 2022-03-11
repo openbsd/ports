@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/14 13:50:10 sthen Exp $
-
 COMMENT =		losslessly convert images to PDF
 
 MODPY_EGG_VERSION =	0.4.3

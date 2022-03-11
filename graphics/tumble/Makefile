@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/02 06:53:29 jsg Exp $
-
 # author says so
 ONLY_FOR_ARCHS= ${LE_ARCHS}
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/26 21:33:16 daniel Exp $
-
 COMMENT =	binding to cairo, a 2D vector graphics library
 CATEGORIES =	graphics
 

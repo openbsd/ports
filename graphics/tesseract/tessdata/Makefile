@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/31 12:26:42 ajacoutot Exp $
-
 GH_TAGNAME=		4.1.0
 
 LANGS=			afr amh ara asm aze aze_cyrl bel ben bod bos bre bul \

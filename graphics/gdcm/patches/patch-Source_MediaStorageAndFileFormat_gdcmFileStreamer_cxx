@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_MediaStorageAndFileFormat_gdcmFileStreamer_cxx,v 1.1.1.1 2017/08/01 16:38:46 jasper Exp $
-
 Index: Source/MediaStorageAndFileFormat/gdcmFileStreamer.cxx
 --- Source/MediaStorageAndFileFormat/gdcmFileStreamer.cxx.orig
 +++ Source/MediaStorageAndFileFormat/gdcmFileStreamer.cxx

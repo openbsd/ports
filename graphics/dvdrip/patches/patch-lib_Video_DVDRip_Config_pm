@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Video_DVDRip_Config_pm,v 1.1 2013/04/06 18:36:21 stsp Exp $
 DVD device detection relies on HAL, this is a workaround.
 --- lib/Video/DVDRip/Config.pm.orig	Sat Feb 28 19:28:00 2009
 +++ lib/Video/DVDRip/Config.pm	Fri Apr  5 18:02:19 2013

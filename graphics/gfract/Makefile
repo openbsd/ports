@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/06/22 04:19:19 rsadowski Exp $
-
 BROKEN=			linking fails with Boost 1.76
 
 COMMENT=		fractal program with GTK interface

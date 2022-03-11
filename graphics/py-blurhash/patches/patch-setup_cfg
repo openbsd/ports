@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2020/09/13 03:15:53 pamela Exp $
-
 Fixed pytest error by removing reference to coverage.
 
 Index: setup.cfg

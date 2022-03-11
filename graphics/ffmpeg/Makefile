@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.218 2022/02/23 21:47:26 sthen Exp $
-
 COMMENT=	audio/video converter and streamer
 
 V=		4.4.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-common_mk,v 1.4 2019/08/25 20:29:40 naddy Exp $
 Index: common.mk
 --- common.mk.orig
 +++ common.mk

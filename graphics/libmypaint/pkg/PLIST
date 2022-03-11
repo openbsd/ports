@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/18 15:42:56 sthen Exp $
 include/libmypaint/
 include/libmypaint-gegl/
 include/libmypaint-gegl/mypaint-gegl-glib.h

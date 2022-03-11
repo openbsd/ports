@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/04/18 11:14:10 rsadowski Exp $
 @bin bin/slop
 include/slop.hpp
 @lib lib/libslopy.so.${LIBslopy_VERSION}

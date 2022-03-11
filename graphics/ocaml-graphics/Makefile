@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/12/10 04:10:59 daniel Exp $
-
 COMMENT =	graphics library providing basic drawing primitives
 CATEGORIES =	graphics
 

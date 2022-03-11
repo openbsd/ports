@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/04 00:27:58 jasper Exp $
 @bin bin/gfract
 share/gfract/
 share/gfract/gfract.xpm

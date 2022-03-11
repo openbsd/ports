@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/12/31 20:16:54 cwen Exp $
-
 COMMENT=		very small and pretty fast gdk/Imlib image viewer
 
 DISTNAME=		qiv-2.3.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_Makefile_am,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
 --- examples/Makefile.am.orig	Fri Apr  4 17:04:18 2008
 +++ examples/Makefile.am	Sat Nov  2 12:02:56 2013
 @@ -1,5 +1,5 @@

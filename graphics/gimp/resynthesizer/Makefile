@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/05 12:14:23 espie Exp $
-
 COMMENT = 	gimp plugin for image reparation
 
 V = 2.0.3

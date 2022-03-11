@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/18 03:58:33 thfr Exp $
-
 COMMENT =	Vulkan Validation Layers
 
 V =		1.2.198.0

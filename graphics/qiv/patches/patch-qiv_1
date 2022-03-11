@@ -1,4 +1,3 @@
-$OpenBSD: patch-qiv_1,v 1.2 2020/12/31 20:16:54 cwen Exp $
 Index: qiv.1
 --- qiv.1.orig
 +++ qiv.1

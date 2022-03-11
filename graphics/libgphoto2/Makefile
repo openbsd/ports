@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.76 2022/03/06 09:04:14 ajacoutot Exp $
-
 COMMENT=		digital camera library
 
 VERSION=		2.5.29

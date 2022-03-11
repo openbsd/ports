@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/14 21:55:22 fcambus Exp $
-
 COMMENT =		lossless PNG optimizer
 DISTNAME =		optipng-0.7.7
 CATEGORIES =		graphics

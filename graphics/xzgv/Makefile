@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:12 sthen Exp $
-
 COMMENT=	picture viewer for X, with thumbnail-based file selector
 DISTNAME=	xzgv-0.9
 REVISION=	7

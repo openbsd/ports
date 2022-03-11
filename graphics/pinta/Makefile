@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/31 20:30:03 ajacoutot Exp $
-
 V =		1.7
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}

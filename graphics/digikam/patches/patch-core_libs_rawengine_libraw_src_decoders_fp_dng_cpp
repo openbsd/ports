@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_libs_rawengine_libraw_src_decoders_fp_dng_cpp,v 1.2 2021/12/16 20:58:29 rsadowski Exp $
-
 Rename to avoid conflicts
 
 Index: core/libs/rawengine/libraw/src/decoders/fp_dng.cpp

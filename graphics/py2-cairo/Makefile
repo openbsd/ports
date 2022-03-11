@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/26 17:32:06 sthen Exp $
-
 # XXX version 1.19.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-cairo
 PORTROACH=		limit:^1\.18

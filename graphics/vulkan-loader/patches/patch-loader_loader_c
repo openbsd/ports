@@ -1,5 +1,3 @@
-$OpenBSD: patch-loader_loader_c,v 1.6 2021/12/09 04:48:32 thfr Exp $
-
 revert commit ecb0b1e69fb2f4d3cae262e6da24c170ce62ae13 to attempt to
 fix vulkaninfo
 

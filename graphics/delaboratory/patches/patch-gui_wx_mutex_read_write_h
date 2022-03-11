@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui_wx_mutex_read_write_h,v 1.1 2021/03/16 16:35:54 naddy Exp $
-
 Index: gui_wx/mutex_read_write.h
 --- gui_wx/mutex_read_write.h.orig
 +++ gui_wx/mutex_read_write.h

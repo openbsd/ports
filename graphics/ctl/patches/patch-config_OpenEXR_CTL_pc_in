@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_OpenEXR_CTL_pc_in,v 1.3 2020/05/15 15:44:44 ajacoutot Exp $
-
 pkg-config --libs OpenEXR
 
 --- config/OpenEXR_CTL.pc.in.orig	Tue Jun  3 03:11:24 2014

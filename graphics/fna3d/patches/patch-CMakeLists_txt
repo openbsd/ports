@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.10 2022/01/08 16:22:00 thfr Exp $
-
 set correct library version
 disable bundled mojoshader in favor of the one from ports
 

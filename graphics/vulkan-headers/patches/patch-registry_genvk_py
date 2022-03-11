@@ -1,5 +1,3 @@
-$OpenBSD: patch-registry_genvk_py,v 1.3 2021/06/29 03:48:21 thfr Exp $
-
 Index: registry/genvk.py
 --- registry/genvk.py.orig
 +++ registry/genvk.py

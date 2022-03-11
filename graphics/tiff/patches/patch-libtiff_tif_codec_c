@@ -1,4 +1,3 @@
-$OpenBSD: patch-libtiff_tif_codec_c,v 1.7 2021/05/06 15:28:48 landry Exp $
 Index: libtiff/tif_codec.c
 --- libtiff/tif_codec.c.orig
 +++ libtiff/tif_codec.c

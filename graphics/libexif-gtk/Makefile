@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:02 sthen Exp $
-
 COMMENT=	gtk+2 interface to libexif
 
 DISTNAME=	libexif-gtk-0.4.0

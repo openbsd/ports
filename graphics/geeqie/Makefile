@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/05/11 06:23:39 ajacoutot Exp $
-
 COMMENT=		lightweight Gtk+3 based image viewer
 
 DISTNAME=		geeqie-1.6

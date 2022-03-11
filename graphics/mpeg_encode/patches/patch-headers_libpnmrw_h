@@ -1,4 +1,3 @@
-$OpenBSD: patch-headers_libpnmrw_h,v 1.2 2010/05/22 14:17:56 espie Exp $
 --- headers/libpnmrw.h.orig	Wed Aug  9 17:17:41 1995
 +++ headers/libpnmrw.h	Sat May 22 16:16:24 2010
 @@ -19,10 +19,8 @@

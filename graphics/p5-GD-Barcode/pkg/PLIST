@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/12/21 06:22:27 steven Exp $
 ${P5SITE}/GD/Barcode/
 ${P5SITE}/GD/Barcode.pm
 ${P5SITE}/GD/Barcode/COOP2of5.pm

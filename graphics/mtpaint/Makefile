@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/06/10 21:51:44 cwen Exp $
-
 COMMENT =	simple GTK+3 raster painting program
 
 DISTNAME =	mtpaint-3.50

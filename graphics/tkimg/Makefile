@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT =	image extension for Tcl/Tk
 
 V =		1.4.2

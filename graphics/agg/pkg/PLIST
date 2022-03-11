@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:45 naddy Exp $
 include/agg2/
 include/agg2/agg_alpha_mask_u8.h
 include/agg2/agg_arc.h

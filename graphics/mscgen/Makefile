@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/26 20:24:16 kmos Exp $
-
 COMMENT=		utility to create Message Sequence Charts
 
 DISTNAME=		mscgen-src-0.20

@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2007/12/31 11:32:30 eric Exp $
 --- setup.cfg.orig	Sat Nov 17 16:12:55 2007
 +++ setup.cfg	Sat Nov 17 16:12:59 2007
 @@ -2,7 +2,7 @@

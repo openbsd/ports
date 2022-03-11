@@ -1,5 +1,3 @@
-$OpenBSD: patch-settings_cc,v 1.2 2021/05/24 10:15:04 sthen Exp $
-
 Cope with ghostscript pre-9.16. If updating GS, this patch is likely to
 trigger a failure and should be removed.
 

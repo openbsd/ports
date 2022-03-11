@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:00 sthen Exp $
-
 COMMENT =		extractor and converter for .ico and .cur files
 
 DISTNAME =		icoutils-0.32.3

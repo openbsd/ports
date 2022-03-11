@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/08/31 07:31:14 ajacoutot Exp $
-
 COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz

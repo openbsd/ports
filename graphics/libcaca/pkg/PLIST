@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/11/28 10:32:40 namn Exp $
 bin/caca-config
 @bin bin/cacaclock
 @bin bin/cacademo

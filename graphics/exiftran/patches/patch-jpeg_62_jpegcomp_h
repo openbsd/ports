@@ -1,4 +1,3 @@
-$OpenBSD: patch-jpeg_62_jpegcomp_h,v 1.1 2016/04/26 20:47:25 robert Exp $
 --- jpeg/62/jpegcomp.h.orig	Tue Apr 26 22:43:35 2016
 +++ jpeg/62/jpegcomp.h	Tue Apr 26 22:43:35 2016
 @@ -0,0 +1,30 @@

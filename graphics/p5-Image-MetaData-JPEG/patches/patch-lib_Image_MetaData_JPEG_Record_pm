@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Image_MetaData_JPEG_Record_pm,v 1.1 2014/07/12 19:20:06 giovanni Exp $
 --- lib/Image/MetaData/JPEG/Record.pm.orig	Sat Jul 12 20:49:37 2014
 +++ lib/Image/MetaData/JPEG/Record.pm	Sat Jul 12 20:51:05 2014
 @@ -100,8 +100,10 @@ sub new {

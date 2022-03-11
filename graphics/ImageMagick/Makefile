@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.205 2022/02/11 16:34:27 sthen Exp $
-
 BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 
 COMMENT=		image processing tools

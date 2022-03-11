@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-bre,v 1.1 2019/02/19 08:55:34 rapha Exp $
 share/tessdata/
 share/tessdata/bre.traineddata

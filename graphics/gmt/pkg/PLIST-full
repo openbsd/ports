@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-full,v 1.1 2008/10/30 16:48:37 naddy Exp $
 @pkgpath graphics/gmt,full
 share/gmt/share/coast/binned_GSHHS_f.cdf
 share/gmt/share/coast/binned_border_f.cdf

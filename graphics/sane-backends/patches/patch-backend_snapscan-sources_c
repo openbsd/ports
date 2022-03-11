@@ -1,5 +1,3 @@
-$OpenBSD: patch-backend_snapscan-sources_c,v 1.1 2016/05/18 20:02:27 sthen Exp $
-
 errno.h header is required now that errno is a per-thread variable.
 "undefined symbol 'errno'" at runtime with dlopen()'d modules.
 

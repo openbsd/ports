@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2019/07/12 20:47:08 sthen Exp $
-
 COMMENT =		optimizer for PNG files
 
 DISTNAME =		pngcrush-1.8.13

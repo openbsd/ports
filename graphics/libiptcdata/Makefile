@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/28 08:24:21 ajacoutot Exp $
-
 COMMENT =		library for manipulating IPTC metadata
 
 DISTNAME =		libiptcdata-1.0.4

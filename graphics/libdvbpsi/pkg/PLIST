@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/12/21 08:47:54 rsadowski Exp $
 include/dvbpsi/
 include/dvbpsi/atsc_eit.h
 include/dvbpsi/atsc_ett.h

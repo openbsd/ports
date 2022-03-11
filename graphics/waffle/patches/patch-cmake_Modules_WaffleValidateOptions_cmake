@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_Modules_WaffleValidateOptions_cmake,v 1.2 2021/02/25 04:38:01 jsg Exp $
 Index: cmake/Modules/WaffleValidateOptions.cmake
 --- cmake/Modules/WaffleValidateOptions.cmake.orig
 +++ cmake/Modules/WaffleValidateOptions.cmake

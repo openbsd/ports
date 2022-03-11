@@ -1,5 +1,3 @@
-$OpenBSD: patch-my_png_cpp,v 1.2 2016/10/28 13:45:22 ajacoutot Exp $
-
 Fix build with png-1.5.
 
 --- my_png.cpp.orig	Mon Feb  1 13:31:34 2010

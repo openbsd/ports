@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT=	text utilities for use with GD drawing package
 
 VERSION=	0.86

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:02 sthen Exp $
-
 COMMENT=	free MPEG-2 video stream decoder
 
 DISTNAME=	libmpeg2-0.5.1

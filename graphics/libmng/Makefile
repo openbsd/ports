@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:02 sthen Exp $
-
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
 DISTNAME=	lm010010

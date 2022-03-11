@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2021/04/24 13:25:43 solene Exp $
-
 Remove optimizations
 
 Index: configure

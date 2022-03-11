@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT =	PNG photo image extension for Tcl/Tk
 
 V =		0.9

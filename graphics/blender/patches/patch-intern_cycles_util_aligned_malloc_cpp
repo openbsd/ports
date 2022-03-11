@@ -1,4 +1,3 @@
-$OpenBSD: patch-intern_cycles_util_aligned_malloc_cpp,v 1.1 2022/03/05 14:35:47 sthen Exp $
 Index: intern/cycles/util/util_aligned_malloc.cpp
 --- intern/cycles/util/aligned_malloc.cpp.orig	Wed Sep  2 16:39:54 2020
 +++ intern/cycles/util/aligned_malloc.cpp	Sun Nov 22 13:12:51 2020

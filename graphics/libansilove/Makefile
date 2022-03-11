@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/11 09:15:35 fcambus Exp $
-
 COMMENT =	library for converting ANSI, ASCII, and other formats to PNG
 
 V =		1.2.9

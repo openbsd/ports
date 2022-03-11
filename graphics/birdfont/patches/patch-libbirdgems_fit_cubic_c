@@ -1,5 +1,3 @@
-$OpenBSD: patch-libbirdgems_fit_cubic_c,v 1.2 2015/12/20 09:09:29 jasper Exp $
-
 From 51a688beb46211a6d3ce04d09e851723c8f4c504 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Sun, 20 Dec 2015 09:29:24 +0100

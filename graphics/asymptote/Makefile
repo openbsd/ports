@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/02 00:01:15 sthen Exp $
-
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.70

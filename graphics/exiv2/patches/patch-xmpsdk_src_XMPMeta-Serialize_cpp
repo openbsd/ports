@@ -1,4 +1,3 @@
-$OpenBSD: patch-xmpsdk_src_XMPMeta-Serialize_cpp,v 1.5 2020/05/14 19:16:24 rsadowski Exp $
 Index: xmpsdk/src/XMPMeta-Serialize.cpp
 --- xmpsdk/src/XMPMeta-Serialize.cpp.orig
 +++ xmpsdk/src/XMPMeta-Serialize.cpp

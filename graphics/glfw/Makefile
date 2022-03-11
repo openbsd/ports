@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/09 04:47:15 kmos Exp $
 COMMENT =	open source, multi-platform library for creating windows
 V =		3.3.4
 DISTNAME =	glfw-${V}

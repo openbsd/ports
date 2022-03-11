@@ -1,5 +1,3 @@
-$OpenBSD: patch-SConstruct,v 1.9 2021/09/12 22:07:27 kirby Exp $
-
 1st chuck is for scons 4
 3rd chunk is needed for proper boost_thread detection
 

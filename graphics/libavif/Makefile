@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/02 07:33:18 sdk Exp $
-
 COMMENT=	library for encoding and decoding .avif files
 
 GH_ACCOUNT=	AOMediaCodec

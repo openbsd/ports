@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/14 20:55:44 sthen Exp $
-
 COMMENT =	decoder for JBIG2 monochrome hi-res image compression format
 
 DISTNAME =	jbig2dec-0.19

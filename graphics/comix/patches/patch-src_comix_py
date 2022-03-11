@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_comix_py,v 1.5 2019/05/02 16:15:48 sthen Exp $
-
 point python to where comix modules are installed
 
 Index: src/comix.py

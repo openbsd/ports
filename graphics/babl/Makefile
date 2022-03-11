@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/02/22 15:48:52 ajacoutot Exp $
-
 COMMENT=		dynamic pixel format conversion library
 
 V=			0.1.90

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/12/19 13:20:34 ajacoutot Exp $
-
 COMMENT=		GTK+ widget for clutter
 
 GNOME_PROJECT=		clutter-gtk

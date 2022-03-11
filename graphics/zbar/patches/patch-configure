@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2021/11/01 14:47:43 sthen Exp $
-
 Zap bash construct.
 
 Index: configure

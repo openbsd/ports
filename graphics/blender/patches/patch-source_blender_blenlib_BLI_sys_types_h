@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_blender_blenlib_BLI_sys_types_h,v 1.1 2020/11/29 19:57:01 sthen Exp $
-
 uchar.h doesn't exist in OpenBSD
 
 --- source/blender/blenlib/BLI_sys_types.h.orig	Tue Sep 22 19:36:29 2020

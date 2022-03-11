@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/08/31 07:30:29 ajacoutot Exp $
-
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
 REVISION=		26

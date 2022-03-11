@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/18 15:42:56 sthen Exp $
-
 COMMENT =	library for making brushstrokes
 
 V =		1.6.1

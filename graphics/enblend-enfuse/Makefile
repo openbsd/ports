@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/11/10 15:32:55 ajacoutot Exp $
-
 ONLY_FOR_ARCHS = ${GCC4_ARCHS} ${CLANG_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm64")
 # likely to bump into MAXDSIZ on arch other than the above

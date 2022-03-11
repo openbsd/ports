@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/11/28 10:32:40 namn Exp $
-
 COMMENT=		color ascii art library
 
 V=			0.99.beta20

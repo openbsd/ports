@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_dplugins_generic_tools_mediaserver_upnpsdk_Neptune_Source_System_Bsd_NptBsdResolver_cpp,v 1.2 2021/12/16 20:58:29 rsadowski Exp $
-
 Index: core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp
 --- core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp.orig
 +++ core/dplugins/generic/tools/mediaserver/upnpsdk/Neptune/Source/System/Bsd/NptBsdResolver.cpp

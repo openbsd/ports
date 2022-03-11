@@ -1,5 +1,3 @@
-$OpenBSD: patch-Magick++_lib_ImageMagick++_pc_in,v 1.6 2021/03/01 20:42:10 sthen Exp $
-
 Index: Magick++/lib/ImageMagick++.pc.in
 --- Magick++/lib/ImageMagick++.pc.in.orig
 +++ Magick++/lib/ImageMagick++.pc.in

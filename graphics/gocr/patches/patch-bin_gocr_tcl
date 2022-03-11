@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_gocr_tcl,v 1.2 2009/08/12 15:23:56 ajacoutot Exp $
 --- bin/gocr.tcl.orig	Fri Feb  6 10:38:46 2004
 +++ bin/gocr.tcl	Fri Oct 27 10:35:15 2006
 @@ -9,7 +9,7 @@

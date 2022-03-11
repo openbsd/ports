@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tools_CMakeLists_txt,v 1.3 2016/11/24 08:20:38 kirby Exp $
-
 /usr/local/include/boost/config/requires_threads.hpp:47:5: error:
 #error "Compiler threading support is not turned on. Please set the
 correct command line options for threading: -pthread (Linux),

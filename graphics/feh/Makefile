@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.109 2022/02/19 21:30:49 bcallah Exp $
-
 COMMENT=	lightweight image viewer
 
 DISTNAME=	feh-3.8

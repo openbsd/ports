@@ -1,4 +1,3 @@
-$OpenBSD: patch-m4_devil-definitions_m4,v 1.2 2017/05/07 12:49:54 espie Exp $
 move to C99, fix C++
 
 Index: m4/devil-definitions.m4

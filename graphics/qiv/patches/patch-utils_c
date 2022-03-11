@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_c,v 1.5 2020/12/31 20:16:54 cwen Exp $
-
 Fix "implicit conversion from 'int' to 'float' changes value from
 2147483647 to 2147483648"
 From https://codeberg.org/ciberandy/qiv/commit/195fe9d5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/07 22:35:03 cwen Exp $
-
 COMMENT =	prints information and tests integrity of JPEG files
 
 DISTNAME =	jpeginfo-1.6.1

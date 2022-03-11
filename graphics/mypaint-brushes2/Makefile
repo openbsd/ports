@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/12 20:33:11 pamela Exp $
-
 COMMENT =	brushes used by software using libmypaint
 
 V =		2.0.2

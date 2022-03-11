@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT=		icons mainly for use in Window Maker
 
 DISTNAME=		wmicons-1.0

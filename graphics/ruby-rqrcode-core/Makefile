@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/27 04:10:51 kmos Exp $
-
 COMMENT =		library to encode QR Codes
 
 DISTNAME =		rqrcode_core-1.1.0

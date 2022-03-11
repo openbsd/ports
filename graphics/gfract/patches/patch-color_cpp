@@ -1,5 +1,3 @@
-$OpenBSD: patch-color_cpp,v 1.1 2017/05/24 19:33:53 espie Exp $
-
 Index: color.cpp
 --- color.cpp.orig
 +++ color.cpp

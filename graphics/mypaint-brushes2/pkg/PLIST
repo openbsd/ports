@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/12 20:33:11 pamela Exp $
 share/mypaint-data/
 share/mypaint-data/2.0/
 share/mypaint-data/2.0/brushes/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:22 sthen Exp $
-
 COMMENT=	module to determine the size of images in several formats
 
 DISTNAME=	Image-Size-3.300

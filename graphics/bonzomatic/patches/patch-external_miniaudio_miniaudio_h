@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_miniaudio_miniaudio_h,v 1.1 2021/02/04 17:01:26 kn Exp $
-
 XXX work around crash at exit:
 
 Program terminated with signal SIGSEGV, Segmentation fault.

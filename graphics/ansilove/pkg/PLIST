@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/11 09:35:00 kirby Exp $
 @bin bin/ansilove
 @man man/man1/ansilove.1

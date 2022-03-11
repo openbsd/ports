@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2015/05/28 06:59:14 ajacoutot Exp $
 @conflict libpsl-*
 @pkgpath graphics/gmt
 bin/GMT

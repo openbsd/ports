@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:59 sthen Exp $
-
 COMMENT=	handle GIF89a transparent option and interlace mode
 
 DISTNAME=	giftrans

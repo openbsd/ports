@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2007/05/21 14:24:06 jasper Exp $
 --- src/Makefile.in.orig	Mon Oct  9 06:01:09 2006
 +++ src/Makefile.in	Mon May 21 14:48:56 2007
 @@ -218,7 +218,7 @@ INCLUDES = \

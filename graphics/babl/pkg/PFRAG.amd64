@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.amd64,v 1.1 2022/02/22 15:48:52 ajacoutot Exp $
 @so lib/babl-${API_VERSION}/x86-64-v2-CIE.so
 @so lib/babl-${API_VERSION}/x86-64-v2-cairo.so
 @so lib/babl-${API_VERSION}/x86-64-v2-double.so

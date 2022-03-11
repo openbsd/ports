@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT=	defines RGB values for common color names
 
 DISTNAME=	Graphics-ColorNames-2.11

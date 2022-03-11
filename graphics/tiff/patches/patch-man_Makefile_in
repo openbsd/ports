@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_Makefile_in,v 1.18 2021/05/06 15:28:48 landry Exp $
-
 Replace .3tiff man page suffix with standard .3
 
 Index: man/Makefile.in

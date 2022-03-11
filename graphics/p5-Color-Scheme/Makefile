@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT =	generate pleasant color schemes in Perl
 
 DISTNAME =	Color-Scheme-1.07

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2006/11/20 09:35:48 ajacoutot Exp $
-
 LIB=	glpng
 SRCS=	glpng.c
 

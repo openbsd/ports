@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:46:56 sthen Exp $
-
 COMMENT=	ascii art library
 
 DISTNAME=	aalib-1.4rc5

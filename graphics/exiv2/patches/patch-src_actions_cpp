@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_actions_cpp,v 1.7 2021/11/03 06:54:05 ajacoutot Exp $
-
 XXX
 "By default pthread mutexes aren't recursive, this would be a problem if exiv2
 actually wants recursive mutexes.  With no static initializer for this type of

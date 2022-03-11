@@ -1,4 +1,3 @@
-$OpenBSD: patch-libpng-config_in,v 1.1 2013/06/03 02:46:25 naddy Exp $
 --- libpng-config.in.orig	Wed Mar 27 21:21:26 2013
 +++ libpng-config.in	Sat Jun  1 22:22:21 2013
 @@ -16,8 +16,8 @@ prefix="@prefix@"

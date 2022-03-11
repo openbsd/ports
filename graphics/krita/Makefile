@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2022/01/07 12:16:21 rsadowski Exp $
-
 COMMENT =	advanced drawing and image manipulation
 
 VERSION =	5.0.2

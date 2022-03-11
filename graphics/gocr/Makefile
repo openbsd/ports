@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:00 sthen Exp $
-
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
 

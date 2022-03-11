@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/09 04:48:31 thfr Exp $
-
 PORTROACH =	limit:^[0-9]
 
 COMMENT =	reference front-end for GLSL and ESSL

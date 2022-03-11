@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/03 13:27:21 ajacoutot Exp $
 include/cairomm-1.16/
 include/cairomm-1.16/cairomm/
 include/cairomm-1.16/cairomm/cairomm.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/25 04:38:01 jsg Exp $
-
 COMMENT=	OpenGL API/window system abstraction
 DISTNAME=	waffle-1.6.3
 CATEGORIES=	x11 graphics

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_mak,v 1.6 2021/05/08 14:45:02 sthen Exp $
-
 Index: src/common.mak
 --- src/common.mak.orig
 +++ src/common.mak

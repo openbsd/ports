@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/04/29 03:57:55 rsadowski Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe

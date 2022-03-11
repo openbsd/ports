@@ -1,5 +1,3 @@
-$OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.7 2022/03/05 14:35:47 sthen Exp $
-
 Don't use malloc.h header on OpenBSD.
 
 Index: intern/guardedalloc/intern/mallocn_intern.h

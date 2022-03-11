@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/27 13:37:24 sthen Exp $
-
 COMMENT=		c++ library for common image format
 
 DISTNAME=		FreeImage3152

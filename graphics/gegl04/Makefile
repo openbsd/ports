@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2022/02/22 15:49:05 ajacoutot Exp $
-
 COMMENT=		graph based image processing framework (API version 0.4)
 
 V=			0.4.36

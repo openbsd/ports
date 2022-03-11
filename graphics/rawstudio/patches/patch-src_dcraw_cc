@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_dcraw_cc,v 1.3 2018/04/16 23:23:18 schwarze Exp $
-
 fix CVE-2015-3885
 const correct.
 fix evaluation order.

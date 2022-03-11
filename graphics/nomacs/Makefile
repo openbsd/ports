@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/28 08:50:30 rsadowski Exp $
-
 COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs

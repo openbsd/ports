@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.195 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince

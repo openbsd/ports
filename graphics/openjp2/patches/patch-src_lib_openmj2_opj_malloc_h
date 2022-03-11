@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_lib_openmj2_opj_malloc_h,v 1.3 2017/09/06 14:20:43 sthen Exp $
 Index: src/lib/openmj2/opj_malloc.h
 --- src/lib/openmj2/opj_malloc.h.orig
 +++ src/lib/openmj2/opj_malloc.h

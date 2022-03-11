@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.107 2022/03/05 14:35:47 sthen Exp $
-
 ONLY_FOR_ARCHS = amd64
 DPB_PROPERTIES = parallel
 

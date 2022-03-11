@@ -1,5 +1,3 @@
-$OpenBSD: patch-loader_vk_loader_platform_h,v 1.5 2021/12/09 04:48:32 thfr Exp $
-
 stub loader_platform_executable_path()
 
 Index: loader/vk_loader_platform.h

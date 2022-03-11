@@ -1,4 +1,3 @@
-$OpenBSD: patch-png2ico_cpp,v 1.2 2018/10/28 06:11:53 bentley Exp $
 Index: png2ico.cpp
 --- png2ico.cpp.orig
 +++ png2ico.cpp

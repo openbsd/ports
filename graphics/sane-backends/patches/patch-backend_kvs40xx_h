@@ -1,5 +1,3 @@
-$OpenBSD: patch-backend_kvs40xx_h,v 1.3 2019/08/03 12:56:09 ajacoutot Exp $
-
 Index: backend/kvs40xx.h
 --- backend/kvs40xx.h.orig
 +++ backend/kvs40xx.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/02 14:26:22 landry Exp $
 bin/mapivi
 share/mapivi/
 share/mapivi/PlugIns/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_FindWebP_cmake,v 1.1 2021/06/19 04:17:24 rsadowski Exp $
-
 Index: modules/FindWebP.cmake
 --- modules/FindWebP.cmake.orig
 +++ modules/FindWebP.cmake

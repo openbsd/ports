@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/04 09:55:58 bluhm Exp $
 ${P5SITE}/Geometry/
 ${P5SITE}/Geometry/Primitive/
 ${P5SITE}/Geometry/Primitive.pm

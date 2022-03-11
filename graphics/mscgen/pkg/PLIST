@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/06 12:44:39 jasper Exp $
 @bin bin/mscgen
 @man man/man1/mscgen.1
 share/doc/mscgen/

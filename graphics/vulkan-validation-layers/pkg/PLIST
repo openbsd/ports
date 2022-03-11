@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/07/07 08:08:08 thfr Exp $
 @so lib/libVkLayer_khronos_validation.so
 @static-lib lib/libVkLayer_utils.a
 share/vulkan/

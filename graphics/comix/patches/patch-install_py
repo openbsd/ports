@@ -1,5 +1,3 @@
-$OpenBSD: patch-install_py,v 1.5 2019/05/02 16:15:47 sthen Exp $
-
 install files in the right place, and don't try to run
 update-mime-database and gconftool-2, will be done in fake.
 

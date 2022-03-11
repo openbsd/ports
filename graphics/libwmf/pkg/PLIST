@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:48 naddy Exp $
 bin/libwmf-config
 bin/libwmf-fontmap
 @bin bin/wmf2eps

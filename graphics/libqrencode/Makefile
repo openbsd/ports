@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/21 17:11:06 sthen Exp $
-
 COMMENT=		library for encoding data in a QR Code symbol
 
 DISTNAME=		qrencode-4.1.1

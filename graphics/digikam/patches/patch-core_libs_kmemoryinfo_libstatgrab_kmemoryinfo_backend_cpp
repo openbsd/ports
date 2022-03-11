@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_libs_kmemoryinfo_libstatgrab_kmemoryinfo_backend_cpp,v 1.2 2021/12/16 20:58:29 rsadowski Exp $
-
 Index: core/libs/kmemoryinfo/libstatgrab/kmemoryinfo_backend.cpp
 --- core/libs/kmemoryinfo/libstatgrab/kmemoryinfo_backend.cpp.orig
 +++ core/libs/kmemoryinfo/libstatgrab/kmemoryinfo_backend.cpp

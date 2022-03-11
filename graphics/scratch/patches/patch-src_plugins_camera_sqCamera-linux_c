@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_camera_sqCamera-linux_c,v 1.1 2013/05/14 09:42:47 sthen Exp $
-
 Use libc instead of libv4l
 Fix bpp calc bug
 Quash compiler warnings

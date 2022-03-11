@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/28 16:34:02 sdk Exp $
-
 COMMENT =	monitor GPU utilization for R600 and up
 
 GH_ACCOUNT =	clbr

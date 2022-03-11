@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/09/17 04:45:56 rsadowski Exp $
-
 COMMENT =	PGF image format handling library
 V =		7.19.3
 DISTNAME =	libPGF-codec-and-console-src

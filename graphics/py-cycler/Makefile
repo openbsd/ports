@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/18 09:45:08 sthen Exp $
-
 COMMENT =		composable style cycles
 
 MODPY_EGG_VERSION =	0.11.0

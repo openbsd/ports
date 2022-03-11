@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cmsmtrx_c,v 1.5 2008/06/10 00:42:40 okan Exp $
 --- src/cmsmtrx.c.orig	Fri Jul 27 06:00:02 2007
 +++ src/cmsmtrx.c	Sun Jun  1 03:22:48 2008
 @@ -799,9 +799,9 @@ void MAT3fromFix(LPMAT3 r, LPWMAT3 v)

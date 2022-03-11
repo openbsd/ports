@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/26 10:14:14 czarkoff Exp $
 @bin bin/quirc-demo
 @bin bin/quirc-scanner
 include/quirc.h

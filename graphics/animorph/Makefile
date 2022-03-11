@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:56 sthen Exp $
-
 COMMENT=	morphing engine
 
 DISTNAME=	animorph-0.3

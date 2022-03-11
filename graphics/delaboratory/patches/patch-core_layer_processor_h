@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_layer_processor_h,v 1.1 2021/03/16 16:35:54 naddy Exp $
-
 Index: core/layer_processor.h
 --- core/layer_processor.h.orig
 +++ core/layer_processor.h

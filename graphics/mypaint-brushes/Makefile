@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/18 14:48:05 sthen Exp $
-
 COMMENT =	brushes used by software using libmypaint
 
 # at least as of gimp-2.10.18, mypaint-brushes-2.x are not yet supported

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_celeste_CMakeLists_txt,v 1.1 2019/01/21 17:35:34 kirby Exp $
-
 Index: src/celeste/CMakeLists.txt
 --- src/celeste/CMakeLists.txt.orig
 +++ src/celeste/CMakeLists.txt

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/22 22:44:27 jca Exp $
-
 COMMENT =		pic-like interpreter for producing line graphics
 
 DISTNAME =		dpic-2021.01.01

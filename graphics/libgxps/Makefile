@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/27 07:13:02 ajacoutot Exp $
-
 COMMENT=		GObject library for handling and rendering XPS documents
 
 GNOME_PROJECT=		libgxps

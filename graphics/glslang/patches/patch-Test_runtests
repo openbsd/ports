@@ -1,5 +1,3 @@
-$OpenBSD: patch-Test_runtests,v 1.2 2020/07/07 08:08:04 thfr Exp $
-
 Index: Test/runtests
 --- Test/runtests.orig
 +++ Test/runtests

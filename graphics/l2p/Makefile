@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:01 sthen Exp $
-
 COMMENT=		create PNG images from LaTeX expressions
 
 DISTNAME=		l2p-1.1.1

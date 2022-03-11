@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.115 2020/06/09 07:14:44 jasper Exp $
-
 COMMENT=		technical diagrams drawing tool
 
 GNOME_PROJECT=		dia

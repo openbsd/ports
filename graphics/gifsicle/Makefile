@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/07/02 09:21:39 benoit Exp $
-
 COMMENT =	creating & editing GIF images and animations
 
 DISTNAME =	gifsicle-1.93

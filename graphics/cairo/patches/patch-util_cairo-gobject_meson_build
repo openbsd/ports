@@ -1,5 +1,3 @@
-$OpenBSD: patch-util_cairo-gobject_meson_build,v 1.1 2021/10/25 07:21:40 ajacoutot Exp $
-
 From e9ccb1d8d095482e4139da658e679d5aad56b184 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Tim-Philipp=20M=C3=BCller?= <tim@centricular.com>
 Date: Tue, 15 Dec 2020 00:12:55 +0000

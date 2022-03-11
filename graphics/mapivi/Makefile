@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:03 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	image viewer and organizer

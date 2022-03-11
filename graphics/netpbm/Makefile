@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2022/02/26 22:36:48 naddy Exp $
-
 COMMENT=	toolkit for manipulation and conversion of graphic images
 
 DISTNAME=	netpbm-10.97.04

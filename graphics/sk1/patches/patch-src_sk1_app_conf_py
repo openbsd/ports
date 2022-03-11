@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sk1_app_conf_py,v 1.1.1.1 2018/07/16 19:50:36 rsadowski Exp $
-
 Index: src/sk1/app_conf.py
 --- src/sk1/app_conf.py.orig
 +++ src/sk1/app_conf.py

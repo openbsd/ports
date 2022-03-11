@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_object_object-set_cpp,v 1.1 2021/10/28 11:01:03 rsadowski Exp $
-
 Index: src/object/object-set.cpp
 --- src/object/object-set.cpp.orig
 +++ src/object/object-set.cpp

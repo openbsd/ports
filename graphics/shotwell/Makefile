@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.116 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.30.14

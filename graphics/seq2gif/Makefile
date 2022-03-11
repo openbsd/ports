@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/05 13:22:11 stsp Exp $
-
 COMMENT =	convert ttyrec recording into an animated gif
 
 # Available releases are severely outdated, unfortunately.

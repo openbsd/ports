@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT =		SVG scrubber
 MODPY_EGG_VERSION =	0.35
 REVISION =		5

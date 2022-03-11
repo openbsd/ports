@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/25 22:26:02 sthen Exp $
-
 COMMENT =	module for 3D graph plotting
 
 VERSION =	0.63

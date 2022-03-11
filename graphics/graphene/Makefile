@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/04/06 21:06:55 ajacoutot Exp $
-
 COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene

@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs_CMakeLists_txt,v 1.2 2017/01/31 09:58:35 sthen Exp $
 1. This directory is already covered by BUILD_DOC option, so
    no reason to not to add "doc" target in build-by-default list;
 2. Actually depend on configured file, CMake already takes care on

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/03/20 16:44:24 naddy Exp $
-
 COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src

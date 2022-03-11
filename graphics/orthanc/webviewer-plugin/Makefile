@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/30 19:25:57 jasper Exp $
-
 COMMENT =		web viewer plugin for Orthanc
 
 VERSION =		2.3

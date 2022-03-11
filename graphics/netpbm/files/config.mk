@@ -1,4 +1,3 @@
-# $OpenBSD: config.mk,v 1.3 2022/02/26 22:36:48 naddy Exp $
 # Indented variables are unchanged from the defaults in config.mk.in.
 # Commented out variables are set in MAKE_FLAGS.
 #

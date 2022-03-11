@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_waffle_CMakeLists_txt,v 1.2 2021/02/25 04:38:01 jsg Exp $
 Index: src/waffle/CMakeLists.txt
 --- src/waffle/CMakeLists.txt.orig
 +++ src/waffle/CMakeLists.txt

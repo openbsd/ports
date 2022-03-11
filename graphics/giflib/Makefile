@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:59 sthen Exp $
-
 COMMENT=	tools and library routines for working with GIF images
 
 DISTNAME=	giflib-5.1.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2019/11/14 17:29:29 fcambus Exp $
-
 COMMENT=	CAD drawing program for X11
 
 # print/transfig usually needs to be in-sync

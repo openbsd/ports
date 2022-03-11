@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT = 		Python charting module
 
 MODPY_EGG_VERSION =	0.8.1

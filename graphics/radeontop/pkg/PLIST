@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/12/28 16:34:02 sdk Exp $
 @bin bin/radeontop
 @lib lib/libradeontop_xcb.so.${LIBradeontop_xcb_VERSION}
 @man man/man1/radeontop.1

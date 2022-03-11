@@ -1,4 +1,3 @@
-$OpenBSD: patch-dcraw_cc,v 1.5 2019/06/10 14:57:59 cwen Exp $
 - fix narrowing on archs where char is unsigned by default (ppc, arm)
 - can't find abs of uint with clang
   fix stolen from ufraw-current

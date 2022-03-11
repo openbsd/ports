@@ -1,4 +1,3 @@
-$OpenBSD: patch-v4l2uvc_h,v 1.2 2017/05/12 23:09:25 espie Exp $
 Index: v4l2uvc.h
 --- v4l2uvc.h.orig
 +++ v4l2uvc.h

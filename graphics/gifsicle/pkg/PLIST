@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/05/10 12:38:00 okan Exp $
 @pkgpath graphics/gifsicle,no_x11
 @bin bin/gifdiff
 @bin bin/gifsicle

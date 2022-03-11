@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2018/11/18 16:02:07 ajacoutot Exp $
 @bin bin/gtkam
 @man man/man1/gtkam.1
 share/applications/gtkam.desktop

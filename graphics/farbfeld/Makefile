@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:58 sthen Exp $
-
 COMMENT =	lossless, uncompressed graphics format
 DISTNAME =	farbfeld-4
 CATEGORIES =	graphics converters

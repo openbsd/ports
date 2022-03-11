@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_NumberUtils_h,v 1.3 2022/03/05 11:30:10 sthen Exp $
-
 Fix build failure
 
 Index: src/utils/NumberUtils.h

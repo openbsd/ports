@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT =	Cairo backend for Graphics::Primitive
 
 DISTNAME =	Graphics-Primitive-Driver-Cairo-0.47

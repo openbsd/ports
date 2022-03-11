@@ -1,5 +1,3 @@
-$OpenBSD: patch-gegl_opencl_cl_platform_h,v 1.1 2021/01/21 19:22:52 jasper Exp $
-
 Don't include altivec.h as this break the build on powerpc64.
 
 Index: gegl/opencl/cl_platform.h

@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs_vcdimager_texi,v 1.1 2015/06/04 06:26:29 ajacoutot Exp $
 --- docs/vcdimager.texi.orig	Thu Jun  4 08:25:07 2015
 +++ docs/vcdimager.texi	Thu Jun  4 08:25:20 2015
 @@ -62,7 +62,6 @@ in the section entitled ``GNU Free Documentation Licen

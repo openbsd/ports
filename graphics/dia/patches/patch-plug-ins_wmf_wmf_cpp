@@ -1,5 +1,3 @@
-$OpenBSD: patch-plug-ins_wmf_wmf_cpp,v 1.1 2020/08/08 22:12:00 jca Exp $
-
 Only link with gdi32 on Windows.
 
 Index: plug-ins/wmf/wmf.cpp

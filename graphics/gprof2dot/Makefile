@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:15 sthen Exp $
-
 COMMENT=		convert profilers output into a dot(1) graph
 
 GH_ACCOUNT=		jrfonseca

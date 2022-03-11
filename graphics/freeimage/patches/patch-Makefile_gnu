@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_gnu,v 1.3 2018/11/19 18:46:16 naddy Exp $
 Index: Makefile.gnu
 --- Makefile.gnu.orig
 +++ Makefile.gnu

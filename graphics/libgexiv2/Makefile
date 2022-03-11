@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/11/02 00:01:15 sthen Exp $
-
 COMMENT=		GObject wrapper around exiv2
 
 GNOME_VERSION=		0.14.0

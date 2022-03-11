@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeModules_FindOpenEXR_cmake,v 1.2 2022/01/04 10:36:37 kirby Exp $
-
 Fix build with OpeEXR>=3
 
 Index: CMakeModules/FindOpenEXR.cmake

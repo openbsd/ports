@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui_wx_semaphore_cc,v 1.1 2021/03/16 16:35:54 naddy Exp $
-
 Index: gui_wx/semaphore.cc
 --- gui_wx/semaphore.cc.orig
 +++ gui_wx/semaphore.cc

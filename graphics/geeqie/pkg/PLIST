@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/01/24 18:43:28 ajacoutot Exp $
 @conflict gqview-*
 @pkgpath graphics/gqview
 @bin bin/geeqie

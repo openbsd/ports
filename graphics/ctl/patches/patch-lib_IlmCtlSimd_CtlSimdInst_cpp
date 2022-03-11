@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_IlmCtlSimd_CtlSimdInst_cpp,v 1.1 2019/08/18 20:44:12 ajacoutot Exp $
-
 Fix build with ilmbase >= 2.3.0
 
 Index: lib/IlmCtlSimd/CtlSimdInst.cpp

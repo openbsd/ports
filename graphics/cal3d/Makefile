@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:57 sthen Exp $
-
 COMMENT =	skeletal based character animation library
 DISTNAME =	cal3d-0.11.0
 REVISION =	7

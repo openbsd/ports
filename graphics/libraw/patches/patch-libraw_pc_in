@@ -1,5 +1,3 @@
-$OpenBSD: patch-libraw_pc_in,v 1.3 2020/08/22 08:21:40 rsadowski Exp $
-
 Do not hardcode -lstdc++ (symbol mismatch with libc++abi and libestdc++).
 
 Index: libraw.pc.in

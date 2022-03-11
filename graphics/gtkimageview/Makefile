@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:00 sthen Exp $
-
 COMMENT=	image viewer widget for gtk
 
 DISTNAME=	gtkimageview-1.6.4

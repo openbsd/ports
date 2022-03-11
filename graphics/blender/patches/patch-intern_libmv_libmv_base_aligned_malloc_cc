@@ -1,4 +1,3 @@
-$OpenBSD: patch-intern_libmv_libmv_base_aligned_malloc_cc,v 1.3 2022/03/05 14:35:47 sthen Exp $
 Index: intern/libmv/libmv/base/aligned_malloc.cc
 --- intern/libmv/libmv/base/aligned_malloc.cc.orig
 +++ intern/libmv/libmv/base/aligned_malloc.cc

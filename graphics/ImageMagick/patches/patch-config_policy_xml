@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_policy_xml,v 1.7 2022/02/11 16:34:27 sthen Exp $
-
 Index: config/policy.xml
 --- config/policy.xml.orig
 +++ config/policy.xml

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT =	device and library agnostic graphic primitives for Perl
 
 DISTNAME =	Graphics-Primitive-0.67

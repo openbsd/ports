@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_cmocka_include_cmocka_h,v 1.2 2021/02/25 04:38:01 jsg Exp $
-
 Avoid a conflicting typedef on 32-bit arch.
 
 Index: third_party/cmocka/include/cmocka.h

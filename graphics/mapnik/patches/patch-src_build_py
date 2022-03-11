@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_build_py,v 1.8 2021/09/04 08:37:51 kirby Exp $
 Index: src/build.py
 --- src/build.py.orig
 +++ src/build.py

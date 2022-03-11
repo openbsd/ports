@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/14 15:08:18 benoit Exp $
 ${P5SITE}/Chart/
 ${P5SITE}/Chart.pod
 ${P5SITE}/Chart/Bars.pm

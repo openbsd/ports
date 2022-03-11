@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:47:12 sthen Exp $
-
 COMMENT =	X11 pixel color grabber
 
 DISTNAME =	xoris-0.1e

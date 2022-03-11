@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_Makefile_in,v 1.14 2021/05/06 15:28:48 landry Exp $
-
 Avoid picking up an old libtiff in ${LOCALBASE}.
 
 Index: test/Makefile.in

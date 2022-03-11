@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_man1_gocr_1,v 1.2 2009/08/12 15:23:56 ajacoutot Exp $
 --- man/man1/gocr.1.orig	Sun Mar 29 17:56:14 2009
 +++ man/man1/gocr.1	Fri Aug  7 15:13:59 2009
 @@ -150,8 +150,8 @@ This man page documents \fBgocr\fR, version 0.41.

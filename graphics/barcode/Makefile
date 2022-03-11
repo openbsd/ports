@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/07 15:04:49 naddy Exp $
-
 COMMENT=		convert text strings to printed bars
 
 DISTNAME=		barcode-0.99

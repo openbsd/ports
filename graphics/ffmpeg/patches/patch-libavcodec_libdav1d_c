@@ -1,5 +1,3 @@
-$OpenBSD: patch-libavcodec_libdav1d_c,v 1.8 2021/11/20 14:34:35 sthen Exp $
-
 - avcodec/libdav1d: pass auto threads value to libdav1d
 - avcodec/libdav1d: let libdav1d choose optimal max frame delay
 

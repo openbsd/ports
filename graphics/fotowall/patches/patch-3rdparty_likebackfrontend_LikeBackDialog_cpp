@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_likebackfrontend_LikeBackDialog_cpp,v 1.1 2020/02/27 05:36:01 rsadowski Exp $
-
 Index: 3rdparty/likebackfrontend/LikeBackDialog.cpp
 --- 3rdparty/likebackfrontend/LikeBackDialog.cpp.orig
 +++ 3rdparty/likebackfrontend/LikeBackDialog.cpp

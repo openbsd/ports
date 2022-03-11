@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_interface_aux_c,v 1.1 2021/02/23 20:03:28 naddy Exp $
-
 https://github.com/carlobaldassi/gimp-lqr-plugin/commit/ae3464a82e1395fc577cc94999bdc7c4a7bb35f1
 
 Index: src/interface_aux.c

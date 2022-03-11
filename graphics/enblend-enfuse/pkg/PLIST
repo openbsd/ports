@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/24 08:16:03 kirby Exp $
 @bin bin/enblend
 @bin bin/enfuse
 @man man/man1/enblend.1

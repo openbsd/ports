@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_BodySettings_cpp,v 1.1 2018/11/29 20:41:54 naddy Exp $
-
 Index: src/BodySettings.cpp
 --- src/BodySettings.cpp.orig
 +++ src/BodySettings.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/30 09:57:29 sthen Exp $
-
 COMMENT =		fractal image generator
 
 MODPY_EGG_VERSION =	4.3

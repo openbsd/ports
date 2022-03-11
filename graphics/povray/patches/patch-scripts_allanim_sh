@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_allanim_sh,v 1.1 2011/07/07 14:45:22 jasper Exp $
 --- scripts/allanim.sh.orig	Thu Jul  7 16:34:17 2011
 +++ scripts/allanim.sh	Thu Jul  7 16:35:51 2011
 @@ -27,16 +27,16 @@

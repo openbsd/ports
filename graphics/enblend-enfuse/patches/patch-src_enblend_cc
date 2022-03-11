@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_enblend_cc,v 1.5 2016/11/24 08:16:03 kirby Exp $
 --- src/enblend.cc.orig	Sun Nov 20 21:55:15 2016
 +++ src/enblend.cc	Sun Nov 20 21:55:28 2016
 @@ -1827,10 +1827,6 @@ int main(int argc, char** argv)

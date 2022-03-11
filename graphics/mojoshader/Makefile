@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/01/07 16:39:55 kmos Exp $
-
 COMMENT =	library to move Direct3D shader calls to OpenGL
 
 DISTNAME =	mojoshader-0.0.0.20211124

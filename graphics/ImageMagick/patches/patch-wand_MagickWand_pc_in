@@ -1,5 +1,3 @@
-$OpenBSD: patch-wand_MagickWand_pc_in,v 1.9 2021/03/01 20:42:10 sthen Exp $
-
 Index: wand/MagickWand.pc.in
 --- wand/MagickWand.pc.in.orig
 +++ wand/MagickWand.pc.in

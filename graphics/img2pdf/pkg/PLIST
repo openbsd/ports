@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/21 20:51:35 sthen Exp $
 bin/img2pdf
 bin/img2pdf-gui
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/

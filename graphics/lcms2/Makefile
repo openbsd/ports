@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/19 21:14:49 ajacoutot Exp $
-
 COMMENT =		color management library
 
 DISTNAME =		lcms2-2.12

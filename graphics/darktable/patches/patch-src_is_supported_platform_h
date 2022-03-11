@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_is_supported_platform_h,v 1.4 2021/07/08 20:39:54 sthen Exp $
-
 Index: src/is_supported_platform.h
 --- src/is_supported_platform.h.orig
 +++ src/is_supported_platform.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/08/31 07:31:13 ajacoutot Exp $
-
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8

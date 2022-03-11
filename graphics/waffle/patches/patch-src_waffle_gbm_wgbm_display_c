@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_waffle_gbm_wgbm_display_c,v 1.3 2021/02/25 04:38:01 jsg Exp $
 Index: src/waffle/gbm/wgbm_display.c
 --- src/waffle/gbm/wgbm_display.c.orig
 +++ src/waffle/gbm/wgbm_display.c

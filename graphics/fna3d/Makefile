@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/08 16:22:00 thfr Exp $
-
 # versions are in sync with FNA versions
 V =		22.01
 COMMENT =	3D graphics library for FNA

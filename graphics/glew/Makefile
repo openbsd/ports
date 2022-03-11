@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/10/08 20:18:25 sthen Exp $
-
 # no libGL (toolchain issue)
 NOT_FOR_ARCHS=	m88k
 

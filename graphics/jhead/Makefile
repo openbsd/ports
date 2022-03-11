@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/04 15:12:29 mestre Exp $
-
 COMMENT =	Exif jpeg camera setting parser and thumbnail remover
 
 GH_ACCOUNT =	Matthias-Wandel

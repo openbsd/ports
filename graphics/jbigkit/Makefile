@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:47:01 sthen Exp $
-
 COMMENT =	lossless image compression library, with lightweight version
 
 DISTNAME =	jbigkit-2.1

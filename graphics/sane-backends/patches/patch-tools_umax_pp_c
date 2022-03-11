@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_umax_pp_c,v 1.1 2012/08/28 08:26:40 ajacoutot Exp $
-
 umax_pp.c:330: warning: implicit declaration of function 'putenv'
 
 --- tools/umax_pp.c.orig	Tue Aug 28 09:29:19 2012

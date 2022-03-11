@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/03/10 12:03:31 kn Exp $
-
 COMMENT =		QR Code generator library
 GH_ACCOUNT =		nayuki
 GH_PROJECT =		QR-Code-generator

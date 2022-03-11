@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:03 sthen Exp $
-
 COMMENT=		V4L compatible video application
 
 DISTNAME=		luvcview-20070512

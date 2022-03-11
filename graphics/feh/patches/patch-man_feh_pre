@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_feh_pre,v 1.53 2022/02/19 21:30:49 bcallah Exp $
 Index: man/feh.pre
 --- man/feh.pre.orig
 +++ man/feh.pre

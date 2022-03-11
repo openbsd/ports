@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_jbig2dec_py,v 1.2 2022/01/14 20:55:44 sthen Exp $
-
 Index: test_jbig2dec.py
 --- test_jbig2dec.py.orig
 +++ test_jbig2dec.py

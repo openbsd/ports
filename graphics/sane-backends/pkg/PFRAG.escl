@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.escl,v 1.1 2021/04/25 06:54:52 ajacoutot Exp $
 @so lib/sane/libsane-escl.so
 @man man/man5/sane-escl.5
 share/examples/sane-backends/sane.d/escl.conf

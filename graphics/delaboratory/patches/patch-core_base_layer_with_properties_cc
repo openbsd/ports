@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_base_layer_with_properties_cc,v 1.1 2021/03/16 16:35:54 naddy Exp $
-
 Index: core/base_layer_with_properties.cc
 --- core/base_layer_with_properties.cc.orig
 +++ core/base_layer_with_properties.cc

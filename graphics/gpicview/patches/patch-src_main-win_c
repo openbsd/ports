@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_main-win_c,v 1.3 2017/05/02 15:18:31 espie Exp $
-
 Index: src/main-win.c
 --- src/main-win.c.orig
 +++ src/main-win.c

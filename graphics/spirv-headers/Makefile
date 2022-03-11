@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/09 04:48:31 thfr Exp $
-
 COMMENT =	SPIRV-Headers
 
 V =		1.2.198.0

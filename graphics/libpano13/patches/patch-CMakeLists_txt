@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/08/16 10:15:15 sthen Exp $
-
 Make sure to link in libm.
 
 Index: CMakeLists.txt

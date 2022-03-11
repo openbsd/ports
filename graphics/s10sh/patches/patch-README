@@ -1,4 +1,3 @@
-$OpenBSD: patch-README,v 1.3 2002/12/30 08:44:36 pvalchev Exp $
 --- README.orig	Tue Mar 13 06:46:18 2001
 +++ README	Mon Dec 30 00:30:01 2002
 @@ -13,7 +13,9 @@ OVERVIEW

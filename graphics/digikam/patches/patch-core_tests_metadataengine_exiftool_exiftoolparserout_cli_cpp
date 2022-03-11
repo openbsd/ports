@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_tests_metadataengine_exiftool_exiftoolparserout_cli_cpp,v 1.1 2021/07/25 13:39:30 rsadowski Exp $
-
 Index: core/tests/metadataengine/exiftool/exiftoolparserout_cli.cpp
 --- core/tests/metadataengine/exiftool/exiftoolparserout_cli.cpp.orig
 +++ core/tests/metadataengine/exiftool/exiftoolparserout_cli.cpp

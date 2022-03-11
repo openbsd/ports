@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/11/21 17:11:06 sthen Exp $
 @bin bin/qrencode
 include/qrencode.h
 @static-lib lib/libqrencode.a

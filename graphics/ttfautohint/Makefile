@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/08/29 08:17:23 jasper Exp $
-
 COMMENT=		automated hinting process based on FreeType's autohinter #'
 
 DISTNAME =		ttfautohint-1.8.4

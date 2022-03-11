@@ -1,4 +1,3 @@
-$OpenBSD: patch-libtiff_tif_extension_c,v 1.6 2018/12/05 20:35:25 naddy Exp $
 Index: libtiff/tif_extension.c
 --- libtiff/tif_extension.c.orig
 +++ libtiff/tif_extension.c

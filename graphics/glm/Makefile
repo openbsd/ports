@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:59 sthen Exp $
-
 COMMENT=	C++ mathematics header-only library for OpenGL software
 
 GH_TAGNAME=	0.9.8.5

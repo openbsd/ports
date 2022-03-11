@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_pgm2asc_c,v 1.3 2009/08/12 15:23:56 ajacoutot Exp $
 --- src/pgm2asc.c.orig	Mon Jul 27 14:53:43 2009
 +++ src/pgm2asc.c	Fri Aug  7 15:13:59 2009
 @@ -1729,7 +1729,7 @@ int glue_broken_chars( pix *pp ){

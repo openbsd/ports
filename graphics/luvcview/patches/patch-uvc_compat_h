@@ -1,4 +1,3 @@
-$OpenBSD: patch-uvc_compat_h,v 1.1.1.1 2008/06/13 16:45:01 robert Exp $
 --- uvc_compat.h.orig	Fri Jun 13 00:36:47 2008
 +++ uvc_compat.h	Fri Jun 13 00:37:34 2008
 @@ -1,129 +1,2 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/14 16:03:44 rsadowski Exp $
-
 COMMENT =		constructive solid geometry rendering library
 
 V =			1.4.2

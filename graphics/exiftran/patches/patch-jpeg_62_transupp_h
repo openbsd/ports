@@ -1,4 +1,3 @@
-$OpenBSD: patch-jpeg_62_transupp_h,v 1.1 2016/04/26 20:47:25 robert Exp $
 --- jpeg/62/transupp.h.orig	Tue Apr  5 11:59:50 2016
 +++ jpeg/62/transupp.h	Tue Apr 26 22:43:35 2016
 @@ -1,7 +1,7 @@

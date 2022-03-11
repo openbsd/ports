@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/08/31 07:32:18 ajacoutot Exp $
-
 COMMENT =		image processing and analysis library
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 

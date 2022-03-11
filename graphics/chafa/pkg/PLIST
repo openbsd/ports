@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/10 20:18:11 tracey Exp $
 @bin bin/chafa
 include/chafa/
 include/chafa/chafa-canvas-config.h

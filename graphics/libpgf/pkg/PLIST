@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/17 04:45:56 rsadowski Exp $
 include/libpgf/
 include/libpgf/PGFimage.h
 include/libpgf/PGFplatform.h

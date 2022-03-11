@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT=		Python SANE module
 
 MODPY_EGG_VERSION=	2.9.1

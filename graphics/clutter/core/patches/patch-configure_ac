@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.3 2020/03/13 12:31:07 jasper Exp $
-
 - Don't do bash pattern substitutions
 
 Index: configure.ac

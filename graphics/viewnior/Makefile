@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT=		fast and simple image viewer
 
 DISTNAME=		viewnior-1.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/19 06:43:19 rsadowski Exp $
-
 COMMENT =	collaborative drawing program
 DISTNAME =	drawpile-2.1.17
 CATEGORIES =	graphics x11

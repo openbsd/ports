@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_modules_FindGLIB2_cmake,v 1.1 2017/01/31 09:58:35 sthen Exp $
 Avoid messing up between paths found by pkg-config and CMake itself.
 --- cmake/modules/FindGLIB2.cmake.orig	Sun Nov 15 18:07:26 2015
 +++ cmake/modules/FindGLIB2.cmake	Sun Jan 29 10:12:03 2017

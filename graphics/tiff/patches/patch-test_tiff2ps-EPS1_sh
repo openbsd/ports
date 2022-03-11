@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_tiff2ps-EPS1_sh,v 1.2 2021/03/16 15:34:23 landry Exp $
-
 Index: test/tiff2ps-EPS1.sh
 --- test/tiff2ps-EPS1.sh.orig
 +++ test/tiff2ps-EPS1.sh

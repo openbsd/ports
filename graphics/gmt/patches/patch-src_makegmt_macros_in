@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_makegmt_macros_in,v 1.2 2006/04/10 20:43:01 sturm Exp $
 --- src/makegmt.macros.in.orig	Sat Dec 17 05:53:05 2005
 +++ src/makegmt.macros.in	Wed Mar 29 21:31:58 2006
 @@ -85,7 +85,7 @@ NETCDF		 = @NETCDFHOME@

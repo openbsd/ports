@@ -1,4 +1,3 @@
-$OpenBSD: patch-web2png_1,v 1.3 2019/03/20 13:58:23 sthen Exp $
 Index: web2png.1
 --- web2png.1.orig
 +++ web2png.1

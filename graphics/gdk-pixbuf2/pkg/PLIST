@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.33 2021/04/24 08:06:30 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @define-tag update-gdk-pixbuf at-end %D/bin/gdk-pixbuf-query-loaders --update-cache

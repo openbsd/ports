@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/15 17:11:38 rsadowski Exp $
-
 COMMENT =	tool for annotating images
 
 V =		0.4.1

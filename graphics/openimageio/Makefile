@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2022/03/02 19:55:18 sthen Exp $
-
 # XXX python module is linked with wrong libraries if an old version is
 # installed during build
 

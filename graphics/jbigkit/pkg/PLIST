@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/13 08:53:10 ajacoutot Exp $
 @bin bin/jbgtopbm
 @bin bin/pbmtojbg
 include/jbig.h

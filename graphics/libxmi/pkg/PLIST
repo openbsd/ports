@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:48 naddy Exp $
 include/xmi.h
 @info info/libxmi.info
 lib/libxmi.a

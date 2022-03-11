@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:00 sthen Exp $
-
 COMMENT=	graphic counter language compiler/interpreter
 
 DISTNAME=	gracula-3.0

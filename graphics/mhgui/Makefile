@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:03 sthen Exp $
-
 COMMENT=	GUI widget library used in MakeHuman
 
 DISTNAME=	mhgui-0.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.45 2021/05/24 13:24:39 ajacoutot Exp $
 @bin bin/shotwell
 @lib lib/libshotwell-authenticator.so.${LIBshotwell-authenticator_VERSION}
 @lib lib/libshotwell-plugin-common.so.${LIBshotwell-plugin-common_VERSION}

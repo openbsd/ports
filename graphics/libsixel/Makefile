@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/09 18:14:11 fcambus Exp $
-
 COMMENT =	encoder/decoder implementation for DEC SIXEL graphics
 
 V =		1.8.6

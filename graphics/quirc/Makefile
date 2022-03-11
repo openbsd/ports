@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:09 sthen Exp $
-
 V =			1.0
 COMMENT =		QR decoder library
 DISTNAME =		libquirc-$V

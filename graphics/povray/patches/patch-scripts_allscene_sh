@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_allscene_sh,v 1.1 2011/07/07 14:45:22 jasper Exp $
 --- scripts/allscene.sh.orig	Thu Jul  7 16:34:21 2011
 +++ scripts/allscene.sh	Thu Jul  7 16:36:02 2011
 @@ -31,16 +31,16 @@

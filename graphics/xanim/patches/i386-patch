@@ -1,4 +1,3 @@
-$OpenBSD: i386-patch,v 1.5 2015/06/30 09:26:06 sthen Exp $
 --- Imakefile.orig2	Tue Jun 30 03:24:01 2015
 +++ Imakefile	Tue Jun 30 03:24:01 2015
 @@ -186,13 +186,13 @@ XCOMM  --    Creative   	CYUV	creative.readme

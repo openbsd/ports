@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:02 sthen Exp $
-
 COMMENT =		library for handling data matrix barcodes
 
 DISTNAME =		libdmtx-0.7.4

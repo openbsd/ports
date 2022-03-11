@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-ceb,v 1.2 2018/09/17 10:13:09 espie Exp $
 share/tessdata/
 share/tessdata/ceb.traineddata

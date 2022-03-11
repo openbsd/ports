@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/05/09 17:02:30 jasper Exp $
 @bin bin/gdcmanon
 @bin bin/gdcmconv
 @bin bin/gdcmdiff

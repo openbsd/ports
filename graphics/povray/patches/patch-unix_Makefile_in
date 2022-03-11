@@ -1,4 +1,3 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.1 2011/07/07 14:45:22 jasper Exp $
 --- unix/Makefile.in.orig	Thu Jul  7 16:27:51 2011
 +++ unix/Makefile.in	Thu Jul  7 16:27:53 2011
 @@ -90,8 +90,8 @@ C_INCLUDE_PATH = @C_INCLUDE_PATH@

@@ -1,4 +1,3 @@
-$OpenBSD: patch-makefile,v 1.2 2021/02/26 18:20:35 naddy Exp $
 Honour ${CC}
 --- makefile.orig	Sun May 15 20:25:19 2011
 +++ makefile	Sun May 15 20:25:25 2011

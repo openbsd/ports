@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_options_txt,v 1.1 2021/10/25 07:21:40 ajacoutot Exp $
-
 From 3468c67fe91f0c37e0ec5d335082653a6fa609b6 Mon Sep 17 00:00:00 2001
 From: "Jan Alexander Steffens (heftig)" <jan.steffens@gmail.com>
 Date: Thu, 25 Feb 2021 01:27:10 +0000

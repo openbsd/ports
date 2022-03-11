@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/21 23:47:52 okan Exp $
 @bin bin/jhead
 @man man/man1/jhead.1
 share/doc/jhead/

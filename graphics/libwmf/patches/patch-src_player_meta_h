@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_player_meta_h,v 1.1 2015/06/26 08:52:44 jasper Exp $
-
 Security fixes for CVE-2015-4695, CVE-2015-4696
 https://bugzilla.redhat.com/show_bug.cgi?id=1227243
 

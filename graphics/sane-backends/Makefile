@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.104 2022/01/21 07:09:33 ajacoutot Exp $
-
 BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends

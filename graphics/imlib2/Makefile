@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 20:47:00 sthen Exp $
-
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.4.10

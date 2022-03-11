@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_blender_blenlib_BLI_filereader_h,v 1.1 2022/03/05 14:35:47 sthen Exp $
-
 --- source/blender/blenlib/BLI_filereader.h.orig	Thu Mar  3 11:48:02 2022
 +++ source/blender/blenlib/BLI_filereader.h	Thu Mar  3 11:48:30 2022
 @@ -33,7 +33,7 @@

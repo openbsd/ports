@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_lensfun_cpuid_cpp,v 1.1 2018/04/07 08:13:48 rsadowski Exp $
-
 fix invalid suffix on literal with clang6
 
 Index: libs/lensfun/cpuid.cpp

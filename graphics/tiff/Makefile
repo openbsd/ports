@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.92 2021/05/06 15:28:48 landry Exp $
-
 COMMENT=	tools and library routines for working with TIFF images
 
 DISTNAME=	tiff-4.3.0

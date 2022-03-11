@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/01/18 21:00:26 sthen Exp $
 bin/xdot
 lib/python${MODPY_VERSION}/site-packages/xdot/
 lib/python${MODPY_VERSION}/site-packages/xdot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_window_c,v 1.3 2019/12/01 14:24:17 kirby Exp $
 Index: src/window.c
 --- src/window.c.orig
 +++ src/window.c

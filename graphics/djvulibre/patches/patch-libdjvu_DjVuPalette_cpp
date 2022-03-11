@@ -1,4 +1,3 @@
-$OpenBSD: patch-libdjvu_DjVuPalette_cpp,v 1.2 2021/10/20 16:31:58 mbuhl Exp $
 Index: libdjvu/DjVuPalette.cpp
 --- libdjvu/DjVuPalette.cpp.orig
 +++ libdjvu/DjVuPalette.cpp

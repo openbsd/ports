@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:45 naddy Exp $
 @pkgpath graphics/aalib,no_x11
 @bin bin/aafire
 @bin bin/aainfo

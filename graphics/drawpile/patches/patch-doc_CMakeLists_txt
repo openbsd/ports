@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2017/12/29 22:41:06 bcallah Exp $
-
 Install manual page to the correct location.
 
 Index: doc/CMakeLists.txt

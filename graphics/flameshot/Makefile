@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/17 07:47:31 sdk Exp $
-
 COMMENT =	powerful yet simple to use screenshot software
 CATEGORIES =	graphics x11
 

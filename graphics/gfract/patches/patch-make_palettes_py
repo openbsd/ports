@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_palettes_py,v 1.1 2021/03/10 16:33:17 daniel Exp $
-
 convert to python3
 
 Index: make_palettes.py

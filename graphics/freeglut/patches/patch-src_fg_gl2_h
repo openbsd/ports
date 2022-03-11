@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fg_gl2_h,v 1.1 2021/01/27 21:01:12 naddy Exp $
-
 fix for -fno-common
 https://sourceforge.net/p/freeglut/code/1863/
 

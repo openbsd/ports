@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT =	powerful charting library for Perl
 
 DISTNAME =	Chart-Clicker-2.90

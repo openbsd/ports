@@ -1,5 +1,3 @@
-$OpenBSD: patch-fract4d_fractconfig_py,v 1.1 2021/12/30 09:57:29 sthen Exp $
-
 Index: fract4d/fractconfig.py
 --- fract4d/fractconfig.py.orig
 +++ fract4d/fractconfig.py

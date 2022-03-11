@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ipeextract_ipeextract_cpp,v 1.2 2019/02/24 20:33:56 sthen Exp $
-
 Index: src/ipeextract/ipeextract.cpp
 --- src/ipeextract/ipeextract.cpp.orig
 +++ src/ipeextract/ipeextract.cpp

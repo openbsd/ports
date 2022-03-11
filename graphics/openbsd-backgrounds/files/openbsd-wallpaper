@@ -1,6 +1,5 @@
 #! /bin/sh
 #
-# $OpenBSD: openbsd-wallpaper,v 1.2 2019/06/11 10:34:13 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any

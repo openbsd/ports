@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2022/01/05 10:45:16 ajacoutot Exp $
-
 COMMENT=		digital camera command-line interface
 
 VERSION=		2.5.28

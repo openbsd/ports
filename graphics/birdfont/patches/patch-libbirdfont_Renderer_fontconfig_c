@@ -1,5 +1,3 @@
-$OpenBSD: patch-libbirdfont_Renderer_fontconfig_c,v 1.1 2021/05/02 12:13:10 jasper Exp $
-
 https://github.com/johanmattssonm/birdfont/commit/bca2f3462d422ffe4e5911f734ece63193a2f7ef
 
 Index: libbirdfont/Renderer/fontconfig.c

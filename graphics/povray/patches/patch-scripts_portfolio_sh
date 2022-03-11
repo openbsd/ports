@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_portfolio_sh,v 1.1 2011/07/07 14:45:22 jasper Exp $
 --- scripts/portfolio.sh.orig	Thu Jul  7 16:34:26 2011
 +++ scripts/portfolio.sh	Thu Jul  7 16:35:58 2011
 @@ -26,16 +26,16 @@

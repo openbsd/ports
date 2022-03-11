@@ -1,4 +1,3 @@
-$OpenBSD: patch-tiff2png_c,v 1.2 2014/04/01 10:20:33 jasper Exp $
 --- tiff2png.c.orig	Fri Sep 13 01:00:00 2002
 +++ tiff2png.c	Mon Mar 31 09:44:29 2014
 @@ -78,6 +78,7 @@

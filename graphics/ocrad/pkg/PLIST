@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/04 00:12:42 william Exp $
 @bin bin/ocrad
 @info info/ocrad.info
 @man man/man1/ocrad.1

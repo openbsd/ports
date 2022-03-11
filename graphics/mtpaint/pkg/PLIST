@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/27 21:03:54 espie Exp $
 @bin bin/mtpaint
 @man man/man1/mtpaint.1
 share/applications/mtpaint.desktop

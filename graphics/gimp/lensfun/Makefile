@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/12/09 10:28:02 sthen Exp $
-
 COMMENT =	gimp plugin for correcting lens distortion
 
 PKGNAME =	gimp-lensfun-plugin-$V

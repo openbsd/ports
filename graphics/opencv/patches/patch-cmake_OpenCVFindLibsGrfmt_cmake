@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_OpenCVFindLibsGrfmt_cmake,v 1.6 2021/04/24 05:22:56 rsadowski Exp $
 Index: cmake/OpenCVFindLibsGrfmt.cmake
 --- cmake/OpenCVFindLibsGrfmt.cmake.orig
 +++ cmake/OpenCVFindLibsGrfmt.cmake

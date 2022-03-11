@@ -1,5 +1,3 @@
-$OpenBSD: patch-layers_vk_loader_platform_h,v 1.3 2021/12/09 04:48:32 thfr Exp $
-
 Index: layers/vk_loader_platform.h
 --- layers/vk_loader_platform.h.orig
 +++ layers/vk_loader_platform.h

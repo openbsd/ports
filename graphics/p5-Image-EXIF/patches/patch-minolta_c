@@ -1,4 +1,3 @@
-$OpenBSD: patch-minolta_c,v 1.3 2014/07/12 18:36:53 giovanni Exp $
 --- minolta.c.orig	Fri May 11 19:03:30 2012
 +++ minolta.c	Sat Jul 12 19:40:37 2014
 @@ -484,10 +484,10 @@ minolta_cprop(struct exifprop *prop, unsigned char *of

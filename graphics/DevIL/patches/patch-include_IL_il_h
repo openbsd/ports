@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_IL_il_h,v 1.1 2017/05/07 12:49:54 espie Exp $
 restrict doesn't exist in C++
 
 Index: include/IL/il.h

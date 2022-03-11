@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/12/19 13:20:34 ajacoutot Exp $
-
 COMMENT=		OpenGL-based interactive canvas library
 
 GNOME_PROJECT=		clutter

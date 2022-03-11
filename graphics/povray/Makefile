@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2020/03/20 16:44:24 naddy Exp $
-
 COMMENT=	3D image rendering package
 
 DISTNAME=	povray-3.6.1

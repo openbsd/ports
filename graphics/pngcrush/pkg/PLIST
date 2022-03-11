@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/14 13:41:41 giovanni Exp $
 @bin bin/pngcrush

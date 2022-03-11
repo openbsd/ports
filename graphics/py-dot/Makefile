@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT=	Python interface to Graphviz's Dot#'
 
 MODPY_EGG_VERSION= 1.4.2

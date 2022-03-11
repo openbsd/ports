@@ -1,5 +1,3 @@
-$OpenBSD: patch-oflog_include_dcmtk_oflog_thread_syncpub_h,v 1.1 2018/04/10 19:07:40 jasper Exp $
-
 https://forum.dcmtk.org/viewtopic.php?f=3&t=4584
 
 Index: oflog/include/dcmtk/oflog/thread/syncpub.h

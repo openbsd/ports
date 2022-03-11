@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/28 19:56:50 rsadowski Exp $
-
 COMMENT =	qt-based color picker with popup menu
 
 V =		0.1.5

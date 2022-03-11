@@ -1,2 +1,1 @@
-# $OpenBSD: scratch,v 1.2 2013/05/14 09:42:47 sthen Exp $
 squeak -plugins ${SC_DIR}/Plugins ${SC_DIR}/Scratch.image

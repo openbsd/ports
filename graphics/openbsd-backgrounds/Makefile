@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/09/25 10:03:19 espie Exp $
-
 PKG_ARCH =	*
 COMMENT =	pictures for your background by OpenBSD developers
 CATEGORIES = 	graphics

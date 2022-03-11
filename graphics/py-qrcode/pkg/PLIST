@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/07/23 06:01:37 feinerer Exp $
 @conflict py-qrcode-*
 @pkgpath graphics/py-qrcode
 bin/qr

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT =		io for scientific data formats
 
 MODPY_EGG_VERSION =	2.6.1

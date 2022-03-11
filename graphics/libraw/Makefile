@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2020/10/26 18:15:37 rsadowski Exp $
-
 COMMENT =		library for reading RAW files
 
 DISTNAME =		LibRaw-0.20.2

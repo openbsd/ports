@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.21 2021/10/06 07:37:02 espie Exp $
-
 Index: etc/Makefile.in
 --- etc/Makefile.in.orig
 +++ etc/Makefile.in

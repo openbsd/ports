@@ -1,5 +1,3 @@
-$OpenBSD: patch-magick_MagickCore_pc_in,v 1.7 2021/03/01 20:42:10 sthen Exp $
-
 Index: magick/MagickCore.pc.in
 --- magick/MagickCore.pc.in.orig
 +++ magick/MagickCore.pc.in

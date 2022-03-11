@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/18 18:26:35 espie Exp $
-
 COMMENT =	convert webp into gif/png
 CATEGORIES = 	graphics converters
 MAINTAINER = 	Marc Espie <espie@openbsd.org>

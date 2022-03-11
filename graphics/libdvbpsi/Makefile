@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/12/21 08:47:54 rsadowski Exp $
-
 COMMENT=	library for decoding/generating MPEG TS/DVB PSI tables
 
 V=		1.3.3

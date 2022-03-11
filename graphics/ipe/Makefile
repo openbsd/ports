@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/05/08 14:45:02 sthen Exp $
-
 COMMENT =		extensible drawing editor
 
 V =			7.2.24

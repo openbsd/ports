@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cli_CMakeLists_txt,v 1.1 2021/02/07 22:13:21 sthen Exp $
-
 Index: src/cli/CMakeLists.txt
 --- src/cli/CMakeLists.txt.orig
 +++ src/cli/CMakeLists.txt

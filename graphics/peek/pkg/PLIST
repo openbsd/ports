@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/31 07:50:07 landry Exp $
 @bin bin/peek
 share/applications/com.uploadedlobster.peek.desktop
 share/dbus-1/services/com.uploadedlobster.peek.service

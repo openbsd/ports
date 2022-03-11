@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/08/31 12:35:50 fcambus Exp $
-
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
 V =		2.8

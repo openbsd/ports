@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/01/13 18:46:19 giovanni Exp $
 @bin bin/tiff2png

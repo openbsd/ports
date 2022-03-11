@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/11/13 17:41:39 ajacoutot Exp $
-
 COMMENT=		deprecated API for integrating Xlib and GdkPixbuf
 
 GNOME_PROJECT=		gdk-pixbuf-xlib

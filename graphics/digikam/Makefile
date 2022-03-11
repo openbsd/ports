@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2022/03/11 10:44:47 sthen Exp $
-
 USE_WXNEEDED =	Yes
 DPB_PROPERTIES = parallel
 

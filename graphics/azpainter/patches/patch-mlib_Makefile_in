@@ -1,5 +1,3 @@
-$OpenBSD: patch-mlib_Makefile_in,v 1.1 2020/05/20 17:06:29 bcallah Exp $
-
 Respect CFLAGS
 
 Index: mlib/Makefile.in

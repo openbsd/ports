@@ -1,5 +1,3 @@
-$OpenBSD: patch-Resources_ThirdParty_minizip_ioapi_h,v 1.1.1.1 2017/08/09 14:39:32 jasper Exp $
-
 /usr/obj/ports/orthanc-1.3.0/Orthanc-1.3.0/Resources/ThirdParty/minizip/ioapi.c:(.text+0x6f6):
 undefined reference to `fopen64'
 libCoreLibrary.a(ioapi.c.o): In function `ftell64_file_func':

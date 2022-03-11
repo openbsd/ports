@@ -1,5 +1,3 @@
-$OpenBSD: patch-Core_PostgreSQLLargeObject_cpp,v 1.2 2017/08/19 12:47:38 jasper Exp $
-
 https://bitbucket.org/sjodogne/orthanc-postgresql/commits/5ced32a226b1946fdb9cf832373107ae0ae7aa27
 
 Index: Core/PostgreSQLLargeObject.cpp

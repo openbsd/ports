@@ -1,5 +1,3 @@
-$OpenBSD: patch-extern_wcwidth_wcwidth_h,v 1.1 2020/11/29 19:57:01 sthen Exp $
-
 uchar.h doesn't exist in OpenBSD
 
 --- extern/wcwidth/wcwidth.h.orig	Tue Sep 22 19:36:29 2020

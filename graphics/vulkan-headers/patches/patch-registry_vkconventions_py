@@ -1,5 +1,3 @@
-$OpenBSD: patch-registry_vkconventions_py,v 1.3 2021/06/29 03:48:21 thfr Exp $
-
 Index: registry/vkconventions.py
 --- registry/vkconventions.py.orig
 +++ registry/vkconventions.py

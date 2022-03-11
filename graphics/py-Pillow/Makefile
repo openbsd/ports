@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2022/02/09 12:09:07 sthen Exp $
-
 COMMENT=		Python Imaging Library (friendly fork of PIL)
 
 MODPY_EGG_VERSION=	9.0.1

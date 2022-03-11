@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/30 13:45:31 espie Exp $
 @bin bin/jpegdump

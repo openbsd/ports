@@ -1,5 +1,3 @@
-$OpenBSD: patch-po_meson_build,v 1.1.1.1 2021/10/31 07:50:07 landry Exp $
-
 Index: po/meson.build
 --- po/meson.build.orig
 +++ po/meson.build

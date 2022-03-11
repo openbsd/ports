@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
 --- examples/Makefile.in.orig	Fri Apr  4 17:22:20 2008
 +++ examples/Makefile.in	Sat Nov  2 12:03:13 2013
 @@ -195,7 +195,7 @@ target_alias = @target_alias@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/03/01 20:14:42 sthen Exp $
-
 # devel/tbb does not support 64-bits atomics on ppc32, forcing them does
 # not help, see tbb's ${WRKSRC}/include/tbb/machine/mac_ppc.h
 NOT_FOR_ARCHS =	powerpc

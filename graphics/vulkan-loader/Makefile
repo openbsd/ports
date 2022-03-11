@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/09 04:48:32 thfr Exp $
-
 COMMENT =	Vulkan ICD loader
 
 V =		1.2.198.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2020/11/19 08:43:57 benoit Exp $
-
 COMMENT =		Perl interface to the gd2 graphics library
 
 DISTNAME =		GD-2.73

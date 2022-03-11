@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/11/15 19:39:27 rsadowski Exp $
-
 From FreeBSD
 include same flags for OpenBSD
 

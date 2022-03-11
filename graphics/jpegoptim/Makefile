@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:01 sthen Exp $
-
 COMMENT =	utility to optimize jpeg files
 
 DISTNAME =	jpegoptim-1.4.6

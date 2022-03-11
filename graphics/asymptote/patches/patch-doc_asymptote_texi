@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_asymptote_texi,v 1.2 2021/05/24 10:15:04 sthen Exp $
-
 Index: doc/asymptote.texi
 --- doc/asymptote.texi.orig
 +++ doc/asymptote.texi

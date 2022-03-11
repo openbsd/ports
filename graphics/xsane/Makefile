@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/01/20 16:13:11 ajacoutot Exp $
-
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.999

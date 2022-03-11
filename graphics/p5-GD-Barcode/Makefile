@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT=	create barcode image with GD
 
 DISTNAME=	GD-Barcode-1.15

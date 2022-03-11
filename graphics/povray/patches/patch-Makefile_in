@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/07/07 14:45:22 jasper Exp $
 --- Makefile.in.orig	Thu Jul  7 15:52:10 2011
 +++ Makefile.in	Thu Jul  7 15:52:45 2011
 @@ -813,17 +813,6 @@ install-data-local:

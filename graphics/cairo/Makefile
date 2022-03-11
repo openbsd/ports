@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2022/01/17 13:09:21 tobhe Exp $
-
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.17.4

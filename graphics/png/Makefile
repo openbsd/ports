@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.125 2019/11/24 17:21:24 espie Exp $
-
 COMMENT=	library for manipulating PNG images
 
 VERSION=	1.6.37

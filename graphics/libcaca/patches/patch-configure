@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.6 2021/11/28 10:32:40 namn Exp $
-
 1. Disable detection of ftgl. (no --disable-ftgl option.)
 
 2. Remove bash-ism =~

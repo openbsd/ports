@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/26 11:44:08 rsadowski Exp $
-
 COMMENT =	libraries for creating business diagrams
 
 VERSION =	2.8.0

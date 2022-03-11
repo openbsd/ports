@@ -1,5 +1,3 @@
-$OpenBSD: patch-Tool_cpp,v 1.1 2017/05/24 19:33:53 espie Exp $
-
 Index: Tool.cpp
 --- Tool.cpp.orig
 +++ Tool.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:25 sthen Exp $
-
 COMMENT=	rendering for complex writing systems
 
 DISTNAME=	graphite2-1.3.14

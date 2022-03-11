@@ -1,5 +1,3 @@
-$OpenBSD: patch-aalib-config_in,v 1.1 2013/04/15 02:06:16 brad Exp $
-
 Fix overlinking for shared libs.
 
 --- aalib-config.in.orig	Thu Apr 11 17:20:16 2013

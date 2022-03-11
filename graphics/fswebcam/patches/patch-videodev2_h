@@ -1,5 +1,3 @@
-$OpenBSD: patch-videodev2_h,v 1.3 2020/10/19 17:07:26 sthen Exp $
-
 revert videodev2.h header to the version in 20140113 (backout 042e72b
 "update videodev2.h header") plus OpenBSD port patches - the newer one
 pulls in Linux system headers that we don't have

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT= 	recolor gif images on the fly
 
 MODULES=	cpan 

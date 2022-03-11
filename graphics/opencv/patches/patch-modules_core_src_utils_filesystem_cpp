@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_core_src_utils_filesystem_cpp,v 1.1 2021/05/14 18:24:44 espie Exp $
-
 Index: modules/core/src/utils/filesystem.cpp
 --- modules/core/src/utils/filesystem.cpp.orig
 +++ modules/core/src/utils/filesystem.cpp

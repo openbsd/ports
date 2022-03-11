@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:09 sthen Exp $
-
 COMMENT=	S10sh - a Canon PowerShot digital camera driver
 
 DISTNAME=	s10sh-0.2.0

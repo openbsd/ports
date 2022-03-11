@@ -1,4 +1,3 @@
-/* $OpenBSD: head.c,v 1.1 2022/02/26 22:36:48 naddy Exp $ */
 /* FreeBSD usr.bin/head/head.c fbbd9655e5107c68e4e0146ff22b73d7350475bc */
 
 /*

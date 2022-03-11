@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/04 14:06:32 sthen Exp $
 bin/mypaint
 bin/mypaint-ora-thumbnailer
 lib/mypaint/

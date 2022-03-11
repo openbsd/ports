@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 15:38:37 sthen Exp $
-
 COMMENT =	simple screen recorder
 
 GH_PROJECT = 	peek

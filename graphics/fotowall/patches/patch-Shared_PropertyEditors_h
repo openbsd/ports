@@ -1,5 +1,3 @@
-$OpenBSD: patch-Shared_PropertyEditors_h,v 1.1 2020/02/03 19:42:54 awolk Exp $
-
 We patch out qstrcpy from x11/qt5* so use strlcpy
 
 Index: Shared/PropertyEditors.h

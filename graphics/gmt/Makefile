@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:59 sthen Exp $
-
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
 COMMENT-full=		full resolution coastline data for GMT

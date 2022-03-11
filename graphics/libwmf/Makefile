@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:02 sthen Exp $
-
 COMMENT=	WMF handling and conversion library
 
 DISTNAME=	libwmf-0.2.8.4

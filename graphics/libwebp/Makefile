@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/01/31 12:20:16 sthen Exp $
-
 COMMENT=	Google WebP image format conversion tool
 
 GH_ACCOUNT=	webmproject

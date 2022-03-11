@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/14 17:29:45 danj Exp $
 include/GLFW/
 include/GLFW/glfw3.h
 include/GLFW/glfw3native.h

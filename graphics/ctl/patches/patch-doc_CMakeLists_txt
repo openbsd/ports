@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2015/09/22 18:38:10 pascal Exp $
 --- doc/CMakeLists.txt.orig	Fri Sep 11 13:41:18 2015
 +++ doc/CMakeLists.txt	Fri Sep 11 13:41:25 2015
 @@ -1 +1 @@

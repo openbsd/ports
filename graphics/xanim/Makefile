@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT=	X11 animation player with support for lots of formats
 
 DISTNAME=	xanim-2.80.1

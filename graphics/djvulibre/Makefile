@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/10/20 16:31:58 mbuhl Exp $
-
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.28

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:03 sthen Exp $
-
 COMMENT=	intepreter for Lindenmayer-systems
 
 # CVS checkout on 04-30-2010

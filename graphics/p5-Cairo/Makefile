@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/19 21:13:48 ajacoutot Exp $
-
 COMMENT=	perl interface to the cairo library
 
 MODULES=	cpan

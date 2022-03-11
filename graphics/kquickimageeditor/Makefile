@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/25 22:49:10 abieber Exp $
-
 COMMENT =	KDE image editing components
 VERSION =	0.1.3
 DISTNAME =	kquickimageeditor-${VERSION}

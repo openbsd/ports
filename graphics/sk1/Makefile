@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:26 sthen Exp $
-
 COMMENT =	multiplatform vector graphics editor
 
 VERSION =	2.0rc3

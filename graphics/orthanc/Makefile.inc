@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/10/02 18:29:33 jasper Exp $
-
 CATEGORIES ?=		graphics/orthanc
 
 MODULES +=		devel/cmake

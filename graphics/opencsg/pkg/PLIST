@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/29 18:00:03 matthew Exp $
 include/opencsg.h
 @lib lib/libopencsg.so.${LIBopencsg_VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/03/16 16:35:54 naddy Exp $
-
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
 CATEGORIES =	graphics x11

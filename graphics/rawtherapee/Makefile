@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/04/24 04:26:32 rsadowski Exp $
-
 # http://rawpedia.rawtherapee.com/The_Floating_Point_Engine
 ONLY_FOR_ARCHS = 	amd64
 

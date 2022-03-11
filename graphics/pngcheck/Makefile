@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/17 21:11:20 espie Exp $
-
 COMMENT =	check the integrity of PNG files
 DISTNAME = 	pngcheck-3.0.3
 

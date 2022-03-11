@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:24 sthen Exp $
-
 COMMENT =		convert images to cross stitch patterns
 
 GH_ACCOUNT =		kleintom

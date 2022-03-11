@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:58 sthen Exp $
-
 COMMENT=	command line utility to transform jpeg files
 
 V=		2.14

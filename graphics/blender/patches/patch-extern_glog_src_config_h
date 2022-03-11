@@ -1,4 +1,3 @@
-$OpenBSD: patch-extern_glog_src_config_h,v 1.2 2020/11/29 19:57:01 sthen Exp $
 --- extern/glog/src/config.h.orig	Tue Sep 22 19:36:29 2020
 +++ extern/glog/src/config.h	Sun Nov 22 13:12:51 2020
 @@ -2,6 +2,8 @@

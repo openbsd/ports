@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup-sk1_py,v 1.1.1.1 2018/07/16 19:50:36 rsadowski Exp $
-
 Index: setup-sk1.py
 --- setup-sk1.py.orig
 +++ setup-sk1.py

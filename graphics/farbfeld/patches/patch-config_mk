@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_mk,v 1.2 2018/04/28 16:31:12 kn Exp $
-
 Index: config.mk
 --- config.mk.orig
 +++ config.mk

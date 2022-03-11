@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT=	get images from USB cameras using the OV511(+) chipsets
 
 DISTNAME=	vid-1.0.1

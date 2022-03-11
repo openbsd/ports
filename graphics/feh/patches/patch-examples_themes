@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_themes,v 1.2 2019/04/20 06:24:12 tim Exp $
 Index: examples/themes
 --- examples/themes.orig
 +++ examples/themes

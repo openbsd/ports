@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/03/10 12:03:31 kn Exp $
-
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		tool for live-coding pixel shaders

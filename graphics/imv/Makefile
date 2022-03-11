@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:01 sthen Exp $
-
 GH_ACCOUNT =		eXeC64
 GH_PROJECT =		imv
 GH_TAGNAME =		v2.1.3

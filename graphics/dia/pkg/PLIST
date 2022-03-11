@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.31 2018/06/29 22:16:16 espie Exp $
 @pkgpath graphics/dia,gnome
 @bin bin/dia
 lib/dia/

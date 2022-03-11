@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/06/19 04:17:24 rsadowski Exp $
-
 COMMENT =	desktop screenshot utility (make image)
 CATEGORIES =	graphics x11
 

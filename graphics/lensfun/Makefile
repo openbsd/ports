@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/23 19:39:25 sthen Exp $
-
 COMMENT=	library to adjust for photographic lens characteristics
 DISTNAME=	lensfun-0.3.2
 REVISION=	4

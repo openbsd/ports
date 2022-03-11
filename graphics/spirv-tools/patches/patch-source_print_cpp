@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_print_cpp,v 1.3 2021/10/16 14:50:40 thfr Exp $
-
 Index: source/print.cpp
 --- source/print.cpp.orig
 +++ source/print.cpp

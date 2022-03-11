@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2020/02/21 18:06:23 rsadowski Exp $
-
 COMMENT=	portable DjVu viewer and browser plugin
 
 DISTNAME=	djview-4.10.6

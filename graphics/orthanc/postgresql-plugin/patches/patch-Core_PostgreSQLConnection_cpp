@@ -1,5 +1,3 @@
-$OpenBSD: patch-Core_PostgreSQLConnection_cpp,v 1.3 2019/02/19 05:13:02 jeremy Exp $
-
 https://bitbucket.org/sjodogne/orthanc-postgresql/commits/11c4f0a4b64711dc8feefb22e8e73c28a639ffcc
 
 Fix build with PostgreSQL 11.

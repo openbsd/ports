@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT =		Python bindings for OpenGL
 MODPY_EGG_VERSION =	3.1.3b2
 DISTNAME =		PyOpenGL-${MODPY_EGG_VERSION}

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_osgPlugins_CMakeLists_txt,v 1.4 2021/07/12 20:52:19 pascal Exp $
 Index: src/osgPlugins/CMakeLists.txt
 --- src/osgPlugins/CMakeLists.txt.orig
 +++ src/osgPlugins/CMakeLists.txt

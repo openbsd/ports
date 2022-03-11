@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT=	view complete directories of X bitmaps and X pixmaps
 
 DISTNAME=	xbmbrowser5.1

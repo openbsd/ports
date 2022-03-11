@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_celeste_training_CMakeLists_txt,v 1.1 2010/05/29 01:23:55 sthen Exp $
 --- src/celeste/training/CMakeLists.txt.orig	Mon Sep 21 02:04:06 2009
 +++ src/celeste/training/CMakeLists.txt	Wed Sep 23 11:06:08 2009
 @@ -3,4 +3,4 @@

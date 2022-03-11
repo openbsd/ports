@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/28 06:27:01 rsadowski Exp $
-
 COMMENT=	open-source subdivision surface library
 
 V=		3.4.4

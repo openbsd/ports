@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/08/16 10:15:14 sthen Exp $
-
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.20
 

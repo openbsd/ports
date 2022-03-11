@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui_wx_update_main_layer_image_cc,v 1.1 2021/03/16 16:35:54 naddy Exp $
-
 Index: gui_wx/update_main_layer_image.cc
 --- gui_wx/update_main_layer_image.cc.orig
 +++ gui_wx/update_main_layer_image.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:56 sthen Exp $
-
 COMMENT =	game programming library for C/C++ developers
 
 V =		1.3

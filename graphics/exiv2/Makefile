@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/03 06:54:05 ajacoutot Exp $
-
 COMMENT=	image metadata manipulation
 
 CATEGORIES=	graphics devel

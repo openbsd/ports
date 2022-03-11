@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT=	convert jpeg to compressed PostScript
 
 DISTNAME=	jpeg2ps-1.9

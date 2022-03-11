@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:58 sthen Exp $m
-
 COMMENT=	lightweight video thumbnailer for file managers
 
 CATEGORIES=	graphics multimedia

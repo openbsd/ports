@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/02/11 09:16:54 fcambus Exp $
-
 COMMENT =	ansi and ascii art to png converter
 
 V =		4.1.6

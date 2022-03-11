@@ -1,4 +1,3 @@
-$OpenBSD: patch-aalib_m4,v 1.1 2009/01/09 17:43:38 naddy Exp $
 --- aalib.m4.orig	Fri Jan  9 16:59:17 2009
 +++ aalib.m4	Fri Jan  9 17:00:10 2009
 @@ -9,7 +9,7 @@

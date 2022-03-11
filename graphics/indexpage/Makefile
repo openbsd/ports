@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT=	generate index pages for displaying images
 
 DISTNAME=	indexpage-1.0.3

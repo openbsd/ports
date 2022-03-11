@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/15 06:28:04 rsadowski Exp $
-
 COMMENT =	screenshot tool with annotations features
 
 GH_ACCOUNT =	ksnip

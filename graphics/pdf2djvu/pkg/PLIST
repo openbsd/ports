@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/12/15 21:44:31 juanfra Exp $
 @bin bin/pdf2djvu
 @man man/de/man1/pdf2djvu.1
 man/fr/

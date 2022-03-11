@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2021/03/31 20:07:57 sthen Exp $
-
 COMMENT=	library for dynamic creation of images
 
 V=		2.3.2

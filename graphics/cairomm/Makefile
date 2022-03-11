@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/05/21 04:50:39 ajacoutot Exp $
-
 PORTROACH=		limit:^1.14
 
 # no libGL (toolchain issue)

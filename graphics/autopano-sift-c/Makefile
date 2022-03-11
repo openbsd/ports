@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/25 22:26:02 sthen Exp $
-
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.1

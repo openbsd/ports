@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/08/29 10:39:39 sthen Exp $
-
 COMMENT=		commandline screen capture util
 
 V=			1.6

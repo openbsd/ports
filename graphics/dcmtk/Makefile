@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:57 sthen Exp $
-
 COMMENT=		DICOM toolkit
 
 V =			3.6.3

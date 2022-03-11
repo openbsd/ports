@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:47 naddy Exp $
 bin/libart2-config
 include/libart-2.0/
 include/libart-2.0/libart_lgpl/

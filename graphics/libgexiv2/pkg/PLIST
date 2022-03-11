@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/06/19 11:28:54 ajacoutot Exp $
 include/gexiv2/
 include/gexiv2/gexiv2-enums.h
 include/gexiv2/gexiv2-log.h

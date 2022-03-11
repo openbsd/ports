@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/03/03 17:38:24 op Exp $
-
 COMMENT =	neo simple X Image Viewer
 
 GH_PROJECT =	nsxiv

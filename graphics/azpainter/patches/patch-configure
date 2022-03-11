@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2020/05/20 17:06:29 bcallah Exp $
-
 Don't hardcode optimization flags.
 
 Index: configure

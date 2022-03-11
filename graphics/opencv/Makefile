@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2022/01/05 13:36:55 rsadowski Exp $
-
 ONLY_FOR_ARCHS-java =	aarch64 amd64 i386
 
 CATEGORIES =		graphics devel

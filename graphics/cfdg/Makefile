@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/06/07 16:30:15 tb Exp $
-
 COMMENT =	Context Free Design Grammar
 
 VERSION =	3.3

@@ -1,5 +1,3 @@
-$OpenBSD: patch-app_core_gimptagcache_c,v 1.2 2019/11/29 12:15:46 sthen Exp $
-
 Index: app/core/gimptagcache.c
 --- app/core/gimptagcache.c.orig
 +++ app/core/gimptagcache.c

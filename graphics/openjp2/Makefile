@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 14:24:40 landry Exp $
-
 COMMENT=	open-source JPEG 2000 codec library
 
 GH_ACCOUNT=	uclouvain

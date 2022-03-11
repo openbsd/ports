@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/28 16:22:03 solene Exp $
-
 COMMENT =	PNG compressor
 
 GH_ACCOUNT =	kornelski

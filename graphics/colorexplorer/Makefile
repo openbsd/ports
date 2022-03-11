@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:57 sthen Exp $
-
 COMMENT =	tool for exploring the color space and relations
 
 DISTNAME =	ColorExplorer-1.8

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT=		generate QR Code with Imager using libqrencode
 
 DISTNAME=		Imager-QRCode-0.035

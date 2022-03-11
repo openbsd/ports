@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:47:00 sthen Exp $
-
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-1.0

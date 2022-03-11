@@ -1,5 +1,3 @@
-$OpenBSD: patch-backend_dll_conf_in,v 1.13 2020/08/23 15:52:11 ajacoutot Exp $
-
 Index: backend/dll.conf.in
 --- backend/dll.conf.in.orig
 +++ backend/dll.conf.in

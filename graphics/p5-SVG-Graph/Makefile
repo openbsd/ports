@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/11/04 02:31:15 afresh1 Exp $
-
 COMMENT =		visualize your data in SVG format
 
 DISTNAME =		SVG-Graph-0.04

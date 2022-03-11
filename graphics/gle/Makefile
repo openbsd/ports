@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:59 sthen Exp $
-
 COMMENT=		OpenGL Extrusion library
 
 DISTNAME=		gle-3.1.0

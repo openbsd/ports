@@ -1,4 +1,3 @@
-$OpenBSD: patch-xanim_h,v 1.2 2015/06/29 23:07:07 ratchov Exp $
 --- xanim.h.orig	Sun Mar 21 23:36:26 1999
 +++ xanim.h	Tue Jun 30 00:59:45 2015
 @@ -32,10 +32,12 @@

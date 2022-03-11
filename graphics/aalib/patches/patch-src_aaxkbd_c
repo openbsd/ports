@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_aaxkbd_c,v 1.2 2009/02/09 10:48:51 simon Exp $
 --- src/aaxkbd.c.orig	Thu Apr 26 16:37:31 2001
 +++ src/aaxkbd.c	Mon Feb  9 00:47:34 2009
 @@ -1,10 +1,10 @@

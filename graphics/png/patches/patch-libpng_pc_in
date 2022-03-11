@@ -1,4 +1,3 @@
-$OpenBSD: patch-libpng_pc_in,v 1.2 2017/08/12 03:05:29 naddy Exp $
 Index: libpng.pc.in
 --- libpng.pc.in.orig
 +++ libpng.pc.in

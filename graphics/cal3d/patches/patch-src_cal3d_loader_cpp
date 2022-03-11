@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cal3d_loader_cpp,v 1.1 2018/04/10 08:47:36 jasper Exp $
-
 Index: src/cal3d/loader.cpp
 --- src/cal3d/loader.cpp.orig
 +++ src/cal3d/loader.cpp

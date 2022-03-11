@@ -1,5 +1,3 @@
-$OpenBSD: patch-backend_xerox_mfp_h,v 1.2 2017/05/23 13:00:47 ajacoutot Exp $
-
 /usr/include/sys/param.h:190:1: warning: this is the location of the previous definition
 
 Index: backend/xerox_mfp.h

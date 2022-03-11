@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:47:04 sthen Exp $
-
 COMMENT=	collection of C routines to decode MPEG movies
 
 DISTNAME=	mpeg_lib-1.3.1

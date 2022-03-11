@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT =	perl module for getting image information
 
 MODULES =	cpan

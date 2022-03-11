@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Render3D_cpp,v 1.1 2017/06/21 12:57:07 espie Exp $
-
 Index: src/Render3D.cpp
 --- src/Render3D.cpp.orig
 +++ src/Render3D.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/04/10 19:07:40 jasper Exp $
 @bin bin/dcm2json
 @bin bin/dcm2pdf
 @bin bin/dcm2pnm

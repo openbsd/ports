@@ -1,4 +1,3 @@
-$OpenBSD: patch-exifgps_c,v 1.2 2014/07/12 18:36:53 giovanni Exp $
 --- exifgps.c.orig	Fri May 11 19:03:30 2012
 +++ exifgps.c	Sat Jul 12 19:34:34 2014
 @@ -253,7 +253,7 @@ gpsprop(struct exifprop *prop, struct exiftags *t)

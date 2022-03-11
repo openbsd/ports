@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/17 14:46:32 danj Exp $
-
 COMMENT =		geometry viewer for OOGL file formats
 
 V =			1.9.4

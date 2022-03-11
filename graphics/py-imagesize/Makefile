@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/18 09:41:37 sthen Exp $
-
 COMMENT =		getting image size from png/jpeg/jpeg2000/gif file
 
 MODPY_EGG_VERSION =	1.3.0

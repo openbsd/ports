@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/18 09:47:23 fcambus Exp $
-
 COMMENT=	ASCII drawing utility
 
 GH_ACCOUNT =	statico

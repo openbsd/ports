@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_enricomath_h,v 1.3 2020/02/03 19:42:54 awolk Exp $
-
 Revert https://github.com/enricoros/fotowall/commit/23b1bc61f1341c5ce61da1e81cc3888a3407e7f4#diff-0e3d52718f9d6fda9c5499355baf17b0
 since we now have sincos(3).
 

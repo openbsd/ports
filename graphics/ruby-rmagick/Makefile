@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 21:02:22 sthen Exp $
-
 COMMENT =	Ruby interface to ImageMagick
 
 DISTNAME =	rmagick-2.16.0

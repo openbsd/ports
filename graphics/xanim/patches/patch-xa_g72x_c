@@ -1,5 +1,3 @@
-$OpenBSD: patch-xa_g72x_c,v 1.1 2017/05/09 20:09:48 naddy Exp $
-
 Index: xa_g72x.c
 --- xa_g72x.c.orig
 +++ xa_g72x.c

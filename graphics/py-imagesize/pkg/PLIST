@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/26 19:46:26 sthen Exp $
 @pkgpath graphics/py-imagesize
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}imagesize.${MODPY_PYC_MAGIC_TAG}pyc

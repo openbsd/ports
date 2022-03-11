@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ipe_lua_prefs_lua,v 1.7 2021/05/08 14:45:02 sthen Exp $
-
 Swapped out the default on-screen keyboard for something lightweight.
 
 Index: src/ipe/lua/prefs.lua

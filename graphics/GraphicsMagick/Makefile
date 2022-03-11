@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2022/01/14 20:44:09 sthen Exp $
-
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.37

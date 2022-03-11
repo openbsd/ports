@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2022/01/21 07:09:33 ajacoutot Exp $
-
 1st chunk: ur libtool(1) and devel/libtool versions are too old.
 
 Index: configure.ac

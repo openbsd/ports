@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT =	converts TIFF images to PNG format
 
 DISTNAME =	tiff2png-0.91

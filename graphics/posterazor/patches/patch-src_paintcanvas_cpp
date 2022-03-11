@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_paintcanvas_cpp,v 1.1 2021/03/14 10:38:10 kirby Exp $
-
 Index: src/paintcanvas.cpp
 --- src/paintcanvas.cpp.orig
 +++ src/paintcanvas.cpp

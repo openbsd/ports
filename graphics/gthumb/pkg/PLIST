@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.41 2021/10/26 11:29:02 jasper Exp $
 @bin bin/gthumb
 include/gthumb/
 include/gthumb/cairo-scale.h

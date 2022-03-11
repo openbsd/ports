@@ -1,5 +1,3 @@
-$OpenBSD: patch-loader_allocation_h,v 1.1 2021/12/09 04:48:32 thfr Exp $
-
 Index: loader/allocation.h
 --- loader/allocation.h.orig
 +++ loader/allocation.h

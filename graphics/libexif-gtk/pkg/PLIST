@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/12/22 14:26:54 ajacoutot Exp $
 include/libexif-gtk/
 include/libexif-gtk/gtk-exif-browser.h
 include/libexif-gtk/gtk-exif-content-list.h

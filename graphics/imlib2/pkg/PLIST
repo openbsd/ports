@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/11/09 14:53:00 jca Exp $
 bin/imlib2-config
 @bin bin/imlib2_bumpmap
 @bin bin/imlib2_colorspace

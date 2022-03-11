@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:09 sthen Exp $
-
 COMMENT=	implementation of the OpenGL Character Renderer
 
 DISTNAME=	quesoglc-0.7.2

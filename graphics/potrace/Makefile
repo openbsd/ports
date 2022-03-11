@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/23 10:23:56 sthen Exp $
-
 COMMENT=	transform bitmaps into vector graphics
 
 DISTNAME=	potrace-1.16

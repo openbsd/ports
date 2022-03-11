@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/02/28 08:24:21 ajacoutot Exp $
 @conflict py-libiptcdata-*
 @pkgpath graphics/libiptcdata,-main
 @pkgpath graphics/libiptcdata,-python

@@ -1,5 +1,3 @@
-$OpenBSD: patch-u_error_c,v 1.2 2017/02/01 10:09:58 kirby Exp $
-
 Avoids null deref->segfault->core seen if you exit by closing the window.
 
 --- src/u_error.c.orig	Thu May  5 00:05:10 2016

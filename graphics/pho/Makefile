@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/05 08:19:25 benoit Exp $
-
 COMMENT=	lightweight image viewer
 
 DISTNAME=	pho-1.0

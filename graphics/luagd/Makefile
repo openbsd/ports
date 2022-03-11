@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:03 sthen Exp $
-
 COMMENT=	gd binding for the lua language
 
 V=		2.0.33r2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_waffle_glx_glx_platform_c,v 1.1.1.1 2015/12/26 03:00:13 jsg Exp $
 --- src/waffle/glx/glx_platform.c.orig	Sun Dec 20 16:17:58 2015
 +++ src/waffle/glx/glx_platform.c	Sun Dec 20 16:18:19 2015
 @@ -37,7 +37,11 @@

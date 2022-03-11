@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_IlmCtlMath_CtlPointTree.h,v 1.1 2021/08/31 07:32:18 ajacoutot Exp $
-
 Fix build with OpenEXR>=3
 
 --- lib/IlmCtlMath/CtlPointTree.h.orig	2014-06-03 01:11:24 UTC

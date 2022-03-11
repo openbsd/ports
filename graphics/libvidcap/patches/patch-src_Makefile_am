@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_am,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
 --- src/Makefile.am.orig	Fri Apr  4 17:04:17 2008
 +++ src/Makefile.am	Sat Nov  2 12:04:00 2013
 @@ -3,8 +3,8 @@ AUTOMAKE_OPTIONS = subdir-objects

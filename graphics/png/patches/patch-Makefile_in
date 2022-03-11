@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2019/04/30 14:46:48 naddy Exp $
-
 Set the library soname to libpng instead of libpng@PNGLIB_MAJOR@@PNGLIB_MINOR@.
 
 Index: Makefile.in

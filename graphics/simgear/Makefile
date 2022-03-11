@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/21 17:16:01 kirby Exp $
-
 COMMENT =		library set for simulations, games and visualizations
 
 DISTNAME =		simgear-2020.3.9

@@ -1,4 +1,3 @@
-$OpenBSD: patch-povray_1,v 1.1 2011/07/07 14:45:22 jasper Exp $
 --- povray.1.orig	Tue Aug  3 01:16:20 2004
 +++ povray.1	Thu Jul  7 16:32:45 2011
 @@ -27,7 +27,7 @@ its scene description language (a.k.a. \fBPOV\-Ray\fP 

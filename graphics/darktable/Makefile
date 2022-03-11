@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.113 2021/12/09 20:41:03 sdk Exp $
-
 ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	virtual lighttable and darkroom for photographers

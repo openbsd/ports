@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:16 sthen Exp $
-
 COMMENT =		python implementation of the blurhash algorithm
 
 MODPY_EGG_VERSION =	1.1.4

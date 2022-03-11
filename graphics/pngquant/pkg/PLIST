@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/24 13:25:43 solene Exp $
 @bin bin/pngquant
 @man man/man1/pngquant.1
 share/pngquant/

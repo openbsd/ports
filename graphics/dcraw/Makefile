@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/14 16:04:39 kirby Exp $
-
 COMMENT =	digital camera RAW format conversion tool
 
 DISTNAME =	dcraw-9.28.0

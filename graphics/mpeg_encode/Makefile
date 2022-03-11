@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT=	UCB's MPEG-I video stream encoder
 
 DISTNAME=	mpeg_encode-1.5b-src

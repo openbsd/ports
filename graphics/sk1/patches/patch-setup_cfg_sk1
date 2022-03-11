@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_cfg_sk1,v 1.1.1.1 2018/07/16 19:50:36 rsadowski Exp $
-
 Index: setup.cfg_sk1
 --- setup.cfg_sk1.orig
 +++ setup.cfg_sk1

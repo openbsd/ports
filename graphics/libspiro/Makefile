@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/01 14:44:30 fcambus Exp $
-
 COMMENT =	simplifies the drawing of beautiful curves
 
 V =		20200505

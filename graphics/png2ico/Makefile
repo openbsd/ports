@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:08 sthen Exp $
-
 COMMENT=	convert PNG images to Windows .ico files
 
 VERSION=	2002-12-09

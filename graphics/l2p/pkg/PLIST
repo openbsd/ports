@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/12/18 21:26:26 steven Exp $
 bin/l2p
 @man man/man1/l2p.1

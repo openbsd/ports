@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT =	Perl implementation of the reCAPTCHA API
 
 MODULES =	cpan

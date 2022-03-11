@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2019/04/20 06:24:12 tim Exp $
 @bin bin/feh
 @man man/man1/feh.1
 share/applications/feh.desktop

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/17 16:14:33 bcallah Exp $
-
 V =		0.21.12
 COMMENT =	simple to use paint program
 DISTNAME =	dibuja-${V}

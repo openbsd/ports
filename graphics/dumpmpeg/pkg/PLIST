@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:08 espie Exp $
 bin/dumpmpeg
 @man man/man1/dumpmpeg.1

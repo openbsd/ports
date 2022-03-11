@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_CMakeLists_txt,v 1.2 2017/05/26 05:42:58 kirby Exp $
-
 Disable building tests which require boots-1.59
 
 Index: test/CMakeLists.txt

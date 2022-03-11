@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/11/26 18:56:24 sthen Exp $
-
 COMMENT=	extract digital camera info tags from JPEG images
 
 V=		0.6.24

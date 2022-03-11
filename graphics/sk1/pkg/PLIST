@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/16 19:50:36 rsadowski Exp $
 bin/sk1
 lib/python${MODPY_VERSION}/site-packages/sk1/
 lib/python${MODPY_VERSION}/site-packages/sk1-2.0rc3-py${MODPY_VERSION}.egg-info

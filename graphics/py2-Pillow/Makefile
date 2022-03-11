@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:32 kmos Exp $
-
 # XXX version 7.0.0 and up do not support python2 anymore;
 # python3 support lives in graphics/py-Pillow
 PORTROACH=		limit:^6\.

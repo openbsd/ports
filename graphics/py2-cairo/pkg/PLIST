@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/01 20:35:26 jca Exp $
 @pkgpath graphics/py-cairo
 include/pycairo/
 include/pycairo/pycairo.h

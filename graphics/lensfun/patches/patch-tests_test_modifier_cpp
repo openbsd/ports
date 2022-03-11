@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_modifier_cpp,v 1.1 2018/04/07 08:13:48 rsadowski Exp $
-
 Fix c++11-narrowing with clang6
 
 Index: tests/test_modifier.cpp

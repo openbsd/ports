@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/26 18:20:35 naddy Exp $
-
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.3.0

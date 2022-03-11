@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_util_CMakeLists_txt,v 1.3 2021/01/31 03:19:35 jsg Exp $
-
 account for OpenBSD
 
 Index: tests/util/CMakeLists.txt

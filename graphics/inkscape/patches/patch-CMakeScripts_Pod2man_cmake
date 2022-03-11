@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeScripts_Pod2man_cmake,v 1.2 2021/10/28 11:01:03 rsadowski Exp $
-
 Fix manpage setup for OpenBSD
 - No compressed manpages
 - Fix man install directory

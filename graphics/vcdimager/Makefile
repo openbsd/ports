@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:11 sthen Exp $
-
 COMMENT=		(S)VCD authoring software
 
 DISTNAME=		vcdimager-2.0.1

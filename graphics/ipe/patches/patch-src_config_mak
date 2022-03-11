@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_config_mak,v 1.7 2020/09/14 12:51:40 sthen Exp $
-
 Index: src/config.mak
 --- src/config.mak.orig
 +++ src/config.mak

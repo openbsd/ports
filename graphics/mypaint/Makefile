@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:15 sthen Exp $
-
 COMMENT =	raster graphics editor for digital painters
 
 MODPY_EGG_VERSION =	2.0.1

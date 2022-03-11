@@ -1,4 +1,3 @@
-$OpenBSD: patch-makefile,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
 --- makefile.orig	Thu Jun  8 22:08:40 2006
 +++ makefile	Sat Nov  2 12:00:57 2013
 @@ -13,19 +13,19 @@ libalpng.a: $(OBJECTS)

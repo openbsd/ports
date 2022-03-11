@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/11 10:59:35 sthen Exp $
-
 COMMENT=	loader for HEIC for Imlib2
 
 GH_ACCOUNT=	vi

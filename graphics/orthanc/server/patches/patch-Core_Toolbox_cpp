@@ -1,5 +1,3 @@
-$OpenBSD: patch-Core_Toolbox_cpp,v 1.1 2020/10/18 18:30:33 jasper Exp $
-
 Fix issue #114
 
 f49a6d934fd51dd57a8e91db45e36f77371b4042

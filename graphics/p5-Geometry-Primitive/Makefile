@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:23 sthen Exp $
-
 COMMENT =	primitive geometry entities for Perl
 
 DISTNAME =	Geometry-Primitive-0.24

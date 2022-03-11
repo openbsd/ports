@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/28 13:38:00 sthen Exp $
 bin/gprof2dot
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gprof2dot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gprof2dot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

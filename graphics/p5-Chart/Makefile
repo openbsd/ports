@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT =	Charting library for Perl
 
 DISTNAME =	Chart-2.4.10

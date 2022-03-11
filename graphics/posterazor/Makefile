@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/14 10:38:10 kirby Exp $
-
 COMMENT =	split large images into smaller ones to assemble posters
 
 GH_ACCOUNT = 	aportale

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: orthanc.rc,v 1.3 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${PREFIX}/sbin/Orthanc"
 daemon_flags="--logdir=/var/log/orthanc ${SYSCONFDIR}/orthanc/"

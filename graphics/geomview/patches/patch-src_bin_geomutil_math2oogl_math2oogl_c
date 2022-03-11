@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bin_geomutil_math2oogl_math2oogl_c,v 1.1 2016/03/16 19:04:08 naddy Exp $
 --- src/bin/geomutil/math2oogl/math2oogl.c.orig	Fri Apr  6 18:10:23 2007
 +++ src/bin/geomutil/math2oogl/math2oogl.c	Wed Mar 16 19:41:29 2016
 @@ -58,7 +58,7 @@ Copyright (C) 1998-2000 Stuart Levy, Tamara Munzner, M

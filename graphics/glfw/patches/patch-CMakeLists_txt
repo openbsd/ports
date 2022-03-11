@@ -1,4 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/05/09 05:28:17 kmos Exp $
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt

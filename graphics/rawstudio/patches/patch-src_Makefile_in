@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2016/04/22 08:45:25 sthen Exp $
 --- src/Makefile.in.orig	Fri Apr 22 09:41:23 2016
 +++ src/Makefile.in	Fri Apr 22 09:41:25 2016
 @@ -208,7 +208,6 @@ INCLUDES = \

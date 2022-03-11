@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/17 14:46:32 danj Exp $
-
 COMMENT =	language for typesetting graphs
 
 DISTNAME =	grap-1.45

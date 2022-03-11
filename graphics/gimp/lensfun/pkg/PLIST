@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/31 10:40:05 espie Exp $
 @bin lib/gimp/${GIMPV}/plug-ins/gimp-lensfun

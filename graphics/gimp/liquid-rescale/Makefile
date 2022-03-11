@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 20:03:28 naddy Exp $
-
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
 

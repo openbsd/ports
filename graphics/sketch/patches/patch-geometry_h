@@ -1,5 +1,3 @@
-$OpenBSD: patch-geometry_h,v 1.1 2018/08/31 12:31:49 solene Exp $
-
 Index: geometry.h
 --- geometry.h.orig
 +++ geometry.h

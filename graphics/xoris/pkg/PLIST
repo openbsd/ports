@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/18 15:34:41 jasper Exp $
 @bin bin/xoris

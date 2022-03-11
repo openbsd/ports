@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2021/11/02 00:01:15 sthen Exp $
-
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.29.4

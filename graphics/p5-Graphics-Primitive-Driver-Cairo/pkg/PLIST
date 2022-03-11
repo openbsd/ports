@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/04 10:01:27 bluhm Exp $
 ${P5SITE}/Graphics/Primitive/Driver/Cairo/
 ${P5SITE}/Graphics/Primitive/Driver/Cairo.pm
 ${P5SITE}/Graphics/Primitive/Driver/Cairo/TextLayout.pm

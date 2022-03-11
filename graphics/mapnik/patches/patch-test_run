@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_run,v 1.2 2021/05/23 17:47:01 kirby Exp $
 find -quit is only in gfind
 Index: test/run
 --- test/run.orig

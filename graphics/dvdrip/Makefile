@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:46:58 sthen Exp $
-
 PORTROACH=	skipv:0.98.11_01
 
 COMMENT=	full featured DVD copy program

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/13 17:10:30 robert Exp $
 @bin bin/fswebcam
 @man man/man1/fswebcam.1

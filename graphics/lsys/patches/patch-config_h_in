@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_h_in,v 1.1 2017/05/08 01:02:16 espie Exp $
 don't use before it's actually known.
 
 Index: config.h.in

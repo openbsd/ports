@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/12 20:47:12 sthen Exp $
-
 COMMENT=		simple paint program
 
 DISTNAME=		xpaint-2.7.8.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2017/05/19 23:59:17 espie Exp $
-
 Index: lib/Makefile.in
 --- lib/Makefile.in.orig
 +++ lib/Makefile.in

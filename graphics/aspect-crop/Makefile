@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/26 13:07:14 espie Exp $
-
 COMMENT =	crop tool for xwallpaper(1)
 CATEGORIES = 	graphics
 MAINTAINER = 	Marc Espie <espie@openbsd.org>

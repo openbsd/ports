@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/17 16:54:11 bcallah Exp $
 @bin bin/delaboratory

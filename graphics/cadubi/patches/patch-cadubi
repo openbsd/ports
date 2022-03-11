@@ -1,5 +1,3 @@
-$OpenBSD: patch-cadubi,v 1.5 2021/03/18 09:47:23 fcambus Exp $
-
 - Fix path to help file.
 - Pass a list to erasechar.
 

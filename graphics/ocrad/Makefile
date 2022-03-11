@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:04 sthen Exp $
-
 COMMENT=	OCR program for pnm files
 
 DISTNAME=	ocrad-0.27

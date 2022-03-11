@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 04:50:54 ajacoutot Exp $
-
 PORTROACH=		limitw:1,even
 
 COMMENT=		C++ interface for cairo

@@ -1,4 +1,3 @@
-$OpenBSD: patch-simgear_compiler_h,v 1.3 2021/07/12 20:52:43 pascal Exp $
 --- simgear/compiler.h.orig	Tue Nov 22 10:06:52 2016
 +++ simgear/compiler.h	Fri Dec  2 12:07:44 2016
 @@ -105,7 +105,8 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/10 08:23:45 ajacoutot Exp $
-
 COMMENT=		image quantization library
 
 GH_ACCOUNT=		ImageOptim

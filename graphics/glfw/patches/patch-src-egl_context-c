@@ -1,4 +1,3 @@
-$OpenBSD: patch-src-egl_context-c,v 1.4 2021/05/09 05:28:17 kmos Exp $
 Index: src/egl_context.c
 --- src/egl_context.c.orig
 +++ src/egl_context.c

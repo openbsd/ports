@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_OpenCVPCHSupport_cmake,v 1.3 2019/03/23 07:26:56 rsadowski Exp $
 Index: cmake/OpenCVPCHSupport.cmake
 --- cmake/OpenCVPCHSupport.cmake.orig
 +++ cmake/OpenCVPCHSupport.cmake

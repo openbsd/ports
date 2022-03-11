@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2022/01/28 08:50:57 ajacoutot Exp $
-
 COMMENT-main=		high dynamic range image format
 COMMENT-tools=		image viewing tools for OpenEXR
 COMMENT-doc=		developer documentation for OpenEXR
