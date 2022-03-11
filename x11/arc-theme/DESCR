@@ -1,0 +1,8 @@
+Arc is a flat theme with ${ARC_TYPE} elements for GTK and various desktop
+shells, window managers and applications. It's well suited for GTK based desktop
+environments such as GNOME, Cinnamon, Xfce, Unity, MATE, Budgie etc.
+
+Note that the gtk+2 theme requires needs the "gtk2-murrine-engine" package.
+The dependency is not enforced by default because gtk+2 is phasing out.
+Similarly, the "arc-icon-theme" package matches this theme for icons but is not
+enforced either.
