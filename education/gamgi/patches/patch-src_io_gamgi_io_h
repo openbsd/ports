@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_io_gamgi_io_h,v 1.2 2010/01/16 22:01:29 matthieu Exp $
 --- src/io/gamgi_io.h.orig	Wed Dec 16 17:51:05 2009
 +++ src/io/gamgi_io.h	Wed Dec 16 17:51:07 2009
 @@ -230,7 +230,7 @@ GAMGI_IO_DEJAVU_MONO_ITALIC, GAMGI_IO_DEJAVU_MONO_BOLD

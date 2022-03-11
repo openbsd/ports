@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT=	interactive geometry program
 
 DISTNAME=	drgeo-1.1.0

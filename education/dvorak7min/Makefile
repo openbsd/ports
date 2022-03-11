@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT=	typing tutor for dvorak keyboards
 
 DISTNAME=	dvorak7min-1.6.1

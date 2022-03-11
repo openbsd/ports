@@ -1,5 +1,3 @@
-$OpenBSD: patch-geo_drgeo_figure_cc,v 1.2 2017/05/04 19:45:27 espie Exp $
-
 Index: geo/drgeo_figure.cc
 --- geo/drgeo_figure.cc.orig
 +++ geo/drgeo_figure.cc

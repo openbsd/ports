@@ -1,5 +1,3 @@
-$OpenBSD: patch-src-make_local,v 1.8 2021/02/20 19:35:41 kn Exp $
-
 Set include and library paths.
 
 Index: src/make_local

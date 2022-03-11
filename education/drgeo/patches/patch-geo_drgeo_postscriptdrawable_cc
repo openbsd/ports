@@ -1,5 +1,3 @@
-$OpenBSD: patch-geo_drgeo_postscriptdrawable_cc,v 1.1 2018/04/11 20:30:32 naddy Exp $
-
 Index: geo/drgeo_postscriptdrawable.cc
 --- geo/drgeo_postscriptdrawable.cc.orig
 +++ geo/drgeo_postscriptdrawable.cc

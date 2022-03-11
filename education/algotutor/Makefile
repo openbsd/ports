@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT=	interactive tutorial for algorithms and data structures
 
 DISTNAME=	algotutor-0.8.6

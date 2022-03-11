@@ -1,4 +1,3 @@
-$OpenBSD: patch-geo_drgeo_dialog_cc,v 1.1 2017/05/04 19:45:27 espie Exp $
 Modern C++ doesn't want to give external linkage to anonymous structs
 Index: geo/drgeo_dialog.cc
 --- geo/drgeo_dialog.cc.orig

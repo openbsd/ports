@@ -1,4 +1,3 @@
-$OpenBSD: patch-algotutor,v 1.3 2008/12/21 11:51:02 kevlo Exp $
 --- algotutor.orig	Mon Apr  9 14:56:08 2007
 +++ algotutor	Sun Dec 21 19:22:54 2008
 @@ -4,7 +4,7 @@

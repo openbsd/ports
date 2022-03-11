@@ -1,4 +1,3 @@
-$OpenBSD: patch-periodic_h,v 1.1.1.1 2010/08/23 09:31:23 ajacoutot Exp $
 --- periodic.h.orig	Sat Aug 14 22:55:52 2010
 +++ periodic.h	Sat Aug 14 22:56:09 2010
 @@ -296,7 +296,7 @@ modification follow.

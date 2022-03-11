@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/08/23 09:31:23 ajacoutot Exp $
 @bin bin/epte
 @man man/man1/epte.1

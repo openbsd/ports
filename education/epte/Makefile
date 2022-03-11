@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/01 17:40:49 kn Exp $
-
 COMMENT=		electronic periodic table of the elements
 
 DISTNAME=		epte-2.0.8

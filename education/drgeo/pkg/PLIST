@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:03:42 espie Exp $
 @bin bin/drgeo
 share/applications/drgeo.desktop
 share/drgeo/

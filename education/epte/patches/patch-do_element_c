@@ -1,4 +1,3 @@
-$OpenBSD: patch-do_element_c,v 1.1.1.1 2010/08/23 09:31:23 ajacoutot Exp $
 --- do_element.c.orig	Mon Aug 23 07:51:01 2010
 +++ do_element.c	Mon Aug 23 07:51:25 2010
 @@ -290,6 +290,8 @@ modification follow.

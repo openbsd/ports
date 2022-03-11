@@ -1,4 +1,3 @@
-$OpenBSD: patch-fill_information_c,v 1.1.1.1 2010/08/23 09:31:23 ajacoutot Exp $
 --- fill_information.c.orig	Mon Aug 23 07:45:28 2010
 +++ fill_information.c	Mon Aug 23 07:45:44 2010
 @@ -290,6 +290,8 @@ modification follow.

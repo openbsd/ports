@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =	flashcard learning system with spaced repetition
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz

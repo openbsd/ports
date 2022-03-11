@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/11 20:24:48 wilfried Exp $
 share/drgeo/
 share/drgeo/help/
 share/drgeo/help/c/

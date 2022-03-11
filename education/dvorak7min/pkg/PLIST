@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/01/12 19:13:39 jasper Exp $
 @bin bin/dvorak7min

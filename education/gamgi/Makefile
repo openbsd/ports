@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/20 19:42:07 kn Exp $
-
 COMMENT=		General Atomistic Modelling Graphic Interface
 
 V=			0.17.3g
