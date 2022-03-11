@@ -11,7 +11,7 @@ REVISION=	1
 
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME-ldap = squid-ldap-$V
-FULLPKGPATH-ldap = ${PKGPATH},ldap
+FULLPKGPATH-ldap = ${PKGPATH},-ldap
 RUN_DEPENDS-ldap += squid-$V:www/squid
 
 CATEGORIES=	www
