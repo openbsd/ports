@@ -1,4 +1,3 @@
-# $OpenBSD: openbsd-hints,v 1.5 2014/04/27 09:09:42 schwarze Exp $
 orgname="/etc/organization"
 d_nntp='define'
 d_local='undef'

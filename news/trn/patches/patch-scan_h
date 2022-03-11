@@ -1,5 +1,3 @@
-$OpenBSD: patch-scan_h,v 1.1 2021/02/06 21:18:58 naddy Exp $
-
 fix for -fno-common
 
 Index: scan.h

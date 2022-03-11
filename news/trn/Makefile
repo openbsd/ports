@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/06 21:18:58 naddy Exp $
-
 COMMENT=	threaded newsreader
 
 CATEGORIES=	news

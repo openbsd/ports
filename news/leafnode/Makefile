@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2021/03/29 13:26:20 sthen Exp $
-
 COMMENT=		USENET software package designed for small sites
 
 DISTNAME=		leafnode-1.11.12

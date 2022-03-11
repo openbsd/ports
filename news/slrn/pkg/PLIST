@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/08/07 15:22:28 bcallah Exp $
 @bin bin/slrn
 @bin bin/slrnpull
 @man man/man1/slrn.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:53 sthen Exp $
-
 COMMENT=	assemble usenet binaries
 
 PKGNAME=	aub-2.0.5

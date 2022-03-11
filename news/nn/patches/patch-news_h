@@ -1,5 +1,3 @@
-$OpenBSD: patch-news_h,v 1.1 2021/02/06 17:27:38 naddy Exp $
-
 Index: news.h
 --- news.h.orig
 +++ news.h

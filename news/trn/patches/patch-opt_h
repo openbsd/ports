@@ -1,4 +1,3 @@
-$OpenBSD: patch-opt_h,v 1.1 2010/05/22 11:44:40 espie Exp $
 --- opt.h.orig	Sat May 22 13:39:36 2010
 +++ opt.h	Sat May 22 13:40:29 2010
 @@ -132,6 +132,7 @@ EXT char* yesorno[2]

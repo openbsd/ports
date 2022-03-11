@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2020/07/25 17:02:37 sthen Exp $
-
 COMMENT=	SLang-based newsreader
 
 PKGNAME=	slrn-1.0.3

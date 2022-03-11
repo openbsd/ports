@@ -1,4 +1,3 @@
-$OpenBSD: patch-inst_sh,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
 --- inst.sh.orig	Mon Sep 29 19:35:08 2008
 +++ inst.sh	Mon Sep 29 19:36:00 2008
 @@ -14,10 +14,6 @@ mkdir)

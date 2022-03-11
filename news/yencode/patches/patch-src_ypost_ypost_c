@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ypost_ypost_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
 --- src/ypost/ypost.c.orig	Sat Jan 22 21:54:17 2005
 +++ src/ypost/ypost.c	Sat Jan 22 21:59:11 2005
 @@ -733,7 +733,7 @@ output_file_info(void)

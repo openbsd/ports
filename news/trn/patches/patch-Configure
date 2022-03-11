@@ -1,4 +1,3 @@
-$OpenBSD: patch-Configure,v 1.5 2013/06/18 21:27:42 sthen Exp $
 --- Configure.orig	Thu Sep  2 07:12:26 2010
 +++ Configure	Tue Jun 18 22:14:54 2013
 @@ -527,7 +527,7 @@ locincpth="$locincpth /opt/gnu/include /usr/GNU/includ

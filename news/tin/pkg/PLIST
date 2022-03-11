@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/01/19 16:22:28 giovanni Exp $
 @pkgpath news/tin,nntp_only
 bin/rtin
 @bin bin/tin

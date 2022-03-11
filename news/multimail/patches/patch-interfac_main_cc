@@ -1,4 +1,3 @@
-$OpenBSD: patch-interfac_main_cc,v 1.3 2018/08/26 13:14:31 fcambus Exp $
 Index: interfac/main.cc
 --- interfac/main.cc.orig
 +++ interfac/main.cc

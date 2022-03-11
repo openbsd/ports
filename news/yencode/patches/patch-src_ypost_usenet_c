@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ypost_usenet_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
 --- src/ypost/usenet.c.orig	Fri Mar 15 12:10:49 2002
 +++ src/ypost/usenet.c	Sat Jan 22 22:18:35 2005
 @@ -159,7 +159,7 @@ usenet_message_id(void)

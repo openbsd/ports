@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:53 sthen Exp $
-
 COMMENT=	download and decode binaries posted to Usenet
 
 DISTNAME=	ubh-2.5

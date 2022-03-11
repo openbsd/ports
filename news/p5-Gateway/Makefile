@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/07/03 21:45:39 sthen Exp $
-
 COMMENT=	perl module to gateway between news and mail
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-/* $OpenBSD: s-openbsd.h,v 1.3 2017/04/15 14:11:35 naddy Exp $ */
-
 #include <sys/types.h>
 #include <sys/stat.h>
 #define	HAVE_TERMIOS_H

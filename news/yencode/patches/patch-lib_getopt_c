@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_getopt_c,v 1.1.1.1 2005/01/25 23:32:22 fgsch Exp $
 --- lib/getopt.c.orig	Mon Mar 11 03:31:47 2002
 +++ lib/getopt.c	Sat Jan 22 21:51:01 2005
 @@ -55,11 +55,11 @@ extern int strncmp();

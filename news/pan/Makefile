@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2021/12/29 17:03:28 ajacoutot Exp $
-
 COMMENT=	powerful newsreader
 
 V=		0.149

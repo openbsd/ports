@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:39 sthen Exp $
-
 COMMENT=	module for managing newsrc files
 
 MODULES=	cpan

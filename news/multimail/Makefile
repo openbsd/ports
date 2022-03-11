@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/11 09:12:59 fcambus Exp $
-
 COMMENT =	offline mail reader for Blue Wave, QWK, OMEN, SOUP and OPX
 
 V =		0.52

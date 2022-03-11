@@ -1,5 +1,3 @@
-$OpenBSD: patch-nn_term_h,v 1.1 2021/02/06 17:27:38 naddy Exp $
-
 Index: nn_term.h
 --- nn_term.h.orig
 +++ nn_term.h

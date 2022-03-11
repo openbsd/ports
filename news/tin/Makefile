@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2020/01/24 16:01:19 giovanni Exp $
-
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}

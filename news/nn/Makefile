@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/06 17:27:38 naddy Exp $
-
 COMMENT =		menu-based Usenet newsreader
 DISTNAME =		nn-6.7.3
 REVISION =		6
