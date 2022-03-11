@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:53 sthen Exp $
-
 COMMENT =		yet another SQLite wrapper
 
 DISTNAME =		ksql-0.3.5

@@ -1,4 +1,3 @@
-$OpenBSD: patch-liquibase,v 1.1.1.1 2016/03/18 15:51:38 awolk Exp $
 --- liquibase.orig	Sun Mar 13 13:42:39 2016
 +++ liquibase	Sun Mar 13 13:43:04 2016
 @@ -1,5 +1,7 @@

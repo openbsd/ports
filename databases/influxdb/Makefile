@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/01 12:57:06 landry Exp $
-
 COMMENT =	time-series datastore for metrics, events, and analytics
 
 MODGO_VERSION=	v1.8.10

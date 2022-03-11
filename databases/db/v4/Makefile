@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
 REV=		4

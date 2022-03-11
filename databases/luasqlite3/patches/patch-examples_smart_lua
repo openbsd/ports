@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_smart_lua,v 1.1 2006/07/30 04:51:39 pedro Exp $
 --- examples/smart.lua.orig	Fri Jul 28 21:59:05 2006
 +++ examples/smart.lua	Fri Jul 28 21:59:38 2006
 @@ -1,5 +1,4 @@

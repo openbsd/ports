@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2015/10/11 21:39:18 sthen Exp $
 --- Makefile.in.orig	Sun Jul  4 09:36:20 2010
 +++ Makefile.in	Wed Jun 20 13:52:41 2012
 @@ -679,13 +679,13 @@ libtokyocabinet.a : $(LIBOBJFILES)

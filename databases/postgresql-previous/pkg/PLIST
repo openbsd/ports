@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/01/13 16:00:15 jeremy Exp $
 bin/${POSTGRESQL_DIR}/
 @bin bin/${POSTGRESQL_DIR}/clusterdb
 @bin bin/${POSTGRESQL_DIR}/createdb

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/01/13 16:00:15 jeremy Exp $
-
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
 VERSION=	13.5

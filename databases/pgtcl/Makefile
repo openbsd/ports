@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/28 12:36:46 sthen Exp $
-
 COMMENT=	Tcl interface to PostgreSQL
 
 V=		1.7

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:44:01 sthen Exp $
-
 COMMENT=		high performance embedded database library
 
 DISTNAME=		qdbm-1.8.78

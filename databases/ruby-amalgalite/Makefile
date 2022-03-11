@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/05/21 22:27:33 jeremy Exp $
-
 COMMENT =	ruby SQLite3 embedded database library
 
 DISTNAME =	amalgalite-1.7.0

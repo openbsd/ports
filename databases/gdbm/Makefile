@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/09 12:18:10 sthen Exp $
-
 COMMENT=		GNU dbm
 
 DISTNAME=		gdbm-1.23

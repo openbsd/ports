@@ -1,4 +1,3 @@
-$OpenBSD: patch-m_muttalias_sh_in,v 1.4 2014/09/16 12:15:23 sthen Exp $
 --- m_muttalias.sh.in.orig	Thu Jun 11 11:56:22 2009
 +++ m_muttalias.sh.in	Tue Sep 16 13:04:48 2014
 @@ -34,10 +34,10 @@ m_muttalias_query()

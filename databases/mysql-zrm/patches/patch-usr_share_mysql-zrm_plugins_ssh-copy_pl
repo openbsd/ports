@@ -1,4 +1,3 @@
-$OpenBSD: patch-usr_share_mysql-zrm_plugins_ssh-copy_pl,v 1.1 2012/04/03 10:56:03 giovanni Exp $
 --- usr/share/mysql-zrm/plugins/ssh-copy.pl.orig	Thu Feb  4 01:19:25 2010
 +++ usr/share/mysql-zrm/plugins/ssh-copy.pl	Tue Apr  3 12:41:10 2012
 @@ -52,7 +52,7 @@ $ENV{"PATH"}="/usr/local/bin:/opt/csw/bin:/bin:/usr/bi

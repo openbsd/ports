@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/07/09 21:33:28 sthen Exp $
-
 COMMENT=	C++ client API for PostgreSQL
 
 GH_ACCOUNT=	jtv

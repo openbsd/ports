@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/12 07:39:49 landry Exp $
-
 COMMENT =	full-featured LDAP client running as web application
 
 MODPY_EGG_VERSION =	1.7.3

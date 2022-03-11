@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/15 16:28:47 gsoares Exp $
 bin/couchdb-push
 ${P5SITE}/AnyEvent/CouchDB/
 ${P5SITE}/AnyEvent/CouchDB.pm

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/02/03 07:10:24 landry Exp $
 @newgroup _web2ldap:857
 @newuser _web2ldap:857:_web2ldap:daemon:web2ldap service account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/web2ldap

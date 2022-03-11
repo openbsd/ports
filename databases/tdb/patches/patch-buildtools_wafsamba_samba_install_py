@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_samba_install_py,v 1.6 2021/05/12 23:30:53 jca Exp $
-
 - respect OpenBSD shared libraries versioning
 - --version-script fails if specified multipled times
 

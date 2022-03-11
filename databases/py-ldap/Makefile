@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2022/02/28 11:38:00 sthen Exp $
-
 COMMENT=		LDAP client API for Python
 
 MODPY_EGG_VERSION =	3.4.0

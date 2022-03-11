@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/20 14:47:06 sthen Exp $
-
 COMMENT =		non-validating SQL parser
 
 MODPY_EGG_VERSION =	0.4.2

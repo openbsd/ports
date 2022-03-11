@@ -1,5 +1,3 @@
-$OpenBSD: patch-influxdb__dataframe_client_py,v 1.2 2020/11/12 06:18:29 bket Exp $
-
 Fix FutureWarning from pandas.
 
 Index: influxdb/_dataframe_client.py

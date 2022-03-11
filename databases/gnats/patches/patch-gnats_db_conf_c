@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnats_db_conf_c,v 1.2 2007/12/28 17:11:25 espie Exp $
 --- gnats/db_conf.c.orig	Wed Sep 22 04:31:01 1999
 +++ gnats/db_conf.c	Fri Dec 28 18:00:24 2007
 @@ -47,7 +47,7 @@ Software Foundation, 59 Temple Place - Suite 330, Bost

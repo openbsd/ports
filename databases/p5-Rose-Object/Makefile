@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:37 sthen Exp $
-
 COMMENT =	object oriented DBMS for perl
 
 DISTNAME =	Rose-Object-0.860

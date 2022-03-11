@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/10 20:06:04 sthen Exp $
-
 BROKEN-hppa=	undefined reference to __sync_fetch_and_add_8
 
 # requires C++ tr1 headers

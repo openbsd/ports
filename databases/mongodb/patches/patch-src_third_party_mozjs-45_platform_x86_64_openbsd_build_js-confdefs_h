@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_third_party_mozjs-45_platform_x86_64_openbsd_build_js-confdefs_h,v 1.1 2022/02/02 18:14:59 sthen Exp $
-
 Index: src/third_party/mozjs-45/platform/x86_64/openbsd/build/js-confdefs.h
 --- src/third_party/mozjs-45/platform/x86_64/openbsd/build/js-confdefs.h.orig
 +++ src/third_party/mozjs-45/platform/x86_64/openbsd/build/js-confdefs.h

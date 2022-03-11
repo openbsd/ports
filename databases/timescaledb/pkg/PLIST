@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2022/02/27 13:11:34 denis Exp $
 @so lib/postgresql/timescaledb-${GH_TAGNAME}.so
 @so lib/postgresql/timescaledb-tsl-${GH_TAGNAME}.so
 @so lib/postgresql/timescaledb.so

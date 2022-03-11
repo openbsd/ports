@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/13 16:02:25 jeremy Exp $
-
 COMMENT =		Lua procedural language support for PostgreSQL
 
 VERSION =		2.0.10

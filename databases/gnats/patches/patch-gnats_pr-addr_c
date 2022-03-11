@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnats_pr-addr_c,v 1.1 2003/08/25 23:35:06 brad Exp $
 --- gnats/pr-addr.c.orig	Wed Nov 25 07:15:11 1998
 +++ gnats/pr-addr.c	Wed Jul  2 13:23:13 2003
 @@ -48,10 +48,9 @@ main (argc, argv)

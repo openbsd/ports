@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_cli_ssl-setup,v 1.2 2019/04/01 11:17:33 sebastia Exp $
 Index: ext/cli/ssl-setup
 --- ext/cli/ssl-setup.orig
 +++ ext/cli/ssl-setup

@@ -1,4 +1,3 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-verify-backup,v 1.4 2014/05/13 14:00:45 giovanni Exp $
 --- usr/bin/mysql-zrm-verify-backup.orig	Mon Aug 26 22:45:37 2013
 +++ usr/bin/mysql-zrm-verify-backup	Tue May 13 15:45:54 2014
 @@ -30,7 +30,7 @@ use lib "/usr/lib/mysql-zrm";

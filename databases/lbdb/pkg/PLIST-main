@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/07/12 09:31:48 sthen Exp $
 bin/lbdb-fetchaddr
 @bin bin/lbdb_dotlock
 bin/lbdbq

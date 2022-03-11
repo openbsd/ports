@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/01/10 21:14:07 rsadowski Exp $
-
 COMMENT=	search engine library
 
 V=		1.4.19

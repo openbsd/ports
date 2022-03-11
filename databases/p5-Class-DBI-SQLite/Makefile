@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:35 sthen Exp $
-
 COMMENT=	extensions to Class::DBI for SQLite
 
 MODULES=	cpan

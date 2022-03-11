@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2001/03/30 21:08:26 danh Exp $
 bin/mysql2pgsql

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: pgcluu_collectd.rc,v 1.3 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/pgcluu_collectd --daemon"
 daemon_flags="-i 60 -h localhost -U postgres --disable-sar -f /var/run/pgcluu_collectd.pid /var/db/pgcluu"

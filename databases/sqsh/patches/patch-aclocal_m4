@@ -1,4 +1,3 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2014/06/07 10:48:39 sthen Exp $
 --- aclocal.m4.orig	Sat Jun  7 11:03:08 2014
 +++ aclocal.m4	Sat Jun  7 11:04:37 2014
 @@ -274,10 +274,6 @@ AC_DEFUN([AC_SYBASE_ASE], [

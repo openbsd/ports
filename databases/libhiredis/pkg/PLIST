@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/29 13:02:29 sthen Exp $
 include/hiredis/
 include/hiredis/adapters/
 include/hiredis/adapters/ae.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:35 sthen Exp $
-
 COMMENT =	reads and writes XBase (dbf) files, includes DBI support
 
 DISTNAME =	DBD-XBase-1.08

@@ -1,5 +1,3 @@
-$OpenBSD: patch-m_abook_sh_in,v 1.1 2018/07/12 09:31:48 sthen Exp $
-
 Index: m_abook.sh.in
 --- m_abook.sh.in.orig
 +++ m_abook.sh.in

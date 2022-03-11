@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT=	database-independent schema objects
 
 DISTNAME=	DBIx-DBSchema-0.45

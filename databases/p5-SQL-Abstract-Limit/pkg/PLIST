@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/10 12:02:29 jasper Exp $
 ${P5SITE}/SQL/Abstract/Limit.pm
 @man man/man3p/SQL::Abstract::Limit.3p

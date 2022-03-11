@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/29 20:01:03 sthen Exp $
-
 COMMENT =		R procedural language for PostgreSQL
 
 VERSION =		8.4.1

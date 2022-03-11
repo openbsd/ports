@@ -1,4 +1,3 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-scheduler,v 1.2 2014/05/13 14:00:45 giovanni Exp $
 --- usr/bin/mysql-zrm-scheduler.orig	Mon Aug 26 22:45:37 2013
 +++ usr/bin/mysql-zrm-scheduler	Tue May 13 15:33:21 2014
 @@ -38,8 +38,8 @@ my $logdir="/var/log/mysql-zrm";

@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_eleveldb_c_src_leveldb_build_config_mk,v 1.5 2018/05/15 06:38:33 jmatthew Exp $
-
 pregenerated build_config.mk for leveldb
 
 --- deps/eleveldb/c_src/leveldb/build_config.mk.orig	Wed Mar  1 11:37:43 2017

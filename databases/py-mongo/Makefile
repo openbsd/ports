@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/27 13:06:30 sthen Exp $
-
 COMMENT =	Python driver for mongodb
 
 # 4.x drops py2; currently used in test target in databases/mongodb

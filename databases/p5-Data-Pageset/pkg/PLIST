@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 21:14:38 espie Exp $
 ${P5SITE}/Data/Pageset.pm
 @man man/man3p/Data::Pageset.3p

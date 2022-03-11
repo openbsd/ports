@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/11 15:09:45 benoit Exp $
-
 COMMENT=	perl interface to gdbm
 
 PERL_V =	5.26.3

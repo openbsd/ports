@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/13 22:41:14 sthen Exp $
 @conflict py-sqlparse-*
 @pkgpath databases/py-sqlparse
 bin/sqlformat

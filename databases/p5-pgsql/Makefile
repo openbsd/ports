@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:58 sthen Exp $
-
 COMMENT=	access to PostgreSQL databases perl
 
 VERSION=	1.9.0

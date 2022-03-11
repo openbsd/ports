@@ -1,5 +1,3 @@
-$OpenBSD: patch-pgadmin_frm_frmEditGrid_cpp,v 1.1 2018/04/16 15:07:09 tb Exp $
-
 Index: pgadmin/frm/frmEditGrid.cpp
 --- pgadmin/frm/frmEditGrid.cpp.orig
 +++ pgadmin/frm/frmEditGrid.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_tcl_db_h,v 1.1 2021/02/01 23:58:30 naddy Exp $
-
 Index: include/tcl_db.h
 --- include/tcl_db.h.orig
 +++ include/tcl_db.h

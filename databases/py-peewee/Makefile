@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/07 19:13:45 solene Exp $
-
 COMMENT=		small expressive ORM
 
 MODPY_EGG_VERSION=	3.14.8

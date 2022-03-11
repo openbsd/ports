@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_eleveldb_c_src_build_deps_sh,v 1.4 2018/05/15 06:38:33 jmatthew Exp $
-
 Don't try to install libsnappy.  Instead, find the headers in the source
 tree and get the static library from where it's built.
 

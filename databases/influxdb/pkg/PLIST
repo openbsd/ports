@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/11/01 12:57:06 landry Exp $
 @newgroup _influx:797
 @newuser _influx:797:_influx:daemon:InfluxDB user:${VARBASE}/influxdb:/sbin/nologin
 @rcscript ${RCDIR}/influxdb

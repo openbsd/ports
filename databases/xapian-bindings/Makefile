@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2022/02/18 16:47:05 kmos Exp $
-
 COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
 COMMENT-ruby=	ruby bindings for Xapian

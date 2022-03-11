@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs__build_conf_py_in,v 1.1 2013/09/25 09:02:09 giovanni Exp $
 --- docs/_build/conf.py.in.orig	Tue Sep 24 23:32:25 2013
 +++ docs/_build/conf.py.in	Tue Sep 24 23:34:42 2013
 @@ -211,8 +211,8 @@ latex_documents = [

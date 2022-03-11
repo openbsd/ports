@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-gui,v 1.4 2022/02/12 12:33:20 sthen Exp $
 @bin bin/recoll
 share/applications/recoll-searchgui.desktop
 share/icons/hicolor/48x48/apps/recoll.png

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2014/09/16 12:15:23 sthen Exp $
 --- Makefile.in.orig	Sat May 10 16:34:04 2014
 +++ Makefile.in	Tue Sep 16 13:04:48 2014
 @@ -181,4 +181,4 @@ Makefile: Makefile.in

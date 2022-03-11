@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/06 22:03:51 simon Exp $
 ${P5SITE}/CGI/Application/Plugin/
 ${P5SITE}/CGI/Application/Plugin/DBH.pm
 @man man/man3p/CGI::Application::Plugin::DBH.3p

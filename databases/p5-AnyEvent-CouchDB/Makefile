@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:33 sthen Exp $
-
 COMMENT=		non-blocking CouchDB client based on jquery.couch.js
 
 DISTNAME=		AnyEvent-CouchDB-1.31

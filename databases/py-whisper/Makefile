@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/20 14:47:41 sthen Exp $
-
 COMMENT =		fixed size round-robin style database
 
 MODPY_EGG_VERSION =	1.1.8

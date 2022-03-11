@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT=		Redis::Namespace class for namespacing calls to Redis
 
 DISTNAME=		redis-namespace-1.5.3

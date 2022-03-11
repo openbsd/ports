@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/11/02 00:00:16 sthen Exp $
-
 COMMENT =		Python interface to Redis
 
 MODPY_EGG_VERSION =	3.5.3

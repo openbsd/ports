@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_modrdn_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
 --- test/modrdn.rb.orig	Wed Dec 20 13:35:43 2006
 +++ test/modrdn.rb	Wed Dec 20 13:35:51 2006
 @@ -6,6 +6,7 @@ require "#{$test}/conf"

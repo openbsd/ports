@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:53 sthen Exp $
-
 COMMENT =		easy to use database connection pool Library
 
 DISTNAME =		libzdb-3.1

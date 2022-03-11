@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: pgpool.rc,v 1.2 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/pgpool"
 daemon_user="_pgpool"

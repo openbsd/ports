@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.125 2021/10/05 05:29:55 tb Exp $
-
 COMMENT =		persistent key-value database
 
 DISTNAME =		redis-6.2.6

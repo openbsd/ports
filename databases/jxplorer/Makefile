@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/05/19 01:50:29 kurt Exp $
-
 COMMENT=	standards compliant LDAP browser
 
 V=		3.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/02/25 15:05:23 tb Exp $
 @newgroup _redis:686
 @newuser _redis:686:_redis:daemon:redis account:${DBDIR}:/sbin/nologin
 @rcscript ${RCDIR}/redis

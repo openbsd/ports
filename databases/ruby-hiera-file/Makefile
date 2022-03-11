@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:01 sthen Exp $
-
 COMMENT =	data backend for Hiera to return whole files
 
 DISTNAME =	hiera-file-1.1.1

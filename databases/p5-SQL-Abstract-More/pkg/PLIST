@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/05 07:46:51 benoit Exp $
 ${P5SITE}/SQL/Abstract/More.pm
 @man man/man3p/SQL::Abstract::More.3p

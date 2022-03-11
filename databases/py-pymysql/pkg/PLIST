@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/09 11:32:40 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/PyMySQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyMySQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyMySQL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt

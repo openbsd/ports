@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/10/09 03:45:52 afresh1 Exp $
-
 COMMENT= 	DBI model class for Catalyst
 
 MODULES=	cpan

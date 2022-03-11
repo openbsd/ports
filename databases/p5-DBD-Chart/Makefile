@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:35 sthen Exp $
-
 COMMENT =	DBI driver abstraction for rendering charts and graphs
 
 DISTNAME =	DBD-Chart-0.82

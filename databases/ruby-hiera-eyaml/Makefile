@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/23 18:36:40 sebastia Exp $
-
 COMMENT =	Hiera backend for decrypting encrypted yaml properties
 
 DISTNAME =	hiera-eyaml-3.2.2

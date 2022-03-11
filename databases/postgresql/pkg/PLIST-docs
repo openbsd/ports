@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-docs,v 1.104 2022/02/12 21:10:34 jeremy Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY

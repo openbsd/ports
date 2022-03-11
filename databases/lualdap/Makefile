@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:53 sthen Exp $
-
 COMMENT =	interface LDAP from lua
 DISTNAME=	lualdap-1.1.0
 CATEGORIES =	databases

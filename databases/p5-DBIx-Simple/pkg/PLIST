@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/06/23 19:08:01 henning Exp $
 ${P5SITE}/DBIx/
 ${P5SITE}/DBIx/Simple/
 ${P5SITE}/DBIx/Simple.pm

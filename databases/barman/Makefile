@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/12/02 09:24:23 sthen Exp $
-
 COMMENT =	backup and restoration manager for PostgreSQL
 
 MODPY_EGG_VERSION =	2.17

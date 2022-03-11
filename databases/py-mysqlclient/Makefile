@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/26 14:19:47 sthen Exp $
-
 COMMENT =		Python interface to MySQL
 
 MODPY_EGG_VERSION =	2.1.0

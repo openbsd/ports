@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/28 12:36:46 sthen Exp $
-
 COMMENT=	programs to aid the PostgreSQL administrator
 
 V=		3

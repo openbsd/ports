@@ -1,5 +1,3 @@
-$OpenBSD: patch-go_sum,v 1.1 2021/11/01 12:57:06 landry Exp $
-
 http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/databases/influxdb/patches/patch-go.sum?rev=1.1&content-type=text/x-cvsweb-markup has more or less the same thing
 
 some checksums come from https://sum.golang.org/lookup/github.com/pkg/term@v1.1.0 others from manual go download in WRKDIR

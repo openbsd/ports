@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/21 16:09:40 gonzalo Exp $
-
 COMMENT =	C++17 wrapper for Lightning Memory-Mapped Database
 
 VERSION =	1.0.0

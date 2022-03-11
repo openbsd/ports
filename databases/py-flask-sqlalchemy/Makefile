@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 10:00:13 sthen Exp $
-
 COMMENT =	sqlalchemy support for flask
 
 MODPY_EGG_VERSION = 2.5.1

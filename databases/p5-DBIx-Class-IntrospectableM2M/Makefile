@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT=	introspect many-to-many shortcuts
 
 DISTNAME =	DBIx-Class-IntrospectableM2M-0.001002

@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_cfg,v 1.5 2015/02/16 15:34:10 sthen Exp $
 --- test.cfg.orig	Sun Jun  1 12:35:49 2014
 +++ test.cfg	Mon Feb 16 15:32:28 2015
 @@ -4,22 +4,22 @@

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-pg_upgrade,v 1.1 2016/12/18 18:18:27 jeremy Exp $
 @bin bin/pg_upgrade
 @man man/man1/pg_upgrade.1

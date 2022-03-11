@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/03/20 16:44:22 naddy Exp $
-
 COMMENT =	MySQL backup scripts
 
 V =		3.0

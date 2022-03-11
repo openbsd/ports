@@ -1,4 +1,3 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.2 2007/12/28 17:11:25 espie Exp $
 --- libiberty/Makefile.in.orig	Thu Nov  5 20:54:14 1998
 +++ libiberty/Makefile.in	Fri Dec 28 18:00:24 2007
 @@ -246,7 +246,7 @@ dummy.o: $(srcdir)/dummy.c $(srcdir)/functions.def

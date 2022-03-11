@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT=	add contextual fetches to DBI
 
 DISTNAME=	DBIx-ContextualFetch-1.03

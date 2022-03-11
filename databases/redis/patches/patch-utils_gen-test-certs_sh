@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_gen-test-certs_sh,v 1.2 2021/02/25 15:05:23 tb Exp $
-
 Index: utils/gen-test-certs.sh
 --- utils/gen-test-certs.sh.orig
 +++ utils/gen-test-certs.sh

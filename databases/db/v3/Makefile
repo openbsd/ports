@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/22 13:55:54 espie Exp $
-
 REV=		3
 DBLIBDIR=	lib/db
 VERSION=	${REV}.1.17

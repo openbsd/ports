@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:11 sthen Exp $
-
 COMMENT =	MySQL management utilities
 
 MODPY_EGG_VERSION = 1.6.5

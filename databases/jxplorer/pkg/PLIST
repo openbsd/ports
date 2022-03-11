@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/31 18:13:15 aanriot Exp $
 bin/jxplorer
 share/jxplorer/
 @comment share/jxplorer/RELEASE.TXT

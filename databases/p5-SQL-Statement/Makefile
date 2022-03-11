@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/12/05 20:41:30 afresh1 Exp $
-
 COMMENT =	SQL parsing and processing engine
 
 MODULES =	cpan

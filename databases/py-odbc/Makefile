@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/27 08:50:28 sthen Exp $
-
 COMMENT =	ODBC bindings for Python
 
 MODPY_EGG_VERSION = 4.0.32

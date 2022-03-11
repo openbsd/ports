@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/20 15:05:11 bket Exp $
-
 COMMENT=		library for working with the PuppetDB API
 
 MODPY_EGG_VERSION=	2.5.1

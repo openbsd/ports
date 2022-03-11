@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/12/02 09:24:23 sthen Exp $
 @newgroup _barman:723
 @newuser _barman:723:723:daemon:Barman User:/var/db/barman:/sbin/nologin
 @extraunexec rm -rf /var/db/barman/*

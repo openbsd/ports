@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/03/01 13:48:29 sthen Exp $
-
 COMMENT =	PostgreSQL Database Modeler
 
 VERSION =	0.9.3

@@ -1,5 +1,3 @@
-$OpenBSD: patch-agent_bin_pgut_pgut_h,v 1.1 2022/01/13 16:01:29 jeremy Exp $
-
 Fix conflict when using PostgreSQL 14.
 
 Index: agent/bin/pgut/pgut.h

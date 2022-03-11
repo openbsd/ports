@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Rose_DB_Registry_Entry_pm,v 1.4 2018/04/27 14:59:01 ajacoutot Exp $
 Index: lib/Rose/DB/Registry/Entry.pm
 --- lib/Rose/DB/Registry/Entry.pm.orig
 +++ lib/Rose/DB/Registry/Entry.pm

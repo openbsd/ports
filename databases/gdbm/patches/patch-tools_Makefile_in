@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.1 2022/02/13 18:56:48 naddy Exp $
-
 Fix parallel build.  gmake recognizes libfoo.a and ./libfoo.a as
 equivalent, ours does not.
 

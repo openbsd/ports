@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2015/10/30 16:24:21 benoit Exp $
 --- Makefile.PL.orig	Fri Oct  9 03:26:46 2015
 +++ Makefile.PL	Fri Oct 30 17:17:47 2015
 @@ -25,13 +25,13 @@ while (my ($module, $min_ver) = each %required) {

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_install_macros_cmake,v 1.15 2020/06/26 08:46:41 sthen Exp $
-
 Index: cmake/install_macros.cmake
 --- cmake/install_macros.cmake.orig
 +++ cmake/install_macros.cmake

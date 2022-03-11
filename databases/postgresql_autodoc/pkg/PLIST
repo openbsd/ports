@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/23 16:33:40 simon Exp $
 bin/postgresql_autodoc
 share/postgresql_autodoc/
 share/postgresql_autodoc/dia.tmpl

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/12 06:45:11 rsadowski Exp $
-
 COMMENT =	database connectivity and creation framework
 
 VERSION =	3.2.0

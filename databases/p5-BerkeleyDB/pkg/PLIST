@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/02/16 21:09:28 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/BerkeleyDB/
 ${P5ARCH}/BerkeleyDB.pm

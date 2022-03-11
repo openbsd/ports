@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2019/01/02 16:03:54 bket Exp $
-
 Put our CFLAGS, CXXFLAGS, CPPFLAGS and LDFLAGS at the end so that we can
 override optimisations...
 

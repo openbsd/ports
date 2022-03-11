@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: influxdb.rc,v 1.5 2021/02/27 09:28:50 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/influxd"
 daemon_logger="daemon.info"

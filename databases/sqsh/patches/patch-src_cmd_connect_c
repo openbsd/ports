@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cmd_connect_c,v 1.2 2020/07/05 10:26:52 sthen Exp $
-
 - CS_TDS_80 used to be #defined to CS_TDS_71 but has now been removed.
 
 - Disable CS_SEC_NETWORKAUTH code. FreeTDS 1.2 introduces CS_SEC_NETWORKAUTH

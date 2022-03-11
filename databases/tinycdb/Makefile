@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:02 sthen Exp $
-
 COMMENT =	creating and reading constant databases
 
 DISTNAME =	tinycdb-0.78

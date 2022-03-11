@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/10/18 07:34:24 benoit Exp $
-
 COMMENT=	Tie hashes to DBI relational databases
 
 MODULES=	cpan

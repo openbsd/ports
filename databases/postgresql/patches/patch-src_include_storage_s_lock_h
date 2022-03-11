@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_include_storage_s_lock_h,v 1.7 2021/02/09 20:01:36 sthen Exp $
 Index: src/include/storage/s_lock.h
 --- src/include/storage/s_lock.h.orig
 +++ src/include/storage/s_lock.h

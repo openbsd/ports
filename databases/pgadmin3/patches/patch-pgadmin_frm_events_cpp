@@ -1,4 +1,3 @@
-$OpenBSD: patch-pgadmin_frm_events_cpp,v 1.3 2016/07/15 14:43:40 pea Exp $
 --- pgadmin/frm/events.cpp.orig	Thu Jan  7 04:47:32 2016
 +++ pgadmin/frm/events.cpp	Sat Jul  2 17:19:34 2016
 @@ -41,7 +41,7 @@

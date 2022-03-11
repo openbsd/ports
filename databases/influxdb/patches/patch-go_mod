@@ -1,5 +1,3 @@
-$OpenBSD: patch-go_mod,v 1.1 2021/11/01 12:57:06 landry Exp $
-
 http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/databases/influxdb/patches/patch-go.mod?rev=1.1&content-type=text/x-cvsweb-markup
 
 Index: go.mod

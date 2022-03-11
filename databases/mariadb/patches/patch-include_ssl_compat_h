@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_ssl_compat_h,v 1.2 2022/02/23 21:49:44 sthen Exp $
-
 Provide generous estimates of the sizes of EVP_MD_CTX and EVP_CIPHER_CTX.
 (In OpenBSD 7.0 amd64 and sparc64 they are 48 and 168, respectively).
 Also provide EVP_MD_CTX_init and EVP_CIPHER_CTX_init because someone

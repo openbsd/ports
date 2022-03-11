@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/02/20 20:13:42 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pysqlite-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/__init__.py

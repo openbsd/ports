@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnats_file-pr_c,v 1.2 2007/12/28 17:11:25 espie Exp $
 --- gnats/file-pr.c.orig	Tue May  8 16:09:45 2001
 +++ gnats/file-pr.c	Fri Dec 28 18:00:24 2007
 @@ -51,7 +51,6 @@ gnats (fp)

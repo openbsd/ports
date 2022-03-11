@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/11/05 02:58:03 afresh1 Exp $
-
 COMMENT =	extensible and flexible object relational mapper
 
 MODULES =	cpan

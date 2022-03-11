@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/11/03 19:22:38 afresh1 Exp $
 ${P5SITE}/Bundle/DBD/
 ${P5SITE}/Bundle/DBD/CSV.pm
 ${P5SITE}/DBD/

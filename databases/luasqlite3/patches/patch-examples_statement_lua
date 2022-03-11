@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_statement_lua,v 1.1 2006/07/30 04:51:39 pedro Exp $
 --- examples/statement.lua.orig	Fri Jul 28 21:59:16 2006
 +++ examples/statement.lua	Fri Jul 28 21:59:40 2006
 @@ -1,5 +1,4 @@

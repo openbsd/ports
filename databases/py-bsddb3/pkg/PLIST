@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:40 sthen Exp $
 @pkgpath databases/py-bsddb3
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/bsddb3/
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/bsddb3/bsddb.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mongo_db_repl_oplog_fetcher_cpp,v 1.1 2022/02/02 18:14:58 sthen Exp $
-
 from https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=224090
 
 Index: src/mongo/db/repl/oplog_fetcher.cpp

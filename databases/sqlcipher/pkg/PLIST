@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/21 12:04:26 tim Exp $
 @bin bin/sqlcipher
 include/sqlcipher/
 include/sqlcipher/sqlite3.h

@@ -1,5 +1,3 @@
-# $OpenBSD: mariadb.port.mk,v 1.5 2021/08/16 17:49:56 sthen Exp $
-#
 # Helps testing MySQL/MariaDB-based software, no B/L/R-DEPS here.
 
 MODMARIADB_TEST_CMD ?= \

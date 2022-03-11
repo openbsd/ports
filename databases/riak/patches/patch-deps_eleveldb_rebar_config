@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_eleveldb_rebar_config,v 1.7 2018/05/15 06:38:33 jmatthew Exp $
-
 link in libsnappy from its build tree rather than the installed location,
 since running make install is problematic.
 

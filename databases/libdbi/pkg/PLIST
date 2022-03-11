@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/06/03 16:23:09 steven Exp $
 include/dbi/
 include/dbi/dbd.h
 include/dbi/dbi-dev.h

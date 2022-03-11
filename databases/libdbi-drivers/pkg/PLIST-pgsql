@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.3 2021/10/11 09:36:30 kn Exp $
 lib/dbd/
 @static-lib lib/dbd/libdbdpgsql.a
 lib/dbd/libdbdpgsql.la

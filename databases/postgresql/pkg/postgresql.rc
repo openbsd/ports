@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: postgresql.rc,v 1.14 2021/11/07 14:27:44 robert Exp $
 
 daemon="${TRUEPREFIX}/bin/pg_ctl"
 daemon_flags="-D /var/postgresql/data -w -l /var/postgresql/logfile"

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: redis.rc,v 1.7 2021/02/25 15:05:23 tb Exp $
 
 daemon="${TRUEPREFIX}/bin/redis-server"
 daemon_flags="${SYSCONFDIR}/redis/redis.conf"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:53 sthen Exp $
-
 COMMENT =		database-independent abstraction layer
 DISTNAME =		libdbi-0.9.0
 CATEGORIES =		databases

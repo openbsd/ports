@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/21 17:19:58 sthen Exp $
 @bin bin/repmgr
 @bin bin/repmgrd
 @so lib/postgresql/repmgr.so

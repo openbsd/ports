@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_watchdog_wd_escalation_c,v 1.1 2017/12/19 09:02:03 pea Exp $
-
 Index: src/watchdog/wd_escalation.c
 --- src/watchdog/wd_escalation.c.orig
 +++ src/watchdog/wd_escalation.c

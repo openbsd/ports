@@ -1,5 +1,3 @@
-$OpenBSD: patch-reporter_pgut_pgut_h,v 1.1 2022/01/13 16:01:29 jeremy Exp $
-
 Work with PostgreSQL 14.
 
 Index: reporter/pgut/pgut.h

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/22 20:36:53 sthen Exp $
 ${P5SITE}/DBIx/Class/TimeStamp.pm
 @man man/man3p/DBIx::Class::TimeStamp.3p

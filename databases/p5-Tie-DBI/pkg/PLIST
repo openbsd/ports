@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:31:46 espie Exp $
 ${P5SITE}/Tie/
 ${P5SITE}/Tie/DBI.pm
 ${P5SITE}/Tie/RDBM.pm

@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_10connect_t,v 1.1 2019/01/29 18:08:40 giovanni Exp $
-
 Index: t/10connect.t
 --- t/10connect.t.orig
 +++ t/10connect.t

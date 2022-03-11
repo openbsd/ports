@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/20 14:53:17 sthen Exp $
-
 COMMENT=		backend data caching and persistence daemon for Graphite
 
 MODPY_EGG_VERSION=	1.1.8

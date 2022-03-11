@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/12/19 10:10:05 stu Exp $
-
 COMMENT =		Tcl bindings for SQLite3
 
 V =			3.34.0

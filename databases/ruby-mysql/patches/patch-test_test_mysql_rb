@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_test_mysql_rb,v 1.1 2015/07/18 11:51:28 zhuk Exp $
 MariaDB has more than one digit in major version number.
 
 Upstream pull request: https://github.com/luislavena/mysql-gem/pull/31

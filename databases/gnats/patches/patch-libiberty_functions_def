@@ -1,4 +1,3 @@
-$OpenBSD: patch-libiberty_functions_def,v 1.4 2019/01/22 17:54:30 naddy Exp $
 Index: libiberty/functions.def
 --- libiberty/functions.def.orig
 +++ libiberty/functions.def

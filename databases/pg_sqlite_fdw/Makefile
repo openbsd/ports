@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/18 08:53:05 sthen Exp $
-
 COMMENT =		PostgreSQL Foreign Data Wrapper for SQLite
 
 GH_ACCOUNT =		pgspider

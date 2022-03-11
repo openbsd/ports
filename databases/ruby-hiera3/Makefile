@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/01/06 21:30:10 sebastia Exp $
-
 COMMENT=		simple pluggable hierarchical database
 
 V=			3.8.0

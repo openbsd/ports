@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_compare_rb,v 1.1.1.1 2007/01/18 12:30:37 bernd Exp $
 --- test/compare.rb.orig	Wed Dec 20 13:37:14 2006
 +++ test/compare.rb	Wed Dec 20 13:37:26 2006
 @@ -5,7 +5,9 @@ $test = File.dirname($0)

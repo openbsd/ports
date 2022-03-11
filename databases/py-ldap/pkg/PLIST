@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2022/02/28 11:38:00 sthen Exp $
 @conflict py-ldap-examples-*
 @conflict py3-ldap-examples-*
 @pkgpath databases/py-ldap,-main

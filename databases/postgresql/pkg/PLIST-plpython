@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-plpython,v 1.11 2021/03/02 15:22:32 sthen Exp $
 include/postgresql/server/plpy_util.h
 include/postgresql/server/plpython.h
 @so lib/postgresql/hstore_plpython3.so

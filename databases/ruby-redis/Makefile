@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/03/20 16:44:22 naddy Exp $
-
 COMMENT =	client library for the Redis key-value store
 
 VERSION =	3.3.3

@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: jxplorer,v 1.1.1.1 2007/05/31 18:13:15 aanriot Exp $
 
 # jxplorer runtime wrapper
 

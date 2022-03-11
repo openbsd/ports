@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/03/03 19:12:32 denis Exp $
-
 COMMENT =		fast, cost-effective and scalable time series database
 
 V =			1.74.0

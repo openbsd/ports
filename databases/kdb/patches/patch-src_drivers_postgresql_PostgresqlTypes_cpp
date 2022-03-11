@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_drivers_postgresql_PostgresqlTypes_cpp,v 1.1 2020/02/06 00:39:50 jeremy Exp $
-
 Fix build with PostgreSQL 12, from upstream commit
 40cdaea4d7824cc1b0d26e6ad2dcb61fa2077911.
 

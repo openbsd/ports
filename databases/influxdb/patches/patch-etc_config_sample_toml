@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_config_sample_toml,v 1.1.1.1 2018/01/03 17:43:24 landry Exp $
-
 Index: etc/config.sample.toml
 --- etc/config.sample.toml.orig
 +++ etc/config.sample.toml

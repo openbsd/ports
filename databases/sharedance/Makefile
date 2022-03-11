@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:02 sthen Exp $
-
 COMMENT=	high-performance server that centralizes key/data pairs
 
 DISTNAME=	sharedance-0.6

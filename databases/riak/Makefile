@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2020/02/14 12:55:21 jasper Exp $
-
 # XXX: MODERL_VERSION is set to 21 below, otherwise dump-vars ends up with
 # bogus references.
 BROKEN =			does not build with erlang 18 or newer

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:15 sthen Exp $
-
 COMMENT =	thin SQLite wrapper for Python
 
 # version 3.XX.Y of apsw usually needs sqlite3 of at least 3.XX

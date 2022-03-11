@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/21 17:19:58 sthen Exp $
-
 COMMENT =	HA and replication cluster management for PostgreSQL
 
 DISTNAME =	repmgr-5.2.1

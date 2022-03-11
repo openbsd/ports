@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnats_nquery-pr_c,v 1.1 2003/08/25 23:35:06 brad Exp $
 --- gnats/nquery-pr.c.orig	Tue Sep 21 17:18:39 1999
 +++ gnats/nquery-pr.c	Wed Jul  2 13:23:13 2003
 @@ -444,10 +444,10 @@ ask_about (info, args)

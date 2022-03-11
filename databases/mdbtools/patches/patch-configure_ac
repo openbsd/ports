@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2021/10/30 07:02:01 ajacoutot Exp $
-
 file.c:303:25: error: 'g_memdup' is deprecated: Use 'g_memdup2' instead [-Werror,-Wdeprecated-declarations]
 
 Index: configure.ac

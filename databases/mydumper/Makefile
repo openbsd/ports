@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/07/06 16:55:32 daniel Exp $$
-
 COMMENT =	utility for quick MySQL dumping
 
 V =		0.9.1

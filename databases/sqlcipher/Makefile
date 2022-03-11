@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/10 15:23:24 tim Exp $
-
 COMMENT =	encrypted SQLite database
 
 GH_ACCOUNT =	sqlcipher

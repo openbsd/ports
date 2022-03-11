@@ -1,5 +1,3 @@
-$OpenBSD: patch-storage_connect_ioapi_h,v 1.1 2021/07/10 10:54:02 sthen Exp $
-
 Index: storage/connect/ioapi.h
 --- storage/connect/ioapi.h.orig
 +++ storage/connect/ioapi.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/10 16:54:09 jturner Exp $
 include/ksql.h
 lib/libksql.a
 @man man/man3/ksql.3

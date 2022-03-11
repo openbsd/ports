@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/24 15:17:08 espie Exp $
-
 COMMENT =		ports-readmes dancer web app
 PKG_ARCH = *
 

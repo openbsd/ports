@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/03/07 09:59:29 sthen Exp $
 bin/pgbadger
 @man man/man1/pgbadger.1p

@@ -1,6 +1,5 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: make-readmes,v 1.8 2019/07/16 03:49:32 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #

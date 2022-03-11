@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT =	DBI wrapper intended to Do What I Want
 
 MODULES =	cpan

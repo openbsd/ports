@@ -1,4 +1,3 @@
-$OpenBSD: patch-tcl_tcl_txn_c,v 1.2 2010/10/28 10:33:16 steven Exp $
 --- tcl/tcl_txn.c.orig	Fri Apr 21 20:18:58 2000
 +++ tcl/tcl_txn.c	Thu Oct 28 12:28:53 2010
 @@ -90,7 +90,7 @@ tcl_TxnCheckpoint(interp, objc, objv, envp)

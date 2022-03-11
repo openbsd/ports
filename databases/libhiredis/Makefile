@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/29 13:02:29 sthen Exp $
-
 COMMENT=	minimalistic C client for Redis
 
 GH_ACCOUNT=	redis

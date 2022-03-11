@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/20 18:26:27 landry Exp $
 @newgroup _pgpool:690
 @newuser _pgpool:690:_pgpool:daemon:pgpool daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/pgpool

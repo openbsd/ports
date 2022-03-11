@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ldap,v 1.2 2008/11/07 14:09:08 bernd Exp $
 @conflict lbdb-0.35.1-ldap
 lib/lbdb/m_ldap
 lib/lbdb/mutt_ldap_query

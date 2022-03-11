@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/05/15 20:36:28 jasper Exp $
 lib/lua/${MODLUA_VERSION}/sqlite3/
 lib/lua/${MODLUA_VERSION}/sqlite3/core.so
 share/doc/${FULLPKGNAME}/

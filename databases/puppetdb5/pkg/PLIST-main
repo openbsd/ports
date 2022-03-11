@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2020/05/27 21:08:00 sebastia Exp $
 @option is-branch
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin

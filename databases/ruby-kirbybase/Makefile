@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:01 sthen Exp $
-
 COMMENT =	small, plain-text, DBMS written in Ruby
 
 DISTNAME =	KirbyBase-2.6

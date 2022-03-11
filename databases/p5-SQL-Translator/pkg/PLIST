@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/04/21 02:38:50 afresh1 Exp $
 bin/sqlt
 bin/sqlt-diagram
 bin/sqlt-diff

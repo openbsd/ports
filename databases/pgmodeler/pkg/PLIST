@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/02 22:31:45 feinerer Exp $
 @bin bin/pgmodeler
 @bin bin/pgmodeler-ch
 @bin bin/pgmodeler-cli

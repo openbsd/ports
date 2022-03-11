@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/12/13 09:24:57 ajacoutot Exp $
-
 COMMENT= 	database OO schema for Jifty
 
 MODULES=	cpan

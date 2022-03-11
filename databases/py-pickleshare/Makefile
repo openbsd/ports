@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:00:16 sthen Exp $
-
 COMMENT =		tiny 'shelve'-like database with concurrency support
 
 MODPY_EGG_VERSION =	0.7.4

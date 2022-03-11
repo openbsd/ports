@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/12 14:27:52 sthen Exp $
-
 COMMENT =	graphical interface to sqlite databases
 
 GH_ACCOUNT =	sqlitebrowser

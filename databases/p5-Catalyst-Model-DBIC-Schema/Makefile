@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/10/09 03:36:31 afresh1 Exp $
-
 COMMENT=	model class for catalyst
 
 DISTNAME=	Catalyst-Model-DBIC-Schema-0.65

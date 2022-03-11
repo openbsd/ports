@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/13 19:05:04 bket Exp $
-
 COMMENT =		Python client for interacting with InfluxDB
 
 MODPY_EGG_VERSION =	5.3.1

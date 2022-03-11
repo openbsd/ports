@@ -1,4 +1,3 @@
-$OpenBSD: patch-kccommon_h,v 1.1 2017/04/16 20:27:48 sthen Exp $
 --- kccommon.h.orig	Sun Apr 16 21:20:37 2017
 +++ kccommon.h	Sun Apr 16 21:20:22 2017
 @@ -82,7 +82,7 @@ using ::modfl;

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/12/26 21:32:01 sturm Exp $
 --- Makefile.in.orig	Sun Apr 24 00:43:23 2005
 +++ Makefile.in	Mon Dec 26 22:00:23 2005
 @@ -141,6 +141,7 @@ SRC = \

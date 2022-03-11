@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_pgsql_sh,v 1.1 2017/06/03 16:24:05 steven Exp $
-
 Index: tests/test_pgsql.sh
 --- tests/test_pgsql.sh.orig
 +++ tests/test_pgsql.sh

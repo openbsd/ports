@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/27 18:40:32 sthen Exp $
-
 COMMENT=	client interface to LDAP servers
 
 VERSION=	0.68

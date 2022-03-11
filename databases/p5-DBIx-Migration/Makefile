@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT =	seamless DB up- and downgrades
 
 MODULES =	cpan

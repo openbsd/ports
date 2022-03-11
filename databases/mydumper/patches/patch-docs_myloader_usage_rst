@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs_myloader_usage_rst,v 1.1 2013/09/25 09:02:09 giovanni Exp $
 remove tags that breaks textproc/py-sphinx
 --- docs/myloader_usage.rst.orig	Wed Sep 25 09:12:59 2013
 +++ docs/myloader_usage.rst	Wed Sep 25 09:14:00 2013

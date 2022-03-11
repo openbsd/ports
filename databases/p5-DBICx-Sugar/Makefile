@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT =	just some syntax sugar for DBIx::Class
 
 DISTNAME =	DBICx-Sugar-0.0200

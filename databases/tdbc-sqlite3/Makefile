@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:02 sthen Exp $
-
 COMMENT =		SQLite3 module for TDBC
 
 V =			1.0.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:02 sthen Exp $
-
 COMMENT =		PostgreSQL module for TDBC
 
 V =			1.0.6

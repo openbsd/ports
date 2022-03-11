@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.280 2022/02/11 16:28:51 ajacoutot Exp $
-
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server

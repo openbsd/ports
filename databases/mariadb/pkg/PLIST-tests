@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-tests,v 1.55 2022/02/23 21:49:44 sthen Exp $
 @bin bin/mariadb-client-test
 @bin bin/mariadb-test
 bin/mysql_client_test

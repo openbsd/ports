@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/20 15:05:11 bket Exp $
-
 COMMENT =		database migration tool for sqlalchemy
 
 MODPY_EGG_VERSION =	1.7.5

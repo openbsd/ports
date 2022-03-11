@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_modules_SetupBuildFlags_cmake,v 1.5 2021/05/13 10:21:53 ajacoutot Exp $
-
 XXX push upstream
 There's another check for BSD later on in the file; it should use it.
 

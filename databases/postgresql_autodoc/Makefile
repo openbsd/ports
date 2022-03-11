@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:59 sthen Exp $
-
 COMMENT =	documentation generator for postgresql databases
 
 DISTNAME =	postgresql_autodoc-1.40

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2010/09/01 22:32:46 sthen Exp $
 --- Makefile.PL.orig	Fri Nov 19 10:35:37 2004
 +++ Makefile.PL	Wed Sep  1 10:41:21 2010
 @@ -11,7 +11,7 @@ require './util/config.pl';

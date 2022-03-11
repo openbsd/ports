@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:37 sthen Exp $
-
 COMMENT =	very complete easy-to-use OO interface to DBI
 
 MODULES =	cpan

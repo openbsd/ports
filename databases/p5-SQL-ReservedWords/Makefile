@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:37 sthen Exp $
-
 COMMENT=	reserved words in SQL and specific databases
 
 MODULES=	cpan

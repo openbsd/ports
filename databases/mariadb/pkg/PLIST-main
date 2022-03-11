@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2022/02/23 21:49:44 sthen Exp $
 @conflict mariadb-server-<10.5.5p0v1
 @conflict mytop-*
 @pkgpath databases/mytop

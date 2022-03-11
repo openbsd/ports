@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:44:02 sthen Exp $
-
 COMMENT=	Embedded SQL implementation
 DISTNAME=	sqlite-2.8.17
 FIX_EXTRACT_PERMISSIONS =	Yes

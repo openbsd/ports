@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/21 09:12:53 sthen Exp $
-
 COMMENT=		library to write SQL queries
 
 MODPY_EGG_VERSION=	1.3.0

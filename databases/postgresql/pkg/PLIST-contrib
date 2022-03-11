@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-contrib,v 1.23 2022/01/13 15:59:34 jeremy Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql

@@ -1,5 +1,3 @@
-$OpenBSD: patch-minidb_py,v 1.2 2017/01/06 10:45:20 sthen Exp $
-
 workaround https://bugs.python.org/issue28518
 also see https://bugs.python.org/issue10740
 

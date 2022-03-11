@@ -1,4 +1,3 @@
-$OpenBSD: patch-usr_bin_mysql-zrm,v 1.2 2010/05/05 17:03:19 giovanni Exp $
 --- usr/bin/mysql-zrm.orig	Thu Feb  4 01:19:25 2010
 +++ usr/bin/mysql-zrm	Wed May  5 12:10:49 2010
 @@ -36,7 +36,7 @@ if ( $^O =~ /^MSWin/ ) {

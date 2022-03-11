@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2022/01/15 15:41:27 sthen Exp $
-
 COMMENT=	administration and development platform for PostgreSQL
 
 V=		1.22.1

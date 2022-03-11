@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/02/16 21:09:28 bluhm Exp $
-
 COMMENT =	Berkeley DB module
 
 DISTNAME =	BerkeleyDB-0.64

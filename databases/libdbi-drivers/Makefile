@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/22 13:55:54 espie Exp $
-
 V =			0.9.0
 REVISION =		3
 REVISION-freetds =	4

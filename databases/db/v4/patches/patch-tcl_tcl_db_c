@@ -1,4 +1,3 @@
-$OpenBSD: patch-tcl_tcl_db_c,v 1.3 2007/10/26 14:06:02 steven Exp $
 --- tcl/tcl_db.c.orig	Thu Jun 21 19:46:59 2007
 +++ tcl/tcl_db.c	Sat Sep 15 12:39:57 2007
 @@ -209,7 +209,7 @@ db_Cmd(clientData, interp, objc, objv)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:34 sthen Exp $
-
 COMMENT=	easier relationship specification in CDBI::L
 
 MODULES=	cpan

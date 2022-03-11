@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/14 20:52:38 sthen Exp $
-
 COMMENT =		extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT =		citusdata

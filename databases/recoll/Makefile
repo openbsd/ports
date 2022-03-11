@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/12 12:33:20 sthen Exp $
-
 COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
 

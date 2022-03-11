@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/02/03 19:03:03 jeremy Exp $
-
 COMMENT=	modern, simple and very fast MySQL library for Ruby
 
 DISTNAME=	mysql2-0.5.3

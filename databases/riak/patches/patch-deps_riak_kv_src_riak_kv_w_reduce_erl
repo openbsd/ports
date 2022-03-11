@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_riak_kv_src_riak_kv_w_reduce_erl,v 1.1 2018/05/15 06:38:33 jmatthew Exp $
-
 Remove support for javascript map-reduce functions and commit hooks
 
 Index: deps/riak_kv/src/riak_kv_w_reduce.erl

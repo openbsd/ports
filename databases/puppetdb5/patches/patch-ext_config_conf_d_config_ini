@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_config_conf_d_config_ini,v 1.1.1.1 2017/11/20 12:47:32 sebastia Exp $
 --- ext/config/conf.d/config.ini.orig	Fri Jul 17 19:09:34 2015
 +++ ext/config/conf.d/config.ini	Fri Jul 17 19:13:00 2015
 @@ -3,10 +3,10 @@

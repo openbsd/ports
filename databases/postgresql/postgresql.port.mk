@@ -1,5 +1,3 @@
-# $OpenBSD: postgresql.port.mk,v 1.7 2019/12/16 19:14:09 zhuk Exp $
-#
 # Helps testing PostgreSQL-based software, no B/L/R-DEPS here.
 
 MODPOSTGRESQL_TEST_CMD ?= \

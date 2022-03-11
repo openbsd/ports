@@ -1,5 +1,3 @@
-$OpenBSD: patch-sentinel_conf,v 1.9 2021/02/25 15:05:23 tb Exp $
-
 Index: sentinel.conf
 --- sentinel.conf.orig
 +++ sentinel.conf

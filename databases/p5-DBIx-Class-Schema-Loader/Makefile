@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/15 19:17:37 afresh1 Exp $
-
 COMMENT =	create a DBIx::Class::Schema based on a database
 
 MODULES =	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/14 04:25:43 stu Exp $
 lib/tcl/tdbcpostgres/
 lib/tcl/tdbcpostgres/libtdbcpostgres${VER}.so
 lib/tcl/tdbcpostgres/pkgIndex.tcl

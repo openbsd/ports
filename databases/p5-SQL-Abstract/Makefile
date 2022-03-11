@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/27 03:53:05 afresh1 Exp $
-
 COMMENT =	generate SQL from Perl data structures
 
 MODULES =	cpan

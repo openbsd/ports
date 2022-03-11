@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_py,v 1.4 2021/08/14 10:21:03 sthen Exp $
-
 >>> print apsw.sqlite3_sourceid()
 OpenBSD
 

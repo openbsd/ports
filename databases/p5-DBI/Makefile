@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2020/12/05 21:05:59 afresh1 Exp $
-
 COMMENT =	the standard database interface module for Perl
 
 MODULES =	cpan

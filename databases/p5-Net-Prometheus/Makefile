@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/14 09:17:14 benoit Exp $
-
 COMMENT=	export monitoring metrics for prometheus
 
 DISTNAME=	Net-Prometheus-0.11

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/12/21 15:20:41 stu Exp $
-
 COMMENT =		ODBC driver for SQLite3
 
 V =			0.9998

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/12/30 08:40:39 sthen Exp $
-
 COMMENT =		PostgreSQL database adapter for Python
 
 MODPY_EGG_VERSION =	2.9.3

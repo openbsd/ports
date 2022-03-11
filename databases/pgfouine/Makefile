@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/28 12:36:46 sthen Exp $
-
 COMMENT =	PostgreSQL log analyzer
 
 V =		1.2

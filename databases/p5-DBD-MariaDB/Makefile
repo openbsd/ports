@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/05 15:06:54 sthen Exp $
-
 COMMENT =	MariaDB and MySQL driver for the Perl5 Database Interface
 
 DISTNAME =	DBD-MariaDB-1.21

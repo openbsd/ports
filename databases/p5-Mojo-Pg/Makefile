@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/16 02:56:11 afresh1 Exp $
-
 COMMENT =		dbd-pg wrapper for mojolicious
 
 MODULES =		cpan databases/postgresql

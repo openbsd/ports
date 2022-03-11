@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_migration_mdb_3rdparty_mdbtools_include_mdbtools_h,v 1.1 2021/05/09 09:24:13 ajacoutot Exp $
-
 From 79894e151a53c1afed55003c2e1faf23ea463ec7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?=C3=96mer=20Fad=C4=B1l=20Usta?= <omerusta@gmail.com>
 Date: Fri, 7 May 2021 01:17:31 +0000

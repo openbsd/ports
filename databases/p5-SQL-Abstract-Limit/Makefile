@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/07/12 09:29:17 benoit Exp $
-
 COMMENT=	portability layer for LIMIT emulation
 
 DISTNAME =	SQL-Abstract-Limit-0.143

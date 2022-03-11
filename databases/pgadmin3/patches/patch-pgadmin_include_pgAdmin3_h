@@ -1,5 +1,3 @@
-$OpenBSD: patch-pgadmin_include_pgAdmin3_h,v 1.1 2018/10/25 07:32:44 landry Exp $
-
 adapted from https://bugs.debian.org/cgi-bin/bugreport.cgi?att=1;bug=878295;filename=postgresql_10.x_support.patch;msg=3
 
 Index: pgadmin/include/pgAdmin3.h

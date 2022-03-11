@@ -1,5 +1,3 @@
-$OpenBSD: patch-pgcluu,v 1.7 2019/11/01 20:11:57 jasper Exp $
-
 - Set $sysinfo{"KERNEL"} and $sysinfo{"CPU"} (minus cache) values
 
 Index: pgcluu

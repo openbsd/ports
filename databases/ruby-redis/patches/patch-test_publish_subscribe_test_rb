@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_publish_subscribe_test_rb,v 1.6 2017/08/28 07:28:23 dcoppa Exp $
 --- test/publish_subscribe_test.rb.orig	Wed Feb 11 13:21:18 2015
 +++ test/publish_subscribe_test.rb	Fri Feb 13 08:25:04 2015
 @@ -235,7 +235,7 @@ class TestPublishSubscribe < Test::Unit::TestCase

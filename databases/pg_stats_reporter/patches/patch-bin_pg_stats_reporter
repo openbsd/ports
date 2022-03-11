@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_pg_stats_reporter,v 1.1 2016/05/13 22:30:25 landry Exp $
 --- bin/pg_stats_reporter.orig	Thu Feb 18 06:11:25 2016
 +++ bin/pg_stats_reporter	Sat May 14 00:24:52 2016
 @@ -1,4 +1,4 @@

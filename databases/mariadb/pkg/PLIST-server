@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-server,v 1.44 2022/02/21 10:22:37 robert Exp $
 @conflict mariadb-client-<=10.4.12v1
 @newgroup _mysql:502
 @newuser _mysql:502:_mysql:daemon:MySQL Account:/nonexistent:/sbin/nologin

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/16 10:58:15 giovanni Exp $
 ${P5ARCH}/DBD/MariaDB/
 ${P5ARCH}/DBD/MariaDB.pm
 ${P5ARCH}/DBD/MariaDB.pod

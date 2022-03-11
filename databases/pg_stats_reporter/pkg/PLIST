@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/05/13 22:30:25 landry Exp $
 htdocs/pg_stats_reporter/
 htdocs/pg_stats_reporter/css/
 htdocs/pg_stats_reporter/css/pg_stats_reporter.css

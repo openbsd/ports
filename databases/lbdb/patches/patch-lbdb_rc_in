@@ -1,4 +1,3 @@
-$OpenBSD: patch-lbdb_rc_in,v 1.1.1.1 2008/06/15 07:22:57 sthen Exp $
 --- lbdb.rc.in.orig	Tue Mar 11 22:51:52 2008
 +++ lbdb.rc.in	Tue Mar 11 22:52:05 2008
 @@ -51,8 +51,8 @@ METHODS="m_inmail m_passwd m_finger"

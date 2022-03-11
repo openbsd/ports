@@ -1,4 +1,3 @@
-# $OpenBSD: hiera.yaml,v 1.1.1.1 2015/07/16 02:43:27 jasper Exp $
 
 ---
 :backends:

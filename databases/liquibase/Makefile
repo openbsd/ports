@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:53 sthen Exp $
-
 COMMENT =		manage SQL database schemas via config files
 
 VERSION =		3.5.1

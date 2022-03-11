@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_test-util_c,v 1.1 2005/12/21 07:58:32 jolan Exp $
 --- src/test-util.c.orig	Wed Dec 21 01:51:05 2005
 +++ src/test-util.c	Wed Dec 21 01:53:15 2005
 @@ -0,0 +1,47 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/05/21 22:27:05 jeremy Exp $
-
 COMMENT =	simple and fast ruby binding to FreeTDS
 
 DISTNAME =	tiny_tds-2.1.4

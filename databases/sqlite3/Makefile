@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.113 2021/11/22 09:20:02 landry Exp $
-
 COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3360000

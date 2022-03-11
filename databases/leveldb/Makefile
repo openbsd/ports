@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/06/24 02:30:27 danj Exp $
-
 GH_ACCOUNT=		google
 GH_PROJECT=		leveldb
 GH_TAGNAME=		1.23

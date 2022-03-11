@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.125 2022/02/24 15:04:51 sthen Exp $
-
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)

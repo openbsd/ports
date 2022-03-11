@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.76 2021/08/11 13:27:12 robert Exp $
-
 COMMENT=	access to PostgreSQL databases through the DBI
 
 MODULES=	cpan databases/postgresql

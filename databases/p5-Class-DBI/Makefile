@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:34 sthen Exp $
-
 COMMENT=	simple database abstraction
 
 MODULES=	cpan

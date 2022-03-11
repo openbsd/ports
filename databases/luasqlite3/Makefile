@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:43:53 sthen Exp $
-
 COMMENT=	binding of sqlite3 for lua
 PKGNAME=	luasqlite3-0.4.1
 REVISION=	7

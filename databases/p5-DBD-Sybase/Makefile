@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/04/28 19:40:40 sthen Exp $
-
 COMMENT=	Sybase database driver for the DBI module
 
 V=		1.18

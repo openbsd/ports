@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildtools_wafsamba_wafsamba_py,v 1.9 2021/05/12 23:30:53 jca Exp $
-
 - allow the library version to be overriden
 - make sure we don't clobber the version that ends up in tdb.pc
 

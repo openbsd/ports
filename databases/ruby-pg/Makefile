@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2020/06/09 22:22:33 jeremy Exp $
-
 COMMENT =	PostgreSQL database interface for ruby
 
 DISTNAME =	pg-1.2.3

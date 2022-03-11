@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/27 13:44:16 sthen Exp $
-
 COMMENT =		database toolkit for Python
 
 FIX_EXTRACT_PERMISSIONS = Yes

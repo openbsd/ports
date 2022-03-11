@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/07/05 10:26:52 sthen Exp $
-
 COMMENT=	SQL shell for FreeTDS
 
 DISTNAME=	sqsh-2.5.16.1

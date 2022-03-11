@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:02 sthen Exp $
-
 COMMENT =		Tcl Database Connectivity
 
 V =			1.0.6

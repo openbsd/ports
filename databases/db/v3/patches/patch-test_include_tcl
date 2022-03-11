@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_include_tcl,v 1.2 2008/10/28 11:53:33 steven Exp $
 --- test/include.tcl.orig	Mon Jul 31 19:58:22 2000
 +++ test/include.tcl	Thu Aug 30 21:02:41 2001
 @@ -1,5 +1,5 @@

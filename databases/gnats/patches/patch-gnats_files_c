@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnats_files_c,v 1.2 2007/12/28 17:11:25 espie Exp $
 --- gnats/files.c.orig	Sun Feb 11 22:36:25 2001
 +++ gnats/files.c	Fri Dec 28 18:00:24 2007
 @@ -41,7 +41,7 @@ find_submitter (cptr, site)

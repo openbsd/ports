@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/07/06 16:55:32 daniel Exp $
 @bin bin/pgadmin3
 share/pgadmin3/
 share/pgadmin3/branding/

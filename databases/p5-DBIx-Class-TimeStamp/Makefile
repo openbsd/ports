@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:36 sthen Exp $
-
 COMMENT =	automatically set and update time based columns
 
 MODULES =	cpan

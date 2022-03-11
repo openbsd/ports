@@ -1,5 +1,3 @@
-$OpenBSD: patch-rebar_config,v 1.3 2018/05/15 06:38:33 jmatthew Exp $
-
 Disable yokozuna for now
 
 Index: rebar.config

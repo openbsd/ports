@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.134 2021/11/23 07:10:49 ajacoutot Exp $
-
 CATEGORIES =		databases
 V =			7.36
 DISTNAME =		sqlports-$V

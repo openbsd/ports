@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:58 sthen Exp $
-
 COMMENT =	advanced PostgreSQL log analyzer
 
 GH_ACCOUNT =	dalibo

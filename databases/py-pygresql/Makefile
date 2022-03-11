@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/01/31 20:10:31 benoit Exp $
-
 COMMENT =	PostgreSQL module for Python
 
 MODPY_EGG_VERSION =	5.2.3

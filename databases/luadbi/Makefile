@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
 COMMENT-pgsql=	PostgreSQL driver for luadbi

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/23 02:20:34 afresh1 Exp $
-
 COMMENT=	interactive command shell for the DBI
 
 MODULES=	cpan

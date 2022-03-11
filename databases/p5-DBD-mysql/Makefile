@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2020/07/03 21:44:35 sthen Exp $
-
 COMMENT=		MySQL drivers for the Perl DBI
 DISTNAME=		DBD-mysql-4.050
 REVISION=		0

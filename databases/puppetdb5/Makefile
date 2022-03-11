@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/22 13:55:55 espie Exp $
-
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
 

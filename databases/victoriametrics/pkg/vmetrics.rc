@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: vmetrics.rc,v 1.2 2022/01/27 09:32:17 denis Exp $
 
 daemon="${TRUEPREFIX}/bin/vmetrics"
 daemon_flags="-storageDataPath '${LOCALSTATEDIR}/db/vmetrics/'"

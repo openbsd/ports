@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:02 sthen Exp $
-
 SHARED_LIBS=	tokyocabinet	0.0 # .9.7
 
 COMMENT=	key/value database library

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/02/02 18:14:58 sthen Exp $
-
 PORTROACH =	limitw:1,even
 USE_WXNEEDED =	Yes
 

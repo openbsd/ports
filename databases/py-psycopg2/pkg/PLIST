@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/11/21 10:11:20 sthen Exp $
 @pkgpath databases/py-psycopg2
 lib/python${MODPY_VERSION}/site-packages/psycopg2/
 lib/python${MODPY_VERSION}/site-packages/psycopg2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

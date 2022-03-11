@@ -1,4 +1,3 @@
-$OpenBSD: patch-tcl_tcl_lock_c,v 1.1 2004/01/10 08:36:28 sturm Exp $
 --- tcl/tcl_lock.c.orig	2004-01-08 23:28:00.000000000 +0100
 +++ tcl/tcl_lock.c	2004-01-08 23:28:47.000000000 +0100
 @@ -78,7 +78,7 @@ tcl_LockDetect(interp, objc, objv, envp)

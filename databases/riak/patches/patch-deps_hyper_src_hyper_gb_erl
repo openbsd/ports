@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_hyper_src_hyper_gb_erl,v 1.1 2018/05/15 06:38:33 jmatthew Exp $
-
 Use non-deprecated type for gb_trees
 
 Index: deps/hyper/src/hyper_gb.erl

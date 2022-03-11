@@ -1,5 +1,3 @@
-$OpenBSD: patch-redis_conf,v 1.28 2021/09/17 01:39:38 tb Exp $
-
 Main changes in this file:
 
 * Redis socket and pid files were moved to /var/run/redis

@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_canola_rebar_config,v 1.1 2015/01/16 04:42:13 jmatthew Exp $
-
 LDFLAGS and CFLAGS for openpam
 
 --- deps/canola/rebar.config.orig	Thu Jan  8 17:20:26 2015

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:37 sthen Exp $
-
 COMMENT=	datetime helper functions for Rose
 
 MODULES=	cpan

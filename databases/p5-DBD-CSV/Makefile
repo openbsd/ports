@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/12/27 00:00:21 afresh1 Exp $
-
 COMMENT =	DBI driver for CSV files
 
 DISTNAME =	DBD-CSV-0.58

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/17 09:20:08 espie Exp $
 ${P5SITE}/DBIx/DataModel/
 ${P5SITE}/DBIx/DataModel.pm
 ${P5SITE}/DBIx/DataModel/Base.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/19 02:21:17 afresh1 Exp $
-
 COMMENT =	generate SQL from Perl data structures
 
 DISTNAME =	SQL-Abstract-Classic-1.91

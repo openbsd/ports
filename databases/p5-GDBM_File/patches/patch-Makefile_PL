@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2015/06/19 08:22:18 jasper Exp $
 --- Makefile.PL.orig	Wed May 13 22:19:29 2015
 +++ Makefile.PL	Fri Jun 19 10:12:50 2015
 @@ -1,8 +1,9 @@

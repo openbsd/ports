@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:43:58 sthen Exp $
-
 COMMENT=	Sybase database access in Perl
 
 DISTNAME=	sybperl-2.19

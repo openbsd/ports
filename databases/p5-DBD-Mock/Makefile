@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/07/12 09:07:24 benoit Exp $
-
 COMMENT =	mock database driver for testing
 
 MODULES =	cpan

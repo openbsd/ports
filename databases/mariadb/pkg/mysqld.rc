@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mysqld.rc,v 1.8 2021/11/07 14:27:44 robert Exp $
 
 daemon="${TRUEPREFIX}/bin/mariadbd-safe"
 daemon_timeout=300

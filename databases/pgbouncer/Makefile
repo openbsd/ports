@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/01/13 09:57:47 tb Exp $
-
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
 V = 		1.16.1

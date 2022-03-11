@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/07/16 15:05:47 jeremy Exp $
-
 COMMENT=	access a MySQL database from Ruby
 
 DISTNAME=	mysql-2.9.1

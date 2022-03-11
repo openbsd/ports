@@ -1,4 +1,3 @@
-$OpenBSD: patch-stringextract,v 1.2 2014/10/24 15:01:18 dcoppa Exp $
 --- stringextract.orig	Wed Sep 11 14:33:58 2013
 +++ stringextract	Wed Oct 22 16:32:48 2014
 @@ -55,7 +55,7 @@ xgettext -k_ -k__ -kwxPLURAL:1,2 -j -s -o pgadmin3.pot

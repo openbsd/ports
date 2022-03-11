@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:35 sthen Exp $
-
 COMMENT=	more complex retrieve_all() for Class::DBI
 
 MODULES=	cpan

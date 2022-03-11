@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.284 2022/02/21 12:51:50 robert Exp $
-
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation

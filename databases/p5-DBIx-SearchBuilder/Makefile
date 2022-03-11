@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/06 08:32:08 benoit Exp $
-
 COMMENT=	encapsulate SQL queries and rows in simple perl objects
 
 MODULES=	cpan

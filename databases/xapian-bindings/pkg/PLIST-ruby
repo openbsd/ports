@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ruby,v 1.6 2019/12/28 18:00:11 sthen Exp $
 @comment ${MODRUBY_SITEARCHDIR}/_xapian.a
 @so ${MODRUBY_SITEARCHDIR}/_xapian.so
 ${MODRUBY_SITEDIR}/xapian.rb

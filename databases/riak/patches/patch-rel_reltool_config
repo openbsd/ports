@@ -1,5 +1,3 @@
-$OpenBSD: patch-rel_reltool_config,v 1.3 2018/05/15 06:38:33 jmatthew Exp $
-
 Remove yokozuna and erlang_js
 
 Index: rel/reltool.config

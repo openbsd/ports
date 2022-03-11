@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:43:59 sthen Exp $
-
 COMMENT =		database of packages for use with locate(1)
 
 # locate data is NOT MI, unfortunately

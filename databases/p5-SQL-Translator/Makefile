@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/04 02:16:55 afresh1 Exp $
-
 COMMENT =	SQL DDL transformations and more
 
 DISTNAME =	SQL-Translator-1.62

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/12 08:12:08 landry Exp $
-
 V =	1.1.0
 COMMENT =	unit testing for PostgreSQL
 DISTNAME =	pgtap-${V}

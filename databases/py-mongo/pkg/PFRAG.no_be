@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.no_be,v 1.2 2021/01/04 14:06:28 sthen Exp $
 @so lib/python${MODPY_VERSION}/site-packages/bson/_cbson.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/pymongo/_cmessage.${MODPY_PYC_MAGIC_TAG}so

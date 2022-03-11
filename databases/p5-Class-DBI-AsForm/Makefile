@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:34 sthen Exp $
-
 COMMENT=	produce HTML form elements for database columns
 
 MODULES=	cpan

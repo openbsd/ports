@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/23 19:39:12 sthen Exp $
-
 COMMENT =	SQLite3 adapter for Python
 
 MODPY_EGG_VERSION =	2.8.3

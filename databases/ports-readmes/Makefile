@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/16 03:49:32 espie Exp $
-
 COMMENT =		readmes.html
 
 PKG_ARCH = *

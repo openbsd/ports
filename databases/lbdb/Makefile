@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 

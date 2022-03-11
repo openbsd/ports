@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/01/15 07:20:26 benoit Exp $
-
 COMMENT =	perl binding for Redis database
 
 DISTNAME =	Redis-1.999

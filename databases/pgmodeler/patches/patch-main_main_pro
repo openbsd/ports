@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_main_pro,v 1.2 2021/01/02 22:31:45 feinerer Exp $
-
 Index: main/main.pro
 --- main/main.pro.orig
 +++ main/main.pro

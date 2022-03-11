@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:01:07 sthen Exp $
 ${P5SITE}/DBIx/Class/Cursor/
 ${P5SITE}/DBIx/Class/Cursor/Cached.pm
 @man man/man3p/DBIx::Class::Cursor::Cached.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/20 16:44:22 naddy Exp $
-
 COMMENT =	MySQL Percona tools
 
 V =		2.2.9
