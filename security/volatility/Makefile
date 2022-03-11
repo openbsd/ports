@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:35 kmos Exp $
-
 COMMENT =		memory artifact extraction utility framework
 
 MODPY_EGG_VERSION =	2.6.1

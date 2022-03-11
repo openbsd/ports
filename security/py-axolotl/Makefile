@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =		Python port of libaxolotl
 
 MODPY_EGG_VERSION =	0.2.3

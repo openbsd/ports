@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: ossec_hids.rc,v 1.2 2018/12/31 07:02:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/ossec-hids/bin/ossec-control"
 

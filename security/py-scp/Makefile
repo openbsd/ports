@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:19 sthen Exp $
-
 COMMENT =		scp module for Paramiko
 
 MODPY_EGG_VERSION =	0.13.6

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_stunnel3_in,v 1.1 2015/10/14 02:05:06 gsoares Exp $
 --- src/stunnel3.in.orig	Fri Jul 10 10:25:18 2015
 +++ src/stunnel3.in	Fri Jul 10 10:25:43 2015
 @@ -22,7 +22,7 @@ use POSIX;

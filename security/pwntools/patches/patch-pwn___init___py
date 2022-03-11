@@ -1,5 +1,3 @@
-$OpenBSD: patch-pwn___init___py,v 1.1.1.1 2019/05/08 21:15:44 jasper Exp $
-
 Disable automatic update checking.
 
 Index: pwn/__init__.py

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/11 09:03:19 sthen Exp $
-
 COMMENT =		argon2 password hashing for Python
 
 MODPY_EGG_VERSION =	21.1.0

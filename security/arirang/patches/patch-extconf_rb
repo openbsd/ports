@@ -1,5 +1,3 @@
-$OpenBSD: patch-extconf_rb,v 1.3 2022/02/18 22:45:39 kmos Exp $
-
 Support ruby 3.0+.
 
 Index: extconf.rb

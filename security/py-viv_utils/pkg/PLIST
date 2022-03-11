@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/29 19:40:55 rpointel Exp $
 bin/get_function_args
 bin/trace_function_emulation
 lib/python${MODPY_VERSION}/site-packages/viv_utils/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-enforcer_utils_convert_sqlite_to_mysql,v 1.1 2019/01/25 08:32:02 pvk Exp $
-
 Index: enforcer/utils/convert_sqlite_to_mysql
 --- enforcer/utils/convert_sqlite_to_mysql.orig
 +++ enforcer/utils/convert_sqlite_to_mysql

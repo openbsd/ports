@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/11 13:18:17 sthen Exp $
-
 GH_ACCOUNT=	abeluck
 GH_PROJECT=	stegdetect
 GH_COMMIT=	28a4f074a71c682581314491224f9f41511c82e7

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/12/08 23:57:35 sthen Exp $
-
 COMMENT=	open-source turn-key solution for DNSSEC
 
 DISTNAME=	opendnssec-2.1.10

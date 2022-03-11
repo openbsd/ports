@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:42 sthen Exp $
-
 COMMENT=	module to bubble-babble fingerprints
 
 MODULES=	cpan

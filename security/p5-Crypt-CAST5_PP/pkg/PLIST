@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/08 11:28:02 henning Exp $
 ${P5SITE}/Crypt/
 ${P5SITE}/Crypt/CAST5_PP/
 ${P5SITE}/Crypt/CAST5_PP.pm

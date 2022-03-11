@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/15 16:33:31 stsp Exp $
 @comment lib/pidgin/pidgin-otr.la
 lib/pidgin/pidgin-otr.so
 share/doc/pidgin/otr-plugin.txt

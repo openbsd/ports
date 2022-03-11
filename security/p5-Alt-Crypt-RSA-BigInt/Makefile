@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/13 03:05:17 afresh1 Exp $
-
 COMMENT =	RSA public-key cryptosystem, using Math::BigInt
 DISTNAME =	Alt-Crypt-RSA-BigInt-0.06
 CPAN_AUTHOR =	DANAJ

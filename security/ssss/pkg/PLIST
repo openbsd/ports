@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/18 11:26:34 kn Exp $
 @bin bin/ssss-combine
 @bin bin/ssss-split
 @man man/man1/ssss-combine.1

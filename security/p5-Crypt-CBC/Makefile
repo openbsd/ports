@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/06/14 20:19:27 sthen Exp $
-
 COMMENT=	cryptographic cipher block chaining mode
 
 MODULES=	cpan

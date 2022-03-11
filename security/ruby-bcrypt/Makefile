@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/11/12 06:46:00 jeremy Exp $
-
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
 VERSION =	3.1.13

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/02 11:55:14 sebastia Exp $
 bin/wfencode
 bin/wfpayload
 bin/wfuzz

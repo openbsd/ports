@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bindings_build_py,v 1.2 2020/06/11 20:00:56 jasper Exp $
 Index: src/bindings/build.py
 --- src/bindings/build.py.orig
 +++ src/bindings/build.py

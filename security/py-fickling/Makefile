@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/12 10:17:13 sebastia Exp $
-
 COMMENT =	analyze Python pickle object serializations
 
 MODPY_EGG_VERSION = 0.0.3

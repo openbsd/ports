@@ -1,5 +1,3 @@
-$OpenBSD: patch-enforcer_utils_1_4-2_0_db_convert_convert_mysql,v 1.1 2019/01/25 08:32:02 pvk Exp $
-
 Index: enforcer/utils/1.4-2.0_db_convert/convert_mysql
 --- enforcer/utils/1.4-2.0_db_convert/convert_mysql.orig
 +++ enforcer/utils/1.4-2.0_db_convert/convert_mysql

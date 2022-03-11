@@ -1,5 +1,3 @@
-$OpenBSD: patch-contrib_ods-sequencer_ods-sequencer-submit_sh,v 1.1 2019/01/25 08:32:02 pvk Exp $
-
 Index: contrib/ods-sequencer/ods-sequencer-submit.sh
 --- contrib/ods-sequencer/ods-sequencer-submit.sh.orig
 +++ contrib/ods-sequencer/ods-sequencer-submit.sh

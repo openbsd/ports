@@ -1,4 +1,3 @@
-$OpenBSD: patch-rarcrack_h,v 1.1.1.1 2008/06/11 21:55:36 laurent Exp $
 --- rarcrack.h.orig	Sat May  3 22:45:31 2008
 +++ rarcrack.h	Sat May  3 22:57:08 2008
 @@ -31,10 +31,10 @@

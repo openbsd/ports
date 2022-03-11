@@ -1,5 +1,3 @@
-$OpenBSD: patch-GPL_nativeBuildProperties_gradle,v 1.3 2020/07/19 01:29:23 lteo Exp $
-
 Adapted from https://github.com/NationalSecurityAgency/ghidra/pull/490
 
 Force use of Clang and honor CXX.

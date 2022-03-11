@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_zkt-signer_8,v 1.3 2020/02/20 11:21:13 sthen Exp $
-
 Index: man/zkt-signer.8
 --- man/zkt-signer.8.orig
 +++ man/zkt-signer.8

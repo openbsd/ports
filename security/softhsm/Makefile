@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:36 sthen Exp $
-
 PORTROACH=	limit:^1\.
 PORTROACH_COMMENT=	the 2.x version has a different user interface
 

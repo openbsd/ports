@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/05/03 05:46:47 rpointel Exp $
 bin/pdf-parser

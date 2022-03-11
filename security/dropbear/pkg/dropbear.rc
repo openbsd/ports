@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: dropbear.rc,v 1.1 2018/03/13 03:50:48 bket Exp $
 
 daemon="${TRUEPREFIX}/sbin/dropbear"
 daemon_flags="-p 127.0.0.1:8022 -R"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/03/01 21:22:21 sthen Exp $
-
 COMMENT =		CloudFlare PKI/TLS command-line toolkit and HTTP API server
 
 GH_ACCOUNT =		cloudflare

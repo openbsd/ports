@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/23 18:23:09 sebastia Exp $
-
 COMMENT =	lightning fast steghide cracker
 
 GH_ACCOUNT =	RickdeJager

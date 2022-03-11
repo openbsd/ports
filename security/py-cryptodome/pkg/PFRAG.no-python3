@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.no-python3,v 1.2 2019/11/02 20:35:15 jasper Exp $
 @conflict py-crypto-*
 @pkgpath security/py-crypto

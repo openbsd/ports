@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:08 sthen Exp $
-
 COMMENT=	access system SSL certificate bundle from Perl
 
 MODULES=	perl

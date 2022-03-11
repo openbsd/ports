@@ -1,5 +1,3 @@
-$OpenBSD: patch-rijndael_h,v 1.1 2021/02/03 21:23:20 naddy Exp $
-
 Index: rijndael.h
 --- rijndael.h.orig
 +++ rijndael.h

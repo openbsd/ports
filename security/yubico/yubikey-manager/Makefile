@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/16 16:35:09 sthen Exp $
-
 COMMENT =	library and CLI tool (ykman) for configuring a YubiKey
 
 # 4.x stops using libusb/libykpersonalize, but whatever it changes to

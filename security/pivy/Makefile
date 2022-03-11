@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/17 08:23:08 tb Exp $
-
 BROKEN =	Needs upstream to update the old bundled OpenSSH source
 
 V =		0.8.0

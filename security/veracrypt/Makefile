@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/06 19:02:18 op Exp $
-
 COMMENT=		free open source disk encryption software
 
 V=			1.25.4

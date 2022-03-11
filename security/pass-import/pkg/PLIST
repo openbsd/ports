@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/02 19:31:13 sthen Exp $
 bin/pimport
 lib/password-store/extensions/import.bash
 lib/python${MODPY_VERSION}/site-packages/pass_import/

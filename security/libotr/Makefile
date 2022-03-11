@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:05 sthen Exp $
-
 COMMENT=	portable OTR messaging library and toolkit
 
 DISTNAME=	libotr-4.1.1

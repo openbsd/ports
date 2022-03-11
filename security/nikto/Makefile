@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
 GH_ACCOUNT =	sullo

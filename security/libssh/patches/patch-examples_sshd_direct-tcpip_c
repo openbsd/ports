@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_sshd_direct-tcpip_c,v 1.2 2020/09/14 09:56:07 jasper Exp $
-
 Fix macro collision with __attribute__ ((__unused__)) in system-wide headers.
 Problem known upstream: https://bugs.libssh.org/T175
 

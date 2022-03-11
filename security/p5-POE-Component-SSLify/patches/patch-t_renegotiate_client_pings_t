@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_renegotiate_client_pings_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
 Change the test to a newer and supported protocol
 Index: t/renegotiate_client_pings.t
 --- t/renegotiate_client_pings.t.orig

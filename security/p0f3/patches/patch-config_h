@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_h,v 1.1.1.1 2015/01/08 22:03:20 sthen Exp $
 --- config.h.orig	Wed Jan  7 16:03:43 2015
 +++ config.h	Wed Jan  7 16:04:11 2015
 @@ -20,7 +20,7 @@

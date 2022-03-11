@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:06 sthen Exp $
-
 COMMENT=	passive OS fingerprinting tool
 
 V=		3.09b

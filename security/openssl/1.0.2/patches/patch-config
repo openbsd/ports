@@ -1,5 +1,3 @@
-$OpenBSD: patch-config,v 1.2 2020/04/06 11:45:35 jca Exp $
-
 Don't misdetect OpenBSD/i386 as a.out when /usr/lib/libc.so.XX.Y.a
 is present (for /etc/rc rebuildlibs).
 

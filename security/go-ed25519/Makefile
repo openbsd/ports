@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:25 sthen Exp $
-
 COMMENT =		ed25519 in go
 
 GH_ACCOUNT =		agl

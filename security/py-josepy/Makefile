@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/13 17:57:18 sthen Exp $
-
 COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
 CATEGORIES=	security devel

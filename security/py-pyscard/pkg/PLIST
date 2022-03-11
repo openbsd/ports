@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/07/24 18:14:20 sthen Exp $
 @pkgpath security/py-pyscard
 lib/python${MODPY_VERSION}/site-packages/pyscard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyscard-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

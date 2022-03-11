@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/01/26 06:45:20 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/Miasm-2.0-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/miasm2/
 lib/python${MODPY_VERSION}/site-packages/miasm2/__init__.py

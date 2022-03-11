@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:04 sthen Exp $
-
 COMMENT=	small service wedge to do ident lookup on connecting party
 
 DISTNAME=		klaxon

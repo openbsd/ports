@@ -1,5 +1,3 @@
-$OpenBSD: patch-ini_jk_init_ini,v 1.3 2014/03/26 17:38:27 gonzalo Exp $
-
 fix some default paths in the jail creation configuration file
 
 --- ini/jk_init.ini.orig	Mon Dec 23 06:02:42 2013

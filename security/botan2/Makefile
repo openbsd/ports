@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2022/03/08 22:56:49 tb Exp $
-
 COMMENT =	crypto and TLS for C++11
 
 VERSION =	2.19.1

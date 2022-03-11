@@ -1,5 +1,3 @@
-$OpenBSD: patch-libpskc_examples_pskctool-h_txt,v 1.2 2020/11/21 17:29:44 sthen Exp $
-
 sync for regression test
 
 Index: libpskc/examples/pskctool-h.txt

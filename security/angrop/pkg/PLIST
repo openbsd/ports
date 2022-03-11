@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/23 19:24:59 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/angrop/
 lib/python${MODPY_VERSION}/site-packages/angrop-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/angrop-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

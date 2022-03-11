@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:39 sthen Exp $
-
 COMMENT=	decrypt one-time-password for a YubiKey
 
 DISTNAME=	Auth-Yubikey_Decrypter-0.07

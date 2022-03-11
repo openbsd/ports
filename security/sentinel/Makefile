@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=		remote promiscuous mode detection tool
 
 DISTNAME=		sentinel-1.0

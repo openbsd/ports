@@ -1,5 +1,3 @@
-$OpenBSD: patch-log_h,v 1.2 2022/01/13 09:49:55 tb Exp $
-
 Index: log.h
 --- log.h.orig
 +++ log.h

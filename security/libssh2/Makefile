@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/13 19:36:14 tb Exp $
-
 COMMENT =		library implementing the SSH2 protocol
 
 DISTNAME =		libssh2-1.10.0

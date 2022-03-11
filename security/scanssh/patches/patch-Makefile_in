@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2008/01/29 07:49:57 jakob Exp $
 --- Makefile.in.orig	Mon Jan 28 10:04:29 2008
 +++ Makefile.in	Mon Jan 28 10:04:12 2008
 @@ -79,7 +79,8 @@ bin_PROGRAMS = scanssh

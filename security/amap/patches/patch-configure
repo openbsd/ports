@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2005/06/20 18:26:18 niallo Exp $
 --- configure.orig	Fri Jun  3 15:34:19 2005
 +++ configure	Mon Jun 20 13:41:00 2005
 @@ -13,10 +13,6 @@ if [ "$1" = "--help" ]; then

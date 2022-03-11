@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:25 sthen Exp $
-
 COMMENT=	secure passphrase generator
 
 DISTNAME=	ppgen-1.0

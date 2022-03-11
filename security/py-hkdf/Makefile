@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/20 15:05:11 bket Exp $
-
 COMMENT =	HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
 
 MODPY_EGG_VERSION =	0.0.3

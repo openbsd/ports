@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.2 2021/09/06 19:45:06 abieber Exp $
-
 MODGO_MODULES =	\
 	filippo.io/edwards25519	 v1.0.0-rc.1 \
 	golang.org/x/crypto	 v0.0.0-20210817164053-32db794688a5 \

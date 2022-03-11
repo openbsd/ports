@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.112 2022/02/24 08:33:56 ajacoutot Exp $
-
 # XXX merge this patch and rid of the dot.la files?
 https://git.archlinux.org/svntogit/packages.git/tree/trunk/0030-dont_use_la_files_for_opening_plugins.patch?h=packages/cyrus-sasl
 

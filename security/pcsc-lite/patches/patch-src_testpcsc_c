@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_testpcsc_c,v 1.4 2019/11/17 13:13:15 kn Exp $
-
 Make regress suite noninteractive.
 
 Index: src/testpcsc.c

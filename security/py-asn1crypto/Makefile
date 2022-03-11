@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =	fast ASN.1 parser and serializer
 
 MODPY_EGG_VERSION = 1.4.0

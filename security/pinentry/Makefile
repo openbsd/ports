@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/01/17 21:31:17 kmos Exp $
-
 COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)

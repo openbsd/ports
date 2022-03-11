@@ -1,4 +1,3 @@
-$OpenBSD: patch-file_Makefile_in,v 1.2 2008/09/16 21:08:27 jasper Exp $
 --- file/Makefile.in.orig	Tue Sep 16 23:00:11 2008
 +++ file/Makefile.in	Tue Sep 16 23:02:26 2008
 @@ -504,9 +504,7 @@ magic: Header Localstuff $(magic_FRAGMENTS)

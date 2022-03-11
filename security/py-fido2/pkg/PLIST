@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/23 21:55:55 sthen Exp $
 @pkgpath security/py-fido2
 lib/python${MODPY_VERSION}/site-packages/fido2/
 lib/python${MODPY_VERSION}/site-packages/fido2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

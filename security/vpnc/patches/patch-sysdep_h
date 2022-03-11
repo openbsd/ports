@@ -1,4 +1,3 @@
-$OpenBSD: patch-sysdep_h,v 1.1 2012/03/21 23:49:02 fgsch Exp $
 --- sysdep.h.orig	Fri Mar 16 23:30:41 2012
 +++ sysdep.h	Fri Mar 16 23:31:10 2012
 @@ -67,6 +67,7 @@ int tun_get_hwaddr(int fd, char *dev, uint8_t *hwaddr)

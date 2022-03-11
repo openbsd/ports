@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT=	ACL support for Catalyst applications
 
 DISTNAME =	Catalyst-Plugin-Authorization-ACL-0.16

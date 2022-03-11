@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT =	OpenSSL's multiprecision integer arithmetic#'
 
 MODULES =	cpan

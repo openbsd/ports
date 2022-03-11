@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/16 20:17:54 kmos Exp $
-
 COMMENT =	extremely fast password cracker, with community patches
 BROKEN-alpha =	DES_bs.c:173: internal compiler error: in get_callee_fndecl, at tree.c:5940
 FIX_EXTRACT_PERMISSIONS=Yes

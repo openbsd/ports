@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=		SNMP audit scanner
 
 DISTNAME=       	ADMsnmp.0.1

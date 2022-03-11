@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_openssl_envutil_rb,v 1.1 2021/06/25 18:45:16 tb Exp $
-
 Try to avoid relying on the test-unit gem for now. This reverts
 https://github.com/ruby/openssl/commit/7e45e3899d1e3aa87826d7d61f6ebad4f1691e6b
 

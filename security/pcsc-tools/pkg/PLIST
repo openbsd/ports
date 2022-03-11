@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/08 15:08:53 sthen Exp $
 bin/ATR_analysis
 bin/gscriptor
 @bin bin/pcsc_scan

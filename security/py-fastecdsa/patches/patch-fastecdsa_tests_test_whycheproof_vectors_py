@@ -1,5 +1,3 @@
-$OpenBSD: patch-fastecdsa_tests_test_whycheproof_vectors_py,v 1.2 2021/07/14 22:15:23 tb Exp $
-
 Use the JSON files from security/wycheproof-testvectors instead of fetching
 them from GitHub.
 

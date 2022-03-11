@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/06 19:45:06 abieber Exp $
-
 COMMENT =	simple, modern and secure file encryption tool
 
 MODGO_MODNAME =	filippo.io/age

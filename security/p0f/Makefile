@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/10 07:26:38 gnezdo Exp $
-
 COMMENT=		passive OS fingerprinting tool
 
 DISTNAME=		p0f-2.0.8

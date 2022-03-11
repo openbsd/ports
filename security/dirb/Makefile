@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/26 18:20:36 naddy Exp $
-
 COMMENT =	web content scanner
 
 DISTNAME =	dirb222

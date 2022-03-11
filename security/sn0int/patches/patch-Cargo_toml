@@ -1,5 +1,3 @@
-$OpenBSD: patch-Cargo_toml,v 1.2 2022/01/18 09:06:52 gonzalo Exp $
-
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml

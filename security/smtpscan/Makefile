@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT=	Remote SMTP Server Detection
 
 VERSION=	0.5

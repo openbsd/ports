@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_mbedtls_config_h,v 1.14 2021/03/12 17:41:04 bket Exp $
-
 MBEDTLS_THREADING_PTHREAD and MBEDTLS_THREADING_C are required by
 www/hiawatha.
 

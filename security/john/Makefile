@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2020/04/07 13:29:52 bentley Exp $
-
 COMMENT =		extremely fast password cracker
 
 DISTNAME =		john-1.8.0

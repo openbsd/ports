@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/24 09:28:50 sthen Exp $
 @pkgpath security/py-pgpdump
 lib/python${MODPY_VERSION}/site-packages/pgpdump/
 lib/python${MODPY_VERSION}/site-packages/pgpdump-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

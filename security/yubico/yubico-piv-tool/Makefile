@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/31 17:33:05 tb Exp $
-
 COMMENT=	Yubico Personal Identity Verification (PIV) Tool
 
 HOMEPAGE=	https://developers.yubico.com/yubico-piv-tool/

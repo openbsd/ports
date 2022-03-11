@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_int-util_h,v 1.1 2020/12/19 21:32:07 sebastia Exp $
-
 fix from upstream
 
 Index: src/int-util.h

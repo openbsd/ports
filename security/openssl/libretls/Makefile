@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/28 12:48:04 sthen Exp $
-
 COMMENT =	libtls library used with OpenSSL 1.1 for testing
 
 V =		3.5.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/01/17 08:31:33 tb Exp $
-
 BROKEN=	Needs update to less outdated version and checking of dependent ports
 
 COMMENT=	OpenSSL Tcl extension

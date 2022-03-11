@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/15 06:08:41 benoit Exp $
-
 COMMENT =	authentication plugin for the Mojolicious Perl framework
 
 MODULES =	cpan

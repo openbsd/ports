@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/26 20:16:44 sthen Exp $
-
 COMMENT =	OTP extension for password-store
 
 V =		1.2.0

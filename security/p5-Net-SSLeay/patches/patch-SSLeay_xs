@@ -1,5 +1,3 @@
-$OpenBSD: patch-SSLeay_xs,v 1.9 2022/01/20 19:27:09 bluhm Exp $
-
 https://github.com/radiator-software/p5-net-ssleay/commit/3dd2f101b8e15a59f66e22525b8d001d5ad6ce7d
 https://github.com/radiator-software/p5-net-ssleay/commit/4a886e06c1cac80e7fb3f8d52146a27ce557ba8c
 https://github.com/radiator-software/p5-net-ssleay/commit/88c3bbc45399c8ef2c8879aada8bfa91d8bc6c10

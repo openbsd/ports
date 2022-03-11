@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_lib_AuthTestApp_pm,v 1.1 2020/10/09 04:01:08 afresh1 Exp $
-
 Index: t/lib/AuthTestApp.pm
 --- t/lib/AuthTestApp.pm.orig
 +++ t/lib/AuthTestApp.pm

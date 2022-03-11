@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2016/03/10 19:45:59 pascal Exp $
 @bin bin/otr_mackey
 @bin bin/otr_modify
 @bin bin/otr_parse

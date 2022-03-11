@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:41 sthen Exp $
-
 COMMENT =	Perl extension to OpenSSL's PKCS10 API
 
 MODULES =	cpan

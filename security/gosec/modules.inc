@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.1.1.1 2022/01/20 17:15:11 abieber Exp $
-
 MODGO_MODULES =	\
 	bitbucket.org/creachadair/shell				 v0.0.6 \
 	cloud.google.com/go					 v0.60.0 \

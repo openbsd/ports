@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:06 sthen Exp $
-
 COMMENT =	parse, modify and generate PDF documents
 
 DISTNAME =	origami-2.1.0

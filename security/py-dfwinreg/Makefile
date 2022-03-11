@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
 MODPY_EGG_VERSION = 20200415

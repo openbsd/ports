@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_engine_openssl_ossl_md_cpp,v 1.2 2021/11/14 18:43:44 tb Exp $
-
 https://github.com/randombit/botan/commit/e61a5f56fb404db3655909be4ce23c3a816cbb60
 
 Port EVP_HashFunction class to OpenSSL 1.1 API

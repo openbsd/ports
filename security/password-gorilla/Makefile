@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:07:46 sthen Exp $
-
 COMMENT =	cross-platform password manager
 
 V =		1.5.3.7

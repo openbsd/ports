@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:35 kmos Exp $
-
 COMMENT =	utilities for working with vivisect
 
 MODPY_EGG_VERSION =	0.3.9

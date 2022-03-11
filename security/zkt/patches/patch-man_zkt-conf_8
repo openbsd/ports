@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_zkt-conf_8,v 1.2 2020/02/20 11:21:13 sthen Exp $
-
 Index: man/zkt-conf.8
 --- man/zkt-conf.8.orig
 +++ man/zkt-conf.8

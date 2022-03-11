@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.browser,v 1.1 2018/03/16 07:47:59 giovanni Exp $
 @bin bin/keepassxc-proxy

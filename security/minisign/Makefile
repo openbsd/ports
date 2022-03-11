@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/17 10:32:12 sthen Exp $
-
 COMMENT =	dead simple tool to sign files and verify digital signatures
 
 GH_ACCOUNT =	jedisct1

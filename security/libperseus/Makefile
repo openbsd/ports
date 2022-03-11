@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:15:36 sthen Exp $
-
 COMMENT = 	library to secure any kind of communication streams
 
 DISTNAME = 	libperseus-1.0.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_platform_openbsd_sh,v 1.2 2020/10/05 19:46:18 jca Exp $
 Index: src/platform/openbsd.sh
 --- src/platform/openbsd.sh.orig
 +++ src/platform/openbsd.sh

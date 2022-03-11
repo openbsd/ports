@@ -1,5 +1,3 @@
-$OpenBSD: patch-Configurations_shared-info_pl,v 1.2 2019/03/03 15:42:55 sthen Exp $
-
 Also match lld's "compatible with GNU linkers".
 
 Probably not really used at current (1.1.1a) as $config{CC} isn't even

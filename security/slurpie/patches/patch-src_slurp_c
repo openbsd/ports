@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_slurp_c,v 1.3 2017/05/06 17:23:10 naddy Exp $
 Index: src/slurp.c
 --- src/slurp.c.orig
 +++ src/slurp.c

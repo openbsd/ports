@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/22 16:21:14 afresh1 Exp $
 ${P5SITE}/Crypt/
 ${P5SITE}/Crypt/PBKDF2/
 ${P5SITE}/Crypt/PBKDF2.pm

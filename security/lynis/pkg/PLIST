@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.23 2022/01/28 09:26:19 gonzalo Exp $
 @group wheel
 bin/lynis
 @man man/man8/lynis.8

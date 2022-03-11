@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/20 17:15:08 abieber Exp $
-
 COMMENT =	security checker for Go projects
 
 MODGO_MODNAME =	github.com/securego/gosec/v2

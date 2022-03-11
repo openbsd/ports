@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/26 17:31:39 sthen Exp $
-
 COMMENT =		Python implementation of ECDSA cryptography
 
 MODPY_EGG_VERSION = 	0.17.0

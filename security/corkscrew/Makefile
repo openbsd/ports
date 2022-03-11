@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:01 sthen Exp $
-
 COMMENT=		HTTP tunneling utility for SSH
 
 DISTNAME=		corkscrew-2.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/11/29 09:13:35 benoit Exp $
-
 COMMENT=	module to implement the Twofish cipher
 
 MODULES=	cpan

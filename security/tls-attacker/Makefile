@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/19 01:50:31 kurt Exp $
-
 COMMENT =		framework for analyzing TLS libraries
 
 V =			3.5.0

@@ -1,7 +1,5 @@
 #! /bin/sh
 
-# $OpenBSD: vpnc.sh,v 1.4 2009/01/29 19:07:06 pea Exp $
-
 TUN_IF=tun0
 PHYS_IF=wi0
 VPNGATEWAY=192.168.0.1

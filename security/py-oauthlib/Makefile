@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/07 10:44:34 sthen Exp $
-
 COMMENT =	Python library for OAuth
 
 MODPY_EGG_VERSION = 3.1.1

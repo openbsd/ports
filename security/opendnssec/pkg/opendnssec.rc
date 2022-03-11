@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: opendnssec.rc,v 1.3 2019/01/25 08:32:02 pvk Exp $
 
 daemon="${TRUEPREFIX}/sbin/ods-control"
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/06/10 14:07:25 ajacoutot Exp $
-
 COMMENT-main=		Kerberos 5 implementation
 COMMENT-devel-docs=	Heimdal C functions documentation
 COMMENT-libs=		Heimdal libraries and headers

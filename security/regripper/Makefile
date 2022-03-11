@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/06 20:27:45 rpointel Exp $
-
 COMMENT =		Windows Registry data extraction tool
 
 DISTNAME =		regripper-3.0

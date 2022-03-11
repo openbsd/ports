@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/19 12:49:20 abieber Exp $
-
 COMMENT =		simple tool for verifying gpg signatures
 
 MODGO_MODNAME =		suah.dev/ogvt

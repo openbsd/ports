@@ -1,5 +1,3 @@
-$OpenBSD: patch-arp_c,v 1.1 2021/12/04 11:27:20 tb Exp $
-
 Index: arp.c
 --- arp.c.orig
 +++ arp.c

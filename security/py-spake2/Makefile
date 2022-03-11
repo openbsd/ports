@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/20 15:05:11 bket Exp $
-
 COMMENT =	SPAKE2 password-authenticated key exchange (pure python)
 
 MODPY_EGG_VERSION =	0.8

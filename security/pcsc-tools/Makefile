@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/03 20:40:40 sthen Exp $
-
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
 DISTNAME=	pcsc-tools-1.4.27

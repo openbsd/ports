@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT=	fast scatter/gather TCP port scanner
 
 DISTNAME=	strobe-1.06

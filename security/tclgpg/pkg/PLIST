@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/04 17:44:33 czarkoff Exp $
 lib/tcl/gpg/
 lib/tcl/gpg/libgpg11.so
 lib/tcl/gpg/pkgIndex.tcl

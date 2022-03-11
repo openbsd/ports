@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/13 03:06:01 afresh1 Exp $
-
 COMMENT =	interface to arc4random(3) on OpenBSD
 DISTNAME =	Unix-OpenBSD-Random-0.01
 CATEGORIES =	security

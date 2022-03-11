@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/17 14:39:42 danj Exp $
-
 COMMENT =	ZIP password cracker
 
 DISTNAME =	fcrackzip-1.0

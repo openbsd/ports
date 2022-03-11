@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_qca-ossl_qca-ossl_cpp,v 1.6 2021/09/18 07:52:34 rsadowski Exp $
-
 LibreSSL 3.0.x support from Stefan Strogin <steils@gentoo.org>
 
 Index: plugins/qca-ossl/qca-ossl.cpp

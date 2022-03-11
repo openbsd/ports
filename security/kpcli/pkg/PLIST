@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/01 15:42:56 landry Exp $
 bin/kpcli

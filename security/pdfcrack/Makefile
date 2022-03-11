@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/05/15 06:56:35 benoit Exp $
-
 COMMENT =		password recovery tool for PDF-files
 
 DISTNAME =		pdfcrack-0.19

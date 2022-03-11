@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:35:59 espie Exp $
 bin/apg
 bin/apgbfm
 bin/apgcli

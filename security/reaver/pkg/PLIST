@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
 @bin bin/reaver
 @bin bin/wash
 @extraunexec rm -f ${LOCALSTATEDIR}/reaver/*

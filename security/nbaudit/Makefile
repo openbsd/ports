@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:05 sthen Exp $
-
 COMMENT=	NetBIOS Auditing Tool / Security Kit
 
 DISTNAME=	nat10

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/08 20:21:36 rpointel Exp $
 ${GEM_BIN}/pdf2pdfa${GEM_BIN_SUFFIX}
 ${GEM_BIN}/pdf2ruby${GEM_BIN_SUFFIX}
 ${GEM_BIN}/pdfcop${GEM_BIN_SUFFIX}

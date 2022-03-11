@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/06/15 06:55:01 benoit Exp $
-
 COMMENT =	Perl extension to parse PKCS \#10 certificate requests
 
 DISTNAME =	Crypt-PKCS10-2.002

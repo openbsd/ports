@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/02/25 20:56:06 sebastia Exp $
-
 COMMENT =	framework to implement CMS scanners
 
 DISTNAME =	cms_scanner-0.13.7

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/27 21:27:17 naddy Exp $
-
 COMMENT=	GTK+2 secure notes manager
 
 DISTNAME=	gringotts-1.2.10

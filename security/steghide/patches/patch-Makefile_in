@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/04/28 19:37:59 okan Exp $
 --- Makefile.in.orig	Wed Oct 15 10:01:28 2003
 +++ Makefile.in	Thu Apr 17 19:28:20 2008
 @@ -161,7 +161,7 @@ AUTOMAKE_OPTIONS = dist-bzip2 dist-zip

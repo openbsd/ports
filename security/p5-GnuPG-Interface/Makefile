@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/03 21:28:40 robert Exp $
-
 COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan

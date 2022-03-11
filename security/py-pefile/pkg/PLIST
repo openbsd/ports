@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/07 16:22:56 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pefile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ordlookup/

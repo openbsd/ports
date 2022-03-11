@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2022/01/11 12:38:49 ajacoutot Exp $
-
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 SURICATA_V =	6.0.4

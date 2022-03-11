@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/06/07 11:03:31 ajacoutot Exp $
-
 COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.7.3

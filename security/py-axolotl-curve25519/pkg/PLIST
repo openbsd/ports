@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:49 sthen Exp $
 @pkgpath security/py-axolotl-curve25519
 @so lib/python${MODPY_VERSION}/site-packages/axolotl_curve25519.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_axolotl_curve25519-${MODPY_EGG_VERSION}.post2-py${MODPY_VERSION}.egg-info/

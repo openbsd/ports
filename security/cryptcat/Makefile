@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=		netcat enhanced with twofish encryption
 
 V=			1.2.1

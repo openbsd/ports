@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:02 sthen Exp $
-
 COMMENT =		high level firewall language
 
 DISTNAME =		hlfl-0.60.1

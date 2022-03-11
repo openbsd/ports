@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2020/06/21 12:03:34 millert Exp $
 libexec/sudo/python_plugin.la
 @so libexec/sudo/python_plugin.so
 @man man/man8/sudo_plugin_python.8

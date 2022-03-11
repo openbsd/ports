@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =	parse a PDF document
 
 MODPY_EGG_VERSION =	0.7.5

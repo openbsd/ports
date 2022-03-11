@@ -1,5 +1,3 @@
-$OpenBSD: patch-nss_coreconf_OpenBSD_mk,v 1.6 2019/07/09 17:52:02 landry Exp $
-
 - respect SHARED_LIBS
 
 Index: nss/coreconf/OpenBSD.mk

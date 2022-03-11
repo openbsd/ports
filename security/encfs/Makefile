@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/08 11:48:06 jca Exp $
-
 COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5

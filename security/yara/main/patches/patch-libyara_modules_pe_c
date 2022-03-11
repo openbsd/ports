@@ -1,5 +1,3 @@
-$OpenBSD: patch-libyara_modules_pe_c,v 1.3 2021/10/31 17:30:40 tb Exp $
-
 Index: libyara/modules/pe.c
 --- libyara/modules/pe.c.orig
 +++ libyara/modules/pe.c

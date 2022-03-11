@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/11/19 14:35:59 sthen Exp $
 @comment @bin sbin/wpa_priv
 @rcscript ${RCDIR}/wpa_supplicant
 @bin bin/eapol_test

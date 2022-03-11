@@ -1,5 +1,3 @@
-# $OpenBSD: heimdal.port.mk,v 1.5 2018/04/23 19:55:06 ajacoutot Exp $
-
 MODHEIMDAL_WANTLIB +=	com_err pthread util
 MODHEIMDAL_WANTLIB +=	heimdal/lib/asn1
 MODHEIMDAL_WANTLIB +=	heimdal/lib/hcrypto

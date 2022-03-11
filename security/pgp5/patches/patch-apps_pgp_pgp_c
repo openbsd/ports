@@ -1,4 +1,3 @@
-$OpenBSD: patch-apps_pgp_pgp_c,v 1.1 2002/04/23 06:38:48 fgsch Exp $
 --- apps/pgp/pgp.c.orig	Sat Feb  7 16:54:56 1998
 +++ apps/pgp/pgp.c	Tue Apr 23 03:06:28 2002
 @@ -1094,7 +1094,7 @@ static PGPInvokedType getInvokedType(cha

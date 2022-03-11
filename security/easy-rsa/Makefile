@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/12/29 15:18:22 bket Exp $
-
 COMMENT =	small RSA key management package
 
 V =		3.0.8

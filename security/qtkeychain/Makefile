@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/19 07:39:01 kirby Exp $
-
 COMMENT =		Qt API to store passwords and other secret data
 
 GH_ACCOUNT =		frankosterfeld

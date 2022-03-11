@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/10/27 09:49:27 aanriot Exp $
 bin/portsentry
 share/doc/portsentry/
 share/doc/portsentry/README.install

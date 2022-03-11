@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT=	DSA Signatures and Key Generation
 
 MODULES=	cpan

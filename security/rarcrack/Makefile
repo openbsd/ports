@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:35 sthen Exp $
-
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2

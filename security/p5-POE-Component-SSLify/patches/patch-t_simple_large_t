@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_simple_large_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
 Change the test to a newer and supported protocol
 Index: t/simple_large.t
 --- t/simple_large.t.orig

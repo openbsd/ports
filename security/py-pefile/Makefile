@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:18 sthen Exp $
-
 COMMENT =		Python module to read and work with PE files
 
 MODPY_EGG_VERSION =	2018.8.8

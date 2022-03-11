@@ -1,4 +1,3 @@
-$OpenBSD: patch-tclconfig_tcl_m4,v 1.1.1.1 2015/07/10 19:00:41 czarkoff Exp $
 --- tclconfig/tcl.m4.orig	Mon Jun  8 10:23:06 2015
 +++ tclconfig/tcl.m4	Mon Jun  8 10:23:44 2015
 @@ -1700,7 +1700,7 @@ dnl AC_CHECK_TOOL(AR, ar)

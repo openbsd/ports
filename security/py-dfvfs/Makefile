@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
 MODPY_EGG_VERSION = 20200625

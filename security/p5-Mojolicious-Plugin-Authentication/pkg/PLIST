@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/22 03:24:17 afresh1 Exp $
 ${P5SITE}/Mojolicious/Plugin/Authentication.pm
 @man man/man3p/Mojolicious::Plugin::Authentication.3p

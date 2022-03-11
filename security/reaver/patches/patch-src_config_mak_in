@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_config_mak_in,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
-
 Index: src/config.mak.in
 --- src/config.mak.in.orig
 +++ src/config.mak.in

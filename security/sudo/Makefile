@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2022/03/04 17:54:43 millert Exp $
-
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
 

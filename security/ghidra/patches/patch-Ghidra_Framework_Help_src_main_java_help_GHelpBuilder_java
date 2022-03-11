@@ -1,5 +1,3 @@
-$OpenBSD: patch-Ghidra_Framework_Help_src_main_java_help_GHelpBuilder_java,v 1.1 2019/07/23 02:09:20 lteo Exp $
-
 GHelpBuilder.java builds the Ghidra help files during build and it logs to
 $HOME/.ghidra/.ghidra-${VERSION}/application.log.  The GhidraApplicationLayout()
 constructor calls ApplicationUtilities.getDefaultUserSettingsDir() which in turn

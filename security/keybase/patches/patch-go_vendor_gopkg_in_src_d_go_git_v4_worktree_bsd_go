@@ -1,5 +1,3 @@
-$OpenBSD: patch-go_vendor_gopkg_in_src_d_go_git_v4_worktree_bsd_go,v 1.2 2019/08/24 18:40:58 abieber Exp $
-
 Index: go/vendor/gopkg.in/src-d/go-git.v4/worktree_bsd.go
 --- go/vendor/gopkg.in/src-d/go-git.v4/worktree_bsd.go.orig
 +++ go/vendor/gopkg.in/src-d/go-git.v4/worktree_bsd.go

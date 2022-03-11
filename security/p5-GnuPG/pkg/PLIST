@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 18:36:01 espie Exp $
 bin/gpgmailtunl
 ${P5SITE}/GnuPG/
 ${P5SITE}/GnuPG.pm

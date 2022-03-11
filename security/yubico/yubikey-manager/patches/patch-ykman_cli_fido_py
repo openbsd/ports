@@ -1,5 +1,3 @@
-$OpenBSD: patch-ykman_cli_fido_py,v 1.1 2022/02/16 16:35:09 sthen Exp $
-
 Index: ykman/cli/fido.py
 --- ykman/cli/fido.py.orig
 +++ ykman/cli/fido.py

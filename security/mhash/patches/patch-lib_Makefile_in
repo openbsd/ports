@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.2 2008/09/03 21:02:31 jakob Exp $
 --- lib/Makefile.in.orig	Thu Apr  5 04:33:30 2007
 +++ lib/Makefile.in	Wed Sep  3 22:48:43 2008
 @@ -220,7 +220,8 @@ MISCELLANEOUS = haval.c mhash_haval.h gosthash.c mhash

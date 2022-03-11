@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =		library to generate, and check strengh of passwords
 
 V =			1.4.4

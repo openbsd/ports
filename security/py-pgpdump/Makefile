@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:18 sthen Exp $
-
 COMMENT =		PGP packet parser library for Python
 
 MODPY_EGG_VERSION =	1.5

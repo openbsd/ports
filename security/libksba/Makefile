@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/07/07 07:52:07 edd Exp $
-
 COMMENT = 	X.509 library
 
 DISTNAME = 	libksba-1.6.0

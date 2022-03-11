@@ -1,5 +1,3 @@
-# $OpenBSD: Sendmail.conf-sql,v 1.1 2007/07/25 16:25:57 ajacoutot Exp $
-
 pwcheck_method: auxprop
 auxprop_plugin: sql
 sql_engine: mysql # or pgsql, sqlite

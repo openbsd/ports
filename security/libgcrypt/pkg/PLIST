@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2020/07/07 07:08:29 ajacoutot Exp $
 @bin bin/dumpsexp
 @bin bin/hmac256
 bin/libgcrypt-config

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_memdbg_py,v 1.2 2021/02/14 17:43:12 sthen Exp $
-
 Index: tests/memdbg.py
 --- tests/memdbg.py.orig
 +++ tests/memdbg.py

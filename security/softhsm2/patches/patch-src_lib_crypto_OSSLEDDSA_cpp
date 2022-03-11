@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_crypto_OSSLEDDSA_cpp,v 1.1 2020/09/22 03:20:26 pvk Exp $
-
 Fix advertised min and max mechanism sizes according to final PKCS#11 3.0 specification:
 https://github.com/opendnssec/SoftHSMv2/pull/522/commits/967e66a52fc28dc2f5a4951b855ae3bdf63f0129#diff-1176fa922674b142de4554690263544c
 

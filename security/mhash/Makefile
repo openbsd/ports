@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/17 14:39:42 danj Exp $
-
 COMMENT=	strong hash library
 
 DISTNAME=	mhash-0.9.9.9

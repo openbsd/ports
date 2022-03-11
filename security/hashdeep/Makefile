@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:02 sthen Exp $
-
 COMMENT =		tools to compute hashes recursively
 
 GH_ACCOUNT =		jessek

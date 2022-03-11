@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_renegotiate_client_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
 Fix sslv3 tests that can't run with LibreSSL
 Index: t/renegotiate_client.t
 --- t/renegotiate_client.t.orig

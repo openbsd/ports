@@ -1,5 +1,3 @@
-$OpenBSD: patch-sslsplit_1_in,v 1.2 2019/08/31 14:01:20 sthen Exp $
-
 Index: sslsplit.1.in
 --- sslsplit.1.in.orig
 +++ sslsplit.1.in

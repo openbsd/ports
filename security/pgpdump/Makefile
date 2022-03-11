@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:09 sthen Exp $
-
 COMMENT=		PGP packet visualizer
 
 DISTNAME=		pgpdump-0.33

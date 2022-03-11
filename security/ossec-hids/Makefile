@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/01 02:19:34 gnezdo Exp $
-
 COMMENT =	host-based intrusion detection system
 
 GH_ACCOUNT =	ossec

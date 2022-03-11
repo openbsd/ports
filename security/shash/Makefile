@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/17 14:39:42 danj Exp $
-
 COMMENT=	generates or checks digests or mac
 
 DISTNAME=	shash-0.2.6

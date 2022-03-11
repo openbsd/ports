@@ -1,5 +1,3 @@
-$OpenBSD: patch-asn1_time_t_c,v 1.2 2021/10/11 12:05:26 tb Exp $
-
 Index: asn1_time_t.c
 --- asn1_time_t.c.orig
 +++ asn1_time_t.c

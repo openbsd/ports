@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.2 2018/02/23 11:23:45 sebastia Exp $
-
 Switch mini-portile2 to a development depedency, it is only needed for
 building, and not even needed there when using --use-system-libraries.
 

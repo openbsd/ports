@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/31 17:30:40 tb Exp $
-
 COMMENT = pattern matching swiss knife
 
 DISTNAME = yara-${VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =		Python binding to the NaCl library
 
 MODPY_EGG_VERSION =	1.4.0

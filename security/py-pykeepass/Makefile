@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/03/01 10:27:10 sthen Exp $
-
 COMMENT =	interact with keepass databases from Python
 
 MODPY_EGG_VERSION =	4.0.1

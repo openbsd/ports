@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_util-privs_h,v 1.4 2021/01/31 18:03:49 sthen Exp $
-
 Use setresuid/gid() directly to change user and group.  Otherwise
 Suricata uses libcap-ng on Linux and runs as root elsewhere.
 

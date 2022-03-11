@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:25 sthen Exp $
-
 COMMENT =		common interface to HMAC functionality
 
 DISTNAME =		ruby-hmac-0.4.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/22 16:21:14 afresh1 Exp $
-
 COMMENT =	PBKDF2 password hash algorithm
 
 DISTNAME =	Crypt-PBKDF2-0.161520

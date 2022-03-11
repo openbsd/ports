@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_sh,v 1.2 2015/07/20 03:13:47 jca Exp $
 --- build.sh.orig	Sun Jul 19 21:11:34 2015
 +++ build.sh	Sun Jul 19 21:12:18 2015
 @@ -18,10 +18,10 @@ BASIC_CFLAGS="-Wall -Wno-format -I/usr/local/include/ 

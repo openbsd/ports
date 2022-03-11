@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:42 sthen Exp $
-
 COMMENT=	module to calculate Nilsimsa digests
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Configurations_unix-Makefile_tmpl,v 1.8 2021/08/25 03:48:01 tb Exp $
-
 Index: Configurations/unix-Makefile.tmpl
 --- Configurations/unix-Makefile.tmpl.orig
 +++ Configurations/unix-Makefile.tmpl

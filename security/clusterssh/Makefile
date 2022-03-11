@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/27 11:57:07 steven Exp $
-
 COMMENT=	secure concurrent multi-server terminal control
 
 V=		4.16

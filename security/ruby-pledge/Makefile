@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT =		ruby wrapper for pledge(2) and unveil(2)
 
 DISTNAME =		pledge-1.2.0

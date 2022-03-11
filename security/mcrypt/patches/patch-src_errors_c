@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_errors_c,v 1.1 2012/09/06 21:56:31 sthen Exp $
-
 Format strings, http://seclists.org/oss-sec/2012/q3/396
 
 --- src/errors.c.orig	Thu Sep  6 22:24:15 2012

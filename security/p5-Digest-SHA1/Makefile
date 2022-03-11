@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/06/05 12:34:06 jasper Exp $
-
 COMMENT=	module to calculate SHA1 digests
 
 MODULES=	cpan

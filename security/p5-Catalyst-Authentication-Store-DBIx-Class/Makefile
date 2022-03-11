@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/09 04:04:49 afresh1 Exp $
-
 COMMENT =	storage class for Catalyst Authentication using DBIx::Class
 
 MODULES =	cpan

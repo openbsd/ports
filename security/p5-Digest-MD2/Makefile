@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:42 sthen Exp $
-
 COMMENT=	perl interface to the MD2 Algorithm
 
 MODULES=	cpan

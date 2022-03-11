@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_jk_socketd_8,v 1.2 2014/03/26 17:38:27 gonzalo Exp $
 --- man/jk_socketd.8.orig	Fri Jan  3 18:51:20 2014
 +++ man/jk_socketd.8	Wed Dec 25 15:54:12 2013
 @@ -18,7 +18,7 @@ jk_socketd \- a daemon to create a rate-limited /dev/l

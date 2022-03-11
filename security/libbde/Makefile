@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 
 VERSION =		20191221

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_st_embparameters_pl,v 1.1 2019/04/28 01:30:18 cwen Exp $
-
 Fix test with Perl 5.26+ (no . in @INC)
 
 Index: tests/st_embparameters.pl

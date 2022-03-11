@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/06/29 05:07:56 rsadowski Exp $
 @bin bin/mozcerts-qt5
 @bin bin/qcatool-qt5
 include/Qca-qt5/

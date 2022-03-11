@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:15 sthen Exp $
-
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
 

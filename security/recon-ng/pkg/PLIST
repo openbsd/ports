@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/06 18:19:16 jasper Exp $
 bin/recon-cli
 bin/recon-ng
 bin/recon-web

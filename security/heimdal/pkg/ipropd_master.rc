@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: ipropd_master.rc,v 1.2 2018/01/11 19:27:09 rpe Exp $
 
 daemon="${TRUEPREFIX}/heimdal/libexec/ipropd-master --detach"
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT =		fuzzy hashing program and library
 
 VERSION =		2.14.1

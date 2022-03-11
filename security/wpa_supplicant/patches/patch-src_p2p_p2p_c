@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_p2p_p2p_c,v 1.1 2021/02/05 19:57:54 tobhe Exp $
-
 https://w1.fi/security/2020-2/wpa_supplicant-p2p-group-info-processing-vulnerability.txt
 
 Index: src/p2p/p2p.c

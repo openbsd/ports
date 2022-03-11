@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_m4_aircrack_ng_simd_m4,v 1.1 2020/06/13 17:38:49 cwen Exp $
-
 Ensure that disabling AltiVec and POWER8 instructions with MAKE_ENV is honoured
 even if the build machine supports them, from:
 https://github.com/aircrack-ng/aircrack-ng/issues/1941

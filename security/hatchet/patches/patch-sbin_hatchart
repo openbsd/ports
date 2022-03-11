@@ -1,4 +1,3 @@
-$OpenBSD: patch-sbin_hatchart,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
 --- sbin/hatchart.orig	Thu Jun 26 17:21:31 2008
 +++ sbin/hatchart	Thu Jun 26 17:22:09 2008
 @@ -12,7 +12,7 @@ use DBD::Chart;

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/21 09:54:55 tb Exp $
-
 COMMENT =	protect LAN IP address space by ARP spoofing
 
 DISTNAME =	ipguard-1.04

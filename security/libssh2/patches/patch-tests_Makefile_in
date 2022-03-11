@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.7 2021/11/13 19:36:14 tb Exp $
 Index: tests/Makefile.in
 --- tests/Makefile.in.orig
 +++ tests/Makefile.in

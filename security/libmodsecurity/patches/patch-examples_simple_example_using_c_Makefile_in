@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_simple_example_using_c_Makefile_in,v 1.1 2021/01/03 23:40:40 bluhm Exp $
-
 Index: examples/simple_example_using_c/Makefile.in
 --- examples/simple_example_using_c/Makefile.in.orig
 +++ examples/simple_example_using_c/Makefile.in

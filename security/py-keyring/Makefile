@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/30 16:42:59 ajacoutot Exp $
-
 COMMENT=		store and access your passwords safely
 
 MODPY_EGG_VERSION=	23.4.0

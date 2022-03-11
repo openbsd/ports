@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT=	scan a network for SSL certificates
 
 GH_ACCOUNT=	mikecardwell

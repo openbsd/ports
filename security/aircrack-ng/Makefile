@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/01/16 09:24:09 kmos Exp $
-
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.5.2
 REVISION=		7

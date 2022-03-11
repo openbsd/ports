@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/21 22:09:19 alek Exp $
 @man man/man8/fragroute.8
 @man man/man8/fragtest.8
 @bin sbin/fragroute

@@ -1,5 +1,3 @@
-$OpenBSD: patch-pytest_ini,v 1.1 2021/11/18 09:20:48 sthen Exp $
-
 we don't have pytest-flake8 yet
 
 Index: pytest.ini

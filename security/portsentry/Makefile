@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/14 00:39:39 naddy Exp $
-
 COMMENT=	port scan detection and active defense
 
 DISTNAME=	portsentry-1.2

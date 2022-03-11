@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT =		Tcl interface to GNU Privacy Guard
 DISTNAME =		tclgpg-20160615
 CATEGORIES =		security

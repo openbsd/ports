@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/01/25 19:09:16 cwen Exp $
-
 COMMENT =	firewall GUI
 
 V =		6.0.0

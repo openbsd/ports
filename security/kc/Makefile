@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:03 sthen Exp $
-
 COMMENT =	console based password storing application
 
 V =		2.4.2

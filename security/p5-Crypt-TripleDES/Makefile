@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:41 sthen Exp $
-
 COMMENT=		implementation of 3DES encryption on ECB mode
 
 MODULES=		cpan

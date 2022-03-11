@@ -1,4 +1,3 @@
-$OpenBSD: patch-mod_c,v 1.1 2010/04/30 13:44:15 naddy Exp $
 --- mod.c.orig	Fri Apr 30 15:27:00 2010
 +++ mod.c	Fri Apr 30 15:27:11 2010
 @@ -151,7 +151,7 @@ mod_close(void)

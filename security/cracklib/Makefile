@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/05/16 14:03:39 ajacoutot Exp $
-
 COMMENT =		sensible unix password cracker
 
 V =			2.9.7

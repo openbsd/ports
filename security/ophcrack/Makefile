@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/01/29 11:02:06 cwen Exp $
-
 COMMENT =		password cracker based on rainbow tables
 
 DISTNAME =		ophcrack-3.8.0

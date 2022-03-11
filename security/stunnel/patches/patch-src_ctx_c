@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ctx_c,v 1.8 2019/03/19 16:51:13 jsing Exp $
 Index: src/ctx.c
 --- src/ctx.c.orig
 +++ src/ctx.c

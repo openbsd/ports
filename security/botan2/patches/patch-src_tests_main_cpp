@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tests_main_cpp,v 1.8 2020/05/18 13:17:43 landry Exp $
-
 Index: src/tests/main.cpp
 --- src/tests/main.cpp.orig
 +++ src/tests/main.cpp

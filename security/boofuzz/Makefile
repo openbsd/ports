@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/22 04:22:22 bket Exp $
-
 COMMENT =	extensible network protocol fuzzer
 
 MODPY_EGG_VERSION =	0.2.1

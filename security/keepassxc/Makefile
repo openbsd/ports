@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/06/16 18:23:21 rsadowski Exp $
-
 COMMENT =	management tool for password and sensitive data
 
 V =		2.6.6

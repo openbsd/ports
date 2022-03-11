@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/07 10:05:59 sthen Exp $
-
 COMMENT=	local CVE checker tool
 
 GH_ACCOUNT=	sjvermeu

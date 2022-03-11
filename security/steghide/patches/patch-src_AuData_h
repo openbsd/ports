@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_AuData_h,v 1.1 2010/05/24 08:31:17 espie Exp $
 --- src/AuData.h.orig	Mon May 24 03:47:35 2010
 +++ src/AuData.h	Mon May 24 03:49:44 2010
 @@ -26,22 +26,30 @@

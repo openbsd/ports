@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.28 2021/09/01 22:44:04 sthen Exp $
 @pkgpath security/py-paramiko
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

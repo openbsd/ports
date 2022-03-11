@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/18 09:06:52 gonzalo Exp $
-
 BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
 BROKEN-sparc64=	ring build-script error: called `Option::unwrap()` on a `None` value
 BROKEN-aarch64=	ring-0.16.11 module fails build on aarch64

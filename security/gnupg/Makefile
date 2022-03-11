@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.122 2021/09/21 19:14:37 tb Exp $
-
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.2.30

@@ -1,5 +1,3 @@
-$OpenBSD: patch-RSA_xs,v 1.1 2021/12/04 21:37:58 tb Exp $
-
 Fix build with opaque RSA in LibreSSL 3.5.
 
 Index: RSA.xs

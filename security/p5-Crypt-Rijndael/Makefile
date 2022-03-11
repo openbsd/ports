@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/11/04 13:13:42 benoit Exp $
-
 COMMENT =	interface to the rijndael encryption algorithm aka AES
 
 MODULES =	cpan

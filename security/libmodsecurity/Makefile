@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/03 23:40:40 bluhm Exp $
-
 COMMENT =	intrusion detection and prevention engine
 
 VERSION =	3.0.4

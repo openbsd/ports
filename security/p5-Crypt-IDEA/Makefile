@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT=	Perl interface to IDEA block cipher
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:43 sthen Exp $
-
 COMMENT=	generate pronounceable passwords
 
 MODULES=	cpan

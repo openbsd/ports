@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:25 sthen Exp $
-
 COMMENT=		block "nasty" hosts with pf(4) based on Snort's rules
 
 DISTNAME=		snort2pf-4.5

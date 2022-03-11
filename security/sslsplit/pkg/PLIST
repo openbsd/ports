@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/08/31 14:01:20 sthen Exp $
 @extraunexec rm -f ${SYSCONFDIR}/sslsplit/!(sslsplit.conf)
 @newgroup _sslsplit:727
 @newuser _sslsplit:727:_sslsplit:daemon:sslsplit:/nonexistent:/sbin/nologin

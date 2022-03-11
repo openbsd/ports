@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:03 sthen Exp $
-
 COMMENT=		file integrity checker
 
 DISTNAME=		integrit-4.1

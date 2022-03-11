@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/31 14:09:21 bluhm Exp $
-
 COMMENT =	ECDSA encoding and decoding using OpenSSL
 
 DISTNAME =	Crypt-OpenSSL-ECDSA-0.10

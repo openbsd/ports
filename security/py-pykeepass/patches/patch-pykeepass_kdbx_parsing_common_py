@@ -1,5 +1,3 @@
-$OpenBSD: patch-pykeepass_kdbx_parsing_common_py,v 1.1.1.1 2021/07/02 15:29:09 sthen Exp $
-
 we have Cryptodome (which uses the Crypto namespace) rather than Cryptodomex
 
 Index: pykeepass/kdbx_parsing/common.py

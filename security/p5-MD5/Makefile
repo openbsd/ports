@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:42 sthen Exp $
-
 COMMENT=	interface to md5 message-digest algorithm
 
 MODULES=	cpan

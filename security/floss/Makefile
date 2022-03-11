@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/01 18:32:10 sthen Exp $
-
 COMMENT =	FireEye Labs Obfuscated String Solver
 
 MODPY_EGG_VERSION =	1.6.1

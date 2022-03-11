@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/08 13:59:26 sthen Exp $
-
 # go-ps only supports amd64 on OpenBSD
 # ../vendor/github.com/keybase/go-ps/process.go:39: undefined: processes
 # ../vendor/github.com/keybase/go-ps/process.go:47: undefined: findProcess

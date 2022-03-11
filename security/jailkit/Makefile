@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:38 sthen Exp $
-
 COMMENT=		utilities for jailing a user or process
 
 DISTNAME=		jailkit-2.19

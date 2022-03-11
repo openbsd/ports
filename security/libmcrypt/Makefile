@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:49:04 sthen Exp $
-
 COMMENT =		interface to access block/stream encryption algorithms
 
 DISTNAME =		libmcrypt-2.5.8

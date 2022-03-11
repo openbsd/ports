@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/01/30 21:28:55 daniel Exp $
-
 PORTROACH=	limit:^2\.16
 
 COMMENT=	SSL library with an intuitive API and readable source code

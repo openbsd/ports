@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_pass_1,v 1.3 2018/06/19 09:39:18 bentley Exp $
 Index: man/pass.1
 --- man/pass.1.orig
 +++ man/pass.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-ppg_random_c,v 1.1.1.1 2000/08/28 23:36:45 matt Exp $
 --- ppg_random.c.orig	Tue Aug 29 04:19:01 1995
 +++ ppg_random.c	Sat Aug 12 20:14:39 2000
 @@ -109,7 +109,7 @@ pgp_rand_really_init()

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/16 17:26:16 abieber Exp $
-
 COMMENT =	a replacement for gpg which can encrypt/sign/verify
 
 DISTNAME =	opmsg-1.78s

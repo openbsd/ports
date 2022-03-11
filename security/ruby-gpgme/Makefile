@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/02/19 12:10:58 sebastia Exp $
-
 COMMENT =		Ruby language binding for gpgme
 
 DISTNAME =		gpgme-2.0.20

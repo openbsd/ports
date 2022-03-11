@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_pgp_helper_pgpMem_c,v 1.2 2012/08/19 22:30:37 ajacoutot Exp $
-
 From Julian Coleman <J.D.Coleman@newcastle.ac.uk> posted to
 netbsd-bugs@netbsd.org:
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_accelerated_aarch64_Makefile_in,v 1.2 2022/01/19 12:23:35 ajacoutot Exp $
-
 Avoid -march=all, unsupported by clang.
 Clang commit that fixes the crash but doesn't add support for -march=all:
 https://reviews.llvm.org/D114677

@@ -1,5 +1,3 @@
-$OpenBSD: patch-encfs_NullCipher_cpp,v 1.1 2021/12/08 11:48:06 jca Exp $
-
 Fix str::shared_ptr destructor signature, constrained with llvm13.
 
 Index: encfs/NullCipher.cpp

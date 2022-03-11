@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:04 sthen Exp $
-
 COMMENT=		front-end to ssh-agent and gpg-agent
 
 DISTNAME=		keychain-2.8.5

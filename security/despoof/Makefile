@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:01 sthen Exp $
-
 COMMENT=	command-line anti-spoofing detection utility
 
 DISTNAME=	despoof-0.9

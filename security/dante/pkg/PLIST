@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/12/12 14:11:36 dcoppa Exp $
 @conflict dsocks-*
 @conflict socks5-*
 @newgroup _sockd:728

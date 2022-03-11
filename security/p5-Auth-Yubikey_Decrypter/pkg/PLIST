@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/10 12:08:52 landry Exp $
 ${P5SITE}/Auth/
 ${P5SITE}/Auth/Yubikey_Decrypter.pm
 @man man/man3p/Auth::Yubikey_Decrypter.3p

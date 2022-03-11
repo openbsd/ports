@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/08 13:59:26 sthen Exp $
-
 COMMENT =	a tool used to brute-force stuff
 
 MODGO_MODNAME =	github.com/OJ/gobuster/v3

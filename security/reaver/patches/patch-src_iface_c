@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_iface_c,v 1.1.1.1 2019/04/16 20:45:43 sebastia Exp $
-
 Index: src/iface.c
 --- src/iface.c.orig
 +++ src/iface.c

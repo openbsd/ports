@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/05 19:46:18 jca Exp $
-
 COMMENT=	multi-platform GUI for password-store
 
 GH_ACCOUNT=	IJHack

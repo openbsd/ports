@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_conf_xml_in,v 1.3 2019/01/25 08:32:02 pvk Exp $
-
 Index: conf/conf.xml.in
 --- conf/conf.xml.in.orig
 +++ conf/conf.xml.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/10/01 11:38:15 sthen Exp $
-
 COMMENT=		Advanced Intrusion Detection Environment
 
 V=			0.16.2

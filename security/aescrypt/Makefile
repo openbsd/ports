@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/03 21:23:20 naddy Exp $
-
 COMMENT=		encrypt/decrypt using Rijndael encryption algorithm
 
 V=			0.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/25 12:33:19 sthen Exp $
 ${MODPECL_DEFAULTV}@pkgpath security/pecl-mcrypt,php72
 ${MODPECL_DEFAULTV}@pkgpath security/pecl-mcrypt,php73
 @so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so

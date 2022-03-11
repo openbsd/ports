@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:20 sthen Exp $
-
 COMMENT =	web fuzzer
 
 MODPY_EGG_VERSION =	3.1.0

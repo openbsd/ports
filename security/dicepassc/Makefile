@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:01 sthen Exp $
-
 COMMENT =		passphrase generator based on Diceware and EFF wordlists
 
 DISTNAME =		dicepassc-1.0

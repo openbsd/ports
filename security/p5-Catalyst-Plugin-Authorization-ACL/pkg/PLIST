@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/08 22:02:35 sthen Exp $
 ${P5SITE}/Catalyst/Plugin/Authorization/ACL/
 ${P5SITE}/Catalyst/Plugin/Authorization/ACL.pm
 ${P5SITE}/Catalyst/Plugin/Authorization/ACL/Engine.pm

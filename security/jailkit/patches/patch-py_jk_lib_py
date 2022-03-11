@@ -1,5 +1,3 @@
-$OpenBSD: patch-py_jk_lib_py,v 1.3 2013/04/24 12:47:39 gonzalo Exp $
-
 Fix running jk_init trying to create a jail the first time
 
 --- py/jk_lib.py.orig	Thu Aug  2 14:55:28 2012

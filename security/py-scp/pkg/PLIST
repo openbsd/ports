@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/09/02 13:06:03 sthen Exp $
 @pkgpath security/py-scp
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}scp.${MODPY_PYC_MAGIC_TAG}pyc

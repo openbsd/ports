@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: snort2pf.rc,v 1.5 2018/01/11 19:27:09 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/snort2pf"
 

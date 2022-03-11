@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/17 14:39:42 danj Exp $
-
 COMMENT=	logs smurf attacks
 DISTNAME=	smurflog-2.1
 REVISION =	1

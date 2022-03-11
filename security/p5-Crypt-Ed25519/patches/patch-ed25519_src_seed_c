@@ -1,5 +1,3 @@
-$OpenBSD: patch-ed25519_src_seed_c,v 1.1 2021/09/09 11:53:11 bluhm Exp $
-
 Use arc4random(3) instead of /dev/urandom.
 
 Index: ed25519/src/seed.c

@@ -1,4 +1,3 @@
-$OpenBSD: patch-tools_stunnel_conf-sample_in,v 1.16 2017/09/12 16:15:24 gsoares Exp $
 Index: tools/stunnel.conf-sample.in
 --- tools/stunnel.conf-sample.in.orig
 +++ tools/stunnel.conf-sample.in

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_build-data_os_openbsd_txt,v 1.7 2019/01/16 12:53:23 bluhm Exp $
-
 Index: src/build-data/os/openbsd.txt
 --- src/build-data/os/openbsd.txt.orig
 +++ src/build-data/os/openbsd.txt

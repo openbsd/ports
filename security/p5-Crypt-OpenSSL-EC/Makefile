@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/04 13:41:47 benoit Exp $
-
 COMMENT =	EC using OpenSSL
 
 MODULES =	cpan

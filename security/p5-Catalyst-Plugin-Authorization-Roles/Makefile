@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT=	role based authorization for Catalyst
 
 DISTNAME=	Catalyst-Plugin-Authorization-Roles-0.09

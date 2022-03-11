@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2018/01/18 04:09:40 danj Exp $
-
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac

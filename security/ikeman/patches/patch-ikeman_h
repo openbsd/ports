@@ -1,5 +1,3 @@
-$OpenBSD: patch-ikeman_h,v 1.2 2022/01/14 10:56:10 tb Exp $
-
 Index: ikeman.h
 --- ikeman.h.orig
 +++ ikeman.h

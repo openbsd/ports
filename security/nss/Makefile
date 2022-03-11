@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.150 2022/03/05 08:43:17 landry Exp $
-
 COMMENT=		libraries to support development of security-enabled apps
 
 VERSION=		3.76

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/02/18 22:45:39 kmos Exp $
-
 COMMENT =	powerful webserver security scanner for network
 
 DISTNAME =	arirang-2.03

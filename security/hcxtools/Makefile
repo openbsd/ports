@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/02 18:27:25 sebastia Exp $
-
 COMMENT =	convert pcap dumps to hashcat or John the Ripper input
 
 GH_ACCOUNT =	ZerBea

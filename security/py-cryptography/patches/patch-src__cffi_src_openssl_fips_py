@@ -1,5 +1,3 @@
-$OpenBSD: patch-src__cffi_src_openssl_fips_py,v 1.2 2022/02/09 12:31:04 sthen Exp $
-
 Index: src/_cffi_src/openssl/fips.py
 --- src/_cffi_src/openssl/fips.py.orig
 +++ src/_cffi_src/openssl/fips.py

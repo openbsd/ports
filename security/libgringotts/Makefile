@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:04 sthen Exp $
-
 COMMENT=	encryption backend
 
 DISTNAME=	libgringotts-1.2.1

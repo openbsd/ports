@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.gssapi,v 1.3 2022/02/24 08:33:56 ajacoutot Exp $
 lib/sasl2/libgs2.la
 @lib lib/sasl2/libgs2.so.${LIBgs2_VERSION}
 lib/sasl2/libgssapiv2.la

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:20 sthen Exp $
-
 COMMENT = Python extension that gives access to YARA
 
 GH_PROJECT = 	yara-python

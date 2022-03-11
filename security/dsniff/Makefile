@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/12/04 11:27:19 tb Exp $
-
 COMMENT=	sniffing tools for penetration testing
 
 DISTNAME=	dsniff-2.3

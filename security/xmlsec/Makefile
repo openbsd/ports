@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/10/31 17:27:57 tb Exp $
-
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 

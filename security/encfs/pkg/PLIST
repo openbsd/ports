@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/11 14:58:56 bket Exp $
 @bin bin/encfs
 @bin bin/encfsctl
 bin/encfssh

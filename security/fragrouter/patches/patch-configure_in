@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.1 2001/03/16 10:24:06 wilfried Exp $
 --- configure.in.orig	Mon Jul 26 17:08:51 1999
 +++ configure.in	Thu Mar 15 22:34:37 2001
 @@ -10,16 +10,6 @@ AC_CONFIG_HEADER(config.h)

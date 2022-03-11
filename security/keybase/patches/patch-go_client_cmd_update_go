@@ -1,5 +1,3 @@
-$OpenBSD: patch-go_client_cmd_update_go,v 1.4 2018/02/12 13:53:49 bket Exp $
-
 Disabling this because we don't want the binary to update itself
 out from under us.
 

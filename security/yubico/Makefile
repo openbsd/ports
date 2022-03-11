@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/11/21 23:38:36 sthen Exp $
-
   SUBDIR =
   SUBDIR += yubico-c
   SUBDIR += yubico-c-client

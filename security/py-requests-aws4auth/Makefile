@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/23 12:05:41 sthen Exp $
-
 COMMENT =		AWS v4 authentication for py-requests
 
 MODPY_EGG_VERSION =	1.1.1

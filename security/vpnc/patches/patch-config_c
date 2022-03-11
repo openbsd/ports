@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_c,v 1.4 2014/04/01 11:40:27 sthen Exp $
-
 /etc is substituted with ${SYSCONFDIR} in do-configure.
 
 --- config.c.orig	Tue Apr  1 09:29:18 2014

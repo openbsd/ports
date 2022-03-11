@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/04/28 19:44:22 sthen Exp $
-
 COMMENT=	interface to HMAC Message-Digest Algorithms
 
 MODULES=	cpan

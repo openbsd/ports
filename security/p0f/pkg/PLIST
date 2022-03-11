@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/07/29 19:40:44 aanriot Exp $
 @man man/man1/p0f.1
 sbin/p0f
 sbin/p0frep

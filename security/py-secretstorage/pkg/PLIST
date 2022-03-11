@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/09/02 08:20:09 ajacoutot Exp $
 @conflict py-secretstorage-*
 @pkgpath security/py-secretstorage
 lib/python${MODPY_VERSION}/site-packages/SecretStorage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

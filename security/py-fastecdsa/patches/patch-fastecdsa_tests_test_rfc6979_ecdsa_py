@@ -1,5 +1,3 @@
-$OpenBSD: patch-fastecdsa_tests_test_rfc6979_ecdsa_py,v 1.1.1.1 2021/04/24 04:33:53 tb Exp $
-
 Use extra distfile instead of reaching out to the internet.
 
 Index: fastecdsa/tests/test_rfc6979_ecdsa.py

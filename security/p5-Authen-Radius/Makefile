@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/12/28 16:42:03 bluhm Exp $
-
 COMMENT=	Perl module to authenticate against a RADIUS server
 
 DISTNAME=	Authen-Radius-0.32

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/12 20:47:28 sebastia Exp $
-
 COMMENT =		web reconnaissance framework
 
 GH_ACCOUNT =		lanmaster53

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/10/31 10:50:16 robert Exp $
-
 COMMENT =	minimalistic password manager written in shell
 
 GH_ACCOUNT =    rnagy

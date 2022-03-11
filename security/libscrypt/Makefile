@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:05 sthen Exp $
-
 COMMENT =	shared library that implements scrypt() functionality
 
 V =		1.21

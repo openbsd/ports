@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:20 sthen Exp $
-
 COMMENT =	information gathering suite
 
 VERSION =	3.0.6

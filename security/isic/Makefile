@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/03/01 19:54:52 sthen Exp $
-
 COMMENT=	IP stack integrity checker
 
 DISTNAME=	isic-0.07

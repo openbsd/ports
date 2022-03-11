@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:15 sthen Exp $
-
 COMMENT =	Gadgets finder and auto-roper
 
 MODPY_EGG_VERSION =	6.6

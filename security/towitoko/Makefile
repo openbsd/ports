@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT=		library and utilities for towitoko card readers
 
 DISTNAME=		towitoko-2.0.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/08/13 04:46:21 jmatthew Exp $
 @bin bin/pivy-agent
 @bin bin/pivy-box
 @bin bin/pivy-tool

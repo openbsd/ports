@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/15 21:46:51 kmos Exp $
-
 COMMENT =	high performance C++ OpenPGP library and tools
 
 GH_ACCOUNT =	rnpgp

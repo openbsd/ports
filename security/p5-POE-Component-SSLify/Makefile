@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT=		make use of SSL with POE
 
 MODULES=		cpan

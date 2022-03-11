@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:15:36 sthen Exp $
-
 COMMENT=	logfile auditing tool
 
 DISTNAME=	logcheck-1.1.1

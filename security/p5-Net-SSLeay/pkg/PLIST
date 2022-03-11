@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/09/14 13:10:10 bluhm Exp $
 @pkgpath security/p5-Net_SSLeay
 ${P5ARCH}/
 ${P5ARCH}/Net/

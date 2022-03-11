@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Crypt_OpenPGP_Util_pm,v 1.1 2020/08/13 03:09:52 afresh1 Exp $
-
 We can provide better random bytes than these other modules,
 and fortunately someone gave us a way to get to arc4random_buf from perl.
 

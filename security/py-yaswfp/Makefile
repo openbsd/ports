@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/22 04:22:22 bket Exp $
-
 COMMENT =	Yet Another SWF Parser
 
 MODPY_EGG_VERSION =	0.9.3

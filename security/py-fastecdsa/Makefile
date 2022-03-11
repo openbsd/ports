@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/27 23:25:38 tb Exp $
-
 COMMENT =		fast elliptic curve digital signatures
 
 MODPY_EGG_VERSION =	2.2.3

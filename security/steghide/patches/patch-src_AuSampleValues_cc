@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_AuSampleValues_cc,v 1.1 2010/05/24 08:31:17 espie Exp $
 --- src/AuSampleValues.cc.orig	Mon May 24 03:49:57 2010
 +++ src/AuSampleValues.cc	Mon May 24 03:50:14 2010
 @@ -21,17 +21,25 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/12/21 17:46:49 bluhm Exp $
-
 COMMENT =	module signature file manipulation
 
 DISTNAME =	Module-Signature-0.88

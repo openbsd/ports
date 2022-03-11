@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/14 19:10:38 jasper Exp $
 @bin bin/dirb
 @bin bin/dirb-gendict
 @bin bin/html2dic

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:02:19 sthen Exp $
-
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		Python RSA implementation

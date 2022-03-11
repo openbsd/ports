@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/07/16 23:57:26 ajacoutot Exp $
 ${P5ARCH}/Crypt/OpenSSL/PKCS10.pm
 ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/
 ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/PKCS10.so

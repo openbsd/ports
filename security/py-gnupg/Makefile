@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/11/26 08:17:35 sthen Exp $
-
 COMMENT=		Python module for GnuPG interface
 
 MODPY_EGG_VERSION=	0.4.8

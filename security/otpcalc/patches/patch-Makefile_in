@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2010/03/20 16:53:53 jasper Exp $
-
 - Port to GTK+2. From Gentoo.
 - set CFLAGS and LIBS correctly.
 

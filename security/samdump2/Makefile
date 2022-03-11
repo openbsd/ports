@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT =		retrieves syskey and extract hashes
 
 DISTNAME =		samdump2-3.0.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_openssl_openssl_compat_h,v 1.3 2021/10/31 17:27:57 tb Exp $
-
 Index: src/openssl/openssl_compat.h
 --- src/openssl/openssl_compat.h.orig
 +++ src/openssl/openssl_compat.h

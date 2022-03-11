@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/04/05 13:26:31 sthen Exp $
-
 COMMENT=	complexity checker for passwd(1) and password generator
 
 DISTNAME=	passwdqc-2.0.2

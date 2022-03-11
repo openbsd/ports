@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT=	simple log monitoring program
 
 DISTNAME=	swatch-3.2.3

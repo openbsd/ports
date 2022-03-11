@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/08/27 08:57:30 sthen Exp $
-
 COMMENT =		C library implementing server and client side SSH
 V =			0.9.6
 DISTNAME =		libssh-${V}

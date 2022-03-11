@@ -1,5 +1,3 @@
-$OpenBSD: patch-ssl_h,v 1.2 2021/05/23 12:09:28 tb Exp $
-
 All missing API has been available since LibreSSL 2.7.0.
 https://github.com/droe/sslsplit/pull/291
 

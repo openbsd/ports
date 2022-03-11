@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:00 sthen Exp $
-
 COMMENT=		automated password generator
 
 DISTNAME=		apg-2.2.3

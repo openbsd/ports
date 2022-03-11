@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:43 sthen Exp $
-
 COMMENT=	hashes with encrypting fields
 
 MODULES=	cpan

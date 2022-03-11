@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT= 	catalyst authentication via .htpasswd
 
 DISTNAME=	Catalyst-Plugin-Authentication-Store-Htpasswd-0.02

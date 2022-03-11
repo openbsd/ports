@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/12/31 09:35:40 rpointel Exp $
 bin/theHarvester
 share/theharvester/
 share/theharvester/COPYING

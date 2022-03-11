@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 11:31:45 robert Exp $
 ${P5SITE}/Text/
 ${P5SITE}/Text/Password/
 ${P5SITE}/Text/Password/Pronounceable.pm

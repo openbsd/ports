@@ -1,3 +1,1 @@
-# $OpenBSD: softhsm.module,v 1.1.1.1 2015/06/23 11:26:05 jca Exp $
-
 module: ../softhsm/libsofthsm.so

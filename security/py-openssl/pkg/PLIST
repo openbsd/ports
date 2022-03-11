@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/03/29 12:13:53 sthen Exp $
 @pkgpath security/py-openssl
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py

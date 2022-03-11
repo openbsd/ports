@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/05/26 22:20:48 sthen Exp $
-
 COMMENT=	application protocol detection tool
 
 DISTNAME=	amap-5.4

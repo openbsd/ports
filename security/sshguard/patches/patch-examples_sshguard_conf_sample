@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_sshguard_conf_sample,v 1.1 2019/03/29 15:54:24 sthen Exp $
-
 Index: examples/sshguard.conf.sample
 --- examples/sshguard.conf.sample.orig
 +++ examples/sshguard.conf.sample

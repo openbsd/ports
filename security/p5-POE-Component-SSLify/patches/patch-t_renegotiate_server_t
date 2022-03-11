@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_renegotiate_server_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
 Fix SSLv3 tests that we can't use with LibreSSL
 Index: t/renegotiate_server.t
 --- t/renegotiate_server.t.orig

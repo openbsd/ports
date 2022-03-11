@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/26 18:20:36 naddy Exp $
-
 COMMENT =	interface to the Skein digest algorithm
 
 DISTNAME =	Digest-Skein-0.05

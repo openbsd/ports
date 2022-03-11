@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.aesni,v 1.2 2021/02/27 12:30:08 jasper Exp $
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aesni${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_clmul${MODPY_ABI3SO}.so

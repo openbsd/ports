@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT=	resource manager for PC/SC
 
 V=		1.8.26

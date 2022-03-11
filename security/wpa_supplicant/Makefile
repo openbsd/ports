@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/07/08 11:49:14 sthen Exp $
-
 COMMENT=	IEEE 802.1X supplicant
 
 DISTNAME=	wpa_supplicant-2.9

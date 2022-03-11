@@ -1,5 +1,3 @@
-$OpenBSD: patch-defaults_h,v 1.3 2019/01/29 23:05:21 sthen Exp $
-
 Index: defaults.h
 --- defaults.h.orig
 +++ defaults.h

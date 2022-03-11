@@ -1,5 +1,3 @@
-$OpenBSD: patch-log_c,v 1.1 2017/06/20 14:59:39 sthen Exp $
-
 Index: log.c
 --- log.c.orig
 +++ log.c

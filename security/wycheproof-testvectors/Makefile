@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/12/27 18:37:55 tb Exp $
-
 COMMENT =	test vectors from Project Wycheproof
 
 # No releases

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/30 19:27:31 sthen Exp $
 @conflict p5-Mozilla-CA-*
 @pkgpath security/p5-Mozilla-CA
 ${P5SITE}/Mozilla/

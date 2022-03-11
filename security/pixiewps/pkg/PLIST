@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/16 20:38:52 sebastia Exp $
 @bin bin/pixiewps
 @man man/man1/pixiewps.1

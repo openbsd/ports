@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.60 2021/11/02 00:02:18 sthen Exp $
-
 COMMENT =	Python module that implements the SSH2 protocol
 
 MODPY_EGG_VERSION =	2.8.0

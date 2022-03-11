@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/09/05 08:33:27 sebastia Exp $
 bin/rsf.py
 lib/python${MODPY_VERSION}/site-packages/routersploit/
 lib/python${MODPY_VERSION}/site-packages/routersploit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

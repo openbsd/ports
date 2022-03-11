@@ -1,5 +1,3 @@
-$OpenBSD: patch-appdefs_resp,v 1.3 2012/04/09 18:21:18 gsoares Exp $
-
 # packaged appdefs.resp db is out of date, patch it using a newer
 # one provided at http://freeworld.thc.org/thc-amap/appdefs.resp
 

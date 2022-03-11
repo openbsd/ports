@@ -1,4 +1,3 @@
-# $OpenBSD: crates.mk,v 1.2 2022/01/18 09:06:52 gonzalo Exp $
 MODCARGO_CRATES +=	addr2line	0.17.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	adler32	1.2.0	# Zlib

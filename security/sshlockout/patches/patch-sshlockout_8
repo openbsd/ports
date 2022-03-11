@@ -1,5 +1,3 @@
-$OpenBSD: patch-sshlockout_8,v 1.1 2019/02/07 18:31:00 solene Exp $
-
 Remove ipfw references
 
 Index: sshlockout.8

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/16 23:02:07 sthen Exp $
 @pkgpath security/py-service_identity
 lib/python${MODPY_VERSION}/site-packages/service_identity/
 lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/17 14:13:10 tb Exp $
-
 COMMENT=	provide cryptographic tunnel
 
 DISTNAME=	ctunnel-0.4

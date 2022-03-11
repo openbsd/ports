@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =		Python curve25519 library with ed25519 signatures
 
 MODPY_EGG_VERSION =	0.4.1

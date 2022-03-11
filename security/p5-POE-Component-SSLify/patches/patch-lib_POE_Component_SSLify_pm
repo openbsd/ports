@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_POE_Component_SSLify_pm,v 1.2 2018/12/04 11:02:31 bluhm Exp $
 From Nigel Gregoire (nfg@github): adds more recent TLS versions
 https://github.com/apocalypse/perl-poe-sslify/pull/2/commits/e15bcb93f39e690ad385d89d2f8d2ffd40d852c3
 Index: lib/POE/Component/SSLify.pm

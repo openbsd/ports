@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT=	sniffer for LanManager environment (ms/samba workstations)
 DISTNAME=	smbsniff-0.0.1b
 REVISION=	1

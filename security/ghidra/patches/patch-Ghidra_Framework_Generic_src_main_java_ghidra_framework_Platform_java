@@ -1,5 +1,3 @@
-$OpenBSD: patch-Ghidra_Framework_Generic_src_main_java_ghidra_framework_Platform_java,v 1.1 2019/07/23 02:09:20 lteo Exp $
-
 From https://github.com/NationalSecurityAgency/ghidra/pull/490
 
 Index: Ghidra/Framework/Generic/src/main/java/ghidra/framework/Platform.java

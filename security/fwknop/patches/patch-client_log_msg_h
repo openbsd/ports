@@ -1,5 +1,3 @@
-$OpenBSD: patch-client_log_msg_h,v 1.1 2021/02/09 16:43:59 feinerer Exp $
-
 Fix compilation with -fno-common flag.
 https://github.com/mrash/fwknop/pull/319
 

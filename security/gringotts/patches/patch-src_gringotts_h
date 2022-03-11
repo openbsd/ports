@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gringotts_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
-
 Index: src/gringotts.h
 --- src/gringotts.h.orig
 +++ src/gringotts.h

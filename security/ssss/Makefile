@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/18 11:26:34 kn Exp $
-
 COMMENT=	split secrets using Shamir's Secret Sharing Scheme
 
 DISTNAME=	ssss-0.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2022/01/28 08:30:51 ajacoutot Exp $
-
 COMMENT=		error codes for GnuPG related software
 
 DISTNAME=		libgpg-error-1.44

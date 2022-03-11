@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT=	importer for pass (passwordstore)
 
 V=		3.2

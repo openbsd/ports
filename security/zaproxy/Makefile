@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/11 10:09:54 sthen Exp $
-
 COMMENT =		web application security tool
 
 VERSION =		2.11.1

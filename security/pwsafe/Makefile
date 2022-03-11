@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:33 sthen Exp $
-
 COMMENT=		program that manages encrypted password databases
 DISTNAME=		pwsafe-0.2.0
 REVISION =		7

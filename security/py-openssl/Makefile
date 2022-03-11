@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/02/10 09:25:25 sthen Exp $
-
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_EGG_VERSION=	22.0.0

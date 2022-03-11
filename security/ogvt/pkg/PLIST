@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/09 18:01:05 abieber Exp $
 @bin bin/ogvt
 @man man/man1/ogvt.1

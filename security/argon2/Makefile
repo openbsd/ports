@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/17 04:41:43 rsadowski Exp $
-
 COMMENT =	C implementation of Argon2 - password hashing function
 
 GH_ACCOUNT =	P-H-C

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT =		create and verify cryptographic signatures
 
 VERSION =		2.1.1

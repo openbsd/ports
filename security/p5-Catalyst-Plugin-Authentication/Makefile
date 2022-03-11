@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/10/09 03:59:57 afresh1 Exp $
-
 COMMENT=	Catalyst authentication framework
 
 DISTNAME=	Catalyst-Plugin-Authentication-0.10023

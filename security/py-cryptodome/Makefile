@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =	self-contained cryptographic library for Python
 
 MODPY_EGG_VERSION =	3.10.1

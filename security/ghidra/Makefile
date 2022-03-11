@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/19 03:36:25 lteo Exp $
-
 # bundled jython has amd64 components for OpenBSD
 ONLY_FOR_ARCHS =	amd64
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/07 10:05:59 sthen Exp $
 @newgroup _cvechecker:712
 @extraunexec rm /var/db/cvechecker/*.db 2>/dev/null || true
 @extraunexec rm /var/db/cvechecker/cache/* 2>/dev/null || true

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/12/04 12:06:14 tb Exp $
-
 COMMENT=	transparent and scalable SSL/TLS interception
 
 DISTNAME=	sslsplit-0.5.5

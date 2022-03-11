@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_ttyio_h,v 1.1 2021/09/21 19:14:37 tb Exp $
-
 Index: common/ttyio.h
 --- common/ttyio.h.orig
 +++ common/ttyio.h

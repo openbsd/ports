@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/12 22:55:19 tb Exp $
-
 COMMENT =		BSD-licensed PGP implementation
 
 DISTNAME =		netpgp-20140220

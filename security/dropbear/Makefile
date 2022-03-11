@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/12 21:22:50 sthen Exp $
-
 COMMENT=	small SSH server and client
 
 DISTNAME=	dropbear-2020.81

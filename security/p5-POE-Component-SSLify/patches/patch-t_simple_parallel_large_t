@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_simple_parallel_large_t,v 1.1 2018/12/04 11:02:31 bluhm Exp $
 Finally skip the test, it fails with 'Please do SSLify_Options() first' at line
  54 despite the same initialization code is used here and in other tests, tried
 to pass it a context object with no avail because then it hangs.

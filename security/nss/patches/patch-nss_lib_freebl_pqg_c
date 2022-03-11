@@ -1,5 +1,3 @@
-$OpenBSD: patch-nss_lib_freebl_pqg_c,v 1.1 2017/07/27 06:33:25 landry Exp $
-
 https://bugzilla.mozilla.org/show_bug.cgi?id=1384827
 
 Index: nss/lib/freebl/pqg.c

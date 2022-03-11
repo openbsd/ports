@@ -1,5 +1,3 @@
-$OpenBSD: patch-Ghidra_Framework_SoftwareModeling_Module_manifest,v 1.1 2019/07/23 02:09:20 lteo Exp $
-
 This patch prevents this error:
 
 * Where:

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT =	cryptographic CipherSaber encryption
 
 DISTNAME =	Crypt-CipherSaber-1.01

@@ -1,4 +1,3 @@
-$OpenBSD: patch-ECDSA_xs,v 1.2 2021/05/31 14:09:21 bluhm Exp $
 Index: ECDSA.xs
 --- ECDSA.xs.orig
 +++ ECDSA.xs

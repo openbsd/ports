@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/14 17:36:25 robert Exp $
 ${P5SITE}/Crypt/
 ${P5SITE}/Crypt/X509.pm
 @man man/man3p/Crypt::X509.3p

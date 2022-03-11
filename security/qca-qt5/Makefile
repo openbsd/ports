@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/09/18 07:52:34 rsadowski Exp $
-#
 COMMENT =	Qt Cryptographic Architecture
 
 V =		2.3.4

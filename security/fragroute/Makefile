@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:02 sthen Exp $
-
 COMMENT=		intercept, modify, and rewrite egress traffic
 
 DISTNAME=		fragroute-1.2

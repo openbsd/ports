@@ -1,5 +1,3 @@
-$OpenBSD: patch-src__cffi_src_openssl_dh_py,v 1.2 2022/02/09 12:31:04 sthen Exp $
-
 LibreSSL 3.5 provides this define.
 
 Index: src/_cffi_src/openssl/dh.py

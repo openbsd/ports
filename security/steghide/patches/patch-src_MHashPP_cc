@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_MHashPP_cc,v 1.1 2008/09/12 14:28:06 naddy Exp $
 --- src/MHashPP.cc.orig	Fri Sep 12 16:24:21 2008
 +++ src/MHashPP.cc	Fri Sep 12 16:24:38 2008
 @@ -120,7 +120,7 @@ std::string MHashPP::getAlgorithmName ()

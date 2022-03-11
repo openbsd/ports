@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_session_ticket_t,v 1.1 2021/09/01 15:04:37 bluhm Exp $
-
 LibreSSL does not support session resume with TLS 1.3.
 
 Index: t/session_ticket.t

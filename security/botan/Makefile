@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/14 18:43:44 tb Exp $
-
 COMMENT =	portable, easy to use, and efficient C++ crypto library
 
 PORTROACH =	limit:^1\.10\.

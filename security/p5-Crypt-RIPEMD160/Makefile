@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/04 13:05:44 benoit Exp $
-
 COMMENT=	Perl extension for the RIPEMD-160 Hash function
 
 MODULES=	cpan

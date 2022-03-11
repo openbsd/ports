@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:36 sthen Exp $
-
 COMMENT=	robust library for verifying and serving OpenID identities
 
 DISTNAME=	ruby-${PKGNAME}

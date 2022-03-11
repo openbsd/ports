@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/03/07 13:29:39 sthen Exp $
-
 COMMENT-main =		GnuPG Made Easy
 COMMENT-qt =		Qt bindings for GPGme
 

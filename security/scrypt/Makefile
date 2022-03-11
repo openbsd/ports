@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/31 20:37:37 sthen Exp $
-
 COMMENT =	command-line encryption using scrypt key derivation function
 
 DISTNAME =	scrypt-1.3.1

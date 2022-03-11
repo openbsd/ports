@@ -1,5 +1,3 @@
-$OpenBSD: patch-recon_core_base_py,v 1.2 2020/11/06 18:19:16 jasper Exp $
-
 Index: recon/core/base.py
 --- recon/core/base.py.orig
 +++ recon/core/base.py

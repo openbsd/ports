@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sshguard_in,v 1.2 2020/08/18 05:06:29 rsadowski Exp $
-
 Index: src/sshguard.in
 --- src/sshguard.in.orig
 +++ src/sshguard.in

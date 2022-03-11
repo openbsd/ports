@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/07/17 03:33:14 gsoares Exp $
-
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 
 GH_ACCOUNT=	brunoos

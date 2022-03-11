@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_core_misc_c,v 1.1 2020/01/16 07:40:29 benoit Exp $
 --- src/core/misc.c.orig	Thu Mar 30 12:32:00 2017
 +++ src/core/misc.c	Fri Apr 28 12:51:21 2017
 @@ -33,7 +33,7 @@

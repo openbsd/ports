@@ -1,5 +1,3 @@
-$OpenBSD: patch-srtp_srtp_c,v 1.3 2021/09/10 08:22:34 sthen Exp $
-
 add srtp_add_or_update_stream used by telephony/linphone/mediastreamer2
 
 https://gitlab.linphone.org/BC/public/external/srtp/-/commit/c48e27278e656dc4b883044ec85245fb3d22dc51.patch

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/09/17 13:51:52 jasper Exp $
 ${P5SITE}/GnuPG/
 ${P5SITE}/GnuPG/Fingerprint.pm
 ${P5SITE}/GnuPG/Handles.pm

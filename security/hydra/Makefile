@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/07/14 09:49:09 sebastia Exp $
-
 COMMENT-main=	parallelized network logon cracker
 COMMENT-gui=	GTK frontend for hydra
 

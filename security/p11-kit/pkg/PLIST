@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/06/04 07:50:11 ajacoutot Exp $
 @bin bin/p11-kit
 @bin bin/trust
 include/p11-kit-1/

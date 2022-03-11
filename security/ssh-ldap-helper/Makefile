@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/13 09:49:55 tb Exp $
-
 COMMENT =	fetch ssh AuthorizedKeys from LDAP
 
 V =		8.0p1

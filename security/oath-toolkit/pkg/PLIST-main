@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2021/05/24 17:54:10 sthen Exp $
 @pkgpath security/oath-toolkit
 @bin bin/oathtool
 include/liboath/

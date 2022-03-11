@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT=	good-looking ssh-agent pass-phrase dialog
 
 DISTNAME =	ssh-askpass-fullscreen-0.4

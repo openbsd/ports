@@ -1,5 +1,3 @@
-$OpenBSD: patch-ecc-random_c,v 1.2 2020/05/14 12:20:18 ajacoutot Exp $
-
 Index: ecc-random.c
 --- ecc-random.c.orig
 +++ ecc-random.c

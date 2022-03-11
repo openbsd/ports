@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_hdb_hdb-mitdb_c,v 1.1 2019/06/15 10:24:37 ajacoutot Exp $
-
 From 3bcc031939d4f8cf600839d1e92b252c250d4d79 Mon Sep 17 00:00:00 2001
 From: Daria Phoebe Brashear <dariaphoebe@auristor.com>
 Date: Thu, 19 Oct 2017 14:06:12 -0500

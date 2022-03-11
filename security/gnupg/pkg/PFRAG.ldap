@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.3 2020/10/05 19:46:17 jca Exp $
 @bin libexec/dirmngr_ldap

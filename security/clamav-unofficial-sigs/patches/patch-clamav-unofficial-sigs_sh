@@ -1,4 +1,3 @@
-$OpenBSD: patch-clamav-unofficial-sigs_sh,v 1.6 2015/12/08 15:21:53 sthen Exp $
 --- clamav-unofficial-sigs.sh.orig	Wed Dec  2 10:56:35 2015
 +++ clamav-unofficial-sigs.sh	Tue Dec  8 15:20:49 2015
 @@ -1,4 +1,4 @@

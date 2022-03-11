@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/21 08:44:55 sthen Exp $
-
 SHARED_LIBS +=  srtp2                     3.0
 
 COMMENT=	secure RTP library

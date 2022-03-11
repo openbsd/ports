@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/05/25 18:50:32 benoit Exp $
 @bin bin/i-ls
 @info info/integrit.info
 @man man/man1/i-ls.1

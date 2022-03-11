@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/11/22 08:36:14 benoit Exp $
-
 COMMENT =	routines for accessing the OpenSSL prng
 
 MODULES =	cpan

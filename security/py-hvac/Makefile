@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/20 08:22:34 landry Exp $
-
 COMMENT =		Python client library for Hashicorp Vault
 
 MODPY_EGG_VERSION =	0.11.2

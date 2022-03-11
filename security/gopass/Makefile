@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/30 11:01:31 sthen Exp $
-
 COMMENT =	pass compatible password manager written in go
 
 MODGO_MODNAME =	github.com/gopasspw/gopass

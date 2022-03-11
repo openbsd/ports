@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/19 14:52:43 okan Exp $
 ${P5SITE}/Crypt/
 ${P5SITE}/Crypt/RC5.pm
 @man man/man3p/Crypt::RC5.3p

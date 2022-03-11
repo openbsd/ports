@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/03 21:45:40 sthen Exp $
-
 COMMENT=	interface to the Blowfish encryption algorithm
 
 MODULES=	cpan

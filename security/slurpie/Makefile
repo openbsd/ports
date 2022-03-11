@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:25 sthen Exp $
-
 COMMENT=	distributed passwd file cracker
 
 VERSION=	2.0b

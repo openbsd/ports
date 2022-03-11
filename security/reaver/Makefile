@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:35 sthen Exp $
-
 COMMENT =	online brute force WPS PINs
 
 VERSION =	1.6.5

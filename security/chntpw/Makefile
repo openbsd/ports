@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:00 sthen Exp $
-
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		reset NT/W2K/XP/Vista/W7 password

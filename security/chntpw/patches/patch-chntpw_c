@@ -1,4 +1,3 @@
-$OpenBSD: patch-chntpw_c,v 1.1 2014/04/15 14:07:13 naddy Exp $
 --- chntpw.c.orig	Sun Jun 27 21:50:13 2010
 +++ chntpw.c	Mon Apr 14 20:11:02 2014
 @@ -141,7 +141,7 @@ void str_to_key(unsigned char *str,unsigned char *key)

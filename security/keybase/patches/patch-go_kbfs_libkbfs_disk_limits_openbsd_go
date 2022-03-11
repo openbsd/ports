@@ -1,5 +1,3 @@
-$OpenBSD: patch-go_kbfs_libkbfs_disk_limits_openbsd_go,v 1.1 2019/08/24 18:40:58 abieber Exp $
-
 Index: go/kbfs/libkbfs/disk_limits_openbsd.go
 --- go/kbfs/libkbfs/disk_limits_openbsd.go.orig
 +++ go/kbfs/libkbfs/disk_limits_openbsd.go

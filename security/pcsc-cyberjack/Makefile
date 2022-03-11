@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
 DISTNAME =		pcsc-cyberjack_3.99.5final.SP13

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.9 2019/01/26 22:30:33 sthen Exp $
-
 Devel::CheckLib is never successful for libssl on OpenBSD.  You
 must specify -lssl and -lcrypto together, but Devel::CheckLib is
 checking them individually.  So the dependency on libssl was missing

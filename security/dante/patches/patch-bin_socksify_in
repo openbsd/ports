@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_socksify_in,v 1.2 2013/12/12 14:11:36 dcoppa Exp $
 --- bin/socksify.in.orig	Sun Oct 27 16:24:41 2013
 +++ bin/socksify.in	Thu Dec 12 13:40:08 2013
 @@ -72,7 +72,7 @@ fi

@@ -1,4 +1,3 @@
-$OpenBSD: patch-sbin_hatchet_mkdb,v 1.1.1.1 2008/06/27 15:16:01 jdixon Exp $
 --- sbin/hatchet_mkdb.orig	Thu Jun 26 17:21:43 2008
 +++ sbin/hatchet_mkdb	Thu Jun 26 17:22:32 2008
 @@ -10,7 +10,7 @@ use strict;

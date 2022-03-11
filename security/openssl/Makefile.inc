@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2020/03/31 14:50:08 tb Exp $
-
 COMMENT?=	TLS/SSL library and tools
 
 DISTNAME?=	openssl-$V

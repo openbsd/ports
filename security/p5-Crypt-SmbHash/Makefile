@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:41 sthen Exp $
-
 COMMENT=	Perl module implementing lanman and nt md4 hash functions
 
 MODULES=	cpan

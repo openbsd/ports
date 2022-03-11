@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:05 sthen Exp $
-
 COMMENT =	extendable encryption program that supports many ciphers
 
 DISTNAME =		mcrypt-2.6.8

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/21 19:50:34 kmos Exp $
-
 COMMENT =	python tools to analyze OLE files
 
 MODPY_EGG_VERSION = 0.53.1

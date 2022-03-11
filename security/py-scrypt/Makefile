@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/22 08:09:12 semarie Exp $
-
 COMMENT =	support for the scrypt key derivation function
 
 MODPY_EGG_VERSION =	0.8.18

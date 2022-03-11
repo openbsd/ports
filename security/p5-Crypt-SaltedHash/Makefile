@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:41 sthen Exp $
-
 COMMENT =	object oriented interface to create salted hashes
 
 MODULES =	cpan

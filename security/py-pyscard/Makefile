@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/29 22:01:53 sthen Exp $
-
 COMMENT =	smartcard package for Python
 
 MODPY_EGG_VERSION =	2.0.2

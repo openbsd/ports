@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/26 18:20:36 naddy Exp $
-
 COMMENT =		powerful disassembler library for x86/amd64
 
 MODPY_EGG_VERSION =	3.3.4

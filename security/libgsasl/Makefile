@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/02 10:42:18 sebastia Exp $
-
 COMMENT=	GNU implementation of the SASL framework
 
 REVISION=	0

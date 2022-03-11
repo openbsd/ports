@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/29 22:31:52 ajacoutot Exp $
-
 COMMENT =	cli browser for keepassx databases
 
 DISTNAME =	kpcli-3.6

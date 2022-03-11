@@ -1,5 +1,3 @@
-$OpenBSD: patch-pwqcheck_1,v 1.4 2021/02/20 00:05:11 sthen Exp $
-
 Index: pwqcheck.1
 --- pwqcheck.1.orig
 +++ pwqcheck.1

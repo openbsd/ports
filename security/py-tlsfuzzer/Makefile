@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2022/02/10 12:17:52 tb Exp $
-
 COMMENT =		fuzzer and test suite for TLS implementations.
 
 MODPY_EGG_VERSION =	20220209

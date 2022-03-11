@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/03 06:38:46 benoit Exp $
 @bin bin/pdfcrack
 @man man/man1/pdfcrack.1

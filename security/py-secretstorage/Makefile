@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:02:19 sthen Exp $
-
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
 MODPY_EGG_VERSION=	3.3.1

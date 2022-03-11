@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/17 14:39:42 danj Exp $
-
 COMMENT=	SSH remote version scanner
 
 DISTNAME=	scanssh-2.1

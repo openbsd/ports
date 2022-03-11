@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/26 21:06:12 naddy Exp $
-
 COMMENT =		forensic data recovery program
 
 DISTNAME =		foremost-1.5.7

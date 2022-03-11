@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
 @mode 4755
 @bin bin/jk_uchroot
 @mode

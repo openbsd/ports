@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_driver_Platform_unix_h,v 1.2 2019/05/04 09:10:11 feinerer Exp $
 Index: include/driver/Platform_unix.h
 --- include/driver/Platform_unix.h.orig
 +++ include/driver/Platform_unix.h

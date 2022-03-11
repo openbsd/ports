@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT=	perl interface to a variant of the MD5 algorithm
 
 MODULES=	cpan

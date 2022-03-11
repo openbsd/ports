@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:37 sthen Exp $
-
 COMMENT =		software able to hide data in various kind of files
 
 DISTNAME =		steghide-0.5.1

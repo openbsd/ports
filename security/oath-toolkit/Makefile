@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/05/24 17:54:10 sthen Exp $
-
 COMMENT-main=	toolkit for OATH/HOTP and TOTP
 COMMENT-pskc=	toolkit for RFC 6030 Portable Symmetric Key Container
 

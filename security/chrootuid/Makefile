@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:49:01 sthen Exp $
-
 COMMENT=		control chroot and su access rights by application
 
 VERSION=		1.3

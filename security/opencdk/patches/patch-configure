@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2007/12/03 20:48:39 landry Exp $
 --- configure.orig	Mon Jun 11 12:25:42 2007
 +++ configure	Sat Sep 22 11:32:33 2007
 @@ -8668,12 +8668,12 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:

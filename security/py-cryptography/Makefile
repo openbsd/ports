@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2022/02/09 12:31:04 sthen Exp $
-
 COMMENT=	cryptographic recipes and primitives for Python
 
 MODPY_EGG_VERSION=	36.0.1

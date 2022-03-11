@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: wpa_supplicant.rc,v 1.4 2021/07/08 11:49:14 sthen Exp $
 
 _wlan=$(ifconfig wlan 2>/dev/null | cut -d: -f1 | head -1)
 if [[ -n $_wlan ]]; then

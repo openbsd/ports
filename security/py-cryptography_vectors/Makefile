@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/09 12:31:04 sthen Exp $
-
 COMMENT=	test vectors for py-cryptography
 
 MODPY_EGG_VERSION=	36.0.1

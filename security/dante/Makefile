@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/17 14:39:42 danj Exp $
-
 COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.4.2

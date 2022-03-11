@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_ipguard_8,v 1.3 2012/03/30 07:24:45 ajacoutot Exp $
 --- doc/ipguard.8.orig	Mon Jul 12 00:46:52 2010
 +++ doc/ipguard.8	Thu Mar 22 11:35:20 2012
 @@ -64,10 +64,10 @@ in local ethernet segment.

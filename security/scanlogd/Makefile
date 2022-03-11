@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/29 21:59:29 sthen Exp $
-
 COMMENT=	TCP port scan detection tool
 
 DISTNAME=	scanlogd-2.2.8

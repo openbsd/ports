@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_cfg,v 1.1 2011/01/12 15:19:15 pea Exp $
 --- Makefile.cfg.orig	Wed Jan 12 09:21:13 2011
 +++ Makefile.cfg	Wed Jan 12 09:21:58 2011
 @@ -1,4 +1,4 @@

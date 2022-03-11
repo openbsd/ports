@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_oauth2_rfc6749_endpoints_test_error_responses_py,v 1.1 2020/02/29 19:34:27 kmos Exp $
-
 Index: tests/oauth2/rfc6749/endpoints/test_error_responses.py
 --- tests/oauth2/rfc6749/endpoints/test_error_responses.py.orig
 +++ tests/oauth2/rfc6749/endpoints/test_error_responses.py

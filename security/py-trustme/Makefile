@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:19 sthen Exp $
-
 COMMENT =	quality TLS certs while you wait, for the discerning
 
 MODPY_EGG_VERSION =	0.7.0

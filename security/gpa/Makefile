@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/31 12:47:11 sthen Exp $
-
 COMMENT=	graphical interface for GnuPG
 
 DISTNAME=	gpa-0.10.0

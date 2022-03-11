@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/25 19:58:58 jturner Exp $
-
 COMMENT =		utility for creating secure pipes between socket addresses
 
 DISTNAME =		spiped-1.6.2

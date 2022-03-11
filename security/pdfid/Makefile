@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =	tool to test a PDF file
 
 MODPY_EGG_VERSION =	0.2.7

@@ -1,5 +1,3 @@
-$OpenBSD: patch-pwnlib_elf_elf_py,v 1.5 2021/01/18 20:11:41 jasper Exp $
-
 - Add support for checking for retguard
 
 Index: pwnlib/elf/elf.py

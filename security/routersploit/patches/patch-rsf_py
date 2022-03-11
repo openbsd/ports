@@ -1,5 +1,3 @@
-$OpenBSD: patch-rsf_py,v 1.1 2019/09/05 08:33:27 sebastia Exp $
-
 change to the site-packages directory, otherwise the
 relative includes for the payloads don't work
 therefore save the routersploit.log in the home directory

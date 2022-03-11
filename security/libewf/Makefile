@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =		access the Expert Witness Compression Format
 
 VERSION =		20140808

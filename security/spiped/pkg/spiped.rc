@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: spiped.rc,v 1.4 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/spiped"
 daemon_flags="-D -d -s '[0.0.0.0]:8022' -t '[127.0.0.1]:22' -k ${SYSCONFDIR}/spiped/spiped.key -p /var/run/spiped/spiped.pid"

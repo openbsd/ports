@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:26 sthen Exp $
-
 COMMENT=	portable, encrypted, compressed tunnel
 
 DISTNAME =	zebedee-2.5.3

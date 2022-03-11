@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gui_ophcrackgui_cpp,v 1.2 2013/06/07 10:03:27 benoit Exp $
 --- src/gui/ophcrackgui.cpp.orig	Tue Jun  4 09:42:47 2013
 +++ src/gui/ophcrackgui.cpp	Fri Jun  7 11:01:28 2013
 @@ -29,6 +29,7 @@

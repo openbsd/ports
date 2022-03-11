@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/05 13:26:31 sthen Exp $
 @bin bin/pwqcheck
 @bin bin/pwqfilter
 @bin bin/pwqgen

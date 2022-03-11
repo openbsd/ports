@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/12/14 17:40:08 sthen Exp $
-
 # bump security/sslscan if updating
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
 V=		1.1.1m

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =		crypto and ssl toolkit for python
 
 MODPY_EGG_VERSION =	0.38.0

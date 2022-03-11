@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs_README_OpenBSD,v 1.2 2015/07/18 21:05:38 ajacoutot Exp $
 --- docs/README.OpenBSD.orig	Sun Nov 30 06:29:12 2008
 +++ docs/README.OpenBSD	Sat Jul 18 23:03:22 2015
 @@ -8,17 +8,17 @@ To finish installing Hatchet, the following steps must

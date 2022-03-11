@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:39 naddy Exp $
-
 COMMENT=	NFS auditing tool
 
 PKGNAME=	nfsshell-1.0

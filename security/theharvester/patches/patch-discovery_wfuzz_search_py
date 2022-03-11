@@ -1,5 +1,3 @@
-$OpenBSD: patch-discovery_wfuzz_search_py,v 1.2 2021/02/26 18:20:36 naddy Exp $
-
 Fix path to wordlists
 
 Index: discovery/wfuzz_search.py

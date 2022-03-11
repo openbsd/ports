@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2022/02/12 11:08:57 ajacoutot Exp $
-
 COMMENT=		library for loading and enumerating PKCS\#11 modules
 
 GH_PROJECT=		p11-kit

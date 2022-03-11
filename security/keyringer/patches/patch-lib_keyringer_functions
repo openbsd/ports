@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_keyringer_functions,v 1.6 2020/10/05 19:46:18 jca Exp $
-
 - no mount -l/tmpfs in OpenBSD
 - use date(1) -r instead of GNU date(1) --date=
 

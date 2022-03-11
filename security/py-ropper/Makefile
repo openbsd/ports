@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:19 sthen Exp $
-
 COMMENT =	rop gadget finder and binary information tool
 
 MODPY_EGG_VERSION =	1.12.5

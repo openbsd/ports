@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/02 20:07:55 jeremy Exp $
-
 COMMENT =	Ruby binding for the argon2 password hashing algorithm
 
 DISTNAME =	argon2-2.0.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/05 18:37:14 tb Exp $
-
 COMMENT =		sources of the Ruby OpenSSL gem for regression testing
 
 # Follows HEAD

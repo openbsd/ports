@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2005/05/24 00:15:06 mjc Exp $
 --- Makefile.in.orig	Fri Dec 15 12:03:26 2000
 +++ Makefile.in	Sun May 22 12:50:27 2005
 @@ -94,7 +94,7 @@ libmissing.a: $(LIBOBJS)

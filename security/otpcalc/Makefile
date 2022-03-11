@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:06 sthen Exp $
-
 COMMENT=	OTP and S/Key calculator for X
 
 DISTNAME=	otpCalc-0.97

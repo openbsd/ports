@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/11 22:41:03 pascal Exp $
 @bin bin/netpgp
 @bin bin/netpgpkeys
 include/netpgp.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/27 21:43:27 pvk Exp $
 bin/ssh-audit
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/
 lib/python${MODPY_VERSION}/site-packages/ssh_audit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

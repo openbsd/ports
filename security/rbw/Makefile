@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/16 12:43:45 abieber Exp $
-
 BROKEN-sparc64 = ring-0.6.19 does not build on sparc64
 
 COMMENT =	command line BitWarden client

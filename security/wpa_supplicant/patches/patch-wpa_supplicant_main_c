@@ -1,5 +1,3 @@
-$OpenBSD: patch-wpa_supplicant_main_c,v 1.3 2016/10/07 14:44:03 dcoppa Exp $
-
 Remove Linuxisms from usage()
 
 --- wpa_supplicant/main.c.orig	Mon Oct  3 11:10:23 2016

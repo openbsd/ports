@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2020/07/03 21:45:41 sthen Exp $
-
 COMMENT =		library to provide LWP https support via OpenSSL
 
 DISTNAME =		Crypt-SSLeay-0.72

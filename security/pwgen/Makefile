@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:33 sthen Exp $
-
 COMMENT=	simple password generator
 
 DISTNAME=	pwgen-2.08

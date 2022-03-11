@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:17 sthen Exp $
-
 COMMENT =		Python module to communicate with USB FIDO devices
 
 # using github for now, it has support for OpenBSD; should be ok to move back

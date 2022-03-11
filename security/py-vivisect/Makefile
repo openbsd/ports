@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:39 sthen Exp $
-
 COMMENT =	vivisect analysis and debugging framework
 
 MODPY_EGG_VERSION =	0.0.1a

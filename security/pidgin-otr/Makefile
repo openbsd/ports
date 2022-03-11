@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:49:09 sthen Exp $
-
 COMMENT =	allows deniable private conversations using Pidgin
 
 DISTNAME =	pidgin-otr-4.0.2

@@ -1,5 +1,3 @@
-# $OpenBSD: crates.inc,v 1.2 2022/02/09 12:31:04 sthen Exp $
-
 MODCARGO_CRATES +=	Inflector	0.11.4	# BSD-2-Clause
 MODCARGO_CRATES +=	aliasable	0.1.3	# MIT
 MODCARGO_CRATES +=	asn1	0.8.7	# BSD-3-Clause

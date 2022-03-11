@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.171 2022/01/19 12:23:35 ajacoutot Exp $
-
 COMMENT=		GNU Transport Layer Security library
 
 V=			3.7.3

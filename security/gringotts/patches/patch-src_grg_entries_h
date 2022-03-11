@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_grg_entries_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
-
 Index: src/grg_entries.h
 --- src/grg_entries.h.orig
 +++ src/grg_entries.h

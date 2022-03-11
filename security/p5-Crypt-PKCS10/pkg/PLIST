@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/06/15 06:55:01 benoit Exp $
 ${P5SITE}/Crypt/PKCS10.pm
 @man man/man3p/Crypt::PKCS10.3p

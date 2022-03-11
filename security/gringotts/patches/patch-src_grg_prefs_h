@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_grg_prefs_h,v 1.1 2021/02/27 21:27:17 naddy Exp $
-
 Index: src/grg_prefs.h
 --- src/grg_prefs.h.orig
 +++ src/grg_prefs.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:02:16 sthen Exp $
-
 COMMENT =	analyze OLE files
 
 MODPY_EGG_VERSION =	0.0.60

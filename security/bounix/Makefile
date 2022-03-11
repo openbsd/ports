@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:49:00 sthen Exp $
-
 COMMENT=	Back Orifice Unix client by the cDc
 
 PKGNAME=	bounix-1.21

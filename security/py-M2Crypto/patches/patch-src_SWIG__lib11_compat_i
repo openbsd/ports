@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_SWIG__lib11_compat_i,v 1.2 2021/10/07 22:32:54 tb Exp $
-
 Provide CRYPTO_zalloc to fix build with LibreSSL
 
 Index: src/SWIG/_lib11_compat.i

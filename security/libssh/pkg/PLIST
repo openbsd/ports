@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/09/14 09:56:07 jasper Exp $
 include/libssh/
 include/libssh/callbacks.h
 include/libssh/legacy.h

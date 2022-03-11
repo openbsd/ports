@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/23 09:39:23 gonzalo Exp $
 @bin bin/gobuster

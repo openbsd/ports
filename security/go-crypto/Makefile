@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 13:59:25 sthen Exp $
-
 COMMENT =	Go supplementary cryptography libraries
 DISTNAME =	go-crypto-20190904
 GH_ACCOUNT =	golang

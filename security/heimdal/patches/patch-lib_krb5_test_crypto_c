@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_krb5_test_crypto_c,v 1.1 2014/07/13 14:10:14 ajacoutot Exp $
-
 %ld / (long)tv_sec -> %lld / (long long)tv_sec
 
 --- lib/krb5/test_crypto.c.orig	Sun Dec  9 23:06:44 2012

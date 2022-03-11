@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:33 sthen Exp $
-
 COMMENT=	simple and easy to use TCP port scanner
 
 DISTNAME=	PortScanner-1.2

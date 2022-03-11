@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/12/21 11:01:07 gonzalo Exp $
 @conflict suricata-update-*
 @pkgpath security/suricata-update
 @newgroup _suricata:800
