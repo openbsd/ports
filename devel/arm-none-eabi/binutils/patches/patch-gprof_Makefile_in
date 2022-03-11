@@ -1,4 +1,3 @@
-$OpenBSD: patch-gprof_Makefile_in,v 1.3 2021/01/31 11:26:40 kettenis Exp $
 Index: gprof/Makefile.in
 --- gprof/Makefile.in.orig
 +++ gprof/Makefile.in

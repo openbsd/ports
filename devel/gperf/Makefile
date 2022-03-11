@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:44:10 sthen Exp $
-
 COMMENT =	perfect hash functions, to help write parsers
 
 DISTNAME =	gperf-3.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.356 2022/02/12 09:19:29 ajacoutot Exp $
-
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib

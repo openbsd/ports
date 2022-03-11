@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_IPython_Kernel_ipython_desktop,v 1.1 2016/12/13 14:50:45 shadchin Exp $
 --- examples/IPython Kernel/ipython.desktop.orig	Sat Aug 13 17:56:43 2016
 +++ examples/IPython Kernel/ipython.desktop	Fri Aug 19 19:59:00 2016
 @@ -3,7 +3,7 @@

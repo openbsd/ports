@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:57 sthen Exp $
-
 COMMENT=	run a subprocess in batch mode
 
 MODULES=	cpan

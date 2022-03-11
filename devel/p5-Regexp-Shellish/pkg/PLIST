@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 08:43:27 kevlo Exp $
 ${P5SITE}/Regexp/
 ${P5SITE}/Regexp/Shellish.pm
 @man man/man3p/Regexp::Shellish.3p

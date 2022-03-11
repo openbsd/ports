@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/06 14:43:16 tb Exp $
-
 COMMENT =	minimalist protocol buffer decoder and encoder in C++
 
 GH_ACCOUNT =	mapbox

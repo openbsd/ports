@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/01/29 11:17:29 cwen Exp $
-
 COMMENT=	client-side library to implement the iSCSI protocol
 
 GH_ACCOUNT=	sahlberg

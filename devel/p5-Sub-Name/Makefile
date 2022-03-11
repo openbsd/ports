@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/07/03 21:45:10 sthen Exp $
-
 COMMENT =		(re)name a sub
 
 DISTNAME =		Sub-Name-0.26

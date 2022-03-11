@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/05 21:15:31 benoit Exp $
-
 FIX_EXTRACT_PERMISSIONS = Yes
 
 COMMENT =	turn on strict and make most warnings fatal

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/02/27 10:57:02 ajacoutot Exp $
-
 COMMENT=		the Git library, take 2
 
 GH_ACCOUNT =		libgit2

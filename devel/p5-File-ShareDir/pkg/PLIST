@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/28 13:57:53 ajacoutot Exp $
 ${P5SITE}/File/ShareDir.pm
 ${P5SITE}/auto/
 ${P5SITE}/auto/share/

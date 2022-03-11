@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:23 sthen Exp $
-
 COMMENT =		Python interface to libVEX and VEX IR
 REVISION =		0
 

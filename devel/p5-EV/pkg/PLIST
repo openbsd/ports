@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/12/23 13:30:12 sthen Exp $
 ${P5ARCH}/EV/
 ${P5ARCH}/EV.pm
 ${P5ARCH}/EV/EVAPI.h

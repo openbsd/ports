@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: jenkins.rc,v 1.12 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
 daemon_flags="-Djava.io.tmpdir=/var/cache/jenkins -jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"

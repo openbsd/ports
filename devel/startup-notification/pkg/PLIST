@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/10 13:05:33 ajacoutot Exp $
 include/startup-notification-1.0/
 include/startup-notification-1.0/libsn/
 include/startup-notification-1.0/libsn/sn-common.h

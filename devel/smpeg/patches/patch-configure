@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2012/01/21 07:53:58 ajacoutot Exp $
 --- configure.orig	Sat Jan  7 17:32:32 2012
 +++ configure	Sat Jan  7 17:33:52 2012
 @@ -2001,9 +2001,10 @@ else

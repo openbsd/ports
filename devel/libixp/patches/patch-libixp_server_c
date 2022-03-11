@@ -1,4 +1,3 @@
-$OpenBSD: patch-libixp_server_c,v 1.1.1.1 2008/03/15 12:38:53 mcbride Exp $
 --- libixp/server.c.orig	Tue Feb 19 04:07:08 2008
 +++ libixp/server.c	Tue Feb 19 04:07:24 2008
 @@ -6,6 +6,7 @@

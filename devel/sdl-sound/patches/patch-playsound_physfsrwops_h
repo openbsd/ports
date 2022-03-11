@@ -1,5 +1,3 @@
-$OpenBSD: patch-playsound_physfsrwops_h,v 1.1 2018/07/15 06:23:59 espie Exp $
-
 Index: playsound/physfsrwops.h
 --- playsound/physfsrwops.h.orig
 +++ playsound/physfsrwops.h

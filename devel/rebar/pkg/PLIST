@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/25 13:18:41 jasper Exp $
 @option no-default-conflict
 @conflict rebar-<2.5.1p2
 bin/rebar${ERL_VERSION}

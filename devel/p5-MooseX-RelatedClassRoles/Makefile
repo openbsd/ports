@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 01:57:40 afresh1 Exp $
-
 COMMENT =	apply roles to a class related to yours
 
 DISTNAME =	MooseX-RelatedClassRoles-0.004

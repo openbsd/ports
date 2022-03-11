@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/10 13:26:43 jasper Exp $
 @bin bin/mtn
 bin/mtn-cleanup
 bin/mtnopt

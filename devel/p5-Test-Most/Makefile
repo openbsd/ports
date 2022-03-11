@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/12/06 19:49:23 afresh1 Exp $
-
 COMMENT =	most commonly needed test functions and features
 DISTNAME =	Test-Most-0.37
 CATEGORIES =	devel

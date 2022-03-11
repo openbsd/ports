@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/17 21:55:08 jcs Exp $
-
 COMMENT=	Arduino library for Adafruit RA8875
 
 V=		1.3.5

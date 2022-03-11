@@ -1,4 +1,3 @@
-$OpenBSD: patch-SDL2_mixer_pc_in,v 1.3 2013/11/30 03:14:47 brad Exp $
 --- SDL2_mixer.pc.in.orig	Sat Aug 10 13:39:54 2013
 +++ SDL2_mixer.pc.in	Fri Nov 15 19:01:58 2013
 @@ -8,5 +8,6 @@ Description: mixer library for Simple DirectMedia Laye

@@ -1,5 +1,3 @@
 #!/bin/sh
-#
-# $OpenBSD: mvn,v 1.3 2014/11/11 08:40:38 jasper Exp $
 
 exec ${LOCALBASE}/maven/bin/mvn "$@"

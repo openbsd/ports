@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:47 rsadowski Exp $
-
 COMMENT =	text emoticons to graphical emoticons KDE converter
 DISTNAME =	kemoticons-${VERSION}
 

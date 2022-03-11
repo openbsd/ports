@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/07 18:16:16 cwen Exp $
 ${P5SITE}/Clone/
 ${P5SITE}/Clone/Choose.pm
 @man man/man3p/Clone::Choose.3p

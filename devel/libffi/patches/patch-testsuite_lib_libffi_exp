@@ -1,5 +1,3 @@
-$OpenBSD: patch-testsuite_lib_libffi_exp,v 1.2 2020/02/10 18:06:34 jasper Exp $
-
 cc1: error: unrecognized command line option "-Wno-psabi"
 
 Index: testsuite/lib/libffi.exp

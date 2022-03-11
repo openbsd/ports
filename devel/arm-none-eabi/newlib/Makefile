@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2017/06/02 23:17:08 schwarze Exp $
-
 COMMENT=	newlib for arm-none-eabi cross-development
 
 DISTNAME=	newlib-2.2.0-1

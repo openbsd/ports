@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/30 07:22:19 jolan Exp $
 bin/findrule
 ${P5SITE}/File/
 ${P5SITE}/File/Find/

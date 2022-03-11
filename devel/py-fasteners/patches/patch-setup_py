@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1 2019/07/22 13:00:01 kmos Exp $
-
 Tweak setup.py to not need py-monotonic for python3
 
 https://github.com/harlowja/fasteners/pull/40

@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_ffi_c_libffi_bsd_mk,v 1.4 2019/11/12 06:41:34 jeremy Exp $
 Index: ext/ffi_c/libffi.bsd.mk
 --- ext/ffi_c/libffi.bsd.mk.orig
 +++ ext/ffi_c/libffi.bsd.mk

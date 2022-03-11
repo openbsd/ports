@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/21 19:50:23 kmos Exp $
-
 COMMENT =	semantic grep, based on coccinelle
 
 MODPY_EGG_VERSION = 1.13

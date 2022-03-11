@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:49 sthen Exp $
-
 COMMENT =		library providing an API for accessing packages metadata
 
 MODPY_EGG_VERSION =	4.8.1

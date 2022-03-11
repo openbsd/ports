@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2019/12/02 22:41:38 kmos Exp $
-
 Fix usage of py-test
 
 Index: setup.cfg

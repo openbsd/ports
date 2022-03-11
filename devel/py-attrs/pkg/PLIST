@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/02/26 20:48:26 sthen Exp $
 @pkgpath devel/py-attrs
 lib/python${MODPY_VERSION}/site-packages/attr/
 lib/python${MODPY_VERSION}/site-packages/attr/__init__.py

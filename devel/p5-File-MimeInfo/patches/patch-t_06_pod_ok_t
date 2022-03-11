@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_06_pod_ok_t,v 1.1 2019/05/05 22:37:22 cwen Exp $
-
 Fix:
 Can't stat bin: No such file or directory at
 /usr/local/libdata/perl5/site_perl/Test/Pod.pm line 223.

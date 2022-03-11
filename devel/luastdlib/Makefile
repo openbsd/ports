@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:42 sthen Exp $
-
 PKG_ARCH =      *
 
 COMMENT=	lua library of common programming tasks

@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_mak_uname,v 1.15 2022/01/25 06:44:56 kn Exp $
-
 OpenBSD wants DIR_HAS_BSD_GROUP_SEMANTICS, just like FreeBSD
 
 Index: config.mak.uname

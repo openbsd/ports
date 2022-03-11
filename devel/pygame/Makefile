@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT=	set of Python modules designed for writing games
 
 MODPY_EGG_VERSION =	2.0.1

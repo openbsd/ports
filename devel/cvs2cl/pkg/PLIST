@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/05/11 11:18:54 kili Exp $
 bin/cvs2cl
 @man man/man1/cvs2cl.1

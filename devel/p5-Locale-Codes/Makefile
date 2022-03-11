@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/03/03 11:30:21 sthen Exp $
-
 COMMENT =	distribution of modules to handle locale codes
 
 DISTNAME =	Locale-Codes-3.70

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	name your accessors foo() and set_foo()
 
 MODULES =	cpan

@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2011/10/30 07:36:05 sebastia Exp $
 --- configure.orig	Fri Jul 15 20:30:52 2011
 +++ configure	Sun Oct  9 19:12:57 2011
 @@ -6434,7 +6434,7 @@ echo "${ECHO_T}${ac_cv_c_tclh}" >&6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/19 09:45:40 rsadowski Exp $
-
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	kactivities-stats-${VERSION}
 

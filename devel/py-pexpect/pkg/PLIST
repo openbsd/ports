@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/11/14 13:35:42 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/pexpect/
 lib/python${MODPY_VERSION}/site-packages/pexpect-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pexpect/ANSI.py

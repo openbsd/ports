@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_test_pty_py,v 1.1 2019/05/11 21:58:00 kmos Exp $
-
 Some pty tests hang
 
 Index: test/test_pty.py

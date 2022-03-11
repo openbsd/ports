@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:11 sthen Exp $
-
 COMMENT =	retrieve terminal size
 
 DISTNAME =	Term-Size-Any-0.002

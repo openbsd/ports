@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/08 20:27:55 bluhm Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/TrailingSpace.pm
 @man man/man3p/Test::TrailingSpace.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_type1_type1_c,v 1.5 2012/01/26 08:48:54 ajacoutot Exp $
-
 CVE-2011-0764, CVE-2011-1552, CVE-2011-1553 and CVE-2011-1554
 
 --- lib/type1/type1.c.orig	Sun Dec 23 10:49:42 2007

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/07/20 08:16:00 sthen Exp $
-
 COMMENT=		source code auditing tool
 
 DISTNAME=		rats-2.4

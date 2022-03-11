@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:29:09 robert Exp $
-
 COMMENT= 	portably generate config for any shell
 
 MODULES=	cpan

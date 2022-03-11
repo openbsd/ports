@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/18 21:54:55 sthen Exp $
-
 COMMENT =	linter for YAML files
 
 MODPY_EGG_VERSION = 1.26.3

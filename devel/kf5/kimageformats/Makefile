@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/09/10 08:42:05 rsadowski Exp $
-
 COMMENT =	KDE plugins for QImage supporting extra file formats
 DISTNAME =	kimageformats-${VERSION}
 

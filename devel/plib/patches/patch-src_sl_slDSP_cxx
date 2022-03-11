@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_sl_slDSP_cxx,v 1.1 2009/12/26 13:21:21 jakemsr Exp $
 --- src/sl/slDSP.cxx.orig	Mon Mar 10 19:06:24 2008
 +++ src/sl/slDSP.cxx	Wed Dec 16 13:17:24 2009
 @@ -413,7 +413,7 @@ void slDSP::stop ()

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/26 03:31:56 jmatthew Exp $
 bin/rebar3-${ERL_VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/26 20:48:07 sthen Exp $
-
 COMMENT =		atomic file writes
 
 MODPY_EGG_VERSION =	1.4.0

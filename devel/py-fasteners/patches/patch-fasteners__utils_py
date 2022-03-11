@@ -1,5 +1,3 @@
-$OpenBSD: patch-fasteners__utils_py,v 1.1 2019/07/22 13:00:01 kmos Exp $
-
 Patch to use native monotonic for Python 3.7+
 
 https://github.com/harlowja/fasteners/pull/40

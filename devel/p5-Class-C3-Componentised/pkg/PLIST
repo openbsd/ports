@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/07 14:03:37 sthen Exp $
 ${P5SITE}/Class/C3/Componentised/
 ${P5SITE}/Class/C3/Componentised.pm
 ${P5SITE}/Class/C3/Componentised/ApplyHooks.pm

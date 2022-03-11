@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/26 18:20:32 naddy Exp $
-
 COMMENT =	VHDL tags generator
 
 DISTNAME =	vtags-0.10

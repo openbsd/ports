@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:40 sthen Exp $
-
 COMMENT =	small JSON library written in ANSI C
 
 GH_ACCOUNT =	lloyd

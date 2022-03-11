@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/12 21:02:18 sthen Exp $
-
 COMMENT=	SDL multi-channel audio mixer library
 
 DISTNAME=	SDL_mixer-1.2.12

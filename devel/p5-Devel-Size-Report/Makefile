@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:50 sthen Exp $
-
 COMMENT=		generate a size report for all elements in a structure
 
 DISTNAME=		Devel-Size-Report-0.13

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Arduino_mk,v 1.1.1.1 2018/11/08 01:04:36 jcs Exp $
-
 Index: Arduino.mk
 --- Arduino.mk.orig
 +++ Arduino.mk

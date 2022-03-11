@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2022/02/19 09:45:46 rsadowski Exp $
 include/KF5/purpose/
 include/KF5/purpose/Purpose/
 include/KF5/purpose/Purpose/AlternativesModel

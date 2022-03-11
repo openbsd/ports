@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/01 09:55:22 benoit Exp $
-
 COMMENT =	gnu C library compatible strftime for loggers and servers
 
 MODULES =	cpan

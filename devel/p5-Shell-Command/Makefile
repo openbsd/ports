@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:09 sthen Exp $
-
 COMMENT= 	simple Unix commands in perl
 
 MODULES=	cpan

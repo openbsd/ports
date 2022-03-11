@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2020/07/02 14:32:39 bcallah Exp $
-
 Remove hardcoded optimizations.
 
 Index: CMakeLists.txt

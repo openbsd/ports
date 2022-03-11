@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2022/02/18 15:36:29 kmos Exp $
-
 COMMENT=		GObject based collection library
 
 GNOME_PROJECT=		libgee

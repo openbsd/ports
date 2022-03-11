@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_gcc_hidden_h,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 Toggle symbol visibility, otherwise certain symbols are marked as local
 which are actually supposed to be used (e.g. by gjs):
 

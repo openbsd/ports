@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/03 22:42:36 fcambus Exp $
-
 COMMENT =	Lua library for time and date manipulation
 
 V =		0.4-1

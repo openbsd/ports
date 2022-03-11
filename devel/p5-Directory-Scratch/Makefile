@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:50 sthen Exp $
-
 COMMENT =	easy-to-use self-cleaning scratch space
 
 MODULES =	cpan

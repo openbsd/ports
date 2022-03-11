@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT =		fast implementation of gettext
 
 DISTNAME =		fast_gettext-1.1.0

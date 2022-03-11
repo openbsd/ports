@@ -1,4 +1,3 @@
-$OpenBSD: patch-Modules_FindQt3_cmake,v 1.13 2021/05/09 14:46:15 rsadowski Exp $
 Index: Modules/FindQt3.cmake
 --- Modules/FindQt3.cmake.orig
 +++ Modules/FindQt3.cmake

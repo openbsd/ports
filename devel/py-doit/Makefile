@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/28 11:55:33 sthen Exp $
-
 COMMENT =		automation tool
 
 MODPY_EGG_VERSION =	0.34.1

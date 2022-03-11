@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		logging integration for Python click
 
 MODPY_EGG_VERSION =	0.3.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2009/05/06 17:16:17 sthen Exp $
 --- src/Makefile.in.orig	Fri Mar  6 14:41:13 2009
 +++ src/Makefile.in	Thu Apr  2 04:56:14 2009
 @@ -330,7 +330,7 @@ aclocal_DATA = ost_check2.m4

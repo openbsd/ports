@@ -1,5 +1,3 @@
-$OpenBSD: patch-ddd_Command_C,v 1.1 2009/11/30 23:45:35 edd Exp $
-
 fixes things on amd64; from pkgsrc.
 
 --- ddd/Command.C.orig	Wed Feb 11 17:25:07 2009

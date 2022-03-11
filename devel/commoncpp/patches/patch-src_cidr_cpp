@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cidr_cpp,v 1.1 2017/04/29 15:30:04 espie Exp $
 --- src/cidr.cpp.orig
 +++ src/cidr.cpp
 @@ -202,7 +202,7 @@ void IPV4Cidr::set(const char *cp)

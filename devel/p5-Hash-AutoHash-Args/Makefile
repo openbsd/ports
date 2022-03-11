@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:55 sthen Exp $
-
 COMMENT=	OO processing of keyword-based argument lists
 
 DISTNAME =	Hash-AutoHash-Args-1.18

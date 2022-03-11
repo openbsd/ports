@@ -1,4 +1,3 @@
-$OpenBSD: patch-Modules_FindSDL_cmake,v 1.13 2021/05/09 14:46:15 rsadowski Exp $
 Index: Modules/FindSDL.cmake
 --- Modules/FindSDL.cmake.orig
 +++ Modules/FindSDL.cmake

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:41 sthen Exp $
-
 COMMENT =	canary to check perl compatibility for schmorp's modules#'
 
 MODULES =	cpan

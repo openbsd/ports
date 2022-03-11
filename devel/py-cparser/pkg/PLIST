@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/11/09 14:45:56 jca Exp $
 lib/python${MODPY_VERSION}/site-packages/pycparser/
 lib/python${MODPY_VERSION}/site-packages/pycparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pycparser/__init__.py

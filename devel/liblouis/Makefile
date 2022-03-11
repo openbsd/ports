@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/13 21:51:29 ajacoutot Exp $
-
 COMMENT=	braille translator, back-translator and formatter
 
 V=		3.19.0

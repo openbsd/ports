@@ -1,4 +1,3 @@
-$OpenBSD: patch-support_installation_modules_tcl,v 1.4 2018/06/12 23:46:26 stu Exp $
 Index: support/installation/modules.tcl
 --- support/installation/modules.tcl.orig
 +++ support/installation/modules.tcl

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/25 22:26:01 sthen Exp $
-
 COMMENT =	ISP tool for LPC2000 and ADUC70xx microcontrollers
 
 V =		1.97

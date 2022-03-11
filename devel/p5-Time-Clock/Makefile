@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:18 sthen Exp $
-
 COMMENT=		simple 24 hours clock object
 
 MODULES=		cpan

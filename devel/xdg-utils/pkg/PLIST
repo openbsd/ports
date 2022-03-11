@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/09/04 12:46:11 espie Exp $
 @conflict thinkingrock-<=2.0.1p1
 bin/email
 bin/open

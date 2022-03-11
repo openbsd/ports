@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:42 sthen Exp $
-
 COMMENT=	posix library for the lua language
 V=		33.4.0
 DISTNAME=	luaposix-${V}

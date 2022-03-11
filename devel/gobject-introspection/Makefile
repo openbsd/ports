@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.109 2022/01/13 08:06:39 ajacoutot Exp $
-
 COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.70.0

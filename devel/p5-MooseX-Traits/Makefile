@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT=		automatically apply roles at object creation time
 
 DISTNAME =		MooseX-Traits-0.13

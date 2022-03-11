@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/20 20:05:52 sthen Exp $
-
 VERSION =	2.69
 REVISION =	3
 

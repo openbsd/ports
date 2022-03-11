@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_xtensa-config_h,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
-
 xtensa-config.h for ESP32
 
 Index: include/xtensa-config.h

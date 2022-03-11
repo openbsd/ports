@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT =	terminal library for Lua
 
 GH_ACCOUNT =	hoelzro

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2005/02/13 16:40:59 alek Exp $
 --- src/Makefile.in.orig	Sun Feb 13 17:27:29 2005
 +++ src/Makefile.in	Sun Feb 13 17:27:41 2005
 @@ -114,7 +114,7 @@ am__quote = @am__quote@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-osrng_cpp,v 1.3 2020/11/18 00:15:35 sthen Exp $
-
 Index: osrng.cpp
 --- osrng.cpp.orig
 +++ osrng.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_modules_Compiler_cmake,v 1.1 2017/05/06 14:49:17 sthen Exp $
-
 Index: cmake/modules/Compiler.cmake
 --- cmake/modules/Compiler.cmake.orig
 +++ cmake/modules/Compiler.cmake

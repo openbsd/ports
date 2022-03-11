@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/26 20:51:07 sthen Exp $
-
 COMMENT =		deprecated fixture to invoke py.test as distutils command
 
 MODPY_EGG_VERSION =	6.0.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/20 08:18:57 landry Exp $
-
 COMMENT=		ordered sets in Python
 
 MODPY_EGG_VERSION=	4.0.2

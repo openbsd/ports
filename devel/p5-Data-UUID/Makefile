@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:44:47 sthen Exp $
-
 COMMENT =	extension for generating GUIDs/UUIDs
 
 MODULES =	cpan

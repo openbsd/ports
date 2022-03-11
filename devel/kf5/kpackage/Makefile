@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/16 14:31:01 rsadowski Exp $
-
 COMMENT =		installation and loading of content packages in KDE
 DISTNAME =		kpackage-${VERSION}
 

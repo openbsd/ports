@@ -1,4 +1,3 @@
-$OpenBSD: patch-CGExternalHandling_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 Index: CGExternalHandling.cpp
 --- CGExternalHandling.cpp.orig
 +++ CGExternalHandling.cpp

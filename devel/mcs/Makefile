@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:44:42 sthen Exp $
-
 COMMENT =	abstract the storage of configuration settings
 
 DISTNAME =	libmcs-0.7.2

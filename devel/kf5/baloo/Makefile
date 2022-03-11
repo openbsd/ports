@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/09/10 08:42:02 rsadowski Exp $
-
 COMMENT =	KDE file search and metadata handling framework
 DISTNAME =	baloo-${VERSION}
 PKGNAME =	kf5-${DISTNAME}

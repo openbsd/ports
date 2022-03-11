@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.30 2021/06/05 12:34:05 jasper Exp $
-
-#
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
 #
 

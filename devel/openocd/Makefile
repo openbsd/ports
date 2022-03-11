@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/15 07:49:04 ajacoutot Exp $
-
 COMMENT =	Open On-Chip Debugging
 
 DISTNAME =	openocd-0.11.0

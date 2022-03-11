@@ -1,5 +1,3 @@
-$OpenBSD: patch-pcre_exec_c,v 1.1 2018/11/24 11:20:08 landry Exp $
-
 When ports-gcc optimized match(), it broke the stack frame size
 calculation.  Apply the fix that Sergei Golubchik put in MariaDB's
 copy of pcre.

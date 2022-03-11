@@ -1,5 +1,3 @@
-$OpenBSD: patch-usb_backend_libusb0_py,v 1.1 2020/02/20 20:09:07 jasper Exp $
-
 Lacking ENODATA we use ENOENT instead;
 see devel/libusb-compat/patches/patch-libusb_core_c
 

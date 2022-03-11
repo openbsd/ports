@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/22 21:41:27 tracey Exp $
-
 COMMENT =		hardware abstraction library for xtensa lx106
 VERSION	=		1.0
 REVISION =		0

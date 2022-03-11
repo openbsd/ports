@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:04 sthen Exp $
-
 COMMENT=		bridge that allows POE to be driven by Tk
 
 DISTNAME=		POE-Loop-Tk-1.305

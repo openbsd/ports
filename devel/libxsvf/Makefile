@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=	library and tools for creating SVF and XSVF JTAG players
 
 # svn rev 62

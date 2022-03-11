@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:06 sthen Exp $
-
 COMMENT=	GNU project portable class framework for C++
 
 VER=		1.7.3

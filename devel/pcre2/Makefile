@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/05 22:18:23 namn Exp $
-
 COMMENT =	perl-compatible regular expression library, version 2
 
 DISTNAME =	pcre2-10.37

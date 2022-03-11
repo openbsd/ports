@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/16 08:16:10 benoit Exp $
-
 COMMENT=	fast shared data cache using memory mapped files
 
 MODULES=	cpan

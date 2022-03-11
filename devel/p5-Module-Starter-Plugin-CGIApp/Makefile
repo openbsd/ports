@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:01 sthen Exp $
-
 COMMENT =		template based module starter for CGI apps
 
 MODULES =		cpan

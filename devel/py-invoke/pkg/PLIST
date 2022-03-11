@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
 bin/inv
 bin/invoke
 lib/python${MODPY_VERSION}/site-packages/invoke/

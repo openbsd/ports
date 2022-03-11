@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/08 20:02:25 bluhm Exp $
-
 COMMENT =	recursively create a directory tree
 
 DISTNAME =	File-TreeCreate-0.0.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/09/30 22:58:03 jca Exp $
-
 COMMENT=	getopt(3)-like library with a number of enhancements
 
 DISTNAME=	popt-1.16

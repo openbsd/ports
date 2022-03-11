@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/26 20:50:01 sthen Exp $
-
 COMMENT =		fixture for benchmarking code
 
 MODPY_EGG_VERSION =	3.4.1

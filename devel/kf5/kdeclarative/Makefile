@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/19 10:51:01 rsadowski Exp $
-
 COMMENT =	integration of QML and KDE workspaces
 DISTNAME =	kdeclarative-${VERSION}
 

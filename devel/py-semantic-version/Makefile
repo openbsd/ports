@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:01 sthen Exp $
-
 COMMENT=		library implementing the 'SemVer' scheme
 
 MODPY_EGG_VERSION=	2.8.5

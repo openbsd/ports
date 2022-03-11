@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/01/01 22:02:03 bluhm Exp $
 ${P5SITE}/Test2/
 ${P5SITE}/Test2/AsyncSubtest/
 ${P5SITE}/Test2/AsyncSubtest.pm

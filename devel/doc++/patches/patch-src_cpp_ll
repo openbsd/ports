@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cpp_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
 Index: src/cpp.ll
 --- src/cpp.ll.orig
 +++ src/cpp.ll

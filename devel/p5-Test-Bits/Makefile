@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:12 sthen Exp $
-
 COMMENT =	provides a bits_is() subroutine for testing binary data
 
 DISTNAME =	Test-Bits-0.02

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/03/10 12:03:30 kn Exp $
-
 COMMENT =		guidelines support library
 GH_ACCOUNT =		microsoft
 GH_PROJECT =		GSL

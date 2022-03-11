@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:06 sthen Exp $
-
 COMMENT=	parser for plain-text configuration files
 
 MODULES=	cpan

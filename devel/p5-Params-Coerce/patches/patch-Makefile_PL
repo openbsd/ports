@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/25 22:03:17 sthen Exp $
-
 Fix in perl 5.26.0+ (no . in @INC by default)
 https://rt.cpan.org/Public/Bug/Display.html?id=121730
 

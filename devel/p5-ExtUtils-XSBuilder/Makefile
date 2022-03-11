@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:52 sthen Exp $
-
 COMMENT=        automatic Perl XS glue code generation
 
 MODULES=	cpan

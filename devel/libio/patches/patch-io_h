@@ -1,4 +1,3 @@
-$OpenBSD: patch-io_h,v 1.1 2010/05/22 20:35:17 espie Exp $
 --- io.h.orig	Sat May 22 22:33:00 2010
 +++ io.h	Sat May 22 22:33:26 2010
 @@ -96,14 +96,14 @@ struct io_header {

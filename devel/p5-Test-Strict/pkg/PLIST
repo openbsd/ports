@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 09:53:08 simon Exp $
 ${P5SITE}/Test/Strict.pm
 @man man/man3p/Test::Strict.3p

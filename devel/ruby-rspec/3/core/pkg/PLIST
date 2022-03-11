@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/04/04 06:21:04 naddy Exp $
 @option no-default-conflict
 @conflict ${MODRUBY_PKG_PREFIX}-rspec-core->=2,<4
 ${GEM_BIN}/rspec${GEM_BIN_SUFFIX}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/11/19 11:30:55 sthen Exp $
-
 COMMENT =	C++ library of cryptographic algorithms
 CATEGORIES =	devel security
 

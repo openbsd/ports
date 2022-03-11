@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:04 sthen Exp $
-
 COMMENT=	POE Inter-Kernel Communication
 
 MODULES=	cpan

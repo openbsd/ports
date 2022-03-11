@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:42 sthen Exp $
-
 COMMENT =		lightweight C++ API for Lua
 DISTNAME =		lutok-0.4
 REVISION =		2

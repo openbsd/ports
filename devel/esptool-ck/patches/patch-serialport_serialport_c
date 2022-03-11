@@ -1,5 +1,3 @@
-$OpenBSD: patch-serialport_serialport_c,v 1.1.1.1 2020/02/11 20:19:44 sthen Exp $
-
 Index: serialport/serialport.c
 --- serialport/serialport.c.orig
 +++ serialport/serialport.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_build_src_engine_build_sh,v 1.6 2022/01/06 08:15:51 rsadowski Exp $
-
 Index: tools/build/src/engine/build.sh
 --- tools/build/src/engine/build.sh.orig
 +++ tools/build/src/engine/build.sh

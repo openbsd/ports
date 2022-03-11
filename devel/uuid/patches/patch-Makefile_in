@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2013/06/19 14:34:51 sthen Exp $
 --- Makefile.in.orig	Sat Mar  8 18:31:40 2008
 +++ Makefile.in	Tue Jun 18 17:56:26 2013
 @@ -62,13 +62,13 @@ PERL        = @PERL@

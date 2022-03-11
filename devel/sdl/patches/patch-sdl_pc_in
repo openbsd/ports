@@ -1,4 +1,3 @@
-$OpenBSD: patch-sdl_pc_in,v 1.2 2012/03/02 09:10:38 dcoppa Exp $
 --- sdl.pc.in.orig	Mon Oct 12 19:07:20 2009
 +++ sdl.pc.in	Sat Nov  7 13:30:12 2009
 @@ -10,6 +10,5 @@ Description: Simple DirectMedia Layer is a cross-platf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:00 sthen Exp $
-
 COMMENT =		Python library for rich text and beautiful formatting
 
 MODPY_EGG_VERSION =	9.11.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/12/05 18:13:42 afresh1 Exp $
-
 COMMENT =		build and install Perl modules
 
 DISTNAME =		Module-Build-0.4231

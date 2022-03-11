@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/08/23 08:24:04 ajacoutot Exp $
-
 COMMENT=	helper library for networking and security applications
 
 DISTNAME=	gwenhywfar-5.4.0

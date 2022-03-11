@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/03/02 05:39:33 daniel Exp $
-
 COMMENT =		threading and multiprocessing eye-candy
 
 MODPY_EGG_VERSION =	4.6.3

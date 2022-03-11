@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =		virtualenv-based automation of test activities
 
 MODPY_EGG_VERSION =	2.6.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/01 02:50:51 afresh1 Exp $
-
 COMMENT=		Executable Uniform Command-Line Interface Descriptions
 
 DISTNAME=		Getopt-Euclid-0.4.5

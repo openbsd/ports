@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2022/02/13 07:46:38 rsadowski Exp $
-
 COMMENT=		IntelliJ IDEA Java IDE
 
 V=			2021.3.2

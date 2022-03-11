@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/09 09:52:02 landry Exp $
-
 COMMENT =	potluck with different functions for different purposes
 
 GH_ACCOUNT =	babelouest

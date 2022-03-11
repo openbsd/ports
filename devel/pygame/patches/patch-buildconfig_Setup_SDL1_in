@@ -1,5 +1,3 @@
-$OpenBSD: patch-buildconfig_Setup_SDL1_in,v 1.2 2020/12/09 04:49:12 daniel Exp $
-
 Index: buildconfig/Setup.SDL1.in
 --- buildconfig/Setup.SDL1.in.orig
 +++ buildconfig/Setup.SDL1.in

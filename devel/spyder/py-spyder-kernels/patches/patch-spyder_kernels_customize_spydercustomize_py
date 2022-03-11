@@ -1,5 +1,3 @@
-$OpenBSD: patch-spyder_kernels_customize_spydercustomize_py,v 1.2 2019/02/23 17:57:43 mariani Exp $
-
 Index: spyder_kernels/customize/spydercustomize.py
 --- spyder_kernels/customize/spydercustomize.py.orig
 +++ spyder_kernels/customize/spydercustomize.py

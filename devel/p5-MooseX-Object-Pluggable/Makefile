@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 01:59:11 afresh1 Exp $
-
 COMMENT =	make your classes pluggable
 
 DISTNAME =	MooseX-Object-Pluggable-0.0014

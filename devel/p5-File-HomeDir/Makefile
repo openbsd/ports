@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/11/05 10:12:02 benoit Exp $
-
 COMMENT=		retrieve home directory location
 
 MODULES=		cpan

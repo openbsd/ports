@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=		low-level event loop management library
 
 DISTNAME=		liboop-1.0

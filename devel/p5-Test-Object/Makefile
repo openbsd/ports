@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT=	thoroughly testing objects via registered handlers
 
 MODULES=	cpan

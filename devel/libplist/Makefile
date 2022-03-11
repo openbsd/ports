@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/03/05 11:03:41 sthen Exp $
-
 COMMENT =		library to handle Apple Property List format
 
 DISTNAME =		libplist-1.12

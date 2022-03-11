@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/20 13:40:12 edd Exp $
-
 COMMENT =	VT220/xterm/ECMA-48 terminal emulator library
 # No releases, so use date and a git hash.
 # Note that the github repo is a mirror of a bzr repo.

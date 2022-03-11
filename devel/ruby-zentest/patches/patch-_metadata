@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.1 2013/07/03 06:56:01 jasper Exp $
-
 Revert https://github.com/seattlerb/zentest/commit/99c4a39041c3431eae3ad838b7e663933b2d0c2e
 which throws: Illformed requirement ["< 2.1, >= 1.8"]
 

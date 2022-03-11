@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/12/11 04:48:10 gnezdo Exp $
-
 COMMENT =	command-line interface for Cabal and Hackage
 
 DISTNAME =	cabal-install-3.6.2.0

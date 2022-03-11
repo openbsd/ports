@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/08 22:57:41 kn Exp $
-
 COMMENT =		set of useful typemaps
 
 DISTNAME =		ExtUtils-Typemaps-Default-1.05

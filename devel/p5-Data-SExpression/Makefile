@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:46 sthen Exp $
-
 COMMENT =	parse Lisp S-Expressions into perl data structures
 DISTNAME =	Data-SExpression-0.41
 CATEGORIES =	devel

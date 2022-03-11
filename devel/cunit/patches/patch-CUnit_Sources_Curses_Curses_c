@@ -1,6 +1,5 @@
 Remove type-conversion compiler warnings, no functional change.
 
-$OpenBSD: patch-CUnit_Sources_Curses_Curses_c,v 1.1 2011/08/19 08:04:02 jasper Exp $
 --- CUnit/Sources/Curses/Curses.c.orig	Sat May 20 15:19:14 2006
 +++ CUnit/Sources/Curses/Curses.c	Wed Aug 17 20:42:34 2011
 @@ -736,7 +736,7 @@ static STATUS curses_suite_level_run(CU_pSuite pSuite)

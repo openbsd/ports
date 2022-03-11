@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.i18n,v 1.1 2020/06/05 05:28:13 rsadowski Exp $
 @conflict kde-i18n-af-*
 @conflict kde-i18n-ar-*
 @conflict kde-i18n-az-*

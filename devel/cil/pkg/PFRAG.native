@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.native,v 1.2 2019/03/04 12:51:12 chrisz Exp $
 lib/ocaml/cil/alpha.cmx
 lib/ocaml/cil/availexps.cmx
 lib/ocaml/cil/availexpslv.cmx

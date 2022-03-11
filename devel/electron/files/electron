@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: electron,v 1.1.1.1 2020/03/10 11:16:32 espie Exp $
 
 DATASIZE="716800"
 OPENFILES="400"

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2020/12/17 07:49:55 ajacoutot Exp $
-
 Fix parallel build. Taken from FreeBSD.
 
 Index: Makefile.in

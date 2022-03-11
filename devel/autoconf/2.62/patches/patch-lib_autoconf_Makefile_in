@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_autoconf_Makefile_in,v 1.1.1.1 2008/08/19 23:52:19 espie Exp $
 --- lib/autoconf/Makefile.in.orig	Sun Apr  6 01:06:36 2008
 +++ lib/autoconf/Makefile.in	Sat Jul 19 11:42:13 2008
 @@ -184,7 +184,7 @@ dist_autoconflib_DATA = \

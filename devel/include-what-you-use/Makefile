@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.25 2022/01/03 21:34:53 jca Exp $
-
 COMMENT=	tool to analyse \#includes in C and C++ source files
 CATEGORIES=	devel
 DISTNAME=	include-what-you-use-0.17.src

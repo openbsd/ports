@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/09 15:29:12 naddy Exp $
 @bin bin/riscv64-unknown-elf-c++
 @bin bin/riscv64-unknown-elf-cpp
 @bin bin/riscv64-unknown-elf-g++

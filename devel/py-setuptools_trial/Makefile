@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:01 sthen Exp $
-
 COMMENT=		setuptools plugin for unit tests with trial
 
 MODPY_EGG_VERSION=	0.6.0

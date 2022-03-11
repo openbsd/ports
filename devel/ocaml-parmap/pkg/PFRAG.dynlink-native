@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2015/09/17 17:18:35 jca Exp $
 @bin lib/ocaml/parmap/parmap.cmxs

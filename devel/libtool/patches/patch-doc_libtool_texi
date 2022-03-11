@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_libtool_texi,v 1.6 2021/03/15 21:02:10 sthen Exp $
 --- doc/libtool.texi.orig	Wed Jun  8 11:04:53 2011
 +++ doc/libtool.texi	Wed Jun  8 11:05:44 2011
 @@ -11,16 +11,16 @@

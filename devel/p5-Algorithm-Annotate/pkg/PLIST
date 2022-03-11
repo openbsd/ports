@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 03:23:11 kevlo Exp $
 ${P5SITE}/Algorithm/Annotate.pm
 @man man/man3p/Algorithm::Annotate.3p

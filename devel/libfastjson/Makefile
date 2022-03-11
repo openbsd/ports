@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/27 15:51:01 sthen Exp $
-
 COMMENT =	performance-focused JSON library for C
 
 DISTNAME =	libfastjson-0.99.9

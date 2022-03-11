@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/19 10:51:03 rsadowski Exp $
-
 COMMENT =		plugin framework for KDE desktop services
 DISTNAME =		kservice-${VERSION}
 

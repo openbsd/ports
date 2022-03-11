@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/12/14 06:26:27 rsadowski Exp $
-
 COMMENT =		YAML parser and emitter in C++
 
 V=			0.6.3

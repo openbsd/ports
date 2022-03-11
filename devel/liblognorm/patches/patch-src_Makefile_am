@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2017/12/27 17:34:48 remi Exp $
-
 Only install the liblognorm.h header, others look like private headers.
 Use _SOURCES for those instead of _HEADERS / EXTRA_DIST.
 

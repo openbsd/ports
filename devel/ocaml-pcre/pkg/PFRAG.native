@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.native,v 1.4 2021/12/25 17:08:30 daniel Exp $
 %%dynlink%%
 lib/ocaml/pcre/pcre.a
 lib/ocaml/pcre/pcre.cmx

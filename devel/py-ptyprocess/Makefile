@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:00 sthen Exp $
-
 COMMENT =		run a subprocess in a pseudo terminal
 
 MODPY_EGG_VERSION =	0.7.0

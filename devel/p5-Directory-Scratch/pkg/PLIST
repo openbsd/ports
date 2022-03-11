@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 09:52:57 simon Exp $
 ${P5SITE}/Directory/
 ${P5SITE}/Directory/Scratch.pm
 @man man/man3p/Directory::Scratch.3p

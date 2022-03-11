@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/15 20:22:37 steven Exp $
 ${P5SITE}/Fortran/
 ${P5SITE}/Fortran/Format.pm
 @man man/man3p/Fortran::Format.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/27 00:14:52 afresh1 Exp $
-
 COMMENT =	parse and format strp and strf time patterns
 
 MODULES =	cpan

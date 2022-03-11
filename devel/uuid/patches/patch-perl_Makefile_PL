@@ -1,4 +1,3 @@
-$OpenBSD: patch-perl_Makefile_PL,v 1.1 2013/06/19 14:34:51 sthen Exp $
 --- perl/Makefile.PL.orig	Tue Jun 18 15:05:09 2013
 +++ perl/Makefile.PL	Tue Jun 18 15:05:50 2013
 @@ -33,9 +33,9 @@ use Config;

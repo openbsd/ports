@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT =	fast-samples based normalization library
 
 DISTNAME =	liblognorm-2.0.6

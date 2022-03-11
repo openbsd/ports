@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/30 22:25:01 bluhm Exp $
 ${P5SITE}/Importer.pm
 @man man/man3p/Importer.3p

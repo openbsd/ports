@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.112 2022/01/21 07:55:41 ajacoutot Exp $
-
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice

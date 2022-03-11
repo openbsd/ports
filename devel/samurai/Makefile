@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/03 21:22:02 bcallah Exp $
-
 COMMENT =	ninja-compatible build tool written in C
 
 V =		1.2

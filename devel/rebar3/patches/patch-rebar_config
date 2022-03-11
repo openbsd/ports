@@ -1,5 +1,3 @@
-$OpenBSD: patch-rebar_config,v 1.2 2021/05/27 08:43:50 sthen Exp $
-
 set main module name for escript
 
 Index: rebar.config

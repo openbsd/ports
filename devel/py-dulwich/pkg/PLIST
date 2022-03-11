@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2022/02/26 14:57:50 sthen Exp $
 @conflict py-dulwich-*
 @pkgpath devel/py-dulwich
 bin/dul-receive-pack

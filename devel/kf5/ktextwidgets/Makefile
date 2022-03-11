@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/06/15 09:37:30 rsadowski Exp $
-
 COMMENT =		text editing widgets for KDE
 DISTNAME =		ktextwidgets-${VERSION}
 

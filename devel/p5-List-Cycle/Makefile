@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/01 10:37:48 benoit Exp $
-
 COMMENT=	objects for cycling through a list of values
 
 DISTNAME =	List-Cycle-1.04

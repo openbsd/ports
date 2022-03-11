@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 01:59:11 afresh1 Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Object/
 ${P5SITE}/MooseX/Object/Pluggable.pm

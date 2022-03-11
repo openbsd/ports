@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/06/29 16:14:40 espie Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ${PKGSPEC}

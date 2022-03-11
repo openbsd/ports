@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/10/17 17:13:19 daniel Exp $
 @conflict Pyrex-*
 bin/pyrexc
 lib/python${MODPY_VERSION}/site-packages/Pyrex/

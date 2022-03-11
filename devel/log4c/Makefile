@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	logging for c library
 DISTNAME =	log4c-1.2.4
 SHARED_LIBS +=  log4c                1.0      # 6.1

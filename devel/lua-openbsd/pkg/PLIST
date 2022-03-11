@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/07 12:54:22 abieber Exp $
 @so lib/lua/${MODLUA_VERSION}/openbsd.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/openbsd-example.lua

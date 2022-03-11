@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/02 18:30:57 bentley Exp $
 @bin bin/xtensa-elf-addr2line
 @bin bin/xtensa-elf-ar
 @bin bin/xtensa-elf-as

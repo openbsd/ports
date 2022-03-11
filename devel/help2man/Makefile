@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/02/19 07:53:13 ajacoutot Exp $
-
 COMMENT=	generates simple manual pages from program output
 
 DISTNAME=	help2man-1.49.1

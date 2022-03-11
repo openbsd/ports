@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:05 sthen Exp $
-
 COMMENT=	handling CHM files
 CATEGORIES=	devel textproc
 

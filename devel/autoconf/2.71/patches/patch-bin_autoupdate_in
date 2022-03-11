@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_autoupdate_in,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 Index: bin/autoupdate.in
 --- bin/autoupdate.in.orig
 +++ bin/autoupdate.in

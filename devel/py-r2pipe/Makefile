@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:00 sthen Exp $
-
 COMMENT =	pipe interface for radare2
 
 MODPY_EGG_VERSION =	1.6.2

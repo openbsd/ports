@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/03/02 09:57:26 fcambus Exp $
-
 COMMENT =	tool to indent and reformat perl scripts
 
 V =		20220217

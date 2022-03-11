@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:28:36 espie Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Tee.pm
 @man man/man3p/IO::Tee.3p

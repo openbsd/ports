@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:04 sthen Exp $
-
 COMMENT=		publish/subscribe to publish events from POE::Sessions
 
 DISTNAME=		POE-Component-PubSub-0.05

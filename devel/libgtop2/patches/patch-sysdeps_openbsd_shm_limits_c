@@ -1,5 +1,3 @@
-$OpenBSD: patch-sysdeps_openbsd_shm_limits_c,v 1.2 2018/04/27 10:20:03 robert Exp $
-
 Index: sysdeps/openbsd/shm_limits.c
 --- sysdeps/openbsd/shm_limits.c.orig
 +++ sysdeps/openbsd/shm_limits.c

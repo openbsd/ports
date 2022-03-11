@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_renderer_build_scripts_rule_bison_py,v 1.1 2021/05/09 13:28:12 sthen Exp $
-
 Cope with newer bison. Diff came via qtwebengine.
 https://code.qt.io/cgit/qt/qtwebengine-chromium.git/commit/?h=80-based&id=1a53f599
 

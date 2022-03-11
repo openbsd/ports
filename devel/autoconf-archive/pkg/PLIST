@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/22 19:12:56 jasper Exp $
 @info info/autoconf-archive.info
 share/aclocal/
 share/aclocal/ax_absolute_header.m4

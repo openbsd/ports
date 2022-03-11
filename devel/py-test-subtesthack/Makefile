@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:02 sthen Exp $
-
 COMMENT =		hack to explicitly set up and tear down fixtures
 
 MODPY_EGG_VERSION =	0.1.1

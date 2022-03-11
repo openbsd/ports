@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/17 11:15:40 robert Exp $
-
 # The comment is an acrostic, or maybe bacronym of Moo
 COMMENT =	Minimalist Object Orientation (with Moose compatibility)
 

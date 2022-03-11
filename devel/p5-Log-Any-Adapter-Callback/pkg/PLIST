@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/15 08:22:32 benoit Exp $
 ${P5SITE}/Log/Any/Adapter/Callback.pm
 @man man/man3p/Log::Any::Adapter::Callback.3p

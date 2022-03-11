@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/25 15:32:25 tracey Exp $
-
 COMMENT =	Arduino core for modern ATtiny chips
 
 GH_ACCOUNT =	SpenceKonde

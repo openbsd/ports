@@ -1,5 +1,3 @@
-$OpenBSD: patch-gprof_Makefile_in,v 1.2 2021/04/28 03:35:52 jsg Exp $
-
 Index: gprof/Makefile.in
 --- gprof/Makefile.in.orig
 +++ gprof/Makefile.in

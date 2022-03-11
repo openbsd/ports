@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/04 22:11:32 thfr Exp $
-
 COMMENT =	.NET debugger and assembly editor
 V =		6.1.7
 DISTNAME =	dnSpy-net472

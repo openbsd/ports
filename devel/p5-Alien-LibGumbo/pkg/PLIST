@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:33 robert Exp $
 ${P5SITE}/Alien/LibGumbo/
 ${P5SITE}/Alien/LibGumbo.pm
 ${P5SITE}/Alien/LibGumbo/ConfigData.pm

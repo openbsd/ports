@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=	very basic event publishing system from Zope
 
 MODPY_EGG_VERSION=	4.3.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		symbolic constants in Python
 
 MODPY_EGG_VERSION =	15.1.0

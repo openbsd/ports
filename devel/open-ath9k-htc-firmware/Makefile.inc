@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
-
 PKGNAME ?=	open-ath9k-htc-firmware-${ATH9K_FIRMWARE}-1.4.0pl20171105
 DISTNAME ?=	${GH_PROJECT}-${GH_COMMIT}
 

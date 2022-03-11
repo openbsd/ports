@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.5 2022/01/08 16:58:33 tracey Exp $
-
 CONFIG =	xtensa-esp32-elf
 CATEGORIES +=	devel
 HOMEPAGE =	https://www.espressif.com/en/products/software/esp-sdk/overview

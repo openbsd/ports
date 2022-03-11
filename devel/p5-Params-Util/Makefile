@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:05 sthen Exp $
-
 COMMENT=		utility to make parameter checking easier
 
 MODULES=		cpan

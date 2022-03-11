@@ -1,5 +1,3 @@
-# $OpenBSD: scons.port.mk,v 1.8 2021/10/31 18:26:38 sthen Exp $
-
 MODSCONS_USE_V2?=	No
 
 .if ${MODSCONS_USE_V2:L} == "yes"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:01 sthen Exp $
-
 COMMENT =	module name tools and transformations
 
 DISTNAME =	Module-Util-1.09

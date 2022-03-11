@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/05/20 17:16:56 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/r2pipe/
 lib/python${MODPY_VERSION}/site-packages/r2pipe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/r2pipe/__init__.py

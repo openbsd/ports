@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
 

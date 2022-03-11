@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/31 17:08:26 sthen Exp $
 @conflict py-qt5-<5.15.2
 @conflict ${MODPY_PY_PREFIX}sip-qt5-<=5.5.0p0
 @conflict py-sip-*

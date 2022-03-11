@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/08 13:59:23 sthen Exp $
-
 COMMENT =		various tools for the Go programming language
 GH_ACCOUNT =		golang
 GH_PROJECT =		tools

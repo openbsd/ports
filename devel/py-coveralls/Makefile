@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/28 11:59:11 sthen Exp $
-
 COMMENT =	display coverage stats online via coveralls.io
 
 MODPY_EGG_VERSION =	3.3.1

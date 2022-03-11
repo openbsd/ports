@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/06 20:48:36 afresh1 Exp $
-
 COMMENT =	create DateTime parser classes and objects
 
 MODULES =	cpan

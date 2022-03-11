@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:53 sthen Exp $
-
 COMMENT=	copy files and directories with perl
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:01 sthen Exp $
-
 COMMENT =	extend your attribute interfaces
 
 DISTNAME =	MooseX-AttributeHelpers-0.25

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT=	module for converting structures to strings and back
 
 MODULES=	cpan

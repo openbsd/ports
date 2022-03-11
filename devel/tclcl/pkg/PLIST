@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/01/05 19:00:54 sebastia Exp $
 bin/otcldoc
 @bin bin/tcl2c++
 include/tclcl/

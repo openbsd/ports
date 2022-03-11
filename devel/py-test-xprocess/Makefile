@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/19 16:11:54 sthen Exp $
-
 COMMENT =	pytest plugin for managing processes across test runs
 
 MODPY_EGG_VERSION =	0.18.1

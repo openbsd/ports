@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/02/19 09:45:46 rsadowski Exp $
 include/KF5/Syndication/
 include/KF5/Syndication/Syndication/
 include/KF5/Syndication/Syndication/AbstractParser

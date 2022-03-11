@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/29 22:08:17 daniel Exp $
-
 COMMENT =		backported type hints for python >= 3.5
 
 MODPY_EGG_VERSION =	3.10.0.2

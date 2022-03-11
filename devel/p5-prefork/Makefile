@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/01 10:05:35 benoit Exp $
-
 COMMENT=	optimized module loading
 
 MODULES=	cpan

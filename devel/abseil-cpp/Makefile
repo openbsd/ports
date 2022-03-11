@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/03/10 12:03:30 kn Exp $
-
 COMMENT =	abseil common libraries (c++)
 REVISION =	2
 CATEGORIES =	devel

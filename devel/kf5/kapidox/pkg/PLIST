@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/03/14 14:35:03 rsadowski Exp $
 bin/depdiagram-generate
 bin/depdiagram-generate-all
 bin/depdiagram-prepare

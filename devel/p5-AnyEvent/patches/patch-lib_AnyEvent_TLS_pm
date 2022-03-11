@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_AnyEvent_TLS_pm,v 1.1 2021/09/17 12:26:39 bluhm Exp $
-
 LibreSSL uses TLS 1.3.  This is not expected by AnyEvent.  Especially
 an EPIPE error confuses the t/80_ssltest.t test.
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/14 21:08:17 bluhm Exp $
-
 COMMENT =	format a header and rows into a table
 
 DISTNAME =	Term-Table-0.016

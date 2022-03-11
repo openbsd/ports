@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/03/07 08:58:48 landry Exp $
-
 COMMENT =	continuous integration framework
 
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}

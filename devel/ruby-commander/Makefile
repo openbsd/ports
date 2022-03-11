@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:07:45 sthen Exp $
-
 COMMENT =		complete solution for Ruby command-line executables
 
 DISTNAME =		commander-4.1.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/17 13:06:59 kn Exp $
-
 COMMENT=	tool for editing version-control repository history
 
 DISTNAME=	reposurgeon-3.42

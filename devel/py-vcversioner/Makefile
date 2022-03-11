@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT =		use version control tags to discover version numbers
 
 MODPY_EGG_VERSION =	2.16.0.0

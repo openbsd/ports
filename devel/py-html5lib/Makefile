@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:00:49 sthen Exp $
-
 COMMENT=		HTML parser/tokeniser based for HTML5
 
 MODPY_EGG_VERSION=	1.1

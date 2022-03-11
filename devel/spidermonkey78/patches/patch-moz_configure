@@ -1,5 +1,3 @@
-$OpenBSD: patch-moz_configure,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 - Fix awk detection
 
 Index: moz.configure

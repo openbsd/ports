@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/
 include/KF5/KItemViews/
 include/KF5/KItemViews/KCategorizedSortFilterProxyModel

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/03/30 15:31:01 benoit Exp $
 ${P5ARCH}/Coro/
 ${P5ARCH}/Coro.pm
 ${P5ARCH}/Coro/AIO.pm

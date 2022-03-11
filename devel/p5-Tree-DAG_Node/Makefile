@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/01 09:05:22 benoit Exp $
-
 COMMENT=	superclass for representing nodes in a tree
 
 MODULES=	cpan

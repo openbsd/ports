@@ -1,4 +1,3 @@
-$OpenBSD: patch-kde-modules_KDECompilerSettings_cmake,v 1.8 2021/09/10 08:42:03 rsadowski Exp $
 Allow KDE5 libraries to be built without having to link to libc explicitly.
 Index: kde-modules/KDECompilerSettings.cmake
 --- kde-modules/KDECompilerSettings.cmake.orig

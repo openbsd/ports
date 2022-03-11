@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/19 09:45:45 rsadowski Exp $
-
 COMMENT =	Qt API to interact with the wayland-client and -server
 DISTNAME =	kwayland-${VERSION}
 

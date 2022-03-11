@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_server_seat_interface_cpp,v 1.1 2022/02/19 09:45:45 rsadowski Exp $
-
 Index: src/server/seat_interface.cpp
 --- src/server/seat_interface.cpp.orig
 +++ src/server/seat_interface.cpp

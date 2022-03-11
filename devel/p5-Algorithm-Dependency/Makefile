@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/10/18 07:43:24 benoit Exp $
-
 COMMENT=	base class for implementing various dependency trees
 
 MODULES=	cpan

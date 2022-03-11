@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:50 sthen Exp $
-
 MODPY_EGG_VERSION =	1.0.1
 COMMENT =	self-contained ISO 3166-1 country definitions library
 DISTNAME =	iso3166-${MODPY_EGG_VERSION}

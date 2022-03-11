@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	library of C++ classes for flexible logging
 
 DISTNAME=	log4cpp-1.1.3

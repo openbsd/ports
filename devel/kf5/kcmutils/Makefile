@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/19 10:51:00 rsadowski Exp $
-
 COMMENT =	utility classes for KDE control modules
 DISTNAME =	kcmutils-${VERSION}
 

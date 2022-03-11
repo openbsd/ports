@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/19 08:07:03 robert Exp $
-
 COMMENT =	building, finding and using the libgumbo library
 
 MODULES =	cpan

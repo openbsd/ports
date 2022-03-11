@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:45:15 sthen Exp $
-
 COMMENT=	Purdue Compiler Construction Tool Set
 
 DISTNAME=	pccts133mr33

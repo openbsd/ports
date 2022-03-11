@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/05/09 08:25:23 sthen Exp $
-
 COMMENT =	minimalist role composition tool
 
 MODULES =	cpan

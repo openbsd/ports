@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=		backport of pathlib-compatible object wrapper for zip files
 
 MODPY_EGG_VERSION=	3.5.0

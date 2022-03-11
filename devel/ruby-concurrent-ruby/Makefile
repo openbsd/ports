@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/06/16 20:57:36 sebastia Exp $
-
 COMMENT=	concurrency tools and patterns for Ruby
 
 DISTNAME=	concurrent-ruby-1.1.9

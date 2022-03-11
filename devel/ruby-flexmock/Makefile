@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT=	simple mock object for unit testing
 
 DISTNAME=	flexmock-1.3.3

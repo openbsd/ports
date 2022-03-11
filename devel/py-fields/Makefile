@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:48 sthen Exp $
-
 COMMENT =		container class boilerplate killer
 
 MODPY_EGG_VERSION =	5.0.0

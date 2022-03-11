@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/17 14:49:21 danj Exp $
-
 # XXX doesn't build if already installed
 COMMENT=	graphical subversion client
 

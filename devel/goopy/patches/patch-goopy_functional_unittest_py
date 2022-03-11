@@ -1,5 +1,3 @@
-$OpenBSD: patch-goopy_functional_unittest_py,v 1.1 2021/02/28 04:02:07 daniel Exp $
-
 Index: goopy/functional_unittest.py
 --- goopy/functional_unittest.py.orig
 +++ goopy/functional_unittest.py

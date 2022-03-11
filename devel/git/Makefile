@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.246 2022/03/10 12:03:36 kn Exp $
-
 COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools

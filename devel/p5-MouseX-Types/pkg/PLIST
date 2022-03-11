@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/22 20:30:38 sthen Exp $
 ${P5SITE}/MouseX/
 ${P5SITE}/MouseX/Types/
 ${P5SITE}/MouseX/Types.pm

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/16 04:33:07 afresh1 Exp $
 ${P5SITE}/File/Share.pm
 ${P5SITE}/File/Share.pod
 @man man/man3p/File::Share.3p

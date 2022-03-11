@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/12 07:01:36 anton Exp $
-
 COMMENT =	kernel normal form formatter
 
 V =		1.2.0

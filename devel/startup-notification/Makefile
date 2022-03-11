@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/06/10 13:05:33 ajacoutot Exp $
-
 COMMENT=		library for tracking application startup
 
 GNOME_PROJECT=		startup-notification

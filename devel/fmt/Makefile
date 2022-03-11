@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/16 08:02:17 rsadowski Exp $
-
 COMMENT=		alternative formatting library for C and C++
 
 GH_ACCOUNT=		fmtlib

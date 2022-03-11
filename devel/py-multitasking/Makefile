@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/14 19:53:11 sthen Exp $
-
 COMMENT=		non-blocking Python methods using decorators
 
 MODPY_EGG_VERSION=	0.0.10

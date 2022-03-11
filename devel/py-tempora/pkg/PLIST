@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/26 20:06:45 sthen Exp $
 @conflict py-tempora-<1.14.1p2
 @pkgpath devel/py-tempora
 bin/calc-prorate

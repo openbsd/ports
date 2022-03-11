@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:44:37 sthen Exp $
-
 COMMENT=		library of assorted spiffy things
 
 DISTNAME=		libast-0.7

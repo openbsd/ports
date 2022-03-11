@@ -1,6 +1,5 @@
 Remove type-conversion compiler warnings, no functional change.
 
-$OpenBSD: patch-CUnit_Sources_Framework_TestRun_c,v 1.1 2011/08/19 08:04:02 jasper Exp $
 --- CUnit/Sources/Framework/TestRun.c.orig	Wed Aug 17 20:25:25 2011
 +++ CUnit/Sources/Framework/TestRun.c	Wed Aug 17 20:24:22 2011
 @@ -559,7 +559,7 @@ CU_EXPORT char * CU_get_run_results_string(void)

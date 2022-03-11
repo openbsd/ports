@@ -1,4 +1,3 @@
-$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
 Prevent 'permission denied' errors during build as non-root user
 because of attempts to chown files to root.
 These install targets are run during the build, before 'make fake'.

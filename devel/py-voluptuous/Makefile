@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/23 11:14:27 sthen Exp $
-
 COMMENT =		data validation library
 
 MODPY_EGG_VERSION =	0.12.2

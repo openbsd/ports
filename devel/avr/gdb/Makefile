@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers GNU gdb
 
 VER=		6.8

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mempager_cpp,v 1.1 2018/10/28 08:59:08 bentley Exp $
-
 Index: src/mempager.cpp
 --- src/mempager.cpp.orig
 +++ src/mempager.cpp

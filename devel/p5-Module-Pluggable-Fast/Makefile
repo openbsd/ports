@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT=	instantiate plugins as they're found
 
 MODULES=	cpan

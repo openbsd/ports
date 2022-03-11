@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/12 21:17:13 sthen Exp $
 include/Judy.h
 lib/libJudy.a
 lib/libJudy.la

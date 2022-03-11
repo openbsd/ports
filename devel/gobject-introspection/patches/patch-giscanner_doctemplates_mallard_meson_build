@@ -1,5 +1,3 @@
-$OpenBSD: patch-giscanner_doctemplates_mallard_meson_build,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
-
 From effb1e09dee263cdac4ec593e8caf316e6f01fe2 Mon Sep 17 00:00:00 2001
 From: Emmanuele Bassi <ebassi@gnome.org>
 Date: Tue, 11 Jan 2022 15:51:10 +0000

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:52 sthen Exp $
-
 COMMENT=	alternative interface to File::Find
 
 MODULES=	cpan

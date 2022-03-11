@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/07 22:56:45 afresh1 Exp $
-
 COMMENT= 	check if the documentation of a module is comprehensive
 
 MODULES=	cpan

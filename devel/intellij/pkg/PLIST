@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.53 2022/02/13 07:46:38 rsadowski Exp $
 bin/idea
 bin/idea-lightedit
 bin/intellij

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:45 sthen Exp $
-
 COMMENT =		colorize your text in the terminal
 
 DISTNAME =		colorator-0.1

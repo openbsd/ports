@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/07/21 14:05:22 sthen Exp $
 @pkgpath devel/py-zopeinterface
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.interface-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth

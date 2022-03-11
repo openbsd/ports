@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2012/04/05 11:42:49 ajacoutot Exp $
 --- Makefile.in.orig	Sat Jan 14 23:44:08 2012
 +++ Makefile.in	Sat Mar 17 13:11:59 2012
 @@ -271,12 +271,10 @@ EXTRA_DIST = \

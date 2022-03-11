@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/13 15:02:07 rsadowski Exp $
-
 COMMENT =		large set of KDE widgets
 DISTNAME =		kwidgetsaddons-${VERSION}
 

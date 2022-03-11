@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/07 22:45:21 afresh1 Exp $
-
 COMMENT =		source constants from POD to avoid repetition
 
 DISTNAME =		Pod-Constant-0.1

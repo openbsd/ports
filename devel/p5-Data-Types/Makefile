@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:46 sthen Exp $
-
 COMMENT=		validate and convert data types
 
 MODULES=		cpan

@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.49 2021/10/27 17:21:58 jasper Exp $
-
 ONLY_FOR_ARCHS= i386 amd64
 
 COMMENT=	instrumented fuzzer

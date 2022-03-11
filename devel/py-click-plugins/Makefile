@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/27 13:14:30 sthen Exp $
-
 COMMENT =		register CLI commands via setuptools entry-points
 
 MODPY_EGG_VERSION =	1.1.1

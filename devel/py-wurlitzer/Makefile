@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT =		capture c-level output in context managers
 
 MODPY_EGG_VERSION =	2.0.1

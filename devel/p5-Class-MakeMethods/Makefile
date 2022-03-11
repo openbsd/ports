@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:43 sthen Exp $
-
 COMMENT= 	framework for generating methods
 
 MODULES=	cpan

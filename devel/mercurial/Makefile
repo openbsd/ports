@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.113 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 

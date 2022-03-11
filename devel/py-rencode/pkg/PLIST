@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:46 sthen Exp $
 @pkgpath devel/py-rencode
 lib/python${MODPY_VERSION}/site-packages/rencode/
 lib/python${MODPY_VERSION}/site-packages/rencode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

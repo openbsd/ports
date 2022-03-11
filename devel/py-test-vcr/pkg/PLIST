@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/01 13:11:18 sthen Exp $
 @pkgpath devel/py-test-vcr
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest_vcr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_vcr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

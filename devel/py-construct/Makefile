@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/03/01 10:29:53 sthen Exp $
-
 COMMENT =	powerful declarative parser/builder for binary data
 
 MODPY_EGG_VERSION = 2.10.68

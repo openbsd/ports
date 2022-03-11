@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_private_gcconfig_h,v 1.25 2021/06/30 07:04:25 matthieu Exp $
-
 - define USE_MMAP_ANON on OpenBSD when USE_MMAP is defined
 - All OpenBSD mips platforms are 64-bit, so correct the wordsize and alignment
 - use __data_start instead of _fdata on OpenBSD/mips64

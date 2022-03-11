@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/07 23:24:36 afresh1 Exp $
-
 COMMENT=	check for spelling errors in POD files
 
 MODULES=	cpan

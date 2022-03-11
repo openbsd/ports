@@ -1,5 +1,3 @@
-#$OpenBSD: Makefile,v 1.35 2022/02/27 12:42:43 sthen Exp $
-
 COMMENT =	accessing DVD files
 
 VER =		6.1.2

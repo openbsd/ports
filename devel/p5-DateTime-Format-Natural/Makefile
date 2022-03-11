@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/03/04 08:43:23 sthen Exp $
-
 COMMENT =	parse informal natural language date/time strings
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/11/02 15:24:49 bluhm Exp $
-
 COMMENT =	YAML and JSON for perl, optimized C
 
 DISTNAME =	YAML-Syck-1.34

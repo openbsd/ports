@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/24 23:59:57 bluhm Exp $
-
 COMMENT =	perl interface to the BSD kqueue system call
 
 DISTNAME =	IO-KQueue-0.39

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/10 03:31:45 daniel Exp $
-
 COMMENT=	fuzzer for C compilers
 
 DISTNAME=	csmith-2.3.0

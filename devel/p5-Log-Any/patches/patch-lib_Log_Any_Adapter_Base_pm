@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Log_Any_Adapter_Base_pm,v 1.1 2017/05/16 16:49:41 giovanni Exp $
 --- lib/Log/Any/Adapter/Base.pm.orig
 +++ lib/Log/Any/Adapter/Base.pm
 @@ -54,6 +54,10 @@ Log::Any::Adapter::Base

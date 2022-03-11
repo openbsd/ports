@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_tools_at,v 1.1.1.1 2010/03/22 20:53:54 espie Exp $
 --- tests/tools.at.orig	Mon Jul 27 00:21:30 2009
 +++ tests/tools.at	Mon Mar  8 12:04:46 2010
 @@ -200,12 +200,6 @@ END

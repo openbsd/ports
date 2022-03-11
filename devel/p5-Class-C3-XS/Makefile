@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/11/05 08:22:31 benoit Exp $
-
 COMMENT=		XS speed-up for Class-C3
 
 MODULES=		cpan

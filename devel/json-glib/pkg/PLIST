@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/02/14 13:02:29 jasper Exp $
 @bin bin/json-glib-format
 @bin bin/json-glib-validate
 include/json-glib-1.0/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:16 sthen Exp $
-
 COMMENT =		overrides time()/sleep() core functions for testing
 
 MODULES =		cpan

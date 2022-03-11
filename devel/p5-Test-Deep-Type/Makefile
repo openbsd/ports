@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT =	a Test::Deep plugin for validating type constraints
 
 DISTNAME =	Test-Deep-Type-0.008

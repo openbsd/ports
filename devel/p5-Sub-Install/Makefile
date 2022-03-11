@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:10 sthen Exp $
-
 COMMENT =	helper for installing code into packages
 
 DISTNAME =	Sub-Install-0.928

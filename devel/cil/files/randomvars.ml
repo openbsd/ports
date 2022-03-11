@@ -1,4 +1,3 @@
-(* $OpenBSD: randomvars.ml,v 1.2 2006/05/28 15:44:14 avsm Exp $ *)
 (*
  * Copyright (c) 2005 Anil Madhavapeddy <anil@recoil.org>
  *
@@ -14,7 +13,7 @@
  * ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
- * $Id: randomvars.ml,v 1.2 2006/05/28 15:44:14 avsm Exp $
+ * $Id: randomvars.ml,v 1.3 2022/03/11 18:49:49 naddy Exp $
  *)
 
 (* introduce log messages to trace kernel messages *)

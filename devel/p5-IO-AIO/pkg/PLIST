@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/05 07:42:54 benoit Exp $
 bin/treescan
 ${P5ARCH}/IO/
 ${P5ARCH}/IO/AIO.pm

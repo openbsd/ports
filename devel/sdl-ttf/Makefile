@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 21:02:18 sthen Exp $
-
 COMMENT=	SDL TrueType fonts library
 
 V=		2.0.11

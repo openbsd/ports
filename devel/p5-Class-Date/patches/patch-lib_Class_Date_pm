@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Class_Date_pm,v 1.2 2018/05/28 19:21:24 bluhm Exp $
-
 Disable NOTZ_TIMEZONE, it breaks in Europe/London during winter time.
 
 Index: lib/Class/Date.pm

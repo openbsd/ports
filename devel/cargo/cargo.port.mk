@@ -1,5 +1,3 @@
-# $OpenBSD: cargo.port.mk,v 1.26 2022/02/26 12:53:34 semarie Exp $
-
 CATEGORIES +=	lang/rust
 
 # List of static dependencies. The format is cratename-version.

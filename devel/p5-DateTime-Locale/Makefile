@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/27 00:12:25 afresh1 Exp $
-
 COMMENT =		localization support for DateTime.pm
 
 MODULES =		cpan

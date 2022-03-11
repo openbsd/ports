@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/12/07 07:26:55 solene Exp $
 ${P5SITE}/Devel/PartialDump.pm
 @man man/man3p/Devel::PartialDump.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/16 08:11:34 benoit Exp $
-
 COMMENT =	execute code after a scope finished compilation
 
 MODULES =	cpan

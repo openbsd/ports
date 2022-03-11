@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/19 09:45:41 rsadowski Exp $
-
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
 

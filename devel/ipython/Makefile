@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2022/01/13 19:05:04 bket Exp $
-
 COMMENT =		enhanced interactive Python shell
 
 MODPY_EGG_VERSION =	7.31.0

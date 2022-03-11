@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:41 sthen Exp $
-
 COMMENT =	Catalyst plugin to subvert NEXT to use Class::C3
 
 MODULES =	cpan

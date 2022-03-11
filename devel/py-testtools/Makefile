@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/25 18:30:05 sthen Exp $
-
 COMMENT=	extensions to the Python unit testing framework
 
 MODPY_EGG_VERSION= 1.8.1

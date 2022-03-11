@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/13 15:02:04 rsadowski Exp $
-
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
 

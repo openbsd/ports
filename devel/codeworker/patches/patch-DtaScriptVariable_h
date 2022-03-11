@@ -1,5 +1,3 @@
-$OpenBSD: patch-DtaScriptVariable_h,v 1.2 2021/02/26 18:20:32 naddy Exp $
-
 Index: DtaScriptVariable.h
 --- DtaScriptVariable.h.orig
 +++ DtaScriptVariable.h

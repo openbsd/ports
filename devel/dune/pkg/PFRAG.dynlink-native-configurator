@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.dynlink-native-configurator,v 1.1 2021/12/04 03:05:30 daniel Exp $
 lib/ocaml/dune-configurator/configurator.cmxs

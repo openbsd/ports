@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2022/02/26 20:54:37 sthen Exp $
-
 COMMENT =		Python API for advanced date calculations
 
 MODPY_EGG_VERSION =	2.8.2

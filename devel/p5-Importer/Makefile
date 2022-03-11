@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/21 13:09:01 bluhm Exp $
-
 COMMENT =	alternative but compatible interface to modules that export
 
 DISTNAME =	Importer-0.026

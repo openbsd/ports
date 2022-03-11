@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/11/03 14:07:42 jasper Exp $
-
 COMMENT=	perl module to implementing delay loading of object-data
 
 MODULES=	cpan

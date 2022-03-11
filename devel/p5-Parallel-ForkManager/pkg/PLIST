@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/06 17:20:53 okan Exp $
 ${P5SITE}/Parallel/
 ${P5SITE}/Parallel/ForkManager.pm
 @man man/man3p/Parallel::ForkManager.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-makewikiinit_c,v 1.1.1.1 2009/02/17 00:16:04 sthen Exp $
-
 http://www.cvstrac.org/cvstrac/chngview?cn=969
 Use sqlite3_free() not free() on functions returning memory strings.
 

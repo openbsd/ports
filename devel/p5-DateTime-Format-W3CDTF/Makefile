@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/12/26 20:21:00 benoit Exp $
-
 COMMENT=		parse and format W3CDTF datetime strings
 
 MODULES=		cpan

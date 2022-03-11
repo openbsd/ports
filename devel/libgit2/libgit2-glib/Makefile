@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/12/23 08:51:36 ajacoutot Exp $
-
 COMMENT=		GLib library wrapping libgit2
 
 V=			1.0.0.1

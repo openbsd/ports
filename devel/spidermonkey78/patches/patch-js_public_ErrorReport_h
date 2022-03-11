@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_public_ErrorReport_h,v 1.1 2021/03/27 00:33:54 jca Exp $
-
 Missing include with ports-gcc.
 
 Index: js/public/ErrorReport.h

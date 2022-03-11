@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:08 sthen Exp $
-
 COMMENT=	module for controlling superclass method dispatch
 
 DISTNAME=	SUPER-1.20190531

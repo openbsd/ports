@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:12 sthen Exp $
-
 COMMENT=	gdb for arm-none-eabi cross-development
 
 DISTNAME=	gdb-7.12.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2020/08/05 13:59:36 tb Exp $
-
 COMMENT =		library for USB device access from userspace
 
 VERSION =		1.0.23

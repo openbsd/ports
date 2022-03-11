@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:09 sthen Exp $
-
 COMMENT=	Emulates the sscanf() of the C stdio library
 
 MODULES=	cpan

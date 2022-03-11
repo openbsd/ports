@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/04 06:44:19 landry Exp $
-
 COMMENT=	ncurses toolkit for text-mode graphical user interfaces
 
 VER=		2.14.3

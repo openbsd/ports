@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:03 sthen Exp $
-
 COMMENT =		Automated Testing Framework
 DISTNAME =		atf-0.18
 REVISION =		3

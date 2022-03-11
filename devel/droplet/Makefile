@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/01 18:17:23 tb Exp $
-
 CATEGORIES=		devel
 COMMENT=		high performance Cloud Storage client library
 

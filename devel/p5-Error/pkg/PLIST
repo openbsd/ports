@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/10/25 11:05:32 jasper Exp $
 ${P5SITE}/Error/
 ${P5SITE}/Error.pm
 ${P5SITE}/Error/Simple.pm

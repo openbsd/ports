@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT=	stand-alone client/server 9P library
 
 DISTNAME=	libixp-0.4

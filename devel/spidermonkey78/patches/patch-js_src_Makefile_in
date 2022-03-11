@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_Makefile_in,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 Index: js/src/Makefile.in
 --- js/src/Makefile.in.orig
 +++ js/src/Makefile.in

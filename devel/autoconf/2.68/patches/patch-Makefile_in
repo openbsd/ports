@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/05/12 00:10:33 sthen Exp $
 --- Makefile.in.orig	Wed Sep 22 18:36:18 2010
 +++ Makefile.in	Sun May  1 20:49:42 2011
 @@ -323,6 +323,7 @@ install-pkgdataDATA: $(pkgdata_DATA)

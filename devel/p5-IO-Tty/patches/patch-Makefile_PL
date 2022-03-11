@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2021/03/20 15:38:39 bluhm Exp $
-
 https://github.com/toddr/IO-Tty/pull/28
 
 Index: Makefile.PL

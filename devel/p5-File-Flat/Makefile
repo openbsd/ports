@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/10/18 08:52:49 benoit Exp $
-
 COMMENT=	implements a flat filesystem
 
 MODULES=	cpan

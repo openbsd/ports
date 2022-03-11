@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_app_electron_main_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/app/electron_main.cc
 --- electron/shell/app/electron_main.cc.orig
 +++ electron/shell/app/electron_main.cc

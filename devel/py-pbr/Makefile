@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/25 18:30:05 sthen Exp $
-
 COMMENT =		Python Build Reasonableness
 
 MODPY_EGG_VERSION =	5.7.0

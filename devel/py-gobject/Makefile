@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2021/02/23 19:39:18 sthen Exp $
-
 PORTROACH=		limit:^2\.28
 
 COMMENT=		Python bindings for glib2 gobject (deprecated)

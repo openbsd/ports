@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_m4sugar_m4sugar_m4,v 1.1 2008/03/15 07:24:38 espie Exp $
 --- lib/m4sugar/m4sugar.m4.orig	Sat Mar  8 14:10:27 2008
 +++ lib/m4sugar/m4sugar.m4	Sat Mar  8 14:11:40 2008
 @@ -1348,6 +1348,7 @@ m4_define([m4_expand_once],

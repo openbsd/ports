@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:07 sthen Exp $
-
 COMMENT=	safely manipulate and inspect CVS respositories
 
 DISTNAME=	cvslock-0.2

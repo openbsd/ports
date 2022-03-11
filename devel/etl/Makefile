@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/26 22:38:05 cwen Exp $
-
 COMMENT =		C++ class and template library
 
 V =			1.2.1

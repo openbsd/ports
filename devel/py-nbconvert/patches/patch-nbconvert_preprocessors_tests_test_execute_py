@@ -1,5 +1,3 @@
-$OpenBSD: patch-nbconvert_preprocessors_tests_test_execute_py,v 1.1 2021/01/23 06:37:10 bket Exp $
-
 Index: nbconvert/preprocessors/tests/test_execute.py
 --- nbconvert/preprocessors/tests/test_execute.py.orig
 +++ nbconvert/preprocessors/tests/test_execute.py

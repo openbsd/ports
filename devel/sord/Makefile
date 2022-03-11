@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT=	lightweight C library for storing RDF data in memory
 
 DISTNAME=	sord-0.16.8

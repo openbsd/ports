@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:53 sthen Exp $
-
 COMMENT= 	install shared files, to use with File::ShareDir
 
 MODULES=	cpan

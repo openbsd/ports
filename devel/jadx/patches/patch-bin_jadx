@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_jadx,v 1.2 2019/09/13 08:25:06 rpointel Exp $
-
 Index: bin/jadx
 --- bin/jadx.orig
 +++ bin/jadx

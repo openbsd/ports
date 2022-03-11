@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/12 21:24:06 benoit Exp $
-
 COMMENT =	role for daemonizing your Moose based application
 
 MODULES =	cpan

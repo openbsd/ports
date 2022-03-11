@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT=	Arduino library for the Arduboy miniature game system
 
 V=		5.1.0

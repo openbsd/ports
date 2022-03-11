@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:59 sthen Exp $
-
 COMMENT=		Storable based binary logs
 
 DISTNAME=		Log-Dispatch-Binlog-0.02

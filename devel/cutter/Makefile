@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/20 15:37:07 rsadowski Exp $
-
 COMMENT =	RE platform powered by radare2
 
 GH_ACCOUNT =	radareorg

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_QbsBuildConfig_cmake,v 1.2 2021/12/12 07:41:46 rsadowski Exp $
-
 Do not install tests
 
 Index: cmake/QbsBuildConfig.cmake

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/11/01 19:34:46 benoit Exp $
 @bin bin/blame
 @man man/man1/blame.1

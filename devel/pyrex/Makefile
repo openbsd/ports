@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:20 sthen Exp $
-
 COMMENT=	Python-alike language for writing Python extension modules
 
 MODPY_EGG_VERSION=	0.9.9

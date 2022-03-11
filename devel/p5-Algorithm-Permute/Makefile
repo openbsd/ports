@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:44:38 sthen Exp $
-
 COMMENT=	interface to handy and fast permutation
 
 MODULES=	cpan

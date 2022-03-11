@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/02 04:27:00 jim Exp $
 ${P5SITE}/MooseX/ConfigFromFile.pm
 @man man/man3p/MooseX::ConfigFromFile.3p

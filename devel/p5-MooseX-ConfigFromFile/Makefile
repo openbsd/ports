@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/14 01:49:08 afresh1 Exp $
-
 COMMENT=		Moose role for setting attributes from a config file
 
 MODULES=		cpan

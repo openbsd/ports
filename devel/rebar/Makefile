@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/19 03:58:34 gnezdo Exp $
-
 COMMENT=		Erlang build tool
 
 GH_TAGNAME=		2.6.4

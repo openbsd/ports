@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.9 2021/12/22 07:54:17 rsadowski Exp $
-
 COMMENT =		continuous integration server
 
 DISTNAME =		jenkins

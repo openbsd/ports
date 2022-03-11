@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/28 19:18:38 tb Exp $
-
 COMMENT=	implementation of the Real-time Transport Protocol
 
 DISTNAME=	ccrtp-1.7.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:49 sthen Exp $
-
 COMMENT =	expose the flag which marks global destruction
 
 DISTNAME =	Devel-GlobalDestruction-0.14

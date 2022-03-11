@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/29 21:46:31 sthen Exp $
-
 BROKEN-riscv64 =	llvm-build: error: invalid native target: 'RISCV' (not in project)
 
 COMMENT =	multi-platform, multi-architecture assembler framework

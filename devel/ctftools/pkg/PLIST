@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/08/31 15:32:40 jasper Exp $
 @bin bin/ctfconvert
 @bin bin/ctfdump
 @bin bin/ctfmerge

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.99 2021/02/27 08:18:21 ajacoutot Exp $
-
 COMMENT=		configuration database system for GNOME
 
 GNOME_PROJECT=		GConf

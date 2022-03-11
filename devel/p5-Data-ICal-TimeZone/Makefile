@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:46 sthen Exp $
-
 COMMENT =	timezones module for Data::ICal
 
 DISTNAME =	Data-ICal-TimeZone-1.23

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:08 sthen Exp $
-
 COMMENT =		Simple DirectMedia Layer for Perl
 
 MODULES =		cpan

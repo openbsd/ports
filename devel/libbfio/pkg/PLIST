@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/18 09:22:56 rpointel Exp $
 include/libbfio/
 include/libbfio.h
 include/libbfio/codepage.h

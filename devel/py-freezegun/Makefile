@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/26 20:54:24 sthen Exp $
-
 COMMENT =		let your Python tests travel through time
 
 MODPY_EGG_VERSION =	0.3.12

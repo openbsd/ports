@@ -1,4 +1,3 @@
-# $OpenBSD: OpenBSD.clang.inc,v 1.1.1.1 2018/07/05 09:14:55 bentley Exp $
 # Copyright (c) 2005-2018 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/04 18:53:01 tb Exp $
-
 COMMENT =	portable shell library supporting the test anything protocol
 
 V =			1.1.0

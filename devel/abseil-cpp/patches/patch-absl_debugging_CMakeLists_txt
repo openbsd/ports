@@ -1,5 +1,3 @@
-$OpenBSD: patch-absl_debugging_CMakeLists_txt,v 1.1 2022/03/02 11:46:58 kn Exp $
-
 Disable all tests that require a leak sanitizer because
 OpenBSD does not support it.
 

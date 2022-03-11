@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_process_cpp,v 1.1 2012/03/30 06:09:54 ajacoutot Exp $
 --- src/process.cpp.orig	Fri Jan 16 07:27:00 2009
 +++ src/process.cpp	Sat Mar 24 10:15:59 2012
 @@ -526,7 +526,7 @@ void    Process::attach(const char *dev)

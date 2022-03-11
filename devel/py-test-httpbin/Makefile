@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/28 12:43:11 sthen Exp $
-
 COMMENT =		test your HTTP library against a local copy of httpbin
 
 MODPY_EGG_VERSION =	1.0.2

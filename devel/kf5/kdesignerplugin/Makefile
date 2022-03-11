@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:06 rsadowski Exp $
-
 COMMENT =	integrating KDE 5 widgets with Qt Designer
 DISTNAME =	kdesignerplugin-${VERSION}
 

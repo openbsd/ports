@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_old-configure_in,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 Index: js/src/old-configure.in
 --- js/src/old-configure.in.orig
 +++ js/src/old-configure.in

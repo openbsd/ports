@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/13 11:15:45 kn Exp $
-
 COMMENT =		MessagePack implementation for C and C++
 
 V =			2.1.5

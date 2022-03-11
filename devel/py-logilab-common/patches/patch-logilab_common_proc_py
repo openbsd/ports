@@ -1,5 +1,3 @@
-$OpenBSD: patch-logilab_common_proc_py,v 1.1 2016/04/27 12:02:52 shadchin Exp $
-
 OpenBSD doesn't support RLIMIT_AS
 
 --- logilab/common/proc.py.orig	Mon Oct 12 20:39:18 2015

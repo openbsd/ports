@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/28 09:20:30 benoit Exp $
 ${P5SITE}/Proc/
 ${P5SITE}/Proc/Guard.pm
 @man man/man3p/Proc::Guard.3p

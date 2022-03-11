@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/30 07:58:19 yasuoka Exp $
 include/cjose/
 include/cjose/base64.h
 include/cjose/cjose.h

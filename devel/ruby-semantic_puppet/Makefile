@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/16 20:54:04 sebastia Exp $
-
 COMMENT =		compare semantic versioning
 
 DISTNAME =		semantic_puppet-1.0.4

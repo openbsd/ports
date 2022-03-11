@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:48 sthen Exp $
-
 COMMENT =		ELF and DWARF parser library for Python
 
 MODPY_EGG_VERSION =	0.27

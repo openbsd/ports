@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/02/01 22:46:36 naddy Exp $
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
 @bin bin/mtp-connect

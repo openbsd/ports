@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		python attributes without boilerplate
 
 MODPY_EGG_VERSION =	14.3.0

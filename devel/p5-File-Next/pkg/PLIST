@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/29 08:04:04 pyr Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/Next.pm
 @man man/man3p/File::Next.3p

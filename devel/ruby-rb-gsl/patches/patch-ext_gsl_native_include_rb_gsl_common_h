@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_gsl_native_include_rb_gsl_common_h,v 1.1 2020/10/07 00:03:21 jeremy Exp $
-
 Index: ext/gsl_native/include/rb_gsl_common.h
 --- ext/gsl_native/include/rb_gsl_common.h.orig
 +++ ext/gsl_native/include/rb_gsl_common.h

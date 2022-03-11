@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/26 10:01:40 bluhm Exp $
-
 COMMENT =	check what OS we are running on
 
 DISTNAME =	Devel-CheckOS-1.87

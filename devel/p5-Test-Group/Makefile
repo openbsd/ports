@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT =	group together related tests in a test suite
 
 MODULES =	cpan

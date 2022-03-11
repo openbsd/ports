@@ -1,5 +1,3 @@
-$OpenBSD: patch-gyptest_py,v 1.3 2021/02/27 21:09:36 sthen Exp $
-
 Index: gyptest.py
 --- gyptest.py.orig
 +++ gyptest.py

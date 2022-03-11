@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/23 18:09:56 rsadowski Exp $
-
 COMMENT =		QtQuickControls 2 style for painting
 DISTNAME =		qqc2-desktop-style-${VERSION}
 PKGNAME =		kf5-qqc2-desktop-style-${VERSION}

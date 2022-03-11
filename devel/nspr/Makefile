@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.88 2022/01/04 10:37:39 landry Exp $
-
 COMMENT =		Netscape Portable Runtime
 
 VER=			4.33

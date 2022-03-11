@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/18 15:54:27 tracey Exp $
 xtensa-esp32-elf/
 xtensa-esp32-elf/bootstrap/
 xtensa-esp32-elf/bootstrap/bin/

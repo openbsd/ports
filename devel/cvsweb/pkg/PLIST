@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/11/10 08:23:35 schwarze Exp $
 cgi-bin/cvsweb
 conf/cvsweb/
 conf/cvsweb/cvsweb.conf.dist

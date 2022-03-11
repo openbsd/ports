@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/25 23:41:17 afresh1 Exp $
 ${P5SITE}/Package/DeprecationManager.pm
 @man man/man3p/Package::DeprecationManager.3p

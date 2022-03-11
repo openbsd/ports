@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/01 09:34:30 benoit Exp $
-
 COMMENT= 	declarative object constructor
 
 MODULES=	cpan

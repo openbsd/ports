@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/13 16:46:04 semarie Exp $
-
 COMMENT=	Structured Terminal Forms Language/Library
 
 DISTNAME=	stfl-0.24

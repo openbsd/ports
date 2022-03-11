@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:55 sthen Exp $
-
 COMMENT =		store multiples values per key
 
 MODULES =		cpan

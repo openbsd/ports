@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/27 00:08:32 afresh1 Exp $
-
 COMMENT =	role for classes that can be thrown
 
 MODULES =	cpan

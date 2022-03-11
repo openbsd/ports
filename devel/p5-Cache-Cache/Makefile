@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT=	perl cache interface
 
 MODULES=	cpan

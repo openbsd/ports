@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/02/19 09:45:41 rsadowski Exp $
-
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
 

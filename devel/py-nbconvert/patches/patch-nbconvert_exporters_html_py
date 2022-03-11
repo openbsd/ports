@@ -1,5 +1,3 @@
-$OpenBSD: patch-nbconvert_exporters_html_py,v 1.2 2020/03/18 18:08:13 bket Exp $
-
 Index: nbconvert/exporters/html.py
 --- nbconvert/exporters/html.py.orig
 +++ nbconvert/exporters/html.py

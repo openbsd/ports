@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:18 sthen Exp $
-
 COMMENT =	provides a registry of file types
 
 DISTNAME =	polyglot-0.3.5

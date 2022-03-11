@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:44:40 sthen Exp $
-
 COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 
 V=		0.10.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=	C++ reference implementation of the Atlas protocol
 
 VERSION=	0.4.3.1

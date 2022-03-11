@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/02/11 10:20:14 landry Exp $
-
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.7

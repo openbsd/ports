@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/19 19:30:46 jeremy Exp $
-
 COMMENT=		UUID generator
 
 DISTNAME=		uuid-2.3.9

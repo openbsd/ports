@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_datahashtable_h,v 1.1 2017/05/01 19:57:34 espie Exp $
 Index: src/datahashtable.h
 --- src/datahashtable.h.orig
 +++ src/datahashtable.h

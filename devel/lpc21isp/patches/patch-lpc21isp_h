@@ -1,4 +1,3 @@
-$OpenBSD: patch-lpc21isp_h,v 1.1 2016/12/30 21:00:21 jca Exp $
 --- lpc21isp.h.orig	Fri Dec 30 21:58:01 2016
 +++ lpc21isp.h	Fri Dec 30 21:58:11 2016
 @@ -38,7 +38,7 @@ Portions Copyright (c) by Aeolus Development 2004 http

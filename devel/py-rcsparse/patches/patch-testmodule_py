@@ -1,5 +1,3 @@
-$OpenBSD: patch-testmodule_py,v 1.2 2021/02/18 03:35:07 yasuoka Exp $
-
 Index: testmodule.py
 --- testmodule.py.orig
 +++ testmodule.py

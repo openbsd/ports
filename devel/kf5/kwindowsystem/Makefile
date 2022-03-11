@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/02/19 09:45:45 rsadowski Exp $
-
 COMMENT =		access to the windowing system for KDE apps
 DISTNAME =		kwindowsystem-${VERSION}
 

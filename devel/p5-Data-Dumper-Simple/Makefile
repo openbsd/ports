@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:45 sthen Exp $
-
 COMMENT=		easily dump variables with names
 
 DISTNAME=		Data-Dumper-Simple-0.11

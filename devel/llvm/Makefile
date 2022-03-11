@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.291 2022/03/10 00:04:05 jca Exp $
-
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 

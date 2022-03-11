@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/25 18:30:05 sthen Exp $
-
 COMMENT=		useful extra bits for Python
 
 MODPY_EGG_VERSION=	1.0.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_automake_in,v 1.2 2019/04/04 02:01:29 naddy Exp $
 Index: bin/automake.in
 --- bin/automake.in.orig
 +++ bin/automake.in

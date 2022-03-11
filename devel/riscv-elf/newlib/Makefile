@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2018/06/12 02:42:00 kevlo Exp $
-
 COMMENT=	newlib for riscv-elf cross-development
 
 VERSION=	3.0.0

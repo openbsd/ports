@@ -1,4 +1,3 @@
-$OpenBSD: patch-gdb_remote_c,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
 --- gdb/remote.c.orig	Mon Feb 25 02:59:06 2008
 +++ gdb/remote.c	Sat Jun 26 15:31:40 2010
 @@ -6102,8 +6102,9 @@ remote_xfer_partial (struct target_ops *ops, enum targ

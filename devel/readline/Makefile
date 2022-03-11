@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:45:57 sthen Exp $
-
 COMMENT =		library to edit command lines as they are typed in
 
 V =			7.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.126 2022/02/02 12:24:14 sthen Exp $
-
 NOT_FOR_ARCHS-md = alpha hppa sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:38 sthen Exp $
-
 COMMENT =	library for string essentials
 DISTNAME =	libestr-0.1.11
 CATEGORIES =	devel

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/09/17 13:22:06 ajacoutot Exp $
 --- Makefile.in.orig	Tue Apr 18 01:13:49 2006
 +++ Makefile.in	Mon Sep 15 17:13:01 2008
 @@ -61,7 +61,7 @@ includedir	= $(DESTDIR)@includedir@

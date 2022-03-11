@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/31 14:00:24 benoit Exp $
-
 COMMENT=		temporary files support for testing
 
 DISTNAME =		Test-TempDir-0.11

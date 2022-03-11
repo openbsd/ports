@@ -1,4 +1,3 @@
-$OpenBSD: patch-Source_cmComputeLinkInformation_cxx,v 1.28 2022/02/13 16:38:29 rsadowski Exp $
 Index: Source/cmComputeLinkInformation.cxx
 --- Source/cmComputeLinkInformation.cxx.orig
 +++ Source/cmComputeLinkInformation.cxx

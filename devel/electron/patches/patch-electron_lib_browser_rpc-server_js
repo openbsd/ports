@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_lib_browser_rpc-server_js,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/lib/browser/rpc-server.js
 --- electron/lib/browser/rpc-server.js.orig
 +++ electron/lib/browser/rpc-server.js

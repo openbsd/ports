@@ -1,4 +1,3 @@
-(* $OpenBSD: nullint.ml,v 1.2 2006/05/28 15:44:14 avsm Exp $ *)
 (* check for NULL/int comparisons - it does false positive at the moment *)
 
 open Pretty

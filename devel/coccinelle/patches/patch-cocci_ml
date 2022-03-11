@@ -1,4 +1,3 @@
-$OpenBSD: patch-cocci_ml,v 1.10 2021/03/15 21:02:10 sthen Exp $
 Index: cocci.ml
 --- cocci.ml.orig
 +++ cocci.ml

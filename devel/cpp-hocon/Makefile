@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/08/09 21:20:51 sebastia Exp $
-
 COMMENT =		C++ parser for the HOCON configuration language
 
 GH_TAGNAME =		0.3.0

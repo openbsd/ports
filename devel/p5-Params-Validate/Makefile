@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/12/05 19:16:15 afresh1 Exp $
-
 COMMENT =	validate method/function parameters
 
 DISTNAME =	Params-Validate-1.30

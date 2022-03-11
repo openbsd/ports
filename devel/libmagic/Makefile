@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2022/01/19 17:12:47 kmos Exp $
-
 COMMENT=	library to determine file type
 
 V=		5.41

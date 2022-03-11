@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/02/14 11:11:33 sthen Exp $
-
 COMMENT=		debugger for use with MSP 430 MCUs
 
 GH_ACCOUNT=		dlbeer

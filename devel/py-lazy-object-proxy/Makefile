@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:00:50 sthen Exp $
-
 COMMENT =		fast and thorough lazy object proxy
 
 MODPY_EGG_VERSION =	1.4.3

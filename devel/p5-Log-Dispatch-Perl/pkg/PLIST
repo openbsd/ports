@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/19 07:50:27 pirofti Exp $
 ${P5SITE}/Log/Dispatch/Perl.pm
 @man man/man3p/Log::Dispatch::Perl.3p

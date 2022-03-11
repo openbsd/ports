@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:47 sthen Exp $
-
 COMMENT=	parse a cron entry and check against current time
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/19 20:47:29 bket Exp $
-
 COMMENT =	library for asynchronous and event-based programs in Python
 
 MODPY_EGG_VERSION =	3.2.0

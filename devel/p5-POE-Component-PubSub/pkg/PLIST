@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/23 08:25:30 jasper Exp $
 ${P5SITE}/POE/Component/PubSub.pm
 @man man/man3p/POE::Component::PubSub.3p

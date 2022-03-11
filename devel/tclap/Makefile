@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:02 sthen Exp $
-
 COMMENT=	templatized C++ command line parser
 
 DISTNAME=	tclap-1.2.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:42:47 afresh1 Exp $
 ${P5SITE}/Test/Spec/
 ${P5SITE}/Test/Spec.pm
 ${P5SITE}/Test/Spec/Context.pm

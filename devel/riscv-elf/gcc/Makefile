@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/09 02:48:00 kevlo Exp $
-
 COMMENT=	gcc for riscv-elf cross-development
 
 VERSION=	8.1.0

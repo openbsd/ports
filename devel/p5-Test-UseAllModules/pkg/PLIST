@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/21 04:47:14 afresh1 Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/UseAllModules.pm
 @man man/man3p/Test::UseAllModules.3p

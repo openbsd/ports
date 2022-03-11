@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_twisted_internet_test_test_tcp_py,v 1.2 2018/08/20 21:35:11 pvk Exp $
-
 Index: src/twisted/internet/test/test_tcp.py
 --- src/twisted/internet/test/test_tcp.py.orig
 +++ src/twisted/internet/test/test_tcp.py

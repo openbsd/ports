@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.98 2022/01/13 08:06:39 ajacoutot Exp $
-
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_PROJECT= 	glade

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2020/02/28 15:43:56 ajacoutot Exp $
-
 COMMENT=		send desktop notifications to a notification daemon
 
 GNOME_VERSION=		0.7.9

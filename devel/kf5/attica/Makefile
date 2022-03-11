@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/13 15:02:03 rsadowski Exp $
-
 COMMENT =	Open Collaboration Services API implementation
 DISTNAME =	attica-${VERSION}
 PKGNAME =	kf5-${DISTNAME}

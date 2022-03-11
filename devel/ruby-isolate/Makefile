@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/11 02:41:58 jeremy Exp $
-
 COMMENT =	very simple RubyGems sandbox
 
 DISTNAME =	isolate-3.2.1

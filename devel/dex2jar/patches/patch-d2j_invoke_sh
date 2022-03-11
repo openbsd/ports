@@ -1,4 +1,3 @@
-$OpenBSD: patch-d2j_invoke_sh,v 1.1.1.1 2016/06/15 19:49:40 rpointel Exp $
 --- d2j_invoke.sh.orig	Mon Oct 27 17:32:20 2014
 +++ d2j_invoke.sh	Thu Jun  9 21:21:17 2016
 @@ -45,4 +45,6 @@ else

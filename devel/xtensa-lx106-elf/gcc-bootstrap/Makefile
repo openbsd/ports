@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/08 16:58:10 tracey Exp $
-
 COMMENT =	bootstrap compiler for ${CONFIG} cross-development
 
 VERSION =	10.2.0

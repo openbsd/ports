@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:04 sthen Exp $
-
 COMMENT=	powerful make utility
 
 DISTNAME=	xmake-1.06

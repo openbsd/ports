@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:44:38 sthen Exp $
-#
 # Note that this may not build if an older libdwarf is already installed.
 
 COMMENT=		library to access the DWARF debugging file format

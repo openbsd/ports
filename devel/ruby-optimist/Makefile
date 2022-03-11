@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/21 12:20:42 sebastia Exp $
-
 COMMENT =		commandline option parser for Ruby
 
 DISTNAME =		optimist-3.0.1

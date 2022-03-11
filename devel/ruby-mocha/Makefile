@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 21:07:45 sthen Exp $
-
 COMMENT =	Ruby library for mocking and stubbing
 
 DISTNAME =	mocha-0.13.3

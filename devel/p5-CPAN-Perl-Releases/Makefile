@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/13 14:51:28 benoit Exp $
-
 COMMENT =	mapping Perl releases to the location of the tarballs
 
 DISTNAME =	CPAN-Perl-Releases-5.20210521

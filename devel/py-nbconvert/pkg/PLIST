@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/23 06:37:10 bket Exp $
 @conflict py-nbconvert-*
 @pkgpath devel/py-nbconvert
 bin/jupyter-nbconvert

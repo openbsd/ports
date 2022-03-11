@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/02/04 10:28:52 sthen Exp $
 @comment lib/python${MODPY_VERSION}/site-packages/examples/
 @comment lib/python${MODPY_VERSION}/site-packages/examples/__init__.py
 @comment ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/examples/${MODPY_PYCACHE}/

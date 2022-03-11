@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_video_x11_SDL_x11wm_c,v 1.1 2013/12/24 20:21:42 brad Exp $
-
 Use _NET_WM_ICON if possible for X11's SDL_WM_SetIcon() implementation.
 
 --- src/video/x11/SDL_x11wm.c.orig	Thu Oct 25 21:58:52 2012

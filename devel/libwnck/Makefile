@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.70 2020/02/16 08:54:30 ajacoutot Exp $
-
 PORTROACH+=		limit:^2
 
 COMMENT=		window navigator construction kit

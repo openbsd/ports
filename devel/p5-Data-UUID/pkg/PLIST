@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/02/15 21:40:42 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Data/
 ${P5ARCH}/Data/UUID.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:02 sthen Exp $
-
 COMMENT =		simple namespaced plugin facility
 
 MODPY_EGG_VERSION =	1.5.0

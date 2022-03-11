@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/20 05:37:22 benoit Exp $
-
 COMMENT =		parse and create PostGresql date objects
 
 MODULES =		cpan

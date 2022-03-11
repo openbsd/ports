@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:58 sthen Exp $
 COMMENT=	bidirectional Hebrew support
 
 MODULES=	cpan

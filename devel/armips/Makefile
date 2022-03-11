@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/24 07:43:39 bentley Exp $
-
 COMMENT =	assembler for various ARM and MIPS platforms
 
 GH_ACCOUNT =	Kingcom

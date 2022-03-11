@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.150 2022/03/05 19:02:06 ajacoutot Exp $
-
 COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.50.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/12/22 16:42:54 op Exp $
-
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
 V=		3.0.1

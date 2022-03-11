@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/03/22 18:18:04 naddy Exp $
 ${P5SITE}/Locale/
 ${P5SITE}/Locale/Messages.pm
 ${P5SITE}/Locale/Recode/

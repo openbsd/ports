@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2022/02/19 09:45:45 rsadowski Exp $
 include/KF5/KRunner/
 include/KF5/KRunner/KRunner/
 include/KF5/KRunner/KRunner/AbstractRunner

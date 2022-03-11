@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/13 12:00:19 ajacoutot Exp $
-
 COMMENT=		GObject wrapper for libusb1
 
 GH_ACCOUNT=		hughsie

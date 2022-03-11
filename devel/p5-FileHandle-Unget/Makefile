@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT=	filehandle which supports ungetting of multiple bytes
 
 MODULES=	cpan

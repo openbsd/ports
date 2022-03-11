@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:02 sthen Exp $
-
 COMMENT=	graphical frontend to CVS
 DISTNAME=	tkcvs-8.2.3
 CATEGORIES=	devel

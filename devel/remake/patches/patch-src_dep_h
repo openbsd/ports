@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_dep_h,v 1.1 2021/02/25 15:09:09 gnezdo Exp $
-
 -fno-common
 
 Index: src/dep.h

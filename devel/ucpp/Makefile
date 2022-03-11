@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:31 jasper Exp $
-
 DISTNAME =	ucpp-1.3.2
 REVISION =	1
 COMMENT =	C preprocessor and lexer

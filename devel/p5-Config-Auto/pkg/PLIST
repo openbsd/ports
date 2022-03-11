@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/04 08:37:06 simon Exp $
 ${P5SITE}/Config/Auto.pm
 @man man/man3p/Config::Auto.3p

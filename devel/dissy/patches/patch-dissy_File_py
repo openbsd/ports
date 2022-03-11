@@ -1,4 +1,3 @@
-$OpenBSD: patch-dissy_File_py,v 1.1.1.1 2010/10/17 19:04:30 armani Exp $
 --- dissy/File.py.orig	Sat Oct 16 13:52:35 2010
 +++ dissy/File.py	Sat Oct 16 13:59:55 2010
 @@ -118,7 +118,7 @@ class File(AddressableEntity):

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/17 03:29:37 afresh1 Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/EOL.pm
 @man man/man3p/Test::EOL.3p

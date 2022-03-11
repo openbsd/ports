@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/03/04 09:47:27 sthen Exp $
-
 COMMENT =	compatibility layer between Python 2 and Python 3
 
 MODPY_EGG_VERSION =	0.18.2

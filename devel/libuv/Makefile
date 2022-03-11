@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/21 14:28:07 kn Exp $
-
 COMMENT =	multi-platform library for asynchronous I/O
 
 VER =		1.42.0

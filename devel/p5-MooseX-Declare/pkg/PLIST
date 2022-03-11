@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/01/20 09:53:46 benoit Exp $
 ${P5SITE}/MooseX/Declare/
 ${P5SITE}/MooseX/Declare.pm
 ${P5SITE}/MooseX/Declare/Context/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/20 12:36:32 bluhm Exp $
-
 COMMENT =	inlining your tests next to the code being tested
 
 DISTNAME =	Test-Inline-2.214

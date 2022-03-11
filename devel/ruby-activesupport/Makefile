@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/09/02 11:54:26 sebastia Exp $
-
 COMMENT =		support libraries and Ruby extensions extracted from Rails
 
 DISTNAME =		activesupport-6.1.4.1

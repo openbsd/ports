@@ -1,5 +1,3 @@
-$OpenBSD: patch-sources_tools_Makefile_def,v 1.2 2019/11/09 15:13:34 naddy Exp $
-
 - remove bundled libraries
 - remove gdb/sim support for gdb sprays files all around leading to conflicts
 

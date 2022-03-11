@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:12 sthen Exp $
-
 COMMENT= 	data driven test framework
 
 MODULES=	cpan

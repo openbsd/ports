@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:43 sthen Exp $
-
 COMMENT=		concise expressive creations of Class::Meta classes
 
 MODULES=		cpan

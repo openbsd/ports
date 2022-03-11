@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:44 sthen Exp $
-
 COMMENT =	minimalist class construction with chained attributes
 DISTNAME =	Class-Tiny-Chained-0.004
 CATEGORIES =	devel

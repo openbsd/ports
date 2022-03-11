@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/13 22:12:09 naddy Exp $
-
 COMMENT =	LuaDoc-compatible documentation generation system
 
 GH_ACCOUNT =	stevedonovan

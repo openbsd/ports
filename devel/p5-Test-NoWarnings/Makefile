@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/09/08 19:59:30 bluhm Exp $
-
 COMMENT =	forbids warnings while testing
 
 DISTNAME =	Test-NoWarnings-1.06

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Teensy_mk,v 1.1 2021/08/06 22:28:09 jcs Exp $
-
 Index: Teensy.mk
 --- Teensy.mk.orig
 +++ Teensy.mk

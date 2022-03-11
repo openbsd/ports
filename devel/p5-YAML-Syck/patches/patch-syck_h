@@ -1,5 +1,3 @@
-$OpenBSD: patch-syck_h,v 1.3 2020/11/02 15:24:49 bluhm Exp $
-
 Zeroing allocated space avoids a perl segfault with malloc_flags J.
 
 Index: syck.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_nfsc_libnfs_h,v 1.4 2022/02/13 20:04:03 sthen Exp $
-
 Index: include/nfsc/libnfs.h
 --- include/nfsc/libnfs.h.orig
 +++ include/nfsc/libnfs.h

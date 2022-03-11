@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/12 21:02:18 sthen Exp $
-
 COMMENT=	SDL cross-platform networking library
 
 V=		1.2.8

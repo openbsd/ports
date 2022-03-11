@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/26 22:58:21 kmos Exp $
-
 # XXX: Check _cffi__ hashes of dependent ports if updating.
 # e.g. devel/libgit2/py-git2
 

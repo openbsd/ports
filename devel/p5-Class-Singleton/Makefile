@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/07/12 12:30:40 benoit Exp $
-
 COMMENT=		perl singleton pattern
 
 MODULES=		cpan

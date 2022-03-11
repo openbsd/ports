@@ -1,5 +1,3 @@
-$OpenBSD: patch-libraries_LittleFS_lib_littlefs_scripts_prefix_py,v 1.1.1.1 2020/04/23 14:28:54 tracey Exp $
-
 Index: libraries/LittleFS/lib/littlefs/scripts/prefix.py
 --- libraries/LittleFS/lib/littlefs/scripts/prefix.py.orig
 +++ libraries/LittleFS/lib/littlefs/scripts/prefix.py

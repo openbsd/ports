@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:08 sthen Exp $
-
 COMMENT =	lexically scoped resource management
 
 MODULES =	cpan

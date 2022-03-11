@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/21 20:49:10 tb Exp $
-
 COMMENT=	event notification library
 
 V=		2.1.11

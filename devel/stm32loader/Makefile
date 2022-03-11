@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:20 sthen Exp $
-
 COMMENT=	STM32 bootloader to upload and download firmware
 
 # git checkout at 5th November 2010 from https://github.com/jsnyder/stm32loader

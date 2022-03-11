@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/02/14 13:21:06 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/

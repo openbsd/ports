@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.4 2008/03/15 07:24:38 espie Exp $
 --- doc/autoconf.texi.orig	Fri Nov 17 01:16:27 2006
 +++ doc/autoconf.texi	Sat Mar  8 14:09:57 2008
 @@ -205,27 +205,27 @@ published by the Free Software Foundation raise funds 

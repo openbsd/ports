@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/08/26 18:12:43 jeremy Exp $
-
 COMMENT =		ruby library wrapping calls to git CLI
 
 DISTNAME =		git-1.2.5

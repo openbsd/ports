@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_common_platform_util_h,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/common/platform_util.h
 --- electron/shell/common/platform_util.h.orig
 +++ electron/shell/common/platform_util.h

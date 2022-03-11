@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/02/19 09:45:43 rsadowski Exp $
-
 # XXX has some internal dependency problems, look for kpasswdserver.json
 
 COMMENT =	network transparent access to files and data in KDE

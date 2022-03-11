@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT=		create fake sharedir for testing
 
 DISTNAME =		Test-File-ShareDir-1.001002

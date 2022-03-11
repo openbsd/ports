@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:16 sthen Exp $
-
 COMMENT =	write tests in a declarative specification style
 DISTNAME =	Test-Spec-0.54
 CATEGORIES =	devel

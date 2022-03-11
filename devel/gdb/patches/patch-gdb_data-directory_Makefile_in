@@ -1,4 +1,3 @@
-$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.10 2021/10/22 18:30:36 jca Exp $
 Index: gdb/data-directory/Makefile.in
 --- gdb/data-directory/Makefile.in.orig
 +++ gdb/data-directory/Makefile.in

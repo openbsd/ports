@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_distccd_1,v 1.1.1.1 2015/12/28 08:15:31 jasper Exp $
-
 Use _distcc and don't advocate misusing the 'nobody' account.
 
 --- man/distccd.1.orig	Thu Dec 24 13:49:03 2015

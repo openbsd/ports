@@ -1,4 +1,3 @@
-$OpenBSD: patch-gas_configure_tgt,v 1.3 2018/12/26 21:27:19 pascal Exp $
 Index: gas/configure.tgt
 --- gas/configure.tgt.orig
 +++ gas/configure.tgt

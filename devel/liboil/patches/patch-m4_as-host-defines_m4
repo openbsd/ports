@@ -1,5 +1,3 @@
-$OpenBSD: patch-m4_as-host-defines_m4,v 1.2 2021/01/23 14:05:51 cwen Exp $
-
 Remove powerpc* optimisations, they're full of gcc-isms
 
 Index: m4/as-host-defines.m4

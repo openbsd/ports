@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT =		module for determining platform-specific dirs
 
 MODPY_EGG_VERSION =	1.4.3

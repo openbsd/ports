@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/19 08:18:36 benoit Exp $
-
 COMMENT=		configuration file parser library
 V =			3.2.2
 DISTNAME=		confuse-${V}

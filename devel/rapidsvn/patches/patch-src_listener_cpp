@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_listener_cpp,v 1.3 2019/01/02 12:44:06 jca Exp $
-
 wxwidgets: wxOPEN was deprecated, use wxFD_OPEN
 
 Index: src/listener.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 Index: doc/autoconf.texi
 --- doc/autoconf.texi.orig
 +++ doc/autoconf.texi

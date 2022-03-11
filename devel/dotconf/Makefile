@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:08 sthen Exp $
-
 COMMENT=		simple, powerful configuration-file parser
 
 DISTNAME=		dotconf-1.3

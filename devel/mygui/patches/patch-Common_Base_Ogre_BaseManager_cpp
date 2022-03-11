@@ -1,4 +1,3 @@
-$OpenBSD: patch-Common_Base_Ogre_BaseManager_cpp,v 1.3 2020/06/29 05:20:14 kirby Exp $
 Index: Common/Base/Ogre/BaseManager.cpp
 --- Common/Base/Ogre/BaseManager.cpp.orig
 +++ Common/Base/Ogre/BaseManager.cpp

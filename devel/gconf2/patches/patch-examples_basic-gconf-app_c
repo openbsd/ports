@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_basic-gconf-app_c,v 1.1 2016/03/01 09:24:20 ajacoutot Exp $
-
 From 0780809731c8ab1c364202b1900d3df106b28626 Mon Sep 17 00:00:00 2001
 From: Robert Ancell <robert.ancell@canonical.com>
 Date: Wed, 14 Oct 2015 10:09:49 +0100

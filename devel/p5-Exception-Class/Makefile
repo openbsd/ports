@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/25 17:43:53 afresh1 Exp $
-
 COMMENT =	module to declare real exception classes in perl
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_dub_compilers_gdc_d,v 1.1.1.1 2021/10/19 13:35:27 bcallah Exp $
-
 On GDC, the -betterC flag is named -fno-druntime.
 
 Index: source/dub/compilers/gdc.d

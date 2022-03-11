@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/14 21:46:43 bluhm Exp $
-
 COMMENT =	MooX::Options + MooX::Cmd + Sanity
 
 DISTNAME =	CLI-Osprey-0.08

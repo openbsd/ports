@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT =	check the presence of tabs in your project
 
 MODULES =	cpan

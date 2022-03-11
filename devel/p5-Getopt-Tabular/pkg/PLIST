@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/04 22:05:47 bcallah Exp $
 ${P5SITE}/Getopt/
 ${P5SITE}/Getopt/Tabular.pm
 ${P5SITE}/Getopt/Tabular.pod

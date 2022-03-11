@@ -1,4 +1,3 @@
-$OpenBSD: patch-auto_def,v 1.15 2022/02/23 17:44:27 jturner Exp $
 Index: auto.def
 --- auto.def.orig
 +++ auto.def

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:03 sthen Exp $
-
 COMMENT =	source code browser plugin for the Vim text editor
 
 DISTNAME =	taglist_46

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:15:34 sthen Exp $
-
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
 CATEGORIES =	devel x11

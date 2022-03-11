@@ -1,4 +1,3 @@
-$OpenBSD: patch-m4_Makefile_am_in,v 1.1 2004/07/19 16:12:36 espie Exp $
 --- m4/Makefile.am.in.orig	Mon Jul 19 18:01:09 2004
 +++ m4/Makefile.am.in	Mon Jul 19 18:02:01 2004
 @@ -3,13 +3,13 @@

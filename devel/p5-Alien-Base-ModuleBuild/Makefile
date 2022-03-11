@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:28:08 robert Exp $
-
 COMMENT = 	Module::Build subclass for building Alien:: modules
 
 MODULES =	cpan

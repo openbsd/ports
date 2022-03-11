@@ -1,5 +1,3 @@
-$OpenBSD: patch-Modules_Qt4ConfigDependentSettings_cmake,v 1.14 2020/05/26 15:15:09 rsadowski Exp $
-
 x11/kde4 and maybe some other spooky Qt4 ports need the magic behind
 Qt4ConfigDependentSettings also for none static libraries.
 

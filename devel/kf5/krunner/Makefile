@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/19 09:45:45 rsadowski Exp $
-
 COMMENT =		KDE framework for Plasma runners
 DISTNAME =		krunner-${VERSION}
 

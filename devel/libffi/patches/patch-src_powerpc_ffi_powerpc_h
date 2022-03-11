@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_powerpc_ffi_powerpc_h,v 1.1 2020/02/10 19:14:07 jasper Exp $
-
 Fix for:
 ../src/powerpc/ffi_powerpc.h:105: error: expected declaration
 specifiers or '...' before 'float128'

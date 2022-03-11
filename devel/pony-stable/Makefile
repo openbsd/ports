@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:16 sthen Exp $
-
 # Requires ponyc
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/12/05 18:22:22 afresh1 Exp $
-
 COMMENT =	an object representing a stack trace
 
 MODULES =	cpan

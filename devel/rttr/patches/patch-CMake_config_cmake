@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMake_config_cmake,v 1.1.1.1 2020/05/18 12:28:33 espie Exp $
-
 Index: CMake/config.cmake
 --- CMake/config.cmake.orig
 +++ CMake/config.cmake

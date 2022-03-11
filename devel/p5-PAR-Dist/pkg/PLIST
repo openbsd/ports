@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 23:29:18 espie Exp $
 ${P5SITE}/PAR/
 ${P5SITE}/PAR/Dist.pm
 @man man/man3p/PAR::Dist.3p

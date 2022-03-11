@@ -1,5 +1,3 @@
-$OpenBSD: Makefile.inc,v 1.4 2022/01/08 16:58:09 tracey Exp $
-
 CONFIG =	xtensa-lx106-elf
 CATEGORIES +=	devel
 

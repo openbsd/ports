@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/06/05 12:34:05 jasper Exp $
-
 TOOL=			gcc
 TOOL_V= 		4.6.3
 

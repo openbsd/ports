@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:05:28 sthen Exp $
 ${P5SITE}/MooseX/Types/LoadableClass.pm
 @man man/man3p/MooseX::Types::LoadableClass.3p

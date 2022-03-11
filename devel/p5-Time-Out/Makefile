@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:18 sthen Exp $
-
 COMMENT =	easily timeout long running operations
 
 DISTNAME =	Time-Out-0.11

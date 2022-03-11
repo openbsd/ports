@@ -1,5 +1,3 @@
-$OpenBSD: patch-SDL_net_h,v 1.1 2012/06/01 15:58:00 ajacoutot Exp $
-
 - Fix alignment issues on strict alignment architectures.
 - Don't unnecessarily byte-swap on big endian hosts.
 

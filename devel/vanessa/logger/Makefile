@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2015/05/22 11:31:14 ajacoutot Exp $
-
 COMMENT=	provides a generic logging layer
 
 VERSION=	0.0.10

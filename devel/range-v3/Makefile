@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/03/10 12:03:30 kn Exp $
-
 COMMENT =		range library for C++14/17/20
 
 GH_ACCOUNT =		ericniebler

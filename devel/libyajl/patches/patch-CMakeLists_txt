@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/11/02 10:43:04 ajacoutot Exp $
-
 Check for compiler flags not available with gcc < 4.
 
 --- CMakeLists.txt.orig	Tue Dec 20 01:23:22 2011

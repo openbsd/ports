@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT=	Perl extension for statvfs() and fstatvfs()
 
 MODULES=	cpan

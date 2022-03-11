@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2022/02/19 09:45:42 rsadowski Exp $
 @bin bin/kglobalaccel5
 include/KF5/KGlobalAccel/
 include/KF5/KGlobalAccel/KGlobalAccel

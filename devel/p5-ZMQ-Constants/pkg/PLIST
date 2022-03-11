@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/14 08:35:36 giovanni Exp $
 ${P5SITE}/ZMQ/
 ${P5SITE}/ZMQ/Constants/
 ${P5SITE}/ZMQ/Constants.pm

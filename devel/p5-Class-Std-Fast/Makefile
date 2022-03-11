@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:44:43 sthen Exp $
-
 COMMENT=		faster Class::Std
 
 DISTNAME=		Class-Std-Fast-v0.0.8

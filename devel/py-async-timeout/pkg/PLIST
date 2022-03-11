@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2022/02/22 04:22:20 bket Exp $
 @pkgpath devel/py-async-timeout
 lib/python${MODPY_VERSION}/site-packages/async_timeout/
 lib/python${MODPY_VERSION}/site-packages/async_timeout-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

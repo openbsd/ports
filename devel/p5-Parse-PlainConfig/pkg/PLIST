@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 15:59:33 simon Exp $
 ${P5SITE}/Parse/
 ${P5SITE}/Parse/PlainConfig.pm
 @man man/man3p/Parse::PlainConfig.3p

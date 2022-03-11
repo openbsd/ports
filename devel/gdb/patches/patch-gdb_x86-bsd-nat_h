@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdb_x86-bsd-nat_h,v 1.1 2021/10/22 18:30:36 jca Exp $
-
 Don't compile x86 debug register support on OpenBSD.
 Upstream commit 757e686afb4ac97bcf9333b10a6a0880bdd310f8
 

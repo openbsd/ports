@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/02 14:59:44 jeremy Exp $
-
 COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_run_t,v 1.1 2014/11/09 20:35:56 bluhm Exp $
 The regression test is missing from the 0.08 distribution.
 Use the file t/run.t from github.
 --- t/run.t.orig	Sun Nov  9 21:26:26 2014

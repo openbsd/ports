@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/04/04 06:21:04 naddy Exp $
-
 COMMENT =		ruby framework for Behaviour Driven Development
 DISTNAME =		rspec-1.3.2
 PORTROACH =		limit:^1

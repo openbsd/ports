@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT =	Python module for creating Excel XLSX files
 
 MODPY_EGG_VERSION = 1.2.9

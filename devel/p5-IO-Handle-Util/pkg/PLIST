@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:42 robert Exp $
 ${P5SITE}/IO/Handle/
 ${P5SITE}/IO/Handle/Iterator.pm
 ${P5SITE}/IO/Handle/Prototype/

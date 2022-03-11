@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/27 20:15:17 sthen Exp $
 include/libusb-1.0/
 include/libusb-1.0/libusb.h
 @static-lib lib/libusb-1.0.a

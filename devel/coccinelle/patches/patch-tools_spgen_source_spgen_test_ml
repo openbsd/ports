@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_spgen_source_spgen_test_ml,v 1.1 2019/03/04 12:51:12 chrisz Exp $
-
 Index: tools/spgen/source/spgen_test.ml
 --- tools/spgen/source/spgen_test.ml.orig
 +++ tools/spgen/source/spgen_test.ml

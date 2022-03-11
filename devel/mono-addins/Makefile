@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:44:42 sthen Exp $
-
 # need some kind of tls
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 USE_WXNEEDED =		Yes

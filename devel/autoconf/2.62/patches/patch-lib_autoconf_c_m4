@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_autoconf_c_m4,v 1.1 2009/06/12 19:22:57 matthieu Exp $
 --- lib/autoconf/c.m4.orig	Sun Apr  6 01:04:48 2008
 +++ lib/autoconf/c.m4	Fri Jun 12 15:28:06 2009
 @@ -1399,25 +1399,33 @@ fi

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.13 2021/03/31 18:12:19 jasper Exp $
-
 # vex is amd64-only; sync with security/angrop
 ONLY_FOR_ARCHS =	amd64
 

@@ -1,5 +1,3 @@
-# $OpenBSD: cabal.port.mk,v 1.2 2021/12/28 11:12:27 semarie Exp $
-
 # Module for building Haskell programs with cabal-install.
 # Inspired by FreeBSD cabal.mk by Gleb Popov.
 

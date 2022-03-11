@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.2 2007/07/04 16:39:41 sturm Exp $
 --- lib/Makefile.in.orig	Tue Apr  6 10:28:36 1999
 +++ lib/Makefile.in	Wed Jul  4 18:32:54 2007
 @@ -105,7 +105,7 @@ libsys_a_SOURCES = xgetcwd.c xmalloc.c getopt.c getopt

@@ -1,4 +1,3 @@
-$OpenBSD: patch-autoconf_in,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- autoconf.in.orig	Thu Jul 12 14:46:00 2001
 +++ autoconf.in	Sat Mar  8 14:09:51 2008
 @@ -99,21 +99,16 @@ ac_LF_and_DOT=`echo; echo .`

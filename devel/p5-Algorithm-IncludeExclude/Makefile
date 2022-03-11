@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:38 sthen Exp $
-
 COMMENT =	build and evaluate include/exclude lists
 
 MODULES =	cpan

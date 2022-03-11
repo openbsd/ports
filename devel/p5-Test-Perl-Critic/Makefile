@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT =	test framework to run Perl::Critic
 
 DISTNAME =	Test-Perl-Critic-1.04

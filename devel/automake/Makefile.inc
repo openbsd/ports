@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/13 10:59:26 sthen Exp $
-
 COMMENT ?=	GNU Standards-compliant Makefile generator
 HOMEPAGE ?=	https://www.gnu.org/software/automake/
 MASTER_SITES ?=	${MASTER_SITE_GNU:=automake/}

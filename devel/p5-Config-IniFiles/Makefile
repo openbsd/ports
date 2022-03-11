@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2020/07/03 21:44:45 sthen Exp $
-
 COMMENT =	module for reading .ini-style configuration files
 
 DISTNAME =	Config-IniFiles-3.000003

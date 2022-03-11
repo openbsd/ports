@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdb_config_powerpc_obsd64_mh,v 1.2 2021/10/22 18:30:36 jca Exp $
-
 Index: gdb/config/powerpc/obsd64.mh
 --- gdb/config/powerpc/obsd64.mh.orig
 +++ gdb/config/powerpc/obsd64.mh

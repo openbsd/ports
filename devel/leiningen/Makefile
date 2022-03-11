@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/04 10:11:50 op Exp $
-
 COMMENT =		Clojure project automation
 
 GH_ACCOUNT =		technomancy

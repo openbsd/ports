@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_common_NativeCompilation_gmk,v 1.4 2021/08/05 02:21:41 kurt Exp $
-
 Keep full bin/lib with debug in debuginfo file so it can be restored
 later in post-build. This results in jmod's without debuginfo so we
 get the debug package without bloating the size of the jdk package.

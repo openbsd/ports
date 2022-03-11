@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/26 14:37:57 tracey Exp $
-
 COMMENT=	binutils for xtensa-elf cross-development
 
 V=		2.27

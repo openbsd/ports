@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_java_base_share_classes_java_net_AbstractPlainDatagramSocketImpl_java,v 1.2 2022/02/20 13:51:03 kurt Exp $
-
 Index: src/java.base/share/classes/java/net/AbstractPlainDatagramSocketImpl.java
 --- src/java.base/share/classes/java/net/AbstractPlainDatagramSocketImpl.java.orig
 +++ src/java.base/share/classes/java/net/AbstractPlainDatagramSocketImpl.java

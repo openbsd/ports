@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:15:34 sthen Exp $
-
 COMMENT = 	Atmel AVR 32-bit header files
 V = 		6.1.3.1475
 DISTNAME = 	atmel-headers-${V}

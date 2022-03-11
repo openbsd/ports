@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
 include/libbamf3/
 include/libbamf3/libbamf/
 include/libbamf3/libbamf/bamf-application.h

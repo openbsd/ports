@@ -1,5 +1,3 @@
-# $OpenBSD: java.port.mk,v 1.41 2021/10/30 00:31:15 kurt Exp $
-
 # Set MODJAVA_VER to 1.8, 11 or 17 based on the version of the jdk needed
 # for the port. Append a + (e.g., 11+) if any higher version is acceptable.
 

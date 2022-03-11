@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/08 11:26:58 sthen Exp $
-
 COMMENT =		implementation of the Happy Eyeballs Algorithm
 
 MODPY_EGG_VERSION =	0.1.0

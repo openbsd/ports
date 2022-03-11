@@ -1,5 +1,3 @@
-$OpenBSD: patch-tasks_bin_cross-ruby_rake,v 1.3 2012/04/03 18:15:18 jeremy Exp $
-
 Include the mingw directory in the PATH as this file is only used
 for cross-compilation.
 

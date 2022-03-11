@@ -1,5 +1,3 @@
-$OpenBSD: patch-dwz_c,v 1.2 2021/03/08 16:51:11 sthen Exp $
-
 Create error() function, Linux-ism.
 Our libelf doesn't have some of these defines.
 obstack is not a system header

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/01 21:39:58 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Sub/
 ${P5ARCH}/Sub/Name.pm

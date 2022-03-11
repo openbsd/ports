@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:07 sthen Exp $
-
 COMMENT =		Device Firmware Update-based programmer for Atmel chips
 DISTNAME =		dfu-programmer-0.7.2
 CATEGORIES =		devel

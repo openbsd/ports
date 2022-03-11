@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/05 13:08:03 jasper Exp $
-
 COMMENT =		Git extension for versioning large files
 
 GH_PROJECT =		git-lfs

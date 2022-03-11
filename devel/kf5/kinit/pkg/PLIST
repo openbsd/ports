@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/07 14:48:48 rsadowski Exp $
 @bin bin/kdeinit5
 @bin bin/kdeinit5_shutdown
 @bin bin/kdeinit5_wrapper

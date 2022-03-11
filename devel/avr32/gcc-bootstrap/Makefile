@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/14 18:13:59 naddy Exp $
-
 COMMENT = 	bootstrap compiler for the AVR32 toolchain
 V = 		4.4.7
 DISTNAME = 	avr32-gcc-${V}

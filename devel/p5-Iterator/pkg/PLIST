@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/30 10:39:31 benoit Exp $
 ${P5SITE}/Iterator.pm
 @man man/man3p/Iterator.3p

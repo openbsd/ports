@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2021/02/27 08:37:37 ajacoutot Exp $
-
 COMMENT=		library for loading GLADE interface files at runtime
 
 GNOME_VERSION=		2.6.4

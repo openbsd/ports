@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:10 sthen Exp $
-
 COMMENT =	report TAP output by test file description
 
 MODULES =	cpan

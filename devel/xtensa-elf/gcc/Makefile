@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/26 14:37:57 tracey Exp $
-
 BROKEN-sparc64=	'build/genmddeps /usr/ports/pobj/xtensa-elf-gcc-6.3.0/gcc-6.3.0/gcc/common.md /usr/ports/pobj/xtensa-elf-gcc-6.3.0/gcc-6.3.0/gcc/config/xtensa/xtensa.md > tmp-mddeps' 'Illegal instruction (core dumped)'
 
 COMMENT=	gcc for xtensa-elf cross-development

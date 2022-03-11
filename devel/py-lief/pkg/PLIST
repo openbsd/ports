@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/22 15:42:45 jasper Exp $
 bin/elf_reader.py
 bin/macho_reader.py
 bin/pe_reader.py

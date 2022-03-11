@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/12 18:48:02 jamesw Exp $
 bin/cgiapp-starter
 bin/titanium-starter
 ${P5SITE}/Module/Starter/Plugin/CGIApp/

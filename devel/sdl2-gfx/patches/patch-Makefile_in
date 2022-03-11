@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2020/04/01 20:43:08 naddy Exp $
-
 We don't need a version number in the library name itself, on top of the SO
 number.
 

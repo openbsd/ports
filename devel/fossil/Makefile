@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2022/02/23 17:44:27 jturner Exp $
-
 COMMENT =		simple distributed software configuration management
 
 DISTNAME =		fossil-2.18

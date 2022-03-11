@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.106 2021/06/19 20:37:52 cwen Exp $
-
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15

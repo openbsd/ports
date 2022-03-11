@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:59 sthen Exp $
-
 COMMENT=		set up Log::Dispatch::Config for a test run
 
 DISTNAME=		Log-Dispatch-Config-TestLog-0.02

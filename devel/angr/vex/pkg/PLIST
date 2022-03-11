@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/15 18:36:18 kn Exp $
 include/angr-vex/
 include/angr-vex/libvex.h
 include/angr-vex/libvex_basictypes.h

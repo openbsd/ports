@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/15 08:42:53 benoit Exp $
-
 COMMENT = 	object for running system commands
 
 MODULES =	cpan

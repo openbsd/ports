@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/21 19:50:23 kmos Exp $
-
 COMMENT =	import changesets from CVS into Git
 
 MODPY_EGG_VERSION = 0.1.0

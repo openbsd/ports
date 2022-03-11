@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:25 sthen Exp $
-
 # included in python core 3.9
 COMMENT=		AST unparser for Python
 

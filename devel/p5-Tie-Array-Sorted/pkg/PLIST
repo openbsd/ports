@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 03:16:15 msf Exp $
 ${P5SITE}/Tie/
 ${P5SITE}/Tie/Array/
 ${P5SITE}/Tie/Array/Sorted/

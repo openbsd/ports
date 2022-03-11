@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:51 sthen Exp $
-
 COMMENT =		McCabe complexity checker for Python
 
 MODPY_EGG_VERSION =	0.6.1

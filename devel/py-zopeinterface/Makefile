@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/02 00:01:05 sthen Exp $
-
 COMMENT=	object interface infrastructure from Zope
 
 MODPY_EGG_VERSION=	5.4.0

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/20 08:21:28 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/enrich/
 lib/python${MODPY_VERSION}/site-packages/enrich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/enrich-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/02 11:27:07 sthen Exp $
-
 COMMENT=	debug and development tools for PHP
 
 GH_ACCOUNT=	xdebug

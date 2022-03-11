@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.142 2022/03/03 07:29:28 ajacoutot Exp $
-
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library

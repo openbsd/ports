@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:39 sthen Exp $
-
 COMMENT=		wrap OP check callbacks
 
 DISTNAME =		B-Hooks-OP-Check-0.22

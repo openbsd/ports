@@ -1,5 +1,3 @@
-$OpenBSD: patch-python_louis_Makefile_in,v 1.12 2019/12/30 14:57:24 jasper Exp $
-
 Index: python/louis/Makefile.in
 --- python/louis/Makefile.in.orig
 +++ python/louis/Makefile.in

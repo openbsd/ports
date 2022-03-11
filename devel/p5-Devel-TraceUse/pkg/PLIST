@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/01 17:11:02 espie Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/TraceUse.pm
 @man man/man3p/Devel::TraceUse.3p

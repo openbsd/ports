@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/03/11 22:27:58 naddy Exp $
-
 COMMENT=	curses development kit
 
 V=		5.0-20060507

@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_runtests_in,v 1.2 2015/05/09 15:08:24 ajacoutot Exp $
-
 Fix bug not respecting ruby version you pass to configure.
 
 Use gdiff since our diff doesn't implement --strip-trailing-cr.

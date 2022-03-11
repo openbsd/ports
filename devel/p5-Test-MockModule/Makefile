@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/09/08 18:52:13 bluhm Exp $
-
 COMMENT =	override subroutines in a module for unit testing
 
 DISTNAME =	Test-MockModule-v0.177.0

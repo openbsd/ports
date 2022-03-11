@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/28 11:40:23 ajacoutot Exp $
-
 COMMENT=		portable tools library
 
 GH_ACCOUNT=		willamowius

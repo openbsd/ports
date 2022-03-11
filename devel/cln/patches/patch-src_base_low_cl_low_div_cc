@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_base_low_cl_low_div_cc,v 1.1 2018/04/28 10:16:25 naddy Exp $
-
 Index: src/base/low/cl_low_div.cc
 --- src/base/low/cl_low_div.cc.orig
 +++ src/base/low/cl_low_div.cc

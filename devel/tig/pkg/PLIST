@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/04/10 21:29:06 sthen Exp $
 @bin bin/tig
 @man man/man1/tig.1
 @man man/man5/tigrc.5

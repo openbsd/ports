@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2022/01/05 09:46:25 kn Exp $
-
 COMMENT =	C++-native, header-only, test framework for unit-tests
 
 GH_ACCOUNT =	catchorg

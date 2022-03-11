@@ -1,4 +1,3 @@
-$OpenBSD: patch-libdwarf_Makefile_in,v 1.3 2017/02/28 21:40:03 edd Exp $
 --- libdwarf/Makefile.in.orig	Thu Nov 24 21:15:02 2016
 +++ libdwarf/Makefile.in	Mon Feb  6 14:08:02 2017
 @@ -55,7 +55,7 @@ dwfpic =        @dwfpic@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/16 14:30:58 rsadowski Exp $
-
 COMMENT =		text completion support for Qt-based apps
 DISTNAME =		kcompletion-${VERSION}
 

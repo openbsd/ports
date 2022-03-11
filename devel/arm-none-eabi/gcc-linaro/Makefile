@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/29 05:46:24 jsg Exp $
-
 BROKEN-arm=	ICE: Bus error in unwind-dw2.c
 
 COMMENT=	gcc for ${CONFIG} cross-development, Linaro version

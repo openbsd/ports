@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/31 07:43:22 benoit Exp $
-
 COMMENT =	analyze C source files and print a call graph
 
 DISTNAME =	cflow-1.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
 avr32/
 avr32/bin/
 @bin avr32/bin/ar

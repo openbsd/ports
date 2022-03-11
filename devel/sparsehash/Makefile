@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:01 sthen Exp $
-
 # g++3 chokes on the code
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 

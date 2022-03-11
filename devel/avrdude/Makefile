@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/05/18 18:36:18 tracey Exp $
-
 COMMENT=	AVR microcontroller hardware in-system programmer
 
 V=		6.3

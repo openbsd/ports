@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:57 sthen Exp $
-
 COMMENT=		manage large numbers of patches
 
 DISTNAME=		quilt-0.66

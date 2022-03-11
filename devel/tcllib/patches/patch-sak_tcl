@@ -1,5 +1,3 @@
-$OpenBSD: patch-sak_tcl,v 1.1 2018/06/13 16:01:00 stu Exp $
-
 Ignore build.tcl or else it will create /usr/ports/devel/devel.tcl.
 Tcllib bug [e334de2117].
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:01:01 sthen Exp $
-
 COMMENT =		serial interface class for Python
 
 MODPY_EGG_VERSION =	3.4

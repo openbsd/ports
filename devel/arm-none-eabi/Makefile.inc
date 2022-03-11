@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 21:02:14 sthen Exp $
-
 CONFIG?=	arm-none-eabi
 PKGNAME?=	${CONFIG}-${DISTNAME}
 FULLPKGNAME?=	${PKGNAME}

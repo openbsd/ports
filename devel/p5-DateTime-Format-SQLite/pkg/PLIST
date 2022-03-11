@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/22 20:32:59 sthen Exp $
 ${P5SITE}/DateTime/Format/SQLite.pm
 @man man/man3p/DateTime::Format::SQLite.3p

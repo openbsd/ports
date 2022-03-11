@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:07 sthen Exp $
-
 COMMENT =		Write a demo program from a tutorial POD
 
 MODULES =		cpan

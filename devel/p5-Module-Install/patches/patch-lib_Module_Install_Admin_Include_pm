@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Module_Install_Admin_Include_pm,v 1.4 2018/04/28 14:07:55 ajacoutot Exp $
 Fix whatis information.
 Index: lib/Module/Install/Admin/Include.pm
 --- lib/Module/Install/Admin/Include.pm.orig

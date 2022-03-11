@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
 DISTNAME=	libusb-compat-0.1.5

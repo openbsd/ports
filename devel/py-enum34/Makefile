@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:18 sthen Exp $
-
 COMMENT =		Python 3.4 Enum backported to previous versions
 
 MODPY_EGG_VERSION =	1.1.10

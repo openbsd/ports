@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 21:02:19 sthen Exp $
-
 COMMENT=	Tcl/C++ interface used by ns and nam
 
 V=		1.20

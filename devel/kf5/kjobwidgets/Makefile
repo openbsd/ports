@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/04/24 05:03:24 rsadowski Exp $
-
 COMMENT =	KDE widgets for showing progress of asynchronous jobs
 DISTNAME =	kjobwidgets-${VERSION}
 

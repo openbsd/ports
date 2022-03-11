@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/03 07:45:38 kmos Exp $
-
 COMMENT=	GNU Linear Programming Kit
 
 DISTNAME=	glpk-5.0

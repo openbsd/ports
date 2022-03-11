@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/07/27 19:15:17 ajacoutot Exp $
-
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.38

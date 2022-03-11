@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_clang_Makefile,v 1.1 2017/10/29 17:31:40 bcallah Exp $
-
 Index: build/clang/Makefile
 --- build/clang/Makefile.orig
 +++ build/clang/Makefile

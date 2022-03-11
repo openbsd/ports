@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_include_platform_aclinux_h,v 1.6 2020/10/11 21:10:15 daniel Exp $
 Index: source/include/platform/aclinux.h
 --- source/include/platform/aclinux.h.orig
 +++ source/include/platform/aclinux.h

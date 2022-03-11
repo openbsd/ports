@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_wasm_WasmSignalHandlers_cpp,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 Fully define all the registers needed on mips.
 
 Index: js/src/wasm/WasmSignalHandlers.cpp

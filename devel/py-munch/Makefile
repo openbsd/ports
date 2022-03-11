@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/14 11:55:25 sthen Exp $
-
 COMMENT =		dot-accessible dictionary (a la JavaScript objects)
 
 MODPY_EGG_VERSION =	2.5.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:39 sthen Exp $
-
 COMMENT= 	perform diffs on arrays
 
 MODULES=	cpan

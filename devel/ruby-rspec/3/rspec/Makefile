@@ -1,5 +1,3 @@
-#  $OpenBSD: Makefile,v 1.13 2019/07/07 18:46:44 jasper Exp $
-
 COMMENT =		ruby framework for Behaviour Driven Development
 V =			3.8.0
 DISTNAME =		rspec-$V

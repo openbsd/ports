@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/10/04 06:35:40 landry Exp $
-
 COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion

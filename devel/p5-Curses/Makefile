@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/07/03 21:44:45 sthen Exp $
-
 COMMENT=	terminal screen handling and optimisation
 
 MODULES=	cpan

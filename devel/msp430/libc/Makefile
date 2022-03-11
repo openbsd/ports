@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/05 12:34:05 jasper Exp $
-
 COMMENT=		libc for ${TARGET}
 
 TOOL=			${TARGET}-libc

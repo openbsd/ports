@@ -1,5 +1,3 @@
-#$OpenBSD: Makefile,v 1.14 2022/02/19 20:02:39 kn Exp $
-
 COMMENT =	Bounded Model Checker for C and C++ programs
 
 GH_ACCOUNT =	diffblue

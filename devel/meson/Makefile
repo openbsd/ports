@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.108 2022/02/23 08:58:43 ajacoutot Exp $
-
 COMMENT=		next-generation build system
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}

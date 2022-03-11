@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:55 sthen Exp $
-
 COMMENT=	HASH that stores values without a reference count increase
 
 DISTNAME=	Hash-NoRef-0.03

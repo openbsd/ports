@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:21 sthen Exp $
-
 COMMENT=	internationalization library written in Perl
 
 V=		1.29

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui_cpp_gwengui-cpp-config_cmake_in,v 1.2 2020/08/23 08:24:04 ajacoutot Exp $
-
 Index: gui/cpp/gwengui-cpp-config.cmake.in
 --- gui/cpp/gwengui-cpp-config.cmake.in.orig
 +++ gui/cpp/gwengui-cpp-config.cmake.in

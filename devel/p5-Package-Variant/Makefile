@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/05 19:41:58 afresh1 Exp $
-
 COMMENT =	parameterizable packages
 DISTNAME =	Package-Variant-1.003002
 CATEGORIES =	devel

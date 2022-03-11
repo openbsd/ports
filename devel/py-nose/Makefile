@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/02/26 18:15:50 sthen Exp $
-
 COMMENT=		discovery-based unittest extension
 
 MODPY_EGG_VERSION=	1.3.7

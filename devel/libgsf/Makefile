@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.100 2021/12/28 08:39:12 ajacoutot Exp $
-
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf

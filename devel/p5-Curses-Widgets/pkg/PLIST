@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Curses/
 ${P5SITE}/Curses/Widgets/
 ${P5SITE}/Curses/Widgets.pm

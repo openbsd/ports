@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:03 sthen Exp $
-
 COMMENT =	simple 6502 assembler
 
 DISTNAME =	asm6-1.6

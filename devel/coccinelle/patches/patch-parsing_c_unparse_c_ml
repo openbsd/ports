@@ -1,5 +1,3 @@
-$OpenBSD: patch-parsing_c_unparse_c_ml,v 1.3 2021/03/15 21:02:10 sthen Exp $
-
 just two simple occurences of string modification. Great!
 
 Index: parsing_c/unparse_c.ml

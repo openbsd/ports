@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/05 14:30:47 rpe Exp $
 bin/gci
 bin/gco
 @bin bin/gident

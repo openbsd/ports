@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/15 17:11:37 kmos Exp $
 include/dyncall.h
 include/dyncall_alloc_wx.h
 include/dyncall_args.h

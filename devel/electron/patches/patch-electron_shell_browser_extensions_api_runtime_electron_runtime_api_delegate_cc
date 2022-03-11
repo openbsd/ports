@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_browser_extensions_api_runtime_electron_runtime_api_delegate_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc
 --- electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc.orig
 +++ electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc

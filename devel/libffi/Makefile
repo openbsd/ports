@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2021/07/31 15:12:14 cwen Exp $
-
 COMMENT=		Foreign Function Interface
 
 DISTNAME=		libffi-3.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/01 22:46:36 naddy Exp $
-
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
 DISTNAME=		libmtp-1.1.18

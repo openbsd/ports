@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/11/06 17:10:06 benoit Exp $
 ${P5SITE}/Test/Group/
 ${P5SITE}/Test/Group.pm
 ${P5SITE}/Test/Group/Extending.pod

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:41 sthen Exp $
-
 COMMENT =	lets you build groups of accessors
 
 MODULES =	cpan

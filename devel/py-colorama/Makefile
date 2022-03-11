@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:27 sthen Exp $
-
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		print colored terminal text from Python apps

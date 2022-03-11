@@ -1,5 +1,3 @@
-$OpenBSD: patch-dateutil_test_test_parser_py,v 1.4 2021/09/02 13:26:36 sthen Exp $
-
 our strftime doesn't error out with %-d but just outputs -d rather
 than doing whatever this test wants
 

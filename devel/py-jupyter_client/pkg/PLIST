@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/23 05:05:03 bket Exp $
 @conflict py-jupyter_client-*
 @pkgpath devel/py-jupyter_client
 bin/jupyter-kernel

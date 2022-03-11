@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/13 20:26:16 sdk Exp $
-
 COMMENT =	a terminal frontend for fossil
 
 V =		0.8

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:44 sthen Exp $
-
 COMMENT =	lightweight exception class
 
 MODULES =	cpan

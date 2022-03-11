@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/13 10:59:26 sthen Exp $
-
 PORTROACH =		limit:^3
 
 CATEGORIES ?=		devel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/17 08:44:52 sthen Exp $
-
 COMMENT =		JSON encoder/decoder
 
 MODPY_EGG_VERSION =	3.17.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/06/24 13:24:52 sthen Exp $
-
 COMMENT =		c++ commandline flags processing library
 
 GH_ACCOUNT =		gflags

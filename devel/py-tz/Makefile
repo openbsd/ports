@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/03/10 10:47:09 sthen Exp $
-
 COMMENT =		Python API for dealing with timezones
 
 MODPY_EGG_VERSION =	2021.3

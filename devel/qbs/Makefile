@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/01/04 16:22:16 rsadowski Exp $
-
 BROKEN =	Segmentation fault when building qbs
 
 COMMENT =	declarative cross-platform build tool

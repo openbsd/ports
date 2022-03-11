@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:59 sthen Exp $
-
 COMMENT =	dispatches messages to one or more outputs
 
 MODULES =	cpan

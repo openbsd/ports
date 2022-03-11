@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/08/29 20:26:08 martin Exp $
 bin/vulture
 lib/python${MODPY_VERSION}/site-packages/vulture/
 lib/python${MODPY_VERSION}/site-packages/vulture-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

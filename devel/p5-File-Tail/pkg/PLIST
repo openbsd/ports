@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/02/05 03:00:32 kevlo Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/Tail.pm
 @man man/man3p/File::Tail.3p

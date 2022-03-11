@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT =	case insensitive, case preserving hash class for ruby
 
 DISTNAME =	cicphash-1.0.0

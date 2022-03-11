@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2001/09/02 03:41:30 pvalchev Exp $
 --- src/Makefile.in.orig	Mon Aug 13 13:46:21 2001
 +++ src/Makefile.in	Sat Sep  1 21:28:49 2001
 @@ -99,7 +99,7 @@ HDRS = sdlmm_global.h sdlmm.h sdlmm_spoi

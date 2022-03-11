@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:52 sthen Exp $
-
 COMMENT =		compare two directories using callbacks
 
 MODULES =		cpan

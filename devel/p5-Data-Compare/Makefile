@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/12/05 19:06:31 afresh1 Exp $
-
 COMMENT =	compare perl data structures
 
 MODULES =	cpan

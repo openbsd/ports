@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/14 13:47:42 cwen Exp $
 ${P5ARCH}/
 ${P5ARCH}/Ref/
 ${P5ARCH}/Ref/Util/

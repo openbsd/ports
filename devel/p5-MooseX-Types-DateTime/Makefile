@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/24 01:30:01 afresh1 Exp $
-
 COMMENT=		DateTime related constraints and coercions for Moose
 
 MODULES=		cpan

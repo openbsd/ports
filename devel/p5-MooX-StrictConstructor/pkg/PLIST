@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/14 15:55:30 fcambus Exp $
 ${P5SITE}/Method/Generate/Constructor/
 ${P5SITE}/Method/Generate/Constructor/Role/
 ${P5SITE}/Method/Generate/Constructor/Role/StrictConstructor.pm

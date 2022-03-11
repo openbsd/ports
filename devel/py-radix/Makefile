@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:00 sthen Exp $
-
 COMMENT =		Radix tree implementation for Python
 
 MODPY_EGG_VERSION = 	0.10.0

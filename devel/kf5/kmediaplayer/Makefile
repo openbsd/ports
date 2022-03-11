@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/13 15:02:06 rsadowski Exp $
-
 COMMENT =		interface for media player KParts
 DISTNAME =		kmediaplayer-${VERSION}
 

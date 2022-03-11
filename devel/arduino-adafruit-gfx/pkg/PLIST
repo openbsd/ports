@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/17 21:54:18 jcs Exp $
 share/arduino/libraries/Adafruit_GFX/
 share/arduino/libraries/Adafruit_GFX/.gitignore
 share/arduino/libraries/Adafruit_GFX/.travis.yml

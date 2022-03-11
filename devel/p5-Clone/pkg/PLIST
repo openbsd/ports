@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/12/05 19:00:08 afresh1 Exp $
 ${P5ARCH}/
 ${P5ARCH}/Clone.pm
 ${P5ARCH}/auto/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:03 sthen Exp $
-
 COMMENT=	standalone version of argument parsing functions from GLIBC
 
 DISTNAME=	argp-standalone-1.3

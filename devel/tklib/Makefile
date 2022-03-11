@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:03 sthen Exp $
-
 COMMENT =	Tk Standard Library
 
 DISTNAME =	tklib-0.6pl5

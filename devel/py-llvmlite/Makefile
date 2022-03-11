@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:51 sthen Exp $
-
 BROKEN =	requires update to 0.34.0 for LLVM 10
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 

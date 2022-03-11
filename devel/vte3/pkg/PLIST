@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.41 2021/10/26 10:36:49 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte-${API_V}

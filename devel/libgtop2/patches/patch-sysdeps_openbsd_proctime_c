@@ -1,5 +1,3 @@
-$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.13 2018/04/27 10:20:03 robert Exp $
-
 Index: sysdeps/openbsd/proctime.c
 --- sysdeps/openbsd/proctime.c.orig
 +++ sysdeps/openbsd/proctime.c

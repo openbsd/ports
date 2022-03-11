@@ -1,5 +1,3 @@
-# $OpenBSD: crates.inc,v 1.1.1.1 2021/09/13 20:51:37 abieber Exp $
-
 MODCARGO_CRATES +=	abscissa_core	0.5.2	# Apache-2.0
 MODCARGO_CRATES +=	abscissa_derive	0.5.0	# Apache-2.0
 MODCARGO_CRATES +=	addr2line	0.13.0	# Apache-2.0/MIT

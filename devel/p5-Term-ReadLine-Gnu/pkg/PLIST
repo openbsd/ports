@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/05/19 21:07:18 cwen Exp $
 bin/perlsh
 ${P5ARCH}/
 ${P5ARCH}/Term/

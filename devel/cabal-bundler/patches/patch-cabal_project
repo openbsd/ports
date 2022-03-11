@@ -1,5 +1,3 @@
-$OpenBSD: patch-cabal_project,v 1.1 2021/05/25 02:54:25 gnezdo Exp $
-
 Avoid building the parts we don't use that drag in extra dependencies.
 
 Index: cabal.project

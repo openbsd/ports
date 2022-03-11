@@ -1,5 +1,3 @@
-$OpenBSD: patch-libdwarf_configure,v 1.2 2017/02/28 21:40:03 edd Exp $
-
 Adjust configure tests to ensure HAVE_ELF64_RELA and HAVE_ELF64_SYM get
 defined.
 

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/10 12:54:44 awolk Exp $
 ${P5SITE}/Shell.pm
 @man man/man3p/Shell.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:06 sthen Exp $
-
 COMMENT =	build an optimized subroutine parameter validator
 
 DISTNAME =	Params-ValidationCompiler-0.30

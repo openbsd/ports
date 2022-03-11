@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	coroutine oriented portable asynchronous services for lua
 
 DISTNAME=	copas-1.1.6

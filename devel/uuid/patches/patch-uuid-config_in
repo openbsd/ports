@@ -1,4 +1,3 @@
-$OpenBSD: patch-uuid-config_in,v 1.1 2013/06/19 14:34:52 sthen Exp $
 --- uuid-config.in.orig	Tue Jun 18 14:58:42 2013
 +++ uuid-config.in	Tue Jun 18 14:59:00 2013
 @@ -121,7 +121,7 @@ do

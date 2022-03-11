@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/05 18:31:54 cwen Exp $
 ${P5SITE}/DateTime/Format/Flexible/
 ${P5SITE}/DateTime/Format/Flexible.pm
 ${P5SITE}/DateTime/Format/Flexible/lang/

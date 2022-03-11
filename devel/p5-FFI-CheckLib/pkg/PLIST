@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/23 17:47:50 bluhm Exp $
 ${P5SITE}/FFI/
 ${P5SITE}/FFI/CheckLib.pm
 @man man/man3p/FFI::CheckLib.3p

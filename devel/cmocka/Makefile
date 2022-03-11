@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:05 sthen Exp $
-
 COMMENT =		elegant unit testing framework for C
 
 DISTNAME =		cmocka-1.1.3

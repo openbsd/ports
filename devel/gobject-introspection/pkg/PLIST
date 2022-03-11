@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.29 2022/01/13 08:06:39 ajacoutot Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 bin/g-ir-doc-tool

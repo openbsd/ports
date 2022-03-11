@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:04 sthen Exp $
-
 COMMENT =		Bash unit testing framework based on xUnit principles
 
 DISTNAME =		bashunit-20140327

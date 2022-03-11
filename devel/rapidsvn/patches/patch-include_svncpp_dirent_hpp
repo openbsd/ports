@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_svncpp_dirent_hpp,v 1.1 2016/06/14 08:42:46 czarkoff Exp $
 --- include/svncpp/dirent.hpp.orig	Thu Jun 28 08:39:20 2012
 +++ include/svncpp/dirent.hpp	Wed Jun  1 04:27:23 2016
 @@ -41,7 +41,7 @@ namespace svn

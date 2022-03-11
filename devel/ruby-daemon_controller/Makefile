@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT =		robust daemon management
 
 DISTNAME =		daemon_controller-1.2.0

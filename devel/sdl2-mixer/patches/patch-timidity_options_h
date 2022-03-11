@@ -1,5 +1,3 @@
-$OpenBSD: patch-timidity_options_h,v 1.1 2018/04/27 15:43:20 jasper Exp $
-
 Index: timidity/options.h
 --- timidity/options.h.orig
 +++ timidity/options.h

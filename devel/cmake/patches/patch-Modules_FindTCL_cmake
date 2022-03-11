@@ -1,4 +1,3 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.16 2019/08/21 05:47:40 rsadowski Exp $
 Index: Modules/FindTCL.cmake
 --- Modules/FindTCL.cmake.orig
 +++ Modules/FindTCL.cmake

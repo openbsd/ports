@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/05 08:43:18 bluhm Exp $
 ${P5SITE}/Data/Validate/Struct.pm
 @man man/man3p/Data::Validate::Struct.3p

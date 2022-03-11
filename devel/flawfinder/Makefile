@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/02 00:00:23 sthen Exp $
-
 COMMENT=		C/C++ source code auditing tool
 
 GH_ACCOUNT =		david-a-wheeler

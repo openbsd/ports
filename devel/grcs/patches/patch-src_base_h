@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_base_h,v 1.1 2017/05/04 16:58:49 espie Exp $
-
 Index: src/base.h
 --- src/base.h.orig
 +++ src/base.h

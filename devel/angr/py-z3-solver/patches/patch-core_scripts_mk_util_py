@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_scripts_mk_util_py,v 1.7 2021/01/21 19:46:15 jasper Exp $
-
 Remove hardcoded optimizations.
 
 Index: core/scripts/mk_util.py

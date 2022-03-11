@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/13 14:03:03 jasper Exp $
 @bin bin/vtags
 @man man/man1/vtags.1

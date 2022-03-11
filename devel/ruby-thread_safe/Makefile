@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT=		make thread safe programming in Ruby easier
 
 DISTNAME=		thread_safe-0.3.6

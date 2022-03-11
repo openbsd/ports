@@ -1,4 +1,3 @@
-$OpenBSD: patch-autoheader_sh,v 1.5 2004/07/24 15:48:49 espie Exp $
 --- autoheader.sh.orig	Sat Jul 24 17:38:42 2004
 +++ autoheader.sh	Sat Jul 24 17:38:55 2004
 @@ -110,19 +110,10 @@ else

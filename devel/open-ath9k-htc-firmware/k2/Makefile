@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2017/11/17 23:50:44 bentley Exp $
-
 COMMENT =		free firmware for Atheros AR9271
 
 ATH9K_FIRMWARE =	k2

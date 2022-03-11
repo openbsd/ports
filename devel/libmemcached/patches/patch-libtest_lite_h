@@ -1,5 +1,3 @@
-$OpenBSD: patch-libtest_lite_h,v 1.1 2015/11/10 08:43:36 sebastia Exp $
-
 configure tests for availability of alloca.h, but
 it's used unconditionally here.
 

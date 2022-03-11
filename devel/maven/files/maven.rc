@@ -1,5 +1,3 @@
-# $OpenBSD: maven.rc,v 1.3 2014/11/11 08:40:38 jasper Exp $
-#
 # Define JAVA_HOME, M2_HOME and MAVEN_OPTS here.
 #
 

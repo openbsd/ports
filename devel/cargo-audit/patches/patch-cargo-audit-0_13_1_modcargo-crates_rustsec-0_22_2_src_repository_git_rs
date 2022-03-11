@@ -1,5 +1,3 @@
-$OpenBSD: patch-cargo-audit-0_13_1_modcargo-crates_rustsec-0_22_2_src_repository_git_rs,v 1.1.1.1 2021/09/13 20:51:37 abieber Exp $
-
 Index: cargo-audit-0.13.1/modcargo-crates/rustsec-0.22.2/src/repository/git.rs
 --- cargo-audit-0.13.1/modcargo-crates/rustsec-0.22.2/src/repository/git.rs.orig
 +++ cargo-audit-0.13.1/modcargo-crates/rustsec-0.22.2/src/repository/git.rs

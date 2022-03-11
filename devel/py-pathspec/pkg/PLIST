@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/11/18 09:32:45 sthen Exp $
 @pkgpath devel/py-pathspec
 lib/python${MODPY_VERSION}/site-packages/pathspec/
 lib/python${MODPY_VERSION}/site-packages/pathspec-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

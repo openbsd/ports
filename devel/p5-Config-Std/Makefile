@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:45 sthen Exp $
-
 COMMENT=		use standard configuration files
 
 MODULES=		cpan

@@ -1,4 +1,3 @@
-$OpenBSD: patch-glade_Makefile_in,v 1.4 2009/03/17 16:01:17 ajacoutot Exp $
 --- glade/Makefile.in.orig	Tue Mar 17 15:25:37 2009
 +++ glade/Makefile.in	Tue Mar 17 16:55:36 2009
 @@ -261,7 +261,7 @@ libglade_2_0_la_SOURCES = \

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ld_Makefile_in,v 1.2 2021/04/28 03:35:52 jsg Exp $
-
 Index: ld/Makefile.in
 --- ld/Makefile.in.orig
 +++ ld/Makefile.in

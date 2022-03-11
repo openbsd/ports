@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/01 21:45:42 msf Exp $
 ${P5SITE}/Time/
 ${P5SITE}/Time/CTime.pm
 ${P5SITE}/Time/DaysInMonth.pm

@@ -1,4 +1,3 @@
-$OpenBSD: patch-adb_adb_c,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
 --- adb/adb.c.orig	Mon Feb  9 09:10:55 2015
 +++ adb/adb.c	Tue May  5 07:56:50 2015
 @@ -1191,7 +1191,7 @@ int launch_server(int server_port)

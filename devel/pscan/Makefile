@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/11/11 17:35:50 jca Exp $
-
 COMMENT=	limited problem scanner for C source files
 
 V=		1.3

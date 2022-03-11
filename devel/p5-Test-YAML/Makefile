@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:17 sthen Exp $
-
 COMMENT =		testing module for YAML implementations
 
 DISTNAME =		Test-YAML-1.07

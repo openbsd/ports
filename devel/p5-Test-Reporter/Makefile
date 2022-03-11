@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT = 	sends test results to cpan-testers@perl.org
 
 MODULES =	cpan

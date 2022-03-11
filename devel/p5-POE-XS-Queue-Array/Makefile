@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:04 sthen Exp $
-
 COMMENT=	C implementation of priority queues
 
 MODULES=	cpan

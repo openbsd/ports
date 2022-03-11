@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/11/02 00:00:26 sthen Exp $
-
 COMMENT=		I18N/L10N tools for Python
 
 MODPY_EGG_VERSION=	2.9.1

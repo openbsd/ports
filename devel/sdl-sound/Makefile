@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:01 sthen Exp $
-
 COMMENT=	library that handles the decoding of sound file formats
 
 DISTNAME=	SDL_sound-1.0.3

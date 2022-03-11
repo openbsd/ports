@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/11/03 14:07:43 jasper Exp $
-
 COMMENT=		recursively merge hashes
 
 DISTNAME=		deep_merge-1.2.1

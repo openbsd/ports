@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:44 sthen Exp $
-
 COMMENT =		choose appropriate clone utility
 
 DISTNAME =		Clone-Choose-0.010

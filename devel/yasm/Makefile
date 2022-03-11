@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:04 sthen Exp $
-
 COMMENT=	complete rewrite of the NASM assembler
 
 DISTNAME=	yasm-1.3.0

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/17 12:21:36 jasper Exp $
 msp430/include/
 msp430/include/bits/
 msp430/include/bits/byteswap.h

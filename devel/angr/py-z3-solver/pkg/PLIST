@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/25 13:07:36 kn Exp $
 @conflict z3-*
 @bin bin/z3
 lib/python${MODPY_VERSION}/site-packages/z3/

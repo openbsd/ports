@@ -1,4 +1,3 @@
-$OpenBSD: patch-goopy_functional_py,v 1.2 2021/02/28 04:02:07 daniel Exp $
 Index: goopy/functional.py
 --- goopy/functional.py.orig
 +++ goopy/functional.py

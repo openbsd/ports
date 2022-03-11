@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:10 sthen Exp $
-
 COMMENT =	efficient generation of subroutines via string eval
 
 DISTNAME =	Sub-Quote-2.006006

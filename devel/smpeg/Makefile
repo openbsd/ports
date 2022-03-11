@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT=	MPEG video player library with sound support
 
 DISTNAME=	smpeg-0.4.4

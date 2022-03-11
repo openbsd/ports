@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/16 14:31:00 rsadowski Exp $
-
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
 

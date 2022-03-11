@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:11 sthen Exp $
-
 COMMENT= 	handles various forms of terminal input
 
 MODULES=	cpan

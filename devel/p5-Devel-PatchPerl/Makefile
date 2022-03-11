@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/06/13 15:34:11 benoit Exp $
-
 COMMENT =	patch perl source a la Devel::PPPort's buildperl.pl
 
 DISTNAME =	Devel-PatchPerl-2.08

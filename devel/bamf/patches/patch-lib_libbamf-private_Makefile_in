@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_libbamf-private_Makefile_in,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
-
 Put the sed flag in the right place.
 
 Index: lib/libbamf-private/Makefile.in

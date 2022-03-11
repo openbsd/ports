@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:10 sthen Exp $
-
 COMMENT=		SOAP/REST Web Services and XML-Based apps toolkit
 
 V=			2.8.82

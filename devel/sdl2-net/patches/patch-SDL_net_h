@@ -1,4 +1,3 @@
-$OpenBSD: patch-SDL_net_h,v 1.1.1.1 2013/11/07 16:25:22 bcallah Exp $
 --- SDL_net.h.orig	Sat Oct 12 17:26:39 2013
 +++ SDL_net.h	Sat Oct 12 17:28:26 2013
 @@ -365,7 +365,7 @@ extern DECLSPEC const char * SDLCALL SDLNet_GetError(v

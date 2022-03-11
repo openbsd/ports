@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2022/02/19 09:45:44 rsadowski Exp $
 @bin bin/kpackagetool5
 include/KF5/KPackage/
 include/KF5/KPackage/KPackage/

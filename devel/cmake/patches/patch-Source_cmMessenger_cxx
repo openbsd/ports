@@ -1,4 +1,3 @@
-$OpenBSD: patch-Source_cmMessenger_cxx,v 1.3 2020/01/11 08:01:09 rsadowski Exp $
 Index: Source/cmMessenger.cxx
 --- Source/cmMessenger.cxx.orig
 +++ Source/cmMessenger.cxx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/02 00:01:00 sthen Exp $
-
 COMMENT=		RCS parsing library for Python
 
 GH_ACCOUNT=		corecode

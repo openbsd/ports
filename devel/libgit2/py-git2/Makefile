@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2022/02/23 09:01:31 ajacoutot Exp $
-
 COMMENT=		libgit2 bindings in Python
 
 MODPY_EGG_VERSION=	1.9.0

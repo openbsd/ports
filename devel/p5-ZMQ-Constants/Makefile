@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT =	constants for libzmq
 
 MODULES =	cpan

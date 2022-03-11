@@ -1,4 +1,3 @@
-$OpenBSD: patch-_config_release_mk,v 1.1.1.1 2017/02/04 12:40:43 edd Exp $
 --- .config/release.mk.orig	Tue Jan 17 22:17:32 2017
 +++ .config/release.mk	Tue Jan 17 22:17:38 2017
 @@ -1 +1 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/08/04 09:45:30 cwen Exp $
-
 COMMENT =		module which implements the Observer pattern for POE
 
 DISTNAME =		POE-Component-Syndicator-0.06

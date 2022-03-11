@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT =	BSD process resource limit and priority functions
 
 DISTNAME =	BSD-Resource-1.2911

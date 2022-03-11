@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2017/05/02 19:28:25 rsadowski Exp $
 --- configure.orig	Sun Jul  3 11:13:03 2011
 +++ configure	Wed Apr 26 07:45:39 2017
 @@ -6267,7 +6267,7 @@ fi

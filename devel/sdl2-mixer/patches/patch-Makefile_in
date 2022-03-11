@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2018/04/27 15:43:20 jasper Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/29 04:47:17 rsadowski Exp $
 @bin bin/uctags
 @bin bin/uoptscript
 @bin bin/ureadtags

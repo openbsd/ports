@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/10/07 00:03:21 jeremy Exp $
-
 COMMENT =	Ruby interface to GSL
 
 DISTNAME =	gsl-2.1.0.3

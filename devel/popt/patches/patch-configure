@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2011/10/24 18:52:18 jasper Exp $
 --- configure.orig	Sat Sep  3 04:16:58 2011
 +++ configure	Sat Sep  3 04:17:21 2011
 @@ -16076,7 +16076,7 @@ _ACEOF

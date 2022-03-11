@@ -1,5 +1,3 @@
-$OpenBSD: patch-adb_adb_auth_host_c,v 1.1 2022/01/14 10:34:19 tb Exp $
-
 Fix build with opaque RSA in LibreSSL 3.5.
 
 Index: adb/adb_auth_host.c

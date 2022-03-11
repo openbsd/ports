@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/03/16 18:07:40 naddy Exp $
 bin/gsl-config
 @bin bin/gsl-histogram
 @bin bin/gsl-randist

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT=	benchmarking with statistical confidence
 
 MODULES=	cpan

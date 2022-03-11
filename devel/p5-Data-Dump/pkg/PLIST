@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/02 04:14:16 jim Exp $
 ${P5SITE}/Data/
 ${P5SITE}/Data/Dump/
 ${P5SITE}/Data/Dump.pm

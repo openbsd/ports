@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/20 16:44:22 naddy Exp $
-
 COMMENT=	open-source electronics prototyping platform
 
 V=		1.8.10

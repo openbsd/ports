@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2020/07/06 10:11:58 sthen Exp $
-
 COMMENT=	perl interface to the Glib libraries
 
 V =		1.3293

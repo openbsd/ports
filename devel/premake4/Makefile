@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/25 22:26:02 sthen Exp $
-
 COMMENT=		build configuration tool
 
 # XXX the C code embeds the lua sources that we have to patch. Use

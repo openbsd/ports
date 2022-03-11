@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/07/02 16:08:06 fcambus Exp $
-
 COMMENT=		graphical representation of CVS repository
 
 DISTNAME=		cvsgraph-1.7.2

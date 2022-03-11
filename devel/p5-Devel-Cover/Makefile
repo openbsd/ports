@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2022/03/04 08:54:14 sthen Exp $
-
 COMMENT =	code coverage metrics for Perl
 
 MODULES =	cpan

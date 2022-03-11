@@ -1,4 +1,3 @@
-$OpenBSD: patch-ddd_LabelH_C,v 1.1 2017/05/04 16:44:05 espie Exp $
 Motif 1.1 is long gone, and this breaks with clang
 
 Index: ddd/LabelH.C

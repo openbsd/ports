@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/22 13:55:55 espie Exp $
-
 COMMENT-main =		distributed builds for C, C++ and Objective C
 COMMENT-gtk =		GTK+ monitor for distcc
 COMMENT-server =	distcc server

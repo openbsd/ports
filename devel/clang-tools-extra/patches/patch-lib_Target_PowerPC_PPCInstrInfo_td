@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCInstrInfo_td,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
-
 Add RETGUARD implementation for powerpc and powerpc64.
 
 Index: lib/Target/PowerPC/PPCInstrInfo.td

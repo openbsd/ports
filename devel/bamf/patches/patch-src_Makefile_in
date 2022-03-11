@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
-
 Remove flags that aren't understood.
 
 Index: src/Makefile.in

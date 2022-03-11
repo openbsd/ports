@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/26 22:28:43 sthen Exp $
-
 COMMENT =	Python Sorted Container Types
 
 MODPY_EGG_VERSION =	2.4.0

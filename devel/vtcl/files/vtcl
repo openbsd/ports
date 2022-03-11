@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $OpenBSD: vtcl,v 1.1 2010/11/04 17:51:46 jasper Exp $
 
 VTCL_HOME=${LOCALBASE}/lib/vtcl
 PATH_TO_WISH=${MODTK_BIN}

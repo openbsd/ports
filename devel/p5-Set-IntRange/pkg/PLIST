@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 15:18:40 espie Exp $
 ${P5SITE}/Set/
 ${P5SITE}/Set/IntRange.pm
 @man man/man3p/Set::IntRange.3p

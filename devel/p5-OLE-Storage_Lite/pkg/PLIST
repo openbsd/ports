@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/05 21:15:25 jasper Exp $
 ${P5SITE}/OLE/
 ${P5SITE}/OLE/Storage_Lite.pm
 @man man/man3p/OLE::Storage_Lite.3p

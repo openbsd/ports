@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.80 2021/11/02 00:00:49 sthen Exp $
-
 COMMENT=		Python bindings for GLib and GObject
 
 GNOME_PROJECT=		pygobject

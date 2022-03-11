@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_greenlet_slp_platformselect_h,v 1.1 2021/10/31 19:35:14 sthen Exp $
-
 Give it a chance to build on ppc & mips
 
 Index: src/greenlet/slp_platformselect.h

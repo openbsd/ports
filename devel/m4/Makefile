@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/10/05 21:50:40 jca Exp $
-
 COMMENT=	GNU m4
 
 DISTNAME=	m4-1.4.18

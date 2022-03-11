@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_kssl_kopenssl_cpp,v 1.3 2021/10/31 17:01:48 tb Exp $
-
 Fix compile
 
 Index: src/kssl/kopenssl.cpp

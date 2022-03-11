@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:44:01 espie Exp $
 include/sfio/
 include/sfio/ast_common.h
 include/sfio/sfdisc.h

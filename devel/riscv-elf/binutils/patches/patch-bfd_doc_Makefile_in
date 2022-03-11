@@ -1,5 +1,3 @@
-$OpenBSD: patch-bfd_doc_Makefile_in,v 1.2 2021/04/28 03:35:52 jsg Exp $
-
 Index: bfd/doc/Makefile.in
 --- bfd/doc/Makefile.in.orig
 +++ bfd/doc/Makefile.in

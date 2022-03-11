@@ -1,5 +1,3 @@
-$OpenBSD: patch-generate_unix_Makefile_rules,v 1.1 2019/06/10 17:17:44 sthen Exp $
-
 Index: generate/unix/Makefile.rules
 --- generate/unix/Makefile.rules.orig
 +++ generate/unix/Makefile.rules

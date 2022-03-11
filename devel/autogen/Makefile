@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=	automatic text creation from templates
 CATEGORIES=	devel
 

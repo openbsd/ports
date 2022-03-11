@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/09 08:39:40 sthen Exp $
-
 COMMENT =	turn your Moose class into a singleton
 
 DISTNAME =	MooseX-Singleton-0.30

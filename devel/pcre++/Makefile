@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:15 sthen Exp $
-
 COMMENT=		wrapper class around the pcre library
 
 DISTNAME=		pcre++-0.9.5

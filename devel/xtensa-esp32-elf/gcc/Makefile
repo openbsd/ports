@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/08 16:58:33 tracey Exp $
-
 COMMENT =	gcc for ${CONFIG} cross-development
 
 V =		8.4.0

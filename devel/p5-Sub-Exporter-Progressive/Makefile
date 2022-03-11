@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:09 sthen Exp $
-
 COMMENT =		only use Sub::Exporter if you need it  
 
 DISTNAME =		Sub-Exporter-Progressive-0.001013

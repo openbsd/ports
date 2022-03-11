@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.11 2020/06/04 08:00:34 jasper Exp $
-
 # Arches suggested by upstream, unsure which work on OpenBSD for sure.
 ONLY_FOR_ARCHS ?=	amd64 i386
 # We need to figure out which of the following arches work and fix ones

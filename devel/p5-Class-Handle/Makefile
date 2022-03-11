@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:42 sthen Exp $
-
 COMMENT=	module to create objects that are handles to classes
 
 MODULES=	cpan

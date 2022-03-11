@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/02 08:37:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/Misc/
 lib/python${MODPY_VERSION}/site-packages/Misc/NEWS.d/
 lib/python${MODPY_VERSION}/site-packages/Misc/NEWS.d/next/

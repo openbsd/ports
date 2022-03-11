@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:59 espie Exp $
 ${P5SITE}/MLDBM/Sync/
 ${P5SITE}/MLDBM/Sync.pm
 ${P5SITE}/MLDBM/Sync/SDBM_File.pm

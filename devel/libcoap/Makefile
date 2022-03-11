@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/03 13:50:12 sthen Exp $
-
 COMMENT=	communicate with embedded devices using CoAP (RFC 7252)
 
 GH_ACCOUNT=	obgm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/02/26 03:31:14 gnezdo Exp $
-
 COMMENT=		parser generator for Haskell
 
 MODCABAL_STEM=		happy

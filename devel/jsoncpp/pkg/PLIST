@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/09 05:22:53 rsadowski Exp $
 include/json/
 include/json/allocator.h
 include/json/assertions.h

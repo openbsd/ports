@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/22 19:55:49 afresh1 Exp $
-
 COMMENT=		logging role for Moose
 
 DISTNAME=		MooseX-LogDispatch-1.2002

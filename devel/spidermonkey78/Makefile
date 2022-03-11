@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/29 13:19:22 daniel Exp $
-
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
 

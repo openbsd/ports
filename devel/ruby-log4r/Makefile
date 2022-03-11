@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:07:45 sthen Exp $
-
 COMMENT =		log4j implementation for Ruby
 
 DISTNAME =		log4r-1.1.10

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2019/11/10 08:23:35 schwarze Exp $
-
 COMMENT=	CGI script to browse CVS repository trees
 
 DISTNAME=	cvsweb-2.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/08 15:24:00 bket Exp $
 lib/python${MODPY_VERSION}/site-packages/puremagic/
 lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/puremagic-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

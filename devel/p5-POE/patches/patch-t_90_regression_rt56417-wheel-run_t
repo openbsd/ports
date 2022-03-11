@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_90_regression_rt56417-wheel-run_t,v 1.1 2018/12/03 21:47:21 bluhm Exp $
 Fix child process leaking, solution given by upstream
 see https://code.activestate.com/lists/perl-poe/5008/
 Index: t/90_regression/rt56417-wheel-run.t

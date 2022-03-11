@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/31 17:08:22 sthen Exp $
 bin/pyqt-bundle
 bin/pyqt-qt-wheel
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/11 13:14:27 sthen Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/Inspector/
 ${P5SITE}/Class/Inspector.pm

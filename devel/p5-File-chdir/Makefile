@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT=	more sensible way to change directories
 
 MODULES=	cpan

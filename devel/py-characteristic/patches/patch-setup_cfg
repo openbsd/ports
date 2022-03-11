@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_cfg,v 1.1.1.1 2019/12/02 22:40:38 kmos Exp $
-
 Newer setuptools requires tools:pytest
 
 Index: setup.cfg

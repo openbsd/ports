@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/05 07:42:54 benoit Exp $
-
 COMMENT=	asynchronous Input/Output
 
 MODULES=	cpan

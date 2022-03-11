@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/01 02:50:51 afresh1 Exp $
 ${P5SITE}/Getopt/
 ${P5SITE}/Getopt/Euclid.pm
 @man man/man3p/Getopt::Euclid.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cil_mllib,v 1.1 2019/03/04 12:51:12 chrisz Exp $
-
 This would cause unsolvable circular dependencies since the
 feature modules would have to be linked after the Cil module,
 but before the Feature_config module, which is not possible

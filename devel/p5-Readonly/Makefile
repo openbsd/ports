@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:07 sthen Exp $
-
 COMMENT =	facility for creating read-only scalars, arrays, hashes
 
 MODULES =	cpan

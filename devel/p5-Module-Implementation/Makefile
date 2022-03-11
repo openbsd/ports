@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT =		loads one of several alternate module implementations
 
 DISTNAME =		Module-Implementation-0.09

@@ -1,4 +1,3 @@
-$OpenBSD: patch-vstring_h,v 1.2 2011/01/10 14:54:52 shadchin Exp $
 --- vstring.h.orig	Tue Jul  7 09:47:00 2009
 +++ vstring.h	Sun Jan  9 20:21:17 2011
 @@ -24,7 +24,7 @@

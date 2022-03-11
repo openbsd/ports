@@ -1,4 +1,3 @@
-$OpenBSD: patch-gdb_avr-tdep_c,v 1.1 2010/06/27 20:58:10 ckuethe Exp $
 --- gdb/avr-tdep.c.orig	Fri Jan 11 06:19:59 2008
 +++ gdb/avr-tdep.c	Sat Jun 26 15:31:25 2010
 @@ -181,8 +181,10 @@ struct avr_unwind_cache

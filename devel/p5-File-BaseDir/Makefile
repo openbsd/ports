@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:52 sthen Exp $
-
 COMMENT=		use the freedesktop Base Directory Specification
 
 DISTNAME=		File-BaseDir-0.08

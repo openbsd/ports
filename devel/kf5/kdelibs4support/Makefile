@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/12/19 10:51:01 rsadowski Exp $
-
 COMMENT =		legacy support for kdelibs-4.x compatibility
 DISTNAME =		kdelibs4support-${VERSION}
 

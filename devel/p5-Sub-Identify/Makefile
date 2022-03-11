@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:10 sthen Exp $
-
 COMMENT =		retrieve names of code references
 DISTNAME =		Sub-Identify-0.14
 CATEGORIES =		devel

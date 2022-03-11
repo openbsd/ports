@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/03/11 15:12:53 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/enum/
 lib/python${MODPY_VERSION}/site-packages/enum/__init__.py
 lib/python${MODPY_VERSION}/site-packages/enum/__init__.pyc

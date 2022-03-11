@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:06 sthen Exp $
-
 COMMENT=		perl6-like method signature parser
 
 DISTNAME =		Parse-Method-Signatures-1.003019

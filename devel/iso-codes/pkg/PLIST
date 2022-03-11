@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.29 2020/05/28 19:12:04 jasper Exp $
 share/iso-codes/
 share/iso-codes/json/
 share/iso-codes/json/iso_15924.json

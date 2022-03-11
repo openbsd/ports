@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 15:18:26 espie Exp $
 ${P5SITE}/IPC/
 ${P5SITE}/IPC/Run/
 ${P5SITE}/IPC/Run.pm

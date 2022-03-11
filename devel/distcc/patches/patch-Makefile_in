@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2021/01/31 19:28:02 sthen Exp $
-
 Don't install gzip'd manpages
 
 Index: Makefile.in

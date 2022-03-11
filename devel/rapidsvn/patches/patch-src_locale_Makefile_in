@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_locale_Makefile_in,v 1.1 2013/03/20 09:50:37 sthen Exp $
 --- src/locale/Makefile.in.orig	Tue Mar 19 14:04:15 2013
 +++ src/locale/Makefile.in	Tue Mar 19 14:04:25 2013
 @@ -198,8 +198,7 @@ RAPIDSVN_LANGUAGES = de fr it_IT pt_BR ru es uk zh_CN 

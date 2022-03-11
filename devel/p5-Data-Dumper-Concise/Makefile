@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/06 04:15:40 afresh1 Exp $
-
 COMMENT =		less indentation and newlines plus sub deparsing
 
 DISTNAME =		Data-Dumper-Concise-2.023

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/23 18:09:54 rsadowski Exp $
-
 COMMENT =		extensions for the Qt model-view framework
 DISTNAME =		kitemviews-${VERSION}
 

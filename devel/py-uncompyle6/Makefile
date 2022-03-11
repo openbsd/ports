@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/28 15:35:39 sthen Exp $
-
 BROKEN = doesn't handle python 3.9.10 yet
 
 COMMENT =		Python cross-version byte-code deparser

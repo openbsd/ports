@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:03 sthen Exp $
-
 COMMENT=	library providing malloc debugging via VM protection
 
 DISTNAME=	ElectricFence-2.0.5

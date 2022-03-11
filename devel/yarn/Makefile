@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/27 08:51:18 sthen Exp $
-
 COMMENT =	fast, reliable, and secure dependency management for node.js
 
 V =		v1.22.11

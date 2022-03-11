@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/02 16:25:43 landry Exp $
-
 COMMENT =	parser for HTTP messages focused on performance
 GH_ACCOUNT =	nodejs
 GH_PROJECT =	http-parser

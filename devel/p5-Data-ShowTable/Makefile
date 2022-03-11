@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/06 15:09:25 kettenis Exp $
-
 COMMENT=		print arrays of data in a nicely formatted listing
 
 MODULES=		cpan

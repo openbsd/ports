@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/03 16:10:28 simon Exp $
 ${P5SITE}/Set/
 ${P5SITE}/Set/Infinite/
 ${P5SITE}/Set/Infinite.pm

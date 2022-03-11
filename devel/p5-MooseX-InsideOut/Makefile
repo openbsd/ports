@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:29 cwen Exp $
-
 COMMENT =		inside-out objects with Moose
 
 DISTNAME =		MooseX-InsideOut-0.106

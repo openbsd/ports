@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/12/15 03:56:34 brad Exp $
 @conflict sdlmm-doc-*
 @pkgpath devel/sdlmm,-main
 @pkgpath devel/sdlmm,-docs

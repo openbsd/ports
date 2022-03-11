@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/22 04:22:20 bket Exp $
-
 COMMENT=		python library to easily handle data structure
 
 GH_ACCOUNT=		getting-things-gnome

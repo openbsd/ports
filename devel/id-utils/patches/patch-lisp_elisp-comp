@@ -1,4 +1,3 @@
-$OpenBSD: patch-lisp_elisp-comp,v 1.1 2004/07/19 16:12:36 espie Exp $
 --- lisp/elisp-comp.orig	Fri Apr 18 08:43:32 1997
 +++ lisp/elisp-comp	Mon Jul 19 18:02:48 2004
 @@ -34,7 +34,7 @@ else

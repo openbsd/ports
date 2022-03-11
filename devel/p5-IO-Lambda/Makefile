@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:56 sthen Exp $
-
 COMMENT =	non-blocking I/O as lambda calculus
 
 DISTNAME =	IO-Lambda-1.30

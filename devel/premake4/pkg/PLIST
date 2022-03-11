@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/12/04 11:31:35 jca Exp $
 @bin bin/premake4

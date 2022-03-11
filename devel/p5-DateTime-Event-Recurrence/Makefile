@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:48 sthen Exp $
-
 COMMENT =	DateTime::Set extension to create basic recurrence sets
 
 DISTNAME =	DateTime-Event-Recurrence-0.19

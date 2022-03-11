@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_autotest_Makefile_in,v 1.1.1.1 2003/06/09 12:04:15 espie Exp $
 --- lib/autotest/Makefile.in.orig	Mon Nov 25 17:01:27 2002
 +++ lib/autotest/Makefile.in	Mon Nov 25 17:01:41 2002
 @@ -94,7 +94,7 @@ target_alias = @target_alias@

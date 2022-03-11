@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:18 sthen Exp $
-
 COMMENT =	Variable ties made easier
 
 MODULES =	cpan

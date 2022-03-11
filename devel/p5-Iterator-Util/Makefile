@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:57 sthen Exp $
-
 COMMENT =	essential utilities for the Iterator class.
 
 DISTNAME =	Iterator-Util-0.02

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/07/20 23:09:38 bluhm Exp $
 ${P5ARCH}/AE.pm
 ${P5ARCH}/AnyEvent/
 ${P5ARCH}/AnyEvent.pm

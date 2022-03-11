@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2022/01/14 19:49:12 sthen Exp $
-
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_jtag_drivers_cmsis_dap_usb_hid_c,v 1.1 2021/05/19 16:09:17 paco Exp $
-
 Index: src/jtag/drivers/cmsis_dap_usb_hid.c
 --- src/jtag/drivers/cmsis_dap_usb_hid.c.orig
 +++ src/jtag/drivers/cmsis_dap_usb_hid.c

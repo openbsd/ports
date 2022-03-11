@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_PowerPC_CMakeLists_txt,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
-
 Index: lib/Target/PowerPC/CMakeLists.txt
 --- lib/Target/PowerPC/CMakeLists.txt.orig
 +++ lib/Target/PowerPC/CMakeLists.txt

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/02/13 11:05:11 sthen Exp $
 bin/pcre2-config
 @bin bin/pcre2grep
 @bin bin/pcre2test

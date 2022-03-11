@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:51 sthen Exp $
-
 COMMENT=	high level API for event-based execution flow control
 
 MODULES=	cpan

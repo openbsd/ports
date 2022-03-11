@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/03/15 21:02:11 sthen Exp $
-
 COMMENT =	simple parallel processing fork manager
 
 MODULES =	cpan

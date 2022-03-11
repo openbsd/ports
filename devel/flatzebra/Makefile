@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/03/26 20:51:02 naddy Exp $
-
 COMMENT=	generic game engine library
 
 VERSION =	0.1.7

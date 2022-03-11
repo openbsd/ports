@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=		measures number of terminal column cells of wide-char code
 
 MODPY_EGG_VERSION=	0.1.9

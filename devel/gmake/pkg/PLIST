@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/02/01 15:29:25 naddy Exp $
 @bin bin/gmake
 include/gnumake.h
 @info info/make.info

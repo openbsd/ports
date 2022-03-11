@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/16 12:29:59 abieber Exp $
-
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser

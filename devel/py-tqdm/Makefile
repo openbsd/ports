@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =		progress bar for Python
 
 MODPY_EGG_VERSION =	4.52.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2020/06/20 19:45:36 kmos Exp $
-
 COMMENT=	utilities for dot.desktop entries
 
 DISTNAME=	desktop-file-utils-0.26

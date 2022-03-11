@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/07 12:54:22 abieber Exp $
-
 COMMENT =	lua bindings for OpenBSD functions
 
 GH_ACCOUNT =	n0la

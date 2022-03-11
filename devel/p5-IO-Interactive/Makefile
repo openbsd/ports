@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/25 22:58:51 bluhm Exp $
-
 COMMENT =	utilities for interactive I/O
 
 DISTNAME =	IO-Interactive-1.023

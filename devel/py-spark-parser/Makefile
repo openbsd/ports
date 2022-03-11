@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:01:02 sthen Exp $
-
 COMMENT =		early-algorithm context-free grammar parser
 
 MODPY_EGG_VERSION =	1.6.1

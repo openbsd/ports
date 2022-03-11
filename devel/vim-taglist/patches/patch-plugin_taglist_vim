@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugin_taglist_vim,v 1.2 2019/09/06 14:51:46 sthen Exp $
-
 Index: plugin/taglist.vim
 --- plugin/taglist.vim.orig
 +++ plugin/taglist.vim

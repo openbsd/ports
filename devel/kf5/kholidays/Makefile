@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/19 16:25:05 rsadowski Exp $
-
 COMMENT =		holiday calculation library
 DISTNAME =		kholidays-${VERSION}
 

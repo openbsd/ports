@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/03/14 10:16:31 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf,-main
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*

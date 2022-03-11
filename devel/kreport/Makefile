@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/13 06:57:54 rsadowski Exp $
-
 COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.2.0

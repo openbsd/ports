@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/31 18:12:19 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/ailment/
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/ailment-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

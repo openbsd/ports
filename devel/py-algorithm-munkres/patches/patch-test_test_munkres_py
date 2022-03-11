@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_test_munkres_py,v 1.1 2019/11/12 10:03:14 kmos Exp $
-
 Move tests from nose to pytest
 https://github.com/bmc/munkres/pull/32
 

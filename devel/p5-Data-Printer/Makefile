@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:46 sthen Exp $
-
 COMMENT =	colored pretty-print of Perl data structures and objects
 
 DISTNAME =	Data-Printer-0.40

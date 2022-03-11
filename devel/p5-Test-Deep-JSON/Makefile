@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:12 sthen Exp $
-
 COMMENT =	compare JSON with Test::Deep
 
 DISTNAME =	Test-Deep-JSON-0.05

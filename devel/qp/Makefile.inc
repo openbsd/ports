@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:26 sthen Exp $
-
 COMMENT ?=	active object framework
 
 V ?=		6.0.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/19 09:45:44 rsadowski Exp $
-
 COMMENT =	KDE desktop notifications framework
 DISTNAME =	knotifications-${VERSION}
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:02 sthen Exp $
-
 COMMENT=		method declarations with type constraints
 
 DISTNAME=		MooseX-Method-Signatures-0.49

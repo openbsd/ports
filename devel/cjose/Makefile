@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/27 12:29:13 yasuoka Exp $
-
 COMMENT =		Javascript Object Signing and Encryption library
 
 GH_ACCOUNT =		cisco

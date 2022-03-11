@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/09 00:14:13 bluhm Exp $
-
 COMMENT =	alternative interface to File::Find::Object
 
 DISTNAME =	File-Find-Object-Rule-0.0313

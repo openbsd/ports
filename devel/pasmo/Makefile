@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:45:15 sthen Exp $
-
 COMMENT =	Z80 cross assembler
 DISTNAME =	pasmo-0.5.3
 REVISION =	0

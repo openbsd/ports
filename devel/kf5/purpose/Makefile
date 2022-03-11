@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/13 15:02:07 rsadowski Exp $
-
 COMMENT =		framework to create integrate services and actions
 DISTNAME =		purpose-${VERSION}
 

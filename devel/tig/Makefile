@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2022/01/21 20:59:25 sthen Exp $
-
 COMMENT =	ncurses Git repository browser
 
 V =		2.5.5

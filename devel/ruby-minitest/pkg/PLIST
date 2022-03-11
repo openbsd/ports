@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/03/14 07:39:59 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:29 cwen Exp $
-
 COMMENT =		prompt for user input with a default option
 
 DISTNAME =		IO-Prompt-Tiny-0.003

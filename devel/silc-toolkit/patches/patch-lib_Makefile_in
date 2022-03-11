@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.6 2014/07/16 16:13:35 brad Exp $
 --- lib/Makefile.in.orig	Tue May 13 02:20:24 2014
 +++ lib/Makefile.in	Sat Jul 12 20:39:49 2014
 @@ -423,7 +423,7 @@ AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign

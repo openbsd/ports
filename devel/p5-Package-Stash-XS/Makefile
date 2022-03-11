@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:05 sthen Exp $
-
 COMMENT =	faster and more correct implementation of Package::Stash
 DISTNAME =	Package-Stash-XS-0.29
 CATEGORIES =	devel

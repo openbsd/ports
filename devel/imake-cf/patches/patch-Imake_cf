@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imake_cf,v 1.2 2016/09/07 10:01:19 jasper Exp $
 --- Imake.cf.orig	Tue Dec 22 02:28:02 2015
 +++ Imake.cf	Wed Sep  7 12:00:22 2016
 @@ -132,18 +132,27 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/20 05:50:16 benoit Exp $
-
 COMMENT =	simple, extensible Perl debugger
 
 MODULES =	cpan

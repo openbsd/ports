@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/06/05 12:34:05 jasper Exp $
-
 TOOL=			gdb
 TOOL_V= 		7.2a
 LTS_V=			20111205

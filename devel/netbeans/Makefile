@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2021/12/12 07:05:36 rsadowski Exp $
-
 COMMENT=		NetBeans Java IDE
 
 V=			12.6

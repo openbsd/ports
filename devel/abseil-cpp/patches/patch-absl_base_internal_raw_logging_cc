@@ -1,5 +1,3 @@
-$OpenBSD: patch-absl_base_internal_raw_logging_cc,v 1.1 2022/03/02 11:46:58 kn Exp $
-
 Index: absl/base/internal/raw_logging.cc
 --- absl/base/internal/raw_logging.cc.orig
 +++ absl/base/internal/raw_logging.cc

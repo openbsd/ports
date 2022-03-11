@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/21 02:41:48 msf Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Expect.pm
 @man man/man3p/Test::Expect.3p

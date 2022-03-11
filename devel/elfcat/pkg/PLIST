@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 16:36:59 fcambus Exp $
 @bin bin/elfcat

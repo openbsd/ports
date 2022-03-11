@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/26 22:59:44 naddy Exp $
-
 # XXX
 # This port is more or less a copy from devel/llvm and it tries to
 # package the clang extra tools without increasing the complexity of

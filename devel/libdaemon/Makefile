@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:44:37 sthen Exp $
-
 COMMENT=		lightweight C library that eases the writing of daemons
 
 DISTNAME=		libdaemon-0.14

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/06/19 05:22:32 rsadowski Exp $
-
 COMMENT =		unit testing framework
 
 V =			2.0.0

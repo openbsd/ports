@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.29 2019/10/16 06:51:42 giovanni Exp $
 @pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/03/11 10:43:30 fcambus Exp $
 include/libspectrum.h
 @static-lib lib/libspectrum.a
 lib/libspectrum.la

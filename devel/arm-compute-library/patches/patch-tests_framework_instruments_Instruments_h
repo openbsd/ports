@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_framework_instruments_Instruments_h,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
-
 Index: tests/framework/instruments/Instruments.h
 --- tests/framework/instruments/Instruments.h.orig
 +++ tests/framework/instruments/Instruments.h

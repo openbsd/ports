@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/02/26 20:50:01 sthen Exp $
 @conflict py-test-benchmark-<3.2.2p2
 @pkgpath devel/py-test-benchmark
 bin/py.test-benchmark

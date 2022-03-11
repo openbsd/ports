@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/15 08:17:08 benoit Exp $
-
 COMMENT=	dynamically create Perl language bindings
 
 DISTNAME =	Glib-Object-Introspection-0.049

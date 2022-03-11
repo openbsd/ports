@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/09 17:11:31 sthen Exp $
 ${P5SITE}/Switch.pm
 @man man/man3p/Switch.3p

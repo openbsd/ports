@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdb_regformats_reg-xtensa_dat,v 1.1.1.1 2020/03/11 14:24:58 tracey Exp $
-
 Index: gdb/regformats/reg-xtensa.dat
 --- gdb/regformats/reg-xtensa.dat.orig
 +++ gdb/regformats/reg-xtensa.dat

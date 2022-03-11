@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT =	compare difference between numbers against a given tolerance
 
 DISTNAME =	Test-Number-Delta-1.06

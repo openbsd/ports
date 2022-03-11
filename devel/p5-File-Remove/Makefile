@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/11/05 10:19:18 benoit Exp $
-
 COMMENT=	remove files and directories with perl
 
 MODULES=	cpan

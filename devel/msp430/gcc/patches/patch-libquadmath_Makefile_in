@@ -1,4 +1,3 @@
-$OpenBSD: patch-libquadmath_Makefile_in,v 1.1 2012/04/17 12:20:46 jasper Exp $
 --- libquadmath/Makefile.in.orig	Sun Apr 15 19:10:57 2012
 +++ libquadmath/Makefile.in	Sun Apr 15 19:12:43 2012
 @@ -1247,7 +1247,7 @@ info: info-am

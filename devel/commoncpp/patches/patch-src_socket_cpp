@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_socket_cpp,v 1.1 2018/04/08 13:29:08 jasper Exp $
-
 - warning: switch condition has boolean value
 - properly namespace bind
 

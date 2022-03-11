@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_delete_test,v 1.5 2019/05/27 10:59:32 jca Exp $
 Index: test/delete.test
 --- test/delete.test.orig
 +++ test/delete.test

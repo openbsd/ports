@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/05 08:50:30 benoit Exp $
-
 COMMENT=		determine file types
 
 DISTNAME =		File-MimeInfo-0.31

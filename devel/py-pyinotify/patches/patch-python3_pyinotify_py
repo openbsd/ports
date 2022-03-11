@@ -1,5 +1,3 @@
-$OpenBSD: patch-python3_pyinotify_py,v 1.2 2018/01/24 18:40:18 jasper Exp $
-
 https://github.com/seb-m/pyinotify/pull/153
 
 Index: python3/pyinotify.py

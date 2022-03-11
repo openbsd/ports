@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/17 14:49:21 danj Exp $
-
 COMMENT =	user-space USB HID access library written in C
 
 DISTNAME =	libhid-0.2.16

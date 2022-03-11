@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:57 sthen Exp $
-
 COMMENT =	import packages into other packages
 
 MODULES =	cpan

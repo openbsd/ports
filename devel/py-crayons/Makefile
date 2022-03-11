@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:47 sthen Exp $
-
 COMMENT =		textUI colors for Python
 
 MODPY_EGG_VERSION =	0.4.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT =		file matching and globbing library
 
 MODPY_EGG_VERSION =	8.1.1

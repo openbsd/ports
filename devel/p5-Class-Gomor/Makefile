@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:42 sthen Exp $
-
 COMMENT=	class and object builder
 
 MODULES=	cpan

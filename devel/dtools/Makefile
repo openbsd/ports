@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/17 01:43:18 bcallah Exp $
-
 # Can't use gdc yet
 ONLY_FOR_ARCHS =	amd64
 

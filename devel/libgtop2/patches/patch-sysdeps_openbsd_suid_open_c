@@ -1,5 +1,3 @@
-$OpenBSD: patch-sysdeps_openbsd_suid_open_c,v 1.8 2018/04/27 10:20:03 robert Exp $
-
 Index: sysdeps/openbsd/suid_open.c
 --- sysdeps/openbsd/suid_open.c.orig
 +++ sysdeps/openbsd/suid_open.c

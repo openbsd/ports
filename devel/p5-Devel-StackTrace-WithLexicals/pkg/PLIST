@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 01:56:17 afresh1 Exp $
 ${P5SITE}/Devel/StackTrace/WithLexicals/
 ${P5SITE}/Devel/StackTrace/WithLexicals.pm
 ${P5SITE}/Devel/StackTrace/WithLexicals/Frame.pm

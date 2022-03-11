@@ -1,4 +1,3 @@
-$OpenBSD: patch-libsparse_output_file_c,v 1.1.1.1 2015/05/28 09:42:37 ajacoutot Exp $
 --- libsparse/output_file.c.orig	Mon Feb  9 09:10:55 2015
 +++ libsparse/output_file.c	Tue May  5 07:56:50 2015
 @@ -41,7 +41,7 @@

@@ -1,4 +1,3 @@
-$OpenBSD: patch-guile-2_init,v 1.1 2013/12/06 14:29:26 espie Exp $
 --- guile-2.init.orig	Fri Dec  6 14:44:27 2013
 +++ guile-2.init	Fri Dec  6 14:44:41 2013
 @@ -209,7 +209,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.69 2022/02/19 19:18:59 kurt Exp $
-
 ONLY_FOR_ARCHS=	i386 amd64 aarch64 sparc64
 USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel

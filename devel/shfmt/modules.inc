@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.2 2022/03/07 18:03:30 abieber Exp $
-
 MODGO_MODULES =	\
 	github.com/creack/pty		 v1.1.15 \
 	github.com/frankban/quicktest	 v1.13.1 \

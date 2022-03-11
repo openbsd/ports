@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:01 sthen Exp $
-
 COMMENT =	easy aliasing of methods and attributes in Moo
 DISTNAME =	MooX-Aliases-0.001006
 CATEGORIES =	devel

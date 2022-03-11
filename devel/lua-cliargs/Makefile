@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT =	command line parser for Lua
 
 V =		3.0-1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_src_prefix_cpp,v 1.3 2014/09/11 14:02:55 ajacoutot Exp $
 --- src/src/prefix.cpp.orig	Thu Sep 11 14:39:47 2014
 +++ src/src/prefix.cpp	Thu Sep 11 14:40:07 2014
 @@ -230,8 +230,10 @@ br_prepend_prefix (void *symbol, char *path)

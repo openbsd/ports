@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_Makefile_in,v 1.4 2021/11/28 11:40:23 ajacoutot Exp $
-
 Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
 
 Index: plugins/Makefile.in

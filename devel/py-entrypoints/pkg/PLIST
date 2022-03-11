@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:43 sthen Exp $
 @pkgpath devel/py-entrypoints
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}entrypoints.${MODPY_PYC_MAGIC_TAG}pyc

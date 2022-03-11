@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:14 sthen Exp $
-
 COMMENT =	precision testing for modern perl
 
 DISTNAME =	Test-Modern-0.013

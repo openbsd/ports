@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:43 sthen Exp $
-
 COMMENT =	syntax analysis tool for Tcl
 
 DISTNAME =	nagelfar125

@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.2 2018/10/31 12:38:38 bket Exp $
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py

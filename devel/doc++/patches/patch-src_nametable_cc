@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_nametable_cc,v 1.1 2017/05/01 19:57:34 espie Exp $
 Index: src/nametable.cc
 --- src/nametable.cc.orig
 +++ src/nametable.cc

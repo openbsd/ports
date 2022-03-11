@@ -1,5 +1,3 @@
-$OpenBSD: patch-fileio_c,v 1.1 2020/05/18 18:36:18 tracey Exp $
-
 Define EM_AVR, since it isn't included in our sys/exec_elf.h.
 
 Index: fileio.c

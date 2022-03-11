@@ -1,5 +1,3 @@
-$OpenBSD: patch-libaudiofile_modules_SimpleModule_h,v 1.1 2018/11/22 20:28:25 naddy Exp $
-
 Fix undefined behavior in sign conversion. 
 https://github.com/mpruett/audiofile/commit/b62c902dd258125cac86cd2df21fc898035a43d3
 

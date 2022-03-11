@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/19 17:14:36 kmos Exp $
-
 COMMENT =	library to instrument executable formats
 
 MODPY_EGG_VERSION =	0.11.5

@@ -1,4 +1,3 @@
-$OpenBSD: patch-t_05-format_t,v 1.1 2015/10/15 08:58:17 nigel Exp $
 --- t/05-format.t.orig	Thu Jun  5 06:49:52 2014
 +++ t/05-format.t	Thu Oct 15 09:31:00 2015
 @@ -22,4 +22,4 @@ is($verbatim, 'Today', 'returns verbatim text');

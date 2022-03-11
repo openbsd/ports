@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/10/10 01:53:15 afresh1 Exp $
-
 COMMENT=		catalyst development bundle
 
 MODULES=		cpan

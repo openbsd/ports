@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:18 sthen Exp $
-
 COMMENT=	MySQL representations for Time::Piece objects
 
 MODULES=	cpan

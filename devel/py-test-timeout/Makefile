@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =		pytest plugin to abort hanging tests
 
 MODPY_EGG_VERSION =	1.4.2

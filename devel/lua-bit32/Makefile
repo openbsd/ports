@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	bit32 compatibility module for Lua 5.1
 CATEGORIES=	devel
 

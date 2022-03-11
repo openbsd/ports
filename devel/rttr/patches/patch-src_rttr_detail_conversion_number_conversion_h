@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rttr_detail_conversion_number_conversion_h,v 1.2 2020/08/17 14:41:00 rsadowski Exp $
-
 Unbreak with LLVM10
 
 Index: src/rttr/detail/conversion/number_conversion.h

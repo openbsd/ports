@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2010/12/06 08:23:24 shadchin Exp $
 --- configure.orig	Wed Jul 14 09:19:00 2010
 +++ configure	Sat Dec  4 17:17:04 2010
 @@ -3321,9 +3321,9 @@ $as_echo "Solaris" >&6; }

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/14 22:14:40 schwarze Exp $
 bin/datum_strip
 ${P5SITE}/Carp/
 ${P5SITE}/Carp/Datum/

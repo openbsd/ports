@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:11 sthen Exp $
-
 COMMENT =		Tcl extension module for Perl
 
 DISTNAME =		Tcl-1.05

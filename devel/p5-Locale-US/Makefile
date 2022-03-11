@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/20 02:10:42 afresh1 Exp $
-
 COMMENT=	map two-letter codes to state names and vice versa (US)
 
 MODULES=	cpan

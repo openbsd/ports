@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/19 12:02:48 jasper Exp $
 bin/json2lua.lua${MODLUA_VERSION}
 bin/lua2json.lua${MODLUA_VERSION}
 lib/lua/${MODLUA_VERSION}/cjson.so

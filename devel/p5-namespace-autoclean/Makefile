@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:21 sthen Exp $
-
 COMMENT =	keep imports out of your namespace
 
 MODULES =	cpan

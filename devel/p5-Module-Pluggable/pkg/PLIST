@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/18 22:32:24 sthen Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/InnerPackage.pm
 ${P5SITE}/Module/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=	libc for Atmel AVR 8-bit RISC microcontrollers
 
 DISTNAME=	avr-libc-2.0.0

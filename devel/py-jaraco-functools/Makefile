@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 10:18:17 sthen Exp $
-
 COMMENT =		functools like those found in stdlib
 
 MODPY_EGG_VERSION =	3.4.0

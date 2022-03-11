@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/05/30 21:42:24 bluhm Exp $
-
 COMMENT =	critique Perl source code for best-practices
 
 DISTNAME =	Perl-Critic-1.140

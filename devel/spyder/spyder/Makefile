@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT =		Scientific PYthon Development EnviRonment
 
 MODPY_EGG_VERSION =	3.3.3

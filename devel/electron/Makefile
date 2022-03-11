@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/14 17:42:03 sthen Exp $
-
 .include <bsd.port.arch.mk>
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)

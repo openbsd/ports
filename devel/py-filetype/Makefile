@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/04 10:28:52 sthen Exp $
-
 COMMENT =		infer file type and MIME type
 
 MODPY_EGG_VERSION =	1.0.10

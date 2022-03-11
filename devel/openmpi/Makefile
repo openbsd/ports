@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2022/02/18 19:33:53 martin Exp $
-
 COMMENT =		open source MPI-3.1 implementation
 
 V =			4.1.2

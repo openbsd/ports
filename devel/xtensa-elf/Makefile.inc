@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2021/10/26 14:37:57 tracey Exp $
-
 CONFIG=		xtensa-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
 CATEGORIES+=	devel

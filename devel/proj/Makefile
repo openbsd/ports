@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/03/04 07:39:55 landry Exp $
-
 COMMENT=	cartographic projection utilities
 
 DISTNAME=	proj-9.0.0

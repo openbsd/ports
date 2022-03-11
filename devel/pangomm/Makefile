@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/12/06 13:43:45 ajacoutot Exp $
-
 PORTROACH=		limit:^2\.46
 
 COMMENT =		C++ interface for pango

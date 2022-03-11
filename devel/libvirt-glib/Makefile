@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/05/23 21:52:18 kmos Exp $
-
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
 DISTNAME=		libvirt-glib-4.0.0

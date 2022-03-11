@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:11 sthen Exp $
-
 COMMENT=		text mode progress bar
 
 MODULES=		cpan

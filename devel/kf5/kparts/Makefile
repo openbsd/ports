@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/16 14:31:01 rsadowski Exp $
-
 COMMENT =		KDE plugin framework for user interface components
 DISTNAME =		kparts-${VERSION}
 

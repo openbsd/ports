@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/18 09:32:45 sthen Exp $
-
 COMMENT =	utility for gitignore style pattern matching of file paths
 
 MODPY_EGG_VERSION = 0.9.0

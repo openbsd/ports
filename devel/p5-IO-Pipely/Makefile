@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:29 cwen Exp $
-
 COMMENT =	portably create pipe() or pipe-like handles
 DISTNAME =	IO-Pipely-0.005
 CATEGORIES =	devel

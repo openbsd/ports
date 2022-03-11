@@ -1,4 +1,3 @@
-# $OpenBSD: modules.inc,v 1.4 2022/03/01 21:06:24 sthen Exp $
 MODCARGO_CRATES +=	addr2line	0.17.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	aes	0.6.0	# MIT OR Apache-2.0

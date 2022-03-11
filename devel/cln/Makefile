@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/05 18:34:17 jca Exp $
-
 NOT_FOR_ARCHS =	arm mips64 mips64el hppa
 
 COMMENT =	library for efficient computations

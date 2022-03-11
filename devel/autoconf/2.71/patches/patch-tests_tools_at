@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_tools_at,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 Index: tests/tools.at
 --- tests/tools.at.orig
 +++ tests/tools.at

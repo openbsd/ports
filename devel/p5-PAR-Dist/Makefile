@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/12/03 07:54:51 benoit Exp $
-
 COMMENT =	create and manipulate PAR distributions
 
 MODULES =	cpan

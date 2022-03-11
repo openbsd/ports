@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/15 04:26:15 abieber Exp $
-
 COMMENT =		common utilities for Synapse, Sydent and Sygnal
 
 MODPY_EGG_VERSION =	1.1.0

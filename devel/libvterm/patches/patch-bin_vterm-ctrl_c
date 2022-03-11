@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_vterm-ctrl_c,v 1.3 2019/11/24 10:53:42 cwen Exp $
-
 Fix signed versus unsigned comparison.
 https://bugs.launchpad.net/libvterm/+bug/1668780
 

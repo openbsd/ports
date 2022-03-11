@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/08 21:02:55 edd Exp $
-
 COMMENT =	very basic terminfo library
 
 GH_ACCOUNT =	neovim

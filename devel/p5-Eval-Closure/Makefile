@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:51 sthen Exp $
-
 COMMENT =		safely and cleanly create closures via string eval 
 
 DISTNAME =		Eval-Closure-0.14

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:29:04 robert Exp $
-
 COMMENT =	flexible and extensible dispatch
 
 MODULES =	cpan

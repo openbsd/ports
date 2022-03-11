@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2022/02/12 09:25:52 ajacoutot Exp $
-
 PORTROACH=		limit:^2
 
 COMMENT=		callback framework for C++

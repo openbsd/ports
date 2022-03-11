@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/26 09:41:54 ajacoutot Exp $
-
 COMMENT=	python interface to libusb
 
 GH_PROJECT =	pyusb

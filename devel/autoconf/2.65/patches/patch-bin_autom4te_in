@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_autom4te_in,v 1.1.1.1 2010/03/22 20:54:07 espie Exp $
 --- bin/autom4te.in.orig	Wed Jul 22 14:45:09 2009
 +++ bin/autom4te.in	Mon Mar  8 12:06:34 2010
 @@ -89,16 +89,9 @@ my $freeze = 0;

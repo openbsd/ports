@@ -1,4 +1,3 @@
-$OpenBSD: patch-cvs2svn_lib_keyword_expander_py,v 1.1 2017/01/11 15:25:46 inoguchi Exp $
 --- cvs2svn_lib/keyword_expander.py.orig	Sat Sep 22 15:49:56 2012
 +++ cvs2svn_lib/keyword_expander.py	Thu Jan  5 21:06:05 2017
 @@ -81,11 +81,24 @@ class _KeywordExpander:

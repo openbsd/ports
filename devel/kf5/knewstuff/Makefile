@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/19 09:45:44 rsadowski Exp $
-
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
 

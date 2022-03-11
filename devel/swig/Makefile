@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2021/09/02 14:59:44 jeremy Exp $
-
 COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION

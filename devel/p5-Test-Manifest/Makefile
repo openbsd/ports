@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/03/20 12:47:41 bluhm Exp $
-
 COMMENT =	interact with a t/test_manifest file
 
 DISTNAME =	Test-Manifest-2.022

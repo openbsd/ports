@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		Python style guide checker
 
 MODPY_EGG_VERSION =	2.6.0

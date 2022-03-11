@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/02 19:25:20 jeremy Exp $
-
 COMMENT =	ruby library for automating compilation of native libraries
 
 DISTNAME =	ffi-compiler-1.0.1

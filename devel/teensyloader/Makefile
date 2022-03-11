@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/22 22:33:23 sthen Exp $
-
 COMMENT=	in-system programmer for Teensy boards
 
 GH_TAGNAME=	2.2

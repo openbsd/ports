@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT =	binding for lua to the tcl interpreter and to the tk toolkit
 
 V =		0.9-2

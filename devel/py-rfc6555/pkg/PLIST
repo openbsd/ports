@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/08 11:26:58 sthen Exp $
 @pkgpath devel/py-rfc6555
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}rfc6555.${MODPY_PYC_MAGIC_TAG}pyc

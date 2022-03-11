@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/27 13:17:58 sthen Exp $
-
 COMMENT =		country, language, currency and scripts definitions
 
 MODPY_EGG_VERSION =	22.1.10

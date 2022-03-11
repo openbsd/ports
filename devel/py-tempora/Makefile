@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 10:18:05 sthen Exp $
-
 COMMENT =		objects and routines pertaining to date and time
 
 MODPY_EGG_VERSION =	4.1.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gsoap_samples_Makefile_defines,v 1.2 2015/05/01 06:52:58 ajacoutot Exp $
-
 from Fedora: gsoap-libtool.patch (creates shared libraries)
 
 --- gsoap/samples/Makefile.defines.orig	Sun Dec  7 00:30:44 2014

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/08/26 19:39:47 jeremy Exp $
-
 COMMENT =		safe YAML parsing
 
 DISTNAME =		safe_yaml-1.0.5

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/09 23:27:04 sthen Exp $
 ${P5SITE}/Tie/Cache/LRU/Expires.pm
 @man man/man3p/Tie::Cache::LRU::Expires.3p

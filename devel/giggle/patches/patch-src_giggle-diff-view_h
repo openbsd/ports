@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_giggle-diff-view_h,v 1.3 2021/02/11 10:20:14 landry Exp $
-
 chunk 1:Fix build with gtksourceview>=3.8.0
 
 chunk 2:Fix for -fno-common, from

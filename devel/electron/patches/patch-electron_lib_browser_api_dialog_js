@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_lib_browser_api_dialog_js,v 1.2 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/lib/browser/api/dialog.js
 --- electron/lib/browser/api/dialog.js.orig
 +++ electron/lib/browser/api/dialog.js

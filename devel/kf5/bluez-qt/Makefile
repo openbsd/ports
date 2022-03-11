@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/19 10:50:59 rsadowski Exp $
-
 COMMENT =		Qt wrapper for BlueZ 5 DBus API
 DISTNAME =		bluez-qt-${VERSION}
 

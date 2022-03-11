@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/11/08 21:37:54 benoit Exp $
-
 COMMENT=		find and use installed modules in a (sub)category
 
 MODULES=		cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:48 sthen Exp $
-
 COMMENT =	parse and format iCal datetime and duration strings
 
 DISTNAME =	DateTime-Format-ICal-0.09

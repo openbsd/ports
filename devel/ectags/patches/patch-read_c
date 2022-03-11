@@ -1,4 +1,3 @@
-$OpenBSD: patch-read_c,v 1.2 2016/08/15 14:55:48 shadchin Exp $
 --- read.c.orig	Sat Jul  4 11:29:02 2009
 +++ read.c	Mon Aug 15 19:47:23 2016
 @@ -526,9 +526,9 @@ extern char *readLine (vString *const vLine, FILE *con

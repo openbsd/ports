@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:06 sthen Exp $
-
 COMMENT =		return an ARGV for running this perl
 
 DISTNAME =		Perl-Command-0.01

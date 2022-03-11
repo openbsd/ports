@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:07 sthen Exp $
-
 COMMENT=		CVS-managed project analyzer
 
 DISTNAME=		cvsplot-1.7.4

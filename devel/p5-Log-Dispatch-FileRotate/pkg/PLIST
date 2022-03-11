@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/17 16:12:41 benoit Exp $
 ${P5SITE}/Log/Dispatch/FileRotate/
 ${P5SITE}/Log/Dispatch/FileRotate.pm
 ${P5SITE}/Log/Dispatch/FileRotate/Flock.pm

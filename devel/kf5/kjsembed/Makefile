@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:09 rsadowski Exp $
-
 COMMENT =		KDE framework for binding JavaScript object to QObjects
 DISTNAME =		kjsembed-${VERSION}
 

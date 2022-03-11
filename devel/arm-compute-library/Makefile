@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/02 14:11:16 kevlo Exp $
-
 ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT =	Perl-ish Interface to libzmq
 
 MODULES =	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/01/14 21:25:44 kn Exp $
 ${P5SITE}/POD2/
 ${P5SITE}/POD2/DE/
 ${P5SITE}/POD2/DE/local/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:01 sthen Exp $
-
 COMMENT =	finds out which version of Perl modules are installed
 
 MODULES =	cpan

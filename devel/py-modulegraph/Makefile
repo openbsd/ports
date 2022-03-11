@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:00:51 sthen Exp $
-
 COMMENT=		Python module dependency analysis tool
 
 MODPY_EGG_VERSION=	0.17

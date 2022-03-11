@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_clang_tools_scan-build_libexec_ccc-analyzer,v 1.2 2022/01/03 21:36:42 rsadowski Exp $
-
 Our default compilers are cc/c++.
 
 Index: tools/clang/tools/scan-build/libexec/ccc-analyzer

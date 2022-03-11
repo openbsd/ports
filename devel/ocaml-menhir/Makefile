@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/10 04:10:59 daniel Exp $
-
 COMMENT =		OCaml parser generator for LR(1) grammars
 
 V =			20190924

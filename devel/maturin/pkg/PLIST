@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/02 20:03:28 sthen Exp $
 @bin bin/maturin

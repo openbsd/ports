@@ -1,5 +1,3 @@
-$OpenBSD: patch-srctest,v 1.2 2020/02/22 12:16:33 sthen Exp $
-
 git config change: https://gitlab.com/esr/src/merge_requests/20
 
 other parts: don't exit immediately on test failure, keep running and

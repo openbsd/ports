@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_autoupdate_in,v 1.1.1.1 2010/03/22 20:54:07 espie Exp $
 --- bin/autoupdate.in.orig	Thu Oct 29 02:53:40 2009
 +++ bin/autoupdate.in	Mon Mar  8 12:26:47 2010
 @@ -55,6 +55,7 @@ my @include = ('@pkgdatadir@');

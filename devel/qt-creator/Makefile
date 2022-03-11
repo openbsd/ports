@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2022/02/13 16:38:29 rsadowski Exp $
-
 USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt

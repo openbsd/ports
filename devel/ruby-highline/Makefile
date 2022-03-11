@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/03/20 16:44:23 naddy Exp $
-
 COMMENT =		high-level IO library for Ruby
 
 DISTNAME =		highline-1.6.21

@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_libuv_py,v 1.2 2019/08/05 16:28:54 rsadowski Exp $
 Index: setup_libuv.py
 --- setup_libuv.py.orig
 +++ setup_libuv.py

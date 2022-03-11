@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/08 13:59:23 sthen Exp $
-
 COMMENT =		wraps git in order to extend it with extra features
 
 GH_ACCOUNT =		github

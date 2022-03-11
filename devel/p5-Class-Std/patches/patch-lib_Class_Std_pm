@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Class_Std_pm,v 1.1 2014/03/23 22:19:46 jasper Exp $
-
 Fix with perl 5.18 by replacing non-ASCII character.
 
 --- lib/Class/Std.pm.orig	Sun Mar 23 23:16:00 2014

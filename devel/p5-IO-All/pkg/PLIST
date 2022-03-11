@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/19 06:52:12 jasper Exp $
 ${P5SITE}/IO/All/
 ${P5SITE}/IO/All.pm
 ${P5SITE}/IO/All.pod

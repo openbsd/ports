@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/15 19:01:31 jasper Exp $
-
 COMMENT =		libre and portable reverse engineering framework
 
 V =			4.5.1

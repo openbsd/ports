@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT =	munkres algorithm for the Assignment Problem
 
 MODPY_EGG_VERSION =	1.1.2

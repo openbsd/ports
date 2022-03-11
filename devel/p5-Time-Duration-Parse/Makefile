@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/31 07:34:23 benoit Exp $
-
 COMMENT =	parse strings that represent time durations
 
 DISTNAME =	Time-Duration-Parse-0.16

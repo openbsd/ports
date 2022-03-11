@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT =	check for POD errors in files
 
 MODULES =	cpan

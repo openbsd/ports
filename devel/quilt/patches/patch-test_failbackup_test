@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_failbackup_test,v 1.2 2019/05/27 10:59:32 jca Exp $
-
 Index: test/failbackup.test
 --- test/failbackup.test.orig
 +++ test/failbackup.test

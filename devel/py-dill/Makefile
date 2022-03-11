@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:00:48 sthen Exp $
-
 COMMENT =		serialize all of python
 
 MODPY_EGG_VERSION =	0.3.1.1

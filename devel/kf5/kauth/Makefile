@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/15 06:48:32 rsadowski Exp $
-
 COMMENT =	execute actions as privileged user
 DISTNAME =	kauth-${VERSION}
 

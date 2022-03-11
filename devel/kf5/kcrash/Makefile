@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/19 10:51:00 rsadowski Exp $
-
 COMMENT =	intercepting and handling application crashes in KDE
 DISTNAME =	kcrash-${VERSION}
 

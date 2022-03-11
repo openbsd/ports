@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/13 20:04:03 sthen Exp $
-
 COMMENT=	client library for accessing NFS
 
 DISTNAME=	libnfs-5.0.1

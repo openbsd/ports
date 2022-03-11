@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 21:15:34 sthen Exp $
-
 COMMENT = 	Atmel AVR 32-bit C library
 V = 		1.16.0
 DISTNAME = 	avr32-newlib-${V}

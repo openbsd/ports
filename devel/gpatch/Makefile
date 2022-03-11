@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/16 21:29:41 sthen Exp $
-
 COMMENT=		GNU patch
 
 VERSION=		2.7.6

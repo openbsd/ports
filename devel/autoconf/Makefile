@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/03/03 19:44:31 sthen Exp $
-
 SUBDIR =
 SUBDIR += 2.13
 SUBDIR += 2.52

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/29 22:57:08 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/kitchen/
 lib/python${MODPY_VERSION}/site-packages/kitchen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kitchen-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

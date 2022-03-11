@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/15 14:40:20 sthen Exp $
-
 COMMENT =	module to print debug info about perl ops
 
 DISTNAME =	B-Debug-1.26

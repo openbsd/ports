@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 01:56:17 afresh1 Exp $
-
 COMMENT =	Devel::StackTrace + PadWalker
 
 DISTNAME =	Devel-StackTrace-WithLexicals-2.01

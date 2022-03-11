@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/12/06 02:03:33 afresh1 Exp $
-
 COMMENT =	YAML Serialization using XS and libyaml
 
 MODULES =	cpan

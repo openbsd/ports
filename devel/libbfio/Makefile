@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/18 09:22:56 rpointel Exp $
-
 COMMENT =		basic file input/output abstraction C library
 
 VERSION =		20191230

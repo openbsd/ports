@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/04/23 14:26:06 tracey Exp $
-
 COMMENT =		tool to build and unpack SPIFFS images
 
 GH_ACCOUNT =		igrr

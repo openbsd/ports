@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/24 00:11:57 afresh1 Exp $
 ${P5SITE}/Test/Modern.pm
 @man man/man3p/Test::Modern.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/05/19 01:50:29 kurt Exp $
-
 COMMENT=	software project management and comprehension tool
 
 V=		3.6.3

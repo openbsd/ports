@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/15 15:39:11 sthen Exp $
-
 ONLY_FOR_ARCHS =	${CLANG_ARCHS}
 
 COMMENT =		threading building blocks

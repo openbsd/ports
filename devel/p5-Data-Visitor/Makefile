@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:44:47 sthen Exp $
-
 COMMENT=	visitor-style traversal of Perl data structures
 
 MODULES=	cpan

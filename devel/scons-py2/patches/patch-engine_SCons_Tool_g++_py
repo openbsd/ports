@@ -1,5 +1,3 @@
-$OpenBSD: patch-engine_SCons_Tool_g++_py,v 1.1.1.1 2021/10/31 17:26:11 sthen Exp $
-
 Index: engine/SCons/Tool/g++.py
 --- engine/SCons/Tool/g++.py.orig
 +++ engine/SCons/Tool/g++.py

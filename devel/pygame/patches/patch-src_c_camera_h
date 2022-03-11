@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_c_camera_h,v 1.2 2020/12/09 04:49:12 daniel Exp $
-
 Index: src_c/camera.h
 --- src_c/camera.h.orig
 +++ src_c/camera.h

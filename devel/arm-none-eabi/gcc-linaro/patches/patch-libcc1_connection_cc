@@ -1,5 +1,3 @@
-$OpenBSD: patch-libcc1_connection_cc,v 1.1 2017/08/02 22:57:59 naddy Exp $
-
 Index: libcc1/connection.cc
 --- libcc1/connection.cc.orig
 +++ libcc1/connection.cc

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_html_cc,v 1.1 2017/05/01 19:57:34 espie Exp $
 Index: src/html.cc
 --- src/html.cc.orig
 +++ src/html.cc

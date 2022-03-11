@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT =	ASN.1 library for Python
 
 MODPY_EGG_VERSION =	0.4.8

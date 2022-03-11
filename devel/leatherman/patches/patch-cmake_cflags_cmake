@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_cflags_cmake,v 1.3 2019/01/04 10:12:19 sebastia Exp $
-
 Index: cmake/cflags.cmake
 --- cmake/cflags.cmake.orig
 +++ cmake/cflags.cmake

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2021/07/09 10:41:58 sthen Exp $
-
 COMMENT=	stack-based interpreter for terminal applications
 
 DISTNAME=	slang-2.3.2

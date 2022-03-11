@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_script_lib_utils_js,v 1.2 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/script/lib/utils.js
 --- electron/script/lib/utils.js.orig
 +++ electron/script/lib/utils.js

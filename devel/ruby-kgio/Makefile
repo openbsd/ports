@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/11/12 06:42:05 jeremy Exp $
-
 COMMENT =	kinder, gentler I/O for Ruby
 
 DISTNAME =	kgio-2.11.2

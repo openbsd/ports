@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:58 sthen Exp $
-
 COMMENT=	abstraction layer for logging and tracing
 
 MODULES=	cpan

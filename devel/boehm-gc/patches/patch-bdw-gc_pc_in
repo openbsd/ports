@@ -1,4 +1,3 @@
-$OpenBSD: patch-bdw-gc_pc_in,v 1.2 2021/02/05 18:37:48 kurt Exp $
 Index: bdw-gc.pc.in
 --- bdw-gc.pc.in.orig
 +++ bdw-gc.pc.in

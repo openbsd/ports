@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		multithreading in Python click
 
 MODPY_EGG_VERSION =	0.5.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/02/28 12:37:55 sthen Exp $
-
 COMMENT =		pytest plugin for measuring coverage
 
 MODPY_EGG_VERSION =	3.0.0

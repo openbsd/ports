@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	Moose type constraints for strings or string-like objects
 
 DISTNAME =	MooseX-Types-Stringlike-0.003

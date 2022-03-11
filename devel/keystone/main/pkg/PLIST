@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/08/07 09:59:58 jasper Exp $
 @bin bin/kstool
 include/keystone/
 include/keystone/arm.h

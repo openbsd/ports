@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/16 23:23:05 sthen Exp $
-
 BROKEN-i386 =	some problem where ReusableLogger init tries to initialize zlib
 
 COMMENT =	build platform for .NET and Visual Studio

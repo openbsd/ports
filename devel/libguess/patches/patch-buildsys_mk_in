@@ -1,4 +1,3 @@
-$OpenBSD: patch-buildsys_mk_in,v 1.1.1.1 2010/12/11 11:03:22 shadchin Exp $
 --- buildsys.mk.in.orig	Sat Dec  4 18:10:19 2010
 +++ buildsys.mk.in	Sat Dec  4 18:17:32 2010
 @@ -89,7 +89,7 @@ OBJS9  = ${OBJS8:.xpm=.o}

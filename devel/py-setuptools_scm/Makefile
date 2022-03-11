@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/27 22:50:23 sthen Exp $
-
 COMMENT =		plugin to manage your versions by scm tags
 
 MODPY_EGG_VERSION =	6.4.2

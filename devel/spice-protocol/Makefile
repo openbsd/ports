@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/02/11 06:46:45 ajacoutot Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	SPICE protocol headers

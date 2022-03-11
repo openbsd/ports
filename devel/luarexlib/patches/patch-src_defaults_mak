@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_defaults_mak,v 1.1 2009/09/09 18:02:01 jolan Exp $
 --- src/defaults.mak.orig	Sat Apr 21 13:29:10 2007
 +++ src/defaults.mak	Wed Sep  9 12:13:33 2009
 @@ -1,13 +1,13 @@

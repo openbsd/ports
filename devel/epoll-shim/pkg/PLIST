@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/07/24 09:32:44 sthen Exp $
 include/libepoll-shim/
 include/libepoll-shim/epoll-shim/
 include/libepoll-shim/epoll-shim/detail/

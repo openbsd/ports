@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:47 sthen Exp $
 @pkgpath devel/py-sh
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sh-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

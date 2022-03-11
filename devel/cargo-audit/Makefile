@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/13 20:51:37 abieber Exp $
-
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
 # https://github.com/rustsec/rustsec/issues/429

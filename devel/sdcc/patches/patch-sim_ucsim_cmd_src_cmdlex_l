@@ -1,5 +1,3 @@
-$OpenBSD: patch-sim_ucsim_cmd_src_cmdlex_l,v 1.1 2018/03/07 21:34:43 bcallah Exp $
-
 Allow use of in-base yacc.
 
 Index: sim/ucsim/cmd.src/cmdlex.l

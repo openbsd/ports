@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:56 sthen Exp $
-
 COMMENT=		handle multiple file handles
 
 MODULES=		cpan

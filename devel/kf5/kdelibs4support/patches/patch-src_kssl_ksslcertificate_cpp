@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_kssl_ksslcertificate_cpp,v 1.1 2021/11/30 22:12:58 tb Exp $
-
 LibreSSL no longer supports NETSCAPE certificates.
 
 Index: src/kssl/ksslcertificate.cpp

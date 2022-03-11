@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_xdg-screensaver_in,v 1.3 2017/10/09 04:37:42 bentley Exp $
-
 Index: scripts/xdg-screensaver.in
 --- scripts/xdg-screensaver.in.orig
 +++ scripts/xdg-screensaver.in

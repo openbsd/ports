@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.14 2021/11/19 08:00:54 ajacoutot Exp $
-
 CATEGORIES+=		devel
 
 HOMEPAGE=		https://libgit2.org/

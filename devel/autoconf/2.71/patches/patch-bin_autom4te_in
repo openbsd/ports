@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_autom4te_in,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 Index: bin/autom4te.in
 --- bin/autom4te.in.orig
 +++ bin/autom4te.in

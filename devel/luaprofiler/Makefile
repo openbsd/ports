@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:42 sthen Exp $
-
 COMMENT=		time profiler for Lua
 
 DISTNAME=		luaprofiler-2.0.2

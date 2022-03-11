@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/26 20:50:35 sthen Exp $
-
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
 MODPY_EGG_VERSION =	3.7.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libinotify_pc_in,v 1.2 2021/11/24 11:18:26 kirby Exp $
-
 Index: libinotify.pc.in
 --- libinotify.pc.in.orig
 +++ libinotify.pc.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2020/02/14 11:11:32 sthen Exp $
-
 V ?=		1.0.3
 
 GH_ACCOUNT ?=	tarruda

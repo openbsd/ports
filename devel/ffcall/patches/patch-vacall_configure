@@ -1,4 +1,3 @@
-$OpenBSD: patch-vacall_configure,v 1.1 2010/06/14 08:22:19 jasper Exp $
 --- vacall/configure.orig	Mon Jun 14 10:03:36 2010
 +++ vacall/configure	Mon Jun 14 10:03:57 2010
 @@ -2853,7 +2853,7 @@ case "$host_cpu" in

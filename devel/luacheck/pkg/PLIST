@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/07/06 16:55:32 daniel Exp $
 bin/luacheck
 share/doc/luacheck/
 share/doc/luacheck/_sources/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/21 22:46:10 simon Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Fatal.pm
 @man man/man3p/Test::Fatal.3p

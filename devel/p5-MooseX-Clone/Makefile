@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/26 01:48:52 afresh1 Exp $
-
 COMMENT =	fine grained cloning support for Moose objects
 
 MODULES =	cpan

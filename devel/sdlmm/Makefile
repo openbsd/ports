@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 21:02:19 sthen Exp $
-
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
 VERSION=	0.1.8

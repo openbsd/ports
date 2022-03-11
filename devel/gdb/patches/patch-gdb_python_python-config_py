@@ -1,4 +1,3 @@
-$OpenBSD: patch-gdb_python_python-config_py,v 1.5 2021/11/01 07:45:32 landry Exp $
 Index: gdb/python/python-config.py
 --- gdb/python/python-config.py.orig
 +++ gdb/python/python-config.py

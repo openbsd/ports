@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:44:40 sthen Exp $
-
 COMMENT =		library for handling page faults in user mode
 
 DISTNAME =		libsigsegv-2.12

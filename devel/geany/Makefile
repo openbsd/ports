@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2020/08/23 11:46:37 cwen Exp $
-
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.36

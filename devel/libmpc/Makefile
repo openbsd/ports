@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.11 2019/11/30 18:30:27 naddy Exp $
-
 COMMENT=	arbitrary-precision complex numbers math library
 
 V=		1.1.0

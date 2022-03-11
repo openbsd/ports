@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:48 sthen Exp $
-
 COMMENT =	convert between DateTime and email (RFC2822/822) formats
 
 MODULES =	cpan

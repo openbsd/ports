@@ -1,5 +1,3 @@
-$OpenBSD: patch-bundles_Makefile_bundles,v 1.1 2021/12/05 10:02:07 jsg Exp $
-
 partial backport of 3f93bfbb207b8e73f5f39afdf1c6f4a96038d2e4
 Fix Makefile dependencies
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 10:23:09 sthen Exp $
-
 COMMENT =		curses-like terminal wrapper
 
 MODPY_EGG_VERSION =	0.3.4

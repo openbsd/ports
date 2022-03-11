@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/06 02:55:53 stu Exp $
 lib/jim/arc4random.so
 share/doc/jimarc4random/
 share/doc/jimarc4random/LICENSE

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/06/19 03:00:52 danj Exp $
-
 COMMENT =		C++ application-level logging library
 
 GH_ACCOUNT =		google

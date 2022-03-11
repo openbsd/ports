@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.ci,v 1.1.1.1 2021/10/29 18:15:16 kurt Exp $
 jdk-17/jmods/jdk.internal.vm.ci.jmod
 jdk-17/jmods/jdk.internal.vm.compiler.jmod
 jdk-17/jmods/jdk.internal.vm.compiler.management.jmod

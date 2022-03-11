@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:03 sthen Exp $
-
 COMMENT=		ANSI C command line parser
 
 DISTNAME=		argtable2-13

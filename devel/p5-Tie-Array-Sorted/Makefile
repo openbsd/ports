@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:17 sthen Exp $
-
 COMMENT=	array which is kept ordered
 
 MODULES=	cpan

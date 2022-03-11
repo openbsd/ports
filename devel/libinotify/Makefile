@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/24 11:18:26 kirby Exp $
-
 COMMENT =		kevent based inotify
 
 GH_ACCOUNT =		libinotify-kqueue

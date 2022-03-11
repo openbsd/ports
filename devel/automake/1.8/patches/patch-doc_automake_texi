@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_automake_texi,v 1.2 2010/07/22 12:08:58 ajacoutot Exp $
 --- doc/automake.texi.orig	Thu May 13 22:41:35 2004
 +++ doc/automake.texi	Thu Jul 22 13:56:06 2010
 @@ -1,7 +1,8 @@

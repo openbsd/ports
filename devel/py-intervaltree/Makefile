@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/03/03 10:04:24 sthen Exp $
-
 COMMENT =	editable interval tree data structure for Python 2 and 3
 
 MODPY_EGG_VERSION =	3.1.0

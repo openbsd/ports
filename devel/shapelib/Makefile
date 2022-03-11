@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:01 sthen Exp $
-
 COMMENT=	shapefile manipulation library
 
 DISTNAME=	shapelib-1.5.0

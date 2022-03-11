@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/05 18:51:09 afresh1 Exp $
-
 COMMENT =		routines for manipulating stashes
 
 MODULES =		cpan

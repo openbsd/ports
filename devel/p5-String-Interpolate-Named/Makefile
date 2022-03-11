@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/24 16:41:41 millert Exp $
-
 COMMENT=	interpolated named arguments in a template string
 
 MODULES=	cpan

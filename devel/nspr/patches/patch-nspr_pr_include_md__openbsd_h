@@ -1,5 +1,3 @@
-$OpenBSD: patch-nspr_pr_include_md__openbsd_h,v 1.5 2021/07/15 16:52:55 jca Exp $
-
 Index: nspr/pr/include/md/_openbsd.h
 --- nspr/pr/include/md/_openbsd.h.orig
 +++ nspr/pr/include/md/_openbsd.h

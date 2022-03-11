@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/03/01 10:35:46 bket Exp $
-
 COMMENT =		py.test plugin to store test expectations
 
 MODPY_EGG_VERSION =	1.1.0

@@ -1,5 +1,3 @@
-#  $OpenBSD: Makefile,v 1.26 2019/07/07 18:46:44 jasper Exp $
-
 COMMENT =		rspec runner and formatters
 DISTNAME =		rspec-core-3.8.2
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_contrib_dragscroll_dragscrollcfg_h,v 1.1 2020/06/26 09:41:40 cwen Exp $
-
 Fix the build on !x86
 
 Index: src/plugins/contrib/dragscroll/dragscrollcfg.h

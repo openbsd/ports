@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/12 09:29:39 ajacoutot Exp $
-
 COMMENT=		callback framework for C++
 
 GNOME_VERSION=		3.2.0

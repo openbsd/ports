@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 01:57:40 afresh1 Exp $
 ${P5SITE}/MooseX/RelatedClassRoles.pm
 @man man/man3p/MooseX::RelatedClassRoles.3p

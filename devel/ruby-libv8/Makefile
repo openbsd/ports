@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:45:59 sthen Exp $
-
 COMMENT =	access the v8 javascript interpreter from ruby
 
 DISTNAME =	libv8-3.16.14.18

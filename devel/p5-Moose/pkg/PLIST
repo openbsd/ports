@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/08/26 01:50:49 afresh1 Exp $
 @pkgpath devel/p5-Class-MOP
 @comment bin/moose-outdated
 ${P5ARCH}/Class/MOP/

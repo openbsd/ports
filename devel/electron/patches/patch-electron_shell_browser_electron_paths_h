@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_browser_electron_paths_h,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/browser/electron_paths.h
 --- electron/shell/browser/electron_paths.h.orig
 +++ electron/shell/browser/electron_paths.h

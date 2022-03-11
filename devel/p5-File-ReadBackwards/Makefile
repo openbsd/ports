@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/24 17:30:42 sthen Exp $
-
 COMMENT=	module to read a file starting at the end
 
 MODULES=	cpan

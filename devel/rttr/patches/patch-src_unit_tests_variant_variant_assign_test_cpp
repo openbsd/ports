@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_unit_tests_variant_variant_assign_test_cpp,v 1.1 2020/08/16 12:19:17 rsadowski Exp $
-
 Unbreak with LLVM10
 
 Index: src/unit_tests/variant/variant_assign_test.cpp

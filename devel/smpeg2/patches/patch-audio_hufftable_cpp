@@ -1,5 +1,3 @@
-$OpenBSD: patch-audio_hufftable_cpp,v 1.1 2018/04/10 08:49:36 jasper Exp $
-
 https://github.com/flathub/shared-modules/blob/master/smpeg/smpeg-gcc6.patch
 
 Index: audio/hufftable.cpp

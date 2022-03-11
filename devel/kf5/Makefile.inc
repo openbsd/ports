@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.5 2020/03/23 18:01:03 rsadowski Exp $
-
 CATEGORIES +=		devel devel/kf5
 
 VERSION ?=		${MODKF5_VERSION}

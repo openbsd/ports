@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_X86_X86RegisterInfo_td,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
-
 - The compiler is generally free to allocate general purpose registers in
   whatever order it chooses. Reasons for choosing one register before another
   usually include compiled instruction size (avoidance of REX prefixes, etc.)

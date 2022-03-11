@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/18 21:53:50 ajacoutot Exp $
-
 COMMENT =		autocompletion tool for Python
 
 MODPY_EGG_VERSION =	0.18.1

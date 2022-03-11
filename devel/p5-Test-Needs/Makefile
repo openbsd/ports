@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/25 23:22:48 bluhm Exp $
-
 COMMENT =	skip tests when modules not available
 
 DISTNAME =	Test-Needs-0.002009

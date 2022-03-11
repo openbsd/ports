@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/11/02 04:08:00 gnezdo Exp $
-
 COMMENT =	liberalised reimplementation of cpp in Haskell
 
 MODCABAL_STEM =		cpphs

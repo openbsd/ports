@@ -1,5 +1,3 @@
-$OpenBSD: patch-_setuputils_py,v 1.1 2021/12/14 00:26:46 sthen Exp $
-
 don't pick up cython if present at build time; there are pregenerated files
 anyway, and 1) py-gevent wants 3.0a versions of cython, and 2) hash filenames
 are created which depend on a digest of compiler directives, which differs

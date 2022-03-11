@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/12 16:55:45 giovanni Exp $
 ${P5SITE}/Data/ICal/TimeZone/
 ${P5SITE}/Data/ICal/TimeZone.pm
 ${P5SITE}/Data/ICal/TimeZone/List.pm

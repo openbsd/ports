@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/14 22:25:03 rpe Exp $
 bin/src
 @man man/man1/src.1

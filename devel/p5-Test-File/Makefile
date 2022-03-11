@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/20 12:49:12 sthen Exp $
-
 COMMENT =	test file attributes
 
 DISTNAME =	Test-File-1.992

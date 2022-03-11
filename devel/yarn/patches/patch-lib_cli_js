@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_cli_js,v 1.2 2021/07/27 08:51:18 sthen Exp $
-
 node doesn't know where it is relative to itself when called without the full
 path.
 

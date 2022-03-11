@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/12/06 14:43:16 tb Exp $
 include/protozero/
 include/protozero/basic_pbf_builder.hpp
 include/protozero/basic_pbf_writer.hpp

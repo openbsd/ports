@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	alarm library for the lua language
 
 DISTNAME=	lalarm

@@ -1,4 +1,3 @@
-$OpenBSD: patch-automake_in,v 1.2 2007/03/18 21:43:50 matthieu Exp $
 --- automake.in.orig	Thu Jun 30 23:17:13 2005
 +++ automake.in	Sun Mar 18 17:53:50 2007
 @@ -3898,7 +3898,7 @@ sub handle_configure ($$$@)

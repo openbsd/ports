@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.113 2021/12/09 09:13:07 ajacoutot Exp $
-
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte

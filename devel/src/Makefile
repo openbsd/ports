@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT =		Simple Revision Control
 
 DISTNAME =		src-1.28

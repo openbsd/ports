@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/09/16 12:24:26 chrisz Exp $
 share/vim/vimfiles/
 share/vim/vimfiles/doc/
 share/vim/vimfiles/doc/taglist.txt

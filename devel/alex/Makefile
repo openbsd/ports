@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/03/28 13:08:02 kirby Exp $
-
 COMMENT =	lexical analyser generator for Haskell
 REVISION =	0
 

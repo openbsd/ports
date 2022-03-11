@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2020/08/31 20:18:10 jasper Exp $
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	general-purpose multi-platform x86 assembler

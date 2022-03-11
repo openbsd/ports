@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ltdl,v 1.7 2021/03/15 21:02:10 sthen Exp $
 include/libltdl/
 include/libltdl/lt_dlloader.h
 include/libltdl/lt_error.h

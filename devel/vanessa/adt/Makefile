@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/15 15:13:36 sthen Exp $
-
 COMMENT=	provides abstract data types (ADTs)
 
 VERSION=	0.0.9

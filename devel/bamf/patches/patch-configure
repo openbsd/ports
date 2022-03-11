@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
-
 Remove -Werror.
 Intentionally break python and gtk-doc detection.
 Remove gtester2xunit test; we're not building tests.

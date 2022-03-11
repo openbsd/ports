@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:42 sthen Exp $
-
 COMMENT=        provide static calls that apply to a default instantiation
 
 MODULES=	cpan

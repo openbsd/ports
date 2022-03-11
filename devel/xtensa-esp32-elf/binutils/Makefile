@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/08 16:58:33 tracey Exp $
-
 COMMENT =	binutils for ${CONFIG} cross-development
 VERSION =	2.35.1.2020.1223
 PKGNAME =	${CONFIG}-binutils-${VERSION}

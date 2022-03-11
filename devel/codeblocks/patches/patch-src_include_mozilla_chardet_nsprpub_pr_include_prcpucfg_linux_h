@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_include_mozilla_chardet_nsprpub_pr_include_prcpucfg_linux_h,v 1.1 2021/10/30 08:52:35 jca Exp $
-
 Add support for riscv64
 
 Index: src/include/mozilla_chardet/nsprpub/pr/include/prcpucfg_linux.h

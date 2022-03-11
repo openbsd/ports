@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/21 11:10:38 gonzalo Exp $
 bin/bin2hex.py
 bin/hex2bin.py
 bin/hex2dump.py

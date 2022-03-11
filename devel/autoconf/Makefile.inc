@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/13 10:59:26 sthen Exp $
-
 # most parts common to all autoconfs actually
 COMMENT ?=	automatically configure source code on many Un*x platforms
 DISTNAME ?=	autoconf-${VERSION}

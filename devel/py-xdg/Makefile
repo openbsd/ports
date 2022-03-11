@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=		python library to access freedesktop.org standards
 
 MODPY_EGG_VERSION=	0.27

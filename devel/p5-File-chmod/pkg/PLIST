@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 14:08:30 nigel Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/chmod.pm
 @man man/man3p/File::chmod.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/04 12:40:43 edd Exp $
-#
 # The SUBDIRs used here fetch the same distfile. Although we could have used a
 # single directory, the mix of SUBPACKAGES and Lua FLAVORS makes the port
 # somewhat complicated. We opted to keep it simple and split them out.

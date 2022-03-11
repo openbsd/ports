@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:28:51 robert Exp $
-
 COMMENT =	NativeTrait-like behavior for Moo
 DISTNAME =	MooX-HandlesVia-0.001009
 CATEGORIES =	devel

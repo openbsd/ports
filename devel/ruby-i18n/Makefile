@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT =	ruby internationalization and localization solution
 
 DISTNAME =	i18n-1.6.0

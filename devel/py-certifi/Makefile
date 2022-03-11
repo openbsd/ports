@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/20 15:06:08 sthen Exp $
-
 COMMENT =		Python package to check certificates using the OpenBSD CA
 
 MODPY_EGG_VERSION =	2021.10.8

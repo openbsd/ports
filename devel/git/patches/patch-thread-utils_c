@@ -1,5 +1,3 @@
-$OpenBSD: patch-thread-utils_c,v 1.1 2019/11/03 15:25:22 jca Exp $
-
 Use sysconf(_SC_NPROCESSORS_ONLN) to properly omit disabled smt cores.
 
 Index: thread-utils.c

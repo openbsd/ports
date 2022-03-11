@@ -1,5 +1,3 @@
-$OpenBSD: patch-MANIFEST,v 1.3 2020/11/02 17:15:17 bluhm Exp $
-
 Index: MANIFEST
 --- MANIFEST.orig
 +++ MANIFEST

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:57 sthen Exp $
-
 COMMENT=	simple interface to access shared memory
 
 MODULES=	cpan

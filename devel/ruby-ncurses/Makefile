@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:45:59 sthen Exp $
-
 COMMENT=		Ruby interface to ncurses
 
 VERSION=		1.2.4

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/03 05:44:11 rsadowski Exp $
 include/tsl/
 include/tsl/robin_growth_policy.h
 include/tsl/robin_hash.h

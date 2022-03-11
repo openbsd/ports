@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/09/02 14:40:59 jasper Exp $
 bin/flawfinder
 @man man/man1/flawfinder.1

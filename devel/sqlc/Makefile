@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/16 12:49:40 abieber Exp $
-
 # github.com/kyleconroy/sqlc/internal/engine/sqlite/parser fails on LP32
 ONLY_FOR_ARCHS =	aarch64 amd64
 

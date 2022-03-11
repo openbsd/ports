@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/12/05 19:00:08 afresh1 Exp $
-
 COMMENT =	recursively copy Perl datatypes
 
 MODULES =	cpan

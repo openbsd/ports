@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_test_lua,v 1.3 2013/01/07 22:13:40 dcoppa Exp $
 --- tests/test.lua.orig	Thu Oct  4 16:25:54 2012
 +++ tests/test.lua	Mon Jan  7 10:59:01 2013
 @@ -1,5 +1,3 @@

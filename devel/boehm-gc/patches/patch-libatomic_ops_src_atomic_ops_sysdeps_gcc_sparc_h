@@ -1,5 +1,3 @@
-$OpenBSD: patch-libatomic_ops_src_atomic_ops_sysdeps_gcc_sparc_h,v 1.4 2020/08/24 21:31:13 gkoehler Exp $
-
 Use the same type for input and output inline asm operands.
 
 Provide AO_fetch_compare_and_swap, needed by lang/ecl 20.4.24.

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/17 14:40:59 rsadowski Exp $
-
 COMMENT = 	C++ reflection library
 V =		0.9.6
 DISTNAME =	rttr-0.9.6

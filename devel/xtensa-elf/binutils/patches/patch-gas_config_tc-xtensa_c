@@ -1,4 +1,3 @@
-$OpenBSD: patch-gas_config_tc-xtensa_c,v 1.1.1.1 2017/11/02 18:30:58 bentley Exp $
 https://github.com/qca/open-ath9k-htc-firmware/tree/master/local/patches/
 
 Index: gas/config/tc-xtensa.c

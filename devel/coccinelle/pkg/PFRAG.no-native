@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.no-native,v 1.1 2019/03/04 12:51:12 chrisz Exp $
 lib/coccinelle/ocaml/no_prepare_ocamlcocci.cmi

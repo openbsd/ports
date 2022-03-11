@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:02 sthen Exp $
-
 COMMENT =		thread extension for Tcl
 
 V =			2.8.2

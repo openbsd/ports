@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/11 20:56:52 sthen Exp $
 include/Block.h
 @static-lib lib/libBlocksRuntime.a

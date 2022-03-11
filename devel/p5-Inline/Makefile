@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:57 sthen Exp $
-
 COMMENT=	write Perl subroutines in other programming languages
 
 MODULES=	cpan

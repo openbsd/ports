@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/08/26 20:00:29 jeremy Exp $
-
 COMMENT =	tools to access the Puppet Forge API
 
 DISTNAME =	puppet_forge-2.3.4

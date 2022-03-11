@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/01/03 13:05:01 bluhm Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/LectroTest/
 ${P5SITE}/Test/LectroTest.pm

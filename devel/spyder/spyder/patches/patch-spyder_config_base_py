@@ -1,5 +1,3 @@
-$OpenBSD: patch-spyder_config_base_py,v 1.2 2021/02/26 18:20:32 naddy Exp $
-
 Index: spyder/config/base.py
 --- spyder/config/base.py.orig
 +++ spyder/config/base.py

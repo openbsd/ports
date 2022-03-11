@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/07 03:58:59 afresh1 Exp $
 - Prevent the installation of README.Pod in an inappropriate place.
 - Don't install Data::Readme.3p, the content is similar to 
   Data::FormValidator.3p.

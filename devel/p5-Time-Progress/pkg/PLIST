@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/11 14:13:36 kevlo Exp $
 ${P5SITE}/Time/
 ${P5SITE}/Time/Progress.pm
 @man man/man3p/Time::Progress.3p

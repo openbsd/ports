@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/10/20 06:04:24 benoit Exp $
-
 COMMENT=	event loop processing
 
 MODULES=	cpan

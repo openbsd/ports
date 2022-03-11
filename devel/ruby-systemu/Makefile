@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT=		portable replacement for popen4
 
 DISTNAME=		systemu-2.6.5

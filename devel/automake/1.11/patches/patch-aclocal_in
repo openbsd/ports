@@ -1,5 +1,3 @@
-$OpenBSD: patch-aclocal_in,v 1.1 2013/03/30 21:30:18 sthen Exp $
-
 From 6bf58a59a1f3803e57e3f0378aa9344686707b75 Mon Sep 17 00:00:00 2001
 From: Stefano Lattarini <stefano.lattarini@gmail.com>
 Date: Mon, 28 May 2012 11:32:03 +0000

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 15:21:28 jasper Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Inter.pm
 ${P5SITE}/Test/Inter.pod

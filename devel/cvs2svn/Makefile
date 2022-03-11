@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/29 13:36:30 daniel Exp $
-
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
 # py3: https://github.com/mhagger/cvs2svn/issues/9

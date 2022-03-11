@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/11/14 13:35:42 sthen Exp $
-
 COMMENT=		pure Python Expect-like module
 
 MODPY_EGG_VERSION=	4.8.0

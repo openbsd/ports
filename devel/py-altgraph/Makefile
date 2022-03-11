@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT=		Python graph (network) package
 
 MODPY_EGG_VERSION =	0.16.1

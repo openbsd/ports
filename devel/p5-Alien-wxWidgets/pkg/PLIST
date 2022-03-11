@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/01/02 12:44:06 jca Exp $
 ${P5ARCH}/Alien/
 ${P5ARCH}/Alien/wxWidgets/
 ${P5ARCH}/Alien/wxWidgets.pm

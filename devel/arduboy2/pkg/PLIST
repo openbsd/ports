@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 01:02:36 jcs Exp $
 share/arduino/libraries/Arduboy2/
 share/arduino/libraries/Arduboy2/.gitignore
 share/arduino/libraries/Arduboy2/LICENSE.txt

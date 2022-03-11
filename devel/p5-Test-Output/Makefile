@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/03/20 12:59:56 bluhm Exp $
-
 COMMENT = 	test output of other modules
 
 DISTNAME =	Test-Output-1.033

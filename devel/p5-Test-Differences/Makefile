@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/27 00:47:17 afresh1 Exp $
-
 COMMENT =	test and show differences in strings and data structures
 
 DISTNAME =	Test-Differences-0.68

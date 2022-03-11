@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2019/04/02 12:39:29 naddy Exp $
-
 CATEGORIES =		devel
 HOMEPAGE =		http://www.atmel.com/tools/ATMELAVRTOOLCHAINFORLINUX.aspx
 CONFIGURE_STYLE ?=	gnu

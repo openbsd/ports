@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/01 10:23:15 benoit Exp $
-
 COMMENT= 	canonical EOL/EOF
 
 MODULES=	cpan 

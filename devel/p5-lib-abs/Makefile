@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/01 09:16:23 benoit Exp $
-
 COMMENT =	Relative use lib in absolute way
 MODULES =	cpan
 PKG_ARCH =	*

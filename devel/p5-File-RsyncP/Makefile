@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/03/07 11:59:02 sthen Exp $
-
 COMMENT =	perl implementation of an Rsync client
 
 MODULES =	cpan

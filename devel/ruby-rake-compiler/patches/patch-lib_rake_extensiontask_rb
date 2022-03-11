@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_rake_extensiontask_rb,v 1.3 2012/04/03 18:15:18 jeremy Exp $
-
 Include the mingw directory in the PATH if cross compiling.
 
 Don't have it accidently use gmake, because the makefiles

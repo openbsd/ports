@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:28:37 robert Exp $
-
 COMMENT =		base classes wrapping fundamental Perl data types
 
 MODULES =		cpan

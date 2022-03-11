@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_libgtop2_texi,v 1.1 2007/02/21 17:27:54 steven Exp $
 --- doc/libgtop2.texi.orig	Tue Jan  2 23:50:28 2007
 +++ doc/libgtop2.texi	Sun Feb 18 20:23:18 2007
 @@ -7,6 +7,12 @@

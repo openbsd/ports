@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT =	library for reading from continuously updated files
 
 MODULES =	cpan

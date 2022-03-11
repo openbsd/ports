@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/19 07:25:28 benoit Exp $
-
 COMMENT =	pretty printing of data structures
 
 MODULES =	cpan

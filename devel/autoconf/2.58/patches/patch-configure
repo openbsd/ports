@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2004/07/22 05:50:07 espie Exp $
 --- configure.orig	Tue Nov  4 09:47:21 2003
 +++ configure	Thu Jul 22 07:19:47 2004
 @@ -1742,26 +1742,6 @@ fi

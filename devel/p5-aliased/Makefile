@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT=	use shorter versions of class names
 
 DISTNAME =	aliased-0.34

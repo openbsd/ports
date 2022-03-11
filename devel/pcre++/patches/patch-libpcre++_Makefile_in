@@ -1,4 +1,3 @@
-$OpenBSD: patch-libpcre++_Makefile_in,v 1.1.1.1 2004/12/05 14:16:40 alek Exp $
 --- libpcre++/Makefile.in.orig	Thu Dec  2 01:10:10 2004
 +++ libpcre++/Makefile.in	Thu Dec  2 01:17:18 2004
 @@ -82,7 +82,7 @@ lib_LTLIBRARIES = libpcre++.la

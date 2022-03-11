@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:02 sthen Exp $
-
 COMMENT =	PEG-based parser interpreter with memoization
 
 MODPY_EGG_VERSION =	0.3

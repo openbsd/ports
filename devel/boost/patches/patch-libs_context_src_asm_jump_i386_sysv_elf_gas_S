@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_context_src_asm_jump_i386_sysv_elf_gas_S,v 1.2 2020/11/05 11:23:03 sthen Exp $
-
 Index: libs/context/src/asm/jump_i386_sysv_elf_gas.S
 --- libs/context/src/asm/jump_i386_sysv_elf_gas.S.orig
 +++ libs/context/src/asm/jump_i386_sysv_elf_gas.S

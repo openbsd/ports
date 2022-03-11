@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/09 16:10:14 bket Exp $
 @bin bin/DllPlugInTester
 include/cppunit/
 include/cppunit/AdditionalMessage.h

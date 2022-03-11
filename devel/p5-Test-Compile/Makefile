@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/08 19:45:45 bluhm Exp $
-
 COMMENT =		check whether Perl files compile correctly
 
 DISTNAME =		Test-Compile-v3.0.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:57 sthen Exp $
-
 COMMENT =		C++ logging library
 DISTNAME =		rlog-1.4
 SHARED_LIBS =		rlog	0.0	# 5.0

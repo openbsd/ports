@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_autoconf_texi,v 1.1 2011/05/12 00:10:33 sthen Exp $
 --- doc/autoconf.texi.orig	Tue Sep 21 16:14:56 2010
 +++ doc/autoconf.texi	Sun May  1 20:49:42 2011
 @@ -226,27 +226,27 @@ freedom.''

@@ -1,4 +1,3 @@
-$OpenBSD: patch-callback_vacall_r_Makefile_in,v 1.4 2015/08/01 12:07:46 tobiasu Exp $
 --- callback/vacall_r/Makefile.in.orig	Sun Jan 25 15:17:01 2004
 +++ callback/vacall_r/Makefile.in	Thu Jul 30 15:07:56 2015
 @@ -120,13 +120,11 @@ vacall-rs6000.lo : $(srcdir)/vacall-rs6000-aix.old.s $

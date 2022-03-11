@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/10 15:55:02 benoit Exp $
 ${P5SITE}/ExtUtils/InstallPaths.pm
 @man man/man3p/ExtUtils::InstallPaths.3p

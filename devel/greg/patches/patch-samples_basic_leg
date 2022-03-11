@@ -1,5 +1,3 @@
-$OpenBSD: patch-samples_basic_leg,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
-
 Use a four-arg YY_INPUT() as per patch-compile_c.  Turn sprintf(3) into
 snprintf(3).
 

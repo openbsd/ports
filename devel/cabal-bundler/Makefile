@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/17 03:35:31 gnezdo Exp $
-
 COMMENT =	use cabal solver to build standalone installation
 
 # https://github.com/phadej/cabal-extras/issues/37

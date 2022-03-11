@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/08 13:59:23 sthen Exp $
-
 COMMENT =	Go package for low-level operating system interaction
 DISTNAME =	go-sys-20190904
 GH_ACCOUNT =	golang

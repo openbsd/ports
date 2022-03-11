@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.28 2022/02/19 09:45:40 rsadowski Exp $
 @man man/man7/ecm-developer.7
 @man man/man7/ecm-find-modules.7
 @man man/man7/ecm-kde-modules.7

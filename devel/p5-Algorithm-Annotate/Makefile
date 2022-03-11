@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:38 sthen Exp $
-
 COMMENT=	represent a series of changes in annotate form
 
 MODULES=	cpan

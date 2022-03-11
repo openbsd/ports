@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/13 22:12:09 naddy Exp $
-
 COMMENT =	pure Lua libraries focusing on input data handling
 
 GH_ACCOUNT =	stevedonovan

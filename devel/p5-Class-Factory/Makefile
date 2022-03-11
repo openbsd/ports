@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:42 sthen Exp $
-
 COMMENT= 	automates the Factory design pattern
 
 MODULES=	cpan

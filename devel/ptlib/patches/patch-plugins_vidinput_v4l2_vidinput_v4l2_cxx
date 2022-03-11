@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_vidinput_v4l2_vidinput_v4l2_cxx,v 1.5 2021/11/28 13:31:14 ajacoutot Exp $
-
 Index: plugins/vidinput_v4l2/vidinput_v4l2.cxx
 --- plugins/vidinput_v4l2/vidinput_v4l2.cxx.orig
 +++ plugins/vidinput_v4l2/vidinput_v4l2.cxx

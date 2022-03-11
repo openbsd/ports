@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/05/21 09:50:50 ajacoutot Exp $
-
 PORTROACH=		limit:^2\.28
 
 COMMENT=		C++ binding for the ATK library

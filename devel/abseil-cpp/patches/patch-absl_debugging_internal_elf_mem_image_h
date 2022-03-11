@@ -1,5 +1,3 @@
-$OpenBSD: patch-absl_debugging_internal_elf_mem_image_h,v 1.1.1.1 2021/12/18 19:38:17 kn Exp $
-
 Disabling ABSL_HAVE_ELF_MEM_IMAGE.
 
 This will cause the files

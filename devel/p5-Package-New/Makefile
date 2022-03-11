@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/01 09:42:39 benoit Exp $
-
 COMMENT=		simple base package from which to inherit
 
 DISTNAME =		Package-New-0.09

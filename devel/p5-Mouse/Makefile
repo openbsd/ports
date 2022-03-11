@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	Moose minus the antlers
 
 MODULES =	cpan

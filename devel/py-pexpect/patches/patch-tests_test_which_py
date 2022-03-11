@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_which_py,v 1.2 2021/11/14 13:35:42 sthen Exp $
-
 Index: tests/test_which.py
 --- tests/test_which.py.orig
 +++ tests/test_which.py

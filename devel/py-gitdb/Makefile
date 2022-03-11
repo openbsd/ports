@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/03/04 08:38:40 sthen Exp $
-
 COMMENT=		Git object database
 
 MODPY_EGG_VERSION=	4.0.9

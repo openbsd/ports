@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:39 sthen Exp $
-
 COMMENT=		simple but non-blocking HTTP/HTTPS client
 
 DISTNAME =		AnyEvent-HTTP-2.25

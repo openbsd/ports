@@ -1,5 +1,3 @@
-$OpenBSD: patch-_build_default_lib_relx_priv_templates_extended_bin,v 1.2 2021/05/27 08:43:50 sthen Exp $
-
 use versioned erlang binary
 
 Index: _build/default/lib/relx/priv/templates/extended_bin

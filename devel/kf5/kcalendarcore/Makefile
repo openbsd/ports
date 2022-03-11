@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/19 09:45:41 rsadowski Exp $
-
 COMMENT =	The KDE calendar access library
 DISTNAME =	kcalendarcore-${VERSION}
 CATEGORIES =	devel mail

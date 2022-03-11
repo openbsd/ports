@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_m4sugar_m4sugar_m4,v 1.1 2011/04/15 09:46:32 sthen Exp $
-
 first hunk: from commit f6030a3204a9b87e9b346e6eff4ce1117382fc86
 
 --- lib/m4sugar/m4sugar.m4.orig	Fri Jul  2 19:22:08 2010

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/02/13 22:09:28 cwen Exp $
-
 VERSION =	2.56
 REVISION =	5
 

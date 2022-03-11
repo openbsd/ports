@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/12 14:46:04 sthen Exp $
-
 COMMENT =	Colorado University Decision Diagram
 
 V =		3.0.0

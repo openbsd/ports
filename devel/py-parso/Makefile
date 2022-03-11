@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:59 sthen Exp $
-
 COMMENT =		python parser
 
 MODPY_EGG_VERSION =	0.8.2

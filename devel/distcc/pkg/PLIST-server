@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2020/06/12 14:19:11 sthen Exp $
 @newgroup _distcc:764
 @newuser _distcc:764:_distcc:daemon:distcc user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/distccd

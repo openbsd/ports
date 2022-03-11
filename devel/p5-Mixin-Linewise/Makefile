@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:59 sthen Exp $
-
 COMMENT =	write your linewise code for handles; this does the rest
 
 DISTNAME =	Mixin-Linewise-0.108

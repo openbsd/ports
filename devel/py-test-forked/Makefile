@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:02 sthen Exp $
-
 COMMENT =		run each test in a forked subprocess
 
 MODPY_EGG_VERSION =	0.2

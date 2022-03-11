@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/28 14:27:51 naddy Exp $
-
 COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 21:02:19 sthen Exp $
-
 COMMENT=	toolkit for the development of SILC applications
 
 DISTNAME=	silc-toolkit-1.1.12

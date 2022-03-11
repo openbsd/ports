@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/25 17:40:17 afresh1 Exp $
-
 COMMENT =	test for warnings and the lack of them
 
 DISTNAME =	Test-Warnings-0.031

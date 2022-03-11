@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/13 20:39:46 bcallah Exp $
 @bin bin/gengetopt
 @info info/gengetopt.info
 @man man/man1/gengetopt.1

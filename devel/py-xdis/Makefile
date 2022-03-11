@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/28 15:28:28 sthen Exp $
-
 COMMENT =		cross-version byte-code disassembler and marshal routines
 
 MODPY_EGG_VERSION =	6.0.3

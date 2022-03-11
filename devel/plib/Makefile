@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/30 14:51:39 kirby Exp $
-
 COMMENT =	suite of portable game libraries
 
 DISTNAME =	plib-1.8.5

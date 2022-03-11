@@ -1,5 +1,3 @@
-$OpenBSD: patch-ETL__pen_h,v 1.1 2020/01/26 22:38:05 cwen Exp $
-
 Unbreak consumers on !clang archs, from:
 https://github.com/synfig/synfig/commit/cb05b072fe6fffb4433140c631f422bdbc036722
 

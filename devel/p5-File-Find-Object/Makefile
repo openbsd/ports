@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/09 00:09:47 bluhm Exp $
-
 COMMENT =	object oriented File::Find replacement
 
 # Most versions start with v, some do not and confuse portroach, skip those.

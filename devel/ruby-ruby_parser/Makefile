@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT =	Ruby parser written in pure Ruby
 
 DISTNAME =	ruby_parser-2.3.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/02/16 23:02:06 sthen Exp $
 @conflict py-twisted-core-*
 @conflict py-twisted-conch-*
 @conflict py-twisted-lore-*

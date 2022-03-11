@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT=		implements a topological sort algorithm
 
 MODPY_EGG_VERSION=	1.6

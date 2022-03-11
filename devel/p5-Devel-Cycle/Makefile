@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:49 sthen Exp $
-
 COMMENT= 	find memory cycles in objects
 
 MODULES=	cpan

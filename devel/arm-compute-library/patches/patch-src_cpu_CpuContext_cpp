@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpu_CpuContext_cpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
-
 Index: src/cpu/CpuContext.cpp
 --- src/cpu/CpuContext.cpp.orig
 +++ src/cpu/CpuContext.cpp

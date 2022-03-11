@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/08 16:58:09 tracey Exp $
-
 COMMENT =	binutils for ${CONFIG} cross-development
 
 VERSION =	2.32

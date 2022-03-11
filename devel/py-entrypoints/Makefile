@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:00:48 sthen Exp $
-
 COMMENT =		discover and load entry points from installed packages
 
 MODPY_EGG_VERSION =	0.3

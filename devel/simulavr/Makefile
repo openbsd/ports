@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:01 sthen Exp $
-
 COMMENT=	AVR simulator
 
 DISTNAME=	simulavr-0.1.2.7

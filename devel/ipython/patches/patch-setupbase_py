@@ -1,5 +1,3 @@
-$OpenBSD: patch-setupbase_py,v 1.8 2020/08/05 02:25:55 bket Exp $
-
 Put man pages where they belong.
 
 Index: setupbase.py

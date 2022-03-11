@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_boris,v 1.3 2018/09/28 22:41:14 sthen Exp $
 Index: bin/boris
 --- bin/boris.orig
 +++ bin/boris

@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_browser_api_process_metric_h,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/browser/api/process_metric.h
 --- electron/shell/browser/api/process_metric.h.orig
 +++ electron/shell/browser/api/process_metric.h

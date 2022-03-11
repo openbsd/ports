@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/14 21:55:21 fcambus Exp $
-
 COMMENT =	binary I/O stream class library
 
 DISTNAME =	libbinio-1.5

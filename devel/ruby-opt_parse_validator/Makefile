@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/04 06:35:58 sebastia Exp $
-
 COMMENT=		validators for Ruby OptionParser lib
 
 DISTNAME=		opt_parse_validator-1.9.5

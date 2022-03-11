@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =		python tzinfo object for the local timezone
 
 MODPY_EGG_VERSION =	2.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:29:13 robert Exp $
-
 COMMENT = 	make an educated guess about the shell in use
 
 MODULES =	cpan

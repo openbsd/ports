@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_browser_api_electron_api_app_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/browser/api/electron_api_app.cc
 --- electron/shell/browser/api/electron_api_app.cc.orig
 +++ electron/shell/browser/api/electron_api_app.cc

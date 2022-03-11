@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_app_qbs-setup-qt_setupqt_cpp,v 1.2 2021/12/14 21:09:55 rsadowski Exp $
-
 Index: src/app/qbs-setup-qt/setupqt.cpp
 --- src/app/qbs-setup-qt/setupqt.cpp.orig
 +++ src/app/qbs-setup-qt/setupqt.cpp

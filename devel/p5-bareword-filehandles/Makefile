@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT =	disables bareword filehandles
 
 DISTNAME =	bareword-filehandles-0.007

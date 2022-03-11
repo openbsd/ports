@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/18 08:30:18 benoit Exp $
-
 COMMENT =	perl common defaults with lower memory usage
 
 MODULES =	cpan

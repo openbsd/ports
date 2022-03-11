@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- Makefile.in.orig	Wed Jul 18 16:41:38 2001
 +++ Makefile.in	Sat Mar  8 14:09:51 2008
 @@ -44,6 +44,7 @@ ACLOCAL = @ACLOCAL@

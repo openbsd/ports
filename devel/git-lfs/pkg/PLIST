@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/04 15:04:50 bket Exp $
 @bin bin/git-lfs
 @man man/man1/git-lfs-checkout.1
 @man man/man1/git-lfs-clean.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/01/16 19:56:05 kmos Exp $
-
 COMMENT =		network library for easy and scalable concurrency
 
 MODPY_EGG_VERSION =	21.12.0

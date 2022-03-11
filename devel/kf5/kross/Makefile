@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/13 15:02:06 rsadowski Exp $
-
 COMMENT =	embedding of scripting into KDE applications
 DISTNAME =	kross-${VERSION}
 

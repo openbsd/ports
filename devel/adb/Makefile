@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/14 10:34:19 tb Exp $
-
 COMMENT =		Android Debug Bridge
 
 V =			5.1.1_r4

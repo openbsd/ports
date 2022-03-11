@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/03/30 04:47:59 bentley Exp $
 include/qpc/
 include/qpc/au-ds.lnt
 include/qpc/au-misra2.lnt

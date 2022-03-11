@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/02/19 09:45:46 rsadowski Exp $
-
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 

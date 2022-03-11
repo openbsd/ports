@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT =	a collection of n-ary tree related modules for Perl
 
 DISTNAME =	Forest-0.10

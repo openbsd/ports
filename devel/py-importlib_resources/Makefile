@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:00:49 sthen Exp $
-
 # remove when switching to Python 3.9
 COMMENT=		backport of the importlib.resources module
 

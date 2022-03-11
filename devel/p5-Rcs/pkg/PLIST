@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/11 06:55:43 merdely Exp $
 ${P5SITE}/Rcs.pm
 @man man/man3p/Rcs.3p

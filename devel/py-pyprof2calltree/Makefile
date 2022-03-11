@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:00 sthen Exp $
-
 COMMENT =	help visualize profiling data collected with the cProfile
 
 MODPY_EGG_VERSION = 1.4.5

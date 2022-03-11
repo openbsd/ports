@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_build_moz_build,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 Index: js/src/build/moz.build
 --- js/src/build/moz.build.orig
 +++ js/src/build/moz.build

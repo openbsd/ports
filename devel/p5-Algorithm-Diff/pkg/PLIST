@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:56 espie Exp $
 ${P5SITE}/Algorithm/
 ${P5SITE}/Algorithm/Diff.pm
 ${P5SITE}/Algorithm/DiffOld.pm

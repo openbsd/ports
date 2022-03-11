@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_shunit2_test_sh,v 1.1.1.1 2014/12/31 11:14:17 rpe Exp $
 --- src/shunit2_test.sh.orig	Sat Dec 27 22:09:42 2014
 +++ src/shunit2_test.sh	Sat Dec 27 22:11:45 2014
 @@ -15,7 +15,7 @@ MY_NAME=`basename $0`

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/07/21 07:41:51 jasper Exp $
 bin/r2
 @bin bin/r2agent
 bin/r2p

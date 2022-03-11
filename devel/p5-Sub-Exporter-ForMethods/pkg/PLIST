@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/12 17:47:12 cwen Exp $
 ${P5SITE}/Sub/Exporter/ForMethods.pm
 @man man/man3p/Sub::Exporter::ForMethods.3p

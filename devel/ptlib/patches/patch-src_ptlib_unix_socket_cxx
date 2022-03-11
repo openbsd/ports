@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ptlib_unix_socket_cxx,v 1.5 2021/11/28 11:40:23 ajacoutot Exp $
-
 Index: src/ptlib/unix/socket.cxx
 --- src/ptlib/unix/socket.cxx.orig
 +++ src/ptlib/unix/socket.cxx

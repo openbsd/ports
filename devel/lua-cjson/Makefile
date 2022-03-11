@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 21:02:15 sthen Exp $
-
 COMMENT=	JSON support for Lua
 
 DISTNAME=	lua-cjson-2.1.0

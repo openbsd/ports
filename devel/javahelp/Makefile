@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/19 01:50:29 kurt Exp $
-
 COMMENT =		online help system for java platform applications
 
 VERSION =		2.0.05

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/02 00:01:01 sthen Exp $
-
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
 # The following ports often usually need updating together:

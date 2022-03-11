@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.11 2020/02/10 18:06:34 jasper Exp $
-
 - Link with libc++abi on arm (to access unwind symbols)
 
 Index: configure

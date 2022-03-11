@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2022/01/14 19:49:12 sthen Exp $
 bin/audiofile-config
 @bin bin/sfconvert
 @bin bin/sfinfo

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT=	refresh perl %INC files when updated on disk
 
 MODULES=	cpan

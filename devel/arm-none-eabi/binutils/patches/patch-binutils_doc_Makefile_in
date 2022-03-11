@@ -1,4 +1,3 @@
-$OpenBSD: patch-binutils_doc_Makefile_in,v 1.3 2021/01/31 11:26:40 kettenis Exp $
 Index: binutils/doc/Makefile.in
 --- binutils/doc/Makefile.in.orig
 +++ binutils/doc/Makefile.in

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_m4sugar_Makefile_in,v 1.1.1.1 2003/06/09 12:04:15 espie Exp $
 --- lib/m4sugar/Makefile.in.orig	Mon Nov 25 16:59:24 2002
 +++ lib/m4sugar/Makefile.in	Mon Nov 25 16:59:40 2002
 @@ -94,7 +94,7 @@ target_alias = @target_alias@

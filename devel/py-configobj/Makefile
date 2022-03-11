@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT=		config file reader and writer
 
 MODPY_EGG_VERSION =	5.0.6

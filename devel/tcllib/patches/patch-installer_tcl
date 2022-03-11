@@ -1,5 +1,3 @@
-$OpenBSD: patch-installer_tcl,v 1.8 2017/05/14 09:01:31 stu Exp $
-
 Install everything nicely.
 Generate tcllib.n.
 

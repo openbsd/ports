@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/29 05:20:14 kirby Exp $
-
 COMMENT =		library for creating GUIs for games and 3D applications
 
 V = 			3.4.0

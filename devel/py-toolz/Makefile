@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/07 09:16:31 sthen Exp $
-
 COMMENT =	utility functions similar to itertools and functools
 
 MODPY_EGG_VERSION =	0.11.2

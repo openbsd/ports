@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/12/10 09:47:43 benoit Exp $
-
 COMMENT=	test suite using WWW::Mechanize
 
 MODULES=	cpan

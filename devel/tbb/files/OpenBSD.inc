@@ -1,4 +1,3 @@
-# $OpenBSD: OpenBSD.inc,v 1.3 2020/05/25 13:56:48 naddy Exp $
 # Copyright (c) 2005-2018 Intel Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

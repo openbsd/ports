@@ -1,5 +1,3 @@
-$OpenBSD: patch-io_internal_h,v 1.1 2021/02/06 12:04:43 jan Exp $
-
 Index: io_internal.h
 --- io_internal.h.orig
 +++ io_internal.h

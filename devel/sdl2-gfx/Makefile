@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/04/01 20:43:08 naddy Exp $
-
 V =		1.0.4
 COMMENT =	primitives drawing/other support functions for SDL2
 DISTNAME =	SDL2_gfx-${V}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:19 sthen Exp $
-
 COMMENT =	perl interface to the libusb-1.0 API
 
 DISTNAME =	USB-LibUSB-0.09

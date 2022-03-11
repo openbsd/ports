@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/09/29 19:58:04 jasper Exp $
 bin/checkmk
 include/check.h
 include/check_stdint.h

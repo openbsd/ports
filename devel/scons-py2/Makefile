@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/31 17:26:11 sthen Exp $
-
 COMMENT=	Python-based build system
 
 # XXX: keep version in sync with scons.port.mk

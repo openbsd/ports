@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/04/01 11:49:50 mglocker Exp $
-
 COMMENT=	turbo assembler compatible cross-assembler for 65xx
 
 DISTNAME=	64tass-1.55.2176-src

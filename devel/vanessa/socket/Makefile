@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2017/11/21 00:13:00 naddy Exp $
-
 COMMENT=	provides simplified TCP/IP socket operations
 
 VERSION=	0.0.13

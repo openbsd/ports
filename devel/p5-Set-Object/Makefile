@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:08 sthen Exp $
-
 COMMENT=	set of objects and strings
 
 MODULES=	cpan

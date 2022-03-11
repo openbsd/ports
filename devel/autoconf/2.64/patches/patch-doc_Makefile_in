@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2010/03/22 20:53:54 espie Exp $
 --- doc/Makefile.in.orig	Mon Jul 27 05:28:44 2009
 +++ doc/Makefile.in	Mon Mar  8 12:20:07 2010
 @@ -383,6 +383,10 @@ dist-info: $(INFO_DEPS)

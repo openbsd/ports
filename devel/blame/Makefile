@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/07 21:58:06 naddy Exp $
-
 COMMENT=	RCS equivalent of CVS's annotate command
 
 DISTNAME=	blame-1.3.1

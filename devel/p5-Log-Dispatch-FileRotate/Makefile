@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/05 09:01:37 benoit Exp $
-
 COMMENT=	log to files that archive/rotate themselves
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/02/25 15:18:33 benoit Exp $
 ${P5SITE}/Git/
 ${P5SITE}/Git/Repository/
 ${P5SITE}/Git/Repository.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:38 sthen Exp $
-
 COMMENT =	libevent extra features
 
 VERSION =	1.4.13

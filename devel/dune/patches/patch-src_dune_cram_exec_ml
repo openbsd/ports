@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_dune_cram_exec_ml,v 1.1 2022/01/31 00:04:53 daniel Exp $
-
 Backport commit for ocaml 4.13 support. see:
 https://github.com/ocaml/dune/commit/c1e82f94aa2883feda752df450130ee204855c09
 

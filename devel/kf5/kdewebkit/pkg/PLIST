@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2022/02/19 09:45:42 rsadowski Exp $
 include/KF5/KDEWebKit/
 include/KF5/KDEWebKit/KGraphicsWebView
 include/KF5/KDEWebKit/KWebPage

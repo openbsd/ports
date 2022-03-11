@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT = 	author test that validates a package MANIFEST
 
 MODULES =	cpan

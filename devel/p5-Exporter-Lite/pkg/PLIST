@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Exporter/
 ${P5SITE}/Exporter/Lite.pm
 @man man/man3p/Exporter::Lite.3p

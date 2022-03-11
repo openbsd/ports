@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:05 sthen Exp $
-
 COMMENT=	functional and object-oriented callback architecture
 
 MODULES=	cpan

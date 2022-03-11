@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/01/18 19:14:26 tb Exp $
-
 COMMENT=		Google data interchange format (protocol buffers)
 
 MODPY_EGG_VERSION=	3.19.3

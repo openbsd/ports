@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/22 15:47:22 sthen Exp $
-
 COMMENT =		Python module to retry code until it succeeds
 
 MODPY_EGG_VERSION =	8.0.1

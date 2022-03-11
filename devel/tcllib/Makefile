@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:02 sthen Exp $
-
 COMMENT =	Tcl Standard Library
 
 DISTNAME =	tcllib-1.19pl0

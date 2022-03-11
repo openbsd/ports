@@ -1,4 +1,3 @@
-$OpenBSD: patch-CGRuntime_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 Index: CGRuntime.cpp
 --- CGRuntime.cpp.orig
 +++ CGRuntime.cpp

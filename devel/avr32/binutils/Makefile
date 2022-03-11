@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/14 18:13:59 naddy Exp $
-
 COMMENT = 	Atmel AVR 32-bit binutils
 V = 		2.23.1
 REVISION =	0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/04 11:33:24 cwen Exp $
-
 COMMENT=		dockapp-making standard library for Window Maker
 
 DISTNAME=		libdockapp-0.7.3

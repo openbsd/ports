@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/11 20:58:12 sthen Exp $
-
 COMMENT=	implementation of Apple "Blocks" runtime interfaces
 
 GH_ACCOUNT=	mackyle

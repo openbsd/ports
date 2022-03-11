@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/22 04:22:20 bket Exp $
-
 COMMENT =		C call graphs using Cflow producing linked PDF
 
 MODPY_EGG_VERSION =	0.2.2

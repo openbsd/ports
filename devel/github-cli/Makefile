@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/03/04 16:20:42 kn Exp $
-
 COMMENT =	command-line access to github pull requests, issues and more
 
 V =	2.5.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/10 00:18:23 bluhm Exp $
 ${P5SITE}/Specio/
 ${P5SITE}/Specio.pm
 ${P5SITE}/Specio/Coercion.pm

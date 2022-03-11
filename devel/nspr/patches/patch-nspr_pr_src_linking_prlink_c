@@ -1,4 +1,3 @@
-$OpenBSD: patch-nspr_pr_src_linking_prlink_c,v 1.6 2020/09/21 13:50:18 landry Exp $
 If dlopen() fails, retry with everything stripped after .so
 https://bugzilla.mozilla.org/show_bug.cgi?id=650772
 Index: nspr/pr/src/linking/prlink.c

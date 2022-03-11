@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/17 12:22:02 jasper Exp $
 @conflict msp430-libc-<=20110213
 bin/msp430mcu-config
 msp430/include/alloca.h

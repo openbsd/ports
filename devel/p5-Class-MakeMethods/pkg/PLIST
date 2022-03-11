@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/25 11:30:38 espie Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/MakeMethods/
 ${P5SITE}/Class/MakeMethods.pm

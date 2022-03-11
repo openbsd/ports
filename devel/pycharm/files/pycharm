@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: pycharm,v 1.3 2020/12/05 11:23:04 rsadowski Exp $
-#
 # OpenBSD-specific startup script for PyCharm IDE
 
 PYCHARM_HOME=${TRUEPREFIX}/pycharm

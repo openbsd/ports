@@ -1,5 +1,3 @@
-$OpenBSD: patch-cjose_pc_in,v 1.1 2022/01/27 12:29:14 yasuoka Exp $
-
 Index: cjose.pc.in
 --- cjose.pc.in.orig
 +++ cjose.pc.in

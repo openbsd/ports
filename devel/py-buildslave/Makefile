@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2022/03/07 08:58:48 landry Exp $
-
 COMMENT=	buildworker for the buildbot CI system
 
 MODPY_EGG_VERSION=	3.5.0

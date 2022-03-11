@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:41 naddy Exp $
 @conflict ksh93-*
 bin/libast-config
 include/libast/

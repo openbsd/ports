@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 11:03:22 shadchin Exp $
 include/libguess/
 include/libguess/libguess.h
 @lib lib/libguess.so.${LIBguess_VERSION}

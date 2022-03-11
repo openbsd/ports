@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_chromium_src_chrome_browser_process_singleton_posix_cc,v 1.2 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/chromium_src/chrome/browser/process_singleton_posix.cc
 --- electron/chromium_src/chrome/browser/process_singleton_posix.cc.orig
 +++ electron/chromium_src/chrome/browser/process_singleton_posix.cc

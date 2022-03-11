@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/31 18:12:19 jasper Exp $
-
 COMMENT =	modified version of Valgrind VEX for PyVEX
 
 GH_COMMIT =	939f423dbb6282cf14bc5d90ff8b37c2c5992e65

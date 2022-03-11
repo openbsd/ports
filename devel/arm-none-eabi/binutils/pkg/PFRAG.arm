@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.arm,v 1.2 2020/10/06 05:53:05 jsg Exp $
 @pkgpath devel/arm-none-eabi/binutils,
 ${CONFIG}/lib/
 ${CONFIG}/lib/ldscripts/

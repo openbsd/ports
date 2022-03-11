@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=	component architecture from Zope
 
 MODPY_EGG_VERSION=	4.2.2

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/14 17:36:08 robert Exp $
 ${P5SITE}/Date/Extract.pm
 @man man/man3p/Date::Extract.3p

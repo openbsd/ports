@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/22 04:22:20 bket Exp $
-
 COMMENT =	Python3 interface to the Bitcoin data structure and protocol
 
 MODPY_EGG_VERSION =	0.11.0

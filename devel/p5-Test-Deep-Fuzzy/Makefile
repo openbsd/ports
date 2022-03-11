@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:12 sthen Exp $
-
 COMMENT =	fuzzy number comparison with Test::Deep
 
 DISTNAME =	Test-Deep-Fuzzy-0.01

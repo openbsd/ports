@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/17 09:53:57 espie Exp $
 @bin bin/ixpc
 @comment etc/
 include/ixp.h

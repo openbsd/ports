@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/02/19 09:45:44 rsadowski Exp $
 include/KF5/KNotifyConfig/
 include/KF5/KNotifyConfig/KNotifyConfigWidget
 include/KF5/KNotifyConfig/knotifyconfig_export.h

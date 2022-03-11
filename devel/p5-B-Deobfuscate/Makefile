@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:39 sthen Exp $
-
 COMMENT=	Perl module for use in de-obfuscating source code
 
 MODULES=	cpan

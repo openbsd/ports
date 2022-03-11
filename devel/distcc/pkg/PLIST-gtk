@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-gtk,v 1.3 2021/01/31 19:28:02 sthen Exp $
 @bin bin/distccmon-gnome
 share/applications/distccmon-gnome.desktop
 share/pixmaps/

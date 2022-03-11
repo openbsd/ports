@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=	SDL C++ GUI widget library
 
 DISTNAME=	GUIlib-1.2.1

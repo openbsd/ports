@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/27 13:13:06 sthen Exp $
-
 COMMENT=		argparse replacement, allows options to be set via files/env
 
 MODPY_EGG_VERSION =	1.5.3

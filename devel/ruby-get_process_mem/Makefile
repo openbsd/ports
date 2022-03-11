@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/02 21:10:23 sebastia Exp $
-
 COMMENT =	get memory usage of a process
 
 DISTNAME =	get_process_mem-0.2.7

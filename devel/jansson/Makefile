@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/07/16 15:00:18 kirby Exp $
-
 COMMENT =		library for manipulating JSON data
 
 DISTNAME =		jansson-2.13.1

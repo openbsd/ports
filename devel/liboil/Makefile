@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/01/23 14:05:51 cwen Exp $
-
 COMMENT=	library of optimized inner loops
 
 DISTNAME=	liboil-0.3.17

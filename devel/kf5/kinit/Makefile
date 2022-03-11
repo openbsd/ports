@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/15 09:37:28 rsadowski Exp $
-
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
 

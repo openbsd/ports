@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/05 08:22:31 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/Class/
 ${P5ARCH}/Class/C3/

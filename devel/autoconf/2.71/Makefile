@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 VERSION =	2.71
 
 BUILD_DEPENDS =		devel/help2man

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/31 12:13:28 sthen Exp $
-
 COMMENT=		JSON implementation in C
 
 DISTNAME=		json-c-0.13.1

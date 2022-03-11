@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/18 13:14:24 daniel Exp $
-
 COMMENT =	Python AST that abstracts the underlying Python version
 
 MODPY_EGG_VERSION =	0.5.3

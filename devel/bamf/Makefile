@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/02 14:37:21 bcallah Exp $
-
 V =		0.5
 P =		4
 COMMENT =	application matching library

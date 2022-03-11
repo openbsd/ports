@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/23 17:26:47 kmos Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}process_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/process_tests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/process_tests-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

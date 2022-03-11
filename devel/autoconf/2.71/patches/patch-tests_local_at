@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_local_at,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 Index: tests/local.at
 --- tests/local.at.orig
 +++ tests/local.at

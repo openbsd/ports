@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:58 sthen Exp $
-
 COMMENT =		perl module implementing simple file locking
 
 MODULES =		cpan

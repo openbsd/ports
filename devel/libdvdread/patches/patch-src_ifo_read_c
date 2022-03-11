@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ifo_read_c,v 1.5 2022/02/27 12:42:43 sthen Exp $
-
 - ifo_read: allocate the right number of PTT
   c227550889b4455bbfba51099306e78ce81b7df9
 - ifo_read: don't treat 0 PGCI SRP as an error

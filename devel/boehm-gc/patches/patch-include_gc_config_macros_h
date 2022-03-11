@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_gc_config_macros_h,v 1.4 2021/02/05 18:37:48 kurt Exp $
-
 - make sure the check for GC_OPENBSD_THREADS is before any arch
   specific checks
 

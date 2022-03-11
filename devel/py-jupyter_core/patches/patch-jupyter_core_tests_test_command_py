@@ -1,4 +1,3 @@
-$OpenBSD: patch-jupyter_core_tests_test_command_py,v 1.3 2020/02/16 05:20:29 bket Exp $
 Index: jupyter_core/tests/test_command.py
 --- jupyter_core/tests/test_command.py.orig
 +++ jupyter_core/tests/test_command.py

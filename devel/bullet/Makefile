@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/30 22:15:35 pascal Exp $
-
 COMMENT =	physics library
 
 GH_ACCOUNT =	bulletphysics

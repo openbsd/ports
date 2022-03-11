@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/18 21:35:09 merdely Exp $
 ${P5SITE}/Package/
 ${P5SITE}/Package/Generator.pm
 ${P5SITE}/Package/Reaper.pm

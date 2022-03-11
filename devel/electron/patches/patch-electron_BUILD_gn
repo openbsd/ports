@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_BUILD_gn,v 1.2 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/BUILD.gn
 --- electron/BUILD.gn.orig
 +++ electron/BUILD.gn

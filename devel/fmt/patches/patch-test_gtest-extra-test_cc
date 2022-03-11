@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_gtest-extra-test_cc,v 1.2 2021/10/16 08:02:18 rsadowski Exp $
-
 Index: test/gtest-extra-test.cc
 --- test/gtest-extra-test.cc.orig
 +++ test/gtest-extra-test.cc

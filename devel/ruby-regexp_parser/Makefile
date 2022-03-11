@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/16 18:36:23 jeremy Exp $
-
 COMMENT =		gem for tokenizing, parsing, and transforming regexps
 
 DISTNAME =		regexp_parser-1.8.1

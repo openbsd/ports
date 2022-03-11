@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/02/26 22:03:18 sthen Exp $
-
 COMMENT =	Python 2 and 3 compatibility library
 
 MODPY_EGG_VERSION =	1.16.0

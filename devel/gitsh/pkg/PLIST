@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/13 14:00:56 rsadowski Exp $
 @bin bin/gitsh
 @man man/man1/gitsh.1
 @man man/man5/gitsh_completions.5

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/16 15:52:38 benoit Exp $
 ${P5SITE}/Stream/
 ${P5SITE}/Stream/Buffered/
 ${P5SITE}/Stream/Buffered.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:08 sthen Exp $
-
 COMMENT= 	deferred and lazy evaluation
 
 MODULES=	cpan

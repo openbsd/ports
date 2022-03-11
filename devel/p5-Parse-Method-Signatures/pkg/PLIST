@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:43:26 jasper Exp $
 ${P5SITE}/Parse/
 ${P5SITE}/Parse/Method/
 ${P5SITE}/Parse/Method/Signatures/

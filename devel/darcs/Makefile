@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.75 2022/02/23 05:41:19 gnezdo Exp $
-
 COMMENT =		advanced revision control system written in Haskell
 
 MODCABAL_STEM =		darcs

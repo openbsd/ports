@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_svncpp_dirent_cpp,v 1.1 2016/06/14 08:42:46 czarkoff Exp $
 --- src/svncpp/dirent.cpp.orig	Thu Jun 28 08:39:33 2012
 +++ src/svncpp/dirent.cpp	Wed Jun  1 04:27:23 2016
 @@ -47,7 +47,7 @@ namespace svn (public)

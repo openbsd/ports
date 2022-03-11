@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_symbolize_unittest_cc,v 1.1 2021/03/05 01:25:08 kmos Exp $
-
 This test causes problems on (at least) sparc64 and mips64. It appears they try
 to call this even though those functions don't exist for those archs.
 

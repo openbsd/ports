@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_Makefile_in,v 1.2 2012/09/11 23:40:52 sthen Exp $
 --- man/Makefile.in.orig	Tue Mar 11 18:54:15 2008
 +++ man/Makefile.in	Wed Sep 12 00:26:00 2012
 @@ -508,7 +508,7 @@ uninstall-man: uninstall-man1

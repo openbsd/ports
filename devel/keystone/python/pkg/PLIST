@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/08/07 09:59:58 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/keystone/
 lib/python${MODPY_VERSION}/site-packages/keystone/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/11/12 21:36:27 benoit Exp $
 ${P5ARCH}/
 ${P5ARCH}/PadWalker.pm
 ${P5ARCH}/auto/

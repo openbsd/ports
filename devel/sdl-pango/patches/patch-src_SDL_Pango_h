@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_SDL_Pango_h,v 1.4 2021/02/28 14:27:51 naddy Exp $
 --- src/SDL_Pango.h.orig	Tue Apr 25 21:48:18 2017
 +++ src/SDL_Pango.h	Tue Apr 25 21:49:43 2017
 @@ -47,10 +47,10 @@ typedef struct _SDLPango_Matrix {

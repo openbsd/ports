@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:05 sthen Exp $
-
 COMMENT=	perl interface to the Pango libraries
 
 DISTNAME =	Pango-1.227

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/11/17 22:46:19 op Exp $
 @bin bin/poedit
 @man man/man1/poedit.1
 share/applications/net.poedit.Poedit.desktop

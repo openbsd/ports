@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT=		embed C/++ external module code in your Ruby script
 
 DISTNAME=		RubyInline-3.9.0

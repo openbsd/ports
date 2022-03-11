@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/06/05 12:34:05 jasper Exp $
-
 TOOL=			binutils
 TOOL_V=			2.21.1a
 

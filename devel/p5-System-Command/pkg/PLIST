@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/10/31 14:40:33 cwen Exp $
 ${P5SITE}/System/
 ${P5SITE}/System/Command/
 ${P5SITE}/System/Command.pm

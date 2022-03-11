@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:02 sthen Exp $
-
 COMMENT =		relaxed test discovery/organization for pytest
 
 MODPY_EGG_VERSION =	1.1.5

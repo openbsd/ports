@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/21 11:10:38 gonzalo Exp $
-
 COMMENT =		intel hex file format is used in microprocessors
 
 MODPY_EGG_VERSION =	2.3.0

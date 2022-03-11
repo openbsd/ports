@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_common_electron_command_line_cc,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/common/electron_command_line.cc
 --- electron/shell/common/electron_command_line.cc.orig
 +++ electron/shell/common/electron_command_line.cc

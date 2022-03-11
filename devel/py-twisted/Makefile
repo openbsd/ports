@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =		asynchronous networking Python framework
 
 MODPY_EGG_VERSION =	20.3.0

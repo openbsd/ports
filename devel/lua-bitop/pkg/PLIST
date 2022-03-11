@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/14 14:53:15 bcallah Exp $
 @conflict luabitop-*
 @pkgpath devel/luabitop
 lib/lua/${MODLUA_VERSION}/bit.so

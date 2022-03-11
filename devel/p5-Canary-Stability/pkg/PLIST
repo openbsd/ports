@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/25 09:33:37 dcoppa Exp $
 ${P5SITE}/Canary/
 ${P5SITE}/Canary/Stability.pm
 @man man/man3p/Canary::Stability.3p

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Source_Swig_include_c,v 1.2 2017/11/01 16:41:21 rsadowski Exp $
 Index: Source/Swig/include.c
 --- Source/Swig/include.c.orig
 +++ Source/Swig/include.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:44:42 sthen Exp $
-
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
 REVISION =	4

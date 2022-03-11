@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_filenames_h,v 1.2 2021/10/22 18:30:36 jca Exp $
-
 Our libiberty does not have filename_cmp(), but since it would simply
 call strcmp(), use a macro when building gdb and most of all libbfd.
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.swiftshader,v 1.2 2020/04/06 18:58:17 robert Exp $
 electron/swiftshader/
 @so electron/swiftshader/libEGL.so
 @so electron/swiftshader/libGLESv2.so

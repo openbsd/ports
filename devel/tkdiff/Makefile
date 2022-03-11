@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/17 14:49:21 danj Exp $
-
 COMMENT=	graphical front-end to the diff program
 
 DISTNAME=	tkdiff-4.2

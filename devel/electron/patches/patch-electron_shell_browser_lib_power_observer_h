@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_browser_lib_power_observer_h,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/browser/lib/power_observer.h
 --- electron/shell/browser/lib/power_observer.h.orig
 +++ electron/shell/browser/lib/power_observer.h

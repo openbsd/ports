@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/16 02:34:40 afresh1 Exp $
-
 COMMENT=		minimalist class construction
 
 DISTNAME =		Class-Tiny-1.008

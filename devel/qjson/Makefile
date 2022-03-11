@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/08/27 05:19:17 rsadowski Exp $
-
 COMMENT=	Qt-based library that maps JSON data to QVariant objects
 
 GH_ACCOUNT =	flavio

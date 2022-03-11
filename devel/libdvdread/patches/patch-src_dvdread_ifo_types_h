@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_dvdread_ifo_types_h,v 1.1 2022/02/27 12:42:43 sthen Exp $
-
 - ifo_types: Indent to clarify the conditions
   7fc86bd0124d29130ad7d4afc10f3f4105e1c811
 - ifo_types.h: Don't use attribute gcc_struct with clang

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/05 12:34:05 jasper Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	C headers and binutils linker scripts for ${TARGET}

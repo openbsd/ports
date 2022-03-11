@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/09/03 11:51:08 ajacoutot Exp $
-
 COMMENT =		network service discovery using Zeroconf for KDE
 DISTNAME =		kdnssd-${VERSION}
 

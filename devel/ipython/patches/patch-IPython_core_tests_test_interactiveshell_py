@@ -1,4 +1,3 @@
-$OpenBSD: patch-IPython_core_tests_test_interactiveshell_py,v 1.7 2021/06/04 03:17:39 bket Exp $
 Index: IPython/core/tests/test_interactiveshell.py
 --- IPython/core/tests/test_interactiveshell.py.orig
 +++ IPython/core/tests/test_interactiveshell.py

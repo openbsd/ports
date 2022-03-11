@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:17 sthen Exp $
-
 COMMENT=		screen positioning and coloring module
 
 MODULES=		cpan

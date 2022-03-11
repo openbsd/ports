@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT =	perl interface to the arc4 random number generator
 
 DISTNAME =	BSD-arc4random-1.50

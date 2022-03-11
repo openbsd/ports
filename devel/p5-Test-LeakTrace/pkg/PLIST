@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/20 11:55:14 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Test/
 ${P5ARCH}/Test/LeakTrace/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-inc_My_Build_Any_wx_config_Bakefile_pm,v 1.4 2019/01/02 12:44:06 jca Exp $
-
 Stop hardcoding shared libs names and versions from the OpenBSD port.
 Use the same naming scheme as elsewhere.
 Use glob() to find all matching $lib.so.*, and take the last value.

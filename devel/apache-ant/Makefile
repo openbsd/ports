@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/11/22 08:31:54 rsadowski Exp $
-
 COMMENT=        build tool for java applications
 
 DISTNAME=	apache-ant-1.10.12

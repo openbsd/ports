@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fault-openbsd-powerpc_h,v 1.4 2020/07/26 13:20:32 jasper Exp $
-
 https://savannah.gnu.org/bugs/?58829
 
 Index: src/fault-openbsd-powerpc.h

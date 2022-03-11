@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 21:03:51 sthen Exp $
-
 COMMENT =		tools for testing processes
 
 MODPY_EGG_VERSION =	2.0.2

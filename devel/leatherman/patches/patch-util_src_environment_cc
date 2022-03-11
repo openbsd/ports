@@ -1,5 +1,3 @@
-$OpenBSD: patch-util_src_environment_cc,v 1.1 2021/04/28 05:08:53 rsadowski Exp $
-
 Use nowide from Boost. From Fedora.
 
 Index: util/src/environment.cc

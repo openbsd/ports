@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/04/24 05:03:25 rsadowski Exp $
-
 COMMENT =		interfacing with pseudo terminal devices in KDE
 DISTNAME =		kpty-${VERSION}
 

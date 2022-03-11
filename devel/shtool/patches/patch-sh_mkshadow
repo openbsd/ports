@@ -1,4 +1,3 @@
-$OpenBSD: patch-sh_mkshadow,v 1.1 2014/12/19 11:05:18 rpe Exp $
 --- sh.mkshadow.orig	Fri Dec 19 10:39:49 2014
 +++ sh.mkshadow	Fri Dec 19 10:40:08 2014
 @@ -188,6 +188,8 @@ Enable the output of the essential shell commands whic

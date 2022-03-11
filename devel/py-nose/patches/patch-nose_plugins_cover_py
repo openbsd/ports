@@ -1,5 +1,3 @@
-$OpenBSD: patch-nose_plugins_cover_py,v 1.1 2016/10/05 17:06:28 shadchin Exp $
-
 Make coverage plugin compatible with py-coverage 4.2
 
 --- nose/plugins/cover.py.orig	Sun Oct  2 20:23:01 2016

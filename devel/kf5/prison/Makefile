@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/09/10 08:42:06 rsadowski Exp $
-
 COMMENT =		bar code generator
 DISTNAME =		prison-${VERSION}
 PKGNAME =		prison-kf5-${VERSION}

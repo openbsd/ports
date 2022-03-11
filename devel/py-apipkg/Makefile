@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/25 22:04:46 sthen Exp $
-
 COMMENT =	namespace control and lazy-import mechanism for Python
 
 DISTNAME =		apipkg-${MODPY_EGG_VERSION}

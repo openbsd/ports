@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT=	automated driving and testing of terminal-based programs
 
 MODULES=	cpan

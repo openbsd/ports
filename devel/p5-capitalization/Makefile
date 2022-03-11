@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT=	use familiar style on method naming
 
 MODULES=	cpan

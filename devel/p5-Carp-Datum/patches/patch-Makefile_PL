@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2013/10/14 22:14:40 schwarze Exp $
 The only file in scripts/, datum_strip.PL, doesn't contain any POD,
 so refrain from creating an empty manual.
 --- Makefile.PL.orig	Fri Jul 13 19:07:21 2001

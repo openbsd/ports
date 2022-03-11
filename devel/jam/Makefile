@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:36 sthen Exp $
-
 COMMENT=		build utility like make
 
 DISTNAME=		jam-2.5

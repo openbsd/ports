@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2022/02/28 11:00:42 bket Exp $
-
 COMMENT =		cross-project testing tool for Python
 
 MODPY_EGG_VERSION =	6.2.5

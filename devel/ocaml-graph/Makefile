@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/10 04:10:59 daniel Exp $
-
 COMMENT =	OCaml graph library
 CATEGORIES =	devel
 

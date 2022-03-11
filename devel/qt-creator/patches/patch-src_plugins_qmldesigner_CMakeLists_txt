@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_qmldesigner_CMakeLists_txt,v 1.2 2021/12/18 08:52:39 rsadowski Exp $
-
 Index: src/plugins/qmldesigner/CMakeLists.txt
 --- src/plugins/qmldesigner/CMakeLists.txt.orig
 +++ src/plugins/qmldesigner/CMakeLists.txt

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/05 17:53:29 abieber Exp $
-
 COMMENT =	Double Ratchet cryptographic ratchet in C++
 V =		3.2.6
 DISTNAME =	olm-${V}

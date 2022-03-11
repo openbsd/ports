@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:52 sthen Exp $
-
 COMMENT =	inherit file attributes from parent directories
 
 MODULES =	cpan

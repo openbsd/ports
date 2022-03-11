@@ -1,5 +1,3 @@
-$OpenBSD: patch-gconf_gconf-dbus_c,v 1.1 2016/03/01 09:24:20 ajacoutot Exp $
-
 From b0895e1998ebc83ab030ec0f17c0685439f5b404 Mon Sep 17 00:00:00 2001
 From: Ray Strode <rstrode@redhat.com>
 Date: Mon, 15 Apr 2013 09:57:34 -0400

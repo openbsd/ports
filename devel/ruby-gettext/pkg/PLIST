@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/09/09 10:32:39 sebastia Exp $
 ${GEM_BIN}/rmsgcat${GEM_BIN_SUFFIX}
 ${GEM_BIN}/rmsgfmt${GEM_BIN_SUFFIX}
 ${GEM_BIN}/rmsginit${GEM_BIN_SUFFIX}

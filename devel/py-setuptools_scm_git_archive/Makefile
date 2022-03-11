@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/23 20:35:13 sthen Exp $
-
 COMMENT =	setuptools_scm plugin for git archives
 
 MODPY_EGG_VERSION =	1.1

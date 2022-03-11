@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT =		common base representation of Python source code
 
 # XXX check devel/pylint which often has tight version restrictions

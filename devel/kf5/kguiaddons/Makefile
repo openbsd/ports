@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/19 09:45:42 rsadowski Exp $
-
 COMMENT =	Utilities for graphical user interfaces
 DISTNAME =	kguiaddons-${VERSION}
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:39 naddy Exp $
 @bin bin/chm_http
 @bin bin/enum_chmLib
 @bin bin/enumdir_chmLib

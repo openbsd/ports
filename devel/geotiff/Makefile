@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/07/06 08:13:05 landry Exp $
-
 COMMENT=	GIS TIFF interchange library
 
 DISTNAME=	libgeotiff-1.7.0

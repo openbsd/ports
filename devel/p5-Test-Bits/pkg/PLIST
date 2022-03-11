@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/18 12:52:57 fcambus Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Bits.pm
 @man man/man3p/Test::Bits.3p

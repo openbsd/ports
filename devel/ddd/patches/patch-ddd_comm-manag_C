@@ -1,4 +1,3 @@
-$OpenBSD: patch-ddd_comm-manag_C,v 1.6 2009/11/30 23:45:35 edd Exp $
 --- ddd/comm-manag.C.orig	Wed Feb 11 17:25:07 2009
 +++ ddd/comm-manag.C	Mon Sep 28 09:40:49 2009
 @@ -82,6 +82,7 @@ char comm_manager_rcsid[] =

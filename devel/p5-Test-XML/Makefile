@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:17 sthen Exp $
-
 COMMENT =	compare XML in perl tests
 
 MODULES =	cpan

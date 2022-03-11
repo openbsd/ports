@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:19 sthen Exp $
-
 COMMENT =		minimal try/catch with proper preservation of $$@
 
 MODULES =		cpan

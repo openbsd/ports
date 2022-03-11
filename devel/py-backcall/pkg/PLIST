@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:41 sthen Exp $
 @pkgpath devel/py-backcall
 lib/python${MODPY_VERSION}/site-packages/backcall/
 lib/python${MODPY_VERSION}/site-packages/backcall-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2021/03/14 10:16:31 ajacoutot Exp $
-
 COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf

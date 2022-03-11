@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/12 11:35:44 robert Exp $
-
 COMMENT =		traditional (K&R-style) C preprocessor
 
 V =			0.5.3

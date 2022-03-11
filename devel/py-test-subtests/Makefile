@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/28 12:40:37 sthen Exp $
-
 COMMENT =	unittest subTest() support and subtests fixture
 
 # 0.7.0 needs pytest 0.7.0

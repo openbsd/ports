@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/18 13:23:22 sthen Exp $
 bin/cdada-gen
 include/cdada/
 include/cdada.h

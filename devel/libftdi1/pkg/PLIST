@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/14 21:48:58 sthen Exp $
 @bin bin/ftdi_eeprom
 bin/libftdi1-config
 include/libftdi1/

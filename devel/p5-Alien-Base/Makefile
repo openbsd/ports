@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/12 13:23:37 benoit Exp $
-
 COMMENT =	base classes for Alien:: modules
 
 MODULES =	cpan

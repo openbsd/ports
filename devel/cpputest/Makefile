@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/21 20:46:36 rsadowski Exp $
-#
 COMMENT =	unit testing and mocking framework for C/C++
 
 V =		3.8

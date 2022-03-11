@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:08 sthen Exp $
-
 ONLY_FOR_ARCHS =	i386
 
 COMMENT =		flat assembler

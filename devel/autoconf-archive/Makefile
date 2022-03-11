@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/22 19:12:56 jasper Exp $
-
 COMMENT=		collection of macros for GNU Autoconf
 
 DISTNAME=		autoconf-archive-2021.02.19

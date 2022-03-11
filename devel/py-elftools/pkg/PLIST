@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/10/30 20:12:10 jasper Exp $
 @conflict py-elftools-*
 @pkgpath devel/py-elftools
 bin/readelf.py${MODPY_BIN_SUFFIX}

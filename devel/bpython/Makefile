@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/02 00:00:23 sthen Exp $
-
 COMMENT=	fancy interface to the Python interpreter
 
 MODPY_EGG_VERSION=0.18

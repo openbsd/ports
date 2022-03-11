@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/15 15:01:36 gonzalo Exp $
-
 COMMENT=		versatile macro assembler for 8-bit microprocessors
 
 GH_ACCOUNT=		dasm-assembler

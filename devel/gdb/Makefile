@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2021/11/02 01:30:31 sthen Exp $
-
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 

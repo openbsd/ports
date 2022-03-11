@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.146 2019/11/13 18:33:08 jasper Exp $
-
 # All patches annotated with XXKVM are to prevent any kvm(3) which
 # results in an abort() for the caller.
 

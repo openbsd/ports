@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_xdg-utils-common_in,v 1.5 2018/05/11 05:47:28 ajacoutot Exp $
-
 Make xdg-open work with toad(8) under KDE4.
 
 Index: scripts/xdg-utils-common.in

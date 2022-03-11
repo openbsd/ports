@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_local_at,v 1.1 2011/04/15 09:46:32 sthen Exp $
 --- tests/local.at.orig	Fri Jun 18 16:11:08 2010
 +++ tests/local.at	Thu Mar 24 23:05:42 2011
 @@ -114,6 +114,7 @@ m4_case([$4], [], [], [ignore], [],

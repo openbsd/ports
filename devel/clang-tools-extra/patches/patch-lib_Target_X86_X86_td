@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_X86_X86_td,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
-
 implement -msave-args in clang/llvm, like the sun did for gcc 
 
 Index: lib/Target/X86/X86.td

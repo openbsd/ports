@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/04 17:47:08 sturm Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/MockModule.pm
 @man man/man3p/Test::MockModule.3p

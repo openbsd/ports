@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/05/25 02:54:25 gnezdo Exp $
 @bin bin/cabal-bundler

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_sl_sl_h,v 1.2 2009/12/26 13:21:21 jakemsr Exp $
 --- src/sl/sl.h.orig	Mon Mar 10 19:06:24 2008
 +++ src/sl/sl.h	Wed Dec 16 02:01:05 2009
 @@ -32,6 +32,8 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT =	test functions for exception based code
 
 DISTNAME =	Test-Exception-0.43

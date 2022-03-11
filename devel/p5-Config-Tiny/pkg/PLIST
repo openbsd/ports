@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/16 08:51:18 aanriot Exp $
 ${P5SITE}/Config/
 ${P5SITE}/Config/Tiny.pm
 @man man/man3p/Config::Tiny.3p

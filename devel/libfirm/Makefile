@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:16 sthen Exp $
-
 # Has backends for amd64, arm (32-bit), i386, mips (32-bit), sparc (32-bit)
 ONLY_FOR_ARCHS =	amd64 arm i386
 

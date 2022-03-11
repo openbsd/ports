@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT=	decision procedure for bit-vectors and arrays
 
 GH_ACCOUNT=	stp

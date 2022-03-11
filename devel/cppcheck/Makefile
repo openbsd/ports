@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2022/02/16 22:24:45 jca Exp $
-
 COMMENT =		C/C++ static checker
 
 DISTNAME =		cppcheck-2.7

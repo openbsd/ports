@@ -1,5 +1,3 @@
-$OpenBSD: patch-callback_vacall_r_vacall-x86_64_s,v 1.1 2018/10/22 19:22:08 kettenis Exp $
-
 Index: callback/vacall_r/vacall-x86_64.s
 --- callback/vacall_r/vacall-x86_64.s.orig
 +++ callback/vacall_r/vacall-x86_64.s

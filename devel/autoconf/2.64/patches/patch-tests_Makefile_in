@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.1.1.1 2010/03/22 20:53:54 espie Exp $
 --- tests/Makefile.in.orig	Mon Jul 27 05:28:45 2009
 +++ tests/Makefile.in	Mon Mar  8 12:04:46 2010
 @@ -563,9 +563,7 @@ $(wrappers): wrapper.in

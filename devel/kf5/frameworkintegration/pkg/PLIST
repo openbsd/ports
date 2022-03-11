@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/02/19 09:45:40 rsadowski Exp $
 include/KF5/FrameworkIntegration/
 include/KF5/FrameworkIntegration/frameworkintegration_version.h
 include/KF5/KStyle/

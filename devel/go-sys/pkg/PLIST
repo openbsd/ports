@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/09/12 18:49:45 jsing Exp $
 go-pkg/
 go-pkg/pkg/
 ${MODGO_PACKAGES}/

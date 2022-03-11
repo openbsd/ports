@@ -1,4 +1,3 @@
-$OpenBSD: patch-generate_unix_Makefile_config,v 1.9 2020/07/18 17:26:43 daniel Exp $
 Index: generate/unix/Makefile.config
 --- generate/unix/Makefile.config.orig
 +++ generate/unix/Makefile.config

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/12/13 16:14:41 ajacoutot Exp $
 @conflict gtk2mm-<2.22
 include/atkmm-1.6/
 include/atkmm-1.6/atkmm/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/01/29 22:48:54 afresh1 Exp $
-
 COMMENT =	postmodern object system for Perl 5
 
 MODULES =	cpan

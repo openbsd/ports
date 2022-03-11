@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2016/10/17 21:39:23 jca Exp $
 lib/lua/${MODLUA_VERSION}/posix.a
 lib/lua/${MODLUA_VERSION}/posix.so
 share/doc/${FULLPKGNAME}/

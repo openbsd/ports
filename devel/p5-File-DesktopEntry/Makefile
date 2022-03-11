@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:52 sthen Exp $
-
 COMMENT =		handle .desktop files
 
 DISTNAME =		File-DesktopEntry-0.22

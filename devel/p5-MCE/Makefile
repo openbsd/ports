@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/20 12:47:30 sthen Exp $
-
 COMMENT =	engine for Perl providing parallel processing capabilities
 
 DISTNAME =	MCE-1.877

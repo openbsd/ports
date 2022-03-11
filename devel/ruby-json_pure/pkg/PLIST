@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/04/15 13:59:17 sebastia Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore

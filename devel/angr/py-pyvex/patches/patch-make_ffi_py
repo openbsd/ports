@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_ffi_py,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
-
 Use 'cc' as default compiler.
 
 Index: make_ffi.py

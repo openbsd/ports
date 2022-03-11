@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile-gcc,v 1.2 2021/01/17 19:49:27 jasper Exp $
-
 Honour CFLAGS and DEBUG.
 
 Index: Makefile-gcc

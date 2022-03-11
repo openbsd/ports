@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT =	read/write YAML files with as little code as possible
 
 MODULES =	cpan

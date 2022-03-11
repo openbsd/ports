@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.5 2013/03/13 07:19:47 ajacoutot Exp $
-
 https://github.com/mpruett/audiofile/commit/edb0f83dbf35338788a26e26ef9f17f42b51d6fc
 
 --- configure.orig	Tue Mar 12 17:10:16 2013

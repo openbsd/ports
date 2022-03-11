@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_meson_build,v 1.2 2021/12/06 07:58:21 ajacoutot Exp $
-
 XXX fix+push upstream
 
 Index: utils/meson.build

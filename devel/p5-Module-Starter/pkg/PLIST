@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/12 18:47:03 jamesw Exp $
 bin/module-starter
 ${P5SITE}/Module/
 ${P5SITE}/Module/Starter/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_jit_ExecutableAllocator_h,v 1.1.1.1 2020/10/16 19:39:41 jasper Exp $
-
 Index: js/src/jit/ExecutableAllocator.h
 --- js/src/jit/ExecutableAllocator.h.orig
 +++ js/src/jit/ExecutableAllocator.h

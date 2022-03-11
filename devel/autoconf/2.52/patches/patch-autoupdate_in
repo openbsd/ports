@@ -1,4 +1,3 @@
-$OpenBSD: patch-autoupdate_in,v 1.1.1.1 2003/02/15 14:03:28 espie Exp $
 --- autoupdate.in.orig	Tue May 22 15:21:59 2001
 +++ autoupdate.in	Fri Sep 28 18:10:56 2001
 @@ -35,6 +35,7 @@ my $debug = 0;

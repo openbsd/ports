@@ -1,5 +1,3 @@
-$OpenBSD: patch-libnotify_notification_h,v 1.2 2013/09/03 05:09:19 ajacoutot Exp $
-
 Comma at end of list isn't valid c++, and c++ code might use libnotify.
 
 --- libnotify/notification.h.orig	Sat Jan 28 09:55:27 2012

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_client_fakeinput_cpp,v 1.1 2022/02/19 09:45:45 rsadowski Exp $
-
 Index: src/client/fakeinput.cpp
 --- src/client/fakeinput.cpp.orig
 +++ src/client/fakeinput.cpp

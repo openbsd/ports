@@ -1,5 +1,3 @@
-$OpenBSD: patch-ragel_rbxgoto_cpp,v 1.3 2021/03/15 21:02:11 sthen Exp $
-
 Index: ragel/rbxgoto.cpp
 --- ragel/rbxgoto.cpp.orig
 +++ ragel/rbxgoto.cpp

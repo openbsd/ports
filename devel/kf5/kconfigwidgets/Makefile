@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/19 10:51:00 rsadowski Exp $
-
 COMMENT =		widgets for KDE configuration dialogs
 DISTNAME =		kconfigwidgets-${VERSION}
 

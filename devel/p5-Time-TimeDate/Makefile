@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/11/25 13:04:09 sthen Exp $
-
 COMMENT=	library for parsing and formatting dates and times
 
 MODULES=	cpan

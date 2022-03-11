@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2020/04/04 12:55:38 jca Exp $
-
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc64
 

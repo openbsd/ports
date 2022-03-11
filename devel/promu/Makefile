@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/11 10:34:14 claudio Exp $
-
 COMMENT =		prometheus utility tool
 
 MODGO_MODNAME =         github.com/prometheus/promu

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/04/22 08:19:14 ajacoutot Exp $
 @bin bin/orc-bugreport
 @bin bin/orcc
 include/orc-0.4/

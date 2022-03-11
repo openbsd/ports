@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:18 sthen Exp $
-
 COMMENT =	easy-to-use date/time formatting
 
 DISTNAME =	Time-Format-1.16

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:52 sthen Exp $
-
 COMMENT =		extend nose coverage to add Cobertura-style XML reports
 
 MODPY_EGG_VERSION =	1.0.11

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_locale_build_Jamfile_v2,v 1.1 2018/08/23 16:38:10 kirby Exp $
-
 Index: libs/locale/build/Jamfile.v2
 --- libs/locale/build/Jamfile.v2.orig
 +++ libs/locale/build/Jamfile.v2

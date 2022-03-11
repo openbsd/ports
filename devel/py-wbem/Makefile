@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=		CIM operations over HTTP in Python
 
 # 1.0.0+ requires new modules: yamlloader, nocaselist, nocasedict

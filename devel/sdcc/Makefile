@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/06/26 05:28:19 rsadowski Exp $
-
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
 BROKEN-alpha=	sdcc segfaults when building the device library

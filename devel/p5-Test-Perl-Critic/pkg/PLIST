@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/04/03 11:34:42 bluhm Exp $
 ${P5SITE}/Test/Perl/Critic.pm
 @man man/man3p/Test::Perl::Critic.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:01 sthen Exp $
-
 V =		2.0.1
 COMMENT =	SDL2 cross-platform networking library
 DISTNAME =	SDL2_net-${V}

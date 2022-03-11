@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT =		scripting framework to replace rake/sake/rubigen
 
 DISTNAME =		thor-0.19.1

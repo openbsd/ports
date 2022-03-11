@@ -1,4 +1,3 @@
-$OpenBSD: patch-showtable,v 1.1.1.1 2001/03/27 08:44:37 wilfried Exp $
 --- showtable.orig	Wed Feb 26 04:15:48 1997
 +++ showtable	Mon Mar 12 20:57:41 2001
 @@ -1,4 +1,4 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:08 sthen Exp $
-
 COMMENT =		BSD-licensed implementation of compilation tools
 
 DISTNAME =		elftoolchain-0.7.1

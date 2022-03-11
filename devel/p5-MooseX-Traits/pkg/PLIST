@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/13 08:37:23 benoit Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Traits/
 ${P5SITE}/MooseX/Traits.pm

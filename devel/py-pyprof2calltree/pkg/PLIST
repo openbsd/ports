@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/29 15:38:46 sthen Exp $
 @pkgpath devel/pyprof2calltree
 @conflict py-pyprof2calltree-<1.4.5p0
 bin/pyprof2calltree

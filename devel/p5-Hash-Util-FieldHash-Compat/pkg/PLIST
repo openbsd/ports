@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/12 23:33:06 simon Exp $
 ${P5SITE}/Hash/
 ${P5SITE}/Hash/Util/
 ${P5SITE}/Hash/Util/FieldHash/

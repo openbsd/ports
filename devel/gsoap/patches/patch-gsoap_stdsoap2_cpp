@@ -1,5 +1,3 @@
-$OpenBSD: patch-gsoap_stdsoap2_cpp,v 1.1 2019/04/19 08:18:22 robert Exp $
-
 Index: gsoap/stdsoap2.cpp
 --- gsoap/stdsoap2.cpp.orig
 +++ gsoap/stdsoap2.cpp

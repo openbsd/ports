@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:49 sthen Exp $
-
 COMMENT=	per-line quick profiler for perl
 CATEGORIES=	devel
 DISTNAME=	Devel-FastProf-0.08

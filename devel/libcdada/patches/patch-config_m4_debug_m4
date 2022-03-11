@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_m4_debug_m4,v 1.1.1.1 2021/02/18 13:23:22 sthen Exp $
-
 Index: config_m4/debug.m4
 --- config_m4/debug.m4.orig
 +++ config_m4/debug.m4

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/29 15:38:48 sthen Exp $
 @pkgpath devel/py-xlsxwriter
 @conflict py-xlsxwriter-<1.2.9p1
 bin/vba_extract.py

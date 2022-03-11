@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT =	test your regular expressions
 
 DISTNAME =	Test-Regexp-2017040101

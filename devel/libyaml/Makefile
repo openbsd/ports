@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	YAML 1.1 parser and emitter written in C
 
 DISTNAME=	yaml-0.2.2

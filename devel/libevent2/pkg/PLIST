@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/31 19:06:06 kn Exp $
 bin/event_rpcgen.py
 include/event2/
 include/event2/buffer.h

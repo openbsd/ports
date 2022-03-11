@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/12 23:31:27 bluhm Exp $
-
 COMMENT=		Moose role for processing command line options
 
 MODULES=		cpan

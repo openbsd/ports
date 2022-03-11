@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT =		asynchronous I/O readiness notification library
 
 V =			0.42

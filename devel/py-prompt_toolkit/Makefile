@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/01/13 19:05:04 bket Exp $
-
 COMMENT=		python library for building powerful interactive CLI
 
 MODPY_EGG_VERSION=	3.0.24

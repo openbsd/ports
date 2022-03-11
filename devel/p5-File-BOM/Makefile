@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/05 10:03:56 benoit Exp $
-
 COMMENT =	utilities for handling Byte Order Marks
 
 MODULES =	cpan

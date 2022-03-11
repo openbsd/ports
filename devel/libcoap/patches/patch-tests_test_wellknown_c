@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_wellknown_c,v 1.1 2021/02/03 13:50:12 sthen Exp $
-
 From bbc6b24abdd95a7d9dfe9855630e6f0f27f48e54 Mon Sep 17 00:00:00 2001
 From: Olaf Bergmann <bergmann@tzi.org>
 Date: Wed, 26 Feb 2020 12:49:38 +0100

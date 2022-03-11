@@ -1,5 +1,3 @@
-$OpenBSD: patch-help_LINGUAS,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
-
 help/meson.build:6:6: ERROR: Tried to create target "help-glade-da-update-po", but a target of that name already exists
 
 Index: help/LINGUAS

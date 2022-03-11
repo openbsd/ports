@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT =	framework for building flexible cli applications
 
 DISTNAME =	CLI-Framework-0.05

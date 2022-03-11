@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/04 09:45:30 cwen Exp $
-
 COMMENT =		add test failures if warnings are caught
 
 DISTNAME =		Test-FailWarnings-0.008

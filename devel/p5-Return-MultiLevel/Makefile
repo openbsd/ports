@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:07 sthen Exp $
-
 COMMENT =		return across multiple call levels
 
 MODULES =		cpan

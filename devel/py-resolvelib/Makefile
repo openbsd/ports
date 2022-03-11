@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/20 15:05:11 bket Exp $
-
 COMMENT =		resolve abstract dependencies into concrete ones
 
 MODPY_EGG_VERSION =	0.5.5

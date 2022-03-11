@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Log_Any_Proxy_Test_pm,v 1.1 2017/05/16 16:49:41 giovanni Exp $
 --- lib/Log/Any/Proxy/Test.pm.orig
 +++ lib/Log/Any/Proxy/Test.pm
 @@ -44,6 +44,10 @@ Log::Any::Proxy::Test

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/17 21:55:08 jcs Exp $
 share/arduino/libraries/Adafruit_RA8875/
 share/arduino/libraries/Adafruit_RA8875/.github/
 share/arduino/libraries/Adafruit_RA8875/.github/ISSUE_TEMPLATE.md

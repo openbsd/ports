@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_automake_texi,v 1.1.1.1 2012/06/07 12:06:47 jasper Exp $
 --- doc/automake.texi.orig	Sat Apr 21 10:38:05 2012
 +++ doc/automake.texi	Thu May 24 22:54:00 2012
 @@ -1,7 +1,8 @@

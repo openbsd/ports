@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/12 21:29:53 martin Exp $
-
 COMMENT =	python module to interface with the pkg-config tool
 
 MODPY_EGG_VERSION =	1.5.5

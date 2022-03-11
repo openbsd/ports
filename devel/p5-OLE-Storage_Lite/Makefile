@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT=	simple class for OLE document interface
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
-
     SUBDIR =
     SUBDIR += py-ailment
     SUBDIR += py-angr

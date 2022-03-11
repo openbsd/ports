@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 03:50:55 gnezdo Exp $
-
 COMMENT =		shell script analysis tool
 
 MODCABAL_STEM =		ShellCheck

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/20 15:08:12 sthen Exp $
-
 COMMENT =		library to parse Windows minidump file format
 
 MODPY_EGG_VERSION =	0.0.21

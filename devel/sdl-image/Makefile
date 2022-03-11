@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 21:02:18 sthen Exp $
-
 COMMENT=	SDL image library
 
 DISTNAME=	SDL_image-1.2.12

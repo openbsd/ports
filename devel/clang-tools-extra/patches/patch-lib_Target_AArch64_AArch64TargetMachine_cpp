@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_AArch64_AArch64TargetMachine_cpp,v 1.3 2022/01/03 21:36:42 rsadowski Exp $
-
 Always disable GlobalISel on aarch64, fixes a crash when building on
 aarch64 without retguard, with a stack protector and without
 optimizations.

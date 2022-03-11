@@ -1,5 +1,3 @@
-# $OpenBSD: cmake.port.mk,v 1.71 2021/04/25 12:25:30 rsadowski Exp $
-
 BUILD_DEPENDS+=	devel/cmake
 
 .for _n _v in ${SHARED_LIBS}

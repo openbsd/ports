@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:43:57 espie Exp $
 ${P5SITE}/Array/
 ${P5SITE}/Array/Compare.pm
 @man man/man3p/Array::Compare.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2022/03/07 11:59:06 sthen Exp $
-
 COMMENT =	graph data structures and algorithms
 
 MODULES =	cpan

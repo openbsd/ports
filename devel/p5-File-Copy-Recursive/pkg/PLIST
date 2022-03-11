@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 13:42:02 espie Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/Copy/
 ${P5SITE}/File/Copy/Recursive.pm

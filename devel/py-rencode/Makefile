@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/26 22:58:21 kmos Exp $
-
 COMMENT =		module for fast object serialization similar to bencode
 
 MODPY_EGG_VERSION =	1.0.6

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/29 15:38:42 sthen Exp $
 @pkgpath devel/py-blessings
 lib/python${MODPY_VERSION}/site-packages/blessings/
 lib/python${MODPY_VERSION}/site-packages/blessings-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

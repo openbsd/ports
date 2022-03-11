@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2022/03/01 21:14:19 sthen Exp $
-
 COMMENT =	compiler cache
 
 V =		4.6

@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.14 2020/07/03 21:44:55 sthen Exp $
-
 COMMENT=	object-oriented access to real and tied hashes
 
 DISTNAME =	Hash-AutoHash-1.17

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/26 14:57:49 sthen Exp $
-
 COMMENT =		pure Python implementation of Git file formats and protocols
 
 MODPY_EGG_VERSION =	0.20.32

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2022/02/19 13:19:29 rsadowski Exp $
-
 # Qt5WebEngine
 USE_WXNEEDED =		Yes
 

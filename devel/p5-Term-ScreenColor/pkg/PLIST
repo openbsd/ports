@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/14 23:44:00 espie Exp $
 ${P5SITE}/Term/
 ${P5SITE}/Term/ScreenColor.pm
 @man man/man3p/Term::ScreenColor.3p

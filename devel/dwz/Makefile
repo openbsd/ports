@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/08 16:51:11 sthen Exp $
-
 COMMENT =	DWARF optimization and duplicate removal tool
 DISTNAME =	dwz-0.14
 

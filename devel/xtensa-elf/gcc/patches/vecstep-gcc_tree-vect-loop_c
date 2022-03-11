@@ -1,5 +1,3 @@
-$OpenBSD: vecstep-gcc_tree-vect-loop_c,v 1.1 2021/01/09 21:41:16 jasper Exp $
-
 clang on powerpc64 defines vec_step already which collides with the
 symbol in gcc, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=239266#c23
 renaming suggested at https://gcc.gnu.org/legacy-ml/gcc/2019-07/msg00131.html

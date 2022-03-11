@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/25 18:30:05 sthen Exp $
-
 COMMENT =		reusable state for writing clean Python tests
 
 MODPY_EGG_VERSION =	3.0.0

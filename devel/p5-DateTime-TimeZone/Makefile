@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/27 03:49:10 afresh1 Exp $
-
 COMMENT =	DateTime submodule for TZ
 
 MODULES =	cpan

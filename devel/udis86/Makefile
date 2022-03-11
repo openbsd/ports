@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/07/06 16:55:33 daniel Exp $
-
 COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2

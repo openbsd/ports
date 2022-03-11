@@ -1,5 +1,3 @@
-$OpenBSD: patch-libgcc_Makefile_in,v 1.3 2019/09/28 00:29:11 jsg Exp $
-
 Using $(INSTALL_DATA) and chmod generates errors as the operation
 is not permitted. So use plain copy mode and chown/chgrp
 in the post-install target.

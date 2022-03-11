@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.75 2021/02/23 19:39:15 sthen Exp $
-
 COMMENT=	lists of the country, language and currency iso names
 
 V =		4.5.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:28:56 robert Exp $
-
 COMMENT =	optimized type checks for Moo + Type::Tiny
 DISTNAME =	MooX-TypeTiny-0.002003
 CATEGORIES =	devel

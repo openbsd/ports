@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/26 09:44:50 sthen Exp $
-
 COMMENT =		JSON parsing C++ API
 
 GH_ACCOUNT =		open-source-parsers

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/02 16:25:43 landry Exp $
 include/http_parser.h
 @lib lib/libhttp_parser.so.${LIBhttp_parser_VERSION}

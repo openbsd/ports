@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:50 sthen Exp $
-
 COMMENT=	print out each line before it is executed
 
 MODULES=	cpan

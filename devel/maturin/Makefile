@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/03/01 21:06:24 sthen Exp $
-
 BROKEN-sparc64 =	ring-v0.16.20 does not support sparc64; re-check if an update uses newer ring
 
 COMMENT =	develop crates with pyo3, rust-cpython and cffi bindings

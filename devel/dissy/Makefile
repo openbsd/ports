@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:14 sthen Exp $
-
 COMMENT =		graphical frontend to the objdump disassembler
 
 MODPY_EGG_VERSION = 	9

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:23 sthen Exp $
-
 COMMENT =		import cvs tree into git or subversion
 
 DISTNAME =		cvs2gitdump-20210221

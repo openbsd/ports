@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/12/06 20:40:31 afresh1 Exp $
-
 COMMENT =		date and time object for Perl
 
 MODULES =		cpan

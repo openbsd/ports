@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/17 14:49:20 danj Exp $
-
 COMMENT=	GNU Scientific Library
 
 DISTNAME=	gsl-1.15

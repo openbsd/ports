@@ -1,5 +1,3 @@
-$OpenBSD: patch-dyncall_dyncall_call_ppc64_S,v 1.1 2020/07/23 12:01:19 jasper Exp $
-
 https://dyncall.org/pub/dyncall/dyncall/rev/d982a00c2177
 
 Index: dyncall/dyncall_call_ppc64.S

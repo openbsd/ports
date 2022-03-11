@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:42 sthen Exp $
-
 COMMENT=		perl object without classes
 
 MODULES=		cpan

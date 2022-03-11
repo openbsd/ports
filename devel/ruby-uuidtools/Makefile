@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT=	simple library for generating UUIDs
 
 DISTNAME=	uuidtools-2.1.5

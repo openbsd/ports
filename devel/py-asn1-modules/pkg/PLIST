@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/16 23:02:07 sthen Exp $
 @conflict py-asn1-modules-*
 @pkgpath devel/py-asn1-modules
 bin/cmcdump.py

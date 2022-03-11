@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/10/09 03:57:20 afresh1 Exp $
-
 COMMENT=        Test-WWW-Mechanize extension for catalyst
 
 MODULES=	cpan

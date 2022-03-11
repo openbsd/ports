@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/22 07:30:26 giovanni Exp $
 ${P5SITE}/Clone/
 ${P5SITE}/Clone/PP.pm
 @man man/man3p/Clone::PP.3p

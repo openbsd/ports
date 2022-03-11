@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:48 sthen Exp $
-
 COMMENT =	generic configuration parser, inspired by apache
 
 MODULES =	cpan

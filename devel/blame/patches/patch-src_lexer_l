@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lexer_l,v 1.1 2021/02/07 21:58:06 naddy Exp $
-
 Index: src/lexer.l
 --- src/lexer.l.orig
 +++ src/lexer.l

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:44:07 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	collection of useful CVS scripts

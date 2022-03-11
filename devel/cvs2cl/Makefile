@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:44:06 sthen Exp $
-
 COMMENT=	generate GNU-style ChangeLogs from CVS repositories
 
 V=		2.62

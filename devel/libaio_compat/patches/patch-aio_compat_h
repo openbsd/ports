@@ -1,5 +1,3 @@
-$OpenBSD: patch-aio_compat_h,v 1.1 2021/06/07 01:00:45 bcallah Exp $
-
 Index: aio_compat.h
 --- aio_compat.h.orig
 +++ aio_compat.h

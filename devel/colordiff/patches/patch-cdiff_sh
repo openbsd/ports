@@ -1,5 +1,3 @@
-$OpenBSD: patch-cdiff_sh,v 1.2 2017/11/06 16:54:17 edd Exp $
-
 Use ftp(1) instead of tools from the ports tree.
 
 Index: cdiff.sh

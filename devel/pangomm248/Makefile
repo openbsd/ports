@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/12/09 09:51:00 ajacoutot Exp $
-
 COMMENT =		C++ API for Pango
 
 GNOME_PROJECT =		pangomm

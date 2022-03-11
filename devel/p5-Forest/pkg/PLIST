@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/07/29 10:06:17 bluhm Exp $
 ${P5SITE}/Forest/
 ${P5SITE}/Forest.pm
 ${P5SITE}/Forest/Tree/

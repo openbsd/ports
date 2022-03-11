@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/18 16:42:20 cwen Exp $
 include/tbb/
 include/tbb/aggregator.h
 include/tbb/aligned_space.h

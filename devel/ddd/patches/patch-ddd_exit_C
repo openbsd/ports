@@ -1,5 +1,3 @@
-$OpenBSD: patch-ddd_exit_C,v 1.6 2020/02/11 21:23:01 cwen Exp $
-
 Index: ddd/exit.C
 --- ddd/exit.C.orig
 +++ ddd/exit.C

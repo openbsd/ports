@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/05 14:46:07 sthen Exp $
-
 COMMENT =	enable all of the features of Modern Perl with one import
 
 CPAN_AUTHOR =	CHROMATIC

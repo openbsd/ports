@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/25 05:04:36 asou Exp $
-
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		instrumentation framework for dynamic analysis tools

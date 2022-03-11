@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/10/24 01:59:06 afresh1 Exp $
 bin/ebug
 bin/ebug_backend_perl
 bin/ebug_client

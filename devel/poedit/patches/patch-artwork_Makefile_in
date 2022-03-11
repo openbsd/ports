@@ -1,5 +1,3 @@
-$OpenBSD: patch-artwork_Makefile_in,v 1.2 2021/12/22 16:42:54 op Exp $
-
 don't update the gtk icon cache
 
 Index: artwork/Makefile.in

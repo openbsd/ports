@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:28:46 robert Exp $
-
 COMMENT=		get the full path to a locally installed module
 
 MODULES =		cpan

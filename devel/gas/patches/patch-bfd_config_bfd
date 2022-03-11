@@ -1,4 +1,3 @@
-$OpenBSD: patch-bfd_config_bfd,v 1.3 2018/12/26 21:27:19 pascal Exp $
 Index: bfd/config.bfd
 --- bfd/config.bfd.orig
 +++ bfd/config.bfd

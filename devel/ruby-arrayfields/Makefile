@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT=		allow keyword access to array instances
 
 DISTNAME=		arrayfields-4.9.2

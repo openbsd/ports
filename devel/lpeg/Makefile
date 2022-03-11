@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/12/01 18:20:29 fcambus Exp $
-
 COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-1.0.2
 PKGNAME=	lua-${DISTNAME}

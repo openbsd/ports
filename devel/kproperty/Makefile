@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/12 06:28:06 rsadowski Exp $
-
 COMMENT =	property editing framework with editor widget
 
 VERSION =	3.2.0

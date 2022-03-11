@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/16 03:08:06 afresh1 Exp $
-
 COMMENT=	portable multitasking and networking framework for perl
 
 MODULES=	cpan

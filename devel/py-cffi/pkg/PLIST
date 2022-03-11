@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/10/29 15:38:42 sthen Exp $
 @pkgpath devel/py-cffi
 @so lib/python${MODPY_VERSION}/site-packages/_cffi_backend.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/cffi/

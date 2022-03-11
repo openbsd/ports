@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:44:52 sthen Exp $
-
 COMMENT=	perl debugger built with a PerlTk GUI
 
 DISTNAME=	Devel-ptkdb-1.233

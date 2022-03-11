@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.aot,v 1.2 2021/01/06 14:56:56 kurt Exp $
 @bin jdk-11/bin/jaotc
 jdk-11/jmods/jdk.aot.jmod
 jdk-11/jmods/jdk.internal.vm.compiler.jmod

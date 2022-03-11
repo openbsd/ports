@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:50 sthen Exp $
-
 COMMENT=		assert performance of perl regexps
 
 MODULES=		cpan

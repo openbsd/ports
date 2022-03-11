@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT=	perform tests on all modules of a distribution
 
 MODULES=	cpan

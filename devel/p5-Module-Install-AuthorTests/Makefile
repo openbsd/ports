@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT =		designated tests only run by module authors
 
 DISTNAME =		Module-Install-AuthorTests-0.002

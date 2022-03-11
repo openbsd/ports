@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:44 sthen Exp $
-
 COMMENT =		magical config file parser
 
 MODULES =		cpan

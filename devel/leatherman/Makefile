@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2022/01/21 11:35:08 sebastia Exp $
-
 COMMENT =		collection of C++ and CMake utility libraries
 
 GH_ACCOUNT =		puppetlabs

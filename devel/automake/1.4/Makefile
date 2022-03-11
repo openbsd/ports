@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2016/06/29 16:14:40 espie Exp $
-
 VERSION=	1.4
 DISTNAME=	automake-${VERSION}-p6
 PKGNAME=	automake-1.4.6

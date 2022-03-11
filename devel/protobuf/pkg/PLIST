@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/11/03 07:38:56 tb Exp $
 @bin bin/protoc
 include/google/
 include/google/protobuf/

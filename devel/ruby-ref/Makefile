@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:59 sthen Exp $
-
 COMMENT =	object reference utilities for ruby
 
 DISTNAME =	ref-1.0.5

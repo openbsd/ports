@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/02/12 09:21:05 ajacoutot Exp $
-
 PKG_PARCH=		*
 
 COMMENT=		common build utilities for GNOME C++ binding libraries

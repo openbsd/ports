@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/21 23:19:30 bluhm Exp $
 ${P5SITE}/Term/Size/Any.pm
 ${P5SITE}/Term/Size/Any.pod
 @man man/man3p/Term::Size::Any.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_Sparc_SparcISelLowering_cpp,v 1.5 2022/01/03 21:36:42 rsadowski Exp $
-
 - Make sure that we really don't emit quad-precision unless the
   "hard-quad-float" feature is available
 

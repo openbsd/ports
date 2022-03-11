@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:14 sthen Exp $
-
 COMMENT= 	perl extension for emulating troublesome interfaces
 
 MODULES=	cpan

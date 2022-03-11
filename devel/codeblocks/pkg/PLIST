@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/06/26 09:41:40 cwen Exp $
 @bin bin/cb_console_runner
 @bin bin/cb_share_config
 @bin bin/codeblocks

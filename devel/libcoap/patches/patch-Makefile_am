@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2019/12/10 16:47:54 sthen Exp $
-
 ld.lld won't allow -shared -pie (it doesn't make sense anyway)
 
 Index: Makefile.am

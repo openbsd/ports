@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/19 23:13:01 sthen Exp $
 @conflict py-modulegraph-<0.17p1
 bin/modulegraph${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/modulegraph/

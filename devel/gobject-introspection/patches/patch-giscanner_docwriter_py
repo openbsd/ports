@@ -1,5 +1,3 @@
-$OpenBSD: patch-giscanner_docwriter_py,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
-
 From 827494d6415b696a98fa195cbd883b50cc893bfc Mon Sep 17 00:00:00 2001
 From: Emmanuele Bassi <ebassi@gnome.org>
 Date: Tue, 11 Jan 2022 15:47:50 +0000

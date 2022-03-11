@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_tests_rs,v 1.5 2021/01/05 10:27:06 landry Exp $
-
 supposed to read CXX & CC from env, but for some reason this doesnt work ?
 
 Index: tests/tests.rs

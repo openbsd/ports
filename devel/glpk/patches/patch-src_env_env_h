@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_env_env_h,v 1.1 2021/12/08 10:41:18 espie Exp $
-
 removes lots of obnoxious warnings while building
 
 Index: src/env/env.h

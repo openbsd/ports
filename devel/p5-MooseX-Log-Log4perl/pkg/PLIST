@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/16 14:10:11 stephan Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Log/
 ${P5SITE}/MooseX/Log/Log4perl/

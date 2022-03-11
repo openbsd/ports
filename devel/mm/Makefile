@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=	shared memory lib for apps with pre-forked process model
 
 DISTNAME=	mm-1.4.2

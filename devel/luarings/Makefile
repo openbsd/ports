@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/02/14 11:11:32 sthen Exp $
-
 COMMENT =	multiple states library for the lua language
 
 GH_ACCOUNT =	keplerproject

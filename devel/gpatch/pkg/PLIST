@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/23 12:23:35 rpe Exp $
 @bin bin/gpatch
 @man man/man1/gpatch.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/11/12 06:42:43 jeremy Exp $
 ${GEM_BIN}/ruby-prof-check-trace${GEM_BIN_SUFFIX}
 ${GEM_BIN}/ruby-prof${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem

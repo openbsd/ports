@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/22 00:24:29 bluhm Exp $
-
 COMMENT =	check that a library is available for FFI
 
 DISTNAME =	FFI-CheckLib-0.28

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_MC_MCParser_AsmParser_cpp,v 1.5 2022/01/03 21:36:41 rsadowski Exp $
-
 make clang include a FILE symbol for .(s|S) files
 
 This is mostly needed by syspatch at the moment to be

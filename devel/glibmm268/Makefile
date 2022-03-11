@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/25 07:23:42 ajacoutot Exp $
-
 COMMENT=		C++ API for parts of GLib
 
 GNOME_PROJECT=		glibmm

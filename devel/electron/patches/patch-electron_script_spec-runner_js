@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_script_spec-runner_js,v 1.2 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/script/spec-runner.js
 --- electron/script/spec-runner.js.orig
 +++ electron/script/spec-runner.js

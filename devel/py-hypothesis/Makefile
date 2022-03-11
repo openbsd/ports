@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/03/02 11:10:07 sthen Exp $
-
 COMMENT =		library for property based testing
 
 MODPY_EGG_VERSION =	6.39.0

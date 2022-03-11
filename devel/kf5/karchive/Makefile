@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/09/10 08:42:03 rsadowski Exp $
-
 COMMENT =		Qt5-based API for manipulating file archives
 DISTNAME =		karchive-${VERSION}
 

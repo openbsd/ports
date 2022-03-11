@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/10 01:41:05 afresh1 Exp $
-
 COMMENT =	polymorphic data cloning
 DISTNAME =	Data-Clone-0.004
 CATEGORIES =	devel

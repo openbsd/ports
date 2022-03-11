@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.24 2022/02/19 09:45:46 rsadowski Exp $
 @bin bin/plasmapkg2
 include/KF5/Plasma/
 include/KF5/Plasma/Applet

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/12 17:57:05 paco Exp $
-
 COMMENT =		transparent file encryption in Git
 
 DISTNAME =		git-crypt-0.6.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2019/03/04 12:51:12 chrisz Exp $
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in

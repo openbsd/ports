@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/25 19:52:13 landry Exp $
 ${P5SITE}/Config/
 ${P5SITE}/Config/AutoConf.pm
 @man man/man3p/Config::AutoConf.3p

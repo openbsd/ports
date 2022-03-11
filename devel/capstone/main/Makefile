@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:05 sthen Exp $
-
 COMMENT =	multi-platform, multi-architecture disassembly framework
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>

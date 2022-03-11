@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/03/20 12:11:06 bluhm Exp $
-
 COMMENT =	easily create test classes in an xUnit style
 
 DISTNAME =	Test-Class-0.52

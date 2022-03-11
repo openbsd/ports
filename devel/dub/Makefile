@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/19 13:35:27 bcallah Exp $
-
 COMMENT =	package and build management system for the D language
 CATEGORIES =	devel
 

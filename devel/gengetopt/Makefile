@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:44:09 sthen Exp $
-
 V =		2.22.6
 COMMENT =	command line parser for c programs
 DISTNAME =	gengetopt-${V}

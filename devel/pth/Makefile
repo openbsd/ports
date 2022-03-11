@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:45:17 sthen Exp $
-
 COMMENT=	GNU portable threads
 
 DISTNAME=	pth-2.0.7

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/05 21:26:19 jasper Exp $
 lib/lua/${MODLUA_VERSION}/cmsgpack.so

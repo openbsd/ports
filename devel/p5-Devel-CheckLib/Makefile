@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/06 16:10:25 benoit Exp $
-
 COMMENT =	module to check for C library availablity
 
 MODULES =	cpan

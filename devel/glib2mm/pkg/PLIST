@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.48 2020/12/19 17:54:35 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs

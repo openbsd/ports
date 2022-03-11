@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/08 16:27:41 thfr Exp $
-
 COMMENT =	fast, memory-efficient, header-only hashtable
 
 GH_ACCOUNT =	martinus

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/12/19 10:51:03 rsadowski Exp $
-
 COMMENT-main =		multi-language spell checker for KDE
 COMMENT-aspell =	ASpell plugin for Sonnet
 COMMENT-hunspell =	HunSpell plugin for Sonnet

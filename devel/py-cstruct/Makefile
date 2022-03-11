@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:00:47 sthen Exp $
-
 COMMENT =	C-style structs for Python
 
 MODPY_EGG_VERSION =	1.8

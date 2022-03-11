@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:44:07 sthen Exp $
-
 COMMENT=	framework to test programs
 
 DISTNAME=	dejagnu-1.5.3

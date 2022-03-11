@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/31 08:22:32 ajacoutot Exp $
-
 COMMENT=		GNU make debugger
 
 PKGNAME=		remake-1.5

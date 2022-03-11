@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:46:01 sthen Exp $
-
 COMMENT=	GNU Portable Shell Tool
 
 DISTNAME=	shtool-2.0.8

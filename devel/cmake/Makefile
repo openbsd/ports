@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.204 2022/02/26 19:42:28 rsadowski Exp $
-
 DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system

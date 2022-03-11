@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:03 sthen Exp $
-
 COMMENT =		simple, portable library for handling UTF-8 strings
 
 VERSION =		2.3.4

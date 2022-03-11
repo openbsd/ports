@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.aarch64,v 1.2 2020/10/06 05:53:05 jsg Exp $
 ${CONFIG}/lib/
 ${CONFIG}/lib/ldscripts/
 ${CONFIG}/lib/ldscripts/aarch64elf.x

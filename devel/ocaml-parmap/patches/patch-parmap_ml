@@ -1,5 +1,3 @@
-$OpenBSD: patch-parmap_ml,v 1.1 2019/06/19 09:18:18 chrisz Exp $
-
 Index: parmap.ml
 --- parmap.ml.orig
 +++ parmap.ml

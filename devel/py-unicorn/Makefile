@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:03 sthen Exp $
-
 BROKEN-sparc64 = multiple definition of use_vis3_instructions
 BROKEN-riscv64 = /usr/ports/pobj/py-unicorn-1.0.2-python3/unicorn-1.0.2/src/qemu/tcg/tcg.h:30:10: fatal error: 'tcg-target.h' file not found
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:12 sthen Exp $
-
 COMMENT =	validate your CPAN META.yml files
 
 DISTNAME =	Test-CPAN-Meta-0.25

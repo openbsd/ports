@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/02/26 20:48:40 sthen Exp $
-
 COMMENT =	code coverage measurement for Python
 
 MODPY_EGG_VERSION =	6.3.2

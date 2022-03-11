@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/11/12 06:42:43 jeremy Exp $
-
 COMMENT =	fast code profiler for Ruby
 
 DISTNAME =	ruby-${PKGNAME}

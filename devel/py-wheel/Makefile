@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/03/01 21:26:19 sthen Exp $
-
 COMMENT =		built-package format for Python
 
 MODPY_EGG_VERSION =	0.36.2

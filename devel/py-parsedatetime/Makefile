@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/14 15:03:00 sthen Exp $
-
 COMMENT=		parse human-readable date/time text
 
 MODPY_EGG_VERSION =	2.6

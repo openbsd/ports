@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2010/04/02 13:34:39 giovanni Exp $
 --- Makefile.PL.orig	Thu Jan 21 18:29:52 2010
 +++ Makefile.PL	Thu Jan 21 18:29:59 2010
 @@ -13,6 +13,5 @@ requires('Class::Accessor');

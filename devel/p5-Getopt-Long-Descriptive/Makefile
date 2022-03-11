@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/12/26 23:45:56 afresh1 Exp $
-
 COMMENT =	Getopt::Long, but simpler and more powerful
 
 MODULES =	cpan

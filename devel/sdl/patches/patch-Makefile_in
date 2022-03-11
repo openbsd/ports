@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2012/03/02 09:10:38 dcoppa Exp $
 --- Makefile.in.orig	Thu Jan 19 01:30:05 2012
 +++ Makefile.in	Wed Feb 22 13:39:54 2012
 @@ -49,7 +49,7 @@ LT_AGE      = @LT_AGE@

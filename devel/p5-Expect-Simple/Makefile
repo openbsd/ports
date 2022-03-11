@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:51 sthen Exp $
-
 COMMENT=	wrapper around the Expect module
 
 MODULES=	cpan

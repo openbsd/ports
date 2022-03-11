@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT=		kernels used by spyder on its ipython console
 
 MODPY_EGG_VERSION=	0.4.2

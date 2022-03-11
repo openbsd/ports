@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:05 sthen Exp $
-
 COMMENT=	allow your classes to do coercion of parameters
 
 DISTNAME=	Params-Coerce-0.14

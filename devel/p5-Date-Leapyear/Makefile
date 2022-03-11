@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:44:47 sthen Exp $
-
 COMMENT=	is a particular year a leap year
 
 MODULES=	cpan

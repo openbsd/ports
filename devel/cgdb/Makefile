@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/03/01 13:43:32 sthen Exp $
-
 COMMENT=	curses GDB interface
 
 DISTNAME=	cgdb-0.8.0

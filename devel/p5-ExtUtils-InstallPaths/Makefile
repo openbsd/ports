@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:51 sthen Exp $
-
 COMMENT =	Build.PL install path logic made easy
 
 MODULES =	cpan

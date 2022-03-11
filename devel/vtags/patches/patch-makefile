@@ -1,4 +1,3 @@
-$OpenBSD: patch-makefile,v 1.2 2021/02/26 18:20:32 naddy Exp $
 --- makefile.orig	Sun Jun 12 13:31:34 2011
 +++ makefile	Sun Jun 12 13:32:05 2011
 @@ -6,15 +6,14 @@ SOURCE_FILES = $(wildcard $(SOURCE_DIR)*.c)

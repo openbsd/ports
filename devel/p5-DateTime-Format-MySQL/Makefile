@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:48 sthen Exp $
-
 COMMENT=		parse and create MySQL date objects
 
 MODULES=		cpan

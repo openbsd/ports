@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/12/23 13:30:12 sthen Exp $
-
 COMMENT =	perl interface to libev
 
 MODULES =	cpan

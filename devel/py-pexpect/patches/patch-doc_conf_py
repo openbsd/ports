@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_conf_py,v 1.1 2016/01/07 17:16:21 shadchin Exp $
 --- doc/conf.py.orig	Wed Dec 30 15:08:22 2015
 +++ doc/conf.py	Wed Dec 30 15:08:30 2015
 @@ -25,7 +25,7 @@ sys.path.insert(0, os.path.abspath('sphinxext'))

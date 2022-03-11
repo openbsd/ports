@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/12/08 10:41:18 espie Exp $
 @bin bin/glpsol
 include/glpk.h
 @static-lib lib/libglpk.a

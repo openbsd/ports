@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/04/28 14:07:55 ajacoutot Exp $
 ${P5SITE}/Module/AutoInstall.pm
 ${P5SITE}/Module/Install/
 ${P5SITE}/Module/Install.pm

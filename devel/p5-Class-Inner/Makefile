@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:43 sthen Exp $
-
 COMMENT =	perlish implementation of Java like inner classes
 
 DISTNAME =	Class-Inner-0.200001

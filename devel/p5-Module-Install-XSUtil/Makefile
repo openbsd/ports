@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT =		utility functions for XS modules
 
 DISTNAME =		Module-Install-XSUtil-0.45

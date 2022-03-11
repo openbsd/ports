@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_runners_py,v 1.1.1.1 2021/09/02 08:45:37 sthen Exp $
-
 Index: tests/runners.py
 --- tests/runners.py.orig
 +++ tests/runners.py

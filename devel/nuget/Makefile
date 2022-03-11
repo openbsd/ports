@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/17 07:54:57 thfr Exp $
-
 COMMENT =	package manager for .NET
 V =		5.6.0.6489
 DISTNAME =	nuget-${V}.bin

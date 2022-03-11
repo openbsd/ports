@@ -1,4 +1,3 @@
-$OpenBSD: patch-SDL2_image_pc_in,v 1.2 2013/11/27 05:13:37 brad Exp $
 --- SDL2_image.pc.in.orig	Sat Aug 10 13:38:36 2013
 +++ SDL2_image.pc.in	Fri Nov 15 18:57:27 2013
 @@ -8,5 +8,6 @@ Description: image loading library for Simple DirectMe

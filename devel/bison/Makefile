@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/12/06 20:58:13 jca Exp $
-
 COMMENT=	GNU parser generator
 
 DISTNAME=	bison-3.7.6

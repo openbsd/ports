@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_BSD_arc4random_pm,v 1.2 2016/10/12 17:47:23 bluhm Exp $
-
 Do nothing special for arc4random_addrandom(), arc4random_pushb(),
 arc4random_pushk(), arc4random_stir(), they are not implemented in
 OpenBSD libc.

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/14 15:03:27 sthen Exp $
-
 COMMENT =		send files to the trash natively
 
 MODPY_EGG_VERSION =	1.8.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:45:57 sthen Exp $
-
 CONFIG=		riscv64-unknown-elf
 PKGNAME?=	riscv-elf-${DISTNAME}
 CATEGORIES?=	devel

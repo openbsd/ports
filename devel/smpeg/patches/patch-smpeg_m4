@@ -1,4 +1,3 @@
-$OpenBSD: patch-smpeg_m4,v 1.1 2009/01/09 17:43:38 naddy Exp $
 --- smpeg.m4.orig	Fri Jan  9 18:35:03 2009
 +++ smpeg.m4	Fri Jan  9 18:35:50 2009
 @@ -10,7 +10,7 @@ dnl AM_PATH_SMPEG([MINIMUM-VERSION, [ACTION-IF-FOUND [

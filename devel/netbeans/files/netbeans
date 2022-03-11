@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: netbeans,v 1.2 2019/04/26 12:40:31 rsadowski Exp $
-#
 # OpenBSD-specific startup script for NetBeans IDE
 
 NETBEANS_HOME=${TRUEPREFIX}/netbeans

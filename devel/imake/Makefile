@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/13 10:53:56 robert Exp $
-
 COMMENT =  	makefile generator
 CATEGORIES =	devel x11
 DISTNAME = 	imake-1.0.8

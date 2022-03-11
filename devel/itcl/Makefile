@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/05/27 21:48:34 sebastia Exp $
-
 COMMENT=	object-oriented extensions to Tcl
 
 VERSION =	3.4.1

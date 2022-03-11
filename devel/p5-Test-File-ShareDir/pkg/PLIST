@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/28 07:55:48 vgross Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/File/
 ${P5SITE}/Test/File/ShareDir/

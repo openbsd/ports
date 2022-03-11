@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT=		abstract methods for Ruby
 
 DISTNAME=		abstract-1.0.0

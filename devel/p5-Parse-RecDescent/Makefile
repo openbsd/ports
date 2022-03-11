@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:06 sthen Exp $
-
 COMMENT =	perl module to generate recursive descent parsers
 
 MODULES =	cpan

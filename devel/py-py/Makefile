@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/27 22:27:26 sthen Exp $
-
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
 MODPY_EGG_VERSION =	1.11.0

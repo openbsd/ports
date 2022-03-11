@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/12 11:18:14 jasper Exp $
 ${P5SITE}/MooseX/Types/DateTime.pm
 @man man/man3p/MooseX::Types::DateTime.3p

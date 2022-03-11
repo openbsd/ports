@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:44:41 sthen Exp $
-
 V =		1.0.2
 COMMENT =	library for bitwise operations in Lua
 DISTNAME =	LuaBitOp-${V}

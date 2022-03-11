@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/15 09:37:27 rsadowski Exp $
-
 COMMENT =		original KDE HTML rendering engine
 DISTNAME =		khtml-${VERSION}
 

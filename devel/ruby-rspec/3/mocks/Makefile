@@ -1,5 +1,3 @@
-#  $OpenBSD: Makefile,v 1.16 2019/07/07 18:46:44 jasper Exp $
-
 COMMENT =		rspec stubbing and mocking
 DISTNAME =		rspec-mocks-3.8.1
 

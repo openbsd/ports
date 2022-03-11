@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_am_header-vars_am,v 1.1 2011/05/30 09:08:24 jasper Exp $
 --- lib/am/header-vars.am.orig	Mon Jan  5 20:28:28 2004
 +++ lib/am/header-vars.am	Mon May 30 11:07:20 2011
 @@ -41,9 +41,9 @@ top_builddir = %TOPDIR%

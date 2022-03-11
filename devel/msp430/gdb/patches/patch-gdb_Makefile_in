@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdb_Makefile_in,v 1.3 2011/11/08 12:42:13 jasper Exp $
-
 Don't install the xml syscall files which only contain Linux' syscalls.
 
 --- gdb/Makefile.in.orig	Thu Sep  1 19:30:12 2011

@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_gsl_3,v 1.1 2012/04/04 12:55:59 jasper Exp $
-
 Fix rendering with mandoc(1).
 
 --- doc/gsl.3.orig	Wed Apr  4 14:53:16 2012

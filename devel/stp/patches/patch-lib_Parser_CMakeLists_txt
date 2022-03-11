@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Parser_CMakeLists_txt,v 1.1 2017/08/21 07:03:10 jca Exp $
-
 Index: lib/Parser/CMakeLists.txt
 --- lib/Parser/CMakeLists.txt.orig
 +++ lib/Parser/CMakeLists.txt

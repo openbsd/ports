@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/12/26 23:23:13 afresh1 Exp $
-
 COMMENT =	sophisticated exporter for custom-built routines
 
 DISTNAME =	Sub-Exporter-0.988

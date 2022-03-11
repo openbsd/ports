@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:01 sthen Exp $
-
 COMMENT =	attribute that returns the instance to allow for chaining
 
 DISTNAME =	MooseX-Attribute-Chained-1.0.3

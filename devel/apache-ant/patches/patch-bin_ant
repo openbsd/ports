@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_ant,v 1.10 2018/04/02 13:34:25 jasper Exp $
 Index: bin/ant
 --- bin/ant.orig
 +++ bin/ant

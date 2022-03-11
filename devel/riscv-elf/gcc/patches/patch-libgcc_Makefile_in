@@ -1,5 +1,3 @@
-$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2018/06/08 14:24:31 kevlo Exp $
-
 Index: libgcc/Makefile.in
 --- libgcc/Makefile.in.orig
 +++ libgcc/Makefile.in

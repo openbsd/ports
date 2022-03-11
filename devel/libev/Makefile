@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/12/23 13:29:57 sthen Exp $
-
 COMMENT =	high-performance event loop library
 
 # p5-EV should probably be kept in sync

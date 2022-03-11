@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/14 08:54:58 benoit Exp $
 ${P5SITE}/Struct/
 ${P5SITE}/Struct/Dumb.pm
 @man man/man3p/Struct::Dumb.3p

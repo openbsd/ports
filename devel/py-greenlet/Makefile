@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/02 00:00:49 sthen Exp $
-
 COMMENT =	lightweight in-process concurrent programming
 
 MODPY_EGG_VERSION = 1.1.2

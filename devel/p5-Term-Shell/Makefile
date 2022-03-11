@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/07 06:59:11 benoit Exp $
 # Original from: Neil Watkiss <nwatkiss@ttul.org>
 
 COMMENT =	simple command-line shell framework

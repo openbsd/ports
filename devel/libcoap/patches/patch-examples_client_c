@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_client_c,v 1.3 2019/12/10 16:47:54 sthen Exp $
-
 Index: examples/client.c
 --- examples/client.c.orig
 +++ examples/client.c

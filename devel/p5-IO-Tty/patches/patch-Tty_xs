@@ -1,5 +1,3 @@
-$OpenBSD: patch-Tty_xs,v 1.4 2021/03/20 15:38:39 bluhm Exp $
-
 https://github.com/toddr/IO-Tty/pull/29
 
 Index: Tty.xs

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:00:50 sthen Exp $
-
 COMMENT =		kitchen contains a cornucopia of useful code
 
 MODPY_EGG_VERSION =	1.2.6

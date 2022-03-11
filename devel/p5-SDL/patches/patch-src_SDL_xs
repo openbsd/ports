@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_SDL_xs,v 1.2 2020/02/04 22:50:04 gkoehler Exp $
-
 Add missing arguments to boot_SDL(); this fixes a crash or failure in
 Perl_xs_handshake() on some arches.  This patch does pass the CV of
 the wrong function, but the handshake accepts it.

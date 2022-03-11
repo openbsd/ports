@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/12/20 19:38:29 sthen Exp $
-
 COMMENT=		logging API for C++
 
 # XXX tried updating to 2.0.4 but net/kea doesn't exit properly

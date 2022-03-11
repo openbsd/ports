@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:20 sthen Exp $
-
 COMMENT=                create accessor methods in caller's package
 
 DISTNAME=               accessors-1.01

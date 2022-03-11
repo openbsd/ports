@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: idea,v 1.4 2019/04/26 12:38:02 rsadowski Exp $
-#
 # OpenBSD-specific startup script for IntelliJ IDE
 
 IDEA_HOME=${TRUEPREFIX}/intellij

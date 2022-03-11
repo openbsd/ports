@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/10/26 16:19:04 sthen Exp $
 @pkgpath devel/py-logilab-common
 @conflict py-logilab-common-<1.4.0p3
 bin/logilab-pytest

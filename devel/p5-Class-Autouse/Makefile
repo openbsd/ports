@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:41 sthen Exp $
-
 COMMENT=	run-time class loading on first method call
 
 MODULES=	cpan

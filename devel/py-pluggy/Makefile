@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/26 20:51:25 sthen Exp $
-
 COMMENT =		plugin and hook calling mechanisms for Python
 
 MODPY_EGG_VERSION =	1.0.0

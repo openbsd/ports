@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:13 sthen Exp $
-
 COMMENT =	check Perl modules have version numbers
 
 DISTNAME =	Test-HasVersion-0.014

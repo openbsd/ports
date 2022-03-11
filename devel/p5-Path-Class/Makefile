@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:06 sthen Exp $
-
 COMMENT=	cross-platform path manipulation
 
 MODULES=	cpan

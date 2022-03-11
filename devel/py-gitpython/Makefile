@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/28 12:14:27 sthen Exp $
-
 COMMENT=	library used to interact with Git repositories
 
 MODPY_EGG_VERSION=	3.1.27

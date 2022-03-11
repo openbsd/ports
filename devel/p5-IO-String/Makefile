@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:44:57 sthen Exp $
-
 COMMENT=		emulate IO::File interface for in-core strings
 
 MODULES=		cpan

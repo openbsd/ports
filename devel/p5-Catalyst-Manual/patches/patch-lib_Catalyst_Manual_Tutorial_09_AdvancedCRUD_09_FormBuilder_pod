@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Catalyst_Manual_Tutorial_09_AdvancedCRUD_09_FormBuilder_pod,v 1.3 2020/10/09 02:59:07 afresh1 Exp $
-
 Index: lib/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod
 --- lib/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod.orig
 +++ lib/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormBuilder.pod

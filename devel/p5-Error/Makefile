@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/11/05 08:55:26 benoit Exp $
-
 COMMENT =	error/exception handling in an OO-ish way
 
 MODULES =	cpan

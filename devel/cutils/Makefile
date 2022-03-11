@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/04/06 08:48:06 pirofti Exp $
-
 COMMENT=	collection of utilities for C programmers
 
 DISTNAME=	cutils-1.6

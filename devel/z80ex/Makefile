@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/02 14:32:39 bcallah Exp $
-
 COMMENT =	ZiLOG Z80 CPU emulation library
 DISTNAME =	z80ex-1.1.21
 CATEGORIES =	devel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=		general purpose dynamic array
 
 DISTNAME=		Judy-1.0.5

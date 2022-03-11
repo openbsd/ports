@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:15 sthen Exp $
-
 COMMENT =	test a Pod's content
 
 DISTNAME =	Test-Pod-Content-v0.0.6

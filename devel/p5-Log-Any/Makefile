@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/22 07:34:41 giovanni Exp $
-
 COMMENT=		bringing loggers and listeners together
 
 MODULES=		cpan

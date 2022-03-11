@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 01:50:20 afresh1 Exp $
-
 COMMENT =	alias lexical variables
 
 DISTNAME =	Devel-LexAlias-0.05

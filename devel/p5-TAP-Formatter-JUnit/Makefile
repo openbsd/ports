@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/08/15 05:04:50 benoit Exp $
-
 COMMENT =	format TAP::Harness output as JUnit XML
 
 MODULES =	cpan

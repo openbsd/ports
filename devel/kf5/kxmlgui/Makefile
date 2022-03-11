@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/19 10:51:03 rsadowski Exp $
-
 COMMENT =		KDE framework for managing menu and toolbar actions
 DISTNAME =		kxmlgui-${VERSION}
 

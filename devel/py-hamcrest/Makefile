@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/16 08:12:26 sthen Exp $
-
 COMMENT =		Hamcrest matchers for Python
 
 MODPY_EGG_VERSION =	2.0.2

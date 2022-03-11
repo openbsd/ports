@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/08/30 03:35:16 jsg Exp $
-
 COMMENT=		Device Tree Compiler
 
 DISTNAME=		dtc-1.6.1

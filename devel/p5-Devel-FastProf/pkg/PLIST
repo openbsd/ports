@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:21 ajacoutot Exp $
 bin/fprofpp
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/FastProf/

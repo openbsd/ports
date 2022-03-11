@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_shunit2_test_misc_sh,v 1.1.1.1 2014/12/31 11:14:17 rpe Exp $
 --- src/shunit2_test_misc.sh.orig	Sat Dec 27 22:07:52 2014
 +++ src/shunit2_test_misc.sh	Sat Dec 27 22:09:17 2014
 @@ -35,12 +35,18 @@ testUnboundVariable()

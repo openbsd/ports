@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/05/05 20:17:57 sthen Exp $
-
 COMMENT=		in-core objects like strings and arrays for I/O
 
 MODULES=		cpan

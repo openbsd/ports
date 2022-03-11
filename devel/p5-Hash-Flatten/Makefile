@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:55 sthen Exp $ $
-
 COMMENT =		flatten/unflatten complex data hashes
 
 MODULES =		cpan

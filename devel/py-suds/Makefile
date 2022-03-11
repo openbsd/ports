@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:29 kmos Exp $
-
 COMMENT =		lightweight python SOAP client
 
 MODPY_EGG_VERSION =	0.4

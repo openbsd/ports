@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT=	lightweight cache with timed expiration
 
 MODULES=	cpan

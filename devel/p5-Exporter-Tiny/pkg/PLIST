@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/01/31 19:32:44 bluhm Exp $
 ${P5SITE}/Exporter/
 ${P5SITE}/Exporter/Shiny.pm
 ${P5SITE}/Exporter/Tiny/

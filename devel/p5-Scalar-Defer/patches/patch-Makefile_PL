@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2008/10/03 10:31:55 jasper Exp $
 --- Makefile.PL.orig	Fri Aug  8 17:17:52 2008
 +++ Makefile.PL	Fri Oct  3 12:26:14 2008
 @@ -4,8 +4,8 @@ use inc::Module::Install;

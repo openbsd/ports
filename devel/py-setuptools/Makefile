@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2021/11/02 00:01:01 sthen Exp $
-
 COMMENT=	simplified packaging system for Python modules
 
 MODPY_EGG_VERSION=	57.4.0

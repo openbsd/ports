@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/25 01:16:17 afresh1 Exp $
 ${P5SITE}/Readonly.pm
 @man man/man3p/Readonly.3p

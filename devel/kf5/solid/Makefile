@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/09 14:32:02 rsadowski Exp $
-
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
 

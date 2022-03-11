@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_autotest_general_m4,v 1.1.1.1 2010/03/22 20:53:34 espie Exp $
 --- lib/autotest/general.m4.orig	Thu Jun 19 14:59:39 2008
 +++ lib/autotest/general.m4	Thu Oct 30 19:04:37 2008
 @@ -1530,7 +1530,7 @@ at_setup_line='m4_defn([AT_line])'

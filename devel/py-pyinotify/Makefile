@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/20 15:05:11 bket Exp $
-
 COMMENT =		filesystem events monitoring
 
 MODPY_EGG_VERSION =	0.9.6

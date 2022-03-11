@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/26 18:20:32 naddy Exp $
-
 COMMENT =		universal parsing tool & source code generator
 
 V =			4.5.4

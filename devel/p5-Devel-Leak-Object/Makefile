@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:49 sthen Exp $
-
 COMMENT =	finding memory leaks in perl objects
 
 MODULES =	cpan

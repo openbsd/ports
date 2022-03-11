@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =		plugin for managing VCR.py cassettes
 
 MODPY_EGG_VERSION =	1.0.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/09/15 07:20:52 jasper Exp $
-
 COMMENT =	wrapper for gnu auto*
 
 PKG_ARCH =	*

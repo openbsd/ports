@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/13 15:02:06 rsadowski Exp $
-
 COMMENT =	KDE configuration dialog for desktop notifications
 DISTNAME =	knotifyconfig-${VERSION}
 

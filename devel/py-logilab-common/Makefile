@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/02 00:00:51 sthen Exp $
-
 COMMENT=		common low-level libraries for logilab projects
 
 MODPY_EGG_VERSION =	1.4.0

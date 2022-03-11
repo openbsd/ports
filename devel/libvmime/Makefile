@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/26 18:20:32 naddy Exp $
-
 COMMENT=	C++ class library for working with Internet mail
 
 GH_ACCOUNT=     kisli

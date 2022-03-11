@@ -1,4 +1,3 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.2 2017/07/16 12:44:19 kettenis Exp $
 Index: libiberty/Makefile.in
 --- libiberty/Makefile.in.orig
 +++ libiberty/Makefile.in

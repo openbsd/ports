@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:00:24 sthen Exp $
-
 COMMENT=	Google utilities written in Python
 
 DISTNAME=	goopy-0.1

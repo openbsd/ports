@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/12/05 21:26:14 afresh1 Exp $
-
 COMMENT =	YAML Ain't Markup Language
 
 MODULES =	cpan

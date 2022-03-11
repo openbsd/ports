@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/17 00:58:29 kmos Exp $
 @conflict py-test-timeout-*
 @pkgpath devel/py-test-timeout
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest_timeout.${MODPY_PYC_MAGIC_TAG}pyc

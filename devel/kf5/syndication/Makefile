@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/07 14:48:52 rsadowski Exp $
-
 COMMENT =	RSS/Atom parser library
 DISTNAME =	syndication-${VERSION}
 

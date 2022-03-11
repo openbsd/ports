@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:03 sthen Exp $
-
 COMMENT=		utilities to manage well known user directories
 
 DISTNAME=		xdg-user-dirs-0.17

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/24 16:40:37 millert Exp $
-
 COMMENT=	wrapper for the Perl string interpolation engine
 
 MODULES=	cpan

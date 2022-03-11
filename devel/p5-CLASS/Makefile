@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT=	alias for __PACKAGE__
 
 DISTNAME=	CLASS-1.00

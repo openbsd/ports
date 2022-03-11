@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/29 04:47:16 rsadowski Exp $
-
 COMMENT =	multilanguage reimplementation of the Unix ctags utility
 
 V =		5.9.20211024.0

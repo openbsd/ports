@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Alien_wxWidgets_Utility_pm,v 1.1 2017/07/30 07:20:47 ajacoutot Exp $
-
 Index: lib/Alien/wxWidgets/Utility.pm
 --- lib/Alien/wxWidgets/Utility.pm.orig
 +++ lib/Alien/wxWidgets/Utility.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/03 18:55:10 sebastia Exp $
-
 COMMENT =		text progress bar library for Ruby
 
 DISTNAME =		ruby-progressbar-1.11.0

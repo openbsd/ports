@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2019/05/20 21:36:54 sthen Exp $
 --- Makefile.in.orig	Sun Aug  2 21:31:55 2015
 +++ Makefile.in	Mon Aug 24 08:23:07 2015
 @@ -386,7 +386,7 @@ top_build_prefix = @top_build_prefix@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/24 16:42:37 millert Exp $
-
 COMMENT=	load the contents of a text file into an array of lines
 
 MODULES=	cpan

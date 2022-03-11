@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/04/24 05:03:22 rsadowski Exp $
-
 COMMENT =	central daemon of KDE workspaces
 DISTNAME =	kded-${VERSION}
 

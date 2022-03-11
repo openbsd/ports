@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/08 13:59:15 jasper Exp $
 ${P5SITE}/Devel/StackTrace/AsHTML.pm
 @man man/man3p/Devel::StackTrace::AsHTML.3p

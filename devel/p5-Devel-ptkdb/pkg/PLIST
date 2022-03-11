@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/18 22:27:38 aanriot Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/ptkdb.pm
 @man man/man3p/Devel::ptkdb.3p

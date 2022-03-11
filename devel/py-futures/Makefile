@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/21 19:50:26 kmos Exp $
-
 COMMENT=	futures implementation for Python
 
 MODPY_EGG_VERSION=	3.2.0

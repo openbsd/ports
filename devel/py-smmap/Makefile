@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/03/04 08:38:24 sthen Exp $
-
 COMMENT=		pure Python implementation of an SMM manager
 
 MODPY_EGG_VERSION=	5.0.0

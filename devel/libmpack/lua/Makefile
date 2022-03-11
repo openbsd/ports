@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/02/04 12:40:43 edd Exp $
-
 COMMENT =	Lua bindings to libmsgpack
 PKGNAME =	lua-libmpack-${V}
 

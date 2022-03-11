@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:04 sthen Exp $
-
 COMMENT=	reusable tests for POE::Loop authors
 
 MODULES=	cpan

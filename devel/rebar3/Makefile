@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/27 08:43:50 sthen Exp $
-
 COMMENT = 		Erlang build tool
 
 GH_ACCOUNT =		erlang

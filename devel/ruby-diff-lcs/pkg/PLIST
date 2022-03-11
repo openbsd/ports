@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2017/11/05 17:24:48 jasper Exp $
 ${GEM_BIN}/htmldiff${GEM_BIN_SUFFIX}
 ${GEM_BIN}/ldiff${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem

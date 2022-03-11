@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:18 sthen Exp $
-
 COMMENT =	module for rounded or exact english expression of durations
 
 MODULES =	cpan

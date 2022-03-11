@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT =	library for handling OpenType Fonts
 DISTNAME =	libotf-0.9.16
 

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: godoc.rc,v 1.4 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/godoc"
 daemon_flags="-http=localhost:6060 -v=true"

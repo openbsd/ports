@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/02/13 11:15:33 kn Exp $
 include/gmock/
 include/gmock/gmock-actions.h
 include/gmock/gmock-cardinalities.h

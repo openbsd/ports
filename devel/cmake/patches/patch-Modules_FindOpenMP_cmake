@@ -1,5 +1,3 @@
-$OpenBSD: patch-Modules_FindOpenMP_cmake,v 1.4 2021/05/09 14:46:15 rsadowski Exp $
-
 Add libs and paths. Ensure the lib is used for the C case.
 
 Index: Modules/FindOpenMP.cmake

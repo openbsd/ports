@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/02 00:01:03 sthen Exp $
-
 COMMENT =	console user interface library for python
 
 MODPY_EGG_VERSION = 2.0.1

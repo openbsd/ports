@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/06 20:46:15 sebastia Exp $
-
 COMMENT=		Ruby gem to ease i18n
 
 DISTNAME =		gettext-setup-0.34

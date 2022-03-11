@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/14 21:08:01 jcs Exp $
-
 COMMENT=	Ruby version redirection shim
 
 DISTNAME=	ruby-shims-3

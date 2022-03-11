@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_login_c,v 1.1 2020/01/29 11:17:30 cwen Exp $
-
 From f2d750260afbb2535d1bd92438e80a80ddb58801 Mon Sep 17 00:00:00 2001
 From: Paul Carlisle <paul.carlisle@purestorage.com>
 Date: Mon, 27 Jan 2020 16:56:59 -0800

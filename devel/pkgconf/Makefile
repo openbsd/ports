@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/08/06 10:20:09 sthen Exp $
-
 COMMENT =		package compiler and linker metadata toolkit
 
 DISTNAME =		pkgconf-1.6.3

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/11/04 21:34:36 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog

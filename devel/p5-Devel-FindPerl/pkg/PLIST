@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/15 20:16:02 bluhm Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/FindPerl.pm
 @man man/man3p/Devel::FindPerl.3p

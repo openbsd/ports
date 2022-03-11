@@ -1,5 +1,3 @@
-$OpenBSD: patch-libiberty_testsuite_Makefile_in,v 1.3 2020/10/06 05:53:05 jsg Exp $
-
 check-expandargv randomly succeeds or fails w/o a reason.
 
 Index: libiberty/testsuite/Makefile.in

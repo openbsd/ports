@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 04:08:36 gnezdo Exp $
-
 COMMENT =	ctags-like tool for Haskell sources
 
 MODCABAL_STEM =		hasktags

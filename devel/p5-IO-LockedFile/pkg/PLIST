@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 17:16:41 espie Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/LockedFile/
 ${P5SITE}/IO/LockedFile.pm

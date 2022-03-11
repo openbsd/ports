@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:48 rsadowski Exp $
-
 COMMENT =		reporting of idle time of user and system
 DISTNAME =		kidletime-${VERSION}
 

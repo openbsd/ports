@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_html_conf_py,v 1.2 2021/02/27 18:45:33 sthen Exp $
-
 Prevent build from calling out to the internet.
 
 Index: docs/html/conf.py

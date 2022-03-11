@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:53 sthen Exp $
-
 COMMENT =		checks intelligently if files have changed
 
 DISTNAME =		File-Modified-0.10

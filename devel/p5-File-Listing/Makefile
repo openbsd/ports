@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/10 12:59:51 bluhm Exp $
-
 COMMENT =	parse directory listing
 
 DISTNAME =	File-Listing-6.14

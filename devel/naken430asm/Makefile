@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/03 14:07:41 jasper Exp $
-
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
 V=			2011-10-30

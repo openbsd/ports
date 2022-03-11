@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.112 2021/10/06 08:47:08 ajacoutot Exp $
-
 PORTROACH=		limit:^2\.66
 
 # g++3 chokes on the code

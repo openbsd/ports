@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:53 sthen Exp $
-
 COMMENT=		simple filename and pathname matching
 
 MODULES=		cpan

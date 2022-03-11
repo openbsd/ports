@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:43 sthen Exp $
-
 COMMENT=	new GNU Portable Threads Library
 
 DISTNAME=	npth-1.6

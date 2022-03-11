@@ -1,5 +1,3 @@
-$OpenBSD: patch-hashtab_c,v 1.1 2020/03/27 13:45:25 jca Exp $
-
 More portable endianness check
 https://www.austingroupbugs.net/view.php?id=162#c665
 

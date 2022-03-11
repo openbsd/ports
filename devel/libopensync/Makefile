@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT=	data synchronization framework
 
 V=		0.36

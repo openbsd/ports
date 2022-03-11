@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/17 19:04:30 armani Exp $
 bin/dissy
 lib/python${MODPY_VERSION}/site-packages/dissy/
 lib/python${MODPY_VERSION}/site-packages/dissy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/01/28 21:22:05 sdk Exp $
 include/smb2/
 include/smb2/libsmb2-dcerpc-lsa.h
 include/smb2/libsmb2-dcerpc-srvsvc.h

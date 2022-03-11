@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/14 23:43:58 espie Exp $
 ${P5SITE}/Date/
 ${P5SITE}/Date/Handler/
 ${P5SITE}/Date/Handler.pm

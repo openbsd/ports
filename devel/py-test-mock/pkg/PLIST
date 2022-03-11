@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2022/02/26 20:50:35 sthen Exp $
 @pkgpath devel/py-test-mock
 lib/python${MODPY_VERSION}/site-packages/pytest_mock/
 lib/python${MODPY_VERSION}/site-packages/pytest_mock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

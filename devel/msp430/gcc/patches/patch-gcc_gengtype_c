@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_gengtype_c,v 1.1 2015/03/15 19:56:36 jasper Exp $
-
 Quality workaround for quality code.
 regcomp() would occasionally fail with REG_ESIZE for as of yet unknown
 reasons. so retry it a few times..

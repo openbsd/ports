@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests-lint-unittest_lint_py,v 1.2 2021/03/31 14:07:48 sthen Exp $
-
 Index: tests/lint/unittest_lint.py
 --- tests/lint/unittest_lint.py.orig
 +++ tests/lint/unittest_lint.py

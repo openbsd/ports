@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/04/19 08:18:22 robert Exp $
 @bin bin/soapcpp2
 @bin bin/wsdl2h
 include/stdsoap2.h

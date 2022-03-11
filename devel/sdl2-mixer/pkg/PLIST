@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/04/27 15:43:20 jasper Exp $
 @bin bin/play2mus
 @bin bin/play2wave
 include/SDL2/SDL_mixer.h

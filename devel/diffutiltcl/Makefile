@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:44:07 sthen Exp $
-
 COMMENT =		diff functions for Tcl
 
 V =			0.4.0

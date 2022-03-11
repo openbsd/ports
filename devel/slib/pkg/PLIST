@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/12/08 11:23:47 espie Exp $
 @info info/slib.info
 share/slib/
 share/slib/ANNOUNCE

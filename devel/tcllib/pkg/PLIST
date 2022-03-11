@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/06/12 23:45:43 stu Exp $
 bin/dtplite
 lib/tcl/amazon-s3/
 lib/tcl/amazon-s3/S3.tcl

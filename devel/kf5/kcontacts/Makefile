@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/16 14:30:59 rsadowski Exp $
-
 COMMENT =	KDE contacts access library
 DISTNAME =	kcontacts-${VERSION}
 CATEGORIES =	devel mail

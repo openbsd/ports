@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/30 07:19:21 sthen Exp $
 bin/hexdump
 ${P5SITE}/Data/
 ${P5SITE}/Data/HexDump.pm

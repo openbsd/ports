@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT=	change directory temporarily for a limited scope
 
 MODULES=	cpan

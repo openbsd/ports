@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_pty_t,v 1.1 2021/09/08 21:23:22 bluhm Exp $
-
 Make t/pty.t test pass on OpenBSD.
 
 Index: t/pty.t

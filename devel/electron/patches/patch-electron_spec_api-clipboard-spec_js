@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_spec_api-clipboard-spec_js,v 1.2 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/spec/api-clipboard-spec.js
 --- electron/spec/api-clipboard-spec.js.orig
 +++ electron/spec/api-clipboard-spec.js

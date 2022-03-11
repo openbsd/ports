@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/07 14:18:59 rpointel Exp $
 bin/apktool
 share/apktool/
 share/apktool/${DISTNAME}.jar

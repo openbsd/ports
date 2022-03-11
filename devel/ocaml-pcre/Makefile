@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/25 17:08:30 daniel Exp $
-
 COMMENT =	OCaml Perl-compatible regexp library
 CATEGORIES =	devel textproc
 

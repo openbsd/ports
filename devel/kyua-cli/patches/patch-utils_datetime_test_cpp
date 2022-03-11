@@ -1,4 +1,3 @@
-$OpenBSD: patch-utils_datetime_test_cpp,v 1.1.1.1 2014/03/16 11:28:11 sthen Exp $
 Fix for archs with 32 bits long.
 --- utils/datetime_test.cpp.orig	Mon Dec 23 23:33:29 2013
 +++ utils/datetime_test.cpp	Mon Dec 23 23:33:36 2013

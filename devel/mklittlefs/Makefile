@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/14 13:40:52 tracey Exp $
-
 COMMENT =		tool to build and unpack littlefs images
 
 GH_ACCOUNT =		earlephilhower

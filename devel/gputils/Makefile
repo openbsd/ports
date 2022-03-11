@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/18 03:16:45 kmos Exp $
-
 COMMENT =		GNU PIC assembler and utilities
 
 VERSION =		1.5.0

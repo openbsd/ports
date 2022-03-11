@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/02 16:55:08 benoit Exp $
-
 COMMENT =	code attribute introspection
 
 MODULES =	cpan

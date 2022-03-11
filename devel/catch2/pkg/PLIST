@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/04/24 04:59:58 rsadowski Exp $
 include/catch2/
 include/catch2/catch.hpp
 include/catch2/catch_reporter_automake.hpp

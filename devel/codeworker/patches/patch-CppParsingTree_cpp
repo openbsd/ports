@@ -1,4 +1,3 @@
-$OpenBSD: patch-CppParsingTree_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 CppParsingTree.cpp:113:22: error: 'atoi' was not declared in this scope
 Index: CppParsingTree.cpp
 --- CppParsingTree.cpp.orig

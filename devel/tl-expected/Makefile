@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/03/10 12:03:31 kn Exp $
-
 COMMENT =	c++11/14/17 std::expected with functional-style extensions
 
 GH_ACCOUNT =		TartanLlama

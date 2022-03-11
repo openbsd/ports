@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/11 10:51:17 fcambus Exp $
-
 COMMENT =	C macros to add, find and delete items from a hash
 
 GH_ACCOUNT =	troydhanson

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	a serialization framework for Moose classes
 
 DISTNAME =	MooseX-Storage-0.52

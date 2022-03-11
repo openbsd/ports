@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/11 02:42:55 jeremy Exp $
-
 COMMENT=		extending Rake with remote task goodness
 
 DISTNAME=		rake-remote_task-2.4.2

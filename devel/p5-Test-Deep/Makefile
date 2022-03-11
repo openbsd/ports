@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/12/05 20:35:27 afresh1 Exp $
-
 COMMENT =	extremely flexible deep comparison
 
 DISTNAME =	Test-Deep-1.130

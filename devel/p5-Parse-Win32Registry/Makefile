@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/01 09:46:45 benoit Exp $
-
 COMMENT=	accessing the Windows registry
 
 MODULES=	cpan

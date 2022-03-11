@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:56 sthen Exp $
-
 COMMENT =	capture STDOUT and STDERR from Perl code, subprocesses or XS
 
 MODULES =	cpan

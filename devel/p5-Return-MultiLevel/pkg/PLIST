@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/16 16:33:58 benoit Exp $
 ${P5SITE}/Return/
 ${P5SITE}/Return/MultiLevel.pm
 @man man/man3p/Return::MultiLevel.3p

@@ -1,4 +1,3 @@
-$OpenBSD: patch-libltdl_config_ltmain_sh,v 1.4 2021/03/15 21:02:10 sthen Exp $
 --- libltdl/config/ltmain.sh.orig	Mon Oct 17 06:19:35 2011
 +++ libltdl/config/ltmain.sh	Sat Oct 29 07:05:47 2011
 @@ -2714,51 +2714,6 @@ func_mode_finish ()

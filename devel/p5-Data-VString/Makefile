@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:47 sthen Exp $
 COMMENT=	handle v-strings (often used as version strings)
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/06 19:59:22 abieber Exp $
-
 COMMENT=	lua string hashing/indexing library
 CATEGORIES=	devel
 

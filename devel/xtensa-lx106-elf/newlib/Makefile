@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/22 21:41:27 tracey Exp $
-
 COMMENT =	newlib for ${CONFIG} cross-development
 
 VERSION =	4.0.0

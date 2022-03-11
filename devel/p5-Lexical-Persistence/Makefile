@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 01:52:49 afresh1 Exp $
-
 COMMENT =	persistent lexical variable values for arbitrary calls
 
 DISTNAME =	Lexical-Persistence-1.023

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.132 2021/11/25 19:41:02 ajacoutot Exp $
-
 PORTROACH=		limit:^2
 
 COMMENT =		HTTP client/server library for GNOME

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/11/30 17:03:32 rpe Exp $
 bin/rcs-fast-import
 @man man/man1/rcs-fast-import.1

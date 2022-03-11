@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_make_1,v 1.1 2020/02/01 15:29:25 naddy Exp $
-
 Since we install GNU make as gmake replace make with gmake in the
 manpage where it makes sense.
 

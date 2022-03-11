@@ -1,5 +1,3 @@
-$OpenBSD: patch-xdg_Menu_py,v 1.9 2020/10/20 16:19:29 ajacoutot Exp $
-
 Index: xdg/Menu.py
 --- xdg/Menu.py.orig
 +++ xdg/Menu.py

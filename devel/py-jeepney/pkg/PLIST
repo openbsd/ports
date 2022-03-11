@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/02 08:06:06 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/jeepney/
 lib/python${MODPY_VERSION}/site-packages/jeepney-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/jeepney/__init__.py

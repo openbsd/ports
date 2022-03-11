@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/22 13:18:44 kn Exp $
-
 COMMENT=	basic data structures in C (libstdc++ wrapper)
 
 GH_ACCOUNT=	msune

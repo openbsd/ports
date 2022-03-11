@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:50 sthen Exp $
-
 COMMENT =	declare version conflicts for your dist
 
 MODULES =	cpan

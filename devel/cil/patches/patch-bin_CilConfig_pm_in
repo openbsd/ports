@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_CilConfig_pm_in,v 1.2 2019/03/04 12:51:12 chrisz Exp $
 Index: lib/App/Cilly/CilConfig.pm.in
 --- lib/App/Cilly/CilConfig.pm.in.orig
 +++ lib/App/Cilly/CilConfig.pm.in

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.2 2019/09/07 17:11:53 chrisz Exp $
-
 Use system threads if available - even on bytecode builds.
 Vmthreads are broken and deprecated.
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/24 17:46:21 espie Exp $
 ${P5SITE}/Class/
 ${P5SITE}/Class/Classless.pm
 @man man/man3p/Class::Classless.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 

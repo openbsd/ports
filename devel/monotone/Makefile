@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/03/29 06:20:55 rsadowski Exp $
-
 COMMENT=	distributed version control system
 
 VERSION=	1.1

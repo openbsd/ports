@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/17 21:54:18 jcs Exp $
-
 COMMENT=	Arduino library for Adafruit graphics
 
 V=		1.7.0

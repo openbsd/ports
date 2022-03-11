@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/05 10:26:14 benoit Exp $
-
 COMMENT=	locate install data per-module
 
 MODULES=	cpan

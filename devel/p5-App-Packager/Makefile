@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/21 21:31:59 millert Exp $
-
 COMMENT=	interface to a number of common packagers
 
 MODULES=	cpan

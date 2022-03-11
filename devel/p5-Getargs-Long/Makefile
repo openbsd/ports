@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:55 sthen Exp $
-
 COMMENT=	parses long function arguments
 
 MODULES=	cpan

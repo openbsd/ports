@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:29:18 robert Exp $
-
 COMMENT =		alternative handles_via implementation
 DISTNAME =		Sub-HandlesVia-0.016
 CATEGORIES =		devel

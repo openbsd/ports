@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/03/12 19:02:21 tb Exp $
-
 COMMENT =		c protocol buffers
 
 V =			1.3.3

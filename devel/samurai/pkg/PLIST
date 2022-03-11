@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/10 19:29:52 sthen Exp $
 @bin bin/samu
 @man man/man1/samu.1

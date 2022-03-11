@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Target_PowerPC_PPCTargetMachine_cpp,v 1.3 2022/01/03 21:36:42 rsadowski Exp $
-
 Switch Powerpc64 Big Endian to ELFv2 on OpenBSD.
 
 Index: lib/Target/PowerPC/PPCTargetMachine.cpp

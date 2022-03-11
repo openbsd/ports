@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_base_tinyxml_Makefile_in,v 1.5 2020/06/26 09:41:40 cwen Exp $
-
 Fix build when tinyxml is installed.
 (tinyxml is bundled within codeblocks, so prefer the bundled includes)
 

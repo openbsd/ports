@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:46 sthen Exp $
-
 COMMENT=	handle data in a hierarchical structure
 
 MODULES=	cpan

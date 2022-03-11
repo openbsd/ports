@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2014/12/19 17:07:46 millert Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/pushd.pm
 @man man/man3p/File::pushd.3p

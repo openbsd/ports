@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:44 sthen Exp $
-
 COMMENT =	unload a class
 DISTNAME =	Class-Unload-0.11
 CATEGORIES =	devel

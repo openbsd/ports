@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/07 01:00:45 bcallah Exp $
-
 # Only used by lang/flang; only supported on amd64 and arm64
 ONLY_FOR_ARCHS =	amd64 arm64
 

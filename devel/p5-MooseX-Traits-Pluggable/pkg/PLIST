@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:05:04 sthen Exp $
 ${P5SITE}/MooseX/
 ${P5SITE}/MooseX/Traits/
 ${P5SITE}/MooseX/Traits/Pluggable.pm

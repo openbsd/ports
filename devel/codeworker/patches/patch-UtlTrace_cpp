@@ -1,4 +1,3 @@
-$OpenBSD: patch-UtlTrace_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 fix several include errors with ports-gcc
 Index: UtlTrace.cpp
 --- UtlTrace.cpp.orig

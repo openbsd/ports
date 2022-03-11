@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:45:59 sthen Exp $
-
 COMMENT=		JSON implementation for Ruby
 
 DISTNAME=		json_pure-1.8.2

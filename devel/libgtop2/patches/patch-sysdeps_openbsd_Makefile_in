@@ -1,5 +1,3 @@
-$OpenBSD: patch-sysdeps_openbsd_Makefile_in,v 1.2 2019/04/27 13:45:24 jasper Exp $
-
 Index: sysdeps/openbsd/Makefile.in
 --- sysdeps/openbsd/Makefile.in.orig
 +++ sysdeps/openbsd/Makefile.in

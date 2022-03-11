@@ -1,6 +1,5 @@
 Declaration of 'index' shadows declaration in string.h.
 
-$OpenBSD: patch-CUnit_Sources_Framework_TestDB_c,v 1.1 2011/08/19 08:04:02 jasper Exp $
 --- CUnit/Sources/Framework/TestDB.c.orig	Sat Jun  3 05:25:02 2006
 +++ CUnit/Sources/Framework/TestDB.c	Thu Aug 18 22:13:03 2011
 @@ -966,16 +966,16 @@ CU_pSuite CU_get_suite_by_name(const char* szSuiteName

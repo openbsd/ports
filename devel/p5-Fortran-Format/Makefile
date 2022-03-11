@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT=	read/write data according to a standard Fortran 77 FORMAT
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/12/02 00:59:48 afresh1 Exp $
 ${P5SITE}/POE.pm
 ${P5SITE}/POE/Component/
 ${P5SITE}/POE/Component.pm

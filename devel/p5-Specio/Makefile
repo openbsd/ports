@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/02 08:46:45 benoit Exp $
-
 COMMENT =	type constraints and coercions for Perl
 
 DISTNAME =	Specio-0.47

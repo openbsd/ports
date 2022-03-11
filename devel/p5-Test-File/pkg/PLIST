@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/22 16:59:06 benoit Exp $
 ${P5SITE}/Test/File.pm
 @man man/man3p/Test::File.3p

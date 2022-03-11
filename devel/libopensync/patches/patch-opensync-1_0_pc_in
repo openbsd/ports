@@ -1,4 +1,3 @@
-$OpenBSD: patch-opensync-1_0_pc_in,v 1.2 2008/01/13 21:37:27 ajacoutot Exp $
 --- opensync-1.0.pc.in.orig	Sat Jan 12 16:11:24 2008
 +++ opensync-1.0.pc.in	Sat Jan 12 16:32:56 2008
 @@ -14,4 +14,4 @@ Name: opensync

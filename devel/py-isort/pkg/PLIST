@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/29 15:38:44 sthen Exp $
 @pkgpath devel/py-isort
 @conflict py-isort-<4.2.15p3
 bin/isort

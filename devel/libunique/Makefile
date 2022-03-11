@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/12/19 13:37:14 ajacoutot Exp $
-
 PORTROACH +=		limit:^1
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/11/05 11:17:57 sthen Exp $
-
 COMMENT =	select a pager if destination is a TTY
 
 MODULES =	cpan

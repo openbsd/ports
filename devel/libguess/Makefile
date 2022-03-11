@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT =		high-speed character set detection library
 
 DISTNAME =		libguess-1.2

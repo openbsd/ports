@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_m4sugar_m4sugar_m4,v 1.1 2021/03/03 19:41:48 sthen Exp $
-
 Index: lib/m4sugar/m4sugar.m4
 --- lib/m4sugar/m4sugar.m4.orig
 +++ lib/m4sugar/m4sugar.m4

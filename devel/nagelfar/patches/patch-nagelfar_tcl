@@ -1,4 +1,3 @@
-$OpenBSD: patch-nagelfar_tcl,v 1.3 2017/05/05 04:10:48 stu Exp $
 Index: nagelfar.tcl
 --- nagelfar.tcl.orig
 +++ nagelfar.tcl

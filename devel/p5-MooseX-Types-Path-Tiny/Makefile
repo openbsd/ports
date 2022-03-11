@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	Path::Tiny types and coercions for Moose
 
 DISTNAME =	MooseX-Types-Path-Tiny-0.012

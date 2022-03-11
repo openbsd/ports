@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_forks_pm,v 1.1 2019/06/17 21:11:43 kn Exp $
-
 Argument "3.08_01" isn't numeric in numeric ge (>=) at /usr/local/libdata/perl5/site_perl/amd64-openbsd/forks.pm line 1570.
 
 Index: lib/forks.pm

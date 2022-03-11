@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:54 sthen Exp $
-
 COMMENT =	update access and modification timestamps of files
 
 MODULES =	cpan

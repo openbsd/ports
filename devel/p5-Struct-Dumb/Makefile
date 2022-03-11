@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/14 08:54:58 benoit Exp $
-
 COMMENT=	make simple lightweight record-like structures
 
 DISTNAME=	Struct-Dumb-0.12

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/11/02 10:18:17 sthen Exp $
 @conflict py-jaraco-functoolsjaraco.functools-*
 @conflict py3-jaraco-functoolsjaraco.functools-*
 @pkgpath devel/py-jaraco-functools

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_m4sugar_Makefile_in,v 1.1.1.1 2010/03/22 20:54:07 espie Exp $
 --- lib/m4sugar/Makefile.in.orig	Mon Jul 27 05:28:45 2009
 +++ lib/m4sugar/Makefile.in	Mon Mar  8 12:04:46 2010
 @@ -199,7 +199,7 @@ top_builddir = @top_builddir@

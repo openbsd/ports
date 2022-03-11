@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/12/05 18:40:50 afresh1 Exp $
-
 COMMENT =	merges arbitrarily deep hashes into a single hash
 
 MODULES =	cpan

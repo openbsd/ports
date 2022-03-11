@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:09 sthen Exp $
-
 COMMENT =	Spiffy Perl Interface Framework For You
 MODULES =	cpan
 PKG_ARCH =	*

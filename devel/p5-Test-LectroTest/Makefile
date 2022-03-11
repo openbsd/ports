@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:14 sthen Exp $
-
 COMMENT =	easy, automatic, specification-based tests
 
 DISTNAME =	Test-LectroTest-0.5001

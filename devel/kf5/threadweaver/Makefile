@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/09/07 14:48:52 rsadowski Exp $
-
 COMMENT =	KDE helper for multithreaded programming
 DISTNAME =	threadweaver-${VERSION}
 

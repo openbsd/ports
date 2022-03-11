@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2011/04/15 09:46:31 sthen Exp $
 --- configure.orig	Wed Jul 21 17:42:30 2010
 +++ configure	Thu Mar 24 23:07:00 2011
 @@ -2384,14 +2384,7 @@ do

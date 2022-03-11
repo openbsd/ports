@@ -1,4 +1,3 @@
-$OpenBSD: patch-ddd_TTYAgent_C,v 1.1 2012/12/13 15:43:11 naddy Exp $
 --- ddd/TTYAgent.C.orig	Thu Dec 13 16:07:28 2012
 +++ ddd/TTYAgent.C	Thu Dec 13 16:10:02 2012
 @@ -476,7 +476,11 @@ void TTYAgent::open_master()

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/15 11:53:53 jca Exp $
-
 COMMENT =	make NEXT suck less
 
 MODULES =	cpan

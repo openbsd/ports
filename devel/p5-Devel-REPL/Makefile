@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:00:31 afresh1 Exp $
-
 COMMENT =	modern perl interactive shell
 
 DISTNAME =	Devel-REPL-1.003028

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:42 sthen Exp $
-
 COMMENT=	validate method/function parameters
 
 MODULES=	cpan

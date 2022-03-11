@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:45:59 sthen Exp $
-
 COMMENT =	numerical N-dimensional Array class
 
 DISTNAME =	narray-0.6.1.2

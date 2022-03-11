@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/24 18:01:03 solene Exp $
-
 COMMENT=	memory optimized serialization library
 
 GH_ACCOUNT=	google

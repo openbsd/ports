@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:50 sthen Exp $
-
 MODPY_EGG_VERSION =	0.4.5
 COMMENT =	Python library for the ISO 639 language code standard
 DISTNAME =	iso-639-${MODPY_EGG_VERSION}

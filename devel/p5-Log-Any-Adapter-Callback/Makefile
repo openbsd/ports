@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/15 08:22:32 benoit Exp $
-
 COMMENT=		module to send Log::Any logs to a subroutine
 
 MODULES=		cpan

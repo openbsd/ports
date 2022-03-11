@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/12/09 09:51:00 ajacoutot Exp $
 include/pangomm-2.48/
 include/pangomm-2.48/pangomm/
 include/pangomm-2.48/pangomm.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-absl_base_config_h,v 1.1.1.1 2021/12/18 19:38:17 kn Exp $
-
 Adding OpenBSD to the list of platforms that have mmap(2) and
 pthread_(get|set)schedparam(3).
 

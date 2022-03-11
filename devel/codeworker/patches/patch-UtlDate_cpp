@@ -1,4 +1,3 @@
-$OpenBSD: patch-UtlDate_cpp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 Fix several include errors with ports-gcc
 Index: UtlDate.cpp
 --- UtlDate.cpp.orig

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
 MODPY_EGG_VERSION =	0.2.7

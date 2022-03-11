@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:14 sthen Exp $
-
 COMMENT=		fast, incremental CVS to Mercurial conversion
 
 # we just make up a version since changesets are SHA1 hashes

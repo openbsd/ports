@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_kwsys_CMakeLists_txt,v 1.7 2020/12/30 07:17:34 rsadowski Exp $
-
 patch to disable libexecinfo / execinfo.h; seems it can be picked up
 on ports-gcc arches.
 

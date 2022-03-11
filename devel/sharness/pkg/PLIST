@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/04 18:53:01 tb Exp $
 share/doc/sharness/
 share/doc/sharness/API.md
 share/doc/sharness/CHANGELOG.md

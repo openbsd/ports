@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/02/22 04:22:20 bket Exp $
 @conflict py-liblarch_gtk-*
 @pkgpath devel/py-liblarch_gtk
 @pkgpath devel/py-liblarch

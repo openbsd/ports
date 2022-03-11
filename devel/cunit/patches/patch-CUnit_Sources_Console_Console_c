@@ -1,6 +1,5 @@
 Remove type-conversion compiler warnings, no functional change.
 
-$OpenBSD: patch-CUnit_Sources_Console_Console_c,v 1.1 2011/08/19 08:04:02 jasper Exp $
 --- CUnit/Sources/Console/Console.c.orig	Wed Mar 14 03:25:32 2007
 +++ CUnit/Sources/Console/Console.c	Wed Aug 17 20:35:50 2011
 @@ -476,7 +476,7 @@ static void list_suites(CU_pTestRegistry pRegistry)

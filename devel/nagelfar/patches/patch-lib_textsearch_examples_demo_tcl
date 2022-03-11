@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_textsearch_examples_demo_tcl,v 1.2 2017/05/05 04:10:48 stu Exp $
 Index: lib/textsearch/examples/demo.tcl
 --- lib/textsearch/examples/demo.tcl.orig
 +++ lib/textsearch/examples/demo.tcl

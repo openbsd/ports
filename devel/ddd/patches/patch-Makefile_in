@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2009/11/30 23:45:35 edd Exp $
 --- Makefile.in.orig	Wed Feb 11 17:25:55 2009
 +++ Makefile.in	Mon Sep 28 09:40:49 2009
 @@ -307,7 +307,7 @@ TEXINFO_DISTFILES = \

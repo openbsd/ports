@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	organise your Moose types in libraries
 
 MODULES =	cpan

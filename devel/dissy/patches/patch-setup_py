@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2010/10/17 19:04:30 armani Exp $
 --- setup.py.orig	Sat Oct 16 19:43:31 2010
 +++ setup.py	Sat Oct 16 19:44:01 2010
 @@ -31,9 +31,7 @@ setup(name='%s' % (Config.PROGRAM_NAME).lower(),

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:23 sthen Exp $
-
 COMMENT =		library for writing Tor pluggable transports in Go
 
 GH_ACCOUNT =		torbsd

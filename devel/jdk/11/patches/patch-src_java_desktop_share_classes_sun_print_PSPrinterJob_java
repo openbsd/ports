@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_java_desktop_share_classes_sun_print_PSPrinterJob_java,v 1.1 2019/07/23 11:55:43 kurt Exp $
-
 Index: src/java.desktop/share/classes/sun/print/PSPrinterJob.java
 --- src/java.desktop/share/classes/sun/print/PSPrinterJob.java.orig
 +++ src/java.desktop/share/classes/sun/print/PSPrinterJob.java

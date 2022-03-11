@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT =		unpack git fast-import streams into RCS file tree
 
 DISTNAME =		rcs-fast-import-1.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:02 sthen Exp $
-
 COMMENT=	attributes with aliases for constructor arguments for MooseX
 
 DISTNAME=	MooseX-MultiInitArg-0.02

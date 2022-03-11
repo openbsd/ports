@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:28:42 robert Exp $
-
 COMMENT =	perl extension for working with IO::Handle like objects
 
 MODULES =	cpan

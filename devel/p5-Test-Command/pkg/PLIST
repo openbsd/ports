@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/11 14:40:11 kn Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Command.pm
 @man man/man3p/Test::Command.3p

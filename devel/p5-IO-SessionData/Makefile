@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:44:56 sthen Exp $
-
 COMMENT=	supporting module for SOAP::Lite
 
 MODULES=	cpan

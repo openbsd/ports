@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_comment_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
 Index: src/comment.ll
 --- src/comment.ll.orig
 +++ src/comment.ll

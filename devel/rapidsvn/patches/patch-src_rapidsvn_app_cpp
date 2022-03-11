@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rapidsvn_app_cpp,v 1.1 2019/01/02 12:44:06 jca Exp $
-
 wxwidgets: wxOPEN was deprecated, use wxFD_OPEN
 
 Index: src/rapidsvn_app.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-contrib_tests_shpproj_sh,v 1.1 2019/03/19 19:45:08 landry Exp $
-
 Index: contrib/tests/shpproj.sh
 --- contrib/tests/shpproj.sh.orig
 +++ contrib/tests/shpproj.sh

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/07 09:00:34 simon Exp $
 ${P5SITE}/Perl6/
 ${P5SITE}/Perl6/Junction/
 ${P5SITE}/Perl6/Junction.pm

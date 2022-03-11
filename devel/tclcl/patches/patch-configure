@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2012/04/28 18:07:12 stu Exp $
 --- configure.orig	Sun Sep  5 00:33:14 2010
 +++ configure	Mon Apr 23 11:38:38 2012
 @@ -5937,6 +5937,7 @@ TCL_OLD_ALT_VERS=`echo $TCL_OLD_VERS | sed 's/\.//'`

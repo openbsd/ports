@@ -1,5 +1,3 @@
-$OpenBSD: patch-buffer_buffer_0_c,v 1.1 2021/02/06 12:04:43 jan Exp $
-
 Index: buffer/buffer_0.c
 --- buffer/buffer_0.c.orig
 +++ buffer/buffer_0.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/03 05:44:11 rsadowski Exp $
-
 ONLY_FOR_ARCHS=	${CXX11_ARCHS}
 
 COMMENT=	fast hash map and hash set

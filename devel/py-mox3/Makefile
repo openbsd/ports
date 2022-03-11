@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:00:51 sthen Exp $
-
 COMMENT =	Mox is a mock object framework for Python
 
 MODPY_EGG_VERSION = 1.1.0

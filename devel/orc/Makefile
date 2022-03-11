@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:44 sthen Exp $
-
 COMMENT=	library and toolset to operate arrays of data
 
 DISTNAME=	orc-0.4.29

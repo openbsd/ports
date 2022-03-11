@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/08 21:23:22 bluhm Exp $
-
 COMMENT =	run a subprocess
 
 DISTNAME =	IPC-Run-20200505.0

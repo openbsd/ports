@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/31 00:04:53 daniel Exp $
-
 MULTI_PACKAGES =	-main -private -configurator
 
 COMMENT-main =		OCaml build system

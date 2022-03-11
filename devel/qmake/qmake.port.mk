@@ -1,5 +1,3 @@
-# $OpenBSD: qmake.port.mk,v 1.9 2017/12/02 21:38:10 espie Exp $
-
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
 .endif

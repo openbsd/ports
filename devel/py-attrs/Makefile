@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/26 20:48:26 sthen Exp $
-
 COMMENT =		classes without boilerplate
 
 MODPY_EGG_VERSION =	21.4.0

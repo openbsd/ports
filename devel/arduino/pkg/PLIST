@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/12/17 02:21:53 jcs Exp $
 share/arduino/
 share/arduino/boards.txt
 share/arduino/bootloaders/

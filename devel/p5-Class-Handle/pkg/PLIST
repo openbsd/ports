@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/13 06:44:54 simon Exp $
 ${P5SITE}/Class/Handle.pm
 @man man/man3p/Class::Handle.3p

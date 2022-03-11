@@ -1,5 +1,3 @@
-$OpenBSD: patch-shm_dconf-shm_c,v 1.7 2019/04/28 06:31:11 ajacoutot Exp $
-
 Try to open the dconf cache directly instead of always trying to create the
 directory path first (unveil).
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/01 08:30:40 benoit Exp $
-
 COMMENT =	simple, sane and efficient file slurper
 
 DISTNAME =	File-Slurp-Tiny-0.004

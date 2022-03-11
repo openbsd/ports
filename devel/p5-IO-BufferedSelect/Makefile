@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:56 sthen Exp $
-
 COMMENT =	line-buffered select interface
 
 DISTNAME =	IO-BufferedSelect-1.0

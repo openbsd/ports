@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:19 sthen Exp $
-
 BROKEN-hppa=	video/mmxflags_asm.S:54: Error: unknown pseudo-op: .note.gnu
 COMMENT=	MPEG video player library with sound support
 

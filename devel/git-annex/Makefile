@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/20 01:49:40 gnezdo Exp $
-
 COMMENT =	use git to manage files without checking them in
 
 CATEGORIES =	devel

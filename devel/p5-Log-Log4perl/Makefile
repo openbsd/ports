@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/06/14 19:59:01 sthen Exp $
-
 COMMENT=	Log4j implementation for Perl
 
 MODULES=	cpan

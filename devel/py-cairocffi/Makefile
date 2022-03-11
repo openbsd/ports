@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		cffi-based cairo bindings for Python
 
 MODPY_EGG_VERSION =	0.8.0

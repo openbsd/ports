@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/03 13:20:47 pvk Exp $
-
 COMMENT=	command line library for Python
 
 # py-elasticsearch-curator-5.8.4 requires click <8.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT =	modbuild::pluggable module to generate ppport.h
 
 DISTNAME =	Module-Build-Pluggable-PPPort-0.04

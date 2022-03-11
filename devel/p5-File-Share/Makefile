@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:44:53 sthen Exp $
-
 COMMENT =	extend File::ShareDir to local libraries
 
 MODULES =	cpan

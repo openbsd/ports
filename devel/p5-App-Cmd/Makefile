@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/12 09:36:21 benoit Exp $
-
 COMMENT =		write command line apps with less suffering
 
 MODULES =		cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 15:12:21 tracey Exp $
-
 COMMENT =		esp8266 and esp32 rom bootloader communication tool
 
 MODPY_EGG_VERSION =	3.2

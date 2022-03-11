@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT =	plugin support for Module::Build
 
 DISTNAME =	Module-Build-Pluggable-0.10

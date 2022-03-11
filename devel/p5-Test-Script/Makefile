@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/05/14 23:28:40 bluhm Exp $
-
 COMMENT =	cross-platform basic tests for scripts
 
 DISTNAME =	Test-Script-1.29

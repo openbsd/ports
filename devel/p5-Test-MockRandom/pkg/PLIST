@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/12 22:01:46 bluhm Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/MockRandom.pm
 @man man/man3p/Test::MockRandom.3p

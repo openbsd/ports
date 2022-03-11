@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2022/02/25 12:00:15 sthen Exp $
-
 COMMENT =		virtual Python environment builder
 
 # more current virtualenv versions need additional py2 RDEPs

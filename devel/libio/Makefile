@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:39 sthen Exp $
-
 COMMENT=	abstraction for general data transport
 
 DISTNAME=	libio-0.1

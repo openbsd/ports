@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=	MessagePack implementation and bindings for Lua
 
 DISTNAME=	lua-cmsgpack-0.3.0

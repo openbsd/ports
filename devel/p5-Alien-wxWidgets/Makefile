@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:38 sthen Exp $
-
 COMMENT =	building, finding and using wxWidgets binaries
 
 MODULES =	cpan

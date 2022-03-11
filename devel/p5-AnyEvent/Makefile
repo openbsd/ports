@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/09/17 12:26:39 bluhm Exp $
-
 COMMENT =	provide framework for multiple event loops
 
 DISTNAME =	AnyEvent-7.17

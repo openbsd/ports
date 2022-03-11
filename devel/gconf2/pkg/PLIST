@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.32 2021/02/27 08:18:21 ajacoutot Exp $
 @conflict gconf2-polkit-*
 @pkgpath devel/gconf2,-main
 @pkgpath devel/gconf2,-polkit

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT =		makefile for ESP8266 and ESP32 Arduino projects
 
 GH_ACCOUNT =		plerup

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ETL__stringf_h,v 1.1 2017/05/24 20:17:31 espie Exp $
-
 Index: ETL/_stringf.h
 --- ETL/_stringf.h.orig
 +++ ETL/_stringf.h

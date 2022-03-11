@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/10 04:10:59 daniel Exp $
-
 COMMENT =	optimized parsing and printing library for the JSON format
 CATEGORIES =	devel
 

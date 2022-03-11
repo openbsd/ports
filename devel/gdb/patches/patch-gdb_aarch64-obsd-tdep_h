@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdb_aarch64-obsd-tdep_h,v 1.1 2021/10/23 17:55:15 jca Exp $
-
 Index: gdb/aarch64-obsd-tdep.h
 --- gdb/aarch64-obsd-tdep.h.orig
 +++ gdb/aarch64-obsd-tdep.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:01 sthen Exp $
-
 COMMENT =		library for getting/setting process names
 
 MODPY_EGG_VERSION =	1.2.2

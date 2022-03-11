@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: buildbot_worker.rc,v 1.1 2018/06/23 21:56:10 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/buildbot-worker start --nodaemon"
 daemon_flags="${HOMEDIR}"

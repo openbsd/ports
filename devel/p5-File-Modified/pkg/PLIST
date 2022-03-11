@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 15:33:38 espie Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/Modified.pm
 @man man/man3p/File::Modified.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/16 08:05:41 sthen Exp $
-
 COMMENT =		versioning library for Python projects
 
 MODPY_EGG_VERSION =	21.3.0

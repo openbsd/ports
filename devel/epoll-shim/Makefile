@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/24 09:32:44 sthen Exp $
-
 COMMENT=	small epoll implementation using kqueue
 
 GH_ACCOUNT=	jiixyj

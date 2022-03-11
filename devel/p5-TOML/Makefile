@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:11 sthen Exp $
-
 COMMENT =	parser for Tom's Obvious, Minimal Language
 
 DISTNAME =	TOML-0.97

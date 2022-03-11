@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/10 09:51:33 edd Exp $
-
 COMMENT =		GitHub webhooks runner daemon
 
 V =			0.4.5

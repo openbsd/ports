@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_options_cmake,v 1.1 2019/06/04 15:22:32 jca Exp $
-
 Force-disable the use of -Werror.  Since options.cmake is installed and
 used by consumers (eg sysutils/facter) it's not enough to
 pass -DENABLE_CXX_WERROR=Off when building leatherman.

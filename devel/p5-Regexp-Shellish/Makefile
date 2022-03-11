@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:07 sthen Exp $
-
 COMMENT=	module for shell-like regular expressions
 
 MODULES=	cpan

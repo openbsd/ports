@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:45:58 sthen Exp $
-
 COMMENT=		Ruby interface to gettext
 
 DISTNAME=		gettext-3.2.2

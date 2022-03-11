@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdb_ppc64-obsd-tdep_h,v 1.1 2021/10/22 18:30:36 jca Exp $
-
 Index: gdb/ppc64-obsd-tdep.h
 --- gdb/ppc64-obsd-tdep.h.orig
 +++ gdb/ppc64-obsd-tdep.h

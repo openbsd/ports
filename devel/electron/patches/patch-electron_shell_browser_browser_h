@@ -1,5 +1,3 @@
-$OpenBSD: patch-electron_shell_browser_browser_h,v 1.1 2020/04/06 18:58:16 robert Exp $
-
 Index: electron/shell/browser/browser.h
 --- electron/shell/browser/browser.h.orig
 +++ electron/shell/browser/browser.h

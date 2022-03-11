@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_runtime_CPP_CPPScheduler_cpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
-
 Index: src/runtime/CPP/CPPScheduler.cpp
 --- src/runtime/CPP/CPPScheduler.cpp.orig
 +++ src/runtime/CPP/CPPScheduler.cpp

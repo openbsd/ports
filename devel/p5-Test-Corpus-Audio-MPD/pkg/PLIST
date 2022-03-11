@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/02/22 21:12:19 cwen Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/Corpus/
 ${P5SITE}/Test/Corpus/Audio/

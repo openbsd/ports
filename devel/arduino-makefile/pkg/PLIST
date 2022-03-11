@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/08 01:04:36 jcs Exp $
 bin/ard-reset-arduino
 bin/robotis-loader
 @man man/man1/ard-reset-arduino.1

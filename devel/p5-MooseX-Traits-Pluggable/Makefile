@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:03 sthen Exp $
-
 COMMENT =	trait loading and resolution for Moose
 
 MODULES =	cpan

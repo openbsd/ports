@@ -1,5 +1,3 @@
-$OpenBSD: patch-ode_demo_demo_jointPR_cpp,v 1.2 2020/09/04 20:06:58 kirby Exp $
-
 Index: ode/demo/demo_jointPR.cpp
 --- ode/demo/demo_jointPR.cpp.orig
 +++ ode/demo/demo_jointPR.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:02 sthen Exp $
-
 COMMENT=	Type 1 rasterizer library for UNIX/X11
 
 DISTNAME=	t1lib-5.1.2

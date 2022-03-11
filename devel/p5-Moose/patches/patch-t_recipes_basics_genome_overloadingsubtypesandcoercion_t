@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_recipes_basics_genome_overloadingsubtypesandcoercion_t,v 1.1 2021/05/24 00:00:05 afresh1 Exp $
-
 List::Util 1.56 is required for this test and mentioned in a few
 places in the docs (mostly related to this test).
 We can't use our core List::Util until we update it so skip this test

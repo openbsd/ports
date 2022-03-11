@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/12/10 04:10:59 daniel Exp $
-
 # build system needs per-arch tweaks and is very unfriendly to
 # bytecode-only builds. powerpc nativecode is currently broken.
 ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}

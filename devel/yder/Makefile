@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/09 09:53:14 landry Exp $
-
 COMMENT =	logging library for C applications
 
 GH_ACCOUNT =	babelouest

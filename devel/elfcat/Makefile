@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/02 16:36:59 fcambus Exp $
-
 COMMENT =	ELF visualizer, generating HTML files from ELF binaries
 
 GH_ACCOUNT =	ruslashev

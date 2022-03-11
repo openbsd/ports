@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:07 sthen Exp $
-
 COMMENT =	process runner with RAII pattern
 
 DISTNAME =	Proc-Guard-0.07

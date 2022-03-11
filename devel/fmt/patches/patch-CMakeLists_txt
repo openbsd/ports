@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/10/16 08:02:18 rsadowski Exp $
-
 Allow linking without '-Wl,--as-needed', fix the build on clang+ld.bfd archs.
 It's needed to do it like this since target_link_libraries takes preference
 over LDFLAGS.

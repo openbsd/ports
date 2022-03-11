@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/12/10 04:10:59 daniel Exp $
-
 COMMENT =	OCaml parallel map primitive for multicores
 CATEGORIES =	devel
 

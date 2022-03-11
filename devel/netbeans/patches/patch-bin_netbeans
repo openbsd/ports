@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_netbeans,v 1.3 2019/04/26 12:40:31 rsadowski Exp $
-
 - remove hidden bash dependency
 
 Index: bin/netbeans

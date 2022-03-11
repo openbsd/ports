@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/12/09 16:10:14 bket Exp $
-
 COMMENT=	c++ unit testing framework
 
 DISTNAME=	cppunit-1.14.0

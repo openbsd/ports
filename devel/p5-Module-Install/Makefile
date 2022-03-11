@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:00 sthen Exp $
-
 COMMENT=	standalone extensible Perl module installer
 
 MODULES=	cpan

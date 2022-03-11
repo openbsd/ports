@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/12 11:59:17 mglocker Exp $
 @bin bin/64tass
 @man man/man1/64tass.1
 share/doc/64tass/

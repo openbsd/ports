@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_build_src_tools_gcc_jam,v 1.16 2022/02/02 12:24:14 sthen Exp $
-
 Index: tools/build/src/tools/gcc.jam
 --- tools/build/src/tools/gcc.jam.orig
 +++ tools/build/src/tools/gcc.jam

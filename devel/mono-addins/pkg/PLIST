@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/03/29 19:36:13 robert Exp $
 bin/mautil
 lib/mono/gac/Mono.Addins/
 lib/mono/gac/Mono.Addins.CecilReflector/

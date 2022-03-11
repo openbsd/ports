@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:44:06 sthen Exp $
-
 PKG_ARCH =	*
 
 COMMENT =	encapsulate protected Lua calls with a coroutine based loop

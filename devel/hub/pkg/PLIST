@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/08 10:07:38 czarkoff Exp $
 @bin bin/hub
 @man man/man1/hub.1

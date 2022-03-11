@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:29:04 robert Exp $
 ${P5SITE}/Path/
 ${P5SITE}/Path/Dispatcher/
 ${P5SITE}/Path/Dispatcher.pm

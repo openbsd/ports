@@ -1,4 +1,3 @@
-$OpenBSD: patch-gdb_config_aarch64_obsd_mh,v 1.2 2021/10/22 18:30:36 jca Exp $
 Index: gdb/config/aarch64/obsd.mh
 --- gdb/config/aarch64/obsd.mh.orig
 +++ gdb/config/aarch64/obsd.mh

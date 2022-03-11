@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/12 05:51:22 bcallah Exp $
 @bin bin/greg

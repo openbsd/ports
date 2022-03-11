@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_c_at,v 1.1 2005/09/11 08:14:45 espie Exp $
 --- tests/c.at.orig	Sun Sep 11 10:06:46 2005
 +++ tests/c.at	Sun Sep 11 10:09:49 2005
 @@ -142,12 +142,12 @@ AT_CLEANUP

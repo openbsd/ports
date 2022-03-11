@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/12/21 15:40:32 benoit Exp $
-
 COMMENT=	Perl module for comparing arrays
 
 MODULES=	cpan

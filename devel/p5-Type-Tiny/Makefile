@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/08/11 06:02:59 benoit Exp $
-
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
 DISTNAME =		Type-Tiny-1.012004

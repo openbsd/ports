@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT =		Python module for decorators, wrappers and monkey patching
 
 MODPY_EGG_VERSION =	1.11.2

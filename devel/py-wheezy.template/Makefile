@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:04 sthen Exp $
-
 COMMENT=		lightweight template library
 
 MODPY_EGG_VERSION=	3.1.0

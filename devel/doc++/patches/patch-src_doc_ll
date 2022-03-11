@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_doc_ll,v 1.1 2017/05/01 19:57:34 espie Exp $
 Index: src/doc.ll
 --- src/doc.ll.orig
 +++ src/doc.ll

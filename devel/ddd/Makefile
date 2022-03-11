@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2021/01/08 20:17:27 jasper Exp $
-
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12

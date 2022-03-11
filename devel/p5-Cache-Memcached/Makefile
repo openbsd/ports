@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:45 sthen Exp $
-
 COMMENT= 	pure perl client interface to memcached
 
 MODULES=	cpan

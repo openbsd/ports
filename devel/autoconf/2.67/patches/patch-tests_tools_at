@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_tools_at,v 1.1 2011/04/15 09:46:32 sthen Exp $
 --- tests/tools.at.orig	Tue Jun  8 02:07:04 2010
 +++ tests/tools.at	Thu Mar 24 23:05:42 2011
 @@ -198,12 +198,6 @@ END

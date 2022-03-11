@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/19 07:15:49 benoit Exp $
-
 COMMENT =	read data from __DATA__
 
 DISTNAME =	Data-Section-Simple-0.07

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:59 sthen Exp $
-
 COMMENT =		easy to use progressbar library for python
 
 MODPY_EGG_VERSION =	1.5

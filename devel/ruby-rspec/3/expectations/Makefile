@@ -1,5 +1,3 @@
-#  $OpenBSD: Makefile,v 1.17 2019/07/07 18:46:44 jasper Exp $
-
 COMMENT =		rspec expectations and matchers
 DISTNAME =		rspec-expectations-3.8.4
 

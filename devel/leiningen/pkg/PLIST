@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/29 01:29:15 kn Exp $
 bin/lein
 @man man/man1/lein.1
 share/bash_completion.d/

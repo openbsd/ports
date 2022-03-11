@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:44:08 sthen Exp $
-
 COMMENT =		mature, quick and easy command line automation tool
 
 DISTNAME =		expect-lite_4.9.0

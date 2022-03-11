@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/20 13:48:53 bluhm Exp $
-
 COMMENT =	check Uniform Resource Identifiers
 
 DISTNAME =	Test-URI-1.083

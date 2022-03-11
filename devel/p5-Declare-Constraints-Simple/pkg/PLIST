@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 02:23:55 kevlo Exp $
 ${P5SITE}/Declare/
 ${P5SITE}/Declare/Constraints/
 ${P5SITE}/Declare/Constraints/Simple/

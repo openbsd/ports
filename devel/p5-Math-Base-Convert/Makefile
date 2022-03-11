@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:44:59 sthen Exp $
-
 COMMENT =	very fast base to base conversion
 DISTNAME =	Math-Base-Convert-0.11
 CATEGORIES =	devel

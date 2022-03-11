@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:10 sthen Exp $
-
 COMMENT = 	Perl library for manipulating frame stack
 
 MODULES =	cpan

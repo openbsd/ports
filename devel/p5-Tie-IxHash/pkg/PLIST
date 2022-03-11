@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/26 09:21:05 bernd Exp $
 ${P5SITE}/Tie/
 ${P5SITE}/Tie/IxHash.pm
 @man man/man3p/Tie::IxHash.3p

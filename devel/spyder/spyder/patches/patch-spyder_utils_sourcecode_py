@@ -1,5 +1,3 @@
-$OpenBSD: patch-spyder_utils_sourcecode_py,v 1.2 2021/02/26 18:20:32 naddy Exp $
-
 Index: spyder/utils/sourcecode.py
 --- spyder/utils/sourcecode.py.orig
 +++ spyder/utils/sourcecode.py

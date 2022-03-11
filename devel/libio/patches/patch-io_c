@@ -1,4 +1,3 @@
-$OpenBSD: patch-io_c,v 1.2 2010/05/22 20:35:17 espie Exp $
 --- io.c.orig	Wed Mar 27 05:41:07 2002
 +++ io.c	Sat May 22 22:33:59 2010
 @@ -102,7 +102,7 @@ io_detach_child(struct io_header *hparent, struct io_l

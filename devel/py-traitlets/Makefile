@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/18 00:23:57 daniel Exp $
-
 COMMENT =		configuration system for Python applications
 
 MODPY_EGG_VERSION =	5.1.1

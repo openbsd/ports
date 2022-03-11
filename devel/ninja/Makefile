@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/01/09 11:39:14 ajacoutot Exp $
-
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
 # and devel/cmake/cmake.port.mk.

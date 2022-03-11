@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/10 09:05:05 jakob Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Multiplex.pm
 @man man/man3p/IO::Multiplex.3p

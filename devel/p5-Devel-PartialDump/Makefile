@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:49 sthen Exp $
-
 COMMENT=		partial dumping of data structures
 
 DISTNAME=		Devel-PartialDump-0.20

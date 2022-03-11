@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:38 sthen Exp $
-
 COMMENT =	catalyst packages for the tutorial
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

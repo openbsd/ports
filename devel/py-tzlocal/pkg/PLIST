@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/10 20:13:04 sthen Exp $
 @pkgpath devel/py-tzlocal
 lib/python${MODPY_VERSION}/site-packages/tzlocal/
 lib/python${MODPY_VERSION}/site-packages/tzlocal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

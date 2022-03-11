@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:44:41 sthen Exp $
-
 COMMENT=	documentation generation tool for Lua
 
 DISTNAME=	luadoc-3.0.1

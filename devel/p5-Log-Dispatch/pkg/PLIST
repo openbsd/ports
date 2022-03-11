@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/09/04 06:38:41 benoit Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Dispatch/
 ${P5SITE}/Log/Dispatch.pm

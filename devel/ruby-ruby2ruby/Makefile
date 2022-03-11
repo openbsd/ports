@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:00 sthen Exp $
-
 COMMENT =	generating pure Ruby code easily from ParseTree\'s Sexps
 
 DISTNAME =	ruby2ruby-1.3.1

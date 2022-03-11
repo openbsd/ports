@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/20 14:14:24 bluhm Exp $
-
 COMMENT =	fail if tests warn
 
 DISTNAME =	Test2-Plugin-NoWarnings-0.09

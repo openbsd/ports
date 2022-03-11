@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.no-native,v 1.3 2019/03/04 12:51:12 chrisz Exp $
 bin/ptests.byte
 lib/frama-c/ptests_config.cmo

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_expect_py,v 1.2 2021/11/14 13:35:42 sthen Exp $
-
 #1, hardcoded /bin/bash, needs nl
 #2, disable tests new in 4.8 which hangs
 

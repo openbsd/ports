@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:29:18 robert Exp $
 ${P5SITE}/Sub/
 ${P5SITE}/Sub/HandlesVia/
 ${P5SITE}/Sub/HandlesVia.pm

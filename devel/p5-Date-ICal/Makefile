@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:47 sthen Exp $
-
 COMMENT=	Perl Extensions for ICal objects
 
 MODULES=	cpan

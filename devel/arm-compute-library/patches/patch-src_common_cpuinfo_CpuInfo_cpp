@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_cpuinfo_CpuInfo_cpp,v 1.1.1.1 2021/10/19 03:54:58 kevlo Exp $
-
 Index: src/common/cpuinfo/CpuInfo.cpp
 --- src/common/cpuinfo/CpuInfo.cpp.orig
 +++ src/common/cpuinfo/CpuInfo.cpp

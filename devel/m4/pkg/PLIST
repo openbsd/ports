@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/04/26 19:45:53 sthen Exp $
 @bin bin/gm4
 @info info/m4.info
 @comment lib/charset.alias

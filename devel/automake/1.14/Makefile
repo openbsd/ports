@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:13 sthen Exp $
-
 VERSION=	1.14
 DISTNAME=	automake-${VERSION}.1
 REVISION =	1

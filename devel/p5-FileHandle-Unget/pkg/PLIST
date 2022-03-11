@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/18 20:14:18 simon Exp $
 ${P5SITE}/FileHandle/
 ${P5SITE}/FileHandle/Unget.pm
 @man man/man3p/FileHandle::Unget.3p

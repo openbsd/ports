@@ -1,4 +1,3 @@
-$OpenBSD: patch-lgi_core_c,v 1.6 2017/02/28 11:32:16 dcoppa Exp $
 --- lgi/core.c.orig	Tue Feb 28 11:57:18 2017
 +++ lgi/core.c	Tue Feb 28 11:58:03 2017
 @@ -673,7 +673,7 @@ set_resident (lua_State *L)

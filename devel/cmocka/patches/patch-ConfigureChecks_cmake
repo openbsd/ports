@@ -1,5 +1,3 @@
-$OpenBSD: patch-ConfigureChecks_cmake,v 1.3 2017/05/10 12:19:27 espie Exp $
-
 Index: ConfigureChecks.cmake
 --- ConfigureChecks.cmake.orig
 +++ ConfigureChecks.cmake

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 04:10:59 daniel Exp $
-
 COMMENT =	OCaml preprocessor
 CATEGORIES =	devel
 

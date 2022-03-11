@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:00:25 sthen Exp $
-
 COMMENT=		powerful and lightweight Python tree data structure
 
 MODPY_EGG_VERSION=	2.4.3

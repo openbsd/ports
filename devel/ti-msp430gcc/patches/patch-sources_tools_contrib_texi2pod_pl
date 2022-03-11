@@ -1,5 +1,3 @@
-$OpenBSD: patch-sources_tools_contrib_texi2pod_pl,v 1.1 2019/04/22 11:52:42 naddy Exp $
-
 Index: sources/tools/contrib/texi2pod.pl
 --- sources/tools/contrib/texi2pod.pl.orig
 +++ sources/tools/contrib/texi2pod.pl

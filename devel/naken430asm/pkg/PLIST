@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/05/28 12:05:09 jasper Exp $
 @bin bin/naken430asm
 @bin bin/naken430util
 share/examples/naken430asm/

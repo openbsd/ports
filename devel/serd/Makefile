@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:12 sthen Exp $
-
 COMMENT=	lightweight C library for RDF syntax
 
 DISTNAME=	serd-0.30.10

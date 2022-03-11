@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/29 04:51:17 rsadowski Exp $
-
 COMMENT =	Qt git repository viewer
 
 GH_ACCOUNT =	tibirna

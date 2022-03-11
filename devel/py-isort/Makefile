@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:00:50 sthen Exp $
-
 COMMENT =		Python utility / library to sort Python imports
 
 MODPY_EGG_VERSION =	4.2.15

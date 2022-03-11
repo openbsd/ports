@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_autotest_Makefile_in,v 1.1.1.1 2010/03/22 20:54:07 espie Exp $
 --- lib/autotest/Makefile.in.orig	Sat Nov 21 14:59:18 2009
 +++ lib/autotest/Makefile.in	Mon Mar  8 12:27:30 2010
 @@ -198,7 +198,7 @@ top_builddir = @top_builddir@

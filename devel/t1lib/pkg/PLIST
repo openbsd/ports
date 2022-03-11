@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/03/16 18:07:45 naddy Exp $
 @bin bin/type1afm
 include/t1lib.h
 lib/libt1.a

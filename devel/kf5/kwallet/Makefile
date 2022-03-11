@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/19 09:45:45 rsadowski Exp $
-
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
 PKGNAME =		kf5-kwallet-${VERSION}

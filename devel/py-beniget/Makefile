@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/18 13:16:16 daniel Exp $
-
 COMMENT =	extract semantic information about static Python code
 
 MODPY_EGG_VERSION =	0.4.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/15 15:01:36 gonzalo Exp $
 @bin bin/dasm
 @bin bin/ftohex
 share/doc/dasm/

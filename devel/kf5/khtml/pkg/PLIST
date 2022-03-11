@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2022/02/19 09:45:43 rsadowski Exp $
 include/KF5/KHtml/
 include/KF5/KHtml/KHTMLPart
 include/KF5/KHtml/KHTMLSettings

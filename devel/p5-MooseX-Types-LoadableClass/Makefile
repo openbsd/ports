@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/12/06 20:15:40 afresh1 Exp $
-
 COMMENT =	ClassName type constraint with coercion to load the class
 
 MODULES =	cpan

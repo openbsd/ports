@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/10/29 17:31:41 bcallah Exp $
 @bin bin/astyle
 share/doc/astyle/
 share/doc/astyle/html/

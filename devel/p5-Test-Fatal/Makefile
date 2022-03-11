@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/15 09:16:01 benoit Exp $
-
 COMMENT =	incredibly simple helpers for testing code with exceptions
 
 MODULES =	cpan

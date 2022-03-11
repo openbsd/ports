@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:00:27 sthen Exp $
-
 COMMENT =		command line interface tools for Python
 
 MODPY_EGG_VERSION =	0.5.1

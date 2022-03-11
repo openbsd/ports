@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/19 02:18:11 afresh1 Exp $
-
 COMMENT =	check for uncleaned imports
 
 DISTNAME =	Test-CleanNamespaces-0.24

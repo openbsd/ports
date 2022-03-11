@@ -1,4 +1,3 @@
-$OpenBSD: patch-Build_PL,v 1.3 2020/02/04 22:50:04 gkoehler Exp $
 Index: Build.PL
 --- Build.PL.orig
 +++ Build.PL

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:28:56 robert Exp $
 ${P5SITE}/MooX/
 ${P5SITE}/MooX/TypeTiny/
 ${P5SITE}/MooX/TypeTiny.pm

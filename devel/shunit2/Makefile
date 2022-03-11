@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT =		unit test framework for Bourne based shell scripts
 
 DISTNAME =		shunit2-2.1.6

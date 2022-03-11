@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2015/03/16 18:07:44 naddy Exp $
 bin/mm-config
 include/mm.h
 lib/libmm.a

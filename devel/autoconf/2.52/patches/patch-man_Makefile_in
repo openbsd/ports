@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_Makefile_in,v 1.2 2008/03/15 07:24:38 espie Exp $
 --- man/Makefile.in.orig	Wed Jul 18 16:41:40 2001
 +++ man/Makefile.in	Sat Mar  8 14:09:51 2008
 @@ -67,7 +67,9 @@ PERL = @PERL@

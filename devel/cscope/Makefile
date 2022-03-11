@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:44:06 sthen Exp $
-
 COMMENT =		code browsing program
 
 DISTNAME =		cscope-15.9

@@ -1,5 +1,3 @@
-$OpenBSD: patch-jupyter_client_connect_py,v 1.2 2020/02/16 05:21:04 bket Exp $
-
 Index: jupyter_client/connect.py
 --- jupyter_client/connect.py.orig
 +++ jupyter_client/connect.py

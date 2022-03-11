@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:01:34 afresh1 Exp $
-
 COMMENT =	read-eval-print-loop on die and/or warn
 
 DISTNAME =	Carp-REPL-0.18

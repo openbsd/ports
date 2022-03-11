@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/13 07:46:01 rsadowski Exp $
-
 COMMENT=		Python IDE based on IntelliJ IDEA
 
 V=			2021.3.2

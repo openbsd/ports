@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:40 sthen Exp $
-
 COMMENT=	object-oriented wrapper around vec()
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/03 12:38:00 bluhm Exp $
 ${P5SITE}/Test/
 ${P5SITE}/Test/RequiresInternet.pm
 @man man/man3p/Test::RequiresInternet.3p

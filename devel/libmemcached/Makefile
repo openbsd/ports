@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:14 sthen Exp $
-
 COMMENT=		C C++ API for memcached
 
 VERSION=		1.0.18

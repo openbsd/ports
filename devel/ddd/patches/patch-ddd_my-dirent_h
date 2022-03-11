@@ -1,4 +1,3 @@
-$OpenBSD: patch-ddd_my-dirent_h,v 1.1 2017/05/04 16:44:05 espie Exp $
 zap clang warnings
 
 Index: ddd/my-dirent.h

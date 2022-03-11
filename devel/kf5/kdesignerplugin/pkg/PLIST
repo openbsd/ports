@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/09/07 14:48:46 rsadowski Exp $
 @bin bin/kgendesignerplugin
 lib/cmake/KF5DesignerPlugin/
 lib/cmake/KF5DesignerPlugin/KF5DesignerPluginConfig.cmake

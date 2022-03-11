@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:44:38 sthen Exp $
-
 COMMENT =	event expression library
 DISTNAME =	libee-0.4.1
 SHARED_LIBS +=  ee                   0.1      # 0.0

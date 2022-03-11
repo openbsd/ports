@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/09/07 14:48:47 rsadowski Exp $
-
 COMMENT =	create documentation from DocBook
 DISTNAME =	kdoctools-${VERSION}
 

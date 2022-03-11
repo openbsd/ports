@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/24 15:10:23 jca Exp $
-
 BROKEN-riscv64=	error: Unsupported Architecture.
 
 COMMENT=	arch-independent interface for dynamic calls of C functions

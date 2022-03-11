@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2021/12/25 17:08:30 daniel Exp $
 lib/ocaml/pcre/pcre.cmxs

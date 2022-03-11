@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 16:05:24 espie Exp $
 ${P5SITE}/Hash/
 ${P5SITE}/Hash/Merge.pm
 @man man/man3p/Hash::Merge.3p

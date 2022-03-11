@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/03 19:02:35 sebastia Exp $
-
 COMMENT =		command line interfaces with subcommands
 
 DISTNAME =		cri-2.15.11

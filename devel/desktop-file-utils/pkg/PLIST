@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/06/19 08:18:08 ajacoutot Exp $
 @define-tag update-desktop-database at-end %D/bin/update-desktop-database
 @tag update-desktop-database
 @unexec-delete rm -f %D/share/applications/mimeinfo.cache

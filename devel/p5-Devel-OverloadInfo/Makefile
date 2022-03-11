@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/08 07:15:02 benoit Exp $
-
 COMMENT =	introspect overloaded operators
 
 DISTNAME =	Devel-OverloadInfo-0.007
