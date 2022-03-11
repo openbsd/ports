@@ -1,4 +1,3 @@
-$OpenBSD: patch-jlint_cc,v 1.6 2018/04/15 10:39:32 jasper Exp $
 Index: jlint.cc
 --- jlint.cc.orig
 +++ jlint.cc

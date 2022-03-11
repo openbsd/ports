@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_com_sun_jna_LibraryLoadTest_java,v 1.2 2017/02/25 15:05:21 jasper Exp $
 --- test/com/sun/jna/LibraryLoadTest.java.orig	Sat Jan 14 17:15:07 2017
 +++ test/com/sun/jna/LibraryLoadTest.java	Sat Feb 25 14:58:20 2017
 @@ -171,7 +171,8 @@ public class LibraryLoadTest extends TestCase implemen

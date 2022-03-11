@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/19 01:50:30 kurt Exp $
-
 COMMENT =	build automation tool
 
 DISTNAME =	gradle-6.7

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/07/15 10:40:48 kurt Exp $
-
 COMMENT=	Java Native Access (JNA)
 
 GH_PROJECT=	jna

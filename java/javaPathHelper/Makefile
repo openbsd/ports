@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/22 16:51:45 kurt Exp $
-
 COMMENT=		helper script for launching java applications
 
 GH_ACCOUNT=		bsdkurt

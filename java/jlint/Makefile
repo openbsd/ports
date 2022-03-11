@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:22 sthen Exp $
-
 COMMENT=	Java program analyzer and checker
 
 DISTNAME=	jlint-3.1.2

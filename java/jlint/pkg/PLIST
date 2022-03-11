@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/17 19:06:58 jasper Exp $
 @bin bin/antic
 @bin bin/jlint
 bin/jlint.sh

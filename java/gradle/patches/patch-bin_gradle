@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_gradle,v 1.2 2020/08/19 02:01:32 lteo Exp $
-
 Index: bin/gradle
 --- bin/gradle.orig
 +++ bin/gradle

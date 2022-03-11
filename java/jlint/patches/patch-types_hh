@@ -1,4 +1,3 @@
-$OpenBSD: patch-types_hh,v 1.5 2018/04/15 10:39:32 jasper Exp $
 Index: types.hh
 --- types.hh.orig
 +++ types.hh

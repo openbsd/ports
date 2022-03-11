@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $OpenBSD: test.sh,v 1.1 2015/10/24 14:22:14 jasper Exp $
 
 # Simple JNA tests to ensure Clojure can still call native library functions
 

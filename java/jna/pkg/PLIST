@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2017/04/21 13:27:46 kurt Exp $
 share/java/
 share/java/classes/
 share/java/classes/jna-min.jar
