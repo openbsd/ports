@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/12/04 11:03:38 ajacoutot Exp $
 @bin libexec/ibus-engine-kkc
 @bin libexec/ibus-setup-kkc
 share/applications/ibus-setup-kkc.desktop

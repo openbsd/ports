@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/21 16:34:55 kevlo Exp $
 lib/fcitx/fcitx-m17n.so
 share/fcitx/addon/fcitx-m17n.conf
 share/fcitx/configdesc/fcitx-m17n.desc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/08/17 22:17:14 cwen Exp $
-
 COMMENT=	scim input method module for pinyin
 
 DISTNAME=	scim-pinyin-0.5.91

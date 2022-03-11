@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ltdl_cpp,v 1.1 2017/04/28 10:42:26 espie Exp $
 --- src/ltdl.cpp.orig	Fri Apr 28 12:15:52 2017
 +++ src/ltdl.cpp	Fri Apr 28 12:16:43 2017
 @@ -3361,7 +3361,7 @@ lt_dlopenext (

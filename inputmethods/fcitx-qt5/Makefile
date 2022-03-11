@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/27 01:00:45 kevlo Exp $
-
 COMMENT =	fcitx plugin for Qt5
 
 SHARED_LIBS +=	FcitxQt5DBusAddons	0.0 # 1.0

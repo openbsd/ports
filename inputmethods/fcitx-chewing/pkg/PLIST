@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/28 02:59:17 kevlo Exp $
 lib/fcitx/fcitx-chewing.so
 share/fcitx/addon/fcitx-chewing.conf
 share/fcitx/configdesc/fcitx-chewing.desc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/04 15:36:26 kevlo Exp $
-
 COMMENT =	configure tool for fcitx
 
 GH_ACCOUNT =	fcitx

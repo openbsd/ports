@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_dconf_make-dconf-override-db_sh,v 1.1 2020/04/20 10:15:16 ajacoutot Exp $
-
 Index: data/dconf/make-dconf-override-db.sh
 --- data/dconf/make-dconf-override-db.sh.orig
 +++ data/dconf/make-dconf-override-db.sh

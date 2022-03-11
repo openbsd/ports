@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/01 04:29:35 kevlo Exp $
 lib/fcitx/fcitx-libpinyin.so
 share/fcitx/addon/fcitx-libpinyin.conf
 share/fcitx/configdesc/fcitx-libpinyin.desc

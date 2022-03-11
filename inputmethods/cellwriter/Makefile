@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/25 15:05:06 naddy Exp $
-
 COMMENT =		grid-entry natural handwriting input panel
 
 GH_ACCOUNT =		risujin

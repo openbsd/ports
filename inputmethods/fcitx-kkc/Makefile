@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2021/12/03 20:51:30 uaa Exp $
-
 COMMENT =	libkkc wrapper for fcitx
 
 GH_ACCOUNT =	fcitx

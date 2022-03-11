@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:13 sthen Exp $
-
 COMMENT =	chewing wrapper for fcitx
 
 GH_ACCOUNT =	fcitx

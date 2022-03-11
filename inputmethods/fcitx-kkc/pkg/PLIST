@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/12/03 20:51:30 uaa Exp $
 include/fcitx/module/kkc/
 include/fcitx/module/kkc/fcitx-kkc.h
 @so lib/fcitx/fcitx-kkc.so

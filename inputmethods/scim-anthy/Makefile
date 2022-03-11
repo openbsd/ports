@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/03/12 22:47:30 naddy Exp $
-
 COMMENT =	scim input method module for anthy
 
 DISTNAME =	scim-anthy-1.2.7

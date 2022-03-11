@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/11/18 10:11:29 ajacoutot Exp $
 include/ibus-anthy-1.0/
 include/ibus-anthy-1.0/anthygcontext.h
 lib/girepository-1.0/Anthy-9000.typelib

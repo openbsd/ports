@@ -1,4 +1,3 @@
-$OpenBSD: patch-configs_Makefile_in,v 1.1 2009/10/31 12:50:02 kevlo Exp $
 --- configs/Makefile.in.orig	Tue Oct 27 23:12:19 2009
 +++ configs/Makefile.in	Tue Oct 27 23:12:28 2009
 @@ -290,7 +290,7 @@ top_builddir = @top_builddir@

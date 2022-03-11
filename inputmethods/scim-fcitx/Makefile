@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/08/17 19:07:20 cwen Exp $
-
 COMMENT=	scim input method module for fcitx
 
 V=		3.1.1

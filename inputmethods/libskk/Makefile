@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/07 08:24:25 ajacoutot Exp $
-
 COMMENT =		library to deal with Japanese kana-to-kanji conversion
 
 V =			1.0.5

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_scim_hangul_imengine_cpp,v 1.2 2019/08/17 19:08:38 cwen Exp $
-
 Add missing headers fort ports-gcc
 
 Index: src/scim_hangul_imengine.cpp

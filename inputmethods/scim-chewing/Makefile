@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:13 sthen Exp $
-
 COMMENT=	scim input method module for chewing
 
 GH_ACCOUNT=	chewing

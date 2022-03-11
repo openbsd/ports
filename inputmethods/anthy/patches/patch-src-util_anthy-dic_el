@@ -1,5 +1,3 @@
-$OpenBSD: patch-src-util_anthy-dic_el,v 1.1 2019/04/02 10:13:19 yasuoka Exp $
-
 Index: src-util/anthy-dic.el
 --- src-util/anthy-dic.el.orig
 +++ src-util/anthy-dic.el

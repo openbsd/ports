@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.76 2021/12/09 08:27:43 ajacoutot Exp $
-
 # when gtk+4 support is added, split into multi packages (gtk+{2,3,4})
 
 COMMENT-main =		intelligent input bus framework

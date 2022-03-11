@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:14 sthen Exp $
-
 COMMENT=	japanese handwriting
 
 DISTNAME=	uim-tomoe-gtk-0.6.0

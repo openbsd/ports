@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/08/18 19:23:41 cwen Exp $
-
 COMMENT=	input method data tables for scim
 
 DISTNAME=	scim-tables-0.5.8

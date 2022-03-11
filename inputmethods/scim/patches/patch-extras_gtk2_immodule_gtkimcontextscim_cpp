@@ -1,4 +1,3 @@
-$OpenBSD: patch-extras_gtk2_immodule_gtkimcontextscim_cpp,v 1.1 2017/04/28 10:42:26 espie Exp $
 --- extras/gtk2_immodule/gtkimcontextscim.cpp.orig	Fri Apr 28 12:35:21 2017
 +++ extras/gtk2_immodule/gtkimcontextscim.cpp	Fri Apr 28 12:39:56 2017
 @@ -1710,7 +1710,7 @@ initialize (void)

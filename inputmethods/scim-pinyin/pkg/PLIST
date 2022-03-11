@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/29 02:25:18 kevlo Exp $
 @comment lib/scim-1.0/1.4.0/IMEngine/pinyin.la
 lib/scim-1.0/1.4.0/IMEngine/pinyin.so
 @comment lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.la

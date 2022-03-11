@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ime_cpp,v 1.1 2019/08/17 19:07:20 cwen Exp $
-
 ports-gcc: add missing header
 
 Index: src/ime.cpp

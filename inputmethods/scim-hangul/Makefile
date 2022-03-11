@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/08/17 19:08:38 cwen Exp $
-
 COMMENT=	scim input method module for hangul
 
 DISTNAME=	scim-hangul-0.3.2

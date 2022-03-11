@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/28 13:38:23 jca Exp $
-
 COMMENT =	anthy wrapper for fcitx
 
 GH_ACCOUNT =	fcitx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/21 16:34:55 kevlo Exp $
-
 COMMENT =	m17n wrapper for fcitx
 
 GH_ACCOUNT =	fcitx

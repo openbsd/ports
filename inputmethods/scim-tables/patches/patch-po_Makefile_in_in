@@ -1,4 +1,3 @@
-$OpenBSD: patch-po_Makefile_in_in,v 1.1.1.1 2008/10/29 02:27:38 kevlo Exp $
 --- po/Makefile.in.in.orig	Tue Oct 28 10:48:46 2008
 +++ po/Makefile.in.in	Tue Oct 28 10:48:55 2008
 @@ -25,6 +25,7 @@ VPATH = @srcdir@

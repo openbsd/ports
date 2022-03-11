@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/04 11:03:38 ajacoutot Exp $
-
 COMMENT =	japanese libkkc engine for ibus
 
 VERSION =	20170607

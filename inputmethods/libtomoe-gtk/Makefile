@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:13 sthen Exp $
-
 COMMENT=	japanese handwriting input widget
 
 DISTNAME=	tomoe-gtk-0.6.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_recognize_c,v 1.1 2021/02/25 15:05:06 naddy Exp $
-
 Index: src/recognize.c
 --- src/recognize.c.orig
 +++ src/recognize.c

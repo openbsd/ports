@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/02 06:58:39 kevlo Exp $
 @comment lib/uim/plugin/libuim-chewing.la
 lib/uim/plugin/libuim-chewing.so
 share/uim/chewing-custom.scm

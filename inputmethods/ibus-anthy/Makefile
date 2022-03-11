@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/18 10:11:29 ajacoutot Exp $
-
 COMMENT =		japanese input engine for ibus
 
 GH_ACCOUNT =		ibus

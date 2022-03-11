@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-gtk4,v 1.1 2021/03/13 13:36:49 ajacoutot Exp $
 lib/gtk-4.0/4.0.0/immodules/
 @so lib/gtk-4.0/4.0.0/immodules/libim-ibus.so

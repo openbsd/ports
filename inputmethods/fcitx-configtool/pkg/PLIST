@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/04 15:36:26 kevlo Exp $
 @bin bin/fcitx-config-gtk3
 share/locale/ca/LC_MESSAGES/fcitx-configtool.mo
 share/locale/da/LC_MESSAGES/fcitx-configtool.mo

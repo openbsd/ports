@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/25 12:59:00 solene Exp $
-
 COMMENT =		completion input-method to speed up typing
 VERSION =		2.15.7
 

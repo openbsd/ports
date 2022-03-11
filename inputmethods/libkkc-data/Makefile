@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2022/01/02 20:45:24 uaa Exp $
-
 COMMENT =	language model data for libkkc
 
 VERSION =	0.2.7

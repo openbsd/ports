@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/06/09 19:50:08 sthen Exp $
-
 COMMENT-main =	flexible input method framework
 COMMENT-gtk3 =	fcitx for GTK+3
 

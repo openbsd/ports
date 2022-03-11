@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/10/04 21:18:35 sthen Exp $
-
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/29 09:58:58 inoguchi Exp $
-
 COMMENT =	Japanese Kana Kanji conversion library
 
 VERSION =	20210214

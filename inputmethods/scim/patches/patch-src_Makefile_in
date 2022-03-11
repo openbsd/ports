@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2010/06/23 15:48:28 steven Exp $
 --- src/Makefile.in.orig	Wed Jun 23 17:02:27 2010
 +++ src/Makefile.in	Wed Jun 23 17:02:47 2010
 @@ -479,7 +479,7 @@ libscim@SCIM_EPOCH@_la_LDFLAGS = -version-info $(SCIM_

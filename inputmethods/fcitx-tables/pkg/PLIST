@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/28 03:00:24 kevlo Exp $
 share/fcitx/imicon/array30-big.png
 share/fcitx/imicon/array30.png
 share/fcitx/imicon/boshiamy.png

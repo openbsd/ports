@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/01/09 16:47:55 ajacoutot Exp $
 @bin bin/uim-tomoe-gtk
