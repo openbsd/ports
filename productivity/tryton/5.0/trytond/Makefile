@@ -2,6 +2,7 @@ COMMENT =		3-tiers general purpose business application framework
 
 MODPY_EGG_VERSION =	5.0.46
 DISTNAME =		trytond-${MODPY_EGG_VERSION}
+REVISION =		0
 
 TRYTON_PY =		Yes
 
@@ -18,7 +19,8 @@ RUN_DEPENDS +=		databases/py-psycopg2${MODPY_FLAVOR} \
 			devel/py-wrapt${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR} \
 			converters/py-html2text${MODPY_FLAVOR} \
-			security/py-bcrypt${MODPY_FLAVOR}
+			security/py-bcrypt${MODPY_FLAVOR} \
+			textproc/py-defusedxml${MODPY_FLAVOR}
 
 #RUN_DEPENDS +=		graphics/pydot	# optional, port is py2 only
 #RUN_DEPENDS +=		levenshtein	# optional, not ported
