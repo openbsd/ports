@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test-runner_c,v 1.1.1.1 2021/11/06 18:58:28 rsadowski Exp $
-
 Index: tests/test-runner.c
 --- tests/test-runner.c.orig
 +++ tests/test-runner.c

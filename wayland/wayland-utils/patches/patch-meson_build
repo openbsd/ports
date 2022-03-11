@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.1.1.1 2021/11/06 19:00:41 rsadowski Exp $
-
 Index: meson.build
 --- meson.build.orig
 +++ meson.build

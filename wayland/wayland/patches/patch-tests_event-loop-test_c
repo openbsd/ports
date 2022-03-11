@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_event-loop-test_c,v 1.1.1.1 2021/11/06 18:58:28 rsadowski Exp $
-
 Index: tests/event-loop-test.c
 --- tests/event-loop-test.c.orig
 +++ tests/event-loop-test.c

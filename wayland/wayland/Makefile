@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/07 08:01:53 semarie Exp $
-
 COMMENT =	Display server protocol
 
 DISTNAME =	wayland-1.19.0

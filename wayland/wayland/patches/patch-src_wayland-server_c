@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wayland-server_c,v 1.2 2021/11/07 08:01:53 semarie Exp $
-
 Index: src/wayland-server.c
 --- src/wayland-server.c.orig
 +++ src/wayland-server.c

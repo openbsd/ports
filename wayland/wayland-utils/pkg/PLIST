@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/06 19:00:41 rsadowski Exp $
 @bin bin/wayland-info
 @man man/man1/wayland-info.1

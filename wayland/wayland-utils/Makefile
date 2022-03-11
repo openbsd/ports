@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/06 19:00:41 rsadowski Exp $
-
 COMMENT =	Wayland utils
 
 DISTNAME =	wayland-utils-1.0.0

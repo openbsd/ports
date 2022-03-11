@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/06 18:59:49 rsadowski Exp $
-
 COMMENT =	Wayland protocols
 
 DISTNAME =	wayland-protocols-1.23

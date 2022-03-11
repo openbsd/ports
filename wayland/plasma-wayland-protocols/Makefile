@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/10 07:30:37 rsadowski Exp $
-
 COMMENT =	KDE Wayland Plasma protocols
 
 VERSION =	1.5.0
