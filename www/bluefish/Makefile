@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2021/11/02 00:02:51 sthen Exp $
-
 COMMENT=		HTML editor for experienced web designers
 
 DISTNAME=		bluefish-2.2.12

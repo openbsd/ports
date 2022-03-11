@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/23 21:15:04 bluhm Exp $
-
 COMMENT =	HTTP Style Messages
 
 DISTNAME =	HTTP-Message-6.31

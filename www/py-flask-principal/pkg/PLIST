@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/23 06:17:55 daniel Exp $
 @conflict py-flask-principal-*
 @pkgpath www/py-flask-principal
 lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

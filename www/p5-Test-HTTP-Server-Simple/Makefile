@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:05 sthen Exp $
-
 COMMENT= 	test framework for HTTP::Server::Simple
 
 MODULES=	cpan

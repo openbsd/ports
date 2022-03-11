@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/17 10:29:09 sthen Exp $
-
 COMMENT=	Perl extension for minifying JavaScript code
 
 MODULES=	cpan

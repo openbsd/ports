@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/03/05 12:51:53 sthen Exp $
-
 COMMENT =		library to parse Uniform Resource Identifiers
 
 PKG_ARCH =		*

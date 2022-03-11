@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_base_x_x11_shm_image_pool_cc,v 1.4 2021/10/29 14:49:42 robert Exp $
-
 Index: ui/base/x/x11_shm_image_pool.cc
 --- ui/base/x/x11_shm_image_pool.cc.orig
 +++ ui/base/x/x11_shm_image_pool.cc

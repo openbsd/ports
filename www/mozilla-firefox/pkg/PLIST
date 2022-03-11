@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.93 2022/02/08 14:02:28 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*

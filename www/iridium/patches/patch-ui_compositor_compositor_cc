@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_compositor_compositor_cc,v 1.7 2021/12/28 15:49:56 robert Exp $
-
 Index: ui/compositor/compositor.cc
 --- ui/compositor/compositor.cc.orig
 +++ ui/compositor/compositor.cc

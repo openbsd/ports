@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/03/21 14:16:21 abieber Exp $
 @bin bin/luakit
 lib/luakit/
 @so lib/luakit/luakit.so

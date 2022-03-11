@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/18 19:43:26 sthen Exp $
-
 COMMENT =	websocket library
 
 V =		1.1.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-third_party_libphonenumber_dist_cpp_src_phonenumbers_base_thread_checker_h,v 1.12 2021/10/29 14:49:42 robert Exp $
 --- third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h.orig.port	Thu May 26 13:06:45 2016
 +++ third_party/libphonenumber/dist/cpp/src/phonenumbers/base/thread_checker.h	Thu May 26 13:07:03 2016
 @@ -23,7 +23,7 @@

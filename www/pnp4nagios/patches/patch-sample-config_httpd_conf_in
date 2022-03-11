@@ -1,5 +1,3 @@
-$OpenBSD: patch-sample-config_httpd_conf_in,v 1.2 2016/05/17 07:13:42 kirby Exp $
-
 Use Apache 2.4 syntax
 
 --- sample-config/httpd.conf.in.orig	Sat Jan  3 16:09:06 2015

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT=	enhanced HTTPS support for httplib and urllib2
 
 MODPY_EGG_VERSION=	0.5.1

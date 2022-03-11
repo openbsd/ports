@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_media_webrtc_webrtc_event_log_uploader_cc,v 1.10 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/media/webrtc/webrtc_event_log_uploader.cc
 --- chrome/browser/media/webrtc/webrtc_event_log_uploader.cc.orig
 +++ chrome/browser/media/webrtc/webrtc_event_log_uploader.cc

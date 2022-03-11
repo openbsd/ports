@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2021/12/06 20:37:20 sthen Exp $
-
 VERSION?=	1.26.1
 DISTNAME=	unit-${VERSION}
 

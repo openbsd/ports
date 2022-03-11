@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/20 14:10:10 kn Exp $
-
 # 20220112 - build often fails due to out of memory
 # memory allocation of 402653184 bytes failed
 # error: could not compile `notify_push`

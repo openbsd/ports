@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_system_sys_info_posix_cc,v 1.7 2021/10/29 14:49:39 robert Exp $
-
 Index: base/system/sys_info_posix.cc
 --- base/system/sys_info_posix.cc.orig
 +++ base/system/sys_info_posix.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:06 sthen Exp $
-
 COMMENT =	command line interface to popular WWW search engines
 
 DISTNAME =	surfraw-2.3.0

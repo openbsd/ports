@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/03/03 18:07:38 landry Exp $
-
 COMMENT =	Andrews web libraries for PHP
 
 DISTNAME =	awl_0.62.orig

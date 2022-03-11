@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/03/04 21:49:23 sthen Exp $
-
 COMMENT =		freezes a Flask application into a set of static files
 
 MODPY_EGG_VERSION =	0.15

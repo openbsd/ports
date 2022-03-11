@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:06 sthen Exp $
-
 COMMENT= 	creating and updating Bugzilla bugs
 
 MODULES=	cpan

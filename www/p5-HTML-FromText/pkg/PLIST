@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:51 espie Exp $
 bin/text2html
 @comment ${P5SITE}/HTML/
 ${P5SITE}/HTML/FromText.pm

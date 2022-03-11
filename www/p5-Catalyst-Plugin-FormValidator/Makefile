@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:57 sthen Exp $
-
 COMMENT=	plugin to Data::FormValidator for catalyst (deprecated)
 
 MODULES=	cpan

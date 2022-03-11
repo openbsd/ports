@@ -1,5 +1,3 @@
-$OpenBSD: patch-sope-xml_SaxObjC_GNUmakefile_preamble,v 1.3 2012/12/16 16:35:32 sebastia Exp $
-
 decouple sope version from library interface version.
 
 --- sope-xml/SaxObjC/GNUmakefile.preamble.orig	Wed Oct 24 21:00:15 2012

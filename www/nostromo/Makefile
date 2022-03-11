@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/03/06 22:03:09 mglocker Exp $
-
 COMMENT=		simple, fast and secure HTTP server
 
 DISTNAME=		nostromo-1.9.9

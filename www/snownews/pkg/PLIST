@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/07/06 19:33:21 cwen Exp $
 @bin bin/snownews
 man/de/
 man/de/man1/

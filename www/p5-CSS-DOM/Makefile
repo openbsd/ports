@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT =	check the validity of links in an HTML or XHTML document
 
 MODULES =	cpan

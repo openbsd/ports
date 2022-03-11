@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/28 12:57:38 abieber Exp $
 @bin bin/geckodriver

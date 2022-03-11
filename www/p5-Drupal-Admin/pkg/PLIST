@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/30 13:26:07 stephan Exp $
 ${P5SITE}/Drupal/
 ${P5SITE}/Drupal/Admin/
 ${P5SITE}/Drupal/Admin.pm

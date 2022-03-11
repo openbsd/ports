@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.251 2021/12/16 20:48:39 mestre Exp $
-
 COMMENT =	CLI program to download videos from YouTube and other sites
 
 VERSION =	2021.12.17

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/10/09 03:55:02 afresh1 Exp $
-
 COMMENT=	session framework for catalyst
 
 MODULES=	cpan

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/15 06:53:46 landry Exp $
 lib/seamonkey/distribution/extensions/langpack-${L}@seamonkey.mozilla.org.xpi

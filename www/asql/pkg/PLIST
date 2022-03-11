@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/24 09:52:08 pea Exp $
 bin/asql
 @man man/man1/asql.1

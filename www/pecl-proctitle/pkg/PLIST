@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/25 12:33:20 sthen Exp $
 @conflict pecl-proctitle-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-proctitle,php56

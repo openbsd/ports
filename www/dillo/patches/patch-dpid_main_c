@@ -1,4 +1,3 @@
-$OpenBSD: patch-dpid_main_c,v 1.5 2013/04/19 14:33:51 bcallah Exp $
 --- dpid/main.c.orig	Sun Jan 27 12:26:38 2013
 +++ dpid/main.c	Thu Apr 18 12:25:04 2013
 @@ -70,7 +70,7 @@ static int start_filter_plugin(struct dp dpi_attr)

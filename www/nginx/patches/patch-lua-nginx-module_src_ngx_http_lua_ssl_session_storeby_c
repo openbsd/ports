@@ -1,5 +1,3 @@
-$OpenBSD: patch-lua-nginx-module_src_ngx_http_lua_ssl_session_storeby_c,v 1.2 2021/09/10 15:19:00 tb Exp $
-
 Index: lua-nginx-module/src/ngx_http_lua_ssl_session_storeby.c
 --- lua-nginx-module/src/ngx_http_lua_ssl_session_storeby.c.orig
 +++ lua-nginx-module/src/ngx_http_lua_ssl_session_storeby.c

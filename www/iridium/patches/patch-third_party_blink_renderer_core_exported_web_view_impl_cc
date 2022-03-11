@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_renderer_core_exported_web_view_impl_cc,v 1.3 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/blink/renderer/core/exported/web_view_impl.cc
 --- third_party/blink/renderer/core/exported/web_view_impl.cc.orig
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc

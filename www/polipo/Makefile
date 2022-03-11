@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:00 sthen Exp $
-
 COMMENT=	HTTP caching proxy
 
 DISTNAME=	polipo-1.1.1

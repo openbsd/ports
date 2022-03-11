@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_check_pnp_rrds_pl_in,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
 --- scripts/check_pnp_rrds.pl.in.orig	Sat Feb  6 02:10:32 2016
 +++ scripts/check_pnp_rrds.pl.in	Sat Feb  6 02:11:22 2016
 @@ -40,7 +40,7 @@ my $opt_w    = 1;

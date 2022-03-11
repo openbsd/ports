@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_notifications_notification_platform_bridge_delegator_cc,v 1.3 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/notifications/notification_platform_bridge_delegator.cc
 --- chrome/browser/notifications/notification_platform_bridge_delegator.cc.orig
 +++ chrome/browser/notifications/notification_platform_bridge_delegator.cc

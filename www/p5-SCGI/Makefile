@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:05 sthen Exp $
-
 COMMENT=	module for implementing an SCGI interface
 
 MODULES=	cpan

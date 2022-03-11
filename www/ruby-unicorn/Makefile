@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/03/19 17:49:51 jeremy Exp $
-
 COMMENT =	ruby-rack HTTP server for Unix and fast clients
 
 DISTNAME =	unicorn-6.0.0

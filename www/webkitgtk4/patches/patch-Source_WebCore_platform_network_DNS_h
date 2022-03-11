@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_platform_network_DNS_h,v 1.2 2021/10/25 07:25:13 ajacoutot Exp $
-
 Index: Source/WebCore/platform/network/DNS.h
 --- Source/WebCore/platform/network/DNS.h.orig
 +++ Source/WebCore/platform/network/DNS.h

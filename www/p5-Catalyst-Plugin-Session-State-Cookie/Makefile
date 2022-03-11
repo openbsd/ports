@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/28 20:51:34 afresh1 Exp $
-
 COMMENT=	catalyst session IDs with cookies
 
 MODULES=	cpan

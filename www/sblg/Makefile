@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/07/27 10:52:29 sthen Exp $
-
 COMMENT =	simple off-line blog utility
 
 DISTNAME =	sblg-0.5.11

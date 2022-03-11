@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugin_icedteanp_IcedTeaNPPlugin_cc,v 1.4 2016/05/15 13:20:43 landry Exp $
 --- plugin/icedteanp/IcedTeaNPPlugin.cc.orig	Wed Feb  3 14:47:43 2016
 +++ plugin/icedteanp/IcedTeaNPPlugin.cc	Wed Mar  9 16:49:02 2016
 @@ -1455,7 +1455,7 @@ plugin_test_appletviewer ()

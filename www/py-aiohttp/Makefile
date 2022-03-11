@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/22 04:22:23 bket Exp $
-
 COMMENT =		http client/server for asyncio
 
 MODPY_EGG_VERSION =	3.7.4

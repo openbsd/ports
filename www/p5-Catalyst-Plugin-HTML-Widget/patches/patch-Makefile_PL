@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2006/11/05 20:43:50 espie Exp $
 --- Makefile.PL.orig	Sun Nov  5 21:28:41 2006
 +++ Makefile.PL	Sun Nov  5 21:28:47 2006
 @@ -9,8 +9,8 @@ license('perl');

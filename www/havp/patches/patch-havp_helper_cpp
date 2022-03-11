@@ -1,4 +1,3 @@
-$OpenBSD: patch-havp_helper_cpp,v 1.1 2012/05/17 09:10:44 ajacoutot Exp $
 --- havp/helper.cpp.orig	Wed May 16 19:42:02 2012
 +++ havp/helper.cpp	Wed May 16 19:42:43 2012
 @@ -325,6 +325,16 @@ bool ChangeUserAndGroup( string usr, string grp )

@@ -1,4 +1,3 @@
-# $OpenBSD: crates.inc,v 1.4 2022/01/17 14:58:06 landry Exp $
 MODCARGO_CRATES +=	addr2line	0.17.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	ahash	0.7.6	# MIT OR Apache-2.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/24 16:49:02 sthen Exp $
-
 COMMENT-main =	Nagios/Icinga addon which graphs performance data
 COMMENT-cgi =	pnp4nagios CGI scripts
 

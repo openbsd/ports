@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/28 15:09:22 sthen Exp $
-
 COMMENT =	URI templates
 
 MODPY_EGG_VERSION = 4.1.1

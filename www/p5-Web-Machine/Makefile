@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:37:32 robert Exp $
-
 COMMENT =	perl port of Webmachine
 
 DISTNAME =	Web-Machine-0.17

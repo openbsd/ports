@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/09/20 16:04:59 fcambus Exp $
-
 COMMENT=	validate, correct and pretty-print HTML
 
 V=		1.04

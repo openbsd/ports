@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_crash_core_app_chrome_crashpad_handler_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
-
 Index: components/crash/core/app/chrome_crashpad_handler.cc
 --- components/crash/core/app/chrome_crashpad_handler.cc.orig
 +++ components/crash/core/app/chrome_crashpad_handler.cc

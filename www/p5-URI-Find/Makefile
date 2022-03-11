@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/05 12:51:06 sthen Exp $
-
 COMMENT=		find URIs in arbitrary text
 
 MODULES=		cpan

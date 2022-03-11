@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:55 sthen Exp $
-
 COMMENT =	very small text templating language
 
 MODPY_EGG_VERSION = 0.5.2

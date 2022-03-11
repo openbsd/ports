@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:05 sthen Exp $
-
 COMMENT=		whitelist-based HTML sanitizer
 
 DISTNAME=		sanitize-2.0.6

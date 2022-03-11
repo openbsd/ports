@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gfx_BUILD_gn,v 1.11 2021/12/28 15:49:56 robert Exp $
-
 Index: ui/gfx/BUILD.gn
 --- ui/gfx/BUILD.gn.orig
 +++ ui/gfx/BUILD.gn

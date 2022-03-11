@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/16 09:29:55 simon Exp $
 ${P5SITE}/Apache/Session/Generate/UUID.pm
 @man man/man3p/Apache::Session::Generate::UUID.3p

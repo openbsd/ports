@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/03/23 15:07:46 sthen Exp $
-
 COMMENT=	apache HTTP server request library
 
 DISTNAME=	libapreq2-2.16

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.39 2020/11/19 20:28:03 pvk Exp $
 @newgroup _kibana:766
 @newuser _kibana:766:_kibana:daemon:Kibana user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/kibana/{data,plugins}/*

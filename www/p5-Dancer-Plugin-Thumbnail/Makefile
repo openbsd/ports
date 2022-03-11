@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/04 10:25:22 benoit Exp $
-
 COMMENT =	thumbnail plugin for p5-Dancer
 
 MODULES =	cpan

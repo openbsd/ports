@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/06 16:36:01 sthen Exp $
-
 COMMENT =	Apache-Tomcat AJP Connector for Apache2
 
 V =		1.2.48

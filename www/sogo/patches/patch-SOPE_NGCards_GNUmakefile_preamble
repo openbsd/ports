@@ -1,5 +1,3 @@
-$OpenBSD: patch-SOPE_NGCards_GNUmakefile_preamble,v 1.3 2012/12/16 16:36:26 sebastia Exp $
-
 decouple the sope version number from the library interface number.
 
 --- SOPE/NGCards/GNUmakefile.preamble.orig	Wed Oct 24 21:00:02 2012

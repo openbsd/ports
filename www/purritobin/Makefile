@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT =	minimalistic command line pastebin
 PKGNAME =	${DISTNAME:L}
 REVISION =	0

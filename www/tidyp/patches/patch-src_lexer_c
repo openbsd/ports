@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lexer_c,v 1.1 2015/06/25 08:28:58 sthen Exp $
-
 From htacg/tidy-html5; problem also applies to tidyp
 
 From c18f27a58792f7fbd0b30a0ff50d6b40a82f940d Mon Sep 17 00:00:00 2001

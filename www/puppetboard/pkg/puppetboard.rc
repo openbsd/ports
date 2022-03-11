@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: puppetboard.rc,v 1.8 2020/03/16 10:09:30 sebastia Exp $
 
 daemon="puppetboard_wsgi"
 daemon_flags="--workers 4"

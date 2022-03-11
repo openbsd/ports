@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/01 20:29:33 ajacoutot Exp $
-
 COMMENT=	persistence framework for Apache session data
 
 MODULES=	cpan

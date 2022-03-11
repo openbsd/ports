@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.3 2019/03/28 12:38:15 sthen Exp $
 lib/apache2/mod_authnz_ldap.so
 lib/apache2/mod_ldap.so
 share/doc/ap2-mod_auth_ldap/

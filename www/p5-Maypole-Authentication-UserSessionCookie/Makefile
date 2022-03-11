@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:46:04 sthen Exp $
-
 COMMENT=	track sessions and, optionally, users
 
 MODULES=	cpan

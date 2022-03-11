@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/08 16:47:24 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/pymacaroons/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pymacaroons-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

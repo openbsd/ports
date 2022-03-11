@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:49:51 espie Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/AuthDBI.pm
 ${P5SITE}/Apache/DBI.pm

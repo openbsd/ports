@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:28 sthen Exp $
-
 COMMENT=		parse LaTeX math expressions into gif images
 
 DISTNAME=		mimetex-1.65

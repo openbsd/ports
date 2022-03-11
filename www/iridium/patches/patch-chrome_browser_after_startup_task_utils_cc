@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_after_startup_task_utils_cc,v 1.16 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/after_startup_task_utils.cc
 --- chrome/browser/after_startup_task_utils.cc.orig
 +++ chrome/browser/after_startup_task_utils.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/03 10:30:31 benoit Exp $
-
 COMMENT =	no-fuss generation of Atom syndication feeds
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/18 02:41:53 afresh1 Exp $
-
 COMMENT =		plugin for adding Ajax route handlers
 
 MODULES =		cpan

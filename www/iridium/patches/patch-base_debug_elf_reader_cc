@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_debug_elf_reader_cc,v 1.6 2021/10/29 14:49:39 robert Exp $
-
 Index: base/debug/elf_reader.cc
 --- base/debug/elf_reader.cc.orig
 +++ base/debug/elf_reader.cc

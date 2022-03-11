@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.205 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany

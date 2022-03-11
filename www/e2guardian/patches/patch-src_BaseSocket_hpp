@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_BaseSocket_hpp,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
-
 Index: src/BaseSocket.hpp
 --- src/BaseSocket.hpp.orig
 +++ src/BaseSocket.hpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_FatController_cpp,v 1.2 2020/03/01 16:45:02 bket Exp $
-
 Index: src/FatController.cpp
 --- src/FatController.cpp.orig
 +++ src/FatController.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_tab_helpers_cc,v 1.18 2021/12/28 15:49:55 robert Exp $
-
 Index: chrome/browser/ui/tab_helpers.cc
 --- chrome/browser/ui/tab_helpers.cc.orig
 +++ chrome/browser/ui/tab_helpers.cc

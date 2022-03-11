@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/02/16 15:31:53 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf

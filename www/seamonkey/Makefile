@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.269 2022/03/02 11:19:32 landry Exp $
-
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64

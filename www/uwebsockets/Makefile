@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/31 09:04:34 op Exp $
-
 COMMENT	=	ultra fast, simple, secure, standards compliant web server
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	www

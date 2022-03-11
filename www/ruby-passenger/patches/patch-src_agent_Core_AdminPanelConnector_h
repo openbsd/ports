@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_agent_Core_AdminPanelConnector_h,v 1.1 2019/11/12 06:38:20 jeremy Exp $
-
 Index: src/agent/Core/AdminPanelConnector.h
 --- src/agent/Core/AdminPanelConnector.h.orig
 +++ src/agent/Core/AdminPanelConnector.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-services_network_network_context_cc,v 1.11 2021/12/28 15:49:55 robert Exp $
-
 Index: services/network/network_context.cc
 --- services/network/network_context.cc.orig
 +++ services/network/network_context.cc

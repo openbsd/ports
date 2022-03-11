@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_media_router_discovery_discovery_network_list_posix_cc,v 1.10 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 --- chrome/browser/media/router/discovery/discovery_network_list_posix.cc.orig
 +++ chrome/browser/media/router/discovery/discovery_network_list_posix.cc

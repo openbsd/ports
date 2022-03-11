@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gtk_gtk_compat_cc,v 1.2 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/gtk/gtk_compat.cc
 --- ui/gtk/gtk_compat.cc.orig
 +++ ui/gtk/gtk_compat.cc

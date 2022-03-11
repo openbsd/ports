@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/23 21:18:21 bluhm Exp $
-
 COMMENT =	HTTP Cookie jars
 
 DISTNAME =	HTTP-Cookies-6.10

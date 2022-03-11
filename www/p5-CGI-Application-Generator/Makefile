@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:49 sthen Exp $
-
 COMMENT= 	skeleton for application based on CGI::Application
 
 MODULES=	cpan

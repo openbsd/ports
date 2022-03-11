@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WTF_wtf_PlatformRegisters_h,v 1.3 2021/07/09 14:46:28 ajacoutot Exp $
-
 XXX no mcontext_t on OpenBSD
 
 Index: Source/WTF/wtf/PlatformRegisters.h

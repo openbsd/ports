@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_services_paint_preview_compositor_paint_preview_compositor_collection_impl_h,v 1.5 2021/10/29 14:49:40 robert Exp $
-
 Index: components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h
 --- components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h.orig
 +++ components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.h

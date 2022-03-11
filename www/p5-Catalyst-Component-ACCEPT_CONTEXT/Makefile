@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT =	make Catalyst request contexts available in models and views
 
 MODULES =	cpan

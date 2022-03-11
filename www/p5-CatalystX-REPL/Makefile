@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:35:08 afresh1 Exp $
-
 COMMENT =	read-eval-print-loop for debugging your Catalyst application
 
 DISTNAME =	CatalystX-REPL-0.04

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:02:29 sthen Exp $
-
 COMMENT =	library to do multipart form posts
 
 DISTNAME =	multipart-post-2.1.1

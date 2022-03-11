@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_linux_strip_binary_py,v 1.1 2021/10/29 14:49:39 robert Exp $
-
 Index: build/linux/strip_binary.py
 --- build/linux/strip_binary.py.orig
 +++ build/linux/strip_binary.py

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/20 10:30:30 sebastia Exp $
 ${GEM_BIN}/httpclient${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-net_base_network_interfaces_posix_h,v 1.10 2021/10/29 14:49:41 robert Exp $
 Index: net/base/network_interfaces_posix.h
 --- net/base/network_interfaces_posix.h.orig
 +++ net/base/network_interfaces_posix.h

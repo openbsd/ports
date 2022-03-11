@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_public_common_content_switches_h,v 1.30 2021/10/29 14:49:41 robert Exp $
-
 Index: content/public/common/content_switches.h
 --- content/public/common/content_switches.h.orig
 +++ content/public/common/content_switches.h

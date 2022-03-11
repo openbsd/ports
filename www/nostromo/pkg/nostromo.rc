@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: nostromo.rc,v 1.1 2022/03/06 22:03:10 mglocker Exp $
 
 daemon="${TRUEPREFIX}/sbin/nhttpd"
 

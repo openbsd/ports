@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/12 18:06:48 landry Exp $
-
 COMMENT =	HTTP Framework for REST Applications in C
 
 GH_ACCOUNT =	babelouest

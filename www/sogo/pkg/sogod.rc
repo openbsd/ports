@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: sogod.rc,v 1.7 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/sogod"
 daemon_user="_sogo"

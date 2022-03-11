@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/05 12:59:52 jasper Exp $
-
 # www/ruby-sassc contains an embedded version of libsass, please
 # update it if there are security patches to libsass
 

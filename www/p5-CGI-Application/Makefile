@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:49 sthen Exp $
-
 COMMENT = 		MVC web framework for perl
 
 MODULES =		cpan

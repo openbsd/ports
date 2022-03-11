@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/10/15 06:53:46 landry Exp $
-
 SUBDIR = cs
 SUBDIR += de
 SUBDIR += en-GB

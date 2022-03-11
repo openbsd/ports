@@ -1,5 +1,3 @@
-$OpenBSD: patch-sandbox_policy_features_cc,v 1.2 2021/10/29 14:49:41 robert Exp $
-
 Index: sandbox/policy/features.cc
 --- sandbox/policy/features.cc.orig
 +++ sandbox/policy/features.cc

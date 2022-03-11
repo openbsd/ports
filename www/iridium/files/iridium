@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: iridium,v 1.6 2019/05/27 16:11:17 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"

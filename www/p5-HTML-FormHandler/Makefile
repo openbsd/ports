@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/29 11:25:59 bluhm Exp $
-
 COMMENT =	HTML forms using Moose
 
 DISTNAME =	HTML-FormHandler-0.40068

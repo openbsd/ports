@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:53 espie Exp $
 bin/w3mfix
 bin/w3mir
 ${P5SITE}/htmlop.pm

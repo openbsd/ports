@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/24 16:49:02 sthen Exp $
-
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
 DISTNAME=	phpPgAdmin-5.6.0

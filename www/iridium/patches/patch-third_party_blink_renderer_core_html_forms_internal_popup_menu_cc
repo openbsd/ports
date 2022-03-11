@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_renderer_core_html_forms_internal_popup_menu_cc,v 1.10 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/blink/renderer/core/html/forms/internal_popup_menu.cc
 --- third_party/blink/renderer/core/html/forms/internal_popup_menu.cc.orig
 +++ third_party/blink/renderer/core/html/forms/internal_popup_menu.cc

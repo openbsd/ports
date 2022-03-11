@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/16 18:41:21 jeremy Exp $
-
 COMMENT =	ruby DSL around a subset of XPath 1.0
 
 DISTNAME =	xpath-3.2.0

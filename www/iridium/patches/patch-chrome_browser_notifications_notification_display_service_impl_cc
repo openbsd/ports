@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_notifications_notification_display_service_impl_cc,v 1.7 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/notifications/notification_display_service_impl.cc
 --- chrome/browser/notifications/notification_display_service_impl.cc.orig
 +++ chrome/browser/notifications/notification_display_service_impl.cc

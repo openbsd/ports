@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:50:18 sthen Exp $
-
 BROKEN-alpha=	Alpha architecture not yet supported
 
 COMMENT=	C library to parse CGI Forms

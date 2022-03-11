@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT=	change long page list to be shorter and well navigate
 
 MODULES=	cpan

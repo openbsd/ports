@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_swiftshader_src_Common_MutexLock_hpp,v 1.9 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/swiftshader/src/Common/MutexLock.hpp
 --- third_party/swiftshader/src/Common/MutexLock.hpp.orig
 +++ third_party/swiftshader/src/Common/MutexLock.hpp

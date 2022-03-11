@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/25 12:33:19 sthen Exp $
-
 COMMENT=		PHP wrapper for pledge(2) and unveil(2)
 
 DISTNAME=		pledge-2.0.2

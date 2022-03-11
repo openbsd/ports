@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:58 sthen Exp $
-
 COMMENT=		singleton for the catalyst context (deprecated)
 
 MODULES=		cpan

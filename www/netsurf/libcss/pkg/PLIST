@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/13 09:29:20 bentley Exp $
 include/libcss/
 include/libcss/computed.h
 include/libcss/errors.h

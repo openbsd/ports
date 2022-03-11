@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:58 sthen Exp $
-
 COMMENT=	Catalyst views using Mason components
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/05/27 11:38:18 bentley Exp $
-
 COMMENT =		CSS parser and selection engine
 
 NETSURF_PROJECT =	libcss

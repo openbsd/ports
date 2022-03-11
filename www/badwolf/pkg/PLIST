@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/15 11:17:11 sdk Exp $
 @bin bin/badwolf
 @man man/man1/badwolf.1
 share/applications/badwolf.desktop

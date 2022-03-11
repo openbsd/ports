@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:48 sthen Exp $
-
 COMMENT=	command-line online gallery generator
 
 DISTNAME=	llgal-0.13.19

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:53 sthen Exp $
-
 COMMENT =		standalone version of Django's feedgenerator
 
 MODPY_EGG_VERSION =	1.9.1

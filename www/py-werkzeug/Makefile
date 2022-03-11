@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2022/03/05 08:43:34 sthen Exp $
-
 COMMENT =		WSGI utility collection
 
 MODPY_EGG_VERSION =	2.0.3

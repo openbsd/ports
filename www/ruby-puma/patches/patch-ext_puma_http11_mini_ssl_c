@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_puma_http11_mini_ssl_c,v 1.1 2021/12/04 09:10:30 tb Exp $
-
 Fix build with Opaque DH in LibreSSL 3.5.
 
 Index: ext/puma_http11/mini_ssl.c

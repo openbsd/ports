@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/11/09 08:01:49 benoit Exp $
 ${P5SITE}/HTTP/Server/Simple/PSGI.pm
 ${P5SITE}/Plack/
 ${P5SITE}/Plack/Handler/

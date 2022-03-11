@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.component,v 1.3 2020/04/12 10:52:46 robert Exp $
 @so iridium/libaccessibility.so
 @so iridium/libandroid_mojo_bindings_shared.so
 @so iridium/libanimation.so

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/11 13:37:27 sthen Exp $
 @bin bin/slowhttptest
 @man man/man1/slowhttptest.1

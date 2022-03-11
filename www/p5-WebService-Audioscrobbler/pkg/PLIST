@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/29 13:24:33 jasper Exp $
 ${P5SITE}/WebService/
 ${P5SITE}/WebService/Audioscrobbler/
 ${P5SITE}/WebService/Audioscrobbler.pm

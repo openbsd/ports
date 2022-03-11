@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/06 01:20:55 espie Exp $
 ${P5SITE}/Catalyst/Plugin/Session/Store/FastMmap.pm
 @man man/man3p/Catalyst::Plugin::Session::Store::FastMmap.3p

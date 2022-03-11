@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/03/02 07:31:01 sdk Exp $
-
 COMMENT =		federated status conveyance
 
 DISTNAME =		honk-0.9.7

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/19 00:43:08 sthen Exp $
-
 SUBDIR =
 SUBDIR += unit
 SUBDIR += unit-perl

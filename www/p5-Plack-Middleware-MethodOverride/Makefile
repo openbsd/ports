@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/19 02:11:51 afresh1 Exp $
-
 COMMENT =	override REST methods to Plack apps via POST
 
 DISTNAME =	Plack-Middleware-MethodOverride-0.20

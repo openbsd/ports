@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:46 sthen Exp $
-
 COMMENT =		offline browser
 DISTNAME =		httrack-3.48.21
 REVISION =		2

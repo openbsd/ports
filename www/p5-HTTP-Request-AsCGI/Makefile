@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:46:03 sthen Exp $
-
 COMMENT=	setup CGI environment from HTTP::Request
 
 DISTNAME=	HTTP-Request-AsCGI-1.2

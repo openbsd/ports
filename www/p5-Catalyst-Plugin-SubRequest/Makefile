@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/10/09 03:42:13 afresh1 Exp $
-
 COMMENT=	map subrequests to actions in Catalyst
 
 MODULES=	cpan

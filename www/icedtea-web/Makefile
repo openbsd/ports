@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2020/02/13 11:01:11 giovanni Exp $
-
 COMMENT =	Java web start runtime
 DISTNAME =	icedtea-web-1.6.2
 REVISION =	8

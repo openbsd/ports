@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:51 espie Exp $
 ${P5SITE}/HTML/Template/
 ${P5SITE}/HTML/Template/Expr.pm
 @man man/man3p/HTML::Template::Expr.3p

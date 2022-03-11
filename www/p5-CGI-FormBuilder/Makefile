@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:50 sthen Exp $
-
 COMMENT=	easily generate and process stateful forms
 
 MODULES=	cpan

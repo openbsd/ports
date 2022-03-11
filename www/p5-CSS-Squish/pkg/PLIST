@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/11 18:19:41 espie Exp $
 ${P5SITE}/CSS/
 ${P5SITE}/CSS/Squish.pm
 @man man/man3p/CSS::Squish.3p

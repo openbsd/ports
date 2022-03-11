@@ -1,5 +1,3 @@
-$OpenBSD: patch-frontends_gtk_res_netsurf-gtk_desktop,v 1.1 2021/01/11 02:17:59 cwen Exp $
-
 Make the .desktop file actually call Netsurf
 See https://bugs.netsurf-browser.org/mantis/view.php?id=2805
 

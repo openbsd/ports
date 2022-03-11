@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_minizip_ioapi_h,v 1.1.1.1 2014/10/03 13:06:33 zhuk Exp $
 Fix build.
 --- src/minizip/ioapi.h.ports.orig	Thu Aug  7 08:02:32 2014
 +++ src/minizip/ioapi.h	Thu Aug  7 08:01:59 2014

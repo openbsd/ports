@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/25 12:33:21 sthen Exp $
-
 BROKEN=		needs adapting for PHP >7.3
 
 COMMENT=	web frontend to symon

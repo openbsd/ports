@@ -1,5 +1,3 @@
-$OpenBSD: patch-services_cert_verifier_cert_verifier_creation_cc,v 1.2 2021/10/29 14:49:41 robert Exp $
-
 Index: services/cert_verifier/cert_verifier_creation.cc
 --- services/cert_verifier/cert_verifier_creation.cc.orig
 +++ services/cert_verifier/cert_verifier_creation.cc

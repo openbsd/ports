@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:02:56 sthen Exp $
-
 COMMENT =	wsgi request and response object
 
 MODPY_EGG_VERSION = 1.8.7

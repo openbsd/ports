@@ -1,5 +1,3 @@
-$OpenBSD: patch-v8_src_wasm_baseline_ia32_liftoff-assembler-ia32_h,v 1.1 2021/10/29 14:49:43 robert Exp $
-
 Index: v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h
 --- v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h.orig
 +++ v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h

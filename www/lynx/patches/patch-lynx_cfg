@@ -1,4 +1,3 @@
-$OpenBSD: patch-lynx_cfg,v 1.5 2018/08/12 08:28:49 fcambus Exp $
 Index: lynx.cfg
 --- lynx.cfg.orig
 +++ lynx.cfg

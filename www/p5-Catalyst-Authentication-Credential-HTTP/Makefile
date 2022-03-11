@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/10 01:50:43 afresh1 Exp $
-
 COMMENT =	HTTP Basic and Digest authentication for Catalyst
 
 DISTNAME =	Catalyst-Authentication-Credential-HTTP-1.018

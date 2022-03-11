@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/11 03:21:56 bentley Exp $
-
 COMMENT =		utility library for parser building
 
 NETSURF_PROJECT =	libparserutils

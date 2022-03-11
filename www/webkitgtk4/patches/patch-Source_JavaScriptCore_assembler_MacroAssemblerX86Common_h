@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h,v 1.6 2021/10/25 07:25:13 ajacoutot Exp $
-
 XXX error: macro "swap32" passed 2 arguments, but takes just 1
 XXX error: macro "swap64" passed 2 arguments, but takes just 1
 

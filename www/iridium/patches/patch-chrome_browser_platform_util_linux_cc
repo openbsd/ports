@@ -1,4 +1,3 @@
-$OpenBSD: patch-chrome_browser_platform_util_linux_cc,v 1.14 2021/10/29 14:49:40 robert Exp $
 Index: chrome/browser/platform_util_linux.cc
 --- chrome/browser/platform_util_linux.cc.orig
 +++ chrome/browser/platform_util_linux.cc

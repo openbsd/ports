@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_video_fake_gpu_memory_buffer_cc,v 1.5 2021/10/29 14:49:41 robert Exp $
-
 Index: media/video/fake_gpu_memory_buffer.cc
 --- media/video/fake_gpu_memory_buffer.cc.orig
 +++ media/video/fake_gpu_memory_buffer.cc

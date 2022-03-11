@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 19:23:32 nigel Exp $
 @conflict p5-libwww-<6.0
 ${P5SITE}/HTML/Form.pm
 @man man/man3p/HTML::Form.3p

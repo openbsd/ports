@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_dns_public_BUILD_gn,v 1.1 2021/10/29 14:49:41 robert Exp $
-
 Index: net/dns/public/BUILD.gn
 --- net/dns/public/BUILD.gn.orig
 +++ net/dns/public/BUILD.gn

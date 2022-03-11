@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/03/14 21:30:45 kmos Exp $
 @conflict py-webob-*
 @pkgpath www/py-webob
 lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

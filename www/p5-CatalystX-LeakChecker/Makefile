@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:31:36 afresh1 Exp $
-
 COMMENT =	debug memory leaks in Catalyst applications
 
 DISTNAME =	CatalystX-LeakChecker-0.06

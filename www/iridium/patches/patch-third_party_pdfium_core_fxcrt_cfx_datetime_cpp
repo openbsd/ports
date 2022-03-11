@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_pdfium_core_fxcrt_cfx_datetime_cpp,v 1.3 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/pdfium/core/fxcrt/cfx_datetime.cpp
 --- third_party/pdfium/core/fxcrt/cfx_datetime.cpp.orig
 +++ third_party/pdfium/core/fxcrt/cfx_datetime.cpp

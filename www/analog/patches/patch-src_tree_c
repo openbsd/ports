@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tree_c,v 1.1 2007/05/30 22:33:11 naddy Exp $
 --- src/tree.c.orig	Sun Dec 19 06:51:31 2004
 +++ src/tree.c	Wed May 30 16:28:41 2007
 @@ -871,7 +871,10 @@ void Pnextname(char **name, char **nameend, char *whol

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT =	allow complex data structures to be encoded using flat URIs
 
 MODULES =	cpan

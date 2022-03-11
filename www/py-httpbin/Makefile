@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:53 sthen Exp $
-
 COMMENT =		HTTP request and response service
 
 MODPY_EGG_VERSION =	0.5.0

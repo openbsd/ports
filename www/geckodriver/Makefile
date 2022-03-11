@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/13 13:38:07 abieber Exp $
-
 COMMENT =	W3C webdriver for Gecko-based browsers
 
 GH_ACCOUNT =	mozilla

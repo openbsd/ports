@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:58 sthen Exp $
-
 COMMENT =		cookie string generator / parser
 
 MODULES =		cpan

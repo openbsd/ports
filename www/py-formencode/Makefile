@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:02:53 sthen Exp $
-
 COMMENT =		HTML form validation, generation, and conversion
 
 MODPY_EGG_VERSION =	1.3.1

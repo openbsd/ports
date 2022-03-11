@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: apertium_apy.rc,v 1.1.1.1 2018/11/20 10:56:21 bentley Exp $
 
 daemon="${TRUEPREFIX}/bin/apertium-apy"
 daemon_user="_apertium-apy"

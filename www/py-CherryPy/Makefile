@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/25 12:15:41 sthen Exp $
-
 COMMENT=	pythonic, object-oriented web development framework
 
 MODPY_EGG_VERSION=	18.4.0

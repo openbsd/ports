@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2019/05/07 19:39:32 jca Exp $
 javaws/itweb-settings/policyeditor are scripts not programs..
 Index: Makefile.in
 --- Makefile.in.orig

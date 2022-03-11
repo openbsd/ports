@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT =		jquery-like library for python
 
 MODPY_EGG_VERSION =	1.4.3

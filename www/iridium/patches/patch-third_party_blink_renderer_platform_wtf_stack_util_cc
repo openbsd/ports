@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_renderer_platform_wtf_stack_util_cc,v 1.8 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/blink/renderer/platform/wtf/stack_util.cc
 --- third_party/blink/renderer/platform/wtf/stack_util.cc.orig
 +++ third_party/blink/renderer/platform/wtf/stack_util.cc

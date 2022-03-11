@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/02/21 18:53:20 rsadowski Exp $
-
 COMMENT =	modal webkit-based browser inspired by vim
 
 GH_ACCOUNT =	fanglingsu

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/24 23:20:35 sthen Exp $
-
 COMMENT =	command line access to most of Drupal
 
 CATEGORIES =	www devel

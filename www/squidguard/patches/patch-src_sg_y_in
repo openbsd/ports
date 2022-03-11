@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sg_y_in,v 1.2 2021/02/04 15:25:50 sthen Exp $
-
 Index: src/sg.y.in
 --- src/sg.y.in.orig
 +++ src/sg.y.in

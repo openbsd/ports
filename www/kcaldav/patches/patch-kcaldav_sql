@@ -1,5 +1,3 @@
-$OpenBSD: patch-kcaldav_sql,v 1.3 2020/11/12 17:21:35 sthen Exp $
-
 Index: kcaldav.sql
 --- kcaldav.sql.orig
 +++ kcaldav.sql

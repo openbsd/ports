@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:46:07 sthen Exp $
-
 COMMENT=	perl port of jQuery.js
 
 MODULES=	cpan

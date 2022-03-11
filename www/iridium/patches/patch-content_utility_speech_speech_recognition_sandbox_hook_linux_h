@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_utility_speech_speech_recognition_sandbox_hook_linux_h,v 1.1 2021/10/29 14:49:41 robert Exp $
-
 Index: content/utility/speech/speech_recognition_sandbox_hook_linux.h
 --- content/utility/speech/speech_recognition_sandbox_hook_linux.h.orig
 +++ content/utility/speech/speech_recognition_sandbox_hook_linux.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:55 sthen Exp $
-
 COMMENT =		HTTP library inspired by requests on top of Twisted Agents
 
 MODPY_EGG_VERSION =	18.6.0

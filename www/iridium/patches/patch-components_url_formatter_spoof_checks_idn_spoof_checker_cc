@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_url_formatter_spoof_checks_idn_spoof_checker_cc,v 1.5 2021/10/29 14:49:40 robert Exp $
-
 Index: components/url_formatter/spoof_checks/idn_spoof_checker.cc
 --- components/url_formatter/spoof_checks/idn_spoof_checker.cc.orig
 +++ components/url_formatter/spoof_checks/idn_spoof_checker.cc

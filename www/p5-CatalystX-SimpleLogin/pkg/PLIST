@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/10 01:49:24 afresh1 Exp $
 ${P5SITE}/Catalyst/ActionRole/NeedsLogin.pm
 ${P5SITE}/CatalystX/SimpleLogin/
 ${P5SITE}/CatalystX/SimpleLogin.pm

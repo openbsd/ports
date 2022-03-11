@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/28 18:36:25 afresh1 Exp $
-
 COMMENT=	elegant MVC Web Application Framework
 
 MODULES=	cpan

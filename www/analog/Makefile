@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2021/04/04 08:51:50 kirby Exp $
-
 COMMENT=	extremely fast program for analysing WWW logfiles
 
 DISTNAME=	analog-6.0

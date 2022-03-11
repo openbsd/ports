@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:00 sthen Exp $
-
 COMMENT =	converts HTML to Text with tables intact
 
 MODULES =	cpan

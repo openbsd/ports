@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:50:46 sthen Exp $
-
 COMMENT=	web proxy with antivirus filter
 
 DISTNAME=	havp-0.92a

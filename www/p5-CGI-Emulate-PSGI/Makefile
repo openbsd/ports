@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/06 20:06:06 afresh1 Exp $
-
 COMMENT =	PSGI adapter for CGI
 
 MODULES =	cpan

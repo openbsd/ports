@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/10 16:44:01 abieber Exp $
 bin/wp
 bin/wp-cli.phar

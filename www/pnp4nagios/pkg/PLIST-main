@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2018/09/04 12:46:26 espie Exp $
 @extraunexec rm -rf /var/log/pnp4nagios
 @extraunexec rm -rf ${LOCALSTATEDIR}/stats/*
 @bin bin/npcd

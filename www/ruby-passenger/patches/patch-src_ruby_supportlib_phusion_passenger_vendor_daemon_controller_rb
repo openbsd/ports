@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_vendor_daemon_controller_rb,v 1.2 2017/11/04 15:56:29 jeremy Exp $
-
 OpenBSD doesn't allow connecting to 0.0.0.0.
 
 Index: src/ruby_supportlib/phusion_passenger/vendor/daemon_controller.rb

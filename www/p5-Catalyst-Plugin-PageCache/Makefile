@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/28 20:47:27 afresh1 Exp $
-
 COMMENT =	cache the output of entire pages
 
 MODULES =	cpan

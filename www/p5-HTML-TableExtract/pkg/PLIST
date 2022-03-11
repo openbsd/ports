@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:51 espie Exp $
 ${P5SITE}/HTML/TableExtract.pm
 @man man/man3p/HTML::TableExtract.3p

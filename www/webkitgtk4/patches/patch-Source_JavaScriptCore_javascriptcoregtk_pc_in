@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_javascriptcoregtk_pc_in,v 1.4 2021/10/25 07:25:13 ajacoutot Exp $
-
 Index: Source/JavaScriptCore/javascriptcoregtk.pc.in
 --- Source/JavaScriptCore/javascriptcoregtk.pc.in.orig
 +++ Source/JavaScriptCore/javascriptcoregtk.pc.in

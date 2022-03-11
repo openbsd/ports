@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/10 08:15:18 paco Exp $
 @bin bin/hugo
 @man man/man1/hugo-completion-bash.1
 @man man/man1/hugo-completion-fish.1

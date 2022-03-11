@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/28 15:12:08 sthen Exp $
-
 COMMENT =		yet another URL library
 
 MODPY_EGG_VERSION =	1.4.2

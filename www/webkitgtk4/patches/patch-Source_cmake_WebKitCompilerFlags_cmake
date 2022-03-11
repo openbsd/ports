@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_cmake_WebKitCompilerFlags_cmake,v 1.9 2021/10/25 07:25:14 ajacoutot Exp $
-
 Index: Source/cmake/WebKitCompilerFlags.cmake
 --- Source/cmake/WebKitCompilerFlags.cmake.orig
 +++ Source/cmake/WebKitCompilerFlags.cmake

@@ -1,5 +1,3 @@
-$OpenBSD: patch-printing_sandbox_print_backend_sandbox_hook_linux_h,v 1.1 2021/10/29 14:49:41 robert Exp $
-
 Index: printing/sandbox/print_backend_sandbox_hook_linux.h
 --- printing/sandbox/print_backend_sandbox_hook_linux.h.orig
 +++ printing/sandbox/print_backend_sandbox_hook_linux.h

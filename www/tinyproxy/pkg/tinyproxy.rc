@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: tinyproxy.rc,v 1.4 2020/06/12 12:35:51 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/tinyproxy"
 

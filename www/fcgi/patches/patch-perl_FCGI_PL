@@ -1,4 +1,3 @@
-$OpenBSD: patch-perl_FCGI_PL,v 1.3 2019/01/30 14:55:06 cwen Exp $
 Index: perl/FCGI.PL
 --- perl/FCGI.PL.orig
 +++ perl/FCGI.PL

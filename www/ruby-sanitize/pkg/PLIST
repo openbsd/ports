@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/09/27 16:59:31 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.md

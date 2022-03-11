@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/22 16:21:09 simon Exp $
 ${P5SITE}/HTML/TagFilter.pm
 @man man/man3p/HTML::TagFilter.3p

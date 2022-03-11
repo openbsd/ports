@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/08/25 12:05:12 robert Exp $
-
 COMMENT=		FastCGI Development Kit
 
 DISTNAME=		fcgi-2.4.0

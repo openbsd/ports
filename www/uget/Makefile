@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/25 18:10:28 solene Exp $
-
 COMMENT =	lightweight graphical download manager
 DISTNAME =	uget-2.2.2
 CATEGORIES =	www net x11

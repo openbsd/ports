@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/12/27 18:56:32 jung Exp $
 @pkgpath www/surf2
 @bin bin/surf
 lib/surf/

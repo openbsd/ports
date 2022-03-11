@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:36:50 robert Exp $
-
 COMMENT =	HTML to text formatting using external programs
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-toolkit_components_downloads_DownloadUIHelper_jsm,v 1.1 2021/03/23 13:25:36 landry Exp $
-
 Make sure DownloadUIHelper.strings.downloadsFolder isnt translated
 
 Index: toolkit/components/downloads/DownloadUIHelper.jsm

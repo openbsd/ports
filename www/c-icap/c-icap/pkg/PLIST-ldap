@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-ldap,v 1.2 2019/12/02 11:26:13 sthen Exp $
 @so lib/c_icap/ldap_module.so

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/24 16:52:33 sthen Exp $
-
 COMMENT=	tiny cgi web script handler using shell or Lua
 
 DISTNAME=	haserl-0.9.36

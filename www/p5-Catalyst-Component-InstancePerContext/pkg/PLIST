@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 18:00:17 simon Exp $
 ${P5SITE}/Catalyst/Component/
 ${P5SITE}/Catalyst/Component/InstancePerContext.pm
 @man man/man3p/Catalyst::Component::InstancePerContext.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_views_style_platform_style_cc,v 1.14 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/views/style/platform_style.cc
 --- ui/views/style/platform_style.cc.orig
 +++ ui/views/style/platform_style.cc

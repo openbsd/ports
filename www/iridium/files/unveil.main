@@ -1,5 +1,3 @@
-# $OpenBSD: unveil.main,v 1.10 2021/12/20 19:00:26 robert Exp $
-
 # needed for video(4)
 /dev/video rw
 

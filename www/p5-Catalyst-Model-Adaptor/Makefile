@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:39:25 afresh1 Exp $
-
 COMMENT =	use a plain class as a Catalyst model
 
 DISTNAME =	Catalyst-Model-Adaptor-0.10

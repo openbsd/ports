@@ -1,5 +1,3 @@
-$OpenBSD: patch-lightparser_pl,v 1.3 2022/01/02 20:16:43 kirby Exp $
-
 Fix date ranges
 https://finisky.github.io/2021/01/03/lightsquidhardcodeyear.en/
 

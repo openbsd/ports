@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_dawn_src_dawn_native_vulkan_BackendVk_cpp,v 1.1 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/dawn/src/dawn_native/vulkan/BackendVk.cpp
 --- third_party/dawn/src/dawn_native/vulkan/BackendVk.cpp.orig
 +++ third_party/dawn/src/dawn_native/vulkan/BackendVk.cpp

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_HTML_Prototype_pm,v 1.3 2021/02/26 18:20:37 naddy Exp $
 --- lib/HTML/Prototype.pm.orig	Fri Jul 14 01:57:40 2006
 +++ lib/HTML/Prototype.pm	Fri Oct  6 23:29:09 2006
 @@ -646,11 +646,11 @@ sub javascript_tag {

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.2 2020/10/09 02:28:46 afresh1 Exp $
-
 COMMENT =	apply roles to action instances
 
 DISTNAME =	Catalyst-Controller-ActionRole-0.17

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/31 07:26:06 tb Exp $
-
 COMMENT =	capybara driver that uses WebKit
 
 DISTNAME =	capybara-webkit-1.15.0

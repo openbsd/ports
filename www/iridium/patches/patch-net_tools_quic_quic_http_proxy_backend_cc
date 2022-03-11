@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_tools_quic_quic_http_proxy_backend_cc,v 1.6 2021/10/29 14:49:41 robert Exp $
-
 Index: net/tools/quic/quic_http_proxy_backend.cc
 --- net/tools/quic/quic_http_proxy_backend.cc.orig
 +++ net/tools/quic/quic_http_proxy_backend.cc

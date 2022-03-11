@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.swiftshader,v 1.2 2019/12/15 12:03:47 robert Exp $
 chrome/swiftshader/
 @so chrome/swiftshader/libEGL.so
 @so chrome/swiftshader/libGLESv2.so

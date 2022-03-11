@@ -1,5 +1,3 @@
-$OpenBSD: patch-havp_scanners_clamlibscanner_cpp,v 1.1 2018/12/04 13:47:03 sthen Exp $
-
 cope with API change described in
 https://marc.info/?l=clamav-users&m=154272633913939&w=2
 

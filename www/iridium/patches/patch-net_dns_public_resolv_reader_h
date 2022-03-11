@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_dns_public_resolv_reader_h,v 1.1 2021/10/29 14:49:41 robert Exp $
-
 Index: net/dns/public/resolv_reader.h
 --- net/dns/public/resolv_reader.h.orig
 +++ net/dns/public/resolv_reader.h

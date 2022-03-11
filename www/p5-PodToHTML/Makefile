@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/03/07 23:17:57 afresh1 Exp $
-
 COMMENT=	generate HTML from files containing POD documentation
 
 MODULES=	cpan

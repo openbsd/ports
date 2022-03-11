@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:56 sthen Exp $
-
 COMMENT =		high-level cross-protocol url-grabber
 
 MODPY_EGG_VERSION =	4.1.0

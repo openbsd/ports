@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/05/27 11:38:18 bentley Exp $
-
 COMMENT =		HTML parser
 
 NETSURF_PROJECT =	libhubbub

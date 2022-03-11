@@ -1,4 +1,3 @@
-$OpenBSD: patch-install_me,v 1.2 2003/11/28 00:06:59 margarida Exp $
 --- install.me.orig	2003-11-27 23:55:32.000000000 +0000
 +++ install.me	2003-11-27 23:56:44.000000000 +0000
 @@ -427,9 +427,6 @@ my $Root	= '';

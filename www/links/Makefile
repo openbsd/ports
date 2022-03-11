@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:50:48 sthen Exp $
-
 COMMENT=	text browser, displays while downloading
 
 VERSION=	1.03

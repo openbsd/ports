@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_windows_web_StartPageWidget_cpp,v 1.1 2021/01/19 06:27:43 rsadowski Exp $
-
 Index: src/modules/windows/web/StartPageWidget.cpp
 --- src/modules/windows/web/StartPageWidget.cpp.orig
 +++ src/modules/windows/web/StartPageWidget.cpp

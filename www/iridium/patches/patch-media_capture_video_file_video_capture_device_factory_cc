@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_capture_video_file_video_capture_device_factory_cc,v 1.13 2021/10/29 14:49:41 robert Exp $
-
 Index: media/capture/video/file_video_capture_device_factory.cc
 --- media/capture/video/file_video_capture_device_factory.cc.orig
 +++ media/capture/video/file_video_capture_device_factory.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2021/11/19 10:01:02 sthen Exp $
-
 UNIT_MODNAME=   python${MODPY_VERSION}
 UNIT_SHORTNAME=	python
 

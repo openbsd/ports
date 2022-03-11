@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_constants_rb,v 1.1 2017/11/04 15:56:29 jeremy Exp $
-
 Index: src/ruby_supportlib/phusion_passenger/constants.rb
 --- src/ruby_supportlib/phusion_passenger/constants.rb.orig
 +++ src/ruby_supportlib/phusion_passenger/constants.rb

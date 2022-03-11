@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:02:56 sthen Exp $
-
 COMMENT =		helper to test wsgi applications
 
 MODPY_EGG_VERSION =	2.0.35

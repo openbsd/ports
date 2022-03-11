@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/06/02 20:09:01 kili Exp $
 bin/igal
 @man man/man1/igal.1
 share/igal/

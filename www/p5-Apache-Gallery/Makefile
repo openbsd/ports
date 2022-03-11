@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:50:49 sthen Exp $
-
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan

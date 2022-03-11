@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_config_inc_php-dist,v 1.1 2018/12/19 13:26:25 solene Exp $
-
 remove paths as they are invalid in the default chroot
 
 Index: conf/config.inc.php

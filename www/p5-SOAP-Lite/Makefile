@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:46:05 sthen Exp $
-
 COMMENT=	client and server-side SOAP implementation
 
 DISTNAME=	SOAP-Lite-1.20

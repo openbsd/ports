@@ -1,5 +1,3 @@
-$OpenBSD: patch-net_disk_cache_simple_simple_file_tracker_cc,v 1.1 2021/11/23 11:52:33 robert Exp $
-
 Index: net/disk_cache/simple/simple_file_tracker.cc
 --- net/disk_cache/simple/simple_file_tracker.cc.orig
 +++ net/disk_cache/simple/simple_file_tracker.cc

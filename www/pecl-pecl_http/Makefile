@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/25 12:33:19 sthen Exp $
-
 BROKEN= builds, but has problems picking up libcurl
 
 COMMENT=	extended HTTP support

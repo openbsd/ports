@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/04 01:40:22 afresh1 Exp $
 ${P5SITE}/Mojolicious/Plugin/Thumbnail.pm
 @man man/man3p/Mojolicious::Plugin::Thumbnail.3p

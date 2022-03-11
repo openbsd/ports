@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/09/02 12:55:44 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/HTML/
 ${P5ARCH}/HTML/Entities.pm

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/24 11:40:38 jasper Exp $
 bin/igal2
 @man man/man1/igal2.1
 share/igal2/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/01/05 08:19:18 giovanni Exp $
 @bin bin/wcmgr
 @bin bin/webalizer
 bin/webazolver

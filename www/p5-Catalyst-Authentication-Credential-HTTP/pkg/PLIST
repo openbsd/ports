@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/10 01:50:43 afresh1 Exp $
 ${P5SITE}/Catalyst/Authentication/Credential/HTTP.pm
 @man man/man3p/Catalyst::Authentication::Credential::HTTP.3p

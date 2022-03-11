@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:46:00 sthen Exp $
-
 COMMENT=		check for HTML errors in a string or file
 
 MODULES=		cpan

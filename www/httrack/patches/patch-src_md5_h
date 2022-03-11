@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_md5_h,v 1.1 2015/05/09 12:04:19 jasper Exp $
-
 We ain't no DOS, and it breaks the build as MD5CTX is redeclared.
 
 --- src/md5.h.ports.orig	Sat May  9 13:56:22 2015

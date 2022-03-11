@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT =		macaroon library for Python
 
 MODPY_EGG_VERSION =	0.13.0

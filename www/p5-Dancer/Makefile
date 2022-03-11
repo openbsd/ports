@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/24 23:38:30 afresh1 Exp $
-
 COMMENT =	simple perl web app framework
 
 MODULES =	cpan

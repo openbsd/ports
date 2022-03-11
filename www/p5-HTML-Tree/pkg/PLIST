@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2017/05/01 19:54:18 benoit Exp $
 bin/htmltree
 ${P5SITE}/HTML/AsSubs.pm
 ${P5SITE}/HTML/Element/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/25 12:33:20 sthen Exp $
-
 COMMENT=	reusable split of pecl_http's property proxy API
 
 DISTNAME=	propro-2.1.0

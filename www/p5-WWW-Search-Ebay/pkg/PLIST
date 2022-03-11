@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/11/29 09:34:14 benoit Exp $
 ${P5SITE}/WWW/Search/Ebay/
 ${P5SITE}/WWW/Search/Ebay.pm
 ${P5SITE}/WWW/Search/Ebay/Auctions.pm

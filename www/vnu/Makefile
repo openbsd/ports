@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/19 01:50:31 kurt Exp $
-
 COMMENT =	HTML5 validator
 
 V =		20.6.30

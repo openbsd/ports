@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/06 16:36:01 sthen Exp $
 @so lib/apache2/mod_jk.so
 share/doc/ap2-mod_jk/
 share/doc/ap2-mod_jk/LICENSE

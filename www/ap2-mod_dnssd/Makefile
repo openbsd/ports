@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/03 11:48:54 ajacoutot Exp $
-
 COMMENT=	Apache2 Zeroconf module
 
 DISTNAME=	mod_dnssd-0.6

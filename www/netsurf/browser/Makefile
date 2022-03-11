@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/01/14 11:05:23 tb Exp $
-
 COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf

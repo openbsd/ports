@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/14 10:36:26 sthen Exp $
-
 COMMENT =	CGI interface for FastCGI
 DISTNAME =	CGI-Fast-2.16
 CATEGORIES =	www

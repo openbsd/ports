@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/14 21:45:41 sthen Exp $
-
 BROKEN-sparc64 =	ring-0.16.11 module fails build on sparc64 arch
 BROKEN-aarch64 =	ring-0.16.11 module fails build on aarch64
 

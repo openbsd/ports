@@ -1,5 +1,3 @@
-$OpenBSD: patch-decomp_c,v 1.1 2021/02/22 21:56:25 sthen Exp $
-
 Index: decomp.c
 --- decomp.c.orig
 +++ decomp.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/02 12:56:31 sthen Exp $
-
 COMMENT=	module to parse the content of tables in HTML text
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:46 sthen Exp $
-
 COMMENT=	HTTP latency performance testing client
 
 DISTNAME=	http_ping_29jun2005

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/05/27 11:38:18 bentley Exp $
-
 COMMENT =		BMP/ICO decoding library
 
 NETSURF_PROJECT =	libnsbmp

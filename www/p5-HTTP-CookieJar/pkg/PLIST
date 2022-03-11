@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/30 01:33:19 bluhm Exp $
 ${P5SITE}/HTTP/CookieJar/
 ${P5SITE}/HTTP/CookieJar.pm
 ${P5SITE}/HTTP/CookieJar/LWP.pm

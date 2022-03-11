@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2011/01/13 09:53:50 jasper Exp $
 --- Makefile.PL.orig	Sat Jan  1 01:56:12 2011
 +++ Makefile.PL	Sun Jan  9 17:25:05 2011
 @@ -21,8 +21,8 @@ foreach (@ARGV) {

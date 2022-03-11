@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:03 sthen Exp $
-
 COMMENT= 	record communication with an HTTP::Server::Simple
 
 MODULES=	cpan

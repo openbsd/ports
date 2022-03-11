@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_histogram_cc,v 1.1 2017/05/07 07:31:14 jasper Exp $
-
 Index: src/utils/histogram.cc
 --- src/utils/histogram.cc.orig
 +++ src/utils/histogram.cc

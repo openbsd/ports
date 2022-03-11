@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:46 sthen Exp $
-
 COMMENT =		Youtube closed caption downloader
 
 DISTNAME =		gcap-0.1.1

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.5 2022/01/23 14:43:47 sthen Exp $
 @so lib/lighttpd/mod_vhostdb_mysql.so

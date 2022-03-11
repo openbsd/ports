@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/17 10:31:08 sthen Exp $
-
 COMMENT=	XS based JavaScript minifier
 
 MODULES=	cpan

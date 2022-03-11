@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_safe_browsing_core_browser_realtime_url_lookup_service_base_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
-
 Index: components/safe_browsing/core/browser/realtime/url_lookup_service_base.cc
 --- components/safe_browsing/core/browser/realtime/url_lookup_service_base.cc.orig
 +++ components/safe_browsing/core/browser/realtime/url_lookup_service_base.cc

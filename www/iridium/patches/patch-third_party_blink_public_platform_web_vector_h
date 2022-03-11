@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_blink_public_platform_web_vector_h,v 1.8 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/blink/public/platform/web_vector.h
 --- third_party/blink/public/platform/web_vector.h.orig
 +++ third_party/blink/public/platform/web_vector.h

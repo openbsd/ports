@@ -1,5 +1,3 @@
-$OpenBSD: patch-pdf_pdfium_pdfium_engine_cc,v 1.28 2021/12/28 15:49:55 robert Exp $
-
 Index: pdf/pdfium/pdfium_engine.cc
 --- pdf/pdfium/pdfium_engine.cc.orig
 +++ pdf/pdfium/pdfium_engine.cc

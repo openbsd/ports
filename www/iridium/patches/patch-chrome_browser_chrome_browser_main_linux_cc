@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_linux_cc,v 1.18 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/chrome_browser_main_linux.cc
 --- chrome/browser/chrome_browser_main_linux.cc.orig
 +++ chrome/browser/chrome_browser_main_linux.cc

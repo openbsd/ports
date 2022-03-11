@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:02:28 sthen Exp $
-
 COMMENT=	web log rotation program
 
 DISTNAME=	cronolog-1.6.2

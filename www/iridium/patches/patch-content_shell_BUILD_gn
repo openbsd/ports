@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_shell_BUILD_gn,v 1.9 2021/12/28 15:49:55 robert Exp $
-
 Index: content/shell/BUILD.gn
 --- content/shell/BUILD.gn.orig
 +++ content/shell/BUILD.gn

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_rendering_RenderLayerBacking_h,v 1.1 2020/04/24 15:55:05 ajacoutot Exp $
-
 Index: Source/WebCore/rendering/RenderLayerBacking.h
 --- Source/WebCore/rendering/RenderLayerBacking.h.orig
 +++ Source/WebCore/rendering/RenderLayerBacking.h

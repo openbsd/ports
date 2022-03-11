@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2022/01/06 13:31:05 sthen Exp $
-
 COMMENT=		elegant and simple HTTP library for Python
 
 MODPY_EGG_VERSION=	2.27.1

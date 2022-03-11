@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/11 16:51:21 bluhm Exp $
 bin/dancer2
 ${P5SITE}/Dancer2/
 ${P5SITE}/Dancer2.pm

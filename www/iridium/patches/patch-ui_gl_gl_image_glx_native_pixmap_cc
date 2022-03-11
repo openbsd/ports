@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gl_gl_image_glx_native_pixmap_cc,v 1.1 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/gl/gl_image_glx_native_pixmap.cc
 --- ui/gl/gl_image_glx_native_pixmap.cc.orig
 +++ ui/gl/gl_image_glx_native_pixmap.cc

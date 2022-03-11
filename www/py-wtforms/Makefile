@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/03/05 16:36:35 ajacoutot Exp $
-
 COMMENT=	flexible forms validation and rendering library
 
 MODPY_EGG_VERSION=3.0.1

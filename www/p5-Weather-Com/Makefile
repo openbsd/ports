@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/26 18:20:37 naddy Exp $
-
 COMMENT=	module to get weather information from weather.com
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_config_compiler_BUILD_gn,v 1.23 2021/12/28 15:49:54 robert Exp $
-
 Index: build/config/compiler/BUILD.gn
 --- build/config/compiler/BUILD.gn.orig
 +++ build/config/compiler/BUILD.gn

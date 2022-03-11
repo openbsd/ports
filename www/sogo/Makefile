@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.97 2022/02/28 20:04:04 sebastia Exp $
-
 COMMENT = 	web based groupware server
 
 VERSION =	5.5.1

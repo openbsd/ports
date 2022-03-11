@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/10/25 12:33:20 sthen Exp $
 @conflict pecl-ssh2-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl56-ssh2
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-ssh2,php70

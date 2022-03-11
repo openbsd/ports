@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/25 12:33:20 sthen Exp $
-
 COMMENT=	PHP support for setproctitle
 
 DISTNAME=	proctitle-0.1.2

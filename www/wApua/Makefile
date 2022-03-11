@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:07 sthen Exp $
-
 COMMENT=		browser for wap/wml
 
 DISTNAME=		wApua-0.06

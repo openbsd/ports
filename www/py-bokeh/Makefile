@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/12/07 04:38:32 daniel Exp $
-
 COMMENT=		statistical and novel interactive HTML plots for Python
 
 MODPY_EGG_VERSION=	2.4.2

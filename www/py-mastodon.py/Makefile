@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT =		python wrapper for the Mastodon API
 
 MODPY_EGG_VERSION =	1.5.1

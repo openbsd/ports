@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/07 06:52:09 phessler Exp $
-
 COMMENT =		random assortment of WSGI servers, middleware
 
 MODPY_EGG_VERSION =	1.0.3

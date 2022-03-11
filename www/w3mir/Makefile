@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/17 14:39:44 danj Exp $
-
 COMMENT=		utility to mirror web pages
 
 DISTNAME=		w3mir-1.0.10

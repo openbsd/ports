@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_heap_BlockDirectory_cpp,v 1.1 2021/10/25 07:25:13 ajacoutot Exp $
-
 No mincore(2) on OpenBSD.
 
 Index: Source/JavaScriptCore/heap/BlockDirectory.cpp

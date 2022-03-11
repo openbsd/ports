@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/02 14:47:28 gonzalo Exp $
-
 COMMENT =	proxy that can transliterate japanese
 
 DISTNAME =	japana-2.0.6

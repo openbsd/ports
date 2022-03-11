@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.18 2021/08/01 21:06:54 sthen Exp $
-
 COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
 

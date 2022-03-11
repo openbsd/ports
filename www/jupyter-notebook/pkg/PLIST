@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/01/23 21:41:20 daniel Exp $
 @conflict jupyter-notebook3-*
 @pkgpath www/jupyter-notebook,python3
 bin/jupyter-bundlerextension

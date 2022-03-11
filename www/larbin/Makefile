@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/03/20 16:44:28 naddy Exp $
-
 COMMENT=	little and fast Web crawler
 
 DISTNAME=	larbin-2.6.3

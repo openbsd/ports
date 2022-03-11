@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/07 08:34:21 sthen Exp $
-
 COMMENT =		URI parsing library
 
 GH_ACCOUNT =		uriparser

@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_startup_metric_utils_browser_startup_metric_utils_cc,v 1.6 2021/10/29 14:49:40 robert Exp $
-
 Index: components/startup_metric_utils/browser/startup_metric_utils.cc
 --- components/startup_metric_utils/browser/startup_metric_utils.cc.orig
 +++ components/startup_metric_utils/browser/startup_metric_utils.cc

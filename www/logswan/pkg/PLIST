@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/11 08:31:27 jasper Exp $
 @bin bin/logswan
 @man man/man1/logswan.1
 share/doc/logswan/

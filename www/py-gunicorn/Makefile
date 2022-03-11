@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:02:53 sthen Exp $
-
 COMMENT =		Python WSGI HTTP server
 
 MODPY_EGG_VERSION =	20.0.4

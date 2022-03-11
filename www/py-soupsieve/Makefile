@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/13 10:18:21 sthen Exp $
-
 COMMENT =		modern CSS selector implementation for Beautiful Soup
 
 MODPY_EGG_VERSION =	2.3.1

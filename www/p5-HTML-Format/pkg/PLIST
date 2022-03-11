@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/11/18 20:02:59 benoit Exp $
 ${P5SITE}/HTML/FormatMarkdown.pm
 ${P5SITE}/HTML/FormatPS.pm
 ${P5SITE}/HTML/FormatRTF.pm

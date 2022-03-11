@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 22:26:28 jeremy Exp $
-
 COMMENT =		libsass wrapper for ruby
 
 DISTNAME =		sassc-2.4.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-pelican_tests_test_pelican_py,v 1.3 2018/11/25 19:57:14 danj Exp $
 Index: pelican/tests/test_pelican.py
 --- pelican/tests/test_pelican.py.orig
 +++ pelican/tests/test_pelican.py

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/12/02 11:28:49 sthen Exp $
 @so lib/c_icap/clamav_mod.so
 @so lib/c_icap/clamd_mod.so
 @so lib/c_icap/srv_content_filtering.so

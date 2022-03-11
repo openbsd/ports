@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_views_profiles_signin_view_controller_delegate_views_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
 --- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc

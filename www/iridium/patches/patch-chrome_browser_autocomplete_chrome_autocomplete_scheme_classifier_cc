@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifier_cc,v 1.8 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc
 --- chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc.orig
 +++ chrome/browser/autocomplete/chrome_autocomplete_scheme_classifier.cc

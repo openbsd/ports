@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/14 11:42:45 sthen Exp $
-
 COMMENT =		small addon for python-requests HTTP library
 
 MODPY_EGG_VERSION =	1.0.0

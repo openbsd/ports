@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_config_v8_target_cpu_gni,v 1.6 2021/10/29 14:49:39 robert Exp $
-
 Index: build/config/v8_target_cpu.gni
 --- build/config/v8_target_cpu.gni.orig
 +++ build/config/v8_target_cpu.gni

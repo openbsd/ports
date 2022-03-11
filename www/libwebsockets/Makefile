@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/23 18:12:11 fcambus Exp $
-
 COMMENT =		lightweight C library for fast bi-directional websockets
 
 GH_ACCOUNT =		warmcat

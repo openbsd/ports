@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	sensible default end action for catalyst
 
 MODULES=	cpan

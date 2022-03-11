@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/02 16:19:31 benoit Exp $
-
 COMMENT =	provide a simple Login controller which can be reused
 
 DISTNAME =	CatalystX-SimpleLogin-0.21

@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_updater_installer_cc,v 1.4 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/updater/installer.cc
 --- chrome/updater/installer.cc.orig
 +++ chrome/updater/installer.cc

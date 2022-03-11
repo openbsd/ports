@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.21 2019/11/11 03:21:55 bentley Exp $
-
 CATEGORIES +=	www
 
 # child ports MUST define NETSURF_{PROJECT,VERSION}

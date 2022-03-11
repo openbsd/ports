@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 10:33:59 simon Exp $
 ${P5SITE}/HTML/
 ${P5SITE}/HTML/SBC.pm
 @man man/man3p/HTML::SBC.3p

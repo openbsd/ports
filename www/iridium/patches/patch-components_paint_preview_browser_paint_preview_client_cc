@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_paint_preview_browser_paint_preview_client_cc,v 1.3 2021/12/28 15:49:55 robert Exp $
-
 Index: components/paint_preview/browser/paint_preview_client.cc
 --- components/paint_preview/browser/paint_preview_client.cc.orig
 +++ components/paint_preview/browser/paint_preview_client.cc

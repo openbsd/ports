@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/07/15 16:41:50 sthen Exp $
 @conflict tidyp-<=1.04p1v0
 @bin bin/tidy
 include/tidy.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/01 16:45:49 sthen Exp $
 @pkgpath www/py-aiohttp
 lib/python${MODPY_VERSION}/site-packages/aiohttp/
 lib/python${MODPY_VERSION}/site-packages/aiohttp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

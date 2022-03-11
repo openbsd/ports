@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/07/31 09:05:10 tb Exp $
-
 COMMENT=	c++ compliant CGI applications libraries
 
 DISTNAME =	cgicc-3.2.19

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:57 sthen Exp $
-
 COMMENT= 	HTML widget and validation framework for Catalyst
 
 MODULES=	cpan

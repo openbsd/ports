@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/04/16 20:31:28 espie Exp $
 ${P5SITE}/Rose/URI.pm
 @man man/man3p/Rose::URI.3p

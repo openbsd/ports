@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/22 09:01:00 benoit Exp $
-
 COMMENT =		compile a log format string to perl-code
 
 MODULES =		cpan

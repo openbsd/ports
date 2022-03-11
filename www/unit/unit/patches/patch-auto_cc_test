@@ -1,5 +1,3 @@
-$OpenBSD: patch-auto_cc_test,v 1.1 2021/11/22 14:42:37 sthen Exp $
-
 opt levels / debug should be under control of ports
 disable -Werror as it often causes build issues on less-common archs
 

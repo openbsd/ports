@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
 MODPY_EGG_VERSION =	4.1.0

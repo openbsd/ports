@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/29 17:20:39 bket Exp $
-
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
 DISTNAME =		Pound-2.8a

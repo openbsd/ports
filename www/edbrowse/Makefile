@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/31 19:38:20 fcambus Exp $
-
 COMMENT =	command-line editor and web browser
 
 GH_ACCOUNT =	CMB

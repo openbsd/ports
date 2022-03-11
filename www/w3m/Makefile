@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.96 2021/02/20 16:40:40 sthen Exp $
-
 COMMENT=	pager/text-based web browser
 
 V=		0.5.3

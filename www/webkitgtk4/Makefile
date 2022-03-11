@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.164 2022/02/17 16:54:59 ajacoutot Exp $
-
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk_pc_in

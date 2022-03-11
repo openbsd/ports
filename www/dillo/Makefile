@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2021/10/19 10:20:08 tb Exp $
-
 COMMENT =		fast and light graphical web browser
 
 DISTNAME =		dillo-3.0.5

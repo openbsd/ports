@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_h_bash_c,v 1.1.1.1 2012/10/26 16:32:10 rpe Exp $
-
 If somebody wants to use shell scripts in a chrooted /var/www, use a shell
 builtin instead, to avoid forcing them to copy in ld.so, libc and printf.
 

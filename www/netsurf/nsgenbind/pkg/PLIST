@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/03/06 20:25:42 bentley Exp $
 @bin bin/nsgenbind

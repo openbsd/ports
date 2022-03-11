@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_maldoca_BUILD_gn,v 1.1 2022/02/19 12:24:39 robert Exp $
-
 Index: third_party/maldoca/BUILD.gn
 --- third_party/maldoca/BUILD.gn.orig
 +++ third_party/maldoca/BUILD.gn

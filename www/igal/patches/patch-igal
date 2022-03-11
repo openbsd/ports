@@ -1,5 +1,3 @@
-$OpenBSD: patch-igal,v 1.3 2014/05/11 12:10:03 sthen Exp $
-
 - add jhead support
 - avoid deprecation warnings in newer perl
 

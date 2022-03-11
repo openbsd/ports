@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/08/18 01:39:12 afresh1 Exp $
-
 COMMENT =	compile .cgi scripts to a code reference
 
 DISTNAME =	CGI-Compile-0.25

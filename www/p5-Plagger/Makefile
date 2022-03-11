@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:57 sthen Exp $
-
 COMMENT=	pluggable RSS/Atom aggregator
 
 MODULES=	cpan

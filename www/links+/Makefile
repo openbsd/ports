@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.72 2021/10/19 11:09:03 sthen Exp $
-
 COMMENT=	graphics and text browser
 VER=		2.25
 DISTNAME=	links-${VER}

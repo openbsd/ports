@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/03 20:57:47 tb Exp $
-
 COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
 SHARED_LIBS +=  h2o-evloop           0.0

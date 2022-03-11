@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_memory_discardable_memory_internal_h,v 1.5 2021/10/29 14:49:39 robert Exp $
-
 Index: base/memory/discardable_memory_internal.h
 --- base/memory/discardable_memory_internal.h.orig
 +++ base/memory/discardable_memory_internal.h

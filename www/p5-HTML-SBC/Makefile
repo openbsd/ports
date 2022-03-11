@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:01 sthen Exp $
-
 COMMENT =	simple blog code for valid (X)HTML
 
 MODULES =	cpan

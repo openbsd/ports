@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/05/27 11:38:18 bentley Exp $
-
 COMMENT =		makefiles for building NetSurf
 
 NETSURF_PROJECT =	buildsystem

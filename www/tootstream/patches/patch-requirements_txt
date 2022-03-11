@@ -1,5 +1,3 @@
-$OpenBSD: patch-requirements_txt,v 1.2 2020/09/16 03:23:18 pamela Exp $
-
 Loosen mastodon.py requirement to prevent delay of mastodon 3.1 support.
 
 Index: requirements.txt

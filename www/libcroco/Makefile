@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/11/28 09:34:08 ajacoutot Exp $
-
 # !!! CANNOT BE REMOVED until legacy arches move to the new librsvg version
 
 COMMENT=		generic CSS parsing library for GNOME project

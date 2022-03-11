@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/08 21:58:28 sthen Exp $
 ${P5SITE}/Catalyst/Plugin/
 ${P5SITE}/Catalyst/Plugin/DefaultEnd.pm
 @man man/man3p/Catalyst::Plugin::DefaultEnd.3p

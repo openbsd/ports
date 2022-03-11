@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_tracing_trace_time_cc,v 1.1 2021/10/29 14:49:39 robert Exp $
-
 Index: base/tracing/trace_time.cc
 --- base/tracing/trace_time.cc.orig
 +++ base/tracing/trace_time.cc

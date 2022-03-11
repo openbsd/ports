@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/02 21:40:38 benoit Exp $
-
 COMMENT=	Simple HTML Calendars
 
 MODULES=	cpan

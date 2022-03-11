@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:18 sthen Exp $
-
 COMMENT=	wrapper to run CGI applications via FastCGI
 
 V=		0.2.2

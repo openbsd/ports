@@ -1,4 +1,3 @@
-$OpenBSD: patch-launcher_launchers_in,v 1.2 2016/05/15 13:20:43 landry Exp $
 2nd chunk needed for:
 Error: could not find libjava.so
 Error: Could not find Java SE Runtime Environment.

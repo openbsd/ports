@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 20:50:48 sthen Exp $
-
 V =		2.8.9
 R =		1
 COMMENT =	text web browser

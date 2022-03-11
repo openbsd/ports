@@ -1,5 +1,3 @@
-$OpenBSD: patch-frontend_index_html,v 1.1 2022/01/31 21:50:09 op Exp $
-
 Index: frontend/index.html
 --- frontend/index.html.orig
 +++ frontend/index.html

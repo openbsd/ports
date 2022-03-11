@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 20:57:15 simon Exp $
 ${P5SITE}/LWP/Authen/Wsse.pm
 @man man/man3p/LWP::Authen::Wsse.3p

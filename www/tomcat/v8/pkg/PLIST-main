@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2020/12/03 20:58:53 sthen Exp $
 @option is-branch
 @newgroup _tomcat:526
 @newuser _tomcat:526:_tomcat:daemon:Tomcat Account:/nonexistent:/sbin/nologin

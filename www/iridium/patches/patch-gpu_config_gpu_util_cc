@@ -1,5 +1,3 @@
-$OpenBSD: patch-gpu_config_gpu_util_cc,v 1.1 2021/10/29 14:49:41 robert Exp $
-
 Index: gpu/config/gpu_util.cc
 --- gpu/config/gpu_util.cc.orig
 +++ gpu/config/gpu_util.cc

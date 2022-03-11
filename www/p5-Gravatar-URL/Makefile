@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT =		make URLs for Gravatars from an email address
 
 DISTNAME =		Gravatar-URL-1.07

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:46:03 sthen Exp $
-
 COMMENT=	simple standalone HTTP server
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/08/11 06:06:03 benoit Exp $
-
 COMMENT =	minimalist HTTP user agent cookie jar
 
 DISTNAME =	HTTP-CookieJar-0.012

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
 MODPY_EGG_VERSION =	19.3.3

@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_Makefile_in,v 1.1.1.1 2016/04/26 10:12:29 kirby Exp $
 --- scripts/Makefile.in.orig	Fri Feb  5 17:26:12 2016
 +++ scripts/Makefile.in	Fri Feb  5 17:26:33 2016
 @@ -44,7 +44,7 @@ install-rrdmodify: 

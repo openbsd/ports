@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_shell_browser_shell_extensions_api_client_cc,v 1.6 2021/10/29 14:49:41 robert Exp $
-
 Index: extensions/shell/browser/shell_extensions_api_client.cc
 --- extensions/shell/browser/shell_extensions_api_client.cc.orig
 +++ extensions/shell/browser/shell_extensions_api_client.cc

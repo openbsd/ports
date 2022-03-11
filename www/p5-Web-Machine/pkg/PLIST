@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/01/18 13:37:32 robert Exp $
 @conflict p5-libwww-<6.0
 ${P5SITE}/Web/
 ${P5SITE}/Web/Machine/

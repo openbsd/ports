@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:04 sthen Exp $
-
 COMMENT =	protects rack apps against typical web attacks
 
 DISTNAME =	rack-protection-2.0.0

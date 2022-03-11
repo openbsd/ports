@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/12 06:48:39 jeremy Exp $
-
 COMMENT =	implementation of the WebSocket protocol for ruby
 
 DISTNAME =	websocket-driver-0.7.1

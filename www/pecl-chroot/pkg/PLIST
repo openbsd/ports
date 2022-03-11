@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/25 12:33:19 sthen Exp $
 @conflict pecl-chroot-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-chroot
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-chroot,php56

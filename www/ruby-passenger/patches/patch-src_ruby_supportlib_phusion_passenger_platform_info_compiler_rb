@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ruby_supportlib_phusion_passenger_platform_info_compiler_rb,v 1.2 2019/11/12 06:38:20 jeremy Exp $
 Index: src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb
 --- src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb.orig
 +++ src/ruby_supportlib/phusion_passenger/platform_info/compiler.rb

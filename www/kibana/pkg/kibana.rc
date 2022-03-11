@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: kibana.rc,v 1.8 2020/11/19 20:28:05 pvk Exp $
 
 daemon="${TRUEPREFIX}/kibana/bin/kibana"
 daemon_user="_kibana"

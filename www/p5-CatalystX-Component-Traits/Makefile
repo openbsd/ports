@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:58 sthen Exp $
-
 COMMENT =	automatic trait loading and resolution
 
 MODULES =	cpan

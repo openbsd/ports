@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_runtime_Options_cpp,v 1.7 2021/10/25 07:25:13 ajacoutot Exp $
-
 powerpc and i386 fix for:
 undefined reference to `WTF::Optional<unsigned long>
 JSC::parse<unsigned long>(char const*)'

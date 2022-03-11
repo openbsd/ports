@@ -1,5 +1,3 @@
-$OpenBSD: patch-skia_ext_SkMemory_new_handler_cpp,v 1.16 2021/10/29 14:49:42 robert Exp $
-
 Index: skia/ext/SkMemory_new_handler.cpp
 --- skia/ext/SkMemory_new_handler.cpp.orig
 +++ skia/ext/SkMemory_new_handler.cpp

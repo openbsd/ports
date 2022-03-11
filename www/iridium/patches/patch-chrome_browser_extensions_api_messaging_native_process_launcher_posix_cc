@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_extensions_api_messaging_native_process_launcher_posix_cc,v 1.1 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc
 --- chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc.orig
 +++ chrome/browser/extensions/api/messaging/native_process_launcher_posix.cc

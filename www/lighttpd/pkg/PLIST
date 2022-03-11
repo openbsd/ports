@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.30 2022/01/23 14:43:47 sthen Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/lighttpd

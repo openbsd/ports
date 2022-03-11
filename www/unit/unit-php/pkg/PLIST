@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1 2021/11/19 10:01:02 sthen Exp $
 @so lib/unit/modules/php${MODPHP_VERSION}.unit.so

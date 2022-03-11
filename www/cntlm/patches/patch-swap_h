@@ -1,4 +1,3 @@
-$OpenBSD: patch-swap_h,v 1.1 2012/01/25 22:00:15 dcoppa Exp $
 --- swap.h.orig	Mon Mar 29 01:58:51 2010
 +++ swap.h	Wed Jan 25 15:56:26 2012
 @@ -26,6 +26,7 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-odoo_service_server_py,v 1.2 2020/12/20 19:18:25 robert Exp $
-
 Index: odoo/service/server.py
 --- odoo/service/server.py.orig
 +++ odoo/service/server.py

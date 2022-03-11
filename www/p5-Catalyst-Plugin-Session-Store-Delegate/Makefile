@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:37:53 afresh1 Exp $
-
 COMMENT =	delegate session storage to an application model object
 
 DISTNAME =	Catalyst-Plugin-Session-Store-Delegate-0.06

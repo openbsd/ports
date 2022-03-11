@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gfx_mojom_native_handle_types_mojom_traits_h,v 1.4 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/gfx/mojom/native_handle_types_mojom_traits.h
 --- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.h

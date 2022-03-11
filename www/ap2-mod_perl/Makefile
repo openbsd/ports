@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/02/22 21:41:46 sthen Exp $
-
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
 DISTNAME=	mod_perl-2.0.11

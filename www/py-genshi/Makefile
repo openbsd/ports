@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/02/28 14:57:06 sthen Exp $
-
 COMMENT=	toolkit for generation of output for the web
 
 MODPY_EGG_VERSION= 0.7.6

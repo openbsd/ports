@@ -1,3 +1,2 @@
-# $OpenBSD: unveil.rdd,v 1.1 2021/09/07 13:43:04 landry Exp $
 # shm files
 /tmp rwc

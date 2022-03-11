@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:29 sthen Exp $
-
 COMMENT=		create executable versions of Sinatra/Rack apps
 
 DISTNAME=		vegas-0.1.11

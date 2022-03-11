@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/06/12 12:35:51 sthen Exp $
 @newgroup _tinyproxy:617
 @newuser _tinyproxy:617:_tinyproxy:daemon:tinyproxy:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/log/tinyproxy/tinyproxy.log

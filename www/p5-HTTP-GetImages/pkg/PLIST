@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/09 08:17:17 alek Exp $
 ${P5SITE}/HTTP/GetImages.pm
 @man man/man3p/HTTP::GetImages.3p

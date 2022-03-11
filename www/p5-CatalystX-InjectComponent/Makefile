@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:32:39 afresh1 Exp $
-
 COMMENT =	inject components into your Catalyst application
 
 DISTNAME =	CatalystX-InjectComponent-0.025

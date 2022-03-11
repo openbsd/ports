@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/12/09 23:18:02 sthen Exp $
-
 COMMENT=	web proxy with advanced filtering capabilities
 
 V=		3.0.33

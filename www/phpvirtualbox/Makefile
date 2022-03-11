@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/24 16:49:02 sthen Exp $
-
 COMMENT=		web-based VirtualBox front-end
 	
 GH_PROJECT=		phpvirtualbox

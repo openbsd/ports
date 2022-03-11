@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 16:40:39 espie Exp $
 ${P5SITE}/Catalyst/Plugin/Session/State/
 ${P5SITE}/Catalyst/Plugin/Session/State/URI.pm
 @man man/man3p/Catalyst::Plugin::Session::State::URI.3p

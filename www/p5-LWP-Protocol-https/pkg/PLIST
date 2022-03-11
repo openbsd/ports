@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/10/23 19:33:22 nigel Exp $
 ${P5SITE}/LWP/Protocol/https.pm
 @man man/man3p/LWP::Protocol::https.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_offlineasm_arm64_rb,v 1.7 2021/03/28 07:26:33 ajacoutot Exp $
-
 Index: Source/JavaScriptCore/offlineasm/arm64.rb
 --- Source/JavaScriptCore/offlineasm/arm64.rb.orig
 +++ Source/JavaScriptCore/offlineasm/arm64.rb

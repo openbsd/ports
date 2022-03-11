@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	process and decode WWW forms and cookies
 
 DISTNAME =	CGI-Lite-3.02

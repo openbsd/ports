@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:02 sthen Exp $
-
 COMMENT =		faster implementation of HTTP::Headers
 
 MODULES =		cpan

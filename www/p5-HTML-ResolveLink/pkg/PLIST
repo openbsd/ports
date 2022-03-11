@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/25 21:30:27 simon Exp $
 ${P5SITE}/HTML/ResolveLink.pm
 @man man/man3p/HTML::ResolveLink.3p

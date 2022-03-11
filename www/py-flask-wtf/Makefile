@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/03/04 21:45:20 sthen Exp $
-
 COMMENT=	simple integration of Flask and WTForms
 
 MODPY_EGG_VERSION=1.0.0

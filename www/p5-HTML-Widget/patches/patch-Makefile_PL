@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2007/06/02 15:32:00 simon Exp $
 --- Makefile.PL.orig	Fri Sep 22 13:22:06 2006
 +++ Makefile.PL	Tue Nov  7 16:52:42 2006
 @@ -4,18 +4,18 @@ name 'HTML-Widget';

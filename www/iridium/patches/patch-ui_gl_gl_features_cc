@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_gl_gl_features_cc,v 1.4 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/gl/gl_features.cc
 --- ui/gl/gl_features.cc.orig
 +++ ui/gl/gl_features.cc

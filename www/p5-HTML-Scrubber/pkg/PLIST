@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/11/21 08:28:18 sturm Exp $
 ${P5SITE}/HTML/Scrubber.pm
 @man man/man3p/HTML::Scrubber.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:29 sthen Exp $
-
 COMMENT =	middleware for Ruby Faraday
 
 DISTNAME =	faraday_middleware-0.12.2

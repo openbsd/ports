@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/09 04:08:06 afresh1 Exp $
-
 COMMENT =	Catalyst integration for HTML::FormFu
 
 MODULES =	cpan

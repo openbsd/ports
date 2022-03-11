@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/01 21:00:08 ajacoutot Exp $
-
 COMMENT =	Fast & minimal low-level HTTP client
 
 MODULES =	cpan

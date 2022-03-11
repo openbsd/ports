@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in,v 1.5 2021/10/25 07:25:13 ajacoutot Exp $
-
 Index: Source/WebKit/gtk/webkit2gtk-web-extension.pc.in
 --- Source/WebKit/gtk/webkit2gtk-web-extension.pc.in.orig
 +++ Source/WebKit/gtk/webkit2gtk-web-extension.pc.in

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_platform_graphics_FontSelectionAlgorithm_h,v 1.3 2021/10/25 07:25:13 ajacoutot Exp $
-
 XXX libstdc++ from gcc-4.9.4 doesn't yet decorate std::min/std::max
 with constexpr
 

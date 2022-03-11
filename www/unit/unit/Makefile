@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/06 20:37:20 sthen Exp $
-
 COMMENT=	dynamic web application server
 
 WANTLIB=	c crypto m pcre2-8 pthread ssl

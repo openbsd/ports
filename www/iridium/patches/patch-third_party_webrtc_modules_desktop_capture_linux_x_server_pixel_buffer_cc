@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_webrtc_modules_desktop_capture_linux_x_server_pixel_buffer_cc,v 1.5 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/webrtc/modules/desktop_capture/linux/x_server_pixel_buffer.cc
 --- third_party/webrtc/modules/desktop_capture/linux/x_server_pixel_buffer.cc.orig
 +++ third_party/webrtc/modules/desktop_capture/linux/x_server_pixel_buffer.cc

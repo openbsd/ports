@@ -1,5 +1,3 @@
-$OpenBSD: patch-v8_include_v8config_h,v 1.5 2021/10/29 14:49:43 robert Exp $
-
 Index: v8/include/v8config.h
 --- v8/include/v8config.h.orig
 +++ v8/include/v8config.h

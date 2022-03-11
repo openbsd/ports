@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/03 08:37:39 paco Exp $
 bin/ephemetoot
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

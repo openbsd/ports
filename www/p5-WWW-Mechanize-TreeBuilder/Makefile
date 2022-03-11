@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:46:06 sthen Exp $
-
 COMMENT= 	combines WWW::Mechanize and HTML::TreeBuilder
 
 MODULES=	cpan

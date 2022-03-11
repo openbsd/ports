@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:46:03 sthen Exp $
-
 COMMENT=	httpd log filter library
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-misc_python3-config_sh,v 1.1 2020/09/01 16:50:50 fcambus Exp $
-
 Index: misc/python3-config.sh
 --- misc/python3-config.sh.orig
 +++ misc/python3-config.sh

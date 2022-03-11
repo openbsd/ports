@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: honk.rc,v 1.7 2022/03/02 07:31:01 sdk Exp $
 
 daemon="${TRUEPREFIX}/bin/honk"
 daemon_flags="-datadir ${VARBASE}/honk -viewdir ${VARBASE}/honk"

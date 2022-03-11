@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:58 sthen Exp $
-
 COMMENT=	per-user session for catalyst
 
 MODULES=	cpan

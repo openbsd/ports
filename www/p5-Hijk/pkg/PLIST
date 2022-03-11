@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/30 18:14:25 giovanni Exp $
 ${P5SITE}/Hijk.pm
 @man man/man3p/Hijk.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	persistent session data in CGI applications
 
 MODULES=	cpan

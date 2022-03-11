@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_thttpd_h,v 1.1.1.1 2013/08/10 02:48:26 brad Exp $
 --- src/thttpd.h.orig	Sun Aug  5 04:59:29 2012
 +++ src/thttpd.h	Sun Aug  5 04:59:46 2012
 @@ -237,7 +237,7 @@

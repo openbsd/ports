@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/06/30 21:38:31 sthen Exp $
-
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
 CATEGORIES=	www

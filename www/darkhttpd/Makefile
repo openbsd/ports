@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/16 00:16:57 kmos Exp $
-
 COMMENT=	simple and small webserver intended for ad-hoc usage
 
 CATEGORIES=	www

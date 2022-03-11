@@ -1,5 +1,3 @@
-$OpenBSD: patch-taskcluster_docker_firefox-snap_firefox_desktop,v 1.2 2020/11/17 16:07:08 landry Exp $
-
 set full path to icon
 
 Index: taskcluster/docker/firefox-snap/firefox.desktop

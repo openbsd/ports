@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/05 12:59:55 jasper Exp $
-
 COMMENT =		libsass command line driver
 
 GH_ACCOUNT =		sass

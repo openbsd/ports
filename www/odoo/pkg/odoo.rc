@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: odoo.rc,v 1.2 2021/11/09 07:39:08 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/odoo"
 daemon_flags="-c ${SYSCONFDIR}/odoo/odoo.conf"

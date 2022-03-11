@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: vnu.rc,v 1.1.1.1 2018/09/10 06:50:04 bentley Exp $
 
 daemon="${TRUEPREFIX}/share/vnu/vnu.jar"
 daemon_user="_vnu"

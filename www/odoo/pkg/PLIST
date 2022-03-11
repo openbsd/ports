@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2022/01/16 07:38:18 denis Exp $
 @newgroup _odoo:836
 @newuser _odoo:836:836:daemon:odoo user:/var/odoo:/sbin/nologin
 @rcscript ${RCDIR}/odoo

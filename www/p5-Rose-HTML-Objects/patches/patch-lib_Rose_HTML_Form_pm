@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Rose_HTML_Form_pm,v 1.2 2010/01/10 13:45:04 espie Exp $
 --- lib/Rose/HTML/Form.pm.orig	Mon Nov  9 20:47:51 2009
 +++ lib/Rose/HTML/Form.pm	Sun Jan 10 14:20:58 2010
 @@ -4,7 +4,7 @@ use strict;

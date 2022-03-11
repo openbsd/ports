@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.no-debug-main,v 1.1 2010/10/27 13:02:39 landry Exp $
 @lib ${MOZILLA_PROJECT}/components/libmail.so.${LIBmail_VERSION}

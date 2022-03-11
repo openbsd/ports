@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:54 sthen Exp $
-
 COMMENT=	use HTML Templates which allows expressions
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-$OpenBSD: patch-path_h,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- path.h.orig	Fri Jul 24 17:03:13 1998
 +++ path.h	Wed Aug 22 11:32:59 2001
 @@ -7,6 +7,6 @@

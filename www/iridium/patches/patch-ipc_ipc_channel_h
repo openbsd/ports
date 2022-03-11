@@ -1,5 +1,3 @@
-$OpenBSD: patch-ipc_ipc_channel_h,v 1.9 2021/10/29 14:49:41 robert Exp $
-
 Index: ipc/ipc_channel.h
 --- ipc/ipc_channel.h.orig
 +++ ipc/ipc_channel.h

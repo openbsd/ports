@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:18 sthen Exp $
-
 # note, this isn't really maintained upstream any more
 # see e2guardian.org for a maintained fork
 

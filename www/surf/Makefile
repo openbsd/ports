@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/12/27 19:20:53 jung Exp $
-
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf-2.1

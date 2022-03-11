@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2020/03/10 21:25:07 sthen Exp $
-
 CATEGORIES+=	www
 
 HOMEPAGE?=	http://c-icap.sourceforge.net/

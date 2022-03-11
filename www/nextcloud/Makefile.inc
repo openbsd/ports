@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.1 2021/03/17 18:54:56 sthen Exp $
-
 COMMENT=		easy and universal access to shared and/or personal files
 
 V=			${NC_VERSION}

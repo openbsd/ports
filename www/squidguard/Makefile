@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/04 15:25:50 sthen Exp $
-
 COMMENT =		filter, redirector and access controller for Squid
 
 V =			1.6.0

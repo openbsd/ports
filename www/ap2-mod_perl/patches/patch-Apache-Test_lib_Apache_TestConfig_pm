@@ -1,5 +1,3 @@
-$OpenBSD: patch-Apache-Test_lib_Apache_TestConfig_pm,v 1.2 2021/02/22 21:41:46 sthen Exp $
-
 Index: Apache-Test/lib/Apache/TestConfig.pm
 --- Apache-Test/lib/Apache/TestConfig.pm.orig
 +++ Apache-Test/lib/Apache/TestConfig.pm

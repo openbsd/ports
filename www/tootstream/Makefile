@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:56 sthen Exp $
-
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
 MODPY_EGG_VERSION =	0.3.8.1

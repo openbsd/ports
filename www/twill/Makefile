@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/29 12:47:50 sthen Exp $
-
 COMMENT=		simple scripting language for web browsing
 
 DISTNAME=		twill-0.9

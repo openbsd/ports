@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/03/09 20:15:32 bluhm Exp $
-
 COMMENT =	simple http server class
 
 DISTNAME =	HTTP-Daemon-6.14

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/04/28 15:48:59 tracey Exp $
-
 COMMENT =	pure Perl HTTP client
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/30 14:16:48 kmos Exp $
-
 COMMENT =		utility library for mocking out the `requests` Python
 
 MODPY_EGG_VERSION =	0.17.0

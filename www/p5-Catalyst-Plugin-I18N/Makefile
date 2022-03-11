@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:57 sthen Exp $
-
 COMMENT=	I18N for Catalyst
 
 MODULES=	cpan

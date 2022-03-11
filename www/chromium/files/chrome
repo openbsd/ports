@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.20 2020/07/29 14:16:42 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lua-nginx-module_src_ngx_http_lua_ssl_certby_c,v 1.1 2021/09/10 15:19:00 tb Exp $
-
 Use SSL_version() instead of TLS1_get_version().
 https://github.com/openresty/lua-nginx-module/commit/bb76eb123b4a80324e527062d71fe9d3f4c86d25
 

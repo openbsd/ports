@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_LYReadCFG_c,v 1.7 2018/05/18 14:22:07 fcambus Exp $
 Index: src/LYReadCFG.c
 --- src/LYReadCFG.c.orig
 +++ src/LYReadCFG.c

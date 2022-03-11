@@ -1,4 +1,3 @@
-$OpenBSD: patch-filter_c,v 1.3 2018/08/04 09:19:35 kn Exp $
 Wtf.
 Index: filter.c
 --- filter.c.orig

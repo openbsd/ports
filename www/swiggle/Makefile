@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:06 sthen Exp $
-
 COMMENT = 		simple web image gallery generator
 
 DISTNAME =		swiggle-0.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:55 sthen Exp $
-
 COMMENT =		terminals served to term.js using Tornado websockets
 
 MODPY_EGG_VERSION =	0.8.3

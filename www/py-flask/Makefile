@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2022/03/04 21:56:22 sthen Exp $
-
 COMMENT =		microframework based on Werkzeug and Jinja 2
 
 MODPY_EGG_VERSION =	2.0.3

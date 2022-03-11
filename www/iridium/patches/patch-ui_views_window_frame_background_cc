@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_views_window_frame_background_cc,v 1.10 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/views/window/frame_background.cc
 --- ui/views/window/frame_background.cc.orig
 +++ ui/views/window/frame_background.cc

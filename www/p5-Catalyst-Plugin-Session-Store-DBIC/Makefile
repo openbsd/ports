@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:40:44 afresh1 Exp $
-
 COMMENT =	store your sessions via DBIx::Class
 
 DISTNAME =	Catalyst-Plugin-Session-Store-DBIC-0.14

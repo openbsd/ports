@@ -1,5 +1,3 @@
-$OpenBSD: patch-weblayer_browser_browser_main_parts_impl_cc,v 1.8 2021/12/28 15:49:56 robert Exp $
-
 Index: weblayer/browser/browser_main_parts_impl.cc
 --- weblayer/browser/browser_main_parts_impl.cc.orig
 +++ weblayer/browser/browser_main_parts_impl.cc

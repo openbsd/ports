@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_testutils_domtsasserts_c,v 1.1 2016/03/06 20:27:24 bentley Exp $
 http://bugs.netsurf-browser.org/mantis/view.php?id=2431
 --- test/testutils/domtsasserts.c.orig	Sun Feb 21 04:47:54 2016
 +++ test/testutils/domtsasserts.c	Sun Feb 21 04:48:08 2016

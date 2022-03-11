@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:06:47 sthen Exp $
 ${P5SITE}/Plack/Middleware/ReverseProxy.pm
 @man man/man3p/Plack::Middleware::ReverseProxy.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-terminado_management_py,v 1.1 2020/02/25 20:28:45 bket Exp $
-
 Don't call getpgid() when killing a test. Taken from
 https://github.com/jupyter/terminado/pull/72.
 

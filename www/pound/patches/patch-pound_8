@@ -1,4 +1,3 @@
-$OpenBSD: patch-pound_8,v 1.5 2018/04/25 18:08:57 bket Exp $
 Index: pound.8
 --- pound.8.orig
 +++ pound.8

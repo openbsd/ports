@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/06/27 21:04:05 espie Exp $
 @bin bin/dillo
 bin/dillo-install-hyphenation
 @bin bin/dpid

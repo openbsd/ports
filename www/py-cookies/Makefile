@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:53 sthen Exp $
-
 COMMENT =	friendlier RFC 6265-compliant cookie parser/renderer
 
 MODPY_EGG_VERSION =	2.2.1

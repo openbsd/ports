@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2022/02/28 10:55:07 sthen Exp $
-
 COMMENT =		keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION =	2.4.0

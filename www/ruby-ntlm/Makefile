@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/15 21:33:52 sebastia Exp $
-
 COMMENT =		creator/parser for the NTLM authentication
 
 DISTNAME =		rubyntlm-0.6.3

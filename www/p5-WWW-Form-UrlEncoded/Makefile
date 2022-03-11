@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:06 sthen Exp $
-
 COMMENT =	parser and builder for application/x-www-form-urlencoded
 
 DISTNAME =	WWW-Form-UrlEncoded-0.26

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/06 14:13:00 kirby Exp $
-
 COMMENT=		free real-time logfile analyzer
 
 DISTNAME=		awstats-7.7

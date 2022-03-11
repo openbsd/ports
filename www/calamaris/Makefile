@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/03/05 12:33:36 sthen Exp $
-
 COMMENT=		proxy-cache-servers logfiles analizer
 
 # 2.99.x are v3 betas

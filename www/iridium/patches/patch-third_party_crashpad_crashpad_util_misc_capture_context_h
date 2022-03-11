@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_crashpad_crashpad_util_misc_capture_context_h,v 1.9 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/crashpad/crashpad/util/misc/capture_context.h
 --- third_party/crashpad/crashpad/util/misc/capture_context.h.orig
 +++ third_party/crashpad/crashpad/util/misc/capture_context.h

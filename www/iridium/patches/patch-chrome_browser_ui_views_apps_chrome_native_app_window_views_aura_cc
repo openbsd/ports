@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_views_apps_chrome_native_app_window_views_aura_cc,v 1.14 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 --- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	Catalyst FormBuilder Base Controller
 
 MODULES=	cpan

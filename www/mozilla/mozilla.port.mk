@@ -1,5 +1,3 @@
-# $OpenBSD: mozilla.port.mk,v 1.144 2022/02/08 14:00:16 landry Exp $
-
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
 # gcc does ICE on alpha at some particular spots:

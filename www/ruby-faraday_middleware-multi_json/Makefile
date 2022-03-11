@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:29 sthen Exp $
-
 COMMENT =	Faraday response parser using MultiJson
 
 DISTNAME =	faraday_middleware-multi_json-0.0.6

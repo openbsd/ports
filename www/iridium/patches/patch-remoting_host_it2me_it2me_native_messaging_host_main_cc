@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_host_it2me_it2me_native_messaging_host_main_cc,v 1.10 2021/10/29 14:49:41 robert Exp $
-
 Index: remoting/host/it2me/it2me_native_messaging_host_main.cc
 --- remoting/host/it2me/it2me_native_messaging_host_main.cc.orig
 +++ remoting/host/it2me/it2me_native_messaging_host_main.cc

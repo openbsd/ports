@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_extensions_external_provider_impl_cc,v 1.18 2021/12/28 15:49:54 robert Exp $
-
 Index: chrome/browser/extensions/external_provider_impl.cc
 --- chrome/browser/extensions/external_provider_impl.cc.orig
 +++ chrome/browser/extensions/external_provider_impl.cc

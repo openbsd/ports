@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT =	tiny LRU cache implementation and decorator
 
 MODPY_EGG_VERSION = 0.6

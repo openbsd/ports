@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_test_chromedriver_chrome_launcher_cc,v 1.7 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/test/chromedriver/chrome_launcher.cc
 --- chrome/test/chromedriver/chrome_launcher.cc.orig
 +++ chrome/test/chromedriver/chrome_launcher.cc

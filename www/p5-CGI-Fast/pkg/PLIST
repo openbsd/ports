@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/12 23:55:26 bluhm Exp $
 ${P5SITE}/CGI/Fast.pm
 @man man/man3p/CGI::Fast.3p

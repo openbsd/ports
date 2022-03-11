@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_files_file_util_posix_cc,v 1.9 2021/10/29 14:49:39 robert Exp $
-
 Index: base/files/file_util_posix.cc
 --- base/files/file_util_posix.cc.orig
 +++ base/files/file_util_posix.cc

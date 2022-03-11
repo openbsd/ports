@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_nginx_8,v 1.6 2021/05/25 19:43:56 sthen Exp $
-
 Index: man/nginx.8
 --- man/nginx.8.orig
 +++ man/nginx.8

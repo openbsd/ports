@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/03/04 21:35:39 sthen Exp $
-
 COMMENT =		CORS handling for flask
 
 MODPY_EGG_VERSION =	3.0.10

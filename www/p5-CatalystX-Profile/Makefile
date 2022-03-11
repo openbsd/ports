@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:34:06 afresh1 Exp $
-
 COMMENT =	profile your Catalyst application with Devel::NYTProf
 
 DISTNAME =	CatalystX-Profile-0.02

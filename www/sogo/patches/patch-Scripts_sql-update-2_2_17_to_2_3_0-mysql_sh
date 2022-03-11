@@ -1,4 +1,3 @@
-$OpenBSD: patch-Scripts_sql-update-2_2_17_to_2_3_0-mysql_sh,v 1.2 2015/10/23 07:53:46 sebastia Exp $
 --- Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh.orig	Wed Sep 16 20:41:29 2015
 +++ Scripts/sql-update-2.2.17_to_2.3.0-mysql.sh	Fri Oct 23 09:40:35 2015
 @@ -1,4 +1,4 @@

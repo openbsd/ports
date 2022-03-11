@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_metrics_perf_cpu_identity_cc,v 1.1 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/metrics/perf/cpu_identity.cc
 --- chrome/browser/metrics/perf/cpu_identity.cc.orig
 +++ chrome/browser/metrics/perf/cpu_identity.cc

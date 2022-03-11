@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/07/15 16:51:22 sthen Exp $
-
 COMMENT =		lightweight HTTP/SSL proxy
 
 V =			1.11.0

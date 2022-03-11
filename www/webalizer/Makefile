@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2019/11/07 21:50:52 fcambus Exp $
-
 COMMENT=	web server log file analysis program
 
 RB_V=		30

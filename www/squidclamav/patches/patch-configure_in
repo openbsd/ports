@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.3 2017/09/25 10:12:42 sthen Exp $
-
 upstream changed default config directory in 6.12; put this back to avoid
 users having to make changes
 

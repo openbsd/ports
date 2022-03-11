@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/16 07:38:18 denis Exp $
-
 COMMENT=		all-in-one management software
 
 MV=			13.0

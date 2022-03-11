@@ -1,5 +1,3 @@
-$OpenBSD: patch-chromecast_renderer_cast_content_renderer_client_cc,v 1.6 2021/12/28 15:49:55 robert Exp $
-
 Index: chromecast/renderer/cast_content_renderer_client.cc
 --- chromecast/renderer/cast_content_renderer_client.cc.orig
 +++ chromecast/renderer/cast_content_renderer_client.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-sope-appserver_NGObjWeb_WebDAV_GNUmakefile_preamble,v 1.1.1.1 2010/10/06 11:05:41 sebastia Exp $
-
 decouple sope version from library interface version.
 
 --- sope-appserver/NGObjWeb/WebDAV/GNUmakefile.preamble.orig	Sun Sep 26 14:16:41 2010

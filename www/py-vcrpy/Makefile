@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:56 sthen Exp $
-
 COMMENT =		automatically mock HTTP interactions to speed testing
 
 MODPY_EGG_VERSION =	2.1.1

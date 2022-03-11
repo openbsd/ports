@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.116 2021/11/02 00:02:51 sthen Exp $
-
 COMMENT=		simple GTK desktop news aggregator
 
 V=			1.12.9

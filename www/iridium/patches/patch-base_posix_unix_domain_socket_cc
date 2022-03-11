@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_posix_unix_domain_socket_cc,v 1.8 2021/10/29 14:49:39 robert Exp $
-
 Index: base/posix/unix_domain_socket.cc
 --- base/posix/unix_domain_socket.cc.orig
 +++ base/posix/unix_domain_socket.cc

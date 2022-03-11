@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/02 18:53:23 bluhm Exp $
 ${P5SITE}/HTTP/Response/
 ${P5SITE}/HTTP/Response/Encoding.pm
 @man man/man3p/HTTP::Response::Encoding.3p

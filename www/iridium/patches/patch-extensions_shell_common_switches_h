@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_shell_common_switches_h,v 1.6 2021/10/29 14:49:41 robert Exp $
-
 Index: extensions/shell/common/switches.h
 --- extensions/shell/common/switches.h.orig
 +++ extensions/shell/common/switches.h

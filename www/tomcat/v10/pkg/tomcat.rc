@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: tomcat.rc,v 1.1 2022/01/25 11:12:26 sthen Exp $
 
 daemon="${TRUEPREFIX}/tomcat/bin/catalina.sh"
 daemon_flags="-server"

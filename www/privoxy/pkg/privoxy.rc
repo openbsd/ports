@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: privoxy.rc,v 1.5 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/privoxy"
 daemon_flags="--user _privoxy --chroot --pre-chroot-nslookup www.google.com ${SYSCONFDIR}/privoxy/config"

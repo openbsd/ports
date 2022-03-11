@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/19 14:06:51 cwen Exp $
-
 COMMENT =	automated REST Method Dispatching
 
 DISTNAME =	Catalyst-Action-REST-1.21

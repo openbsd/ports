@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:01 sthen Exp $
-
 COMMENT=	HTML cleaning module
 
 MODULES=	cpan

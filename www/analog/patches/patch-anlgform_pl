@@ -1,4 +1,3 @@
-$OpenBSD: patch-anlgform_pl,v 1.3 2007/05/30 22:33:11 naddy Exp $
 --- anlgform.pl.orig	Sun Dec 19 06:51:22 2004
 +++ anlgform.pl	Wed May 30 16:26:18 2007
 @@ -52,6 +52,8 @@ $lt = localtime;

@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_mruby_Rakefile,v 1.1 2021/09/01 18:17:21 jeremy Exp $
-
 Fix build with Ruby 3.0.
 
 Index: deps/mruby/Rakefile

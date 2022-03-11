@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:46:04 sthen Exp $
-
 COMMENT=	simple means to move data between Perl and PHP
 
 MODULES=	cpan

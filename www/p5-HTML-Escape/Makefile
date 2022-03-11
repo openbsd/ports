@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:00 sthen Exp $
-
 COMMENT =	extremely fast HTML escaping
 
 DISTNAME =	HTML-Escape-1.10

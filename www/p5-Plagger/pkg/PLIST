@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/22 20:28:17 jasper Exp $
 bin/plagger
 bin/plagger-ircbot
 ${P5SITE}/Plagger/

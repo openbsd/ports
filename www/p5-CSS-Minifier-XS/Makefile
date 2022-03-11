@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	XS based CSS minifier
 
 MODULES=	cpan

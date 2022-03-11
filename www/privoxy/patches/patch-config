@@ -1,5 +1,3 @@
-$OpenBSD: patch-config,v 1.11 2020/11/29 19:08:14 sthen Exp $
-
 Index: config
 --- config.orig
 +++ config

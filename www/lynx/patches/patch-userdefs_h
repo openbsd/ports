@@ -1,4 +1,3 @@
-$OpenBSD: patch-userdefs_h,v 1.2 2016/09/04 13:35:02 fcambus Exp $
 --- userdefs.h.orig	Mon Apr 11 02:42:17 2016
 +++ userdefs.h	Sun Jun  5 00:31:29 2016
 @@ -129,8 +129,8 @@

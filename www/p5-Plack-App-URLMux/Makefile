@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:05 sthen Exp $
-
 COMMENT =	map multiple applications in defferent url path
 
 DISTNAME =	Plack-App-URLMux-0.08

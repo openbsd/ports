@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_perl_modperl_perl_c,v 1.3 2021/02/22 21:41:46 sthen Exp $
-
 https://github.com/Perl/perl5/issues/18555 suggests this code was not
 doing what it was supposed to anyway, and it doesn't work following
 https://github.com/Perl/perl5/commit/99922edd6efbb4dc3e922ed2fc72d0748d575c29

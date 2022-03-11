@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.131 2022/02/23 16:10:46 robert Exp $
-
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes

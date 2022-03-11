@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/04 09:10:30 tb Exp $
-
 COMMENT =		simple, fast, threaded webserver for rack applications
 
 DISTNAME =		puma-5.3.2

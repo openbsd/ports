@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample_config_s,v 1.1 2005/03/09 06:09:47 jolan Exp $
 --- sample.config.s.orig	Sat Feb 12 21:46:52 2005
 +++ sample.config.s	Sat Feb 12 21:47:04 2005
 @@ -57,8 +57,8 @@

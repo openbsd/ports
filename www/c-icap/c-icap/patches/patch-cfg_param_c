@@ -1,4 +1,3 @@
-$OpenBSD: patch-cfg_param_c,v 1.5 2017/07/04 11:06:27 sthen Exp $
 --- cfg_param.c.orig	Mon Mar 13 11:05:50 2017
 +++ cfg_param.c	Tue Mar 28 14:28:18 2017
 @@ -53,8 +53,8 @@ struct ci_server_conf CI_CONF = {

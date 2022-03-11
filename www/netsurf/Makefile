@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2017/11/04 22:28:01 bentley Exp $
-
      SUBDIR += browser
      SUBDIR += buildsystem
      SUBDIR += hubbub

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: npcd.rc,v 1.4 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/npcd -d"
 daemon_flags="-f ${SYSCONFDIR}/npcd.cfg"

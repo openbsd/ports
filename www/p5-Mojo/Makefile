@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2020/12/30 12:09:55 sthen Exp $
-
 COMMENT =	next generation web framework for Perl
 
 MODULES =	cpan

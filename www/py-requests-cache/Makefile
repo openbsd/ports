@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:55 sthen Exp $
-
 COMMENT =		transparent persistent cache for the py-requests library
 MODPY_EGG_VERSION =	0.5.2
 DISTNAME =		requests-cache-${MODPY_EGG_VERSION}

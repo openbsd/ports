@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	handle CSS with little overhead
 
 MODULES=	cpan

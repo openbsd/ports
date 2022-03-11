@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:55 sthen Exp $
-
 COMMENT =	splits big cookies into small pieces
 
 MODULES =	cpan

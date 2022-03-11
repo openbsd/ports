@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_gn_build_build_linux_ninja_template,v 1.9 2021/10/29 14:49:42 robert Exp $
-
 Index: tools/gn/build/build_linux.ninja.template
 --- tools/gn/build/build_linux.ninja.template.orig
 +++ tools/gn/build/build_linux.ninja.template

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT=		simple WSGI-framework for small web-applications
 
 MODPY_EGG_VERSION=	0.12.19

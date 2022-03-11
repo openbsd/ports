@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/26 22:59:59 afresh1 Exp $
-
 COMMENT =	Handle Common Gateway Interface requests and responses
 DISTNAME =	CGI-4.53
 CATEGORIES =	www

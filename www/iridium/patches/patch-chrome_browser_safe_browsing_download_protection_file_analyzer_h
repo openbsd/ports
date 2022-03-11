@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_safe_browsing_download_protection_file_analyzer_h,v 1.1 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/safe_browsing/download_protection/file_analyzer.h
 --- chrome/browser/safe_browsing/download_protection/file_analyzer.h.orig
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.h

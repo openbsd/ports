@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/21 09:28:20 fcambus Exp $
 include/gumbo.h
 include/tag_enum.h
 lib/libgumbo.a

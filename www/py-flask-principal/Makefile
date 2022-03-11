@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:53 sthen Exp $
-
 COMMENT =		identity management for flask
 
 MODPY_EGG_VERSION =	0.4.0

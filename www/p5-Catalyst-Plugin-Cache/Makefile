@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/09 03:40:14 afresh1 Exp $
-
 COMMENT =	flexible caching support for Catalyst
 
 MODULES =	cpan

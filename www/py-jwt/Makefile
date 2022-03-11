@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/12/07 10:45:33 sthen Exp $
-
 COMMENT =	JSON Web Token implementation in Python
 
 MODPY_EGG_VERSION = 2.3.0

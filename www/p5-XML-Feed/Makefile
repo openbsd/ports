@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/06 15:52:07 sthen Exp $
-
 COMMENT= 	interface to RSS and Atom feeds
 
 MODULES=	cpan

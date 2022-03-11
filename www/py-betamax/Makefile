@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT =		VCR imitation for python-requests
 
 MODPY_EGG_VERSION =	0.8.1

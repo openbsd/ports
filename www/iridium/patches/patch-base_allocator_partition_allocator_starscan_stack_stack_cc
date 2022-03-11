@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_allocator_partition_allocator_starscan_stack_stack_cc,v 1.1 2021/10/29 14:49:39 robert Exp $
-
 Index: base/allocator/partition_allocator/starscan/stack/stack.cc
 --- base/allocator/partition_allocator/starscan/stack/stack.cc.orig
 +++ base/allocator/partition_allocator/starscan/stack/stack.cc

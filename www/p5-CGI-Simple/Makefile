@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/12 22:47:04 bluhm Exp $
-
 COMMENT =	drop-in object-oriented CGI.pm replacement
 
 MODULES =	cpan

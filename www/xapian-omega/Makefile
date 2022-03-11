@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/01/09 12:12:42 sthen Exp $
-
 COMMENT=	web search application
 
 V=		1.4.19

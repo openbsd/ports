@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_dawn_src_common_Platform_h,v 1.2 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/dawn/src/common/Platform.h
 --- third_party/dawn/src/common/Platform.h.orig
 +++ third_party/dawn/src/common/Platform.h

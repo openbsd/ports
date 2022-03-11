@@ -1,4 +1,3 @@
-$OpenBSD: patch-webalizer_c,v 1.6 2021/02/02 12:09:49 sthen Exp $
 Index: webalizer.c
 --- webalizer.c.orig
 +++ webalizer.c

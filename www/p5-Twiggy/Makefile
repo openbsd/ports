@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:46:06 sthen Exp $
-
 COMMENT =		AnyEvent HTTP server for PSGI (like Thin)
 
 MODULES =		cpan

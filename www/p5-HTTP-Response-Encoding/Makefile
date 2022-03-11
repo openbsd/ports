@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:46:03 sthen Exp $
-
 COMMENT =		add encoding to HTTP::Response
 
 DISTNAME =		HTTP-Response-Encoding-0.06

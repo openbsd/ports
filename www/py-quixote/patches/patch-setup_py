@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.2 2009/06/03 02:13:30 wcmaier Exp $
 --- setup.py.orig	Fri Nov 28 22:50:56 2008
 +++ setup.py	Mon Jun  1 23:34:02 2009
 @@ -1,9 +1,9 @@

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/09/18 09:02:39 espie Exp $
 ${P5SITE}/HTML/Prototype/
 ${P5SITE}/HTML/Prototype.pm
 ${P5SITE}/HTML/Prototype/Controls.pm

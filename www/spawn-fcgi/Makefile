@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/20 18:44:19 sthen Exp $
-
 COMMENT=	spawn FastCGI processes
 
 DISTNAME=	spawn-fcgi-1.6.4

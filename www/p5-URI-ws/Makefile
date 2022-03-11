@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/21 22:38:14 bluhm Exp $
-
 COMMENT =	WebSocket support for URI package
 
 DISTNAME =	URI-ws-0.03

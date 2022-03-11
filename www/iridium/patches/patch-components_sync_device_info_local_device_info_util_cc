@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_sync_device_info_local_device_info_util_cc,v 1.6 2021/10/29 14:49:40 robert Exp $
-
 Index: components/sync_device_info/local_device_info_util.cc
 --- components/sync_device_info/local_device_info_util.cc.orig
 +++ components/sync_device_info/local_device_info_util.cc

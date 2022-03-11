@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:18 sthen Exp $
-
 COMMENT=	query Apache logfiles via SQL
 
 DISTNAME=	asql-1.7

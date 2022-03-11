@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/07/06 19:33:21 cwen Exp $
-
 COMMENT=	text mode rss and atom newsreader
 CATEGORIES=	www
 

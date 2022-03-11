@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_audio_audio_features_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
-
 Index: media/audio/audio_features.cc
 --- media/audio/audio_features.cc.orig
 +++ media/audio/audio_features.cc

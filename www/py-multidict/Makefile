@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/28 15:12:52 sthen Exp $
-
 COMMENT =		multidict implementation
 
 MODPY_EGG_VERSION =	6.0.2

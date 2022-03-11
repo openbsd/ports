@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/22 21:41:46 sthen Exp $
 @conflict p5-Apache-Test-*
 @conflict p5-Apache-Reload-*
 @pkgpath www/p5-Apache-Test

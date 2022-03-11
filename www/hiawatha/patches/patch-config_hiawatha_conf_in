@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_hiawatha_conf_in,v 1.5 2016/10/07 01:49:28 juanfra Exp $
 --- config/hiawatha.conf.in.orig	Thu Oct  6 16:59:29 2016
 +++ config/hiawatha.conf.in	Fri Oct  7 03:24:03 2016
 @@ -12,6 +12,7 @@

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/17 18:46:50 afresh1 Exp $
 ${P5SITE}/WWW/OAuth/
 ${P5SITE}/WWW/OAuth.pm
 ${P5SITE}/WWW/OAuth/Request/

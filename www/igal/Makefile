@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:47 sthen Exp $
-
 COMMENT=	online Image GALlery generator
 
 V=		1.4.7

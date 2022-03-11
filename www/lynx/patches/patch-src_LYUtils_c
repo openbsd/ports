@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_LYUtils_c,v 1.5 2018/05/18 14:22:07 fcambus Exp $
-
 Use getenv("HOME") to determine the home directory instead of using getpwuid in
 order to avoid a "getpw" promise.  This is the only location not covered by the
 '-DNOUSERS' option in the Makefile.  If HOME is unset, the fallback is /tmp, so

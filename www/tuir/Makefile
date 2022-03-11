@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/03/10 12:03:35 kn Exp $
-
 COMMENT =		terminal UI for Reddit
 
 MODPY_EGG_VERSION =	1.29.0

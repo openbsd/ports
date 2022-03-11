@@ -1,6 +1,5 @@
 Avoid deadlock due to pthreads design.
 
-$OpenBSD: patch-beaker_synchronization_py,v 1.1.1.1 2010/01/10 12:59:22 fgsch Exp $
 --- beaker/synchronization.py.orig	Thu Jan  7 22:43:56 2010
 +++ beaker/synchronization.py	Thu Jan  7 22:50:23 2010
 @@ -20,11 +20,14 @@ try:

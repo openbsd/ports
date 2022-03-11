@@ -1,5 +1,3 @@
-$OpenBSD: patch-remoting_host_chromoting_host_context_cc,v 1.2 2021/10/29 14:49:41 robert Exp $
-
 Index: remoting/host/chromoting_host_context.cc
 --- remoting/host/chromoting_host_context.cc.orig
 +++ remoting/host/chromoting_host_context.cc

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.2 2020/12/30 12:46:01 sthen Exp $
 @so lib/lighttpd/mod_authn_ldap.so
 @so lib/lighttpd/mod_vhostdb_ldap.so

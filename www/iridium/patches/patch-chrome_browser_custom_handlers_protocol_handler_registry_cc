@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_custom_handlers_protocol_handler_registry_cc,v 1.17 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/browser/custom_handlers/protocol_handler_registry.cc
 --- chrome/browser/custom_handlers/protocol_handler_registry.cc.orig
 +++ chrome/browser/custom_handlers/protocol_handler_registry.cc

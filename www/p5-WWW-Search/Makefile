@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/11/21 22:17:53 benoit Exp $
-
 COMMENT=		virtual base class for WWW searches
 
 DISTNAME =		WWW-Search-2.519

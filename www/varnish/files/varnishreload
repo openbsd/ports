@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: varnishreload,v 1.4 2021/10/13 10:29:29 kn Exp $
-#
 # Reload active VCL.
 set -Cefu
 

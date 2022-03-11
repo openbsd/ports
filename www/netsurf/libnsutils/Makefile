@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/27 11:38:19 bentley Exp $
-
 COMMENT =		miscellaneous internal functions for netsurf
 
 NETSURF_PROJECT =	libnsutils

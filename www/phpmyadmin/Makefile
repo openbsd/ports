@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.145 2022/02/22 07:28:43 giovanni Exp $
-
 COMMENT=	tool to handle the administration of MySQL over the web
 
 V=		5.1.3

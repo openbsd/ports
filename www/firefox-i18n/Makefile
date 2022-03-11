@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2020/07/28 05:53:27 landry Exp $
-
 SUBDIR = ach
 SUBDIR += af
 SUBDIR += an

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_views_window_dialog_delegate_cc,v 1.18 2021/10/29 14:49:43 robert Exp $
-
 Index: ui/views/window/dialog_delegate.cc
 --- ui/views/window/dialog_delegate.cc.orig
 +++ ui/views/window/dialog_delegate.cc

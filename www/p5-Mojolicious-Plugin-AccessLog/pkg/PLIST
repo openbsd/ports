@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/04 01:39:09 afresh1 Exp $
 ${P5SITE}/Mojolicious/Plugin/AccessLog.pm
 @man man/man3p/Mojolicious::Plugin::AccessLog.3p

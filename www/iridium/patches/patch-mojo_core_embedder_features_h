@@ -1,5 +1,3 @@
-$OpenBSD: patch-mojo_core_embedder_features_h,v 1.2 2021/10/29 14:49:41 robert Exp $
-
 Index: mojo/core/embedder/features.h
 --- mojo/core/embedder/features.h.orig
 +++ mojo/core/embedder/features.h

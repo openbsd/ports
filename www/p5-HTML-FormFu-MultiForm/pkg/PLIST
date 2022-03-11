@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:26:19 afresh1 Exp $
 ${P5SITE}/HTML/FormFu/MultiForm.pm
 @man man/man3p/HTML::FormFu::MultiForm.3p

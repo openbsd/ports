@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/04/04 19:28:31 kn Exp $
-
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-1.2.3

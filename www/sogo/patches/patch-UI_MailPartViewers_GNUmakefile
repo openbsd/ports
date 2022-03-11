@@ -1,5 +1,3 @@
-$OpenBSD: patch-UI_MailPartViewers_GNUmakefile,v 1.4 2021/09/14 12:21:58 sebastia Exp $
-
 prevent unknown symbols on startup errors
 
 Index: UI/MailPartViewers/GNUmakefile

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/21 16:06:39 jasper Exp $
 bin/wApua
 bin/wbmp2xbm
 ${P5SITE}/wApua/

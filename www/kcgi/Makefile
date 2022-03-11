@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2021/10/03 19:04:15 jturner Exp $
-
 COMMENT =		minimal CGI library for web applications
 
 DISTNAME =		kcgi-0.13.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-conf_wwwoffle_conf_template,v 1.1 2015/11/10 13:56:01 sthen Exp $
 --- conf/wwwoffle.conf.template.orig	Tue Nov 10 13:31:19 2015
 +++ conf/wwwoffle.conf.template	Tue Nov 10 13:31:23 2015
 @@ -20,8 +20,8 @@ StartUp

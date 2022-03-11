@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/26 10:25:23 benoit Exp $
 ${P5SITE}/Dancer2/Plugin/
 ${P5SITE}/Dancer2/Plugin/Ajax.pm
 @man man/man3p/Dancer2::Plugin::Ajax.3p

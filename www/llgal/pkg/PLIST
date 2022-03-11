@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/12/06 13:51:25 steven Exp $
 bin/llgal
 libdata/perl5/site_perl/Llgal/
 libdata/perl5/site_perl/Llgal/Config.pm

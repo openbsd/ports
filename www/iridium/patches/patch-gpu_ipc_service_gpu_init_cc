@@ -1,5 +1,3 @@
-$OpenBSD: patch-gpu_ipc_service_gpu_init_cc,v 1.16 2021/12/28 15:49:55 robert Exp $
-
 Index: gpu/ipc/service/gpu_init.cc
 --- gpu/ipc/service/gpu_init.cc.orig
 +++ gpu/ipc/service/gpu_init.cc

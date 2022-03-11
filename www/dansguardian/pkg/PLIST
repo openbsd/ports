@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/18 15:04:09 sthen Exp $
 @conflict dansguardian-*-clamav
 @pkgpath www/dansguardian,clamav
 @newgroup _dansguardian:588

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:46:05 sthen Exp $
-
 COMMENT =	run HTTP tests on external live servers
 
 MODULES =	cpan

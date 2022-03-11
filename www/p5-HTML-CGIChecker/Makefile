@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT=	perl module to detect dangerous HTML code
 
 MODULES=	cpan

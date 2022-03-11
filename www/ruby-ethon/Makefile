@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/25 20:55:30 sebastia Exp $
-
 COMMENT =		lightweight libcurl wrapper
 
 DISTNAME =		ethon-0.15.0

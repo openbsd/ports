@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:58 sthen Exp $
-
 COMMENT=	catalyst file storage backend for session data
 
 MODULES=	cpan

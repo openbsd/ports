@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT =		require logged-in user for specified routes
 
 MODULES =		cpan

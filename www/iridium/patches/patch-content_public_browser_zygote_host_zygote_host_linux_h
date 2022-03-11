@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_public_browser_zygote_host_zygote_host_linux_h,v 1.4 2021/10/29 14:49:41 robert Exp $
-
 Index: content/public/browser/zygote_host/zygote_host_linux.h
 --- content/public/browser/zygote_host/zygote_host_linux.h.orig
 +++ content/public/browser/zygote_host/zygote_host_linux.h

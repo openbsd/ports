@@ -1,5 +1,3 @@
-$OpenBSD: patch-content_common_mojo_core_library_support_cc,v 1.4 2021/10/29 14:49:41 robert Exp $
-
 Index: content/common/mojo_core_library_support.cc
 --- content/common/mojo_core_library_support.cc.orig
 +++ content/common/mojo_core_library_support.cc

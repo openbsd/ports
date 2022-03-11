@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2022/02/26 15:24:55 sthen Exp $
-
 COMMENT =		fast, optionally sandboxed, Python template engine
 
 MODPY_EGG_VERSION =	3.0.3

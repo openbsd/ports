@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.2 2021/03/20 19:51:41 jeremy Exp $
-
 Work with unicorn 6.
 
 Index: .metadata

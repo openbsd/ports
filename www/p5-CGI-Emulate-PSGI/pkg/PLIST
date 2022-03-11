@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/06 20:06:06 afresh1 Exp $
 ${P5SITE}/CGI/Emulate/
 ${P5SITE}/CGI/Emulate/PSGI.pm
 ${P5SITE}/CGI/Parse/

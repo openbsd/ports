@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.72 2022/03/06 11:05:26 pvk Exp $
-
 COMMENT =		compact self-hosted Git service
 
 VERSION =		1.16.3

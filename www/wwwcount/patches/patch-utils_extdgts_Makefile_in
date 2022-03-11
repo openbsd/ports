@@ -1,4 +1,3 @@
-$OpenBSD: patch-utils_extdgts_Makefile_in,v 1.1 2007/10/26 21:26:02 jasper Exp $
 --- utils/extdgts/Makefile.in.orig	Mon Mar 19 02:59:51 2001
 +++ utils/extdgts/Makefile.in	Fri Oct 26 23:23:50 2007
 @@ -11,7 +11,7 @@ INCLUDES= -I. -I../../libs/combine -I../../src

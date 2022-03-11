@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/27 11:38:18 bentley Exp $
-
 COMMENT =		framebuffer abstraction library for netsurf
 
 NETSURF_PROJECT =	libnsfb

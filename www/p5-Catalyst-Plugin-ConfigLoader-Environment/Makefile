@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:57 sthen Exp $
-
 COMMENT =	configure your application with environment variables
 
 MODULES =	cpan

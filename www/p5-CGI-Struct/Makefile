@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/21 11:15:31 cwen Exp $
-
 COMMENT =	build structures from CGI data
 
 DISTNAME =	CGI-Struct-1.21

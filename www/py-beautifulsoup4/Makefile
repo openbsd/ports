@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT =	HTML/XML parser that supports invalid markup
 
 MODPY_EGG_VERSION =	4.10.0

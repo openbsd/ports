@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-mailproxy,v 1.2 2020/06/08 06:03:50 landry Exp $
 @so ngx_mail_module.so

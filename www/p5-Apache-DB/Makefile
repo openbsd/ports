@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/03/02 15:25:38 sthen Exp $
-
 COMMENT=		interactive debugger for modperl
 
 MODULES=		cpan

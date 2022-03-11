@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2021/06/26 15:19:29 sthen Exp $
-
 COMMENT-main =	Java servlet 3.0 and Java server pages 2.2 server
 PKGSPEC-main =	tomcat->=7,<8
 

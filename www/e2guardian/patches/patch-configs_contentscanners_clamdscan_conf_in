@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_contentscanners_clamdscan_conf_in,v 1.1.1.1 2019/09/18 16:34:03 sthen Exp $
-
 Index: configs/contentscanners/clamdscan.conf.in
 --- configs/contentscanners/clamdscan.conf.in.orig
 +++ configs/contentscanners/clamdscan.conf.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.112 2021/12/21 07:38:41 giovanni Exp $
-
 COMMENT=		apache HTTP server
 
 V=			2.4.52

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-lightning,v 1.34 2021/04/02 07:19:51 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}.xpi

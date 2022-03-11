@@ -1,5 +1,3 @@
-$OpenBSD: patch-havp_sockethandler_h,v 1.1 2017/05/25 13:24:10 espie Exp $
-
 Index: havp/sockethandler.h
 --- havp/sockethandler.h.orig
 +++ havp/sockethandler.h

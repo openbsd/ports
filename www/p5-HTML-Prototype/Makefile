@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/26 18:20:37 naddy Exp $
-
 COMMENT=	AJAX framework for perl
 
 MODULES=	cpan

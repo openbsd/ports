@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/21 20:50:37 landry Exp $
 ${P5SITE}/MojoX/
 ${P5SITE}/MojoX/Session/
 ${P5SITE}/MojoX/Session.pm

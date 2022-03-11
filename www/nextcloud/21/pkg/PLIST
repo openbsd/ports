@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2022/02/16 15:34:25 gonzalo Exp $
 @option is-branch
 @conflict nextcloud-*
 @pkgpath www/nextcloud

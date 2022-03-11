@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:51 espie Exp $
 ${P5SITE}/HTML/
 ${P5SITE}/HTML/CalendarMonthSimple.pm
 @man man/man3p/HTML::CalendarMonthSimple.3p

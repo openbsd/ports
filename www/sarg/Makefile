@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/07/09 09:31:03 sthen Exp $
-
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.4.0

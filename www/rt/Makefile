@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/10/04 18:18:52 robert Exp $
-
 COMMENT=		industrial-grade ticketing system
 
 DISTNAME=		rt-5.0.2

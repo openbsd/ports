@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/12/14 09:35:56 benoit Exp $
-
 COMMENT=	virtual browser that retries on errors
 
 MODULES=	cpan

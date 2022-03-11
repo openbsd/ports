@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/26 20:01:39 jeremy Exp $
-
 COMMENT =	HTTP/REST API client library
 
 DISTNAME =	faraday-0.17.4

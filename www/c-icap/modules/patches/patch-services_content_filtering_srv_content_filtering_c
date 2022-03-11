@@ -1,4 +1,3 @@
-$OpenBSD: patch-services_content_filtering_srv_content_filtering_c,v 1.2 2018/09/24 20:54:30 sthen Exp $
 Index: services/content_filtering/srv_content_filtering.c
 --- services/content_filtering/srv_content_filtering.c.orig
 +++ services/content_filtering/srv_content_filtering.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_feed_core_v2_proto_util_cc,v 1.4 2021/12/28 15:49:55 robert Exp $
-
 Index: components/feed/core/v2/proto_util.cc
 --- components/feed/core/v2/proto_util.cc.orig
 +++ components/feed/core/v2/proto_util.cc

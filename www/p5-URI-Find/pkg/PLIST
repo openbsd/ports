@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/05 12:51:06 sthen Exp $
 bin/urifind
 ${P5SITE}/URI/Find/
 ${P5SITE}/URI/Find.pm

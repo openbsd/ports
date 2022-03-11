@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_src_jit_ProcessExecutableMemory_h,v 1.4 2021/03/23 13:25:36 landry Exp $
-
 https://bugzilla.mozilla.org/show_bug.cgi?id=1347139
 
 Index: js/src/jit/ProcessExecutableMemory.h

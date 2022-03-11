@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/04 09:50:13 kirby Exp $
-
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-1.5.5

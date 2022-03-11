@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:30:35 afresh1 Exp $
-
 COMMENT =	user role-based authorization action class
 
 DISTNAME =	Catalyst-ActionRole-ACL-0.07

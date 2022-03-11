@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_content_settings_core_browser_website_settings_registry_cc,v 1.14 2021/10/29 14:49:40 robert Exp $
-
 Index: components/content_settings/core/browser/website_settings_registry.cc
 --- components/content_settings/core/browser/website_settings_registry.cc.orig
 +++ components/content_settings/core/browser/website_settings_registry.cc

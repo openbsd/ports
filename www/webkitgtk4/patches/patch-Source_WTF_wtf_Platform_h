@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.18 2021/04/25 06:08:10 ajacoutot Exp $
-
 Fix build with icu4c >=69.1
 
 Index: Source/WTF/wtf/Platform.h

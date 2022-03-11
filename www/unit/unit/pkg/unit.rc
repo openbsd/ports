@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: unit.rc,v 1.1 2021/11/19 10:01:02 sthen Exp $
 
 daemon="${PREFIX}/sbin/unitd"
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.14 2021/10/29 14:49:39 robert Exp $
-
 Index: chrome/app/theme/theme_resources.grd
 --- chrome/app/theme/theme_resources.grd.orig
 +++ chrome/app/theme/theme_resources.grd

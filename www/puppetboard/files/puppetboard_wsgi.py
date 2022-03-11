@@ -1,5 +1,3 @@
-# $OpenBSD: puppetboard_wsgi.py,v 1.1 2014/01/22 09:21:17 jasper Exp $
-#
 # WSGI helper script; distributed with Puppetboard up to 0.0.4
 
 from __future__ import absolute_import

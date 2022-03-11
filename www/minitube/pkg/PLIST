@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.28 2020/10/09 13:53:36 sthen Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/doc/pkg-readmes/${PKGSTEM}

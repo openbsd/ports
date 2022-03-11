@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2021/12/09 15:16:40 gonzalo Exp $
-
 BROKEN-alpha =	MetalinkParserStateV4Impl.cc:219:1: internal compiler error: Segmentation fault
 
 COMMENT =		lightweight multi-protocol & multi-source download utility

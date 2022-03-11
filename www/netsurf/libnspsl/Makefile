@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/27 11:38:19 bentley Exp $
-
 COMMENT =		public suffix list library for netsurf
 
 NETSURF_PROJECT =	libnspsl

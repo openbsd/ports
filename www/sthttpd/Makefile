@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/06 10:38:41 ajacoutot Exp $
-
 COMMENT=	tiny/turbo/throttling HTTP server
 
 DISTNAME=	sthttpd-2.26.4

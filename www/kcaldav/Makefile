@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/11/12 17:22:29 sthen Exp $
-
 COMMENT =		a simple, safe, and minimal CalDAV server
 
 DISTNAME =		kcaldav-0.2.0

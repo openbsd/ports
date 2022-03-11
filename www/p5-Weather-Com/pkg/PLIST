@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/05/17 13:44:45 simon Exp $
 ${P5SITE}/Weather/
 ${P5SITE}/Weather/Com/
 ${P5SITE}/Weather/Com.pm

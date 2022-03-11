@@ -1,4 +1,3 @@
-$OpenBSD: patch-resource_c,v 1.2 2014/04/19 15:42:06 sthen Exp $
 --- resource.c.orig	Sun Mar 19 07:21:20 2006
 +++ resource.c	Sat Apr 19 16:41:46 2014
 @@ -9,6 +9,8 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.70 2022/02/25 19:51:30 sdk Exp $
-
 COMMENT =	standalone YouTube.com video browser/player
 
 V =		3.9.3

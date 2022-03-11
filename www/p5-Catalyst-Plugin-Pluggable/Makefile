@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:57 sthen Exp $
-
 COMMENT=		universal forwarder for catalyst applications
 
 MODULES=		cpan

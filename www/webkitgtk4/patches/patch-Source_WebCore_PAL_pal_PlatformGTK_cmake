@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_PAL_pal_PlatformGTK_cmake,v 1.2 2019/03/14 09:48:28 ajacoutot Exp $
-
 Index: Source/WebCore/PAL/pal/PlatformGTK.cmake
 --- Source/WebCore/PAL/pal/PlatformGTK.cmake.orig
 +++ Source/WebCore/PAL/pal/PlatformGTK.cmake

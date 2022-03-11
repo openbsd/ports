@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/03/04 21:39:18 sthen Exp $
-
 COMMENT =		user session management for flask
 
 MODPY_EGG_VERSION =	0.5.0

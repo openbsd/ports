@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/03 07:39:06 sebastia Exp $
-
 COMMENT =		pure ruby implementation of the JWT standard
 
 DISTNAME =		jwt-2.2.3

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_runtime_MachineContext_h,v 1.8 2021/10/25 07:25:13 ajacoutot Exp $
-
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h

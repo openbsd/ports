@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT=	checks HTML documents for broken links, CLI
 
 MODPY_EGG_VERSION= 10.0.1

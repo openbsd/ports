@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT=		stateful programmatic web browsing module
 
 MODPY_EGG_VERSION=	0.4.6

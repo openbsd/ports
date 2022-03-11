@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/06 18:45:24 sthen Exp $
-
 COMMENT =	share your terminal over the web
 
 GH_ACCOUNT =	tsl0922

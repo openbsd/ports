@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/25 12:33:20 sthen Exp $
-
 COMMENT=	persistent handle and resource factory API
 
 DISTNAME=	raphf-2.0.0

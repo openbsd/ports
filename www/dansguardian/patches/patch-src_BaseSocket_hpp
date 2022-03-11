@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_BaseSocket_hpp,v 1.1 2017/05/03 19:54:23 jca Exp $
 --- src/BaseSocket.hpp.orig
 +++ src/BaseSocket.hpp
 @@ -13,6 +13,7 @@

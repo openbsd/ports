@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/03/20 16:44:28 naddy Exp $
-
 COMMENT=	access counter, clock and date for WWW pages
 
 V=		2.5

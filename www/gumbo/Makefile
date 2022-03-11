@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/15 14:34:50 fcambus Exp $
-
 COMMENT =	HTML5 parsing library in pure C99
 
 GH_ACCOUNT =	google

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:46:00 sthen Exp $
-
 COMMENT =	HTML form creation, rendering and validation framework
 
 MODULES =	cpan

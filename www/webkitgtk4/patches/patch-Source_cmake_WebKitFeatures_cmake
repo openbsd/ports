@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_cmake_WebKitFeatures_cmake,v 1.10 2021/10/25 07:25:14 ajacoutot Exp $
-
 Index: Source/cmake/WebKitFeatures.cmake
 --- Source/cmake/WebKitFeatures.cmake.orig
 +++ Source/cmake/WebKitFeatures.cmake

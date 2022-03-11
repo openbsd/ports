@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.5 2021/07/06 19:33:21 cwen Exp $
-
 Hunk #0: report proper version
 Hunk #1: ncurses can't be found using pkg-config(1)
 Hunk #2: make our sed(1) happy

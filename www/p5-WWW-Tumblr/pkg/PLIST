@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/27 06:55:48 benoit Exp $
 ${P5SITE}/WWW/Tumblr/
 ${P5SITE}/WWW/Tumblr.pm
 ${P5SITE}/WWW/Tumblr/API.pm

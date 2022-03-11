@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:49 espie Exp $
 @info info/cronolog.info
 @man man/man1/cronolog.1m
 @man man/man1/cronosplit.1m

@@ -1,4 +1,3 @@
-$OpenBSD: patch-widget_nsPrintSettingsImpl_cpp,v 1.14 2022/02/08 14:02:28 landry Exp $
 Index: widget/nsPrintSettingsImpl.cpp
 --- widget/nsPrintSettingsImpl.cpp.orig
 +++ widget/nsPrintSettingsImpl.cpp

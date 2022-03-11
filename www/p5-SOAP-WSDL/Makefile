@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/02 21:30:35 benoit Exp $
-
 COMMENT=		SOAP with WSDL support
 
 DISTNAME =		SOAP-WSDL-3.004

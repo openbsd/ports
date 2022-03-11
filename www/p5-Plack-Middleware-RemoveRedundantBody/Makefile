@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:46:05 sthen Exp $
-
 COMMENT =		removes body for HTTP response if it's not required
 
 MODULES =		cpan

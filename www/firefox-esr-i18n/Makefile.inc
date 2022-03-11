@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.122 2022/03/08 14:08:33 landry Exp $
-
 # Unversioned distfiles
 PORTROACH =	ignore:1
 

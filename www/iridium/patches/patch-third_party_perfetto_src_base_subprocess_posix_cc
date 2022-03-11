@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_perfetto_src_base_subprocess_posix_cc,v 1.2 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/perfetto/src/base/subprocess_posix.cc
 --- third_party/perfetto/src/base/subprocess_posix.cc.orig
 +++ third_party/perfetto/src/base/subprocess_posix.cc

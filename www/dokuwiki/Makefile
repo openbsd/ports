@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/02/24 16:49:01 sthen Exp $
-
 COMMENT =	standards compliant, simple to use Wiki
 
 VERSION =	2020-07-29

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/30 03:01:51 bentley Exp $
 include/libwapcaplet/
 include/libwapcaplet/libwapcaplet.h
 @lib lib/libwapcaplet.so.${LIBwapcaplet_VERSION}

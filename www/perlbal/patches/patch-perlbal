@@ -1,4 +1,3 @@
-$OpenBSD: patch-perlbal,v 1.2 2015/11/18 09:11:47 ajacoutot Exp $
 --- perlbal.orig	Mon Dec 20 02:24:35 2010
 +++ perlbal	Wed Nov 18 09:40:53 2015
 @@ -47,7 +47,7 @@ usage(1) unless

@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2022/02/01 18:17:33 paco Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	fast and flexible static site generator

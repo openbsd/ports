@@ -1,5 +1,3 @@
-# $OpenBSD: nginx-passenger.conf.sample,v 1.5 2016/11/04 22:08:19 jeremy Exp $
-#
 # Example nginx.conf for Phusion Passenger
 #
 # Please read the official Phusion Passenger user guide for nginx.

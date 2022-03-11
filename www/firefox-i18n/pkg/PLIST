@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/04/04 14:25:06 landry Exp $
 @pkgpath www/firefox-i18n,-${L}
 lib/firefox/distribution/extensions/langpack-${L}@firefox.mozilla.org.xpi

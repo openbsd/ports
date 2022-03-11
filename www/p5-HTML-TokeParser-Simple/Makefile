@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:46:02 sthen Exp $
-
 COMMENT= 	simple interface to HTML::TokeParser
 
 DISTNAME =	HTML-TokeParser-Simple-3.16

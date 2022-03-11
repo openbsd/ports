@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/05/03 13:01:56 sthen Exp $
-
 COMMENT =	wiki engine written in python
 
 MODPY_EGG_VERSION = 1.9.11

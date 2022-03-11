@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_h,v 1.3 2014/12/03 08:32:28 dcoppa Exp $
-
 Remove local copies of strl{cat,cpy}.
 Use ours from our libc.
 

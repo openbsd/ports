@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT = 		screen scraping Perl API to some Drupal admin functions
 
 DISTNAME =		Drupal-Admin-0.04

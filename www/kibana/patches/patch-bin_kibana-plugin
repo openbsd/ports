@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_kibana-plugin,v 1.5 2020/09/10 13:47:57 pvk Exp $
 Index: bin/kibana-plugin
 --- bin/kibana-plugin.orig
 +++ bin/kibana-plugin

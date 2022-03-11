@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_ui_webui_ntp_app_launcher_handler_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
-
 Index: chrome/browser/ui/webui/ntp/app_launcher_handler.cc
 --- chrome/browser/ui/webui/ntp/app_launcher_handler.cc.orig
 +++ chrome/browser/ui/webui/ntp/app_launcher_handler.cc

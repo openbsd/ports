@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:04 sthen Exp $
-
 COMMENT=	ruby FastCGI library
 
 DISTNAME=	fcgi-0.9.2.1

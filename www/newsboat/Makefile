@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/01/01 11:42:27 tb Exp $
-
 COMMENT =	RSS/Atom feed reader for text terminals
 
 V =		2.26

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.47 2021/06/30 14:07:53 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}

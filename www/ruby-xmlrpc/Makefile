@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/04 06:23:50 sebastia Exp $
-
 COMMENT = 	remote procedure calls over HTTP
 
 DISTNAME = 	xmlrpc-0.3.2

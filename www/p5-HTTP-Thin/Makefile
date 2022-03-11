@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:46:03 sthen Exp $
-
 COMMENT =	thin wrapper around HTTP::Tiny to work with HTTP::Message
 DISTNAME =	HTTP-Thin-0.006
 CATEGORIES =	www

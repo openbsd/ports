@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/09/01 20:30:18 ajacoutot Exp $
-
 COMMENT=	mod_perl class for generating browsable MP3 directory lists
 
 MODULES=	cpan

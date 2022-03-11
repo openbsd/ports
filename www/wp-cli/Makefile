@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/24 16:49:02 sthen Exp $
-
 COMMENT =	command line tool for wordpress
 
 V =		2.4.0

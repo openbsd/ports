@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	use SSI from CGI scripts
 
 MODULES=	cpan

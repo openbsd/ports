@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:55 sthen Exp $
-
 COMMENT =	helps validate CGI::Application run modes
 
 MODULES =	cpan

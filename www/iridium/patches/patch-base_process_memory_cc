@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_process_memory_cc,v 1.16 2021/10/29 14:49:39 robert Exp $
-
 Index: base/process/memory.cc
 --- base/process/memory.cc.orig
 +++ base/process/memory.cc

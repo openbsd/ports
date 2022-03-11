@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:29 sthen Exp $
-
 COMMENT=	very fast web log analyzer
 
 DISTNAME=	visitors-0.7

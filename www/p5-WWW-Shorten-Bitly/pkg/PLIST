@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/18 11:48:12 jasper Exp $
 bin/bitly_url
 ${P5SITE}/WWW/Shorten/Bitly.pm
 @man man/man1/bitly_url.1

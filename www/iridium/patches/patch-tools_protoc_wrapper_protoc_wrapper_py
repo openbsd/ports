@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_protoc_wrapper_protoc_wrapper_py,v 1.9 2021/11/08 13:02:46 robert Exp $
-
 Index: tools/protoc_wrapper/protoc_wrapper.py
 --- tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ tools/protoc_wrapper/protoc_wrapper.py

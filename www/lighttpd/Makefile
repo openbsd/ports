@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.167 2022/01/23 14:43:47 sthen Exp $
-
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.64

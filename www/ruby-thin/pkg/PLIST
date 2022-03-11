@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2016/09/19 22:12:26 jeremy Exp $
 ${GEM_BIN}/thin${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

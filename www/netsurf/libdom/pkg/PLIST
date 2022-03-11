@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/05/27 11:38:18 bentley Exp $
 include/dom/
 include/dom/bindings/
 include/dom/bindings/hubbub/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_RegExp_hpp,v 1.1 2013/01/18 15:04:09 sthen Exp $
-
 pcre 8.30 fix, from Debian
 
 --- src/RegExp.hpp.orig	Wed Jan 16 21:13:39 2013

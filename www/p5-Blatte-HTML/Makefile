@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:49 sthen Exp $
-
 COMMENT=	Blatte functions to generate (X)HTML
 
 MODULES=	cpan

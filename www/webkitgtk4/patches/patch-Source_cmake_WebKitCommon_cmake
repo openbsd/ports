@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_cmake_WebKitCommon_cmake,v 1.7 2021/10/25 07:25:13 ajacoutot Exp $
-
 Index: Source/cmake/WebKitCommon.cmake
 --- Source/cmake/WebKitCommon.cmake.orig
 +++ Source/cmake/WebKitCommon.cmake

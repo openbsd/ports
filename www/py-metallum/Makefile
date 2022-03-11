@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:54 sthen Exp $
-
 COMMENT =		basic python API for www.metal-archives.com
 
 MODPY_EGG_VERSION =	1.1.0

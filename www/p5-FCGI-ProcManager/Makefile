@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT=	functions for managing FastCGI applications
 
 MODULES=	cpan

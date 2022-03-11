@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:55 sthen Exp $
-
 COMMENT =		utility belt for advanced users of python-requests
 
 MODPY_EGG_VERSION =	0.9.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-media_base_audio_latency_cc,v 1.11 2021/10/29 14:49:41 robert Exp $
-
 Index: media/base/audio_latency.cc
 --- media/base/audio_latency.cc.orig
 +++ media/base/audio_latency.cc

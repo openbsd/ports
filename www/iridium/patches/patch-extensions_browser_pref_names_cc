@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_browser_pref_names_cc,v 1.2 2021/12/28 15:49:55 robert Exp $
-
 Index: extensions/browser/pref_names.cc
 --- extensions/browser/pref_names.cc.orig
 +++ extensions/browser/pref_names.cc

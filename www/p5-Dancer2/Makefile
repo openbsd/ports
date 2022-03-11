@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/11 16:51:21 bluhm Exp $
-
 COMMENT =		lightweight yet powerful web application framework
 
 MODULES =		cpan

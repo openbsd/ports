@@ -1,5 +1,3 @@
-$OpenBSD: patch-terminado_tests_basic_test_py,v 1.2 2021/02/26 18:20:37 naddy Exp $
-
 Eliminate need for bash
 
 Index: terminado/tests/basic_test.py

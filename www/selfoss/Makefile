@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/24 16:49:02 sthen Exp $
-
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
 V=			2.18

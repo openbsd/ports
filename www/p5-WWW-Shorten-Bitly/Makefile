@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:46:07 sthen Exp $
-
 COMMENT =		interface to bit.ly shortening site
 
 DISTNAME =		WWW-Shorten-Bitly-2.001

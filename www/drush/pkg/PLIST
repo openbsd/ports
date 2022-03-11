@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/24 23:20:35 sthen Exp $
 bin/drush
 libexec/drush/
 libexec/drush/CONTRIBUTING.md

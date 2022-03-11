@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/05 10:54:08 sthen Exp $
-
 COMMENT =		use requests to talk HTTP via a UNIX domain socket
 
 MODPY_EGG_VERSION =	0.3.0

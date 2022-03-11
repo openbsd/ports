@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/12 16:30:25 espie Exp $
 ${P5SITE}/HTTP/Server/Simple/Recorder.pm
 @man man/man3p/HTTP::Server::Simple::Recorder.3p

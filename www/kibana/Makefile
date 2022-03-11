@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2020/11/19 20:28:03 pvk Exp $
-
 COMMENT=	browser based analytics/search interface to ElasticSearch
 
 V =		7.10.0

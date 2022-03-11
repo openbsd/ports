@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:04 sthen Exp $
-
 COMMENT =		string matching library
 
 DISTNAME =		mustermann-1.0.1

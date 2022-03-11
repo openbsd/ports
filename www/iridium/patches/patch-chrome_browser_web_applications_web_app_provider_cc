@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_provider_cc,v 1.1 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/web_applications/web_app_provider.cc
 --- chrome/browser/web_applications/web_app_provider.cc.orig
 +++ chrome/browser/web_applications/web_app_provider.cc

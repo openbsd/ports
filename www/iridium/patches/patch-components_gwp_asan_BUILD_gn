@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_gwp_asan_BUILD_gn,v 1.5 2021/10/29 14:49:40 robert Exp $
-
 Index: components/gwp_asan/BUILD.gn
 --- components/gwp_asan/BUILD.gn.orig
 +++ components/gwp_asan/BUILD.gn

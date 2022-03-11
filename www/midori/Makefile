@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2019/07/30 16:57:41 landry Exp $
-
 COMMENT =	lightweight web browser
 
 V =	9.0

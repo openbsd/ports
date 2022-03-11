@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/27 14:49:46 landry Exp $
 @newuser _notify_push:867:67:daemon:Nextcloud Notify Push daemon:/nonexistent:/sbin/nologin
 @bin bin/notify_push
 @rcscript ${RCDIR}/nextcloud_notify_push

@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_file_system_access_chrome_file_system_access_permission_context_cc,v 1.3 2021/12/28 15:49:54 robert Exp $
-
 Index: chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc
 --- chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc.orig
 +++ chrome/browser/file_system_access/chrome_file_system_access_permission_context.cc

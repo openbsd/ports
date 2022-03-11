@@ -1,5 +1,3 @@
-$OpenBSD: patch-components_invalidation_impl_invalidation_switches_cc,v 1.4 2021/10/29 14:49:40 robert Exp $
-
 Index: components/invalidation/impl/invalidation_switches.cc
 --- components/invalidation/impl/invalidation_switches.cc.orig
 +++ components/invalidation/impl/invalidation_switches.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-third_party_sqlite_BUILD_gn,v 1.13 2021/10/29 14:49:42 robert Exp $
-
 Index: third_party/sqlite/BUILD.gn
 --- third_party/sqlite/BUILD.gn.orig
 +++ third_party/sqlite/BUILD.gn

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_webhttrack,v 1.2 2015/05/09 12:04:19 jasper Exp $
 1. Make it recognize SeaMonkey as a browser, too.
 2. Get rid of some unnecessary bashisms.
 3. Add a hack based on xmessage to avoid stopping WebHTTrack

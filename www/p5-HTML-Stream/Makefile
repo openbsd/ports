@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:46:01 sthen Exp $
-
 COMMENT=	HTML output stream class
 
 MODULES=	cpan

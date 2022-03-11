@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/10/25 12:33:19 sthen Exp $
 @conflict pecl-memcached-*
 ${MODPECL_DEFAULTV}@pkgpath www/pecl56-memcached
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-memcached,php70

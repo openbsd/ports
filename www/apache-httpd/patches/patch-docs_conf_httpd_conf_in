@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_conf_httpd_conf_in,v 1.9 2019/08/13 21:14:11 sthen Exp $
-
 Index: docs/conf/httpd.conf.in
 --- docs/conf/httpd.conf.in.orig
 +++ docs/conf/httpd.conf.in

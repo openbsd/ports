@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/24 23:01:24 sthen Exp $
 @pkgpath www/py-bleach
 lib/python${MODPY_VERSION}/site-packages/bleach/
 lib/python${MODPY_VERSION}/site-packages/bleach-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

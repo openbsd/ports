@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/10 16:58:29 fcambus Exp $
-
 COMMENT=	test tool for slow HTTP reads/posts
 
 GH_ACCOUNT=	shekyan

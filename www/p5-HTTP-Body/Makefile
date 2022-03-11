@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:46:02 sthen Exp $
-
 COMMENT=	HTTP Body Parser
 
 DISTNAME =	HTTP-Body-1.22

@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_app_google_chrome_strings_grd,v 1.28 2021/12/28 15:49:54 robert Exp $
-
 Index: chrome/app/google_chrome_strings.grd
 --- chrome/app/google_chrome_strings.grd.orig
 +++ chrome/app/google_chrome_strings.grd

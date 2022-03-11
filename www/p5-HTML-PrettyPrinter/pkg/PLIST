@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/16 14:21:04 jasper Exp $
 ${P5SITE}/HTML/PrettyPrinter.pm
 @man man/man3p/HTML::PrettyPrinter.3p

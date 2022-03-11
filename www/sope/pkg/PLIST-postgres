@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-postgres,v 1.2 2010/12/22 09:21:44 sebastia Exp $
 lib/sope-4.9/dbadaptors/PostgreSQL.gdladaptor/
 @bin lib/sope-4.9/dbadaptors/PostgreSQL.gdladaptor/PostgreSQL
 lib/sope-4.9/dbadaptors/PostgreSQL.gdladaptor/Resources/

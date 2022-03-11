@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Weather_Com_Base_pm,v 1.2 2021/02/26 18:20:37 naddy Exp $
-
 Bug #67228 for Weather-Com: test suite under perl 5.12 outputs warnings
 https://rt.cpan.org/Public/Bug/Display.html?id=67228
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/08 21:58:58 sthen Exp $
 ${P5SITE}/Catalyst/Action/
 ${P5SITE}/Catalyst/Action/XMLRPC.pm
 ${P5SITE}/Catalyst/Plugin/

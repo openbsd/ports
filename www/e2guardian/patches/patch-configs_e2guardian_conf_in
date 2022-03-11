@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_e2guardian_conf_in,v 1.2 2020/03/01 16:45:02 bket Exp $
-
 Index: configs/e2guardian.conf.in
 --- configs/e2guardian.conf.in.orig
 +++ configs/e2guardian.conf.in

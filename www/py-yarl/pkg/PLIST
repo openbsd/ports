@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/01 16:45:52 sthen Exp $
 @pkgpath www/py-yarl
 lib/python${MODPY_VERSION}/site-packages/yarl/
 lib/python${MODPY_VERSION}/site-packages/yarl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-pkg_mk,v 1.2 2017/02/23 17:47:57 jca Exp $
 --- pkg.mk.orig	Sun Jul 31 17:20:21 2016
 +++ pkg.mk	Wed Feb 22 13:15:38 2017
 @@ -118,7 +118,7 @@ test_units := $(wildcard test/test_*.rb)

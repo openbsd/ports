@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-lua,v 1.2 2020/06/08 06:03:50 landry Exp $
 @so ndk_http_module.so
 @so ngx_http_lua_module.so

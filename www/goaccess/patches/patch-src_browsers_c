@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_browsers_c,v 1.5 2021/11/25 08:50:03 kirby Exp $
-
 https://github.com/allinurl/goaccess/pull/1350
 
 Index: src/browsers.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_allocator_partition_allocator_address_space_randomization_h,v 1.2 2021/10/29 14:49:39 robert Exp $
-
 Index: base/allocator/partition_allocator/address_space_randomization.h
 --- base/allocator/partition_allocator/address_space_randomization.h.orig
 +++ base/allocator/partition_allocator/address_space_randomization.h

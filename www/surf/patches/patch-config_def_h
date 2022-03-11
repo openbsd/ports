@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_def_h,v 1.6 2021/12/27 18:56:32 jung Exp $
 Index: config.def.h
 --- config.def.h.orig
 +++ config.def.h

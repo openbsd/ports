@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.485 2022/03/08 14:07:29 landry Exp $
-
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 aarch64
 

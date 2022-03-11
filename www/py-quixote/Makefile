@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:38 kmos Exp $
-
 COMMENT=		simple Python framework for web-based applications
 
 MODPY_EGG_VERSION=	2.8

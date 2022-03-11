@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:45:56 sthen Exp $
-
 COMMENT=	object oriented interface for CGI script applications
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:57 sthen Exp $
-
 COMMENT=	Catalyst Apache engine
 
 MODULES=	cpan

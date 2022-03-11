@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/03/20 19:51:41 jeremy Exp $
-
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
 DISTNAME =	rainbows-5.2.1

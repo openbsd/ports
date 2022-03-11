@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/09/11 08:47:54 ajacoutot Exp $
-
 COMMENT=		graphical browser for plain-text protocols
 
 V=			0.8.18

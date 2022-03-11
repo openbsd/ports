@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: apache2.rc,v 1.6 2020/12/13 08:45:14 giovanni Exp $
 
 daemon="${TRUEPREFIX}/sbin/httpd2"
 

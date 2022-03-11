@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_process_process_metrics_cc,v 1.9 2021/10/29 14:49:39 robert Exp $
-
 Index: base/process/process_metrics.cc
 --- base/process/process_metrics.cc.orig
 +++ base/process/process_metrics.cc

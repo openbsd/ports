@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/10/17 09:31:47 bentley Exp $
 @newgroup _apertium-apy:822
 @newuser _apertium-apy:822:822:daemon:Apertium Python Interface:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/apertium_apy

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WTF_wtf_InlineASM_h,v 1.3 2019/03/14 09:48:28 ajacoutot Exp $
-
 Index: Source/WTF/wtf/InlineASM.h
 --- Source/WTF/wtf/InlineASM.h.orig
 +++ Source/WTF/wtf/InlineASM.h

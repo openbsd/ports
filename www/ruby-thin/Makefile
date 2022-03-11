@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:05 sthen Exp $
-
 COMMENT =	fast and very simple Ruby web server
 
 DISTNAME =	thin-1.7.2

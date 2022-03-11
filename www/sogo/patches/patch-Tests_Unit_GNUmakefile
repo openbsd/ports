@@ -1,4 +1,3 @@
-$OpenBSD: patch-Tests_Unit_GNUmakefile,v 1.10 2021/09/14 12:21:58 sebastia Exp $
 Do not hardcode libobjc library name, ask GNUstep what to use.
 Index: Tests/Unit/GNUmakefile
 --- Tests/Unit/GNUmakefile.orig

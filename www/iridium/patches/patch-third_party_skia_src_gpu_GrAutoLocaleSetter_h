@@ -1,4 +1,3 @@
-$OpenBSD: patch-third_party_skia_src_gpu_GrAutoLocaleSetter_h,v 1.15 2021/10/29 14:49:42 robert Exp $
 Index: third_party/skia/src/gpu/GrAutoLocaleSetter.h
 --- third_party/skia/src/gpu/GrAutoLocaleSetter.h.orig
 +++ third_party/skia/src/gpu/GrAutoLocaleSetter.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:37:20 robert Exp $
-
 COMMENT =		HTML5 parser based on gumbo C library
 
 MODULES =		cpan

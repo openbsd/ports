@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/16 18:42:05 jeremy Exp $
-
 COMMENT =	integration testing tool for rack based web applications
 
 DISTNAME =	capybara-3.33.0

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: h2o.rc,v 1.1.1.1 2019/05/26 12:38:01 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/h2o -m worker"
 

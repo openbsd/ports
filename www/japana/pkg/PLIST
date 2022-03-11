@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/02 14:47:28 gonzalo Exp $
 @man man/man1/japana.1
 sbin/japana
 share/examples/japana/

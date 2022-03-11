@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/11/05 10:10:04 benoit Exp $
 ${P5SITE}/PSGI/
 ${P5SITE}/PSGI.pm
 ${P5SITE}/PSGI.pod

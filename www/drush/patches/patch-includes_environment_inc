@@ -1,5 +1,3 @@
-$OpenBSD: patch-includes_environment_inc,v 1.5 2021/02/24 23:20:35 sthen Exp $
-
 Index: includes/environment.inc
 --- includes/environment.inc.orig
 +++ includes/environment.inc

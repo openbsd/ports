@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/01/05 12:47:00 sebastia Exp $
-
 COMMENT=		web interface to PuppetDB
 
 MODPY_EGG_VERSION=	3.3.0

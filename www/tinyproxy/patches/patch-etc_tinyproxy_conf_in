@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_tinyproxy_conf_in,v 1.3 2017/02/18 17:21:51 jca Exp $
 --- etc/tinyproxy.conf.in.orig	Wed Mar  3 09:37:24 2010
 +++ etc/tinyproxy.conf.in	Tue Apr  9 05:48:57 2013
 @@ -12,8 +12,8 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-support_apxs_in,v 1.6 2020/03/31 14:30:33 sthen Exp $
-
 Index: support/apxs.in
 --- support/apxs.in.orig
 +++ support/apxs.in

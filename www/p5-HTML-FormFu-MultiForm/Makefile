@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:26:19 afresh1 Exp $
-
 COMMENT =	handle multi-page/stage forms with FormFu
 
 DISTNAME =	HTML-FormFu-MultiForm-1.03

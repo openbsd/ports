@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/02 00:02:52 sthen Exp $
-
 COMMENT =	session and caching library with wsgi middleware
 
 MODPY_EGG_VERSION = 1.10.0

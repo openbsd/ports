@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:59 sthen Exp $
-
 COMMENT =	module for enabling FastCGI support in CGI scripts
 DISTNAME =	FCGI-0.78
 FIX_EXTRACT_PERMISSIONS =	Yes

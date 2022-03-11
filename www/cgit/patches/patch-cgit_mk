@@ -1,4 +1,3 @@
-$OpenBSD: patch-cgit_mk,v 1.1 2013/07/15 07:00:49 jasper Exp $
 --- cgit.mk.orig	Sun Jul 14 23:18:05 2013
 +++ cgit.mk	Sun Jul 14 23:18:39 2013
 @@ -17,6 +17,7 @@ $(CGIT_PREFIX)VERSION: force-version

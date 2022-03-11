@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cxx_supportlib_Constants_h,v 1.1 2017/11/04 15:56:29 jeremy Exp $
-
 Index: src/cxx_supportlib/Constants.h
 --- src/cxx_supportlib/Constants.h.orig
 +++ src/cxx_supportlib/Constants.h

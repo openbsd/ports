@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/10/09 03:31:39 afresh1 Exp $
-
 COMMENT=	catalyst plugin to Config::Any
 
 MODULES=	cpan

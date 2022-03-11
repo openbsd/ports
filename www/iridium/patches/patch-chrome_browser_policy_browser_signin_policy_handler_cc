@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_policy_browser_signin_policy_handler_cc,v 1.6 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/policy/browser_signin_policy_handler.cc
 --- chrome/browser/policy/browser_signin_policy_handler.cc.orig
 +++ chrome/browser/policy/browser_signin_policy_handler.cc

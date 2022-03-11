@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:51 sthen Exp $
-
 COMMENT =	convert .py files to jupyter .ipynb notebooks and vice versa
 
 MODPY_EGG_VERSION =	0.4.5

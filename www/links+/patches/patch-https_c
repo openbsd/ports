@@ -1,4 +1,3 @@
-$OpenBSD: patch-https_c,v 1.7 2018/09/23 20:12:32 sthen Exp $
 Index: https.c
 --- https.c.orig
 +++ https.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_WWW_Search_Ebay_pm,v 1.2 2020/02/11 15:36:05 benoit Exp $
-
 Fix for:
 Use of uninitialized value in numeric lt (<) at
 /usr/local/libdata/perl5/site_perl/WWW/Search/Ebay.pm line 672.

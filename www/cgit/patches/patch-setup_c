@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_c,v 1.1 2017/03/22 20:23:52 landry Exp $
-
 Dont openbsd dev/null, doesnt exist in the default chroot
 
 --- git/setup.c.orig	Wed Mar  1 21:01:06 2017

@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_layout,v 1.4 2021/01/18 13:52:23 robert Exp $
 Index: config.layout
 --- config.layout.orig
 +++ config.layout

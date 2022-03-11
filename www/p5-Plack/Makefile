@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/10 07:39:24 benoit Exp $
-
 COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan

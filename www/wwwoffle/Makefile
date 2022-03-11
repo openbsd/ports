@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:07 sthen Exp $
-
 COMMENT=		WWW OFFLine Explorer
 
 DISTNAME=		wwwoffle-2.9j

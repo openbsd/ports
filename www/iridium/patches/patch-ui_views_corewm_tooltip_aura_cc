@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_views_corewm_tooltip_aura_cc,v 1.12 2021/12/28 15:49:56 robert Exp $
-
 Index: ui/views/corewm/tooltip_aura.cc
 --- ui/views/corewm/tooltip_aura.cc.orig
 +++ ui/views/corewm/tooltip_aura.cc

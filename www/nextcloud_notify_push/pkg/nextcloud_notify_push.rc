@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: nextcloud_notify_push.rc,v 1.1.1.1 2021/05/27 14:49:46 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/notify_push"
 daemon_flags="--bind 127.0.0.1 /var/www/nextcloud/config/config.php"

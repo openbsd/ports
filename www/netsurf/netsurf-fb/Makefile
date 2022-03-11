@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/14 11:05:23 tb Exp $
-
 COMMENT =		lightweight web browser, with SDL interface
 
 NETSURF_PROJECT =	netsurf-fb

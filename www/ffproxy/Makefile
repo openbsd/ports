@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/17 14:39:44 danj Exp $
-
 COMMENT=	filtering HTTP proxy server
 DISTNAME=	ffproxy-1.6
 REVISION=	2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/09/02 12:55:44 sthen Exp $
-
 COMMENT =		modules to parse and extract information from HTML
 
 MODULES =		cpan

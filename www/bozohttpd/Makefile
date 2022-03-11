@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/10/16 07:16:18 benoit Exp $
-
 COMMENT =	bozotic HTTP server
 
 DISTNAME =	bozohttpd-20201014

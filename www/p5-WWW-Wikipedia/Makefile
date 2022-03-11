@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:46:07 sthen Exp $
-
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
 DISTNAME=		WWW-Wikipedia-2.05

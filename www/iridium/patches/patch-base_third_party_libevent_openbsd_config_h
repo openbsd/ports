@@ -1,4 +1,3 @@
-$OpenBSD: patch-base_third_party_libevent_openbsd_config_h,v 1.11 2021/10/29 14:49:39 robert Exp $
 --- base/third_party/libevent/openbsd/config.h.orig.port	Sun Aug 14 16:14:00 2016
 +++ base/third_party/libevent/openbsd/config.h	Sun Aug 14 16:14:07 2016
 @@ -0,0 +1,276 @@

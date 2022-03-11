@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/07/15 16:41:50 sthen Exp $
-
 COMMENT =	correct and clean up HTML and XML
 
 GH_ACCOUNT =	htacg

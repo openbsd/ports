@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:47 sthen Exp $
-
 COMMENT=	squid redirector
 
 DISTNAME=	jesred-1.2pl1

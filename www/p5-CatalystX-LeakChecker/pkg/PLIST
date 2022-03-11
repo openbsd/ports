@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/09 02:31:36 afresh1 Exp $
 ${P5SITE}/CatalystX/
 ${P5SITE}/CatalystX/LeakChecker.pm
 @man man/man3p/CatalystX::LeakChecker.3p

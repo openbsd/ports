@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_HTTP_Headers_pm,v 1.2 2015/07/28 10:03:06 nigel Exp $
 --- lib/HTTP/Headers.pm.orig	Thu Jul  9 01:23:53 2015
 +++ lib/HTTP/Headers.pm	Fri Jul 10 21:54:13 2015
 @@ -151,7 +151,7 @@ sub _header

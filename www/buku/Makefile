@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:02:51 sthen Exp $
-
 COMMENT =	powerful command-line bookmark manager
 
 MODPY_EGG_VERSION =	4.6

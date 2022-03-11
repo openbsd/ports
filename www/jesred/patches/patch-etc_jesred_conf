@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_jesred_conf,v 1.2 2003/05/12 18:02:45 sturm Exp $
 --- etc/jesred.conf.orig	Fri Aug 14 22:17:54 1998
 +++ etc/jesred.conf	Wed Aug 22 10:47:21 2001
 @@ -1,17 +1,17 @@

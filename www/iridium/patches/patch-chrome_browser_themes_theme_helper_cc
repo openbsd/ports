@@ -1,5 +1,3 @@
-$OpenBSD: patch-chrome_browser_themes_theme_helper_cc,v 1.2 2021/10/29 14:49:40 robert Exp $
-
 Index: chrome/browser/themes/theme_helper.cc
 --- chrome/browser/themes/theme_helper.cc.orig
 +++ chrome/browser/themes/theme_helper.cc

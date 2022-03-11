@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/12/02 10:25:27 fcambus Exp $
-
 COMMENT =	fast web log analyzer using probabilistic data structures
 
 V =		2.1.12

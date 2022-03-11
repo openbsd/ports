@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:46:07 sthen Exp $
-
 COMMENT=	interface to the Audioscrobbler WebService API
 
 DISTNAME =	WebService-Audioscrobbler-0.08

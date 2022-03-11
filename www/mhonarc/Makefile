@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:50:48 sthen Exp $
-
 COMMENT=		highly customizable e-mail to HTML converter
 
 DISTNAME=		MHonArc-2.6.19

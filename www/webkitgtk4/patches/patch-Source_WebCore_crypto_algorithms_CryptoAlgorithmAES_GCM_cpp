@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_crypto_algorithms_CryptoAlgorithmAES_GCM_cpp,v 1.1 2020/04/24 15:55:05 ajacoutot Exp $
-
 Index: Source/WebCore/crypto/algorithms/CryptoAlgorithmAES_GCM.cpp
 --- Source/WebCore/crypto/algorithms/CryptoAlgorithmAES_GCM.cpp.orig
 +++ Source/WebCore/crypto/algorithms/CryptoAlgorithmAES_GCM.cpp

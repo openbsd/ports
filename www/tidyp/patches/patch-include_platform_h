@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_platform_h,v 1.1.1.1 2011/03/10 19:34:01 jasper Exp $
 --- include/platform.h.orig	Thu Mar 10 18:47:30 2011
 +++ include/platform.h	Thu Mar 10 18:48:35 2011
 @@ -33,7 +33,7 @@ extern "C" {

@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample_conf,v 1.6 2014/12/30 11:37:26 ajacoutot Exp $
 --- sample.conf.orig	Tue Dec 30 11:36:08 2014
 +++ sample.conf	Tue Dec 30 11:36:33 2014
 @@ -28,7 +28,7 @@

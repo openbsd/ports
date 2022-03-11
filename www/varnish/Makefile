@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.70 2022/02/01 08:11:47 kn Exp $
-
 COMMENT =		high-performance HTTP accelerator
 
 DISTNAME =		varnish-7.0.2

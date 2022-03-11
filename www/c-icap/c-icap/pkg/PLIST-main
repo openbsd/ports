@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2019/12/02 11:26:13 sthen Exp $
 @newgroup _c-icap:716
 @newuser _c-icap:716:_c-icap:daemon:c-icap user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/c-icap/*
