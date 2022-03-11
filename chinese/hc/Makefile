@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	convert between GB and BIG-5 codes
 
 DISTNAME=	zh-hc-3.0

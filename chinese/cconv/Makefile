@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT=	simplified-traditional chinese translate tool
 
 DISTNAME=	cconv-0.6.2

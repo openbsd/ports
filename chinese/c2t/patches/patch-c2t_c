@@ -1,5 +1,3 @@
-$OpenBSD: patch-c2t_c,v 1.2 2021/11/28 13:43:25 sthen Exp $
-
 Index: c2t.c
 --- c2t.c.orig
 +++ c2t.c

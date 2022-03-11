@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT =	intelligent phonetic input method library
 
 V =		0.5.1

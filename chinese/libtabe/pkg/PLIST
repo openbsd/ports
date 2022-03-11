@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:38 naddy Exp $
 @bin bin/tsiadd
 @bin bin/tsidel
 @bin bin/tsidump

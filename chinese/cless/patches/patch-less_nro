@@ -1,4 +1,3 @@
-$OpenBSD: patch-less_nro,v 1.1 2007/10/26 20:31:19 ajacoutot Exp $
 --- less.nro.orig	Thu Mar  2 22:15:01 1995
 +++ less.nro	Fri Oct 26 22:20:02 2007
 @@ -1,12 +1,12 @@

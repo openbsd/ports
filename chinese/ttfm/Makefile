@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT=	big5/gb enhanced truetype font manager
 
 DISTNAME=	ttfm-0.9.5

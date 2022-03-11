@@ -1,11 +1,3 @@
-# New ports collection makefile for:    cless
-# Version required:     2.90
-# Date created:         Thu Jan 18, 2000
-# Whom:                 Kevin Lo <kevlo@openbsd.org>
-#
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:13 sthen Exp $
-#
-
 COMMENT=	pager utility that speaks Chinese
 
 DISTNAME=       cless-290

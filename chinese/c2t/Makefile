@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/28 13:43:25 sthen Exp $
-
 COMMENT=	translate GB/Big5 encoding to tone pinyin
 
 DISTNAME=	zh-c2t-1.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT=	library for Chinese language processing
 
 DISTNAME=	libtabe-0.2.6

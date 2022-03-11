@@ -1,4 +1,3 @@
-$OpenBSD: patch-lesskey_nro,v 1.1 2007/10/26 20:31:19 ajacoutot Exp $
 --- lesskey.nro.orig	Wed Feb  1 00:55:56 1995
 +++ lesskey.nro	Fri Oct 26 22:20:02 2007
 @@ -1,22 +1,22 @@

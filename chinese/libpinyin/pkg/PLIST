@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/01 04:28:06 kevlo Exp $
 @bin bin/gen_binary_files
 @bin bin/gen_unigram
 @bin bin/import_interpolation

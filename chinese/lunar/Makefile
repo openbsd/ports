@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	convert solar calendar to lunar calendar
 
 DISTNAME=	lunar-2.1
