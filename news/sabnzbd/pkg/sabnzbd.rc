@@ -1,6 +1,7 @@
 #!/bin/ksh
+
 daemon="${MODPY_BIN} ${TRUEPREFIX}/lib/python${MODPY_VERSION}/site-packages/sabnzbd/SABnzbd.py -d"
-daemon_flags="-b 0 -f /var/sabnzbd"
+daemon_flags="-b 0 -f ${LOCALSTATEDIR}/sabnzbd"
 daemon_timeout=120
 daemon_user="_sabnzbd"
 
