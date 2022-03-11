@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/26 13:20:52 kirby Exp $
-
 COMMENT =		Gnu All Mobile Management Utilities
 
 DISTNAME =		gammu-1.42.0

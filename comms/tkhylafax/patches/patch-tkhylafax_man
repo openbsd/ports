@@ -1,4 +1,3 @@
-$OpenBSD: patch-tkhylafax_man,v 1.2 2009/05/07 14:47:15 giovanni Exp $
 --- tkhylafax.man.orig	Tue Jan 29 13:55:21 2008
 +++ tkhylafax.man	Tue Jan 29 13:56:22 2008
 @@ -273,7 +273,7 @@ A legal line in this file, for example, would be ``*fa

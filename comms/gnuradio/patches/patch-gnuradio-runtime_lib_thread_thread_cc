@@ -1,5 +1,3 @@
-$OpenBSD: patch-gnuradio-runtime_lib_thread_thread_cc,v 1.2 2020/10/13 09:04:51 bentley Exp $
-
 Index: gnuradio-runtime/lib/thread/thread.cc
 --- gnuradio-runtime/lib/thread/thread.cc.orig
 +++ gnuradio-runtime/lib/thread/thread.cc

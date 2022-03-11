@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_16-verify-tx-consistent_test,v 1.1 2021/01/16 12:58:11 sthen Exp $
-
 Index: tests/16-verify-tx-consistent.test
 --- tests/16-verify-tx-consistent.test.orig
 +++ tests/16-verify-tx-consistent.test

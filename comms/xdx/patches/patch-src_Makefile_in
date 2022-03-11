@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2010/04/27 20:48:54 ajacoutot Exp $
-
 Fix build with newer gtk+2 (2.20.0).
 
 --- src/Makefile.in.orig	Tue Apr 27 22:45:34 2010

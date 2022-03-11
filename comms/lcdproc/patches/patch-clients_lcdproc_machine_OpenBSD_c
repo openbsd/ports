@@ -1,5 +1,3 @@
-$OpenBSD: patch-clients_lcdproc_machine_OpenBSD_c,v 1.5 2021/07/23 08:04:21 jca Exp $
-
 Allow building on machines without apm(4) support.
 
 Index: clients/lcdproc/machine_OpenBSD.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/06/07 20:52:52 sthen Exp $
-
 COMMENT=	soundcard-based software modem for Amateur Radio use
 
 # skip alpha-test versions (x.x.x.x format version numbers)

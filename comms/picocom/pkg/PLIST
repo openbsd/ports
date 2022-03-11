@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/07/11 21:40:43 fcambus Exp $
 @bin bin/picocom
 @man man/man1/picocom.1

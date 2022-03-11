@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imakefile_in,v 1.1.1.1 2007/10/25 10:55:59 naddy Exp $
 --- Imakefile.in.orig	Sat Jun 23 15:31:42 2007
 +++ Imakefile.in	Tue Oct 23 17:25:44 2007
 @@ -207,11 +207,14 @@ $(IDP)ibm-1388_P103-2001.cnv: ibm-1388_P103-2001.ucm

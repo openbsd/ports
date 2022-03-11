@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=		Bus Pirate binary mode SPI sniffer
 
 # svn rev 598

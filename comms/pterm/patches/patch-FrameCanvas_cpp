@@ -1,5 +1,3 @@
-$OpenBSD: patch-FrameCanvas_cpp,v 1.1.1.1 2019/11/09 15:35:26 fcambus Exp $
-
 Index: FrameCanvas.cpp
 --- FrameCanvas.cpp.orig
 +++ FrameCanvas.cpp

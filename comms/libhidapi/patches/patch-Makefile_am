@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
-
 disable hidraw (not supported on OpenBSD)
 
 Index: Makefile.am

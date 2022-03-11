@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/27 16:45:31 bcallah Exp $
-
 COMMENT =	simple ADS-B Mode-S decoder for RTLSDR devices
 DISTNAME =	${GH_PROJECT}-0.0.0.20200203
 CATEGORIES =	comms

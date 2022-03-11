@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT=	X.10 firecracker interface
 
 DISTNAME=	bottlerocket-0.04c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:10 sthen Exp $
-
 COMMENT=	tool to programme a wide range of amateur radios
 
 MODPY_EGG_VERSION= 20201128

@@ -1,4 +1,3 @@
-$OpenBSD: patch-amttool,v 1.1.1.1 2012/06/02 12:09:35 sthen Exp $
 --- amttool.orig	Sat Jun  2 12:56:35 2012
 +++ amttool	Sat Jun  2 12:58:08 2012
 @@ -8,7 +8,7 @@ my $amt_host = shift;

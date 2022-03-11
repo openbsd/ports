@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_h_in,v 1.3 2021/02/25 07:56:30 bentley Exp $
-
 Index: config.h.in
 --- config.h.in.orig
 +++ config.h.in

@@ -1,5 +1,3 @@
-$OpenBSD: patch-types_h,v 1.1.1.1 2019/11/09 15:35:26 fcambus Exp $
-
 Index: types.h
 --- types.h.orig
 +++ types.h

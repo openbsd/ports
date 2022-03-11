@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/03/05 07:53:53 landry Exp $
-
 COMMENT=	X amateur station tracking and info reporting
 
 VERSION=	2.1.6

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_psk31-transmitter_h,v 1.1 2010/07/01 01:57:33 jakemsr Exp $
 --- src/psk31-transmitter.h.orig	Tue Aug  2 09:50:58 2005
 +++ src/psk31-transmitter.h	Thu May  6 16:19:11 2010
 @@ -5,6 +5,8 @@

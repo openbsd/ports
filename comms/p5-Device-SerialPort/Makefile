@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT=	talk to modem devices connected via serial port
 
 DISTNAME=	Device-SerialPort-1.04

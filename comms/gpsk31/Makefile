@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:47 sthen Exp $
-
 COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3

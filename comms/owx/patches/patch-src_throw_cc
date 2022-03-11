@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_throw_cc,v 1.1 2017/04/29 06:54:29 espie Exp $
 --- src/throw.cc.orig	Thu Apr 20 01:17:50 2017
 +++ src/throw.cc	Thu Apr 20 01:18:04 2017
 @@ -10,6 +10,7 @@

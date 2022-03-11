@@ -1,5 +1,3 @@
-$OpenBSD: patch-amtterm_man,v 1.1 2021/01/08 13:32:57 sthen Exp $
-
 From 8617629bbd9e084dc70d7d418bc6928293d1b44f Mon Sep 17 00:00:00 2001
 From: Gerd Hoffmann <kraxel@redhat.com>
 Date: Tue, 28 Apr 2020 13:30:11 +0200

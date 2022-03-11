@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 

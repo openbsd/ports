@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_41-noise-purefreqs_test,v 1.1 2021/01/16 12:58:11 sthen Exp $
-
 Index: tests/41-noise-purefreqs.test
 --- tests/41-noise-purefreqs.test.orig
 +++ tests/41-noise-purefreqs.test

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gr-qtgui_lib_freq_sink_c_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
-
 Build with newer Boost. From Fedora.
 
 Index: gr-qtgui/lib/freq_sink_c_impl.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_menu_C,v 1.1 2018/04/11 18:01:24 jasper Exp $
-
 Index: src/menu.C
 --- src/menu.C.orig
 +++ src/menu.C

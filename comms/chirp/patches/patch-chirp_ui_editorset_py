@@ -1,5 +1,3 @@
-$OpenBSD: patch-chirp_ui_editorset_py,v 1.2 2020/09/25 13:48:50 tracey Exp $
-
 Based on https://chirp.danplanet.com/projects/chirp/repository/revisions/dc8d5ce1ae54/diff
 
 Index: chirp/ui/editorset.py

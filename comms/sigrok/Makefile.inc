@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:43:48 sthen Exp $
-
 CATEGORIES +=		comms/sigrok
 
 MAINTAINER ?=		Anthony J. Bentley <anthony@anjbe.name>

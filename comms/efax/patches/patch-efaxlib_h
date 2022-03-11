@@ -1,5 +1,3 @@
-$OpenBSD: patch-efaxlib_h,v 1.1 2021/02/26 20:45:37 naddy Exp $
-
 Index: efaxlib.h
 --- efaxlib.h.orig
 +++ efaxlib.h

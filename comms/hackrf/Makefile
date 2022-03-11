@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:47 sthen Exp $
-
 COMMENT =	host software for the HackRF One SDR
 
 V =		2018.01.1

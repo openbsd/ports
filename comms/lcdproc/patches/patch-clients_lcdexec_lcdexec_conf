@@ -1,5 +1,3 @@
-$OpenBSD: patch-clients_lcdexec_lcdexec_conf,v 1.2 2021/02/20 01:14:03 sthen Exp $
-
 OpenBSD path and there is no point in logging to stderr if we use
 daemon() to daemonise (stderr will get closed).
 

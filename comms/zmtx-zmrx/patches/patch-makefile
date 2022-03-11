@@ -1,4 +1,3 @@
-$OpenBSD: patch-makefile,v 1.1 2017/04/24 10:14:05 sthen Exp $
 --- makefile.orig	Mon Apr 24 11:09:16 2017
 +++ makefile	Mon Apr 24 11:09:34 2017
 @@ -1,6 +1,6 @@

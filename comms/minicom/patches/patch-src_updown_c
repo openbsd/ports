@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_updown_c,v 1.7 2021/02/06 13:03:49 jsg Exp $
-
 Index: src/updown.c
 --- src/updown.c.orig
 +++ src/updown.c

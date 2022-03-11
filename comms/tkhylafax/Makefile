@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:43:48 sthen Exp $
-
 COMMENT=	Tcl/Tk interface to Sam Leffler's fax package
 
 DISTNAME=	tkhylafax-3.2

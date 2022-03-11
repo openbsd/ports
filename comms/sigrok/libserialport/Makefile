@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/25 07:56:30 bentley Exp $
-
 COMMENT =		sigrok serial port communication library
 
 SIGROK_PROJECT =	libserialport

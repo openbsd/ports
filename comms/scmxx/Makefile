@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/26 21:09:57 naddy Exp $
-
 COMMENT=		data exchange utility for Siemens mobile phones
 
 DISTNAME=		scmxx-0.9.0

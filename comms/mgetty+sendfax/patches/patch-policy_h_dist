@@ -1,4 +1,3 @@
-$OpenBSD: patch-policy_h_dist,v 1.5 2019/10/14 21:05:07 jcs Exp $
 Index: policy.h-dist
 --- policy.h-dist.orig
 +++ policy.h-dist

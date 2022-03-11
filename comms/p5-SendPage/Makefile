@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/17 14:49:20 danj Exp $
-
-
 COMMENT=		SNPP, TAP, email notification application
 
 V=			1.000003

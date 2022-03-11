@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2022/01/11 18:00:53 jca Exp $
-
 Based on
 configure.ac: Use python3-embed.pc as a fallback
 https://sigrok.org/gitweb/?p=libsigrokdecode.git;a=commit;h=a6a5e2c8b0e9ecf5d69d0c237c8e8b717b82b36f

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2022/01/04 11:15:02 uaa Exp $
-
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
 COMMENT-tcl=	tcl bindings for hamlib

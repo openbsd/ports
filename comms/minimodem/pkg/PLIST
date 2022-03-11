@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/12/20 19:31:44 bcallah Exp $
 @bin bin/minimodem
 @man man/man1/minimodem.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-tcp_h,v 1.1.1.1 2012/06/02 12:09:35 sthen Exp $
 --- tcp.h.orig	Sat Jun  2 09:16:45 2012
 +++ tcp.h	Sat Jun  2 09:16:55 2012
 @@ -1,3 +1,4 @@

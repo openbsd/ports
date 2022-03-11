@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT =		utility to flash EMS 64 Mbit USB Game Boy cartridge
 
 DISTNAME =		ems-flasher-0.03

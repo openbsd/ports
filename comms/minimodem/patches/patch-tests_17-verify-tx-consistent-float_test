@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_17-verify-tx-consistent-float_test,v 1.1 2021/01/16 12:58:11 sthen Exp $
-
 Index: tests/17-verify-tx-consistent-float.test
 --- tests/17-verify-tx-consistent-float.test.orig
 +++ tests/17-verify-tx-consistent-float.test

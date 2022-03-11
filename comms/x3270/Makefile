@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:48 sthen Exp $
-
 COMMENT=	IBM 3270 terminal emulator for the X Window System
 
 DISTNAME=	x3270-3.3.6

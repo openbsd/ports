@@ -1,4 +1,3 @@
-$OpenBSD: patch-sredird_c,v 1.2 2013/05/16 11:01:09 sthen Exp $
 --- sredird.c.orig	Fri Aug 12 15:10:46 2005
 +++ sredird.c	Thu May 16 11:58:39 2013
 @@ -110,9 +110,9 @@

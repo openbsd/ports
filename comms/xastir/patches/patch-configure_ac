@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.5 2021/03/05 07:55:10 landry Exp $
-
 fix proj >= 7 detection
 https://github.com/Xastir/Xastir/commit/6ee6348ca9ad8556e48d26d976f5d6709e8e31cb
 

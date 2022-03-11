@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/07/01 18:33:35 espie Exp $
 @bin bin/xlog
 @man man/man1/xlog.1
 share/applications/xlog.desktop

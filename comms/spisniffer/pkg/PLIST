@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/21 19:14:59 jasper Exp $
 @bin bin/spisniffer

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: hfaxd.rc,v 1.2 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/hfaxd"
 daemon_flags="-l 0.0.0.0 -i hylafax -l ::0 -i hylafax"

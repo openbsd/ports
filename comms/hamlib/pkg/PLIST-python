@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-python,v 1.3 2022/01/04 11:15:02 uaa Exp $
 lib/python${MODPY_VERSION}/site-packages/Hamlib.py
 lib/python${MODPY_VERSION}/site-packages/_Hamlib.la
 @so lib/python${MODPY_VERSION}/site-packages/_Hamlib.so

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gr-digital_lib_constellation_receiver_cb_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
-
 Build with newer Boost. From Fedora.
 
 Index: gr-digital/lib/constellation_receiver_cb_impl.cc

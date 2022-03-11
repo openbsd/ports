@@ -1,4 +1,3 @@
-$OpenBSD: patch-fax_faxspool_in,v 1.4 2019/10/14 21:05:07 jcs Exp $
 Index: fax/faxspool.in
 --- fax/faxspool.in.orig
 +++ fax/faxspool.in

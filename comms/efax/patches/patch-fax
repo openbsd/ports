@@ -1,4 +1,3 @@
-$OpenBSD: patch-fax,v 1.2 2008/06/08 21:41:13 jasper Exp $
 --- fax.orig	Wed Mar 24 09:07:28 1999
 +++ fax	Wed Jan 30 15:38:17 2008
 @@ -28,16 +28,17 @@ EFIX=efix

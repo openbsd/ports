@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT=	x10 firecracker utility
 
 DISTNAME=	flipit-0.3.6

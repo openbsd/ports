@@ -1,5 +1,3 @@
-$OpenBSD: patch-mgetty_h,v 1.4 2021/07/28 17:08:22 jca Exp $
-
 Add more 64 bits arches to the list of arches where pointers are longs,
 otherwise strings gets typedef'd to an int as p_int and breaks in conf_mg.c.
 

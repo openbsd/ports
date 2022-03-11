@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/25 07:56:30 bentley Exp $
-
 COMMENT =		graphical frontend for sigrok logic analyzer
 
 SIGROK_PROJECT =	pulseview

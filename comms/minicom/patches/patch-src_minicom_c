@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_minicom_c,v 1.3 2021/02/06 13:03:49 jsg Exp $
-
 Index: src/minicom.c
 --- src/minicom.c.orig
 +++ src/minicom.c

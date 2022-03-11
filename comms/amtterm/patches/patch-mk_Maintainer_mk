@@ -1,4 +1,3 @@
-$OpenBSD: patch-mk_Maintainer_mk,v 1.2 2020/11/02 16:10:23 jasper Exp $
 Index: mk/Maintainer.mk
 --- mk/Maintainer.mk.orig
 +++ mk/Maintainer.mk

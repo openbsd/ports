@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/28 10:40:32 jca Exp $
-
 COMMENT=	BBS terminal program
 
 DISTNAME=	syncterm-1.1

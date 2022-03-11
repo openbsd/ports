@@ -1,5 +1,3 @@
-$OpenBSD: patch-pv_util_cpp,v 1.2 2021/02/25 07:56:30 bentley Exp $
-
 Unbreak Qt5.15 build
 ae726b70a7ada9a4be5808e00f0c951318479684
 

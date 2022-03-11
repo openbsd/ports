@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/11 18:00:53 jca Exp $
-
 COMMENT =		sigrok protocol decoding library
 REVISION =		3
 

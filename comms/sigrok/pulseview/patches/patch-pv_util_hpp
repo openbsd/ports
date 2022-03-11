@@ -1,5 +1,3 @@
-$OpenBSD: patch-pv_util_hpp,v 1.1 2020/11/02 00:18:09 daniel Exp $
-
 backport commit 136b891 to work around boost + clang10 issue
 
 Index: pv/util.hpp

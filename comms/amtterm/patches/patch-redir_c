@@ -1,5 +1,3 @@
-$OpenBSD: patch-redir_c,v 1.1 2021/01/08 13:32:57 sthen Exp $
-
 Add SSL/auth code
 https://github.com/Openwsman/wsmancli/issues/10#issuecomment-751253133
 

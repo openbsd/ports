@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gui_c,v 1.3 2021/02/28 20:54:51 naddy Exp $
-
 Fix build with -fno-common
 
 Index: src/gui.c

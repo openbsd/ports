@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/16 11:01:09 sthen Exp $
 @bin libexec/sredird
 @man man/man8/sredird.8

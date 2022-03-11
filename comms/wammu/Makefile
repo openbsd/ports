@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/21 16:34:24 solene Exp $
-
 COMMENT =		Gnu All Mobile Management Utilities GUI
 
 MODPY_EGG_VERSION = 	0.44

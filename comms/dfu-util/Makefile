@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/03/09 12:56:39 sthen Exp $
-
 COMMENT =		device firmware update (DFU) USB programmer
 
 DISTNAME =		dfu-util-0.10

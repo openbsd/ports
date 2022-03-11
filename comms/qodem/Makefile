@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/17 11:20:47 fcambus Exp $
-
 COMMENT =	Qodem Terminal Emulator
 
 DISTNAME =	qodem-1.0.1

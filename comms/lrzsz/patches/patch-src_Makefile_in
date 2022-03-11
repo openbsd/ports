@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2005/10/04 20:35:53 sturm Exp $
 --- src/Makefile.in.orig	Tue Oct  4 22:27:28 2005
 +++ src/Makefile.in	Tue Oct  4 22:28:16 2005
 @@ -372,16 +372,16 @@ install-exec-local:

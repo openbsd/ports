@@ -1,4 +1,3 @@
-$OpenBSD: patch-ckuker_nr,v 1.2 2012/04/06 15:57:52 merdely Exp $
 --- ckuker.nr.orig	Sat Aug 20 18:19:52 2011
 +++ ckuker.nr	Fri Apr  6 00:32:34 2012
 @@ -6,8 +6,8 @@ kermit \-

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/12 14:29:01 espie Exp $
 @bin bin/qpage
 @man man/man1/qpage.1
 share/doc/qpage/

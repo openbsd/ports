@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:46 sthen Exp $
-
 COMMENT=	curses DX cluster watcher
 
 DISTNAME=	colrdx-1.02

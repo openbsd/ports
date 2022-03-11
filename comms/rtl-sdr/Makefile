@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:48 sthen Exp $
-
 COMMENT=	software to turn RTL2832U into an SDR
 
 DISTNAME=	rtl-sdr-0.20130412

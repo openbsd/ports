@@ -1,4 +1,3 @@
-$OpenBSD: patch-faxd_Getty_c++,v 1.3 2008/02/08 23:10:45 okan Exp $
 --- faxd/Getty.c++.orig	Tue May 15 17:52:03 2007
 +++ faxd/Getty.c++	Wed Nov  7 17:29:51 2007
 @@ -228,9 +228,9 @@ void

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/27 21:03:38 espie Exp $
 @bin bin/xdx
 @man man/man1/xdx.1
 share/applications/Xdx.desktop

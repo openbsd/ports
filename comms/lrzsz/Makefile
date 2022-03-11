@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/14 21:45:42 kmos Exp $
-
 COMMENT=	receive/send files via X/Y/ZMODEM protocol
 
 DISTNAME=	lrzsz-0.12.20

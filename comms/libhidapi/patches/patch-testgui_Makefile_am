@@ -1,5 +1,3 @@
-$OpenBSD: patch-testgui_Makefile_am,v 1.1.1.1 2018/06/18 23:37:01 thfr Exp $
-
 nuke hidraw
 
 Index: testgui/Makefile.am

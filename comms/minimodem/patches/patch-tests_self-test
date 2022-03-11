@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_self-test,v 1.1 2021/01/16 12:58:11 sthen Exp $
-
 Index: tests/self-test
 --- tests/self-test.orig
 +++ tests/self-test

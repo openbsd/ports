@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-term,v 1.1.1.1 2012/06/02 12:09:35 sthen Exp $
 @bin bin/amtterm
 @man man/man1/amtterm.1

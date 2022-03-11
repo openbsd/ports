@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/21 19:50:22 kmos Exp $
-
 COMMENT =		python bindings for Gammu
 
 MODPY_EGG_VERSION = 	2.12

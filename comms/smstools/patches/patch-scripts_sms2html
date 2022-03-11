@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_sms2html,v 1.1 2009/03/17 10:47:44 sthen Exp $
 --- scripts/sms2html.orig	Wed Mar 11 01:35:11 2009
 +++ scripts/sms2html	Wed Mar 11 01:38:13 2009
 @@ -1,4 +1,4 @@

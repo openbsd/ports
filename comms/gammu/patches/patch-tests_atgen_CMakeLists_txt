@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_atgen_CMakeLists_txt,v 1.2 2019/11/06 02:44:12 kirby Exp $
-
 Index: tests/atgen/CMakeLists.txt
 --- tests/atgen/CMakeLists.txt.orig
 +++ tests/atgen/CMakeLists.txt

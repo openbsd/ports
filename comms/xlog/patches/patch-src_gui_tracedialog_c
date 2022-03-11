@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gui_tracedialog_c,v 1.3 2011/09/12 14:09:56 jasper Exp $
 --- src/gui_tracedialog.c.orig	Mon Sep 12 16:04:10 2011
 +++ src/gui_tracedialog.c	Mon Sep 12 16:04:29 2011
 @@ -65,10 +65,8 @@ stop_tracing (void)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/20 01:14:03 sthen Exp $
-
 COMMENT =		interface to various LCD displays
 
 V =			0.5.9

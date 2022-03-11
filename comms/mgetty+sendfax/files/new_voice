@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $OpenBSD: new_voice,v 1.2 2014/08/27 06:58:00 ajacoutot Exp $
 
 extension="wav"
 contenttype="audio/x-wav"

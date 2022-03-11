@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/12 14:03:35 espie Exp $
 @extra ${SYSCONFDIR}/flipit.conf
 @bin bin/flipit
 @man man/man1/flipit.1

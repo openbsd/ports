@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_mgetty_texi_in,v 1.4 2019/10/14 21:05:07 jcs Exp $
 Index: doc/mgetty.texi-in
 --- doc/mgetty.texi-in.orig
 +++ doc/mgetty.texi-in

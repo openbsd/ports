@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/28 20:54:51 naddy Exp $
-
 COMMENT=	X DX cluster watcher
 
 VERSION=	2.4

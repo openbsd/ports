@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/01/31 20:08:42 sthen Exp $
-
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
 DISTNAME =	smstools3-3.1.21

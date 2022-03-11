@@ -1,5 +1,3 @@
-$OpenBSD: patch-bindings_Perl_Pilot_xs,v 1.3 2015/09/21 08:46:50 ajacoutot Exp $
-
 Allow pilot-link's perl bindings to build with newer Perl.
 From Debian ticket 628510
 

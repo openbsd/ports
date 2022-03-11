@@ -1,4 +1,3 @@
-$OpenBSD: patch-qpage_man,v 1.1 2004/11/11 20:56:39 alek Exp $
 --- qpage.man.orig	Mon Nov  1 15:00:57 2004
 +++ qpage.man	Mon Nov  1 15:01:16 2004
 @@ -867,7 +867,7 @@ if more than one paging service is used 

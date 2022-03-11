@@ -1,4 +1,3 @@
-$OpenBSD: patch-smsd_services_sql_c,v 1.1.1.1 2016/11/25 11:51:46 kirby Exp $
 --- smsd/services/sql.c.orig	Mon Jun 15 10:11:01 2015
 +++ smsd/services/sql.c	Mon Jun 15 21:16:35 2015
 @@ -9,7 +9,7 @@

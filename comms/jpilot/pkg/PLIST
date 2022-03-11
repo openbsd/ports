@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.20 2021/02/20 16:54:24 ajacoutot Exp $
 @bin bin/jpilot
 @bin bin/jpilot-dump
 @bin bin/jpilot-merge

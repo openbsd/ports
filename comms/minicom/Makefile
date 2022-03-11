@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2021/02/06 13:03:49 jsg Exp $
-
 COMMENT=	MS-DOS Telix-like serial communication program
 
 DISTNAME=	minicom-2.8

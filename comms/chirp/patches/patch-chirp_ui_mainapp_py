@@ -1,5 +1,3 @@
-$OpenBSD: patch-chirp_ui_mainapp_py,v 1.2 2020/12/08 16:34:57 tracey Exp $
-
 generic_xml is the only thing needing py-libxml which is moving to py3-only
 https://chirp.danplanet.com/projects/chirp/repository/revisions/49d2862932d4
 https://chirp.danplanet.com/issues/495 etc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/23 19:39:11 sthen Exp $
-
 COMMENT =		terminal to access the PLATO system
 
 DISTNAME =		pterm-6.0.4

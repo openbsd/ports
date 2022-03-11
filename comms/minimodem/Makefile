@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/16 12:58:11 sthen Exp $
-
 BROKEN-hppa =	no atomic ops in pulse-simple dependency
 
 COMMENT =	general-purpose software audio FSK modem

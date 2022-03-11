@@ -1,4 +1,3 @@
-$OpenBSD: patch-sredird_8,v 1.2 2013/05/16 11:01:09 sthen Exp $
 --- sredird.8.orig	Fri Aug 12 15:16:14 2005
 +++ sredird.8	Thu May 16 11:58:39 2013
 @@ -29,8 +29,11 @@ between modem and

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/01 17:41:39 jeremy Exp $
-
 COMMENT=	curses-based 3270 terminal editor
 
 DISTNAME=	suite3270-4.0ga10-src

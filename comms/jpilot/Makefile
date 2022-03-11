@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2021/02/20 16:54:24 ajacoutot Exp $
-
 COMMENT=	desktop organizer software for the palm pilot
 
 DISTNAME=	jpilot-1.8.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/03/18 08:57:31 fcambus Exp $
-
 COMMENT =		serial and network communications package
 
 PKGNAME =		kermit-9.0.302

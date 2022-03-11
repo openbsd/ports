@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gui_manualdialog_c,v 1.1 2008/10/29 11:28:36 landry Exp $
 --- src/gui_manualdialog.c.orig	Tue Oct 28 16:26:09 2008
 +++ src/gui_manualdialog.c	Tue Oct 28 16:27:12 2008
 @@ -59,7 +59,7 @@ void on_manual_activate (GtkMenuItem * menuitem, gpoin

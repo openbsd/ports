@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/07 02:22:09 bentley Exp $
-
 COMMENT =		command-line frontend for sigrok logic analyzer
 
 SIGROK_PROJECT =	sigrok-cli

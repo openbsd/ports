@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/09/19 05:50:36 bentley Exp $
 include/libserialport.h
 lib/libserialport.a
 lib/libserialport.la

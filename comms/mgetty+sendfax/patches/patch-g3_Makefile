@@ -1,4 +1,3 @@
-$OpenBSD: patch-g3_Makefile,v 1.2 2007/06/15 11:30:38 ajacoutot Exp $
 --- g3/Makefile.orig	Wed Feb 22 18:25:34 2006
 +++ g3/Makefile	Fri Jun 15 11:26:20 2007
 @@ -37,13 +37,13 @@ install: all

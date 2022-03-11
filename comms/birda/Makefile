@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/26 13:08:37 sthen Exp $
-
 COMMENT=		Bohlin's IrDA utilities
 
 DISTNAME=		birda-1.3

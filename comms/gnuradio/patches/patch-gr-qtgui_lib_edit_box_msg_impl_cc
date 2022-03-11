@@ -1,5 +1,3 @@
-$OpenBSD: patch-gr-qtgui_lib_edit_box_msg_impl_cc,v 1.1 2021/03/18 19:51:44 rsadowski Exp $
-
 Build with newer Boost. From Fedora.
 
 Index: gr-qtgui/lib/edit_box_msg_impl.cc

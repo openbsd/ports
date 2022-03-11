@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT =	tool for programming Wouxun transcievers
 
 DISTNAME =	owx-20110917

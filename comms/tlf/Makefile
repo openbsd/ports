@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/01/02 20:23:03 uaa Exp $
-
 PORTROACH=	skipv:bm_start
 
 COMMENT=	radio contest logger

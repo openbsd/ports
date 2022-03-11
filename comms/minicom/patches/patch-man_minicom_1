@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_minicom_1,v 1.7 2021/02/06 13:03:49 jsg Exp $
-
 Index: man/minicom.1
 --- man/minicom.1.orig
 +++ man/minicom.1

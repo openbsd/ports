@@ -1,5 +1,3 @@
-$OpenBSD: patch-server_drivers_port_h,v 1.1 2019/10/04 20:56:02 naddy Exp $
-
 Skip unused code for accessing I/O ports: clang on non-x86 does not
 handle x86 inline assembly.
 

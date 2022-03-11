@@ -1,5 +1,3 @@
-$OpenBSD: patch-bindings_Perl_Makefile_PL_in,v 1.5 2015/09/21 08:46:50 ajacoutot Exp $
-
 PERL_POLLUTE removal :-
 Allow pilot-link's perl bindings to build with newer Perl.
 From Debian ticket 628510

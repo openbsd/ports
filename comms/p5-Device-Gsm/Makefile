@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/21 17:36:42 cwen Exp $
-
 COMMENT=	Perl extension to interface GSM cellulars / modems
 
 DISTNAME =	Device-Gsm-1.61

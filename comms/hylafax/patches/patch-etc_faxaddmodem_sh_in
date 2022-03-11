@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_faxaddmodem_sh_in,v 1.2 2012/04/13 14:03:58 naddy Exp $
 --- etc/faxaddmodem.sh.in.orig	Wed Sep 15 16:42:36 2010
 +++ etc/faxaddmodem.sh.in	Fri Apr 13 16:03:00 2012
 @@ -1758,7 +1758,7 @@ fi
