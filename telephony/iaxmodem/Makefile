@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/21 16:49:50 sthen Exp $
-
 COMMENT=	a software fax modem that uses an IAX channel
 
 DISTNAME=	iaxmodem-1.3.2

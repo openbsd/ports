@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_rules,v 1.1 2021/02/06 21:32:06 sthen Exp $
-
 Index: src/Makefile.rules
 --- src/Makefile.rules.orig
 +++ src/Makefile.rules

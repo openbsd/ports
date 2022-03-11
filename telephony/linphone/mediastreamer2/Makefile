@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/26 07:08:32 ratchov Exp $
-
 COMMENT =	streaming engine for voice/video telephony applications
 
 MODULE =	mediastreamer2

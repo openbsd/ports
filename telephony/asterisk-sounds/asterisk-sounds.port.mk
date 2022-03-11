@@ -1,5 +1,3 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.13 2017/05/12 14:19:50 sthen Exp $
-
 # sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
 MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
 

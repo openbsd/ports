@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2022/02/26 20:40:20 sthen Exp $
-
 COMMENT-main=	multimedia communication library (SIP, RTP, ICE, etc)
 COMMENT-pjsua=	lightweight sip client
 

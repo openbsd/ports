@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:56 sthen Exp $
-
 COMMENT=	open source SIP User-Agent library
 
 DISTNAME=	sofia-sip-1.12.11

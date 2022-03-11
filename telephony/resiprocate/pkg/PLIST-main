@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
 include/resip/
 include/resip/dum/
 include/resip/dum/AppDialog.hxx

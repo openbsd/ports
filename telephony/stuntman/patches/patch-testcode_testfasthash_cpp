@@ -1,4 +1,3 @@
-$OpenBSD: patch-testcode_testfasthash_cpp,v 1.1 2013/12/24 13:57:18 sthen Exp $
 --- testcode/testfasthash.cpp.orig	Sun Jun 23 20:45:16 2013
 +++ testcode/testfasthash.cpp	Sat Dec 21 15:08:08 2013
 @@ -233,11 +233,18 @@ HRESULT CTestFastHash::TestRemove()

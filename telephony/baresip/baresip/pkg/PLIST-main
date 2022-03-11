@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2021/06/15 06:54:44 landry Exp $
 @pkgpath telephony/baresip/baresip
 @bin bin/baresip
 lib/baresip/

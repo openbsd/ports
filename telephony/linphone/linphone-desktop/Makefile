@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 17:04:01 landry Exp $
-
 COMMENT =	graphical audio and video SIP phone
 
 V =		4.2.5

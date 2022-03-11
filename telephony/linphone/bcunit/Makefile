@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
-
 COMMENT =	Unit testing framework for C
 
 # take git snapshot because https://gitlab.linphone.org/BC/public/bcunit/-/issues/1

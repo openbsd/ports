@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/06/15 06:52:12 landry Exp $
-
 COMMENT =		library for real-time audio and video processing
 
 GH_ACCOUNT =	baresip

@@ -1,4 +1,3 @@
-$OpenBSD: patch-simpleclient_tkphone_iaxcli_c,v 1.2 2013/08/07 19:16:57 naddy Exp $
 Just use the 1, otherwise we would have "too many arguments to function `iaxc_initialize'"
 --- simpleclient/tkphone/iaxcli.c.orig	Mon Apr  7 18:05:28 2008
 +++ simpleclient/tkphone/iaxcli.c	Wed Aug  7 20:30:01 2013

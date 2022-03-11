@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/12 06:08:54 landry Exp $
-
 COMMENT =	SIP library supporting voice/video calls and text messaging
 
 MODULE =	liblinphone

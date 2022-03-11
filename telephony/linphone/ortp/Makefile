@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 16:58:38 landry Exp $
-
 COMMENT =	library implementing the RTP protocol
 
 MODULE =	ortp

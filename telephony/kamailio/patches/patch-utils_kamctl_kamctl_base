@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_kamctl_kamctl_base,v 1.7 2021/04/28 19:35:07 sthen Exp $
-
 Index: utils/kamctl/kamctl.base
 --- utils/kamctl/kamctl.base.orig
 +++ utils/kamctl/kamctl.base

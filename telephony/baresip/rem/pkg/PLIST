@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/06/15 06:52:12 landry Exp $
 include/rem/
 include/rem/rem.h
 include/rem/rem_aac.h

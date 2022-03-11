@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_FindV4L_cmake,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
-
 Index: cmake/FindV4L.cmake
 --- cmake/FindV4L.cmake.orig
 +++ cmake/FindV4L.cmake

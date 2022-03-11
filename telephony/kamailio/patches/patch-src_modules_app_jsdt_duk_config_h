@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_app_jsdt_duk_config_h,v 1.4 2021/04/28 19:35:07 sthen Exp $
-
 We do have inttypes.h, but gcc-4.2.1 doesn't default to C99 and
 thus doesn't #define __STDC_VERSION__ 199901L.
 

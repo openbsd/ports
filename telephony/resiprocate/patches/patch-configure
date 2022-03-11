@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
-
 Follow OpenBSD shared library naming scheme
 
 Index: configure

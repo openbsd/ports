@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/17 10:14:53 feinerer Exp $
 @newgroup _turnserver:795
 @newuser _turnserver:795:795:daemon:TURN Server user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/turnserver

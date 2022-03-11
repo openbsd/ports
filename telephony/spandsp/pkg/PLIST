@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/05/05 17:19:57 chris Exp $
 include/spandsp/
 include/spandsp.h
 include/spandsp/ademco_contactid.h

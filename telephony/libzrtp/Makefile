@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/07/22 23:24:37 jca Exp $
-
 COMMENT =		ZRTP library
 
 DISTNAME =		libzrtp-0.20180617

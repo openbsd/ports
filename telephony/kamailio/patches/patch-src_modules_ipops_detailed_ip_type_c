@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_ipops_detailed_ip_type_c,v 1.2 2021/02/06 21:32:06 sthen Exp $
-
 Index: src/modules/ipops/detailed_ip_type.c
 --- src/modules/ipops/detailed_ip_type.c.orig
 +++ src/modules/ipops/detailed_ip_type.c

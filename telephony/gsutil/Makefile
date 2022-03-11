@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/11 20:48:30 sthen Exp $
-
 COMMENT =		dump/restore Grandstream device configurations
 
 DISTNAME =		gsutil-3.1

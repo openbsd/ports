@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/03 11:15:44 cwen Exp $
-
 COMMENT =	utilities library used by linphone stack
 
 MODULE =	bctoolbox

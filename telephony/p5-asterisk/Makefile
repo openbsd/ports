@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/06 16:28:05 sthen Exp $
-
 COMMENT=	collection of perl modules to be used with asterisk
 
 DISTNAME=	asterisk-perl-1.08

@@ -1,5 +1,3 @@
-$OpenBSD: patch-repro_repro_config,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
-
 Index: repro/repro.config
 --- repro/repro.config.orig
 +++ repro/repro.config

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/15 06:52:47 landry Exp $
-
 COMMENT =		modular and flexible STUN and TURN Server
 
 GH_ACCOUNT =		otalk

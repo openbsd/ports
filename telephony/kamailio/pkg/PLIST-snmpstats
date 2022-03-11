@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-snmpstats,v 1.4 2021/02/04 18:43:58 sthen Exp $
 @so lib/kamailio/modules/snmpstats.so
 share/doc/kamailio/modules/README.snmpstats
 share/snmp/mibs/KAMAILIO-MIB

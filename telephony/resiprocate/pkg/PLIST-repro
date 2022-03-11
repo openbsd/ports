@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-repro,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
 @newgroup _repro:855
 @newuser _repro:855:855:daemon:repro user:/var/db/repro:/sbin/nologin
 @extraunexec rm -f /var/db/repro/*

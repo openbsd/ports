@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/04 16:44:03 tb Exp $
-
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.4.5

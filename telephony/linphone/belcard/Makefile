@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 16:54:43 landry Exp $
-
 COMMENT =	library to manipulate VCard standard format
 
 V =		4.5.22

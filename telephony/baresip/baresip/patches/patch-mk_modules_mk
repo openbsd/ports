@@ -1,5 +1,3 @@
-$OpenBSD: patch-mk_modules_mk,v 1.1 2021/06/15 06:54:44 landry Exp $
-
 otherwise echo tries to link twice its objfile and that results in conflicting exports
 
 Index: mk/modules.mk

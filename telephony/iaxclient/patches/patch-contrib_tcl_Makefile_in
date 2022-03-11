@@ -1,4 +1,3 @@
-$OpenBSD: patch-contrib_tcl_Makefile_in,v 1.1 2010/06/18 17:32:21 sebastia Exp $
 --- contrib/tcl/Makefile.in.orig	Mon Apr  7 18:05:36 2008
 +++ contrib/tcl/Makefile.in	Sun Nov 15 20:27:50 2009
 @@ -108,7 +108,7 @@ RANLIB		= @RANLIB@

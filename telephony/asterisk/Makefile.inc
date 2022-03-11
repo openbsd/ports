@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.9 2022/02/22 21:21:07 jca Exp $
-
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}

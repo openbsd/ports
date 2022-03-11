@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-pjsua,v 1.1 2015/10/09 21:28:13 sthen Exp $
 @pkgpath telephony/pjsua
 @bin bin/pjsua

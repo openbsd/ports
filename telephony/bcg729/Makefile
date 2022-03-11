@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/06/15 04:19:26 landry Exp $
-
 COMMENT=	software G729A encoder and decoder library
 
 V=		1.1.1

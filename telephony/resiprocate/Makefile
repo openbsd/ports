@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/09/10 15:22:19 tb Exp $
-
 COMMENT-main =		reSIProcate SIP stack
 COMMENT-repro =		reSIProcate SIP proxy/registrar server
 COMMENT-return =	reSIProcate STUN/TURN client and server

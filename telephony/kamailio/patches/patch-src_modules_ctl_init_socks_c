@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_modules_ctl_init_socks_c,v 1.1 2017/07/03 22:14:20 sthen Exp $
 --- src/modules/ctl/init_socks.c.orig	Mon May 15 23:36:56 2017
 +++ src/modules/ctl/init_socks.c	Mon May 15 23:37:52 2017
 @@ -85,9 +85,9 @@ int init_unix_sock(struct sockaddr_un* su, char* name,

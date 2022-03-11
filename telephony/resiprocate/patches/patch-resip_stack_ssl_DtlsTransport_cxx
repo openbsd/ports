@@ -1,5 +1,3 @@
-$OpenBSD: patch-resip_stack_ssl_DtlsTransport_cxx,v 1.1 2021/09/10 15:22:19 tb Exp $
-
 Index: resip/stack/ssl/DtlsTransport.cxx
 --- resip/stack/ssl/DtlsTransport.cxx.orig
 +++ resip/stack/ssl/DtlsTransport.cxx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:56 sthen Exp $
-
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6

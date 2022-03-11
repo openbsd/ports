@@ -1,4 +1,3 @@
-$OpenBSD: patch-testcode_testpolling_cpp,v 1.1 2013/12/24 13:57:18 sthen Exp $
 --- testcode/testpolling.cpp.orig	Sun Jun 23 20:45:16 2013
 +++ testcode/testpolling.cpp	Sat Dec 21 15:13:23 2013
 @@ -257,7 +257,9 @@ HRESULT CTestPolling::Test1()

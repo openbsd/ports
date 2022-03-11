@@ -1,4 +1,3 @@
-$OpenBSD: patch-third_party_bnlib_Makefile_in,v 1.3 2017/05/13 01:52:38 espie Exp $
 Index: third_party/bnlib/Makefile.in
 --- third_party/bnlib/Makefile.in.orig
 +++ third_party/bnlib/Makefile.in

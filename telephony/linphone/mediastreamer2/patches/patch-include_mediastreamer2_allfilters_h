@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_mediastreamer2_allfilters_h,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
-
 Index: include/mediastreamer2/allfilters.h
 --- include/mediastreamer2/allfilters.h.orig
 +++ include/mediastreamer2/allfilters.h

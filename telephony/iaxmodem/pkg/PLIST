@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/07/27 18:45:41 sthen Exp $
 @bin bin/iaxmodem
 @man man/man1/iaxmodem.1
 share/doc/iaxmodem/

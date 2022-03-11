@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/15 10:46:19 sthen Exp $
-
 COMMENT=	interact with Asterisk Manager Interface from perl
 
 DISTNAME=	Asterisk-AMI-v0.2.8

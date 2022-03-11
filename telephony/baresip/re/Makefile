@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/04 21:30:04 tb Exp $
-
 COMMENT =		portable library for real-time communications
 
 GH_ACCOUNT =	baresip

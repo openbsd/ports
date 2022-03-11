@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_core_paths_paths_cpp,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
-
 Index: src/core/paths/paths.cpp
 --- src/core/paths/paths.cpp.orig
 +++ src/core/paths/paths.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/10/20 01:49:50 ian Exp $
-
 # strictly speaking not, as they are just sound files, but packaging
 # these on arch which don't build asterisk is a waste of cycles on build
 # machines and disk space on mirrors

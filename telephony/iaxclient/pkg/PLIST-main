@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2015/03/19 20:25:27 naddy Exp $
 @sample ${SYSCONFDIR}/iaxmodem/
 @bin bin/testcall
 include/iaxclient.h

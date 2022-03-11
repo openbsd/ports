@@ -1,4 +1,3 @@
-$OpenBSD: patch-stuncore_stunbuilder_cpp,v 1.2 2016/05/27 22:50:31 sthen Exp $
 --- stuncore/stunbuilder.cpp.orig	Sun Jan 17 03:58:21 2016
 +++ stuncore/stunbuilder.cpp	Fri May 27 17:53:20 2016
 @@ -95,6 +95,7 @@ HRESULT CStunMessageBuilder::AddRandomTransactionId(St

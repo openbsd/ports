@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-en,v 1.7 2017/08/22 10:34:56 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-extra-sounds-en-${MODAS_CODEC}-*
 @conflict asterisk-sounds-*

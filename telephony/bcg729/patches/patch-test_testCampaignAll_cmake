@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_testCampaignAll_cmake,v 1.1 2021/06/15 04:19:26 landry Exp $
-
 Index: test/testCampaignAll.cmake
 --- test/testCampaignAll.cmake.orig
 +++ test/testCampaignAll.cmake

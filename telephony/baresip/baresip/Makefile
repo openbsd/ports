@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/06/20 12:13:52 sthen Exp $
-
 COMMENT-main =		modular SIP User-Agent with audio and video support
 COMMENT-gtk =		GTK+-based modules for baresip
 

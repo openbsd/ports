@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-en_NZ,v 1.1 2018/02/13 01:09:14 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-en_NZ-${MODAS_CODEC}-*
 share/asterisk/

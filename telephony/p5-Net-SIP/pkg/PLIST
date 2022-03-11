@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/11/18 00:00:21 bluhm Exp $
 ${P5SITE}/Net/SIP/
 ${P5SITE}/Net/SIP.pm
 ${P5SITE}/Net/SIP.pod

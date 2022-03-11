@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_audiofilters_gsm_c,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
-
 Index: src/audiofilters/gsm.c
 --- src/audiofilters/gsm.c.orig
 +++ src/audiofilters/gsm.c

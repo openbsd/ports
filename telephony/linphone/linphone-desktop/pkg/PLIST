@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/07/10 17:04:01 landry Exp $
 @bin bin/linphone
 share/applications/linphone.desktop
 share/icons/hicolor/128x128/apps/linphone.png

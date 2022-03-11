@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:55 sthen Exp $
-
 COMMENT=	GNU oSIP library
 
 DISTNAME=	libosip2-3.5.0

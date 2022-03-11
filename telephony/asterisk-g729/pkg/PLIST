@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/12/16 23:57:26 sthen Exp $
 @so lib/asterisk/modules/codec_g729.so
 share/doc/pkg-readmes/${PKGSTEM}

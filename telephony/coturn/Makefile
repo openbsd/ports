@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/13 10:15:54 tb Exp $
-
 COMMENT =	coturn STUN/TURN server
 
 V =		4.5.2

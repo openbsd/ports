@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/09 20:23:36 kmos Exp $
-
 COMMENT =	library implementing SIP (RFC3261) transport
 
 MODULE =	belle-sip

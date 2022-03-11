@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/25 23:04:54 sthen Exp $
-
 COMMENT=	Creative VoIP Blaster driver/software
 DISTNAME=	fobbit-0.61
 REVISION=	0

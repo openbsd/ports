@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2021/02/21 16:49:50 sthen Exp $
-
 --- Makefile.in.orig	Thu Feb  7 20:57:47 2008
 +++ Makefile.in	Thu Mar 27 21:58:54 2008
 @@ -3,13 +3,13 @@ DSPVER=		@DSPVER@

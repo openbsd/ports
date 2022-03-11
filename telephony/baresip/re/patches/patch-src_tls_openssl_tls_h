@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tls_openssl_tls_h,v 1.1 2021/12/04 21:30:04 tb Exp $
-
 Fix build with opaque BIO_METHOD in LibreSSL 3.5.
 
 Index: src/tls/openssl/tls.h

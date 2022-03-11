@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/16 21:53:31 sthen Exp $
-
     SUBDIR =
     SUBDIR += core-sounds
     SUBDIR += extra-sounds

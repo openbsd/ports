@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_vblast_h,v 1.3 2021/02/09 22:59:15 naddy Exp $
 Index: src/vblast.h
 --- src/vblast.h.orig
 +++ src/vblast.h

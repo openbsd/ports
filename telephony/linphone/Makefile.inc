@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2021/08/09 19:58:38 kmos Exp $
-
 V ?=		5.0.0
 CATEGORIES =	telephony
 MODULES +=	devel/cmake

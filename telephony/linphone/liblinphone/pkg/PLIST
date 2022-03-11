@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/07/10 17:00:37 landry Exp $
 @bin bin/linphone-daemon
 @bin bin/linphone-daemon-pipetest
 @bin bin/linphonec

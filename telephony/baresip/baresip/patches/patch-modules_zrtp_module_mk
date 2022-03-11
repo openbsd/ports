@@ -1,4 +1,3 @@
-$OpenBSD: patch-modules_zrtp_module_mk,v 1.5 2021/06/15 06:54:44 landry Exp $
 Index: modules/zrtp/module.mk
 --- modules/zrtp/module.mk.orig
 +++ modules/zrtp/module.mk

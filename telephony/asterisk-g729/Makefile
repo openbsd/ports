@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/10/16 10:57:12 sthen Exp $
-
 COMMENT=	G.729a voice codec for Asterisk
 DISTNAME=	asterisk-g72x-1.4.3
 REVISION=	4

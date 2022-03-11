@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ldap,v 1.5 2021/02/04 18:43:58 sthen Exp $
 @so lib/kamailio/modules/db2_ldap.so
 @so lib/kamailio/modules/h350.so
 @so lib/kamailio/modules/ldap.so

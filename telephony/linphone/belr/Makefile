@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/10 16:56:38 landry Exp $
-
 COMMENT =	language recognition library
 
 V =		5.0.0-alpha

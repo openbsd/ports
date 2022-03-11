@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-return,v 1.1.1.1 2020/05/29 21:41:23 feinerer Exp $
 @newgroup _return:856
 @newuser _return:856:856:daemon:reTurnServer user:/var/empty:/sbin/nologin
 @extraunexec rm -f /var/log/reTurnServer/*

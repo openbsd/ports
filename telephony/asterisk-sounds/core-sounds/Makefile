@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2018/02/13 01:09:14 sthen Exp $
-
     SUBDIR =
 .for i in gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
     SUBDIR += en,$i

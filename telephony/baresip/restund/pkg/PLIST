@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/15 06:52:47 landry Exp $
 @newgroup _restund:742
 @newuser _restund:742:742:daemon:restund user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/restund

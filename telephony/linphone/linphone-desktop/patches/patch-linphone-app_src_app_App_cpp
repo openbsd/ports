@@ -1,5 +1,3 @@
-$OpenBSD: patch-linphone-app_src_app_App_cpp,v 1.1.1.1 2021/07/10 12:03:20 landry Exp $
-
 Index: linphone-app/src/app/App.cpp
 --- linphone-app/src/app/App.cpp.orig
 +++ linphone-app/src/app/App.cpp
