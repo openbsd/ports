@@ -1,0 +1,8 @@
+The Arc Icon Theme is still unfinished: it mainly includes icons for folders and
+mimetypes for the Arc GTK theme.
+
+This theme doesn't provide application icons, it needs another icon theme to
+inherit them. By default this theme will look for the Moka icon theme to get the
+missing icons.
+To change the application icons, edit `Arc/index.theme` and replace `Moka` with
+the name of your preferred icon theme.
