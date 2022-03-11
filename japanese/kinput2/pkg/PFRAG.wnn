@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.wnn,v 1.1 2004/09/16 23:06:04 espie Exp $
 lib/X11/ccdef/
 lib/X11/ccdef/ccdef.kinput2
 lib/X11/ccdef/ccdef.kinput2.egg

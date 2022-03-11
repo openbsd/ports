@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:14 sthen Exp $
 # FreeBSD Id: Makefile,v 1.14 1998/04/05 04:46:33 max Exp $
 
 COMMENT=	Kanji -> kana converter

@@ -1,4 +1,3 @@
-$OpenBSD: patch-kWnn_Imakefile,v 1.1 2003/06/23 19:12:35 sturm Exp $
 --- kWnn/Imakefile.orig	Thu Jun 19 13:53:07 2003
 +++ kWnn/Imakefile	Thu Jun 19 13:53:14 2003
 @@ -9,7 +9,7 @@ XCOMM

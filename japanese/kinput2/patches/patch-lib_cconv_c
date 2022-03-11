@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_cconv_c,v 1.2 2012/03/17 23:01:09 naddy Exp $
 --- lib/cconv.c.orig	Wed May 26 17:55:25 1999
 +++ lib/cconv.c	Sat Mar 17 16:58:01 2012
 @@ -611,7 +611,7 @@ static char	*rcsid = "$Id: cconv.c,v 10.8 1999/05/07 0

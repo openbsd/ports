@@ -1,4 +1,3 @@
-$OpenBSD: patch-canna_widedef_h,v 1.2 2006/01/15 14:41:31 espie Exp $
 --- canna/widedef.h.orig	Fri Nov 29 14:00:55 1996
 +++ canna/widedef.h	Sun Jan 15 15:32:57 2006
 @@ -62,5 +62,13 @@

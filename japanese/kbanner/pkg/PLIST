@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:56:29 espie Exp $
 bin/kbanner
 @man man/man1/kbanner.1

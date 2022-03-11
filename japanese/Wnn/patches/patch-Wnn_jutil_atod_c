@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jutil_atod_c,v 1.2 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jutil/atod.c.orig
 +++ Wnn/jutil/atod.c
 @@ -54,6 +54,9 @@ UJIS ·Á¼°¤ò¡¢¼­½ñÅÐÏ¿²ÄÇ½·Á¼°, µÚ¤Ó¸ÇÄê·Á¼°¼­½ñ¤ËÊÑ´¹¤

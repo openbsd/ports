@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 21:25:58 sthen Exp $
-
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
 COMMENT-wnn=		X input method for Japanese, wnn support

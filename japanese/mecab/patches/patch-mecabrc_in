@@ -1,9 +1,8 @@
-$OpenBSD: patch-mecabrc_in,v 1.1.1.1 2012/03/20 23:43:12 fgsch Exp $
 --- mecabrc.in.orig	Fri Mar 16 05:27:41 2012
 +++ mecabrc.in	Fri Mar 16 05:28:01 2012
 @@ -3,7 +3,7 @@
  ;
- ; $Id: patch-mecabrc_in,v 1.1.1.1 2012/03/20 23:43:12 fgsch Exp $;
+ ; $Id: patch-mecabrc_in,v 1.2 2022/03/11 19:24:44 naddy Exp $;
  ;
 -dicdir =  @prefix@/lib/mecab/dic/ipadic
 +dicdir =  @prefix@/share/mecab/dic/ipadic

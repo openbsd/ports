@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_uum_termcap_c,v 1.1 2000/04/16 21:53:32 espie Exp $
 --- Wnn/uum/termcap.c.orig	Fri Mar 26 08:07:38 1993
 +++ Wnn/uum/termcap.c	Sat Apr 15 21:32:53 2000
 @@ -50,6 +50,7 @@

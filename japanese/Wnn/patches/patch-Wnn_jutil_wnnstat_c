@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jutil_wnnstat_c,v 1.3 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jutil/wnnstat.c.orig
 +++ Wnn/jutil/wnnstat.c
 @@ -49,6 +49,9 @@ static char *rcs_id = "$Id: wnnstat.c,v 1.15 1994/06/2

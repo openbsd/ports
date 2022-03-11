@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_RKC16_Imakefile,v 1.1 2005/12/29 13:03:55 espie Exp $
 --- lib/RKC16/Imakefile.orig	Thu Dec 29 13:41:34 2005
 +++ lib/RKC16/Imakefile	Thu Dec 29 13:42:02 2005
 @@ -24,5 +24,5 @@

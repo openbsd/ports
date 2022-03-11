@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jd_libwnn_msg,v 1.1 2000/04/16 21:53:30 espie Exp $
 --- Wnn/jd/libwnn.msg.orig	Sat Apr 15 23:39:57 2000
 +++ Wnn/jd/libwnn.msg	Sat Apr 15 23:40:07 2000
 @@ -131,5 +131,5 @@

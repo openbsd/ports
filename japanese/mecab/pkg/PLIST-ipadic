@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ipadic,v 1.1.1.1 2012/03/20 23:43:12 fgsch Exp $
 share/mecab/
 share/mecab/dic/
 share/mecab/dic/ipadic/

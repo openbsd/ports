@@ -1,4 +1,3 @@
-$OpenBSD: patch-Xwnmo_romkan_m_Imakefile,v 1.1 2000/04/22 12:05:57 espie Exp $
 --- Xwnmo/romkan_m/Imakefile.orig	Fri Apr 21 17:42:47 2000
 +++ Xwnmo/romkan_m/Imakefile	Fri Apr 21 17:42:56 2000
 @@ -37,7 +37,7 @@ XCOMM

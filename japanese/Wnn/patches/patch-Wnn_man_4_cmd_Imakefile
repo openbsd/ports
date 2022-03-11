@@ -1,5 +1,3 @@
-$OpenBSD: patch-Wnn_man_4_cmd_Imakefile,v 1.1 2018/04/15 19:48:38 schwarze Exp $
-
 Index: Wnn/man/4.cmd/Imakefile
 --- Wnn/man/4.cmd/Imakefile.orig
 +++ Wnn/man/4.cmd/Imakefile

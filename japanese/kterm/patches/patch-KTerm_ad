@@ -1,4 +1,3 @@
-$OpenBSD: patch-KTerm_ad,v 1.2 2002/11/20 07:56:08 pvalchev Exp $
 --- KTerm.ad.orig	Wed Nov 20 00:27:50 2002
 +++ KTerm.ad	Wed Nov 20 00:27:51 2002
 @@ -75,7 +75,8 @@ KTerm.JoinSession:False

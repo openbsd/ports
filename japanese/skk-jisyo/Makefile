@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/07 08:19:47 ajacoutot Exp $
-
 COMMENT =		large dictionary for the SKK system
 
 DISTNAME =		SKK-JISYO.L

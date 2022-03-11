@@ -1,4 +1,3 @@
-$OpenBSD: patch-po_Makefile_in,v 1.1 2009/01/04 08:25:48 fgsch Exp $
 --- po/Makefile.in.orig	Wed Dec 17 17:15:20 2008
 +++ po/Makefile.in	Wed Dec 17 17:28:03 2008
 @@ -128,9 +128,9 @@ top_srcdir = @top_srcdir@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:14 sthen Exp $
-
 COMMENT=	converts Japanese fonts in PostScript documents
 
 CATEGORIES=japanese print fonts

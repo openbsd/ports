@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
 COMMENT-server=	canna (kana-kanji converter) server

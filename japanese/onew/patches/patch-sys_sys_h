@@ -1,4 +1,3 @@
-$OpenBSD: patch-sys_sys_h,v 1.2 2013/12/08 15:09:15 espie Exp $
 --- sys/sys.h.orig	Fri Jun 30 06:56:38 1995
 +++ sys/sys.h	Sun Dec  8 15:57:59 2013
 @@ -23,6 +23,11 @@

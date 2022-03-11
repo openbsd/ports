@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jutil_wddel_c,v 1.3 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jutil/wddel.c.orig
 +++ Wnn/jutil/wddel.c
 @@ -53,6 +53,8 @@ static char *rcs_id = "$Id: wddel.c,v 1.5 1992/11/30 0

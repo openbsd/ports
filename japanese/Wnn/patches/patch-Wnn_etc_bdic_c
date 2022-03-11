@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_etc_bdic_c,v 1.2 2017/04/29 14:31:40 espie Exp $
 --- Wnn/etc/bdic.c.orig
 +++ Wnn/etc/bdic.c
 @@ -73,6 +73,8 @@

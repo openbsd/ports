@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_manual_v3tov4_v3tov4,v 1.1 2014/03/23 17:22:45 espie Exp $
 --- Wnn/manual/v3tov4/v3tov4.orig	Sun Mar 23 18:11:39 2014
 +++ Wnn/manual/v3tov4/v3tov4	Sun Mar 23 18:11:48 2014
 @@ -547,7 +547,7 @@ henkan()

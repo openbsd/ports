@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/16 08:50:47 espie Exp $
-
 COMMENT=	library for Japanese Input Method Wnn4
 
 COMMENT-wnn4= 		library for Japanese Input Method Wnn4

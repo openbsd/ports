@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jutil_wnntouch_c,v 1.2 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jutil/wnntouch.c.orig
 +++ Wnn/jutil/wnntouch.c
 @@ -53,6 +53,8 @@ static char *rcs_id = "$Id: wnntouch.c,v 1.3 1992/09/2

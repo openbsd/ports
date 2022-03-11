@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/06/10 07:15:54 ajacoutot Exp $
-
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0

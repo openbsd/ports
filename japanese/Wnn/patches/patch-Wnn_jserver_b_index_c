@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jserver_b_index_c,v 1.2 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jserver/b_index.c.orig
 +++ Wnn/jserver/b_index.c
 @@ -57,6 +57,7 @@

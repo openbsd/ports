@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jutil_atorev_c,v 1.1 2015/07/25 16:47:12 espie Exp $
 --- Wnn/jutil/atorev.c.orig	Fri Jul 24 18:32:12 2015
 +++ Wnn/jutil/atorev.c	Fri Jul 24 18:32:29 2015
 @@ -54,6 +54,7 @@ UJIS 形式を、逆変換可能形式に変換するプログラム。

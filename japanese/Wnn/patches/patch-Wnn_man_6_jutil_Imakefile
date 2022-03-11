@@ -1,5 +1,3 @@
-$OpenBSD: patch-Wnn_man_6_jutil_Imakefile,v 1.1 2018/04/15 19:48:38 schwarze Exp $
-
 Index: Wnn/man/6.jutil/Imakefile
 --- Wnn/man/6.jutil/Imakefile.orig
 +++ Wnn/man/6.jutil/Imakefile

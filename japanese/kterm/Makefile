@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:15 sthen Exp $
-
 COMMENT=	Japanese-capable xterm
 
 VERSION=	6.2.0

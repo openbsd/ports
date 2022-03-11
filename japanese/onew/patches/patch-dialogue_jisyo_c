@@ -1,4 +1,3 @@
-$OpenBSD: patch-dialogue_jisyo_c,v 1.2 2017/05/06 12:51:21 espie Exp $
 Index: dialogue/jisyo.c
 --- dialogue/jisyo.c.orig
 +++ dialogue/jisyo.c

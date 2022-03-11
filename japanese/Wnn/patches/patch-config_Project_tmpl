@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_Project_tmpl,v 1.10 2018/04/15 19:48:38 schwarze Exp $
 Index: config/Project.tmpl
 --- config/Project.tmpl.orig
 +++ config/Project.tmpl

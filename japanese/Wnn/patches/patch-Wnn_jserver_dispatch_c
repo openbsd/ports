@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jserver_dispatch_c,v 1.1 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jserver/dispatch.c.orig
 +++ Wnn/jserver/dispatch.c
 @@ -53,6 +53,7 @@

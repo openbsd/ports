@@ -1,4 +1,3 @@
-$OpenBSD: patch-Xwnmo_xwnmo_Imakefile,v 1.3 2018/04/15 19:48:38 schwarze Exp $
 Index: Xwnmo/xwnmo/Imakefile
 --- Xwnmo/xwnmo/Imakefile.orig
 +++ Xwnmo/xwnmo/Imakefile

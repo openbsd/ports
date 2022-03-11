@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_RK_RKintern_h,v 1.1 2002/03/26 19:58:37 espie Exp $
 --- lib/RK/RKintern.h.orig	Tue Mar 26 20:37:35 2002
 +++ lib/RK/RKintern.h	Tue Mar 26 20:38:02 2002
 @@ -105,7 +105,11 @@ extern void free();

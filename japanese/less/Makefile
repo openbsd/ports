@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:15 sthen Exp $
-
 COMMENT=	enhanced less with iso-2022-jp and UTF-8 encodings support
 
 V=		382.262.03.b.01

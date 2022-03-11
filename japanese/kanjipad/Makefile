@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/28 09:03:46 cwen Exp $
-
 COMMENT=	Japanese handwriting recognition
 
 DISTNAME=	kanjipad-2.0.0

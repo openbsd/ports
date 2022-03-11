@@ -1,4 +1,3 @@
-$OpenBSD: patch-Xwnmo_xwnmo_killxwnmo_c,v 1.2 2017/04/29 14:31:40 espie Exp $
 --- Xwnmo/xwnmo/killxwnmo.c.orig
 +++ Xwnmo/xwnmo/killxwnmo.c
 @@ -33,6 +33,9 @@ static char rcs_id[] = "$Id: killxwnmo.c,v 1.3 1994/10

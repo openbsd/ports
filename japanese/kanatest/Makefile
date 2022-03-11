@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:14 sthen Exp $
-
 COMMENT =	beginner's drill tool to learn Japanese kana characters
 
 DISTNAME =	kanatest-0.4.6

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jserver_readfile_c,v 1.3 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jserver/readfile.c.orig
 +++ Wnn/jserver/readfile.c
 @@ -53,6 +53,7 @@

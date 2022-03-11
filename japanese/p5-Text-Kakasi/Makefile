@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:15 sthen Exp $
-
 COMMENT=	Kanji -> kana converter, perl interface
 
 DISTNAME=	Text-Kakasi-2.04

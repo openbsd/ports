@@ -1,5 +1,3 @@
-$OpenBSD: patch-Wnn_man_3_libwnn_js_lib_Imakefile,v 1.1 2018/04/15 19:48:38 schwarze Exp $
-
 Index: Wnn/man/3.libwnn/js_lib/Imakefile
 --- Wnn/man/3.libwnn/js_lib/Imakefile.orig
 +++ Wnn/man/3.libwnn/js_lib/Imakefile

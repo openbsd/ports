@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:15 sthen Exp $
-
 COMMENT=	display kanji files in large letters
 
 DISTNAME=	kbanner2

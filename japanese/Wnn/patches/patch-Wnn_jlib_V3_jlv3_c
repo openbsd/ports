@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jlib_V3_jlv3_c,v 1.1 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jlib.V3/jlv3.c.orig
 +++ Wnn/jlib.V3/jlv3.c
 @@ -74,11 +74,9 @@ extern	Variables

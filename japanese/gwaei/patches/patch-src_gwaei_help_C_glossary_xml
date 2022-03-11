@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gwaei_help_C_glossary_xml,v 1.2 2012/03/13 10:07:45 ajacoutot Exp $
 --- src/gwaei/help/C/glossary.xml.orig	Sun Sep  4 21:30:40 2011
 +++ src/gwaei/help/C/glossary.xml	Sun Mar 11 01:23:10 2012
 @@ -1,6 +1,6 @@

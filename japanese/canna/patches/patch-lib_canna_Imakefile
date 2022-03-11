@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_canna_Imakefile,v 1.1 2005/12/29 13:03:55 espie Exp $
 --- lib/canna/Imakefile.orig	Thu Dec 29 13:41:34 2005
 +++ lib/canna/Imakefile	Thu Dec 29 13:42:20 2005
 @@ -57,5 +57,5 @@

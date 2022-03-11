@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmd_catdic_Imakefile,v 1.1.1.1 2000/04/22 11:50:30 espie Exp $
 --- cmd/catdic/Imakefile.orig	Mon Dec  2 12:38:14 1996
 +++ cmd/catdic/Imakefile	Sat Apr 22 03:10:08 2000
 @@ -76,22 +76,22 @@ install::

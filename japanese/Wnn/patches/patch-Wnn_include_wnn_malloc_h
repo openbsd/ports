@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_include_wnn_malloc_h,v 1.1 2015/07/25 16:47:12 espie Exp $
 --- Wnn/include/wnn_malloc.h.orig	Mon Sep 16 23:30:10 1991
 +++ Wnn/include/wnn_malloc.h	Sat Jul 25 17:12:43 2015
 @@ -50,6 +50,7 @@

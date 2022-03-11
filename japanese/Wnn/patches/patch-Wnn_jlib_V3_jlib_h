@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jlib_V3_jlib_h,v 1.2 2004/12/26 11:34:58 sturm Exp $
 --- Wnn/jlib.V3/jlib.h.orig	Mon Sep 16 23:30:30 1991
 +++ Wnn/jlib.V3/jlib.h	Sat Dec 25 11:54:29 2004
 @@ -51,12 +51,14 @@

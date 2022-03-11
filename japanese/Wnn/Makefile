@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2021/02/07 19:12:01 espie Exp $
-
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
 COMMENT-ko = 		Korean input method

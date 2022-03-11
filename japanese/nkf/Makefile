@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:47:15 sthen Exp $
-
 COMMENT =	Network Kanji code conversion Filter
 
 VERSION =	2.1.5

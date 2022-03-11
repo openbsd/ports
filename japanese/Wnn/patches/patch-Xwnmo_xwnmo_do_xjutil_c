@@ -1,4 +1,3 @@
-$OpenBSD: patch-Xwnmo_xwnmo_do_xjutil_c,v 1.3 2017/04/29 14:31:40 espie Exp $
 --- Xwnmo/xwnmo/do_xjutil.c.orig
 +++ Xwnmo/xwnmo/do_xjutil.c
 @@ -37,6 +37,7 @@

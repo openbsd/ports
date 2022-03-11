@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:14 sthen Exp $
-
 COMMENT =	personal dictionary manager for anthy
 
 DISTNAME =	kasumi-2.5

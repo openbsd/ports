@@ -1,4 +1,3 @@
-$OpenBSD: patch-Wnn_jserver_do_filecom_c,v 1.2 2017/04/29 14:31:40 espie Exp $
 --- Wnn/jserver/do_filecom.c.orig
 +++ Wnn/jserver/do_filecom.c
 @@ -55,6 +55,8 @@

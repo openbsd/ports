@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-xwnmo,v 1.3 2018/04/15 19:48:38 schwarze Exp $
 @bin bin/killxwnmo
 @bin bin/xjutil
 @bin bin/xwnmo

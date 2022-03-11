@@ -1,4 +1,3 @@
-$OpenBSD: patch-server_wconvert_c,v 1.1 2003/03/12 21:21:55 brad Exp $
 --- server/wconvert.c.orig	Wed Nov 27 02:27:28 1996
 +++ server/wconvert.c	Wed Mar 12 14:59:07 2003
 @@ -101,4 +101,5 @@ extern reqproc ExtensionWideVector[];

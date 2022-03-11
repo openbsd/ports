@@ -1,4 +1,3 @@
-$OpenBSD: patch-kWnn_kd_uumrc,v 1.1 2000/04/16 21:53:38 espie Exp $
 --- kWnn/kd/uumrc.orig	Tue Jun 28 04:29:51 1994
 +++ kWnn/kd/uumrc	Thu Apr 13 20:41:39 2000
 @@ -8,7 +8,7 @@

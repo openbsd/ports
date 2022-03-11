@@ -1,5 +1,3 @@
-$OpenBSD: patch-Wnn_man_2_env_dic_Imakefile,v 1.1 2018/04/15 19:48:38 schwarze Exp $
-
 Index: Wnn/man/2.env/dic/Imakefile
 --- Wnn/man/2.env/dic/Imakefile.orig
 +++ Wnn/man/2.env/dic/Imakefile

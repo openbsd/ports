@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:32 jasper Exp $
-
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
 BROKEN-hppa =	undefined refs to __sync operations

@@ -1,4 +1,3 @@
-$OpenBSD: patch-jenscript_jenscript_SH,v 1.7 2010/05/19 14:35:18 espie Exp $
 --- jenscript/jenscript.SH.orig	Tue Jan 16 18:20:31 1990
 +++ jenscript/jenscript.SH	Wed May 19 14:28:09 2010
 @@ -20,14 +20,12 @@ echo "Extracting jenscript (with variable substitution

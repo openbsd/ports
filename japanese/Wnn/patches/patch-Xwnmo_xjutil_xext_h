@@ -1,4 +1,3 @@
-$OpenBSD: patch-Xwnmo_xjutil_xext_h,v 1.1 2017/04/29 14:31:40 espie Exp $
 --- Xwnmo/xjutil/xext.h.orig
 +++ Xwnmo/xjutil/xext.h
 @@ -219,7 +219,6 @@ extern void send_end_work();

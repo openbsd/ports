@@ -1,4 +1,3 @@
-$OpenBSD: patch-screen_c,v 1.1 2017/04/28 12:29:33 espie Exp $
 --- screen.c.orig	Fri Apr 28 14:22:37 2017
 +++ screen.c	Fri Apr 28 14:23:27 2017
 @@ -245,6 +245,7 @@ Reallocate(sbuf, sbufaddr, nrow, ncol, oldrow, oldcol)
