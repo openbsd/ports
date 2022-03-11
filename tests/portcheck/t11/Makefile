@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/08 15:44:42 zhuk Exp $
-#
 # Check for @exec/@unexec-delete of glib-compile-schemas
 # when dependency is wrong.
 

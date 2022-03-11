@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2017/12/22 23:12:22 zhuk Exp $
-
 # To add a test named ${testname}:
 #  1) If test should catch errors, add sample portcheck output to the
 #     ${testname}.sample file in this directory. Otherwise, this file should

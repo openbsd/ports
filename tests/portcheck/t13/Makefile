@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/05/19 00:58:53 zhuk Exp $
-#
 # Check for leading articles in COMMENTs
 
 DISTNAME =		test-13

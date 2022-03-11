@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2017/07/16 19:19:02 espie Exp $
-
 COMMENT=	tempo/pitch audio processing library
 
 DISTNAME=	soundtouch-1.3.1

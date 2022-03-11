@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/08/29 08:18:17 jca Exp $
-
 # To add a test named ${testname}:
 #  1) Create test port directory with ${testname} name.
 #  2) Create the ${testname}.sample containing the desired result

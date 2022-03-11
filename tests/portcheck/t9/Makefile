@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2014/04/27 17:59:21 zhuk Exp $
-#
 # Check for extra PERMIT_* lines
 
 COMMENT-main =	test 9 main

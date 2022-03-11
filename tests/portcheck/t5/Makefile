@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/23 16:31:18 zhuk Exp $
-#
 # Check catching most obvious things
 
 COMMENT =	test 5

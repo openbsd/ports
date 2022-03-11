@@ -1,5 +1,3 @@
-# $OpenBSD: t10.sample,v 1.2 2021/08/29 07:55:17 jca Exp $
-
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule

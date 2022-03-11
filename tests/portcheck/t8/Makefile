@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2014/05/08 07:02:59 zhuk Exp $
-
 COMMENT =	test 8
 DISTNAME =	test-8
 

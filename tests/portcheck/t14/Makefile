@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2014/07/10 10:04:34 zhuk Exp $
-#
 # Check for both stdc++ in WANTLIB and gcc4 in MODULES
 
 DISTNAME =		test-14

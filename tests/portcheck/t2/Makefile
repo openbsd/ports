@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2014/07/23 22:34:06 zhuk Exp $
 # "fixed" version of t1
 
 COMMENT =	test 2

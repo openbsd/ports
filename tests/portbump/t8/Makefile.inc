@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2021/08/29 07:55:17 jca Exp $
-
 # common stuff for all gcc ports
 # we assume each one defines a V variable.
 

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/01 11:02:26 zhuk Exp $
 @bin bin/t6

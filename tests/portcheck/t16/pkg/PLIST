@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/04/15 08:19:09 zhuk Exp $
 @bin bin/foobar.test

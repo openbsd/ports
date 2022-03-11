@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.10 2021/08/29 07:55:17 jca Exp $
-
 COMMENT-main=		server-side HTML-embedded scripting language
 COMMENT-fastcgi=	stand-alone FastCGI version of PHP
 
