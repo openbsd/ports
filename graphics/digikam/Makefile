@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.76 2022/02/13 16:38:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.77 2022/03/11 10:44:47 sthen Exp $
 
 USE_WXNEEDED =	Yes
+DPB_PROPERTIES = parallel
 
 COMMENT =	KDE digital photo and video management utility
 
