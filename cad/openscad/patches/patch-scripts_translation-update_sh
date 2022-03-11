@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_translation-update_sh,v 1.1 2019/10/17 20:04:04 rsadowski Exp $
-
 OpenBSD does not have unlink in base
 
 Index: scripts/translation-update.sh

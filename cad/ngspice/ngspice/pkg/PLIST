@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:01:00 bentley Exp $
 @pkgpath cad/ngspice
 @bin bin/ngspice
 @man man/man1/ngspice.1

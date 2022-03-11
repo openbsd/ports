@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/11/01 02:17:35 bentley Exp $
-
 V ?=			31
 
 DISTNAME ?=		ngspice-${V}

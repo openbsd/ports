@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/05/21 16:26:39 sthen Exp $
-
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-4.3.0
 CATEGORIES=	cad

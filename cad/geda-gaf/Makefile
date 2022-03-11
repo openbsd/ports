@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/02/12 17:29:25 edd Exp $
-
 COMMENT =		suite of tools for electronic design automation
 DISTNAME =		geda-gaf-1.6.0
 CATEGORIES =		cad

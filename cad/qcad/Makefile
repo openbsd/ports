@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/01/19 06:52:19 rsadowski Exp $
-
 COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad

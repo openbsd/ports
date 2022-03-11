@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:43:45 sthen Exp $
-
 COMMENT =	circuit drawing and schematic capture
 
 BASEVER =	3.7

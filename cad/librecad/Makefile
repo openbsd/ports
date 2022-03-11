@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/27 04:16:29 rsadowski Exp $
-
 COMMENT =	2D CAD program
 
 GH_ACCOUNT =	LibreCAD

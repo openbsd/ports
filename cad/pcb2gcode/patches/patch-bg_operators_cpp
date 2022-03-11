@@ -1,5 +1,3 @@
-$OpenBSD: patch-bg_operators_cpp,v 1.3 2021/11/02 13:39:47 landry Exp $
-
 backport https://github.com/pcb2gcode/pcb2gcode/pull/594 to fix build with geos 3.10
 
 Index: bg_operators.cpp

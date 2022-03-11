@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeModules_Findngspice_cmake,v 1.1 2021/11/22 14:55:53 tracey Exp $
-
 Index: CMakeModules/Findngspice.cmake
 --- CMakeModules/Findngspice.cmake.orig
 +++ CMakeModules/Findngspice.cmake

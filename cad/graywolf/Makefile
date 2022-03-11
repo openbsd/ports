@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/07/04 23:19:38 jca Exp $
-
 COMMENT =	placement tool used in VLSI design
 
 GH_ACCOUNT =	rubund

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/02/22 15:37:15 tracey Exp $
 share/kicad/
 share/kicad/3dmodels/
 share/kicad/3dmodels/Battery.3dshapes/

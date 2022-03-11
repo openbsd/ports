@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/06 11:59:59 sthen Exp $
-
 COMMENT =	interactive system for VLSI circuit layouts
 DISTNAME =	magic-8.3.137
 EXTRACT_SUFX =	.tgz

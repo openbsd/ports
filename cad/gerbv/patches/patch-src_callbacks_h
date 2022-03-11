@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_callbacks_h,v 1.1 2021/01/29 21:06:25 bcallah Exp $
-
 From https://sources.debian.org/patches/gerbv/2.7.0-2/fixes/gcc10-extern.patch/
 Fix for -fno-common
 

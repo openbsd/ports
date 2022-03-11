@@ -1,5 +1,3 @@
-$OpenBSD: patch-adm_cmake_occt_csf_cmake,v 1.1 2022/02/22 15:20:11 tracey Exp $
-
 remove libraries we don't have
 
 Index: adm/cmake/occt_csf.cmake

@@ -1,5 +1,3 @@
-$OpenBSD: patch-openscad_pro,v 1.4 2021/02/14 16:14:54 paco Exp $
-
 - remove unsupported compiler flag (that is NOT ignored)
 - don't use bundled Liberation fonts, use RDEP on fonts/liberation-fonts instead
 - fix manpage installation dir

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:37 naddy Exp $
 @bin bin/nec2++
 @bin bin/nec2diff
 include/libnecpp.h

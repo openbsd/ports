@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_qflow_manager_py_in,v 1.1.1.1 2020/07/03 13:53:00 rsadowski Exp $
-
 Index: scripts/qflow_manager.py.in
 --- scripts/qflow_manager.py.in.orig
 +++ scripts/qflow_manager.py.in

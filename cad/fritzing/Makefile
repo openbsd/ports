@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/16 17:26:16 abieber Exp $
-
 COMMENT=	interactive electronics designing software
 
 GH_ACCOUNT=	fritzing

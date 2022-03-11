@@ -1,5 +1,3 @@
-$OpenBSD: patch-librecad_src_ui_generic_widgetcreator_cpp,v 1.1 2020/02/26 16:38:40 rsadowski Exp $
-
 Index: librecad/src/ui/generic/widgetcreator.cpp
 --- librecad/src/ui/generic/widgetcreator.cpp.orig
 +++ librecad/src/ui/generic/widgetcreator.cpp

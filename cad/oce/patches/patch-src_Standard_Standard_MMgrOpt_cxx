@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Standard_Standard_MMgrOpt_cxx,v 1.1 2022/02/22 15:20:11 tracey Exp $
-
 Index: src/Standard/Standard_MMgrOpt.cxx
 --- src/Standard/Standard_MMgrOpt.cxx.orig
 +++ src/Standard/Standard_MMgrOpt.cxx

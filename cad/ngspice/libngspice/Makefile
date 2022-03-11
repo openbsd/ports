@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/11/02 06:59:24 bentley Exp $
-
 COMMENT =		ngspice shared library, based on Berkeley SPICE
 
 PKGNAME =		libngspice-${V}

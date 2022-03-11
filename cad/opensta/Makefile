@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/02 08:49:37 rsadowski Exp $
-
 COMMENT =	Parallax Static Timing Analyzer
 
 GH_ACCOUNT =	The-OpenROAD-Project

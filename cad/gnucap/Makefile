@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/08/13 13:36:00 cwen Exp $
-
 # gcc spins compiling d_mos7
 NOT_FOR_ARCHS=		m88k
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_OSD_OSD_Path_cxx,v 1.1 2022/02/22 15:20:11 tracey Exp $
-
 Index: src/OSD/OSD_Path.cxx
 --- src/OSD/OSD_Path.cxx.orig
 +++ src/OSD/OSD_Path.cxx

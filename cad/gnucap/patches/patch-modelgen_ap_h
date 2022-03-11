@@ -1,4 +1,3 @@
-$OpenBSD: patch-modelgen_ap_h,v 1.1 2017/05/01 19:29:26 espie Exp $
 Index: modelgen/ap.h
 --- modelgen/ap.h.orig
 +++ modelgen/ap.h

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2021/11/10 08:47:50 benoit Exp $
 rawtovcd shouldn't go to shared dir. Its place is in bin/
 Index: src/Makefile.in
 --- src/Makefile.in.orig

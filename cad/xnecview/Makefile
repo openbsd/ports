@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/02/10 10:47:23 benoit Exp $
-
 COMMENT=	NEC2 antenna simulator visualizer
 
 DISTNAME =	xnecview-1.37

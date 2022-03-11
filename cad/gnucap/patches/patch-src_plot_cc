@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plot_cc,v 1.1 2019/08/13 13:36:00 cwen Exp $
-
 ports-gcc fix for
 error: two or more data types in declaration of 'adata'
 

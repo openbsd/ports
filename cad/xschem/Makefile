@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/10 08:47:50 benoit Exp $
-
 COMMENT =		hierarchical schematic capture program
 
 DISTNAME =		xschem-3.0.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-librecad_src_lib_engine_rs_system_cpp,v 1.1.1.1 2019/08/14 12:09:41 feinerer Exp $
-
 Index: librecad/src/lib/engine/rs_system.cpp
 --- librecad/src/lib/engine/rs_system.cpp.orig
 +++ librecad/src/lib/engine/rs_system.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-magic_proto_magicrc_in,v 1.2 2021/03/06 11:59:59 sthen Exp $
-
 Index: magic/proto.magicrc.in
 --- magic/proto.magicrc.in.orig
 +++ magic/proto.magicrc.in

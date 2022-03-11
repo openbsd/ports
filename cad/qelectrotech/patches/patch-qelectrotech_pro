@@ -1,5 +1,3 @@
-$OpenBSD: patch-qelectrotech_pro,v 1.1.1.1 2018/10/02 16:41:53 landry Exp $
-
 Index: qelectrotech.pro
 --- qelectrotech.pro.orig
 +++ qelectrotech.pro

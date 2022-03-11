@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/26 21:40:01 tracey Exp $
-
 BROKEN-powerpc = kicad is broken, this is the only consumer (save bulk time)
 
 COMMENT =	C++ 3d modeling library

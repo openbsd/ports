@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_Widgets_CommandLine_CommandLine_js,v 1.2 2020/04/13 08:48:39 rsadowski Exp $
-
 Index: scripts/Widgets/CommandLine/CommandLine.js
 --- scripts/Widgets/CommandLine/CommandLine.js.orig
 +++ scripts/Widgets/CommandLine/CommandLine.js

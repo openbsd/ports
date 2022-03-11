@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/22 15:38:39 tracey Exp $
-
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
 BROKEN-riscv64 =	kicad-5.1.10/include/system/libcontext.h:93:36: error: expected ';' after top level declarator

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_configure,v 1.2 2020/02/22 11:37:17 sthen Exp $
-
 Index: scripts/configure
 --- scripts/configure.orig
 +++ scripts/configure

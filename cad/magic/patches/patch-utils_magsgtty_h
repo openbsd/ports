@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_magsgtty_h,v 1.2 2020/03/08 12:47:36 sthen Exp $
-
 Index: utils/magsgtty.h
 --- utils/magsgtty.h.orig
 +++ utils/magsgtty.h

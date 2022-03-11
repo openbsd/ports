@@ -1,5 +1,3 @@
-$OpenBSD: patch-modelgen_md_h,v 1.1 2018/10/28 08:13:41 bentley Exp $
-
 Index: modelgen/md.h
 --- modelgen/md.h.orig
 +++ modelgen/md.h

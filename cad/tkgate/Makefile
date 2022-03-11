@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:45 sthen Exp $
-
 COMMENT =		Tcl/Tk based digital circuit editor and simulator
 
 DISTNAME =		tkgate-2.1

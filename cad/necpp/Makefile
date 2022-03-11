@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:45 sthen Exp $
-
 COMMENT=	NEC2++ antenna simulator
 
 DISTNAME=	necpp-1.2.3

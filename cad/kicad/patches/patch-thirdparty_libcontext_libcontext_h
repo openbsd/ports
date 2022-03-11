@@ -1,5 +1,3 @@
-$OpenBSD: patch-thirdparty_libcontext_libcontext_h,v 1.1 2022/02/22 15:38:39 tracey Exp $
-
 Index: thirdparty/libcontext/libcontext.h
 --- thirdparty/libcontext/libcontext.h.orig
 +++ thirdparty/libcontext/libcontext.h

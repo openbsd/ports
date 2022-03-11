@@ -1,5 +1,3 @@
-$OpenBSD: patch-passes_cmds_show_cc,v 1.2 2021/05/23 19:22:27 sthen Exp $
-
 Index: passes/cmds/show.cc
 --- passes/cmds/show.cc.orig
 +++ passes/cmds/show.cc

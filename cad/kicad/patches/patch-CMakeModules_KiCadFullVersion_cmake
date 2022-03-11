@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeModules_KiCadFullVersion_cmake,v 1.1 2021/07/14 16:28:06 tracey Exp $
-
 Index: CMakeModules/KiCadFullVersion.cmake
 --- CMakeModules/KiCadFullVersion.cmake.orig
 +++ CMakeModules/KiCadFullVersion.cmake

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gui_RRulerQt_cpp,v 1.1 2021/01/19 06:52:19 rsadowski Exp $
-
 Index: src/gui/RRulerQt.cpp
 --- src/gui/RRulerQt.cpp.orig
 +++ src/gui/RRulerQt.cpp

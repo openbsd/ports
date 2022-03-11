@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/07/01 18:33:35 espie Exp $
 @bin bin/convert_sym
 bin/garchive
 @bin bin/gattrib

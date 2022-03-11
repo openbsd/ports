@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/11 19:09:34 tracey Exp $
-
 COMMENT =		tool for isolation, routing, and drilling of PCBs
 V =			2.4.0
 

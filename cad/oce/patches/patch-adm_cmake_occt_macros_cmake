@@ -1,5 +1,3 @@
-$OpenBSD: patch-adm_cmake_occt_macros_cmake,v 1.1 2022/02/22 15:20:11 tracey Exp $
-
 Ugly hack on ALL_OCCT_TARGET_FILES: change later
 
 Index: adm/cmake/occt_macros.cmake

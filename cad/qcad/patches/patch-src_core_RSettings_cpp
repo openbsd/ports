@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_core_RSettings_cpp,v 1.2 2020/04/13 08:48:39 rsadowski Exp $
-
 Index: src/core/RSettings.cpp
 --- src/core/RSettings.cpp.orig
 +++ src/core/RSettings.cpp

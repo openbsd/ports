@@ -1,5 +1,3 @@
-$OpenBSD: patch-gattrib_include_globals_h,v 1.1 2021/02/12 17:29:25 edd Exp $
-
 Fixes for -fno-common.
 
 Index: gattrib/include/globals.h

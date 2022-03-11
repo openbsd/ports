@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/01/29 21:06:25 bcallah Exp $
-
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.7.0
 REVISION=		0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_tool_coroutine_h,v 1.3 2022/02/22 15:38:39 tracey Exp $
-
 this is the otto-fu that makes this software work
 
 Index: include/tool/coroutine.h

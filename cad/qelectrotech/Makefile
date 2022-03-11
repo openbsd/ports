@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/15 06:28:03 rsadowski Exp $
-
 COMMENT=	electric diagrams drawing tool
 
 DISTNAME =	qet-0.7.0

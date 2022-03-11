@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_config_h,v 1.1 2019/06/08 10:05:52 jca Exp $
-
 Use clock(3) instead of time(3) to compute elapsed cpu time.
 
 Index: base/config.h

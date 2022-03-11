@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_bin_check_sh,v 1.2 2019/11/01 02:17:36 bentley Exp $
-
 Index: tests/bin/check.sh
 --- tests/bin/check.sh.orig
 +++ tests/bin/check.sh

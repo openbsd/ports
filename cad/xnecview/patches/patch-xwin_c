@@ -1,4 +1,3 @@
-$OpenBSD: patch-xwin_c,v 1.3 2020/02/10 10:47:24 benoit Exp $
 --- xwin.c.orig	Sun Jan 12 15:19:48 2020
 +++ xwin.c	Mon Feb 10 11:32:25 2020
 @@ -13,6 +13,7 @@

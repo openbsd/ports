@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/01/18 20:05:54 sebastia Exp $
-
 COMMENT=	CAD program for designing model railroad layouts
 
 VERSION=	5.2.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_postprocess-unix_sh,v 1.1.1.1 2019/08/14 12:09:41 feinerer Exp $
-
 Index: scripts/postprocess-unix.sh
 --- scripts/postprocess-unix.sh.orig
 +++ scripts/postprocess-unix.sh

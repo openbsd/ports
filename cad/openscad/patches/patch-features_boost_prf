@@ -1,5 +1,3 @@
-$OpenBSD: patch-features_boost_prf,v 1.1 2019/10/17 20:04:04 rsadowski Exp $
-
 Index: features/boost.prf
 --- features/boost.prf.orig
 +++ features/boost.prf

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_tool_tool_interactive_h,v 1.2 2022/02/22 15:38:39 tracey Exp $
-
 Index: include/tool/tool_interactive.h
 --- include/tool/tool_interactive.h.orig
 +++ include/tool/tool_interactive.h

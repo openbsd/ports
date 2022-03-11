@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/23 13:04:01 sthen Exp $
-
 COMMENT =	system for sequential logic synthesis and verification
 DISTNAME =	abc-1.01.20210519
 CATEGORIES =	cad

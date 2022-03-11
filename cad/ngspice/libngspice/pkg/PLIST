@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:01:34 bentley Exp $
 @conflict ngspice-<30p0
 include/ngspice/
 include/ngspice/1-f-code.h

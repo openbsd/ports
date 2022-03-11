@@ -1,5 +1,3 @@
-$OpenBSD: patch-adm_templates_env_install_sh_in,v 1.1 2022/02/26 21:40:01 tracey Exp $
-
 Index: adm/templates/env.install.sh.in
 --- adm/templates/env.install.sh.in.orig
 +++ adm/templates/env.install.sh.in
