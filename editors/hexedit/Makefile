@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/01/10 16:52:36 fcambus Exp $
-
 COMMENT=	view and edit files in hexadecimal or ASCII
 
 GH_ACCOUNT=	pixel

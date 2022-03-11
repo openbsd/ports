@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/20 08:32:01 espie Exp $
 @bin bin/uemacs
 share/uemacs/
 share/uemacs/.emacsrc

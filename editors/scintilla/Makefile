@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/02/10 21:34:07 kn Exp $
-
 COMMENT=	source code editing component for GTK+
 
 VERSION=	4.0.3

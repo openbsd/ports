@@ -1,4 +1,3 @@
-$OpenBSD: patch-io_h,v 1.1 2012/03/18 17:02:00 naddy Exp $
 --- io.h.orig	Sun Mar 18 10:52:30 2012
 +++ io.h	Sun Mar 18 10:52:42 2012
 @@ -40,7 +40,7 @@ extern void

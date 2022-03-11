@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_text_CMakeLists_txt,v 1.1 2021/08/31 07:31:43 ajacoutot Exp $
-
 From 62f510702ef9c34ac50f8d8601a4290ab558464c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?=C3=96mer=20Fad=C4=B1l=20Usta?= <omerusta@gmail.com>
 Date: Sun, 6 Jun 2021 08:41:05 +0000

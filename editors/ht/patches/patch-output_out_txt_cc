@@ -1,5 +1,3 @@
-$OpenBSD: patch-output_out_txt_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
-
 Index: output/out_txt.cc
 --- output/out_txt.cc.orig
 +++ output/out_txt.cc

@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/06 00:01:19 nigel Exp $
      SUBDIR += af
      SUBDIR += am
      SUBDIR += bg

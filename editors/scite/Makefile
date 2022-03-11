@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/11 09:03:00 kn Exp $
-
 COMMENT=		flexible and small GTK+ editor
 
 VERSION=		4.0.3

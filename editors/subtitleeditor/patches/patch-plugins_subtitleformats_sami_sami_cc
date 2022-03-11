@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_subtitleformats_sami_sami_cc,v 1.1 2017/05/11 19:41:33 espie Exp $
-
 Index: plugins/subtitleformats/sami/sami.cc
 --- plugins/subtitleformats/sami/sami.cc.orig
 +++ plugins/subtitleformats/sami/sami.cc

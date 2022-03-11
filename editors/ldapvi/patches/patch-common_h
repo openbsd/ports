@@ -1,4 +1,3 @@
-$OpenBSD: patch-common_h,v 1.1 2012/03/16 22:05:13 sthen Exp $
 --- common.h.orig	Fri Mar 16 22:02:48 2012
 +++ common.h	Fri Mar 16 22:02:54 2012
 @@ -273,7 +273,7 @@ void pipeview_wait(int pid);

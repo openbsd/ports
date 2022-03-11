@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/31 22:15:04 bentley Exp $
-
 COMMENT =		ncurses-based hex-editor with diff mode
 V =			0.69
 DISTNAME =		dhex_${V}

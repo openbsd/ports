@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =		Python binding for the Scintilla source code editor
 
 VERSION =		2.11.6

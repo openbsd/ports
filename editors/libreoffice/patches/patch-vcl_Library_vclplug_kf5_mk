@@ -1,5 +1,3 @@
-$OpenBSD: patch-vcl_Library_vclplug_kf5_mk,v 1.2 2022/02/03 20:09:24 robert Exp $
-
 Index: vcl/Library_vclplug_kf5.mk
 --- vcl/Library_vclplug_kf5.mk.orig
 +++ vcl/Library_vclplug_kf5.mk

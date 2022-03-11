@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:04 sthen Exp $
-
 COMMENT=		easy to use text editor
 
 VERSION=		1.5.2

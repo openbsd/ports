@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/28 21:24:26 rsadowski Exp $
 @bin bin/nvim-qt
 share/applications/nvim-qt.desktop
 share/icons/hicolor/192x192/apps/nvim-qt.png

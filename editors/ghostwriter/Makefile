@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/19 06:49:01 rsadowski Exp $
-
 # qt5 webkit
 USE_WXNEEDED =	Yes
 

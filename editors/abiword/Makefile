@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.136 2021/11/02 00:01:12 sthen Exp $
-
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
 COMMENT=	free cross-platform WYSIWYG word processor

@@ -1,4 +1,3 @@
-$OpenBSD: patch-create_make,v 1.3 2013/12/06 15:46:31 bcallah Exp $
 --- create.make.orig	Mon Sep 23 00:18:30 2002
 +++ create.make	Fri Dec  6 10:02:58 2013
 @@ -11,6 +11,11 @@

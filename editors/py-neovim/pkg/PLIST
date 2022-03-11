@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/07/18 09:20:57 paco Exp $
 @conflict editors/py-neovim-*
 @pkgpath editors/py-neovim
 lib/python${MODPY_VERSION}/site-packages/neovim/

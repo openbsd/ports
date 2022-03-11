@@ -1,4 +1,3 @@
-$OpenBSD: patch-external_lpsolve_UnpackedTarball_lpsolve_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
 --- external/lpsolve/UnpackedTarball_lpsolve.mk.orig.port	Thu Jan 22 21:05:28 2015
 +++ external/lpsolve/UnpackedTarball_lpsolve.mk	Sat Jan 31 16:03:15 2015
 @@ -25,6 +25,7 @@ else

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:05 sthen Exp $
-
 COMMENT=		update LDAP entries with a text editor
 
 DISTNAME=		ldapvi-1.7

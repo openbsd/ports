@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_fte-unix_mak,v 1.2 2011/01/16 19:58:18 naddy Exp $
 --- src/fte-unix.mak.orig	Sun Jan 18 18:06:25 2009
 +++ src/fte-unix.mak	Sun Jan 18 18:25:08 2009
 @@ -5,10 +5,10 @@

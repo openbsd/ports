@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:06 sthen Exp $
-
 COMMENT =		traditional vi and ex
 
 DISTNAME =		ex-050325

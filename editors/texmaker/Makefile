@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2020/10/09 19:12:01 rsadowski Exp $
-
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-5.0.2
 CATEGORIES=		editors

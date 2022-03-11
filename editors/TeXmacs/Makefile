@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/14 04:30:11 namn Exp $
-
 COMMENT=	wysiwyw (what you see is what you want) editing platform
 
 DISTNAME=	TeXmacs-2.1.1-src

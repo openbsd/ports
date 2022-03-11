@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.83 2021/09/18 11:21:52 tb Exp $
-
 COMMENT=		a fast, compact Motif/X11 plain text editor
 
 DISTNAME=		nedit-5.7

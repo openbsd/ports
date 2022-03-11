@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_ctags_man,v 1.3 2017/04/17 21:43:15 sthen Exp $
 --- doc/ctags.man.orig	Tue Oct 21 04:32:26 2003
 +++ doc/ctags.man	Mon Apr 17 12:50:13 2017
 @@ -1,8 +1,8 @@

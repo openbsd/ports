@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/24 21:28:42 bentley Exp $
-
 COMMENT =	efficient hex editor
 
 DISTNAME =	tweak-3.02

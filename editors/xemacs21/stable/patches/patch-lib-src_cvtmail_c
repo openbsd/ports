@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib-src_cvtmail_c,v 1.1 2007/09/18 18:56:03 aanriot Exp $
 --- lib-src/cvtmail.c.orig	Mon Oct 10 21:40:20 2005
 +++ lib-src/cvtmail.c	Mon Oct 10 21:40:30 2005
 @@ -60,7 +60,7 @@ main (int argc, char *argv[])

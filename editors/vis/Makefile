@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/03/10 12:03:31 kn Exp $
-
 COMMENT =		vi-like editor with sam-style structural regex support
 
 V =			0.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ny,v 1.4 2019/12/21 13:27:05 sthen Exp $
 @pkgpath editors/vim-spell,ny
 share/vim/
 share/vim/vim${P}/

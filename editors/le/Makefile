@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/18 07:57:01 fcambus Exp $
-
 COMMENT =	text editor inspired by Norton Commander
 DISTNAME =	le-1.16.8
 CATEGORIES =	editors

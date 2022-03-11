@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/16 11:02:55 kmos Exp $
-
 COMMENT =	library for IDE consistency
 CATEGORIES =	editors x11
 

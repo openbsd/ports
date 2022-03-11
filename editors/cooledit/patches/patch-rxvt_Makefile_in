@@ -1,4 +1,3 @@
-$OpenBSD: patch-rxvt_Makefile_in,v 1.3 2010/05/19 15:18:35 espie Exp $
 --- rxvt/Makefile.in.orig	Sat Nov 27 09:46:41 2004
 +++ rxvt/Makefile.in	Wed May 19 17:08:39 2010
 @@ -222,7 +222,7 @@ librxvt_a_SOURCES = _rxvtlib.h grkelot.c grkelot.h rxv

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Widgets_NumericPad_h,v 1.1 2001/08/22 00:04:41 naddy Exp $
 --- Widgets/NumericPad.h.orig	Wed Apr  6 18:07:47 1994
 +++ Widgets/NumericPad.h	Tue Aug 21 02:43:48 2001
 @@ -47,7 +47,6 @@ typedef struct

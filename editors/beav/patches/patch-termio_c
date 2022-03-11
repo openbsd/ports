@@ -1,4 +1,3 @@
-$OpenBSD: patch-termio_c,v 1.2 2013/12/12 21:59:57 naddy Exp $
 --- termio.c.orig	Thu Dec 12 17:11:56 2013
 +++ termio.c	Thu Dec 12 17:14:58 2013
 @@ -8,11 +8,16 @@

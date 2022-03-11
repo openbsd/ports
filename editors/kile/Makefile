@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/03/15 06:28:04 rsadowski Exp $
-
 COMMENT =	user-friendly TeX/LaTeX editor for KDE
 
 CATEGORIES =	editors

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2017/10/23 17:25:40 sthen Exp $
-
 unity is hardcoded to pkgconfig... even if --disable-libunity is defined
 
 --- configure.orig	Sat May  3 17:06:40 2014

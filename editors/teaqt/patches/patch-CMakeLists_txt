@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2020/02/21 15:32:07 rsadowski Exp $
-
 Fix install path
 
 Index: CMakeLists.txt

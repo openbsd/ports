@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:04 sthen Exp $
-
 COMMENT=	clone of the ex/vi text editor
 
 DISTNAME=	elvis-2.2_0

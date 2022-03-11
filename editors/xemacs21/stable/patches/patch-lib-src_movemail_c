@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib-src_movemail_c,v 1.1 2007/09/18 18:56:03 aanriot Exp $
 --- lib-src/movemail.c.orig	Sun Sep 25 15:10:55 2005
 +++ lib-src/movemail.c	Sun Sep 25 15:12:18 2005
 @@ -588,14 +588,12 @@ lock_dot(char *filename)

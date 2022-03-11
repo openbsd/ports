@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fileformats_rtf_writer_cpp,v 1.2 2018/02/24 13:13:40 bket Exp $
-
 Index: src/fileformats/rtf_writer.cpp
 --- src/fileformats/rtf_writer.cpp.orig
 +++ src/fileformats/rtf_writer.cpp

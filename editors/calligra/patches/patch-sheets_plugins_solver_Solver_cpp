@@ -1,5 +1,3 @@
-$OpenBSD: patch-sheets_plugins_solver_Solver_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
-
 Index: sheets/plugins/solver/Solver.cpp
 --- sheets/plugins/solver/Solver.cpp.orig
 +++ sheets/plugins/solver/Solver.cpp

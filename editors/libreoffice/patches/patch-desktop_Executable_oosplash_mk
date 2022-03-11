@@ -1,5 +1,3 @@
-$OpenBSD: patch-desktop_Executable_oosplash_mk,v 1.3 2018/02/05 17:15:05 robert Exp $
-
 Index: desktop/Executable_oosplash.mk
 --- desktop/Executable_oosplash.mk.orig
 +++ desktop/Executable_oosplash.mk

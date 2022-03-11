@@ -1,4 +1,3 @@
-$OpenBSD: patch-svtools_Executable_langsupport_mk,v 1.2 2018/02/05 17:15:05 robert Exp $
 Index: svtools/Executable_langsupport.mk
 --- svtools/Executable_langsupport.mk.orig
 +++ svtools/Executable_langsupport.mk

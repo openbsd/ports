@@ -1,4 +1,3 @@
-$OpenBSD: patch-external_libexttextcat_openbsd_patch,v 1.2 2018/02/05 17:15:05 robert Exp $
 Index: external/libexttextcat/openbsd.patch
 --- external/libexttextcat/openbsd.patch.orig
 +++ external/libexttextcat/openbsd.patch

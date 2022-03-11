@@ -1,5 +1,3 @@
-$OpenBSD: patch-pdfium_fpdfsdk_javascript_JS_Value_cpp,v 1.1 2018/07/15 23:09:43 shadchin Exp $
-
 Index: pdfium/fpdfsdk/javascript/JS_Value.cpp
 --- pdfium/fpdfsdk/javascript/JS_Value.cpp.orig
 +++ pdfium/fpdfsdk/javascript/JS_Value.cpp

@@ -1,4 +1,3 @@
-$OpenBSD: patch-vcl_Library_desktop_detector_mk,v 1.4 2016/03/01 21:39:58 robert Exp $
 --- vcl/Library_desktop_detector.mk.orig.port	Thu Feb 11 07:14:55 2016
 +++ vcl/Library_desktop_detector.mk	Thu Feb 11 07:15:10 2016
 @@ -22,6 +22,7 @@ $(eval $(call gb_Library_Library,desktop_detector))

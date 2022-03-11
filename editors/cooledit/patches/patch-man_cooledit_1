@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_cooledit_1,v 1.1 2015/03/21 21:28:27 naddy Exp $
 --- man/cooledit.1.orig	Mon Apr  4 22:47:45 2005
 +++ man/cooledit.1	Sat Mar 21 17:49:43 2015
 @@ -1548,7 +1548,7 @@ newline characters. A \fI"non"-paragraph\fP is one of 

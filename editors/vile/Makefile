@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/15 15:39:28 sthen Exp $
-
 COMMENT=		VI Editor Like Emacs
 DISTNAME=		vile-9.8u
 CATEGORIES=		editors

@@ -1,5 +1,3 @@
-$OpenBSD: patch-filters_libmsooxml_MsooXmlImport_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
-
 Index: filters/libmsooxml/MsooXmlImport.cpp
 --- filters/libmsooxml/MsooXmlImport.cpp.orig
 +++ filters/libmsooxml/MsooXmlImport.cpp

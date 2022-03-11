@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2022/02/26 22:59:44 naddy Exp $
-
 BRANCH=		21.4
 VERSION=	22
 REVISION=	32

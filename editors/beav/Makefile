@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:04 sthen Exp $
-
 COMMENT=	binary editor and viewer
 
 VERSION=	1.40

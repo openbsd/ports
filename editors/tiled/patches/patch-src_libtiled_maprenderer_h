@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libtiled_maprenderer_h,v 1.1 2021/01/19 06:47:06 rsadowski Exp $
-
 Index: src/libtiled/maprenderer.h
 --- src/libtiled/maprenderer.h.orig
 +++ src/libtiled/maprenderer.h

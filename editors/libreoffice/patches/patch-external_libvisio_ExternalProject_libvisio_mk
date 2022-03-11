@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_libvisio_ExternalProject_libvisio_mk,v 1.7 2021/09/02 11:11:58 robert Exp $
-
 Index: external/libvisio/ExternalProject_libvisio.mk
 --- external/libvisio/ExternalProject_libvisio.mk.orig
 +++ external/libvisio/ExternalProject_libvisio.mk

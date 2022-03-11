@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/27 12:41:29 bcallah Exp $
-
 COMMENT =	nice console editor
 DISTNAME =	ne-3.3.1
 CATEGORIES =	editors

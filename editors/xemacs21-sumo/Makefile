@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:07 sthen Exp $
-
 VERSION=		2010-07-27
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
 REVISION=		1

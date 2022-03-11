@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tpad_print_c,v 1.1 2017/05/07 01:05:10 naddy Exp $
-
 Index: src/tpad_print.c
 --- src/tpad_print.c.orig
 +++ src/tpad_print.c

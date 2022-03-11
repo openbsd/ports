@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/12/11 13:58:14 jasper Exp $
 --- Makefile.in.orig	Tue Oct 21 04:32:25 2003
 +++ Makefile.in	Tue Dec  9 23:42:42 2008
 @@ -164,7 +164,7 @@ OBJ3=	$(OSOBJS2) autocmd$(OBJ) cut$(OBJ) draw$(OBJ) ev

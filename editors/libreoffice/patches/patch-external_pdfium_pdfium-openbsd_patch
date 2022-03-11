@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_pdfium_pdfium-openbsd_patch,v 1.6 2022/02/03 20:09:24 robert Exp $
-
 Index: external/pdfium/pdfium-openbsd.patch
 --- external/pdfium/pdfium-openbsd.patch.orig
 +++ external/pdfium/pdfium-openbsd.patch

@@ -1,5 +1,3 @@
-$OpenBSD: patch-sheets_ui_CellToolBase_p_cpp,v 1.1 2022/02/20 13:29:13 rsadowski Exp $
-
 Index: sheets/ui/CellToolBase_p.cpp
 --- sheets/ui/CellToolBase_p.cpp.orig
 +++ sheets/ui/CellToolBase_p.cpp

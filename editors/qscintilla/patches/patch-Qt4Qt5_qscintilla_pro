@@ -1,4 +1,3 @@
-$OpenBSD: patch-Qt4Qt5_qscintilla_pro,v 1.7 2021/01/19 06:26:49 rsadowski Exp $
 Index: Qt4Qt5/qscintilla.pro
 --- Qt4Qt5/qscintilla.pro.orig
 +++ Qt4Qt5/qscintilla.pro

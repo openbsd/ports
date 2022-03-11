@@ -1,5 +1,3 @@
-$OpenBSD: patch-sheets_part_Headers_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
-
 Index: sheets/part/Headers.cpp
 --- sheets/part/Headers.cpp.orig
 +++ sheets/part/Headers.cpp

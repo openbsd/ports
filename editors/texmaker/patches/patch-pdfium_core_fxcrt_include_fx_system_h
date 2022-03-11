@@ -1,5 +1,3 @@
-$OpenBSD: patch-pdfium_core_fxcrt_include_fx_system_h,v 1.1 2018/07/15 23:09:43 shadchin Exp $
-
 Index: pdfium/core/fxcrt/include/fx_system.h
 --- pdfium/core/fxcrt/include/fx_system.h.orig
 +++ pdfium/core/fxcrt/include/fx_system.h

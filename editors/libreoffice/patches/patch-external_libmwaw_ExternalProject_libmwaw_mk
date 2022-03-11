@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_libmwaw_ExternalProject_libmwaw_mk,v 1.3 2020/08/07 07:09:30 robert Exp $
-
 Index: external/libmwaw/ExternalProject_libmwaw.mk
 --- external/libmwaw/ExternalProject_libmwaw.mk.orig
 +++ external/libmwaw/ExternalProject_libmwaw.mk

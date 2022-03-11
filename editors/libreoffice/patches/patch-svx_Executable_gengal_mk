@@ -1,5 +1,3 @@
-$OpenBSD: patch-svx_Executable_gengal_mk,v 1.5 2021/09/02 11:11:58 robert Exp $
-
 Index: svx/Executable_gengal.mk
 --- svx/Executable_gengal.mk.orig
 +++ svx/Executable_gengal.mk

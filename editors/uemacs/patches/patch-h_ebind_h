@@ -1,4 +1,3 @@
-$OpenBSD: patch-h_ebind_h,v 1.1 2004/01/06 03:29:09 espie Exp $
 --- h/ebind.h.orig	1995-12-31 15:04:34.000000000 +0100
 +++ h/ebind.h	2004-01-06 04:20:22.000000000 +0100
 @@ -93,7 +93,7 @@ NOSHARE KEYTAB	keytab[NBINDS] = {

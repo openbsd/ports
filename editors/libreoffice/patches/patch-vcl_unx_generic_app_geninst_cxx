@@ -1,5 +1,3 @@
-$OpenBSD: patch-vcl_unx_generic_app_geninst_cxx,v 1.4 2021/07/11 13:14:06 robert Exp $
-
 Index: vcl/unx/generic/app/geninst.cxx
 --- vcl/unx/generic/app/geninst.cxx.orig
 +++ vcl/unx/generic/app/geninst.cxx

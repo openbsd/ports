@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Resource_Files_python3lib_updatechecker_py,v 1.2 2021/03/24 14:37:05 kirby Exp $
-
 disable phone-home
 
 Index: src/Resource_Files/python3lib/updatechecker.py

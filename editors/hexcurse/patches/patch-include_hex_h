@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_hex_h,v 1.1 2021/02/14 18:01:21 bcallah Exp $
-
 Fix for -fno-common
 From Gentoo: https://github.com/LonnyGomes/hexcurse/pull/28
 

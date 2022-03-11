@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_libnumbertext_ExternalProject_libnumbertext_mk,v 1.2 2022/02/03 20:09:24 robert Exp $
-
 Index: external/libnumbertext/ExternalProject_libnumbertext.mk
 --- external/libnumbertext/ExternalProject_libnumbertext.mk.orig
 +++ external/libnumbertext/ExternalProject_libnumbertext.mk

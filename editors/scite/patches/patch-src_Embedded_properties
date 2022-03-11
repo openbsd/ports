@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Embedded_properties,v 1.7 2017/11/01 17:01:23 jeremy Exp $
 Index: src/Embedded.properties
 --- src/Embedded.properties.orig
 +++ src/Embedded.properties

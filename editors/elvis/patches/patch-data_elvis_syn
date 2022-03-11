@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_elvis_syn,v 1.1 2012/05/05 14:03:15 sthen Exp $
-
 Add "return" to the list of keywords for shell scripts.
 
 --- data/elvis.syn.orig	Tue Oct 21 04:32:25 2003

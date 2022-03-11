@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_skia_Library_skia_mk,v 1.5 2022/02/03 20:09:24 robert Exp $
-
 Index: external/skia/Library_skia.mk
 --- external/skia/Library_skia.mk.orig
 +++ external/skia/Library_skia.mk

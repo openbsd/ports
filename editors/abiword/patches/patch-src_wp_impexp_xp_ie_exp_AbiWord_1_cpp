@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wp_impexp_xp_ie_exp_AbiWord_1_cpp,v 1.1 2021/02/13 10:15:02 ajacoutot Exp $
-
 64bit time_t
 
 Index: src/wp/impexp/xp/ie_exp_AbiWord_1.cpp

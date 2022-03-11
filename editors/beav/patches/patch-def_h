@@ -1,4 +1,3 @@
-$OpenBSD: patch-def_h,v 1.3 2013/12/12 21:59:57 naddy Exp $
 --- def.h.orig	Wed Dec 11 17:22:35 2013
 +++ def.h	Wed Dec 11 17:23:14 2013
 @@ -13,6 +13,8 @@

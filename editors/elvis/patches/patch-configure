@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2017/04/17 21:43:15 sthen Exp $
-
 Disable some questionable/broken/dangerous features.
 
 We also don't require -lipc anymore.

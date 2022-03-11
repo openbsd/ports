@@ -1,5 +1,3 @@
-$OpenBSD: patch-sheets_part_HeaderItems_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
-
 Index: sheets/part/HeaderItems.cpp
 --- sheets/part/HeaderItems.cpp.orig
 +++ sheets/part/HeaderItems.cpp

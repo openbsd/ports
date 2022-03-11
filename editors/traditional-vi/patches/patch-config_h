@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_h,v 1.1.1.1 2012/10/13 22:23:54 rpe Exp $
 --- config.h.orig	Fri Sep 30 14:22:45 2011
 +++ config.h	Fri Sep 30 14:23:03 2011
 @@ -133,6 +133,7 @@

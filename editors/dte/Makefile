@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/11 19:48:18 kmos Exp $
-
 COMMENT =	small and easy to use console text editor
 DISTNAME =	dte-1.10
 CATEGORIES =	editors

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/24 14:37:05 kirby Exp $
 bin/sigil
 lib/sigil/
 @so lib/sigil/libsigilgumbo.so

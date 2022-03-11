@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/14 18:01:21 bcallah Exp $
-
 COMMENT=	user-friendly ncurses-based hexeditor with many features
 REVISION=	0
 

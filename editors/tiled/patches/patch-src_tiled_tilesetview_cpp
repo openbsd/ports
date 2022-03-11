@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tiled_tilesetview_cpp,v 1.1 2021/01/19 06:47:06 rsadowski Exp $
-
 Index: src/tiled/tilesetview.cpp
 --- src/tiled/tilesetview.cpp.orig
 +++ src/tiled/tilesetview.cpp

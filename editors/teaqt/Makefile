@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/10/09 19:12:01 rsadowski Exp $
-
 COMMENT =	powerful and simple Qt editor
 
 GH_ACCOUNT =	psemiletov

@@ -1,5 +1,3 @@
-$OpenBSD: patch-sheets_part_Digest_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
-
 Index: sheets/part/Digest.cpp
 --- sheets/part/Digest.cpp.orig
 +++ sheets/part/Digest.cpp

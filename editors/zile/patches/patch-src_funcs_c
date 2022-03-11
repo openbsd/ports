@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_funcs_c,v 1.2 2020/12/09 10:24:57 gonzalo Exp $
 Index: src/funcs.c
 --- src/funcs.c.orig
 +++ src/funcs.c

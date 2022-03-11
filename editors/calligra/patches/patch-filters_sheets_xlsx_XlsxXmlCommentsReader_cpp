@@ -1,5 +1,3 @@
-$OpenBSD: patch-filters_sheets_xlsx_XlsxXmlCommentsReader_cpp,v 1.1 2022/02/20 13:27:47 rsadowski Exp $
-
 Index: filters/sheets/xlsx/XlsxXmlCommentsReader.cpp
 --- filters/sheets/xlsx/XlsxXmlCommentsReader.cpp.orig
 +++ filters/sheets/xlsx/XlsxXmlCommentsReader.cpp

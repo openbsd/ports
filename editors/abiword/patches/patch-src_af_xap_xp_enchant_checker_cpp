@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_af_xap_xp_enchant_checker_cpp,v 1.1 2021/02/13 10:15:02 ajacoutot Exp $
-
 Enchant 2.1.X
 
 Index: src/af/xap/xp/enchant_checker.cpp

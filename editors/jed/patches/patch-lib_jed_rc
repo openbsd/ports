@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_jed_rc,v 1.5 2009/10/27 21:51:53 sthen Exp $
 --- lib/jed.rc.orig	Mon Feb 13 18:51:58 2006
 +++ lib/jed.rc	Sat Oct 10 18:08:25 2009
 @@ -149,7 +149,7 @@ WRAP_INDENTS	= 0;	% Non zero indents next line after w

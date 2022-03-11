@@ -1,5 +1,3 @@
-$OpenBSD: patch-pdfium_third_party_base_logging_h,v 1.1 2018/07/15 23:09:43 shadchin Exp $
-
 Index: pdfium/third_party/base/logging.h
 --- pdfium/third_party/base/logging.h.orig
 +++ pdfium/third_party/base/logging.h

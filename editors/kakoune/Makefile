@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/25 17:13:27 solene Exp $
-
 COMMENT =		modal code editor with a focus on interactivity
 
 V =			2021.11.08

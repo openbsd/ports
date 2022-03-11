@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in_in,v 1.1 2007/09/18 18:56:03 aanriot Exp $
 --- Makefile.in.in.orig	Mon Jan 31 03:54:47 2005
 +++ Makefile.in.in	Mon Oct 10 21:36:19 2005
 @@ -429,7 +429,7 @@ install-arch-dep: mkdir

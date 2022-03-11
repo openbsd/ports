@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_edit_h,v 1.1.1.1 2013/05/04 15:13:47 jturner Exp $
-
 commit 7677b8ad51c5bbcae9dd08afb08d32e242d497ce
 Author: James Turner <james@calminferno.net>
 Date:   Fri May 3 17:19:38 2013 -0400

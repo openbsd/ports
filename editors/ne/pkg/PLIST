@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/10/31 16:12:08 bcallah Exp $
 @bin bin/ne
 @man man/man1/ne.1
 share/doc/ne/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_makefile,v 1.8 2021/05/27 12:41:29 bcallah Exp $
-
 Remove hardcoded compiler and optimiation flags.
 
 Index: src/makefile

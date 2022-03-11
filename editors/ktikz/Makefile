@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/19 06:48:22 rsadowski Exp $
-
 COMMENT =		editor for the TikZ language
 
 GH_ACCOUNT =		fhackenberger

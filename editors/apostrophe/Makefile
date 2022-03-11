@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT=		distraction free editor
 
 GH_TAGNAME=		v2.5

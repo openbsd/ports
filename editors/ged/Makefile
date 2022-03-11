@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:05 sthen Exp $
-
 COMMENT =		GNU version of standard text editor
 
 V =			1.14.2

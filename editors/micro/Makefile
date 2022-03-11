@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/30 12:53:25 phessler Exp $
-
 BROKEN-aarch64 = pty@v2.0.0+incompatible/doc.go:15:9: undefined: open
 
 COMMENT =	modern and intuitive terminal-based text editor

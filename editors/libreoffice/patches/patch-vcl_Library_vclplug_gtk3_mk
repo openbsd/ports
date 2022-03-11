@@ -1,5 +1,3 @@
-$OpenBSD: patch-vcl_Library_vclplug_gtk3_mk,v 1.11 2022/02/03 20:09:24 robert Exp $
-
 Index: vcl/Library_vclplug_gtk3.mk
 --- vcl/Library_vclplug_gtk3.mk.orig
 +++ vcl/Library_vclplug_gtk3.mk

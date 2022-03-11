@@ -1,4 +1,3 @@
-$OpenBSD: patch-ldapvi_1,v 1.1 2012/03/02 08:01:07 sthen Exp $
 --- ldapvi.1.orig	Sat May  5 11:17:26 2007
 +++ ldapvi.1	Thu Mar  1 22:04:17 2012
 @@ -36,6 +36,9 @@ Sets \fB\-\-bind\fR simple.

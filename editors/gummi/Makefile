@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/01 18:34:14 kili Exp $
-
 COMMENT =		simple LaTeX editor
 
 V =			0.8.2

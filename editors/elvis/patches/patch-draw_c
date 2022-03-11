@@ -1,5 +1,3 @@
-$OpenBSD: patch-draw_c,v 1.1 2017/04/17 21:43:15 sthen Exp $
-
 Fix a crash that's easily triggered by our malloc().
 
 https://github.com/mbert/elvis/commit/5c3c8ec827fe

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.mule,v 1.2 2011/01/03 10:44:27 jasper Exp $
 lib/xemacs-${BRANCH}.${VERSION}/lisp/mule/
 lib/xemacs-${BRANCH}.${VERSION}/lisp/mule/arabic.el
 lib/xemacs-${BRANCH}.${VERSION}/lisp/mule/arabic.elc

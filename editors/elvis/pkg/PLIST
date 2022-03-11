@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/11 13:58:14 jasper Exp $
 @bin bin/elvfmt
 @bin bin/elvis
 @bin bin/elvtags

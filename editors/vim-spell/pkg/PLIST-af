@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-af,v 1.4 2019/12/21 13:27:04 sthen Exp $
 @pkgpath editors/vim-spell,af
 share/vim/
 share/vim/vim${P}/

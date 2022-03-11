@@ -1,5 +1,3 @@
-$OpenBSD: patch-gtk_makefile,v 1.14 2018/02/24 10:54:50 bket Exp $
-
 Index: gtk/makefile
 --- gtk/makefile.orig
 +++ gtk/makefile

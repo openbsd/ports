@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT =	simple, Unicode-aware word processor on the console
 
 GH_ACCOUNT =	davidgiven

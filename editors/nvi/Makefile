@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/08/10 18:20:21 millert Exp $
-
 COMMENT=	ex/vi text editor with wide character support
 
 V =		2.2.0

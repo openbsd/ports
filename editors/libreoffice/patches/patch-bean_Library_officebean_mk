@@ -1,5 +1,3 @@
-$OpenBSD: patch-bean_Library_officebean_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
-
 Index: bean/Library_officebean.mk
 --- bean/Library_officebean.mk.orig
 +++ bean/Library_officebean.mk

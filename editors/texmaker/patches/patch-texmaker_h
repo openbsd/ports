@@ -1,4 +1,3 @@
-$OpenBSD: patch-texmaker_h,v 1.7 2018/07/15 23:09:43 shadchin Exp $
 Index: texmaker.h
 --- texmaker.h.orig
 +++ texmaker.h

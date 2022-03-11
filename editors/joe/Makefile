@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:46:05 sthen Exp $
-
 COMMENT=		Joe's Own Editor
 
 DISTNAME=		joe-4.6

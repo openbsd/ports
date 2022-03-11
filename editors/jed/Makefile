@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 20:46:05 sthen Exp $
-
 COMMENT=	text editor
 
 DISTNAME=	jed-0.99-19

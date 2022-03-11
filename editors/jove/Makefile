@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:05 sthen Exp $
-
 COMMENT=	Jonathan's Own Version of Emacs
 
 V=		4.16.0.73

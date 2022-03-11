@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_SciTEGlobal_properties,v 1.8 2018/02/24 10:55:25 bket Exp $
 Index: src/SciTEGlobal.properties
 --- src/SciTEGlobal.properties.orig
 +++ src/SciTEGlobal.properties

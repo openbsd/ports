@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_elvis_arf,v 1.1 2012/05/05 14:03:15 sthen Exp $
-
 Make file/syntax detection work for scripts that use env
 in their shebang line. From Debian.
 

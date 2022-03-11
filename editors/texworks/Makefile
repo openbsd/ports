@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
 COMMENT-lua =		Lua scripting for TeXworks

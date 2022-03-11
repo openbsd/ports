@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_QtPDF_src_PDFBackend_cpp,v 1.1 2021/01/19 06:47:35 rsadowski Exp $
-
 Index: modules/QtPDF/src/PDFBackend.cpp
 --- modules/QtPDF/src/PDFBackend.cpp.orig
 +++ modules/QtPDF/src/PDFBackend.cpp

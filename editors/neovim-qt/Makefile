@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =	Qt5 GUI front-end for neovim
 
 GH_ACCOUNT = equalsraf

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Widgets_Imakefile,v 1.1 2001/08/22 00:04:41 naddy Exp $
 --- Widgets/Imakefile.orig	Wed Aug 22 01:05:50 2001
 +++ Widgets/Imakefile	Wed Aug 22 01:06:12 2001
 @@ -4,7 +4,7 @@

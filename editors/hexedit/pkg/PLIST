@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/17 12:50:09 gonzalo Exp $
 @bin bin/hexedit
 @man man/man1/hexedit.1

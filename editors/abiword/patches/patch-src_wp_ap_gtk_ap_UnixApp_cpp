@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wp_ap_gtk_ap_UnixApp_cpp,v 1.3 2019/12/31 14:27:04 ajacoutot Exp $
-
 error: invalid suffix on literal; C++11 requires a space between literal and identifier [-Wreserved-user-defined-literal]
 
 Index: src/wp/ap/gtk/ap_UnixApp.cpp

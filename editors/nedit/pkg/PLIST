@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2018/09/04 12:46:11 espie Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},wrapmark
 @pkgpath ${BASE_PKGPATH},lesstif,wrapmark

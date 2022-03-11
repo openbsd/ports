@@ -1,5 +1,3 @@
-$OpenBSD: patch-htmacho_cc,v 1.1 2018/04/09 18:21:05 jasper Exp $
-
 Index: htmacho.cc
 --- htmacho.cc.orig
 +++ htmacho.cc

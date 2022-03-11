@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.66 2022/03/01 13:55:05 sthen Exp $
 bin/libreoffice
 bin/libreoffice${BV}
 bin/lobase

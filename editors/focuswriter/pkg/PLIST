@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/03/09 01:08:46 bcallah Exp $
 @bin bin/focuswriter
 @man man/man1/focuswriter.1
 share/applications/focuswriter.desktop

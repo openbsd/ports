@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: soffice.sh,v 1.2 2018/01/22 15:48:21 robert Exp $
-#
 
 # This is needed for LibreOffice to be able to open files with
 # special character(s) in their name

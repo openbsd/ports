@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dumper_c,v 1.2 2011/01/03 10:44:27 jasper Exp $
 --- src/dumper.c.orig	Wed May  9 14:36:22 2007
 +++ src/dumper.c	Sun Jan  2 23:29:57 2011
 @@ -1050,7 +1050,7 @@ pdump (void)

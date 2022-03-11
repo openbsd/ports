@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT=	heavily customizable and extensible editor
 DISTNAME=	xemacs-${BRANCH}.${VERSION}
 CATEGORIES=	editors

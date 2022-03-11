@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/11 03:48:45 bentley Exp $
 @bin bin/wordgrinder
 @bin bin/xwordgrinder
 @man man/man1/wordgrinder.1

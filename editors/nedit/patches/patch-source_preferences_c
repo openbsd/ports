@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_preferences_c,v 1.4 2019/02/28 23:00:47 sthen Exp $
-
 Add .pp to the list of extensions for Pascal source files.
 
 Index: source/preferences.c

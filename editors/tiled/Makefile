@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:13 sthen Exp $
-
 # XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
 DPB_PROPERTIES =	nojunk
 

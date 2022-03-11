@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/02/09 09:24:13 edd Exp $
-
 # Use LuaJIT where possible, as some plugins assume it's available. Arches
 # that can't use LuaJIT have to use the system Lua (and some plugins may not
 # work).

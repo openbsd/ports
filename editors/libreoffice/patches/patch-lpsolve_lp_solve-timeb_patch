@@ -1,4 +1,3 @@
-$OpenBSD: patch-lpsolve_lp_solve-timeb_patch,v 1.2 2014/10/10 17:13:10 robert Exp $
 --- external/lpsolve/lp_solve-timeb.patch.orig.port	Fri Dec  6 12:46:26 2013
 +++ external/lpsolve/lp_solve-timeb.patch	Fri Dec  6 14:48:55 2013
 @@ -0,0 +1,35 @@

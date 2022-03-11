@@ -1,4 +1,3 @@
-$OpenBSD: patch-ee_c,v 1.5 2012/05/10 19:30:31 gonzalo Exp $
 --- ee.c.orig	Thu May 10 19:35:13 2012
 +++ ee.c	Thu May 10 19:35:19 2012
 @@ -111,6 +111,8 @@ nl_catd catalog;

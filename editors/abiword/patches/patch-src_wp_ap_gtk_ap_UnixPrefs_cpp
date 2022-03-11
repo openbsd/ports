@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wp_ap_gtk_ap_UnixPrefs_cpp,v 1.1 2021/02/13 10:15:02 ajacoutot Exp $
-
 This function is totally broken and leads to a SEGFAULT.
 setlocale(3) isn't supposed to be used this way.
 

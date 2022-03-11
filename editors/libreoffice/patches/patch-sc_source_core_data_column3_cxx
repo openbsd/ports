@@ -1,5 +1,3 @@
-$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.10 2022/02/03 20:09:24 robert Exp $
-
 Index: sc/source/core/data/column3.cxx
 --- sc/source/core/data/column3.cxx.orig
 +++ sc/source/core/data/column3.cxx

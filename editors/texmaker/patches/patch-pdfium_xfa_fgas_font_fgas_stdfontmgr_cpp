@@ -1,5 +1,3 @@
-$OpenBSD: patch-pdfium_xfa_fgas_font_fgas_stdfontmgr_cpp,v 1.1 2018/07/15 23:09:43 shadchin Exp $
-
 Index: pdfium/xfa/fgas/font/fgas_stdfontmgr.cpp
 --- pdfium/xfa/fgas/font/fgas_stdfontmgr.cpp.orig
 +++ pdfium/xfa/fgas/font/fgas_stdfontmgr.cpp

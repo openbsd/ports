@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_libexttextcat_UnpackedTarball_libexttextcat_mk,v 1.1 2018/02/05 17:15:05 robert Exp $
-
 Index: external/libexttextcat/UnpackedTarball_libexttextcat.mk
 --- external/libexttextcat/UnpackedTarball_libexttextcat.mk.orig
 +++ external/libexttextcat/UnpackedTarball_libexttextcat.mk

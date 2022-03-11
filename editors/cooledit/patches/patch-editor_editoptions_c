@@ -1,5 +1,3 @@
-$OpenBSD: patch-editor_editoptions_c,v 1.1 2021/09/19 21:54:18 schwarze Exp $
-
 Do not use sprintf(3) %n.
 
 Index: editor/editoptions.c

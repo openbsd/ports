@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:06 sthen Exp $
-
 COMMENT =		screen oriented version of the classic text editor ed
 
 DISTNAME =		se-3.0.1

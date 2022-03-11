@@ -1,5 +1,3 @@
-$OpenBSD: patch-idl_source_objects_types_cxx,v 1.3 2021/09/02 11:11:58 robert Exp $
-
 Index: idl/source/objects/types.cxx
 --- idl/source/objects/types.cxx.orig
 +++ idl/source/objects/types.cxx

@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_libwps_ExternalProject_libwps_mk,v 1.5 2022/02/03 20:09:24 robert Exp $
-
 Index: external/libwps/ExternalProject_libwps.mk
 --- external/libwps/ExternalProject_libwps.mk.orig
 +++ external/libwps/ExternalProject_libwps.mk

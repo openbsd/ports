@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT=	powerful programming editor
 
 DISTNAME=	xwpe-1.5.30a

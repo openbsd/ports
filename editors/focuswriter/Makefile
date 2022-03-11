@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2020/10/09 19:12:00 rsadowski Exp $
-
 COMMENT =	simple, distraction-free writing environment
 
 DISTNAME =	focuswriter-1.7.6

@@ -1,4 +1,3 @@
-$OpenBSD: patch-util_c,v 1.1 2012/03/18 17:02:00 naddy Exp $
 --- util.c.orig	Sun Mar 18 10:54:56 2012
 +++ util.c	Sun Mar 18 10:55:05 2012
 @@ -280,7 +280,7 @@ char	*buf;

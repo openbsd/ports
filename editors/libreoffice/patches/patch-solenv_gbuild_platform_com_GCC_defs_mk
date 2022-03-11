@@ -1,4 +1,3 @@
-$OpenBSD: patch-solenv_gbuild_platform_com_GCC_defs_mk,v 1.13 2022/02/03 20:09:24 robert Exp $
 Index: solenv/gbuild/platform/com_GCC_defs.mk
 --- solenv/gbuild/platform/com_GCC_defs.mk.orig
 +++ solenv/gbuild/platform/com_GCC_defs.mk

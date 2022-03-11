@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/03 11:26:42 bentley Exp $
-
 COMMENT =	interactive, extensible binary editor
 
 DISTNAME =	poke-1.0

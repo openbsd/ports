@@ -1,4 +1,3 @@
-$OpenBSD: patch-external_libwpd_ExternalPackage_libwpd_mk,v 1.3 2020/02/05 19:58:10 robert Exp $
 Index: external/libwpd/ExternalPackage_libwpd.mk
 --- external/libwpd/ExternalPackage_libwpd.mk.orig
 +++ external/libwpd/ExternalPackage_libwpd.mk

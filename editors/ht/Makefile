@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:05 sthen Exp $
-
 COMMENT =		file editor/viewer/analyzer for executables
 
 DISTNAME =		ht-2.1.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-pdfium_third_party_libopenjpeg20_opj_malloc_h,v 1.1 2018/07/15 23:09:43 shadchin Exp $
-
 Index: pdfium/third_party/libopenjpeg20/opj_malloc.h
 --- pdfium/third_party/libopenjpeg20/opj_malloc.h.orig
 +++ pdfium/third_party/libopenjpeg20/opj_malloc.h

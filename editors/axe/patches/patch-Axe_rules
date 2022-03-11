@@ -1,4 +1,3 @@
-$OpenBSD: patch-Axe_rules,v 1.1 2001/08/22 00:04:41 naddy Exp $
 --- Axe.rules.orig	Wed Apr  6 18:07:33 1994
 +++ Axe.rules	Tue Aug 21 02:43:48 2001
 @@ -72,7 +72,7 @@ extension::								@@\

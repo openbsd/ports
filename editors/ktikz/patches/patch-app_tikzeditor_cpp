@@ -1,5 +1,3 @@
-$OpenBSD: patch-app_tikzeditor_cpp,v 1.1 2021/01/19 06:48:22 rsadowski Exp $
-
 Index: app/tikzeditor.cpp
 --- app/tikzeditor.cpp.orig
 +++ app/tikzeditor.cpp

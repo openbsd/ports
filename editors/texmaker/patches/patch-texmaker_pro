@@ -1,4 +1,3 @@
-$OpenBSD: patch-texmaker_pro,v 1.17 2018/07/15 23:09:43 shadchin Exp $
 Index: texmaker.pro
 --- texmaker.pro.orig
 +++ texmaker.pro

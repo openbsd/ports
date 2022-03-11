@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_c_arch_unix_x11_x11_h,v 1.1.1.1 2019/03/11 03:48:45 bentley Exp $
-
 Index: src/c/arch/unix/x11/x11.h
 --- src/c/arch/unix/x11/x11.h.orig
 +++ src/c/arch/unix/x11/x11.h

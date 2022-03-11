@@ -1,4 +1,3 @@
-$OpenBSD: patch-libexttextcat_openbsd_patch,v 1.1 2013/11/12 07:57:23 robert Exp $
 --- libexttextcat/openbsd.patch.orig.port	Tue Nov  5 14:04:33 2013
 +++ libexttextcat/openbsd.patch	Wed Nov  6 14:49:28 2013
 @@ -0,0 +1,11 @@

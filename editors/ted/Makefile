@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:06 sthen Exp $
-
-
 COMMENT =	X11 based RTF editor
 V =		2.17
 DISTNAME =	ted-$V

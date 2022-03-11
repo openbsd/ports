@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-java,v 1.25 2022/03/01 13:55:05 sthen Exp $
 lib/libreoffice/program/JREProperties.class
 lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar

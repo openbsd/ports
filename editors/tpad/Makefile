@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:06 sthen Exp $
-
 COMMENT =	simple, fast GTK-based text editor
 DISTNAME =	tpad-5.7.1.3
 CATEGORIES =	editors x11
