@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:53 sthen Exp $
-
 COMMENT =		yEnc Module for Python modified for SABnzbd
 
-MODPY_EGG_VERSION =	4.0.2
+MODPY_EGG_VERSION =	5.1.0
 DISTNAME =		sabyenc3-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabyenc-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		news
 
@@ -14,7 +11,9 @@ HOMEPAGE =		https://github.com/sabnzbd/sabyenc
 # LGPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${MODPY_WANTLIB} pthread
+WANTLIB =		${COMPILER_LIBCXX} m
+
+COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
 MODPY_PI =		Yes
