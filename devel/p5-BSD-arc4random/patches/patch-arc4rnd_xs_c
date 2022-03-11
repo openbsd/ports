@@ -1,8 +1,9 @@
 Implement Perl XS wrapper for OpenBSD libc arc4random(3),
 arc4random_buf(3), arc4random_uniform(3), remove everything else.
 
---- arc4rnd_xs.c.orig	Sun Oct 11 00:44:17 2009
-+++ arc4rnd_xs.c	Wed Oct 12 17:33:31 2016
+Index: arc4rnd_xs.c
+--- arc4rnd_xs.c.orig
++++ arc4rnd_xs.c
 @@ -1,4 +1,5 @@
  /*-
 + * Copyright (c) 2016 Alexander Bluhm <bluhm@openbsd.org>
@@ -25,12 +26,9 @@ arc4random_buf(3), arc4random_uniform(3), remove everything else.
  #include "EXTERN.h"
  #include "perl.h"
  #include "XSUB.h"
-@@ -48,17 +42,8 @@
- #define __RCSID(x)			__IDSTRING(rcsid,x)
- #endif
+@@ -50,15 +44,6 @@
  
--__RCSID("$MirOS: contrib/hosted/tg/code/BSD::arc4random/arc4rnd_xs.c,v 1.5 2009/10/10 22:43:53 tg Exp $");
-+__RCSID("$OpenBSD: patch-arc4rnd_xs_c,v 1.3 2022/03/11 18:50:59 naddy Exp $");
+ __RCSID("$MirOS: contrib/hosted/tg/code/BSD::arc4random/arc4rnd_xs.c,v 1.5 2009/10/10 22:43:53 tg Exp $");
  
 -#ifdef REDEF_USCORETYPES
 -#define u_int32_t	uint32_t
