@@ -1,5 +1,3 @@
-$OpenBSD: patch-swig_IECServiceAdmin_i,v 1.1 2021/03/15 20:31:10 naddy Exp $
-
 Index: swig/IECServiceAdmin.i
 --- swig/IECServiceAdmin.i.orig
 +++ swig/IECServiceAdmin.i

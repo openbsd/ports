@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/08/31 15:55:55 sthen Exp $
 @newgroup _postgrey:563
 @newuser _postgrey:563:563:daemon:Postgrey Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/postgrey

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/17 14:46:33 danj Exp $
-
 COMMENT=	greylist milter
 
 DISTNAME=	milter-greylist-4.2.7

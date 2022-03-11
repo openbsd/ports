@@ -1,4 +1,3 @@
-$OpenBSD: patch-amavis-mc,v 1.1 2014/11/19 19:00:50 giovanni Exp $
 --- amavis-mc.orig	Tue May  6 13:56:46 2014
 +++ amavis-mc	Mon Jul 14 10:15:13 2014
 @@ -70,16 +70,16 @@ use vars qw(@path @services $daemon_user $daemon_group

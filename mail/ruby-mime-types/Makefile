@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/26 18:00:46 jeremy Exp $
-
 COMMENT=		MIME type library for Ruby
 
 DISTNAME=		mime-types-3.3.1

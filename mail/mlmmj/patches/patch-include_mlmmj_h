@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_mlmmj_h,v 1.1 2021/02/14 13:23:56 kn Exp $
-
 Fix build with "-fno-common", from FreeBSD.
 https://gitlab.com/mlmmj/mlmmj/-/merge_requests/2
 

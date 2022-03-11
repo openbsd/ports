@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: postfix-install,v 1.6 2014/07/03 16:02:23 brad Exp $
 #
 # Post-installation setup of postfix
 

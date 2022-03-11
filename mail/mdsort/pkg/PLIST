@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/04/07 08:31:12 anton Exp $
 @bin bin/mdsort
 @man man/man1/mdsort.1
 @man man/man5/mdsort.conf.5

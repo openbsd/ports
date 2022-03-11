@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_fts_decode2text_sh,v 1.1 2021/02/23 14:27:33 sthen Exp $
-
 Index: src/plugins/fts/decode2text.sh
 --- src/plugins/fts/decode2text.sh.orig
 +++ src/plugins/fts/decode2text.sh

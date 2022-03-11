@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_ECThreadPool_cpp,v 1.3 2020/07/29 13:04:05 robert Exp $
-
 Index: common/ECThreadPool.cpp
 --- common/ECThreadPool.cpp.orig
 +++ common/ECThreadPool.cpp

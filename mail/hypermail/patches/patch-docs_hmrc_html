@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_hmrc_html,v 1.5 2018/09/18 08:18:01 solene Exp $
-
 Index: docs/hmrc.html
 --- docs/hmrc.html.orig
 +++ docs/hmrc.html

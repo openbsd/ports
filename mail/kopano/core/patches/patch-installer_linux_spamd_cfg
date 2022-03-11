@@ -1,5 +1,3 @@
-$OpenBSD: patch-installer_linux_spamd_cfg,v 1.2 2018/04/24 20:52:13 robert Exp $
-
 Index: installer/linux/spamd.cfg
 --- installer/linux/spamd.cfg.orig
 +++ installer/linux/spamd.cfg

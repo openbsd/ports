@@ -1,4 +1,3 @@
-$OpenBSD: patch-database_c,v 1.1 2017/04/19 15:03:35 jca Exp $
 --- database.c.orig	Sun Oct  4 04:38:25 2015
 +++ database.c	Wed Apr 19 16:45:13 2017
 @@ -859,7 +859,7 @@ item_merge(list_item dest, list_item src)

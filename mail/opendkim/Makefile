@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/19 05:58:50 ajacoutot Exp $
-
 COMMENT=	library and milter for DKIM (Domain Keys Identified Mail)
 
 DISTNAME=	opendkim-2.10.3

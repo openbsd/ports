@@ -1,4 +1,3 @@
-$OpenBSD: patch-params_h,v 1.1.1.1 2014/07/16 12:02:30 jca Exp $
 --- params.h.orig	Sun Mar  5 14:18:32 2006
 +++ params.h	Wed Jul 16 00:41:44 2014
 @@ -13,7 +13,7 @@

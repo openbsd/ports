@@ -1,5 +1,3 @@
-$OpenBSD: patch-cf_m4_proto_m4,v 1.4 2021/05/07 17:16:01 ajacoutot Exp $
-
 net/uucp uses login _uucp
 
 Index: cf/m4/proto.m4

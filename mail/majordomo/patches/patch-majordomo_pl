@@ -1,4 +1,3 @@
-$OpenBSD: patch-majordomo_pl,v 1.1 2011/02/02 20:15:48 landry Exp $
 Make it work with perl 5.12
 From pkgsrc pr43974
 --- majordomo.pl.orig	Wed Feb  2 13:32:15 2011

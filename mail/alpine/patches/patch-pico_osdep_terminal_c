@@ -1,5 +1,3 @@
-$OpenBSD: patch-pico_osdep_terminal_c,v 1.2 2021/09/22 20:57:10 sthen Exp $
-
 Index: pico/osdep/terminal.c
 --- pico/osdep/terminal.c.orig
 +++ pico/osdep/terminal.c

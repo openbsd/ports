@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_smtp-vilter_smtp-vilter_8,v 1.4 2014/01/23 15:45:18 jasper Exp $
 --- bin/smtp-vilter/smtp-vilter.8.orig	Sun Nov 12 12:39:17 2006
 +++ bin/smtp-vilter/smtp-vilter.8	Sat Apr  3 21:43:06 2010
 @@ -68,6 +68,9 @@

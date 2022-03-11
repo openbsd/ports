@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/12 10:44:23 sthen Exp $
 include/spf2/
 include/spf2/spf.h
 include/spf2/spf_dns.h

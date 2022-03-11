@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2020/03/23 19:17:38 ajacoutot Exp $
-
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/12/14 10:39:50 sthen Exp $
-
 COMMENT =		SMTP plugin for MUAs
 
 DISTNAME =		msmtp-1.8.19

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mail_milter_authentication.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/authentication_milter"
 daemon_flags="-d"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/07 13:29:52 bentley Exp $
-
 COMMENT =	tiny pop3 daemon
 
 DISTNAME =	popa3d-1.0.3

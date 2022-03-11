@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mboxgrep_h,v 1.1 2021/02/03 19:13:11 naddy Exp $
-
 Index: src/mboxgrep.h
 --- src/mboxgrep.h.orig
 +++ src/mboxgrep.h

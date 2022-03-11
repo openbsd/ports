@@ -1,4 +1,3 @@
-$OpenBSD: patch-mini_sendmail_8,v 1.4 2012/08/05 19:55:17 naddy Exp $
 --- mini_sendmail.8.orig	Fri May 20 21:10:23 2005
 +++ mini_sendmail.8	Sun Aug  5 21:51:44 2012
 @@ -1,9 +1,11 @@

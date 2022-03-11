@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_c,v 1.3 2019/02/08 09:40:32 sthen Exp $
-
 Also check if getch(3) returns KEY_ENTER in get_commands(), or it may fail
 when the enter key is pressed in some terminals (e.g., TERM=pccon0).
 

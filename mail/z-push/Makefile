@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2021/07/11 19:07:58 robert Exp $
-
 COMMENT=	ActiveSync protocol implementation
 
 V=		2.6.2

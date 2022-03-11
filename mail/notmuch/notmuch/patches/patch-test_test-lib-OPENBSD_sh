@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_test-lib-OPENBSD_sh,v 1.3 2022/02/23 15:46:38 sthen Exp $
-
 Index: test/test-lib-OPENBSD.sh
 --- test/test-lib-OPENBSD.sh.orig
 +++ test/test-lib-OPENBSD.sh

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:28 sthen Exp $
-
 COMMENT =	SRS library
 
 DISTNAME =	libsrs2-1.0.18

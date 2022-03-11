@@ -1,5 +1,3 @@
-$OpenBSD: patch-backend_vilter-regex_scan_l,v 1.1 2017/07/09 14:05:37 espie Exp $
-
 Index: backend/vilter-regex/scan.l
 --- backend/vilter-regex/scan.l.orig
 +++ backend/vilter-regex/scan.l

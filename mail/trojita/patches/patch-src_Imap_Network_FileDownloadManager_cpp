@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Imap_Network_FileDownloadManager_cpp,v 1.1 2020/03/14 01:17:13 jca Exp $
-
 https://cgit.kde.org/trojita.git/commit/?id=cf2364b80fa8ae844df8350cd5833d47cce235f2
 
 commit cf2364b80fa8ae844df8350cd5833d47cce235f2

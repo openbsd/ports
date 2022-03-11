@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:28 sthen Exp $
-
 COMMENT=	tool for authenticating to Gmail with OAuth2
 
 GH_ACCOUNT=	google

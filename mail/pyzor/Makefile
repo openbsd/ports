@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/18 10:55:25 giovanni Exp $
-
 COMMENT =		collaborative, networked system to detect and block spam
 
 GH_ACCOUNT =		SpamExperts

@@ -1,4 +1,3 @@
-$OpenBSD: patch-makeimapaccess_in,v 1.1 2016/03/18 21:59:51 giovanni Exp $
 --- makeimapaccess.in.orig	Sun Mar  6 23:14:53 2016
 +++ makeimapaccess.in	Sun Mar  6 23:15:12 2016
 @@ -15,7 +15,7 @@ libexecdir="@libexecdir@"

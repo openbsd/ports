@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/11/29 08:35:17 ajacoutot Exp $
 bin/core_server.py
 bin/sb_bnfilter.py
 bin/sb_bnserver.py

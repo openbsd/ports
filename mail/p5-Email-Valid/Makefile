@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:25 sthen Exp $
-
 COMMENT=	check validity of Internet email addresses
 
 MODULES=	cpan

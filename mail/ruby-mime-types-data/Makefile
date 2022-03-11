@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/22 15:39:42 jeremy Exp $
-
 COMMENT=		MIME types data for Ruby
 
 DISTNAME=		mime-types-data-3.2019.1009

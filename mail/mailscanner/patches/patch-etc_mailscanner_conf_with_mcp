@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_mailscanner_conf_with_mcp,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
 --- etc/mailscanner.conf.with.mcp.orig	Wed May 30 12:30:39 2007
 +++ etc/mailscanner.conf.with.mcp	Sun Aug  5 04:03:26 2007
 @@ -31,17 +31,17 @@

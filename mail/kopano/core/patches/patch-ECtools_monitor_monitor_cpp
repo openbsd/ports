@@ -1,5 +1,3 @@
-$OpenBSD: patch-ECtools_monitor_monitor_cpp,v 1.16 2021/02/09 10:32:33 robert Exp $
-
 Index: ECtools/monitor/monitor.cpp
 --- ECtools/monitor/monitor.cpp.orig
 +++ ECtools/monitor/monitor.cpp

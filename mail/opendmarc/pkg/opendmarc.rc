@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: opendmarc.rc,v 1.1.1.1 2019/05/24 11:35:02 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/opendmarc"
 daemon_flags="-c ${SYSCONFDIR}/opendmarc.conf -u _opendmarc"

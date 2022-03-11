@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT=	Cubic Circle's POP3 daemon
 
 DISTNAME=	cucipop-1.31

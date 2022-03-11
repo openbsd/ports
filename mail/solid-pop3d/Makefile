@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	flexible POP3 server
 
 VERSION=	0.15

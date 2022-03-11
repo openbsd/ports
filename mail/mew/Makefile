@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/09/02 14:59:44 jeremy Exp $
-
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.8

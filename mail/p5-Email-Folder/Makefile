@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT= 	read an email folder as Email::Simple objects
 
 MODULES=	cpan

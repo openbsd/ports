@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_MailScanner_CustomFunctions_GenericSpamScanner_pm,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
 --- lib/MailScanner/CustomFunctions/GenericSpamScanner.pm.orig	Thu Dec  7 13:12:22 2006
 +++ lib/MailScanner/CustomFunctions/GenericSpamScanner.pm	Thu Dec  7 13:32:50 2006
 @@ -35,66 +35,80 @@ use IPC::Open2;

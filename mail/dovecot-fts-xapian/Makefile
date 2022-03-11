@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/02 11:09:00 sthen Exp $
-
 COMMENT=		full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=		grosjo

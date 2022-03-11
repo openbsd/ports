@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/23 23:17:48 kn Exp $
-
 COMMENT=	fetch, filter and deliver mail
 
 V=		2.0

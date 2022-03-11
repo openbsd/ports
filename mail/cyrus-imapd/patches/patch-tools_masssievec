@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_masssievec,v 1.2 2020/05/14 12:26:39 ajacoutot Exp $
-
 Index: tools/masssievec
 --- tools/masssievec.orig
 +++ tools/masssievec

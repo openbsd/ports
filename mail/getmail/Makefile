@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.101 2021/11/24 09:06:39 sthen Exp $
-
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
 MODPY_EGG_VERSION=	5.16

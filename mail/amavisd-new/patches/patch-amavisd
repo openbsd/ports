@@ -1,5 +1,3 @@
-$OpenBSD: patch-amavisd,v 1.17 2019/08/13 08:12:57 giovanni Exp $
-
 Hunks 1, 4: Disable File::LibMagic in favour of safer file(1) from base.
 Hunks 2, 5: fix DKIM signing
 

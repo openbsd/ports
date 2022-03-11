@@ -1,4 +1,3 @@
-$OpenBSD: patch-cucipop_c,v 1.2 2001/02/23 02:10:21 itojun Exp $
 --- cucipop.c.orig	Fri Feb 23 11:32:24 2001
 +++ cucipop.c	Fri Feb 23 11:32:45 2001
 @@ -741,7 +741,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2019/07/12 20:47:38 sthen Exp $
-
 COMMENT =	mailing list manager with web interface
 
 VERSION =	6.2.16

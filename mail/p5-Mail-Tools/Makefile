@@ -1,5 +1,3 @@
-#   $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:27 sthen Exp $
-
 COMMENT=	modules for handling mail with perl
 
 V=		2.21

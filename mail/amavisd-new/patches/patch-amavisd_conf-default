@@ -1,4 +1,3 @@
-$OpenBSD: patch-amavisd_conf-default,v 1.5 2016/07/01 13:19:29 giovanni Exp $
 --- amavisd.conf-default.orig	Fri Feb 26 14:37:51 2016
 +++ amavisd.conf-default	Fri Jul  1 01:02:59 2016
 @@ -16,9 +16,9 @@ use strict;

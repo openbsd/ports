@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:25 sthen Exp $
-
 COMMENT =		parse an email Received: header
 
 MODULES =		cpan

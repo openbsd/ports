@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:24 sthen Exp $
-
 COMMENT =	rspamd integration to the OpenSMTPD daemon
 
 # V is used in opensmtpd-filters/Makefile.inc

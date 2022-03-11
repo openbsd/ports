@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: courier_imap_ssl.rc,v 1.3 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/imapd-ssl.rc"
 

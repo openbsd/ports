@@ -1,5 +1,3 @@
-$OpenBSD: patch-perdition_options_h,v 1.2 2015/08/27 13:51:27 giovanni Exp $
-
 Auth timeout used for SO_RECVTIMEO in ssl.c which has a max of
 USHRT_MAX hz otherwise it fails with EDOM.
 

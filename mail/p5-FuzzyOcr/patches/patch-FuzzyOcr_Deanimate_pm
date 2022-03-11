@@ -1,4 +1,3 @@
-$OpenBSD: patch-FuzzyOcr_Deanimate_pm,v 1.1 2012/07/09 21:04:03 giovanni Exp $
 --- FuzzyOcr/Deanimate.pm.orig	Mon Jul  9 19:15:25 2012
 +++ FuzzyOcr/Deanimate.pm	Mon Jul  9 19:17:38 2012
 @@ -26,12 +26,14 @@ use FuzzyOcr::Config qw(get_config set_config get_tmpd

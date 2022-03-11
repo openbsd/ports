@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: kopano_search.rc,v 1.6 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/kopano-search"
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/24 18:06:32 tb Exp $
-
 COMMENT=	Sendmail Log Analysis Report
 
 VERSION=	1.4

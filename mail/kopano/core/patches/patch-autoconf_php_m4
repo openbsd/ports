@@ -1,5 +1,3 @@
-$OpenBSD: patch-autoconf_php_m4,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
-
 Index: autoconf/php.m4
 --- autoconf/php.m4.orig
 +++ autoconf/php.m4

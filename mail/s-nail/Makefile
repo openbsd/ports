@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/12/09 14:07:21 sthen Exp $
-
 COMMENT=		SysV mail/BSD Mail/POSIX mailx: send and receive mail
 
 DISTNAME=		s-nail-14.9.23

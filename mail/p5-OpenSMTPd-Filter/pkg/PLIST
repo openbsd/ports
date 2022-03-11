@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/29 00:38:15 afresh1 Exp $
 ${P5SITE}/OpenSMTPd/
 ${P5SITE}/OpenSMTPd/Filter.pm
 ${P5ARCH}/

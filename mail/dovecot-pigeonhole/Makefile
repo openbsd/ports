@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2022/02/05 13:28:50 sthen Exp $
-
 COMMENT=	Sieve mail filtering for Dovecot
 
 V_SIEVE=	0.5.18

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.97 2021/09/11 14:11:51 ajacoutot Exp $
-
 COMMENT=	fast, secure sendmail replacement
 
 DISTNAME=	postfix-${VERSION}

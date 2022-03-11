@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_f-secure-wrapper,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
 --- lib/f-secure-wrapper.orig	Wed Oct 31 07:58:54 2007
 +++ lib/f-secure-wrapper	Sat Dec 15 15:31:56 2007
 @@ -44,7 +44,7 @@ Root=$1

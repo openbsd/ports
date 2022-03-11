@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:24 sthen Exp $
-
 COMMENT=	biff-type program, designed to match AfterStep
 
 DISTNAME=	asmail-0.56

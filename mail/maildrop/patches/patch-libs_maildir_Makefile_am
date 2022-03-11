@@ -1,4 +1,3 @@
-$OpenBSD: patch-libs_maildir_Makefile_am,v 1.2 2021/12/14 07:53:56 giovanni Exp $
 Index: libs/maildir/Makefile.am
 --- libs/maildir/Makefile.am.orig
 +++ libs/maildir/Makefile.am

@@ -1,4 +1,3 @@
-$OpenBSD: patch-perdition_db_daemon_perditiondb_daemon_c,v 1.2 2013/03/15 15:17:36 sthen Exp $
 --- perdition/db/daemon/perditiondb_daemon.c.orig	Wed Sep  1 08:13:30 2010
 +++ perdition/db/daemon/perditiondb_daemon.c	Sat Nov 13 10:09:27 2010
 @@ -237,7 +237,7 @@ dbserver_get2(const char *key_str, const char *UNUSED(

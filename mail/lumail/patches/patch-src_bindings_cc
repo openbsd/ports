@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_bindings_cc,v 1.5 2016/04/18 07:15:14 ajacoutot Exp $
-
 Unbreak with glib2 >=2.48.0
 
 --- src/bindings.cc.orig	Tue Sep 16 19:29:01 2014

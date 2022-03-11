@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/13 23:15:47 jturner Exp $
 include/mimetic/
 include/mimetic/body.h
 include/mimetic/circular_buffer.h

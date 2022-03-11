@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_test-lib_sh,v 1.5 2022/02/24 17:53:12 bket Exp $
-
 we don't have libdl
 
 our ld code does not ignore empty elements in the list, which results in errors.

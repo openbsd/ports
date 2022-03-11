@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: postfix.rc,v 1.5 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/postfix/master"
 

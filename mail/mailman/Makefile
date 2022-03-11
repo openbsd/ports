@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.98 2022/02/10 15:10:08 okan Exp $
-
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.39

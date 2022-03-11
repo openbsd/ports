@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/02/02 15:28:01 ajacoutot Exp $
 @pkgpath mail/evolution-plugin-rss
 @bin bin/evolution-import-rss
 lib/evolution-data-server/registry-modules/module-eds-rss.a

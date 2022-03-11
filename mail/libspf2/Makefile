@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/12 10:44:23 sthen Exp $
-
 COMMENT=	SPF library
 
 GH_ACCOUNT=	shevek

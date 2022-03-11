@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_clamav-wrapper,v 1.5 2015/04/09 19:55:09 sthen Exp $
 --- lib/clamav-wrapper.orig	Wed Feb 18 06:53:04 2015
 +++ lib/clamav-wrapper	Fri Mar 13 03:49:10 2015
 @@ -99,23 +99,23 @@ ExtraScanOptions=""

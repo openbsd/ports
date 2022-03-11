@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/19 16:15:05 sthen Exp $
-
 COMMENT=	postfix greylist daemon
 
 DISTNAME=	postgrey-1.37

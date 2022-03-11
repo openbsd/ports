@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/23 17:46:02 espie Exp $
 @bin bin/smsmail
 @man man/man1/smsmail.1
 @man man/man5/smsmail.conf.5

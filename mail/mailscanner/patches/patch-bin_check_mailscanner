@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_check_mailscanner,v 1.2 2011/04/21 20:25:35 sthen Exp $
 --- bin/check_mailscanner.orig	Wed Mar 16 19:41:34 2011
 +++ bin/check_mailscanner	Thu Apr 21 18:41:07 2011
 @@ -42,8 +42,8 @@

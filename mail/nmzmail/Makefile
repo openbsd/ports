@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:31 sthen Exp $
-
 COMMENT=	fast maildir search engine
 
 DISTNAME=	nmzmail-1.1

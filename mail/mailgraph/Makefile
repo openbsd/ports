@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/02/03 20:40:39 sthen Exp $
-
 COMMENT=	RRDtool frontend for Postfix statistics
 
 DISTNAME=	mailgraph-1.14

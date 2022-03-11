@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:29 sthen Exp $
-
 PORTROACH =		limit:^0
 
 COMMENT =		console-based e-mail client with Lua scripting support

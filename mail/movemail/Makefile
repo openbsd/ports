@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:30 sthen Exp $
-
 COMMENT=	move your mail box to another location
 
 DISTNAME=	movemail-1.0

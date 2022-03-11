@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/12/14 07:47:36 giovanni Exp $
-
 SHARED_LIBS +=  courier-unicode		2.0 # 2.0
 
 COMMENT =		courier unicode library

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.18 2021/12/08 14:10:31 sthen Exp $
-
 Index: src/managesieve-login/Makefile.in
 --- src/managesieve-login/Makefile.in.orig
 +++ src/managesieve-login/Makefile.in

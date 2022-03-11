@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/09/11 14:11:51 ajacoutot Exp $
-
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
 COMMENT-mysql=	MySQL backend for perdition mail proxy

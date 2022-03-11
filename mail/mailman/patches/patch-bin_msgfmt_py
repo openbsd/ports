@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_msgfmt_py,v 1.1 2008/07/09 19:30:24 wcmaier Exp $
 --- bin/msgfmt.py.orig	Sun Sep 21 21:29:51 2003
 +++ bin/msgfmt.py	Wed Jul  9 13:13:53 2008
 @@ -1,4 +1,4 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:37 sthen Exp $
-
 COMMENT=	spam relay database
 
 DISTNAME=	relaydb-1.7

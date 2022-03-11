@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libspf2_spf_compile_c,v 1.5 2021/08/12 10:44:23 sthen Exp $
-
 --- src/libspf2/spf_compile.c.orig	Mon Feb 20 08:26:43 2012
 +++ src/libspf2/spf_compile.c	Wed Apr 19 18:53:10 2017
 @@ -577,7 +577,7 @@ SPF_c_parse_macro(SPF_server_t *spf_server,

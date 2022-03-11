@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Mail_SPF_Record_pm,v 1.1 2021/12/26 10:02:24 giovanni Exp $
 Fix for cpan bug 130299 (https://rt.cpan.org/Public/Bug/Display.html?id=130299)
 Index: lib/Mail/SPF/Record.pm
 --- lib/Mail/SPF/Record.pm.orig

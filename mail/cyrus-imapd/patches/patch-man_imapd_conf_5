@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_imapd_conf_5,v 1.19 2021/04/24 11:11:47 ajacoutot Exp $
-
 Index: man/imapd.conf.5
 --- man/imapd.conf.5.orig
 +++ man/imapd.conf.5

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/05/13 04:33:41 afresh1 Exp $
 bin/t-prot
 @man man/man1/t-prot.1
 share/doc/t-prot/

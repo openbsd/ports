@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT=	Perl implementation of DMARC
 
 DISTNAME=	Mail-DMARC-1.20200214

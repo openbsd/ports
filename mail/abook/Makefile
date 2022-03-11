@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/20 16:31:07 naddy Exp $
-
 COMMENT=		addressbook program with mutt support
 
 DISTNAME=		abook-0.6.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_cutee_cxx,v 1.1 2018/04/10 08:48:12 jasper Exp $
-
 Index: test/cutee.cxx
 --- test/cutee.cxx.orig
 +++ test/cutee.cxx

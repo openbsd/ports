@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/06 15:12:05 benoit Exp $
 @bin bin/fdm
 @man man/man1/fdm.1
 @man man/man5/fdm.conf.5

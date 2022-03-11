@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT= 	deliver a piece of mail locally
 
 MODULES=	cpan

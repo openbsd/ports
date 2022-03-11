@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_msmtpq_msmtp-queue,v 1.2 2020/02/06 11:26:10 sthen Exp $
-
 Index: scripts/msmtpq/msmtp-queue
 --- scripts/msmtpq/msmtp-queue.orig
 +++ scripts/msmtpq/msmtp-queue

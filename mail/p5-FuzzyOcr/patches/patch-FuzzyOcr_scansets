@@ -1,4 +1,3 @@
-$OpenBSD: patch-FuzzyOcr_scansets,v 1.3 2012/07/17 09:37:12 giovanni Exp $
 --- FuzzyOcr.scansets.orig	Tue Jul 17 11:33:42 2012
 +++ FuzzyOcr.scansets	Tue Jul 17 11:34:24 2012
 @@ -20,14 +20,14 @@ scanset ocrad-invert {

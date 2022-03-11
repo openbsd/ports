@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/15 21:29:14 sdk Exp $
-
 COMMENT=	maildir indexer and searcher with emacs frontend
 
 V=		1.6.10

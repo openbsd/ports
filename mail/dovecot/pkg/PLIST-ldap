@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ldap,v 1.4 2019/12/15 23:57:22 sthen Exp $
 @conflict dovecot-<=2.2.26.0p0
 include/dovecot/ldap-client.h
 @so lib/dovecot/auth/libauthdb_ldap.so

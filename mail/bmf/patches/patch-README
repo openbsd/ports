@@ -1,4 +1,3 @@
-$OpenBSD: patch-README,v 1.1 2007/09/07 08:13:20 aanriot Exp $
 --- README.orig	Fri Sep  7 10:02:26 2007
 +++ README	Fri Sep  7 10:03:34 2007
 @@ -92,6 +92,25 @@ These will override these commands:

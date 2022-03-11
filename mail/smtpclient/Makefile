@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT=		simple SMTP client
 
 DISTNAME=		smtpclient-1.0.0

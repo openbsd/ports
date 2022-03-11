@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/04 17:27:18 robert Exp $
-
 COMMENT=	next generation web interface for Kopano
 
 WAPP_VERSION=	6.0.0

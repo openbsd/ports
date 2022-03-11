@@ -1,4 +1,3 @@
-$OpenBSD: patch-alpine_pine-use_c,v 1.5 2017/04/25 09:20:53 ajacoutot Exp $
 --- alpine/pine-use.c.orig	Mon Feb  6 01:06:22 2017
 +++ alpine/pine-use.c	Tue Apr 25 11:10:08 2017
 @@ -24,7 +24,7 @@ static char rcsid[] = "$Id: pine-use.c 761 2007-10-23 

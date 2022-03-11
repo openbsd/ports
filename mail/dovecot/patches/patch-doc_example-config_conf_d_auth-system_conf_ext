@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_example-config_conf_d_auth-system_conf_ext,v 1.3 2019/05/02 22:06:13 sthen Exp $
-
 Index: doc/example-config/conf.d/auth-system.conf.ext
 --- doc/example-config/conf.d/auth-system.conf.ext.orig
 +++ doc/example-config/conf.d/auth-system.conf.ext

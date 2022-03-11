@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/10/09 02:43:28 afresh1 Exp $
-
 COMMENT =	send Email from Catalyst
 
 DISTNAME =	Catalyst-View-Email-0.36

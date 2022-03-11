@@ -1,4 +1,3 @@
-# $OpenBSD: site.OS.m4,v 1.6 2018/01/11 22:00:07 nigel Exp $
 # OpenBSD Sendmail port configuration, generated from __file__
 dnl
 dnl Target directories

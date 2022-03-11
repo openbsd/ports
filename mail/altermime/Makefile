@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/10 11:43:58 sthen Exp $
-
 COMMENT=	utility for altering mime-encoded mailpacks
 
 DISTNAME=	altermime-0.3.10

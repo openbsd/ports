@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/15 11:55:29 sthen Exp $
-
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
 

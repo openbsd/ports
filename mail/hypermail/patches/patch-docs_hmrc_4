@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_hmrc_4,v 1.8 2018/09/18 08:18:01 solene Exp $
-
 Index: docs/hmrc.4
 --- docs/hmrc.4.orig
 +++ docs/hmrc.4

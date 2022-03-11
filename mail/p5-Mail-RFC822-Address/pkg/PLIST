@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/01/02 14:28:01 florian Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/RFC822/
 ${P5SITE}/Mail/RFC822/Address.pm

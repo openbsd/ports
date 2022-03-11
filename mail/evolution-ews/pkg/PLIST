@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.25 2021/10/28 06:16:06 ajacoutot Exp $
 @so lib/evolution-data-server/addressbook-backends/libebookbackendews.so
 @so lib/evolution-data-server/addressbook-backends/libebookbackendmicrosoft365.so
 @so lib/evolution-data-server/calendar-backends/libecalbackendews.so

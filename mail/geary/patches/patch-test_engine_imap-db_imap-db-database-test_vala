@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_engine_imap-db_imap-db-database-test_vala,v 1.5 2021/05/14 08:08:10 ajacoutot Exp $
-
 fix conflict with stdin symbol in headers
 
 Index: test/engine/imap-db/imap-db-database-test.vala

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ECtools_statsd_cpp,v 1.5 2021/02/09 10:32:33 robert Exp $
-
 Index: ECtools/statsd.cpp
 --- ECtools/statsd.cpp.orig
 +++ ECtools/statsd.cpp

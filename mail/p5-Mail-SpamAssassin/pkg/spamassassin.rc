@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: spamassassin.rc,v 1.7 2018/09/18 06:42:57 giovanni Exp $
 
 daemon="${TRUEPREFIX}/bin/spamd -d"
 daemon_flags="-u _spamdaemon -P"

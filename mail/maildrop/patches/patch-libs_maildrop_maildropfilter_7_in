@@ -1,4 +1,3 @@
-$OpenBSD: patch-libs_maildrop_maildropfilter_7_in,v 1.2 2021/12/14 07:53:56 giovanni Exp $
 Index: libs/maildrop/maildropfilter.7.in
 --- libs/maildrop/maildropfilter.7.in.orig
 +++ libs/maildrop/maildropfilter.7.in

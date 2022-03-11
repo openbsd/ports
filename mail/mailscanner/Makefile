@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2020/03/20 16:44:25 naddy Exp $
-
 COMMENT=	virus/spam scanning framework
 
 V=		4.85

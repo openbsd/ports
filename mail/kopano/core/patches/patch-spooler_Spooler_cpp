@@ -1,5 +1,3 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.17 2021/02/09 10:32:33 robert Exp $
-
 Index: spooler/Spooler.cpp
 --- spooler/Spooler.cpp.orig
 +++ spooler/Spooler.cpp

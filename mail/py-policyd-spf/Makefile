@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT=	external SPF policy checker for postfix
 
 VER=		1.3

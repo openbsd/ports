@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_test-file-cache_c,v 1.2 2021/03/08 13:08:28 sthen Exp $
-
 Maybe could use RLIMIT_DATA instead.
 
 Index: src/lib/test-file-cache.c

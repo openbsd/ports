@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Mail_DMARC_Report_Receive_pm,v 1.3 2019/07/10 14:05:45 giovanni Exp $
-
 Index: lib/Mail/DMARC/Report/Receive.pm
 --- lib/Mail/DMARC/Report/Receive.pm.orig
 +++ lib/Mail/DMARC/Report/Receive.pm

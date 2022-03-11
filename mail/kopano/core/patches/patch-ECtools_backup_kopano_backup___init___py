@@ -1,5 +1,3 @@
-$OpenBSD: patch-ECtools_backup_kopano_backup___init___py,v 1.1 2021/11/09 19:15:24 robert Exp $
-
 XXX hack so that the kopano-backup process does not hang
 
 Index: ECtools/backup/kopano_backup/__init__.py

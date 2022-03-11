@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.306 2022/02/18 16:11:27 robert Exp $
-
 COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication / dictionary support for Dovecot
 COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot

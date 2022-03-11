@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:17 sthen Exp $
-
 COMMENT =	threaded Python IMAP4 client
 
 MODPY_EGG_VERSION =	3.6

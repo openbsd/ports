@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: amavis_mc.rc,v 1.3 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/amavis-mc"
 

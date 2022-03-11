@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2021/12/14 07:49:39 giovanni Exp $
-
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
 COMMENT-mysql=		mysql authentication module for courier-authLib

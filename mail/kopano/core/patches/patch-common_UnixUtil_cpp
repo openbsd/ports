@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_UnixUtil_cpp,v 1.8 2021/11/12 12:18:20 robert Exp $
-
 Index: common/UnixUtil.cpp
 --- common/UnixUtil.cpp.orig
 +++ common/UnixUtil.cpp

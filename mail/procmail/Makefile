@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/12 20:47:36 sthen Exp $
-
 COMMENT=	filtering local mail delivery agent
 
 DISTNAME=	procmail-3.22

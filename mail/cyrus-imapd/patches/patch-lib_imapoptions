@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_imapoptions,v 1.19 2021/04/24 11:11:47 ajacoutot Exp $
-
 Index: lib/imapoptions
 --- lib/imapoptions.orig
 +++ lib/imapoptions

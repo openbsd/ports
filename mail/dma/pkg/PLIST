@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/08/02 22:00:37 bcallah Exp $
 @newgroup _dma:840
 @newuser _dma:840:_dma::DragonFly Mail Agent:/nonexistent:/sbin/nologin
 @mode 4554

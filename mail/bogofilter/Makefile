@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/07/20 14:13:58 sthen Exp $
-
 COMMENT =	bayesian spam filter
 
 DISTNAME =	bogofilter-1.2.5

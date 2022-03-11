@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary

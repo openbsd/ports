@@ -1,4 +1,3 @@
-$OpenBSD: patch-freebsd_h,v 1.1 2011/11/13 11:51:54 naddy Exp $
 --- freebsd.h.orig	Sun Nov 13 04:46:05 2011
 +++ freebsd.h	Sun Nov 13 04:46:27 2011
 @@ -96,7 +96,7 @@

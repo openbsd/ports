@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/03 16:03:01 sthen Exp $
-
 COMMENT =	convert RSS/Atom newsfeeds to email
 
 MODPY_EGG_VERSION = 3.13.1

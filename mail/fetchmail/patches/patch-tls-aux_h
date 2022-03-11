@@ -1,5 +1,3 @@
-$OpenBSD: patch-tls-aux_h,v 1.1 2021/07/29 10:44:07 sthen Exp $
-
 Index: tls-aux.h
 --- tls-aux.h.orig
 +++ tls-aux.h

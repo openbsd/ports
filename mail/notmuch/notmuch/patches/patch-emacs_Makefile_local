@@ -1,5 +1,3 @@
-$OpenBSD: patch-emacs_Makefile_local,v 1.2 2020/08/13 18:21:19 sthen Exp $
-
 Index: emacs/Makefile.local
 --- emacs/Makefile.local.orig
 +++ emacs/Makefile.local

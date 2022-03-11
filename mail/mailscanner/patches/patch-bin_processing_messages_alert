@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_processing_messages_alert,v 1.3 2009/10/07 20:59:29 sthen Exp $
 --- bin/processing_messages_alert.orig	Tue Sep  8 10:21:09 2009
 +++ bin/processing_messages_alert	Sat Sep 26 13:05:52 2009
 @@ -1,13 +1,13 @@

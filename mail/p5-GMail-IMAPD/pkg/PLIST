@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/26 04:33:50 steven Exp $
 ${P5SITE}/GMail/
 ${P5SITE}/GMail/IMAPD.pm
 @man man/man3p/GMail::IMAPD.3

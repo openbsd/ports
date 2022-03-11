@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT=		perl module to manage mail folders
 
 DISTNAME =		Mail-Box-2.118

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/20 18:30:47 bluhm Exp $
-
 COMMENT =	DKIM and DomainKeys message-signing implementation
 
 DISTNAME =	Mail-DKIM-1.20200907

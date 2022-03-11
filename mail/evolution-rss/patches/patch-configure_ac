@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.5 2021/03/22 07:34:34 ajacoutot Exp $
-
 From 680fa6596793dc53368e0b8ebf90eddc3a987e42 Mon Sep 17 00:00:00 2001
 From: Milan Crha <mcrha@redhat.com>
 Date: Tue, 5 May 2020 09:53:09 +0200

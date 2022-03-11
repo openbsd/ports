@@ -1,4 +1,3 @@
-$OpenBSD: patch-authenticate_c,v 1.1 2001/02/19 15:00:55 danh Exp $
 --- authenticate.c.orig	Tue Jan 30 12:43:55 2001
 +++ authenticate.c	Tue Jan 30 12:43:55 2001
 @@ -28,7 +28,7 @@ static /*const*/char rcsid[]=

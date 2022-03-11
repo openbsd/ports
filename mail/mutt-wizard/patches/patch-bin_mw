@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_mw,v 1.1 2022/01/23 14:29:45 sthen Exp $
-
 fix account number switch macro
 fix account deletion
 publish gpg using gpg-wks protocol

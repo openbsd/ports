@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.127 2022/03/09 21:05:31 naddy Exp $
-
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 

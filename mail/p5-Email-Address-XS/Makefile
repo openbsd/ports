@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT=	parse and format RFC 5322 email addresses and groups
 
 MODULES=	cpan

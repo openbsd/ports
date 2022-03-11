@@ -1,4 +1,3 @@
-$OpenBSD: patch-FuzzyOcr_Scanset_pm,v 1.1 2012/07/09 21:04:03 giovanni Exp $
 --- FuzzyOcr/Scanset.pm.orig	Mon Jul  9 19:12:47 2012
 +++ FuzzyOcr/Scanset.pm	Mon Jul  9 19:13:54 2012
 @@ -20,6 +20,8 @@ package FuzzyOcr::Scanset;

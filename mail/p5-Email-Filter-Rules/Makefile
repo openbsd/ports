@@ -1,5 +1,3 @@
-#   $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT=	simple rules for routing mail with Email::Filter
 
 DISTNAME=	Email-Filter-Rules-1.2

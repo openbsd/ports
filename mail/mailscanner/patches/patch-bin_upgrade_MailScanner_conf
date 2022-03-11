@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_upgrade_MailScanner_conf,v 1.2 2009/10/17 16:25:49 sthen Exp $
 --- bin/upgrade_MailScanner_conf.orig	Tue Aug 11 11:26:07 2009
 +++ bin/upgrade_MailScanner_conf	Tue Oct 13 22:41:40 2009
 @@ -60,25 +60,12 @@ sub Usage {

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_config_php,v 1.1 2018/04/28 14:05:15 robert Exp $
-
 Index: src/config.php
 --- src/config.php.orig
 +++ src/config.php

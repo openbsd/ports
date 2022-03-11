@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:47:24 sthen Exp $
-
 COMMENT=	complain about SPAM
 
 DISTNAME=	adcomplain-3.52

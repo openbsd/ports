@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_bitdefender-autoupdate,v 1.2 2009/01/28 15:16:17 sthen Exp $
 --- lib/bitdefender-autoupdate.orig	Thu Dec 11 06:57:04 2008
 +++ lib/bitdefender-autoupdate	Sat Jan 10 21:16:03 2009
 @@ -107,7 +107,7 @@ use IO::File;

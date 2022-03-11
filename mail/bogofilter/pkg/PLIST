@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/10/20 08:38:54 landry Exp $
 bin/bf_compact
 bin/bf_copy
 bin/bf_tar

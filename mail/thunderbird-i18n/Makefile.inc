@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.151 2022/03/09 18:23:06 landry Exp $
-
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS =	amd64 aarch64
 

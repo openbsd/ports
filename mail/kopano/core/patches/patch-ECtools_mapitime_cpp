@@ -1,5 +1,3 @@
-$OpenBSD: patch-ECtools_mapitime_cpp,v 1.11 2021/02/09 10:32:33 robert Exp $
-
 Index: ECtools/mapitime.cpp
 --- ECtools/mapitime.cpp.orig
 +++ ECtools/mapitime.cpp

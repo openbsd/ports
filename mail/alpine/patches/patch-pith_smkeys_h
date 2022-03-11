@@ -1,5 +1,3 @@
-$OpenBSD: patch-pith_smkeys_h,v 1.1 2021/10/31 17:03:43 tb Exp $
-
 Index: pith/smkeys.h
 --- pith/smkeys.h.orig
 +++ pith/smkeys.h

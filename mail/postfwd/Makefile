@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/08/02 14:56:20 giovanni Exp $
-
 COMMENT =	Postfix policy server
 
 DISTNAME =	postfwd-2.03

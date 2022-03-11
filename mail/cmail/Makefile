@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:22 sthen Exp $
-
 COMMENT=	simple mail counter
 
 DISTNAME=	cmail-3.1

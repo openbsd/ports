@@ -1,4 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2016/12/02 14:57:41 sthen Exp $
 --- CMakeLists.txt.orig	Thu Jul  7 09:06:40 2016
 +++ CMakeLists.txt	Thu Jul  7 09:19:03 2016
 @@ -168,10 +168,14 @@ ENDMACRO(ProcessPackage name)

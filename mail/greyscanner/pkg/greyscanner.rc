@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: greyscanner.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/greyscanner"
 

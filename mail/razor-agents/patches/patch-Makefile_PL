@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.3 2016/04/17 18:55:49 afresh1 Exp $
 --- Makefile.PL.orig	Tue May  8 23:47:53 2007
 +++ Makefile.PL	Fri Feb  5 11:39:03 2016
 @@ -58,7 +58,7 @@ MAN5PODS = docs/razor-agent.conf.pod \

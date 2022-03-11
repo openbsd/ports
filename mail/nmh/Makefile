@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/08/14 05:59:50 bentley Exp $
-
 COMMENT=		new MH mail handling program
 
 DISTNAME=		nmh-1.7.1

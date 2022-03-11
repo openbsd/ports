@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/08/13 08:12:57 giovanni Exp $
 @pkgpath mail/amavisd-new
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin

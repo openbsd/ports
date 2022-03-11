@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/12/23 12:55:05 steven Exp $
 bin/hashcash
 @man man/man1/hashcash.1
 share/doc/hashcash/

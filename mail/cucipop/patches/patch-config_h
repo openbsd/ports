@@ -1,8 +1,7 @@
-$OpenBSD: patch-config_h,v 1.1 2001/02/19 15:00:55 danh Exp $
 --- config.h.orig	Tue May 12 17:09:14 1998
 +++ config.h	Tue Jan 30 12:43:56 2001
 @@ -1,9 +1,9 @@
- /*$Id: patch-config_h,v 1.1 2001/02/19 15:00:55 danh Exp $*/
+ /*$Id: patch-config_h,v 1.2 2022/03/11 19:34:34 naddy Exp $*/
  
 -#define USEdot_lock	/**/
 +/*#define USEdot_lock	/**/

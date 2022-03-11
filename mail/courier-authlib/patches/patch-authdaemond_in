@@ -1,4 +1,3 @@
-$OpenBSD: patch-authdaemond_in,v 1.2 2012/10/18 08:04:01 giovanni Exp $
 --- authdaemond.in.orig	Wed May 25 04:44:12 2011
 +++ authdaemond.in	Fri Sep  7 14:34:02 2012
 @@ -9,7 +9,7 @@

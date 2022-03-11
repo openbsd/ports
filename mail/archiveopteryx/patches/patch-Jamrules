@@ -1,4 +1,3 @@
-$OpenBSD: patch-Jamrules,v 1.3 2017/02/27 18:25:18 jca Exp $
 --- Jamrules.orig	Mon Mar 10 14:44:59 2014
 +++ Jamrules	Mon Feb 27 17:16:24 2017
 @@ -34,12 +34,9 @@ else if $(CLANG) {

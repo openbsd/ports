@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_examples_cyrus_conf_normal_conf,v 1.2 2020/05/14 12:26:39 ajacoutot Exp $
-
 Index: doc/examples/cyrus_conf/normal.conf
 --- doc/examples/cyrus_conf/normal.conf.orig
 +++ doc/examples/cyrus_conf/normal.conf

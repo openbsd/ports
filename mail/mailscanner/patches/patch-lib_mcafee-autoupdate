@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_mcafee-autoupdate,v 1.3 2010/05/27 11:04:30 sthen Exp $
 --- lib/mcafee-autoupdate.orig	Thu Apr 22 15:40:18 2010
 +++ lib/mcafee-autoupdate	Mon May 24 10:23:51 2010
 @@ -45,7 +45,7 @@

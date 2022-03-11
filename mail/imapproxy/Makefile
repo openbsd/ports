@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/28 20:44:57 tb Exp $
-
 COMMENT=	caching IMAP proxy to be used with webmail clients
 
 DISTNAME=	squirrelmail-20210316_0200-SVN.imap_proxy

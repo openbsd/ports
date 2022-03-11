@@ -1,4 +1,3 @@
-$OpenBSD: patch-db_postgres_cpp,v 1.2 2016/11/01 09:10:41 landry Exp $
 Fix with psql 9.2
 --- db/postgres.cpp.orig	Mon Mar 10 14:44:59 2014
 +++ db/postgres.cpp	Wed Apr 30 22:56:02 2014

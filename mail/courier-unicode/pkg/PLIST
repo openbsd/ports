@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/12/14 07:47:36 giovanni Exp $
 include/courier-unicode-categories-tab.h
 include/courier-unicode-script-tab.h
 include/courier-unicode.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/15 19:32:28 kn Exp $
-
 COMMENT =	set of Maildir utilities
 
 DISTNAME =	mblaze-1.2

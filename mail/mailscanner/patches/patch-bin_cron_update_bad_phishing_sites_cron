@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_cron_update_bad_phishing_sites_cron,v 1.1 2008/04/24 21:31:00 todd Exp $
 --- bin/cron/update_bad_phishing_sites.cron.orig	Fri Apr  4 01:47:05 2008
 +++ bin/cron/update_bad_phishing_sites.cron	Fri Apr  4 01:47:58 2008
 @@ -9,12 +9,12 @@ if [ -f /etc/sysconfig/MailScanner ] ; then

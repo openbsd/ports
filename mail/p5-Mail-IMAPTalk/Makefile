@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT = 	IMAP client interface with lots of features
 
 MODULES =	cpan

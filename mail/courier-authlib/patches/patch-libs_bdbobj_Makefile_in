@@ -1,4 +1,3 @@
-$OpenBSD: patch-libs_bdbobj_Makefile_in,v 1.2 2016/05/27 16:18:28 giovanni Exp $
 --- libs/bdbobj/Makefile.in.orig	Wed Nov  4 15:33:44 2015
 +++ libs/bdbobj/Makefile.in	Thu May 12 17:25:53 2016
 @@ -126,7 +126,7 @@ am__objects_2 = testbdb.$(OBJEXT)

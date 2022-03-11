@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/08/16 21:32:26 afresh1 Exp $
-
 COMMENT=	easy MIME message handling
 
 MODULES=	cpan

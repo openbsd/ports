@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2021/11/02 00:01:17 sthen Exp $
-
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
 MODPY_EGG_VERSION = 8.0.0

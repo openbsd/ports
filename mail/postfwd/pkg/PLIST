@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/15 06:44:23 giovanni Exp $
 @newgroup _postfwd:715
 @newuser _postfwd:715:715:daemon:Postfwd Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/postfwd2

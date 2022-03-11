@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:22 sthen Exp $
-
 COMMENT=	client to perform simple tasks with a POP3/IMAP server
 
 DISTNAME=	poppy-4.01

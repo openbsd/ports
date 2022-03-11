@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/17 07:36:21 kn Exp $
 @bin bin/maddr
 @bin bin/magrep
 bin/mbnc

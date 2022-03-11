@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/08/10 14:42:02 bket Exp $
 @conflict p5-Email-MIME-Creator-*
 @conflict p5-Email-MIME-Modifier-*
 @pkgpath mail/p5-Email-MIME-Creator

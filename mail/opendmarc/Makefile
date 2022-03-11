@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/04 15:29:54 sthen Exp $
-
 COMMENT=	library and milter for DMARC
 
 V=		1.4.1.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT =	perl implementation of email authentication standards
 
 V =		1.1.0

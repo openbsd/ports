@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Gui_Window_cpp,v 1.1 2021/01/19 06:41:35 rsadowski Exp $
-
 Index: src/Gui/Window.cpp
 --- src/Gui/Window.cpp.orig
 +++ src/Gui/Window.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	mailing list manager
 
 V=		1.94.5

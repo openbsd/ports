@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/05/11 12:57:48 jasper Exp $
 @newgroup _milter-regex:527
 @newuser _milter-regex:527:_milter-regex:daemon:milter-regex Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/milter-regex/*

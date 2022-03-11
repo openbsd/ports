@@ -1,4 +1,3 @@
-$OpenBSD: patch-mailgraph_pl,v 1.1 2012/12/20 14:24:58 sthen Exp $
 --- mailgraph.pl.orig	Wed Aug 29 12:06:01 2007
 +++ mailgraph.pl	Thu Dec 20 14:41:13 2012
 @@ -596,7 +596,7 @@ sub process_line($)

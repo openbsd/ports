@@ -1,5 +1,3 @@
-$OpenBSD: patch-makedefs,v 1.9 2021/08/01 07:16:37 sthen Exp $
-
 Index: makedefs
 --- makedefs.orig
 +++ makedefs

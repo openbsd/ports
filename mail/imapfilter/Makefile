@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/06 01:01:58 tb Exp $
-
 COMMENT=		remote IMAP filtering utility
 
 V=			2.6.11

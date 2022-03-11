@@ -1,5 +1,3 @@
-$OpenBSD: patch-imap_src_osdep_unix_env_unix_c,v 1.5 2021/09/22 20:57:10 sthen Exp $
-
 Index: imap/src/osdep/unix/env_unix.c
 --- imap/src/osdep/unix/env_unix.c.orig
 +++ imap/src/osdep/unix/env_unix.c

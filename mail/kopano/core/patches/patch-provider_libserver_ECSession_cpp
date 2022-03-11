@@ -1,5 +1,3 @@
-$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.15 2021/11/12 12:18:20 robert Exp $
-
 Index: provider/libserver/ECSession.cpp
 --- provider/libserver/ECSession.cpp.orig
 +++ provider/libserver/ECSession.cpp

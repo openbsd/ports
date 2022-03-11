@@ -1,4 +1,3 @@
-$OpenBSD: patch-Mailman_Post_py,v 1.2 2020/04/27 12:27:49 okan Exp $
 Index: Mailman/Post.py
 --- Mailman/Post.py.orig
 +++ Mailman/Post.py

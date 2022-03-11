@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT =	send mail with attachments through SMTP
 
 MODULES =	cpan

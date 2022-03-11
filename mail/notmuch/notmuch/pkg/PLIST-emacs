@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-emacs,v 1.4 2022/02/24 17:53:12 bket Exp $
 bin/notmuch-emacs-mua
 @info info/notmuch-emacs-mua.info
 @info info/notmuch-emacs.info

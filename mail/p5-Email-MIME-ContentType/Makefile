@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/15 20:34:35 afresh1 Exp $
-
 COMMENT=	parse MIME Content-Type or Content-Disposition headers
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2014/08/15 00:50:22 jturner Exp $
 --- Makefile.in.orig	Sun Oct 20 16:27:56 2002
 +++ Makefile.in	Thu Aug 14 13:12:01 2014
 @@ -5,9 +5,8 @@ MANDIR=/usr/share/man

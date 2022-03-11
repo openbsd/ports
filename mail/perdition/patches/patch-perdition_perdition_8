@@ -1,5 +1,3 @@
-$OpenBSD: patch-perdition_perdition_8,v 1.1 2013/03/15 15:17:36 sthen Exp $
-
 Sync with new options.h default.
 
 --- perdition/perdition.8.orig	Thu Mar 14 14:02:11 2013

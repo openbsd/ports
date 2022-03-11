@@ -1,5 +1,3 @@
-$OpenBSD: patch-altermime_c,v 1.1 2021/02/10 11:43:58 sthen Exp $
-
 Index: altermime.c
 --- altermime.c.orig
 +++ altermime.c

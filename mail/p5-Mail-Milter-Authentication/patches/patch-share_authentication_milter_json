@@ -1,4 +1,3 @@
-$OpenBSD: patch-share_authentication_milter_json,v 1.1.1.1 2016/05/27 16:28:44 giovanni Exp $
 --- share/authentication_milter.json.orig	Fri Jan 16 06:33:40 2015
 +++ share/authentication_milter.json	Wed Oct 14 19:37:15 2015
 @@ -6,8 +6,8 @@

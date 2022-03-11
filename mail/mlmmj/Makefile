@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/14 13:23:56 kn Exp $
-
 COMMENT=	mailing list manager
 
 DISTNAME=	mlmmj-1.3.0

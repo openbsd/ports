@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_update_bad_phishing_sites,v 1.4 2015/04/09 19:55:09 sthen Exp $
 --- bin/update_bad_phishing_sites.orig	Thu Mar 12 19:19:12 2015
 +++ bin/update_bad_phishing_sites	Sun Mar 15 14:16:04 2015
 @@ -1,4 +1,4 @@

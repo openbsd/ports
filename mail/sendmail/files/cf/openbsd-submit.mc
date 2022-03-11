@@ -15,7 +15,6 @@ divert(-1)
 #
 
 divert(0)dnl
-VERSIONID(`$OpenBSD: openbsd-submit.mc,v 1.2 2016/03/07 14:19:50 matthieu Exp $')
 define(`confCF_VERSION', `Submit')dnl
 OSTYPE(openbsd)dnl
 define(`_USE_DECNET_SYNTAX_', `1')dnl support DECnet

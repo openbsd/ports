@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1 2015/04/19 13:02:09 rpe Exp $
 --- setup.py.orig	Sun Apr  5 15:05:28 2015
 +++ setup.py	Sun Apr  5 15:05:35 2015
 @@ -29,5 +29,5 @@ setup(name="archivemail",

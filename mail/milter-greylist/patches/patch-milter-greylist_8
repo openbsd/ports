@@ -1,4 +1,3 @@
-$OpenBSD: patch-milter-greylist_8,v 1.2 2011/05/13 12:52:22 okan Exp $
 --- milter-greylist.8.orig	Thu Apr  2 06:09:28 2009
 +++ milter-greylist.8	Fri May  6 16:52:40 2011
 @@ -100,7 +100,7 @@ will start with an empty grey list. 

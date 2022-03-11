@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.166 2021/12/06 20:24:57 tb Exp $
-
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.4.22

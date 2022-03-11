@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.41 2021/11/12 12:18:19 robert Exp $
-
 V?=		11.0.2
 DISTNAME?=	kopanocore-${V}
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_onebounce_py,v 1.3 2020/04/27 12:27:49 okan Exp $
 Index: tests/onebounce.py
 --- tests/onebounce.py.orig
 +++ tests/onebounce.py

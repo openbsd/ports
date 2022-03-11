@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:29 sthen Exp $
-
 COMMENT=	sendmail milter plugin for recipient checking
 
 DISTNAME=	milter-checkrcpt-0.3

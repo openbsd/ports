@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_T400-hooks_sh,v 1.1 2021/10/14 04:18:26 bket Exp $
-
 Index: test/T400-hooks.sh
 --- test/T400-hooks.sh.orig
 +++ test/T400-hooks.sh

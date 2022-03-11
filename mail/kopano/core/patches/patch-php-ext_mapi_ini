@@ -1,5 +1,3 @@
-$OpenBSD: patch-php-ext_mapi_ini,v 1.2 2020/07/29 13:04:05 robert Exp $
-
 Index: php-ext/mapi.ini
 --- php-ext/mapi.ini.orig
 +++ php-ext/mapi.ini

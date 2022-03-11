@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/03/31 20:28:43 sthen Exp $
-
 COMMENT=	mail purpose library
 
 GH_ACCOUNT=	dinhviethoa

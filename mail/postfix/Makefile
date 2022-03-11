@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/05/04 14:42:48 sthen Exp $
-
 SUBDIR =
 SUBDIR += stable
 SUBDIR += stable,ldap

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/23 16:56:15 ajacoutot Exp $
 @bin bin/ldapvacation
 @man man/man1/ldapvacation.1
 @man man/man5/ldapvacation.conf.5

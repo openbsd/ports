@@ -1,4 +1,3 @@
-$OpenBSD: patch-amavis-services,v 1.1 2014/11/19 19:00:50 giovanni Exp $
 --- amavis-services.orig	Fri Jul 11 08:42:24 2014
 +++ amavis-services	Fri Jul 11 08:42:55 2014
 @@ -71,7 +71,7 @@ $log_level = 0;  # 0..5

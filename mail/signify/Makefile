@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:38 sthen Exp $
-
 COMMENT=	dynamic .signature generator
 
 DISTNAME=	signify-1.11

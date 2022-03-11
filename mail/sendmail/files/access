@@ -1,5 +1,3 @@
-# $OpenBSD: access,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
-#
 # sendmail(8) access database.  Rebuild by running as root:
 #   makemap hash ${SYSCONFDIR}/mail/access < ${SYSCONFDIR}/mail/access
 #

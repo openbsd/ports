@@ -1,5 +1,3 @@
-$OpenBSD: patch-swig_python_kopano_kopano_folder_py,v 1.1 2021/04/02 06:43:01 robert Exp $
-
 SWIG 3 version compat hack
 https://jira.kopano.io/browse/KC-1680
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-FuzzyOcr_cf,v 1.3 2012/07/09 21:04:03 giovanni Exp $
 --- FuzzyOcr.cf.orig	Thu May 28 00:16:00 2009
 +++ FuzzyOcr.cf	Thu Jul  5 12:30:02 2012
 @@ -1,7 +1,7 @@

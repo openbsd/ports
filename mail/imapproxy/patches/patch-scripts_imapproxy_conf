@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_imapproxy_conf,v 1.5 2021/03/17 15:05:50 sthen Exp $
-
 Index: scripts/imapproxy.conf
 --- scripts/imapproxy.conf.orig
 +++ scripts/imapproxy.conf

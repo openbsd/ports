@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: kopano_spamd.rc,v 1.2 2019/08/03 10:24:09 robert Exp $
 
 daemon="${TRUEPREFIX}/sbin/kopano-spamd"
 

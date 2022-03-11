@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:47:39 sthen Exp $
-
 COMMENT=	decode MS-TNEF MIME attachments
 
 DISTNAME=	tnef-1.4.12

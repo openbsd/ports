@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: postfwd3.rc,v 1.1 2019/05/15 06:44:23 giovanni Exp $
 
 daemon="${TRUEPREFIX}/sbin/postfwd3"
 daemon_flags="-u _postfwd -g _postfwd -f ${SYSCONFDIR}/postfix/postfwd3.cf"

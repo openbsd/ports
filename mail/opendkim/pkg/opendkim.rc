@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: opendkim.rc,v 1.1 2018/11/29 00:42:12 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/opendkim"
 daemon_flags="-x ${SYSCONFDIR}/opendkim.conf -u _opendkim"

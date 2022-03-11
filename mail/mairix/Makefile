@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:29 sthen Exp $
-
 COMMENT=		program for indexing & searching email
 
 DISTNAME=		mairix-0.23

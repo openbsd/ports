@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_Sophos_install,v 1.2 2011/08/21 11:03:26 sthen Exp $
 --- bin/Sophos.install.orig	Sat Aug 20 08:32:02 2011
 +++ bin/Sophos.install	Sat Aug 20 21:38:21 2011
 @@ -208,9 +208,9 @@ if [ -f /etc/sav.conf ]; then

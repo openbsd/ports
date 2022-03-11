@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT= 	unified interface to mail representations
 
 MODULES=	cpan

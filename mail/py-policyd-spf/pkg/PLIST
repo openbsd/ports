@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/04 09:37:43 giovanni Exp $
 bin/policyd-spf
 lib/python${MODPY_VERSION}/site-packages/policydspfsupp.py
 lib/python${MODPY_VERSION}/site-packages/policydspfsupp.pyc

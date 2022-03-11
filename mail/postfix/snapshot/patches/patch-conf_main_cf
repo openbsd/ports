@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_main_cf,v 1.6 2019/04/15 21:10:01 sthen Exp $
-
 Index: conf/main.cf
 --- conf/main.cf.orig
 +++ conf/main.cf

@@ -1,4 +1,3 @@
-$OpenBSD: patch-popclient_man,v 1.1 2015/04/05 09:32:50 schwarze Exp $
 Avoid bogus vertical spacing escape which loses part of the text.
 While here, delete paragraph macros which spoil indentation with groff.
 --- popclient.man.orig	Thu Sep  7 23:53:49 1995

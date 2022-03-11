@@ -1,5 +1,3 @@
-# $OpenBSD: mailertable,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
-#
 # The sendmail(8) mailer table is used to override routing for particular
 # non-local hostnames and domains (i.e., names other the local hostname
 # or names listed in local-host-names).

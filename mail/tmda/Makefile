@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT=		reduce the amount of SPAM/UCE (junk-mail)
 
 DISTNAME=		tmda-1.0.3

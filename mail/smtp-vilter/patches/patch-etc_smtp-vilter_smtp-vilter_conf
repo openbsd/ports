@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_smtp-vilter_smtp-vilter_conf,v 1.4 2014/01/23 15:45:18 jasper Exp $
 --- etc/smtp-vilter/smtp-vilter.conf.orig	Sun Jan 21 14:09:38 2007
 +++ etc/smtp-vilter/smtp-vilter.conf	Fri Oct 29 13:57:44 2010
 @@ -29,7 +29,7 @@ tmpfiles=setgrp

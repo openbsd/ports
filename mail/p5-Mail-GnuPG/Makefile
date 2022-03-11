@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT=	handle GnuPG-encrypted/signed messages
 
 DISTNAME =	Mail-GnuPG-0.23

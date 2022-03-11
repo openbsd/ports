@@ -1,5 +1,3 @@
-$OpenBSD: patch-mapi4linux_src_libmapi_sym_in,v 1.2 2019/11/16 20:01:20 robert Exp $
-
 Index: mapi4linux/src/libmapi.sym.in
 --- mapi4linux/src/libmapi.sym.in.orig
 +++ mapi4linux/src/libmapi.sym.in

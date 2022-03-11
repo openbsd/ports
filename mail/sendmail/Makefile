@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/01/27 07:42:36 tb Exp $
-
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bindings_maildir_cc,v 1.2 2013/09/04 01:18:31 jturner Exp $
 --- src/bindings_maildir.cc.orig	Tue Sep  3 14:41:56 2013
 +++ src/bindings_maildir.cc	Tue Sep  3 21:08:48 2013
 @@ -19,7 +19,7 @@

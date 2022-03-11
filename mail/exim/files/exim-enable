@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $OpenBSD: exim-enable,v 1.2 2014/03/13 14:50:41 sthen Exp $
 
 if [ -f /etc/mailer.conf.exim ]; then
     if [ -f /etc/mailer.conf ]; then

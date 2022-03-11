@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: dkimproxy_in.rc,v 1.3 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/dkimproxy.in --daemonize"
 daemon_flags="--conf_file=${SYSCONFDIR}/dkimproxy_in.conf --user=_dkimproxy --group=_dkimproxy"

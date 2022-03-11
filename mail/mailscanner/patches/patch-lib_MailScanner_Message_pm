@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_MailScanner_Message_pm,v 1.11 2011/07/22 07:33:55 sthen Exp $
 --- lib/MailScanner/Message.pm.orig	Sat Jun 25 16:11:08 2011
 +++ lib/MailScanner/Message.pm	Thu Jul 21 13:23:49 2011
 @@ -733,12 +733,19 @@ sub IsSpam {

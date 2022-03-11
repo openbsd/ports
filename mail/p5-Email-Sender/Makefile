@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/12/27 00:52:56 afresh1 Exp $
-
 COMMENT =	library for sending email
 
 MODULES =	cpan

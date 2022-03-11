@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_Makefile_local,v 1.1 2020/11/01 09:48:48 bket Exp $
-
 Fix relative path linking issue
 
 Index: test/Makefile.local

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Mailman_htmlformat_py,v 1.11 2020/04/27 12:27:49 okan Exp $
 Index: Mailman/htmlformat.py
 --- Mailman/htmlformat.py.orig
 +++ Mailman/htmlformat.py

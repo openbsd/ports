@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/03 10:33:25 bket Exp $
-
 COMMENT =	Python bindings for notmuch
 
 PKGNAME =	py-notmuch-${V}

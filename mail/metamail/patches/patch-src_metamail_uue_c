@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_metamail_uue_c,v 1.2 2017/05/25 17:47:08 espie Exp $
 Index: src/metamail/uue.c
 --- src/metamail/uue.c.orig
 +++ src/metamail/uue.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_set_sendmail_set_sendmail_sh,v 1.3 2020/02/06 11:26:10 sthen Exp $
-
 Index: scripts/set_sendmail/set_sendmail.sh
 --- scripts/set_sendmail/set_sendmail.sh.orig
 +++ scripts/set_sendmail/set_sendmail.sh

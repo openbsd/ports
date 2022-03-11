@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/03/12 16:08:02 sthen Exp $
 @newgroup _spampd:746
 @newuser _spampd:746:_spampd:daemon:spampd user:/var/spampd:/sbin/nologin
 @comment homedir needed to store the .spamassassin bayes DB

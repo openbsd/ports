@@ -1,4 +1,3 @@
-$OpenBSD: patch-backend_vilter-attachment_vilter-attachment_c,v 1.3 2014/01/23 15:45:18 jasper Exp $
 --- backend/vilter-attachment/vilter-attachment.c.orig	Wed Jul  2 15:31:58 2008
 +++ backend/vilter-attachment/vilter-attachment.c	Wed Jul  2 15:32:19 2008
 @@ -510,7 +510,7 @@ vilter_scan(SMFICTX *ctx, char *fn, size_t fnlen, char

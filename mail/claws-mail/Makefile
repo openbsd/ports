@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.133 2021/08/22 19:48:50 ajacoutot Exp $
-
 COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
 COMMENT-spamassassin=	spamassassin plugin

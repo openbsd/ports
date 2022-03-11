@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:27 sthen Exp $
-
 COMMENT =	validate email addresses according to RFC822
 
 MODULES =	cpan

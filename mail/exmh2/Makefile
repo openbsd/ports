@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2020/03/20 16:44:25 naddy Exp $
-
 COMMENT=		Tcl/Tk interface to the MH mail system
 
 DISTNAME=		exmh-2.7.2

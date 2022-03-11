@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:39 sthen Exp $
-
 COMMENT=		verify email addresses and mailing lists
 
 DISTNAME=		vrfy_990522

@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_MailScanner_conf,v 1.15 2015/04/09 19:55:09 sthen Exp $
 --- etc/MailScanner.conf.orig	Wed Feb 25 06:38:27 2015
 +++ etc/MailScanner.conf	Fri Mar 13 03:55:37 2015
 @@ -43,7 +43,7 @@

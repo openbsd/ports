@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:24 sthen Exp $
-
 COMMENT =	Apache SpamAssassin integration to the OpenSMTPD daemon
 
 V =		0.7

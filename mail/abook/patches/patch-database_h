@@ -1,4 +1,3 @@
-$OpenBSD: patch-database_h,v 1.1 2017/04/19 15:03:35 jca Exp $
 --- database.h.orig	Wed Apr 19 16:44:41 2017
 +++ database.h	Wed Apr 19 16:44:48 2017
 @@ -61,7 +61,7 @@ struct db_enumerator {

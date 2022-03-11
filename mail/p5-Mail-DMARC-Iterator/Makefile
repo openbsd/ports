@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/10 19:26:21 bluhm Exp $
-
 COMMENT =	iterative DMARC validation for mails
 
 DISTNAME =	Mail-DMARC-Iterator-0.014

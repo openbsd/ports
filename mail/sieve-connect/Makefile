@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:38 sthen Exp $
-
 COMMENT =	perl sieveshell-compatible ManageSieve client
 
 GH_VER =	v0.87

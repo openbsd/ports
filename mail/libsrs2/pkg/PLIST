@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/08 20:12:30 jung Exp $
 @bin bin/srs
 include/srs2.h
 lib/libsrs2.a

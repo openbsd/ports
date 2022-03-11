@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:27 sthen Exp $
-
 COMMENT=		interface to Google webmail service
 
 DISTNAME=		Mail-Webmail-Gmail-1.09

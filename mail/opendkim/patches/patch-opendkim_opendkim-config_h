@@ -1,5 +1,3 @@
-$OpenBSD: patch-opendkim_opendkim-config_h,v 1.1 2020/01/19 05:58:50 ajacoutot Exp $
-
 https://sourceforge.net/p/opendkim/bugs/257/
 
 Index: opendkim/opendkim-config.h

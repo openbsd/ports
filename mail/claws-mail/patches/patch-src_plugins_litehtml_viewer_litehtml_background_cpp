@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_litehtml_viewer_litehtml_background_cpp,v 1.1 2019/12/15 18:36:18 danj Exp $
-
 Index: src/plugins/litehtml_viewer/litehtml/background.cpp
 --- src/plugins/litehtml_viewer/litehtml/background.cpp.orig
 +++ src/plugins/litehtml_viewer/litehtml/background.cpp

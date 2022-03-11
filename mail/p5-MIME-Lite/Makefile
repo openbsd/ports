@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/09/08 07:13:51 sthen Exp $
-
 COMMENT =		low-calorie MIME generator
 
 DISTNAME =		MIME-Lite-3.033

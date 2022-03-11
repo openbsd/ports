@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2021/11/12 12:18:19 robert Exp $
-
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
 

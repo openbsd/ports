@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-mapi,v 1.7 2019/12/18 20:25:16 robert Exp $
 @conflict zarafa-mapi-*
 @pkgpath mail/zarafa/zarafa,-mapi
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.a

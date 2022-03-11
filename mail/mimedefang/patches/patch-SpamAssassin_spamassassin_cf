@@ -1,4 +1,3 @@
-$OpenBSD: patch-SpamAssassin_spamassassin_cf,v 1.3 2013/03/28 14:27:19 ajacoutot Exp $
 --- SpamAssassin/spamassassin.cf.orig	Thu Mar 28 12:17:56 2013
 +++ SpamAssassin/spamassassin.cf	Thu Mar 28 12:21:08 2013
 @@ -70,6 +70,16 @@ rewrite_subject 0

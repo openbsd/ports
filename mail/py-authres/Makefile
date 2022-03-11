@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT =	module for RFC 5451 Authentication-Results Headers
 
 MODPY_EGG_VERSION = 0.800

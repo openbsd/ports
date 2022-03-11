@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:28 sthen Exp $
-
 COMMENT=		generate a cross-referenced HTML mail archive
 
 VERSION=		2.3.0

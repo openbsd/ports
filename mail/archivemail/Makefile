@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:28 sthen Exp $
-
 COMMENT=	archive and compress your old email
 
 VERSION=	0.9.0

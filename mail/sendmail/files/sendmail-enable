@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $OpenBSD: sendmail-enable,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
 
 if [ -f /etc/mailer.conf.sendmail ]; then
     if [ -f /etc/mailer.conf ]; then

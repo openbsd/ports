@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:36 sthen Exp $
-
 COMMENT=	Postfix log entry summarizer
 
 DISTNAME=	pflogsumm-1.1.5

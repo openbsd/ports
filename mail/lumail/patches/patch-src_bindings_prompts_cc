@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bindings_prompts_cc,v 1.1 2013/08/25 02:06:26 jturner Exp $
 --- src/bindings_prompts.cc.orig	Sat Aug 24 21:34:38 2013
 +++ src/bindings_prompts.cc	Sat Aug 24 21:35:16 2013
 @@ -19,7 +19,7 @@

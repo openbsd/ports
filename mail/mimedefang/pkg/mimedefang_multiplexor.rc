@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mimedefang_multiplexor.rc,v 1.12 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/mimedefang-multiplexor"
 daemon_flags="-G -U _mdefang -E -l -m 2 -q 10 -x 10 -b 600"

@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_MailScanner,v 1.11 2015/04/09 19:55:09 sthen Exp $
 --- bin/MailScanner.orig	Wed Feb 25 06:38:27 2015
 +++ bin/MailScanner	Fri Mar 13 03:49:09 2015
 @@ -1,4 +1,4 @@

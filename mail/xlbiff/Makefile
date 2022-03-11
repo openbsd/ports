@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:39 sthen Exp $
-
 COMMENT=	display from/subject from incoming mails using X11
 
 DISTNAME=	xlbiff-3.0

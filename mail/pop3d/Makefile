@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/10/18 22:12:23 tb Exp $
-
 COMMENT =		POP3 daemon with POP3S and STARTTLS extensions
 
 VERSION =		1.0.2

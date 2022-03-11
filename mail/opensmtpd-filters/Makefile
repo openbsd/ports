@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/10 11:00:15 martijn Exp $
-
 SUBDIR =
 SUBDIR += admdscrub
 SUBDIR += dkimsign

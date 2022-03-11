@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: cyrus_imapd.rc,v 1.13 2020/05/14 12:26:39 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/cyrus/libexec/master -d"
 

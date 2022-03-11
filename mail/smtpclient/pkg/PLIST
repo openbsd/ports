@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 09:09:45 espie Exp $
 bin/smtpclient
 @man man/man1/smtpclient.1

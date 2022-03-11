@@ -1,4 +1,3 @@
-$OpenBSD: patch-smtpclient_main_c,v 1.2 2003/04/01 18:52:05 sturm Exp $
 --- smtpclient_main.c.orig	Wed Aug  1 15:25:22 2001
 +++ smtpclient_main.c	Wed Aug  1 15:33:07 2001
 @@ -86,7 +86,7 @@ void log(char *str, ...)

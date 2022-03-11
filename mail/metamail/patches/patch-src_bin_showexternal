@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bin_showexternal,v 1.1 2012/03/17 10:57:23 sthen Exp $
 --- src/bin/showexternal.orig	Tue Feb  8 16:39:05 1994
 +++ src/bin/showexternal	Sat Mar 17 10:51:52 2012
 @@ -15,9 +15,45 @@

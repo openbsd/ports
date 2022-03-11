@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_ECChannel_cpp,v 1.9 2021/02/09 10:32:33 robert Exp $
-
 Index: common/ECChannel.cpp
 --- common/ECChannel.cpp.orig
 +++ common/ECChannel.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2019/02/12 11:48:33 sthen Exp $
 @pkgpath mail/exim
 @pkgpath mail/exim,no_exiscan
 @pkgpath mail/exim,no_exiscan,no_x11

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-libmilter,v 1.3 2020/05/02 08:04:48 ajacoutot Exp $
 @conflict sendmail-<8.14.9p1
 include/libmilter/
 include/libmilter/mfapi.h

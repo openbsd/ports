@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/20 19:40:23 naddy Exp $
-
 COMMENT=	roundcube plugin: add HTML5 notifications for new mail
 
 GH_ACCOUNT=	stremlau

@@ -1,5 +1,3 @@
-#   $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:35 sthen Exp $
-
 COMMENT=	implements a complete, RFC compliant SMTP server
 
 DISTNAME=	SMTP-Server-1.1

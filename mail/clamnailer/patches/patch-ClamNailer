@@ -1,4 +1,3 @@
-$OpenBSD: patch-ClamNailer,v 1.3 2012/03/06 20:07:42 sthen Exp $
 --- clamnailer.orig	Tue Mar  6 20:02:07 2012
 +++ clamnailer	Tue Mar  6 20:04:20 2012
 @@ -20,11 +20,11 @@ use strict;

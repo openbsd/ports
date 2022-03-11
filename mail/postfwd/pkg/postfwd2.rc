@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: postfwd2.rc,v 1.6 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/postfwd2"
 daemon_flags="-u _postfwd -g _postfwd -f ${SYSCONFDIR}/postfix/postfwd2.cf"

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_msmtpq_msmtpq,v 1.3 2020/02/06 11:26:10 sthen Exp $
-
 Index: scripts/msmtpq/msmtpq
 --- scripts/msmtpq/msmtpq.orig
 +++ scripts/msmtpq/msmtpq

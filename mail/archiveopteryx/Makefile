@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:24 sthen Exp $
-
 COMMENT =		mail server storing messages in a database
 
 DISTNAME =		archiveopteryx-3.2.0

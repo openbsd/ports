@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/20 09:00:18 sthen Exp $
-
 COMMENT=	roundcube plugin: LDAP Alias Sync
 
 GH_ACCOUNT=	brenard

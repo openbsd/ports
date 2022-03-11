@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_MailScanner_GenericSpam_pm,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
 --- lib/MailScanner/GenericSpam.pm.orig	Thu Dec  7 13:12:22 2006
 +++ lib/MailScanner/GenericSpam.pm	Thu Dec  7 13:33:07 2006
 @@ -101,19 +101,19 @@ sub Checks {

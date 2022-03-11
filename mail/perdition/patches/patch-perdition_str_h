@@ -1,5 +1,3 @@
-$OpenBSD: patch-perdition_str_h,v 1.1 2013/03/15 15:17:36 sthen Exp $
-
 avoid conflict with string.h
 
 --- perdition/str.h.orig	Sat Nov 13 10:42:15 2010

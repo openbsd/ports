@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/17 22:37:08 cwen Exp $
-
 COMMENT = 	library for creating easy email filters
 
 DISTNAME =	Email-Filter-1.034

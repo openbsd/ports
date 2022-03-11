@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/22 15:42:47 jeremy Exp $
-
 COMMENT=		minimal mime type implementation
 
 DISTNAME=		mini_mime-1.0.2

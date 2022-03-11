@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: spampd.rc,v 1.4 2021/08/07 10:15:24 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/spampd"
 daemon_flags="--a --p=/var/spampd/spampd.pid"

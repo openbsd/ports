@@ -1,7 +1,5 @@
 #I accept the risk
 
-# $OpenBSD: c-client.cf,v 1.1 2013/10/17 09:08:04 ajacoutot Exp $
-#
 # uw-imap RC: uncomment first line to enable
 
 # uncomment the following line to enable plaintext authentication over

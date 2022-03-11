@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-redis,v 1.2 2016/01/07 22:50:19 jung Exp $
 @bin libexec/smtpd/table-redis
 @man man/man5/table-redis.5

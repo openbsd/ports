@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT=		modules for parsing (and creating) MIME entities
 
 DISTNAME=		MIME-tools-5.509

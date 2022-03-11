@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:25 sthen Exp $
-
 COMMENT=	unified interface to MIME encoding and decoding
 
 MODULES=	cpan

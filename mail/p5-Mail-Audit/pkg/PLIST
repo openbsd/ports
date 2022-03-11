@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/11/16 10:15:49 benoit Exp $
 bin/popread
 bin/proc2ma
 ${P5SITE}/Mail/Audit/

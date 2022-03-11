@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_setupenv_cpp,v 1.1 2021/02/09 10:32:33 robert Exp $
-
 Index: tests/setupenv.cpp
 --- tests/setupenv.cpp.orig
 +++ tests/setupenv.cpp

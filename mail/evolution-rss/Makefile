@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.96 2021/10/26 17:44:10 ajacoutot Exp $
-
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss

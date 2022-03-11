@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: pop3d.rc,v 1.2 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/pop3d"
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/07/23 08:10:25 simon Exp $
 ${P5SITE}/Email/Abstract/
 ${P5SITE}/Email/Abstract.pm
 ${P5SITE}/Email/Abstract/EmailMIME.pm

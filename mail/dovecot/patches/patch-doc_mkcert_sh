@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_mkcert_sh,v 1.9 2019/05/02 22:06:13 sthen Exp $
-
 Index: doc/mkcert.sh
 --- doc/mkcert.sh.orig
 +++ doc/mkcert.sh

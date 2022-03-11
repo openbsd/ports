@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT =	transform a HTML page in a MIME-Lite mail
 
 DISTNAME =	MIME-Lite-HTML-1.24

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:46 sthen Exp $
-
 COMMENT =	MIME library for Ruby
 
 DISTNAME =	mime-0.1

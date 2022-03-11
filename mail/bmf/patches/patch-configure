@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2017/02/27 18:25:50 jca Exp $
 --- configure.orig	Mon Feb 27 19:23:18 2017
 +++ configure	Mon Feb 27 19:23:50 2017
 @@ -149,13 +149,13 @@ case "$UNAME_S" in

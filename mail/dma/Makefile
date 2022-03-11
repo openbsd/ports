@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/08/31 00:58:02 bcallah Exp $
-
 COMMENT =	DragonFly Mail Agent
 DISTNAME =	dma-0.12
 CATEGORIES =	mail

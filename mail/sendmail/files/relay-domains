@@ -1,5 +1,3 @@
-# $OpenBSD: relay-domains,v 1.1.1.1 2014/09/16 17:09:31 jca Exp $
-#
 # List of other domains to relay mail for here (one per line).
 # By default, sendmail(8) will not relay for foreign domains.  If the mail
 # is not destined for (or sent by) a user in the local domain the message

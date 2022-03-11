@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_etc_script_sympa_in,v 1.4 2016/11/04 10:22:26 landry Exp $
 --- src/etc/script/sympa.in.orig	Wed Jun 10 18:24:26 2015
 +++ src/etc/script/sympa.in	Thu Nov  3 17:10:49 2016
 @@ -90,7 +51,7 @@ sympa_status() {

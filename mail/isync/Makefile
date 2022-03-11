@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/03/10 12:03:31 kn Exp $
-
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.4.4

@@ -1,5 +1,3 @@
-# $OpenBSD: patch-postgrey,v 1.7 2019/08/31 15:55:55 sthen Exp $
-
 Index: postgrey
 --- postgrey.orig
 +++ postgrey

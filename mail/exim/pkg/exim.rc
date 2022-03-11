@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: exim.rc,v 1.6 2018/02/05 22:34:17 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/exim -bd"
 daemon_flags="-q30m"

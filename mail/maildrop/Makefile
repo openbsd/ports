@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2022/03/06 10:54:51 giovanni Exp $
-
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_master_cf,v 1.13 2020/02/14 21:02:01 sthen Exp $
-
 Index: conf/master.cf
 --- conf/master.cf.orig
 +++ conf/master.cf

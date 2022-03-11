@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mimedefang.rc,v 1.4 2018/01/11 19:27:03 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/mimedefang"
 daemon_flags="-Gqr -U _mdefang -p /var/spool/MIMEDefang/mimedefang.sock -m /var/spool/MIMEDefang/mimedefang-multiplexor.sock"

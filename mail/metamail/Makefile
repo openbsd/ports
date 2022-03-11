@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:29 sthen Exp $
-
 COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7

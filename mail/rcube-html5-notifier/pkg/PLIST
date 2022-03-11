@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/03 22:14:30 sthen Exp $
 roundcubemail/plugins/html5_notifier/
 roundcubemail/plugins/html5_notifier/LICENSE
 roundcubemail/plugins/html5_notifier/README.md

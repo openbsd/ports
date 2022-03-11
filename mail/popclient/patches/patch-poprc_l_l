@@ -1,4 +1,3 @@
-$OpenBSD: patch-poprc_l_l,v 1.1 2010/07/09 07:17:37 sthen Exp $
 --- poprc_l.l.orig	Thu Jul  8 22:03:47 2010
 +++ poprc_l.l	Thu Jul  8 22:05:25 2010
 @@ -53,6 +53,7 @@

@@ -1,4 +1,3 @@
-$OpenBSD: patch-mew-vars_el,v 1.1 2015/10/15 14:06:16 yasuoka Exp $
 --- mew-vars.el.orig	Tue Aug  4 14:05:37 2015
 +++ mew-vars.el	Tue Sep 29 11:23:46 2015
 @@ -3103,8 +3103,8 @@ your public key as well as receivers' one."

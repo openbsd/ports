@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/01/19 05:58:51 ajacoutot Exp $
 @newgroup _opendkim:823
 @newuser _opendkim:823:_opendkim:daemon:opendkim Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/opendkim

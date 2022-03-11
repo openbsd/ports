@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: postgrey.rc,v 1.6 2020/11/19 16:15:05 sthen Exp $
 
 daemon="${TRUEPREFIX}/libexec/postgrey -d"
 daemon_flags="--inet=10023"

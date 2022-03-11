@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: sendmail.rc,v 1.4 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/sendmail/sendmail"
 daemon_flags="-L sm-mta -C${SYSCONFDIR}/mail/localhost.cf -bd -q30m"

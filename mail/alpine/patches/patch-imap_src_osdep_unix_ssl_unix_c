@@ -1,5 +1,3 @@
-$OpenBSD: patch-imap_src_osdep_unix_ssl_unix_c,v 1.5 2021/10/31 17:03:43 tb Exp $
-
 * some popular mail services enforce SNI for TLSv1.3 clients, so send it
 * retry SSL_write on blocking socket if we're told to do so.
 

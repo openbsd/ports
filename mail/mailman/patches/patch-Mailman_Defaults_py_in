@@ -1,4 +1,3 @@
-$OpenBSD: patch-Mailman_Defaults_py_in,v 1.17 2020/04/27 12:27:49 okan Exp $
 Index: Mailman/Defaults.py.in
 --- Mailman/Defaults.py.in.orig
 +++ Mailman/Defaults.py.in

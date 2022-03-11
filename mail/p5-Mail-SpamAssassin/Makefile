@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.117 2021/04/30 14:43:48 giovanni Exp $
-
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.4.6

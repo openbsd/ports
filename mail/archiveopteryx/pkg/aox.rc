@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: aox.rc,v 1.5 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/aox"
 

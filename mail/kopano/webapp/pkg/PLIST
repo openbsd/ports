@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/11/04 17:27:19 robert Exp $
 @conflict zarafa-webapp-*
 @pkgpath mail/zarafa/webapp
 kopano-webapp/

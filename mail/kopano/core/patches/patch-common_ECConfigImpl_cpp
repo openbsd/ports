@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_ECConfigImpl_cpp,v 1.1 2021/02/09 10:32:33 robert Exp $
-
 Index: common/ECConfigImpl.cpp
 --- common/ECConfigImpl.cpp.orig
 +++ common/ECConfigImpl.cpp

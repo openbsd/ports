@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/06 10:38:41 ajacoutot Exp $
-
 COMMENT=	milter for rspamd (also supports clamav, rate-limiting, etc)
 
 GH_ACCOUNT=	vstakhov

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2021/10/31 17:03:43 tb Exp $
-
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
 COMMENT-imap=		UW IMAP4rev1/POP2/POP3 mail servers

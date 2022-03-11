@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_T360-symbol-hiding_sh,v 1.2 2021/03/14 19:50:49 bket Exp $
-
 Index: test/T360-symbol-hiding.sh
 --- test/T360-symbol-hiding.sh.orig
 +++ test/T360-symbol-hiding.sh

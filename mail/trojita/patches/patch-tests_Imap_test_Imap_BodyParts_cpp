@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_Imap_test_Imap_BodyParts_cpp,v 1.1 2020/02/28 19:30:31 rsadowski Exp $
-
 https://cgit.kde.org/trojita.git/commit/?id=39772585033c1c0aff96f297e93de7be53f9b114
 
 commit 39772585033c1c0aff96f297e93de7be53f9b114

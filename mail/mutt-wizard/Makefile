@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/23 14:29:45 sthen Exp $
-
 COMMENT =	neomutt and isync configuration with good defaults
 CATEGORIES =	mail
 DISTNAME =	mutt-wizard-3.2.1.20220121

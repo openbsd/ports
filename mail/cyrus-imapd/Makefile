@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.136 2022/02/02 10:46:37 ajacoutot Exp $
-
 PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server

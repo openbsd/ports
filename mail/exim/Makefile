@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.138 2021/10/31 17:05:37 tb Exp $
-
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 

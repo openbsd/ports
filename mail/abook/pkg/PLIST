@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/11/17 23:21:05 sthen Exp $
 @bin bin/abook
 @man man/man1/abook.1
 @man man/man5/abookrc.5

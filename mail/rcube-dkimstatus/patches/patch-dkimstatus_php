@@ -1,4 +1,3 @@
-$OpenBSD: patch-dkimstatus_php,v 1.1.1.1 2015/05/04 10:49:16 henning Exp $
 --- dkimstatus.php.orig	Thu Feb 13 16:32:55 2014
 +++ dkimstatus.php	Sat May  2 12:53:09 2015
 @@ -102,9 +102,11 @@ class dkimstatus extends rcube_plugin

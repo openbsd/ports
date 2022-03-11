@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_dmarc_c,v 1.2 2021/10/22 17:24:53 sthen Exp $
-
 patch around opendmarc API change introduced in
 https://github.com/trusteddomainproject/OpenDMARC/commit/dbd87868f2ca9c2ef11529cd757d1cc5ab228833
 

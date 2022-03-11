@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/03/10 19:31:36 bluhm Exp $
-
 COMMENT =	iterative SPF lookup
 
 DISTNAME =	Mail-SPF-Iterator-1.120

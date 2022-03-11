@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:26 sthen Exp $
-
 COMMENT =		SMTP proxy to verify or add DKIM signatures
 
 DISTNAME =		dkimproxy-1.4.1

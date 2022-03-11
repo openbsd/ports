@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:36 sthen Exp $
-
 COMMENT =	basic Postfix policy engine for Sender Policy Framework
 
 V =		2.011

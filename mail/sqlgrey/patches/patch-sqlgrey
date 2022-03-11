@@ -1,4 +1,3 @@
-$OpenBSD: patch-sqlgrey,v 1.3 2020/04/08 18:25:48 espie Exp $
 Index: sqlgrey
 --- sqlgrey.orig
 +++ sqlgrey

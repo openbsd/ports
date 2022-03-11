@@ -1,4 +1,3 @@
-$OpenBSD: patch-aox_servers_cpp,v 1.2 2016/11/01 09:10:41 landry Exp $
 --- aox/servers.cpp.orig	Mon Mar 10 14:44:59 2014
 +++ aox/servers.cpp	Thu May  1 10:57:40 2014
 @@ -27,6 +27,7 @@

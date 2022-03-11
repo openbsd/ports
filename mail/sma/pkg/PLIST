@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/24 18:06:32 tb Exp $
 @bin bin/sma
 @man man/man8/sma.8
 share/doc/sma/

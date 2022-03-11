@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:27 sthen Exp $
-
 COMMENT =		perl SPF test-suite class
 
 DISTNAME =		Mail-SPF-Test-v1.001

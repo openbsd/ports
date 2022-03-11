@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/01/15 15:47:16 sturm Exp $
 ${P5SITE}/Email/
 ${P5SITE}/Email/MIME/
 ${P5SITE}/Email/MIME/Encodings.pm

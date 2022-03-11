@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT=		statistical anti-spam filter
 
 MODPY_EGG_VERSION=	1.1b1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_procmailrc_man,v 1.1 2017/06/07 02:17:01 schwarze Exp $
-
 Fix escaping error that causes information loss.
 
 Index: man/procmailrc.man

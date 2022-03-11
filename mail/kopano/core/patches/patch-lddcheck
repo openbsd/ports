@@ -1,5 +1,3 @@
-$OpenBSD: patch-lddcheck,v 1.2 2018/12/17 15:19:40 robert Exp $
-
 Index: lddcheck
 --- lddcheck.orig
 +++ lddcheck

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.60 2019/07/12 20:47:27 sthen Exp $
-
 PORTROACH=		limit:^2\.6
 
 COMMENT=		MIME messages creation and parsing library

@@ -1,4 +1,3 @@
-$OpenBSD: patch-dfasyn_n2d_h,v 1.1 2005/12/16 22:17:26 cathcart Exp $
 --- dfasyn/n2d.h.orig	Fri Dec 16 22:09:17 2005
 +++ dfasyn/n2d.h	Fri Dec 16 22:09:27 2005
 @@ -31,7 +31,7 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_kopano_webapp_config_php,v 1.1.1.1 2017/09/13 10:38:42 robert Exp $
-
 Index: etc/kopano/webapp/config.php
 --- etc/kopano/webapp/config.php.orig
 +++ etc/kopano/webapp/config.php

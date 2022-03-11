@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/02/19 08:05:49 anton Exp $
-
 COMMENT =	maildir sort
 
 V =		11.3.2

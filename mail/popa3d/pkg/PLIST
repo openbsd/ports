@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/07/16 12:07:08 jca Exp $
 @newgroup _popa3d:737
 @newuser _popa3d:737:_popa3d::POP3 Server:/var/empty:/sbin/nologin
 @bin libexec/popa3d

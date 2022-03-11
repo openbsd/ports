@@ -1,4 +1,3 @@
-$OpenBSD: patch-libs_rfc2045_reformime_1,v 1.2 2021/12/14 07:53:56 giovanni Exp $
 Index: libs/rfc2045/reformime.1
 --- libs/rfc2045/reformime.1.orig
 +++ libs/rfc2045/reformime.1

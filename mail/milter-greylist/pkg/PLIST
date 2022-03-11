@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/13 12:52:22 okan Exp $
 @newgroup _milter-greylist:568
 @newuser _milter-greylist:568:_milter-greylist:daemon:milter-greylist Account:/nonexistent:/sbin/nologin
 @bin libexec/milter-greylist

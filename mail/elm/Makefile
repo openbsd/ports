@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/08/29 08:09:47 jasper Exp $
-
 COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66

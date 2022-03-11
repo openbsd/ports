@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/04/05 22:50:57 alek Exp $
 bin/exmh
 bin/exmh-async
 bin/exmh-bg

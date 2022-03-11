@@ -1,5 +1,3 @@
-$OpenBSD: patch-caldav_CalDAV_cpp,v 1.15 2020/07/29 13:04:05 robert Exp $
-
 Index: caldav/CalDAV.cpp
 --- caldav/CalDAV.cpp.orig
 +++ caldav/CalDAV.cpp

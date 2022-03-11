@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/13 00:10:32 espie Exp $
 ${P5SITE}/Email/Date.pm
 @man man/man3p/Email::Date.3p

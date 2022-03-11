@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2019/11/21 05:30:50 afresh1 Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/Address.pm
 ${P5SITE}/Mail/Address.pod

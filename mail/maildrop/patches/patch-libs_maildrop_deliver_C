@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_maildrop_deliver_C,v 1.2 2021/12/14 07:53:56 giovanni Exp $
-
 maildrop adds a newline to mbox files before delivering new messages.
 This effectively alters the final message in the mbox, causing a
 running mutt (and maybe other MUAs) with that mbox open to freak out

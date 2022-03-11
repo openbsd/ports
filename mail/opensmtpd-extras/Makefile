@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
 COMMENT-pgsql=		postgresql based smtpd table support

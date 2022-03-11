@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/11/01 01:15:24 sthen Exp $
-
 GH_ACCOUNT=	imapsync
 GH_PROJECT=	imapsync
 GH_TAGNAME=	imapsync-1.945

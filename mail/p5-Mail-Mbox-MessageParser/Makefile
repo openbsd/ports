@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:26 sthen Exp $
-
 COMMENT=	fast and simple mbox folder reader
 
 MODULES=	cpan

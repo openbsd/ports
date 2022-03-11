@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/26 10:02:24 giovanni Exp $
-
 COMMENT =		perl oop implementation of Sender Policy Framework
 
 DISTNAME =		Mail-SPF-v2.9.0

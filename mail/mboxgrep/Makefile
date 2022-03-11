@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/03 19:13:11 naddy Exp $
-
 COMMENT=		scan mailboxes for messages matching a regular expression
 
 DISTNAME=		mboxgrep-0.7.9

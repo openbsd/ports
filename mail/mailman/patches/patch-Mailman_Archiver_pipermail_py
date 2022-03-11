@@ -1,4 +1,3 @@
-$OpenBSD: patch-Mailman_Archiver_pipermail_py,v 1.1 2008/07/09 19:30:23 wcmaier Exp $
 --- Mailman/Archiver/pipermail.py.orig	Sat Jan 28 23:12:26 2006
 +++ Mailman/Archiver/pipermail.py	Wed Jul  9 13:13:53 2008
 @@ -1,4 +1,4 @@

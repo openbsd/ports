@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-bogofilter,v 1.7 2020/05/28 20:58:36 solene Exp $
 @pkgpath mail/sylpheed-claws,-bogofilter[,compface][,pgpmime][,jpilot][,ldap]
 @pkgpath mail/claws-mail,-bogofilter,compface${FLAVOR_STRING}
 lib/claws-mail/plugins/bogofilter.la

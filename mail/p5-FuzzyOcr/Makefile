@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:33 sthen Exp $
-
 COMMENT=		detect image spam with SpamAssassin
 
 V=			3.6.0.146

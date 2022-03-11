@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/16 23:08:45 espie Exp $
 ${P5SITE}/Email/Valid/
 ${P5SITE}/Email/Valid/Loose.pm
 @man man/man3p/Email::Valid::Loose.3p

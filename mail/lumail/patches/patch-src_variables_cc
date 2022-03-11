@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_variables_cc,v 1.1 2013/08/06 23:20:37 jturner Exp $
 --- src/variables.cc.orig	Sun Aug  4 18:12:36 2013
 +++ src/variables.cc	Sun Aug  4 18:12:41 2013
 @@ -27,7 +27,7 @@

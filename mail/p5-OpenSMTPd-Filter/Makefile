@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/29 00:38:15 afresh1 Exp $
-
 COMMENT =	easier filters for OpenSMTPd in perl
 
 DISTNAME =	OpenSMTPd-Filter-v0.0.2

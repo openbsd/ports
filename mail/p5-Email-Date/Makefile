@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:24 sthen Exp $
-
 COMMENT= 	find and format date headers
 
 MODULES=	cpan

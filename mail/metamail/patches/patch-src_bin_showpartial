@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bin_showpartial,v 1.1 2012/03/17 10:57:23 sthen Exp $
 --- src/bin/showpartial.orig	Wed Feb  2 23:21:29 1994
 +++ src/bin/showpartial	Sat Mar 17 10:51:52 2012
 @@ -2,23 +2,59 @@

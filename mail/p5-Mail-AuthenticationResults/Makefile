@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/20 14:46:41 giovanni Exp $
-
 COMMENT =	object oriented Authentication-Results headers
 
 DISTNAME =	Mail-AuthenticationResults-2.20210915
