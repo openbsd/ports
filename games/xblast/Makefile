@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/01/31 16:42:51 cwen Exp $
-
 COMMENT=	graphical multi-player real-time strategy game for X11
 
 DISTNAME=	xblast-2.10.4

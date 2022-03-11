@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=	X11 solitaire with 14 variations
 
 DISTNAME=	xpat2-1.07

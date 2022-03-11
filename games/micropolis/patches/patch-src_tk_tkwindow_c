@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tk_tkwindow_c,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/tk/tkwindow.c
 --- src/tk/tkwindow.c.orig
 +++ src/tk/tkwindow.c

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/06/15 04:23:45 kirby Exp $
 bin/extend2da.py
 @bin bin/gemrb
 lib/gemrb/

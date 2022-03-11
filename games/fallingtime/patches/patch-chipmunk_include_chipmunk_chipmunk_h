@@ -1,5 +1,3 @@
-$OpenBSD: patch-chipmunk_include_chipmunk_chipmunk_h,v 1.1.1.1 2019/11/12 13:37:22 bcallah Exp $
-
 Index: chipmunk/include/chipmunk/chipmunk.h
 --- chipmunk/include/chipmunk/chipmunk.h.orig
 +++ chipmunk/include/chipmunk/chipmunk.h

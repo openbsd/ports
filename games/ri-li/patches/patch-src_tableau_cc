@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tableau_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
-
 Index: src/tableau.cc
 --- src/tableau.cc.orig
 +++ src/tableau.cc

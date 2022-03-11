@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:26 sthen Exp $
-
 COMMENT=	combine pipes to lead water from the house to the tank
 
 DISTNAME=	vodovod-1.10-src

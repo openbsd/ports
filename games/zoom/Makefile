@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/09/19 08:34:31 kirby Exp $
-
 COMMENT=		Z-code interpreter for X11
 
 DISTNAME=		zoom-1.1.5

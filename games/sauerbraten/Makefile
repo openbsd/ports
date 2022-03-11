@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/29 16:28:31 espie Exp $
-
 ONLY_FOR_ARCHS=	i386 amd64 macppc
 
 COMMENT-main=	sauerbraten client

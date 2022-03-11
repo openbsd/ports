@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_color_h,v 1.1 2017/04/30 08:24:33 espie Exp $
 --- src/color.h.orig
 +++ src/color.h
 @@ -36,7 +36,7 @@ struct color

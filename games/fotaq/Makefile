@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:17 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	flight of the amazon queen

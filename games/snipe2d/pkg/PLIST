@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/11 21:50:14 edd Exp $
 bin/snipe2d
 share/games/
 share/games/orbital_eunuchs_sniper/

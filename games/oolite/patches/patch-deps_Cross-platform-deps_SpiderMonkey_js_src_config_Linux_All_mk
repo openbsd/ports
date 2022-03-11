@@ -1,4 +1,3 @@
-$OpenBSD: patch-deps_Cross-platform-deps_SpiderMonkey_js_src_config_Linux_All_mk,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
 --- deps/Cross-platform-deps/SpiderMonkey/js/src/config/Linux_All.mk.orig	Sun Aug 30 12:41:18 2009
 +++ deps/Cross-platform-deps/SpiderMonkey/js/src/config/Linux_All.mk	Tue Mar 30 21:59:00 2010
 @@ -41,9 +41,9 @@

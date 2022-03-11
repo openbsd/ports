@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/09 19:50:07 sthen Exp $
-
 V =		3.3.7
 COMMENT =	3D, first person roguelike
 PKGNAME =	${DISTNAME:L}

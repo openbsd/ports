@@ -1,5 +1,3 @@
-$OpenBSD: patch-sound_snd_cache_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 correctly assign unsigned int to 0, not NULL
 
 Index: sound/snd_cache.cpp

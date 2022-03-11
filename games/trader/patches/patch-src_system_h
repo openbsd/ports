@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_system_h,v 1.4 2021/08/30 14:02:07 fcambus Exp $
-
 Index: src/system.h
 --- src/system.h.orig
 +++ src/system.h

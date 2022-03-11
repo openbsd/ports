@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-2.00

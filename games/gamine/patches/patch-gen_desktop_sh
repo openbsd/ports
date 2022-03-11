@@ -1,5 +1,3 @@
-$OpenBSD: patch-gen_desktop_sh,v 1.1 2019/03/05 13:47:11 ajacoutot Exp $
-
 Index: gen_desktop.sh
 --- gen_desktop.sh.orig
 +++ gen_desktop.sh

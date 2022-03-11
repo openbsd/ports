@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/06/08 21:15:19 edd Exp $
-
 COMMENT =		Hexen II: Hammer of Thyrion
 
 V =			1.5.9

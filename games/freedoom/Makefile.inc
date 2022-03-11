@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2021/10/14 16:08:54 sdk Exp $
-
 COMMENT =	free content game based on the Doom engine
 
 V ?=		0.12.1

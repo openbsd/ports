@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 21:15:35 sthen Exp $
-
 COMMENT=	classic space-age stock trading game
 
 DISTNAME=	starlanes-1.2.2

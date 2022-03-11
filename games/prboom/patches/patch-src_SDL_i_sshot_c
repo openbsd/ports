@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_SDL_i_sshot_c,v 1.1 2013/03/31 21:09:33 bentley Exp $
-
 Fix build with png-1.5.
 
 --- src/SDL/i_sshot.c.orig	Wed Mar 27 00:17:06 2013

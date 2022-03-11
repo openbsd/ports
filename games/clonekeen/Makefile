@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/12 20:14:53 edd Exp $
-
 COMMENT =		commander keen clone
 DISTNAME =		clonekeen-src-84
 PKGNAME =		clonekeen-8.4

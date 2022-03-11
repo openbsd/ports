@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/22 16:00:31 op Exp $
-
 COMMENT =		historical real-time strategy game data
 
 DISTNAME =		0ad-${V}-alpha-unix-data

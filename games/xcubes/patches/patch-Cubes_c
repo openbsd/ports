@@ -1,4 +1,3 @@
-$OpenBSD: patch-Cubes_c,v 1.1 2002/02/20 22:47:52 pvalchev Exp $
 --- Cubes.c.orig	Mon Aug  2 10:42:11 1999
 +++ Cubes.c	Wed Feb 20 15:42:56 2002
 @@ -472,7 +472,7 @@ static void

@@ -1,11 +1,10 @@
-$OpenBSD: patch-xmred_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
 --- xmred.man.orig	Fri Dec 22 13:08:24 1995
 +++ xmred.man	Thu Apr  9 17:14:59 2015
 @@ -1,5 +1,5 @@
 -. Copyright (C) 1993 Nathan Sidwell
--. RCS $Id: patch-xmred_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
+-. RCS $Id: patch-xmred_man,v 1.2 2022/03/11 19:05:21 naddy Exp $
 +.\" Copyright (C) 1993 Nathan Sidwell
-+.\" RCS $Id: patch-xmred_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
++.\" RCS $Id: patch-xmred_man,v 1.2 2022/03/11 19:05:21 naddy Exp $
  .TH XMRED 6 "20 December 1993" "X Version 11"
  .IX xmred#(n) "" "\fLxmred\fP(n)"
  .SH NAME

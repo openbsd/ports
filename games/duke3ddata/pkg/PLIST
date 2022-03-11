@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/18 20:07:29 rfreeman Exp $
 share/duke3d/
 share/duke3d/COMMIT.EXE
 share/duke3d/DEFS.CON

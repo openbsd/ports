@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/11 10:39:32 bentley Exp $
-
 COMMENT =		sidescrolling space shmup
 
 V =			2.4

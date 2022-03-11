@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2017/02/27 19:32:35 naddy Exp $
 --- configure.orig	Mon Oct 24 21:47:16 2005
 +++ configure	Mon Feb 27 20:30:26 2017
 @@ -40,7 +40,7 @@ srcdir=.

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/11 22:32:16 cwen Exp $
 @bin bin/blobby
 @bin bin/blobby-server
 share/blobby/

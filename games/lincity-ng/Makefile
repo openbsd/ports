@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:20 sthen Exp $
-
 COMMENT=	city simulation game
 
 DISTNAME=	lincity-ng-2.0

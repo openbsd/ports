@@ -1,4 +1,3 @@
-$OpenBSD: patch-Canvas_cpp,v 1.3 2018/04/09 16:41:36 jasper Exp $
 Index: Canvas.cpp
 --- Canvas.cpp.orig
 +++ Canvas.cpp

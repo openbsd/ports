@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:11 espie Exp $
 bin/xdino
 lib/X11/app-defaults/Dino
 @man man/man1/xdino.1

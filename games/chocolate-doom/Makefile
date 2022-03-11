@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/04 04:34:09 daniel Exp $
-
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
 V =		3.0.1
 DISTNAME =	chocolate-doom-${V}

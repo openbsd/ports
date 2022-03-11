@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_workspaces_update-workspaces_sh,v 1.7 2021/11/22 16:00:31 op Exp $
 Don't build bundled libraries during configure.
 Index: build/workspaces/update-workspaces.sh
 --- build/workspaces/update-workspaces.sh.orig

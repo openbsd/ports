@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/31 16:36:47 cwen Exp $
-
 COMMENT =		asteroid-like game
 
 DISTNAME =		Maelstrom-3.0.6

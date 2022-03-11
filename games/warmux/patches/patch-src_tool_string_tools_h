@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tool_string_tools_h,v 1.1 2017/05/24 19:19:22 espie Exp $
-
 Index: src/tool/string_tools.h
 --- src/tool/string_tools.h.orig
 +++ src/tool/string_tools.h

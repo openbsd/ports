@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_spl-cast_h,v 1.2 2015/02/17 19:47:01 naddy Exp $
 --- source/spl-cast.h.orig	Fri Feb 28 02:55:32 2003
 +++ source/spl-cast.h	Tue Feb 17 18:52:57 2015
 @@ -43,7 +43,7 @@ bool your_spells( int spc2, int powc = 0, bool allow_f

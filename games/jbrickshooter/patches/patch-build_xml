@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_xml,v 1.1 2019/09/21 21:30:39 kurt Exp $
-
 Index: build.xml
 --- build.xml.orig
 +++ build.xml

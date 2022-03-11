@@ -1,5 +1,3 @@
-$OpenBSD: patch-dll_common_includes_h,v 1.2 2021/12/23 02:19:28 thfr Exp $
-
 add OpenBSD includes
 
 Index: dll/common_includes.h

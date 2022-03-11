@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tools_xmlversion_CMakeLists_txt,v 1.3 2016/09/20 18:18:52 pascal Exp $
 --- src/tools/xmlversion/CMakeLists.txt.orig	Mon Apr 18 17:37:07 2016
 +++ src/tools/xmlversion/CMakeLists.txt	Tue Sep 20 01:28:43 2016
 @@ -24,7 +24,7 @@ ELSE(CMAKE_SKIP_RPATH OR CMAKE_SKIP_BUILD_RPATH)

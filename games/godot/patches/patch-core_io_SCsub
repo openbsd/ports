@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_io_SCsub,v 1.2 2020/07/19 13:02:38 thfr Exp $
-
 Index: core/io/SCsub
 --- core/io/SCsub.orig
 +++ core/io/SCsub

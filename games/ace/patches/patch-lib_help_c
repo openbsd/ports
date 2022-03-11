@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_help_c,v 1.1.1.1 2016/08/05 05:38:56 bentley Exp $
 --- lib/help.c.orig	Sat Mar 24 12:00:49 2012
 +++ lib/help.c	Wed Aug  3 00:53:26 2016
 @@ -520,8 +520,11 @@ help(char *filename, char *text)

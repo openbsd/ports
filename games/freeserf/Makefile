@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:18 sthen Exp $
-
 COMMENT =	Settlers 1 (Serf City) clone
 CATEGORIES =	games x11
 

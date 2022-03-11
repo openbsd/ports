@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_compilers_roqvq_roq_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 replace functions from ExtLibs with system ones
 
 Index: tools/compilers/roqvq/roq.cpp

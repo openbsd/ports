@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 00:46:11 espie Exp $
 bin/xgolgo
 @man man/man1/xgolgo.1

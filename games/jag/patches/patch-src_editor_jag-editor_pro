@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_editor_jag-editor_pro,v 1.1 2020/08/01 05:34:08 landry Exp $
-
 install jag-editor to correct prefix. jag-editor still works without data files.
 
 Index: src/editor/jag-editor.pro

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:13 espie Exp $
 @bin bin/gottet
 @man man/man6/gottet.6
 share/applications/gottet.desktop

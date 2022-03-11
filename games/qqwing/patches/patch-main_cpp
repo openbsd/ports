@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_cpp,v 1.1 2021/07/24 19:35:41 cwen Exp $
-
 Fix infinite loop while using `qqwing --solve` on unsigned char archs (powerpc
 and arm)
 

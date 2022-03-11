@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:18 sthen Exp $
-
 COMMENT=	one-player puzzle game for x11
 
 VERSION=	0.9

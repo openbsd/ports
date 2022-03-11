@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
 bin/witchblast
 share/doc/witchblast/
 share/doc/witchblast/COPYING.txt

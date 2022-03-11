@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_network_psnet2_cpp,v 1.1 2021/12/18 05:10:57 thfr Exp $
-
 missing define
 note this is separately defined with same value in
 code/network/multi_portfwd.cpp and

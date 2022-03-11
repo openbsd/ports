@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/10 03:18:48 jeremy Exp $
-
 COMMENT = 	enhanced version the PrBoom Doom engine
 DISTNAME =	prboom-plus-2.5.1.4
 CATEGORIES =	games x11

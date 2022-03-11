@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:21 sthen Exp $
-
 COMMENT =	puzzle/platform game
 
 DISTNAME =	meandmyshadow-0.4.1-src

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/12 21:25:10 thfr Exp $
-
 COMMENT =	Steamworks stub libraries
 
 V =		0.4.1

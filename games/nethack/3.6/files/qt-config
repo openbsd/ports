@@ -1,5 +1,3 @@
-# $OpenBSD: qt-config,v 1.1.1.1 2018/04/25 16:56:32 espie Exp $
-
 VARDATND = $(XFILES)
 CFLAGS+=-DQT_GRAPHICS -I$(MODQT_INCDIR) -pthread
 LFLAGS =-pthread -L$(MODQT_LIBDIR) -L$(X11BASE)/lib -L$(LOCALBASE)/lib

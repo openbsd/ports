@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:24 sthen Exp $
-
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-44-src

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT =	open source, classic overhead run-and-gun game
 DISTNAME =	cdogs-sdl-0.5.5.1
 CATEGORIES =	games x11

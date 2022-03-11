@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:23 sthen Exp $
-
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
 DISTNAME=	pathological-1.1.3

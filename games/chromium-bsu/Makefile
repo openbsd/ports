@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT =		fast paced arcade-style space shooter
 DISTNAME =		chromium-bsu-0.9.16.1
 CATEGORIES =		games x11

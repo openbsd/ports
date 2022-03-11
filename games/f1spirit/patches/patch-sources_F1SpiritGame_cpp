@@ -1,4 +1,3 @@
-$OpenBSD: patch-sources_F1SpiritGame_cpp,v 1.1.1.1 2009/03/19 18:30:30 landry Exp $
 --- sources/F1SpiritGame.cpp.orig	Sat Mar  7 12:31:29 2009
 +++ sources/F1SpiritGame.cpp	Sat Mar  7 12:31:59 2009
 @@ -2262,11 +2262,12 @@ bool F1SpiritGame::cycle(KEYBOARDSTATE *k)

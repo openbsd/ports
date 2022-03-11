@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:21 sthen Exp $
-
 COMMENT=	Rogue like adventure game
 
 DISTNAME=	wanderer-3.2

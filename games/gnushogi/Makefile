@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/05/11 20:41:30 cwen Exp $
-
 COMMENT=	GNU version of Shogi
 
 DISTNAME=	gnushogi-1.4.2

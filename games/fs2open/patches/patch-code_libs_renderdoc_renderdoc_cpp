@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_libs_renderdoc_renderdoc_cpp,v 1.1 2020/09/17 12:34:22 thfr Exp $
-
 we don't have RTLD_NOLOAD
 
 Index: code/libs/renderdoc/renderdoc.cpp

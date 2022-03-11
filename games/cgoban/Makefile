@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT=	X11 Go Toolset
 
 DISTNAME=	cgoban-1.9.12

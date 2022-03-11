@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
 @bin bin/asteroidgen
 @bin bin/base_maker
 @bin bin/mesh_xml

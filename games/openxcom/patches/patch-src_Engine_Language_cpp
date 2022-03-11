@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Engine_Language_cpp,v 1.1 2021/09/17 21:04:11 kirby Exp $
-
 Index: src/Engine/Language.cpp
 --- src/Engine/Language.cpp.orig
 +++ src/Engine/Language.cpp

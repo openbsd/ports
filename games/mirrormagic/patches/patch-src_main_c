@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_main_c,v 1.1 2021/03/05 01:21:01 bcallah Exp $
-
 Fixes for -fno-common
 From AUR: https://aur.archlinux.org/cgit/aur.git/tree/mirrormagic-3.0.0-variables-scope.patch?h=mirrormagic
 

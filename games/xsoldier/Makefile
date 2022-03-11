@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT =	space-based shoot'em up game for X11
 
 DISTNAME =	xsoldier-1.8

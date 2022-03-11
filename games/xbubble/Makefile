@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	x bust a move clone
 
 DISTNAME=	xbubble-0.5.8

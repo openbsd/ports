@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
-
 Index: src/utils.cc
 --- src/utils.cc.orig
 +++ src/utils.cc

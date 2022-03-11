@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/14 00:39:36 naddy Exp $
-
 COMMENT =	Jagged Alliance 2 engine
 
 GH_ACCOUNT =	ja2-stracciatella

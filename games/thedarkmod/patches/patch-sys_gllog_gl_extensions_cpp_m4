@@ -1,5 +1,3 @@
-$OpenBSD: patch-sys_gllog_gl_extensions_cpp_m4,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 add OpenBSD to ifdef and add include file
 
 Index: sys/gllog/gl_extensions.cpp.m4

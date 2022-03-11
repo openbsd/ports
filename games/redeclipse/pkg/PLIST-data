@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-data,v 1.9 2018/01/06 17:05:04 jsg Exp $
 share/redeclipse/
 share/redeclipse/config/
 share/redeclipse/config/brush.cfg

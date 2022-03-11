@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_pysol_desktop,v 1.1.1.1 2015/05/25 07:10:45 czarkoff Exp $
 --- data/pysol.desktop.orig	Fri Jun  6 08:58:50 2008
 +++ data/pysol.desktop	Sun May 24 23:52:58 2015
 @@ -1,8 +1,8 @@

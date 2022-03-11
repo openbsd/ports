@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_squirrel_squirrel_sqvm_cpp,v 1.1 2018/09/11 14:46:14 sthen Exp $
-
 Unbreak with newer libc++. FreeBSD r447202
 
 Index: external/squirrel/squirrel/sqvm.cpp

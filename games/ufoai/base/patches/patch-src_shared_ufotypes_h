@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_shared_ufotypes_h,v 1.1 2017/05/13 17:56:55 espie Exp $
 __WORDSIZE is defined nowhere, and our size_t are always lu
 
 Index: src/shared/ufotypes.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_network_gtrack_cpp,v 1.2 2021/12/18 05:10:57 thfr Exp $
-
 include sys/socket.h, needed for AF_INET
 
 Index: code/network/gtrack.cpp

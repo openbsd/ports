@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_physics_h,v 1.1 2017/06/01 11:29:12 espie Exp $
-
 Index: src/physics.h
 --- src/physics.h.orig
 +++ src/physics.h

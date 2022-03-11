@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/17 16:17:06 bcallah Exp $
 @bin bin/gigalomania
 share/applications/gigalomania.desktop
 share/gigalomania/

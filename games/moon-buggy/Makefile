@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:21 sthen Exp $
-
 COMMENT=	drive some car across the moon
 
 DISTNAME =	moon-buggy-1.0.51

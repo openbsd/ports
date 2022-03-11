@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT =		clone of Galaga, 2D space shooter
 
 V =			2.1.1.0

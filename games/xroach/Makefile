@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=	cockroaches hide under your windows
 
 # The source code for xroach is the same under both directories

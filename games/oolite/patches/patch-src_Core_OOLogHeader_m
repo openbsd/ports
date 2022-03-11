@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Core_OOLogHeader_m,v 1.2 2021/02/26 18:20:33 naddy Exp $
 --- src/Core/OOLogHeader.m.orig	Wed Mar 31 00:05:05 2010
 +++ src/Core/OOLogHeader.m	Wed Mar 31 00:19:27 2010
 @@ -130,7 +130,7 @@ void OOPrintLogHeader(void)

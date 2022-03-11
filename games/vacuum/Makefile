@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:26 sthen Exp $
-
 PORTROACH_COMMENT =	0.13a is newer than 0.13
 PORTROACH =		skipv:0.13
 

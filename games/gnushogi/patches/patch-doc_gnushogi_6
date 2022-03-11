@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_gnushogi_6,v 1.2 2015/09/21 14:35:23 jasper Exp $
 --- doc/gnushogi.6.orig	Sun Feb 16 19:20:24 2014
 +++ doc/gnushogi.6	Mon Sep 21 16:10:55 2015
 @@ -18,7 +18,6 @@ gnushogi \- GNU Shogi (Japanese Chess)

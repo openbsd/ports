@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/08/12 08:17:38 kn Exp $
-
 COMMENT =	action RPG mod based upon the FLARE engine
 DISTNAME =	polymorphable-20130410
 REVISION =	2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.2 2020/09/11 06:02:30 kirby Exp $
-
 Fix build with python3.8.
 Upstream commit 2fdb225f62f66bf474e19d9b1bcfbaf691672c43
 

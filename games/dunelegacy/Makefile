@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT =		improved opensource version of Dune 2
 
 DISTNAME =		dunelegacy-0.96.4-src

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/19 17:35:53 mglocker Exp $
 @bin bin/spaceinvaders
 @man man/man6/spaceinvaders.6
 share/spaceinvaders/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/12/18 05:40:30 thfr Exp $
-
 COMMENT =		java game development framework
 VERSION =		1.9.11
 PKGNAME =		libgdx-${VERSION}

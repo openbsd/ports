@@ -1,5 +1,3 @@
-$OpenBSD: patch-render_c,v 1.1.1.1 2016/10/07 21:49:45 czarkoff Exp $
-
 We make GNU Backgammon use system-supplied DejaVu fonts instead of bundling Vera
 fonts.  Thus stop building dynamically allocated paths for fonts.
 

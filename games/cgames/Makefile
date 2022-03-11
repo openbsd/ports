@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/24 15:31:30 fcambus Exp $
-
 PORTROACH =	skipv:2.2
 
 COMMENT =	free console games suite

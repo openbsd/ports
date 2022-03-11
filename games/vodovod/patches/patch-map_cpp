@@ -1,4 +1,3 @@
-$OpenBSD: patch-map_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
 --- map.cpp.orig	Thu Jul  5 15:22:16 2007
 +++ map.cpp	Thu Jul  5 15:22:29 2007
 @@ -433,7 +433,7 @@ void Map::Render()

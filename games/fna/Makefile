@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/08 16:22:00 thfr Exp $
-
 V =		22.01
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}

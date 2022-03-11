@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_pingus_prefab_file_hpp,v 1.1 2017/05/26 18:09:15 espie Exp $
-
 Index: src/pingus/prefab_file.hpp
 --- src/pingus/prefab_file.hpp.orig
 +++ src/pingus/prefab_file.hpp

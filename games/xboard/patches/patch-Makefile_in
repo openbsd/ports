@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2017/04/29 22:24:15 rsadowski Exp $
 --- Makefile.in.orig	Sun May 15 19:18:04 2016
 +++ Makefile.in	Mon Apr 24 00:59:18 2017
 @@ -542,7 +542,7 @@ xboard_SOURCES = backend.c backend.h backendz.h \

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_launcher_wxdialogs_DisplayDialog_cpp,v 1.2 2019/01/03 20:42:39 jca Exp $
-
 Patch from Debian:
   From: Markus Koschany <apo@debian.org>
   Date: Fri, 15 Jul 2016 18:01:36 +0200

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/07/12 20:53:08 pascal Exp $
 share/flightgear/
 @comment share/flightgear/.git
 @comment share/flightgear/.gitignore

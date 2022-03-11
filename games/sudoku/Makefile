@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT=		console based sudoku
 
 DISTNAME=		sudoku-1.0.1

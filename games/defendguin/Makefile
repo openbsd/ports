@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT =	clone of arcade game 'Defender' with a Linux theme
 
 DISTNAME =	defendguin-0.0.12

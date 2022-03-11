@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_script_script_h,v 1.1 2022/01/11 12:55:18 jca Exp $
-
 Missing include, breaks with ports-gcc
 
 Index: src/script/script.h

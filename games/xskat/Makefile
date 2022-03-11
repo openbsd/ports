@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=	skat card game
 
 DISTNAME=	xskat-4.0

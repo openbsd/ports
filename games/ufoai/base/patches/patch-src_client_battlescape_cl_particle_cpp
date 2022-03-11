@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_client_battlescape_cl_particle_cpp,v 1.2 2017/06/15 19:37:04 kirby Exp $
-
 shut up clang errors
 upstream commit 10ab227647593c709c5a5ae9ec73daa31154d93e
 

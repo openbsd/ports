@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=	cuddlesome teddy for the X11 desktop
 
 DISTNAME=	xteddy-2.2

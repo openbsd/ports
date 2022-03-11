@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_Makefile_in,v 1.3 2007/12/05 10:49:24 ajacoutot Exp $
 --- data/Makefile.in.orig	Wed Dec  5 11:24:57 2007
 +++ data/Makefile.in	Wed Dec  5 11:28:12 2007
 @@ -467,7 +467,7 @@ info: info-recursive

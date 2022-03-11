@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/17 07:49:25 thfr Exp $
-
 # Don't bother on non-mono archs.
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 

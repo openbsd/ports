@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/18 05:10:57 thfr Exp $
-
 # Requires OpenGL>=3.2, could run on powerpc64 once there is drm support
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 

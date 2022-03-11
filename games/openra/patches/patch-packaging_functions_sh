@@ -1,5 +1,3 @@
-$OpenBSD: patch-packaging_functions_sh,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 disable geoip and configure-system-libraries stuff
 
 Index: packaging/functions.sh

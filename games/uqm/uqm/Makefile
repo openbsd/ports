@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/22 05:36:39 kirby Exp $
-
 COMMENT =		ur-quan masters: game of space exploration and battles
 
 EPOCH =			0

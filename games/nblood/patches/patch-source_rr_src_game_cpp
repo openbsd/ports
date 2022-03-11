@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_rr_src_game_cpp,v 1.6 2021/12/08 03:35:42 jsg Exp $
-
 store log file in ~/.config/rednukem/
 
 Index: source/rr/src/game.cpp

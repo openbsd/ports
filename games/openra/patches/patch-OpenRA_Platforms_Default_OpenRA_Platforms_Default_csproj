@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Platforms_Default_OpenRA_Platforms_Default_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Platforms.Default/OpenRA.Platforms.Default.csproj
 --- OpenRA.Platforms.Default/OpenRA.Platforms.Default.csproj.orig
 +++ OpenRA.Platforms.Default/OpenRA.Platforms.Default.csproj

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/10 03:12:27 jeremy Exp $
-
 COMMENT=	enhanced clone of Id Software's Doom game; multiplayer#'
 DISTNAME=	prboom-2.5.0
 REVISION=	3

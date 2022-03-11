@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_modules_graphic_ssggraph_CMakeLists_txt,v 1.3 2016/09/20 18:18:52 pascal Exp $
 --- src/modules/graphic/ssggraph/CMakeLists.txt.orig	Mon Apr 18 17:37:09 2016
 +++ src/modules/graphic/ssggraph/CMakeLists.txt	Tue Sep 20 01:28:41 2016
 @@ -49,6 +49,10 @@ IF(COMMAND CMAKE_POLICY)

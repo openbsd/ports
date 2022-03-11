@@ -1,4 +1,3 @@
-$OpenBSD: patch-screenlib_SDL_FrameBuf_cpp,v 1.1.1.1 2008/06/04 06:50:20 phessler Exp $
 --- screenlib/SDL_FrameBuf.cpp.orig	Tue Jun  3 19:11:26 2008
 +++ screenlib/SDL_FrameBuf.cpp	Tue Jun  3 19:19:01 2008
 @@ -848,8 +848,8 @@ FrameBuf:: AddDirtyRect(SDL_Rect *rect)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/14 08:13:42 bentley Exp $
-
 COMMENT=	graphically improved game of yore
 
 VERSION=	0.21

@@ -1,4 +1,3 @@
-$OpenBSD: patch-gemrb_GemRB_cfg_sample_in,v 1.4 2021/06/15 04:23:45 kirby Exp $
 Index: gemrb/GemRB.cfg.sample.in
 --- gemrb/GemRB.cfg.sample.in.orig
 +++ gemrb/GemRB.cfg.sample.in

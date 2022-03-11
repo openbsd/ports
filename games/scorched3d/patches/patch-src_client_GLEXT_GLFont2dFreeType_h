@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_client_GLEXT_GLFont2dFreeType_h,v 1.2 2019/01/03 20:42:39 jca Exp $
 --- src/client/GLEXT/GLFont2dFreeType.h.orig	Mon Dec 29 18:38:23 2008
 +++ src/client/GLEXT/GLFont2dFreeType.h	Thu Jan  9 19:45:04 2014
 @@ -23,10 +23,8 @@

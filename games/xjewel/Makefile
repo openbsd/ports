@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6

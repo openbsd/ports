@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/12 17:24:38 cwen Exp $
-
 COMMENT=	clone of the Mastermind game
 
 GH_TAGNAME=	v1.1.0

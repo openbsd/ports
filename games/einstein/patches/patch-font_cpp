@@ -1,5 +1,3 @@
-$OpenBSD: patch-font_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
-
 Index: font.cpp
 --- font.cpp.orig
 +++ font.cpp

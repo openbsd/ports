@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/26 08:54:47 kirby Exp $
-
 COMMENT =	challenging 2D motocross platform game
 
 GH_ACCOUNT = 	xmoto

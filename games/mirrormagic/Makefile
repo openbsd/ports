@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/03/05 01:21:01 bcallah Exp $
-
 COMMENT=	game like Deflektor (C64) / Mindbender (Amiga)
 DISTNAME=	mirrormagic-3.0.0
 REVISION=	0

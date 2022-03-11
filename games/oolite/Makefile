@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/19 19:44:09 sebastia Exp $
-
 COMMENT=	space combat and trading game in the style of Elite
 
 VERSION=	1.73.4

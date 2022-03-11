@@ -1,4 +1,3 @@
-$OpenBSD: patch-manage_C,v 1.1 2003/08/22 17:57:20 espie Exp $
 --- manage.C.orig	2003-08-22 19:46:19.000000000 +0200
 +++ manage.C	2003-08-22 19:47:34.000000000 +0200
 @@ -127,18 +127,18 @@ void _manage::put_info()

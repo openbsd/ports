@@ -1,5 +1,3 @@
-$OpenBSD: patch-Font_cpp,v 1.1 2018/04/09 16:41:36 jasper Exp $
-
 Index: Font.cpp
 --- Font.cpp.orig
 +++ Font.cpp

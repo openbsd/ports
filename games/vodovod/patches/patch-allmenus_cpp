@@ -1,4 +1,3 @@
-$OpenBSD: patch-allmenus_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
 --- allmenus.cpp.orig	Thu Jul  5 15:20:07 2007
 +++ allmenus.cpp	Thu Jul  5 15:20:24 2007
 @@ -36,7 +36,7 @@ extern ResourceManager *Data;

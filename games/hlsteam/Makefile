@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/03 07:47:14 kmos Exp $
-
 COMMENT =	Steam API wrapper for Hashlink
 
 V =		1.0pl0

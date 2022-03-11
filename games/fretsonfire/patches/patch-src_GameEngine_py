@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_GameEngine_py,v 1.1.1.1 2009/10/16 23:11:39 phessler Exp $
 --- src/GameEngine.py.orig	Sun Sep  7 13:35:12 2008
 +++ src/GameEngine.py	Sat Oct 10 17:03:32 2009
 @@ -53,14 +53,14 @@ Config.define("game",   "uploadurl",    str,   "http:/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Test_OpenRA_Test_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Test/OpenRA.Test.csproj
 --- OpenRA.Test/OpenRA.Test.csproj.orig
 +++ OpenRA.Test/OpenRA.Test.csproj

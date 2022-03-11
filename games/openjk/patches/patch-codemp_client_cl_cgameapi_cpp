@@ -1,5 +1,3 @@
-$OpenBSD: patch-codemp_client_cl_cgameapi_cpp,v 1.2 2018/04/26 02:15:18 bcallah Exp $
-
 Index: codemp/client/cl_cgameapi.cpp
 --- codemp/client/cl_cgameapi.cpp.orig
 +++ codemp/client/cl_cgameapi.cpp

@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_crack-attack_desktop,v 1.1 2011/08/26 09:14:11 sthen Exp $
 --- data/crack-attack.desktop.orig	Thu Aug 25 14:44:38 2011
 +++ data/crack-attack.desktop	Thu Aug 25 14:44:42 2011
 @@ -5,5 +5,5 @@ Exec=crack-attack

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2022/02/27 11:03:52 ajacoutot Exp $
-
 COMMENT=	educational game for children
 
 V=		2.3

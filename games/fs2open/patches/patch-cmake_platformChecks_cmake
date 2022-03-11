@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_platformChecks_cmake,v 1.2 2020/09/17 12:34:22 thfr Exp $
-
 Index: cmake/platformChecks.cmake
 --- cmake/platformChecks.cmake.orig
 +++ cmake/platformChecks.cmake

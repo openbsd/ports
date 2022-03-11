@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2018/12/25 15:18:20 bcallah Exp $
-
 Install to the correct location.
 Don't do the cpplint stuff.
 

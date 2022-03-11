@@ -1,5 +1,3 @@
-$OpenBSD: patch-application_UpdateController_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
-
 Index: application/UpdateController.cpp
 --- application/UpdateController.cpp.orig
 +++ application/UpdateController.cpp

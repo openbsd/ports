@@ -1,5 +1,3 @@
-$OpenBSD: patch-share_data_quests_tutorial_xml,v 1.1 2018/01/09 21:02:36 schwarze Exp $
-
 table.getn was renamed to # in Lua 5.1
 
 Index: share/data/quests/tutorial.xml

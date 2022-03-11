@@ -1,5 +1,3 @@
-$OpenBSD: patch-idlib_math_Simd_AVX2_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 work around problematic AVX functions
 
 Index: idlib/math/Simd_AVX2.cpp

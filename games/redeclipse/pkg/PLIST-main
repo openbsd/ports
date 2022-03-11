@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2018/06/29 22:16:14 espie Exp $
 bin/redeclipse
 bin/redeclipse-server
 lib/redeclipse/

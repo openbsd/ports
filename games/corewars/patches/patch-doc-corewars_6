@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc-corewars_6,v 1.2 2010/03/24 22:32:17 jasper Exp $
 --- doc/corewars.6.orig	Wed Apr 12 15:10:09 2000
 +++ doc/corewars.6	Wed Mar 24 23:04:18 2010
 @@ -38,7 +38,7 @@ called \fBRedcode\fP, is harder to learn but also more

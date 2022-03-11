@@ -1,4 +1,3 @@
-$OpenBSD: patch-system-install_mk,v 1.4 2015/07/18 20:25:15 jasper Exp $
 --- system-install.mk.orig	Tue Jun 16 23:08:34 2015
 +++ system-install.mk	Sat Jul 18 14:16:44 2015
 @@ -5,7 +5,7 @@ cappname=$(shell echo $(appname) | tr '[:lower:]' '[:u

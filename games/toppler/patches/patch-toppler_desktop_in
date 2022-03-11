@@ -1,4 +1,3 @@
-$OpenBSD: patch-toppler_desktop_in,v 1.1 2007/10/27 15:24:30 kili Exp $
 --- toppler.desktop.in.orig	Thu Jul 19 16:26:35 2007
 +++ toppler.desktop.in	Sun Oct 14 13:49:12 2007
 @@ -6,7 +6,7 @@ Name=@FULLNAME@

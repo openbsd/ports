@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/06/17 13:52:54 abieber Exp $
 @newgroup _ioq3:776
 @newuser _ioq3:776:_ioq3:daemon:ioquake3 Server:/var/ioq3:/sbin/nologin
 @rcscript ${RCDIR}/ioq3ded

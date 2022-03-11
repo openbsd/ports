@@ -1,4 +1,3 @@
-$OpenBSD: patch-game_c,v 1.1 2004/03/03 22:51:00 xsa Exp $
 --- game.c.orig	2003-08-13 03:33:02.000000000 +0200
 +++ game.c	2004-03-03 15:53:32.000000000 +0100
 @@ -58,11 +58,11 @@ ExtFunc void MapKeys(char *newKeys)

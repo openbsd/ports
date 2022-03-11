@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/19 12:07:34 naddy Exp $
-
 COMMENT =	puzzle game with similar gameplay to Tetris Attack
 CATEGORIES =	games x11
 

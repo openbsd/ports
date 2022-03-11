@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_init_cpp,v 1.1 2019/01/01 17:59:05 landry Exp $
 init.cpp:139:34: error: 'strcmp' was not declared in this scope
 init.cpp:196:12: error: 'exit' was not declared in this scope
 Index: src/init.cpp

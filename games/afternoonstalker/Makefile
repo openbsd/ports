@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2020/03/26 20:51:02 naddy Exp $
-
 COMMENT=	Night Stalker clone for X
 
 DISTNAME=	afternoonstalker-1.1.6

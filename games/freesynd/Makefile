@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/01 01:25:34 danj Exp $
-
 COMMENT =	open source reimplementation of Syndicate game
 DISTNAME =	freesynd-0.7.5
 CATEGORIES = 	games x11

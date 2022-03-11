@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.52 2022/01/27 06:08:19 kirby Exp $
 @pkgpath games/wesnoth,tinygui
 @pkgpath games/wesnoth,lite
 @newgroup _wesnothd:708

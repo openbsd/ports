@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/22 05:36:38 kirby Exp $
 @pkgpath games/uqm,-content
 share/uqm/
 share/uqm/content/

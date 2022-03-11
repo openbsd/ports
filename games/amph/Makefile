@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:46:14 sthen Exp $
-
 COMMENT=	jump'n'run game with unique video effects
 
 VERSION=	0.8.10

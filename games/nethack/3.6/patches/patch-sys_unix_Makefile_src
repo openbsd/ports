@@ -1,4 +1,3 @@
-$OpenBSD: patch-sys_unix_Makefile_src,v 1.3 2019/05/18 15:00:41 espie Exp $
 * unhardcode g++
 * ensure linking qt flavor with C++
 * zap bogus shit that prevents parallelism

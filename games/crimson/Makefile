@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.3
 CATEGORIES=	games x11

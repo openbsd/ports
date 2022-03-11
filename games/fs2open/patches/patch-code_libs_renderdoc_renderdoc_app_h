@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_libs_renderdoc_renderdoc_app_h,v 1.2 2021/12/18 05:10:57 thfr Exp $
-
 add to ifdef
 
 Index: code/libs/renderdoc/renderdoc_app.h

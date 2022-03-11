@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:46:11 espie Exp $
 bin/tutris
 share/doc/tutris/
 share/doc/tutris/README

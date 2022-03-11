@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Core_OOMaths_h,v 1.2 2021/02/26 18:20:33 naddy Exp $
 --- src/Core/OOMaths.h.orig	Fri Jan 14 12:36:10 2011
 +++ src/Core/OOMaths.h	Fri Jan 14 12:36:45 2011
 @@ -37,6 +37,7 @@ extern "C" {

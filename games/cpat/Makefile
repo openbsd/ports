@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/31 04:02:52 bcallah Exp $
-
 COMMENT =	curses-based solitaire collection suite
 DISTNAME =	cpat-1.4.1
 CATEGORIES =	games

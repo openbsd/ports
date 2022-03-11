@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT=	Cannon Smash 3D table tennis
 
 DISTNAME=	csmash-0.6.6

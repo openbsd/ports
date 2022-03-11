@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/06/09 19:50:07 sthen Exp $
-
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	isometric RPG game

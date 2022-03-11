@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/06/05 12:34:05 jasper Exp $
-
 COMMENT =	fan made parody Zelda game for Solarus engine
 
 GH_ACCOUNT=	christopho

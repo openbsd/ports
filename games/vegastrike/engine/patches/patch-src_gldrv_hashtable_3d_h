@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gldrv_hashtable_3d_h,v 1.1 2017/06/01 11:29:12 espie Exp $
-
 Index: src/gldrv/hashtable_3d.h
 --- src/gldrv/hashtable_3d.h.orig
 +++ src/gldrv/hashtable_3d.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/20 03:49:26 bcallah Exp $
-
 COMMENT=	pacman clone gone mad
 
 DISTNAME=	pacman-arena-0.15

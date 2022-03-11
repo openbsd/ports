@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_premake_premake5_build_gmake2_bsd_Premake5_make,v 1.1 2021/11/22 16:00:31 op Exp $
-
 don't hardcode -O3
 
 Index: build/premake/premake5/build/gmake2.bsd/Premake5.make

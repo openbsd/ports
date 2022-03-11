@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT =	falling block puzzle game similar to Xixit
 DISTNAME =	blockrage-0.2.3
 CATEGORIES =	games x11

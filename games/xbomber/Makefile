@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=		colorful game where you blow other people/robots up
 
 VERSION=		0.8

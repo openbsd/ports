@@ -1,5 +1,3 @@
-$OpenBSD: patch-gfx_c,v 1.4 2021/02/19 20:45:31 naddy Exp $
-
 Index: gfx.c
 --- gfx.c.orig
 +++ gfx.c

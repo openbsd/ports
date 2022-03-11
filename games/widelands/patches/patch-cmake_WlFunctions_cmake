@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_WlFunctions_cmake,v 1.4 2021/06/26 05:31:16 kirby Exp $
-
 Index: cmake/WlFunctions.cmake
 --- cmake/WlFunctions.cmake.orig
 +++ cmake/WlFunctions.cmake

@@ -1,5 +1,3 @@
-$OpenBSD: patch-native_gameserver_cpp,v 1.2 2021/12/23 02:28:30 thfr Exp $
-
 stub EnableHeartbeats; changing function names and anyway not
 	implemented in goldberg_emulator
 GetPublicIP returns a struct; return its IPv4 member as int cast

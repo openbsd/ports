@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:46:24 sthen Exp $
-
 COMMENT=		wm-dockapp; xeyes clone using South Park characters
 
 DISTNAME=		speyes-1.2.0

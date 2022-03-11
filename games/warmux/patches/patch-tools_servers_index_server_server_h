@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_servers_index_server_server_h,v 1.1 2017/05/24 19:19:22 espie Exp $
-
 Index: tools/servers/index_server/server.h
 --- tools/servers/index_server/server.h.orig
 +++ tools/servers/index_server/server.h

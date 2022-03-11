@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_freeview_display_cpp,v 1.1 2018/04/16 07:35:27 jasper Exp $
-
 Index: src/freeview_display.cpp
 --- src/freeview_display.cpp.orig
 +++ src/freeview_display.cpp

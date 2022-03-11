@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
 DISTNAME=	xonix-1.4

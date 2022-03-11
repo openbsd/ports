@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/22 16:01:18 tracey Exp $
-
 COMMENT =	free clone of The New York Times game Spelling Bee
 DISTNAME =	freebee-2.0
 CATEGORIES =	games

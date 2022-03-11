@@ -1,5 +1,3 @@
-/* 	$OpenBSD: config_unix.h,v 1.1.1.1 2020/08/30 10:04:59 bentley Exp $ */
-
 /* This file contains some compile-time configuration options for *nix
  * systems.
  * config_unix.h is generated from config_unix.h.in by build.sh

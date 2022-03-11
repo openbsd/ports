@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:25 sthen Exp $
-
 COMMENT=	sudoku solver and creator
 
 DISTNAME=	sudognu-1.09

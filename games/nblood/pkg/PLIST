@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
 @bin bin/nblood
 @bin bin/pcexhumed
 @bin bin/rednukem

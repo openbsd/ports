@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/08/31 08:03:47 jasper Exp $
 bin/ztrack
 @man man/man6/ztrack.6

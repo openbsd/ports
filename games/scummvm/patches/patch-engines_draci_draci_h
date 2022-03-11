@@ -1,4 +1,3 @@
-$OpenBSD: patch-engines_draci_draci_h,v 1.2 2021/10/10 03:12:02 jsg Exp $
 Index: engines/draci/draci.h
 --- engines/draci/draci.h.orig
 +++ engines/draci/draci.h

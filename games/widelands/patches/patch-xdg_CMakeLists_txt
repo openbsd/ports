@@ -1,5 +1,3 @@
-$OpenBSD: patch-xdg_CMakeLists_txt,v 1.1 2021/06/26 05:31:16 kirby Exp $
-
 Index: xdg/CMakeLists.txt
 --- xdg/CMakeLists.txt.orig
 +++ xdg/CMakeLists.txt

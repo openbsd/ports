@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/16 14:43:12 thfr Exp $
-
 COMMENT =	QuakeWorld server
 
 GH_ACCOUNT =	deurk

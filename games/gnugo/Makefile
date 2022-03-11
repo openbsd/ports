@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/09/10 18:04:06 tb Exp $
-
 COMMENT =	GNU version of Go
 
 DISTNAME =	gnugo-3.8

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libutil_src_getExecutablePath_cpp,v 1.2 2020/08/15 20:30:56 rsadowski Exp $
-
 Still don't know why everyone wants this...
 
 Index: libutil/src/getExecutablePath.cpp

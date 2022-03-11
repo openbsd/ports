@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT=		skiing simulation game
 
 DISTNAME=		ski-6.13

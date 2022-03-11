@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/07/19 18:13:38 pascal Exp $
-
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}

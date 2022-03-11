@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_src_include_central_cpp,v 1.2 2018/04/16 11:15:49 bentley Exp $
-
 Index: setup/src/include/central.cpp
 --- setup/src/include/central.cpp.orig
 +++ setup/src/include/central.cpp

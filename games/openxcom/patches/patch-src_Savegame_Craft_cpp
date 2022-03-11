@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Savegame_Craft_cpp,v 1.1 2021/09/17 21:04:11 kirby Exp $
-
 Index: src/Savegame/Craft.cpp
 --- src/Savegame/Craft.cpp.orig
 +++ src/Savegame/Craft.cpp

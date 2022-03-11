@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/08/22 19:48:24 edd Exp $
 @bin bin/odalaunch
 @bin bin/odamex
 @bin bin/odasrv

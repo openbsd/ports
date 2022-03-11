@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/09/02 17:03:30 fcambus Exp $
 @bin bin/crawl-ss
 @man man/man6/crawl-ss.6
 share/crawl/

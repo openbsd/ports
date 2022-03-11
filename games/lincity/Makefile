@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/06 09:31:46 kirby Exp $
-
 COMMENT=		Rich city simulation game for X
 
 DISTNAME=		lincity-1.13.1

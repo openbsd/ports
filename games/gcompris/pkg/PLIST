@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.37 2022/01/21 08:25:21 ajacoutot Exp $
 bin/gcompris
 @bin bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/11 18:51:46 patrick Exp $
-
 # Avoid future EPOCH bumps.
 COMMENT =	open source reimplementation of Jedi Academy game
 DISTNAME =	openjk-0.0.0.20210505

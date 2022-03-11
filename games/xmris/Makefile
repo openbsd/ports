@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT=	Mr Do video arcade game for X11
 
 V=		4.04

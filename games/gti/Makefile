@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:19 sthen Exp $
-
 COMMENT =			just a silly git launcher, inspired by sl
 DISTNAME =			gti-1.2.0
 CATEGORIES =			games

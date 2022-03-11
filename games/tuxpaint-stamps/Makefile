@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/12/11 11:52:26 ajacoutot Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	rubber stamps collection for Tux Paint

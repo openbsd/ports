@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/27 09:13:39 cwen Exp $
-
 COMMENT =		dungeon-crawling action-RPG adventure
 
 DISTNAME =		egoboo-2.8.1

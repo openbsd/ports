@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui-wx_configure_configure,v 1.4 2019/01/02 12:43:19 jca Exp $
-
 Don't force -O2.
 
 Index: gui-wx/configure/configure

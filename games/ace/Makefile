@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/31 16:45:21 cwen Exp $
-
 COMMENT =		solitaire games
 
 DISTNAME =		ace-1.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/03 18:54:31 thfr Exp $
-
 ONLY_FOR_ARCHS =	${MONO_ARCHS}
 
 COMMENT =	additional libraries for running games with fnaify

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/03/05 04:48:39 kmos Exp $
-
 BROKEN-sparc64=	relocation truncated to fit: R_SPARC_GOT13 against symbol
 
 V =			2.52

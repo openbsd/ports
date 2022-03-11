@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_graphic_surface_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
 --- src/graphic/surface.cpp.orig	Tue Jul  5 16:31:24 2011
 +++ src/graphic/surface.cpp	Tue Jul  5 16:31:36 2011
 @@ -25,6 +25,7 @@

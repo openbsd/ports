@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: q2ded.rc,v 1.6 2020/07/09 21:10:21 awolk Exp $
 
 daemon="${TRUEPREFIX}/share/yquake2/q2ded"
 daemon_flags="+set busywait 0 +set dedicated 1"

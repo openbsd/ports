@@ -1,4 +1,3 @@
-$OpenBSD: patch-elifekam,v 1.1 2007/12/03 18:54:58 fgsch Exp $
 --- elifekam.orig	Wed May 23 19:57:45 2007
 +++ elifekam	Mon Dec  3 05:26:24 2007
 @@ -26,11 +26,11 @@ all: eboard nls-dicts

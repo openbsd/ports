@@ -1,5 +1,3 @@
-$OpenBSD: patch-Maelstrom-netd_c,v 1.1 2019/07/31 16:36:47 cwen Exp $
-
 ports-gcc: fix warnings of implicit built-in functions
 
 Index: Maelstrom-netd.c

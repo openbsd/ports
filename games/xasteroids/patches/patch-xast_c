@@ -1,4 +1,3 @@
-$OpenBSD: patch-xast_c,v 1.1 2017/04/19 15:41:56 espie Exp $
 --- xast.c.orig	Wed Apr 19 17:39:04 2017
 +++ xast.c	Wed Apr 19 17:40:03 2017
 @@ -282,6 +282,7 @@ blastpair(i, j)		/* Generate random velocity vector v.

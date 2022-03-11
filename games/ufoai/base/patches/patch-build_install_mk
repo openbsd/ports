@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_install_mk,v 1.2 2014/09/29 18:23:15 kirby Exp $
 --- build/install.mk.orig	Thu Jun  5 08:18:39 2014
 +++ build/install.mk	Tue Jul  1 19:44:03 2014
 @@ -58,7 +58,7 @@ sourcearchive:

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Constants_h,v 1.1.1.1 2017/12/26 20:14:34 awolk Exp $
-
 Set config, save, and hiscore files to path in ~/.local/share/witchblast
 
 Index: src/Constants.h

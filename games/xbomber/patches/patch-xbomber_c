@@ -1,4 +1,3 @@
-$OpenBSD: patch-xbomber_c,v 1.2 2007/03/23 11:43:19 jasper Exp $
 --- xbomber.c.orig	Sat Jun 20 04:09:35 1998
 +++ xbomber.c	Fri Mar 23 12:42:35 2007
 @@ -1599,7 +1599,7 @@ void setup(int argc, char * argv[])

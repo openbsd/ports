@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2016/08/12 08:36:25 jasper Exp $
-
 From 8dc14b86107d56b893fbaec765f9091a56e6d655 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 11 Aug 2016 13:37:51 +0200

@@ -1,5 +1,3 @@
-$OpenBSD: patch-stdafx_h,v 1.2 2021/02/26 18:20:33 naddy Exp $
-
 Fix include line.
 
 Index: stdafx.h

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/03/28 21:11:05 cwen Exp $
 @bin bin/an
 @man man/man6/an.6

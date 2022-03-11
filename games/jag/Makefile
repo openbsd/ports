@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/08/01 05:34:08 landry Exp $
 COMMENT =		arcade-puzzle game
 V =			0.3.7
 DISTNAME =		jag-${V}

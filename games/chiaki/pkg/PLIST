@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/03/31 20:40:11 stsp Exp $
 @bin bin/chiaki
 share/applications/
 share/applications/chiaki.desktop

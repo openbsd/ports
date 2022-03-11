@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_te4core_lua,v 1.3 2020/02/26 23:20:43 solene Exp $
-
 Remove hardcoded optimization level.
 
 Index: build/te4core.lua

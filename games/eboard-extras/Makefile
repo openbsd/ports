@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	eboard extra piece sets and sounds
 
 PKGNAME=	${DISTNAME}-0.1

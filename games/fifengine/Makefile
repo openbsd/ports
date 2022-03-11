@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:01:13 sthen Exp $
-
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-i386 =	out of memory when compiling fifePYTHON_wrap.cxx (not every time but most)

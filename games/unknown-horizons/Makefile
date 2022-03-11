@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT =	economic historical real-time strategy game
 
 MODPY_EGG_VERSION =	2019.1

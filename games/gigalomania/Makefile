@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/26 18:20:33 naddy Exp $
-
 COMMENT =	open source 2D real time strategy god game
 DISTNAME =	gigalomania-1.0.1
 CATEGORIES =	games x11

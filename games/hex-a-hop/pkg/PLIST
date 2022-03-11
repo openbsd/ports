@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/04 22:57:07 stsp Exp $
 @bin bin/hex-a-hop
 share/hex-a-hop/
 share/hex-a-hop/emi.dat

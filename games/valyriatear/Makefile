@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/09/19 05:24:30 rsadowski Exp $
-
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
 V =		1.1.0

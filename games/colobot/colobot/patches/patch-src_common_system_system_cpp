@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_system_system_cpp,v 1.2 2021/03/07 01:28:21 daniel Exp $
-
 Pull XDG directory code from system_linux.cpp.
 
 Index: src/common/system/system.cpp

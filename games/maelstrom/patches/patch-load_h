@@ -1,4 +1,3 @@
-$OpenBSD: patch-load_h,v 1.2 2018/04/09 16:35:38 jasper Exp $
 Index: load.h
 --- load.h.orig
 +++ load.h

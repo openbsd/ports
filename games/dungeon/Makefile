@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/20 16:44:23 naddy Exp $
-
 COMMENT =		text adventure game
 
 PKGNAME =		dungeon-2.7s

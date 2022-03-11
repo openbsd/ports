@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/03/20 16:44:23 naddy Exp $
-
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 VERSION=	2.6.2

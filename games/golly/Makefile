@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:23 sthen Exp $
-
 COMMENT =	game of life simulator
 
 PKGNAME =	golly-3.2

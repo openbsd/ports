@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/11/12 13:37:22 bcallah Exp $
 bin/fallingtime
 share/fallingtime/
 share/fallingtime/COPYRIGHT

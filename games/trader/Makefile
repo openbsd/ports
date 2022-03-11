@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/30 14:02:07 fcambus Exp $
-
 COMMENT =	simple text-based game of interstellar trading
 
 DISTNAME =	trader-7.16

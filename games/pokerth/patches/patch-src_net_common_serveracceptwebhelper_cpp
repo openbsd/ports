@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_net_common_serveracceptwebhelper_cpp,v 1.1 2021/03/18 19:52:47 rsadowski Exp $
-
 Fix build with newer Boost.
 
 Index: src/net/common/serveracceptwebhelper.cpp

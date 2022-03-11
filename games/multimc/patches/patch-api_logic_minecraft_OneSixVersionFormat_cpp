@@ -1,5 +1,3 @@
-$OpenBSD: patch-api_logic_minecraft_OneSixVersionFormat_cpp,v 1.1 2021/02/28 09:54:39 phessler Exp $
-
 Index: api/logic/minecraft/OneSixVersionFormat.cpp
 --- api/logic/minecraft/OneSixVersionFormat.cpp.orig
 +++ api/logic/minecraft/OneSixVersionFormat.cpp

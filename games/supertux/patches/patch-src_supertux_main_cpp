@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_supertux_main_cpp,v 1.4 2021/12/30 20:37:32 pascal Exp $
-
 fix datadir on OpenBSD
 
 Index: src/supertux/main.cpp

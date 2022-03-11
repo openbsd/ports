@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_typespeed_h,v 1.1 2021/02/08 23:16:49 cwen Exp $
-
 Fix -fno-common build failure.
 
 Index: src/typespeed.h

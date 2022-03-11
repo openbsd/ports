@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/24 01:41:02 daniel Exp $
-
 COMMENT =		pure Python chess library
 
 MODPY_EGG_VERSION =	1.8.0

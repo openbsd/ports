@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/10 01:33:11 bentley Exp $
 @bin bin/astromenace
 share/astromenace/
 share/astromenace/gamedata.vfs

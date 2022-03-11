@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/07/20 07:48:58 robert Exp $
 @bin bin/sdlpop
 share/doc/sdlpop/
 share/doc/sdlpop/Readme.txt

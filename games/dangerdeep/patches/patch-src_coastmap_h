@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_coastmap_h,v 1.2 2021/01/08 18:43:37 naddy Exp $
 Index: src/coastmap.h
 --- src/coastmap.h.orig
 +++ src/coastmap.h

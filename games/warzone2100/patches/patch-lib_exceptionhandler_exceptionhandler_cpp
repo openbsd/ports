@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_exceptionhandler_exceptionhandler_cpp,v 1.5 2021/12/31 14:28:31 pascal Exp $
-
 Index: lib/exceptionhandler/exceptionhandler.cpp
 --- lib/exceptionhandler/exceptionhandler.cpp.orig
 +++ lib/exceptionhandler/exceptionhandler.cpp

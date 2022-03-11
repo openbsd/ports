@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/02/02 11:36:34 sthen Exp $
-
 COMMENT=	gtk+ clone of the lines ball logic game
 
 GH_ACCOUNT =	emorozov

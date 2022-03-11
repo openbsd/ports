@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/04/25 14:31:51 espie Exp $
 share/fonts/
 @fontdir share/fonts/hack/
 share/fonts/hack/ibm.pcf.gz

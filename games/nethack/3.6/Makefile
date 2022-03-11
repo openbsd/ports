@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/16 08:45:02 espie Exp $
-
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.6.6
 # what we have compatible with

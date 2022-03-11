@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2022/01/27 06:08:19 kirby Exp $
-
 PORTROACH = 	limitw:1,even
 
 BROKEN-hppa =	missing atomic ops

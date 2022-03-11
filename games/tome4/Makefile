@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/29 16:28:31 espie Exp $
-
 # tome4 ships embedded copy of luajit wich is known to
 # work on the arches listed below.
 # Other arches will fail with

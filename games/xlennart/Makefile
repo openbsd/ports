@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT =		an XBill Modification
 GH_ACCOUNT =		Xylemon
 GH_PROJECT =		xlennart

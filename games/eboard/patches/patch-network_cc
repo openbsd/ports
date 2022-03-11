@@ -1,5 +1,3 @@
-$OpenBSD: patch-network_cc,v 1.3 2018/04/08 13:56:41 jasper Exp $
-
 error: invalid operands to binary expression ('__bind<int &, sockaddr *, unsigned long>' and 'int')
 
 Index: network.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/08 19:23:49 pascal Exp $
-
 V =		0.7.5
 COMMENT =	ridiculous shoot-em-up game
 DISTNAME =	mars_source_${V}

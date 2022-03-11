@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:23 sthen Exp $
-
 COMMENT =		visual novel engine
 
 V =			7.3.5

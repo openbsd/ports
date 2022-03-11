@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:25 sthen Exp $
-
 COMMENT=	tetrinet server
 
 DISTNAME=	tetrinetx-1.13.16+qirc-1.40c

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_mixer_h,v 1.1 2017/05/07 17:17:44 espie Exp $
 default constructor must be declared first.
 
 Index: src/mixer.h

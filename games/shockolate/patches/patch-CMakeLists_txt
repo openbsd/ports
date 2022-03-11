@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/10/18 13:39:44 thfr Exp $
-
 disable debug symbols (-g) for default build
 
 Index: CMakeLists.txt

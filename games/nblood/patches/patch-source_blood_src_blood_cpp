@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_blood_src_blood_cpp,v 1.5 2021/12/08 03:35:42 jsg Exp $
-
 store log file in ~/.config/nblood/
 
 Index: source/blood/src/blood.cpp

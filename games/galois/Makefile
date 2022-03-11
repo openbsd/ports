@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/10/26 22:55:40 cwen Exp $
-
 COMMENT =	free multi-dimensional Tetris-like game
 DISTNAME =	galois-0.6
 REVISION =	0

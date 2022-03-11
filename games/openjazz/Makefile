@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/08/09 13:33:37 bcallah Exp $
-
 COMMENT =	open-source version of the classic Jazz Jackrabbit games
 DISTNAME =	openjazz-20190120
 REVISION =	0

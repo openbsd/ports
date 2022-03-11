@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_compat_cpp,v 1.1 2018/04/28 18:08:24 bcallah Exp $
-
 Index: src/compat.cpp
 --- src/compat.cpp.orig
 +++ src/compat.cpp

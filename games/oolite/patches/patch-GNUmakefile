@@ -1,4 +1,3 @@
-$OpenBSD: patch-GNUmakefile,v 1.3 2013/06/04 15:41:19 naddy Exp $
 --- GNUmakefile.orig	Sun Aug 30 13:46:42 2009
 +++ GNUmakefile	Fri Jan 14 11:12:36 2011
 @@ -20,10 +20,11 @@ ifeq ($(GNUSTEP_HOST_OS),mingw32)

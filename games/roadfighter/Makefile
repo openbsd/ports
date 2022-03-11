@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/09/19 11:46:44 kirby Exp $
-
 COMMENT=	remake of Konami's Road Fighter
 
 DISTNAME=	roadfighter.src_1.0.1269

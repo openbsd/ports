@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/06/23 22:36:56 sthen Exp $
 @bin bin/dMagnetic
 @man man/man5/dMagneticini.5
 @man man/man6/dMagnetic.6

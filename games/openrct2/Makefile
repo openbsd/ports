@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/10/28 14:16:22 bcallah Exp $
-
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 

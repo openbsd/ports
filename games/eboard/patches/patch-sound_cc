@@ -1,4 +1,3 @@
-$OpenBSD: patch-sound_cc,v 1.7 2010/01/07 09:49:21 jakemsr Exp $
 --- sound.cc.orig	Wed May 23 11:57:45 2007
 +++ sound.cc	Sat Dec 26 04:11:49 2009
 @@ -46,14 +46,25 @@

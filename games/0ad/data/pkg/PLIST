@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/11/22 16:00:31 op Exp $
 share/0ad/
 share/0ad/config/
 share/0ad/config/default.cfg

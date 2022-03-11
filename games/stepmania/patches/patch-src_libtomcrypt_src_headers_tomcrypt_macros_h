@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_libtomcrypt_src_headers_tomcrypt_macros_h,v 1.1 2017/04/28 11:04:56 espie Exp $
 --- src/libtomcrypt/src/headers/tomcrypt_macros.h.orig	Fri Apr 28 12:47:29 2017
 +++ src/libtomcrypt/src/headers/tomcrypt_macros.h	Fri Apr 28 12:59:54 2017
 @@ -1,3 +1,8 @@

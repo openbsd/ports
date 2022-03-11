@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/05 22:58:10 bcallah Exp $
-
 V =		1.61
 COMMENT =	game of cute bunnies jumping on each other's heads
 DISTNAME =	jumpnbump-${V}

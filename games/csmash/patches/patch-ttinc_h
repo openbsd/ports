@@ -1,4 +1,3 @@
-$OpenBSD: patch-ttinc_h,v 1.2 2013/12/07 22:35:29 naddy Exp $
 --- ttinc.h.orig	Sun Aug 10 11:55:00 2003
 +++ ttinc.h	Fri Dec  6 21:04:59 2013
 @@ -174,7 +174,6 @@ enum mode  {GAME_5PTS, GAME_11PTS, GAME_21PTS};

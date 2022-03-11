@@ -1,5 +1,3 @@
-# $OpenBSD: x-config,v 1.3 2019/05/18 15:00:41 espie Exp $
-
 CFLAGS +=-DX11_GRAPHICS -I$(X11BASE)/include
 LFLAGS += -L$(X11BASE)/lib
 

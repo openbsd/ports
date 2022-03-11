@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_networking_lowlevel_packetmem_cpp,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
-
 http://sourceforge.net/p/vegastrike/code/13530/
 
 --- src/networking/lowlevel/packetmem.cpp.orig.port	Mon Aug 26 14:41:08 2013

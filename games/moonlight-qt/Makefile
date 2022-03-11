@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/15 11:14:16 rsadowski Exp $
-
 COMMENT =		open-source nvidia gamestream client
 
 V =			3.1.4

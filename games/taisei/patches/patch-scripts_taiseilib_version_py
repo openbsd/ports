@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_taiseilib_version_py,v 1.1 2020/02/08 11:04:15 cwen Exp $
-
 Index: scripts/taiseilib/version.py
 --- scripts/taiseilib/version.py.orig
 +++ scripts/taiseilib/version.py

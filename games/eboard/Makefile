@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	gtk+2 chess board interface
 
 DISTNAME=	eboard-1.1.1

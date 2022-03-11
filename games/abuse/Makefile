@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:46:14 sthen Exp $
-
 COMMENT =	SDL port of the legendary 2D platform shooter
 
 DISTNAME =	abuse-free-0.8

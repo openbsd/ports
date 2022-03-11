@@ -1,5 +1,3 @@
-$OpenBSD: patch-fonthandler_cpp,v 1.1 2018/04/15 20:32:47 bcallah Exp $
-
 clang6 fix
 
 Index: fonthandler.cpp

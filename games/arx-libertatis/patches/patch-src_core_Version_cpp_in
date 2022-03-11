@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_core_Version_cpp_in,v 1.1.1.1 2018/05/06 15:15:00 bcallah Exp $
-
 Remove blocks with uninitialized, and apparently otherwise unused variables
 const int tbg_version_id is needed during compilation, will try to set to 0
 

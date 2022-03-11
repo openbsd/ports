@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-server,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
 @bin bin/openarena-server

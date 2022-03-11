@@ -1,4 +1,3 @@
-$OpenBSD: patch-dic_header_cpp,v 1.1 2017/06/03 13:03:34 espie Exp $
 You can't take a ref to a vector<bool> element in a portable manner.
 
 Index: dic/header.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/09/09 19:52:02 jeremy Exp $
 include/liblcf/
 include/liblcf/command_codes.h
 include/liblcf/data.h

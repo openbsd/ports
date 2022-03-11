@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/08/31 07:30:29 ajacoutot Exp $
-
 COMMENT=		2D games framework for use with Lua
 
 V=			0.8.0

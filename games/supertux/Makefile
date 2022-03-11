@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/12/31 13:29:42 pascal Exp $
-
 COMMENT =		jump 'n' run game
 
 V =			0.6.3

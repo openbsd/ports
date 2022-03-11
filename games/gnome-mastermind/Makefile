@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/06/10 07:16:52 ajacoutot Exp $
-
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind

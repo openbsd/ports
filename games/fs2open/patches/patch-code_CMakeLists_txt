@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_CMakeLists_txt,v 1.2 2021/12/18 05:10:57 thfr Exp $
-
 correct capitalization for libSDL2
 
 Index: code/CMakeLists.txt

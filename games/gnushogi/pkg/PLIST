@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/09/21 14:35:23 jasper Exp $
 @bin bin/gnushogi
 @man man/man6/gnushogi.6
 share/doc/gnushogi/

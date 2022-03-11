@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/14 17:02:12 bcallah Exp $
-
 V =			2.1.20201204
 COMMENT =		port of the DOS shoot-em-up Tyrian
 DISTNAME =		opentyrian-${V}

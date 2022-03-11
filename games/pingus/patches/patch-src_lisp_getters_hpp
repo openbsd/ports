@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_lisp_getters_hpp,v 1.1 2017/05/26 18:09:15 espie Exp $
 don't get how this ever compiled. you can't convert a shared_ptr into a ptr
 without an explicit get.
 

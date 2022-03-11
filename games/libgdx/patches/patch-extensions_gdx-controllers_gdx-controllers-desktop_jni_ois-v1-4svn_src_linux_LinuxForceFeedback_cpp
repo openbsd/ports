@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_gdx-controllers_gdx-controllers-desktop_jni_ois-v1-4svn_src_linux_LinuxForceFeedback_cpp,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 stub all functions
 
 Index: extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxForceFeedback.cpp

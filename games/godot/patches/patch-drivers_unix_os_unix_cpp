@@ -1,5 +1,3 @@
-$OpenBSD: patch-drivers_unix_os_unix_cpp,v 1.7 2021/11/10 13:20:17 jca Exp $
-
 hardcode executable path
 
 Index: drivers/unix/os_unix.cpp

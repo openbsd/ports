@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_libgame_joystick_c,v 1.2 2017/01/04 20:59:16 benoit Exp $
 --- src/libgame/joystick.c.orig	Tue Oct 20 23:58:08 2015
 +++ src/libgame/joystick.c	Wed Jan  4 15:09:08 2017
 @@ -9,6 +9,8 @@

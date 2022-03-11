@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/26 18:20:34 naddy Exp $
-
 V =		4.7.0
 COMMENT =	chess database software
 DISTNAME =	scid-code-${V}

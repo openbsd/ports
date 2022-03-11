@@ -1,4 +1,3 @@
-$OpenBSD: patch-xlife_xlife_man,v 1.2 2015/03/21 21:28:27 naddy Exp $
 --- xlife/xlife.man.orig	Wed Jan 28 23:43:03 1998
 +++ xlife/xlife.man	Sat Mar 21 22:07:03 2015
 @@ -191,7 +191,7 @@ default) all live cells are displayed normally.  In di

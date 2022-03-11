@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/01 21:04:04 rsadowski Exp $
-
 COMMENT =		editor war arcade game
 
 DISTNAME =		wordwarvi-1.00

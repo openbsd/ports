@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:18 sthen Exp $
-
 COMMENT=		interactive game for young children
 
 DISTNAME=		gamine-1.6

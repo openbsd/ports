@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/18 22:57:25 sthen Exp $
-
 COMMENT=	clone of the Commodore 64 game paradroids
 
 GH_ACCOUNT=	ReinhardPrix

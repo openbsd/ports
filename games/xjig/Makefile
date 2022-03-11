@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	jigsaw puzzle game for X11
 
 DISTNAME=	xjig-2.4

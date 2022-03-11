@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	Oxyd/Rock'n'Roll clone
 
 V=		1.21

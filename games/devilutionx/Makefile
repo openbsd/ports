@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/25 22:26:02 sthen Exp $
-
 COMMENT =	open source engine recreation for Diablo 1 game
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	games x11

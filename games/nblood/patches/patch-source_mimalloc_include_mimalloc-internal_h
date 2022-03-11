@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_mimalloc_include_mimalloc-internal_h,v 1.1 2021/12/10 04:29:24 jsg Exp $
-
 backport a mimalloc commit to fix ilp32 build
 
 mimalloc 5b0e73281fd4d98b6f211cdd1b6b29453c3e420e

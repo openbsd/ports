@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:36 naddy Exp $
-
 COMMENT =	duke nukem 3d shareware game data
 PKGNAME =	duke3ddata-1.0
 CATEGORIES =	games

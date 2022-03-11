@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/01/05 10:23:15 benoit Exp $
 @bin bin/barrage
 share/applications/barrage.desktop
 share/barrage/

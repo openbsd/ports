@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:26 sthen Exp $
-
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT = 	fast-paced hollywood-tactical shooter: "fun over realism"

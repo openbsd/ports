@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/21 20:19:40 naddy Exp $
-
 COMMENT =		action puzzle game inspired by Robbo
 
 V =			0.68

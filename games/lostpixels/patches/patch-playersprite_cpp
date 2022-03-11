@@ -1,5 +1,3 @@
-$OpenBSD: patch-playersprite_cpp,v 1.1.1.1 2009/10/09 22:09:22 phessler Exp $
-
 These files are missing in the distribution, so do not use them.
 
 --- playersprite.cpp.orig	Sat Dec  6 21:51:55 2008

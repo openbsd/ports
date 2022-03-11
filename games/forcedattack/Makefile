@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:22 sthen Exp $
-
 COMMENT=	connect four of stones in a straight line
 
 V=		2.1.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	classic BSD4.4 cat-and-mouse
 
 DISTNAME=	xneko

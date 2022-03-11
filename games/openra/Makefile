@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/17 13:06:59 kn Exp $
-
 COMMENT =		open-source real-time strategy game engine
 V =			20210321
 REVISION =		0

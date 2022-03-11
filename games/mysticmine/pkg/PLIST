@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/17 18:20:35 daniel Exp $
 bin/MysticMine
 lib/python${MODPY_VERSION}/site-packages/MysticMine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/monorail/

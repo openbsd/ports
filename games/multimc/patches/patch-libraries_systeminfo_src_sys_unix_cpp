@@ -1,5 +1,3 @@
-$OpenBSD: patch-libraries_systeminfo_src_sys_unix_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
-
 Index: libraries/systeminfo/src/sys_unix.cpp
 --- libraries/systeminfo/src/sys_unix.cpp.orig
 +++ libraries/systeminfo/src/sys_unix.cpp

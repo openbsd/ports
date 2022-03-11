@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/18 07:47:20 semarie Exp $
-
 COMMENT =		infinite-world block sandbox game
 
 V =			5.5.0

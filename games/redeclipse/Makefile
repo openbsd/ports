@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/29 16:28:31 espie Exp $
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	redeclipse client

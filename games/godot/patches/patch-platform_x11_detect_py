@@ -1,5 +1,3 @@
-$OpenBSD: patch-platform_x11_detect_py,v 1.7 2021/11/10 13:20:17 jca Exp $
-
 remove hardcoded -O2, found by bcallah@. Add sndio
 
 Index: platform/x11/detect.py

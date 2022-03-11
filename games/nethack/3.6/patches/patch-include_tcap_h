@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_tcap_h,v 1.2 2019/05/18 15:00:41 espie Exp $
-
 Index: include/tcap.h
 --- include/tcap.h.orig
 +++ include/tcap.h

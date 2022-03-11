@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/12/24 22:10:05 sdk Exp $
-
 COMMENT=	graphical multiplayer 3D tank war game
 
 V=		2.4.22

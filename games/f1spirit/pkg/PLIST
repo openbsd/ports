@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:45 espie Exp $
 bin/f1spirit
 share/applications/f1spirit.desktop
 share/f1spirit/

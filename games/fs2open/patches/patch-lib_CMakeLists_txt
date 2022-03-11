@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.2 2021/12/18 05:10:57 thfr Exp $
-
 disable bundled SDL
 
 Index: lib/CMakeLists.txt

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_Linux,v 1.2 2017/04/19 23:07:53 espie Exp $
 --- Makefile.Linux.orig	Wed Jul 17 22:10:55 1996
 +++ Makefile.Linux	Fri Oct 26 23:07:06 2007
 @@ -1,11 +1,11 @@

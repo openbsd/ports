@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_vulkan-hpp_vulkan_vulkan_hpp,v 1.1 2021/12/18 05:10:57 thfr Exp $
-
 Index: lib/vulkan-hpp/vulkan/vulkan.hpp
 --- lib/vulkan-hpp/vulkan/vulkan.hpp.orig
 +++ lib/vulkan-hpp/vulkan/vulkan.hpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/07/16 15:46:10 naddy Exp $
-
 COMMENT=	burgertime clone for X
 
 DISTNAME =	burgerspace-1.9.4

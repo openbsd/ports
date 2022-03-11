@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/31 04:07:21 bcallah Exp $
-
 COMMENT =	2D RTS space combat game
 DISTNAME =	spacezero-0.86.00
 CATEGORIES =	games x11

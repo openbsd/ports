@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/15 07:22:35 kirby Exp $
-
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
 

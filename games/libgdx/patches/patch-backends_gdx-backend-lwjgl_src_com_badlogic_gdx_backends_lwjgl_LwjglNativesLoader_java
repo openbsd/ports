@@ -1,5 +1,3 @@
-$OpenBSD: patch-backends_gdx-backend-lwjgl_src_com_badlogic_gdx_backends_lwjgl_LwjglNativesLoader_java,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 hijack Linux codepath
 
 Index: backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/LwjglNativesLoader.java

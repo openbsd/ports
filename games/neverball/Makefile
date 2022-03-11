@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/29 16:28:30 espie Exp $
-
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
 BROKEN-hppa =	SIGILL on data/ball/snowglobe/snowglobe-inner.so

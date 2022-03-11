@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2021/01/03 16:42:30 bcallah Exp $
-
 No Makefile! Upstream says to execute
 cc -o inform *.c
 So let's make a simple Makefile

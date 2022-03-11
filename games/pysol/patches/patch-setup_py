@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.2 2018/04/01 09:34:06 landry Exp $
 Index: setup.py
 --- setup.py.orig
 +++ setup.py

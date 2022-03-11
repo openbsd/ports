@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:14 espie Exp $
 @bin bin/lugaru
 @man man/man6/lugaru.6
 share/appdata/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-client,v 1.2 2014/10/05 09:29:48 espie Exp $
 @pkgpath games/rftg
 bin/do_train
 @bin bin/rftg

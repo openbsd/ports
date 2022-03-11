@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/27 13:06:52 kirby Exp $
-
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1pl1
 REVISION=	2

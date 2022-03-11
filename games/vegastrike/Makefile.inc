@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2020/11/25 23:56:25 jca Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386
 BROKEN-i386 =		-engine depends on broken x11/ogre, other subports are useless without
 BROKEN =    		needs boost_python27, support for python3 is planned for 0.8.0

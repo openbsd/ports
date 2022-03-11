@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_game_md2_c,v 1.1 2021/03/27 09:13:39 cwen Exp $
-
 Fix the build on BE_ARCHS.
 
 Index: src/game/md2.c

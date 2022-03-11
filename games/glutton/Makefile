@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:42:15 sthen Exp $
-
 COMMENT= 	Pac-Man clone
 
 DISTNAME=	glutton-0.0.5

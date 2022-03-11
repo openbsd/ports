@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/03 20:23:40 sthen Exp $
-
 COMMENT=	displays the status of multi-player Internet Game servers
 
 GH_ACCOUNT=	multiplay

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/26 18:20:34 naddy Exp $
-
 COMMENT =		game based on the Sonic the Hedgehog universe
 
 V =			0.1.2

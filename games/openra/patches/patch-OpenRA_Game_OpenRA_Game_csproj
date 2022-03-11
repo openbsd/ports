@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Game_OpenRA_Game_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Game/OpenRA.Game.csproj
 --- OpenRA.Game/OpenRA.Game.csproj.orig
 +++ OpenRA.Game/OpenRA.Game.csproj

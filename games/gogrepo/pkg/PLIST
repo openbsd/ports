@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/10 11:15:03 thfr Exp $
 bin/gogrepo
 lib/python${MODPY_VERSION}/site-packages/gogrepo/
 lib/python${MODPY_VERSION}/site-packages/gogrepo/README.md

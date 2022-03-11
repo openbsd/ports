@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_Makefile_in,v 1.3 2018/06/12 06:07:29 bentley Exp $
-
 fix accidental inclusion of SDL_Mixer for wad creation
 
 Index: data/Makefile.in

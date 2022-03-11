@@ -1,4 +1,3 @@
-$OpenBSD: patch-sys_unix_Makefile_utl,v 1.1 2000/04/16 21:19:08 espie Exp $
 --- sys/unix/Makefile.utl.orig	Tue Dec 10 21:20:11 1996
 +++ sys/unix/Makefile.utl	Fri Apr 14 15:10:49 2000
 @@ -1,6 +1,7 @@

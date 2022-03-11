@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/29 22:16:13 espie Exp $
 @bin bin/tetzle
 @man man/man6/tetzle.6
 share/applications/tetzle.desktop

@@ -1,5 +1,3 @@
-$OpenBSD: patch-screen_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
-
 Index: screen.cpp
 --- screen.cpp.orig
 +++ screen.cpp

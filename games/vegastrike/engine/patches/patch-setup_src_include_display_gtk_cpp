@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_src_include_display_gtk_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
-
 Index: setup/src/include/display_gtk.cpp
 --- setup/src/include/display_gtk.cpp.orig
 +++ setup/src/include/display_gtk.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_input_h,v 1.1 2021/02/20 03:49:50 bcallah Exp $
-
 Fix -fno-common
 From Gentoo: https://github.com/gentoo/gentoo/pull/17532
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_displaywrapper_cpp,v 1.1 2020/08/01 05:34:08 landry Exp $
-
 Index: src/displaywrapper.cpp
 --- src/displaywrapper.cpp.orig
 +++ src/displaywrapper.cpp

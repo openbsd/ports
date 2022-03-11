@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/30 16:26:24 bcallah Exp $
-
 V =		1.7.0
 COMMENT =	open source re-implementation of Caesar III game engine
 DISTNAME =	julius-${V}

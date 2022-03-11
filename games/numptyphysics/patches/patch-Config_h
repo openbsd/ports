@@ -1,4 +1,3 @@
-$OpenBSD: patch-Config_h,v 1.5 2012/12/12 14:58:00 dcoppa Exp $
 --- Config.h.orig	Wed Dec  5 15:53:11 2012
 +++ Config.h	Thu Dec  6 15:12:55 2012
 @@ -59,7 +59,7 @@

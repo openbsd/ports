@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/07 01:28:21 daniel Exp $
-
 COMMENT =		programming-focused real-time strategy game
 
 DISTNAME =		colobot-$V

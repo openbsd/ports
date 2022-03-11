@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_editor_object_selector_cpp,v 1.1 2020/10/21 00:05:36 sthen Exp $
-
 Switched to boost::signals2
 
 Index: src/editor/object_selector.cpp

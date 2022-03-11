@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile,v 1.2 2018/04/08 19:15:41 bcallah Exp $
-
 Don't hardcode optimization flags.
 Proper includes.
 

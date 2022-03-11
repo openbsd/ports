@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_Modules_FindThreads_cmake,v 1.1 2020/10/04 11:38:59 solene Exp $
-
 OpenBSD threads lib is pthread
 
 Index: cmake/Modules/FindThreads.cmake

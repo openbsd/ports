@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Makefile_am,v 1.1 2001/10/05 16:17:13 lebel Exp $
 --- lib/Makefile.am.orig	Thu Jun 14 07:17:54 2001
 +++ lib/Makefile.am	Fri Oct  5 11:47:05 2001
 @@ -1,4 +1,4 @@

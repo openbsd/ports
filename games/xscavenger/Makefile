@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:46:28 sthen Exp $
-
 DISTNAME=	xscavenger-1.4.4
 REVISION =	3
 EXTRACT_SUFX=	.tgz

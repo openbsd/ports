@@ -1,5 +1,3 @@
-$OpenBSD: patch-renderer_qgl_h,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 include OpenBSD in definitions
 absolute path needed for gl.h?? and glx.h??
 - but that leads to problems down the line

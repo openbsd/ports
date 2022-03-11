@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libtomcrypt_src_headers_tomcrypt_cfg_h,v 1.2 2019/05/24 14:43:53 naddy Exp $
-
 Index: src/libtomcrypt/src/headers/tomcrypt_cfg.h
 --- src/libtomcrypt/src/headers/tomcrypt_cfg.h.orig
 +++ src/libtomcrypt/src/headers/tomcrypt_cfg.h

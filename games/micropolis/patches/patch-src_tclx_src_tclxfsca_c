@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tclx_src_tclxfsca_c,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/tclx/src/tclxfsca.c
 --- src/tclx/src/tclxfsca.c.orig
 +++ src/tclx/src/tclxfsca.c

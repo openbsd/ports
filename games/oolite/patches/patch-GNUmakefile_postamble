@@ -1,4 +1,3 @@
-$OpenBSD: patch-GNUmakefile_postamble,v 1.2 2021/02/26 18:20:33 naddy Exp $
 --- GNUmakefile.postamble.orig	Tue Mar 30 22:22:40 2010
 +++ GNUmakefile.postamble	Tue Mar 30 22:22:48 2010
 @@ -18,15 +18,15 @@ PROGDIR=$(OBJC_PROGRAM_NAME).app

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.en,v 1.1 2007/12/08 22:00:02 ajacoutot Exp $
 @pkgpath games/xscrabble
 lib/X11/app-defaults/XScrabble_en
 lib/X11/xscrabble/OSPD3.gz

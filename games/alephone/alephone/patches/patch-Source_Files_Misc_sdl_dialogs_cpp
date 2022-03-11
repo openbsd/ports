@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_Files_Misc_sdl_dialogs_cpp,v 1.2 2020/09/12 19:29:40 phessler Exp $
-
 Index: Source_Files/Misc/sdl_dialogs.cpp
 --- Source_Files/Misc/sdl_dialogs.cpp.orig
 +++ Source_Files/Misc/sdl_dialogs.cpp

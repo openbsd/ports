@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/29 16:28:30 espie Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
 BROKEN-i386 =		code/qcommon/vm_x86.c:(.text+0x18): undefined reference to `callMask'

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/24 22:03:45 landry Exp $
 @group games
 @mode 2711
 bin/Omega

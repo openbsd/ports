@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/10/31 22:46:00 benoit Exp $
 bin/freecol
 share/doc/freecol/
 share/doc/freecol/FreeCol.pdf

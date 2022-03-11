@@ -1,4 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2009/10/09 23:45:19 phessler Exp $
 --- CMakeLists.txt.orig	Sat Dec  6 21:51:54 2008
 +++ CMakeLists.txt	Sat Oct 10 01:19:48 2009
 @@ -19,7 +19,8 @@ endif(COMMAND cmake_policy)

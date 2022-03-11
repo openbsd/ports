@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:17 sthen Exp $
-
 COMMENT =		wonderful puzzle game
 V = 			1.0.1
 DISTNAME = 		fillets-ng-${V}

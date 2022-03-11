@@ -1,4 +1,3 @@
-$OpenBSD: patch-gui-wx_wxpython_cpp,v 1.2 2019/01/02 12:43:19 jca Exp $
 Index: gui-wx/wxpython.cpp
 --- gui-wx/wxpython.cpp.orig
 +++ gui-wx/wxpython.cpp

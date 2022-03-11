@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/07/12 20:53:08 pascal Exp $
-
 COMMENT =		data files for flightgear
 
 DISTNAME =		FlightGear-${V}-data

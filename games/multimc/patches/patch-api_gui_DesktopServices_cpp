@@ -1,5 +1,3 @@
-$OpenBSD: patch-api_gui_DesktopServices_cpp,v 1.1.1.1 2020/09/21 07:22:37 kmos Exp $
-
 Index: api/gui/DesktopServices.cpp
 --- api/gui/DesktopServices.cpp.orig
 +++ api/gui/DesktopServices.cpp

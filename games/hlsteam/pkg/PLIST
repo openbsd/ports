@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/27 18:35:30 thfr Exp $
 lib/steam.hdll

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tdm_update_libtdm_update_Util_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 add OpenBSD to ifdef
 stub CheckProcessFile which looks through procfs on Linux to see if
 thedarkmod or darkradiant are running. User should only run tdm_update

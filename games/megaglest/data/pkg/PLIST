@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:48 espie Exp $
 @conflict megaglest-<3.13.0
 share/appdata/
 share/appdata/megaglest.appdata.xml

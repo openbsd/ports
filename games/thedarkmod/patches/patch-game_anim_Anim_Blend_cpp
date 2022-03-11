@@ -1,5 +1,3 @@
-$OpenBSD: patch-game_anim_Anim_Blend_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 add OpenBSD, so that strcasecmp is used
 
 Index: game/anim/Anim_Blend.cpp

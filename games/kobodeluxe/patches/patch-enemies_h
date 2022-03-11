@@ -1,4 +1,3 @@
-$OpenBSD: patch-enemies_h,v 1.1 2014/09/02 09:33:53 espie Exp $
 --- enemies.h.orig	Tue Sep  2 11:24:48 2014
 +++ enemies.h	Tue Sep  2 11:25:10 2014
 @@ -72,6 +72,7 @@ extern const enemy_kind bombdeto;

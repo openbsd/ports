@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/19 14:18:25 bcallah Exp $
-
 V =		6.12.6
 COMMENT =	standard library for Inform 6 interactive fiction
 DISTNAME =	inform6lib-${V}

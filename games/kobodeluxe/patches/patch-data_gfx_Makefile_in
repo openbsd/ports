@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_gfx_Makefile_in,v 1.1 2007/12/05 10:49:24 ajacoutot Exp $
 --- data/gfx/Makefile.in.orig	Wed Dec  5 11:27:03 2007
 +++ data/gfx/Makefile.in	Wed Dec  5 11:27:50 2007
 @@ -179,7 +179,7 @@ target_cpu = @target_cpu@

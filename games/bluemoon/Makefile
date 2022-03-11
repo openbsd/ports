@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT =	console-based 52-card solitare game
 DISTNAME =	bluemoon-2.12
 CATEGORIES =	games

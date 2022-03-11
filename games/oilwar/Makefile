@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:46:21 sthen Exp $
-
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 DISTNAME=	OilWar-1.2.1
 PKGNAME=	${DISTNAME:L}

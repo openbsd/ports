@@ -1,5 +1,3 @@
-$OpenBSD: patch-libutil_src_System_cpp,v 1.1 2020/12/12 06:59:51 bcallah Exp $
-
 Fix build with newer Boost.
 
 Index: libutil/src/System.cpp

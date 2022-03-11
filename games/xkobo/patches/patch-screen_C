@@ -1,4 +1,3 @@
-$OpenBSD: patch-screen_C,v 1.2 2003/08/22 17:57:20 espie Exp $
 --- screen.C.orig	1996-03-13 17:34:38.000000000 +0100
 +++ screen.C	2003-08-22 19:48:09.000000000 +0200
 @@ -83,7 +83,7 @@ void _screen::title()

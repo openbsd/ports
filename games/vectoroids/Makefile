@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:21 sthen Exp $
-
 COMMENT=	vector-based, pretty, Asteroids clone
 
 VERSION=	1.1.0

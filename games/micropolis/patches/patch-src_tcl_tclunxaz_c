@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tcl_tclunxaz_c,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/tcl/tclunxaz.c
 --- src/tcl/tclunxaz.c.orig
 +++ src/tcl/tclunxaz.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Communicator_cxx,v 1.1 2018/04/10 06:59:58 jsg Exp $
-
 Fix build with clang 6.0.  From FreeBSD ports.
 
 Index: src/Communicator.cxx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT =		arcade game for one or two players
 
 V =			0.2.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-external_tinygettext_CMakeLists_txt,v 1.2 2017/04/18 16:28:50 pascal Exp $
 --- external/tinygettext/CMakeLists.txt.orig	Tue Apr 18 17:37:50 2017
 +++ external/tinygettext/CMakeLists.txt	Tue Apr 18 17:38:13 2017
 @@ -131,7 +131,6 @@ option(WERROR "Stops on first compiler warning in debu

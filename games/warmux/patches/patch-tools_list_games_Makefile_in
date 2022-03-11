@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_list_games_Makefile_in,v 1.1 2017/05/24 19:19:22 espie Exp $
-
 Index: tools/list_games/Makefile.in
 --- tools/list_games/Makefile.in.orig
 +++ tools/list_games/Makefile.in

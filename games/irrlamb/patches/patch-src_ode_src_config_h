@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ode_src_config_h,v 1.1 2021/12/30 22:13:47 pascal Exp $
-
 Index: src/ode/src/config.h
 --- src/ode/src/config.h.orig
 +++ src/ode/src/config.h

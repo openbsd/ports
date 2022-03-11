@@ -1,5 +1,3 @@
-$OpenBSD: patch-pokerth_server_pro,v 1.6 2018/11/05 21:32:48 rsadowski Exp $
-
 Index: pokerth_server.pro
 --- pokerth_server.pro.orig
 +++ pokerth_server.pro

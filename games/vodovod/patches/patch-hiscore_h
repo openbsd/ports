@@ -1,4 +1,3 @@
-$OpenBSD: patch-hiscore_h,v 1.1 2017/05/24 18:49:31 espie Exp $
 sort can't work without const on modern C++
 
 Index: hiscore.h

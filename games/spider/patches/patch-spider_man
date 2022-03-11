@@ -1,5 +1,3 @@
-$OpenBSD: patch-spider_man,v 1.2 2021/02/19 20:45:31 naddy Exp $
-
 Index: spider.man
 --- spider.man.orig
 +++ spider.man

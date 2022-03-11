@@ -1,5 +1,3 @@
-$OpenBSD: patch-cParticleSystem_cpp,v 1.1 2018/04/12 08:12:05 sthen Exp $
-
 Index: cParticleSystem.cpp
 --- cParticleSystem.cpp.orig
 +++ cParticleSystem.cpp

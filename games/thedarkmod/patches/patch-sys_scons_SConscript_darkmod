@@ -1,5 +1,3 @@
-$OpenBSD: patch-sys_scons_SConscript_darkmod,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 add libIL, libz, libavformat, libjpeg, libvorbisfile to linker and more
 remove libdl linking
 remove bundled libcurl.a from the build and more

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_misc_c,v 1.2 2021/02/08 23:16:49 cwen Exp $
-
 Hunk #1: Fix -fno-common build failure.
 Hunk #2: Use arc4random()
 

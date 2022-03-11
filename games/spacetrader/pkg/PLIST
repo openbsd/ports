@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/23 02:37:47 bcallah Exp $
 bin/spacetrader
 share/spacetrader/
 share/spacetrader/SpaceTrader.exe

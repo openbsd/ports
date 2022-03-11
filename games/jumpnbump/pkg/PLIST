@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/09/14 19:13:16 bcallah Exp $
 @bin bin/gobpack
 @bin bin/jnbpack
 @bin bin/jnbunpack

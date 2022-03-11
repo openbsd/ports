@@ -1,5 +1,3 @@
-$OpenBSD: patch-libraries_javacheck_CMakeLists_txt,v 1.1.1.1 2022/02/18 08:36:39 phessler Exp $
-
 Index: libraries/javacheck/CMakeLists.txt
 --- libraries/javacheck/CMakeLists.txt.orig
 +++ libraries/javacheck/CMakeLists.txt

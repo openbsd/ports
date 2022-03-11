@@ -1,5 +1,3 @@
-$OpenBSD: patch-c_stuff_fb_c_stuff_xs,v 1.1 2020/02/04 22:54:09 cwen Exp $
-
 Fix build with clang: it errors when functions are inside other
 functions.  Rename sqr(int) to prevent conflict with sqr(float).
 

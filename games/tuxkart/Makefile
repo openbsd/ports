@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/17 14:49:22 danj Exp $
-
 COMMENT =	tuxkart is a simple Go-Kart racing game.
 
 DISTNAME =	tuxkart-0.4.0

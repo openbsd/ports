@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_unixconf_h,v 1.2 2019/05/18 15:00:41 espie Exp $
-
 Index: include/unixconf.h
 --- include/unixconf.h.orig
 +++ include/unixconf.h

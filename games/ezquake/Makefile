@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/20 18:28:52 solene Exp $
-
 N =		ezquake
 V =		3.2.3
 COMMENT =	modern QuakeWorld client

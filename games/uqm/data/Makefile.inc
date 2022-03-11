@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2020/08/30 10:05:35 bentley Exp $
-
 EPOCH ?=		0# N.B. in RUN_DEPENDS
 CATEGORIES ?=		games x11
 

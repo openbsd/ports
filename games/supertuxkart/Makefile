@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/26 18:20:34 naddy Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		kart racing game with OSS mascots

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2001/02/07 08:30:33 wilfried Exp $
 --- Imakefile.orig	Fri Nov  5 01:43:09 1999
 +++ Imakefile	Tue Feb  6 14:50:44 2001
 @@ -8,4 +8,4 @@ LOCAL_LIBRARIES = $(XMULIB) $(XTOOLLIB) 

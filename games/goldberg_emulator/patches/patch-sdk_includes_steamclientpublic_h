@@ -1,5 +1,3 @@
-$OpenBSD: patch-sdk_includes_steamclientpublic_h,v 1.2 2021/12/23 02:19:28 thfr Exp $
-
 fix error on 32bit arches with size of ValvePackingSentinel_t
 
 Index: sdk_includes/steamclientpublic.h

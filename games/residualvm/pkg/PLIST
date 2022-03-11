@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/07/05 09:18:34 bentley Exp $
 @bin bin/residualvm
 @man man/man6/residualvm.6
 share/applications/residualvm.desktop

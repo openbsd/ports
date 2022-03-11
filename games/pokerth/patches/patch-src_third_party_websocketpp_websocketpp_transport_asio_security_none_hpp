@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_third_party_websocketpp_websocketpp_transport_asio_security_none_hpp,v 1.1 2020/11/01 01:10:35 daniel Exp $
-
 Fix for newer boost; from archlinux
 
 Index: src/third_party/websocketpp/websocketpp/transport/asio/security/none.hpp

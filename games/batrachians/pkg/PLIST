@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:44 espie Exp $
 @bin bin/batrachians
 @man man/man6/batrachians.6
 share/applications/batrachians.desktop

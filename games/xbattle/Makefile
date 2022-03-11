@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT=	concurrent multi-player battle strategy game
 
 DISTNAME=	xbattle-5.4.1

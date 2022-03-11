@@ -1,5 +1,3 @@
-$OpenBSD: patch-filemap_cpp,v 1.1 2018/04/09 16:43:50 jasper Exp $
-
 Index: filemap.cpp
 --- filemap.cpp.orig
 +++ filemap.cpp

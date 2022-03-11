@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/09/12 19:30:08 phessler Exp $
 bin/marathon
 share/alephone/
 share/alephone/Marathon/

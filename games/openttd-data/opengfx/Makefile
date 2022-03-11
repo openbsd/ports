@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/28 09:58:45 solene Exp $
-
 COMMENT =		graphics data for OpenTTD
 
 OPENTTD_PROJECT =	opengfx

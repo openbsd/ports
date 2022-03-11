@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/12/11 11:52:26 ajacoutot Exp $
 share/tuxpaint/stamps/animals/
 share/tuxpaint/stamps/animals/amphibians/
 share/tuxpaint/stamps/animals/amphibians/frog-1.png

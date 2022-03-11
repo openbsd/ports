@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/28 07:38:02 espie Exp $
-
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
 

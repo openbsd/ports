@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:24 sthen Exp $
-
 COMMENT =		overhead shooting game
 
 V = 			1.30

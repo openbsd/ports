@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_hex_puzzzle_cpp,v 1.1 2018/04/12 08:37:09 sthen Exp $
-
 Index: src/hex_puzzzle.cpp
 --- src/hex_puzzzle.cpp.orig
 +++ src/hex_puzzzle.cpp

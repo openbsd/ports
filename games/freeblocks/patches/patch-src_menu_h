@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_menu_h,v 1.1 2021/02/19 12:07:34 naddy Exp $
-
 Index: src/menu.h
 --- src/menu.h.orig
 +++ src/menu.h

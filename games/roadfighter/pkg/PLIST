@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:49 espie Exp $
 bin/roadfighter
 share/applications/roadfighter.desktop
 share/pixmaps/

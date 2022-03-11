@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/12/18 10:54:13 benoit Exp $
 @mode g+s
 @group games
 @bin bin/moon-buggy

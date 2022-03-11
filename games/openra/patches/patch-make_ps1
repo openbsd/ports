@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_ps1,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: make.ps1
 --- make.ps1.orig
 +++ make.ps1

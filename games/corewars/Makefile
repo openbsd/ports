@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/09/05 13:26:20 cwen Exp $
-
 COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13

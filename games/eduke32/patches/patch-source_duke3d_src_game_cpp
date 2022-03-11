@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_duke3d_src_game_cpp,v 1.3 2021/08/20 11:20:38 jsg Exp $
-
 store log file in ~/.config/eduke32/
 
 Index: source/duke3d/src/game.cpp

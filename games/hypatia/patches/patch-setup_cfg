@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_cfg,v 1.1 2015/11/07 02:20:01 sthen Exp $
-
 Partially revert 8e2554260, it adds a build dependency (setuptools-markdown)
 that we don't have yet.
 

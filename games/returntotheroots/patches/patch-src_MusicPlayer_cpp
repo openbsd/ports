@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_MusicPlayer_cpp,v 1.1 2020/08/15 20:30:56 rsadowski Exp $
-
 Index: src/MusicPlayer.cpp
 --- src/MusicPlayer.cpp.orig
 +++ src/MusicPlayer.cpp

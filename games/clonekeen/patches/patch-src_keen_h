@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_keen_h,v 1.1.1.1 2010/10/25 12:12:05 edd Exp $
 --- src/keen.h.orig	Sun Oct 24 22:28:25 2010
 +++ src/keen.h	Sun Oct 24 22:28:50 2010
 @@ -765,5 +765,8 @@ typedef struct stPlayer

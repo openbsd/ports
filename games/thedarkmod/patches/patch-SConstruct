@@ -1,5 +1,3 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 add some lib configuration
 add include dirs and lib dirs
 remove CPU arch from binary name

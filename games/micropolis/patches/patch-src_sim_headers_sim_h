@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_sim_headers_sim_h,v 1.5 2017/05/09 13:01:42 espie Exp $
 Index: src/sim/headers/sim.h
 --- src/sim/headers/sim.h.orig
 +++ src/sim/headers/sim.h

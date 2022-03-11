@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cmd_unit_generic_cpp,v 1.2 2017/06/01 11:29:12 espie Exp $
 Index: src/cmd/unit_generic.cpp
 --- src/cmd/unit_generic.cpp.orig
 +++ src/cmd/unit_generic.cpp

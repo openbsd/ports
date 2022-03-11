@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_Specials_NoSpecial_hpp,v 1.1 2018/04/30 05:06:09 bcallah Exp $
-
 Fix runtime crash
 
 Index: include/Specials/NoSpecial.hpp

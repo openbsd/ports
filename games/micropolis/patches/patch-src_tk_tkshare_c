@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tk_tkshare_c,v 1.2 2017/05/09 13:01:42 espie Exp $
-
 fix backwards memcpy
 Index: src/tk/tkshare.c
 --- src/tk/tkshare.c.orig

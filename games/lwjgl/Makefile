@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/19 21:29:07 kurt Exp $
-
 COMMENT=	lightweight game library for java
 
 V=		2.9.3

@@ -1,5 +1,3 @@
-$OpenBSD: patch-contrib_profiler_Profiler_h,v 1.1 2021/11/02 12:23:41 jca Exp $
-
 Add riscv64 support.
 XXX should probably be reversed to only use rdtsc() where available.
 

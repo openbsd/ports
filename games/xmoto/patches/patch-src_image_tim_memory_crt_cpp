@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_image_tim_memory_crt_cpp,v 1.2 2020/07/26 08:54:47 kirby Exp $
-
 Replace the malloc.h header with stdlib.h.
 
 Index: src/image/tim_memory_crt.cpp

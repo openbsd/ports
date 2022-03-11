@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Color_cs,v 1.1 2021/02/24 22:29:43 thfr Exp $
-
 work around Axiom Verge spec violation
 https://gist.github.com/flibitijibibo/ffdd7c6fe32b9846a83807dab24be8fd
 

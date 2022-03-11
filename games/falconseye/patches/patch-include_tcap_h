@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_tcap_h,v 1.1 2015/03/27 10:56:15 tobiasu Exp $
 --- include/tcap.h.orig	Wed Mar 25 00:52:16 2015
 +++ include/tcap.h	Wed Mar 25 00:52:30 2015
 @@ -44,7 +44,7 @@ extern struct tc_lcl_data {   /* defined and set up in

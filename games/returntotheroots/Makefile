@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/09 19:50:08 sthen Exp $
-
 BROKEN =	needs updating for new Boost
 
 V =		0.8.2.20180924

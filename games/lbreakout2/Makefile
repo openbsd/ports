@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/02 16:16:55 benoit Exp $
-
 COMMENT =	breakout game with many levels, powerups, good graphics
 
 DISTNAME =	lbreakout2-2.6.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.13 2021/11/22 16:00:30 op Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386
 
 CATEGORIES = 		games

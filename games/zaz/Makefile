@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT =	Zuma-like arcade game
 DISTNAME =	zaz-1.0.0
 REVISION =	7

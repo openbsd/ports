@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_Files_Sound_SoundManager_cpp,v 1.2 2017/05/24 01:01:29 espie Exp $
-
 Directly include iostream for cerr (newer Boost versions no longer pull it in for us)
 upstream rev 5012
 

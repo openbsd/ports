@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_describe_cc,v 1.1 2018/11/25 21:06:38 naddy Exp $
-
 Index: source/describe.cc
 --- source/describe.cc.orig
 +++ source/describe.cc

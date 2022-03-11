@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_PrefsManager_cpp,v 1.2 2021/02/24 12:09:25 espie Exp $
-
 Fix for Clang 6.
 Handpicked from upstream commit 8660d49aae9e4e357d750ffd1dbb7ef850b2b76d.
 

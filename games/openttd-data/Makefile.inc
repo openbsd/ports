@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2021/03/02 04:20:18 bentley Exp $
-
 NOT_FOR_ARCHS ?=	hppa
 
 DISTNAME ?=	${OPENTTD_PROJECT}-$V-all

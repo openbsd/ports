@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_sdlport_setup_cpp,v 1.2 2012/04/06 13:46:11 sthen Exp $
 --- src/sdlport/setup.cpp.orig	Tue Mar 13 14:59:10 2012
 +++ src/sdlport/setup.cpp	Tue Mar 13 14:59:29 2012
 @@ -100,7 +100,7 @@ void createRCFile( char *rcfile )

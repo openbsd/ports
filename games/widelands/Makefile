@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/06/26 05:31:16 kirby Exp $
-
 COMMENT =	economic and military simulation game
 
 GH_ACCOUNT = 	widelands

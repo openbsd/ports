@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:23 sthen Exp $
-
 COMMENT =	data files for vegastrike
 
 DISTNAME =	vegastrike-data-${V}

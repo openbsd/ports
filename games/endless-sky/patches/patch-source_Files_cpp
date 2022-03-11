@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_Files_cpp,v 1.1.1.1 2018/09/04 21:56:09 bcallah Exp $
-
 SDL_GetBasePath() doesn't work?
 Add OpenBSD and correct path search.
 

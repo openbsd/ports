@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_manual_html,v 1.3 2011/03/31 16:25:27 kili Exp $
-
 Just point to the upstream GPL.
 
 --- doc/manual.html.orig	Sat May  5 16:22:50 2007

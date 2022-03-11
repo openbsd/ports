@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_sim_w_keys_c,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/sim/w_keys.c
 --- src/sim/w_keys.c.orig
 +++ src/sim/w_keys.c

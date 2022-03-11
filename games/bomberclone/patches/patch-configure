@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2013/10/14 14:02:37 bcallah Exp $
 --- configure.orig	Sat Dec 11 17:17:10 2010
 +++ configure	Fri Oct 11 23:32:11 2013
 @@ -7671,7 +7671,7 @@ else

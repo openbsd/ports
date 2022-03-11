@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:13 espie Exp $
 @bin bin/peg-e
 @man man/man6/peg-e.6
 share/applications/peg-e.desktop

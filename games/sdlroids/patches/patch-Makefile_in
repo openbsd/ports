@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2007/12/05 13:46:56 ajacoutot Exp $
 --- Makefile.in.orig	Wed Mar 28 01:27:52 2001
 +++ Makefile.in	Wed Dec  5 14:20:03 2007
 @@ -434,9 +434,9 @@ maintainer-clean-generic clean mostlyclean distclean m

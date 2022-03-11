@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/08/25 07:30:30 ajacoutot Exp $
 bin/tetrinetx
 share/doc/tetrinetx/
 share/doc/tetrinetx/README

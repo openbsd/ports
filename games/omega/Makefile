@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	complex rogue-style game of dungeon exploration
 
 VERSION=	0.90.4

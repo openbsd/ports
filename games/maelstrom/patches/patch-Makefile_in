@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2008/06/04 16:23:33 phessler Exp $
 --- Makefile.in.orig	Sat Oct 19 21:19:42 2002
 +++ Makefile.in	Wed Jun  4 00:41:59 2008
 @@ -30,7 +30,7 @@ libdir = @libdir@

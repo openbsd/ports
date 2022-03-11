@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_libs_robottools_rthumandriver_cpp,v 1.2 2016/09/20 18:18:52 pascal Exp $
 --- src/libs/robottools/rthumandriver.cpp.orig	Mon Apr 18 17:37:11 2016
 +++ src/libs/robottools/rthumandriver.cpp	Tue Sep 20 01:28:40 2016
 @@ -1406,7 +1406,7 @@ static void common_drive(const int index, tCarElt* car

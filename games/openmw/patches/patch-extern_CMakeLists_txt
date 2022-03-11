@@ -1,5 +1,3 @@
-$OpenBSD: patch-extern_CMakeLists_txt,v 1.1 2022/01/01 12:35:09 pascal Exp $
-
 Index: extern/CMakeLists.txt
 --- extern/CMakeLists.txt.orig
 +++ extern/CMakeLists.txt

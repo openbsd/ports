@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/11 14:34:34 ajacoutot Exp $
 bin/angrydd
 @man man/man6/angrydd.6
 share/angrydd/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tclx_ucbsrc_makefile,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/tclx/ucbsrc/makefile
 --- src/tclx/ucbsrc/makefile.orig
 +++ src/tclx/ucbsrc/makefile

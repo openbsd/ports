@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_build_src_polymer_cpp,v 1.1 2021/12/08 05:46:25 jsg Exp $
-
 backport 864691defbc55453071050b5cc8408079a8f3199 to fix llvm 13 build
 engine: use inthash_t for _prprograminfo lookups instead of a 300MB array
 

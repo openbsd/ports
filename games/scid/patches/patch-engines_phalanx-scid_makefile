@@ -1,5 +1,3 @@
-$OpenBSD: patch-engines_phalanx-scid_makefile,v 1.2 2019/03/31 21:31:16 bcallah Exp $
-
 Don't hardcode CC or optimization flags.
 
 Index: engines/phalanx-scid/makefile

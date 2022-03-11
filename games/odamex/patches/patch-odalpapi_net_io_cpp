@@ -1,5 +1,3 @@
-$OpenBSD: patch-odalpapi_net_io_cpp,v 1.2 2021/08/22 19:48:24 edd Exp $
-
 AI_ALL isn't defined on OpenBSD.
 
 Index: odalpapi/net_io.cpp

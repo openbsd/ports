@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2012/05/11 21:38:29 jasper Exp $
 --- configure.orig	Fri Apr  6 20:17:02 2012
 +++ configure	Fri May 11 11:55:53 2012
 @@ -16443,7 +16443,7 @@ for ac_lib in '' vorbisfile; do

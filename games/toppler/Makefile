@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 21:02:21 sthen Exp $
-
 COMMENT=		Nebulous rewrite of Tower Toppler
 
 DISTNAME=		toppler-1.1.6

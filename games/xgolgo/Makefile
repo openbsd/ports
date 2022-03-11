@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:27 sthen Exp $
-#
-
 COMMENT=	watch what you are doing -- are you hostile
 
 DISTNAME=	xeyes-g

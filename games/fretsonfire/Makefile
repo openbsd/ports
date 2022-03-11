@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/14 01:02:27 daniel Exp $
-
 # This port is known to generate errors on (some) radeon cards.
 # Intel cards appear to work fine.
 

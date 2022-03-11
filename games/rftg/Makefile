@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/29 16:28:31 espie Exp $
-
 V = 0.9.4
 COMMENT-client = race for the galaxy card game
 COMMENT-server = race for the galaxy card game, game server

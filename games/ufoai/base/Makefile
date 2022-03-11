@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/26 20:23:26 thfr Exp $
-
 COMMENT-main =		squad-based tactical strategy game
 COMMENT-editor = 	UFO:AI map editor
 

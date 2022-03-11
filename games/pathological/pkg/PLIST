@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/10/06 22:52:47 xsa Exp $
 bin/pathological
 bin/write-highscores
 @man man/man6/pathological.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=	X11 version of the popular board game
 
 V=		2.12

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/06 01:43:28 bcallah Exp $
-
 V =			0.2.9
 P =			1.0
 COMMENT =		3D light cycle game

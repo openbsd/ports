@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile_inc,v 1.1.1.1 2020/05/25 16:08:41 solene Exp $
-
 Index: makefile.inc
 --- makefile.inc.orig
 +++ makefile.inc

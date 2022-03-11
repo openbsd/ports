@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.no_x11,v 1.1.1.1 2017/10/29 17:27:19 bcallah Exp $
 @bin bin/cataclysm
 @man man/man6/cataclysm.6

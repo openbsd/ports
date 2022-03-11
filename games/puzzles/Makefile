@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/30 07:14:21 landry Exp $
-
 COMMENT =	collection of puzzles games
 
 DISTNAME =	puzzles-20211021

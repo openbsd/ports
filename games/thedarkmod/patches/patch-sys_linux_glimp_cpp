@@ -1,5 +1,3 @@
-$OpenBSD: patch-sys_linux_glimp_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 include qgl_linked.h which contains qgl* macro/function defs
 
 Index: sys/linux/glimp.cpp

@@ -1,4 +1,3 @@
-$OpenBSD: patch-ja2config_h,v 1.1.1.1 2017/06/13 09:24:23 kirby Exp $
 --- ja2config.h.orig	Wed Sep 21 12:18:38 2016
 +++ ja2config.h	Wed Sep 21 12:18:57 2016
 @@ -1,3 +1,3 @@

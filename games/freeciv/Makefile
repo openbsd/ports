@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.126 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv

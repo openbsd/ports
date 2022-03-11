@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Mods_D2k_OpenRA_Mods_D2k_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Mods.D2k/OpenRA.Mods.D2k.csproj
 --- OpenRA.Mods.D2k/OpenRA.Mods.D2k.csproj.orig
 +++ OpenRA.Mods.D2k/OpenRA.Mods.D2k.csproj

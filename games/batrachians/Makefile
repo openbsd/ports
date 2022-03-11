@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/26 20:51:02 naddy Exp $
-
 COMMENT=	clone of the classic Frog Bog game
 
 DISTNAME =	batrachians-0.1.7

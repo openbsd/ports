@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/29 16:28:31 espie Exp $
-
 BROKEN =		failure on startup
 
 ONLY_FOR_ARCHS =	amd64 i386

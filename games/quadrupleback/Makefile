@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/26 20:51:02 naddy Exp $
-
 COMMENT =		clone of Doubleback, an intruder circling game
 
 DISTNAME =		quadrupleback-0.1.1

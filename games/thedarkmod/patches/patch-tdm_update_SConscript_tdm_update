@@ -1,5 +1,3 @@
-$OpenBSD: patch-tdm_update_SConscript_tdm_update,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 remove librt linking
 remove bundled boost, curl etc libs
 don't add cpu arch to binary name

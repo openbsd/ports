@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/12/10 13:32:31 op Exp $
-
 # Requires OpenGL>=3.3, only usable on archs that support
 # modern video cards
 ONLY_FOR_ARCHS =		amd64 aarch64 i386

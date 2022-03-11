@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_flags_mk,v 1.3 2017/05/13 17:56:55 espie Exp $
 Index: build/flags.mk
 --- build/flags.mk.orig
 +++ build/flags.mk

@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_io_compression_h,v 1.2 2021/11/10 13:20:17 jca Exp $
-
 revert long-distance matching in zstd which is based on private functions and
 doesn't compile if archivers/zstd is installed
 this is a revert of pertinent parts of commit 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_Modules_InstallConfig_cmake,v 1.1 2021/02/07 18:59:13 bcallah Exp $
-
 Index: cmake/Modules/InstallConfig.cmake
 --- cmake/Modules/InstallConfig.cmake.orig
 +++ cmake/Modules/InstallConfig.cmake

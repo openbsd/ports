@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_tcap_h,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
 --- include/tcap.h.orig	Sat Mar 21 18:39:10 2015
 +++ include/tcap.h	Sat Mar 21 18:39:33 2015
 @@ -44,7 +44,7 @@ extern struct tc_lcl_data {   /* defined and set up in

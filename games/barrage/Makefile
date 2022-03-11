@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/01/05 10:23:15 benoit Exp $
-
 COMMENT=	kill and destroy as many targets as possible in 3 minutes
 
 DISTNAME =	barrage-1.0.5

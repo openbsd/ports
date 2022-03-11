@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/05/20 14:13:22 bcallah Exp $
-
 GAME =		tanglet
 COMMENT =	word finding game
 DISTNAME =	${GAME}-1.5.6-src

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
 DISTNAME=	crack-attack-1.1.14

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/07/16 15:46:10 naddy Exp $
 @bin bin/burgerspace
 @bin bin/burgerspace-server
 @man man/man6/burgerspace-server.6

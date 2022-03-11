@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:25 sthen Exp $
-
 COMMENT=	graphical tetris clone
 DISTNAME=	Tutris-1.0.1
 PKGNAME =	${DISTNAME:L}

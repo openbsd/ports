@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/13 07:30:15 bentley Exp $
-
 COMMENT =		sound effects data for OpenTTD
 
 OPENTTD_PROJECT =	opensfx

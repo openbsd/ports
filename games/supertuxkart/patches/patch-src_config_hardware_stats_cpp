@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_config_hardware_stats_cpp,v 1.1 2017/11/27 15:45:19 pascal Exp $
-
 Index: src/config/hardware_stats.cpp
 --- src/config/hardware_stats.cpp.orig
 +++ src/config/hardware_stats.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-codemp_server_sv_gameapi_cpp,v 1.2 2018/04/26 02:15:18 bcallah Exp $
-
 Index: codemp/server/sv_gameapi.cpp
 --- codemp/server/sv_gameapi.cpp.orig
 +++ codemp/server/sv_gameapi.cpp

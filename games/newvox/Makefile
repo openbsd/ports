@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	voxel-style landscape rendering fly-by
 
 DISTNAME=	newvox-1.0

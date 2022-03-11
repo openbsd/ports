@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_libutil_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
 --- source/libutil.cc.orig	Tue Oct 18 23:51:48 2005
 +++ source/libutil.cc	Tue Oct 18 23:51:54 2005
 @@ -11,6 +11,7 @@

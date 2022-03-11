@@ -1,5 +1,3 @@
-$OpenBSD: patch-sys_scons_SConscript_idlib,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 remove Frustum_gcc.cpp from build because of duplicate symbol error
 disable setting of -O1
 

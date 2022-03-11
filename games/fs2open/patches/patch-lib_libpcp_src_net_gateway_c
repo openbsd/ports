@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_libpcp_src_net_gateway_c,v 1.2 2021/12/18 05:10:57 thfr Exp $
-
 Index: lib/libpcp/src/net/gateway.c
 --- lib/libpcp/src/net/gateway.c.orig
 +++ lib/libpcp/src/net/gateway.c

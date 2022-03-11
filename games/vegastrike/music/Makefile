@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2016/05/07 12:40:57 pascal Exp $
-
 COMMENT =	music files for vegastrike
 
 DISTNAME =	vegastrike-music-${V}

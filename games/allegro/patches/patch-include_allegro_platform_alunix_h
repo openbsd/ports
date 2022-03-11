@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_allegro_platform_alunix_h,v 1.1 2010/04/26 02:56:30 jakemsr Exp $
 --- include/allegro/platform/alunix.h.orig	Fri Jun 15 18:52:28 2007
 +++ include/allegro/platform/alunix.h	Wed Jan 13 02:49:06 2010
 @@ -69,6 +69,8 @@ AL_VAR(TIMER_DRIVER, timerdrv_unix_sigalrm);

@@ -1,4 +1,3 @@
-$OpenBSD: patch-chessx_pro,v 1.2 2017/07/02 00:51:50 bcallah Exp $
 Use system quazip.
 Index: chessx.pro
 --- chessx.pro.orig

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.92 2022/01/28 12:27:36 jsg Exp $
-
 COMMENT=	graphical adventure game interpreter
 V=		2.5.1
 DISTNAME=	scummvm-${V}

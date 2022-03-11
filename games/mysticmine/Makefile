@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/14 01:02:27 daniel Exp $
-
 COMMENT =	one-button treasure collecting game
 
 MODPY_EGG_VERSION =	1.2.0

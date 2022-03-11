@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/12/01 12:55:25 kirby Exp $
 %%no_x11%%
 !%%no_x11%%
 share/cataclysm-dda/

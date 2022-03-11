@@ -1,4 +1,3 @@
-$OpenBSD: patch-gamectl_cpp,v 1.2 2007/12/05 10:49:24 ajacoutot Exp $
 --- gamectl.cpp.orig	Sun Oct 28 02:28:04 2007
 +++ gamectl.cpp	Wed Dec  5 11:23:44 2007
 @@ -38,7 +38,7 @@ int gamecontrol_t::dl;

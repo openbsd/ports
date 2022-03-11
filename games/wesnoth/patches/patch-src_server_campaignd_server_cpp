@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_server_campaignd_server_cpp,v 1.1 2021/11/01 20:39:39 kirby Exp $
-
 Index: src/server/campaignd/server.cpp
 --- src/server/campaignd/server.cpp.orig
 +++ src/server/campaignd/server.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:24 sthen Exp $
-
 V =		2.0.1
 COMMENT =	interstellar trading strategy game
 DISTNAME =	SpaceTraderSource${V:S/.//g}

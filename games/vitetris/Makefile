@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/23 13:10:08 sdk Exp $
-
 COMMENT =	terminal-based tetris clone in vein of nintendo tetris
 CATEGORIES =	games
 

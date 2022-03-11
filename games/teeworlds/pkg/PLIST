@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/19 07:22:09 sdk Exp $
 @bin bin/teeworlds
 @bin bin/teeworlds_srv
 share/teeworlds/

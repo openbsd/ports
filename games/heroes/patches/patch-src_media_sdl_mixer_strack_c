@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_media_sdl_mixer_strack_c,v 1.1 2009/01/25 01:30:17 jakemsr Exp $
 --- src/media/sdl_mixer/strack.c.orig	Sat Jan 24 05:05:16 2009
 +++ src/media/sdl_mixer/strack.c	Sat Jan 24 05:07:20 2009
 @@ -80,7 +80,7 @@ init_sound_engine (void)

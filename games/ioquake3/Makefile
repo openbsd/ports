@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/01/16 17:26:16 abieber Exp $
-
 BROKEN-i386=	need to free up a register
 ONLY_FOR_ARCHS= amd64 i386 macppc
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/05 15:32:06 cwen Exp $
 @bin bin/mj-player
 @bin bin/mj-server
 @bin bin/xmj

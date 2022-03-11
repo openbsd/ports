@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.9 2021/11/26 20:23:26 thfr Exp $
-
 # data package is useless without ufoai itself, which can only be
 # built on some arches.
 # Saves a useless 895MB package on other arches.

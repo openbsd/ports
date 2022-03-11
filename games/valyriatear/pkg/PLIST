@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/09/22 21:39:53 bcallah Exp $
 @conflict ValyriaTear-*
 @bin bin/valyriatear
 @man man/man6/valyriatear.6

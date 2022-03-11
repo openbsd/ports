@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/12/30 19:13:10 pascal Exp $
-
 COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
 BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'

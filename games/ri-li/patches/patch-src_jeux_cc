@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_jeux_cc,v 1.1 2017/05/24 18:37:43 espie Exp $
-
 Index: src/jeux.cc
 --- src/jeux.cc.orig
 +++ src/jeux.cc

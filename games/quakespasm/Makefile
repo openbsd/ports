@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/12/07 01:21:19 jsg Exp $
-
 COMMENT=	SDL Quake port
 CATEGORIES=	games
 DISTNAME=	quakespasm-0.94.3

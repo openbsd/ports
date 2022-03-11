@@ -1,5 +1,3 @@
-$OpenBSD: patch-globals_h,v 1.2 2021/02/19 20:45:31 naddy Exp $
-
 Index: globals.h
 --- globals.h.orig
 +++ globals.h

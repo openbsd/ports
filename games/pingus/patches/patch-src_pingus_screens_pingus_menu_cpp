@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_pingus_screens_pingus_menu_cpp,v 1.1 2017/05/26 18:09:15 espie Exp $
 C++11 avoidance of user-defined literals.
 
 Index: src/pingus/screens/pingus_menu.cpp

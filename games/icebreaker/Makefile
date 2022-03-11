@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	jezzball-style, penguin puzzle game
 
 DISTNAME=	icebreaker-1.2.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/19 14:18:25 bcallah Exp $
-
 COMMENT =	compiler for Inform 6 interactive fiction
 PKGNAME =	${DISTNAME:L}
 

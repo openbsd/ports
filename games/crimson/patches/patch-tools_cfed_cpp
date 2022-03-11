@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_cfed_cpp,v 1.1 2018/04/10 15:58:27 sthen Exp $
-
 Index: tools/cfed.cpp
 --- tools/cfed.cpp.orig
 +++ tools/cfed.cpp

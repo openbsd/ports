@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/04/05 13:01:54 jasper Exp $
-
 COMMENT =		puzzle game featuring dominoes
 
 DISTNAME =		pushover-0.0.5

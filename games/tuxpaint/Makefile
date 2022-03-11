@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/12/11 11:35:37 ajacoutot Exp $
-
 COMMENT=		drawing program for children
 
 DISTNAME=		tuxpaint-0.9.27

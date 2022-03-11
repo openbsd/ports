@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/10/10 03:02:34 jsg Exp $
 @bin bin/construct_mohawk
 @bin bin/create_sjisfnt
 @bin bin/decine

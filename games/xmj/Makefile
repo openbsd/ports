@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/05 15:32:06 cwen Exp $
-
 COMMENT=	Mahjongg game for X11
 
 DISTNAME=	mj-1.16-src

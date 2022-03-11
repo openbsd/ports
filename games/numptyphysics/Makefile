@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/11/29 16:28:30 espie Exp $
-
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 

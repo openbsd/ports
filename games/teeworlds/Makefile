@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/10/19 07:22:08 sdk Exp $
-
 COMMENT=	platform game featuring buggers equipped with weapons
 
 V=		0.7.5

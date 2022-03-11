@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/14 01:02:27 daniel Exp $
-
 COMMENT=	falling blocks puzzle game
 
 DISTNAME=	angrydd-1.0.1

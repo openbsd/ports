@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/12/12 10:45:45 ajacoutot Exp $
-
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
 

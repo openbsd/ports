@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/22 05:36:38 kirby Exp $
-
 COMMENT =	ur-quan masters: remix music pack
 
 V =		0.8.0

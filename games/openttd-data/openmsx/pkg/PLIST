@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/04/13 07:30:15 bentley Exp $
 @conflict openttd-<1.7.0
 share/openttd/
 share/openttd/gm/

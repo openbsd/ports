@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/05 15:32:28 kmos Exp $
-
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
 COMMENT=	Yamagi Quake II

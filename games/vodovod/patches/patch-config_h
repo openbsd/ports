@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_h,v 1.2 2007/07/07 10:40:48 simon Exp $
 --- config.h.orig	Sun Jun  3 13:09:24 2007
 +++ config.h	Thu Jul  5 22:19:12 2007
 @@ -27,6 +27,15 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 

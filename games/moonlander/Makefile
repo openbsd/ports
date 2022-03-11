@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/08/28 09:07:11 cwen Exp $
-
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
 PKGNAME=	moonlander-1.0

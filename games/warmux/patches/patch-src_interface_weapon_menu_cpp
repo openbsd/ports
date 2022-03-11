@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_interface_weapon_menu_cpp,v 1.1 2018/04/16 00:06:19 bluhm Exp $
-
 Index: src/interface/weapon_menu.cpp
 --- src/interface/weapon_menu.cpp.orig
 +++ src/interface/weapon_menu.cpp

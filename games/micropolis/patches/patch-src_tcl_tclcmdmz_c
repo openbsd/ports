@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tcl_tclcmdmz_c,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/tcl/tclcmdmz.c
 --- src/tcl/tclcmdmz.c.orig
 +++ src/tcl/tclcmdmz.c

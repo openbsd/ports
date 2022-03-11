@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:20 sthen Exp $
-
 V =		4.10.0
 COMMENT =	politics and government game with liberal bias
 DISTNAME =	liberalcrimesquad-${V}{v${V}}

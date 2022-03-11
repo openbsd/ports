@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/07/14 12:54:35 bket Exp $
-
 COMMENT=	chess program
 
 DISTNAME=	gnuchess-6.2.9

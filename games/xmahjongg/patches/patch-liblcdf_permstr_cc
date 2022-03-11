@@ -1,5 +1,3 @@
-$OpenBSD: patch-liblcdf_permstr_cc,v 1.1 2021/09/10 16:41:24 tb Exp $
-
 Index: liblcdf/permstr.cc
 --- liblcdf/permstr.cc.orig
 +++ liblcdf/permstr.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/01/31 16:40:35 cwen Exp $
-
 COMMENT=	shoot them nasty little bugs
 
 DISTNAME=	xinvaders-2.1.1

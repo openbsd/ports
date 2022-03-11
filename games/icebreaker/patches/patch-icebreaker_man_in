@@ -1,4 +1,3 @@
-$OpenBSD: patch-icebreaker_man_in,v 1.1 2001/08/15 17:22:57 pvalchev Exp $
 --- icebreaker.man.in.orig	Sun Jul 29 19:37:56 2001
 +++ icebreaker.man.in	Wed Aug 15 11:18:22 2001
 @@ -33,7 +33,7 @@ None in current version; in the future t

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/16 17:14:38 bcallah Exp $
-
 # Upstream does not want to support big endian.
 # See: https://github.com/nesbox/TIC-80/pull/1057/
 NOT_FOR_ARCHS =	${BE_ARCHS}

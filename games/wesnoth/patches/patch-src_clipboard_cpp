@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_clipboard_cpp,v 1.7 2021/11/01 20:39:39 kirby Exp $
 Index: src/desktop/clipboard.cpp
 --- src/desktop/clipboard.cpp.orig
 +++ src/desktop/clipboard.cpp

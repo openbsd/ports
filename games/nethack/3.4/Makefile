@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/15 04:21:49 rsadowski Exp $
-
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V

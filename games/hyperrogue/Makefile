@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/03 19:41:43 bcallah Exp $
-
 V =		12.0f
 COMMENT =	roguelike game in a non-Euclidean world
 CATEGORIES =	games x11

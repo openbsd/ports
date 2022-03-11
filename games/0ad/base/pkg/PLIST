@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/11/22 16:00:31 op Exp $
 bin/0ad
 @bin bin/pyrogenesis
 @so lib/libCollada.so

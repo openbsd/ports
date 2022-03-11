@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/14 19:07:11 bket Exp $
-
 COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-3.22.0

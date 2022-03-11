@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/30 04:46:05 bcallah Exp $
-
 V =		14.1
 COMMENT =	open source chess engine
 PKGNAME =	stockfish-${V}

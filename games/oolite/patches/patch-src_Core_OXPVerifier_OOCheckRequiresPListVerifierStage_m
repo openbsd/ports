@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Core_OXPVerifier_OOCheckRequiresPListVerifierStage_m,v 1.2 2021/02/26 18:20:33 naddy Exp $
 --- src/Core/OXPVerifier/OOCheckRequiresPListVerifierStage.m.orig	Wed Mar 31 21:55:41 2010
 +++ src/Core/OXPVerifier/OOCheckRequiresPListVerifierStage.m	Wed Mar 31 21:56:38 2010
 @@ -114,7 +114,7 @@ static NSString * const kStageName	= @"Checking requir

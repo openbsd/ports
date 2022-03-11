@@ -1,5 +1,3 @@
-$OpenBSD: patch-sound_snd_system_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 fix type for ALUint NULL -> 0
 
 Index: sound/snd_system.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
-
 ONLY_FOR_ARCHS =	${LE_ARCHS}
 
 COMMENT =		game of lonely space and adventure

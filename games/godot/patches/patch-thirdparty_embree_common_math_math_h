@@ -1,5 +1,3 @@
-$OpenBSD: patch-thirdparty_embree_common_math_math_h,v 1.2 2021/11/10 13:20:17 jca Exp $
-
 add an implementation for max for long (ssize_t are long typedef'ed).
 Otherwise it will fail in parallel_partition.h:185 due to an ambiguous
 call.

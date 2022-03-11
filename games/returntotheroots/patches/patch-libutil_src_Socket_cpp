@@ -1,5 +1,3 @@
-$OpenBSD: patch-libutil_src_Socket_cpp,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
-
 Index: libutil/src/Socket.cpp
 --- libutil/src/Socket.cpp.orig
 +++ libutil/src/Socket.cpp

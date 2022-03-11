@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_glew_h,v 1.2 2020/02/26 23:20:43 solene Exp $
-
 Cope with Mesa >= 18.2.5 which has newer OpenGL headers from Khronos which
 change the include guards.
 

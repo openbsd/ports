@@ -1,5 +1,3 @@
-$OpenBSD: patch-tdm_update_SConstruct,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 add include dir
 remove __linux__ define, librt, lib32 mentions
 add boost libs to linker

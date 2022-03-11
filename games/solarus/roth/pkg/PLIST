@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/05 18:48:16 jasper Exp $
 bin/zelda_roth_se
 share/solarus/
 share/solarus/zelda_roth_se/

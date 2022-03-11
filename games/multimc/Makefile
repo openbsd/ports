@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/12/01 23:07:12 jca Exp $
-
 COMMENT =		free and open-source launcher for Minecraft
 
 # git clone --recurse-submodules -b 0.6.12 https://github.com/MultiMC/MultiMC5

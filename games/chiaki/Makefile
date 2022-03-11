@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =	open source PS4 and PS5 remote play client
 
 V =		v2.1.1

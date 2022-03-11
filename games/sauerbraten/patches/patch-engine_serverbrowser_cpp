@@ -1,4 +1,3 @@
-$OpenBSD: patch-engine_serverbrowser_cpp,v 1.2 2021/02/16 00:25:37 jsg Exp $
 Index: engine/serverbrowser.cpp
 --- engine/serverbrowser.cpp.orig
 +++ engine/serverbrowser.cpp

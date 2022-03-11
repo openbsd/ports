@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_darkplaces_makefile_inc,v 1.1.1.1 2018/12/05 15:53:53 kn Exp $
 Index: source/darkplaces/makefile.inc
 --- source/darkplaces/makefile.inc.orig
 +++ source/darkplaces/makefile.inc

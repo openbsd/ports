@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui-wx_configure_Makefile_in,v 1.3 2019/01/16 14:53:53 sthen Exp $
-
 unbreak ld.bfd arches using libc++;
 
 /usr/bin/../lib/libc++abi.so.0.1: undefined reference to `pthread_rwlock_rdlock'                                     

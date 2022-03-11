@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2017/06/01 11:29:12 espie Exp $
 Bogus python lib, doesn't link too well with clang.
 
 

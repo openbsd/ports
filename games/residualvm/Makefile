@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:46:23 sthen Exp $
-
 COMMENT =		interpreter for some LucasArts 3D games
 
 V =			0.3.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/21 19:50:32 kmos Exp $
-
 MODPY_EGG_VERSION =	0.9.2
 COMMENT =	sprite animation module for pygame
 DISTNAME =	Pyganim-${MODPY_EGG_VERSION}

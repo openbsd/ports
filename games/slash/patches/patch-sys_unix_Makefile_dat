@@ -1,4 +1,3 @@
-$OpenBSD: patch-sys_unix_Makefile_dat,v 1.1 2000/04/16 21:19:07 espie Exp $
 --- sys/unix/Makefile.dat.orig	Fri Apr 14 15:10:48 2000
 +++ sys/unix/Makefile.dat	Fri Apr 14 15:10:49 2000
 @@ -52,7 +52,7 @@ spec_levs: ../util/lev_comp \

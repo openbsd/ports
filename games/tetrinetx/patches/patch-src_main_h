@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_main_h,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
 --- src/main.h.orig	Sun Apr 29 21:00:28 2001
 +++ src/main.h	Thu Sep  6 09:41:35 2007
 @@ -47,7 +47,11 @@

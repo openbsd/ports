@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_pingus_screens_demo_session_cpp,v 1.1 2019/05/17 19:14:08 cwen Exp $
-
 Add missing header for ports-gcc
 
 Index: src/pingus/screens/demo_session.cpp

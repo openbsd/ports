@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_gdx-controllers_gdx-controllers-desktop_jni_build-linux64_xml,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 shamelessly abuse build-linux64.xml to build on/for OpenBSD
 at the moment this allows building, but doesn't allow controller use
 

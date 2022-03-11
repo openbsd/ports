@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_make-imglib_c,v 1.2 2017/05/01 20:48:55 espie Exp $
 Index: lib/make-imglib.c
 --- lib/make-imglib.c.orig
 +++ lib/make-imglib.c

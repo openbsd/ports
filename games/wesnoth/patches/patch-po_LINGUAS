@@ -1,4 +1,3 @@
-$OpenBSD: patch-po_LINGUAS,v 1.6 2022/01/27 06:08:19 kirby Exp $
 Index: po/LINGUAS
 --- po/LINGUAS.orig
 +++ po/LINGUAS

@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Mods_Cnc_OpenRA_Mods_Cnc_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj
 --- OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj.orig
 +++ OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_pingus_pingus_level_hpp,v 1.1 2017/05/26 18:09:15 espie Exp $
-
 Index: src/pingus/pingus_level.hpp
 --- src/pingus/pingus_level.hpp.orig
 +++ src/pingus/pingus_level.hpp

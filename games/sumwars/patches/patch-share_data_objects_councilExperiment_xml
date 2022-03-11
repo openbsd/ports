@@ -1,5 +1,3 @@
-$OpenBSD: patch-share_data_objects_councilExperiment_xml,v 1.1 2018/01/09 21:02:36 schwarze Exp $
-
 math.mod was renamed to math.fmod in Lua 5.1
 
 Index: share/data/objects/councilExperiment.xml

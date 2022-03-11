@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/26 02:56:30 jakemsr Exp $
 bin/allegro-config
 @bin bin/colormap
 @bin bin/dat

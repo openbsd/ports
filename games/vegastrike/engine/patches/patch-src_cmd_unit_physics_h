@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cmd_unit_physics_h,v 1.2 2021/02/26 18:20:34 naddy Exp $
-
 Index: src/cmd/unit_physics.h
 --- src/cmd/unit_physics.h.orig
 +++ src/cmd/unit_physics.h

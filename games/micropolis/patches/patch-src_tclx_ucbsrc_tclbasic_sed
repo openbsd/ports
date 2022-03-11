@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tclx_ucbsrc_tclbasic_sed,v 1.2 2017/05/09 13:01:42 espie Exp $
 Index: src/tclx/ucbsrc/tclbasic.sed
 --- src/tclx/ucbsrc/tclbasic.sed.orig
 +++ src/tclx/ucbsrc/tclbasic.sed

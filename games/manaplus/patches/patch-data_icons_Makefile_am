@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_icons_Makefile_am,v 1.3 2021/03/30 23:25:46 bcallah Exp $
 Index: data/icons/Makefile.am
 --- data/icons/Makefile.am.orig
 +++ data/icons/Makefile.am

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:25 sthen Exp $
-
 COMMENT =	Tetris and Pong played simultaneously on one playing field
 DISTNAME =	tong-1.3
 CATEGORIES =	games x11

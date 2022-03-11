@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/10/28 14:16:22 bcallah Exp $
-
 Don't try to execute git.
 Remove -Werror.
 

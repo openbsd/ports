@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:37 naddy Exp $
-
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	Urban Terror game data

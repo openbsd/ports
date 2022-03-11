@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/12/03 13:28:19 bcallah Exp $
-
 V =		0.60pl20190731
 COMMENT =	source port of Descent, a 6-degrees-of-freedom shooter
 DISTNAME =	dxx-rebirth_${V:S/0.60pl//g}-src

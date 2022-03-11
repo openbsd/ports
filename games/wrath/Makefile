@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/14 10:54:16 solene Exp $
-
 COMMENT =		client of wrath-darkplaces engine
 
 DISTNAME =		wrath-0.0.0.20210114

@@ -1,4 +1,3 @@
-#	$OpenBSD: Makefile,v 1.4 2019/07/14 00:39:36 naddy Exp $
 PKG_ARCH =		*
 
 COMMENT =		dark alternate version of the Marathon universe

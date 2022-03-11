@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_files_cc,v 1.1.1.1 2005/10/22 15:20:28 espie Exp $
 --- source/files.cc.orig	Sat Oct 22 16:03:22 2005
 +++ source/files.cc	Sat Oct 22 16:04:16 2005
 @@ -925,8 +925,13 @@ void save_game(bool leave_game)

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/01/19 10:57:56 sthen Exp $
 bin/wordsearch
 @man man/man6/wordsearch.6
 share/doc/wordsearch/

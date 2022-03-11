@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:25 sthen Exp $
-
 COMMENT=	Ouranos (Weather War) clone; multiplayer
 DISTNAME=	tornado-1.4
 CATEGORIES=	games

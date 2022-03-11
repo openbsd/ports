@@ -1,5 +1,3 @@
-$OpenBSD: patch-launch-game_sh,v 1.4 2021/10/17 13:06:59 kn Exp $
-
 - replace python script with realpath(1) call
 - fix argument parsing.
 - set OpenRA.exe path.

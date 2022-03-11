@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/19 01:50:29 kurt Exp $
-
 COMMENT =	brick shooter reflexion game
 
 GH_ACCOUNT=	X-Stranger

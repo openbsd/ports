@@ -1,5 +1,3 @@
-$OpenBSD: patch-thirdparty_embree_common_sys_sysinfo_cpp,v 1.2 2021/11/10 13:20:17 jca Exp $
-
 1. we don't seem to have pthread_getaffinity_np in pthread_np.h; use sysctl
    like macos and android then.
 2. just fake getExecutableFileName and get{Virtual,Resident}MemoryBytes

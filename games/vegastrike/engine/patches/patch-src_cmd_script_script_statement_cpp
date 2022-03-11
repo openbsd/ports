@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cmd_script_script_statement_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
 ludicrous "concatenation"
 
 Index: src/cmd/script/script_statement.cpp

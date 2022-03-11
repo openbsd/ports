@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_client_renderer_r_state_cpp,v 1.2 2017/06/15 19:37:04 kirby Exp $
-
 shut up clang errors
 upstream commit 8df1e514b0cef80f521ab5175288f82d640f40f0
 

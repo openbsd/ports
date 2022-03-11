@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:20 sthen Exp $
-
 COMMENT =	third-person rabbit combat action game
 
 DISTNAME =	lugaru-1.2

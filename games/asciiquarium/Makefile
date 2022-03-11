@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/14 21:55:21 fcambus Exp $
-
 COMMENT =	aquarium animation in ASCII art
 
 DISTNAME =	asciiquarium_1.1

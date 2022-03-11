@@ -1,4 +1,3 @@
-$OpenBSD: patch-effects_cpp,v 1.1 2017/05/24 18:49:31 espie Exp $
 needs a virtual destructor implementation
 
 Index: effects.cpp

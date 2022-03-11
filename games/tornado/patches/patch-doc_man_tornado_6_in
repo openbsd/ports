@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_man_tornado_6_in,v 1.1.1.1 2003/11/27 06:07:37 jolan Exp $
 --- doc/man/tornado.6.in.orig	2003-11-20 05:00:47.000000000 -0600
 +++ doc/man/tornado.6.in	2003-11-26 22:24:05.000000000 -0600
 @@ -92,9 +92,9 @@ PREFIX/man/man6/tornado.6

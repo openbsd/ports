@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:24 sthen Exp $
-
 COMMENT =	simple SDL joystick test application
 DISTNAME =	sdl-jstest-20180114
 REVISION =	0

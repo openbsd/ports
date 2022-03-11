@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_main_cpp,v 1.2 2017/05/08 20:13:47 kili Exp $
 Fix non-ascii locales
 --- src/main.cpp.orig
 +++ src/main.cpp

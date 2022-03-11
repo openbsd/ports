@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/11 06:56:42 ajacoutot Exp $
 @unexec rm -rf ${GAMEDIR}/save/*
 @group games
 bin/falconseye

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/15 16:47:31 naddy Exp $
-
 COMMENT=	essentially an Asteroids clone
 
 DISTNAME=	sdlroids-1.3.4

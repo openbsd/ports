@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:46:20 sthen Exp $
-
 COMMENT=	puzzle game resembling the arcade game Qix
 DISTNAME=	late-0.1.0
 REVISION=	5

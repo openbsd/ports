@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/28 21:11:05 cwen Exp $
-
 COMMENT=	fast anagram generator
 
 V=		1.2

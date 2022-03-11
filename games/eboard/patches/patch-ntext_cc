@@ -1,4 +1,3 @@
-$OpenBSD: patch-ntext_cc,v 1.1 2017/04/28 11:39:04 naddy Exp $
 --- ntext.cc.orig	Fri Feb 22 16:51:22 2008
 +++ ntext.cc	Fri Apr 28 13:19:18 2017
 @@ -237,7 +237,7 @@ void NText::setBG(int c) {

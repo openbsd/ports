@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_cpp,v 1.3 2017/05/24 18:49:31 espie Exp $
-
 Index: config.cpp
 --- config.cpp.orig
 +++ config.cpp

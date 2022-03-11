@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_x_xdga2_c,v 1.1 2010/04/26 02:56:30 jakemsr Exp $
 --- src/x/xdga2.c.orig	Wed Jan 13 04:02:59 2010
 +++ src/x/xdga2.c	Wed Jan 13 04:13:31 2010
 @@ -49,7 +49,7 @@ static void _xdga2_set_palette_range(AL_CONST PALETTE 

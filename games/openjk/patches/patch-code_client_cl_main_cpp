@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_client_cl_main_cpp,v 1.2 2018/04/26 02:15:18 bcallah Exp $
-
 Index: code/client/cl_main.cpp
 --- code/client/cl_main.cpp.orig
 +++ code/client/cl_main.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/11/12 13:37:22 bcallah Exp $
-
 COMMENT =	game where you are a constantly falling ball
 PKGNAME =	fallingtime-${GH_TAGNAME}
 CATEGORIES =	games x11

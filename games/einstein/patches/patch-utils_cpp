@@ -1,4 +1,3 @@
-$OpenBSD: patch-utils_cpp,v 1.3 2018/04/11 12:30:41 sthen Exp $
 Index: utils.cpp
 --- utils.cpp.orig
 +++ utils.cpp

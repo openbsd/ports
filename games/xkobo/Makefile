@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT =	multi-way scrolling shoot'em up for X11, addictive
 #'
 

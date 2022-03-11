@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_environ_Makefile_in,v 1.1.1.1 2001/07/26 19:11:51 pvalchev Exp $
 --- data/environ/Makefile.in.orig	Thu Jun 21 17:09:29 2001
 +++ data/environ/Makefile.in	Thu Jul 26 12:17:12 2001
 @@ -69,7 +69,7 @@ inst_flag = @inst_flag@

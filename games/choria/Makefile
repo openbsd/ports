@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:46:15 sthen Exp $
-
 BROKEN-mips64el =	Bus error on startup, no core file left
 
 V =		0.4.1

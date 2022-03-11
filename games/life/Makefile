@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:20 sthen Exp $
-
 COMMENT=	SDL clone of the popular Game of Life
 
 DISTNAME=	life-1.0

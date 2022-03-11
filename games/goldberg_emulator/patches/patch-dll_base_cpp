@@ -1,5 +1,3 @@
-$OpenBSD: patch-dll_base_cpp,v 1.1.1.1 2021/08/22 02:01:47 thfr Exp $
-
 use getwd(3), realpath(3)
 return "." for get_lib_path
 

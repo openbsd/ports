@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:18 sthen Exp $
-
 COMMENT=	control a ribbon to avoid hitting walls
 
 V=		1.0

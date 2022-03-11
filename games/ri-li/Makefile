@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:23 sthen Exp $
-
 COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.1

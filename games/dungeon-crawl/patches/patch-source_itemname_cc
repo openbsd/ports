@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_itemname_cc,v 1.1 2018/04/09 16:45:05 jasper Exp $
-
 Index: source/itemname.cc
 --- source/itemname.cc.orig
 +++ source/itemname.cc

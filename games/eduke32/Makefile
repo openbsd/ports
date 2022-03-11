@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/12/08 05:46:25 jsg Exp $
-
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20210816
 RTAG =		9511-d032a9949

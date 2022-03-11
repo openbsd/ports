@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/16 13:43:21 fcambus Exp $
-
 COMMENT =	classic snake game on the terminal
 
 DISTNAME =	nsnake-3.0.1

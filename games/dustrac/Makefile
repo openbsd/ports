@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT =		traditional top-down car racing game
 
 PKGNAME =		dustrac-${GH_TAGNAME}

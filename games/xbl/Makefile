@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:26 sthen Exp $
-
 COMMENT=	3D block-dropping game
 
 DISTNAME=	xbl-1.1.5

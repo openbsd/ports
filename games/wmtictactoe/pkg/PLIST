@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/05 15:47:02 cwen Exp $
 @bin bin/wmtictactoe

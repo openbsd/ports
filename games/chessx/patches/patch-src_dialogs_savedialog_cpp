@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_dialogs_savedialog_cpp,v 1.1 2020/02/26 06:14:43 rsadowski Exp $
-
 Index: src/dialogs/savedialog.cpp
 --- src/dialogs/savedialog.cpp.orig
 +++ src/dialogs/savedialog.cpp

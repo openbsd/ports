@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	graphical networked AD&D style game
 
 VERSION=	1.71.0

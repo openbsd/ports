@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/26 18:20:33 naddy Exp $
-
 COMMENT =	NetHack derivative
 
 VERSION =	1.9.3

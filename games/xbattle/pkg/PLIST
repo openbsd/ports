@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:24 naddy Exp $
 @bin bin/xbattle
 @man man/man1/xbattle.1
 share/doc/xbattle/

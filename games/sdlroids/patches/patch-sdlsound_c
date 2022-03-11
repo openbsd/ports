@@ -1,4 +1,3 @@
-$OpenBSD: patch-sdlsound_c,v 1.1 2007/08/14 15:50:05 naddy Exp $
 --- sdlsound.c.orig	Wed Mar 28 01:03:07 2001
 +++ sdlsound.c	Mon Aug 13 22:04:43 2007
 @@ -204,11 +204,15 @@ static Mix_Chunk *samples[NUM_SAMPLES];

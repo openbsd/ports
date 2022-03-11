@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_arch_ArchHooks_ArchHooks_Unix_cpp,v 1.2 2021/02/24 12:09:25 espie Exp $
 Index: src/arch/ArchHooks/ArchHooks_Unix.cpp
 --- src/arch/ArchHooks/ArchHooks_Unix.cpp.orig
 +++ src/arch/ArchHooks/ArchHooks_Unix.cpp

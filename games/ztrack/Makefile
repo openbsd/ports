@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=		ncurses based pseudo-3D driving game
 
 DISTNAME=		ztrack-1.0

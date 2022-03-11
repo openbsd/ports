@@ -1,4 +1,3 @@
-$OpenBSD: patch-sys_share_unixtty_c,v 1.1 2015/03/27 11:04:28 tobiasu Exp $
 --- sys/share/unixtty.c.orig	Mon Mar 23 15:53:04 2015
 +++ sys/share/unixtty.c	Mon Mar 23 15:54:13 2015
 @@ -130,9 +130,9 @@ struct tchars inittyb2, curttyb2;

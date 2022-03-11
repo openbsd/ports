@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/30 07:56:55 landry Exp $
-
 V =		2.2
 COMMENT =	scrabble game
 DISTNAME =	eliot-${V}

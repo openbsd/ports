@@ -1,5 +1,3 @@
-$OpenBSD: patch-similar_main_mglobal_cpp,v 1.2 2019/08/16 15:21:38 thfr Exp $
-
 Always enable full template instantiation.
 
 Index: similar/main/mglobal.cpp

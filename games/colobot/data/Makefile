@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/07 01:28:21 daniel Exp $
-
 PKG_ARCH =		*
 
 COMMENT =		data files for colobot

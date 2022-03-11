@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/14 00:39:36 naddy Exp $
-
 COMMENT=	The Dungeons of Moria
 
 V=		5.5.2

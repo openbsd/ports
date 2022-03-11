@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/13 19:51:30 edd Exp $
-
 COMMENT =	online multiplayer doom
 
 V =		0.9.5

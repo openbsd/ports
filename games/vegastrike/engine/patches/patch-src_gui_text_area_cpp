@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gui_text_area_cpp,v 1.1 2018/04/16 11:15:49 bentley Exp $
-
 Index: src/gui/text_area.cpp
 --- src/gui/text_area.cpp.orig
 +++ src/gui/text_area.cpp

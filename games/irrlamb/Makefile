@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/03/06 00:54:37 kmos Exp $
-
 BROKEN-sparc64 = uses sse, but fails an assert even without sse
 
 V =		1.0.1

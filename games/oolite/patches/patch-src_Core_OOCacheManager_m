@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Core_OOCacheManager_m,v 1.2 2021/02/26 18:20:33 naddy Exp $
 --- src/Core/OOCacheManager.m.orig	Wed Mar 31 00:04:56 2010
 +++ src/Core/OOCacheManager.m	Wed Mar 31 00:19:13 2010
 @@ -306,7 +306,7 @@ static OOCacheManager *sSingleton = nil;

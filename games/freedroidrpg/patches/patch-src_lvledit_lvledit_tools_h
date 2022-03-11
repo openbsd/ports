@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_lvledit_lvledit_tools_h,v 1.1 2021/02/28 04:03:14 bentley Exp $
 Fix build with -fno-common.
 https://gitlab.com/freedroid/freedroid-src/-/commit/e610d427374226b79da5258d979936459f30c761
 Index: src/lvledit/lvledit_tools.h

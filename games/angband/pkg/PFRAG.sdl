@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.sdl,v 1.3 2019/04/27 13:24:42 edd Exp $
 share/angband/fonts/
 share/angband/fonts/10x14x.fon
 share/angband/fonts/10x14xb.fon

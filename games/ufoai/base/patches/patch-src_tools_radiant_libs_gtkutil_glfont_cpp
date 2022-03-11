@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tools_radiant_libs_gtkutil_glfont_cpp,v 1.1 2021/11/26 20:23:26 thfr Exp $
-
 replace retired gdk_gl_font_use_pango_font with pango_font_map_load_font
 https://github.com/Garux/netradiant-custom/commit/a0a47640b0270d9377273f4fcb714a787300b7ac
 

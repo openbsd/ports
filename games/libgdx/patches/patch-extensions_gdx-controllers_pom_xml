@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_gdx-controllers_pom_xml,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 disable building of unneeded parts of gdx-controllers-*
 
 Index: extensions/gdx-controllers/pom.xml

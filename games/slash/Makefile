@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:46:24 sthen Exp $
-
 COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME =	slash-e8

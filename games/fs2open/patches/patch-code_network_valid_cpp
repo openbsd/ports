@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_network_valid_cpp,v 1.2 2021/12/18 05:10:57 thfr Exp $
-
 include sys/socket.h
 
 Index: code/network/valid.cpp

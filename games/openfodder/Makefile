@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:22 sthen Exp $
-
 COMMENT =	open source port of Cannon Fodder game
 DISTNAME =	openfodder-1.4.1
 CATEGORIES =	games x11

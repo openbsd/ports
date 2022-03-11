@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_Files_Network_network_dialogs_cpp,v 1.2 2020/09/12 19:29:40 phessler Exp $
-
 Index: Source_Files/Network/network_dialogs.cpp
 --- Source_Files/Network/network_dialogs.cpp.orig
 +++ Source_Files/Network/network_dialogs.cpp

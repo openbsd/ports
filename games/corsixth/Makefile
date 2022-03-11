@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/07/22 20:25:14 bcallah Exp $
-
 ONLY_FOR_ARCHS =	${CXX11_ARCHS}
 
 V =		0.65.1

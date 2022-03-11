@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_game_config_cpp,v 1.1 2018/12/24 14:59:12 pascal Exp $
-
 Index: src/game_config.cpp
 --- src/game_config.cpp.orig
 +++ src/game_config.cpp

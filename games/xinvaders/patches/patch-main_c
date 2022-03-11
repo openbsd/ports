@@ -1,4 +1,3 @@
-$OpenBSD: patch-main_c,v 1.2 2015/08/27 15:00:32 naddy Exp $
 --- main.c.orig	Mon Sep 11 00:32:16 2000
 +++ main.c	Tue Aug 25 21:10:26 2015
 @@ -26,7 +26,6 @@ Wed May  8 1991

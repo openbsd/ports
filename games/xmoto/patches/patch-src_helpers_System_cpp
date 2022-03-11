@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_helpers_System_cpp,v 1.3 2020/07/26 08:54:47 kirby Exp $
 Index: src/helpers/System.cpp
 --- src/helpers/System.cpp.orig
 +++ src/helpers/System.cpp

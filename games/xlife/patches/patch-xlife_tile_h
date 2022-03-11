@@ -1,4 +1,3 @@
-$OpenBSD: patch-xlife_tile_h,v 1.1 2000/12/16 15:39:33 espie Exp $
 --- xlife/tile.h.orig	Thu Dec 14 03:51:52 2000
 +++ xlife/tile.h	Thu Dec 14 03:52:16 2000
 @@ -162,6 +162,6 @@ extern char *parse_rule(char *buf);

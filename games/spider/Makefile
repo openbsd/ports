@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/19 20:45:31 naddy Exp $
-
 COMMENT=	challenging double decked solitaire game
 
 DISTNAME=	spider

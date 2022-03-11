@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/04/03 10:35:24 landry Exp $
 @bin bin/zoom
 share/doc/zoom/
 share/doc/zoom/README

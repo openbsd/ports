@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Texture_py,v 1.2 2018/09/04 07:46:52 martijn Exp $
 Index: src/Texture.py
 --- src/Texture.py.orig
 +++ src/Texture.py

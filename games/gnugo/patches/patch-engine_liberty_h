@@ -1,5 +1,3 @@
-$OpenBSD: patch-engine_liberty_h,v 1.1 2021/02/04 20:09:32 naddy Exp $
-
 Index: engine/liberty.h
 --- engine/liberty.h.orig
 +++ engine/liberty.h

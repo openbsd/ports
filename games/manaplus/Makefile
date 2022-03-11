@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.103 2021/06/09 19:50:07 sthen Exp $
-
 V =		2.1.3.17
 REVISION =	0
 COMMENT =	client for The Mana World

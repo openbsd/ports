@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/12 17:47:08 bcallah Exp $
 bin/renpy
 bin/renpyify
 lib/python${MODPY_VERSION}/site-packages/Ren_Py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/10/10 03:02:34 jsg Exp $
-
 COMMENT=	collection of various tools for scummvm
 V=		2.5.0
 DISTNAME=	scummvm-tools-${V}

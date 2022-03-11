@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/27 21:03:44 espie Exp $
 @bin bin/bluemoon
 @man man/man6/bluemoon.6
 share/applications/bluemoon.desktop

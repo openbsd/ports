@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/13 09:07:05 landry Exp $
-
 COMMENT=	remake of Konami's F1-Spirit
 
 DISTNAME=	f1spirit.src_0.rc9-1615

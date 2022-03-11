@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:20 sthen Exp $
-
 COMMENT=	organic fireworks demo
 
 DISTNAME=	fire-1.0

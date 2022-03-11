@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2021/01/14 09:32:20 fcambus Exp $
-
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.6.1

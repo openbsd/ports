@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/26 05:31:16 kirby Exp $
 @bin bin/widelands
 @bin bin/wl_create_spritesheet
 @bin bin/wl_map_info

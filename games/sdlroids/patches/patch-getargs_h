@@ -1,5 +1,3 @@
-$OpenBSD: patch-getargs_h,v 1.1 2021/02/15 16:47:31 naddy Exp $
-
 Index: getargs.h
 --- getargs.h.orig
 +++ getargs.h

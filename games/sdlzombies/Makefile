@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:21 sthen Exp $
-
 COMMENT=	zombies clone
 
 VERSION=	1.0.0

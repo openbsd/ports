@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/29 22:16:15 espie Exp $
 @bin bin/vms-empire
 @man man/man6/vms-empire.6
 share/appdata/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/31 17:30:22 sthen Exp $
-
 COMMENT=	free Lemmings-like game
 
 DISTNAME=	pingus-0.7.6

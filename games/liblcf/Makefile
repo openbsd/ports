@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:20 sthen Exp $
-
 # Keep in sync with games/easyrpg
 COMMENT =	library for handling RPG Maker 2000/2003 data
 CATEGORIES =	games x11

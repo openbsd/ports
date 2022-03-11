@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:46:24 sthen Exp $
-
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
 PKGNAME =	slash-em-3.4.3.7e7f1

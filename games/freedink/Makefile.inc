@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:46:17 sthen Exp $
-
 CATEGORIES ?=	games x11
 
 HOMEPAGE ?=	https://www.gnu.org/software/freedink/

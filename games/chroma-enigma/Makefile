@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:15 sthen Exp $
-
 COMMENT =	Enigma levels to the game chroma
 
 DISTNAME =	chroma-enigma-0.20101210

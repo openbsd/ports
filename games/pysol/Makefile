@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT =		solitaire card games collection
 MODPY_EGG_VERSION =	2.6.4
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}

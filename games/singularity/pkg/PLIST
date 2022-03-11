@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/01/03 04:09:10 daniel Exp $
 bin/singularity
 lib/python${MODPY_VERSION}/site-packages/Endgame_Singularity-1.0-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Endgame_Singularity-1.0-py${MODPY_VERSION}.egg-info/PKG-INFO

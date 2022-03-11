@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2021/01/03 16:42:30 bcallah Exp $
-
 CATEGORIES ?=	games
 
 HOMEPAGE ?=	https://inform-fiction.org/

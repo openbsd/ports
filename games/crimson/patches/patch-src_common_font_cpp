@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_font_cpp,v 1.1 2018/04/10 15:58:27 sthen Exp $
-
 Index: src/common/font.cpp
 --- src/common/font.cpp.orig
 +++ src/common/font.cpp

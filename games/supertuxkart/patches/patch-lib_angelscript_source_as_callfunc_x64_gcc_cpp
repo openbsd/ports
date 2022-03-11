@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_angelscript_source_as_callfunc_x64_gcc_cpp,v 1.2 2016/08/05 23:27:27 pascal Exp $
 --- lib/angelscript/source/as_callfunc_x64_gcc.cpp.orig	Thu May 12 01:31:36 2016
 +++ lib/angelscript/source/as_callfunc_x64_gcc.cpp	Fri Jul  1 05:07:28 2016
 @@ -79,12 +79,6 @@ static asQWORD __attribute__((noinline)) X64_CallFunct

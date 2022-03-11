@@ -1,4 +1,3 @@
-$OpenBSD: patch-xonix_man,v 1.1 2008/04/25 22:39:36 miod Exp $
 --- xonix.man.orig	Sat Feb  9 16:43:48 2008
 +++ xonix.man	Sat Feb  9 16:43:59 2008
 @@ -73,9 +73,7 @@ the game; de-iconizing will continue it.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gdx_src_com_badlogic_gdx_utils_SharedLibraryLoader_java,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 hijack Linux codepath
 
 Index: gdx/src/com/badlogic/gdx/utils/SharedLibraryLoader.java

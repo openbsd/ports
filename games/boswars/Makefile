@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/31 17:30:22 sthen Exp $
-
 COMMENT=	real-time strategy game
 
 V=		2.7

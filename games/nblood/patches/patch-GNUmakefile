@@ -1,5 +1,3 @@
-$OpenBSD: patch-GNUmakefile,v 1.4 2021/12/08 03:35:42 jsg Exp $
-
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile

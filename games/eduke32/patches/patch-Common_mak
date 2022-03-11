@@ -1,5 +1,3 @@
-$OpenBSD: patch-Common_mak,v 1.4 2021/08/20 11:20:38 jsg Exp $
-
 Index: Common.mak
 --- Common.mak.orig
 +++ Common.mak

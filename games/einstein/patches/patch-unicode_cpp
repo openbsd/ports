@@ -1,5 +1,3 @@
-$OpenBSD: patch-unicode_cpp,v 1.1 2018/11/28 22:11:24 naddy Exp $
-
 Index: unicode.cpp
 --- unicode.cpp.orig
 +++ unicode.cpp

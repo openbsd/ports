@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_persona_h,v 1.1 2021/02/14 08:13:42 bentley Exp $
 Fix build with -fno-common.
 Index: src/persona.h
 --- src/persona.h.orig

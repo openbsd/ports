@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	John Horton Conway's Game of Life
 
 DISTNAME=	xlife-5.3

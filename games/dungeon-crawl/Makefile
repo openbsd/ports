@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/14 00:39:36 naddy Exp $
-
 COMMENT=	dungeon crawl
 CATEGORIES=	games
 

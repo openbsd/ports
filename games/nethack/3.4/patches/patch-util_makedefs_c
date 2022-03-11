@@ -1,4 +1,3 @@
-$OpenBSD: patch-util_makedefs_c,v 1.1.1.1 2018/04/25 09:48:15 espie Exp $
 --- util/makedefs.c.orig	Fri Mar 20 14:12:00 2015
 +++ util/makedefs.c	Fri Mar 20 14:13:23 2015
 @@ -543,7 +543,7 @@ const char *build_date;

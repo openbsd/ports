@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:20 sthen Exp $
-
 COMMENT =	Komi the Space Frog
 
 DISTNAME =	komi-1.04

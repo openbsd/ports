@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:26 sthen Exp $
-
 COMMENT =		brick-matching puzzle game
 
 V =			0.9.9

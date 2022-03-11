@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/06/05 12:34:05 jasper Exp $
-
 V =		1.6.0
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src

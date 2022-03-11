@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile.inc,v 1.8 2016/03/09 18:31:36 jasper Exp $
-
 DIST_SUBDIR ?=	alephone
 
 CATEGORIES =	games

@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_tags_cc,v 1.1 2017/05/01 21:00:15 espie Exp $
 Index: source/tags.cc
 --- source/tags.cc.orig
 +++ source/tags.cc

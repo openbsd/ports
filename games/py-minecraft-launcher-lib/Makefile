@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/03/06 02:49:03 kmos Exp $
-
 COMMENT =		library for creating a custom Minecraft launcher
 
 MODPY_EGG_VERSION =	4.5

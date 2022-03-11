@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2021/02/20 07:56:48 kirby Exp $
 @pkgpath games/naev/base
 @bin bin/naev
 @man man/man6/naev.6

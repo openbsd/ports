@@ -1,5 +1,3 @@
-$OpenBSD: patch-topscores_cpp,v 1.1 2018/04/11 12:21:47 sthen Exp $
-
 Index: topscores.cpp
 --- topscores.cpp.orig
 +++ topscores.cpp

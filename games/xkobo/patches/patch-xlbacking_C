@@ -1,4 +1,3 @@
-$OpenBSD: patch-xlbacking_C,v 1.1 2017/02/28 14:17:53 espie Exp $
 --- xlbacking.C.orig	Tue Feb 28 15:05:47 2017
 +++ xlbacking.C	Tue Feb 28 15:05:52 2017
 @@ -102,7 +102,7 @@ void win_backing::background(int i)

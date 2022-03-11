@@ -1,5 +1,3 @@
-$OpenBSD: patch-game_Entity_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 float.h needed for FLOAT_MAX used in this file
 
 Index: game/Entity.cpp

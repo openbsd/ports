@@ -1,4 +1,3 @@
-$OpenBSD: patch-common_game_h,v 1.1 2021/01/30 09:31:13 kirby Exp $
 Fix for -fno-common
 https://sourceforge.net/p/pio/code/2262
 

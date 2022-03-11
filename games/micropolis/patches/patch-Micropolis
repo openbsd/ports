@@ -1,4 +1,3 @@
-$OpenBSD: patch-Micropolis,v 1.3 2017/05/09 13:01:42 espie Exp $
 Index: Micropolis
 --- Micropolis.orig
 +++ Micropolis

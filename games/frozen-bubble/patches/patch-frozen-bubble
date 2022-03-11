@@ -1,5 +1,3 @@
-$OpenBSD: patch-frozen-bubble,v 1.1 2020/02/04 22:54:09 cwen Exp $
-
 Perl 5.30+ prohibits using my() in false conditionals
 
 Index: frozen-bubble

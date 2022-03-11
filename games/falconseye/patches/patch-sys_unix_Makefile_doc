@@ -1,4 +1,3 @@
-$OpenBSD: patch-sys_unix_Makefile_doc,v 1.1.1.1 2001/07/05 13:29:05 espie Exp $
 --- sys/unix/Makefile.doc.orig	Sun Jun 24 18:57:24 2001
 +++ sys/unix/Makefile.doc	Wed Jul  4 23:40:29 2001
 @@ -34,15 +34,15 @@ Guidebook.dvi:	Guidebook.tex

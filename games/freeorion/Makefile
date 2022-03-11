@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:01:13 sthen Exp $
-
 V =		0.4.10.2
 COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_2021-08-01.f663dad_Source

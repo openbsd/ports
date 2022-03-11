@@ -1,5 +1,3 @@
-$OpenBSD: patch-pysollib_pysolrandom_py,v 1.2 2019/01/22 20:09:42 landry Exp $
-
 Revert https://github.com/shlomif/PySolFC/commit/0515a01a025be3fa3ecfc3e0e72803f5e7370728
 Needs random2 from pip for python3 ?
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/01 12:55:25 kirby Exp $
-
 COMMENT=		rogue-like zombie survival game
 CATEGORIES=		games
 

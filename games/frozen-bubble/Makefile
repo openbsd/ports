@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/22 15:00:43 espie Exp $
-
 COMMENT-main =		bubble popping game, like puzzle bobble
 COMMENT-server =	server for the frozen-bubble bubble popping game
 

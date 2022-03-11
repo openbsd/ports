@@ -1,5 +1,3 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2010/03/24 22:32:16 jasper Exp $
-
 Swith to gtk+2.
 From Debian's corewars_0.9.13+ds-1.diff.
 

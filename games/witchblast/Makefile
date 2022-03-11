@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/03/06 00:53:19 kmos Exp $
-
 BROKEN-sparc64 =	undefined reference to XRRConfigRotations, etc.
 
 COMMENT =	roguelite dungeon crawler game

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/02/11 22:32:16 cwen Exp $
-
 COMMENT =		volleyball game with online play
 
 GH_ACCOUNT =		danielknobe

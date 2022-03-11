@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_sfx_Makefile_in,v 1.2 2010/11/30 20:05:02 phessler Exp $
 --- data/sfx/Makefile.in.orig	Sun Dec 23 20:12:44 2007
 +++ data/sfx/Makefile.in	Sun Oct 24 15:37:55 2010
 @@ -179,7 +179,7 @@ target_cpu = @target_cpu@

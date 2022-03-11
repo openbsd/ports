@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/26 08:55:57 bentley Exp $
 @bin bin/urbanterror
 @bin bin/urbanterror-ded

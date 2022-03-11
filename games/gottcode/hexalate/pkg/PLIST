@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:13 espie Exp $
 @bin bin/hexalate
 @man man/man6/hexalate.6
 share/applications/hexalate.desktop

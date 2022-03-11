@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Core_Materials_OOPNGTextureLoader_m,v 1.5 2021/03/11 16:52:46 naddy Exp $
-
 * Missing header.
 * Fix build with png-1.6; __attribute__((noreturn)) already set in <png.h>.
 

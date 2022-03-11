@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imakefile,v 1.1 2007/10/26 21:19:16 ajacoutot Exp $
 --- Imakefile.orig	Tue Oct 17 15:14:37 1995
 +++ Imakefile	Fri Oct 26 22:59:54 2007
 @@ -7,9 +7,9 @@ CCOPTIONS = -Wf,-XNl4096

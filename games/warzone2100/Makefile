@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2021/12/31 14:28:31 pascal Exp $
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth

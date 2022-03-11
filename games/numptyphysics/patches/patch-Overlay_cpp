@@ -1,4 +1,3 @@
-$OpenBSD: patch-Overlay_cpp,v 1.3 2012/12/12 14:58:00 dcoppa Exp $
 --- Overlay.cpp.orig	Wed Dec  5 15:53:11 2012
 +++ Overlay.cpp	Thu Dec  6 10:33:22 2012
 @@ -36,6 +36,10 @@ class OverlayBase : public Overlay (public)

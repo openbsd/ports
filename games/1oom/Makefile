@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:14 sthen Exp $
-
 COMMENT =	game engine recreation of Master of Orion 1
 DISTNAME =	1oom-1.0
 CATEGORIES =	games x11

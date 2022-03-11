@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_modelmeasure_cpp,v 1.1 2017/04/30 08:56:45 espie Exp $
 --- src/modelmeasure.cpp.orig
 +++ src/modelmeasure.cpp
 @@ -42,6 +42,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/17 21:08:07 bcallah Exp $
-
 COMMENT =	space exploration and combat game similar to Escape Velocity
 CATEGORIES =	games x11
 

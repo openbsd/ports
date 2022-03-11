@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Utility_OpenRA_Utility_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Utility/OpenRA.Utility.csproj
 --- OpenRA.Utility/OpenRA.Utility.csproj.orig
 +++ OpenRA.Utility/OpenRA.Utility.csproj

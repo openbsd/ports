@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/05/19 01:50:29 kurt Exp $
-
 PORTROACH=	skipv:0.1
 PORTROACH_COMMENT=version 0.1 is actually older than 0.0.4
 

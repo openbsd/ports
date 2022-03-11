@@ -1,5 +1,3 @@
-$OpenBSD: patch-platform_x11_os_x11_h,v 1.3 2021/05/03 19:10:25 thfr Exp $
-
 load sndio
 
 Index: platform/x11/os_x11.h

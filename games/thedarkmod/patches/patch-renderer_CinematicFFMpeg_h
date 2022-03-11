@@ -1,5 +1,3 @@
-$OpenBSD: patch-renderer_CinematicFFMpeg_h,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 include float.h because DBL_MAX is used
 
 Index: renderer/CinematicFFMpeg.h

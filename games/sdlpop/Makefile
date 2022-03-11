@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/20 07:48:58 robert Exp $
-
 NOT_FOR_ARCHS=	${BE_ARCHS}
 
 COMMENT=	open-source port of Prince of Persia

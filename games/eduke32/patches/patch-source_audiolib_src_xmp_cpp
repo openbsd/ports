@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_audiolib_src_xmp_cpp,v 1.2 2021/01/08 23:58:29 jsg Exp $
-
 use packaged libxmp instead of bundled libxmp-lite, works around
 build issue when libxmp package is installed
 

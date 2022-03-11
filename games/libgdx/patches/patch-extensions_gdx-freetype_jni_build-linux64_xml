@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_gdx-freetype_jni_build-linux64_xml,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 shamelessly abuse build-linux64.xml for OpenBSD build
 
 Index: extensions/gdx-freetype/jni/build-linux64.xml

@@ -1,5 +1,3 @@
-$OpenBSD: patch-engines_scidlet_scidlet_cpp,v 1.2 2019/03/31 21:31:16 bcallah Exp $
-
 Missing sys/select.h
 
 Index: engines/scidlet/scidlet.cpp

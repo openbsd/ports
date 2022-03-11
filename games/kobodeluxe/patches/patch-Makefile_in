@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2010/11/30 20:05:02 phessler Exp $
 --- Makefile.in.orig	Tue Dec 18 02:03:35 2007
 +++ Makefile.in	Sun Oct 24 15:34:21 2010
 @@ -737,7 +737,7 @@ install-data: install-data-recursive

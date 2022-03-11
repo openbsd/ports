@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT =		2D mission-based space shooter
 
 V =			1.5.0

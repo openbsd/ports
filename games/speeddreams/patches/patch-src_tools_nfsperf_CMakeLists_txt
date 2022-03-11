@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tools_nfsperf_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
 --- src/tools/nfsperf/CMakeLists.txt.orig	Wed Jun 18 16:20:25 2014
 +++ src/tools/nfsperf/CMakeLists.txt	Fri Jul 11 14:32:00 2014
 @@ -17,7 +17,7 @@ SD_ADD_EXECUTABLE(${_TARGET_NAME} ${NFSPERF_SOURCES})

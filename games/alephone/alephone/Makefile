@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.31 2020/09/12 19:29:40 phessler Exp $
-
 DPB_PROPERTIES =	parallel
 
 DIST_SUBDIR ?=		alephone

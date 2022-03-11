@@ -1,5 +1,3 @@
-$OpenBSD: patch-platform_build_bsd_ant_build_xml,v 1.4 2021/05/19 21:29:07 kurt Exp $
-
 Use os.arch on 64 bit builds.
 
 Index: platform_build/bsd_ant/build.xml

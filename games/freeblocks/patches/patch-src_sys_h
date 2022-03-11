@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sys_h,v 1.1 2021/02/19 12:07:34 naddy Exp $
-
 Index: src/sys.h
 --- src/sys.h.orig
 +++ src/sys.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_src_include_general_cpp,v 1.1 2017/06/01 11:29:12 espie Exp $
-
 Index: setup/src/include/general.cpp
 --- setup/src/include/general.cpp.orig
 +++ setup/src/include/general.cpp

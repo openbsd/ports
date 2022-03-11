@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_newgame_cc,v 1.2 2018/04/09 16:45:05 jasper Exp $
 Index: source/newgame.cc
 --- source/newgame.cc.orig
 +++ source/newgame.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tdm_update_SConscript_minizip,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 use system zlib; fix minizip
 
 Index: tdm_update/SConscript.minizip

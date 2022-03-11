@@ -1,4 +1,3 @@
-$OpenBSD: patch-game_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
 --- game.cpp.orig	Sat Jun  9 22:36:53 2007
 +++ game.cpp	Thu Jul  5 15:17:08 2007
 @@ -29,7 +29,7 @@ extern SDL_Surface *Screen;     // global objects

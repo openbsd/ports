@@ -1,5 +1,3 @@
-$OpenBSD: patch-tdm_update_libtdm_update_Zip_Zip_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 Index: tdm_update/libtdm_update/Zip/Zip.cpp
 --- tdm_update/libtdm_update/Zip/Zip.cpp.orig
 +++ tdm_update/libtdm_update/Zip/Zip.cpp

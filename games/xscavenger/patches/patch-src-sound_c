@@ -1,4 +1,3 @@
-$OpenBSD: patch-src-sound_c,v 1.4 2010/01/03 21:51:29 jakemsr Exp $
 --- src/sound.c.orig	Sun Dec  1 22:03:54 2002
 +++ src/sound.c	Sun Jan  3 01:53:43 2010
 @@ -4,8 +4,7 @@

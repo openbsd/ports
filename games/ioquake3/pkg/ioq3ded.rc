@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: ioq3ded.rc,v 1.6 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/ioq3ded"
 daemon_user="_ioq3"

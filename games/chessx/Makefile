@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/02/26 06:14:43 rsadowski Exp $
-
 COMMENT =		free chess database and analyzer
 DISTNAME =		chessx-1.4.6
 CATEGORIES =		games

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/09/10 16:41:24 tb Exp $
-
 COMMENT=	colorful solitaire Mah Jongg game for X11
 
 DISTNAME=	xmahjongg-3.7

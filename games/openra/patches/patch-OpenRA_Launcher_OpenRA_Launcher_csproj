@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Launcher_OpenRA_Launcher_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Launcher/OpenRA.Launcher.csproj
 --- OpenRA.Launcher/OpenRA.Launcher.csproj.orig
 +++ OpenRA.Launcher/OpenRA.Launcher.csproj

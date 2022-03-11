@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/05/10 06:20:18 bcallah Exp $
 @bin bin/openomf
 share/doc/pkg-readmes/${PKGSTEM}
 share/openomf/

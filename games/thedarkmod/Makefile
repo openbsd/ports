@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/31 17:31:43 sthen Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386
 BROKEN-i386 =	Simd_SSE.cpp fails, unknown type name '__m128'
 

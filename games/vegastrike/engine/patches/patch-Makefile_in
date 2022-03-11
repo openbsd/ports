@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2020/08/15 20:30:59 rsadowski Exp $
 explicitly pass -Wno-#warnings as it's a bitch to pass thru configure
 
 Index: Makefile.in

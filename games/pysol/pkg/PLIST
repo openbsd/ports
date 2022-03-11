@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/04/20 20:51:51 kn Exp $
 bin/pysol
 lib/python${MODPY_VERSION}/site-packages/PySolFC-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pysollib/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_weapons_AccessoryStore_cpp,v 1.3 2019/01/03 20:42:39 jca Exp $
-
 Index: src/common/weapons/AccessoryStore.cpp
 --- src/common/weapons/AccessoryStore.cpp.orig
 +++ src/common/weapons/AccessoryStore.cpp

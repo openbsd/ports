@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2005/11/03 18:24:52 pvalchev Exp $
 --- configure.orig	Thu Nov  3 17:28:18 2005
 +++ configure	Thu Nov  3 17:28:27 2005
 @@ -1187,7 +1187,7 @@ fi

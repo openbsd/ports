@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2007/09/06 17:58:55 simon Exp $
 --- src/main.c.orig	Tue Jul  9 05:53:49 2002
 +++ src/main.c	Thu Sep  6 09:41:35 2007
 @@ -200,15 +200,23 @@ int is_valid_channelname(char *p)

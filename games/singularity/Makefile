@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT=	simulation of a true AI
 
 MODPY_EGG_VERSION= 1.00

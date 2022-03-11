@@ -1,4 +1,3 @@
-$OpenBSD: patch-sutils_cpp,v 1.1.1.1 2007/07/05 16:13:27 simon Exp $
 --- sutils.cpp.orig	Sat Jun  9 22:36:53 2007
 +++ sutils.cpp	Thu Jul  5 15:17:41 2007
 @@ -374,7 +374,7 @@ void InitVideo(bool fullscreen)

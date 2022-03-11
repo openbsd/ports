@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_widget_cpp,v 1.1 2017/04/30 08:26:07 espie Exp $
 --- src/widget.cpp.orig
 +++ src/widget.cpp
 @@ -284,7 +284,7 @@ widget* widget::get_child(const std::string& child, bo

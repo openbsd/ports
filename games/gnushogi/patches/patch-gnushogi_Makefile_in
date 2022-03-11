@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnushogi_Makefile_in,v 1.2 2015/09/21 14:35:23 jasper Exp $
 --- gnushogi/Makefile.in.orig	Mon Feb 17 21:26:59 2014
 +++ gnushogi/Makefile.in	Mon Sep 21 16:11:12 2015
 @@ -51,7 +51,7 @@ BINDIR  =   $(prefix)/bin

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:46:16 sthen Exp $
-
 COMMENT=		curses-based Lines game
 
 DISTNAME=		clines-1.0.4

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Local_config,v 1.6 2013/10/11 20:39:31 naddy Exp $
 --- Local.config.orig	Sun Feb 21 16:59:28 2010
 +++ Local.config	Thu Oct 10 19:12:51 2013
 @@ -36,12 +36,11 @@

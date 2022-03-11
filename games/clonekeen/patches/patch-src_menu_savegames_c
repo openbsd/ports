@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_menu_savegames_c,v 1.2 2021/02/12 20:14:53 edd Exp $
 Index: src/menu_savegames.c
 --- src/menu_savegames.c.orig
 +++ src/menu_savegames.c

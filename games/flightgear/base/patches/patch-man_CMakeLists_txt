@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_CMakeLists_txt,v 1.1 2021/07/12 20:53:07 pascal Exp $
-
 Index: man/CMakeLists.txt
 --- man/CMakeLists.txt.orig
 +++ man/CMakeLists.txt

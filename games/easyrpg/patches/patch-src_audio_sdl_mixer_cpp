@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_audio_sdl_mixer_cpp,v 1.1 2018/04/29 09:33:00 jasper Exp $
-
 https://github.com/carstene1ns/easyrpg-player/commit/4206ae21a07a9263df74e217c67b6928a4ef775d
 
 Index: src/audio_sdl_mixer.cpp

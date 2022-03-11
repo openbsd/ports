@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/08 23:16:49 cwen Exp $
-
 COMMENT =		test your typing speed and get your fingers' CPS
 
 DISTNAME =		typespeed-0.6.5

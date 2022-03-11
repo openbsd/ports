@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/02/10 14:04:02 bcallah Exp $
 @bin bin/1oom
 @bin bin/1oom_cmdline
 @bin bin/1oom_gfxconv

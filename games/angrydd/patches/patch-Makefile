@@ -1,9 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2006/11/11 14:34:34 ajacoutot Exp $
 --- Makefile.orig	Thu Jan 12 22:05:47 2006
 +++ Makefile	Sat Nov 11 14:24:56 2006
 @@ -3,8 +3,6 @@
  # Makefile for Angry, Drunken Dwarves.
- # $Id: patch-Makefile,v 1.1.1.1 2006/11/11 14:34:34 ajacoutot Exp $
+ # $Id: patch-Makefile,v 1.2 2022/03/11 19:04:06 naddy Exp $
  
 -PREFIX ?= /usr/local
 -

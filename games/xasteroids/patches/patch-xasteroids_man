@@ -1,4 +1,3 @@
-$OpenBSD: patch-xasteroids_man,v 1.1 2015/02/17 20:56:34 naddy Exp $
 --- xasteroids.man.orig	Tue Feb 17 21:50:09 2015
 +++ xasteroids.man	Tue Feb 17 21:50:02 2015
 @@ -61,10 +61,16 @@ Phil Goetz

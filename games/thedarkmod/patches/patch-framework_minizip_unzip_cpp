@@ -1,5 +1,3 @@
-$OpenBSD: patch-framework_minizip_unzip_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 use system zlib instead of the one from ExtLibs
 use malloc, not doom3's Mem_Alloc; similarly for free/Mem_Free
 

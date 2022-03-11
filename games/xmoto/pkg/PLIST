@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/07/26 08:54:48 kirby Exp $
 @bin bin/xmoto
 @man man/man6/xmoto.6
 share/applications/xmoto.desktop

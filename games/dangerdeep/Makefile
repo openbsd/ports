@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/31 17:31:15 sthen Exp $
-
 COMMENT =		WWII German submarine simulator
 
 PKGNAME =		dangerdeep-0.3.99.3327

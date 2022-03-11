@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:46:26 sthen Exp $
-
 COMMENT=	X11-based asteroids-style arcade
 
 DISTNAME=	xasteroids

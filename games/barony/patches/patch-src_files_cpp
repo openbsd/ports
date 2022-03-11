@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_files_cpp,v 1.1 2021/04/11 13:17:41 solene Exp $
-
 Use 'userdata' instead of 'refcount'. 'refcount' is a private SDL_Surface field.
 Use 'imgref' and not 'imgref + 1' 
 

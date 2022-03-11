@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:03:43 espie Exp $
 @bin bin/afternoonstalker
 @man man/man6/afternoonstalker.6
 share/afternoonstalker/

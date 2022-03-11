@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/02 21:45:17 solene Exp $
 share/applications/shapezio.desktop
 share/icons/hicolor/128x128/apps/shapezio.png
 share/shapez.io/

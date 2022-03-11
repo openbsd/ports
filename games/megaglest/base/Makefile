@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/06 21:12:02 kirby Exp $
-
 COMMENT =		3D real-time strategy game
 GH_PROJECT =		megaglest-source
 PKGNAME =		megaglest-${GH_TAGNAME}

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2019/02/10 14:04:02 bcallah Exp $
-
 Make default executable name 1oom.
 And default lbx viewer executable name 1oom_lbxview.
 

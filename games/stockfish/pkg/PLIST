@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/19 03:27:46 bcallah Exp $
 @bin bin/stockfish

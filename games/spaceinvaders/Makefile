@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/02 10:15:57 mglocker Exp $
-
 COMMENT =		curses-based version of the Space Invaders game
 DISTNAME =		spaceinvaders-1.5
 CATEGORIES =		games

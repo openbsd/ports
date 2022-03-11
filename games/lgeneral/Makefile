@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/12 18:23:16 kirby Exp $
-
 COMMENT=	turn-based strategy engine
 
 DISTNAME=	lgeneral-1.4.4

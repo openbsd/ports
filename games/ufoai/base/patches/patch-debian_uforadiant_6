@@ -1,5 +1,3 @@
-$OpenBSD: patch-debian_uforadiant_6,v 1.1 2011/05/30 05:29:09 ajacoutot Exp $
-
 Resolve conflict with lang/rakudo.
 
 --- debian/uforadiant.6.orig	Sun May 29 16:47:52 2011

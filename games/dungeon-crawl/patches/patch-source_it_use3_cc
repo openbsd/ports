@@ -1,4 +1,3 @@
-$OpenBSD: patch-source_it_use3_cc,v 1.1 2017/05/01 21:00:15 espie Exp $
 Index: source/it_use3.cc
 --- source/it_use3.cc.orig
 +++ source/it_use3.cc

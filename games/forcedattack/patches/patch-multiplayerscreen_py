@@ -1,4 +1,3 @@
-$OpenBSD: patch-multiplayerscreen_py,v 1.1.1.1 2003/10/10 16:10:13 sturm Exp $
 --- multiplayerscreen.py.orig	2002-10-01 16:38:03.000000000 +0200
 +++ multiplayerscreen.py	2003-08-11 23:02:26.000000000 +0200
 @@ -69,7 +69,7 @@ class MultiplayerScreen(Dialog):

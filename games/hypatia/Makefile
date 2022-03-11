@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =	2D action adventure game engine
 CATEGORIES =	games x11
 SUBST_VARS +=	GH_TAGNAME

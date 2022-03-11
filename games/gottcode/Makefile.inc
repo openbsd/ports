@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.17 2019/07/12 20:46:19 sthen Exp $
-
 CATEGORIES =	games
 PKGNAME ?=	${DISTNAME:S/-src//}
 EXTRACT_SUFX ?=	.tar.bz2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT=	flash-card tool which optimises your learning process
 
 MODPY_EGG_VERSION = 2.8

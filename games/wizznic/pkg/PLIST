@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/08 06:02:08 bentley Exp $
 @bin bin/wizznic
 share/wizznic/
 share/wizznic/data/

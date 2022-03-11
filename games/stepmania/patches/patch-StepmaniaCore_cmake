@@ -1,5 +1,3 @@
-$OpenBSD: patch-StepmaniaCore_cmake,v 1.1 2021/02/24 12:09:25 espie Exp $
-
 Index: StepmaniaCore.cmake
 --- StepmaniaCore.cmake.orig
 +++ StepmaniaCore.cmake

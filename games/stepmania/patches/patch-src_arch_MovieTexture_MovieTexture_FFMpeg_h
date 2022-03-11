@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_arch_MovieTexture_MovieTexture_FFMpeg_h,v 1.1 2021/02/24 12:09:25 espie Exp $
-
 Index: src/arch/MovieTexture/MovieTexture_FFMpeg.h
 --- src/arch/MovieTexture/MovieTexture_FFMpeg.h.orig
 +++ src/arch/MovieTexture/MovieTexture_FFMpeg.h

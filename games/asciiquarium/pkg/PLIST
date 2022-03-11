@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/15 09:00:07 stsp Exp $
 bin/asciiquarium
 share/doc/asciiquarium/
 share/doc/asciiquarium/README

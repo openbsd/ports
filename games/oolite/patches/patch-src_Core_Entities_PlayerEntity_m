@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Core_Entities_PlayerEntity_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
 --- src/Core/Entities/PlayerEntity.m.orig	Wed Mar 31 21:43:01 2010
 +++ src/Core/Entities/PlayerEntity.m	Wed Mar 31 21:43:50 2010
 @@ -306,7 +306,7 @@ static PlayerEntity *sSharedPlayer = nil;

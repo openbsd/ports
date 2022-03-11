@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/19 05:24:30 rsadowski Exp $
-
 COMMENT =	cross-platform port of Arx Fatalis, a first-person RPG
 CATEGORIES =	games
 

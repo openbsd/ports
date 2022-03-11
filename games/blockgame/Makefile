@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/18 08:36:39 phessler Exp $
-
 COMMENT =		free and open-source launcher for Minecraft
 
 

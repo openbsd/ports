@@ -1,5 +1,3 @@
-$OpenBSD: patch-SourceS_miniwin_h,v 1.4 2020/07/31 23:09:46 bcallah Exp $
-
 Whatever this was working around we don't need it to work around any more.
 
 Index: SourceS/miniwin.h

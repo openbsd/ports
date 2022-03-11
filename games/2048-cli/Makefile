@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:14 sthen Exp $
-
 COMMENT =	terminal version of the 2048 sliding block puzzle game
 CATEGORIES =	games
 

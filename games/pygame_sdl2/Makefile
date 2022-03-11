@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/21 19:50:32 kmos Exp $
-
 # Keep in sync with games/renpy!!!
 V =		7.3.5.606
 COMMENT =	Ren'Py fork of pygame

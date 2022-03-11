@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2020/03/26 20:51:02 naddy Exp $
-
 COMMENT=	astrosmash clone for X
 
 DISTNAME =	cosmosmash-1.4.8

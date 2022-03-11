@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/02/14 11:11:33 sthen Exp $
-
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
 
 GH_ACCOUNT =	EasyRPG

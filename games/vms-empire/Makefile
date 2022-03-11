@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/26 04:12:34 bentley Exp $
-
 COMMENT =		turn-based empire game
 
 DISTNAME =		vms-empire-1.16

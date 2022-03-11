@@ -1,5 +1,3 @@
-$OpenBSD: patch-win_tty_termcap_c,v 1.3 2021/02/16 08:40:06 espie Exp $
-
 Index: win/tty/termcap.c
 --- win/tty/termcap.c.orig
 +++ win/tty/termcap.c

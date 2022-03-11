@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_version_sh,v 1.2 2015/11/16 10:26:23 benoit Exp $
 --- scripts/version.sh.orig	Wed May 21 15:21:43 2014
 +++ scripts/version.sh	Fri Sep  5 14:46:26 2014
 @@ -29,6 +29,8 @@

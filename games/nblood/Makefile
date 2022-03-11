@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/08 03:35:42 jsg Exp $
-
 COMMENT =	reverse-engineered ports of Build games
 
 DISTNAME =	nblood-1.01.20211205

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_Files_Network_Metaserver_SdlMetaserverClientUi_cpp,v 1.1 2018/04/20 11:48:37 schwarze Exp $
-
 Index: Source_Files/Network/Metaserver/SdlMetaserverClientUi.cpp
 --- Source_Files/Network/Metaserver/SdlMetaserverClientUi.cpp.orig
 +++ Source_Files/Network/Metaserver/SdlMetaserverClientUi.cpp

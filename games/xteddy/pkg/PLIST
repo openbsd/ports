@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/25 22:32:43 jasper Exp $
 @bin bin/xteddy
 bin/xteddy_test
 bin/xtoys

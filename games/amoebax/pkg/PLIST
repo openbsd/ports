@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:43 espie Exp $
 @bin bin/amoebax
 @man man/man6/amoebax.6
 share/amoebax/

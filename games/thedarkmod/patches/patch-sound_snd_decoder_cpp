@@ -1,5 +1,3 @@
-$OpenBSD: patch-sound_snd_decoder_cpp,v 1.1.1.1 2019/09/02 18:04:40 thfr Exp $
-
 use system vorbis instead of the one from ExtLibs
 this requires struct ov_alloc_callbacks from ExtLibs/vorbis.h and
 function ov_use_custom_alloc from ExtLibs/vorbis.cpp (and more)

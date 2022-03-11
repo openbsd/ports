@@ -1,5 +1,3 @@
-$OpenBSD: patch-Box2D_Source_Common_b2Settings_cpp,v 1.3 2011/06/29 07:42:02 dcoppa Exp $
-
 Fix LP64 architectures (i.e. sparc64)
 
 --- Box2D/Source/Common/b2Settings.cpp.orig	Thu Apr  7 08:59:55 2011

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:31 kn Exp $
-
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT-main =		fast-paced first person shooter

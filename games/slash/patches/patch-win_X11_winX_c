@@ -1,4 +1,3 @@
-$OpenBSD: patch-win_X11_winX_c,v 1.1 2000/04/16 21:19:08 espie Exp $
 --- win/X11/winX.c.orig	Tue Jun 18 00:35:23 1996
 +++ win/X11/winX.c	Fri Apr 14 15:10:49 2000
 @@ -921,7 +921,7 @@ char** argv;

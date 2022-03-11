@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2022/02/10 15:40:13 benoit Exp $
-
 ONLY_FOR_ARCHS =	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT =	maze game resembling boulderdash

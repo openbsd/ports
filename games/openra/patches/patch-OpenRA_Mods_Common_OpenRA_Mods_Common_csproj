@@ -1,5 +1,3 @@
-$OpenBSD: patch-OpenRA_Mods_Common_OpenRA_Mods_Common_csproj,v 1.1 2021/05/12 13:52:49 patrick Exp $
-
 Index: OpenRA.Mods.Common/OpenRA.Mods.Common.csproj
 --- OpenRA.Mods.Common/OpenRA.Mods.Common.csproj.orig
 +++ OpenRA.Mods.Common/OpenRA.Mods.Common.csproj

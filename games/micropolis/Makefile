@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:21 sthen Exp $
-
 COMMENT=	city-building simulation
 
 DISTNAME=	micropolis-20080211

@@ -1,5 +1,3 @@
-$OpenBSD: patch-CorsixTH_Lua_app_lua,v 1.2 2019/05/25 15:49:40 bcallah Exp $
-
 Do not check or download updates.
 
 Index: CorsixTH/Lua/app.lua

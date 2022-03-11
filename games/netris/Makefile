@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:21 sthen Exp $
-
 COMMENT=	network head-to-head version of T*tris
 
 DISTNAME=	netris-0.52

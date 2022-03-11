@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/09/19 05:24:30 rsadowski Exp $
-
 COMMENT =		3D space simulator
 
 DISTNAME =		vegastrike-src-${V}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/14 00:39:37 naddy Exp $
-
 COMMENT=	Windows minesweeper
 
 DISTNAME=	xminesweep3.0

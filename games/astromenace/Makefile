@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/29 07:50:15 jasper Exp $
-
 COMMENT =		hardcore 3D space shmup
 BROKEN-sparc64 =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'
 BROKEN-powerpc =	SIGABRT terminate called after throwing an instance of 'std::bad_alloc'

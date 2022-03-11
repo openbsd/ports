@@ -1,4 +1,3 @@
-$OpenBSD: patch-XScrabble,v 1.1 2007/12/08 22:00:01 ajacoutot Exp $
 --- XScrabble.orig	Mon Jan 15 21:19:25 2007
 +++ XScrabble	Sat Dec  8 14:59:50 2007
 @@ -1,9 +1,9 @@

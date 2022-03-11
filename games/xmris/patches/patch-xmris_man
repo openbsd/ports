@@ -1,11 +1,10 @@
-$OpenBSD: patch-xmris_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
 --- xmris.man.orig	Fri Dec 22 13:08:29 1995
 +++ xmris.man	Thu Apr  9 17:16:04 2015
 @@ -1,5 +1,5 @@
 -. Copyright (C) 1995, 1994, 1993, 1992 Nathan Sidwell
--. RCS $Id: patch-xmris_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
+-. RCS $Id: patch-xmris_man,v 1.2 2022/03/11 19:05:21 naddy Exp $
 +.\" Copyright (C) 1995, 1994, 1993, 1992 Nathan Sidwell
-+.\" RCS $Id: patch-xmris_man,v 1.1 2015/04/09 15:21:20 naddy Exp $
++.\" RCS $Id: patch-xmris_man,v 1.2 2022/03/11 19:05:21 naddy Exp $
  .TH XMRIS 6 "12 December 1995" "X Version 11"
  .IX xmris#(n) "" "\fLxmris\fP(n)"
  .SH NAME

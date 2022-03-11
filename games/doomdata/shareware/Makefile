@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/03 12:36:04 kn Exp $
-
 COMMENT =		DOOM I Shareware data files
 
 DISTNAME =		doom19s

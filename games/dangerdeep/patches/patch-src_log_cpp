@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_log_cpp,v 1.1 2017/04/30 08:56:45 espie Exp $
 --- src/log.cpp.orig
 +++ src/log.cpp
 @@ -30,6 +30,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, 

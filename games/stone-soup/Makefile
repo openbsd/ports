@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/11/02 00:01:14 sthen Exp $
-
 BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup

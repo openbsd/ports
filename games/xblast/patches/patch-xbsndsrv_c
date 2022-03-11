@@ -1,4 +1,3 @@
-$OpenBSD: patch-xbsndsrv_c,v 1.4 2009/12/20 00:14:40 jakemsr Exp $
 --- xbsndsrv.c.orig	Mon Jun 12 04:06:36 2006
 +++ xbsndsrv.c	Wed Dec 16 19:48:41 2009
 @@ -75,6 +75,10 @@

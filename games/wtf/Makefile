@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.106 2021/10/03 21:08:09 bcallah Exp $
-
 COMMENT =	translate common internet acronyms
 
 DISTNAME =	wtf-20210916

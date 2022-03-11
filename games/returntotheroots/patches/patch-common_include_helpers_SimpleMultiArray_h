@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_include_helpers_SimpleMultiArray_h,v 1.1.1.1 2018/01/01 01:03:55 bcallah Exp $
-
 Needs something that gets you size_t.
 
 Index: common/include/helpers/SimpleMultiArray.h

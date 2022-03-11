@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/25 22:26:02 sthen Exp $
-
 COMMENT =		hexagonal tile-based puzzle game
 DISTNAME =		hex-a-hop-1.1.0
 CATEGORIES =		games

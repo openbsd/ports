@@ -1,5 +1,3 @@
-$OpenBSD: patch-mk_buildsys_mk_in,v 1.1 2019/04/27 13:24:42 edd Exp $
-
 Print compiler invocations.
 
 Index: mk/buildsys.mk.in

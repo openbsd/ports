@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2021/12/18 05:10:57 thfr Exp $
-
 add include and lib directories to find system SDL2
 try to avoid get_target_property error
 

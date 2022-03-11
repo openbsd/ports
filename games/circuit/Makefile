@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT =	finish-the-cycle logic puzzle
 CATEGORIES =	games
 

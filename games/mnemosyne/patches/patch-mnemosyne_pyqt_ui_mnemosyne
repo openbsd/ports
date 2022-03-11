@@ -1,5 +1,3 @@
-$OpenBSD: patch-mnemosyne_pyqt_ui_mnemosyne,v 1.1 2020/12/09 20:29:01 sthen Exp $
-
 Disable Google integration.  Python packages aren't available in ports.
 
 Index: mnemosyne/pyqt_ui/mnemosyne

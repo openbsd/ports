@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_gdx-jnigen_src_com_badlogic_gdx_jnigen_JniGenSharedLibraryLoader_java,v 1.1.1.1 2021/02/24 22:21:25 thfr Exp $
-
 hijack Linux codepath
 
 Index: extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java

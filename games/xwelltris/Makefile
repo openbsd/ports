@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT=	2.5 dimensional tetris-like game
 
 DISTNAME=	xwelltris-1.0.1

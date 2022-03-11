@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2021/03/07 01:28:21 daniel Exp $
-
 V ?=			0.1.12
 
 CATEGORIES ?=		games

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/06 01:43:28 bcallah Exp $
 @bin bin/armagetronad
 share/armagetronad/
 share/armagetronad/desktop/

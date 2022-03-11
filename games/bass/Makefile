@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:14 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	Beneath A Steel Sky

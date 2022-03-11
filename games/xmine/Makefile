@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:46:27 sthen Exp $
-
 COMMENT=	Athena port of xminesweeper
 
 DISTNAME=	xmine-1.0.3-Xaw

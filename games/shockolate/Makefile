@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/18 13:39:44 thfr Exp $
-
 COMMENT =	source port of 3D game System Shock
 
 V =		0.7.8pl20210504

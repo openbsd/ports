@@ -1,5 +1,3 @@
-$OpenBSD: patch-code_inetfile_cftp_h,v 1.1 2021/12/18 05:10:57 thfr Exp $
-
 Index: code/inetfile/cftp.h
 --- code/inetfile/cftp.h.orig
 +++ code/inetfile/cftp.h

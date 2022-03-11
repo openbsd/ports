@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Core_Entities_PlanetEntity_m,v 1.1 2021/03/11 16:52:46 naddy Exp $
-
 Index: src/Core/Entities/PlanetEntity.m
 --- src/Core/Entities/PlanetEntity.m.orig
 +++ src/Core/Entities/PlanetEntity.m

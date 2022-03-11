@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_util_file_reader_hpp,v 1.1 2017/05/26 18:09:15 espie Exp $
-
 Index: src/util/file_reader.hpp
 --- src/util/file_reader.hpp.orig
 +++ src/util/file_reader.hpp

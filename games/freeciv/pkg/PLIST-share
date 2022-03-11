@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-share,v 1.16 2018/08/15 11:59:55 chrisz Exp $
 @comment share/applications/
 share/freeciv/
 share/freeciv/civ1/

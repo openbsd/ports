@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-data,v 1.2 2021/02/16 00:25:38 jsg Exp $
 share/sauerbraten/
 share/sauerbraten/data/
 share/sauerbraten/data/background.png

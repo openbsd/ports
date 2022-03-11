@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2018/06/27 21:03:48 espie Exp $
-
 COMMENT =		megaglest game data files
 GH_PROJECT =		megaglest-data
 REVISION =		1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/16 21:38:36 espie Exp $
-
 COMMENT =	common data for the nethack/slash ports
 V =		3.6.6
 DISTNAME =	nethack-$V

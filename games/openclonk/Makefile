@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:22 sthen Exp $
-
 # Uses x86-only blake2 implementation.
 ONLY_FOR_ARCHS =	amd64 i386
 

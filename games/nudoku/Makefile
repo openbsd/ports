@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/14 21:55:22 fcambus Exp $
-
 COMMENT =	ncurses based sudoku game
 
 GH_ACCOUNT =	jubalh

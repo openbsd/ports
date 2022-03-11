@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:12 espie Exp $
 @bin bin/chromium-bsu
 @man man/man6/chromium-bsu.6
 share/applications/chromium-bsu.desktop

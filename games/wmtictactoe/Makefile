@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/05 15:47:02 cwen Exp $
-
 COMMENT=		wm-dockapp; TicTacToe game
 
 DISTNAME=		wmtictactoe-1.1-1

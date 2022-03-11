@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/31 07:37:18 bentley Exp $
-
 COMMENT =		vertical shoot-em-up with nontraditional elements
 
 DISTNAME =		garden-1.0.9

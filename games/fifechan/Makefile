@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/11 05:58:33 kirby Exp $
-
 COMMENT =	graphical user interface library for games
 
 GH_ACCOUNT =	fifengine

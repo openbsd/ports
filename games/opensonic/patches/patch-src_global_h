@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_global_h,v 1.1.1.1 2009/10/15 14:39:50 phessler Exp $
 --- src/global.h.orig	Fri Oct  9 17:58:18 2009
 +++ src/global.h	Fri Oct  9 17:58:27 2009
 @@ -40,6 +40,5 @@ typedef unsigned long uint32;

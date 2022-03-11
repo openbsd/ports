@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/10/26 06:42:02 bentley Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers

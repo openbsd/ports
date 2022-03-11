@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/06/15 04:23:45 kirby Exp $
-
 SHARED_LIBS += 		gemrb_core 0.0
 
 COMMENT =		open-source implementation of Bioware's Infinity Engine

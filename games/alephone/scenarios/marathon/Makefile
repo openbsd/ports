@@ -1,4 +1,3 @@
-#	$OpenBSD: Makefile,v 1.14 2020/09/12 19:30:08 phessler Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files

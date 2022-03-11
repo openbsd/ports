@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 15:14:05 pascal Exp $
 share/vegastrike/units/installations/Agricultural_Station/LIHW_agricultural.texture
 share/vegastrike/units/installations/Agricultural_Station/luddites_agricultural.texture
 share/vegastrike/units/installations/Agricultural_Station/merchant_guild_agricultural.texture

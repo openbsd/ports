@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/07 21:39:31 cwen Exp $
-
 COMMENT =	bastard tetris
 
 GH_ACCOUNT =	fph

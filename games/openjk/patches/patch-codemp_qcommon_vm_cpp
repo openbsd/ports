@@ -1,5 +1,3 @@
-$OpenBSD: patch-codemp_qcommon_vm_cpp,v 1.1.1.1 2018/01/28 16:07:58 bcallah Exp $
-
 Index: codemp/qcommon/vm.cpp
 --- codemp/qcommon/vm.cpp.orig
 +++ codemp/qcommon/vm.cpp

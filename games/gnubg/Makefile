@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =		GNU Backgammon
 V =			1.05.002
 DISTNAME =		gnubg-release-$V-sources

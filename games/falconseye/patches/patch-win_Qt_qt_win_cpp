@@ -1,4 +1,3 @@
-$OpenBSD: patch-win_Qt_qt_win_cpp,v 1.1.1.1 2001/07/05 13:29:06 espie Exp $
 --- win/Qt/qt_win.cpp.orig	Tue Jul  3 17:42:00 2001
 +++ win/Qt/qt_win.cpp	Wed Jul  4 11:23:29 2001
 @@ -91,7 +91,8 @@ extern "C" {

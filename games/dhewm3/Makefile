@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/07/12 04:23:37 jsg Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386
 
 GH_ACCOUNT =		dhewm

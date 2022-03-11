@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_irrlicht_CMakeLists_txt,v 1.5 2020/03/18 18:57:46 sebastia Exp $
 Index: lib/irrlicht/CMakeLists.txt
 --- lib/irrlicht/CMakeLists.txt.orig
 +++ lib/irrlicht/CMakeLists.txt

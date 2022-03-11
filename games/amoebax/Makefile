@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:14 sthen Exp $
-
 COMMENT=	cute and addictive action-puzzle game
 
 DISTNAME= 	amoebax-0.2.1

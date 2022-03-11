@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/23 02:19:28 thfr Exp $
-
 COMMENT =	emulator for Steam online features
 
 # commit from 2021-12-06

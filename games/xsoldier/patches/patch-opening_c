@@ -1,4 +1,3 @@
-$OpenBSD: patch-opening_c,v 1.2 2005/10/21 20:07:05 naddy Exp $
 --- opening.c.orig	Thu Oct 20 07:24:10 2005
 +++ opening.c	Thu Oct 20 07:24:37 2005
 @@ -95,10 +95,10 @@ int Opening(void)
