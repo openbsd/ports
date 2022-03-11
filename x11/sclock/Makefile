@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:21 sthen Exp $
-
 COMMENT=	simple digital clock
 
 DISTNAME=	sclock-0.6

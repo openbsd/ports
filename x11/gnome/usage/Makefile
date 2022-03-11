@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/19 08:55:35 ajacoutot Exp $
-
 COMMENT=		system resources status
 
 GNOME_PROJECT=		gnome-usage

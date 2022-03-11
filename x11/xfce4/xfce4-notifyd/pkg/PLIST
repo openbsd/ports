@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/11/14 08:02:49 landry Exp $
 @bin bin/xfce4-notifyd-config
 lib/systemd/user/xfce4-notifyd.service
 lib/xfce4/notifyd/

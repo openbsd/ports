@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	GNUstep battery monitor
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 

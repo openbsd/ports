@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2022/01/05 08:02:56 rsadowski Exp $
 include/KF5/kio_archivebase.h
 include/KF5/libkioarchive_export.h
 lib/cmake/KioArchive/

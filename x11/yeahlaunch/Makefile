@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:30 sthen Exp $
-
 COMMENT=	animated autohiding applications launcher
 
 DISTNAME=	yeahlaunch-0.2

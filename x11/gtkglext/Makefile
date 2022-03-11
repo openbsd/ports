@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/12/29 23:56:17 ajacoutot Exp $
-
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0.20191219

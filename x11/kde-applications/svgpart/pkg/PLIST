@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:46 rsadowski Exp $
 @conflict svgpart-<=19.12.3p0
 @pkgpath x11/kde4/svgpart
 lib/qt5/plugins/kf5/parts/

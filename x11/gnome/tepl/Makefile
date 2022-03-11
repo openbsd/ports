@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/05/13 08:11:28 ajacoutot Exp $
-
 COMMENT=		Text Editor Product Line
 
 GNOME_PROJECT=		tepl

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2015/06/28 13:33:07 bcallah Exp $
 bin/fltk-config
 @bin bin/fluid
 include/FL/

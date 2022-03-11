@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_afterstep_asinternals_h,v 1.1 2017/05/03 17:51:26 jca Exp $
 --- src/afterstep/asinternals.h.orig
 +++ src/afterstep/asinternals.h
 @@ -689,8 +689,8 @@ void ParsePopupEntry (char *tline, FILE * fd, char **j

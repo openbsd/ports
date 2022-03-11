@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:28 rsadowski Exp $
-
 COMMENT =	Lieutnant Skat - from German Offiziersskat
 DISTNAME =	lskat-${VERSION}
 CATEGORIES =	games

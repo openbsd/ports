@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/26 18:20:37 naddy Exp $
-
 COMMENT=		text editor widget for FLTK
 
 V=			0.4.5

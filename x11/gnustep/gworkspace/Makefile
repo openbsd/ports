@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/01/05 09:01:04 sebastia Exp $
-
 COMMENT=	GNUstep workspace manager
 
 DISTNAME =	gworkspace-1.0.0

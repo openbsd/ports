@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/15 21:23:32 rsadowski Exp $
-
 QT5NAME =		QtVirtualKeyboard
 COMMENT-main =		Qt5 virtual keyboard plugin
 

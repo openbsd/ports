@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpeg2_video_video_output_x11_c,v 1.9 2009/12/09 10:19:33 jakemsr Exp $
 --- mpeg2_video/video_output_x11.c.orig	Tue Nov  4 04:02:10 2003
 +++ mpeg2_video/video_output_x11.c	Sun Feb  8 12:15:47 2009
 @@ -1377,6 +1377,12 @@ void check_x_events(yuv_image_t *current_image)

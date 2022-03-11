@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2020/12/29 14:58:52 landry Exp $
-
 COMMENT=	Xfce4 xkb layout switcher panel plugin
 
 XFCE_VERSION=	0.8.2

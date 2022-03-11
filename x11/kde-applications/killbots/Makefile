@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:20 rsadowski Exp $
-
 COMMENT =	simple game of evading killer robots
 DISTNAME =	killbots-${VERSION}
 CATEGORIES =	games

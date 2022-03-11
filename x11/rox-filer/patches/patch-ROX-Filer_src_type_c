@@ -1,5 +1,3 @@
-$OpenBSD: patch-ROX-Filer_src_type_c,v 1.4 2021/02/11 09:52:17 ajacoutot Exp $
-
 warning: absolute value function 'abs' given an argument of type 'long long' but has parameter of type 'int' which may cause truncation of value
 
 Index: ROX-Filer/src/type.c

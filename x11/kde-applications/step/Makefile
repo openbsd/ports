@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:58 rsadowski Exp $
-
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
 CATEGORIES =	education math

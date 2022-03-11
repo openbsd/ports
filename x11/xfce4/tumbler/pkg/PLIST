@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/12/29 14:47:09 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h

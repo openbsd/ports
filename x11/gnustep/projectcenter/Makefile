@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT=	GNUstep integrated development environment
 
 VERSION =	0.6.2

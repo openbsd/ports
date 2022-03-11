@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/12/22 09:20:00 sebastia Exp $
 @pkgpath ${BASE_PKGPATH},cairo
 @pkgpath ${BASE_PKGPATH},libart
 @pkgpath ${BASE_PKGPATH},xlib

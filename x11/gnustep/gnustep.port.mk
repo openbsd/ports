@@ -1,5 +1,3 @@
-# $OpenBSD: gnustep.port.mk,v 1.39 2022/01/17 08:05:25 sebastia Exp $
-
 # until tested on others
 ONLY_FOR_ARCHS ?=	${LLD_ARCHS}
 

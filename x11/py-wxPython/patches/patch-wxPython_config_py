@@ -1,4 +1,3 @@
-$OpenBSD: patch-wxPython_config_py,v 1.4 2019/01/02 12:43:19 jca Exp $
 Index: wxPython/config.py
 --- wxPython/config.py.orig
 +++ wxPython/config.py

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/06/19 18:34:34 rsadowski Exp $
 @pkgpath x11/kde4/katomic
 @bin bin/katomic
 share/applications/org.kde.katomic.desktop

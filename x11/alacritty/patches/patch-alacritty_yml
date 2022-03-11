@@ -1,5 +1,3 @@
-$OpenBSD: patch-alacritty_yml,v 1.1.1.1 2021/10/22 17:24:59 fcambus Exp $
-
 Index: alacritty.yml
 --- alacritty.yml.orig
 +++ alacritty.yml

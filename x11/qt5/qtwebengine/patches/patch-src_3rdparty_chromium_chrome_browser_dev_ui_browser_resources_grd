@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_chrome_browser_dev_ui_browser_resources_grd,v 1.1 2021/01/19 06:16:33 rsadowski Exp $
-
 Index: src/3rdparty/chromium/chrome/browser/dev_ui_browser_resources.grd
 --- src/3rdparty/chromium/chrome/browser/dev_ui_browser_resources.grd.orig
 +++ src/3rdparty/chromium/chrome/browser/dev_ui_browser_resources.grd

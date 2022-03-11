@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/29 22:16:32 espie Exp $
 @bin bin/klavaro
 @man man/man1/klavaro.1
 share/icons/

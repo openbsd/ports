@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/15 12:50:42 landry Exp $
 lib/X11/icons/
 lib/X11/icons/neutral/
 lib/X11/icons/neutral/cursors/

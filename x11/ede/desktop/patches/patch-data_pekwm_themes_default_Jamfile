@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_pekwm_themes_default_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
 --- data/pekwm/themes/default/Jamfile.orig	Sat Jul 13 17:51:57 2013
 +++ data/pekwm/themes/default/Jamfile	Sat Jul 13 17:52:08 2013
 @@ -12,4 +12,4 @@ SubDir TOP data pekwm themes default ;

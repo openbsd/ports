@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tile_cc,v 1.1 2017/05/03 18:10:07 jca Exp $
 --- src/tile.cc.orig
 +++ src/tile.cc
 @@ -4,6 +4,7 @@

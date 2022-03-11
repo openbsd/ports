@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:13 sthen Exp $
-
 COMMENT=	GTK+3 based xmessage(1) clone
 
 DISTNAME=	gxmessage-3.4.3

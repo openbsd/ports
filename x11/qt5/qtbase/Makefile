@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/22 15:40:52 rsadowski Exp $
-
 DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
 

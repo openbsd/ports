@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/14 13:55:38 rsadowski Exp $
 @pkgpath x11/kde4/dev-scripts
 bin/adddebug
 bin/build-progress.sh

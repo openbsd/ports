@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:49 rsadowski Exp $
-
 COMMENT =	territory capture game
 DISTNAME =	kjumpingcube-${VERSION}
 CATEGORIES =	games

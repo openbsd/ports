@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/10/12 10:18:56 cwen Exp $
-
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
 REVISION=	3

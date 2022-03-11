@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2009/03/16 20:42:41 sturm Exp $
 --- config.mk.orig	Mon Mar 16 21:11:23 2009
 +++ config.mk	Mon Mar 16 21:15:45 2009
 @@ -4,21 +4,19 @@ VERSION = 0.1

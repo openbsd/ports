@@ -1,5 +1,3 @@
-$OpenBSD: patch-trippy_h,v 1.1 2021/02/04 19:13:18 sthen Exp $
-
 the definitions of "global" vars moved to trippy.c
 
 Index: trippy.h

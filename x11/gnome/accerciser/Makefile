@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:02:57 sthen Exp $
-
 COMMENT=	interactive accessibility explorer
 
 GNOME_PROJECT=	accerciser

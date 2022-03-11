@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:57 rsadowski Exp $
-
 COMMENT =	jigsaw puzzle game
 DISTNAME =	palapeli-${VERSION}
 CATEGORIES =	games

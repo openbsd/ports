@@ -1,5 +1,3 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.6 2021/01/19 06:16:29 rsadowski Exp $
-
 Index: qmake/generators/unix/unixmake2.cpp
 --- qmake/generators/unix/unixmake2.cpp.orig
 +++ qmake/generators/unix/unixmake2.cpp

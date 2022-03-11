@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/10 06:37:51 rsadowski Exp $
-
 COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
 CATEGORIES =	textproc devel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:42 rsadowski Exp $
-
 COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 DISTNAME =	ffmpegthumbs-${VERSION}
 PKGNAME =	ffmpegthumbs-kf5-${VERSION}

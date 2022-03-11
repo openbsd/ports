@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/25 12:05:52 robert Exp $
-
 COMMENT=		PolicyKit authentication agent for MATE
 
 MATE_PROJECT=		mate-polkit

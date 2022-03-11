@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_Makefile_in,v 1.5 2019/12/30 14:10:52 ajacoutot Exp $
-
 Index: man/Makefile.in
 --- man/Makefile.in.orig
 +++ man/Makefile.in

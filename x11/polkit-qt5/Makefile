@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/25 16:04:20 ajacoutot Exp $
-
 COMMENT=	PolicyKit authentication agent for Qt
 
 V=		0.114.0

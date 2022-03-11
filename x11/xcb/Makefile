@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT=	tool for managing X11 cut-buffers
 
 DISTNAME=	xcb-2.4

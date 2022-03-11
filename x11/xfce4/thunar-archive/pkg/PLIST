@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/12/29 15:13:56 landry Exp $
 @so lib/thunarx-3/thunar-archive-plugin.so
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/engrampa.tap

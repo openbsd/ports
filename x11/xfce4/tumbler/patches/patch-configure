@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2020/12/29 14:47:09 landry Exp $
 fix typo in https://gitlab.xfce.org/xfce/tumbler/-/commit/6e6dbd1ad0bbac5d59901883e31057ef99fb6cf8#87db583be5c13c1f7b3c958b10e03d67b6a2ca06_151_150
 
 https://gitlab.xfce.org/xfce/tumbler/-/merge_requests/14

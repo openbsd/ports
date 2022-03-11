@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/05/14 09:24:26 ajacoutot Exp $
 @conflict gnome-documents-<3.32.0
 bin/gnome-books
 lib/gnome-books/

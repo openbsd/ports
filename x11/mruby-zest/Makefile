@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 COMMENT=	single window & tabbed version of the ZynAddSubFX interface
 
 PKGNAME=	mruby-zest-20210207

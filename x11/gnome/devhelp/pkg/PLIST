@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.40 2021/10/25 07:26:20 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3/
 include/devhelp-3/devhelp/

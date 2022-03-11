@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/12/10 13:35:58 op Exp $
-
 COMMENT=	aewm++ based pretty themable window manager
 
 DISTNAME=	pekwm-${V}

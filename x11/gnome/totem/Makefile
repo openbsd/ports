@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.174 2022/01/13 08:07:53 ajacoutot Exp $
-
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem

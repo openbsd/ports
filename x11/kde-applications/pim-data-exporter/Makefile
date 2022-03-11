@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/01/05 08:03:03 rsadowski Exp $
-
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel

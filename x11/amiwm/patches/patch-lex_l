@@ -1,5 +1,3 @@
-$OpenBSD: patch-lex_l,v 1.2 2015/12/06 20:12:42 jasper Exp $
-
 http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/wm/amiwm/patches/patch-ab?rev=1.1&content-type=text/x-cvsweb-markup
 
 --- lex.l.orig	Sat Apr 10 00:15:15 2010

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/09/10 08:43:57 rsadowski Exp $
-
 COMMENT =	Kross interpreter plugins for programming
 DISTNAME =	kross-interpreters-${VERSION}
 PKGNAME =	kross-interpreters-kf5-${VERSION}

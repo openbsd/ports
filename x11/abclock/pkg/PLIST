@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/07/28 15:51:23 steven Exp $
 bin/abc_img
 bin/abclock

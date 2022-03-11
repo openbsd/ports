@@ -1,5 +1,3 @@
-# $OpenBSD: qt5.port.mk,v 1.29 2021/11/12 13:40:49 rsadowski Exp $
-
 # This fragment defines MODQT_* variables to make it easier to substitute
 # qt3/qt4/qt5 in a port.
 MODQT_OVERRIDE_UIC ?=	Yes

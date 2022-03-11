@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/19 19:43:35 sebastia Exp $
-
 COMMENT=	GNUstep address book
 
 DISTNAME=	Addresses-0.4.8

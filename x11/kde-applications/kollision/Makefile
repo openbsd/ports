@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:23 rsadowski Exp $
-
 COMMENT =	simple ball dodging game
 DISTNAME =	kollision-${VERSION}
 CATEGORIES =	games

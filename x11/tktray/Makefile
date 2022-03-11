@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT =	system tray icon support for Tk
 
 V =		1.3.9

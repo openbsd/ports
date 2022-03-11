@@ -1,4 +1,3 @@
-$OpenBSD: patch-rc_sh_wmii,v 1.1 2015/11/12 09:59:41 sthen Exp $
 --- rc/sh.wmii.orig	Thu Nov 12 09:57:17 2015
 +++ rc/sh.wmii	Thu Nov 12 09:57:33 2015
 @@ -17,6 +17,7 @@ LEFT=h

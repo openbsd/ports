@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/06/29 14:36:10 mestre Exp $
-
 COMMENT=		simple X terminal
 
 V=			0.8.4

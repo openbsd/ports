@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/19 19:43:37 sebastia Exp $
-
 COMMENT=	GNUstep image viewer
 
 REVISION =	16

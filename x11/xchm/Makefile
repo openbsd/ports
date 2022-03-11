@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/01/15 14:08:31 ajacoutot Exp $
-
 COMMENT=	display chm files
 
 V=		1.33

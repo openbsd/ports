@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/01/05 08:02:51 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/akonadiconsole
 @lib lib/libakonadiconsole.so.${LIBakonadiconsole_VERSION}

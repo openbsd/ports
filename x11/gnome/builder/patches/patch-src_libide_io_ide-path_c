@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libide_io_ide-path_c,v 1.2 2019/11/02 14:27:40 ajacoutot Exp $
-
 wordexp(3) vomit
 
 Index: src/libide/io/ide-path.c

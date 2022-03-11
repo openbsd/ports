@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/02/14 20:18:22 naddy Exp $
-
 COMMENT=		GUI toolkit for X11
 
 DISTNAME=		xforms-1.2.4

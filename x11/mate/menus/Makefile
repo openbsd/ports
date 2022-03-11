@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/25 12:05:52 robert Exp $
-
 COMMENT=		implementation of the FreeDesktop menu spec for MATE
 
 SHARED_LIBS +=  mate-menu                 6.9 # 6.9

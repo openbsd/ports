@@ -1,5 +1,3 @@
-# $OpenBSD: gnome.port.mk,v 1.123 2022/01/21 08:51:44 ajacoutot Exp $
-#
 # Module for GNOME ports
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \

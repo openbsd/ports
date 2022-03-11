@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2021/09/14 12:16:15 sthen Exp $
-
 COMMENT=	light, keyboard friendly window manager
 
 V=		20090110

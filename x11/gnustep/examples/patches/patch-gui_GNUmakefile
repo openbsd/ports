@@ -1,4 +1,3 @@
-$OpenBSD: patch-gui_GNUmakefile,v 1.2 2010/06/07 06:52:46 ajacoutot Exp $
 --- gui/GNUmakefile.orig	Mon Mar  8 00:15:58 2010
 +++ gui/GNUmakefile	Thu Jun  3 09:58:19 2010
 @@ -30,7 +30,12 @@ SUBPROJECTS =             \

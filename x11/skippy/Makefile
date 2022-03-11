@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/07 22:55:38 cwen Exp $
-
 COMMENT=		full-screen X11 task-switcher like Apple's Expose
 
 DISTNAME=		skippy-0.5.0

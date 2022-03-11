@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/19 19:43:35 sebastia Exp $
-
 COMMENT =	GNUstep sticky notes
 
 DISTNAME =	Affiche-0.6.0

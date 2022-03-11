@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/09/10 08:43:50 rsadowski Exp $
-
 COMMENT =	KAlarm client library
 DISTNAME =	kalarmcal-${VERSION}
 CATEGORIES =	devel

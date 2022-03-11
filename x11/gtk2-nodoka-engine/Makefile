@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:12 sthen Exp $
-
 COMMENT =	GTK+2 engine from Fedora
 
 VERSION =	0.7.5

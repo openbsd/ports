@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:30 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/calendarjanitor
 @bin bin/konsolekalendar

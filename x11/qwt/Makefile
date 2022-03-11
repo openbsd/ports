@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/13 22:20:36 sthen Exp $
-
 COMMENT=	Qt widgets for technical applications
 
 VERSION =	6.1.6

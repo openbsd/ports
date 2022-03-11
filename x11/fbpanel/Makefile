@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/03 13:43:42 landry Exp $
-
 COMMENT=	lightweight NETWM compliant desktop panel
 
 GH_ACCOUNT=	aanatoly

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/05 08:02:51 rsadowski Exp $
-
 COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity

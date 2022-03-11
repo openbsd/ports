@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/08/25 12:05:52 robert Exp $
-
 COMMENT=		MATE notification daemon
 
 MATE_PROJECT=		mate-notification-daemon

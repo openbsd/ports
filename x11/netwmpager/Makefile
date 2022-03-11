@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:17 sthen Exp $
-
 COMMENT=	small EWMH compliant pager
 
 DISTNAME=	netwmpager-1.11

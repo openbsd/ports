@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/24 10:23:33 landry Exp $
 share/themes/Greybird/
 share/themes/Greybird-accessibility/
 share/themes/Greybird-accessibility/xfwm4/

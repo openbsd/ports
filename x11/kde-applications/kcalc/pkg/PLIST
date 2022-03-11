@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2022/01/05 08:02:54 rsadowski Exp $
 @pkgpath x11/kde4/kcalc
 @bin bin/kcalc
 share/applications/org.kde.kcalc.desktop

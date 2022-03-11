@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.297 2021/12/28 09:32:13 ajacoutot Exp $
-
      SUBDIR =
      SUBDIR += accerciser
      SUBDIR += adwaita-icon-theme

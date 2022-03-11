@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modes_apache_apacheConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
-
 Index: src/modes/apache/apacheConfiguration.cpp
 --- src/modes/apache/apacheConfiguration.cpp.orig
 +++ src/modes/apache/apacheConfiguration.cpp

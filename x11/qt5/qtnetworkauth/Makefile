@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/15 21:23:31 rsadowski Exp $
-
 QT5NAME =		QtNetworKAuth
 COMMENT-main =		Qt5 network authorization components
 

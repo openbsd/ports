@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep performance library
 
 VERSION =	0.5.0

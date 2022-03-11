@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2020/03/23 18:01:29 rsadowski Exp $
-
 COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.7.2

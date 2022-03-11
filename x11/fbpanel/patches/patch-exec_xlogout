@@ -1,5 +1,3 @@
-$OpenBSD: patch-exec_xlogout,v 1.5 2021/02/20 18:23:13 landry Exp $
-
 fix xlogout script on OpenBSD
 use some sane defaults for X session names: that's a best effort 
 task :-)

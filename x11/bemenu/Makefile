@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/27 13:57:28 sthen Exp $
-
 COMMENT =	menu library inspired by dmenu
 CATEGORIES =	x11
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.32 2021/10/28 07:32:53 ajacoutot Exp $
 bin/gnome-music
 lib/org.gnome.Music/
 lib/org.gnome.Music/girepository-1.0/

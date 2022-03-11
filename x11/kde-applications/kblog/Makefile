@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:33 rsadowski Exp $
-
 COMMENT =	KDE PIM blogging library
 VERSION =	20.04.3
 DISTNAME =	kblog-${VERSION}

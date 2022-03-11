@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/31 11:09:15 ajacoutot Exp $
-
 COMMENT =	user interface library from pwmt
 DISTNAME =	girara-0.3.6
 

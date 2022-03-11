@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.254 2022/03/05 10:05:57 ajacoutot Exp $
-
 # XXX add support for libcloudproviders?
 
 DPB_PROPERTIES=		parallel

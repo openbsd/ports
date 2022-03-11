@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT=	ant hill simulation on X11 root window
 
 DISTNAME=	xantfarm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT=	calendaring application based on GNUstep
 
 VERSION=	0.43

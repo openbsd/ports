@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab

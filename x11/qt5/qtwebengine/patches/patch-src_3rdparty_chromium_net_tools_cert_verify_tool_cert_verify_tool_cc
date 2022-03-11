@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_net_tools_cert_verify_tool_cert_verify_tool_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
-
 Index: src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc
 --- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc.orig
 +++ src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc

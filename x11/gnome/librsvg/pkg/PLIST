@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.41 2021/11/06 13:41:35 ajacoutot Exp $
 %%old%%
 %%stable%%
 @bin bin/rsvg-convert

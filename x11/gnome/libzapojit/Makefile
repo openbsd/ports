@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/07 11:20:53 ajacoutot Exp $
-
 COMMENT=	GLib/GObject wrapper for SkyDrive and Hotmail REST APIs
 
 GNOME_PROJECT=	libzapojit

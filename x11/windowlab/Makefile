@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT =	small and simple window manager of novel design
 DISTNAME =	windowlab-1.40
 EXTRACT_SUFX =	.tar

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/14 00:39:40 naddy Exp $
-
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
 

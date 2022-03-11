@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	audio player for GNUstep
 
 DISTNAME =	Cynthiune-1.0.0

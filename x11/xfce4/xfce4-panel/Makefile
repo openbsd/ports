@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2021/05/07 06:52:57 landry Exp $
-
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/23 13:14:16 edd Exp $
-
 V =		12.10.1
 COMMENT =	convenience functions for desktop indicators
 DISTNAME =	libindicator-${V}

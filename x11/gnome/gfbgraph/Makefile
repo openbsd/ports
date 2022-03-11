@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/30 06:36:56 ajacoutot Exp $
-
 COMMENT=		GObject library for Facebook Graph API
 
 GNOME_PROJECT=		gfbgraph

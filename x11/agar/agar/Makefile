@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/01 07:01:02 bentley Exp $
-
 COMMENT =		cross-platform widget toolkit
 
 PKGNAME =		agar-$V

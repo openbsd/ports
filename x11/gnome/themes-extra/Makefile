@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/07 11:20:55 ajacoutot Exp $
-
 COMMENT=		extra themes for GNOME applications
 
 GNOME_PROJECT=		gnome-themes-extra

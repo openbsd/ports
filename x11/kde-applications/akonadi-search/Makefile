@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/03 16:12:31 rsadowski Exp $
-
 COMMENT =	libraries and daemons to implement searching in Akonadi
 DISTNAME =	akonadi-search-${VERSION}
 CATEGORIES =	devel

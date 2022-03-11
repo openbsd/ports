@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/19 17:16:27 ajacoutot Exp $
-
 COMMENT =	lightweight compositor for X, forked from xcompmgr-dana
 
 V =		0.1_beta2

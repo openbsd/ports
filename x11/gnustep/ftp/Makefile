@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT=	GNUstep file transfer protcol tool
 
 DISTNAME=	FTP-0.6

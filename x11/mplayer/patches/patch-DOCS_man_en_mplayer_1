@@ -1,5 +1,3 @@
-$OpenBSD: patch-DOCS_man_en_mplayer_1,v 1.21 2021/02/06 21:46:32 sthen Exp $
-
 Index: DOCS/man/en/mplayer.1
 --- DOCS/man/en/mplayer.1.orig
 +++ DOCS/man/en/mplayer.1

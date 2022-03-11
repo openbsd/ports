@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/08 16:04:18 naddy Exp $
 @bin bin/gbdfed
 @man man/man1/gbdfed.1

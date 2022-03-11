@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/02/07 17:57:04 sebastia Exp $
 @bin bin/ImpersonatorToolKit
 lib/GNUstep/Tools/
 lib/GNUstep/Tools/Resources/

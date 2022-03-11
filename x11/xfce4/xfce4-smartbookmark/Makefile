@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/12/29 14:58:22 landry Exp $
-
 COMMENT=	Xfce4 web search panel plugin
 
 XFCE_VERSION=	0.5.2

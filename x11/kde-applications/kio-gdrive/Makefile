@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/22 06:49:52 rsadowski Exp $
-
 COMMENT =	KIO Slave to access Google Drive
 DISTNAME =	kio-gdrive-${VERSION}
 CATEGORIES =	www

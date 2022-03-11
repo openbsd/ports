@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/10 06:37:49 rsadowski Exp $
-
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${VERSION}
 CATEGORIES =	education geo

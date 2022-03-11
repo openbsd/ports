@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGNode_h,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
-
 Index: Source/JavaScriptCore/dfg/DFGNode.h
 --- Source/JavaScriptCore/dfg/DFGNode.h.orig
 +++ Source/JavaScriptCore/dfg/DFGNode.h

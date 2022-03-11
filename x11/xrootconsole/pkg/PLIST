@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/17 10:21:42 espie Exp $
 @bin bin/xrootconsole
 @man man/man1/xrootconsole.1

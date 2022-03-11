@@ -1,5 +1,3 @@
-$OpenBSD: patch-evoke_Xsm_cpp,v 1.1 2018/04/08 19:30:34 jasper Exp $
-
 error: invalid suffix on literal; C++11 requires a space between literal and identifier
 
 Index: evoke/Xsm.cpp

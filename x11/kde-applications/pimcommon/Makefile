@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/05 08:03:03 rsadowski Exp $
-
 COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel

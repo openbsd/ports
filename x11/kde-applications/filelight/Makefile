@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:42 rsadowski Exp $
-
 COMMENT =	graphical equivalent of du
 DISTNAME =	filelight-${VERSION}
 CATEGORIES =	x11 sysutils

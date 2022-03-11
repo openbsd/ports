@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterStep_functions_h,v 1.1 2017/05/03 17:51:26 jca Exp $
 --- libAfterStep/functions.h.orig
 +++ libAfterStep/functions.h
 @@ -314,7 +314,7 @@ FunctionCode change_func_code (const char *func_name, 

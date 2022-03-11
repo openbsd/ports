@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/08/25 12:05:51 robert Exp $
-
 COMMENT=		components for the MATE desktop
 
 SHARED_LIBS+=		mate-desktop-2		0.0 # 18.4

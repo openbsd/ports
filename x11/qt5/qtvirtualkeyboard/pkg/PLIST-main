@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2021/01/19 06:16:32 rsadowski Exp $
 include/X11/qt5/QtHunspellInputMethod/
 include/X11/qt5/QtHunspellInputMethod/${VERSION}/
 include/X11/qt5/QtHunspellInputMethod/${VERSION}/QtHunspellInputMethod/

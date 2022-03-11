@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_resmanager_h,v 1.1 2018/12/02 17:39:18 naddy Exp $
-
 Index: src/resmanager.h
 --- src/resmanager.h.orig
 +++ src/resmanager.h

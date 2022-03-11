@@ -1,4 +1,3 @@
-# $OpenBSD: crates.inc,v 1.1 2021/11/15 18:05:56 sthen Exp $
 MODCARGO_CRATES +=	ansi_term	0.11.0	# MIT
 MODCARGO_CRATES +=	anyhow	1.0.43	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	atty	0.2.14	# MIT

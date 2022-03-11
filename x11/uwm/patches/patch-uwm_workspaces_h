@@ -1,5 +1,3 @@
-$OpenBSD: patch-uwm_workspaces_h,v 1.1 2021/02/22 22:07:54 naddy Exp $
-
 Comment out unused variables to fix build with -fno-common.
 
 Index: uwm/workspaces.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_functional-tests_test-runner_sh_in,v 1.1 2019/09/15 16:08:42 ajacoutot Exp $
-
 XXX push upstream (we don't use GNU mktemp(1)).
 
 Index: tests/functional-tests/test-runner.sh.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2020/12/29 15:02:28 landry Exp $
-
 COMMENT=	Xfce4 command line panel plugin
 
 XFCE_VERSION=	2.0.1

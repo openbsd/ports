@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.60 2022/01/17 08:05:25 sebastia Exp $
-
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
 COMMENT=	GNUstep makefile package

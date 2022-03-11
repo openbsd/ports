@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/10/26 11:29:44 jasper Exp $
 @bin bin/ghex
 include/gtkhex-3/
 include/gtkhex-3/gtkhex.h

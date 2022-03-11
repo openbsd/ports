@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/23 18:10:23 rsadowski Exp $
-
 COMMENT =	miniature golf
 DISTNAME =	kolf-${VERSION}
 CATEGORIES =	games

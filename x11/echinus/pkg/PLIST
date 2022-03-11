@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/22 08:11:05 jasper Exp $
 @bin bin/echinus
 @man man/man1/echinus.1
 share/doc/echinus/

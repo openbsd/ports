@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/04 13:59:25 cwen Exp $
-
 COMMENT=		wm-dockapp; displays the time in different time zones
 
 DISTNAME=		wmtz-0.7_p20150816

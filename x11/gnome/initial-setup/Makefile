@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2022/02/11 08:41:02 ajacoutot Exp $
-
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup

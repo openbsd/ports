@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/01 00:56:58 kn Exp $
-
 COMMENT =		GTK based file manager with two-pane design
 
 DISTNAME =		emelfm2-0.9.1

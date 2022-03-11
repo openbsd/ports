@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_crashpad_crashpad_util_misc_metrics_cc,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/metrics.cc
 --- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/metrics.cc.orig
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/metrics.cc

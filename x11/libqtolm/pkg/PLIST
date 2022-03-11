@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 22:52:43 abieber Exp $
 include/qtolm/
 include/qtolm/account.h
 include/qtolm/errors.h

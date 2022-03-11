@@ -1,5 +1,3 @@
-$OpenBSD: patch-vnc_vncsshtunnelthread_cpp,v 1.2 2021/09/10 08:43:56 rsadowski Exp $
-
 Missing include
 
 Index: vnc/vncsshtunnelthread.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/04 19:13:18 sthen Exp $
-
 COMMENT=	X11 trippy color-cycling toy
 
 DISTNAME=	xtacy114

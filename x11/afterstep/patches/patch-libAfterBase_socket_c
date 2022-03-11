@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterBase_socket_c,v 1.1 2017/05/03 17:51:26 jca Exp $
 --- libAfterBase/socket.c.orig
 +++ libAfterBase/socket.c
 @@ -323,7 +323,7 @@ create_fifo( int fd )

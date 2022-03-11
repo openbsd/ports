@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:26 sthen Exp $
-
 COMMENT=	rather neat animated clock
 
 DISTNAME=	xdaliclock-2.44

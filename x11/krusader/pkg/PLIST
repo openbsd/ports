@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/03/23 18:01:29 rsadowski Exp $
 @bin bin/krusader
 @so lib/qt5/plugins/kio_iso.so
 @so lib/qt5/plugins/kio_krarc.so

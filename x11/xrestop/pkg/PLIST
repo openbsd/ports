@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/10/01 20:33:27 matthieu Exp $
 @bin bin/xrestop
 @man man/man1/xrestop.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_threading_thread_task_runner_handle_cc,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
-
 Index: src/3rdparty/chromium/base/threading/thread_task_runner_handle.cc
 --- src/3rdparty/chromium/base/threading/thread_task_runner_handle.cc.orig
 +++ src/3rdparty/chromium/base/threading/thread_task_runner_handle.cc

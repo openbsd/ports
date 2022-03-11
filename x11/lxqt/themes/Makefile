@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:44 rsadowski Exp $
-
 COMMENT =	themes, graphics and icons for LXQt
 
 NAME =		lxqt-themes

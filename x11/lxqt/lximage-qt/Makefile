@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
-
 COMMENT =	image viewer and screenshot tool for LXQt
 
 NAME =		lximage-qt

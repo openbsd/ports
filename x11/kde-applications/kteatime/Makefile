@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:39 rsadowski Exp $
-
 COMMENT =	simple timer tray app for KDE
 DISTNAME =	kteatime-${VERSION}
 CATEGORIES =	productivity

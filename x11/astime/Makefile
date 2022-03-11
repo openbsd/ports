@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=		wm-dockapp; Time/Date applet
 
 DISTNAME=		astime-2.8

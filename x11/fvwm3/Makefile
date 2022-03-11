@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/26 20:37:41 sdk Exp $
-
 COMMENT=	multiple virtual desktop window manager
 
 VERSION=	1.0.4

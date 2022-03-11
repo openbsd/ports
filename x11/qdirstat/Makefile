@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/09/07 15:42:09 rsadowski Exp $
-
 COMMENT =	Qt-based directory statistics
 
 GH_ACCOUNT =	shundhammer

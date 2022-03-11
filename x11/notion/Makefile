@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/22 01:57:26 thfr Exp $
-
 COMMENT=	light, keyboard friendly static tiling window manager
 
 GH_ACCOUNT=	raboof

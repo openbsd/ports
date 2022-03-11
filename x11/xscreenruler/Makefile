@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/25 10:15:05 edd Exp $
-
 COMMENT =	simple screen ruler for x11
 DISTNAME =	xscreenruler-20191025
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/09 08:25:52 rsadowski Exp $
-
 COMMENT =		GTK2 theme matching KDE Breeze
 DISTNAME =		breeze-gtk-${VERSION}
 

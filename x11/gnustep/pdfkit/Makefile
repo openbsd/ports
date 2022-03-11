@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	framework for accessing and rendering PDF content
 
 DISTNAME =	PDFKit-1.2.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src-qt5_desktop-utils_desktop-utils_pro,v 1.2 2017/12/14 17:22:26 sthen Exp $
-
 Index: src-qt5/desktop-utils/desktop-utils.pro
 --- src-qt5/desktop-utils/desktop-utils.pro.orig
 +++ src-qt5/desktop-utils/desktop-utils.pro

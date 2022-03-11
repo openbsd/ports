@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.126 2022/01/31 16:14:10 ajacoutot Exp $
-
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca

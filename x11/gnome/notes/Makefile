@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT=		simple note editor
 
 GNOME_PROJECT=		gnome-notes

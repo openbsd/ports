@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:37 rsadowski Exp $
-
 COMMENT =	KDE screen magnifier
 DISTNAME =	kmag-${VERSION}
 CATEGORIES =	x11

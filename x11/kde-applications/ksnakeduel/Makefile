@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/23 18:10:25 rsadowski Exp $
-
 COMMENT =	Tron-like game
 DISTNAME =	ksnakeduel-${VERSION}
 CATEGORIES =	games

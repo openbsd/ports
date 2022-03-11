@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_h,v 1.13 2021/02/18 06:23:52 ajacoutot Exp $
-
 Fix build with -fno-common.
 
 Fix problem with remembered softvol not being loaded

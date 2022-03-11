@@ -1,4 +1,3 @@
-$OpenBSD: patch-lex_l,v 1.2 2017/05/05 22:11:08 naddy Exp $
 Index: lex.l
 --- lex.l.orig
 +++ lex.l

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT =	OCaml interface to GTK+3
 CATEGORIES =	x11 devel
 

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-gtk2,v 1.1 2021/03/15 21:14:23 ajacoutot Exp $
 @conflict caribou-<0.4.21p6
 @so lib/gtk-2.0/modules/libcaribou-gtk-module.so

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/15 12:25:26 rsadowski Exp $
-
 QT6NAME =		QtTools
 
 COMMENT =		Qt6 development tools

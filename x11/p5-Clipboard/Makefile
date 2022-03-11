@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/16 17:26:17 abieber Exp $
-
 COMMENT =	Perl extension to access the x11 clipboard
 
 MODULES =	cpan

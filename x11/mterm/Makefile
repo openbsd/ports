@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:39:44 danj Exp $
-
 COMMENT=		dockable program launcher
 
 DISTNAME=		mterm-0.4.2b

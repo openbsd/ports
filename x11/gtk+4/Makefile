@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/02/12 09:39:26 ajacoutot Exp $
-
 # XXX add support for libcloudproviders? (-Dcloudproviders=enabled)
 # XXX add support for tracker3? (-Dtracker=enabled)
 

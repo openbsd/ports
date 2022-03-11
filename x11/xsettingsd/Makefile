@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/09 15:29:48 sthen Exp $
-
 COMMENT=	lightweight XSETTINGS daemon
 
 GH_ACCOUNT=	derat

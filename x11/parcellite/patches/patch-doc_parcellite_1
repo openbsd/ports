@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_parcellite_1,v 1.1.1.1 2011/09/20 09:04:41 landry Exp $
 --- doc/parcellite.1.orig	Mon Sep  5 16:01:03 2011
 +++ doc/parcellite.1	Fri Sep  9 23:45:06 2011
 @@ -1,93 +1,119 @@
@@ -21,7 +20,7 @@ $OpenBSD: patch-doc_parcellite_1,v 1.1.1.1 2011/09/20 09:04:41 landry Exp $
 -.B OPTIONS
 -.TP
 -.B \-?\fR, \fB\-\-help
-+.Dd $Mdocdate: September 20 2011 $
++.Dd $Mdocdate: March 11 2022 $
 +.Dt PARCELLITE 1
 +.Os
 +.Sh NAME

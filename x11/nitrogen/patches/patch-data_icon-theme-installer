@@ -1,4 +1,3 @@
-$OpenBSD: patch-data_icon-theme-installer,v 1.1.1.1 2010/11/24 13:10:07 jasper Exp $
 --- data/icon-theme-installer.orig	Sun Nov 21 20:06:30 2010
 +++ data/icon-theme-installer	Sun Nov 21 20:07:11 2010
 @@ -1,4 +1,4 @@

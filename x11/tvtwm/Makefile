@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/03 22:29:21 naddy Exp $
-
 COMMENT=	twm with a virtual desktop
 
 DISTNAME=	tvtwm.pl11

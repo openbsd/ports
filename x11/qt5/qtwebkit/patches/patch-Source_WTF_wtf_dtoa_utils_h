@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WTF_wtf_dtoa_utils_h,v 1.2 2021/10/25 09:22:21 jca Exp $
-
 Index: Source/WTF/wtf/dtoa/utils.h
 --- Source/WTF/wtf/dtoa/utils.h.orig
 +++ Source/WTF/wtf/dtoa/utils.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/01/17 08:05:25 sebastia Exp $
-
 ONLY_FOR_ARCHS =	${LLD_ARCHS}
 
 COMMENT =	GNUstep libobjc2 objective-c runtime

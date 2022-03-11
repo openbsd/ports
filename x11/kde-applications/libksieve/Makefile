@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/05 08:03:02 rsadowski Exp $
-
 COMMENT =	sieve script library
 DISTNAME =	libksieve-${VERSION}
 CATEGORIES =	devel

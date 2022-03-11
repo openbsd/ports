@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2018/10/24 14:28:13 sthen Exp $
-
 COMMENT=		library to compress the standard X protocol
 
 DASHVERSION=		2

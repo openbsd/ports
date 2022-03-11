@@ -1,5 +1,3 @@
-# $OpenBSD: kde-applications.port.mk,v 1.19 2022/02/18 09:49:46 rsadowski Exp $
-
 MODKDE_VERSION ?=		21.12.2
 
 # Set to 'yes' if there are .desktop files under share/release-service/.

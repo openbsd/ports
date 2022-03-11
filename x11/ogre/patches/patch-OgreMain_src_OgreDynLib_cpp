@@ -1,4 +1,3 @@
-$OpenBSD: patch-OgreMain_src_OgreDynLib_cpp,v 1.1 2014/07/11 21:20:31 pascal Exp $
 --- OgreMain/src/OgreDynLib.cpp.orig	Sun Mar 23 15:16:59 2014
 +++ OgreMain/src/OgreDynLib.cpp	Sun Mar 23 15:17:21 2014
 @@ -78,10 +78,7 @@ namespace Ogre {

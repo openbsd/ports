@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_temperature_cpp,v 1.3 2021/02/27 12:03:43 jasper Exp $
-
 Index: src/modules/temperature.cpp
 --- src/modules/temperature.cpp.orig
 +++ src/modules/temperature.cpp

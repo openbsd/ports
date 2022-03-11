@@ -1,5 +1,3 @@
-$OpenBSD: patch-PlugIns_CMakeLists_txt,v 1.1 2012/10/07 09:37:46 dcoppa Exp $
-
 PlugIns are shared modules, not shared libraries
 
 --- PlugIns/CMakeLists.txt.orig	Wed Oct  3 20:34:52 2012

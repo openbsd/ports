@@ -1,5 +1,3 @@
-$OpenBSD: patch-src-qt5_core_libLumina_LuminaOS-OpenBSD_cpp,v 1.1 2020/04/18 21:05:57 ratchov Exp $
-
 Index: src-qt5/core/libLumina/LuminaOS-OpenBSD.cpp
 --- src-qt5/core/libLumina/LuminaOS-OpenBSD.cpp.orig
 +++ src-qt5/core/libLumina/LuminaOS-OpenBSD.cpp

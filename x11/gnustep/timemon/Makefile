@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/08/16 20:35:21 sebastia Exp $
-
 COMMENT=	CPU load monitor
 
 REVISION =	7

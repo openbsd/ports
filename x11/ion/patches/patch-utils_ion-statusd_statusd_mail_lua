@@ -1,4 +1,3 @@
-$OpenBSD: patch-utils_ion-statusd_statusd_mail_lua,v 1.1 2013/04/29 12:40:49 gonzalo Exp $
 --- utils/ion-statusd/statusd_mail.lua.orig	Mon Apr  8 11:59:40 2013
 +++ utils/ion-statusd/statusd_mail.lua	Mon Apr  8 12:00:34 2013
 @@ -12,7 +12,7 @@ local mon = "mail"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/01/26 11:14:34 jasper Exp $
-
 COMMENT=	Unico GTK+3 engine
 
 V=		1.0.2.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:22 rsadowski Exp $
-
 COMMENT =	library for handling mail messages and newsgroup articles
 DISTNAME =	kmime-${VERSION}
 CATEGORIES =	mail devel

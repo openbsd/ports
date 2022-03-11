@@ -1,4 +1,3 @@
-$OpenBSD: patch-DNDlib_Makefile_in,v 1.2 2005/12/31 17:29:38 naddy Exp $
 --- DNDlib/Makefile.in.orig	Fri May 23 04:18:22 1997
 +++ DNDlib/Makefile.in	Sat Dec 31 17:36:23 2005
 @@ -13,30 +13,41 @@ LDFLAGS = @LDFLAGS@

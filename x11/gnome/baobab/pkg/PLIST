@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.30 2021/10/25 11:28:43 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1

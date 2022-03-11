@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:57 sthen Exp $
-
 COMMENT=	automates xrandr calls based on connect devices
 
 CATEGORIES=	x11 sysutils

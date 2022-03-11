@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/10/25 14:48:38 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/

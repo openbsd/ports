@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.27 2021/10/11 09:26:01 landry Exp $
 @bin bin/ristretto
 share/applications/org.xfce.ristretto.desktop
 share/icons/hicolor/128x128/apps/org.xfce.ristretto.png

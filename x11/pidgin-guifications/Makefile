@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/17 14:39:44 danj Exp $
-
 COMMENT=	MSN style 'toaster' popups plugin for Pidgin
 
 DISTNAME=	pidgin-guifications-2.16

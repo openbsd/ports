@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imakefile,v 1.1.1.1 2006/04/23 19:49:03 steven Exp $
 --- Imakefile.orig	Sun Jan 15 20:39:00 2006
 +++ Imakefile	Sat Apr 22 20:29:10 2006
 @@ -7,7 +7,9 @@ OBJS = TolleUhr.o XCC.o

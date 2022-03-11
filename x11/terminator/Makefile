@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/02 00:03:00 sthen Exp $
-
 COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
 VERSION =		1.92

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/10 22:16:48 daniel Exp $
 @conflict pyglet-*
 lib/python${MODPY_VERSION}/site-packages/pyglet/
 lib/python${MODPY_VERSION}/site-packages/pyglet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

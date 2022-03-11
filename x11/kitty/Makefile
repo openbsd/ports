@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/08 17:21:44 thfr Exp $
-
 # Requires OpenGL>=3.3
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
 

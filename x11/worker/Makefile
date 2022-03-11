@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/07/22 20:47:58 bcallah Exp $
-
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
 DISTNAME =	worker-4.8.1

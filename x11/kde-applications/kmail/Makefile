@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/18 09:49:52 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE PIM email client

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/01/18 07:39:44 landry Exp $
-
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder

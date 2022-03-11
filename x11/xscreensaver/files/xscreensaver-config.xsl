@@ -1,5 +1,4 @@
 <?xml version='1.0'?>
-<!-- $OpenBSD: xscreensaver-config.xsl,v 1.1 2008/11/29 11:29:07 ajacoutot Exp $ -->
 <!-- file originally from gnome-screensavers sources -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="1.0">

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/22 06:33:30 rsadowski Exp $
 @lib lib/libKF5kipiplugins.so.${LIBKF5kipiplugins_VERSION}
 @so lib/qt5/plugins/kipiplugin_dropbox.so
 @so lib/qt5/plugins/kipiplugin_facebook.so

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/06 11:14:15 ajacoutot Exp $
-
 COMMENT=		Actions, Menus and Toolbars Kit
 
 GNOME_PROJECT=		amtk

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2021/11/17 12:08:10 ajacoutot Exp $
-
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc

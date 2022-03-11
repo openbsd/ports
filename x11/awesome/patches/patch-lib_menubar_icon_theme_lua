@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_menubar_icon_theme_lua,v 1.3 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: lib/menubar/icon_theme.lua
 --- lib/menubar/icon_theme.lua.orig
 +++ lib/menubar/icon_theme.lua

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/17 18:43:12 sthen Exp $
-
 COMMENT =		Python library to control i3wm and sway
 
 MODPY_EGG_VERSION =	2.2.1

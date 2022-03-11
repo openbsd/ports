@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2021/02/23 19:39:52 sthen Exp $
-
 BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GTK+2 Python bindings

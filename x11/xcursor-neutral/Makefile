@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/17 14:39:44 danj Exp $
-
 COMMENT =		smooth xcursor theme with shadows
 DISTNAME =		28310-neutral-1.13a
 PKGNAME =		xcursor-neutral-1.13

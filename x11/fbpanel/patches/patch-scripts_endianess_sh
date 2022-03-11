@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_endianess_sh,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
-
 fix endianess detection on OpenBSD
 
 --- scripts/endianess.sh.orig	Tue Apr  6 13:19:08 2010

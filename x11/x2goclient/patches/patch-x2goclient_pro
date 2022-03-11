@@ -1,5 +1,3 @@
-$OpenBSD: patch-x2goclient_pro,v 1.6 2020/03/19 19:51:09 rsadowski Exp $
-
 It's not required to link with libssh_threads anymore since libssh 0.8
 
 Index: x2goclient.pro

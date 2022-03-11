@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/09/09 12:54:52 naddy Exp $
 @conflict ja-eterm-*
 @conflict eterm-*
 @bin bin/Esetroot

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/19 18:10:07 ajacoutot Exp $
-
 COMMENT =		desktop suite theme for Xfce
 
 GH_TAGNAME =		v3.22.14

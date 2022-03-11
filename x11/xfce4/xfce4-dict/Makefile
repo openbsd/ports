@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2020/10/15 06:44:22 landry Exp $
-
 COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.8.4

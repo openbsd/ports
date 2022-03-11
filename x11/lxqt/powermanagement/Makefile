@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:43 rsadowski Exp $
-
 COMMENT =	power management module for LXQt
 
 NAME =		lxqt-powermanagement

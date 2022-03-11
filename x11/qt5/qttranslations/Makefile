@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/11/05 10:18:54 rsadowski Exp $
-
 QT5NAME =	QtTranslations
 COMMENT =	unofficial Qt5 translations
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-xcoloredit_c,v 1.2 2017/04/22 08:27:57 jsg Exp $
 --- xcoloredit.c.orig	Sun Jan 26 03:00:21 1992
 +++ xcoloredit.c	Sat Apr 22 18:22:13 2017
 @@ -38,6 +38,7 @@ static char sccsid[] = "@(#)xcoloredit.c	1.2 (UKC) 25/

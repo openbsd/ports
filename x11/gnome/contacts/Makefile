@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.86 2021/10/26 11:33:51 jasper Exp $
-
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/18 09:49:51 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE-based HTML image map editor

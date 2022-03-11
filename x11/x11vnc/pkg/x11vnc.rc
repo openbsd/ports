@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: x11vnc.rc,v 1.12 2018/01/11 19:27:12 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/x11vnc"
 daemon_flags="-localhost -logfile /var/log/x11vnc -ncache 0 -forever -loop100 -auth guess"

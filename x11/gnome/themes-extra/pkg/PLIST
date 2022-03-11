@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/07/09 15:09:41 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @conflict gnome-themes-standard-*
 @pkgpath x11/gnome/themes-standard

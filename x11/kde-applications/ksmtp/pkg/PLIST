@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/01/05 08:03:00 rsadowski Exp $
 include/KPim/
 include/KPim/KSMTP/
 include/KPim/KSMTP/KSMTP/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-pyglet_lib_py,v 1.2 2021/01/10 22:16:48 daniel Exp $
-
 Expose libraries loaded via ctypes() globally.
 
 Index: pyglet/lib.py

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/05 08:02:52 rsadowski Exp $
-
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11

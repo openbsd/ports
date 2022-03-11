@@ -1,5 +1,3 @@
-$OpenBSD: patch-Nagstamon_Servers_Generic_py,v 1.2 2021/11/17 14:54:32 ajacoutot Exp $
-
 Disable Kerberos support, we don't have requests_gssapi or requests_kerberos
 
 Index: Nagstamon/Servers/Generic.py

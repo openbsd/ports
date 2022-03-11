@@ -1,5 +1,3 @@
-$OpenBSD: patch-wmclockmon-cal_Makefile_in,v 1.1 2010/03/23 22:12:39 jasper Exp $
-
 - Switch to gtk+2.
 
 --- wmclockmon-cal/Makefile.in.orig	Tue Mar 23 23:03:29 2010

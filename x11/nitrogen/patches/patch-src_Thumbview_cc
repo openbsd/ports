@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Thumbview_cc,v 1.3 2017/08/17 18:52:18 jasper Exp $
-
 Thumbview.cc:487:26: warning: format specifies type 'long' but the argument
 has type 'time_t' (aka 'long long') [-Wformat]
 

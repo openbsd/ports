@@ -1,4 +1,3 @@
-# $OpenBSD: crates.inc,v 1.2 2022/01/29 12:11:51 sdk Exp $
 MODCARGO_CRATES +=	adler32	1.2.0	# Zlib
 MODCARGO_CRATES +=	android_glue	0.2.3	# MIT
 MODCARGO_CRATES +=	ansi_term	0.12.1	# MIT

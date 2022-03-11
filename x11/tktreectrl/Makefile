@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT =		tree widget extension for Tk
 
 V =			2.4.1

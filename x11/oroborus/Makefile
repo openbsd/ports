@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/18 22:01:17 cwen Exp $
-
 COMMENT =	minimalistic X11 window manager
 
 DISTNAME =	oroborus_2.0.20

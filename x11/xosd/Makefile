@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:29 sthen Exp $
-
 COMMENT=	displays text on your screen
 
 DISTNAME=	xosd-2.2.14

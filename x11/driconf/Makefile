@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:49 sthen Exp $
-
 COMMENT =		configuration utility for DRI drivers
 
 MODPY_EGG_VERSION =	0.9.1

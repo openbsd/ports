@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2021/02/11 09:52:17 ajacoutot Exp $
-
 COMMENT=		GTK+-2 file manager with desktop features
 
 DISTNAME=		rox-filer-2.11

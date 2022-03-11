@@ -1,5 +1,3 @@
-$OpenBSD: patch-libi3_is_debug_build_c,v 1.2 2021/02/27 13:57:38 sthen Exp $
-
 i3-mousedrag is from git source rather than a proper release distfile so
 normally has debugging on by default as per i3 build config; disable as
 debug logging has a lot of %s null which are very noisy in syslog

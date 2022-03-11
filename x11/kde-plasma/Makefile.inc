@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.18 2022/02/18 09:49:57 rsadowski Exp $
-
 CATEGORIES +=		x11/kde-plasma
 
 MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>

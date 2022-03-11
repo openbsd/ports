@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/18 22:01:17 cwen Exp $
 @bin bin/oroborus
 @man man/man1/oroborus.1
 @man man/man5/oroborusrc.5

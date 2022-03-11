@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/10/29 00:36:12 jcs Exp $
 @bin bin/xdimmer
 @man man/man1/xdimmer.1

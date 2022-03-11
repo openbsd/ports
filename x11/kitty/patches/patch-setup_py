@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.6 2022/01/08 17:21:44 thfr Exp $
-
 remove -O3 and -march=native optimizations
 fix man directory
 disable wayland

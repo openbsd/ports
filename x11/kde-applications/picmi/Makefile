@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:58 rsadowski Exp $
-
 COMMENT =	single player puzzle game for KDE
 DISTNAME =	picmi-${VERSION}
 CATEGORIES =	games

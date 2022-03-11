@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.8 2013/04/29 12:40:49 gonzalo Exp $
 --- etc/cfg_ioncore.lua.orig	Fri Jan  9 20:19:49 2009
 +++ etc/cfg_ioncore.lua	Mon Apr  8 11:20:13 2013
 @@ -65,8 +65,8 @@ defbindings("WScreen", {

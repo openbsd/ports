@@ -1,5 +1,3 @@
-$OpenBSD: patch-cogl_cogl_cogl-dma-buf-handle_h,v 1.2 2021/06/04 10:56:17 ajacoutot Exp $
-
 Index: cogl/cogl/cogl-dma-buf-handle.h
 --- cogl/cogl/cogl-dma-buf-handle.h.orig
 +++ cogl/cogl/cogl-dma-buf-handle.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:36 rsadowski Exp $
 @conflict kdebase-*
 @bin bin/kdialog
 @bin bin/kdialog_progress_helper

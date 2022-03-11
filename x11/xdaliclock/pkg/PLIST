@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/08/08 21:07:21 sthen Exp $
 @bin bin/xdaliclock
 @man man/man1/xdaliclock.1

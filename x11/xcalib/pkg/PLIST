@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/11 01:54:15 phessler Exp $
 @bin bin/xcalib
 share/examples/xcalib/
 share/examples/xcalib/README

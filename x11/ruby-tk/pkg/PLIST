@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/11 02:45:18 jeremy Exp $
 ${GEM_LIB}/build_info/${DISTNAME}.info
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

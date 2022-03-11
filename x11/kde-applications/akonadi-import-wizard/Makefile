@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:50 rsadowski Exp $
-
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel

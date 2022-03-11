@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/22 06:23:41 rsadowski Exp $
 @bin bin/kontrast
 share/applications/org.kde.kontrast.desktop
 share/icons/hicolor/scalable/apps/org.kde.kontrast.svg

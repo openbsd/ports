@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterBase_parse_h,v 1.1 2017/05/03 17:51:26 jca Exp $
 --- libAfterBase/parse.h.orig
 +++ libAfterBase/parse.h
 @@ -73,7 +73,7 @@ format_geometry ( int x, int y, unsigned int width, un

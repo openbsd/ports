@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
 --- Makefile.in.orig	Wed Sep 12 14:22:48 2007
 +++ Makefile.in	Fri May 23 11:43:37 2008
 @@ -37,7 +37,7 @@ LIBVERSION=@LIBVERSION@

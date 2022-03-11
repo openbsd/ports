@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:59 naddy Exp $
 include/basedir.h
 include/basedir_fs.h
 lib/libxdg-basedir.a

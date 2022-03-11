@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/30 21:13:23 jung Exp $
-
 COMMENT =		set the color temperature of the screen
 
 DISTNAME =		sct-0.5

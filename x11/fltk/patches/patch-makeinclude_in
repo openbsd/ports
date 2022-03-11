@@ -1,4 +1,3 @@
-$OpenBSD: patch-makeinclude_in,v 1.5 2013/03/22 22:50:25 bcallah Exp $
 --- makeinclude.in.orig	Wed Dec  5 09:53:03 2012
 +++ makeinclude.in	Fri Mar 22 17:43:11 2013
 @@ -130,9 +130,6 @@ INSTALL_SCRIPT	= $(INSTALL) -m 755

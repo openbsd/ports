@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/11/14 06:27:05 ajacoutot Exp $
-
 COMMENT=		GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=		seahorse-nautilus

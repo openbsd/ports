@@ -1,5 +1,3 @@
-$OpenBSD: patch-objects_tag_h,v 1.1 2021/02/02 15:37:25 bket Exp $
-
 Fix -fno-common build failure. Taken from
 https://github.com/awesomeWM/awesome/commit/d256d9055095f27a33696e0aeda4ee20ed4fb1a0
 

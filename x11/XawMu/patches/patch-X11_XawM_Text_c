@@ -1,4 +1,3 @@
-$OpenBSD: patch-X11_XawM_Text_c,v 1.1 2008/11/21 15:12:12 jasper Exp $
 --- X11/XawM/Text.c.orig	Fri Nov 21 13:26:31 2008
 +++ X11/XawM/Text.c	Fri Nov 21 13:26:44 2008
 @@ -59,6 +59,7 @@ SOFTWARE.

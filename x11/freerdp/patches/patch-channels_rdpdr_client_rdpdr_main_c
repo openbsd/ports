@@ -1,5 +1,3 @@
-$OpenBSD: patch-channels_rdpdr_client_rdpdr_main_c,v 1.3 2022/02/23 08:46:58 sthen Exp $
-
 Index: channels/rdpdr/client/rdpdr_main.c
 --- channels/rdpdr/client/rdpdr_main.c.orig
 +++ channels/rdpdr/client/rdpdr_main.c

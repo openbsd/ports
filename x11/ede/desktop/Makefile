@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/23 19:39:49 sthen Exp $
-
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}

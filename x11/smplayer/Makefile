@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/12/20 11:45:28 gonzalo Exp $
-
 COMMENT =		complete front-end for MPlayer and MPV
 
 DISTNAME =		smplayer-21.10.0

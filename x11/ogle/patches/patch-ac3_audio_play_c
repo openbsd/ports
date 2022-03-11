@@ -1,6 +1,5 @@
 no need to sleep here.  we won't overbuffer.
 
-$OpenBSD: patch-ac3_audio_play_c,v 1.1 2009/12/09 10:19:33 jakemsr Exp $
 --- ac3/audio_play.c.orig	Mon Feb  9 07:07:21 2009
 +++ ac3/audio_play.c	Mon Feb  9 07:07:37 2009
 @@ -273,7 +273,7 @@ int play_samples(adec_handle_t *h, int scr_nr, uint64_

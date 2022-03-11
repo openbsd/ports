@@ -1,4 +1,3 @@
-$OpenBSD: patch-abclock_c,v 1.1.1.1 2006/07/28 15:51:23 steven Exp $
 --- abclock.c.orig	Mon Mar 13 08:51:41 2006
 +++ abclock.c	Fri Jul 28 00:16:40 2006
 @@ -30,7 +30,7 @@

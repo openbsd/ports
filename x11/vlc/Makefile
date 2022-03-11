@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.254 2022/03/02 12:03:17 sthen Exp $
-
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 

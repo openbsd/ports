@@ -1,4 +1,3 @@
-$OpenBSD: patch-color_c,v 1.1 2005/09/06 04:59:58 pvalchev Exp $
 --- color.c.orig	Thu Sep  3 23:40:45 1998
 +++ color.c	Mon Sep  5 19:37:03 2005
 @@ -938,7 +938,7 @@ allocPhatColors()

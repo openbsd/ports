@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/13 08:34:52 rsadowski Exp $
-
 COMMENT =		Breeze KDE desktop theme
 DISTNAME =		breeze-${VERSION}
 

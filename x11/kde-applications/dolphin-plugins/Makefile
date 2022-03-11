@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:42 rsadowski Exp $
-
 COMMENT =	Dolphin plugins
 DISTNAME =	dolphin-plugins-${VERSION}
 PKGNAME  =	dolphin-plugins-kf5-${VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/06 13:20:30 jsg Exp $
-
 COMMENT=	afterstep clock with some language extensions
 
 DISTNAME=	asclock-2.0.12

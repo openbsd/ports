@@ -1,4 +1,3 @@
-$OpenBSD: patch-gram_y,v 1.4 2021/02/03 22:29:21 naddy Exp $
 Index: gram.y
 --- gram.y.orig
 +++ gram.y

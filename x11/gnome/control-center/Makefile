@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.83 2022/02/14 10:15:16 ajacoutot Exp $
-
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME settings

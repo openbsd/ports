@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_ui_status_keyboard_js,v 1.6 2020/05/14 15:28:46 jasper Exp $
-
 https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=235009
 
 Index: js/ui/status/keyboard.js

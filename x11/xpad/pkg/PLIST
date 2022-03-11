@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2019/01/21 17:08:32 bcallah Exp $
 @bin bin/xpad
 @man man/man1/xpad.1
 share/applications/xpad.desktop

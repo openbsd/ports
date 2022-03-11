@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT=		simple task management application
 
 GNOME_PROJECT=		gnome-todo

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT =	configure a modifier key when pressed and released by itself
 
 GH_ACCOUNT =	alols

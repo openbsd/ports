@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:26 sthen Exp $
-
 COMMENT=		Desktop Manager: a graphical shell for X11
 
 DISTNAME=		xdtm-2.5.8

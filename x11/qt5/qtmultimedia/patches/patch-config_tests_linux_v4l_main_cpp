@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_tests_linux_v4l_main_cpp,v 1.1 2017/07/17 08:34:38 zhuk Exp $
 Allow our V4L2 to be used.
 
 Index: config.tests/linux_v4l/main.cpp

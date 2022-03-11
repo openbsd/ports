@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/25 22:30:29 tb Exp $
-
 COMMENT=		wm-dockapp; displays scrolling text
 
 DISTNAME=		wminfo-1.51

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/01/18 07:27:04 landry Exp $
 @conflict xfdesktop-<=4.7.0
 include/garcon-1/
 include/garcon-1/garcon/

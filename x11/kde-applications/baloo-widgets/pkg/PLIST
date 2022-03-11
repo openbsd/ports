@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2022/01/05 08:02:51 rsadowski Exp $
 @bin bin/baloo_filemetadata_temp_extractor
 include/KF5/BalooWidgets/
 include/KF5/BalooWidgets/Baloo/

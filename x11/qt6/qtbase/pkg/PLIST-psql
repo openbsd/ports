@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-psql,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
 lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfig.cmake
 lib/cmake/Qt6Sql/Qt6QPSQLDriverPluginConfigVersion.cmake

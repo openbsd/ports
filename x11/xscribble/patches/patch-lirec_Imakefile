@@ -1,4 +1,3 @@
-$OpenBSD: patch-lirec_Imakefile,v 1.2 2017/04/29 16:27:40 espie Exp $
 --- lirec/Imakefile.orig
 +++ lirec/Imakefile
 @@ -8,6 +8,8 @@ OBJS = li_recognizer.o sc.o util.o matrix.o bitvector.

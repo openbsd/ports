@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:32:35 sebastia Exp $
 bin/PRICE
 libexec/GNUstep/PRICE.app/
 @bin libexec/GNUstep/PRICE.app/PRICE

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/01/31 15:16:54 naddy Exp $
 @bin bin/xvkbd
 lib/X11/app-defaults/XVkbd
 lib/X11/app-defaults/XVkbd-belgian

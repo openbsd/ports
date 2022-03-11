@@ -1,5 +1,3 @@
-$OpenBSD: patch-README_pod,v 1.1.1.1 2020/01/03 17:15:00 abieber Exp $
-
 Index: README.pod
 --- README.pod.orig
 +++ README.pod

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/01 14:52:10 ajacoutot Exp $
 lib/gtk-3.0/3.0.0/theming-engines/
 lib/gtk-3.0/3.0.0/theming-engines/libunico.so

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.131 2022/02/16 14:32:03 ajacoutot Exp $
-
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter

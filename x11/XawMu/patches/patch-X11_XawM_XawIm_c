@@ -1,4 +1,3 @@
-$OpenBSD: patch-X11_XawM_XawIm_c,v 1.1 2008/11/21 15:12:12 jasper Exp $
 --- X11/XawM/XawIm.c.orig	Fri Nov 21 13:27:05 2008
 +++ X11/XawM/XawIm.c	Fri Nov 21 13:28:20 2008
 @@ -63,6 +63,8 @@ in this Software without prior written authorization f

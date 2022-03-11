@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/01 04:38:49 kevlo Exp $
 ${P5SITE}/X11/
 ${P5SITE}/X11/Auth.pm
 ${P5SITE}/X11/Keysyms.pm

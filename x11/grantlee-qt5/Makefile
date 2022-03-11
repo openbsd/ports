@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/21 04:03:50 rsadowski Exp $
-
 COMMENT =		template and text document library for Qt5
 
 VERSION =		5.2.0

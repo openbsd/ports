@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT=		GTK+ Object Builder
 
 GNOME_PROJECT=		gob2

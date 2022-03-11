@@ -1,5 +1,3 @@
-$OpenBSD: patch-lxqt-config-input_keyboardlayoutconfig_h,v 1.1 2020/09/04 15:40:10 mariani Exp $
-
 Index: lxqt-config-input/keyboardlayoutconfig.h
 --- lxqt-config-input/keyboardlayoutconfig.h.orig
 +++ lxqt-config-input/keyboardlayoutconfig.h

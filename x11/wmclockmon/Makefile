@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/02 22:10:38 cwen Exp $
-
 COMMENT=		WindowMaker dock.app clock
 BROKEN-sparc64 =	ICE in change_address_1, at emit-rtl.c:1784
 

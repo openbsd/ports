@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.4 2021/10/31 13:20:39 jasper Exp $
-
 XXX: pkg-config bug:
 Package gsettings-desktop-schemas>=40.alpha was not found in the pkg-config search path
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/12/28 16:37:12 kmos Exp $
-
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-helpers_xfce-get-release-notes,v 1.1 2021/05/31 05:12:34 landry Exp $
-
 Index: helpers/xfce-get-release-notes
 --- helpers/xfce-get-release-notes.orig
 +++ helpers/xfce-get-release-notes

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/01/13 08:20:51 bentley Exp $
-
 COMMENT =	implementation of the XDG Base Directory specification
 
 DISTNAME =	libxdg-basedir-1.2.0

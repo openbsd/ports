@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.262 2021/02/23 19:39:51 sthen Exp $
-
 PORTROACH=		limit:^2
 
 COMMENT=		metadata database and search tool

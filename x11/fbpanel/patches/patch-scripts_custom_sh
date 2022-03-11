@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_custom_sh,v 1.2 2021/02/20 18:23:13 landry Exp $
-
 https://gitweb.gentoo.org/repo/gentoo.git/plain/x11-misc/fbpanel/files/fbpanel-6.1-underlinking.patch
 
 Index: scripts/custom.sh

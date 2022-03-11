@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/09/04 15:40:13 mariani Exp $
 @so lib/qt5/plugins/platformthemes/libqtlxqt.so

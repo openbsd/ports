@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2020/12/29 15:19:18 landry Exp $
-
 COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.3.0

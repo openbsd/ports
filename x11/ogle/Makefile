@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2019/07/12 20:51:17 sthen Exp $
-
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
 CATEGORIES =	x11

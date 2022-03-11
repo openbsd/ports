@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/10/19 19:43:37 sebastia Exp $
-
 COMMENT =	GNUstep client for Music Player Daemon
 
 DISTNAME =	MPDCon-1.5.1

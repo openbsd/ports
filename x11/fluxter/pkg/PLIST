@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/22 08:58:46 alek Exp $
 bin/fluxter
 share/fluxbox/
 share/fluxbox/README.fluxter

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/08 20:12:56 rsadowski Exp $
-
 COMMENT =	KDE PIM Apple wallet file support library
 DISTNAME =	kpkpass-${VERSION}
 CATEGORIES =	devel

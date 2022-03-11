@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/11/09 11:46:00 sebastia Exp $
 include/SQLClient/
 include/SQLClient/SQLClient.h
 lib/GNUstep/Bundles/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:42 rsadowski Exp $
-
 COMMENT =	simple video player for KDE
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:14 sthen Exp $
-
 COMMENT=		put clickable icons on the desktop
 
 DISTNAME=		idesk-0.7.5

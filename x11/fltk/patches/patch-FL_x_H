@@ -1,5 +1,3 @@
-$OpenBSD: patch-FL_x_H,v 1.1 2015/06/28 13:33:07 bcallah Exp $
-
 https://github.com/IngwiePhoenix/FLTK/commit/283b909dad09048535cec8e3d69d77fa498382bf
 
 --- FL/x.H.orig	Sun Jun 28 00:05:15 2015

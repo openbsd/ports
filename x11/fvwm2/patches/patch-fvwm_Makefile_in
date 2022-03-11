@@ -1,5 +1,3 @@
-$OpenBSD: patch-fvwm_Makefile_in,v 1.9 2021/09/19 21:11:55 tb Exp $
-
 Index: fvwm/Makefile.in
 --- fvwm/Makefile.in.orig
 +++ fvwm/Makefile.in

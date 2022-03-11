@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2022/03/04 08:44:05 landry Exp $
-
 COMMENT=	Xfce4 disk performance panel plugin
 
 XFCE_VERSION=	2.7.0

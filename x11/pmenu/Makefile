@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/07 22:26:27 kn Exp $
-
 COMMENT =	contextual radial menu for X11
 
 GH_ACCOUNT =	phillbush

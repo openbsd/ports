@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/09/02 20:53:12 ajacoutot Exp $
 @bin bin/chbg
 @man man/man1/chbg.1
 share/doc/chbg/

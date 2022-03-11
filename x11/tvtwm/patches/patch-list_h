@@ -1,5 +1,3 @@
-$OpenBSD: patch-list_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
-
 Index: list.h
 --- list.h.orig
 +++ list.h

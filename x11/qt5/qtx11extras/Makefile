@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/13 16:53:53 rsadowski Exp $
-
 QT5NAME =		QtX11Extras
 COMMENT =		X11-specific parts of Qt
 

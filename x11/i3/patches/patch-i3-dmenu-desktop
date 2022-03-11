@@ -1,5 +1,3 @@
-$OpenBSD: patch-i3-dmenu-desktop,v 1.10 2021/11/12 16:06:07 sthen Exp $
-
 Index: i3-dmenu-desktop
 --- i3-dmenu-desktop.orig
 +++ i3-dmenu-desktop

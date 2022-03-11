@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/30 18:21:16 jasper Exp $
-
 COMMENT =		binary space partitioning window manager
 
 GH_PROJECT =		bspwm

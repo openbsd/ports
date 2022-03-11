@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:48 rsadowski Exp $
-
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
 CATEGORIES =	x11

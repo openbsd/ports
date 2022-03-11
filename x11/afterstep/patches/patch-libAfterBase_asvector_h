@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterBase_asvector_h,v 1.1 2017/05/03 17:51:26 jca Exp $
 --- libAfterBase/asvector.h.orig
 +++ libAfterBase/asvector.h
 @@ -38,7 +38,7 @@ ASVector *append_vector( ASVector *v, void * data, siz

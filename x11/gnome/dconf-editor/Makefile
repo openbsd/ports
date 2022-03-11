@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/03/24 07:34:57 ajacoutot Exp $
-
 COMMENT=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf-editor

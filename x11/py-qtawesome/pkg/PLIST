@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/15 21:28:12 sthen Exp $
 @pkgpath x11/py-qtawesome
 bin/qta-browser
 lib/python${MODPY_VERSION}/site-packages/QtAwesome-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

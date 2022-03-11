@@ -1,5 +1,3 @@
-$OpenBSD: patch-qtwayland_pro,v 1.1.1.1 2021/11/12 13:38:30 rsadowski Exp $
-
 Index: qtwayland.pro
 --- qtwayland.pro.orig
 +++ qtwayland.pro

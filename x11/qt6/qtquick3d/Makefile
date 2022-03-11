@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-
 QT6NAME =		QtQuick3d
 COMMENT =		Quick 3D support for Qt6
 

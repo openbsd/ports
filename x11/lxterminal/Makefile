@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/19 14:29:59 kevlo Exp $
-
 COMMENT =	vte-based terminal emulator of LXDE
 
 V =		0.3.2

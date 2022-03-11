@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT=	GNUstep mail application
 
 DISTNAME =	GNUMail-1.3.0

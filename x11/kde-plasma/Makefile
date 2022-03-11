@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/07 13:38:21 zhuk Exp $
-
      SUBDIR =
      #SUBDIR += bluedevil
      SUBDIR += breeze

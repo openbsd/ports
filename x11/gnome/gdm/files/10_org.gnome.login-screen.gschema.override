@@ -1,5 +1,3 @@
-# $OpenBSD: 10_org.gnome.login-screen.gschema.override,v 1.3 2020/09/21 14:36:21 ajacoutot Exp $
-
 # corresponding PAM support is not available on OpenBSD
 [org.gnome.login-screen]
 enable-fingerprint-authentication=false

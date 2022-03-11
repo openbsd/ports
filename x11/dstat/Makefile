@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/08/03 21:20:38 jung Exp $
-
 ONLY_FOR_ARCHS =	${APM_ARCHS}
 
 COMMENT =		dwm status bar statistics

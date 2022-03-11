@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/19 06:16:30 rsadowski Exp $
-
 QT5NAME =		QtGraphicalEffects
 COMMENT =		UI effects library for Qt Quick
 

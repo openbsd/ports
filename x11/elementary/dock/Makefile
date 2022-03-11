@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/09 02:33:40 bcallah Exp $
-
 # XXX: Make CPU and battery docklets work...
 # 0.11.89 appears as the version number during configure
 COMMENT =	dock from elementary OS

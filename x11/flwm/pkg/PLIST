@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/22 12:49:28 ajacoutot Exp $
 @bin bin/flwm
 @man man/man1/flwm.1

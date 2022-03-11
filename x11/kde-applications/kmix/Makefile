@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/05 08:02:57 rsadowski Exp $
-
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio

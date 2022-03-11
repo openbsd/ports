@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:55 rsadowski Exp $
-
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${VERSION}
 PKGNAME =	libkcddb-kf5-${VERSION}

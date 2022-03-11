@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2021/02/06 09:33:04 ajacoutot Exp $
-
 V=			1.3.2
 DISTNAME=		libfm-${V}
 EXTRACT_SUFX=		.tar.xz

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/23 18:10:22 rsadowski Exp $
-
 COMMENT =	Minesweeper-like Game
 DISTNAME =	kmines-${VERSION}
 CATEGORIES =	games

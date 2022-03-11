@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tracker_tracker-process_c,v 1.4 2022/03/05 16:43:34 ajacoutot Exp $
-
 From 0914a401f0290f20f8acd03e2b5335fde75119e1 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
 Date: Sat, 5 Mar 2022 12:16:29 +0000

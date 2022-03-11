@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2021/12/11 10:58:24 ajacoutot Exp $
-
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar

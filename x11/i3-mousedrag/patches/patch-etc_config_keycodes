@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_config_keycodes,v 1.5 2021/11/12 16:00:14 sthen Exp $
-
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
 

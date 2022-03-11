@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/03/01 12:29:56 landry Exp $
-
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
 GH_ACCOUNT =	ib

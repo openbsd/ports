@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/01/05 08:02:50 rsadowski Exp $
 include/KF5/Akonadi/
 include/KF5/Akonadi/Contact/
 include/KF5/Akonadi/Contact/AbstractContactFormatter

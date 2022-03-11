@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:44 rsadowski Exp $
-
 COMMENT =	ball bouncing game
 DISTNAME =	kbounce-${VERSION}
 CATEGORIES =	games

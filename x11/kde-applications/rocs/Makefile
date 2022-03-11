@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/01/05 08:03:04 rsadowski Exp $
-
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
 CATEGORIES =	games education

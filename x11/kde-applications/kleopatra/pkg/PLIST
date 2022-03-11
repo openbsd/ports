@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2022/01/05 08:02:57 rsadowski Exp $
 @conflict kdepim-*
 @bin bin/kleopatra
 @bin bin/kwatchgnupg

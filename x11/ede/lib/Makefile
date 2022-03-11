@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:49 sthen Exp $
-
 COMMENT =		equinox desktop library
 
 DISTNAME =		edelib-${V}

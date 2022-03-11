@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/05 08:03:01 rsadowski Exp $
-
 COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel

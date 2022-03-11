@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/01/05 08:02:57 rsadowski Exp $
-
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
 CATEGORIES =	education

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/09/10 08:43:56 rsadowski Exp $
 include/KF5/KontactInterface/
 include/KF5/KontactInterface/KontactInterface/
 include/KF5/KontactInterface/KontactInterface/Core

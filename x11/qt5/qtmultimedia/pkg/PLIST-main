@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2021/01/19 06:16:30 rsadowski Exp $
 @conflict qt5-<5.6
 include/X11/qt5/QtMultimedia/
 include/X11/qt5/QtMultimedia/${VERSION}/

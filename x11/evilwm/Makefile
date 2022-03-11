@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/07/31 08:27:37 sthen Exp $
-
 COMMENT=	minimalist window manager for the X Window System
 
 DISTNAME=	evilwm-1.3.1

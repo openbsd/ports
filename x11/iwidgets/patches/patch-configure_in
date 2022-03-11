@@ -1,9 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.1 2010/06/07 14:40:47 sthen Exp $
 --- configure.in.orig	Thu Nov 29 21:51:34 2001
 +++ configure.in	Mon Jun  7 15:26:46 2010
 @@ -5,8 +5,10 @@ dnl installation to configure the system for the local
  AC_INIT(generic/buttonbox.itk)
- # RCS: $Id: patch-configure_in,v 1.1 2010/06/07 14:40:47 sthen Exp $
+ # RCS: $Id: patch-configure_in,v 1.2 2022/03/11 20:16:09 naddy Exp $
  
 -ITCL_VERSION=3.2
 +ITCL_VERSION=3.4

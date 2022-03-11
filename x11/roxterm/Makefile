@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/05/24 01:37:12 kmos Exp $
-
 COMMENT=		highly configurable terminal emulator
 
 GH_ACCOUNT=		realh

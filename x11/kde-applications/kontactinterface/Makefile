@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/10 06:37:52 rsadowski Exp $
-
 COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
 CATEGORIES =	devel mail

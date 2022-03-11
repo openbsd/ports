@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_skia_src_ports_SkOSFile_stdio_cpp,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_stdio.cpp
 --- src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_stdio.cpp.orig
 +++ src/3rdparty/chromium/third_party/skia/src/ports/SkOSFile_stdio.cpp

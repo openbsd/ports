@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:47 rsadowski Exp $
-
 COMMENT =	KDE thumbnail generators for development files
 DISTNAME =	kdesdk-thumbnailers-${VERSION}
 CATEGORIES =	devel

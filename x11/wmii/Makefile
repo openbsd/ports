@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/21 20:30:26 matthieu Exp $
-
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6

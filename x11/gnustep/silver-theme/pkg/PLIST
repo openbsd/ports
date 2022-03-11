@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/05 06:44:57 sebastia Exp $
 lib/GNUstep/Themes/Silver.theme/
 lib/GNUstep/Themes/Silver.theme/Resources/
 lib/GNUstep/Themes/Silver.theme/Resources/Info-gnustep.plist

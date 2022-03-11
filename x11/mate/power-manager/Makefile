@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/25 12:35:20 robert Exp $
-
 COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager

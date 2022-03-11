@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/04/27 05:27:16 rsadowski Exp $
-
 COMMENT =	common code and data for many KDE games
 DISTNAME =	libkdegames-${VERSION}
 PKGNAME =	libkdegames-kf5-${VERSION}

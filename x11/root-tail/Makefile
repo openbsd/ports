@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:30 sthen Exp $
-
 COMMENT=	tails a given file anywhere on your X11 root window
 
 DISTNAME=	root-tail-1.2

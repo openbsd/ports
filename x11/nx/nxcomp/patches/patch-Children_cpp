@@ -1,4 +1,3 @@
-$OpenBSD: patch-Children_cpp,v 1.2 2011/03/02 08:48:16 jasper Exp $
 --- Children.cpp.orig	Mon Mar  1 18:18:59 2010
 +++ Children.cpp	Wed Feb 23 12:28:35 2011
 @@ -1021,7 +1021,7 @@ int UnsetEnv(const char *name)

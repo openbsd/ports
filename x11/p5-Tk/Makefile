@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2021/02/19 18:01:20 ajacoutot Exp $
-
 COMMENT-main=	Tk 8.4 bindings for Perl
 COMMENT-demo=	demonstrate the features of ptk
 

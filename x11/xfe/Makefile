@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/10/03 21:19:57 bcallah Exp $
-
 COMMENT=	MS-Explorer like file manager for X
 
 DISTNAME=	xfe-1.44

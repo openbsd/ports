@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/12/29 15:12:18 landry Exp $
 @bin bin/xfce4-mixer
 @so lib/xfce4/panel/plugins/libmixer.so
 @man man/man1/xfce4-mixer.1

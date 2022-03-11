@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gtkcompletionline_cc,v 1.4 2012/11/30 15:59:42 naddy Exp $
 --- src/gtkcompletionline.cc.orig	Sun Nov 16 03:55:07 2003
 +++ src/gtkcompletionline.cc	Fri Mar 23 14:45:10 2012
 @@ -76,9 +76,9 @@ static gboolean

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:41 rsadowski Exp $
-
 COMMENT =	CVS GUI for KDE
 DISTNAME =	cervisia-${VERSION}
 CATEGORIES =	devel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/10/31 17:38:07 tb Exp $
-
 COMMENT =		VNC server for real X displays
 
 GH_ACCOUNT =		LibVNC

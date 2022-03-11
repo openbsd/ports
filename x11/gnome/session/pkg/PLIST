@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.55 2022/01/12 16:53:20 ajacoutot Exp $
 bin/gnome-session
 bin/gnome-session-custom-session
 @bin bin/gnome-session-inhibit

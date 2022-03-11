@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:09 sthen Exp $
-
 COMMENT =	dbus bindings for Tcl
 
 V =		2.2

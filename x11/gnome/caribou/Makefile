@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/11/02 00:02:57 sthen Exp $
-
 COMMENT-main=		input assistive technology
 COMMENT-gtk2=		caribou module for GTK2
 

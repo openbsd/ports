@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/12/03 00:53:41 fgsch Exp $
 include/compiz/compiz-animation.h
 include/compiz/compiz-mousepoll.h
 include/compiz/compiz-text.h

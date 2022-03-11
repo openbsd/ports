@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:09 sthen Exp $
-
 COMMENT =	high level interface to dbus-tcl
 
 V =		1.3

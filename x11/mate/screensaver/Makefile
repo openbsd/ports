@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/25 12:05:52 robert Exp $
-
 COMMENT=		MATE screensaver
 
 MATE_PROJECT=		mate-screensaver

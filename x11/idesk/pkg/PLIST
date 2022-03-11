@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/21 11:56:05 bernd Exp $
 bin/idesk
 share/idesk/
 share/idesk/README

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.136 2022/01/21 08:51:07 ajacoutot Exp $
-
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap

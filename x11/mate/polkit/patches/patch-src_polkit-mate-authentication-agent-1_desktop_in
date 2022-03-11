@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_polkit-mate-authentication-agent-1_desktop_in,v 1.1.1.1 2019/02/27 16:06:54 ajacoutot Exp $
-
 Index: src/polkit-mate-authentication-agent-1.desktop.in
 --- src/polkit-mate-authentication-agent-1.desktop.in.orig
 +++ src/polkit-mate-authentication-agent-1.desktop.in

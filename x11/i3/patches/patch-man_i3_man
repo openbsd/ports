@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_i3_man,v 1.5 2021/11/12 16:06:07 sthen Exp $
-
 Index: man/i3.man
 --- man/i3.man.orig
 +++ man/i3.man

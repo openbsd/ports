@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.native,v 1.9 2017/12/27 11:16:52 jasper Exp $
 %%dynlink%%
 lib/ocaml/lablgtk2/gAction.cmx
 lib/ocaml/lablgtk2/gAssistant.cmx

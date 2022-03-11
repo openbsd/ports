@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/14 02:16:53 naddy Exp $
-
 COMMENT=	minimal window manager
 
 DISTNAME=	wmx-8

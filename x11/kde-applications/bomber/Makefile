@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/05 08:02:51 rsadowski Exp $
-
 COMMENT =	arcade bombing game
 DISTNAME =	bomber-${VERSION}
 CATEGORIES =	games

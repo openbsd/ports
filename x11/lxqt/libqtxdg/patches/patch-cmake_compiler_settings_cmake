@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_compiler_settings_cmake,v 1.3 2020/09/04 15:40:11 mariani Exp $
-
 Index: cmake/compiler_settings.cmake
 --- cmake/compiler_settings.cmake.orig
 +++ cmake/compiler_settings.cmake

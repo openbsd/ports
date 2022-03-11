@@ -1,4 +1,3 @@
-$OpenBSD: patch-xbindkeys_1,v 1.3 2020/11/21 05:18:45 bket Exp $
 Index: xbindkeys.1
 --- xbindkeys.1.orig
 +++ xbindkeys.1

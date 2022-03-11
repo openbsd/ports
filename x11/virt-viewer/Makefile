@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/11/25 20:15:50 ajacoutot Exp $
-
 BROKEN-hppa=	build stuck on virt-viewer-window.c
 
 COMMENT=	graphics viewer for KVM guest displays

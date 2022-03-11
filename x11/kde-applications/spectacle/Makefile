@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/05 08:03:04 rsadowski Exp $
-
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11

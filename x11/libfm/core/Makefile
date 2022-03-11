@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/06 09:33:04 ajacoutot Exp $
-
 COMMENT=		glib/gio-based lib for file management
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext

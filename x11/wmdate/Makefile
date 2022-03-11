@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/04 11:35:56 cwen Exp $
-
 COMMENT=		wm-dockapp; shows the current date
 
 DISTNAME=		wmdate-0.7

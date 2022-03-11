@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_opengl_c,v 1.2 2019/05/24 17:43:05 thfr Exp $
-
 https://github.com/yshui/compton/commit/bf29b2d
 Avoid using 10bit FBConfigs
 Fix weird color issue with Mesa 18.0

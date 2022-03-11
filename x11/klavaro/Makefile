@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:15 sthen Exp $
-
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0

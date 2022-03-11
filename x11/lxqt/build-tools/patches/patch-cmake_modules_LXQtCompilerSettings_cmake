@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_modules_LXQtCompilerSettings_cmake,v 1.3 2020/09/04 15:40:10 mariani Exp $
-
 Index: cmake/modules/LXQtCompilerSettings.cmake
 --- cmake/modules/LXQtCompilerSettings.cmake.orig
 +++ cmake/modules/LXQtCompilerSettings.cmake

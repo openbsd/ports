@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2020/12/29 15:14:34 landry Exp $
-
 COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.3.0

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/19 06:16:32 rsadowski Exp $
 lib/qt5/translations/
 lib/qt5/translations/assistant_ar.qm
 lib/qt5/translations/assistant_bg.qm

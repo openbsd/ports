@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_openglextensions_openglextensions_pro,v 1.1 2020/03/13 16:53:50 rsadowski Exp $
-
 Index: src/openglextensions/openglextensions.pro
 --- src/openglextensions/openglextensions.pro.orig
 +++ src/openglextensions/openglextensions.pro

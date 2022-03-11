@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-gui,v 1.1 2002/12/14 16:04:13 naddy Exp $
 bin/xkbset-gui

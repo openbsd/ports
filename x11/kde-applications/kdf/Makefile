@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:47 rsadowski Exp $
-
 COMMENT =	KDE storage device statistics
 DISTNAME =	kdf-${VERSION}
 CATEGORIES =	x11 sysutils

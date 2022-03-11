@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ScreenResource_cc,v 1.2 2018/12/01 22:41:39 naddy Exp $
-
 Fix for warning: deprecated conversion from string constant to 'char*'
 
 Index: src/ScreenResource.cc

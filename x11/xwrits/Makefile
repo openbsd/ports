@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 21:02:30 sthen Exp $
-
 COMMENT =	typing break alarm and timer
 
 DISTNAME =	xwrits-2.26

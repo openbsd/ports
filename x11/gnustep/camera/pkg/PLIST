@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/10/21 08:51:36 sebastia Exp $
 bin/Camera
 libexec/GNUstep/Camera.app/
 @bin libexec/GNUstep/Camera.app/Camera

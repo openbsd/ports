@@ -1,5 +1,3 @@
-$OpenBSD: patch-schema_murrine_xml_in_in,v 1.1 2012/05/08 10:05:54 dcoppa Exp $
-
 Fix typos: "Increse" --> "Increase"
 (upstream git commit 6d0103c682c763f194ae620aae70b5107dac42ee)
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_pekwm_wm_cc,v 1.1 2021/11/19 21:15:51 op Exp $
-
 Index: src/pekwm_wm.cc
 --- src/pekwm_wm.cc.orig
 +++ src/pekwm_wm.cc

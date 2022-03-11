@@ -1,4 +1,3 @@
-$OpenBSD: patch-Manager_C,v 1.1.1.1 2007/04/27 18:31:12 matthieu Exp $
 --- Manager.C.orig	Fri Mar 21 12:12:30 1997
 +++ Manager.C	Wed Apr 11 22:29:23 2007
 @@ -191,11 +191,11 @@ int WindowManager::errorHandler(Display *d, XErrorEven

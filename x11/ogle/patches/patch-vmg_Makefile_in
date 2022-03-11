@@ -1,4 +1,3 @@
-$OpenBSD: patch-vmg_Makefile_in,v 1.1 2012/05/03 06:51:24 ajacoutot Exp $
 --- vmg/Makefile.in.orig	Tue Nov  4 06:33:56 2003
 +++ vmg/Makefile.in	Fri Dec 16 08:16:25 2011
 @@ -139,7 +139,7 @@ am__quote = @am__quote@

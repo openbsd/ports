@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:49 rsadowski Exp $
-
 COMMENT =	Go board game
 DISTNAME =	kigo-${VERSION}
 CATEGORIES =	games

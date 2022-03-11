@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/19 19:43:37 sebastia Exp $
-
 COMMENT =	GNUstep theme following NeXT look and feel
 
 V =		0.1

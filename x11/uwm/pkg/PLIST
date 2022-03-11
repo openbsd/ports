@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/22 22:07:54 naddy Exp $
 @bin bin/uwm
 share/doc/uwm/
 share/doc/uwm/README

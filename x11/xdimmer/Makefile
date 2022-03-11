@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/22 03:14:59 jcs Exp $
-
 COMMENT=	utility to dim the screen and keyboard backlight when idle
 
 VERSION =	1.7

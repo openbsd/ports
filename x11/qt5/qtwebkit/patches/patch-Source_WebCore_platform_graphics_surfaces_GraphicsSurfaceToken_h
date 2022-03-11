@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_platform_graphics_surfaces_GraphicsSurfaceToken_h,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
-
 Index: Source/WebCore/platform/graphics/surfaces/GraphicsSurfaceToken.h
 --- Source/WebCore/platform/graphics/surfaces/GraphicsSurfaceToken.h.orig
 +++ Source/WebCore/platform/graphics/surfaces/GraphicsSurfaceToken.h

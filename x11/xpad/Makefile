@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:51:30 sthen Exp $
-
 V=		5.4.0
 COMMENT=	virtual sticky pad system
 DISTNAME=	xpad-${V}

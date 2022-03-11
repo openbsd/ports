@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT =	OCaml interface to GTK+2
 
 V =		2.18.11

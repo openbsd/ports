@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/17 07:01:41 landry Exp $
-
 COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2022/01/09 00:03:14 ajacoutot Exp $
-
 # XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG

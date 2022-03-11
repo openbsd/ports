@@ -1,5 +1,3 @@
-$OpenBSD: patch-themes_xresources_theme_lua,v 1.4 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: themes/xresources/theme.lua
 --- themes/xresources/theme.lua.orig
 +++ themes/xresources/theme.lua

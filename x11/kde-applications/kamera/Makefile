@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/03 21:09:36 rsadowski Exp $
-
 COMMENT =	KDE digital camera support
 DISTNAME =	kamera-${VERSION}
 CATEGORIES =	x11 graphics

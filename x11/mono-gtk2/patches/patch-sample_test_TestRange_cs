@@ -1,5 +1,3 @@
-$OpenBSD: patch-sample_test_TestRange_cs,v 1.1 2020/04/07 07:38:29 robert Exp $
-
 Index: sample/test/TestRange.cs
 --- sample/test/TestRange.cs.orig
 +++ sample/test/TestRange.cs

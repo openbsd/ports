@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/18 09:49:57 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	UML Modeller

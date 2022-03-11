@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/02/12 07:36:19 landry Exp $
-
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.6.3

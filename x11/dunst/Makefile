@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/12/12 20:23:16 op Exp $
-
 COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project

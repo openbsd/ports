@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:54 rsadowski Exp $
-
 COMMENT =	graphical timer based task execution for KDE
 DISTNAME =	ktimer-${VERSION}
 CATEGORIES =	x11 sysutils

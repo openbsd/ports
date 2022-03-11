@@ -1,5 +1,3 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.6 2019/05/17 12:11:30 ajacoutot Exp $
-
 From 7d8be1c1ffc31523e2de09d4829169b78dd391e4 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@openbsd.org>
 Date: Fri, 17 May 2019 11:55:16 +0000

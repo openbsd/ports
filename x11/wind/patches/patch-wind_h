@@ -1,5 +1,3 @@
-$OpenBSD: patch-wind_h,v 1.1 2021/02/26 23:13:13 naddy Exp $
-
 Index: wind.h
 --- wind.h.orig
 +++ wind.h

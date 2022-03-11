@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/06/09 19:50:10 sthen Exp $
-
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12

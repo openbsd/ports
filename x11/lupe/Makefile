@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:15 sthen Exp $
-
 COMMENT=	real-time magnifying glass for X11
 
 DISTNAME=	lupe008c

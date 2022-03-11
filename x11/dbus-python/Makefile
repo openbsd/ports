@@ -1,5 +1,3 @@
-#+ $OpenBSD: Makefile,v 1.50 2021/11/02 00:02:57 sthen Exp $
-
 PORTROACH=		limitw:2,even
 
 COMMENT-main =		dbus bindings for Python

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.18 2021/08/21 03:25:05 gkoehler Exp $
-
 ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 .include "Makefile.version"

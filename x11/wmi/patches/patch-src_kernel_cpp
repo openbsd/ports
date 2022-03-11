@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_kernel_cpp,v 1.2 2015/03/21 19:47:36 jca Exp $
-
 find_first_of returns npos, which is a size_t.
 
 --- src/kernel.cpp.orig	Tue Feb 24 12:35:42 2015

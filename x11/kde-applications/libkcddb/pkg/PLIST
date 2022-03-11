@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:58 rsadowski Exp $
 @conflict kdebase-<4
 include/KF5/KCddb/
 include/KF5/KCddb/Categories

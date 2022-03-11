@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:40 rsadowski Exp $
-
 COMMENT =	EXIV2 Library interface for KDE
 DISTNAME =	libkexiv2-${VERSION}
 PKGNAME =	libkexiv2-kf5-${VERSION}

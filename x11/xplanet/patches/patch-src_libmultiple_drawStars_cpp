@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libmultiple_drawStars_cpp,v 1.1 2018/04/08 19:30:11 jasper Exp $
-
 error: invalid operands to binary expression ('std::__1::basic_istream<char>' and 'nullptr_t')
 
 Index: src/libmultiple/drawStars.cpp

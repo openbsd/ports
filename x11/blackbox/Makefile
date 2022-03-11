@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=	small & pretty window manager for 8 and more bits displays
 
 DISTNAME=		blackbox-0.70.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:56 rsadowski Exp $
-
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11

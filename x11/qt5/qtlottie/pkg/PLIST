@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/19 06:16:30 rsadowski Exp $
 include/X11/qt5/QtBodymovin/
 include/X11/qt5/QtBodymovin/${VERSION}/
 include/X11/qt5/QtBodymovin/${VERSION}/QtBodymovin/

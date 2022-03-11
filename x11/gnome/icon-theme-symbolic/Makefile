@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/07 11:20:52 ajacoutot Exp $
-
 COMMENT=	base icon theme extension for special UI contexts
 
 GNOME_PROJECT=	gnome-icon-theme-symbolic

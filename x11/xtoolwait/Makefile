@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:30 sthen Exp $
-
 COMMENT=	tool startup utility for X11
 
 DISTNAME=	xtoolwait-1.3

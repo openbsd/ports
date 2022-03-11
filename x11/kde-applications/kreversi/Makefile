@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:53 rsadowski Exp $
-
 COMMENT =	reversi board game
 DISTNAME =	kreversi-${VERSION}
 CATEGORIES =	games

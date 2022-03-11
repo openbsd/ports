@@ -1,5 +1,3 @@
-$OpenBSD: patch-run_tests,v 1.1 2020/09/10 13:47:47 mariani Exp $
-
 Index: run_tests
 --- run_tests.orig
 +++ run_tests

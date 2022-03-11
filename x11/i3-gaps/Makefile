@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/15 05:11:57 rsadowski Exp $
-
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
 V =		4.20.1

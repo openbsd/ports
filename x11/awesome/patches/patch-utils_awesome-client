@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_awesome-client,v 1.3 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: utils/awesome-client
 --- utils/awesome-client.orig
 +++ utils/awesome-client

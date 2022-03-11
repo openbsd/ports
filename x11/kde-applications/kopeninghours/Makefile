@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/05 08:02:59 rsadowski Exp $
-
 COMMENT =	library for parsing and evaluating OSM data
 DISTNAME =	kopeninghours-${VERSION}
 CATEGORIES =	devel geo

@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.15 2015/06/28 13:33:07 bcallah Exp $
 --- configure.in.orig	Sat Jun 27 16:35:27 2015
 +++ configure.in	Sat Jun 27 16:37:50 2015
 @@ -58,7 +58,7 @@ dnl FLTK library versions...

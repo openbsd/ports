@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebKit2_Shared_Plugins_unix_PluginSearchPath_cpp,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
-
 Index: Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp
 --- Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp.orig
 +++ Source/WebKit2/Shared/Plugins/unix/PluginSearchPath.cpp

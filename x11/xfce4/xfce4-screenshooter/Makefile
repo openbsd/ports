@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/03/07 08:54:46 landry Exp $
-
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.9.10

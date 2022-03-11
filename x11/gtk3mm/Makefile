@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/05/22 09:01:16 ajacoutot Exp $
-
 PORTROACH=		limit:^3\.24
 
 COMMENT=		C++ interface for gtk3+

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/05 08:02:56 rsadowski Exp $
-
 COMMENT =	KDE pim identities
 DISTNAME =	kidentitymanagement-${VERSION}
 CATEGORIES =	devel mail

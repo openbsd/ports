@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.75 2021/09/03 12:51:35 ajacoutot Exp $
-
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_py,v 1.6 2021/03/17 08:21:55 sthen Exp $
-
 Index: configure.py
 --- configure.py.orig
 +++ configure.py

@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_i3-nagbar_man,v 1.2 2021/02/03 14:24:57 sthen Exp $
 Index: man/i3-nagbar.man
 --- man/i3-nagbar.man.orig
 +++ man/i3-nagbar.man

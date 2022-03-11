@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/10 06:37:51 rsadowski Exp $
-
 COMMENT =	mathematical function plotter for KDE
 DISTNAME =	kmplot-${VERSION}
 CATEGORIES =	education math

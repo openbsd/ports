@@ -1,5 +1,3 @@
-$OpenBSD: patch-Tools_make_strings_GNUmakefile_postamble,v 1.1 2015/03/16 12:20:24 sebastia Exp $
-
 Do not install gzipped manual page
 
 --- Tools/make_strings/GNUmakefile.postamble.orig	Mon Mar 16 12:44:23 2015

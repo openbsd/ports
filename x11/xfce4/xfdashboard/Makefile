@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/03/04 13:48:38 landry Exp $
-
 COMMENT=	Xfce4 gnome-shell like dashboard
 
 XFCE_GOODIE =	xfdashboard

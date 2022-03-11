@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/09/02 14:32:38 jasper Exp $
 @pkgpath x11/gnome/gucharmap,gtk2
 @bin bin/gucharmap
 include/gucharmap-2.90/

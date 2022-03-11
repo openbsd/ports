@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/05 08:02:56 rsadowski Exp $
-
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www

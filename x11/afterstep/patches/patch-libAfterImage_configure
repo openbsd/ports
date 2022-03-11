@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterImage_configure,v 1.2 2015/06/29 14:46:57 ajacoutot Exp $
 --- libAfterImage/configure.orig	Wed May  1 15:34:11 2013
 +++ libAfterImage/configure	Mon Jun 29 14:43:46 2015
 @@ -4081,7 +4081,7 @@ fi

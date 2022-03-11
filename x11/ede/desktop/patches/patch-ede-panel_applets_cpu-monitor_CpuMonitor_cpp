@@ -1,4 +1,3 @@
-$OpenBSD: patch-ede-panel_applets_cpu-monitor_CpuMonitor_cpp,v 1.3 2014/09/17 07:47:38 espie Exp $
 --- ede-panel/applets/cpu-monitor/CpuMonitor.cpp.orig	Sat Jun 21 15:24:21 2014
 +++ ede-panel/applets/cpu-monitor/CpuMonitor.cpp	Wed Sep 17 01:46:03 2014
 @@ -36,20 +36,24 @@

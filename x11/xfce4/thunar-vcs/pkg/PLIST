@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/12/29 15:14:57 landry Exp $
 @conflict thunar-vcs-plugin-*
 @so lib/thunarx-3/thunar-vcs-plugin.so
 @bin libexec/tvp-git-helper

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.17 2017/08/23 15:20:14 dcoppa Exp $
-
 setuid root/setgid utmp are handled by PLIST
 
 Do not enable VTE support if libvte is around

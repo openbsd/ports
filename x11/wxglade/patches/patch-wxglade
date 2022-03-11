@@ -1,5 +1,3 @@
-$OpenBSD: patch-wxglade,v 1.3 2021/02/14 18:52:07 daniel Exp $
-
 Fix path to the wxglade python package.
 
 Index: wxglade

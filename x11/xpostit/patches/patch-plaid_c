@@ -1,4 +1,3 @@
-$OpenBSD: patch-plaid_c,v 1.1 2007/10/26 20:59:01 jasper Exp $
 --- plaid.c.orig	Thu Dec 10 17:40:26 1992
 +++ plaid.c	Fri Oct 26 22:55:30 2007
 @@ -60,6 +60,7 @@ CreatePlaidWidget()

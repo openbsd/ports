@@ -1,4 +1,3 @@
-$OpenBSD: patch-WPrefs_app_Makefile_in,v 1.3 2020/05/27 09:07:55 solene Exp $
 Index: WPrefs.app/Makefile.in
 --- WPrefs.app/Makefile.in.orig
 +++ WPrefs.app/Makefile.in

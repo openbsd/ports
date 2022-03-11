@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.20 2018/06/29 22:16:23 espie Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg

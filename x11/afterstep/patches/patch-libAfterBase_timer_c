@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterBase_timer_c,v 1.1 2015/06/29 14:46:57 ajacoutot Exp $
 --- libAfterBase/timer.c.orig	Mon Jun 29 15:44:57 2015
 +++ libAfterBase/timer.c	Mon Jun 29 15:45:08 2015
 @@ -124,7 +124,7 @@ timer_subtract_times (time_t * sec1, time_t * usec1, t

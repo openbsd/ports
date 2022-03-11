@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT=	showcase for GTK+ 2 widgets
 
 DISTNAME=	thewidgetfactory-0.2.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/25 12:05:50 robert Exp $
-
      SUBDIR =
      SUBDIR += atril
      SUBDIR += caja

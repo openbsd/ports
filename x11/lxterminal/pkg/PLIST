@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/19 14:29:59 kevlo Exp $
 @bin bin/lxterminal
 @man man/man1/lxterminal.1
 share/applications/lxterminal.desktop

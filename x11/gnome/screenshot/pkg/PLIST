@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/11/07 09:20:57 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-screenshot
 @man man/man1/gnome-screenshot.1

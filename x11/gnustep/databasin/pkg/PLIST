@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/20 18:12:49 sebastia Exp $
 bin/DataBasin
 libexec/GNUstep/DataBasin.app/
 @bin libexec/GNUstep/DataBasin.app/DataBasin

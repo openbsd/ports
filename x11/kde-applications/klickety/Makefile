@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:49 rsadowski Exp $
-
 COMMENT =	adaptation of clickomania game
 DISTNAME =	klickety-${VERSION}
 CATEGORIES =	games

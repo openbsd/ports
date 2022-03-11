@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:59 rsadowski Exp $
-
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11

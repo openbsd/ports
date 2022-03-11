@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2017/11/12 10:46:42 ajacoutot Exp $
-
 From 95b37e2480a2cdc3ee003380b9c587e4663fe872 Mon Sep 17 00:00:00 2001
 From: Kalev Lember <klember@redhat.com>
 Date: Tue, 1 Sep 2015 19:52:11 +0200

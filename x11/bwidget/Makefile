@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT =		high-level widget set for Tcl/Tk
 
 DISTNAME =		bwidget-1.9.12

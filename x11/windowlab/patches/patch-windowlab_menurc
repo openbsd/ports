@@ -1,5 +1,3 @@
-$OpenBSD: patch-windowlab_menurc,v 1.1.1.1 2013/06/11 22:09:45 bcallah Exp $
-
 Let windowlab close without manual configuration.
 
 --- windowlab.menurc.orig	Sun Jun  9 21:45:06 2013

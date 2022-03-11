@@ -1,5 +1,3 @@
-$OpenBSD: patch-fltk_editengine_h,v 1.1 2017/05/19 00:08:25 espie Exp $
-
 Index: fltk/editengine.h
 --- fltk/editengine.h.orig
 +++ fltk/editengine.h

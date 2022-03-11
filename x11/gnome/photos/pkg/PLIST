@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/05/14 09:32:06 ajacoutot Exp $
 @bin bin/gnome-photos
 lib/gnome-photos/
 @so lib/gnome-photos/libgnome-photos.so

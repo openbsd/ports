@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:37 rsadowski Exp $
-
 COMMENT =	library for accessing mail storages in MBox format
 DISTNAME =	kmbox-${VERSION}
 CATEGORIES =	devel mail

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lxqt-config-session_autostartedit_cpp,v 1.2 2020/09/04 15:40:13 mariani Exp $
-
 Index: lxqt-config-session/autostartedit.cpp
 --- lxqt-config-session/autostartedit.cpp.orig
 +++ lxqt-config-session/autostartedit.cpp

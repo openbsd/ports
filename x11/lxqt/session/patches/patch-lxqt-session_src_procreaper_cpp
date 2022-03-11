@@ -1,5 +1,3 @@
-$OpenBSD: patch-lxqt-session_src_procreaper_cpp,v 1.1 2021/11/22 05:45:44 rsadowski Exp $
-
 Index: lxqt-session/src/procreaper.cpp
 --- lxqt-session/src/procreaper.cpp.orig
 +++ lxqt-session/src/procreaper.cpp

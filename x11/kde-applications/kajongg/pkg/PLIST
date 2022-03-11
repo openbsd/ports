@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:43:50 rsadowski Exp $
 bin/kajongg
 bin/kajonggserver
 share/applications/org.kde.kajongg.desktop

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:46:08 sthen Exp $
-
 BROKEN =	GDI.c:12636:17: error: no member named 'GetPixel' in 'wxColour'
 
 COMMENT =	interface to the wxWidgets cross-platform GUI toolkit

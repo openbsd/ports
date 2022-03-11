@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/01 13:04:10 sebastia Exp $
 bin/Calculator
 bin/CurrencyConverter
 bin/Finger

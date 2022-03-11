@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/03/21 15:18:31 bluhm Exp $
 bin/tcpdump2xplot
 @bin bin/xplot
 @man man/man1/tcpdump2xplot.1

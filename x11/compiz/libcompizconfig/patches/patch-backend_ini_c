@@ -1,4 +1,3 @@
-$OpenBSD: patch-backend_ini_c,v 1.1 2013/12/03 00:49:44 fgsch Exp $
 --- backend/ini.c.orig	Sun Feb 24 14:04:06 2013
 +++ backend/ini.c	Sun Feb 24 14:04:14 2013
 @@ -22,7 +22,9 @@

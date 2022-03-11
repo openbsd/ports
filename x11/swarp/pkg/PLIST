@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/01 14:38:10 zinke Exp $
 @bin bin/swarp

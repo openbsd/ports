@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-python3-main,v 1.1 2013/09/10 13:25:42 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/dbus/gobject_service.py
 lib/python${MODPY_VERSION}/site-packages/dbus/gobject_service.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/gobject_service.pyo

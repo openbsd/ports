@@ -1,4 +1,3 @@
-$OpenBSD: patch-iwidgets_tcl_in,v 1.1 2010/06/07 14:40:47 sthen Exp $
 --- iwidgets.tcl.in.orig	Mon Jun  7 09:44:35 2010
 +++ iwidgets.tcl.in	Mon Jun  7 09:44:47 2010
 @@ -16,7 +16,7 @@

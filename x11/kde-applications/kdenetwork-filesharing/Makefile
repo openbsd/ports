@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:46 rsadowski Exp $
-
 COMMENT =	KDE Filesharing via Samba
 DISTNAME =	kdenetwork-filesharing-${VERSION}
 PKGNAME =	kdenetwork-filesharing-kf5-${VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2021/12/13 09:57:06 landry Exp $
-
 COMMENT =	Xfce4 alternative applications menu panel plugin
 
 XFCE_VERSION =	2.7.1

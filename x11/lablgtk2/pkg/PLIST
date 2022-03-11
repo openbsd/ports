@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/02/18 05:22:22 daniel Exp $
 %%native%%
 bin/gdk_pixbuf_mlsource
 bin/lablgladecc2

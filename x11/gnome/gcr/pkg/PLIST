@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/10/25 07:24:36 ajacoutot Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/05/24 17:24:23 sthen Exp $
-
 COMMENT=		simple X screen locker
 
 DISTNAME=		slock-1.4

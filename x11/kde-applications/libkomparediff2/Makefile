@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:40 rsadowski Exp $
-
 COMMENT =	library to compare files and strings
 DISTNAME =	libkomparediff2-${VERSION}
 PKGNAME =	libkomparediff2-kf5-${VERSION}

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_eterm_utmp_h,v 1.1 2007/11/18 12:55:58 jasper Exp $
 --- src/eterm_utmp.h.orig	Wed Nov 14 17:28:42 2007
 +++ src/eterm_utmp.h	Wed Nov 14 17:29:05 2007
 @@ -69,7 +69,7 @@

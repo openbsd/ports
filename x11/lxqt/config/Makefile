@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
-
 COMMENT =	tools to configure LXQt and the underlying operating system
 
 NAME =		lxqt-config

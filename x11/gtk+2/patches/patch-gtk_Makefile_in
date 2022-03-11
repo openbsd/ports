@@ -1,5 +1,3 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.50 2020/12/21 11:38:22 ajacoutot Exp $
-
 Index: gtk/Makefile.in
 --- gtk/Makefile.in.orig
 +++ gtk/Makefile.in

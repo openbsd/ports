@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_pixmaps_Makefile_in,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
 --- src/pixmaps/Makefile.in.orig	Mon Jan 20 15:01:50 1997
 +++ src/pixmaps/Makefile.in	Tue Feb 13 13:59:41 2001
 @@ -81,10 +81,8 @@ dvi:

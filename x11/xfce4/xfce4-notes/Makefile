@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2021/01/19 10:00:04 landry Exp $
-
 COMMENT=	Xfce4 sticky notes panel plugin
 
 XFCE_VERSION=	1.9.0

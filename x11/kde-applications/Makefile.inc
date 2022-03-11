@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.15 2021/02/27 07:15:56 rsadowski Exp $
-
 DIST_SUBDIR =	kde-applications
 
 .if !defined(CATEGORIES)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/19 19:43:37 sebastia Exp $
-
 COMMENT =	Guenthers RSS reader
 
 REVISION =	14

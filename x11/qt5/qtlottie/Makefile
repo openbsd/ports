@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/19 06:16:30 rsadowski Exp $
-
 QT5NAME =		QtLottie
 COMMENT =		QML API for rendering graphics and animations
 

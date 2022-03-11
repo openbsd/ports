@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/01/18 07:17:52 matthieu Exp $
-
 COMMENT =	D-Bus menu implementation for Gtk
 DISTNAME =	libdbusmenu-16.04.0
 REVISION =	2

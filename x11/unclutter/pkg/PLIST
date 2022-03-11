@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/10/11 20:39:55 naddy Exp $
 @bin bin/unclutter
 @man man/man1/unclutter.1

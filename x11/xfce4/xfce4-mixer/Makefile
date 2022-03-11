@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/01/25 16:58:12 landry Exp $
-
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer

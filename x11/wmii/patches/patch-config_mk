@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_mk,v 1.5 2010/07/10 14:35:59 naddy Exp $
 --- config.mk.orig	Fri Nov 16 06:59:15 2007
 +++ config.mk	Sat Jul 10 08:33:20 2010
 @@ -1,10 +1,10 @@

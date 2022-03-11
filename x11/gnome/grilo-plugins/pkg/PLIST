@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.34 2021/10/08 18:42:04 ajacoutot Exp $
 @so lib/grilo-${API}/libgrlchromaprint.so
 @so lib/grilo-${API}/libgrldleyna.so
 @so lib/grilo-${API}/libgrlfilesystem.so

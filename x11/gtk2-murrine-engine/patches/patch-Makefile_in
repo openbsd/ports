@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2012/05/08 10:05:54 dcoppa Exp $
-
 Add -lm to ensure linking with the math library
 (upstream git commit 6e8eb24497d38a68bb4b884ea25accd18fc524e8)
 

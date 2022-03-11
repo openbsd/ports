@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2021/12/08 09:13:29 landry Exp $
-
 COMMENT=	Xfce4 extension library
 
 XFCE_PROJECT=	exo

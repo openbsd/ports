@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_plugins_gstreamer_camerabin_camerabinv4limageprocessing_cpp,v 1.1 2017/07/17 08:34:38 zhuk Exp $
 Allow our V4L2 to be used.
 
 Index: src/plugins/gstreamer/camerabin/camerabinv4limageprocessing.cpp

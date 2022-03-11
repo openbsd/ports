@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/12/29 14:52:54 landry Exp $
-
 COMMENT =	Xfce4 power manager
 
 XFCE_PROJECT =	xfce4-power-manager

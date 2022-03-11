@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:46 rsadowski Exp $
-
 COMMENT =	collection of plugins to handle mobipocket files
 DISTNAME =	kdegraphics-mobipocket-${VERSION}
 PKGNAME =	kdegraphics-mobipocket-kf5-${VERSION}

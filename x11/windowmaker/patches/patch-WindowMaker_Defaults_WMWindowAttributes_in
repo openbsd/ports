@@ -1,4 +1,3 @@
-$OpenBSD: patch-WindowMaker_Defaults_WMWindowAttributes_in,v 1.3 2016/06/24 09:53:54 dcoppa Exp $
 --- WindowMaker/Defaults/WMWindowAttributes.in.orig	Fri Jun 24 09:24:17 2016
 +++ WindowMaker/Defaults/WMWindowAttributes.in	Fri Jun 24 09:26:07 2016
 @@ -2,6 +2,7 @@

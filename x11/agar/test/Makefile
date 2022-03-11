@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/01 07:01:03 bentley Exp $
-
 COMMENT =		interactive test suite for agar
 
 PKGNAME =		agartest-$V

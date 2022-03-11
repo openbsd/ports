@@ -1,5 +1,3 @@
-$OpenBSD: patch-x2x_1,v 1.2 2011/11/22 09:33:09 jasper Exp $
-
 - Fix display of usage line.
 - Various fixes including -north/-south support.
   From Debian's x2x_1.27-8 patch.

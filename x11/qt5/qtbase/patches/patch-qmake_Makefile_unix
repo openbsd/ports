@@ -1,5 +1,3 @@
-$OpenBSD: patch-qmake_Makefile_unix,v 1.1 2021/01/19 06:16:29 rsadowski Exp $
-
 Index: qmake/Makefile.unix
 --- qmake/Makefile.unix.orig
 +++ qmake/Makefile.unix

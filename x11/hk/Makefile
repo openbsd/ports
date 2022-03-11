@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT =		set temporary X11 hotkeys
 
 DISTNAME =		hk-0.1.0

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.49 2021/01/23 09:50:10 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%

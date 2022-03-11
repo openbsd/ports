@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/23 13:19:30 edd Exp $
-
 V =		12.10.0
 COMMENT =	library for exporting menus to a desktop environment
 DISTNAME =	libappindicator-${V}

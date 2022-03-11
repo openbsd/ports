@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:34 rsadowski Exp $
-
 COMMENT =	KDE calculating fractions practicing app
 DISTNAME =	kbruch-${VERSION}
 CATEGORIES =	education x11

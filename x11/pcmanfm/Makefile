@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/06 09:33:22 ajacoutot Exp $
-
 COMMENT=		fast and lightweight file manager
 
 DISTNAME=		pcmanfm-1.3.2

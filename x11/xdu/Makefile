@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:51:26 sthen Exp $
-
 COMMENT=		graphic disk usage viewer
 
 DISTNAME=		xdu-3.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/05/31 05:12:34 landry Exp $
-
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools

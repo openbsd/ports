@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/03/21 16:14:55 robert Exp $
 include/mate-mixer/
 include/mate-mixer/libmatemixer/
 include/mate-mixer/libmatemixer/matemixer-app-info.h

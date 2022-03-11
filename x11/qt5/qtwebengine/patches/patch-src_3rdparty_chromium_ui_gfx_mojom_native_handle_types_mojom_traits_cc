@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_ui_gfx_mojom_native_handle_types_mojom_traits_cc,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/ui/gfx/mojom/native_handle_types_mojom_traits.cc
 --- src/3rdparty/chromium/ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig
 +++ src/3rdparty/chromium/ui/gfx/mojom/native_handle_types_mojom_traits.cc

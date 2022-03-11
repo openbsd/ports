@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.5 2021/03/01 07:01:02 bentley Exp $
-
 V ?=			1.6.0
 DISTNAME ?=		agar-$V
 

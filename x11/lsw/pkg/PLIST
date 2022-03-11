@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/01 14:39:36 zinke Exp $
 @bin bin/lsw
 @man man/man1/lsw.1

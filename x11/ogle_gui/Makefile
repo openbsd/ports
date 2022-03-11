@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 21:02:29 sthen Exp $
-
 CATEGORIES=	x11
 
 COMMENT=	GUI for ogle

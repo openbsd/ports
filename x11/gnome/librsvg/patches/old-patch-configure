@@ -1,5 +1,3 @@
-$OpenBSD: old-patch-configure,v 1.1 2018/07/12 08:46:25 ajacoutot Exp $
-
 https://bugzilla.gnome.org/show_bug.cgi?id=653323
 
 Index: configure

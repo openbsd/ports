@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.30 2021/10/26 11:21:58 jasper Exp $
 @bin bin/gnome-system-monitor
 libexec/gnome-system-monitor/
 @bin libexec/gnome-system-monitor/gsm-kill

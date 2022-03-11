@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/05 19:20:31 sebastia Exp $
 lib/tcl/iwidgets/
 lib/tcl/iwidgets/iwidgets.tcl
 lib/tcl/iwidgets/license.terms

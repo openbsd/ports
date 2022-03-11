@@ -1,4 +1,3 @@
-$OpenBSD: patch-driconf_simpleui_py,v 1.1.1.1 2008/07/11 13:07:54 wcmaier Exp $
 --- driconf_simpleui.py.orig	Mon Jul  7 08:30:20 2008
 +++ driconf_simpleui.py	Mon Jul  7 08:30:36 2008
 @@ -25,12 +25,12 @@ pygtk.require ("2.0")

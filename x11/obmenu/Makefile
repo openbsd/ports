@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:52 sthen Exp $
-
 COMMENT=	Openbox menu editor
 
 DISTNAME=	obmenu-1.0

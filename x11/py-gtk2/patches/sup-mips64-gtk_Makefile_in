@@ -1,5 +1,3 @@
-$OpenBSD: sup-mips64-gtk_Makefile_in,v 1.1 2013/11/07 16:01:55 bcallah Exp $
-
 Work around "relocation truncated to fit: R_MIPS_CALL16" on mips64.
 
 --- gtk/Makefile.in.orig	Fri Apr  1 12:41:04 2011

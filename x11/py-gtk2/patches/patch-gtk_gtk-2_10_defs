@@ -1,5 +1,3 @@
-$OpenBSD: patch-gtk_gtk-2_10_defs,v 1.1 2019/12/16 15:50:42 ajacoutot Exp $
-
 From eca72baa5616fbe4dbebea43c7e5940847dc5ab8 Mon Sep 17 00:00:00 2001
 From: "Owen W. Taylor" <otaylor@fishsoup.net>
 Date: Tue, 27 Sep 2011 00:17:52 -0400

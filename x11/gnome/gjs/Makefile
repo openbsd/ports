@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.101 2022/02/08 15:45:11 ajacoutot Exp $
-
 USE_WXNEEDED=		Yes
 
 COMMENT=		Javascript bindings for GNOME

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT=		print X selection to standard out
 
 DISTNAME=		sselp-0.2

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:28 espie Exp $
 bin/blast
 @man man/man1/blast.1

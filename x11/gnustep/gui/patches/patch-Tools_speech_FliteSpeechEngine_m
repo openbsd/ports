@@ -1,5 +1,3 @@
-$OpenBSD: patch-Tools_speech_FliteSpeechEngine_m,v 1.2 2020/06/09 21:12:17 sebastia Exp $
-
 use register_cmu_us_kal instead of register_cmu_us_kal16
 
 Index: Tools/speech/FliteSpeechEngine.m

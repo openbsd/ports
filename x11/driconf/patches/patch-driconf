@@ -1,4 +1,3 @@
-$OpenBSD: patch-driconf,v 1.1.1.1 2008/07/11 13:07:54 wcmaier Exp $
 --- driconf.orig	Thu Aug 11 14:07:12 2005
 +++ driconf	Mon Jul  7 08:31:49 2008
 @@ -20,9 +20,9 @@

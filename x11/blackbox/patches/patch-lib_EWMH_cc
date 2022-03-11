@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_EWMH_cc,v 1.1 2018/04/08 18:43:26 jasper Exp $
-
 error: non-constant-expression cannot be narrowed from type 'long' to 'unsigned long' in initializer list
 
 Index: lib/EWMH.cc

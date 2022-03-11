@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT=	educational application to solve physics problems
 
 VERSION =	0.3.5

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/05/16 09:45:16 ajacoutot Exp $
 @bin bin/seahorse-sharing
 @man man/man1/seahorse-sharing.1
 share/examples/seahorse-sharing/

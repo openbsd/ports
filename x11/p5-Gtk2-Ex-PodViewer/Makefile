@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/25 21:54:23 sthen Exp $
-
 COMMENT =		Gtk2 widget for displaying Plain old Documentation (POD)
 
 MODULES =		cpan

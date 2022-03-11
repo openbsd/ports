@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:53 rsadowski Exp $
-
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${VERSION}
 CATEGORIES =	graphics

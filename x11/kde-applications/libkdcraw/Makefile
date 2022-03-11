@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT =	KDE wrapper around the LibRaw library
 DISTNAME =	libkdcraw-${VERSION}
 PKGNAME =	libkdcraw-kf5-${VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/14 13:04:05 op Exp $
-
 COMMENT =	lightweight compositor for X11
 
 GH_ACCOUNT =	yshui

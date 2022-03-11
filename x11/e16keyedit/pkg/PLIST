@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/02/24 07:54:17 feinerer Exp $
 @bin bin/e16keyedit
 share/applications/e16-keyedit.desktop
 @tag update-desktop-database

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2019/07/07 11:20:53 ajacoutot Exp $
-
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier

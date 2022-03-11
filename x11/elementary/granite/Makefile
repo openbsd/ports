@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/05 17:20:02 bcallah Exp $
-
 COMMENT =	elementary OS Gtk+/GLib extension library
 
 SHARED_LIBS +=	granite                   0.0 # 5.5.0

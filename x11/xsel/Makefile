@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/23 15:07:27 sthen Exp $
-
 COMMENT=	command-line program for managing X selection contents
 
 V=		1.2.0.20200526

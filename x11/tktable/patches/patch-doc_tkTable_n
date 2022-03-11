@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_tkTable_n,v 1.3 2017/06/02 20:47:13 schwarze Exp $
-
 Macros that clash with official man(7) macros must be defined
 after .TH, or they fail to override the official ones because .TH
 typically reloads the official macro file.

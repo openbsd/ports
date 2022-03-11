@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT =	confine pointer and keyboard events to a Tk window sub-tree
 
 DISTNAME =	byzi-0.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/03/21 16:14:56 robert Exp $
 @bin bin/mate-power-manager
 @bin bin/mate-power-preferences
 @bin bin/mate-power-statistics

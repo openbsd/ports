@@ -1,4 +1,3 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.13 2014/09/22 16:55:11 stu Exp $
 --- unix/Makefile.in.orig	Wed Jul 23 09:13:57 2014
 +++ unix/Makefile.in	Sun Aug 17 15:41:20 2014
 @@ -541,6 +541,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec

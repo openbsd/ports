@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:54 rsadowski Exp $
 @pkgpath x11/kde4/killbots
 @bin bin/killbots
 share/applications/org.kde.killbots.desktop

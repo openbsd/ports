@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/05/14 10:29:31 ajacoutot Exp $
 @newgroup _gnome-initial-setup:724
 @newuser _gnome-initial-setup:724:_gnome-initial-setup:daemon:GNOME Initial Setup:/nonexistent:/sbin/nologin
 @bin libexec/gnome-initial-setup

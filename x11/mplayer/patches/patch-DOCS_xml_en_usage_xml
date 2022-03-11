@@ -1,5 +1,3 @@
-$OpenBSD: patch-DOCS_xml_en_usage_xml,v 1.2 2019/03/30 17:17:54 ajacoutot Exp $
-
 Index: DOCS/xml/en/usage.xml
 --- DOCS/xml/en/usage.xml.orig
 +++ DOCS/xml/en/usage.xml

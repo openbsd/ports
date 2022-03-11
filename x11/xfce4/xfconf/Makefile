@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/12/29 14:38:43 landry Exp $
-
 COMMENT=	Xfce4 settings daemon
 
 XFCE_PROJECT=	xfconf

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_gears_filesystem_lua,v 1.2 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: lib/gears/filesystem.lua
 --- lib/gears/filesystem.lua.orig
 +++ lib/gears/filesystem.lua

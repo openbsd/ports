@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2020/12/29 15:06:25 landry Exp $
-
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
 XFCE_VERSION=	1.2.4

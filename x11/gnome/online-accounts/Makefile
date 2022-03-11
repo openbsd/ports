@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.124 2021/10/19 07:35:30 ajacoutot Exp $
-
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts

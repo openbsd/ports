@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:04:07 espie Exp $
 @bin bin/ASFileBrowser
 @bin bin/ASMount
 @bin bin/ASRun

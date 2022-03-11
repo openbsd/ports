@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:51:24 sthen Exp $
-
 CATEGORIES ?=	x11
 
 MAINTAINER ?=	Kaashif Hymabaccus <kaashif@kaashif.co.uk>

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/11 04:37:33 rsadowski Exp $
 @bin bin/qt5ct
 @so lib/qt5/plugins/platformthemes/libqt5ct.so
 lib/qt5/plugins/styles/

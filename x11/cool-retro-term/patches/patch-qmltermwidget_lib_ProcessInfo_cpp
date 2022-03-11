@@ -1,5 +1,3 @@
-$OpenBSD: patch-qmltermwidget_lib_ProcessInfo_cpp,v 1.1 2018/01/06 04:46:12 bentley Exp $
-
 Index: qmltermwidget/lib/ProcessInfo.cpp
 --- qmltermwidget/lib/ProcessInfo.cpp.orig
 +++ qmltermwidget/lib/ProcessInfo.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_gnome-shell-dbus-interfaces_gresource_xml,v 1.4 2021/10/31 13:20:53 jasper Exp $
-
 Index: data/gnome-shell-dbus-interfaces.gresource.xml
 --- data/gnome-shell-dbus-interfaces.gresource.xml.orig
 +++ data/gnome-shell-dbus-interfaces.gresource.xml

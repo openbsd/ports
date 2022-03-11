@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	GNUstep mastermind game
 
 DISTNAME =	GMastermind-0.6

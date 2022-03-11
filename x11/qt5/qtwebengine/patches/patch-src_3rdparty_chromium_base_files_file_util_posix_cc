@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_base_files_file_util_posix_cc,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
-
 Index: src/3rdparty/chromium/base/files/file_util_posix.cc
 --- src/3rdparty/chromium/base/files/file_util_posix.cc.orig
 +++ src/3rdparty/chromium/base/files/file_util_posix.cc

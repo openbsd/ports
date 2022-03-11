@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=	round, analog X11 clock with bezier curve hands
 
 DISTNAME=	bclock-1.0

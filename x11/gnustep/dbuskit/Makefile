@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/22 08:50:48 sebastia Exp $
-
 COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel

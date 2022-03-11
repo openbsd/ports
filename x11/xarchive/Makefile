@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT=	GTK+2 front-end for command line archiving tools
 
 V=		0.2.8-6

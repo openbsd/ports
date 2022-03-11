@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2022/01/05 08:03:02 rsadowski Exp $
 @conflict marble-<=4.14.3
 @bin bin/marble
 @bin bin/marble-qt

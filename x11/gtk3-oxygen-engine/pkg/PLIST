@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/07/20 20:41:58 landry Exp $
 @bin bin/oxygen-gtk3-demo
 lib/gtk-3.0/3.0.0/theming-engines/
 lib/gtk-3.0/3.0.0/theming-engines/liboxygen-gtk.so

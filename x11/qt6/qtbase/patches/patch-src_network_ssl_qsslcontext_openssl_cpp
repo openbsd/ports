@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_network_ssl_qsslcontext_openssl_cpp,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-
 https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
 
 Index: src/network/ssl/qsslcontext_openssl.cpp

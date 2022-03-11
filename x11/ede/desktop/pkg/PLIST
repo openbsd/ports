@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:38 espie Exp $
 @bin bin/ede-about
 @bin bin/ede-autostart
 @bin bin/ede-bell-conf

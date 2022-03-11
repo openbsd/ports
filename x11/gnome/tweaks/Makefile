@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/03/05 09:29:02 ajacoutot Exp $
-
 COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks

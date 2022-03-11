@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_server_storage_datastore_cpp,v 1.2 2021/01/23 18:10:12 rsadowski Exp $
-
 Index: src/server/storage/datastore.cpp
 --- src/server/storage/datastore.cpp.orig
 +++ src/server/storage/datastore.cpp

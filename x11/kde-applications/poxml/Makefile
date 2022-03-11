@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/04/27 05:27:22 rsadowski Exp $
-
 COMMENT =	convert PO files to XML
 DISTNAME =	poxml-${VERSION}
 CATEGORIES =	x11 devel

@@ -1,5 +1,3 @@
-$OpenBSD: patch-shell_meson_build,v 1.6 2022/02/14 10:15:17 ajacoutot Exp $
-
 No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 
 Find libkrb5.so

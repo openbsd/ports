@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:51:17 sthen Exp $
-
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/15 18:05:56 sthen Exp $
-
 BROKEN-sparc64 = "error[E0412]: cannot find type c_char in this scope"
 
 COMMENT =	lightweight color picker

@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_interp_test,v 1.2 2011/01/05 19:15:09 sebastia Exp $
 --- tests/interp.test.orig	Wed Sep 22 11:37:08 2004
 +++ tests/interp.test	Wed Dec 22 15:24:32 2010
 @@ -31,13 +31,13 @@ test interp-1.1 {create a slave interp with [incr Tk]}

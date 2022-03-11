@@ -1,4 +1,3 @@
-$OpenBSD: patch-lirec_li_recognizer_c,v 1.2 2017/04/29 16:27:40 espie Exp $
 --- lirec/li_recognizer.c.orig
 +++ lirec/li_recognizer.c
 @@ -21,7 +21,7 @@

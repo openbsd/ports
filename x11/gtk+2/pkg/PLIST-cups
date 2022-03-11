@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-cups,v 1.5 2019/11/10 17:26:22 ajacoutot Exp $
 @conflict gtk+2-<2.24.27p1
 @so lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so

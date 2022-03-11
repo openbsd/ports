@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.25 2019/03/16 11:53:03 jasper Exp $
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/

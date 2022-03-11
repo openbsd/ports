@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_am,v 1.2 2001/03/08 11:09:14 wilfried Exp $
 --- src/Makefile.am.orig	Tue Nov 26 01:15:15 1996
 +++ src/Makefile.am	Wed Mar  7 19:09:44 2001
 @@ -17,4 +17,4 @@ offix_DATA = FilesMagic Filesrc

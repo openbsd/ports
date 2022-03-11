@@ -1,4 +1,3 @@
-$OpenBSD: patch-obmenu,v 1.2 2007/12/20 11:53:24 ajacoutot Exp $
 --- obmenu.orig	Thu Feb  2 13:03:38 2006
 +++ obmenu	Thu Dec 20 09:49:59 2007
 @@ -462,9 +462,12 @@ class App:

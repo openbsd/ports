@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/08 21:39:56 ajacoutot Exp $
 ${P5SITE}/Encode/
 ${P5SITE}/Encode/X11.pm
 ${P5SITE}/X11/AtomConstants.pm

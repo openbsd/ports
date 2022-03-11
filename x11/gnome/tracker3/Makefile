@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/30 21:49:55 ajacoutot Exp $
-
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/15 21:23:33 rsadowski Exp $
-
 QT5NAME =		QtWebSockets
 COMMENT-main =		Qt5 implementation of WebSocket protocol
 

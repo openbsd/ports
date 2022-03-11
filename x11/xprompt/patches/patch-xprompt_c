@@ -1,4 +1,3 @@
-$OpenBSD: patch-xprompt_c,v 1.1 2017/04/22 08:48:06 jsg Exp $
 --- xprompt.c.orig	Sat Apr 22 18:43:05 2017
 +++ xprompt.c	Sat Apr 22 18:45:18 2017
 @@ -41,6 +41,7 @@ static char *SCCS_Id = "@(#)xprompt.c\tver 1.4 (91/09/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/14 17:51:15 rsadowski Exp $
-
 COMMENT =	modern style for Qt applications
 
 GH_ACCOUNT =	Luwx

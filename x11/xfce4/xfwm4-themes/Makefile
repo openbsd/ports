@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/08/15 07:11:23 landry Exp $
 PKG_ARCH=	*
 
 COMMENT=	Xfwm4 window decoration themes

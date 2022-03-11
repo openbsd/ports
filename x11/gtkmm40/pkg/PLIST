@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/09/10 13:49:44 ajacoutot Exp $
 include/gtkmm-4.0/
 include/gtkmm-4.0/gdkmm/
 include/gtkmm-4.0/gdkmm.h

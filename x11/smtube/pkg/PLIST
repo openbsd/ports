@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2021/09/15 17:09:05 gonzalo Exp $
 @bin bin/smtube
 share/applications/smtube.desktop
 share/doc/smtube/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-DNDlib_configure,v 1.1 2017/04/30 09:36:59 espie Exp $
 --- DNDlib/configure.orig
 +++ DNDlib/configure
 @@ -738,7 +738,7 @@ cross_compiling=$ac_cv_prog_cxx_cross

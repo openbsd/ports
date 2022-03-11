@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/17 08:05:25 sebastia Exp $
-
 COMMENT =	web cookies sniffer and providing proxy
 
 REVISION =	10

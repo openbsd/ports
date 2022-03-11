@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:24 sthen Exp $
-
 COMMENT=		wm-dockapp; application launching program
 
 DISTNAME=		wmbutton-0.6.1

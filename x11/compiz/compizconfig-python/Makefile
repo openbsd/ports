@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/28 21:01:32 daniel Exp $
-
 COMMENT =	compiz configuration system bindings
 
 DISTNAME =	compizconfig-python-0.8.4

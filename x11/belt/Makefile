@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
 REVISION=		3

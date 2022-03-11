@@ -1,5 +1,3 @@
-$OpenBSD: patch-Modules_Preferences_Misc_PCMiscPrefs_h,v 1.1 2013/10/19 09:15:00 sebastia Exp $
-
 much better objc support in gdb from ports
 
 --- Modules/Preferences/Misc/PCMiscPrefs.h.orig	Sat Oct 19 09:33:34 2013

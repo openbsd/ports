@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/10 06:37:51 rsadowski Exp $
-
 COMMENT =	speech tool for mute persons for KDE
 DISTNAME =	kmouth-${VERSION}
 CATEGORIES =	x11

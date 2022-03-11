@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/19 17:45:27 ajacoutot Exp $
-
 COMMENT-main=	X11 keyboard accessibility tool
 COMMENT-gui=	GUI for xkbset
 

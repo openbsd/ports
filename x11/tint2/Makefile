@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/24 09:11:39 jca Exp $
-
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	freedesktop-compliant panel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/04/27 05:27:20 rsadowski Exp $
-
 COMMENT =	KDE software for music education
 DISTNAME =	minuet-${VERSION}
 CATEGORIES =	audio education

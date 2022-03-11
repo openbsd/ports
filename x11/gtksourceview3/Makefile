@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.75 2019/07/12 20:51:13 sthen Exp $
-
 PORTROACH=		limit:^3
 
 COMMENT=		text widget that extends the GTK3 GtkTextView widget

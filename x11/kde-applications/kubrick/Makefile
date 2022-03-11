@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:26 rsadowski Exp $
-
 COMMENT =	3-D Game based on Rubiks Cube
 DISTNAME =	kubrick-${VERSION}
 CATEGORIES =	games

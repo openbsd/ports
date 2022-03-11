@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:12 sthen Exp $
-
 COMMENT=		switch GTK+2 themes quickly
 
 DISTNAME=		gtk-theme-switch-2.0.0rc2

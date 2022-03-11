@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/20 07:10:29 landry Exp $
 share/icons/retrosmart-icon-theme/
 share/icons/retrosmart-icon-theme/index.theme
 share/icons/retrosmart-icon-theme/scalable/

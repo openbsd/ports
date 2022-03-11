@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2021/10/08 18:41:54 ajacoutot Exp $
-
 # XXX PORTROACH overriden at end of this file.
 
 COMMENT=	framework for making media discovery and browsing easy

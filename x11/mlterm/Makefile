@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:51:17 sthen Exp $
-
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.3
 REVISION=	2

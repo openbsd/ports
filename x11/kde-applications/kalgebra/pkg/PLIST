@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/06/19 18:34:33 rsadowski Exp $
 @pkgpath x11/kde4/kalgebra
 @bin bin/calgebra
 @bin bin/kalgebra

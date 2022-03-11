@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/03/01 11:10:14 sthen Exp $
-
 COMMENT=		Joe's Window Manager
 
 DISTNAME=		jwm-2.4.1

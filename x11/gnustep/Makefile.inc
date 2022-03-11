@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.11 2019/07/13 10:59:27 sthen Exp $
-
 DIST_SUBDIR=	gnustep
 
 MAINTAINER?=	Sebastian Reitenbach <sebastia@openbsd.org>

@@ -1,5 +1,3 @@
-$OpenBSD: patch-server_libvncserver_rfbserver_c,v 1.4 2020/04/02 14:34:50 robert Exp $
-
 https://gitweb.gentoo.org/repo/gentoo.git/tree/net-misc/vino/files/CVE-2014-6053.patch
 https://gitweb.gentoo.org/repo/gentoo.git/tree/net-misc/vino/files/CVE-2018-7225.patch
 https://gitweb.gentoo.org/repo/gentoo.git/tree/net-misc/vino/files/CVE-2019-15681.patch

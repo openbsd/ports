@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:24 sthen Exp $
-
 COMMENT =	sets the window manager name property of the root window
 
 DISTNAME =	wmname-0.1

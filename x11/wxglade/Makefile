@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/21 19:50:39 kmos Exp $
-
 COMMENT=		GUI designer for wxWidgets/wxPython user interfaces
 
 MODPY_EGG_VERSION=	1.0.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-1_0_src_Flv_Style_cxx,v 1.1.1.1 2001/04/02 15:10:26 wilfried Exp $
 --- 1.0/src/Flv_Style.cxx.orig	Sat Jan 22 14:28:44 2000
 +++ 1.0/src/Flv_Style.cxx	Sat Feb 10 19:44:38 2001
 @@ -471,6 +471,15 @@ Flv_Style_List::Flv_Style_List()

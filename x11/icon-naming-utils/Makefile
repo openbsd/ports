@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:14 sthen Exp $
-
 COMMENT=		compatibility tools from the Tango project
 
 DISTNAME=		icon-naming-utils-0.8.90

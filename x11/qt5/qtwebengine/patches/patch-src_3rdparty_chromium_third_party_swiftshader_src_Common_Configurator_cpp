@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_swiftshader_src_Common_Configurator_cpp,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/third_party/swiftshader/src/Common/Configurator.cpp
 --- src/3rdparty/chromium/third_party/swiftshader/src/Common/Configurator.cpp.orig
 +++ src/3rdparty/chromium/third_party/swiftshader/src/Common/Configurator.cpp

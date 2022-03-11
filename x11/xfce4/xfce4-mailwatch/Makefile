@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/11/09 17:55:29 landry Exp $
-
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.3.0

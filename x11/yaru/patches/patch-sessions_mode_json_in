@@ -1,5 +1,3 @@
-$OpenBSD: patch-sessions_mode_json_in,v 1.1 2020/05/17 17:54:05 ajacoutot Exp $
-
 Index: sessions/mode.json.in
 --- sessions/mode.json.in.orig
 +++ sessions/mode.json.in

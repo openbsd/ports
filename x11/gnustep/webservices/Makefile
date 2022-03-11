@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep webservices framework
 
 VERSION =	0.7.3

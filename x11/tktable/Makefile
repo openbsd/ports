@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
 V =			2.10

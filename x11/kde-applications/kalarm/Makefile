@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/01/05 08:02:53 rsadowski Exp $
-
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity

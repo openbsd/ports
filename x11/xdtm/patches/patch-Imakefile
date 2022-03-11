@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imakefile,v 1.1 2001/10/05 22:08:20 naddy Exp $
 --- Imakefile.orig	Thu Mar 14 14:02:00 1996
 +++ Imakefile	Fri Oct  5 23:30:53 2001
 @@ -143,6 +143,10 @@ XDTMDIR=$(LIBDIR)/xdtm

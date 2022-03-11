@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wmlib_include_wm_config_h,v 1.1.1.1 2018/11/08 06:59:26 rsadowski Exp $
-
 Index: src/wmlib/include/wm_config.h
 --- src/wmlib/include/wm_config.h.orig
 +++ src/wmlib/include/wm_config.h

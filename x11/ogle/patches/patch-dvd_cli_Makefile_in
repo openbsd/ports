@@ -1,4 +1,3 @@
-$OpenBSD: patch-dvd_cli_Makefile_in,v 1.1 2003/11/13 18:46:47 espie Exp $
 --- dvd_cli/Makefile.in.orig	2003-11-04 12:33:53.000000000 +0100
 +++ dvd_cli/Makefile.in	2003-11-10 14:33:09.000000000 +0100
 @@ -149,9 +149,9 @@ ogle_cli_SOURCES = main.c \

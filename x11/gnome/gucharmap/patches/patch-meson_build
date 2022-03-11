@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.5 2021/11/17 19:59:58 jasper Exp $
-
 - ERROR: C shared or static library 'dl' not found
 - ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
 

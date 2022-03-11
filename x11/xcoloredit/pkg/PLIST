@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:40:03 naddy Exp $
 @bin bin/xcoloredit
 @man man/man1/xcoloredit.1

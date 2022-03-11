@@ -1,5 +1,3 @@
-$OpenBSD: patch-xlito_c,v 1.1.1.1 2017/06/19 17:14:19 bcallah Exp $
-
 Missing string.h include.
 
 Index: xlito.c

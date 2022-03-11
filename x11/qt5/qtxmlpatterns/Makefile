@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/15 21:23:33 rsadowski Exp $
-
 QT5NAME =		QtXmlPatterns
 COMMENT-main =		Qt5 support for XPath, XQuery, XSLT and XML Schema
 

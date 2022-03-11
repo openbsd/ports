@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:59 sthen Exp $
-
 COMMENT =		provides an abstraction layer of various Qt bindings
 
 MODPY_EGG_VERSION =	1.9.0

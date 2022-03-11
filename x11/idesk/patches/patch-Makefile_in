@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2005/09/21 11:56:05 bernd Exp $
 --- Makefile.in.orig	Mon Jul 18 00:47:55 2005
 +++ Makefile.in	Mon Sep 19 18:47:38 2005
 @@ -104,7 +104,7 @@ Makefile: $(srcdir)/Makefile.in  $(top_b

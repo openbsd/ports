@@ -1,5 +1,3 @@
-# $OpenBSD: xfce4.port.mk,v 1.34 2020/12/31 15:19:33 landry Exp $
-
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
 

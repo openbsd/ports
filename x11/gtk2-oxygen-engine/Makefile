@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:12 sthen Exp $
 COMMENT =		KDE Oxygen widget theme for GTK
 
 V =			1.4.5

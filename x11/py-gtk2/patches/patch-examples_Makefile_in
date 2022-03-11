@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.9 2019/12/16 15:50:42 ajacoutot Exp $
-
 --- examples/Makefile.in.orig	Fri Apr  1 12:41:03 2011
 +++ examples/Makefile.in	Fri Apr  1 13:15:39 2011
 @@ -652,7 +652,7 @@ pygtk-demo/pygtk-demo: pygtk-demo/pygtk-demo.in

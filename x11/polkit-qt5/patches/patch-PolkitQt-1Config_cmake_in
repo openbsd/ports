@@ -1,5 +1,3 @@
-$OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.2 2019/11/24 18:46:26 ajacoutot Exp $
-
 --- PolkitQt-1Config.cmake.in.orig	Thu Jul 10 10:37:25 2014
 +++ PolkitQt-1Config.cmake.in	Sat Aug 30 10:51:42 2014
 @@ -42,9 +42,9 @@ elseif(APPLE)

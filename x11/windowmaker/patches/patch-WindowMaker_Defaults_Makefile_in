@@ -1,4 +1,3 @@
-$OpenBSD: patch-WindowMaker_Defaults_Makefile_in,v 1.3 2020/05/27 09:07:55 solene Exp $
 Index: WindowMaker/Defaults/Makefile.in
 --- WindowMaker/Defaults/Makefile.in.orig
 +++ WindowMaker/Defaults/Makefile.in

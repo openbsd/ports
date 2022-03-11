@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT=	framework to major mail protocols
 
 DISTNAME=	Pantomime-1.3.0

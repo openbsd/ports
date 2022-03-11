@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:58 rsadowski Exp $
-
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
 CATEGORIES =	sysutils print

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lxqtprogramfinder_cpp,v 1.2 2020/09/04 15:40:11 mariani Exp $
-
 Index: lxqtprogramfinder.cpp
 --- lxqtprogramfinder.cpp.orig
 +++ lxqtprogramfinder.cpp

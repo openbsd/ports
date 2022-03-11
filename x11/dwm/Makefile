@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/06/01 20:35:35 jung Exp $
-
 COMMENT=		dynamic window manager
 
 V=			6.2

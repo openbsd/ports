@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/05 08:03:02 rsadowski Exp $
-
 COMMENT =	KDE SANE (scanner) wrapper library
 DISTNAME =	libksane-${VERSION}
 PKGNAME =	libksane-kf5-${VERSION}

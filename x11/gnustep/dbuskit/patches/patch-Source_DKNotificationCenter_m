@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_DKNotificationCenter_m,v 1.1 2017/04/19 21:18:48 sebastia Exp $
-
 Garbage Collection is gone, so are their macros
 
 --- Source/DKNotificationCenter.m.orig	Wed Apr 19 11:26:33 2017

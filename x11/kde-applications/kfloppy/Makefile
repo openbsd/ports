@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:35 rsadowski Exp $
-
 COMMENT =	graphical floppy format utility for KDE
 DISTNAME =	kfloppy-${VERSION}
 CATEGORIES =	x11 sysutils

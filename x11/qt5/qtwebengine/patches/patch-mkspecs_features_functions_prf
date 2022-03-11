@@ -1,5 +1,3 @@
-$OpenBSD: patch-mkspecs_features_functions_prf,v 1.2 2021/01/19 06:16:32 rsadowski Exp $
-
 Index: mkspecs/features/functions.prf
 --- mkspecs/features/functions.prf.orig
 +++ mkspecs/features/functions.prf

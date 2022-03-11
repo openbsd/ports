@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Netclient_cpp,v 1.3 2017/12/02 18:18:21 ajacoutot Exp $
-
 Index: src/Netclient.cpp
 --- src/Netclient.cpp.orig
 +++ src/Netclient.cpp

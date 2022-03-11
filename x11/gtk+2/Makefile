@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.240 2021/02/27 08:59:37 ajacoutot Exp $
-
 DPB_PROPERTIES=		parallel
 
 COMMENT-main=		multi-platform graphical toolkit

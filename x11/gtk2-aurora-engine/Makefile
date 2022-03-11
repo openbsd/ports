@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/03/20 16:44:29 naddy Exp $
-
 COMMENT=	Aurora GTK+2 engine
 
 V=		1.5.1

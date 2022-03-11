@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.76 2022/02/12 17:43:17 ajacoutot Exp $
-
 COMMENT=		general user documentation for GNOME
 
 GNOME_PROJECT=		gnome-user-docs

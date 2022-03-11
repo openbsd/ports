@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:19 sthen Exp $
-
 COMMENT=		modern desktop flat theme suite
 
 GH_ACCOUNT=		snwh

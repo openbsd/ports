@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/05/25 23:02:03 abieber Exp $
 @conflict kdebase-<4
 include/Quotient/
 include/Quotient/application-service/

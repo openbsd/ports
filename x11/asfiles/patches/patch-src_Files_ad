@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Files_ad,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
 --- src/Files.ad.orig	Mon Apr 21 05:55:17 1997
 +++ src/Files.ad	Mon Feb 12 21:12:48 2001
 @@ -110,8 +110,8 @@ Files*defaultDisplayType: 		Icons

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:20 sthen Exp $
-
 DISTNAME=	ratmen-2.2.3
 CATEGORIES=	x11
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=	display files containing g3 and/or g4 coded fax pages
 
 DISTNAME=	viewfax-2.6

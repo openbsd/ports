@@ -1,4 +1,3 @@
-$OpenBSD: patch-parser_gapi-2_0_pc_in,v 1.1.1.1 2008/10/16 16:02:07 robert Exp $
 --- parser/gapi-2.0.pc.in.orig	Mon Apr  7 10:34:15 2008
 +++ parser/gapi-2.0.pc.in	Mon Apr  7 10:34:31 2008
 @@ -1,4 +1,4 @@

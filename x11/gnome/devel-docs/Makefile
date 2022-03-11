@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.70 2021/07/09 15:49:05 ajacoutot Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		developer documentation for GNOME

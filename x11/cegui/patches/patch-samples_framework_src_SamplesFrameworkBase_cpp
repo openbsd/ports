@@ -1,4 +1,3 @@
-$OpenBSD: patch-samples_framework_src_SamplesFrameworkBase_cpp,v 1.2 2016/08/31 16:18:58 pascal Exp $
 --- samples_framework/src/SamplesFrameworkBase.cpp.orig.port	Sun Feb 28 00:48:50 2016
 +++ samples_framework/src/SamplesFrameworkBase.cpp	Fri Apr  1 11:39:44 2016
 @@ -34,7 +34,7 @@

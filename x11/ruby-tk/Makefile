@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/05/26 20:35:49 jeremy Exp $
-
 COMMENT=		ruby graphical tooklit using Tk
 
 DISTNAME=		tk-0.4.0

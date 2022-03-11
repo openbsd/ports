@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.192 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop

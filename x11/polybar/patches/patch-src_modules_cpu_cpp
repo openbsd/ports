@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_cpu_cpp,v 1.2 2021/02/27 12:03:43 jasper Exp $
-
 Index: src/modules/cpu.cpp
 --- src/modules/cpu.cpp.orig
 +++ src/modules/cpu.cpp

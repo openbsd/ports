@@ -1,5 +1,3 @@
-$OpenBSD: patch-xarchive_desktop_src,v 1.1 2018/04/25 10:16:44 landry Exp $
-
 Index: xarchive.desktop.src
 --- xarchive.desktop.src.orig
 +++ xarchive.desktop.src

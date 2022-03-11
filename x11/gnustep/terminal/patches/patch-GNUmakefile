@@ -1,5 +1,3 @@
-$OpenBSD: patch-GNUmakefile,v 1.1 2018/10/22 20:16:22 naddy Exp $
-
 Index: GNUmakefile
 --- GNUmakefile.orig
 +++ GNUmakefile

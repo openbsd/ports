@@ -1,5 +1,3 @@
-$OpenBSD: patch-icons_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
-
 Index: icons.c
 --- icons.c.orig
 +++ icons.c

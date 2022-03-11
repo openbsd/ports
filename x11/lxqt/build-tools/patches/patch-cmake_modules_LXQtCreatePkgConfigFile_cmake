@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_modules_LXQtCreatePkgConfigFile_cmake,v 1.1.1.1 2018/09/14 15:17:26 rsadowski Exp $
-
 Index: cmake/modules/LXQtCreatePkgConfigFile.cmake
 --- cmake/modules/LXQtCreatePkgConfigFile.cmake.orig
 +++ cmake/modules/LXQtCreatePkgConfigFile.cmake

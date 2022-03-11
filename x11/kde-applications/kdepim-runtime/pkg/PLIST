@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2022/01/05 08:02:55 rsadowski Exp $
 @bin bin/akonadi_akonotes_resource
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_contacts_resource

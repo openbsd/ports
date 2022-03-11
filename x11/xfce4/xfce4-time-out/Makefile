@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/01 07:38:37 landry Exp $
-
 COMMENT=	Xfce4 periodical screen locker panel plugin
 
 XFCE_VERSION=	1.1.2

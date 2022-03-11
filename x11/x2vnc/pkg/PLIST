@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:39:57 naddy Exp $
 @bin bin/x2vnc
 @man man/man1/x2vnc.1

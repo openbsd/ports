@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:02:59 sthen Exp $
-
 COMMENT =	fast and easy-to-use status bar
 V =		3.5.7
 DISTNAME =	polybar-$V

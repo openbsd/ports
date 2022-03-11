@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4

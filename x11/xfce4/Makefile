@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2020/12/29 14:29:41 landry Exp $
-
      SUBDIR =
      SUBDIR += exo
      SUBDIR += garcon

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:22 rsadowski Exp $
-
 COMMENT =	KDE version of Color Lines game
 DISTNAME =	klines-${VERSION}
 CATEGORIES =	games

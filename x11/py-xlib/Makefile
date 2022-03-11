@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:59 sthen Exp $
-
 COMMENT =	 	X11 library for Python
 
 GH_ACCOUNT =		python-xlib

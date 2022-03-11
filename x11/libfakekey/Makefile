@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/20 08:34:08 feinerer Exp $
-
 COMMENT =	library for converting characters to X key-presses
 
 V =		0.1

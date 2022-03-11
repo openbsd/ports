@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/01/11 07:10:59 landry Exp $
-
 COMMENT =	Xfce4 media player
 
 XFCE_GOODIE =	parole

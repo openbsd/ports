@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/12/05 07:12:22 rsadowski Exp $
-
 COMMENT =		style for Qt/KDE Applications
 DISTNAME =		oxygen-${VERSION}
 

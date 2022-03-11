@@ -1,5 +1,3 @@
-$OpenBSD: patch-helpers_xfce-get-translations,v 1.2 2021/05/31 05:19:04 landry Exp $
-
 Index: helpers/xfce-get-translations
 --- helpers/xfce-get-translations.orig
 +++ helpers/xfce-get-translations

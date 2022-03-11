@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
-
 COMMENT =	configuration tool for compton X composite manager
 
 VERSION =	0.15.0

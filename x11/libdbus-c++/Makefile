@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/09 13:26:13 jca Exp $
-
 COMMENT =	C++ API for dbus
 DISTNAME =	libdbus-c++-0.9.0
 REVISION =	0

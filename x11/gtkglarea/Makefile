@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2019/07/12 20:51:13 sthen Exp $
-
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
 GNOME_PROJECT=		gtkglarea

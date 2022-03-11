@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/10 14:27:47 stu Exp $
 lib/tcl/tkhtml/
 lib/tcl/tkhtml/libTkhtml${VER}.so
 lib/tcl/tkhtml/pkgIndex.tcl

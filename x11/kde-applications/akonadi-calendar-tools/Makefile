@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/16 17:55:09 rsadowski Exp $
-
 COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
 CATEGORIES =	devel

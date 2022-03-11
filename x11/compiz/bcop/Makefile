@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/09 07:14:46 jasper Exp $
-
 COMMENT =	compiz option code generator
 
 V =		0.8.8

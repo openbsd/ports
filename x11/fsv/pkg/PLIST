@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:04:07 espie Exp $
 @bin bin/fsv2
 include/fsv2/
 include/fsv2/ColorCellEditable.h

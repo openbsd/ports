@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/27 13:37:24 sthen Exp $
-
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.8.4
 REVISION =		3

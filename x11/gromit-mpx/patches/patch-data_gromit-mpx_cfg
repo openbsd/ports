@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_gromit-mpx_cfg,v 1.1.1.1 2020/09/25 20:32:29 edd Exp $
-
 Kill trailing whitespace.
 
 Index: data/gromit-mpx.cfg

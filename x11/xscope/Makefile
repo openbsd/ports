@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:30 sthen Exp $
-
 COMMENT =	X Window Protocol Viewer
 DISTNAME =	xscope-1.4.1
 CATEGORIES =	x11

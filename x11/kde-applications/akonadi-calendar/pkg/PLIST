@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/06/19 18:34:30 rsadowski Exp $
 include/KF5/Akonadi/Calendar/
 include/KF5/Akonadi/Calendar/BlockAlarmsAttribute
 include/KF5/Akonadi/Calendar/CalendarBase

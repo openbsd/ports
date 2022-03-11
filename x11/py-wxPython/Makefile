@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/18 16:22:36 op Exp $
-
 COMMENT=	Python bindings for wxWidgets C++ class library
 
 V=		3.0.2.0

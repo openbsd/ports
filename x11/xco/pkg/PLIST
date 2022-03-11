@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:40:02 naddy Exp $
 @bin bin/xco
 @man man/man1/xco.1
 share/doc/xco/

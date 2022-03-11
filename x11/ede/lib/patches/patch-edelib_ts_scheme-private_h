@@ -1,5 +1,3 @@
-$OpenBSD: patch-edelib_ts_scheme-private_h,v 1.1 2017/05/08 15:40:05 naddy Exp $
-
 Index: edelib/ts/scheme-private.h
 --- edelib/ts/scheme-private.h.orig
 +++ edelib/ts/scheme-private.h

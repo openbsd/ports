@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_hardwareintegration_compositor_linux-dmabuf-unstable-v1_linuxdmabuf_h,v 1.1 2021/12/06 06:17:41 rsadowski Exp $
-
 fix build with clang 13 by adding <array>
 
 Index: src/hardwareintegration/compositor/linux-dmabuf-unstable-v1/linuxdmabuf.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/09 19:50:10 sthen Exp $
-
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4

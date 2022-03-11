@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_inline_byteswap_h,v 1.1 2021/03/01 07:01:02 bentley Exp $
-
 error: unsupported inline asm: input with type 'int' matching output with type
 'u_int16_t' (aka 'unsigned short')
 

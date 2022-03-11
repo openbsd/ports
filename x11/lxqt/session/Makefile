@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/12/01 08:28:10 landry Exp $
-
 COMMENT =	session manager for LXQt
 
 NAME =		lxqt-session

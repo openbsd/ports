@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:59 sthen Exp $
-
 COMMENT =		windowing and multimedia library for Python
 
 MODPY_EGG_VERSION =	1.4.11

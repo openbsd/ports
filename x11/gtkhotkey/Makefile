@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:13 sthen Exp $
-
 COMMENT =	platform independent hotkey handling for Gtk+ applications
 
 DISTNAME =	gtkhotkey-0.2.1

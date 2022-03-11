@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/22 21:01:58 bcallah Exp $
-
 COMMENT =	desktop-independent Unix file manager
 CATEGORIES =	x11
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:42 rsadowski Exp $
-
 COMMENT =	KDE tool for sweeping unwanted traces from system
 DISTNAME =	sweeper-${VERSION}
 CATEGORIES =	devel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/05/24 16:00:44 cwen Exp $
-
 V =		3.7.1
 COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}

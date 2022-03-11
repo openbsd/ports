@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_outline_Vala_ValaSymbolOutline_vala,v 1.2 2020/11/02 16:03:41 jasper Exp $
-
 https://github.com/elementary/code/pull/901
 
 Index: plugins/outline/Vala/ValaSymbolOutline.vala

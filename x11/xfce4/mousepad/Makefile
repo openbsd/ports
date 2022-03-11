@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/11/26 13:27:43 landry Exp $
-
 COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.5.8

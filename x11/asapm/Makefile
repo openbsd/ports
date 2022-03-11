@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:51:08 sthen Exp $
-
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	Advanced Power Management monitor utility for X

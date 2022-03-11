@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_awful_completion_lua,v 1.3 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: lib/awful/completion.lua
 --- lib/awful/completion.lua.orig
 +++ lib/awful/completion.lua

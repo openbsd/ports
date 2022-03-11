@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/10 08:43:48 rsadowski Exp $
-
 COMMENT =	pronunciation trainer
 DISTNAME =	artikulate-${VERSION}
 CATEGORIES =	education

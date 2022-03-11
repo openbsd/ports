@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/10 06:37:46 rsadowski Exp $
-
 COMMENT =	thumbnailers for various graphics file formats
 DISTNAME =	kdegraphics-thumbnailers-${VERSION}
 PKGNAME =	kdegraphics-thumbnailers-kf5-${VERSION}

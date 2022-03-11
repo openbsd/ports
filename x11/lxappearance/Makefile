@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:51:15 sthen Exp $
-
 COMMENT =	GTK 2 and 3 Theme Switcher from LXDE
 DISTNAME =	lxappearance-0.6.3
 CATEGORIES =	x11

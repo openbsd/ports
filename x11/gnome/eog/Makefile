@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.169 2022/01/13 08:07:52 ajacoutot Exp $
-
 # Need librsvg>=2.44.0 that is rust only
 ONLY_FOR_ARCHS=		${RUST_ARCHS}
 

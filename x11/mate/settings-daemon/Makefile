@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2022/01/17 15:21:03 kmos Exp $
-
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon

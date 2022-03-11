@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/22 22:07:54 naddy Exp $
-
 COMMENT =	lightweight WM with an original look and feel
 DISTNAME =	uwm-0.2.11a
 CATEGORIES =	x11

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:20 sthen Exp $
-
 COMMENT=	X Render extension test suite
 
 DISTNAME=	rendercheck-1.5

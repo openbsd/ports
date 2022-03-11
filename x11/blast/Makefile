@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=	blow holes through windows
 
 DISTNAME=	blast-1.0

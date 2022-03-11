@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/05/14 15:12:51 ajacoutot Exp $
 bin/accerciser
 lib/python${MODPY_VERSION}/site-packages/accerciser/
 lib/python${MODPY_VERSION}/site-packages/accerciser/__init__.py

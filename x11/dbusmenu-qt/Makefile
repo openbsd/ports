@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/08/20 16:40:47 rsadowski Exp $
-
 COMMENT =	D-Bus menu implementation for Qt
 V =		0.9.3
 DISTNAME =	libdbusmenu-qt_${V}+16.04.20160218

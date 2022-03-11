@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Timer_hh,v 1.2 2017/04/25 15:00:55 espie Exp $
-
 64bit time_t fix.
 
 --- lib/Timer.hh.orig	Fri Mar 18 10:07:09 2005

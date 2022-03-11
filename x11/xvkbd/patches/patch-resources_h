@@ -1,5 +1,3 @@
-$OpenBSD: patch-resources_h,v 1.1 2021/01/31 15:16:54 naddy Exp $
-
 the variables should be long enabling conversion to pointers.
 
 Index: resources.h

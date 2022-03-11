@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/18 12:03:00 ajacoutot Exp $
 @bin bin/gtk-theme-switch2
 @man man/man1/gtk-theme-switch2.1

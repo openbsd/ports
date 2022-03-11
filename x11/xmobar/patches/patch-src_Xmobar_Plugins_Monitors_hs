@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Xmobar_Plugins_Monitors_hs,v 1.3 2022/01/13 04:09:52 gnezdo Exp $
-
 Index: src/Xmobar/Plugins/Monitors.hs
 --- src/Xmobar/Plugins/Monitors.hs.orig
 +++ src/Xmobar/Plugins/Monitors.hs

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:32 rsadowski Exp $
-
 COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11

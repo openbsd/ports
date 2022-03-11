@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:42 rsadowski Exp $
 @pkgpath x11/kde4/kruler
 @bin bin/kruler
 share/applications/org.kde.kruler.desktop

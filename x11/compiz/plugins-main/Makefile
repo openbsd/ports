@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/13 22:16:12 bket Exp $
-
 COMMENT =	main plugins for compiz
 
 V =		0.8.8

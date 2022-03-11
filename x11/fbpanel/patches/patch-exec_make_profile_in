@@ -1,5 +1,3 @@
-$OpenBSD: patch-exec_make_profile_in,v 1.6 2021/02/20 18:23:13 landry Exp $
-
 remove bashism
 fix default config file path
 use some sane defaults for menu/launchbar apps: that's a best effort 

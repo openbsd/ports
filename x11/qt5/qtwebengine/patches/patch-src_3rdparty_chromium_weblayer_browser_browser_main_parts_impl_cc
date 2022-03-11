@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_weblayer_browser_browser_main_parts_impl_cc,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc
 --- src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc.orig
 +++ src/3rdparty/chromium/weblayer/browser/browser_main_parts_impl.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_dunst_5_pod,v 1.1 2021/12/12 20:32:28 op Exp $
-
 Index: docs/dunst.5.pod
 --- docs/dunst.5.pod.orig
 +++ docs/dunst.5.pod

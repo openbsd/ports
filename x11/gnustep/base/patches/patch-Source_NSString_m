@@ -1,6 +1,3 @@
-$OpenBSD: patch-Source_NSString_m,v 1.1 2022/01/21 11:27:38 sebastia Exp $
-
-
 revert https://github.com/gnustep/libs-base/commit/bd5f2909e6edc8012a0a6e44ea1402dfbe1353a4
 see: https://github.com/gnustep/libs-base/issues/212
 and: https://www.sogo.nu/bugs/view.php?id=5416

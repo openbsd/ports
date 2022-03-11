@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/01/05 08:02:53 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	scientific calculator for KDE

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:17 sthen Exp $
-
 COMMENT=	Motif toolkit
 
 DISTNAME=	motif-2.3.8

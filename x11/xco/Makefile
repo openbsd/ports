@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT=	display X11 color names and colors
 
 DISTNAME=	xco

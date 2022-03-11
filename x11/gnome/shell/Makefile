@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.220 2022/02/19 07:54:03 ajacoutot Exp $
-
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell

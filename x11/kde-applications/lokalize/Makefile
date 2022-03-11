@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:56 rsadowski Exp $
-
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel

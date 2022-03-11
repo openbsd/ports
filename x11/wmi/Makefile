@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:24 sthen Exp $
-
 COMMENT=	window manager improved - key driven window manager
 
 DISTNAME=	wmi-10

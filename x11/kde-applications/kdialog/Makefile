@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/19 18:34:36 rsadowski Exp $
-
 COMMENT =	KDE dialog boxes from shell scripts
 DISTNAME =	kdialog-${VERSION}
 CATEGORIES =	x11

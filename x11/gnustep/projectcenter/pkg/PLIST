@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/11/02 18:43:23 sebastia Exp $
 bin/ProjectCenter
 include/ProjectCenter
 lib/GNUstep/Frameworks/

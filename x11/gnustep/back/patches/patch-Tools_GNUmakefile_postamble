@@ -1,4 +1,3 @@
-$OpenBSD: patch-Tools_GNUmakefile_postamble,v 1.2 2008/06/23 11:00:18 ajacoutot Exp $
 --- Tools/GNUmakefile.postamble.orig	Mon Jun 23 12:30:09 2008
 +++ Tools/GNUmakefile.postamble	Mon Jun 23 12:30:18 2008
 @@ -50,8 +50,6 @@ after-install::

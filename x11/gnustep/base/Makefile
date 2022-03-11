@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.83 2022/01/21 11:27:38 sebastia Exp $
-
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.28.0

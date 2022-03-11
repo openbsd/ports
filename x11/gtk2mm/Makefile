@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2019/07/12 20:51:12 sthen Exp $
-
 PORTROACH=		limit:^2
 
 COMMENT=		C++ interface for gtk2+

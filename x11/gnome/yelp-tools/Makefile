@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:02:58 sthen Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		utilities to manage documentation for Yelp and the web

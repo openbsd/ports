@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/12/09 09:13:21 ajacoutot Exp $
-
 COMMENT=		python bindings for at-spi2
 
 GNOME_PROJECT=		pyatspi

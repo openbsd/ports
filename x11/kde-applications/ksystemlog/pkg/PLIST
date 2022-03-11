@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2022/01/05 08:03:00 rsadowski Exp $
 @pkgpath x11/kde4/ksystemlog
 @bin bin/ksystemlog
 share/applications/org.kde.ksystemlog.desktop

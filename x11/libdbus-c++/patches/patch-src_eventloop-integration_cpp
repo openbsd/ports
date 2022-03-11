@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_eventloop-integration_cpp,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
 Fix build failure due to missing header inclusion.
 Index: src/eventloop-integration.cpp
 --- src/eventloop-integration.cpp.orig

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/21 12:32:55 sthen Exp $
-
 COMMENT =	bind keys or mouse buttons to shell commands under X11
 DISTNAME =	xbindkeys-1.8.7
 CATEGORIES =	x11

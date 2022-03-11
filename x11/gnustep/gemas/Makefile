@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	simple code editor for GNUstep
 
 REVISION =	9

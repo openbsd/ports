@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: gdm.rc,v 1.48 2021/11/14 10:12:37 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 

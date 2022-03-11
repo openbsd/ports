@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.115 2021/09/06 21:32:19 tb Exp $
-
 COMMENT=		highly configurable framework window manager
 
 V=			4.3

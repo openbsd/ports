@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT=	GTK-based BDF font editor
 
 DISTNAME=	gbdfed-1.6

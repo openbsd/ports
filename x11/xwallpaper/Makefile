@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/08/08 18:26:03 rsadowski Exp $
-
 COMMENT =	wallpaper setting utility for X
 
 V =		0.7.3

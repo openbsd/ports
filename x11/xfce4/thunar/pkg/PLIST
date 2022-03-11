@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/03/21 16:43:02 landry Exp $
 @conflict xffm-*
 bin/Thunar
 @bin bin/thunar

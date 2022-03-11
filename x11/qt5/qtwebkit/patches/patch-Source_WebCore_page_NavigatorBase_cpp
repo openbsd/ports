@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WebCore_page_NavigatorBase_cpp,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
-
 Index: Source/WebCore/page/NavigatorBase.cpp
 --- Source/WebCore/page/NavigatorBase.cpp.orig
 +++ Source/WebCore/page/NavigatorBase.cpp

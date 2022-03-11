@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/06/19 18:34:44 rsadowski Exp $
 include/libkomparediff2/
 include/libkomparediff2/diff2_export.h
 include/libkomparediff2/difference.h

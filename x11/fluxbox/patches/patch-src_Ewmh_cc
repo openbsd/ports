@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Ewmh_cc,v 1.7 2018/04/19 22:50:55 naddy Exp $
-
 Index: src/Ewmh.cc
 --- src/Ewmh.cc.orig
 +++ src/Ewmh.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_i3status_h,v 1.12 2021/12/06 09:51:28 robert Exp $
-
 Index: include/i3status.h
 --- include/i3status.h.orig
 +++ include/i3status.h

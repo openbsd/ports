@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/03/13 16:53:51 rsadowski Exp $
-
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
 

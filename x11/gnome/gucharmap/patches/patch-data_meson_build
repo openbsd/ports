@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_meson_build,v 1.2 2022/02/20 09:29:34 ajacoutot Exp $
-
 From a8ee037f8cf151b8b65354bc93c56953e41f5a22 Mon Sep 17 00:00:00 2001
 From: Christian Persch <chpe@src.gnome.org>
 Date: Wed, 15 Dec 2021 00:03:33 +0100

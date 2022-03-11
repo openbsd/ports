@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/21 16:14:56 robert Exp $
 @bin libexec/polkit-mate-authentication-agent-1
 share/examples/mate-polkit/
 share/examples/mate-polkit/xdg/

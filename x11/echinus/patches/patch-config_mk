@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2011/03/22 08:11:05 jasper Exp $
 --- config.mk.orig	Thu Mar 17 17:05:23 2011
 +++ config.mk	Thu Mar 17 17:05:33 2011
 @@ -21,7 +21,7 @@ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 `pkg-config --

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2020/10/15 06:44:22 landry Exp $
 @bin bin/xfce4-dict
 @so lib/xfce4/panel/plugins/libxfce4dict.so
 @man man/man1/xfce4-dict.1

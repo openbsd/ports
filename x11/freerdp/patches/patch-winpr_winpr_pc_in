@@ -1,5 +1,3 @@
-$OpenBSD: patch-winpr_winpr_pc_in,v 1.1 2018/04/28 19:20:17 landry Exp $
-
 Index: winpr/winpr.pc.in
 --- winpr/winpr.pc.in.orig
 +++ winpr/winpr.pc.in

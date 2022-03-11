@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/10/27 20:47:43 jasper Exp $
-
 COMMENT =		improved screen locker
 
 GH_ACCOUNT =		i3

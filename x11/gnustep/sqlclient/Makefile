@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep database abstraction layer
 
 VERSION =	1.8.1

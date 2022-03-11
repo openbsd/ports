@@ -1,5 +1,3 @@
-$OpenBSD: patch-js_misc_loginManager_js,v 1.14 2021/10/31 13:20:53 jasper Exp $
-
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
 +++ js/misc/loginManager.js

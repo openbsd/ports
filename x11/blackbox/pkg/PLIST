@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.21 2014/11/11 09:28:29 dcoppa Exp $
 @conflict libbt-*
 @bin bin/blackbox
 bin/bsetbg

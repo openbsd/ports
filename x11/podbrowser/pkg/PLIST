@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:34 espie Exp $
 bin/html2ps-podbrowser
 bin/podbrowser
 @man man/man1/podbrowser.1

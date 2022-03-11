@@ -1,4 +1,3 @@
-$OpenBSD: patch-WindowMaker_Makefile_in,v 1.9 2020/05/27 09:07:55 solene Exp $
 Index: WindowMaker/Makefile.in
 --- WindowMaker/Makefile.in.orig
 +++ WindowMaker/Makefile.in

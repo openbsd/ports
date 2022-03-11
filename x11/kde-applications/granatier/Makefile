@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/05 08:02:52 rsadowski Exp $
-
 COMMENT =	clone of the classic bomberman game
 DISTNAME =	granatier-${VERSION}
 CATEGORIES =	games

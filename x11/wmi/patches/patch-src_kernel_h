@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_kernel_h,v 1.1 2010/05/24 22:31:25 espie Exp $
 --- src/kernel.h.orig	Tue May 25 00:21:21 2010
 +++ src/kernel.h	Tue May 25 00:21:31 2010
 @@ -167,7 +167,7 @@ class Kernel : public Singleton<Kernel> (public)

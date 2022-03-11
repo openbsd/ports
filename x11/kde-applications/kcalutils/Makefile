@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:54 rsadowski Exp $
-
 COMMENT =	library for the handling of calendar data.
 DISTNAME =	kcalutils-${VERSION}
 CATEGORIES =	productivity

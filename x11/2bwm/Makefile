@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 21:02:29 sthen Exp $
-
 COMMENT =	fast floating window manager
 DISTNAME = 	2bwm-0.3
 CATEGORIES =	x11

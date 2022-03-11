@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:30 sthen Exp $
-
 COMMENT=	stylus character recognition tool for X11
 
 DISTNAME=	xscribble

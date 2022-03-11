@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2019/07/07 11:20:53 ajacoutot Exp $
-
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas

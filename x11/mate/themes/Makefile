@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/08/25 12:03:36 robert Exp $
-
 COMMENT=		standard MATE themes
 
 MATE_PROJECT=		mate-themes

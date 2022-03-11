@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/01/26 11:14:34 jasper Exp $
-
 COMMENT=		Clearlooks based GTK+ 2.x engine
 
 V=			0.6

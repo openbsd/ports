@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/09/25 20:32:29 edd Exp $
-
 COMMENT =	draw annotations on X11
 
 GH_ACCOUNT =	bk138

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2022/02/24 12:48:54 sthen Exp $
-
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 

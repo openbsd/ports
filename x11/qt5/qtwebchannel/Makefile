@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/19 06:16:32 rsadowski Exp $
-
 QT5NAME =		QtWebChannel
 COMMENT-main =		Qt5 seamless HTML/JavaScript integration
 

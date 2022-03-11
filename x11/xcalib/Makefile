@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT =		tiny monitor calibration loader for XFree86 or X.org
 
 V =			0.8

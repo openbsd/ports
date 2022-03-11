@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/11/21 08:38:38 landry Exp $
 bin/xfce4-popup-whiskermenu
 @so lib/xfce4/panel/plugins/libwhiskermenu.so
 @man man/man1/xfce4-popup-whiskermenu.1

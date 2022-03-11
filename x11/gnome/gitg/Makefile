@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2022/01/13 08:06:39 ajacoutot Exp $
-
 COMMENT=		graphical user interface for git
 
 GNOME_PROJECT=		gitg

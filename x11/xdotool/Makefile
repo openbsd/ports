@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/12/29 21:54:18 ajacoutot Exp $
-
 COMMENT=	fake keyboard and mouse input
 
 V =		3.20211022.1

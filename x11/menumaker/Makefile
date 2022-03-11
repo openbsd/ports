@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/08 16:40:15 sthen Exp $
-
 COMMENT =	menu generation utility for X window managers
 DISTNAME =	menumaker-0.99.14
 CATEGORIES =	x11

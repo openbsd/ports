@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-
      SUBDIR =
      SUBDIR += qttranslations
      SUBDIR += qttools

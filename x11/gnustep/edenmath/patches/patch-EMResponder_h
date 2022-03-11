@@ -1,5 +1,3 @@
-$OpenBSD: patch-EMResponder_h,v 1.1.1.1 2011/05/24 14:01:48 sebastia Exp $
-
 true may alredy be defined (warning seen on sparc)
 
 --- EMResponder.h.orig	Tue May 24 11:14:30 2011

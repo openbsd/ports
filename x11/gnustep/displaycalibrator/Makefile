@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	GNUstep frontend for xgamma
 
 V =		0.7

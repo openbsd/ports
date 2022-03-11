@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/12/10 16:19:38 sebastia Exp $
 bin/MPDCon
 libexec/GNUstep/MPDCon.app/
 @bin libexec/GNUstep/MPDCon.app/MPDCon

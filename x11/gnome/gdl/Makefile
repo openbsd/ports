@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2021/08/27 08:38:47 ajacoutot Exp $
-
 COMMENT=		GNOME Docking Library
 
 GNOME_PROJECT=		gdl

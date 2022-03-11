@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/22 06:23:41 rsadowski Exp $
-
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
 CATEGORIES =	x11 graphics

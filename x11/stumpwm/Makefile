@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/05 13:49:20 solene Exp $
-
 COMMENT=		easily hackable Common LISP window manager
 
 VERSION=		20.11

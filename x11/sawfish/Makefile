@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.85 2021/02/04 16:00:48 naddy Exp $
-
 COMMENT=		extensible window manager
 
 VERSION=		1.12.90

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/10 06:37:59 rsadowski Exp $
-
 COMMENT =	KPart for viewing SVGs
 DISTNAME =	svgpart-${VERSION}
 PKGNAME =	svgpart-kf5-${VERSION}

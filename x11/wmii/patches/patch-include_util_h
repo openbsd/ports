@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_util_h,v 1.1 2021/02/21 20:30:26 matthieu Exp $
-
 fix for -fno-common
 
 Index: include/util.h

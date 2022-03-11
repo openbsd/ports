@@ -1,4 +1,3 @@
-$OpenBSD: patch-Xbae_tmpl,v 1.1.1.1 2007/03/31 11:49:24 martynas Exp $
 --- Xbae.tmpl.orig	Mon Mar 11 00:45:42 2002
 +++ Xbae.tmpl	Fri Mar 30 21:13:50 2007
 @@ -13,7 +13,7 @@ XCOMM yes as the demos may have trouble finding the sh

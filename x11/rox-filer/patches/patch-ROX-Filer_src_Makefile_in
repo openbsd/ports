@@ -1,5 +1,3 @@
-$OpenBSD: patch-ROX-Filer_src_Makefile_in,v 1.2 2018/05/16 09:54:33 jasper Exp $
-
 - Link with libm for floor(3)
 - Don't create a debug binary (that doesn't work anyway), this
   breaks mips64(el).

@@ -1,5 +1,3 @@
-$OpenBSD: patch-pango_defs,v 1.1 2019/12/16 15:50:42 ajacoutot Exp $
-
 From 4aaa48eb80c6802aec6d03e5695d2a0ff20e0fc2 Mon Sep 17 00:00:00 2001
 From: Jordan Petridis <jpetridis@gnome.org>
 Date: Thu, 24 Oct 2019 22:58:36 +0200

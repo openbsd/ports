@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/01/13 16:00:06 ajacoutot Exp $
-
 COMMENT=		GTK+ remote desktop client
 
 V=			1.4.23

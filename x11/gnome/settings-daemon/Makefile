@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.196 2021/11/12 15:06:08 ajacoutot Exp $
-
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 COMMENT=		GNOME settings daemon

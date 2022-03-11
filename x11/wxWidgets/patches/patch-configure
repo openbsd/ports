@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.7 2021/11/18 09:24:21 op Exp $
-
 don't add webview to STD_GUI_LIBS to avoid it being picked up by default
 by other ports.
 

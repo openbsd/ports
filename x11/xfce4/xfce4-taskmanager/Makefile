@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/09 13:55:56 landry Exp $
-
 COMMENT=	Xfce4 task manager and system monitor
 
 XFCE_VERSION=	1.4.2

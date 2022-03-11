@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT=		GTK+2 graphical filemanager
 
 DISTNAME=		gentoo-0.19.13

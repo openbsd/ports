@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/10 14:27:01 stu Exp $
 lib/tcl/tkdnd/
 lib/tcl/tkdnd/libtkdnd.so
 lib/tcl/tkdnd/pkgIndex.tcl

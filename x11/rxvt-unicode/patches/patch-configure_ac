@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.5 2021/11/29 21:56:09 sthen Exp $
-
 Don't use gcc specific flags, because it causes various undefined
 reference errors with ports-gcc>=6 when -lsupc++ is used. We could
 use libesupc++ but there is not much incentive to do so.

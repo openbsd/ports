@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:44 rsadowski Exp $
-
 COMMENT =	launch programs quickly by typing their names
 
 NAME =		lxqt-runner

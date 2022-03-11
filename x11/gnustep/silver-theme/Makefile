@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep theme with silvered controls
 
 V =		3.1

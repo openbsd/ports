@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_main_cxx,v 1.1 2019/01/13 15:19:52 cwen Exp $
 Fix missing header for ports-gcc
 Index: src/main.cxx
 --- src/main.cxx.orig

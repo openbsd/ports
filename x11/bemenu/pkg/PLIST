@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/05/22 19:13:18 cwen Exp $
 @bin bin/bemenu
 @bin bin/bemenu-run
 include/bemenu.h

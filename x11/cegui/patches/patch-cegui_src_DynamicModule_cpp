@@ -1,4 +1,3 @@
-$OpenBSD: patch-cegui_src_DynamicModule_cpp,v 1.2 2016/08/31 16:18:58 pascal Exp $
 --- cegui/src/DynamicModule.cpp.orig.port	Sun Feb 28 00:48:50 2016
 +++ cegui/src/DynamicModule.cpp	Fri Apr  1 11:39:44 2016
 @@ -42,7 +42,7 @@

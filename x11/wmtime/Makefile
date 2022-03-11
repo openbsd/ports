@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/05 15:42:21 cwen Exp $
-
 COMMENT=	time/date applet for WindowMaker
 
 DISTNAME=	wmtime-1.4

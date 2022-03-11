@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:40:13 naddy Exp $
 @bin bin/xprompt
 @man man/man1/xprompt.1

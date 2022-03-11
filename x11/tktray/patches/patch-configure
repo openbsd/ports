@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.5 2017/05/10 14:28:12 stu Exp $
-
 Do not overwrite CFLAGS_OPTIMIZE.
 
 Index: configure

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_browserwindow_cpp,v 1.4 2021/12/20 11:46:41 gonzalo Exp $
-
 Index: src/browserwindow.cpp
 --- src/browserwindow.cpp.orig
 +++ src/browserwindow.cpp

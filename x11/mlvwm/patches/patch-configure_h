@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_h,v 1.1.1.1 2021/02/06 14:49:13 tb Exp $
-
 Index: configure.h
 --- configure.h.orig
 +++ configure.h

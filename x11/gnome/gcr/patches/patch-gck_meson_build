@@ -1,5 +1,3 @@
-$OpenBSD: patch-gck_meson_build,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
-
 From b3ca1d02bb0148ca787ac4aead164d7c8ce2c4d8 Mon Sep 17 00:00:00 2001
 From: Jakub Jirutka <jakub@jirutka.cz>
 Date: Wed, 12 Jan 2022 00:24:20 +0100

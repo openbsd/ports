@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/08/31 19:06:19 rsadowski Exp $
 @conflict grantlee-*
 include/grantlee/
 include/grantlee/abstractlocalizer.h

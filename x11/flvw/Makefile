@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT=		FLTK Virtual styles, list, table, and complex table Widgets
 
 DISTNAME=		flvw-20000224

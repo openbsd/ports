@@ -1,5 +1,3 @@
-$OpenBSD: patch-StatViewer_StatViewer_m,v 1.1.1.1 2012/08/06 11:14:20 sebastia Exp $
-
 Do not deallocate already deallocated objects
 
 --- StatViewer/StatViewer.m.orig	Tue Jul 10 14:01:28 2012

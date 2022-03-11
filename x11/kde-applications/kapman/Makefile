@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:16 rsadowski Exp $
-
 COMMENT =	pac-man clone
 DISTNAME =	kapman-${VERSION}
 CATEGORIES =	games

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT=		stand-alone tray for EWMH-compliant window managers
 
 DISTNAME=		stalonetray-0.8.3

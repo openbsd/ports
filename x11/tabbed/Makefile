@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT=		simple generic tabbed frontend
 
 DISTNAME=		tabbed-0.6

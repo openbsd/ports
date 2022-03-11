@@ -1,5 +1,3 @@
-$OpenBSD: patch-stream_audio_in_h,v 1.3 2019/03/30 17:17:54 ajacoutot Exp $
-
 Index: stream/audio_in.h
 --- stream/audio_in.h.orig
 +++ stream/audio_in.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/18 09:49:54 rsadowski Exp $
-
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11

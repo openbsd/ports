@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT =	style neutral scalable cursor themes
 
 VERSION =	0.4

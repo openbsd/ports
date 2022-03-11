@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.119 2022/02/16 14:55:29 ajacoutot Exp $
-
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins

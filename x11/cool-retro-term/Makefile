@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:09 sthen Exp $
-
 COMMENT =	good looking terminal emulator which mimics old CRT displays
 
 CATEGORIES =	x11

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-nfs,v 1.1 2015/08/25 06:42:14 ajacoutot Exp $
 @bin libexec/gvfsd-nfs
 share/gvfs/mounts/nfs.mount

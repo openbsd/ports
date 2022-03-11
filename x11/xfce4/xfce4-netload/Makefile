@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2021/03/10 18:27:59 landry Exp $
-
 COMMENT=	Xfce4 network load monitor panel plugin
 
 XFCE_VERSION=	1.4.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep based trace visualization tool
 
 REVISION =	15

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/08 03:11:18 stu Exp $
 ${P5SITE}/Tkx/
 ${P5SITE}/Tkx.pm
 ${P5SITE}/Tkx/LabEntry.pm

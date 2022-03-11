@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/12/27 17:01:44 landry Exp $
-
 COMMENT =	Qt client for the X2Go system
 
 DISTNAME =	x2goclient-4.1.2.2

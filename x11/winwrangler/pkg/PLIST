@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:35 espie Exp $
 @bin bin/winwrangler
 share/icons/hicolor/16x16/apps/winwrangler.png
 share/icons/hicolor/22x22/apps/winwrangler.png

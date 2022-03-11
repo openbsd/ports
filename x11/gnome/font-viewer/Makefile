@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/10/26 10:42:46 jasper Exp $
-
 COMMENT=		font viewer for GNOME
 
 GNOME_PROJECT=		gnome-font-viewer

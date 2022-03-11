@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:03:00 sthen Exp $
-
 COMMENT =		display keypresses on screen
 
 MODPY_EGG_VERSION =	1.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT= 		fire up programs in case of user inactivity under X
 
 DISTNAME=		xautolock-2.2

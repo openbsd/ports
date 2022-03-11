@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/19 18:03:33 ajacoutot Exp $
-
 COMMENT=		gui cd image editor
 
 DISTNAME=		isomaster-1.3.16

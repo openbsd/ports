@@ -1,5 +1,3 @@
-$OpenBSD: patch-xplot_h,v 1.1 2018/03/21 15:18:31 bluhm Exp $
-
 Index: xplot.h
 --- xplot.h.orig
 +++ xplot.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/22 05:45:43 rsadowski Exp $
-
 COMMENT =	file manager and desktop icon manager
 
 NAME =		pcmanfm-qt

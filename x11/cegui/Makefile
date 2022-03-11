@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/10/29 17:23:21 pascal Exp $
-
 COMMENT =		widgets library for graphics engines
 
 V =			0.8.7

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_cmake_OptionsCommon_cmake,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
-
 Our ar(1) is too old and have not support for `T'.
 
 Undefined references to libc functions.

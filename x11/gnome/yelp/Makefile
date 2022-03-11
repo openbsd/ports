@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.148 2021/12/04 10:42:15 ajacoutot Exp $
-
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp

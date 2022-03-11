@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/01/05 08:02:52 rsadowski Exp $
 @bin bin/elisa
 lib/elisa/
 @lib lib/elisa/libelisaLib.so.${LIBelisaLib_VERSION}

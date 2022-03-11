@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/10/23 18:43:58 jasper Exp $
 bin/rox
 @man man/man1/ROX-Filer.1
 @man man/man1/rox.1

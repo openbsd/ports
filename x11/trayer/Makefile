@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=		lightweight GTK2-based systray
 
 V=			1.1.8

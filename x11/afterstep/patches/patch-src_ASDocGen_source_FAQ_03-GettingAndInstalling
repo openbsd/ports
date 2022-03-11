@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ASDocGen_source_FAQ_03-GettingAndInstalling,v 1.1 2017/06/14 15:24:50 schwarze Exp $
-
 Fix a weird encoding error
 that screwed up the content with both groff and mandoc.
 The byte 0x98 is not a tilde, neither in UTF-8 nor in LATIN-1.

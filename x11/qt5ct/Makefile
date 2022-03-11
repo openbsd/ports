@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/04 04:16:52 rsadowski Exp $
-
 COMMENT =	Qt5 configuration tool
 
 DISTNAME =	qt5ct-1.5

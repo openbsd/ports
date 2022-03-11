@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/08/15 07:08:15 landry Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	Xfce4 icon theme

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/03/25 06:44:06 landry Exp $
-
 COMMENT =	GVfs mountpoint manager
 
 XFCE_VERSION =	0.5.2

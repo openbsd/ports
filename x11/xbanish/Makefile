@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/18 15:11:38 jcs Exp $
-
 COMMENT=	utility to automatically hide X11 cursor when typing
 
 V=		1.8

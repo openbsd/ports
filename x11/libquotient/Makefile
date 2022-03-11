@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/08/08 17:19:11 abieber Exp $
-
 COMMENT =	Qt5 library for writing cross-platform Matrix clients
 
 GH_ACCOUNT =	quotient-im

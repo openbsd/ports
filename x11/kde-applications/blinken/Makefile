@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/03 16:12:31 rsadowski Exp $
-
 COMMENT =	memory enhancement game
 DISTNAME =	blinken-${VERSION}
 CATEGORIES =	games education

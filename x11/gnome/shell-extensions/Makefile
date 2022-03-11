@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2022/02/16 14:43:07 ajacoutot Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		collection of extensions for GNOME Shell

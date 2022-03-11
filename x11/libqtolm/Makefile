@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/25 22:52:43 abieber Exp $
-
 COMMENT =	qt5 bindings for olm
 
 V =		v3.0.1

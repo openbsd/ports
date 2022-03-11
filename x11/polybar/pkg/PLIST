@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/08/29 09:25:55 jasper Exp $
 @bin bin/polybar
 @bin bin/polybar-msg
 @man man/man1/polybar.1

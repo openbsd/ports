@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2022/02/13 16:38:31 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections

@@ -1,5 +1,3 @@
-$OpenBSD: patch-themes_gtk_theme_lua,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: themes/gtk/theme.lua
 --- themes/gtk/theme.lua.orig
 +++ themes/gtk/theme.lua

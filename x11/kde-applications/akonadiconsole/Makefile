@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/05 08:02:51 rsadowski Exp $
-
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel

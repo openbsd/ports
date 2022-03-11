@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_07-my-first-awesome_md,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: docs/07-my-first-awesome.md
 --- docs/07-my-first-awesome.md.orig
 +++ docs/07-my-first-awesome.md

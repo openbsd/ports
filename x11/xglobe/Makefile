@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2020/12/06 08:32:12 rsadowski Exp $
-
 COMMENT=	display the Earth on X11
 
 V=		0.6.3

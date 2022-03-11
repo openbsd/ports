@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2022/01/21 08:51:07 ajacoutot Exp $
-
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot

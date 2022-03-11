@@ -1,5 +1,3 @@
-$OpenBSD: patch-libgraphtheory_CMakeLists_txt,v 1.6 2022/01/05 08:03:04 rsadowski Exp $
-
 Index: libgraphtheory/CMakeLists.txt
 --- libgraphtheory/CMakeLists.txt.orig
 +++ libgraphtheory/CMakeLists.txt

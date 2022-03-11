@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/08/25 12:05:53 robert Exp $
-
 COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:59 naddy Exp $
 include/gtkhotkey-1.0/
 include/gtkhotkey-1.0/gtk-hotkey-error.h
 include/gtkhotkey-1.0/gtk-hotkey-info.h

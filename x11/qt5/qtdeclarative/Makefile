@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/01 14:25:15 kn Exp $
-
 # qmlplugindump
 USE_WXNEEDED =		Yes
 

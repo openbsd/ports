@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT =	gnome-mplayer toolkit
 DISTNAME =	gmtk-1.0.9
 EPOCH =		0

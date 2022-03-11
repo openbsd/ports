@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2015/06/25 13:00:58 ajacoutot Exp $
 --- src/Makefile.in.orig	Wed Mar 16 07:10:30 2011
 +++ src/Makefile.in	Thu Jun 25 14:40:32 2015
 @@ -250,7 +250,7 @@ libEterm_la_SOURCES = actions.c actions.h buttons.c bu

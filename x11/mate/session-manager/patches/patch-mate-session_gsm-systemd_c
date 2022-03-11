@@ -1,5 +1,3 @@
-$OpenBSD: patch-mate-session_gsm-systemd_c,v 1.1 2019/03/27 18:13:39 robert Exp $
-
 Index: mate-session/gsm-systemd.c
 --- mate-session/gsm-systemd.c.orig
 +++ mate-session/gsm-systemd.c

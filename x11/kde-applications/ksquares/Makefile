@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:25 rsadowski Exp $
-
 COMMENT =	connect the dots to create squares game
 DISTNAME =	ksquares-${VERSION}
 CATEGORIES =	games

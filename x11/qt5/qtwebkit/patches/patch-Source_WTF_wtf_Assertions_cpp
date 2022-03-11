@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WTF_wtf_Assertions_cpp,v 1.1 2020/02/19 16:08:53 rsadowski Exp $
-
 Index: Source/WTF/wtf/Assertions.cpp
 --- Source/WTF/wtf/Assertions.cpp.orig
 +++ Source/WTF/wtf/Assertions.cpp

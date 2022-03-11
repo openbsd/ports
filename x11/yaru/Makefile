@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/25 14:07:42 ajacoutot Exp $
-
 COMMENT=		Ubuntu GNOME theme
 
 GH_TAGNAME=		22.04.1

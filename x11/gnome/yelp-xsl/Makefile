@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/12/04 08:52:01 ajacoutot Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		XSLT stylesheets for yelp

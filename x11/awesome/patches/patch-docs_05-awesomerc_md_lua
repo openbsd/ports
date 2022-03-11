@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_05-awesomerc_md_lua,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: docs/05-awesomerc.md.lua
 --- docs/05-awesomerc.md.lua.orig
 +++ docs/05-awesomerc.md.lua

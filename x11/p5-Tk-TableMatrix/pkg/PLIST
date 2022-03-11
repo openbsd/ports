@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/20 22:47:42 naddy Exp $
 ${P5ARCH}/Tk/TableMatrix/
 ${P5ARCH}/Tk/TableMatrix.pm
 ${P5ARCH}/Tk/TableMatrix.pod

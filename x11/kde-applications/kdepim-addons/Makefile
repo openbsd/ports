@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/18 09:49:50 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE PIM mail related libraries

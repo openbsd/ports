@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.142 2022/02/12 11:29:31 ajacoutot Exp $
-
 # XXX GNOME keyring ssh-agent segfaults with llvm >=13.0.0
 CFLAGS +=		-O0
 

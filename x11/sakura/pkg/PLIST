@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/06/27 21:04:22 espie Exp $
 @bin bin/sakura
 @man man/man1/sakura.1
 share/applications/sakura.desktop

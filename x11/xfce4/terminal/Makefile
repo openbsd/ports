@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2022/03/07 08:55:27 landry Exp $
-
 COMMENT=	Xfce4 vte-based terminal
 
 XFCE_VERSION=	0.9.2

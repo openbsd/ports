@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/09/10 08:43:52 rsadowski Exp $
 @so lib/qt5/plugins/kf5/kio/perldoc.so
 share/kio_perldoc/
 share/kio_perldoc/pod2html.pl

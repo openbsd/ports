@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_quadrapassel_vala,v 1.2 2020/05/14 15:29:34 jasper Exp $
-
 Drop libmanette dependency which requires libevdev/libinput
 
 Index: src/quadrapassel.vala

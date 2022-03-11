@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/02/23 19:39:49 sthen Exp $
-
 COMMENT=	gamma-adjusting utility
 
 DISTNAME=	GAMMApage-0.5

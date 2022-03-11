@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_dbus-c++_dispatcher_h,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
 Fix compilation failure due to mismatching function signatures.
 Index: include/dbus-c++/dispatcher.h
 --- include/dbus-c++/dispatcher.h.orig

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2019/11/26 14:24:01 ajacoutot Exp $
 !%%python3%%
 @so lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.so
 @so lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.so

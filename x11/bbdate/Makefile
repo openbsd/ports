@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=	displays the date and resembles the toolbar
 
 DISTNAME=	bbdate-0.2.4

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/01/19 06:16:36 rsadowski Exp $
 lib/qt5/cmake/Qt5Gui/Qt5Gui_QWebGLIntegrationPlugin.cmake
 @so lib/qt5/plugins/platforms/libqwebgl.so

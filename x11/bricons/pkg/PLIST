@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:49 naddy Exp $
 @bin bin/bricons
 include/X11/bitmaps/
 include/X11/bitmaps/calander.xbm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/29 12:11:51 sdk Exp $
-
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	cross-platform, GPU-accelerated terminal emulator

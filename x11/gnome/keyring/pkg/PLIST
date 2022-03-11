@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.46 2022/02/12 11:29:31 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon

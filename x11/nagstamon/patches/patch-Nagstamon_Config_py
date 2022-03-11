@@ -1,5 +1,3 @@
-$OpenBSD: patch-Nagstamon_Config_py,v 1.10 2021/11/17 14:54:32 ajacoutot Exp $
-
 Index: Nagstamon/Config.py
 --- Nagstamon/Config.py.orig
 +++ Nagstamon/Config.py

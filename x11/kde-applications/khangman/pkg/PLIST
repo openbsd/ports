@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/06/19 18:34:37 rsadowski Exp $
 @pkgpath x11/kde4/khangman
 @bin bin/khangman
 @man man/man6/khangman.6

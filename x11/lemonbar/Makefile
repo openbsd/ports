@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/12/15 14:16:08 feinerer Exp $
-
 COMMENT =	featherweight lemon-scented bar
 
 VERSION =	1.4

@@ -1,5 +1,3 @@
-$OpenBSD: patch-wxPython_setup_py,v 1.6 2021/11/18 16:22:36 op Exp $
-
 Drop the building of the media and webkit extension to avoid the
 dependency on wxWidgets-{media,webkit}
 

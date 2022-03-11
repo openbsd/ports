@@ -1,5 +1,3 @@
-$OpenBSD: patch-JPEG_Makefile_PL,v 1.2 2021/02/19 18:01:20 ajacoutot Exp $
-
 Index: JPEG/Makefile.PL
 --- JPEG/Makefile.PL.orig
 +++ JPEG/Makefile.PL

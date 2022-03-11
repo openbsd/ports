@@ -1,5 +1,3 @@
-$OpenBSD: patch-mkspecs_features_create_cmake_prf,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-
 Index: mkspecs/features/create_cmake.prf
 --- mkspecs/features/create_cmake.prf.orig
 +++ mkspecs/features/create_cmake.prf

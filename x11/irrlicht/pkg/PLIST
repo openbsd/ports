@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/01/22 13:28:25 kirby Exp $
 include/irrlicht/
 include/irrlicht/CDynamicMeshBuffer.h
 include/irrlicht/CIndexBuffer.h

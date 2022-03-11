@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/13 08:34:52 rsadowski Exp $
-
 COMMENT =	plugin-based library to create KDE window decorations
 DISTNAME =	kdecoration-${VERSION}
 

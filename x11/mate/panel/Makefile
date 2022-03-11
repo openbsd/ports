@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/17 15:19:46 kmos Exp $
-
 COMMENT=		panel component for MATE
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1

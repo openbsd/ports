@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bcop_in,v 1.1 2013/12/03 00:47:07 fgsch Exp $
 --- src/bcop.in.orig	Thu Apr 21 11:03:19 2011
 +++ src/bcop.in	Wed Nov  6 14:19:12 2013
 @@ -1,4 +1,4 @@

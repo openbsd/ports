@@ -1,5 +1,3 @@
-$OpenBSD: patch-Frame_C,v 1.1 2015/06/28 13:36:09 bcallah Exp $
-
 http://sourceforge.net/p/flwm/flwm/ci/3938480dc18b56a2eaf3cb9302b6ebfe6cb3064e/tree/Frame.C?diff=11e88c7fc9d5a2817425528742a425f85e7aa0a0
 plus the removal of two pointers that don't exist in fltk-1.3.3
 

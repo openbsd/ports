@@ -1,5 +1,3 @@
-$OpenBSD: patch-GNUmakefile,v 1.5 2022/02/27 13:57:28 sthen Exp $
-
 Don't build wayland renderer.
 Correct shared library numbers.
 Don't create shared library symlinks.

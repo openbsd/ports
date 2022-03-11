@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/04/22 20:07:47 jasper Exp $
-
 COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
 
 DISTNAME=	x2vnc-1.6.1

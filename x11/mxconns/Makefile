@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=		interactive X11 proxy with selective X request replacement
 
 DISTNAME=		mxconns-3.1.10

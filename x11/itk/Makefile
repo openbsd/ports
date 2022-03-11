@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:51:14 sthen Exp $
-
 COMMENT=	build mega-widgets using the Itcl object system
 
 VERSION=	3.3

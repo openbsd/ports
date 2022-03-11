@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gtk_gnome_gvfs_cpp,v 1.1 2019/01/02 12:41:48 jca Exp $
-
 Don't hardcode shared lib versions.
 
 Index: src/gtk/gnome/gvfs.cpp

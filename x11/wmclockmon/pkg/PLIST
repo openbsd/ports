@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/03/23 22:12:39 jasper Exp $
 @bin bin/wmclockmon
 @bin bin/wmclockmon-cal
 @bin bin/wmclockmon-config

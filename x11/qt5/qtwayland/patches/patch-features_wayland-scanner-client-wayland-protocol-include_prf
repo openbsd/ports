@@ -1,5 +1,3 @@
-$OpenBSD: patch-features_wayland-scanner-client-wayland-protocol-include_prf,v 1.1.1.1 2021/11/12 13:38:30 rsadowski Exp $
-
 Index: features/wayland-scanner-client-wayland-protocol-include.prf
 --- features/wayland-scanner-client-wayland-protocol-include.prf.orig
 +++ features/wayland-scanner-client-wayland-protocol-include.prf

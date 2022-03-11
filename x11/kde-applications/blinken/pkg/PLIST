@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/08/08 12:23:48 rsadowski Exp $
 @pkgpath x11/kde4/blinken
 @bin bin/blinken
 share/applications/org.kde.blinken.desktop

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/18 09:49:53 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	KDE File Manager & Web Browser

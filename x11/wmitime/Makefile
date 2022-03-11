@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/04 13:48:53 cwen Exp $
-
 COMMENT=		wm-dockapp; shows the date, time, and Internet time
 
 DISTNAME=		wmitime-0.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.109 2020/06/27 01:13:47 kmos Exp $
-
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
 

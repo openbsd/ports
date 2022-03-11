@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_options_txt,v 1.1 2020/11/28 09:34:08 ajacoutot Exp $
-
 ERROR: Assert failed: -Wl,-Bsymbolic-functions is required but not supported
 
 Index: meson_options.txt

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_colorfilter_parser_h,v 1.1 2021/02/13 22:16:12 bket Exp $
-
 Fix -fno-common build error. Taken from
 https://github.com/compiz-reloaded/compiz-plugins-main/commit/1f39291442513c08930bef308d0ce9dccea74589
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:20 rsadowski Exp $
-
 COMMENT =	four-in-a-row board game
 DISTNAME =	kfourinline-${VERSION}
 CATEGORIES =	games

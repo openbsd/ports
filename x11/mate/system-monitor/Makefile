@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/08/25 12:05:53 robert Exp $
-
 COMMENT=		MATE system monitor
 
 MATE_PROJECT=		mate-system-monitor

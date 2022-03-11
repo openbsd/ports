@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_build_toolchain_gcc_solink_wrapper_py,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
-
 Index: src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py
 --- src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py.orig
 +++ src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py

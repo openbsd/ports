@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/02/23 08:46:58 sthen Exp $
-
 # Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 

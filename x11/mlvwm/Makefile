@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/04/02 17:38:45 sthen Exp $
-
 COMMENT =	Macintosh-like virtual window manager
 
 V =		0.9.3

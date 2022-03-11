@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_c2_h,v 1.1.1.1 2014/10/27 11:21:49 sthen Exp $
-
 anonymous unions aren't part of c99, but code is compiled with --std=c99
 (and uses other c99 features that need this).
 

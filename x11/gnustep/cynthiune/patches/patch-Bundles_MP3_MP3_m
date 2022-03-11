@@ -1,5 +1,3 @@
-$OpenBSD: patch-Bundles_MP3_MP3_m,v 1.1 2015/07/30 20:24:58 sebastia Exp $
-
 Fix from upstream, prevent crasher on playing MP3,
 svn rev 3064
 

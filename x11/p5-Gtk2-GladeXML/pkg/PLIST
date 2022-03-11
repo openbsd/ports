@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/24 17:58:55 ajacoutot Exp $
 ${P5ARCH}/Gtk2/GladeXML/
 ${P5ARCH}/Gtk2/GladeXML.pm
 ${P5ARCH}/Gtk2/GladeXML/Install/

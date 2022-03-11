@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2020/04/18 21:05:57 ratchov Exp $
-
 COMMENT=		Lumina Desktop Environment
 
 GH_ACCOUNT=		trueos

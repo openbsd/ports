@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/10 08:43:57 rsadowski Exp $
-
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
 CATEGORIES =	games

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Fonts_GNUmakefile_postamble,v 1.1.1.1 2007/05/29 03:03:08 ajacoutot Exp $
 --- Fonts/GNUmakefile.postamble.orig	Tue May 15 17:56:25 2007
 +++ Fonts/GNUmakefile.postamble	Tue May 15 17:56:39 2007
 @@ -38,6 +38,7 @@ after-install::

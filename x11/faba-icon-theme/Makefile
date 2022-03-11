@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/20 16:44:28 naddy Exp $
-
 COMMENT =		sexy and modern icon theme with Tango influences
 
 GH_ACCOUNT =		snwh

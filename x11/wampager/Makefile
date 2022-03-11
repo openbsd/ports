@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=		waimea mini pager
 
 VERSION=		0.9.1

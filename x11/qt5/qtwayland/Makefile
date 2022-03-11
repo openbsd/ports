@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/12 13:38:30 rsadowski Exp $
-
 QT5NAME =	QtWayland
 COMMENT =	Qt5 module for Wayland support
 

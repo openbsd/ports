@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_QtProcessConfigureArgs_cmake,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-
 Index: cmake/QtProcessConfigureArgs.cmake
 --- cmake/QtProcessConfigureArgs.cmake.orig
 +++ cmake/QtProcessConfigureArgs.cmake

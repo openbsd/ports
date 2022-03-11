@@ -1,4 +1,3 @@
-$OpenBSD: patch-gtk_gtk-sharp-2_0_pc_in,v 1.1.1.1 2008/10/16 16:02:07 robert Exp $
 --- gtk/gtk-sharp-2.0.pc.in.orig	Mon Apr  7 10:34:49 2008
 +++ gtk/gtk-sharp-2.0.pc.in	Mon Apr  7 10:34:59 2008
 @@ -1,4 +1,4 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tool_seahorse-widget_c,v 1.1 2021/05/16 09:38:04 ajacoutot Exp $
-
 https://gitlab.gnome.org/GNOME/seahorse-nautilus/merge_requests/1
 
 Index: tool/seahorse-widget.c

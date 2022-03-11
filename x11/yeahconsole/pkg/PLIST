@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/09 01:43:12 bcallah Exp $
 @bin bin/yeahconsole
 share/doc/yeahconsole/
 share/doc/yeahconsole/README

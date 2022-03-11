@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:58 rsadowski Exp $
-
 COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
 CATEGORIES =	devel

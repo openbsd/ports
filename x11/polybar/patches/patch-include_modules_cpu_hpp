@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_modules_cpu_hpp,v 1.2 2021/02/27 12:03:43 jasper Exp $
-
 Index: include/modules/cpu.hpp
 --- include/modules/cpu.hpp.orig
 +++ include/modules/cpu.hpp

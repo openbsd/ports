@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/13 05:05:00 kirby Exp $
-
 COMMENT=	magnify, rotate, mirror the image on the X11 screen
 
 DISTNAME=	xzoom-0.4

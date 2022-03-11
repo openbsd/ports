@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.26 2021/10/28 07:29:21 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/applications/org.gnome.clocks.desktop
 share/dbus-1/services/org.gnome.clocks.service

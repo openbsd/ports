@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:51:08 sthen Exp $
-
 COMMENT=		X keygrabber for blackbox
 
 DISTNAME=		bbkeys-0.9.1

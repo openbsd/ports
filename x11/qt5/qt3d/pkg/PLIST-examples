@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-examples,v 1.5 2021/11/15 21:23:30 rsadowski Exp $
 @conflict qt3d-<5.15.2p0
 lib/qt5/examples/qt3d/
 lib/qt5/examples/qt3d/3d-text/

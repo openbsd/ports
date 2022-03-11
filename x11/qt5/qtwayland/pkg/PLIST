@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/12 13:38:30 rsadowski Exp $
 include/X11/qt5/QtWaylandClient/
 include/X11/qt5/QtWaylandClient/${VERSION}/
 include/X11/qt5/QtWaylandClient/${VERSION}/QtWaylandClient/

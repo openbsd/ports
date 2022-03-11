@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/10/16 20:24:44 sthen Exp $
-
 BROKEN-hppa =		missing atomic ops
 BROKEN-alpha =		missing atomic ops
 # if unbreaking i386, games/vegastrike can be reenabled

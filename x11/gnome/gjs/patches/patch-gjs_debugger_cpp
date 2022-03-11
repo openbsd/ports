@@ -1,5 +1,3 @@
-$OpenBSD: patch-gjs_debugger_cpp,v 1.3 2021/10/25 14:48:38 jasper Exp $
-
 XXX:
 Moving the HAVE_READLINE_READLINE_H block until after the Mozilla
 includes suddenly toggles symbol visiblity on gjs_context_setup_debugger_console()

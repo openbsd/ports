@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2020/12/29 15:03:39 landry Exp $
-
 COMMENT =	Xfce4 disk usage monitor panel plugin
 
 XFCE_VERSION =	1.1.2

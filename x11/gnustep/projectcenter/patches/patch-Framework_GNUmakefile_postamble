@@ -1,5 +1,3 @@
-$OpenBSD: patch-Framework_GNUmakefile_postamble,v 1.1.1.1 2010/10/26 17:35:36 sebastia Exp $
-
 Otherwise this would leave root owned files there, which would make a 
 make clean as non root user fail. Those root files would be created
 while running make fake

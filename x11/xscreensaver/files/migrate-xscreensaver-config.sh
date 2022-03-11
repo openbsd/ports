@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: migrate-xscreensaver-config.sh,v 1.2 2014/07/10 07:40:36 ajacoutot Exp $
-#
 # script originally from gnome-screensavers sources
 
 DIST_BIN=`dirname "$0"`

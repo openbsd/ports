@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_regexp_Makefile_in,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
 --- src/regexp/Makefile.in.orig	Mon Jan 20 15:01:51 1997
 +++ src/regexp/Makefile.in	Tue Feb 13 13:59:49 2001
 @@ -121,7 +121,6 @@ libregx.a: $(regx_OBJECTS) $(regx_DEPEND

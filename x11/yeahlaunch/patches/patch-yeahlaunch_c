@@ -1,4 +1,3 @@
-$OpenBSD: patch-yeahlaunch_c,v 1.1.1.1 2007/06/04 16:39:54 ajacoutot Exp $
 --- yeahlaunch.c.orig	Mon Jun  4 17:44:48 2007
 +++ yeahlaunch.c	Mon Jun  4 17:44:55 2007
 @@ -104,6 +104,10 @@ int main(int argc, char *argv[])

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2018/07/09 15:09:44 ajacoutot Exp $
 @pkgpath x11/lumina/i18n
 @pkgpath x11/lumina/lumina
 bin/lte

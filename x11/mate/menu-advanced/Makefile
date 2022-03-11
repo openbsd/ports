@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:59 sthen Exp $
-
 COMMENT=		advanced menu for MATE
 
 GH_COMMIT=		61a995e25948015a4f6d86e12cf6141a3b729ce7

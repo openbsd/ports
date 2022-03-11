@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2021/01/08 15:53:33 sthen Exp $
 @pkgpath x11/fvwm2,-main
 @pkgpath x11/fvwm2,-fvicons
 @pkgpath x11/fvwm2,-fvwm2

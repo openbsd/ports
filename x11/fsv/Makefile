@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 21:02:29 sthen Exp $
-
 # XXX check if still needed at next update
 #CXXFLAGS +=		-std=c++11
 MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -std=c++11"

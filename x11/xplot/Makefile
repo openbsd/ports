@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:51:30 sthen Exp $
-
 COMMENT=	fast tool to graph and visualize lots of data
 
 DISTNAME=	xplot-0.90.7.1

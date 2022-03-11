@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT =		enhanced Tk console
 
 DISTNAME =		tkcon-2.5

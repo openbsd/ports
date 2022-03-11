@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/12 09:48:56 ajacoutot Exp $
-
 COMMENT=		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT=		libadwaita

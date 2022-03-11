@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2020/12/29 15:16:32 landry Exp $
-
 COMMENT=	Xfce4 mpd client panel plugin
 
 XFCE_VERSION=	0.5.2

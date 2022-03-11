@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:51:12 sthen Exp $
-
 COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 
 GNOME_VERSION =	0.98.2

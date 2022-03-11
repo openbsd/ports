@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/10/26 13:11:42 ajacoutot Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		weather application for GNOME

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/02 00:02:59 sthen Exp $
-
 COMMENT=	Python bindings for Qt5
 
 DPB_PROPERTIES=	parallel

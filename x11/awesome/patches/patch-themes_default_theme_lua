@@ -1,5 +1,3 @@
-$OpenBSD: patch-themes_default_theme_lua,v 1.3 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: themes/default/theme.lua
 --- themes/default/theme.lua.orig
 +++ themes/default/theme.lua

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep sudoku generator
 
 V =		0.7

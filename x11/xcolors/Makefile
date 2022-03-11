@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:25 sthen Exp $
-
 COMMENT=	display all (ok, most of) the colors in the universe
 
 DISTNAME=	xcolors

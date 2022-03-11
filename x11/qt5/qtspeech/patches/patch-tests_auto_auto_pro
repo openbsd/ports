@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_auto_auto_pro,v 1.1 2021/01/19 06:18:23 rsadowski Exp $
-
 Index: tests/auto/auto.pro
 --- tests/auto/auto.pro.orig
 +++ tests/auto/auto.pro

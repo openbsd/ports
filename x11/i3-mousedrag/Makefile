@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/12 16:00:14 sthen Exp $
-
 # see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
 COMMENT=	improved dynamic tiling window manager, fork with mouse drag
 

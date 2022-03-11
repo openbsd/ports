@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/08/25 12:05:53 robert Exp $
-
 COMMENT=		MATE session manager
 
 MATE_PROJECT=		mate-session-manager

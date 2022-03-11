@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
 REVISION=		8

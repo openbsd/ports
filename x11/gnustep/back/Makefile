@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/10/19 19:43:35 sebastia Exp $
-
 COMMENT=	GNUstep gui backend
 
 V =		0.29.0

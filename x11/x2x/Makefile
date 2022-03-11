@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/11/03 14:07:47 jasper Exp $
-
 COMMENT=	one keyboard/mouse to multiple X displays
 
 DISTNAME=	x2x-1.27

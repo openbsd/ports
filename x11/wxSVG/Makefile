@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/01/30 10:13:13 ajacoutot Exp $
-
 COMMENT=		C++ library to create, manipulate and render SVG files
 
 DISTNAME=		wxsvg-1.5.23

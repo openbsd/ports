@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:51:29 sthen Exp $
-
 COMMENT =	very lightweight image viewer for X11
 DISTNAME =	xli-1.17.0
 EXTRACT_SUFX =	.tar.bz2

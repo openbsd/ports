@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:25 rsadowski Exp $
-
 COMMENT =	2D space arcade game for KDE
 DISTNAME =	kspaceduel-${VERSION}
 CATEGORIES =	games

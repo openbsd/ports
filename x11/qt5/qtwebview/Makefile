@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/19 06:16:36 rsadowski Exp $
-
 QT5NAME =		QtWebView
 COMMENT-main =		simple web viewing component for Qt5
 

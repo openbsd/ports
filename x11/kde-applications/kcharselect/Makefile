@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:34 rsadowski Exp $
-
 COMMENT =	KDE character select and clipboard copy
 DISTNAME =	kcharselect-${VERSION}
 CATEGORIES =	x11 sysutils

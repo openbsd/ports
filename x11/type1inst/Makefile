@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=		Type1 font installation helper
 DISTNAME=		type1inst-0.6.1
 CATEGORIES=		x11 print

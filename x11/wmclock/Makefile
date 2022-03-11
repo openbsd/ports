@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:24 sthen Exp $
-
 COMMENT=		Window Maker dock.app clock
 
 VERSION=		1.0.14

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/10/25 07:25:58 ajacoutot Exp $
-
 COMMENT=		wallpapers for GNOME
 
 GNOME_PROJECT=		gnome-backgrounds

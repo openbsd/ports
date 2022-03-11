@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_pixmap_c,v 1.1 2007/11/18 12:55:58 jasper Exp $
 --- src/pixmap.c.orig	Wed Nov 14 18:27:41 2007
 +++ src/pixmap.c	Wed Nov 14 18:31:19 2007
 @@ -1916,7 +1916,8 @@ update_desktop_info(int *w, int *h)

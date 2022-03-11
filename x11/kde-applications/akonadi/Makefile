@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/05 08:02:50 rsadowski Exp $
-
 COMMENT =	PIM Storage Service
 DISTNAME =	akonadi-${VERSION}
 CATEGORIES =	databases productivity

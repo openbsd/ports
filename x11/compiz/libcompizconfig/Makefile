@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/06/05 03:50:40 rsadowski Exp $
-
 COMMENT =	compiz configuration system library
 
 V =		0.8.8

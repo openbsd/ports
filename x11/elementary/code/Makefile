@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/26 21:40:40 ajacoutot Exp $
-
 COMMENT =	code editor from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
 REVISION =	2

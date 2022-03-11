@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/03/03 06:03:37 rsadowski Exp $
 @bin bin/xwallpaper
 @man man/man1/xwallpaper.1
 share/zsh/

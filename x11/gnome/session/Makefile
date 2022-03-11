@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.283 2022/01/12 16:53:20 ajacoutot Exp $
-
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session

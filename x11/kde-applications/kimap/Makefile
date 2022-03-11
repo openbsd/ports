@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/23 18:10:21 rsadowski Exp $
-
 COMMENT =	job-based API for interacting with IMAP servers
 DISTNAME =	kimap-${VERSION}
 CATEGORIES =	devel mail

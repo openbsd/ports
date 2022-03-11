@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2020/12/29 14:47:09 landry Exp $
-
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler

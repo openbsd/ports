@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:34 rsadowski Exp $
-
 COMMENT =	KDE color selector
 DISTNAME =	kcolorchooser-${VERSION}
 CATEGORIES =	x11 graphics

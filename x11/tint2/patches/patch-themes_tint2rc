@@ -1,5 +1,3 @@
-$OpenBSD: patch-themes_tint2rc,v 1.4 2019/10/18 12:50:00 rsadowski Exp $
-
 Index: themes/tint2rc
 --- themes/tint2rc.orig
 +++ themes/tint2rc

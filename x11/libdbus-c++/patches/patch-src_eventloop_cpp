@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_eventloop_cpp,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
 Fix build failure due to non-standard PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP.
 Fix excessive CPU usage due to unhandled POLLOUT events, and fix off-by-one.
 Index: src/eventloop.cpp

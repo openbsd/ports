@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2019/07/12 20:51:30 sthen Exp $
-
 COMMENT=	draw pictures of the earth textured by an image
 
 DISTNAME=	xplanet-1.3.0

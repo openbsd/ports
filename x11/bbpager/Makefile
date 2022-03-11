@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/17 14:39:44 danj Exp $
-
 COMMENT =	pager for the Blackbox window manager
 
 DISTNAME =	bbpager-0.4.7

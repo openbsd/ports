@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugin-kbindicator_src_x11_kbdlayout_cpp,v 1.1 2020/09/04 15:40:12 mariani Exp $
-
 Index: plugin-kbindicator/src/x11/kbdlayout.cpp
 --- plugin-kbindicator/src/x11/kbdlayout.cpp.orig
 +++ plugin-kbindicator/src/x11/kbdlayout.cpp

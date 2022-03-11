@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_vectorosm-tilecreator_TirexBackend_cpp,v 1.1 2021/01/23 18:10:28 rsadowski Exp $
-
 Index: tools/vectorosm-tilecreator/TirexBackend.cpp
 --- tools/vectorosm-tilecreator/TirexBackend.cpp.orig
 +++ tools/vectorosm-tilecreator/TirexBackend.cpp

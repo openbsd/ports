@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_test_agent_sh,v 1.1 2020/09/04 15:40:12 mariani Exp $
-
 Index: test/test_agent.sh
 --- test/test_agent.sh.orig
 +++ test/test_agent.sh

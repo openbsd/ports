@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/01/05 08:02:51 rsadowski Exp $
-
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel

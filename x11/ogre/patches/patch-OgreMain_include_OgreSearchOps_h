@@ -1,4 +1,3 @@
-$OpenBSD: patch-OgreMain_include_OgreSearchOps_h,v 1.1 2013/06/04 14:20:20 dcoppa Exp $
 --- OgreMain/include/OgreSearchOps.h.orig	Sat May 26 20:31:54 2012
 +++ OgreMain/include/OgreSearchOps.h	Sat May 26 20:32:34 2012
 @@ -35,6 +35,7 @@ THE SOFTWARE.

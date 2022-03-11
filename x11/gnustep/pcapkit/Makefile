@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep wrapper around libpcap
 
 V =		0.2

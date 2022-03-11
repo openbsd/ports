@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/01/05 08:02:51 rsadowski Exp $
-
 COMMENT =	KDE File Manager
 DISTNAME =	dolphin-${VERSION}
 PKGNAME =	dolphin-kf5-${VERSION}

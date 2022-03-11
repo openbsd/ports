@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/03/17 08:21:55 sthen Exp $
 @conflict py-qt5-*
 @pkgpath x11/py-qt5,-main
 @pkgpath x11/py-qt5

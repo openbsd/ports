@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/27 00:32:39 jca Exp $
-
 COMMENT =	X terminal which uses OpenGL ES Compute Shaders
 
 GH_ACCOUNT =	tomszilagyi

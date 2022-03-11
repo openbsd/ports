@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.16 2019/07/13 10:59:27 sthen Exp $
-
 CATEGORIES+=	x11
 
 HOMEPAGE?=	http://www.nomachine.com/

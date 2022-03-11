@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.88 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT =	window manager based on the original Blackbox code
 DISTNAME =	fluxbox-1.3.7
 CATEGORIES =	x11

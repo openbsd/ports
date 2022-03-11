@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.96 2021/02/18 06:23:52 ajacoutot Exp $
-
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
 V =			1.0.9

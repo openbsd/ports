@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_angle_src_gpu_info_util_SystemInfo_internal_h,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
-
 Index: src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_internal.h
 --- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig
 +++ src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_internal.h

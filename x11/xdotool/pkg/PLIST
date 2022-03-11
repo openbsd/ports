@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/08/05 11:26:20 sthen Exp $
 @bin bin/xdotool
 include/xdo.h
 @lib lib/libxdo.so.${LIBxdo_VERSION}

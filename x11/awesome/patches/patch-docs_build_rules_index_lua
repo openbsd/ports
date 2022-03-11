@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_build_rules_index_lua,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: docs/build_rules_index.lua
 --- docs/build_rules_index.lua.orig
 +++ docs/build_rules_index.lua

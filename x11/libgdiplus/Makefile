@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/01/16 19:54:53 kmos Exp $
-
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-6.0.5

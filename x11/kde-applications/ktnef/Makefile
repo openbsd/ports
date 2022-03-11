@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:39 rsadowski Exp $
-
 COMMENT =	KDE PIM TNEF library
 DISTNAME =	ktnef-${VERSION}
 CATEGORIES =	devel

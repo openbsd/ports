@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/04 11:38:32 cwen Exp $
-
 COMMENT=		wm-dockapp; A popup menu of icons that launch programs
 
 DISTNAME=		wmmenu-1.3

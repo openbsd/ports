@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_file_cpp,v 1.2 2021/02/27 12:03:43 jasper Exp $
-
 Don't use the CPP define for fileno in stdio.h
 It causes clang++ to blow up.
 

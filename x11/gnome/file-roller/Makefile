@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.149 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller

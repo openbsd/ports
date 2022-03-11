@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/08/25 12:05:50 robert Exp $
-
 USE_WXNEEDED=		Yes
 
 COMMENT=		document viewer for the MATE desktop

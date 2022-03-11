@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_protobuf_src_google_protobuf_stubs_strutil_h,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/stubs/strutil.h
 --- src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/stubs/strutil.h.orig
 +++ src/3rdparty/chromium/third_party/protobuf/src/google/protobuf/stubs/strutil.h

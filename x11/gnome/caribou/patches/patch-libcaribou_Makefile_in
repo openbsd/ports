@@ -1,4 +1,3 @@
-$OpenBSD: patch-libcaribou_Makefile_in,v 1.4 2015/10/13 18:38:45 ajacoutot Exp $
 --- libcaribou/Makefile.in.orig	Tue Oct 13 02:29:47 2015
 +++ libcaribou/Makefile.in	Tue Oct 13 20:30:57 2015
 @@ -1204,7 +1204,7 @@ Caribou-1.0.gir: _Caribou-1.0.gir

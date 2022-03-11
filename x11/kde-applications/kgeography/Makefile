@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/11/03 16:12:35 rsadowski Exp $
-
 COMMENT =	geography learning tool for KDE
 DISTNAME =	kgeography-${VERSION}
 CATEGORIES =	geo

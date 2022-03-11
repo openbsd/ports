@@ -1,5 +1,3 @@
-$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.16 2019/07/03 16:15:28 sthen Exp $
-
 Don't hardcode gnome-terminal, fallback to xterm
 
 Index: driver/XScreenSaver.ad.in

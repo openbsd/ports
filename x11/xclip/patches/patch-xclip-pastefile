@@ -1,4 +1,3 @@
-$OpenBSD: patch-xclip-pastefile,v 1.1 2009/09/13 18:26:53 martynas Exp $
 --- xclip-pastefile.orig	Tue Aug 25 12:27:44 2009
 +++ xclip-pastefile	Tue Aug 25 12:27:47 2009
 @@ -4,4 +4,4 @@ if [ "x$1" != "x" ]; then

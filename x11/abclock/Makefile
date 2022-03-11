@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:07 sthen Exp $
-
 COMMENT=	analogue bitmap clock
 
 DISTNAME=	abclock-1.0d

@@ -1,5 +1,3 @@
-$OpenBSD: patch-unix_tk_pc_in,v 1.1 2017/11/22 12:46:04 stu Exp $
-
 Make tk86.pc work with the installed tcl86.pc.
 Mimic the port and require the exact Tcl version.
 

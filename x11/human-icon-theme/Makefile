@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:13 sthen Exp $
-
 COMMENT=		Human icon theme from Ubuntu
 
 V=			0.36

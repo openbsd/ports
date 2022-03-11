@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/04 16:19:59 naddy Exp $
-
 COMMENT=	tvtwm with pie (circular) menus
 
 DISTNAME=	piewm-1.04

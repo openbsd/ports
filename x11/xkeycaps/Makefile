@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
-
 COMMENT=	keymap editor for the X window system
 
 DISTNAME=	xkeycaps-2.46

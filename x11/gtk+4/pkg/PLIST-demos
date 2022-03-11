@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-demos,v 1.1 2020/11/09 12:17:07 ajacoutot Exp $
 @conflict gtk+4-<3.99.4
 @bin bin/gtk4-demo
 @bin bin/gtk4-demo-application

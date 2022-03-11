@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/10/19 19:43:37 sebastia Exp $
-
 COMMENT =	vector drawing application
 
 DISTNAME =	Graphos-0.7

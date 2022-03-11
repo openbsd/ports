@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugin-mainmenu_lxqtmainmenuconfiguration_cpp,v 1.2 2021/11/22 05:45:43 rsadowski Exp $
-
 Index: plugin-mainmenu/lxqtmainmenuconfiguration.cpp
 --- plugin-mainmenu/lxqtmainmenuconfiguration.cpp.orig
 +++ plugin-mainmenu/lxqtmainmenuconfiguration.cpp

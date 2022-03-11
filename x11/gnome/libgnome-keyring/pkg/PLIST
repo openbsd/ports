@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2020/09/13 12:21:24 ajacoutot Exp $
 include/gnome-keyring-1/
 include/gnome-keyring-1/gnome-keyring-memory.h
 include/gnome-keyring-1/gnome-keyring-result.h

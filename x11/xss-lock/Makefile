@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/19 23:13:08 sthen Exp $
-
 COMMENT=	use external locker as X screen saver
 
 V=		0.3.0

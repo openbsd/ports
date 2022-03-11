@@ -1,4 +1,3 @@
-$OpenBSD: patch-Manager_C,v 1.1 2010/06/10 21:24:23 jasper Exp $
 --- Manager.C.orig	Fri Jan  9 12:18:03 2009
 +++ Manager.C	Thu Jun 10 23:00:31 2010
 @@ -61,6 +61,12 @@ Boolean ignoreBadWindowErrors;

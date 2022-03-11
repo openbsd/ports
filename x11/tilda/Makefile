@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/03/04 17:57:53 bket Exp $
-
 COMMENT=		drop-down terminal emulator
 
 GH_ACCOUNT=		lanoxx

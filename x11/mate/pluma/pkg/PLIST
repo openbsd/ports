@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/08/25 12:05:52 robert Exp $
 @bin bin/pluma
 include/pluma/
 include/pluma/pluma-app-activatable.h

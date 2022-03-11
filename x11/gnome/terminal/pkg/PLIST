@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.72 2021/10/31 13:31:50 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal

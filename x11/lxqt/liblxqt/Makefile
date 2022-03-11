@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:42 rsadowski Exp $
-
 COMMENT =	core utility library for all LXQt components
 
 NAME =		liblxqt

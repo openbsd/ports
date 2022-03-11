@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	GNUstep wrapper around libgphoto2
 
 V =		20041011

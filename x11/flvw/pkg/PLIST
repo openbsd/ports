@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/22 12:48:58 ajacoutot Exp $
 include/FL/Flv_CStyle.H
 include/FL/Flv_Data_Source.H
 include/FL/Flv_List.H

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:51:18 sthen Exp $
-
 COMMENT=	widget that looks just like a Mac OS 9 progress bar
 
 DISTNAME=	Tk-ProgressBar-Mac-1.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_content_utility_utility_blink_platform_with_sandbox_support_impl_cc,v 1.2 2021/01/19 06:16:34 rsadowski Exp $
-
 Index: src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.cc
 --- src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.cc.orig
 +++ src/3rdparty/chromium/content/utility/utility_blink_platform_with_sandbox_support_impl.cc

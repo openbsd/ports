@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/08/25 12:05:53 robert Exp $
-
 COMMENT=		MATE support utilities
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7

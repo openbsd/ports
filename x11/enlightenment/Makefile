@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2022/02/21 14:18:07 sthen Exp $
-
 COMMENT=	themed window manager
 
 V=		1.0.24

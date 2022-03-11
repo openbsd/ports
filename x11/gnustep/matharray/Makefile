@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/10/19 19:43:37 sebastia Exp $
-
 COMMENT =	GNUstep library to manipulate matrices
 
 VERSION =	1.3

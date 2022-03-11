@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.78 2019/07/07 11:20:52 ajacoutot Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	base icon theme for GNOME

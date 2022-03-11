@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep webserver framework
 
 VERSION =	1.5.6

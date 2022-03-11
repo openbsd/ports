@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2022/02/24 11:10:45 naddy Exp $
-
 COMMENT =		tiling window manager
 
 MODCABAL_STEM =		xmonad

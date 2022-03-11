@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/01/04 17:32:21 sebastia Exp $
 bin/CDPlayer
 include/AudioCD/
 include/AudioCD/AudioCDProtocol.h

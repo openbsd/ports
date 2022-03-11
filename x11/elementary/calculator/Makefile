@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/03 23:45:00 bcallah Exp $
-
 COMMENT =	calculator from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
 

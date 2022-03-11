@@ -1,4 +1,3 @@
-$OpenBSD: patch-Icons_Makefile_in,v 1.1.1.1 2001/02/15 18:02:15 wilfried Exp $
 --- Icons/Makefile.in.orig	Thu Apr  1 16:30:31 1999
 +++ Icons/Makefile.in	Tue Feb 13 17:03:47 2001
 @@ -64,7 +64,7 @@ VERSION = @VERSION@

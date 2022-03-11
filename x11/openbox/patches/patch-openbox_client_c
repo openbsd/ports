@@ -1,5 +1,3 @@
-$OpenBSD: patch-openbox_client_c,v 1.3 2017/09/25 21:34:28 dcoppa Exp $
-
 Fix a NULL pointer dereference that was causing a crash when launching
 Java GUI applications.
 From https://bugzilla.icculus.org/show_bug.cgi?id=5277 via Arch

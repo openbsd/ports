@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/13 22:19:35 sthen Exp $
-
 COMMENT=		modern freedesktop flat icon theme
 
 GH_ACCOUNT=		snwh

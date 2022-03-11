@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/19 06:16:32 rsadowski Exp $
-
 QT5NAME =		QtTools
 COMMENT-main =		Qt development tools
 COMMENT-webview =	Webkit-based Qt Designer plugin

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:52 rsadowski Exp $
-
 COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel

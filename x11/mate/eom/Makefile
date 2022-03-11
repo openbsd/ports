@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/08/25 12:05:51 robert Exp $
-
 USE_WXNEEDED=		Yes
 
 COMMENT=		image viewer for the MATE desktop

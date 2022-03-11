@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2021/10/25 11:28:25 ajacoutot Exp $
-
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi

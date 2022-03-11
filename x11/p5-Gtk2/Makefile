@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2020/07/03 21:46:08 sthen Exp $
-
 COMMENT=	set of modules to use Gtk+2 libraries from Perl
 
 DISTNAME=	Gtk2-1.24993

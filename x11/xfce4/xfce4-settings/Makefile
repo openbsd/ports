@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/06/08 18:02:35 landry Exp $
-
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings

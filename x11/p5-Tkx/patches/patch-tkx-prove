@@ -1,4 +1,3 @@
-$OpenBSD: patch-tkx-prove,v 1.1.1.1 2015/05/08 03:11:18 stu Exp $
 --- tkx-prove.orig	Sun Nov 29 15:34:20 2009
 +++ tkx-prove	Thu May  7 05:46:07 2015
 @@ -112,8 +112,7 @@ sub set_dir {

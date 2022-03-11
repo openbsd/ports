@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/05 11:53:52 landry Exp $
-#
 COMMENT =		color selector in GTK2
 
 DISTNAME =		gcolor2-0.4

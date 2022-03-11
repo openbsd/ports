@@ -1,5 +1,3 @@
-$OpenBSD: patch-libao2_audio_out_c,v 1.8 2019/12/25 15:52:25 ajacoutot Exp $
-
 Index: libao2/audio_out.c
 --- libao2/audio_out.c.orig
 +++ libao2/audio_out.c

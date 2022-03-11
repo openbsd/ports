@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/01/05 08:03:01 rsadowski Exp $
-
 COMMENT =	KDE-based library for accessing various Google services
 DISTNAME =	libkgapi-${VERSION}
 CATEGORIES =	www devel

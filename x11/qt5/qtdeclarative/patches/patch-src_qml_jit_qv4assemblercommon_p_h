@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_qml_jit_qv4assemblercommon_p_h,v 1.1 2021/01/19 08:34:02 rsadowski Exp $
-
 Index: src/qml/jit/qv4assemblercommon_p.h
 --- src/qml/jit/qv4assemblercommon_p.h.orig
 +++ src/qml/jit/qv4assemblercommon_p.h

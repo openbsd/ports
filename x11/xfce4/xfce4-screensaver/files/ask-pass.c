@@ -1,4 +1,3 @@
-/* $OpenBSD: ask-pass.c,v 1.1 2021/11/17 07:01:41 landry Exp $
  * verifying typed passwords with bsd_auth(3)
  *
  * Copyright (c) 2009 Antoine Jacoutot <ajacoutot@openbsd.org>

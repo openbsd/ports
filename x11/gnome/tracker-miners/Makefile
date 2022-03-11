@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/09/04 21:04:03 ajacoutot Exp $
-
 PORTROACH=		limit:^2
 
 COMMENT=		tracker miners and metadata extractors

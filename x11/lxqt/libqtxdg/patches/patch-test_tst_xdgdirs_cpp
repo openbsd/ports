@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_tst_xdgdirs_cpp,v 1.1 2020/09/04 15:40:11 mariani Exp $
-
 Index: test/tst_xdgdirs.cpp
 --- test/tst_xdgdirs.cpp.orig
 +++ test/tst_xdgdirs.cpp

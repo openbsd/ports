@@ -1,6 +1,4 @@
 #!/bin/sh
-#
-# $OpenBSD: Xsession,v 1.2 2018/04/24 08:37:00 ajacoutot Exp $
 
 [ -f ${HOME}/.profile ] && . ${HOME}/.profile
 

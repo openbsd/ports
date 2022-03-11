@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Baseresource_cxx,v 1.1 2019/01/13 15:19:52 cwen Exp $
 Fix missing header for ports-gcc
 Index: src/Baseresource.cxx
 --- src/Baseresource.cxx.orig

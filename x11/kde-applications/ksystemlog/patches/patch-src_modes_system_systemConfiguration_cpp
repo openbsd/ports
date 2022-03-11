@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modes_system_systemConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
-
 Index: src/modes/system/systemConfiguration.cpp
 --- src/modes/system/systemConfiguration.cpp.orig
 +++ src/modes/system/systemConfiguration.cpp

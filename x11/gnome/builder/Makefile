@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.117 2021/12/23 09:36:49 ajacoutot Exp $
-
 # XXX prctl(2) or procctl(2)
 # error: #error "Please submit a patch to support parent-death signal on your OS"
 

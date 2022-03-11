@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/14 09:24:26 ajacoutot Exp $
-
 COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-books

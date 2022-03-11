@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:44 rsadowski Exp $
-
 COMMENT =	qt platform integration plugin for LXQt
 
 NAME =		lxqt-qtplugin

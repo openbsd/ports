@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:51:24 sthen Exp $
-
 COMMENT=		stylish window manager
 
 DISTNAME=		wm2-4

@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_Install_jam,v 1.1 2013/10/25 20:43:23 landry Exp $
 Donc call update-mime-database
 --- build/Install.jam.orig	Fri Oct 25 22:40:30 2013
 +++ build/Install.jam	Fri Oct 25 22:40:40 2013

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/09/10 08:43:50 rsadowski Exp $
 @pkgpath x11/kde4/kapman
 @bin bin/kapman
 share/applications/org.kde.kapman.desktop

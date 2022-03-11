@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.169 2022/03/04 07:01:46 ajacoutot Exp $
-
 # XXX merge on next major update
 # https://gitlab.freedesktop.org/dbus/dbus/merge_requests/124/diffs
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.78 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex

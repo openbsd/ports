@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_access_http_Makefile_am,v 1.3 2020/04/21 10:19:26 sthen Exp $
-
 Workaround for duplicate symbols from libcompat being linked twice.
 
 Index: modules/access/http/Makefile.am

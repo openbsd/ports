@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/24 10:59:04 jasper Exp $
 bin/gtk-chtheme
 @man man/man1/gtk-chtheme.1

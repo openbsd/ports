@@ -1,4 +1,3 @@
-$OpenBSD: patch-ede-bug-tools_ede-bug-report_Jamfile,v 1.1 2013/12/08 10:22:47 pascal Exp $
 --- ede-bug-tools/ede-bug-report/Jamfile.orig	Fri May 18 14:51:50 2012
 +++ ede-bug-tools/ede-bug-report/Jamfile	Sun Dec  8 03:28:28 2013
 @@ -99,7 +99,7 @@ if $(CURL_CFLAGS) || $(CURL_LIBS) {

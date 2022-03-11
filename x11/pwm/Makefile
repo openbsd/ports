@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/11/09 17:40:42 bket Exp $
-
 COMMENT=		lightweight window manager with emphasis on usability
 
 DISTNAME=		pwm-20070720

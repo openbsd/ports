@@ -1,5 +1,3 @@
-$OpenBSD: patch-baselib_src_Makefile_in,v 1.1 2017/08/23 15:20:14 dcoppa Exp $
-
 Index: baselib/src/Makefile.in
 --- baselib/src/Makefile.in.orig
 +++ baselib/src/Makefile.in

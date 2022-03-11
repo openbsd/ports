@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:27 espie Exp $
 bin/astime
 @man man/man1/astime.1
 share/examples/asclock/

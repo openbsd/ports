@@ -1,4 +1,3 @@
-$OpenBSD: patch-pixmaps_Makefile_in,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
 --- pixmaps/Makefile.in.orig	Fri May  9 05:50:10 1997
 +++ pixmaps/Makefile.in	Tue Feb 13 13:59:53 2001
 @@ -74,7 +74,6 @@ Makefile: $(top_builddir)/config.status 

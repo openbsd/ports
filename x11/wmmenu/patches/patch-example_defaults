@@ -1,4 +1,3 @@
-$OpenBSD: patch-example_defaults,v 1.3 2021/02/04 11:38:32 cwen Exp $
 Index: example/defaults
 --- example/defaults.orig
 +++ example/defaults

@@ -1,4 +1,3 @@
-$OpenBSD: patch-General_h,v 1.1.1.1 2007/04/27 18:31:12 matthieu Exp $
 --- General.h.orig	Fri Mar 21 12:12:30 1997
 +++ General.h	Wed Apr 11 22:29:23 2007
 @@ -10,12 +10,11 @@

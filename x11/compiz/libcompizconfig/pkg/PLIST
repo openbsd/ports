@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2013/12/03 00:49:44 fgsch Exp $
 include/compizconfig/
 include/compizconfig/ccs-backend.h
 include/compizconfig/ccs.h

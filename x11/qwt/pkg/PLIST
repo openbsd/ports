@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/01/19 06:20:27 rsadowski Exp $
 @conflict qwt-<6.1.5
 @conflict qwt-common-<6.1.5
 @conflict qwt-*-qt5

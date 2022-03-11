@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.318 2022/02/23 21:45:23 sthen Exp $
-
 COMMENT=	movie player supporting many formats
 
 V=		20211106

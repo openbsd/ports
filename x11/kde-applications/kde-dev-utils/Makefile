@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/10 06:37:46 rsadowski Exp $
-
 COMMENT =	KDE development helper utilities
 DISTNAME =	kde-dev-utils-${VERSION}
 CATEGORIES =	devel

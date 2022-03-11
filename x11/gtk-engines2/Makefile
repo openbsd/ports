@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2019/07/12 20:51:12 sthen Exp $
-
 PORTROACH=		limit:^2\.20
 
 COMMENT=		collection of theme engines for GTK+2

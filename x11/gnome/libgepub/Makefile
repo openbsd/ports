@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/07 11:20:53 ajacoutot Exp $
-
 # build time requirement for WebKit2-4.0 introspection
 USE_WXNEEDED=		Yes
 

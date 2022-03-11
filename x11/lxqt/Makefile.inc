@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2021/11/22 05:45:42 rsadowski Exp $
-
 DIST_SUBDIR =	lxqt
 
 VERSION ?=	1.0.0

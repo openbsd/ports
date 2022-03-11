@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/11/19 21:15:51 op Exp $
 @bin bin/pekwm
 @bin bin/pekwm_bg
 @bin bin/pekwm_ctrl

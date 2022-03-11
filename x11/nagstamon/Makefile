@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/11/17 14:54:32 ajacoutot Exp $
-
 COMMENT=		nagios status monitor for the Desktop
 
 MODPY_EGG_VERSION=	3.8.0

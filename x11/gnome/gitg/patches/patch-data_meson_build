@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_meson_build,v 1.1 2022/01/13 08:06:39 ajacoutot Exp $
-
 data/meson.build:8:5: ERROR: Function does not take positional arguments.
 
 Index: data/meson.build

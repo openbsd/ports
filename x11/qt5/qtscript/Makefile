@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/15 21:23:32 rsadowski Exp $
-
 QT5NAME =		QtScript
 COMMENT-main =		ECMAScript language for Qt5
 

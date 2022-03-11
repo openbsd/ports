@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	Amiga Workbench lookalike window manager
 
 VERSION=	0.21pl2

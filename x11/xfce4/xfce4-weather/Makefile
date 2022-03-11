@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.70 2020/12/29 15:18:53 landry Exp $
-
 COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
 XFCE_VERSION=	0.10.2

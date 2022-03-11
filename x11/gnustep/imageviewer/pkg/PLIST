@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:40:11 sebastia Exp $
 bin/ImageViewer
 libexec/GNUstep/ImageViewer.app/
 @bin libexec/GNUstep/ImageViewer.app/ImageViewer

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:40:01 naddy Exp $
 @bin bin/xcb
 lib/X11/app-defaults/Xcb
 @man man/man1/xcb.1

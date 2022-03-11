@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:34 jasper Exp $
-
 COMMENT=	configurable analog clock for X11
 DISTNAME=	xtu-1.3
 REVISION=	4

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2020/12/29 14:58:23 landry Exp $
 @so lib/xfce4/panel/plugins/libsmartbookmark.so
 share/locale/ar/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-smartbookmark-plugin.mo

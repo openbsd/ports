@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT=	fast-light window manager
 
 DISTNAME=	flwm-1.02

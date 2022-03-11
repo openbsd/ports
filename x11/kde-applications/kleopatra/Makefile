@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/10 06:37:49 rsadowski Exp $
-
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/05 21:35:06 jasper Exp $
 @bin bin/aedesk
 @bin bin/aemenu
 @bin bin/aepanel

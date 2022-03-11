@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.41 2021/10/31 13:20:53 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*

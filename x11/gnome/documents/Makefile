@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.108 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT=		document manager application for GNOME
 
 GNOME_PROJECT=		gnome-documents

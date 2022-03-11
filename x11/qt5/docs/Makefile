@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/22 05:20:11 rsadowski Exp $
-
 COMMENT-html =		HTML documentation for Qt5
 COMMENT-qch =		qdoc-compiled documentation for Qt5
 

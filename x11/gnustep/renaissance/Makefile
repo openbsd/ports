@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT =	GNUstep layer to write portable GUIs
 
 VERSION =	0.9.0

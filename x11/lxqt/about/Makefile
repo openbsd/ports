@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:42 rsadowski Exp $
-
 COMMENT =	information about LXQt and the system its running on
 
 NAME =		lxqt-about

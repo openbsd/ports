@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Fl_Preferences_cxx,v 1.5 2015/06/28 13:33:07 bcallah Exp $
 --- src/Fl_Preferences.cxx.orig	Sat Jun 27 16:40:11 2015
 +++ src/Fl_Preferences.cxx	Sat Jun 27 16:40:51 2015
 @@ -1083,7 +1083,7 @@ Fl_Preferences::RootNode::RootNode( Fl_Preferences *pr

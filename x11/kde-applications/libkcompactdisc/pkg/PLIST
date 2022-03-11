@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/09/10 08:43:58 rsadowski Exp $
 include/KF5/KCompactDisc/
 include/KF5/KCompactDisc/KCompactDisc
 include/KF5/KCompactDisc/kcompactdisc.h

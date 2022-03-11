@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:17 rsadowski Exp $
-
 COMMENT =	Sokoban-like logic game
 DISTNAME =	katomic-${VERSION}
 CATEGORIES =	games

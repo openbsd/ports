@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:31 rsadowski Exp $
-
 COMMENT =	PIM Akonadi notes support library
 DISTNAME =	akonadi-notes-${VERSION}
 CATEGORIES =	devel mail

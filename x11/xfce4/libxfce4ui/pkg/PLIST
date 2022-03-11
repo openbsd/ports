@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/12/29 14:36:23 landry Exp $
 @conflict libxfcegui4-<4.7.0
 @conflict xfce-utils-*
 @bin bin/xfce4-about

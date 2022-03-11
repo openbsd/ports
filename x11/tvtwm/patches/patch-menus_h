@@ -1,5 +1,3 @@
-$OpenBSD: patch-menus_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
-
 Index: menus.h
 --- menus.h.orig
 +++ menus.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugin-directorymenu_directorymenuconfiguration_cpp,v 1.1 2020/09/04 15:40:12 mariani Exp $
-
 Index: plugin-directorymenu/directorymenuconfiguration.cpp
 --- plugin-directorymenu/directorymenuconfiguration.cpp.orig
 +++ plugin-directorymenu/directorymenuconfiguration.cpp

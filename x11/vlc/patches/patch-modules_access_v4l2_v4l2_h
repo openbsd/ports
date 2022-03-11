@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_access_v4l2_v4l2_h,v 1.3 2022/03/02 12:03:17 sthen Exp $
-
 v4l2: use proper headers for OpenBSD's V4L2 support
 c7905ecc665b1b464bbf13ddc395e2e7f8ddd8b2
 

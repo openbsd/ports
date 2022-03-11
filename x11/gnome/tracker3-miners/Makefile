@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/03/07 06:09:00 ajacoutot Exp $
-
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners

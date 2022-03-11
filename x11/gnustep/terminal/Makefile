@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/10/19 19:43:38 sebastia Exp $
-
 COMMENT=	terminal emulator for GNUstep
 
 DISTNAME=	Terminal-0.9.9

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/11/12 13:40:49 rsadowski Exp $
-
      SUBDIR =
      SUBDIR += docs
      SUBDIR += qt3d

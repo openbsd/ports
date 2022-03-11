@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.83 2020/12/29 14:40:02 landry Exp $
-
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session

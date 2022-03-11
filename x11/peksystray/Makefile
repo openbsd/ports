@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:51:19 sthen Exp $
-
 COMMENT=		freedesktop.org compliant system tray
 
 DISTNAME=		peksystray-0.4.0

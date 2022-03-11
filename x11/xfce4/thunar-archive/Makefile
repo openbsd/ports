@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/12/29 15:13:56 landry Exp $
-
 COMMENT =	Thunar archive plugin
 
 XFCE_VERSION =	0.4.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-evoke_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
 --- evoke/Jamfile.orig	Fri May 18 14:51:51 2012
 +++ evoke/Jamfile	Fri May 25 18:52:50 2012
 @@ -27,7 +27,7 @@ ObjectC++Flags Splash.cpp : -DEDEWM_HAVE_NET_SPLASH ;

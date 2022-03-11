@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/03 17:15:00 abieber Exp $
-
 COMMENT =	featherweight lemon-scented bar with XFT support
 
 VERSION =	1.1.20180416

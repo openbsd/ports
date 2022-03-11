@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/03 16:12:42 rsadowski Exp $
-
 COMMENT =	KDE monitoring of Zeroconf services
 DISTNAME =	zeroconf-ioslave-${VERSION}
 CATEGORIES =	net

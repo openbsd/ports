@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:51:15 sthen Exp $
-
 COMMENT=	simple xrandr config tool
 
 DISTNAME=	lxrandr-0.3.2

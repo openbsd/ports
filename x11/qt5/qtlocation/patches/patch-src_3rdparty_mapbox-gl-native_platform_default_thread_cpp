@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_mapbox-gl-native_platform_default_thread_cpp,v 1.1 2020/03/13 16:53:51 rsadowski Exp $
-
 Index: src/3rdparty/mapbox-gl-native/platform/default/thread.cpp
 --- src/3rdparty/mapbox-gl-native/platform/default/thread.cpp.orig
 +++ src/3rdparty/mapbox-gl-native/platform/default/thread.cpp

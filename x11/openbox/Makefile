@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.86 2021/02/23 19:39:52 sthen Exp $
-
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1

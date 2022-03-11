@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/09/10 08:43:55 rsadowski Exp $
 @pkgpath x11/kde4/kmahjongg
 @bin bin/kmahjongg
 share/applications/org.kde.kmahjongg.desktop

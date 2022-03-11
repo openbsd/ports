@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/12/20 11:46:41 gonzalo Exp $
-
 USE_WXNEEDED =		Yes
 
 COMMENT =		browse and download YouTube videos

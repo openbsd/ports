@@ -1,4 +1,3 @@
-$OpenBSD: patch-libAfterStep_mylook_h,v 1.1 2017/05/03 17:51:26 jca Exp $
 --- libAfterStep/mylook.h.orig
 +++ libAfterStep/mylook.h
 @@ -411,9 +411,9 @@ void mylook_set_font_size_var (MyLook * look);

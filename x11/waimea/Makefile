@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/09/26 10:36:53 cwen Exp $
-
 COMMENT=		virtual desktop manager for X11
 
 VERSION=		0.4.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:58 sthen Exp $
-
 COMMENT =	freedesktop-compliant menu for openbox and tint2
 CATEGORIES =	x11
 

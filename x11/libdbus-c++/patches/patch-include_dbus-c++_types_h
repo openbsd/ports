@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_dbus-c++_types_h,v 1.2 2020/04/09 13:26:13 jca Exp $
-
 Fix build failure due to symbols not being declared in the DBus namespace.
 https://github.com/andreas-volz/dbus-cplusplus/commit/a0b9ef3b469ca23c6a3229d8abb967cbbddcee38
 

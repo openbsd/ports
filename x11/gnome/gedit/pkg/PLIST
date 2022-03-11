@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.66 2022/02/14 19:06:30 ajacoutot Exp $
 @bin bin/gedit
 include/gedit-41/
 include/gedit-41/gedit/

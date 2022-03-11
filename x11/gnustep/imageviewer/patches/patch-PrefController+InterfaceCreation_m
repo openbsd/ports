@@ -1,5 +1,3 @@
-$OpenBSD: patch-PrefController+InterfaceCreation_m,v 1.1 2010/10/24 08:28:50 sebastia Exp $
-
 Fix label of the buttons in the preferences
 
 --- PrefController+InterfaceCreation.m.orig	Sat Oct 23 19:21:51 2010

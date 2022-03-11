@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=	hides idle X11 cursor
 
 DISTNAME=	unclutter-8

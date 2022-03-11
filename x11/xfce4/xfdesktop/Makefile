@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2020/12/29 14:46:04 landry Exp $
-
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop

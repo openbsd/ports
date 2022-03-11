@@ -1,5 +1,3 @@
-$OpenBSD: patch-wxPython_src_gtk_propgrid_wrap_cpp,v 1.1 2019/01/02 12:43:19 jca Exp $
-
 Index: wxPython/src/gtk/propgrid_wrap.cpp
 --- wxPython/src/gtk/propgrid_wrap.cpp.orig
 +++ wxPython/src/gtk/propgrid_wrap.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/08/22 08:22:33 robert Exp $
 @bin bin/mate-system-monitor
 libexec/mate-system-monitor/
 @bin libexec/mate-system-monitor/msm-kill

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2019/01/30 14:27:45 cwen Exp $
 Fix in perl 5.26.0+ (no . in @inc by default)
 Index: Makefile.PL
 --- Makefile.PL.orig

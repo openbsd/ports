@@ -1,4 +1,3 @@
-$OpenBSD: patch-ad2c,v 1.1.1.1 2001/03/07 15:47:04 wilfried Exp $
 --- ad2c.orig	Sun Nov 24 17:37:21 1996
 +++ ad2c	Tue Feb 13 13:34:13 2001
 @@ -47,7 +47,6 @@ s/\\/\\\\/g

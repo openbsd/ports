@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/31 15:16:54 naddy Exp $
-
 COMMENT=		virtual keyboard for X Window System
 
 DISTNAME=		xvkbd-4.1

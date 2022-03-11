@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:52 rsadowski Exp $
-
 COMMENT =	KDE PIM incidence editor
 DISTNAME =	incidenceeditor-${VERSION}
 CATEGORIES =	devel

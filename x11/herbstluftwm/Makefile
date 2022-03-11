@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/06/05 11:21:31 bket Exp $
-
 COMMENT =		manual tiling window manager
 DISTNAME =		herbstluftwm-0.9.3
 CATEGORIES =		x11

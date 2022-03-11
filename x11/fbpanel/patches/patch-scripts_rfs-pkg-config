@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_rfs-pkg-config,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
-
 fix bash path
 
 --- scripts/rfs-pkg-config.orig	Thu Apr  8 11:12:19 2010

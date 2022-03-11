@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/18 09:49:48 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	utilities and tools to manage themes in KDE PIM applications

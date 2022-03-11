@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/08/25 12:05:51 robert Exp $
-
 COMMENT=		weather library for MATE
 
 SHARED_LIBS +=  mateweather               7.9 # 7.9

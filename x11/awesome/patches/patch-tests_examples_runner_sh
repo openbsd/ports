@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_examples_runner_sh,v 1.1 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: tests/examples/runner.sh
 --- tests/examples/runner.sh.orig
 +++ tests/examples/runner.sh

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_chrome_browser_ui_webui_about_ui_cc,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
-
 Index: src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
 --- src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc.orig
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc

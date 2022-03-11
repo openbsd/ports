@@ -1,5 +1,3 @@
-# $OpenBSD: openbsd,v 1.2 2008/12/23 15:25:04 ajacoutot Exp $
-#
 # OpenBSD filesystem layout
 
 GNUSTEP_DEFAULT_PREFIX=${PREFIX}

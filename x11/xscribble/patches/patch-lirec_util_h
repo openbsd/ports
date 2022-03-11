@@ -1,4 +1,3 @@
-$OpenBSD: patch-lirec_util_h,v 1.2 2017/04/29 16:27:40 espie Exp $
 --- lirec/util.h.orig
 +++ lirec/util.h
 @@ -53,7 +53,7 @@ char	*tempstring();	/* returns a pointer to space that

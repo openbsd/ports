@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/17 15:18:18 kmos Exp $
-
 COMMENT=		MATE calculator
 
 MATE_PROJECT=		mate-calc

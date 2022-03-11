@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/01/05 22:15:00 ajacoutot Exp $
-
 COMMENT =	Hex Editor
 VERSION =	0.26.6
 DISTNAME =	okteta-${VERSION}

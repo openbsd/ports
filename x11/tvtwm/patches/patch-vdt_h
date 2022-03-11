@@ -1,5 +1,3 @@
-$OpenBSD: patch-vdt_h,v 1.1 2017/05/05 22:11:08 naddy Exp $
-
 Index: vdt.h
 --- vdt.h.orig
 +++ vdt.h

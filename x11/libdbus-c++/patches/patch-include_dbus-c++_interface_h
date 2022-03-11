@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_dbus-c++_interface_h,v 1.1.1.1 2019/03/13 10:52:51 stsp Exp $
 Fix compilation failure due to 'struct' vs 'class' confusion.
 Index: include/dbus-c++/interface.h
 --- include/dbus-c++/interface.h.orig

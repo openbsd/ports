@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modes_daemon_daemonConfiguration_cpp,v 1.2 2022/01/05 08:03:00 rsadowski Exp $
-
 Index: src/modes/daemon/daemonConfiguration.cpp
 --- src/modes/daemon/daemonConfiguration.cpp.orig
 +++ src/modes/daemon/daemonConfiguration.cpp

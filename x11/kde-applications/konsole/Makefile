@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/01/05 08:02:59 rsadowski Exp $
-
 COMMENT =	KDE terminal emulator
 DISTNAME =	konsole-${VERSION}
 CATEGORIES =	editors x11

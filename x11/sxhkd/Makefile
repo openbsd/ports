@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/10/31 08:41:27 ajacoutot Exp $
-
 COMMENT =		simple X hotkey daemon
 
 GH_ACCOUNT =		baskerville

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/03 16:54:23 rsadowski Exp $
-
 COMMENT =	KDE versatile math calculator
 DISTNAME =	kcalc-${VERSION}
 CATEGORIES =	x11 math

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:30 sthen Exp $
-
 COMMENT=		command line interface to X selections
 GH_ACCOUNT=		astrand
 GH_PROJECT=		xclip

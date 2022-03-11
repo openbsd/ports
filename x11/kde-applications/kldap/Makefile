@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/05 08:02:57 rsadowski Exp $
-
 COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
 CATEGORIES =	devel

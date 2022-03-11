@@ -1,5 +1,3 @@
-$OpenBSD: patch-libfreerdp_crypto_opensslcompat_c,v 1.1 2022/01/14 11:09:16 tb Exp $
-
 Fix build with opaque BIO_METHOD in LibreSSL 3.5
 
 Index: libfreerdp/crypto/opensslcompat.c

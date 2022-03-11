@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:39:59 naddy Exp $
 @bin bin/xantfarm
 @man man/man1/xantfarm.1

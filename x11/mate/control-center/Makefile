@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/08/29 16:38:39 robert Exp $
-
 COMMENT=		MATE control center
 
 SHARED_LIBS +=  mate-slab                 0.0 # 0.0

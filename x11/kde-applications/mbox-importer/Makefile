@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/01/05 08:03:02 rsadowski Exp $
-
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
 CATEGORIES =	devel

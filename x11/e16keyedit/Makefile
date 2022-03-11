@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:51:09 sthen Exp $
-
 COMMENT=	edit enlightenment's keybindings
 
 DISTNAME=	e16-keyedit-0.9

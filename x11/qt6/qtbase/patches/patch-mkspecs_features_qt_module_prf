@@ -1,5 +1,3 @@
-$OpenBSD: patch-mkspecs_features_qt_module_prf,v 1.1.1.1 2021/05/03 16:38:26 rsadowski Exp $
-
 Index: mkspecs/features/qt_module.prf
 --- mkspecs/features/qt_module.prf.orig
 +++ mkspecs/features/qt_module.prf

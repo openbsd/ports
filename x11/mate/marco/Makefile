@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/25 12:05:51 robert Exp $
-
 COMMENT=		the MATE window manager
 
 SHARED_LIBS +=  marco-private             1.0 # 1.0

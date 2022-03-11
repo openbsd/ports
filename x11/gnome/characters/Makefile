@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/10/26 10:37:22 jasper Exp $
-
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters

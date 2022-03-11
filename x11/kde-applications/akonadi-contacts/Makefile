@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/05 08:02:50 rsadowski Exp $
-
 COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/05/15 16:51:26 naddy Exp $
-
 COMMENT=	interact with an EWMH/NetWM window manager
 DISTNAME=	wmctrl-1.07
 REVISION=	9

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/06/19 18:34:34 rsadowski Exp $
 @pkgpath x11/kde4/kbruch
 @bin bin/kbruch
 @man man/man1/kbruch.1

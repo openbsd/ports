@@ -1,5 +1,3 @@
-$OpenBSD: patch-themes_Makefile_in,v 1.4 2019/12/30 14:10:52 ajacoutot Exp $
-
 BSD tar cannot handle the StyleTar.tar.gz file:
 tar: Cannot identify format. Searching...
 tar: Cpio file name length 20804 is out of range

@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_icewm-preferences_pod,v 1.11 2022/02/24 12:48:54 sthen Exp $
-
 Index: man/icewm-preferences.pod
 --- man/icewm-preferences.pod.orig
 +++ man/icewm-preferences.pod

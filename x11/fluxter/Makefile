@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT=		slit pager for fluxbox window manager
 
 DISTNAME=		fluxter-0.1.0

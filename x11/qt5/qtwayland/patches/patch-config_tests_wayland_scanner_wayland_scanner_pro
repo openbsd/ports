@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_tests_wayland_scanner_wayland_scanner_pro,v 1.1.1.1 2021/11/12 13:38:30 rsadowski Exp $
-
 Index: config.tests/wayland_scanner/wayland_scanner.pro
 --- config.tests/wayland_scanner/wayland_scanner.pro.orig
 +++ config.tests/wayland_scanner/wayland_scanner.pro

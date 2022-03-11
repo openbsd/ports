@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/08/27 08:38:47 ajacoutot Exp $
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
 include/libgdl-3.0/gdl/gdl-dock-bar.h

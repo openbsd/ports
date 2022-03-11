@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_wav_encodercda_cpp,v 1.3 2022/01/05 08:02:51 rsadowski Exp $
-
 fix conflict with /usr/include/sys/endian.h
 
 Index: plugins/wav/encodercda.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/08/25 12:05:51 robert Exp $
 @bin bin/engrampa
 lib/caja/
 lib/caja/extensions-2.0/

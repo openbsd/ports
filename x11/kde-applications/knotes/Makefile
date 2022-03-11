@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/09/10 08:43:55 rsadowski Exp $
-
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
 CATEGORIES =	net www

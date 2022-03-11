@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2022/01/05 08:02:52 rsadowski Exp $
 @pkgpath x11/kde4/gwenview
 @bin bin/gwenview
 @bin bin/gwenview_importer

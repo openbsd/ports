@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2019/12/06 09:23:59 sthen Exp $
-
 COMMENT=		open source client for Windows Terminal Server
 
 V=			1.9.0

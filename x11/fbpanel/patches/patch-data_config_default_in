@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_config_default_in,v 1.2 2010/12/21 10:29:48 dcoppa Exp $
-
 remove linux-only plugins from default config file
 use xlock (it's in base) instead of slock
 

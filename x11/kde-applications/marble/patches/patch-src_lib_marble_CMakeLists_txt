@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_marble_CMakeLists_txt,v 1.3 2022/01/05 08:03:02 rsadowski Exp $
-
 Index: src/lib/marble/CMakeLists.txt
 --- src/lib/marble/CMakeLists.txt.orig
 +++ src/lib/marble/CMakeLists.txt

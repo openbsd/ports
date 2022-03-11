@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/22 05:45:42 rsadowski Exp $
-
 COMMENT =	qt implementation of freedesktop.org xdg specs
 
 VERSION =	3.8.0

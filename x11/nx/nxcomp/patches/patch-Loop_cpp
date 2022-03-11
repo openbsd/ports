@@ -1,5 +1,3 @@
-$OpenBSD: patch-Loop_cpp,v 1.2 2018/04/08 19:13:19 jasper Exp $
-
 - fix bounds length warnings
 - fix bind namespacing
 

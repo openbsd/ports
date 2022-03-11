@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2019/07/07 11:20:54 ajacoutot Exp $
-
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager

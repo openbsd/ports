@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2022/02/25 14:07:42 ajacoutot Exp $
 share/glib-2.0/schemas/99_Yaru.gschema.override
 share/gnome-shell/
 share/gnome-shell/modes/

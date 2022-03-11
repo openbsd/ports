@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/23 11:10:30 ajacoutot Exp $
-
 COMMENT=		GNOME's Tour & Greeter
 
 GNOME_PROJECT=		gnome-tour

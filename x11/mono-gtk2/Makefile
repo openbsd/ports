@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/04/07 07:38:29 robert Exp $
-
 COMMENT=		.NET language binding for the GTK+2 toolkit
 
 MAJOR=			12

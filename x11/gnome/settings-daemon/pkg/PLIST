@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.59 2021/10/30 09:14:30 ajacoutot Exp $
 include/gnome-settings-daemon-41/
 include/gnome-settings-daemon-41/gnome-settings-daemon/
 include/gnome-settings-daemon-41/gnome-settings-daemon/gsd-enums.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:49 sthen Exp $
-
 COMMENT =	compiz configuration manager
 
 DISTNAME =	ccsm-0.8.4

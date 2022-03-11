@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_JavaScriptCore_dfg_DFGDisassembler_cpp,v 1.2 2020/02/19 16:08:53 rsadowski Exp $
-
 Index: Source/JavaScriptCore/dfg/DFGDisassembler.cpp
 --- Source/JavaScriptCore/dfg/DFGDisassembler.cpp.orig
 +++ Source/JavaScriptCore/dfg/DFGDisassembler.cpp

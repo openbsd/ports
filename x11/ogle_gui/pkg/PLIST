@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/13 18:40:23 jasper Exp $
 @pkgpath x11/ogle_gui,gtk1
 lib/ogle/
 @bin lib/ogle/ogle_gui

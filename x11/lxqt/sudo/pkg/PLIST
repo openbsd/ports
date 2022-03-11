@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/22 05:45:44 rsadowski Exp $
 @conflict lxqt-sudo-l10n-*
 @pkgpath x11/lxqt/l10n,-sudo
 @bin bin/lxqt-sudo

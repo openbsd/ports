@@ -1,5 +1,3 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.24 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: awesomeConfig.cmake
 --- awesomeConfig.cmake.orig
 +++ awesomeConfig.cmake

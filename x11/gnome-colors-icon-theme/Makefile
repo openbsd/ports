@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:11 sthen Exp $
-
 COMMENT =		complete, multi-colored suite of icons
 
 V =			5.5.1

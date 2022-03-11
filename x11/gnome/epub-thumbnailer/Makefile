@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/01 09:21:26 ajacoutot Exp $
-
 COMMENT=		thumbnailer for EPub and MOBI books
 
 GNOME_PROJECT=		gnome-epub-thumbnailer

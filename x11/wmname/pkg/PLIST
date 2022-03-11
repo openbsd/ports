@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/16 20:42:41 sturm Exp $
 @bin bin/wmname

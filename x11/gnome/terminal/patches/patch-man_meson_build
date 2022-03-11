@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_meson_build,v 1.1 2021/10/31 13:31:50 jasper Exp $
-
 Index: man/meson.build
 --- man/meson.build.orig
 +++ man/meson.build

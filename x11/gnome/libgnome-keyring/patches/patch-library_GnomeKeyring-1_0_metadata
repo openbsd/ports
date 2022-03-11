@@ -1,5 +1,3 @@
-$OpenBSD: patch-library_GnomeKeyring-1_0_metadata,v 1.2 2020/09/13 12:21:24 ajacoutot Exp $
-
 From 3766bcc482f9e02fb5f9c183e814833ad1fbf08a Mon Sep 17 00:00:00 2001
 From: Rico Tzschichholz <ricotz@ubuntu.com>
 Date: Tue, 8 Jan 2019 12:19:36 +0100

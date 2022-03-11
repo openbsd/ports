@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_WTF_wtf_Atomics_cpp,v 1.1 2021/05/11 15:33:59 cwen Exp $
-
 powerpc fix: don't redefine 64-bits __sync_* built-ins operators
 
 Index: Source/WTF/wtf/Atomics.cpp

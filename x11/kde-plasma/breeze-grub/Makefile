@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/06 06:36:22 rsadowski Exp $
-
 COMMENT =	KDE Breeze grub theme
 DISTNAME =	breeze-grub-${VERSION}
 

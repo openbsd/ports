@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2018/05/17 10:23:12 espie Exp $
 @pkgpath x11/xkbset
 @bin bin/xkbset
 @man man/man1/xkbset.1

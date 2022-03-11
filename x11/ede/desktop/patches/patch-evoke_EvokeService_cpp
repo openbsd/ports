@@ -1,5 +1,3 @@
-$OpenBSD: patch-evoke_EvokeService_cpp,v 1.2 2014/07/11 21:39:04 pascal Exp $
-
 Don't provide shutdown and restart options.  They do not work without HAL.
 
 --- evoke/EvokeService.cpp.orig	Sat Jun 21 23:24:42 2014

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2020/03/13 16:53:51 rsadowski Exp $
 lib/qt5/examples/multimedia/
 lib/qt5/examples/multimedia/audiodecoder/
 lib/qt5/examples/multimedia/audiodecoder/audiodecoder.cpp

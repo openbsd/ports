@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/04 13:50:09 cwen Exp $
-
 COMMENT=		wm-dockapp; weather monitor
 
 DISTNAME=		wmweather-2.4.7

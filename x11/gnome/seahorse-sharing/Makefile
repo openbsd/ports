@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/09/03 12:51:35 ajacoutot Exp $
-
 COMMENT=		PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=		seahorse-sharing

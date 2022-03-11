@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:51:23 sthen Exp $
-
 COMMENT=		virtual desktop manager
 DISTNAME=		vdesk-1.2
 REVISION=		3

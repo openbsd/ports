@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/05 08:03:00 rsadowski Exp $
-
 COMMENT =	KDE PIM SMTP library
 DISTNAME =	ksmtp-${VERSION}
 CATEGORIES =	devel mail

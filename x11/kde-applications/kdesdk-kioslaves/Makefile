@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/11/03 16:12:35 rsadowski Exp $
-
 COMMENT =	development-related KIO modules
 DISTNAME =	kdesdk-kioslaves-${VERSION}
 CATEGORIES =	devel

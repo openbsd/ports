@@ -1,5 +1,3 @@
-$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.11 2015/02/09 15:52:13 dcoppa Exp $
-
 Adapt to our non-GNU grep
 
 --- util/fluxbox-generate_menu.in.orig	Sun Feb  8 04:44:45 2015

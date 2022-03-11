@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.210 2022/01/12 14:52:56 ajacoutot Exp $
-
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus

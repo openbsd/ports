@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2021/11/18 09:24:21 op Exp $
-
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
 COMMENT-webkit = wxWebView class for wxWidgets

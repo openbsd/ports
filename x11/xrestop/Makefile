@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/03 10:29:53 matthieu Exp $
-
 COMMENT=	top-like X server resources usage display tool
 DISTNAME=	xrestop-0.5
 

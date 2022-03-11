@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_awful_util_lua,v 1.4 2020/11/28 08:10:44 rsadowski Exp $
-
 Index: lib/awful/util.lua
 --- lib/awful/util.lua.orig
 +++ lib/awful/util.lua

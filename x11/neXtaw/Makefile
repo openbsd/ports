@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:51:17 sthen Exp $
-
 COMMENT=		libXaw widget set replacement
 
 DISTNAME=		neXtaw-0.15.1

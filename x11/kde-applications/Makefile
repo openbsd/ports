@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2022/01/05 08:02:50 rsadowski Exp $
-
      SUBDIR =
 
      # accessibility

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/02/13 07:47:14 ajacoutot Exp $
-
 COMMENT =	GNOME Shell style for Qt applications
 
 GH_ACCOUNT =	FedoraQt

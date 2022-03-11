@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_build_gn_run_binary_py,v 1.2 2021/01/19 06:16:33 rsadowski Exp $
-
 Index: src/3rdparty/chromium/build/gn_run_binary.py
 --- src/3rdparty/chromium/build/gn_run_binary.py.orig
 +++ src/3rdparty/chromium/build/gn_run_binary.py

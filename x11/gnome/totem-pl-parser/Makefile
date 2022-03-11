@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.88 2021/11/01 09:06:46 ajacoutot Exp $
-
 COMMENT=		GObject-based parsing library
 
 GNOME_PROJECT=		totem-pl-parser

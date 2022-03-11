@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/23 18:10:21 rsadowski Exp $
-
 COMMENT =	Yahtzee-like dice game
 DISTNAME =	kiriki-${VERSION}
 CATEGORIES =	games

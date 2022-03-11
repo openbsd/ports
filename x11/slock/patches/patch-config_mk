@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_mk,v 1.10 2020/05/24 17:24:24 sthen Exp $
-
 Index: config.mk
 --- config.mk.orig
 +++ config.mk

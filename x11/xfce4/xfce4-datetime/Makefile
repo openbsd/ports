@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/12/29 15:00:16 landry Exp $
-
 COMMENT=	Xfce4 datetime and calendar plugin
 
 XFCE_VERSION=	0.8.1

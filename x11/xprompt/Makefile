@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:51:30 sthen Exp $
-
 COMMENT=	display a dialog box and prompt user for text
 
 DISTNAME=	xprompt-1.4

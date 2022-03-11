@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_3rdparty_chromium_third_party_webrtc_modules_audio_device_BUILD_gn,v 1.2 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn
 --- src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/webrtc/modules/audio_device/BUILD.gn

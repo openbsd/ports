@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_NSCFType_m,v 1.1 2012/10/18 09:07:03 sebastia Exp $
-
 fix from upstream svn rev: 35471
 
 --- Source/NSCFType.m.orig	Thu Oct 18 10:33:55 2012

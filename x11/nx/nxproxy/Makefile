@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2018/10/24 14:28:13 sthen Exp $
-
 COMMENT=		NX X proxy support tool
 
 DASHVERSION=		1

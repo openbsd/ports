@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/05 08:02:58 rsadowski Exp $
-
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${VERSION}
 CATEGORIES =	x11 inputmethods

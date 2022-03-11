@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2022/01/05 08:03:03 rsadowski Exp $
-
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${VERSION}
 CATEGORIES =	textproc

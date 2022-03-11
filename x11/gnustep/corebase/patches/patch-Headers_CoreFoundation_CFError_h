@@ -1,5 +1,3 @@
-$OpenBSD: patch-Headers_CoreFoundation_CFError_h,v 1.1 2021/02/25 21:55:55 naddy Exp $
-
 Fix build with -fno-common
 
 Index: Headers/CoreFoundation/CFError.h

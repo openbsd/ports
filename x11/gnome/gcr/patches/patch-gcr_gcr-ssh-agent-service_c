@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcr_gcr-ssh-agent-service_c,v 1.1 2021/10/25 07:24:36 ajacoutot Exp $
-
 From 96e76ee482dad2a0d71f9a5a5a6558d272d538ca Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Sun, 24 Oct 2021 10:26:03 +0200

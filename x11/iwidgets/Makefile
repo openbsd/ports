@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:51:14 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	Iwidgets Mega Widget Set

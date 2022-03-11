@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.25 2022/01/07 21:54:16 op Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icesound

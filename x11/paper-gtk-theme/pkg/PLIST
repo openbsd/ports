@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/05 08:10:32 mpi Exp $
 share/themes/Paper/
 share/themes/Paper/README.md
 share/themes/Paper/assets/

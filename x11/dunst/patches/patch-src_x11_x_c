@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_x11_x_c,v 1.1 2021/12/12 20:32:28 op Exp $
-
 Index: src/x11/x.c
 --- src/x11/x.c.orig
 +++ src/x11/x.c

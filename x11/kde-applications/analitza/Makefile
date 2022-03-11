@@ -1,5 +1,3 @@
-# $OpenBSD $
-
 COMMENT =	KDE mathematical features
 DISTNAME =	analitza-${VERSION}
 CATEGORIES =	devel math

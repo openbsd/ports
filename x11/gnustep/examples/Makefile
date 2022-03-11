@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT=	GNUstep example applications
 
 DISTNAME=	gnustep-examples-1.4.0

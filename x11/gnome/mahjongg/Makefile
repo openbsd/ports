@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/13 08:07:52 ajacoutot Exp $
-
 COMMENT =	mahjongg game for GNOME
 
 GNOME_PROJECT =	gnome-mahjongg

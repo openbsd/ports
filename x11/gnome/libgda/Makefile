@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.145 2021/09/05 09:02:48 ajacoutot Exp $
-
 PORTROACH=		skipv:5.90.1
 
 COMMENT-main=		GNOME Data Access library

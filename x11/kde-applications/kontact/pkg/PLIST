@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2022/01/05 08:02:59 rsadowski Exp $
 @bin bin/kontact
 @lib lib/libkontactprivate.so.${LIBkontactprivate_VERSION}
 lib/qt5/plugins/pim/kcms/kontact/

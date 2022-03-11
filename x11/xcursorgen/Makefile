@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:51:26 sthen Exp $
-
 COMMENT =	X11 Cursors themes generator
 DISTNAME =	xcursorgen-1.0.7
 CATEGORIES =	x11

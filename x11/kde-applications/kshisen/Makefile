@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/23 18:10:25 rsadowski Exp $
-
 COMMENT =	Shisen-Sho Mahjongg-like game
 DISTNAME =	kshisen-${VERSION}
 CATEGORIES =	games

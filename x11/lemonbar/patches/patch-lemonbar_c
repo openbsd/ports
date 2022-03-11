@@ -1,5 +1,3 @@
-$OpenBSD: patch-lemonbar_c,v 1.1 2020/12/15 14:16:08 feinerer Exp $
-
 Index: lemonbar.c
 --- lemonbar.c.orig
 +++ lemonbar.c

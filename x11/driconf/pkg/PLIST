@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/11 13:07:54 wcmaier Exp $
 bin/driconf
 lib/python${MODPY_VERSION}/site-packages/driconf/
 lib/python${MODPY_VERSION}/site-packages/driconf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

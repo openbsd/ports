@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:51:19 sthen Exp $
-
 COMMENT =	graphical documentation browser for Perl
 
 DISTNAME =	podbrowser-0.12

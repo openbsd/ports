@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/10/19 19:43:36 sebastia Exp $
-
 COMMENT =	GNUstep client framework for salesforce.com
 
 VERSION =	1.0

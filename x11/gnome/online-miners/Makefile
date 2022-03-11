@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/03/12 20:08:56 jasper Exp $
-
 COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners

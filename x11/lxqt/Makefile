@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/04 15:40:09 mariani Exp $
-
      SUBDIR =
 # Base
      SUBDIR += libqtxdg

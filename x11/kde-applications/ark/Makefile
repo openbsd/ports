@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/01/05 08:02:51 rsadowski Exp $
-
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
 CATEGORIES =	archivers

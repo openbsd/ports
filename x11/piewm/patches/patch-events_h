@@ -1,5 +1,3 @@
-$OpenBSD: patch-events_h,v 1.1 2017/05/06 10:19:04 naddy Exp $
-
 Index: events.h
 --- events.h.orig
 +++ events.h

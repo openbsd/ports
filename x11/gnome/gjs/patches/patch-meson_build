@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.9 2022/02/08 15:45:11 ajacoutot Exp $
-
 In file included from /usr/include/readline/readline.h:38:
 In file included from /usr/include/readline/keymaps.h:36:
 In file included from /usr/include/readline/chardefs.h:39:

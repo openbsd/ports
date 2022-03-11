@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.312 2022/02/17 13:12:08 ajacoutot Exp $
-
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm

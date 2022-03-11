@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:51:15 sthen Exp $
-
 COMMENT=		list titles of running X windows
 
 DISTNAME=		lsw-0.3

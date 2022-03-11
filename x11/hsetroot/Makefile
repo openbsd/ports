@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/17 17:04:13 bcallah Exp $
-
 COMMENT =	wallpaper changer, works with compositors
 CATEGORIES =	x11
 

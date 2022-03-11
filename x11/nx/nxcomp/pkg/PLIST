@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
 include/nx/
 include/nx/MD5.h
 include/nx/NX.h

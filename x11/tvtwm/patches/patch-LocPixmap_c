@@ -1,5 +1,3 @@
-$OpenBSD: patch-LocPixmap_c,v 1.1 2017/05/05 22:11:08 naddy Exp $
-
 Index: LocPixmap.c
 --- LocPixmap.c.orig
 +++ LocPixmap.c

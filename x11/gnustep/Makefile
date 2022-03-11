@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2015/10/26 12:41:14 sebastia Exp $
-
      SUBDIR =
      SUBDIR += aclock
      SUBDIR += addresses

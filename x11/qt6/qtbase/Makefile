@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/19 19:05:46 rsadowski Exp $
-
 QT6NAME =		QtBase
 
 COMMENT-main =		C++ general-purpose toolkit

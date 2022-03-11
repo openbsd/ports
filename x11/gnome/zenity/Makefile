@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2020/11/07 16:09:55 jasper Exp $
-
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity

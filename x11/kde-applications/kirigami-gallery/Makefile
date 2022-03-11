@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/05 08:02:56 rsadowski Exp $
-
 COMMENT =	kirigami component gallery application
 DISTNAME =	kirigami-gallery-${VERSION}
 CATEGORIES =	devel

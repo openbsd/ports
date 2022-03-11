@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2020/06/09 07:14:46 jasper Exp $
-
 COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8

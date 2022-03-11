@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.3 2020/03/12 19:50:06 jasper Exp $
-
 https://gitlab.gnome.org/GNOME/gnome-characters/issues/47
 
 Index: meson.build

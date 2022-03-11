@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2017/05/12 21:44:44 stu Exp $
 @option no-default-conflict
 @option is-branch
 @conflict tk->=8.5,<8.6

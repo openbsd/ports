@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/09/05 12:43:43 jasper Exp $
-
 COMMENT=		text widget that extends the GTK4 GtkTextView widget
 
 GNOME_PROJECT=		gtksourceview

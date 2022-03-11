@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/17 14:39:44 danj Exp $
-
 COMMENT=		gtk+-2 theme switcher
 
 DISTNAME=		gtk-chtheme-0.3.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/10 06:37:54 rsadowski Exp $
-
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
 CATEGORIES =	sysutils

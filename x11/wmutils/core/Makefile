@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/01/08 19:24:31 bcallah Exp $
-
 COMMENT =	window manipulation tools
 DISTNAME =	wmutils-core-${GH_TAGNAME:C/^v//}
 

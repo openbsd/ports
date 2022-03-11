@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/24 18:00:04 ajacoutot Exp $
-
 COMMENT =		Perl interface to Gtk+3
 
 CPAN_AUTHOR =		XAOC

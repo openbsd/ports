@@ -1,5 +1,3 @@
-$OpenBSD: patch-Screenkey_xlib_py,v 1.1.1.1 2020/08/11 21:33:22 bcallah Exp $
-
 Index: Screenkey/xlib.py
 --- Screenkey/xlib.py.orig
 +++ Screenkey/xlib.py

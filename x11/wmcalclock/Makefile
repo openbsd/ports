@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/02 22:05:42 cwen Exp $
-
 COMMENT=		wm-dockapp; calendar/clock
 
 DISTNAME=		wmCalClock-1.25

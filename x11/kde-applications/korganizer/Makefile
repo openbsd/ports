@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/05 08:02:59 rsadowski Exp $
-
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www

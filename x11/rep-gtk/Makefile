@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2019/11/03 14:07:47 jasper Exp $
-
 COMMENT=	GTK+ binding for librep Lisp environment
 
 VERSION=	0.90.8.1

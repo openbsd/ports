@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/10 08:28:56 ajacoutot Exp $
-
 COMMENT=		C++ bindings for GTK+
 
 GNOME_PROJECT=		gtkmm

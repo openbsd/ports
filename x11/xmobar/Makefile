@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/01/13 04:09:52 gnezdo Exp $
-
 COMMENT =		minimalistic text based status bar
 
 MODCABAL_STEM =		xmobar

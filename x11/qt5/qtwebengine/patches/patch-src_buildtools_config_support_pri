@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_buildtools_config_support_pri,v 1.1 2021/01/19 06:16:35 rsadowski Exp $
-
 Index: src/buildtools/config/support.pri
 --- src/buildtools/config/support.pri.orig
 +++ src/buildtools/config/support.pri

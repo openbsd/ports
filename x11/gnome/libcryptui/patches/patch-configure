@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.6 2017/11/12 10:46:42 ajacoutot Exp $
-
 From 183d7619c29482a5d4ae8019692899f87f198171 Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Sat, 17 Oct 2015 08:52:35 +0200

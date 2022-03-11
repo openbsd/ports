@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/05 08:02:59 rsadowski Exp $
-
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel

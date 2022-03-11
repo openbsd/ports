@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2017/01/26 01:40:28 ajacoutot Exp $
-
 COMMENT=		extra library for libfm
 
 PKGNAME=		libfm-extra-${V}

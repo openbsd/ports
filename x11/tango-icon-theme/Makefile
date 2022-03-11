@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:51:22 sthen Exp $
-
 COMMENT=		Tango icon theme
 
 DISTNAME=		tango-icon-theme-0.8.90
