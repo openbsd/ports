@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2021/12/30 15:26:23 ajacoutot Exp $
-
 COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION =	5.1.4

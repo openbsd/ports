@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/01/31 22:25:56 kn Exp $
-
 COMMENT=		simple slang-based menu program
 
 DISTNAME=		pdmenu-1.3.6

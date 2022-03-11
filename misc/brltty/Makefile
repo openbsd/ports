@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/09/19 20:45:12 tb Exp $
-
 COMMENT=	access software for a blind person using a braille terminal
 
 DISTNAME=	brltty-3.6

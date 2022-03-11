@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/22 11:45:46 fcambus Exp $
-
 COMMENT=	browse or page through a text file
 
 DISTNAME=	most-5.1.0

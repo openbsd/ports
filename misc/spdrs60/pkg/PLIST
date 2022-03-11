@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/06/02 21:03:49 sebastia Exp $
 @bin bin/centralclock
 @bin bin/spdrs60
 man/de/

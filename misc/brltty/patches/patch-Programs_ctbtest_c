@@ -1,5 +1,3 @@
-$OpenBSD: patch-Programs_ctbtest_c,v 1.2 2021/02/11 12:51:03 sthen Exp $
-
 Index: Programs/ctbtest.c
 --- Programs/ctbtest.c.orig
 +++ Programs/ctbtest.c

@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-#	$OpenBSD: posixtestsuite-html.pl,v 1.4 2018/05/23 20:28:34 bluhm Exp $
 # convert results of open POSIX test suite to a html table
 
 # Copyright (c) 2016-2018 Alexander Bluhm <bluhm@genua.de>

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	convert between Julian and calendar dates
 
 MODPY_EGG_VERSION =	1.4.1

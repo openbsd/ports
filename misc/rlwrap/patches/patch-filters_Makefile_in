@@ -1,4 +1,3 @@
-$OpenBSD: patch-filters_Makefile_in,v 1.5 2017/04/09 11:53:44 jasper Exp $
 --- filters/Makefile.in.orig	Fri Mar  3 11:16:20 2017
 +++ filters/Makefile.in	Sun Apr  9 13:30:35 2017
 @@ -143,7 +143,7 @@ am__uninstall_files_from_dir = { \

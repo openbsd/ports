@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_open62541_server_h,v 1.1 2020/06/23 14:55:15 bluhm Exp $
-
 https://github.com/open62541/open62541/commit/7453262ccf8b26e622c4afa6ab5facfc42962663
 
 Index: include/open62541/server.h

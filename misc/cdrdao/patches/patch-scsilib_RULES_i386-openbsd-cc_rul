@@ -1,4 +1,3 @@
-$OpenBSD: patch-scsilib_RULES_i386-openbsd-cc_rul,v 1.3 2010/05/21 20:30:52 espie Exp $
 --- scsilib/RULES/i386-openbsd-cc.rul.orig	Tue Oct 15 22:43:40 2002
 +++ scsilib/RULES/i386-openbsd-cc.rul	Fri May 21 21:05:09 2010
 @@ -24,13 +24,13 @@ include $(SRCROOT)/$(RULESDIR)/rules.prg

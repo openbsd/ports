@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT =		interactive prompt module
 
 DISTNAME =		Umph-Prompt-0.1.0

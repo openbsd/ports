@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:47 sthen Exp $
-
 COMMENT =		software tools for blink(1) LED notification light
 
 GH_ACCOUNT =		todbot

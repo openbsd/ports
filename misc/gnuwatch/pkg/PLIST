@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/04 00:18:31 jasper Exp $
 @bin bin/gnuwatch
 @man man/man1/gnuwatch.1

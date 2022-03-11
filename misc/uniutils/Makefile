@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/15 14:14:22 schwarze Exp $
-
 COMMENT=	Unicode utilities
 
 DISTNAME=	uniutils-2.27

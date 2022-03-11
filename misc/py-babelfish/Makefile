@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	python library to work with countries and languages
 
 MODPY_EGG_VERSION =	0.6.0

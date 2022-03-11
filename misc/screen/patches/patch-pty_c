@@ -1,5 +1,3 @@
-$OpenBSD: patch-pty_c,v 1.5 2022/02/05 11:57:36 op Exp $
-
 Index: pty.c
 --- pty.c.orig
 +++ pty.c

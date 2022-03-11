@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/05/27 10:24:56 benoit Exp $
 @bin bin/chkfont
 @bin bin/figlet
 bin/figlist

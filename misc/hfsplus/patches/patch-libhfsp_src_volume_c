@@ -1,5 +1,3 @@
-$OpenBSD: patch-libhfsp_src_volume_c,v 1.2 2021/02/20 03:46:49 gkoehler Exp $
-
 Fix hpmount of newer HFS+ volumes: set vol->maxblocks when volume is
 without HFS wrapper, so we can find the backup volume header.
 

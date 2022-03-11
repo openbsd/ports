@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/20 03:46:48 gkoehler Exp $
-
 COMMENT=	hfsplus filesystem access tool
 
 VERSION=	1.0.4

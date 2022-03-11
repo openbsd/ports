@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/12 20:47:48 sthen Exp $
-
 COMMENT=	write audio/data CD-Rs in disk-at-once mode
 
 DISTNAME= 	cdrdao-1.2.1

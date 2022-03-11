@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/08/23 06:02:07 ajacoutot Exp $
-
 COMMENT =	multilingual text processing library
 
 DISTNAME =	m17n-lib-${M17N_V}

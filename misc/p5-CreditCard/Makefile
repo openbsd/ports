@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:45:29 sthen Exp $
-
 COMMENT =	verify credit card pins
 
 MODULES =	cpan

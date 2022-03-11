@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/25 14:17:54 bluhm Exp $
-
 COMMENT =	open POSIX test suite
 
 DISTNAME =	posixtestsuite-1.5.2

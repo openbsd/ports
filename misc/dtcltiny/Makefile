@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/04/13 18:39:34 kmos Exp $
-
 COMMENT =		small SRCP client to control digital model trains
 
 EPOCH =			0

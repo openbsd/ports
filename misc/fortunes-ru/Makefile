@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/05 09:12:13 zhuk Exp $
-
 COMMENT =	collection of Russian fortunes
 DISTNAME =	fortune-mod-ru-1.52
 

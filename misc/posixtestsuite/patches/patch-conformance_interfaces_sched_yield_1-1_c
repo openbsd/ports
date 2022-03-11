@@ -1,5 +1,3 @@
-$OpenBSD: patch-conformance_interfaces_sched_yield_1-1_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
-
 Fix clang pthread_t printf format warning to make test compile.
 
 Index: conformance/interfaces/sched_yield/1-1.c

@@ -1,4 +1,3 @@
-$OpenBSD: patch-watch_1,v 1.2 2009/06/04 00:18:31 jasper Exp $
 --- watch.1.orig	Wed Jun  3 18:12:43 2009
 +++ watch.1	Wed Jun  3 18:15:13 2009
 @@ -1,11 +1,11 @@

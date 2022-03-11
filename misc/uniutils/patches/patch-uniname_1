@@ -1,4 +1,3 @@
-$OpenBSD: patch-uniname_1,v 1.1 2013/10/19 20:57:20 schwarze Exp $
 The order of lines got mixed up, making the text incomprehensible.
 While here, fix the case of the .PP macro or it won't work
 and remove a .br that has no effect.

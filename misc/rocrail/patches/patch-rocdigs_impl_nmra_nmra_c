@@ -1,5 +1,3 @@
-$OpenBSD: patch-rocdigs_impl_nmra_nmra_c,v 1.1 2017/05/07 23:57:16 espie Exp $
-
 Index: rocdigs/impl/nmra/nmra.c
 --- rocdigs/impl/nmra/nmra.c.orig
 +++ rocdigs/impl/nmra/nmra.c

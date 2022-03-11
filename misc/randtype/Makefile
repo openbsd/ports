@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:53 sthen Exp $
-
 COMMENT=	output characters or lines at random intervals
 
 DISTNAME=	randtype-1.13

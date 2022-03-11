@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_XKCD_Core_pm,v 1.2 2020/11/04 08:19:29 landry Exp $
 Fix breakage - code assumed xkcd would never reach 1000th comic :)
 Index: lib/XKCD/Core.pm
 --- lib/XKCD/Core.pm.orig

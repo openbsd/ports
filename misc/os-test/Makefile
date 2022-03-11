@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:52 sthen Exp $
-
 COMMENT =	test suites for POSIX operating systems
 
 GL_COMMIT =	0a1066eac2aeba09c52eb4ff30dcbbada4c5f685

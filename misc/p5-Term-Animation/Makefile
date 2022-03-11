@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT=		produce sprite animations using ASCII art
 
 DISTNAME=		Term-Animation-2.6

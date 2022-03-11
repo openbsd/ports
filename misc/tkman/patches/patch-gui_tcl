@@ -1,4 +1,3 @@
-$OpenBSD: patch-gui_tcl,v 1.2 2021/02/26 18:20:35 naddy Exp $
 --- gui.tcl.orig	Fri Dec 10 20:44:34 2010
 +++ gui.tcl	Fri Dec 10 20:46:05 2010
 @@ -746,6 +746,7 @@ proc manManTabSet {w} {

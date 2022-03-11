@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_server_check_services_nodemanagement_c,v 1.1 2020/06/23 14:55:15 bluhm Exp $
-
 https://github.com/open62541/open62541/commit/7453262ccf8b26e622c4afa6ab5facfc42962663
 
 https://github.com/open62541/open62541/commit/ba14327eac5489f95864d6208bc46516650db537

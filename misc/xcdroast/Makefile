@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:47:55 sthen Exp $
-
 COMMENT=		gtk-based frontend to cdrtools
 DISTNAME=		xcdroast-0.98alpha16
 PKGNAME=		${DISTNAME:L:S/alpha/a/}

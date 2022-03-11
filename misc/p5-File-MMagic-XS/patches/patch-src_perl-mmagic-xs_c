@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_perl-mmagic-xs_c,v 1.1 2017/11/03 18:38:55 bluhm Exp $
-
 https://rt.cpan.org/Public/Bug/Display.html?id=123503
 https://github.com/lestrrat/File-MMagic-XS/pull/6
 

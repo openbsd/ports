@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:54 sthen Exp $
-
 COMMENT =	Tk frontend to crontab
 
 DISTNAME =	tkcron-2.12

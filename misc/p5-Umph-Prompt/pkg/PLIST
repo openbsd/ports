@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/17 08:03:36 bentley Exp $
 ${P5SITE}/Umph/
 ${P5SITE}/Umph/Prompt.pm
 @man man/man3p/Umph::Prompt.3p

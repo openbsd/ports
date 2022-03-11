@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2019/04/19 13:58:47 jca Exp $
-
 - fix portable linking with libintl, see info '(gettext) src/Makefile'
 - don't hardcode libdl
 

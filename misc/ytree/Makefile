@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/17 10:36:00 fcambus Exp $
-
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 DISTNAME =	ytree-2.04

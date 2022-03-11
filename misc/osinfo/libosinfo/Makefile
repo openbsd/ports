@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/15 10:30:23 ajacoutot Exp $
-
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-${V}

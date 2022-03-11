@@ -1,4 +1,3 @@
-$OpenBSD: patch-contrib_mgpnet_in,v 1.1 2009/02/18 08:15:50 giovanni Exp $
 --- contrib/mgpnet.in.orig	Sun Feb 15 19:14:34 2009
 +++ contrib/mgpnet.in	Sun Feb 15 19:15:32 2009
 @@ -256,20 +256,7 @@ sub httpserver {

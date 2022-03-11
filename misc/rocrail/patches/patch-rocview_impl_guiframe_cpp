@@ -1,5 +1,3 @@
-$OpenBSD: patch-rocview_impl_guiframe_cpp,v 1.1 2019/01/04 11:07:58 jca Exp $
-
 Initialize m_LNCVPanel earlier to prevent a crash with recent wxWidgets.
 
 Index: rocview/impl/guiframe.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/17 17:52:58 sthen Exp $
-
 COMMENT=	X11/Motif schedule planner with calendar
 
 DISTNAME=	plan-1.10.1

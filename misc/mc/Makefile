@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2021/08/31 11:17:52 fcambus Exp $
-
 COMMENT=		free Norton Commander clone with many useful features
 
 DISTNAME=		mc-4.8.27

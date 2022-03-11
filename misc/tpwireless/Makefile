@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/09/12 13:42:45 sthen Exp $
-
 COMMENT=	set IBM Thinkpad BIOS bit to disable Wireless NIC ID check
 
 PKGNAME=	tpwireless-0.2

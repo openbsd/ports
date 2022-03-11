@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	Python interface to memcached
 
 MODPY_EGG_VERSION = 1.59

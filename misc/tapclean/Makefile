@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:54 sthen Exp $
-
 COMMENT =		Commodore tape image cleaning utility
 DISTNAME =		tapclean-20130522
 CATEGORIES =		misc

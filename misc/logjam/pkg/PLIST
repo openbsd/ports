@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/02/26 22:40:32 naddy Exp $
 @bin bin/logjam
 @man man/man1/logjam.1
 share/applications/logjam.desktop

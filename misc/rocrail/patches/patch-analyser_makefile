@@ -1,5 +1,3 @@
-$OpenBSD: patch-analyser_makefile,v 1.2 2019/04/17 15:20:21 naddy Exp $
-
 Index: analyser/makefile
 --- analyser/makefile.orig
 +++ analyser/makefile

@@ -1,5 +1,3 @@
-$OpenBSD: patch-arch_posix_CMakeLists_txt,v 1.1.1.1 2020/02/11 10:35:25 bluhm Exp $
-
 This was needed for OpenBSD 5.8 with gcc version 4.8.4
 https://open62541.org/doc/1.0/building.html?highlight=openbsd#building-on-openbsd
 

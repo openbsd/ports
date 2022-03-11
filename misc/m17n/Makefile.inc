@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/13 10:59:27 sthen Exp $
-
 M17N_V =	1.8.0
 
 CATEGORIES ?=	misc

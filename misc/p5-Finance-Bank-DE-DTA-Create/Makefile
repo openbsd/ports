@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT=	create DTA/DTAUS files for german banking
 
 DISTNAME =	Finance-Bank-DE-DTA-Create-1.03

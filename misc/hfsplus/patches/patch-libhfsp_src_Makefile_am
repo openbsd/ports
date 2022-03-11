@@ -1,4 +1,3 @@
-$OpenBSD: patch-libhfsp_src_Makefile_am,v 1.3 2007/11/21 14:30:35 ajacoutot Exp $
 --- libhfsp/src/Makefile.am.orig	Wed Nov 21 13:58:18 2007
 +++ libhfsp/src/Makefile.am	Wed Nov 21 13:58:44 2007
 @@ -27,7 +27,5 @@ libhfsp_la_SOURCES =	\

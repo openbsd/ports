@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.8 2014/11/20 09:11:22 brad Exp $
 --- configure.in.orig	Tue May 22 02:09:42 2001
 +++ configure.in	Tue Jun  4 11:22:03 2013
 @@ -103,6 +103,8 @@ if test "$mgp_use_freetype" = "yes"; then

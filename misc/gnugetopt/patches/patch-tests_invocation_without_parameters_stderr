@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_invocation_without_parameters_stderr,v 1.1 2014/12/10 20:46:57 rpe Exp $
 --- tests/invocation_without_parameters.stderr.orig	Mon Dec  8 12:44:31 2014
 +++ tests/invocation_without_parameters.stderr	Mon Dec  8 12:44:38 2014
 @@ -1,2 +1,2 @@

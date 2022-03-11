@@ -1,5 +1,3 @@
-$OpenBSD: patch-conformance_interfaces_sigprocmask_17-2_sh,v 1.1 2018/05/20 01:35:54 bluhm Exp $
-
 Use installed package to execute buildonly test.
 
 Index: conformance/interfaces/sigprocmask/17-2.sh

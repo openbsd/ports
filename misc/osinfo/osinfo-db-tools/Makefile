@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/15 10:30:23 ajacoutot Exp $
-
 COMMENT=		tools to manage the libosinfo database
 
 DISTNAME=		osinfo-db-tools-${V}

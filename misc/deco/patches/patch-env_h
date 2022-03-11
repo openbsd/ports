@@ -1,5 +1,3 @@
-$OpenBSD: patch-env_h,v 1.1 2021/02/01 01:22:57 cwen Exp $
-
 Fix -fno-common build failure.
 
 Index: env.h

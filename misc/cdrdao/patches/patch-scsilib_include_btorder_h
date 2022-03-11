@@ -1,4 +1,3 @@
-$OpenBSD: patch-scsilib_include_btorder_h,v 1.5 2015/05/01 06:15:46 ajacoutot Exp $
 --- scsilib/include/btorder.h.orig	Sun Jun 15 23:41:22 2003
 +++ scsilib/include/btorder.h	Fri May  1 08:11:47 2015
 @@ -28,6 +28,9 @@

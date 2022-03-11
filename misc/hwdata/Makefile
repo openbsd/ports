@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2022/03/04 07:05:49 ajacoutot Exp $
-
 COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek

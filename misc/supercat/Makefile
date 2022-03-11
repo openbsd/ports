@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/02/12 14:03:10 bket Exp $
-
 COMMENT=	colorize specific patterns in input
 
 DISTNAME=	supercat-0.5.7

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gc_politics_c,v 1.1 2021/02/14 20:48:18 naddy Exp $
-
 Index: gc_politics.c
 --- gc_politics.c.orig
 +++ gc_politics.c

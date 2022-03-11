@@ -1,5 +1,3 @@
-$OpenBSD: patch-Programs_api_common_h,v 1.1 2021/02/11 12:51:03 sthen Exp $
-
 Index: Programs/api_common.h
 --- Programs/api_common.h.orig
 +++ Programs/api_common.h

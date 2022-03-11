@@ -1,5 +1,3 @@
-$OpenBSD: patch-libhfsp_src_fscheck_h,v 1.1 2021/02/20 03:46:48 gkoehler Exp $
-
 Fix -fno-common by moving fsck_data, from Gentoo
 https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-fs/hfsplusutils/files/hfsplusutils-1.0.4-fno-common-gcc10.patch
 

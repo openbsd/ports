@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2021/02/26 22:40:32 naddy Exp $
-
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2

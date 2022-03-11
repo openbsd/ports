@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT=	get information from Excel spreadsheets
 
 MODULES=	cpan

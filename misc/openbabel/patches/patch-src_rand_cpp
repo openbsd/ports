@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rand_cpp,v 1.1 2018/04/15 11:51:48 jasper Exp $
-
 Index: src/rand.cpp
 --- src/rand.cpp.orig
 +++ src/rand.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-rocdigs_impl_p50x_c,v 1.1 2017/05/07 23:57:16 espie Exp $
-
 Index: rocdigs/impl/p50x.c
 --- rocdigs/impl/p50x.c.orig
 +++ rocdigs/impl/p50x.c

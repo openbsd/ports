@@ -1,5 +1,3 @@
-$OpenBSD: patch-Portroach_SiteHandler_Bitbucket_pm,v 1.1 2020/07/23 14:58:41 jasper Exp $
-
 https://github.com/jasperla/portroach/commit/1921d3e45a030aceb63f70f5ae79d3d80b9d9736
 
 Index: Portroach/SiteHandler/Bitbucket.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/09/02 14:59:44 jeremy Exp $
-
 COMMENT =		text-based presentation program
 
 DISTNAME =		tpp-1.3.1

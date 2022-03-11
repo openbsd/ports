@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/06/25 11:54:02 cwen Exp $
-
 COMMENT=	chemistry file translation program
 
 V=		2.2.3

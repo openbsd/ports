@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/26 18:20:35 naddy Exp $
-
 COMMENT-main =		model railroad control daemon
 COMMENT-gui =		model railroad control daemon client
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/03 20:40:39 sthen Exp $
-
 COMMENT=		browser for a large lexical database of English
 
 DISTNAME=		WordNet-3.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:50 sthen Exp $
-
 COMMENT=	GNU getopt(1) utility
 
 DISTNAME=	getopt-1.1.6

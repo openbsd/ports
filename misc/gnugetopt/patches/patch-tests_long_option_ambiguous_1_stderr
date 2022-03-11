@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_long_option_ambiguous_1_stderr,v 1.1 2014/12/10 20:46:57 rpe Exp $
 --- tests/long_option_ambiguous_1.stderr.orig	Mon Dec  8 12:45:47 2014
 +++ tests/long_option_ambiguous_1.stderr	Mon Dec  8 12:46:08 2014
 @@ -1 +1 @@

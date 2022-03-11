@@ -1,5 +1,3 @@
-$OpenBSD: patch-roclcdr_impl_tools_schedules_c,v 1.1 2017/05/07 23:57:16 espie Exp $
-
 Index: roclcdr/impl/tools/schedules.c
 --- roclcdr/impl/tools/schedules.c.orig
 +++ roclcdr/impl/tools/schedules.c

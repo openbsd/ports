@@ -1,5 +1,3 @@
-$OpenBSD: patch-SConscript,v 1.3 2022/02/26 14:56:04 sthen Exp $
-
 #1, set lib version
 #2, our scons isn't setting CCVERSION
 #3, qt lib names

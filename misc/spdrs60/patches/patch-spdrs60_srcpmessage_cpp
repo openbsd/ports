@@ -1,5 +1,3 @@
-$OpenBSD: patch-spdrs60_srcpmessage_cpp,v 1.1 2017/05/25 00:14:40 espie Exp $
-
 Index: spdrs60/srcpmessage.cpp
 --- spdrs60/srcpmessage.cpp.orig
 +++ spdrs60/srcpmessage.cpp

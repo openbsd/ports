@@ -1,4 +1,3 @@
-$OpenBSD: patch-figlist,v 1.2 2002/08/26 23:38:15 avsm Exp $
 --- figlist.orig	Tue Feb 18 22:02:28 1997
 +++ figlist	Fri Sep 15 16:24:07 2000
 @@ -28,7 +28,7 @@ if [ "$1" = "-d" ]; then

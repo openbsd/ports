@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/02/01 01:22:57 cwen Exp $
-
 COMMENT=	Demos Commander, a free Norton Commander clone
 
 DISTNAME=	deco383

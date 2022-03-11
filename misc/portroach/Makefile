@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/07/23 14:58:41 jasper Exp $
-
 COMMENT=		OpenBSD ports distfile version scanner
 
 GH_ACCOUNT=		jasperla

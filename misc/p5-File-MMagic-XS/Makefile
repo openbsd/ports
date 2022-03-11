@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT =	guess file type with XS (a la mod_mime_magic)
 
 MODULES =	cpan

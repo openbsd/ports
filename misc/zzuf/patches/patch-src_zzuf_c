@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_zzuf_c,v 1.1 2018/05/03 11:02:57 solene Exp $
-
 Index: src/zzuf.c
 --- src/zzuf.c.orig
 +++ src/zzuf.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:51 sthen Exp $
-
 COMMENT=	perl scripts for migrating system information to LDAP
 
 DISTNAME=	MigrationTools-47

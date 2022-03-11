@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:53 sthen Exp $
-
 COMMENT=	Debian package repository producer
 
 V=		5.1.1

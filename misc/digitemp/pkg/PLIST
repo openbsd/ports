@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/01 16:51:25 ajacoutot Exp $
 @bin bin/digitemp_DS2490
 @bin bin/digitemp_DS9097
 @bin bin/digitemp_DS9097U

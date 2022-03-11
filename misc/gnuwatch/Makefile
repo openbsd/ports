@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/06/05 12:34:06 jasper Exp $
-
 COMMENT=		GNU watch command
 
 DISTNAME=		procps-3.2.8

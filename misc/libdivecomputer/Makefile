@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/18 10:42:49 sthen Exp $
-
 COMMENT =	library for communication with dive computers
 
 DISTNAME =	libdivecomputer-0.6.0

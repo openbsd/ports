@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT=	module to map charset names registered with IANA
 
 MODULES=	cpan

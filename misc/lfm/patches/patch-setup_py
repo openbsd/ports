@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.2 2020/12/31 20:05:33 cwen Exp $
-
 setuptools is required at runtime, but using MODPY_SETUPTOOLS=Yes broke the
 build because of --single-version-externally-managed that distutils can't
 deal with. It's needed to supercede distutils' install by setuptools' one.

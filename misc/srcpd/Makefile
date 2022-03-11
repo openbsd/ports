@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/06 10:38:40 ajacoutot Exp $
-
 COMMENT =	daemon to control digital model railroad systems
 
 DISTNAME =	srcpd-2.1.5

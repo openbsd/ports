@@ -1,5 +1,3 @@
-$OpenBSD: patch-lfm_compress_py,v 1.2 2020/12/31 20:05:33 cwen Exp $
-
 Incompatible GNU tar option
 
 Index: lfm/compress.py

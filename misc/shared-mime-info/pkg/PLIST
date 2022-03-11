@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.39 2021/01/09 11:14:37 ajacoutot Exp $
 @define-tag update-mime-database at-end %D/bin/update-mime-database %D/share/mime
 @tag update-mime-database
 @unexec-delete find %D/share/mime/* -maxdepth 0 -type d ! -name packages -exec rm -rf '{}' \+

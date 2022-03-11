@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/12/12 13:51:44 jasper Exp $
 @bin bin/geekcode
 share/doc/geekcode/
 share/doc/geekcode/geekcode.txt

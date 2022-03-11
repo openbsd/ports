@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:48 sthen Exp $
-
 COMMENT=	buffer sporadic I/O for faster tape and pipe throughput
 
 DISTNAME=	buffer-1.17.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-cap_c,v 1.1 2012/03/23 21:08:09 naddy Exp $
 --- cap.c.orig	Fri Mar 23 22:01:28 2012
 +++ cap.c	Fri Mar 23 22:01:46 2012
 @@ -19,6 +19,7 @@

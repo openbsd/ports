@@ -1,5 +1,3 @@
-$OpenBSD: patch-rocs_gen_ogen_c,v 1.1 2017/05/07 23:57:16 espie Exp $
-
 Index: rocs/gen/ogen.c
 --- rocs/gen/ogen.c.orig
 +++ rocs/gen/ogen.c

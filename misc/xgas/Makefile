@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:47:55 sthen Exp $
-
 COMMENT=	animated simulation of an ideal gas
 
 DISTNAME=	xgas

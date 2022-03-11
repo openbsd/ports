@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:15 espie Exp $
 bin/buffer
 @man man/man1/buffer.1

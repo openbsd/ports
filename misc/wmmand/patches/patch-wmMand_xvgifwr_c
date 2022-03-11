@@ -1,5 +1,3 @@
-$OpenBSD: patch-wmMand_xvgifwr_c,v 1.1 2021/02/26 15:25:04 tb Exp $
-
 Index: wmMand/xvgifwr.c
 --- wmMand/xvgifwr.c.orig
 +++ wmMand/xvgifwr.c

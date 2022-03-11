@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2021/08/07 12:41:15 sthen Exp $
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
 @newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/12 12:34:10 bcallah Exp $
-
 COMMENT =	lightweight Qt5 notes manager
 DISTNAME =	feathernotes-${GH_TAGNAME:S/^V//}
 CATEGORIES =	misc x11

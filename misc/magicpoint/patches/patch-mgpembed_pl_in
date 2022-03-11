@@ -1,4 +1,3 @@
-$OpenBSD: patch-mgpembed_pl_in,v 1.1 2013/06/23 13:22:41 espie Exp $
 --- mgpembed.pl.in.orig	Tue Jan  5 04:44:00 1999
 +++ mgpembed.pl.in	Sun Jun 23 15:15:34 2013
 @@ -16,15 +16,16 @@ if (! -x $gzip || ! -x $uuencode) {

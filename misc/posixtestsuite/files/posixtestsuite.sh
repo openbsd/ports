@@ -1,5 +1,4 @@
 #!/bin/sh
-#	$OpenBSD: posixtestsuite.sh,v 1.4 2018/05/21 19:22:58 bluhm Exp $
 
 # Copyright (c) 2018 Alexander Bluhm <bluhm@openbsd.org>
 #

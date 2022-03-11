@@ -1,4 +1,3 @@
-$OpenBSD: patch-common_tmpfile_c,v 1.1 2007/10/26 22:00:31 ajacoutot Exp $
 --- common/tmpfile.c.orig	Tue May  9 10:06:46 1995
 +++ common/tmpfile.c	Fri Oct 26 23:58:56 2007
 @@ -90,7 +90,12 @@ void tmpfile_free()

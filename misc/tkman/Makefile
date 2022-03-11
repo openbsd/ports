@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/26 18:20:35 naddy Exp $
-
 COMMENT =	Tcl/Tk-based manual browser
 
 DISTNAME =	tkman-2.2

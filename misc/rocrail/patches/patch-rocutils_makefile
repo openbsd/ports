@@ -1,5 +1,3 @@
-$OpenBSD: patch-rocutils_makefile,v 1.1 2017/05/07 23:57:16 espie Exp $
-
 Index: rocutils/makefile
 --- rocutils/makefile.orig
 +++ rocutils/makefile

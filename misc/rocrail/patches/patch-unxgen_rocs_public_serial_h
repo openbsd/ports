@@ -1,5 +1,3 @@
-$OpenBSD: patch-unxgen_rocs_public_serial_h,v 1.1 2017/05/07 23:57:16 espie Exp $
-
 Index: unxgen/rocs/public/serial.h
 --- unxgen/rocs/public/serial.h.orig
 +++ unxgen/rocs/public/serial.h

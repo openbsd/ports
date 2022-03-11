@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/06/27 21:03:57 espie Exp $
 @bin bin/wishwn
 @bin bin/wn
 bin/wnb

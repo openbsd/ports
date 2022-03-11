@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:48 sthen Exp $
-
 COMMENT=	binary patch tools
 DISTNAME=	bsdiff-4.3
 CATEGORIES=	misc devel

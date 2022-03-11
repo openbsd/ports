@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:49 sthen Exp $
-
 COMMENT=		tiling window management for the console
 
 DISTNAME=		dvtm-0.15

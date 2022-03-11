@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/03 18:50:48 thfr Exp $
-
 COMMENT =	library of generic stub functions
 V =		0.1
 DISTNAME =	libstubborn-${V}

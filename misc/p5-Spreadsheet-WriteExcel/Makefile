@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT=	write a cross-platform Excel binary file
 
 MODULES=	cpan

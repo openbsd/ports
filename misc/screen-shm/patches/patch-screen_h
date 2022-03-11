@@ -1,5 +1,3 @@
-$OpenBSD: patch-screen_h,v 1.2 2021/02/01 15:59:01 naddy Exp $
-
 Index: screen.h
 --- screen.h.orig
 +++ screen.h

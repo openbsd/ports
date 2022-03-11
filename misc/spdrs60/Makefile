@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/02/10 10:44:26 sebastia Exp $
-
 COMMENT =	graphical SRCP client to control a digital model railway
 
 DISTNAME =	spdrs60-0.6.4

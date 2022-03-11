@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT=	move/copy/append/link multiple files with wildcards
 
 DISTNAME=	mmv

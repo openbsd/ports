@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_meson_build,v 1.3 2021/12/02 21:18:01 ajacoutot Exp $
-
 From 5a406b06792e26a83c7346b3c2443c0bd8d4cdb2 Mon Sep 17 00:00:00 2001
 From: Eli Schwartz <eschwartz@archlinux.org>
 Date: Mon, 8 Nov 2021 18:22:47 -0500

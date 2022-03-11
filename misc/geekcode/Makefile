@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/14 20:48:18 naddy Exp $
-
 COMMENT=	geek code generator
 
 DISTNAME=	geekcode-1.7.3

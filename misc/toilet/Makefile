@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:54 sthen Exp $
-
 COMMENT =	banner art generator with Unicode font and color support
 DISTNAME =	toilet-0.3
 CATEGORIES =	misc

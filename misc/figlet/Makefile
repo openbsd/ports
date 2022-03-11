@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:47:49 sthen Exp $
-
 COMMENT =	generates ASCII banner art
 
 DISTNAME =	figlet-2.2.5

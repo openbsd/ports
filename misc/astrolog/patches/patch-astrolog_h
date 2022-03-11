@@ -1,5 +1,3 @@
-$OpenBSD: patch-astrolog_h,v 1.3 2021/02/05 11:58:32 sthen Exp $
-
 Index: astrolog.h
 --- astrolog.h.orig
 +++ astrolog.h

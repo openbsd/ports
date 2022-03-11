@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/01/03 00:39:21 daniel Exp $
-
 COMMENT =	python package to retrieve data of the IMDb movie database
 
 PORTROACH =	site:https://github.com/alberanid/imdbpy/releases/

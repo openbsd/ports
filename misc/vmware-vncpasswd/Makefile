@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	obfuscate passwords for VMware RemoteDisplay.vnc.key
 
 DISTNAME=	vncpassword

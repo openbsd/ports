@@ -1,5 +1,3 @@
-$OpenBSD: patch-trackdb_FormatConverter_cc,v 1.1 2018/11/29 21:52:20 naddy Exp $
-
 Index: trackdb/FormatConverter.cc
 --- trackdb/FormatConverter.cc.orig
 +++ trackdb/FormatConverter.cc

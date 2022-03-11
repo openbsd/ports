@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/11/11 09:28:48 benoit Exp $
-
 COMMENT =	module to obtain historical financial quotes from exchanges
 
 MODULES =	cpan

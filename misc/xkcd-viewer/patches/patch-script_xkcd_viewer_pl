@@ -1,5 +1,3 @@
-$OpenBSD: patch-script_xkcd_viewer_pl,v 1.3 2020/11/04 08:19:29 landry Exp $
-
 Index: script/xkcd_viewer.pl
 --- script/xkcd_viewer.pl.orig
 +++ script/xkcd_viewer.pl

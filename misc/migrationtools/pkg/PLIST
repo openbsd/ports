@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/23 11:17:02 sthen Exp $
 share/migrationtools/
 share/migrationtools/README
 share/migrationtools/migrate_aliases.pl

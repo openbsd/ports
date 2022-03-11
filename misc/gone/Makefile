@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	terminal locking utility
 
 DISTNAME=	gone-1.3.5

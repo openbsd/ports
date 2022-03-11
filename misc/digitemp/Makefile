@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:49 sthen Exp $
-
 COMMENT=	program for reading values from 1-wire devices
 
 DISTNAME=	digitemp-3.5.0

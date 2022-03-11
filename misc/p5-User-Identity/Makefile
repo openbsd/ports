@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/11/21 09:31:04 benoit Exp $
-
 COMMENT =		maintains info about a physical person
 
 DISTNAME =		User-Identity-1.00

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2004/11/30 07:14:04 kevlo Exp $
 --- Makefile.in.orig	Tue Nov 30 15:03:34 2004
 +++ Makefile.in	Tue Nov 30 15:04:01 2004
 @@ -14,7 +14,7 @@ VERSION=@VERSION@

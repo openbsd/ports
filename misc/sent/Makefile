@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:54 sthen Exp $
-
 COMMENT=		simple plaintext presentation tool
 
 DISTNAME=		sent-1

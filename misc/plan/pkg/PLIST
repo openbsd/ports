@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/10 18:02:18 jasper Exp $
 @pkgpath misc/plan,lesstif
 @newgroup _netplan:549
 @newuser _netplan:549:549:daemon:Plan:/nonexistent:/sbin/nologin

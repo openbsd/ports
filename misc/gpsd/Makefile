@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2022/02/26 14:56:04 sthen Exp $
-
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php

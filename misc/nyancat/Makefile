@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/14 21:55:22 fcambus Exp $
-
 PORTROACH =	limit:^[0-9].*
 
 COMMENT =	nyancat in your terminal

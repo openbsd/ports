@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2021/02/01 04:16:41 jsg Exp $
-
 COMMENT=	X11-based presentation tool
 
 DISTNAME=	magicpoint-1.09a

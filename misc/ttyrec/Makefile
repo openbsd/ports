@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/06/05 13:29:52 stsp Exp $
-
 COMMENT=	tty recorder
 
 DISTNAME=	ttyrec-1.0.8

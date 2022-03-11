@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/12 14:33:04 sthen Exp $
-
 COMMENT=		generic readline wrapper for various programs
 
 V =			0.45.2

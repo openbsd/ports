@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT=		write Perl in Latin
 
 DISTNAME =		Lingua-Romana-Perligata-0.601

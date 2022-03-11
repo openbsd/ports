@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/11/18 13:16:46 sebastia Exp $
 @newgroup _rocrail:685
 @newuser _rocrail:685:_rocrail:daemon:rocrail daemon user:/var/rocrail:/bin/sh
 @bin bin/rocrail

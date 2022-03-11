@@ -1,5 +1,4 @@
 #!/bin/sh
-#	$OpenBSD: os-test.sh,v 1.3 2018/04/28 14:36:20 bluhm Exp $
 set -e
 
 libexec_dir=${TRUEPREFIX}/libexec/os-test

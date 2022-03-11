@@ -1,4 +1,3 @@
-$OpenBSD: patch-mmv_1,v 1.2 2017/04/30 13:55:57 naddy Exp $
 --- mmv.1.orig
 +++ mmv.1
 @@ -141,7 +141,7 @@ If target file exists, it is overwritten,

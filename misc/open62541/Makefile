@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/08/13 15:30:13 bluhm Exp $
-
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.0.6

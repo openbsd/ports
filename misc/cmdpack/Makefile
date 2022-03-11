@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:48 sthen Exp $
-
 COMMENT =		various ROM (and other) development tools
 
 DISTNAME =		cmdpack-1.03-src

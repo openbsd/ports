@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/04 20:27:36 jasper Exp $
 ${P5SITE}/User.pm
 @man man/man3p/User.3p

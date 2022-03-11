@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/14 16:12:55 schwarze Exp $
 @bin bin/dctool
 include/libdivecomputer/
 include/libdivecomputer/atomics_cobalt.h

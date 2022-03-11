@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_issue_192_t,v 1.2 2014/07/15 18:17:06 giovanni Exp $
-
 Test case for CVE-2011-4971
 https://github.com/memcached/memcached/commit/6695ccbc525c36d693aaa3e8337b36aa0c784424
 

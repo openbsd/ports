@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:47:48 sthen Exp $
-
 COMMENT=	checkbook balancing tool
 
 DISTNAME=	cbb-0.73

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/08 07:49:59 landry Exp $
 bin/fasd
 @man man/man1/fasd.1

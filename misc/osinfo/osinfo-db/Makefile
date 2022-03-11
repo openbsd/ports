@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2022/02/15 10:30:00 ajacoutot Exp $
-
 COMMENT=		osinfo database files
 
 V=			20220214

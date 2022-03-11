@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:47:47 sthen Exp $
-
 COMMENT =		generates lists of words given certain information
 
 DISTNAME =		WordGenerator-1.9

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.audio,v 1.2 2018/03/07 22:38:05 sebastia Exp $
 @bin bin/toc2mp3

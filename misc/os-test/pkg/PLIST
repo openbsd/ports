@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/04/13 15:38:15 bluhm Exp $
 bin/os-test
 bin/os-test-html
 libdata/os-test/

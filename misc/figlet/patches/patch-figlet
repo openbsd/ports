@@ -1,4 +1,3 @@
-$OpenBSD: patch-figlet,v 1.5 2012/06/17 07:39:16 benoit Exp $
 --- figlet.6.orig	Fri Jun  1 14:51:09 2012
 +++ figlet.6	Sun Jun 17 09:22:00 2012
 @@ -55,7 +55,27 @@ FIGlet \- display large characters made up of ordinary

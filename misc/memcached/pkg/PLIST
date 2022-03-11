@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/12/13 08:19:19 giovanni Exp $
 @newgroup _memcached:637
 @newuser _memcached:637:_memcached:daemon:memcache daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/memcached

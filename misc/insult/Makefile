@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:51 sthen Exp $
-
 COMMENT =		write insults to standard error on command failure
 
 DISTNAME =		insult-0.4

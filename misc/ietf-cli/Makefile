@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/03/10 12:03:32 kn Exp $
-
 COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
 GH_ACCOUNT=	paulehoffman

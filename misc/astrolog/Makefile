@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/16 16:53:35 sthen Exp $
-
 COMMENT=	astrology program for X11 and text-based user interfaces
 
 DISTNAME=	ast71src

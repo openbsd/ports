@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2019/07/12 20:47:55 sthen Exp $
-
 COMMENT=	view and manipulate contents of a tar file
 
 DISTNAME=	xtar-1.4

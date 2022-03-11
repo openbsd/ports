@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:49 sthen Exp $
-
 COMMENT =	quick access to files in a POSIX shell
 
 PKG_ARCH =	*

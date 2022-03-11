@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:54 sthen Exp $
-
 COMMENT =	read and display GNU info files in Tk
 
 DISTNAME =	tkinfo-2.11

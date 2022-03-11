@@ -1,5 +1,3 @@
-$OpenBSD: patch-locate-test,v 1.1.1.1 2018/05/02 21:06:48 bluhm Exp $
-
 In shell break does not exit case blocks, so break 1 is enough.
 The POSIX test suite requires features of GNU sed, use it explicitly.
 

@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/26 21:49:53 sthen Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/
 
 CATEGORIES=		misc

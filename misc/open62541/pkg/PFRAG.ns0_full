@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.ns0_full,v 1.1 2021/07/29 23:13:25 bluhm Exp $
 share/open62541/tools/ua-nodeset/ADI/
 share/open62541/tools/ua-nodeset/ADI/Opc.Ua.Adi.Classes.cs
 share/open62541/tools/ua-nodeset/ADI/Opc.Ua.Adi.Constants.cs

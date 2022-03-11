@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=		personal file manager
 
 DISTNAME=		pfm-1.92.2

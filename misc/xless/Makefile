@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:55 sthen Exp $
-
 COMMENT=	X11 viewer for text files
 
 DISTNAME=	xless-1.7

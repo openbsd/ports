@@ -1,5 +1,3 @@
-$OpenBSD: patch-extern_h,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
-
 Index: extern.h
 --- extern.h.orig
 +++ extern.h

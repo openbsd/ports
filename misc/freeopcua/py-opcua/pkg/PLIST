@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/19 16:14:58 bluhm Exp $
 bin/uabrowse
 bin/uacall
 bin/uaclient

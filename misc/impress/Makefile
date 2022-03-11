@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	publishing and presentation tool
 
 VERSION=	1.1b9

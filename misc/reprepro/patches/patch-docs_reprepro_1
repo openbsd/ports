@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs_reprepro_1,v 1.1.1.1 2017/01/13 17:26:41 landry Exp $
 --- docs/reprepro.1.orig	Sat Dec 24 01:55:07 2016
 +++ docs/reprepro.1	Fri Jan 13 16:56:23 2017
 @@ -1,7 +1,6 @@

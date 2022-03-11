@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/04 08:19:29 landry Exp $
-
 COMMENT=	XKCD comic viewer
 
 DISTNAME=	XKCD_viewer-0.1

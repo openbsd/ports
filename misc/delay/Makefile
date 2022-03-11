@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:47:49 sthen Exp $
-
 COMMENT=	delay program with feedback to the user
 
 DISTNAME=	delay-1.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	widgets for OPC UA
 
 MODPY_EGG_VERSION =	0.5.10

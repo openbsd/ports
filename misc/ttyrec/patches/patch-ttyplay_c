@@ -1,4 +1,3 @@
-$OpenBSD: patch-ttyplay_c,v 1.1 2009/03/23 17:42:40 naddy Exp $
 --- ttyplay.c.orig	Mon Mar 23 11:32:09 2009
 +++ ttyplay.c	Mon Mar 23 11:32:52 2009
 @@ -81,7 +81,7 @@ double

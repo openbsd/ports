@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2018/06/29 22:16:18 espie Exp $
 @bin bin/redshift
 bin/redshift-gtk
 lib/python${MODPY_VERSION}/site-packages/redshift_gtk/

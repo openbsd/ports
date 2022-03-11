@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/01 15:59:01 naddy Exp $
-
 COMMENT=	multi-screen window manager, with shm support for brltty
 
 # updates depend on availability of patches, not of updates to screen itself

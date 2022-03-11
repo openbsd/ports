@@ -1,5 +1,3 @@
-$OpenBSD: patch-conformance_interfaces_sigaction_28-10_c,v 1.1 2018/05/21 19:22:58 bluhm Exp $
-
 Fix clang printf format security warning to make test compile.
 
 Index: conformance/interfaces/sigaction/28-10.c

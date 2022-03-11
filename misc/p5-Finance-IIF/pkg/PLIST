@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/01/13 18:53:44 simon Exp $
 ${P5SITE}/Finance/
 ${P5SITE}/Finance/IIF.pm
 @man man/man3p/Finance::IIF.3p

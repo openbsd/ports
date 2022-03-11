@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/10 18:35:06 sturm Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/MMagic.pm
 @man man/man3p/File::MMagic.3p

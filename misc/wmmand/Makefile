@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/26 15:25:04 tb Exp $
-
 COMMENT=		wm-dockapp; mandelbrot explorer
 
 DISTNAME=		wmMand-1.3.2

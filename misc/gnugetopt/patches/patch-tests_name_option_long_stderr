@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_name_option_long_stderr,v 1.1 2014/12/10 20:46:57 rpe Exp $
 --- tests/name_option_long.stderr.orig	Mon Dec  8 12:46:57 2014
 +++ tests/name_option_long.stderr	Mon Dec  8 12:47:23 2014
 @@ -1,2 +1,2 @@

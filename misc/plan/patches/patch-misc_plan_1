@@ -1,4 +1,3 @@
-$OpenBSD: patch-misc_plan_1,v 1.1 2005/12/22 08:33:34 mbalmer Exp $
 --- misc/plan.1.orig	Wed Aug 28 22:19:41 2002
 +++ misc/plan.1	Wed Dec 21 23:17:23 2005
 @@ -237,7 +237,7 @@ also contains "." as its last item.

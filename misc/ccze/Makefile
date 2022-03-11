@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:48 sthen Exp $
-
 COMMENT=	log colorizer
 
 DISTNAME=	ccze-0.2.1

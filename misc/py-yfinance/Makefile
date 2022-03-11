@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/23 14:44:55 sthen Exp $
-
 COMMENT=		fetching finanical market data with Python
 
 MODPY_EGG_VERSION=	0.1.69

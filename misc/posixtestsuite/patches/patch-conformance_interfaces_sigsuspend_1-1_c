@@ -1,5 +1,3 @@
-$OpenBSD: patch-conformance_interfaces_sigsuspend_1-1_c,v 1.1 2018/05/08 22:13:36 bluhm Exp $
-
 Check error code of fork(2).
 
 Index: conformance/interfaces/sigsuspend/1-1.c

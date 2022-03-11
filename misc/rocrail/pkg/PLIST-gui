@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-gui,v 1.2 2011/11/18 13:16:46 sebastia Exp $
 @bin bin/rocview
 bin/rocview.sh
 share/rocrail/svg/

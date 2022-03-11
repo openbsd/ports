@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	minimal OPC UA client GUI
 
 MODPY_EGG_VERSION =	0.8.0
