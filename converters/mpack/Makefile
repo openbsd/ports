@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:43:49 sthen Exp $
-
 COMMENT=	external MIME packer/unpacker
 
 DISTNAME=	mpack-1.6

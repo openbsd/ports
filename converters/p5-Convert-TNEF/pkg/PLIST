@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/25 09:04:09 benoit Exp $
 ${P5SITE}/Convert/TNEF.pm
 @man man/man3p/Convert::TNEF.3p

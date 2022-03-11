@@ -1,5 +1,3 @@
-$OpenBSD: patch-mimepp_field_h,v 1.1 2017/05/04 15:46:56 espie Exp $
-
 Index: mimepp/field.h
 --- mimepp/field.h.orig
 +++ mimepp/field.h

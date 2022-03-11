@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:33 sthen Exp $
-
 COMMENT =	stringprep profile for Internationalized Domain Names
 
 DISTNAME =	Net-IDN-Nameprep-1.102

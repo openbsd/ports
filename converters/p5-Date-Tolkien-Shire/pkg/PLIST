@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/05/15 11:05:43 espie Exp $
 ${P5SITE}/Date/Tolkien/Shire.pm
 @man man/man3p/Date::Tolkien::Shire.3p

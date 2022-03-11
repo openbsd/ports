@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/25 13:59:34 bcallah Exp $
-
 COMMENT =	convert dates into the Shire Calendar
 
 DISTNAME =	Date-Tolkien-Shire-1.905

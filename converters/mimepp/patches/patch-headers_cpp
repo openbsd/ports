@@ -1,5 +1,3 @@
-$OpenBSD: patch-headers_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
-
 Index: headers.cpp
 --- headers.cpp.orig
 +++ headers.cpp

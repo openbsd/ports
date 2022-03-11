@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/07/11 13:32:27 robert Exp $
 @bin bin/ytnef
 @bin bin/ytnefprint
 bin/ytnefprocess

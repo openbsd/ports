@@ -1,4 +1,3 @@
-$OpenBSD: patch-libjsonevt_jsonevt_utils_h,v 1.1 2010/06/05 13:52:55 kevlo Exp $
 --- libjsonevt/jsonevt_utils.h.orig	Sun Mar  7 13:40:19 2010
 +++ libjsonevt/jsonevt_utils.h	Tue May 25 17:19:12 2010
 @@ -27,11 +27,11 @@

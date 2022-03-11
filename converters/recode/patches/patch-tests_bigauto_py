@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_bigauto_py,v 1.2 2014/09/27 21:46:32 naddy Exp $
 --- tests/bigauto.py.orig	Thu Apr 27 01:16:04 2000
 +++ tests/bigauto.py	Sat Sep 27 22:57:00 2014
 @@ -1,6 +1,6 @@

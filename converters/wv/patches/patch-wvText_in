@@ -1,4 +1,3 @@
-$OpenBSD: patch-wvText_in,v 1.3 2008/05/12 16:14:42 fgsch Exp $
 --- wvText.in.orig	Thu May  8 14:00:18 2008
 +++ wvText.in	Thu May  8 14:04:21 2008
 @@ -3,7 +3,9 @@

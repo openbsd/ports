@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/18 12:07:51 pirofti Exp $
 @bin bin/k2pdfopt

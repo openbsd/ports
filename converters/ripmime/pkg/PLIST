@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/21 16:57:31 sthen Exp $
 @bin bin/ripmime
 @man man/man1/ripmime.1

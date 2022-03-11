@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:44:32 sthen Exp $
-
 COMMENT=	color space conversions and named lookups
 
 DISTNAME =	Convert-Color-0.11

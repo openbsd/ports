@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT =	convert SountFont sf2 files into GUS patchsets
 DISTNAME =	unsf-1.1.20180608
 CATEGORIES =	converters audio

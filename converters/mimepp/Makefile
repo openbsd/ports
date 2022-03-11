@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/14 02:16:51 naddy Exp $
-
 COMMENT=	C++ class library for MIME messages
 
 DISTNAME=		mimepp-1.0

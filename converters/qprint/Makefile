@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT=	converter to/from quoted-printable encoding
 
 DISTNAME=	qprint-1.1

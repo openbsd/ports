@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT=	extract attachments from MIME encoded emails
 
 DISTNAME=	ripmime-1.4.0.10

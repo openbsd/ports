@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:49 sthen Exp $
-
 PORTROACH=		skipv:1.3.2
 
 COMMENT=		advanced HTML-to-text converter

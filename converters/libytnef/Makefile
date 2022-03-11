@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/11 13:32:27 robert Exp $
-
 COMMENT=		read and convert TNEF files
 
 SHARED_LIBS +=  ytnef                     0.0 # 0.0

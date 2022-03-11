@@ -1,5 +1,3 @@
-$OpenBSD: patch-mimepp_headers_h,v 1.1 2017/05/04 15:46:56 espie Exp $
-
 Index: mimepp/headers.h
 --- mimepp/headers.h.orig
 +++ mimepp/headers.h

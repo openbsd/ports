@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_iconv_lua,v 1.1.1.1 2016/11/02 12:30:39 fcambus Exp $
-
 Fix encoding names and remove test for unsupported encoding
 
 --- test_iconv.lua.orig	Tue Oct 25 21:39:29 2016

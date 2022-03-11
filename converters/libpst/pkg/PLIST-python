@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-python,v 1.5 2020/03/27 08:08:31 ajacoutot Exp $
 @conflict py-libpst-*
 @so lib/python${MODPY_VERSION}/site-packages/_libpst.so

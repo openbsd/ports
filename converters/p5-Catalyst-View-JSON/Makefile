@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT =	JSON view for your data
 
 MODULES =	cpan

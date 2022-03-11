@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/25 23:02:40 simon Exp $
 ${P5SITE}/Encode/
 ${P5SITE}/Encode/IMAPUTF7.pm
 @man man/man3p/Encode::IMAPUTF7.3p

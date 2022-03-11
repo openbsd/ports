@@ -1,5 +1,3 @@
-$OpenBSD: patch-string_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
-
 Index: string.cpp
 --- string.cpp.orig
 +++ string.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/03 22:42:36 fcambus Exp $
-
 COMMENT =	Lua bindings for the iconv library
 
 V =		7

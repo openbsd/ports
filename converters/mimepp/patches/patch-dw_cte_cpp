@@ -1,5 +1,3 @@
-$OpenBSD: patch-dw_cte_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
-
 Index: dw_cte.cpp
 --- dw_cte.cpp.orig
 +++ dw_cte.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/07/16 23:57:19 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Unicode/
 ${P5ARCH}/Unicode/CharName.pm

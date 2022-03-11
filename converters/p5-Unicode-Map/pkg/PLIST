@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2015/07/16 23:57:19 ajacoutot Exp $
 bin/map
 bin/mirrorMappings
 bin/mkCSGB2312

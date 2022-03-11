@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:43:49 sthen Exp $
-
 COMMENT=	converter to/from base64 encoding
 
 DISTNAME=	base64-1.5

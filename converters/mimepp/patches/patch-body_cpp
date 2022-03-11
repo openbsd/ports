@@ -1,5 +1,3 @@
-$OpenBSD: patch-body_cpp,v 1.1 2017/05/04 15:46:56 espie Exp $
-
 Index: body.cpp
 --- body.cpp.orig
 +++ body.cpp

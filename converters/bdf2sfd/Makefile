@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/17 10:24:49 fcambus Exp $
-
 COMMENT =	BDF to SFD converter
 
 V =		1.1.7

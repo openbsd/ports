@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/11 13:40:20 sthen Exp $
 ${P5SITE}/Convert/
 ${P5SITE}/Convert/Base32.pm
 @man man/man3p/Convert::Base32.3p

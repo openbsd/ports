@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_uudeview_1,v 1.1.1.1 2014/11/20 21:14:54 jca Exp $
-
 - Debian patch
 
 --- man/uudeview.1.orig	Sun Apr 13 01:18:29 2003

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/06/29 15:46:54 naddy Exp $
 @bin bin/iconv
 include/iconv.h
 include/libcharset.h

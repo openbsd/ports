@@ -1,5 +1,3 @@
-$OpenBSD: patch-leptonica_mod_allheaders_h,v 1.1 2017/12/04 11:52:27 ajacoutot Exp $
-
 Fix build with newer leptonica.
 
 Index: leptonica_mod/allheaders.h

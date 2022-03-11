@@ -1,4 +1,3 @@
-$OpenBSD: patch-mimepp_msgcmp_h,v 1.1 2010/05/19 16:22:20 espie Exp $
 --- mimepp/msgcmp.h.orig	Wed May 19 18:20:11 2010
 +++ mimepp/msgcmp.h	Wed May 19 18:20:39 2010
 @@ -33,7 +33,8 @@

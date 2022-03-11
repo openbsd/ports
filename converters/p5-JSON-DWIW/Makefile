@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:32 sthen Exp $
-
 COMMENT =	JSON converter that Does What I Want
 
 MODULES =	cpan

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 10:34:22 espie Exp $
 @conflict rpm-*
 bin/rpm2cpio

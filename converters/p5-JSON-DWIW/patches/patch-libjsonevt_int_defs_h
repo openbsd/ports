@@ -1,4 +1,3 @@
-$OpenBSD: patch-libjsonevt_int_defs_h,v 1.2 2015/01/25 20:36:18 benoit Exp $
 --- libjsonevt/int_defs.h.orig	Thu Mar 18 04:24:34 2010
 +++ libjsonevt/int_defs.h	Sun Jan 25 13:35:49 2015
 @@ -9,6 +9,8 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/15 12:32:23 bentley Exp $
-
 COMMENT =	convert between traditional and simplified Chinese
 
 V =		1.1.3

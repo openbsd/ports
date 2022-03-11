@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/03/16 16:09:13 sebastia Exp $
-
 COMMENT =	chooses from multiple available json implementations
 
 DISTNAME =	multi_json-1.15.0

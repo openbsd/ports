@@ -1,4 +1,3 @@
-$OpenBSD: patch-makefile_unx,v 1.1 2007/10/26 20:39:26 ajacoutot Exp $
 --- makefile.unx.orig	Tue Sep  2 21:28:33 1997
 +++ makefile.unx	Fri Oct 26 22:35:39 2007
 @@ -26,7 +26,7 @@ CXX = g++

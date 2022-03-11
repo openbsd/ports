@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	encode/decode binary to printable ASCII
 
 DISTNAME=	btoa-5.2

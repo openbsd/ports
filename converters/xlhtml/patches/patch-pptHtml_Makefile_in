@@ -1,4 +1,3 @@
-$OpenBSD: patch-pptHtml_Makefile_in,v 1.1 2002/04/08 22:26:02 naddy Exp $
 --- pptHtml/Makefile.in.orig	Tue Apr  9 00:21:46 2002
 +++ pptHtml/Makefile.in	Tue Apr  9 00:22:08 2002
 @@ -307,8 +307,8 @@ install-strip:

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:49 sthen Exp $
-
 COMMENT=	cp866<>koi8-r & cp1251<>koi8-r decoders and font converter
 
 DISTNAME=	d1489-1.5.1

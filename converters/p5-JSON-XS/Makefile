@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/11/06 07:58:46 benoit Exp $
-
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
 DISTNAME =	JSON-XS-4.03

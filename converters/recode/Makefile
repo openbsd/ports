@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/23 19:39:11 sthen Exp $
-
 COMMENT=	convert files between character sets and usages
 
 DISTNAME=	recode-3.6

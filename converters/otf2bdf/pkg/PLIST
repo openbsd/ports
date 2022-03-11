@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/22 18:14:58 espie Exp $
 @bin bin/otf2bdf
 @man man/man1/otf2bdf.1

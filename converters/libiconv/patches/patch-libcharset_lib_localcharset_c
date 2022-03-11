@@ -1,5 +1,3 @@
-$OpenBSD: patch-libcharset_lib_localcharset_c,v 1.6 2019/06/29 15:46:54 naddy Exp $
-
 returned by nl_langinfo(CODESET) in the C/POSIX locale
 
 Index: libcharset/lib/localcharset.c

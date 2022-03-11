@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT=	convert Excel and PowerPoint to HTML
 
 V=		0.2.9.8

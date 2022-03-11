@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_zcodec_cxx,v 1.1 2012/11/29 19:07:57 pascal Exp $
 --- src/zcodec.cxx.orig	Fri Jul 13 09:57:48 2012
 +++ src/zcodec.cxx	Fri Jul 13 09:58:02 2012
 @@ -267,7 +267,7 @@ long ZCodec::Decompress( OLEStreamReader& rIStm, std::

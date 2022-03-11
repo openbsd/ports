@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/16 21:29:41 sthen Exp $
-
 COMMENT=	character set conversion library
 
 DISTNAME=	libiconv-1.16

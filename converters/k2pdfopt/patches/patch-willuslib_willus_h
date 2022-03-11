@@ -1,5 +1,3 @@
-$OpenBSD: patch-willuslib_willus_h,v 1.1 2017/12/18 14:52:02 jca Exp $
-
 - clang defines unix, __unix and __unix__, base gcc only defines __unix__
 - stop assuming that non-x86 archs are all little-endian
 

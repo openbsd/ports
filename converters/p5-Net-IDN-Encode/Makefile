@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/08/10 14:52:11 bket Exp $
-
 COMMENT =	Internationalizing Domain Names in Applications
 
 DISTNAME =	Net-IDN-Encode-2.500

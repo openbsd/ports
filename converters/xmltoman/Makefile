@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT=		xml to manpage converter
 
 DISTNAME=		xmltoman-0.4

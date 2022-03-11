@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/11/28 22:55:53 mestre Exp $
 @bin bin/dos2unix
 bin/mac2unix
 @bin bin/unix2dos

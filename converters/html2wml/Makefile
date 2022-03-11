@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT =	on-the-fly HTML to WML conversion
 
 DISTNAME =	html2wml-0.4.11

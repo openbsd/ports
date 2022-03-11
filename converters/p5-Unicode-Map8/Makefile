@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:44:33 sthen Exp $
-
 COMMENT=	module to implement efficient mapping tables
 
 DISTNAME =	Unicode-Map8-0.13

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_transtab_man,v 1.1 2005/09/05 13:48:52 espie Exp $
 --- src/transtab.man.orig	Mon Sep  5 15:41:06 2005
 +++ src/transtab.man	Mon Sep  5 15:45:51 2005
 @@ -1,6 +1,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:00:15 sthen Exp $
-
 COMMENT =		HTML to markdown-formatted text converter
 
 MODPY_EGG_VERSION =	2020.1.16

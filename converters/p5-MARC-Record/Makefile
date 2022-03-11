@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:44:33 sthen Exp $
-
 COMMENT=	MARC (machine readable cataloging format)
 CATEGORIES=	converters
 

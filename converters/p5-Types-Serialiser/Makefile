@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/07 08:09:09 benoit Exp $
-
 COMMENT =	simple data types for common serialisation formats
 
 MODULES =	cpan

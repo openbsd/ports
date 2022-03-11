@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT=	convert data to and from C structs
 
 DISTNAME=	struct-0.3

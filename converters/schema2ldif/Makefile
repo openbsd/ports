@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/22 23:08:01 kmos Exp $
-
 COMMENT =	schema to ldif converter and manager
 
 GH_ACCOUNT =	fusiondirectory

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/11/05 08:09:29 benoit Exp $
-
 COMMENT=	conversions to and from arbitrary character sets and UTF8
 
 DISTNAME =	Unicode-MapUTF8-1.14

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 19:01:11 jasper Exp $
 @pkgpath russian/d1489
 @bin bin/a2kfcnv
 bin/fromdos

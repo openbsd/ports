@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:15 sthen Exp $
-
 COMMENT =	convert numbers to words
 
 MODPY_EGG_VERSION =	0.5.10

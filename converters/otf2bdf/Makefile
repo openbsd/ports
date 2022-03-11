@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/23 16:32:34 jasper Exp $
-
 COMMENT = 	OpenType to BDF font converter
 CATEGORIES =	converters fonts
 HOMEPAGE = 	http://sofia.nmsu.edu/~mleisher/Software/otf2bdf/

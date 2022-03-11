@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:33 sthen Exp $
-
 COMMENT =	Unicode line breaking algorithm
 
 DISTNAME =	Unicode-LineBreak-2019.001

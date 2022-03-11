@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/24 01:28:14 afresh1 Exp $
-
 COMMENT= 	simple calendar month
 
 DISTNAME=	Calendar-Simple-v2.0.0

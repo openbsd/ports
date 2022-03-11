@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	character encoding converter generator package
 
 DISTNAME=	trans120

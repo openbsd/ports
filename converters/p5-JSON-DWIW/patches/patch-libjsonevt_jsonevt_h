@@ -1,4 +1,3 @@
-$OpenBSD: patch-libjsonevt_jsonevt_h,v 1.1 2010/06/05 13:52:55 kevlo Exp $
 --- libjsonevt/jsonevt.h.orig	Sat Mar 13 11:33:04 2010
 +++ libjsonevt/jsonevt.h	Tue May 25 17:20:04 2010
 @@ -74,8 +74,7 @@ JSON_DO_CPLUSPLUS_WRAP_BEGIN

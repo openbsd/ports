@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/11/30 16:34:36 sthen Exp $
-
 # if un-breaking, reenable in ../Makefile
 BROKEN =	k2pdfopt uses modified builds of MuPDF, Leptonica, Tesseract; at least some of these have been updated causing mods to fail
 

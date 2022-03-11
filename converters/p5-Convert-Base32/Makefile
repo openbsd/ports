@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:44:32 sthen Exp $
-
 COMMENT =	encoding and decoding of base32 (RFC4648) strings
 
 DISTNAME =	Convert-Base32-0.06

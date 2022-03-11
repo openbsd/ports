@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/14 21:55:21 fcambus Exp $
-
 COMMENT =	convert Mac font formats to/from pfb, ttf, otf and bdf files
 
 DISTNAME =	fondu_src-060102

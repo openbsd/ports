@@ -1,4 +1,3 @@
-$OpenBSD: patch-libiconv_aliases_h,v 1.1 2017/04/18 17:10:05 jca Exp $
 --- libiconv/aliases.h.orig	Mon Apr 17 16:09:17 2017
 +++ libiconv/aliases.h	Mon Apr 17 16:10:03 2017
 @@ -69,7 +69,7 @@ aliases_hash (register const char *str, register unsig

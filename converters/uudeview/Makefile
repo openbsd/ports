@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT =	uu/xx/Base64/BinHex/yEnc decoder and encoder
 
 DISTNAME =	uudeview-0.5.20

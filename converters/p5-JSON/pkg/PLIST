@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/18 07:54:57 giovanni Exp $
 ${P5SITE}/JSON/
 ${P5SITE}/JSON.pm
 ${P5SITE}/JSON/backportPP/

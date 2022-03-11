@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/28 15:46:34 sthen Exp $
-
 COMMENT =		extract C reference manpages from SQLite3 header file
 
 DISTNAME =		sqlite2mdoc-0.1.10

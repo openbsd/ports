@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/10/11 06:11:35 rsadowski Exp $
-
 COMMENT=	descramble scrambled DVDs
 
 VER=		1.4.3

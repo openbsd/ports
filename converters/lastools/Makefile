@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/03/26 08:23:53 landry Exp $
-
 COMMENT =	tools for LiDAR processing
 DISTNAME =	lastools-0.20200310
 GH_ACCOUNT =	LAStools

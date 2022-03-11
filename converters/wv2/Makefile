@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:43:52 sthen Exp $
-
 COMMENT=	library functions to access Microsoft Word/Excel files
 
 REVISION =	4

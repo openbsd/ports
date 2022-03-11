@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/01/03 22:30:15 bluhm Exp $
-
 COMMENT =	wrapper class for the various JSON classes
 
 DISTNAME =	JSON-Any-1.39

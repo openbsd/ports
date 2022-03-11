@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:44:32 sthen Exp $
-
 COMMENT =	module to extract data from Macintosh BinHex files
 
 MODULES =	cpan

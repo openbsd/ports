@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/09 08:24:47 fcambus Exp $
-
 COMMENT =	UTF-8 support module for Lua and LuaJIT
 
 V =		0.1.3

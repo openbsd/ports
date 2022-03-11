@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:43:49 sthen Exp $
-
 COMMENT=		detect character set and encoding of text files
 
 DISTNAME=		enca-1.19

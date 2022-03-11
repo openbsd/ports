@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/02 14:09:51 jasper Exp $
 bin/marcdump
 ${P5SITE}/MARC/
 ${P5SITE}/MARC/Batch.pm

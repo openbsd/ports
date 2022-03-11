@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/17 22:54:27 bluhm Exp $
-
 COMMENT =	use Cpanel::JSON::XS or JSON::XS or JSON::PP
 
 DISTNAME =	JSON-MaybeXS-1.004003

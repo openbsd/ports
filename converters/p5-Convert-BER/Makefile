@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT=	module to encode and decode objects
 
 DISTNAME=	Convert-BER-1.32

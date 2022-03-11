@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/07/24 19:26:54 cwen Exp $
-
 COMMENT=	binary-to-text file converter
 
 DISTNAME=	ish201a5

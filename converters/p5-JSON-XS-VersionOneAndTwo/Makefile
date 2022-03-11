@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:44:33 sthen Exp $
-
 COMMENT =	shim to support either v1 or v2 APIs of JSON::XS
 
 MODULES =	cpan

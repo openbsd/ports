@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_datatype_h,v 1.1 2005/09/05 13:48:52 espie Exp $
 --- src/datatype.h.orig	Sun Jul 27 01:20:00 1997
 +++ src/datatype.h	Mon Sep  5 15:40:06 2005
 @@ -37,12 +37,13 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/06/19 00:14:35 kn Exp $
-
 COMMENT=	convert .rpm files to cpio format
 
 DISTNAME=	rpm2cpio-1.4

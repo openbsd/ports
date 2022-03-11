@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/07/13 07:26:44 steven Exp $
 ${P5SITE}/Jcode/
 ${P5SITE}/Jcode.pm
 ${P5SITE}/Jcode/Nihongo.pod
