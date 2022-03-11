@@ -11,6 +11,8 @@
      SUBDIR += alacritty
      SUBDIR += amiwm
      SUBDIR += arandr
+     SUBDIR += arc-icon-theme
+     SUBDIR += arc-theme
      SUBDIR += asapm
      SUBDIR += asclock
      SUBDIR += asfiles
