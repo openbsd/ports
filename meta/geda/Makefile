@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/11/01 11:10:14 sthen Exp $
-
 COMMENT=	stack of free/open source CAD/EDA tools (gEDA suite)
 
 PKGNAME=	geda-0.1

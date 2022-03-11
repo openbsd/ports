@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2018/09/04 12:46:16 espie Exp $
-
 COMMENT=	MSP430 meta-package
 
 PKGNAME=	msp430-20120406# version equals the mspgcc LTS release

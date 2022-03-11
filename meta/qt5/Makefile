@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/19 06:16:36 rsadowski Exp $
-
 COMMENT-main =		C++ general-purpose toolkit, meta-package
 COMMENT-examples =	examples for Qt5, meta-package
 

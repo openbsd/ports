@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/24 08:28:24 jj Exp $
-#
 # Sample Makefile for developing MSP430 projects on OpenBSD.
 
 MCU=	msp430

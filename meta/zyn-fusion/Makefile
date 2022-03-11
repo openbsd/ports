@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/29 19:51:31 sthen Exp $
-
 COMMENT=	powerful synthesizer engine with an interactive UI
 
 PKGNAME=	zyn-fusion-3.0.5pre20210207

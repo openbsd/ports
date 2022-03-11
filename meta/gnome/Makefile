@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.219 2022/02/17 13:15:30 ajacoutot Exp $
-
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/08/25 12:06:50 robert Exp $
-
 COMMENT-main =		MATE desktop meta-package (base installation)
 COMMENT-extras =	MATE desktop meta-package (full installation)
 

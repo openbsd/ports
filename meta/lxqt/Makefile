@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/22 05:46:41 rsadowski Exp $
-
 COMMENT-main =		desktop meta-package for LXQt (base installation)
 COMMENT-extras =	desktop meta-package for LXQt (full installation)
 

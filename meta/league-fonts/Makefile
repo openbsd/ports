@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/20 12:46:07 bentley Exp $
-
 COMMENT=	fonts from the League of Moveable Type
 
 PKGNAME=	league-fonts-0.1

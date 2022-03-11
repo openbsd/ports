@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-accessibility,v 1.1.1.1 2021/02/27 07:11:34 rsadowski Exp $
 @pkgpath ${BASE_PKGPATH},-accessibility

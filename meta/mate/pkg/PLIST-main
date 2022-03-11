@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2020/01/09 21:17:01 solene Exp $
 share/doc/pkg-readmes/${PKGSTEM}

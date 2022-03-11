@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 20:47:47 sthen Exp $
-
 CATEGORIES=		meta
 DISTFILES=		#empty
 NO_BUILD=		Yes

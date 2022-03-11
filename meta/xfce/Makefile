@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/12/29 15:26:35 landry Exp $
-
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
 

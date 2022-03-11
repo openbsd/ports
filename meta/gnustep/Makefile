@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/05 09:01:43 sebastia Exp $
-
 COMMENT =	GNUstep desktop meta-package
 
 VERSION =	1.0.0
