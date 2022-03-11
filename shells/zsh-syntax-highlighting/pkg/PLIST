@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/11 04:29:30 rsadowski Exp $
 share/doc/zsh-syntax-highlighting/
 share/doc/zsh-syntax-highlighting/COPYING.md
 share/doc/zsh-syntax-highlighting/README.md

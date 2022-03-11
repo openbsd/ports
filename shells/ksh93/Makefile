@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/27 13:06:29 pascal Exp $
-
 COMMENT =		AT&T Korn Shell
 
 GH_ACCOUNT =		ksh93

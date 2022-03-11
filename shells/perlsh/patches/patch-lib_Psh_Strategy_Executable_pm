@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Psh_Strategy_Executable_pm,v 1.1 2019/05/25 22:10:18 cwen Exp $
-
 Arrays can't be used as references since Perl 5.22.
 
 Index: lib/Psh/Strategy/Executable.pm

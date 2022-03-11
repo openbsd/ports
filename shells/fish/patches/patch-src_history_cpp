@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_history_cpp,v 1.1 2021/11/25 17:56:44 solene Exp $
-
 Backport commit 3ed8a57bc59c931e890c60df38222f4532d09b66
 
 Don't use mmap for history files on OpenBSD

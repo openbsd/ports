@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2022/02/12 17:15:10 sthen Exp $
-
 COMMENT=	Z shell, Bourne shell-compatible
 
 V=		5.8.1

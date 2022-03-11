@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/24 12:34:12 jasper Exp $
 @shell bin/psh
 ${P5SITE}/Psh/
 ${P5SITE}/Psh.pm

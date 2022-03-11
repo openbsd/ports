@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/02/22 23:17:50 sthen Exp $
-
 COMMENT =	network switch style shell
 
 DISTNAME =	nsh-1.0.20210509

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/29 12:53:51 bcallah Exp $
-
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =	expressive programming language and versatile shell

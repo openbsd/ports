@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/11 04:29:30 rsadowski Exp $
-
 COMMENT =	fish like syntax highlighting for zsh
 
 GH_ACCOUNT =	zsh-users

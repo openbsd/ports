@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2005/10/23 10:29:21 alek Exp $
 --- Makefile.PL.orig	Thu Jan 16 20:11:38 2003
 +++ Makefile.PL	Sun Oct 23 11:59:18 2005
 @@ -4,6 +4,7 @@ my $pms= {};

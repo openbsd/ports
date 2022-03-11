@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/25 17:56:44 solene Exp $
-
 COMMENT =		friendly interactive shell
 
 V =			3.3.1

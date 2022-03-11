@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/07/26 10:28:58 solene Exp $
 @bin bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader

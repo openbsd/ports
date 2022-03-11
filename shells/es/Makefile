@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:38 sthen Exp $
-
 COMMENT=	extensible shell, derived from plan9's rc
 
 DISTNAME=	es-0.9-beta1

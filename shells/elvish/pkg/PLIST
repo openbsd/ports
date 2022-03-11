@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/29 12:53:51 bcallah Exp $
 @bin bin/e3bc
 @bin bin/elvish
 @bin bin/nav

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:20 sthen Exp $
-
 COMMENT =		programmable completion functions for bash
 
 GH_PROJECT =		bash-completion

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:38 sthen Exp $
-
 COMMENT=		stand-alone shell with built-in commands
 
 DISTNAME =		sash-3.8

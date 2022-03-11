@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:43 sthen Exp $
-
 COMMENT=		Perl shell
 
 DISTNAME=		psh-1.8.1
