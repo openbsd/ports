@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2021/12/08 02:52:42 abieber Exp $
+# $OpenBSD: Makefile,v 1.6 2022/03/11 12:05:30 kn Exp $
+
+USE_WXNEEDED =	Yes
 
 COMMENT =	client for Matrix chat
 VERSION =	1.2.0
 DISTNAME =	neochat-${VERSION}
+REVISION =	0
 
 CATEGORIES=	net
 
