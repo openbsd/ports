@@ -1,5 +1,3 @@
-$OpenBSD: patch-nmixer_nmixer_h,v 1.3 2018/04/11 17:44:21 jasper Exp $
-
 - sndio support
 - error: invalid suffix on literal; C++11 requires a space between literal and identifier
 

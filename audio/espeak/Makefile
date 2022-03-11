@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:43:33 sthen Exp $
-
 COMMENT=		compact speech synthesizer
 
 DISTNAME=		espeak-1.48.04-source

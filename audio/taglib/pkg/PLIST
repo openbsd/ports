@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/10/31 19:33:45 sthen Exp $
 bin/taglib-config
 include/taglib/
 include/taglib/aifffile.h

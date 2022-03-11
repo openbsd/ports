@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:34 sthen Exp $
-
 COMMENT=		library to access data on a CDDB server
 
 DISTNAME=		libcddb-1.3.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/11/13 11:00:21 espie Exp $
-
 COMMENT =	free library for decoding ATSC A/52 streams, aka AC-3
 
 V =		0.7.5

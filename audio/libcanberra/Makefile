@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/12/11 10:53:06 ajacoutot Exp $
-
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
 COMMENT-gtk3=	gtk+3 helper for libcanberra

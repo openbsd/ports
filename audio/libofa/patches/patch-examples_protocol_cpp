@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_protocol_cpp,v 1.2 2018/11/18 17:06:52 naddy Exp $
 Index: examples/protocol.cpp
 --- examples/protocol.cpp.orig
 +++ examples/protocol.cpp

@@ -1,4 +1,3 @@
-$OpenBSD: patch-misc_dirs_h_default,v 1.1.1.1 2001/02/06 11:52:44 wilfried Exp $
 --- misc/dirs.h.default.orig	Mon Apr 19 19:24:12 1999
 +++ misc/dirs.h.default	Sat Feb  3 16:16:50 2001
 @@ -1,3 +1,3 @@

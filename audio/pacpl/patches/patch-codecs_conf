@@ -1,4 +1,3 @@
-$OpenBSD: patch-codecs_conf,v 1.2 2013/04/27 11:39:47 sthen Exp $
 --- codecs.conf.orig	Sat Mar  7 18:39:37 2009
 +++ codecs.conf	Sat Apr 27 11:35:23 2013
 @@ -5,12 +5,12 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2021/07/30 22:50:19 cwen Exp $
-
 COMMENT=		front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=		grip-4.2.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libpulse-simple_pc_in,v 1.4 2016/01/25 06:56:07 ajacoutot Exp $
-
 links privately to lib/pulseaudio/libpulse{common,core}-X.Y.so
 
 --- libpulse-simple.pc.in.orig	Wed Sep 26 13:27:01 2012

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:13 sthen Exp $
-
 MODPY_EGG_VERSION =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
 DISTNAME =	curseradio-${MODPY_EGG_VERSION}

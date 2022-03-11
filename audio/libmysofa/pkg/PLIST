@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/27 21:04:04 sthen Exp $
 include/mysofa.h
 @static-lib lib/libmysofa.a
 @lib lib/libmysofa.so.${LIBmysofa_VERSION}

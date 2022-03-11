@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/25 22:26:01 sthen Exp $
-
 COMMENT=	tempo/pitch audio processing library
 
 V=		2.1.2

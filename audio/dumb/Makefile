@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT=	IT/MOD/XM player and library
 
 DISTNAME=	dumb-0.9.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2020/03/28 15:00:31 sthen Exp $
-
 COMMENT=	GSM audio codec library and converter
 
 DISTNAME=	gsm-1.0.19

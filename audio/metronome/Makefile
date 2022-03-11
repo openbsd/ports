@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/01/26 11:14:29 jasper Exp $
-
 COMMENT = 	simple metronome
 CATEGORIES =	audio
 DISTNAME = 	metronome-2

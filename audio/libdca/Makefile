@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/27 08:50:31 ajacoutot Exp $
-
 COMMENT=		free DTS Coherent Acoustics decoder
 
 V=			0.0.6

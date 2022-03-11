@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.6 2018/10/04 14:48:38 sthen Exp $
-
 Disable adding -march=native on clang architectures. This allows use
 of instructions that are present on the build machine but not on other
 CPU types within the given architecture, so is not suitable for package

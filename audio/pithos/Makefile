@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/02 00:00:13 sthen Exp $
-
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
 GH_TAGNAME =	1.1.2

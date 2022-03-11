@@ -1,5 +1,3 @@
-$OpenBSD: patch-a2play_CMakeLists_txt,v 1.2 2018/02/14 08:57:38 bentley Exp $
-
 Index: a2play/CMakeLists.txt
 --- a2play/CMakeLists.txt.orig
 +++ a2play/CMakeLists.txt

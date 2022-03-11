@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/23 13:30:08 rapha Exp $
 include/portmidi.h
 include/porttime.h
 @lib lib/libportmidi.so.${LIBportmidi_VERSION}

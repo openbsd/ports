@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2022/03/05 09:32:53 landry Exp $
-
 COMMENT=		curses based frontend for mpd
 
 VER=			0.46

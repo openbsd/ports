@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT=	XDG sound theme
 
 DISTNAME=	sound-theme-freedesktop-0.8

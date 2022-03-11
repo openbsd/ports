@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/26 16:59:32 tb Exp $
-
 COMMENT=	premier dockable radio tuner
 
 DISTNAME=	wmtune-1.1c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-devices_extractjob_h,v 1.1 2018/01/03 08:02:26 rsadowski Exp $
-
 If libcdios header is found before cdparanioas, CD_FRAMESIZE_RAW is not defined
 because our libcdio is too old (this define got added in 0.82):
 

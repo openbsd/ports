@@ -1,5 +1,3 @@
-$OpenBSD: patch-curseradio_curseradio_py,v 1.1.1.1 2019/03/30 13:50:33 bcallah Exp $
-
 Index: curseradio/curseradio.py
 --- curseradio/curseradio.py.orig
 +++ curseradio/curseradio.py

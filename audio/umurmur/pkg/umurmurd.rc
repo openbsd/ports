@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: umurmurd.rc,v 1.4 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/umurmurd"
 

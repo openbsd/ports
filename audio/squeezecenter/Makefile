@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/20 16:44:21 naddy Exp $
-
 COMMENT =	streaming audio server for Squeezebox network music players
 
 V =		7.3.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/10 09:14:50 benoit Exp $
-
 COMMENT =		modified Fraunhofer FDK AAC encoder and decoder
 DISTNAME =		fdk-aac-0.1.6
 CATEGORIES =		audio

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/04/27 10:01:05 sthen Exp $
-
 COMMENT=	lightweight headless squeezebox player
 
 V=		1.9.2.1205

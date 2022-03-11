@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT =	python bindings for musicbrainz NGS webservice
 
 MODPY_EGG_VERSION = 0.7.1

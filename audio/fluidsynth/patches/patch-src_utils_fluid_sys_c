@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_fluid_sys_c,v 1.2 2021/06/25 21:48:40 sthen Exp $
-
 Index: src/utils/fluid_sys.c
 --- src/utils/fluid_sys.c.orig
 +++ src/utils/fluid_sys.c

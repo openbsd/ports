@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/20 20:54:56 landry Exp $
 @conflict py-last-*
 @pkgpath audio/py-last
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/

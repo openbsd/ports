@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_caf_c,v 1.2 2021/04/24 06:17:13 rsadowski Exp $
-
 Fix memory leak in caf_read_header().
 
 Index: src/caf.c

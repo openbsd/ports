@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/16 13:43:21 fcambus Exp $
-
 COMMENT =	console-based OPL2 audio player
 
 V =		1.8.1

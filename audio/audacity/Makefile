@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2022/02/26 18:38:56 sthen Exp $
-
 COMMENT=	free audio editor
 
 # fosshub has proper tarballs, but they are on time-expired URLs

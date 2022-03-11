@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/08/30 14:20:31 fcambus Exp $
-
 BROKEN-alpha =	arctar.c:384: internal compiler error: in extract_insn, at recog.c:2077
 BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and .cfi_endproc directives
 

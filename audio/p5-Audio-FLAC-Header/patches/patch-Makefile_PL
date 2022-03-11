@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.7 2019/01/25 22:27:50 sthen Exp $
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_splay_common_cc,v 1.1 2010/01/11 07:51:27 jakemsr Exp $
 --- src/splay_common.cc.orig	Sun Dec 27 19:35:03 2009
 +++ src/splay_common.cc	Sun Dec 27 19:35:39 2009
 @@ -29,7 +29,11 @@ bool splay_shuffleflag=false,

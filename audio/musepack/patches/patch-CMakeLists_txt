@@ -1,4 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
 --- CMakeLists.txt.orig	Wed Jul 28 13:24:28 2010
 +++ CMakeLists.txt	Wed Jul 28 14:04:26 2010
 @@ -15,10 +15,6 @@ endif(WIN32)

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_rdy,v 1.3 2017/10/12 14:18:04 jca Exp $
 Index: Makefile.rdy
 --- Makefile.rdy.orig
 +++ Makefile.rdy

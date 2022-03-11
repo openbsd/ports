@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/17 14:49:20 danj Exp $
-
 COMMENT=	audio file volume normalizer
 
 DISTNAME=	normalize-0.7.7

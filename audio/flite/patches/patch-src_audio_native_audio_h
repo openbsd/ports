@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_audio_native_audio_h,v 1.1 2009/12/14 00:33:08 jakemsr Exp $
 --- src/audio/native_audio.h.orig	Wed Dec  9 19:46:49 2009
 +++ src/audio/native_audio.h	Wed Dec  9 19:48:27 2009
 @@ -63,6 +63,17 @@

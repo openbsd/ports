@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:39 sthen Exp $
-
 COMMENT=		curses based frontend for mpd
 
 DISTNAME=		pms-0.42

@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_ffap_Makefile_am,v 1.4 2018/11/21 19:54:15 naddy Exp $
-
 Index: plugins/ffap/Makefile.am
 --- plugins/ffap/Makefile.am.orig
 +++ plugins/ffap/Makefile.am

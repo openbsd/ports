@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/02 01:15:23 sthen Exp $
 @bin bin/mp3splt
 @man man/man1/mp3splt.1
 share/locale/

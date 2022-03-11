@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT=	library for serialising LV2 atoms to/from RDF
 
 V=		0.6.8

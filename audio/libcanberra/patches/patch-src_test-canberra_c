@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_test-canberra_c,v 1.1 2010/04/30 09:32:01 ajacoutot Exp $
 --- src/test-canberra.c.orig	Fri Apr 30 11:13:05 2010
 +++ src/test-canberra.c	Fri Apr 30 11:13:32 2010
 @@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {

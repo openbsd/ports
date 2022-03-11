@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Ogg_Vorbis_Header_pm,v 1.2 2021/02/20 17:01:07 ajacoutot Exp $
-
 Index: lib/Ogg/Vorbis/Header.pm
 --- lib/Ogg/Vorbis/Header.pm.orig
 +++ lib/Ogg/Vorbis/Header.pm

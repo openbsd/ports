@@ -1,5 +1,3 @@
-$OpenBSD: patch-alc_alconfig_cpp,v 1.2 2021/07/25 17:33:48 sthen Exp $
-
 Index: alc/alconfig.cpp
 --- alc/alconfig.cpp.orig
 +++ alc/alconfig.cpp

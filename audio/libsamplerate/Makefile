@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/23 08:13:10 sthen Exp $
-
 COMMENT=	audio sample rate conversion library
 
 VER=		0.2.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/05 15:39:14 cwen Exp $
-
 COMMENT=		wm-dockapp; front end for an mp3 player
 
 DISTNAME=		wmmp3-0.12

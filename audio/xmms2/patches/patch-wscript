@@ -1,4 +1,3 @@
-$OpenBSD: patch-wscript,v 1.3 2012/06/09 09:46:18 pascal Exp $
 --- wscript.orig	Thu Oct 20 21:26:08 2011
 +++ wscript	Tue May  8 01:22:59 2012
 @@ -342,6 +342,7 @@ def configure(conf):

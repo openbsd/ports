@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpcenc_CMakeLists_txt,v 1.2 2013/06/23 14:30:52 dcoppa Exp $
 --- mpcenc/CMakeLists.txt.orig	Tue Jul 13 11:30:09 2010
 +++ mpcenc/CMakeLists.txt	Sun Jun 23 15:33:36 2013
 @@ -11,8 +11,8 @@ link_directories(${libmpc_BINARY_DIR}/libmpcenc)

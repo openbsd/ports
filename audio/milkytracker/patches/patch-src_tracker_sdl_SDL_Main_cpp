@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tracker_sdl_SDL_Main_cpp,v 1.5 2020/12/10 14:12:51 fcambus Exp $
 Index: src/tracker/sdl/SDL_Main.cpp
 --- src/tracker/sdl/SDL_Main.cpp.orig
 +++ src/tracker/sdl/SDL_Main.cpp

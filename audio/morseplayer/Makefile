@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:36 sthen Exp $
-
 COMMENT=		morse player
 
 DISTNAME=		morseplayer-1.4

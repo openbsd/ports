@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 15:16:15 bcallah Exp $
-
 COMMENT =	program for extreme audio stretching
 DISTNAME =	paulstretch-2.2-2
 REVISION =	8

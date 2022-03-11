@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT=	check mp3 files for errors
 
 DISTNAME=	checkmate-0.21

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mpd.rc,v 1.7 2019/08/15 05:44:37 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/mpd"
 

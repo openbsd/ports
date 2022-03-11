@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mumble_Settings_cpp,v 1.4 2022/01/20 18:03:18 kn Exp $
-
 Disable submitting anonymous statistics by default
 
 Index: src/mumble/Settings.cpp

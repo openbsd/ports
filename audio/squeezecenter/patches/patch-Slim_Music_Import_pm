@@ -1,4 +1,3 @@
-$OpenBSD: patch-Slim_Music_Import_pm,v 1.2 2009/01/28 01:36:00 sthen Exp $
 --- Slim/Music/Import.pm.orig	Tue Jan 20 02:35:13 2009
 +++ Slim/Music/Import.pm	Wed Jan 21 01:28:36 2009
 @@ -264,9 +264,11 @@ sub setIsScanning {

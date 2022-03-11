@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT=		wm-dockapp to control MPD
 DISTNAME=		WMmp-0.10.0
 REVISION=		5

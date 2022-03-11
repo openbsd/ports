@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:17 naddy Exp $
 @bin bin/ascd
 @man man/man1/ascd.1
 share/AScd/

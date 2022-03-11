@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_launch_c,v 1.3 2021/01/24 18:24:27 ajacoutot Exp $
-
 --- src/launch.c.orig	Sat Jun 25 20:00:55 2005
 +++ src/launch.c	Thu Jan 17 13:44:53 2013
 @@ -261,7 +261,7 @@ void ArgsToLocale(GString **args)

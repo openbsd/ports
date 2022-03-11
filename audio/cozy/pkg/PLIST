@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/08 20:34:14 solene Exp $
 bin/com.github.geigi.cozy
 bin/cozy
 lib/python${MODPY_VERSION}/site-packages/cozy/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT=	CDDA reading utility with extra data verification features
 
 DISTNAME=	cdparanoia-III-alpha9.8

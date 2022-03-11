@@ -1,5 +1,3 @@
-$OpenBSD: patch-playnote_c,v 1.1 2021/02/26 21:29:54 tb Exp $
-
 Index: playnote.c
 --- playnote.c.orig
 +++ playnote.c

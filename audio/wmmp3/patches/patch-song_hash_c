@@ -1,4 +1,3 @@
-$OpenBSD: patch-song_hash_c,v 1.1 2008/07/01 08:25:57 wilfried Exp $
 --- song_hash.c.orig	Mon Apr  3 02:17:22 2000
 +++ song_hash.c	Mon Jun 30 13:33:00 2008
 @@ -1,4 +1,6 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/10/02 22:58:20 jeremy Exp $
-
 COMMENT =	ruby library for reading/writing vorbis comments
 
 DISTNAME =	vorbis_comment-1.0.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT=		extended module player
 
 DISTNAME=		xmp-4.1.0

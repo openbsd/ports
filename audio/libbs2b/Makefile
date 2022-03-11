@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:34 sthen Exp $
-
 COMMENT=	Bauer stereophonic-to-binaural DSP
 REVISION=	3
 

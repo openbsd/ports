@@ -1,4 +1,3 @@
-/* $OpenBSD: cdrom_freebsd.c,v 1.3 2010/05/17 08:31:11 espie Exp $ */
 /*
  * Copyright (C) 1990 Regents of the University of California.
  *

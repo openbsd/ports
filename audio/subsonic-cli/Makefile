@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT =		control subsonic api from cli
 
 MODPY_EGG_VERSION =	0.2.1

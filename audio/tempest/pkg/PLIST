@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/12 10:00:24 espie Exp $
 bin/mksong.sh
 @bin bin/tempest_for_eliza
 @bin bin/tempest_for_mp3

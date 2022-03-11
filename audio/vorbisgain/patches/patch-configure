@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2005/02/07 16:30:53 naddy Exp $
 --- configure.orig	Sun Feb  6 19:39:03 2005
 +++ configure	Sun Feb  6 19:39:28 2005
 @@ -2838,7 +2838,7 @@ if test -z "$GCC"; then

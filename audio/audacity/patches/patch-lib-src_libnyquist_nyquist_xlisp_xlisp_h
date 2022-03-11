@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib-src_libnyquist_nyquist_xlisp_xlisp_h,v 1.4 2021/02/14 08:36:20 ajacoutot Exp $
-
 http://austingroupbugs.net/view.php?id=162#c665
 
 Index: lib-src/libnyquist/nyquist/xlisp/xlisp.h

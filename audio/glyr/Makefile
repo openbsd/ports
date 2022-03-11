@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:33 sthen Exp $
-
 COMMENT =	music related metadata searchengine
 
 GH_ACCOUNT =	sahib

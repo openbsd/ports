@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:34 sthen Exp $
-
 COMMENT=	compact disk input and control library
 
 DISTNAME=	libcdio-2.1.0

@@ -1,6 +1,5 @@
 support current JSON::XS version, diff from FreeBSD ports.
 
-$OpenBSD: patch-Slim_Plugin_LastFM_ProtocolHandler_pm,v 1.2 2009/01/28 01:36:00 sthen Exp $
 --- Slim/Plugin/LastFM/ProtocolHandler.pm.orig	Tue Jan 20 02:35:14 2009
 +++ Slim/Plugin/LastFM/ProtocolHandler.pm	Wed Jan 21 01:28:36 2009
 @@ -7,7 +7,7 @@ package Slim::Plugin::LastFM::ProtocolHandler;

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:33 sthen Exp $
-
 COMMENT=		command-line FLAC player
 
 DISTNAME=		flac123-0.0.12

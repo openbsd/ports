@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/02/26 21:29:54 tb Exp $
-
 COMMENT=	MOD/S3M/MTM tracker that does its own DSP
 DISTNAME=	nspmod-0.1
 REVISION=	1

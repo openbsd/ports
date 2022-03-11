@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:44:30 sthen Exp $
-
 COMMENT =		parse a CDDB/freedb data file
 
 MODULES =		cpan

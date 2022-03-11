@@ -1,5 +1,3 @@
-$OpenBSD: patch-pacpl_conf,v 1.1 2020/07/01 01:28:18 cwen Exp $
-
 Hunk #1: use gnudb.org instead of the dead freedb.org
 
 Index: pacpl.conf

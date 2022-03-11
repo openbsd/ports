@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2021/07/16 10:26:22 sthen Exp $
-
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
 V =		3.5

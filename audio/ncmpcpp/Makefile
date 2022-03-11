@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2022/01/11 01:07:48 jca Exp $
-
 BROKEN-alpha =		error: looser throw specifier for 'virtual OutOfBounds::~OutOfBounds()'
 BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'Binding'
 

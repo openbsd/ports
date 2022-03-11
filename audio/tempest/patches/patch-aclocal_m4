@@ -1,4 +1,3 @@
-$OpenBSD: patch-aclocal_m4,v 1.2 2001/08/14 23:02:58 pvalchev Exp $
 --- aclocal.m4.orig	Tue Aug 14 11:03:11 2001
 +++ aclocal.m4	Tue Aug 14 16:50:38 2001
 @@ -141,6 +141,8 @@ else

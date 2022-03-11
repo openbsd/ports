@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/01/18 10:59:52 ajacoutot Exp $
-
 COMMENT =	Qt-based MPD client
 
 V =		2.4.2

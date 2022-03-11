@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	implementation of the Adaptive Multi Rate speech codec
 
 DISTNAME=	opencore-amr-0.1.5

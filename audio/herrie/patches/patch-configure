@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2008/05/26 08:23:09 jasper Exp $
 --- configure.orig	Wed Apr 23 21:29:24 2008
 +++ configure	Sun May 25 16:14:02 2008
 @@ -393,8 +393,8 @@ $APP_NAME$CFG_BINEXT: $OBJS

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.7.2
 REVISION =		13

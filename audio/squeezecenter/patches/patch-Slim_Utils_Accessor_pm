@@ -1,5 +1,3 @@
-$OpenBSD: patch-Slim_Utils_Accessor_pm,v 1.1 2011/03/02 08:35:14 sthen Exp $
-
 don't rely on Class::XSAccessor internals; taken from newer squeezeboxserver
 
 --- Slim/Utils/Accessor.pm.orig	Mon Jan 24 19:59:11 2011

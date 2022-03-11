@@ -1,5 +1,3 @@
-$OpenBSD: patch-mp3wrap_c,v 1.1 2018/04/24 19:17:57 naddy Exp $
-
 Index: mp3wrap.c
 --- mp3wrap.c.orig
 +++ mp3wrap.c

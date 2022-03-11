@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:34 sthen Exp $
-
 COMMENT =	fork of cdparanoia that uses libcdio for CDROM access
 # 10.2 is the cdparanoia version that this is based upon.
 # 2.0.0 is the actual version number.

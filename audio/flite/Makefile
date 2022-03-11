@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/10/07 13:35:23 visa Exp $
-
 BROKEN-m88k=	out of memory compiling cmu_us_kal_diphone.c
 
 COMMENT=	text to speech utility

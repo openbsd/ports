@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/08/31 08:48:12 landry Exp $
 @pkgpath audio/abcde,lame
 bin/abcde
 bin/abcde-musicbrainz-tool

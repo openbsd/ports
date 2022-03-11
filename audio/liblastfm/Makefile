@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/01/26 17:36:57 rsadowski Exp $
-
 COMMENT =	Qt-based C++ library for the Last.fm webservices
 V =		1.1.0
 DISTNAME =	$V

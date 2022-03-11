@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.1 2020/07/17 18:55:31 ajacoutot Exp $
-
 ERROR: Compiling Vala requires C. Add C to your project languages and rerun Meson.
 
 Index: meson.build

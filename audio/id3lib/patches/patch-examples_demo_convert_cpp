@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_demo_convert_cpp,v 1.1 2017/04/09 11:07:42 sthen Exp $
 --- examples/demo_convert.cpp.orig	Sun Apr  9 12:06:11 2017
 +++ examples/demo_convert.cpp	Sun Apr  9 12:06:17 2017
 @@ -84,7 +84,7 @@ void DisplayTags(ostream &os, luint nTags)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/19 20:49:55 bluhm Exp $
-
 COMMENT=	SOFA (Spatially Oriented Format for Acoustics) file reader
 
 VER=		1.2

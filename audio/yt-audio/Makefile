@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT =		youtube-dl wrapper to manage youtube audio
 
 MODPY_EGG_VERSION =	0.1

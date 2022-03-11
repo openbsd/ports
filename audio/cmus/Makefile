@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main=		ncurses-based music player
 COMMENT-ffmpeg=		ffmpeg input plugin for cmus (.aac, .mp4...)
 

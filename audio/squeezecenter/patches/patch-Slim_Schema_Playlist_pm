@@ -1,4 +1,3 @@
-$OpenBSD: patch-Slim_Schema_Playlist_pm,v 1.1.1.1 2008/10/17 09:59:26 sthen Exp $
 --- Slim/Schema/Playlist.pm.orig	Fri Oct 10 16:39:25 2008
 +++ Slim/Schema/Playlist.pm	Fri Oct 10 16:40:53 2008
 @@ -32,9 +32,11 @@ sub setTracks {

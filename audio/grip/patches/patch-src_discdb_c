@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_discdb_c,v 1.7 2020/07/04 09:28:02 ajacoutot Exp $
-
 overlapping snprintf
 
 Index: src/discdb.c

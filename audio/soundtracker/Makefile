@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/01/31 22:14:02 sthen Exp $
-
 BROKEN=		crashes at startup; keys_init -> keys_make_xkeys -> qsort
 
 COMMENT=	music tracking tool for X11

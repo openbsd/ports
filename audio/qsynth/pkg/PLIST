@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/03/27 22:28:35 sebastia Exp $
 @bin bin/qsynth
 @man man/man1/qsynth.1
 @comment @man man/man1/qsynth.fr.1

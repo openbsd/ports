@@ -1,5 +1,3 @@
-$OpenBSD: patch-portaudio-2_0_pc_in,v 1.2 2021/10/16 19:59:28 sthen Exp $
-
 Index: portaudio-2.0.pc.in
 --- portaudio-2.0.pc.in.orig
 +++ portaudio-2.0.pc.in

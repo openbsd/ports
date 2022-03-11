@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpegsound_mpegsound_h,v 1.2 2017/06/18 14:56:03 bcallah Exp $
 Index: mpegsound/mpegsound.h
 --- mpegsound/mpegsound.h.orig
 +++ mpegsound/mpegsound.h

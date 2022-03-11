@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT=		complete MPD client library
 
 DISTNAME=		POE-Component-Client-MPD-2.001

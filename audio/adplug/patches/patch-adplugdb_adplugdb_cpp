@@ -1,5 +1,3 @@
-$OpenBSD: patch-adplugdb_adplugdb_cpp,v 1.2 2020/05/14 12:19:48 fcambus Exp $
-
 getopt(3) returns an int; avoid infinite loop on platforms where char is
 unsigned.
 

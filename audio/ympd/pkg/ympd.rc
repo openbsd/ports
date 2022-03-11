@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: ympd.rc,v 1.5 2018/01/11 19:27:01 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/ympd"
 daemon_flags="-u _ympd"

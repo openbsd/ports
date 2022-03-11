@@ -1,5 +1,3 @@
-$OpenBSD: patch-abcde_conf,v 1.3 2020/07/01 01:00:43 cwen Exp $
-
 Index: abcde.conf
 --- abcde.conf.orig
 +++ abcde.conf

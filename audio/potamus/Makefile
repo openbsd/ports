@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:39 sthen Exp $
-
 COMMENT =	lightweight audio player with a simple interface
 DISTNAME =	potamus-17
 CATEGORIES =	audio x11

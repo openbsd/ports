@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/27 14:22:47 jca Exp $
-
 COMMENT=	acoustic decoder for CMU Sphinx3 speech recognition system
 
 DISTNAME=	sphinx3-0.8

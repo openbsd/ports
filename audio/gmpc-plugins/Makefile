@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/09/03 12:50:06 ajacoutot Exp $
-
 COMMENT =		bundle of plugins for gmpc
 
 VERSION =		11.8.16

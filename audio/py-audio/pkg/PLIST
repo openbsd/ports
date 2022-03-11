@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/29 15:38:40 sthen Exp $
 @pkgpath audio/py-audio
 lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

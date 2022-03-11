@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2018/06/27 21:03:35 espie Exp $
 @bin bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 @man man/man1/gqmpeg.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_screen_init_cxx,v 1.4 2021/02/20 14:40:40 landry Exp $
-
 Index: src/screen_init.cxx
 --- src/screen_init.cxx.orig
 +++ src/screen_init.cxx

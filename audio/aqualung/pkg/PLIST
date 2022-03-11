@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2018/06/27 21:03:34 espie Exp $
 @bin bin/aqualung
 @man man/man1/aqualung.1
 share/applications/aqualung.desktop

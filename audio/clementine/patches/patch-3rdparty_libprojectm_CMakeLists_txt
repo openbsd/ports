@@ -1,4 +1,3 @@
-$OpenBSD: patch-3rdparty_libprojectm_CMakeLists_txt,v 1.3 2020/01/26 17:37:07 rsadowski Exp $
 Index: 3rdparty/libprojectm/CMakeLists.txt
 --- 3rdparty/libprojectm/CMakeLists.txt.orig
 +++ 3rdparty/libprojectm/CMakeLists.txt

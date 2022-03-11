@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2021/11/08 07:38:07 rsadowski Exp $
-
 COMMENT =	cross-platform 3D audio API
 
 V =		1.21.1

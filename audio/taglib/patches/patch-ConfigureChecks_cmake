@@ -1,5 +1,3 @@
-$OpenBSD: patch-ConfigureChecks_cmake,v 1.2 2021/10/31 19:33:45 sthen Exp $
-
 Index: ConfigureChecks.cmake
 --- ConfigureChecks.cmake.orig
 +++ ConfigureChecks.cmake

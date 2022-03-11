@@ -1,5 +1,3 @@
-$OpenBSD: patch-discid_libdiscid_py,v 1.1.1.1 2019/07/14 23:01:58 kmos Exp $
-
 Shift to just looking for libdiscid.so to prevent future problems
 if the libdiscid major gets bumped.
 

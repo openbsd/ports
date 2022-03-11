@@ -1,4 +1,3 @@
-$OpenBSD: patch-script_cddb2cue,v 1.1.1.1 2008/06/08 11:14:59 simon Exp $
 --- script/cddb2cue.orig	Tue May 20 21:08:39 2008
 +++ script/cddb2cue	Tue May 20 21:08:53 2008
 @@ -139,7 +139,7 @@ cddb2cue - create cue sheet from cddb file

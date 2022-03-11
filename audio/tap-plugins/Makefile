@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT =		TAP LADSPA plugins
 
 DISTNAME =		tap-plugins-0.7.3

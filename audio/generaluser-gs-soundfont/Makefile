@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	GM and GS compatible SoundFont bank for MIDI
 
 V=		1.44

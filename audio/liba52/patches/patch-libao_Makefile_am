@@ -1,4 +1,3 @@
-$OpenBSD: patch-libao_Makefile_am,v 1.1 2014/10/26 15:27:03 ratchov Exp $
 --- libao/Makefile.am.orig	Wed Oct 22 18:29:58 2014
 +++ libao/Makefile.am	Wed Oct 22 18:33:05 2014
 @@ -2,7 +2,7 @@ AM_CFLAGS = $(OPT_CFLAGS)

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Config,v 1.1.1.1 2001/02/06 11:50:21 wilfried Exp $
 --- Config.orig	Sun Feb 14 10:38:33 1999
 +++ Config	Mon Feb  5 07:59:10 2001
 @@ -31,18 +31,11 @@ XCOMM

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT =		CAPS LADSPA plugins
 
 V =			0.9.24

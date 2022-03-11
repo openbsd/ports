@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugins_mms_Makefile_am,v 1.4 2016/09/13 08:48:12 dcoppa Exp $
 --- plugins/mms/Makefile.am.orig	Sun Sep  4 09:33:31 2016
 +++ plugins/mms/Makefile.am	Sun Sep  4 09:34:06 2016
 @@ -1,18 +1,6 @@

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_JAMA_tnt_math_utils_h,v 1.2 2021/02/26 18:20:32 naddy Exp $
 --- lib/JAMA/tnt_math_utils.h.orig	Wed May 10 13:58:50 2006
 +++ lib/JAMA/tnt_math_utils.h	Fri Nov 19 08:10:26 2010
 @@ -20,11 +20,20 @@ inline const _Tp& max(const _Tp& __a, const _Tp& __b) 

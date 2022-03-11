@@ -1,4 +1,3 @@
-$OpenBSD: patch-logo_setup_c,v 1.3 2008/01/30 15:02:51 jasper Exp $
 --- logo_setup.c.orig	Tue Jan 12 19:59:46 1993
 +++ logo_setup.c	Wed Jan 30 16:01:35 2008
 @@ -28,6 +28,9 @@

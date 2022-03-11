@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/10 15:40:11 tb Exp $
-
 COMMENT=		Streams audio to Apple AirPort Express device
 
 DISTNAME=		rtunes-0.8

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT=	interface to CDDB and freedb servers
 
 DISTNAME=	CDDB-1.222

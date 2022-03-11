@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
 REVISION =	7

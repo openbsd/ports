@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/04/18 23:53:25 kn Exp $
-
 PORTROACH =	limit:^0\.11\.1
 
 # The CELT codec has been merged into the IETF Opus codec and is now obsolete

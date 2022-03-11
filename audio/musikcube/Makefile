@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/30 22:33:28 solene Exp $
-
 COMMENT =	terminal-based music player
 
 GH_ACCOUNT =	clangen

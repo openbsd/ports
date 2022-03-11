@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample_wmtunerc,v 1.2 2001/12/20 21:18:02 naddy Exp $
 --- sample.wmtunerc.orig	Sat Oct 24 19:18:21 1998
 +++ sample.wmtunerc	Sat Dec  8 14:36:35 2001
 @@ -1,17 +1,15 @@

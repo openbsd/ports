@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpcchap_CMakeLists_txt,v 1.2 2013/06/23 14:30:52 dcoppa Exp $
 --- mpcchap/CMakeLists.txt.orig	Sat Aug 21 17:55:01 2010
 +++ mpcchap/CMakeLists.txt	Sun Jun 23 15:33:01 2013
 @@ -1,8 +1,8 @@

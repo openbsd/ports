@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/26 18:20:32 naddy Exp $
-
 COMMENT =		decoder, encoder and replaygain for musepack files
 
 V =			475

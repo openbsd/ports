@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 20:43:36 sthen Exp $
-
 PORTROACH=	skipv:0.8.5
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor

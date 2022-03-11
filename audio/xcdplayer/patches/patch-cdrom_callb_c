@@ -1,4 +1,3 @@
-$OpenBSD: patch-cdrom_callb_c,v 1.3 2010/05/17 08:31:12 espie Exp $
 --- cdrom_callb.c.orig	Tue Jan 12 19:59:48 1993
 +++ cdrom_callb.c	Mon May 17 10:28:00 2010
 @@ -19,9 +19,13 @@

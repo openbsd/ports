@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/03/10 12:03:30 kn Exp $
-
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
 

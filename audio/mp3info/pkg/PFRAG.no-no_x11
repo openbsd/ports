@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2016/10/17 11:56:26 jca Exp $
 @bin bin/gmp3info

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/10 09:14:50 benoit Exp $
 @bin bin/aac-enc
 include/fdk-aac/
 include/fdk-aac/FDK_audio.h

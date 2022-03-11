@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/07/03 21:44:30 sthen Exp $
-
 COMMENT=	fast audio metadata and tag reader for Perl
 
 DISTNAME=	Audio-Scan-1.01

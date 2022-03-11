@@ -1,5 +1,3 @@
-$OpenBSD: patch-jack_types_h,v 1.3 2021/12/29 20:08:33 sdk Exp $
-
 Disable "register" variable name
 Picked from: https://github.com/jackaudio/headers/commit/ab27e5a59fe5294cf09d50ffa2414d1542cf245e
 

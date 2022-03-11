@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.3 2011/04/05 14:17:55 dcoppa Exp $
-
 Remove broken test
 See: http://lists.xiph.org/pipermail/celt-dev/2010-November/000519.html
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-mpegsound_huffmantable_cc,v 1.1 2018/04/11 17:44:21 jasper Exp $
-
 error: constant expression evaluates to -1 which cannot be narrowed to type 'unsigned int'
 
 Index: mpegsound/huffmantable.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2021/10/30 22:59:03 namn Exp $
-
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 V=		14.4.2pl20210509

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/03 21:44:30 sthen Exp $
-
 COMMENT=	interface to libcdaudio
 DISTNAME=	Audio-CD-0.04
 REVISION =	8

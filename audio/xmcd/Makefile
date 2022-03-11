@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2020/01/26 11:14:29 jasper Exp $
-
 COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6

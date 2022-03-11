@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT=	MIDI to WAV renderer and player
 
 V=		2.15.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/26 18:20:31 naddy Exp $
-
 COMMENT =	Open Fingerprint Architecture library
 
 DISTNAME =	libofa-0.9.3

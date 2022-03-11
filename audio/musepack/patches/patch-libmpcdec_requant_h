@@ -1,5 +1,3 @@
-$OpenBSD: patch-libmpcdec_requant_h,v 1.1 2021/01/31 08:22:33 jsg Exp $
-
 add extern keyword to global variable declaration
 svn r479
 

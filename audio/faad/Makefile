@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2019/07/14 00:39:35 naddy Exp $
-
 # gcc -iquote
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
 

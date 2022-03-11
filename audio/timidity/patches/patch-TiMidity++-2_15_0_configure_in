@@ -1,5 +1,3 @@
-$OpenBSD: patch-TiMidity++-2_15_0_configure_in,v 1.1 2019/05/15 13:37:32 bcallah Exp $
-
 Index: TiMidity++-2.15.0/configure.in
 --- TiMidity++-2.15.0/configure.in.orig
 +++ TiMidity++-2.15.0/configure.in

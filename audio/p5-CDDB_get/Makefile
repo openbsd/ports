@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/01 01:09:00 cwen Exp $
-
 COMMENT=		perl interface to query for cddb-information
 
 DISTNAME=		CDDB_get-2.28.1

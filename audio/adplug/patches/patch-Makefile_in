@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2021/01/16 12:20:38 fcambus Exp $
-
 Do not hardcode library version number.
 
 Index: Makefile.in

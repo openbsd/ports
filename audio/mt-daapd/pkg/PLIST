@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/05/12 10:00:24 espie Exp $
 @pkgpath audio/mt-daapd,howl
 @newgroup _mt-daapd:634
 @newuser _mt-daapd:634:_mt-daapd:daemon:mt-daapd:/nonexistent:/sbin/nologin

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:36 sthen Exp $
-
 COMMENT =		MCP LADSPA plugins
 
 DISTNAME =		MCP-plugins-0.4.0

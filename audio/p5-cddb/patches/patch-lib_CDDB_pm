@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_CDDB_pm,v 1.1 2020/07/01 01:18:20 cwen Exp $
-
 freedb is dead, use gnudb.org instead
 
 Index: lib/CDDB.pm

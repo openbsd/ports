@@ -1,4 +1,3 @@
-$OpenBSD: patch-common_mp4ff_mp4ffint_h,v 1.1 2012/05/22 18:38:48 ajacoutot Exp $
 --- common/mp4ff/mp4ffint.h.orig	Mon May 14 17:06:54 2012
 +++ common/mp4ff/mp4ffint.h	Mon May 14 17:07:25 2012
 @@ -35,7 +35,7 @@

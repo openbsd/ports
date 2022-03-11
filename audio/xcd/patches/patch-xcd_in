@@ -1,4 +1,3 @@
-$OpenBSD: patch-xcd_in,v 1.2 2011/10/31 16:55:41 stu Exp $
 --- xcd.in.orig	Sun Nov  1 19:01:47 1998
 +++ xcd.in	Sun Oct 30 11:26:44 2011
 @@ -1,4 +1,6 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2022/01/15 14:14:13 ajacoutot Exp $
-
 COMMENT=	common interface to speech synthesis
 
 V=		0.11.1

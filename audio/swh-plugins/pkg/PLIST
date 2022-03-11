@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/01 12:15:48 ajacoutot Exp $
 lib/ladspa/
 lib/ladspa/alias_1407.so
 lib/ladspa/allpass_1895.so

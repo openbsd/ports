@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_am,v 1.7 2017/04/22 13:43:21 ajacoutot Exp $
 --- src/Makefile.am.orig	Tue May 15 11:11:00 2012
 +++ src/Makefile.am	Sat Apr 22 15:04:40 2017
 @@ -80,7 +80,7 @@ libcanberra_la_SOURCES += \

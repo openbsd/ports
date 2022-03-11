@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2018/06/29 22:16:08 espie Exp $
 @bin bin/calfjackhost
 lib/ladspa/
 lib/ladspa/calf.so

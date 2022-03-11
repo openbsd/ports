@@ -1,5 +1,3 @@
-$OpenBSD: patch-libdca_libdca_pc_in,v 1.1 2019/12/28 10:25:15 ajacoutot Exp $
-
 Fix include directory path in libdca.pc.in.
 
 Index: libdca/libdca.pc.in

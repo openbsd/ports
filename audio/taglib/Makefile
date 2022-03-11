@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/10/31 19:33:45 sthen Exp $
-
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.12
 

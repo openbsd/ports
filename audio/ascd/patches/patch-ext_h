@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_h,v 1.1 2013/04/25 16:38:40 sthen Exp $
 --- ext.h.orig	Thu Apr 25 17:27:12 2013
 +++ ext.h	Thu Apr 25 17:27:18 2013
 @@ -25,9 +25,6 @@

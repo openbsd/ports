@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/15 14:56:34 sthen Exp $
-
 COMMENT =		music studio with tracking, sampling and MIDI
 
 V =			1.2.2

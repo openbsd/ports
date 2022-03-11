@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 14:35:29 phessler Exp $
 @bin bin/dumb2wav
 @bin bin/dumbout
 @bin bin/dumbplay

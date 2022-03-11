@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_xmlParser_xmlParser_cpp,v 1.1 2018/04/10 06:34:12 jasper Exp $
-
 Index: src/xmlParser/xmlParser.cpp
 --- src/xmlParser/xmlParser.cpp.orig
 +++ src/xmlParser/xmlParser.cpp

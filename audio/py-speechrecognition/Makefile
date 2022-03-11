@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT =	Python library for performing speech recognition
 
 PKGNAME =	py-speechrecognition-${GH_TAGNAME}

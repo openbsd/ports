@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.120 2022/01/08 07:29:52 ajacoutot Exp $
-
 COMMENT=		cross-platform networked sound server
 
 VERSION=		15.0

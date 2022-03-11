@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/30 13:50:33 bcallah Exp $
 bin/curseradio
 lib/python${MODPY_VERSION}/site-packages/curseradio/
 lib/python${MODPY_VERSION}/site-packages/curseradio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

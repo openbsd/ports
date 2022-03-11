@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT =	MOD player
 DISTNAME =	tracker-5.3
 REVISION =	4

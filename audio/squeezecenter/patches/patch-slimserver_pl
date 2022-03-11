@@ -1,4 +1,3 @@
-$OpenBSD: patch-slimserver_pl,v 1.3 2009/07/12 19:58:28 sthen Exp $
 --- slimserver.pl.orig	Mon Jun 15 23:02:33 2009
 +++ slimserver.pl	Sat Jul  4 15:00:23 2009
 @@ -816,7 +816,7 @@ sub changeEffectiveUserAndGroup {

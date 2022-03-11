@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/08 20:34:13 solene Exp $
-
 COMMENT =		gtk3 audiobook player
 
 GH_ACCOUNT =		geigi

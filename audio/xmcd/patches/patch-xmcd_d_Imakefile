@@ -1,4 +1,3 @@
-$OpenBSD: patch-xmcd_d_Imakefile,v 1.3 2009/12/20 21:00:24 kili Exp $
 --- xmcd_d/Imakefile.orig	Sat Feb  5 08:26:29 2000
 +++ xmcd_d/Imakefile	Mon Nov  6 13:00:49 2000
 @@ -43,7 +43,7 @@

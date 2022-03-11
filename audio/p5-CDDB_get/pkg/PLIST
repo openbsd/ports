@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2006/11/29 20:21:46 jasper Exp $
 bin/cddb
 ${P5SITE}/CDDB_cache.pm
 ${P5SITE}/CDDB_get.pm

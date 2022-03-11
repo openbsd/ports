@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/26 18:20:32 naddy Exp $
-
 COMMENT =	library for real time input and output of MIDI data
 
 DISTNAME =	portmidi-src-217

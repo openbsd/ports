@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_StatusSupportOptions_cmake,v 1.1 2020/02/22 17:34:36 rapha Exp $
-
 Index: cmake/StatusSupportOptions.cmake
 --- cmake/StatusSupportOptions.cmake.orig
 +++ cmake/StatusSupportOptions.cmake

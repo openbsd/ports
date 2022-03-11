@@ -1,4 +1,3 @@
-$OpenBSD: patch-dsp_v4f_IIR2_h,v 1.2 2018/04/15 14:30:15 naddy Exp $
 Index: dsp/v4f_IIR2.h
 --- dsp/v4f_IIR2.h.orig
 +++ dsp/v4f_IIR2.h

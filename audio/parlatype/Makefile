@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:39 sthen Exp $
-
 V =		1.5.6
 COMMENT =	minimal audio player for manual speech transcription
 DISTNAME =	parlatype-${V}

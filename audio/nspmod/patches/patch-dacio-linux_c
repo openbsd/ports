@@ -1,4 +1,3 @@
-$OpenBSD: patch-dacio-linux_c,v 1.2 2009/12/24 21:43:32 jakemsr Exp $
 --- dacio-linux.c.orig	Sun Sep 17 05:51:43 1995
 +++ dacio-linux.c	Sat Dec 19 22:00:33 2009
 @@ -1,10 +1,8 @@

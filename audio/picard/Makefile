@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2022/02/08 12:34:29 sthen Exp $
-
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
 MODPY_EGG_VERSION =	2.7.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT=		Perl extension for Ogg Vorbis streams
 
 V=			0.05

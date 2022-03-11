@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_AboutDialog_cpp,v 1.1 2021/02/14 08:36:20 ajacoutot Exp $
-
 fatal error: 'RevisionIdent.h' file not found
 
 Index: src/AboutDialog.cpp

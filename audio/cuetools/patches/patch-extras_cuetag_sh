@@ -1,4 +1,3 @@
-$OpenBSD: patch-extras_cuetag_sh,v 1.2 2012/10/11 14:37:04 sthen Exp $
 --- extras/cuetag.sh.orig	Wed Feb 15 01:10:02 2006
 +++ extras/cuetag.sh	Thu Oct 11 16:36:37 2012
 @@ -18,7 +18,7 @@ vorbis()

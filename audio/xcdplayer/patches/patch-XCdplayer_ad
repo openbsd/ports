@@ -1,4 +1,3 @@
-$OpenBSD: patch-XCdplayer_ad,v 1.2 2008/01/30 15:02:51 jasper Exp $
 --- XCdplayer.ad.orig	Tue Jan 12 19:59:41 1993
 +++ XCdplayer.ad	Wed Jan 30 16:01:35 2008
 @@ -19,11 +19,10 @@ XCdplayer*Font:				-misc-fixed-bold-r-normal--13-*

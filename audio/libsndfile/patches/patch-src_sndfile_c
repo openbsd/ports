@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sndfile_c,v 1.2 2021/04/24 06:17:13 rsadowski Exp $
-
 Jump back to the start of guess_file_type() rather than recursing into it.
 
 Index: src/sndfile.c

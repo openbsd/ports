@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_avcodec_avcodec_c,v 1.4 2014/04/06 20:13:11 brad Exp $
-
 Deal with newer FFmpeg API.
 
 --- src/plugins/avcodec/avcodec.c.orig	Thu Mar 27 01:42:57 2014

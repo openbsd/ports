@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT=	embedding CDDB information in MP3s
 
 DISTNAME=	mp3cddb-0.1

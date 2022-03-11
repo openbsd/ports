@@ -1,4 +1,3 @@
-$OpenBSD: patch-gverb_Makefile_am,v 1.1.1.1 2010/10/24 10:32:48 jakemsr Exp $
 --- gverb/Makefile.am.orig	Sun Jan 18 00:05:25 2009
 +++ gverb/Makefile.am	Sun Jan 18 00:05:37 2009
 @@ -3,9 +3,9 @@ RANLIB=ranlib

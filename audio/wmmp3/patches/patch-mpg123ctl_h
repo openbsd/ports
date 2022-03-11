@@ -1,5 +1,3 @@
-$OpenBSD: patch-mpg123ctl_h,v 1.1 2021/02/05 15:39:14 cwen Exp $
-
 Add missing include
 
 Index: mpg123ctl.h

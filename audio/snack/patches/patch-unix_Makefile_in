@@ -1,5 +1,3 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.2 2011/08/25 12:50:28 naddy Exp $
-
 don't override CFLAGS
 sndio bits
 install to OpenBSD tcl layout

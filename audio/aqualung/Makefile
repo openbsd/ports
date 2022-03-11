@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2020/08/31 18:05:56 jeremy Exp $
-
 COMMENT=	advanced music player
 
 VERSION=	1.1

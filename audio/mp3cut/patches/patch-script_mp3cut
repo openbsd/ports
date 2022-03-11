@@ -1,4 +1,3 @@
-$OpenBSD: patch-script_mp3cut,v 1.1.1.1 2008/06/08 11:14:59 simon Exp $
 --- script/mp3cut.orig	Tue May 20 21:09:23 2008
 +++ script/mp3cut	Tue May 20 21:09:32 2008
 @@ -358,7 +358,7 @@ mp3cut - split MP3 files according to cue sheets

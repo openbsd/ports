@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 19:39:09 sthen Exp $
-
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:37 sthen Exp $
-
 COMMENT=	nsf (Nintendo sound) file player
 
 DISTNAME=	nosefart-2.3-mls

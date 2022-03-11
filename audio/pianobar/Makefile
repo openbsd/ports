@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.90 2022/02/01 14:16:08 sthen Exp $
-
 COMMENT =	command-line client for Pandora Internet Radio
 
 DISTNAME =	pianobar-2020.11.28

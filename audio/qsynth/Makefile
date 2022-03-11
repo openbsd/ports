@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/08/17 19:39:40 sebastia Exp $
-
 COMMENT =		Qt GUI Interface for FluidSynth
 
 DISTNAME =		qsynth-0.6.3

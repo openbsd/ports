@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/21 20:37:34 sthen Exp $
 @conflict abcde-<=2.3.0
 @bin bin/cd-discid
 @man man/man1/cd-discid.1

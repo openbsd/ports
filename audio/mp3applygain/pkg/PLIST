@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/05 15:38:23 espie Exp $
 @bin bin/mp3applygain
 @man man/man1/mp3applygain.1

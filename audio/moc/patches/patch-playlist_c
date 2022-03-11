@@ -1,5 +1,3 @@
-$OpenBSD: patch-playlist_c,v 1.1.1.1 2016/07/10 10:40:43 czarkoff Exp $
-
 Replace rand(3)-based computation with arc4random_uniform(3).
 
 --- playlist.c.orig	Sun Jun  5 13:54:04 2016

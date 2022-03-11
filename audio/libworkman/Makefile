@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:43:35 sthen Exp $
-
 COMMENT=		multi-platform CD-Player library
 
 DISTNAME=		libworkman-1999-06-20

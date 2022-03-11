@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
 lib/libsnackstub2.2.a
 lib/tcl/snack/
 lib/tcl/snack/libsnack.so

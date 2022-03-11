@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/06 12:04:20 rapha Exp $
 @bin bin/rubberband
 include/rubberband/
 include/rubberband/RubberBandStretcher.h

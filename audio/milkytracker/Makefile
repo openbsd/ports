@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/12/10 14:12:51 fcambus Exp $
-
 COMMENT =	Fasttracker II inspired MOD tracker
 
 GH_ACCOUNT =	milkytracker

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.6 2019/05/06 14:58:54 cwen Exp $
-
 The ffmpeg plugin uses functions from libavcodec, so ensure that it is linked
 against libavcodec.
 

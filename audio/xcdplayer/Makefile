@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT=	CD player for X11
 DISTNAME=	xcdplayer-2.2
 REVISION=	6

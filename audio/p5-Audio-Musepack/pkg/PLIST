@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/13 07:40:44 benoit Exp $
 ${P5SITE}/Audio/
 ${P5SITE}/Audio/APE.pm
 ${P5SITE}/Audio/APETags.pm

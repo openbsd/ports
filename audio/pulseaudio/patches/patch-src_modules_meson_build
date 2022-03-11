@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_modules_meson_build,v 1.2 2022/02/24 13:46:20 ajacoutot Exp $
-
 2nd chunk:
 Should match b_lundef in meson(1).
 

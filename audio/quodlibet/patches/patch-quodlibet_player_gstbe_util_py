@@ -1,5 +1,3 @@
-$OpenBSD: patch-quodlibet_player_gstbe_util_py,v 1.4 2021/03/01 16:18:19 sthen Exp $
-
 Fallback to autoaudiosink etc., I would use sndiosink directly here but
 had some issues with sigsegv when doing that.
 

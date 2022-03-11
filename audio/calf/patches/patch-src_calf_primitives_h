@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_calf_primitives_h,v 1.3 2017/05/03 09:46:40 espie Exp $
 Err, yeah, let's return something
 
 Index: src/calf/primitives.h

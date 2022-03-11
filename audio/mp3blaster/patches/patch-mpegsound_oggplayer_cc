@@ -1,5 +1,3 @@
-$OpenBSD: patch-mpegsound_oggplayer_cc,v 1.3 2017/06/18 14:56:03 bcallah Exp $
-
 ov_read() can return less than asked for.  get the full 4096 bytes
 before continuing to save cycles and avoid confusion elsewhere.
 

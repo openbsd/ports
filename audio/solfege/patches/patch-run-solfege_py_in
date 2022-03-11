@@ -1,4 +1,3 @@
-$OpenBSD: patch-run-solfege_py_in,v 1.2 2020/11/08 15:59:43 jca Exp $
 Index: run-solfege.py.in
 --- run-solfege.py.in.orig
 +++ run-solfege.py.in

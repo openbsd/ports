@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT =		multi-purpose wave data processing utility
 
 DISTNAME =		shntool-3.0.10

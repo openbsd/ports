@@ -1,4 +1,3 @@
-$OpenBSD: patch-wavcmp_CMakeLists_txt,v 1.1 2013/06/23 14:30:52 dcoppa Exp $
 --- wavcmp/CMakeLists.txt.orig	Sun Jun 23 15:25:39 2013
 +++ wavcmp/CMakeLists.txt	Sun Jun 23 15:33:49 2013
 @@ -4,5 +4,6 @@ link_directories(${libmpc_BINARY_DIR}/libwavformat)

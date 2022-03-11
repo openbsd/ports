@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_flac_flac_c,v 1.1 2016/09/13 08:48:12 dcoppa Exp $
-
 commit aa34db82ba64cc5f8d29b5109ddefd2811ca23e5
 Author: Alexey Yakovenko <wakeroid@gmail.com>
 Date:   Mon Aug 8 18:59:29 2016 +0200

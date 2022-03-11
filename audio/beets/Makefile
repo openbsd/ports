@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2022/03/01 21:26:19 sthen Exp $
-
 COMMENT=	CLI tools to manage music collections
 
 MODPY_EGG_VERSION= 1.6.0

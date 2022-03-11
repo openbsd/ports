@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/11/30 23:06:50 jca Exp $
-
 COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player

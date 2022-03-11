@@ -1,4 +1,3 @@
-$OpenBSD: patch-add_file_c,v 1.2 2009/02/14 09:41:35 jasper Exp $
 --- add_file.c.orig	Sat Sep 29 07:21:51 2001
 +++ add_file.c	Sat Feb 14 10:40:49 2009
 @@ -233,6 +233,7 @@ sNewDatum (char *filename, char *hash)

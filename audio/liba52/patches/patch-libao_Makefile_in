@@ -1,4 +1,3 @@
-$OpenBSD: patch-libao_Makefile_in,v 1.3 2014/10/26 15:27:03 ratchov Exp $
 --- libao/Makefile.in.orig	Wed Oct 22 18:31:21 2014
 +++ libao/Makefile.in	Wed Oct 22 18:32:54 2014
 @@ -52,7 +52,7 @@ ARFLAGS = cru

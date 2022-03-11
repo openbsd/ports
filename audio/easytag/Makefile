@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.69 2021/10/31 20:07:37 ajacoutot Exp $
-
 COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/01/31 22:14:02 sthen Exp $
 @pkgpath audio/soundtracker,esd
 @pkgpath audio/soundtracker,gnome
 @pkgpath audio/soundtracker,gnome,esd

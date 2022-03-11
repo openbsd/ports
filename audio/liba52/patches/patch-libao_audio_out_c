@@ -1,4 +1,3 @@
-$OpenBSD: patch-libao_audio_out_c,v 1.1 2014/10/26 15:27:03 ratchov Exp $
 --- libao/audio_out.c.orig	Thu Oct 23 10:23:53 2014
 +++ libao/audio_out.c	Thu Oct 23 10:26:36 2014
 @@ -33,6 +33,10 @@ extern ao_open_t ao_oss_open;

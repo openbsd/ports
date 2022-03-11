@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rip_c,v 1.9 2021/07/29 20:08:30 naddy Exp $
-
 The return value of fgetc() must be stored in an int if it is compared
 against EOF.
 

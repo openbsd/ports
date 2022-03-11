@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_core_include_hydrogen_Preferences_h,v 1.2 2021/02/27 15:45:37 sthen Exp $
-
 Add sndio support
 
 Index: src/core/include/hydrogen/Preferences.h

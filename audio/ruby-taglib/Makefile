@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:43:40 sthen Exp $
-
 COMMENT =	reads and writes metadata/tags for many audio formats
 
 VERSION =	0.7.1

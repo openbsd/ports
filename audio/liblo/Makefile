@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/26 08:49:06 inoguchi Exp $
-
 COMMENT =		Lightweight Open Sound Control (OSC) implementation
 
 DISTNAME =		liblo-0.31

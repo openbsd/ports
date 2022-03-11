@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib-src_libnyquist_nyquist_cmt_cext_h,v 1.1 2021/02/14 08:36:20 ajacoutot Exp $
-
 Index: lib-src/libnyquist/nyquist/cmt/cext.h
 --- lib-src/libnyquist/nyquist/cmt/cext.h.orig
 +++ lib-src/libnyquist/nyquist/cmt/cext.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/10/31 16:55:41 stu Exp $
 bin/xcd
 lib/xcd/
 @bin lib/xcd/cdplayer

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=	lame ain't an MP3 encoder
 #'
 

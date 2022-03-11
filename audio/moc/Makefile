@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/12 17:04:37 rsadowski Exp $
-
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
 CATEGORIES =	audio

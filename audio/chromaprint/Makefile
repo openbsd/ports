@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/17 06:17:24 rsadowski Exp $
-
 COMMENT =		audio fingerprint extraction library
 
 GH_ACCOUNT =		acoustid

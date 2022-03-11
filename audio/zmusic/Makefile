@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/31 10:56:16 op Exp $
-
 COMMENT =		gzdoom music library as standalone form for reuse
 
 PKGNAME =		${DISTNAME:L}

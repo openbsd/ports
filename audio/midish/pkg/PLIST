@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/05/03 19:38:16 ratchov Exp $
 @bin bin/midish
 bin/smfplay
 bin/smfrec

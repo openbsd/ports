@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/17 14:49:20 danj Exp $
-
 COMMENT =		last.fm client for xmms2
 
 DISTNAME =		xmms2-scrobbler-0.4.0

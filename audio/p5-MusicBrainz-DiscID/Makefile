@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/08/04 09:45:29 cwen Exp $
-
 COMMENT =	Perl interface for the MusicBrainz libdiscid library
 DISTNAME =	MusicBrainz-DiscID-0.06
 CATEGORIES =	audio

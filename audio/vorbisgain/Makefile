@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT=		add tags to Ogg Vorbis files to adjust the volume
 
 DISTNAME=		vorbisgain-0.36

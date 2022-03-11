@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gradio-utils_vala,v 1.1 2020/11/02 18:44:36 landry Exp $
-
 Index: src/gradio-utils.vala
 --- src/gradio-utils.vala.orig
 +++ src/gradio-utils.vala

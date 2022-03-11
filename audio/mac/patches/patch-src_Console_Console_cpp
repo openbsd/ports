@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Console_Console_cpp,v 1.1.1.1 2007/07/19 16:24:37 jasper Exp $
 --- src/Console/Console.cpp.orig	Mon Jul 16 23:50:51 2007
 +++ src/Console/Console.cpp	Mon Jul 16 23:53:13 2007
 @@ -27,8 +27,10 @@ Displays the proper usage for MAC.exe

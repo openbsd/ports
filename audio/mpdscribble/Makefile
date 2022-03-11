@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:36 sthen Exp $
-
 COMMENT =		mpd client to scrobble track info to last.fm
 
 V =			0.22

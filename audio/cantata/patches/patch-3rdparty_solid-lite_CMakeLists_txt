@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_solid-lite_CMakeLists_txt,v 1.1 2018/07/02 08:22:25 landry Exp $
-
 fallout from https://github.com/CDrummond/cantata/issues/1175
 
 Index: 3rdparty/solid-lite/CMakeLists.txt

@@ -1,4 +1,3 @@
-$OpenBSD: patch-channel_c,v 1.1 2002/08/10 01:14:04 naddy Exp $
 --- channel.c.orig	Sat Sep 22 00:54:13 2001
 +++ channel.c	Mon Oct 15 15:18:44 2001
 @@ -155,7 +155,7 @@ dump_channels (void)

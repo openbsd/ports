@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/09 12:12:09 sthen Exp $
-
 COMMENT =		spreadsheet-like audio file tagger
 
 MODPY_EGG_VERSION =	2.1.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2022/03/05 09:34:00 landry Exp $
-
 COMMENT=		command line client for mpd
 
 VER=			0.34

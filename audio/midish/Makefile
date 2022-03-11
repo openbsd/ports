@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/08/26 11:43:58 ratchov Exp $
-
 COMMENT=		command line MIDI sequencer and filter
 DISTNAME=		midish-1.3.0
 CATEGORIES=		audio

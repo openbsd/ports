@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_fifo_cpp,v 1.3 2014/03/20 18:10:29 ajacoutot Exp $
 --- src/fifo.cpp.orig	Tue Mar  4 17:47:15 2014
 +++ src/fifo.cpp	Thu Mar 20 19:03:08 2014
 @@ -41,6 +41,12 @@

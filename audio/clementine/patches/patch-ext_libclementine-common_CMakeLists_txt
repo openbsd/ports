@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.7 2021/06/20 05:54:53 rsadowski Exp $
-
 1. Respect CXXFLAGS
 2. Switch Clementine to FindBacktrace.cmake
 

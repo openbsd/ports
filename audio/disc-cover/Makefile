@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/04 09:31:29 ajacoutot Exp $
-
 COMMENT=	creates cover for audio cds using cddb and latex
 
 DISTNAME=	disc-cover-1.5.6

@@ -1,4 +1,3 @@
-$OpenBSD: patch-thirdparty_qzip_qzip_cpp,v 1.2 2018/09/02 23:16:28 bcallah Exp $
 Index: thirdparty/qzip/qzip.cpp
 --- thirdparty/qzip/qzip.cpp.orig
 +++ thirdparty/qzip/qzip.cpp

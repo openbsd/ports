@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/23 19:39:09 sthen Exp $
-
 COMMENT=		creates playlists from directory trees
 
 MODPY_EGG_VERSION=	0.4.5

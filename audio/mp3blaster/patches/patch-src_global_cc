@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_global_cc,v 1.3 2017/08/15 18:39:48 jca Exp $
-
 Index: src/global.cc
 --- src/global.cc.orig
 +++ src/global.cc

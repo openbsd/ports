@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:41 sthen Exp $
-
 COMMENT =		text-based audio player
 DISTNAME =		siren-0.9
 CATEGORIES =		audio

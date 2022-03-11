@@ -1,4 +1,3 @@
-/*	$OpenBSD: module-sndio-sysex.h,v 1.1 2012/10/08 17:19:57 eric Exp $	*/
 /*
  * Copyright (c) 2011 Alexandre Ratchov <alex@caoua.org>
  *

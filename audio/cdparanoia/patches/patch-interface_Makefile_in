@@ -1,4 +1,3 @@
-$OpenBSD: patch-interface_Makefile_in,v 1.3 2005/12/23 15:03:06 espie Exp $
 --- interface/Makefile.in.orig	Tue Dec 14 05:27:59 1999
 +++ interface/Makefile.in	Fri Dec 23 15:41:36 2005
 @@ -21,8 +21,6 @@ CPPFLAGS+=-D_REENTRANT

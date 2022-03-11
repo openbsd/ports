@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/23 22:50:27 naddy Exp $
 @bin bin/morseplayer
 @man man/man1/morseplayer.1

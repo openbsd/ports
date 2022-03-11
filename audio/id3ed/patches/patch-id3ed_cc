@@ -1,4 +1,3 @@
-$OpenBSD: patch-id3ed_cc,v 1.2 2010/05/09 17:32:53 robert Exp $
 --- id3ed.cc.orig	Fri Jan 10 04:03:13 2003
 +++ id3ed.cc	Sun May  9 19:28:44 2010
 @@ -354,7 +354,7 @@ void genreedit(unsigned char &d){

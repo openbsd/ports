@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2003/10/16 13:19:18 naddy Exp $
 --- Makefile.PL.orig	2000-10-23 08:53:08.000000000 +0200
 +++ Makefile.PL	2003-10-15 21:37:54.000000000 +0200
 @@ -4,8 +4,8 @@ use ExtUtils::MakeMaker;

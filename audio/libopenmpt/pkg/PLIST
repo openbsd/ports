@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/14 10:44:24 fcambus Exp $
 @bin bin/openmpt123
 include/libopenmpt/
 include/libopenmpt/libopenmpt.h

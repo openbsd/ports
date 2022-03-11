@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/05 12:18:57 landry Exp $
-
 COMMENT=	Music Player Daemon web client
 
 GH_ACCOUNT =	notandy

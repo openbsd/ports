@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/26 21:22:28 ajacoutot Exp $
-
 COMMENT =		CUE sheet parser library
 
 GH_ACCOUNT =		lipnitsk

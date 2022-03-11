@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/03/05 09:32:04 landry Exp $
-
 COMMENT=		library for interfacing MPD
 
 VER=			2.20

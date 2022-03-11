@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/18 16:42:02 landry Exp $
-
 COMMENT =	simple curses mixer
 
 DISTNAME =	cmixer-0.3

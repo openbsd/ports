@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2021/09/03 12:51:35 ajacoutot Exp $
-
 COMMENT =		audio player daemon with library management
 
 V =			0.8

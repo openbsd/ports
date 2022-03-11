@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_cfg,v 1.1 2021/01/10 20:02:07 sthen Exp $
-
 Index: setup.cfg
 --- setup.cfg.orig
 +++ setup.cfg

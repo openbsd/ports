@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpg123ctl_c,v 1.3 2003/06/16 19:01:55 avsm Exp $
 --- mpg123ctl.c.orig	Mon Apr  3 01:18:43 2000
 +++ mpg123ctl.c	Mon Jun 16 18:39:10 2003
 @@ -97,12 +97,12 @@ void set_playlist()

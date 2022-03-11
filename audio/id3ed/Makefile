@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:43:34 sthen Exp $
-
 COMMENT=		interactive console id3 tag editor
 
 DISTNAME=		id3ed-1.10.4

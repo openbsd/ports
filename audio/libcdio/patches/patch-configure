@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2019/05/12 15:26:07 edd Exp $
-
 Re-enable cdda_player.
 
 Already applied upstream:

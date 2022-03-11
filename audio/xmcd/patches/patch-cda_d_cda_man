@@ -1,4 +1,3 @@
-$OpenBSD: patch-cda_d_cda_man,v 1.2 2008/10/28 12:09:05 jasper Exp $
 --- cda_d/cda.man.orig	Sat Feb  5 08:26:39 2000
 +++ cda_d/cda.man	Tue Oct 28 13:06:18 2008
 @@ -499,11 +499,11 @@ This parameter which specifies

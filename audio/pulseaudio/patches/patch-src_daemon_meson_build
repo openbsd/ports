@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_daemon_meson_build,v 1.1 2021/08/15 16:36:56 ajacoutot Exp $
-
 ld: error: undefined symbol: sched_get_priority_max
 
 Index: src/daemon/meson.build

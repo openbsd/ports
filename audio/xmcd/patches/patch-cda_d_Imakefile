@@ -1,4 +1,3 @@
-$OpenBSD: patch-cda_d_Imakefile,v 1.2 2001/01/18 16:41:27 naddy Exp $
 --- cda_d/Imakefile.orig	Mon Nov  6 14:44:33 2000
 +++ cda_d/Imakefile	Mon Nov  6 14:45:02 2000
 @@ -119,7 +119,7 @@ LOCAL_LIBRARIES=

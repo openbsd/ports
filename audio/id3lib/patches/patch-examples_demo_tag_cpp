@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_demo_tag_cpp,v 1.1 2017/04/09 11:07:42 sthen Exp $
 --- examples/demo_tag.cpp.orig	Sun Apr  9 12:06:11 2017
 +++ examples/demo_tag.cpp	Sun Apr  9 12:06:28 2017
 @@ -46,7 +46,7 @@ void DisplayTags(ostream &os, luint nTags)

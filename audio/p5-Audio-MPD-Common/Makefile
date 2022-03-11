@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:44:30 sthen Exp $
-
 COMMENT=		bunch of common helper classes for MPD
 
 DISTNAME=		Audio-MPD-Common-2.003

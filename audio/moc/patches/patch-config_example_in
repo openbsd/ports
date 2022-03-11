@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_example_in,v 1.2 2017/11/18 12:01:14 jasper Exp $
-
 Remove audio choices that are irrelevant on OpenBSD.
 
 Index: config.example.in

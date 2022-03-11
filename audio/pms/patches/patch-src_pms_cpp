@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_pms_cpp,v 1.2 2010/08/18 13:56:04 jasper Exp $
 --- src/pms.cpp.orig	Tue Aug 10 00:05:27 2010
 +++ src/pms.cpp	Tue Aug 10 00:06:10 2010
 @@ -21,6 +21,8 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2019/07/14 23:01:58 kmos Exp $
-
 distutils doesn't support --single-version-externally-managed
 
 Index: setup.py

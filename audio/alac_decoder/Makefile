@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:31 sthen Exp $
-
 COMMENT =		basic Apple Lossless Audio Codec decoder
 
 DISTNAME =		alac_decoder-0.2.0

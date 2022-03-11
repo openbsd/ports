@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:44:30 sthen Exp $
-
 COMMENT=	M4P/MP4/M4a audio/video tools
 
 DISTNAME =	Audio-M4P-0.57

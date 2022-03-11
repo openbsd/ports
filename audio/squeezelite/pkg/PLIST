@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/05/11 15:48:59 sthen Exp $
 @newgroup _squeezelite:767
 @newuser _squeezelite:767:_squeezelite:daemon:squeezelite user:/var/squeezelite:/sbin/nologin
 @mode 750

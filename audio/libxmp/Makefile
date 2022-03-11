@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/07/05 21:17:09 fcambus Exp $
-
 COMMENT =	module player library
 
 DISTNAME =	libxmp-4.5.0

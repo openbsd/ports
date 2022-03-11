@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/12/18 10:25:31 rsadowski Exp $
-
 COMMENT =	graphical music player focused on a clean ui
 V =		1.10.1
 DISTNAME =	musique-${V}

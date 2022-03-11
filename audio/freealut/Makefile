@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:33 sthen Exp $
-
 COMMENT=	OpenAL Utility Toolkit
 
 DISTNAME=	freealut-1.1.0

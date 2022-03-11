@@ -1,4 +1,3 @@
-$OpenBSD: patch-aksetup_helper_py,v 1.3 2013/01/25 13:56:20 dcoppa Exp $
 --- aksetup_helper.py.orig	Wed Jan 23 15:38:05 2013
 +++ aksetup_helper.py	Wed Jan 23 15:39:48 2013
 @@ -1,6 +1,6 @@

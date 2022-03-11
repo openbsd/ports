@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2022/01/15 14:14:13 ajacoutot Exp $
 bin/spd-conf
 @bin bin/spd-say
 @bin bin/spdsend

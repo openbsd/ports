@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_portaudio_h,v 1.4 2021/10/16 19:59:28 sthen Exp $
-
 Index: include/portaudio.h
 --- include/portaudio.h.orig
 +++ include/portaudio.h

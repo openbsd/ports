@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_signal_op_cpp,v 1.1 2017/04/19 15:40:25 jca Exp $
 --- lib/signal_op.cpp.orig	Wed Apr 19 17:26:21 2017
 +++ lib/signal_op.cpp	Wed Apr 19 17:26:25 2017
 @@ -13,6 +13,7 @@

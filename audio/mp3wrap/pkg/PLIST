@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/11 15:36:33 kevlo Exp $
 @bin bin/mp3wrap
 @man man/man1/mp3wrap.1

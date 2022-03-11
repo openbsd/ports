@@ -1,4 +1,3 @@
-$OpenBSD: patch-Imakefile,v 1.3 2013/04/25 16:26:52 sthen Exp $
 --- Imakefile.orig	Sun Sep  5 00:24:23 1999
 +++ Imakefile	Thu Apr 25 17:26:18 2013
 @@ -3,13 +3,10 @@

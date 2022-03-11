@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/01/15 23:06:07 juanfra Exp $
-
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
 VERSION =		5.4.0

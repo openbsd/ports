@@ -1,4 +1,3 @@
-$OpenBSD: patch-interface_utils_h,v 1.5 2015/05/01 14:54:41 ajacoutot Exp $
 --- interface/utils.h.orig	Thu Apr 20 00:41:04 2000
 +++ interface/utils.h	Fri May  1 16:49:14 2015
 @@ -13,6 +13,7 @@ static inline int bigendianp(void){

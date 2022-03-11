@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib-src_libnyquist_nyquist_nyqstk_include_FileRead_h,v 1.1 2021/02/14 08:36:20 ajacoutot Exp $
-
 Index: lib-src/libnyquist/nyquist/nyqstk/include/FileRead.h
 --- lib-src/libnyquist/nyquist/nyqstk/include/FileRead.h.orig
 +++ lib-src/libnyquist/nyquist/nyqstk/include/FileRead.h

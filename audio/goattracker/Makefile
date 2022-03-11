@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/02 17:51:27 fcambus Exp $
-
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
 V =		2.76

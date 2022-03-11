@@ -1,4 +1,3 @@
-$OpenBSD: patch-interface_scsi_interface_c,v 1.4 2007/10/27 15:01:53 espie Exp $
 --- interface/scsi_interface.c.orig	Sat Mar 24 02:15:46 2001
 +++ interface/scsi_interface.c	Sat Oct 27 16:57:49 2007
 @@ -23,6 +23,7 @@ static void tweak_SG_buffer(cdrom_drive *d){

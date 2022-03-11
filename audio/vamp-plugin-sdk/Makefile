@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/03/14 00:18:25 jca Exp $
-
 COMMENT =		audio plugin API
 
 VERSION =		2.9.0

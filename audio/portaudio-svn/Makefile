@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/16 19:59:28 sthen Exp $
-
 COMMENT=		portable cross-platform audio API
 
 DISTNAME =		pa_stable_v190700_20210406

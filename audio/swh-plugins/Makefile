@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/01/26 11:14:29 jasper Exp $
-
 COMMENT =		LADSPA plugins from Steve Harris
 
 DISTNAME =		swh-plugins-0.4.15

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:00:13 sthen Exp $
-
 COMMENT=	library for simple use of LV2 plugins in applications
 
 DISTNAME=	lilv-0.24.12

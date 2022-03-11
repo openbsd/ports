@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
 REVISION=		0

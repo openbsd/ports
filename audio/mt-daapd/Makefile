@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/09/03 11:47:41 ajacoutot Exp $
-
 COMMENT=	multi-threaded DAAP server
 
 DISTNAME=	mt-daapd-0.2.4.2

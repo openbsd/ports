@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:43:35 sthen Exp $
-
 PORTROACH=		limit:^5
 
 COMMENT=		library for audio metadata lookup (v5)

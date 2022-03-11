@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_fluidsynth_priv_h,v 1.2 2021/06/25 21:48:40 sthen Exp $
-
 Don't use a header that is not provided
 
 Index: src/utils/fluidsynth_priv.h

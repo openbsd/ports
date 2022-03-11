@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.140 2022/03/09 09:52:23 landry Exp $
-
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.23.5

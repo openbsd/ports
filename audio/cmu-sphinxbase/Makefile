@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT=	common libraries for the CMU speech recognition engines
 
 VERSION=	0.6

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_sync_c,v 1.4 2020/01/02 09:36:50 bket Exp $
 Index: src/sync.c
 --- src/sync.c.orig
 +++ src/sync.c

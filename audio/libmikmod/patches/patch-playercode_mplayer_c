@@ -1,4 +1,3 @@
-$OpenBSD: patch-playercode_mplayer_c,v 1.8 2016/03/26 15:58:51 awolk Exp $
 --- playercode/mplayer.c.orig	Mon Apr 27 04:51:00 2015
 +++ playercode/mplayer.c	Fri Mar 18 07:39:21 2016
 @@ -368,9 +368,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt

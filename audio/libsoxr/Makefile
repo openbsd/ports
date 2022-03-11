@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:35 sthen Exp $
-
 COMMENT=	fast and high quality sample-rate conversion (SoX Resampler)
 
 DISTNAME=	soxr-0.1.3-Source

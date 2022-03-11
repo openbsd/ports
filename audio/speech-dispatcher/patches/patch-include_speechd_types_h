@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_speechd_types_h,v 1.3 2021/12/23 12:36:26 ajacoutot Exp $
-
 TEMP_FAILURE_RETRY chunk taken from Debian via gnubiff
 (/usr/include/unistd.h in Debian is LGPL)
 

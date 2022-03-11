@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:44:30 sthen Exp $
-
 COMMENT=	fetch info from MPEG-4 files
 
 MODULES=	cpan

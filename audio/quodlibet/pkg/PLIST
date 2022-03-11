@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/03/01 16:18:19 sthen Exp $
 bin/exfalso
 bin/operon
 bin/quodlibet

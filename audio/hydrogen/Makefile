@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/04/24 04:36:07 rsadowski Exp $
-
 COMMENT=		software drum machine
 
 V=			1.0.1

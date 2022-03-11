@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpcgain_gain_analysis_c,v 1.2 2021/02/26 18:20:32 naddy Exp $
 --- mpcgain/gain_analysis.c.orig	Fri Dec  2 02:14:34 2011
 +++ mpcgain/gain_analysis.c	Fri Dec  2 02:14:52 2011
 @@ -50,7 +50,7 @@

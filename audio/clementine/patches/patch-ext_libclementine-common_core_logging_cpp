@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.6 2021/03/18 18:04:32 tb Exp $
 Use shiny CMake FindBacktrace module.
 Index: ext/libclementine-common/core/logging.cpp
 --- ext/libclementine-common/core/logging.cpp.orig

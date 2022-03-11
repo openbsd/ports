@@ -1,4 +1,3 @@
-$OpenBSD: patch-xmcd_d_xmcd_man,v 1.2 2008/10/28 12:09:05 jasper Exp $
 --- xmcd_d/xmcd.man.orig	Sat Feb  5 08:26:31 2000
 +++ xmcd_d/xmcd.man	Tue Oct 28 13:06:18 2008
 @@ -228,10 +228,9 @@ text labels can also be changed (for example, to anoth

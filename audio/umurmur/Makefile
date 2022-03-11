@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/01/23 09:22:47 kn Exp $
-
 COMMENT =		minimalistic Mumble server
 
 GH_ACCOUNT =		umurmur

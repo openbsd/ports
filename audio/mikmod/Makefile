@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/10 17:33:07 fcambus Exp $
-
 COMMENT =	module audio player
 DISTNAME =	mikmod-3.2.8
 REVISION =	1

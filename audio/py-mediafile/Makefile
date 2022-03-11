@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/16 16:18:24 sthen Exp $
-
 COMMENT =	read and write audio files' tags in Python
 
 MODPY_EGG_VERSION =	0.8.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_id3_id3lib_strings_h,v 1.1 2018/10/28 07:59:57 bentley Exp $
-
 Index: include/id3/id3lib_strings.h
 --- include/id3/id3lib_strings.h.orig
 +++ include/id3/id3lib_strings.h

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.32 2022/01/08 07:29:52 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/16 12:20:38 fcambus Exp $
-
 COMMENT =	AdLib sound player library
 
 V =		2.3.3

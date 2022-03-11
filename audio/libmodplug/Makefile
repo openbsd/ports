@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT =		library for decoding mod-like music formats
 
 DISTNAME =		libmodplug-0.8.9.0

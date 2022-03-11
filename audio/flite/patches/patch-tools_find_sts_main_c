@@ -1,4 +1,3 @@
-$OpenBSD: patch-tools_find_sts_main_c,v 1.2 2009/12/14 00:33:08 jakemsr Exp $
 --- tools/find_sts_main.c.orig	Thu Dec 26 09:18:30 2002
 +++ tools/find_sts_main.c	Wed Dec  9 19:23:23 2009
 @@ -75,6 +75,11 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)

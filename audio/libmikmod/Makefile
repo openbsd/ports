@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/01/10 17:33:07 fcambus Exp $
-
 COMMENT =	mikmod sound library
 
 DISTNAME =	libmikmod-3.3.11.1

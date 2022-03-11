@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/14 11:11:32 sthen Exp $
-
 COMMENT =	realtime audio and music engine for games
 
 GH_ACCOUNT =	olofson

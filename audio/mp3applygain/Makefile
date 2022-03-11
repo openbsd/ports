@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:36 sthen Exp $
-
 COMMENT=	apply gain information to mp3 audio data
 
 VERSION=	1.1.0

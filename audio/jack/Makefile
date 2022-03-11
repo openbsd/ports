@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/12/29 20:08:33 sdk Exp $
-
 COMMENT =		low latency sound server
 
 V =			0.125.0

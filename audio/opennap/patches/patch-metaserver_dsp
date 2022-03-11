@@ -1,4 +1,3 @@
-$OpenBSD: patch-metaserver_dsp,v 1.2 2021/02/26 18:20:32 naddy Exp $
 --- metaserver.dsp.orig	Fri Aug  2 22:15:44 2002
 +++ metaserver.dsp	Sun Sep 30 17:07:07 2001
 @@ -0,0 +1,106 @@

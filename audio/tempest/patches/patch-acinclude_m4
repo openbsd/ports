@@ -1,4 +1,3 @@
-$OpenBSD: patch-acinclude_m4,v 1.2 2001/08/14 23:02:58 pvalchev Exp $
 --- acinclude.m4.orig	Tue Aug 14 11:03:10 2001
 +++ acinclude.m4	Tue Aug 14 16:51:06 2001
 @@ -129,6 +129,8 @@ else

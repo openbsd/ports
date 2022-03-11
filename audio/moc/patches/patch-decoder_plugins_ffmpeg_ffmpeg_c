@@ -1,5 +1,3 @@
-$OpenBSD: patch-decoder_plugins_ffmpeg_ffmpeg_c,v 1.1 2019/02/17 22:17:41 sthen Exp $
-
 Maint: Migrate to FFmpeg/LibAV's AV_-prefixed #defines.
 
 Index: decoder_plugins/ffmpeg/ffmpeg.c

@@ -1,4 +1,3 @@
-$OpenBSD: patch-libdi_d_config_sh,v 1.3 2008/10/28 12:09:05 jasper Exp $
 --- libdi_d/config.sh.orig	Sat Feb  5 08:26:23 2000
 +++ libdi_d/config.sh	Tue Oct 28 13:06:18 2008
 @@ -37,13 +37,14 @@ XMCDLIB=/usr/lib/X11/xmcd

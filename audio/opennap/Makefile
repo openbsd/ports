@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/26 18:20:32 naddy Exp $
-
 COMMENT=	opensource Napster(tm) server
 
 DISTNAME=	opennap-0.44

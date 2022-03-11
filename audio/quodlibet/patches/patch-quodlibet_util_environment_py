@@ -1,5 +1,3 @@
-$OpenBSD: patch-quodlibet_util_environment_py,v 1.3 2020/02/23 19:21:46 sthen Exp $
-
 Index: quodlibet/util/environment.py
 --- quodlibet/util/environment.py.orig
 +++ quodlibet/util/environment.py

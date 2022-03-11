@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:31 sthen Exp $
-
 COMMENT =		control aucat and/or sndiod volume
 DISTNAME =		aucatctl-0.1
 CATEGORIES =		audio

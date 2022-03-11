@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_config_cpp,v 1.3 2010/08/18 13:56:04 jasper Exp $
-
 Don't bail out when the default configuration file is not found,
 defaults just works fine.
 

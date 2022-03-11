@@ -1,4 +1,3 @@
-$OpenBSD: patch-plat_openbsd_c,v 1.2 2005/06/03 00:51:48 mjc Exp $
 --- plat_openbsd.c.orig	Sun Mar  7 00:36:40 1999
 +++ plat_openbsd.c	Thu Jun  2 15:15:52 2005
 @@ -54,10 +54,12 @@ static char plat_openbsd[] = "$Id: plat_

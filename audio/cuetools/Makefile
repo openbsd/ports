@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/26 11:14:29 jasper Exp $
-
 COMMENT=	tools for handling audio-file cue sheets and toc files
 
 DISTNAME=	cuetools-1.3.1

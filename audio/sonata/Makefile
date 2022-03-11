@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT=	GTK+ client for the Music Player Daemon
 
 MODPY_EGG_VERSION=1.7.0

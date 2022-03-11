@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_GMAudioScrobbler_cpp,v 1.1 2018/04/11 16:43:50 naddy Exp $
-
 Index: src/GMAudioScrobbler.cpp
 --- src/GMAudioScrobbler.cpp.orig
 +++ src/GMAudioScrobbler.cpp

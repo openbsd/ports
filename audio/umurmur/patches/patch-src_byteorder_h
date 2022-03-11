@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_byteorder_h,v 1.2 2019/07/24 12:47:13 feinerer Exp $
-
 Include correct userspace header for endian information
 Skip linuxism to fix build on LP64 archs that aren't amd64
 

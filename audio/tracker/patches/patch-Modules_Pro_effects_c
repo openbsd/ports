@@ -1,4 +1,3 @@
-$OpenBSD: patch-Modules_Pro_effects_c,v 1.3 2019/04/15 16:38:37 espie Exp $
 Index: Modules/Pro/effects.c
 --- Modules/Pro/effects.c.orig
 +++ Modules/Pro/effects.c

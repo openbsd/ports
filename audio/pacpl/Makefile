@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/01 01:28:18 cwen Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		PAC (Perl Audio Converter)

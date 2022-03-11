@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/24 21:43:32 jakemsr Exp $
 @bin bin/nspmod
 @man man/man1/nspmod.1

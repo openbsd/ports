@@ -1,4 +1,3 @@
-$OpenBSD: patch-umurmur_conf_example,v 1.5 2019/07/24 12:47:13 feinerer Exp $
 Index: umurmur.conf.example
 --- umurmur.conf.example.orig
 +++ umurmur.conf.example

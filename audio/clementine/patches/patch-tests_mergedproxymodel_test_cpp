@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_mergedproxymodel_test_cpp,v 1.1 2014/10/04 22:34:27 zhuk Exp $
 Unbreak tests.
 --- tests/mergedproxymodel_test.cpp.orig	Sun Oct  5 00:20:24 2014
 +++ tests/mergedproxymodel_test.cpp	Sun Oct  5 02:13:28 2014

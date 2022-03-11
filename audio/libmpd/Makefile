@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:43:35 sthen Exp $
-
 COMMENT=		mpd client library
 
 VERSION=		11.8.17

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: navidrome.rc,v 1.1.1.1 2021/05/25 22:14:47 abieber Exp $
 
 daemon="${TRUEPREFIX}/bin/navidrome"
 daemon_user="_navidrome"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/30 15:02:50 ajacoutot Exp $
-
 COMMENT =		PulseAudio volume mixer
 
 DISTNAME =		pavucontrol-5.0

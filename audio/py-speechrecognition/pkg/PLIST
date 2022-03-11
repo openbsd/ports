@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/08/14 01:17:01 kevlo Exp $
 lib/python${MODPY_VERSION}/site-packages/SpeechRecognition-3.8.1-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/SpeechRecognition-3.8.1-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/SpeechRecognition-3.8.1-py${MODPY_VERSION}.egg-info/SOURCES.txt

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_StatusBar_cxx,v 1.4 2021/02/20 14:40:40 landry Exp $
-
 Index: src/StatusBar.cxx
 --- src/StatusBar.cxx.orig
 +++ src/StatusBar.cxx

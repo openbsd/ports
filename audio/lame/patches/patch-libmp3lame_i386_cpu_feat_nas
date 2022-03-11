@@ -1,4 +1,3 @@
-$OpenBSD: patch-libmp3lame_i386_cpu_feat_nas,v 1.1 2004/08/14 01:16:01 naddy Exp $
 --- libmp3lame/i386/cpu_feat.nas.orig	Fri Aug 13 19:05:11 2004
 +++ libmp3lame/i386/cpu_feat.nas	Fri Aug 13 19:05:35 2004
 @@ -91,7 +91,7 @@ has_3DNow_nasm:

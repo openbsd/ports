@@ -1,4 +1,3 @@
-$OpenBSD: patch-scmpc_1_in,v 1.2 2014/09/02 19:46:53 landry Exp $
 --- scmpc.1.in.orig	Mon Mar  4 09:16:02 2013
 +++ scmpc.1.in	Tue Sep  2 21:41:21 2014
 @@ -159,7 +159,7 @@ Your md5 hashed Audioscrobbler password. password_hash

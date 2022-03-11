@@ -1,5 +1,3 @@
-$OpenBSD: patch-alc_backends_sndio_cpp,v 1.5 2021/11/08 07:38:07 rsadowski Exp $
-
 Simplify channel handling in the sndio backend
 620836f173ae6fc4505d0634984e0f2c46166367
 

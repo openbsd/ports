@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_example_cpp,v 1.1 2018/10/28 08:07:36 bentley Exp $
-
 Index: examples/example.cpp
 --- examples/example.cpp.orig
 +++ examples/example.cpp

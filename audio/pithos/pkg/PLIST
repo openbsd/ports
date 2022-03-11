@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/29 22:16:09 espie Exp $
 bin/pithos
 lib/python${MODPY_VERSION}/site-packages/pithos/
 lib/python${MODPY_VERSION}/site-packages/pithos-${GH_TAGNAME}-py${MODPY_VERSION}.egg-info/

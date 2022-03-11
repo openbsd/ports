@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/19 13:14:03 kn Exp $
-
 BROKEN-sparc64 =        ring-0.16.20 does not build on sparc64
 
 FIX_EXTRACT_PERMISSIONS = Yes

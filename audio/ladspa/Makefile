@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 18:29:35 ajacoutot Exp $
-
 COMMENT=	Linux Audio Developer's Simple Plugin API
 
 V=		1.15

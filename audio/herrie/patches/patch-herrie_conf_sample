@@ -1,4 +1,3 @@
-$OpenBSD: patch-herrie_conf_sample,v 1.2 2008/10/16 17:29:33 jasper Exp $
 --- herrie.conf.sample.orig	Tue Oct 14 21:20:40 2008
 +++ herrie.conf.sample	Tue Oct 14 21:21:13 2008
 @@ -3,22 +3,22 @@

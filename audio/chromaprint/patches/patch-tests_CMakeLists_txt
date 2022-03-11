@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_CMakeLists_txt,v 1.3 2019/08/23 20:18:04 cwen Exp $
-
 Using devel/gtest instead of using a third party one that we
 would need to download and extract.
 

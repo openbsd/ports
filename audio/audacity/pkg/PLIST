@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/02/14 08:36:20 ajacoutot Exp $
 @bin bin/audacity
 @man man/man1/audacity.1
 share/appdata/

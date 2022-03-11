@@ -1,4 +1,3 @@
-$OpenBSD: patch-cdplayer_cc,v 1.3 2017/04/30 10:11:44 espie Exp $
 --- cdplayer.cc.orig
 +++ cdplayer.cc
 @@ -19,7 +19,7 @@

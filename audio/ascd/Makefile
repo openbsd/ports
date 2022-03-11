@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:43:31 sthen Exp $
-
 COMMENT=		cd player for Afterstep or Window Maker
 DISTNAME=		ascd-0.13.2
 REVISION=		5

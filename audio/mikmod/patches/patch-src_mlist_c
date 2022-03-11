@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_mlist_c,v 1.2 2016/03/26 16:08:31 awolk Exp $
 --- src/mlist.c.orig	Mon Aug 11 09:55:00 2014
 +++ src/mlist.c	Fri Mar 18 09:02:45 2016
 @@ -101,7 +101,7 @@ void PL_InitList(PLAYLIST * pl)

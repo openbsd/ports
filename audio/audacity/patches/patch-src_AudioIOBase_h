@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_AudioIOBase_h,v 1.1 2021/02/14 08:36:20 ajacoutot Exp $
-
 Using system portaudio and disabling portmixer seems to remove some -I...
 src/AudioIOBase.cpp:80:47: error: member access into incomplete type 'const PaDeviceInfo'
 src/AudioIOBase.h:25:8: note: forward declaration of 'PaDeviceInfo'

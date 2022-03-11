@@ -1,5 +1,3 @@
-$OpenBSD: patch-compile_linux_kissfft_sh,v 1.2 2017/11/02 13:15:23 espie Exp $
-
 - respect CXX/CXXFLAGS
 - don't rely on inter-libraries deps
 - oh, and error out in case of problems

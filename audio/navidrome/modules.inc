@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.5 2022/02/16 12:32:06 abieber Exp $
-
 MODGO_VERSION =	v0.47.5
 
 MODGO_MODULES =	\

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/07 10:47:32 sthen Exp $
-
 COMMENT =	Python interface to Discogs website
 
 MODPY_EGG_VERSION = 2.3.12

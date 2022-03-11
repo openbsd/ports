@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/08 09:20:18 espie Exp $
 COMMENT = library implementing the EBU R128 loudness standard
 
 GH_ACCOUNT = jiixyj

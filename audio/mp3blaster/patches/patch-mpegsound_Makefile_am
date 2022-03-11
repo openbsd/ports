@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpegsound_Makefile_am,v 1.1 2010/01/11 07:51:26 jakemsr Exp $
 --- mpegsound/Makefile.am.orig	Sat Dec 26 21:09:28 2009
 +++ mpegsound/Makefile.am	Sat Dec 26 21:09:52 2009
 @@ -8,7 +8,8 @@ libmpegsound_a_SOURCES  = soundinputstream.cc fileinpu

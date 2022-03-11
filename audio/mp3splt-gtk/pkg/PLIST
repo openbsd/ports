@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/02 01:22:54 sthen Exp $
 @bin bin/mp3splt-gtk
 @man man/man1/mp3splt-gtk.1
 share/applications/mp3splt-gtk.desktop

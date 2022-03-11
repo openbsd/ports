@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/10/30 22:59:03 namn Exp $
 @pkgpath audio/sox,mp3
 @pkgpath audio/sox,mp3,vorbis
 @pkgpath audio/sox,vorbis

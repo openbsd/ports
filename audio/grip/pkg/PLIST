@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2020/07/04 09:28:02 ajacoutot Exp $
 @bin bin/grip
 @man man/man1/grip.1
 share/applications/grip.desktop

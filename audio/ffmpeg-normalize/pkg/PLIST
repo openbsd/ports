@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/15 20:39:52 kn Exp $
 bin/ffmpeg-normalize
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize/
 lib/python${MODPY_VERSION}/site-packages/ffmpeg_normalize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

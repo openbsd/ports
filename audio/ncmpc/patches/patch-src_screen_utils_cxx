@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_screen_utils_cxx,v 1.2 2021/02/20 14:40:40 landry Exp $
-
 Index: src/screen_utils.cxx
 --- src/screen_utils.cxx.orig
 +++ src/screen_utils.cxx

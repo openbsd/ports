@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:32 sthen Exp $
-
 COMMENT=	computer music toolkit
 HOMEPAGE=	http://www.ladspa.org/
 CATEGORIES=	audio devel

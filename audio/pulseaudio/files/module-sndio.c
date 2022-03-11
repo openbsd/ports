@@ -1,4 +1,3 @@
-/* $OpenBSD: module-sndio.c,v 1.13 2021/08/15 16:36:56 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *

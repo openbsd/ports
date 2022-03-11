@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 21:02:13 sthen Exp $
-
 COMMENT=	sends AM radio signals using a monitor
 
 VERSION=	1.0.5

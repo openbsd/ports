@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_MACLib_MACLib_h,v 1.1.1.1 2007/07/19 16:24:37 jasper Exp $
 --- src/MACLib/MACLib.h.orig	Thu Jun  1 13:00:58 2006
 +++ src/MACLib/MACLib.h	Sat Jul 14 10:16:11 2007
 @@ -29,6 +29,8 @@ or, if necessary, matt @ monkeysaudio.com

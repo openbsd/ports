@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_clients_lib_xmmsclient_wscript,v 1.3 2012/06/09 09:46:18 pascal Exp $
 --- src/clients/lib/xmmsclient/wscript.orig	Thu Oct 20 21:26:08 2011
 +++ src/clients/lib/xmmsclient/wscript	Tue May  8 01:12:42 2012
 @@ -31,7 +31,7 @@ def build(bld):

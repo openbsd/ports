@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/02 01:15:19 sthen Exp $
-
 COMMENT=	library to split mp3/ogg files without decoding
 
 DISTNAME=	libmp3splt-0.9.2

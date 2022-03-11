@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/12/31 10:56:16 op Exp $
 include/zmusic.h
 @lib lib/libzmusic.so.${LIBzmusic_VERSION}
 @lib lib/libzmusiclite.so.${LIBzmusiclite_VERSION}

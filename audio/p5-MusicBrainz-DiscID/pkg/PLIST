@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/29 21:18:39 bcallah Exp $
 ${P5ARCH}/
 ${P5ARCH}/MusicBrainz/
 ${P5ARCH}/MusicBrainz/DiscID.pm

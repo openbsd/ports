@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2019/07/12 20:43:33 sthen Exp $
-
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16

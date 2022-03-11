@@ -1,4 +1,3 @@
-$OpenBSD: patch-morseplayer_c,v 1.2 2012/07/04 14:39:08 naddy Exp $
 --- morseplayer.c.orig	Tue Jan 10 20:25:45 2006
 +++ morseplayer.c	Wed Jul  4 16:36:40 2012
 @@ -32,9 +32,6 @@

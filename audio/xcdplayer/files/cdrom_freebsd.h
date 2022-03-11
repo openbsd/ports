@@ -1,4 +1,3 @@
-/* $OpenBSD: cdrom_freebsd.h,v 1.2 2003/08/24 22:15:56 naddy Exp $ */
 /*
  * Copyright (C) 1990 Regents of the University of California.
  *

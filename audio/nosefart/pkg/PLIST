@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/01 02:36:55 jakemsr Exp $
 @bin bin/nosefart

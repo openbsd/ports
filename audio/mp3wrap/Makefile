@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:36 sthen Exp $
-
 COMMENT=	utility for mp3 wrapping
 
 DISTNAME=	mp3wrap-0.5-src

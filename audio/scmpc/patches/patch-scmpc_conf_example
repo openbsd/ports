@@ -1,4 +1,3 @@
-$OpenBSD: patch-scmpc_conf_example,v 1.1 2011/05/15 14:56:50 jasper Exp $
 --- scmpc.conf.example.orig	Mon Apr 25 19:08:33 2011
 +++ scmpc.conf.example	Mon Apr 25 19:09:03 2011
 @@ -31,7 +31,7 @@

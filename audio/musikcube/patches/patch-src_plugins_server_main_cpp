@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_plugins_server_main_cpp,v 1.1.1.1 2021/08/29 13:04:47 solene Exp $
-
 disable http/websocket server by default
 
 Index: src/plugins/server/main.cpp

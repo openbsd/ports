@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/11 00:54:10 jca Exp $
-
 BROKEN-hppa =	SIGILL when running lilypond
 
 COMMENT =	solfege and ear training program

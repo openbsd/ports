@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/18 15:32:26 kmos Exp $
-
 COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker

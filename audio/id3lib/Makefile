@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/11/08 09:56:52 rsadowski Exp $
-
 COMMENT =		library for manipulating ID3v1 and ID3v2 tags
 
 DISTNAME =		id3lib-3.8.3

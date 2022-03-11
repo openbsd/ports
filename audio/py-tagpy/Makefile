@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT=		Python bindings to TagLib audio file tag library
 
 MODPY_EGG_VERSION =	2013.1

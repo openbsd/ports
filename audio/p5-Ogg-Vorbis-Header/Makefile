@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/20 17:01:07 ajacoutot Exp $
-
 COMMENT=	object-oriented interface to Ogg Vorbis information
 
 MODULES=	cpan

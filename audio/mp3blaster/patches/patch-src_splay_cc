@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_splay_cc,v 1.2 2017/06/18 14:56:03 bcallah Exp $
 Index: src/splay.cc
 --- src/splay.cc.orig
 +++ src/splay.cc

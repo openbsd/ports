@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:43:35 sthen Exp $
-
 COMMENT=		communicate with some Creative and Dell audio players
 
 DISTNAME=		libnjb-2.2.7
