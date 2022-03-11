@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/10/11 20:39:17 naddy Exp $
 @pkgpath astro/xephem,lesstif
 @bin bin/xephem
 lib/X11/app-defaults/XEphem

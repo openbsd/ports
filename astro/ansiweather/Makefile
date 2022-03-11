@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/09/14 17:17:17 fcambus Exp $
-
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
 
 V =		1.18.0

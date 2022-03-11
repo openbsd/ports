@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/03 22:27:47 sthen Exp $
-
 COMMENT =	Python implementation of SGP4 satellite tracking algorithm
 
 MODPY_EGG_VERSION =	2.20

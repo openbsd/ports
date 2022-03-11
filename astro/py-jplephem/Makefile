@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/07 09:03:24 sthen Exp $
-
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =	use a JPL ephemeris to predict planet positions

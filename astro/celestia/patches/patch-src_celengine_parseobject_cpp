@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_celengine_parseobject_cpp,v 1.2 2021/01/27 18:40:54 ajacoutot Exp $
-
 ports-gcc fix for:
 parseobject.cpp:280:10: error: converting to 'bool' from 'std::nullptr_t'
 requires direct-initialization 

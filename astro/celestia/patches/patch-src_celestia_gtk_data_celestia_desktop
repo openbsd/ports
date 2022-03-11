@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_celestia_gtk_data_celestia_desktop,v 1.3 2021/08/11 14:18:30 ajacoutot Exp $
-
 From 6a4a05730858ecd94db504144b540d7e6f752dc0 Mon Sep 17 00:00:00 2001
 From: Hleb Valoshka <375gnu@gmail.com>
 Date: Tue, 30 Mar 2021 14:14:56 +0300

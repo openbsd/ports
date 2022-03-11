@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/17 14:49:19 danj Exp $
-
 COMMENT=	Differential GPS over IP communication device
 
 DISTNAME=	dgpsip-1.35

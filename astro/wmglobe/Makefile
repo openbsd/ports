@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/04 13:51:20 cwen Exp $
-
 COMMENT=		wm-dockapp; displays the earth on an icon
 
 DISTNAME=		wmglobe-1.3

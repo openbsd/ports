@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/05 07:51:07 ajacoutot Exp $
-
 COMMENT =	community-developed python astronomy tools
 
 MODPY_EGG_VERSION =	4.0.5

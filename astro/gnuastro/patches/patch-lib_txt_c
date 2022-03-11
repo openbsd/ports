@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_txt_c,v 1.1.1.1 2020/06/24 19:26:25 bcallah Exp $
-
 Missing sys/select.h
 
 Index: lib/txt.c

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/05/12 09:41:31 espie Exp $
 bin/GetKp
 @bin bin/wmSpaceWeather
 @man man/man1/wmSpaceWeather.1

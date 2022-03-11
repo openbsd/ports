@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/08/11 14:18:30 ajacoutot Exp $
-
 COMMENT=		free space simulator and planetarium
 
 GH_ACCOUNT=		CelestiaProject

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:00:13 sthen Exp $
-
 COMMENT =		calculations for the position of the sun and the moon
 
 MODPY_EGG_VERSION =	2.2

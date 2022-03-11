@@ -1,4 +1,3 @@
-$OpenBSD: patch-GUI_xephem_xephem_man,v 1.1 2018/08/07 10:20:23 espie Exp $
 make this indexable
 
 Index: GUI/xephem/xephem.man

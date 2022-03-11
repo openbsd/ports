@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/14 00:39:34 naddy Exp $
-
 COMMENT=	set the root window to the moon in its current phase
 DISTNAME=	xphoon-20000613
 REVISION=	1

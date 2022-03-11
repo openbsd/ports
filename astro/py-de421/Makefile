@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/03 22:28:27 sthen Exp $
-
 COMMENT =	JPL Planetary and Lunar Ephemeris DE421 for jplephem
 
 MODPY_EGG_VERSION =	2008.1

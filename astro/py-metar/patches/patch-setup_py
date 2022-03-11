@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.10 2021/07/09 11:24:26 benoit Exp $
 --- setup.py.orig	Fri Jul  9 09:26:38 2021
 +++ setup.py	Fri Jul  9 09:28:08 2021
 @@ -30,7 +30,10 @@

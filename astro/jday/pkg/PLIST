@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2018/05/12 09:41:31 espie Exp $
 @conflict netatalk-*
 @bin bin/dbd
 @bin bin/j2d

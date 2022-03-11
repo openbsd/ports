@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_celestia_wintime_cpp,v 1.2 2021/01/27 18:40:54 ajacoutot Exp $
-
 --- src/celestia/wintime.cpp.orig	Tue Nov 17 15:26:46 2009
 +++ src/celestia/wintime.cpp	Tue Nov 17 15:26:56 2009
 @@ -96,7 +96,7 @@ SetTimeDialog::init(HWND _hDlg)

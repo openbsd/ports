@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-maps,v 1.2 2007/04/01 16:04:06 naddy Exp $
 share/sunclock/earthmaps/altitude.jpg
 share/sunclock/earthmaps/bathymetry.jpg
 share/sunclock/earthmaps/biomap.jpg

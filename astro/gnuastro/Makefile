@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/28 15:20:15 bcallah Exp $
-
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.15
 CATEGORIES =	astro

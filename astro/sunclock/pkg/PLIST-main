@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2021/07/10 02:12:55 inoguchi Exp $
 @pkgpath astro/sunclock
 @pkgpath astro/sunclock,no_maps
 @bin bin/sunclock

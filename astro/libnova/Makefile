@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:15:33 sthen Exp $
-
 COMMENT =	astronomic computations as a library
 
 DISTNAME =	libnova-0.15.0

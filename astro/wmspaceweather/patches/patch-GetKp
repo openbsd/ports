@@ -1,4 +1,3 @@
-$OpenBSD: patch-GetKp,v 1.4 2021/02/11 03:10:28 daniel Exp $
 Index: wmSpaceWeather/GetKp
 --- wmSpaceWeather/GetKp.orig
 +++ wmSpaceWeather/GetKp

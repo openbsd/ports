@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/07 09:04:29 sthen Exp $
-
 COMMENT =	computes positions for the stars, planets, and satellites
 
 MODPY_EGG_VERSION =	1.42

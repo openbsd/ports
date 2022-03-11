@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/11 06:53:55 daniel Exp $
-
 COMMENT=		wm-dockapp; shows sunrise/sunset times
 
 DISTNAME=		wmSun-1.03

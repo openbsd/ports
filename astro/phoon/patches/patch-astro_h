@@ -1,4 +1,3 @@
-$OpenBSD: patch-astro_h,v 1.2 2007/12/18 09:43:37 ajacoutot Exp $
 --- astro.h.orig	Tue Jan 28 01:55:32 2003
 +++ astro.h	Tue Dec 18 09:38:15 2007
 @@ -43,4 +43,4 @@ extern void phasehunt2( double sdate, double phases[2]

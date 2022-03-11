@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/31 15:13:49 bcallah Exp $
-
 COMMENT =		calculate and print calendars
 
 DISTNAME =		gcal-4.1

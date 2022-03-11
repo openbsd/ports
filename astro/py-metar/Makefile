@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/22 04:22:19 bket Exp $
-
 COMMENT =	Python module to access NOAA's METAR weather reports
 
 MODPY_EGG_VERSION =	1.4

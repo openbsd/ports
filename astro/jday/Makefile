@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:31 sthen Exp $
-
 COMMENT=	astronomical julian date calculator
 
 DISTNAME=	jday-2.4

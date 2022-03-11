@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/08/07 06:40:46 martin Exp $
 lib/python${MODPY_VERSION}/site-packages/astral/
 lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/astral-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

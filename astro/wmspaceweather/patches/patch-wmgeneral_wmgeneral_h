@@ -1,5 +1,3 @@
-$OpenBSD: patch-wmgeneral_wmgeneral_h,v 1.1 2021/02/11 03:10:28 daniel Exp $
-
 Index: wmgeneral/wmgeneral.h
 --- wmgeneral/wmgeneral.h.orig
 +++ wmgeneral/wmgeneral.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/14 00:39:34 naddy Exp $
-
 COMMENT=	set the root window to the image of earth
 DISTNAME=	xearth-1.1
 REVISION =	5

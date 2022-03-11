@@ -1,4 +1,3 @@
-$OpenBSD: patch-wmSun_c,v 1.1.1.1 2001/01/09 22:10:18 naddy Exp $
 --- wmSun/wmSun.c.orig	Thu Feb  4 18:43:09 1999
 +++ wmSun/wmSun.c	Tue Jan  9 18:05:54 2001
 @@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {

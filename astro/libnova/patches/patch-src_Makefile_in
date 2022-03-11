@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2014/11/18 10:12:28 brad Exp $
 --- src/Makefile.in.orig	Sat Jul 30 11:54:57 2011
 +++ src/Makefile.in	Tue Nov 18 05:11:11 2014
 @@ -297,7 +297,6 @@ libnova_la_SOURCES = \

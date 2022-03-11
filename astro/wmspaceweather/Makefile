@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/02/11 03:10:28 daniel Exp $
-
 COMMENT=		wm-dockapp; space weather monitor
 
 DISTNAME=		wmSpaceWeather-1.04

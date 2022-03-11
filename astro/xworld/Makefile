@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 21:02:12 sthen Exp $
-
 COMMENT=	earth as seen from the direction of the sun
 
 DISTNAME=	xworld-2.0

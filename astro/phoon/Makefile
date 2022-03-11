@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/17 14:49:19 danj Exp $
-
 COMMENT=		displays the phase of the moon in ascii
 
 DISTNAME=		phoon_29jun2005

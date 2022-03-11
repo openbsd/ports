@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
 

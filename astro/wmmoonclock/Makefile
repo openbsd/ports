@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/04 13:55:17 cwen Exp $
-
 COMMENT=		wm-dockapp; shows the moon phase
 
 DISTNAME=		wmmoonclock-1.30

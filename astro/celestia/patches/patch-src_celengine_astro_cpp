@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_celengine_astro_cpp,v 1.4 2021/01/27 18:40:54 ajacoutot Exp $
-
 Index: src/celengine/astro.cpp
 --- src/celengine/astro.cpp.orig
 +++ src/celengine/astro.cpp

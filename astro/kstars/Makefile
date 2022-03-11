@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2022/02/13 07:50:48 rsadowski Exp $
-
 COMMENT =	planetarium simulator for KDE
 
 DISTNAME =	kstars-3.5.7
