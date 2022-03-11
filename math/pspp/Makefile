@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/31 18:07:55 jca Exp $
-
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
 REVISION =	0

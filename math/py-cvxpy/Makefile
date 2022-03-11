@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT =		modeling language for convex optimization problems
 
 MODPY_EGG_VERSION =	1.0.25

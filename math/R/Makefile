@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.124 2021/11/04 07:57:06 feinerer Exp $
-
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-4.1.2
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-p9m4_files_py,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
 --- files.py.orig	Fri Dec  7 21:46:28 2007
 +++ files.py	Tue Jan 18 12:23:50 2011
 @@ -63,13 +63,13 @@ def bin():

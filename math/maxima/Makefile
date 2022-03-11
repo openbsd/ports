@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
 VERSION=		5.44.0

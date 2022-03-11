@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/02 19:27:50 tb Exp $
-
 COMMENT =		random number generator (rng) testing suite
 
 DISTNAME =		dieharder-3.31.1

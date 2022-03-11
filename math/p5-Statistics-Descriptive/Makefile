@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/11/05 21:47:17 benoit Exp $
-
 COMMENT =		basic descriptive statistical functions
 
 DISTNAME =		Statistics-Descriptive-3.0800

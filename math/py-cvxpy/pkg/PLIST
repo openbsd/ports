@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/04 14:06:33 sthen Exp $
 @pkgpath math/py-cvxpy
 @so lib/python${MODPY_VERSION}/site-packages/_cvxcore.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/cvxpy/

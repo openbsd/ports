@@ -1,5 +1,3 @@
-$OpenBSD: patch-SRC_second_f,v 1.1 2017/11/13 07:09:06 steven Exp $
-
 Index: SRC/second.f
 --- SRC/second.f.orig
 +++ SRC/second.f

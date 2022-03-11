@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/20 08:21:35 espie Exp $
 @bin bin/aamath
 @man man/man1/aamath.1

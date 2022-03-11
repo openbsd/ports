@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_modules_csiro_cmake,v 1.3 2019/08/21 05:47:45 rsadowski Exp $
 Index: cmake/modules/csiro.cmake
 --- cmake/modules/csiro.cmake.orig
 +++ cmake/modules/csiro.cmake

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/26 17:32:06 sthen Exp $
-
 # XXX version 1.17.0 and up do not support python2 anymore;
 # python3 support lives in math/py-numpy
 COMMENT=		fast array and numeric programming library for Python 2

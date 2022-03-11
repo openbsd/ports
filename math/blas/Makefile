@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:39 sthen Exp $
-
 COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	3.8.0

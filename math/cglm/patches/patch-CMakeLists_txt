@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2021/12/22 17:43:34 op Exp $
-
  - don't hardcode optimization flags and drop -Werror
  - set PACKAGE_VERSION for cglm.pc.in
 

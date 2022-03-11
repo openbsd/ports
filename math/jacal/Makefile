@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:42 sthen Exp $
-
 COMMENT=	symbolics math system
 
 CATEGORIES=	math

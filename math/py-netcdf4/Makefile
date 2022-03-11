@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/22 04:22:20 bket Exp $
-
 COMMENT=	Python interface to the netCDF C library
 
 MODPY_EGG_VERSION=	1.5.8

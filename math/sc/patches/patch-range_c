@@ -1,5 +1,3 @@
-$OpenBSD: patch-range_c,v 1.1 2017/05/12 20:27:25 naddy Exp $
-
 Index: range.c
 --- range.c.orig
 +++ range.c

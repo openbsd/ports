@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_ide,v 1.3 2020/07/16 02:50:08 daniel Exp $
-
 Index: Makefile.ide
 --- Makefile.ide.orig
 +++ Makefile.ide

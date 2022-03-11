@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpp_core_system_file_monitor_LinuxFileMonitor_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
-
 RStudio requires inotify...
 
 Index: src/cpp/core/system/file_monitor/LinuxFileMonitor.cpp

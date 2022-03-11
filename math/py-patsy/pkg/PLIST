@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/10/08 20:34:52 daniel Exp $
 @conflict py-patsy-*
 @pkgpath math/py-patsy
 lib/python${MODPY_VERSION}/site-packages/patsy/

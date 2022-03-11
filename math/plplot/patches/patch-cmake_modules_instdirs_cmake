@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_modules_instdirs_cmake,v 1.2 2017/11/04 10:28:21 steven Exp $
 Index: cmake/modules/instdirs.cmake
 --- cmake/modules/instdirs.cmake.orig
 +++ cmake/modules/instdirs.cmake

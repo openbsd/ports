@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:45 sthen Exp $
-
 COMMENT =	generate Math::Symbolic parser extensions
 
 DISTNAME =	Math-SymbolicX-ParserExtensionFactory-3.02

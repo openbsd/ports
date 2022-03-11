@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/14 07:15:32 naddy Exp $
-
 COMMENT =	manipulate integer points bounded by linear constraints
 
 DISTNAME =	isl-0.18

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/11/03 14:12:35 sthen Exp $
-
 COMMENT=	library for handling FITS data
 CATEGORIES=	math graphics devel
 

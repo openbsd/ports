@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:47:47 sthen Exp $
-
 COMMENT=		wm-dockapp; simple four-function calculator
 
 DISTNAME=		wmcalc-0.3

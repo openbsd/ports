@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT=	perl module for solving bezier curves
 
 MODULES=	cpan

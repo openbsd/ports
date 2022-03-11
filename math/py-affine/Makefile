@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:35 sthen Exp $
-
 COMMENT =		matrices describing affine transformation of the plane
 
 MODPY_EGG_VERSION =	2.3.0

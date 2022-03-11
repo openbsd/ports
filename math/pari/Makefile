@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/16 23:21:47 daniel Exp $
-
 COMMENT=	number theory-oriented computer algebra system
 
 V=		2.11.4

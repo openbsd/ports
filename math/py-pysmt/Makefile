@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT =		library for SMT formulae manipulation and solving
 
 MODPY_EGG_VERSION =	0.8.0

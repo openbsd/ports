@@ -1,5 +1,3 @@
-$OpenBSD: patch-psc_c,v 1.3 2017/05/12 20:27:25 naddy Exp $
-
 Index: psc.c
 --- psc.c.orig
 +++ psc.c

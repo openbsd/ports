@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile,v 1.3 2020/11/21 14:13:06 sthen Exp $
-
 Honour CFLAGS
 Avoid library symlinks
 Rectify install targets

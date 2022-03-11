@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:41 sthen Exp $
-
 COMMENT=	multi-radix integer desk calculator
 
 DISTNAME=	hc

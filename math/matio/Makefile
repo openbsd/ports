@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/03/09 08:38:04 benoit Exp $
-
 COMMENT=	library for reading and writing Matlab MAT files
 
 DISTNAME=	matio-1.5.21

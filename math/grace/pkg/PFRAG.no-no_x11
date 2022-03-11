@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.3 2018/06/23 19:53:36 schwarze Exp $
 bin/xmgrace
 @bin grace/bin/xmgrace
 @man man/man1/xmgrace.1

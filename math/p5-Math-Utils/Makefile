@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:29 sthen Exp $
-
 COMMENT =	useful mathematical functions not in Perl
 
 DISTNAME =	Math-Utils-1.14

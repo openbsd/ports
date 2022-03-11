@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/20 05:01:05 msf Exp $
 ${P5SITE}/Math/
 ${P5SITE}/Math/Bezier.pm
 @man man/man3p/Math::Bezier.3p

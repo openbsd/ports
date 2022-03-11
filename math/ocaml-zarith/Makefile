@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/12 05:26:18 daniel Exp $
-
 COMMENT =	arbitrary precision integer and rational arithmetic
 CATEGORIES =	math
 

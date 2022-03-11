@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	Z3 theorem prover
 
 VERSION =	4.8.9

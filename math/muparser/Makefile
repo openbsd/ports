@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/08/14 12:01:38 feinerer Exp $
-
 COMMENT =	C++ math parser library
 
 GH_ACCOUNT =	beltoforion

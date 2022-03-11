@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-native,v 1.5 2022/02/12 22:29:22 kn Exp $
 bin/coq-tex
 bin/coq_makefile
 bin/coqc

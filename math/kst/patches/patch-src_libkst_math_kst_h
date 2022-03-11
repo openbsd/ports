@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libkst_math_kst_h,v 1.2 2020/01/10 23:10:38 cwen Exp $
-
 ports-gcc: fix out of scope errors, from
 https://github.com/Kst-plot/kst/pull/18
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/15 19:20:50 sthen Exp $
-
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 

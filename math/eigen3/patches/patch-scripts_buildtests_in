@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_buildtests_in,v 1.1 2022/02/19 21:10:57 rsadowski Exp $
-
 Index: scripts/buildtests.in
 --- scripts/buildtests.in.orig
 +++ scripts/buildtests.in

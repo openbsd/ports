@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT =		encoding and decoding of base36 strings
 
 MODULES =		cpan

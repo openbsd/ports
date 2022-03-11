@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/09 11:24:29 tb Exp $
-
 COMMENT =		interactive and automated theorem prover
 
 GH_ACCOUNT =		leanprover-community

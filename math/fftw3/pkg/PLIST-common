@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-common,v 1.5 2019/10/03 16:49:11 naddy Exp $
 @pkgpath math/fftw3,-common,double
 @pkgpath math/fftw3,-common,float
 bin/fftw-wisdom-to-conf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/09/15 21:55:07 tb Exp $
-
 COMMENT=	clustering algorithm for graphs
 
 V=		14-137

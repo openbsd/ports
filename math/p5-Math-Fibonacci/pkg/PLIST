@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/17 20:18:26 merdely Exp $
 ${P5SITE}/Math/
 ${P5SITE}/Math/Fibonacci.pm
 @man man/man3p/Math::Fibonacci.3p

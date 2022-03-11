@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:29 sthen Exp $
-
 COMMENT=	interface to the ISAAC PRNG algorithm
 
 MODULES=	cpan

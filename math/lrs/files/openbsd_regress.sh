@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: openbsd_regress.sh,v 1.2 2020/11/20 19:16:18 edd Exp $
 
 IN=test.ine
 OUT=actual_outcome.ine

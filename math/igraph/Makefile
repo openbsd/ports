@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/08 10:44:05 espie Exp $
-
 COMMENT = 	C graph library
 V =		0.9.5
 DISTNAME =	igraph-$V

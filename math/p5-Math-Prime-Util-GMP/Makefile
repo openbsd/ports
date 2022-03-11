@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/13 03:02:20 afresh1 Exp $
-
 COMMENT =	utilities related to prime numbers, using GMP
 DISTNAME =	Math-Prime-Util-GMP-0.52
 CATEGORIES =	math

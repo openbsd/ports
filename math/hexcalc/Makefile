@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:47:41 sthen Exp $
-
 COMMENT=	multi-radix calculator for x11
 
 DATE=		19951219

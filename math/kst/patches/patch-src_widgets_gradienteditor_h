@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_widgets_gradienteditor_h,v 1.1 2021/01/19 06:41:10 rsadowski Exp $
-
 Index: src/widgets/gradienteditor.h
 --- src/widgets/gradienteditor.h.orig
 +++ src/widgets/gradienteditor.h

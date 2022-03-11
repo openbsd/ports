@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/02/20 13:51:54 benoit Exp $
-
 COMMENT =		library to manipulate units of physical quantities
 
 DISTNAME =		udunits-2.2.26

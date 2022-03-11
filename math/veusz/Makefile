@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	3.4
 DISTNAME =	veusz-${MODPY_EGG_VERSION}

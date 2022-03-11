@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2020/05/17 23:04:49 cwen Exp $
-
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.25

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2020/04/06 08:48:06 pirofti Exp $
-
 COMMENT =	command-driven interactive function plotting program
 
 V =		5.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:43 sthen Exp $
-
 COMMENT=	monte carlo simulation software
 
 DISTNAME=	mcsim-4.2.0

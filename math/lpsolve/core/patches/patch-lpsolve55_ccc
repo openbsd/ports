@@ -1,5 +1,3 @@
-$OpenBSD: patch-lpsolve55_ccc,v 1.3 2012/09/29 05:02:50 brad Exp $
-
 * We don't use -ldl
 * Don't use platform specific paths
 * Honour CFLAGS and CC

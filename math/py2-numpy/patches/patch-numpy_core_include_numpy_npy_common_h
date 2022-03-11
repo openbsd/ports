@@ -1,5 +1,3 @@
-$OpenBSD: patch-numpy_core_include_numpy_npy_common_h,v 1.1.1.1 2021/06/14 00:25:39 daniel Exp $
-
 XXX recheck powerpc, is this still needed?
 
 py-numpy only checks for expl to determine whether extended-precision

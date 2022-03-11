@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_config_perl_pl,v 1.2 2014/02/06 17:32:27 edd Exp $
-
 Correctly detect install directory
 
 --- config/config_perl.pl.orig2	Sat Jan 11 22:59:44 2014

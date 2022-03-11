@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.19.5

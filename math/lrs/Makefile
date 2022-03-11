@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/21 14:13:06 sthen Exp $
-
 COMMENT =		solve vertex enumeration and convex hull problems
 
 V =			071a

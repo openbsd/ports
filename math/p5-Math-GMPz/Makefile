@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/27 17:07:25 steven Exp $
-
 COMMENT =	perl interface to GMP integer functions
 
 MODULES =	cpan

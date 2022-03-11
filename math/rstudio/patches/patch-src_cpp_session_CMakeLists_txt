@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpp_session_CMakeLists_txt,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
-
 No pandoc. Don't need it. Don't try to find it.
 
 Index: src/cpp/session/CMakeLists.txt

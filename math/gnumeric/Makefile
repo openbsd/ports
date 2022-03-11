@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.150 2022/01/21 07:55:56 ajacoutot Exp $
-
 GOFFICE_API_VERSION=	0.10
 GOFFICE_VERSION=	0.10.51
 

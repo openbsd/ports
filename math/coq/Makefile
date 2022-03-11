@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2022/02/13 11:10:56 kn Exp $
-
 COMMENT=		proof assistant based on a typed lambda calculus
 
 V=			8.13.2

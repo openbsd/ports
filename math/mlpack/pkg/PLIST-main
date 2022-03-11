@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2020/12/11 12:42:28 martin Exp $
 @bin bin/mlpack_adaboost
 @bin bin/mlpack_approx_kfn
 @bin bin/mlpack_bayesian_linear_regression

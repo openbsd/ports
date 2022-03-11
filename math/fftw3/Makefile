@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/10/03 16:49:10 naddy Exp $
-
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
 

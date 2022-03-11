@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpp_core_r_util_RSessionContext_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
-
 This is what FreeBSD does.
 
 Index: src/cpp/core/r_util/RSessionContext.cpp

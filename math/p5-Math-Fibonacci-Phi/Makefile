@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT=	calculates Phi and phi for Fibonacci numbers
 
 DISTNAME=	Math-Fibonacci-Phi-0.02

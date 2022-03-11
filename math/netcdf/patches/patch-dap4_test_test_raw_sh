@@ -1,5 +1,3 @@
-$OpenBSD: patch-dap4_test_test_raw_sh,v 1.1 2019/03/13 20:27:40 sthen Exp $
-
 Index: dap4_test/test_raw.sh
 --- dap4_test/test_raw.sh.orig
 +++ dap4_test/test_raw.sh

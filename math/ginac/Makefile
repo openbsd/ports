@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/02/23 19:39:29 sthen Exp $
-
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 
 DISTNAME=	ginac-1.7.4

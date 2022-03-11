@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2015/03/16 18:07:50 naddy Exp $
-
 COMMENT =		mixed integer linear programming solver
 
 DISTNAME =		lp_solve_${V}_source

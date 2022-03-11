@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/27 21:08:50 benoit Exp $
 ${P5SITE}/Math/
 ${P5SITE}/Math/Base85.pm
 @man man/man3p/Math::Base85.3p

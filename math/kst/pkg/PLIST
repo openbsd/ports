@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/29 22:16:18 espie Exp $
 @bin bin/kst2
 lib/kst2/
 lib/kst2/plugins/

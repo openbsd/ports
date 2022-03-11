@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_CMakeLists_txt,v 1.1 2018/12/28 16:28:44 pirofti Exp $
-
 Manual pages should go under ${PREFIX}/man/ rather than under
 ${PREFIX}/share/man/.
 

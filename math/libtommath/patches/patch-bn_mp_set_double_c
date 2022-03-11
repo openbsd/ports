@@ -1,5 +1,3 @@
-$OpenBSD: patch-bn_mp_set_double_c,v 1.1 2021/03/11 06:29:21 gkoehler Exp $
-
 We have IEEE754 floating-point.
 
 Index: bn_mp_set_double.c

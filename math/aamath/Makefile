@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:39 sthen Exp $
-
 COMMENT=		ASCII art mathematics
 
 DISTNAME=		aamath-0.3

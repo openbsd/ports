@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/10/18 10:39:09 cwen Exp $
-
 COMMENT=	binary-decimal and decimal-binary routines for IEEE doubles
 
 CATEGORIES=	math

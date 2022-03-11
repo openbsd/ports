@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:43 sthen Exp $
-
 COMMENT =		nonogram solver library
 
 DISTNAME =		nonolib-4.3.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/04/06 08:48:06 pirofti Exp $
-
 COMMENT =	library for fast updates of QR and Cholesky decompositions
 
 DISTNAME =	qrupdate-1.1.2

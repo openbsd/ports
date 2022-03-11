@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/18 10:29:47 espie Exp $
 @conflict zh-hc-*
 bin/hc
 @man man/man1/hc.1

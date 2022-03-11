@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_kst_CMakeLists_txt,v 1.1 2017/10/04 21:04:33 rsadowski Exp $
-
 Index: src/kst/CMakeLists.txt
 --- src/kst/CMakeLists.txt.orig
 +++ src/kst/CMakeLists.txt

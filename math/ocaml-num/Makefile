@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT =	library for arithmetic on big integers and rationals
 CATEGORIES =	math
 

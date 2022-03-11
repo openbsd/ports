@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/07 19:06:43 jca Exp $
-
 COMMENT =		weighted finite-state transducers library
 
 DISTNAME =		openfst-1.8.1

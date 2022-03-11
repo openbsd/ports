@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/13 03:03:11 afresh1 Exp $
-
 COMMENT =	utilities related to prime numbers, including fast sieves
 DISTNAME =	Math-Prime-Util-0.73
 CATEGORIES =	math

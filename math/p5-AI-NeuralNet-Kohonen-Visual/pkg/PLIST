@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/31 16:49:01 jasper Exp $
 ${P5SITE}/AI/NeuralNet/Kohonen/Visual.pm
 @man man/man3p/AI::NeuralNet::Kohonen::Visual.3p

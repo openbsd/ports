@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/04 22:02:27 bcallah Exp $
 @bin bin/pcalc

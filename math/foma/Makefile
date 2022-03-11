@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/19 02:13:02 tb Exp $
-
 COMMENT =		finite-state compiler and C library
 
 DISTNAME =		foma-0.9.18.20200928

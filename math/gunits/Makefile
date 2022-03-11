@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:35 sthen Exp $
-
 COMMENT=		GNU units conversion program
 
 DISTNAME=		units-2.16

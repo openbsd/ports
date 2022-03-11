@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/11 15:10:47 chrisz Exp $
 %%native%%
 lib/ocaml/num/
 lib/ocaml/num-top/

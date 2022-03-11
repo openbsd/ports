@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/18 13:22:24 sthen Exp $
-
 COMMENT =		library for arbitrary-precision floating-point arithmetic
 
 MODPY_EGG_VERSION =	1.2.1

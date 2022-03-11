@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_lean_test_single_sh,v 1.1.1.1 2021/08/16 20:19:23 tb Exp $
-
 Index: tests/lean/test_single.sh
 --- tests/lean/test_single.sh.orig
 +++ tests/lean/test_single.sh

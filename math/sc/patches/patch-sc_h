@@ -1,5 +1,3 @@
-$OpenBSD: patch-sc_h,v 1.2 2017/05/12 20:27:25 naddy Exp $
-
 Index: sc.h
 --- sc.h.orig
 +++ sc.h

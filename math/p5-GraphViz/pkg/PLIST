@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/20 05:06:22 msf Exp $
 ${P5SITE}/Devel/
 ${P5SITE}/Devel/GraphVizProf.pm
 ${P5SITE}/GraphViz/

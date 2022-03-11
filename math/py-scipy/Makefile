@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.5.3

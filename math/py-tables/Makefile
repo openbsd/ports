@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/22 04:22:21 bket Exp $
-
 COMMENT=	Python package to manage extremely large amounts of data
 
 MODPY_EGG_VERSION=	3.6.1

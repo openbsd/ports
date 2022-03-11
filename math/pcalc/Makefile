@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:45 sthen Exp $
-
 # XXX: 32-bit issues?
 # See: https://github.com/vapier/pcalc/issues/7
 # Uncomment me if 32-bit platforms are not reliable

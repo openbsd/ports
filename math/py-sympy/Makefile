@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =		computer algebra system (CAS) in Python
 
 MODPY_EGG_VERSION =	1.7.1

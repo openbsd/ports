@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/06 08:48:06 pirofti Exp $
-
 COMMENT =	implementation of complex error functions
 
 V =		1.13

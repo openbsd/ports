@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_H5Zutil_c,v 1.1 2020/04/04 19:26:43 cwen Exp $
-
 Fix build on BE_ARCHS, see:
 https://github.com/Unidata/netcdf-c/pull/1688
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpp_desktop_DesktopMain_cpp,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
-
 Q_OS_LINUX needlessly excludes the BSDs.
 has_value() only available in later Boost versions.
 

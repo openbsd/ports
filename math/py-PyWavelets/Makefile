@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 08:25:49 sthen Exp $
-
 COMMENT =		wavelet transform module
 
 MODPY_EGG_VERSION =	1.1.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:42:33 jasper Exp $
 ${P5SITE}/Math/
 ${P5SITE}/Math/Spline.pm
 @man man/man3p/Math::Spline.3p

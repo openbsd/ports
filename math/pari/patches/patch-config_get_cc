@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_get_cc,v 1.1 2019/10/17 01:09:22 daniel Exp $
-
 Honor CFLAGS.
 
 Index: config/get_cc

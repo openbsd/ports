@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/01/19 06:41:10 rsadowski Exp $
-
 COMMENT=	data viewing/plotting tool
 
 GH_ACCOUNT =	Kst-plot

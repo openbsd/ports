@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:43 sthen Exp $
-
 COMMENT =		terminal-based nonogram solver
 
 V =			1.9.13

@@ -1,5 +1,3 @@
-$OpenBSD: patch-plplot_test_CMakeLists_txt,v 1.2 2019/08/21 05:47:46 rsadowski Exp $
-
 Index: plplot_test/CMakeLists.txt
 --- plplot_test/CMakeLists.txt.orig
 +++ plplot_test/CMakeLists.txt

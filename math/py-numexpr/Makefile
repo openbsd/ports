@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/01/26 22:58:22 kmos Exp $
-
 COMMENT =		fast numerical expression evaluator for NumPy
 
 MODPY_EGG_VERSION =	2.7.3

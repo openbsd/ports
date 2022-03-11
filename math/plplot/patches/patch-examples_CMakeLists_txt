@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_CMakeLists_txt,v 1.3 2019/08/21 05:47:45 rsadowski Exp $
 Index: examples/CMakeLists.txt
 --- examples/CMakeLists.txt.orig
 +++ examples/CMakeLists.txt

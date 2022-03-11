@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/04 14:06:34 sthen Exp $
 @conflict py-osqp-*
 @pkgpath math/py-osqp
 lib/python${MODPY_VERSION}/site-packages/osqp/

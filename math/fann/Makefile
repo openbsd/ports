@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:47:40 sthen Exp $
-
 COMMENT=	Fast Artificial Neural Network Library
 
 GH_ACCOUNT=	libfann

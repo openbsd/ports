@@ -1,4 +1,3 @@
-$OpenBSD: patch-numpy_distutils_site_cfg,v 1.2 2009/02/16 10:10:09 eric Exp $
 --- numpy/distutils/site.cfg.orig	Fri Feb 13 15:41:03 2009
 +++ numpy/distutils/site.cfg	Fri Feb 13 15:41:47 2009
 @@ -0,0 +1,36 @@

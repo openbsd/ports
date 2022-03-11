@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/03 22:46:14 martynas Exp $
 @bin bin/wcalc
 @man man/man1/wcalc.1

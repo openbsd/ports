@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/10 13:27:02 op Exp $
-
 COMMENT =	highly optimized graphics math library
 
 GH_ACCOUNT =	recp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.49 2021/11/04 07:57:06 feinerer Exp $
 bin/R
 @bin bin/Rscript
 lib/R/

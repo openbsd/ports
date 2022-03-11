@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_VERSION_INFO,v 1.16 2021/06/25 07:08:19 benoit Exp $
 Index: src/VERSION_INFO
 --- src/VERSION_INFO.orig
 +++ src/VERSION_INFO

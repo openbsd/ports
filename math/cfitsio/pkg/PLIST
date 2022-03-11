@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/05/02 13:13:08 rsadowski Exp $
 @bin bin/fitscopy
 @bin bin/fpack
 @bin bin/funpack

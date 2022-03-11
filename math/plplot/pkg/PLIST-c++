@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-c++,v 1.6 2017/11/04 10:28:21 steven Exp $
 @lib lib/libplplotcxx.so.${LIBplplotcxx_VERSION}
 lib/pkgconfig/plplot-c++.pc
 share/examples/plplot/c++/

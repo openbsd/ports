@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/17 10:50:04 espie Exp $
-
 COMMENT =	library for solving sparse linear equation systems
 
 

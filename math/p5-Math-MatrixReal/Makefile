@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:29 sthen Exp $
-
 COMMENT =	implement the data type "matrix of reals"
 DISTNAME =	Math-MatrixReal-2.13
 CATEGORIES =	math

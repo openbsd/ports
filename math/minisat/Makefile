@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/11/03 14:07:44 jasper Exp $
-
 COMMENT=		minimalistic Boolean satisfiability solver
 
 DISTNAME=		minisat-2.2.0.20170810

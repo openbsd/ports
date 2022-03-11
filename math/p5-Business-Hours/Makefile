@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT =	calculate business hours in a time period
 
 MODULES =	cpan

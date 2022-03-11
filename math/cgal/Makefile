@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/02/04 06:09:02 rsadowski Exp $
-
 BROKEN-mips64 =		ICE on Interval_nt.h:98
 
 COMMENT =		Computational Geometry Algorithms Library

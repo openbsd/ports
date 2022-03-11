@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/09 02:02:43 bcallah Exp $
-
 V =		5.2.2
 COMMENT =	implementation of POSIX bc with GNU and BSD extensions
 DISTNAME =	bc-${V}

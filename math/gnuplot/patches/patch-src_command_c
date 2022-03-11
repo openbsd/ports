@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_command_c,v 1.2 2018/12/22 09:35:30 pirofti Exp $
-
 command.o: In function `report_error':
 command.c:(.text+0x5842): undefined reference to `WEXITSTATUS'
 

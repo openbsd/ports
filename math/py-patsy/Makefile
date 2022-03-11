@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT =		Python package for describing statistical models
 
 MODPY_EGG_VERSION =	0.4.1

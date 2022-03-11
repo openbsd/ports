@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:56 espie Exp $
-
 COMMENT=		Library for Automated Deduction Research
 
 DISTNAME=		LADR-Dec-2007

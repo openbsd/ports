@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.125 2022/02/26 22:59:45 naddy Exp $
-
 COMMENT =	high-level language for numerical computations
 
 VERSION =	5.2.0

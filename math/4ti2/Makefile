@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/18 18:11:03 daniel Exp $
-
 COMMENT =	solve algebraic, geometric, combinatorial problems
 
 V =		1.6.9

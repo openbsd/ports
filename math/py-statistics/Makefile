@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/21 19:50:32 kmos Exp $
-
 COMMENT =		port of Python 3.4 statistics module to Python 2
 
 MODPY_EGG_VERSION =	1.0.3.5

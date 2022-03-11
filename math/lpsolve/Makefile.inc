@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.3 2019/07/13 10:59:27 sthen Exp $
-
 V_MAJOR ?=		5.5
 V ?=			${V_MAJOR}.2.0
 

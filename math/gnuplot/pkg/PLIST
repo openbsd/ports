@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2017/11/04 17:21:41 pirofti Exp $
 @bin bin/gnuplot
 @man man/man1/gnuplot-ja.1
 @man man/man1/gnuplot.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libkst_editablevector_cpp,v 1.1 2017/10/04 21:04:33 rsadowski Exp $
-
 Index: src/libkst/editablevector.cpp
 --- src/libkst/editablevector.cpp.orig
 +++ src/libkst/editablevector.cpp

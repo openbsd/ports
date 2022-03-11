@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/14 07:30:48 feinerer Exp $
 @bin bin/qconvex
 @bin bin/qdelaunay
 @bin bin/qhalf

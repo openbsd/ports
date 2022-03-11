@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.native,v 1.10 2022/02/12 22:29:22 kn Exp $
 %%dynlink%%
 @bin bin/coq-tex
 @bin bin/coq_makefile

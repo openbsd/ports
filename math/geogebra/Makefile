@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/19 01:50:30 kurt Exp $
-
 COMMENT=	educational mathematical software
 
 V=		4.2.60.0

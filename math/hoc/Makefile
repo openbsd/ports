@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:41 sthen Exp $
-
 COMMENT=	from Kernighan & Pike: High Order Calculator
 
 GH_ACCOUNT =	IanDarwin

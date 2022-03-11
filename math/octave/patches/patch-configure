@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.15 2020/05/16 08:08:22 steven Exp $
-
 Use GNU readline as our base readline lacks rl_prefer_env_winsize.
 
 Index: configure

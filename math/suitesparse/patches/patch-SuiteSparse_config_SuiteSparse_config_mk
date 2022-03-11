@@ -1,4 +1,3 @@
-$OpenBSD: patch-SuiteSparse_config_SuiteSparse_config_mk,v 1.3 2019/01/22 06:42:34 rsadowski Exp $
 Index: SuiteSparse_config/SuiteSparse_config.mk
 --- SuiteSparse_config/SuiteSparse_config.mk.orig
 +++ SuiteSparse_config/SuiteSparse_config.mk

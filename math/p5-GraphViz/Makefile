@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT=	perl interface to the graphviz graphing tool
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-$OpenBSD: patch-expr_cc,v 1.1 2017/05/11 16:34:03 espie Exp $
 clang looks at parameter names
 
 Index: expr.cc

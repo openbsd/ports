@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT=	fast functions to CoNVert between number Bases
 
 DISTNAME =	Math-BaseCnv-1.14

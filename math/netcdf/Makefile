@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/06/09 19:50:08 sthen Exp $
-
 COMMENT=	library for machine-independent, array-oriented data access
 
 V=		4.7.4

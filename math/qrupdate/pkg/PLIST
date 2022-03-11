@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/03/16 18:07:50 naddy Exp $
 lib/libqrupdate.a
 @lib lib/libqrupdate.so.${LIBqrupdate_VERSION}

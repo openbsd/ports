@@ -1,4 +1,3 @@
-$OpenBSD: patch-puzzle_c,v 1.1.1.1 2016/08/05 05:44:10 bentley Exp $
 --- puzzle.c.orig	Wed Jan 13 19:33:36 2016
 +++ puzzle.c	Wed Jan 13 19:33:42 2016
 @@ -110,7 +110,7 @@ int nonogram_fscanpuzzle_ef(nonogram_puzzle *p, FILE *

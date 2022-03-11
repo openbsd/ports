@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:47:40 sthen Exp $
-
 PORTROACH=	limit:^2\.
 
 COMMENT=	C routines for computing the Discrete Fourier Transform

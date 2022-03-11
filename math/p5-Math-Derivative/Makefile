@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT =		numeric 1st and 2nd order differentiation
 
 DISTNAME =		Math-Derivative-1.01

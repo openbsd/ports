@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libkst_editablematrix_cpp,v 1.1 2017/10/04 21:04:33 rsadowski Exp $
-
 Index: src/libkst/editablematrix.cpp
 --- src/libkst/editablematrix.cpp.orig
 +++ src/libkst/editablematrix.cpp

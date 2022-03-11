@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.27 2020/05/16 08:08:22 steven Exp $
 bin/mkoctfile
 @bin bin/mkoctfile-${VERSION}
 bin/octave

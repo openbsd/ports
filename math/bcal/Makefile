@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/19 14:20:45 bcallah Exp $
-
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
 ONLY_FOR_ARCHS =	${LP64_ARCHS}

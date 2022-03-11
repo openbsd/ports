@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:28 sthen Exp $
-
 COMMENT =	library of advanced math functions
 
 MODULES =	cpan

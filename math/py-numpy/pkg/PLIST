@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/10/25 06:33:04 bket Exp $
 @comment bin/f2py
 @comment bin/f2py3
 bin/f2py${MODPY_VERSION}

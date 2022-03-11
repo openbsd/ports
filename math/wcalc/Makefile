@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/17 14:46:33 danj Exp $
 # Original from: Kyle Wheeler <kyle@memoryhole.net>
 
 COMMENT =		natural-expression command-line calculator

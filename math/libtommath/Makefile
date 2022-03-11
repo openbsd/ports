@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/11 06:29:21 gkoehler Exp $
-
 COMMENT =		number theoretic multiple-precision integer library
 CATEGORIES =		math
 HOMEPAGE =		http://libtom.net/

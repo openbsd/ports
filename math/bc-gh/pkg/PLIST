@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/07/08 21:01:13 bcallah Exp $
 @pkgpath math/ebc
 @bin bin/bc-gh
 bin/dc-gh

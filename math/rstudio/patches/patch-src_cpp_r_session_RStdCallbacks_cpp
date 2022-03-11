@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpp_r_session_RStdCallbacks_cpp,v 1.1 2021/05/22 12:01:39 rsadowski Exp $
-
 fix building with boost 1.75.
 
 Index: src/cpp/r/session/RStdCallbacks.cpp

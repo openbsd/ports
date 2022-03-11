@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:27 sthen Exp $
-
 COMMENT=	implement a back-propagation feed-forward neural network
 
 MODULES=	cpan

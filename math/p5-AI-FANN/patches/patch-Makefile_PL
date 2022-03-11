@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2009/03/23 07:22:24 jasper Exp $
 --- Makefile.PL.orig	Mon Mar 23 00:25:55 2009
 +++ Makefile.PL	Mon Mar 23 00:26:02 2009
 @@ -33,7 +33,7 @@ WriteMakefile( NAME => 'AI::FANN',

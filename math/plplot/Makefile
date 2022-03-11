@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2019/08/22 19:33:42 rsadowski Exp $
-
 COMMENT-main =	advanced 2D and 3D scientific plotting library
 COMMENT-c++ =	C++ interface to plplot
 COMMENT-fortran =	Fortran 77 interface to plplot

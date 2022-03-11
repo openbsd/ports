@@ -1,4 +1,3 @@
-$OpenBSD: patch-scripts_pkg_private_configure_make_m,v 1.3 2019/01/13 22:43:59 steven Exp $
 Index: scripts/pkg/private/configure_make.m
 --- scripts/pkg/private/configure_make.m.orig
 +++ scripts/pkg/private/configure_make.m

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT =		convex optimization package
 
 MODPY_EGG_VERSION =	1.2.6

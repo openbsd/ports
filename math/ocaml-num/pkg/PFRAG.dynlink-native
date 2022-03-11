@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2018/07/11 15:10:47 chrisz Exp $
 @bin lib/ocaml/num/nums.cmxs

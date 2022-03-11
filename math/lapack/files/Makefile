@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/04/30 20:44:32 jca Exp $
-
 LIB = lapack
 
 TIMER = INT_ETIME

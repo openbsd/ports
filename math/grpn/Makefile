@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:41 sthen Exp $
-
 COMMENT=	graphical reverse polish notation calculator
 
 DISTNAME=	grpn-1.1.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/27 17:06:33 steven Exp $
-
 COMMENT =	perl interface to GMP floating point functions
 
 MODULES =	cpan

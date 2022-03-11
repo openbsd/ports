@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/10/16 13:20:24 martin Exp $
 @conflict py-cftime-*
 @pkgpath math/py-cftime
 lib/python${MODPY_VERSION}/site-packages/cftime/

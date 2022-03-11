@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/24 08:54:10 martin Exp $
-
 COMMENT=	time and date handling utility functions from netcdf4-python
 
 MODPY_EGG_VERSION= 	1.5.2

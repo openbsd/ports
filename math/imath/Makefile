@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/22 09:49:26 ajacoutot Exp $
-
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
 V=			3.1.4

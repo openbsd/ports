@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/28 03:47:03 daniel Exp $
-
 COMMENT =	set of python modules for machine learning and data mining
 
 MODPY_EGG_VERSION =	1.0.2

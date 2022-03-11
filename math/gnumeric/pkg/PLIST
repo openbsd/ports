@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.58 2021/03/21 08:25:17 ajacoutot Exp $
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
 @bin bin/ssconvert

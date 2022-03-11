@@ -1,5 +1,3 @@
-$OpenBSD: patch-ncgen3_ncgen_y,v 1.1 2019/03/13 20:27:40 sthen Exp $
-
 Index: ncgen3/ncgen.y
 --- ncgen3/ncgen.y.orig
 +++ ncgen3/ncgen.y

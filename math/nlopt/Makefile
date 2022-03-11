@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/30 14:37:54 benoit Exp $
-
 COMMENT =		library for nonlinear optimization
 
 GH_ACCOUNT =		stevengj

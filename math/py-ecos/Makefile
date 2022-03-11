@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:36 sthen Exp $
-
 COMMENT =		Python interface to ECOS
 
 MODPY_EGG_VERSION =	2.0.7.post1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2020/07/01 18:10:07 bcallah Exp $
-
 Need to build gwt.
 
 Index: src/CMakeLists.txt

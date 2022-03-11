@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/06/27 21:03:57 espie Exp $
 @bin bin/wxmaxima
 share/applications/wxmaxima.desktop
 share/locale/ca/LC_MESSAGES/wxMaxima.mo

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:29 sthen Exp $
-
 COMMENT =	symbolic calculations for Perl
 DISTNAME =	Math-Symbolic-0.612
 CATEGORIES =	math

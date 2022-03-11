@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/03/20 16:44:25 naddy Exp $
-
 COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05

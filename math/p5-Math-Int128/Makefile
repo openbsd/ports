@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:29 sthen Exp $
-
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
 COMMENT =	manipulate 128 bits integers in Perl

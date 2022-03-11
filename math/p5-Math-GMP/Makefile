@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/11/18 09:42:35 sthen Exp $
-
 COMMENT=	high speed arbitrary-size integer math
 
 MODULES=	cpan

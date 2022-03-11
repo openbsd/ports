@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/25 15:36:08 jasper Exp $
 @bin bin/psc
 @bin bin/sc
 @bin bin/scqref

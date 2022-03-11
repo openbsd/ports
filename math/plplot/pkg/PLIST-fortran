@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-fortran,v 1.1 2017/11/04 10:28:21 steven Exp $
 @pkgpath math/plplot,-f77
 lib/fortran/
 lib/fortran/modules/

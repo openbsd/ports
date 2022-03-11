@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT =		snuggs are s-expressions for numpy
 
 MODPY_EGG_VERSION =	1.4.7

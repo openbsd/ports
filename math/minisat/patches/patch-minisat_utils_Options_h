@@ -1,5 +1,3 @@
-$OpenBSD: patch-minisat_utils_Options_h,v 1.1 2018/04/11 14:36:14 edd Exp $
-
 C++11 fixes.
 
 Index: minisat/utils/Options.h

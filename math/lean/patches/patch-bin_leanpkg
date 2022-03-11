@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_leanpkg,v 1.1.1.1 2021/08/16 20:19:23 tb Exp $
-
 Index: bin/leanpkg
 --- bin/leanpkg.orig
 +++ bin/leanpkg

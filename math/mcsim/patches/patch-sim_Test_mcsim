@@ -1,4 +1,3 @@
-$OpenBSD: patch-sim_Test_mcsim,v 1.1.1.1 2001/01/19 15:24:58 reinhard Exp $
 --- sim/Test_mcsim.orig	Fri Nov 14 15:45:56 1997
 +++ sim/Test_mcsim	Sun Jan 14 17:41:45 2001
 @@ -1,147 +1,147 @@

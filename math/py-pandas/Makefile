@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/27 12:14:41 sthen Exp $
-
 COMMENT =		data analysis and manipulation library
 
 MODPY_EGG_VERSION =	1.3.4

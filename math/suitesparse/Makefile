@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/04/06 08:48:06 pirofti Exp $
-
 BROKEN-hppa=	undefined refs to dtrsv/dgemv/dtrsm/dgemm/dger in libumfpack.a
 
 COMMENT=		suite of sparse matrix algorithms

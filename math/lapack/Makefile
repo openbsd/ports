@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:42 sthen Exp $
-
 COMMENT=	library of Fortran linear algebra subroutines
 
 VERSION=	3.8.0

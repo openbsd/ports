@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2020/01/11 12:27:39 naddy Exp $
-
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.42.3

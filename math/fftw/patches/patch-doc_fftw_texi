@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_fftw_texi,v 1.1.1.1 2001/07/01 23:10:44 lebel Exp $
 --- doc/fftw.texi.orig	Mon Nov  8 02:41:53 1999
 +++ doc/fftw.texi	Sat Jun 30 13:53:48 2001
 @@ -5,6 +5,12 @@

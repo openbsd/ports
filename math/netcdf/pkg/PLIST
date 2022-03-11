@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2019/12/10 17:27:20 feinerer Exp $
 bin/nc-config
 @bin bin/nccopy
 @bin bin/ncdump

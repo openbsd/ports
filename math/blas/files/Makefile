@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2017/11/13 06:56:38 steven Exp $
 #	@(#)Makefile	5.7 (Berkeley) 6/27/91
 
 # BLAS sources

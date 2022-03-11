@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/20 16:21:48 martin Exp $
-
 COMMENT =	pythonic interface to the HDF5 binary data format
 
 MODPY_EGG_VERSION =	3.6.0

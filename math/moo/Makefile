@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.14 2019/07/12 20:47:43 sthen Exp $
-
 COMMENT=		"Marco's Object Oriented calculator"
 
 GH_ACCOUNT=		raylai

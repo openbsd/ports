@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/14 00:25:39 daniel Exp $
 @pkgpath math/py-numpy
 @comment bin/f2py3
 @comment bin/f2py

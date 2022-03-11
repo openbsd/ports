@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/05/11 23:29:30 edd Exp $
 lib/python${MODPY_VERSION}/site-packages/lp_maker.py
 lib/python${MODPY_VERSION}/site-packages/lp_maker.pyc
 lib/python${MODPY_VERSION}/site-packages/lp_solve.py

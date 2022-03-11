@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/22 21:30:43 daniel Exp $
 %%native%%
 lib/ocaml/stublibs/dllzarith.so
 @comment lib/ocaml/stublibs/dllzarith.so.owner
