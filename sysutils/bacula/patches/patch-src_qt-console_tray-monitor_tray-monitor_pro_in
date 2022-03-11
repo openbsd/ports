@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_qt-console_tray-monitor_tray-monitor_pro_in,v 1.1 2020/12/15 17:16:27 robert Exp $
-
 Index: src/qt-console/tray-monitor/tray-monitor.pro.in
 --- src/qt-console/tray-monitor/tray-monitor.pro.in.orig
 +++ src/qt-console/tray-monitor/tray-monitor.pro.in
@@ -8,8 +6,8 @@ Index: src/qt-console/tray-monitor/tray-monitor.pro.in
  }
  !cross-win32 {
 -  LIBS        += -L../../lib -lbaccfg -lbac -L../../findlib -lbacfind @OPENSSL_LIBS@
-+  LIBS        += -L../../lib -lbaccfg -lbac -L../../findlib -lbacfind @OPENSSL_LIBS@ -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify
-+  INCLUDEPATH += ${LOCALBASE}/include/inotify
++  LIBS        += -L../../lib -lbaccfg -lbac -L../../findlib -lbacfind @OPENSSL_LIBS@ -L/usr/local/lib/inotify -linotify -Wl,-rpath,/usr/local/lib/inotify
++  INCLUDEPATH += /usr/local/include/inotify
  }
  
  

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tools_cdp-client_Makefile_in,v 1.1 2020/12/15 17:16:27 robert Exp $
-
 Index: src/tools/cdp-client/Makefile.in
 --- src/tools/cdp-client/Makefile.in.orig
 +++ src/tools/cdp-client/Makefile.in

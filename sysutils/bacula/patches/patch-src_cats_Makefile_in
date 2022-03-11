@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cats_Makefile_in,v 1.7 2020/12/15 17:16:27 robert Exp $
 Index: src/cats/Makefile.in
 --- src/cats/Makefile.in.orig
 +++ src/cats/Makefile.in

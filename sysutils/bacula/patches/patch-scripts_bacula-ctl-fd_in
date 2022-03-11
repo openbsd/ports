@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_bacula-ctl-fd_in,v 1.1 2018/02/09 09:31:50 sthen Exp $
-
 Index: scripts/bacula-ctl-fd.in
 --- scripts/bacula-ctl-fd.in.orig
 +++ scripts/bacula-ctl-fd.in

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scripts_baculabackupreport_in,v 1.3 2021/03/29 11:36:32 sthen Exp $
-
 without GNU awk,
 
 awk: weird printf conversion %">                                <r
@@ -19,7 +17,7 @@ Index: scripts/baculabackupreport.in
  db="@db_name@"									# Not needed for sqlite
  dbuser="@db_user@"							# Not needed for sqlite
 -dbbin="/usr/bin/psql"
-+dbbin="${LOCALBASE}/bin/psql"
++dbbin="/usr/local/bin/psql"
  # dbpass="-p@db_password@"				# Uncomment and set db password if one is used. Also not needed for sqlite
  
  # Formatting variables

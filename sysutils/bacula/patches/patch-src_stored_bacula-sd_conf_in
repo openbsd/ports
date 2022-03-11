@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.10 2017/07/07 16:01:58 sthen Exp $
 Index: src/stored/bacula-sd.conf.in
 --- src/stored/bacula-sd.conf.in.orig
 +++ src/stored/bacula-sd.conf.in

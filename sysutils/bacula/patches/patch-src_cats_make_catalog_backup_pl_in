@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cats_make_catalog_backup_pl_in,v 1.2 2020/12/15 17:16:27 robert Exp $
-
 psql(1) will fail if the current working directory is not accessible
 
 Index: src/cats/make_catalog_backup.pl.in
