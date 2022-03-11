@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2021/05/19 01:50:29 kurt Exp $
-
 COMMENT=		OpenStreetMap map editor
 
 SVN_REV=		14824

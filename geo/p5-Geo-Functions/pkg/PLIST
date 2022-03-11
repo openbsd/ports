@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 13:58:16 jolan Exp $
 ${P5SITE}/Geo/Functions.pm
 @man man/man3p/Geo::Functions.3p

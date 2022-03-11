@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:46:28 sthen Exp $
-
 COMMENT =	garmin gps device driver
 
 REVISION =	3

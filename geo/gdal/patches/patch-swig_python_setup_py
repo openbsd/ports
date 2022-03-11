@@ -1,5 +1,3 @@
-$OpenBSD: patch-swig_python_setup_py,v 1.17 2021/11/16 08:57:28 landry Exp $
-
 Index: swig/python/setup.py
 --- swig/python/setup.py.orig
 +++ swig/python/setup.py

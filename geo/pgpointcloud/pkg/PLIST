@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/11/26 07:43:33 landry Exp $
 lib/postgresql/
 @so lib/postgresql/pointcloud-1.2.so
 share/postgresql/

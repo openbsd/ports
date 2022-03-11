@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_vikmapniklayer_c,v 1.4 2021/03/25 16:22:16 landry Exp $
 Index: src/vikmapniklayer.c
 --- src/vikmapniklayer.c.orig
 +++ src/vikmapniklayer.c

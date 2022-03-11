@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_conf,v 1.2 2021/01/13 13:05:43 kirby Exp $
 Index: Makefile.conf
 --- Makefile.conf.orig
 +++ Makefile.conf

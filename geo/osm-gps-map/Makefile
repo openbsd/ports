@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/10/31 22:13:33 bentley Exp $
-
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
 GH_ACCOUNT = 		nzjrs

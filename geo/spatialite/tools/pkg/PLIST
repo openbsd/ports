@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/21 13:30:39 landry Exp $
 @bin bin/exif_loader
 @bin bin/shp_doctor
 @bin bin/shp_sanitize

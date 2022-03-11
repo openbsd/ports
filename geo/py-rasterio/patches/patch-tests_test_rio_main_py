@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_rio_main_py,v 1.2 2021/01/29 09:59:40 martin Exp $
-
 Use the correct path for packaging/version in setuptools
 
 Index: tests/test_rio_main.py

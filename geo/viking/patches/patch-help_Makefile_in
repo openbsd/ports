@@ -1,5 +1,3 @@
-$OpenBSD: patch-help_Makefile_in,v 1.1 2021/03/30 06:56:01 landry Exp $
-
 Index: help/Makefile.in
 --- help/Makefile.in.orig
 +++ help/Makefile.in

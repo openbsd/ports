@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/09/14 07:21:07 landry Exp $
-
 COMMENT =	library for spatial indexing and querying
 V =		1.9.3
 DISTNAME =	spatialindex-src-${V}

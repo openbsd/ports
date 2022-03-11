@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/08 09:50:22 landry Exp $
-
 COMMENT =	point cloud storage extension for PostgreSQL
 
 GH_TAGNAME =	v1.2.1

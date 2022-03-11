@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/07 17:28:55 landry Exp $
 include/osmium/
 include/osmium/area/
 include/osmium/area/assembler.hpp

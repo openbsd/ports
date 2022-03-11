@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/30 17:58:52 cwen Exp $
-
 COMMENT =	convert Lat/Lon to/from GB Ordnance Survey grid reference
 
 DISTNAME =	Geo-Coordinates-OSGB-2.20

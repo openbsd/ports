@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_qmapshack_gis_CGisListWks_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
-
 Index: src/qmapshack/gis/CGisListWks.cpp
 --- src/qmapshack/gis/CGisListWks.cpp.orig
 +++ src/qmapshack/gis/CGisListWks.cpp

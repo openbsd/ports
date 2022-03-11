@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/21 07:37:43 landry Exp $
-
 COMMENT =	RT Topology Library
 DISTNAME =	librttopo-1.1.0
 REVISION =	0

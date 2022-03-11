@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/12/17 10:13:24 landry Exp $
-
 COMMENT =	GIS WMTS/TMS tile caching server
 
 MODPY_EGG_VERSION =	1.14.0

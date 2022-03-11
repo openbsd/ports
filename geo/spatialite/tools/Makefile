@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/21 13:30:39 landry Exp $
-
 COMMENT =	CLI tools for spatialite
 PROJECT =	spatialite-tools
 DISTNAME =	${PROJECT}-5.0.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-vendor_kazhdan_MyTime_h,v 1.1 2017/10/28 18:36:19 landry Exp $
-
 Index: vendor/kazhdan/MyTime.h
 --- vendor/kazhdan/MyTime.h.orig
 +++ vendor/kazhdan/MyTime.h

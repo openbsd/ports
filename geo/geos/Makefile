@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2022/01/17 12:13:41 landry Exp $
-
 COMMENT=	2d geometry and topology engine
 DISTNAME=	geos-3.10.2
 

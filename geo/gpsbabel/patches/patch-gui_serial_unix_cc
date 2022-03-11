@@ -1,5 +1,3 @@
-$OpenBSD: patch-gui_serial_unix_cc,v 1.2 2019/10/22 06:07:22 kirby Exp $
-
 Index: gui/serial_unix.cc
 --- gui/serial_unix.cc.orig
 +++ gui/serial_unix.cc

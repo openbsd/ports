@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_osm2pgsql_1,v 1.4 2021/03/07 17:33:37 landry Exp $
-
 Index: docs/osm2pgsql.1
 --- docs/osm2pgsql.1.orig
 +++ docs/osm2pgsql.1

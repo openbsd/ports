@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/10/28 14:49:25 landry Exp $
 @bin bin/osm2pgsql
 @man man/man1/osm2pgsql.1
 share/osm2pgsql/

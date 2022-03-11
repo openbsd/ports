@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 13:54:58 jolan Exp $
 ${P5SITE}/Geo/Ellipsoids.pm
 @man man/man3p/Geo::Ellipsoids.3p

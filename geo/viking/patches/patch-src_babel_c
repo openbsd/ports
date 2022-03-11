@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_babel_c,v 1.1 2021/03/25 16:22:16 landry Exp $
-
 Index: src/babel.c
 --- src/babel.c.orig
 +++ src/babel.c

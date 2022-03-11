@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/23 21:29:38 ajacoutot Exp $
 ${P5SITE}/Geo/
 ${P5SITE}/Geo/Coordinates/
 ${P5SITE}/Geo/Coordinates/OSGB/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/09 22:12:51 jasper Exp $
 ${P5SITE}/Geography/
 ${P5SITE}/Geography/Countries.pm
 @man man/man3p/Geography::Countries.3p

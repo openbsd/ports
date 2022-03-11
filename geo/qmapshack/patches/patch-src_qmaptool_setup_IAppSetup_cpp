@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_qmaptool_setup_IAppSetup_cpp,v 1.2 2021/06/10 19:07:11 landry Exp $
-
 Index: src/qmaptool/setup/IAppSetup.cpp
 --- src/qmaptool/setup/IAppSetup.cpp.orig
 +++ src/qmaptool/setup/IAppSetup.cpp

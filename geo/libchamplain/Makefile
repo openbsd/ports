@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2019/10/31 07:27:09 jasper Exp $
-
 COMMENT=	library to provide a GTK+ widget to display maps
 
 GNOME_PROJECT=	libchamplain

@@ -1,5 +1,3 @@
-$OpenBSD: patch-BuildSetup_cmake,v 1.1 2018/04/12 21:12:56 sthen Exp $
-
 Index: BuildSetup.cmake
 --- BuildSetup.cmake.orig
 +++ BuildSetup.cmake

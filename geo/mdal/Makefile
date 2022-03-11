@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/03/04 08:36:34 landry Exp $
-
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting

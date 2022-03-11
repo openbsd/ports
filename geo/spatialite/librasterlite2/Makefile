@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/10/11 16:34:03 landry Exp $
-
 COMMENT =	store rasters coverages within spatialite
 PROJECT =	librasterlite2
 DISTNAME =	${PROJECT}-1.1.0-beta1

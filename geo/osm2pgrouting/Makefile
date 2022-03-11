@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/04/28 13:18:41 landry Exp $
-
 GH_ACCOUNT =		pgRouting
 GH_PROJECT =		osm2pgrouting
 GH_TAGNAME =		v2.3.7

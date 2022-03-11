@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/09/10 06:45:01 landry Exp $
 @bin bin/merkaartor
 lib/merkaartor/
 lib/merkaartor/plugins/

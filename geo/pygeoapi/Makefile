@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/03/05 09:07:01 landry Exp $
-
 COMMENT =		OGC API server implementation
 
 MODPY_EGG_VERSION =	0.12.0

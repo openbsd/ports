@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/07/01 18:33:36 espie Exp $
 @bin bin/gpx-viewer
 share/applications/gpx-viewer.desktop
 share/gpx-viewer/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_FindCairo_cmake,v 1.1 2014/01/10 14:47:09 dcoppa Exp $
 --- cmake/FindCairo.cmake.orig	Fri Jan 10 13:06:02 2014
 +++ cmake/FindCairo.cmake	Fri Jan 10 13:06:48 2014
 @@ -38,14 +38,14 @@ FIND_PATH(CAIRO_INCLUDE_DIR

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT=	process aviation weather reports in the METAR format
 MODULES=	cpan
 PKG_ARCH=	*

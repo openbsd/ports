@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT =		OSM data to PostgreSQL converter
 
 GH_TAGNAME =		1.4.2

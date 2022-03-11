@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_osmium_io_gzip_compression_hpp,v 1.1 2021/03/07 17:28:55 landry Exp $
-
 Index: include/osmium/io/gzip_compression.hpp
 --- include/osmium/io/gzip_compression.hpp.orig
 +++ include/osmium/io/gzip_compression.hpp

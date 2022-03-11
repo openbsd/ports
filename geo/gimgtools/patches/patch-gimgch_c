@@ -1,5 +1,3 @@
-$OpenBSD: patch-gimgch_c,v 1.1.1.1 2013/05/13 06:57:01 jasper Exp $
-
 Fix format string for off_t.
 
 --- gimgch.c.orig	Sun Mar 10 22:24:39 2013

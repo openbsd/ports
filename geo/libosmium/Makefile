@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/07 17:28:55 landry Exp $
-
 COMMENT =	fast, flexible library for working with OpenStreetMap data
 
 GH_ACCOUNT =	osmcode

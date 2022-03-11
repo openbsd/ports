@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/03/12 19:39:19 jasper Exp $
-
 COMMENT=	convenience library for the geocoding
 
 GNOME_VERSION=	3.26.2

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: osrm_routed.rc,v 1.1 2018/07/15 09:39:44 bentley Exp $
 
 daemon="${TRUEPREFIX}/bin/osrm-routed"
 daemon_user="_osrm_routed"

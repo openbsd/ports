@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.104 2022/02/15 11:02:46 landry Exp $
-
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 

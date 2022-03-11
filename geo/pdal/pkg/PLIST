@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/05/28 11:45:21 landry Exp $
 @bin bin/pdal
 bin/pdal-config
 include/pdal/

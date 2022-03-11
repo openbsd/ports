@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/23 09:46:03 landry Exp $
-
 COMMENT =		library for accessing OGC Web Services
 
 MODPY_EGG_VERSION =	0.25.0

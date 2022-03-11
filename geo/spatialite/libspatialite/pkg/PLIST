@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/21 13:29:58 landry Exp $
 include/spatialite/
 include/spatialite.h
 include/spatialite/control_points.h

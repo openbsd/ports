@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 13:50:54 jolan Exp $
 ${P5SITE}/GPS/
 ${P5SITE}/GPS/PRN.pm
 @man man/man3p/GPS::PRN.3p

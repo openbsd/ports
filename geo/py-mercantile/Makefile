@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:14 sthen Exp $
-
 COMMENT =	spherical mercator coordinate and tile utilities
 
 MODPY_EGG_VERSION =	1.2.1

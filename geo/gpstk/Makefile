@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:46:29 sthen Exp $
-
 COMMENT=		GPS processing toolkit
 
 V=			2.10

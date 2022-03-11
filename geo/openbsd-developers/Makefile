@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.179 2021/12/15 23:11:18 mariani Exp $
-
 CATEGORIES=		geo
 COMMENT=		geographic location of past and present OpenBSD developers
 

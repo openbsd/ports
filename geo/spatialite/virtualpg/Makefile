@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/21 10:17:02 landry Exp $
-
 COMMENT =	loadable dynamic extension to both SQLite and SpatiaLite
 PROJECT =	virtualpg
 DISTNAME =	${PROJECT}-2.0.1

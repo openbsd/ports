@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_qmapshack_setup_IAppSetup_cpp,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
-
 Index: src/qmapshack/setup/IAppSetup.cpp
 --- src/qmapshack/setup/IAppSetup.cpp.orig
 +++ src/qmapshack/setup/IAppSetup.cpp

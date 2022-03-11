@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/10/07 19:54:44 rsadowski Exp $
-
 COMMENT=	sqlite extented with spatial SQL capabilities
 PROJECT =	libspatialite
 DISTNAME =	${PROJECT}-5.0.1

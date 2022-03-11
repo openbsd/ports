@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/06/27 21:03:52 espie Exp $
 bin/josm
 @man man/man1/josm.1
 share/applications/josm.desktop

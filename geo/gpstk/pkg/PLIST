@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/04/12 21:12:56 sthen Exp $
 @conflict gpstk-devel-*
 @pkgpath geo/gpstk,-main
 @pkgpath geo/gpstk,-devel

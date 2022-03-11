@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/03/05 09:07:26 landry Exp $
-
 COMMENT =		library for reading, modifying and creating LAS LiDAR files
 
 MODPY_EGG_VERSION=	2.1.2

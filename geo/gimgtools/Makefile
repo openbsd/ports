@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT=	Garmin Image Tools
 
 DISTNAME=	gimgtools-0.02

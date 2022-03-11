@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/03/01 17:58:56 sthen Exp $
-
 COMMENT =	modern GPS tracking platform
 V =		4.15
 REVISION =	0

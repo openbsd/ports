@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/10 22:47:45 kili Exp $
 bin/globe
 @man man/man1/globe.1

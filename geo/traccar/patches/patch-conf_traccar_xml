@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_traccar_xml,v 1.1.1.1 2018/12/16 15:09:58 landry Exp $
-
 Index: conf/traccar.xml
 --- conf/traccar.xml.orig
 +++ conf/traccar.xml

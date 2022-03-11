@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/05/18 17:02:35 cwen Exp $
 @newgroup _osrm_routed:815
 @newuser _osrm_routed:815:815:daemon:OSRM Router:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/osrm_routed

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/10 06:23:45 martin Exp $
 bin/supermercado
 lib/python${MODPY_VERSION}/site-packages/supermercado/
 lib/python${MODPY_VERSION}/site-packages/supermercado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

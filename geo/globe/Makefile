@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:29 sthen Exp $
-
 COMMENT=	display the currently lighted face of Earth in ASCII
 
 DISTNAME=	globe_14Aug2014

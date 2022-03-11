@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/03/05 12:47:25 sthen Exp $
-
 COMMENT =	manipulation and analysis of planar geometric objects
 
 MODPY_EGG_VERSION =	1.8.1.post1

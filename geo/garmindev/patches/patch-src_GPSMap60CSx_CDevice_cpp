@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_GPSMap60CSx_CDevice_cpp,v 1.1 2018/07/12 09:34:34 sthen Exp $
-
 Index: src/GPSMap60CSx/CDevice.cpp
 --- src/GPSMap60CSx/CDevice.cpp.orig
 +++ src/GPSMap60CSx/CDevice.cpp

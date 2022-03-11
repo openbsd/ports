@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/28 05:12:16 rsadowski Exp $
-
 COMMENT =	easy to use 2D geometry library in C++
 
 V =		1.1.0

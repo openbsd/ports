@@ -1,5 +1,3 @@
-$OpenBSD: patch-vendor_eigen_Eigen_src_Core_util_ConfigureVectorization_h,v 1.1 2021/06/27 13:34:27 jasper Exp $
-
 Disable AltiVec for it breaks the build due to various undefined symbols (vec_sqrt, etc)
 
 Index: vendor/eigen/Eigen/src/Core/util/ConfigureVectorization.h

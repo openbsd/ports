@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/28 08:15:50 fcambus Exp $
-
 COMMENT =	library for parsing/normalizing street addresses
 
 GH_ACCOUNT =	openvenues

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/13 16:38:30 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	map management tool

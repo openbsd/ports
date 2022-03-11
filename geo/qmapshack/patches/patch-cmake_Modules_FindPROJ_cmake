@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_Modules_FindPROJ_cmake,v 1.1 2021/06/10 19:07:11 landry Exp $
-
 inspired from https://github.com/OSGeo/libgeotiff/blob/master/libgeotiff/cmake/FindPROJ.cmake
 Index: cmake/Modules/FindPROJ.cmake
 --- cmake/Modules/FindPROJ.cmake.orig

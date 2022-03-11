@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.70 2022/02/17 09:29:57 landry Exp $
-
 V =	3.2.1
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}

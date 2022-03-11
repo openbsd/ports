@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/12/16 14:39:32 cwen Exp $
-
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-2.1.0-beta1
 PKGNAME =	spatialite_gui-2.1.0beta1

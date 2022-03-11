@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: traccar.rc,v 1.1.1.1 2018/12/16 15:09:58 landry Exp $
 
 daemon="${TRUEPREFIX}/share/traccar/tracker-server.jar"
 daemon_user="_traccar"

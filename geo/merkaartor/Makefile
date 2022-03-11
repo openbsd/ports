@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/09/10 06:45:01 landry Exp $
-
 COMMENT =	OpenStreetMap editor
 
 GH_ACCOUNT =	openstreetmap

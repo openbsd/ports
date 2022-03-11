@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mapserv.rc,v 1.3 2018/01/11 19:27:02 rpe Exp $
 
 daemon="${LOCALBASE}/bin/spawn-fcgi"
 daemon_flags="-c ${VARBASE}/www -s run/mapserv.sock -u www -- /cgi-bin/mapserv"

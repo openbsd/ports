@@ -1,5 +1,3 @@
-$OpenBSD: patch-postgis_Makefile_in,v 1.4 2022/01/03 07:39:55 landry Exp $
-
 Modify include paths order to prevent postgis from using system wide
 devel/uthash headers if they are installed.
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/05/28 17:44:13 naddy Exp $
-
 COMMENT =	translator library for point cloud formats
 
 DISTNAME =	PDAL-2.3.0-src

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/19 07:39:40 benoit Exp $
-
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
 MODPY_EGG_VERSION =	3.3.0

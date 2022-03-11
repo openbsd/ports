@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.7 2020/10/11 16:34:56 landry Exp $
-
 CATEGORIES ?=	geo
 
 # MPL/1.1 GPLv2.0+ LGPLv2.1+

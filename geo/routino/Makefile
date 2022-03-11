@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/06/11 05:04:05 landry Exp $
-
 COMMENT =		OpenStreetMap routing software
 
 DISTNAME =		routino-3.3.3

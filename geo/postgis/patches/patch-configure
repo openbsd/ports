@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2022/01/03 07:39:55 landry Exp $
-
 https://trac.osgeo.org/postgis/ticket/4860
 https://github.com/postgis/postgis/commit/9522a6f869ee6d170d97e7c593d7e5d71ec02a9b
 

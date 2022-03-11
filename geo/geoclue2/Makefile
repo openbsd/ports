@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/02/23 13:07:58 ajacoutot Exp $
-
 COMMENT=		modular geoinformation service on top of D-Bus
 
 VERSION=		2.6.0

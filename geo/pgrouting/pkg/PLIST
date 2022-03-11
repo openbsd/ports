@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.21 2021/11/22 10:36:42 landry Exp $
 @so lib/postgresql/libpgrouting-3.3.so
 share/postgresql/extension/pgrouting--2.6.0--${V}.sql
 share/postgresql/extension/pgrouting--2.6.1--${V}.sql

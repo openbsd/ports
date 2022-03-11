@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/03/05 09:20:32 landry Exp $
-
 COMMENT =	high-level API and CLI on top of OGR
 
 MODPY_EGG_VERSION =	1.8.21

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/23 12:36:31 landry Exp $
-
 COMMENT=	GIS WMTS/TMS tile caching server
 
 DISTNAME =	mapcache-1.12.0

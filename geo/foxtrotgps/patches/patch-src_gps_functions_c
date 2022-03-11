@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gps_functions_c,v 1.3 2022/02/27 18:35:08 sthen Exp $
-
 Add support for gpsd API version 9 (gpsd 3.20)
 https://bazaar.launchpad.net/~foxtrotgps-team/foxtrotgps/trunk/revision/320
 

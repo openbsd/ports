@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/17 14:24:38 landry Exp $
-
 COMMENT =	gpx file viewer
 
 GH_PROJECT =	GPXSee

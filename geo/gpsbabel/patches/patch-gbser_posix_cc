@@ -1,5 +1,3 @@
-$OpenBSD: patch-gbser_posix_cc,v 1.2 2019/10/22 06:07:22 kirby Exp $
-
 Index: gbser_posix.cc
 --- gbser_posix.cc.orig
 +++ gbser_posix.cc

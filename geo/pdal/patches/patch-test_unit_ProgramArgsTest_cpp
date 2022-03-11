@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_unit_ProgramArgsTest_cpp,v 1.2 2019/08/28 06:53:02 landry Exp $
-
 no wordexp on OpenBSD
 
 Index: test/unit/ProgramArgsTest.cpp

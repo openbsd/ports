@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2021/11/02 00:01:14 sthen Exp $
-
 MULTI_PACKAGES=	-utils -main -perl -php -python
 
 COMMENT-main=	GIS CGI server

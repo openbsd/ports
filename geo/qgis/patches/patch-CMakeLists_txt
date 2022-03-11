@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.20 2022/02/22 14:40:41 landry Exp $
-
 https://github.com/qgis/QGIS/commit/a20c909c1b2bd0dfcae281fb6e55226d3d3dc423
 
 relax flex requirement as QGIS builds and runs fine with our flex.

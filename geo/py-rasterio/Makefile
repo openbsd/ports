@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/13 16:04:04 martin Exp $
-
 COMMENT =	geospatial raster data API and CLI
 
 MODPY_EGG_VERSION =	1.2.10

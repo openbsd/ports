@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:22 sthen Exp $
-
 COMMENT=	perl module for parsing OpenStreetMap (.osm) files
 
 DISTNAME=	Geo-Parse-OSM-0.42

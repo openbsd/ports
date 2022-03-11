@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:21 sthen Exp $
-
 COMMENT=	perl module that provides geographic constants
 MODULES=	cpan	
 PKG_ARCH=	*

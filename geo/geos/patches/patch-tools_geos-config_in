@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_geos-config_in,v 1.2 2021/10/23 09:15:12 landry Exp $
-
 Index: tools/geos-config.in
 --- tools/geos-config.in.orig
 +++ tools/geos-config.in

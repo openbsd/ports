@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:21 sthen Exp $
-
 COMMENT=	calculate geographic distance from a lat/lon pair
 MODULES=	cpan
 PKG_ARCH=	*

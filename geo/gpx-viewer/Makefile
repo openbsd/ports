@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2019/07/12 20:46:29 sthen Exp $
-
 COMMENT =	gpx file viewer
 
 VERSION =	0.4.0

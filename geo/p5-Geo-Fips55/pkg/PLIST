@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 13:56:23 jolan Exp $
 ${P5SITE}/Geo/Fips55.pm
 @man man/man3p/Geo::Fips55.3p

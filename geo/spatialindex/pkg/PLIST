@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/09/14 07:21:07 landry Exp $
 include/spatialindex/
 include/spatialindex/LineSegment.h
 include/spatialindex/MVRTree.h

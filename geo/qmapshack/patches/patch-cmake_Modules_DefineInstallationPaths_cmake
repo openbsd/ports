@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_Modules_DefineInstallationPaths_cmake,v 1.1.1.1 2020/08/22 06:10:19 kirby Exp $
-
 Install man pages and documentation in correct directories
 
 Index: cmake/Modules/DefineInstallationPaths.cmake
