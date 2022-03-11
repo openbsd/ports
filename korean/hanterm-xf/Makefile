@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/17 14:46:32 danj Exp $
-
 COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
 V=		2.0.6-177

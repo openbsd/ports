@@ -1,5 +1,3 @@
-$OpenBSD: patch-hangul_hangulctype_c,v 1.1 2017/04/18 16:50:34 jca Exp $
-
   https://github.com/choehwanjin/libhangul/commit/3e59c64a985a1355d116319d69973b29d0d8ec66
 
 --- hangul/hangulctype.c.orig	Sun Aug 28 16:06:23 2011

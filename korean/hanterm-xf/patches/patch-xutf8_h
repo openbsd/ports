@@ -1,4 +1,3 @@
-$OpenBSD: patch-xutf8_h,v 1.1 2011/05/30 19:08:35 matthieu Exp $
 --- xutf8.h.orig	Thu May 19 21:28:00 2011
 +++ xutf8.h	Thu May 19 21:27:28 2011
 @@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE O
