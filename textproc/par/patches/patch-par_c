@@ -1,0 +1,25 @@
+Index: par.c
+--- par.c.orig
++++ par.c
+@@ -20,6 +20,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <wchar.h>
++#include <unistd.h>
+ 
+ #undef NULL
+ #define NULL ((void *) 0)
+@@ -730,6 +731,13 @@ int main(int argc, const char * const *argv)
+ /* Set the current locale from the environment: */
+ 
+   setlocale(LC_ALL,"");
++
++/* setlocale() needs "rpath", so do the syscall after it */
++
++  if (pledge("stdio", NULL) == -1) {
++    wcscpy(errmsg, L"pledge\n");
++    goto parcleanup;
++  }
+ 
+ /* Process environment variables: */
+ 

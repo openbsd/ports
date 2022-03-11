@@ -1,4 +1,3 @@
-$OpenBSD: patch-protoMakefile,v 1.1 2001/03/17 15:49:09 wilfried Exp $
 --- protoMakefile.orig	Thu Feb 24 06:15:08 2000
 +++ protoMakefile	Fri Mar 16 20:31:55 2001
 @@ -93,7 +93,7 @@ E =

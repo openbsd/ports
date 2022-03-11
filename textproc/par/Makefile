@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:50:10 sthen Exp $
-
 COMMENT=	paragraph reflow for email
 
 VERSION=	1.52
 DISTNAME=	Par${VERSION:S/.//}
 PKGNAME=	par-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -16,6 +14,7 @@ MAINTAINER=	Gregor Best <gbe@unobtanium.de>
 # custom
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB += c
 
 MASTER_SITES=   ${HOMEPAGE}
