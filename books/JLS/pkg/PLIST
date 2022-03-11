@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/04/14 14:01:47 ian Exp $
 share/doc/java/
 share/doc/java/${DISTFILES}

@@ -1,5 +1,4 @@
 #!/usr/bin/perl -w
-# $OpenBSD: book_as_html.pl,v 1.1.1.1 2003/05/29 23:52:29 avsm Exp $
 # Originally from http://www.masonbook.com/
 # Hacked by Anil Madhavapeddy <avsm@openbsd.org> for HTML output
 

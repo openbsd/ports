@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT=	book about Python for experienced programmers
 
 VERSION=	5.4

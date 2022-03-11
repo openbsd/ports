@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/11/06 19:50:06 jasper Exp $
-
 CATEGORIES =	books devel
 COMMENT =	POSIX manual pages
 DISTNAME =	man-pages-posix-2017-a

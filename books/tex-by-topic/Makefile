@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 21:15:34 sthen Exp $
-
 COMMENT =	book on TeX typesetting system for experienced audience
 CATEGORIES =	books
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:35 naddy Exp $
-
 COMMENT=		Common Lisp reference
 
 DISTNAME=		HyperSpec-7-0

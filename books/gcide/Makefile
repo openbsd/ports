@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT =	gnu collaborative international dictionary of english
 
 DISTNAME =	gcide-0.52

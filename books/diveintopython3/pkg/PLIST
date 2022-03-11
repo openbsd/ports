@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/19 08:47:57 sthen Exp $
 share/books/
 share/books/diveintopython3/
 share/books/diveintopython3/about.html

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT=	the definite guide to DocBook
 
 V=		2.0.8

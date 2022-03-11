@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/09 17:42:54 kili Exp $
 @conflict ghc-doc-<6.6.*
 share/doc/haskell-report/
 share/doc/haskell-report/haskell.css

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/10/21 06:30:39 bentley Exp $
-
 COMMENT =	book on version control with Git
 
 V =		2.1.267

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT=        O'Reilly Volume 3: Users Guide, Open Look
 
 VERSION=	1.0

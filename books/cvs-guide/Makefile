@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT=	the definitive guide to CVS
 
 V=		1.21

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT =		Version Control with Subversion
 
 V =			1.7

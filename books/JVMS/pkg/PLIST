@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/01 20:47:05 steven Exp $
 share/doc/jvm/
 share/doc/jvm/ChangesAppendix.doc.html
 share/doc/jvm/ClassFile.doc.anc.gif

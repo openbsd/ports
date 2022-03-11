@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT=		philosophy of problem solving, applied to Forth
 
 DISTNAME=		thinking-forth-color

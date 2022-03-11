@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/20 16:44:21 naddy Exp $
-
 COMMENT =	Sun's official Java VM Specification, 2nd Ed.
 
 VERSION =	2.0

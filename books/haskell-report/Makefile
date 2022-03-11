@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:43:44 sthen Exp $
-
 COMMENT =		language and library specification for Haskell
 
 V =			2010

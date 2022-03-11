@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:44 sthen Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		Asterisk: The Future of Telephony

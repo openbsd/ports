@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/07/28 16:41:33 naddy Exp $
 share/doc/diveintopython/
 share/doc/diveintopython/html/
 share/doc/diveintopython/html/appendix/

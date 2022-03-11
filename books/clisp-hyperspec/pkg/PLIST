@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/25 22:11:47 jasper Exp $
 share/doc/clisp-hyperspec/
 share/doc/clisp-hyperspec/Body/
 share/doc/clisp-hyperspec/Body/00_.htm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/02/03 20:40:38 sthen Exp $
-
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
 COMMENT-fr =	Wireless Networking in the Developing World, French edition

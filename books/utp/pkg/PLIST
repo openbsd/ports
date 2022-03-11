@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/19 22:13:58 bentley Exp $
 share/doc/utp/
 share/doc/utp/utp-${V}.pdf

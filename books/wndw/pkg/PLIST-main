@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/03/28 14:25:04 sthen Exp $
 share/doc/wndw/
 share/doc/wndw/wndw3-cover.pdf
 share/doc/wndw/wndw3-ebook.pdf

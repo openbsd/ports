@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/17 14:49:20 danj Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		Asterisk 1.4 PBX configuration guide, 2nd ed.

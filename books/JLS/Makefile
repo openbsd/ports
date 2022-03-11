@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/14 02:16:51 naddy Exp $
-
 COMMENT=	Oracle's official Java language specification
 
 MAJOR=		12
