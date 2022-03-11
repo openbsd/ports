@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.22 2020/07/03 21:44:31 sthen Exp $
-
 COMMENT=	perl interface to the ACEDB database
 
 DISTNAME=	AcePerl-1.92

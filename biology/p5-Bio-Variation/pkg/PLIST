@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/08/25 23:41:26 cwen Exp $
 @conflict bioperl-<1.7
 bin/bp_flanks
 ${P5SITE}/Bio/Variation/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT =	profile HMMs for biological sequence analysis
 
 V =		3.1b2

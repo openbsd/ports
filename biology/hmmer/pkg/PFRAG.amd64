@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.amd64,v 1.1 2016/11/25 20:42:57 sthen Exp $
 include/impl_sse.h

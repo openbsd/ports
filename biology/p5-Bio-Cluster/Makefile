@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/25 23:43:06 cwen Exp $
-
 COMMENT =		cluster modules for BioPerl
 
 DISTNAME =		Bio-Cluster-1.7.3

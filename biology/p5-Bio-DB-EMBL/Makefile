@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/25 23:37:52 cwen Exp $
-
 COMMENT =		database object interface for EMBL entry retrieval
 
 DISTNAME =		Bio-DB-EMBL-1.7.4

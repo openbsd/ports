@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/01/26 11:14:30 jasper Exp $
-
 PORTROACH=	ignore:1
 
 COMMENT=	European Molecular Biology Open Software Suite

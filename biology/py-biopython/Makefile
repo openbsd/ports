@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT =		Python tools for computational molecular biology
 
 MODPY_EGG_VERSION =	1.79

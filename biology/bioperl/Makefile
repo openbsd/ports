@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/07 14:49:43 benoit Exp $
-
 COMMENT=	perl tools for bioinformatics
 
 DISTNAME=	BioPerl-1.7.8

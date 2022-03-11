@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/25 23:41:26 cwen Exp $
-
 COMMENT =		bioperl variation-related functionality
 
 DISTNAME =		Bio-Variation-1.7.5
