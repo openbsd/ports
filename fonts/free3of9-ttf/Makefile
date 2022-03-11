@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:11 sthen Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	3 of 9 (code 39) barcode fonts

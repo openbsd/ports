@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
-
 COMMENT =	mashup of beautiful monospace font forms
 
 V =		2.220

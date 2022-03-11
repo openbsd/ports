@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/13 09:41:58 fcambus Exp $
-
 COMMENT =	faithfully remade Amiga fonts
 
 GH_ACCOUNT =	rewtnull

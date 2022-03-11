@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/07/25 21:49:56 uaa Exp $
 share/doc/ibm-plex/
 share/doc/ibm-plex/license.txt
 share/fonts/

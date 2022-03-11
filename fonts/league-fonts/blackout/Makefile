@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:04 bentley Exp $
-
 COMMENT =	stencil sans-serif typeface without holes
 
 V =		2.002pre1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/12 05:47:32 rpointel Exp $
-
 COMMENT =	typeface developed explicitly for visually impaired people
 
 DISTNAME =	luciole-1.0

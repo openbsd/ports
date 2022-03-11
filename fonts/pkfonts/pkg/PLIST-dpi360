@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-dpi360,v 1.1.1.1 2011/07/19 09:16:08 jasper Exp $
 @pkgpath print/pkfonts,dpi360
 lib/fonts/pk360/
 lib/fonts/pk360/cmb10.360pk

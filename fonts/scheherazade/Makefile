@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/25 04:30:12 bentley Exp $
-
 V =			2.100
 COMMENT =		traditional Arabic Unicode font
 DISTNAME =		Scheherazade-${V}

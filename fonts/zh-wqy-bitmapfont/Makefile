@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:13 sthen Exp $
-
 COMMENT=	Wen Quan Yi bitmap song CJK fonts
 
 TYPEFACE=	wqy-bitmapfont

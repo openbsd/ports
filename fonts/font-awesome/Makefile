@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/13 07:18:33 rsadowski Exp $
-
 COMMENT=	full suite pictographic icons
 
 VERSION =	6.0.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
 COMMENT-se=	improved artwiz fonts (swedish pack)

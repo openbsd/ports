@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v$
 share/doc/tamsyn/
 share/doc/tamsyn/LICENSE
 share/doc/tamsyn/README

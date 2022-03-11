@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/10 06:34:17 bentley Exp $
 share/fonts/
 @fontdir share/fonts/migmix/
 share/fonts/migmix/migmix-1m-bold.ttf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/14 02:16:51 naddy Exp $
-
 COMMENT =		Microsoft ClearType fonts
 
 DISTNAME =		PowerPointViewer.exe

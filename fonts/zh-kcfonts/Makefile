@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:19 sthen Exp $
-
 COMMENT=	extra chinese fonts
 
 DISTNAME=       zh-fonts-kc-1.05

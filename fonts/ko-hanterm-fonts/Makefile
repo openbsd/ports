@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/25 04:34:16 bentley Exp $
-
 COMMENT=	extra Korean fonts
 
 V =		3.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/25 04:30:12 bentley Exp $
-
 COMMENT =		fixed width fonts especially for long hacking sessions
 
 DISTNAME =		ProFont-2.2

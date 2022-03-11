@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.5 2019/07/13 10:59:26 sthen Exp $
-
 DISTNAME ?=		noto-${NOTO_PROJECT}-${V:S/-//g}
 
 CATEGORIES ?=		fonts

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/12/10 16:21:01 ajacoutot Exp $
-
 COMMENT=		humanist sans-serif font family
 
 GNOME_VERSION=		0.303.1

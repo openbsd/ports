@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:12 sthen Exp $
-
 COMMENT =	modernist Arabic typeface
 
 V =		1.3

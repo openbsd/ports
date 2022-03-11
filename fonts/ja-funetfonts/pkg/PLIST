@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
 @pkgpath japanese/funetfonts
 share/fonts/
 @fontdir share/fonts/ja/

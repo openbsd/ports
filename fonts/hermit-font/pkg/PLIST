@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/02/09 17:49:54 abieber Exp $
 share/fonts/
 @fontdir share/fonts/hermit/
 share/fonts/hermit/Hermit-Bold.otf

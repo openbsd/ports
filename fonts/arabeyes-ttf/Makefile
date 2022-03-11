@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/25 05:44:06 bentley Exp $
-
 COMMENT=	Arabeyes TrueType Arabic fonts
 
 TYPEFACE =	arabeyes

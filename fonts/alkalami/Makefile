@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/25 05:33:39 bentley Exp $
-
 COMMENT =		Unicode font for African Arabic script
 V =			1.200
 DISTNAME =		Alkalami-${V}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:12 sthen Exp $
-
 COMMENT =		high-quality libre fonts (serif, 19th century book type)
 
 DISTNAME =		LinLibertineTTF_${V}_${D}

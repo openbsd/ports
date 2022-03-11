@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/25 05:58:50 bentley Exp $
-
 COMMENT =		replacement for Comic Sans font
 
 TYPEFACE =		comic-neue

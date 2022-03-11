@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/09/01 15:49:20 naddy Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	TrueType fonts for Indic scripts

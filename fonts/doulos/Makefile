@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:11 sthen Exp $
-
 TYPEFACE =		doulos
 V =			5.000
 COMMENT =		Unicode-based font for Roman and Cyrillic

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/25 03:40:08 bentley Exp $
 share/doc/chivo/
 share/doc/chivo/OFL.txt
 share/doc/chivo/README.md

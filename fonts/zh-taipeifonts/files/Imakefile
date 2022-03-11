@@ -1,5 +1,3 @@
-# $OpenBSD: Imakefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
-
 OBJS =  FontBaseObj(taipei16).gz  FontBaseObj(taipeik20).gz \
 	FontBaseObj(taipeim20).gz FontBaseObj(taipei24).gz \
 	FontBaseObj(taipeik24).gz FontBaseObj(taipeim24).gz 

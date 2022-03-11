@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/09 03:58:35 bentley Exp $
-
 COMMENT =	mixture of M+ and IPA Gothic fonts, focused on kanji
 
 V =		20200307

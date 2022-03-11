@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/09/12 13:01:57 zhuk Exp $
 share/doc/adobe-source-serif-pro/
 share/doc/adobe-source-serif-pro/LICENSE.txt
 share/doc/adobe-source-serif-pro/README.md

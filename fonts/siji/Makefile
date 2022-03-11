@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/09/19 13:59:22 bcallah Exp $
-
 COMMENT =	iconic bitmap font based on Stlarch with additional glyphs
 DISTNAME =	${GH_PROJECT}-0.0.0.20190218
 CATEGORIES =	fonts

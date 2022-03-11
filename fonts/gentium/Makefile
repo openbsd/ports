@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/19 07:35:40 fcambus Exp $
-
 TYPEFACE =		gentium
 V =			6.001
 COMMENT =		readable font for Latin, Cyrillic, and Greek

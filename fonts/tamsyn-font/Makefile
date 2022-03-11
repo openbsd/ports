@@ -1,5 +1,3 @@
-# $OpenBSD$
-
 COMMENT=	monospaced bitmap font for programming
 
 DISTNAME=	tamsyn-font-1.11

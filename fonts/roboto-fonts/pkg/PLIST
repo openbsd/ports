@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/09 04:39:53 bentley Exp $
 share/doc/roboto-fonts/
 share/doc/roboto-fonts/LICENSE
 share/fonts/

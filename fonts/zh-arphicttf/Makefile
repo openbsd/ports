@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:19 sthen Exp $
-
 COMMENT=	chinese big5/gb truetype fonts
 
 DISTNAME=       zh-arphicttf-2.11

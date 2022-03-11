@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/14 02:16:51 naddy Exp $
-
 COMMENT=	farsi bornaray fonts
 
 TYPEFACE=	farsi-bfonts

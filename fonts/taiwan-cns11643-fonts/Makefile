@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:13 sthen Exp $
-
 COMMENT =	CNS 11643-compliant Taiwanese government fonts
 
 # fonts extracted from https://www.cns11643.gov.tw/AIDB/Open_Data.zip

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/05/25 07:26:32 bentley Exp $
-
 PKG_ARCH =		*
 
 COMMENT =		font to view stroke order diagrams for Kanji, Kana and etc

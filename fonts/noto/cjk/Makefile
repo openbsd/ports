@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/05/10 04:14:13 bentley Exp $
-
 COMMENT =		east asian fonts for the noto font family
 
 NOTO_PROJECT =		cjk

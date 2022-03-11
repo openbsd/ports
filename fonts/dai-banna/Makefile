@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/06/10 02:05:26 bentley Exp $
-
 PKG_ARCH =		*
 
 V =			2.200

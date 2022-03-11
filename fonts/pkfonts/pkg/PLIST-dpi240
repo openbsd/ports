@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-dpi240,v 1.1.1.1 2011/07/19 09:16:07 jasper Exp $
 @pkgpath print/pkfonts,dpi240
 lib/fonts/pk240/
 lib/fonts/pk240/circle10.240pk

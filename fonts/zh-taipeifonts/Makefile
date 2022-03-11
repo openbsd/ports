@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/14 02:16:51 naddy Exp $
-
 COMMENT=	extra chinese fonts
 
 DISTNAME=       zh-fonts-taipei-1.01

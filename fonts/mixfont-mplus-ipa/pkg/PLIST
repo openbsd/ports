@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/06/28 12:22:47 sthen Exp $
 @pkgpath japanese/mplus-ttf
 @pkgpath fonts/ja-mplus-ttf
 share/fonts/

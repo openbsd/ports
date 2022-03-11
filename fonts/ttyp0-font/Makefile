@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/11/21 16:47:17 chrisz Exp $
-
 COMMENT =		monospace bitmap screen fonts
 
 PKGNAME =		ttyp0-1.3

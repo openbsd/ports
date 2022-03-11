@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/09/08 08:07:48 sthen Exp $
-
 COMMENT =	typeface carefully crafted & designed for computer screens
 
 V =		0.042

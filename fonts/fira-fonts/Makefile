@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/25 03:40:08 bentley Exp $
-
 COMMENT =		Firefox OS typeface
 
 V =			4.202

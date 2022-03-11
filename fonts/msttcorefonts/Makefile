@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/09/02 18:18:44 sthen Exp $
-
 COMMENT=		Microsoft TrueType core fonts
 
 DISTNAME=		msttcorefonts-2.0

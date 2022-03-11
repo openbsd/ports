@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
-
 COMMENT =	revival of ATF's Spartan sans-serif
 
 V =		2.220

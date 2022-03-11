@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/08/21 13:53:30 edd Exp $
 @conflict iosevka-fonts-default-*
 @conflict iosevka-fonts-term-*
 @pkgpath fonts/iosevka-fonts,-main

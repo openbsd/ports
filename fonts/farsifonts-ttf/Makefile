@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/25 06:48:21 bentley Exp $
-
 COMMENT=	ISIRI 6219 conforming Farsi fonts
 
 TYPEFACE=	farsifonts

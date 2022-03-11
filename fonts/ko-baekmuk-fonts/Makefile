@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/17 14:49:22 danj Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	extra Korean fonts

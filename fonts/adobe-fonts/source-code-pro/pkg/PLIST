@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/10/31 09:28:43 fcambus Exp $
 @pkgpath fonts/adobe-source-code-pro
 share/doc/adobe-source-code-pro/
 share/doc/adobe-source-code-pro/LICENSE.txt

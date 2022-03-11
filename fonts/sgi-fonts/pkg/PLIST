@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/10 16:32:29 fcambus Exp $
 share/fonts/
 @fontdir share/fonts/sgi-fonts/
 share/fonts/sgi-fonts/Scr10.pcf.gz

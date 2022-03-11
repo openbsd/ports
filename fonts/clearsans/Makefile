@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:11 sthen Exp $
-
 TYPEFACE =		clearsans
 COMMENT =		versatile font for on-screen legibility
 DISTNAME =		clearsans-1.00

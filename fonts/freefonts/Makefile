@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/14 02:16:51 naddy Exp $
-
 COMMENT=	collection of ATM fonts from the CICA archives
 
 DISTNAME=	freefonts-0.10

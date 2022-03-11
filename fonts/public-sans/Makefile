@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/25 04:30:12 bentley Exp $
-
 COMMENT =		strong, neutral, principles-driven typeface
 
 V =			1.008

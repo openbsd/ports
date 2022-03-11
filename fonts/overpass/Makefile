@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/21 20:47:23 sthen Exp $
-
 PKG_ARCH =		*
 
 COMMENT =		font family inspired by Highway Gothic

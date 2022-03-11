@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/13 10:59:26 sthen Exp $
-
 PKG_ARCH ?=	*
 CATEGORIES +=	fonts fonts/adobe-fonts x11
 

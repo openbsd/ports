@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/05/10 04:14:13 bentley Exp $
 @pkgpath fonts/droid-fonts
 @fontdir share/fonts/noto/
 share/fonts/noto/Arimo-Bold.ttf

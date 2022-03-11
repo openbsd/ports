@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/10/25 16:57:33 fcambus Exp $
-
 COMMENT =		IBM's corporate type family
 
 CATEGORIES =		fonts

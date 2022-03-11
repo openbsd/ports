@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/16 13:43:21 fcambus Exp $
-
 COMMENT =	bitmap fonts from SGI
 
 DISTNAME =	sgi-fonts

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/05/25 05:38:12 bentley Exp $
-
 COMMENT = 	fixed width sans font designed especially for coders
 PKG_ARCH =	*
 VERSION =	1.002

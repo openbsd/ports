@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/09 03:41:57 bentley Exp $
-
 COMMENT=		monospace font designed for coders
 
 V =			3.000

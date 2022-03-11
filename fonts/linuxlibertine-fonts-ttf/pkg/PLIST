@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:11 ajacoutot Exp $
 share/doc/linuxlibertine-fonts-ttf/
 share/doc/linuxlibertine-fonts-ttf/Bugs.txt
 share/doc/linuxlibertine-fonts-ttf/ChangeLog.txt

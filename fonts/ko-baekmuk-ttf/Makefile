@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/17 14:49:22 danj Exp $
-
 COMMENT=	Baekmuk Korean truetype fonts
 
 DISTNAME=	baekmuk-ttf-2.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/01/13 09:41:58 fcambus Exp $
-
 COMMENT =	pixel-perfect recreation of the original IBM VGA font
 
 TYPEFACE =	BlockZone

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 04:30:12 bentley Exp $
-
 COMMENT =	font to increase readability for readers with dyslexia
 
 GH_ACCOUNT =	antijingoist

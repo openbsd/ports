@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/09 04:39:53 bentley Exp $
-
 COMMENT =	sans-serif typeface family of Android OS
 
 FIX_EXTRACT_PERMISSIONS =	Yes

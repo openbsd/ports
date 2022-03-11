@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:46:13 sthen Exp $
-
 CATEGORIES ?=	fonts x11 japanese korean
 
 HOMEPAGE ?=	https://kldp.net/unfonts/

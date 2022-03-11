@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 05:42:00 bentley Exp $
-
 V =		1.0
 COMMENT =	Adrian Smith's standard APL fonts
 PKGNAME =	apl-fonts-${V}

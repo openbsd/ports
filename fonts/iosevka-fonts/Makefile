@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/08/21 13:53:30 edd Exp $
-
 # There are many different variants of Iosevka. We only package a subset of
 # them, but the layout of the port is designed for more to be added if need be.
 #

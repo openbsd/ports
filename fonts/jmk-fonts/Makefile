@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/17 14:49:22 danj Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		nice fixed width fonts, easy on the eye

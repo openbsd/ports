@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:05 bentley Exp $
-
 COMMENT =	gorgeous modern sans-serif with a very long neck
 
 V =		1.000pre1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/27 22:14:14 gnezdo Exp $
-
 COMMENT =	monotype font for developers
 
 V =		2.242

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/05/25 04:30:12 bentley Exp $
-
 COMMENT =		Unicode-based font for Devanagari script
 
 V =			1.204

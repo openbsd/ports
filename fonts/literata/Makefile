@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/08/06 09:09:15 bentley Exp $
-
 COMMENT =	contemporary serif typeface for long-form reading
 
 V =		2.201

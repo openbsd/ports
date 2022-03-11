@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:46:11 sthen Exp $
-
 COMMENT=	Go TrueType fonts
 GH_ACCOUNT=	golang
 GH_PROJECT=	image

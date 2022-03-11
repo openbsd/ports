@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/11/21 16:47:17 chrisz Exp $
 share/fonts/
 @fontdir share/fonts/uw-ttyp0/
 @comment share/fonts/uw-ttyp0/fonts.dir

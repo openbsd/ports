@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/03/20 12:44:25 bentley Exp $
-
      SUBDIR += blackout
      SUBDIR += chunk
      SUBDIR += fanwood

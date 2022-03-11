@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/09 03:40:45 bentley Exp $
-
 COMMENT =		monospace font designed for coders (old version)
 
 TYPEFACE=		inconsolata

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/09 04:41:47 bentley Exp $
-
 COMMENT =		unicode sans-serif/monospace TrueType fonts from Ubuntu
 
 V =			0.83

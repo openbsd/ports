@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT=		free TrueType Persian fonts
 
 DISTNAME=		freefarsi-ttf-1.0.0b

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:46:11 sthen Exp $
-
 COMMENT =		readable Unicode font for laser printers
 
 TYPEFACE =		charis

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
-
 COMMENT=	japanese true type fonts
 
 DISTNAME=	sazanami-20040629

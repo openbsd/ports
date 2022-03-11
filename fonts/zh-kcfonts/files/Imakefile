@@ -1,5 +1,3 @@
-# $OpenBSD: Imakefile,v 1.1.1.1 2011/07/19 16:51:04 jasper Exp $
-
 OBJS =  FontBaseObj(kc8x15).gz  FontBaseObj(kc12x24).gz \
 	FontBaseObj(kc15f).gz FontBaseObj(kc24f).gz 
 

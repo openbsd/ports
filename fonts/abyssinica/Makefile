@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/05/25 03:40:07 bentley Exp $
-
 COMMENT =		Ethiopic Unicode script
 
 TYPEFACE =		abyssinica

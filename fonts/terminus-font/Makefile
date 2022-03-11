@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 22:04:35 sthen Exp $
-
 COMMENT =		fixed width fonts especially for long hacking sessions
 
 DISTNAME =		terminus-font-4.47

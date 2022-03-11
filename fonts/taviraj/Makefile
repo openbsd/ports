@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 04:30:12 bentley Exp $
-
 COMMENT =	Serif Latin and Looped Thai typeface
 
 DISTNAME =	taviraj-0.20160412

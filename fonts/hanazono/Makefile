@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:46:11 sthen Exp $
-
 COMMENT =	Japanese Ming-style font
 
 DISTNAME =	hanazono-20170904

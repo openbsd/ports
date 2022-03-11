@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/11 12:42:01 sthen Exp $
-
 COMMENT=	oldstyle book font
 
 GH_ACCOUNT=	skosch

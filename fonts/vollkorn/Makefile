@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/11 08:43:24 bentley Exp $
-
 COMMENT =		free and healthy typeface for bread and butter use
 
 V =			4.105

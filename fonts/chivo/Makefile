@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/25 03:40:08 bentley Exp $
-
 COMMENT =	open-source Grotesque sans-serif typeface family
 
 # version numbers listed in README.md

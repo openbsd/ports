@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/09 03:41:57 bentley Exp $
 @conflict inconsolata-font-*
 share/fonts/
 @fontdir share/fonts/inconsolata/

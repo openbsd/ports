@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:46:11 sthen Exp $
-
 COMMENT=		free UCS outline fonts
 
 V=			20120503

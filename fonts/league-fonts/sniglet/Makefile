@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/23 07:17:06 bentley Exp $
-
 COMMENT =	fun rounded display face that's great for headlines
 
 V =		1.000pre1

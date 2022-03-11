@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/05 11:30:58 uaa Exp $
-
 COMMENT =	Japanese gothic TrueType fonts from Vine Linux
 
 V =		20200720

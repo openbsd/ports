@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main=	English PK fonts (300dpi) for ghostscript, xdvi, etc.
 
 DISTNAME=	pkfonts

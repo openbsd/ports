@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/30 15:45:53 fcambus Exp $
-
 COMMENT =	typeface carefully crafted & designed for computer screens
 
 V =		3.19

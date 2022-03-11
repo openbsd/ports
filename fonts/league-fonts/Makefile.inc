@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2021/03/23 07:17:04 bentley Exp $
-
 PKGNAME ?=	${LEAGUE_FONT}-$V
 
 CATEGORIES ?=	fonts

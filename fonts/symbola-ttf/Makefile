@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:46:13 sthen Exp $
-
 COMMENT=		free unicode symbol font
 
 DISTNAME=		symbola-ttf-10.03

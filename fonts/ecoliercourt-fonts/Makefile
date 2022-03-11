@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:11 sthen Exp $
-
 COMMENT=	dip pen style TTF fonts
 
 TYPEFACE=	ecoliercourt

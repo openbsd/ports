@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
 @pkgpath korean/baekmuk-fonts
 share/fonts/
 @fontdir share/fonts/korean/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/06/09 09:35:59 bentley Exp $
-
 COMMENT =		emoji fonts for the noto font family
 
 NOTO_PROJECT =		emoji

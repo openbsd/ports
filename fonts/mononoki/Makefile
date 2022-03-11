@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/08/09 08:55:27 bentley Exp $
-
 COMMENT =	font for programming and code review
 
 TYPEFACE =	mononoki

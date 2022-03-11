@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-dpi400,v 1.1.1.1 2011/07/19 09:16:08 jasper Exp $
 @pkgpath print/pkfonts,dpi400
 lib/fonts/pk400/
 lib/fonts/pk400/cmb10.400pk

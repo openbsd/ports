@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/26 11:14:31 jasper Exp $
-
 COMMENT=		ink-saving font based on Vera Sans
 
 TYPEFACE =		ecofont

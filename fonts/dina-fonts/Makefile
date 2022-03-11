@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/26 18:18:47 rsadowski Exp $
-
 PKG_ARCH =	*
 
 COMMENT =	monospace bitmap font, primarily aimed at programmers

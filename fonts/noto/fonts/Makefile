@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/05/10 04:14:13 bentley Exp $
-
 COMMENT =		pan-unicode font family
 
 NOTO_PROJECT =		fonts

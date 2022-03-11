@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:46:12 sthen Exp $
-
 COMMENT =		advanced Unicode font for medievalists
 DISTNAME =		junicode-1.002
 EXTRACT_SUFX =		.zip

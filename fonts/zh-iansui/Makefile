@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/03/01 04:16:19 kevlo Exp $
-
 COMMENT =		Chinese truetype font derived from Klee One
 
 V =			0.940

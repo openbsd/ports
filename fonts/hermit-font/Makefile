@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/01/16 17:26:16 abieber Exp $
-
 COMMENT=	clear, readable monospaced font
 
 TYPEFACE=	hermit

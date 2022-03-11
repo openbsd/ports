@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/09 04:01:53 bentley Exp $
-
 COMMENT =		collection of Japanese sans-serif fonts
 
 V =			063a

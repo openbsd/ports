@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/20 08:28:24 bentley Exp $
 share/doc/mada/
 share/doc/mada/README.txt
 share/fonts/

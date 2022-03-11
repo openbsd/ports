@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/09 05:32:21 bentley Exp $
-
 COMMENT=	Wen Quan Yi Zen Hei outline font
 
 TYPEFACE=	wqy-zenhei

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/08/24 09:36:21 bentley Exp $
-
 COMMENT =	typeface based loosely on early Grotesques
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	fonts

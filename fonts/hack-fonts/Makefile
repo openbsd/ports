@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:11 sthen Exp $
-
 PKG_ARCH =		*
 
 COMMENT =		typeface designed for source code

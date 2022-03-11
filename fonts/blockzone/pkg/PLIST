@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/28 20:11:06 jung Exp $
 share/doc/blockzone/
 share/doc/blockzone/LICENSE
 share/fonts/

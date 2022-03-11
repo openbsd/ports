@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:46:10 sthen Exp $
-
 TYPEFACE =		andika
 V =			5.000
 COMMENT =		clear sans serif, Unicode-compliant font
