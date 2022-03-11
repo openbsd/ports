@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2020/02/20 20:16:50 jasper Exp $
-
 CATEGORIES +=		net net/napalm
 
 MODULES +=		lang/python

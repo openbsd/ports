@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2020/07/02 03:41:06 bket Exp $
 @pkgpath net/transmission
 @newgroup _transmission:662
 @newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin

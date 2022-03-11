@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/08/02 12:33:54 jasper Exp $
-
 COMMENT=	5250 telnet protocol and terminal
 
 DISTNAME=	tn5250-0.17.4

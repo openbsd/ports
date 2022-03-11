@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/21 15:57:16 gsoares Exp $
 @bin bin/castget
 @man man/man1/castget.1
 @man man/man5/castgetrc.5

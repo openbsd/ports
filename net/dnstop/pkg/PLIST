@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/20 09:40:13 sthen Exp $
 @bin bin/dnstop
 @man man/man8/dnstop.8

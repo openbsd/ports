@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/04 11:34:54 cwen Exp $
-
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
 DISTNAME=		wmnetload-1.3

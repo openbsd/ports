@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.9 2021/10/27 06:43:58 ajacoutot Exp $
-
 CATEGORIES ?=		net multimedia
 HOMEPAGE ?=		https://01.org/dleyna/
 

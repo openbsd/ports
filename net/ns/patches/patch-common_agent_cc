@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_agent_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: common/agent.cc
 --- common/agent.cc.orig
 +++ common/agent.cc

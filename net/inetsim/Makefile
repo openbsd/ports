@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/22 14:54:01 jasper Exp $
-
 COMMENT =		suite for simulating common internet services
 
 DISTNAME =		inetsim-1.3.2

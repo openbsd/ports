@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: bgpd,v 1.2 2010/10/23 15:52:22 sthen Exp $
-#
 # Script to monitor OpenBGPD peers
 # (c) 2007 Michael Knudsen <mk@openbsd.org>
 

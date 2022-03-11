@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/01/09 21:43:09 sthen Exp $
-
 COMMENT=		network pipe meter
 
 DISTNAME=		nepim-0.53

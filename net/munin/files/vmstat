@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: vmstat,v 1.2 2010/10/23 15:52:22 sthen Exp $
-#
 # Adapted from node/node.d.freebsd/vmstat.in
 #
 # Plugin to monitor the number of procs in io-sleep and other wait

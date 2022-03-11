@@ -1,5 +1,3 @@
-$OpenBSD: patch-librtmp_hashswf_c,v 1.1 2022/01/14 10:53:19 tb Exp $
-
 Fix build with opaque HMAC_CTX in LibreSSL 3.5
 
 Index: librtmp/hashswf.c

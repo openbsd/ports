@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/03/20 16:44:26 naddy Exp $
-
 COMMENT=	Ubiquiti mfi wireless controller
 
 DISTFILES=	mFi-$V{mFi.unix}.zip

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		Python library to support the IDNA protocol
 
 # 3.x is py3-only

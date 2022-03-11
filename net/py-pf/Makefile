@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/14 16:51:25 sthen Exp $
-
 COMMENT =		Python module for managing PF
 
 MODPY_EGG_VERSION =	0.2.1

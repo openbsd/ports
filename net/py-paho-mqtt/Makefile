@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:41 sthen Exp $
-
 COMMENT =		MQTT Python client library
 
 MODPY_EGG_VERSION =	1.5.1

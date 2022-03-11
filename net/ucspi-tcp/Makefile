@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT=	tools for building tcp socket client/servers
 
 DISTNAME=	ucspi-tcp-0.88

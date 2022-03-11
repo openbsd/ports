@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2022/03/05 17:35:55 kirby Exp $
-
 COMMENT =		seafile client
 
 GH_PROJECT =		seafile-client

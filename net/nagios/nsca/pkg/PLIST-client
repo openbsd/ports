@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-client,v 1.3 2013/03/12 23:44:09 sthen Exp $
 @conflict nsca-ng-client-*
 libexec/nagios/
 libexec/nagios/send_nsca

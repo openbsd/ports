@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_netdb_h,v 1.1 2019/07/15 08:47:45 sthen Exp $
-
 struct needs to match the order in base. (We can't just directly use
 netdb.h from base because it is missing things that libbind wants).
 

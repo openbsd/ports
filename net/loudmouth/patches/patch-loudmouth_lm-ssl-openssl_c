@@ -1,4 +1,3 @@
-$OpenBSD: patch-loudmouth_lm-ssl-openssl_c,v 1.1 2009/01/19 10:54:27 jasper Exp $
 --- loudmouth/lm-ssl-openssl.c.orig	Mon Jan 19 11:50:51 2009
 +++ loudmouth/lm-ssl-openssl.c	Mon Jan 19 11:51:45 2009
 @@ -305,6 +305,14 @@ _lm_ssl_initialize (LmSSL *ssl) 

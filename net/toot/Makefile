@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/02 00:01:53 sthen Exp $
-
 COMMENT =		interact with Mastodon social networks from the command line
 
 MODPY_EGG_VERSION =	0.28.0

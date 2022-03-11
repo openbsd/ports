@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2019/07/12 20:48:24 sthen Exp $
-
 COMMENT=		small and efficient HTTP crawler
 
 DISTNAME=		crawl-0.4

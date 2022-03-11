@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_lib_CryptoPP_h,v 1.1 2018/04/13 15:12:17 jasper Exp $
-
 Index: src/utils/lib/CryptoPP.h
 --- src/utils/lib/CryptoPP.h.orig
 +++ src/utils/lib/CryptoPP.h

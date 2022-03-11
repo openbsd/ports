@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/08/01 11:30:37 sthen Exp $
-
 COMMENT=	live CLI display of interface bandwidth, using SNMP
 
 GH_ACCOUNT=	tenox7

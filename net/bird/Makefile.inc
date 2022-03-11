@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2021/03/22 17:06:52 sthen Exp $
-
 COMMENT=	BIRD internet routing daemon
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

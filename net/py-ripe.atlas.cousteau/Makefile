@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:01:41 sthen Exp $
-
 COMMENT =	python bindings for the RIPE Atlas API
 
 MODPY_EGG_VERSION =	1.4.2

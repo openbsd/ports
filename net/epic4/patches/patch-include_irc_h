@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_irc_h,v 1.1 2021/02/10 07:15:17 jsg Exp $
-
 fix -fno-common build
 
 Index: include/irc.h

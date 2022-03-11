@@ -1,5 +1,3 @@
-$OpenBSD: patch-dnsmasq_conf_example,v 1.3 2020/04/13 11:05:50 sthen Exp $
-
 Index: dnsmasq.conf.example
 --- dnsmasq.conf.example.orig
 +++ dnsmasq.conf.example

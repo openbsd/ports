@@ -1,5 +1,3 @@
-$OpenBSD: patch-res_barrier_desktop,v 1.1 2021/09/16 14:23:37 abieber Exp $
-
 Index: res/barrier.desktop
 --- res/barrier.desktop.orig
 +++ res/barrier.desktop

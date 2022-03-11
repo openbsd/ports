@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:34 sthen Exp $
-
 COMMENT =	Perl bindings for GNU Libidn
 
 MODULES =	cpan

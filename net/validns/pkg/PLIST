@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/05/06 15:52:24 fcambus Exp $
 @bin bin/validns
 @man man/man1/validns.1

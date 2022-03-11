@@ -1,5 +1,3 @@
-$OpenBSD: patch-dnsdist-lua-bindings_cc,v 1.1 2022/01/18 06:29:19 otto Exp $
-
 Index: dnsdist-lua-bindings.cc
 --- dnsdist-lua-bindings.cc.orig
 +++ dnsdist-lua-bindings.cc

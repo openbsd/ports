@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2021/03/03 08:22:03 sthen Exp $
-
 COMMENT=	raw IP packet construction library
 
 DISTNAME=	libnet-${VERSION}

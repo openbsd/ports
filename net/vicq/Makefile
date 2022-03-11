@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 21:02:24 sthen Exp $
-
 COMMENT=	text-based ICQ implementation
 
 DISTNAME=	vicq-0.4.1

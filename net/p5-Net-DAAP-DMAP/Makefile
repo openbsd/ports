@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:32 sthen Exp $
-
 COMMENT=	perl module for reading and writing DAAP structures
 
 MODULES=	cpan

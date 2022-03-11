@@ -1,5 +1,3 @@
-$OpenBSD: patch-liveMedia_RTSPClient_cpp,v 1.4 2018/04/10 21:15:33 naddy Exp $
-
 Index: liveMedia/RTSPClient.cpp
 --- liveMedia/RTSPClient.cpp.orig
 +++ liveMedia/RTSPClient.cpp

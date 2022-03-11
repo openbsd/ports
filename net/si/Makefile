@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 21:07:46 sthen Exp $
-
 COMMENT =	minimalistic SILC client
 
 DISTNAME =	si-0.3

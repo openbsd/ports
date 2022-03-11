@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/11 22:26:46 naddy Exp $
-
 COMMENT =		display bandwidth usage on an interface
 
 DISTNAME =		iftop-1.0pre4

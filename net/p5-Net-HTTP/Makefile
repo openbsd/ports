@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/09 14:26:35 bluhm Exp $
-
 COMMENT =	Perl HTTP connection client
 
 DISTNAME =	Net-HTTP-6.19

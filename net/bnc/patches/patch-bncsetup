@@ -1,4 +1,3 @@
-$OpenBSD: patch-bncsetup,v 1.2 2004/11/10 21:53:32 robert Exp $
 --- bncsetup.orig	Tue Feb 27 11:25:23 2001
 +++ bncsetup	Tue Feb 27 11:29:02 2001
 @@ -63,15 +63,8 @@

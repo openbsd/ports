@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_torrent_data_transfer_list_cc,v 1.2 2017/05/19 22:25:53 espie Exp $
-
 Index: src/torrent/data/transfer_list.cc
 --- src/torrent/data/transfer_list.cc.orig
 +++ src/torrent/data/transfer_list.cc

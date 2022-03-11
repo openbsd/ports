@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/08/29 14:04:44 kn Exp $
 bin/toot
 lib/python${MODPY_VERSION}/site-packages/toot/
 lib/python${MODPY_VERSION}/site-packages/toot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

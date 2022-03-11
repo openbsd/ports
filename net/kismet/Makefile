@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2019/09/03 10:50:33 sthen Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 

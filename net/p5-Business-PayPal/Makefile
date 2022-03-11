@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT=	extension for automating PayPal transactions
 
 DISTNAME=	Business-PayPal-0.04

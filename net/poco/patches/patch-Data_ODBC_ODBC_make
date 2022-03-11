@@ -1,4 +1,3 @@
-$OpenBSD: patch-Data_ODBC_ODBC_make,v 1.1 2013/08/16 10:05:55 sthen Exp $
 --- Data/ODBC/ODBC.make.orig	Tue Mar 19 18:08:59 2013
 +++ Data/ODBC/ODBC.make	Tue Mar 19 18:09:05 2013
 @@ -42,7 +42,7 @@ SYSLIBS += -L/lib/w32api -lodbc32 -lodbccp32

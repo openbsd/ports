@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/01/26 22:58:22 kmos Exp $
-
 # using bundled c-ares which is patched for TTL support
 COMMENT =		python interface for c-ares
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-dhclient-adsuck,v 1.2 2012/01/20 13:07:08 ajacoutot Exp $
 --- dhclient-adsuck.orig	Mon Jan  9 23:23:33 2012
 +++ dhclient-adsuck	Fri Jan 20 14:05:00 2012
 @@ -22,7 +22,7 @@ if [ "X$new_domain_name_servers" = "X" ]; then

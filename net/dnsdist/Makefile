@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/01/18 06:29:19 otto Exp $
-
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-1.7.0

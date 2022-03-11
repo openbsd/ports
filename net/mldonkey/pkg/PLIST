@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/31 08:42:16 dcoppa Exp $
 @pkgpath net/mldonkey/stable
 bin/mlbt
 bin/mlbt+gui

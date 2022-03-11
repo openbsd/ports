@@ -1,4 +1,3 @@
-$OpenBSD: patch-libs-external_USI++_src_misc_cc,v 1.1 2017/04/21 13:57:36 jca Exp $
 --- libs-external/USI++/src/misc.cc.orig	Thu Apr 20 02:18:36 2017
 +++ libs-external/USI++/src/misc.cc	Thu Apr 20 02:18:49 2017
 @@ -1,5 +1,6 @@

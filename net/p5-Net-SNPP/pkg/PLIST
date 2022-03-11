@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/14 17:04:40 todd Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/SNPP/
 ${P5SITE}/Net/SNPP.pm

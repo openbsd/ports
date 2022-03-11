@@ -1,5 +1,3 @@
-# $OpenBSD: tac_plus.conf.sample,v 1.1 2019/07/09 20:22:42 gsoares Exp $
-
 key = "your key here"
 
 # default is to write accounting to separate file

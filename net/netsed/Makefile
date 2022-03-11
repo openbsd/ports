@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=		network sed
 
 DISTNAME=		netsed

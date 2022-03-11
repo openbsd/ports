@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2017/12/01 17:13:50 job Exp $
 bin/aggregate6
 lib/python${MODPY_VERSION}/site-packages/aggregate6/
 lib/python${MODPY_VERSION}/site-packages/aggregate6-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

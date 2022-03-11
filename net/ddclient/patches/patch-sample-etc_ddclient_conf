@@ -1,5 +1,3 @@
-$OpenBSD: patch-sample-etc_ddclient_conf,v 1.2 2021/01/17 15:46:53 sthen Exp $
-
 Index: sample-etc_ddclient.conf
 --- sample-etc_ddclient.conf.orig
 +++ sample-etc_ddclient.conf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/03/05 17:35:56 kirby Exp $
-
 COMMENT =		simple RPC framework based on GObject system
 
 GH_PROJECT =		libsearpc

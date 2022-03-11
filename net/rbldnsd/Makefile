@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:34 sthen Exp $
-
 COMMENT=	small daemon for DNSBLs
 
 DISTNAME=	rbldnsd-0.998.20180516

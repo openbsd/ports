@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:48:29 sthen Exp $
-
 COMMENT=	internet relay chat (irc) server
 
 DISTNAME=       irc2.10.3p1

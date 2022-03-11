@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.25 2022/03/02 09:56:26 fcambus Exp $
-
 V =		2022-03
 
 CATEGORIES =	net

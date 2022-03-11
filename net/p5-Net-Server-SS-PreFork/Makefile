@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:36 sthen Exp $
-
 COMMENT =		hot-deployable variant of Net::Server::PreFork
 
 MODULES =		cpan

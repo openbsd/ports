@@ -1,5 +1,3 @@
-$OpenBSD: patch-Pctest_h,v 1.1 2017/05/08 21:40:10 naddy Exp $
-
 Index: Pctest.h
 --- Pctest.h.orig
 +++ Pctest.h

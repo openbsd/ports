@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/21 09:19:07 semarie Exp $
-
 COMMENT =		command-line DNS lookup tool
 
 GH_ACCOUNT =		ogham

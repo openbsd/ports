@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:44 sthen Exp $
-
 # ptpd-1.x implements PTPv1 (IEEE 1588-2002)
 # ptpd-2.x implements PTPv2 (IEEE 1588-2008)
 # PTPv2 is not backward compatible with PTPv1.

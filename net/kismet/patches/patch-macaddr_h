@@ -1,5 +1,3 @@
-$OpenBSD: patch-macaddr_h,v 1.4 2019/03/03 23:11:04 sebastia Exp $
-
 silence clan warning
 
 Index: macaddr.h

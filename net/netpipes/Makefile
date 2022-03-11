@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=	shell utilities to connect programs to sockets
 
 DISTNAME=	netpipes-4.2-export

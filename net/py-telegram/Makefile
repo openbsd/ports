@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =	python wrapper for Telegram tdlib
 
 MODPY_EGG_VERSION =	0.14.0

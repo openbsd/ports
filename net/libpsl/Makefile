@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:32 sthen Exp $
-
 COMMENT =		public suffix list library
 
 V =			0.21.1

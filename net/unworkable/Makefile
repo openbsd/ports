@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/23 20:55:12 tb Exp $
-
 COMMENT=		simple BitTorrent implementation
 
 DISTNAME=		unworkable-0.53

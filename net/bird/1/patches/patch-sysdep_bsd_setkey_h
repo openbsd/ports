@@ -1,5 +1,3 @@
-$OpenBSD: patch-sysdep_bsd_setkey_h,v 1.2 2019/01/09 15:04:50 sthen Exp $
-
 - the local address must be configured in config file
 - uses hardcoded SPI (same for each direction); see comments for
 correct way to do this, but this is less complex and seems ok in practice.

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:30 sthen Exp $
-
 COMMENT=		library implementing the OAuth Core RFC 5849 standard
 
 DISTNAME=		liboauth-1.0.3

@@ -1,4 +1,3 @@
-$OpenBSD: patch-sysdep_bsd_sysio_h,v 1.2 2019/01/09 15:04:50 sthen Exp $
 Index: sysdep/bsd/sysio.h
 --- sysdep/bsd/sysio.h.orig
 +++ sysdep/bsd/sysio.h

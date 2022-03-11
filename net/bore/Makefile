@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/11 08:06:36 semarie Exp $
-
 COMMENT =		DNS query tool
 WRKDIST =		${WRKDIR}/delan-nonymous-f13a461049f4
 V =			0.4.1

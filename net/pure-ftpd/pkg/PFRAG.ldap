@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.2 2002/02/22 03:14:33 brad Exp $
 share/doc/pure-ftpd/README.LDAP
 share/doc/pure-ftpd/pureftpd.schema
 share/examples/pure-ftpd/pureftpd-ldap.conf

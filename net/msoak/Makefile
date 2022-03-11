@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/24 16:40:17 sthen Exp $
-
 COMMENT =	subscribe to multiple MQTT brokers and topics simultaneously
 
 GH_ACCOUNT =	jpmens

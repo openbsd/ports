@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_ratop_racurses_h,v 1.1 2015/01/26 13:13:58 steven Exp $
 --- examples/ratop/racurses.h.orig	Fri Jan 23 20:55:46 2015
 +++ examples/ratop/racurses.h	Fri Jan 23 20:57:01 2015
 @@ -60,6 +60,8 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.64 2022/02/18 09:49:46 rsadowski Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	BitTorrent Client

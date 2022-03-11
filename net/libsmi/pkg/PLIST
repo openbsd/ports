@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:52 naddy Exp $
 bin/smicache
 @bin bin/smidiff
 @bin bin/smidump

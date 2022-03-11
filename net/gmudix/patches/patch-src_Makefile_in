@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2003/07/22 22:02:32 jolan Exp $
 --- src/Makefile.in.orig	Mon Dec  9 11:32:56 2002
 +++ src/Makefile.in	Sat Jul 19 11:45:59 2003
 @@ -87,8 +87,8 @@ bin_PROGRAMS = gmudix

@@ -1,4 +1,3 @@
-$OpenBSD: sslpatch-config_mk,v 1.1 2016/05/21 05:31:38 gsoares Exp $
 --- config.mk.orig	Wed Jul 16 22:29:41 2014
 +++ config.mk	Thu Jul 17 08:21:18 2014
 @@ -15,13 +15,13 @@ LIBDIR      = ${PREFIX}/lib

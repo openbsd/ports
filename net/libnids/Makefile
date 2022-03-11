@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	network monitoring library with TCP/IP reassembly
 
 DISTNAME=	libnids-1.24

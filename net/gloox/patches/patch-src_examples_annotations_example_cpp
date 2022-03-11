@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_examples_annotations_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
-
 Index: src/examples/annotations_example.cpp
 --- src/examples/annotations_example.cpp.orig
 +++ src/examples/annotations_example.cpp

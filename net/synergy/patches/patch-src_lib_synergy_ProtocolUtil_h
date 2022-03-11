@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_lib_synergy_ProtocolUtil_h,v 1.2 2015/01/03 04:59:27 bcallah Exp $
 --- src/lib/synergy/ProtocolUtil.h.orig	Tue Dec  2 10:03:19 2014
 +++ src/lib/synergy/ProtocolUtil.h	Mon Dec 22 16:20:12 2014
 @@ -52,6 +52,7 @@ class ProtocolUtil { (public)

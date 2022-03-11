@@ -1,4 +1,3 @@
-$OpenBSD: patch-Foundation_src_pcre_internal_h,v 1.2 2013/08/16 10:05:55 sthen Exp $
 --- Foundation/src/pcre_internal.h.orig	Tue Mar 19 21:09:11 2013
 +++ Foundation/src/pcre_internal.h	Tue Mar 19 21:36:16 2013
 @@ -1109,6 +1109,17 @@ typedef struct {

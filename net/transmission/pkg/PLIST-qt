@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-qt,v 1.3 2018/06/27 21:04:00 espie Exp $
 @bin bin/transmission-qt
 @man man/man1/transmission-qt.1
 share/applications/transmission-qt.desktop

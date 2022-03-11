@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2020/11/22 20:52:14 mestre Exp $
-
 COMMENT=		console jabber client
 DISTNAME=		mcabber-1.1.2
 CATEGORIES=		net

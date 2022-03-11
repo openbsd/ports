@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/07/03 07:29:58 ajacoutot Exp $
 bin/rsnapshot
 bin/rsnapshot-diff
 @man man/man1/rsnapshot-diff.1

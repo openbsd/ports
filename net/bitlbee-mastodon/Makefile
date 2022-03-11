@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/10 22:42:09 solene Exp $
-
 COMMENT =		mastodon plugin for Bitlbee
 
 GH_ACCOUNT =		kensanata

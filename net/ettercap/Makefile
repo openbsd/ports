@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2021/03/06 13:55:42 sthen Exp $
-
 SHARED_LIBS +=	ettercap 0.0
 SHARED_LIBS +=	ettercap-ui 0.0
 

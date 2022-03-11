@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=	DNS ping
 
 DISTNAME=	nsping-0.8

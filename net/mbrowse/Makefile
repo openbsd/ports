@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/02 11:56:48 sthen Exp $
-
 COMMENT=	graphical MIB browser
 
 DISTNAME=	mbrowse-0.4.3

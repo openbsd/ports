@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/01 08:40:52 fcambus Exp $
-
 COMMENT =	DB-IP IP to ASN Lite: IPv4/v6 address to ASN
 
 DISTNAME =	dbip-asn-lite-${V}.mmdb

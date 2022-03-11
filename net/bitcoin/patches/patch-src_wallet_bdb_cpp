@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wallet_bdb_cpp,v 1.1 2021/01/30 06:17:16 rsadowski Exp $
-
 Index: src/wallet/bdb.cpp
 --- src/wallet/bdb.cpp.orig
 +++ src/wallet/bdb.cpp

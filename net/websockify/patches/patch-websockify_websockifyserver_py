@@ -1,5 +1,3 @@
-$OpenBSD: patch-websockify_websockifyserver_py,v 1.1 2020/03/09 12:43:16 sthen Exp $
-
 Index: websockify/websockifyserver.py
 --- websockify/websockifyserver.py.orig
 +++ websockify/websockifyserver.py

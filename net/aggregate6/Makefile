@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:38 sthen Exp $
-
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
 MODPY_EGG_VERSION=	1.0.12

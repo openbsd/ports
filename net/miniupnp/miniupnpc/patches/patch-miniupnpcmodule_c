@@ -1,5 +1,3 @@
-$OpenBSD: patch-miniupnpcmodule_c,v 1.3 2019/03/11 04:07:15 bket Exp $
-
 Fix error: expected expression before '/' token
 
 Index: miniupnpcmodule.c

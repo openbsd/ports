@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	multiprotocol traceroute tool
 
 DISTNAME=	ctrace-0.9

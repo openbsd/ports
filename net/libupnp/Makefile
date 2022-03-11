@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/04/09 15:15:09 sthen Exp $
-
 COMMENT=	Universal Plug and Play SDK
 
 DISTNAME=	libupnp-1.8.7

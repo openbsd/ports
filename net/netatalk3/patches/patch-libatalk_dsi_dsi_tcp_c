@@ -1,5 +1,3 @@
-$OpenBSD: patch-libatalk_dsi_dsi_tcp_c,v 1.2 2016/07/30 14:28:40 ajacoutot Exp $
-
 http://sourceforge.net/p/netatalk/code/ci/0b7f7fe6e is wrong for OpenBSD.
 
 --- libatalk/dsi/dsi_tcp.c.orig	Mon Jun  6 13:21:51 2016

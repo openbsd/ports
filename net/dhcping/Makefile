@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT=		dhcp daemon ping program
 
 VERSION=		1.2

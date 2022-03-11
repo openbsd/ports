@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.76 2021/02/23 19:39:31 sthen Exp $
-
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber and Yahoo
 
 # XXX -stable package builds can't detect PKGSPEC updates properly;

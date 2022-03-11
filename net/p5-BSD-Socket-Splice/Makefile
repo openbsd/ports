@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/01/09 01:57:26 bluhm Exp $
-
 COMMENT =	perl interface to OpenBSD socket splicing
 
 DISTNAME =	BSD-Socket-Splice-0.09

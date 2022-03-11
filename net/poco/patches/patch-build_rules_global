@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_rules_global,v 1.3 2013/08/16 10:05:55 sthen Exp $
-
 we do not want to build the debug libraries
 
 --- build/rules/global.orig	Wed Mar  6 19:45:52 2013

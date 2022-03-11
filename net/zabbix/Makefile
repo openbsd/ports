@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.181 2022/02/20 13:50:33 kn Exp $
-
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy

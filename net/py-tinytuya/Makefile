@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/01/08 21:38:17 martin Exp $
-
 COMMENT =		interface with Tuya WiFi smart devices
 
 MODPY_EGG_VERSION =	1.3.0

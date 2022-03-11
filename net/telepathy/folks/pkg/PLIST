@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.29 2021/05/13 18:47:25 jasper Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker

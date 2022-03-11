@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/12 13:50:19 tracey Exp $
-
 COMMENT =		library which implements the IRC protocol
 DISTNAME =		libircclient-1.10
 CATEGORIES =		net

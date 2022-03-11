@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.7 2017/04/17 17:29:13 rpe Exp $
 --- sample-config/cgi.cfg.in.orig	Thu Feb 23 21:00:40 2017
 +++ sample-config/cgi.cfg.in	Fri Apr 14 13:28:45 2017
 @@ -270,7 +270,7 @@ default_statuswrl_layout=4

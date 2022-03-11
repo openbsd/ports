@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/03/04 09:03:35 sthen Exp $
-
 COMMENT =		library for managing Cisco NX-OS devices through NX-API
 
 MODPY_EGG_VERSION =	0.0.5

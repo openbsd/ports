@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:31 sthen Exp $
-
 COMMENT=	LIVE555 streaming media library
 
 DISTNAME=	live.2012.02.04

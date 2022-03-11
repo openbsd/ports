@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tlsopensslbase_cpp,v 1.3 2018/03/18 13:20:38 sthen Exp $
 Index: src/tlsopensslbase.cpp
 --- src/tlsopensslbase.cpp.orig
 +++ src/tlsopensslbase.cpp

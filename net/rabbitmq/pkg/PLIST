@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2022/01/08 12:24:10 ajacoutot Exp $
 @newgroup _rabbitmq:646
 @newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 @rcscript ${RCDIR}/rabbitmq

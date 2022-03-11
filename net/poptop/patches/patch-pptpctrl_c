@@ -1,4 +1,3 @@
-$OpenBSD: patch-pptpctrl_c,v 1.3 2009/01/21 16:07:15 giovanni Exp $
 --- pptpctrl.c.orig	Fri Dec  8 01:01:40 2006
 +++ pptpctrl.c	Wed Oct  8 09:28:48 2008
 @@ -764,7 +764,6 @@ static void launch_pppd(char **pppaddrs, struct in_add

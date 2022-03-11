@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.1 2001/12/27 20:13:45 brad Exp $
 share/doc/pure-ftpd/README.MySQL
 share/examples/pure-ftpd/pureftpd-mysql.conf

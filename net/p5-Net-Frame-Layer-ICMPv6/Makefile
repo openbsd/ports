@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:33 sthen Exp $
-
 COMMENT=	ICMP v6 layer object
 
 MODULES=	cpan

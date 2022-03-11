@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/06 08:34:57 sthen Exp $
 @extraunexec rm -rf /var/ipcad/*
 @man man/man5/ipcad.conf.5
 @man man/man8/ipcad.8

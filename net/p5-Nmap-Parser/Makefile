@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:41 sthen Exp $
-
 COMMENT =	perl module for parsing nmap XML reports
 
 MODULES =	cpan

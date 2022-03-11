@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	local network discovery tool
 
 DISTNAME=	thcrut-0.1

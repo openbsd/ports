@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2016/08/03 13:06:42 ajacoutot Exp $
-
 COMMENT =	perl module for mon
 
 DISTNAME = 	mon-client-${V}

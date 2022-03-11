@@ -1,5 +1,3 @@
-$OpenBSD: patch-btrie_c,v 1.1 2018/02/20 10:25:09 giovanni Exp $
-
 Index: btrie.c
 --- btrie.c.orig
 +++ btrie.c

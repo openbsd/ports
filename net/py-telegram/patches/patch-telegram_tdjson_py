@@ -1,5 +1,3 @@
-$OpenBSD: patch-telegram_tdjson_py,v 1.1.1.1 2021/06/09 10:43:16 landry Exp $
-
 use system tdjson, not the bundled one
 
 Index: telegram/tdjson.py

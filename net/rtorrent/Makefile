@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.69 2020/03/20 16:44:26 naddy Exp $
-
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.9.6

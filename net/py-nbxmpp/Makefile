@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/27 08:10:26 paco Exp $
-
 COMMENT =		Python XMPP and Jabber implementation
 
 MODPY_EGG_VERSION =	2.0.4

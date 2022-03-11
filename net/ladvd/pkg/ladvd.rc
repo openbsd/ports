@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: ladvd.rc,v 1.4 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/ladvd"
 daemon_flags="-a -z"

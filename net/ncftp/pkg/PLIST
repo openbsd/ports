@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/08/21 14:48:02 naddy Exp $
 @bin bin/ncftp
 @bin bin/ncftpbatch
 @bin bin/ncftpbookmarks

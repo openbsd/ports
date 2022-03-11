@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/02/09 09:50:26 bentley Exp $
 lib/python${MODPY_VERSION}/site-packages/deluge/
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/
 lib/python${MODPY_VERSION}/site-packages/deluge/plugins/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg

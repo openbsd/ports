@@ -1,5 +1,3 @@
-$OpenBSD: patch-arpwatch_c,v 1.2 2018/10/31 08:58:56 sebastia Exp $
-
 - Do not bail if the interface does not have an IP assigned.
 - time_t format string fixes
 - add -u flag, to drop privileges to that user

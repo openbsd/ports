@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2021/10/04 04:22:36 rsadowski Exp $
 @bin bin/weechat
 bin/weechat-curses
 @bin bin/weechat-headless

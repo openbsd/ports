@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/28 17:23:07 tb Exp $
-
 COMMENT=	Gadu-Gadu IM protocol client
 
 DISTNAME=	ekg-1.7

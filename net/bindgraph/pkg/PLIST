@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 12:42:24 pea Exp $
 bin/bindgraph
 lib/bindgraph/
 lib/bindgraph/bindgraph.cgi

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/10/19 07:40:08 sthen Exp $
-
 GH_ACCOUNT=	royhills
 GH_PROJECT=	ike-scan
 GH_TAGNAME=	1.9.5

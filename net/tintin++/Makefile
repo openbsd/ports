@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/12/24 13:43:14 bcallah Exp $ 
-
 COMMENT =	client program for playing muds with advanced features
 DISTNAME =	tintin-2.02.12
 CATEGORIES =	net games

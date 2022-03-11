@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_mucroom_cpp,v 1.1 2017/04/19 23:53:42 espie Exp $
 --- src/mucroom.cpp.orig	Thu Apr 20 01:44:19 2017
 +++ src/mucroom.cpp	Thu Apr 20 01:45:18 2017
 @@ -22,6 +22,8 @@

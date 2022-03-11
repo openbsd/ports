@@ -1,5 +1,3 @@
-# $OpenBSD: openbsd-packages,v 1.3 2010/01/21 20:59:30 sthen Exp $
-#
 # Defaults to make Munin plugins work by default with various packages 
 # can be added here (setting uid, etc).
 

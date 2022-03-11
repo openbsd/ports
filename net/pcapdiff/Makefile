@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		compare pcap dump files
 
 GH_ACCOUNT =		isginf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/02/22 10:38:17 sthen Exp $
-
 COMMENT =	tool to automatically build BGP route server configurations
 
 MODPY_EGG_VERSION =	1.14.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT =	e-donkey client
 
 VER =		3.1.6

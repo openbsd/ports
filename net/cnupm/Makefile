@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:24 sthen Exp $
-
 COMMENT=		IPv4/IPv6 traffic collector
 
 DISTNAME=		cnupm-3.12

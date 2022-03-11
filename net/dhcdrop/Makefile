@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT =		testing and/or dropping DHCP server
 
 DISTNAME =		dhcdrop-0.5

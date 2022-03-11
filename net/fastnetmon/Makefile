@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/01/03 12:00:12 jasper Exp $
-
 COMMENT =		DDoS detector with multiple packet capture engines
 
 GH_ACCOUNT =		pavel-odintsov

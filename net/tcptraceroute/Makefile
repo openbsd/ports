@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT=		traceroute implementation using TCP packets
 
 DISTNAME=		tcptraceroute-1.5beta7

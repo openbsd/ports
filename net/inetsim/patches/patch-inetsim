@@ -1,5 +1,3 @@
-$OpenBSD: patch-inetsim,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
-
 Index: inetsim
 --- inetsim.orig
 +++ inetsim

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.112 2022/02/22 23:14:30 sthen Exp $
-
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME =		snort-2.9.19

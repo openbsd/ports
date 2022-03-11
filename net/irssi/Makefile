@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.95 2021/05/26 13:50:02 sthen Exp $
-
 MULTI_PACKAGES = -main -otr
 
 # XXX -stable package builds can't detect PKGSPEC updates properly;

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/16 16:12:43 abieber Exp $
-
 COMMENT =	global, versioned, peer-to-peer filesystem
 
 MODGO_MODNAME =	github.com/ipfs/go-ipfs

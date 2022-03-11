@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.1 2017/09/27 14:03:26 dcoppa Exp $
-
 Index: configure.in
 --- configure.in.orig
 +++ configure.in

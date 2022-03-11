@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2016/12/05 13:57:20 jca Exp $
 @newgroup _hping:784
 @newuser _hping:784:_hping:default:hping privdrop user:/nonexistent:/sbin/nologin
 @man man/man8/hping.8

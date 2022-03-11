@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2017/02/28 20:15:52 naddy Exp $
 --- Makefile.in.orig	Sat Jun 11 06:59:10 2011
 +++ Makefile.in	Tue Feb 28 21:13:51 2017
 @@ -103,7 +103,7 @@ $(DEPEND):

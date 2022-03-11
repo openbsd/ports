@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/02/23 19:39:33 sthen Exp $
-
 COMMENT =	Python DNS library
 
 MODPY_EGG_VERSION =	2.3.6

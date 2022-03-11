@@ -1,4 +1,3 @@
-$OpenBSD: patch-libnetutil_Makefile_in,v 1.1 2012/07/16 07:39:31 giovanni Exp $
 --- libnetutil/Makefile.in.orig	Fri May 25 11:26:38 2012
 +++ libnetutil/Makefile.in	Fri May 25 11:26:57 2012
 @@ -3,7 +3,7 @@ srcdir = @srcdir@

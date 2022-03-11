@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/20 13:59:20 merdely Exp $
 bin/ip2cc
 ${P5SITE}/IP/
 @comment ${P5SITE}/IP/._Authority.pm

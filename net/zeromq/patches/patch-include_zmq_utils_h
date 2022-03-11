@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_zmq_utils_h,v 1.2 2018/04/02 13:28:58 jasper Exp $
-
 /usr/local/include/zmq_utils.h:41:32: error: unknown warning group '-Werror', ignored
       [-Werror,-Wunknown-warning-option]
       #pragma GCC diagnostic ignored "-Werror"

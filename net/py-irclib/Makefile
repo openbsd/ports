@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:41 sthen Exp $
-
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
 GH_ACCOUNT=	sixohsix

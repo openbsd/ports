@@ -1,4 +1,3 @@
-$OpenBSD: patch-decl_h,v 1.1.1.1 2006/04/19 17:11:52 alek Exp $
 --- decl.h.orig	Tue Apr 18 15:20:35 2006
 +++ decl.h	Tue Apr 18 15:20:45 2006
 @@ -28,7 +28,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		FTP server library for Python
 
 MODPY_EGG_VERSION =	1.5.6

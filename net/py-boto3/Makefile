@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.404 2022/03/11 07:47:58 ajacoutot Exp $
-
 COMMENT=		AWS SDK for Python
 
 MODPY_EGG_VERSION=	1.21.17

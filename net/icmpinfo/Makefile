@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:48:28 sthen Exp $
-
 COMMENT=	look at the icmp messages received by the host
 
 DISTNAME=	icmpinfo-1.11

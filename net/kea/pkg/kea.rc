@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: kea.rc,v 1.4 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/keactrl"
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/06/09 19:50:09 sthen Exp $
-
 COMMENT=	IPsec-based VPN software (IKEv1/IKEv2) with XAUTH and EAP
 
 DISTNAME=	strongswan-5.9.1

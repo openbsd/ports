@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_session_record_c,v 1.1 2021/02/15 21:35:57 naddy Exp $
-
 Index: src/session_record.c
 --- src/session_record.c.orig
 +++ src/session_record.c

@@ -1,5 +1,3 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.10 2021/04/29 18:27:02 tb Exp $	*/
-
 /*
  * OpenSSL SSL-plugin for purple
  *

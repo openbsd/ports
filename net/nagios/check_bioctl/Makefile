@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:33 sthen Exp $
-
 PKG_ARCH =		*
 
 COMMENT =		Nagios plugin to check RAID status with bioctl

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/20 11:26:15 sthen Exp $
-
 COMMENT =	generate access/prefix lists for BGP config (fork of bgpq3)
 
 GH_ACCOUNT =		bgp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/03/10 13:51:33 kn Exp $
-
 # the MTProto implementation does not support big-endian
 # https://github.com/telegramdesktop/tdesktop/issues/3167#issuecomment-658308298
 # build uses too much memory on i386 (noticed in calls_group_menu.cpp)

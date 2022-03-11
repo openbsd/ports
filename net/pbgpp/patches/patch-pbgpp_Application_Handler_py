@@ -1,5 +1,3 @@
-$OpenBSD: patch-pbgpp_Application_Handler_py,v 1.3 2019/05/13 04:02:31 phessler Exp $
-
 Avoid using Kafka
 
 Index: pbgpp/Application/Handler.py

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT =	Remote Procedure Calls over a SSH link
 
 MODULES =	cpan

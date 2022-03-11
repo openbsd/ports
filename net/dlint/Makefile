@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT=		DNS zone verification tool
 
 V=			1.4.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/04 11:56:28 sthen Exp $
-
 # endianness issues in tgl/generate.c
 NOT_FOR_ARCHS =		${BE_ARCHS}
 

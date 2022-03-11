@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2018/04/10 13:11:04 jasper Exp $
-
 Index: configure
 --- configure.orig
 +++ configure

@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_exabgp_example-healthcheck_conf,v 1.2 2020/01/15 22:32:39 sthen Exp $
-
 Index: etc/exabgp/example-healthcheck.conf
 --- etc/exabgp/example-healthcheck.conf.orig
 +++ etc/exabgp/example-healthcheck.conf

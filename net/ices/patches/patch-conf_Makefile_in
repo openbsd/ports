@@ -1,4 +1,3 @@
-$OpenBSD: patch-conf_Makefile_in,v 1.1 2005/05/21 13:46:44 alek Exp $
 --- conf/Makefile.in.orig	Mon Oct 25 00:08:55 2004
 +++ conf/Makefile.in	Mon Oct 25 00:10:32 2004
 @@ -229,7 +229,7 @@ uninstall-modDATA:

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/10/15 13:48:59 naddy Exp $
 @newgroup _natpmpd:691
 @newuser _natpmpd:691:691:daemon:NAT-PMP Daemon:/var/empty:/sbin/nologin
 @man man/man5/natpmpd.conf.5

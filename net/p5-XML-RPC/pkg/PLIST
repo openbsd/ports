@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/07 12:42:59 landry Exp $
 ${P5SITE}/XML/RPC.pm
 @man man/man3p/XML::RPC.3p

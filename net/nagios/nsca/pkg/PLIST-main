@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2012/05/02 13:40:10 sthen Exp $
 @pkgpath net/nagios/nsca
 @bin sbin/nsca
 share/doc/nsca/

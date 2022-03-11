@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_ppp-options_xl2tpd,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
-
 connect-delay not supported by our pppd
 
 --- examples/ppp-options.xl2tpd.orig	Tue Jan 15 22:16:15 2013

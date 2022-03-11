@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT=	PayPal API
 
 DISTNAME=	Business-PayPal-API-0.70

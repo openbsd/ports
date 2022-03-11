@@ -1,4 +1,3 @@
-$OpenBSD: patch-sysdep_unix_random_c,v 1.1 2018/09/18 19:21:05 sthen Exp $
 --- sysdep/unix/random.c.orig	Thu Jul 10 00:02:44 2014
 +++ sysdep/unix/random.c	Thu Jul 10 00:03:33 2014
 @@ -13,9 +13,5 @@

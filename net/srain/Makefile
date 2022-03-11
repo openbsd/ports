@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/30 16:26:29 bcallah Exp $
-
 COMMENT =	modern IRC client written in GTK
 CATEGORIES =	net
 

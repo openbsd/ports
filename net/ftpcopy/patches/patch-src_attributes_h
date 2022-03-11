@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_attributes_h,v 1.1 2018/05/26 21:03:38 phessler Exp $
-
 Index: src/attributes.h
 --- src/attributes.h.orig
 +++ src/attributes.h

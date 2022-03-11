@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ircd_c,v 1.4 2015/12/16 06:42:57 ajacoutot Exp $
 --- src/ircd.c.orig	Tue Oct 13 10:48:47 2015
 +++ src/ircd.c	Wed Dec 16 00:29:54 2015
 @@ -241,7 +241,6 @@ make_daemon(void)

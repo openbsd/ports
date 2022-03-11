@@ -1,4 +1,3 @@
-$OpenBSD: patch-miniupnpd_8,v 1.3 2022/02/06 15:04:46 bket Exp $
 Index: miniupnpd.8
 --- miniupnpd.8.orig
 +++ miniupnpd.8

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libapp_Avl_h,v 1.4 2019/05/16 16:07:06 bluhm Exp $
-
 Index: libapp/Avl.h
 --- libapp/Avl.h.orig
 +++ libapp/Avl.h

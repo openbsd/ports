@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2022/01/13 05:51:46 daniel Exp $
-
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 VERSION=	2.10.5

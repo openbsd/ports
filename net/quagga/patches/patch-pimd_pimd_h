@@ -1,5 +1,3 @@
-$OpenBSD: patch-pimd_pimd_h,v 1.1 2021/02/04 13:17:12 tb Exp $
-
 Fix for -fno-common
 
 Index: pimd/pimd.h

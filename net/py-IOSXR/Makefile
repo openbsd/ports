@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		library to manage IOS-XR devices
 
 MODPY_EGG_VERSION =	0.53

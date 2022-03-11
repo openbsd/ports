@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/09/10 15:57:53 jcs Exp $
-
 DISTNAME=	dnstracer-1.9
 CATEGORIES=	net
 REVISION=	2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:32 sthen Exp $
-
 COMMENT =		multicast proxy daemon
 
 DISTNAME =		mcast-proxy-1.0

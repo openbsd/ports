@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:19 espie Exp $
 @bin bin/utox
 @man man/man1/utox.1
 share/applications/utox.desktop

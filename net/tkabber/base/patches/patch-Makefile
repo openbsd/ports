@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile,v 1.2 2015/04/02 20:23:56 czarkoff Exp $
 --- Makefile.orig	Sat Mar 28 20:02:27 2015
 +++ Makefile	Sun Mar 29 12:23:15 2015
 @@ -29,7 +29,7 @@ install: install-bin install-doc install-examples

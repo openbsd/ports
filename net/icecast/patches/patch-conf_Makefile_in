@@ -1,4 +1,3 @@
-$OpenBSD: patch-conf_Makefile_in,v 1.9 2018/11/20 17:32:36 jca Exp $
 Index: conf/Makefile.in
 --- conf/Makefile.in.orig
 +++ conf/Makefile.in

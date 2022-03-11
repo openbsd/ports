@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: geomyidae.rc,v 1.4 2018/12/25 20:59:58 jung Exp $
 
 daemon="${TRUEPREFIX}/bin/geomyidae"
 daemon_flags="-l /var/log/geomyidae.log -u _geomyidae -g _geomyidae"

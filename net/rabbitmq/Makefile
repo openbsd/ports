@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/01/08 12:24:10 ajacoutot Exp $
-
 BROKEN =	builds but not yet working.
 # we had rabbitmq-3.6.15 which used erlang 19, which was removed due to
 # not building with -fno-commons, leaving only erlang 21 in ports.

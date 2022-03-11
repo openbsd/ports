@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:35 sthen Exp $
-
 COMMENT=	Perl module to use authenticated SMTP
 
 MODULES=	cpan

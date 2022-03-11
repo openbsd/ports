@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/05/31 18:30:23 chris Exp $
 @newgroup _flowd:542
 @newuser _flowd:542:542:daemon:flowd user:/var/empty:/sbin/nologin
 @bin bin/flowd-reader

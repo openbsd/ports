@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_configure_in_TclCL,v 1.1 2017/09/27 10:35:22 dcoppa Exp $
-
 Index: conf/configure.in.TclCL
 --- conf/configure.in.TclCL.orig
 +++ conf/configure.in.TclCL

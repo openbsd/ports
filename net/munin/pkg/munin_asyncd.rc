@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: munin_asyncd.rc,v 1.5 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/libexec/munin/munin-asyncd --fork"
 daemon_user="_munin"

@@ -1,4 +1,3 @@
-$OpenBSD: patch-ipcad_conf_default,v 1.1 2011/06/06 08:34:57 sthen Exp $
 --- ipcad.conf.default.orig	Sun Apr 17 13:18:07 2011
 +++ ipcad.conf.default	Sun Apr 17 13:20:21 2011
 @@ -191,11 +191,11 @@ rsh enable at 127.0.0.1;

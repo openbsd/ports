@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/03/08 13:59:24 sthen Exp $
-
 COMMENT =	Go supplementary network libraries
 DISTNAME =	go-net-20190904
 GH_ACCOUNT =	golang

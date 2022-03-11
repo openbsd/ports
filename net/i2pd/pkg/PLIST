@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2022/02/28 10:49:54 sthen Exp $
 @newgroup _i2pd:838
 @newuser _i2pd:838:838:daemon:i2pd account:${LOCALSTATEDIR}/lib/i2pd:/sbin/nologin
 @rcscript ${RCDIR}/i2pd

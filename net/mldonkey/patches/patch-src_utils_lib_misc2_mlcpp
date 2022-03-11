@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_utils_lib_misc2_mlcpp,v 1.1 2015/02/10 11:50:09 dcoppa Exp $
 --- src/utils/lib/misc2.mlcpp.orig	Tue Feb 10 05:00:38 2015
 +++ src/utils/lib/misc2.mlcpp	Tue Feb 10 05:01:12 2015
 @@ -21,9 +21,7 @@

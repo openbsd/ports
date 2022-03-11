@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2021/09/11 22:48:21 namn Exp $
-
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME =	wget-1.21.2

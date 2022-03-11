@@ -1,5 +1,3 @@
-$OpenBSD: patch-build-aux_m4_bitcoin_find_bdb48_m4,v 1.1.1.1 2019/03/08 05:52:25 rsadowski Exp $
-
 Build with BerkeleyDB >= 4.6
 
 Index: build-aux/m4/bitcoin_find_bdb48.m4

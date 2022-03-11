@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/01/01 12:54:04 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc

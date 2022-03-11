@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_nsca_c,v 1.6 2013/05/07 20:17:43 sthen Exp $
 --- src/nsca.c.orig	Sat May  4 17:40:24 2013
 +++ src/nsca.c	Sat May  4 17:40:41 2013
 @@ -28,7 +28,7 @@ static char server_address[16]="0.0.0.0";

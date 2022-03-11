@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2018/09/18 19:21:05 sthen Exp $
 @option is-branch
 @conflict bird-v6-*
 @conflict bird-doc-*

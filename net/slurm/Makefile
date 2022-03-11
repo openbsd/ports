@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT =	network traffic monitor and statistics
 
 GH_VERSION =	0.4.3

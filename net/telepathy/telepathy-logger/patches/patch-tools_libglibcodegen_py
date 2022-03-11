@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_libglibcodegen_py,v 1.1 2021/02/15 08:44:05 sthen Exp $
-
 From ffc23c3b3d49d265997b6bb5d55d9463080c1cc8 Mon Sep 17 00:00:00 2001
 From: Debarshi Ray <debarshir@freedesktop.org>
 Date: Mon, 10 Feb 2020 15:20:38 +0100

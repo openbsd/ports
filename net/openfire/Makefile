@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2019/09/23 15:14:25 kurt Exp $
-
 COMMENT=	XMPP real time collaboration server
 V=		4.2.3
 REVISION=	1

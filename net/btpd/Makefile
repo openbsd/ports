@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:23 sthen Exp $
-
 COMMENT=		BitTorrent Protocol Daemon
 
 DISTNAME=		btpd-0.16

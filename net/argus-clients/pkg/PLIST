@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/11/24 19:23:50 steven Exp $
 bin/argusclientbug
 @bin bin/ra
 @bin bin/rabins

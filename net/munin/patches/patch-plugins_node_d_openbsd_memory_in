@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_node_d_openbsd_memory_in,v 1.1 2017/10/11 19:40:42 kirby Exp $
-
 # backport upstream commit 0ceb8560ad5967862a4dfa0f6695f2763ef00599
 # add swap usage to memory plugin
 

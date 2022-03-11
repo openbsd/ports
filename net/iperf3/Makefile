@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/13 02:02:09 lteo Exp $
-
 COMMENT=	tool to measure maximum achievable bandwidth on IP networks
 
 V=		3.10.1

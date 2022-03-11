@@ -1,5 +1,3 @@
-$OpenBSD: patch-sh_util_gpshare_c,v 1.1 2021/02/01 01:21:36 cwen Exp $
-
 Fix -fno-common build failure.
 
 Index: sh_util/gpshare.c

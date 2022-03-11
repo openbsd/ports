@@ -1,5 +1,3 @@
-$OpenBSD: patch-tac_plus_conf_5_in,v 1.2 2019/07/09 20:22:42 gsoares Exp $
-
 - fix invalid syntax (semi-colon in config file)
 - update accounting file path for setuid user
 

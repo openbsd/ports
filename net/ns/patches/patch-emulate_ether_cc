@@ -1,4 +1,3 @@
-$OpenBSD: patch-emulate_ether_cc,v 1.2 2007/10/24 15:01:09 steven Exp $
 --- emulate/ether.cc.orig	Wed Feb  9 00:35:12 2000
 +++ emulate/ether.cc	Sat Oct 13 22:22:22 2007
 @@ -43,12 +43,32 @@ static const char rcsid[] =

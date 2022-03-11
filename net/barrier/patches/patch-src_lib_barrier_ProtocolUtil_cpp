@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_barrier_ProtocolUtil_cpp,v 1.1 2022/01/02 16:51:17 jca Exp $
-
 Rename function to avoid ambiguity on platforms where va_list is void *.
 
 Index: src/lib/barrier/ProtocolUtil.cpp

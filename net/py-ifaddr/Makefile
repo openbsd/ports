@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:41 sthen Exp $
-
 COMMENT=		enumerate IP addresses on the local network adapters
 
 MODPY_EGG_VERSION=	0.1.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2019/09/12 18:52:16 jsing Exp $
 @conflict go-websocket-*
 @pkgpath net/go-websocket
 go-pkg/

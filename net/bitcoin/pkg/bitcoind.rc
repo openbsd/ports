@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: bitcoind.rc,v 1.2 2018/07/15 22:03:50 bentley Exp $
 
 daemon="${TRUEPREFIX}/bin/bitcoind"
 daemon_timeout="300"

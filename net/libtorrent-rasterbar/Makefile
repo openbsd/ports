@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/01/08 09:18:24 namn Exp $
-
 COMMENT =		C++ library implementing a BitTorrent client
 
 MODPY_EGG_VERSION =	1.2.15

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/02/03 20:40:39 sthen Exp $
-
 COMMENT=	toolset for internet routing registries
 
 V=		5.0.1

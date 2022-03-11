@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=		stub DNS resolver library
 
 DISTNAME=		udns-0.4

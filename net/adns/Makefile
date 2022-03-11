@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/06/11 20:23:34 sthen Exp $
-
 COMMENT=		asynchronous dns resolver client library and utilities
 DISTNAME=		adns-1.5.2
 

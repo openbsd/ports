@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/04/05 13:21:48 sthen Exp $
-
 COMMENT=	Perl extension for merging IPv4 or IPv6 CIDR addresses
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/14 12:43:33 sthen Exp $
-
 COMMENT =		Python library for NETCONF clients
 
 MODPY_EGG_VERSION =	0.6.12

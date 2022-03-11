@@ -1,5 +1,3 @@
-$OpenBSD: patch-spectool_gtk_widget_c,v 1.1 2017/05/17 23:21:55 espie Exp $
-
 Index: spectool_gtk_widget.c
 --- spectool_gtk_widget.c.orig
 +++ spectool_gtk_widget.c

@@ -1,4 +1,3 @@
-$OpenBSD: patch-darkstat_8_in,v 1.3 2014/02/07 08:56:53 brad Exp $
 --- darkstat.8.in.orig	Sat Jan 25 21:39:41 2014
 +++ darkstat.8.in	Sat Jan 25 22:29:54 2014
 @@ -126,6 +126,7 @@ Errors, warnings, and verbose messages will go to \fBs

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_utils_queue_buckets_h,v 1.1 2019/04/28 02:01:30 cwen Exp $
 proper typing, from FreeBSD
 
 Index: src/utils/queue_buckets.h

@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2005/05/24 00:05:14 mjc Exp $
 --- Makefile.in.orig	Wed Apr 18 07:11:06 2001
 +++ Makefile.in	Tue May 22 14:12:19 2001
 @@ -76,7 +76,7 @@ getopt_SOURCES = @getopt_SOURCES@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:30 sthen Exp $
-
 COMMENT=	C implementation of the Frame Streams protocol
 
 DISTNAME=	fstrm-0.5.0

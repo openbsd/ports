@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wallet_test_init_test_fixture_cpp,v 1.1 2021/08/16 05:39:15 rsadowski Exp $
-
 Index: src/wallet/test/init_test_fixture.cpp
 --- src/wallet/test/init_test_fixture.cpp.orig
 +++ src/wallet/test/init_test_fixture.cpp

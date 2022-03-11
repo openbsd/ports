@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dynamic-preprocessors_appid_Makefile_in,v 1.8 2021/09/19 10:18:25 sthen Exp $
  
 libsf_appid_preproc.so needs to link against libc++abi so that luajit can access
 libunwind symbols.

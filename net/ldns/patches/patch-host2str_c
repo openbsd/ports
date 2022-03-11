@@ -1,5 +1,3 @@
-$OpenBSD: patch-host2str_c,v 1.2 2022/01/11 20:23:42 tb Exp $
-
 Fix build with opaque DSA/RSA in LibreSSL 3.5.
 https://github.com/NLnetLabs/ldns/pull/151
 

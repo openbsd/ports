@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/05/11 12:03:20 jasper Exp $
 @newgroup _silcd:512
 @newuser _silcd:512:_silcd:daemon:Silc-server Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/silcd/*

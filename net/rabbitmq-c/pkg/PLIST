@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/15 12:41:35 jca Exp $
 @bin bin/amqp-consume
 @bin bin/amqp-declare-queue
 @bin bin/amqp-delete-queue

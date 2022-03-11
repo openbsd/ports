@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_Makefile_in,v 1.6 2015/09/11 09:15:40 pascal Exp $
 --- test/Makefile.in.orig	Thu Sep 10 20:12:55 2015
 +++ test/Makefile.in	Thu Sep 10 20:13:00 2015
 @@ -644,7 +644,7 @@ LibTorrentTest_SOURCES = \

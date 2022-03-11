@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: inadyn.rc,v 1.3 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/inadyn -b"
 daemon_flags="-F ${SYSCONFDIR}/inadyn.conf -s -d _inadyn:_inadyn"

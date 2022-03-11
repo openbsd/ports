@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:34 sthen Exp $
-
 COMMENT=		Pure Perl MySQL network protocol interface
 
 VERSION=		0.11

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:40 sthen Exp $
-
 COMMENT=	perl5 module for getting and parsing whois entries
 
 MODULES=	cpan

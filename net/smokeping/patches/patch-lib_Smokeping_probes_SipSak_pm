@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Smokeping_probes_SipSak_pm,v 1.2 2019/08/21 12:35:12 sthen Exp $
-
 Index: lib/Smokeping/probes/SipSak.pm
 --- lib/Smokeping/probes/SipSak.pm.orig
 +++ lib/Smokeping/probes/SipSak.pm

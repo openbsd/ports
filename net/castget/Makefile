@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/06/21 15:57:16 gsoares Exp $
-
 COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-2.0.1

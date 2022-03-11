@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.34 2020/08/21 15:03:29 bluhm Exp $
 @conflict p5-Net-DNS-SEC-<1.01
 ${P5SITE}/Net/
 ${P5SITE}/Net/DNS/

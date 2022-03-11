@@ -1,4 +1,3 @@
-$OpenBSD: patch-Flowd-perl_Makefile_PL,v 1.1 2006/03/29 11:50:31 msf Exp $
 --- Flowd-perl/Makefile.PL.orig	Thu Mar 23 09:54:14 2006
 +++ Flowd-perl/Makefile.PL	Thu Mar 23 09:55:27 2006
 @@ -9,9 +9,9 @@ WriteMakefile(

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.60 2021/09/02 20:44:19 sthen Exp $
-
 COMMENT =	Internet Relay Chat server
 
 DISTNAME =	ircd-hybrid-8.2.39

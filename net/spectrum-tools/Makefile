@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
 

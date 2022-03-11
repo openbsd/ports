@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_protocols_h,v 1.2 2021/03/08 17:08:20 matthieu Exp $
-
 Index: src/protocols.h
 --- src/protocols.h.orig
 +++ src/protocols.h

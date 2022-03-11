@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/09/28 11:40:39 gonzalo Exp $
 @newgroup _mirmon:651
 @newuser _mirmon:651:_mirmon:daemon:mirmon user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/mirmon/*

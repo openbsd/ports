@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/28 10:49:54 sthen Exp $
-
 COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/07/13 16:33:36 solene Exp $
-
 COMMENT =		gemini server written in C used with inetd
 V =			1.07
 DISTNAME =		vger-${V}

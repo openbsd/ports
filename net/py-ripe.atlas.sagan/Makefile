@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/02 00:01:41 sthen Exp $
-
 COMMENT =	parsing library for RIPE Atlas measurement results
 
 MODPY_EGG_VERSION =	1.3.0

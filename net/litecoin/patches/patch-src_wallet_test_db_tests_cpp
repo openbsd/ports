@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wallet_test_db_tests_cpp,v 1.1 2021/08/16 05:39:15 rsadowski Exp $
-
 Index: src/wallet/test/db_tests.cpp
 --- src/wallet/test/db_tests.cpp.orig
 +++ src/wallet/test/db_tests.cpp

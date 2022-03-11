@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:32 sthen Exp $
-
 COMMENT=	perl client for Apple iTunes DAAP service
 
 MODULES=	cpan

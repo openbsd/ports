@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2021/06/09 19:50:09 sthen Exp $
-
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
 DISTNAME=		gtk-gnutella-0.97.1

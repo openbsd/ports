@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/09 07:39:08 ajacoutot Exp $
-
 COMMENT =	things proxy daemon for OpenBSD
 CATEGORIES =	net
 

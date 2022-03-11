@@ -1,5 +1,3 @@
-$OpenBSD: patch-openh323u_mak_in,v 1.7 2021/11/28 11:41:31 ajacoutot Exp $
-
 h225_2.cxx:8:10: fatal error: 'h225.h' file not found
 
 Do not append the platform_type and suffix to the library name.

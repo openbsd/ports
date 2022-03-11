@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/04/07 11:55:14 sthen Exp $
 @newgroup _exabgp:839
 @newuser _exabgp:839:_exabgp:daemon:exabgp user:/nonexistent:/sbin/nologin
 @extraunexec rm /var/log/exabgp/exabgp.log*

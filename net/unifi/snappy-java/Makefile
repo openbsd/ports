@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/19 01:50:30 kurt Exp $
-
 # This is not a normal port, and does not produce a package.
 # It is a maintainer helper to provide a way to build snappy-java.jar
 # with the native module so that it can be rebuilt more easily when

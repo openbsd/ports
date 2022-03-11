@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: nrpe.rc,v 1.4 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/nrpe -d"
 

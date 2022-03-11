@@ -1,5 +1,3 @@
-$OpenBSD: patch-config-example_yaml,v 1.1 2022/01/20 13:29:09 abieber Exp $
-
 Index: config-example.yaml
 --- config-example.yaml.orig
 +++ config-example.yaml

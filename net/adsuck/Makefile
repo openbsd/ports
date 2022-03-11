@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/27 13:54:41 sthen Exp $
-
 COMMENT=		DNS relay for ad blocking
 
 V=			2.5.0

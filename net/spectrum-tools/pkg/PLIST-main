@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2008/06/12 21:33:57 sthen Exp $
 @bin bin/spectool_gtk

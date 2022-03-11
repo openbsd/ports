@@ -1,4 +1,3 @@
-$OpenBSD: patch-emulate_net-pcap_cc,v 1.3 2012/04/28 18:07:57 stu Exp $
 --- emulate/net-pcap.cc.orig	Wed Oct 26 10:24:58 2011
 +++ emulate/net-pcap.cc	Sun Apr 22 21:58:54 2012
 @@ -345,7 +345,9 @@ PcapNetwork::phandler_callback(u_char* userdata, const

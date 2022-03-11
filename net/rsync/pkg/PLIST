@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2020/08/03 21:35:36 kn Exp $
 @newgroup _rsync:669
 @newuser _rsync:669:_rsync:daemon:rsync Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/rsyncd

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT=	Perl extension for retrieving bridge tables
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_torrent_data_block_failed_h,v 1.2 2017/05/19 22:25:53 espie Exp $
 const reference has no useful semantics, shut up clang warning
 
 Index: src/torrent/data/block_failed.h

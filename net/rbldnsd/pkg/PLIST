@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2019/03/18 16:29:49 giovanni Exp $
 @newgroup _rbldns:561
 @newuser _rbldns:561:_rbldns:daemon:rbldns Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/rbldnsd

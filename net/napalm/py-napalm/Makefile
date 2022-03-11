@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:39 sthen Exp $
-
 COMMENT =		network automation abstraction layer
 
 MODPY_EGG_VERSION =	2.3.3

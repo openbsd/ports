@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_sftp_mounter_cpp,v 1.3 2021/11/30 17:19:22 rsadowski Exp $
-
 Use doas(1) so that normal users can use sshfs(1).
 
 On OpenBSD sshfs(1) does not seem to support the "-o password_stdin" option.

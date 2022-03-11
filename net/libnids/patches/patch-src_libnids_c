@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libnids_c,v 1.7 2018/05/15 19:17:05 jasper Exp $
-
 nids_params:
 https://github.com/MITRECND/libnids/commit/81d7ac0d09cb5c98cf8eff9e6aaba1f4eb5ed519
 https://github.com/MITRECND/libnids/commit/4ab31b6efaf15a01b7121443b6e3de4cde13d3a5

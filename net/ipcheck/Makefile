@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/23 19:39:32 sthen Exp $
-
 COMMENT=		fully compliant DynDNS.org client
 
 MV=			0

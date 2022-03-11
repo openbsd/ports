@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/03/10 12:03:33 kn Exp $
-
 COMMENT =		portable SCTP userland stack
 GH_ACCOUNT =		sctplab
 GH_PROJECT =		usrsctp

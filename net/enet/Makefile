@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT =		network library for games
 DISTNAME =		enet-1.3.13
 REVISION =		0

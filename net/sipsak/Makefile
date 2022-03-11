@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/01 20:22:29 sthen Exp $
-
 COMMENT =	SIP swiss army knife
 
 V =		0.9.8.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Foundation_src_NumberFormatter_cpp,v 1.1 2018/04/20 18:22:59 naddy Exp $
-
 Index: Foundation/src/NumberFormatter.cpp
 --- Foundation/src/NumberFormatter.cpp.orig
 +++ Foundation/src/NumberFormatter.cpp

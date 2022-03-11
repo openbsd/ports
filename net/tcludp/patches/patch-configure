@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2014/10/15 10:31:21 sebastia Exp $
 --- configure.orig	Thu Oct  9 05:40:11 2014
 +++ configure	Thu Oct  9 05:40:23 2014
 @@ -7173,7 +7173,7 @@ fi

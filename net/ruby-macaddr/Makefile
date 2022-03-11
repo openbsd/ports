@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/24 19:53:56 jeremy Exp $
-
 COMMENT=		cross platform mac address determiniation
 
 DISTNAME=		macaddr-1.7.2

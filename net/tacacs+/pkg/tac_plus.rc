@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: tac_plus.rc,v 1.2 2019/07/09 20:22:43 gsoares Exp $
 
 daemon="${TRUEPREFIX}/sbin/tac_plus"
 daemon_flags="-C ${SYSCONFDIR}/tac_plus.conf -Q _tacacs -U _tacacs"

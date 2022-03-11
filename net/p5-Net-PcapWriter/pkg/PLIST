@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/12/15 23:26:36 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/PcapWriter/
 ${P5SITE}/Net/PcapWriter.pm

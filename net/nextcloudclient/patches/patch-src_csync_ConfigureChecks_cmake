@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_csync_ConfigureChecks_cmake,v 1.5 2021/12/02 06:54:02 rsadowski Exp $
-
 Stop consuming devel/argp-standalone
 
 Index: src/csync/ConfigureChecks.cmake

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.90 2022/01/12 01:45:16 danj Exp $
-
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
 DISTNAME =	haproxy-2.4.12

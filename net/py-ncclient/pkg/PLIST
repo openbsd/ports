@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/11/14 12:43:33 sthen Exp $
 @pkgpath net/py-ncclient
 lib/python${MODPY_VERSION}/site-packages/ncclient/
 lib/python${MODPY_VERSION}/site-packages/ncclient-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

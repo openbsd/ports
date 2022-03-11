@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT =	Event based transparent Client/Server RPC framework
 
 MODULES =	cpan

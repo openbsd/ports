@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/25 07:24:15 ajacoutot Exp $
-
 COMMENT=		library for easy implementation of a VNC server
 
 DISTNAME=		LibVNCServer-0.9.13

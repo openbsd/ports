@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:35 sthen Exp $
-
 COMMENT =	IP fragment reassembly for Net::Pcap
 
 DISTNAME =	Net-Pcap-Reassemble-0.05

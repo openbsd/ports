@@ -1,4 +1,3 @@
-$OpenBSD: patch-BSDmakefile,v 1.3 2011/07/05 04:26:24 naddy Exp $
 --- BSDmakefile.orig	Mon Oct  6 00:56:25 2008
 +++ BSDmakefile	Tue Jul  5 00:24:59 2011
 @@ -39,10 +39,10 @@ SRCS= announce.c bencode.c buf.c ctl_server.c network.

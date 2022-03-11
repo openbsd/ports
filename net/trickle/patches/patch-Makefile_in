@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2017/05/25 14:39:59 sthen Exp $
-
 -nostdlib:	 undefined symbol '__guard_local'
 remove getopt.c: fix with clang
 

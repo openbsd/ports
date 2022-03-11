@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 ${P5SITE}/NetPacket/
 ${P5SITE}/NetPacket.pm
 ${P5SITE}/NetPacket/ARP.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/12/07 19:55:17 sthen Exp $
-
 COMMENT=	asynchronous resolver library
 
 V=		1.18.1

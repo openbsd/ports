@@ -1,5 +1,3 @@
-$OpenBSD: patch-bindings_perl_t_CMakeLists_txt,v 1.1 2019/06/15 09:53:00 rsadowski Exp $
-
 https://cmake.org/cmake/help/v3.0/policy/CMP0037.html
 Fix cmake policy CMP0037 to avoid multiple ninja targets.
 

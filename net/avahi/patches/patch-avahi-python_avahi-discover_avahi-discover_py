@@ -1,5 +1,3 @@
-$OpenBSD: patch-avahi-python_avahi-discover_avahi-discover_py,v 1.1 2021/12/30 10:51:44 ajacoutot Exp $
-
 https://github.com/lathiat/avahi/pull/282
 
 Index: avahi-python/avahi-discover/avahi-discover.py

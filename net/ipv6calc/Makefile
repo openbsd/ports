@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/02/04 11:44:03 sthen Exp $
-
 COMMENT=	tool for manipulating IPv6 addresses
 
 GH_TAGNAME =	4.0.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/11/11 09:43:47 benoit Exp $
-
 COMMENT=	SSL/STARTTLS support for Net::SMTP
 
 MODULES=	cpan

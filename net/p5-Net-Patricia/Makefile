@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/09 12:42:57 bluhm Exp $
-
 COMMENT =	Patricia Trie perl module for fast IP address lookups
 
 MODULES =	cpan

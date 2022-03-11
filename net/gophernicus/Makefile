@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/01/23 15:00:37 op Exp $
-
 COMMENT=	modern gopher server
 
 V=		3.1.1

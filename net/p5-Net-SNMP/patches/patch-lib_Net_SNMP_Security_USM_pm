@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Net_SNMP_Security_USM_pm,v 1.1 2021/08/11 13:09:49 martijn Exp $
-
 Index: lib/Net/SNMP/Security/USM.pm
 --- lib/Net/SNMP/Security/USM.pm.orig
 +++ lib/Net/SNMP/Security/USM.pm

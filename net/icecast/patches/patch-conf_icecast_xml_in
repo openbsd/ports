@@ -1,4 +1,3 @@
-$OpenBSD: patch-conf_icecast_xml_in,v 1.9 2018/11/20 17:32:36 jca Exp $
 Index: conf/icecast.xml.in
 --- conf/icecast.xml.in.orig
 +++ conf/icecast.xml.in

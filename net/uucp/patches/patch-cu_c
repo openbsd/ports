@@ -1,6 +1,5 @@
 broken send file function fix, Frederick Bruckman, netbsd pr 6834
 
-$OpenBSD: patch-cu_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
 --- cu.c.orig	2003-05-29 08:08:45.000000000 +0200
 +++ cu.c	2003-11-11 21:17:57.000000000 +0100
 @@ -2083,7 +2083,7 @@ fcusend_buf (qconn, zbufarg, cbufarg)

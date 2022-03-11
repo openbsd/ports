@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/13 16:00:22 sthen Exp $
-
   SUBDIR =
   SUBDIR += core2
   SUBDIR += icinga-php-library

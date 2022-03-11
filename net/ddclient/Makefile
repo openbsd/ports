@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/01/17 15:46:53 sthen Exp $
-
 COMMENT=	update client for dynamic DNS services
 
 GH_ACCOUNT=	ddclient

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT=        module to format validation for Net:: related strings
 
 MODULES=	cpan

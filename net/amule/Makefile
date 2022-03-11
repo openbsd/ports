@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.80 2022/02/03 22:17:27 sthen Exp $
-
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.21 2019/10/02 17:59:43 jasper Exp $
-
 PORTROACH=	limitw:1,even
 
 CATEGORIES +=	net

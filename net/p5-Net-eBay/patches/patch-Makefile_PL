@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2011/03/16 14:23:43 jasper Exp $
-
 Don't install these example scripts into bin/ but just treat
 them as examples.
 

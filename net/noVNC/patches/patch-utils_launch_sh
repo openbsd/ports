@@ -1,4 +1,3 @@
-$OpenBSD: patch-utils_launch_sh,v 1.1.1.1 2016/01/29 23:51:02 sthen Exp $
 --- utils/launch.sh.orig	Fri Jan 29 17:17:15 2016
 +++ utils/launch.sh	Fri Jan 29 17:17:17 2016
 @@ -1,4 +1,4 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:47 sthen Exp $
-
 COMMENT=	rabbitmq C library and commandline AMQP utilities
 
 V= 		0.7.1

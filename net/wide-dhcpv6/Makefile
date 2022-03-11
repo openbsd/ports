@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:52 sthen Exp $
-
 COMMENT=	client and servers for the WIDE DHCPv6 protocol
 
 DISTNAME=	wide-dhcpv6-20080615

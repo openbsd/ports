@@ -1,5 +1,3 @@
-$OpenBSD: patch-Foundation_src_RegularExpression_cpp,v 1.1 2021/03/28 09:10:31 ajacoutot Exp $
-
 From f8a0bbff1bb98eee95658fa81e276e9630a67468 Mon Sep 17 00:00:00 2001
 From: Guenter Obiltschnig <guenter.obiltschnig@appinf.com>
 Date: Sat, 11 Feb 2017 12:03:37 +0100

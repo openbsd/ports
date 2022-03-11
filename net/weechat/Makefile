@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.59 2021/11/02 00:01:53 sthen Exp $
-
 COMMENT-main=	fast, light and extensible chat client
 COMMENT-lua=	Lua bindings for weechat
 COMMENT-python=	Python bindings for weechat

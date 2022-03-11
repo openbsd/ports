@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:39 sthen Exp $
-
 COMMENT-main =		secure and anonymous file-sharing over Tor
 COMMENT-gui =		graphical user interface for onionshare based on Qt
 

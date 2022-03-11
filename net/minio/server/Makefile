@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2022/02/07 23:51:52 danj Exp $
-
 BROKEN-i386 =	github.com/tklauser/go-sysconf@v0.3.4/sysconf_openbsd.go:22:28: undefined: unix.RLIMIT_NPROC
 
 COMMENT =	object storage server compatible with Amazon S3 APIs

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=		simple tcp re-engineering tool
 
 DISTNAME=		tcpreen-1.4.4

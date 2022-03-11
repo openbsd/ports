@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libs_ec_cpp_ECSocket_cpp,v 1.2 2022/02/03 22:17:27 sthen Exp $
-
 Index: src/libs/ec/cpp/ECSocket.cpp
 --- src/libs/ec/cpp/ECSocket.cpp.orig
 +++ src/libs/ec/cpp/ECSocket.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
 

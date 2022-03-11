@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT =		DHCP packet dumper
 
 DISTNAME =		dhcpdump-1.8

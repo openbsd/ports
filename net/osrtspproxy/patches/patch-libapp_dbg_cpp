@@ -1,4 +1,3 @@
-$OpenBSD: patch-libapp_dbg_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
 --- libapp/dbg.cpp.orig	Fri Feb  9 07:06:37 2001
 +++ libapp/dbg.cpp	Thu Jan  8 21:02:01 2015
 @@ -20,321 +20,14 @@ void dbgout( const char* fmt, ... )

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: dnsdist.rc,v 1.4 2018/12/09 12:05:25 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/dnsdist --supervised"
 daemon_flags="-u _dnsdist"

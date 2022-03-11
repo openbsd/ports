@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/16 15:22:05 sthen Exp $
 @bin bin/ttg

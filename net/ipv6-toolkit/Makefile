@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/22 22:41:51 jca Exp $
-
 COMMENT =		SI6 networks IPv6 toolkit
 
 VERSION =		2.0

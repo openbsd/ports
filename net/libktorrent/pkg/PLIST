@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/06/19 18:34:30 rsadowski Exp $
 include/KF5/libktorrent/
 include/KF5/libktorrent/bcodec/
 include/KF5/libktorrent/bcodec/bdecoder.h

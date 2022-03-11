@@ -1,4 +1,3 @@
-$OpenBSD: patch-iptop.c,v 1.5 2014/08/19 22:38:33 jca Exp $
 --- iftop.c.orig	Sun Jan 19 21:21:19 2014
 +++ iftop.c	Wed Aug 20 00:35:21 2014
 @@ -28,6 +28,8 @@

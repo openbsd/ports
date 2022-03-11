@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/23 20:59:02 bcallah Exp $
-
 COMMENT =	simple console gopher client
 DISTNAME =	sacc-1.01
 EXTRACT_SUFX =	.tgz

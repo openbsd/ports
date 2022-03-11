@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	mirror files and directories from a remote FTP server
 
 DISTNAME=       fmirror-0.8.4

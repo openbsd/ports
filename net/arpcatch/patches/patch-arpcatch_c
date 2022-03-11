@@ -1,4 +1,3 @@
-	$OpenBSD: patch-arpcatch_c,v 1.2 2002/02/20 20:25:54 pvalchev Exp $
 --- arpcatch.c.orig	Thu Aug 21 18:57:01 1997
 +++ arpcatch.c	Wed Feb 20 13:20:11 2002
 @@ -11,13 +11,13 @@ int debug = 0;

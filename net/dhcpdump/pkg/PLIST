@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/08/21 09:50:17 jasper Exp $
 @man man/man8/dhcpdump.8
 @bin sbin/dhcpdump

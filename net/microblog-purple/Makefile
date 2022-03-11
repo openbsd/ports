@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/26 18:20:35 naddy Exp $
-
 COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 
 VERSION=	0.3.0

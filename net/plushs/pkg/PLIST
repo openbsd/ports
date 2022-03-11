@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2016/03/17 19:52:40 naddy Exp $
 @bin bin/plushs
 @man man/man1/plushs.1
 share/doc/plushs/

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: avahi_daemon.rc,v 1.8 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/avahi-daemon -D"
 

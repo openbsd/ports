@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2020/05/14 17:59:54 kirby Exp $
 @conflict munin-server-<2.0.21
 @newgroup _munin:644
 @newgroup _munin-plugin:645

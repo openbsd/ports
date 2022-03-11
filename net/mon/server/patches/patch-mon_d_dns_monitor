@@ -1,5 +1,3 @@
-$OpenBSD: patch-mon_d_dns_monitor,v 1.1 2011/04/14 12:55:38 pea Exp $
-
 defined(@array) is deprecated. Avoid mon to display
 annoying warnings.
 

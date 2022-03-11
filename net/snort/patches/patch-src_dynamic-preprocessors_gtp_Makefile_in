@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dynamic-preprocessors_gtp_Makefile_in,v 1.19 2021/09/19 10:18:25 sthen Exp $
 Index: src/dynamic-preprocessors/gtp/Makefile.in
 --- src/dynamic-preprocessors/gtp/Makefile.in.orig
 +++ src/dynamic-preprocessors/gtp/Makefile.in

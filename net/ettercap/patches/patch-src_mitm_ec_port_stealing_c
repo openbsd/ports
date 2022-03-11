@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mitm_ec_port_stealing_c,v 1.2 2021/03/01 20:23:18 sthen Exp $
-
 Conflicting definition used elsewhere.
 
 Index: src/mitm/ec_port_stealing.c

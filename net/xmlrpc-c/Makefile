@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:52 sthen Exp $
-
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem)
 NOT_FOR_ARCHS=	m88k

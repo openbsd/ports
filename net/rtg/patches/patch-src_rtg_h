@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_rtg_h,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
 --- src/rtg.h.orig	Thu Sep 25 17:56:04 2003
 +++ src/rtg.h	Thu Nov 24 11:58:31 2005
 @@ -26,8 +26,8 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.131 2021/10/31 17:12:11 tb Exp $
-
 COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-4.9.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-scan-engine_cc,v 1.13 2021/07/20 22:28:24 sthen Exp $
-
 Fix for 64-bit time_t on 32-bit archs
 
 Index: scan_engine.cc

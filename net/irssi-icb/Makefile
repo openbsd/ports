@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/08/30 07:24:49 kn Exp $
-
 COMMENT=	ICB plugin for irssi
 
 GH_ACCOUNT=	mglocker

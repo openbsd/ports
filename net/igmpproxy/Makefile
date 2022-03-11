@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/07/11 09:23:19 bket Exp $
-
 COMMENT =	multicast router utilizing IGMP forwarding
 
 GH_ACCOUNT =	pali

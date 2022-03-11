@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: darkstat.rc,v 1.4 2018/01/11 19:27:05 rpe Exp $
 
 egress_if=$( ifconfig egress 2>/dev/null | head -1 | cut -d : -f 1 )
 

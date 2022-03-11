@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/07/30 14:25:11 otto Exp $
 @newgroup _dnsdist:788
 @newuser _dnsdist:788:_dnsdist:daemon:dnsdist DNS load balancer:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/dnsdist

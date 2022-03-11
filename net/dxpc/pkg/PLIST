@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:39 espie Exp $
 bin/dxpc
 @man man/man1/dxpc.1

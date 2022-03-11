@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:34 sthen Exp $
-
 COMMENT =	Perl extension for decoding NTP server responses
 
 DISTNAME =	Net-NTP-1.5

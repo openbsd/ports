@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:27 sthen Exp $
-
 COMMENT=		ssh through https proxy tunnel
 
 DISTNAME=		gotthard-1.3

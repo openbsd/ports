@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.143 2022/01/14 10:49:27 tb Exp $
-
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 

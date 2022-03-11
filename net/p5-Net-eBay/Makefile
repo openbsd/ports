@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT=		interface to XML based eBay API
 
 DISTNAME =		Net-eBay-0.61

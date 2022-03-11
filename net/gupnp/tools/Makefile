@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/19 08:22:13 ajacoutot Exp $
-
 COMMENT=		collection of developer-oriented UPnP tools
 
 GNOME_PROJECT=		gupnp-tools

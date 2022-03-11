@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/03/07 18:19:18 abieber Exp $
-
 COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite

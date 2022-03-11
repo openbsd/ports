@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT=	transparent IRC proxy
 
 DISTNAME=	tircproxy-0.4.5

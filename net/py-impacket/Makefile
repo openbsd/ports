@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2022/02/22 04:22:21 bket Exp $
-
 FIX_EXTRACT_PERMISSIONS = Yes
 
 COMMENT =		Python classes providing access to network packets

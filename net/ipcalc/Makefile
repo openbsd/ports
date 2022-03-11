@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:28 sthen Exp $
-
 COMMENT=	small network calculator
 
 DISTNAME=	ipcalc-1.4

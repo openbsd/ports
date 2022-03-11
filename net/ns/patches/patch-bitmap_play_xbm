@@ -1,5 +1,3 @@
-$OpenBSD: patch-bitmap_play_xbm,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: bitmap/play.xbm
 --- bitmap/play.xbm.orig
 +++ bitmap/play.xbm

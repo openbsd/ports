@@ -1,4 +1,3 @@
-$OpenBSD: patch-NetPacket_PFLog_pm,v 1.2 2006/10/11 05:39:59 msf Exp $
 --- NetPacket/PFLog.pm.orig	Wed Oct 11 14:13:35 2006
 +++ NetPacket/PFLog.pm	Wed Oct 11 14:31:46 2006
 @@ -0,0 +1,385 @@

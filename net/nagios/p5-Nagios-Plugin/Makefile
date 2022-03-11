@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/02/03 20:40:39 sthen Exp $
-
 COMMENT=	helper routines for writing monitoring plugins
 
 # formerly Nagios-Plugin

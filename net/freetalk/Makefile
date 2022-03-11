@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:26 sthen Exp $
-
 COMMENT=	console based Jabber client
 
 DISTNAME=	freetalk-3.2

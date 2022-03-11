@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_bin_keactrl_keactrl_conf_in,v 1.3 2021/11/30 09:18:09 sthen Exp $
-
 Index: src/bin/keactrl/keactrl.conf.in
 --- src/bin/keactrl/keactrl.conf.in.orig
 +++ src/bin/keactrl/keactrl.conf.in

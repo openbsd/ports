@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: arpwatch.rc,v 1.3 2018/10/31 08:58:56 sebastia Exp $
 
 daemon="${TRUEPREFIX}/sbin/arpwatch"
 daemon_flags="-u _arpwatch"

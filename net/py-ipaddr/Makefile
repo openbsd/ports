@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/23 19:39:34 sthen Exp $
-
 COMMENT =	Python IP address manipulation library
 
 MODPY_EGG_VERSION = 2.1.11

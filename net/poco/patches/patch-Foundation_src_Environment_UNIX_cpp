@@ -1,5 +1,3 @@
-$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.4 2013/08/16 10:05:55 sthen Exp $
-
 prefer sysconf; we don't have sysctlbyname.
 https://github.com/pocoproject/poco/issues/130
 

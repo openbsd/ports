@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/21 19:50:34 kmos Exp $
-
 COMMENT=		DNS toolkit for Python
 
 # dnspython>=2 is py3-only; some deps are hard to update:

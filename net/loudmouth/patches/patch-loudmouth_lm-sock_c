@@ -1,4 +1,3 @@
-$OpenBSD: patch-loudmouth_lm-sock_c,v 1.2 2008/08/31 12:16:14 jasper Exp $
 --- loudmouth/lm-sock.c.orig	Sun Aug 31 13:42:29 2008
 +++ loudmouth/lm-sock.c	Sun Aug 31 13:43:08 2008
 @@ -29,7 +29,9 @@

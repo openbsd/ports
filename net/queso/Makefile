@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:47 sthen Exp $
-
 COMMENT=	determine remote OS using simple tcp packets
 
 DISTNAME=	queso-980922

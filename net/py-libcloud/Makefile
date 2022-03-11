@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/11/16 20:30:20 ajacoutot Exp $
-
 COMMENT=		unified interface for interacting with cloud services
 
 MODPY_EGG_VERSION=	3.4.1

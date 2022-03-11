@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.1 2021/12/05 17:56:16 abieber Exp $
-
 MODGO_MODULES =	\
 	github.com/aead/siphash			 v1.0.1 \
 	github.com/alecthomas/assert		 v0.0.0-20170929043011-405dbfeb8e38 \

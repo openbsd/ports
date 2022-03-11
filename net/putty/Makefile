@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/07/17 12:01:54 sthen Exp $
-
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 

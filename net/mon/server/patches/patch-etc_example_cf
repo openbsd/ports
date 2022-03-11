@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_example_cf,v 1.1.1.1 2009/11/10 14:33:50 pea Exp $
 --- etc/example.cf.orig	Mon Jun 25 15:10:08 2007
 +++ etc/example.cf	Mon Oct 12 14:10:36 2009
 @@ -17,9 +17,11 @@

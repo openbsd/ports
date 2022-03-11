@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: pdns_recursor.rc,v 1.1.1.1 2018/12/29 14:29:08 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/pdns_recursor --daemon=yes"
 

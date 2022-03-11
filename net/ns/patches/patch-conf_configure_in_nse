@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_configure_in_nse,v 1.1 2017/09/27 10:35:22 dcoppa Exp $
-
 Index: conf/configure.in.nse
 --- conf/configure.in.nse.orig
 +++ conf/configure.in.nse

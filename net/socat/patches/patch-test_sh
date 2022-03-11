@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_sh,v 1.2 2015/04/13 14:43:28 jasper Exp $
 --- test.sh.orig	Sat Jan 24 11:15:22 2015
 +++ test.sh	Mon Apr 13 14:58:09 2015
 @@ -576,9 +576,6 @@ filloptionvalues() {

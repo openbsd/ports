@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_stdinc_h,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
 --- include/stdinc.h.orig	Sun Feb  8 23:16:36 2009
 +++ include/stdinc.h	Sun Feb  8 23:16:52 2009
 @@ -85,6 +85,8 @@ char *alloca();

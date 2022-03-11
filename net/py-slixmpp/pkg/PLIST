@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/05/11 15:46:29 kmos Exp $
 @pkgpath net/py-slixmpp
 lib/python${MODPY_VERSION}/site-packages/slixmpp/
 lib/python${MODPY_VERSION}/site-packages/slixmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

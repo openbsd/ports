@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/07/08 14:23:45 bluhm Exp $
 ${P5SITE}/Net/Inspect/
 ${P5SITE}/Net/Inspect.pm
 ${P5SITE}/Net/Inspect/Connection.pm

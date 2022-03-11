@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2022/02/04 11:44:03 sthen Exp $
 @bin bin/ipv6calc
 @bin bin/ipv6loganon
 @bin bin/ipv6logconv

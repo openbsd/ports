@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:32 sthen Exp $
-
 COMMENT =	code shared by the MaxMind DB reader and writer modules
 
 DISTNAME =	MaxMind-DB-Common-0.040001

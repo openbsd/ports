@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.92 2021/11/28 11:42:25 ajacoutot Exp $
-
 BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper

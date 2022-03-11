@@ -1,4 +1,3 @@
-$OpenBSD: patch-cgi_Makefile_in,v 1.8 2015/04/03 15:09:15 pascal Exp $
 --- cgi/Makefile.in.orig	Tue Aug 12 17:00:01 2014
 +++ cgi/Makefile.in	Thu Apr  2 13:42:46 2015
 @@ -37,7 +37,7 @@ JSONFLAGS=-DJSON_NAGIOS_4X

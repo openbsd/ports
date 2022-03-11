@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2021/02/24 13:05:14 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _nagios:550
 @newuser _nagios:550:_nagios:daemon:Nagios user:/var/www/nagios:/sbin/nologin

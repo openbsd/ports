@@ -1,5 +1,4 @@
 #!/bin/sh
-# $OpenBSD: mfi.sh,v 1.1 2014/12/07 14:35:31 jasper Exp $
 
 if [ "$cmd" = "" -o "$cmd" = "info" ]; then
 	defines="$defines -Dlog4j.configuration=/dev/null"

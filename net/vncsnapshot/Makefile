@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT=		connect to VNC server and save screen images
 
 V=			1.2a

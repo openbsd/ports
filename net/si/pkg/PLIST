@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/08 11:23:08 bernd Exp $
 @bin bin/si
 @man man/man1/si.1
 share/doc/si/

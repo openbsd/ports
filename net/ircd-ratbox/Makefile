@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/03/20 16:44:26 naddy Exp $
-
 COMMENT =	advanced, stable and fast irc server
 
 DISTNAME =	ircd-ratbox-3.0.10

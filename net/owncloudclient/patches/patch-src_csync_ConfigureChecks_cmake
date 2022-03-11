@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_csync_ConfigureChecks_cmake,v 1.2 2021/01/10 20:30:15 kirby Exp $
-
 Index: src/csync/ConfigureChecks.cmake
 --- src/csync/ConfigureChecks.cmake.orig
 +++ src/csync/ConfigureChecks.cmake

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:33 sthen Exp $
-
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
 DISTNAME=	netbsd-iscsi-20111006

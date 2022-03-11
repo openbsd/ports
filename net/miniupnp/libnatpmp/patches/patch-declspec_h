@@ -1,4 +1,3 @@
-$OpenBSD: patch-declspec_h,v 1.1 2014/05/13 10:19:01 dcoppa Exp $
 --- declspec.h.orig	Tue May 13 12:13:07 2014
 +++ declspec.h	Tue May 13 12:13:25 2014
 @@ -9,12 +9,7 @@

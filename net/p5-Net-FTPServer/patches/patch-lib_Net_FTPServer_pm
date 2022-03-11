@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Net_FTPServer_pm,v 1.2 2019/02/10 12:58:02 sthen Exp $
-
 Hunk #1/2 - Default memory limit is too low, various tests fail with
 16MB. 32MB still has a failure in t/240abort.t but most things work
 ok and 240abort.t represents an unusual situation. (It can be made

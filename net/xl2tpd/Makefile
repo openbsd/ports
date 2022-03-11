@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/10/03 14:37:38 jasper Exp $
-
 COMMENT=	l2tp client/server
 
 GH_ACCOUNT=	xelerance

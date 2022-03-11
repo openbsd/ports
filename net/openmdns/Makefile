@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/20 19:54:26 bket Exp $
-
 COMMENT =		MDNS/DNS-SD daemon
 
 DISTNAME =		openmdns-0.7

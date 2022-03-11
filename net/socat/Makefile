@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/03/20 16:24:37 tb Exp $
-
 COMMENT=	relay for bidirectional data transfer
 
 DISTNAME=	socat-1.7.4.1

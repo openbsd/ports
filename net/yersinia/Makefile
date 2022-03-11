@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/03/09 10:22:54 matthieu Exp $
-
 COMMENT =	framework for analysis of layer 2 network protocols
 
 GH_ACCOUNT = tomac

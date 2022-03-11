@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/10 10:55:51 jasper Exp $
 ${P5SITE}/Net/DAV/
 ${P5SITE}/Net/DAV/Lock.pm
 ${P5SITE}/Net/DAV/LockManager/

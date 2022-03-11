@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:59 sthen Exp $
-
 COMMENT=		TCP proxy with load balancing and failover mechanisms
 
 DISTNAME =		balance-3.57

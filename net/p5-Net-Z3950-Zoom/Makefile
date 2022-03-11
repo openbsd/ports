@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT=	perl interface to yaz zoom
 CATEGORIES=	net
 

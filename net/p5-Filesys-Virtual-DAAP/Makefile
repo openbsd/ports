@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT=	presents a DAAP share as a VFS
 
 MODULES=	cpan

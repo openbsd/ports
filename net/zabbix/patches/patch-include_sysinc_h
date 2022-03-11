@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_sysinc_h,v 1.5 2018/10/26 06:57:21 robert Exp $
-
 quick hack to fix building following if.h split; should really have an
 autoconf check for it but that's harder because AC_CHECK_HEADERS isn't enough
 for this file

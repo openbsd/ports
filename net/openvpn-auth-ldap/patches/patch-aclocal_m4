@@ -1,5 +1,3 @@
-$OpenBSD: patch-aclocal_m4,v 1.2 2021/06/06 15:11:18 landry Exp $
-
 Index: aclocal.m4
 --- aclocal.m4.orig
 +++ aclocal.m4

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: smokeping_fcgi.rc,v 1.2 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/smokeping_cgi"
 daemon_flags="${SYSCONFDIR}/config"

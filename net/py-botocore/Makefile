@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.619 2022/03/11 07:47:46 ajacoutot Exp $
-
 # !!! do not update blindly, these ports require a specific version:
 # net/py-boto3
 # sysutils/awscli

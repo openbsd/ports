@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/06 23:08:16 zhuk Exp $
 COMMENT =	minimalistic command-line ICB client
 VERSION =	1.3.0
 DISTNAME =	oicb-${VERSION}

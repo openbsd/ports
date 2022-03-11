@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/05/22 16:27:44 afresh1 Exp $
-
 COMMENT =	Twitter REST API library for Perl
 DISTNAME =	Twitter-API-1.0006
 CATEGORIES =	net

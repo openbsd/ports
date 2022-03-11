@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/07/30 14:40:06 juanfra Exp $
 @bin bin/kurly

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_net_socket_set_h,v 1.2 2017/05/19 22:25:53 espie Exp $
 clang can't accept a "generic" void* allocator because value_type doesn't
 match.  FreeBSD has the same patch.
 

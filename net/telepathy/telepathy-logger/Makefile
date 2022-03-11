@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2021/02/23 19:39:35 sthen Exp $
-
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.8.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:34 sthen Exp $
-
 COMMENT =		interface for HTTP specific Net::IMP plugins
 
 DISTNAME =		Net-IMP-HTTP-0.523

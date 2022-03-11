@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/01/13 10:10:52 tb Exp $
-
 PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega

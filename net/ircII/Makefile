@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2021/03/25 22:05:09 sthen Exp $
-
 COMMENT=	Internet Relay Chat client
 
 VERSION=	20210314

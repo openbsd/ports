@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_smokeping_cgi,v 1.5 2021/08/13 09:47:53 sthen Exp $
-
 Index: bin/smokeping_cgi
 --- bin/smokeping_cgi.orig
 +++ bin/smokeping_cgi

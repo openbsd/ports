@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2022/01/14 10:47:56 tb Exp $
-
 PORTROACH=	limit:^2
 
 COMMENT=	AFP file and print services for IP networks

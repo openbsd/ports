@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/01/28 09:00:51 sthen Exp $
-
 COMMENT=	library for delta compression of streams
 
 V =		2.3.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-tcp_zoneserver_c,v 1.1 2008/08/20 20:13:36 sturm Exp $
 --- tcp/zoneserver.c.orig	Mon Aug 18 17:55:03 2008
 +++ tcp/zoneserver.c	Mon Aug 18 17:55:17 2008
 @@ -1014,7 +1014,7 @@ int main(int argc, char **argv) {

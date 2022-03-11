@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/05/16 18:38:37 kmos Exp $
 @pkgpath net/py-socketio-client,python3
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/
 lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

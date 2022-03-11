@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/24 21:41:21 gkoehler Exp $
-
 COMMENT =	text based gopher client
 DISTNAME =	clic-v1.1.5
 PKGNAME =	${DISTNAME:S/-v/-/}

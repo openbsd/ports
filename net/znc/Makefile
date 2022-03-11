@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2022/01/13 10:40:09 tb Exp $
-
 COMMENT=	advanced IRC bouncer
 
 DISTNAME=	znc-1.8.2

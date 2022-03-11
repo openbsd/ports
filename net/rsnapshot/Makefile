@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/13 06:32:42 ajacoutot Exp $
-
 COMMENT=		remote filesystem snapshot utility
 
 GH_ACCOUNT=		rsnapshot

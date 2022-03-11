@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/23 18:10:39 rsadowski Exp $
 @bin bin/kdwsdl2cpp
 include/KDSoapClient/
 include/KDSoapClient/KDDateTime

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		control-spec implementation for Tor
 
 MODPY_EGG_VERSION =	20.0.0

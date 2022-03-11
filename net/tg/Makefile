@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:01:53 sthen Exp $
-
 COMMENT =	ncurses Telegram client
 
 MODPY_EGG_VERSION =	0.17.0

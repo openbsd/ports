@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_torrent_data_file_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
-
 Index: src/torrent/data/file.cc
 --- src/torrent/data/file.cc.orig
 +++ src/torrent/data/file.cc

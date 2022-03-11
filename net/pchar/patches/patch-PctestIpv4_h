@@ -1,5 +1,3 @@
-$OpenBSD: patch-PctestIpv4_h,v 1.1 2017/05/08 21:40:10 naddy Exp $
-
 Index: PctestIpv4.h
 --- PctestIpv4.h.orig
 +++ PctestIpv4.h

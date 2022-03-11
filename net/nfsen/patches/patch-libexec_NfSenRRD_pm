@@ -1,5 +1,3 @@
-$OpenBSD: patch-libexec_NfSenRRD_pm,v 1.3 2017/05/18 19:23:02 sthen Exp $
-
 Index: libexec/NfSenRRD.pm
 --- libexec/NfSenRRD.pm.orig
 +++ libexec/NfSenRRD.pm

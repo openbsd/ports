@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_goldenPac_py,v 1.5 2020/05/31 12:05:22 jasper Exp $
 Index: examples/goldenPac.py
 --- examples/goldenPac.py.orig
 +++ examples/goldenPac.py

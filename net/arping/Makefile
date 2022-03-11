@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/03/09 07:27:27 benoit Exp $
-
 COMMENT =	ARP level ping utility
 
 DISTNAME =	arping-2.23

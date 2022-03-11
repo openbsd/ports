@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT=		library to en/decode DNS wire-format packets for Python
 
 MODPY_EGG_VERSION=	0.9.6

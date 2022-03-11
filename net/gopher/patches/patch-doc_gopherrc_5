@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_gopherrc_5,v 1.1.1.1 2006/07/31 12:52:20 steven Exp $
 --- doc/gopherrc.5.orig	Sun Jul 30 21:55:39 2006
 +++ doc/gopherrc.5	Sun Jul 30 21:56:59 2006
 @@ -77,10 +77,8 @@ then search words will be bolded.  Other

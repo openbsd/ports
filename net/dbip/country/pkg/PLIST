@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/05 14:19:21 fcambus Exp $
 db/dbip/
 db/dbip/dbip-country-lite.mmdb

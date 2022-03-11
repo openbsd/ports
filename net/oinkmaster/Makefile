@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 21:15:35 sthen Exp $
-
 COMMENT=	update your Snort rules
 
 DISTNAME=	oinkmaster-2.0

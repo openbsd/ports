@@ -1,4 +1,3 @@
-$OpenBSD: patch-libapp_sock_cpp,v 1.1 2015/07/01 11:33:50 bluhm Exp $
 --- libapp/sock.cpp.orig	Thu Feb  8 00:45:57 2001
 +++ libapp/sock.cpp	Tue Nov 11 20:08:05 2014
 @@ -48,9 +48,9 @@ int inet_aton( const char* cp, struct in_addr* inp )

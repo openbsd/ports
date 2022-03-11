@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/03/22 18:13:36 naddy Exp $
-
 COMMENT=	VNC client using HTML5 (Web Sockets, Canvas)
 
 DISTNAME=	noVNC-20160209

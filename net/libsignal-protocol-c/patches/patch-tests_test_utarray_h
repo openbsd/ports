@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_utarray_h,v 1.1 2021/02/15 21:35:57 naddy Exp $
-
 Index: tests/test_utarray.h
 --- tests/test_utarray.h.orig
 +++ tests/test_utarray.h

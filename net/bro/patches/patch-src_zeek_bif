@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_zeek_bif,v 1.1 2021/03/06 09:35:09 ajacoutot Exp $
-
 Index: src/zeek.bif
 --- src/zeek.bif.orig
 +++ src/zeek.bif

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:59 sthen Exp $
-
 COMMENT=	rrdtool frontend for Bind installation
 
 DISTNAME=	bindgraph-0.2

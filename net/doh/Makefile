@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/17 21:51:24 sthen Exp $
-
 COMMENT=	simple DoH (dns-over-https) client
 
 GH_ACCOUNT=	curl

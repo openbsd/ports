@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_liboping_c,v 1.4 2022/02/26 12:29:54 sthen Exp $
-
 #1:
 
 From b5c5091d0214dd2c6cc504c02e2f78907abdee00 Mon Sep 17 00:00:00 2001

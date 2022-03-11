@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/20 20:16:50 jasper Exp $
 @conflict py-IOSXR-*
 @pkgpath net/py-IOSXR
 lib/python${MODPY_VERSION}/site-packages/pyIOSXR/

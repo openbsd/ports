@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:47:59 sthen Exp $
-
 COMMENT=		ARP reply daemon
 
 DISTNAME=		arpd-0.2

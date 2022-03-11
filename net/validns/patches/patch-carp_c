@@ -1,5 +1,3 @@
-$OpenBSD: patch-carp_c,v 1.1.1.1 2017/05/06 15:52:24 fcambus Exp $
-
 Index: carp.c
 --- carp.c.orig
 +++ carp.c

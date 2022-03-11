@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:28 sthen Exp $
-
 COMMENT=		IP traffic summarizer
 
 DISTNAME=		ipaudit-0.95

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT =	IPv4 and IPv6 to country translation using DB_File
 
 DISTNAME=	IP-Country-DB_File-3.03

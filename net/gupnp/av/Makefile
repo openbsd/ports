@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2022/01/16 20:11:33 kmos Exp $
-
 COMMENT=		helpers for building A/V applications using GUPnP
 
 GNOME_PROJECT=		gupnp-av

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:31 sthen Exp $
-
 COMMENT=		lightweight Jabber client library
 
 V=			1.4.3

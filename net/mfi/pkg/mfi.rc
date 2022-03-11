@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mfi.rc,v 1.6 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/share/mfi/lib/ace.jar"
 daemon_user="_mfi"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:31 sthen Exp $
-
 COMMENT =		UPnP client library
 
 DISTNAME =		libupnpp-0.17.1

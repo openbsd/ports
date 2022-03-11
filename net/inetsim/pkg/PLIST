@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
 @newgroup _inetsim:852
 @newuser _inetsim:852:852:daemon:Inetsim account:/nonexistent:/sbin/nologin
 bin/inetsim

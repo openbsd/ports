@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.96 2021/11/02 00:01:39 sthen Exp $
-
 COMMENT=	jabber client written in pygtk
 MODPY_EGG_VERSION=	1.3.1
 DISTNAME=	gajim-${MODPY_EGG_VERSION}

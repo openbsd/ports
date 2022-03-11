@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/02/03 20:40:39 sthen Exp $
-
 COMMENT=	monitors the status of mirrors
 
 DISTNAME=	mirmon-2.11

@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:28 sthen Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		IP accounting daemon simulating Cisco ip accounting

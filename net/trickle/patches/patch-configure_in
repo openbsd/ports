@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.1 2017/02/03 16:21:10 naddy Exp $
-
 Deprecated and dangerous autoconf idiom that checks for a type that
 isn't used anywhere in the source and breaks the inclusion of
 <netinet/in.h>.

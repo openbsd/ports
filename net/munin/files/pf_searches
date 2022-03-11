@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: pf_searches,v 1.1 2010/02/25 17:07:17 sthen Exp $
-#
 # (c) 2010 Kim Højgaard-Hansen <kimrhh@gmail.com>
 #
 # Script to monitor number of pf state lookups from "pfctl -si".

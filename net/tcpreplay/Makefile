@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/26 12:43:32 sthen Exp $
-
 COMMENT=	resend network traffic saved by tcpdump
 
 V=		4.3.3

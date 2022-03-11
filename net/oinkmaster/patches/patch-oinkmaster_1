@@ -1,4 +1,3 @@
-$OpenBSD: patch-oinkmaster_1,v 1.3 2006/04/12 21:18:34 david Exp $
 --- oinkmaster.1.orig	Sat Feb 18 06:35:21 2006
 +++ oinkmaster.1	Thu Mar  9 09:12:04 2006
 @@ -8,7 +8,7 @@

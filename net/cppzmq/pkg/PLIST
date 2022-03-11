@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/08/23 18:47:13 jasper Exp $
 include/zmq.hpp
 include/zmq_addon.hpp
 share/cmake/

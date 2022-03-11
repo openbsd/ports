@@ -1,5 +1,3 @@
-$OpenBSD: patch-ldns_keys_h,v 1.1 2021/12/08 23:57:35 sthen Exp $
-
 hack to workaround opendnssec trying to use these constants for a
 non-ldns-related purpose
 

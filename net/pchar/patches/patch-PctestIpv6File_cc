@@ -1,5 +1,3 @@
-$OpenBSD: patch-PctestIpv6File_cc,v 1.3 2017/05/08 21:40:10 naddy Exp $
-
 Index: PctestIpv6File.cc
 --- PctestIpv6File.cc.orig
 +++ PctestIpv6File.cc

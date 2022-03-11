@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:52 sthen Exp $
-
 COMMENT=		wifi automagic connector
 
 GH_ACCOUNT=		raylai

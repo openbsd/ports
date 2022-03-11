@@ -1,6 +1,3 @@
-$OpenBSD: patch-packetsource_bsdrt_cc,v 1.1 2019/03/03 23:11:04 sebastia Exp $
-
-
 IFM_MAKEMODE is not defined on OpenBSD, just copying it from Linux
 doesn't help, since our IFM_MSHIFT etc. operate on ULL, but mode
 apparently only is of type int

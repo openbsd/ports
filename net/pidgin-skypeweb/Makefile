@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/15 01:49:03 kevlo Exp $
-
 COMMENT =	Skype protocol plugin for Pidgin
 
 V = 		1.7

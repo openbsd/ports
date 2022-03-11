@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1 2008/10/27 15:33:52 bernd Exp $
-
 Don't pick up libexecinfo (devel/libexecinfo) if it's installed.
 
 --- configure.orig	Sat Apr 28 22:57:00 2007

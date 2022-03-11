@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:24 sthen Exp $
-
 COMMENT =	data acquisition library for snort
 
 DISTNAME =	daq-2.0.6

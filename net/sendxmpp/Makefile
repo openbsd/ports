@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:48 sthen Exp $
-
 COMMENT=	perl script to send xmpp messages, like mail(1)
 
 GH_TAGNAME=	1.24

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_czmq_prelude_h,v 1.1 2017/12/14 11:46:54 jasper Exp $
-
 From 6054b8e9a54f5113fb65e1a060b9044068661795 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 14 Dec 2017 10:46:45 +0100

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.22 2021/01/09 21:51:09 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin

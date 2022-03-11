@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/17 23:23:20 jung Exp $
 lib/irssi/modules/libfe_xmpp.so
 lib/irssi/modules/libtext_xmpp.so
 lib/irssi/modules/libxmpp_core.so

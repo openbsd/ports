@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/17 16:26:02 rsadowski Exp $
-
 COMMENT =	system tray app for Syncthing
 
 GH_ACCOUNT =	sieren

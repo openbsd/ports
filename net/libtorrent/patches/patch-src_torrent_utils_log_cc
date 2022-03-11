@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_torrent_utils_log_cc,v 1.1 2019/04/28 02:01:30 cwen Exp $
 can't figure out the functional magic, so just do the algorithm by hand.
 
 Index: src/torrent/utils/log.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1 2019/11/07 12:26:08 kmos Exp $
-
 Only require funcsigs for 2.7. Patch sent upstream.
 
 https://patch-diff.githubusercontent.com/raw/RIPE-NCC/ripe-atlas-cousteau/pull/53.diff

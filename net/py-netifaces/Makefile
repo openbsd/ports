@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/15 13:26:16 sthen Exp $
-
 COMMENT =	portable network interface information
 
 CATEGORIES =	net

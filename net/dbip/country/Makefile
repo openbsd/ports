@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/01 08:40:52 fcambus Exp $
-
 COMMENT =	DB-IP IP to Country Lite: IPv4/v6 address to country
 
 DISTNAME =	dbip-country-lite-${V}.mmdb

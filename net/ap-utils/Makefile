@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:47:59 sthen Exp $
-
 COMMENT=	Atmel/NWN wireless access point configuration tools
 
 DISTNAME=	ap-utils-1.5

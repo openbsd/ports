@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:32 sthen Exp $
-
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
 

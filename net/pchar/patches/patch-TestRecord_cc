@@ -1,5 +1,3 @@
-$OpenBSD: patch-TestRecord_cc,v 1.1 2017/05/08 21:40:10 naddy Exp $
-
 Index: TestRecord.cc
 --- TestRecord.cc.orig
 +++ TestRecord.cc

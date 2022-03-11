@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/05/13 18:58:48 cwen Exp $
 ${P5SITE}/Net/DNS/Resolver/Programmable.pm
 @man man/man3p/Net::DNS::Resolver::Programmable.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-global_mak,v 1.1 2010/10/10 15:12:50 jasper Exp $
-
 Don't forget to look in ${LOCALBASE}/include for headers.
 
 --- global.mak.orig	Sun Oct 10 17:11:20 2010

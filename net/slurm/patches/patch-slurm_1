@@ -1,5 +1,3 @@
-$OpenBSD: patch-slurm_1,v 1.2 2015/09/23 09:44:55 dcoppa Exp $
-
 avoid makewhatis error; N.B. hand-edited to avoid CVS keyword.
 
 --- slurm.1.orig	Fri Feb  6 02:33:54 2004

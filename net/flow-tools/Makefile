@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/11/02 00:01:39 sthen Exp $
-
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
 COMMENT=	utilities for dealing with NetFlow exports

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/07 23:54:46 danj Exp $
-
 # probably also on (32-bit) arm
 BROKEN-i386 =	pkg/disk/stat_other.go:40:91: cannot use st.Atim.Nsec (type int32) as type int64 in argument to strconv.FormatInt
 

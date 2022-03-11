@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	UCB/LBNL Network Animator
 
 V=		1.15

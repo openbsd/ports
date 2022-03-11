@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 DISTNAME=	totd-1.5.1

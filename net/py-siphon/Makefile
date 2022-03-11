@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/22 04:22:21 bket Exp $
-
 COMMENT=	download data from remote data services (such as THREDDS)
 
 MODPY_EGG_VERSION=	0.9

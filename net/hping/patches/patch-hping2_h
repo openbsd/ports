@@ -1,5 +1,3 @@
-$OpenBSD: patch-hping2_h,v 1.1 2021/02/01 19:52:01 sthen Exp $
-
 Index: hping2.h
 --- hping2.h.orig
 +++ hping2.h

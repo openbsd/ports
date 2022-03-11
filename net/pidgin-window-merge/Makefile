@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:43 sthen Exp $
-
 COMMENT =		merge Buddy List with a conversation window in Pidgin
 DISTNAME =		pidgin-window-merge-0.0.20130511
 GH_ACCOUNT =		dm0-

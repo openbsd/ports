@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/01/31 21:20:45 afresh1 Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor OpenBGPd peers

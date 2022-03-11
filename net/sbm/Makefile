@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:48 sthen Exp $
-
 COMMENT =		simple bandwidth monitor
 DISTNAME =		sbm-0.8
 CATEGORIES =		net

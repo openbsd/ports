@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2022/02/26 12:09:57 sthen Exp $
-
 COMMENT =		opensource MQTT broker
 
 V =			2.0.14

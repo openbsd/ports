@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		WebSocket client for Python
 
 MODPY_EGG_VERSION =	0.37.0

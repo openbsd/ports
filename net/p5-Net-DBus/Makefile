@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:32 sthen Exp $
-
 COMMENT=		Perl API to the dbus inter-application messaging system
 
 MODULES=		cpan

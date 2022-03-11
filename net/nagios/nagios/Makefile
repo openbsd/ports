@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2021/05/02 19:30:58 stsp Exp $
-
 ONLY_FOR_ARCHS=	${LP64_ARCHS} # time_t format string issues
 
 COMMENT-main=	host and service monitor

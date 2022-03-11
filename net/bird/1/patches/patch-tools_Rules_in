@@ -1,4 +1,3 @@
-$OpenBSD: patch-tools_Rules_in,v 1.2 2019/01/09 15:04:50 sthen Exp $
 Index: tools/Rules.in
 --- tools/Rules.in.orig
 +++ tools/Rules.in

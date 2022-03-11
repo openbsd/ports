@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rpc_exec_file_cc,v 1.1 2017/05/19 22:26:32 espie Exp $
-
 Index: src/rpc/exec_file.cc
 --- src/rpc/exec_file.cc.orig
 +++ src/rpc/exec_file.cc

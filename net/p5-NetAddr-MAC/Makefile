@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/08/15 19:58:28 afresh1 Exp $
-
 COMMENT =	module to handle hardware MAC addresses
 
 DISTNAME =	NetAddr-MAC-0.97

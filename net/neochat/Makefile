@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/03/11 12:05:30 kn Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	client for Matrix chat

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/02/21 16:33:33 kn Exp $
-
 COMMENT=	XMPP desktop client
 VERSION=	0.3.0
 DISTNAME=	dino-${VERSION}

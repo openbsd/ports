@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_pdnsd_8_in,v 1.3 2012/06/21 14:40:40 gonzalo Exp $
 --- doc/pdnsd.8.in.orig	Fri Mar  2 13:08:16 2012
 +++ doc/pdnsd.8.in	Fri Mar  2 13:11:30 2012
 @@ -11,7 +11,7 @@ This man page is an extract of the documentation of \f

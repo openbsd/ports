@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/03/01 19:54:38 sthen Exp $
-
 REV=		1.1
 VERSION=	${REV}.6
 EPOCH=		0

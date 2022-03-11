@@ -1,4 +1,3 @@
-$OpenBSD: patch-plushs_c,v 1.2 2021/02/20 20:18:28 tb Exp $
 Index: plushs.c
 --- plushs.c.orig
 +++ plushs.c

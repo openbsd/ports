@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/18 11:00:41 denis Exp $
-
 COMMENT =	retrieve routing informations efficiently via dns queries
 
 GH_ACCOUNT =		rezopole

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT =	POE Filter to handle DNS over TCP connections
 
 DISTNAME =	POE-Filter-DNS-TCP-0.06

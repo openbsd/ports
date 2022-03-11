@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_kristall_pro,v 1.1.1.1 2020/12/02 19:07:31 solene Exp $
-
 Prevent git run at every ${CC} call
 
 Index: src/kristall.pro

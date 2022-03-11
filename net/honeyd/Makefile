@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/23 19:39:32 sthen Exp $
-
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
 REVISION=	13

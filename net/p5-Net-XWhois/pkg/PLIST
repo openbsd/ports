@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/24 15:27:06 merdely Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/XWhois.pm
 @man man/man3p/Net::XWhois.3p

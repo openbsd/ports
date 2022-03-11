@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mattermost.rc,v 1.3 2019/02/25 20:37:12 pvk Exp $
 
 daemon="${TRUEPREFIX}/bin/mattermost"
 daemon_user="_mattermost"

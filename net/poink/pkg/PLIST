@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:44 espie Exp $
 bin/poink
 @man man/man1/poink.1
 share/doc/poink/

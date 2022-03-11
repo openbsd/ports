@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_dnsmasq_8,v 1.29 2021/10/07 21:39:03 sthen Exp $
-
 Index: man/dnsmasq.8
 --- man/dnsmasq.8.orig
 +++ man/dnsmasq.8

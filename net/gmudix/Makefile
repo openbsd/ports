@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:27 sthen Exp $
-
 COMMENT=		GNOME MUD/Moo Client
 
 DISTNAME=		gmudix-0.10

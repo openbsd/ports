@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-python,v 1.5 2015/03/19 20:25:27 naddy Exp $
 lib/python${MODPY_VERSION}/site-packages/dnet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/dnet.so

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2018/09/04 12:46:17 espie Exp $
-
 COMMENT =	service monitoring daemon
 
 DISTNAME = 	mon-${V}

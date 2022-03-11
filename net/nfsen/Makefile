@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/02/24 16:49:01 sthen Exp $
-
 COMMENT=	web-based front end for the nfdump netflow tools
 
 V=		1.3.8

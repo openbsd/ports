@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/31 05:06:17 sthen Exp $
-
 COMMENT =	parse, manipulate and lookup IPv4 CIDR blocks
 
 MODULES =	cpan

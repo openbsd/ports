@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2021/12/07 16:41:31 ajacoutot Exp $
-
 COMMENT=		network-related gio modules for GLib
 
 GNOME_VERSION=		2.70.1

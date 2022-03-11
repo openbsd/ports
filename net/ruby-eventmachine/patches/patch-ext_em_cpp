@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_em_cpp,v 1.1 2018/04/10 17:01:02 jasper Exp $
-
 Index: ext/em.cpp
 --- ext/em.cpp.orig
 +++ ext/em.cpp

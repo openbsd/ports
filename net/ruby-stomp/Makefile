@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/09/02 19:56:24 sebastia Exp $
-
 COMMENT = 	Streaming Text Orientated Messaging Protocol (STOMP) client
 
 DISTNAME = 	stomp-1.4.10

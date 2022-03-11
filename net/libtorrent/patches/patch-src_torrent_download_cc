@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_torrent_download_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
-
 Index: src/torrent/download.cc
 --- src/torrent/download.cc.orig
 +++ src/torrent/download.cc

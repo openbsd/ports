@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2019/07/12 20:47:59 sthen Exp $
-
 COMMENT=	monitor arp & rarp requests
 
 DISTNAME=	arpwatch-2.1a15

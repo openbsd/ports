@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_configure_in_tk,v 1.1 2017/09/27 10:35:22 dcoppa Exp $
-
 Index: conf/configure.in.tk
 --- conf/configure.in.tk.orig
 +++ conf/configure.in.tk

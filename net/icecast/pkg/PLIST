@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2018/11/20 17:32:36 jca Exp $
 @newgroup _icecast:611
 @newuser _icecast:611:_icecast:daemon:Icecast Server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/icecast

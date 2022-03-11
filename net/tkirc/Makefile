@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:24 sthen Exp $
-
 COMMENT=	ircII internet relay chat client
 
 DISTNAME=	tkirc2.46

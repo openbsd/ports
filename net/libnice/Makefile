@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/03/10 12:03:32 kn Exp $
-
 COMMENT =		GLib ICE implementation
 DISTNAME =		libnice-0.1.18
 CATEGORIES =		net

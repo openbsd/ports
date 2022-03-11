@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/10/16 12:54:21 nigel Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Socket/
 ${P5SITE}/IO/Socket/Socks.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/29 22:04:53 sthen Exp $
-
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
 MODPY_EGG_VERSION=	4.2.16

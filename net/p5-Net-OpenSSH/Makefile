@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/28 07:47:13 benoit Exp $
-
 COMMENT =	perl SSH client package implemented on top of OpenSSH
 
 DISTNAME =	Net-OpenSSH-0.80

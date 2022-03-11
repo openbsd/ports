@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.60 2022/01/15 23:59:32 kmos Exp $
-
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
 DISTNAME=	dnsmasq-2.86

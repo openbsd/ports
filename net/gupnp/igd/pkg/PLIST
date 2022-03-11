@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2020/10/30 19:17:12 jasper Exp $
 include/gupnp-igd-1.0/
 include/gupnp-igd-1.0/libgupnp-igd/
 include/gupnp-igd-1.0/libgupnp-igd/gupnp-simple-igd-thread.h

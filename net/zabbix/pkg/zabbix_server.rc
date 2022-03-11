@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: zabbix_server.rc,v 1.8 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/zabbix_server"
 

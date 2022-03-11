@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_bin_torsocks_in,v 1.1 2018/01/29 21:44:30 gsoares Exp $
-
 Add missing quotes to variable in torsocks.in
 Fixes #19376
 https://github.com/dgoulet/torsocks/commit/5a5b72fa0aef2315c369cedc5f448ee473be5e4f

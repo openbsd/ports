@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.no-gtk,v 1.1 2012/05/29 23:43:47 sthen Exp $
 @pkgpath net/mtr,no_x11

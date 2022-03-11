@@ -1,5 +1,3 @@
-$OpenBSD: patch-m4_gettext_m4,v 1.2 2022/02/03 22:17:27 sthen Exp $
-
 Index: m4/gettext.m4
 --- m4/gettext.m4.orig
 +++ m4/gettext.m4

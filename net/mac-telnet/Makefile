@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/02/03 20:40:39 sthen Exp $
-
 COMMENT=	client for MikroTik's "L2 telnet" protocol#'
 
 GH_ACCOUNT=	haakonnessjoen

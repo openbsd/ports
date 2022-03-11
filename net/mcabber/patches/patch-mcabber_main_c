@@ -1,4 +1,3 @@
-$OpenBSD: patch-mcabber_main_c,v 1.2 2017/05/26 10:34:53 mestre Exp $
 Index: mcabber/main.c
 --- mcabber/main.c.orig
 +++ mcabber/main.c

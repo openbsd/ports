@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_expat_xmlparse_xmlparse_c,v 1.1 2018/05/11 19:15:53 sthen Exp $
-
 Index: lib/expat/xmlparse/xmlparse.c
 --- lib/expat/xmlparse/xmlparse.c.orig
 +++ lib/expat/xmlparse/xmlparse.c

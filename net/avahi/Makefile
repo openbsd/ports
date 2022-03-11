@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.152 2021/12/31 07:20:32 ajacoutot Exp $
-
 COMMENT-main=		framework for Multicast DNS Service Discovery
 COMMENT-glib=		GLib and GObject integration libraries for avahi
 COMMENT-gtk3=		gtk+3 avahi-ui libraries

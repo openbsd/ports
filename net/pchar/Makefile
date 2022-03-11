@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:42 sthen Exp $
-
 COMMENT=	Sandia Internet path characterization tool
 
 DISTNAME=	pchar-1.5

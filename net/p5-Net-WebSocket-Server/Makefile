@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:36 sthen Exp $
-
 COMMENT =	straightforward Perl WebSocket server
 
 DISTNAME =	Net-WebSocket-Server-0.003004

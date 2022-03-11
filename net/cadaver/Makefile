@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/07/14 20:17:00 naddy Exp $
-
 COMMENT=		command-line WebDAV client
 
 DISTNAME=		cadaver-0.23.3

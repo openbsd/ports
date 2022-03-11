@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/03/11 11:56:00 kirby Exp $
-
 COMMENT=	command-line interface to Icinga
 
 V=		0.48

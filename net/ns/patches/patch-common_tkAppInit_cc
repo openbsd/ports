@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_tkAppInit_cc,v 1.2 2018/04/12 15:07:38 naddy Exp $
-
 Index: common/tkAppInit.cc
 --- common/tkAppInit.cc.orig
 +++ common/tkAppInit.cc

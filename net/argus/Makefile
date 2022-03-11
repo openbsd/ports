@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/25 21:30:28 naddy Exp $
-
 COMMENT =	Audit Record Generation and Utilization System
 
 DISTNAME =	argus-3.0.8.2

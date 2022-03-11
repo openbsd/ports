@@ -1,4 +1,3 @@
-$OpenBSD: patch-sample_call,v 1.1.1.1 2001/07/13 02:27:16 fgsch Exp $
 --- sample/call.orig	Thu Jul 12 22:04:55 2001
 +++ sample/call	Thu Jul 12 22:05:19 2001
 @@ -17,4 +17,4 @@

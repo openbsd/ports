@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/20 11:41:59 sthen Exp $
-
 COMMENT =	DNS query performance tester from BIND 9
 
 C =		038c33d9506821a1397c3b590bdc6a2ea737394c

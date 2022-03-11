@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/03/31 09:57:55 sthen Exp $
-
 COMMENT =	check validity of IPv6 addresses
 
 DISTNAME =	Net-IPv6Addr-1.02

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/16 12:31:08 abieber Exp $
-
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale

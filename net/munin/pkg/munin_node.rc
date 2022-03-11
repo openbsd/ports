@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: munin_node.rc,v 1.8 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/munin-node"
 

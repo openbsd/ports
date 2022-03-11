@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/23 14:13:50 gsoares Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/SFTP/
 ${P5SITE}/Net/SFTP/Foreign/

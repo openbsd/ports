@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		Python client for Arista eAPI
 
 MODPY_EGG_VERSION =	0.8.3

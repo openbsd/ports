@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_endian_h,v 1.2 2021/08/01 08:56:09 jca Exp $
-
 Index: src/lib/endian.h
 --- src/lib/endian.h.orig
 +++ src/lib/endian.h

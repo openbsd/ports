@@ -1,4 +1,3 @@
-$OpenBSD: patch-docs_Makefile_in,v 1.2 2012/02/19 14:03:37 sthen Exp $
 --- docs/Makefile.in.orig	Mon Feb  6 09:53:59 2012
 +++ docs/Makefile.in	Sat Feb 18 16:03:17 2012
 @@ -327,8 +327,7 @@ uninstall-am:

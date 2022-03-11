@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2021/02/01 01:21:36 cwen Exp $
-
 COMMENT=	FTP client with advanced user interface
 
 DISTNAME=	ncftp-3.2.6

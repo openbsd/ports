@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/15 10:42:44 ajacoutot Exp $
-
 COMMENT=	fast and flexible DNS server/forwarder
 
 MODGO_MODNAME=	github.com/coredns/coredns

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: adsuck.rc,v 1.5 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/adsuck"
 daemon_flags="-c /var/adsuck -f /files/resolv.conf -r /files/regex /files/hosts.small"

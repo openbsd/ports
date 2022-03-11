@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:28 sthen Exp $
-
 COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327

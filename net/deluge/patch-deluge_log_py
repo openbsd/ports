@@ -1,5 +1,3 @@
-$OpenBSD: patch-deluge_log_py,v 1.1 2021/11/07 12:14:37 rsadowski Exp $
-
 Index: deluge/log.py
 --- deluge/log.py.orig
 +++ deluge/log.py

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2022/01/14 16:46:27 sthen Exp $
-
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT =	clone of the classic Eliza program
 
 MODULES =	cpan

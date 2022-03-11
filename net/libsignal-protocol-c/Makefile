@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/15 21:35:57 naddy Exp $
-
 COMMENT =	ratcheting forward secrecy protocol
 
 GH_ACCOUNT =	signalapp

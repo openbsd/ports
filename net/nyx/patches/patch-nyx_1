@@ -1,5 +1,3 @@
-$OpenBSD: patch-nyx_1,v 1.1.1.1 2017/11/13 14:32:56 pascal Exp $
-
 Index: nyx.1
 --- nyx.1.orig
 +++ nyx.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/27 13:05:38 jasper Exp $
-
 COMMENT =	fast and secure VPN
 
 DISTNAME =	wireguard-tools-1.0.20210914

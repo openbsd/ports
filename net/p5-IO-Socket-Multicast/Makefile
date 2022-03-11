@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT=	module for sending and receiving multicast messages
 
 MODULES=	cpan

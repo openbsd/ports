@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_PerfSocket_cpp,v 1.3 2018/09/09 10:27:29 bluhm Exp $
 Index: src/PerfSocket.cpp
 --- src/PerfSocket.cpp.orig
 +++ src/PerfSocket.cpp

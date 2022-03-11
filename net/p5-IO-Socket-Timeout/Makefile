@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:31 sthen Exp $
-
 COMMENT =	IO::Socket with read/write timeout
 
 DISTNAME =	IO-Socket-Timeout-0.32

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_log_text_c,v 1.6 2014/01/30 03:23:48 lteo Exp $
 --- src/log_text.c.orig	Tue Dec 31 17:07:53 2013
 +++ src/log_text.c	Thu Jan 23 23:02:20 2014
 @@ -72,7 +72,7 @@ extern int IsJSNormData(void *);

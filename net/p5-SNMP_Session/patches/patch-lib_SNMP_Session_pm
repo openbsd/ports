@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_SNMP_Session_pm,v 1.5 2013/05/03 12:17:08 sthen Exp $
 --- lib/SNMP_Session.pm.orig	Fri Nov 21 05:25:17 2008
 +++ lib/SNMP_Session.pm	Fri May  3 13:11:57 2013
 @@ -144,9 +144,8 @@ BEGIN {

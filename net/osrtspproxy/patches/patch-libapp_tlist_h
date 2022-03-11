@@ -1,4 +1,3 @@
-$OpenBSD: patch-libapp_tlist_h,v 1.1 2010/05/24 01:46:12 espie Exp $
 --- libapp/tlist.h.orig	Mon May 24 03:43:14 2010
 +++ libapp/tlist.h	Mon May 24 03:45:05 2010
 @@ -93,8 +93,8 @@ class TSingleList (public)

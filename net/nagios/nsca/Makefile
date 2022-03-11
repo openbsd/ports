@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_libtorrent_config_hpp,v 1.6 2021/12/31 00:31:16 namn Exp $
-
 Index: include/libtorrent/config.hpp
 --- include/libtorrent/config.hpp.orig
 +++ include/libtorrent/config.hpp

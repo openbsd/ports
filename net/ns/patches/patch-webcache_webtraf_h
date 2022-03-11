@@ -1,4 +1,3 @@
-$OpenBSD: patch-webcache_webtraf_h,v 1.3 2012/04/28 18:07:57 stu Exp $
 --- webcache/webtraf.h.orig	Sat Oct  1 18:00:14 2011
 +++ webcache/webtraf.h	Sun Apr 22 21:58:54 2012
 @@ -61,7 +61,7 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2017/08/28 08:31:12 ajacoutot Exp $
-
 Do not override PTLIBDIR in the environment.
 
 Index: configure

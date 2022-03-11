@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_examples_pubsub_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
-
 Index: src/examples/pubsub_example.cpp
 --- src/examples/pubsub_example.cpp.orig
 +++ src/examples/pubsub_example.cpp

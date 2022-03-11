@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/10/22 07:47:14 sthen Exp $
-
 .if ${MACHINE_ARCH} == "i386"
 USE_LLD =		No
 .endif

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/09/02 14:59:45 jeremy Exp $
-
 COMMENT=		web scanner
 
 GH_TAGNAME =		v0.4.9

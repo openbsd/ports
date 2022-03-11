@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/17 04:34:03 kirby Exp $
-
 COMMENT=	UPnP IGD client lightweight library
 
 DISTNAME=	miniupnpc-2.1

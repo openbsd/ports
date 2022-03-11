@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/24 12:31:44 ajacoutot Exp $
 @conflict x11vnc-<0.9.15
 include/rfb/
 include/rfb/keysym.h

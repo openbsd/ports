@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:33 sthen Exp $
-
 COMMENT=	NetBIOS name network scanner
 
 DISTNAME=	nbtscan_1.5.1

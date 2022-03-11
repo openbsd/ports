@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_ipc_IpcServerProxy_cpp,v 1.3 2021/10/14 16:21:02 ian Exp $
-
 On loongson/sparc64/hppa/riscv:
 CIpcServerProxy.cpp: In member function 'void CIpcServerProxy::send(const CIpcMessage&)':
 CIpcServerProxy.cpp:93: ISO C++ says that these are ambiguous, even though the worst conversion for the first is better than the worst conversion for the second:

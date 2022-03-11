@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		python network packet manipulation library
 
 MODPY_EGG_VERSION =	1.9.1

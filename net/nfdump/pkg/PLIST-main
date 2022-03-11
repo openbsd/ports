@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2020/03/30 14:13:11 sthen Exp $
 @newgroup _nfcapd:649
 @newuser _nfcapd:649:_nfcapd:daemon:nfcapd user:/nonexistent:/sbin/nologin
 @bin bin/ft2nfdump

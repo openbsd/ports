@@ -1,4 +1,3 @@
-$OpenBSD: patch-zenmap_install_scripts_unix_zenmap_desktop,v 1.3 2016/12/22 21:58:40 sthen Exp $
 --- zenmap/install_scripts/unix/zenmap.desktop.orig	Sat Dec  3 06:08:10 2016
 +++ zenmap/install_scripts/unix/zenmap.desktop	Thu Dec 22 05:45:12 2016
 @@ -4,7 +4,7 @@ GenericName=GUI Port Scanner

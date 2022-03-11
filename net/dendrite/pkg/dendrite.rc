@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: dendrite.rc,v 1.1.1.1 2020/10/22 13:51:39 abieber Exp $
 
 daemon="${TRUEPREFIX}/bin/dendrite-monolith-server"
 daemon_user="_dendrite"

@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.1 2022/01/20 14:12:16 abieber Exp $
-
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.34.0 \
 	github.com/!burnt!sushi/toml				 v0.3.1 \

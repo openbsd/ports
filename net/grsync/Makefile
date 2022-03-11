@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/11 13:10:41 sthen Exp $
-
 COMMENT =	rsync GUI
 DISTNAME =	grsync-1.3.0
 CATEGORIES =	x11 net

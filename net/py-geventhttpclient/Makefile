@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/26 14:50:45 sthen Exp $
-
 COMMENT =		high performance, concurrent HTTP client library
 
 MODPY_EGG_VERSION =	1.5.3

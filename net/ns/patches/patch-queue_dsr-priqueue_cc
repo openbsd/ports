@@ -1,5 +1,3 @@
-$OpenBSD: patch-queue_dsr-priqueue_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: queue/dsr-priqueue.cc
 --- queue/dsr-priqueue.cc.orig
 +++ queue/dsr-priqueue.cc

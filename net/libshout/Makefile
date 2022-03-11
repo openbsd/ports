@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/20 16:21:33 naddy Exp $
-
 COMMENT=	library for communicating with an icecast server
 
 DISTNAME=	libshout-2.4.5

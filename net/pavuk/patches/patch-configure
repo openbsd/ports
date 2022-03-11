@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2008/01/22 20:12:48 fgsch Exp $
 --- configure.orig	Wed Jan  9 11:54:18 2008
 +++ configure	Wed Jan  9 11:55:00 2008
 @@ -7406,7 +7406,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then

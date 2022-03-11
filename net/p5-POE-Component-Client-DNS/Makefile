@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT=	DNS module for the Perl Object Environment
 
 MODULES=	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/03/02 16:37:32 landry Exp $
 @so lib/purple-2/libmatrix.so
 share/pixmaps/
 share/pixmaps/pidgin/

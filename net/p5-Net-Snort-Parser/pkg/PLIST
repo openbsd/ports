@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/09/05 13:12:47 espie Exp $
 bin/snortconfig
 ${P5SITE}/Net/
 ${P5SITE}/Net/Snort/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:27 sthen Exp $
-
 COMMENT =		Internet Citizens Band Server
 
 GH_ACCOUNT =		mbelop

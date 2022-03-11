@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: dnsreflector.rc,v 1.2 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/dnsreflector -d"
 

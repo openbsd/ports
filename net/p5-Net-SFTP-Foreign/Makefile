@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/01/20 06:22:15 benoit Exp $
-
 COMMENT =	SSH File Transfer Protocol client
 
 MODULES =	cpan

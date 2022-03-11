@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ocpasswd_ocpasswd_c,v 1.2 2018/04/23 09:01:10 bket Exp $
-
 Generate blowfish crypts, using the simple crypt_newhash API. OpenBSD doesn't
 support SHA2 ($5$ hashes) and has removed support for MD5 ($1$).
 

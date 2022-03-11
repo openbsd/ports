@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.4 2022/02/16 12:31:08 abieber Exp $
-
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals					 v0.1.0 \
 	bazil.org/fuse							 v0.0.0-20160811212531-371fbbdaa898 \

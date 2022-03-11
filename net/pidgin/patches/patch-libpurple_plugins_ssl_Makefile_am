@@ -1,5 +1,3 @@
-$OpenBSD: patch-libpurple_plugins_ssl_Makefile_am,v 1.5 2021/10/13 13:56:07 sthen Exp $
-
 --- libpurple/plugins/ssl/Makefile.am.orig	Sun Nov 23 11:41:25 2014
 +++ libpurple/plugins/ssl/Makefile.am	Wed Nov 26 04:19:11 2014
 @@ -4,6 +4,7 @@ EXTRA_DIST = \

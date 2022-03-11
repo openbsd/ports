@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/02 00:01:39 sthen Exp $
-
 COMMENT=		AFP file and print services for IP networks
 
 V=			3.1.12

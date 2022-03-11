@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tld_tests_test_commands_py,v 1.2 2021/10/29 15:38:49 sthen Exp $
-
 Index: src/tld/tests/test_commands.py
 --- src/tld/tests/test_commands.py.orig
 +++ src/tld/tests/test_commands.py

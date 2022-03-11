@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2021/02/04 13:17:12 tb Exp $
-
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-1.2.4

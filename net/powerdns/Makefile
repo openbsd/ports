@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.83 2022/01/25 12:27:35 otto Exp $
-
 COMMENT-main=		modular authoritative nameserver (with database support)
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PostgreSQL database access module for PowerDNS

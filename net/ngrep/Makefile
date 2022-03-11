@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/02/17 12:57:58 sthen Exp $
-
 COMMENT=	network grep
 
 GH_ACCOUNT=	jpr5

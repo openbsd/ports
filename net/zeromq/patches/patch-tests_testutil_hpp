@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_testutil_hpp,v 1.1 2020/09/12 07:42:51 jasper Exp $
-
 Add missing include for AF_INET and IPPROTO_TCP
 
 Index: tests/testutil.hpp

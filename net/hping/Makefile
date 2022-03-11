@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/02/01 19:52:01 sthen Exp $
-
 COMMENT=	command-line oriented TCP/IP packet assembler/analyzer
 
 GH_ACCOUNT=	antirez

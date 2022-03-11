@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2021/02/23 19:39:35 sthen Exp $
-
 COMMENT=		flexible communications framework, glib bindings
 
 DISTNAME=		telepathy-glib-0.24.2

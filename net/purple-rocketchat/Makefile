@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/10/28 06:16:32 landry Exp $
-
 COMMENT =	Rocket.chat support for Pidgin
 
 GH_ACCOUNT=	EionRobb

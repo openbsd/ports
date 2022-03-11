@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_fileutils_fileutils_go,v 1.2 2019/08/06 09:38:15 pvk Exp $
-
 Index: utils/fileutils/fileutils.go
 --- utils/fileutils/fileutils.go.orig
 +++ utils/fileutils/fileutils.go

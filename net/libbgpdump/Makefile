@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT=	library to analyze MRT-format BGP dump files
 
 DISTNAME=	libbgpdump-1.6.0

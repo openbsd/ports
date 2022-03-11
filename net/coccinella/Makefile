@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:24 sthen Exp $
-
 COMMENT =		XMPP client with whiteboard
 
 REVISION =		4

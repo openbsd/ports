@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/12/03 12:00:12 sthen Exp $
-
 COMMENT-main=	server to accept passive check results for Nagios/Icinga
 COMMENT-client=	client to send passive check results to Nagios/Icinga
 

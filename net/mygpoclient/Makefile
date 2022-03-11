@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:01:39 sthen Exp $
-
 COMMENT=		gpodder.net client library
 
 MODPY_EGG_VERSION=	1.8

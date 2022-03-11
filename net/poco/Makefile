@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/14 10:51:15 tb Exp $
-
 COMMENT =	POCO C++ libraries for network based applications
 
 VERSION =	1.4.6p1

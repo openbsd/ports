@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2021/02/11 13:10:41 sthen Exp $
-
 https://github.com/archlinux/svntogit-community/blob/packages/grsync/trunk/use-themed-icon.patch
 
 Index: Makefile.in

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_in_flac_c,v 1.1 2007/09/08 16:25:06 mgrimm Exp $
 --- src/in_flac.c.orig	Sat Jul 31 19:52:24 2004
 +++ src/in_flac.c	Fri Sep  7 20:26:12 2007
 @@ -40,14 +40,19 @@ typedef struct {

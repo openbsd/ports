@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2009/01/21 16:07:15 giovanni Exp $
 --- Makefile.in.orig	Mon Apr 16 03:10:27 2007
 +++ Makefile.in	Wed Oct  8 09:26:23 2008
 @@ -35,7 +35,7 @@ NORMAL_UNINSTALL = :

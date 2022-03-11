@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/06/02 06:19:38 otto Exp $
 @bin bin/fstrm_capture
 @bin bin/fstrm_dump
 @bin bin/fstrm_replay

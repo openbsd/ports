@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_irc_dcc_cpp,v 1.3 2017/05/13 18:38:25 espie Exp $
-
 Index: src/irc/dcc.cpp
 --- src/irc/dcc.cpp.orig
 +++ src/irc/dcc.cpp

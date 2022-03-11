@@ -1,5 +1,3 @@
-$OpenBSD: patch-deluge_i18n_util_py,v 1.1 2021/11/07 12:14:37 rsadowski Exp $
-
 Index: deluge/i18n/util.py
 --- deluge/i18n/util.py.orig
 +++ deluge/i18n/util.py

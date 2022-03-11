@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:52 sthen Exp $
-
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
 

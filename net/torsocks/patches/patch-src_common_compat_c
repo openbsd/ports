@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_compat_c,v 1.1 2018/01/29 21:44:30 gsoares Exp $
-
 Index: src/common/compat.c
 --- src/common/compat.c.orig
 +++ src/common/compat.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/22 13:31:44 sthen Exp $
-
 COMMENT=		performs consistency checks on BIND files
 
 DISTNAME=		nslint-3.1

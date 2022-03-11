@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/17 14:46:33 danj Exp $
-
 COMMENT=	HTTP tunneling utility
 
 DISTNAME=	httptunnel-3.3

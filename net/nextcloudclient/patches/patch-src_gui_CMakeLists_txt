@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gui_CMakeLists_txt,v 1.7 2022/02/04 17:32:53 sthen Exp $
-
 Index: src/gui/CMakeLists.txt
 --- src/gui/CMakeLists.txt.orig
 +++ src/gui/CMakeLists.txt

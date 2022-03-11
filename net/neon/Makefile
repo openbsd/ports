@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2022/01/10 23:54:02 jca Exp $
-
 COMMENT=		HTTP and WebDAV client library, with C interface
 
 DISTNAME=		neon-0.32.1

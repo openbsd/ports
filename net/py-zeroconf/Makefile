@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		pure Python Multicast DNS Service Discovery Library
 
 MODPY_EGG_VERSION =	0.28.8

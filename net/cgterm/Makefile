@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/15 13:31:42 fcambus Exp $
-
 COMMENT =	C/G telnet client for C64 BBSes
 
 DISTNAME =	cgterm-1.6

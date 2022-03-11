@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/28 02:57:14 afresh1 Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/IP/
 ${P5SITE}/Net/IP/Minimal.pm

@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_crypt_cpp,v 1.1 2022/01/13 10:40:09 tb Exp $
-
 DH_set0_pqg() has been available since LibreSSL version 2.7. This version
 won't compile with opaque DH in LibreSSL 3.5.
 

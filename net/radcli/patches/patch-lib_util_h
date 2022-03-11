@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_util_h,v 1.3 2020/11/21 17:23:40 sthen Exp $
-
 Index: lib/util.h
 --- lib/util.h.orig
 +++ lib/util.h

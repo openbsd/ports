@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/08/01 20:39:09 fgsch Exp $
 bin/supybot
 bin/supybot-adduser
 bin/supybot-botchk

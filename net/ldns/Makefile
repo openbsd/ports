@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/01/09 19:29:01 tb Exp $
-
 MULTI_PACKAGES=	-main -drill -utils
 
 COMMENT-main=	DNS library modelled after Net::DNS

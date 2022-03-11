@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/25 07:37:29 ajacoutot Exp $
-
 # !!! do not update blindly: sysutils/awscli requires a specific version
 
 COMMENT=		Amazon S3 transfer manager for Python

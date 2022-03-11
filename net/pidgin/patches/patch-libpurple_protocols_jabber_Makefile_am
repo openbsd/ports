@@ -1,5 +1,3 @@
-$OpenBSD: patch-libpurple_protocols_jabber_Makefile_am,v 1.1 2021/10/13 13:56:07 sthen Exp $
-
 Index: libpurple/protocols/jabber/Makefile.am
 --- libpurple/protocols/jabber/Makefile.am.orig
 +++ libpurple/protocols/jabber/Makefile.am

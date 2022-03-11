@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=		mouse and keyboard sharing utility
 
 VERSION=		1.7.6

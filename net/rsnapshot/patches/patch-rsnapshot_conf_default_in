@@ -1,5 +1,3 @@
-$OpenBSD: patch-rsnapshot_conf_default_in,v 1.6 2021/06/13 06:32:42 ajacoutot Exp $
-
 --- rsnapshot.conf.default.in.orig	Tue Dec  8 01:27:02 2015
 +++ rsnapshot.conf.default.in	Tue Jan  5 10:56:59 2016
 @@ -50,7 +50,7 @@ snapshot_root	/.snapshots/

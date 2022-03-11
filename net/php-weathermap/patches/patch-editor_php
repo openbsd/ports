@@ -1,5 +1,3 @@
-$OpenBSD: patch-editor_php,v 1.2 2013/04/22 14:05:07 sthen Exp $
-
 Allow editor to be enabled via a config file rather than editing the
 editor.php script itself.
 

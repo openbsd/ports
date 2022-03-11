@@ -1,4 +1,3 @@
-$OpenBSD: patch-datalink_h,v 1.1 2007/05/26 22:06:19 rui Exp $
 --- datalink.h.orig	Sun Apr 29 11:49:51 2007
 +++ datalink.h	Sun Apr 29 11:49:54 2007
 @@ -29,12 +29,12 @@ extern struct datalinktype {

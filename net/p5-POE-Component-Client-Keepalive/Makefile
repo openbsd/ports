@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT=	manage connections, with keep-alive
 
 MODULES=	cpan

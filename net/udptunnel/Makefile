@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/17 14:46:34 danj Exp $
-
 COMMENT=	UDP tunnel utility
 
 DISTNAME=	udptunnel-1.1

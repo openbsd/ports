@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/14 11:11:33 sthen Exp $
-
 COMMENT =	Lua bindings to libpsl
 
 GH_ACCOUNT =	daurnimator

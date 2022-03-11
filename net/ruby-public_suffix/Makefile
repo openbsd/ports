@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/14 19:11:48 sebastia Exp $
-
 COMMENT=		parse and decompose a domain names
 
 DISTNAME=		public_suffix-4.0.6

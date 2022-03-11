@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/06/09 07:14:45 jasper Exp $
-
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
 CATEGORIES=		net

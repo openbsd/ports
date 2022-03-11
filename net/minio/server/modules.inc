@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.7 2022/02/07 23:51:52 danj Exp $
-
 MODGO_MODULES =	\
 	cloud.google.com/go							 v0.94.1 \
 	cloud.google.com/go/bigquery						 v1.8.0 \

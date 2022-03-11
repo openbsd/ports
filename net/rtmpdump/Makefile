@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2022/01/14 10:53:19 tb Exp $
-
 SHARED_LIBS =		rtmp 1.1
 
 COMMENT =		dump RTMP media streams

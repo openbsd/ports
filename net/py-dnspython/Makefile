@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT=		DNS toolkit for Python
 
 # see net/py2-dnspython for py2 version

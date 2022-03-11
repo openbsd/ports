@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2016/04/27 15:42:55 jca Exp $
 --- configure.orig	Sun Oct 26 14:22:06 2014
 +++ configure	Wed Apr 27 16:40:21 2016
 @@ -4050,7 +4050,7 @@ SHLIBSONAME='$(SHLIBFORLINK).$(MAJOR)'

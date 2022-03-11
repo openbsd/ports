@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2015/02/10 08:44:32 jasper Exp $
 lib/lua/${MODLUA_VERSION}/mime/
 lib/lua/${MODLUA_VERSION}/mime/core.so
 lib/lua/${MODLUA_VERSION}/socket/

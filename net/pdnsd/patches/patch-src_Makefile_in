@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2012/06/21 14:40:40 gonzalo Exp $
 --- src/Makefile.in.orig	Fri Mar  2 13:12:09 2012
 +++ src/Makefile.in	Fri Mar  2 13:12:49 2012
 @@ -56,7 +56,7 @@ am_pdnsd_OBJECTS = pdnsd-conf-parser.$(OBJEXT) pdnsd-c

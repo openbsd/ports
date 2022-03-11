@@ -1,4 +1,3 @@
-$OpenBSD: patch-aomdv_aomdv_cc,v 1.1 2012/04/28 18:07:57 stu Exp $
 --- aomdv/aomdv.cc.orig	Tue Apr 24 00:58:14 2012
 +++ aomdv/aomdv.cc	Tue Apr 24 00:58:47 2012
 @@ -79,6 +79,8 @@

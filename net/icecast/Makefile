@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.68 2020/06/09 07:14:45 jasper Exp $
-
 COMMENT=	server for streaming various media formats
 CATEGORIES=	net audio
 

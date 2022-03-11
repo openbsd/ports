@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2009/03/25 18:29:34 naddy Exp $
 --- src/Makefile.in.orig	Sun Oct 20 21:34:28 2002
 +++ src/Makefile.in	Wed Mar 25 19:28:15 2009
 @@ -2,9 +2,10 @@ CC      = @CC@

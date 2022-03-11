@@ -1,4 +1,3 @@
-$OpenBSD: patch-jnettop_8,v 1.2 2012/03/13 09:57:37 sthen Exp $
 --- jnettop.8.orig	Sat Apr  8 12:50:09 2006
 +++ jnettop.8	Mon Mar 12 22:15:20 2012
 @@ -50,7 +50,7 @@ disable content filtering

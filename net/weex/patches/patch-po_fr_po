@@ -1,5 +1,3 @@
-$OpenBSD: patch-po_fr_po,v 1.1 2021/02/23 20:06:01 naddy Exp $
-
 Index: po/fr.po
 --- po/fr.po.orig
 +++ po/fr.po

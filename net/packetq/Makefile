@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/17 10:45:29 fcambus Exp $
-
 COMMENT =	run SQL queries directly on PCAP files
 
 DISTNAME =	packetq-1.5.0

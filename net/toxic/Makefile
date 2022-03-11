@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/28 12:51:57 op Exp $
-
 COMMENT =		ncurses-based Tox client
 
 GH_ACCOUNT =		Jfreegman

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/02/14 15:58:04 sthen Exp $
 @pkgpath net/py-ripe.atlas.cousteau
 lib/python${MODPY_VERSION}/site-packages/ripe/
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth

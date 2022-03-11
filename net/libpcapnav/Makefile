@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:30 sthen Exp $
-
 COMMENT=	library for navigating to arbitrary packets in a trace file
 
 DISTNAME=	libpcapnav-0.8

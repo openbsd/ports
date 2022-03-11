@@ -1,5 +1,3 @@
-$OpenBSD: patch-Crypto_src_CipherImpl_cpp,v 1.1 2022/01/14 10:51:15 tb Exp $
-
 Index: Crypto/src/CipherImpl.cpp
 --- Crypto/src/CipherImpl.cpp.orig
 +++ Crypto/src/CipherImpl.cpp

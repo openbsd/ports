@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/21 09:46:06 op Exp $
-
 COMMENT =	simple, lightweight XMPP C library
 
 V =		0.11.0

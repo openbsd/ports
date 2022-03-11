@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT =		protocol, service, network, host and ether info for Tcl
 
 DISTNAME =		netinfo-0.6

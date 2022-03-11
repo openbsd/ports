@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT=		POE-based parser for the IRC protocol
 
 MODULES=		cpan

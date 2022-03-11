@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2021/02/23 19:39:35 sthen Exp $
-
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-5.16.6

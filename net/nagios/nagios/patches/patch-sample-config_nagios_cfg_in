@@ -1,5 +1,3 @@
-$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.7 2021/02/24 13:05:14 sthen Exp $
-
 Index: sample-config/nagios.cfg.in
 --- sample-config/nagios.cfg.in.orig
 +++ sample-config/nagios.cfg.in

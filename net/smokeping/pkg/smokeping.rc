@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: smokeping.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/smokeping"
 daemon_user="_smokeping"

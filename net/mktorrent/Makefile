@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:32 sthen Exp $
-
 COMMENT =	command-line .torrent file creator
 
 V =		1.1

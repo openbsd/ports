@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Smokeping_probes_base_pm,v 1.1 2019/08/21 12:35:12 sthen Exp $
-
 Index: lib/Smokeping/probes/base.pm
 --- lib/Smokeping/probes/base.pm.orig
 +++ lib/Smokeping/probes/base.pm

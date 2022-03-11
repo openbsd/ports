@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/07/03 20:43:22 sthen Exp $
-
 COMMENT=	socks proxy and tls support for ucspi
 
 DISTNAME=	ucspi-tools-1.7

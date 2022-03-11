@@ -1,4 +1,3 @@
-$OpenBSD: patch-Coccinella_tcl,v 1.2 2010/07/28 18:03:00 sebastia Exp $
 --- Coccinella.tcl.orig	Mon Feb 23 05:47:12 2009
 +++ Coccinella.tcl	Sat Aug 29 13:13:35 2009
 @@ -131,7 +131,7 @@ if {[string equal $this(platform) "unix"]} {

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/03/07 00:07:32 jca Exp $
-
 COMMENT =	Python bindings for libknot
 
 MODPY_EGG_VERSION =	3.1.6

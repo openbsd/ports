@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_bwm-ng_c,v 1.1 2017/08/14 16:51:41 sthen Exp $
-
 unix:  performs ioctl on interfaces to check if they're up (press "a" three times)
 route: retrieves interface stats via sysctl
 

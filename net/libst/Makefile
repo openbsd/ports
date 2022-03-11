@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:48:31 sthen Exp $
-
 # see md.h, add others
 ONLY_FOR_ARCHS =	amd64 alpha i386
 

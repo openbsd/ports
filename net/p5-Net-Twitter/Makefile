@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:36 sthen Exp $
-
 COMMENT=	perl interface to the Twitter API
 
 DISTNAME =	Net-Twitter-4.01030

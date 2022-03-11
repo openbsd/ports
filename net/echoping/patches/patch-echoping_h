@@ -1,5 +1,3 @@
-$OpenBSD: patch-echoping_h,v 1.1 2021/02/01 19:47:08 sthen Exp $
-
 Fix -fno-common, https://svnweb.freebsd.org/ports?view=revision&revision=545509
 
 Index: echoping.h

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dynamic-preprocessors_pop_Makefile_in,v 1.19 2021/09/19 10:18:25 sthen Exp $
 Index: src/dynamic-preprocessors/pop/Makefile.in
 --- src/dynamic-preprocessors/pop/Makefile.in.orig
 +++ src/dynamic-preprocessors/pop/Makefile.in

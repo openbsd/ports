@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=		No-IP.com Dynamic DNS client
 
 V=			2.1.9

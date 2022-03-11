@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT=	POE interface to Net::Pcap
 
 MODULES=	cpan

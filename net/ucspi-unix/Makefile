@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT=	tools for building unix domain socket client/servers
 
 DISTNAME=		ucspi-unix-0.34

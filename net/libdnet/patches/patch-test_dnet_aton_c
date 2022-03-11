@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_dnet_aton_c,v 1.1 2011/09/18 08:32:56 bluhm Exp $
 http://code.google.com/p/libdnet/issues/detail?id=17
 
 --- test/dnet/aton.c.orig	Mon Oct 14 17:42:10 2002

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:32 kn Exp $
-
 COMMENT =		CLAT configuration daemon for OpenBSD
 V =			1.3
 DISTNAME =		gelatod-${V}

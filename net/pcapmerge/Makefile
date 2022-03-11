@@ -1,5 +1,3 @@
-#   $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:42 sthen Exp $
-
 COMMENT=	merge and extract portions of binary pcap files
 
 DISTNAME=	pcapmerge-1.0

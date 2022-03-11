@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:52 sthen Exp $
-
 COMMENT=	powerful console ftp client with many features
 
 DISTNAME=	yafc-1.1

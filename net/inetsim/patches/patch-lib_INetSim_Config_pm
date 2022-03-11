@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_INetSim_Config_pm,v 1.1.1.1 2020/04/06 12:40:12 jasper Exp $
-
 Index: lib/INetSim/Config.pm
 --- lib/INetSim/Config.pm.orig
 +++ lib/INetSim/Config.pm

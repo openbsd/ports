@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/10 22:33:37 jasper Exp $
 @bin bin/udptunnel
 share/doc/udptunnel/
 share/doc/udptunnel/udptunnel.html

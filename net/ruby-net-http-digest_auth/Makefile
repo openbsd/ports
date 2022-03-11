@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:48:48 sthen Exp $
-
 COMMENT=		implementation of RFC 2617, Digest Access Authentication
 
 DISTNAME=		net-http-digest_auth-1.2.1

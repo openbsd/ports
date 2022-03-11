@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:33 sthen Exp $
-
 COMMENT=	base-class for a tcpdump-like implementation
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sockwrap_sockwrap_cpp,v 1.1 2017/05/13 18:38:25 espie Exp $
-
 Index: src/sockwrap/sockwrap.cpp
 --- src/sockwrap/sockwrap.cpp.orig
 +++ src/sockwrap/sockwrap.cpp

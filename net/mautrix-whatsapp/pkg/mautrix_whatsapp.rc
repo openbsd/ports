@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mautrix_whatsapp.rc,v 1.2 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/mautrix-whatsapp"
 daemon_user="_whatsapp"

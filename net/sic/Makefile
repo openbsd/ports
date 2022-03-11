@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:48 sthen Exp $
-
 COMMENT=		simple irc client
 
 DISTNAME=		sic-1.2

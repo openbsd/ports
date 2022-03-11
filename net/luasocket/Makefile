@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/02/14 11:11:33 sthen Exp $
-
 COMMENT=	network support for the lua language
 V=		3.0-rc1
 GH_ACCOUNT=	diegonehab

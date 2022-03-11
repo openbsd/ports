@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/21 19:50:33 kmos Exp $
-
 COMMENT =	emulator for rapid prototyping of software defined networks
 
 V=		2.2.2

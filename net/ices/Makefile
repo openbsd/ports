@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:28 sthen Exp $
-
 PORTROACH=	limit:^0
 PORTROACH_COMMENT=	ices2 is a different port
 

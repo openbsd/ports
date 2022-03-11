@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2021/09/02 17:06:14 fcambus Exp $
 @newgroup _mtr:790
 @newuser _mtr:790:_mtr::mtr user:/nonexistent:/sbin/nologin
 !%%gtk%%

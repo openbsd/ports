@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_l2tpd_conf_sample,v 1.1.1.1 2013/01/15 23:02:19 sthen Exp $
 --- doc/l2tpd.conf.sample.orig	Tue Jan 15 22:22:55 2013
 +++ doc/l2tpd.conf.sample	Tue Jan 15 22:22:28 2013
 @@ -18,6 +18,13 @@

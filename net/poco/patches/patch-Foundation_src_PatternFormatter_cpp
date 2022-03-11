@@ -1,5 +1,3 @@
-$OpenBSD: patch-Foundation_src_PatternFormatter_cpp,v 1.1 2013/08/30 20:15:39 naddy Exp $
-
 Fix for long long time_t on LP64 archs. Poco's type system assumes that
 64-bit quantities are type long on LP64 archs and that long long
 only exists on 32-bit archs.

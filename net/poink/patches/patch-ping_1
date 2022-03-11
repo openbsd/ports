@@ -1,4 +1,3 @@
-$OpenBSD: patch-ping_1,v 1.1.1.1 2003/04/16 20:30:20 sturm Exp $
 --- ping.1.orig	Mon Feb 10 19:11:56 2003
 +++ ping.1	Sat Feb 22 15:58:58 2003
 @@ -1,11 +1,11 @@

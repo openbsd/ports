@@ -1,5 +1,3 @@
-$OpenBSD: patch-pgm_pgm-agent_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: pgm/pgm-agent.cc
 --- pgm/pgm-agent.cc.orig
 +++ pgm/pgm-agent.cc

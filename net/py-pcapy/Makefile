@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/02 00:01:41 sthen Exp $
-
 COMMENT =		libpcap module for Python
 
 MODPY_EGG_VERSION =	0.11.5

@@ -1,4 +1,3 @@
-$OpenBSD: patch-errors_c,v 1.1 2016/03/17 19:52:40 naddy Exp $
 --- errors.c.orig	Wed Jul  3 05:54:12 2002
 +++ errors.c	Thu Mar 17 20:32:27 2016
 @@ -29,12 +29,11 @@

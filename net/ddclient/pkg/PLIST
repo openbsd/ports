@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2015/06/02 17:08:03 ajacoutot Exp $
 @newgroup _ddclient:750
 @newuser _ddclient:750:_ddclient:daemon:DynDNS Client:/nonexistent:/sbin/nologin
 sbin/ddclient

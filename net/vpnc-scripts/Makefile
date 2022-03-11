@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/10/30 19:20:49 afresh1 Exp $
-
 COMMENT=	connect scripts for use with vpnc and openconnect
 
 C=		e6a8fac7f7e8bf3c391787a3e0672f741603a9c9

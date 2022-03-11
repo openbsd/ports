@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/05/16 17:14:41 kmos Exp $
-
 COMMENT =	name-based proxying of HTTPS without decrypting traffic
 
 GH_ACCOUNT =	renaudallard

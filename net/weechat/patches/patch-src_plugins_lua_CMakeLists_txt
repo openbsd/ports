@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_plugins_lua_CMakeLists_txt,v 1.3 2020/01/11 07:26:00 rsadowski Exp $
 Index: src/plugins/lua/CMakeLists.txt
 --- src/plugins/lua/CMakeLists.txt.orig
 +++ src/plugins/lua/CMakeLists.txt

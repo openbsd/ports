@@ -1,5 +1,3 @@
-$OpenBSD: patch-tcpserver_cc,v 1.5 2019/03/03 23:11:04 sebastia Exp $
-
 Index: tcpserver.cc
 --- tcpserver.cc.orig
 +++ tcpserver.cc

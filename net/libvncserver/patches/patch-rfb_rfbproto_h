@@ -1,5 +1,3 @@
-$OpenBSD: patch-rfb_rfbproto_h,v 1.2 2021/03/24 12:31:44 ajacoutot Exp $
-
 Index: rfb/rfbproto.h
 --- rfb/rfbproto.h.orig
 +++ rfb/rfbproto.h

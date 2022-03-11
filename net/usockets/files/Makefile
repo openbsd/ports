@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1 2022/01/31 08:34:58 op Exp $
-
 PREFIX ?=	/usr/local
 LIBDIR ?=	"$(PREFIX)/lib"
 INCLUDEDIR ?=	"$(PREFIX)/include"

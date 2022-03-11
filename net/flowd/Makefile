@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/17 14:46:33 danj Exp $
-
 COMMENT=	NetFlow collector
 
 DISTNAME=	flowd-0.9.1.20140828

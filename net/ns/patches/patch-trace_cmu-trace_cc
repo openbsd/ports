@@ -1,5 +1,3 @@
-$OpenBSD: patch-trace_cmu-trace_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: trace/cmu-trace.cc
 --- trace/cmu-trace.cc.orig
 +++ trace/cmu-trace.cc

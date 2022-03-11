@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_macping_c,v 1.1.1.1 2018/06/15 09:28:12 sthen Exp $
-
 Index: src/macping.c
 --- src/macping.c.orig
 +++ src/macping.c

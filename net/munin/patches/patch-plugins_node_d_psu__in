@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugins_node_d_psu__in,v 1.1 2010/10/23 15:52:23 sthen Exp $
 --- plugins/node.d/psu_.in.orig	Thu Oct 14 18:46:10 2010
 +++ plugins/node.d/psu_.in	Thu Oct 14 18:46:23 2010
 @@ -35,7 +35,7 @@ suggestions.

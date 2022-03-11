@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2013/04/03 20:04:20 sthen Exp $
 --- doc/Makefile.in.orig	Wed Apr  3 20:00:24 2013
 +++ doc/Makefile.in	Wed Apr  3 20:00:42 2013
 @@ -74,7 +74,7 @@ LIB_NETWORK_CAT =	gethostbyname.${LIB_NETWORK_CAT_EXT}

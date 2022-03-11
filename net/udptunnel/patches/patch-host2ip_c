@@ -1,4 +1,3 @@
-$OpenBSD: patch-host2ip_c,v 1.1 2008/12/10 22:33:37 jasper Exp $
 --- host2ip.c.orig	Mon Dec  1 20:30:05 2008
 +++ host2ip.c	Mon Dec  1 20:30:16 2008
 @@ -1,6 +1,7 @@

@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_haproxy_1,v 1.8 2021/01/30 22:10:01 danj Exp $
 Index: doc/haproxy.1
 --- doc/haproxy.1.orig
 +++ doc/haproxy.1

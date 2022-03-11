@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.mysql,v 1.7 2021/02/18 13:24:04 sthen Exp $
 share/pmacct/sql/README.mysql
 share/pmacct/sql/pmacct-create-db_bgp_v1.mysql
 share/pmacct/sql/pmacct-create-db_v1.mysql

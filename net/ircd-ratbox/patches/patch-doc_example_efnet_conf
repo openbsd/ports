@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_example_efnet_conf,v 1.3 2011/11/27 10:57:24 fgsch Exp $
 --- doc/example.efnet.conf.orig	Thu Oct 13 01:09:59 2011
 +++ doc/example.efnet.conf	Wed Nov 16 20:53:21 2011
 @@ -101,13 +101,13 @@ serverinfo {

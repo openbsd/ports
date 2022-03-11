@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: ircd_ratbox.rc,v 1.4 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/ircd"
 

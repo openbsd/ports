@@ -1,5 +1,3 @@
-$OpenBSD: patch-indep-utils_cmu-scen-gen_setdest_calcdest_cc,v 1.2 2018/04/25 19:44:04 naddy Exp $
-
 Index: indep-utils/cmu-scen-gen/setdest/calcdest.cc
 --- indep-utils/cmu-scen-gen/setdest/calcdest.cc.orig
 +++ indep-utils/cmu-scen-gen/setdest/calcdest.cc

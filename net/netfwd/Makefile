@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=	netword traffic redirector
 
 DISTNAME=	netfwd-0.4

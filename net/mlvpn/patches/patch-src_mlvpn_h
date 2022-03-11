@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mlvpn_h,v 1.1 2021/02/01 19:54:19 sthen Exp $
-
 From 58418fd847fe833d1e626d4b7d08f0e623756c5c Mon Sep 17 00:00:00 2001
 From: Laurent Coustet <ed@zehome.com>
 Date: Tue, 1 Sep 2020 18:48:19 +0200

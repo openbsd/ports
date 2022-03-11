@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/30 17:19:22 rsadowski Exp $
-
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}

@@ -1,5 +1,3 @@
-$OpenBSD: patch-generic_util_h,v 1.1 2021/02/02 19:35:13 matthieu Exp $
-
 fix for -fno-common
 
 --- generic/util.h.orig	Tue Jan 29 10:09:38 2008

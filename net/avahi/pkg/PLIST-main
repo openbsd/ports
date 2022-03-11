@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2021/12/31 07:20:32 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin

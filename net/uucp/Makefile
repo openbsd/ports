@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT=	UUCP suite
 
 DISTNAME=	uucp-1.07

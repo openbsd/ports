@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/28 23:08:50 naddy Exp $
-
   SUBDIR =
   SUBDIR += check_bioctl
   SUBDIR += check_email_delivery

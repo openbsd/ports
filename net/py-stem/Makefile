@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		Tor controller library
 
 MODPY_EGG_VERSION =	1.8.0

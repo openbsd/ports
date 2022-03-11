@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:34 sthen Exp $
-
 COMMENT =	Perl extension for doing ident requests
 
 DISTNAME =	Net-Ident-1.25

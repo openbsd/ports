@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/04/02 13:11:38 fcambus Exp $
-
 COMMENT =	remotely determine DNS server versions
 
 GH_ACCOUNT =	kirei

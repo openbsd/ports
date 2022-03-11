@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fast_library_cpp,v 1.4 2020/09/13 14:28:32 jasper Exp $
-
 Index: src/fast_library.cpp
 --- src/fast_library.cpp.orig
 +++ src/fast_library.cpp

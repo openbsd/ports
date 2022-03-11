@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:38 sthen Exp $
-
 COMMENT =	GNU dictionary server
 
 V =		2.10

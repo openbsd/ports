@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=	flow-based network traffic analyser
 
 DISTNAME=	softflowd-0.9.9

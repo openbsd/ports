@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT=	event-driven IRC-client module
 
 DISTNAME=	POE-Component-IRC-6.90

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:01:39 sthen Exp $
-
 PKG_ARCH =	*
 
 COMMENT =	monitoring plugin to check the status of ESX/i hardware

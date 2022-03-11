@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:25 sthen Exp $
-
 COMMENT =	magic wormhole implementation in Go
 
 V =		1.0.4

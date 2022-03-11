@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/01/07 11:38:49 sthen Exp $
-
 COMMENT =		generate access/prefix lists for BGP config
 
 GH_ACCOUNT =		snar

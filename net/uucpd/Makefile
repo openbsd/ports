@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT =		UUCP inetd program
 
 DISTNAME =		uucpd-1.0

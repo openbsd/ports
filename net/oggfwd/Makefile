@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=	pipe an Ogg stream to an Icecast server
 
 DISTNAME=	oggfwd-0.2

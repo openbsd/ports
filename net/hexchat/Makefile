@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/02 00:01:39 sthen Exp $
-
 COMMENT =		GTK+2 IRC Client
 DISTNAME =		hexchat-2.14.3
 EXTRACT_SUFX =		.tar.xz

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT =		pcap-based DNS query monitor
 
 DISTNAME =		dnstop-20180521

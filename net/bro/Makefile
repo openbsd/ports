@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2022/02/19 11:10:29 kn Exp $
-
 PORTROACH=		skipv:4.1.0,4.1.1,4.2.0
 
 BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash

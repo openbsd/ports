@@ -1,5 +1,3 @@
-$OpenBSD: patch-nix_nixnode_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
-
 Index: nix/nixnode.cc
 --- nix/nixnode.cc.orig
 +++ nix/nixnode.cc

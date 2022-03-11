@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_decode_h,v 1.14 2021/04/07 02:00:52 lteo Exp $
 Index: src/decode.h
 --- src/decode.h.orig
 +++ src/decode.h

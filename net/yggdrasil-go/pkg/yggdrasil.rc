@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: yggdrasil.rc,v 1.1.1.1 2021/01/21 03:32:25 abieber Exp $
 
 daemon="${TRUEPREFIX}/bin/yggdrasil"
 daemon_flags="-useconffile ${SYSCONFDIR}/yggdrasil.conf"

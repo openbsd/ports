@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_Makefile_in,v 1.6 2019/03/04 12:51:16 chrisz Exp $
 Index: config/Makefile.in
 --- config/Makefile.in.orig
 +++ config/Makefile.in

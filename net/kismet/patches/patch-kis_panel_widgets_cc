@@ -1,5 +1,3 @@
-$OpenBSD: patch-kis_panel_widgets_cc,v 1.1 2019/03/03 23:11:04 sebastia Exp $
-
 explicitly cast
 
 Index: kis_panel_widgets.cc

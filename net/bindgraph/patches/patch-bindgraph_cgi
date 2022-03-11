@@ -1,4 +1,3 @@
-$OpenBSD: patch-bindgraph_cgi,v 1.1.1.1 2010/10/25 12:42:24 pea Exp $
 --- bindgraph.cgi.orig	Mon May  5 00:26:18 2003
 +++ bindgraph.cgi	Wed Oct  6 14:02:01 2010
 @@ -8,11 +8,12 @@

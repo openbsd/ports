@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/03/10 12:03:33 kn Exp $
-
 COMMENT =		securely transfer data between computers
 
 MODPY_EGG_VERSION =	0.12.0

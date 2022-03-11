@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_rabbit_scripts_rabbitmq-server,v 1.1 2021/02/19 13:38:33 sthen Exp $
-
 Index: deps/rabbit/scripts/rabbitmq-server
 --- deps/rabbit/scripts/rabbitmq-server.orig
 +++ deps/rabbit/scripts/rabbitmq-server

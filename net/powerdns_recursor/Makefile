@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/12/17 11:42:27 otto Exp $
-
 COMMENT=		recursive nameserver
 
 V=			4.6.0

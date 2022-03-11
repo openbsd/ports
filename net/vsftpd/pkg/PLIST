@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/07/15 17:07:08 sthen Exp $
 @newgroup _vsftpd:513
 @newuser _vsftpd:513:_vsftpd:daemon:vsftpd user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/vsftpd

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/12 20:32:32 tb Exp $
-
 COMMENT=	library/tools (incl smilint) to access SMI MIB information
 
 SHARED_LIBS +=  smi                  0.0      # 2.27

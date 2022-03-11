@@ -1,5 +1,3 @@
-$OpenBSD: patch-dbmScripts_ipcc_maker_pl,v 1.1 2017/09/07 16:52:55 giovanni Exp $
-
 Index: dbmScripts/ipcc_maker.pl
 --- dbmScripts/ipcc_maker.pl.orig
 +++ dbmScripts/ipcc_maker.pl

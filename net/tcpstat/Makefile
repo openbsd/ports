@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT=	report network interface statistics
 
 DISTNAME=	tcpstat-1.5

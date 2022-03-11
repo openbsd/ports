@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/11 19:15:15 kirby Exp $
 @man man/man8/dhcdrop.8
 @bin sbin/dhcdrop

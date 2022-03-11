@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/26 18:20:35 naddy Exp $
-
 COMMENT=		ICQ console client with encryption support
 
 DISTNAME=		ysmv7_2_9_9_1

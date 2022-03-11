@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT=	module for writing rpc servers and clients
 
 MODULES=	cpan

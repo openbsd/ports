@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_file_go,v 1.4 2021/09/03 23:25:22 pvk Exp $
-
 Index: config/file.go
 --- config/file.go.orig
 +++ config/file.go

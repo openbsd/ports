@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/17 14:54:47 tb Exp $
-
 COMMENT =	DNS and DNSSEC zone file validator
 
 DISTNAME =	validns-0.8

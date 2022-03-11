@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/25 12:21:18 jca Exp $
-
 COMMENT=		geographically-aware, authoritative-only DNS server
 
 V=			2.4.3

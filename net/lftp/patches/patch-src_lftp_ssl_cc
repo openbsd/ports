@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lftp_ssl_cc,v 1.2 2021/10/31 17:12:12 tb Exp $
-
 Index: src/lftp_ssl.cc
 --- src/lftp_ssl.cc.orig
 +++ src/lftp_ssl.cc

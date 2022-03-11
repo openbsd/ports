@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/02/15 05:06:45 afresh1 Exp $
 ${P5SITE}/Net/Amazon/
 ${P5SITE}/Net/Amazon.pm
 ${P5SITE}/Net/Amazon/Attribute/

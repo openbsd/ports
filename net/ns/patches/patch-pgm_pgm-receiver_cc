@@ -1,5 +1,3 @@
-$OpenBSD: patch-pgm_pgm-receiver_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: pgm/pgm-receiver.cc
 --- pgm/pgm-receiver.cc.orig
 +++ pgm/pgm-receiver.cc

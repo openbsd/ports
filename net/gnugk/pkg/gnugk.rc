@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: gnugk.rc,v 1.6 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/gnugk"
 daemon_flags="-t -c ${SYSCONFDIR}/gatekeeper.ini -u _gnugk -o /var/log/gnugk/gnugk.log"

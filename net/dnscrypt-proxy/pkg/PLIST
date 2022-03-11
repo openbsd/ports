@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/01/12 05:18:25 bket Exp $
 @conflict dnscrypt-proxy-plugins-*
 @pkgpath net/dnscrypt-proxy,-main
 @pkgpath net/dnscrypt-proxy,-utils

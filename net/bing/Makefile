@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT=	point-to-point bandwidth measurement tool
 
 DISTNAME=	bing-1.0.5

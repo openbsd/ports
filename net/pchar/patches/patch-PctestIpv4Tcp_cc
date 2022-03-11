@@ -1,4 +1,3 @@
-$OpenBSD: patch-PctestIpv4Tcp_cc,v 1.1 2005/09/07 08:52:01 markus Exp $
 --- PctestIpv4Tcp.cc.orig	Thu May 24 23:52:40 2001
 +++ PctestIpv4Tcp.cc	Thu Aug 25 10:15:20 2005
 @@ -149,13 +149,13 @@ int PctestIpv4Tcp::Test(TestRecord &tr)

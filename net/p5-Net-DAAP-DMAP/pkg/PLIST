@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/30 03:05:23 jolan Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/DAAP/
 ${P5SITE}/Net/DAAP/DMAP.pm

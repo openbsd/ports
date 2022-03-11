@@ -1,5 +1,3 @@
-$OpenBSD: patch-util-src_table_c,v 1.2 2020/03/15 19:04:25 solene Exp $
-
 Index: util-src/table.c
 --- util-src/table.c.orig
 +++ util-src/table.c

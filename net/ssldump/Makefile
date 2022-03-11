@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/23 18:40:58 tb Exp $
-
 COMMENT=	SSLv3/TLS network protocol analyzer
 
 GH_ACCOUNT=	adulau

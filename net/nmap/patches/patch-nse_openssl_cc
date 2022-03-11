@@ -1,5 +1,3 @@
-$OpenBSD: patch-nse_openssl_cc,v 1.3 2022/01/14 10:49:27 tb Exp $
-
 Index: nse_openssl.cc
 --- nse_openssl.cc.orig
 +++ nse_openssl.cc

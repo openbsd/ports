@@ -1,5 +1,3 @@
-$OpenBSD: patch-autotools_ac_c_compile_flags_m4,v 1.1 2017/09/25 09:16:13 robert Exp $
-
 Index: autotools/ac_c_compile_flags.m4
 --- autotools/ac_c_compile_flags.m4.orig
 +++ autotools/ac_c_compile_flags.m4

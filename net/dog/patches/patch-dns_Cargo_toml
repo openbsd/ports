@@ -1,5 +1,3 @@
-$OpenBSD: patch-dns_Cargo_toml,v 1.1.1.1 2020/11/18 10:24:19 sthen Exp $
-
 Index: dns/Cargo.toml
 --- dns/Cargo.toml.orig
 +++ dns/Cargo.toml

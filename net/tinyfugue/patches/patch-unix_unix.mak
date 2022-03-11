@@ -1,4 +1,3 @@
-$OpenBSD: patch-unix_unix.mak,v 1.2 2010/05/24 10:10:39 espie Exp $
 --- unix/unix.mak.orig	Sat Mar  6 23:43:28 1999
 +++ unix/unix.mak	Sat May 22 16:24:59 2010
 @@ -22,7 +22,6 @@ BUILDERS   = Makefile

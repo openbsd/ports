@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/08/21 14:53:19 bluhm Exp $
-
 COMMENT =		ospf link-state database viewer
 
 DISTNAME =		OSPF-LSDB-1.13

@@ -1,5 +1,3 @@
-$OpenBSD: patch-man_kismet_drone_conf_5,v 1.1 2019/03/03 23:11:04 sebastia Exp $
-
 Index: man/kismet_drone.conf.5
 --- man/kismet_drone.conf.5.orig
 +++ man/kismet_drone.conf.5

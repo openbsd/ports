@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/25 23:29:55 sthen Exp $
 bin/getaddrinfo
 bin/getnameinfo
 ${P5SITE}/Socket/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/02/22 11:55:59 sthen Exp $
-
 COMMENT=	FTP proxy
 
 DISTNAME=	jftpgw-0.13.5

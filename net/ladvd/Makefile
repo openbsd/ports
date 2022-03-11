@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:48:30 sthen Exp $
-
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
 CATEGORIES =		net

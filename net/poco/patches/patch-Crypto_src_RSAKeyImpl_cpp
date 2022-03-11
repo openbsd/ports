@@ -1,5 +1,3 @@
-$OpenBSD: patch-Crypto_src_RSAKeyImpl_cpp,v 1.1 2022/01/14 10:51:15 tb Exp $
-
 Index: Crypto/src/RSAKeyImpl.cpp
 --- Crypto/src/RSAKeyImpl.cpp.orig
 +++ Crypto/src/RSAKeyImpl.cpp

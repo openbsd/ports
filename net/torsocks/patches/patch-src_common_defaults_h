@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_defaults_h,v 1.1 2018/01/29 21:44:30 gsoares Exp $
-
 Index: src/common/defaults.h
 --- src/common/defaults.h.orig
 +++ src/common/defaults.h

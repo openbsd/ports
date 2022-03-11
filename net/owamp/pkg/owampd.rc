@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: owampd.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/owampd"
 daemon_flags="-c ${SYSCONFDIR}/owampd -d /var/db/owampd -U _owampd -G _owampd -R /var/run"

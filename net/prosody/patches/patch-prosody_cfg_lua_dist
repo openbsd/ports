@@ -1,4 +1,3 @@
-$OpenBSD: patch-prosody_cfg_lua_dist,v 1.10 2021/05/14 07:45:26 solene Exp $
 Index: prosody.cfg.lua.dist
 --- prosody.cfg.lua.dist.orig
 +++ prosody.cfg.lua.dist

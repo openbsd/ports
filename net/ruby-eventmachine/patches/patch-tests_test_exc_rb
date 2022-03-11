@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_exc_rb,v 1.1 2017/11/04 15:54:10 jeremy Exp $
-
 Skip test that crashes with SIGILL.  This same code also crashes
 previous versions, so it is not a regression, just a newly added
 test.  Details at:

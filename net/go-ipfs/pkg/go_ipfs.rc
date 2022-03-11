@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: go_ipfs.rc,v 1.2 2018/12/18 14:56:13 edd Exp $
 
 daemon="${TRUEPREFIX}/bin/ipfs daemon"
 daemon_user="_go-ipfs"

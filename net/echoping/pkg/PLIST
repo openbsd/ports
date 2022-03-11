@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/02/01 18:10:44 sthen Exp $
 @bin bin/echoping
 include/echoping/
 include/echoping/compilation.h

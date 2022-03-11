@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:53 naddy Exp $
 include/st.h
 lib/libst.a
 @lib lib/libst.so.${LIBst_VERSION}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:28 sthen Exp $
-
 COMMENT=	icecast source for streaming Ogg Vorbis
 
 DISTNAME=	ices-2.0.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_cryptolink_openssl_compat_h,v 1.1 2021/11/30 10:36:59 tb Exp $
-
 Fix build with opaque HMAC_CTX and avoid compat defines for EVP_MD_CTX.
 
 Index: src/lib/cryptolink/openssl_compat.h

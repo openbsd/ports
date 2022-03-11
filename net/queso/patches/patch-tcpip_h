@@ -1,4 +1,3 @@
-$OpenBSD: patch-tcpip_h,v 1.1 2003/04/22 12:08:05 avsm Exp $
 --- tcpip.h.orig	Tue Sep 22 21:35:43 1998
 +++ tcpip.h	Mon Apr 14 23:50:21 2003
 @@ -4,12 +4,12 @@ typedef struct

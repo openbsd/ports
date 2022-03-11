@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=	removes sensitive information from a tcpdump -w file
 
 DISTNAME=	tcpdpriv-1.1.10

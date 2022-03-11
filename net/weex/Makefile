@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/23 20:06:01 naddy Exp $
-
 COMMENT=		noninteractive FTP/FTPS client for updating web pages
 
 VERSION=		2.8.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/21 17:23:40 sthen Exp $
-
 COMMENT=	simple RADIUS client library
 
 SHARED_LIBS +=	radcli               1.0      # 8.0

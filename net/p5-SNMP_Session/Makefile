@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 21:02:24 sthen Exp $
-
 COMMENT=	provides rudimentary access to remote SNMP agents
 
 MODULES=	cpan

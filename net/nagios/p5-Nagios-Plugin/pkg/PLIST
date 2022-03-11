@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/04/07 12:31:51 sthen Exp $
 @conflict p5-Nagios-Plugin-*
 ${P5SITE}/Monitoring/
 ${P5SITE}/Monitoring/Plugin/

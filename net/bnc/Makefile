@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:23 sthen Exp $
-
 COMMENT=	simple IRC relay proxy with support for virtual hosting
 
 DISTNAME=	${PKGNAME:S,-,,}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2020/09/27 14:48:17 matthieu Exp $
-
 COMMENT=	Network Time Protocol reference implementation
 
 # NTP sometimes has a 'pN' in its version number, which we don't want

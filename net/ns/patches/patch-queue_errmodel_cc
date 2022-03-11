@@ -1,5 +1,3 @@
-$OpenBSD: patch-queue_errmodel_cc,v 1.2 2018/04/12 15:07:38 naddy Exp $
-
 Index: queue/errmodel.cc
 --- queue/errmodel.cc.orig
 +++ queue/errmodel.cc

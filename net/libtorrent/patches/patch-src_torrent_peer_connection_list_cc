@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_torrent_peer_connection_list_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
-
 Index: src/torrent/peer/connection_list.cc
 --- src/torrent/peer/connection_list.cc.orig
 +++ src/torrent/peer/connection_list.cc

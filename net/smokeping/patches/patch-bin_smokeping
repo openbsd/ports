@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_smokeping,v 1.7 2021/08/13 09:47:53 sthen Exp $
-
 Index: bin/smokeping
 --- bin/smokeping.orig
 +++ bin/smokeping

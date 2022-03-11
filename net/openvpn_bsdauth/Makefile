@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/06/05 12:34:06 jasper Exp $
-
 COMMENT =	BSD Auth helper program for OpenVPN
 
 DISTNAME =	openvpn_bsdauth-7

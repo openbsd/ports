@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/09 10:44:05 landry Exp $
 bin/tg
 lib/python${MODPY_VERSION}/site-packages/tg/
 lib/python${MODPY_VERSION}/site-packages/tg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_core_settings_c,v 1.7 2018/01/28 17:47:58 sthen Exp $
 Index: src/core/settings.c
 --- src/core/settings.c.orig
 +++ src/core/settings.c

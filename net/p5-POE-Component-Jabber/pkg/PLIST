@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/23 08:42:04 jasper Exp $
 ${P5SITE}/POE/Component/Jabber/
 ${P5SITE}/POE/Component/Jabber.pm
 ${P5SITE}/POE/Component/Jabber/Events.pm

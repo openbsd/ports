@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/12/18 20:15:27 jasper Exp $
 @newgroup _mfi:747
 @newuser _mfi:747:_mfi:daemon:mfi user:/usr/local/share/mfi:/sbin/nologin
 @ask-update mfi-<2.12 Make sure your existing database is backed up

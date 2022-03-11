@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/06/21 12:36:16 sthen Exp $
-
 COMMENT =	IP-Transparent Tor/I2P Hidden Service Connector
 
 V =		0.3.8

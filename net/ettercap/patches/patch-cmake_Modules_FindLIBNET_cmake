@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_Modules_FindLIBNET_cmake,v 1.1 2021/03/01 20:23:18 sthen Exp $
-
 Index: cmake/Modules/FindLIBNET.cmake
 --- cmake/Modules/FindLIBNET.cmake.orig
 +++ cmake/Modules/FindLIBNET.cmake

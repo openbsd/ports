@@ -1,5 +1,3 @@
-# $OpenBSD: modules.inc,v 1.3 2021/12/16 16:12:43 abieber Exp $
-
 MODGO_MODULES =	\
 	bazil.org/fuse							 v0.0.0-20200117225306-7b5117fecadc \
 	cloud.google.com/go						 v0.65.0 \

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/24 16:13:54 simon Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/FTPSSL.pm
 @man man/man3p/Net::FTPSSL.3p

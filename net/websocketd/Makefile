@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 13:59:25 sthen Exp $
-
 COMMENT =		access any command-line tool via a WebSocket
 
 MODGO_MODNAME =		github.com/joewalnes/websocketd

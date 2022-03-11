@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/20 18:38:00 naddy Exp $
-
 COMMENT=	streaming source client that uses external en-/decoders
 
 DISTNAME=	ezstream-1.0.2

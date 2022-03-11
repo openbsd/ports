@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.136 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface

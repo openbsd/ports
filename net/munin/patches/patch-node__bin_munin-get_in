@@ -1,5 +1,3 @@
-$OpenBSD: patch-node__bin_munin-get_in,v 1.1 2020/02/02 11:16:53 kirby Exp $
-
 Index: node/_bin/munin-get.in
 --- node/_bin/munin-get.in.orig
 +++ node/_bin/munin-get.in

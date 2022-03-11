@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_occtl_occtl_c,v 1.5 2020/07/18 20:27:52 bket Exp $
 Index: src/occtl/occtl.c
 --- src/occtl/occtl.c.orig
 +++ src/occtl/occtl.c

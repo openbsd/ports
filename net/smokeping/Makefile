@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2021/09/02 13:13:27 sthen Exp $
-
 COMMENT=	latency logging and graphing system
 
 V=		2.8.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-putty_h,v 1.5 2021/07/17 12:01:54 sthen Exp $
-
 Index: putty.h
 --- putty.h.orig
 +++ putty.h

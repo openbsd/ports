@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:48:44 sthen Exp $
-
 COMMENT=		PPTP Server
 
 V=			1.3.4

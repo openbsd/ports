@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 14:19:46 jasper Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/XMPP/
 ${P5SITE}/Net/XMPP.pm

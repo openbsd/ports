@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/17 08:56:11 bentley Exp $
 bin/grake
 @man man/man1/grake.1

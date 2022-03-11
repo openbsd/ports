@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/03/05 17:35:56 kirby Exp $
-
 COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile

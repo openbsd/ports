@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.28 2015/03/18 14:51:33 sthen Exp $
 @bin bin/lftp
 bin/lftpget
 @comment lib/charset.alias

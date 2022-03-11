@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_data_test1_passwd,v 1.2 2017/10/10 09:20:48 sthen Exp $
 Index: tests/data/test1.passwd
 --- tests/data/test1.passwd.orig
 +++ tests/data/test1.passwd

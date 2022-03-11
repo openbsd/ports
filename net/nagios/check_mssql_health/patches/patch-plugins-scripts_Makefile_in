@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins-scripts_Makefile_in,v 1.1 2021/03/02 20:30:57 sthen Exp $
-
 Index: plugins-scripts/Makefile.in
 --- plugins-scripts/Makefile.in.orig
 +++ plugins-scripts/Makefile.in

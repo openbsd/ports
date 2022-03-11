@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/12/11 18:15:13 gonzalo Exp $
 @bin bin/balance
 @man man/man1/balance.1
 share/doc/balance/

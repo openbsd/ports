@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: pdns_server.rc,v 1.4 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/pdns_server --daemon=yes"
 

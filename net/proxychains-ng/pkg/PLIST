@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/09/02 10:36:50 sebastia Exp $
 @bin bin/proxychains4
 @bin bin/proxychains4-daemon
 @so lib/libproxychains4.so

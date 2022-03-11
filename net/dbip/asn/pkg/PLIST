@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1 2020/05/19 08:40:21 fcambus Exp $
 db/dbip/
 db/dbip/dbip-asn-lite.mmdb

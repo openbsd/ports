@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT=	Twitter script for irssi
 
 V=		2.6.3

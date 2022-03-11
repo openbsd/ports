@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.34 2022/02/02 18:07:08 sthen Exp $
-
 .if defined(V)
 COMMENT =	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 

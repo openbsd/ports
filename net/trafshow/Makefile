@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT=	full screen visualization of network traffic
 
 DISTNAME=	trafshow-3.1

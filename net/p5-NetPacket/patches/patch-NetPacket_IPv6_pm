@@ -1,4 +1,3 @@
-$OpenBSD: patch-NetPacket_IPv6_pm,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 --- NetPacket/IPv6.pm.orig	Thu Apr 14 10:10:49 2005
 +++ NetPacket/IPv6.pm	Thu Apr 14 10:10:49 2005
 @@ -0,0 +1,377 @@

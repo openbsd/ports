@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2020/10/31 08:55:41 rsadowski Exp $
-
 COMMENT-main =		network traffic monitor
 COMMENT-vnstati =	image output support for vnstat
 

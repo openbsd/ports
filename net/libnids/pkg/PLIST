@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2017/08/22 11:11:33 sthen Exp $
 include/nids.h
 lib/libnids.a
 @comment lib/libnids.so

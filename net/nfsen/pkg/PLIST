@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:46:18 espie Exp $
 @pkgpath net/nfsen,-main
 @pkgpath net/nfsen,-web
 @conflict nfsen-web-*

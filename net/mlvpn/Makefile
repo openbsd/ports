@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/04/06 12:36:25 sthen Exp $
-
 COMMENT =		link-aggregation VPN software
 
 V =			2.3.5

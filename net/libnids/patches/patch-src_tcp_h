@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tcp_h,v 1.1 2018/05/15 19:17:05 jasper Exp $
-
 warning: incompatible pointer types passing 'struct bpf_timeval *' to parameter of type 'struct timeval *'
 
 Index: src/tcp.h

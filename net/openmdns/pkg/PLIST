@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/20 19:54:26 bket Exp $
 @newgroup _mdnsd:664
 @newuser _mdnsd:664:_mdnsd:daemon:MDNS Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mdnsd

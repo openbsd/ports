@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
-
 COMMENT =	Lua library for MaxMind GeoIP2/GeoLite2 databases
 
 V =		0.2

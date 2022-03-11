@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/21 09:47:35 op Exp $
-
 COMMENT =	console based XMPP client
 DISTNAME =	profanity-0.11.1
 CATEGORIES =	net

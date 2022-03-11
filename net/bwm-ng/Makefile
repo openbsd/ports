@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/08/01 11:30:36 sthen Exp $
-
 COMMENT=	realtime bandwidth monitoring of interfaces
 
 DISTNAME=	bwm-ng-0.6.1

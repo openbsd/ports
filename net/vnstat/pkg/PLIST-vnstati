@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-vnstati,v 1.1 2015/06/03 12:34:10 pea Exp $
 @conflict vnstat-<1.14p0
 @bin bin/vnstati
 @man man/man1/vnstati.1

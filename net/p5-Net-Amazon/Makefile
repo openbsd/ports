@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:32 sthen Exp $
-
 COMMENT=		Perl Interface to Amazon.{co.uk,com} Web Services
 
 MODULES=		cpan

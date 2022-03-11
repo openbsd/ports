@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/20 20:34:58 tb Exp $
-
 COMMENT =	download client for rtsp, mms and mmsh
 
 V =		1.2.7

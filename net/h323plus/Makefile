@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2021/11/28 17:05:24 tb Exp $
-
 COMMENT=		H.323 video conferencing library
 
 GH_ACCOUNT=		willamowius

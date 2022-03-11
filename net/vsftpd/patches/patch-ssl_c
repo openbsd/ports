@@ -1,5 +1,3 @@
-$OpenBSD: patch-ssl_c,v 1.1 2021/07/15 17:07:07 sthen Exp $
-
 Index: ssl.c
 --- ssl.c.orig
 +++ ssl.c

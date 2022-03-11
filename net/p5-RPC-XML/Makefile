@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT=	perl implementation of XML-RPC
 
 MODULES=	cpan

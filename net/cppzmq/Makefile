@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/10/26 14:46:30 jasper Exp $
-
 COMMENT =		C++ bindings for ZeroMQ
 
 GH_ACCOUNT =		zeromq

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.58 2021/10/13 23:31:43 namn Exp $
-
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
 GH_ACCOUNT =	jedisct1

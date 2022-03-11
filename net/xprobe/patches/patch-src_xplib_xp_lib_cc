@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_xplib_xp_lib_cc,v 1.1 2018/04/08 19:14:26 jasper Exp $
-
 Index: src/xplib/xp_lib.cc
 --- src/xplib/xp_lib.cc.orig
 +++ src/xplib/xp_lib.cc

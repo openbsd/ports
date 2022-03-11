@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2018/09/04 12:46:18 espie Exp $
 @man man/man5/pptpd.conf.5
 @man man/man8/pptpctrl.8
 @man man/man8/pptpd.8

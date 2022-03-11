@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/08/17 19:16:23 jasper Exp $
-
 COMMENT =		open source message queue optimised for performance
 
 V =			4.3.4

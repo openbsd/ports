@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: openfire.rc,v 1.6 2018/01/11 19:27:07 rpe Exp $
 
 OPENFIRE_HOME="${TRUEPREFIX}/openfire"
 OPENFIRE_LIB="${OPENFIRE_HOME}/lib"

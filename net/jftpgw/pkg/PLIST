@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/02/22 11:55:59 sthen Exp $
 @man man/man1/jftpgw.1
 @bin sbin/jftpgw
 share/examples/jftpgw/

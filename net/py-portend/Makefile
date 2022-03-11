@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/26 08:16:46 sthen Exp $
-
 COMMENT =		monitor TCP ports for bound or unbound states
 
 MODPY_EGG_VERSION =	3.1.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_ed_cpp,v 1.3 2017/11/04 15:54:10 jeremy Exp $
-
 Index: ext/ed.cpp
 --- ext/ed.cpp.orig
 +++ ext/ed.cpp

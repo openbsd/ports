@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:24 sthen Exp $
-
 COMMENT=		high-level C binding for ZeroMQ
 
 V =			4.0.2

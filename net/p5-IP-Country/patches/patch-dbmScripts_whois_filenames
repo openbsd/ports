@@ -1,5 +1,3 @@
-$OpenBSD: patch-dbmScripts_whois_filenames,v 1.1 2017/09/07 16:52:55 giovanni Exp $
-
 Index: dbmScripts/whois_filenames
 --- dbmScripts/whois_filenames.orig
 +++ dbmScripts/whois_filenames

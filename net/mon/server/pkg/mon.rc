@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mon.rc,v 1.7 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/mon"
 daemon_flags="-c ${SYSCONFDIR}/mon/mon.cf -f -P /var/run/mon/mon.pid"

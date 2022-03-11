@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/03/10 14:03:07 kn Exp $
-
 # CMake Warning at cmake/arch.cmake:114 (message):
 #   Unsupported CPU architecture.
 # ...

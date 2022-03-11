@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.32 2022/01/20 09:18:49 sthen Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/mrtg

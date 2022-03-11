@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_C,v 1.1 2018/04/12 17:52:47 jasper Exp $
-
 error: case value evaluates to -1, which cannot be narrowed to type 'size_t' (aka 'unsigned long')
 
 Index: main.C

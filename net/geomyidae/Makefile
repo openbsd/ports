@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:26 sthen Exp $
-
 COMMENT =		Gopher protocol daemon
 
 DISTNAME =		geomyidae-v0.34

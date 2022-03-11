@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT =	Tcl bindings for Curl
 
 V =		7.19.6

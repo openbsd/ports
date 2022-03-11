@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/06/04 13:53:13 tb Exp $
 @man man/man5/wifind.conf.5
 @man man/man8/wifind.8
 sbin/wifind

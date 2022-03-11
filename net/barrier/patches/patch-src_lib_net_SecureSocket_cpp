@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_net_SecureSocket_cpp,v 1.2 2022/01/02 16:47:52 jca Exp $
-
 Use SSL_get_client_ciphers instead of reaching into the SSL_SESSION
 https://github.com/debauchee/barrier/pull/1156
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/03/08 13:59:24 sthen Exp $
-
 COMMENT =		a RPKI-to-Router server
 
 MODGO_MODNAME=		github.com/cloudflare/gortr

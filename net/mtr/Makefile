@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2021/09/02 17:06:14 fcambus Exp $
-
 COMMENT=	network diagnostic tool, similar to ping and traceroute
 
 GH_ACCOUNT=	traviscross

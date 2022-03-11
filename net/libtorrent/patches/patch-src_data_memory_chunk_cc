@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_data_memory_chunk_cc,v 1.1 2017/05/19 22:25:53 espie Exp $
-
 Index: src/data/memory_chunk.cc
 --- src/data/memory_chunk.cc.orig
 +++ src/data/memory_chunk.cc

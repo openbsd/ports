@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/09 16:23:38 sthen Exp $
-
 BROKEN-sparc64 =	ring-0.6.20 does not build on sparc64
 
 COMMENT =		RPKI "relying party" software

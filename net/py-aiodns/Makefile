@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT =		simple DNS resolver for asyncio
 
 MODPY_EGG_VERSION =	3.0.0

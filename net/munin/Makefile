@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.109 2021/11/24 11:20:56 kirby Exp $
-
 PORTROACH = 	limitw:1,even
 
 COMMENT-main =	flexible network host monitoring, client

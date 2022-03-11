@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.23 2021/11/23 09:31:53 sthen Exp $
-
 CATEGORIES +=	net
 
 GH_ACCOUNT =	Icinga

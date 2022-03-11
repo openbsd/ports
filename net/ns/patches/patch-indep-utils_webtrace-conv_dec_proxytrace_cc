@@ -1,4 +1,3 @@
-$OpenBSD: patch-indep-utils_webtrace-conv_dec_proxytrace_cc,v 1.3 2007/10/24 15:01:09 steven Exp $
 --- indep-utils/webtrace-conv/dec/proxytrace.cc.orig	Wed Jul 13 05:51:25 2005
 +++ indep-utils/webtrace-conv/dec/proxytrace.cc	Sat Oct 13 22:22:22 2007
 @@ -2,6 +2,7 @@

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/04/01 07:52:38 bket Exp $
 @conflict py-irclib-*
 @pkgpath net/py-irclib
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ircbot.${MODPY_PYC_MAGIC_TAG}pyc

@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.6 2015/05/29 03:27:27 lteo Exp $
 --- configure.orig	Thu Apr 23 17:25:35 2015
 +++ configure	Sun May 24 16:51:38 2015
 @@ -13562,12 +13562,20 @@ else

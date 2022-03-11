@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/10/15 16:11:57 sebastia Exp $
 @bin bin/dnsget
 @bin bin/rblcheck
 include/udns.h

@@ -1,4 +1,3 @@
-$OpenBSD: patch-netfwd_1,v 1.1 2010/04/08 19:39:06 naddy Exp $
 --- netfwd.1.orig	Thu Apr  8 21:34:31 2010
 +++ netfwd.1	Thu Apr  8 21:37:09 2010
 @@ -89,7 +89,7 @@ flowcontrol: X|H|N (X - Xon/Xoff, H - full hardware, N

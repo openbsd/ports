@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: pf_changes,v 1.2 2014/11/08 20:08:20 kirby Exp $
-#
 # Script to monitor OpenBSD pf statistics
 #
 # (c) 2010 Michael Knudsen <mk@openbsd.org>

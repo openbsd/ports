@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/09/10 04:30:50 rsadowski Exp $
 include/strophe.h
 @static-lib lib/libstrophe.a
 lib/libstrophe.la

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT=		Python bindings to wrap the libsmbclient API
 
 MODPY_EGG_VERSION=	1.0.23

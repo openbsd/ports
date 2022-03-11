@@ -1,5 +1,3 @@
-$OpenBSD: patch-emulate_tap_cc,v 1.1 2018/04/12 15:07:38 naddy Exp $
-
 Index: emulate/tap.cc
 --- emulate/tap.cc.orig
 +++ emulate/tap.cc

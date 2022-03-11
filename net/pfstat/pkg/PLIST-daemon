@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-daemon,v 1.5 2011/06/23 22:50:28 naddy Exp $
 @bin bin/pfstatd
 @man man/man8/pfstatd.8
 @rcscript ${RCDIR}/pfstatd

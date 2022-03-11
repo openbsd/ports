@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-asn,v 1.1 2017/06/23 11:40:36 fcambus Exp $
 share/examples/libmaxminddb/
 @sample ${LOCALSTATEDIR}/db/GeoIP/
 share/examples/libmaxminddb/GeoLite2-ASN.mmdb

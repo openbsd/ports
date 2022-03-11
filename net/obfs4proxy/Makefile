@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:25 sthen Exp $
-
 COMMENT =		a look-like nothing obfuscation protocol for TCP
 
 DISTNAME =		obfs4proxy-0.0.7

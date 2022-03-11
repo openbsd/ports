@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/02/03 17:33:12 sthen Exp $
-
 COMMENT=	BIND stub resolver library for special use cases
 
 # XXX As mentioned in pkg/DESCR:

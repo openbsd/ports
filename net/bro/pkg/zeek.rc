@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: zeek.rc,v 1.1 2019/11/25 07:57:43 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/zeekctl"
 daemon_flags="start"

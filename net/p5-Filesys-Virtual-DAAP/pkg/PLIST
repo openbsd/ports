@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/22 19:40:01 jasper Exp $
 ${P5SITE}/Filesys/Virtual/DAAP.pm
 @man man/man3p/Filesys::Virtual::DAAP.3p
 share/examples/p5-Filesys-Virtual-DAAP/

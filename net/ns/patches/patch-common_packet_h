@@ -1,4 +1,3 @@
-$OpenBSD: patch-common_packet_h,v 1.2 2017/05/18 23:28:53 espie Exp $
 Index: common/packet.h
 --- common/packet.h.orig
 +++ common/packet.h

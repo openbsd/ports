@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-gui,v 1.3 2019/05/17 15:39:59 sthen Exp $
 @conflict putty-<=0.71p0
 @bin bin/pageant
 @bin bin/pterm

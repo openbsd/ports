@@ -1,5 +1,3 @@
-$OpenBSD: patch-libproxy_url_cpp,v 1.7 2020/12/30 09:25:22 ajacoutot Exp $
-
 https://code.google.com/p/libproxy/issues/detail?id=196&thanks=196&ts=1370457244
 
 Index: libproxy/url.cpp

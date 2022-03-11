@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2020/10/30 19:18:12 jasper Exp $
-
 CATEGORIES ?=		net devel
 
 HOMEPAGE ?=		https://wiki.gnome.org/Projects/GUPnP

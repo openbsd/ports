@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/30 22:02:22 tb Exp $
-
 COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
 DISTNAME=	sslsniffer-1.21

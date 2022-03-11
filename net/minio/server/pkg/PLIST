@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/09/04 12:53:16 espie Exp $
 @newgroup _minio:796
 @newuser _minio:796:_minio:daemon:Minio user:${VARBASE}/minio:/sbin/nologin
 @bin bin/minio

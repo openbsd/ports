@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2018/10/09 07:08:17 rsadowski Exp $
 @bin bin/bitcoin-qt
 @man man/man1/bitcoin-qt.1
 share/pixmaps/

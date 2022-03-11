@@ -1,11 +1,9 @@
-$OpenBSD: patch-Makefile,v 1.4 2010/02/23 21:35:37 sthen Exp $
-
 XXX hand-edited, CVS keywords
 
 --- Makefile.orig	Fri Jul 21 01:03:30 1995
 +++ Makefile	Thu Feb 18 22:15:14 2010
 @@ -2,7 +2,7 @@
- # $Id: patch-Makefile,v 1.4 2010/02/23 21:35:37 sthen Exp $
+ # $Id: patch-Makefile,v 1.5 2022/03/11 19:45:47 naddy Exp $
  #
  MANDIR=/usr/local/man
 -BINDIR=/usr/local/bin

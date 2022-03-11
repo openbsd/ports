@@ -1,5 +1,3 @@
-$OpenBSD: patch-nmap_dns_cc,v 1.1 2021/10/05 05:21:28 tb Exp $
-
 Avoid careless dereferences outside the domain name buffer.
 Part of this is
 https://github.com/nmap/nmap/commit/3adaa69cb211b00f9bfc66263a56cbd87cc9e521

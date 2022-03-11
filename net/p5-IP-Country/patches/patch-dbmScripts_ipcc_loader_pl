@@ -1,5 +1,3 @@
-$OpenBSD: patch-dbmScripts_ipcc_loader_pl,v 1.1 2017/09/07 16:52:55 giovanni Exp $
-
 Index: dbmScripts/ipcc_loader.pl
 --- dbmScripts/ipcc_loader.pl.orig
 +++ dbmScripts/ipcc_loader.pl

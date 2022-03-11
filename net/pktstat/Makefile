@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:43 sthen Exp $
-
 COMMENT=		network traffic viewer
 DISTNAME=		pktstat-1.8.4
 REVISION=		5

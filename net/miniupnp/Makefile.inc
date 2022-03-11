@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2022/02/17 04:34:03 kirby Exp $
-
 CATEGORIES=	net
 
 HOMEPAGE=	https://miniupnp.tuxfamily.org/

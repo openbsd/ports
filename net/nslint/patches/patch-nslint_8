@@ -1,5 +1,3 @@
-$OpenBSD: patch-nslint_8,v 1.3 2021/02/22 13:31:44 sthen Exp $
-
 Index: nslint.8
 --- nslint.8.orig
 +++ nslint.8

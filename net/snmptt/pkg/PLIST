@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/11 12:03:20 jasper Exp $
 @extraunexec rm -rf /var/log/snmptt/*
 sbin/snmptt
 sbin/snmptthandler

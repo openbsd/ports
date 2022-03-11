@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/20 08:11:34 kevlo Exp $
 @bin bin/freetalk
 @info info/freetalk.info
 @man man/man1/freetalk.1

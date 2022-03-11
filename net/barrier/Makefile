@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/02 16:51:17 jca Exp $
-
 COMMENT =		mouse and keyboard sharing utility
 
 GH_ACCOUNT =		debauchee

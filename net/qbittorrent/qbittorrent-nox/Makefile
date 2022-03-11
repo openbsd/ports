@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/07/07 11:53:39 mariani Exp $
-
 COMMENT =		BitTorrent client with web interface
 PKGNAME =		qbittorrent-nox-${VER}
 

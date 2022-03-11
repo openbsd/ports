@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2021/12/20 13:09:12 chrisz Exp $
-
 COMMENT =	open decentralized synchronization utility
 
 V =		1.18.5

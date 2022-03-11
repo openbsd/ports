@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_libutil_asprintf_c,v 1.1 2018/05/11 19:15:53 sthen Exp $
-
 Index: lib/libutil/asprintf.c
 --- lib/libutil/asprintf.c.orig
 +++ lib/libutil/asprintf.c

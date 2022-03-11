@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: xl2tpd.rc,v 1.4 2018/01/14 14:42:18 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/xl2tpd"
 daemon_user="_xl2tpd"

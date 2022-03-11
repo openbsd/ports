@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_cc,v 1.3 2017/05/08 21:40:10 naddy Exp $
-
 Index: main.cc
 --- main.cc.orig
 +++ main.cc

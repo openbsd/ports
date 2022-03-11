@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_websockifyserver_py,v 1.1 2020/03/09 12:43:16 sthen Exp $
-
 Index: tests/test_websockifyserver.py
 --- tests/test_websockifyserver.py.orig
 +++ tests/test_websockifyserver.py

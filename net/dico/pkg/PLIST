@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/23 05:05:11 bentley Exp $
 @newgroup _dicod:831
 @newuser _dicod:831:831:daemon:GNU dictionary server:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/dicod

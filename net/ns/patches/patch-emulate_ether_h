@@ -1,4 +1,3 @@
-$OpenBSD: patch-emulate_ether_h,v 1.1 2003/11/01 20:05:01 sturm Exp $
 --- emulate/ether.h.orig	2003-02-26 17:08:40.000000000 -0500
 +++ emulate/ether.h	2003-08-22 07:45:18.000000000 -0400
 @@ -29,22 +29,22 @@

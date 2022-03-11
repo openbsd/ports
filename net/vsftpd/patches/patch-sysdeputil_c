@@ -1,5 +1,3 @@
-$OpenBSD: patch-sysdeputil_c,v 1.6 2021/07/15 17:07:07 sthen Exp $
-
 Index: sysdeputil.c
 --- sysdeputil.c.orig
 +++ sysdeputil.c

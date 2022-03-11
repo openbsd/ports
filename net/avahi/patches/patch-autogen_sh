@@ -1,5 +1,3 @@
-$OpenBSD: patch-autogen_sh,v 1.3 2020/02/23 16:58:39 ajacoutot Exp $
-
 Use our actual autoconf and automake versions to unbreak build when
 autoconf-2.63 is installed but automake-1.11 is not.
 

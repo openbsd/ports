@@ -1,4 +1,3 @@
-$OpenBSD: patch-icons_Makefile_in,v 1.2 2008/01/22 20:12:48 fgsch Exp $
 --- icons/Makefile.in.orig	Wed Jan  9 11:54:25 2008
 +++ icons/Makefile.in	Wed Jan  9 11:54:35 2008
 @@ -178,7 +178,7 @@ sysconfdir = @sysconfdir@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-core_certmanager_lua,v 1.5 2021/05/14 07:45:26 solene Exp $
-
 Index: core/certmanager.lua
 --- core/certmanager.lua.orig
 +++ core/certmanager.lua

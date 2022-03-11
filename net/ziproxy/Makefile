@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/24 10:55:55 gonzalo Exp $
-
 COMMENT =		compressing non-caching HTTP proxy
 
 DISTNAME =		ziproxy-3.3.2

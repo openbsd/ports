@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:48:33 sthen Exp $
-
 COMMENT =		console interface for nagios
 
 GH_ACCOUNT =		dannywarren

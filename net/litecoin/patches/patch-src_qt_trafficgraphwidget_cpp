@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_qt_trafficgraphwidget_cpp,v 1.1 2021/08/16 05:38:03 rsadowski Exp $
-
 Index: src/qt/trafficgraphwidget.cpp
 --- src/qt/trafficgraphwidget.cpp.orig
 +++ src/qt/trafficgraphwidget.cpp

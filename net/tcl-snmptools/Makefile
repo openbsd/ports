@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/02/02 19:35:13 matthieu Exp $
-
 COMMENT =	Tcl package that provides SNMP tools
 
 V =		1.0

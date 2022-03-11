@@ -1,5 +1,3 @@
-$OpenBSD: patch-libpurple_purple-remote,v 1.9 2021/10/13 13:56:07 sthen Exp $
-
 Index: libpurple/purple-remote
 --- libpurple/purple-remote.orig
 +++ libpurple/purple-remote

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_url_h,v 1.1 2019/01/05 23:06:38 uaa Exp $
 Index: src/url.h
 --- src/url.h.orig
 +++ src/url.h

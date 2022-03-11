@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_lib_arc4random_h,v 1.1 2013/10/22 19:48:49 jca Exp $
 OpenBSD does not need nor provide arc4random_(addrandom|stir)
 --- src/lib/arc4random.h.orig	Sun Sep 11 16:28:28 2011
 +++ src/lib/arc4random.h	Tue Oct 22 19:04:07 2013

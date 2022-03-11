@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:26 sthen Exp $
-
 COMMENT =		dump unencrypted RTMP media streams
 
 DISTNAME =		flvstreamer-2.1c1

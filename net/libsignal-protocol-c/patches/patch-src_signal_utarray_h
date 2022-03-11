@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_signal_utarray_h,v 1.1 2021/02/15 21:35:57 naddy Exp $
-
 Index: src/signal_utarray.h
 --- src/signal_utarray.h.orig
 +++ src/signal_utarray.h

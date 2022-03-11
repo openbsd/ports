@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/09/19 13:36:24 ajacoutot Exp $
-
 COMMENT=		dLeyna utility functions library
 
 GH_PROJECT=		dleyna-core

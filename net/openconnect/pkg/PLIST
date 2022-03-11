@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.20 2022/02/21 11:13:34 sthen Exp $
 include/openconnect.h
 @static-lib lib/libopenconnect.a
 lib/libopenconnect.la

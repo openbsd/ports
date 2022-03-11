@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/01/26 17:36:50 rsadowski Exp $
 COMMENT =	Qt/C++ library wrapper for the GPodder
 
 V =		1.1.0

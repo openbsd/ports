@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:34 sthen Exp $
-
 COMMENT =	library for inspection of data on various network layers
 
 DISTNAME =	Net-Inspect-0.330

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:42 sthen Exp $
-
 COMMENT=		threaded DNS daemon, optimized for caching
 
 DISTNAME=		pdnsd-1.2.9a-par

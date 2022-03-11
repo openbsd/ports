@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/10/14 16:52:03 solene Exp $
-
 COMMENT =	lightweight Tox client
 
 V =		0.18.1

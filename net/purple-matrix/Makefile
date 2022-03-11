@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/02 16:37:32 landry Exp $
-
 COMMENT =		libpurple plugin for connecting to Matrix network
 
 DISTNAME =		purple-matrix-0.20191228

@@ -1,4 +1,3 @@
-$OpenBSD: patch-pcap_pkthdr_cc,v 1.2 2016/10/31 16:01:22 phessler Exp $
 --- pcap_pkthdr.cc.orig	Sun Oct 30 14:05:35 2016
 +++ pcap_pkthdr.cc	Sun Oct 30 14:05:35 2016
 @@ -23,7 +23,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/05/24 17:52:54 sthen Exp $
-
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 

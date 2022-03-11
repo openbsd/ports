@@ -1,4 +1,3 @@
-$OpenBSD: patch-librtsp_rtspprot_cpp,v 1.2 2019/05/16 16:07:06 bluhm Exp $
 Index: librtsp/rtspprot.cpp
 --- librtsp/rtspprot.cpp.orig
 +++ librtsp/rtspprot.cpp

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: vnstatd.rc,v 1.6 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/vnstatd -d"
 daemon_user="_vnstat"

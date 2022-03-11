@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=	tool for extracting and gluing pcap (tcpdump) files
 
 GH_ACCOUNT=	the-tcpdump-group

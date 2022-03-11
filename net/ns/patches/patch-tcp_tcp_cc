@@ -1,5 +1,3 @@
-$OpenBSD: patch-tcp_tcp_cc,v 1.2 2018/04/12 15:07:38 naddy Exp $
-
 Index: tcp/tcp.cc
 --- tcp/tcp.cc.orig
 +++ tcp/tcp.cc

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libapp_types_h,v 1.1 2019/05/16 16:07:06 bluhm Exp $
-
 Index: libapp/types.h
 --- libapp/types.h.orig
 +++ libapp/types.h

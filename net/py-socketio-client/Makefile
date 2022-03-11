@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		python socket.io client library
 
 MODPY_EGG_VERSION =	0.6.7

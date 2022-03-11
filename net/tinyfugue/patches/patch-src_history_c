@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_history_c,v 1.1 2010/05/24 10:10:39 espie Exp $
 --- src/history.c.orig	Mon May 24 12:07:15 2010
 +++ src/history.c	Mon May 24 12:08:26 2010
 @@ -66,7 +66,9 @@ static Aline blankline[1] = { BLANK_ALINE };

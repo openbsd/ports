@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/12/07 20:09:36 wilfried Exp $
 ${P5SITE}/POE/Component/Pcap.pm
 @man man/man3p/POE::Component::Pcap.3p

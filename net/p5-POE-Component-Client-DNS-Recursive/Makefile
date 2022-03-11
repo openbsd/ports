@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT =	recursive DNS client for POE
 
 DISTNAME =	POE-Component-Client-DNS-Recursive-1.12

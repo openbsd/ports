@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:48:30 sthen Exp $
-
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
 VER=		1.12.2

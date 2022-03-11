@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/17 14:46:33 danj Exp $
-
 COMMENT=	automated domain testing tool
 
 DISTNAME=	doc-2.2.3

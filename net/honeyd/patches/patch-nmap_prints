@@ -1,4 +1,3 @@
-$OpenBSD: patch-nmap_prints,v 1.2 2007/07/25 22:27:01 rui Exp $
 --- nmap.prints.orig	Mon May 28 07:05:05 2007
 +++ nmap.prints	Wed Jul 18 11:55:09 2007
 @@ -662,18 +662,6 @@ T6(DF=N%W=0%ACK=O%Flags=R%Ops=)

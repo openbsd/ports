@@ -1,5 +1,3 @@
-$OpenBSD: patch-rsync_1,v 1.8 2020/08/26 12:15:56 sthen Exp $
-
 Index: rsync.1
 --- rsync.1.orig
 +++ rsync.1

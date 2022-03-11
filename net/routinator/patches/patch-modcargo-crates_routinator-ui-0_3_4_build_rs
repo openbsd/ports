@@ -1,5 +1,3 @@
-$OpenBSD: patch-modcargo-crates_routinator-ui-0_3_4_build_rs,v 1.1 2021/11/08 12:38:30 tb Exp $
-
 Index: modcargo-crates/routinator-ui-0.3.4/build.rs
 --- modcargo-crates/routinator-ui-0.3.4/build.rs.orig
 +++ modcargo-crates/routinator-ui-0.3.4/build.rs

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.4 2019/07/12 21:07:46 sthen Exp $
-
 V = 	1.2.0
 
 CATEGORIES = net

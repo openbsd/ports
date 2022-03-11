@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/01/20 14:12:16 abieber Exp $
-
 COMMENT =	minimalist and opinionated feed reader
 
 MODGO_MODNAME =	miniflux.app

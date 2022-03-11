@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/09/02 19:56:24 sebastia Exp $
 ${GEM_BIN}/catstomp${GEM_BIN_SUFFIX}
 ${GEM_BIN}/stompcat${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem

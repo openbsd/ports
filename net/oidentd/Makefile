@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:35 sthen Exp $
-
 COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.8
 REVISION=	1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.82 2021/09/11 14:11:52 ajacoutot Exp $
-
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
 DISTNAME=	pure-ftpd-1.0.49

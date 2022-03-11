@@ -1,5 +1,3 @@
-$OpenBSD: patch-Foundation_src_Environment_VX_cpp,v 1.1 2017/09/27 08:13:00 phessler Exp $
-
 Index: Foundation/src/Environment_VX.cpp
 --- Foundation/src/Environment_VX.cpp.orig
 +++ Foundation/src/Environment_VX.cpp

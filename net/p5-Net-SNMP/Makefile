@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/08/11 13:09:49 martijn Exp $
-
 COMMENT=	Perl modules to access SNMP
 
 MODULES=	cpan

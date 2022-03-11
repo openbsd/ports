@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/08/10 15:14:56 solene Exp $
 @bin bin/clic
 @man man/man1/clic.1

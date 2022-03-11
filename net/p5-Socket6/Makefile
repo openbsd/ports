@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/07/03 21:45:38 sthen Exp $
-
 COMMENT =	Perl defines relating to AF_INET6 sockets
 
 DISTNAME =	Socket6-0.29

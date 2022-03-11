@@ -1,4 +1,3 @@
-$OpenBSD: patch-files_regex,v 1.1 2011/09/20 15:20:03 ajacoutot Exp $
 --- files/regex.orig	Tue Aug 16 11:05:50 2011
 +++ files/regex	Tue Aug 16 11:05:53 2011
 @@ -1,2 +1,2 @@

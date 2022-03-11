@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/02/01 20:15:46 sthen Exp $
-
 COMMENT-main=	${COMMENT}
 COMMENT-doc=	${COMMENT} (documentation)
 

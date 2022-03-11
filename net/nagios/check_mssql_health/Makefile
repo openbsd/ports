@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/07 10:48:40 sthen Exp $
-
 COMMENT=		Nagios plugin to check Microsoft SQL Server
 
 DISTNAME=		check_mssql_health-2.7.2.2

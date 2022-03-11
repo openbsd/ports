@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:29 sthen Exp $
-
 COMMENT=		set of internet protocol service daemons for Unix
 
 DISTNAME=		ipsvd-0.12.1

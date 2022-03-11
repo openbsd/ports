@@ -1,5 +1,3 @@
-$OpenBSD: patch-conf_zabbix_server_conf,v 1.13 2021/07/02 10:53:06 robert Exp $
-
 Index: conf/zabbix_server.conf
 --- conf/zabbix_server.conf.orig
 +++ conf/zabbix_server.conf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/11/02 00:01:43 sthen Exp $
-
 COMMENT =		Python bindings for ZeroMQ
 
 MODPY_EGG_VERSION =	22.3.0

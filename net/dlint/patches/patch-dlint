@@ -1,4 +1,3 @@
-$OpenBSD: patch-dlint,v 1.1 2008/02/16 10:44:00 rui Exp $
 --- dlint.orig	Sun Jun 10 18:48:36 2007
 +++ dlint	Sat Feb 16 09:49:06 2008
 @@ -319,10 +319,10 @@ i=1

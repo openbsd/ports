@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 21:02:23 sthen Exp $
-
 COMMENT=	userland arp-proxy daemon
 
 DISTNAME=	arpcatch

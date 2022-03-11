@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_sysinfo_h,v 1.4 2021/04/01 07:15:38 robert Exp $
-
 Add ZBX_CPU_STATE_SPIN to monitor CP_SPIN
 
 Index: include/sysinfo.h

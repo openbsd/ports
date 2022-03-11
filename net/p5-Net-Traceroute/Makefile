@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:40 sthen Exp $
-
 COMMENT=		traceroute(1) functionality in perl
 
 MODULES=		cpan

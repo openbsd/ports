@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/01/21 08:14:36 solene Exp $
-
 COMMENT=	distributed document delivery client
 
 V=		3.0.17

@@ -1,5 +1,3 @@
-$OpenBSD: patch-main_cc,v 1.4 2018/04/16 23:16:52 schwarze Exp $
-
 clang6 fix: cannot store 0xff etc. in a char
 
 Index: main.cc

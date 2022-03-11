@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:48:50 sthen Exp $
-
 CATEGORIES =		net/tkabber x11
 
 HOMEPAGE =		http://tkabber.jabber.ru/

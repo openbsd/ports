@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/23 19:39:35 sthen Exp $
-
 COMMENT =	TACACS+ AAA service, often used with network equipment
 
 V =		4.0.4.28

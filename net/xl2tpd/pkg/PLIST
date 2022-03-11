@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/09/09 13:19:15 sthen Exp $
 @newgroup _xl2tpd:711
 @newuser _xl2tpd:711:_xl2tpd:daemon:xl2tpd user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/xl2tpd

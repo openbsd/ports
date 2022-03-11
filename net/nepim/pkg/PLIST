@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/01/26 09:57:15 ajacoutot Exp $
 @bin bin/nepim
 share/doc/nepim/
 share/doc/nepim/README

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/20 20:18:28 tb Exp $
-
 COMMENT=		simple hostname scanner
 
 DISTNAME=		plushs-1.2

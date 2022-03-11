@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_socket_h,v 1.1 2021/02/10 20:27:48 naddy Exp $
-
 Index: src/socket.h
 --- src/socket.h.orig
 +++ src/socket.h

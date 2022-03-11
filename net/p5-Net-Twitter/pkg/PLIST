@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2015/08/25 08:21:44 benoit Exp $
 ${P5SITE}/Net/Identica.pm
 ${P5SITE}/Net/Twitter/
 ${P5SITE}/Net/Twitter.pm

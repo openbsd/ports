@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:53 sthen Exp $
-
 COMMENT=	gzip-aware file mirroring over http
 
 DISTNAME=	zsync-0.6.2

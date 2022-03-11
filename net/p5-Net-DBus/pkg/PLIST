@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/12/28 09:45:38 ajacoutot Exp $
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DBus/
 ${P5ARCH}/Net/DBus.pm

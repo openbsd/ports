@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/09/02 10:36:50 sebastia Exp $
-
 COMMENT=	redirect programs through one or more proxies
 
 VERSION=	4.15

@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2010/06/26 14:32:15 ckuethe Exp $
 --- configure.orig	Fri Jun 25 21:20:03 2010
 +++ configure	Fri Jun 25 21:38:41 2010
 @@ -6433,12 +6433,12 @@ cat >>conftest.$ac_ext <<_ACEOF

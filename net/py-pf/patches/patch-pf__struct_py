@@ -1,5 +1,3 @@
-$OpenBSD: patch-pf__struct_py,v 1.4 2022/01/14 16:51:25 sthen Exp $
-
 sync with sys/net/pfvar.h -r1.505
 
 Index: pf/_struct.py

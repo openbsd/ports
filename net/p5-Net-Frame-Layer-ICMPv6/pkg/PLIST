@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/15 17:47:56 gsoares Exp $
 ${P5SITE}/Net/Frame/Layer/ICMPv6/
 ${P5SITE}/Net/Frame/Layer/ICMPv6.pm
 ${P5SITE}/Net/Frame/Layer/ICMPv6/DestUnreach.pm

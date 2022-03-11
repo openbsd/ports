@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile,v 1.3 2022/01/07 20:26:38 rsadowski Exp $
-
 fix directories
 
 Index: makefile

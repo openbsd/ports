@@ -1,4 +1,3 @@
-$OpenBSD: patch-PctestIpv4Raw_cc,v 1.1 2005/09/07 08:52:01 markus Exp $
 --- PctestIpv4Raw.cc.orig	Fri May 11 18:53:22 2001
 +++ PctestIpv4Raw.cc	Thu Aug 25 10:15:20 2005
 @@ -161,13 +161,13 @@ int PctestIpv4Raw::Test(TestRecord &tr)

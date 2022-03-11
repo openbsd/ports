@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tcp_c,v 1.1 2018/05/15 19:17:05 jasper Exp $
-
 https://github.com/MITRECND/libnids/commit/81d7ac0d09cb5c98cf8eff9e6aaba1f4eb5ed519
 
 Index: src/tcp.c

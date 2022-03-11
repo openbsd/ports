@@ -1,4 +1,3 @@
-$OpenBSD: patch-admin_Makefile_in,v 1.5 2017/02/07 01:39:59 gonzalo Exp $
 --- admin/Makefile.in.orig	Mon Jan  4 18:07:07 2016
 +++ admin/Makefile.in	Tue Jan 31 09:32:55 2017
 @@ -70,7 +70,7 @@ am__make_running_with_option = \

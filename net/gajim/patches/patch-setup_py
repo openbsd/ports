@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.3 2021/03/22 18:16:10 paco Exp $
-
 Use correct location and do not compress man pages.
 
 Index: setup.py

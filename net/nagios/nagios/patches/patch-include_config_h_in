@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_config_h_in,v 1.10 2021/02/24 13:05:14 sthen Exp $
-
 Index: include/config.h.in
 --- include/config.h.in.orig
 +++ include/config.h.in

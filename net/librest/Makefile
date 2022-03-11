@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:48:31 sthen Exp $
-
 COMMENT =	access web services that claim to be RESTful
 
 GNOME_VERSION =	0.8.1

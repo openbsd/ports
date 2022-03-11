@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/31 08:34:58 op Exp $
-
 COMMENT	=	eventing, networking & crypto for async applications
 PKGNAME =	${DISTNAME:L}
 

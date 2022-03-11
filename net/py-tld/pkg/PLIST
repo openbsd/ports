@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/10/29 15:38:49 sthen Exp $
 @pkgpath net/py-tld
 @conflict py-tld-<0.9.3p1
 bin/update-tld-names

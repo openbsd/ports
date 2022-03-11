@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:17:39 espie Exp $
 bin/digparse
 bin/dlint
 @man man/man1/dlint.1

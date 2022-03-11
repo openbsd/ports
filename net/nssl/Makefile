@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=		netcat-like program with transparent SSL support
 
 DISTNAME=		nssl.005

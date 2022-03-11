@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_h235auth1_cxx,v 1.1 2021/11/28 17:05:24 tb Exp $
-
 Unbreak build with opaque EVP_MD_CTX in LibreSSL 3.5.
 
 Index: src/h235auth1.cxx

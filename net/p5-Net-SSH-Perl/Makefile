@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:36 sthen Exp $
-
 COMMENT =	perl implementation of the SSH1 and SSH2 protocols
 
 MODULES =	cpan

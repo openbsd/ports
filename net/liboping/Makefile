@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2022/02/26 12:29:54 sthen Exp $
-
 COMMENT =	library and tools to generate ICMP echo requests
 
 DISTNAME =	liboping-1.10.0

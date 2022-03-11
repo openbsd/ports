@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/24 20:39:50 avsm Exp $
 bin/yafc
 @info info/yafc.info
 @man man/man1/yafc.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/16 23:02:19 sthen Exp $
-
 COMMENT=	deprecated full screen FTP client
 
 DISTNAME=	cftp-0.12

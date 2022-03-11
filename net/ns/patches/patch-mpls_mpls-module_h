@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpls_mpls-module_h,v 1.2 2007/10/24 15:01:09 steven Exp $
 --- mpls/mpls-module.h.orig	Thu Aug 25 20:58:09 2005
 +++ mpls/mpls-module.h	Sat Oct 13 22:22:22 2007
 @@ -55,7 +55,7 @@

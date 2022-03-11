@@ -1,4 +1,3 @@
-$OpenBSD: patch-theme_c,v 1.2 2015/09/23 09:44:55 dcoppa Exp $
 --- theme.c.orig	Wed Sep 23 09:44:38 2015
 +++ theme.c	Wed Sep 23 09:45:42 2015
 @@ -58,14 +58,14 @@ int theme_readfile(theme *t, char *name)

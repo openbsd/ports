@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_routinator_conf_system-service,v 1.2 2020/10/19 18:49:05 sthen Exp $
-
 Index: etc/routinator.conf.system-service
 --- etc/routinator.conf.system-service.orig
 +++ etc/routinator.conf.system-service

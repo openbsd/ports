@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: rabbitmq.rc,v 1.7 2021/02/19 13:38:33 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/rabbitmq-server -detached"
 daemon_user="_rabbitmq"

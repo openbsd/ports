@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/26 14:32:15 ckuethe Exp $
 @bin bin/ap-auth
 @bin bin/ap-config
 @bin bin/ap-gl

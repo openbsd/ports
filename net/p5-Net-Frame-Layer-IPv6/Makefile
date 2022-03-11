@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:33 sthen Exp $
-
 COMMENT=	Internet Protocol v6 layer object
 
 MODULES=	cpan

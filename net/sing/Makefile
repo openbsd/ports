@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=	send ICMP nasty garbage
 
 DISTNAME=	SING-1.1

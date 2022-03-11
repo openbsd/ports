@@ -1,5 +1,3 @@
-$OpenBSD: patch-dns_resolver_py,v 1.1 2021/01/16 21:21:04 sthen Exp $
-
 openbsd doesn't have v4mapped
 
 Index: dns/resolver.py

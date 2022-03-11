@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:28 sthen Exp $
-
 COMMENT=	TCP/IP traffic logging tool
 
 DISTNAME=	iplog-2.2.3

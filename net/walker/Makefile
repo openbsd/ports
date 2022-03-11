@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:51 sthen Exp $
-
 COMMENT=	retrieve DNS zone via DNSSEC NXT/NSEC traversal
 
 DISTNAME=	walker-3.8

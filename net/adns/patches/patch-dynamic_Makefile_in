@@ -1,4 +1,3 @@
-$OpenBSD: patch-dynamic_Makefile_in,v 1.2 2016/04/27 15:42:55 jca Exp $
 --- dynamic/Makefile.in.orig	Mon Oct 20 01:07:01 2014
 +++ dynamic/Makefile.in	Wed Apr 27 16:40:21 2016
 @@ -32,8 +32,6 @@ ALLOBJS=	$(addsuffix _p.o, $(basename $(LIBOBJS)))

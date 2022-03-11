@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/05/15 16:41:46 ajacoutot Exp $
 include/dleyna-1.0/libdleyna/server/
 include/dleyna-1.0/libdleyna/server/control-point-server.h
 lib/dleyna-server/

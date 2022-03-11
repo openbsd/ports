@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/07/26 20:29:45 kn Exp $
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/${MODPY_PYCACHE}txtorcon_endpoint_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/plugins/txtorcon_endpoint_parser.py
 lib/python${MODPY_VERSION}/site-packages/txtorcon/

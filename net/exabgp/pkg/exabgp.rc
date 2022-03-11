@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: exabgp.rc,v 1.1 2019/07/11 14:14:52 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/exabgp --env ${SYSCONFDIR}/exabgp/exabgp.daemon.env"
 daemon_flags="${SYSCONFDIR}/exabgp/exabgp.conf"

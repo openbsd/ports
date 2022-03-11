@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/23 18:10:39 rsadowski Exp $
-
 COMMENT =	Qt-based client-side and server-side SOAP component
 
 DISTNAME =	kdsoap-1.10.0

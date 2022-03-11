@@ -1,5 +1,3 @@
-$OpenBSD: patch-nping_Crypto_cc,v 1.1 2022/01/14 10:49:27 tb Exp $
-
 Index: nping/Crypto.cc
 --- nping/Crypto.cc.orig
 +++ nping/Crypto.cc

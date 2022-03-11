@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.8 2018/08/20 10:50:45 ajacoutot Exp $
-
 We only use versioned libraries (.so.X.Y versus .so).
 
 Index: Makefile.in

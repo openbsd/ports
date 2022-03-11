@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.97 2022/01/20 09:18:49 sthen Exp $
-
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.17.10

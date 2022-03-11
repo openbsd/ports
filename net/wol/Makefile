@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/17 14:46:34 danj Exp $
-
 COMMENT=		Wake On Lan client
 
 DISTNAME=		wol-0.7.1

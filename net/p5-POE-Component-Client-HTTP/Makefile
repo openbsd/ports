@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:37 sthen Exp $
-
 COMMENT=	POE HTTP user-agent component
 
 MODULES=	cpan

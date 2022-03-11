@@ -1,5 +1,3 @@
-$OpenBSD: patch-share_etter_conf_v6,v 1.1 2021/03/01 20:23:18 sthen Exp $
-
 Index: share/etter.conf.v6
 --- share/etter.conf.v6.orig
 +++ share/etter.conf.v6

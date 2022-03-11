@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_srvc_aware_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
-
 https://bugzilla.redhat.com/show_bug.cgi?id=750023
 
 --- src/srvc_aware.c.orig	Thu Dec  8 23:02:11 2005

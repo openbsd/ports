@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugins_node_d_mailscanner_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
 --- plugins/node.d/mailscanner.in.orig	Fri Aug 31 19:22:50 2012
 +++ plugins/node.d/mailscanner.in	Sun Sep 30 23:20:20 2012
 @@ -15,11 +15,11 @@ The following environment variables are used by this p

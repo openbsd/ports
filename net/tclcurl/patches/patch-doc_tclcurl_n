@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_tclcurl_n,v 1.1 2015/02/17 19:47:01 naddy Exp $
 --- doc/tclcurl.n.orig	Mon Sep 28 14:52:48 2009
 +++ doc/tclcurl.n	Tue Feb 17 19:16:16 2015
 @@ -1,7 +1,7 @@

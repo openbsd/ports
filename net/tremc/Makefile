@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/26 08:57:01 op Exp $
-
 COMMENT =		curses interface for transmission
 
 GH_ACCOUNT =		tremc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT=		TCP dump file analysis tool
 
 DISTNAME=		tcptrace-6.6.7

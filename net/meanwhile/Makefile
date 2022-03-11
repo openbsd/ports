@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:48:32 sthen Exp $
-
 COMMENT=	implementation of Lotus Sametime Community Client protocol
 
 DISTNAME=	meanwhile-1.0.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:48 sthen Exp $
-
 COMMENT =	Ruby implementation of Net::DNS
 
 DISTNAME =	net-dns-0.8.0

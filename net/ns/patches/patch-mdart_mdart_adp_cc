@@ -1,5 +1,3 @@
-$OpenBSD: patch-mdart_mdart_adp_cc,v 1.1 2017/05/18 23:28:53 espie Exp $
-
 Index: mdart/mdart_adp.cc
 --- mdart/mdart_adp.cc.orig
 +++ mdart/mdart_adp.cc

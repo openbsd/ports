@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/02/24 16:49:01 sthen Exp $
-
 COMMENT=	graphical network traffic map
 
 DISTNAME=	php-weathermap-0.97c

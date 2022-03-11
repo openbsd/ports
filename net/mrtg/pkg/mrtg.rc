@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: mrtg.rc,v 1.6 2018/01/11 19:27:06 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/mrtg --daemon"
 daemon_flags="--user _mrtg --group _mrtg --confcache-file /tmp/mrtg.ok --lock-file /tmp/mrtg_lock --pid-file /var/run/mrtg.pid"

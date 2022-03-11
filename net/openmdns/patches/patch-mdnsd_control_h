@@ -1,5 +1,3 @@
-$OpenBSD: patch-mdnsd_control_h,v 1.1 2021/02/20 19:54:26 bket Exp $
-
 Fix -fno-common build error. Taken from
 https://svnweb.freebsd.org/ports?view=revision&revision=549579
 

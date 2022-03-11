@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_ref_h,v 1.1 2018/01/29 21:44:30 gsoares Exp $
-
 Index: src/common/ref.h
 --- src/common/ref.h.orig
 +++ src/common/ref.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_afpd_volume_h,v 1.1 2021/02/17 15:57:42 naddy Exp $
-
 Index: etc/afpd/volume.h
 --- etc/afpd/volume.h.orig
 +++ etc/afpd/volume.h

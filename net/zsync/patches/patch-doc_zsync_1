@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_zsync_1,v 1.1 2015/02/17 19:47:01 naddy Exp $
 --- doc/zsync.1.orig	Thu Sep 16 19:17:49 2010
 +++ doc/zsync.1	Tue Feb 17 20:41:19 2015
 @@ -22,7 +22,7 @@ zsync retrieves the rest of the target file over HTTP.

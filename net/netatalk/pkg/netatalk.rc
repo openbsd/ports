@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: netatalk.rc,v 1.9 2018/01/14 14:42:18 rpe Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user, daemon_timeout and daemon_class are not

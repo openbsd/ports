@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2020/10/31 08:55:41 rsadowski Exp $
 @pkgpath net/vnstat
 @newgroup _vnstat:658
 @newuser _vnstat:658:_vnstat:daemon:vnstat daemon:/var/db/vnstat:/sbin/nologin

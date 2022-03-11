@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.57 2022/01/18 13:00:31 kirby Exp $
-
 COMMENT =		owncloud sync client
 
 V = 			2.10.0.6519

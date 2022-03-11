@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/01/02 16:40:03 benoit Exp $
-
 COMMENT =	support for the SSH 2 protocol via libssh2
 
 DISTNAME =	Net-SSH2-0.72

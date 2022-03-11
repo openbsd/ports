@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		slixmpp is an elegant Python library for XMPP
 
 MODPY_EGG_VERSION =	1.7.1

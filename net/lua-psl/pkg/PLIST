@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/29 18:33:27 fcambus Exp $
 lib/lua/${MODLUA_VERSION}/psl.so
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/index.md

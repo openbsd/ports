@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT=	Perl module for SMTP with TLS/AUTH support
 
 MODULES=	cpan

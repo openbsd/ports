@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fe-common_core_Makefile_in,v 1.14 2021/05/26 13:50:02 sthen Exp $
-
 Index: src/fe-common/core/Makefile.in
 --- src/fe-common/core/Makefile.in.orig
 +++ src/fe-common/core/Makefile.in

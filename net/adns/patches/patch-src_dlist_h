@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dlist_h,v 1.2 2016/04/27 15:42:55 jca Exp $
 --- src/dlist.h.orig	Mon Oct 20 01:07:03 2014
 +++ src/dlist.h	Wed Apr 27 16:40:21 2016
 @@ -27,6 +27,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/04/24 16:26:56 sthen Exp $
-
 COMMENT =		Tk client for the Jabber instant messaging system
 
 DISTNAME =		tkabber-${VERSION}

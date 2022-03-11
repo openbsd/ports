@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:26 sthen Exp $
-
 COMMENT =	FTP listing and transfer tools
 
 DISTNAME =	ftpcopy-0.6.7

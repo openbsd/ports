@@ -1,5 +1,3 @@
-$OpenBSD: patch-auxil_zeek-archiver_zeek-archiver_cc,v 1.2 2021/03/06 09:35:09 ajacoutot Exp $
-
 /usr/include/c++/v1/__bsd_locale_fallbacks.h:123:17: error: use of undeclared identifier 'vasprintf'; did you mean 'vsprintf'?
 zeek-archiver.cc:617:14: error: use of undeclared identifier 'strptime'
 

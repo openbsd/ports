@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_buffer_h,v 1.2 2013/11/25 15:27:56 dcoppa Exp $
 --- src/buffer.h.orig	Fri Jun 14 13:27:32 2013
 +++ src/buffer.h	Fri Nov 15 10:48:31 2013
 @@ -34,12 +34,12 @@ typedef struct t_buffer_ {

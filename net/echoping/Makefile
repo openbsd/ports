@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/10 22:51:27 cwen Exp $
-
 COMMENT=	test performance of remote TCP/UDP services
 
 VER=		6_0_2

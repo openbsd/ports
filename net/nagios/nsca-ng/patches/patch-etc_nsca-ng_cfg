@@ -1,4 +1,3 @@
-$OpenBSD: patch-etc_nsca-ng_cfg,v 1.2 2013/04/12 21:44:53 sthen Exp $
 --- etc/nsca-ng.cfg.orig	Fri Apr 12 21:42:30 2013
 +++ etc/nsca-ng.cfg	Fri Apr 12 22:27:17 2013
 @@ -8,7 +8,8 @@

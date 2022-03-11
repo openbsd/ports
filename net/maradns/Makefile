@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/03/20 16:44:26 naddy Exp $
-
 COMMENT=	simple and performant DNS server
 
 VERSION=	1.3.07.15

@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_h,v 1.1 2021/02/20 20:18:28 tb Exp $
-
 Index: plugins.h
 --- plugins.h.orig
 +++ plugins.h

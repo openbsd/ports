@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/01/14 10:46:56 tb Exp $
-
 COMMENT=		BitTorrent library written in C++
 
 BROKEN-hppa =		undefined references to __sync atomic ops

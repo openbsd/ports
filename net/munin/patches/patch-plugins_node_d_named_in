@@ -1,4 +1,3 @@
-$OpenBSD: patch-plugins_node_d_named_in,v 1.3 2018/09/23 13:47:59 kirby Exp $
 Index: plugins/node.d/named.in
 --- plugins/node.d/named.in.orig
 +++ plugins/node.d/named.in

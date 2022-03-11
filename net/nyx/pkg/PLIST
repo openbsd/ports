@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/13 14:32:56 pascal Exp $
 @pkgpath net/arm
 bin/nyx
 lib/python${MODPY_VERSION}/site-packages/nyx/

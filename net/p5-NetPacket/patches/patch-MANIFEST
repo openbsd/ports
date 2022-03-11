@@ -1,4 +1,3 @@
-$OpenBSD: patch-MANIFEST,v 1.1.1.1 2005/05/24 06:16:53 msf Exp $
 --- MANIFEST.orig	Wed Jan 29 13:25:03 2003
 +++ MANIFEST	Thu Apr 14 10:10:49 2005
 @@ -9,6 +9,9 @@ NetPacket/IGMP.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/05/17 10:37:46 ajacoutot Exp $
-
 COMMENT=		service for interacting with DMRs
 
 GH_PROJECT=		dleyna-renderer

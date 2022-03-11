@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:48:43 sthen Exp $
-
 COMMENT=	ICB protocol plugin for Pidgin
 
 DISTNAME=	pidgin-icb-20070505

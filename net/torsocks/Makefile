@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:50 sthen Exp $
-
 COMMENT =		socks proxy for use with tor
 
 DISTNAME =		torsocks-2.2.0

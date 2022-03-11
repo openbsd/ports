@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:49 sthen Exp $
-
 COMMENT=	SNMP trap handler (translates traps to friendlier format)
 
 DISTNAME=	snmptt_1.4

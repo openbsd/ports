@@ -1,4 +1,3 @@
-$OpenBSD: patch-support_Config_argus_conf,v 1.4 2015/01/26 13:12:17 steven Exp $
 --- support/Config/argus.conf.orig	Fri Jul 25 18:57:28 2014
 +++ support/Config/argus.conf	Mon Sep 29 23:43:46 2014
 @@ -78,6 +78,7 @@ ARGUS_FLOW_KEY="CLASSIC_5_TUPLE"

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: coredns.rc,v 1.2 2021/02/27 09:28:50 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/coredns"
 daemon_flags="-conf ${SYSCONFDIR}/coredns/Corefile"

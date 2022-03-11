@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: fastnetmon.rc,v 1.3 2020/05/14 11:47:32 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/fastnetmon --daemonize"
 daemon_user="_fastnetmon"

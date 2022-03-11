@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libcharon_plugins_kernel_pfkey_kernel_pfkey_ipsec_c,v 1.1.1.1 2019/03/31 19:47:28 sthen Exp $
-
 Index: src/libcharon/plugins/kernel_pfkey/kernel_pfkey_ipsec.c
 --- src/libcharon/plugins/kernel_pfkey/kernel_pfkey_ipsec.c.orig
 +++ src/libcharon/plugins/kernel_pfkey/kernel_pfkey_ipsec.c

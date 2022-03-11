@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 08:30:06 sthen Exp $
-
 COMMENT =		console XMPP client
 
 MODPY_EGG_VERSION =	0.13.1

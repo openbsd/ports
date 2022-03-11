@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_stuff_c,v 1.2 2017/06/13 07:43:15 fcambus Exp $
-
 Index: src/stuff.c
 --- src/stuff.c.orig
 +++ src/stuff.c

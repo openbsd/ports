@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: pure_ftpd.rc,v 1.2 2018/01/11 19:27:07 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/pure-ftpd"
 daemon_flags="-A -B -H -u1000"

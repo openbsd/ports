@@ -1,5 +1,3 @@
-$OpenBSD: patch-upnp_src_inc_config_h,v 1.2 2012/11/06 11:48:28 dcoppa Exp $
-
 http://lifewithushare.blogspot.fr/2008/01/simultaneous-streaming-to-multiple.html
 
 --- upnp/src/inc/config.h.orig	Fri Nov  2 15:18:39 2012

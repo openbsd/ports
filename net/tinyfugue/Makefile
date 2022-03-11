@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/10 20:27:47 naddy Exp $
-
 COMMENT=	programmable MUD client, with macro support and more
 
 PKGNAME=	tinyfugue-4.0s1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_extconf_rb,v 1.3 2017/11/04 15:54:10 jeremy Exp $
 Index: ext/extconf.rb
 --- ext/extconf.rb.orig
 +++ ext/extconf.rb

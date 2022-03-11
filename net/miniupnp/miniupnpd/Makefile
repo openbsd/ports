@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/17 04:34:03 kirby Exp $
-
 COMMENT=	UPnP IGD daemon
 
 DISTNAME=	miniupnpd-2.3.0

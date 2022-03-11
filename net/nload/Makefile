@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:48:34 sthen Exp $
-
 COMMENT=		network traffic and bandwidth usage in real time
 
 DISTNAME=		nload-0.7.4

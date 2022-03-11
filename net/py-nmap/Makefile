@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/22 04:22:21 bket Exp $
-
 COMMENT =		python interface to the nmap scan data
 
 MODPY_EGG_VERSION =	0.6.1

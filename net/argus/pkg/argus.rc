@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: argus.rc,v 1.6 2018/01/11 19:27:04 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/argus"
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dnp3_Makefile_in,v 1.19 2021/09/19 10:18:25 sthen Exp $
 Index: src/dynamic-preprocessors/dnp3/Makefile.in
 --- src/dynamic-preprocessors/dnp3/Makefile.in.orig
 +++ src/dynamic-preprocessors/dnp3/Makefile.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/20 10:33:41 solene Exp $
-
 COMMENT =	graphical multi-protocol navigator
 
 DISTNAME =	kristall-2021111500

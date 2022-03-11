@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/06/27 21:04:00 espie Exp $
 @bin bin/mcabber
 @man man/man1/mcabber.1
 share/applications/mcabber.desktop

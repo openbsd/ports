@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_meson_build,v 1.1 2022/01/08 10:33:04 ajacoutot Exp $
-
 From 1d61bdc00748eca375be13f36aadfad0d1268755 Mon Sep 17 00:00:00 2001
 From: Jens Georg <mail@jensge.org>
 Date: Tue, 4 Jan 2022 15:05:14 +0100

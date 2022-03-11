@@ -1,7 +1,5 @@
 #!/bin/sh
 #
-# $OpenBSD: intr,v 1.1 2010/02/25 17:07:17 sthen Exp $
-#
 # Script to monitor interrupt activity on OpenBSD
 #
 # (c) 2010 Michael Knudsen <mk@openbsd.org>

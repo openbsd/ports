@@ -1,4 +1,3 @@
-$OpenBSD: patch-rtspproxy_Makefile_in,v 1.1.1.1 2007/01/10 10:37:07 grunk Exp $
 --- rtspproxy/Makefile.in.orig	Wed Dec 13 18:41:25 2006
 +++ rtspproxy/Makefile.in	Wed Dec 13 18:42:25 2006
 @@ -24,7 +24,7 @@ TARGET=rtspproxy

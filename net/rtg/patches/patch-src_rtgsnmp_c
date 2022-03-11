@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rtgsnmp_c,v 1.1 2019/05/10 21:13:28 jca Exp $
-
 Index: src/rtgsnmp.c
 --- src/rtgsnmp.c.orig
 +++ src/rtgsnmp.c

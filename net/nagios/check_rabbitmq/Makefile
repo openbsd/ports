@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:33 sthen Exp $
-
 COMMENT =		Nagios plugin to check RabbitMQ
 
 EPOCH =			0

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: icecast.rc,v 1.5 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/icecast"
 daemon_flags="-b -c /var/icecast/icecast.xml"

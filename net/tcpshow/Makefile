@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT=	decode tcpdump(1) output
 
 DISTNAME=	tcpshow-1.74

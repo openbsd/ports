@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/28 08:37:52 sthen Exp $
 @newgroup _noip:624
 @newuser _noip:624:_noip:daemon:noip user:/nonexistent:/sbin/nologin
 @bin sbin/noip2

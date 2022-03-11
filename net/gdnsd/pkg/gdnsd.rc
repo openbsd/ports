@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: gdnsd.rc,v 1.5 2018/01/11 19:27:05 rpe Exp $
 
 daemon="${PREFIX}/sbin/gdnsd"
 daemon_flags="start"

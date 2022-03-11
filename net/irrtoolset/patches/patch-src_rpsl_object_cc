@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_rpsl_object_cc,v 1.1 2015/11/15 11:55:59 jca Exp $
-
 Bison 3 fixes from
   https://github.com/irrtoolset/irrtoolset/commit/dba1df96d6eaaff35de912b7d0df2812bcdb412a
 and

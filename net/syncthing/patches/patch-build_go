@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_go,v 1.16 2021/12/14 21:01:52 edd Exp $
 Index: build.go
 --- build.go.orig
 +++ build.go

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/03/17 11:44:56 sthen Exp $
 lib/openvpn-auth-ldap.so
 share/examples/openvpn-auth-ldap/
 share/examples/openvpn-auth-ldap/auth-ldap.conf

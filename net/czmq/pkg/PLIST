@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/12/14 11:46:54 jasper Exp $
 @bin bin/zmakecert
 include/czmq.h
 include/czmq_library.h

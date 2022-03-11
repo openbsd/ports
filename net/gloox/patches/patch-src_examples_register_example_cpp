@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_examples_register_example_cpp,v 1.1 2017/08/08 08:57:45 bentley Exp $
-
 Index: src/examples/register_example.cpp
 --- src/examples/register_example.cpp.orig
 +++ src/examples/register_example.cpp

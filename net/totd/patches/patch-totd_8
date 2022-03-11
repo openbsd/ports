@@ -1,5 +1,3 @@
-$OpenBSD: patch-totd_8,v 1.1 2009/09/06 21:14:10 stsp Exp $
-
 formatting error; s/I N-ADDR/IN-ADDR/g; s/IP 6.ARPA/IP6.ARPA/g
 
 --- totd.8.orig	Wed Feb  2 11:10:31 2005

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:01:42 sthen Exp $
-
 COMMENT =		Python SSL and TLS library
 
 MODPY_EGG_VERSION =	0.8.0-alpha42

@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_dwood3rc,v 1.2 2016/01/26 21:47:55 sthen Exp $
 --- doc/dwood3rc.orig	Wed Aug 19 05:09:43 2015
 +++ doc/dwood3rc	Tue Jan 26 21:45:55 2016
 @@ -6,7 +6,7 @@ bind_address="127.0.0.1" # IP we bind to

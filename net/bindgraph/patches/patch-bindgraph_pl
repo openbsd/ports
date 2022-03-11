@@ -1,4 +1,3 @@
-$OpenBSD: patch-bindgraph_pl,v 1.1.1.1 2010/10/25 12:42:24 pea Exp $
 --- bindgraph.pl.orig	Wed Oct  6 13:47:54 2010
 +++ bindgraph.pl	Wed Oct  6 13:48:14 2010
 @@ -13,7 +13,7 @@ my $daemon_rrd_dir = '.';

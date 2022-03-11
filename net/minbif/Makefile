@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:32 sthen Exp $
-
 COMMENT =	IRC-friendly instant messaging client
 
 DISTNAME=	minbif-1.0.5

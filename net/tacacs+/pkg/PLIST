@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2019/07/09 20:22:43 gsoares Exp $
 @newgroup _tacacs:511
 @newuser _tacacs:511:_tacacs:daemon:TACACS+ user:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/log/tac_plus/*

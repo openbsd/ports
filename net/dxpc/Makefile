@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
 DISTNAME =	dxpc-${VERSION}

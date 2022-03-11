@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2020/01/26 11:14:33 jasper Exp $
 COMMENT=	enhanced talk that allows for multiple parties
 
 DISTNAME=	ytalk-3.1.1

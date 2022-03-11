@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:24 sthen Exp $
-
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 COMMENT =		alternative curl written in go

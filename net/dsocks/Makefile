@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/21 21:00:44 sthen Exp $
-
 COMMENT=		SOCKS client wrapper for *BSD
 DISTNAME=		dsocks-1.8
 CATEGORIES=		net

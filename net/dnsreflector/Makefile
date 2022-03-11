@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:25 sthen Exp $
-
 COMMENT=		DNS queries reflector
 
 DISTNAME=		dnsreflector-1.03

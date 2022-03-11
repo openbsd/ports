@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.152 2021/11/02 00:01:40 sthen Exp $
-
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library

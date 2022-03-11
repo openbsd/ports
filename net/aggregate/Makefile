@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:58 sthen Exp $
-
 COMMENT=	optimise a list of route prefixes
 
 DISTNAME=	aggregate-1.6
