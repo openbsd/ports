@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/16 09:09:06 kmos Exp $
-
 COMMENT =	MPRIS command-line controller and library
 
 GH_ACCOUNT =		altdesktop

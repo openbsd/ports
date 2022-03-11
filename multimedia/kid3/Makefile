@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:01:38 sthen Exp $
-
 COMMENT =	multimedia files tag editor
 DISTNAME =	kid3-3.8.5
 CATEGORIES =	multimedia x11

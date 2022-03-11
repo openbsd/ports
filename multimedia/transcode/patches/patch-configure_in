@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.7 2014/11/19 09:36:53 brad Exp $
 --- configure.in.orig	Sat Nov 19 11:50:27 2011
 +++ configure.in	Thu Oct 30 23:03:22 2014
 @@ -721,6 +721,12 @@ TC_CHECK_SUNAU(AC_DEFINE([HAVE_SUNAU], 1, [Have Sun st

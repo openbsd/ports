@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/14 15:19:03 sthen Exp $
-
 COMMENT =	guess information from video filenames
 
 MODPY_EGG_VERSION =	3.4.2

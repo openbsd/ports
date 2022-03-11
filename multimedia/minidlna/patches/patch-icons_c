@@ -1,5 +1,3 @@
-$OpenBSD: patch-icons_c,v 1.3 2014/03/09 21:04:05 sthen Exp $
-
 Puffy artwork is (c) Theo de Raadt; he has approved use for this port.
 
 --- icons.c.orig	Fri Mar  7 00:30:25 2014

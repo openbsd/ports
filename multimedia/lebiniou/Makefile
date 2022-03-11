@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/18 20:51:13 kmos Exp $
-
 COMMENT =	music visualization & VJing tool
 
 PKGNAME =	${DISTNAME:S/-version//}

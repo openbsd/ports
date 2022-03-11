@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
-
 Index: tools/Makefile.in
 --- tools/Makefile.in.orig
 +++ tools/Makefile.in

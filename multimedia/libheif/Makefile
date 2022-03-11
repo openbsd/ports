@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/08/20 21:24:48 sthen Exp $
-
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
 V=		1.12.0

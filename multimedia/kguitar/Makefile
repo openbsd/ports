@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/03/23 18:01:13 rsadowski Exp $
-
 COMMENT =	guitar tab editor
 
 GH_ACCOUNT =	pavelliavonau

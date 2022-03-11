@@ -1,5 +1,3 @@
-$OpenBSD: patch-libass_Makefile_in,v 1.2 2021/10/04 05:46:11 rsadowski Exp $
-
 Use a libtool-wrapper script for NASM.
 
 Libtool thinks NASM acts just like the C-compiler, which isn't true

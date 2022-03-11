@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/06 09:40:47 bentley Exp $
 bin/gaupol
 lib/python${MODPY_VERSION}/site-packages/aeidon/
 lib/python${MODPY_VERSION}/site-packages/aeidon/__init__.py

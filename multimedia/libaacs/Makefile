@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/28 10:53:49 sthen Exp $
-
 COMMENT =		AACS support library for Blu-ray playback
 
 V =			0.11.1

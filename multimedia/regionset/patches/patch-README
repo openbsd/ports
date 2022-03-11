@@ -1,4 +1,3 @@
-$OpenBSD: patch-README,v 1.2 2015/07/19 01:36:18 ajacoutot Exp $
 --- README.orig	Mon Dec 31 03:32:43 2012
 +++ README	Sun Jul 19 03:33:23 2015
 @@ -54,7 +54,7 @@ The more, there absolutely definitively and in any cas

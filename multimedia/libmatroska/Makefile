@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/20 06:34:33 rsadowski Exp $
-
 COMMENT=	extensible open standard audio/video container library
 
 DISTNAME=	libmatroska-1.6.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/07/25 13:29:37 espie Exp $
-
 COMMENT =	video stabilization library
 
 V = 		1.1.0

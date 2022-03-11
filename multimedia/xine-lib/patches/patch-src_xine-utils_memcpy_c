@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_xine-utils_memcpy_c,v 1.7 2021/01/23 09:27:49 ajacoutot Exp $
-
 Make use of clock_gettime().
 
 Index: src/xine-utils/memcpy.c

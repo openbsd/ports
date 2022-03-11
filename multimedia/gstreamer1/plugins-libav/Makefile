@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2019/12/08 10:16:18 ajacoutot Exp $
-
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}

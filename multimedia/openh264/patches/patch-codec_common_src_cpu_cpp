@@ -1,5 +1,3 @@
-$OpenBSD: patch-codec_common_src_cpu_cpp,v 1.2 2022/01/29 19:03:29 kn Exp $
-
 Index: codec/common/src/cpu.cpp
 --- codec/common/src/cpu.cpp.orig
 +++ codec/common/src/cpu.cpp

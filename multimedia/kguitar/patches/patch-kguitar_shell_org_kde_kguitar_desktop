@@ -1,5 +1,3 @@
-$OpenBSD: patch-kguitar_shell_org_kde_kguitar_desktop,v 1.1 2017/10/31 21:23:01 rsadowski Exp $
-
 fix: Could not parse file "org.kde.kguitar.desktop":
 Key file does not have group ?Desktop Entry?
 

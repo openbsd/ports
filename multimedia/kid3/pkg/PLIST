@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/04 20:53:26 rsadowski Exp $
 @bin bin/kid3
 @bin bin/kid3-cli
 @bin bin/kid3-qt

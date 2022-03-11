@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/23 21:48:09 sthen Exp $
-
 COMMENT=	Alliance for Open Media AV1 video codec
 
 GH_ACCOUNT=	jbeich

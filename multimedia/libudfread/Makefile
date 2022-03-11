@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/18 04:12:14 rsadowski Exp $
-
 COMMENT=	library for reading UDF from raw devices and image files
 
 DISTNAME=	libudfread-1.1.2

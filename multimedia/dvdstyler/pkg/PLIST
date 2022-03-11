@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2021/02/27 06:58:09 ajacoutot Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop

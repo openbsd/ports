@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mkvtoolnix-gui_jobs_program_runner_unix_program_runner_h,v 1.3 2020/12/02 06:44:11 rsadowski Exp $
-
 Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h
 --- src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h.orig
 +++ src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h

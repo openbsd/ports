@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/08/31 07:30:29 ajacoutot Exp $
-
 BROKEN-powerpc =	segfault in multi-threaded mode, synfigstudio can't be built
 BROKEN-powerpc64 =	segfault in multi-threaded mode, synfigstudio can't be built
 

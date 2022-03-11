@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:47:58 sthen Exp $
-
 COMMENT =		curses media indexer and player for vi users
 
 DISTNAME =		vitunes-2.3

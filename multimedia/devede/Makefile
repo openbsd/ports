@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/11/02 00:01:37 sthen Exp $
-
 COMMENT=		video DVDs and CDs creation tool
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}

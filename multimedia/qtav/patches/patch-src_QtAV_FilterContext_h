@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_QtAV_FilterContext_h,v 1.2 2021/01/19 06:40:09 rsadowski Exp $
-
 Index: src/QtAV/FilterContext.h
 --- src/QtAV/FilterContext.h.orig
 +++ src/QtAV/FilterContext.h

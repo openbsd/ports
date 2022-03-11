@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2022/02/05 14:49:40 ajacoutot Exp $
-
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}

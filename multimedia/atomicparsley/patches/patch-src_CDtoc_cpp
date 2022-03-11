@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_CDtoc_cpp,v 1.2 2021/07/25 22:53:09 cwen Exp $
 Index: src/CDtoc.cpp
 --- src/CDtoc.cpp.orig
 +++ src/CDtoc.cpp

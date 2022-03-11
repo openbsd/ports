@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/09/12 19:36:59 phessler Exp $
-
 BROKEN =	twitch changed their API
 
 COMMENT =	desktop Twitch.tv client

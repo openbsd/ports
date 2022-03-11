@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_synfig_transform_cpp,v 1.1 2017/05/24 21:27:45 espie Exp $
-
 Index: src/synfig/transform.cpp
 --- src/synfig/transform.cpp.orig
 +++ src/synfig/transform.cpp

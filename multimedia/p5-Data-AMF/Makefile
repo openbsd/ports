@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT =	serialize/deserialize Adobe Action Message Format data
 
 DISTNAME =	Data-AMF-0.09

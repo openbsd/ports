@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/12/15 15:37:26 kn Exp $
-
 COMMENT =		libv4l userspace library
 
 VERSION =		1.20.0

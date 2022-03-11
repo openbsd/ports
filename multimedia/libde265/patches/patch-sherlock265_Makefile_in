@@ -1,5 +1,3 @@
-$OpenBSD: patch-sherlock265_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
-
 Index: sherlock265/Makefile.in
 --- sherlock265/Makefile.in.orig
 +++ sherlock265/Makefile.in

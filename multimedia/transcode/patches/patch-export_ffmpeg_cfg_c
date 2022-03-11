@@ -1,5 +1,3 @@
-$OpenBSD: patch-export_ffmpeg_cfg_c,v 1.4 2019/02/18 10:05:39 ajacoutot Exp $
-
 Update for newer FFmpeg API.
 
 Index: export/ffmpeg_cfg.c

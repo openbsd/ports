@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_synfig_filesystem_cpp,v 1.1 2020/04/23 04:55:46 cwen Exp $
-
 Fix segfaults during the build of multimedia/synfigstudio, from
 https://github.com/synfig/synfig/issues/822
 

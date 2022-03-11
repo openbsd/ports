@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_libv4lconvert_Makefile_in,v 1.9 2020/05/26 09:54:56 feinerer Exp $
-
 OpenBSD does not have an rt library.
 
 Index: lib/libv4lconvert/Makefile.in

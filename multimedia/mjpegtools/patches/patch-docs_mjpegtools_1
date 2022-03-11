@@ -1,5 +1,3 @@
-$OpenBSD: patch-docs_mjpegtools_1,v 1.1 2017/06/03 16:14:00 schwarze Exp $
-
 A manual page without SH NAME and DESCRIPTION is a really bad idea
 and cannot be expected to render readably.
 

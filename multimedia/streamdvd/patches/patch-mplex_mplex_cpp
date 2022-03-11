@@ -1,5 +1,3 @@
-$OpenBSD: patch-mplex_mplex_cpp,v 1.1 2017/05/13 00:15:38 espie Exp $
-
 Index: mplex/mplex.cpp
 --- mplex/mplex.cpp.orig
 +++ mplex/mplex.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_variant_freebsd_defs,v 1.1 2019/08/07 19:23:10 bcallah Exp $
-
 Index: make/variant/freebsd.defs
 --- make/variant/freebsd.defs.orig
 +++ make/variant/freebsd.defs

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/02/03 09:35:18 ajacoutot Exp $
-
 COMMENT=		C++ bindings for GStreamer
 
 GNOME_PROJECT=		gstreamermm

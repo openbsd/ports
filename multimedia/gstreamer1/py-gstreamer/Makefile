@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/02/03 09:35:19 ajacoutot Exp $
-
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
 DISTNAME=		gst-python-${V}

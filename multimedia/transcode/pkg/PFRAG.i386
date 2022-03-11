@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.i386,v 1.5 2013/01/19 08:42:35 brad Exp $
 lib/transcode/filter_tomsmocomp.so

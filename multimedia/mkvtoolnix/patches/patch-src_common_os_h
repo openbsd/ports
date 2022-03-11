@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_common_os_h,v 1.3 2021/02/27 16:06:27 rsadowski Exp $
-
 Index: src/common/os.h
 --- src/common/os.h.orig
 +++ src/common/os.h

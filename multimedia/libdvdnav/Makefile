@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/10/11 06:11:31 rsadowski Exp $
-
 COMMENT=	DVD navigation library
 
 VER=		6.1.1

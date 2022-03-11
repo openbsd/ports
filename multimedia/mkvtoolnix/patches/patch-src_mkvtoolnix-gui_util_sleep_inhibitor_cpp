@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mkvtoolnix-gui_util_sleep_inhibitor_cpp,v 1.1 2018/12/14 10:00:57 rsadowski Exp $
-
 Index: src/mkvtoolnix-gui/util/sleep_inhibitor.cpp
 --- src/mkvtoolnix-gui/util/sleep_inhibitor.cpp.orig
 +++ src/mkvtoolnix-gui/util/sleep_inhibitor.cpp

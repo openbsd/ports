@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_util_cpp,v 1.2 2021/12/18 06:53:38 espie Exp $
-
 Index: src/util.cpp
 --- src/util.cpp.orig
 +++ src/util.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/11/09 05:22:57 rsadowski Exp $
-
 COMMENT =		UPnP audio control point
 
 DISTNAME =		upplay-1.3.3

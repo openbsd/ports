@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/02/26 21:25:42 sthen Exp $
-
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.13

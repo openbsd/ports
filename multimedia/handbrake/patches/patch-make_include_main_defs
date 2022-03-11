@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_include_main_defs,v 1.2 2019/12/16 17:23:58 bcallah Exp $
-
 Rip out all the optional dependencies.
 We'll let the ports tree handle it.
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/14 15:59:33 rsadowski Exp $
-
 COMMENT-main=	open H.265 video codec implementation
 COMMENT-tools=	tools for libde265 open H.265 video codec
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/11/24 19:48:08 bcallah Exp $
 @bin bin/assimp
 include/assimp/
 include/assimp/BaseImporter.h

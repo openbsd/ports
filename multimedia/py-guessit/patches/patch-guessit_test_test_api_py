@@ -1,5 +1,3 @@
-$OpenBSD: patch-guessit_test_test_api_py,v 1.1 2021/11/14 15:19:03 sthen Exp $
-
 cope with older py-test-mock
 
 Index: guessit/test/test_api.py

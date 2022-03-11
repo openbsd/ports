@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:47:56 sthen Exp $
-
 V=		20140604
 COMMENT=	HDHomeRun Config CLI utility & firmware
 FW=		hdhomerun_atsc_firmware_$V.bin \

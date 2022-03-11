@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/12/14 16:06:00 rsadowski Exp $
 @bin bin/bd_info
 @bin bin/bd_list_titles
 @bin bin/bd_splice

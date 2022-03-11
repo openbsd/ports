@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_SFMLConfigDependencies_cmake_in,v 1.1 2022/01/01 12:28:46 pascal Exp $
-
 Index: cmake/SFMLConfigDependencies.cmake.in
 --- cmake/SFMLConfigDependencies.cmake.in.orig
 +++ cmake/SFMLConfigDependencies.cmake.in

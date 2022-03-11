@@ -1,5 +1,3 @@
-$OpenBSD: patch-DOCS_man_ao_rst,v 1.2 2021/11/07 18:47:37 kn Exp $
-
 ao_sndio: add this audio output again
 
 https://github.com/mpv-player/mpv/pull/8314

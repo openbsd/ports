@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2022/02/15 17:22:35 sthen Exp $
-
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
 DISTNAME=	x264-20220205

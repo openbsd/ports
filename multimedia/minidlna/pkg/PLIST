@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/03/20 11:47:46 ajacoutot Exp $
 @newgroup _minidlna:705
 @newuser _minidlna:705:_minidlna:daemon:minidlna user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/minidlna/*

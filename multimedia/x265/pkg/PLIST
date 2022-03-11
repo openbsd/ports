@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/02/24 18:41:19 ajacoutot Exp $
 @bin bin/x265
 include/x265.h
 include/x265_config.h

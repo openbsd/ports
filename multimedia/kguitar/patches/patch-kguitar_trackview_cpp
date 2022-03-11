@@ -1,5 +1,3 @@
-$OpenBSD: patch-kguitar_trackview_cpp,v 1.1 2020/03/14 14:24:35 rsadowski Exp $
-
 Index: kguitar/trackview.cpp
 --- kguitar/trackview.cpp.orig
 +++ kguitar/trackview.cpp

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
 @bin bin/lebiniou
 lib/lebiniou/
 lib/lebiniou/plugins/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/11/17 05:56:08 rsadowski Exp $
 include/xvid.h
 @static-lib lib/libxvidcore.a
 @lib lib/libxvidcore.so.${LIBxvidcore_VERSION}

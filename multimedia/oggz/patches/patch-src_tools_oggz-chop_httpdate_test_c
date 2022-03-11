@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_tools_oggz-chop_httpdate_test_c,v 1.1.1.1 2010/11/05 12:54:51 eric Exp $
 --- src/tools/oggz-chop/httpdate_test.c.orig	Sat Jan 30 06:55:59 2010
 +++ src/tools/oggz-chop/httpdate_test.c	Wed Nov  3 10:09:25 2010
 @@ -21,7 +21,6 @@ main (int argc, char * argv[])

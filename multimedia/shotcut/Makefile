@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/12/18 06:53:38 espie Exp $
-
 USE_WXNEEDED =	Yes
 COMMENT =	video editor
 

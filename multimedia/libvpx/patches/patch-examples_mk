@@ -1,5 +1,3 @@
-$OpenBSD: patch-examples_mk,v 1.10 2020/10/03 13:19:37 sthen Exp $
-
 Index: examples.mk
 --- examples.mk.orig
 +++ examples.mk

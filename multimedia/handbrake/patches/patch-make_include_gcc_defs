@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_include_gcc_defs,v 1.2 2019/12/16 17:23:58 bcallah Exp $
-
 Remove hardcoded optimization flags.
 Proper -I and -L dirs.
 

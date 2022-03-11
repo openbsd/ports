@@ -1,5 +1,3 @@
-$OpenBSD: patch-upplay_pro,v 1.3 2020/11/09 05:22:57 rsadowski Exp $
-
 Index: upplay.pro
 --- upplay.pro.orig
 +++ upplay.pro

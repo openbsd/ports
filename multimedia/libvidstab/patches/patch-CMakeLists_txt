@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2021/07/25 13:29:37 espie Exp $
-
 Remove hardcoded compilation flags
 
 Index: CMakeLists.txt

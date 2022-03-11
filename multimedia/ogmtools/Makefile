@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:57 sthen Exp $
-
 COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
 REVISION =		2

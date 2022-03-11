@@ -1,5 +1,3 @@
-$OpenBSD: patch-m4_input_m4,v 1.4 2021/01/23 09:27:49 ajacoutot Exp $
-
 Don't pick up GnuTLS over OpenSSL.
 
 Index: m4/input.m4

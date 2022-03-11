@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_ccextractor_h,v 1.1.1.1 2011/08/16 14:12:58 espie Exp $
 --- src/ccextractor.h.orig	Sun Jul 31 14:43:33 2011
 +++ src/ccextractor.h	Sun Jul 31 14:43:41 2011
 @@ -32,6 +32,15 @@ typedef int64_t LLONG;

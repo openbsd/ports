@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/03 09:12:34 op Exp $
-
 COMMENT =	editor for text-based subtitle files
 
 MODPY_EGG_VERSION =	1.10.1

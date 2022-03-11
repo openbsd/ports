@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-gpl2,v 1.1.1.1 2021/10/16 18:08:17 rsadowski Exp $
 @so lib/mlt-7/libmltnormalize.so
 @so lib/mlt-7/libmltplusgpl.so
 @so lib/mlt-7/libmltqt.so

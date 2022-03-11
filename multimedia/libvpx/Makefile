@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/10/16 07:53:10 rsadowski Exp $
-
 COMMENT=	Google VP8/VP9 video codec
 
 GH_ACCOUNT=	webmproject

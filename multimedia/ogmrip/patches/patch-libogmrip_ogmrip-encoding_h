@@ -1,4 +1,3 @@
-$OpenBSD: patch-libogmrip_ogmrip-encoding_h,v 1.1 2017/05/12 16:02:03 espie Exp $
 an enum is not an int. let (OGMRipTaskDetail)0  work
 
 Index: libogmrip/ogmrip-encoding.h

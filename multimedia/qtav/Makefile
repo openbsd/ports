@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/19 06:40:09 rsadowski Exp $
-
 COMMENT =	FFmpeg-based Qt multimedia framework
 
 GH_ACCOUNT =	wang-bin

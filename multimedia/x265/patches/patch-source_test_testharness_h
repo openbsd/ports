@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_test_testharness_h,v 1.1 2022/03/04 22:17:39 sthen Exp $
-
 fix the compiling errors on MAC
 0983cffc501e5279e7d9e9b2241b506cb332efcb
 

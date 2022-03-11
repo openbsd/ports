@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_mmsh_c,v 1.1 2014/05/22 11:53:36 jasper Exp $
-
 Security fix for CVE-2014-2892, heap-based buffer overflow
 http://sourceforge.net/p/libmms/code/ci/03bcfccc22919c72742b7338d02859962861e0e8
 

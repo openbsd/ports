@@ -1,5 +1,3 @@
-$OpenBSD: patch-acceleration-speed_Makefile_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
-
 Index: acceleration-speed/Makefile.in
 --- acceleration-speed/Makefile.in.orig
 +++ acceleration-speed/Makefile.in

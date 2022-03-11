@@ -1,4 +1,3 @@
-$OpenBSD: patch-mp_msg_c,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
 --- mp_msg.c.orig	Thu Jan 18 12:31:44 2007
 +++ mp_msg.c	Thu Jan 18 12:32:51 2007
 @@ -7,10 +7,15 @@

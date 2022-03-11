@@ -1,5 +1,3 @@
-$OpenBSD: patch-minidlna_conf_5,v 1.1 2021/10/16 15:38:13 edd Exp $
-
 Silence a mandoc warning.
 
 Index: minidlna.conf.5

@@ -1,5 +1,3 @@
-$OpenBSD: patch-mplex_multiplexor_cpp,v 1.1 2018/11/30 21:05:32 naddy Exp $
-
 Index: mplex/multiplexor.cpp
 --- mplex/multiplexor.cpp.orig
 +++ mplex/multiplexor.cpp

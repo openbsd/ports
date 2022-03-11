@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/03/04 09:57:51 sthen Exp $
-
 COMMENT=		closed caption converter
 
 MODPY_EGG_VERSION=	2.0.5

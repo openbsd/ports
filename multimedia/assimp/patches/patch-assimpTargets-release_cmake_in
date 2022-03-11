@@ -1,5 +1,3 @@
-$OpenBSD: patch-assimpTargets-release_cmake_in,v 1.1 2021/03/21 16:03:51 rsadowski Exp $
-
 Index: assimpTargets-release.cmake.in
 --- assimpTargets-release.cmake.in.orig
 +++ assimpTargets-release.cmake.in

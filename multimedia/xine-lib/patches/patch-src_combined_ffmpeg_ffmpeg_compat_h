@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_combined_ffmpeg_ffmpeg_compat_h,v 1.7 2022/01/25 18:10:36 sthen Exp $
-
 ffmpeg 4 compatibility attempt.
 4e5ad7ebed6111ba9e1ea2eab4a6b94477b066a8
 

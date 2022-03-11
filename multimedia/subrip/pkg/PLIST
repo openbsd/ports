@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/01/22 13:55:42 espie Exp $
 bin/srttool
 bin/sub2pgm
 bin/subrip

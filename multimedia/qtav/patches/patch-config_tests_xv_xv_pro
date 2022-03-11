@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_tests_xv_xv_pro,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
 Allow Xv to be found.
 --- config.tests/xv/xv.pro.orig	Thu Jan 12 22:33:39 2017
 +++ config.tests/xv/xv.pro	Fri Jan 13 14:13:21 2017

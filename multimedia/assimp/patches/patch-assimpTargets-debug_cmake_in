@@ -1,5 +1,3 @@
-$OpenBSD: patch-assimpTargets-debug_cmake_in,v 1.1 2021/03/21 16:03:51 rsadowski Exp $
-
 Index: assimpTargets-debug.cmake.in
 --- assimpTargets-debug.cmake.in.orig
 +++ assimpTargets-debug.cmake.in

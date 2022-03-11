@@ -1,5 +1,3 @@
-$OpenBSD: patch-ac_qt5_m4,v 1.10 2021/10/04 05:48:53 rsadowski Exp $
-
 Workaround for OpenBSD's pkg-config.
 
 Index: ac/qt5.m4

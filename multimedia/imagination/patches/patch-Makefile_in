@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/04/16 16:18:03 giovanni Exp $
 --- Makefile.in.orig	Sun Mar  6 21:06:48 2011
 +++ Makefile.in	Mon Apr 15 16:34:39 2013
 @@ -276,7 +276,7 @@ target_alias = @target_alias@

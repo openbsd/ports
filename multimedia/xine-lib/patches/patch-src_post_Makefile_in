@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_post_Makefile_in,v 1.1 2019/12/25 15:50:45 ajacoutot Exp $
-
 Index: src/post/Makefile.in
 --- src/post/Makefile.in.orig
 +++ src/post/Makefile.in

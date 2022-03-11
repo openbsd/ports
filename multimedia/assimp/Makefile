@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/07/04 14:35:05 tb Exp $
-
 COMMENT =	open asset import library
 CATEGORIES =	multimedia
 

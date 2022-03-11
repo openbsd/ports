@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2022/02/05 14:49:40 ajacoutot Exp $
-
 COMMENT=		framework for streaming media
 
 DISTNAME=		gstreamer-${V}

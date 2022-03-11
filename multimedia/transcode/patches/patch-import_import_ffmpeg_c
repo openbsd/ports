@@ -1,5 +1,3 @@
-$OpenBSD: patch-import_import_ffmpeg_c,v 1.5 2019/02/18 10:05:39 ajacoutot Exp $
-
 Update for newer FFmpeg API.
 
 Index: import/import_ffmpeg.c

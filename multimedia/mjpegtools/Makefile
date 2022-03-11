@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:57 sthen Exp $
-
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-theoraenc_pc_in,v 1.2 2019/06/13 21:58:12 sthen Exp $
-
 Correct pkg-config file for overlinking.
 
 Index: theoraenc.pc.in

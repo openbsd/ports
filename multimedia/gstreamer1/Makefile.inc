@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.73 2022/02/05 14:49:40 ajacoutot Exp $
-
 # Most frequent usage of the GStreamer packages:
 # core		base library
 # plugins-base	minimal set: audio (sndio), gio, playback, Ogg Vorbis

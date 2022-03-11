@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/08/20 18:00:14 rsadowski Exp $
-
 COMMENT =	multimedia layer for Qt5/KDE5
 
 CATEGORIES =	multimedia devel

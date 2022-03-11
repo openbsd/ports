@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/13 21:18:45 naddy Exp $
-
 COMMENT =	simple library to make decoding of Ogg Theora videos easier
 
 # HG_CHANGESET and HG_COMMIT must be kept in sync.

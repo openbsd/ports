@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_SFML_Window_Unix_WindowImplX11_cpp,v 1.2 2021/12/30 19:12:40 pascal Exp $
-
 Index: src/SFML/Window/Unix/WindowImplX11.cpp
 --- src/SFML/Window/Unix/WindowImplX11.cpp.orig
 +++ src/SFML/Window/Unix/WindowImplX11.cpp

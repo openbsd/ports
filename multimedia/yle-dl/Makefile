@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/02 00:01:38 sthen Exp $
-
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
 GH_TAGNAME =		20210808

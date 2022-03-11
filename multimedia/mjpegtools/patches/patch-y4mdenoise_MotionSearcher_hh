@@ -1,5 +1,3 @@
-$OpenBSD: patch-y4mdenoise_MotionSearcher_hh,v 1.1 2017/05/24 09:26:35 espie Exp $
-
 Index: y4mdenoise/MotionSearcher.hh
 --- y4mdenoise/MotionSearcher.hh.orig
 +++ y4mdenoise/MotionSearcher.hh

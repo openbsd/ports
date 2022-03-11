@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/03/07 15:09:49 cwen Exp $
-
 COMMENT =	minimalistic plugin API for video effects
 CATEGORIES =	graphics multimedia
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/08/31 07:30:29 ajacoutot Exp $
-
 COMMENT =		2D animation software studio
 BROKEN-alpha =		[keyframe_lock_past_on_icon.png] Bus error (core dumped)
 BROKEN-hppa =		Illegal instruction (core dumped)

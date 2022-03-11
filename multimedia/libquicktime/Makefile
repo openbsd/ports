@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2020/03/20 16:44:25 naddy Exp $
-
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4

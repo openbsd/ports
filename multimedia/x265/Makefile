@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2022/03/04 22:17:39 sthen Exp $
-
 COMMENT=	free H.265/HEVC encoder
 
 VER=		3.5

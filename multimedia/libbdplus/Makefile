@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT =		BD+ support library for Blu-ray playback
 
 V =			0.1.2

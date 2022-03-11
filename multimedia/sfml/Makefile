@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/01 12:28:46 pascal Exp $
-
 COMMENT =		simple and fast multimedia library
 
 V =			2.5.1

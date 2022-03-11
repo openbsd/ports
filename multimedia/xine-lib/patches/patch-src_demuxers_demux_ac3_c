@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_demuxers_demux_ac3_c,v 1.1 2022/02/24 15:05:40 sthen Exp $
-
 - demux_ac3: fix framing
   e8696b746454e1e089e93b1f2267eba5db3e6daf
 - Split function

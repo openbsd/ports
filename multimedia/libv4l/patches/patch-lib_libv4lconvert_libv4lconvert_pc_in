@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_libv4lconvert_libv4lconvert_pc_in,v 1.1 2016/01/23 14:03:11 feinerer Exp $
-
 OpenBSD does not have an rt library.
 
 --- lib/libv4lconvert/libv4lconvert.pc.in.orig	Sat Jan 23 04:40:50 2016

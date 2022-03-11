@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/08/20 18:00:14 rsadowski Exp $
 @conflict phonon-gstreamer-<4.10
 @conflict phonon-qt5-gstreamer-<4.10
 @conflict phonon-gstreamer-icons-*

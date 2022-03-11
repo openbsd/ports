@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/07 02:30:46 daniel Exp $
-
 V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source

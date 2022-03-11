@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/03/04 22:18:31 sthen Exp $
-
 ONLY_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	scalable AV1 encoder/decoder

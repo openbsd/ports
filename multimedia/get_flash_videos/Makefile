@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2020/03/22 18:13:36 naddy Exp $
-
 COMMENT=	download flash video files from various sites
 
 V=	1.25.99

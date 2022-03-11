@@ -1,5 +1,3 @@
-$OpenBSD: patch-e_commands_c,v 1.1 2018/04/25 12:44:10 naddy Exp $
-
 Index: e_commands.c
 --- e_commands.c.orig
 +++ e_commands.c

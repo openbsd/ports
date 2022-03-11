@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/07/19 21:09:19 sthen Exp $
 @bin bin/hdhomerun_config
 share/hdhomerun/
 share/hdhomerun/hdhomerun3_atsc_firmware_${V}.bin

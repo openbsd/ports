@@ -1,5 +1,3 @@
-$OpenBSD: patch-import_demux_pass_c,v 1.1 2021/02/02 21:11:14 naddy Exp $
-
 fix for -fno-common
 
 Index: import/demux_pass.c

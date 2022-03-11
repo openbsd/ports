@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_AVMuxer_cpp,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
-
 Index: src/AVMuxer.cpp
 --- src/AVMuxer.cpp.orig
 +++ src/AVMuxer.cpp

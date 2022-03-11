@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:30 sthen Exp $
-
 COMMENT =	deserializer for Adobe Action Message Format
 
 DISTNAME =	Storable-AMF-1.23

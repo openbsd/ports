@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/03/15 06:28:04 rsadowski Exp $
-
 COMMENT =	GStreamer-based Phonon backend
 
 VERSION =	4.10.0

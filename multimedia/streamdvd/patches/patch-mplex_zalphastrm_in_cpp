@@ -1,5 +1,3 @@
-$OpenBSD: patch-mplex_zalphastrm_in_cpp,v 1.1 2018/11/30 21:05:32 naddy Exp $
-
 Index: mplex/zalphastrm_in.cpp
 --- mplex/zalphastrm_in.cpp.orig
 +++ mplex/zalphastrm_in.cpp

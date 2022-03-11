@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_subtitle_SubtitleProcessorFFmpeg_cpp,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
-
 Index: src/subtitle/SubtitleProcessorFFmpeg.cpp
 --- src/subtitle/SubtitleProcessorFFmpeg.cpp.orig
 +++ src/subtitle/SubtitleProcessorFFmpeg.cpp

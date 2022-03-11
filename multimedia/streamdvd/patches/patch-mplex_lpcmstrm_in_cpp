@@ -1,5 +1,3 @@
-$OpenBSD: patch-mplex_lpcmstrm_in_cpp,v 1.1 2017/05/13 00:15:38 espie Exp $
-
 Index: mplex/lpcmstrm_in.cpp
 --- mplex/lpcmstrm_in.cpp.orig
 +++ mplex/lpcmstrm_in.cpp

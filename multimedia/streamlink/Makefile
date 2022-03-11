@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/02 00:01:38 sthen Exp $
-
 MODPY_EGG_VERSION =	2.0.0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_EGG_VERSION}

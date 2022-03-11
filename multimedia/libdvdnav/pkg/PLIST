@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2020/12/15 18:57:43 rsadowski Exp $
 include/dvdnav/
 include/dvdnav/dvd_types.h
 include/dvdnav/dvdnav.h

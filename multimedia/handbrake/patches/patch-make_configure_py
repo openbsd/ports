@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_configure_py,v 1.3 2020/05/20 14:57:18 bcallah Exp $
-
 Add OpenBSD to the configure args we need.
 Do not look for CMake; we don't need it.
 

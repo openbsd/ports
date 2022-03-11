@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/09 10:23:23 landry Exp $
-
 COMMENT =	data files for use with lebiniou
 
 PKGNAME =	${DISTNAME:S/-version//}

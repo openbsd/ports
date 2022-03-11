@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2020/08/20 18:00:14 rsadowski Exp $
-
 LibXml2 is not needed to compile the gstreamer backend for Phonon
 
 Index: CMakeLists.txt

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/02/27 06:58:09 ajacoutot Exp $
-
 COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-3.1

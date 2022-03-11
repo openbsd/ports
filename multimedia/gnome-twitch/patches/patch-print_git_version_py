@@ -1,5 +1,3 @@
-$OpenBSD: patch-print_git_version_py,v 1.1.1.1 2017/10/15 11:32:43 bcallah Exp $
-
 Don't do this git stuff.
 
 Index: print_git_version.py

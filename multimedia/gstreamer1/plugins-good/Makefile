@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2022/02/05 14:49:41 ajacoutot Exp $
-
 # Reenable that port on non-rust archs at the cost of pulseaudio support:
 # pulseaudio -> [...] -> spidermonkey>=78 -> rust
 ONLY_FOR_ARCHS-pulse=	${RUST_ARCHS}

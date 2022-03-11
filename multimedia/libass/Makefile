@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/10/04 05:46:11 rsadowski Exp $
-
 COMMENT=	portable ASS/SSA subtitle renderer
 
 VER=		0.15.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:47:57 sthen Exp $
-
 COMMENT =	inspect, edit and validate Ogg files
 
 V =		1.1.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/19 12:12:20 naddy Exp $
 @conflict mplex-*
 %%quicktime%%
 bin/anytovcd.sh

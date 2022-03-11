@@ -1,3 +1,2 @@
-@comment $OpenBSD: PFRAG.quicktime,v 1.2 2009/03/04 20:21:57 jasper Exp $
 @bin bin/qttoy4m
 @bin bin/y4mtoqt

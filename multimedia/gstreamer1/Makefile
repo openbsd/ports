@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/10/28 15:42:14 ajacoutot Exp $
-
     SUBDIR =
     SUBDIR += core
     SUBDIR += mm

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/12/21 06:21:35 rsadowski Exp $
 @bin bin/heif-convert
 @bin bin/heif-enc
 @bin bin/heif-info

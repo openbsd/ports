@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:47:55 sthen Exp $
-
 COMMENT=	creates DVD file structures
 
 DISTNAME=	dvdauthor-0.7.2

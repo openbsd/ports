@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/08/19 06:04:22 ajacoutot Exp $
-
 COMMENT=	open video codec
 
 # e5d205b from github, plus generated configure scripts

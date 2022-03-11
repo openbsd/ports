@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.mjpegtools,v 1.5 2013/01/19 08:42:35 brad Exp $
 lib/transcode/export_mp2enc.so
 lib/transcode/export_mpeg2enc.so
 lib/transcode/export_yuv4mpeg.so

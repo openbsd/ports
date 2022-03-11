@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/07/25 22:53:09 cwen Exp $
-
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
 GH_ACCOUNT=	wez

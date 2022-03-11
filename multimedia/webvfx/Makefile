@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/20 15:16:26 tracey Exp $
-
 USE_WXNEEDED =	Yes
 COMMENT =	video effects library
 

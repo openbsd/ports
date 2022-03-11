@@ -1,5 +1,3 @@
-$OpenBSD: patch-yuvfilters_yuvkineco_c,v 1.1 2017/05/24 09:26:35 espie Exp $
-
 Index: yuvfilters/yuvkineco.c
 --- yuvfilters/yuvkineco.c.orig
 +++ yuvfilters/yuvkineco.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/09/09 18:25:25 rsadowski Exp $
-
 COMMENT-main =		multimedia transformations framework
 COMMENT-gpl2 =		GPLv2-licensed modules for mlt
 VERSION =		6.26.1

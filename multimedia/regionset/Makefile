@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:47:57 sthen Exp $
-
 COMMENT=	set region on dvd drives
 
 DISTNAME=	regionset-0.2

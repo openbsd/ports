@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT =		read and manipulate the MP4 container format
 
 DISTNAME =		mp4v2-1.9.1

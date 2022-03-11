@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.150 2022/02/24 15:05:40 sthen Exp $
-
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.11

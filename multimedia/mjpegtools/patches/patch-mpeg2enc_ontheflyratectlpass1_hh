@@ -1,5 +1,3 @@
-$OpenBSD: patch-mpeg2enc_ontheflyratectlpass1_hh,v 1.1 2017/05/24 09:26:35 espie Exp $
-
 Index: mpeg2enc/ontheflyratectlpass1.hh
 --- mpeg2enc/ontheflyratectlpass1.hh.orig
 +++ mpeg2enc/ontheflyratectlpass1.hh

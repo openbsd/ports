@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_parsley_cpp,v 1.1 2021/07/25 22:53:09 cwen Exp $
-
 Fix potential bug on unsigned char archs
 See https://github.com/wez/atomicparsley/pull/41
 

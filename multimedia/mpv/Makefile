@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.80 2022/02/28 02:02:11 gsoares Exp $
-
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player

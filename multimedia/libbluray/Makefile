@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/27 12:43:24 sthen Exp $
-
 COMMENT =		library supporting Blu-ray playback
 
 V =			1.3.0

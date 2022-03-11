@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bulfius_post_c,v 1.1.1.1 2022/02/09 09:58:58 landry Exp $
 Disable statistic reporting.
 
 Index: src/bulfius_post.c

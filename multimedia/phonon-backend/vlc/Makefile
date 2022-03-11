@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/03/15 06:28:05 rsadowski Exp $
-
 COMMENT =	VLC-based Phonon backend
 VERSION =	0.11.2
 DISTNAME =	phonon-backend-vlc-${VERSION}

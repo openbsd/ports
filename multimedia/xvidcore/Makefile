@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/11/17 05:56:08 rsadowski Exp $
-
 COMMENT=	ISO MPEG-4 compliant video codec
 
 DISTNAME=	xvidcore-1.3.7

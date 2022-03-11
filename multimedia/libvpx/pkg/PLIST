@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2021/04/29 04:07:21 rsadowski Exp $
 @bin bin/vpxdec
 @bin bin/vpxenc
 include/vpx/

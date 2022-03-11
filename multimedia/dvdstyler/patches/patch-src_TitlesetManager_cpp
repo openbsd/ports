@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_TitlesetManager_cpp,v 1.1 2021/02/27 06:58:09 ajacoutot Exp $
-
 Fix build with wxWidgets-gtk3 >=3.1.X
 
 Index: src/TitlesetManager.cpp

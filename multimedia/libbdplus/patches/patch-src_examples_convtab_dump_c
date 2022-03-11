@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_examples_convtab_dump_c,v 1.1.1.1 2015/06/15 07:15:29 ajacoutot Exp $
-
 convtab_dump.c:32: error: 'index' redeclared as different kind of symbol
 
 --- src/examples/convtab_dump.c.orig	Mon Jun 15 00:37:26 2015

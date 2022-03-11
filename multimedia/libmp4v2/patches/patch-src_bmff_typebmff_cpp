@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_bmff_typebmff_cpp,v 1.1 2017/05/18 13:41:33 espie Exp $
 namespace correctness, stolen from git commit e065581
 
 Index: src/bmff/typebmff.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/22 20:53:22 thfr Exp $
-
 COMMENT =	Ogg Theora Video Decoder Library
 
 # stable release binary packages are only available as part of FNA

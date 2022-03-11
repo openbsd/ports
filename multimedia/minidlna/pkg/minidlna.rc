@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: minidlna.rc,v 1.4 2019/03/20 11:47:46 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/minidlnad"
 daemon_user="_minidlna"

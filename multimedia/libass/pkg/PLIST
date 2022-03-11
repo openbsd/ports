@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/12/14 15:56:36 rsadowski Exp $
 include/ass/
 include/ass/ass.h
 include/ass/ass_types.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_codec_video_VideoEncoderFFmpeg_cpp,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
-
 Index: src/codec/video/VideoEncoderFFmpeg.cpp
 --- src/codec/video/VideoEncoderFFmpeg.cpp.orig
 +++ src/codec/video/VideoEncoderFFmpeg.cpp

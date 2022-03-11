@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:57 sthen Exp $
-
 COMMENT =	representation of an iTunes Library
 
 MODULES =	cpan

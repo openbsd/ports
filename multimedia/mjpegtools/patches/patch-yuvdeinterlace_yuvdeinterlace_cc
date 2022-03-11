@@ -1,5 +1,3 @@
-$OpenBSD: patch-yuvdeinterlace_yuvdeinterlace_cc,v 1.1 2018/04/25 20:55:22 naddy Exp $
-
 Index: yuvdeinterlace/yuvdeinterlace.cc
 --- yuvdeinterlace/yuvdeinterlace.cc.orig
 +++ yuvdeinterlace/yuvdeinterlace.cc

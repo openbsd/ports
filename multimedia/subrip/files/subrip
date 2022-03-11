@@ -1,5 +1,4 @@
 #! /bin/sh
-# $OpenBSD: subrip,v 1.2 2007/01/22 17:43:10 espie Exp $
 #
 # Copyright (c) 2007 Marc Espie <espie@openbsd.org>
 # 

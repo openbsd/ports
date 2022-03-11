@@ -1,4 +1,3 @@
-$OpenBSD: patch-deploy_pri,v 1.1.1.1 2019/05/02 12:26:15 rsadowski Exp $
 Fix installation paths.
 Index: deploy.pri
 --- deploy.pri.orig

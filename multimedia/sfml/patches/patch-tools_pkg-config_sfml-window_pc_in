@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_pkg-config_sfml-window_pc_in,v 1.1 2022/01/01 12:28:46 pascal Exp $
-
 Index: tools/pkg-config/sfml-window.pc.in
 --- tools/pkg-config/sfml-window.pc.in.orig
 +++ tools/pkg-config/sfml-window.pc.in

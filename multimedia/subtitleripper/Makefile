@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:58 sthen Exp $
-
 COMMENT=	subtitle ripper, used with transcode
 
 DISTNAME=	subtitleripper-0.3-4

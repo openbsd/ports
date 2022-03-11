@@ -1,5 +1,3 @@
-$OpenBSD: patch-libde265_pc_in,v 1.1 2020/02/26 22:46:03 sthen Exp $
-
 Index: libde265.pc.in
 --- libde265.pc.in.orig
 +++ libde265.pc.in

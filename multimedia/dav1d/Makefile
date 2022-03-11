@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/09/11 18:16:04 rsadowski Exp $
-
 COMMENT=	small and fast AV1 decoder
 
 VER=		0.9.2
