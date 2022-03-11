@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2020/01/26 11:14:30 jasper Exp $
-
 COMMENT=	reciprocating engine for X11
 PKGNAME=	xengine-1.0.1
 REVISION=	5

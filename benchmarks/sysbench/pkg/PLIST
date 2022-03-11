@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/05/12 13:58:30 espie Exp $
 @bin bin/sysbench
 share/doc/sysbench/
 share/doc/sysbench/manual.html

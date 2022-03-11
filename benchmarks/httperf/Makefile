@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/04/29 07:52:43 tb Exp $
-
 COMMENT =		web server performance testing tool
 
 DISTNAME =		httperf-0.9.1.20201206

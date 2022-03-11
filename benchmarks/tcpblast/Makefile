@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT=	measure the throughput of a TCP connection
 
 PKGNAME=	tcpblast-1.1

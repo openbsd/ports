@@ -1,4 +1,3 @@
-$OpenBSD: patch-rand_cpp,v 1.1 2014/12/09 20:46:00 sthen Exp $
 --- rand.cpp.orig	Tue Dec  9 20:35:55 2014
 +++ rand.cpp	Tue Dec  9 20:36:20 2014
 @@ -40,7 +40,7 @@ void Rand::seedNum(UINT num)

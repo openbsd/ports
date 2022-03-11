@@ -1,4 +1,3 @@
-$OpenBSD: patch-utils_siege_config_in,v 1.2 2019/12/01 22:03:11 fcambus Exp $
 Index: utils/siege.config.in
 --- utils/siege.config.in.orig
 +++ utils/siege.config.in

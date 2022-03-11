@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/31 17:06:24 tobiasu Exp $
 @bin bin/fs_mark
 share/doc/fs_mark/
 share/doc/fs_mark/README

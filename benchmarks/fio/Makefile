@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/16 17:11:18 kmos Exp $
-
 COMMENT=	flexible I/O tester
 
 GH_ACCOUNT=	axboe

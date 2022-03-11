@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT =		test synchronous write workloads
 DISTNAME =		fs_mark-3.3
 REVISION =		1

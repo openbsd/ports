@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_nettest_omni_c,v 1.1 2021/01/31 19:27:02 sthen Exp $
-
 From PR https://github.com/HewlettPackard/netperf/pull/46
 
 From c6a2e17fe35f0e68823451fedfdf5b1dbecddbe3 Mon Sep 17 00:00:00 2001

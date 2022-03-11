@@ -1,4 +1,3 @@
-$OpenBSD: patch-generate_randfile_cpp,v 1.1 2014/12/09 20:46:00 sthen Exp $
 --- generate_randfile.cpp.orig	Tue Dec  9 20:36:30 2014
 +++ generate_randfile.cpp	Tue Dec  9 20:36:36 2014
 @@ -41,7 +41,7 @@ int main(int argc, char **argv)

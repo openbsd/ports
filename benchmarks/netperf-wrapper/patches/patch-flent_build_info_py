@@ -1,5 +1,3 @@
-$OpenBSD: patch-flent_build_info_py,v 1.5 2021/10/21 20:35:22 sthen Exp $
-
 Index: flent/build_info.py
 --- flent/build_info.py.orig
 +++ flent/build_info.py

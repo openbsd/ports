@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/10/16 14:34:46 thfr Exp $
 @bin bin/glmark2
 @bin bin/glmark2-es2
 @man man/man1/glmark2-es2.1

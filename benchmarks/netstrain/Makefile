@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT=	tool to measure TCP throughput
 DISTNAME=	netstrain-3.0
 CATEGORIES=	benchmarks net

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/22 13:55:54 espie Exp $
-
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
 

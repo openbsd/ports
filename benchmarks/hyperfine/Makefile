@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/10/26 13:53:51 fcambus Exp $
-
 COMMENT =		command-line benchmarking tool
 
 GH_ACCOUNT =		sharkdp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/16 14:34:46 thfr Exp $
-
 COMMENT =	benchmark for OpenGL 2.0 and ES 2.0
 
 GH_ACCOUNT =	glmark2

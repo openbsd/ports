@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT=	help benchmark random read performance
 
 DISTNAME=	randread-0.2

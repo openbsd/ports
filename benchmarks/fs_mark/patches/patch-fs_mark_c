@@ -1,4 +1,3 @@
-$OpenBSD: patch-fs_mark_c,v 1.1.1.1 2013/12/31 17:06:24 tobiasu Exp $
 --- fs_mark.c.orig	Fri Dec 13 02:16:07 2013
 +++ fs_mark.c	Fri Dec 13 02:30:02 2013
 @@ -29,8 +29,9 @@ char *fs_mark_version = "3.3";

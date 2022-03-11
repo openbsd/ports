@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/18 18:29:20 sthen Exp $
 @bin bin/netperf
 @bin bin/netserver
 @info info/netperf.info

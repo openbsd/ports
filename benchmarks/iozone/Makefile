@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2020/10/18 07:18:06 benoit Exp $
-
 COMMENT=	performance test of sequential file I/O
 
 V =		3.490

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/05/05 12:59:55 kurt Exp $
 @conflict py-fiona-*
 @bin bin/fio
 @bin bin/fio-dedupe

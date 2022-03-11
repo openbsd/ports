@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/01/31 19:27:02 sthen Exp $
-
 COMMENT=	network performance benchmark
 
 GH_ACCOUNT=	HewlettPackard

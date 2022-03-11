@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_examples_arr_script,v 1.1 2013/04/18 18:29:20 sthen Exp $
 --- doc/examples/arr_script.orig	Thu Apr 18 19:10:05 2013
 +++ doc/examples/arr_script	Thu Apr 18 19:11:31 2013
 @@ -12,8 +12,7 @@ init_parms() {

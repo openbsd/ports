@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/02 00:00:14 sthen Exp $
-
 COMMENT=	multi-protocol distributed load testing tool
 
 V=		1.7.0

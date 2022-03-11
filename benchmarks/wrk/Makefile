@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/01/16 13:43:21 fcambus Exp $
-
 COMMENT =	modern HTTP benchmarking tool
 
 GH_ACCOUNT =	wg

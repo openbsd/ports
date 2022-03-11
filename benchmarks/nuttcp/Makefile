@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/18 13:38:42 bluhm Exp $
-
 COMMENT =	network performance measurement tool
 
 DISTNAME =	nuttcp-8.2.2

@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.4 2015/08/18 20:41:29 bluhm Exp $
 --- configure.in.orig	Tue Jan 18 21:35:28 2011
 +++ configure.in	Mon Oct 13 20:09:28 2014
 @@ -60,7 +60,7 @@ if [[ -n "$snprintf" ]]; then

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/02/13 20:32:48 jasper Exp $
 bin/tsplot
 bin/tsung
 bin/tsung-recorder

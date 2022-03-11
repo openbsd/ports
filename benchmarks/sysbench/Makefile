@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/11/05 19:47:34 sthen Exp $
-
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
 REVISION =	15

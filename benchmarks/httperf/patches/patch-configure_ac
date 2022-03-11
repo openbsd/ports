@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2021/04/29 07:52:43 tb Exp $
-
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac

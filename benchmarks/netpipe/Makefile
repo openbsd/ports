@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT=	self-scaling network benchmark
 
 DISTNAME=	NetPIPE-3.7.2

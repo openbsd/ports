@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT=	enhanced performance test of filesystem I/O
 
 DISTNAME=	bonnie++-1.97.3

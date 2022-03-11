@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:43:42 sthen Exp $
-
 COMMENT=	filesystem benchmark
 
 DISTNAME=	blogbench-1.1

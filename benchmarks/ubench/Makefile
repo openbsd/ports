@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:43:43 sthen Exp $
-
 COMMENT=	Unix benchmark utility
 
 DISTNAME=	ubench-0.32

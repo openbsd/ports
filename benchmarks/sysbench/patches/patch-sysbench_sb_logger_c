@@ -1,4 +1,3 @@
-$OpenBSD: patch-sysbench_sb_logger_c,v 1.1.1.1 2008/04/15 14:14:08 sthen Exp $
 --- sysbench/sb_logger.c.orig	Mon Apr  3 12:39:09 2006
 +++ sysbench/sb_logger.c	Tue Apr 15 12:10:58 2008
 @@ -441,15 +441,17 @@ int oper_handler_init(void)

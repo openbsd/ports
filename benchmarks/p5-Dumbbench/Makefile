@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/10 15:14:51 bluhm Exp $
-
 COMMENT =	more reliable benchmarking
 
 DISTNAME =	Dumbbench-0.501
