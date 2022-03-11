@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/05/13 07:50:43 jasper Exp $
-
 COMMENT=		presenter console with multi-monitor support
 
 GH_ACCOUNT=		pdfpc

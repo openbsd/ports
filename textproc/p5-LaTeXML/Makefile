@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/01 01:59:05 afresh1 Exp $
-
 COMMENT =	LaTeX to XML/HTML/MathML Converter
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/14 13:00:54 sthen Exp $
-
 COMMENT =		Python documentation generator
 
 MODPY_EGG_VERSION =	4.0.2

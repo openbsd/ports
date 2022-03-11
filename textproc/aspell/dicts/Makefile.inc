@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.16 2019/07/13 10:59:27 sthen Exp $
-
 # Check individual packages for overrides when bumping this!
 PKGNAMEBASE=	${DISTNAME:C/aspell[0-9]/aspell/}
 PKGNAME?=	${PKGNAMEBASE:C/-([0-9])$/.\1/}

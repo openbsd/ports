@@ -1,4 +1,3 @@
-# $OpenBSD: crates.inc,v 1.1 2021/10/24 17:42:14 fcambus Exp $
 MODCARGO_CRATES +=	aho-corasick	0.7.18	# Unlicense/MIT
 MODCARGO_CRATES +=	atty	0.2.14	# MIT
 MODCARGO_CRATES +=	base64	0.13.0	# MIT/Apache-2.0

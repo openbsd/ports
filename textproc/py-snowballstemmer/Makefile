@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/17 08:53:04 sthen Exp $
-
 COMMENT =		snowball stemming library collection for Python
 
 MODPY_EGG_VERSION =	2.2.0

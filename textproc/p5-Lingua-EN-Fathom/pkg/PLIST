@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/04 13:20:55 jasper Exp $
 ${P5SITE}/Lingua/EN/Fathom.pm
 @man man/man3p/Lingua::EN::Fathom.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/12/24 04:05:09 afresh1 Exp $
-
 COMMENT =	comma-separated values manipulator routines
 
 MODULES =	cpan

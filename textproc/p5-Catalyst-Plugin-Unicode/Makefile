@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:45 sthen Exp $
-
 COMMENT=	unicode-aware catalyst (old style)
 
 DISTNAME=	Catalyst-Plugin-Unicode-0.93

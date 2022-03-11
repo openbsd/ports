@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/18 10:00:03 sthen Exp $
-
 COMMENT =		lib/cli for JSON/YAML schema validation
 
 MODPY_EGG_VERSION =	1.8.0

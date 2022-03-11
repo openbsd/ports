@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2009/12/12 20:14:39 naddy Exp $
-
 Don't run ldconfig -m.
 
 --- Makefile.in.orig	Sat Dec 12 00:43:54 2009

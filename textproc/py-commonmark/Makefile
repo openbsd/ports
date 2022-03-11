@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:37 sthen Exp $
-
 COMMENT=		parser for the CommonMark markdown spec
 
 MODPY_EGG_VERSION=	0.9.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/02/26 18:20:36 naddy Exp $
-
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
 PKGNAME =	arabica-2010.11

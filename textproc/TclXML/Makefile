@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2020/06/09 07:14:45 jasper Exp $
-
 COMMENT =	XML parser for Tcl
 
 DISTNAME =	tclxml-3.2

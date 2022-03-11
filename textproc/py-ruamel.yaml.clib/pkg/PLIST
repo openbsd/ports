@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/30 09:52:41 sthen Exp $
 @conflict py3-ruamel.yaml-<0.17.16
 @so lib/python${MODPY_VERSION}/site-packages/_ruamel_yaml.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ruamel/

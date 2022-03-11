@@ -1,5 +1,3 @@
-$OpenBSD: patch-lgrind_dtx,v 1.1 2020/08/18 18:52:26 edd Exp $
-
 Fix incorrectly nested dtx.
 
 https://tex.stackexchange.com/questions/550540/lgrind-dtx-no-longer-compiles-as-of-tex-live-2020-potential-problem-with-new-la

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT=	collate XML character events in one chunk
 
 MODULES=	cpan

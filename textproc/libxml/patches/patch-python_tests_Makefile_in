@@ -1,5 +1,3 @@
-$OpenBSD: patch-python_tests_Makefile_in,v 1.20 2022/02/22 10:46:51 ajacoutot Exp $
-
 Index: python/tests/Makefile.in
 --- python/tests/Makefile.in.orig
 +++ python/tests/Makefile.in

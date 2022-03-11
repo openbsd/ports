@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:51 sthen Exp $
-
 COMMENT=	simple eyecandy ASCII Tables
 
 DISTNAME=	Text-SimpleTable-2.07

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/20 01:39:09 gnezdo Exp $
-
 # Even with the highest memory limit pandoc fails to compile.
 BROKEN-i386 =	ghc: out of memory (requested 2097152 bytes)
 

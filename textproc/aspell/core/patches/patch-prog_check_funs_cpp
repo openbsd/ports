@@ -1,5 +1,3 @@
-$OpenBSD: patch-prog_check_funs_cpp,v 1.1 2018/04/07 22:50:15 naddy Exp $
-
 Fix compilation with clang 6.
 https://git.savannah.gnu.org/cgit/aspell.git/patch/?id=8089fa02122fed0a6394eba14bbedcb1d18e2384
 

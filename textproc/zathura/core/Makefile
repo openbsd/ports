@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/15 14:29:33 sthen Exp $
-
 V =			0.4.8
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}

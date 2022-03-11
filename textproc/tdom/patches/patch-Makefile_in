@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2018/07/26 01:56:52 stu Exp $
-
 Install to OpenBSD locations and adjust pkgIndex.tcl accordingly.
 
 Index: Makefile.in

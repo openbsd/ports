@@ -1,5 +1,3 @@
-$OpenBSD: patch-igor_1,v 1.4 2020/10/02 20:18:32 schwarze Exp $
-
 Chunk 1: Correct wrong cross reference (also submitted upstream).
 Chunks 2 and 3(3): Do not report contractions by default (local change).
 Chunks 3(1) and 4: Do not use /usr/local/etc/ (local change).

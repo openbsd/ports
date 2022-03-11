@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:50:16 sthen Exp $
-
 COMMENT=	lightweight regexp matching library with additional features
 
 DISTNAME=		tre-0.8.0

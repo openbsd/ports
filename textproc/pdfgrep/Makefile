@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/26 22:37:56 sthen Exp $
-
 COMMENT =		tool to search text in PDF files
 
 DISTNAME =		pdfgrep-2.1.2

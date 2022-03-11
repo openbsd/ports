@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2021/10/08 03:30:36 bcallah Exp $
 bin/nfoview
 lib/python${MODPY_VERSION}/site-packages/nfoview/
 lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

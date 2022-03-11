@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/01/31 04:06:03 bcallah Exp $
-
 COMMENT =	yet another free document preparation system
 
 DISTNAME =	halibut-1.2

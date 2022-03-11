@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/12/12 08:57:32 benoit Exp $
-
 COMMENT =	convert singular to plural, select a or an
 
 MODULES =	cpan

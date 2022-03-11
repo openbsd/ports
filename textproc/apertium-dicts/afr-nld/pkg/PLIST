@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:34:51 bentley Exp $
 @pkgpath textproc/apertium-dicts/af-nl
 share/apertium/apertium-afr-nld/
 share/apertium/apertium-afr-nld/afr-nld.autobil.bin

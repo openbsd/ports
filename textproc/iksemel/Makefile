@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
 REVISION=		12

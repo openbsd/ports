@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/18 12:07:25 bentley Exp $
-
 L =	nob
 LANG =	Norwegian Bokmal
 V =	1.1.0

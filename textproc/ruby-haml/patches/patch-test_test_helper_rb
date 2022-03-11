@@ -1,4 +1,3 @@
-$OpenBSD: patch-test_test_helper_rb,v 1.1 2013/01/14 18:42:24 jeremy Exp $
 --- test/test_helper.rb.orig	Fri Jan 11 11:06:33 2013
 +++ test/test_helper.rb	Fri Jan 11 11:07:27 2013
 @@ -1,14 +1,9 @@

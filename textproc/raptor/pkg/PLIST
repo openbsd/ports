@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/06/28 05:47:02 ajacoutot Exp $
 @bin bin/rapper
 include/raptor2/
 include/raptor2/raptor.h

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/14 19:09:03 espie Exp $
 ${P5SITE}/XML/SAX/Expat.pm
 @man man/man3p/XML::SAX::Expat.3p

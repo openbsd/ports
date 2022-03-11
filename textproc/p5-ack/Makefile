@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/02/16 10:52:34 sthen Exp $
-
 COMMENT=	grep like tool, aimed at programmers
 
 PORTROACH=	limit:v?[3-9].*

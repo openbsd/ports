@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/15 04:24:56 bentley Exp $
 share/apertium/apertium-ca-eo/
 share/apertium/apertium-ca-eo/apertium-eo-ca.ca-eo.antaux2_t2x
 share/apertium/apertium-ca-eo/apertium-eo-ca.ca-eo.antaux_t2x

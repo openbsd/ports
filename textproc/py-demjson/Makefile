@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:37 sthen Exp $
-
 COMMENT =		encoder, decoder, and lint/validator for JSON
 
 DISTNAME =		demjson-${MODPY_EGG_VERSION}

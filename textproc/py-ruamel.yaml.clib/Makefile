@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:39 sthen Exp $
-
 COMMENT =		C based reader/scanner and emitter for ruamel.yaml
 
 MODPY_EGG_VERSION =	0.2.6

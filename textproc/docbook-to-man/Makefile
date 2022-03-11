@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/20 17:38:06 sthen Exp $
-
 COMMENT=	convert docbook to man
 CATEGORIES=	textproc converters
 

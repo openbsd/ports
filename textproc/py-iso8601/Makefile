@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/12/11 10:22:00 sthen Exp $
-
 COMMENT =		Python module to parse ISO 8601 dates
 
 MODPY_EGG_VERSION =	1.0.2

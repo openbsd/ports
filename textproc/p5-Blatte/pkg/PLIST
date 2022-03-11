@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:44:03 espie Exp $
 bin/blatte
 ${P5SITE}/Blatte/
 ${P5SITE}/Blatte.pm

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/06/09 07:14:45 jasper Exp $
-
 COMMENT=	docbook XSL modular stylesheet
 
 DISTNAME=	docbook-xsl-1.68.1

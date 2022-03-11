@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:59 sthen Exp $
-
 COMMENT=		text hyphenation library
 
 DISTNAME=		hyphen-2.8.8

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
-
 COMMENT =		extract URLs from MIME email messages or plain text
 
 GH_ACCOUNT =		m3m0ryh0l3

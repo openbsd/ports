@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:49:58 sthen Exp $
-
 COMMENT=	gtk+3 spelling checker
 
 DISTNAME=	gtkspell3-3.0.10

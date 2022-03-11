@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_XPath_impl_xpath_logical_hpp,v 1.2 2021/02/26 18:20:36 naddy Exp $
-
 Index: include/XPath/impl/xpath_logical.hpp
 --- include/XPath/impl/xpath_logical.hpp.orig
 +++ include/XPath/impl/xpath_logical.hpp

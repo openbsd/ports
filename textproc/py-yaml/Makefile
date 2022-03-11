@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2022/02/02 10:37:23 sthen Exp $
-
 COMMENT=	YAML parser and emitter in Python
 
 MODPY_EGG_VERSION=5.4.1

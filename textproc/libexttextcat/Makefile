@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/15 00:29:04 sthen Exp $
-
 COMMENT=	UTF-8 aware language guessing library
 
 GH_ACCOUNT=	LibreOffice

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
-
 COMMENT =		Lua binding to libsoldout
 
 DISTNAME =		luasoldout-0.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_tools_ctestfw_Makefile_in,v 1.5 2020/11/01 08:15:53 ajacoutot Exp $
-
 Don't strip static libraries.
 
 Index: source/tools/ctestfw/Makefile.in

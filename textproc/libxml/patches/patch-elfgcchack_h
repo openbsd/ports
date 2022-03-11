@@ -1,5 +1,3 @@
-$OpenBSD: patch-elfgcchack_h,v 1.1 2020/07/19 09:03:05 ajacoutot Exp $
-
 Enable internal symbol aliases in order to not perform internal calls to
 public interfaces through the plt within libxml.so.
 

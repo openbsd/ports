@@ -1,4 +1,3 @@
-$OpenBSD: patch-modules_blc_blc_1_in,v 1.1 2015/02/17 21:19:34 naddy Exp $
 --- modules/blc/blc.1.in.orig	Sun Aug 11 20:59:35 2002
 +++ modules/blc/blc.1.in	Tue Feb 17 22:08:37 2015
 @@ -21,7 +21,7 @@ The line will be continued until an equal number of op

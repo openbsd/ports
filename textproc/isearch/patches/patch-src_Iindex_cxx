@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Iindex_cxx,v 1.2 2017/05/25 14:14:43 espie Exp $
 Index: src/Iindex.cxx
 --- src/Iindex.cxx.orig
 +++ src/Iindex.cxx

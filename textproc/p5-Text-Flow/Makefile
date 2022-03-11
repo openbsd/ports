@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:51 sthen Exp $
-
 COMMENT =	flexible text flowing and word wrapping
 
 DISTNAME =	Text-Flow-0.01

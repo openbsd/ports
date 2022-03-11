@@ -1,4 +1,3 @@
-# $OpenBSD: crates.inc,v 1.1 2021/12/21 08:42:42 paco Exp $
 MODCARGO_CRATES +=	aho-corasick	0.7.15	# Unlicense/MIT
 MODCARGO_CRATES +=	ansi_term	0.11.0	# MIT
 MODCARGO_CRATES +=	ansi_term	0.12.1	# MIT

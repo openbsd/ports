@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/23 19:39:46 sthen Exp $
-
 COMMENT=	syntax highlighter based on pygments
 
 DISTNAME=	pygments.rb-0.6.3

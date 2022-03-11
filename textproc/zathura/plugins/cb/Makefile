@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/15 14:29:41 sthen Exp $
-
 V =		0.1.9
 COMMENT =	comic book plugin for zathura
 PROJECT =	zathura-cb

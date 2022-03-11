@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/09/02 14:59:45 jeremy Exp $
-
 COMMENT =	better AsciiDoc text proc/publishing software
 
 V =		2.0.10

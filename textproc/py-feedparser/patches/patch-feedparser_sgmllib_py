@@ -1,5 +1,3 @@
-$OpenBSD: patch-feedparser_sgmllib_py,v 1.1 2021/11/03 16:02:40 sthen Exp $
-
 Quick and dirty 2to3 port of sgmllib from Python 2.
 From https://pypi.org/project/sgmllib3k/
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/05/27 15:37:50 ajacoutot Exp $
-
 PORTROACH=		limit:^2
 
 COMMENT=		C++ wrapper for the libxml XML parser library

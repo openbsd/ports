@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/03/18 08:37:33 bentley Exp $
 @bin bin/texi2mdoc
 @man man/man1/texi2mdoc.1

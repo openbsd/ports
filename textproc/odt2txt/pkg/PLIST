@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/16 19:35:31 jasper Exp $
 @conflict unoconv-*
 @bin bin/odt2txt
 @man man/man1/odt2txt.1

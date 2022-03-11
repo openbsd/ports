@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/03 13:36:57 pvk Exp $
-
 COMMENT=	Python client for Elasticsearch
 
 MODPY_EGG_VERSION=7.17.0

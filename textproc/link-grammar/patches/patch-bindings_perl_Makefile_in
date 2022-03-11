@@ -1,5 +1,3 @@
-$OpenBSD: patch-bindings_perl_Makefile_in,v 1.5 2021/10/31 15:02:58 ajacoutot Exp $
-
 Index: bindings/perl/Makefile.in
 --- bindings/perl/Makefile.in.orig
 +++ bindings/perl/Makefile.in

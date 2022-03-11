@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.30 2022/02/17 13:43:35 ajacoutot Exp $
 @pkgpath textproc/libxslt,-main
 bin/xslt-config
 @bin bin/xsltproc

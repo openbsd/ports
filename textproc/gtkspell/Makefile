@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2019/07/12 20:49:58 sthen Exp $
-
 PORTROACH+=	limit:^2
 
 COMMENT=	gtk+2 spelling checker

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmake_modules_FindBDB_cmake,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
-
 Index: cmake/modules/FindBDB.cmake
 --- cmake/modules/FindBDB.cmake.orig
 +++ cmake/modules/FindBDB.cmake

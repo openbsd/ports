@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/21 09:49:34 fcambus Exp $
-
 COMMENT =	name-indexed data processing tool
 
 GH_ACCOUNT =	johnkerl

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-ruby,v 1.1 2021/11/26 13:35:06 inoguchi Exp $
 @so ${MODRUBY_SITEARCHDIR}/marisa.so

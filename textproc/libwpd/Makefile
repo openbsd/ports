@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 21:02:27 sthen Exp $
-
 COMMENT=	import and export WordPerfect(tm) documents
 
 DISTNAME=	libwpd-0.8.9

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=		flexible HTML parser
 
 DISTNAME=		hpricot-0.8.6

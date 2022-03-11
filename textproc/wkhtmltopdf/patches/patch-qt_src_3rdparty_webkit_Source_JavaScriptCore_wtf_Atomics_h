@@ -1,4 +1,3 @@
-$OpenBSD: patch-qt_src_3rdparty_webkit_Source_JavaScriptCore_wtf_Atomics_h,v 1.1 2017/04/27 16:23:14 espie Exp $
 --- qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h.orig	Thu Apr 27 16:37:16 2017
 +++ qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h	Thu Apr 27 16:37:51 2017
 @@ -69,6 +69,8 @@

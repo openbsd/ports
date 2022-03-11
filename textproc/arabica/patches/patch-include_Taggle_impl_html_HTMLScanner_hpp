@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_Taggle_impl_html_HTMLScanner_hpp,v 1.2 2021/02/26 18:20:36 naddy Exp $
 Nope you can't add numbers to strings
 
 Index: include/Taggle/impl/html/HTMLScanner.hpp

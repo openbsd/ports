@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/02/18 16:37:21 kn Exp $
 @conflict docbook2x-<0.8.8p4
 bin/docbook2dvi
 bin/docbook2html

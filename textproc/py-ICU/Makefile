@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2022/02/25 13:54:49 ajacoutot Exp $
-
 COMMENT=		Python extension wrapping the ICU C++ API
 
 MODPY_EGG_VERSION=	2.8.1

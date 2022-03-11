@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/28 10:45:43 sthen Exp $
-
 COMMENT =	character set detector library
 
 MODPY_EGG_VERSION =	2.0.12

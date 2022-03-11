@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/15 04:24:56 bentley Exp $
-
 L =	cat-srd
 LANG =	Catalan/Sardinian
 V =	1.1.0

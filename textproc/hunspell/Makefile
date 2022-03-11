@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/10/09 19:11:32 rsadowski Exp $
-
 COMMENT =	spelling, stemming, morphological analysis and generation
 
 GH_ACCOUNT =	hunspell

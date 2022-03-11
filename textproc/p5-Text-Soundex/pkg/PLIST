@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/12/05 18:15:39 afresh1 Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/Soundex.pm

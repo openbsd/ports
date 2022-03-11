@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT =	inflect short English Phrases
 DISTNAME =	Lingua-EN-Inflect-Phrase-0.20
 CATEGORIES =	textproc

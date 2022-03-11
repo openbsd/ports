@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:57 sthen Exp $
-
 COMMENT=	command line parser generator
 
 DISTNAME=	clo++-0.3.0

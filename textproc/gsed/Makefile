@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/01/23 00:36:27 bcallah Exp $
-
 COMMENT=		GNU stream editor
 
 DISTNAME=		sed-4.8

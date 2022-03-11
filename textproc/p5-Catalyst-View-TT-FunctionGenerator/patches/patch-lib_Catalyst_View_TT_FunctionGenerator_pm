@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Catalyst_View_TT_FunctionGenerator_pm,v 1.1 2012/04/08 22:04:40 sthen Exp $
 --- lib/Catalyst/View/TT/FunctionGenerator.pm.orig	Wed Mar  7 03:57:07 2007
 +++ lib/Catalyst/View/TT/FunctionGenerator.pm	Sun Nov  6 09:14:00 2011
 @@ -10,6 +10,7 @@ use Catalyst::Utils ();

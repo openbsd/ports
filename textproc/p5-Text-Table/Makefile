@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/07/03 21:45:51 sthen Exp $
-
 COMMENT=	organize data in tables
 
 MODULES=	cpan

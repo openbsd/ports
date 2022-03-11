@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-portuguese,v 1.2 2004/12/25 22:37:36 sturm Exp $
 lib/ispell/portuguese.aff
 lib/ispell/portuguese.hash

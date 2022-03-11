@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 21:02:27 sthen Exp $
-
 COMMENT =	module for using Textile in Ruby
 
 DISTNAME =	RedCloth-4.3.2

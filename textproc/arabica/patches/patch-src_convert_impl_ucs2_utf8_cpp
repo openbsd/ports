@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_convert_impl_ucs2_utf8_cpp,v 1.1 2018/04/12 18:10:38 jasper Exp $
-
 error: constant expression evaluates to -16 which cannot be narrowed to type 'unsigned char'
 
 Index: src/convert/impl/ucs2_utf8.cpp

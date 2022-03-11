@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/15 18:22:28 sthen Exp $
-
 L =	eng-cat
 LANG =	English/Catalan
 V =	1.0.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2022/02/26 14:01:12 sthen Exp $
-
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
 MODPY_EGG_VERSION=	4.8.0

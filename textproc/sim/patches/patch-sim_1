@@ -1,4 +1,3 @@
-$OpenBSD: patch-sim_1,v 1.1 2017/05/15 18:34:20 schwarze Exp $
 Neither groff nor mandoc define .DS, .DE, or \f5.
 Should probably be reported upstream after updating the port.
 

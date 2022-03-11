@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/01/17 11:02:25 ajacoutot Exp $
 lib/aspell/ro.dat
 share/aspell/ro-classic-only.rws
 share/aspell/ro-classic.multi

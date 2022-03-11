@@ -1,6 +1,3 @@
-$OpenBSD: patch-include_IListIter_h,v 1.1 2018/04/10 13:21:18 jasper Exp $
-
-
 Index: include/IListIter.h
 --- include/IListIter.h.orig
 +++ include/IListIter.h

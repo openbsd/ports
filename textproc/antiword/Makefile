@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2019/07/12 21:02:26 sthen Exp $
-
 COMMENT=	converts MSWord Documents to ASCII Text and PostScript
 
 DISTNAME=	antiword-0.37

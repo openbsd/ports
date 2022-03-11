@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/19 01:50:31 kurt Exp $
-
 PKG_ARCH =	*
 
 COMMENT =	EPUB validator

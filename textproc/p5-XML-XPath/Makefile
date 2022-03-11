@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.38 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT =	modules for parsing and evaluating XPath statements
 
 MODULES =	cpan

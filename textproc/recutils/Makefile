@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/08/31 17:41:19 jca Exp $
-
 COMMENT =	tools to access human-editable plaintext record files
 
 DISTNAME =	recutils-1.8

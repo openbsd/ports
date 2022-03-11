@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/09/16 12:22:03 espie Exp $
-
 COMMENT=	LaTeX vgrind(1) look-alike
 
 CATEGORIES=	textproc devel print

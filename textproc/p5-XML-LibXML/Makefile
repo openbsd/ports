@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2021/04/24 10:16:38 bluhm Exp $
-
 COMMENT =	perl binding for libxml2
 
 DISTNAME =	XML-LibXML-2.0207

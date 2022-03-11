@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_config_icu-config-bottom,v 1.11 2020/04/23 06:33:13 ajacoutot Exp $
-
 Index: source/config/icu-config-bottom
 --- source/config/icu-config-bottom.orig
 +++ source/config/icu-config-bottom

@@ -1,4 +1,3 @@
-$OpenBSD: patch-filepp_1,v 1.1 2015/02/17 21:19:34 naddy Exp $
 --- filepp.1.orig	Tue Feb 27 21:02:16 2007
 +++ filepp.1	Tue Feb 17 22:17:36 2015
 @@ -1107,7 +1107,7 @@ The line will be continued until an equal number of op

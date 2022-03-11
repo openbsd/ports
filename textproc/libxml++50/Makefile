@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/27 17:23:17 ajacoutot Exp $
-
 COMMENT=		C++ bindings for libxml2
 
 GNOME_VERSION=		5.0.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:01 sthen Exp $
-
 COMMENT =		lua library for the expat XML parser
 DISTNAME =		luaexpat-1.3.0
 REVISION =		0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/15 04:24:59 bentley Exp $
-
 L =	nno
 LANG =	Norwegian Nynorsk
 V =	1.1.0

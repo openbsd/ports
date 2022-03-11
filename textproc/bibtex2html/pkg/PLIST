@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/09/16 18:01:08 jasper Exp $
 bin/aux2bib
 @bin bin/bib2bib
 @bin bin/bibtex2html

@@ -1,5 +1,3 @@
-$OpenBSD: patch-local_h_bsd,v 1.1 2017/06/03 12:46:37 sthen Exp $
-
 Index: local.h.bsd
 --- local.h.bsd.orig
 +++ local.h.bsd

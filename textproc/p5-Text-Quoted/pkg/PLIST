@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/22 02:58:44 msf Exp $
 ${P5SITE}/Text/Quoted.pm
 @man man/man3p/Text::Quoted.3p

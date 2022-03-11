@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_IList_h,v 1.1 2018/04/10 13:21:18 jasper Exp $
-
 Index: include/IList.h
 --- include/IList.h.orig
 +++ include/IList.h

@@ -1,8 +1,7 @@
-$OpenBSD: patch-tol_c,v 1.1 2011/07/03 22:55:26 naddy Exp $
 --- tol.c.orig	Fri Jun 24 19:03:05 2011
 +++ tol.c	Fri Jun 24 19:03:18 2011
 @@ -11,6 +11,7 @@
- static char rcsid[]= "$Header: /home/cvs/ports/textproc/spiff/patches/patch-tol_c,v 1.1 2011/07/03 22:55:26 naddy Exp $";
+ static char rcsid[]= "$Header: /home/cvs/ports/textproc/spiff/patches/patch-tol_c,v 1.2 2022/03/11 20:03:31 naddy Exp $";
  #endif
  
 +#include <stdio.h>

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2022/01/06 13:29:03 sthen Exp $
 @bin bin/jo
 @man man/man1/jo.1
 share/bash-completion/

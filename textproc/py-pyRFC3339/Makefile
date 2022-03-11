@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:39 sthen Exp $
-
 COMMENT=	format dates according to RFC3339
 
 MODPY_EGG_VERSION=	1.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:50 sthen Exp $
 @pkgpath textproc/py-PEG2
 lib/python${MODPY_VERSION}/site-packages/pyPEG2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pypeg2/

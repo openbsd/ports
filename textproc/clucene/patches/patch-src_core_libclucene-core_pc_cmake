@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_core_libclucene-core_pc_cmake,v 1.2 2012/10/09 16:23:15 robert Exp $
-
 https://sourceforge.net/tracker/?func=detail&aid=3461512&group_id=80013&atid=558446
 
 --- src/core/libclucene-core.pc.cmake.orig	Thu Mar 17 01:21:07 2011

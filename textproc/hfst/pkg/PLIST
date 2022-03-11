@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/10/17 06:51:10 bentley Exp $
 @bin bin/hfst-affix-guessify
 @bin bin/hfst-calculate
 @bin bin/hfst-compare

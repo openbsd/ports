@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=	perl module for parsing huge XML documents
 
 DISTNAME=	XML-Twig-3.52

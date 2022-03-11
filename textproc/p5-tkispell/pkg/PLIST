@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/29 17:42:53 ajacoutot Exp $
 bin/tkispell
 ${P5SITE}/Tk/
 ${P5SITE}/Tk/SimpleFileSelect.pm

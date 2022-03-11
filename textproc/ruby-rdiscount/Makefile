@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 21:02:27 sthen Exp $
-
 COMMENT =	discount implementation of John Gruber's Markdown
 
 DISTNAME =	rdiscount-2.2.0.1

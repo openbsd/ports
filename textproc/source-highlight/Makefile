@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/02/19 18:49:00 ajacoutot Exp $
-
 COMMENT=	create a document with syntax highlighting
 
 DISTNAME=	source-highlight-3.1.9

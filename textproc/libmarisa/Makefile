@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/26 13:35:06 inoguchi Exp $
-
 COMMENT-main =		C++ library for MARISA matching algorithm
 COMMENT-perl =		marisa-trie bindings for Perl (SWIG)
 COMMENT-python =	marisa-trie bindings for Python (SWIG)

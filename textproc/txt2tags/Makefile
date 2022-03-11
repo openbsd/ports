@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/02/23 19:39:46 sthen Exp $
-
 COMMENT=	utility to turn simply formatted text into markup
 
 DISTNAME=	txt2tags-2.6

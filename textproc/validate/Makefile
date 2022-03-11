@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:50:16 sthen Exp $
-
 COMMENT=		HTML, XHTML validator
 
 DISTNAME=		validate-1.2.2

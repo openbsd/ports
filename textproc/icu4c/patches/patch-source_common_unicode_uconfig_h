@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_common_unicode_uconfig_h,v 1.3 2019/10/19 08:44:40 ajacoutot Exp $
-
 Index: source/common/unicode/uconfig.h
 --- source/common/unicode/uconfig.h.orig
 +++ source/common/unicode/uconfig.h

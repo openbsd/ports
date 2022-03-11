@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/19 10:04:54 sthen Exp $
-
 COMMENT=	extension for generating XML
 
 MODULES=	cpan

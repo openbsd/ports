@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/10/29 13:52:32 edd Exp $
-
 COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang

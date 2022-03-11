@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/17 19:59:44 jasper Exp $
-
 COMMENT =		Unicode Character Database (UCD)
 
 # XXX: make sure the major version of this port matches

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2021/11/02 00:02:35 sthen Exp $
-
 COMMENT =	versatile file searching tool
 
 XFCE_GOODIE =	catfish

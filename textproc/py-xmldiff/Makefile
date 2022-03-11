@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/16 08:21:09 sthen Exp $
-
 COMMENT=		show differences between XML files/DOM trees
 
 MODPY_EGG_VERSION=	2.4

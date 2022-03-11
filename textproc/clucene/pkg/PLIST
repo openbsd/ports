@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2015/03/16 18:07:56 naddy Exp $
 include/CLucene/
 include/CLucene.h
 include/CLucene/CLConfig.h

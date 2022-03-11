@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:02:35 sthen Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		translate XML documents with PO files

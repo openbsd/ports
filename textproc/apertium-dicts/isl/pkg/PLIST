@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/01 10:15:08 bentley Exp $
 share/apertium/apertium-isl/
 share/apertium/apertium-isl/isl.autogen.att.gz
 share/apertium/apertium-isl/isl.autogen.bin

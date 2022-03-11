@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:16 sthen Exp $
-
 COMMENT=	curses-based URL ripper
 
 DISTNAME=	urlview-0.9

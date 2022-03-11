@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT =	force number of words to singular or plural
 
 MODULES =	cpan

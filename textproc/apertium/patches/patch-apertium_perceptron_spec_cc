@@ -1,5 +1,3 @@
-$OpenBSD: patch-apertium_perceptron_spec_cc,v 1.1 2021/11/20 09:28:37 bentley Exp $
-
 Replace std::not1 with a lambda (fixes #146).
 6d1d2fb5a282dac4b510a7b105dd3c5f07efaeda
 

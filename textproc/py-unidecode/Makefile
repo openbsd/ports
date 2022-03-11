@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2022/02/28 12:47:50 sthen Exp $
-
 COMMENT =		US-ASCII transliterations of Unicode text
 
 MODPY_EGG_VERSION =	1.3.3

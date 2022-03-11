@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/20 06:34:28 rsadowski Exp $
-
 COMMENT=	Extensible Binary Meta Language library
 
 DISTNAME=	libebml-1.4.2

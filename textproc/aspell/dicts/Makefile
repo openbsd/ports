@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2012/01/17 11:04:12 ajacoutot Exp $
-
      SUBDIR =
      SUBDIR += af
      SUBDIR += ar

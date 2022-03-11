@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:47 sthen Exp $
-
 COMMENT =		simple wrapper for PDF::API2 module
 
 MODULES =		cpan

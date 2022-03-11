@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2020/01/23 00:36:27 bcallah Exp $
-
 Don't try to regen info file; our makeinfo is too old.
 
 Index: Makefile.in

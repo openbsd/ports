@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:40 sthen Exp $
-
 COMMENT =		Sphinx extension to build a 404 page with absolute URLs
 
 MODPY_EGG_VERSION =	0.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/15 04:28:41 bentley Exp $
-
 L =	en-es
 LANG =	English/Spanish
 V =	0.8.0

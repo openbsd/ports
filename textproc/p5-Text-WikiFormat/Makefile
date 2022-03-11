@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT=	translate Wiki formatted text into other formats
 
 DISTNAME =	Text-WikiFormat-0.81

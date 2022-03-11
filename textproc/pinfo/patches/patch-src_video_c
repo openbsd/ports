@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_video_c,v 1.1 2007/11/19 18:31:03 mgrimm Exp $
 --- src/video.c.orig	Wed Mar 15 22:54:56 2006
 +++ src/video.c	Sun Jul  8 17:27:51 2007
 @@ -88,9 +88,10 @@ showscreen(char **message, char *type, long lines, lon

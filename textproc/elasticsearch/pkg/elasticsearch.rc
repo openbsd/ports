@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: elasticsearch.rc,v 1.7 2018/05/17 10:22:58 pvk Exp $
 
 daemon="${TRUEPREFIX}/elasticsearch/bin/elasticsearch"
 daemon_flags="-d -p /var/run/elasticsearch/elasticsearch.pid"

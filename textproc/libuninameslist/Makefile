@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/10/25 17:17:50 fcambus Exp $
-
 COMMENT =	library of Unicode names and annotation data
 
 V =		20210917

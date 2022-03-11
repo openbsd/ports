@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/15 04:25:00 bentley Exp $
-
 L =	rus-ukr
 LANG =	Russian/Ukrainian
 V =	0.2.1

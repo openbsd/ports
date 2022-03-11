@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:50 sthen Exp $
-
 COMMENT= 	plugin/filter interface to Number::Format
 
 MODULES=	cpan

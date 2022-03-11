@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/11/02 14:46:27 bluhm Exp $
-
 COMMENT =	convert POD to Markdown
 
 DISTNAME =	Pod-Markdown-3.300

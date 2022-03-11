@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:50 sthen Exp $
-
 COMMENT=	interface to the GNU aspell library
 
 MODULES=	cpan

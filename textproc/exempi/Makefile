@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2022/02/15 17:27:03 sthen Exp $
-
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.6.1
 REVISION =		0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:50:01 sthen Exp $
-
 COMMENT =	command-line based markdown presentation tool
 
 GH_ACCOUNT =	visit1985

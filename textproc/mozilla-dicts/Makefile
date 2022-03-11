@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/22 09:31:48 espie Exp $
-
 SUBDIR = af
 SUBDIR += ak
 SUBDIR += am-ET

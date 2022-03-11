@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/10/09 03:38:31 afresh1 Exp $
-
 COMMENT=	Template Toolkit views for Catalyst
 
 DISTNAME=	Catalyst-View-TT-0.45

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/05/25 13:44:43 cwen Exp $
-
 # see https://github.com/hfst/hfst/issues/328
 NOT_FOR_ARCHS =	${BE_ARCHS}
 

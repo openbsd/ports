@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2019/10/04 18:27:34 naddy Exp $
-
 COMMENT=	PDF viewer for X11
 
 DISTNAME=	xpdf-3.04

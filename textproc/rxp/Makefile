@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=	validating namespace-aware XML parser
 
 DISTNAME=	rxp-1.4.8

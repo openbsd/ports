@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/07/03 21:45:45 sthen Exp $
-
 COMMENT =	module for assessing password quality
 
 MODULES =	cpan

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/06/01 16:32:30 simon Exp $
 ${P5SITE}/Catalyst/Plugin/
 ${P5SITE}/Catalyst/Plugin/Markdown.pm
 @man man/man3p/Catalyst::Plugin::Markdown.3p

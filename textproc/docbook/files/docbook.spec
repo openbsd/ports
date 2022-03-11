@@ -1,4 +1,3 @@
-# $OpenBSD: docbook.spec,v 1.1 2005/09/04 23:38:17 espie Exp $
 delegatePublic
 -//OASIS//ENTITIES DocBook XML
 file://%D/share/xml/docbook/catalog.xml

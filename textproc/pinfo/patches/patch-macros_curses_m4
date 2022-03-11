@@ -1,5 +1,3 @@
-$OpenBSD: patch-macros_curses_m4,v 1.1 2007/11/19 18:31:03 mgrimm Exp $
-
 The world isn't debian.
 
 --- macros/curses.m4.orig	Thu Mar  9 20:44:38 2006

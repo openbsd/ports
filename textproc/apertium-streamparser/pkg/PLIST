@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/11/20 10:54:34 bentley Exp $
 bin/apertium-streamparser
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}streamparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_streamparser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

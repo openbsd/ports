@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/30 01:29:36 millert Exp $
-
 COMMENT-main=	lyrics and chords formatting program
 COMMENT-wx=	graphical front-end to chordpro
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_shared_CLucene_LuceneThreads_h,v 1.1 2017/05/22 14:01:52 espie Exp $
-
 Index: src/shared/CLucene/LuceneThreads.h
 --- src/shared/CLucene/LuceneThreads.h.orig
 +++ src/shared/CLucene/LuceneThreads.h

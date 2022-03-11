@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.7 2017/04/17 21:05:21 sthen Exp $
 --- configure.orig	Mon Jul  4 09:58:50 2011
 +++ configure	Mon Apr 17 22:05:04 2017
 @@ -2645,7 +2645,7 @@ fi

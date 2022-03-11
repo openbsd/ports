@@ -1,5 +1,3 @@
-$OpenBSD: patch-jade_MifFOTBuilder_cxx,v 1.1 2021/09/10 17:41:30 naddy Exp $
-
 Index: jade/MifFOTBuilder.cxx
 --- jade/MifFOTBuilder.cxx.orig
 +++ jade/MifFOTBuilder.cxx

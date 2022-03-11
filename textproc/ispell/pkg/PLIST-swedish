@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-swedish,v 1.4 2004/12/25 22:37:36 sturm Exp $
 lib/ispell/svenska.aff
 lib/ispell/svenska.hash

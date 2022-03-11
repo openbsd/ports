@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/22 07:14:25 jasper Exp $
 bin/latex2pod
 ${P5SITE}/LaTeX/Pod.pm
 @man man/man1/latex2pod.1

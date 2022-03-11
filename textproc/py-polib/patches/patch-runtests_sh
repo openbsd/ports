@@ -1,4 +1,3 @@
-$OpenBSD: patch-runtests_sh,v 1.1 2017/11/02 12:57:13 sthen Exp $
 use the right version of coverage
 Index: runtests.sh
 --- runtests.sh.orig

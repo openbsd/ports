@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=	SGML DTDs from The Electronic Publishing SIG
 
 DISTNAME=	iso12083-1993

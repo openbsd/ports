@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:16 sthen Exp $
-
 COMMENT =	RTF document converter
 DISTNAME =	unrtf-0.21.10
 CATEGORIES =	textproc

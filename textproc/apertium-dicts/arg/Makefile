@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/15 04:24:55 bentley Exp $
-
 L =	arg
 LANG =	Aragonese
 V =	0.1.4

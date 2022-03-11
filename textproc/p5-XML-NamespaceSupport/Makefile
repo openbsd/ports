@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT=	perl module to the SAX2 NamespaceSupport class
 
 MODULES=	cpan

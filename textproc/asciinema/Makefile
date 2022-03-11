@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:35 sthen Exp $
-
 COMMENT=		terminal session recorder
 
 MODPY_EGG_VERSION=	2.1.0

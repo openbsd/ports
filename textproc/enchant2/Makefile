@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/12/04 08:50:51 ajacoutot Exp $
-
 COMMENT=		generic spell checking library
 
 V=			2.3.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/04/07 14:07:47 sthen Exp $
 @bin bin/podofobox
 @bin bin/podofocolor
 @bin bin/podofocountpages

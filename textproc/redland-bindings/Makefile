@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/11/02 00:02:42 sthen Exp $
-
 COMMENT-main=		Redland librdf Perl Bindings
 COMMENT-python=		Redland librdf Python Bindings
 COMMENT-ruby=		Redland librdf Ruby Bindings

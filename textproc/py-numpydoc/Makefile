@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:02:38 sthen Exp $
-
 COMMENT =		Sphinx extension to support docstrings in Numpy format
 
 MODPY_EGG_VERSION =	0.7.0

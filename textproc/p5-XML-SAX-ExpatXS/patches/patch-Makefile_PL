@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2008/10/02 15:39:12 jasper Exp $
 --- Makefile.PL.orig	Mon Jul  2 09:59:45 2007
 +++ Makefile.PL	Thu Oct  2 17:38:11 2008
 @@ -100,7 +100,7 @@ WriteMakefile(

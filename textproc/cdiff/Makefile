@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/19 10:16:44 sthen Exp $
-
 COMMENT=	inline and side-by-side colored and incremental diff
 
 # was renamed cdiff->ydiff

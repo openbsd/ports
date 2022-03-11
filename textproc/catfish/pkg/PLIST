@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/10/31 16:23:17 landry Exp $
 bin/catfish
 lib/python${MODPY_VERSION}/site-packages/catfish/
 lib/python${MODPY_VERSION}/site-packages/catfish-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

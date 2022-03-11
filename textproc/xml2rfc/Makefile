@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/02 00:02:42 sthen Exp $
-
 COMMENT=	convert memos written in XML to the RFC format
 
 MODPY_EGG_VERSION=	2.11.1

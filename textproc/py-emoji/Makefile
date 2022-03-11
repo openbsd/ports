@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/01/26 15:17:37 kmos Exp $
-
 COMMENT =		emoji for Python
 
 MODPY_EGG_VERSION =	1.6.3

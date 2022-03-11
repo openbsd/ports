@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.13 2020/01/20 09:03:51 landry Exp $
-
 CATEGORIES ?=		textproc x11
 MASTER_SITES ?=		https://pwmt.org/projects/${PROJECT}/download/
 HOMEPAGE ?=	http://pwmt.org/projects/${PROJECT}/

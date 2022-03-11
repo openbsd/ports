@@ -1,4 +1,3 @@
-$OpenBSD: patch-antiword_h,v 1.10 2014/12/01 17:35:34 sthen Exp $
 --- antiword.h.orig	Wed Jul  6 18:46:22 2005
 +++ antiword.h	Tue Nov  8 12:54:38 2005
 @@ -224,7 +224,7 @@

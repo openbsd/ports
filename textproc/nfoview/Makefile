@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2021/11/02 00:02:36 sthen Exp $
-
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.28.1
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tmac_doc-common-u,v 1.4 2020/01/18 17:33:56 schwarze Exp $
-
 chunks 1-3: Tweak page headers (local change).
 chunk 4: Default value for the .Os macro (local change).
 chunk 5: Accept any number of arguments for .Dd (committed upstream, too).

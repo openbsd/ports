@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/11/02 00:02:39 sthen Exp $
-
 COMMENT=	Python library to manipulate gettext files
 
 MODPY_EGG_VERSION =	1.1.0

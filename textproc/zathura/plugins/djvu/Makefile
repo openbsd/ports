@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/01/20 09:03:51 landry Exp $
-
 V =		0.2.9
 COMMENT =	djvu plugin for zathura
 PROJECT =	zathura-djvu

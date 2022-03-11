@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2022/02/28 10:44:11 sthen Exp $
-
 COMMENT=	Python syntax highlighter
 
 MODPY_EGG_VERSION = 2.11.2

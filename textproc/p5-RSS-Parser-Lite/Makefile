@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:48 sthen Exp $
-
 COMMENT =		simple and pure Perl RSS parser
 
 DISTNAME =		RSS-Parser-Lite-0.12

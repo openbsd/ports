@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.9 2021/07/11 08:32:19 ajacoutot Exp $
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py

@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure,v 1.5 2016/06/28 12:26:38 jasper Exp $
 --- configure.orig	Sat Jun 11 22:51:49 2016
 +++ configure	Tue Jun 28 14:01:30 2016
 @@ -4341,10 +4341,10 @@ $as_echo "yes" >&6; }

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/07 15:04:34 sthen Exp $
-
 COMMENT=	language guessing library
 
 DISTNAME=	libtextcat-2.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:48 sthen Exp $
-
 COMMENT=	utilities to read and manipulate patches and CVS
 
 MODULES=	cpan

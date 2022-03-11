@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/02/18 22:55:00 daniel Exp $
-
 COMMENT=	character entity sets from ISO 8879:1986 (SGML)
 
 DISTNAME=	ISOEnts

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/15 04:25:00 bentley Exp $
-
 L =	oci-fra
 LANG =	Occitan/French
 V =	0.3.0

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/12/07 10:08:21 bentley Exp $
 include/tinyxml2.h
 @lib lib/libtinyxml2.so.${LIBtinyxml2_VERSION}
 lib/pkgconfig/tinyxml2.pc

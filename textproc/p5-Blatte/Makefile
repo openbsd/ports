@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:02 sthen Exp $
-
 COMMENT=	text macro/markup/template language
 
 MODULES=	cpan

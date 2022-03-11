@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/07/05 17:00:21 jasper Exp $
 @conflict luakit-<2015.01.24p0v0
 share/lua/${MODLUA_VERSION}/markdown.lua

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2022/02/21 16:30:16 kn Exp $
-
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 

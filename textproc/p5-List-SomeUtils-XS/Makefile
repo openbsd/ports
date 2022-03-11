@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:47 sthen Exp $
-
 COMMENT =	XS implementation for List::SomeUtils
 
 DISTNAME =	List-SomeUtils-XS-0.58

@@ -1,4 +1,3 @@
-# $OpenBSD: docbook2X.spec,v 1.1.1.1 2011/05/04 14:07:18 sthen Exp $
 delegatePublic
 -//Steve Cheng//DTD Man-XML V0.8.6//EN
 file://%D/share/docbook2X/dtd/catalog.xml

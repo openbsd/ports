@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:40 sthen Exp $
-
 COMMENT =		sign JSON with Ed25519 signatures
 
 MODPY_EGG_VERSION =	1.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/02 00:02:37 sthen Exp $
-
 COMMENT=		spellchecking library for Python
 
 MODPY_EGG_VERSION=	3.2.2

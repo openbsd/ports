@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lib_WPXHeader_cpp,v 1.1 2019/06/01 10:11:09 cwen Exp $
-
 ports-gcc: fix missing header
 
 Index: src/lib/WPXHeader.cpp

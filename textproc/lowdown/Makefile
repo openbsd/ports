@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/10/27 21:55:07 fcambus Exp $
-
 COMMENT =	simple markdown translator
 DISTNAME =	lowdown-0.9.2
 CATEGORIES =	textproc

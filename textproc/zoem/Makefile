@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/14 17:34:24 tb Exp $
-
 COMMENT=	interpretive macro/programming language
 
 V=		11-166

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_libicalss_icalbdbset_h,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
-
 don't pick up /usr/include/db.h
 
 Index: src/libicalss/icalbdbset.h

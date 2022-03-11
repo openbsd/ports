@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_multimarkdown_c,v 1.1 2017/04/12 18:42:34 landry Exp $
-
 Use pledge(2) on OpenBSD.
 --- src/multimarkdown.c.orig	Fri Aug  5 09:08:36 2016
 +++ src/multimarkdown.c	Thu Sep 15 17:28:27 2016

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/03/03 11:40:35 sthen Exp $
-
 COMMENT =		fast C implementation of Markdown
 
 DISTNAME =		discount-2.2.7

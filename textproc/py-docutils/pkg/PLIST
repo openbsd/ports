@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.12 2021/11/14 13:29:24 sthen Exp $
 @conflict py-docutils-<0.16
 @pkgpath textproc/py-docutils
 bin/rst2html

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/08/20 21:18:07 sthen Exp $
 include/pugiconfig.hpp
 include/pugixml.hpp
 lib/cmake/

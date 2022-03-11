@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=	reverse compile man pages from formatted form
 
 DISTNAME=	rman-3.2

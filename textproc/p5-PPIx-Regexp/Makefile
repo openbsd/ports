@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/01/28 08:18:21 benoit Exp $
-
 COMMENT=		parse regular expressions
 
 MODULES=		cpan

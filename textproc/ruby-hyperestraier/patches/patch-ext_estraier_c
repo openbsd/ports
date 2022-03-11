@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_estraier_c,v 1.1 2017/10/23 21:46:43 jeremy Exp $
-
 Use modern ruby macros for accessing ptr/len for strings and arrays.
 
 Index: ext/estraier.c

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/21 10:02:05 ajacoutot Exp $
 @pkgpath textproc/py-precis_i18n
 lib/python${MODPY_VERSION}/site-packages/precis_i18n/
 lib/python${MODPY_VERSION}/site-packages/precis_i18n-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

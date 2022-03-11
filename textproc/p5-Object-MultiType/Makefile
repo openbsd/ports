@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:47 sthen Exp $
-
 COMMENT=	Perl Objects as Hash, Array and Scalar at the same time
 
 MODULES=	cpan

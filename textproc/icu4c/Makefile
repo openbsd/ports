@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.89 2021/11/14 15:22:44 ajacoutot Exp $
-
 NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT-main=		International Components for Unicode

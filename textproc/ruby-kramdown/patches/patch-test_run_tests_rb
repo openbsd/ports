@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_run_tests_rb,v 1.2 2020/08/21 21:22:27 jeremy Exp $
-
 Fix tests so they run.
 
 Index: test/run_tests.rb

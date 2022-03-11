@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/30 16:16:46 paco Exp $
 @bin bin/tree-sitter
 include/tree_sitter/
 include/tree_sitter/api.h

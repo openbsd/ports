@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:50 sthen Exp $
-
 COMMENT=		automatic text wrapping and reformatting
 
 MODULES=		cpan

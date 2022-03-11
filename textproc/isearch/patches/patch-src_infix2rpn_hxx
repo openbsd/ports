@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_infix2rpn_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: src/infix2rpn.hxx
 --- src/infix2rpn.hxx.orig
 +++ src/infix2rpn.hxx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:49:57 sthen Exp $
-
 COMMENT =	full-text search engine library
 CATEGORIES =	textproc
 DISTNAME =	clucene-core-2.3.3.4

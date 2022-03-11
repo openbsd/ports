@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/22 04:22:23 bket Exp $
-
 COMMENT =	PDF parser and analyzer
 
 MODPY_EGG_VERSION =	20211012

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/11 08:14:18 bentley Exp $
-
 COMMENT =		DocBook to mdoc converter
 
 DISTNAME =		docbook2mdoc-1.1.0

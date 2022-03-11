@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT=	efficiently fetch RSS feeds
 
 MODULES=	cpan

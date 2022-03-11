@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2020/10/21 21:21:59 jca Exp $
-
 COMMENT =		GNU troff typesetter
 VERSION =		1.22.4
 SUBST_VARS =		VERSION

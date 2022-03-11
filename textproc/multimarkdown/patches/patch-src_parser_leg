@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_parser_leg,v 1.1 2017/04/12 18:42:34 landry Exp $
-
 Switch from sprintf(3) to safer idiom.  Handle errors as elsewhere in code.
 --- src/parser.leg.orig	Fri Aug  5 09:08:36 2016
 +++ src/parser.leg	Sat Oct  1 14:05:54 2016

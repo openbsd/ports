@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/10/28 16:54:11 jasper Exp $
 @pkgpath textproc/aspell/dicts/aspell-sk
 lib/aspell/sk.dat
 lib/aspell/sk_affix.dat

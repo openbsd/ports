@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:35 sthen Exp $
-
 COMMENT =		source code spelling checker
 
 MODPY_EGG_VERSION =	2.1.0

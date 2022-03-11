@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/19 01:50:31 kurt Exp $ 
-
 COMMENT =	CrossFire crossword constructor
 CATEGORIES =	textproc games
 

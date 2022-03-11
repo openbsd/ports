@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/02/04 21:04:07 tb Exp $
-
 COMMENT=		info viewer with lynx-style navigation
 
 DISTNAME=		pinfo-0.6.9

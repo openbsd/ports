@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/05/19 01:50:31 kurt Exp $
-
 COMMENT=	Java template engine for generating source code, etc
 
 V=		4.0.4

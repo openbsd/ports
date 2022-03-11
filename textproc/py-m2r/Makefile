@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:38 sthen Exp $
-
 COMMENT =		markdown to reStructuredText converter
 
 MODPY_EGG_VERSION =	0.2.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-exempi_Makefile_in,v 1.1 2022/02/15 17:25:24 sthen Exp $
-
 Index: exempi/Makefile.in
 --- exempi/Makefile.in.orig
 +++ exempi/Makefile.in

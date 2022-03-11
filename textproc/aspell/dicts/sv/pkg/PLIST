@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
 lib/aspell/sv.dat
 lib/aspell/sv_phonet.dat
 share/aspell/sv.multi

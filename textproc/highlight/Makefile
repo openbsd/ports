@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2021/02/20 08:02:53 benoit Exp $
-
 COMMENT =		convert source code to markup formats
 
 DISTNAME =		highlight-3.62

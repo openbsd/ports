@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/11/09 01:32:01 afresh1 Exp $
-
 COMMENT =	driver to format LaTeX documents
 
 DISTNAME =	LaTeX-Driver-1.2.0

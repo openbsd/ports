@@ -1,5 +1,3 @@
-$OpenBSD: patch-samples_source_common_DumpFile_cpp,v 1.1 2022/02/15 17:25:24 sthen Exp $
-
 Index: samples/source/common/DumpFile.cpp
 --- samples/source/common/DumpFile.cpp.orig
 +++ samples/source/common/DumpFile.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:15 sthen Exp $
-
 COMMENT =		fast XML/DOM/XPath/XSLT/HTML/JSON extension for Tcl
 
 V =			0.9.1

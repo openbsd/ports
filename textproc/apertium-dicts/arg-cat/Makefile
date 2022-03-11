@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/15 04:24:55 bentley Exp $
-
 L =	arg-cat
 LANG =	Aragonese/Catalan
 V =	0.2.0

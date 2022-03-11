@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/12 16:21:43 sthen Exp $
-
 COMMENT=	modules for parsing/translating POD format documents
 
 DISTNAME=	Pod-Parser-1.63

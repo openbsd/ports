@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/20 07:02:38 stu Exp $
 lib/tcl/pdf4tcl/
 lib/tcl/pdf4tcl/bitmaps/
 lib/tcl/pdf4tcl/bitmaps/error.xbm

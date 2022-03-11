@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/04 09:50:21 benoit Exp $
-
 COMMENT=	stemming of words
 
 MODULES=	cpan

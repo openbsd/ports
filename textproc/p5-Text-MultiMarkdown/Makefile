@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:51 sthen Exp $
-
 COMMENT =	convert MultiMarkdown syntax to (X)HTML
 
 DISTNAME =	Text-MultiMarkdown-1.000035

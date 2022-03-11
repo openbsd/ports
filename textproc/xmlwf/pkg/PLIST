@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/09/02 22:25:25 jasper Exp $
 @bin bin/xmlwf
 @man man/man1/xmlwf.1

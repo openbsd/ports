@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/03/10 15:40:29 daniel Exp $
-
 COMMENT =		source code beautifier
 
 DISTNAME =		uncrustify-0.72.0

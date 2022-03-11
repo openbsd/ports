@@ -1,5 +1,3 @@
-$OpenBSD: patch-bindings_python_Makefile_in,v 1.11 2021/10/31 15:02:58 ajacoutot Exp $
-
 Index: bindings/python/Makefile.in
 --- bindings/python/Makefile.in.orig
 +++ bindings/python/Makefile.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:50:02 sthen Exp $
-
 V =		5.4.0
 COMMENT =	marked-up plain text to formatted document converter
 DISTNAME =	${GH_PROJECT}-${V}

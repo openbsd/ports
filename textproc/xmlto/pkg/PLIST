@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/08 07:03:08 ajacoutot Exp $
 @bin bin/xmlif
 bin/xmlto
 @man man/man1/xmlif.1

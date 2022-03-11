@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/07/08 10:45:02 sthen Exp $
-
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
 

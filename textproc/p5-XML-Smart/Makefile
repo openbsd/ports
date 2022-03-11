@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=	access/create XML files/datas easily
 
 MODULES=	cpan

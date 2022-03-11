@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=		grind nice listings of programs
 
 DISTNAME=		vgrind-1.0

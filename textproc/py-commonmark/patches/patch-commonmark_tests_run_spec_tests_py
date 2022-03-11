@@ -1,5 +1,3 @@
-$OpenBSD: patch-commonmark_tests_run_spec_tests_py,v 1.1 2021/01/18 00:15:38 daniel Exp $
-
 The UTF chars break the test
 
 Index: commonmark/tests/run_spec_tests.py

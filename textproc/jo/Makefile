@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/01/06 13:29:02 sthen Exp $
-
 COMMENT =	JSON output from a shell
 
 V =		1.6

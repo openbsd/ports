@@ -1,5 +1,3 @@
-$OpenBSD: patch-xpdf_TextOutputDev_cc,v 1.1 2019/10/04 18:27:34 naddy Exp $
-
 CVE-2019-16927, CVE-2019-9877 from 4.02
 
 Index: xpdf/TextOutputDev.cc

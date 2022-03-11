@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/15 18:21:29 sthen Exp $
-
      SUBDIR += afr
      SUBDIR += afr-nld
      SUBDIR += arg

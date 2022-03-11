@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/02/23 19:39:45 sthen Exp $
-
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.2.0
 CATEGORIES =	textproc

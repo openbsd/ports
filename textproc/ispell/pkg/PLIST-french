@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-french,v 1.4 2004/12/25 22:37:36 sturm Exp $
 lib/ispell/francais.aff
 lib/ispell/francais.hash

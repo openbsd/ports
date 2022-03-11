@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/14 13:38:58 bluhm Exp $
-
 COMMENT =	perldoc that works for modules you don't have installed
 DISTNAME =	Pod-Cpandoc-0.16
 CATEGORIES =	textproc

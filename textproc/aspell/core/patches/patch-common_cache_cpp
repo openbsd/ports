@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_cache_cpp,v 1.1 2018/11/15 21:12:45 bcallah Exp $
-
 Fix segfaults while building dictionaries on macppc
 see https://github.com/GNUAspell/aspell/pull/532
 

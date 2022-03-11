@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:49:59 sthen Exp $
-#
-
 COMMENT=	interactive front end to diff
 
 DISTNAME=	idiff-1.1

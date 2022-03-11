@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_io_socket_stream_hpp,v 1.1 2017/05/21 09:50:45 espie Exp $
-
 Index: include/io/socket_stream.hpp
 --- include/io/socket_stream.hpp.orig
 +++ include/io/socket_stream.hpp

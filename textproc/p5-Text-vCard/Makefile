@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT =	read, write, and edit vCard address books
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-$OpenBSD: patch-markdown_1,v 1.2 2021/02/19 19:13:26 ajacoutot Exp $
-
 --- markdown.1.orig	Sat Aug 16 12:51:44 2014
 +++ markdown.1	Sat Aug 16 12:52:05 2014
 @@ -4,7 +4,7 @@

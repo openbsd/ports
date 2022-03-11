@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/01/20 07:36:43 daniel Exp $
 @conflict py-sphinx-intl-*
 @pkgpath textproc/py-sphinx-intl
 bin/sphinx-intl

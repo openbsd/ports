@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:15 sthen Exp $
-
 COMMENT =		builds man pages
 
 DISTNAME =		ronn-0.7.3

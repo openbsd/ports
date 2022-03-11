@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/11/15 14:10:29 sthen Exp $
 @conflict py-unidecode-<1.1.1p1
 @pkgpath textproc/py-unidecode
 bin/unidecode

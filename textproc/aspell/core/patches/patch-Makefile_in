@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2012/01/17 10:59:27 ajacoutot Exp $
 --- Makefile.in.orig	Mon Jul  4 10:58:49 2011
 +++ Makefile.in	Tue Jan 17 10:55:18 2012
 @@ -482,7 +482,7 @@ top_builddir = @top_builddir@

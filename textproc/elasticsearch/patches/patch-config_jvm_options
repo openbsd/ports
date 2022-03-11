@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_jvm_options,v 1.6 2020/02/18 09:25:53 pvk Exp $
-
 Index: config/jvm.options
 --- config/jvm.options.orig
 +++ config/jvm.options

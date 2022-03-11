@@ -2,8 +2,6 @@
 
 # Builds a "master" XML catalog file for the docbook package
 
-# $OpenBSD: makemastercatalog,v 1.3 2010/12/19 22:11:56 kili Exp $
-#
 # Copyright (c) 2003 Marc Matteo.
 # 
 # Redistribution and use in source and binary forms, with or without

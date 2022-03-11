@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=	perl module to perform XSLT transformations
 
 MODULES=	cpan

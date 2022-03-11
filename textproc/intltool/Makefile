@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT=		internationalization tools
 
 V=			0.51.0

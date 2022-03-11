@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_highlight_1,v 1.14 2020/01/30 07:18:25 benoit Exp $
 Index: man/highlight.1
 --- man/highlight.1.orig
 +++ man/highlight.1

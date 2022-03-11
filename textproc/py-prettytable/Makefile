@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/02 00:02:39 sthen Exp $
-
 COMMENT =	Python library for pretty-printing tabular data
 
 MODPY_EGG_VERSION =	0.7.2

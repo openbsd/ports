@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_StrUtil_cc,v 1.1 2017/05/19 23:17:24 espie Exp $
-
 Index: src/StrUtil.cc
 --- src/StrUtil.cc.orig
 +++ src/StrUtil.cc

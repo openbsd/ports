@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 21:02:28 sthen Exp $
-
 COMMENT=	verifies XML documents
 V=		2.1.0
 

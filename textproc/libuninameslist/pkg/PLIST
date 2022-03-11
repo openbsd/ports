@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/04/24 07:30:19 jca Exp $
 include/uninameslist-fr.h
 include/uninameslist.h
 @static-lib lib/libuninameslist-fr.a

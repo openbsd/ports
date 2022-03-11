@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_pdf_pdf_pro,v 1.3 2018/07/10 12:24:25 jca Exp $
 Index: src/pdf/pdf.pro
 --- src/pdf/pdf.pro.orig
 +++ src/pdf/pdf.pro

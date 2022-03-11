@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT =	generic classes for simplistic handling of XML data
 
 MODULES =	cpan

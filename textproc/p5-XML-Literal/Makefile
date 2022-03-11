@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT=	embed XML directly into perl
 
 MODULES=	cpan

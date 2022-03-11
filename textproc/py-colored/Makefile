@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/14 12:29:46 sthen Exp $
-
 COMMENT =		simple library for color and formatting in terminal
 
 MODPY_EGG_VERSION =	1.4.3

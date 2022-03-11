@@ -1,4 +1,3 @@
-$OpenBSD: patch-doctype_medline_cxx,v 1.3 2017/05/25 14:14:43 espie Exp $
 Index: doctype/medline.cxx
 --- doctype/medline.cxx.orig
 +++ doctype/medline.cxx

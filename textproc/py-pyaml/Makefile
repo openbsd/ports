@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/19 09:01:49 sthen Exp $
-
 COMMENT =		module to produce pretty and readable YAML
 
 MODPY_EGG_VERSION =	21.10.1

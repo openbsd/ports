@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_io_convert_adaptor_hpp,v 1.1 2017/05/21 09:50:45 espie Exp $
-
 Index: include/io/convert_adaptor.hpp
 --- include/io/convert_adaptor.hpp.orig
 +++ include/io/convert_adaptor.hpp

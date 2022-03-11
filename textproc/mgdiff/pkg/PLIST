@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/10/11 20:39:47 naddy Exp $
 @pkgpath textproc/mgdiff,lesstif
 @bin bin/mgdiff
 lib/X11/app-defaults/Mgdiff

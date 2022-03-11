@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/10/04 12:45:12 kn Exp $
-
 COMMENT =		lightweight and flexible command-line JSON processor
 
 V =			1.6

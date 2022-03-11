@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_unbalanced_t,v 1.1.1.1 2021/02/25 21:52:51 sthen Exp $
-
 Index: t/unbalanced.t
 --- t/unbalanced.t.orig
 +++ t/unbalanced.t

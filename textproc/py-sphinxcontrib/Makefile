@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/24 22:41:35 sthen Exp $
-
 SUBDIR =
 SUBDIR += applehelp,python3
 SUBDIR += devhelp,python3

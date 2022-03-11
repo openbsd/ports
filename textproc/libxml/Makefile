@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.191 2022/02/22 10:46:51 ajacoutot Exp $
-
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 

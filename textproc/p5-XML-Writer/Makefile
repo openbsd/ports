@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/12/28 17:08:56 bluhm Exp $
-
 COMMENT=	perl extension for writing XML documents
 
 DISTNAME=	XML-Writer-0.900

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/09/02 17:57:04 ajacoutot Exp $
 bin/jade
 @bin bin/openjade
 @static-lib lib/libogrove.a

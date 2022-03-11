@@ -1,5 +1,3 @@
-$OpenBSD: patch-splash_SplashXPath_h,v 1.3 2017/11/08 18:30:24 kili Exp $
-
 Replace Miod's fix from 2009 by some assert's, because the bug
 *should* have been fixed in a different way and I'm too lazy to
 verify it. (needs a change to strokeAdjust(), which is private)

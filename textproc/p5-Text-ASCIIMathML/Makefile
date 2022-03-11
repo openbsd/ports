@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:50 sthen Exp $
-
 COMMENT=	perl extension for parsing ASCIIMathML text into MathML
 
 DISTNAME=	Text-ASCIIMathML-0.81

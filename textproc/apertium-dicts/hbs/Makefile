@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/15 04:24:58 bentley Exp $
-
 L =	hbs
 LANG =	Serbo-Croatian
 V =	0.5.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/02/23 19:39:46 sthen Exp $
-
 COMMENT=	graphical file comparator and merge tool
 
 PKGNAME=	xxdiff-4.0.1.20170623

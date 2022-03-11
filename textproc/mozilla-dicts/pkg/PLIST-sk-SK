@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-sk-SK,v 1.2 2013/06/22 09:31:51 espie Exp $
 @pkgpath textproc/mozilla-dicts,-${L}
 share/mozilla-dicts/
 share/mozilla-dicts/sk-SK-ascii.aff

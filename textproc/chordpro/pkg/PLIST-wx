@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-wx,v 1.1.1.1 2020/07/30 01:00:12 millert Exp $
 bin/wxchordpro
 ${P5SITE}/App/Music/ChordPro/Wx/
 ${P5SITE}/App/Music/ChordPro/Wx.pm

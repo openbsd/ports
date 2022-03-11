@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=		Ruby interface to hyperestraier
 
 V=			1.4.10

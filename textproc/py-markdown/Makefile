@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/21 14:26:28 ajacoutot Exp $
-
 COMMENT=		text-to-HTML conversion tool
 
 MODPY_EGG_VERSION=	3.3.6

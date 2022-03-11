@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/28 01:25:20 daniel Exp $
 bin/rubber
 bin/rubber-info
 bin/rubber-pipe

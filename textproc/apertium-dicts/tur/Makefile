@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/15 09:03:10 bentley Exp $
-
 L =	tur
 LANG =	Turkish
 V =	0.2.0

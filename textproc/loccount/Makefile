@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/03/10 12:03:35 kn Exp $
-
 COMMENT =		count lines of codes in many languages
 
 V =			2.11

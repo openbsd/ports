@@ -1,4 +1,3 @@
-$OpenBSD: patch-latex_style_dbk_table_sty,v 1.1 2018/05/11 18:48:35 stsp Exp $
 Remove use of private internal macro; fixes compatibility problem with texlive
 https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=840189
 Index: latex/style/dbk_table.sty

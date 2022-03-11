@@ -1,4 +1,3 @@
-$OpenBSD: patch-tmac_troffrc,v 1.5 2018/12/24 10:42:00 schwarze Exp $
 Disable hyphenation and adjustment (local change).
 Index: tmac/troffrc
 --- tmac/troffrc.orig

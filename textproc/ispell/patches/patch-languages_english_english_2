@@ -1,4 +1,3 @@
-$OpenBSD: patch-languages_english_english_2,v 1.2 2017/06/03 12:46:37 sthen Exp $
 Index: languages/english/english.2
 --- languages/english/english.2.orig
 +++ languages/english/english.2

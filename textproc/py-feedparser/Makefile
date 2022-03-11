@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/11/03 16:03:25 sthen Exp $
-
 COMMENT=	RSS and Atom feeds parser written in Python
 
 MODPY_EGG_VERSION=	6.0.8

@@ -1,5 +1,3 @@
-$OpenBSD: patch-itstool_in,v 1.4 2021/10/25 07:22:12 ajacoutot Exp $
-
 Bug: https://github.com/itstool/itstool/issues/25
 Bug-Debian: https://bugs.debian.org/912099
 Forwarded: https://github.com/itstool/itstool/issues/25

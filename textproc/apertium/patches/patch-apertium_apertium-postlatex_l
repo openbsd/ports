@@ -1,5 +1,3 @@
-$OpenBSD: patch-apertium_apertium-postlatex_l,v 1.1 2021/11/15 04:23:36 bentley Exp $
-
 Index: apertium/apertium-postlatex.l
 --- apertium/apertium-postlatex.l.orig
 +++ apertium/apertium-postlatex.l

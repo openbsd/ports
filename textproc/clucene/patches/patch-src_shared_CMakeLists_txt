@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_shared_CMakeLists_txt,v 1.1 2012/08/30 18:41:09 ajacoutot Exp $
-
 http://clucene.git.sourceforge.net/git/gitweb.cgi?p=clucene%2Fclucene;a=commitdiff_plain;h=772481ca94071ddfe65102a451926e4f9aeb4d2c;hp=a834f87bad3543b2a0331cef7202c15ded4245be
 
 --- src/shared/CMakeLists.txt.orig	Thu Mar 17 01:21:07 2011

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2020/10/24 10:53:17 ajacoutot Exp $
 @pkgpath textproc/py-natsort
 bin/natsort
 lib/python${MODPY_VERSION}/site-packages/natsort/

@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_elasticsearch-env,v 1.6 2020/05/14 21:38:18 pvk Exp $
-
 Index: bin/elasticsearch-env
 --- bin/elasticsearch-env.orig
 +++ bin/elasticsearch-env

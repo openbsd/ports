@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT =	part-of-speech tagger for EN natural language processing
 
 DISTNAME =	Lingua-EN-Tagger-0.31

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/15 04:25:01 bentley Exp $
-
 L =	szl
 LANG =	Silesian
 V =	0.1.1

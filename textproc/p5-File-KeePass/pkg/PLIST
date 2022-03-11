@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/01 15:39:26 landry Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/KeePass.pm
 @man man/man3p/File::KeePass.3p

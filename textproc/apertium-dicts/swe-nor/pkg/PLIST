@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:25:01 bentley Exp $
 share/apertium/apertium-swe-nor/
 share/apertium/apertium-swe-nor/apertium-swe-nor.nor-swe.t1x
 share/apertium/apertium-swe-nor/apertium-swe-nor.nor-swe.t2x

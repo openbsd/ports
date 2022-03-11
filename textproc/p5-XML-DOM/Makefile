@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT=	perl module to build DOM Level 1 structures
 
 MODULES=	cpan

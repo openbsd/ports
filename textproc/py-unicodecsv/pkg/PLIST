@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/11/04 20:21:47 jasper Exp $
 @conflict unicodecsv-*
 @pkgpath textproc/py-unicodecsv
 lib/python${MODPY_VERSION}/site-packages/unicodecsv/

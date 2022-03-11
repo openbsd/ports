@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.13 2022/02/22 10:46:51 ajacoutot Exp $
-
 DEPS: Fix parallel build.  gmake recognizes libxml2.la and ./libxml2.la
 as equivalent, ours does not.
 

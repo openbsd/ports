@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Parser_h,v 1.1 2018/04/10 13:21:18 jasper Exp $
-
 Index: lib/Parser.h
 --- lib/Parser.h.orig
 +++ lib/Parser.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:58 sthen Exp $
-
 COMMENT =		make presentations with groff and PDF
 DISTNAME =		gpresent-2.5
 CATEGORIES =		textproc

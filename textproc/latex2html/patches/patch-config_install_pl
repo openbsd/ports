@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_install_pl,v 1.3 2010/04/14 12:16:29 kili Exp $
 --- config/install.pl.orig	Fri Nov 29 12:49:01 2002
 +++ config/install.pl	Fri Apr  9 14:59:24 2010
 @@ -219,9 +219,7 @@ my %Install_items = (

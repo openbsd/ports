@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/03/08 13:59:29 sthen Exp $
-
 COMMENT =		convert XLSX files to CSV
 
 MODGO_MODNAME =		github.com/tealeg/xlsx2csv

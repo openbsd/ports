@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/11/03 16:13:02 benoit Exp $
-
 COMMENT=	justify strings to various alignment styles
 
 MODULES=	cpan

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/12/07 15:55:12 pirofti Exp $
 @bin bin/pplatex

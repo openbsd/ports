@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/06 15:12:08 bluhm Exp $
 ${P5SITE}/PDF/Table.pm
 @man man/man3p/PDF::Table.3p

@@ -1,5 +1,3 @@
-$OpenBSD: patch-python_Makefile_in,v 1.20 2022/02/22 10:46:51 ajacoutot Exp $
-
 Index: python/Makefile.in
 --- python/Makefile.in.orig
 +++ python/Makefile.in

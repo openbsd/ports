@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:47 sthen Exp $
-
 COMMENT=	French language stemming
 
 MODULES=	cpan

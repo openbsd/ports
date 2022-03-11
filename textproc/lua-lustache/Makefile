@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/03 22:42:36 fcambus Exp $
-
 COMMENT =	implementation of the mustache template system in Lua
 
 V =		1.3.1

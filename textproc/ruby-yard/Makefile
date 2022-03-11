@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/10/05 19:20:22 jeremy Exp $
-
 COMMENT=	Ruby documentation tool
 
 DISTNAME=	yard-0.8.7.6

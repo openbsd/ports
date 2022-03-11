@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/01 10:04:57 bentley Exp $
-
 L =	afr
 LANG =	Afrikaans
 V =	0.2.0

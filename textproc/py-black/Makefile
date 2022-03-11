@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/02/28 15:01:03 sthen Exp $
-
 COMMENT =		python code formatter
 
 MODPY_EGG_VERSION =	19.3b0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/12/11 10:20:26 sthen Exp $
-
 COMMENT =		python package for parsing and building CSS
 
 CATEGORIES =		textproc

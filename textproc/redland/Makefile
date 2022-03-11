@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/10/27 19:32:34 sthen Exp $
-
 MULTI_PACKAGES=		-main -mysql -pgsql
 
 COMMENT-main=		high-level interface for RDF

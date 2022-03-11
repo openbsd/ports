@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/15 04:23:36 bentley Exp $
-
 COMMENT =		reorder separable/discontinuous multiwords
 
 V =			0.3.6

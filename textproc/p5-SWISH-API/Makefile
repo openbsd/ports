@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:05 sthen Exp $
-
 COMMENT =	Perl interface to the swish-e C library
 
 DISTNAME =	swish-e-2.4.7

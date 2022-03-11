@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/05/21 19:50:37 kmos Exp $
-
 COMMENT=		generator for pronounceable random words
 
 MODPY_EGG_VERSION=	0.3.7

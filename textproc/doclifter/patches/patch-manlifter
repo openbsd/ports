@@ -1,4 +1,3 @@
-$OpenBSD: patch-manlifter,v 1.3 2021/03/07 21:09:06 daniel Exp $
 Index: manlifter
 --- manlifter.orig
 +++ manlifter

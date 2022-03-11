@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/08 07:21:54 bentley Exp $
 share/apertium/apertium-bel/
 share/apertium/apertium-bel/apertium-bel.bel.dix
 share/apertium/apertium-bel/apertium-bel.bel.rlx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/14 00:39:40 naddy Exp $
-
 COMMENT =		convert Microsoft Reader files to OEBPS packages
 V =			1.8
 DISTNAME =		clit${V:S/.//}src

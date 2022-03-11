@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/21 08:41:25 paco Exp $
-
 COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter

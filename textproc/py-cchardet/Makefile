@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:36 sthen Exp $
-
 COMMENT=		high speed universal character encoding detector
 
 MODPY_EGG_VERSION=	2.1.7

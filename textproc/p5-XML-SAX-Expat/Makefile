@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/26 18:20:36 naddy Exp $
-
 COMMENT=	SAX2 driver based on expat
 
 MODULES=	cpan

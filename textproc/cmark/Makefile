@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:57 sthen Exp $
-
 COMMENT =	CommonMark parsing and rendering library and program in C
 
 GH_ACCOUNT =	commonmark

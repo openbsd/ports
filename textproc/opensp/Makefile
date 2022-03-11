@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:02 sthen Exp $
-
 COMMENT=	object-oriented SGML parser
 
 DISTNAME=	OpenSP-1.5.2

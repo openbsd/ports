@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	very flexible diff-like program
 
 DISTNAME=	spiff-1.0

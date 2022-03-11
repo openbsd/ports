@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/01/20 09:03:51 landry Exp $
 @conflict zathura-pdf-poppler-*
 @so lib/zathura/libpdf-mupdf.so
 share/applications/org.pwmt.zathura-pdf-mupdf.desktop

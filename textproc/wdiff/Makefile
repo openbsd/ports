@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/16 21:29:41 sthen Exp $
-
 COMMENT=	word differences between text files
 
 DISTNAME=	wdiff-1.2.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_tools_hfst-check-environment_sh,v 1.1.1.1 2017/11/03 23:51:01 bentley Exp $
-
 Index: test/tools/hfst-check-environment.sh
 --- test/tools/hfst-check-environment.sh.orig
 +++ test/tools/hfst-check-environment.sh

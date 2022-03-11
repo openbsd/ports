@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2022/01/13 08:07:51 ajacoutot Exp $
-
 # only files under tests/ are compiled but not installed
 PKG_ARCH=		*
 

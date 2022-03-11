@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_complete_Clo_hh,v 1.1 2004/09/26 13:11:37 espie Exp $
 --- examples/complete/Clo.hh.orig	Mon Aug 16 19:46:32 2004
 +++ examples/complete/Clo.hh	Mon Aug 16 19:52:29 2004
 @@ -152,6 +152,7 @@ bool truth_function(string test) {

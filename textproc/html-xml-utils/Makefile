@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/09/24 07:40:45 bentley Exp $
-
 COMMENT =		simple utilities for manipulating HTML and XML files
 
 DISTNAME =		html-xml-utils-7.9

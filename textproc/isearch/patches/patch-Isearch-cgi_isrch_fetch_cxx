@@ -1,5 +1,3 @@
-$OpenBSD: patch-Isearch-cgi_isrch_fetch_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: Isearch-cgi/isrch_fetch.cxx
 --- Isearch-cgi/isrch_fetch.cxx.orig
 +++ Isearch-cgi/isrch_fetch.cxx

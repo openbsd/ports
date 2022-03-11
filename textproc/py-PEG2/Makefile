@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:36 sthen Exp $
-
 COMMENT =		PEG Parser-Interpreter in Python
 
 MODPY_EGG_VERSION =	2.15.2

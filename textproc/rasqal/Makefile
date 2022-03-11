@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=		RDF Query Library for Redland
 DISTNAME=		rasqal-0.9.33
 CATEGORIES=		textproc

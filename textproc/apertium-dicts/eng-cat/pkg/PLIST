@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:37:44 bentley Exp $
 @pkgpath textproc/apertium-dicts/en-ca
 share/apertium/apertium-eng-cat/
 share/apertium/apertium-eng-cat/apertium-eng-cat.cat-eng.arx

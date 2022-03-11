@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:45 sthen Exp $
-
 COMMENT =	persistent Markdown processor for Catalyst
 
 MODULES =	cpan

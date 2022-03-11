@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:50 sthen Exp $
-
 COMMENT=	implementation of a "sounds like" algorithm
 
 MODULES=	cpan

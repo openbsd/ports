@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/10/18 08:49:09 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/openpyxl/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

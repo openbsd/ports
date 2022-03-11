@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/12/12 10:44:57 ajacoutot Exp $
-
 COMMENT=		implementation of the line and word breaking
 
 V=			5.0

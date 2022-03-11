@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/10/02 20:18:31 schwarze Exp $
-
 COMMENT =		FreeBSD Documentation Project sanity check script
 VERSION =		1.595
 REVISION =		1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_main_c,v 1.1 2021/03/16 17:00:59 sthen Exp $
-
 Simple software acting as an stdio filter, no third party libraries,
 not big churn, so this is a good candidate for pledge.
 

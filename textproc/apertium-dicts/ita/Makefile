@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/15 04:24:59 bentley Exp $
-
 L =	ita
 LANG =	Italian
 V =	1.1.1

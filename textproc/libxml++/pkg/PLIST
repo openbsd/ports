@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2020/10/03 10:30:20 ajacoutot Exp $
 include/libxml++-2.6/
 include/libxml++-2.6/libxml++/
 include/libxml++-2.6/libxml++/attribute.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT=		liberal object-oriented parser for RSS feeds
 
 MODULES=		cpan

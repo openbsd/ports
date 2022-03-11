@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:15:15 robert Exp $
-
 COMMENT =	extra sets of Chinese encodings
 
 DISTNAME =	Encode-HanExtra-0.23

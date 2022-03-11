@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.96 2022/02/17 13:43:35 ajacoutot Exp $
-
 COMMENT=		XSLT C Library for GNOME
 
 VERSION=		1.1.35

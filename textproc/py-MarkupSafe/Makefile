@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/01/03 11:05:10 sthen Exp $
-
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
 MODPY_EGG_VERSION=	2.0.1

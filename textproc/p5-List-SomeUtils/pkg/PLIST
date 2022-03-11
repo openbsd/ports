@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/11 09:45:55 fcambus Exp $
 ${P5SITE}/List/
 ${P5SITE}/List/SomeUtils/
 ${P5SITE}/List/SomeUtils.pm

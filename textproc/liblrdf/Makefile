@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT =		light RDF manipulation with LADSPA plugin support
 
 DISTNAME =		LRDF-0.5.0

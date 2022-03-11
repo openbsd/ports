@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/08 13:59:29 sthen Exp $
-
 COMMENT =	query the unicode database from the commandline
 
 MODGO_MODNAME =	arp242.net/uni

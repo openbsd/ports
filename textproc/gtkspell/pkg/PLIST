@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2015/03/16 18:07:56 naddy Exp $
 include/gtkspell-2.0/
 include/gtkspell-2.0/gtkspell/
 include/gtkspell-2.0/gtkspell/gtkspell.h

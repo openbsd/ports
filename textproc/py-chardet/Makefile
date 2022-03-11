@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/26 18:07:36 sthen Exp $
-
 COMMENT=		character encoding auto-detection in Python
 
 # 5.0.0+ is py3-only; py2 used by py-requests

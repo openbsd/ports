@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:49:59 sthen Exp $
-
 COMMENT=		${LANG} hyphenation rules
 DESCR=			${.CURDIR}/../DESCR
 DIC ?=			hyph_$$(basename ${.CURDIR}).dic

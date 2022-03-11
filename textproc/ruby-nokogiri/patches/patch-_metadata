@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.6 2022/03/03 22:33:43 jeremy Exp $
-
 Don't runtime depend on mini_portile2, it's only need for compiling
 the extension.
 

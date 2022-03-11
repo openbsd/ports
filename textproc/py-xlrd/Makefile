@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:41 sthen Exp $
-
 COMMENT =	extract data from xls and xlsx spreadsheet files
 
 MODPY_EGG_VERSION =	1.2.0

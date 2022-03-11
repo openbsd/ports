@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/05 07:30:16 landry Exp $
-
 V=		3.0.7
 PKGNAME=	luceneplusplus-${V}
 COMMENT =	C++ port of the Java Lucene library, the text search engine

@@ -1,5 +1,3 @@
-# $OpenBSD: crates.inc,v 1.5 2022/03/02 09:59:35 fcambus Exp $
-
 MODCARGO_CRATES +=	adler	0.2.3	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	aho-corasick	0.7.15	# Unlicense/MIT
 MODCARGO_CRATES +=	ansi_colours	1.0.4	# LGPL-3.0-or-later

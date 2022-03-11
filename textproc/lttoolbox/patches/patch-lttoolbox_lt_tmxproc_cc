@@ -1,5 +1,3 @@
-$OpenBSD: patch-lttoolbox_lt_tmxproc_cc,v 1.2 2021/11/15 04:23:37 bentley Exp $
-
 Index: lttoolbox/lt_tmxproc.cc
 --- lttoolbox/lt_tmxproc.cc.orig
 +++ lttoolbox/lt_tmxproc.cc

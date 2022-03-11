@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/15 04:24:56 bentley Exp $
-
 L =	eo-ca
 LANG =	Esperanto/Catalan
 V =	0.9.2

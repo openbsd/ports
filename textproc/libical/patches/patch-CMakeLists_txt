@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.8 2022/01/19 10:33:36 ajacoutot Exp $
-
 base gcc does not understand -Wtype-limits and errors out.
 
 Index: CMakeLists.txt

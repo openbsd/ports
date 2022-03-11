@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/24 00:25:56 nigel Exp $
 ${P5SITE}/XML/
 ${P5SITE}/XML/TreePP.pm
 @man man/man3p/XML::TreePP.3p

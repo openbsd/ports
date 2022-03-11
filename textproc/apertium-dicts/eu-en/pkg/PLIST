@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/11/15 04:24:58 bentley Exp $
 share/apertium/apertium-eu-en/
 share/apertium/apertium-eu-en/apertium-eu-en.colloc.t1x
 share/apertium/apertium-eu-en/apertium-eu-en.eu-en.t1x

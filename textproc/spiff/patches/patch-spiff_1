@@ -1,4 +1,3 @@
-$OpenBSD: patch-spiff_1,v 1.1 2005/09/05 13:25:04 espie Exp $
 --- spiff.1.orig	Mon Feb  5 21:17:23 1990
 +++ spiff.1	Mon Sep  5 15:21:26 2005
 @@ -1,9 +1,5 @@

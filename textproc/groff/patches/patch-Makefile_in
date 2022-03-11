@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2018/12/26 00:49:22 schwarze Exp $
-
 To process the hdtbl example files, eqn(1) is used, so build it first.
 
 Index: Makefile.in

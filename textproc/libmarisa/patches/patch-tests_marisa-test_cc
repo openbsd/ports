@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_marisa-test_cc,v 1.1 2021/09/11 07:55:18 inoguchi Exp $
-
 Fix test on OpenBSD
 
 Index: tests/marisa-test.cc

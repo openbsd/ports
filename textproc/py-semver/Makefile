@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/02/22 04:22:23 bket Exp $
-
 COMMENT =		python helper for Semantic Versioning
 
 MODPY_EGG_VERSION =	2.13.0

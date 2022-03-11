@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/02/27 12:14:41 sthen Exp $
-
 COMMENT =	painless YAML configuration
 
 MODPY_EGG_VERSION =	1.6.0

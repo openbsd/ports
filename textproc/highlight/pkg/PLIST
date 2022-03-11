@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.46 2020/12/22 09:50:00 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/12/05 18:15:39 afresh1 Exp $
-
 COMMENT =	implementation of the soundex algorithm
 DISTNAME =	Text-Soundex-3.05
 CATEGORIES =	textproc

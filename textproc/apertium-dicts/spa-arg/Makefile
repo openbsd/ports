@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/15 04:25:00 bentley Exp $
-
 L =	spa-arg
 LANG =	Spanish/Aragonese
 V =	0.5.0

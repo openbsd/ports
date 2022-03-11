@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=	tidy indenting of XML documents
 
 DISTNAME=	XML-Tidy-1.20

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/07/04 14:31:45 tb Exp $
-
 COMMENT =		web/text search engine
 
 DISTNAME =		swish-e-2.4.7

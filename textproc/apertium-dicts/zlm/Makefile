@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/01 10:12:47 bentley Exp $
-
 L =	zlm
 LANG =	Malaysian
 V =	0.2.0

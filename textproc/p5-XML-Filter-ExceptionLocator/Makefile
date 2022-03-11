@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT=	add line information to XML parse errors
 
 MODULES=	cpan

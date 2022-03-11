@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-russian,v 1.4 2004/12/25 22:37:36 sturm Exp $
 lib/ispell/russian.aff
 lib/ispell/russian.hash

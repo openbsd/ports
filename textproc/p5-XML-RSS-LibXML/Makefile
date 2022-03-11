@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT= 	XML::RSS with XML::LibXML
 
 MODULES=	cpan

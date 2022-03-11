@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/02/25 22:26:03 sthen Exp $
-
 COMMENT =		simple, small and efficient C++ XML parser
 
 GH_ACCOUNT =		leethomason

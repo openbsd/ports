@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/02/03 22:42:36 fcambus Exp $
-
 COMMENT =	safe templates engine for Lua
 
 V =		16.06.04

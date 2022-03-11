@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:41 sthen Exp $
-
 COMMENT =	Python module implementing Base64 without "=" padding
 
 MODPY_EGG_VERSION =	1.1.0

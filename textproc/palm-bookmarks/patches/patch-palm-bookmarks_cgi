@@ -1,4 +1,3 @@
-$OpenBSD: patch-palm-bookmarks_cgi,v 1.1.1.1 2012/09/04 07:08:19 ajacoutot Exp $
 --- palm-bookmarks.cgi.orig	Tue Mar 27 10:48:01 2001
 +++ palm-bookmarks.cgi	Tue Sep  4 09:06:55 2012
 @@ -54,7 +54,7 @@ under certain conditions, see the file COPYING for det

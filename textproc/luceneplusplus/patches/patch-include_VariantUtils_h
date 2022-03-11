@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_VariantUtils_h,v 1.1.1.1 2020/07/05 07:30:16 landry Exp $
-
 Index: include/VariantUtils.h
 --- include/VariantUtils.h.orig
 +++ include/VariantUtils.h

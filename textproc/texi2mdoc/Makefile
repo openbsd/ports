@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/11 08:14:18 bentley Exp $
-
 COMMENT =		convert Texinfo data to mdoc input
 
 DISTNAME =		texi2mdoc-0.1.2

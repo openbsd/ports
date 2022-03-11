@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/28 10:54:04 bket Exp $
 bin/xmlschema-json2xml
 bin/xmlschema-validate
 bin/xmlschema-xml2json

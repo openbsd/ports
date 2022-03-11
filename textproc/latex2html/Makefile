@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/03/23 21:45:59 sthen Exp $
-
 COMMENT=	LaTeX to HTML converter
 
 GH_ACCOUNT =	latex2html

@@ -1,4 +1,3 @@
-$OpenBSD: patch-doctype_sgmlnorm_cxx,v 1.2 2010/05/22 11:54:14 espie Exp $
 --- doctype/sgmlnorm.cxx.orig	Wed Dec  4 22:02:08 1996
 +++ doctype/sgmlnorm.cxx	Sat May 22 12:55:04 2010
 @@ -528,7 +528,7 @@ PCHR *SGMLNORM::parse_tags (PCHR b, GPTYPE len) const

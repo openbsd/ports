@@ -1,5 +1,3 @@
-$OpenBSD: patch-feedparser_sgml_py,v 1.1 2021/11/03 16:02:40 sthen Exp $
-
 Index: feedparser/sgml.py
 --- feedparser/sgml.py.orig
 +++ feedparser/sgml.py

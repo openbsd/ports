@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_HTML_Makefile_in,v 1.1.1.1 2021/09/02 20:14:58 ajacoutot Exp $
-
 Index: doc/HTML/Makefile.in
 --- doc/HTML/Makefile.in.orig
 +++ doc/HTML/Makefile.in

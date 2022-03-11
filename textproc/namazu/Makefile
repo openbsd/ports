@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:02 sthen Exp $
-
 COMMENT=	small to medium scale full-text search engine
 DISTNAME=	namazu-2.0.21
 REVISION=	3

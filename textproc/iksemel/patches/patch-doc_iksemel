@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_iksemel,v 1.2 2010/03/29 09:55:52 sthen Exp $
 --- doc/iksemel.orig	Thu Jul 23 13:19:30 2009
 +++ doc/iksemel	Fri Jan 29 18:55:06 2010
 @@ -1,5 +1,10 @@

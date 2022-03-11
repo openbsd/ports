@@ -1,4 +1,3 @@
-$OpenBSD: patch-xpdf_Makefile_in,v 1.8 2017/11/08 18:30:24 kili Exp $
 --- xpdf/Makefile.in.orig	Wed May 28 20:50:50 2014
 +++ xpdf/Makefile.in	Fri May 30 14:28:24 2014
 @@ -19,7 +19,7 @@ FOFILIBDIR = ../fofi

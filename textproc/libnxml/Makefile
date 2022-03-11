@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT =		XML manipulation library
 
 VERSION =		0.18.3

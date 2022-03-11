@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 07:39:14 bentley Exp $
 @pkgpath textproc/apertium-dicts/id-ms
 share/apertium/apertium-ind-zlm/
 share/apertium/apertium-ind-zlm/apertium-ind-zlm.ind-zlm.t1x

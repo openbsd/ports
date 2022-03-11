@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_nokogiri_extconf_rb,v 1.3 2022/03/06 22:42:07 jeremy Exp $
-
 Add -I flag position to work with already installed gumbo.h.
 
 Index: ext/nokogiri/extconf.rb

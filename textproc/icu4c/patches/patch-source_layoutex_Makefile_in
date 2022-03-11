@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_layoutex_Makefile_in,v 1.8 2020/11/01 08:15:53 ajacoutot Exp $
-
 Don't strip static libraries.
 
 Index: source/layoutex/Makefile.in

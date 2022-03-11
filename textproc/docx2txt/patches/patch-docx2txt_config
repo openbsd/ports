@@ -1,4 +1,3 @@
-$OpenBSD: patch-docx2txt_config,v 1.1 2014/10/07 11:48:33 schwarze Exp $
 --- docx2txt.config.orig	Tue Oct  7 12:41:30 2014
 +++ docx2txt.config	Tue Oct  7 12:41:49 2014
 @@ -14,9 +14,9 @@

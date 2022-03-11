@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/15 04:28:41 bentley Exp $
-
 L =	urd-hin
 LANG =	Urdu/Hindu
 V =	0.1.0

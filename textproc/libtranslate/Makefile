@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:50:00 sthen Exp $
-
 SHARED_LIBS +=  translate                 0.0 # 0.0
 
 COMMENT=	library/CLI tool interfacing to online translation services

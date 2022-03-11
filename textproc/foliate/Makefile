@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/14 07:37:13 ajacoutot Exp $
-
 # XXX check for tracker3 support at next update
 #RUN_DEPENDS +=		x11/gnome/tracker3
 

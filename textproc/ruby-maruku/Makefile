@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:27 sthen Exp $
-
 COMMENT =	Ruby markdown interpreter
 
 DISTNAME =	maruku-0.6.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:27 sthen Exp $
-
 COMMENT=	bookmarks on your palm
 
 DISTNAME=	palm-bookmarks-0.2

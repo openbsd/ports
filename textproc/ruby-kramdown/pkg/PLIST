@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/03/18 08:40:41 fcambus Exp $
 ${GEM_BIN}/kramdown${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

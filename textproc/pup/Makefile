@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:29 sthen Exp $
-
 COMMENT =		command line tool to filter HTML with CSS selectors
 
 GH_ACCOUNT =		ericchiang

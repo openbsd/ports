@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/22 04:22:23 bket Exp $
-
 COMMENT=		Python API and tools to manipulate OpenDocument files
 
 MODPY_EGG_VERSION=	1.4.1

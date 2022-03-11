@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/01/28 08:38:39 benoit Exp $
-
 COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan

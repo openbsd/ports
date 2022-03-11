@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:57 sthen Exp $
-
 COMMENT =		command line converter from Microsoft docx to ASCII text
 DISTNAME =		docx2txt-1.4
 CATEGORIES =		textproc

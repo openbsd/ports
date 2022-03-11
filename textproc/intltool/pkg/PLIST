@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2008/06/09 16:21:03 ajacoutot Exp $
 bin/intltool-extract
 bin/intltool-merge
 bin/intltool-prepare

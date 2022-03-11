@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/03/01 16:46:42 sthen Exp $
 @conflict py-chardet-<3.0.4p3
 bin/chardetect${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/chardet/

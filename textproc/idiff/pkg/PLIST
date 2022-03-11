@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/09 23:24:09 sthen Exp $
 @conflict openimageio-*
 @bin bin/idiff
 @man man/man1/idiff.1

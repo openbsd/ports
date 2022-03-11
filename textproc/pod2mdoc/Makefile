@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/11/11 08:14:18 bentley Exp $
-
 COMMENT =		convert POD data to mdoc input
 
 DISTNAME =		pod2mdoc-0.2

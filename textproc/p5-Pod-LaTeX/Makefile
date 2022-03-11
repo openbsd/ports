@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/07 22:48:00 afresh1 Exp $
-
 COMMENT =		convert pod documentation to latex format
 
 DISTNAME =		Pod-LaTeX-0.61

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/11/14 13:27:57 kevlo Exp $
 ${P5SITE}/Text/
 ${P5SITE}/Text/Thread.pm
 @man man/man3p/Text::Thread.3p

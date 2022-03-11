@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2022/02/22 10:46:51 ajacoutot Exp $
 @pkgpath textproc/libxml
 @define-tag libxml2/rebuild at-end %D/share/libxml2/rebuild
 @tag libxml2/rebuild

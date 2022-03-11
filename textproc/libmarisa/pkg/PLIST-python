@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2021/09/14 10:51:53 inoguchi Exp $
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}marisa.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/_marisa.${MODPY_PYC_MAGIC_TAG}so

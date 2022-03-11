@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:47 sthen Exp $
-
 COMMENT =	Provide the stuff missing in List::Util
 
 DISTNAME =	List-SomeUtils-0.58

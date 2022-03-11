@@ -1,5 +1,3 @@
-$OpenBSD: patch-data_services_xml_in,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
-
 from ubuntu
 
 --- data/services.xml.in.orig	Mon Jan 17 17:54:27 2005

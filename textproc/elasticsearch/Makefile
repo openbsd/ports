@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.79 2020/11/19 20:14:28 pvk Exp $
-
 COMMENT =		distributed RESTful search and analytics
 
 V =			7.10.0

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/25 22:57:01 jturner Exp $
 lib/lua/${MODLUA_VERSION}/soldout.so

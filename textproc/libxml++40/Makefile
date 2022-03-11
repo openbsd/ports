@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/05/27 15:38:44 ajacoutot Exp $
-
 PORTROACH=		limit:^4\.0
 
 COMMENT=		C++ bindings for libxml2

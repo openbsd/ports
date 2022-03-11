@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/10 08:02:18 ajacoutot Exp $
-
 COMMENT =	brain-dead simple config-ini parsing
 
 MODPY_EGG_VERSION =	1.1.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/23 19:39:45 sthen Exp $
-
 COMMENT=	Python program to create FAQ's list from formatted data file
 
 DISTNAME=	makefaq-2.5

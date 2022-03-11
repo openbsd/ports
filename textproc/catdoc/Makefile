@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:49:57 sthen Exp $
-
 COMMENT-main=	convert MS Word, Excel, Powerpoint to ASCII or TeX
 COMMENT-tk=	viewer for MS Word files
 

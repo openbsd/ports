@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/02/27 12:36:50 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/tomli/
 lib/python${MODPY_VERSION}/site-packages/tomli-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tomli/__init__.py

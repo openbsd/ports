@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-python,v 1.9 2020/06/09 07:17:20 jasper Exp $
 @conflict py-libxml-*
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}drv_libxml2.${MODPY_PYC_MAGIC_TAG}pyc

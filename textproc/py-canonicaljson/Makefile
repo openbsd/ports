@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:36 sthen Exp $
-
 COMMENT =		canonical JSON
 
 MODPY_EGG_VERSION =	1.4.0

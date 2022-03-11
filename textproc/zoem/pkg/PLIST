@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2021/02/14 17:34:24 tb Exp $
 @bin bin/zoem
 @man man/man1/zoem.1
 share/doc/zoem/

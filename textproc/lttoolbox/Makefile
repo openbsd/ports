@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/15 04:23:37 bentley Exp $
-
 COMMENT =		finite-state lexical processing toolkit
 
 V =			3.5

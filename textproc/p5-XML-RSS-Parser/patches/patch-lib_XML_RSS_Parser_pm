@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_XML_RSS_Parser_pm,v 1.1 2006/03/12 17:11:14 steven Exp $
 --- lib/XML/RSS/Parser.pm.orig	Fri Nov 18 19:24:56 2005
 +++ lib/XML/RSS/Parser.pm	Sun Mar 12 17:53:44 2006
 @@ -307,6 +307,8 @@ more as needed.

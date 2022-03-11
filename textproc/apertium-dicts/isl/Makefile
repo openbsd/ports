@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/01 10:15:08 bentley Exp $
-
 L =	isl
 LANG =	Icelandic
 V =	0.1.1

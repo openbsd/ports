@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/25 18:29:32 sthen Exp $
-
 COMMENT=		documentation tool micro-framework
 
 MODPY_EGG_VERSION=	0.13.7

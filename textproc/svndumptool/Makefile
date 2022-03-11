@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:46 sthen Exp $ 
-
 COMMENT =		processing subversion dump files
 MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		svndumptool-${MODPY_EGG_VERSION}

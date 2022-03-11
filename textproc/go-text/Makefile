@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 13:59:29 sthen Exp $
-
 COMMENT =	Go text processing support
 DISTNAME =	go-text-20190904
 GH_ACCOUNT =	golang

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fpt_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: src/fpt.hxx
 --- src/fpt.hxx.orig
 +++ src/fpt.hxx

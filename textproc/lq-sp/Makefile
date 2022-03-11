@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:01 sthen Exp $
-
 COMMENT=	SGML parser and entity manager
 
 DISTNAME=	lq-sp-1.3.4.12

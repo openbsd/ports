@@ -1,5 +1,3 @@
-$OpenBSD: patch-interfaces_cc_aspell_h,v 1.1 2017/04/17 21:19:22 sthen Exp $
-
 fix with clang; from https://svnweb.freebsd.org/ports?view=revision&revision=343830
 
 should be obsoleted by upstream patch targetted for 0.60.7

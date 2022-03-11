@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 00:03:07 bentley Exp $
 share/apertium/apertium-tur/
 share/apertium/apertium-tur/apertium-tur.tur.lexc
 share/apertium/apertium-tur/apertium-tur.tur.rlx

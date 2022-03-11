@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_version_h,v 1.1 2021/02/14 17:34:24 tb Exp $
-
 Fix for -fno-common
 
 Index: src/version.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=		creates and XML Stream connection and parses return data
 
 DISTNAME=		XML-Stream-1.24

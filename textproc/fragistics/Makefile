@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:58 sthen Exp $
-
 COMMENT =	Quake 3 statistics program
 
 DISTNAME =	fragistics-1.7.0

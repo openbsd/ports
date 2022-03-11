@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/08/02 19:27:30 jung Exp $
-
 COMMENT=		count lines of code
 
 V=			1.90

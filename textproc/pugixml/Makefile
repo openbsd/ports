@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/16 10:59:00 sthen Exp $
-
 COMMENT=	light-weight, simple and fast XML parser for C++
 
 V=		1.12.1

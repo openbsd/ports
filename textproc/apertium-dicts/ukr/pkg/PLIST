@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/04 00:03:57 bentley Exp $
 share/apertium/apertium-ukr/
 share/apertium/apertium-ukr/apertium-ukr.post-ukr.dix
 share/apertium/apertium-ukr/apertium-ukr.ukr.dix

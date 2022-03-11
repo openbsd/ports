@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT =	interface to the GNOME libxslt library
 
 DISTNAME =	XML-LibXSLT-1.99

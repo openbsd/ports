@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/10/29 11:56:52 sthen Exp $
 ${P5SITE}/PDF/
 ${P5SITE}/PDF/Reuse/
 ${P5SITE}/PDF/Reuse.pm

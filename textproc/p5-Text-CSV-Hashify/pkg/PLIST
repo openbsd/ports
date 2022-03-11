@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/01/20 15:23:18 nigel Exp $
 ${P5SITE}/Text/CSV/
 ${P5SITE}/Text/CSV/Hashify.pm
 @man man/man3p/Text::CSV::Hashify.3p

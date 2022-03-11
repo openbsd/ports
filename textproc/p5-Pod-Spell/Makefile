@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/03/07 23:13:37 afresh1 Exp $
-
 COMMENT =	formatter for spellchecking pod
 
 MODULES =	cpan

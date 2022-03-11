@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:36 sthen Exp $
-
 COMMENT =		configurable sidebar-enabled Sphinx theme
 
 MODPY_EGG_VERSION =	0.7.12

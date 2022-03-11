@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/20 10:45:16 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/cson/
 lib/python${MODPY_VERSION}/site-packages/cson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/cson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -1,11 +1,10 @@
-$OpenBSD: patch-INSTALL,v 1.2 2018/05/19 22:37:41 danj Exp $
 Index: INSTALL
 --- INSTALL.orig
 +++ INSTALL
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
- # $Id: patch-INSTALL,v 1.2 2018/05/19 22:37:41 danj Exp $
+ # $Id: patch-INSTALL,v 1.3 2022/03/11 20:02:28 naddy Exp $
  
  # To "install" this release, execute this INSTALL file by running
 @@ -31,44 +31,3 @@ rm -f $CATALOG

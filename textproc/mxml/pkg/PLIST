@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/10/20 03:41:25 bcallah Exp $
 @bin bin/mxmldoc
 include/mxml.h
 lib/libmxml.a

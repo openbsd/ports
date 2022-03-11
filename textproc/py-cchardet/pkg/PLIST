@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/01 13:51:20 ajacoutot Exp $
 bin/cchardetect
 lib/python${MODPY_VERSION}/site-packages/cchardet/
 lib/python${MODPY_VERSION}/site-packages/cchardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

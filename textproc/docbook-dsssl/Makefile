@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:57 sthen Exp $
-
 COMMENT=	modular DSSSL stylesheets for the DocBook DTD
 
 V=		1.79

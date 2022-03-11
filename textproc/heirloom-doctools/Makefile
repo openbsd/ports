@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/02/01 04:16:41 jsg Exp $
-
 COMMENT =		modernized troff implementation
 
 V =			191015

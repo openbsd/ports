@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/30 15:00:33 jasper Exp $
 lib/aspell/nb.dat
 share/aspell/bokmal.alias
 share/aspell/bokmål.alias

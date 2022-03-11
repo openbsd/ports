@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/02/28 13:46:59 sthen Exp $
 bin/ydiff
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ydiff.${MODPY_PYC_MAGIC_TAG}pyc

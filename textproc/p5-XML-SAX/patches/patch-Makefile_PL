@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.5 2019/07/03 13:57:59 sthen Exp $
-
 comment-out this block, it uses an installed version of XML::SAX to write out
 an ini file. this is provided by ${FILESDIR}/ParserDetails.ini instead.
 

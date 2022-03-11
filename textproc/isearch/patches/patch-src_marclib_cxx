@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_marclib_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: src/marclib.cxx
 --- src/marclib.cxx.orig
 +++ src/marclib.cxx

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:40 sthen Exp $
-
 COMMENT=	sphinx extension to output Devhelp documents
 VERSION=	1.0.2
 REVISION=	0

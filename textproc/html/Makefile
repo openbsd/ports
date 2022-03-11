@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/14 02:16:52 naddy Exp $
-
 COMMENT=	all W3C-published SGML DTDs for HTML
 
 DISTNAME=	html-4.01

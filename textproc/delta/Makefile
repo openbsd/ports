@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/03/02 09:59:35 fcambus Exp $
-
 COMMENT =		viewer for git and diff output
 
 GH_ACCOUNT =		dandavison

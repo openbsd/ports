@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/02/08 09:56:36 sthen Exp $
-
 COMMENT=	stemming algorithms for text processing
 
 # distfile at https://snowballstem.org/dist/ doesn't have mkalgorithms.pl

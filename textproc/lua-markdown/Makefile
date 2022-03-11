@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/02/03 22:42:36 fcambus Exp $
-
 COMMENT =	Markdown markup system implementation in pure Lua
 
 V =		0.33

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/06/28 11:18:18 espie Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	technical documentation XML/SGML definitions

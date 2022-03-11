@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/07/03 21:45:53 sthen Exp $
-
 COMMENT =	framework for the Perl SAX2 XML parsers, filters and drivers
 
 DISTNAME =	XML-SAX-1.02

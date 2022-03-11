@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/07/23 07:49:44 aanriot Exp $
 ${P5SITE}/Object/
 ${P5SITE}/Object/MultiType.pm
 @man man/man3p/Object::MultiType.3p

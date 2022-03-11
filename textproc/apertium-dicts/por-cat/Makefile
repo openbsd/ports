@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/02 07:46:28 bentley Exp $
-
 L =	por-cat
 LANG =	Portuguese/Catalan
 V =	0.10.0

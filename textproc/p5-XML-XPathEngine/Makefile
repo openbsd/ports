@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=	re-usable XPath engine for DOM-like trees
 
 MODULES=	cpan

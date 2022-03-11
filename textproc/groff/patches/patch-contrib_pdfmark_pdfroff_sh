@@ -1,4 +1,3 @@
-$OpenBSD: patch-contrib_pdfmark_pdfroff_sh,v 1.1 2011/06/23 12:14:51 schwarze Exp $
 # http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=538330
 # references a large patch by Solar Designer.
 # Some of those things are fixed in 1.21, most do not look exploitable.

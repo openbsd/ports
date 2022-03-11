@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.6 2019/07/12 20:50:02 sthen Exp $
-
 # All distfiles are unversioned, and no upstream master site available
 PORTROACH =	ignore:1
 

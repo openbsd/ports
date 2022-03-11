@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 21:02:26 sthen Exp $
-
 COMMENT=	format/convert text documents into compressed .pdb files
 
 VERSION=	0.9.4

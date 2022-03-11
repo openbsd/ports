@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT=	perl module collection for working with XML
 
 MODULES=	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:59 sthen Exp $
-
 COMMENT=		high performance full-text search system
 
 DISTNAME=		hyperestraier-1.4.13

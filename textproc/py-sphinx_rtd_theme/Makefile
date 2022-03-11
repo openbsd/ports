@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:40 sthen Exp $
-
 COMMENT =		readthedocs.org theme for Sphinx
 
 MODPY_EGG_VERSION =	0.5.1

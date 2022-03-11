@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/07/03 21:45:54 sthen Exp $
-
 COMMENT=	trivial perl API for reading/writing XML
 
 MODULES=	cpan

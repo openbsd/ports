@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/15 04:24:55 bentley Exp $
-
 L =	br-fr
 LANG =	Breton/French
 V =	0.5.1

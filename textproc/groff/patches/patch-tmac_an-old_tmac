@@ -1,5 +1,3 @@
-$OpenBSD: patch-tmac_an-old_tmac,v 1.9 2020/01/18 17:33:56 schwarze Exp $
-
 chunks 1-4: Repair the .AT and .UC macros (committed upstream, too).
 chunk 2: Tweak section headers (local change).
 chunk 3: Set the default operating system name (local change).

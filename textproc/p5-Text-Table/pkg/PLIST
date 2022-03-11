@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/09 07:22:17 kevlo Exp $
 ${P5SITE}/Text/Table.pm
 @man man/man3p/Text::Table.3p

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:42 sthen Exp $
-
 COMMENT=	wrapper for LaTeX and friends
 
 MODPY_EGG_VERSION=	1.5.1

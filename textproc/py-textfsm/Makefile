@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:41 sthen Exp $
-
 COMMENT =		parse semi-structured text into Python table
 
 MODPY_EGG_VERSION =	1.1.2

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/18 15:21:32 ajacoutot Exp $
 bin/itstool
 @man man/man1/itstool.1
 share/itstool/

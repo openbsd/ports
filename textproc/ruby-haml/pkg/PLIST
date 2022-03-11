@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/14 18:42:24 jeremy Exp $
 ${GEM_BIN}/haml${GEM_BIN_SUFFIX}
 ${GEM_BIN}/html2haml${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem

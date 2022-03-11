@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT=	LaTeX documents output generation automation tool
 
 DISTNAME=	latexmk-452c

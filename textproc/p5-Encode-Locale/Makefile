@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:45 sthen Exp $
-
 COMMENT =	determine the locale encoding
 
 DISTNAME =	Encode-Locale-1.05

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:17 sthen Exp $
-
 COMMENT=	front-end for converting XML files to various formats
 
 DISTNAME=	xmlto-0.0.28

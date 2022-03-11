@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/07 08:37:46 sthen Exp $
-
 COMMENT =	low memory library for creating large XML files
 
 MODPY_EGG_VERSION =	1.1.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-paper_h,v 1.1 2021/01/31 04:06:03 bcallah Exp $
-
 Fix for -fno-common
 From Debian:
 https://sources.debian.org/data/main/h/halibut/1.2-3/debian/patches/gcc-no-common.patch

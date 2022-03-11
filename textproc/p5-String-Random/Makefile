@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/11/04 10:37:20 benoit Exp $
-
 COMMENT=	perl module for generating randoms strings
 
 MODULES=	cpan

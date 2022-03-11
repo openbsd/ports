@@ -1,5 +1,3 @@
-#$OpenBSD: Makefile,v 1.3 2019/07/12 20:50:10 sthen Exp $
-
 COMMENT =	library for generating PDF documents for Tcl
 
 V =		0.9.1

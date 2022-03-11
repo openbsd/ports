@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:09 sthen Exp $
-
 COMMENT =	pure Perl implementation for parsing/writing XML documents
 
 DISTNAME =	XML-TreePP-0.43

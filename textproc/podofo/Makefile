@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/04/07 14:07:47 sthen Exp $
-
 COMMENT=	library and tools to modify and parse PDF documents
 
 DISTNAME=	podofo-0.9.7

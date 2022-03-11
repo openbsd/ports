@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/01/13 10:34:14 fcambus Exp $
-
 COMMENT =	fuzzy text selector for the terminal
 
 V =		1.0

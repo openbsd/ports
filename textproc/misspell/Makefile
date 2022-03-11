@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:29 sthen Exp $
-
 COMMENT =	correct commonly misspelled English words in source files
 
 GH_ACCOUNT =	client9

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:48 sthen Exp $
-
 COMMENT= 		POE Filter for parsing XML
 
 DISTNAME=		POE-Filter-XML-1.140700

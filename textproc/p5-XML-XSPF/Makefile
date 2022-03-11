@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:50:10 sthen Exp $
-
 COMMENT=	parser and generator for XSPF playlists
 
 MODULES=	cpan

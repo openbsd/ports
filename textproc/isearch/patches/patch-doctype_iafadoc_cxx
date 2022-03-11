@@ -1,5 +1,3 @@
-$OpenBSD: patch-doctype_iafadoc_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: doctype/iafadoc.cxx
 --- doctype/iafadoc.cxx.orig
 +++ doctype/iafadoc.cxx

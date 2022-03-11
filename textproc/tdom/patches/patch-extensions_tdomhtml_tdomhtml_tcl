@@ -1,5 +1,3 @@
-$OpenBSD: patch-extensions_tdomhtml_tdomhtml_tcl,v 1.1.1.1 2018/06/12 15:44:28 stu Exp $
-
 Just do it.
 
 Index: extensions/tdomhtml/tdomhtml.tcl

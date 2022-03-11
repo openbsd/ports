@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/18 09:27:17 sthen Exp $
-
 COMMENT =		SPDX license list database
 
 MODPY_EGG_VERSION =	2.5.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/09/19 07:38:58 solene Exp $
 lib/python${MODPY_VERSION}/site-packages/css_parser/
 lib/python${MODPY_VERSION}/site-packages/css_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/css_parser-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

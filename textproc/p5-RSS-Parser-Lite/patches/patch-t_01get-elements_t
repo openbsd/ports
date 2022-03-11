@@ -1,5 +1,3 @@
-$OpenBSD: patch-t_01get-elements_t,v 1.1 2014/12/22 14:00:50 benoit Exp $
-
 - https://rt.cpan.org/Public/Bug/Display.html?id=89579
 
 --- t/01_get-elements.t~	Tue Oct  1 14:48:18 2013

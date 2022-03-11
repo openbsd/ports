@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT =	encode characters for LaTeX formatting
 
 DISTNAME =	LaTeX-Encode-0.092.0

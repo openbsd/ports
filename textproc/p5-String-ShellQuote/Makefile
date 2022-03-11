@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2020/07/03 21:45:49 sthen Exp $
-
 COMMENT=		Quote strings for passing through the shell
 
 MODULES=		cpan

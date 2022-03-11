@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/03/04 21:42:00 kmos Exp $
-
 COMMENT =	filter for csv data containing delimiters and newlines
 
 GH_ACCOUNT =	dbro

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/05/22 11:31:19 ajacoutot Exp $
 @pkgpath textproc/redland
 @bin bin/rdfproc
 bin/redland-config

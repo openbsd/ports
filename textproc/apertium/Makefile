@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/11/20 09:28:37 bentley Exp $
-
 COMMENT =		rule-based machine translation platform
 
 V =			3.7

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:39 sthen Exp $
-
 COMMENT =	define simple search patterns in bulk to perform
 
 MODPY_EGG_VERSION =	3.0.1

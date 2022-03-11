@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2020/10/09 19:12:01 rsadowski Exp $
-
 PORTROACH=		limit:^1
 
 COMMENT=		generic spell checking library

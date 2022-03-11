@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/03/03 14:33:54 sthen Exp $
-
 COMMENT =		line oriented search tool using Rust's regex library #'
 
 GH_ACCOUNT =		BurntSushi

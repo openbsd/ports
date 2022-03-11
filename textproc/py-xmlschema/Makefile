@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/28 10:54:04 bket Exp $
-
 COMMENT =		an XML Schema validator and decoder
 
 MODPY_EGG_VERSION =	1.9.2

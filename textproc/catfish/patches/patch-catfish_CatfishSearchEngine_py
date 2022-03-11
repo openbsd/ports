@@ -1,5 +1,3 @@
-$OpenBSD: patch-catfish_CatfishSearchEngine_py,v 1.6 2020/12/29 15:29:36 landry Exp $
-
 silence locate --help call that will always fail for us
 Index: catfish/CatfishSearchEngine.py
 --- catfish/CatfishSearchEngine.py.orig

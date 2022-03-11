@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT=		transform LaTeX source files to POD
 
 DISTNAME=		LaTeX-Pod-0.21

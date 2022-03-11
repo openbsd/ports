@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.1 2010/06/10 13:17:29 jasper Exp $
-
 We don't really need ispell to be installed at build time,
 so trick the test into believing it's there.
 

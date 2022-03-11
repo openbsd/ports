@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-mi,v 1.2 2013/06/22 09:31:50 espie Exp $
 @pkgpath textproc/mozilla-dicts,-${L}
 share/mozilla-dicts/
 share/mozilla-dicts/mi-x-Tai Tokerau.aff

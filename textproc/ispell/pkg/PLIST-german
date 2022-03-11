@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-german,v 1.4 2004/12/25 22:37:36 sturm Exp $
 lib/ispell/deutsch.aff
 lib/ispell/deutsch.hash

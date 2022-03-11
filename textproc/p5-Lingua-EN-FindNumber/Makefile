@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:46 sthen Exp $
-
 COMMENT =	locate (written) numbers in English text 
 DISTNAME =	Lingua-EN-FindNumber-1.32
 CATEGORIES =	textproc

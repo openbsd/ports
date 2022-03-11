@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:50:16 sthen Exp $
-
 COMMENT =		convert ASCII text to man page
 DISTNAME =		txt2man-1.5.6
 REVISION =		3

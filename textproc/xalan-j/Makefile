@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/08 11:38:41 rsadowski Exp $
-
 COMMENT =		apache project to transform xml documents using xslt
 
 VERSION =		2.7.2

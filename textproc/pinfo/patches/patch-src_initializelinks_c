@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_initializelinks_c,v 1.1 2021/02/04 21:04:08 tb Exp $
-
 Index: src/initializelinks.c
 --- src/initializelinks.c.orig
 +++ src/initializelinks.c

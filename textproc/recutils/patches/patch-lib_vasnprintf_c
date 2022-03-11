@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_vasnprintf_c,v 1.1 2021/08/31 17:41:19 jca Exp $
-
 Don't use printf %n.
 https://git.savannah.gnu.org/cgit/gnulib.git/commit/lib/vasnprintf.c?id=b954346c6101860c7b462d1b286641d1307afd6c
 

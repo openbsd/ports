@@ -1,8 +1,7 @@
-$OpenBSD: patch-parse_c,v 1.1 2011/07/03 22:55:26 naddy Exp $
 --- parse.c.orig	Mon Feb  5 21:17:19 1990
 +++ parse.c	Fri Jun 24 19:09:49 2011
 @@ -11,6 +11,7 @@
- static char rcsid[]= "$Header: /home/cvs/ports/textproc/spiff/patches/patch-parse_c,v 1.1 2011/07/03 22:55:26 naddy Exp $";
+ static char rcsid[]= "$Header: /home/cvs/ports/textproc/spiff/patches/patch-parse_c,v 1.2 2022/03/11 20:03:31 naddy Exp $";
  #endif
  
 +#include <string.h>

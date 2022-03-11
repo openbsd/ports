@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:44:02 espie Exp $
 bin/hgrep
 @man man/man1/hgrep.1

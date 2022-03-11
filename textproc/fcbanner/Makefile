@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/27 17:18:38 sthen Exp $
-
 COMMENT =	fontconfig-based alternative to banner(1)
 
 PKGNAME =	fcbanner-0.0.20040302

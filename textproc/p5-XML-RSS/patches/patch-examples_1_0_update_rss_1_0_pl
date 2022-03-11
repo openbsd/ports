@@ -1,4 +1,3 @@
-$OpenBSD: patch-examples_1_0_update_rss_1_0_pl,v 1.1.1.1 2001/03/21 23:59:21 avsm Exp $
 --- examples/1.0/update_rss_1.0.pl.orig	Wed Mar 21 23:18:06 2001
 +++ examples/1.0/update_rss_1.0.pl	Wed Mar 21 23:18:12 2001
 @@ -29,5 +29,5 @@ $rss->channel(dc => {

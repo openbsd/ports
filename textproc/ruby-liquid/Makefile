@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 21:02:27 sthen Exp $
-
 COMMENT =	safe, customer facing template language
 
 DISTNAME =	liquid-2.4.1

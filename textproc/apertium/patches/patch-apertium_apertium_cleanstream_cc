@@ -1,5 +1,3 @@
-$OpenBSD: patch-apertium_apertium_cleanstream_cc,v 1.1 2021/11/15 04:23:36 bentley Exp $
-
 Index: apertium/apertium_cleanstream.cc
 --- apertium/apertium_cleanstream.cc.orig
 +++ apertium/apertium_cleanstream.cc

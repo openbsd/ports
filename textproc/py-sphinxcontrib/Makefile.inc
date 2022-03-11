@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2021/02/20 15:50:38 sthen Exp $
-
 MODPY_EGG_VERSION?=	${VERSION}
 CONTRIB?=	${.CURDIR:T}
 DISTNAME?=	sphinxcontrib-${CONTRIB}-${MODPY_EGG_VERSION}

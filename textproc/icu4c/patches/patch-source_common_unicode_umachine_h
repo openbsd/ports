@@ -1,5 +1,3 @@
-$OpenBSD: patch-source_common_unicode_umachine_h,v 1.1 2020/11/01 08:15:53 ajacoutot Exp $
-
 XXX unbreak (at least!) the following ports (wait until upstream copes):
 devel/libvmime
 editors/libreoffice

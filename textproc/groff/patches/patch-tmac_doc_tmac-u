@@ -1,5 +1,3 @@
-$OpenBSD: patch-tmac_doc_tmac-u,v 1.2 2019/01/12 17:01:35 schwarze Exp $
-
 chunk 1: Always format .Pa the same way, as requested by jmc@ (local change).
 chunks 2-3: Do not misinterpret .Lk args as macros (committed upstream, too).
 

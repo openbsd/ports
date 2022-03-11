@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:58 sthen Exp $
-
 COMMENT =	cpp-like generic file pre-processor
 
 DISTNAME =	filepp-1.8.0

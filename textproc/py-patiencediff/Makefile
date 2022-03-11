@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:38 sthen Exp $
-
 COMMENT =		Python implementation of the patiencediff algorithm
 
 MODPY_EGG_VERSION =	0.2.2

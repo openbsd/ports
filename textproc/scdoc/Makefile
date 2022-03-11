@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/03/16 17:00:59 sthen Exp $
-
 COMMENT =		convert scdoc text files to man(7) pages
 VERSION =		1.11.1
 DISTNAME =		scdoc-${VERSION}

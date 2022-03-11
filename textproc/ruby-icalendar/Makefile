@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=		iCalendar support for Ruby
 
 DISTNAME=		icalendar-2.1.0

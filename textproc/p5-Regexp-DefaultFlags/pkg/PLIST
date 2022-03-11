@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/02/07 09:25:21 msf Exp $
 ${P5SITE}/Regexp/
 ${P5SITE}/Regexp/DefaultFlags.pm
 @man man/man3p/Regexp::DefaultFlags.3p

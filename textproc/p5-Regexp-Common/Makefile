@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2020/07/03 21:45:48 sthen Exp $
-
 COMMENT =	provide commonly requested regular expressions
 
 DISTNAME =	Regexp-Common-2017060201

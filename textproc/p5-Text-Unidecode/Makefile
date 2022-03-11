@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT =	US-ASCII transliterations of Unicode text
 
 MODULES =	cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:07 sthen Exp $
-
 COMMENT=	converts simple text to web constructs
 
 DISTNAME =	Text-Textile-2.13

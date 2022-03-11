@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/09/01 13:51:52 ajacoutot Exp $
 bin/hotdoc
 bin/hotdoc_dep_printer
 lib/python${MODPY_VERSION}/site-packages/hotdoc/

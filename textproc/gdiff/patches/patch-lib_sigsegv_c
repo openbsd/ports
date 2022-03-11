@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_sigsegv_c,v 1.1 2021/08/29 07:42:54 jasper Exp $
-
 Fix build on powerpc64 by correcting the stack pointer definition
 
 Index: lib/sigsegv.c

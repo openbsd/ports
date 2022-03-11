@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/01 11:54:26 bentley Exp $
 share/apertium/apertium-hin/
 share/apertium/apertium-hin/apertium-hin.hin.dix
 share/apertium/apertium-hin/apertium-hin.hin.rlx

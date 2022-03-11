@@ -1,5 +1,3 @@
-$OpenBSD: patch-igor,v 1.3 2017/11/29 13:26:36 schwarze Exp $
-
 Chunks 1-3: Do not report contractions by default (local change).
 Chunk 4: Do not use /usr/local/etc/ (local change).
 

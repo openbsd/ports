@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2020/11/04 10:32:30 benoit Exp $
-
 COMMENT=	perl module to manage XML RSS files
 
 DISTNAME =	XML-RSS-1.62

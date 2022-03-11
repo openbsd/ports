@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/02 08:22:47 bentley Exp $
 @pkgpath textproc/apertium-dicts/es-ca
 share/apertium/apertium-spa-cat/
 share/apertium/apertium-spa-cat/apertium-spa-cat.cat-spa.t1x

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/22 09:51:02 tb Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386
 USE_WXNEEDED =		Yes
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2015/07/16 23:57:28 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/String/
 ${P5ARCH}/String/Approx.pm

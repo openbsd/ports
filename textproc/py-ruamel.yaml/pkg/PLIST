@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/11/19 22:42:02 sthen Exp $
 @pkgpath textproc/py-ruamel.yaml
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/03/19 08:12:49 czarkoff Exp $
 bin/bookman
 bin/src2man
 bin/txt2man

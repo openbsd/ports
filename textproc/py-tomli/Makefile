@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/27 12:36:50 sthen Exp $
-
 COMMENT =	lil' TOML parser
 
 MODPY_EGG_VERSION =	1.2.3

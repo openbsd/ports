@@ -1,4 +1,3 @@
-$OpenBSD: patch-xsl_url_xsl,v 1.1 2010/11/28 18:19:50 kili Exp $
 --- xsl/url.xsl.orig	Mon Apr  5 02:07:53 2010
 +++ xsl/url.xsl	Sat Nov 27 17:44:19 2010
 @@ -68,7 +68,7 @@

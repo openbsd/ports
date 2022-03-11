@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/19 12:44:40 rpe Exp $
 @bin bin/wdiff
 @info info/wdiff.info
 @man man/man1/wdiff.1

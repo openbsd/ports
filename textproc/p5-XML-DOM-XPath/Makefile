@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT=		extension to add XPath support to XML::DOM
 
 DISTNAME=		XML-DOM-XPath-0.14

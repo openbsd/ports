@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:41 sthen Exp $
-
 COMMENT =	create spreadsheet files compatible with MS Excel 95-2003
 
 MODPY_EGG_VERSION =	1.3.0

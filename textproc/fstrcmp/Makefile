@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/08 22:34:41 thfr Exp $
-
 COMMENT=	library for fuzzy string comparisons
 
 DISTNAME=	fstrcmp-0.7.D001

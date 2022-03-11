@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT=	translate GNU info files into HTML pages
 
 DISTNAME=	info2html-1.1

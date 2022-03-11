@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2020/07/03 21:45:50 sthen Exp $
-
 COMMENT = 	perform diffs on files and record sets
 
 MODULES =	cpan

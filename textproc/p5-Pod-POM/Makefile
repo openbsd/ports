@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/03 21:45:48 sthen Exp $
-
 COMMENT=	convert Pod documents into a simple object model form
 
 MODULES=	cpan

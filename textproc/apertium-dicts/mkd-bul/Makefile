@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/02 07:43:31 bentley Exp $
-
 L =	mkd-bul
 LANG =	Macedonian/Bulgarian
 V =	0.2.1

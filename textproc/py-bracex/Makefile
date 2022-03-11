@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/14 12:18:04 sthen Exp $
-
 COMMENT =		brace expanding library
 
 MODPY_EGG_VERSION =	2.2.1

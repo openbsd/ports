@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 02:57:51 msf Exp $
 ${P5SITE}/Lingua/
 ${P5SITE}/Lingua/GL/
 ${P5SITE}/Lingua/GL/Stemmer.pm

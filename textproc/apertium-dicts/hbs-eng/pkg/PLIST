@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/11/15 04:24:58 bentley Exp $
 share/apertium/apertium-hbs-eng/
 share/apertium/apertium-hbs-eng/Cyrl-Latn.autopmor.bin
 share/apertium/apertium-hbs-eng/apertium-hbs-eng.eng-hbs.t1x

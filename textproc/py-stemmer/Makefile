@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/15 14:16:58 sthen Exp $
-
 COMMENT =		snowball stemming algorithms, for information retrieval
 
 MODPY_EGG_VERSION =	2.0.1

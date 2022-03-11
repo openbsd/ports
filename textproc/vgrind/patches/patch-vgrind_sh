@@ -1,4 +1,3 @@
-$OpenBSD: patch-vgrind_sh,v 1.2 2011/06/06 19:12:45 jasper Exp $
 --- vgrind.sh.orig     Sat Oct 23 20:30:20 2010
 +++ vgrind.sh  Mon May 30 11:10:15 2011
 @@ -40,8 +40,8 @@ else

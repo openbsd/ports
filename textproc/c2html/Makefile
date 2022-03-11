@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/09/17 20:48:38 fcambus Exp $
-
 COMMENT=		C-language sources to HTML converter
 
 DISTNAME=		c2html-0.9.6

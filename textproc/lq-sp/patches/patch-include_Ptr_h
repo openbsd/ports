@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_Ptr_h,v 1.1 2018/04/10 13:21:18 jasper Exp $
-
 error: ISO C++11 does not allow access declarations; use using declarations instead
 
 Index: include/Ptr.h

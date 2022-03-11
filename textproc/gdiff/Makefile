@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/04 08:48:24 sthen Exp $
-
 COMMENT=	GNU versions of the diff utilities
 
 VERSION=	3.8

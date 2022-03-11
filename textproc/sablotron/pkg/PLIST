@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2015/03/16 18:07:57 naddy Exp $
 @bin bin/sabcmd
 bin/sablot-config
 include/sabcfg.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=		HTML Abstraction Markup Language for Ruby
 
 DISTNAME=		haml-3.1.7

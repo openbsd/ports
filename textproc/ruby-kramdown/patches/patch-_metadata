@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.1 2020/08/21 21:22:27 jeremy Exp $
-
 Don't require runtime dependency on rexml, not needed
 in Ruby 2.5-2.7 where it is in stdlib.
 

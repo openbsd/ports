@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/21 21:58:34 sturm Exp $
 ${P5SITE}/XML/RSS/TimingBot.pm
 ${P5SITE}/XML/RSS/TimingBot.pod
 @man man/man3p/XML::RSS::TimingBot.3p

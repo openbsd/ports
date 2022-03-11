@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Pod_PlainText_pm,v 1.1.1.1 2021/02/25 21:52:51 sthen Exp $
-
 Index: lib/Pod/PlainText.pm
 --- lib/Pod/PlainText.pm.orig
 +++ lib/Pod/PlainText.pm

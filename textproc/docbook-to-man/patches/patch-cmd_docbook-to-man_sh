@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmd_docbook-to-man_sh,v 1.3 2013/12/02 18:20:00 zhuk Exp $
 --- cmd/docbook-to-man.sh.orig	Mon Jun 17 05:50:30 1996
 +++ cmd/docbook-to-man.sh	Sat Feb 12 00:07:52 2005
 @@ -40,9 +40,12 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/02 00:02:38 sthen Exp $
-
 COMMENT =		iterative JSON parser
 
 MODPY_EGG_VERSION =	3.1.4

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/03/25 05:52:08 bentley Exp $
 share/apertium/apertium-oci-fra/
 share/apertium/apertium-oci-fra/apertium-oci-fra.fra-oci.t1x
 share/apertium/apertium-oci-fra/apertium-oci-fra.fra-oci.t2x

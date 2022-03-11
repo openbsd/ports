@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:15 sthen Exp $
-
 COMMENT =		tests lexical similarity in texts
 
 DISTNAME =		sim_2_26

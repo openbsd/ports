@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/05/12 19:49:54 benoit Exp $
 ${P5SITE}/HTML/
 ${P5SITE}/HTML/Summary.pm
 ${P5SITE}/Lingua/

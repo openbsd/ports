@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2008/10/28 16:54:11 jasper Exp $
-
 COMMENT=	aspell dictionary for Ukrainian
 CATEGORIES=	textproc
 DISTNAME=	aspell6-uk-1.4.0-0

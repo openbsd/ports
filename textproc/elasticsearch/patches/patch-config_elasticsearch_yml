@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_elasticsearch_yml,v 1.5 2018/09/25 08:50:49 pvk Exp $
 Index: config/elasticsearch.yml
 --- config/elasticsearch.yml.orig
 +++ config/elasticsearch.yml

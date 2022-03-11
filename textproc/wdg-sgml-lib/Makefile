@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:50:16 sthen Exp $
-
 COMMENT=	collection of HTML, XHTML, ISO-HTML, WML and MathML DTDs
 
 DISTNAME=	wdg-sgml-lib-1.1.4

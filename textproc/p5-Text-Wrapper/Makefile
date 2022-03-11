@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:52 sthen Exp $
-
 COMMENT=		simple word wrapping routine
 
 MODULES=		cpan

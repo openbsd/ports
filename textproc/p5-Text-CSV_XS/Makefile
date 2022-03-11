@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/12/24 04:00:36 afresh1 Exp $
-
 COMMENT =	Comma-Separated Values manipulation routines
 
 DISTNAME =	Text-CSV_XS-1.47

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/11/17 21:23:43 benoit Exp $
-
 COMMENT =	Template Renderer Plugin for Mojolicious
 
 MODULES =	cpan

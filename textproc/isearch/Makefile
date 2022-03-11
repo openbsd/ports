@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:50:00 sthen Exp $
-
 COMMENT=	text search engine by CNIDR
 
 DISTNAME=	Isearch-1.14

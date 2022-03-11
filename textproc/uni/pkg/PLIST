@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/28 22:58:05 abieber Exp $
 @bin bin/uni

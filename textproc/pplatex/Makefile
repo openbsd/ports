@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/09 12:21:30 espie Exp $
-
 COMMENT =	pretty print LaTeX messages
 
 GH_ACCOUNT =	stefanhepp

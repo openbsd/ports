@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.5 2021/10/31 12:09:45 bentley Exp $
-
 COMMENT ?=		${LANG} language pack for apertium
 
 DISTNAME ?=		apertium-$L-$V

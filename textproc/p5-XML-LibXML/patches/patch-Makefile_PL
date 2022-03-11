@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.10 2020/05/15 23:49:47 bluhm Exp $
-
 Alien::Build has been designed to build dependencies on the fly
 when installing from CPAN.  That does not make sense for our ports
 tree.  Remove Alien::Libxml2 references, instead link against the

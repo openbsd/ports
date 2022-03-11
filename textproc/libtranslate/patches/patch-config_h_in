@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_h_in,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
-
 upstream patch
 
 --- config.h.in.orig	Mon Nov 14 16:06:02 2011

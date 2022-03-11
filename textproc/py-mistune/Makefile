@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:38 sthen Exp $
-
 COMMENT =		markdown parser for Python
 
 MODPY_EGG_VERSION =	0.8.4

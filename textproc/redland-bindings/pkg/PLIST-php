@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-php,v 1.1.1.1 2012/12/13 13:46:01 sthen Exp $
 lib/php-${MODPHP_VERSION}/modules/redland.so

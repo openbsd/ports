@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:50:02 sthen Exp $
-
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.5.0
 CATEGORIES=	textproc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.72 2021/11/21 12:13:32 espie Exp $
-
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
 COMMENT-french=		ispell dictionary for French

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/24 09:11:40 laurent Exp $
 @bin bin/sim_c
 @bin bin/sim_java
 @bin bin/sim_lisp

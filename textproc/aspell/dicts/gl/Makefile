@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2008/10/28 16:54:11 jasper Exp $
-
 COMMENT=	aspell dictionary for Galician
 CATEGORIES=	textproc
 DISTNAME=	aspell6-gl-0.5a-2

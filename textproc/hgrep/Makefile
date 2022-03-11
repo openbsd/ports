@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/17 14:39:43 danj Exp $
-
 COMMENT=		grep wrapper with search highlighting
 
 DISTNAME=		hgrep-19991004

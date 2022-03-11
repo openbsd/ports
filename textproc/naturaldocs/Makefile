@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:50:02 sthen Exp $
-
 COMMENT=	multi-language source code documentation generator
 
 DISTNAME=	NaturalDocs-1.52

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/18 16:37:21 kn Exp $
-
 COMMENT=		generates various output formats from DocBook SGML documents
 
 DISTNAME=		docbook-utils-0.6.14

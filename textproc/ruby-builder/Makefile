@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:50:14 sthen Exp $
-
 COMMENT=	Ruby library to create XML markup and data structures
 
 DISTNAME=	builder-3.0.0

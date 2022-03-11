@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:47 sthen Exp $
-
 COMMENT =		higher-order list utility functions
 
 MODULES =		cpan

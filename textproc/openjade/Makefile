@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2022/02/18 16:37:21 kn Exp $
-
 COMMENT=	object-oriented DSSSL engine
 
 DISTNAME=	openjade-1.3.3-pre1

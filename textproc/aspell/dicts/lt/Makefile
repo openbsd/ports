@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/17 11:04:12 ajacoutot Exp $
-
 COMMENT=	aspell dictionary for Lithuanian
 CATEGORIES=	textproc
 DISTNAME=	aspell6-lt-1.2.1-0

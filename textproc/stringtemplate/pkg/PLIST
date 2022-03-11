@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/30 08:53:58 jasper Exp $
 share/java/
 share/java/classes/
 share/java/classes/stringtemplate.jar

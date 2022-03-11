@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/08 13:54:57 sthen Exp $
-
 COMMENT =	Lua library for parsing and emitting YAML
 V =		6.1
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/03/15 11:12:16 sthen Exp $
-
 COMMENT =	make JSON greppable
 
 MODGO_MODNAME =	github.com/tomnomnom/gron

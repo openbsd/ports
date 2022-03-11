@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/22 20:15:57 jasper Exp $
 ${P5SITE}/XML/DOM/XPath.pm
 @man man/man3p/XML::DOM::XPath.3p

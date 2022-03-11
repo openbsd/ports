@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2021/11/02 00:02:38 sthen Exp $
-
 COMMENT=		Natural Language ToolKit
 
 MODPY_EGG_VERSION =	3.2.4

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Isearch-cgi_search_form_cxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: Isearch-cgi/search_form.cxx
 --- Isearch-cgi/search_form.cxx.orig
 +++ Isearch-cgi/search_form.cxx

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/07/26 01:56:52 stu Exp $
 include/tdom.h
 @lib lib/libtdom${VER}.so.${LIBtdom${VER}_VERSION}
 lib/libtdomstub${VER}.a

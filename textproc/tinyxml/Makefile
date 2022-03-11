@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/17 10:37:25 jca Exp $
-
 COMMENT=	simple and small C++ XML parser
 
 V=		2.6.2

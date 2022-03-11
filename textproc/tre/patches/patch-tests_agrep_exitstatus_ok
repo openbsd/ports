@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_agrep_exitstatus_ok,v 1.1.1.1 2007/01/29 20:14:29 kili Exp $
-
 # Those tests are supposed to bail out with exit code 2 (confirmed by
 # upstream).
 

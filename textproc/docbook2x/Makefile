@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/09/02 18:33:06 ajacoutot Exp $
-
 COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8

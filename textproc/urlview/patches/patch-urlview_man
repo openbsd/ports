@@ -1,4 +1,3 @@
-$OpenBSD: patch-urlview_man,v 1.1 2015/01/10 18:02:04 schwarze Exp $
 Fix incorrect escaping resulting in incorrectly shown regexp.
 While here, fix various other nits.
 --- urlview.man.orig	Tue Jul  4 12:14:30 2000

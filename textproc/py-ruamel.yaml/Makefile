@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2022/02/13 13:04:48 sthen Exp $
-
 COMMENT =		YAML 1.2 loader/dumper package for Python
 
 MODPY_EGG_VERSION =	0.17.21

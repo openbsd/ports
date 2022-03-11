@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:37 sthen Exp $
-
 COMMENT =		convert dicts and other data types into XML
 
 MODPY_EGG_VERSION =	1.7.4

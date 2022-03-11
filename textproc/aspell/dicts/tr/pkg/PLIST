@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/28 16:54:11 jasper Exp $
 lib/aspell/tr.dat
 share/aspell/tr.multi
 share/aspell/tr.rws

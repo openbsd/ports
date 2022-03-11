@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_fc_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: src/fc.hxx
 --- src/fc.hxx.orig
 +++ src/fc.hxx

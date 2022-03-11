@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT=	LaTeX to html translator
 
 CATEGORIES=	textproc print

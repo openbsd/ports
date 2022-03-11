@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/02/20 15:05:11 bket Exp $
-
 COMMENT =		Python wrapper for pandoc
 
 MODPY_EGG_VERSION =	1.6.4

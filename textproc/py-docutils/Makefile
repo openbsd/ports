@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/14 13:29:24 sthen Exp $
-
 COMMENT =	process plaintext documentation into other formats
 
 MODPY_EGG_VERSION = 0.17.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_SAX_helpers_AttributesImpl_hpp,v 1.1 2017/05/21 09:50:45 espie Exp $
 Nope, you can't add numbers to strings.
 
 Index: include/SAX/helpers/AttributesImpl.hpp

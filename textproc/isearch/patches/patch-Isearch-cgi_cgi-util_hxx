@@ -1,5 +1,3 @@
-$OpenBSD: patch-Isearch-cgi_cgi-util_hxx,v 1.1 2017/05/25 14:14:43 espie Exp $
-
 Index: Isearch-cgi/cgi-util.hxx
 --- Isearch-cgi/cgi-util.hxx.orig
 +++ Isearch-cgi/cgi-util.hxx

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2019/12/16 20:42:57 ajacoutot Exp $
 @pkgpath textproc/libical
 include/libical/
 include/libical/ical.h

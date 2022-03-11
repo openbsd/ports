@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/15 04:23:36 bentley Exp $
-
 COMMENT =		module for compiling and processing lexical rules
 
 V =			0.2.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/11/15 04:24:56 bentley Exp $
 share/apertium/apertium-dan-nor/
 share/apertium/apertium-dan-nor/apertium-dan-nor.dan-nno.t1x
 share/apertium/apertium-dan-nor/apertium-dan-nor.dan-nno.t2x

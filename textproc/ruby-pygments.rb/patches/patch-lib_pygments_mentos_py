@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_pygments_mentos_py,v 1.1.1.1 2013/01/19 05:11:27 jasper Exp $
 --- lib/pygments/mentos.py.orig	Fri Jan 18 20:02:13 2013
 +++ lib/pygments/mentos.py	Fri Jan 18 20:02:21 2013
 @@ -1,4 +1,4 @@

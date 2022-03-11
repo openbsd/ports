@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_src_parsers_test_test_sh,v 1.1.1.1 2017/11/03 23:51:01 bentley Exp $
-
 Index: tools/src/parsers/test/test.sh
 --- tools/src/parsers/test/test.sh.orig
 +++ tools/src/parsers/test/test.sh

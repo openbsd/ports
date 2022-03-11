@@ -1,4 +1,3 @@
-$OpenBSD: patch-spiff_c,v 1.2 2011/07/03 22:55:26 naddy Exp $
 --- spiff.c.orig	Mon Feb  5 21:17:20 1990
 +++ spiff.c	Fri Jun 24 18:58:34 2011
 @@ -13,6 +13,7 @@ static char rcsid[]= "$Header: spiff.c,v 1.1 88/09/15 

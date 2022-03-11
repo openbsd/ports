@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:50:17 sthen Exp $
-
 COMMENT=	small utility used to manipulate SGML and XML catalogs
 
 DISTNAME=	xmlcatmgr-2.2
