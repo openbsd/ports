@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/04/15 13:31:42 fcambus Exp $
-
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
 V =		4.2.0

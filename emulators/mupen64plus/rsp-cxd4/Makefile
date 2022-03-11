@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/14 12:41:34 bentley Exp $
-
 COMMENT =		n64 emulator MSP communications simulator
 
 REVISION =		1

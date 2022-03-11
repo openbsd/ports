@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/11/21 00:00:18 bentley Exp $
 @bin bin/emulationstation

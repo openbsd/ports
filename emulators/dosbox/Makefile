@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/08/10 06:28:40 fcambus Exp $
-
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	x86 with DOS emulator targeted at playing games

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.16 2019/11/11 02:01:07 bentley Exp $
-
 ONLY_FOR_ARCHS ?=	amd64 i386 powerpc arm arm64
 VERSION ?= 		2.5.9
 DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}

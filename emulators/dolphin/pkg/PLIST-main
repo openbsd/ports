@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2020/03/08 02:15:51 thfr Exp $
 @bin bin/dolphin-emu
 @man man/man6/dolphin-emu.6
 share/applications/dolphin-emu.desktop

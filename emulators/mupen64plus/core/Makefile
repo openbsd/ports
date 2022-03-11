@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/30 08:05:43 bentley Exp $
-
 COMMENT =		n64 emulator core
 SHARED_LIBS =		mupen64plus 2.4 # 2.5.9
 REVISION =		1

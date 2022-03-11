@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cpu_core_dyn_x86_risc_x86_h,v 1.2 2019/08/10 06:28:40 fcambus Exp $
-
 %ebx is used by PIE so as-is this doesn't build on i386 as the compiler
 detects that the register has been clobbered. dosbox has some alternative
 code for MacOS X to avoid using %ebx so make use of this. This is done by

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/14 20:05:34 rsadowski Exp $
-
 COMMENT =		generic multi-emulator frontend
 
 V =			1.7.6

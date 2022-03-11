@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2021/03/09 11:09:13 bentley Exp $
 @bin bin/sameboy
 share/applications/sameboy.desktop
 share/icons/hicolor/128x128/apps/sameboy.png

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/11 02:01:07 bentley Exp $
 lib/mupen64plus/
 @so lib/mupen64plus/mupen64plus-video-glide64mk2.so
 share/mupen64plus/

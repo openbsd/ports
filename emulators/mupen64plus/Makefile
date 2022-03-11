@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/02/26 22:10:54 bentley Exp $
-
 SUBDIR =
 SUBDIR += audio-sdl
 SUBDIR += core

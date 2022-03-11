@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/07/13 19:15:39 bcallah Exp $
-
 COMMENT-main =		accurate Nintendo Game Boy emulator
 COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 

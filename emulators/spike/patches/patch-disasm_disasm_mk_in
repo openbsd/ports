@@ -1,5 +1,3 @@
-$OpenBSD: patch-disasm_disasm_mk_in,v 1.1 2020/11/05 08:35:16 jasper Exp $
-
 force -O1 to reduce memory presssure when building disasm.cc
 
 Index: disasm/disasm.mk.in

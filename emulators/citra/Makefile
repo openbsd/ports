@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/11/18 00:17:18 sthen Exp $
-
 # See https://github.com/citra-emu/citra/issues/4571
 NOT_FOR_ARCHS =	${BE_ARCHS}
 

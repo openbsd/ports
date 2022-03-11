@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/01/19 14:36:36 mestre Exp $
 @bin bin/mednafen
 share/doc/mednafen/
 share/doc/mednafen/apple2.html

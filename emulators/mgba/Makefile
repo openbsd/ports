@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch

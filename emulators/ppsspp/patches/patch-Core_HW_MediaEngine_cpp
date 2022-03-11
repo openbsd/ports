@@ -1,5 +1,3 @@
-$OpenBSD: patch-Core_HW_MediaEngine_cpp,v 1.2 2021/09/19 00:34:55 bentley Exp $
-
 Fix build with ffmpeg-4.4 from upstream
 
 Index: Core/HW/MediaEngine.cpp

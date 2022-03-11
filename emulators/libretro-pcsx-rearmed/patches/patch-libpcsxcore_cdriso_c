@@ -1,5 +1,3 @@
-$OpenBSD: patch-libpcsxcore_cdriso_c,v 1.1 2021/07/04 14:55:34 jca Exp $
-
 Fix conflict with uncompress2() provided by recent zlib releases.
 
 Index: libpcsxcore/cdriso.c

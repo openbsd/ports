@@ -1,5 +1,3 @@
-$OpenBSD: patch-Core_HLE_sceNetAdhoc_cpp,v 1.1 2021/09/19 00:34:55 bentley Exp $
-
 ensure that u_int32_t and friends are defined
 
 Index: Core/HLE/sceNetAdhoc.cpp

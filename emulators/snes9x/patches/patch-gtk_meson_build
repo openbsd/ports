@@ -1,5 +1,3 @@
-$OpenBSD: patch-gtk_meson_build,v 1.2 2020/02/19 20:31:08 fcambus Exp $
-
 No -ldl on OpenBSD.
 
 Index: gtk/meson.build

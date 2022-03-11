@@ -1,5 +1,3 @@
-$OpenBSD: patch-x11_compiler_h,v 1.1 2019/08/12 17:47:52 cwen Exp $
-
 ports-gcc fix for: 
 error: macro "min" passed 3 arguments, but takes just 2
 From:

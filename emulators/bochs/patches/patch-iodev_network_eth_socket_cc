@@ -1,4 +1,3 @@
-$OpenBSD: patch-iodev_network_eth_socket_cc,v 1.1 2017/04/23 13:25:29 ajacoutot Exp $
 --- iodev/network/eth_socket.cc.orig	Tue Apr 11 22:08:35 2017
 +++ iodev/network/eth_socket.cc	Tue Apr 11 22:10:14 2017
 @@ -83,12 +83,14 @@ extern "C" {

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:46:08 sthen Exp $
-
 COMMENT=		Free Unix Spectrum Emulator utilities
 
 DISTNAME=		fuse-utils-1.4.3

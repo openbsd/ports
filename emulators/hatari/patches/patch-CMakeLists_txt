@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2020/12/10 15:22:33 fcambus Exp $
-
 Make PortAudio, PortMidi and CAPSImage detection conditional and disabled
 by default, and disable building the Python GTK+2 user interface.
 

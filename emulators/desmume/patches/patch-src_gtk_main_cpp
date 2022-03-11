@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_gtk_main_cpp,v 1.1 2021/03/14 10:55:06 stsp Exp $
-
 https://forums.desmume.org/viewtopic.php?id=10415
 
 Index: src/gtk/main.cpp

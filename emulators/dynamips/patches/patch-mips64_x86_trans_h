@@ -1,4 +1,3 @@
-$OpenBSD: patch-mips64_x86_trans_h,v 1.1.1.1 2008/01/18 09:09:48 sthen Exp $
 --- mips64_x86_trans.h.orig	Sun Sep  2 11:41:38 2007
 +++ mips64_x86_trans.h	Sun Sep  2 11:41:58 2007
 @@ -53,8 +53,7 @@ void mips64_jit_tcb_exec(cpu_mips_t *cpu,mips64_jit_tc

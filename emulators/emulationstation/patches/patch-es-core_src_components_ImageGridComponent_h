@@ -1,5 +1,3 @@
-$OpenBSD: patch-es-core_src_components_ImageGridComponent_h,v 1.1 2017/08/30 15:09:12 rsadowski Exp $
-
 Index: es-core/src/components/ImageGridComponent.h
 --- es-core/src/components/ImageGridComponent.h.orig
 +++ es-core/src/components/ImageGridComponent.h

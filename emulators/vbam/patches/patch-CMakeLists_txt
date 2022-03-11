@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2021/07/26 16:27:07 naddy Exp $
-
 Do not pick up LLVM toolchain components (llvm-ar, llvm-ranlib)
 which are only present in the version of LLVM in ports, not the
 version in base.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tests_core_file_sys_path_parser_cpp,v 1.2 2018/07/30 10:17:11 rsadowski Exp $
-
 fix include path
 
 Index: src/tests/core/file_sys/path_parser.cpp

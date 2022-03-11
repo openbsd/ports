@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/10/19 07:47:21 bentley Exp $
 lib/libretro/
 lib/libretro/pcsx_rearmed_libretro.so

@@ -1,5 +1,3 @@
-$OpenBSD: patch-fceux_desktop,v 1.4 2021/10/29 10:13:16 bentley Exp $
-
 Index: fceux.desktop
 --- fceux.desktop.orig
 +++ fceux.desktop

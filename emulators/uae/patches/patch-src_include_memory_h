@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_include_memory_h,v 1.1 2010/05/23 17:22:41 espie Exp $
 --- src/include/memory.h.orig	Sun May 23 19:18:07 2010
 +++ src/include/memory.h	Sun May 23 19:18:34 2010
 @@ -72,7 +72,6 @@ typedef struct {

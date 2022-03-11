@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_sexyal_sexyal_cpp,v 1.2 2020/03/29 10:10:29 solene Exp $
-
 Give sdl driver higher priority than openbsd driver, since sdl driver
 works with sndiod, and openbsd driver requires exclusive access to the
 audio device.  You can still use the openbsd driver by setting

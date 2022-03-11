@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Unix_sigsegv_cpp,v 1.1 2017/01/01 21:27:51 jca Exp $
 --- src/Unix/sigsegv.cpp.orig	Sun Jan  1 22:05:51 2017
 +++ src/Unix/sigsegv.cpp	Sun Jan  1 22:10:27 2017
 @@ -1445,6 +1445,7 @@ static bool sparc_skip_instruction(unsigned long * reg

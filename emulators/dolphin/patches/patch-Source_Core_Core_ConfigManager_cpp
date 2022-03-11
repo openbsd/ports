@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_Core_Core_ConfigManager_cpp,v 1.3 2020/03/08 02:15:51 thfr Exp $
-
 Disable Fastmem by default. This is an option for fast, but unsafe
 memory use by the JIT that triggers SIGSEGV by design that is meant to
 be caught and then replaced by the emulator. However, on OpenBSD this

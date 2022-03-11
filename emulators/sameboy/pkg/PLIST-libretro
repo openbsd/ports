@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-libretro,v 1.1.1.1 2020/05/22 21:49:48 bentley Exp $
 lib/libretro/
 @so lib/libretro/sameboy_libretro.so

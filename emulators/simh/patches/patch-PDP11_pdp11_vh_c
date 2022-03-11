@@ -1,4 +1,3 @@
-$OpenBSD: patch-PDP11_pdp11_vh_c,v 1.5 2012/07/10 00:07:44 sthen Exp $
 --- PDP11/pdp11_vh.c.orig	Mon Mar 19 18:15:14 2012
 +++ PDP11/pdp11_vh.c	Wed Jun 13 06:37:14 2012
 @@ -95,7 +95,7 @@ extern int32    tmxr_poll, clk_tps;

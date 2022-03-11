@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_bx_src_mutex_cpp,v 1.4 2019/11/28 20:29:59 fcambus Exp $
-
 Index: 3rdparty/bx/src/mutex.cpp
 --- 3rdparty/bx/src/mutex.cpp.orig
 +++ 3rdparty/bx/src/mutex.cpp

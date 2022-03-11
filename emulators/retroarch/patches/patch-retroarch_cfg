@@ -1,4 +1,3 @@
-$OpenBSD: patch-retroarch_cfg,v 1.4 2019/02/05 07:54:16 bentley Exp $
 Index: retroarch.cfg
 --- retroarch.cfg.orig
 +++ retroarch.cfg

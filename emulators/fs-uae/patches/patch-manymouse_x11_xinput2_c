@@ -1,5 +1,3 @@
-$OpenBSD: patch-manymouse_x11_xinput2_c,v 1.1 2020/07/28 20:03:32 edd Exp $
-
 Index: manymouse/x11_xinput2.c
 --- manymouse/x11_xinput2.c.orig
 +++ manymouse/x11_xinput2.c

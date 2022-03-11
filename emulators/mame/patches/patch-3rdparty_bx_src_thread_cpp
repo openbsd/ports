@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_bx_src_thread_cpp,v 1.5 2021/08/29 15:51:02 fcambus Exp $
-
 Index: 3rdparty/bx/src/thread.cpp
 --- 3rdparty/bx/src/thread.cpp.orig
 +++ 3rdparty/bx/src/thread.cpp

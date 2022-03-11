@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-libretro,v 1.2 2019/11/10 22:05:26 bentley Exp $
 lib/libretro/
 @so lib/libretro/mgba_libretro.so

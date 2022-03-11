@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-qt,v 1.4 2018/06/29 22:16:12 espie Exp $
 @bin bin/mgba-qt
 @man man/man6/mgba-qt.6
 share/applications/mgba-qt.desktop

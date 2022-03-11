@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Unix_sys_unix_cpp,v 1.2 2010/03/25 08:10:56 jasper Exp $
 --- src/Unix/sys_unix.cpp.orig	Thu Mar 25 08:56:59 2010
 +++ src/Unix/sys_unix.cpp	Thu Mar 25 08:57:30 2010
 @@ -128,7 +128,7 @@ void SysAddFloppyPrefs(void)

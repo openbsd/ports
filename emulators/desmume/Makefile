@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/03/14 10:55:06 stsp Exp $
-
 USE_WXNEEDED =	Yes
 
 COMMENT =	Nintendo DS emulator

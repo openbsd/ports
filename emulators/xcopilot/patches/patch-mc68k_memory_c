@@ -1,4 +1,3 @@
-$OpenBSD: patch-mc68k_memory_c,v 1.1 2010/05/23 17:39:14 espie Exp $
 --- mc68k/memory.c.orig	Sun May 23 19:36:04 2010
 +++ mc68k/memory.c	Sun May 23 19:37:33 2010
 @@ -340,6 +340,7 @@ UWORD *rom_xlate(CPTR addr)

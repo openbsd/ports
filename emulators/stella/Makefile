@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/11/21 07:29:30 benoit Exp $
-
 COMMENT =		Atari 2600 VCS emulator
 
 V =			6.6

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/01/12 19:14:53 sthen Exp $
-
 COMMENT =		versatile Commodore emulator
 
 DISTNAME =		vice-3.5

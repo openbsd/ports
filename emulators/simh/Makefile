@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.81 2021/02/19 07:09:14 benoit Exp $
-
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
 DISTNAME=		simhv39-0

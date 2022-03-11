@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/12/15 19:38:35 sdk Exp $
-
 COMMENT =	swiss army knife for video game console emulators
 
 DISTNAME =	ucon64-2.2.2-src

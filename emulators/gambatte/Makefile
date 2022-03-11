@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/23 19:39:22 sthen Exp $
-
 COMMENT =		highly accurate Game Boy Color emulator
 
 REV =			571

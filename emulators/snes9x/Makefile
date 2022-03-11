@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/11/14 15:38:46 rsadowski Exp $
-
 COMMENT =	emulates the Super Nintendo Entertainment System
 BROKEN-alpha =	ICE/failure on filter/hq2x.cpp
 BROKEN-hppa =	ICE/failure on filter/hq2x.cpp

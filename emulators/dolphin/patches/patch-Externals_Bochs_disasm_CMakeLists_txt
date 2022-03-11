@@ -1,5 +1,3 @@
-$OpenBSD: patch-Externals_Bochs_disasm_CMakeLists_txt,v 1.1.1.1 2018/07/22 16:54:48 thfr Exp $
-
 link against intl
 
 Index: Externals/Bochs_disasm/CMakeLists.txt

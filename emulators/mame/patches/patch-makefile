@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile,v 1.20 2021/10/01 12:13:51 fcambus Exp $
-
 - Disable hardcoded -O3 optimizations
 - Fix GCC_VERSION and CLANG_VERSION detection
 

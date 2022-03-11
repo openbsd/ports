@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_mesonbuild_compilers_cpp_py,v 1.2 2021/12/24 03:50:41 daniel Exp $
-
 Index: meson/mesonbuild/compilers/cpp.py
 --- meson/mesonbuild/compilers/cpp.py.orig
 +++ meson/mesonbuild/compilers/cpp.py

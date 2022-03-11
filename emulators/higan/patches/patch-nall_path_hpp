@@ -1,5 +1,3 @@
-$OpenBSD: patch-nall_path_hpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
-
 Index: nall/path.hpp
 --- nall/path.hpp.orig
 +++ nall/path.hpp

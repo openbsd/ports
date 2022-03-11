@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.74 2019/07/12 20:46:07 sthen Exp $
-
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.6.9

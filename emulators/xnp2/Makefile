@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/08/12 17:47:52 cwen Exp $
-
 COMMENT =		PC-9801 emulator
 
 DISTNAME =		xnp2-0.86

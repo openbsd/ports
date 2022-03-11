@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/09/19 00:34:55 bentley Exp $
-
 # See https://github.com/hrydgard/ppsspp/issues/8823
 NOT_FOR_ARCHS =	${BE_ARCHS}
 

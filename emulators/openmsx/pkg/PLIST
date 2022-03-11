@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2021/08/06 08:02:10 mestre Exp $
 @bin bin/openmsx
 share/doc/openmsx/
 share/doc/openmsx/GPL.txt

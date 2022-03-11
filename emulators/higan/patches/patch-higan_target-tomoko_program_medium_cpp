@@ -1,5 +1,3 @@
-$OpenBSD: patch-higan_target-tomoko_program_medium_cpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
-
 Index: higan/target-tomoko/program/medium.cpp
 --- higan/target-tomoko/program/medium.cpp.orig
 +++ higan/target-tomoko/program/medium.cpp

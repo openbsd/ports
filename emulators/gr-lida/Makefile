@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/07/04 14:33:49 tb Exp $
-
 COMMENT =		games cataloging tool and emulator launcher
 
 GH_ACCOUNT =		Monthy

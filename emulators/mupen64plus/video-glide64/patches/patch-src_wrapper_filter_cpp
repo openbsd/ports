@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wrapper_filter_cpp,v 1.2 2019/06/23 15:03:37 bentley Exp $
-
 From upstream 8d618f060a9e1b179a917d452c5420a1607d23f5.
 
 Index: src/wrapper/filter.cpp

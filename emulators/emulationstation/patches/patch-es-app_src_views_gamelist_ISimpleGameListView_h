@@ -1,5 +1,3 @@
-$OpenBSD: patch-es-app_src_views_gamelist_ISimpleGameListView_h,v 1.1 2021/08/02 06:48:15 mestre Exp $
-
 Index: es-app/src/views/gamelist/ISimpleGameListView.h
 --- es-app/src/views/gamelist/ISimpleGameListView.h.orig
 +++ es-app/src/views/gamelist/ISimpleGameListView.h

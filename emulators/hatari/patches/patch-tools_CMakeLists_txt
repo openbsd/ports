@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_CMakeLists_txt,v 1.4 2020/12/10 15:22:33 fcambus Exp $
-
 Bundled tool atari-hd-image.sh is unusable on OpenBSD because it requires
 'mkdosfs' and cannot be patched to use 'newfs_msdos' as a needed option is
 missing.

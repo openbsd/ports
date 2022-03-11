@@ -1,4 +1,3 @@
-$OpenBSD: patch-Src_C64_x_i,v 1.1.1.1 2000/07/07 14:29:51 espie Exp $
 --- Src/C64_x.i.orig	Wed Aug  6 20:56:25 1997
 +++ Src/C64_x.i	Thu Jul  6 18:52:43 2000
 @@ -100,7 +100,16 @@ void C64::c64_ctor1(void)

@@ -1,5 +1,3 @@
-$OpenBSD: patch-icarus_core_core_cpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
-
 Index: icarus/core/core.cpp
 --- icarus/core/core.cpp.orig
 +++ icarus/core/core.cpp

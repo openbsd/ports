@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/11 02:01:07 bentley Exp $
-
 COMMENT =		n64 emulator sdl audio plugin
 
 REVISION =		0

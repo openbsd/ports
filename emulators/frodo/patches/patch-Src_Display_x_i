@@ -1,4 +1,3 @@
-$OpenBSD: patch-Src_Display_x_i,v 1.4 2010/06/30 22:25:57 jakemsr Exp $
 --- Src/Display_x.i.orig	Wed Jan  2 13:17:29 2002
 +++ Src/Display_x.i	Thu Jan 14 08:50:09 2010
 @@ -4,6 +4,7 @@

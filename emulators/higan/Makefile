@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/01 03:49:29 bentley Exp $
-
 COMMENT =	multi-system Nintendo emulator
 
 V =		106

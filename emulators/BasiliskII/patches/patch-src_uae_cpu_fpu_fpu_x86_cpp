@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_uae_cpu_fpu_fpu_x86_cpp,v 1.2 2010/03/25 08:10:56 jasper Exp $
 --- src/uae_cpu/fpu/fpu_x86.cpp.orig	Thu Mar 25 08:58:23 2010
 +++ src/uae_cpu/fpu/fpu_x86.cpp	Thu Mar 25 08:58:59 2010
 @@ -565,7 +565,7 @@ PRIVATE uae_s16 FFPU extended_to_signed_16 ( fpu_regis

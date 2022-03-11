@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/07/04 14:55:34 jca Exp $
-
 COMMENT =	Sony PlayStation core for retroarch
 
 V =		22

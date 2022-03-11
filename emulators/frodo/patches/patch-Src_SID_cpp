@@ -1,4 +1,3 @@
-$OpenBSD: patch-Src_SID_cpp,v 1.3 2018/04/15 21:29:32 bluhm Exp $
 Index: Src/SID.cpp
 --- Src/SID.cpp.orig
 +++ Src/SID.cpp

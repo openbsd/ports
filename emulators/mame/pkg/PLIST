@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/05/01 13:34:18 fcambus Exp $
 @conflict sdlmame-*
 @conflict sdlmame-tools-*
 @conflict sdlmess-*

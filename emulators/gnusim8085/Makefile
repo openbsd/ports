@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:46:08 sthen Exp $
-
 COMMENT =		graphical 8085 simulator, assembler, and debugger
 
 V =			1.3.7

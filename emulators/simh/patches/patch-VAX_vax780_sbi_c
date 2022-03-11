@@ -1,4 +1,3 @@
-$OpenBSD: patch-VAX_vax780_sbi_c,v 1.5 2012/07/10 00:07:44 sthen Exp $
 --- VAX/vax780_sbi.c.orig	Mon Mar 19 18:08:46 2012
 +++ VAX/vax780_sbi.c	Wed Jun 13 06:39:29 2012
 @@ -35,6 +35,10 @@

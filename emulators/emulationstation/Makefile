@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/08/02 06:48:14 mestre Exp $
-
 COMMENT =		flexible keyboardless emulator frontend
 
 DISTNAME =		emulationstation-2.0.1a

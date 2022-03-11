@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.218 2021/12/24 03:50:41 daniel Exp $
-
 ONLY_FOR_ARCHS=	aarch64 amd64 arm i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES=	parallel
 

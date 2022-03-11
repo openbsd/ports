@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_glslang_glslang_glslang_Include_PoolAlloc_h,v 1.1 2021/05/13 06:40:58 rsadowski Exp $
-
 TPoolAllocator is not copy assignable, so this setter could never have
 been used. After a recent change (878a24ee2), new versions of Clang
 reject this code outright.

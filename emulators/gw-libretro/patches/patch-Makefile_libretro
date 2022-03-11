@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_libretro,v 1.2 2020/04/04 10:20:36 bentley Exp $
-
 Index: Makefile.libretro
 --- Makefile.libretro.orig
 +++ Makefile.libretro

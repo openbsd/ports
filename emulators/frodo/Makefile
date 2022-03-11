@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2021/01/15 19:54:12 jasper Exp $
-
 COMMENT=	Commodore 64 emulator
 
 DISTNAME=	FrodoV4_1b.Src

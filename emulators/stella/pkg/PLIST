@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2021/04/25 07:11:47 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html

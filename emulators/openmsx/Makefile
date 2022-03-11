@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2022/02/12 13:36:18 kn Exp $
-
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
 BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc

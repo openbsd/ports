@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:46:09 sthen Exp $
-
 COMMENT =		n64 emulator command-line ui plugin
 
 # GPLv2+

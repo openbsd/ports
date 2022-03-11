@@ -1,4 +1,3 @@
-$OpenBSD: patch-mx_Makefile_in,v 1.1 2001/06/03 19:00:17 pvalchev Exp $
 --- mx/Makefile.in.orig	Tue Aug 25 08:56:27 1998
 +++ mx/Makefile.in	Sun Jun  3 12:55:01 2001
 @@ -101,7 +101,7 @@ test_menu_LDFLAGS = 

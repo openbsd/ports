@@ -1,5 +1,3 @@
-$OpenBSD: patch-mz80_Makefile_in,v 1.1 2017/08/12 22:11:23 sthen Exp $
-
 Fix build with newer nasm.
 
 Index: mz80/Makefile.in

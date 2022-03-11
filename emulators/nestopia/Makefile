@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/22 15:00:42 espie Exp $
-
 COMMENT-main =		accurate Nintendo Entertainment System emulator
 COMMENT-libretro =	Nintendo Entertainment System core for retroarch
 

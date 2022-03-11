@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/23 09:22:59 edd Exp $
 @bin bin/dgen
 @bin bin/dgen_tobin
 @man man/man1/dgen.1

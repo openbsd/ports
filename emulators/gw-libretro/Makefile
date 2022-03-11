@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/04/04 10:20:36 bentley Exp $
-
 COMMENT =	Game & Watch core for retroarch
 
 DISTNAME =	gw-libretro-1.6.3

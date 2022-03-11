@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_funciones_cpp,v 1.3 2021/02/26 18:20:33 naddy Exp $
-
 Index: src/funciones.cpp
 --- src/funciones.cpp.orig
 +++ src/funciones.cpp

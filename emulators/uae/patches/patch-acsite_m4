@@ -1,5 +1,3 @@
-$OpenBSD: patch-acsite_m4,v 1.1 2017/09/28 19:16:36 dcoppa Exp $
-
 Get the list of mounted filesystems: this isn't used outside of
 configure, so just skip the broken tests.
 

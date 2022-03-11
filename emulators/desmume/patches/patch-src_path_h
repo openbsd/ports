@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_path_h,v 1.2 2021/02/26 18:20:32 naddy Exp $
 From upstream 8454c93fa37ce9f3c8becc7004a2edddba22f3a1.
 
 Index: src/path.h

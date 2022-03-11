@@ -1,4 +1,3 @@
-$OpenBSD: patch-Src_CmdPipe_cpp,v 1.1 2002/12/28 00:14:11 naddy Exp $
 --- Src/CmdPipe.cpp.orig	Sat Dec 28 01:03:54 2002
 +++ Src/CmdPipe.cpp	Sat Dec 28 01:04:38 2002
 @@ -17,7 +17,7 @@ extern "C" {

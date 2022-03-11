@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ctrlssdl_cpp,v 1.1 2019/08/08 17:11:24 cwen Exp $
-
 ports-gcc fix for:
 error: invalid operands of types '__gnu_cxx::__enable_if<true, double>::__type {aka double}' and 'int' to binary 'operator>>'
 From:

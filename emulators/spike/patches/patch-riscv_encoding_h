@@ -1,5 +1,3 @@
-$OpenBSD: patch-riscv_encoding_h,v 1.1 2021/10/27 13:03:59 jca Exp $
-
 Index: riscv/encoding.h
 --- riscv/encoding.h.orig
 +++ riscv/encoding.h

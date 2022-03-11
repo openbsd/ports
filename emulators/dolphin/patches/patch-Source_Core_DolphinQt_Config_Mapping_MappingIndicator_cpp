@@ -1,5 +1,3 @@
-$OpenBSD: patch-Source_Core_DolphinQt_Config_Mapping_MappingIndicator_cpp,v 1.1 2021/01/19 07:05:19 rsadowski Exp $
-
 Index: Source/Core/DolphinQt/Config/Mapping/MappingIndicator.cpp
 --- Source/Core/DolphinQt/Config/Mapping/MappingIndicator.cpp.orig
 +++ Source/Core/DolphinQt/Config/Mapping/MappingIndicator.cpp

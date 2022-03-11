@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/28 20:03:33 edd Exp $
 @bin bin/fs-uae
 @bin bin/fs-uae-device-helper
 share/applications/fs-uae.desktop

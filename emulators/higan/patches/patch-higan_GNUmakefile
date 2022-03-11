@@ -1,5 +1,3 @@
-$OpenBSD: patch-higan_GNUmakefile,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
-
 Index: higan/GNUmakefile
 --- higan/GNUmakefile.orig
 +++ higan/GNUmakefile

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:46:08 sthen Exp $
-
 COMMENT=		cisco 3600/7200 platform emulator
 
 USE_WXNEEDED=		Yes

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.35 2020/07/28 20:03:32 edd Exp $
-
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 
 # Amiga FPU initialisation uses RWX pages, maybe other cases too.

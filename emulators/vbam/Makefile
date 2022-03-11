@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2021/07/26 16:27:07 naddy Exp $
-
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
 BROKEN-hppa =		ICE or OOM on src/filters/hq/c/hq_base.h:421
 

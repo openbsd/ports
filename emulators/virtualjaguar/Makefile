@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/04/15 13:31:42 fcambus Exp $
-
 COMMENT =	Atari Jaguar emulator
 
 V =		2.1.3

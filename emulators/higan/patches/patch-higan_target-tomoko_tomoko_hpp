@@ -1,5 +1,3 @@
-$OpenBSD: patch-higan_target-tomoko_tomoko_hpp,v 1.1.1.1 2017/12/24 06:51:38 bentley Exp $
-
 Index: higan/target-tomoko/tomoko.hpp
 --- higan/target-tomoko/tomoko.hpp.orig
 +++ higan/target-tomoko/tomoko.hpp

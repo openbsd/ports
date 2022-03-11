@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_genie_build_gmake_bsd_genie_make,v 1.2 2019/10/30 14:31:07 fcambus Exp $
-
 Index: 3rdparty/genie/build/gmake.bsd/genie.make
 --- 3rdparty/genie/build/gmake.bsd/genie.make.orig
 +++ 3rdparty/genie/build/gmake.bsd/genie.make

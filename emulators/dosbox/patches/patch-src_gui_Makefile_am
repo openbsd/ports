@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gui_Makefile_am,v 1.1 2012/11/17 14:07:50 ratchov Exp $
 --- src/gui/Makefile.am.orig	Sun Nov 11 14:15:24 2012
 +++ src/gui/Makefile.am	Sun Nov 11 14:15:28 2012
 @@ -7,5 +7,5 @@ libgui_a_SOURCES = sdlmain.cpp sdl_mapper.cpp dosbox_l

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2018/11/27 19:39:11 juanfra Exp $
 @bin bin/xroar
 @info info/xroar.info
 @man man/man1/xroar.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_od-fs_bsdsocket_posix_cpp,v 1.2 2020/07/28 20:03:33 edd Exp $
-
 BAD_THREAD is defined as NULL, and ports-gcc doesn't want to
 compare nullptr and int.
 

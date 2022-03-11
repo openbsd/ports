@@ -1,4 +1,3 @@
-$OpenBSD: patch-Src_Makefile_in,v 1.3 2002/03/22 00:23:24 espie Exp $
 --- Src/Makefile.in.orig	Wed Jan  2 17:44:04 2002
 +++ Src/Makefile.in	Thu Mar 14 01:52:32 2002
 @@ -8,7 +8,8 @@ REVISION  = 1

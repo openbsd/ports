@@ -1,4 +1,3 @@
-$OpenBSD: patch-AltairZ80_i86_ops_c,v 1.1 2021/02/19 07:09:14 benoit Exp $
 --- AltairZ80/i86_ops.c.orig	Thu Feb 18 15:22:11 2021
 +++ AltairZ80/i86_ops.c	Thu Feb 18 15:22:29 2021
 @@ -110,6 +110,8 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tests_common_param_package_cpp,v 1.2 2018/07/30 10:17:11 rsadowski Exp $
-
 fix include path for catch.cpp
 
 Index: src/tests/common/param_package.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/14 17:14:56 cwen Exp $
-
 COMMENT =		Apple IIgs emulator
 
 GH_ACCOUNT =		digarok

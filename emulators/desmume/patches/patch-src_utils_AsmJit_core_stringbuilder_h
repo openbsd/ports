@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_utils_AsmJit_core_stringbuilder_h,v 1.3 2021/02/26 18:20:32 naddy Exp $
 --- src/utils/AsmJit/core/stringbuilder.h.orig	Tue Apr 14 22:45:30 2015
 +++ src/utils/AsmJit/core/stringbuilder.h	Tue Apr 14 22:45:45 2015
 @@ -10,6 +10,8 @@

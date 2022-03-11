@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/02/23 19:39:21 sthen Exp $
-
 COMMENT=		front-end for dynamips cisco emulator
 
 DISTNAME=		dynagen-0.11.0

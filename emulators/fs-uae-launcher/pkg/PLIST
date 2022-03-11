@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/07/28 20:03:33 edd Exp $
 bin/fs-uae-launcher
 share/fs-uae-launcher/
 share/fs-uae-launcher/python${MODPY_VERSION}/

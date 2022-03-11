@@ -1,5 +1,3 @@
-$OpenBSD: patch-es-core_src_Util_cpp,v 1.1 2017/08/30 15:09:12 rsadowski Exp $
-
 Index: es-core/src/Util.cpp
 --- es-core/src/Util.cpp.orig
 +++ es-core/src/Util.cpp

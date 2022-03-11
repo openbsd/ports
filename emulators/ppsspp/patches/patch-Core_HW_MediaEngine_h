@@ -1,5 +1,3 @@
-$OpenBSD: patch-Core_HW_MediaEngine_h,v 1.2 2021/09/19 00:34:55 bentley Exp $
-
 Index: Core/HW/MediaEngine.h
 --- Core/HW/MediaEngine.h.orig
 +++ Core/HW/MediaEngine.h

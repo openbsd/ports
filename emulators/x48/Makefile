@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/17 14:49:22 danj Exp $
-
 COMMENT=		HP48sx emulator
 
 DISTNAME=		x48-0.6.4

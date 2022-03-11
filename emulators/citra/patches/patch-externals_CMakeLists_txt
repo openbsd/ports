@@ -1,5 +1,3 @@
-$OpenBSD: patch-externals_CMakeLists_txt,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
-
 remove cryptopp, enet from builtins
 
 Index: externals/CMakeLists.txt

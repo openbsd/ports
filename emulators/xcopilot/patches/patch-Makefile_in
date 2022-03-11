@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2010/05/23 17:39:14 espie Exp $
 --- Makefile.in.orig	Tue Aug 25 16:56:23 1998
 +++ Makefile.in	Sat May 22 15:19:37 2010
 @@ -92,7 +92,7 @@ xcopilot_OBJECTS =  cmap_mgr.o fakecall.o optutil.o pi

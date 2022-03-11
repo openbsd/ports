@@ -1,5 +1,3 @@
-$OpenBSD: patch-build_version2code_py,v 1.2 2017/08/03 08:35:06 bentley Exp $
-
 Fix a systrace warning when devel/subversion is installed.
 
 --- build/version2code.py.orig	Sun Jul 31 13:02:11 2016

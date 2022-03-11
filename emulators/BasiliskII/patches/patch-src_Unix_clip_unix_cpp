@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Unix_clip_unix_cpp,v 1.1 2018/04/16 21:01:30 fcambus Exp $
-
 Fix for Clang 6.
 Upstream commit 71852dae82445b5a43803e42897ccd0989d135ab.
 

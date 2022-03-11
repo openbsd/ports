@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_common_Port_h,v 1.2 2018/04/24 12:04:00 jasper Exp $
 Index: src/common/Port.h
 --- src/common/Port.h.orig
 +++ src/common/Port.h

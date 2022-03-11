@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/30 22:25:57 jakemsr Exp $
 @bin bin/frodo
 @bin bin/frodoPC
 @bin bin/frodoSC

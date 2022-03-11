@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_filters_xBRZ_xbrz_cpp,v 1.1 2019/11/17 00:14:36 cwen Exp $
-
 Fix "error: impossible constraint in 'asm'" on !x86
 
 Index: src/filters/xBRZ/xbrz.cpp

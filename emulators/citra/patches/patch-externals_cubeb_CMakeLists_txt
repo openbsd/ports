@@ -1,5 +1,3 @@
-$OpenBSD: patch-externals_cubeb_CMakeLists_txt,v 1.1.1.1 2018/06/05 07:40:55 bentley Exp $
-
 attempt to fix path to include directory of cubeb
 
 Index: externals/cubeb/CMakeLists.txt

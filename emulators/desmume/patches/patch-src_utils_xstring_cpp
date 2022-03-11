@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_utils_xstring_cpp,v 1.1 2018/04/15 20:17:34 naddy Exp $
-
 Index: src/utils/xstring.cpp
 --- src/utils/xstring.cpp.orig
 +++ src/utils/xstring.cpp

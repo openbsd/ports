@@ -1,5 +1,3 @@
-$OpenBSD: patch-3rdparty_bx_src_allocator_cpp,v 1.1.1.1 2018/01/24 20:56:12 fcambus Exp $
-
 Don't use malloc.h header on OpenBSD.
 
 Index: 3rdparty/bx/src/allocator.cpp

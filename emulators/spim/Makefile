@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:46:10 sthen Exp $
-
 COMMENT=	MIPS R2000/R3000 simulator
 
 DISTNAME=	spim-8.0

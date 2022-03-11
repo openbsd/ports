@@ -1,5 +1,3 @@
-$OpenBSD: patch-fs-uae-launcher,v 1.1 2020/07/28 20:03:33 edd Exp $
-
 Since we install the Python modules in a custom location, we have to update the
 PYTHONPATH so they can be found.
 

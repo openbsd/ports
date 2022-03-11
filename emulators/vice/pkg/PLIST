@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/01/10 18:05:56 fcambus Exp $
 @bin bin/c1541
 @bin bin/cartconv
 @bin bin/petcat

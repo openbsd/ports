@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:46:10 sthen Exp $
-
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
 REVISION=	11

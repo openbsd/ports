@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_video_ZMBVEncoder_cc,v 1.1 2021/08/06 08:02:10 mestre Exp $
-
 Index: src/video/ZMBVEncoder.cc
 --- src/video/ZMBVEncoder.cc.orig
 +++ src/video/ZMBVEncoder.cc

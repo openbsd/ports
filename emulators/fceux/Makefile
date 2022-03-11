@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2022/01/11 13:52:38 bentley Exp $
-
 COMMENT =		emulator for Nintendo Entertainment System
 
 V =			2.5.0

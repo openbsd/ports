@@ -1,4 +1,3 @@
-$OpenBSD: patch-xcopilot_c,v 1.1 2003/10/07 17:15:06 fgsch Exp $
 --- xcopilot.c.orig	1998-08-25 01:53:31.000000000 -0300
 +++ xcopilot.c	2003-10-06 14:58:33.000000000 -0300
 @@ -112,6 +112,7 @@ int main(int argc, char *argv[])

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/06/10 20:41:58 kmos Exp $
-
 COMMENT =	Sega Genesis core for retroarch
 
 DISTNAME =	libretro-genesis-plus-gx-1.7.5pl20201208

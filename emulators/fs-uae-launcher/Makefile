@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:13 sthen Exp $
-
 COMMENT =		launcher for the FS-UAE Amiga emulator
 
 MODPY_EGG_VERSION =	3.0.5

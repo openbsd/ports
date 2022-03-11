@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/03/12 16:26:26 fcambus Exp $
-
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-1.6.0
 CATEGORIES=		emulators
