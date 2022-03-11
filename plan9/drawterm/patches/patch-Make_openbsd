@@ -1,4 +1,3 @@
-$OpenBSD: patch-Make_openbsd,v 1.6 2021/10/13 00:25:47 abieber Exp $
 Index: Make.openbsd
 --- Make.openbsd.orig
 +++ Make.openbsd

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=	serve 9P from Unix
 
 DISTNAME=	u9fs-20110118

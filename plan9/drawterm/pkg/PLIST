@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/12/12 03:28:26 abieber Exp $
 @bin bin/drawterm
 @man man/man1/drawterm.1

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/12 02:45:32 jsg Exp $
 @bin bin/B
 @bin bin/sam
 @bin bin/samterm

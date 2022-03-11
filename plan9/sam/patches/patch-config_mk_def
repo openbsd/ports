@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_mk_def,v 1.1 2019/11/12 02:45:32 jsg Exp $
-
 Index: config.mk.def
 --- config.mk.def.orig
 +++ config.mk.def

@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_9c,v 1.4 2021/01/30 12:51:34 jsg Exp $
 Index: bin/9c
 --- bin/9c.orig
 +++ bin/9c

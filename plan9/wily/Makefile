@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=	clone of the Plan9 editor 'acme'
 
 VERSION=	0.13.41

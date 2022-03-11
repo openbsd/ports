@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:48:53 sthen Exp $
-
 # varargs misuse, and unportable software
 ONLY_FOR_ARCHS= 	i386 sparc64
 

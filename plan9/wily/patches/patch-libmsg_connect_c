@@ -1,4 +1,3 @@
-$OpenBSD: patch-libmsg_connect_c,v 1.1 2003/05/24 19:13:08 pvalchev Exp $
 --- libmsg/connect.c.orig	Sun Apr 12 13:37:42 1998
 +++ libmsg/connect.c	Sat May 24 13:12:29 2003
 @@ -109,11 +109,13 @@ client_connect(void)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/10/13 00:25:47 abieber Exp $
-
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el arm aarch64
 
 COMMENT=	Plan9 terminal emulator

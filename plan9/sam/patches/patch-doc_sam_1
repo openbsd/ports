@@ -1,5 +1,3 @@
-$OpenBSD: patch-doc_sam_1,v 1.4 2019/11/12 05:07:44 jsg Exp $
-
 Index: doc/sam.1
 --- doc/sam.1.orig
 +++ doc/sam.1

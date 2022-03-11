@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_mkhdr,v 1.4 2021/01/30 12:51:34 jsg Exp $
 Index: src/mkhdr
 --- src/mkhdr.orig
 +++ src/mkhdr

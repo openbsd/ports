@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/11/12 05:07:44 jsg Exp $
-
 COMMENT=	X11 version of Rob Pike's editor, sam
 
 DISTNAME=	sam-4.3.20190427

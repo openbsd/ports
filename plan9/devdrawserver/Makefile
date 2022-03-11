@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:53 sthen Exp $
-
 COMMENT =		client-server p9p devdraw
 DISTNAME =		devdrawserver-20120504
 CATEGORIES =		plan9

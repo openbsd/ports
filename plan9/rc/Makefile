@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.7.4
