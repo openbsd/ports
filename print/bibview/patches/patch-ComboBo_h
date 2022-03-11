@@ -1,5 +1,3 @@
-$OpenBSD: patch-ComboBo_h,v 1.2 2018/11/09 11:03:25 sthen Exp $
-
 Index: ComboBo.h
 --- ComboBo.h.orig
 +++ ComboBo.h

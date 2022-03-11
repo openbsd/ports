@@ -1,4 +1,3 @@
-$OpenBSD: patch-hp-uiscan_desktop_in,v 1.1 2020/11/09 12:38:27 kirby Exp $
 # Bug report https://bugs.launchpad.net/hplip/+bug/1833510
 
 Index: hp-uiscan.desktop.in

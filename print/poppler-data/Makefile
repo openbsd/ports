@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/01 18:32:43 kili Exp $
-
 COMMENT =		encoding files for poppler
 DISTNAME =		poppler-data-0.4.11
 CATEGORIES =		print

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=	GUI for manipulating BibTeX bibliography databases
 
 DISTNAME=	bibview-2.2

@@ -1,5 +1,3 @@
-$OpenBSD: patch-PSUtils_pm,v 1.8 2022/03/11 16:13:58 claudio Exp $
-
 https://bugzilla.redhat.com/show_bug.cgi?id=1072371
 
 Index: PSUtils.pm

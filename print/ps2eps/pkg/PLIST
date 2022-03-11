@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/01 16:27:59 espie Exp $
 @conflict texlive_texmf-minimal-<=2012p0
 @bin bin/bbox
 bin/ps2eps

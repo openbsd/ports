@@ -1,4 +1,3 @@
-$OpenBSD: patch-lily_include_open-type-font_hh,v 1.3 2014/05/27 20:43:50 kili Exp $
 --- lily/include/open-type-font.hh.orig	Tue May 13 10:13:58 2014
 +++ lily/include/open-type-font.hh	Tue May 13 10:15:05 2014
 @@ -23,8 +23,8 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-ppd_samsung_drv_in,v 1.1 2019/09/29 13:36:28 ajacoutot Exp $
-
 Index: ppd/samsung.drv.in
 --- ppd/samsung.drv.in.orig
 +++ ppd/samsung.drv.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2022/02/21 09:17:20 ajacoutot Exp $
-
 COMMENT=		printer (CUPS) administration tool
 
 V=			1.5.16

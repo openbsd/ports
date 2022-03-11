@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2001/02/19 20:04:09 danh Exp $
 --- Makefile.in.orig	Wed Aug 19 21:59:56 1998
 +++ Makefile.in	Mon Feb 19 14:57:25 2001
 @@ -8,9 +8,9 @@ FTLIBDIR = lib

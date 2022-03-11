@@ -1,5 +1,3 @@
-$OpenBSD: patch-bjnp-commands_c,v 1.2 2021/02/07 19:27:18 ajacoutot Exp $
-
 bjnp-commands.c:188:9: error: comparison of array 'printer_id' not equal to a null pointer is always true [-Werror,-Wtautological-pointer-compare]
     if (printer_id != NULL) {
         ^~~~~~~~~~    ~~~~

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:55 sthen Exp $
-
 COMMENT=	object oriented type setting language
 
 DISTNAME=	lout-3.40

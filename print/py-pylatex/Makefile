@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/20 08:20:05 landry Exp $
-
 COMMENT=		Python interface for LaTeX
 
 MODPY_EGG_VERSION=	1.4.1

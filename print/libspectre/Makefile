@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2022/02/13 08:52:26 ajacoutot Exp $
-
 # libgs from ghostscript is only provided on shared libs archs
 
 COMMENT=	library for rendering Postscript documents

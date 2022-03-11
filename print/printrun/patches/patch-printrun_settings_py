@@ -1,4 +1,3 @@
-$OpenBSD: patch-printrun_settings_py,v 1.1.1.1 2016/01/26 23:10:08 abieber Exp $
 --- printrun/settings.py.orig	Tue Jan 26 15:21:11 2016
 +++ printrun/settings.py	Tue Jan 26 15:21:48 2016
 @@ -271,8 +271,8 @@ class Settings(object):

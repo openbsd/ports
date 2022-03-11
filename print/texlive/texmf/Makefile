@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.63 2021/10/26 12:52:10 edd Exp $
-
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
 COMMENT-full =		texlive texmf for extra macros

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/08/30 13:56:26 fcambus Exp $
-
 COMMENT=	tools to convert Xfig's .fig files  #'
 
 VERSION=	3.2.7b

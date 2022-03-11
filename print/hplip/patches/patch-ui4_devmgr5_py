@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui4_devmgr5_py,v 1.14 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- ui4/devmgr5.py.orig	Thu Jan 29 13:20:15 2015
 +++ ui4/devmgr5.py	Thu Feb  5 14:35:07 2015
 @@ -1023,7 +1023,7 @@ class DevMgr5(QMainWindow,  Ui_MainWindow):

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lily_music-iterator_cc,v 1.3 2014/05/27 20:43:50 kili Exp $
 --- lily/music-iterator.cc.orig	Tue May 13 10:19:28 2014
 +++ lily/music-iterator.cc	Tue May 13 10:19:59 2014
 @@ -224,7 +224,7 @@ Music_iterator::print_smob (SCM sm, SCM port, scm_prin

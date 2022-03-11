@@ -1,5 +1,3 @@
-$OpenBSD: patch-logcapture_py,v 1.4 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- logcapture.py.orig	Sun Jun  7 21:25:33 2015
 +++ logcapture.py	Thu Jun 11 08:11:35 2015
 @@ -37,8 +37,8 @@ from base.sixext import to_string_utf8

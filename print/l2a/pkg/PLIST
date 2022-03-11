@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:14 espie Exp $
 bin/l2a
 @man man/man1/l2a.1

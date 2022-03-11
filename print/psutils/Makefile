@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.56 2022/03/11 16:13:58 claudio Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	utilities for manipulating PostScript documents

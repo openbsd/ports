@@ -1,5 +1,3 @@
-$OpenBSD: patch-htmldoc_ps-pdf_cxx,v 1.2 2020/02/16 08:30:08 benoit Exp $
-
 Work around an LLVM 8.0.0 optimizer bug that causes htmldoc to spin.
 https://github.com/michaelrsweet/htmldoc/issues/349
 https://bugs.llvm.org/show_bug.cgi?id=41998

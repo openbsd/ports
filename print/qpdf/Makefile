@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2022/02/17 09:27:12 ajacoutot Exp $
-
 # XXX usually fails to build when an earlier version is installed
 
 COMMENT=	PDF transformation and inspection utility

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: cups_browsed.rc,v 1.4 2018/01/11 19:27:08 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/cups-browsed"
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2019/07/12 20:48:55 sthen Exp $
-
 COMMENT=		Foomatic PPD generator
 
 DISTNAME=		foomatic-db-engine-4.0.13

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:56 sthen Exp $
-
 COMMENT=	PDF manipulation library
 
 DISTNAME=	Poppler-1.0101

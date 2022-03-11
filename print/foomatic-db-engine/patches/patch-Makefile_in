@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2011/04/15 18:50:06 ajacoutot Exp $
 --- Makefile.in.orig	Fri Feb 18 13:30:22 2011
 +++ Makefile.in	Fri Apr 15 20:45:20 2011
 @@ -187,13 +187,9 @@ check-config:

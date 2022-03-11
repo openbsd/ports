@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.116 2021/10/26 12:51:59 edd Exp $
-
 COMMENT-main =		base binaries for TeXLive typesetting distribution
 COMMENT-mktexlsr =	mktexlsr for TeXLive typesetting distribution
 COMMENT-synctex =	synctex for TeXLive typesetting distribution

@@ -1,4 +1,3 @@
-$OpenBSD: patch-dvi2tty_c,v 1.2 2010/05/11 06:36:59 espie Exp $
 --- dvi2tty.c.orig	Thu Jan 23 11:28:30 2003
 +++ dvi2tty.c	Tue May 11 07:06:36 2010
 @@ -180,7 +180,7 @@

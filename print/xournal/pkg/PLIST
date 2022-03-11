@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/07/01 18:33:37 espie Exp $
 @bin bin/xournal
 share/applications/xournal.desktop
 share/doc/xournal/

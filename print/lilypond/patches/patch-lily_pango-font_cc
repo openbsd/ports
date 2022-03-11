@@ -1,4 +1,3 @@
-$OpenBSD: patch-lily_pango-font_cc,v 1.4 2014/05/27 20:43:50 kili Exp $
 --- lily/pango-font.cc.orig	Tue May 13 10:22:35 2014
 +++ lily/pango-font.cc	Tue May 13 10:26:47 2014
 @@ -116,19 +116,21 @@ Pango_font::derived_mark () const

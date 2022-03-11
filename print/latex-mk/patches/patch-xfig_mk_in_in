@@ -1,4 +1,3 @@
-$OpenBSD: patch-xfig_mk_in_in,v 1.1 2010/03/24 16:15:06 oga Exp $
 --- xfig.mk.in.in.orig	Wed Mar 17 18:10:29 2010
 +++ xfig.mk.in.in	Wed Mar 17 18:10:36 2010
 @@ -192,6 +192,6 @@ BMK:	$(FIG2DEV:Q) $(FIG2DEV_FLAGS) $(FIG2DEV_EPS_FLAGS

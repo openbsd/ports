@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 20:48:55 sthen Exp $
-
 COMMENT=		35 standard PostScript fonts with Adobe name aliases
 
 DISTNAME=		ghostscript-fonts-std-8.11

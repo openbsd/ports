@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.14 2022/02/21 09:17:20 ajacoutot Exp $
-
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2021/02/05 12:39:00 ajacoutot Exp $
-
 COMMENT=		GTK+ frontend to CUPS
 
 DISTNAME=		gtklp-1.3.4

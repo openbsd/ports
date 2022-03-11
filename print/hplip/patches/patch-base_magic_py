@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_magic_py,v 1.3 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- base/magic.py.orig	Thu Jan 29 13:20:35 2015
 +++ base/magic.py	Thu Feb  5 14:32:58 2015
 @@ -255,10 +255,10 @@ magic = [

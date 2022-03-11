@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/15 19:48:44 tb Exp $
-
 COMMENT=		BJNP protocol backend for CUPS
 
 DISTNAME=		cups-bjnp-2.0.3

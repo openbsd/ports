@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.98 2021/11/02 00:01:54 sthen Exp $
-
 PORTROACH=	skipv:2.3.x
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)

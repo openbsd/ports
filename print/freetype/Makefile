@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2019/07/12 20:48:55 sthen Exp $
-
 # this is freetype1; freetype2 is in xenocara.
 PORTROACH=	limit:^1\.
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.121 2022/01/30 15:08:08 ajacoutot Exp $
-
 COMMENT =	PostScript and PDF interpreter
 
 VERSION =	9.55.0

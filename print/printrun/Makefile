@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/06/14 01:02:27 daniel Exp $
-
 COMMENT =		3D printing host suite
 
 MODPY_EGG_VERSION =	1.6.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-fax_pmlfax_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
-
 From Fedora:
 python3 - recent HP release removed encoding/decoding to utf-8 in fax/pmlfax.py -
 that results in text string going into translate function in base/utils.py, which

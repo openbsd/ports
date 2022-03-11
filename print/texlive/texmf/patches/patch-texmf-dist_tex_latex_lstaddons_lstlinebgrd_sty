@@ -1,5 +1,3 @@
-$OpenBSD: patch-texmf-dist_tex_latex_lstaddons_lstlinebgrd_sty,v 1.1 2020/08/18 18:40:21 edd Exp $
-
 Fix lstlinebgrd.
 
 https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=930850

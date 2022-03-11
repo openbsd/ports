@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_obstack_c,v 1.2 2013/11/02 08:44:19 ajacoutot Exp $
 --- lib/obstack.c.orig	Sat Dec 29 02:37:54 2007
 +++ lib/obstack.c	Sat Nov  2 09:04:48 2013
 @@ -21,6 +21,14 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2016/03/05 17:42:01 sthen Exp $
-
 - Fix linking (needs libiconv)
 
 --- src/Makefile.in.orig	Sun Mar 17 11:20:10 2013

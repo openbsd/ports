@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:48:56 sthen Exp $
-
 COMMENT=	print multiple pages per sheet on PostScript printer
 
 DISTNAME=	mpage-2.5.7

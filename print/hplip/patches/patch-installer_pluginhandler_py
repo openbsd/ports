@@ -1,5 +1,3 @@
-$OpenBSD: patch-installer_pluginhandler_py,v 1.7 2021/05/15 17:06:01 ajacoutot Exp $
-
 Index: installer/pluginhandler.py
 --- installer/pluginhandler.py.orig
 +++ installer/pluginhandler.py

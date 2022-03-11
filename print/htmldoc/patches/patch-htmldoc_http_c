@@ -1,4 +1,3 @@
-$OpenBSD: patch-htmldoc_http_c,v 1.3 2020/02/16 08:30:08 benoit Exp $
 Index: htmldoc/http.c
 --- htmldoc/http.c.orig
 +++ htmldoc/http.c

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/11 10:27:30 sthen Exp $
 ${P5SITE}/Poppler/
 ${P5SITE}/Poppler.pm
 ${P5SITE}/Poppler/Page/

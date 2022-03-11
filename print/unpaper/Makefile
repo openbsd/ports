@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:57 sthen Exp $
-
 COMMENT=		post-processing tool for scanned paper sheets
 
 DISTNAME=		unpaper-6.1

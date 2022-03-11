@@ -1,5 +1,3 @@
-$OpenBSD: patch-scribus_third_party_lib2geom_path_h,v 1.1 2020/08/18 18:21:32 rsadowski Exp $
-
 Unbreak LLVM10 build
 
 Index: scribus/third_party/lib2geom/path.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2021/06/09 21:52:24 kili Exp $
-
 BROKEN-i386=		hangs at runtime. started after switch to clang
 
 COMMENT=		vector font editor/converter

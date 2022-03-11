@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-libs,v 1.11 2021/12/04 08:14:02 ajacoutot Exp $
 @conflict cups-<1.6.0
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin

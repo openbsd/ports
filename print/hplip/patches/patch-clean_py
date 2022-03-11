@@ -1,5 +1,3 @@
-$OpenBSD: patch-clean_py,v 1.1 2020/02/22 15:02:05 ajacoutot Exp $
-
 https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1718129
 
 Index: clean.py

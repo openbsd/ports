@@ -1,5 +1,3 @@
-$OpenBSD: patch-qt5_src_CMakeLists_txt,v 1.7 2021/11/01 18:33:25 kili Exp $
-
 - Remove hardcoded SOVERSION
 
 Index: qt5/src/CMakeLists.txt

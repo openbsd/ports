@@ -1,4 +1,3 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.27 2021/12/24 10:09:02 kili Exp $
 Index: poppler/XRef.cc
 --- poppler/XRef.cc.orig
 +++ poppler/XRef.cc

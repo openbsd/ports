@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/04/02 08:40:26 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20110101p0
 @bin libexec/cups/filter/rastertoptch
 share/foomatic/db/source/driver/ptouch-pt.xml

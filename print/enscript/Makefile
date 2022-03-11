@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=		convert ASCII files to PostScript
 
 DISTNAME=		enscript-1.6.6

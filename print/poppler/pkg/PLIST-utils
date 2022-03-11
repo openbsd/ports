@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-utils,v 1.5 2019/04/21 23:27:53 kili Exp $
 @conflict xpdf-utils-*
 @conflict poppler-<0.18.4p0
 @pkgpath textproc/xpdf,-utils

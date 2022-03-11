@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2020/12/11 12:57:33 ajacoutot Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data

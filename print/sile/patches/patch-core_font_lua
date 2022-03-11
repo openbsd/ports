@@ -1,4 +1,3 @@
-$OpenBSD: patch-core_font_lua,v 1.1.1.1 2017/01/27 08:34:57 bentley Exp $
 From upstream 1f2a7b3b94f0d7e60cb7fef668a5542be2486a8e.
 --- core/font.lua.orig	Wed Jan 25 01:44:35 2017
 +++ core/font.lua	Wed Jan 25 01:44:39 2017

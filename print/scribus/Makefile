@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.80 2021/11/02 00:01:54 sthen Exp $
-
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program

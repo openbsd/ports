@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/24 07:03:02 jasper Exp $
 @comment bin/ieee-copyout
 bin/latex-mk
 @info info/latex-mk.info

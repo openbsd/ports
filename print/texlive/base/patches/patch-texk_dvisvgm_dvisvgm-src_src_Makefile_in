@@ -1,5 +1,3 @@
-$OpenBSD: patch-texk_dvisvgm_dvisvgm-src_src_Makefile_in,v 1.2 2020/08/18 18:40:15 edd Exp $
-
 Index: texk/dvisvgm/dvisvgm-src/src/Makefile.in
 --- texk/dvisvgm/dvisvgm-src/src/Makefile.in.orig
 +++ texk/dvisvgm/dvisvgm-src/src/Makefile.in

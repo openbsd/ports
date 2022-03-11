@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 21:02:24 sthen Exp $
-
 COMMENT=	lightweight PDF document viewer with vi bindings
 
 GH_ACCOUNT =	naihe2010

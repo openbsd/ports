@@ -1,5 +1,3 @@
-$OpenBSD: patch-scribus_ui_colorlistmodel_cpp,v 1.2 2021/04/07 14:08:35 sthen Exp $
-
 avoid segfault caused by CommonStrings::None by removing m_NoneColor, which is
 unused anyways
 

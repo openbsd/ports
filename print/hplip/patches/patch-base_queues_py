@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_queues_py,v 1.8 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- base/queues.py.orig	Wed May  4 07:23:22 2016
 +++ base/queues.py	Thu May  5 10:02:31 2016
 @@ -128,7 +128,7 @@ def parseQueues(mode):

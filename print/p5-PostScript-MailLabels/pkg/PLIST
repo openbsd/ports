@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/12/14 14:23:53 jasper Exp $
 ${P5SITE}/PostScript/
 ${P5SITE}/PostScript/MailLabels/
 ${P5SITE}/PostScript/MailLabels.pm

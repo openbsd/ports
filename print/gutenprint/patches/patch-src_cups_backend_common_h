@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cups_backend_common_h,v 1.3 2021/01/24 16:08:23 ajacoutot Exp $
-
 Index: src/cups/backend_common.h
 --- src/cups/backend_common.h.orig
 +++ src/cups/backend_common.h

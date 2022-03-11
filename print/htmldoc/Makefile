@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2022/02/10 08:47:48 benoit Exp $
-
 COMMENT =		convert HTML pages to PDF/PS format
 
 V =			1.9.15

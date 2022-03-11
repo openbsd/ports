@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/11/10 09:03:26 ajacoutot Exp $
 @bin bin/unpaper
 @man man/man1/unpaper.1

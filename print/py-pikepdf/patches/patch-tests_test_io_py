@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_test_io_py,v 1.1 2021/07/22 09:33:24 sthen Exp $
-
 Index: tests/test_io.py
 --- tests/test_io.py.orig
 +++ tests/test_io.py

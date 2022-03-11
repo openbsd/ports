@@ -1,5 +1,3 @@
-$OpenBSD: patch-firewallsettings_py,v 1.2 2018/01/25 08:59:59 ajacoutot Exp $
-
 Disable Linux specific firewall checks.
 
 Index: firewallsettings.py

@@ -1,4 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2017/04/27 21:37:05 landry Exp $
 --- CMakeLists.txt.orig	Mon Feb 13 10:28:46 2017
 +++ CMakeLists.txt	Mon Feb 13 10:29:37 2017
 @@ -66,7 +66,7 @@ IF (WIN32)

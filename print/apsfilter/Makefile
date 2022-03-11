@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=		filter to print a wide range of file formats
 
 DISTNAME=		apsfilter-7.2.8

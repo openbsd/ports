@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.170 2021/12/24 10:09:02 kili Exp $
-
 COMMENT-main=	PDF rendering library
 COMMENT-qt5=	Qt5 interface to PDF rendering library
 COMMENT-qt6=	Qt6 interface to PDF rendering library

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:13 espie Exp $
 bin/disdvi
 bin/dvi2tty
 @man man/man1/disdvi.1

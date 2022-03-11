@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/04/05 07:26:59 feinerer Exp $
 include/gl2ps.h
 @static-lib lib/libgl2ps.a
 @lib lib/libgl2ps.so.${LIBgl2ps_VERSION}

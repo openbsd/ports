@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-hpcups,v 1.12 2017/07/26 08:15:54 ajacoutot Exp $
 @conflict hpijs-<=3.2.11
 @conflict hplip-<3.13.8p1
 @mode 0700

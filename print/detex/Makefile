@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=		strip TeX/LaTeX codes from a file
 
 DISTNAME=		opendetex-2.8.1

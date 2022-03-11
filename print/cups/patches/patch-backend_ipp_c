@@ -1,5 +1,3 @@
-$OpenBSD: patch-backend_ipp_c,v 1.24 2021/12/04 08:14:02 ajacoutot Exp $
-
 Increase timeout for the PPD file to be copied so that it doesn't fail
 on low-end configurations.
 

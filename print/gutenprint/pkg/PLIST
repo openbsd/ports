@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2021/01/24 16:08:23 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 @conflict foomatic-db-gutenprint-*
 @pkgpath print/gutenprint,-foomatic

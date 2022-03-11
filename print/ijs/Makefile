@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:48:55 sthen Exp $
-
 COMMENT=		raster image transmission library
 
 DISTNAME=		ijs-0.35

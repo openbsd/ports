@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.14 2019/12/17 08:17:15 ajacoutot Exp $
 @conflict texlive_texmf-minimal-<=2012p0
 @pkgpath print/psutils[,a3][,a4][,a5][,b5][,b4][,letter][,legal]
 @pkgpath print/psutils[,ledger][,tabloid][,statement][,executive]

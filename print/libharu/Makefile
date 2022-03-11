@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/11/09 12:19:15 ajacoutot Exp $
-
 COMMENT =	PDF creation library
 
 VERSION =	2_3_0

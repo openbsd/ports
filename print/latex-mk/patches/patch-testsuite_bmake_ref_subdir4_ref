@@ -1,4 +1,3 @@
-$OpenBSD: patch-testsuite_bmake_ref_subdir4_ref,v 1.1.1.1 2007/01/31 22:38:03 steven Exp $
 --- testsuite/bmake_ref/subdir4.ref.orig	Tue Jan 30 17:24:53 2007
 +++ testsuite/bmake_ref/subdir4.ref	Tue Jan 30 17:25:02 2007
 @@ -1,8 +1,4 @@

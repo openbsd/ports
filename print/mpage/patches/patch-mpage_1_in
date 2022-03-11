@@ -1,4 +1,3 @@
-$OpenBSD: patch-mpage_1_in,v 1.3 2010/05/26 13:53:16 jasper Exp $
 --- mpage.1.in.orig	Mon Jan 14 23:54:28 2008
 +++ mpage.1.in	Wed Mar 24 12:13:27 2010
 @@ -546,7 +546,7 @@ and 

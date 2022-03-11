@@ -1,5 +1,3 @@
-$OpenBSD: patch-BibView_eng_ad,v 1.1 2018/11/09 11:06:24 sthen Exp $
-
 Remove trailing tab causing UI glitch
 
 Index: BibView.eng.ad

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/23 11:13:25 sthen Exp $
-
 COMMENT =		Python library for reading and writing PDF files
 
 MODPY_EGG_VERSION =	4.0.2

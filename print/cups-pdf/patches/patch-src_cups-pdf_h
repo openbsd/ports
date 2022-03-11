@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cups-pdf_h,v 1.5 2017/07/22 20:41:10 ajacoutot Exp $
 Index: src/cups-pdf.h
 --- src/cups-pdf.h.orig
 +++ src/cups-pdf.h

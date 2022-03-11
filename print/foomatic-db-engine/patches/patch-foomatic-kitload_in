@@ -1,4 +1,3 @@
-$OpenBSD: patch-foomatic-kitload_in,v 1.1.1.1 2007/09/09 14:42:02 ajacoutot Exp $
 --- foomatic-kitload.in.orig	Thu Oct 10 18:16:12 2002
 +++ foomatic-kitload.in	Mon Jun 21 23:55:22 2004
 @@ -54,7 +54,7 @@ $ENV{'LC_ALL'} = "C";

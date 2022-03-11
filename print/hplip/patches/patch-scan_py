@@ -1,5 +1,3 @@
-$OpenBSD: patch-scan_py,v 1.21 2021/12/18 09:52:25 ajacoutot Exp $
-
 Index: scan.py
 --- scan.py.orig
 +++ scan.py

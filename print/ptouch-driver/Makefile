@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/04/02 08:40:26 ajacoutot Exp $
-
 COMMENT=		Brother P-touch CUPS driver
 
 GH_TAGNAME=		v1.6

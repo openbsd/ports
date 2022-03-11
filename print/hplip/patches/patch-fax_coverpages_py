@@ -1,5 +1,3 @@
-$OpenBSD: patch-fax_coverpages_py,v 1.3 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- fax/coverpages.py.orig	Thu Jul  2 17:30:02 2009
 +++ fax/coverpages.py	Thu Jul  2 17:31:08 2009
 @@ -73,7 +73,7 @@ def createStandardCoverPage(page_size=PAGE_SIZE_LETTER

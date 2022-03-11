@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/12/26 10:02:49 bentley Exp $
 @pkgpath chinese/bg5ps
 @pkgpath fonts/zh-bg5ps
 bin/bg5ps

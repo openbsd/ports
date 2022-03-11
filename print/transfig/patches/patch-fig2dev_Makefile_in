@@ -1,5 +1,3 @@
-$OpenBSD: patch-fig2dev_Makefile_in,v 1.2 2019/11/13 15:24:11 fcambus Exp $
-
 Index: fig2dev/Makefile.in
 --- fig2dev/Makefile.in.orig
 +++ fig2dev/Makefile.in

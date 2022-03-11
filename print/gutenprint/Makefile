@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.55 2022/01/16 20:10:33 kmos Exp $
-
 COMMENT=		high quality print drivers for foomatic and CUPS
 
 V=			5.3.4

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_output_c,v 1.1 2015/11/17 08:38:52 ajacoutot Exp $
-
 Fix for CVE-2015-8107:
 http://www.openwall.com/lists/oss-security/2015/11/16/4
 

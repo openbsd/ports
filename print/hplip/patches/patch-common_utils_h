@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_utils_h,v 1.4 2018/10/31 14:14:30 ajacoutot Exp $
-
 Index: common/utils.h
 --- common/utils.h.orig
 +++ common/utils.h

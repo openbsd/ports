@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2021/10/26 12:52:09 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2

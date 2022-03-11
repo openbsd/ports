@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ApvlvPdf_cc,v 1.1 2019/01/11 20:13:59 kili Exp $
-
 Let it build with poppler-0.73.0.
 
 Funny enough, neither any of the types defined in goo/gtypes.h nor the

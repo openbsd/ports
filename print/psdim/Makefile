@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:56 sthen Exp $
-
 COMMENT=		intelligent n-up printing
 
 DISTNAME=		psdim-1.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:48:55 sthen Exp $
-
 COMMENT =		X11 printing system
 
 DISTNAME =		libXp-1.0.1

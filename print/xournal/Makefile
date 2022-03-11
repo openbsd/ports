@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:48:57 sthen Exp $
-
 COMMENT =		application for notetaking & annotating PDF files
 DISTNAME =		xournal-0.4.8
 CATEGORIES =		print

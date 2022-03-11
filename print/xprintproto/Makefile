@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:57 sthen Exp $
-
 COMMENT =		X11 printing headers
 
 V =			1.0.5

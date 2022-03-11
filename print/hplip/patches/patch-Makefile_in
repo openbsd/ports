@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.67 2022/02/28 09:49:55 ajacoutot Exp $
-
 https://sources.debian.org/src/hplip/3.18.10+dfsg0-1/debian/patches/0025-Remove-all-ImageProcessor-functionality-which-is-clo.patch/
 
 Index: Makefile.in

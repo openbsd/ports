@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT=	format files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.14

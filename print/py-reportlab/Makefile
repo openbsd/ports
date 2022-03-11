@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/07 10:43:03 sthen Exp $
-
 COMMENT=		PDF-generating toolkit for Python
 
 # XXX 3.6.x drops py2 support; graphics/sk1 needs it

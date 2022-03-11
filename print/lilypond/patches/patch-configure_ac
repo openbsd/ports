@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2014/05/27 20:43:50 kili Exp $
-
 # Builds fine with gcc 3.3.5 and without makeinfo (unless you try to
 # build the documentation).
 

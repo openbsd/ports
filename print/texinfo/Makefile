@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/11/04 10:00:48 feinerer Exp $
-
 COMMENT =		official documentation format of the GNU project
 
 DISTNAME =		texinfo-6.5

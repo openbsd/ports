@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.24 2021/10/26 12:50:54 edd Exp $
-
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
 MAINTAINER ?=	Edd Barrett <edd@openbsd.org>

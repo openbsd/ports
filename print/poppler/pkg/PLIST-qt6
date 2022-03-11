@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-qt6,v 1.1 2021/05/07 07:25:15 rsadowski Exp $
 include/poppler/qt6/
 include/poppler/qt6/poppler-annotation.h
 include/poppler/qt6/poppler-export.h

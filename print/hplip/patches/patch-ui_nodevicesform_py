@@ -1,5 +1,3 @@
-$OpenBSD: patch-ui_nodevicesform_py,v 1.5 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- ui/nodevicesform.py.orig	Wed Feb 13 17:35:09 2013
 +++ ui/nodevicesform.py	Fri Feb 22 15:05:19 2013
 @@ -56,7 +56,7 @@ class NoDevicesForm(NoDevicesForm_base):

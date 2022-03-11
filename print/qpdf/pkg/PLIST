@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2022/02/10 15:55:05 ajacoutot Exp $
 @bin bin/fix-qdf
 @bin bin/qpdf
 @bin bin/zlib-flate

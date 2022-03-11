@@ -1,5 +1,3 @@
-$OpenBSD: patch-foo2zjs-pstops_sh,v 1.2 2020/10/22 08:23:40 ajacoutot Exp $
-
 Index: foo2zjs-pstops.sh
 --- foo2zjs-pstops.sh.orig
 +++ foo2zjs-pstops.sh

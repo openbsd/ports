@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makedefs_in,v 1.19 2021/12/04 08:14:02 ajacoutot Exp $
-
 BSD_INSTALL_PROGRAM is used to respect INSTALL_STRIP.
 
 Index: Makedefs.in

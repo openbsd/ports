@@ -1,5 +1,3 @@
-$OpenBSD: patch-poppler_Form_cc,v 1.11 2021/12/24 10:09:02 kili Exp $
-
 Index: poppler/Form.cc
 --- poppler/Form.cc.orig
 +++ poppler/Form.cc

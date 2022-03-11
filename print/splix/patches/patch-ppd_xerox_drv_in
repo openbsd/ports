@@ -1,5 +1,3 @@
-$OpenBSD: patch-ppd_xerox_drv_in,v 1.1 2019/09/29 13:36:28 ajacoutot Exp $
-
 Index: ppd/xerox.drv.in
 --- ppd/xerox.drv.in.orig
 +++ ppd/xerox.drv.in

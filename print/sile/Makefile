@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:48:57 sthen Exp $
-
 COMMENT =	typesetting system and improved layout engine
 
 V =		0.9.4

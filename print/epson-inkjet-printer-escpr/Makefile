@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2022/02/03 09:40:11 ajacoutot Exp $
-
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore:1

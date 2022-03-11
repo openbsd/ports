@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.34 2020/12/11 12:57:33 ajacoutot Exp $
 share/cups/
 share/cups/model/
 share/cups/model/foomatic-db-ppds

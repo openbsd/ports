@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_runtestG3_sh,v 1.1 2016/11/10 09:03:26 ajacoutot Exp $
 --- tests/runtestG3.sh.orig	Wed Nov  9 17:01:15 2016
 +++ tests/runtestG3.sh	Wed Nov  9 17:01:38 2016
 @@ -8,7 +8,7 @@ set -x

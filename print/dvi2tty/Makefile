@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:54 sthen Exp $
-
 COMMENT=		converts .dvi files to plain text
 
 DISTNAME=		dvi2tty-5.3.1

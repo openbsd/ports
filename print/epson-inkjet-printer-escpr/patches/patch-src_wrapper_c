@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_wrapper_c,v 1.2 2021/05/07 17:36:14 ajacoutot Exp $
-
 Index: src/wrapper.c
 --- src/wrapper.c.orig
 +++ src/wrapper.c

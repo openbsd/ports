@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2019/09/29 13:36:28 ajacoutot Exp $
-
 COMMENT=	CUPS drivers for SPL printers
 
 V=		2.0.1.20130902

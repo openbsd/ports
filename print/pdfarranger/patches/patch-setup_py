@@ -1,5 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2020/11/02 19:52:43 jca Exp $
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py

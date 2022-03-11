@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.53 2021/02/23 19:39:36 sthen Exp $
-
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/03/20 16:44:27 naddy Exp $
-
 COMMENT=	desktop publishing clip-art
 
 V=		2.0

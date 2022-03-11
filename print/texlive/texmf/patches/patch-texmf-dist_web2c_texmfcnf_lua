@@ -1,5 +1,3 @@
-$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.10 2021/10/26 12:52:13 edd Exp $
-
 Index: texmf-dist/web2c/texmfcnf.lua
 --- texmf-dist/web2c/texmfcnf.lua.orig
 +++ texmf-dist/web2c/texmfcnf.lua

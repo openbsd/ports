@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# $OpenBSD: write_plists.py,v 1.4 2021/10/26 12:52:12 edd Exp $
 """
 Write PLISTs based on the output of update_plist_hints.py.
 

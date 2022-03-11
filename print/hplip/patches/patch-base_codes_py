@@ -1,5 +1,3 @@
-$OpenBSD: patch-base_codes_py,v 1.17 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- base/codes.py.orig	Wed May  4 07:23:22 2016
 +++ base/codes.py	Thu May  5 10:02:31 2016
 @@ -335,7 +335,7 @@ EVENT_RAISE_DEVICE_MANAGER = 9001

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:48:56 sthen Exp $
-
 COMMENT =	pretty printing of your mails
 
 DISTNAME =	muttprint-0.73

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:48:56 sthen Exp $
-
 COMMENT=	convert Postscript to Encapsulated Postscript
 
 DISTNAME=	ps2eps-1.68

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.265 2022/01/28 09:44:22 ajacoutot Exp $
-
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 

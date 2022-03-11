@@ -1,5 +1,3 @@
-$OpenBSD: patch-scan_sane_OrbliteScan_MacCommon_h,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
-
 Index: scan/sane/OrbliteScan/MacCommon.h
 --- scan/sane/OrbliteScan/MacCommon.h.orig
 +++ scan/sane/OrbliteScan/MacCommon.h

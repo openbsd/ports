@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.198 2022/02/28 09:49:55 ajacoutot Exp $
-
 PORTROACH=		skipv:${V}_py2.5
 
 COMMENT-main=		HP Linux Imaging and Printing

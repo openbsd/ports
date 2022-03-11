@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/26 13:57:08 jcs Exp $
 @bin libexec/cups/filter/rastertobrlaser
 share/cups/drv/brlaser.drv
 share/doc/pkg-readmes/${PKGSTEM}

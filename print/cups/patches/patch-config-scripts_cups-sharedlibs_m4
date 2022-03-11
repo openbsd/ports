@@ -1,5 +1,3 @@
-$OpenBSD: patch-config-scripts_cups-sharedlibs_m4,v 1.14 2021/12/04 08:14:02 ajacoutot Exp $
-
 Index: config-scripts/cups-sharedlibs.m4
 --- config-scripts/cups-sharedlibs.m4.orig
 +++ config-scripts/cups-sharedlibs.m4

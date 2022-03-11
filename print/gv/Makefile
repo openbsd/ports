@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.44 2019/07/16 21:29:41 sthen Exp $
-
 COMMENT= 	PostScript and PDF previewer
 
 DISTNAME=	gv-3.7.4

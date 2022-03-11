@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:32:14 espie Exp $
 bin/pscal
 share/doc/pscal/
 share/doc/pscal/README

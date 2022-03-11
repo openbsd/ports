@@ -1,5 +1,3 @@
-$OpenBSD: patch-aclocal_m4,v 1.1 2014/05/27 20:43:50 kili Exp $
-
 - Fix version comparision for large version numbers.
 
 - Allow older (buggy?) metapost.

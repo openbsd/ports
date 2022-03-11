@@ -1,5 +1,3 @@
-$OpenBSD: patch-getweb_in,v 1.32 2020/10/22 08:23:40 ajacoutot Exp $
-
 Index: getweb.in
 --- getweb.in.orig
 +++ getweb.in

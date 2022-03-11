@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/23 19:39:35 sthen Exp $
-
 COMMENT=	convert Big5/GB encoded files to postscript
 
 DISTNAME=	bg5ps-1.3.0

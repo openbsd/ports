@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2021/12/04 08:14:02 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap

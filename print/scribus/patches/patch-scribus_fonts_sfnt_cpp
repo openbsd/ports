@@ -1,5 +1,3 @@
-$OpenBSD: patch-scribus_fonts_sfnt_cpp,v 1.1 2021/10/06 14:36:11 ajacoutot Exp $
-
 From 1b546978bc4ea0b2a73fbe4d7cf947887e865162 Mon Sep 17 00:00:00 2001
 From: Jean Ghali <jghali@libertysurf.fr>
 Date: Sat, 21 Aug 2021 20:05:43 +0000

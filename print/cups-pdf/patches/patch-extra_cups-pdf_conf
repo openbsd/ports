@@ -1,4 +1,3 @@
-$OpenBSD: patch-extra_cups-pdf_conf,v 1.5 2017/07/22 20:41:10 ajacoutot Exp $
 Index: extra/cups-pdf.conf
 --- extra/cups-pdf.conf.orig
 +++ extra/cups-pdf.conf

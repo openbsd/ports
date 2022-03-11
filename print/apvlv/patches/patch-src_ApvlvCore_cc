@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ApvlvCore_cc,v 1.1 2018/04/08 13:02:26 jasper Exp $
-
 From 9da539016cb6c317388020f4ebce1793077aa126 Mon Sep 17 00:00:00 2001
 From: Ryan Reno <ryan.reno@outlook.com>
 Date: Fri, 23 Jun 2017 21:56:22 -0700

@@ -1,5 +1,3 @@
-$OpenBSD: patch-prnt_hpcups_genJPEGStrips_cpp,v 1.1 2018/10/31 14:14:30 ajacoutot Exp $
-
 Index: prnt/hpcups/genJPEGStrips.cpp
 --- prnt/hpcups/genJPEGStrips.cpp.orig
 +++ prnt/hpcups/genJPEGStrips.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:39 naddy Exp $
-
 COMMENT=	LaTeX2e class for overhead transparencies
 
 DISTNAME=	foiltex-2.1.4b

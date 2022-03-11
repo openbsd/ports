@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# $OpenBSD: tlpdb.py,v 1.3 2019/11/11 22:54:17 edd Exp $
 """Lightweight TeX Live TLPDB parser."""
 
 

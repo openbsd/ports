@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/14 13:52:59 sthen Exp $
-
 COMMENT =		GUI tool to rearrange and modify PDF files
 
 MODPY_EGG_VERSION =	1.8.0

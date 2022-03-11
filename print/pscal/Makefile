@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:48:56 sthen Exp $
-
 COMMENT=	utility for generating PostScript calendars
 
 DISTNAME=	pscal-1.16

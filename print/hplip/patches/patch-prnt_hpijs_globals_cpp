@@ -1,5 +1,3 @@
-$OpenBSD: patch-prnt_hpijs_globals_cpp,v 1.4 2018/10/31 14:14:30 ajacoutot Exp $
-
 --- prnt/hpijs/globals.cpp.orig	Thu Feb 25 00:10:32 2010
 +++ prnt/hpijs/globals.cpp	Fri Mar 12 13:40:17 2010
 @@ -251,7 +251,7 @@ void *LoadPlugin (const char *szPluginName)

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:48:55 sthen Exp $
-
 COMMENT=	set of Makefile fragments to manage LaTeX documents
 
 DISTNAME=	latex-mk-1.9.1

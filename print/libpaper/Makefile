@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/29 09:59:08 ajacoutot Exp $
-
 COMMENT=		library for handling paper characteristics
 
 DISTNAME=		libpaper_1.1.28

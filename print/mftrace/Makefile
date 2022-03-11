@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2021/02/23 19:39:36 sthen Exp $
-
 COMMENT=	scalable PostScript fonts generator for MetaFont
 
 CATEGORIES=	fonts print
