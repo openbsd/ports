@@ -1,5 +1,3 @@
-$OpenBSD: patch-mono_profiler_Makefile_am,v 1.4 2020/04/06 15:11:11 robert Exp $
-
 adapt to the coop-by-default syntax in our port
 
 Index: mono/profiler/Makefile.am

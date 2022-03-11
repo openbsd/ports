@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/11/29 13:57:47 bcallah Exp $
 @bin bin/duk
 include/duk_config.h
 include/duktape.h

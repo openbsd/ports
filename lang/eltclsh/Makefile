@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 21:15:35 sthen Exp $
-
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
 DISTNAME =	eltclsh-1.17

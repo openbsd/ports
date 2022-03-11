@@ -1,5 +1,3 @@
-$OpenBSD: patch-setjump_h,v 1.1 2010/09/28 20:48:04 jasper Exp $
-
 Allow scm to build on OpenBSD/hppa.
 
 --- setjump.h.orig	Sat Sep 25 22:48:58 2010

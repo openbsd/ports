@@ -1,5 +1,3 @@
-#       $OpenBSD: Makefile,v 1.20 2019/11/28 12:46:24 solene Exp $
-
 COMMENT=	newLISP is a LISP like, general purpose scripting language
 
 V=		10.7.5

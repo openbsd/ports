@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tools_wasm-opcodecnt_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
-
 Index: src/tools/wasm-opcodecnt.cc
 --- src/tools/wasm-opcodecnt.cc.orig
 +++ src/tools/wasm-opcodecnt.cc

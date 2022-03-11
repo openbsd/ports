@@ -1,5 +1,3 @@
-$OpenBSD: patch-Configure_pl,v 1.1 2021/03/11 12:17:21 pascal Exp $
-
 Don't run git.
 
 Index: Configure.pl

@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.PPC,v 1.1.1.1 2018/09/15 18:03:31 bcallah Exp $
 lib/gcc/${CONFIG}/4.2.4/crtsavres.o

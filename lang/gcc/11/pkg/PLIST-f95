@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-f95,v 1.1.1.1 2021/08/15 18:42:12 pascal Exp $
 @option is-branch
 @conflict gfortran-*
 @conflict libgfortran-*

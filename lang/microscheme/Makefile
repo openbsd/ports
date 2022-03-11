@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/03 12:58:08 jturner Exp $
-
 COMMENT =	scheme subset for atmel microcontrollers
 DISTNAME =	microscheme-0.9.4
 CATEGORIES =	lang

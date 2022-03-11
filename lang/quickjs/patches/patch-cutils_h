@@ -1,5 +1,3 @@
-$OpenBSD: patch-cutils_h,v 1.1 2020/01/15 14:25:46 jca Exp $
-
 Properly detect endianness.
 
 Index: cutils.h

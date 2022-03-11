@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.146 2021/11/02 00:01:17 sthen Exp $
-
 USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework

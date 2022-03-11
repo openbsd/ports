@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/11/03 14:32:21 espie Exp $
 @conflict unicon-*
 share/ipl/bin/
 share/ipl/bin/adlcheck

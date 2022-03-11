@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_flangrti_iostdinit_c,v 1.3 2020/07/12 18:06:48 bcallah Exp $
-
 Get IO working, from FreeBSD
 
 Index: runtime/flangrti/iostdinit.c

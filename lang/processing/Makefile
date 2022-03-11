@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/19 01:50:30 kurt Exp $
-
 COMMENT=		language/IDE for images, animations and interactions
 
 V=			1.5.1

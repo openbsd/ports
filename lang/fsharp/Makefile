@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/01/16 17:26:16 abieber Exp $
-
 COMMENT=	functional-first programming language
 
 GH_ACCOUNT=	fsharp

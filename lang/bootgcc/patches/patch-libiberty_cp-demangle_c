@@ -1,4 +1,3 @@
-$OpenBSD: patch-libiberty_cp-demangle_c,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
 Index: libiberty/cp-demangle.c
 --- libiberty/cp-demangle.c.orig
 +++ libiberty/cp-demangle.c

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2022/02/26 22:59:45 naddy Exp $
-
 BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc64 =	infinite loop or aborts during build
 

@@ -1,4 +1,3 @@
-$OpenBSD: patch-libssp_configure,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
 Index: libssp/configure
 --- libssp/configure.orig
 +++ libssp/configure

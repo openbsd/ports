@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_extlib-leftovers_uTF8_ml,v 1.2 2020/02/22 02:36:28 thfr Exp $
-
 Switch old Pervasives to Stdlib
 
 Index: libs/extlib-leftovers/uTF8.ml

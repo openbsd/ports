@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_stub-cache_cc,v 1.1 2018/04/07 14:41:48 rsadowski Exp $
-
 Index: src/stub-cache.cc
 --- src/stub-cache.cc.orig
 +++ src/stub-cache.cc

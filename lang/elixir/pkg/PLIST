@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.18 2020/10/30 19:44:33 jasper Exp $
 bin/elixir
 bin/elixirc
 bin/iex

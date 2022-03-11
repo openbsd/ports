@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_runtime_sys_openbsd_mips64_s,v 1.2 2021/08/27 18:33:27 jsing Exp $
-
 Index: src/runtime/sys_openbsd_mips64.s
 --- src/runtime/sys_openbsd_mips64.s.orig
 +++ src/runtime/sys_openbsd_mips64.s

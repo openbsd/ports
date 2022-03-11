@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cmd_internal_sys_supported_go,v 1.2 2021/08/27 18:33:27 jsing Exp $
-
 Index: src/cmd/internal/sys/supported.go
 --- src/cmd/internal/sys/supported.go.orig
 +++ src/cmd/internal/sys/supported.go

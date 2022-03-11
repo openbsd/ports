@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_ruby_internal_has_builtin_h,v 1.1 2022/01/18 19:51:19 jeremy Exp $
-
 builtin_bswap32 and builtin_bswap64 don't appear to be
 defined on OpenBSD/sparc64, and maybe other GCC arches.
 

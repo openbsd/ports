@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:47:16 sthen Exp $
-
 GH_ACCOUNT =	fabianishere
 GH_PROJECT =	brainfuck
 GH_TAGNAME =	2.7.1

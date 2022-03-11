@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_compiler_main_ml,v 1.1.1.1 2020/01/18 00:31:05 thfr Exp $
-
 path to hashlink version
 
 Index: src/compiler/main.ml

@@ -1,5 +1,3 @@
-$OpenBSD: patch-vaul_pool_cc,v 1.1 2018/12/22 09:39:03 jca Exp $
-
 Index: vaul/pool.cc
 --- vaul/pool.cc.orig
 +++ vaul/pool.cc

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.8 2020/04/23 07:56:01 rpointel Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-tkinter-${VERSION_SPEC}

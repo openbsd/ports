@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-ada,v 1.3 2020/09/04 09:55:35 sthen Exp $
 @option is-branch
 @conflict gnat-<9
 @pkgpath lang/gcc/4.9,-ada

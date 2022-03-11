@@ -1,5 +1,3 @@
-$OpenBSD: patch-ocamldeps_gen_src_dune,v 1.1 2020/02/22 02:36:28 thfr Exp $
-
 remove unneeded tests with otherwise add qtest dependency
 
 Index: ocamldeps/gen/src/dune

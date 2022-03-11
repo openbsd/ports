@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_mkmf_rb,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
-
 Ignore linker warnings when compiling native extensions.
 
 Index: lib/mkmf.rb

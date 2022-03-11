@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/01/27 01:37:47 kmos Exp $
-
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
 # requirement of the PSF license, if it constitutes a change to

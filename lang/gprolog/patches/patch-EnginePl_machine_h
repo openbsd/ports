@@ -1,5 +1,3 @@
-$OpenBSD: patch-EnginePl_machine_h,v 1.4 2022/02/12 14:13:08 sthen Exp $
-
 Hunk 1:
 XXX not quite sure why this is needed as it's built without PIE anyway, but
 this fixes a segfault on i386 during build following the switch to PIE by

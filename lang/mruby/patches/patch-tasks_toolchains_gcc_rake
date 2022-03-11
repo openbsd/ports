@@ -1,5 +1,3 @@
-$OpenBSD: patch-tasks_toolchains_gcc_rake,v 1.4 2021/09/01 18:28:24 jeremy Exp $
-
 Don't hardcode -g -O3 (CFLAGS will be respected).
 
 Index: tasks/toolchains/gcc.rake

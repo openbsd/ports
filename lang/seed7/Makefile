@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.87 2021/03/06 23:04:27 bcallah Exp $
-
 COMMENT =	high-level, extensible programming language
 
 V =		20210130

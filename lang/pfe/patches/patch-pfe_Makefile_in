@@ -1,4 +1,3 @@
-$OpenBSD: patch-pfe_Makefile_in,v 1.5 2015/06/20 19:26:10 ajacoutot Exp $
 --- pfe/Makefile.in.orig	Sat Jun 20 21:24:53 2015
 +++ pfe/Makefile.in	Sat Jun 20 21:25:08 2015
 @@ -324,7 +324,7 @@ CFLAGS = @CFLAGS@

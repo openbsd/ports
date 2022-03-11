@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.X86-ada,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
 lib/gcc/${CONFIG}/${V}/adainclude/a-numaux.adb

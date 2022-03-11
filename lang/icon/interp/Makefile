@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/12 20:47:18 sthen Exp $
-
 COMMENT-main =		programming language with generators, X11 and more
 COMMENT-main-no_x11 =	programming language with generators
 

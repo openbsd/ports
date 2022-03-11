@@ -1,4 +1,3 @@
-$OpenBSD: patch-erts_emulator_Makefile_in,v 1.1 2018/12/31 10:11:36 jasper Exp $
 Index: erts/emulator/Makefile.in
 --- erts/emulator/Makefile.in.orig
 +++ erts/emulator/Makefile.in

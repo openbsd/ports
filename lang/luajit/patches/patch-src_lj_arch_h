@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_lj_arch_h,v 1.6 2021/07/03 20:21:07 sthen Exp $
-
 Our base-clang poses as gcc-4.2.1, but building with clang on powerpc
 "requires" gcc>=4.3, unlike other archs requiring lower versions. Instead,
 ignore the gcc version check ifdef hell for all base-clang arches.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-cc_Makefile_in,v 1.1 2021/02/18 02:26:43 daniel Exp $
-
 Index: cc/Makefile.in
 --- cc/Makefile.in.orig
 +++ cc/Makefile.in

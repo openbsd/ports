@@ -1,5 +1,3 @@
-# $OpenBSD: ocaml.port.mk,v 1.33 2021/02/01 00:17:55 jca Exp $
-
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
 # PFRAG.foo           -- bytecode files for FLAVOR == foo

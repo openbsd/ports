@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
 Index: gcc/config/rs6000/openbsd.h
 --- gcc/config/rs6000/openbsd.h.orig
 +++ gcc/config/rs6000/openbsd.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.12 2020/08/05 08:04:39 bcallah Exp $
-
 BROKEN =	not yet ported to llvm-10
 
 # Also ppc64le

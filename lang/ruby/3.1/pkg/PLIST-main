@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2022/02/20 18:24:40 jeremy Exp $
 @option no-default-conflict
 @option is-branch
 @conflict ruby->=3.1,<3.2

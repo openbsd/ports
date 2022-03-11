@@ -1,4 +1,3 @@
-$OpenBSD: patch-scmfig_h,v 1.4 2009/01/21 18:30:16 kili Exp $
 --- scmfig.h.orig	Thu Jan 31 02:50:56 2008
 +++ scmfig.h	Sat Nov 29 15:26:11 2008
 @@ -118,7 +118,7 @@ rgx.c	init_rgx();	regcomp and regexec. */

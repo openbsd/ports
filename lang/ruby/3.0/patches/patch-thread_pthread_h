@@ -1,5 +1,3 @@
-$OpenBSD: patch-thread_pthread_h,v 1.1 2021/01/03 21:27:12 jca Exp $
-
 base-gcc doesn't support __thread
 
 Index: thread_pthread.h

@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_Makefile_in,v 1.1.1.1 2021/08/15 18:42:09 pascal Exp $
-
 Disable fixincludes madness
 
 Index: gcc/Makefile.in

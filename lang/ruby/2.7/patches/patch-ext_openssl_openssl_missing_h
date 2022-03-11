@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
-
 Index: ext/openssl/openssl_missing.h
 --- ext/openssl/openssl_missing.h.orig
 +++ ext/openssl/openssl_missing.h

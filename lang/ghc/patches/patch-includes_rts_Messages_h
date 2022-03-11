@@ -1,5 +1,3 @@
-$OpenBSD: patch-includes_rts_Messages_h,v 1.1 2021/09/14 17:53:11 kili Exp $
-
 The debug message function has to return the number of bytes written
 (like printf(3)), to allow killing a %n format specifier in one in
 one invocation of statsPrintf() in report_summary() (rts/Stats.c).

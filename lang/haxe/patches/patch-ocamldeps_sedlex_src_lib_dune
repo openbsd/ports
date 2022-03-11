@@ -1,5 +1,3 @@
-$OpenBSD: patch-ocamldeps_sedlex_src_lib_dune,v 1.1 2020/02/22 02:36:28 thfr Exp $
-
 remove uchar library which isn't needed for the build
 
 Index: ocamldeps/sedlex/src/lib/dune

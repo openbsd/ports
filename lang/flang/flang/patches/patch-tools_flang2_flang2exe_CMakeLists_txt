@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_flang2_flang2exe_CMakeLists_txt,v 1.4 2020/07/12 18:06:48 bcallah Exp $
-
 Eliminate the need for a post-patch copy.
 
 Index: tools/flang2/flang2exe/CMakeLists.txt

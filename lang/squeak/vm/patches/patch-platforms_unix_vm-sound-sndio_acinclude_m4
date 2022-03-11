@@ -1,5 +1,3 @@
-$OpenBSD: patch-platforms_unix_vm-sound-sndio_acinclude_m4,v 1.1 2020/01/14 22:20:29 sthen Exp $
-
 Index: platforms/unix/vm-sound-sndio/acinclude.m4
 --- platforms/unix/vm-sound-sndio/acinclude.m4.orig
 +++ platforms/unix/vm-sound-sndio/acinclude.m4

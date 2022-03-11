@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2021/11/02 00:01:17 sthen Exp $
-
 # Sync version with lang/flang/flang always!
 COMMENT =	LLVM Fortran math library
 DISTNAME =	flang-8.0.1.20200707

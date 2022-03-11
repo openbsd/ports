@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_ada_gcc-interface_Makefile_in,v 1.1.1.1 2021/08/03 10:04:13 pascal Exp $
 Index: gcc/ada/gcc-interface/Makefile.in
 --- gcc/ada/gcc-interface/Makefile.in.orig
 +++ gcc/ada/gcc-interface/Makefile.in

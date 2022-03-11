@@ -1,5 +1,3 @@
-$OpenBSD: patch-config_auto_warnings_pm,v 1.1 2020/05/14 18:26:21 cwen Exp $
-
 Drop all -Werror, fix the build on powerpc.
 The build breaks due to some libffi defines being undefined,
 issue that doesn't cause runtime errors.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_detect,v 1.3 2020/09/17 20:48:38 juanfra Exp $
-
 Index: Makefile.detect
 --- Makefile.detect.orig
 +++ Makefile.detect

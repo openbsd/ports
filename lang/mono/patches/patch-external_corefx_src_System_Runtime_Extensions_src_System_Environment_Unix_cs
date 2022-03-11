@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_corefx_src_System_Runtime_Extensions_src_System_Environment_Unix_cs,v 1.1 2018/03/29 19:33:18 robert Exp $
-
 Index: external/corefx/src/System.Runtime.Extensions/src/System/Environment.Unix.cs
 --- external/corefx/src/System.Runtime.Extensions/src/System/Environment.Unix.cs.orig
 +++ external/corefx/src/System.Runtime.Extensions/src/System/Environment.Unix.cs

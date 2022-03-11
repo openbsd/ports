@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_runtime_sys_openbsd2_go,v 1.4 2021/12/14 17:22:19 jsing Exp $
-
 Index: src/runtime/sys_openbsd2.go
 --- src/runtime/sys_openbsd2.go.orig
 +++ src/runtime/sys_openbsd2.go

@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_pypy__tkinter_tklib_build_py,v 1.2 2016/04/19 11:14:54 edd Exp $
 --- lib_pypy/_tkinter/tklib_build.py.orig	Fri Mar 18 17:52:25 2016
 +++ lib_pypy/_tkinter/tklib_build.py	Tue Apr  5 14:40:36 2016
 @@ -6,9 +6,9 @@ import sys, os

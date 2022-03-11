@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_wx_configure_in,v 1.1 2018/12/31 10:11:36 jasper Exp $
-
 Don't blindly discard library path for GL libs.
 
 --- lib/wx/configure.in.orig	Tue Jun 23 20:56:21 2015

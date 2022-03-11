@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_tools_wast2json_cc,v 1.1 2021/05/13 05:00:36 semarie Exp $
-
 Index: src/tools/wast2json.cc
 --- src/tools/wast2json.cc.orig
 +++ src/tools/wast2json.cc

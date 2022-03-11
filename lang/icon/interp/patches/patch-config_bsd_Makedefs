@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_bsd_Makedefs,v 1.3 2013/11/03 14:32:21 espie Exp $
 --- config/bsd/Makedefs.orig	Thu May 30 19:13:45 2013
 +++ config/bsd/Makedefs	Sun Nov  3 12:01:30 2013
 @@ -1,6 +1,7 @@

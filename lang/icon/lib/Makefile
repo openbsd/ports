@@ -1,5 +1,4 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.30 2019/07/12 20:47:19 sthen Exp $
 
 COMMENT-main =	useful and interesting programs for Icon
 COMMENT-x11 =	useful and interesting graphics program for Icon

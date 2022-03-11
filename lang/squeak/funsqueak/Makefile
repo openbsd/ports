@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/12/13 02:42:17 gkoehler Exp $
-
-
 COMMENT =	smalltalk system, exploration image
 
 PKG_ARCH =	*

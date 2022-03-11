@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/12 11:48:58 jasper Exp $
 @bin bin/nbfc
 @man man/man1/nbfc.1

@@ -1,4 +1,3 @@
-$OpenBSD: patch-eval_scm,v 1.6 2021/12/06 19:12:30 op Exp $
 Index: eval.scm
 --- eval.scm.orig
 +++ eval.scm

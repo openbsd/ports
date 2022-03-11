@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Frontend_CompilerInvocation_cpp,v 1.1 2019/07/17 21:33:33 bcallah Exp $
-
 Index: lib/Frontend/CompilerInvocation.cpp
 --- lib/Frontend/CompilerInvocation.cpp.orig
 +++ lib/Frontend/CompilerInvocation.cpp

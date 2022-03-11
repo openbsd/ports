@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/12/04 16:36:49 thfr Exp $
-
 COMMENT =	Neko scripting language runtime and virtual machine
 
 V =		2.3.0

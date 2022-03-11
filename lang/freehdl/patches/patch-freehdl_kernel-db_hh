@@ -1,4 +1,3 @@
-$OpenBSD: patch-freehdl_kernel-db_hh,v 1.1 2017/06/03 14:25:16 espie Exp $
 ambiguous in C++11
 
 Index: freehdl/kernel-db.hh

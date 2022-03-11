@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_class_corlib_System_Environment_cs,v 1.2 2020/04/06 15:11:11 robert Exp $
-
 Index: mcs/class/corlib/System/Environment.cs
 --- mcs/class/corlib/System/Environment.cs.orig
 +++ mcs/class/corlib/System/Environment.cs

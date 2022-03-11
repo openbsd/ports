@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_env_cc,v 1.1 2022/02/01 22:17:58 abieber Exp $
-
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc

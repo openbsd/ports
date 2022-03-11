@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/14 10:40:28 tb Exp $
-
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 
 COMMENT-main=	${COMMENT}

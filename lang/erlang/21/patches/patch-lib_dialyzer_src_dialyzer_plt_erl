@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_dialyzer_src_dialyzer_plt_erl,v 1.1 2018/12/31 10:11:36 jasper Exp $
-
 Prevent collisions during static analysis when multiple versions of
 erlang are installed
 

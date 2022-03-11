@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_cim_h,v 1.1.1.1 2017/12/09 00:21:17 bcallah Exp $
-
 Avoid multiple defintion of __init when linking.
 Change the whole trio of functions so they stay
 grouped for ease of human reading.

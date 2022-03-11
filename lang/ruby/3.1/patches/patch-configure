@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2022/02/16 18:28:34 jeremy Exp $
-
 Set correct shared library name.
 
 Override the arch setting to remove OpenBSD version from it,

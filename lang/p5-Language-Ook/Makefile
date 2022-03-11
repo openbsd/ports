@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:21 sthen Exp $
-
 COMMENT =	programming language designed for orang-utans
 
 MODULES =	cpan

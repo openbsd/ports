@@ -1,5 +1,3 @@
-# $OpenBSD: clang.port.mk,v 1.37 2022/01/03 21:33:52 jca Exp $
-
 MODCLANG_VERSION=	13.0.0
 
 MODCLANG_ARCHS ?= ${LLVM_ARCHS}

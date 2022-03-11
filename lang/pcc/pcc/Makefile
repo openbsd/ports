@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/12/19 18:01:12 daniel Exp $
-
 COMMENT =	portable C compiler
 
 DISTNAME =	pcc-${DISTVER}

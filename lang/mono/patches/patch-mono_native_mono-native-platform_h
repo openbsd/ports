@@ -1,5 +1,3 @@
-$OpenBSD: patch-mono_native_mono-native-platform_h,v 1.1 2020/04/06 15:11:11 robert Exp $
-
 Index: mono/native/mono-native-platform.h
 --- mono/native/mono-native-platform.h.orig
 +++ mono/native/mono-native-platform.h

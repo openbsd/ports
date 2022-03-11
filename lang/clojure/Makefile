@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2021/11/29 12:15:04 op Exp $
-
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
 V =			1.10.3.1029

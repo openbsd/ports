@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
 @bin bin/hl
 include/hl.h
 include/hlc.h

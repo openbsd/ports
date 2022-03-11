@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/29 12:19:13 bcallah Exp $
-
 # You must create a bootstrap for each supported arch.
 # Can use GDC to create said bootstrap compiler.
 ONLY_FOR_ARCHS =	amd64

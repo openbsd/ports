@@ -1,5 +1,3 @@
-$OpenBSD: patch-gsc_makefile_in,v 1.2 2022/02/18 22:34:47 juanfra Exp $
-
 Clang 13 workaround
 
 Index: gsc/makefile.in

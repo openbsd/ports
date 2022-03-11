@@ -1,5 +1,3 @@
-$OpenBSD: patch-ocamldeps_ocaml-sha_bitfn_h,v 1.1 2020/02/22 02:36:28 thfr Exp $
-
 fix conflict with endian.h
 
 Index: ocamldeps/ocaml-sha/bitfn.h

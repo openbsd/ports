@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_class_System_System_Net_Sockets_Socket_cs,v 1.4 2020/04/14 14:43:21 robert Exp $
-
 IPv4 to IPv6 address mapping is disabled on OpenBSD, so do not
 set DualMode in mono either.
 

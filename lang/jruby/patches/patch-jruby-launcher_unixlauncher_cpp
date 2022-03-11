@@ -1,5 +1,3 @@
-$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.6 2021/10/07 22:24:06 jeremy Exp $
-
 Attempt to replicate the following shell code:
 
 JAVA_HOME=$(javaPathHelper -h jruby)

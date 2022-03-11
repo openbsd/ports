@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile2_m4,v 1.2 2021/02/14 17:08:57 bcallah Exp $
-
 Index: Makefile2.m4
 --- Makefile2.m4.orig
 +++ Makefile2.m4

@@ -1,4 +1,3 @@
-$OpenBSD: patch-exp_inter_c,v 1.2 2015/12/03 09:18:16 sthen Exp $
 --- exp_inter.c.orig	Tue Aug 31 15:20:27 2010
 +++ exp_inter.c	Tue Nov 17 10:45:17 2015
 @@ -1564,7 +1564,7 @@ Exp_InteractObjCmd(

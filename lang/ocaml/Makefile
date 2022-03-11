@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.93 2022/01/13 04:19:45 daniel Exp $
-
 COMMENT =	   ML language with complete class-based objective system
 
 # XXX Don't even think of updating ocaml alone.

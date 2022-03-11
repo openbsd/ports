@@ -1,5 +1,3 @@
-$OpenBSD: patch-platforms_unix_config_Makefile_in,v 1.1 2020/12/13 02:42:17 gkoehler Exp $
-
 Index: platforms/unix/config/Makefile.in
 --- platforms/unix/config/Makefile.in.orig
 +++ platforms/unix/config/Makefile.in

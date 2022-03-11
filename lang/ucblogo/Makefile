@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/10/19 02:48:07 daniel Exp $
-
 COMMENT=	Berkeley's implementation of the logo programming language#'
 DISTNAME=	ucblogo-6.0
 DISTFILES=	${DISTNAME}{ucblogo}${EXTRACT_SUFX}

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_ocsp_py,v 1.1 2022/01/14 10:43:11 tb Exp $
-
 Fix build with opaque OCSP in LibreSSL 3.5.
 
 Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/ocsp.py

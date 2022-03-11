@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_clang_Basic_CodeGenOptions_def,v 1.1 2019/07/17 21:33:33 bcallah Exp $
-
 Index: include/clang/Basic/CodeGenOptions.def
 --- include/clang/Basic/CodeGenOptions.def.orig
 +++ include/clang/Basic/CodeGenOptions.def

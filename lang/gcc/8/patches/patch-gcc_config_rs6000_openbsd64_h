@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd64_h,v 1.2 2021/02/09 02:12:43 gkoehler Exp $
-
 Index: gcc/config/rs6000/openbsd64.h
 --- gcc/config/rs6000/openbsd64.h.orig
 +++ gcc/config/rs6000/openbsd64.h

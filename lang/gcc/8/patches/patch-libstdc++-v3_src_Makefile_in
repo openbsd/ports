@@ -1,4 +1,3 @@
-$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.2 2020/09/04 09:55:35 sthen Exp $
 Index: libstdc++-v3/src/Makefile.in
 --- libstdc++-v3/src/Makefile.in.orig
 +++ libstdc++-v3/src/Makefile.in

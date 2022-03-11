@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:47:23 sthen Exp $
-
 COMMENT =	learn Tcl interactively
 
 DISTNAME =	tcltutor-30b7

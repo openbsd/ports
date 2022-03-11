@@ -1,5 +1,3 @@
-$OpenBSD: patch-coroutine_copy_Context_h,v 1.3 2021/04/09 14:43:07 sthen Exp $
-
 Index: coroutine/copy/Context.h
 --- coroutine/copy/Context.h.orig
 +++ coroutine/copy/Context.h

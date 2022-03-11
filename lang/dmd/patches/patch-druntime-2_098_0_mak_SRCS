@@ -1,5 +1,3 @@
-$OpenBSD: patch-druntime-2_098_0_mak_SRCS,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
-
 Make sure these get installed.
 
 Index: druntime-2.098.0/mak/SRCS

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/09/01 18:28:24 jeremy Exp $
 @bin bin/mirb
 @bin bin/mrbc
 @bin bin/mruby

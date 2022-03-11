@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_rubygems_ext_ext_conf_builder_rb,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
-
 Ugly hack to make --user-install option work.  Without this, when
 a user uses gem install --user-install, it calls
 /usr/bin/install -o root -g bin, which fails due to permission issues.

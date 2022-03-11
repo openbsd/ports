@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.3 2016/01/28 18:23:27 jasper Exp $
-
 -export-dynamic is a linker option, pass it down as such.
 http://git.savannah.gnu.org/cgit/gforth.git/commit/?id=9631de152b4c83cdd0aadeb179a0c4f731192174
 

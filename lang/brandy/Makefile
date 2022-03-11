@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/15 13:31:42 fcambus Exp $
-
 COMMENT =	interpreter for BBC Basic (Basic V)
 
 DISTNAME =	brandy-1.20.1

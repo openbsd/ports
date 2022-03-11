@@ -1,5 +1,3 @@
-$OpenBSD: patch-exp_chan_c,v 1.1 2010/09/24 14:16:50 sebastia Exp $
-
 Get rid of implicit declaration of function warning
 
 --- exp_chan.c.orig	Thu Sep  9 19:29:43 2010

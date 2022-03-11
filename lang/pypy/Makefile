@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.49 2022/01/14 10:43:11 tb Exp $
-
 ONLY_FOR_ARCHS =	aarch64 amd64
 
 COMMENT =		fast implementation of the Python language

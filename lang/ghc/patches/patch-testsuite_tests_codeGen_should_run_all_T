@@ -1,5 +1,3 @@
-$OpenBSD: patch-testsuite_tests_codeGen_should_run_all_T,v 1.7 2021/03/10 01:33:40 gnezdo Exp $
-
 With 8k of stack, this test fails for WAY=normal.
 
 Index: testsuite/tests/codeGen/should_run/all.T

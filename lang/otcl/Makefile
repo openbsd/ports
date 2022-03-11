@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:21 sthen Exp $
-
 COMMENT=	MIT Object Tcl
 
 V=		1.14

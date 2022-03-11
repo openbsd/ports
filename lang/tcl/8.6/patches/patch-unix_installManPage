@@ -1,5 +1,3 @@
-$OpenBSD: patch-unix_installManPage,v 1.5 2014/09/07 18:49:13 stu Exp $
-
 Don't misrename manpages. Tk bug 3604346.
 
 --- unix/installManPage.orig	Wed Dec 19 10:40:38 2012

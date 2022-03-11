@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-x11,v 1.1 2013/11/03 14:32:21 espie Exp $
 bin/vib
 bin/xtiles
 @man man/man6/xtiles.6

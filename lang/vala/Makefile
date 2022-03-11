@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.159 2022/02/14 16:53:13 ajacoutot Exp $
-
 COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 

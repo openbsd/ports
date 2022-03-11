@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2022/01/31 16:49:08 jturner Exp $
-
 COMMENT =	functional and imperative programming language
 CATEGORIES =	lang
 

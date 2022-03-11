@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_lit_site_cfg_in,v 1.2 2020/07/12 18:06:49 bcallah Exp $
-
 Fix operating system detection.
 
 Index: test/lit.site.cfg.in

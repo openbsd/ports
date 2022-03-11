@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 20:47:19 sthen Exp $
-
 COMMENT=	powerful, light-weight programming language (version ${VERSION})
 
 DISTNAME=	lua-${VERSION}

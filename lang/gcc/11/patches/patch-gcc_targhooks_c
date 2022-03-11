@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_targhooks_c,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
 Index: gcc/targhooks.c
 --- gcc/targhooks.c.orig
 +++ gcc/targhooks.c

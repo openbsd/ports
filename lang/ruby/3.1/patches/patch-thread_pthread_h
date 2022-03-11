@@ -1,5 +1,3 @@
-$OpenBSD: patch-thread_pthread_h,v 1.1.1.1 2022/01/04 19:46:40 jeremy Exp $
-
 base-gcc doesn't support __thread
 
 Index: thread_pthread.h

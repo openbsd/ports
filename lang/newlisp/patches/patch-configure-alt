@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure-alt,v 1.3 2014/04/10 20:20:16 bcallah Exp $
-
 - Don't unconditionally strip the binary.
 - Add missing CFLAG.
 

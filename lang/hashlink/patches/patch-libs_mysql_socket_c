@@ -1,5 +1,3 @@
-$OpenBSD: patch-libs_mysql_socket_c,v 1.1.1.1 2020/02/25 02:36:47 thfr Exp $
-
 fix ifdef's
 
 Index: libs/mysql/socket.c

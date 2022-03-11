@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_bdwgc_include_private_gcconfig_h,v 1.1 2021/04/10 15:31:33 patrick Exp $
-
 Index: external/bdwgc/include/private/gcconfig.h
 --- external/bdwgc/include/private/gcconfig.h.orig
 +++ external/bdwgc/include/private/gcconfig.h

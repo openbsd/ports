@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_mruby_build_rb,v 1.4 2021/09/01 18:28:24 jeremy Exp $
-
 Index: lib/mruby/build.rb
 --- lib/mruby/build.rb.orig
 +++ lib/mruby/build.rb

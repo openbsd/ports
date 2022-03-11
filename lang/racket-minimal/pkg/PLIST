@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.28 2022/02/18 22:31:06 juanfra Exp $
 @conflict racket-<6.2
 @pkgpath lang/racket
 %%bc%%

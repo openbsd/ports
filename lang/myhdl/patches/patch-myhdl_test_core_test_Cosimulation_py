@@ -1,4 +1,3 @@
-$OpenBSD: patch-myhdl_test_core_test_Cosimulation_py,v 1.2 2020/08/03 06:38:00 jasper Exp $
 Index: myhdl/test/core/test_Cosimulation.py
 --- myhdl/test/core/test_Cosimulation.py.orig
 +++ myhdl/test/core/test_Cosimulation.py

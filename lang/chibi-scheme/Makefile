@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/02/18 22:38:17 juanfra Exp $
-
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	interpreter of the R7RS Scheme programming language

@@ -1,5 +1,3 @@
-$OpenBSD: patch-make_install_bin,v 1.1 2018/12/31 10:11:36 jasper Exp $
-
 Create versioned symlinks in ${PREFIX}/bin/
 
 --- make/install_bin.orig	Tue Jun 23 20:56:21 2015

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/14 17:08:57 bcallah Exp $
-
 V =		2.2.1
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
 DISTNAME =	snobol4-${V}

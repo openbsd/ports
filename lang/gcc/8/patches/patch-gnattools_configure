@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnattools_configure,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
 Index: gnattools/configure
 --- gnattools/configure.orig
 +++ gnattools/configure

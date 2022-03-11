@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2022/01/16 21:38:55 kmos Exp $
-
 BROKEN-arm =		MoarVM panic: Memory allocation failed; could not allocate 312268 bytes
 
 COMMENT =		Rakudo compiler for the Raku language

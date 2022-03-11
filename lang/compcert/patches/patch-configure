@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.16 2021/11/21 02:10:17 daniel Exp $
-
 1) Fixup path locations for OpenBSD
 2) Add configuration support for macppc and aarch64 on OpenBSD
 

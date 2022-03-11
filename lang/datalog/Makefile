@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:47:17 sthen Exp $
-
 COMMENT=	deductive database system similar to Prolog
 
 DISTNAME=	datalog-2.6

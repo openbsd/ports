@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2020/12/04 20:01:09 jasper Exp $
-
 PORTROACH=	limit:^5\.3
 
 VERSION=	5.3.6

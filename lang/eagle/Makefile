@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0

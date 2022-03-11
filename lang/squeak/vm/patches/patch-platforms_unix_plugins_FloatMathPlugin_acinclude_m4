@@ -1,5 +1,3 @@
-$OpenBSD: patch-platforms_unix_plugins_FloatMathPlugin_acinclude_m4,v 1.1 2020/12/13 02:42:17 gkoehler Exp $
-
 Index: platforms/unix/plugins/FloatMathPlugin/acinclude.m4
 --- platforms/unix/plugins/FloatMathPlugin/acinclude.m4.orig
 +++ platforms/unix/plugins/FloatMathPlugin/acinclude.m4

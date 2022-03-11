@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2019/07/14 00:39:38 naddy Exp $
-
 COMMENT=compile Java source into .class files (quickly!)
 
 # Jikes, a fast Java compiler.

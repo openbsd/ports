@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/08/10 00:56:40 jca Exp $
 @bin bin/luajit${MODLUA_DEP_VERSION}
 include/luajit-2.0/
 include/luajit-2.0/lauxlib.h

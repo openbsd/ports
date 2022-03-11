@@ -1,5 +1,3 @@
-# $OpenBSD: erlang.port.mk,v 1.28 2021/02/19 04:05:54 gnezdo Exp $
-#
 # Module for Erlang-based ports or modules
 
 CATEGORIES +=		lang/erlang

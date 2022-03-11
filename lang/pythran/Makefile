@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/18 13:19:50 daniel Exp $
-
 COMMENT =	ahead of time compiler for numeric kernels
 
 MODPY_EGG_VERSION =	0.11.0

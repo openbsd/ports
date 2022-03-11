@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.143 2022/01/29 17:44:59 daniel Exp $
-
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
 # requirement of the PSF license, if it constitutes a change to

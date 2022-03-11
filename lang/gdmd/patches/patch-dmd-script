@@ -1,5 +1,3 @@
-$OpenBSD: patch-dmd-script,v 1.1.1.1 2021/10/14 03:45:11 bcallah Exp $
-
 The GDC compiler is named egdc on OpenBSD.
 Only look for /etc/dmd.conf
 

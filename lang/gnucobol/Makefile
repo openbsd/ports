@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/01/11 20:08:37 sthen Exp $
-
 COMMENT=	COBOL compiler, formerly known as OpenCOBOL
 
 DISTNAME =	gnucobol-3.1.2

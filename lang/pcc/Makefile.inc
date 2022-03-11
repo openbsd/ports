@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2021/12/19 18:01:12 daniel Exp $
-
 # Other architectures not fully supported yet
 ONLY_FOR_ARCHS = amd64 i386 powerpc mips64
 

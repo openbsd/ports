@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.190 2021/11/09 04:48:50 gnezdo Exp $
-
 # Not yet ported to other architectures
 ONLY_FOR_ARCHS =	i386 amd64
 

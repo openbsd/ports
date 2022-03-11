@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_v8_src_base_platform-openbsd_cc,v 1.1 2022/02/01 22:17:58 abieber Exp $
-
 --- deps/v8/src/base/platform/platform-openbsd.cc.orig	Sat Jan  1 17:10:10 2022
 +++ deps/v8/src/base/platform/platform-openbsd.cc	Sat Jan  1 17:10:10 2022
 @@ -6,6 +6,7 @@

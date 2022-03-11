@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2019/07/12 20:47:23 sthen Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc sparc64

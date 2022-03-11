@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.78 2022/02/18 22:31:06 juanfra Exp $
-
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language

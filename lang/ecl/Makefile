@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.41 2022/01/31 09:53:58 op Exp $
-
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 

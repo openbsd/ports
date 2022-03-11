@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2021/06/05 12:34:05 jasper Exp $
-
 COMMENT=		functional language for building scalable applications
 
 V=			1.11.4

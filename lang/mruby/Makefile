@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/09/01 20:30:29 jeremy Exp $
-
 BROKEN-arm =		SIGBUS
 
 COMMENT =		lightweight, embeddable implementation of ruby

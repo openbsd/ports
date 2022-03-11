@@ -1,4 +1,3 @@
-$OpenBSD: patch-make_target_mk,v 1.1 2018/12/31 10:11:36 jasper Exp $
 --- make/target.mk.orig	Tue Jun 23 20:56:21 2015
 +++ make/target.mk	Thu Jun 25 13:47:10 2015
 @@ -25,6 +25,7 @@ ifeq ($(OVERRIDE_TARGET),)

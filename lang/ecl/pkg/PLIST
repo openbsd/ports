@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2022/01/31 09:53:59 op Exp $
 @bin bin/ecl
 bin/ecl-config
 include/ecl/

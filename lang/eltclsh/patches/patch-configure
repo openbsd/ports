@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.2 2018/05/20 10:49:38 matthieu Exp $
-
 Find X includes
 
 Index: configure

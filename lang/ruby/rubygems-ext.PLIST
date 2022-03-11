@@ -1,3 +1,2 @@
-@comment $OpenBSD: rubygems-ext.PLIST,v 1.3 2018/06/13 22:26:52 jeremy Exp $
 ${GEM_EXTENSIONS_DIR}/
 ${GEM_EXTENSIONS_DIR}/gem.build_complete

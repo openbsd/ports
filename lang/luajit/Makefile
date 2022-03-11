@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/07/03 20:21:07 sthen Exp $
-
 ONLY_FOR_ARCHS = arm amd64 i386 powerpc
 # if changing the above and it actually builds, switch to using
 #  luajit in mail/rspamd

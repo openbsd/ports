@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.23 2022/01/29 13:47:06 jasper Exp $
-
 COMMENT ?=	real-time, concurrent and distributed functional language
 
 CATEGORIES =	lang

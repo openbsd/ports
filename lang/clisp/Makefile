@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.54 2020/04/29 19:04:02 gkoehler Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
 COMMENT =		ANSI Common Lisp implementation

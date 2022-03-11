@@ -1,5 +1,3 @@
-$OpenBSD: patch-platforms_Cross_plugins_Mpeg3Plugin_libmpeg_video_getpicture_c,v 1.1 2017/05/06 17:15:20 espie Exp $
-
 Index: platforms/Cross/plugins/Mpeg3Plugin/libmpeg/video/getpicture.c
 --- platforms/Cross/plugins/Mpeg3Plugin/libmpeg/video/getpicture.c.orig
 +++ platforms/Cross/plugins/Mpeg3Plugin/libmpeg/video/getpicture.c

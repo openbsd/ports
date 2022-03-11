@@ -1,4 +1,3 @@
-$OpenBSD: patch-library_tm_tcl,v 1.3 2014/10/21 05:08:53 stu Exp $
 --- library/tm.tcl.orig	Mon Jul 28 10:43:55 2014
 +++ library/tm.tcl	Sat Oct 11 14:16:12 2014
 @@ -316,10 +316,11 @@ proc ::tcl::tm::Defaults {} {

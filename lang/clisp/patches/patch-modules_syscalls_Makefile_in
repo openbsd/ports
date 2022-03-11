@@ -1,5 +1,3 @@
-$OpenBSD: patch-modules_syscalls_Makefile_in,v 1.1 2021/09/15 19:13:46 naddy Exp $
-
 Fix rules for parallel make.
 
 Index: modules/syscalls/Makefile.in

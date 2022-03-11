@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:23 sthen Exp $
-
 V =		6.4.7
 REVISION =	0
 COMMENT =	tool for formal verification of parallel software

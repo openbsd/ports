@@ -1,4 +1,3 @@
-$OpenBSD: patch-librep_pc_in,v 1.7 2012/05/03 20:46:24 jasper Exp $
 --- librep.pc.in.orig	Mon Mar 26 17:18:41 2012
 +++ librep.pc.in	Thu May  3 22:40:02 2012
 @@ -11,7 +11,7 @@ repcommonexecdir=@repcommonexecdir@

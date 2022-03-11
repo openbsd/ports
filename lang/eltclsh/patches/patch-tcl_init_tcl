@@ -1,5 +1,3 @@
-$OpenBSD: patch-tcl_init_tcl,v 1.2 2018/05/20 10:49:38 matthieu Exp $
-
 Adjust for OpenBSD-specific Tcl package path layout.
 
 Index: tcl/init.tcl

@@ -1,4 +1,3 @@
-$OpenBSD: patch-man_Makefile_in,v 1.2 2011/11/15 19:32:14 jasper Exp $
 --- man/Makefile.in.orig	Tue Nov 15 19:58:14 2011
 +++ man/Makefile.in	Tue Nov 15 19:58:38 2011
 @@ -49,18 +49,17 @@ install : librep.info installdirs

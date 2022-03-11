@@ -1,5 +1,3 @@
-$OpenBSD: patch-regutil_regini_c,v 1.2 2020/05/20 15:12:03 bcallah Exp $
-
 time_t requires %lld
 
 Index: regutil/regini.c

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_runbench_sh,v 1.1 2018/11/17 13:29:18 juanfra Exp $
-
 Index: tests/runbench.sh
 --- tests/runbench.sh.orig
 +++ tests/runbench.sh

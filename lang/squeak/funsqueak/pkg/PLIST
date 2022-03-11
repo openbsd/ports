@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/25 14:01:48 espie Exp $
 lib/squeak/
 lib/squeak/FunSqueak${V}alpha.7.changes
 lib/squeak/FunSqueak${V}alpha.7.image

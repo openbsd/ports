@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_runtime_malloc_h,v 1.1 2018/04/05 17:47:30 jsing Exp $
-
 Index: src/runtime/malloc.h
 --- src/runtime/malloc.h.orig
 +++ src/runtime/malloc.h

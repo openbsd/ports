@@ -1,5 +1,3 @@
-# $OpenBSD: mono.port.mk,v 1.24 2018/09/03 22:13:35 bcallah Exp $
-
 # XXX list in infrastructure/mk/arch-defines.mk
 # XXX arm powerpc (no support for sigcontext)
 ONLY_FOR_ARCHS?=	${MONO_ARCHS}

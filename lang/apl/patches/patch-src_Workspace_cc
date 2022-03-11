@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Workspace_cc,v 1.1 2020/02/08 15:31:55 bcallah Exp $
-
 Fix for startup segfault.
 http://svn.savannah.gnu.org/viewvc/apl?view=revision&revision=1180
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2022/01/27 01:37:48 kmos Exp $
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}

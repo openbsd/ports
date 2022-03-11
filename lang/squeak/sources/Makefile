@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/12/13 02:42:17 gkoehler Exp $
-
-
 COMMENT =	smalltalk system, smalltalk sources
 
 DISTFILES =	SqueakV39.sources.gz

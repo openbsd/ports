@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2015/01/14 20:06:36 jturner Exp $
 --- src/Makefile.orig	Mon Jan 12 14:06:41 2015
 +++ src/Makefile	Mon Jan 12 14:08:28 2015
 @@ -6,8 +6,7 @@

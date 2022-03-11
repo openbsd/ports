@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/07/29 01:15:46 bcallah Exp $
-
 COMMENT =	small, high performance language with a modern syntax
 CATEGORIES =	lang
 

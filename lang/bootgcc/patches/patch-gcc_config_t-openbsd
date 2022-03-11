@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_config_t-openbsd,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
-
 Make sure to include standard headers that are tightly bound
 to the compiler, such as stdatomic.h
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Basic_Targets_X86_h,v 1.1 2019/07/17 21:33:33 bcallah Exp $
-
 Index: lib/Basic/Targets/X86.h
 --- lib/Basic/Targets/X86.h.orig
 +++ lib/Basic/Targets/X86.h

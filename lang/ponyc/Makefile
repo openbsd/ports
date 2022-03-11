@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/06/09 19:50:08 sthen Exp $
-
 # see https://github.com/ponylang/ponyc/issues/3207
 #     https://github.com/ponylang/ponyc/pull/3034
 BROKEN =	no support for LLVM-8.0.0

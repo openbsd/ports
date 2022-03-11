@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2022/02/26 22:59:45 naddy Exp $
-
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 
 DPB_PROPERTIES = parallel

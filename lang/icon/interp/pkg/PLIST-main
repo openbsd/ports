@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2016/03/12 23:16:55 naddy Exp $
 @conflict unicon-*
 @pkgpath lang/icon/interp
 bin/icont

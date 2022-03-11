@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2020/09/17 20:29:21 juanfra Exp $
-
 COMMENT =		BASIC converter to C translator for Unix system
 
 DISTNAME =		bacon-4.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/01/26 11:14:32 jasper Exp $
-
 COMMENT=	convert Intel assembly language (nasm) to AT&T syntax (gas)
 
 VERSION=	1.3.3

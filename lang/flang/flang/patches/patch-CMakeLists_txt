@@ -1,5 +1,3 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2020/07/12 18:06:48 bcallah Exp $
-
 Add OpenBSD/amd64 and OpenBSD/arm64
 
 Index: CMakeLists.txt

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/12/10 04:10:59 daniel Exp $
-
 ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler

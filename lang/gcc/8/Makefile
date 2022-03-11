@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2022/02/26 22:59:45 naddy Exp $
-
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 sparc64
 

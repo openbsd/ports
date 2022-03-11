@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.amd64-main,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
 lib/gcc/${CONFIG}/${V}/plugin/include/config/dbxelf.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/elfos.h
 lib/gcc/${CONFIG}/${V}/plugin/include/config/i386/

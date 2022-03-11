@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_compiler_crystal_compiler_cr,v 1.1 2021/11/11 22:43:14 jcs Exp $
-
 Index: src/compiler/crystal/compiler.cr
 --- src/compiler/crystal/compiler.cr.orig
 +++ src/compiler/crystal/compiler.cr

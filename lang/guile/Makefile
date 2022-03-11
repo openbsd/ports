@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2020/06/04 07:36:10 ajacoutot Exp $
-
 PORTROACH+=	limit:^1
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension

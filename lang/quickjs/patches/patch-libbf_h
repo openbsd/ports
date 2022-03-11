@@ -1,5 +1,3 @@
-$OpenBSD: patch-libbf_h,v 1.1 2020/01/15 14:30:50 jca Exp $
-
 Use more generic test for 64 bits platform.
 
 Index: libbf.h

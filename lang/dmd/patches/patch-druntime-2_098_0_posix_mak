@@ -1,5 +1,3 @@
-$OpenBSD: patch-druntime-2_098_0_posix_mak,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
-
 Index: druntime-2.098.0/posix.mak
 --- druntime-2.098.0/posix.mak.orig
 +++ druntime-2.098.0/posix.mak

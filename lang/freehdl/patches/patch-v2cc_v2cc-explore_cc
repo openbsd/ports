@@ -1,4 +1,3 @@
-$OpenBSD: patch-v2cc_v2cc-explore_cc,v 1.1 2017/06/03 14:25:16 espie Exp $
 the cast is needed because an iterator and a pointer are not exactly the
 same thing!
 

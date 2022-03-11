@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.173 2022/01/23 13:49:46 sthen Exp $
-
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=	server-side HTML-embedded scripting language

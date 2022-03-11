@@ -1,5 +1,3 @@
-$OpenBSD: patch-dmd-2_098_0-bootstrap_openbsd_bin64_dmd_conf,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
-
 Use the bootstrap libphobos2.a when linking the initially built dmd.
 
 Index: dmd-2.098.0-bootstrap/openbsd/bin64/dmd.conf

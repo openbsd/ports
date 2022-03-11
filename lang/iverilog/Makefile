@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/05/23 19:23:52 sthen Exp $
-
 COMMENT=		Verilog simulation and synthesis tool
 
 V=			11.0

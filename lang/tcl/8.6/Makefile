@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/11/02 22:10:08 naddy Exp $
-
 COMMENT =		Tool Command Language
 
 P =			8

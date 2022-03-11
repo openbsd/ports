@@ -1,5 +1,3 @@
-# $OpenBSD: ruby.port.mk,v 1.106 2022/01/04 19:49:41 jeremy Exp $
-
 # ruby module
 
 CATEGORIES+=		lang/ruby

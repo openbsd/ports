@@ -1,4 +1,3 @@
-$OpenBSD: patch-bin_elixir,v 1.6 2020/02/08 13:14:45 jasper Exp $
 Index: bin/elixir
 --- bin/elixir.orig
 +++ bin/elixir

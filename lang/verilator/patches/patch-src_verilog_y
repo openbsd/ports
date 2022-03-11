@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_verilog_y,v 1.1 2021/05/15 22:02:57 millert Exp $
 Fix build with Bison 3.7 and newer
 https://github.com/verilator/verilator/commit/aa39d020d88dd1d5beb3810cf551ff879b7f88a4
 

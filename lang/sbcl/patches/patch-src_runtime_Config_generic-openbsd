@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_runtime_Config_generic-openbsd,v 1.5 2021/05/28 16:23:31 solene Exp $
-
 Don't try to guess (wrong) with clang. Just assume we have pie
 
 Index: src/runtime/Config.generic-openbsd

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/09/02 08:47:36 chrisz Exp $
 @bin bin/camlp4o.opt
 @bin bin/camlp4of.opt
 @bin bin/camlp4oof.opt

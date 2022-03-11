@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_bsd,v 1.4 2021/12/06 19:12:30 op Exp $
-
 Index: Makefile.bsd
 --- Makefile.bsd.orig
 +++ Makefile.bsd

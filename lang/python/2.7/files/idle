@@ -1,4 +1,3 @@
 #!/bin/sh
-# $OpenBSD: idle,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
 
 /usr/bin/env python@VERSION@ @LOCALBASE@/lib/python@VERSION@/idlelib/idle.py

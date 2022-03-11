@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_h,v 1.1 2011/04/12 16:28:54 jasper Exp $
 --- config.h.orig	Mon Dec 13 23:47:07 1999
 +++ config.h	Tue Apr 12 17:10:53 2011
 @@ -1,2 +1,2 @@

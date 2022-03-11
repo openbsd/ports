@@ -1,4 +1,3 @@
-$OpenBSD: patch-lto-plugin_configure,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
 Index: lto-plugin/configure
 --- lto-plugin/configure.orig
 +++ lto-plugin/configure

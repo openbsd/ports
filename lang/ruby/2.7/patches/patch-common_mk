@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_mk,v 1.3 2020/12/08 01:03:32 jeremy Exp $
-
 Enable verbose mode when building.
 
 Don't regenerate rdoc documentation during install.

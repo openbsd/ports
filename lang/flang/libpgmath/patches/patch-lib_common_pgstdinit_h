@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_common_pgstdinit_h,v 1.2 2020/07/12 18:06:49 bcallah Exp $
-
 size_t is always unsigned long on OpenBSD.
 
 Index: lib/common/pgstdinit.h

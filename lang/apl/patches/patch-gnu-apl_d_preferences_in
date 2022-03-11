@@ -1,4 +1,3 @@
-$OpenBSD: patch-gnu-apl_d_preferences_in,v 1.2 2020/02/08 15:31:55 bcallah Exp $
 Index: gnu-apl.d/preferences.in
 --- gnu-apl.d/preferences.in.orig
 +++ gnu-apl.d/preferences.in

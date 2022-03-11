@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.9 2020/07/05 09:44:08 espie Exp $
 @conflict r5rs-*
 bin/guild${V}
 bin/guile-config${V}

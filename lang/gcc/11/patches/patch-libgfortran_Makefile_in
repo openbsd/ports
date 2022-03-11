@@ -1,4 +1,3 @@
-$OpenBSD: patch-libgfortran_Makefile_in,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
 Index: libgfortran/Makefile.in
 --- libgfortran/Makefile.in.orig
 +++ libgfortran/Makefile.in

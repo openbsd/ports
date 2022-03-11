@@ -1,4 +1,3 @@
-$OpenBSD: patch-deps_npm_bin_node-gyp-bin_node-gyp,v 1.4 2019/11/24 18:42:28 abieber Exp $
 Index: deps/npm/bin/node-gyp-bin/node-gyp
 --- deps/npm/bin/node-gyp-bin/node-gyp.orig
 +++ deps/npm/bin/node-gyp-bin/node-gyp

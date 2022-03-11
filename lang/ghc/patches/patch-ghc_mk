@@ -1,5 +1,3 @@
-$OpenBSD: patch-ghc_mk,v 1.16 2021/06/09 04:22:20 gnezdo Exp $
-
 Fix the bindist-list (for building the bootstrapper); without this,
 gtar creates an archive which our tar can't extract.
 

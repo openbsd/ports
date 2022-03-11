@@ -1,4 +1,3 @@
-$OpenBSD: patch-fixincludes_inclhack_def,v 1.2 2020/09/04 09:55:34 sthen Exp $
 Index: fixincludes/inclhack.def
 --- fixincludes/inclhack.def.orig
 +++ fixincludes/inclhack.def

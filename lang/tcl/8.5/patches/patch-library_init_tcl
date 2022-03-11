@@ -1,4 +1,3 @@
-$OpenBSD: patch-library_init_tcl,v 1.6 2015/06/06 14:19:10 stu Exp $
 --- library/init.tcl.orig	Thu Feb 12 10:13:16 2015
 +++ library/init.tcl	Thu Jun  4 22:58:15 2015
 @@ -52,9 +52,14 @@ namespace eval tcl {

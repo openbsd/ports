@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.11 2019/11/28 12:46:25 solene Exp $
 bin/newlisp
 @bin bin/newlisp-${V}
 bin/newlispdoc

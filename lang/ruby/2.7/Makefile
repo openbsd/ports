@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/28 20:07:58 tb Exp $
-
 VERSION =		2.7.5
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby27	0.0

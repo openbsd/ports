@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.11 2022/02/18 22:34:47 juanfra Exp $
-
 FLAGS_OPT_RTS doesn't honor the CFLAGS.
 
 Index: configure

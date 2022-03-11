@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/20 20:45:36 bcallah Exp $
-
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 riscv64
 
 COMMENT =	tiny C compiler

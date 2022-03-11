@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/12/30 18:23:02 fcambus Exp $
-
 COMMENT =	embeddable JavaScript engine
 
 DISTNAME =	duktape-2.6.0

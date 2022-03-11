@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_v8_src_api_api_cc,v 1.1 2022/02/01 22:17:58 abieber Exp $
-
 --- deps/v8/src/api/api.cc.orig	Sat Jan  1 17:10:10 2022
 +++ deps/v8/src/api/api.cc	Sat Jan  1 17:10:10 2022
 @@ -124,7 +124,7 @@

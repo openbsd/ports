@@ -1,5 +1,3 @@
-$OpenBSD: patch-testsuite_mk_test_mk,v 1.11 2021/03/10 01:33:40 gnezdo Exp $
-
 Fix detection of available library ways in case the library-dirs:
 field of ghc-prim contains more than one entry (only checks file
 in the first entry, which is buggy, the whole detection mechanism

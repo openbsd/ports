@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2021/08/03 10:04:14 pascal Exp $
 Index: gcc/config/alpha/alpha.c
 --- gcc/config/alpha/alpha.c.orig
 +++ gcc/config/alpha/alpha.c

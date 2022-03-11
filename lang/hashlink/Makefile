@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/23 19:32:50 sthen Exp $
-
 # JIT segfaults without USE_WXNEEDED
 USE_WXNEEDED =	Yes
 

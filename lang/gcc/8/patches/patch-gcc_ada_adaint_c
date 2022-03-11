@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_ada_adaint_c,v 1.2 2019/03/25 20:17:47 pascal Exp $
 Index: gcc/ada/adaint.c
 --- gcc/ada/adaint.c.orig
 +++ gcc/ada/adaint.c

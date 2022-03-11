@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_luaconf_h,v 1.1 2012/07/10 15:06:21 jasper Exp $
 --- src/luaconf.h.orig	Thu May 10 22:53:52 2012
 +++ src/luaconf.h	Thu May 10 22:54:16 2012
 @@ -39,8 +39,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2019/07/12 20:47:16 sthen Exp $
-
 BROKEN-sparc64=	fails in mpn_dm_1.c, error: lvalue required in asm statement
 BROKEN-i386=	invalid use of a cast in a inline asm context requiring an l-value: remove the cast or build with -fheinous-gnu-extensions
 

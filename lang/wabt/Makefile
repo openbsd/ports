@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/08/31 19:10:40 fcambus Exp $
-
 COMMENT =	WebAssembly binary toolkit
 
 DISTNAME =	wabt-${V}

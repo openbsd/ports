@@ -1,5 +1,3 @@
-# $OpenBSD: lua.port.mk,v 1.35 2016/10/31 18:46:09 jca Exp $
-
 CATEGORIES +=	lang/lua
 
 #

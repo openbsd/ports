@@ -1,5 +1,3 @@
-$OpenBSD: patch-libstdc++-v3_configure,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
-
 *-openbsd* required for cross compiling libstdc++
 
 Index: libstdc++-v3/configure

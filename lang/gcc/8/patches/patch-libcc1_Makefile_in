@@ -1,4 +1,3 @@
-$OpenBSD: patch-libcc1_Makefile_in,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
 Index: libcc1/Makefile.in
 --- libcc1/Makefile.in.orig
 +++ libcc1/Makefile.in

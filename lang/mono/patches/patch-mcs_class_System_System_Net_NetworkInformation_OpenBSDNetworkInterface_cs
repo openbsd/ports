@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_OpenBSDNetworkInterface_cs,v 1.3 2020/04/14 14:43:21 robert Exp $
-
 Index: mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs
 --- mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs.orig
 +++ mcs/class/System/System.Net.NetworkInformation/OpenBSDNetworkInterface.cs

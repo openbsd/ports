@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_ruby_stdlib_ffi_library_rb,v 1.2 2021/10/07 22:24:06 jeremy Exp $
 Index: lib/ruby/stdlib/ffi/library.rb
 --- lib/ruby/stdlib/ffi/library.rb.orig
 +++ lib/ruby/stdlib/ffi/library.rb

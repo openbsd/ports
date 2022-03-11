@@ -1,5 +1,3 @@
-$OpenBSD: patch_i386-engine_Makefile_in,v 1.1 2019/01/30 19:13:35 jasper Exp $
-
 clang cannot compile these files at the default optimization level
 
 Index: engine/Makefile.in

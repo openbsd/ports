@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_class_System_System_Net_NetworkInformation_UnixNetworkInterfaceFactory_cs,v 1.2 2020/04/06 15:11:11 robert Exp $
-
 Index: mcs/class/System/System.Net.NetworkInformation/UnixNetworkInterfaceFactory.cs
 --- mcs/class/System/System.Net.NetworkInformation/UnixNetworkInterfaceFactory.cs.orig
 +++ mcs/class/System/System.Net.NetworkInformation/UnixNetworkInterfaceFactory.cs

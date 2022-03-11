@@ -1,5 +1,3 @@
-$OpenBSD: patch-mono_utils_mono-sigcontext_h,v 1.8 2021/04/10 15:31:33 patrick Exp $
-
 Index: mono/utils/mono-sigcontext.h
 --- mono/utils/mono-sigcontext.h.orig
 +++ mono/utils/mono-sigcontext.h

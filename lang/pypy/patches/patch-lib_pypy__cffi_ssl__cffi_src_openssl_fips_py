@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_pypy__cffi_ssl__cffi_src_openssl_fips_py,v 1.1 2021/10/31 17:16:48 tb Exp $
-
 Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/fips.py
 --- lib_pypy/_cffi_ssl/_cffi_src/openssl/fips.py.orig
 +++ lib_pypy/_cffi_ssl/_cffi_src/openssl/fips.py

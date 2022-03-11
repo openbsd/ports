@@ -1,4 +1,3 @@
-$OpenBSD: patch-Modules_pyexpat_c,v 1.3 2019/12/06 21:03:09 pamela Exp $
 Index: Modules/pyexpat.c
 --- Modules/pyexpat.c.orig
 +++ Modules/pyexpat.c

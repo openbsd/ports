@@ -1,5 +1,3 @@
-$OpenBSD: patch-dmd-2_098_0_dmd_1,v 1.1.1.1 2021/10/13 04:38:52 bcallah Exp $
-
 Pre-gen'd manual page for dmd.1
 
 Index: dmd-2.098.0/dmd.1

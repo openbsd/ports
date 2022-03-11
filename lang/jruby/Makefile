@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.99 2022/01/21 23:28:18 jeremy Exp $
-
 # Runtime failures on i386 in IO#pos and IO#rewind
 ONLY_FOR_ARCHS = amd64
 

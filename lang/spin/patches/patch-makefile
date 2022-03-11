@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile,v 1.1.1.1 2017/12/17 23:38:19 akoshibe Exp $
-
 Build with BSD make.
 Don't hardcode CC or YACC.
 A proper install routine.

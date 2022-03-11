@@ -1,5 +1,3 @@
-$OpenBSD: patch-platforms_unix_config_configure_ac,v 1.1 2020/01/14 22:20:29 sthen Exp $
-
 Index: platforms/unix/config/configure.ac
 --- platforms/unix/config/configure.ac.orig
 +++ platforms/unix/config/configure.ac

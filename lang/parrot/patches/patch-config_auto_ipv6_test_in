@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_auto_ipv6_test_in,v 1.3 2012/07/13 09:46:05 pascal Exp $
 --- config/auto/ipv6/test.in.orig	Sun Jul  8 10:31:00 2012
 +++ config/auto/ipv6/test.in	Sun Jul  8 10:31:18 2012
 @@ -9,6 +9,7 @@ Copyright (C) 2010-2011, Parrot Foundation.

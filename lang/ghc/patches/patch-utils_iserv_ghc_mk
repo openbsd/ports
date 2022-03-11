@@ -1,5 +1,3 @@
-$OpenBSD: patch-utils_iserv_ghc_mk,v 1.1 2020/08/01 14:52:44 gnezdo Exp $
-
 Work around https://gitlab.haskell.org/ghc/ghc/-/issues/17962
 
 Index: utils/iserv/ghc.mk

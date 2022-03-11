@@ -1,5 +1,3 @@
-# $OpenBSD: php.port.mk,v 1.34 2021/12/18 22:28:55 sthen Exp $
-
 CATEGORIES+=		lang/php
 
 MODPHP_VERSION?=	7.4

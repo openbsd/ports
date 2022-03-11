@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.2 2017/07/09 18:33:22 bcallah Exp $
 @bin bin/gravity

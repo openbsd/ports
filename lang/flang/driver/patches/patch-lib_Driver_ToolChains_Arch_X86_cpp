@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Driver_ToolChains_Arch_X86_cpp,v 1.1 2019/07/17 21:33:33 bcallah Exp $
-
 Index: lib/Driver/ToolChains/Arch/X86.cpp
 --- lib/Driver/ToolChains/Arch/X86.cpp.orig
 +++ lib/Driver/ToolChains/Arch/X86.cpp

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_v8_gypfiles_v8_gyp,v 1.1 2022/02/01 22:17:58 abieber Exp $
-
 --- tools/v8_gypfiles/v8.gyp.orig	Sat Jan  1 17:10:14 2022
 +++ tools/v8_gypfiles/v8.gyp	Sat Jan  1 17:10:14 2022
 @@ -838,7 +838,7 @@

@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_config_alpha_alpha_opt,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
 --- gcc/config/alpha/alpha.opt.orig	Mon Jan  4 15:30:50 2016
 +++ gcc/config/alpha/alpha.opt	Tue Aug 23 15:48:16 2016
 @@ -38,8 +38,13 @@ mieee

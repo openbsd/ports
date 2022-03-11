@@ -1,5 +1,3 @@
-# $OpenBSD: tcl.port.mk,v 1.17 2018/07/20 21:31:15 stu Exp $
-
 CATEGORIES +=		lang/tcl
 
 MODTCL_VERSION ?=	8.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.32 2021/02/25 22:22:43 sthen Exp $
-
 COMMENT =	smalltalk system, vm
 
 SRCV =		1

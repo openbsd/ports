@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/09 19:50:08 sthen Exp $
-
 COMMENT =	interpreter for the programming language APL
 DISTNAME =	apl-1.8
 REVISION =	0

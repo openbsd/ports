@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.8 2020/12/13 02:42:17 gkoehler Exp $
-
 CATEGORIES =	lang
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

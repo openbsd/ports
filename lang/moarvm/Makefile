@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/01/16 20:41:04 kmos Exp $
-
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 
 COMMENT =		virtual machine for nqp/rakudo

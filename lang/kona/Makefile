@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2020/12/31 05:13:44 bcallah Exp $
-
 COMMENT =	open source implementation of the K programming language
 DISTNAME =	kona-3.2.0.20201026
 CATEGORIES =	lang

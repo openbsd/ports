@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/02/12 14:13:08 sthen Exp $
-
 BROKEN-i386=		linking problems
 # - with USE_LLD=No or LDFLAGS=--Wl,-z,notext, build fails with
 # Fatal Error: if_no_fd.c: FD Solver not linked

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/15 22:02:57 millert Exp $
-
 COMMENT=	very fast free Verilog HDL simulator
 
 DISTNAME =	verilator-3.912

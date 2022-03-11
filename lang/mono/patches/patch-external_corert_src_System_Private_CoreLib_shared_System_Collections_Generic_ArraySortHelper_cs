@@ -1,5 +1,3 @@
-$OpenBSD: patch-external_corert_src_System_Private_CoreLib_shared_System_Collections_Generic_ArraySortHelper_cs,v 1.2 2020/12/17 15:17:52 robert Exp $
-
 add MONO_FORCE_COMPAT env var for backwards compatibility with some
 routines that were abandoned with the update to mono 5 upstream
 This may lead to undefined behavior and should only be used in

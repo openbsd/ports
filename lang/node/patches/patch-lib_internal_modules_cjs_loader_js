@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_internal_modules_cjs_loader_js,v 1.2 2022/02/16 14:24:37 sthen Exp $
-
 Index: lib/internal/modules/cjs/loader.js
 --- lib/internal/modules/cjs/loader.js.orig
 +++ lib/internal/modules/cjs/loader.js

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/07/24 09:31:03 cwen Exp $
-
 # When updating, check that x11/gnome/aisleriot MODGNOME_CPPFLAGS references
 # the proper guile2 includes directory. Also, 32-bit BE arches bootstraps may
 # need to be rebuilt.

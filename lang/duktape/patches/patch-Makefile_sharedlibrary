@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_sharedlibrary,v 1.2 2018/08/06 07:33:57 fcambus Exp $
-
 Index: Makefile.sharedlibrary
 --- Makefile.sharedlibrary.orig
 +++ Makefile.sharedlibrary

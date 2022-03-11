@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_openssl_ossl_pkey_c,v 1.1 2022/01/14 10:44:51 tb Exp $
-
 LibreSSL 3.5 and later provide and need to use
 PEM_write_bio_PrivateKey_traditional()
 

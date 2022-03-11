@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/23 15:37:32 bcallah Exp $
-
 COMMENT =	small, embeddable JavaScript engine in C
 
 V =		2020.09.06

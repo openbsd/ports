@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_runtime_tls_mips64x_s,v 1.2 2021/08/27 18:33:27 jsing Exp $
-
 Index: src/runtime/tls_mips64x.s
 --- src/runtime/tls_mips64x.s.orig
 +++ src/runtime/tls_mips64x.s

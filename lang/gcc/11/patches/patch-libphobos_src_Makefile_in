@@ -1,5 +1,3 @@
-$OpenBSD: patch-libphobos_src_Makefile_in,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
-
 Index: libphobos/src/Makefile.in
 --- libphobos/src/Makefile.in.orig
 +++ libphobos/src/Makefile.in

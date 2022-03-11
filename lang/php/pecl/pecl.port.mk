@@ -1,4 +1,3 @@
-# $OpenBSD: pecl.port.mk,v 1.23 2022/02/02 11:25:24 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php

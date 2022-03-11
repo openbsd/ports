@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_lispbibl_d,v 1.7 2017/04/27 21:42:24 espie Exp $
 --- src/lispbibl.d.orig	2013-06-17 14:15:17.000000000 +0000
 +++ src/lispbibl.d
 @@ -9090,6 +9090,15 @@ All other long words on the LISP-Stack a

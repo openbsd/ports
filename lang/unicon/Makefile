@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2019/08/29 20:36:16 sthen Exp $
-
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
 

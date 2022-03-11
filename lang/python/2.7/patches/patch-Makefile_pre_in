@@ -1,4 +1,3 @@
-$OpenBSD: patch-Makefile_pre_in,v 1.14 2019/12/06 21:03:09 pamela Exp $
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
 +++ Makefile.pre.in

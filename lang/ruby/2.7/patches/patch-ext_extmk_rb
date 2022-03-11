@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_extmk_rb,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
-
 Build extensions in verbose mode by default.
 
 Index: ext/extmk.rb

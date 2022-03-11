@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2017/05/28 16:23:28 espie Exp $
-
 Fix fake-stage.
 
 Index: Makefile.in

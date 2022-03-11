@@ -1,5 +1,3 @@
-$OpenBSD: patch-xgraphics_h,v 1.1 2017/05/25 18:09:55 espie Exp $
-
 Index: xgraphics.h
 --- xgraphics.h.orig
 +++ xgraphics.h

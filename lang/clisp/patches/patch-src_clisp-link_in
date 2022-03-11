@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_clisp-link_in,v 1.2 2015/10/06 11:37:06 jca Exp $
 --- src/clisp-link.in.orig	Tue May 25 21:54:54 2010
 +++ src/clisp-link.in	Mon Sep 28 20:59:27 2015
 @@ -382,6 +382,7 @@ case "$1" in

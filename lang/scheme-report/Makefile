@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/07/05 09:44:08 espie Exp $
-
 COMMENT=	revised^5 report on scheme
 
 CATEGORIES=	lang books

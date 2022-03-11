@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_runtests_sh,v 1.1 2018/11/17 13:29:18 juanfra Exp $
-
 Index: tests/runtests.sh
 --- tests/runtests.sh.orig
 +++ tests/runtests.sh

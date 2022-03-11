@@ -1,4 +1,3 @@
-$OpenBSD: patch-libobjc_Makefile_in,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
 --- libobjc/Makefile.in.orig	Sun Feb  3 12:16:21 2013
 +++ libobjc/Makefile.in	Tue Mar  5 19:45:43 2013
 @@ -259,18 +259,20 @@ install-html:

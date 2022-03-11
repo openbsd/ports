@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/05/17 20:26:40 bcallah Exp $
-
 COMMENT=	GNU awk
 
 V=		5.1.0

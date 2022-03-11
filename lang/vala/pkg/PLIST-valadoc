@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-valadoc,v 1.9 2021/05/13 07:49:55 jasper Exp $
 bin/valadoc
 @bin bin/valadoc-${API_V}
 include/valadoc-${API_V}/

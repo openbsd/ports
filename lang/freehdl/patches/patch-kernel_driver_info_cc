@@ -1,4 +1,3 @@
-$OpenBSD: patch-kernel_driver_info_cc,v 1.1 2017/06/03 14:25:16 espie Exp $
 can't declare functions in the middle of functions in modern C++
 
 Index: kernel/driver_info.cc

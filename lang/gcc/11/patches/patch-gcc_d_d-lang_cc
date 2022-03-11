@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_d_d-lang_cc,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
-
 Index: gcc/d/d-lang.cc
 --- gcc/d/d-lang.cc.orig
 +++ gcc/d/d-lang.cc

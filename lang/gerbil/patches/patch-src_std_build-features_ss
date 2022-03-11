@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_std_build-features_ss,v 1.1.1.1 2018/11/26 22:35:30 juanfra Exp $
-
 Index: src/std/build-features.ss
 --- src/std/build-features.ss.orig
 +++ src/std/build-features.ss

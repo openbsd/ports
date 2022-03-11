@@ -1,4 +1,3 @@
-$OpenBSD: patch-intel2gas_cc,v 1.2 2017/05/25 11:15:41 espie Exp $
 Index: intel2gas.cc
 --- intel2gas.cc.orig
 +++ intel2gas.cc

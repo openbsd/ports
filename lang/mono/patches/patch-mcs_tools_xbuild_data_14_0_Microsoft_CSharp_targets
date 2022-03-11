@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_tools_xbuild_data_14_0_Microsoft_CSharp_targets,v 1.1 2018/03/29 19:33:18 robert Exp $
-
 Index: mcs/tools/xbuild/data/14.0/Microsoft.CSharp.targets
 --- mcs/tools/xbuild/data/14.0/Microsoft.CSharp.targets.orig
 +++ mcs/tools/xbuild/data/14.0/Microsoft.CSharp.targets

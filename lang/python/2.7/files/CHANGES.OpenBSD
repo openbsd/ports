@@ -1,5 +1,3 @@
-$OpenBSD: CHANGES.OpenBSD,v 1.6 2014/12/14 08:32:55 rpointel Exp $
-
 As required by item 3 of the PSF license, here is a brief summary
 of changes made to this version of Python for the OpenBSD package.
 

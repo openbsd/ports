@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_cmp_cmpmain_lsp,v 1.3 2022/01/31 09:53:58 op Exp $
-
 Override system library detection to just use *ecl-library-directory*.
 The original check fails now that library symlink is removed.
 

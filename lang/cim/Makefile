@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
-
 COMMENT =	GNU Simula compiler
 DISTNAME =	cim-5.1
 REVISION =	0

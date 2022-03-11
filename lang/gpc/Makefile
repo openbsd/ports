@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/02/26 22:59:45 naddy Exp $
-
 # Should work on all other archs.
 NOT_FOR_ARCHS =	aarch64 m88k mips64 powerpc64 riscv64
 

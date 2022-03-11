@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_Quad_GTK_cc,v 1.1 2020/02/08 15:31:55 bcallah Exp $
-
 Index: src/Quad_GTK.cc
 --- src/Quad_GTK.cc.orig
 +++ src/Quad_GTK.cc

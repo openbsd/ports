@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.powerpc-main,v 1.2 2019/01/05 22:08:11 pascal Exp $
 lib/gcc/${CONFIG}/${V}/include/altivec.h
 lib/gcc/${CONFIG}/${V}/include/amo.h
 lib/gcc/${CONFIG}/${V}/include/bmi2intrin.h

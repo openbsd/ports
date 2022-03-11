@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.amd64-main,v 1.1.1.1 2021/08/15 18:42:12 pascal Exp $
 lib/gcc/${CONFIG}/${V}/plugin/include/common/
 lib/gcc/${CONFIG}/${V}/plugin/include/common/config/
 lib/gcc/${CONFIG}/${V}/plugin/include/common/config/i386/

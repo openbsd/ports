@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:47:16 sthen Exp $
-
 # Depends on devel/libfirm
 ONLY_FOR_ARCHS =	amd64 arm i386
 

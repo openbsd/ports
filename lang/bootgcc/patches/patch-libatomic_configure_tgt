@@ -1,4 +1,3 @@
-$OpenBSD: patch-libatomic_configure_tgt,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
 Index: libatomic/configure.tgt
 --- libatomic/configure.tgt.orig
 +++ libatomic/configure.tgt

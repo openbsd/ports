@@ -1,4 +1,3 @@
-$OpenBSD: patch-libquadmath_Makefile_in,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
 Index: libquadmath/Makefile.in
 --- libquadmath/Makefile.in.orig
 +++ libquadmath/Makefile.in

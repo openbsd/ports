@@ -1,5 +1,3 @@
-$OpenBSD: patch-support_minizip_ioapi_c,v 1.1 2020/04/06 15:11:11 robert Exp $
-
 Index: support/minizip/ioapi.c
 --- support/minizip/ioapi.c.orig
 +++ support/minizip/ioapi.c

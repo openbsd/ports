@@ -1,5 +1,3 @@
-$OpenBSD: patch-libphobos_libdruntime_config_powerpc_switchcontext_S,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
-
 Add fibers for powerpc64 ELFv2, and fix fibers for 32-bit powerpc ELF.
 The old code was for some other platform (AIX?), not BSD nor Linux.
 This patch fixes OpenBSD but might break the other platform.

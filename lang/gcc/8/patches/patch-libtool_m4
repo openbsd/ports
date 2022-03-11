@@ -1,4 +1,3 @@
-$OpenBSD: patch-libtool_m4,v 1.1.1.1 2019/01/04 15:50:40 pascal Exp $
 --- libtool.m4.orig	Fri Sep 20 11:47:52 2013
 +++ libtool.m4	Mon Dec  2 12:20:09 2013
 @@ -2541,7 +2541,7 @@ openbsd*)

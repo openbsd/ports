@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2019/10/02 18:34:28 jasper Exp $
-
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45

@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_class_corlib_System_IO_Path_cs,v 1.2 2020/04/06 15:11:11 robert Exp $
-
 fix dealing with double directory separators in relative paths
 https://github.com/mono/mono/issues/15407
 

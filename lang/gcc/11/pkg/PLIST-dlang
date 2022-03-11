@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-dlang,v 1.1.1.1 2021/08/15 18:42:13 pascal Exp $
 @bin bin/egdc
 @bin bin/${CONFIG}-egdc
 @info info/gdc.info

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/29 16:14:41 espie Exp $
-
 PORTROACH=	limit:^5\.2
 
 VERSION=	5.2.4

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2018/05/30 11:29:29 espie Exp $
 bin/gforth
 @bin bin/gforth-${V}
 bin/gforth-fast

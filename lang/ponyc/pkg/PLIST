@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2019/06/05 03:01:47 bcallah Exp $
 bin/ponyc
 include/pony/
 include/pony.h

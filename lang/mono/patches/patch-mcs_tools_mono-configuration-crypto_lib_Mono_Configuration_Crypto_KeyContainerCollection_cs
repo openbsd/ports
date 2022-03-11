@@ -1,5 +1,3 @@
-$OpenBSD: patch-mcs_tools_mono-configuration-crypto_lib_Mono_Configuration_Crypto_KeyContainerCollection_cs,v 1.1 2018/03/29 19:33:18 robert Exp $
-
 Index: mcs/tools/mono-configuration-crypto/lib/Mono.Configuration.Crypto/KeyContainerCollection.cs
 --- mcs/tools/mono-configuration-crypto/lib/Mono.Configuration.Crypto/KeyContainerCollection.cs.orig
 +++ mcs/tools/mono-configuration-crypto/lib/Mono.Configuration.Crypto/KeyContainerCollection.cs

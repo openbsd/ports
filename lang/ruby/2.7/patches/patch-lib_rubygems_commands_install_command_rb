@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_rubygems_commands_install_command_rb,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
-
 Make gem binaries on ruby 2.5 use a 25 suffix, so you can have both
 other versions of the same gem installed at the same time
 without conflicts.

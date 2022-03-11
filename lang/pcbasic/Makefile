@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:01:17 sthen Exp $
-
 COMMENT =	free, cross-platform emulator for GW-BASIC family (PC-BASIC)
 
 MODPY_EGG_VERSION =	2.0.2

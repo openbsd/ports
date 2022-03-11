@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_Driver_ToolChains_OpenBSD_cpp,v 1.8 2019/11/10 16:50:31 bcallah Exp $
-
 Index: lib/Driver/ToolChains/OpenBSD.cpp
 --- lib/Driver/ToolChains/OpenBSD.cpp.orig
 +++ lib/Driver/ToolChains/OpenBSD.cpp

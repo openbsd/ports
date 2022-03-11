@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/02 22:10:07 naddy Exp $
-
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.5.19

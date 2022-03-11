@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2019/07/12 20:47:22 sthen Exp $
-
 COMMENT=	Scheme Underground's implementation of R5RS
 # '
 

@@ -1,5 +1,3 @@
-$OpenBSD: patch-engine_engine_c,v 1.4 2016/01/28 18:14:54 jasper Exp $
-
 Fix use of uninitalized memory. Found by malloc option J.
 http://git.savannah.gnu.org/cgit/gforth.git/commit/?id=4a03e4ff51314fc3a97acedeee928822b3bf1433
 

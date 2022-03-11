@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/08/20 02:17:48 jturner Exp $
-
 BROKEN =		needs a new sys+openbsd:7:0-x64.myr generated
 ONLY_FOR_ARCHS =	amd64
 

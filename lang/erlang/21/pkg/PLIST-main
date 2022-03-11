@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2019/04/16 11:40:18 sthen Exp $
 @option no-default-conflict
 @conflict erlang-<16b.03p4v0
 @pkgpath lang/erlang/21

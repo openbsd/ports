@@ -1,5 +1,3 @@
-$OpenBSD: patch-Modules__hashopenssl_c,v 1.2 2022/01/27 01:37:47 kmos Exp $
-
 Index: Modules/_hashopenssl.c
 --- Modules/_hashopenssl.c.orig
 +++ Modules/_hashopenssl.c

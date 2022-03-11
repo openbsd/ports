@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.i386,v 1.4 2021/08/07 11:00:09 pascal Exp $
 bin/ppc386
 @bin lib/fpc/${V}/ppc386
 lib/fpc/${V}/units/${CONFIG}/rtl/mmx.o

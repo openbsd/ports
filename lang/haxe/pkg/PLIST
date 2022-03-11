@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/01/18 00:31:05 thfr Exp $
 @bin bin/haxe
 @bin bin/haxelib
 share/haxe/

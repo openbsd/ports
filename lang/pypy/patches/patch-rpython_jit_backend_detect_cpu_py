@@ -1,5 +1,3 @@
-$OpenBSD: patch-rpython_jit_backend_detect_cpu_py,v 1.1 2019/11/19 13:50:24 sthen Exp $
-
 Index: rpython/jit/backend/detect_cpu.py
 --- rpython/jit/backend/detect_cpu.py.orig
 +++ rpython/jit/backend/detect_cpu.py

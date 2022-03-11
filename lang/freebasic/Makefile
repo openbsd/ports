@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/10/28 13:04:03 espie Exp $
-
 BROKEN-i386 =	needs fixing for LLD
 
 # May also support aarch64 and arm?

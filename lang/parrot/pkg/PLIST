@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/11/04 18:54:32 pascal Exp $
 @bin bin/parrot
 @bin bin/parrot-nqp
 @bin bin/parrot-ops2c

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no_i386,v 1.4 2021/08/16 21:23:18 gnezdo Exp $
 bin/haddock
 bin/haddock-ghc-${GHC_VER}
 @bin lib/ghc/bin/haddock

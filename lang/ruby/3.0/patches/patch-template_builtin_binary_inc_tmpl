@@ -1,5 +1,3 @@
-$OpenBSD: patch-template_builtin_binary_inc_tmpl,v 1.1 2021/03/23 14:58:37 visa Exp $
-
 Ensure proper alignment of builtin binary arrays to fix crash on mips64.
 compile.c accesses the start of these arrays as struct ibf_header.
 

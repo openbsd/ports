@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_in,v 1.2 2013/05/15 09:46:28 sebastia Exp $
 --- configure.in.orig	Fri Aug 27 15:51:53 2010
 +++ configure.in	Sun Apr 28 07:51:37 2013
 @@ -216,7 +216,8 @@ if test $openpty -eq 0 ; then

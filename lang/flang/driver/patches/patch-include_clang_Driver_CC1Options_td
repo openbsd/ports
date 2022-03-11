@@ -1,5 +1,3 @@
-$OpenBSD: patch-include_clang_Driver_CC1Options_td,v 1.1 2019/07/17 21:33:33 bcallah Exp $
-
 Index: include/clang/Driver/CC1Options.td
 --- include/clang/Driver/CC1Options.td.orig
 +++ include/clang/Driver/CC1Options.td

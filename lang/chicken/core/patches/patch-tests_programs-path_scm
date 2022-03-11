@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_programs-path_scm,v 1.1 2018/11/17 13:29:18 juanfra Exp $
-
 Index: tests/programs-path.scm
 --- tests/programs-path.scm.orig
 +++ tests/programs-path.scm

@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2021/11/12 12:02:01 sthen Exp $
-
 Don't use soname when linking.
 
 Index: Makefile.in

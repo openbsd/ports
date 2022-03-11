@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.7 2021/03/11 12:17:21 pascal Exp $
 @bin bin/nqp
 @bin bin/nqp-m
 share/nqp/lib/MASTNodes.moarvm

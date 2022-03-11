@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_general_Test-icon,v 1.2 2013/11/03 14:32:21 espie Exp $
 --- tests/general/Test-icon.orig	Fri Mar 26 18:54:22 2010
 +++ tests/general/Test-icon	Sun Nov  3 13:07:41 2013
 @@ -10,6 +10,9 @@ ICONX=../../bin/iconx

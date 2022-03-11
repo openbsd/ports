@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/23 13:50:27 bcallah Exp $
-
 V =		3.9.4
 COMMENT =	ANSI-compliant interpreter for REXX language (regina-rexx)
 DISTNAME =	regina-rexx-${V}

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/28 18:26:48 naddy Exp $
-
 BROKEN=		segmentation fault with gambit 4.9.4
 BROKEN-powerpc64=gsc spins during build
 

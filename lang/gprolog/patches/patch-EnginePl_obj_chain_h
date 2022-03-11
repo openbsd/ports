@@ -1,4 +1,3 @@
-$OpenBSD: patch-EnginePl_obj_chain_h,v 1.2 2017/06/08 15:25:57 espie Exp $
 Index: EnginePl/obj_chain.h
 --- EnginePl/obj_chain.h.orig
 +++ EnginePl/obj_chain.h

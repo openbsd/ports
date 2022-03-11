@@ -1,4 +1,3 @@
-$OpenBSD: patch-build_common_gypi,v 1.2 2017/11/04 17:17:35 jeremy Exp $
 Index: build/common.gypi
 --- build/common.gypi.orig
 +++ build/common.gypi

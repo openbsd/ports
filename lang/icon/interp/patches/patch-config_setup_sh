@@ -1,4 +1,3 @@
-$OpenBSD: patch-config_setup_sh,v 1.2 2013/11/03 14:32:21 espie Exp $
 --- config/setup.sh.orig	Sun Nov  3 11:54:51 2013
 +++ config/setup.sh	Sun Nov  3 11:55:00 2013
 @@ -11,7 +11,7 @@ SRC=$TOP/src

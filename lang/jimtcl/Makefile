@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/11/12 12:02:01 sthen Exp $
-
 COMMENT =		small footprint implementation of Tcl
 
 GH_ACCOUNT =		msteveb

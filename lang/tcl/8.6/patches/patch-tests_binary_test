@@ -1,4 +1,3 @@
-$OpenBSD: patch-tests_binary_test,v 1.3 2017/11/04 18:55:26 stu Exp $
 Index: tests/binary.test
 --- tests/binary.test.orig
 +++ tests/binary.test

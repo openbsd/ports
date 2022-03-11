@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2022/02/18 22:34:47 juanfra Exp $
 @conflict scheme48-*
 bin/gambdoc
 bin/gambuild-C

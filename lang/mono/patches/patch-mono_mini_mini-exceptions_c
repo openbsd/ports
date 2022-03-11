@@ -1,5 +1,3 @@
-$OpenBSD: patch-mono_mini_mini-exceptions_c,v 1.6 2020/12/17 15:17:52 robert Exp $
-
 mono_get_lmf (); sometimes returns a pointer to invalid memory,
 so lets live with this hack until this gets resolved upstream:
 

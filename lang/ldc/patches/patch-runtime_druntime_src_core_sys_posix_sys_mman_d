@@ -1,5 +1,3 @@
-$OpenBSD: patch-runtime_druntime_src_core_sys_posix_sys_mman_d,v 1.1.1.1 2021/11/21 13:51:47 bcallah Exp $
-
 Fibers need mmap(2) MAP_STACK.
 
 Index: runtime/druntime/src/core/sys/posix/sys/mman.d

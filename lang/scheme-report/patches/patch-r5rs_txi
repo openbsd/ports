@@ -1,4 +1,3 @@
-$OpenBSD: patch-r5rs_txi,v 1.1.1.1 2001/02/03 20:45:37 espie Exp $
 --- r5rs.txi.orig	Tue Jan 30 10:36:11 2001
 +++ r5rs.txi	Tue Jan 30 10:38:19 2001
 @@ -162,7 +162,7 @@ expand the summary so that it fills up t

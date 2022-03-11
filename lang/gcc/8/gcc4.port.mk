@@ -1,5 +1,3 @@
-# $OpenBSD: gcc4.port.mk,v 1.4 2019/04/29 15:27:01 naddy Exp $
-
 MODGCC4_ARCHS ?= ${GCC49_ARCHS}
 MODGCC4_LANGS ?=
 

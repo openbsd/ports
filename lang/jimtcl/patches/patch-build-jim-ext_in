@@ -1,5 +1,3 @@
-$OpenBSD: patch-build-jim-ext_in,v 1.2 2021/11/12 12:02:01 sthen Exp $
-
 Index: build-jim-ext.in
 --- build-jim-ext.in.orig
 +++ build-jim-ext.in

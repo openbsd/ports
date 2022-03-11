@@ -1,5 +1,3 @@
-$OpenBSD: patch-deps_v8_src_wasm_baseline_ia32_liftoff-assembler-ia32_h,v 1.1 2022/02/03 18:32:35 sthen Exp $
-
 Index: deps/v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h
 --- deps/v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h.orig
 +++ deps/v8/src/wasm/baseline/ia32/liftoff-assembler-ia32.h

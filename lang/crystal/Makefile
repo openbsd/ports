@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/11/11 22:43:13 jcs Exp $
-
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 

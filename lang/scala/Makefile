@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/05/19 01:50:30 kurt Exp $
-
 COMMENT=	general purpose multi-paradigm programming language
 
 VERSION =	2.12.9

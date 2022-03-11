@@ -1,5 +1,3 @@
-$OpenBSD: patch-sha512_ml,v 1.1 2020/02/22 02:36:28 thfr Exp $
-
 change deprecated lib Pervasive
 
 Index: ocamldeps/ocaml-sha/sha512.ml

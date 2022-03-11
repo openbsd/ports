@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.47 2021/12/31 09:53:11 solene Exp $
-
 BROKEN-i386 =		build fails in "Compiling file [...]/src/compiler/generic/genesis.lisp"
 # ;; Compiling file /pobj/sbcl-2.0.1/sbcl-2.0.1/src/compiler/generic/genesis.lisp ...
 # ;; Wrote file /pobj/sbcl-2.0.1/sbcl-2.0.1/obj/from-host/src/compiler/generic/genesis.fas-tmp

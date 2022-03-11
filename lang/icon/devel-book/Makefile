@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 21:02:22 sthen Exp $
-
 CATEGORIES=	books lang
 COMMENT=	Icon language implemention reference book
 MAINTAINER=	Marc Espie <espie@openbsd.org>

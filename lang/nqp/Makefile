@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2022/01/05 08:28:36 kmos Exp $
-
 COMMENT =		Not Quite Perl
 
 V =			2021.12

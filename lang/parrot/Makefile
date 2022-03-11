@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.50 2021/02/25 21:56:09 sthen Exp $
-
 BROKEN-mips64=	SIGBUS while running pbc_to_exe
 
 COMMENT=	virtual machine designed for interpreted languages

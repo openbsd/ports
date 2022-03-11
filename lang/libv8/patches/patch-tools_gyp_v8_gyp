@@ -1,4 +1,3 @@
-$OpenBSD: patch-tools_gyp_v8_gyp,v 1.2 2017/11/04 17:17:35 jeremy Exp $
 Index: tools/gyp/v8.gyp
 --- tools/gyp/v8.gyp.orig
 +++ tools/gyp/v8.gyp

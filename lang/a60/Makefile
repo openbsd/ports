@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:47:16 sthen Exp $
-
 COMMENT =	NASE A60 Algol interpreter
 DISTNAME =	a60-0.23a
 CATEGORIES =	lang

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2022/02/18 22:34:47 juanfra Exp $
-
 BROKEN-riscv64=	gsi and gsi-script segfault at startup
 
 COMMENT=	complete, efficient and reliable implementation of Scheme

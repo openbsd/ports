@@ -1,4 +1,3 @@
-$OpenBSD: patch-defaults_make,v 1.5 2019/08/06 18:19:51 juanfra Exp $
 Index: defaults.make
 --- defaults.make.orig
 +++ defaults.make

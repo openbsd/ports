@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_AST_FormatString_cpp,v 1.1 2019/07/17 21:33:33 bcallah Exp $
-
 Index: lib/AST/FormatString.cpp
 --- lib/AST/FormatString.cpp.orig
 +++ lib/AST/FormatString.cpp

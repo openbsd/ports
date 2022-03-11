@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/18 09:59:57 sthen Exp $
-
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source compiler for Pascal/Object Pascal

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.26 2021/08/13 18:45:45 jeremy Exp $
-
 COMMENT-main ?=		object oriented script language with threads
 COMMENT-gdbm ?=		gdbm interface for ruby
 COMMENT-ri_docs ?=	ri documentation files for ruby

@@ -1,5 +1,3 @@
-$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Program_Strip_hs,v 1.3 2018/01/22 00:42:30 kili Exp $
-
 Work around unresolved symbols when linking against hs packages
 that use FFI and contain some code compiled from C sources.
 

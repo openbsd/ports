@@ -1,5 +1,3 @@
-# $OpenBSD: go.port.mk,v 1.49 2022/01/20 15:44:04 kn Exp $
-
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
 MODGO_BUILDDEP ?=	Yes

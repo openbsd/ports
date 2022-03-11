@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2018/12/31 10:11:36 jasper Exp $
-
 Create symlink so the build can handle versioned binaries
 
 Index: Makefile.in

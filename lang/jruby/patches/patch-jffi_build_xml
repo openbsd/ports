@@ -1,5 +1,3 @@
-$OpenBSD: patch-jffi_build_xml,v 1.4 2021/10/07 22:24:06 jeremy Exp $
-
 Work with Java 10+.
 
 Index: jffi/build.xml

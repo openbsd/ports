@@ -1,4 +1,3 @@
-$OpenBSD: patch-libssp_Makefile_in,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
 Index: libssp/Makefile.in
 --- libssp/Makefile.in.orig
 +++ libssp/Makefile.in

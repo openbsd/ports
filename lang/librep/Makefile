@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2019/11/03 14:07:43 jasper Exp $
-
 COMMENT=	Emacs Lisp-like runtime library
 
 VERSION=	0.92.3

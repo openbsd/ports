@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.2 2021/10/18 00:25:48 gkoehler Exp $
-
 Index: gcc/config.gcc
 --- gcc/config.gcc.orig
 +++ gcc/config.gcc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.107 2022/03/02 11:18:17 jsing Exp $
-
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 BIN_BOOTSTRAP_GOARCHS =	386 arm arm64 mips64

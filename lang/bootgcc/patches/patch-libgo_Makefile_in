@@ -1,4 +1,3 @@
-$OpenBSD: patch-libgo_Makefile_in,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
 Index: libgo/Makefile.in
 --- libgo/Makefile.in.orig
 +++ libgo/Makefile.in

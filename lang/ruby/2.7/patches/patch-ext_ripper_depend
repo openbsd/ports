@@ -1,5 +1,3 @@
-$OpenBSD: patch-ext_ripper_depend,v 1.1.1.1 2020/01/02 21:19:57 jeremy Exp $
-
 Allow overriding CFLAGS for ripper extension.
 
 Index: ext/ripper/depend

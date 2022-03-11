@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_makemake_in,v 1.13 2021/09/15 19:13:46 naddy Exp $
-
 Override broken compiler test, attempting to build 32-bit clisp on a
 64-bit patform will not work out very well.
 

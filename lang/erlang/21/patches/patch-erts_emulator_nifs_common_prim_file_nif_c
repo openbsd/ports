@@ -1,5 +1,3 @@
-$OpenBSD: patch-erts_emulator_nifs_common_prim_file_nif_c,v 1.1 2020/05/04 08:45:16 kmos Exp $
-
 erts: Fix warning and potential big-endian-bug in prim_file
 https://github.com/erlang/otp/commit/df0638e021eb18a4271a02fdae08aa1779867209
 

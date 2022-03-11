@@ -1,5 +1,3 @@
-$OpenBSD: patch-library_safe_tcl,v 1.3 2017/12/25 04:32:26 stu Exp $
-
 Index: library/safe.tcl
 --- library/safe.tcl.orig
 +++ library/safe.tcl

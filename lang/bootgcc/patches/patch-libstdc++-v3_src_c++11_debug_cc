@@ -1,5 +1,3 @@
-$OpenBSD: patch-libstdc++-v3_src_c++11_debug_cc,v 1.1.1.1 2021/08/03 10:04:15 pascal Exp $
-
 Silence this linker warning:
 /usr/local/lib/gcc/powerpc-unknown-openbsd6.4/6.4.0/../../../libestdc++.so.18.0:
  warning: sprintf() is often misused, please use snprintf()

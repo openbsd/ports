@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:47:17 sthen Exp $
-
 COMMENT=	open-source (C++ generating) VHDL simulator
 
 DISTNAME=	freehdl-0.0.7

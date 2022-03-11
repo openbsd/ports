@@ -1,5 +1,3 @@
-$OpenBSD: patch-libgo_config_libtool_m4,v 1.1.1.1 2021/08/15 18:42:11 pascal Exp $
-
 Index: libgo/config/libtool.m4
 --- libgo/config/libtool.m4.orig
 +++ libgo/config/libtool.m4

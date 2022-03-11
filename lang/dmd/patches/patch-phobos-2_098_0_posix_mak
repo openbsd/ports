@@ -1,5 +1,3 @@
-$OpenBSD: patch-phobos-2_098_0_posix_mak,v 1.1.1.1 2021/10/13 04:38:51 bcallah Exp $
-
 Index: phobos-2.098.0/posix.mak
 --- phobos-2.098.0/posix.mak.orig
 +++ phobos-2.098.0/posix.mak

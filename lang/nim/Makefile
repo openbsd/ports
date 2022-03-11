@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2022/03/02 11:16:18 op Exp $
-
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		statically typed, imperative programming language

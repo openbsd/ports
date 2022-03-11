@@ -1,5 +1,3 @@
-$OpenBSD: patch-graphics_c,v 1.2 2018/12/21 15:00:42 sthen Exp $
-
 Index: graphics.c
 --- graphics.c.orig
 +++ graphics.c

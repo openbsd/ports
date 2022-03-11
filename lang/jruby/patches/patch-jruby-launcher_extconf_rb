@@ -1,4 +1,3 @@
-$OpenBSD: patch-jruby-launcher_extconf_rb,v 1.4 2021/10/07 22:24:06 jeremy Exp $
 Index: jruby-launcher/extconf.rb
 --- jruby-launcher/extconf.rb.orig
 +++ jruby-launcher/extconf.rb

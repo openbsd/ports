@@ -1,4 +1,3 @@
-$OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.1.1.1 2019/01/04 15:50:39 pascal Exp $
 --- gcc/config/rs6000/t-openbsd.orig	Mon Nov 14 12:16:44 2011
 +++ gcc/config/rs6000/t-openbsd	Mon Nov 14 13:23:24 2011
 @@ -0,0 +1,48 @@

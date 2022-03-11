@@ -1,4 +1,3 @@
-$OpenBSD: patch-v2cc_v2cc_cc,v 1.1 2017/06/03 14:25:16 espie Exp $
 don't declare empty std.
 
 Index: v2cc/v2cc.cc

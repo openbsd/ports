@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/19 21:09:12 sthen Exp $
-
 # the versions in chromium and node work ok, maybe updating will fix it..
 BROKEN=		needs updating for clang 13; mksnapshot segfaults
 

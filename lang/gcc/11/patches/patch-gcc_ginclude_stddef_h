@@ -1,5 +1,3 @@
-$OpenBSD: patch-gcc_ginclude_stddef_h,v 1.1.1.1 2021/08/15 18:42:10 pascal Exp $
-
 Index: gcc/ginclude/stddef.h
 --- gcc/ginclude/stddef.h.orig
 +++ gcc/ginclude/stddef.h

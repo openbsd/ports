@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_rubygems_dependency_installer_rb,v 1.1.1.1 2020/12/28 16:45:27 jeremy Exp $
 Index: lib/rubygems/dependency_installer.rb
 --- lib/rubygems/dependency_installer.rb.orig
 +++ lib/rubygems/dependency_installer.rb

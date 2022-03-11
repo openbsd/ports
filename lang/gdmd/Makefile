@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/10/14 03:45:11 bcallah Exp $
-
 COMMENT =	dmd-like wrapper for gdc
 DISTNAME =	${GH_PROJECT}-0.1.0
 PKGNAME =	${DISTNAME}pl20210818

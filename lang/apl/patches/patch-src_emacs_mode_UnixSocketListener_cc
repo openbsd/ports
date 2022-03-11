@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_emacs_mode_UnixSocketListener_cc,v 1.1 2018/04/09 17:26:54 jasper Exp $
-
 Index: src/emacs_mode/UnixSocketListener.cc
 --- src/emacs_mode/UnixSocketListener.cc.orig
 +++ src/emacs_mode/UnixSocketListener.cc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/08/01 14:42:18 jca Exp $
-
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 BROKEN-powerpc64=	does not build, error: lvalue required as increment operand
 # missing assembly for arch

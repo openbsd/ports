@@ -1,5 +1,3 @@
-$OpenBSD: patch-makefile,v 1.2 2017/11/03 15:33:04 bcallah Exp $
-
 Remove -Werror* and add these -fno-* CFLAGS here.
 Keep tendrils here to make generating future bootstraps easier.
 

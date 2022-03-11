@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2022/03/01 08:51:00 op Exp $
 @conflict nimrod-<0.11.2
 @pkgpath lang/nimrod
 @sample ${SYSCONFDIR}/nim/

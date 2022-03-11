@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.powerpc64-main,v 1.1 2021/10/18 00:25:49 gkoehler Exp $
 lib/gcc/${CONFIG}/${V}/include/altivec.h
 lib/gcc/${CONFIG}/${V}/include/amo.h
 lib/gcc/${CONFIG}/${V}/include/bmi2intrin.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.52 2021/06/09 19:50:08 sthen Exp $
-
 COMMENT =	LLVM Fortran compiler passes and runtime library
 DISTNAME =	flang-8.0.1.20200707
 REVISION =	0

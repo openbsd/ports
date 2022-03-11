@@ -1,6 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/02/26 22:59:45 naddy Exp $
-
-#
 # When updating/switching to a new version, remember to adapt devel/llvm!
 #
 
