@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:50 sthen Exp $
-
 COMMENT =		c client library for the Riemann monitoring system
 
 V =			1.9.1

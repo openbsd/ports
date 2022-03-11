@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/03/04 11:23:53 landry Exp $
-
 COMMENT =	plugin-driven server agent for collecting metrics
 
 BROKEN-arm =	build fails, no error message

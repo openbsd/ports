@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/02/23 19:39:43 sthen Exp $
-
 COMMENT =		SUPress stdout / stderr UNless ERror
 
 DISTNAME =		supuner-0.2

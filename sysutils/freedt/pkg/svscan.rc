@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: svscan.rc,v 1.6 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/svscan"
 daemon_flags="/service/"

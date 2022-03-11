@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_gam_error_h,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
 --- lib/gam_error.h.orig	Sat Nov 28 22:01:46 2009
 +++ lib/gam_error.h	Sat Nov 28 22:02:19 2009
 @@ -47,6 +47,11 @@ void	gam_error(const char *file, int line, const char*

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/05 07:33:27 landry Exp $
-
 COMMENT =	library to create and edit an ISO-9660 filesystem
 
 DISTNAME =	libisofs-1.5.4

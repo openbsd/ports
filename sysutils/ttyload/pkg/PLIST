@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/24 13:06:22 jca Exp $
 @bin bin/ttyload
 @man man/man1/ttyload.1

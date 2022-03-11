@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2022/02/23 18:28:12 bket Exp $
-
 COMMENT =		wrapper for Borg to create and prune backups
 
 MODPY_EGG_VERSION =	1.5.23

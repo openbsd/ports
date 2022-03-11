@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2018/03/08 13:42:31 pirofti Exp $
 @bin bin/ntfs-3g
 @bin bin/ntfs-3g.probe
 @bin bin/ntfscat

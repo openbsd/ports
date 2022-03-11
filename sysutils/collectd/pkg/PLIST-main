@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2018/11/18 19:39:29 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/collectd

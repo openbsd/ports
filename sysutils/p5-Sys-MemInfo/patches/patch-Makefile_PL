@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2019/11/03 15:20:42 jca Exp $
-
 Fix totalmem computation, see
 https://rt.cpan.org/Public/Bug/Display.html?id=130740
 

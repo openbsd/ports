@@ -1,4 +1,3 @@
-# $OpenBSD: crates.inc,v 1.4 2022/01/20 18:56:01 tb Exp $
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	adler32	1.2.0	# Zlib
 MODCARGO_CRATES +=	aho-corasick	0.7.18	# Unlicense/MIT

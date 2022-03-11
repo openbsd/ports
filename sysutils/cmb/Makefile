@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/12/17 03:36:07 bcallah Exp $
-
 COMMENT =	combinatorics library/utility from FreeBSD
 DISTNAME =	cmb-3.9.5
 CATEGORIES =	sysutils

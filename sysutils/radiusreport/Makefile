@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/12 21:02:26 sthen Exp $
-
 COMMENT=	RADIUS log file analysis tool
 
 DISTNAME=	radiusreport-0.3b6

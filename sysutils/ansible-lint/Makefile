@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2022/02/13 13:25:01 sthen Exp $
-
 COMMENT =		best practices checker for ansible
 
 MODPY_EGG_VERSION =	5.4.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2015/06/26 18:08:39 ajacoutot Exp $
-
 COMMENT=	GkrellM2 load meter with a familiar face
 
 DISTNAME=	gkrellflynn-0.8

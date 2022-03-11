@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/17 11:21:50 sthen Exp $
 libexec/tray-app/
 @bin libexec/tray-app/battery
 @bin libexec/tray-app/eject

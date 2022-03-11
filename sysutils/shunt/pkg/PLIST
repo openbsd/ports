@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/08/12 22:12:13 jca Exp $
 @bin bin/exactly
 @bin bin/flyisofs
 @bin bin/shunt

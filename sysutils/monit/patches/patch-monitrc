@@ -1,4 +1,3 @@
-$OpenBSD: patch-monitrc,v 1.6 2017/05/27 14:05:00 jasper Exp $
 Index: monitrc
 --- monitrc.orig
 +++ monitrc

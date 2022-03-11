@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/05/30 12:02:59 jasper Exp $
 @conflict pushover-*
 bin/pushover
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}pyc

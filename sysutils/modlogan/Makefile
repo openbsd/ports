@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13

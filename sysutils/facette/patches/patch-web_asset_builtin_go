@@ -1,5 +1,3 @@
-$OpenBSD: patch-web_asset_builtin_go,v 1.1 2019/12/13 02:44:10 abieber Exp $
-
 Index: web/asset_builtin.go
 --- web/asset_builtin.go.orig
 +++ web/asset_builtin.go

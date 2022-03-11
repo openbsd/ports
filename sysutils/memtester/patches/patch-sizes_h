@@ -1,4 +1,3 @@
-$OpenBSD: patch-sizes_h,v 1.1 2015/02/17 21:40:43 naddy Exp $
 --- sizes.h.orig	Sun Feb 28 18:24:56 2010
 +++ sizes.h	Tue Feb 17 22:36:10 2015
 @@ -14,7 +14,7 @@

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2022/02/03 18:17:40 jturner Exp $
-
 COMMENT =		two-factor authentication for unix systems
 
 V =			1.12.0

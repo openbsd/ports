@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/10/26 12:03:38 jca Exp $
-
 COMMENT =	interactive process viewer
 
 GH_ACCOUNT =	htop-dev

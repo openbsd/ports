@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/07/17 14:39:43 danj Exp $
-
 COMMENT=		GUI to dvd+rw-tools and cdrecord
 
 DISTNAME=		tkdvd-4.0.9

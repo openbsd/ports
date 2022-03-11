@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:44 sthen Exp $
-
 # uses cpuid.h
 ONLY_FOR_ARCHS=	i386 amd64
 

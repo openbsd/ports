@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/05/05 07:33:58 landry Exp $
-
 COMMENT-main =		create ISO-9660 filesystem and burn CD/DVD/BD media
 COMMENT-xorriso =	ISO 9660 Rock Ridge Filesystem Manipulator
 COMMENT-tcltk =		frontend for xorriso

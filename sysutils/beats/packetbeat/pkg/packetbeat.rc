@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: packetbeat.rc,v 1.7 2020/11/21 15:58:41 pvk Exp $
 
 daemon="${PREFIX}/bin/packetbeat"
 

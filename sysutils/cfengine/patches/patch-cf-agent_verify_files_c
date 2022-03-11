@@ -1,4 +1,3 @@
-$OpenBSD: patch-cf-agent_verify_files_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
 --- cf-agent/verify_files.c.orig	Wed Jan 20 00:29:13 2016
 +++ cf-agent/verify_files.c	Wed Jan 20 00:32:12 2016
 @@ -680,12 +680,12 @@ PromiseResult ScheduleEditOperation(EvalContext *ctx, 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:41 sthen Exp $
-
 COMMENT =		utility designed to clean up filenames
 
 DISTNAME =		detox-1.2.0

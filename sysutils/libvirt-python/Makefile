@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/03/02 07:26:06 ajacoutot Exp $
-
 COMMENT =		libvirt virtualization API python bindings
 
 MODPY_EGG_VERSION =	8.1.0

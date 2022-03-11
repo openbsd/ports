@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_et_Makefile_in,v 1.7 2021/05/25 19:44:28 sthen Exp $
-
 Index: lib/et/Makefile.in
 --- lib/et/Makefile.in.orig
 +++ lib/et/Makefile.in

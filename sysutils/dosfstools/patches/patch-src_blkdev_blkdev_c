@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_blkdev_blkdev_c,v 1.1.1.1 2017/08/21 14:43:23 jca Exp $
-
 Index: src/blkdev/blkdev.c
 --- src/blkdev/blkdev.c.orig
 +++ src/blkdev/blkdev.c

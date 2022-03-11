@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2020/04/16 06:45:19 ratchov Exp $
-
 COMMENT=	volume dial for Gkrellm2
 
 V=		2.1.13

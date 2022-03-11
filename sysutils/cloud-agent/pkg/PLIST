@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/29 19:01:02 reyk Exp $
 @bin libexec/cloud-agent
 @man man/man8/cloud-agent.8

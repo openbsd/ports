@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/08/31 15:17:58 fcambus Exp $
-
 COMMENT =	collection of CLI tools for ARM devices with Allwinner SoCs
 
 GH_ACCOUNT =	linux-sunxi

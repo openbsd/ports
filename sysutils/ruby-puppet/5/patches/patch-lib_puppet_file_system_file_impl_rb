@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_file_system_file_impl_rb,v 1.1 2021/02/02 20:10:09 sebastia Exp $
-
 file_impl.rb:80: warning: Using the last argument as keyword parameters is deprecated
 
 Index: lib/puppet/file_system/file_impl.rb

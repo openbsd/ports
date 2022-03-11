@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2021/08/29 09:00:35 jasper Exp $
 bin/binwalk
 lib/python${MODPY_VERSION}/site-packages/binwalk/
 lib/python${MODPY_VERSION}/site-packages/binwalk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

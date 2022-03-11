@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2021/03/10 16:00:51 tb Exp $
-
 COMMENT=		forensic toolkit based on TCT
 
 DISTNAME=		sleuthkit-4.10.1

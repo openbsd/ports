@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/10/31 17:14:27 kn Exp $
-
 COMMENT =		minimalistic file browser
 DISTNAME =		noice-0.8
 CATEGORIES =		sysutils

@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/02 21:31:44 ajacoutot Exp $
 @bin bin/simple-mtpfs
 @man man/man1/simple-mtpfs.1

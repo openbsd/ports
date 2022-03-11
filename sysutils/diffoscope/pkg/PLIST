@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.16 2021/10/30 03:59:45 bcallah Exp $
 bin/diffoscope
 lib/python${MODPY_VERSION}/site-packages/diffoscope/
 lib/python${MODPY_VERSION}/site-packages/diffoscope-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

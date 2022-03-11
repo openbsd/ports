@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2020/07/03 21:45:43 sthen Exp $
-
 COMMENT=		capture STDOUT and STDERR
 
 CPAN_AUTHOR=	DAGOLDEN

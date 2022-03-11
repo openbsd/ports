@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2019/07/12 20:49:40 sthen Exp $
-
 BROKEN =	pkg_add fails: problem with symlinks
 
 COMMENT =	GNU system administration tool for networks

@@ -1,5 +1,3 @@
-$OpenBSD: patch-usertable_cpp,v 1.2 2016/04/27 09:51:51 jca Exp $
-
 - clearenv(3) is a GNU extension
 
 --- usertable.cpp.orig	Sat Apr  7 00:19:27 2012

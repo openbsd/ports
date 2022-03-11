@@ -1,5 +1,3 @@
-$OpenBSD: patch-arch_arm_dts_sun50i-h6-pine-h64-model-b_dts,v 1.1 2022/01/15 11:56:50 kevlo Exp $
-
 Copy the device tree file for PINE H64 model B from Linux kernel:
 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/arch/arm64/boot/dts/allwinner/sun50i-h6-pine-h64-model-b.dts?h=v5.14
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.60 2021/12/30 16:38:23 ajacoutot Exp $
-
 COMMENT =		encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION =	0.8.21

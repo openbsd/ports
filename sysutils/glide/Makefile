@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/03/08 13:59:27 sthen Exp $
-
 COMMENT =	package manager for Go
 
 VERSION =	0.13.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/02/02 22:12:13 cwen Exp $
-
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		wm-dockapp; APM/battery monitor

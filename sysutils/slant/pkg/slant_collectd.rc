@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: slant_collectd.rc,v 1.1.1.1 2019/07/02 09:17:53 bentley Exp $
 
 daemon="${TRUEPREFIX}/sbin/slant-collectd"
 

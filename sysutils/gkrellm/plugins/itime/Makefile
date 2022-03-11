@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2017/09/15 15:37:17 naddy Exp $
-
 COMMENT=	GkrellM2 plugin that shows Internet time
 
 V=		1.0.1

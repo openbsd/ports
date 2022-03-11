@@ -1,4 +1,3 @@
-$OpenBSD: patch-libschily_printf_c,v 1.2 2011/12/07 07:56:12 sebastia Exp $
 --- libschily/printf.c.orig	Tue Oct 18 15:16:34 2011
 +++ libschily/printf.c	Tue Oct 18 15:16:44 2011
 @@ -19,7 +19,7 @@

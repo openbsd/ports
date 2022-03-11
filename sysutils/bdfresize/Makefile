@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/14 21:55:22 fcambus Exp $
-
 COMMENT =	tool for resizing BDF format fonts
 
 DISTNAME =	bdfresize-1.5

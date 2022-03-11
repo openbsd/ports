@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:51 sthen Exp $
-
 COMMENT=		pragmatic application deployment automation
 
 DISTNAME=		vlad-2.6.5

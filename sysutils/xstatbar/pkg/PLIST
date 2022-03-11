@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/09 13:55:15 ajacoutot Exp $
 @bin bin/xstatbar
 @man man/man1/xstatbar.1

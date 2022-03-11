@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: restic_rest_server.rc,v 1.2 2019/03/05 13:49:50 abieber Exp $
 
 daemon="${TRUEPREFIX}/bin/restic-rest-server"
 daemon_flags="--path ${VARBASE}/restic"

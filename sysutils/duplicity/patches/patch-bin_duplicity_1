@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_duplicity_1,v 1.11 2021/08/30 19:44:42 ajacoutot Exp $
-
 Index: bin/duplicity.1
 --- bin/duplicity.1.orig
 +++ bin/duplicity.1

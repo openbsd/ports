@@ -1,4 +1,3 @@
-$OpenBSD: patch-doc_config_html,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
 --- doc/config.html.orig	Sat Nov 28 16:18:29 2009
 +++ doc/config.html	Sat Nov 28 16:18:54 2009
 @@ -12,7 +12,7 @@ sometimes using the kernel notification APIs doesn't w

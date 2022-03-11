@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/19 11:00:17 ajacoutot Exp $
 ${P5ARCH}/
 ${P5ARCH}/Sys/
 ${P5ARCH}/Sys/MemInfo.pm

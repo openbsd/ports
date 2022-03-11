@@ -1,5 +1,3 @@
-$OpenBSD: patch-libgrive_src_util_OS_hh,v 1.1 2020/10/09 19:40:13 rsadowski Exp $
-
 Index: libgrive/src/util/OS.hh
 --- libgrive/src/util/OS.hh.orig
 +++ libgrive/src/util/OS.hh

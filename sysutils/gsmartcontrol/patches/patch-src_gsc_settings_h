@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_gsc_settings_h,v 1.2 2015/05/09 15:24:44 ajacoutot Exp $
 --- src/gsc_settings.h.orig	Fri Aug 10 11:18:00 2012
 +++ src/gsc_settings.h	Sat May  9 17:11:09 2015
 @@ -32,7 +32,7 @@ inline void init_default_settings()

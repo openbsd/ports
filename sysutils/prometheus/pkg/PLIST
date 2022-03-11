@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/15 09:18:37 claudio Exp $
 @newgroup _prometheus:799
 @newuser _prometheus:799:_prometheus:daemon:prometheus:/nonexistent:/sbin/nologin
 @sample ${SYSCONFDIR}/prometheus/

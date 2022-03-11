@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/08 10:27:56 fcambus Exp $
-
 COMMENT=	.bin/.cue to .iso CD image converter
 
 DISTNAME=	bchunk-1.2.2

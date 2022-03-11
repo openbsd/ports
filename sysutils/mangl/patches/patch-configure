@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2019/12/21 13:50:12 bcallah Exp $
-
 Need to configure mandoc separately before building.
 
 Index: configure

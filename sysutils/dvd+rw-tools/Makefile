@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:42 sthen Exp $
-
 COMMENT=		mastering tools for DVD+RW/+R/-R/-RW
 
 DISTNAME=		dvd+rw-tools-7.1

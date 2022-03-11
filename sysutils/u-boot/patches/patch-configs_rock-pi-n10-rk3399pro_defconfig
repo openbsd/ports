@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_rock-pi-n10-rk3399pro_defconfig,v 1.1 2021/01/15 00:01:16 kurt Exp $
-
 Index: configs/rock-pi-n10-rk3399pro_defconfig
 --- configs/rock-pi-n10-rk3399pro_defconfig.orig
 +++ configs/rock-pi-n10-rk3399pro_defconfig

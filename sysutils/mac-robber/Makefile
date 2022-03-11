@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT=		forensic tool that collects MAC times from files
 
 VERSION=		1.02

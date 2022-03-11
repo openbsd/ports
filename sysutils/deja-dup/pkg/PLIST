@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.33 2022/01/17 09:13:34 ajacoutot Exp $
 @bin bin/deja-dup
 lib/deja-dup/
 @so lib/deja-dup/libdeja.so

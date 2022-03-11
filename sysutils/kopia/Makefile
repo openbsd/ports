@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/03/07 17:47:06 denis Exp $
-
 COMMENT =	simple tool for managing encrypted backups in the cloud
 
 V =		0.10.6

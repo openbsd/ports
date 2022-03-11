@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/17 14:39:43 danj Exp $
-
 COMMENT=	signal or reprioritize specified processes
 
 VERSION=		4.1

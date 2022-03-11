@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2019/07/12 20:49:39 sthen Exp $
-
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
 COMMENT-x11 =		gapcmon - GUI for apcupsd

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tests_testlib_lua,v 1.2 2017/12/27 13:21:50 awolk Exp $
-
 Do not color test output as it messes up the terminal
 
 Index: tests/testlib.lua

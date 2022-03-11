@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/08/30 10:57:48 sthen Exp $
-
 COMMENT =		rc file (dotfile) management
 
 DISTNAME =		rcm-1.3.4

@@ -1,5 +1,3 @@
-$OpenBSD: patch-_promu_yml,v 1.2 2021/02/15 09:18:37 claudio Exp $
-
 Don't include user and hostname into build.
 
 Index: .promu.yml

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2021/02/27 21:39:03 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*

@@ -1,4 +1,3 @@
-$OpenBSD: patch-inotify-cxx_h,v 1.2 2017/04/24 01:10:37 jca Exp $
 --- inotify-cxx.h.orig	Sat Apr  7 00:19:27 2012
 +++ inotify-cxx.h	Mon Apr 24 03:08:02 2017
 @@ -27,6 +27,7 @@

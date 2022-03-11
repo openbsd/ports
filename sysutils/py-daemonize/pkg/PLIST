@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/10/29 15:38:50 sthen Exp $
 @pkgpath sysutils/py-daemonize
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}daemonize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/daemonize-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

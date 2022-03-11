@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2022/01/17 15:32:53 kmos Exp $
-
 COMMENT =		window switcher, run dialog and dmenu replacement
 
 V =			1.7.0

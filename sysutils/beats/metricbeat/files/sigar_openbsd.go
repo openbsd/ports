@@ -1,4 +1,3 @@
-// $OpenBSD: sigar_openbsd.go,v 1.1 2021/01/30 10:03:41 pvk Exp $
 // Copyright (c) 2016 Jasper Lievisse Adriaanse <j@jasper.la>.
 
 // +build openbsd

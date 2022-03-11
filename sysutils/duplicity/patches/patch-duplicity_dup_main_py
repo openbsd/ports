@@ -1,5 +1,3 @@
-$OpenBSD: patch-duplicity_dup_main_py,v 1.4 2021/12/30 16:38:23 ajacoutot Exp $
-
 Index: duplicity/dup_main.py
 --- duplicity/dup_main.py.orig
 +++ duplicity/dup_main.py

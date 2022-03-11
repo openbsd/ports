@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =		JFFS2 filesystem extraction tool
 
 MODPY_EGG_VERSION =	0.2

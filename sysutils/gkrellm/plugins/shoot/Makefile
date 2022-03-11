@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2017/09/15 15:37:18 naddy Exp $
-
 COMMENT=	snapshot and background plugin for Gkrellm2
 
 V=		0.4.4

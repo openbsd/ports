@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/17 15:39:42 jasper Exp $
 @bin bin/curlftpfs
 @man man/man1/curlftpfs.1

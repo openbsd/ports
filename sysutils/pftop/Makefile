@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/17 14:39:43 danj Exp $
-
 # XXX should be fixed to use the new queuing subsystem
 
 COMMENT=	curses-based real time state and rule display for pf

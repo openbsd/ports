@@ -1,4 +1,3 @@
-$OpenBSD: patch-pftop_c,v 1.18 2017/04/24 01:46:06 jca Exp $
 --- pftop.c.orig	Wed Nov  7 07:36:46 2007
 +++ pftop.c	Mon Apr 24 03:44:14 2017
 @@ -55,6 +55,7 @@

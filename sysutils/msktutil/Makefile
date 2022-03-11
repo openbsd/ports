@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/03/03 13:37:54 sthen Exp $
-
 COMMENT=	tool for ActiveDirectory interoperability
 
 GH_ACCOUNT=	msktutil

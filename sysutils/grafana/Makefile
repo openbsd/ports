@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/10/12 14:22:16 landry Exp $
-
 COMMENT =	monitoring and metric analytics dashboards
 
 V =		7.5.11

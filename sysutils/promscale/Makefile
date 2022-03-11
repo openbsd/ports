@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/08 12:34:33 denis Exp $
-
 COMMENT =	observability backend for metrics and traces powered by SQL
 
 V =		0.7.1

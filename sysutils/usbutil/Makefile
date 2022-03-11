@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/01/29 11:45:51 sthen Exp $
-
 COMMENT=	USB developer utilities
 
 DISTNAME=	usbutil-0.5

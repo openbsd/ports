@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/12 06:49:36 jasper Exp $
 @bin bin/cl
 bin/cl-launch
 share/common-lisp/

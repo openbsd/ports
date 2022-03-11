@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/03/08 13:59:26 sthen Exp $
-
 COMMENT =	lightweight shipper for real-time network analytics
 REVISION =	0
 

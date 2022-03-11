@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/12/19 05:00:22 daniel Exp $
-
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.2.3

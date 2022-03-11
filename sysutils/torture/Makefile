@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 21:07:46 sthen Exp $
-
 COMMENT =		set of kernel torture tools
 
 DISTNAME =		torture-1.1

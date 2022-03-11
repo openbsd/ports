@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.71 2022/03/02 08:41:40 ajacoutot Exp $
-
 # XXX no i386 equivalent to mem_openbsd_amd64.go
 ONLY_FOR_ARCHS=		amd64
 

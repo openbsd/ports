@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/17 09:07:22 bentley Exp $
 @bin bin/colortree
 @man man/man1/colortree.1

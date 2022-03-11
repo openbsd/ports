@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/02/07 14:24:02 benoit Exp $
-
 COMMENT=	perl-based deployment and configuration management
 
 CPAN_AUTHOR=	FERKI

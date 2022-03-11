@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.17 2022/01/15 11:43:27 kevlo Exp $
-
 PKG_ARCH=		*
 
 COMMENT=	ARM Trusted Firmware

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2021/03/07 17:54:50 landry Exp $
 @newgroup _loki:848
 @newuser _loki:848:848:daemon:Loki Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/loki/

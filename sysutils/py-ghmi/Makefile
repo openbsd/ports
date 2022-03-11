@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.46 2021/11/02 00:02:33 sthen Exp $
-
 COMMENT =		pure python IPMI protocol library
 
 MODPY_EGG_VERSION =	1.5.29

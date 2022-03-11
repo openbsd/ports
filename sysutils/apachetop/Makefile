@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/02/23 16:37:54 gonzalo Exp $
-
 COMMENT =		top-like monitor for Apache
 
 V =			0.19.7

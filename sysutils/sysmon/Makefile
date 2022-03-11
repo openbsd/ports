@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT =	lightweight network monitoring tool
 DISTNAME =	sysmon-0.93
 CATEGORIES =	sysutils

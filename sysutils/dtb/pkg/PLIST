@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.23 2021/10/05 10:42:34 jsg Exp $
 share/dtb/
 share/dtb/arm/
 share/dtb/arm/aks-cdu.dtb

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_gettext_config_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
-
 Tell Puppet where to find locales
 
 Index: lib/puppet/gettext/config.rb

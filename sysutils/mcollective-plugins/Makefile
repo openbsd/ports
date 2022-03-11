@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/01/23 12:48:37 kn Exp $
-
 SUBDIR =
 SUBDIR += filemgr-agent
 SUBDIR += nrpe-agent

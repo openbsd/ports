@@ -1,5 +1,3 @@
-$OpenBSD: patch-drivers_pci_pcie_brcmstb_c,v 1.1 2021/10/21 12:58:29 jsg Exp $
-
 revert 'pci: brcmstb: Cleanup controller state before handover'
 85f3fddbcc2e8282f1c26dcef4684f59490d47ba
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =	library and tools to access the ESE and EDB format
 
 VERSION = 	20191220

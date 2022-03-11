@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/20 21:26:36 merdely Exp $
 bin/rpl
 @man man/man1/rpl.1

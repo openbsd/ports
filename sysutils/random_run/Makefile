@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/11 12:03:58 espie Exp $
-
 COMMENT =	run command with randomized parameters
 CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>

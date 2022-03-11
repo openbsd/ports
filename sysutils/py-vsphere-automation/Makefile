@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:34 sthen Exp $
-
 COMMENT =		VMware vSphere Automation SDK for Python
 
 MODPY_EGG_VERSION =	7.0.3.0

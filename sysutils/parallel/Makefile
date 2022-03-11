@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/06/14 18:53:00 tj Exp $
-
 COMMENT =		execute jobs in parallel
 
 DISTNAME =		parallel-20210522

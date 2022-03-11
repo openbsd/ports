@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/05/26 18:59:19 jturner Exp $
 bin/sslmate
 libexec/sslmate/
 libexec/sslmate/approval/

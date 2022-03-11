@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:44 sthen Exp $
-
 COMMENT =	programs providing a simple interface to inotify
 DISTNAME =	inotify-tools-3.14pl0
 CATEGORIES =	sysutils

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: puppet.rc,v 1.4 2021/03/16 18:43:40 kn Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet agent"
 

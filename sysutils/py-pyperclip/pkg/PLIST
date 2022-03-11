@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2022/01/26 08:54:08 op Exp $
 lib/python${MODPY_VERSION}/site-packages/pyperclip/
 lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyperclip-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

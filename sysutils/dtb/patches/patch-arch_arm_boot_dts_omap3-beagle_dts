@@ -1,4 +1,3 @@
-$OpenBSD: patch-arch_arm_boot_dts_omap3-beagle_dts,v 1.2 2020/04/12 10:59:07 jsg Exp $
 Index: arch/arm/boot/dts/omap3-beagle.dts
 --- arch/arm/boot/dts/omap3-beagle.dts.orig
 +++ arch/arm/boot/dts/omap3-beagle.dts

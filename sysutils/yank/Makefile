@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/08/20 08:47:41 anton Exp $
-
 COMMENT =	yank terminal output to clipboard
 
 V =		1.2.0

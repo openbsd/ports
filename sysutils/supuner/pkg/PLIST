@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/04 20:04:54 edd Exp $
 bin/supuner
 @man man/man1/supuner.1

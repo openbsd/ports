@@ -1,5 +1,3 @@
-$OpenBSD: patch-salt_modules_vmctl_py,v 1.4 2021/09/14 07:23:12 robert Exp $
-
 Fix order of argument for vmctl(8)
 https://github.com/saltstack/salt/pull/57984
 

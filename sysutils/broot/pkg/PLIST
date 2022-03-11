@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/06 07:59:47 landry Exp $
 @bin bin/broot

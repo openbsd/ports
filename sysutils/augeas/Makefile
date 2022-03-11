@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.48 2022/03/10 12:03:33 kn Exp $
-
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.12.0

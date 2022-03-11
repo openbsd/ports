@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/25 18:52:55 sdk Exp $
-
 COMMENT =		the missing terminal file browser for X
 
 V =			4.4

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2020/01/15 09:56:07 gonzalo Exp $
-
 COMMENT =		frontend to the popular Tarsnap backup service
 
 GH_ACCOUNT =		Tarsnap

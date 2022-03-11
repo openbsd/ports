@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.91 2022/02/19 09:08:42 ajacoutot Exp $
-
 COMMENT=		framework for granting privileged operations to users
 
 DISTNAME=		polkit-0.120

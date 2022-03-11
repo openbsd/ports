@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.73 2021/11/13 09:55:42 steven Exp $
-
 COMMENT=	log management solution
 
 V =		3.34.1

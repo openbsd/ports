@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/12/15 13:51:08 ajacoutot Exp $
 @bin bin/envconsul

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: rundeck.rc,v 1.5 2021/11/06 10:38:41 ajacoutot Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c rundeck)
 daemon_flags="-XX:MaxPermSize=256m -Xmx1024m -Djava.io.tmpdir=/var/cache/rundeck -jar ${RDECK_BASE}/rundeck-launcher.jar -b ${RDECK_BASE}"

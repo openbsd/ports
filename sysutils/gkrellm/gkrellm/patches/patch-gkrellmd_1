@@ -1,4 +1,3 @@
-$OpenBSD: patch-gkrellmd_1,v 1.5 2011/03/02 06:59:55 ajacoutot Exp $
 --- gkrellmd.1.orig	Tue Sep 14 18:55:49 2010
 +++ gkrellmd.1	Mon Feb 14 07:46:00 2011
 @@ -1,4 +1,4 @@

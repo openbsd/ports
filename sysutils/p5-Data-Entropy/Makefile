@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/28 15:55:16 tracey Exp $
-
 COMMENT =	entropy (randomness) management
 
 DISTNAME =	Data-Entropy-0.007

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2020/10/04 14:34:19 bket Exp $
-
 COMMENT =	simple and fast file manager
 
 GH_ACCOUNT =	dylanaraps

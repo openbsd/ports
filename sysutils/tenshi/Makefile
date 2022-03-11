@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/09 07:39:08 ajacoutot Exp $
-
 COMMENT =	log monitoring program to watch and report on log files
 
 VERSION =	0.17

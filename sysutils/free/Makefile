@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/23 14:11:17 bcallah Exp $
-
 COMMENT =	display free and used memory in the system
 CATEGORIES =	sysutils
 

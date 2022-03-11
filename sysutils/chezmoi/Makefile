@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/08 18:14:58 paco Exp $
-
 COMMENT =		dotfiles manager across multiple diverse machines
 
 MODGO_MODNAME =		github.com/twpayne/chezmoi/v2

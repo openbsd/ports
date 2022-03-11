@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1 2017/04/24 01:22:48 jca Exp $
 --- src/Makefile.am.orig	Mon Apr 24 03:20:56 2017
 +++ src/Makefile.am	Mon Apr 24 03:21:02 2017
 @@ -2,7 +2,7 @@ bin_PROGRAMS = inotifywait inotifywatch

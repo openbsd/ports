@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure_ac,v 1.1 2019/06/12 21:13:59 naddy Exp $
-
 Move config.h into src subdirectory to keep C++ #include <version>
 from picking up an unrelated file by way of -I$(top_srcdir).
 

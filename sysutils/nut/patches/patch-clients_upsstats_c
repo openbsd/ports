@@ -1,4 +1,3 @@
-$OpenBSD: patch-clients_upsstats_c,v 1.8 2010/03/31 22:11:11 sthen Exp $
 --- clients/upsstats.c.orig	Thu Feb 11 21:43:13 2010
 +++ clients/upsstats.c	Sat Mar 20 23:18:11 2010
 @@ -844,7 +844,7 @@ static void display_template(const char *tfn)

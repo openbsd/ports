@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2015/06/26 17:10:14 ajacoutot Exp $
 @bin bin/mac-robber
 share/doc/mac-robber/
 share/doc/mac-robber/README

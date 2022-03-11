@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/06/05 12:34:06 jasper Exp $
-
 COMMENT=		uniform frontend to running Common Lisp code from the shell
 
 DISTNAME=		cl-launch-4.1.3

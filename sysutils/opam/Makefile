@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel

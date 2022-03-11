@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2022/02/10 15:29:12 ajacoutot Exp $
-
 COMMENT=		simple encrypted backup tool for GNOME
 
 GNOME_VERSION=		43.2

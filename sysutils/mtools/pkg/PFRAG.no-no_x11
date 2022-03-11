@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2013/11/06 15:06:53 sthen Exp $
 @bin bin/floppyd
 @bin bin/floppyd_installtest
 @man man/man1/floppyd.1

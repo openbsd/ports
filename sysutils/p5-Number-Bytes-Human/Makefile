@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/28 15:56:29 tracey Exp $
-
 COMMENT =	convert byte count to human readable format
 
 DISTNAME =	Number-Bytes-Human-0.11

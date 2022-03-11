@@ -1,4 +1,3 @@
-$OpenBSD: patch-default-rsync_lua,v 1.2 2017/12/27 13:21:50 awolk Exp $
 Index: default-rsync.lua
 --- default-rsync.lua.orig
 +++ default-rsync.lua

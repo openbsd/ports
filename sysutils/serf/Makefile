@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2021/11/06 10:38:41 ajacoutot Exp $
-
 # try removing with next update
 BROKEN-aarch64= 	looks like the vendored golang.org/x/sys/unix is too old for aarch64
 

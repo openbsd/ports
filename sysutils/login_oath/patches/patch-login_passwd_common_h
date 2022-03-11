@@ -1,4 +1,3 @@
-$OpenBSD: patch-login_passwd_common_h,v 1.1 2015/11/19 14:58:50 sthen Exp $
 --- login_passwd/common.h.orig	Thu Nov 19 14:35:15 2015
 +++ login_passwd/common.h	Thu Nov 19 14:35:21 2015
 @@ -30,7 +30,6 @@

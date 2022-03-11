@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: alertmanager.rc,v 1.1.1.1 2022/02/16 18:26:58 denis Exp $
 
 daemon="${TRUEPREFIX}/bin/alertmanager"
 daemon_flags="--config.file ${SYSCONFDIR}/alertmanager/alertmanager.yml"

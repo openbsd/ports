@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:39 sthen Exp $
-
 COMMENT=		APC SmartUPS daemon
 
 DISTNAME=		apcd-0.2

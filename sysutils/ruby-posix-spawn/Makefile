@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:50 sthen Exp $
-
 COMMENT=	fast process spawning
 
 DISTNAME=	posix-spawn-0.3.13

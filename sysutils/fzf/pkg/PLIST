@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/04/07 08:32:50 paco Exp $
 @bin bin/fzf
 bin/fzf-tmux
 @man man/man1/fzf-tmux.1

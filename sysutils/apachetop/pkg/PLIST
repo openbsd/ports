@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/17 11:15:29 landry Exp $
 @bin bin/apachetop
 @man man/man1/apachetop.1

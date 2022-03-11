@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:42 sthen Exp $
-
 COMMENT =		exFAT file system through FUSE
 
 V =			1.2.8

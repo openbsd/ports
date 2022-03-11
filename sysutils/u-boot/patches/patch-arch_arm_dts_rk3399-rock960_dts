@@ -1,5 +1,3 @@
-$OpenBSD: patch-arch_arm_dts_rk3399-rock960_dts,v 1.1 2020/02/27 14:45:50 kurt Exp $
-
 Index: arch/arm/dts/rk3399-rock960.dts
 --- arch/arm/dts/rk3399-rock960.dts.orig
 +++ arch/arm/dts/rk3399-rock960.dts

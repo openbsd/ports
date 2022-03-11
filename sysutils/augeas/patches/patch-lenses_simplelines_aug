@@ -1,5 +1,3 @@
-$OpenBSD: patch-lenses_simplelines_aug,v 1.5 2016/05/14 12:52:49 jasper Exp $
-
 - rc.conf* are not shell scripts anymore.
 
 --- lenses/simplelines.aug.orig	Wed May  4 01:02:57 2016

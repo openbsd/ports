@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:40 sthen Exp $
-
 COMMENT=		check shell scripts for bash-specific constructs
 
 V=			2.0.0.2

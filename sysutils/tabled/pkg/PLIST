@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/06/23 22:50:29 naddy Exp $
 @newgroup _tabled:582
 @newuser _tabled:582:582:daemon:tabled:/var/empty:/sbin/nologin
 @man man/man5/tabled.conf.5

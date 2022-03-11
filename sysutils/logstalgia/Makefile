@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/06/26 05:30:21 rsadowski Exp $
-
 COMMENT =	website access log visualization
 
 DISTNAME =	logstalgia-1.1.2

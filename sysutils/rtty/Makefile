@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:50 sthen Exp $
-
 COMMENT=	multiuser tip/cu replacement with logging
 
 DISTNAME=       rtty-4.0

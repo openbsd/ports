@@ -1,4 +1,3 @@
-$OpenBSD: patch-clients_upsset_c,v 1.8 2009/04/03 15:40:12 sthen Exp $
 --- clients/upsset.c.orig	Tue Feb 17 09:20:43 2009
 +++ clients/upsset.c	Wed Mar 18 21:27:43 2009
 @@ -192,7 +192,7 @@ static void do_pickups(const char *currfunc)

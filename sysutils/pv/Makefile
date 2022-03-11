@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:49 sthen Exp $
-
 COMMENT =		monitor the progress of data through a pipeline
 
 DISTNAME =		pv-1.6.6

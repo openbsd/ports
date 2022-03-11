@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_firefly-rk3399_defconfig,v 1.8 2021/04/23 23:56:11 jsg Exp $
-
 Index: configs/firefly-rk3399_defconfig
 --- configs/firefly-rk3399_defconfig.orig
 +++ configs/firefly-rk3399_defconfig

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/14 00:39:39 naddy Exp $
-
 COMMENT=	log out idle users and those hogging resources
 
 DISTNAME=	idled-1.16

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/03/10 12:03:36 kn Exp $
-
 COMMENT=	provider bindings for Augeas
 
 DISTNAME=	ruby-augeas-0.5.0

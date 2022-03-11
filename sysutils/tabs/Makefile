@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT =	utility to set terminal tabs
 DISTNAME =	tabs-5.2.1
 CATEGORIES =	sysutils

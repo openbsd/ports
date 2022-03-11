@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_rock64-rk3328_defconfig,v 1.6 2021/01/14 00:56:54 jsg Exp $
-
 Index: configs/rock64-rk3328_defconfig
 --- configs/rock64-rk3328_defconfig.orig
 +++ configs/rock64-rk3328_defconfig

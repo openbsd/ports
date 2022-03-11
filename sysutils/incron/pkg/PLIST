@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2016/01/23 16:06:05 landry Exp $
 @extraunexec rm -rf /var/spool/incron/
 @mode 2555
 @group crontab

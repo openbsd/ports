@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:41 sthen Exp $
-
 COMMENT=	check and label FAT file systems
 
 V=		4.1

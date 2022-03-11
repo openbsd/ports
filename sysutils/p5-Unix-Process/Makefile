@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/01/18 13:19:36 robert Exp $
-
 COMMENT =	extension to get pid info from /bin/ps
 
 DISTNAME =	Unix-Process-1.3101

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/05/14 20:58:26 jcs Exp $
-
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	vmware userland helper for X

@@ -1,6 +1,4 @@
 /*
- * $OpenBSD: 10-openbsd-consolekit.rules,v 1.2 2019/03/29 10:43:52 ajacoutot Exp $
- *
  * These rules try to match OpenBSD default behavior.
  * We enforce "local" and "active" because the same actions can be done with
  * regular UNIX commands, so we assume this is for Desktop users only.

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_blkid_getsize_c,v 1.4 2021/05/25 19:44:28 sthen Exp $
-
 Index: lib/blkid/getsize.c
 --- lib/blkid/getsize.c.orig
 +++ lib/blkid/getsize.c

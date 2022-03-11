@@ -1,5 +1,3 @@
-$OpenBSD: patch-salt_grains_core_py,v 1.9 2021/09/14 07:23:12 robert Exp $
-
 - Unbreak minion without swap configured
 - Fix swap_total calculation on OpenBSD
 

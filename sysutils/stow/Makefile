@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2019/08/21 10:39:29 sthen Exp $
-
 COMMENT=	manages software package installations with symlinks
 
 DISTNAME=	stow-2.3.1

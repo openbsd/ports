@@ -1,4 +1,3 @@
-$OpenBSD: patch-log_c,v 1.1 2010/05/24 22:03:21 espie Exp $
 --- log.c.orig	Fri Aug  3 23:05:05 2007
 +++ log.c	Tue May 25 00:02:36 2010
 @@ -32,6 +32,7 @@

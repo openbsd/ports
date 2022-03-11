@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_gettext_config_rb,v 1.1.1.1 2017/11/20 12:45:17 sebastia Exp $
-
 Tell Puppet where to find for locales
 
 

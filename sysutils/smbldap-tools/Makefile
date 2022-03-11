@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT=	tools for managing samba ldap
 
 DISTNAME=	smbldap-tools-0.9.2a

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT =		test operating environment software robustness
 
 # miod's modified version from cvs

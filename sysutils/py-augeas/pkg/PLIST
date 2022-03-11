@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2020/10/08 23:12:04 kn Exp $
 @pkgpath sysutils/py-augeas
 @conflict py-augeas-*
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}augeas.${MODPY_PYC_MAGIC_TAG}pyc

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/08/01 11:30:37 sthen Exp $
-
 COMMENT=	authentication provider for OATH one-time passwords
 
 DISTNAME=	login_oath-0.8

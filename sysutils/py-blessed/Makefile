@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/11/15 13:28:42 sthen Exp $
-
 COMMENT =	easy, practical library for making terminal apps
 
 MODPY_EGG_VERSION =	1.19.0

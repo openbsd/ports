@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.115 2022/03/11 07:44:17 ajacoutot Exp $
-
 # i386: pty_openbsd.go:24:10: undefined: ptmget
 ONLY_FOR_ARCHS=		amd64
 

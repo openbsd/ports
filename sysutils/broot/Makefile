@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/09 12:29:02 rsadowski Exp $
-
 COMMENT =		new way to see and navigate directory trees
 
 GH_ACCOUNT =		Canop

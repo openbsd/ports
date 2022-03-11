@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2016/10/11 05:53:56 jasper Exp $
 @newgroup _rundeck:780
 @newuser _rundeck:780:_rundeck:daemon:RunDeck user:/nonexistent:/sbin/nologin
 @mode 0750

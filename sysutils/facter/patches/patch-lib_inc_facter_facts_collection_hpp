@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_inc_facter_facts_collection_hpp,v 1.2 2020/05/26 21:42:17 sebastia Exp $
-
 Index: lib/inc/facter/facts/collection.hpp
 --- lib/inc/facter/facts/collection.hpp.orig
 +++ lib/inc/facter/facts/collection.hpp

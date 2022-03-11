@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 13:51:11 sthen Exp $
-
 COMMENT =		tools to create and extract Squashfs filesystems
 
 GH_TAGNAME =		4.4-git.1

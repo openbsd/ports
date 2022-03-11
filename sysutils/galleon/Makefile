@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/05/09 12:27:11 ian Exp $
-
 COMMENT = tool to manage JBoss Wildfly installations
 
 V =			4.2.8

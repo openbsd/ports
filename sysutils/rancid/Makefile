@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/04/24 15:15:37 pvk Exp $
-
 COMMENT =	Really Awesome New Cisco confIg Differ
 
 DISTNAME =	rancid-3.13

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.13 2022/01/17 08:07:16 ajacoutot Exp $
 bin/remotebox
 share/applications/remotebox.desktop
 share/pixmaps/

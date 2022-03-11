@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_logstash_lib_sh,v 1.4 2018/09/25 09:00:06 pvk Exp $
-
 Index: bin/logstash.lib.sh
 --- bin/logstash.lib.sh.orig
 +++ bin/logstash.lib.sh

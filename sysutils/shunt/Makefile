@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:51 sthen Exp $
-
 COMMENT=	tools to extend pipe capabilities
 
 DISTNAME=	shunt-1.7.3

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT=	cal that can use color to display calendar
 
 DISTNAME=	mencal-3.0

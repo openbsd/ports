@@ -1,5 +1,3 @@
-$OpenBSD: patch-common_cpu_h,v 1.1 2021/08/29 08:55:15 jasper Exp $
-
 Fix CP_STATES definition
 
 Index: common/cpu.h

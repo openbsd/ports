@@ -1,5 +1,3 @@
-$OpenBSD: patch-app_RestoreFileTester_vala,v 1.1 2022/01/17 09:13:34 ajacoutot Exp $
-
 No euidaccess on OpenBSD
 
 Index: app/RestoreFileTester.vala

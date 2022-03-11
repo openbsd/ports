@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT=	create tcp socket and connect to stdin/out
 
 DISTNAME=	socket-1.2

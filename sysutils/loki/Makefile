@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/24 09:00:23 landry Exp $
-
 COMMENT =	like Prometheus, but for logs
 
 GH_ACCOUNT =	grafana

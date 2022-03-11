@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2018/06/29 22:16:21 espie Exp $
 bin/tkdvd
 share/icons/hicolor/32x32/apps/tkdvd-2-32.png
 share/icons/hicolor/32x32/apps/tkdvd-32.png

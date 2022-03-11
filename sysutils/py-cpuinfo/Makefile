@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/26 18:48:32 sthen Exp $
-
 COMMENT =	get CPU info with pure Python
 
 MODPY_EGG_VERSION =	8.0.0

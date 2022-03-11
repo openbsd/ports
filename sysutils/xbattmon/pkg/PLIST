@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/11/13 17:24:12 steven Exp $
 @bin bin/xbattmon
 @man man/man1/xbattmon.1

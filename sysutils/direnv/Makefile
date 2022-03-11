@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/03/08 13:59:27 sthen Exp $
-
 COMMENT =		tool for managing environment based on current directory
 
 GH_ACCOUNT =		direnv

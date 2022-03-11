@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
 MODPY_EGG_VERSION =	2.6.0

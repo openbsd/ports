@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/06 08:24:03 ajacoutot Exp $
-
 COMMENT=		fingerprint scanning functionality over D-Bus
 
 DISTNAME=		fprintd-0.8.1

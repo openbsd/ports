@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/01/20 20:19:40 sturm Exp $
 lib/gkrellm2/
 lib/gkrellm2/plugins/
 lib/gkrellm2/plugins/gkrellmoon.so

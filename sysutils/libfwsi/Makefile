@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =	library to access the Windows Shell Item format
 
 VERSION = 	20191221

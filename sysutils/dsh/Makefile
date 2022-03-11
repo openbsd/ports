@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:42 sthen Exp $
-
 COMMENT=	dancers shell or distributed shell
 
 DISTNAME =	dsh-0.25.10

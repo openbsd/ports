@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/10/17 12:31:19 pvk Exp $
 bin/vapi-server
 lib/python${MODPY_VERSION}/site-packages/com/
 lib/python${MODPY_VERSION}/site-packages/com/__init__.py

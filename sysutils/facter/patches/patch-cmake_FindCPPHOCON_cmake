@@ -1,4 +1,3 @@
-$OpenBSD: patch-cmake_FindCPPHOCON_cmake,v 1.1 2017/05/30 18:01:27 zhuk Exp $
 Use library name stem, as intended.
 
 Index: cmake/FindCPPHOCON.cmake

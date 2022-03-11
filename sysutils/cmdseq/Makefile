@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2022/01/24 11:21:28 op Exp $
-
 COMMENT =		execute interleaved sequences of commands
 
 DISTNAME =		cmdseq-0.2

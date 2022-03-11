@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_reference_configuration_rb,v 1.1.1.1 2020/05/18 08:59:00 kn Exp $
-
 Update the default directory locations
 
 Index: lib/puppet/reference/configuration.rb

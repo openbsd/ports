@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.62 2021/02/12 20:05:58 sthen Exp $
-
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor

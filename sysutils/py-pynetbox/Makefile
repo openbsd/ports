@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2021/11/02 00:02:34 sthen Exp $
-
 COMMENT =		NetBox API client library
 
 MODPY_EGG_VERSION =	6.1.3

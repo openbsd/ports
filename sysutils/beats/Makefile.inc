@@ -1,4 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.17 2021/05/15 17:05:20 daniel Exp $
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
 MODGO_MODNAME =		github.com/elastic/beats/v7

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: riemann.rc,v 1.5 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/riemann"
 daemon_user="_riemann"

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/20 16:44:27 naddy Exp $
-
 COMMENT-main =		system monitoring tool
 COMMENT-nagios =	nagios plugin for resmon
 

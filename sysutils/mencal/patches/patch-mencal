@@ -1,4 +1,3 @@
-$OpenBSD: patch-mencal,v 1.4 2015/11/19 19:00:07 jasper Exp $
 --- mencal.orig	Sun Oct 27 15:19:20 2013
 +++ mencal	Thu Nov 19 19:58:00 2015
 @@ -331,14 +331,6 @@ package Main;

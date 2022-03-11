@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:45:44 sthen Exp $
-
 COMMENT =		simple and dumb file system watcher
 
 MODULES =		cpan

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/20 15:17:42 jturner Exp $
-
 COMMENT =	minimal remote system monitor
 
 DISTNAME =	slant-0.0.24

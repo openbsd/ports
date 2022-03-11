@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2021/02/07 14:24:02 benoit Exp $
 bin/rex
 bin/rexify
 ${P5SITE}/Rex/

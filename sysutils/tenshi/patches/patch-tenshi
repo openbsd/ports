@@ -1,5 +1,3 @@
-$OpenBSD: patch-tenshi,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
-
 https://github.com/inversepath/tenshi/pull/10
 
 Index: tenshi

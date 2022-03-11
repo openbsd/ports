@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:49 sthen Exp $
-
 COMMENT=	draws a graph of CPU usage of a certain process
 
 DISTNAME=	pscpug035

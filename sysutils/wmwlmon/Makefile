@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/02/25 22:21:56 tb Exp $
-
 COMMENT=		wm-dockapp; wireless interface monitor
 
 DISTNAME=		wmwlmon-1.0

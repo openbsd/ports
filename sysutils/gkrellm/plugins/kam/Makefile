@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2015/06/26 18:08:40 ajacoutot Exp $
-
 COMMENT=	webcam plugin for GkrellM2
 
 V=		2.0.0

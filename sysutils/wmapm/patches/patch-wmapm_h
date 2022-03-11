@@ -1,4 +1,3 @@
-$OpenBSD: patch-wmapm_h,v 1.1.1.1 2001/01/11 00:13:12 naddy Exp $
 --- wmapm/wmapm.h.orig	Tue Jan 11 16:53:43 2000
 +++ wmapm/wmapm.h	Wed Jan 10 12:35:40 2001
 @@ -27,12 +27,10 @@

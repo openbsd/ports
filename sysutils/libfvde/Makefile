@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =	library and tools to access FileVault Drive Encryption
 
 VERSION = 	20191221

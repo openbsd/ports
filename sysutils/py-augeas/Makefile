@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/11/02 00:02:32 sthen Exp $
-
 COMMENT =		Python bindings for Augeas
 
 MODPY_EGG_VERSION = 	1.0.3

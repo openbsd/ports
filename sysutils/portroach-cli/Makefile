@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/03/10 12:03:34 kn Exp $
-
 COMMENT =		query portroach(1)
 CATEGORIES =		sysutils
 DISTFILES =		# empty

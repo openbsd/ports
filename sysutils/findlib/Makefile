@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.42 2021/12/10 04:11:00 daniel Exp $
-
 COMMENT=	OCaml package manager
 CATEGORIES=	sysutils
 DISTNAME=	findlib-1.8.1

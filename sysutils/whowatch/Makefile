@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:54 sthen Exp $
-
 COMMENT=	interactive utility that displays info about online users
 
 DISTNAME=	whowatch-1.4

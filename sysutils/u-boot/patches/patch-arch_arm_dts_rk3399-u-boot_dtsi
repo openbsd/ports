@@ -1,5 +1,3 @@
-$OpenBSD: patch-arch_arm_dts_rk3399-u-boot_dtsi,v 1.1 2021/12/17 23:00:41 jsg Exp $
-
 dts: rockchip: rk3399: enable emmc phy for spl
 http://patchwork.ozlabs.org/project/uboot/patch/20211101044347.17822-1-yifeng.zhao@rock-chips.com/
 

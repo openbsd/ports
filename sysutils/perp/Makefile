@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/11 16:52:27 sthen Exp $
-
 COMMENT=        process supervisor & service framework for unix
 V=              2.07
 DISTNAME=       perp-${V}

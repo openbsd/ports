@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.16 2021/09/02 12:59:19 sthen Exp $
-
 COMMENT=	utility to test for memory faults
 
 DISTNAME=	memtester-4.5.1

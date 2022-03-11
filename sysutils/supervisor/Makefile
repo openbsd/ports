@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:35 sthen Exp $
-
 COMMENT=		system to monitor and control processes
 
 MODPY_EGG_VERSION =	4.2.1

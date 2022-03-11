@@ -1,4 +1,3 @@
-$OpenBSD: patch-cgi-bin_BackupPC_Admin,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
 Use patch from http://users.k12system.com/mrwizard/backuppc-3.2.0-fastcgi.patch
 to allow fcgi workflow
 --- cgi-bin/BackupPC_Admin.orig	Sat Sep 17 17:22:41 2011

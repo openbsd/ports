@@ -1,5 +1,3 @@
-$OpenBSD: patch-tenshi_conf,v 1.1.1.1 2018/11/12 00:06:02 bluhm Exp $
-
 Index: tenshi.conf
 --- tenshi.conf.orig
 +++ tenshi.conf

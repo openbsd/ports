@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/10/16 13:58:46 gonzalo Exp $
 @bin bin/duf

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: consul_template.rc,v 1.5 2021/11/06 10:38:40 ajacoutot Exp $
 
 daemon="${PREFIX}/bin/consul-template"
 daemon_flags="-config ${SYSCONFDIR}/consul-template.d/default.conf"

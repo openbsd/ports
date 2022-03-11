@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/06/27 04:59:13 ckuethe Exp $
 @bin bin/memtester
 @man man/man8/memtester.8

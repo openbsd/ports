@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_util_run_mode_rb,v 1.2 2020/11/05 20:27:59 kn Exp $
-
 Update the default directory locations
 
 

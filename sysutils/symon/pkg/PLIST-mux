@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-mux,v 1.15 2014/10/30 17:04:22 sthen Exp $
 @conflict symon-<2.87
 @bin libexec/symux
 @man man/man8/symux.8

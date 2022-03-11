@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.35 2019/07/13 10:59:27 sthen Exp $
-
 CATEGORIES +=		sysutils
 
 # GPLv2+

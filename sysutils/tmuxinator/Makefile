@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/09/02 14:59:45 jeremy Exp $
-
 COMMENT =		create and manage complex tmux sessions easily
 
 DISTNAME =		tmuxinator-1.1.3

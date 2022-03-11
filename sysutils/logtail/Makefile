@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/12/30 16:37:47 ajacoutot Exp $
-
 COMMENT=	display new entries in system logfiles since last run
 
 V=		1.3.23

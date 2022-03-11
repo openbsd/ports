@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile,v 1.2 2019/12/21 18:10:33 bcallah Exp $
-
 Remove hardcoded optimization flags; add needed include and lib flags.
 
 Index: Makefile

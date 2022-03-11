@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/03/08 02:02:31 bcallah Exp $
 @bin bin/bfs
 @man man/man1/bfs.1
 share/bash-completion/

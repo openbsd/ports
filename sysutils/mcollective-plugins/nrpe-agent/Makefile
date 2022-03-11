@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/06 11:26:08 jasper Exp $
-
 COMMENT=		MCollective agent to query NRPE
 
 GH_ACCOUNT=		puppetlabs

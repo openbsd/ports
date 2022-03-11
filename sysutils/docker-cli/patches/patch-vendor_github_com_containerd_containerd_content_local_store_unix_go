@@ -1,5 +1,3 @@
-$OpenBSD: patch-vendor_github_com_containerd_containerd_content_local_store_unix_go,v 1.2 2021/01/04 14:15:20 solene Exp $
-
 Index: vendor/github.com/containerd/containerd/content/local/store_unix.go
 --- vendor/github.com/containerd/containerd/content/local/store_unix.go.orig
 +++ vendor/github.com/containerd/containerd/content/local/store_unix.go

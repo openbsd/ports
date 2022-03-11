@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2020/10/06 22:36:06 jeremy Exp $
-
 COMMENT=	Ruby bindings for libvirt
 
 DISTNAME=	ruby-${PKGNAME}

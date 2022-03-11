@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/05/30 22:24:31 bluhm Exp $
-
 COMMENT =	portable implementation of 'which' in Perl
 
 DISTNAME =	File-Which-1.27

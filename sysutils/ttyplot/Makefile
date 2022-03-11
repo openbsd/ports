@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/01/14 21:55:22 fcambus Exp $
-
 COMMENT =	realtime plotting utility for terminals
 
 GH_ACCOUNT =	tenox7

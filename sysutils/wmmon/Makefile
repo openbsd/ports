@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2021/02/24 21:11:06 tb Exp $
-
 COMMENT=	WindowMaker dock app similar to xload
 
 DISTNAME=	wmmon-1.0b2

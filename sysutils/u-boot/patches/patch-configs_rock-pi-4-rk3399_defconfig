@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_rock-pi-4-rk3399_defconfig,v 1.2 2020/10/06 05:59:08 jsg Exp $
-
 Index: configs/rock-pi-4-rk3399_defconfig
 --- configs/rock-pi-4-rk3399_defconfig.orig
 +++ configs/rock-pi-4-rk3399_defconfig

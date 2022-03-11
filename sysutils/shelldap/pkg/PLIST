@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/01/08 22:57:47 sthen Exp $
 bin/shelldap
 @man man/man1/shelldap.1

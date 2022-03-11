@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT=		small and secure replacement for syslogd
 
 DISTNAME=		socklog-2.1.0

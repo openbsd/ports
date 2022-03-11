@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.84 2021/07/04 10:41:32 robert Exp $
-
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 PKGNAME=		${DISTNAME:L}

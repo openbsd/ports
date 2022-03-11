@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/01/14 01:25:25 danj Exp $
-
 COMMENT =		prometheus exporter for hardware and OS metrics
 
 MODGO_MODNAME =		github.com/prometheus/node_exporter

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/01/26 15:47:38 abieber Exp $
-
 COMMENT =	git in your tmux status bar
 
 MODGO_MODNAME =	github.com/arl/gitmux

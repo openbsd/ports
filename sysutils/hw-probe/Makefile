@@ -1,5 +1,3 @@
-#$OpenBSD: Makefile,v 1.4 2022/02/08 16:18:54 sthen Exp $
-
 COMMENT =	hardware probe tool
 CATEGORIES =	sysutils
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2022/03/10 12:03:34 kn Exp $
-
 COMMENT =	utility for modifying existing ELF executables and libraries
 
 V =			0.14.5

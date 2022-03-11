@@ -1,4 +1,3 @@
-$OpenBSD: patch-gkrellkam-list_5,v 1.1 2008/06/20 10:49:42 martynas Exp $
 --- gkrellkam-list.5.orig	Wed Oct 23 17:32:10 2002
 +++ gkrellkam-list.5	Thu Jun 19 21:00:11 2008
 @@ -55,7 +55,7 @@ If set, this sets the minimum length of time that must

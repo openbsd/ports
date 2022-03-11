@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2020/06/27 04:01:18 kmos Exp $
-
 COMMENT=	mount SMB shares from userland via FUSE
 
 DISTNAME=	usmb-20130204

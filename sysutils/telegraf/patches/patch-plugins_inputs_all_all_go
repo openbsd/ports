@@ -1,5 +1,3 @@
-$OpenBSD: patch-plugins_inputs_all_all_go,v 1.4 2022/02/20 19:22:03 martin Exp $
-
 Remove linux only plugins
 
 Index: plugins/inputs/all/all.go

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:41 sthen Exp $
-
 COMMENT =	utility to mirror filesystems, directories, and files
 DISTNAME =	cpdup-5.4.0
 CATEGORIES =	sysutils

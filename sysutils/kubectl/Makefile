@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/02/13 07:24:48 rsadowski Exp $
-
 COMMENT =		command line tool for controlling Kubernetes clusters
 
 V =			1.23.2

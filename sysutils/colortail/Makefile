@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2020/01/23 19:06:43 robert Exp $
-
 COMMENT=		color-able replacement for tail(1)
 
 GH_ACCOUNT=		joakim666

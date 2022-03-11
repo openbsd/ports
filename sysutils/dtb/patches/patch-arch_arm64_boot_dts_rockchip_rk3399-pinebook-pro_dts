@@ -1,5 +1,3 @@
-$OpenBSD: patch-arch_arm64_boot_dts_rockchip_rk3399-pinebook-pro_dts,v 1.1 2021/02/05 13:59:47 jsg Exp $
-
 Index: arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts
 --- arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts.orig
 +++ arch/arm64/boot/dts/rockchip/rk3399-pinebook-pro.dts

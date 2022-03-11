@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 13:59:27 sthen Exp $
-
 COMMENT =	Go dependency management tool
 DISTNAME =	dep-0.5.0
 REVISION =	0

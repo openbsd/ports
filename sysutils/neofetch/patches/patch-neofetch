@@ -1,5 +1,3 @@
-$OpenBSD: patch-neofetch,v 1.7 2020/08/17 20:19:49 cwen Exp $
-
 From https://github.com/dylanaraps/neofetch/pull/1494
 
 Index: neofetch

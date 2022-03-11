@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:26:58 rpointel Exp $
 @bin bin/msiecfexport
 @bin bin/msiecfinfo
 include/libmsiecf/

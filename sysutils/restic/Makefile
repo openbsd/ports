@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/08/14 07:01:23 tb Exp $
-
 COMMENT =	fast, efficient and secure backup program
 
 MODGO_MODNAME =	github.com/restic/restic

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/11/23 12:59:23 sthen Exp $
 include/libptytty.h
 @lib lib/libptytty.so.${LIBptytty_VERSION}
 lib/pkgconfig/libptytty.pc

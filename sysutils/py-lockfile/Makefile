@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2021/11/02 00:02:33 sthen Exp $
-
 COMMENT=		platform-independent file locking for Python
 
 MODPY_EGG_VERSION=	0.12.2

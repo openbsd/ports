@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/08/29 08:55:15 jasper Exp $
-
 COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
 GH_ACCOUNT =		thewtex

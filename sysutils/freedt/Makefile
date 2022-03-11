@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:43 sthen Exp $
-
 COMMENT=		reimplementation of Dan Bernstein's daemontools#'
 
 DISTNAME=		freedt-23

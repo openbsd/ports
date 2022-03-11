@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 20:49:44 sthen Exp $
-
 COMMENT=	i/o generator
 
 V=		3.1

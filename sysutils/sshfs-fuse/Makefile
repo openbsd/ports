@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/08/18 19:29:33 bket Exp $
-
 COMMENT =	mount remote directories over ssh
 
 DISTNAME =	sshfs-2.10

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/01/19 06:37:52 rsadowski Exp $
-
 COMMENT =	file browser for rclone-supported remotes
 
 GH_ACCOUNT =	kapitainsky

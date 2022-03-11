@@ -1,5 +1,3 @@
-$OpenBSD: patch-squashfs-tools_unsquashfs_c,v 1.2 2021/05/26 19:54:24 sthen Exp $
-
 https://github.com/plougher/squashfs-tools/pull/69
 with the lutimes(3) changes removed and prefer _SC_NPROCESSORS_ONLN
 

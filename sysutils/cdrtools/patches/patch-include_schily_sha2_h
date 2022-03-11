@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_schily_sha2_h,v 1.1 2017/05/11 20:20:16 espie Exp $
 can't provide inconsistent protos for pragma weak functions.
 (from freebsd)
 

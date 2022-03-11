@@ -1,9 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.1 2005/09/05 13:18:57 espie Exp $
 --- Makefile.orig	Wed Mar 12 09:32:55 1997
 +++ Makefile	Mon Sep  5 15:18:01 2005
 @@ -1,10 +1,11 @@
--# $Id: patch-Makefile,v 1.1 2005/09/05 13:18:57 espie Exp $
-+# From: $Id: patch-Makefile,v 1.1 2005/09/05 13:18:57 espie Exp $
+-# $Id: patch-Makefile,v 1.2 2022/03/11 19:58:01 naddy Exp $
++# From: $Id: patch-Makefile,v 1.2 2022/03/11 19:58:01 naddy Exp $
  
  PROG=		setquota
  SRCS=		printquota.c setquota.c quotatool.c

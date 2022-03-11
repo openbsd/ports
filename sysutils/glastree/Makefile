@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:43 sthen Exp $
-
 COMMENT=	poor man's daily snapshot
 
 DISTNAME=	glastree-1.04

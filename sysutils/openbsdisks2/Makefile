@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2022/01/15 21:48:29 kmos Exp $
-
 COMMENT =	UDisks2 service implementation for OpenBSD
 
 V =		0.3.1

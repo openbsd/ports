@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/03 22:38:12 naddy Exp $
 bin/maildir
 @bin bin/safecat
 @man man/man1/maildir.1

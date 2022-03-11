@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/08/28 09:16:56 cwen Exp $
-
 COMMENT =		graphical disk map
 DISTNAME =		gdmap-0.8.1
 CATEGORIES =		sysutils x11

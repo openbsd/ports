@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:44 sthen Exp $
-
 COMMENT=	module to talk to a UPS via NUT (Network UPS Tools) upsd
 
 DISTNAME=	UPS-Nut-0.04

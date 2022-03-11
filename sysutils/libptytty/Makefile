@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/11/23 12:59:23 sthen Exp $
-
 SHARED_LIBS =	ptytty 0.0
 
 COMMENT =	library to handle pty/tty/utmp/wtmp/lastlog

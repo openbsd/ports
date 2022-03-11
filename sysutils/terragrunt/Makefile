@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.91 2022/03/03 15:11:07 ajacoutot Exp $
-
 BROKEN-aarch64=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 BROKEN-armv7=	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:49 sthen Exp $
-
 COMMENT =		list processes as a tree
 DISTNAME =		pstree-2.39
 CATEGORIES =		sysutils

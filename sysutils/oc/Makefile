@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2021/04/29 04:11:39 rsadowski Exp $
-
 COMMENT =		command line tool for controlling OpenShift clusters
 
 GH_ACCOUNT =		openshift

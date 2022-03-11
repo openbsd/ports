@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/05/14 17:58:21 jasper Exp $
 ${GEM_BIN}/cap${GEM_BIN_SUFFIX}
 ${GEM_BIN}/capify${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem

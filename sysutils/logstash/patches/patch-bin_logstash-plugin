@@ -1,5 +1,3 @@
-$OpenBSD: patch-bin_logstash-plugin,v 1.2 2020/02/18 09:29:16 pvk Exp $
-
 Index: bin/logstash-plugin
 --- bin/logstash-plugin.orig
 +++ bin/logstash-plugin

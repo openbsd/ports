@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/05/06 11:15:41 paco Exp $
-
 COMMENT =	command-line fuzzy finder
 
 # Note: we make our own vendored distfile as upstream doesn't do semantic

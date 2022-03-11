@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/10/27 12:51:57 jasper Exp $
-
 COMMENT =	RISC-V Proxy Kernel
 
 GH_COMMIT =	a4d4298ca10527a51fad86c53a93c48e6f510092

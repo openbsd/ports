@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/08/12 16:11:06 feinerer Exp $
 @bin bin/ioping
 @man man/man1/ioping.1

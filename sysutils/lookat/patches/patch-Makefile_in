@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2020/05/17 20:46:34 bcallah Exp $
-
 Put example configs in examples rather than doc.
 
 Index: Makefile.in

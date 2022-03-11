@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:45 sthen Exp $
-
 COMMENT=		log file monitoring daemon
 
 V=			1.2

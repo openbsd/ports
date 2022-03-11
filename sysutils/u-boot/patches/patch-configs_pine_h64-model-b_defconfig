@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_pine_h64-model-b_defconfig,v 1.1 2022/01/15 11:56:50 kevlo Exp $
-
 Add defconfig for PINE H64 model B.
 
 Index: configs/pine_h64-model-b_defconfig

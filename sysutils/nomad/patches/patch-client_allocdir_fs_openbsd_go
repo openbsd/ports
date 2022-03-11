@@ -1,5 +1,3 @@
-$OpenBSD: patch-client_allocdir_fs_openbsd_go,v 1.1.1.1 2018/10/27 16:44:55 ajacoutot Exp $
-
 Copied from fs_freebsd.ogo (verbatim).
 
 Index: client/allocdir/fs_openbsd.go

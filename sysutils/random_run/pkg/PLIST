@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/04/24 21:14:37 espie Exp $
 @bin bin/rr
 @man man/man1/rr.1

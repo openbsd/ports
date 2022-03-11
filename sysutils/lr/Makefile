@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/24 20:03:35 sthen Exp $
-
 COMMENT =	list files, recursively
 DISTNAME =	lr-1.5.1
 CATEGORIES =	sysutils

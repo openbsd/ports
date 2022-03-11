@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/12/07 08:24:51 landry Exp $
-
 COMMENT =	browse LDAP server with a shell-like CLI
 
 V =		1.5.1

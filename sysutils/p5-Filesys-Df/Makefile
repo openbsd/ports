@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/07/03 21:45:43 sthen Exp $
-
 COMMENT=		filesystem disk space information
 
 DISTNAME=		Filesys-Df-0.92

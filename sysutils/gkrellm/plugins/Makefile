@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2016/08/30 09:57:34 jasper Exp $
-
      SUBDIR =
      SUBDIR += aclock 
      SUBDIR += bgchg

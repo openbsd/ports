@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2019/07/12 21:02:26 sthen Exp $
-
 DISTNAME=       xps-4.2
 REVISION=	9
 CATEGORIES=     sysutils x11

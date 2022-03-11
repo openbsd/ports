@@ -1,5 +1,3 @@
-$OpenBSD: patch-etc_lfrc_example,v 1.1.1.1 2021/01/21 17:12:16 paco Exp $
-
 Index: etc/lfrc.example
 --- etc/lfrc.example.orig
 +++ etc/lfrc.example

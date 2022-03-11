@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2021/02/13 20:49:31 cwen Exp $
-
 COMMENT=		wm-dockapp; shows rotating 3d-object and CPU load
 
 DISTNAME=		wmcube-1.0.2

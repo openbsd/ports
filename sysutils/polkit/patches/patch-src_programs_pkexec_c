@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_programs_pkexec_c,v 1.4 2022/01/26 16:10:25 ajacoutot Exp $
-
 From a2bf5c9c83b6ae46cbd5c779d3055bff81ded683 Mon Sep 17 00:00:00 2001
 From: Jan Rybar <jrybar@redhat.com>
 Date: Tue, 25 Jan 2022 17:21:46 +0000

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:43 sthen Exp $
-
 COMMENT =	disk auto-mounter
 
 DISTNAME =	hotplug-diskmount-1.0.2

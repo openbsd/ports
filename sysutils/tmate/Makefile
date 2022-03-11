@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.17 2022/03/10 12:03:35 kn Exp $
-
 COMMENT =	instant terminal sharing based on tmux
 
 GH_ACCOUNT =	tmate-io

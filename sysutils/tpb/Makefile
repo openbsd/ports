@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/04/16 06:45:19 ratchov Exp $
-
 # requires nvram(4) device
 ONLY_FOR_ARCHS=	amd64 i386
 

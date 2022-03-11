@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/08/26 00:03:54 okan Exp $
 @bin bin/logpp
 @man man/man1/logpp.1

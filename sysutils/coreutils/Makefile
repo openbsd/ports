@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2021/10/05 23:26:51 bcallah Exp $
-
 COMMENT =		file, shell and text manipulation utilities
 
 DISTNAME =		coreutils-9.0

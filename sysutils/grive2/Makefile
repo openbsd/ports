@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/10/09 19:40:13 rsadowski Exp $
-
 COMMENT =	third-party client for Google Drive
 
 GH_ACCOUNT =	vitalif

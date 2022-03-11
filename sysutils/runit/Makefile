@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:51 sthen Exp $
-
 COMMENT=		daemontools alike replacement for init
 
 DISTNAME=		runit-2.1.2

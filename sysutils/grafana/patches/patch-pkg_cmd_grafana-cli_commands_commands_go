@@ -1,5 +1,3 @@
-$OpenBSD: patch-pkg_cmd_grafana-cli_commands_commands_go,v 1.3 2020/04/15 18:18:19 martin Exp $
-
 Index: pkg/cmd/grafana-cli/commands/commands.go
 --- pkg/cmd/grafana-cli/commands/commands.go.orig
 +++ pkg/cmd/grafana-cli/commands/commands.go

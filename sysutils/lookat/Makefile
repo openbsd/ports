@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/05/17 20:46:33 bcallah Exp $
-
 V =		2.0.1
 COMMENT =	user-friendly text pager
 DISTNAME =	lookat_bekijk-${V}

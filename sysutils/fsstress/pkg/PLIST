@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/18 08:06:59 landry Exp $
 @bin bin/fsstress
 share/doc/fsstress/
 share/doc/fsstress/README

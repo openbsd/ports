@@ -1,4 +1,3 @@
-$OpenBSD: patch-OpenBSD_PackageManager_DBIModel_pm,v 1.3 2018/12/14 10:37:22 espie Exp $
 Index: OpenBSD/PackageManager/DBIModel.pm
 --- OpenBSD/PackageManager/DBIModel.pm.orig
 +++ OpenBSD/PackageManager/DBIModel.pm

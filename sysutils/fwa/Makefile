@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:43 sthen Exp $
-
 COMMENT =	simple file watcher utility for OpenBSD
 DISTNAME =	fwa-0.1
 CATEGORIES =	sysutils

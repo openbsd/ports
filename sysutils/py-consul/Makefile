@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:33 sthen Exp $
-
 COMMENT =	python client for consul
 
 MODPY_EGG_VERSION =	1.1.0

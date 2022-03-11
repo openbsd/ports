@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2022/03/05 10:04:07 ajacoutot Exp $
-
 # [...]/network/mgmt/2018-01-01/network/expressroutecircuitpeerings.go:53:159:
 # constant 4294967295 overflows int
 ONLY_FOR_ARCHS=		${LP64_ARCHS}

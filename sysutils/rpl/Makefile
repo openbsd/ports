@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:50 sthen Exp $
-
 COMMENT =		replace strings with new strings in multiple text files
 
 DISTNAME =		rpl-1.4.1

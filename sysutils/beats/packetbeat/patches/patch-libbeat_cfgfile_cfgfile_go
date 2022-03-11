@@ -1,5 +1,3 @@
-$OpenBSD: patch-libbeat_cfgfile_cfgfile_go,v 1.1 2020/11/21 15:58:41 pvk Exp $
-
 Index: libbeat/cfgfile/cfgfile.go
 --- libbeat/cfgfile/cfgfile.go.orig
 +++ libbeat/cfgfile/cfgfile.go

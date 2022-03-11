@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2015/06/27 13:42:13 jasper Exp $
 ${P5SITE}/File/
 ${P5SITE}/File/Which.pm
 @man man/man3p/File::Which.3p

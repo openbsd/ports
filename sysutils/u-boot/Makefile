@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.90 2022/01/15 11:56:50 kevlo Exp $
-
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
 

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:45 sthen Exp $
-
 COMMENT=	provide fingerprint authentication
 
 DISTNAME=	login_fingerprint-1.2

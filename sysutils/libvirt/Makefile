@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.93 2022/03/02 07:25:36 ajacoutot Exp $
-
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-8.1.0

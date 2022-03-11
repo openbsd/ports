@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/04/02 10:36:20 jasper Exp $
 bin/hpilo_cli
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpilo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpilo_fw.${MODPY_PYC_MAGIC_TAG}pyc

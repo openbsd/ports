@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/20 18:56:01 tb Exp $
-
 COMMENT-main =		remove unnecessary files
 COMMENT-gui =		GUI to remove unnecessary files
 

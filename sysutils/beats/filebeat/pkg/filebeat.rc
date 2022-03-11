@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: filebeat.rc,v 1.7 2020/11/21 15:58:40 pvk Exp $
 
 daemon="${PREFIX}/bin/filebeat"
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2022/02/22 04:22:22 bket Exp $
 @pkgpath sysutils/py-schedule
 lib/python${MODPY_VERSION}/site-packages/schedule/
 lib/python${MODPY_VERSION}/site-packages/schedule-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

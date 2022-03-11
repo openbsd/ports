@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2022/02/25 12:17:17 bcallah Exp $
-
 COMMENT =	ultra fast universal grep
 CATEGORIES =	sysutils
 

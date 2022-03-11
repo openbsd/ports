@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:24 sthen Exp $
-
 COMMENT =	library to access the LVM volume system format
 
 VERSION = 	20200102

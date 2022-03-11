@@ -1,5 +1,3 @@
-$OpenBSD: patch-squashfs-tools_info_c,v 1.1.1.1 2019/12/16 15:35:26 jasper Exp $
-
 https://github.com/plougher/squashfs-tools/pull/69
 
 Index: squashfs-tools/info.c

@@ -1,4 +1,3 @@
-$OpenBSD: patch-server_gkrellmd_h,v 1.10 2017/04/23 13:48:29 sthen Exp $
 --- server/gkrellmd.h.orig	Wed Feb  1 23:39:01 2017
 +++ server/gkrellmd.h	Wed Feb  1 23:40:32 2017
 @@ -128,12 +128,12 @@ GKRELLMD_VERSION_REV >= (rev)))

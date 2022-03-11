@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/03/11 17:59:31 fcambus Exp $
 @conflict EMBOSS-*
 @bin bin/yank
 @man man/man1/yank.1

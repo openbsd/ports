@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/04 10:30:38 bentley Exp $
-
 COMMENT =	execute a command for every argument
 DISTNAME =	xe-0.11
 CATEGORIES =	sysutils

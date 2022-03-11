@@ -1,5 +1,3 @@
-$OpenBSD: patch-usmb_file_h,v 1.1 2017/12/12 13:41:21 helg Exp $
-
 Index: usmb_file.h
 --- usmb_file.h.orig
 +++ usmb_file.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT=	log file preprocessor
 
 DISTNAME=	logpp-0.16

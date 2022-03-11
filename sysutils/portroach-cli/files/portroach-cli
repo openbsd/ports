@@ -1,7 +1,5 @@
 #!/bin/ksh
 #
-# $OpenBSD: portroach-cli,v 1.8 2021/11/06 00:49:47 kn Exp $
-#
 # Copyright (c) 2021 Klemens Nanni <kn@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any

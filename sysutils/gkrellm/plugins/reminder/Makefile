@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2022/01/21 20:09:42 op Exp $
-
 COMMENT=	GKrellM2 will remind you to do important events
 
 V=		2.0.0

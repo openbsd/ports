@@ -1,4 +1,3 @@
-$OpenBSD: patch-dmassage,v 1.3 2014/01/07 17:41:23 sthen Exp $
 --- dmassage.orig	Sun Jan 27 12:35:53 2002
 +++ dmassage	Tue Jan  7 09:48:54 2014
 @@ -97,14 +97,11 @@ sub parse_dmesg

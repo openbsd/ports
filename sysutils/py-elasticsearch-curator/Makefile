@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2022/02/03 13:38:19 pvk Exp $
-
 COMMENT=	manage Elasticsearch indices
 
 MODPY_EGG_VERSION=5.8.4

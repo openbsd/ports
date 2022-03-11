@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2021/03/08 13:59:28 sthen Exp $
-
 COMMENT =		systems monitoring and alerting toolkit
 
 V =			2.24.1

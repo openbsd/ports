@@ -1,4 +1,3 @@
-$OpenBSD: patch-hotplug-diskmount_8,v 1.3 2016/11/13 20:26:55 dcoppa Exp $
 --- hotplug-diskmount.8.orig	Thu Sep  8 15:57:05 2016
 +++ hotplug-diskmount.8	Sun Nov 13 21:14:08 2016
 @@ -156,7 +156,7 @@ never does force unmount.

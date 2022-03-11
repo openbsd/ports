@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/01/14 11:01:09 tb Exp $
-
 COMMENT=	remote administration software
 
 DISTNAME=     	radmind-1.14.1

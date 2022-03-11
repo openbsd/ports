@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/17 14:39:43 danj Exp $
-
 COMMENT=		daemon for changing passwords
 
 DISTNAME=		openpoppassd-1.1

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_storage_storage_util_c,v 1.2 2022/01/15 10:19:35 ajacoutot Exp $
-
 Index: src/storage/storage_util.c
 --- src/storage/storage_util.c.orig
 +++ src/storage/storage_util.c

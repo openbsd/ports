@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/11/03 14:07:45 jasper Exp $
-
 COMMENT =		module to access shadow passwords
 
 DISTNAME =		ruby-shadow-2.5.0

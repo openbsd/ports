@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.78 2019/07/12 21:02:26 sthen Exp $
-
 COMMENT-main=	single process stack of system monitors for GTK+2 (server)
 COMMENT-client=	single process stack of system monitors for GTK+2
 

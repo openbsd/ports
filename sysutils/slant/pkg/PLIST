@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2019/07/02 09:17:53 bentley Exp $
 @bin bin/slant
 @man man/man1/slant.1
 @man man/man8/slant-cgi.8

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:49:40 sthen Exp $
-
 COMMENT=		suite of clustering tools based on IBM's PSSP
 
 DISTNAME=		clusterit-2.5

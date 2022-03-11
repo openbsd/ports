@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/01/08 10:35:02 pvk Exp $
-
 COMMENT =	network event stream processing system
 
 V =		0.3.8

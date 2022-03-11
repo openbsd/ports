@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.43 2021/07/08 10:44:38 sthen Exp $
-
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.46.2

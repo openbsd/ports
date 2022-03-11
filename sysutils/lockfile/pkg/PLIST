@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/05/08 19:35:34 sthen Exp $
 @conflict procmail-<=3.22p5
 @bin bin/lockfile
 @man man/man1/lockfile.1

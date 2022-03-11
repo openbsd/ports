@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_provider_package_gem_rb,v 1.3 2020/05/22 15:23:37 kn Exp $
-
 Use the locally installed gem command with explicit ruby version.
 
 Index: lib/puppet/provider/package/gem.rb

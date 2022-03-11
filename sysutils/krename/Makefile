@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/11/09 06:45:43 rsadowski Exp $
-
 COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.1

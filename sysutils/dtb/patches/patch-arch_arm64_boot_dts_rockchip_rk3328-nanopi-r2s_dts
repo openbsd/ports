@@ -1,5 +1,3 @@
-$OpenBSD: patch-arch_arm64_boot_dts_rockchip_rk3328-nanopi-r2s_dts,v 1.1 2021/10/29 11:13:06 patrick Exp $
-
 Index: arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2s.dts
 --- arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2s.dts.orig
 +++ arch/arm64/boot/dts/rockchip/rk3328-nanopi-r2s.dts

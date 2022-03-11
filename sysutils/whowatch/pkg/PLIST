@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:34 espie Exp $
 bin/whowatch
 @man man/man1/whowatch.1

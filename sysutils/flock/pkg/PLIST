@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/25 17:02:56 robert Exp $
 @bin bin/flock

@@ -1,5 +1,3 @@
-$OpenBSD: patch-metricbeat_module_system_memory_memory_go,v 1.1 2021/01/30 10:03:41 pvk Exp $
-
 Index: metricbeat/module/system/memory/memory.go
 --- metricbeat/module/system/memory/memory.go.orig
 +++ metricbeat/module/system/memory/memory.go

@@ -1,5 +1,3 @@
-$OpenBSD: patch-machdep_bsd-44_c,v 1.2 2010/01/19 15:25:21 okan Exp $
-
 --- machdep/bsd-44.c.orig	Thu Apr  4 23:17:21 2002
 +++ machdep/bsd-44.c	Mon Jan 18 16:49:30 2010
 @@ -38,12 +38,55 @@ static char rcsid[] = "$Id: bsd-44.c,v 1.17 2002/03/21

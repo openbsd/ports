@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 21:02:26 sthen Exp $
-
 COMMENT=		file system/VFS layer stress tester
 
 DISTNAME=		fsstress-1.0

@@ -1,5 +1,3 @@
-$OpenBSD: patch-tmate_h,v 1.2 2020/03/28 17:19:09 kn Exp $
-
 Add missing libevent2 includes.
 
 Index: tmate.h

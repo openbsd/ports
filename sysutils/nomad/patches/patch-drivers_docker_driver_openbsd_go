@@ -1,5 +1,3 @@
-$OpenBSD: patch-drivers_docker_driver_openbsd_go,v 1.1 2021/05/27 07:17:03 ajacoutot Exp $
-
 Index: drivers/docker/driver_openbsd.go
 --- drivers/docker/driver_openbsd.go.orig
 +++ drivers/docker/driver_openbsd.go

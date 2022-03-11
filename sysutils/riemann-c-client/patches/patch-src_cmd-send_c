@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_cmd-send_c,v 1.1.1.1 2016/11/30 07:44:29 landry Exp $
 --- src/cmd-send.c.orig	Fri Sep 30 18:44:30 2016
 +++ src/cmd-send.c	Thu Nov 10 22:31:26 2016
 @@ -138,7 +138,7 @@ client_send (int argc, char *argv[])

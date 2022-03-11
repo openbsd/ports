@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.80 2022/03/03 15:11:24 ajacoutot Exp $
-
 COMMENT=		tool for building, changing, and versioning infrastructure
 
 MODGO_MODNAME=		github.com/hashicorp/terraform

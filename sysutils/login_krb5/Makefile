@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2021/01/03 09:55:48 ajacoutot Exp $
-
 COMMENT=		authentication provider for KerberosV
 
 GIT_PROJECT=		login_krb5

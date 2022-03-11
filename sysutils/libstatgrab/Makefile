@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/02/22 06:16:37 daniel Exp $
-
 COMMENT=	system statistics gathering library
 
 DISTNAME=	libstatgrab-0.91

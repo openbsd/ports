@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2021/11/02 00:02:34 sthen Exp $
-
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
 MODPY_EGG_VERSION = 20200117

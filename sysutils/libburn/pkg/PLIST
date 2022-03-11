@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2021/05/05 07:33:07 landry Exp $
 @bin bin/cdrskin
 include/libburn/
 include/libburn/libburn.h

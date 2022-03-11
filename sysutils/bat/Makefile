@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2022/01/09 12:28:03 rsadowski Exp $
-
 COMMENT =		cat(1) clone with wings
 
 GH_ACCOUNT =		sharkdp

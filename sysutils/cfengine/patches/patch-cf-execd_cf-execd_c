@@ -1,4 +1,3 @@
-$OpenBSD: patch-cf-execd_cf-execd_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
 --- cf-execd/cf-execd.c.orig	Wed Jan 20 01:40:30 2016
 +++ cf-execd/cf-execd.c	Wed Jan 20 01:42:49 2016
 @@ -568,7 +568,7 @@ static bool ScheduleRun(EvalContext *ctx, Policy **pol

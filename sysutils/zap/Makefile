@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:55 sthen Exp $
-
 COMMENT=	interactive process killer
 
 DISTNAME=	zap-1.3

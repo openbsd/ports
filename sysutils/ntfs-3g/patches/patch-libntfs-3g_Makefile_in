@@ -1,4 +1,3 @@
-$OpenBSD: patch-libntfs-3g_Makefile_in,v 1.4 2018/03/08 13:42:31 pirofti Exp $
 Index: libntfs-3g/Makefile.in
 --- libntfs-3g/Makefile.in.orig
 +++ libntfs-3g/Makefile.in

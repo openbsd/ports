@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.25 2022/02/12 10:00:11 ajacoutot Exp $
-
 COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 

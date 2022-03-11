@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_config_h_in,v 1.5 2015/04/23 22:38:55 sthen Exp $
 --- include/config.h.in.orig	Tue Mar 10 09:21:52 2015
 +++ include/config.h.in	Thu Apr 23 15:05:19 2015
 @@ -21,6 +21,9 @@

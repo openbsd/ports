@@ -1,5 +1,3 @@
-$OpenBSD: patch-metricbeat_modules_d_system_yml,v 1.4 2021/01/30 10:03:41 pvk Exp $
-
 Index: metricbeat/modules.d/system.yml
 --- metricbeat/modules.d/system.yml.orig
 +++ metricbeat/modules.d/system.yml

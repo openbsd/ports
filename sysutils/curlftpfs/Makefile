@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:41 sthen Exp $
-
 COMMENT=	FUSE FTP driver
 
 DISTNAME=	curlftpfs-0.9.2

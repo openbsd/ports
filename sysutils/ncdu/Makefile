@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/07/05 21:28:09 fcambus Exp $
-
 COMMENT=		ncurses-based du(1)
 
 DISTNAME=		ncdu-1.16

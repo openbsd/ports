@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2020/11/19 20:49:18 pvk Exp $
-
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 

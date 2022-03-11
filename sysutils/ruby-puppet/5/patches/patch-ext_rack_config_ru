@@ -1,4 +1,3 @@
-$OpenBSD: patch-ext_rack_config_ru,v 1.2 2021/01/15 11:54:00 kn Exp $
 Index: ext/rack/config.ru
 --- ext/rack/config.ru.orig
 +++ ext/rack/config.ru

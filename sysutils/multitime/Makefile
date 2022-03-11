@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT =		time multiple executions of a command
 
 DISTNAME =		multitime-1.3

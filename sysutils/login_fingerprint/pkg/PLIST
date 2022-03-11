@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/12/09 15:54:25 ajacoutot Exp $
 @bin bin/enroll_fingerprint
 @mode 0750
 @group auth

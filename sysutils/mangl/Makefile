@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/22 03:27:42 bcallah Exp $
-
 COMMENT =	graphical manual page viewer using mandoc
 CATEGORIES =	sysutils x11
 

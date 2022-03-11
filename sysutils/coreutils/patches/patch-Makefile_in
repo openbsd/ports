@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_in,v 1.11 2021/10/05 23:26:51 bcallah Exp $
-
 XXX: Avoid rebuilding coreutils.info; our makeinfo is too old
 
 Index: Makefile.in

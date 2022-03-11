@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:50 sthen Exp $
-
 COMMENT =		generate random numbers
 
 DISTNAME =		ranval-1.4

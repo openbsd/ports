@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/11/02 00:02:34 sthen Exp $
-
 COMMENT =	minimalistic console file manager
 
 MODPY_EGG_VERSION =	1.9.3

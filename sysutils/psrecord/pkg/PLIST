@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/06/19 12:45:52 semarie Exp $
 bin/psrecord
 lib/python${MODPY_VERSION}/site-packages/psrecord/
 lib/python${MODPY_VERSION}/site-packages/psrecord-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

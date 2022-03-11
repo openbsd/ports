@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.40 2022/02/25 21:06:53 sebastia Exp $
-
 COMMENT =	Puppet module management
 
 DISTNAME =	r10k-3.14.2

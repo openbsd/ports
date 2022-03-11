@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: serf.rc,v 1.5 2021/11/06 10:38:41 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/serf agent"
 daemon_flags="-syslog"

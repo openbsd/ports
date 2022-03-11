@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.riscv64,v 1.2 2021/07/07 11:58:37 jsg Exp $
 share/u-boot/
 share/u-boot/qemu-riscv64_smode/
 share/u-boot/qemu-riscv64_smode/u-boot

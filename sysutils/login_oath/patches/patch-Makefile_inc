@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_inc,v 1.1 2021/11/05 23:18:15 sthen Exp $
-
 Index: Makefile.inc
 --- Makefile.inc.orig
 +++ Makefile.inc

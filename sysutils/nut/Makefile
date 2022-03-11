@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.109 2021/09/03 11:47:41 ajacoutot Exp $
-
 COMMENT-main=	UPS monitoring program supporting many brands
 COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP

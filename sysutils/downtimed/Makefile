@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:49:42 sthen Exp $
-
 COMMENT =		system downtime monitoring
 DISTNAME =		downtimed-1.0
 REVISION =		1

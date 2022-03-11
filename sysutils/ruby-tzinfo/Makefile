@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/03/08 20:44:48 sebastia Exp $
-
 COMMENT=	access to time zone data and conversion
 
 DISTNAME=	tzinfo-2.0.4

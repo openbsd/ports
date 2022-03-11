@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2017/09/15 15:37:17 naddy Exp $
-
 COMMENT=	GkrellM2 plugin to monitor multiple mailboxes
 
 V=		2.4.3

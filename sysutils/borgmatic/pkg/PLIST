@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2022/02/23 18:28:12 bket Exp $
 bin/borgmatic
 bin/generate-borgmatic-config
 bin/upgrade-borgmatic-config

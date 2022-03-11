@@ -1,5 +1,3 @@
-$OpenBSD: patch-squashfs-tools_mksquashfs_h,v 1.3 2021/05/26 19:54:24 sthen Exp $
-
 missing from actions.c, read_fs.c, sort.c 
 
 Index: squashfs-tools/mksquashfs.h

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/02/23 19:39:43 sthen Exp $
-
 COMMENT =	parse the MFT file from an NTFS filesystem
 
 MODPY_EGG_VERSION =	2.0.19

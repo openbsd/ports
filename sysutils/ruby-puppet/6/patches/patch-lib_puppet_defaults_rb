@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.7 2022/01/21 12:10:39 kn Exp $
-
 Update the user and group to _puppet
 Fix module search path to /var/puppetlabs
 

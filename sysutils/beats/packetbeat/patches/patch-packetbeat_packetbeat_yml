@@ -1,5 +1,3 @@
-$OpenBSD: patch-packetbeat_packetbeat_yml,v 1.3 2020/11/21 15:58:41 pvk Exp $
-
 'any' interface doesn't work on non-Linux
 
 Index: packetbeat/packetbeat.yml

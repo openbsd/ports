@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2022/02/19 14:27:10 bcallah Exp $
-
 COMMENT =	breadth-first version of the UNIX find command
 CATEGORIES =	sysutils
 

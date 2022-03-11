@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/11/02 00:02:33 sthen Exp $
-
 COMMENT =	iLO automation from python or shell
 
 MODPY_EGG_VERSION =	4.4.3

@@ -1,5 +1,3 @@
-$OpenBSD: patch-meson_build,v 1.1 2021/08/30 19:10:43 ajacoutot Exp $
-
 Index: meson.build
 --- meson.build.orig
 +++ meson.build

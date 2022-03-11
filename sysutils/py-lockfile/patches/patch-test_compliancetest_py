@@ -1,5 +1,3 @@
-$OpenBSD: patch-test_compliancetest_py,v 1.1 2019/11/07 14:39:29 kmos Exp $
-
 Making it work with py-test. Remove references to removed saved_class.
 
 Index: test/compliancetest.py

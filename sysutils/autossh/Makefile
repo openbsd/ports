@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/12 20:49:39 sthen Exp $
-
 COMMENT=		SSH monitoring
 
 DISTNAME=		autossh-1.4g

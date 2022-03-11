@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2022/02/18 13:27:56 sthen Exp $
-
 COMMENT =		library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION =	5.8.0

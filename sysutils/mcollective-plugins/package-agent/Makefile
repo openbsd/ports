@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2017/02/17 19:07:46 sebastia Exp $
-
 COMMENT=		MCollective agent to manage Packages
 
 GH_ACCOUNT=		puppetlabs

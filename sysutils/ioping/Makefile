@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/02/07 11:42:08 feinerer Exp $
-
 COMMENT =		simple disk I/O latency measuring tool
 
 VERSION =		1.2

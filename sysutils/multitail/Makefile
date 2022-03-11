@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT=	multi-window tail(1) utility
 
 DISTNAME=	multitail-6.4.2

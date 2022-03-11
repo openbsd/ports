@@ -1,4 +1,3 @@
-$OpenBSD: patch-tools_nut-scanner_nutscan-init_c,v 1.1 2017/01/17 06:58:10 jca Exp $
 --- tools/nut-scanner/nutscan-init.c.orig	Tue Mar  8 13:01:11 2016
 +++ tools/nut-scanner/nutscan-init.c	Sun Jan 15 23:54:04 2017
 @@ -86,7 +86,7 @@ const char * get_libname(const char* base_libname)

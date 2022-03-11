@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.30 2017/09/15 15:37:17 naddy Exp $
-
 COMMENT=	change background image with GkrellM2
 
 DISTNAME=	gkrellmbgchg2-0.1.11

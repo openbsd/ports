@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/28 19:36:06 jasper Exp $
-
 COMMENT =		detect if we are running in a virtual machine
 
 DISTNAME =		virt-what-1.21

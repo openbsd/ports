@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:49:50 sthen Exp $
-
 COMMENT =	system monitoring and alert notifier
 DISTNAME =	reed-alert-v1.04
 PKGNAME =	${DISTNAME:S/-v/-/}

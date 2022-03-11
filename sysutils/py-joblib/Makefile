@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:33 sthen Exp $
-
 COMMENT =	lightweight pipelining: using Python functions as pipeline
 
 MODPY_EGG_VERSION =	1.1.0

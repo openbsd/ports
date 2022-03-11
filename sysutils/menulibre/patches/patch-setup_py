@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2015/04/04 18:37:11 landry Exp $
 Doesnt cope with desktop file encoding when in iso
 --- setup.py.orig	Sat Sep 27 17:05:07 2014
 +++ setup.py	Sat Apr  4 18:57:26 2015

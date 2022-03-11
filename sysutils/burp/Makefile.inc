@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.2 2019/07/12 20:49:40 sthen Exp $
-
 COMMENT =	BackUp and Restore Program
 DISTNAME =	burp-${VERSION}
 

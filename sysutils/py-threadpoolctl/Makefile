@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2022/01/31 00:18:35 daniel Exp $
-
 COMMENT =	introspect/set max threads in native libraries like BLAS
 
 MODPY_EGG_VERSION =	3.0.0

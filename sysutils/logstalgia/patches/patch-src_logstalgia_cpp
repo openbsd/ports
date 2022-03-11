@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_logstalgia_cpp,v 1.4 2018/02/22 08:12:20 gonzalo Exp $
 Index: src/logstalgia.cpp
 --- src/logstalgia.cpp.orig
 +++ src/logstalgia.cpp

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.80 2020/07/17 08:36:04 tb Exp $
-
 COMMENT-main=	active host monitoring tool
 COMMENT-mux=	symon data gatherer
 

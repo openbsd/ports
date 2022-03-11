@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =	library and tools to access the Apple File System
 
 VERSION = 	20191221

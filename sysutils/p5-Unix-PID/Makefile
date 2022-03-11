@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/07/03 21:45:44 sthen Exp $
-
 COMMENT=	interface for getting PID info
 
 DISTNAME=	Unix-PID-0.23

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:54 sthen Exp $
-
 COMMENT=		VMDK file converter
 
 DISTNAME=		vmdktool-1.4

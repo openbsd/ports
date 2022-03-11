@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2020/02/14 11:11:33 sthen Exp $
-
 COMMENT =		watch the command output with interval timer
 
 GH_ACCOUNT =		iij

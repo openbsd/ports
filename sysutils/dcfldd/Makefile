@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/02/26 12:20:56 sthen Exp $
-
 COMMENT=		GNU dd with added forensic/security features
 
 GH_ACCOUNT=		resurrecting-open-source-projects

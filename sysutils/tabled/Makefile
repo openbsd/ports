@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT=	daemon to modify pf tables from userland
 
 DISTNAME=	tabled-1.0.5

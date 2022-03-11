@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/03/10 12:03:34 kn Exp $
-
 COMMENT =		print sun4v machine descriptions
 
 # mdprint is just a tool next to the actual ldomsmanager sources

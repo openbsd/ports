@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:46 sthen Exp $
-
 COMMENT=	system monitoring daemon
 
 DISTNAME=	monitord-1.93

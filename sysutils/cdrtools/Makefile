@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/09/19 20:58:44 tb Exp $
-
 COMMENT=		ISO 9660 filesystem and CD/DVD/BD creation tools
 
 DISTNAME=		cdrtools-3.00

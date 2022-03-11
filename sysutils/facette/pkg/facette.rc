@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: facette.rc,v 1.5 2018/08/31 14:04:40 danj Exp $
 
 daemon="${TRUEPREFIX}/bin/facette"
 daemon_user="_facette"

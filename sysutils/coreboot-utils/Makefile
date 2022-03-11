@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2022/03/10 12:03:33 kn Exp $
-
 # ectool requires amd64_iopl(2)
 # intelmetool requires <amd64/pio.h>
 ONLY_FOR_ARCHS =	amd64

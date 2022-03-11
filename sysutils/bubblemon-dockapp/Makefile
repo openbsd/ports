@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.29 2019/07/12 20:49:40 sthen Exp $
-
 COMMENT=		wm-dockapp; display CPU and memory load
 
 DISTNAME=		bubblemon-dockapp-1.46

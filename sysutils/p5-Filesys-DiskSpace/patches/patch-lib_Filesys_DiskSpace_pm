@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_Filesys_DiskSpace_pm,v 1.1 2005/01/04 11:51:00 sturm Exp $
 --- lib/Filesys/DiskSpace.pm.orig	Tue Jan  4 12:48:16 2005
 +++ lib/Filesys/DiskSpace.pm	Tue Jan  4 12:48:36 2005
 @@ -89,7 +89,7 @@ sub df ($) {

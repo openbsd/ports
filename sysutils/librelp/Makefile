@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2022/02/26 19:59:53 sthen Exp $
-
 COMMENT =	reliable event logging protocol library
 
 DISTNAME =	librelp-1.9.0

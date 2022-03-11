@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/08/13 17:03:08 sthen Exp $
-
 COMMENT=	identify or delete duplicate files
 
 V=		2.1.2

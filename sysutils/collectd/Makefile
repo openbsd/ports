@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.65 2021/02/23 19:39:40 sthen Exp $
-
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
 COMMENT-pgsql =		collectd postgresql plugin

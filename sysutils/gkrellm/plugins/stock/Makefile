@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2017/09/15 15:37:18 naddy Exp $
-
 COMMENT=	stock ticker for GkrellM2
 
 V=		0.5.1

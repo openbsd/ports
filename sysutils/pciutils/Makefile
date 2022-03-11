@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2020/05/15 13:01:32 jsg Exp $
-
 NOT_FOR_ARCHS =		m88k
 
 COMMENT =		PCI bus configuration register access tools

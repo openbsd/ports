@@ -1,4 +1,3 @@
-$OpenBSD: patch-setup_py,v 1.7 2022/02/23 18:28:12 bket Exp $
 Permit to use the specific version of colorama we have in ports.
 
 Index: setup.py

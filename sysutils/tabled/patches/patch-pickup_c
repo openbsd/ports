@@ -1,4 +1,3 @@
-$OpenBSD: patch-pickup_c,v 1.1 2015/01/18 15:08:25 naddy Exp $
 --- pickup.c.orig	Sat Apr 14 08:26:17 2007
 +++ pickup.c	Sun Jan 18 16:07:07 2015
 @@ -33,6 +33,7 @@

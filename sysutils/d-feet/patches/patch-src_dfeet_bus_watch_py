@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_dfeet_bus_watch_py,v 1.4 2019/01/17 21:34:59 ajacoutot Exp $
 Index: src/dfeet/bus_watch.py
 --- src/dfeet/bus_watch.py.orig
 +++ src/dfeet/bus_watch.py

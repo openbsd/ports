@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2021/08/14 07:06:31 tb Exp $
-
 COMMENT =		ls alternative written in Rust
 
 GH_ACCOUNT =		ogham

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.27 2020/11/18 20:31:55 benoit Exp $
-
 COMMENT =	quota manipulation module
 
 MODULES =	cpan

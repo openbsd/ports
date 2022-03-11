@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.34 2021/11/19 10:40:01 sthen Exp $
-
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs

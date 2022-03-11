@@ -1,4 +1,3 @@
-$OpenBSD: patch-clients_Makefile_in,v 1.21 2017/01/16 00:12:15 jca Exp $
 --- clients/Makefile.in.orig	Wed Mar  9 09:51:12 2016
 +++ clients/Makefile.in	Sun Jan 15 23:54:35 2017
 @@ -520,10 +520,12 @@ upsmon_SOURCES = upsmon.c upsmon.h upsclient.h

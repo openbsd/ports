@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/12/23 19:57:27 jasper Exp $
-
 PKG_ARCH=		*
 
 COMMENT=		secure hosting of Git repositories

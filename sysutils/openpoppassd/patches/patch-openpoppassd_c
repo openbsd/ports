@@ -1,4 +1,3 @@
-$OpenBSD: patch-openpoppassd_c,v 1.1 2016/07/11 12:06:26 ajacoutot Exp $
 --- openpoppassd.c.orig	Mon Jul 11 13:55:29 2016
 +++ openpoppassd.c	Mon Jul 11 14:03:47 2016
 @@ -192,7 +192,7 @@ change_pw(char* user, char* oldpass, char* newpass, ch

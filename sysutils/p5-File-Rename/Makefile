@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/09/08 19:28:13 bluhm Exp $
-
 COMMENT =	renames multiple files
 
 DISTNAME =	File-Rename-1.30

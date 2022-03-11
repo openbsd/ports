@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/03/06 15:56:32 sthen Exp $
-
 COMMENT=	interface to libstatgrab system statistics library
 
 MODULES=	cpan

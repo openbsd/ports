@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.3 2017/11/01 19:40:59 jeremy Exp $
-
 Remove pessimistic version limit.
 
 Index: .metadata

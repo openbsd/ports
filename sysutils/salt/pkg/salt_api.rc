@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: salt_api.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/salt-api -d"
 daemon_user="_salt"

@@ -1,5 +1,3 @@
-# $OpenBSD: crates.inc,v 1.2 2021/09/02 17:39:09 fcambus Exp $
-
 MODCARGO_CRATES +=	ansi_term	0.12.1	# MIT
 MODCARGO_CRATES +=	autocfg	1.0.1	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0

@@ -1,4 +1,3 @@
-$OpenBSD: patch-anacron_8,v 1.2 2013/06/04 13:47:09 giovanni Exp $
 --- anacron.8.orig	Sun Dec  9 10:09:32 2007
 +++ anacron.8	Tue Jun  4 12:26:36 2013
 @@ -18,7 +18,7 @@ to control daily, weekly, and monthly jobs that are

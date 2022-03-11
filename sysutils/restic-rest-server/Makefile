@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2022/02/16 12:46:06 abieber Exp $
-
 COMMENT =	REST backend for the restic backup tool
 
 MODGO_MODNAME =	github.com/restic/rest-server

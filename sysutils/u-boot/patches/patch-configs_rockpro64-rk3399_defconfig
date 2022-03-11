@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_rockpro64-rk3399_defconfig,v 1.8 2021/07/07 11:58:37 jsg Exp $
-
 Disable CONFIG_USE_PREBOOT / usb start to fix boot.
 
 Index: configs/rockpro64-rk3399_defconfig

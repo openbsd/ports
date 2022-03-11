@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1 2015/01/12 06:37:07 yasuoka Exp $
 @bin bin/iwatch
 @man man/man1/iwatch.1

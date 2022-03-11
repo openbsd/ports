@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.28 2020/12/14 07:28:47 benoit Exp $
-
 COMMENT =		word-based diff program
 
 DISTNAME =		dwdiff-2.1.4

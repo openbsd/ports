@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_googlecloudsdk_core_updater_local_state_py,v 1.11 2019/03/27 12:02:21 ajacoutot Exp $
-
 Text from lib/googlecloudsdk/core/updater/update_manager.py.
 
 Index: lib/googlecloudsdk/core/updater/local_state.py

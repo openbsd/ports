@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2021/03/29 12:44:50 sthen Exp $
-
 COMMENT=	tool to impose configurable amount of load
 DISTNAME=	stress-1.0.4
 REVISION=	2

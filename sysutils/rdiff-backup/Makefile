@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.23 2021/02/23 19:39:43 sthen Exp $
-
 COMMENT = 	incremental backup
 
 MODPY_EGG_VERSION =	1.2.8

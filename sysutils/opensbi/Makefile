@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.2 2021/06/08 07:05:33 jsg Exp $
-
 PKG_ARCH=	*
 
 COMMENT=	RISC-V Supervisor Binary Interface

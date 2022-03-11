@@ -1,5 +1,3 @@
-$OpenBSD: patch-rdiff_backup_SetConnections_py,v 1.2 2015/08/21 19:43:27 sthen Exp $
-
 Bugfix: DeprecationWarning: os.popen2 is deprecated
 cf http://bugs.gentoo.org/attachment.cgi?id=216585&action=view
 

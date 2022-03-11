@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.166 2021/11/02 00:02:34 sthen Exp $
-
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
 # libvirt-python

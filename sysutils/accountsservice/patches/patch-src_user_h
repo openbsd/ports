@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_user_h,v 1.1 2021/08/30 19:10:43 ajacoutot Exp $
-
 Index: src/user.h
 --- src/user.h.orig
 +++ src/user.h

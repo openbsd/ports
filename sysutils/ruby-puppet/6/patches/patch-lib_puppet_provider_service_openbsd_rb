@@ -1,6 +1,3 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.2 2020/05/18 09:07:47 kn Exp $
-
-
 * enhance initial service provisioning with regard to service_flags
 
 * print a warning when rcctl failed to run, instead of having the user guess

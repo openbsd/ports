@@ -1,5 +1,3 @@
-$OpenBSD: patch-testing_unit_test_exc_py,v 1.1 2019/05/01 10:20:24 ajacoutot Exp $
-
 Fix for unicode issue:
 https://src.fedoraproject.org/rpms/duplicity/blob/master/f/duplicity-unicode.patch
 

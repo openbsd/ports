@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/11/02 00:02:34 sthen Exp $
-
 COMMENT =	send messages via Pushover
 
 MODPY_EGG_VERSION =	0.4

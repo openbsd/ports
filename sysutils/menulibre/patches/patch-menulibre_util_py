@@ -1,4 +1,3 @@
-$OpenBSD: patch-menulibre_util_py,v 1.2 2015/10/30 15:00:43 landry Exp $
 --- menulibre/util.py.orig	Fri Oct  9 00:39:41 2015
 +++ menulibre/util.py	Fri Oct 30 13:36:56 2015
 @@ -19,8 +19,6 @@ import os

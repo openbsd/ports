@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/12/30 12:30:22 sdk Exp $
-
 COMMENT =		command-line interface for Hetzner Cloud
 V =			1.29.0
 

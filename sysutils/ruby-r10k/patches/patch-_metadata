@@ -1,5 +1,3 @@
-$OpenBSD: patch-_metadata,v 1.1 2021/05/31 07:27:20 sebastia Exp $
-
 upstream locked cri to be compatible with older ruby versions
 
 Index: .metadata

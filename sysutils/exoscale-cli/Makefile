@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.77 2022/03/10 15:35:52 ajacoutot Exp $
-
 COMMENT=		manage Exoscale infrastructure from the command-line
 
 GH_TAGNAME=		v1.51.2

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:21 sthen Exp $
-
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
 MODPY_EGG_VERSION = 2.3.3

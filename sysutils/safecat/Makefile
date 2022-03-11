@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2019/07/14 00:39:40 naddy Exp $
-
 COMMENT=	copy stdin to a qmail-style maildir
 
 REVISION=	0

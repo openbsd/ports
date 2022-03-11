@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=	extended script command
 
 DISTNAME=	superscript-0.0

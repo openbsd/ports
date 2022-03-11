@@ -1,4 +1,3 @@
-$OpenBSD: patch-libinotifytools_src_Makefile_am,v 1.1.1.1 2016/01/23 16:04:48 landry Exp $
 --- libinotifytools/src/Makefile.am.orig	Sat Jan 23 13:07:29 2016
 +++ libinotifytools/src/Makefile.am	Sat Jan 23 13:07:42 2016
 @@ -21,7 +21,7 @@ if DOXYGEN_ENABLE

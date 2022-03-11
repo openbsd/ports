@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:52 sthen Exp $
-
 COMMENT =		statistical analyzer for binary streams
 
 DISTNAME =		stan-0.4.1

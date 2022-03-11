@@ -1,4 +1,3 @@
-$OpenBSD: patch-gkrellkam2_c,v 1.1 2008/06/20 10:49:42 martynas Exp $
 --- gkrellkam2.c.orig	Wed Oct 23 18:35:59 2002
 +++ gkrellkam2.c	Thu Jun 19 20:59:33 2008
 @@ -139,8 +139,8 @@ static gchar *kkam_info_text[] = 

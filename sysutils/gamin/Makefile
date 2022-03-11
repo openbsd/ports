@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.45 2021/02/27 08:52:43 ajacoutot Exp $
-
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
 

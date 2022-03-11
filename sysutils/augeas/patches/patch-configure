@@ -1,5 +1,3 @@
-$OpenBSD: patch-configure,v 1.4 2020/10/10 08:01:31 kn Exp $
-
 /usr/bin/../lib/libcompiler_rt.a(gcc_personality_v0.o): In function `__gcc_personality_v0':                                              
 /usr/src/lib/libcompiler_rt/gcc_personality_v0.c:205: undefined reference to `_Unwind_GetLanguageSpecificData'                           
 /usr/src/lib/libcompiler_rt/gcc_personality_v0.c:209: undefined reference to `_Unwind_GetIP'                                             

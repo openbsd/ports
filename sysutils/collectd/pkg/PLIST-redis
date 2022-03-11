@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-redis,v 1.1 2018/04/28 14:40:26 landry Exp $
 lib/collectd/redis.so
 lib/collectd/write_redis.so

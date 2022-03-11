@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2021/11/02 00:02:32 sthen Exp $
-
 COMMENT =	record the CPU and memory activity of a process
 
 MODPY_EGG_VERSION =	1.2

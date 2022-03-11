@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: salt_syndic.rc,v 1.3 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/salt-syndic -d"
 daemon_flags="-u _salt"

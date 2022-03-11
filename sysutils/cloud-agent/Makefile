@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2019/11/29 19:01:02 reyk Exp $
-
 COMMENT=	cloud provisioning for OpenBSD VMs
 
 V=		1.1

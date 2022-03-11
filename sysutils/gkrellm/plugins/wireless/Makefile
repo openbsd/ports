@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.23 2017/09/15 15:37:18 naddy Exp $
-
 COMMENT=	GkrellM2 plugin to monitor wi(4) signal strength
 
 DISTNAME=	gkrellmwireless-2.0.3

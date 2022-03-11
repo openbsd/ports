@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/12 14:55:47 sthen Exp $
 @bin bin/entr
 @man man/man1/entr.1

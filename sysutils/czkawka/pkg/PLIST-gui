@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-gui,v 1.1.1.1 2021/08/31 21:01:10 tb Exp $
 @bin bin/czkawka_gui

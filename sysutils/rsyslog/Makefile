@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.51 2021/03/07 09:28:36 remi Exp $
-
 COMMENT-main =		syslog daemon supporting databases, TCP, SSL, RELP
 COMMENT-mysql =		MySQL plugin for rsyslog
 COMMENT-normalize =	liblognorm plugin for rsyslog

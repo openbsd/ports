@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/01/16 09:46:58 gonzalo Exp $
-
 COMMENT =	software version control visualization tool
 
 DISTNAME =	gource-0.51

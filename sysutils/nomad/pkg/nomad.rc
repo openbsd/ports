@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: nomad.rc,v 1.2 2021/11/06 10:38:41 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/nomad agent"
 daemon_flags="-config ${SYSCONFDIR}/nomad/nomad.hcl"

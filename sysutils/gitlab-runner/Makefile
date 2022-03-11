@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2021/09/03 18:38:55 abieber Exp $
-
 COMMENT =		CI/CD job runner for GitLab
 
 V =			v14.2.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/14 21:08:01 jcs Exp $
-
 COMMENT=		BSD authentication module for duress passwords
 
 GH_ACCOUNT=		jcs

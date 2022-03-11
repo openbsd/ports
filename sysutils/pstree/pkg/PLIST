@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/05/10 14:54:22 jasper Exp $
 @bin bin/pstree
 @man man/man1/pstree.1

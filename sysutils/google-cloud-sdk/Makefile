@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.253 2022/03/09 13:17:29 ajacoutot Exp $
-
 COMMENT=		manage resources on Google Cloud Platform
 
 V=			376.0.0

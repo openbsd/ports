@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/05/25 11:17:37 sthen Exp $
-
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.26 2017/09/15 15:37:18 naddy Exp $
-
 COMMENT=	weather plugin for GkrellM2
 
 DISTNAME=	gkrellweather-2.0.8

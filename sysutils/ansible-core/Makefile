@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2022/03/01 10:12:37 pvk Exp $
-
 COMMENT =		radically simple IT automation
 
 MODPY_EGG_VERSION =	2.12.3

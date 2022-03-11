@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/07/25 19:00:59 rsadowski Exp $
 @bin bin/bat

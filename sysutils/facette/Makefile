@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/16 21:30:22 sthen Exp $
-
 BROKEN =	fetches from internet during build
 
 COMMENT =	time series data visualization and graphing software

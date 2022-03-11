@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2022/01/17 08:07:16 ajacoutot Exp $
-
 COMMENT=		VirtualBox client with remote management
 
 DISTNAME=		RemoteBox-3.1

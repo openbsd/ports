@@ -1,4 +1,3 @@
-$OpenBSD: patch-libpromises_processes_select_c,v 1.1 2016/01/22 11:38:23 sthen Exp $
 --- libpromises/processes_select.c.orig	Mon Jan 18 23:06:24 2016
 +++ libpromises/processes_select.c	Mon Jan 18 23:06:52 2016
 @@ -839,7 +839,7 @@ static int SplitProcLine(const char *proc, time_t psti

@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: metricbeat.rc,v 1.6 2020/11/21 15:58:41 pvk Exp $
 
 daemon="${PREFIX}/bin/metricbeat"
 

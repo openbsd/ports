@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.39 2022/03/03 09:13:50 ajacoutot Exp $
-
 COMMENT=		GUI for managing virtual machines through libvirt
 
 DISTNAME=		virt-manager-4.0.0

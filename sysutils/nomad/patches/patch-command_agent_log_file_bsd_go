@@ -1,5 +1,3 @@
-$OpenBSD: patch-command_agent_log_file_bsd_go,v 1.2 2022/01/21 08:44:16 ajacoutot Exp $
-
 Copied from log_file_linux.go
 
 Index: command/agent/log_file_bsd.go

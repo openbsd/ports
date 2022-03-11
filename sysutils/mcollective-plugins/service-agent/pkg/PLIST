@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2017/01/03 07:54:59 sebastia Exp $
 libexec/mcollective/mcollective/
 libexec/mcollective/mcollective/agent/
 libexec/mcollective/mcollective/agent/service.ddl

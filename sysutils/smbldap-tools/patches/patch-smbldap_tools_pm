@@ -1,4 +1,3 @@
-$OpenBSD: patch-smbldap_tools_pm,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
 --- smbldap_tools.pm.orig	Mon Jan 29 14:35:45 2007
 +++ smbldap_tools.pm	Mon Jan 29 14:38:50 2007
 @@ -35,20 +35,20 @@ my $smbldap_conf;

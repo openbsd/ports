@@ -1,5 +1,3 @@
-$OpenBSD: patch-util_h,v 1.1.1.1 2017/11/13 17:24:12 steven Exp $
-
 Index: util.h
 --- util.h.orig
 +++ util.h

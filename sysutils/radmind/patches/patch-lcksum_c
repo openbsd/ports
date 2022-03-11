@@ -1,4 +1,3 @@
-$OpenBSD: patch-lcksum_c,v 1.5 2013/03/22 13:46:35 benoit Exp $
 --- lcksum.c.orig	Sun Nov 28 21:37:44 2010
 +++ lcksum.c	Sun Mar 17 23:52:25 2013
 @@ -437,7 +437,7 @@ do_lcksum( char *tpath )

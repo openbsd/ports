@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2020/05/16 08:31:55 anton Exp $
-
 COMMENT =	fuzzy select anything
 
 V =		4.0.0

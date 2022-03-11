@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.629 2022/03/11 07:48:11 ajacoutot Exp $
-
 COMMENT=		universal command line environment for AWS
 
 MODPY_EGG_VERSION=	1.22.72

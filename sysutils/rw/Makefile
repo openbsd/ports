@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.2 2019/07/12 20:49:51 sthen Exp $
-
 V =		1.0
 COMMENT =	simple dd(1) replacement utility from Sortix
 DISTNAME =	rw-portable-${V}

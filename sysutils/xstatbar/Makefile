@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2021/03/08 10:55:34 sthen Exp $
-
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	simple system monitor bar

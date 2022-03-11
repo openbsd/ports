@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/10/05 15:46:43 cwen Exp $
-
 COMMENT =	system information tool written in bash
 CATEGORIES =	sysutils misc
 

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/08/21 14:43:23 jca Exp $
 @man man/man8/fatlabel.8
 @man man/man8/fsck.fat.8
 @man man/man8/mkfs.fat.8

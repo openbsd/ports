@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2019/06/12 21:13:59 naddy Exp $
-
 COMMENT=		graphical hard drive inspection tool (smartctl front-end)
 
 DISTNAME=		gsmartcontrol-1.1.3

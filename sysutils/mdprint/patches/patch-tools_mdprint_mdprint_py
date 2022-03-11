@@ -1,5 +1,3 @@
-$OpenBSD: patch-tools_mdprint_mdprint_py,v 1.3 2020/12/28 04:01:48 kn Exp $
-
 Use equality tests instead of identity checks with literals to fix Python 3.8+
 SyntaxWarning messages.
 

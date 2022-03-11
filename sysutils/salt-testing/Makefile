@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.31 2021/11/02 00:02:34 sthen Exp $
-
 COMMENT =		common testing tools used in the Salt Stack projects
 
 MODPY_EGG_VERSION =	2018.9.21

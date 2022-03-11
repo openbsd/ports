@@ -1,4 +1,3 @@
-$OpenBSD: patch-src_text_object_h,v 1.2 2011/09/11 18:53:28 dcoppa Exp $
 --- src/text_object.h.orig	Tue Oct  5 23:29:36 2010
 +++ src/text_object.h	Mon Jul 18 14:05:17 2011
 @@ -166,7 +166,7 @@ enum text_object_type {

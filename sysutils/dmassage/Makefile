@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2020/01/26 11:14:33 jasper Exp $
-
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
 REVISION=		4

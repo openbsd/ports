@@ -1,5 +1,3 @@
-$OpenBSD: patch-cmd_promtail_promtail-local-config_yaml,v 1.2 2021/11/01 12:46:31 landry Exp $
-
 Index: clients/cmd/promtail/promtail-local-config.yaml
 --- clients/cmd/promtail/promtail-local-config.yaml.orig
 +++ clients/cmd/promtail/promtail-local-config.yaml

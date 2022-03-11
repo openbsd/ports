@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_src_facts_glib_load_average_resolver_cc,v 1.1 2017/05/30 18:01:27 zhuk Exp $
 Unbreak on Clang.
 
 Index: lib/src/facts/glib/load_average_resolver.cc

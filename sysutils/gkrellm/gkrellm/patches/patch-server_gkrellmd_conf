@@ -1,4 +1,3 @@
-$OpenBSD: patch-server_gkrellmd_conf,v 1.3 2011/03/02 06:59:55 ajacoutot Exp $
 --- server/gkrellmd.conf.orig	Tue Sep 14 16:26:19 2010
 +++ server/gkrellmd.conf	Mon Feb 14 07:46:00 2011
 @@ -30,7 +30,7 @@

@@ -1,5 +1,3 @@
-$OpenBSD: patch-src_ls_c,v 1.1 2021/10/05 23:26:51 bcallah Exp $
-
 https://github.com/coreutils/coreutils/commit/4cfd48481da0486e2bad193495bc38e7d5ead7e4
 
 Index: src/ls.c

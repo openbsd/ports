@@ -1,5 +1,3 @@
-$OpenBSD: patch-hw-probe_pl,v 1.1 2022/02/08 16:18:54 sthen Exp $
-
 Index: hw-probe.pl
 --- hw-probe.pl.orig
 +++ hw-probe.pl

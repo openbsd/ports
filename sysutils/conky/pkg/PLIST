@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/11/27 19:59:21 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH},imlib2
 @pkgpath ${BASE_PKGPATH},audacious
 @bin bin/conky

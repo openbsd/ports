@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2020/07/03 21:45:44 sthen Exp $
-
 COMMENT =	interface to SMBIOS using dmidecode
 
 MODULES =	cpan

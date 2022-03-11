@@ -1,5 +1,3 @@
-#	$OpenBSD: Makefile,v 1.23 2021/07/26 07:24:51 jsg Exp $
-
 COMMENT=	Raspberry Pi firmware
 GH_ACCOUNT=	raspberrypi
 GH_PROJECT=	firmware

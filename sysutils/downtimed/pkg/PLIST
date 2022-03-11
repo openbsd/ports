@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/06/06 18:31:39 rpointel Exp $
 @bin bin/downtime
 @bin bin/downtimes
 @man man/man1/downtime.1

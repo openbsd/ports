@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.12 2019/07/12 20:49:51 sthen Exp $
-
 COMMENT=		MTP device filesystem
 
 V=			0.3.0

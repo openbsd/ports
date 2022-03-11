@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/27 11:40:24 gsoares Exp $
 @bin bin/multitail
 @man man/man1/multitail.1
 share/doc/multitail/

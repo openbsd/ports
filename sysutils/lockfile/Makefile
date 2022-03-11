@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2021/02/21 16:46:29 sthen Exp $
-
 COMMENT=	semaphore-file tool for shell scripting
 
 DISTNAME=	procmail-3.22

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:42 sthen Exp $
-
 COMMENT =	full and incremental backups on filesystem
 V =		v0.6.0
 DISTNAME =	faubackup-${V}

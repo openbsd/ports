@@ -1,4 +1,3 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.5 2019/03/04 12:51:16 chrisz Exp $
 @bin lib/ocaml/findlib/findlib.cmxs
 @bin lib/ocaml/findlib/findlib_dynload.cmxs
 @bin lib/ocaml/findlib/findlib_top.cmxs

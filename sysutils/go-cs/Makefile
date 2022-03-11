@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/03/08 13:59:27 sthen Exp $
-
 COMMENT=		concurrent ssh client
 
 GH_TAGNAME=		v0.9

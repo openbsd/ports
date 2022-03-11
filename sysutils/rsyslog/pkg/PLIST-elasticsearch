@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-elasticsearch,v 1.2 2020/09/08 20:57:48 remi Exp $
 @so lib/rsyslog/omelasticsearch.so

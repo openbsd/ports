@@ -1,5 +1,3 @@
-$OpenBSD: patch-metricbeat_metricbeat_yml,v 1.3 2020/11/21 15:58:40 pvk Exp $
-
 Index: metricbeat/metricbeat.yml
 --- metricbeat/metricbeat.yml.orig
 +++ metricbeat/metricbeat.yml

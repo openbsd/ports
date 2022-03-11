@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2017/09/15 15:37:17 naddy Exp $
-
 COMMENT=	launch commonly used apps from GkrellM2
 
 DISTNAME=	gkrellmlaunch-0.5

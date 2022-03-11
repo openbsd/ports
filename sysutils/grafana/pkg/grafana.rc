@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: grafana.rc,v 1.2 2018/01/11 19:27:10 rpe Exp $
 
 daemon="${TRUEPREFIX}/bin/grafana-server"
 daemon_user="_grafana"

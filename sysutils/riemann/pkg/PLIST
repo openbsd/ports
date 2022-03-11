@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2018/11/11 08:29:42 pvk Exp $
 @newgroup _riemann:786
 @newuser _riemann:786:_riemann:daemon:Riemann Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/riemann/*

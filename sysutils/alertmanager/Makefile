@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/16 18:26:57 denis Exp $
-
 COMMENT =	handles alerts sent by the Prometheus server
 
 MODGO_MODNAME =	github.com/prometheus/alertmanager

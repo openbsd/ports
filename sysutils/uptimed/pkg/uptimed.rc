@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: uptimed.rc,v 1.2 2018/01/11 19:27:11 rpe Exp $
 
 daemon="${TRUEPREFIX}/sbin/uptimed"
 daemon_flags="-p /var/run/uptimed/uptimed.pid"

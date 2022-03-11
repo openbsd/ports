@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/08/31 15:19:15 fcambus Exp $
-
 COMMENT =		tools to fiddle with dates and times
 
 DISTNAME =		dateutils-0.4.9

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST-xorriso,v 1.2 2021/05/05 07:33:58 landry Exp $
 @conflict xorriso-<=1.4.6
 @pkgpath sysutils/xorriso
 bin/osirrox

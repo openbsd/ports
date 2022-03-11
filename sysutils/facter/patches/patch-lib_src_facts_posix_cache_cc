@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_src_facts_posix_cache_cc,v 1.1 2017/05/14 20:36:21 sebastia Exp $
-
 Store cached facts in a sane location
 
 --- lib/src/facts/posix/cache.cc.orig	Fri May 12 13:05:56 2017

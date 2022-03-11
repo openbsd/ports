@@ -1,4 +1,3 @@
-$OpenBSD: patch-include_common_h,v 1.7 2017/01/16 00:12:15 jca Exp $
 --- include/common.h.orig	Tue Dec 29 13:08:34 2015
 +++ include/common.h	Sun Jan 15 23:54:35 2017
 @@ -89,6 +89,9 @@ void syslogbit_set(void);

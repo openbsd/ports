@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/27 15:04:22 edd Exp $
 @bin bin/multitime
 @man man/man1/multitime.1

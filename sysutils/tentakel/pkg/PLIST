@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/02/08 22:42:56 sthen Exp $
 bin/tentakel
 lib/python${MODPY_VERSION}/site-packages/lekatnet/
 lib/python${MODPY_VERSION}/site-packages/lekatnet/__init__.py

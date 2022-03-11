@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2017/01/03 07:55:43 sebastia Exp $
-
 COMMENT=		MCollective data plugin to retrieve sysctl values
 
 GH_ACCOUNT=		puppetlabs

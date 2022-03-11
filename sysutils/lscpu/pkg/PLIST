@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2017/10/20 15:49:14 bcallah Exp $
 @bin bin/lscpu
 @man man/man1/lscpu.1

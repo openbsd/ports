@@ -1,5 +1,3 @@
-$OpenBSD: patch-platform_gsutil_gslib_commands_config_py,v 1.16 2020/07/25 07:42:34 ajacoutot Exp $
-
 Index: platform/gsutil/gslib/commands/config.py
 --- platform/gsutil/gslib/commands/config.py.orig
 +++ platform/gsutil/gslib/commands/config.py

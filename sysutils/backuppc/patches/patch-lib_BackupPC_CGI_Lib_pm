@@ -1,4 +1,3 @@
-$OpenBSD: patch-lib_BackupPC_CGI_Lib_pm,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
 --- lib/BackupPC/CGI/Lib.pm.orig	Mon Apr 25 05:31:55 2011
 +++ lib/BackupPC/CGI/Lib.pm	Sat Sep 17 17:21:37 2011
 @@ -90,7 +90,7 @@ use vars qw($Lang);

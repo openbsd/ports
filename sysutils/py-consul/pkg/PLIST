@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/19 14:51:39 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/consul/
 lib/python${MODPY_VERSION}/site-packages/consul/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/consul/${MODPY_PYCACHE}/

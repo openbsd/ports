@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.61 2022/01/13 08:07:51 ajacoutot Exp $
-
 COMMENT=		dbus debugger
 
 GNOME_VERSION=		0.3.16

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.14 2020/11/20 13:10:23 sthen Exp $
-
 # builds on aarch64 but for !x86 it requires code to lookup the entry
 # point from EFI and only FreeBSD/Linux implementations are present.
 ONLY_FOR_ARCHS=	amd64 i386

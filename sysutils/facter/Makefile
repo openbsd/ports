@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.94 2022/01/21 11:49:29 sebastia Exp $
-
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver

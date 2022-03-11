@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_mconfig_OpenBSD,v 1.2 2021/11/11 16:15:19 edd Exp $
-
 Index: configs/mconfig.OpenBSD
 --- configs/mconfig.OpenBSD.orig
 +++ configs/mconfig.OpenBSD

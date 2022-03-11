@@ -1,4 +1,3 @@
-$OpenBSD: patch-ntfsprogs_Makefile_in,v 1.5 2018/03/08 13:42:31 pirofti Exp $
 Index: ntfsprogs/Makefile.in
 --- ntfsprogs/Makefile.in.orig
 +++ ntfsprogs/Makefile.in

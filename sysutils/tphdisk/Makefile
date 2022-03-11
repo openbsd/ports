@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/11/26 15:22:07 jca Exp $
-
 # not useful on anything else
 ONLY_FOR_ARCHS=	i386
 

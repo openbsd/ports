@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.20 2021/11/02 00:02:32 sthen Exp $
-
 COMMENT =	fd.o-compliant menu editor
 
 MODPY_EGG_VERSION =	2.1.3

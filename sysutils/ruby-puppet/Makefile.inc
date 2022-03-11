@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile.inc,v 1.51 2021/08/30 19:23:38 jeremy Exp $
-
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
 DISTNAME ?=	puppet-${VERSION}

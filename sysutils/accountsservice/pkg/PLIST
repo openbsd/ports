@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2021/09/05 12:12:43 ajacoutot Exp $
 @unexec-delete rm -rf /var/db/AccountsService/icons/*
 @unexec-delete rm -rf /var/db/AccountsService/users/*
 include/accountsservice-1.0/

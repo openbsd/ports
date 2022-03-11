@@ -1,4 +1,3 @@
-$OpenBSD: patch-configure_pl,v 1.4 2013/11/01 08:11:41 landry Exp $
 --- configure.pl.orig	Tue Jan  3 11:57:41 2006
 +++ configure.pl	Fri Nov  1 08:01:51 2013
 @@ -49,7 +49,7 @@ Before starting, check

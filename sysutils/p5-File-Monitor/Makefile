@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2020/07/03 21:45:43 sthen Exp $
-
 COMMENT=	monitor files and directories for changes
 
 MODULES=	cpan

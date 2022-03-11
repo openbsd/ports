@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: syslog_ng.rc,v 1.8 2018/09/22 23:12:09 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/syslog-ng"
 

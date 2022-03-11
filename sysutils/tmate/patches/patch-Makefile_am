@@ -1,5 +1,3 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2020/04/02 16:09:26 kn Exp $
-
 Remove hardcoded optimizations.
 
 Index: Makefile.am

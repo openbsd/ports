@@ -1,4 +1,3 @@
-$OpenBSD: patch-script_rofi-sensible-terminal,v 1.2 2016/04/25 17:59:27 jasper Exp $
 --- script/rofi-sensible-terminal.orig	Sun Apr 17 17:44:51 2016
 +++ script/rofi-sensible-terminal	Fri Apr 22 12:57:29 2016
 @@ -1,4 +1,4 @@

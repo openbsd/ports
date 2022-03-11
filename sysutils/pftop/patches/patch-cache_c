@@ -1,4 +1,3 @@
-$OpenBSD: patch-cache_c,v 1.2 2011/12/08 13:04:38 sthen Exp $
 --- cache.c.orig	Wed Nov  7 06:34:18 2007
 +++ cache.c	Thu Dec  8 13:02:56 2011
 @@ -118,12 +118,17 @@ add_state(pf_state_t *st)

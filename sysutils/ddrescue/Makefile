@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.22 2020/03/03 14:29:54 sthen Exp $
-
 COMMENT =		data recovery tool
 
 DISTNAME =		ddrescue-1.25

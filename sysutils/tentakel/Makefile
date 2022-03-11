@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2021/02/23 19:39:43 sthen Exp $
-
 COMMENT=	distributed command execution
 
 DISTNAME=	tentakel-357

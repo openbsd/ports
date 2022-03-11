@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/31 14:01:49 jasper Exp $
 ${P5SITE}/Capture/
 ${P5SITE}/Capture/Tiny.pm
 @man man/man3p/Capture::Tiny.3p

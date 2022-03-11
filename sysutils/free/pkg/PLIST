@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/05/05 12:49:34 bcallah Exp $
 @bin bin/free
 @man man/man1/free.1

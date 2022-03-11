@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: loki.rc,v 1.2 2021/03/07 17:54:50 landry Exp $
 
 daemon="${TRUEPREFIX}/bin/loki"
 daemon_user="_loki"

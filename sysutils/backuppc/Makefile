@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:39 sthen Exp $
-
 COMMENT =	remote backup software system
 
 DISTNAME =	BackupPC-3.3.2

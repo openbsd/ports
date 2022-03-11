@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/01/02 13:13:22 kn Exp $
 bin/ranger
 bin/rifle
 lib/python${MODPY_VERSION}/site-packages/ranger/

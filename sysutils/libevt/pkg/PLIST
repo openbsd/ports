@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/03/17 21:16:47 rpointel Exp $
 @bin bin/evtexport
 @bin bin/evtinfo
 include/libevt/

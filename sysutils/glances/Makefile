@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =		cross-platform curses-based monitoring tool
 
 MODPY_EGG_VERSION =	3.1.7

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.15 2022/01/05 13:01:52 sebastia Exp $
 ${GEM_BIN}/puppet-lint${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/

@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2021/04/28 15:55:16 tracey Exp $
 ${P5SITE}/Data/Entropy/
 ${P5SITE}/Data/Entropy.pm
 ${P5SITE}/Data/Entropy/Algorithms.pm

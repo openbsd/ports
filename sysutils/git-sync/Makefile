@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2022/02/09 00:13:37 abieber Exp $
-
 COMMENT =	safe, simple git synchronization
 
 GH_ACCOUNT =	simonthum

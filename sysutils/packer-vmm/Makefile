@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/09/20 20:42:38 pvk Exp $
-
 # vmm(4) architecture(s)
 ONLY_FOR_ARCHS =	amd64
 

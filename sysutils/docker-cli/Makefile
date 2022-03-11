@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/04/24 06:05:33 rsadowski Exp $
-
 COMMENT =		command-line tool for controlling Docker
 
 V =			20.10.5

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/09/06 12:19:13 kn Exp $
-
 COMMENT=		execute a command on many hosts in parallel
 
 DISTNAME=		shmux-1.0.3

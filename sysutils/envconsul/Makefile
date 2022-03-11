@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2021/11/19 12:24:57 ajacoutot Exp $
-
 COMMENT=	start subprocess with envvar populated from Consul and Vault
 
 MODGO_MODNAME=	github.com/hashicorp/envconsul

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:49:53 sthen Exp $
-
 COMMENT =		load average history on a tty
 
 DISTNAME =		ttyload-0.5.3

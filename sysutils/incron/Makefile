@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:49:43 sthen Exp $
-
 COMMENT =	cron-like daemon but reacting to filesystem events
 
 DISTNAME =	incron-0.5.10

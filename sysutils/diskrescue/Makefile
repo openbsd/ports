@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:41 sthen Exp $
-
 COMMENT =		fancy dd
 
 V =			0.4

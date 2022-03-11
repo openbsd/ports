@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2021/11/02 00:02:33 sthen Exp $
-
 COMMENT =		library to enable your code run as a daemon process
 
 MODPY_EGG_VERSION =	2.5.0

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.37 2021/06/09 12:36:26 okan Exp $
-
 COMMENT=	simple event correlator
 
 V=		2.9.0

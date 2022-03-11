@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.15 2020/04/06 08:48:07 pirofti Exp $
-
 COMMENT =	FUSE NTFS driver with read/write support
 
 V =		2017.3.23

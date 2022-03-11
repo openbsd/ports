@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:49:54 sthen Exp $
-
 COMMENT =		utility used to display information about USB devices
 
 VERSION =		007

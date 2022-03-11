@@ -1,4 +1,3 @@
-$OpenBSD: patch-tablec_tablec_8,v 1.1 2010/04/03 20:07:06 naddy Exp $
 --- tablec/tablec.8.orig	Sat Apr  3 22:02:58 2010
 +++ tablec/tablec.8	Sat Apr  3 22:03:51 2010
 @@ -48,7 +48,7 @@ is a client for

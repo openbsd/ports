@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2021/06/01 15:11:26 gonzalo Exp $
-
 COMMENT =	disk Usage/free utility
 
 MODGO_MODNAME =	github.com/muesli/duf

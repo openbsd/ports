@@ -1,5 +1,3 @@
-$OpenBSD: patch-lenses_shellvars_aug,v 1.14 2020/10/10 08:01:31 kn Exp $
-
 - adduser.conf is not a shell script, so don't try to parse it as such.
 - rc.conf* are not shell scripts anymore.
 

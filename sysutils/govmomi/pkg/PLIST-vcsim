@@ -1,2 +1,1 @@
-@comment $OpenBSD: PLIST-vcsim,v 1.1.1.1 2017/11/28 08:42:19 ajacoutot Exp $
 @bin bin/vcsim

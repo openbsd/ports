@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.24 2019/07/12 20:49:45 sthen Exp $
-
 COMMENT=	provide ldap authentication type
 
 DISTNAME=	login_ldap-3.51

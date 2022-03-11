@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/11/02 00:02:23 sthen Exp $
-
 COMMENT =	library and tools to access the Windows Shortcut File
 
 VERSION = 	20191221

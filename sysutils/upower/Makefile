@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.67 2021/10/30 12:37:08 ajacoutot Exp $
-
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:49:40 sthen Exp $
-
 COMMENT =	print a tree of the directory structure
 
 V =		1.8.0

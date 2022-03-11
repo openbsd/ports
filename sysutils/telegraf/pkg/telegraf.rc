@@ -1,6 +1,4 @@
 #!/bin/ksh
-#
-# $OpenBSD: telegraf.rc,v 1.3 2021/02/27 09:28:50 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/telegraf"
 daemon_logger="daemon.info"

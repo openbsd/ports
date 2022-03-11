@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.11 2019/07/12 20:49:41 sthen Exp $
-
 COMMENT =	display file system space usage using graph and colors
 
 DISTNAME =	dfc-3.1.1

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:54 sthen Exp $
-
 ONLY_FOR_ARCHS = ${APM_ARCHS}
 
 COMMENT =	show battery status as a simple bar in X11

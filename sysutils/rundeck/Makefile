@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.18 2021/11/06 10:38:41 ajacoutot Exp $
-
 COMMENT=		job scheduler and runbook automation
 
 V=			2.6.11

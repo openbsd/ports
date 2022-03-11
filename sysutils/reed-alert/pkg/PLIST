@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2018/10/31 11:19:08 solene Exp $
 bin/reed-alert
 share/doc/reed-alert/
 share/doc/reed-alert/README

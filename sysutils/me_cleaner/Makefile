@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.5 2022/03/10 12:03:34 kn Exp $
-
 COMMENT =	tool for partial deblobbing of Intel ME/TXE firmware images
 
 GH_ACCOUNT =		corna

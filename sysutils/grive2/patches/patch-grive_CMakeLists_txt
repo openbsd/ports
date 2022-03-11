@@ -1,4 +1,3 @@
-$OpenBSD: patch-grive_CMakeLists_txt,v 1.2 2020/10/09 19:40:13 rsadowski Exp $
 Index: grive/CMakeLists.txt
 --- grive/CMakeLists.txt.orig
 +++ grive/CMakeLists.txt

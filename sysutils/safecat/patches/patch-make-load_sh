@@ -1,5 +1,3 @@
-$OpenBSD: patch-make-load_sh,v 1.1 2017/11/03 13:15:02 espie Exp $
-
 Index: make-load.sh
 --- make-load.sh.orig
 +++ make-load.sh

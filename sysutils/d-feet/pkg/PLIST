@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.24 2021/05/07 17:51:12 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py

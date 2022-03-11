@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2021/05/19 01:50:31 kurt Exp $
-
 COMMENT=		API tools for Amazon EC2 web service
 
 DISTNAME=		ec2-api-tools-1.7.5.1

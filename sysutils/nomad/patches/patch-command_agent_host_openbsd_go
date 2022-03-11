@@ -1,5 +1,3 @@
-$OpenBSD: patch-command_agent_host_openbsd_go,v 1.1 2020/08/19 13:22:27 ajacoutot Exp $
-
 Index: command/agent/host/openbsd.go
 --- command/agent/host/openbsd.go.orig
 +++ command/agent/host/openbsd.go

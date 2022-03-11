@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.6 2021/02/23 19:39:40 sthen Exp $
-
 COMMENT=	version control system for large binary files
 
 DISTNAME=	boar-20170509

@@ -1,5 +1,3 @@
-$OpenBSD: patch-configs_nanopi-r2s-rk3328_defconfig,v 1.1 2021/10/29 11:14:46 patrick Exp $
-
 Index: configs/nanopi-r2s-rk3328_defconfig
 --- configs/nanopi-r2s-rk3328_defconfig.orig
 +++ configs/nanopi-r2s-rk3328_defconfig

@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:49:42 sthen Exp $
-
 COMMENT =	replacement for the syslog() API
 
 V =		0.2.12

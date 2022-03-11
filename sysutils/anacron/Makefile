@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.21 2019/07/12 20:49:39 sthen Exp $
-
 COMMENT=	periodic command scheduler
 
 V=		2.5.3

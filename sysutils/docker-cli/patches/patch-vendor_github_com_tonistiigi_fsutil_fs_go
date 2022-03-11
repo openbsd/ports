@@ -1,5 +1,3 @@
-$OpenBSD: patch-vendor_github_com_tonistiigi_fsutil_fs_go,v 1.1 2021/01/04 14:15:21 solene Exp $
-
 Index: vendor/github.com/tonistiigi/fsutil/fs.go
 --- vendor/github.com/tonistiigi/fsutil/fs.go.orig
 +++ vendor/github.com/tonistiigi/fsutil/fs.go

@@ -1,5 +1,3 @@
-$OpenBSD: patch-lib_ext2fs_unix_io_c,v 1.3 2021/05/25 19:44:28 sthen Exp $
-
 Index: lib/ext2fs/unix_io.c
 --- lib/ext2fs/unix_io.c.orig
 +++ lib/ext2fs/unix_io.c

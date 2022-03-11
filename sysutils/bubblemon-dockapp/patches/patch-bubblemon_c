@@ -1,5 +1,3 @@
-$OpenBSD: patch-bubblemon_c,v 1.2 2014/10/07 09:10:54 dcoppa Exp $
-
 Unbreak with GTK+ >= 2.18
 
 --- bubblemon.c.orig	Wed Oct  1 02:37:32 2003

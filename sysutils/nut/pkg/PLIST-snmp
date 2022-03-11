@@ -1,3 +1,2 @@
-@comment $OpenBSD: PLIST-snmp,v 1.2 2008/09/27 17:30:08 martynas Exp $
 @bin bin/snmp-ups
 @man man/man8/snmp-ups.8

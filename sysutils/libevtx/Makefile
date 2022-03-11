@@ -1,5 +1,3 @@
-# $OpenBSD: Makefile,v 1.8 2021/11/02 00:02:22 sthen Exp $
-
 COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 
 VERSION = 	20191221
