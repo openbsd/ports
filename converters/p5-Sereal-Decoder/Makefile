@@ -1,6 +1,6 @@
 COMMENT =	fast, compact, powerful binary deserialization
 
-DISTNAME =	Sereal-Decoder-4.018
+DISTNAME =	Sereal-Decoder-4.023
 
 CATEGORIES =	converters
 
