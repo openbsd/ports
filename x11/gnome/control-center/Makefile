@@ -4,18 +4,19 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		41.4
+REVISION=		0
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 accountsservice atk-1.0 c cairo cups epoxy fontconfig
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnome-desktop-3
-WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gsound gtk-3 gtop-2.0
-WANTLIB += handy-1 ibus-1.0 intl m pango-1.0 pangocairo-1.0 polkit-gobject-1
-WANTLIB += pulse pulse-mainloop-glib pwquality smbclient upower-glib
-WANTLIB += xml2
+WANTLIB += X11 accountsservice atk-1.0 c cairo cheese cheese-gtk
+WANTLIB += cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
+WANTLIB += gsound gtk-3 gtop-2.0 handy-1 ibus-1.0 intl m pango-1.0
+WANTLIB += pangocairo-1.0 polkit-gobject-1 pulse pulse-mainloop-glib
+WANTLIB += pwquality smbclient upower-glib xml2
 
 MODULES=		devel/meson \
 			devel/dconf \
@@ -33,6 +34,7 @@ LIB_DEPENDS=		audio/gsound \
 			security/libpwquality \
 			sysutils/accountsservice \
 			sysutils/upower \
+			x11/gnome/cheese,-libs \
 			x11/gnome/desktop \
 			x11/gnome/online-accounts \
 			x11/libhandy
@@ -71,8 +73,7 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=		-Dcheese=false \
-			-Dwayland=false
+CONFIGURE_ARGS=		-Dwayland=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
