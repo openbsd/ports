@@ -1,6 +1,6 @@
 COMMENT=		determine file types
 
-DISTNAME =		File-MimeInfo-0.31
+DISTNAME =		File-MimeInfo-0.32
 CATEGORIES=		devel
 
 # perl
