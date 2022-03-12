@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.32 2021/12/12 19:25:39 afresh1 Exp $
+# $OpenBSD: perl.port.mk,v 1.33 2022/03/12 12:15:38 sthen Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -44,6 +44,8 @@ PERL_MB_OPT =	--install_path=lib=${LOCALBASE}/${P5SITE} \
 CONFIGURE_ENV +=	PERL_MB_OPT="${PERL_MB_OPT}"
 #MAKE_ENV +=		PERL_MB_OPT="${PERL_MB_OPT}"
 
+MODPERL_REGEN_PPPORT ?=	Yes
+
 # set /usr/bin/perl for executable scripts
 MODPERL_BIN_ADJ =	perl -pi \
 	-e '$$. == 1 && s|^.*env perl([0-9.]*)([\s].*)?$$|\#!/usr/bin/perl$$2|;' \
@@ -54,6 +56,15 @@ MODPERL_ADJ_FILES ?=
 .if !empty(MODPERL_ADJ_FILES)
 MODPERL_pre-configure = for f in ${MODPERL_ADJ_FILES}; do \
 	${MODPERL_BIN_ADJ} ${WRKSRC}/$${f}; done
+.endif
+
+.if ${MODPERL_REGEN_PPPORT:L:Myes}
+MODPERL_gen = cd ${WRKDIST} && \
+	if test -f ppport.h; then \
+		echo "Regenerating ppport.h"; \
+		cp ppport.h ppport.h.orig.ppport; \
+		perl -MDevel::PPPort -e'Devel::PPPort::WriteFile'; \
+	fi
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mmodbuild}
