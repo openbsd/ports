@@ -1,7 +1,7 @@
 COMMENT =		character art facsimile generator
-DISTNAME =		chafa-1.6.1
+DISTNAME =		chafa-1.8.0
 
-SHARED_LIBS +=  	chafa                     1.0 # 5.0
+SHARED_LIBS +=  	chafa                     2.0 # 6.0
 
 CATEGORIES =		graphics
 
@@ -13,10 +13,10 @@ MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += 		ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
-WANTLIB += 		bz2 c djvulibre expat fftw3 fontconfig freetype glib-2.0
-WANTLIB += 		iconv intl jasper jbig jpeg lcms2 lzma m openjp2 pcre
-WANTLIB += 		png pthread raw_r tiff webp webpdemux webpmux xcb xml2
-WANTLIB += 		z zstd
+WANTLIB += 		aom bz2 c dav1d de265 djvulibre expat fontconfig
+WANTLIB +=		freetype glib-2.0 heif iconv intl jasper jbig jpeg
+WANTLIB += 		lcms2 lzma m openjp2 pcre png pthread raw_r tiff webp
+WANTLIB += 		webpdemux webpmux x265 xcb xml2 z zstd
 
 MASTER_SITES =		https://hpjansson.org/chafa/releases/
 EXTRACT_SUFX =		.tar.xz
