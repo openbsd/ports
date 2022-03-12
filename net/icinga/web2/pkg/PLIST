@@ -246,6 +246,14 @@ icinga-web2/bin/icingacli
 icinga-web2/doc/
 icinga-web2/doc/01-About.md
 icinga-web2/doc/02-Installation.md
+icinga-web2/doc/02-Installation.md.d/
+icinga-web2/doc/02-Installation.md.d/01-Debian.md
+icinga-web2/doc/02-Installation.md.d/02-Ubuntu.md
+icinga-web2/doc/02-Installation.md.d/03-CentOS.md
+icinga-web2/doc/02-Installation.md.d/04-RHEL.md
+icinga-web2/doc/02-Installation.md.d/05-SLES.md
+icinga-web2/doc/02-Installation.md.d/06-Amazon-Linux.md
+icinga-web2/doc/02-Installation.md.d/07-From-Source.md
 icinga-web2/doc/03-Configuration.md
 icinga-web2/doc/04-Resources.md
 icinga-web2/doc/05-Authentication.md
