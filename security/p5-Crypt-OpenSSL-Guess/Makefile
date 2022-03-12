@@ -1,6 +1,6 @@
 COMMENT =	guess OpenSSL include path
 
-DISTNAME =	Crypt-OpenSSL-Guess-0.13
+DISTNAME =	Crypt-OpenSSL-Guess-0.15
 
 CATEGORIES =	security
 
