@@ -43,13 +43,18 @@ lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}undoredo.${MODPY
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}unimplemented.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tables/${MODPY_PYCACHE}vlarray.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tables/_comp_bzip2.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/_comp_bzip2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/_comp_bzip2.pyx
+lib/python${MODPY_VERSION}/site-packages/tables/_comp_lzo.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/_comp_lzo.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/_comp_lzo.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/array.py
 lib/python${MODPY_VERSION}/site-packages/tables/atom.py
 lib/python${MODPY_VERSION}/site-packages/tables/attributeset.py
 lib/python${MODPY_VERSION}/site-packages/tables/carray.py
 lib/python${MODPY_VERSION}/site-packages/tables/conditions.py
+lib/python${MODPY_VERSION}/site-packages/tables/definitions.pxd
 lib/python${MODPY_VERSION}/site-packages/tables/description.py
 lib/python${MODPY_VERSION}/site-packages/tables/earray.py
 lib/python${MODPY_VERSION}/site-packages/tables/exceptions.py
@@ -58,15 +63,25 @@ lib/python${MODPY_VERSION}/site-packages/tables/file.py
 lib/python${MODPY_VERSION}/site-packages/tables/filters.py
 lib/python${MODPY_VERSION}/site-packages/tables/flavor.py
 lib/python${MODPY_VERSION}/site-packages/tables/group.py
+lib/python${MODPY_VERSION}/site-packages/tables/hdf5extension.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/hdf5extension.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/hdf5extension.pxd
+lib/python${MODPY_VERSION}/site-packages/tables/hdf5extension.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/idxutils.py
 lib/python${MODPY_VERSION}/site-packages/tables/index.py
 lib/python${MODPY_VERSION}/site-packages/tables/indexes.py
+lib/python${MODPY_VERSION}/site-packages/tables/indexesextension.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/indexesextension.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/indexesextension.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/leaf.py
 lib/python${MODPY_VERSION}/site-packages/tables/link.py
+lib/python${MODPY_VERSION}/site-packages/tables/linkextension.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/linkextension.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/linkextension.pyx
+lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.pxd
+lib/python${MODPY_VERSION}/site-packages/tables/lrucacheextension.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/misc/
 lib/python${MODPY_VERSION}/site-packages/tables/misc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tables/misc/${MODPY_PYCACHE}/
@@ -108,7 +123,9 @@ lib/python${MODPY_VERSION}/site-packages/tables/scripts/ptdump.py
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/ptrepack.py
 lib/python${MODPY_VERSION}/site-packages/tables/scripts/pttree.py
 lib/python${MODPY_VERSION}/site-packages/tables/table.py
+lib/python${MODPY_VERSION}/site-packages/tables/tableextension.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/tableextension.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/tableextension.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/tests/
 lib/python${MODPY_VERSION}/site-packages/tables/tests/Table2_1_lzo_nrv2e_shuffle.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/Tables_lzo1.h5
@@ -158,6 +175,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/tests/blosc_bigendian.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/bug-idx.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/check_leaks.py
 lib/python${MODPY_VERSION}/site-packages/tables/tests/common.py
+lib/python${MODPY_VERSION}/site-packages/tables/tests/create-nested-type.c
 lib/python${MODPY_VERSION}/site-packages/tables/tests/create_backcompat_indexes.py
 lib/python${MODPY_VERSION}/site-packages/tables/tests/elink.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/elink2.h5
@@ -174,6 +192,7 @@ lib/python${MODPY_VERSION}/site-packages/tables/tests/matlab_file.mat
 lib/python${MODPY_VERSION}/site-packages/tables/tests/nested-type-with-gaps.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/non-chunked-table.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/oldflavor_numeric.h5
+lib/python${MODPY_VERSION}/site-packages/tables/tests/out_of_order_types.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/python2.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/python3.h5
 lib/python${MODPY_VERSION}/site-packages/tables/tests/scalar.h5
@@ -231,5 +250,8 @@ lib/python${MODPY_VERSION}/site-packages/tables/tests/zerodim-attrs-1.4.h5
 lib/python${MODPY_VERSION}/site-packages/tables/undoredo.py
 lib/python${MODPY_VERSION}/site-packages/tables/unimplemented.py
 lib/python${MODPY_VERSION}/site-packages/tables/utils.py
+lib/python${MODPY_VERSION}/site-packages/tables/utilsextension.c
 @so lib/python${MODPY_VERSION}/site-packages/tables/utilsextension.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/tables/utilsextension.pxd
+lib/python${MODPY_VERSION}/site-packages/tables/utilsextension.pyx
 lib/python${MODPY_VERSION}/site-packages/tables/vlarray.py
