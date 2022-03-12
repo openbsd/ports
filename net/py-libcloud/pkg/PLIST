@@ -472,6 +472,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}oss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}rgw.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}scaleway.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/atmos.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/auroraobjects.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/azure_blobs.py
@@ -488,6 +489,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/ninefold.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/oss.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/rgw.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/s3.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/scaleway.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/providers.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/types.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/utils/
