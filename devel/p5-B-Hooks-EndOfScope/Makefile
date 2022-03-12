@@ -2,8 +2,9 @@ COMMENT =	execute code after a scope finished compilation
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	B-Hooks-EndOfScope-0.25
+DISTNAME =	B-Hooks-EndOfScope-0.26
 CATEGORIES =	devel
+
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 # Perl
