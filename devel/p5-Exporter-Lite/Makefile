@@ -1,7 +1,6 @@
 COMMENT =	lightweight exporting of functions and variables
 
-DISTNAME =	Exporter-Lite-0.08
-REVISION =	0
+DISTNAME =	Exporter-Lite-0.09
 
 CATEGORIES =	devel
 
