@@ -1,6 +1,6 @@
 COMMENT =		country, language, currency and scripts definitions
 
-MODPY_EGG_VERSION =	22.1.10
+MODPY_EGG_VERSION =	22.3.5
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -13,10 +13,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	src
 
-TEST_ENV =		PYTHONPATH=${WRKSRC}/lib
+#TEST_ENV =		PYTHONPATH=${WRKSRC}/lib
 
 FLAVORS =		python3
 FLAVOR =		python3
