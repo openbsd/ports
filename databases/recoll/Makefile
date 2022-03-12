@@ -3,7 +3,7 @@ COMMENT-gui=	X user interface to recoll
 
 MULTI_PACKAGES=	-main -gui
 
-V=		1.31.6
+V=		1.32.0
 DISTNAME=	recoll-${V}
 
 SHARED_LIBS +=	recoll-${V}            1.0 # 0.0
