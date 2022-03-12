@@ -2,8 +2,7 @@ COMMENT =		curses interface for transmission
 
 GH_ACCOUNT =		tremc
 GH_PROJECT =		tremc
-GH_COMMIT =		8b6b29163295e5cf12d9d874e80203c5906619c8
-DISTNAME =		tremc-0.9.2pl20210227
+GH_TAGNAME =		0.9.3
 
 CATEGORIES =		net
 
