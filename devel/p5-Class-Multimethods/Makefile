@@ -9,6 +9,6 @@ REVISION =	0
 # Perl
 PERMIT_PACKAGE =		Yes
 
-WRKSRC =	${WRKDIR}/Class-Multimethods-1.700
+WRKDIST =	${WRKDIR}/Class-Multimethods-1.700
 
 .include <bsd.port.mk>
