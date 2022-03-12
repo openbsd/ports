@@ -1,4 +1,4 @@
 ${P5ARCH}/Crypt/OpenSSL/PKCS10.pm
 ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/
-${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/PKCS10.so
+@so ${P5ARCH}/auto/Crypt/OpenSSL/PKCS10/PKCS10.so
 @man man/man3p/Crypt::OpenSSL::PKCS10.3p
