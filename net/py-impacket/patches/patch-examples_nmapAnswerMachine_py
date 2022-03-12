@@ -1,7 +1,7 @@
 Index: examples/nmapAnswerMachine.py
 --- examples/nmapAnswerMachine.py.orig
 +++ examples/nmapAnswerMachine.py
-@@ -16,11 +16,11 @@ from impacket.examples import os_ident
+@@ -25,11 +25,11 @@ from impacket.examples import os_ident
  
  MAC = "01:02:03:04:05:06"
  IP  = "192.168.67.254"
@@ -15,7 +15,7 @@ Index: examples/nmapAnswerMachine.py
  
  # Fingerprint = 'Adtran NetVanta 3200 router' # CD=Z TOSI=Z <----------- NMAP detects it as Linux!!!
  # Fingerprint = 'ADIC Scalar 1000 tape library remote management unit' # DFI=S
-@@ -1114,5 +1114,5 @@ if __name__ == '__main__':
+@@ -1123,5 +1123,5 @@ if __name__ == '__main__':
  # [-] ??? (TOS) Type of Service
  # [-] ??? (RUL) Length of return UDP packet is correct
  

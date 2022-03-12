@@ -1,7 +1,7 @@
 Index: examples/raiseChild.py
 --- examples/raiseChild.py.orig
 +++ examples/raiseChild.py
-@@ -1248,18 +1248,18 @@ if __name__ == '__main__':
+@@ -1252,18 +1252,18 @@ if __name__ == '__main__':
      if len(sys.argv)==1:
          parser.print_help()
          print("\nExamples: ")
@@ -26,10 +26,3 @@ Index: examples/raiseChild.py
          sys.exit(1)
   
      options = parser.parse_args()
-@@ -1311,4 +1311,4 @@ if __name__ == '__main__':
-         logging.critical(str(e))
-         if hasattr(e, 'error_code'):
-             if e.error_code == 0xc0000073:
--                logging.info("Account not found in domain. (RID:%s)", options.targetRID)
-\ No newline at end of file
-+                logging.info("Account not found in domain. (RID:%s)", options.targetRID)

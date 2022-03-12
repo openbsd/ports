@@ -14,7 +14,7 @@ Index: examples/goldenPac.py
  #
  #       if domain.net and/or domain-host do not resolve, add them
  #       to the hosts file or use the -dc-ip and -target-ip parameters
-@@ -1093,14 +1093,14 @@ if __name__ == '__main__':
+@@ -1098,14 +1098,14 @@ if __name__ == '__main__':
      if len(sys.argv)==1:
          parser.print_help()
          print("\nExamples: ")

@@ -2,12 +2,11 @@ FIX_EXTRACT_PERMISSIONS = Yes
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.21
+MODPY_EGG_VERSION =	0.9.24
 DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		2
 
 HOMEPAGE =		https://www.secureauth.com/labs/open-source-tools/impacket
 
