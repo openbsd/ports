@@ -1,8 +1,14 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
-MODPY_EGG_VERSION=	3.19.3
-DISTNAME=		protobuf-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
+V=			3.19.3
+MODPY_EGG_VERSION=	${V:S/-//g}
+TAG=			v${V:S/rc-/rc/}
+
+DISTNAME=		protobuf-python-$V
+PKGNAME=		py-protobuf-${MODPY_EGG_VERSION}
+REVISION=		0
+
+WRKDIST=		${WRKDIR}/protobuf-$V/python
 
 CATEGORIES=		devel
 
@@ -11,8 +17,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
-MODPY_PI=		Yes
-MODPY_PI_DIR=		p/protobuf
+HOMEPAGE=		https://github.com/protocolbuffers/protobuf/
+MASTER_SITES=		https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
+
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
