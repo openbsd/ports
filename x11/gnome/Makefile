@@ -14,6 +14,7 @@
      SUBDIR += calendar
      SUBDIR += caribou
      SUBDIR += characters
+     SUBDIR += cheese
      SUBDIR += chrome-gnome-shell
      SUBDIR += clocks
      SUBDIR += connections
@@ -99,6 +100,7 @@
      SUBDIR += tweaks
      SUBDIR += usage
      SUBDIR += user-docs
+     SUBDIR += video-effects
      SUBDIR += vino
      SUBDIR += weather
      SUBDIR += yelp
