@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	3.7.0
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
+REVISION=		0
 
 HOMEPAGE=		https://www.pytables.org/
 MAINTAINER=		Martin Reindl <martin@catai.org>
@@ -25,15 +26,17 @@ MODPY_DISTUTILS_BUILDARGS=	--hdf5=${LOCALBASE} \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BUILD_DEPENDS+= lang/cython${MODPY_FLAVOR} \
-                math/py-numpy${MODPY_FLAVOR} \
+BUILD_DEPENDS+=	lang/cython${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR} \
+		sysutils/py-packaging${MODPY_FLAVOR}
 
 LIB_DEPENDS+=	archivers/lzo2 \
 		archivers/bzip2 \
 		archivers/blosc \
 		math/hdf5
 
-RUN_DEPENDS+=	math/netcdf
+RUN_DEPENDS+=	math/netcdf \
+		sysutils/py-packaging${MODPY_FLAVOR}
 
 TEST_DEPENDS=	math/py-numexpr${MODPY_FLAVOR} \
 		math/hdf5
