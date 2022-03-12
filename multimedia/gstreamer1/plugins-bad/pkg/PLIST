@@ -121,8 +121,6 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstdash.so
 @so lib/gstreamer-${API}/libgstdebugutilsbad.so
 @so lib/gstreamer-${API}/libgstdvbsubenc.so
-@so lib/gstreamer-${API}/libgstdvbsuboverlay.so
-@so lib/gstreamer-${API}/libgstdvdspu.so
 @so lib/gstreamer-${API}/libgstfaceoverlay.so
 @so lib/gstreamer-${API}/libgstfestival.so
 @so lib/gstreamer-${API}/libgstfieldanalysis.so
@@ -163,7 +161,6 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstsdpelem.so
 @so lib/gstreamer-${API}/libgstsegmentclip.so
 @so lib/gstreamer-${API}/libgstshm.so
-@so lib/gstreamer-${API}/libgstsiren.so
 @so lib/gstreamer-${API}/libgstsmooth.so
 @so lib/gstreamer-${API}/libgstsmoothstreaming.so
 @so lib/gstreamer-${API}/libgstsoundtouch.so

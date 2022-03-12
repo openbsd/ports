@@ -2,7 +2,7 @@ COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gsturidownloader-1.0      5.0 # 0.2000.0
 SHARED_LIBS += gstadaptivedemux-1.0      4.0 # 0.2000.0
@@ -53,6 +53,11 @@ DISABLED +=		uvch264 voaacenc voamrwbenc vulkan wasapi webp openaptx
 DISABLED +=		webrtc webrtcdsp wildmidi winks winscreencap wpe x265
 DISABLED +=		zbar magicleap v4l2codecs va wasapi2 avtp microdns
 DISABLED +=		svthevcenc zxing qroverlay
+
+# "disallowed" (non free) plugins;
+# see https://src.fedoraproject.org/rpms/gstreamer1-plugins-bad-free/blob/rawhide/f/gst-p-bad-cleanup.sh
+DISABLED +=		dvbsuboverlay dvdspu siren
+
 .for d in ${DISABLED}
 CONFIGURE_ARGS +=	-D${d}=disabled
 .endfor
