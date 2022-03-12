@@ -1,5 +1,5 @@
 @newgroup _gnome-initial-setup:724
-@newuser _gnome-initial-setup:724:_gnome-initial-setup:daemon:GNOME Initial Setup:/nonexistent:/sbin/nologin
+@newuser _gnome-initial-setup:724:_gnome-initial-setup::GNOME Initial Setup:/nonexistent:/sbin/nologin
 @bin libexec/gnome-initial-setup
 @bin libexec/gnome-initial-setup-copy-worker
 share/applications/gnome-initial-setup.desktop

@@ -2,15 +2,17 @@ COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		41.4
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += accountsservice c cairo fontconfig gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdm geoclue-2 gio-2.0 glib-2.0 gnome-desktop-3 goa-1.0
-WANTLIB += goa-backend-1.0 gobject-2.0 gtk-3 gweather-3 ibus-1.0
-WANTLIB += intl json-glib-1.0 m pango-1.0 pangocairo-1.0 polkit-gobject-1
-WANTLIB += pwquality rest-0.7 secret-1 webkit2gtk-4.0
+WANTLIB += accountsservice c cairo cheese cheese-gtk fontconfig
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdm geoclue-2 gio-2.0 glib-2.0
+WANTLIB += gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
+WANTLIB += gtk-3 gweather-3 ibus-1.0 intl json-glib-1.0 m pango-1.0
+WANTLIB += pangocairo-1.0 polkit-gobject-1 pwquality rest-0.7
+WANTLIB += secret-1 webkit2gtk-4.0
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -23,6 +25,7 @@ MODGNOME_TOOLS=		desktop-file-utils
 
 LIB_DEPENDS=		inputmethods/ibus \
 			security/libpwquality \
+			x11/gnome/cheese,-libs \
 			x11/gnome/desktop \
 			x11/gnome/gdm \
 			x11/gnome/libgweather \
@@ -40,8 +43,7 @@ RUN_DEPENDS +=		sysutils/polkit
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
 
-CONFIGURE_ARGS=		-Dcheese=disabled \
-			-Dsystemd=false
+CONFIGURE_ARGS=		-Dsystemd=false
 
 # requires malcontent
 # https://gitlab.freedesktop.org/pwithnall/malcontent/
