@@ -19,6 +19,7 @@ WANTLIB=	c crypto curses ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 MASTER_SITES=	https://github.com/OpenSC/OpenSC/releases/download/${V}/
 
 BUILD_DEPENDS=	security/pcsc-lite \
+		shells/bash-completion \
 		textproc/docbook-xsl
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/ccid
