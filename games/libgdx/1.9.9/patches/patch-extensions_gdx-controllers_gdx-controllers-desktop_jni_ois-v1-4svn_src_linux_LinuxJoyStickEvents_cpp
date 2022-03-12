@@ -1,0 +1,42 @@
+remove linux' input.h
+stub functions
+
+Index: extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxJoyStickEvents.cpp
+--- extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxJoyStickEvents.cpp.orig
++++ extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxJoyStickEvents.cpp
+@@ -32,7 +32,6 @@ restrictions:
+ 
+ #include <fcntl.h>        //Needed to Open a file descriptor
+ #include <cassert>	
+-#include <linux/input.h>
+ 
+ 
+ #include <sstream>
+@@ -86,6 +85,7 @@ void LinuxJoyStick::_initialize()
+ //-------------------------------------------------------------------//
+ void LinuxJoyStick::capture()
+ {
++#if !defined(__OpenBSD__)
+ 	static const short POV_MASK[8] = {0,0,1,1,2,2,3,3};
+ 
+ 	//Used to determine if an axis has been changed and needs an event
+@@ -209,16 +209,19 @@ void LinuxJoyStick::capture()
+ 				if( mListener->axisMoved( JoyStickEvent(this,mState), i) == false )
+ 					return;
+ 	}
++#endif
+ }
+ 
+ //-------------------------------------------------------------------//
+ void LinuxJoyStick::setBuffered(bool buffered)
+ {
++#if !defined(__OpenBSD__)
+ 	if( buffered != mBuffered )
+ 	{
+ 		mBuffered = buffered;
+ 		_initialize();
+ 	}
++#endif
+ }
+ 
+ //-------------------------------------------------------------------//

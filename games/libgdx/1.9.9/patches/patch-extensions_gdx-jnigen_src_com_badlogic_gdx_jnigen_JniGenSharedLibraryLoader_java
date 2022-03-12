@@ -1,0 +1,14 @@
+hijack Linux codepath
+
+Index: extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java
+--- extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java.orig
++++ extensions/gdx-jnigen/src/com/badlogic/gdx/jnigen/JniGenSharedLibraryLoader.java
+@@ -159,7 +159,7 @@ public class JniGenSharedLibraryLoader {
+ 		if (loadedLibraries.contains(sharedLibName)) return;
+ 
+ 		boolean isWindows = System.getProperty("os.name").contains("Windows");
+-		boolean isLinux = System.getProperty("os.name").contains("Linux");
++		boolean isLinux = System.getProperty("os.name").contains("Linux") || System.getProperty("os.name").contains("OpenBSD");
+ 		boolean isMac = System.getProperty("os.name").contains("Mac");
+ 		boolean isAndroid = false;
+ 		boolean is64Bit = System.getProperty("os.arch").equals("amd64") || System.getProperty("os.arch").equals("x86_64");

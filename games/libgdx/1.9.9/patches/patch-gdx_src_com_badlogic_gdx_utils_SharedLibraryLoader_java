@@ -1,0 +1,14 @@
+hijack Linux codepath
+
+Index: gdx/src/com/badlogic/gdx/utils/SharedLibraryLoader.java
+--- gdx/src/com/badlogic/gdx/utils/SharedLibraryLoader.java.orig
++++ gdx/src/com/badlogic/gdx/utils/SharedLibraryLoader.java
+@@ -35,7 +35,7 @@ import java.util.zip.ZipFile;
+  * @author Nathan Sweet */
+ public class SharedLibraryLoader {
+ 	static public boolean isWindows = System.getProperty("os.name").contains("Windows");
+-	static public boolean isLinux = System.getProperty("os.name").contains("Linux");
++	static public boolean isLinux = System.getProperty("os.name").contains("Linux") || System.getProperty("os.name").contains("OpenBSD");
+ 	static public boolean isMac = System.getProperty("os.name").contains("Mac");
+ 	static public boolean isIos = false;
+ 	static public boolean isAndroid = false;

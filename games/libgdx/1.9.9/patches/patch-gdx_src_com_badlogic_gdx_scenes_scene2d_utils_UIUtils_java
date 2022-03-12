@@ -1,0 +1,14 @@
+hijack Linux codepath
+
+Index: gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java
+--- gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java.orig
++++ gdx/src/com/badlogic/gdx/scenes/scene2d/utils/UIUtils.java
+@@ -8,7 +8,7 @@ import com.badlogic.gdx.Input.Keys;
+ public class UIUtils {
+ 	static public boolean isMac = System.getProperty("os.name").contains("OS X");
+ 	static public boolean isWindows = System.getProperty("os.name").contains("Windows");
+-	static public boolean isLinux = System.getProperty("os.name").contains("Linux");
++	static public boolean isLinux = System.getProperty("os.name").contains("Linux") || System.getProperty("os.name").contains("OpenBSD");
+ 
+ 	static public boolean left () {
+ 		return Gdx.input.isButtonPressed(Buttons.LEFT);

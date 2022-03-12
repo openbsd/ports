@@ -1,0 +1,226 @@
+stub all functions
+
+Index: extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxForceFeedback.cpp
+--- extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxForceFeedback.cpp.orig
++++ extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/LinuxForceFeedback.cpp
+@@ -46,6 +46,7 @@ LinuxForceFeedback::LinuxForceFeedback(int deviceID) :
+ //--------------------------------------------------------------//
+ LinuxForceFeedback::~LinuxForceFeedback()
+ {
++#if !defined(__OpenBSD__)
+ 	// Unload all effects.
+ 	for(EffectList::iterator i = mEffectList.begin(); i != mEffectList.end(); ++i )
+ 	{
+@@ -55,12 +56,16 @@ LinuxForceFeedback::~LinuxForceFeedback()
+ 	}
+ 
+ 	mEffectList.clear();
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ unsigned short LinuxForceFeedback::getFFMemoryLoad()
+ {
+ 	int nEffects = -1;
++#ifdef __OpenBSD__
++	return nEffects;
++#else
+ 	if (ioctl(mJoyStick, EVIOCGEFFECTS, &nEffects) == -1)
+ 		OIS_EXCEPT(E_General, "Unknown error reading max number of uploaded effects.");
+ #if (OIS_LINUX_JOYFF_DEBUG > 1)
+@@ -69,11 +74,13 @@ unsigned short LinuxForceFeedback::getFFMemoryLoad()
+ #endif
+ 
+ 	return (unsigned short int)(nEffects > 0 ? 100.0*mEffectList.size()/nEffects : 100);
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::setMasterGain(float value)
+ {
++#if !defined(__OpenBSD__)
+ 	if (!mSetGainSupport)
+ 	{
+ #if (OIS_LINUX_JOYFF_DEBUG > 0)
+@@ -102,11 +109,13 @@ void LinuxForceFeedback::setMasterGain(float value)
+ 	if (write(mJoyStick, &event, sizeof(event)) != sizeof(event)) {
+ 		OIS_EXCEPT(E_General, "Unknown error changing master gain.");
+ 	}
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::setAutoCenterMode(bool enabled)
+ {
++#if !defined(__OpenBSD__)
+ 	if (!mSetAutoCenterSupport)
+ 	{
+ #if (OIS_LINUX_JOYFF_DEBUG > 0)
+@@ -131,11 +140,13 @@ void LinuxForceFeedback::setAutoCenterMode(bool enable
+ 	if (write(mJoyStick, &event, sizeof(event)) != sizeof(event)) {
+ 		OIS_EXCEPT(E_General, "Unknown error toggling auto-center.");
+ 	}
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::upload( const Effect* effect )
+ {
++#if !defined(__OpenBSD__)
+ 	switch( effect->force )
+ 	{
+ 		case OIS::Effect::ConstantForce: 
+@@ -157,17 +168,21 @@ void LinuxForceFeedback::upload( const Effect* effect 
+ 			OIS_EXCEPT(E_NotImplemented, "Requested force not implemented yet, sorry!"); 
+ 			break;
+ 	}
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::modify( const Effect* effect )
+ {
++#if !defined(__OpenBSD__)
+ 	upload(effect);
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::remove( const Effect* effect )
+ {
++#if !defined(__OpenBSD__)
+ 	//Get the effect - if it exists
+ 	EffectList::iterator i = mEffectList.find(effect->_handle);
+ 	if( i != mEffectList.end() )
+@@ -186,6 +201,7 @@ void LinuxForceFeedback::remove( const Effect* effect 
+ 		else
+ 			mEffectList.erase(i);
+ 	}
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+@@ -224,6 +240,7 @@ void LinuxForceFeedback::_setCommonProperties(struct f
+ 											  struct ff_envelope *ffenvelope, 
+ 											  const Effect* effect, const Envelope *envelope )
+ {
++#if !defined(__OpenBSD__)
+ 	memset(event, 0, sizeof(struct ff_effect));
+ 
+ 	if (envelope && ffenvelope && envelope->isUsed()) {
+@@ -278,11 +295,13 @@ void LinuxForceFeedback::_setCommonProperties(struct f
+ 		 << "    Delay  : " << effect->replay_delay 
+ 		 << " => " << event->replay.delay << endl;
+ #endif
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_updateConstantEffect( const Effect* eff )
+ {
++#if !defined(__OpenBSD__)
+ 	struct ff_effect event;
+ 
+ 	ConstantEffect *effect = static_cast<ConstantEffect*>(eff->getForceEffect());
+@@ -300,11 +319,13 @@ void LinuxForceFeedback::_updateConstantEffect( const 
+ #endif
+ 
+ 	_upload(&event, eff);
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_updateRampEffect( const Effect* eff )
+ {
++#if !defined(__OpenBSD__)
+ 	struct ff_effect event;
+ 
+ 	RampEffect *effect = static_cast<RampEffect*>(eff->getForceEffect());
+@@ -325,11 +346,13 @@ void LinuxForceFeedback::_updateRampEffect( const Effe
+ #endif
+ 
+ 	_upload(&event, eff);
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_updatePeriodicEffect( const Effect* eff )
+ {
++#if !defined(__OpenBSD__)
+ 	struct ff_effect event;
+ 
+ 	PeriodicEffect *effect = static_cast<PeriodicEffect*>(eff->getForceEffect());
+@@ -386,11 +409,13 @@ void LinuxForceFeedback::_updatePeriodicEffect( const 
+ #endif
+ 
+ 	_upload(&event, eff);
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_updateConditionalEffect( const Effect* eff )
+ {
++#if !defined(__OpenBSD__)
+ 	struct ff_effect event;
+ 
+ 	ConditionalEffect *effect = static_cast<ConditionalEffect*>(eff->getForceEffect());
+@@ -445,11 +470,13 @@ void LinuxForceFeedback::_updateConditionalEffect( con
+ 	cout << "  Condition[1] : Not implemented" << endl;
+ #endif
+ 	_upload(&event, eff);
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_upload( struct ff_effect* ffeffect, const Effect* effect)
+ {
++#if !defined(__OpenBSD__)
+ 	struct ff_effect *linEffect = 0;
+ 
+ 	//Get the effect - if it exists
+@@ -507,10 +534,12 @@ void LinuxForceFeedback::_upload( struct ff_effect* ff
+ 	cout << "LinuxForceFeedback("<< mJoyStick 
+ 		 << ") : Effect handle : " << effect->_handle << endl;
+ #endif
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_stop( int handle) {
++#if !defined(__OpenBSD__)
+ 	struct input_event stop;
+ 
+ 	stop.type = EV_FF;
+@@ -525,10 +554,12 @@ void LinuxForceFeedback::_stop( int handle) {
+ 	if (write(mJoyStick, &stop, sizeof(stop)) != sizeof(stop)) {
+ 		OIS_EXCEPT(E_General, "Unknown error stopping effect->..");
+ 	}
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_start( int handle) {
++#if !defined(__OpenBSD__)
+ 	struct input_event play;
+ 
+ 	play.type = EV_FF;
+@@ -543,11 +574,13 @@ void LinuxForceFeedback::_start( int handle) {
+ 	if (write(mJoyStick, &play, sizeof(play)) != sizeof(play)) {
+ 		OIS_EXCEPT(E_General, "Unknown error playing effect->..");
+ 	}
++#endif
+ }
+ 
+ //--------------------------------------------------------------//
+ void LinuxForceFeedback::_unload( int handle)
+ {
++#if !defined(__OpenBSD__)
+ #if (OIS_LINUX_JOYFF_DEBUG > 1)
+ 	cout << endl << "LinuxForceFeedback("<< mJoyStick 
+ 		 << ") : Removing effect with handle " << handle << endl;
+@@ -556,4 +589,5 @@ void LinuxForceFeedback::_unload( int handle)
+ 	if (ioctl(mJoyStick, EVIOCRMFF, handle) == -1) {
+ 		OIS_EXCEPT(E_General, "Unknown error removing effect->..");
+ 	}
++#endif
+ }

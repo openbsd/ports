@@ -1,0 +1,13 @@
+remove reference to header file that is Linux-specific
+
+Index: extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/includes/linux/LinuxForceFeedback.h
+--- extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/includes/linux/LinuxForceFeedback.h.orig
++++ extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/includes/linux/LinuxForceFeedback.h
+@@ -25,7 +25,6 @@ restrictions:
+ 
+ #include "linux/LinuxPrereqs.h"
+ #include "OISForceFeedback.h"
+-#include <linux/input.h>
+ 
+ namespace OIS
+ {

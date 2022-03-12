@@ -1,0 +1,17 @@
+disable building of unneeded parts of gdx-controllers-*
+
+Index: extensions/gdx-controllers/pom.xml
+--- extensions/gdx-controllers/pom.xml.orig
++++ extensions/gdx-controllers/pom.xml
+@@ -15,9 +15,11 @@
+   <modules>
+     <module>gdx-controllers</module>
+     <module>gdx-controllers-desktop</module>
++    <!--
+     <module>gdx-controllers-desktop/jni/maven</module>
+     <module>gdx-controllers-lwjgl3</module>
+     <module>gdx-controllers-android</module>
+     <module>gdx-controllers-gwt</module>
++    -->
+   </modules>
+ </project>

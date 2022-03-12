@@ -1,0 +1,130 @@
+shamelessly abuse build-linux64.xml for OpenBSD build
+
+Index: extensions/gdx-freetype/jni/build-linux64.xml
+--- extensions/gdx-freetype/jni/build-linux64.xml.orig
++++ extensions/gdx-freetype/jni/build-linux64.xml
+@@ -1,12 +1,12 @@
+-<project name="gdx-freetype-Linux-64" basedir="." default="postcompile">
++<project name="gdx-freetype-OpenBSD" basedir="." default="postcompile">
+ 	<!-- include the environment -->
+ 	<property environment="env"/>	
+ 	<!-- output directory for temporary object files -->
+-	<property name="buildDir" value="target/linux64" />
++	<property name="buildDir" value="target/openbsd" />
+ 	<!-- output directory for the shared library -->
+-	<property name="libsDir" value="../libs/linux64" />
++	<property name="libsDir" value="../libs/openbsd" />
+ 	<!-- the name of the shared library -->
+-	<property name="libName" value="libgdx-freetype64.so"/>
++	<property name="libName" value="libgdx-freetype${M_ARCH}.so"/>
+ 	<!-- the jni header jniPlatform to use -->
+ 	<property name="jniPlatform" value="linux"/>
+ 	<!-- the compilerPrefix for the C & C++ compilers -->
+@@ -14,10 +14,10 @@
+ 	<!--  the compilerSuffix for the C & C++ compilers -->	
+ 	<property name="compilerSuffix" value="" />	
+ 	
+-	<!-- define gcc compiler, options and files to compile -->
+-	<property name="gcc" value="${compilerPrefix}gcc${compilerSuffix}"/>	
+-	<property name="gcc-opts" value="-c -Wall -O2 -mfpmath=sse -msse -fmessage-length=0 -m64 -fPIC  -DFT2_BUILD_LIBRARY"/>
+-	<fileset id="gcc-files" dir="./">
++	<!-- define cc compiler, options and files to compile -->
++	<property name="cc" value="${compilerPrefix}cc${compilerSuffix}"/>	
++	<property name="cc-opts" value="-c -Wall ${CFLAGS} -fPIC  -DFT2_BUILD_LIBRARY"/>
++	<fileset id="cc-files" dir="./">
+ 		<exclude name="target/"/>		
+ 				<include name="memcpy_wrap.c"/>
+ 		<include name="freetype-2.6.2/src/base/ftsystem.c"/>
+@@ -68,10 +68,10 @@
+ 		
+ 	</fileset>
+ 	
+-	<!-- define g++ compiler, options and files to compile -->
+-	<property name="g++" value="${compilerPrefix}g++${compilerSuffix}"/>
+-	<property name="g++-opts" value="-c -Wall -O2 -mfpmath=sse -msse -fmessage-length=0 -m64 -fPIC  -DFT2_BUILD_LIBRARY"/>
+-	<fileset id="g++-files" dir="./">
++	<!-- define c++ compiler, options and files to compile -->
++	<property name="c++" value="${compilerPrefix}c++${compilerSuffix}"/>
++	<property name="c++-opts" value="-c -Wall ${CXXFLAGS} -fPIC  -DFT2_BUILD_LIBRARY"/>
++	<fileset id="c++-files" dir="./">
+ 		<exclude name="target/"/>
+ 				<include name="**/*.cpp"/>
+ 
+@@ -79,8 +79,8 @@
+ 	</fileset>
+ 
+ 	<!-- define linker and options -->
+-	<property name="linker" value="${compilerPrefix}g++${compilerSuffix}"/>
+-	<property name="linker-opts" value="-shared -m64 -Wl,-wrap,memcpy"/>
++	<property name="linker" value="${compilerPrefix}c++${compilerSuffix}"/>
++	<property name="linker-opts" value="-shared"/>
+ 	<property name="libraries" value=""/>
+ 	
+ 	<!-- cleans the build directory, removes all object files and shared libs -->
+@@ -96,13 +96,13 @@
+ 			<and>
+ 				<or>
+ 					<!-- Include both b/c Windows might be either -->
+-					<available file="${g++}" filepath="${env.PATH}"/>
+-					<available file="${g++}" filepath="${env.Path}"/>
++					<available file="${c++}" filepath="${env.PATH}"/>
++					<available file="${c++}" filepath="${env.Path}"/>
+ 				</or>
+ 				<or>
+ 					<!-- Include both b/c Windows might be either -->
+-					<available file="${gcc}" filepath="${env.PATH}"/>
+-					<available file="${gcc}" filepath="${env.Path}"/>
++					<available file="${cc}" filepath="${env.PATH}"/>
++					<available file="${cc}" filepath="${env.Path}"/>
+ 				</or>
+ 			</and>
+ 		</condition>
+@@ -115,8 +115,8 @@
+ 	<target name="create-build-dir" depends="precompile" if="has-compiler">
+ 		<!-- FIXME this is pretty nasty :/ -->
+ 		<copy todir="${buildDir}">
+-			<fileset refid="g++-files"/>
+-			<fileset refid="gcc-files"/>
++			<fileset refid="c++-files"/>
++			<fileset refid="cc-files"/>
+ 		</copy>
+ 		<delete>
+ 			<fileset dir="${buildDir}">
+@@ -129,8 +129,8 @@
+ 	<!-- compiles all C and C++ files to object files in the build directory -->
+ 	<target name="compile" depends="create-build-dir" if="has-compiler">
+ 		<mkdir dir="${buildDir}"/>
+-		<apply failonerror="true" executable="${g++}" dest="${buildDir}" verbose="true">
+-			<arg line="${g++-opts}"/>
++		<apply failonerror="true" executable="${c++}" dest="${buildDir}" verbose="true">
++			<arg line="${c++-opts}"/>
+ 			<arg value="-Ijni-headers"/>
+ 			<arg value="-Ijni-headers/${jniPlatform}"/>
+ 			<arg value="-I."/>
+@@ -139,14 +139,14 @@
+ 			<srcfile/>
+ 			<arg value="-o"/>
+ 			<targetfile/>
+-			<fileset refid="g++-files"/>
++			<fileset refid="c++-files"/>
+ 			<compositemapper>
+ 				<mapper type="glob" from="*.cpp" to="*.o"/>
+ 				<mapper type="glob" from="*.mm" to="*.o"/>
+ 			</compositemapper>
+ 		</apply>
+-		<apply failonerror="true" executable="${gcc}" dest="${buildDir}" verbose="true">
+-			<arg line="${gcc-opts}"/>
++		<apply failonerror="true" executable="${cc}" dest="${buildDir}" verbose="true">
++			<arg line="${cc-opts}"/>
+ 			<arg value="-Ijni-headers"/>
+ 			<arg value="-Ijni-headers/${jniPlatform}"/>
+ 			<arg value="-I."/>
+@@ -155,7 +155,7 @@
+ 			<srcfile/>
+ 			<arg value="-o"/>
+ 			<targetfile/>
+-			<fileset refid="gcc-files"/>
++			<fileset refid="cc-files"/>
+ 			<compositemapper>
+ 				<mapper type="glob" from="*.c" to="*.o"/>
+ 				<mapper type="glob" from="*.m" to="*.o"/>

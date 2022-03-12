@@ -1,0 +1,126 @@
+remove reference to header file that we don't have
+stub functions
+
+Index: extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/EventHelpers.cpp
+--- extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/EventHelpers.cpp.orig
++++ extensions/gdx-controllers/gdx-controllers-desktop/jni/ois-v1-4svn/src/linux/EventHelpers.cpp
+@@ -26,7 +26,6 @@ restrictions:
+ #include "OISException.h"
+ #include "OISJoyStick.h"
+ 
+-#include <linux/input.h>
+ #include <cstring>
+ 
+ //#define OIS_LINUX_JOY_DEBUG
+@@ -52,6 +51,10 @@ bool inline isBitSet(unsigned char bits[], unsigned in
+ //-----------------------------------------------------------------------------//
+ DeviceComponentInfo getComponentInfo( int deviceID )
+ {
++#ifdef __OpenBSD__
++	DeviceComponentInfo components;
++	return components;
++#else
+ 	unsigned char ev_bits[1 + EV_MAX/8/sizeof(unsigned char)];
+ 	memset( ev_bits, 0, sizeof(ev_bits) );
+ 
+@@ -64,7 +67,6 @@ DeviceComponentInfo getComponentInfo( int deviceID )
+ 		OIS_EXCEPT( E_General, "Could not read device events features");
+ 
+ 	DeviceComponentInfo components;
+-
+ 	for (int i = 0; i < EV_MAX; i++)
+ 	{
+ 		if( isBitSet(ev_bits, i) )
+@@ -152,11 +154,15 @@ DeviceComponentInfo getComponentInfo( int deviceID )
+ 	}
+ 
+ 	return components;
++#endif
+ }
+ 
+ //-----------------------------------------------------------------------------//
+ bool EventUtils::isJoyStick( int deviceID, JoyStickInfo &js )
+ {
++#ifdef __OpenBSD__
++	return false;
++#else
+ 	if( deviceID == -1 ) 
+ 		OIS_EXCEPT( E_General, "Error with File Descriptor" );
+ 
+@@ -231,11 +237,15 @@ bool EventUtils::isJoyStick( int deviceID, JoyStickInf
+ 	}
+ 
+ 	return joyButtonFound;
++#endif
+ }
+ 
+ //-----------------------------------------------------------------------------//
+ string EventUtils::getName( int deviceID )
+ {
++#ifdef __OpenBSD__
++	return "";
++#else
+ #ifdef OIS_LINUX_JOY_DEBUG
+ 	cout << "EventUtils::getName(" << deviceID 
+ 		 << ") : Reading device name" << endl;
+@@ -245,11 +255,15 @@ string EventUtils::getName( int deviceID )
+ 	if (ioctl(deviceID, EVIOCGNAME(OIS_DEVICE_NAME), name) == -1)
+ 		OIS_EXCEPT( E_General, "Could not read device name");
+ 	return string(name);
++#endif
+ }
+ 
+ //-----------------------------------------------------------------------------//
+ string EventUtils::getUniqueId( int deviceID )
+ {
++#ifdef __OpenBSD__
++	return "";
++#else
+ #ifdef OIS_LINUX_JOY_DEBUG
+ 	cout << "EventUtils::getUniqueId(" << deviceID 
+ 		 << ") : Reading device unique Id" << endl;
+@@ -260,11 +274,15 @@ string EventUtils::getUniqueId( int deviceID )
+ 	if (ioctl(deviceID, EVIOCGUNIQ(OIS_DEVICE_UNIQUE_ID), uId) == -1)
+ 		OIS_EXCEPT( E_General, "Could not read device unique Id");
+ 	return string(uId);
++#endif
+ }
+ 
+ //-----------------------------------------------------------------------------//
+ string EventUtils::getPhysicalLocation( int deviceID )
+ {
++#ifdef __OpenBSD__
++	return "";
++#else
+ #ifdef OIS_LINUX_JOY_DEBUG
+ 	cout << "EventUtils::getPhysicalLocation(" << deviceID 
+ 		 << ") : Reading device physical location" << endl;
+@@ -275,11 +293,13 @@ string EventUtils::getPhysicalLocation( int deviceID )
+ 	if (ioctl(deviceID, EVIOCGPHYS(OIS_DEVICE_PHYSICAL_LOCATION), physLoc) == -1)
+ 		OIS_EXCEPT( E_General, "Could not read device physical location");
+ 	return string(physLoc);
++#endif
+ }
+ 
+ //-----------------------------------------------------------------------------//
+ void EventUtils::enumerateForceFeedback( int deviceID, LinuxForceFeedback** ff )
+ {
++#if !defined(__OpenBSD__)
+ 	//Linux Event to OIS Event Mappings
+ 	map<int, Effect::EType> typeMap;
+ 	typeMap[FF_CONSTANT] = Effect::Constant;
+@@ -367,11 +387,14 @@ void EventUtils::enumerateForceFeedback( int deviceID,
+ 	const ForceFeedback::SupportedEffectList &list = (*ff)->getSupportedEffects();
+ 	if( list.size() == 0 )
+ 		removeForceFeedback( ff );
++#endif
+ }
+ 
+ //-----------------------------------------------------------------------------//
+ void EventUtils::removeForceFeedback( LinuxForceFeedback** ff )
+ {
++#if !defined(__OpenBSD__)
+ 	delete *ff;
+ 	*ff = 0;
++#endif
+ }

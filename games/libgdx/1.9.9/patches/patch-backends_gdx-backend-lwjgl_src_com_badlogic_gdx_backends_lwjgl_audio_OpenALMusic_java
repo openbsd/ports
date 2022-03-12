@@ -1,0 +1,14 @@
+don't break on OpenAL error
+
+Index: backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/audio/OpenALMusic.java
+--- backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/audio/OpenALMusic.java.orig
++++ backends/gdx-backend-lwjgl/src/com/badlogic/gdx/backends/lwjgl/audio/OpenALMusic.java
+@@ -80,7 +80,7 @@ public abstract class OpenALMusic implements Music {
+ 				alGenBuffers(buffers);
+ 				int errorCode = alGetError();
+ 				if (errorCode != AL_NO_ERROR)
+-					throw new GdxRuntimeException("Unable to allocate audio buffers. AL Error: " + errorCode);
++					System.out.println("Unable to allocate audio buffers. AL Error: " + errorCode);
+ 			}
+ 			alSourcei(sourceID, AL_LOOPING, AL_FALSE);
+ 			setPan(pan, volume);
