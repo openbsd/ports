@@ -6,11 +6,12 @@ include/soundtouch/FIFOSamplePipe.h
 include/soundtouch/STTypes.h
 include/soundtouch/SoundTouch.h
 include/soundtouch/soundtouch_config.h
-lib/libSoundTouch.a
+@static-lib lib/libSoundTouch.a
 lib/libSoundTouch.la
 @lib lib/libSoundTouch.so.${LIBSoundTouch_VERSION}
 lib/pkgconfig/soundtouch.pc
 share/aclocal/
 share/aclocal/soundtouch.m4
 share/doc/soundtouch/
+share/doc/soundtouch/COPYING.TXT
 share/doc/soundtouch/README.html
