@@ -1,0 +1,20 @@
+include/cheese/
+include/cheese/cheese-avatar-chooser.h
+include/cheese/cheese-avatar-widget.h
+include/cheese/cheese-camera-device-monitor.h
+include/cheese/cheese-camera-device.h
+include/cheese/cheese-camera.h
+include/cheese/cheese-effect.h
+include/cheese/cheese-gtk.h
+include/cheese/cheese-resource.h
+include/cheese/cheese-widget.h
+include/cheese/cheese.h
+lib/girepository-1.0/Cheese-3.0.typelib
+@lib lib/libcheese-gtk.so.${LIBcheese-gtk_VERSION}
+@lib lib/libcheese.so.${LIBcheese_VERSION}
+lib/pkgconfig/cheese-gtk.pc
+lib/pkgconfig/cheese.pc
+share/gir-1.0/Cheese-3.0.gir
+share/glib-2.0/schemas/org.gnome.Cheese.gschema.xml
+share/metainfo/org.gnome.Cheese.appdata.xml
+@tag glib-compile-schemas
