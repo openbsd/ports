@@ -1,6 +1,7 @@
---- drivers/usbhid-ups.c.orig	Tue Dec 29 13:08:34 2015
-+++ drivers/usbhid-ups.c	Sun Jan 15 23:54:35 2017
-@@ -963,7 +963,7 @@ void upsdrv_initups(void)
+Index: drivers/usbhid-ups.c
+--- drivers/usbhid-ups.c.orig
++++ drivers/usbhid-ups.c
+@@ -1050,7 +1050,7 @@ void upsdrv_initups(void)
  	   regular expression (USB) or device_path (SHUT) */
  	ret = comm_driver->open(&udev, &curDevice, subdriver_matcher, &callback);
  	if (ret < 1)

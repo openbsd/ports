@@ -1,15 +1,16 @@
---- clients/upsstats.c.orig	Thu Feb 11 21:43:13 2010
-+++ clients/upsstats.c	Sat Mar 20 23:18:11 2010
-@@ -844,7 +844,7 @@ static void display_template(const char *tfn)
+Index: clients/upsstats.c
+--- clients/upsstats.c.orig
++++ clients/upsstats.c
+@@ -848,7 +848,7 @@ static void display_template(const char *tfn)
  {
- 	char	fn[SMALLBUF], buf[LARGEBUF];	
+ 	char	fn[SMALLBUF], buf[LARGEBUF];
  
 -	snprintf(fn, sizeof(fn), "%s/%s", confpath(), tfn);
 +	snprintf(fn, sizeof(fn), "%s/%s", cgiconfpath(), tfn);
  
  	tf = fopen(fn, "r");
  
-@@ -964,7 +964,7 @@ static void load_hosts_conf(void)
+@@ -968,7 +968,7 @@ static void load_hosts_conf(void)
  	char	fn[SMALLBUF];
  	PCONF_CTX_t	ctx;
  

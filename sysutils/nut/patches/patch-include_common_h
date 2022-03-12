@@ -1,6 +1,7 @@
---- include/common.h.orig	Tue Dec 29 13:08:34 2015
-+++ include/common.h	Sun Jan 15 23:54:35 2017
-@@ -89,6 +89,9 @@ void syslogbit_set(void);
+Index: include/common.h
+--- include/common.h.orig
++++ include/common.h
+@@ -138,6 +138,9 @@ void syslogbit_set(void);
  /* Return the default path for the directory containing configuration files */
  const char * confpath(void);
  

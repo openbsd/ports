@@ -3,8 +3,10 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-DISTNAME=	nut-2.7.4
-REVISION=	10
+GH_ACCOUNT=	networkupstools
+GH_PROJECT=	nut
+GH_COMMIT=	29e40fd648da86253fe97ab47e72525e1194b885
+DISTNAME=	nut-2.8.0pre20220312
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-cgi=	${DISTNAME:S/-/-cgi-/}
@@ -13,6 +15,7 @@ PKGNAME-xml=	${DISTNAME:S/-/-xml-/}
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
+SHARED_LIBS +=	nutclientstub        0.0      # .1.0
 SHARED_LIBS +=	nutscan              2.0      # .1.0
 
 CATEGORIES=	sysutils
@@ -30,7 +33,7 @@ WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 WANTLIB-snmp +=	${COMMON} m netsnmp
 
-MASTER_SITES=		${HOMEPAGE}source/2.7/
+#MASTER_SITES=		${HOMEPAGE}source/2.7/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
@@ -44,14 +47,18 @@ BUILD_DEPENDS+=	textproc/asciidoc>=8.6.8 \
 WEB_ROOT=	/var/www
 SUBST_VARS=	BASESYSCONFDIR WEB_ROOT
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.71
+AUTOMAKE_VERSION= 1.16
+AUTORECONF=	./autogen.sh
+
 SYSCONFDIR=	${BASESYSCONFDIR}/nut
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 CONFIGURE_ARGS+= --datadir=${PREFIX}/share/nut \
 		--htmldir=${PREFIX}/share/doc/nut \
 		--includedir=${PREFIX}/include/nut \
 		--with-dev \
-		--with-doc=html-single \
+		--with-doc=man \
 		--with-hal-libs="" \
 		--with-ssl \
 		--with-statepath=/var/db/nut \
@@ -124,8 +131,10 @@ post-install:
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/
 	cd ${WRKSRC}/docs; cp -R ../[A-LN-Z]* ../MAINTAINERS \
-	    *html cables images ${PREFIX}/share/doc/nut/
+	    cables images ${PREFIX}/share/doc/nut/
+	-cd ${WRKSRC}/docs; cp -R *html ${PREFIX}/share/doc/nut/
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/avahi/nut.service \
 	    ${PREFIX}/share/examples/nut
+	rm -r ${PREFIX}/share/nut/solaris-init
 
 .include <bsd.port.mk>

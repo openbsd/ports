@@ -1,6 +1,7 @@
---- common/common.c.orig	Thu Sep 15 12:30:44 2011
-+++ common/common.c	Mon Sep 19 09:22:03 2011
-@@ -363,6 +363,17 @@ const char * confpath(void) 
+Index: common/common.c
+--- common/common.c.orig
++++ common/common.c
+@@ -534,6 +534,17 @@ const char * confpath(void)
  	return path;
  }
  
@@ -10,11 +11,11 @@
 +	const char * path;
 +
 +	if ((path = getenv("NUT_CGICONFPATH")) == NULL)
-+		path = CGICONFPATH;
++		path = "/conf/nut";
 +
 +	return path;
 +}
 +
  /* Return the default path for the directory containing state files */
- const char * dflt_statepath(void) 
+ const char * dflt_statepath(void)
  {

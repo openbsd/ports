@@ -1,15 +1,16 @@
---- conf/ups.conf.sample.orig	Wed Apr 22 09:29:39 2015
-+++ conf/ups.conf.sample	Thu Apr 23 15:05:19 2015
-@@ -47,7 +47,7 @@
+Index: conf/ups.conf.sample
+--- conf/ups.conf.sample.orig
++++ conf/ups.conf.sample
+@@ -81,7 +81,7 @@ maxretry = 3
  #          apcsmart, bestups, and sec are some examples.
  #
- #    port: REQUIRED.  The serial port where your UPS is connected.  
+ #    port: REQUIRED.  The serial port where your UPS is connected.
 -#          /dev/ttyS0 is usually the first port on Linux boxes, for example.
-+#          /dev/tty00 is usually the first port on OpenBSD boxes, for example.
++#          /dev/tty00 is usually the first port on Linux boxes, for example.
  #
  # sdorder: optional.  When you have multiple UPSes on your system, you
  #          usually need to turn them off in a certain order.  upsdrvctl
-@@ -98,11 +98,11 @@
+@@ -133,11 +133,11 @@ maxretry = 3
  # --------
  #
  # A simple example for a UPS called "powerpal" that uses the blazer_ser
@@ -17,21 +18,17 @@
 +# driver on /dev/tty00 is:
  #
  # [powerpal]
- #	driver = blazer_ser
--#	port = /dev/ttyS0
-+#	port = /dev/tty00
- #	desc = "Web server"
+ #   driver = blazer_ser
+-#   port = /dev/ttyS0
++#   port = /dev/tty00
+ #   desc = "Web server"
  #
  # If your UPS driver requires additional settings, you can specify them
-@@ -111,9 +111,23 @@
- # 
- # [myups]
- # 	driver = mydriver
--#	port = /dev/ttyS1
-+#	port = /dev/tty01
- #	cable = 1234
- #	desc = "Something descriptive"
+@@ -152,3 +152,17 @@ maxretry = 3
  #
+ # To find out if your driver supports any extra settings, start it with
+ # the -h option and/or read the driver's documentation.
++#
 +# [networkups]
 +#	driver = snmp-ups
 +#	port = 192.168.42.240
@@ -45,6 +42,3 @@
 +#	port = auto
 +#	desc = "Example USB UPS"
 +#
- # To find out if your driver supports any extra settings, start it with
- # the -h option and/or read the driver's documentation.
-+

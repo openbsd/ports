@@ -41,10 +41,11 @@
 @bin bin/mge-shut
 @bin bin/mge-utalk
 @bin bin/microdowell
+@bin bin/microsol-apc
 @bin bin/nut-scanner
 @bin bin/nutdrv_atcl_usb
 @bin bin/nutdrv_qx
-@bin bin/oldmge-shut
+@bin bin/nutdrv_siemens-sitop
 @bin bin/oneac
 @bin bin/optiups
 @bin bin/powercom
@@ -75,14 +76,19 @@ bin/upssched-cmd
 include/nut/
 include/nut/nut-scan.h
 include/nut/nutclient.h
+include/nut/nutclientmem.h
 include/nut/nutscan-device.h
 include/nut/nutscan-init.h
 include/nut/nutscan-ip.h
+include/nut/nutscan-serial.h
 include/nut/parseconf.h
 include/nut/upsclient.h
 @static-lib lib/libnutclient.a
 lib/libnutclient.la
 @lib lib/libnutclient.so.${LIBnutclient_VERSION}
+@static-lib lib/libnutclientstub.a
+lib/libnutclientstub.la
+@lib lib/libnutclientstub.so.${LIBnutclientstub_VERSION}
 @static-lib lib/libnutscan.a
 lib/libnutscan.la
 @lib lib/libnutscan.so.${LIBnutscan_VERSION}
@@ -90,6 +96,7 @@ lib/libnutscan.la
 lib/libupsclient.la
 @lib lib/libupsclient.so.${LIBupsclient_VERSION}
 lib/pkgconfig/libnutclient.pc
+lib/pkgconfig/libnutclientstub.pc
 lib/pkgconfig/libnutscan.pc
 lib/pkgconfig/libupsclient.pc
 @man man/man3/libnutclient.3
@@ -154,7 +161,9 @@ lib/pkgconfig/libupsclient.pc
 @man man/man3/upscli_list_next.3
 @man man/man3/upscli_list_start.3
 @man man/man3/upscli_readline.3
+@man man/man3/upscli_readline_timeout.3
 @man man/man3/upscli_sendline.3
+@man man/man3/upscli_sendline_timeout.3
 @man man/man3/upscli_splitaddr.3
 @man man/man3/upscli_splitname.3
 @man man/man3/upscli_ssl.3
@@ -199,6 +208,8 @@ lib/pkgconfig/libupsclient.pc
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
 @man man/man8/microdowell.8
+@man man/man8/microsol-apc.8
+@man man/man8/nut-driver-enumerator.8
 @man man/man8/nut-recorder.8
 @man man/man8/nut-scanner.8
 @man man/man8/nutdrv_atcl_usb.8
@@ -222,6 +233,7 @@ lib/pkgconfig/libupsclient.pc
 @man man/man8/upscode2.8
 @man man/man8/upsd.8
 @man man/man8/upsdrvctl.8
+@man man/man8/upsdrvsvcctl.8
 @man man/man8/upsimage.cgi.8
 @man man/man8/upslog.8
 @man man/man8/upsmon.8
@@ -238,10 +250,9 @@ lib/pkgconfig/libupsclient.pc
 share/doc/nut/
 share/doc/nut/AUTHORS
 share/doc/nut/COPYING
-share/doc/nut/ChangeLog
-share/doc/nut/FAQ.html
 share/doc/nut/INSTALL
 share/doc/nut/INSTALL.nut
+share/doc/nut/Jenkinsfile-dynamatrix
 share/doc/nut/LICENSE-GPL2
 share/doc/nut/LICENSE-GPL3
 share/doc/nut/MAINTAINERS
@@ -250,6 +261,9 @@ share/doc/nut/README
 share/doc/nut/TODO
 share/doc/nut/UPGRADING
 share/doc/nut/cables/
+share/doc/nut/cables/Makefile
+share/doc/nut/cables/Makefile.am
+share/doc/nut/cables/Makefile.in
 share/doc/nut/cables/apc-rs500-serial.txt
 share/doc/nut/cables/apc.txt
 share/doc/nut/cables/ge-imv-victron.txt
@@ -258,7 +272,6 @@ share/doc/nut/cables/mgeups.txt
 share/doc/nut/cables/powerware.txt
 share/doc/nut/cables/repotec.txt
 share/doc/nut/cables/sms.txt
-share/doc/nut/developer-guide.html
 share/doc/nut/images/
 share/doc/nut/images/advanced.png
 share/doc/nut/images/asciidoc.png
@@ -276,15 +289,33 @@ share/doc/nut/images/cables/mge-66049.png
 share/doc/nut/images/cables/mge-db9-rj12.jpg
 share/doc/nut/images/cables/mge-db9-rj45.jpg
 share/doc/nut/images/cables/mge-usb-rj45.jpg
+share/doc/nut/images/ci/
+share/doc/nut/images/ci/fosshost.org_Host_Dark_56px.png
+share/doc/nut/images/ci/fosshost.org_Host_Light_309px.png
+share/doc/nut/images/ci/fosshost.org_Host_Light_38px.png
+share/doc/nut/images/ci/jenkins-nut-large-256px.png
+share/doc/nut/images/ci/jenkins-nut-large-squared.png
+share/doc/nut/images/ci/jenkins-nut-large.pdn
+share/doc/nut/images/ci/jenkins-nut-large.png
+share/doc/nut/images/ci/jenkins-nut-small-256px.png
+share/doc/nut/images/ci/jenkins-nut-small.pdn
+share/doc/nut/images/ci/jenkins-nut-small.png
+share/doc/nut/images/ci/jenkins-nut-squared.png
+share/doc/nut/images/ci/jenkins-nut-transparent-bg-40px.png
+share/doc/nut/images/ci/jenkins-nut-transparent-bg.png
+share/doc/nut/images/ci/jenkins-nut.css
+share/doc/nut/images/ci/jenkins-nut.png
+share/doc/nut/images/ci/jenkins-nut.txt
 share/doc/nut/images/hostedby.png
 share/doc/nut/images/note.png
+share/doc/nut/images/nut-banner.png
 share/doc/nut/images/nut-logo.png
+share/doc/nut/images/nut.svg
 share/doc/nut/images/nut_layering.png
+share/doc/nut/images/nut_layering.svg
 share/doc/nut/images/old-cgi.png
 share/doc/nut/images/simple.png
 share/doc/nut/images/warning.png
-share/doc/nut/packager-guide.html
-share/doc/nut/user-manual.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/nut/
 @sample ${SYSCONFDIR}/

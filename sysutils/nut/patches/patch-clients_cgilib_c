@@ -1,6 +1,7 @@
---- clients/cgilib.c.orig	Thu Jan 27 15:33:14 2005
-+++ clients/cgilib.c	Fri May 18 13:54:23 2007
-@@ -162,7 +162,7 @@ int checkhost(const char *host, char **desc)
+Index: clients/cgilib.c
+--- clients/cgilib.c.orig
++++ clients/cgilib.c
+@@ -165,7 +165,7 @@ int checkhost(const char *host, char **desc)
  	if (!host)
  		return 0;		/* deny null hostnames */
  
