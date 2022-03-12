@@ -1,8 +1,9 @@
 COMMENT =		c++ protocol buffers
 
 V =			3.19.3
+TAG =			v${V:S/rc-/rc/}
 DISTNAME =		protobuf-cpp-$V
-PKGNAME =		protobuf-$V
+PKGNAME =		protobuf-${V:S/-//g}
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c m pthread ${COMPILER_LIBCXX} z
 
-MASTER_SITES =		https://github.com/protocolbuffers/protobuf/releases/download/v$V/
+MASTER_SITES =		https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
 
 COMPILER =		base-clang ports-gcc
 
