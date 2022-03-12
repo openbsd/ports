@@ -9,6 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		0
+REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -90,6 +91,7 @@ RUN_DEPENDS-main +=	x11/gnome/usage
 RUN_DEPENDS-extras +=	graphics/simple-scan \
 			www/epiphany \
 			x11/gnome/baobab \
+			x11/gnome/cheese \
 			x11/gnome/connections \
 			x11/gnome/system-monitor \
 			x11/gnome/totem
