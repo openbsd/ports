@@ -1,57 +1,9 @@
-seq -> jot (handily avoiding the need for bashisms)
-correct nc path
-
 Index: plugins/node.d/squeezebox_.in
 --- plugins/node.d/squeezebox_.in.orig
 +++ plugins/node.d/squeezebox_.in
-@@ -1,5 +1,5 @@
- #!@@BASH@@
--# -*- sh -*-
+@@ -1,4 +1,4 @@
+-#!@@BASH@@
 +#!@@GOODSH@@
+ # -*- sh -*-
  
  : <<=cut
- 
-@@ -141,7 +141,6 @@ if [ "$CMD" = "years" ]; then
-         years_array=$(printf "%b" "years 0 $no_of_years\\nexit\\n" | "$NC" "$HOST" "$PORT" | sed 's/%3A/:/g' | cut -d ' ' -f 4- | sed 's/year://g' | cut -d ' ' -f "-$no_of_years")
-         # shellcheck disable=SC2207
-         arr1=( $(echo "$years_array" | tr -s ' ' ' ') )
--	(( no_of_years-- )) # We don't need that last entry in the array
- 	if [ "$1" = "config" ]; then
-                 echo "graph_title Number of years"
-                 echo "graph_vlabel years"
-@@ -153,7 +152,7 @@ if [ "$CMD" = "years" ]; then
- 		printf "graph_order y"
-                 echo "${years_array// / y}"
- 
--                for i in $(seq 0 "$no_of_years"); do
-+                for i in $(jot "$no_of_years" 0); do
-                         year=${arr1[$i]}
-                         if [ "$year" = 0 ]; then
-                                 echo "y0.label No year"
-@@ -168,7 +167,7 @@ if [ "$CMD" = "years" ]; then
-                 done
-                 exit 0
-         fi
--        for i in $(seq 0 "$no_of_years"); do
-+        for i in $(jot "$no_of_years" 0); do
-                 year=${arr1[$i]}
-                 printf "y%s.value " "$year"
-                 printf "%b" "albums 0 0 year:${year}\\nexit\\n" | "$NC" "$HOST" "$PORT" | sed 's/%3A/:/g' | cut -d ':' -f 3
-@@ -180,7 +179,7 @@ elif [ "$CMD" = "signalstrength" ] || [ "$CMD" = "mixe
-             echo "graph_category radio"
-             COUNT=$(printf "%b" 'player count ?\nexit\n' | "$NC" "$HOST" "$PORT" | cut -d " " -f 3)
-             (( COUNT-- ))
--            for ID in $(seq 0 "$COUNT"); do
-+            for ID in $(jot "$COUNT" 0); do
-                 MAC=$(printf "%b" "player id $ID ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%3A/:/g')
-                 NAME=$(printf "%b" "player name $MAC ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%20/ /g')
-                 MAC2=${MAC//:/}
-@@ -191,7 +190,7 @@ elif [ "$CMD" = "signalstrength" ] || [ "$CMD" = "mixe
-         fi
-         COUNT=$(printf "%b" 'player count ?\nexit\n' | "$NC" "$HOST" "$PORT" | cut -d " " -f 3)
-         (( COUNT-- ))
--        for ID in $(seq 0 "$COUNT"); do
-+        for ID in $(jot "$COUNT" 0); do
-             MAC=$(printf "%b" "player id $ID ?\\nexit\\n" | "$NC" "$HOST" "$PORT" | cut -d " " -f 4 | sed 's/%3A/:/g')
-             VAL=$(printf "%b" "$MAC $CMD ?\\nexit\\n"| "$NC" "$HOST" "$PORT" | cut -d " " -f 2- | sed "s/$CMD //")
-             MAC2=${MAC//:/}

@@ -9,6 +9,8 @@ PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
 
+REVISION-main =	0
+
 HOMEPAGE =	https://munin-monitoring.org/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=munin/}
 

@@ -1,7 +1,7 @@
 Index: plugins/node.d.openbsd/vmstat.in
 --- plugins/node.d.openbsd/vmstat.in.orig
 +++ plugins/node.d.openbsd/vmstat.in
-@@ -75,10 +75,7 @@ if [ "$1" = "config" ]; then
+@@ -73,10 +73,7 @@ if [ "$1" = "config" ]; then
  	echo 'blocked.label wait'
  	echo 'blocked.info processes blocked for resources (I/O, paging, etc)'
  	echo 'blocked.type GAUGE'
