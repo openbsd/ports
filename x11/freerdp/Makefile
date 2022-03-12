@@ -2,7 +2,7 @@
 BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
 
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.6.0
+DISTNAME =		freerdp-2.6.1
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 

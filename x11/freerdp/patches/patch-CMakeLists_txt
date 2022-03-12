@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -198,12 +198,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
+@@ -202,12 +202,14 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "BSD")
  	set(BSD TRUE)
  	if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
  		set(FREEBSD TRUE)
@@ -16,7 +16,7 @@ Index: CMakeLists.txt
  	endif()
  endif()
  
-@@ -212,11 +214,13 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
+@@ -216,11 +218,13 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "DragonFly")
  	set(FREEBSD TRUE)
  endif()
  
@@ -31,7 +31,7 @@ Index: CMakeLists.txt
  # Configure MSVC Runtime
  if(MSVC)
  	include(MSVCRuntime)
-@@ -636,12 +640,13 @@ if(UNIX OR CYGWIN)
+@@ -640,12 +644,13 @@ if(UNIX OR CYGWIN)
  	if (HAVE_SYS_EVENTFD_H)
  		check_symbol_exists(eventfd_read sys/eventfd.h WITH_EVENTFD_READ_WRITE)
  	endif()
