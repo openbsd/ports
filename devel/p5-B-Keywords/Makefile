@@ -1,6 +1,6 @@
 COMMENT =	lists of Perl keywords for use in backend modules
 
-DISTNAME =	B-Keywords-1.23
+DISTNAME =	B-Keywords-1.24
 CATEGORIES =	devel
 
 # perl
