@@ -3,7 +3,7 @@ Symbol versioning triggers weird linking problems in dependent ports.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -500,10 +500,6 @@ endif()
+@@ -505,10 +505,6 @@ endif()
  
  if(UNIX AND NOT APPLE)
    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/conftest.map "VERS_1 { global: *; };")
