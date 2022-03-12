@@ -1,6 +1,6 @@
 COMMENT=	time and date handling utility functions from netcdf4-python
 
-MODPY_EGG_VERSION= 	1.5.2
+MODPY_EGG_VERSION= 	1.6.0
 DISTNAME=		cftime-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
