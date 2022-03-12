@@ -1,5 +1,4 @@
 USE_WXNEEDED =	Yes
-DPB_PROPERTIES = parallel
 
 COMMENT =	KDE digital photo and video management utility
 
