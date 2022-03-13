@@ -73,7 +73,6 @@ CFLAGS +=		-std=gnu99
 
 pre-test:
 	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
-	ln -sf ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 	ln -sf ${LOCALBASE}/bin/gsort ${WRKDIR}/bin/sort
 
 .include <bsd.port.mk>
