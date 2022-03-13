@@ -51,6 +51,7 @@
      SUBDIR += libadwaita
      SUBDIR += libcryptui
      SUBDIR += libdazzle
+     SUBDIR += libdmapsharing
      SUBDIR += libgda
      SUBDIR += libgepub
      SUBDIR += libgnome-keyring
