@@ -1,5 +1,4 @@
 - don't hardcode libstdc++
-- bogus version in pkgconfig file
 
 Index: build/php.m4
 --- build/php.m4.orig
@@ -15,12 +14,3 @@ Index: build/php.m4
      php_cxx_done=yes
    fi
  ])
-@@ -1925,7 +1927,7 @@ dnl
- AC_DEFUN([PHP_SETUP_OPENSSL],[
-   found_openssl=no
- 
--  PKG_CHECK_MODULES([OPENSSL], [openssl >= 1.0.1], [found_openssl=yes])
-+  PKG_CHECK_MODULES([OPENSSL], [openssl], [found_openssl=yes])
- 
-   if test "$found_openssl" = "yes"; then
-     PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
