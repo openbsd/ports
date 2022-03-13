@@ -1,12 +1,11 @@
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.2.11
-REVISION=	2
+DISTNAME=	xine-lib-1.2.12
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	36.0
+SHARED_LIBS=	xine	37.0
 
 HOMEPAGE=	https://www.xine-project.org/
 
@@ -16,18 +15,17 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL FLAC GL GLU ICE SDL SM X11 X11-xcb
-WANTLIB += Xau Xdamage Xdmcp Xext Xfixes Xinerama Xv XvMCW Xxf86vm aom
-WANTLIB += avcodec avformat avutil bluray bz2 c cdio crypto dav1d drm
-WANTLIB += dvdnav dvdread execinfo expat fontconfig freetype gbm
-WANTLIB += glapi gsm iconv intl iso9660 jpeg lcms lzma m mng modplug
-WANTLIB += mp3lame mpcdec nfs ogg opus png postproc sndio speex
-WANTLIB += ssl swresample theora theoradec theoraenc usbhid v4l2
-WANTLIB += v4lconvert vcdinfo vorbis vorbisenc vpx x264 x265 xcb
-WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-shape xcb-shm
-WANTLIB += xcb-sync xcb-xfixes xcb-xv xdg-basedir xml2 xshmfence
-WANTLIB += xvidcore z
+WANTLIB += Xau Xdmcp Xext Xfixes Xinerama Xv XvMCW Xxf86vm aom avcodec
+WANTLIB += avformat avutil bluray bz2 c cdio crypto dav1d drm dvdnav
+WANTLIB += dvdread execinfo expat fontconfig freetype gbm gcrypt glapi
+WANTLIB += gpg-error gsm iconv intl iso9660 jpeg lcms lzma m mng modplug
+WANTLIB += mp3lame mpcdec nfs ogg opus png postproc sndio speex ssl
+WANTLIB += swresample theora theoradec theoraenc udfread usbhid v4l2
+WANTLIB += v4lconvert vcdinfo vorbis vorbisenc vpx x264 x265 xcb xcb-dri2
+WANTLIB += xcb-dri3 xcb-glx xcb-present xcb-shape xcb-shm xcb-sync
+WANTLIB += xcb-xfixes xcb-xv xdg-basedir xml2 xshmfence xvidcore z
 
-XINEAPI_REV=	2.9
+XINEAPI_REV=	2.10
 SUBST_VARS+=	XINEAPI_REV
 
 COMPILER=	base-clang ports-gcc
@@ -54,6 +52,7 @@ LIB_DEPENDS=	audio/flac \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
 		multimedia/libv4l \
+		security/libgcrypt \
 		x11/libxdg-basedir
 
 # Add back fast math flag since we override CFLAGS
@@ -85,6 +84,7 @@ CONFIGURE_ARGS+=--disable-a52dec \
 		--without-caca \
 		--without-dav1d \
 		--without-esound \
+		--without-gnutls \
 		--without-imagemagick \
 		--without-libaom
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

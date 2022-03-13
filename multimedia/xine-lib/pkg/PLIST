@@ -1,10 +1,3 @@
-@conflict xine-lib-arts-*
-@conflict xine-lib-esd-*
-@conflict xine-lib-jack-*
-@pkgpath ${BASE_PKGPATH},-arts
-@pkgpath ${BASE_PKGPATH},-esd
-@pkgpath ${BASE_PKGPATH},-jack
-@pkgpath ${BASE_PKGPATH},-main
 bin/xine-config
 @bin bin/xine-list-1.2
 include/xine/
@@ -24,6 +17,7 @@ include/xine/input_plugin.h
 include/xine/io_helper.h
 include/xine/list.h
 include/xine/metronom.h
+include/xine/mfrag.h
 include/xine/os_types.h
 include/xine/osd.h
 include/xine/plugin_catalog.h
@@ -36,6 +30,7 @@ include/xine/scratch.h
 include/xine/sorted_array.h
 include/xine/spu.h
 include/xine/spu_decoder.h
+include/xine/stree.h
 include/xine/tickets.h
 include/xine/vdr.h
 include/xine/version.h
@@ -98,6 +93,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_flac.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_bluray.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_cdda.so
+@so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_crypto.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_dvd.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_mms.so
 @so lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_network.so
