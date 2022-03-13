@@ -3,9 +3,9 @@ COMMENT=	improved dynamic tiling window manager, fork with mouse drag
 
 GH_ACCOUNT=	orestisfl
 GH_PROJECT=	i3
-GH_COMMIT=	9236a0a9163799a38b2f989d660d0ade81dd16e6
+GH_COMMIT=	ec693d0d776e385509453456c49e404017d9d9c9
 
-DISTNAME=	i3-mousedrag-4.20.1pl20211111
+DISTNAME=	i3-mousedrag-4.20.1pl20212061
 
 CATEGORIES=	x11
 
@@ -15,7 +15,7 @@ HOMEPAGE=	https://i3wm.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
-WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
+WANTLIB += pcre2-8 startup-notification-1 xcb xcb-cursor xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
 WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
 
@@ -28,7 +28,7 @@ DEBUG_PACKAGES= ${BUILD_PACKAGES}
 LIB_DEPENDS=	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
-		devel/pcre \
+		devel/pcre2 \
 		devel/startup-notification \
 		x11/xkbcommon
 RUN_DEPENDS=	devel/desktop-file-utils \

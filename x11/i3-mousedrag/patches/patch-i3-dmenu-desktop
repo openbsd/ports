@@ -43,7 +43,7 @@ Index: i3-dmenu-desktop
  } else {
      # i3 executes applications by passing the argument to i3’s “exec” command
      # as-is to $SHELL -c. The i3 parser supports quoted strings: When a string
-@@ -515,7 +515,7 @@ notifications.
+@@ -516,7 +516,7 @@ notifications.
  
  The .desktop files are searched in $XDG_DATA_HOME/applications (by default
  $HOME/.local/share/applications) and in the "applications" subdirectory of each
@@ -52,7 +52,7 @@ Index: i3-dmenu-desktop
  
  Files with the same name in $XDG_DATA_HOME/applications take precedence over
  files in $XDG_DATA_DIRS, so that you can overwrite parts of the system-wide
-@@ -529,7 +529,7 @@ file respectively) by appending it to the name of the 
+@@ -530,7 +530,7 @@ file respectively) by appending it to the name of the 
  want to launch "GNU Emacs 24" with the patch /tmp/foobar.txt, you would type
  "emacs", press TAB, type " /tmp/foobar.txt" and press ENTER.
  
