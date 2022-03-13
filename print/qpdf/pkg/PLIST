@@ -57,7 +57,6 @@ include/qpdf/QTC.hh
 include/qpdf/QUtil.hh
 include/qpdf/RandomDataProvider.hh
 include/qpdf/Types.h
-include/qpdf/Version.h
 include/qpdf/auto_job_c_att.hh
 include/qpdf/auto_job_c_copy_att.hh
 include/qpdf/auto_job_c_enc.hh

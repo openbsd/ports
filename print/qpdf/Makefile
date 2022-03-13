@@ -2,9 +2,9 @@
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-10.6.2
+DISTNAME=	qpdf-10.6.3
 
-SHARED_LIBS +=  qpdf                 9.4      # 34.2
+SHARED_LIBS +=  qpdf                 9.4      # 34.3
 
 CATEGORIES=	print graphics
 
