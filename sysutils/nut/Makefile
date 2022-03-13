@@ -57,6 +57,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 CONFIGURE_ARGS+= --datadir=${PREFIX}/share/nut \
 		--htmldir=${PREFIX}/share/doc/nut \
 		--includedir=${PREFIX}/include/nut \
+		--enable-cppunit=no \
 		--with-dev \
 		--with-doc=man \
 		--with-hal-libs="" \
