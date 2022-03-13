@@ -1,6 +1,6 @@
 COMMENT =		c protocol buffers
 
-V =			1.3.3
+V =			1.4.0
 DISTNAME =		protobuf-c-$V
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
@@ -31,5 +31,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE =		Yes
 
 SEPARATE_BUILD =	Yes
+
+pre-configure:
+	sed -i -E 's,(--plugin|--cpp_out),-I${LOCALBASE}/include &,' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

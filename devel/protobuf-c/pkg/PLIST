@@ -4,6 +4,7 @@ include/google/protobuf-c/
 include/google/protobuf-c/protobuf-c.h
 include/protobuf-c/
 include/protobuf-c/protobuf-c.h
+include/protobuf-c/protobuf-c.proto
 @static-lib lib/libprotobuf-c.a
 lib/libprotobuf-c.la
 @lib lib/libprotobuf-c.so.${LIBprotobuf-c_VERSION}
