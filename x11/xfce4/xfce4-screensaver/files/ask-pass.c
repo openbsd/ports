@@ -1,3 +1,4 @@
+/*
  * verifying typed passwords with bsd_auth(3)
  *
  * Copyright (c) 2009 Antoine Jacoutot <ajacoutot@openbsd.org>
