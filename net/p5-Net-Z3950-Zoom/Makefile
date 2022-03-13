@@ -1,8 +1,7 @@
 COMMENT=	perl interface to yaz zoom
 CATEGORIES=	net
 
-DISTNAME=	Net-Z3950-ZOOM-1.25
-REVISION=	8
+DISTNAME=	Net-Z3950-ZOOM-1.30
 
 # perl
 PERMIT_PACKAGE=	Yes
