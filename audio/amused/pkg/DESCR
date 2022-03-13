@@ -1,0 +1,3 @@
+amused is a minimalistic music player that doesn't have many amazing
+features but instead aims to work well with other standard Unix tools.
+It supports flac, mp3, ogg vorbis and opus files.
