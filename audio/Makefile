@@ -3,6 +3,7 @@
      SUBDIR += adplay
      SUBDIR += adplug
      SUBDIR += alac_decoder
+     SUBDIR += amused
      SUBDIR += aqualung
      SUBDIR += ario
      SUBDIR += ascd
