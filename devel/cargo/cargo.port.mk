@@ -372,7 +372,6 @@ modcargo-gen-crates: extract
 
 # modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
 modcargo-gen-crates-licenses: configure
-	@echo '# $$Open''BSD$$'
 .for _cratename _cratever in ${MODCARGO_CRATES}
 	@echo -n "MODCARGO_CRATES +=	${_cratename}	${_cratever}	# "
 	@sed -ne '/^license.*=/{;s/^license.*= *"\([^"]*\)".*/\1/p;q;};$$s/^.*$$/XXX missing license/p' \

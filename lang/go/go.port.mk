@@ -190,7 +190,6 @@ modgo-gen-modules:
 	@exit 1
 .endif
 
-	@printf '# $$%s$$\n\n' OpenBSD
 .if empty(MODGO_VERSION) || ${MODGO_VERSION} == "latest"
 	@${_PERLSCRIPT}/modgo-gen-modules-helper ${MODGO_MODNAME}
 .else
