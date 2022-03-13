@@ -407,6 +407,7 @@
      SUBDIR += torture
      SUBDIR += tpb
      SUBDIR += tphdisk
+     SUBDIR += trash-d
      SUBDIR += tray-app
      SUBDIR += tree
      SUBDIR += truncate
