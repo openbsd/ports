@@ -1,13 +1,12 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -86,6 +86,9 @@ if not lua_dep.found()
+@@ -84,7 +84,7 @@ lua_dep = dependency('lua', version: '>= 5.3.0', requi
+ if not lua_dep.found()
+     lua_dep = dependency('lua5.3', version: '>= 5.3.0', required: false)
      if not lua_dep.found()
-         lua_dep = dependency('lua-5.3', version: '>= 5.3.0', required: false)
-     endif
-+    if not lua_dep.found()
+-        lua_dep = dependency('lua-5.3', version: '>= 5.3.0', required: false)
 +        lua_dep = dependency('lua${LUA_V}', version: '>= 5.3.0', required: false)
-+    endif
+     endif
  endif
  
- gperf = find_program('gperf', required: false)

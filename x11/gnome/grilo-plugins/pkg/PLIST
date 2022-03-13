@@ -1,5 +1,7 @@
 @so lib/grilo-${API}/libgrlchromaprint.so
+@so lib/grilo-${API}/libgrldaap.so
 @so lib/grilo-${API}/libgrldleyna.so
+@so lib/grilo-${API}/libgrldpap.so
 @so lib/grilo-${API}/libgrlfilesystem.so
 @so lib/grilo-${API}/libgrlflickr.so
 @so lib/grilo-${API}/libgrlfreebox.so
