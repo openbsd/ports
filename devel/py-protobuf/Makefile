@@ -23,9 +23,10 @@ MASTER_SITES=		https://github.com/protocolbuffers/protobuf/releases/download/${T
 MODPY_SETUPTOOLS=	Yes
 
 FLAVORS=		python3
-FLAVOR=			python3 
+FLAVOR=			python3
 
-BUILD_DEPENDS=		devel/py-wheel${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/protobuf \
+			devel/py-wheel${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
