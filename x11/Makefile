@@ -310,6 +310,7 @@
      SUBDIR += trayer
      SUBDIR += treewm
      SUBDIR += tvtwm
+     SUBDIR += twmn
      SUBDIR += type1inst
      SUBDIR += unclutter
      SUBDIR += uwm
