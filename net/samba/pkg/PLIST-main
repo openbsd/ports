@@ -3,6 +3,7 @@
 @pkgpath net/samba,ads,-main
 @pkgpath net/samba,,-main
 @rcscript ${RCDIR}/nmbd
+@rcscript ${RCDIR}/samba
 @rcscript ${RCDIR}/smbd
 @rcscript ${RCDIR}/winbindd
 @sample ${SYSCONFDIR}/samba/
