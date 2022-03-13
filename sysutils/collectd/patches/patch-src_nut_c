@@ -1,0 +1,14 @@
+post-2.7, nut changed to size_t for numa in upscli_list_next()
+
+Index: src/nut.c
+--- src/nut.c.orig
++++ src/nut.c
+@@ -249,7 +249,7 @@ static int nut_read(user_data_t *user_data) {
+   const char *query[3] = {"VAR", ups->upsname, NULL};
+   unsigned int query_num = 2;
+   char **answer;
+-  unsigned int answer_num;
++  size_t answer_num;
+   int status;
+ 
+   /* (Re-)Connect if we have no connection */
