@@ -1,9 +1,7 @@
-Fix build with OpenEXR>=3
-
-From 62f510702ef9c34ac50f8d8601a4290ab558464c Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?=C3=96mer=20Fad=C4=B1l=20Usta?= <omerusta@gmail.com>
-Date: Sun, 6 Jun 2021 08:41:05 +0000
-Subject: [PATCH] Update Cmake and deps, Fix Freetype and FontConfig Linkage
+- Fix build with OpenEXR>=3
+- Switch to C++17
+- Update Cmake and deps, Fix Freetype and FontConfig Linkage,
+  from upstream
 
 
 Index: CMakeLists.txt
@@ -23,7 +21,7 @@ Index: CMakeLists.txt
 +#else ()
 +#    set (CMAKE_CXX_STANDARD 11)
 +#endif ()
-+set (CMAKE_CXX_STANDARD 11)
++set (CMAKE_CXX_STANDARD 17)
  
  ############
  #############
