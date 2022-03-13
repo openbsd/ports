@@ -3,26 +3,21 @@ Allow ARM CPU runtime detection code to build on OpenBSD.
 Index: aom_ports/arm_cpudetect.c
 --- aom_ports/arm_cpudetect.c.orig
 +++ aom_ports/arm_cpudetect.c
-@@ -143,7 +143,21 @@ int aom_arm_cpu_caps(void) {
-   }
+@@ -38,7 +38,7 @@ static int arm_cpu_env_mask(void) {
+   return env && *env ? (int)strtol(env, NULL, 0) : ~0;
+ }
+ 
+-#if !CONFIG_RUNTIME_CPU_DETECT || defined(__APPLE__)
++#if !CONFIG_RUNTIME_CPU_DETECT || defined(__APPLE__) || defined(__OpenBSD__)
+ 
+ int aom_arm_cpu_caps(void) {
+   /* This function should actually be a no-op. There is no way to adjust any of
+@@ -56,7 +56,7 @@ int aom_arm_cpu_caps(void) {
    return flags & mask;
  }
--#else  /* end __linux__ */
-+#elif defined(__OpenBSD__) /* end __linux__ */
-+int aom_arm_cpu_caps(void) {
-+  int flags;
-+  int mask;
-+  if (!arm_cpu_env_flags(&flags)) {
-+    return flags;
-+  }
-+  mask = arm_cpu_env_mask();
-+#if HAVE_NEON
-+  flags |= HAS_NEON;
-+#endif /* HAVE_NEON */
-+  return flags & mask;
-+}
-+
-+#else  /* end __OpenBSD__ */
- #error \
-     "Runtime CPU detection selected, but no CPU detection method " \
- "available for your platform. Rerun cmake with -DCONFIG_RUNTIME_CPU_DETECT=0."
+ 
+-#elif defined(_MSC_VER) /* end !CONFIG_RUNTIME_CPU_DETECT || __APPLE__ */
++#elif defined(_MSC_VER) /* end !CONFIG_RUNTIME_CPU_DETECT || __APPLE__ || __OpenBSD__ */
+ /*For GetExceptionCode() and EXCEPTION_ILLEGAL_INSTRUCTION.*/
+ #define WIN32_LEAN_AND_MEAN
+ #define WIN32_EXTRA_LEAN

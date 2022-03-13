@@ -3,6 +3,7 @@ COMMENT=	Alliance for Open Media AV1 video codec
 GH_ACCOUNT=	jbeich
 GH_PROJECT=	aom
 GH_TAGNAME=	v3.3.0
+REVISION=	0
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	aom	4.0

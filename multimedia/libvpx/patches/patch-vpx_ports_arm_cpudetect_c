@@ -3,25 +3,21 @@ Allow ARM CPU runtime detection code to build on OpenBSD.
 Index: vpx_ports/arm_cpudetect.c
 --- vpx_ports/arm_cpudetect.c.orig
 +++ vpx_ports/arm_cpudetect.c
-@@ -147,7 +147,20 @@ int arm_cpu_caps(void) {
-   }
+@@ -38,7 +38,7 @@ static int arm_cpu_env_mask(void) {
+   return env && *env ? (int)strtol(env, NULL, 0) : ~0;
+ }
+ 
+-#if !CONFIG_RUNTIME_CPU_DETECT
++#if !CONFIG_RUNTIME_CPU_DETECT || defined(__OpenBSD__)
+ 
+ int arm_cpu_caps(void) {
+   /* This function should actually be a no-op. There is no way to adjust any of
+@@ -56,7 +56,7 @@ int arm_cpu_caps(void) {
    return flags & mask;
  }
--#else  /* end __linux__ */
-+#elif defined(__OpenBSD__) /* end __linux__ */
-+int arm_cpu_caps(void) {
-+  int flags;
-+  int mask;
-+  if (!arm_cpu_env_flags(&flags)) {
-+    return flags;
-+  }
-+  mask = arm_cpu_env_mask();
-+#if HAVE_NEON || HAVE_NEON_ASM
-+  flags |= HAS_NEON;
-+#endif /* HAVE_NEON  || HAVE_NEON_ASM */
-+  return flags & mask;
-+}
-+#else  /* end __OpenBSD__ */
- #error \
-     "--enable-runtime-cpu-detect selected, but no CPU detection method " \
- "available for your platform. Reconfigure with --disable-runtime-cpu-detect."
+ 
+-#elif defined(_MSC_VER) /* end !CONFIG_RUNTIME_CPU_DETECT */
++#elif defined(_MSC_VER) /* end !CONFIG_RUNTIME_CPU_DETECT || __OpenBSD__ */
+ /*For GetExceptionCode() and EXCEPTION_ILLEGAL_INSTRUCTION.*/
+ #ifndef WIN32_LEAN_AND_MEAN
+ #define WIN32_LEAN_AND_MEAN
