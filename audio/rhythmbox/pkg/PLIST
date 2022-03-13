@@ -148,6 +148,9 @@ lib/rhythmbox/plugins/context/${MODPY_PYCACHE}LyricsTab.${MODPY_PYC_MAGIC_TAG}py
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/rhythmbox/plugins/context/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/rhythmbox/plugins/context/context.py
+lib/rhythmbox/plugins/daap/
+lib/rhythmbox/plugins/daap/daap.plugin
+@so lib/rhythmbox/plugins/daap/libdaap.so
 lib/rhythmbox/plugins/dbus-media-server/
 lib/rhythmbox/plugins/dbus-media-server/dbus-media-server.plugin
 @so lib/rhythmbox/plugins/dbus-media-server/libdbus-media-server.so
@@ -411,7 +414,6 @@ share/help/C/rhythmbox/figures/rb-volume-changer.png
 share/help/C/rhythmbox/figures/rb-window.png
 share/help/C/rhythmbox/index.docbook
 share/help/C/rhythmbox/legal.xml
-share/help/ca/
 share/help/ca/rhythmbox/
 share/help/ca/rhythmbox/figures/
 share/help/ca/rhythmbox/figures/rb-iradio-main.png
@@ -485,7 +487,6 @@ share/help/es/rhythmbox/figures/rb-volume-changer.png
 share/help/es/rhythmbox/figures/rb-window.png
 share/help/es/rhythmbox/index.docbook
 share/help/es/rhythmbox/legal.xml
-share/help/eu/
 share/help/eu/rhythmbox/
 share/help/eu/rhythmbox/figures/
 share/help/eu/rhythmbox/figures/rb-iradio-main.png
