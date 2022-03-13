@@ -1,0 +1,11 @@
+Index: src/spipe.c
+--- src/spipe.c.orig
++++ src/spipe.c
+@@ -12,6 +12,7 @@
+ #include <config.h>
+ #endif
+ 
++#include <sys/select.h>
+ #include <assert.h>
+ #include <stdlib.h>
+ #include <string.h>
