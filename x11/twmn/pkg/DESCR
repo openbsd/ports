@@ -1,0 +1,8 @@
+Twmn is a dmenu style desktop notification system.
+
+Notifications are shown in a one-line bar called the notification slide.
+They can be navigated through and activated with shortcuts.
+
+* twmnc: is a command line tool to send notifications to twmnd.
+* twmnd: is a daemon listening to notification requests and showing them
+one after another. It is also compatible with "notify-send".

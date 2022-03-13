@@ -1,0 +1,9 @@
+@bin bin/twmnc
+@bin bin/twmnd
+share/examples/twmn/
+share/examples/twmn/README.md
+share/examples/twmn/disk_notifier.sh
+share/examples/twmn/gmail_notifier.py
+share/examples/twmn/mbox_notifier.sh
+share/examples/twmn/mpd_notifier.py
+share/examples/twmn/storage_notifier.py
