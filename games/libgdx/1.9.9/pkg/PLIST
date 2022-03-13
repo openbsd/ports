@@ -1608,8 +1608,8 @@ share/libgdx/1.9.9/com/badlogic/gdx/utils/ArrayMap$Keys.class
 share/libgdx/1.9.9/com/badlogic/gdx/utils/ArrayMap$Values.class
 share/libgdx/1.9.9/com/badlogic/gdx/utils/ArrayMap.class
 share/libgdx/1.9.9/com/badlogic/gdx/utils/AtomicQueue.class
-share/libgdx/1.9.9/com/badlogic/gdx/utils/Base${M_ARCH}Coder$CharMap.class
-share/libgdx/1.9.9/com/badlogic/gdx/utils/Base${M_ARCH}Coder.class
+share/libgdx/1.9.9/com/badlogic/gdx/utils/Base64Coder$CharMap.class
+share/libgdx/1.9.9/com/badlogic/gdx/utils/Base64Coder.class
 share/libgdx/1.9.9/com/badlogic/gdx/utils/BaseJsonReader.class
 share/libgdx/1.9.9/com/badlogic/gdx/utils/BinaryHeap$Node.class
 share/libgdx/1.9.9/com/badlogic/gdx/utils/BinaryHeap.class
