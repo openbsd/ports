@@ -1,3 +1,4 @@
+Enable build on arm64 and armv7
 Build the compiler
 Mention that we are IEEE 754 compliant
 Remove hardcoded optimization flags
@@ -6,9 +7,12 @@ Remove broken configure tests
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -245,9 +245,8 @@ case "$host" in
+@@ -243,11 +243,10 @@ case "$host" in
  #
- *86-*-openbsd* | *86_64-*-openbsd*) 
+ # OpenBSD.
+ #
+-*86-*-openbsd* | *86_64-*-openbsd*) 
++*86-*-openbsd* | *86_64-*-openbsd* | arm*-*-openbsd* | aarch*-*-openbsd*) 
    AC_DEFINE(BUILD_BSD, 1, [Define this if OpenBSD was detected]) 
 -  AC_MSG_WARN([configuring interpreter-only])
 +  AC_DEFINE(HAVE_IEEE_754, 1, [Define this if IEEE_754 compliant]) 
