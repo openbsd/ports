@@ -788,6 +788,7 @@ lib/kitty/terminfo/
 lib/kitty/terminfo/x/
 lib/kitty/terminfo/x/xterm-kitty
 @man man/man1/kitty.1
+share/applications/kitty-open.desktop
 share/applications/kitty.desktop
 share/doc/kitty/
 share/doc/kitty/html/
@@ -843,7 +844,6 @@ share/doc/kitty/html/_sources/kittens/query_terminal.rst.txt
 share/doc/kitty/html/_sources/kittens/remote_file.rst.txt
 share/doc/kitty/html/_sources/kittens/themes.rst.txt
 share/doc/kitty/html/_sources/kittens/transfer.rst.txt
-share/doc/kitty/html/_sources/kittens/unicode-input.rst.txt
 share/doc/kitty/html/_sources/kittens/unicode_input.rst.txt
 share/doc/kitty/html/_sources/kittens_intro.rst.txt
 share/doc/kitty/html/_sources/launch.rst.txt
@@ -853,6 +853,7 @@ share/doc/kitty/html/_sources/open_actions.rst.txt
 share/doc/kitty/html/_sources/overview.rst.txt
 share/doc/kitty/html/_sources/performance.rst.txt
 share/doc/kitty/html/_sources/pipe.rst.txt
+share/doc/kitty/html/_sources/press-mentions.rst.txt
 share/doc/kitty/html/_sources/protocol-extensions.rst.txt
 share/doc/kitty/html/_sources/quickstart.rst.txt
 share/doc/kitty/html/_sources/rc_protocol.rst.txt
@@ -880,15 +881,13 @@ share/doc/kitty/html/_static/kitty.svg
 share/doc/kitty/html/_static/language_data.js
 share/doc/kitty/html/_static/minus.png
 share/doc/kitty/html/_static/plus.png
+share/doc/kitty/html/_static/poster.png
 share/doc/kitty/html/_static/pygments.css
-share/doc/kitty/html/_static/pygments_dark.css
 share/doc/kitty/html/_static/scripts/
 share/doc/kitty/html/_static/scripts/furo-extensions.js
 share/doc/kitty/html/_static/scripts/furo.js
 share/doc/kitty/html/_static/scripts/furo.js.LICENSE.txt
 share/doc/kitty/html/_static/scripts/furo.js.map
-share/doc/kitty/html/_static/scripts/main.js
-share/doc/kitty/html/_static/scripts/main.js.map
 share/doc/kitty/html/_static/searchtools.js
 share/doc/kitty/html/_static/styles/
 share/doc/kitty/html/_static/styles/furo-extensions.css
@@ -932,7 +931,6 @@ share/doc/kitty/html/kittens/query_terminal.html
 share/doc/kitty/html/kittens/remote_file.html
 share/doc/kitty/html/kittens/themes.html
 share/doc/kitty/html/kittens/transfer.html
-share/doc/kitty/html/kittens/unicode-input.html
 share/doc/kitty/html/kittens/unicode_input.html
 share/doc/kitty/html/kittens_intro.html
 share/doc/kitty/html/launch.html
@@ -943,6 +941,7 @@ share/doc/kitty/html/open_actions.html
 share/doc/kitty/html/overview.html
 share/doc/kitty/html/performance.html
 share/doc/kitty/html/pipe.html
+share/doc/kitty/html/press-mentions.html
 share/doc/kitty/html/protocol-extensions.html
 share/doc/kitty/html/quickstart.html
 share/doc/kitty/html/rc_protocol.html

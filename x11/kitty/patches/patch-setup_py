@@ -5,7 +5,7 @@ disable wayland
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -318,7 +318,6 @@ def init_env(
+@@ -314,7 +314,6 @@ def init_env(
          df += ' -Og'
          float_conversion = '-Wfloat-conversion'
      fortify_source = '' if sanitize and is_macos else '-D_FORTIFY_SOURCE=2'
@@ -13,7 +13,7 @@ Index: setup.py
      sanitize_args = get_sanitize_args(cc, ccver) if sanitize else set()
      cppflags_ = os.environ.get(
          'OVERRIDE_CPPFLAGS', '-D{}DEBUG'.format('' if debug else 'N'),
-@@ -332,12 +331,11 @@ def init_env(
+@@ -328,12 +327,11 @@ def init_env(
      werror = '' if ignore_compiler_warnings else '-pedantic-errors -Werror'
      std = '' if is_openbsd else '-std=c11'
      sanitize_flag = ' '.join(sanitize_args)
@@ -28,7 +28,7 @@ Index: setup.py
          )
      )
      cflags = shlex.split(cflags_) + shlex.split(
-@@ -345,7 +343,7 @@ def init_env(
+@@ -341,7 +339,7 @@ def init_env(
      )
      ldflags_ = os.environ.get(
          'OVERRIDE_LDFLAGS',
@@ -37,7 +37,7 @@ Index: setup.py
      )
      ldflags = shlex.split(ldflags_)
      ldflags.append('-shared')
-@@ -736,7 +734,7 @@ def find_c_files() -> Tuple[List[str], List[str]]:
+@@ -732,7 +730,7 @@ def find_c_files() -> Tuple[List[str], List[str]]:
  
  
  def compile_glfw(compilation_database: CompilationDatabase) -> None:
@@ -46,7 +46,7 @@ Index: setup.py
      for module in modules.split():
          try:
              genv = glfw.init_env(env, pkg_config, pkg_version, at_least_version, test_compile, module)
-@@ -846,8 +844,6 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -842,8 +840,6 @@ def build_launcher(args: Options, launcher_dir: str = 
              cflags.append('-g')
          if args.profile:
              libs.append('-lprofiler')
@@ -55,7 +55,7 @@ Index: setup.py
      if bundle_type.endswith('-freeze'):
          cppflags.append('-DFOR_BUNDLE')
          cppflags.append(f'-DPYVER="{sysconfig.get_python_version()}"')
-@@ -889,7 +885,7 @@ def build_launcher(args: Options, launcher_dir: str = 
+@@ -885,7 +881,7 @@ def build_launcher(args: Options, launcher_dir: str = 
  
  
  def copy_man_pages(ddir: str) -> None:

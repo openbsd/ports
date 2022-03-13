@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =		fast, feature full, GPU-based terminal emulator
 
-MODPY_EGG_VERSION =	0.24.1
+MODPY_EGG_VERSION =	0.24.4
 DISTNAME =		kitty-${MODPY_EGG_VERSION}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
