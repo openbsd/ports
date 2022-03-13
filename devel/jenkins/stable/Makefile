@@ -1,4 +1,4 @@
-VERSION =	2.319.3
+VERSION =	2.332.1
 MASTER_SITES =	http://mirrors.jenkins-ci.org/war-stable/${VERSION}/
 DIST_SUBDIR =	jenkins-stable
 
