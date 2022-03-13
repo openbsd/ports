@@ -1,9 +1,8 @@
 COMMENT=	provide information about the OS platform
 
-MODPY_EGG_VERSION=	1.6.0
+MODPY_EGG_VERSION=	1.7.0
 DISTNAME=	distro-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	sysutils
 
