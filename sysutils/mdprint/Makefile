@@ -15,22 +15,25 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://yum.oracle.com/repo/OracleLinux/OL6/latest/source/getPackageSource/
 EXTRACT_SUFX =		.el6.src.rpm
+# the SRC RPM contains a SPEC file and the actual uncompressed source tarball
+EXTRACT_FILES =		${DISTNAME}.tar
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	${MDPRINT}
+
+SEPARATE_BUILD =	Yes
 
 MDPRINT =		tools/mdprint/mdprint.py
 
 NO_TEST =		Yes
 
-# the SRC RPM contains a SPEC file and the actual uncompressed source tarball
 post-extract:
-	cd ${WRKDIR} && ${TAR} -xf./${DISTNAME}.tar
+	cd ${WRKDIR} && ${TAR} -xf${EXTRACT_FILES} ${DISTNAME}/${MDPRINT}
 
 do-build:
-	2to3-${MODPY_VERSION} --no-diffs -W ${WRKSRC}/${MDPRINT}
+	2to3-${MODPY_VERSION} -j${MAKE_JOBS} -Wno${WRKBUILD} ${WRKSRC}/${MDPRINT}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${MDPRINT} ${PREFIX}/bin/mdprint
+	${INSTALL_SCRIPT} ${WRKBUILD}/mdprint.py ${PREFIX}/bin/mdprint
 
 .include <bsd.port.mk>
