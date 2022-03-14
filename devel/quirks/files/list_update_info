@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: list_update_info,v 1.2 2022/03/08 16:00:52 espie Exp $
+# $OpenBSD: list_update_info,v 1.3 2022/03/14 08:04:13 espie Exp $
 #
 # Copyright (c) 2022 Marc Espie <espie@openbsd.org>
 #
@@ -32,6 +32,11 @@ sub write_for_locate
 package OpenBSD::PackingElement::SpecialFile;
 sub write_for_locate
 {}
+
+package OpenBSD::PackingElement::FileObject;
+sub write_for_locate
+{}
+
 package Scanner;
 use OpenBSD::PackageInfo;
 use OpenBSD::AddCreateDelete;
