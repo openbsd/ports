@@ -1,15 +1,14 @@
 COMMENT=	Apache Portable Runtime
 
-V=		1.6.5
-REVISION=	1
+V=		1.7.0
 DISTNAME=	apr-$V
-SHARED_LIBS +=	apr-1             7.0     # .6.2
+SHARED_LIBS +=	apr-1             7.1     # .6.2
 
 CATEGORIES=	devel
 
 MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
-HOMEPAGE=	http://apr.apache.org/
+HOMEPAGE=	https://apr.apache.org/
 
 # Apache License 2.0
 PERMIT_PACKAGE=	Yes

@@ -7,6 +7,7 @@ include/apr-1/apr_allocator.h
 include/apr-1/apr_atomic.h
 include/apr-1/apr_cstr.h
 include/apr-1/apr_dso.h
+include/apr-1/apr_encode.h
 include/apr-1/apr_env.h
 include/apr-1/apr_errno.h
 include/apr-1/apr_escape.h
@@ -43,14 +44,12 @@ include/apr-1/apr_user.h
 include/apr-1/apr_version.h
 include/apr-1/apr_want.h
 lib/apr-1/
-lib/apr-1/apr_common.m4
 lib/apr-1/apr_rules.mk
-lib/apr-1/find_apr.m4
 lib/apr-1/make_exports.awk
 lib/apr-1/make_var_export.awk
 lib/apr-1/mkdir.sh
 @comment lib/apr.exp
-lib/libapr-1.a
+@static-lib lib/libapr-1.a
 lib/libapr-1.la
 @lib lib/libapr-1.so.${LIBapr-1_VERSION}
 lib/pkgconfig/apr-1.pc
