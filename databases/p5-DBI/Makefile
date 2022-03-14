@@ -13,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c perl
 
+MODPERL_REGEN_PPPORT =	dbipport.h
+
 RUN_DEPENDS =	net/p5-PlRPC>=0.2017 \
 		databases/p5-SQL-Statement>=1.400 \
 		devel/p5-MLDBM
