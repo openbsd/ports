@@ -68,6 +68,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/http_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/launcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/oob_gc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/preread_input.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/select_waiter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/socket_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/stream_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/tee_input.rb
@@ -163,6 +164,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_stream_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_tee_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_upload.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_util.rb
+${GEM_LIB}/gems/${DISTNAME}/test/unit/test_waiter.rb
 ${GEM_LIB}/gems/${DISTNAME}/unicorn.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/unicorn_1
 ${GEM_LIB}/gems/${DISTNAME}/unicorn_rails_1

@@ -1,6 +1,6 @@
 COMMENT =	ruby-rack HTTP server for Unix and fast clients
 
-DISTNAME =	unicorn-6.0.0
+DISTNAME =	unicorn-6.1.0
 CATEGORIES =	www
 
 HOMEPAGE =	https://yhbt.net/unicorn/
