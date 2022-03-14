@@ -3,16 +3,18 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
-GH_TAGNAME =	2.3.1
+GH_TAGNAME =	2.4.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c
+WANTLIB += c onig
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+LIB_DEPENDS =	textproc/oniguruma
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CFLAGS="${CFLAGS} -DBFS_HAS_SYS_ACL=0"

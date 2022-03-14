@@ -3,7 +3,7 @@ touch -h is a GNU extension
 Index: tests.sh
 --- tests.sh.orig
 +++ tests.sh
-@@ -961,7 +961,7 @@ function make_times() {
+@@ -991,7 +991,7 @@ function make_times() {
      $TOUCH -t 199112140001 "$1/b"
      $TOUCH -t 199112140002 "$1/c"
      ln -s a "$1/l"
