@@ -9,7 +9,7 @@ Index: config.mk
  # Paths
 -PREFIX    = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
-+PREFIX    = ${LOCALBASE}
++PREFIX    = ${PREFIX}
 +MANPREFIX = ${PREFIX}/man
  
 -X11INC = /usr/X11R6/include

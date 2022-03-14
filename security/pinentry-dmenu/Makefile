@@ -3,6 +3,7 @@ COMMENT =	pinentry for tiling window manager
 GH_ACCOUNT =	ritze
 GH_PROJECT =	pinentry-dmenu
 GH_TAGNAME =	0.2.2
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -15,7 +16,7 @@ WANTLIB += X11 Xft Xinerama assuan c config fontconfig
 WANTLIB += gpg-error gpgme
 
 LIB_DEPENDS =	devel/libconfig \
-		security/gpgme,-main \
+		security/gpgme \
 		security/libassuan \
 		security/libgpg-error
 
