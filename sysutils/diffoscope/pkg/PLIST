@@ -102,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uimage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}wasm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xmlb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xsb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}zip.${MODPY_PYC_MAGIC_TAG}pyc
@@ -198,6 +199,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/operation.
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/specialize.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/wasm.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xml.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xmlb.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xsb.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xz.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/zip.py
