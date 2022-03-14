@@ -1,7 +1,7 @@
 COMMENT=	companion library to APR
 
 V=		1.6.1
-REVISION=	2
+REVISION=	3
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.1     # .6.0
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	converters/libiconv \
 		databases/db/v4,no_java,no_tcl
 
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.68
+AUTOCONF_VERSION=2.69
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib/db4 \
