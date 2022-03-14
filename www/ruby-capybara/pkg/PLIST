@@ -27,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/finders.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/matchers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/node/simple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/active_element_query.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/ancestor_query.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/base_query.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/queries/current_path_query.rb
@@ -168,6 +169,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/accept_alert_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/accept_confirm_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/accept_prompt_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/active_element_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/all_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/ancestor_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/assert_all_of_selectors_spec.rb
@@ -242,7 +244,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/scroll_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/select_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/selectors_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/sibling_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/source_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/text_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/title_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/session/uncheck_spec.rb
@@ -272,6 +273,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/frame_two.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/header_links.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/host_links.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/initial_alert.erb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/layout.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/obscured.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/offset.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/path.erb
@@ -292,6 +294,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_hover1.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_html5_svg.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_html_entities.erb
+${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_jquery_animation.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_js.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_jstree.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_namespace.erb
@@ -300,7 +303,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_scope_other.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_simple_html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_slow_unload.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_sortable_js.erb
-${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_title.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_unload_alert.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/with_windows.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/capybara/spec/views/within_frames.erb

@@ -1,6 +1,6 @@
 COMMENT =	integration testing tool for rack based web applications
 
-DISTNAME =	capybara-3.33.0
+DISTNAME =	capybara-3.36.0
 CATEGORIES =	www
 
 HOMEPAGE=	https://github.com/jnicklas/capybara
@@ -12,7 +12,7 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/ruby-regexp_parser,${MODRUBY_FLAVOR}>=1.5,<2 \
+RUN_DEPENDS =	devel/ruby-regexp_parser,${MODRUBY_FLAVOR}>=1.5,<3 \
 		mail/ruby-mini_mime,${MODRUBY_FLAVOR}>=0.1.3 \
 		textproc/ruby-nokogiri,${MODRUBY_FLAVOR}>=1.8,<2 \
 		www/ruby-addressable,${MODRUBY_FLAVOR} \
