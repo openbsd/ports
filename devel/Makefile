@@ -1591,7 +1591,7 @@
      SUBDIR += qp
      SUBDIR += qt-creator
      SUBDIR += quilt
-     SUBDIR += quirks
+#    SUBDIR += quirks # XXX specific rules for building
      SUBDIR += radare2
      SUBDIR += ragel
      SUBDIR += range-v3

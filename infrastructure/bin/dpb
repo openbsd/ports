@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.142 2021/10/05 12:31:34 espie Exp $
+# $OpenBSD: dpb,v 1.143 2022/03/14 07:55:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -352,6 +352,16 @@ if ($state->{scan_only}) {
 	# and let's wait for all jobs now.
 	DPB::Core->start_clock($state->{reporter});
 	main_loop();
+	if ($state->{all} && !$state->defines("NO_QUIRKS")) {
+		my $core = DPB::Core->get;
+		my $subdirlist = {};
+		DPB::PkgPath->new('devel/quirks')->
+		    add_to_subdirlist($subdirlist);
+		$state->grabber->grab_subdirs($core, $subdirlist, undef);
+		$state->engine->check_buildable;
+		$core->mark_ready;
+		main_loop();
+	}
 }
 
 $state->{reporter}->reset;
