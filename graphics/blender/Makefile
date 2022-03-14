@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS = amd64
+ONLY_FOR_ARCHS = amd64 i386
 DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
