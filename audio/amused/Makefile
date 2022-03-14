@@ -1,6 +1,6 @@
 COMMENT =	minimalistic music player
 
-V =		0.3
+V =		0.4
 DISTNAME =	amused-$V
 
 CATEGORIES =	audio
