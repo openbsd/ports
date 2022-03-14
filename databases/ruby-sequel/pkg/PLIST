@@ -74,7 +74,13 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.45.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.46.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.47.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.48.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.49.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.5.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.50.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.51.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.52.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.53.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.54.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.6.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.7.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/5.8.0.txt
@@ -137,6 +143,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/sqlanywhere.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/sqlite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/tinytds.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/columns_limit_1.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/emulate_offset_with_reverse_and_count.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/emulate_offset_with_row_number.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/mysql_mysql2.rb
@@ -198,6 +205,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/core_refinements.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/current_datetime_timestamp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/dataset_source_alias.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/date_arithmetic.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/date_parse_input_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/datetime_parse_to_time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/duplicate_columns_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/empty_array_consider_nulls.rb
@@ -233,6 +241,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_interval.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_json.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_json_ops.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_loose_count.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_multirange.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_range_ops.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/pg_row.rb
@@ -253,6 +262,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/server_logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/split_array_nil.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_comments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_expr.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_log_normalizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/string_agg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/string_date_time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/symbol_aref.rb
@@ -307,6 +317,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/dirty.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/eager_each.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/eager_graph_eager.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/empty_failure_backtraces.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/enum.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/error_splitter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/finder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/forbid_lazy_load.rb
@@ -341,6 +352,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/singular_table_names.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/skip_create_refresh.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/skip_saving_columns.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/split_values.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/sql_comments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/static_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/static_cache_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/string_stripper.rb

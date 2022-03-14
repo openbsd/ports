@@ -1,6 +1,6 @@
 COMMENT =		lightweight database library and ORM for Ruby
 
-DISTNAME =		sequel-5.48.0
+DISTNAME =		sequel-5.54.0
 CATEGORIES =		databases
 
 HOMEPAGE =		http://sequel.jeremyevans.net/
