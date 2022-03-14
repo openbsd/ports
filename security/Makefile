@@ -252,6 +252,7 @@
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
      SUBDIR += pinentry,
+     SUBDIR += pinentry-dmenu
      SUBDIR += pivy
      SUBDIR += pixiewps
      SUBDIR += plaso
