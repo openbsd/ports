@@ -53,7 +53,7 @@ hostnet-driver = none
 
 To turn it on:
 
-$ nono -c ~/nono -s 0.5 -C 
+$ nono -c ~/nono -s 0.5 -C
 
 Now inside the console you should follow these instructions:
 
