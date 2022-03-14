@@ -200,6 +200,7 @@ share/kicad/symbols/Transistor_Array.kicad_sym
 share/kicad/symbols/Transistor_BJT.kicad_sym
 share/kicad/symbols/Transistor_FET.kicad_sym
 share/kicad/symbols/Transistor_IGBT.kicad_sym
+share/kicad/symbols/Transistor_Power_Module.kicad_sym
 share/kicad/symbols/Triac_Thyristor.kicad_sym
 share/kicad/symbols/Valve.kicad_sym
 share/kicad/symbols/Video.kicad_sym
