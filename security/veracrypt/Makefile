@@ -1,6 +1,6 @@
 COMMENT=		free open source disk encryption software
 
-V=			1.25.4
+V=			1.25.9
 DISTNAME=		VeraCrypt_${V}_Source
 PKGNAME=		veracrypt-${V}
 CATEGORIES=		security

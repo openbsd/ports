@@ -22,7 +22,7 @@ Index: Makefile
  	export WX_BUILD_DIR ?= $(BASE_DIR)/wxrelease
  	WX_CONFIGURE_FLAGS += --disable-debug_flag --disable-debug_gdb --disable-debug_info
  
-@@ -424,8 +424,8 @@ endif
+@@ -441,8 +441,8 @@ endif
  
  #------ Common configuration ------
  
