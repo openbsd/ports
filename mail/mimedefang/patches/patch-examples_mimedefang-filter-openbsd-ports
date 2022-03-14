@@ -52,7 +52,16 @@ Index: examples/mimedefang-filter-openbsd-ports
      # Spam checks if SpamAssassin is installed
      if ($Features{"SpamAssassin"}) {
          if (-s "./INPUTMSG" < 100*1024) {
-@@ -328,7 +334,40 @@ sub filter_end {
+@@ -284,7 +290,7 @@ sub filter_end {
+ 
+                 # If you find the SA report useful, add it, I guess...
+                 action_add_part($entity, "text/plain", "-suggest",
+-                                "report\n", "SpamAssassinReport.txt", "inline");
++                                "$report\n", "SpamAssassinReport.txt", "inline");
+             } else {
+                 # Delete any existing X-Spam-Score header?
+                 action_delete_header("X-Spam-Score");
+@@ -327,7 +333,40 @@ sub filter_end {
      # by marginal software.  Your call.
  
      # action_rebuild();
