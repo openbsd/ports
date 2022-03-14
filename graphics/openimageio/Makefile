@@ -1,9 +1,6 @@
 # XXX python module is linked with wrong libraries if an old version is
 # installed during build
 
-BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
-BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
-
 COMMENT =		library for reading and writing images
 
 GH_ACCOUNT =		OpenImageIO
