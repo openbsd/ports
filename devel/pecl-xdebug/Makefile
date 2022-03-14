@@ -33,16 +33,11 @@ TEST_DEPENDS=	lang/php/${MODPHP_VERSION},-cgi \
 
 do-test:
 	@echo '[main]' > ${WRKDIR}/php.ini
-	@echo 'extension_dir=${MODPHP_LIBDIR}/modules' >> ${WRKDIR}/php.ini
-	@echo 'zend_extension=opcache.so' >> ${WRKDIR}/php.ini
-	@echo 'zend_extension=xdebug.so' >> ${WRKDIR}/php.ini
+	@echo 'zend_extension=${MODPHP_LIBDIR}/modules/opcache.so' >> ${WRKDIR}/php.ini
+	@echo 'zend_extension=${WRKSRC}/modules/xdebug.so' >> ${WRKDIR}/php.ini
 	@echo 'xdebug.mode=debug' >> ${WRKDIR}/php.ini
-
-	cd ${WRKSRC}; \
-	PHPRC=${WRKDIR}/php.ini PHP_INI_SCAN_DIR=no \
-	TEST_PHP_EXECUTABLE=${MODPHP_BIN} \
-	TEST_PHP_CGI_EXECUTABLE=${MODPHP_BIN:S/php/php-cgi/} \
-	TEST_PHPDBG_EXECUTABLE=${MODPHP_BIN:S/php/phpdbg/} \
-	${MODPHP_BIN} run-xdebug-tests.php -q
+	cd ${WRKSRC}; ${SET_ENV} \
+	    ${ALL_TEST_ENV} PHPRC=${WRKDIR}/php.ini PHP_INI_SCAN_DIR=no \
+	    ${MODPHP_BIN} run-xdebug-tests.php -q
 
 .include <bsd.port.mk>
