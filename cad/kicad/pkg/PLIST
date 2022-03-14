@@ -1,7 +1,7 @@
+@conflict kicad-i18n-*
 @pkgpath cad/kicad,-docs
 @pkgpath cad/kicad,-main
 @pkgpath cad/kicad-share/i18n
-@conflict kicad-i18n-*
 bin/_cvpcb.kiface
 bin/_eeschema.kiface
 bin/_gerbview.kiface

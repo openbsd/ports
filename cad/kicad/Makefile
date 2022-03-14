@@ -2,7 +2,7 @@
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
 BROKEN-riscv64 =	kicad-5.1.10/include/system/libcontext.h:93:36: error: expected ';' after top level declarator
 
-V =			6.0.1
+V =			6.0.2
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
