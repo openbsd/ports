@@ -1,0 +1,13 @@
+Add include for strncasecmp
+
+Index: pinentry/pinentry.c
+--- pinentry/pinentry.c.orig
++++ pinentry/pinentry.c
+@@ -19,6 +19,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <strings.h>
+ #include <unistd.h>
+ #include <assert.h>
+ 

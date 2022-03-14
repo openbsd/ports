@@ -1,0 +1,42 @@
+Configure flags for OpenBSD
+
+Index: config.mk
+--- config.mk.orig
++++ config.mk
+@@ -4,11 +4,11 @@ VERSION   = 0.1
+ BUGREPORT = https:\/\/github.com\/ritze\/pinentry-dmenu
+ 
+ # Paths
+-PREFIX    = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX    = ${LOCALBASE}
++MANPREFIX = ${PREFIX}/man
+ 
+-X11INC = /usr/X11R6/include
+-X11LIB = /usr/X11R6/lib
++X11INC = ${X11BASE}/include
++X11LIB = ${X11BASE}/lib
+ 
+ # Xinerama, comment if you don't want it
+ XINERAMALIBS  = -lXinerama
+@@ -18,16 +18,15 @@ XINERAMAFLAGS = -DXINERAMA
+ FREETYPELIBS = -lfontconfig -lXft
+ FREETYPEINC = /usr/include/freetype2
+ # OpenBSD (uncomment)
+-#FREETYPEINC = ${X11INC}/freetype2
++FREETYPEINC = ${X11INC}/freetype2
+ 
+ # Includes and libs
+-INCS = -I${X11INC} -I${FREETYPEINC}
+-LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS}
++INCS = -I${X11INC} -I${FREETYPEINC} -I${LOCALBASE}/include
++LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS} ${FREETYPELIBS} -L${LOCALBASE}/lib
+ 
+ # Flags
+ CPPFLAGS = -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS} -DPACKAGE_VERSION=\"${VERSION}\" -DPACKAGE_BUGREPORT=\"${BUGREPORT}\"
+-CFLAGS   = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
++CFLAGS   = -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
+ LDFLAGS  = -s ${LIBS}
+ 
+ # Compiler and linker
+-CC = cc
