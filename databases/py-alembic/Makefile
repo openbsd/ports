@@ -1,6 +1,7 @@
 COMMENT =		database migration tool for sqlalchemy
 
-MODPY_EGG_VERSION =	1.7.5
+MODPY_EGG_VERSION =	1.7.7
+FIX_EXTRACT_PERMISSIONS = Yes
 
 DISTNAME =		alembic-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
