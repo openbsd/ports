@@ -1,6 +1,9 @@
+USE_WXNEEDED =	Yes
+
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		2.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	2.0 # 1.4
