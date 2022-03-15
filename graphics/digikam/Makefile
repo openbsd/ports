@@ -2,11 +2,10 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.5.0
+V =		7.6.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
-REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -53,13 +52,15 @@ BUILD_DEPENDS =	devel/bison \
 		devel/kf5/kdoctools \
 		math/eigen3 \
 		misc/shared-desktop-ontologies \
-		multimedia/qtav
+		multimedia/qtav \
+		x11/qt5/qtwebview
 
 RUN_DEPENDS =	databases/sqlite3 \
 		devel/desktop-file-utils \
 		devel/kf5/kdoctools \
 		multimedia/qtav \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/qt5/qtwebview
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcalendarcore \
