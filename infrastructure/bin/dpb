@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.143 2022/03/14 07:55:35 espie Exp $
+# $OpenBSD: dpb,v 1.144 2022/03/15 14:33:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -287,6 +287,8 @@ sub main_loop
 		}
 		if (!$state->opt('q') || !$state->engine->recheck_errors) {
 			last;
+		} else {
+			sleep 1; # avoid gobbling cpu in busy-waiting
 		}
 	}
 }

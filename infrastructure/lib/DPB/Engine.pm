@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.145 2022/02/17 12:42:37 espie Exp $
+# $OpenBSD: Engine.pm,v 1.146 2022/03/15 14:33:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -127,9 +127,13 @@ sub status
 sub recheck_errors
 {
 	my $self = shift;
-	$self->{errors}->recheck($self);
-	$self->{locks}->recheck($self);
-	$self->{nfslist}->recheck($self);
+
+	# XXX we can't do an OR because we want to run every single one
+	# even though we only care that one did break
+	my $problems = $self->{errors}->recheck($self) +
+	    $self->{locks}->recheck($self) +
+	    $self->{nfslist}->recheck($self);
+	return $problems != 0;
 }
 
 sub log_same_ts

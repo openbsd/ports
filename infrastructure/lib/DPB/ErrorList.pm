@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.8 2019/11/08 13:06:00 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.9 2022/03/15 14:33:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,10 +27,12 @@ use DPB::Queue;
 package DPB::ErrorList::Base;
 our @ISA = qw(DPB::ListQueue);
 
+# we return 0 only if there was exactly zero problem to check in the first
+# place, because removing some locks means we ought to run things once more.
 sub recheck
 {
 	my ($list, $engine) = @_;
-	return if @$list == 0;
+	return 0 if @$list == 0;
 	my $locker = $engine->{locker};
 
 	my @keep = ();
@@ -46,6 +48,7 @@ sub recheck
 		}
 	}
 	push(@$list, @keep) if @keep != 0;
+	return 1;
 }
 
 sub stringize
