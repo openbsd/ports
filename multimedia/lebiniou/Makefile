@@ -45,6 +45,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoreconf
 
 CONFIGURE_ARGS +=	--disable-alsa \
+			--disable-oscaudio \
 			--enable-jackaudio \
 			--enable-pulseaudio \
 			--disable-esd \
