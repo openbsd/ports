@@ -1,5 +1,5 @@
 VERSION =	2.332.1
-MASTER_SITES =	http://mirrors.jenkins-ci.org/war-stable/${VERSION}/
+MASTER_SITES =	https://get.jenkins.io/war-stable/${VERSION}/
 DIST_SUBDIR =	jenkins-stable
 
 .include <bsd.port.mk>
