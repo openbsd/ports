@@ -36,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}__init__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}annotations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}backup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}backup_executor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}backup_manifest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}cloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}command_wrappers.${MODPY_PYC_MAGIC_TAG}pyc
@@ -63,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/barman/${MODPY_PYCACHE}xlog.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/barman/annotations.py
 lib/python${MODPY_VERSION}/site-packages/barman/backup.py
 lib/python${MODPY_VERSION}/site-packages/barman/backup_executor.py
+lib/python${MODPY_VERSION}/site-packages/barman/backup_manifest.py
 lib/python${MODPY_VERSION}/site-packages/barman/cli.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/
 lib/python${MODPY_VERSION}/site-packages/barman/clients/__init__.py
@@ -73,6 +75,8 @@ lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_ba
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_backup_keep.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_backup_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_check_wal_archive.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_cli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_compression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_restore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_walarchive.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/clients/${MODPY_PYCACHE}cloud_walrestore.${MODPY_PYC_MAGIC_TAG}pyc
@@ -83,6 +87,8 @@ lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_backup_delete.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_backup_keep.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_backup_list.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_check_wal_archive.py
+lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_cli.py
+lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_compression.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_restore.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_walarchive.py
 lib/python${MODPY_VERSION}/site-packages/barman/clients/cloud_walrestore.py
@@ -95,8 +101,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}aws_s3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}azure_blob_storage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/${MODPY_PYCACHE}google_cloud_storage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/aws_s3.py
 lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/azure_blob_storage.py
+lib/python${MODPY_VERSION}/site-packages/barman/cloud_providers/google_cloud_storage.py
 lib/python${MODPY_VERSION}/site-packages/barman/command_wrappers.py
 lib/python${MODPY_VERSION}/site-packages/barman/compression.py
 lib/python${MODPY_VERSION}/site-packages/barman/config.py
@@ -115,12 +123,25 @@ lib/python${MODPY_VERSION}/site-packages/barman/recovery_executor.py
 lib/python${MODPY_VERSION}/site-packages/barman/remote_status.py
 lib/python${MODPY_VERSION}/site-packages/barman/retention_policies.py
 lib/python${MODPY_VERSION}/site-packages/barman/server.py
+lib/python${MODPY_VERSION}/site-packages/barman/storage/
+lib/python${MODPY_VERSION}/site-packages/barman/storage/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}file_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}file_stats.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/storage/${MODPY_PYCACHE}local_file_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/barman/storage/file_manager.py
+lib/python${MODPY_VERSION}/site-packages/barman/storage/file_stats.py
+lib/python${MODPY_VERSION}/site-packages/barman/storage/local_file_manager.py
 lib/python${MODPY_VERSION}/site-packages/barman/utils.py
 lib/python${MODPY_VERSION}/site-packages/barman/version.py
 lib/python${MODPY_VERSION}/site-packages/barman/wal_archiver.py
 lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
+@man man/man1/barman-cloud-backup-delete.1
+@man man/man1/barman-cloud-backup-keep.1
 @man man/man1/barman-cloud-backup-list.1
 @man man/man1/barman-cloud-backup.1
+@man man/man1/barman-cloud-check-wal-archive.1
 @man man/man1/barman-cloud-restore.1
 @man man/man1/barman-cloud-wal-archive.1
 @man man/man1/barman-cloud-wal-restore.1
