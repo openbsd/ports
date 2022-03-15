@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			99.0.4844.51
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		chromium-${V}
 
@@ -160,24 +160,20 @@ GN_ARGS=	enable_nacl=false \
 		use_allocator_shim=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		extra_cflags=\"-fno-ret-protector -mno-retpoline\" \
-		extra_cxxflags=\"-fno-ret-protector -mno-retpoline\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
 		enable_wmax_tokens=false \
+		use_thin_lto=false \
+		thin_lto_enable_optimizations=false \
 		use_udev=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false
 
 .if ${MACHINE_ARCH} == "i386"
-GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\" \
-		use_thin_lto=false \
-		thin_lto_enable_optimizations=false
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
-GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\" \
-		use_thin_lto=true \
-		thin_lto_enable_optimizations=true
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
 .if ${MACHINE_ARCH} == "aarch64"
