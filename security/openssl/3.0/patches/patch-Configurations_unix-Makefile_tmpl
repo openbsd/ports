@@ -1,7 +1,7 @@
 Index: Configurations/unix-Makefile.tmpl
 --- Configurations/unix-Makefile.tmpl.orig
 +++ Configurations/unix-Makefile.tmpl
-@@ -1396,7 +1396,7 @@ libcrypto.pc:
+@@ -1397,7 +1397,7 @@ libcrypto.pc:
  	    else \
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
@@ -10,7 +10,7 @@ Index: Configurations/unix-Makefile.tmpl
  	    echo 'enginesdir=$${libdir}/engines-{- $sover_dirname -}'; \
  	    echo ''; \
  	    echo 'Name: OpenSSL-libcrypto'; \
-@@ -1414,12 +1414,12 @@ libssl.pc:
+@@ -1415,12 +1415,12 @@ libssl.pc:
  	    else \
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
@@ -25,7 +25,7 @@ Index: Configurations/unix-Makefile.tmpl
  	    echo 'Libs: -L$${libdir} -lssl'; \
  	    echo 'Cflags: -I$${includedir}' ) > libssl.pc
  
-@@ -1431,12 +1431,12 @@ openssl.pc:
+@@ -1432,12 +1432,12 @@ openssl.pc:
  	    else \
  	        echo 'libdir=$(libdir)'; \
  	    fi; \
@@ -38,9 +38,9 @@ Index: Configurations/unix-Makefile.tmpl
 -	    echo 'Requires: libssl libcrypto' ) > openssl.pc
 +	    echo 'Requires: libessl30 libecrypto30' ) > openssl.pc
  
- configdata.pm: $(SRCDIR)/Configure $(SRCDIR)/config \
-                {- join(" \\\n" . ' ' x 15,
-@@ -1553,7 +1553,7 @@ EOF
+ Makefile: configdata.pm \
+           {- join(" \\\n" . ' ' x 10,
+@@ -1566,7 +1566,7 @@ EOF
                $generator = 'CC="$(CC)" $(PERL)'.$gen_incs.' '.$gen0.$gen_args
                    .' "$(PERLASM_SCHEME)"'.$incs.' '.$cppflags.$defs.' $(PROCESSOR)';
            } elsif ($gen0 =~ /\.m4$/) {

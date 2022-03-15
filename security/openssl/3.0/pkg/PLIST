@@ -758,6 +758,7 @@ ${MAN_PREFIX}/man3/BN_mod_mul.3
 ${MAN_PREFIX}/man3/BN_mod_mul_montgomery.3
 ${MAN_PREFIX}/man3/BN_mod_mul_reciprocal.3
 ${MAN_PREFIX}/man3/BN_mod_sqr.3
+${MAN_PREFIX}/man3/BN_mod_sqrt.3
 ${MAN_PREFIX}/man3/BN_mod_sub.3
 ${MAN_PREFIX}/man3/BN_mod_word.3
 ${MAN_PREFIX}/man3/BN_mpi2bn.3
@@ -4152,6 +4153,7 @@ ${MAN_PREFIX}/man3/SSL_get_SSL_CTX.3
 ${MAN_PREFIX}/man3/SSL_get_all_async_fds.3
 ${MAN_PREFIX}/man3/SSL_get_app_data.3
 ${MAN_PREFIX}/man3/SSL_get_async_status.3
+${MAN_PREFIX}/man3/SSL_get_certificate.3
 ${MAN_PREFIX}/man3/SSL_get_changed_async_fds.3
 ${MAN_PREFIX}/man3/SSL_get_cipher.3
 ${MAN_PREFIX}/man3/SSL_get_cipher_bits.3
@@ -4189,6 +4191,7 @@ ${MAN_PREFIX}/man3/SSL_get_peer_signature_nid.3
 ${MAN_PREFIX}/man3/SSL_get_peer_signature_type_nid.3
 ${MAN_PREFIX}/man3/SSL_get_peer_tmp_key.3
 ${MAN_PREFIX}/man3/SSL_get_pending_cipher.3
+${MAN_PREFIX}/man3/SSL_get_privatekey.3
 ${MAN_PREFIX}/man3/SSL_get_psk_identity.3
 ${MAN_PREFIX}/man3/SSL_get_psk_identity_hint.3
 ${MAN_PREFIX}/man3/SSL_get_quiet_shutdown.3
@@ -4336,6 +4339,7 @@ ${MAN_PREFIX}/man3/SSL_set_read_ahead.3
 ${MAN_PREFIX}/man3/SSL_set_record_padding_callback.3
 ${MAN_PREFIX}/man3/SSL_set_record_padding_callback_arg.3
 ${MAN_PREFIX}/man3/SSL_set_recv_max_early_data.3
+${MAN_PREFIX}/man3/SSL_set_retry_verify.3
 ${MAN_PREFIX}/man3/SSL_set_rfd.3
 ${MAN_PREFIX}/man3/SSL_set_security_callback.3
 ${MAN_PREFIX}/man3/SSL_set_security_level.3
@@ -4771,6 +4775,7 @@ ${MAN_PREFIX}/man3/X509_STORE_CTX_lookup_crls_fn.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_new.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_new_ex.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_print_verify_cb.3
+${MAN_PREFIX}/man3/X509_STORE_CTX_purpose_inherit.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set0_crls.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set0_param.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set0_trusted_stack.3
@@ -4783,6 +4788,8 @@ ${MAN_PREFIX}/man3/X509_STORE_CTX_set_default.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_error.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_error_depth.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_ex_data.3
+${MAN_PREFIX}/man3/X509_STORE_CTX_set_purpose.3
+${MAN_PREFIX}/man3/X509_STORE_CTX_set_trust.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_verify.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_verify_cb.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_verify.3

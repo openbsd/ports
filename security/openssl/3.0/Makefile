@@ -1,5 +1,5 @@
 PORTROACH=	limit:^3
-V=		3.0.1
+V=		3.0.2
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3,<3.1
 

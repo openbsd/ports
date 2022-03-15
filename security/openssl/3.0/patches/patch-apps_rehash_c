@@ -3,7 +3,7 @@ Avoid printf %n
 Index: apps/rehash.c
 --- apps/rehash.c.orig
 +++ apps/rehash.c
-@@ -416,8 +416,9 @@ static int do_dir(const char *dirname, enum Hash h)
+@@ -422,8 +422,9 @@ static int do_dir(const char *dirname, enum Hash h)
                      while (bit_isset(idmask, nextid))
                          nextid++;
  
@@ -15,7 +15,7 @@ Index: apps/rehash.c
                                   suffixes[bp->type], nextid);
                      if (verbose)
                          BIO_printf(bio_out, "link %s -> %s\n",
-@@ -438,8 +439,9 @@ static int do_dir(const char *dirname, enum Hash h)
+@@ -444,8 +445,9 @@ static int do_dir(const char *dirname, enum Hash h)
                      bit_set(idmask, nextid);
                  } else if (remove_links) {
                      /* Link to be deleted */
