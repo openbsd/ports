@@ -1,14 +1,14 @@
 Index: ext/soup/gstsouploader.c
 --- ext/soup/gstsouploader.c.orig
 +++ ext/soup/gstsouploader.c
-@@ -33,8 +33,8 @@
- GST_DEBUG_CATEGORY_EXTERN (gst_soup_debug);
- #define GST_CAT_DEFAULT gst_soup_debug
- 
+@@ -38,8 +38,8 @@ GST_DEBUG_CATEGORY_EXTERN (gst_soup_debug);
+ #define LIBSOUP_3_SONAME "libsoup-3.0.0.dylib"
+ #define LIBSOUP_2_SONAME "libsoup-2.4.1.dylib"
+ #else
 -#define LIBSOUP_3_SONAME "libsoup-3.0.so.0"
 -#define LIBSOUP_2_SONAME "libsoup-2.4.so.1"
 +#define LIBSOUP_3_SONAME "libsoup-3.0.so"
 +#define LIBSOUP_2_SONAME "libsoup-2.4.so"
+ #endif
  
- #define LOAD_SYMBOL(name) G_STMT_START {                                \
-     if (!g_module_symbol (module, G_STRINGIFY (name), (gpointer *) &G_PASTE (vtable->_, name))) { \
+ 

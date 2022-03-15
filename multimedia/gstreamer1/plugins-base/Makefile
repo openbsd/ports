@@ -3,18 +3,18 @@ COMMENT=		base elements for GStreamer
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS += gsttag-1.0                7.0 # 0.2000.0
-SHARED_LIBS += gstfft-1.0                7.0 # 0.2000.0
-SHARED_LIBS += gstvideo-1.0              7.0 # 0.2000.0
-SHARED_LIBS += gstaudio-1.0              7.0 # 0.2000.0
-SHARED_LIBS += gstrtp-1.0                7.0 # 0.2000.0
-SHARED_LIBS += gstpbutils-1.0            7.0 # 0.2000.0
-SHARED_LIBS += gstsdp-1.0                7.0 # 0.2000.0
-SHARED_LIBS += gstrtsp-1.0               7.0 # 0.2000.0
-SHARED_LIBS += gstriff-1.0               7.0 # 0.2000.0
-SHARED_LIBS += gstapp-1.0                7.0 # 0.2000.0
-SHARED_LIBS += gstallocators-1.0         6.0 # 0.2000.0
-SHARED_LIBS += gstgl-1.0                 6.0 # 0.2000.0
+SHARED_LIBS += gsttag-1.0                7.0 # 0.2001.0
+SHARED_LIBS += gstfft-1.0                7.0 # 0.2001.0
+SHARED_LIBS += gstvideo-1.0              7.0 # 0.2001.0
+SHARED_LIBS += gstaudio-1.0              7.0 # 0.2001.0
+SHARED_LIBS += gstrtp-1.0                7.0 # 0.2001.0
+SHARED_LIBS += gstpbutils-1.0            7.0 # 0.2001.0
+SHARED_LIBS += gstsdp-1.0                7.0 # 0.2001.0
+SHARED_LIBS += gstrtsp-1.0               7.0 # 0.2001.0
+SHARED_LIBS += gstriff-1.0               7.0 # 0.2001.0
+SHARED_LIBS += gstapp-1.0                7.0 # 0.2001.0
+SHARED_LIBS += gstallocators-1.0         6.0 # 0.2001.0
+SHARED_LIBS += gstgl-1.0                 6.0 # 0.2001.0
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
