@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1570 2022/03/09 14:00:43 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1571 2022/03/15 13:57:35 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3302,10 +3302,8 @@ _internal-clean:
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${DISTDIR} 2>/dev/null; then \
 		${_PFETCH} rm -f ${MAKESUMFILES} ${MAKESUMFILES:S/$/.part/}; \
+		${_PFETCH} rmdir -p ${MAKESUMFILES:C@/[^/]*$@@} 2>/dev/null || true; \
 	fi
-.  if !empty(DIST_SUBDIR)
-	-@${_PFETCH} rmdir ${FULLDISTDIR}
-.  endif
 .endif
 .if ${_clean:Minstall}
 .  if ${_clean:Msub}
