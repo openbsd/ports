@@ -1,7 +1,7 @@
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 
-V =		4.0.0
+V =		4.1.0
 DISTNAME =	libqalculate-$V
 HOMEPAGE =	https://qalculate.github.io/
 
