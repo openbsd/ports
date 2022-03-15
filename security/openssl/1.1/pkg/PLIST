@@ -648,6 +648,7 @@ ${MAN_PREFIX}/man3/BN_mod_mul.3
 ${MAN_PREFIX}/man3/BN_mod_mul_montgomery.3
 ${MAN_PREFIX}/man3/BN_mod_mul_reciprocal.3
 ${MAN_PREFIX}/man3/BN_mod_sqr.3
+${MAN_PREFIX}/man3/BN_mod_sqrt.3
 ${MAN_PREFIX}/man3/BN_mod_sub.3
 ${MAN_PREFIX}/man3/BN_mod_word.3
 ${MAN_PREFIX}/man3/BN_mpi2bn.3
@@ -3468,6 +3469,7 @@ ${MAN_PREFIX}/man3/X509_STORE_CTX_init.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_lookup_certs_fn.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_lookup_crls_fn.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_new.3
+${MAN_PREFIX}/man3/X509_STORE_CTX_purpose_inherit.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set0_crls.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set0_param.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set0_trusted_stack.3
@@ -3479,6 +3481,8 @@ ${MAN_PREFIX}/man3/X509_STORE_CTX_set_default.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_error.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_error_depth.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_ex_data.3
+${MAN_PREFIX}/man3/X509_STORE_CTX_set_purpose.3
+${MAN_PREFIX}/man3/X509_STORE_CTX_set_trust.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_verify.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_set_verify_cb.3
 ${MAN_PREFIX}/man3/X509_STORE_CTX_verify_cb.3
