@@ -25,6 +25,8 @@ WANTLIB += swresample vorbis vorbisenc vorbisfile xml2 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=xmms2/}
 
+MODPERL_REGEN_PPPORT =	src/clients/lib/perl/ppport.h
+
 EXTRACT_SUFX =		.tar.bz2
 
 COMPILER =		base-clang ports-gcc base-gcc
