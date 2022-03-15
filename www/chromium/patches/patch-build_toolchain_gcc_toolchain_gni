@@ -1,11 +1,12 @@
 Index: build/toolchain/gcc_toolchain.gni
 --- build/toolchain/gcc_toolchain.gni.orig
 +++ build/toolchain/gcc_toolchain.gni
-@@ -53,6 +53,12 @@ if (enable_resource_allowlist_generation) {
+@@ -53,6 +53,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }
  
 +declare_args() {
++  extra_cflags = ""
 +  extra_cppflags = ""
 +  extra_cxxflags = ""
 +  extra_ldflags = ""
@@ -14,7 +15,7 @@ Index: build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -747,13 +753,17 @@ template("gcc_toolchain") {
+@@ -747,13 +754,17 @@ template("gcc_toolchain") {
  # use_gold too.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {
