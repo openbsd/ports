@@ -10,7 +10,9 @@ lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/knockpy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/knockpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/knockpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/knockpy/${MODPY_PYCACHE}dns_socket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/knockpy/${MODPY_PYCACHE}knockpy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/knockpy/config.json
+lib/python${MODPY_VERSION}/site-packages/knockpy/dns_socket.py
 lib/python${MODPY_VERSION}/site-packages/knockpy/knockpy.py
 lib/python${MODPY_VERSION}/site-packages/knockpy/wordlist.txt
