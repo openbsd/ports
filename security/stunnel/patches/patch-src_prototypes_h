@@ -1,0 +1,21 @@
+Index: src/prototypes.h
+--- src/prototypes.h.orig
++++ src/prototypes.h
+@@ -736,7 +736,7 @@ int getnameinfo(const struct sockaddr *, socklen_t,
+ extern CLI *thread_head;
+ #endif
+ 
+-#if OPENSSL_VERSION_NUMBER<0x10100004L
++#if OPENSSL_VERSION_NUMBER<0x10100004L || defined(LIBRESSL_VERSION_NUMBER)
+ 
+ #ifdef USE_OS_THREADS
+ 
+@@ -787,7 +787,7 @@ typedef enum {
+ 
+ extern CRYPTO_RWLOCK *stunnel_locks[STUNNEL_LOCKS];
+ 
+-#if OPENSSL_VERSION_NUMBER<0x10100004L
++#if OPENSSL_VERSION_NUMBER<0x10100004L || defined(LIBRESSL_VERSION_NUMBER)
+ /* Emulate the OpenSSL 1.1 locking API for older OpenSSL versions */
+ CRYPTO_RWLOCK *CRYPTO_THREAD_lock_new(void);
+ int CRYPTO_THREAD_read_lock(CRYPTO_RWLOCK *);

@@ -1,0 +1,30 @@
+Index: src/tls.c
+--- src/tls.c.orig
++++ src/tls.c
+@@ -41,7 +41,7 @@
+ volatile int tls_initialized=0;
+ 
+ NOEXPORT void tls_platform_init();
+-#if OPENSSL_VERSION_NUMBER<0x10100000L
++#if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ NOEXPORT void free_function(void *);
+ #endif
+ 
+@@ -52,7 +52,7 @@ void tls_init() {
+     tls_platform_init();
+     tls_initialized=1;
+     ui_tls=tls_alloc(NULL, NULL, "ui");
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+     CRYPTO_set_mem_functions(str_alloc_detached_debug,
+         str_realloc_detached_debug, str_free_debug);
+ #else
+@@ -184,7 +184,7 @@ TLS_DATA *tls_get() {
+ 
+ /**************************************** OpenSSL allocator hook */
+ 
+-#if OPENSSL_VERSION_NUMBER<0x10100000L
++#if OPENSSL_VERSION_NUMBER<0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
+ NOEXPORT void free_function(void *ptr) {
+     /* CRYPTO_set_mem_ex_functions() needs a function rather than a macro */
+     /* unfortunately, OpenSSL provides no file:line information here */

@@ -14,13 +14,13 @@ Index: tools/stunnel.conf-sample.in
  
  ; PID file is created inside the chroot jail (if enabled)
 -;pid = @localstatedir@/run/stunnel.pid
-+pid = /stunnel.pid
++;pid = /stunnel.pid
  
  ; Debugging stuff (may be useful for troubleshooting)
  ;foreground = yes
  ;debug = info
 -;output = @localstatedir@/log/stunnel.log
-+;output = stunnel.log
++;output = /stunnel.log
  
  ; Enable FIPS 140-2 mode if needed for compliance
  ;fips = yes
@@ -33,7 +33,13 @@ Index: tools/stunnel.conf-sample.in
  
  ; **************************************************************************
  ; * Service definitions (remove all services for inetd mode)               *
-@@ -59,32 +60,32 @@
+@@ -54,37 +55,37 @@
+ 
+ ; ***************************************** Example TLS client mode services
+ 
+-; The following examples use /etc/ssl/certs, which is the common location
++; The following examples use ${SYSCONFDIR}/ssl/certs, which is the common location
+ ; of a hashed directory containing trusted CA certificates.  This is not
  ; a hardcoded path of the stunnel package, as it is not related to the
  ; stunnel configuration in @sysconfdir@/stunnel/.
  
@@ -90,36 +96,27 @@ Index: tools/stunnel.conf-sample.in
  
  ; Encrypted HTTP proxy authenticated with a client certificate
  ; located in a cryptographic token
-@@ -98,43 +99,43 @@ OCSPaia = yes
- 
- ; ***************************************** Example TLS server mode services
- 
--;[pop3s]
--;accept  = 995
--;connect = 110
+@@ -101,12 +102,12 @@ OCSPaia = yes
+ ;[pop3s]
+ ;accept  = 995
+ ;connect = 110
 -;cert = @sysconfdir@/stunnel/stunnel.pem
-+[pop3s]
-+accept  = 995
-+connect = 110
-+cert = ${SYSCONFDIR}/stunnel/stunnel.pem
++;cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  
--;[imaps]
--;accept  = 993
--;connect = 143
+ ;[imaps]
+ ;accept  = 993
+ ;connect = 143
 -;cert = @sysconfdir@/stunnel/stunnel.pem
-+[imaps]
-+accept  = 993
-+connect = 143
-+cert = ${SYSCONFDIR}/stunnel/stunnel.pem
++;cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  
--;[ssmtp]
--;accept  = 465
--;connect = 25
+ ; Either only expose this service to trusted networks, or require
+ ; authentication when relaying emails originated from loopback.
+@@ -114,29 +115,29 @@ OCSPaia = yes
+ ;[ssmtp]
+ ;accept  = 465
+ ;connect = 25
 -;cert = @sysconfdir@/stunnel/stunnel.pem
-+[ssmtp]
-+accept  = 465
-+connect = 25
-+cert = ${SYSCONFDIR}/stunnel/stunnel.pem
++;cert = ${SYSCONFDIR}/stunnel/stunnel.pem
  
  ; TLS front-end to a web server
  ;[https]
@@ -139,7 +136,6 @@ Index: tools/stunnel.conf-sample.in
  ;accept = 1337
  ;exec = /bin/sh
  ;execArgs = sh -i
- ;ciphers = PSK
 -;PSKsecrets = @sysconfdir@/stunnel/secrets.txt
 +;PSKsecrets = ${SYSCONFDIR}/stunnel/secrets.txt
  

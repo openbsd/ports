@@ -1,12 +1,12 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -364,7 +364,7 @@ top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
+@@ -371,7 +371,7 @@ top_srcdir = @top_srcdir@
+ with_bashcompdir = @with_bashcompdir@
+ AM_DISTCHECK_CONFIGURE_FLAGS = --with-bashcompdir='$$(datarootdir)/bash-completion/completions'
  ACLOCAL_AMFLAGS = -I m4
 -SUBDIRS = src doc tools tests
 +SUBDIRS = src doc tests
- EXTRA_DIST = PORTS BUGS COPYRIGHT.GPL CREDITS INSTALL.W32 INSTALL.WCE \
- 	INSTALL.FIPS build-android.sh .travis.yml
- doc_DATA = INSTALL README TODO COPYING AUTHORS ChangeLog PORTS BUGS \
+ doc_DATA = README.md TODO.md COPYING.md AUTHORS.md NEWS.md PORTS.md \
+ 	BUGS.md COPYRIGHT.md CREDITS.md INSTALL.W32.md INSTALL.WCE.md \
+ 	INSTALL.FIPS.md

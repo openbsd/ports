@@ -1,0 +1,30 @@
+Index: src/ssl.c
+--- src/ssl.c.orig
++++ src/ssl.c
+@@ -44,7 +44,7 @@ NOEXPORT void cb_new_auth(void *parent, void *ptr, CRY
+ #if OPENSSL_VERSION_NUMBER>=0x30000000L
+ NOEXPORT int cb_dup_addr(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from,
+     void **from_d, int idx, long argl, void *argp);
+-#elif OPENSSL_VERSION_NUMBER>=0x10100000L
++#elif OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ NOEXPORT int cb_dup_addr(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from,
+     void *from_d, int idx, long argl, void *argp);
+ #else
+@@ -87,7 +87,7 @@ int fips_available() { /* either FIPS provider or cont
+ }
+ 
+ int ssl_init(void) { /* init TLS before parsing configuration file */
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+     OPENSSL_INIT_SETTINGS *conf=OPENSSL_INIT_new();
+ #ifdef USE_WIN32
+     OPENSSL_INIT_set_config_filename(conf, "..\\config\\openssl.cnf");
+@@ -161,7 +161,7 @@ NOEXPORT void cb_new_auth(void *parent, void *ptr, CRY
+ #if OPENSSL_VERSION_NUMBER>=0x30000000L
+ NOEXPORT int cb_dup_addr(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from,
+         void **from_d, int idx, long argl, void *argp) {
+-#elif OPENSSL_VERSION_NUMBER>=0x10100000L
++#elif OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ NOEXPORT int cb_dup_addr(CRYPTO_EX_DATA *to, const CRYPTO_EX_DATA *from,
+         void *from_d, int idx, long argl, void *argp) {
+ #else

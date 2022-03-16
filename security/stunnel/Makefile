@@ -1,8 +1,7 @@
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-5.44
+DISTNAME=	stunnel-5.63
 CATEGORIES=	security
-REVISION=	2
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
@@ -11,12 +10,11 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto pthread ssl util
 
-HOMEPAGE=	http://www.stunnel.org/
+HOMEPAGE=	https://www.stunnel.org/
 
 MASTER_SITES=	https://www.stunnel.org/downloads/archive/5.x/ \
-		http://ftp.nluug.nl/pub/networking/stunnel/archive/5.x/ \
-		http://mirror.bit.nl/stunnel/archive/5.x/ \
-		ftp://ftp.stunnel.org/stunnel/archive/5.x/
+		https://ftp.nluug.nl/pub/networking/stunnel/ \
+		https://www.usenix.org.uk/mirrors/stunnel/
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu

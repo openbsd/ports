@@ -1,0 +1,30 @@
+Index: src/client.c
+--- src/client.c.orig
++++ src/client.c
+@@ -750,7 +750,7 @@ NOEXPORT void print_cipher(CLI *c) { /* print negotiat
+ NOEXPORT void transfer(CLI *c) {
+     int timeout; /* s_poll_wait timeout in seconds */
+     int pending; /* either processed on unprocessed TLS data */
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+     int has_pending=0, prev_has_pending;
+ #endif
+     int watchdog=0; /* a counter to detect an infinite loop */
+@@ -797,7 +797,7 @@ NOEXPORT void transfer(CLI *c) {
+ 
+         /****************************** wait for an event */
+         pending=SSL_pending(c->ssl);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+         /* only attempt to process SSL_has_pending() data once */
+         prev_has_pending=has_pending;
+         has_pending=SSL_has_pending(c->ssl);
+@@ -1202,7 +1202,7 @@ NOEXPORT void transfer(CLI *c) {
+             s_log(LOG_ERR,
+                 "please report the problem to Michal.Trojnara@stunnel.org");
+             stunnel_info(LOG_ERR);
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+             s_log(LOG_ERR, "protocol=%s, SSL_pending=%d, SSL_has_pending=%d",
+                 SSL_get_version(c->ssl),
+                 SSL_pending(c->ssl), SSL_has_pending(c->ssl));

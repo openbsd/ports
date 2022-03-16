@@ -1,0 +1,12 @@
+Index: src/options.c
+--- src/options.c.orig
++++ src/options.c
+@@ -38,7 +38,7 @@
+ #include "common.h"
+ #include "prototypes.h"
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ #define DEFAULT_CURVES "X25519:P-256:X448:P-521:P-384"
+ #else /* OpenSSL version < 1.1.1 */
+ #define DEFAULT_CURVES "prime256v1"

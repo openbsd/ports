@@ -1,0 +1,12 @@
+Index: src/common.h
+--- src/common.h.orig
++++ src/common.h
+@@ -454,7 +454,7 @@ extern char *sys_errlist[];
+ #define OPENSSL_NO_TLS1_2
+ #endif /* OpenSSL older than 1.0.1 || defined(OPENSSL_NO_TLS1) */
+ 
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ #ifndef OPENSSL_NO_SSL2
+ #define OPENSSL_NO_SSL2
+ #endif /* !defined(OPENSSL_NO_SSL2) */

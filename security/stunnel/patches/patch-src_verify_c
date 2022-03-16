@@ -1,7 +1,7 @@
 Index: src/verify.c
 --- src/verify.c.orig
 +++ src/verify.c
-@@ -353,7 +353,7 @@ NOEXPORT int cert_check_local(X509_STORE_CTX *callback
+@@ -351,7 +351,7 @@ NOEXPORT int cert_check_local(X509_STORE_CTX *callback
      cert=X509_STORE_CTX_get_current_cert(callback_ctx);
      subject=X509_get_subject_name(cert);
  

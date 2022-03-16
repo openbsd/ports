@@ -1,6 +1,7 @@
 @newgroup _stunnel:528
 @newuser _stunnel:528:_stunnel:daemon:stunnel account:/var/stunnel:/sbin/nologin
 @extra /var/stunnel/stunnel.pid
+@rcscript ${RCDIR}/stunnel
 @man man/man8/stunnel.8
 @bin sbin/stunnel
 sbin/stunnel3
@@ -10,5 +11,3 @@ share/examples/stunnel/stunnel.conf-sample
 @sample ${SYSCONFDIR}/stunnel/stunnel.conf
 @owner _stunnel
 @sample /var/stunnel/
-@owner
-@rcscript ${RCDIR}/stunnel

@@ -1,7 +1,34 @@
 Index: src/ctx.c
 --- src/ctx.c.orig
 +++ src/ctx.c
-@@ -398,7 +398,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
+@@ -91,7 +91,7 @@ NOEXPORT void set_prompt(const char *);
+ NOEXPORT int ui_retry();
+ 
+ /* session tickets */
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ NOEXPORT int generate_session_ticket_cb(SSL *, void *);
+ NOEXPORT int decrypt_session_ticket_cb(SSL *, SSL_SESSION *,
+     const unsigned char *, size_t, SSL_TICKET_STATUS, void *);
+@@ -179,7 +179,7 @@ int context_init(SERVICE_OPTIONS *section) { /* init T
+     }
+     current_section=section; /* setup current section for callbacks */
+ 
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+     /* set the security level */
+     if(section->security_level>=0) {
+         /* set the user-specified value */
+@@ -265,7 +265,7 @@ int context_init(SERVICE_OPTIONS *section) { /* init T
+ #endif
+ 
+     /* setup session tickets */
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+     SSL_CTX_set_session_ticket_cb(section->ctx, generate_session_ticket_cb,
+         decrypt_session_ticket_cb, NULL);
+ #endif /* OpenSSL 1.1.1 or later */
+@@ -539,7 +539,7 @@ NOEXPORT int ecdh_init(SERVICE_OPTIONS *section) {
  /**************************************** initialize OpenSSL CONF */
  
  NOEXPORT int conf_init(SERVICE_OPTIONS *section) {
@@ -10,3 +37,21 @@ Index: src/ctx.c
      SSL_CONF_CTX *cctx;
      NAME_LIST *curr;
      char *cmd, *param;
+@@ -1045,7 +1045,7 @@ NOEXPORT int ui_retry() {
+ 
+ /**************************************** session tickets */
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10101000L
++#if OPENSSL_VERSION_NUMBER >= 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 
+ typedef struct {
+     void *session_authenticated;
+@@ -1538,7 +1538,7 @@ NOEXPORT void info_callback(const SSL *ssl, int where,
+ 
+     c=SSL_get_ex_data((SSL *)ssl, index_ssl_cli);
+     if(c) {
+-#if OPENSSL_VERSION_NUMBER>=0x10100000L
++#if OPENSSL_VERSION_NUMBER>=0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+         OSSL_HANDSHAKE_STATE state=SSL_get_state(ssl);
+ #else
+         int state=SSL_get_state((SSL *)ssl);
