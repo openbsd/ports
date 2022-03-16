@@ -1,0 +1,7 @@
+@bin bin/libdeflate-gunzip
+@bin bin/libdeflate-gzip
+include/libdeflate.h
+@static-lib lib/libdeflate.a
+@comment @so lib/libdeflate.so
+@lib lib/libdeflate.so.${LIBdeflate_VERSION}
+lib/pkgconfig/libdeflate.pc

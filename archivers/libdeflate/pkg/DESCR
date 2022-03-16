@@ -1,0 +1,2 @@
+libdeflate is a library for fast, whole-buffer DEFLATE-based compression and
+decompression.
