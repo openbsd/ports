@@ -1,10 +1,12 @@
 COMMENT =		data recovery tool
 
-DISTNAME =		ddrescue-1.25
+DISTNAME =		ddrescue-1.26
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.gnu.org/software/ddrescue/ddrescue.html
+
+MAINTAINER=		Martin Ziemer <horrad@horrad.de>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
