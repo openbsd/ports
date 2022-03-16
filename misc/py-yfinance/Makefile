@@ -1,6 +1,6 @@
 COMMENT=		fetching finanical market data with Python
 
-MODPY_EGG_VERSION=	0.1.69
+MODPY_EGG_VERSION=	0.1.70
 DISTNAME=		yfinance-${MODPY_EGG_VERSION}
 PKGNAME=		py-yfinance-${MODPY_EGG_VERSION}
 
@@ -20,6 +20,9 @@ FLAVOR=			python3
 
 MODPY_SETUPTOOLS=	Yes
 MODPY_PI=		Yes
+
+# missing from pypi distfile
+NO_TEST=		Yes
 
 RUN_DEPENDS=		devel/py-multitasking${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
