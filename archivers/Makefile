@@ -20,6 +20,7 @@
      SUBDIR += laszip
      SUBDIR += lha
      SUBDIR += libarchive
+     SUBDIR += libdeflate
      SUBDIR += libmspack
      SUBDIR += libtar
      SUBDIR += libzip
