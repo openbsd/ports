@@ -1,0 +1,48 @@
+We know where the datadir is, since we create it.
+
+Index: mlk/src/gui/mlk_gui.c
+--- mlk/src/gui/mlk_gui.c.orig
++++ mlk/src/gui/mlk_gui.c
+@@ -587,40 +587,12 @@ void mGuiThreadWakeup(void)
+ 
+ void mGuiSetPath_data_exe(const char *path)
+ {
+-	char *env;
+ 
+ 	mFree(MLKAPP->path_data);
+ 	MLKAPP->path_data = NULL;
+ 
+-	//
+-
+-	env = getenv("MLK_APPDATADIR");
+-
+-	if(env)
+-		//環境変数の絶対パス
+-		MLKAPP->path_data = mStrdup(env);
+-	else
+-	{
+-		//実行ファイルのディレクトリからの相対位置
+-
+-		char *pc;
+-		mStr str = MSTR_INIT;
+-		
+-		pc = mGetSelfExePath();
+-		if(!pc) return;
+-
+-		mStrSetText(&str, pc);
+-		mFree(pc);
+-
+-		mStrPathRemoveBasename(&str);
+-		mStrPathJoin(&str, path);
+-
+-		mStrPathNormalize(&str);
+-
+-		MLKAPP->path_data = mStrdup(str.buf);
+-
+-		mStrFree(&str);
+-	}
++	//環境変数の絶対パス
++	MLKAPP->path_data = mStrdup(path);
+ }
+ 
+ /**@ 設定ファイルのディレクトリのパスをセット (ホーム)

@@ -1,0 +1,14 @@
+Needed to display toolbar icons and other resources.
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -382,7 +382,7 @@ static int _init_main(int argc,char **argv)
+ 
+ 	//パスセット
+ 
+-	mGuiSetPath_data_exe("../share/azpainter3");
++	mGuiSetPath_data_exe("%LOCALBASE%/share/azpainter3");
+ 	mGuiSetPath_config_home(".config/azpainter");
+ 
+ 	//翻訳データ

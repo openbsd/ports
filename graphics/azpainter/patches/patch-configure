@@ -1,14 +1,27 @@
 Don't hardcode optimization flags.
+Add OpenBSD to supported OS list.
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -214,8 +214,6 @@ done
- if test -z "$CFLAGS";then
+@@ -274,7 +274,7 @@ if test -z "$CFLAGS";then
  	if test "$cf_debug" = yes;then
- 		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-g"`
--	else
--		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-O2"`
+ 		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-g -Wall"`
+ 	else
+-		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-O2 -Wall"`
++		CFLAGS_ADD=`fc_add_string "$CFLAGS_ADD" "-Wall"`
  	fi
  fi
  
+@@ -290,6 +290,11 @@ elif test "$tmp1" = Darwin;then
+ 	CFLAGS=`fc_add_string "$CFLAGS" "-DMLK_NO_SIMD"`
+ elif test "$tmp1" = FreeBSD;then
+ 	cf_os=freebsd
++	cf_make=gmake
++	CFLAGS=`fc_add_string "$CFLAGS" "-I/usr/local/include"`
++	LDFLAGS=`fc_add_string "$LDFLAGS" "-L/usr/local/lib"`
++elif test "$tmp1" = OpenBSD;then
++	cf_os=openbsd
+ 	cf_make=gmake
+ 	CFLAGS=`fc_add_string "$CFLAGS" "-I/usr/local/include"`
+ 	LDFLAGS=`fc_add_string "$LDFLAGS" "-L/usr/local/lib"`

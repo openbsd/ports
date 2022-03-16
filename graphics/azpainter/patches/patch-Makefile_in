@@ -3,12 +3,12 @@ Respect CFLAGS.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -11,7 +11,7 @@ package_full := $(package_name)-$(package_version)
- instfile := install -m 644
+@@ -15,7 +15,7 @@ inst_dir := install -m 755 -d
+ inst_file := install -m 644
  
  CC := @CC@
--CFLAGS := @CFLAGS@ -pthread -Isrc/include -Imlib/include -I. -DHAVE_CONFIG_H \
-+CFLAGS += @CFLAGS@ -pthread -Isrc/include -Imlib/include -I. -DHAVE_CONFIG_H \
-  -DPACKAGE_DATA_DIR=\"$(datadir)\"
+-CFLAGS := @CFLAGS@ -pthread -Isrc/include -Imlk/include -I. -DHAVE_CONFIG_H
++CFLAGS += @CFLAGS@ -pthread -Isrc/include -Imlk/include -I. -DHAVE_CONFIG_H
  LDFLAGS := @LDFLAGS@ -pthread
  LIBS := @LIBS@ -lm
+ 
