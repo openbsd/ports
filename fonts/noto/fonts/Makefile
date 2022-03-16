@@ -4,6 +4,7 @@ NOTO_PROJECT =		fonts
 
 V =			2017-10-24
 GH_TAGNAME =		v$V-phase3-second-cleanup
+REVISION =		0
 
 RUN_DEPENDS =		fonts/noto/emoji
 

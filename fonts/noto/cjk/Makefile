@@ -4,8 +4,7 @@ NOTO_PROJECT =		cjk
 
 V =			2.001
 GH_TAGNAME =		NotoSansV$V
-
-HOMEPAGE =		https://www.google.com/get/noto/help/cjk/
+REVISION =		0
 
 BUILD_DEPENDS =		archivers/unzip
 

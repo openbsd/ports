@@ -4,6 +4,7 @@ NOTO_PROJECT =		emoji
 
 V =			2020-04-08
 GH_TAGNAME =		v$V-unicode12_1
+REVISION =		0
 
 do-install:
 	${INSTALL_DATA_DIR} ${NOTO_INSTALLDIR}
