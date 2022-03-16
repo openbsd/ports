@@ -1,9 +1,8 @@
 COMMENT =		cross-project testing tool for Python
 
-MODPY_EGG_VERSION =	6.2.5
+MODPY_EGG_VERSION =	7.1.0
 DISTNAME =		pytest-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -28,7 +27,7 @@ RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}>=17.4.0 \
 			devel/py-py${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-iniconfig${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+			textproc/py-tomli${MODPY_FLAVOR}
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-argcomplete${MODPY_FLAVOR} \
