@@ -1,0 +1,20 @@
+CVE-2021-3246:
+https://security-tracker.debian.org/tracker/CVE-2021-3246
+https://github.com/libsndfile/libsndfile/commit/a9815b3f228df00086e0a40bcc43162fc19896a1
+
+Index: src/wavlike.c
+--- src/wavlike.c.orig
++++ src/wavlike.c
+@@ -830,7 +830,11 @@ wavlike_read_cart_chunk (SF_PRIVATE *psf, uint32_t chu
+ 		return 0 ;
+ 		} ;
+ 
+-	if (chunksize >= sizeof (SF_CART_INFO_16K))
++	/*
++	**	SF_CART_INFO_16K has an extra field 'tag_text_size' that isn't part
++	**	of the chunk, so don't include it in the size check.
++	*/
++	if (chunksize >= sizeof (SF_CART_INFO_16K) - 4)
+ 	{	psf_log_printf (psf, "cart : %u too big to be handled\n", chunksize) ;
+ 		psf_binheader_readf (psf, "j", chunksize) ;
+ 		return 0 ;
