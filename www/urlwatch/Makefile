@@ -1,6 +1,7 @@
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.24
+MODPY_EGG_VERSION=	2.25
+
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 
 CATEGORIES=	www
@@ -20,7 +21,7 @@ MODPY_PYTEST=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
-		databases/py-minidb${MODPY_FLAVOR} \
+		databases/py-minidb${MODPY_FLAVOR}>=2.0.6 \
 		devel/py-appdirs${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
 		textproc/py-cssselect${MODPY_FLAVOR} \
