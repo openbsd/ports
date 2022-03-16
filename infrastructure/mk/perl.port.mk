@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: perl.port.mk,v 1.35 2022/03/14 08:23:29 sthen Exp $
+# $OpenBSD: perl.port.mk,v 1.36 2022/03/16 10:11:14 bluhm Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -63,7 +63,7 @@ MODPERL_gen = \
 	if test -f ${WRKDIST}/${MODPERL_REGEN_PPPORT}; then \
 		echo "Regenerating ${MODPERL_REGEN_PPPORT}"; \
 		cd ${WRKDIST} && \
-		cp ${MODPERL_REGEN_PPPORT} ${MODPERL_REGEN_PPPORT}.orig.ppport; \
+		mv ${MODPERL_REGEN_PPPORT} ${MODPERL_REGEN_PPPORT}.orig.ppport; \
 		perl -MDevel::PPPort -e'Devel::PPPort::WriteFile("${MODPERL_REGEN_PPPORT}")'; \
 	fi
 .endif
