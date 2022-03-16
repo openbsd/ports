@@ -11,6 +11,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c perl
 
+MODPERL_REGEN_PPPORT =	lib/Data/Dump/ppport.h
+
 CONFIGURE_STYLE=	modbuild
 
 BUILD_DEPENDS =		devel/p5-ExtUtils-Depends

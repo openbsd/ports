@@ -14,6 +14,8 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB =	c perl
 
+MODPERL_REGEN_PPPORT =	LibYAML/ppport.h
+
 # To avoid skipping tests
 TEST_DEPENDS =	devel/p5-boolean
 

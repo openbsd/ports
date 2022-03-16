@@ -9,6 +9,7 @@ MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
+MODPERL_REGEN_PPPORT =	c/ppport.h
 
 WANTLIB += c perl
 

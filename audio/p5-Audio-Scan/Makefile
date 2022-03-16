@@ -10,6 +10,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c perl z
 
 MODULES=	cpan
+MODPERL_REGEN_PPPORT =	include/ppport.h
 
 TEST_DEPENDS=	devel/p5-Test-Warn
 

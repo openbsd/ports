@@ -14,6 +14,8 @@ WANTLIB += apr-1 aprutil-1 c db expat iconv perl pthread
 
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=../by-authors/id/S/SH/SHAY/}
 
+MODPERL_REGEN_PPPORT =	glue/perl/xsbuilder/ppport.h
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-perl-glue \
 		--with-apache2-apxs=${LOCALBASE}/sbin/apxs2
