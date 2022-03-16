@@ -1,0 +1,14 @@
+Looks like dual stack any-address is broken here. Only IPv6 socket will bound
+here
+Index: core/libs/dplugins/webservices/o2/src/o2.cpp
+--- core/libs/dplugins/webservices/o2/src/o2.cpp.orig
++++ core/libs/dplugins/webservices/o2/src/o2.cpp
+@@ -185,7 +185,7 @@ void O2::link() {
+         } else {
+             // Start listening to authentication replies
+             if (!replyServer()->isListening()) {
+-                if (replyServer()->listen(QHostAddress::Any, localPort_)) {
++                if (replyServer()->listen(QHostAddress::AnyIPv4, localPort_)) {
+                     qDebug() << "O2::link: Reply server listening on port" << localPort();
+                 } else {
+                     qWarning() << "O2::link: Reply server failed to start listening on port" << localPort();
