@@ -3,6 +3,7 @@ COMMENT=		apache HTTP server
 V=			2.4.53
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
+REVISION=		0
 
 CATEGORIES=		www net
 
@@ -12,6 +13,9 @@ HOMEPAGE=		https://httpd.apache.org/
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
+
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 WANTLIB += apr-1 aprutil-1 brotlicommon brotlienc c crypto curl
 WANTLIB += db expat iconv jansson lzma m nghttp2 pcre pthread ssl
