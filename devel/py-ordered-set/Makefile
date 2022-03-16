@@ -1,6 +1,6 @@
 COMMENT=		ordered sets in Python
 
-MODPY_EGG_VERSION=	4.0.2
+MODPY_EGG_VERSION=	4.1.0
 DISTNAME=		ordered-set-${MODPY_EGG_VERSION}
 PKGNAME=		py-ordered-set-${MODPY_EGG_VERSION}
 
