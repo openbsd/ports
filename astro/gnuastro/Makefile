@@ -1,8 +1,9 @@
 COMMENT =	GNU Astronomy Utilities
-DISTNAME =	gnuastro-0.15
+DISTNAME =	gnuastro-0.16.1-e0f1
 CATEGORIES =	astro
+PKGNAME =	gnuastro-0.16.1
 
-SHARED_LIBS +=	gnuastro                  2.1 # 13.0
+SHARED_LIBS +=	gnuastro                  2.2 # 14.0
 
 HOMEPAGE =	https://www.gnu.org/software/gnuastro/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -10,9 +11,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas jpeg lzma
-WANTLIB += m nghttp2 pcre pcreposix pthread ssh2 ssl tiff wcs
-WANTLIB += z zstd
+WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas http_parser
+WANTLIB += jpeg lzma m nghttp2 pcre pcreposix pthread ssh2 ssl
+WANTLIB += tiff wcs z zstd
 
 MASTER_SITES =	${MASTER_SITE_GNU:=gnuastro/}
 
