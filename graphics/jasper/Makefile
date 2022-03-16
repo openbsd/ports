@@ -1,8 +1,7 @@
 COMMENT =	reference implementation of JPEG-2000
 
-V =		3.0.2
+V =		3.0.3
 DISTNAME =	jasper-$V
-REVISION =	0
 
 SHARED_LIBS =	jasper		5.0
 
