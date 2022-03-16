@@ -1,5 +1,6 @@
---- src/spy/libpcscspy.c.orig	Fri Nov  6 09:39:51 2015
-+++ src/spy/libpcscspy.c	Sun Dec 27 18:52:28 2015
+Index: src/spy/libpcscspy.c
+--- src/spy/libpcscspy.c.orig
++++ src/spy/libpcscspy.c
 @@ -26,6 +26,7 @@
  #include <unistd.h>
  #include <sys/time.h>
@@ -8,7 +9,7 @@
  
  #include "misc.h"
  #include <winscard.h>
-@@ -167,7 +168,7 @@ static void spy_line_direct(char *line)
+@@ -162,7 +163,7 @@ static void spy_line_direct(char *line)
  	if (Log_fd < 0)
  		return;
  
@@ -17,7 +18,7 @@
  	pthread_mutex_lock(&Log_fd_mutex);
  	r = write(Log_fd, threadid, strlen(threadid));
  	r = write(Log_fd, line, strlen(line));
-@@ -196,7 +197,7 @@ static void spy_line(const char *fmt, ...)
+@@ -191,7 +192,7 @@ static void spy_line(const char *fmt, ...)
  		printf("libpcsc-spy: Buffer is too small!\n");
  		return;
  	}

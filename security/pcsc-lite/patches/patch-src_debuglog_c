@@ -3,6 +3,15 @@ Disable colors by default.
 Index: src/debuglog.c
 --- src/debuglog.c.orig
 +++ src/debuglog.c
+@@ -187,7 +187,7 @@ static void log_line(const int priority, const char *D
+ 					break;
+ 			}
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined (__OpenBSD__)
+ #define THREAD_FORMAT "%p"
+ #else
+ #define THREAD_FORMAT "%lu"
 @@ -255,6 +255,9 @@ void DebugLogSetLogType(const int dbgtype)
  			LogMsgType = DEBUGLOG_STDOUT_DEBUG;
  	}

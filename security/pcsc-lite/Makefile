@@ -1,7 +1,6 @@
 COMMENT=	resource manager for PC/SC
 
-V=		1.8.26
-REVISION=	2
+V=		1.9.5
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
@@ -40,7 +39,8 @@ CONFIGURE_ARGS=	--disable-libudev \
 		--disable-libsystemd \
 		--without-systemdsystemunitdir \
 		--enable-libusb \
-		--enable-confdir=${SYSCONFDIR}/ccid
+		--enable-confdir=${SYSCONFDIR}/ccid \
+		--enable-ipcdir=/var/run/pcscd
 
 CONFIGURE_ENV=	ac_cv_lib_lex='none needed'
 
@@ -52,5 +52,9 @@ TEST_IS_INTERACTIVE= Yes
 
 do-test:
 	${WRKBUILD}/src/testpcsc
+
+post-install:
+	rm ${PREFIX}/share/doc/pcsc-lite/README.polkit
+	rmdir ${PREFIX}/share/doc/pcsc-lite
 
 .include <bsd.port.mk>

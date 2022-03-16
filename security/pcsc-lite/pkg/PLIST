@@ -7,10 +7,10 @@ include/PCSC/pcsclite.h
 include/PCSC/reader.h
 include/PCSC/winscard.h
 include/PCSC/wintypes.h
-lib/libpcsclite.a
+@static-lib lib/libpcsclite.a
 lib/libpcsclite.la
 @lib lib/libpcsclite.so.${LIBpcsclite_VERSION}
-lib/libpcscspy.a
+@static-lib lib/libpcscspy.a
 lib/libpcscspy.la
 @lib lib/libpcscspy.so.${LIBpcscspy_VERSION}
 lib/pkgconfig/libpcsclite.pc
@@ -18,6 +18,3 @@ lib/pkgconfig/libpcsclite.pc
 @man man/man5/reader.conf.5
 @man man/man8/pcscd.8
 @bin sbin/pcscd
-@comment share/doc/pcsc-lite/
-@comment share/doc/pcsc-lite/README.DAEMON
-@comment share/doc/pcsc-lite/README.polkit
