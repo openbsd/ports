@@ -11,6 +11,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		perl
 
 MODULES =		cpan
+MODPERL_REGEN_PPPORT =	lib/HTML/ppport.h
 
 BUILD_DEPENDS =		devel/p5-Module-Build-Pluggable-PPPort>=0.04 \
 			devel/p5-Module-Build>=0.4005 \
