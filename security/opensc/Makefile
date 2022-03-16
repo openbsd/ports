@@ -1,6 +1,7 @@
 COMMENT=	set of libraries and utilities to access smart cards
 
 V=		0.22.0
+REVISION=	0
 DISTNAME=	opensc-${V}
 
 SHARED_LIBS +=	opensc 7.3	# 8.0
@@ -52,6 +53,8 @@ post-install:
 	${SUBST_CMD} -c -m ${NONBINMODE} -o ${BINOWN} -g ${BINGRP} \
 	    ${FILESDIR}/libopensc.pc ${PREFIX}/lib/pkgconfig/libopensc.pc
 	@find ${PREFIX}/lib/pkcs11/ -name '*.la' -delete
+	rm ${PREFIX}/share/doc/opensc/{NEWS,opensc.conf}
+	rmdir ${PREFIX}/share/doc/opensc
 
 # only a few tests are normally run. src/tests/regression has a number
 # of other tests that require a card.

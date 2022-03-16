@@ -79,9 +79,6 @@ share/bash-completion/completions/pkcs15-init
 share/bash-completion/completions/pkcs15-tool
 share/bash-completion/completions/sc-hsm-tool
 share/bash-completion/completions/westcos-tool
-@comment share/doc/opensc/
-@comment share/doc/opensc/NEWS
-@comment share/doc/opensc/opensc.conf
 share/examples/opensc/
 share/examples/opensc/opensc.conf
 @mode 644
