@@ -1,6 +1,7 @@
 COMMENT=	monitor webpages for updates
 
 MODPY_EGG_VERSION=	2.25
+REVISION=	0
 
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
 

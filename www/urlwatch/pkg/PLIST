@@ -73,6 +73,13 @@ lib/python${MODPY_VERSION}/site-packages/urlwatch/util.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/worker.py
 lib/python${MODPY_VERSION}/site-packages/urlwatch/xmpp.py
 @man man/man1/urlwatch.1
+@man man/man5/urlwatch-config.5
+@man man/man5/urlwatch-filters.5
+@man man/man5/urlwatch-jobs.5
+@man man/man5/urlwatch-reporters.5
+@man man/man7/urlwatch-cookbook.7
+@man man/man7/urlwatch-deprecated.7
+@man man/man7/urlwatch-intro.7
 share/examples/urlwatch/
 share/examples/urlwatch/hooks.py.example
 share/examples/urlwatch/urls.yaml.example
