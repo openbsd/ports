@@ -1,6 +1,7 @@
---- groupsock/inet.c.orig	Sat Feb  4 12:01:47 2012
-+++ groupsock/inet.c	Sun Feb 26 15:15:55 2012
-@@ -61,6 +61,10 @@ int initializeWinsockIfNecessary(void) { return 1; }
+Index: groupsock/inet.c
+--- groupsock/inet.c.orig
++++ groupsock/inet.c
+@@ -51,6 +51,10 @@ int initializeWinsockIfNecessary(void) { return 1; }
  long our_random() {
  #if defined(__WIN32__) || defined(_WIN32)
    return rand();

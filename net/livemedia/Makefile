@@ -1,19 +1,19 @@
 COMMENT=	LIVE555 streaming media library
 
-DISTNAME=	live.2012.02.04
-PKGNAME=	liveMedia-20120204
-REVISION =	4
+VERSION=	2022.02.07
+DISTNAME=	live.${VERSION}
+PKGNAME=	liveMedia-${VERSION:S/.//g}
 CATEGORIES=	net devel
-MASTER_SITES=	https://comstyle.com/source/
+MASTER_SITES=	https://download.videolan.org/contrib/live555/
 
 HOMEPAGE=	http://www.live555.com/liveMedia/
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m ${COMPILER_LIBCXX}
+WANTLIB=	c m ssl crypto pthread ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=genMakefiles
