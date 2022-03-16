@@ -6,6 +6,7 @@ CATEGORIES=	audio
 GH_ACCOUNT=	libsndfile
 GH_PROJECT=	libsndfile
 GH_TAGNAME=	${VER}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/libsndfile/libsndfile/
 
