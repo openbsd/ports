@@ -1,7 +1,7 @@
 Index: media/gpu/buffer_validation.cc
 --- media/gpu/buffer_validation.cc.orig
 +++ media/gpu/buffer_validation.cc
-@@ -12,7 +12,7 @@
+@@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/size.h"
  #include "ui/gfx/gpu_memory_buffer.h"
  
@@ -10,7 +10,7 @@ Index: media/gpu/buffer_validation.cc
  #include <sys/types.h>
  #include <unistd.h>
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -20,7 +20,7 @@
+@@ -23,7 +23,7 @@
  namespace media {
  
  bool GetFileSize(const int fd, size_t* size) {
@@ -19,8 +19,8 @@ Index: media/gpu/buffer_validation.cc
    if (fd < 0) {
      VLOGF(1) << "Invalid file descriptor";
      return false;
-@@ -56,7 +56,7 @@ bool VerifyGpuMemoryBufferHandle(media::VideoPixelForm
-     VLOGF(1) << "Unexpected GpuMemoryBufferType: " << gmb_handle.type;
+@@ -66,7 +66,7 @@ bool VerifyGpuMemoryBufferHandle(
+              << coded_size.ToString();
      return false;
    }
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
