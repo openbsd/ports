@@ -1,7 +1,25 @@
 COMMENT =	flashcard learning system with spaced repetition
+
+#   
+# Currently using 2.1.16, the last version before Anki started using Rust
+# components.
+#   
+# In 2.1.35 the build was changed to use Bazel and requires java + python
+# + node + rust (which is a pain but could be handled) and wants to
+# download at build time (which is a non-starter for ports).
+# Anyone looking at updating should take a look at FreeBSD who
+# have managed to wrangle it into a shape which can be used there,
+# but it is rather complicated. Discussion on AUR maybe useful too
+# (https://aur.archlinux.org/packages/anki), and see Anki's discussion
+# in https://github.com/ankitects/anki/issues/1378
+#
+# XXX expected to have problems with Python 3.10 - these may help:
+# https://github.com/ankitects/anki/commit/daf2e0a78f2277cddf13bb0abed9e620d4d47179
+# https://github.com/ankitects/anki/commit/62426279ffca8a454ec4e3f5c22e6729932403f7
+#
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	education
 
@@ -56,7 +74,7 @@ do-install:
 	cd ${WRKSRC} && pax -rw locale ${WRKINST}/${MODPY_SITEPKG}/anki
 	cd ${WRKSRC} && pax -rw aqt ${WRKINST}/${MODPY_SITEPKG}
 	cd ${WRKSRC} && pax -rw web ${WRKINST}/${MODPY_SITEPKG}/aqt
-	rm ${WRKINST}/${MODPY_SITEPKG}/anki/*.orig
-	rm ${WRKINST}/${MODPY_SITEPKG}/aqt/*.orig
+	rm ${WRKINST}/${MODPY_SITEPKG}/anki/*${PATCHORIG}
+	rm ${WRKINST}/${MODPY_SITEPKG}/aqt/*${PATCHORIG}
 
 .include <bsd.port.mk>

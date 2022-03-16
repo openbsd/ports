@@ -1,0 +1,15 @@
+Neuter the version check. The upstream wheels are not useful on OpenBSD
+so there's no point telling the user about them.
+
+Index: aqt/update.py
+--- aqt/update.py.orig
++++ aqt/update.py
+@@ -31,7 +31,7 @@ class LatestVersionFinder(QThread):
+         return d
+ 
+     def run(self):
+-        if not self.config['updates']:
++        if 1 or not self.config['updates']:
+             return
+         d = self._data()
+         d['proto'] = 1
