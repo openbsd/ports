@@ -1,0 +1,44 @@
+explicitly link libc
+neuter doxygen
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -590,8 +590,6 @@ if(BUILD_CRASHREPORTER OR BUILD_PROFILER)
+ 	
+ endif()
+ 
+-find_package(Doxygen)
+-
+ find_package(PythonInterp)
+ 
+ # Check for consistent configuration between SDL and libepoxy/GLEW
+@@ -1831,7 +1829,7 @@ if(BUILD_IO_LIBRARY)
+ 		list(APPEND ArxIO_SOURCES src/platform/WindowsUtils.cpp)
+ 	endif()
+ 	
+-	set(ArxIO_LIBRARIES ${BASE_LIBRARIES} ${ZLIB_LIBRARIES})
++	set(ArxIO_LIBRARIES ${BASE_LIBRARIES} ${ZLIB_LIBRARIES} c)
+ 	
+ 	add_library_shared(ArxIO "${ArxIO_SOURCES}" "${ArxIO_LIBRARIES}")
+ 	set_binary_public_headers(ArxIO src/lib/ArxIO.h)
+@@ -1897,19 +1895,6 @@ endif()
+ 
+ 
+ # Custom make targets
+-
+-if(DOXYGEN_EXECUTABLE)
+-	set(DOXYGEN_OUTPUT_DIR "${PROJECT_BINARY_DIR}/doc")
+-	configure_file("scripts/Doxyfile" "Doxyfile" ESCAPE_QUOTES)
+-	add_custom_target(doc
+-		#build the documentation
+-		COMMAND "${CMAKE_COMMAND}" -E make_directory "${DOXYGEN_OUTPUT_DIR}"
+-		COMMAND "${CMAKE_COMMAND}" -E chdir ${PROJECT_SOURCE_DIR}
+-			${DOXYGEN_EXECUTABLE} "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile"
+-		COMMENT "Building doxygen documentation."
+-		VERBATIM
+-	)
+-endif()
+ 
+ file(GLOB_RECURSE STYLE_CHECKED_SOURCES RELATIVE ${PROJECT_SOURCE_DIR}
+ 	src/*.cpp

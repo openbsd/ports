@@ -1,14 +1,111 @@
 bin/arx
 bin/arx-install-data
-@bin bin/arxsavetool
-@bin bin/arxunpak
+bin/arxsavetool
+bin/arxunpak
+@man man/man1/arx-install-data.1
 @man man/man1/arxsavetool.1
 @man man/man1/arxunpak.1
 @man man/man6/arx.6
-share/applications/arx-libertatis.desktop
 share/arx/
-@bin share/arx/arx
+share/arx/bin/
+@bin share/arx/bin/arx
+share/arx/bin/arx-install-data
+share/arx/bin/arxsavetool
+share/arx/bin/arxunpak
+share/arx/include/
+share/arx/include/ArxIO.h
+share/arx/lib/
+@lib share/arx/lib/libArxIO.so.${LIBArxIO_VERSION}
+share/arx/libexec/
+@bin share/arx/libexec/arxtool
+share/arx/share/
+share/arx/share/applications/
+share/arx/share/applications/arx-libertatis.desktop
+share/arx/share/blender/
+share/arx/share/blender/scripts/
+share/arx/share/blender/scripts/addons/
+share/arx/share/blender/scripts/addons/arx/
+share/arx/share/blender/scripts/addons/arx/.gitignore
+share/arx/share/blender/scripts/addons/arx/__init__.py
+share/arx/share/blender/scripts/addons/arx/arx_io_animation.py
+share/arx/share/blender/scripts/addons/arx/arx_io_area.py
+share/arx/share/blender/scripts/addons/arx/arx_io_material.py
+share/arx/share/blender/scripts/addons/arx/arx_io_model.py
+share/arx/share/blender/scripts/addons/arx/arx_io_test_roundtrip.py
+share/arx/share/blender/scripts/addons/arx/arx_io_util.py
+share/arx/share/blender/scripts/addons/arx/arx_ui_area.py
+share/arx/share/blender/scripts/addons/arx/dataAmb.py
+share/arx/share/blender/scripts/addons/arx/dataCin.py
+share/arx/share/blender/scripts/addons/arx/dataCommon.py
+share/arx/share/blender/scripts/addons/arx/dataDlf.py
+share/arx/share/blender/scripts/addons/arx/dataFtl.py
+share/arx/share/blender/scripts/addons/arx/dataFts.py
+share/arx/share/blender/scripts/addons/arx/dataLlf.py
+share/arx/share/blender/scripts/addons/arx/dataTea.py
+share/arx/share/blender/scripts/addons/arx/files.py
+share/arx/share/blender/scripts/addons/arx/lib.py
+share/arx/share/blender/scripts/addons/arx/main.py
+share/arx/share/blender/scripts/addons/arx/managers.py
+share/arx/share/blender/scripts/addons/arx/meshEdit.py
+share/arx/share/blender/scripts/addons/arx/naivePkware.py
+share/arx/share/games/
+share/arx/share/games/arx/
+share/arx/share/games/arx/localisation/
+share/arx/share/games/arx/localisation/languages/
+share/arx/share/games/arx/localisation/languages/chinese.ini
+share/arx/share/games/arx/localisation/languages/deutsch.ini
+share/arx/share/games/arx/localisation/languages/english.ini
+share/arx/share/games/arx/localisation/languages/francais.ini
+share/arx/share/games/arx/localisation/languages/hungarian.ini
+share/arx/share/games/arx/localisation/languages/italiano.ini
+share/arx/share/games/arx/localisation/languages/japanese.ini
+share/arx/share/games/arx/localisation/languages/russian.ini
+share/arx/share/games/arx/localisation/languages/spanish.ini
+share/arx/share/games/arx/localisation/xtext_default_001_arxlibertatis.ini
+share/arx/share/games/arx/localisation/xtext_deutsch_001_arxlibertatis.ini
+share/arx/share/games/arx/localisation/xtext_english_001_arxlibertatis.ini
+share/arx/share/games/arx/localisation/xtext_hungarian_001_arxlibertatis.ini
+share/arx/share/games/arx/localisation/xtext_italiano_001_arxlibertatis.ini
+share/arx/share/games/arx/localisation/xtext_russian_001_arxlibertatis.ini
+share/arx/share/games/arx/localisation/xtext_spanish_001_arxlibertatis.ini
+share/arx/share/games/arx/misc/
+share/arx/share/games/arx/misc/dejavusansmono.ttf
+share/arx/share/games/arx/misc/icons.ttf
+share/arx/share/icons/
+share/arx/share/icons/hicolor/
+share/arx/share/icons/hicolor/128x128/
+share/arx/share/icons/hicolor/128x128/apps/
+share/arx/share/icons/hicolor/128x128/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/16x16/
+share/arx/share/icons/hicolor/16x16/apps/
+share/arx/share/icons/hicolor/16x16/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/192x192/
+share/arx/share/icons/hicolor/192x192/apps/
+share/arx/share/icons/hicolor/192x192/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/22x22/
+share/arx/share/icons/hicolor/22x22/apps/
+share/arx/share/icons/hicolor/22x22/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/24x24/
+share/arx/share/icons/hicolor/24x24/apps/
+share/arx/share/icons/hicolor/24x24/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/256x256/
+share/arx/share/icons/hicolor/256x256/apps/
+share/arx/share/icons/hicolor/256x256/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/32x32/
+share/arx/share/icons/hicolor/32x32/apps/
+share/arx/share/icons/hicolor/32x32/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/48x48/
+share/arx/share/icons/hicolor/48x48/apps/
+share/arx/share/icons/hicolor/48x48/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/512x512/
+share/arx/share/icons/hicolor/512x512/apps/
+share/arx/share/icons/hicolor/512x512/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/64x64/
+share/arx/share/icons/hicolor/64x64/apps/
+share/arx/share/icons/hicolor/64x64/apps/arx-libertatis.png
+share/arx/share/icons/hicolor/96x96/
+share/arx/share/icons/hicolor/96x96/apps/
+share/arx/share/icons/hicolor/96x96/apps/arx-libertatis.png
 share/doc/pkg-readmes/${PKGSTEM}
-share/pixmaps/
-share/pixmaps/arx-libertatis.png
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/arx/share/icons/hicolor

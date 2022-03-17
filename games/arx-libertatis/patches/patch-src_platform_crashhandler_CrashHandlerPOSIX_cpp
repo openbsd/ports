@@ -1,0 +1,24 @@
+Avoid infinite loop in getCoreDumpFile()
+GitHub PR #265
+
+Index: src/platform/crashhandler/CrashHandlerPOSIX.cpp
+--- src/platform/crashhandler/CrashHandlerPOSIX.cpp.orig
++++ src/platform/crashhandler/CrashHandlerPOSIX.cpp
+@@ -171,7 +171,7 @@ static fs::path getCoreDumpFile() {
+ 	size_t start = 0;
+ 	while(start < pattern.length()) {
+ 		
+-		size_t end = pattern.find('%');
++		size_t end = pattern.find('%', start);
+ 		if(end == std::string::npos) {
+ 			end = pattern.length();
+ 		}
+@@ -246,7 +246,7 @@ static fs::path getCoreDumpFile() {
+ 	size_t start = 0;
+ 	while(start < pattern.length()) {
+ 		
+-		size_t end = pattern.find('%');
++		size_t end = pattern.find('%', start);
+ 		if(end == std::string::npos) {
+ 			end = pattern.length();
+ 		}

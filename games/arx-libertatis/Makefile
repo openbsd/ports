@@ -3,53 +3,52 @@ CATEGORIES =	games
 
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 
+PKGNAME =	arx-libertatis-${GH_TAGNAME}
 GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
-GH_TAGNAME =	1.1.2-r1
-PKGNAME =	arx-libertatis-${GH_TAGNAME:S/-r/pl/}
-REVISION =	4
+GH_TAGNAME =	1.2
+
+SHARED_LIBS +=	ArxIO                     0.0 # 1.2
 
 # GPLv3+, fonts are SIL OFL 1.1 license
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL c freetype m openal
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c epoxy freetype m openal z
 
-# C++11
+# C++17
 COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/boost \
-		devel/desktop-file-utils
+		devel/cppunit \
+		graphics/ImageMagick \
+		graphics/glm \
+		graphics/inkscape \
+		graphics/optipng
 LIB_DEPENDS =	audio/openal \
-		devel/sdl \
-		graphics/glew
+		devel/sdl2
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+3,-guic
 
-RUN_DEPENDS =	devel/desktop-file-utils
-
-CONFIGURE_ARGS =	-DCMAKE_EXE_LINKER_FLAGS="-lpthread" \
+CONFIGURE_ARGS =	-DBUILD_CRASHHANDLER=OFF \
 			-DBUILD_CRASHREPORTER=OFF \
+			-DBUILD_IO_LIBRARY=OFF \
+			-DBUILD_TESTS=ON \
+			-DCMAKE_EXE_LINKER_FLAGS="-lpthread" \
+			-DCMAKE_INSTALL_MANDIR=${LOCALBASE}/man \
 			-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/arx \
-			-DUSE_QT4=OFF \
-			-DUSE_QT5=OFF
+			-DUNITY_BUILD=OFF
 
-NO_TEST =	Yes
+PORTHOME =	${WRKDIR}
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/arx
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/icons/arx-libertatis.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/data/icons/arx-libertatis.png \
-		${PREFIX}/share/pixmaps
-	${INSTALL_MAN} ${WRKSRC}/data/man/{arxsavetool.1,arxunpak.1} \
-		${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/data/man/arx.6 ${PREFIX}/man/man6
-	${INSTALL_PROGRAM} ${WRKBUILD}/{arxsavetool,arxunpak} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/arx ${PREFIX}/share/arx
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/arx-install-data ${PREFIX}/bin
-	${SUBST_CMD} -c -m 755 ${FILESDIR}/arx ${PREFIX}/bin/arx
+post-install:
+	ln -sf	${TRUEPREFIX}/share/arx/bin/arx ${PREFIX}/bin/arx
+	ln -sf	${TRUEPREFIX}/share/arx/bin/arx-install-data \
+		${PREFIX}/bin/arx-install-data
+	ln -sf	${TRUEPREFIX}/share/arx/bin/arxsavetool \
+		${PREFIX}/bin/arxsavetool
+	ln -sf	${TRUEPREFIX}/share/arx/bin/arxunpak \
+		${PREFIX}/bin/arxunpak
 
 .include <bsd.port.mk>
