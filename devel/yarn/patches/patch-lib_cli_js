@@ -4,7 +4,7 @@ path.
 Index: lib/cli.js
 --- lib/cli.js.orig
 +++ lib/cli.js
-@@ -34194,11 +34194,11 @@ var getWrappersFolder = exports.getWrappersFolder = fu
+@@ -34038,11 +34038,11 @@ var getWrappersFolder = exports.getWrappersFolder = fu
  
      wrappersFolder = yield (_fs || _load_fs()).makeTempDir();
  
