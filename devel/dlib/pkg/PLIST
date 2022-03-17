@@ -557,6 +557,7 @@ include/dlib/interfaces/cmd_line_parser_option.h
 include/dlib/interfaces/enumerable.h
 include/dlib/interfaces/map_pair.h
 include/dlib/interfaces/remover.h
+include/dlib/invoke.h
 include/dlib/iomanip
 include/dlib/iosfwd
 include/dlib/iosockstream/
@@ -1155,6 +1156,7 @@ include/dlib/unicode.h
 include/dlib/unicode/unicode.h
 include/dlib/unicode/unicode_abstract.h
 include/dlib/unordered_pair.h
+include/dlib/utility.h
 include/dlib/vectorstream/
 include/dlib/vectorstream.h
 include/dlib/vectorstream/unserialize.h
@@ -1167,7 +1169,6 @@ include/dlib/xml_parser.h
 include/dlib/xml_parser/xml_parser_kernel_1.h
 include/dlib/xml_parser/xml_parser_kernel_abstract.h
 include/dlib/xml_parser/xml_parser_kernel_interfaces.h
-lib/cmake/
 lib/cmake/dlib/
 lib/cmake/dlib/dlib${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/dlib/dlib.cmake

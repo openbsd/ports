@@ -1,8 +1,8 @@
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.22
+DISTNAME =		dlib-19.23
 
-SHARED_LIBS +=  dlib                      4.0 # 19.22
+SHARED_LIBS +=  dlib                      5.0 # 19.22
 
 CATEGORIES =		devel
 
