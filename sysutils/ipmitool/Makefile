@@ -6,9 +6,8 @@ COMMENT=	manage and configure devices that support IPMI
 # and MASTER_SITES0 can go too.
 GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
-GH_COMMIT=	4d4f29f0b60b395941c3e7768ce43ccb890da5f7
-REVISION=	1
-DISTNAME=	ipmitool-1.8.18pl20220207
+GH_COMMIT=	65ba015f5c41f8495a85f7b2619037f815c3436a
+DISTNAME=	ipmitool-1.8.18pl20220309
 DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
 EXTRACT_ONLY=	${GH_DISTFILE:C/{.*//}
 
