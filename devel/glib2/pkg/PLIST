@@ -348,9 +348,9 @@ share/bash-completion/completions/gio
 share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${PKGSTEM}
-share/gdb/auto-load/${PREFIX}/lib/
-share/gdb/auto-load/${PREFIX}/lib/libglib-2.0.so.0.7000.4-gdb.py
-share/gdb/auto-load/${PREFIX}/lib/libgobject-2.0.so.0.7000.4-gdb.py
+share/gdb/auto-load/usr/local/lib/
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7000.5-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7000.5-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
