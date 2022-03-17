@@ -4,7 +4,7 @@ https://gitlab.isc.org/isc-projects/bind9/-/issues/2905
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -1859,7 +1859,7 @@ AC_DEFINE(NEED_OPTARG, 1, [Defined if extern char *opt
+@@ -1856,7 +1856,7 @@ AC_DEFINE(NEED_OPTARG, 1, [Defined if extern char *opt
  AC_MSG_CHECKING([for st_mtim.tv_nsec])
  AC_COMPILE_IFELSE(
    [AC_LANG_PROGRAM(
