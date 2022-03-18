@@ -4,15 +4,6 @@ disable bundled mojoshader in favor of the one from ports
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -12,7 +12,7 @@ option(DISABLE_D3D11 "Disable D3D11 backend")
- SET(LIB_MAJOR_VERSION "0")
- SET(LIB_MINOR_VERSION "22")
- SET(LIB_REVISION "01")
--SET(LIB_VERSION "${LIB_MAJOR_VERSION}.${LIB_MINOR_VERSION}.${LIB_REVISION}")
-+SET(LIB_VERSION "${LIBFNA3D_VERSION}")
- 
- # Build Type
- if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 @@ -100,18 +100,6 @@ add_library(FNA3D
  	src/FNA3D_PipelineCache.c
  	src/FNA3D_Tracing.c
