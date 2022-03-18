@@ -10,7 +10,7 @@ Index: tests/CMakeLists.txt
  ENDIF(NOT GTEST_FOUND)
  
  #########################################################################
-@@ -182,5 +182,5 @@ SET(UNITTESTS_SRC
+@@ -181,5 +181,5 @@ SET(UNITTESTS_SRC
  )
  
  ADD_EXECUTABLE(mdal_unittests ${UNITTESTS_SRC})
