@@ -4,7 +4,7 @@ COMMENT-server =	low-latency voice chat server
 VERSION =		1.4.230
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		1
+REVISION-main =		2
 REVISION-server =	1
 
 CATEGORIES =		audio net
@@ -21,6 +21,11 @@ PATCHFILES =		mumble-kvm_getprocs-ALL_arg-{}42ad5ed.patch:0 \
 			mumble-audiowizard-fix_Werror-{}0c769d8.patch:0 \
 			mumble-use-system-rnnoise-{}d45318d.patch:0 \
 			mumble-enable-xinput2-{}904bae1.patch:0
+
+# pending "BUILD(cmake): Build/install celt as module"
+# https://github.com/mumble-voip/mumble/pull/5592
+PATCHFILES +=		mumble-celt-module-{}43176a1.patch:0
+
 PATCH_DIST_STRIP =	-p1
 
 # BSD3

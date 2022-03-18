@@ -1,5 +1,6 @@
 SHA256 (mumble-1.4.230.tar.gz) = tn2CtObMWDS5ZcW8JTOeRWU0u9W53abIyVz5y4DkNLA=
 SHA256 (mumble-audiowizard-fix_Werror-0c769d8.patch) = yE8VQPGskc74dwXR1OnTj+bHsmEsKM0LxqDb6QsxHpA=
+SHA256 (mumble-celt-module-43176a1.patch) = jKgGZF1Ern5qiFYQCQxtJ0BAvbw9eq+UFgPsDVj/9oQ=
 SHA256 (mumble-enable-xinput2-904bae1.patch) = qp+3uz216Y+izrWg1Hh4L+AKLnK9hTv8h0MFVXXUeWE=
 SHA256 (mumble-kvm_getprocs-ALL_arg-42ad5ed.patch) = cC7hausQhddaotgMf1HJaU9G4MG/O+o9xkTv06NPBrY=
 SHA256 (mumble-kvm_getprocs-pass-elemsize-ccbacbf.patch) = dXlMiBCNEQ4oS+sxjjr8W7odlm0UuZVGwiHsLytNS84=
@@ -7,6 +8,7 @@ SHA256 (mumble-struct_procinfo-member_prefix-a707213.patch) = 9+fCD2/g+OqQVNfHhQ
 SHA256 (mumble-use-system-rnnoise-d45318d.patch) = NctW70tU5VLFqTJeTcsWPU9YwmTsrbYHN+S7ZpHW06Q=
 SIZE (mumble-1.4.230.tar.gz) = 9441667
 SIZE (mumble-audiowizard-fix_Werror-0c769d8.patch) = 1938
+SIZE (mumble-celt-module-43176a1.patch) = 5162
 SIZE (mumble-enable-xinput2-904bae1.patch) = 2023
 SIZE (mumble-kvm_getprocs-ALL_arg-42ad5ed.patch) = 1961
 SIZE (mumble-kvm_getprocs-pass-elemsize-ccbacbf.patch) = 1418

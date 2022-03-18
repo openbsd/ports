@@ -1,7 +1,7 @@
 @pkgpath audio/mumble
 @bin bin/mumble
 lib/mumble/
-lib/mumble/libcelt0.so.0.7.0
+@so lib/mumble/libcelt0.so
 @man man/man1/mumble.1
 share/applications/org.mumble_voip.mumble.desktop
 share/icons/hicolor/256x256/apps/mumble.png
