@@ -1,6 +1,7 @@
 COMMENT =		yEnc Module for Python modified for SABnzbd
 
-MODPY_EGG_VERSION =	5.1.1
+MODPY_EGG_VERSION =	4.0.2
+EPOCH =			0
 DISTNAME =		sabyenc3-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabyenc-${MODPY_EGG_VERSION}
 
@@ -11,9 +12,7 @@ HOMEPAGE =		https://github.com/sabnzbd/sabyenc
 # LGPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} m
-
-COMPILER =		base-clang ports-gcc base-gcc
+WANTLIB =		pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
