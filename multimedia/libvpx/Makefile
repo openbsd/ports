@@ -3,7 +3,7 @@ COMMENT=	Google VP8/VP9 video codec
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libvpx
 GH_TAGNAME=	v1.11.0
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 CATEGORIES=	multimedia
 
@@ -37,6 +37,10 @@ CONFIGURE_ARGS+=--enable-shared \
 		--prefix=${PREFIX} \
 		--disable-optimizations \
 		--disable-unit-tests
+
+.if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+=--disable-neon
+.endif
 
 NO_TEST=	Yes
 

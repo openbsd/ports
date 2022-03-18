@@ -3,7 +3,7 @@ COMMENT=	Alliance for Open Media AV1 video codec
 GH_ACCOUNT=	jbeich
 GH_PROJECT=	aom
 GH_TAGNAME=	v3.3.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 
 SHARED_LIBS=	aom	4.0
@@ -29,6 +29,10 @@ BUILD_DEPENDS+=	devel/yasm
 CONFIGURE_ARGS+=-DBUILD_SHARED_LIBS=On \
 		-DENABLE_DOCS=Off \
 		-DENABLE_TESTS=Off
+
+.if ${MACHINE_ARCH} == "arm"
+CONFIGURE_ARGS+=-DENABLE_NEON=Off
+.endif
 
 NO_TEST=	Yes
 
