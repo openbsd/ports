@@ -39,13 +39,4 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/qt5/qtxmlpatterns \
 		x11/qt5/qtmultimedia
 
-SUBST_VARS =	LIBartikulatecore_VERSION \
-		LIBartikulatelearnerprofile_VERSION \
-		LIBartikulatesound_VERSION
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/CMakeLists.txt \
-		${WRKSRC}/libsound/src/CMakeLists.txt \
-		${WRKSRC}/liblearnerprofile/src/CMakeLists.txt
-
 .include <bsd.port.mk>

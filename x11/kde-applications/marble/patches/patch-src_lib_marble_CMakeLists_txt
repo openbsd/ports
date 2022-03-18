@@ -9,13 +9,3 @@ Index: src/lib/marble/CMakeLists.txt
  endif()
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config-phonon.h.cmake
                 ${CMAKE_CURRENT_BINARY_DIR}/config-phonon.h)
-@@ -443,8 +444,7 @@ set_target_properties(marblewidget  PROPERTIES
- 
- if (NOT ANDROID)
-   set_target_properties(marblewidget  PROPERTIES
--    VERSION ${MARBLE_LIB_VERSION}
--    SOVERSION ${MARBLE_LIB_SOVERSION}
-+    VERSION ${LIBmarblewidget-qt5_VERSION}
-   )
- endif()
- 

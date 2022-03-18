@@ -54,9 +54,4 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/qt5/qtscript \
 		x11/qt5/qtxmlpatterns
 
-SUBST_VARS =	LIBrocsgraphtheory_VERSION
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/libgraphtheory/CMakeLists.txt
-
 .include <bsd.port.mk>

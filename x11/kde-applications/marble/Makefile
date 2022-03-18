@@ -74,11 +74,6 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \
 
 TEST_IS_INTERACTIVE =	X11
 
-SUBST_VARS +=	LIBmarblewidget-qt5_VERSION
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/lib/marble/CMakeLists.txt
-
 post-extract:
 	rm ${WRKSRC}/data/mwdbii/{PISLAND.PNT,PLAKE.PNT}.orig
 

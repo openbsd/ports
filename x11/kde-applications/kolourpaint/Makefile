@@ -36,9 +36,4 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/sonnet \
 		x11/kde-applications/libksane
 
-SUBST_VARS =	LIBkolourpaint_lgpl_VERSION
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lgpl/CMakeLists.txt
-
 .include <bsd.port.mk>
