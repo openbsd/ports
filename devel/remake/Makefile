@@ -2,6 +2,7 @@ COMMENT=		GNU make debugger
 
 PKGNAME=		remake-1.5
 DISTNAME=		remake-4.3+dbg-1.5
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -11,7 +12,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bashdb/}
 # GPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses readline
+WANTLIB+= c iconv intl readline
+
+LIB_DEPENDS=		converters/libiconv \
+			devel/gettext,-runtime
 
 CONFIGURE_STYLE=	gnu
 
