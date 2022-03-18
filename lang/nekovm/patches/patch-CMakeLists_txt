@@ -23,12 +23,3 @@ Index: CMakeLists.txt
  		set(DL_LIB "dl")
  	endif()
  	find_package(Threads)
-@@ -374,7 +380,7 @@ set_target_properties(nekovm libneko
- 
- set_target_properties(libneko
- 	PROPERTIES
--	VERSION ${NEKO_VERSION}
-+	VERSION ${LIBneko_VERSION}
- 	SOVERSION ${NEKO_VERSION_MAJOR}
- 	COMPILE_DEFINITIONS "_USRDLL;NEKOVM_DLL_EXPORTS;NEKO_SOURCES"
- 	PUBLIC_HEADER "${libneko_public_headers}"
