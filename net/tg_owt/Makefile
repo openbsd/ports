@@ -11,9 +11,8 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		a264028ec71d9096e0aa629113c49c25db89d260
-DISTNAME =		${GH_PROJECT}-0.0.0.20220216
-REVISION =		0
+GH_COMMIT =		1fe5e68d999e0bf88d0128ad813438726732f6e0
+DISTNAME =		${GH_PROJECT}-0.0.0.20220316
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -26,8 +25,8 @@ SHARED_LIBS =		tg_owt	1.1	# 0.0.0
 # or tags, main/master/stable/<commit> tarballs are *unstable*;
 # use Andrew's mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
-LIBYUV_COMMIT =		804980bbab748fd0e180cd6e7d9292ff49baf704
-LIBYUV_DISTNAME =	libyuv-20220131-${LIBYUV_COMMIT:C/(........).*/\1/}
+LIBYUV_COMMIT =		3aebf69d668177e7ee6dbbe0025e5c3dbb525ff2
+LIBYUV_DISTNAME =	libyuv-20220316-${LIBYUV_COMMIT:C/(........).*/\1/}
 DISTFILES =		${GH_DISTFILE} \
 			${LIBYUV_DISTNAME}{${LIBYUV_COMMIT}}.tar.gz:0
 EXTRACT_CASES =		${LIBYUV_DISTNAME}.tar.gz) ${TAR} -xz \
