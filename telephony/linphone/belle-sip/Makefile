@@ -12,9 +12,6 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox \
 		telephony/linphone/belr
 WANTLIB += ${COMPILER_LIBCXX} bctoolbox belr m z
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-
 #do-test:
 #	${WRKBUILD}/tester/belle_sip_tester --verbose --resource-dir ${WRKSRC}/tester/
 

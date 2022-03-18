@@ -28,9 +28,6 @@ WANTLIB += ${COMPILER_LIBCXX} bctoolbox belcard bellesip belr
 WANTLIB += bzrtp c iconv m mediastreamer ortp sqlite3 xerces-c
 WANTLIB += xml2 z
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-
 post-install:
 	mv ${PREFIX}/share/doc/liblinphone-5.0.0 ${PREFIX}/share/doc/liblinphone
 

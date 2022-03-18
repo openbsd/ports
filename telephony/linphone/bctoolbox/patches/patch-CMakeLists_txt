@@ -3,17 +3,6 @@ Hunk #3: ensure that libexecinfo symbols are resolved (fix the build on ld.bfd a
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -29,8 +29,8 @@ set(BCTOOLBOX_VERSION "${PROJECT_VERSION}")
- set(BCTOOLBOX_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
- set(BCTOOLBOX_VERSION_MINOR ${PROJECT_VERSION_MINOR})
- set(BCTOOLBOX_VERSION_PATCH ${PROJECT_VERSION_PATCH})
--set(BCTOOLBOX_SO_VERSION 1)
--set(BCTOOLBOXTESTER_SO_VERSION 1)
-+set(BCTOOLBOX_SO_VERSION ${LIBbctoolbox_VERSION})
-+set(BCTOOLBOXTESTER_SO_VERSION ${LIBbctoolbox_VERSION})
- 
- 
- option(ENABLE_SHARED "Build shared library." ON)
 @@ -60,9 +60,7 @@ if(NOT CPACK_GENERATOR AND NOT CMAKE_INSTALL_RPATH AND
  	message(STATUS "Setting install rpath to ${CMAKE_INSTALL_RPATH}")
  endif()

@@ -14,7 +14,4 @@ WANTLIB +=	${COMPILER_LIBCXX} bctoolbox c m
 
 FIX_CRLF_FILES =	CMakeLists.txt
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>

@@ -15,7 +15,4 @@ WANTLIB += ${COMPILER_LIBCXX} bctoolbox m
 
 NO_TESTS =	Yes
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/BCUnit/Sources/CMakeLists.txt
-
 .include <bsd.port.mk>

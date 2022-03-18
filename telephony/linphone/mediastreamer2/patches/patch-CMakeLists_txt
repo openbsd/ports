@@ -1,15 +1,6 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -38,7 +38,7 @@ set(MEDIASTREAMER_MAJOR_VERSION ${PROJECT_VERSION_MAJO
- set(MEDIASTREAMER_MINOR_VERSION ${PROJECT_VERSION_MINOR})
- set(MEDIASTREAMER_MICRO_VERSION ${PROJECT_VERSION_PATCH})
- set(MEDIASTREAMER_VERSION ${PROJECT_VERSION})
--set(MEDIASTREAMER_SO_VERSION "11") # incremented for mediastreamer2-4.4.0
-+set(MEDIASTREAMER_SO_VERSION ${LIBmediastreamer_VERSION}) # incremented for mediastreamer2-4.4.0
- 
- string(REGEX MATCH "^(arm*|aarch64)" FIXED_POINT_PROCESSOR "${CMAKE_SYSTEM_PROCESSOR}")
- if(FIXED_POINT_PROCESSOR)
 @@ -95,6 +95,7 @@ cmake_dependent_option(ENABLE_QSA "Enable QSA (QNX Sou
  cmake_dependent_option(ENABLE_OSS "Enable OSS support." NO "ENABLE_SOUND;LINUX_OR_BSD" NO)
  cmake_dependent_option(ENABLE_PORTAUDIO "Enable portaudio native support." NO "ENABLE_SOUND" NO)

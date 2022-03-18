@@ -20,9 +20,6 @@ WANTLIB +=	${COMPILER_LIBCXX} execinfo iconv m mbedcrypto mbedtls mbedx509
 #LIB_DEPENDS +=	telephony/linphone/bcunit
 #WANTLIB +=	bcunit
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/src/CMakeLists.txt
-
 #do-test:
 #	${WRKBUILD}/tester/bctoolbox_tester --verbose
 

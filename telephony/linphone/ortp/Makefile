@@ -12,9 +12,6 @@ LIB_DEPENDS =	telephony/linphone/bctoolbox
 
 WANTLIB += ${COMPILER_LIBCXX} bctoolbox m
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-
 post-install:
 	rm -Rf ${PREFIX}/share/doc/ortp*
 
