@@ -46,6 +46,9 @@ lib/girepository-1.0/Soup-${API_VERSION}.typelib
 @lib lib/libsoup-${API_VERSION}.so.${LIBsoup-${API_VERSION}_VERSION}
 lib/pkgconfig/libsoup-${API_VERSION}.pc
 share/gir-1.0/Soup-${API_VERSION}.gir
+share/locale/ab/
+share/locale/ab/LC_MESSAGES/
+share/locale/ab/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/an/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/as/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/be/LC_MESSAGES/libsoup-${API_VERSION}.mo
