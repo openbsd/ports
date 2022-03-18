@@ -1,7 +1,7 @@
 Index: lib/internal/modules/cjs/loader.js
 --- lib/internal/modules/cjs/loader.js.orig
 +++ lib/internal/modules/cjs/loader.js
-@@ -1236,7 +1236,10 @@ Module._initPaths = function() {
+@@ -1238,7 +1238,10 @@ Module._initPaths = function() {
      path.resolve(process.execPath, '..') :
      path.resolve(process.execPath, '..', '..');
  

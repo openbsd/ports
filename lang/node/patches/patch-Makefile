@@ -10,7 +10,7 @@ Index: Makefile
  	$(PYTHON) tools/install.py $@ '$(DESTDIR)' '$(PREFIX)'
  
  .PHONY: uninstall
-@@ -386,6 +386,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
+@@ -394,6 +394,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
  # Just goes to show that recursive make really is harmful...
  # TODO(bnoordhuis) Force rebuild after gyp update.
  build-addons: | $(NODE_EXE) test/addons/.buildstamp
