@@ -201,6 +201,9 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_cipher_suite_get_name.3
 @man man/man3/gnutls_cipher_suite_info.3
 @man man/man3/gnutls_cipher_tag.3
+@man man/man3/gnutls_ciphersuite_get.3
+@man man/man3/gnutls_compress_certificate_get_selected_method.3
+@man man/man3/gnutls_compress_certificate_set_methods.3
 @man man/man3/gnutls_compression_get.3
 @man man/man3/gnutls_compression_get_id.3
 @man man/man3/gnutls_compression_get_name.3
@@ -719,6 +722,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_record_send.3
 @man man/man3/gnutls_record_send2.3
 @man man/man3/gnutls_record_send_early_data.3
+@man man/man3/gnutls_record_send_file.3
 @man man/man3/gnutls_record_send_range.3
 @man man/man3/gnutls_record_set_max_early_data_size.3
 @man man/man3/gnutls_record_set_max_recv_size.3

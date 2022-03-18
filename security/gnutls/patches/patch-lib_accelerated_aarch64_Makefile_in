@@ -5,7 +5,7 @@ https://reviews.llvm.org/D114677
 Index: lib/accelerated/aarch64/Makefile.in
 --- lib/accelerated/aarch64/Makefile.in.orig
 +++ lib/accelerated/aarch64/Makefile.in
-@@ -2102,7 +2102,7 @@ AM_CPPFLAGS = -I$(srcdir)/../../../gl -I$(builddir)/..
+@@ -2107,7 +2107,7 @@ AM_CPPFLAGS = -I$(srcdir)/../../../gl -I$(builddir)/..
  	-I$(srcdir)/../../ -I$(srcdir)/../ $(am__append_1)
  
  #ensure that we have all aarch64 instruction sets enabled for the assembler

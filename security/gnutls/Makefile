@@ -1,13 +1,13 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.7.3
+V=			3.7.4
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               47.2     # 61.0
-SHARED_LIBS +=  gnutlsxx             30.1     # 29.0
+SHARED_LIBS +=  gnutls               47.3     # 62.0
+SHARED_LIBS +=  gnutlsxx             30.1     # 30.0
 SHARED_LIBS +=  gnutls-dane          1.1      # 4.1
 
 HOMEPAGE=		http://www.gnutls.org/
@@ -17,8 +17,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto event ffi gmp hogweed iconv
-WANTLIB += idn2 intl m nettle p11-kit ssl tasn1 unbound unistring
+WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec brotlienc
+WANTLIB += c crypto event ffi gmp hogweed iconv idn2 intl m nettle
+WANTLIB += p11-kit ssl tasn1 unbound unistring z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -28,7 +29,9 @@ MASTER_SITES=		https://www.gnupg.org/ftp/gcrypt/gnutls/v${V:C/^([0-9]+\.[0-9]+).
 # needed for tests
 BUILD_DEPENDS=		devel/cmocka
 
-LIB_DEPENDS=		converters/libunistring \
+LIB_DEPENDS=		archivers/brotli \
+			archivers/zstd \
+			converters/libunistring \
 			devel/gettext,-runtime \
 			devel/libidn2 \
 			net/libunbound \
