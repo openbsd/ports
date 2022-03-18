@@ -1,0 +1,41 @@
+- If an address is not specified, for the "any address" bind,
+node was trying to bind to v6 out of preference and dropping back
+to v4 if that fails.
+
+OpenBSD doesn't permit v4 connections to sockets bound to a v6
+address, change to binding to v4 for "any address" so this is a
+better match for typical expectations.
+
+(Ideally it would create two separate binds to 0.0.0.0 and ::
+for "any address" but that's not really a straightforward change).
+
+
+Index: lib/net.js
+--- lib/net.js.orig
++++ lib/net.js
+@@ -1292,22 +1292,12 @@ function setupListenHandle(address, port, addressType,
+ 
+     let rval = null;
+ 
+-    // Try to bind to the unspecified IPv6 address, see if IPv6 is available
+     if (!address && typeof fd !== 'number') {
+-      rval = createServerHandle(DEFAULT_IPV6_ADDR, port, 6, fd, flags);
+-
+-      if (typeof rval === 'number') {
+-        rval = null;
+-        address = DEFAULT_IPV4_ADDR;
+-        addressType = 4;
+-      } else {
+-        address = DEFAULT_IPV6_ADDR;
+-        addressType = 6;
+-      }
++      address = DEFAULT_IPV4_ADDR;
++      addressType = 4;
+     }
+ 
+-    if (rval === null)
+-      rval = createServerHandle(address, port, addressType, fd, flags);
++    rval = createServerHandle(address, port, addressType, fd, flags);
+ 
+     if (typeof rval === 'number') {
+       const error = uvExceptionWithHostPort(rval, 'listen', address, port);
