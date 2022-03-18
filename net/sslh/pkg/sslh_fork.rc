@@ -1,4 +1,5 @@
 #!/bin/ksh
+
 daemon="${TRUEPREFIX}/sbin/sslh-fork"
 daemon_flags="--user=_sslh --listen 0.0.0.0:443 --ssh 127.0.0.1:22 --tls 127.0.0.1:443"
 

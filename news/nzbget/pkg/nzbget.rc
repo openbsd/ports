@@ -1,4 +1,5 @@
 #!/bin/ksh
+
 daemon="${TRUEPREFIX}/bin/nzbget -D"
 
 . /etc/rc.d/rc.subr

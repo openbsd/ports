@@ -1,7 +1,7 @@
 COMMENT =	binary newsreader supporting NZB files
 
 VERSION =	21.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	nzbget-${VERSION}
 
 CATEGORIES =	news
