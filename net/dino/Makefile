@@ -48,9 +48,6 @@ WANTLIB += qrencode signal-protocol-c soup-2.4 sqlite3 srtp2
 
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON
 
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/libdino/CMakeLists.txt
-
 do-test:
 	find ${WRKBUILD} -type f -perm -+x -name \*-test -print -exec {} \;
 
