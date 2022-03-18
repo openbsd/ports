@@ -1,6 +1,7 @@
 COMMENT=	lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
-DISTNAME=	minidlna-1.3.1
+DISTNAME=	minidlna-1.3.0
+REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -31,10 +32,11 @@ LIB_DEPENDS=	audio/flac \
 		graphics/jpeg \
 		graphics/libexif
 
+E=		${PREFIX}/share/examples/minidlna
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/minidlna
-	${INSTALL_DATA} ${WRKSRC}/minidlna.conf \
-	    ${PREFIX}/share/examples/minidlna
+	${INSTALL_DATA_DIR} $E
+	${INSTALL_DATA} ${WRKSRC}/minidlna.conf $E
 	${INSTALL_MAN} ${WRKSRC}/minidlnad.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/minidlna.conf.5 ${PREFIX}/man/man5
 
