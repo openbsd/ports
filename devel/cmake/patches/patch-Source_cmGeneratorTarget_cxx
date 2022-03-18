@@ -1,55 +1,54 @@
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -4810,9 +4810,14 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
-   // Check for library version properties.
-   cmProp version = this->GetProperty("VERSION");
-   cmProp soversion = this->GetProperty("SOVERSION");
-+#if defined(__OpenBSD__)
-+  if (this->GetType() != cmStateEnums::SHARED_LIBRARY &&
-+      this->GetType() != cmStateEnums::MODULE_LIBRARY) {
-+#else
-   if (!this->HasSOName(config) ||
-       this->Makefile->IsOn("CMAKE_PLATFORM_NO_VERSIONED_SONAME") ||
-       this->IsFrameworkOnApple()) {
-+#endif
-     // Versioning is supported only for shared libraries and modules,
-     // and then only when the platform supports an soname flag.
-     version = nullptr;
-@@ -4836,6 +4841,36 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
- 
+@@ -4837,6 +4837,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;
-+
+ 
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION
 +  // environment variable. Needed for OpenBSD ports system.
-+  if (this->GetType() == cmStateEnums::SHARED_LIBRARY ||
-+      this->GetType() == cmStateEnums::MODULE_LIBRARY) {
++  const auto isUseSahredLibs = [&]() -> bool {
++    std::string use_slibs;
++    return  ((cmSystemTools::GetEnv("MODCMAKE_USE_SHARED_LIBS", use_slibs) &&
++              use_slibs == std::string("yes")));
++  };
 +
-+    std::string env_vers;
-+    const std::string env_name("LIB" + targetNames.Base + "_VERSION");
-+    if (char * env = getenv(env_name.c_str()))
-+      env_vers = env;
++  // Target name libXXX with PREFIX set to ""
++  auto getLibName = [&](std::string& baseName) {
++    const std::string toMatch = "lib";
++    if (baseName.find(toMatch) == 0 && prefix == "")
++        return baseName.substr(toMatch.length());
++    return baseName;
++  };
 +
-+    if (!env_vers.empty()) {
-+      const size_t first = env_vers.find_first_of(".");
-+      const size_t last = env_vers.find_last_of(".");
++  if (isUseSahredLibs() && this->GetType() == cmStateEnums::SHARED_LIBRARY) {
++    std::string lib_version;
++    const std::string lib_name = "LIB" + getLibName(targetNames.Base) + "_VERSION";
++    if (cmSystemTools::GetEnv(lib_name, lib_version)) {
++      if (!lib_version.empty()) {
++        const size_t first = lib_version.find_first_of(".");
++        const size_t last = lib_version.find_last_of(".");
 +
-+      if ((first != last) || (first == std::string::npos)) {
-+        std::string msg = "Bad ";
-+        msg += env_name;
-+        msg += " specification: ";
-+        msg += env_vers;
-+        this->LocalGenerator->IssueMessage(MessageType::INTERNAL_ERROR, msg);
-+      } else {
-+        version = new std::string(env_vers);
-+        soversion = new std::string(env_vers);
++        if ((first != last) || (first == std::string::npos)) {
++          const std::string msg = "Bad " + lib_name + " specification: " + lib_version;
++          this->LocalGenerator->IssueMessage(MessageType::INTERNAL_ERROR, msg);
++        }
++        else {
++          version = new std::string(lib_version);
++          soversion = new std::string(lib_version);
++        }
++      }
++    }
++    else {
++      if (soversion) {
++        version = new std::string("0.0");
++        soversion = new std::string("0.0");
 +      }
 +    }
 +  }
 +#endif
 +
- 
    if (this->IsFrameworkOnApple()) {
      targetNames.Real = prefix;
+     if (!this->Makefile->PlatformIsAppleEmbedded()) {

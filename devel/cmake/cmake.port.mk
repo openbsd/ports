@@ -5,6 +5,14 @@ CONFIGURE_ENV +=LIB${_n}_VERSION=${_v}
 MAKE_ENV +=LIB${_n}_VERSION=${_v}
 .endfor
 
+# Enable the override of shared library version using LIBxxx_VERSION, putting
+# them under ports control. See cmGeneratorTarget.cxx
+MODCMAKE_USE_SHARED_LIBS ?= Yes
+.if ${MODCMAKE_USE_SHARED_LIBS:L} == "yes"
+CONFIGURE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
+MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
+.endif
+
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
