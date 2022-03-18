@@ -9,6 +9,7 @@
      SUBDIR += gtkwave
      SUBDIR += kicad
      SUBDIR += kicad-share
+     SUBDIR += lepton-eda
      SUBDIR += librecad
      SUBDIR += magic
      SUBDIR += necpp
