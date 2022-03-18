@@ -24,17 +24,9 @@ MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	setuptools/tests
+NO_TEST =		Yes
 
 SUBST_VARS+ =		MODPY_FLAVOR
-
-# Not listed, but needed for tests
-TEST_DEPENDS =		devel/py-futures \
-			devel/py-mock \
-			devel/py-pip \
-			devel/py-wheel \
-			sysutils/py-packaging
 
 # Override automatic py-setuptools depend to avoid recursion
 MODPY_SETUPUTILS_DEPEND =
