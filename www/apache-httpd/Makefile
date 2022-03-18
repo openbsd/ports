@@ -3,7 +3,7 @@ COMMENT=		apache HTTP server
 V=			2.4.53
 DISTNAME=		httpd-${V}
 PKGNAME=		apache-httpd-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www net
 
@@ -18,7 +18,7 @@ COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 WANTLIB += apr-1 aprutil-1 brotlicommon brotlienc c crypto curl
-WANTLIB += db expat iconv jansson lzma m nghttp2 pcre pthread ssl
+WANTLIB += db expat iconv jansson lzma m nghttp2 pcre2-8 pthread ssl
 WANTLIB += xml2 z
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=httpd/}
@@ -28,7 +28,7 @@ NO_TEST=		Yes
 LIB_DEPENDS=		archivers/brotli \
 			archivers/xz \
 			devel/jansson \
-			devel/pcre \
+			devel/pcre2 \
 			net/curl \
 			textproc/libxml \
 			www/nghttp2
