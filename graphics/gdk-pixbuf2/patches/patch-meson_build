@@ -3,7 +3,7 @@ https://gitlab.gnome.org/GNOME/gdk-pixbuf/issues/106
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -404,7 +404,9 @@ subdir('gdk-pixbuf')
+@@ -414,7 +414,9 @@ subdir('gdk-pixbuf')
  subdir('po')
  
  if not meson.is_cross_build()
