@@ -3,7 +3,7 @@ CATEGORIES = 	sysutils
 MAINTAINER = 	Marc Espie <espie@openbsd.org>
 
 GH_PROJECT = 	random_run
-GH_TAGNAME = 	2.12
+GH_TAGNAME = 	2.13
 GH_ACCOUNT = 	marcespie
 
 COMPILER =	base-clang ports-gcc
