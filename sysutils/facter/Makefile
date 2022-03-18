@@ -50,9 +50,7 @@ CONFIGURE_ARGS+=	-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
 # then use a pre-build target to run the ninja `facter-jruby` target
 # to generate the JNI header file.
 
-LIBfacter_MAJOR =	${LIBfacter_VERSION:R}
-LIBfacter_MINOR =	${LIBfacter_VERSION:E}
-SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV LIBfacter_MAJOR LIBfacter_MINOR
+SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
 
 CXXFLAGS +=		-pthread
 
