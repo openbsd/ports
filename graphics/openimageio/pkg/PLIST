@@ -70,7 +70,7 @@ lib/cmake/OpenImageIO/OpenImageIOTargets.cmake
 @lib lib/libOpenImageIO.so.${LIBOpenImageIO_VERSION}
 @lib lib/libOpenImageIO_Util.so.${LIBOpenImageIO_Util_VERSION}
 lib/pkgconfig/OpenImageIO.pc
-lib/python${MODPY_VERSION}/site-packages/OpenImageIO.${MODPY_PYC_MAGIC_TAG}so.${LIBOpenImageIO_VERSION}
+@so lib/python${MODPY_VERSION}/site-packages/OpenImageIO.${MODPY_PYC_MAGIC_TAG}so
 @man man/man1/iconvert.1
 @man man/man1/idiff.1
 @man man/man1/igrep.1
@@ -78,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/OpenImageIO.${MODPY_PYC_MAGIC_TAG}so.${
 @man man/man1/iv.1
 @man man/man1/maketx.1
 @man man/man1/oiiotool.1
+share/cmake/
+share/cmake/Modules/
 share/cmake/Modules/FindOpenImageIO.cmake
 share/doc/OpenImageIO/
 share/doc/OpenImageIO/CHANGES-0.x.md
