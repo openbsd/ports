@@ -1,6 +1,6 @@
 COMMENT=		Ubuntu GNOME theme
 
-GH_TAGNAME=		22.04.1
+GH_TAGNAME=		22.04.2
 GH_ACCOUNT=		ubuntu
 GH_PROJECT=		yaru
 
@@ -16,6 +16,9 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		shells/bash \
 			www/sassc
+
+# grealpath(1)
+BUILD_DEPENDS +=	sysutils/coreutils
 
 RUN_DEPENDS=		x11/gtk+3,-guic
 
