@@ -21,7 +21,9 @@ MODPY_SETUPTOOLS =	Yes
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
 
+.if ${FLAVOR:Mpython3}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
+.endif
 
 FLAVORS =		python3
 FLAVOR ?=
