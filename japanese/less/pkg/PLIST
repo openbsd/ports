@@ -1,3 +1,4 @@
+@conflict jless-*
 @bin bin/jless
 @bin bin/jlessecho
 @bin bin/jlesskey

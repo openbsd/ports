@@ -9,7 +9,7 @@ GH_TAGNAME=	v${V}
 PKGNAME=	ja-less-${V}
 CATEGORIES=	japanese
 HOMEPAGE=	http://web.archive.org/web/20070220213232/http://www25.big.or.jp/~jam/less
-REVISION=	0
+REVISION=	1
 
 MAINTAINER =	YASUOKA Masahiko <yasuoka@yasuoka.net>
 
