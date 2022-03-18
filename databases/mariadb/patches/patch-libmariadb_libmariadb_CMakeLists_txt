@@ -1,16 +1,7 @@
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -404,6 +404,8 @@ ENDIF()
- ADD_LIBRARY(mariadbclient STATIC  ${MARIADB_OBJECTS} ${EMPTY_FILE})
- TARGET_LINK_LIBRARIES(mariadbclient ${SYSTEM_LIBS})
- 
-+SET(LIBVER_OVERRIDE $ENV{LIBmariadb_VERSION})
-+
- IF(UNIX)
-   ADD_LIBRARY(libmariadb SHARED ${libmariadb_RC} ${MARIADB_OBJECTS} ${EMPTY_FILE})
-   SET_TARGET_PROPERTIES(libmariadb PROPERTIES COMPILE_FLAGS "${CMAKE_SHARED_LIBRARY_C_FLAGS}")
-@@ -439,20 +441,11 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+@@ -439,15 +439,6 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
  # of the config program. To make sure these programs can
  # use mariadb client library we provide libmysql symlinks
  
@@ -26,10 +17,3 @@ Index: libmariadb/libmariadb/CMakeLists.txt
  create_symlink(libmariadb${CMAKE_STATIC_LIBRARY_SUFFIX} mariadbclient ${INSTALL_LIBDIR})
  
  SET_TARGET_PROPERTIES(libmariadb PROPERTIES VERSION
-- ${CPACK_PACKAGE_VERSION_MAJOR}
-- SOVERSION ${CPACK_PACKAGE_VERSION_MAJOR})
-+ ${LIBVER_OVERRIDE}
-+ SOVERSION ${LIBVER_OVERRIDE})
- 
- IF(NOT WIN32)
-   SET_TARGET_PROPERTIES(mariadbclient PROPERTIES OUTPUT_NAME "${LIBMARIADB_STATIC_NAME}")
