@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			3.6.1
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -53,7 +54,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/libsigc++-2 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20220216p0 \
+			net/tg_owt>=0.0.0.20220316p0 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt5/qtsvg

@@ -17,7 +17,7 @@ CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	1.1	# 0.0.0
+SHARED_LIBS =		tg_owt	2.0	# 0.0.0
 
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
@@ -103,6 +103,10 @@ CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
 
 # match standard version with abseil
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17
+
+.if ${MACHINE_ARCH} == arm
+CONFIGURE_ARGS +=	-DTG_OWT_ARCH_ARMV7_USE_NEON=OFF
+.endif
 
 NO_TEST =		Yes
 
