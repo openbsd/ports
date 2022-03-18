@@ -1,0 +1,13 @@
+jless is a command-line viewer designed for reading, exploring, and
+searching through JSON data. It also supports YAML.
+
+jless will pretty print your files and apply syntax highlighting.
+Use it when exploring external APIs, or debugging request payloads.
+
+Expand and collapse Objects and Arrays to grasp the high- and low-level
+structure of a document. jless has a large suite of vim-inspired
+commands that make exploring data a breeze.
+
+jless supports full text regular-expression based search. Quickly find
+the data you're looking for in long String values, or jump between
+values for the same Object key.
