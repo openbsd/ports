@@ -11,8 +11,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
-REVISION-main =		5
-REVISION-samples =	5
+REVISION-main =		6
+REVISION-samples =	6
 
 MULTI_PACKAGES =	-main -samples
 
@@ -26,7 +26,7 @@ SHARED_LIBS +=  OgreVolume                0.0 # 1.9
 
 CATEGORIES =		x11
 
-HOMEPAGE =		http://www.ogre3d.org
+HOMEPAGE =		https://www.ogre3d.org
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
