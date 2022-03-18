@@ -29,10 +29,6 @@ LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
-LIBledger_MAJOR =	${LIBledger_VERSION:R}
-LIBledger_MINOR =	${LIBledger_VERSION:E}
-SUBST_VARS +=		LIBledger_MAJOR LIBledger_MINOR
-
 CONFIGURE_ARGS=		-DUTFCPP_PATH=${LOCALBASE}/include/utfcpp
 
 # Use this to make sure version.info gets generated, the actual
@@ -42,9 +38,6 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS:Bool=On
 
 # libedit support requires readline headers that aren't installed on OpenBSD
 CONFIGURE_ARGS +=	-DHAVE_EDIT:=Off
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/CMakeLists.txt
 
 post-install:
 .for i in ledger3
