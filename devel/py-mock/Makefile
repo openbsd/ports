@@ -1,10 +1,9 @@
 COMMENT=		python mocking and patching library for testing
 
-MODPY_EGG_VERSION=	3.0.5
+MODPY_EGG_VERSION=	4.0.3
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		2
 
 HOMEPAGE=		https://mock.readthedocs.io/en/latest/
 

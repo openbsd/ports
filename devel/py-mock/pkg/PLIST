@@ -1,3 +1,4 @@
+@pkgpath devel/py-mock
 lib/python${MODPY_VERSION}/site-packages/mock/
 lib/python${MODPY_VERSION}/site-packages/mock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/mock-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,5 +9,7 @@ lib/python${MODPY_VERSION}/site-packages/mock-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/mock/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mock/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mock/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mock/${MODPY_PYCACHE}backports.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mock/${MODPY_PYCACHE}mock.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mock/backports.py
 lib/python${MODPY_VERSION}/site-packages/mock/mock.py

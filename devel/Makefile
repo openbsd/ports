@@ -1418,7 +1418,6 @@
      SUBDIR += py-mccabe,python3
      SUBDIR += py-minidump,python3
      SUBDIR += py-minimock,python3
-     SUBDIR += py-mock
      SUBDIR += py-mock,python3
      SUBDIR += py-modulegraph
      SUBDIR += py-modulegraph,python3
