@@ -1,0 +1,16 @@
+gstreamer 1.20 grew a new_event callback in GstAppSinkCallbacks which
+broke the build with ports-gcc.
+
+error: braces around scalar initializer for type 'gboolean (*)(GstAppSink*, gpointer)' {aka 'int (*)(_GstAppSink*, void*)'}
+
+Index: Source/WebCore/platform/audio/gstreamer/AudioFileReaderGStreamer.cpp
+--- Source/WebCore/platform/audio/gstreamer/AudioFileReaderGStreamer.cpp.orig
++++ Source/WebCore/platform/audio/gstreamer/AudioFileReaderGStreamer.cpp
+@@ -230,6 +230,7 @@ void AudioFileReader::handleNewDeinterleavePad(GstPad*
+         [](GstAppSink* sink, gpointer userData) -> GstFlowReturn {
+             return static_cast<AudioFileReader*>(userData)->handleSample(sink);
+         },
++        nullptr, // new_event
+         { nullptr }
+     };
+     gst_app_sink_set_callbacks(GST_APP_SINK(sink), &callbacks, this, 0);
