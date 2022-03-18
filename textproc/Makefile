@@ -95,6 +95,7 @@
      SUBDIR += iso8879
      SUBDIR += ispell
      SUBDIR += itstool
+     SUBDIR += jless
      SUBDIR += jo
      SUBDIR += jq
      SUBDIR += latex2html
