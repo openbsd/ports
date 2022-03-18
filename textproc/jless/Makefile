@@ -3,6 +3,7 @@ COMMENT =		JSON viewer
 GH_ACCOUNT =		PaulJuliusMartinez
 GH_PROJECT =		jless
 GH_TAGNAME =		v0.8.0
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -10,6 +11,8 @@ CATEGORIES =		textproc
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c c++abi pthread xcb
+
+HOMEPAGE =		https://jless.io/
 
 MODULES =		devel/cargo \
 			lang/python
