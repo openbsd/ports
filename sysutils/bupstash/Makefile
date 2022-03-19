@@ -1,6 +1,6 @@
 COMMENT =		encrypted and deduplicated backup tool
 
-V =			0.10.3
+V =			0.11.0
 DISTNAME =		bupstash-v${V}
 PKGNAME =		bupstash-${V}
 

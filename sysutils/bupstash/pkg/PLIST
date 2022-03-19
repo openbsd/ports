@@ -1,5 +1,6 @@
 @bin bin/bupstash
 @man man/man1/bupstash-diff.1
+@man man/man1/bupstash-exec-with-locks.1
 @man man/man1/bupstash-gc.1
 @man man/man1/bupstash-get.1
 @man man/man1/bupstash-init.1
@@ -12,6 +13,7 @@
 @man man/man1/bupstash-restore.1
 @man man/man1/bupstash-rm.1
 @man man/man1/bupstash-serve.1
+@man man/man1/bupstash-sync.1
 @man man/man1/bupstash.1
 @man man/man7/bupstash-keyfiles.7
 @man man/man7/bupstash-query-language.7

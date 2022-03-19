@@ -14,6 +14,6 @@ Some notable features of bupstash include:
 - The bupstash tool itself is divided into subcommands that each have their own
   documentation.
 
-bupstash is alpha software, while all efforts are made to keep bupstash bug
+bupstash is beta software, while all efforts are made to keep bupstash bug
 free, we currently recommend using bupstash for making REDUNDANT backups where
 failure can be tolerated.
