@@ -13,6 +13,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		1fe5e68d999e0bf88d0128ad813438726732f6e0
 DISTNAME =		${GH_PROJECT}-0.0.0.20220316
+REVISION =		0
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
