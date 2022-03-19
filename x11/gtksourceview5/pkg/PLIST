@@ -49,11 +49,13 @@ include/gtksourceview-5/gtksourceview/gtksourcestyleschemechooser.h
 include/gtksourceview-5/gtksourceview/gtksourcestyleschemechooserbutton.h
 include/gtksourceview-5/gtksourceview/gtksourcestyleschemechooserwidget.h
 include/gtksourceview-5/gtksourceview/gtksourcestyleschememanager.h
+include/gtksourceview-5/gtksourceview/gtksourcestyleschemepreview.h
 include/gtksourceview-5/gtksourceview/gtksourcetag.h
 include/gtksourceview-5/gtksourceview/gtksourcetypes.h
 include/gtksourceview-5/gtksourceview/gtksourceutils.h
 include/gtksourceview-5/gtksourceview/gtksourceversion.h
 include/gtksourceview-5/gtksourceview/gtksourceview.h
+include/gtksourceview-5/gtksourceview/gtksourcevimimcontext.h
 lib/girepository-1.0/GtkSource-5.typelib
 @lib lib/libgtksourceview-5.so.${LIBgtksourceview-5_VERSION}
 lib/pkgconfig/gtksourceview-5.pc
@@ -149,6 +151,7 @@ share/gtksourceview-5/language-specs/language.dtd
 share/gtksourceview-5/language-specs/language.rng
 share/gtksourceview-5/language-specs/language2.rng
 share/gtksourceview-5/language-specs/latex.lang
+share/gtksourceview-5/language-specs/lean.lang
 share/gtksourceview-5/language-specs/less.lang
 share/gtksourceview-5/language-specs/lex.lang
 share/gtksourceview-5/language-specs/libtool.lang
@@ -201,6 +204,7 @@ share/gtksourceview-5/language-specs/sh.lang
 share/gtksourceview-5/language-specs/sml.lang
 share/gtksourceview-5/language-specs/solidity.lang
 share/gtksourceview-5/language-specs/sparql.lang
+share/gtksourceview-5/language-specs/spice.lang
 share/gtksourceview-5/language-specs/sql.lang
 share/gtksourceview-5/language-specs/star.lang
 share/gtksourceview-5/language-specs/sweave.lang
@@ -238,8 +242,11 @@ share/gtksourceview-5/snippets/snippets.rng
 share/gtksourceview-5/styles/
 share/gtksourceview-5/styles/Adwaita-dark.xml
 share/gtksourceview-5/styles/Adwaita.xml
+share/gtksourceview-5/styles/classic-dark.xml
 share/gtksourceview-5/styles/classic.xml
+share/gtksourceview-5/styles/cobalt-light.xml
 share/gtksourceview-5/styles/cobalt.xml
+share/gtksourceview-5/styles/kate-dark.xml
 share/gtksourceview-5/styles/kate.xml
 share/gtksourceview-5/styles/oblivion.xml
 share/gtksourceview-5/styles/solarized-dark.xml
@@ -297,6 +304,7 @@ share/locale/hi/LC_MESSAGES/gtksourceview-5.mo
 share/locale/hr/LC_MESSAGES/gtksourceview-5.mo
 share/locale/hu/LC_MESSAGES/gtksourceview-5.mo
 share/locale/id/LC_MESSAGES/gtksourceview-5.mo
+share/locale/is/LC_MESSAGES/gtksourceview-5.mo
 share/locale/it/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-5.mo
 share/locale/kk/LC_MESSAGES/gtksourceview-5.mo

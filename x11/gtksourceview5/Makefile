@@ -1,10 +1,11 @@
 COMMENT=		text widget that extends the GTK4 GtkTextView widget
 
 GNOME_PROJECT=		gtksourceview
-GNOME_VERSION=		5.2.0
+GNOME_VERSION=		5.4.0
 PKGNAME=		${GNOME_PROJECT}5-${GNOME_VERSION}
 
-SHARED_LIBS +=	gtksourceview-5    0.1      # 0.0
+SHARED_LIBS += gtksourceview-5           0.2 # 0.0.0
+
 CATEGORIES=		x11
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -24,7 +25,7 @@ LIB_DEPENDS=		devel/pcre2 \
 			textproc/libxml \
 			x11/gtk+4
 
-MODGNOME_TOOLS +=	gobject-introspection gtk-update-icon-cache vala
+MODGNOME_TOOLS=		gobject-introspection gtk-update-icon-cache vala
 
 TEST_IS_INTERACTIVE=	x11
 

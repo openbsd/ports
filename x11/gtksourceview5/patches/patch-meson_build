@@ -3,7 +3,7 @@ Should match b_lundef in meson(1).
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -288,7 +288,6 @@ add_project_arguments(global_c_args, language: 'c')
+@@ -306,7 +306,6 @@ add_project_arguments(global_c_args, language: 'c')
  # cast checks, asserts, and additional link options.
  release_link_args = []
  test_link_args = [
