@@ -1,0 +1,38 @@
+@bin bin/kalendar
+@bin bin/kalendarac
+share/applications/org.kde.kalendar.desktop
+share/dbus-1/services/org.kde.kalendarac.service
+share/examples/kalendar/
+share/examples/kalendar/xdg/
+share/examples/kalendar/xdg/autostart/
+share/examples/kalendar/xdg/autostart/org.kde.kalendarac.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.kde.kalendarac.desktop
+share/icons/hicolor/scalable/apps/org.kde.kalendar.svg
+share/knotifications5/
+share/knotifications5/kalendarac.notifyrc
+share/locale/az/LC_MESSAGES/kalendar.mo
+share/locale/ca/LC_MESSAGES/kalendar.mo
+share/locale/ca@valencia/LC_MESSAGES/kalendar.mo
+share/locale/cs/LC_MESSAGES/kalendar.mo
+share/locale/de/LC_MESSAGES/kalendar.mo
+share/locale/el/LC_MESSAGES/kalendar.mo
+share/locale/en_GB/LC_MESSAGES/kalendar.mo
+share/locale/es/LC_MESSAGES/kalendar.mo
+share/locale/fi/LC_MESSAGES/kalendar.mo
+share/locale/fr/LC_MESSAGES/kalendar.mo
+share/locale/it/LC_MESSAGES/kalendar.mo
+share/locale/ko/LC_MESSAGES/kalendar.mo
+share/locale/nl/LC_MESSAGES/kalendar.mo
+share/locale/pl/LC_MESSAGES/kalendar.mo
+share/locale/pt/LC_MESSAGES/kalendar.mo
+share/locale/pt_BR/LC_MESSAGES/kalendar.mo
+share/locale/sk/LC_MESSAGES/kalendar.mo
+share/locale/sl/LC_MESSAGES/kalendar.mo
+share/locale/sv/LC_MESSAGES/kalendar.mo
+share/locale/uk/LC_MESSAGES/kalendar.mo
+share/locale/zh_CN/LC_MESSAGES/kalendar.mo
+share/metainfo/
+share/metainfo/org.kde.kalendar.appdata.xml
+share/qlogging-categories5/
+share/qlogging-categories5/kalendar.categories
+@tag gtk-update-icon-cache %D/share/icons/hicolor

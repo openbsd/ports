@@ -1,0 +1,11 @@
+Kalendar is a calendar application that allows you to manage your tasks and
+events. Kalendar supports both local calendars as well as a multitude of online
+calendars:
+
+ - CalDAV calendars (e.g. Nextcloud)
+ - Google calendars
+ - Exchange calendars
+ - iCal calendar files (.ics)
+ - iCal calendar folders
+ - Kolab groupware servers
+ - Open-Xchange groupware servers
