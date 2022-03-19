@@ -1,10 +1,9 @@
 COMMENT =		Ethiopic Unicode script
 
 TYPEFACE =		abyssinica
-V =			2.000
+V =			2.100
 DISTNAME =		AbyssinicaSIL-$V
 CATEGORIES =		fonts
-REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/abyssinica/
 
