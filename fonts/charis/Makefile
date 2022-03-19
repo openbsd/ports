@@ -1,10 +1,9 @@
 COMMENT =		readable Unicode font for laser printers
 
 TYPEFACE =		charis
-V =			5.000
+V =			6.101
 DISTNAME =		CharisSIL-$V
 CATEGORIES =		fonts
-REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/charis/
 

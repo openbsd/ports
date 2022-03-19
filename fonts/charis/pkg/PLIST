@@ -5,7 +5,7 @@ share/doc/charis/OFL.txt
 share/doc/charis/README.txt
 share/fonts/
 @fontdir share/fonts/charis/
-share/fonts/charis/CharisSIL-B.ttf
-share/fonts/charis/CharisSIL-BI.ttf
-share/fonts/charis/CharisSIL-I.ttf
-share/fonts/charis/CharisSIL-R.ttf
+share/fonts/charis/CharisSIL-Bold.ttf
+share/fonts/charis/CharisSIL-BoldItalic.ttf
+share/fonts/charis/CharisSIL-Italic.ttf
+share/fonts/charis/CharisSIL-Regular.ttf
