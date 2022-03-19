@@ -17,7 +17,7 @@ MODULES :=		devel/kf5 \
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE ?=	Yes
 
-VERSION ?=		5.24.1
+VERSION ?=		5.24.3
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/plasma/${VERSION}/}
 
