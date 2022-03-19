@@ -59,7 +59,6 @@
      SUBDIR += crashme
      SUBDIR += curlftpfs
      SUBDIR += czkawka
-     SUBDIR += d-feet
      SUBDIR += dateutils
      SUBDIR += dcfldd
      SUBDIR += dcled
@@ -78,6 +77,7 @@
      SUBDIR += dosfstools
      SUBDIR += downtimed
      SUBDIR += dsh
+     SUBDIR += dspy
      SUBDIR += dtb
      SUBDIR += dtpstree
      SUBDIR += duf
