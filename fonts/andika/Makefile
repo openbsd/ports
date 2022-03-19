@@ -1,9 +1,8 @@
 TYPEFACE =		andika
-V =			5.000
+V =			6.101
 COMMENT =		clear sans serif, Unicode-compliant font
 DISTNAME =		Andika-$V
 CATEGORIES =		fonts
-REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/andika/
 

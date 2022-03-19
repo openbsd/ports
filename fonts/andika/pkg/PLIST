@@ -5,4 +5,7 @@ share/doc/andika/OFL.txt
 share/doc/andika/README.txt
 share/fonts/
 @fontdir share/fonts/andika/
-share/fonts/andika/Andika-R.ttf
+share/fonts/andika/Andika-Bold.ttf
+share/fonts/andika/Andika-BoldItalic.ttf
+share/fonts/andika/Andika-Italic.ttf
+share/fonts/andika/Andika-Regular.ttf
