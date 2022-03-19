@@ -1,0 +1,13 @@
+Should match b_lundef in meson(1).
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -159,7 +159,6 @@ endif
+ # cast checks, asserts, and additional link options.
+ release_link_args = []
+ test_link_args = [
+-  '-Wl,-z,defs',   # Detect and reject underlinking
+   '-Wl,-z,now',    # Disable lazy binding
+   '-Wl,-z,relro',  # Read-only segments after relocation
+ ]
