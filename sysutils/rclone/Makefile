@@ -3,10 +3,9 @@ BROKEN-arm =		SIGBUS when running rclone
 
 COMMENT =	rsync for cloud storage
 
-V =		1.57.0
+V =		1.58.0
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
