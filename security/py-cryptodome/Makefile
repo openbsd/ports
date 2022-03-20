@@ -21,6 +21,9 @@ FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+.if ${FLAVOR:Mpython3}
+TEST_DEPENDS =		security/py-cryptodome-test-vectors${MODPY_FLAVOR}
+.endif
 
 RUN_DEPENDS =		devel/gmp
 
