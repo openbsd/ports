@@ -1,6 +1,6 @@
 COMMENT =	check Uniform Resource Identifiers
 
-DISTNAME =	Test-URI-1.083
+DISTNAME =	Test-URI-1.084
 
 CATEGORIES =	devel
 
