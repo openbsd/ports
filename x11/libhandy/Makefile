@@ -1,10 +1,11 @@
 COMMENT =		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT =		libhandy
-GNOME_VERSION =		1.5.91
+GNOME_VERSION =		1.6.1
 CATEGORIES =		x11
 
 API_V =			1
+SUBST_VARS +=		API_V
 SHARED_LIBS += handy-1                   0.3 # 0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -36,7 +37,5 @@ LDFLAGS =		-L${X11BASE}/lib
 .endif
 
 TEST_IS_INTERACTIVE =	X11
-
-SUBST_VARS +=		API_V
 
 .include <bsd.port.mk>
