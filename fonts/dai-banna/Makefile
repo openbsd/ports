@@ -1,10 +1,9 @@
 PKG_ARCH =		*
 
-V =			2.200
+V =			3.000
 COMMENT =		New Tai Lue Unicode characters
-DISTNAME =		DaiBanna-$V
+DISTNAME =		DaiBannaSIL-$V
 PKGNAME =		dai-banna-$V
-REVISION =		1
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://scripts.sil.org/DaiBannaSIL
@@ -21,7 +20,6 @@ EXTRACT_SUFX =		.zip
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-WRKDIST =		${WRKDIR}/${PKGNAME}
 FONTDIR =		${PREFIX}/share/fonts/dai-banna
 DOCDIR =		${PREFIX}/share/doc/dai-banna
 
