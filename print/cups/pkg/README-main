@@ -26,9 +26,10 @@ framework provides most of them (see the foomatic-db-engine package
 documentation for more information and creating PPD files;
 ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine).
 
-Printer backends are also available as packages.
-e.g. cups-bjnp, hpcups, hplip, ptouch-driver, epson-inkjet-printer-escpr,
-splix, brlaser...
+Printer backends are also available as packages. Such list of packages can be
+obtained using pkglocate(1) from the pkglocatedb package:
+    $ pkglocate share/{cups/drv,ppd,foomatic/db/source}/ libexec/cups/backend/ |
+	cut -d : -f 2 | sed -e s/,.*// | sort -u
 
 Some PPD files are only available as part of vendor distributed Linux
 driver packages (deb or rpm); if you're lucky, extracting the PPD file and
