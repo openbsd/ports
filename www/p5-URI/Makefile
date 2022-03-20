@@ -1,10 +1,8 @@
-COMMENT =		library to parse Uniform Resource Identifiers
+COMMENT =	library to parse Uniform Resource Identifiers
 
-PKG_ARCH =		*
+DISTNAME =	URI-5.10
 
-DISTNAME =		URI-5.09
-
-CATEGORIES =		www
+CATEGORIES =	www
 
 # Perl
 PERMIT_PACKAGE =	Yes
@@ -12,8 +10,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 
 TEST_DEPENDS =		devel/p5-Test-Needs
-
 # not ported yet
 #TEST_DEPENDS +=	misc/p5-Business-ISBN
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
