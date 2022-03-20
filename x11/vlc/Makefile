@@ -1,12 +1,10 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.14
+V=		3.0.17.3
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-main=	2
-REVISION-jack=	0
 CATEGORIES=	x11
 MASTER_SITES=	https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -38,8 +36,8 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pcre2-16 \
 		pixman-1 placebo png postproc protobuf-lite rsvg-2 \
 		smb2 sndio soxr speex speexdsp ssl swresample swscale \
-		tag tar tasn1 theoradec theoraenc tiff unistring usbhid \
-		vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
+		tag tar tasn1 theoradec theoraenc tiff udfread unistring \
+		usbhid vorbis vorbisenc vpx webp x264 x265 xcb xcb-composite \
 		xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr \
 		xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xml2 \
 		xshmfence xvidcore z zstd ${WANTLIB-common}
