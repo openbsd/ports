@@ -275,6 +275,7 @@
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-cryptodome
      SUBDIR += py-cryptodome,python3
+     SUBDIR += py-cryptodome-test-vectors,python3
      SUBDIR += py-cryptography,python3
      SUBDIR += py-cryptography_vectors,python3
      SUBDIR += py-dfdatetime,python3
