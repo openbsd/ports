@@ -1,9 +1,8 @@
 TYPEFACE =		doulos
-V =			5.000
+V =			6.101
 COMMENT =		Unicode-based font for Roman and Cyrillic
 DISTNAME =		DoulosSIL-$V
 CATEGORIES =		fonts
-REVISION =		0
 
 HOMEPAGE =		https://software.sil.org/doulos/
 
