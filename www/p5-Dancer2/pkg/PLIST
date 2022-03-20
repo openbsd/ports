@@ -43,6 +43,7 @@ ${P5SITE}/Dancer2/Core/Runner.pm
 ${P5SITE}/Dancer2/Core/Session.pm
 ${P5SITE}/Dancer2/Core/Time.pm
 ${P5SITE}/Dancer2/Core/Types.pm
+${P5SITE}/Dancer2/DeprecationPolicy.pod
 ${P5SITE}/Dancer2/FileUtils.pm
 ${P5SITE}/Dancer2/Handler/
 ${P5SITE}/Dancer2/Handler/AutoPage.pm
@@ -157,6 +158,7 @@ ${P5SITE}/auto/share/dist/Dancer2/skel/views/layouts/main.tt
 @man man/man3p/Dancer2::Core::Session.3p
 @man man/man3p/Dancer2::Core::Time.3p
 @man man/man3p/Dancer2::Core::Types.3p
+@man man/man3p/Dancer2::DeprecationPolicy.3p
 @man man/man3p/Dancer2::FileUtils.3p
 @man man/man3p/Dancer2::Handler::AutoPage.3p
 @man man/man3p/Dancer2::Handler::File.3p

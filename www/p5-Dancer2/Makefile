@@ -1,17 +1,20 @@
-COMMENT =		lightweight yet powerful web application framework
+COMMENT =	lightweight yet powerful web application framework
 
-MODULES =		cpan
-PKG_ARCH =		*
-DISTNAME =		Dancer2-0.301004
-CATEGORIES =		www
+DISTNAME =	Dancer2-0.400000
+
+CATEGORIES =	www
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
+MODULES =		cpan
+
 BUILD_DEPENDS =		devel/p5-File-ShareDir-Install>=0.06
 
-RUN_DEPENDS = 		converters/p5-JSON \
+RUN_DEPENDS = 		converters/p5-Cpanel-JSON-XS \
+			converters/p5-JSON \
 			converters/p5-JSON-XS \
+			converters/p5-JSON-MaybeXS \
 			devel/p5-CLI-Osprey \
 			devel/p5-Class-Load \
 			devel/p5-Config-Any \
@@ -26,6 +29,7 @@ RUN_DEPENDS = 		converters/p5-JSON \
 			devel/p5-Scope-Upper \
 			devel/p5-Type-Tiny \
 			devel/p5-YAML \
+			devel/p5-YAML-XS \
 			mail/p5-MIME-Types \
 			security/p5-Digest-SHA1 \
 			sysutils/p5-File-Which \
@@ -49,6 +53,8 @@ TEST_DEPENDS =		devel/p5-AnyEvent \
 			devel/p5-Test-Perl-Critic \
 			sysutils/p5-Capture-Tiny
 
-MAKE_ENV +=		TEST_POD=yes AUTHOR_TESTING=Yes
+MAKE_ENV =		TEST_POD=yes AUTHOR_TESTING=Yes
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
