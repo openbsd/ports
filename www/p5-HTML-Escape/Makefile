@@ -1,14 +1,13 @@
 COMMENT =	extremely fast HTML escaping
 
-DISTNAME =	HTML-Escape-1.10
-REVISION =	0
+DISTNAME =	HTML-Escape-1.11
 
 CATEGORIES =	www
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		perl
+WANTLIB =		c perl
 
 MODULES =		cpan
 MODPERL_REGEN_PPPORT =	lib/HTML/ppport.h

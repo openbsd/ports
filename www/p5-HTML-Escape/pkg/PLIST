@@ -7,5 +7,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/HTML/
 ${P5ARCH}/auto/HTML/Escape/
 ${P5ARCH}/auto/HTML/Escape/Escape.bs
-${P5ARCH}/auto/HTML/Escape/Escape.so
+@so ${P5ARCH}/auto/HTML/Escape/Escape.so
 @man man/man3p/HTML::Escape.3p
