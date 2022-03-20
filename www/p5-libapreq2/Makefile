@@ -28,6 +28,14 @@ LIB_DEPENDS=	converters/libiconv \
 
 RUN_DEPENDS =	www/ap2-mod_perl
 
+# module perl is not used, regen ppport explicitly
+pre-configure:
+	@echo "Regenerating ${MODPERL_REGEN_PPPORT}"
+	@cd ${WRKDIST} && \
+	mv ${MODPERL_REGEN_PPPORT} ${MODPERL_REGEN_PPPORT}.orig.ppport; \
+	perl -MDevel::PPPort\
+	    -e'Devel::PPPort::WriteFile("${MODPERL_REGEN_PPPORT}")'
+
 post-test:
 	cd ${WRKSRC}/glue/perl && \
 	    LD_LIBRARY_PATH="${WRKSRC}/library/.libs:${LOCALBASE}" ${MAKE} test
