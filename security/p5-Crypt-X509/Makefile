@@ -1,14 +1,16 @@
 COMMENT =	parse an X.509 certificate
 
-DISTNAME =	Crypt-X509-0.53
+DISTNAME =	Crypt-X509-0.54
+
 CATEGORIES =	security
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
 
-TEST_DEPENDS =	converters/p5-Convert-ASN1
+TEST_DEPENDS =		converters/p5-Convert-ASN1
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
