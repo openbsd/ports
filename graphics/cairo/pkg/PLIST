@@ -15,7 +15,6 @@ include/cairo/cairo-version.h
 include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib-xrender.h
 include/cairo/cairo-xlib.h
-include/cairo/cairo-xml.h
 include/cairo/cairo.h
 lib/cairo/
 @so lib/cairo/libcairo-fdr.so
@@ -30,6 +29,7 @@ lib/pkgconfig/cairo-gobject.pc
 lib/pkgconfig/cairo-pdf.pc
 lib/pkgconfig/cairo-png.pc
 lib/pkgconfig/cairo-ps.pc
+lib/pkgconfig/cairo-script-interpreter.pc
 lib/pkgconfig/cairo-script.pc
 lib/pkgconfig/cairo-svg.pc
 lib/pkgconfig/cairo-tee.pc
@@ -37,5 +37,4 @@ lib/pkgconfig/cairo-xcb-shm.pc
 lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc
 lib/pkgconfig/cairo-xlib.pc
-lib/pkgconfig/cairo-xml.pc
 lib/pkgconfig/cairo.pc
