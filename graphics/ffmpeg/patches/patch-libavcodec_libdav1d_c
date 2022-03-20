@@ -1,5 +1,6 @@
 - avcodec/libdav1d: pass auto threads value to libdav1d
 - avcodec/libdav1d: let libdav1d choose optimal max frame delay
+- avcodec/libdav1d: free the Dav1dData packet on dav1d_send_data() failure
 
 Index: libavcodec/libdav1d.c
 --- libavcodec/libdav1d.c.orig
@@ -25,3 +26,15 @@ Index: libavcodec/libdav1d.c
      av_log(c, AV_LOG_DEBUG, "Using %d threads, %d max_frame_delay\n",
             s.n_threads, s.max_frame_delay);
  #else
+@@ -244,8 +248,10 @@ static int libdav1d_receive_frame(AVCodecContext *c, A
+     if (res < 0) {
+         if (res == AVERROR(EINVAL))
+             res = AVERROR_INVALIDDATA;
+-        if (res != AVERROR(EAGAIN))
++        if (res != AVERROR(EAGAIN)) {
++            dav1d_data_unref(data);
+             return res;
++        }
+     }
+ 
+     res = dav1d_get_picture(dav1d->c, p);
