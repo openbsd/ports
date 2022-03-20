@@ -1,6 +1,6 @@
 COMMENT =	perl module to manage MIME types
 
-DISTNAME =	MIME-Types-2.21
+DISTNAME =	MIME-Types-2.22
 
 CATEGORIES =	mail
 
@@ -9,7 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS=		www/p5-Mojo
+TEST_DEPENDS =		www/p5-Mojo
 
 PKG_ARCH =		*
 
