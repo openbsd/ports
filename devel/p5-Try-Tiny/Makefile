@@ -1,20 +1,20 @@
-COMMENT =		minimal try/catch with proper preservation of $$@
+COMMENT =	minimal try/catch with proper preservation of $$@
 
-MODULES =		cpan
-PKG_ARCH =		*
-DISTNAME =		Try-Tiny-0.30
-CATEGORIES =		devel
-REVISION =		0
+DISTNAME =	Try-Tiny-0.31
+CPAN_AUTHOR =	ETHER
+FIX_EXTRACT_PERMISSIONS =	Yes
+
+CATEGORIES =	devel
 
 # Perl
 PERMIT_PACKAGE =	Yes
-FIX_EXTRACT_PERMISSIONS =	Yes
 
-CPAN_AUTHOR =		ETHER
+MODULES =		cpan
 
-# An optional dependency, but useful
-RUN_DEPENDS =	devel/p5-Sub-Name
+RUN_DEPENDS =		devel/p5-Sub-Name>=0.08
 
 TEST_DEPENDS =		sysutils/p5-Capture-Tiny>=0.12
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
