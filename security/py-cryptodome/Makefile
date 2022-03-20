@@ -1,9 +1,8 @@
 COMMENT =	self-contained cryptographic library for Python
 
-MODPY_EGG_VERSION =	3.10.1
+MODPY_EGG_VERSION =	3.14.1
 DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	1
 
 CATEGORIES =	security
 

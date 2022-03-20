@@ -83,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_openpgp.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_openpgp.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_siv.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_siv.pyi
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_pkcs1_decode${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_aes${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_arc2${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_raw_blowfish${MODPY_ABI3SO}.so
@@ -105,6 +106,12 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/CMAC.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/CMAC.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/HMAC.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/HMAC.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC128.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC128.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC256.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KMAC256.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KangarooTwelve.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/KangarooTwelve.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD2.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD2.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/MD4.py
@@ -141,6 +148,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE128.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE128.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE256.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHAKE256.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash128.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash128.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash256.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/TupleHash256.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_BLAKE2b${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_BLAKE2s${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_MD2${MODPY_ABI3SO}.so
@@ -159,6 +170,9 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}BLAKE2b.${M
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}BLAKE2s.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}CMAC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}HMAC.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}KMAC128.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}KMAC256.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}KangarooTwelve.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}MD2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}MD4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}MD5.${MODPY_PYC_MAGIC_TAG}pyc
@@ -177,11 +191,19 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}SHA3_512.${
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}SHA512.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}SHAKE128.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}SHAKE256.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}TupleHash128.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}TupleHash256.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}cSHAKE128.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}cSHAKE256.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/${MODPY_PYCACHE}keccak.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_ghash_portable${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_keccak${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/_poly1305${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE128.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE128.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE256.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/cSHAKE256.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/keccak.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/keccak.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/IO/
@@ -320,6 +342,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}co
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_BLAKE2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_CMAC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_HMAC.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_KMAC.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_KangarooTwelve.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_MD2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_MD4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_MD5.${MODPY_PYC_MAGIC_TAG}pyc
@@ -335,11 +359,15 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_SHA3_512.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_SHA512.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_SHAKE.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_TupleHash.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_cSHAKE.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/${MODPY_PYCACHE}test_keccak.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/common.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_BLAKE2.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_CMAC.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_HMAC.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_KMAC.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_KangarooTwelve.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_MD2.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_MD4.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_MD5.py
@@ -355,6 +383,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA3_384.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA3_512.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA512.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHAKE.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_TupleHash.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_cSHAKE.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_keccak.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/IO/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/IO/__init__.py
