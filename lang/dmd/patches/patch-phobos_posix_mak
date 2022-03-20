@@ -1,0 +1,17 @@
+Index: phobos/posix.mak
+--- phobos/posix.mak.orig
++++ phobos/posix.mak
+@@ -107,12 +107,10 @@ endif
+ OUTFILEFLAG = -o
+ NODEFAULTLIB=-defaultlib= -debuglib=
+ ifeq (,$(findstring win,$(OS)))
+-	CFLAGS=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
++	CFLAGS+=$(MODEL_FLAG) -fPIC -DHAVE_UNISTD_H
+ 	NODEFAULTLIB += -L-lpthread -L-lm
+ 	ifeq ($(BUILD),debug)
+ 		CFLAGS += -g
+-	else
+-		CFLAGS += -O3
+ 	endif
+ else
+ 	ifeq ($(OS),win32)

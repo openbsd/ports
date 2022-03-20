@@ -1,16 +1,7 @@
-Index: druntime-2.098.0/posix.mak
---- druntime-2.098.0/posix.mak.orig
-+++ druntime-2.098.0/posix.mak
-@@ -5,7 +5,7 @@
- 
- QUIET:=
- 
--DMD_DIR=../dmd
-+DMD_DIR=TOPDIR/dmd-2.098.0
- DUB=dub
- TOOLS_DIR=../tools
- 
-@@ -64,11 +64,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
+Index: druntime/posix.mak
+--- druntime/posix.mak.orig
++++ druntime/posix.mak
+@@ -65,11 +65,9 @@ MAKEFILE = $(firstword $(MAKEFILE_LIST))
  DDOCFLAGS=-conf= -c -w -o- -Isrc -Iimport -version=CoreDdoc
  
  # Set CFLAGS
@@ -23,7 +14,7 @@ Index: druntime-2.098.0/posix.mak
  endif
  ifeq (solaris,$(OS))
  	CFLAGS+=-D_REENTRANT  # for thread-safe errno
-@@ -342,7 +340,7 @@ $(IMPDIR)/%.d : src/%.d
+@@ -350,7 +348,7 @@ $(IMPDIR)/%.h : src/%.h
  ######################## Build DMD if non-existent ##############################
  
  $(DMD):
@@ -32,7 +23,7 @@ Index: druntime-2.098.0/posix.mak
  
  ################### C/ASM Targets ############################
  
-@@ -464,7 +462,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
+@@ -469,7 +467,6 @@ benchmark-compile-only: $(ROOT)/benchmark $(DMD)
  	DMD=$(DMD) $< --repeat=0 --dflags="$(PHOBOS_DFLAGS) -de"
  
  #################### test for undesired white spaces ##########################

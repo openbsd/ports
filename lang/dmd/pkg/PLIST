@@ -2,6 +2,7 @@
 include/dmd/
 include/dmd/druntime/
 include/dmd/druntime/import/
+include/dmd/druntime/import/__builtins.di
 include/dmd/druntime/import/core/
 include/dmd/druntime/import/core/atomic.d
 include/dmd/druntime/import/core/attribute.d
@@ -268,6 +269,7 @@ include/dmd/druntime/import/core/sys/openbsd/
 include/dmd/druntime/import/core/sys/openbsd/dlfcn.d
 include/dmd/druntime/import/core/sys/openbsd/err.d
 include/dmd/druntime/import/core/sys/openbsd/execinfo.d
+include/dmd/druntime/import/core/sys/openbsd/pthread_np.d
 include/dmd/druntime/import/core/sys/openbsd/stdlib.d
 include/dmd/druntime/import/core/sys/openbsd/string.d
 include/dmd/druntime/import/core/sys/openbsd/sys/
@@ -545,6 +547,7 @@ include/dmd/druntime/import/core/volatile.d
 include/dmd/druntime/import/etc/
 include/dmd/druntime/import/etc/linux/
 include/dmd/druntime/import/etc/linux/memoryerror.d
+include/dmd/druntime/import/importc.h
 include/dmd/druntime/import/object.d
 include/dmd/phobos/
 include/dmd/phobos/etc/
@@ -561,13 +564,13 @@ include/dmd/phobos/etc/c/zlib.d
 include/dmd/phobos/etc/c/zlib/ChangeLog
 include/dmd/phobos/etc/c/zlib/README
 include/dmd/phobos/etc/c/zlib/adler32.c
-include/dmd/phobos/etc/c/zlib/algorithm.txt
 include/dmd/phobos/etc/c/zlib/compress.c
 include/dmd/phobos/etc/c/zlib/crc32.c
 include/dmd/phobos/etc/c/zlib/crc32.h
 include/dmd/phobos/etc/c/zlib/deflate.c
 include/dmd/phobos/etc/c/zlib/deflate.h
-include/dmd/phobos/etc/c/zlib/example.c
+include/dmd/phobos/etc/c/zlib/doc/
+include/dmd/phobos/etc/c/zlib/doc/algorithm.txt
 include/dmd/phobos/etc/c/zlib/gzclose.c
 include/dmd/phobos/etc/c/zlib/gzguts.h
 include/dmd/phobos/etc/c/zlib/gzlib.c
@@ -582,8 +585,11 @@ include/dmd/phobos/etc/c/zlib/inflate.h
 include/dmd/phobos/etc/c/zlib/inftrees.c
 include/dmd/phobos/etc/c/zlib/inftrees.h
 include/dmd/phobos/etc/c/zlib/linux.mak
-include/dmd/phobos/etc/c/zlib/minigzip.c
 include/dmd/phobos/etc/c/zlib/osx.mak
+include/dmd/phobos/etc/c/zlib/test/
+include/dmd/phobos/etc/c/zlib/test/example.c
+include/dmd/phobos/etc/c/zlib/test/infcover.c
+include/dmd/phobos/etc/c/zlib/test/minigzip.c
 include/dmd/phobos/etc/c/zlib/trees.c
 include/dmd/phobos/etc/c/zlib/trees.h
 include/dmd/phobos/etc/c/zlib/uncompr.c
@@ -609,6 +615,7 @@ include/dmd/phobos/std/ascii.d
 include/dmd/phobos/std/base64.d
 include/dmd/phobos/std/bigint.d
 include/dmd/phobos/std/bitmanip.d
+include/dmd/phobos/std/checkedint.d
 include/dmd/phobos/std/compiler.d
 include/dmd/phobos/std/complex.d
 include/dmd/phobos/std/concurrency.d

@@ -1,6 +1,6 @@
-Index: dmd-2.098.0/posix.mak
---- dmd-2.098.0/posix.mak.orig
-+++ dmd-2.098.0/posix.mak
+Index: dmd/posix.mak
+--- dmd/posix.mak.orig
++++ dmd/posix.mak
 @@ -1,4 +1,4 @@
 -INSTALL_DIR=$(PWD)/../install
 +INSTALL_DIR=../install
