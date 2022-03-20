@@ -3,13 +3,12 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	ancillary tools for the D programming language compiler
 DISTNAME =	d${GH_PROJECT}-${GH_TAGNAME:S/^v//}
-REVISION =	0
 CATEGORIES =	devel
 
 # Keep GH_TAGNAME in sync with lang/dmd
 GH_ACCOUNT =	dlang
 GH_PROJECT =	tools
-GH_TAGNAME =	v2.098.0
+GH_TAGNAME =	v2.099.0
 
 HOMEPAGE =	https://dlang.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
