@@ -1,19 +1,18 @@
-COMMENT =		modules to parse and extract information from HTML
+COMMENT =	modules to parse and extract information from HTML
 
-MODULES =		cpan
-DISTNAME =		HTML-Parser-3.76
-CATEGORIES =		www
+DISTNAME =	HTML-Parser-3.77
 
-RUN_DEPENDS =		www/p5-HTML-Tagset>=3
-BUILD_DEPENDS =		${RUN_DEPENDS}
-TEST_DEPENDS =		www/p5-URI \
-			www/p5-libwww
+CATEGORIES =	www
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c perl
+WANTLIB =		c perl
 
-MAKE_ENV +=		TEST_POD=Yes
+MODULES =		cpan
+
+RUN_DEPENDS =		www/p5-HTML-Tagset \
+			www/p5-HTTP-Message \
+			www/p5-URI
 
 .include <bsd.port.mk>
