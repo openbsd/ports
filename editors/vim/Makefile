@@ -2,7 +2,7 @@ COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		8.2.4552
+V=		8.2.4600
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -53,6 +53,7 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 		--enable-multibyte \
 		--enable-cscope
 
+# not directly usable with CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION= 2.69
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext,-tools
