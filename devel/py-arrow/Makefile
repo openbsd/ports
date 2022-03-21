@@ -13,7 +13,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_TEST =		Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR}
