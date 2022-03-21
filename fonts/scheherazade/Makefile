@@ -1,9 +1,8 @@
-V =			2.100
+V =			3.300
 COMMENT =		traditional Arabic Unicode font
-DISTNAME =		Scheherazade-${V}
+DISTNAME =		ScheherazadeNew-${V}
 PKGNAME =		scheherazade-${V}
 CATEGORIES =		fonts
-REVISION =		1
 
 HOMEPAGE =		https://software.sil.org/scheherazade/
 MAINTAINER =		George Rosamond <george@nycbug.org>
