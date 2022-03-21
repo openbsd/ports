@@ -1,8 +1,7 @@
 COMMENT =	scientific, technical and mathematical fonts
 
-V =		2.0.2
+V =		2.13b171
 PKGNAME =	stixfonts-${V}
-REVISION =	0
 
 GH_ACCOUNT =	stipub
 GH_PROJECT =	stixfonts
@@ -27,7 +26,8 @@ DOCDIR =		${PREFIX}/share/doc/stixfonts
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIST}/OTF/*.otf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/fonts/static_otf/*.otf ${FONTDIR}
+	${INSTALL_DATA} ${WRKDIST}/fonts/static_ttf/*.ttf ${FONTDIR}
 	${INSTALL_DATA} ${WRKDIST}/README.md ${DOCDIR}
 
 .include <bsd.port.mk>

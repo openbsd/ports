@@ -2,8 +2,21 @@ share/doc/stixfonts/
 share/doc/stixfonts/README.md
 share/fonts/
 @fontdir share/fonts/stixfonts/
-share/fonts/stixfonts/STIX2Math.otf
-share/fonts/stixfonts/STIX2Text-Bold.otf
-share/fonts/stixfonts/STIX2Text-BoldItalic.otf
-share/fonts/stixfonts/STIX2Text-Italic.otf
-share/fonts/stixfonts/STIX2Text-Regular.otf
+share/fonts/stixfonts/STIXTwoMath-Regular.otf
+share/fonts/stixfonts/STIXTwoMath-Regular.ttf
+share/fonts/stixfonts/STIXTwoText-Bold.otf
+share/fonts/stixfonts/STIXTwoText-Bold.ttf
+share/fonts/stixfonts/STIXTwoText-BoldItalic.otf
+share/fonts/stixfonts/STIXTwoText-BoldItalic.ttf
+share/fonts/stixfonts/STIXTwoText-Italic.otf
+share/fonts/stixfonts/STIXTwoText-Italic.ttf
+share/fonts/stixfonts/STIXTwoText-Medium.otf
+share/fonts/stixfonts/STIXTwoText-Medium.ttf
+share/fonts/stixfonts/STIXTwoText-MediumItalic.otf
+share/fonts/stixfonts/STIXTwoText-MediumItalic.ttf
+share/fonts/stixfonts/STIXTwoText-Regular.otf
+share/fonts/stixfonts/STIXTwoText-Regular.ttf
+share/fonts/stixfonts/STIXTwoText-SemiBold.otf
+share/fonts/stixfonts/STIXTwoText-SemiBold.ttf
+share/fonts/stixfonts/STIXTwoText-SemiBoldItalic.otf
+share/fonts/stixfonts/STIXTwoText-SemiBoldItalic.ttf
