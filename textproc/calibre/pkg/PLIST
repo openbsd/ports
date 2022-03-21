@@ -4401,6 +4401,7 @@ share/calibre/recipes/freenature.recipe
 share/calibre/recipes/freeway.recipe
 share/calibre/recipes/freisinger_tagblatt.png
 share/calibre/recipes/freisinger_tagblatt.recipe
+share/calibre/recipes/frontline.recipe
 share/calibre/recipes/fstream.png
 share/calibre/recipes/fstream.recipe
 share/calibre/recipes/fudzilla.png
@@ -5289,6 +5290,7 @@ share/calibre/recipes/onda_rock.recipe
 share/calibre/recipes/onemagazine.png
 share/calibre/recipes/onemagazine.recipe
 share/calibre/recipes/onionavclub.recipe
+share/calibre/recipes/open_magazine.recipe
 share/calibre/recipes/opindia.recipe
 share/calibre/recipes/opinion_bo.recipe
 share/calibre/recipes/optyczne_pl.png
@@ -5617,6 +5619,7 @@ share/calibre/recipes/security_watch.png
 share/calibre/recipes/security_watch.recipe
 share/calibre/recipes/sekurak_pl.png
 share/calibre/recipes/sekurak_pl.recipe
+share/calibre/recipes/seminar_magazine.recipe
 share/calibre/recipes/serverside.recipe
 share/calibre/recipes/sfbg.recipe
 share/calibre/recipes/sfin.png
@@ -5724,6 +5727,7 @@ share/calibre/recipes/superbebe.recipe
 share/calibre/recipes/superesportes.recipe
 share/calibre/recipes/svd_se.png
 share/calibre/recipes/svt_nyheter.recipe
+share/calibre/recipes/swarajya.recipe
 share/calibre/recipes/swiat_obrazu.png
 share/calibre/recipes/swiat_obrazu.recipe
 share/calibre/recipes/swiatkindle.png
