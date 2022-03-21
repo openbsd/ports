@@ -1,17 +1,16 @@
-PORTROACH=	limit:^2\.16
+PORTROACH=	limit:^2\.28
 
 COMMENT=	SSL library with an intuitive API and readable source code
 
 GH_ACCOUNT=	ARMmbed
 GH_PROJECT=	mbedtls
-GH_TAGNAME=	mbedtls-2.16.12
+GH_TAGNAME=	mbedtls-2.28.0
 DISTNAME=	${GH_TAGNAME}
-REVISION=	0
 
 # check SOVERSION
-SHARED_LIBS +=  mbedtls                   6.2 # 12
-SHARED_LIBS +=  mbedcrypto                4.4 # 3
-SHARED_LIBS +=  mbedx509                  3.1 # 0
+SHARED_LIBS +=  mbedtls		7.0
+SHARED_LIBS +=  mbedcrypto	5.0
+SHARED_LIBS +=  mbedx509	3.2
 
 CATEGORIES=	security
 

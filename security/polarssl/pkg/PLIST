@@ -21,6 +21,8 @@ include/mbedtls/cipher_internal.h
 include/mbedtls/cmac.h
 include/mbedtls/compat-1.3.h
 include/mbedtls/config.h
+include/mbedtls/config_psa.h
+include/mbedtls/constant_time.h
 include/mbedtls/ctr_drbg.h
 include/mbedtls/debug.h
 include/mbedtls/des.h
@@ -58,6 +60,7 @@ include/mbedtls/platform.h
 include/mbedtls/platform_time.h
 include/mbedtls/platform_util.h
 include/mbedtls/poly1305.h
+include/mbedtls/psa_util.h
 include/mbedtls/ripemd160.h
 include/mbedtls/rsa.h
 include/mbedtls/rsa_internal.h
@@ -78,6 +81,22 @@ include/mbedtls/x509_crl.h
 include/mbedtls/x509_crt.h
 include/mbedtls/x509_csr.h
 include/mbedtls/xtea.h
+include/psa/
+include/psa/crypto.h
+include/psa/crypto_builtin_composites.h
+include/psa/crypto_builtin_primitives.h
+include/psa/crypto_compat.h
+include/psa/crypto_config.h
+include/psa/crypto_driver_common.h
+include/psa/crypto_driver_contexts_composites.h
+include/psa/crypto_driver_contexts_primitives.h
+include/psa/crypto_extra.h
+include/psa/crypto_platform.h
+include/psa/crypto_se_driver.h
+include/psa/crypto_sizes.h
+include/psa/crypto_struct.h
+include/psa/crypto_types.h
+include/psa/crypto_values.h
 @static-lib lib/libmbedcrypto.a
 @lib lib/libmbedcrypto.so.${LIBmbedcrypto_VERSION}
 @static-lib lib/libmbedtls.a
@@ -95,11 +114,14 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/cert_write
 @bin share/examples/mbedtls/crl_app
 @bin share/examples/mbedtls/crypt_and_hash
+@bin share/examples/mbedtls/crypto_examples
 @bin share/examples/mbedtls/dh_client
 @bin share/examples/mbedtls/dh_genprime
 @bin share/examples/mbedtls/dh_server
 @bin share/examples/mbedtls/dtls_client
 @bin share/examples/mbedtls/dtls_server
+@bin share/examples/mbedtls/ecdh_curve25519
+@bin share/examples/mbedtls/ecdsa
 @bin share/examples/mbedtls/gen_entropy
 @bin share/examples/mbedtls/gen_key
 @bin share/examples/mbedtls/gen_random_ctr_drbg
@@ -107,6 +129,9 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/generic_sum
 @bin share/examples/mbedtls/hello
 @bin share/examples/mbedtls/key_app
+@bin share/examples/mbedtls/key_app_writer
+@bin share/examples/mbedtls/key_ladder_demo
+share/examples/mbedtls/key_ladder_demo.sh
 @bin share/examples/mbedtls/load_roots
 @bin share/examples/mbedtls/mini_client
 @bin share/examples/mbedtls/mpi_demo
@@ -115,16 +140,20 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/pk_encrypt
 @bin share/examples/mbedtls/pk_sign
 @bin share/examples/mbedtls/pk_verify
+@bin share/examples/mbedtls/psa_constant_names
 @bin share/examples/mbedtls/query_compile_time_config
 @bin share/examples/mbedtls/req_app
 @bin share/examples/mbedtls/rsa_decrypt
 @bin share/examples/mbedtls/rsa_encrypt
 @bin share/examples/mbedtls/rsa_genkey
 @bin share/examples/mbedtls/rsa_sign
+@bin share/examples/mbedtls/rsa_sign_pss
 @bin share/examples/mbedtls/rsa_verify
+@bin share/examples/mbedtls/rsa_verify_pss
 @bin share/examples/mbedtls/selftest
 @bin share/examples/mbedtls/ssl_client1
 @bin share/examples/mbedtls/ssl_client2
+@bin share/examples/mbedtls/ssl_context_info
 @bin share/examples/mbedtls/ssl_fork_server
 @bin share/examples/mbedtls/ssl_mail_client
 @bin share/examples/mbedtls/ssl_pthread_server
@@ -132,3 +161,4 @@ share/examples/mbedtls/README
 @bin share/examples/mbedtls/ssl_server2
 @bin share/examples/mbedtls/strerror
 @bin share/examples/mbedtls/udp_proxy
+@bin share/examples/mbedtls/zeroize
