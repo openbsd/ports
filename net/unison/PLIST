@@ -1,0 +1,9 @@
+@pkgpath net/unison/2.4x${FLAVOR_COMMA}
+@pkgpath net/unison/2.5x${FLAVOR_COMMA}
+@pkgpath net/unison/snapshot${FLAVOR_COMMA}
+@pkgpath net/unison/stable${FLAVOR_COMMA}
+@bin bin/unison
+share/doc/pkg-readmes/${PKGSTEM}
+share/doc/unison/
+share/doc/unison/NEWS.md
+share/doc/unison/README.md

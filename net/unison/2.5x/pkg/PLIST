@@ -1,7 +1,0 @@
-@option is-branch
-@conflict unison-*
-@bin bin/unison
-share/doc/pkg-readmes/${PKGSTEM}
-share/doc/unison/
-share/doc/unison/NEWS
-share/doc/unison/README

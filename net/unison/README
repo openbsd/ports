@@ -1,0 +1,28 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+This version of unison is compatible with:
+- unison 2.52 or newer. You do not have to pay any attention to OCaml
+  compiler versions.
+- unison 2.51 if both versions are compiled with same OCaml compiler
+  version.
+- unison 2.48 if both versions are compiled with same OCaml compiler
+  version.
+
+It is possible to use the OPAM OCaml package manager to build unison
+with the same version of the OCaml compiler on all machines:
+
+doas pkg_add opam
+export OPAMROOT=~/opam_unison
+opam init --no-setup --compiler ocaml-base-compiler.4.09.0
+opam install unison lablgtk  # To build without the gui, remove lablgtk
+$(opam var bin)/unison
+
+Common issue
+=============
+Unison sometimes reports chown() failures that are actually failures to
+change group ownership. This can occur when a user does not belong to
+the specified group and is the owner of the file, or is not the
+superuser. Issue can be addressed by setting the option 'group' to
+'false'.
