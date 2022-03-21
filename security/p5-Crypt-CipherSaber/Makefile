@@ -1,7 +1,7 @@
 COMMENT =	cryptographic CipherSaber encryption
 
 DISTNAME =	Crypt-CipherSaber-1.01
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =		devel/p5-Test-Warn
+TEST_DEPENDS =		devel/p5-Test-Warn>=0.30
 
 PKG_ARCH =		*
 
