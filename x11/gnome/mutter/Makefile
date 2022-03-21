@@ -1,7 +1,7 @@
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		41.4
+GNOME_VERSION=		41.5
 
 SHARED_LIBS += mutter-cogl-9             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-pango-9       0.0 # 0.0.0
@@ -35,11 +35,11 @@ LIB_DEPENDS=		audio/libcanberra \
 			x11/gnome/desktop \
 			x11/xkbcommon
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/zenity
 
-RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.16.0 \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/zenity
 
