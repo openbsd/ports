@@ -3,7 +3,7 @@ COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.5.9
+V=		0.5.10
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
