@@ -1,9 +1,10 @@
 COMMENT=	SSH remote version scanner
 
-DISTNAME=	scanssh-2.1
-REVISION =	4
+GH_ACCOUNT=	ofalk
+GH_PROJECT=	scanssh
+GH_TAGNAME=	2.1.2
+
 CATEGORIES=	security
-MASTER_SITES=	https://monkey.org/~provos/
 
 HOMEPAGE=	https://www.monkey.org/~provos/scanssh/
 
@@ -14,6 +15,7 @@ LIB_DEPENDS=	net/libdnet
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
+MAKE_FLAGS=	CFLAGS="${CFLAGS} -Wall"
 
 NO_TEST=	Yes
 

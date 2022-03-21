@@ -1,2 +1,2 @@
-bin/scanssh
+@bin bin/scanssh
 @man man/man1/scanssh.1
