@@ -1,3 +1,6 @@
+BROKEN-aarch64 =	old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
+BROKEN-arm =		old kr/pty doesn't support OpenBSD arm arches; needs creack/pty@v1.1.11
+
 COMMENT =		CI/CD job runner for GitLab
 
 V =			v14.2.0
