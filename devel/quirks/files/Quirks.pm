@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1379 2022/03/19 10:36:05 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1380 2022/03/21 12:46:22 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1102,8 +1102,6 @@ setup_obsolete_reason(
 	3 => 'py-vatnumber',
 	6 => 'nap',
 	5 => 'qucs',
-	1 => 'py-arrow',
-	1 => 'py3-arrow',
 	1 => 'py-chai',
 	1 => 'py3-chai',
 	1 => 'py-binaryornot',
