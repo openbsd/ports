@@ -1,17 +1,17 @@
 COMMENT=	HTTP latency performance testing client
 
-DISTNAME=	http_ping_29jun2005
-PKGNAME=	http_ping-20050629
-REVISION=	0
+DISTNAME=	http_ping_09Mar2016
+PKGNAME=	http_ping-20160309
 CATEGORIES=	www benchmarks
 
-HOMEPAGE=	http://www.acme.com/software/http_ping/
+HOMEPAGE=	https://www.acme.com/software/http_ping/
 
 MASTER_SITES=	${HOMEPAGE}
 
 # BSD
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c crypto ssl 
+
+WANTLIB=	c crypto ssl
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
