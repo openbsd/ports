@@ -1,7 +1,7 @@
 Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 --- sandbox/policy/openbsd/sandbox_openbsd.cc.orig
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,401 @@
+@@ -0,0 +1,402 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -114,6 +114,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +
 +  base::SysInfo::AmountOfPhysicalMemory();
 +  base::SysInfo::NumberOfProcessors();
++  base::SysInfo::CPUModelName();
 +
 +#if defined(USE_NSS_CERTS)
 +  // The main process has to initialize the ~/.pki dir which won't work

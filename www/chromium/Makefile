@@ -7,6 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			99.0.4844.82
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -143,6 +144,7 @@ GN_ARGS=	enable_nacl=false \
 		enable_js_type_check=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
+		enable_hangout_services_extension=true \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
