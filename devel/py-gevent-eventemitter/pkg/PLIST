@@ -1,0 +1,11 @@
+lib/python${MODPY_VERSION}/site-packages/eventemitter/
+lib/python${MODPY_VERSION}/site-packages/eventemitter/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/eventemitter/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/eventemitter/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/gevent_eventemitter-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
