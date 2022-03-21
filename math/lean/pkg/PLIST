@@ -165,6 +165,7 @@ include/lean_ext/library/expr_lt.h
 include/lean_ext/library/expr_pair.h
 include/lean_ext/library/expr_pair_maps.h
 include/lean_ext/library/expr_unsigned_map.h
+include/lean_ext/library/feature_search.h
 include/lean_ext/library/fingerprint.h
 include/lean_ext/library/fun_info.h
 include/lean_ext/library/handle.h
@@ -210,6 +211,8 @@ include/lean_ext/library/phashtable.h
 include/lean_ext/library/pipe.h
 include/lean_ext/library/placeholder.h
 include/lean_ext/library/pp_options.h
+include/lean_ext/library/predict/
+include/lean_ext/library/predict/predict.h
 include/lean_ext/library/print.h
 include/lean_ext/library/private.h
 include/lean_ext/library/process.h
@@ -686,6 +689,8 @@ lib/lean/library/init/meta/expr.lean
 lib/lean/library/init/meta/expr.olean
 lib/lean/library/init/meta/expr_address.lean
 lib/lean/library/init/meta/expr_address.olean
+lib/lean/library/init/meta/feature_search.lean
+lib/lean/library/init/meta/feature_search.olean
 lib/lean/library/init/meta/float.lean
 lib/lean/library/init/meta/float.olean
 lib/lean/library/init/meta/format.lean
@@ -698,6 +703,8 @@ lib/lean/library/init/meta/hole_command.lean
 lib/lean/library/init/meta/hole_command.olean
 lib/lean/library/init/meta/injection_tactic.lean
 lib/lean/library/init/meta/injection_tactic.olean
+lib/lean/library/init/meta/instance_cache.lean
+lib/lean/library/init/meta/instance_cache.olean
 lib/lean/library/init/meta/interaction_monad.lean
 lib/lean/library/init/meta/interaction_monad.olean
 lib/lean/library/init/meta/interactive.lean

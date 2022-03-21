@@ -2,7 +2,7 @@ COMMENT =		interactive and automated theorem prover
 
 GH_ACCOUNT =		leanprover-community
 GH_PROJECT =		lean
-GH_TAGNAME =		v3.35.1
+GH_TAGNAME =		v3.42.0
 
 CATEGORIES =		math lang
 
