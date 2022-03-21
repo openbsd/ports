@@ -2,9 +2,7 @@ COMMENT =		generate access/prefix lists for BGP config
 
 GH_ACCOUNT =		snar
 GH_PROJECT =		bgpq3
-GH_TAGNAME =		v0.1.35
-
-REVISION =		2
+GH_TAGNAME =		v0.1.36.1
 
 CATEGORIES =		net
 
