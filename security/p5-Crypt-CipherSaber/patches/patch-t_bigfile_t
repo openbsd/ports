@@ -1,0 +1,38 @@
+Ports privsep does not allow to write into t directory.
+
+Index: t/bigfile.t
+--- t/bigfile.t.orig
++++ t/bigfile.t
+@@ -1,25 +1,25 @@
+ #!perl -w
+ 
+-BEGIN
+-{
+-	chdir 't' if -d 't';
+-}
+-
+ use strict;
++use File::Temp qw(tempfile);
+ use Test::More tests => 2;
+ 
+ use_ok( 'Crypt::CipherSaber' );
+ 
++my ($fh, $filename) = tempfile(UNLINK => 1,
++    TEMPLATE => "/tmp/smiles.png.XXXXXXXXXX");
++chdir 't' or die "Couldn't chdir: $!";
++
+ my $cs = Crypt::CipherSaber->new( 'sdrawkcabsihtdaeR' );
+ open( INPUT, 'smiles.cs1' ) or die "Couldn't open: $!";
+ binmode(INPUT);
+-open(OUTPUT, '> smiles.png') or die "Couldn't open: $!";
++open(OUTPUT, '>&', $fh) or die "Couldn't open: $!";
+ binmode(OUTPUT);
+ $cs->fh_crypt(\*INPUT, \*OUTPUT);
+ close INPUT;
+ close OUTPUT;
+ 
+-open(TEST, 'smiles.png') or die "Couldn't open: $!";
++open(TEST, $filename) or die "Couldn't open: $!";
+ my $line = <TEST>;
+ 
+ like( $line, qr/PNG/, 'Encrypting a large file should not mangle it' );
