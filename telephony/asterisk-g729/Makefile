@@ -6,6 +6,7 @@ EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
 MASTER_SITES=	http://asterisk.hosting.lv/src/
 
+# https://github.com/arkadijs/asterisk-g72x
 HOMEPAGE=	http://asterisk.hosting.lv/
 
 # GPL frontend to patented algorithm; free to use for non-commercial purposes
