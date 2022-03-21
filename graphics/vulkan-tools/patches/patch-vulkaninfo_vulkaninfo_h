@@ -10,7 +10,7 @@ Index: vulkaninfo/vulkaninfo.h
  #include <dlfcn.h>
  #endif
  
-@@ -262,7 +262,7 @@ auto GetVector(const char *func_name, F &&f, Ts &&... 
+@@ -244,7 +244,7 @@ auto GetVector(const char *func_name, F &&f, Ts &&...t
  // ----------- Instance Setup ------- //
  struct VkDll {
      VkResult Initialize() {
@@ -19,7 +19,7 @@ Index: vulkaninfo/vulkaninfo.h
          library = dlopen("libvulkan.so", RTLD_NOW | RTLD_LOCAL);
          if (!library) library = dlopen("libvulkan.so.1", RTLD_NOW | RTLD_LOCAL);
  #elif defined(_WIN32)
-@@ -274,7 +274,7 @@ struct VkDll {
+@@ -256,7 +256,7 @@ struct VkDll {
          return VK_SUCCESS;
      }
      void Close() {
@@ -28,7 +28,7 @@ Index: vulkaninfo/vulkaninfo.h
          dlclose(library);
  #elif defined(_WIN32)
          FreeLibrary(library);
-@@ -429,13 +429,13 @@ struct VkDll {
+@@ -411,13 +411,13 @@ struct VkDll {
    private:
      template <typename T>
      void Load(T &func_dest, const char *func_name) {
@@ -44,7 +44,7 @@ Index: vulkaninfo/vulkaninfo.h
      void *library;
  #elif defined(_WIN32)
      HMODULE library;
-@@ -1765,4 +1765,4 @@ std::unordered_map<PropFlags, std::vector<VkFormat>> F
+@@ -1747,4 +1747,4 @@ std::unordered_map<PropFlags, std::vector<VkFormat>> F
          }
      }
      return map;

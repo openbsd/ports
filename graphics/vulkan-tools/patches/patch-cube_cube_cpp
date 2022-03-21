@@ -1,7 +1,7 @@
 Index: cube/cube.cpp
 --- cube/cube.cpp.orig
 +++ cube/cube.cpp
-@@ -3256,7 +3256,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPre
+@@ -3269,7 +3269,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPre
      return (int)msg.wParam;
  }
  

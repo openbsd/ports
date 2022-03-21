@@ -22,6 +22,7 @@ include/vulkan/vulkan_fuchsia.h
 include/vulkan/vulkan_funcs.hpp
 include/vulkan/vulkan_ggp.h
 include/vulkan/vulkan_handles.hpp
+include/vulkan/vulkan_hash.hpp
 include/vulkan/vulkan_ios.h
 include/vulkan/vulkan_macos.h
 include/vulkan/vulkan_metal.h
@@ -36,6 +37,7 @@ include/vulkan/vulkan_xlib.h
 include/vulkan/vulkan_xlib_xrandr.h
 share/vulkan/
 share/vulkan/registry/
+share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/conventions.py
 share/vulkan/registry/generator.py

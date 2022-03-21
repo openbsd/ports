@@ -1,11 +1,10 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.2.198.0
+V =		1.3.204.1
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-ValidationLayers
-REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -25,13 +24,11 @@ MODULES =	devel/cmake \
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/robin-hood-hashing \
-		graphics/glslang \
 		graphics/vulkan-headers \
 		graphics/spirv-headers \
 		graphics/spirv-tools
 
-CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="${LOCALBASE}" \
-			-DBUILD_WSI_WAYLAND_SUPPORT=False \
+CONFIGURE_ARGS +=	-DBUILD_WSI_WAYLAND_SUPPORT=False \
 			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
 			-DBUILD_WERROR=False
 
