@@ -1,7 +1,5 @@
 share/fonts/
 @fontdir share/fonts/public-sans/
-share/fonts/public-sans/Public-Sans-Italic-VF.ttf
-share/fonts/public-sans/Public-Sans-Roman-VF.ttf
 share/fonts/public-sans/PublicSans-Black.otf
 share/fonts/public-sans/PublicSans-Black.ttf
 share/fonts/public-sans/PublicSans-BlackItalic.otf
@@ -20,6 +18,7 @@ share/fonts/public-sans/PublicSans-ExtraLightItalic.otf
 share/fonts/public-sans/PublicSans-ExtraLightItalic.ttf
 share/fonts/public-sans/PublicSans-Italic.otf
 share/fonts/public-sans/PublicSans-Italic.ttf
+share/fonts/public-sans/PublicSans-Italic[wght].ttf
 share/fonts/public-sans/PublicSans-Light.otf
 share/fonts/public-sans/PublicSans-Light.ttf
 share/fonts/public-sans/PublicSans-LightItalic.otf
@@ -38,3 +37,4 @@ share/fonts/public-sans/PublicSans-Thin.otf
 share/fonts/public-sans/PublicSans-Thin.ttf
 share/fonts/public-sans/PublicSans-ThinItalic.otf
 share/fonts/public-sans/PublicSans-ThinItalic.ttf
+share/fonts/public-sans/PublicSans[wght].ttf

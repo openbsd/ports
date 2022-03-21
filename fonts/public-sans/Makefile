@@ -1,9 +1,8 @@
 COMMENT =		strong, neutral, principles-driven typeface
 
-V =			1.008
+V =			2.000
 DISTNAME =		public-sans-v$V
 PKGNAME =		public-sans-$V
-REVISION =		1
 
 CATEGORIES =		fonts
 
@@ -29,7 +28,7 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIST}/binaries/*/*.{ttf,otf} \
+	${INSTALL_DATA} ${WRKDIST}/fonts/*/*.{ttf,otf} \
 		${FONTDIR}
 
 .include <bsd.port.mk>
