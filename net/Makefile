@@ -722,6 +722,7 @@
      SUBDIR += uhttpmock
      SUBDIR += unifi
      SUBDIR += unison
+     SUBDIR += unison,no_x11
      SUBDIR += unworkable
      SUBDIR += usockets
      SUBDIR += usrsctp
