@@ -1,7 +1,7 @@
 Index: perl/SNMP/Makefile.PL
 --- perl/SNMP/Makefile.PL.orig
 +++ perl/SNMP/Makefile.PL
-@@ -24,7 +24,7 @@ sub SnmpInitMakeParams {
+@@ -25,7 +25,7 @@ sub SnmpInitMakeParams {
      my %Params = (
  		  NAME         => 'SNMP',
  		  dist         => { SUFFIX => "gz", COMPRESS => "gzip -9f"},

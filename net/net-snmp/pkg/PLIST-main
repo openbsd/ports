@@ -203,6 +203,7 @@ include/net-snmp/system/freebsd9.h
 include/net-snmp/system/generic.h
 include/net-snmp/system/hpux.h
 include/net-snmp/system/irix.h
+include/net-snmp/system/kfreebsd.h
 include/net-snmp/system/linux.h
 include/net-snmp/system/mingw32.h
 include/net-snmp/system/mingw32msvc.h
