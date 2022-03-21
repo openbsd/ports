@@ -1,5 +1,6 @@
---- src/init.c.orig	Sun Dec 19 06:51:30 2004
-+++ src/init.c	Wed May 30 16:25:24 2007
+Index: src/init.c
+--- src/init.c.orig
++++ src/init.c
 @@ -1458,7 +1458,6 @@ choice strtoinfmt(Inputformat **ans, char *s, choice *
  	c++;
        if (*c == 'S')

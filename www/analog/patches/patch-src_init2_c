@@ -1,5 +1,6 @@
---- src/init2.c.orig	Sun Dec 19 06:51:30 2004
-+++ src/init2.c	Wed May 30 16:25:24 2007
+Index: src/init2.c
+--- src/init2.c.orig
++++ src/init2.c
 @@ -226,10 +226,10 @@ void configchoice(void *opt, char *cmd, char *arg1, ch
      return;
    }

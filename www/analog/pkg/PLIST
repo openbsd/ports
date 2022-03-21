@@ -1,302 +1,286 @@
 @conflict chipmunk-*
-bin/analog
+@bin bin/analog
+@man man/man1/analog.1
 share/analog/
 share/analog/anlgform.html
 share/analog/anlgform.pl
 @mode 111
-@group bin
 @sample /var/www/cgi-bin/anlgform.pl
 @mode
-@group
 share/analog/images/
-@group bin
 @sample /var/www/htdocs/analog-images/
-@group
+share/analog/images/analog.css
+@sample /var/www/htdocs/analog-images/analog.css
 share/analog/images/analogo.gif
-@group bin
 @sample /var/www/htdocs/analog-images/analogo.gif
-@group
 share/analog/images/analogo.png
+@sample /var/www/htdocs/analog-images/analogo.png
 share/analog/images/bara1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bara1.gif
-@group
 share/analog/images/bara1.png
+@sample /var/www/htdocs/analog-images/bara1.png
 share/analog/images/bara16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bara16.gif
-@group
 share/analog/images/bara16.png
+@sample /var/www/htdocs/analog-images/bara16.png
 share/analog/images/bara2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bara2.gif
-@group
 share/analog/images/bara2.png
+@sample /var/www/htdocs/analog-images/bara2.png
 share/analog/images/bara32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bara32.gif
-@group
 share/analog/images/bara32.png
+@sample /var/www/htdocs/analog-images/bara32.png
 share/analog/images/bara4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bara4.gif
-@group
 share/analog/images/bara4.png
+@sample /var/www/htdocs/analog-images/bara4.png
 share/analog/images/bara8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bara8.gif
-@group
 share/analog/images/bara8.png
+@sample /var/www/htdocs/analog-images/bara8.png
 share/analog/images/barb1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barb1.gif
-@group
 share/analog/images/barb1.png
+@sample /var/www/htdocs/analog-images/barb1.png
 share/analog/images/barb16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barb16.gif
-@group
 share/analog/images/barb16.png
+@sample /var/www/htdocs/analog-images/barb16.png
 share/analog/images/barb2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barb2.gif
-@group
 share/analog/images/barb2.png
+@sample /var/www/htdocs/analog-images/barb2.png
 share/analog/images/barb32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barb32.gif
-@group
 share/analog/images/barb32.png
+@sample /var/www/htdocs/analog-images/barb32.png
 share/analog/images/barb4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barb4.gif
-@group
 share/analog/images/barb4.png
+@sample /var/www/htdocs/analog-images/barb4.png
 share/analog/images/barb8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barb8.gif
-@group
 share/analog/images/barb8.png
+@sample /var/www/htdocs/analog-images/barb8.png
 share/analog/images/barc1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barc1.gif
-@group
 share/analog/images/barc1.png
+@sample /var/www/htdocs/analog-images/barc1.png
 share/analog/images/barc16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barc16.gif
-@group
 share/analog/images/barc16.png
+@sample /var/www/htdocs/analog-images/barc16.png
 share/analog/images/barc2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barc2.gif
-@group
 share/analog/images/barc2.png
+@sample /var/www/htdocs/analog-images/barc2.png
 share/analog/images/barc32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barc32.gif
-@group
 share/analog/images/barc32.png
+@sample /var/www/htdocs/analog-images/barc32.png
 share/analog/images/barc4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barc4.gif
-@group
 share/analog/images/barc4.png
+@sample /var/www/htdocs/analog-images/barc4.png
 share/analog/images/barc8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barc8.gif
-@group
 share/analog/images/barc8.png
+@sample /var/www/htdocs/analog-images/barc8.png
 share/analog/images/bard1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bard1.gif
-@group
 share/analog/images/bard1.png
+@sample /var/www/htdocs/analog-images/bard1.png
 share/analog/images/bard16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bard16.gif
-@group
 share/analog/images/bard16.png
+@sample /var/www/htdocs/analog-images/bard16.png
 share/analog/images/bard2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bard2.gif
-@group
 share/analog/images/bard2.png
+@sample /var/www/htdocs/analog-images/bard2.png
 share/analog/images/bard32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bard32.gif
-@group
 share/analog/images/bard32.png
+@sample /var/www/htdocs/analog-images/bard32.png
 share/analog/images/bard4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bard4.gif
-@group
 share/analog/images/bard4.png
+@sample /var/www/htdocs/analog-images/bard4.png
 share/analog/images/bard8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bard8.gif
-@group
 share/analog/images/bard8.png
+@sample /var/www/htdocs/analog-images/bard8.png
 share/analog/images/bare1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bare1.gif
-@group
 share/analog/images/bare1.png
+@sample /var/www/htdocs/analog-images/bare1.png
 share/analog/images/bare16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bare16.gif
-@group
 share/analog/images/bare16.png
+@sample /var/www/htdocs/analog-images/bare16.png
 share/analog/images/bare2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bare2.gif
-@group
 share/analog/images/bare2.png
+@sample /var/www/htdocs/analog-images/bare2.png
 share/analog/images/bare32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bare32.gif
-@group
 share/analog/images/bare32.png
+@sample /var/www/htdocs/analog-images/bare32.png
 share/analog/images/bare4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bare4.gif
-@group
 share/analog/images/bare4.png
+@sample /var/www/htdocs/analog-images/bare4.png
 share/analog/images/bare8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/bare8.gif
-@group
 share/analog/images/bare8.png
+@sample /var/www/htdocs/analog-images/bare8.png
 share/analog/images/barf1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barf1.gif
-@group
 share/analog/images/barf1.png
+@sample /var/www/htdocs/analog-images/barf1.png
 share/analog/images/barf16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barf16.gif
-@group
 share/analog/images/barf16.png
+@sample /var/www/htdocs/analog-images/barf16.png
 share/analog/images/barf2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barf2.gif
-@group
 share/analog/images/barf2.png
+@sample /var/www/htdocs/analog-images/barf2.png
 share/analog/images/barf32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barf32.gif
-@group
 share/analog/images/barf32.png
+@sample /var/www/htdocs/analog-images/barf32.png
 share/analog/images/barf4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barf4.gif
-@group
 share/analog/images/barf4.png
+@sample /var/www/htdocs/analog-images/barf4.png
 share/analog/images/barf8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barf8.gif
-@group
 share/analog/images/barf8.png
+@sample /var/www/htdocs/analog-images/barf8.png
 share/analog/images/barg1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barg1.gif
-@group
 share/analog/images/barg1.png
+@sample /var/www/htdocs/analog-images/barg1.png
 share/analog/images/barg16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barg16.gif
-@group
 share/analog/images/barg16.png
+@sample /var/www/htdocs/analog-images/barg16.png
 share/analog/images/barg2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barg2.gif
-@group
 share/analog/images/barg2.png
+@sample /var/www/htdocs/analog-images/barg2.png
 share/analog/images/barg32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barg32.gif
-@group
 share/analog/images/barg32.png
+@sample /var/www/htdocs/analog-images/barg32.png
 share/analog/images/barg4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barg4.gif
-@group
 share/analog/images/barg4.png
+@sample /var/www/htdocs/analog-images/barg4.png
 share/analog/images/barg8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barg8.gif
-@group
 share/analog/images/barg8.png
+@sample /var/www/htdocs/analog-images/barg8.png
 share/analog/images/barh1.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barh1.gif
-@group
 share/analog/images/barh1.png
+@sample /var/www/htdocs/analog-images/barh1.png
 share/analog/images/barh16.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barh16.gif
-@group
 share/analog/images/barh16.png
+@sample /var/www/htdocs/analog-images/barh16.png
 share/analog/images/barh2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barh2.gif
-@group
 share/analog/images/barh2.png
+@sample /var/www/htdocs/analog-images/barh2.png
 share/analog/images/barh32.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barh32.gif
-@group
 share/analog/images/barh32.png
+@sample /var/www/htdocs/analog-images/barh32.png
 share/analog/images/barh4.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barh4.gif
-@group
 share/analog/images/barh4.png
+@sample /var/www/htdocs/analog-images/barh4.png
 share/analog/images/barh8.gif
-@group bin
 @sample /var/www/htdocs/analog-images/barh8.gif
-@group
 share/analog/images/barh8.png
+@sample /var/www/htdocs/analog-images/barh8.png
 share/analog/images/bari1.gif
+@sample /var/www/htdocs/analog-images/bari1.gif
 share/analog/images/bari1.png
+@sample /var/www/htdocs/analog-images/bari1.png
 share/analog/images/bari16.gif
+@sample /var/www/htdocs/analog-images/bari16.gif
 share/analog/images/bari16.png
+@sample /var/www/htdocs/analog-images/bari16.png
 share/analog/images/bari2.gif
+@sample /var/www/htdocs/analog-images/bari2.gif
 share/analog/images/bari2.png
+@sample /var/www/htdocs/analog-images/bari2.png
 share/analog/images/bari32.gif
+@sample /var/www/htdocs/analog-images/bari32.gif
 share/analog/images/bari32.png
+@sample /var/www/htdocs/analog-images/bari32.png
 share/analog/images/bari4.gif
+@sample /var/www/htdocs/analog-images/bari4.gif
 share/analog/images/bari4.png
+@sample /var/www/htdocs/analog-images/bari4.png
 share/analog/images/bari8.gif
+@sample /var/www/htdocs/analog-images/bari8.gif
 share/analog/images/bari8.png
+@sample /var/www/htdocs/analog-images/bari8.png
 share/analog/images/barj1.gif
+@sample /var/www/htdocs/analog-images/barj1.gif
 share/analog/images/barj1.png
+@sample /var/www/htdocs/analog-images/barj1.png
 share/analog/images/barj16.gif
+@sample /var/www/htdocs/analog-images/barj16.gif
 share/analog/images/barj16.png
+@sample /var/www/htdocs/analog-images/barj16.png
 share/analog/images/barj2.gif
+@sample /var/www/htdocs/analog-images/barj2.gif
 share/analog/images/barj2.png
+@sample /var/www/htdocs/analog-images/barj2.png
 share/analog/images/barj32.gif
+@sample /var/www/htdocs/analog-images/barj32.gif
 share/analog/images/barj32.png
+@sample /var/www/htdocs/analog-images/barj32.png
 share/analog/images/barj4.gif
+@sample /var/www/htdocs/analog-images/barj4.gif
 share/analog/images/barj4.png
+@sample /var/www/htdocs/analog-images/barj4.png
 share/analog/images/barj8.gif
+@sample /var/www/htdocs/analog-images/barj8.gif
 share/analog/images/barj8.png
+@sample /var/www/htdocs/analog-images/barj8.png
 share/analog/images/html2.gif
-@group bin
 @sample /var/www/htdocs/analog-images/html2.gif
-@group
 share/analog/images/html2.png
+@sample /var/www/htdocs/analog-images/html2.png
 share/analog/images/sq0.png
+@sample /var/www/htdocs/analog-images/sq0.png
 share/analog/images/sq1.png
+@sample /var/www/htdocs/analog-images/sq1.png
 share/analog/images/sq2.png
+@sample /var/www/htdocs/analog-images/sq2.png
 share/analog/images/sq3.png
+@sample /var/www/htdocs/analog-images/sq3.png
 share/analog/images/sq4.png
+@sample /var/www/htdocs/analog-images/sq4.png
 share/analog/images/sq5.png
+@sample /var/www/htdocs/analog-images/sq5.png
 share/analog/images/sq6.png
+@sample /var/www/htdocs/analog-images/sq6.png
 share/analog/images/sq7.png
+@sample /var/www/htdocs/analog-images/sq7.png
 share/analog/images/sq8.png
+@sample /var/www/htdocs/analog-images/sq8.png
 share/analog/images/sq9.png
+@sample /var/www/htdocs/analog-images/sq9.png
 share/analog/images/sqg.png
+@sample /var/www/htdocs/analog-images/sqg.png
 share/analog/lang/
 share/analog/lang/README.txt
 share/analog/lang/am.lng

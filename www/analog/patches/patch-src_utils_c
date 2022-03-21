@@ -1,5 +1,6 @@
---- src/utils.c.orig	Sun Dec 19 06:51:31 2004
-+++ src/utils.c	Wed May 30 16:25:24 2007
+Index: src/utils.c
+--- src/utils.c.orig
++++ src/utils.c
 @@ -706,7 +706,7 @@ logical wildmatch(char *s, char *p, char *whole, int n
       below. */
    ss = strchr(s, '\0');

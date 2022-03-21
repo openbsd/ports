@@ -1,18 +1,18 @@
 COMMENT=	extremely fast program for analysing WWW logfiles
 
-DISTNAME=	analog-6.0
-REVISION=	5
+GH_ACCOUNT=	c-amie
+GH_PROJECT=	analog-ce
+GH_TAGNAME=	6.0.17
+DISTNAME=	analog-${GH_TAGNAME}
+
 CATEGORIES=	www
 
-HOMEPAGE=	https://analog.gsp.com/
-
-MASTER_SITES=	https://analog.gsp.com/ \
-		https://redmoon.reverse.net/analog/
+HOMEPAGE=	https://www.c-amie.co.uk/software/analog/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv m jpeg png z gd>=18 pcre pthread
+WANTLIB += c iconv m jpeg png z gd pcre
 
 LIB_DEPENDS=	converters/libiconv \
 		graphics/gd \
@@ -37,17 +37,11 @@ ALL_TARGET=	analog
 MAKE_FLAGS=	CC='${CC}' CFLAGS='${CFLAGS}' \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgd -lpng -lm -ljpeg -lz -lpcre -liconv"
 
-pre-configure:
-	@mv ${WRKSRC}/anlgform.pl ${WRKSRC}/anlgform.pl.src
-	@sed -e "s,@PREFIX@,${PREFIX},g" < ${WRKSRC}/anlgform.pl.src \
-		> ${WRKSRC}/anlgform.pl
-
 NO_TEST=	Yes
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/analog
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/analog
-	${INSTALL_DATA_DIR} ${ANALOGDIR}/lang ${ANALOGDIR}/images
+	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/analog \
+	    ${ANALOGDIR}/lang ${ANALOGDIR}/images
 	${INSTALL_PROGRAM} ${WRKBUILD}/analog ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg \
@@ -56,5 +50,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${ANALOGDIR}/lang
 	cd ${WRKSRC} && ${INSTALL_DATA} anlgform.html anlgform.pl \
 	    ${ANALOGDIR}
+	${INSTALL_MAN} ${WRKSRC}/analog.man ${PREFIX}/man/man1/analog.1
 
 .include <bsd.port.mk>

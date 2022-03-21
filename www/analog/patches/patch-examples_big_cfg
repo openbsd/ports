@@ -1,5 +1,6 @@
---- examples/big.cfg.orig	Sun Dec 19 06:51:23 2004
-+++ examples/big.cfg	Wed May 30 16:25:24 2007
+Index: examples/big.cfg
+--- examples/big.cfg.orig
++++ examples/big.cfg
 @@ -19,7 +19,7 @@
  # it must go here, above the LOGFILE commands.
  # LOGFORMAT MICROSOFT-NA
