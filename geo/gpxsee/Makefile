@@ -2,7 +2,7 @@ COMMENT =	gpx file viewer
 
 GH_PROJECT =	GPXSee
 GH_ACCOUNT =	tumic0
-GH_TAGNAME =	10.1
+GH_TAGNAME =	10.4
 PKGNAME =	${DISTNAME:L}
 
 CATEGORIES =	geo x11
