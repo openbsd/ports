@@ -68,15 +68,13 @@ pre-configure:
 		${WRKSRC}/themes/default/theme.lua
 
 post-install:
-	@rm ${WRKINST}${LOCALBASE}/share/awesome/themes/*/*.{beforesubst,orig}
-
-	@mv ${WRKINST}${LOCALBASE}/share/man/man? \
-		${WRKINST}${LOCALBASE}/man
-
-	@rm -rf ${WRKINST}${LOCALBASE}/share/man
+	rm ${PREFIX}/share/awesome/themes/*/*.beforesubst \
+	    ${PREFIX}/share/awesome/themes/*/*${PATCHORIG}
+	mv ${PREFIX}/share/man/man? ${PREFIX}/man
+	rm -r ${PREFIX}/share/man
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
-	@mv ${WRKINST}${SYSCONFDIR}/xdg/awesome/rc.lua \
+	mv ${WRKINST}${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/
 
 .include <bsd.port.mk>
