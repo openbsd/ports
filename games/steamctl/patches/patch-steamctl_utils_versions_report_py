@@ -1,0 +1,14 @@
+use cryptodome; see py3-cryptodomex => py3-cryptodome in Quirks
+
+Index: steamctl/utils/versions_report.py
+--- steamctl/utils/versions_report.py.orig
++++ steamctl/utils/versions_report.py
+@@ -32,7 +32,7 @@ def versions_report(output=sys.stdout):
+                 'gevent',
+                 'greenlet',
+                 'pyyaml',
+-                'pycryptodomex',
++                'cryptodome',
+                 'protobuf',
+                 ]:
+         print("{:>20}:".format(dep), installed_pkgs.get(dep.lower(), "Not Installed"))

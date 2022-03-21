@@ -1,0 +1,11 @@
+A python module for interacting with various parts of Steam.
+
+Features
+
+SteamClient - communication with the steam network based on gevent
+CDNClient - access to Steam content depots
+WebAuth - authentication for store.steampowered.com and steamcommunity.com
+WebAPI - simple API for Steam's Web API with automatic population of interfaces
+SteamAuthenticator - manage two factor authentication for Steam accounts
+SteamID - convert between the various ID representations with ease
+Master Server Query Protocol - query masters servers directly or via SteamClient

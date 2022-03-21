@@ -1,0 +1,4 @@
+steamctl is an open-source CLI utility similar to steamcmd. It provides access
+to a number of Steam features and data from the command line. While it is
+possible to download apps and content from Steam, steamctl is not a game
+launcher.
