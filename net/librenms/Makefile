@@ -3,11 +3,9 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.2.2
-REVISION=	0
-MASTER_SITES=	https://github.com/librenms/librenms/archive/refs/tags/
+GH_TAGNAME=	22.3.0
 
-DISTFILES=	librenms-{}22.2.2.tar.gz \
+DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
 EPOCH=		0
 
