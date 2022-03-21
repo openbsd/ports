@@ -10,7 +10,7 @@ Index: config/config.json
      "Forward80To443": false,
      "TrustedProxyIPHeader": [],
      "ReadTimeout": 300,
-@@ -86,7 +86,7 @@
+@@ -87,7 +87,7 @@
      "EnableInlineLatex": true,
      "EnableAPIChannelDeletion": false,
      "EnableLocalMode": false,
@@ -19,7 +19,7 @@ Index: config/config.json
      "EnableAWSMetering": false,
      "SplitKey": "",
      "FeatureFlagSyncIntervalSeconds": 30,
-@@ -141,14 +141,14 @@
+@@ -143,14 +143,14 @@
      "ReplicaLagSettings": []
    },
    "LogSettings": {
@@ -36,7 +36,7 @@ Index: config/config.json
      "EnableWebhookDebugging": true,
      "EnableDiagnostics": true,
      "EnableSentry": true,
-@@ -165,14 +165,14 @@
+@@ -167,14 +167,14 @@
      "AdvancedLoggingConfig": ""
    },
    "NotificationLogSettings": {
@@ -53,7 +53,7 @@ Index: config/config.json
      "AdvancedLoggingConfig": ""
    },
    "PasswordSettings": {
-@@ -189,7 +189,7 @@
+@@ -191,7 +191,7 @@
      "MaxFileSize": 104857600,
      "MaxImageResolution": 33177600,
      "DriverName": "local",
@@ -62,7 +62,7 @@ Index: config/config.json
      "EnablePublicLink": false,
      "ExtractContent": true,
      "ArchiveRecursion": false,
-@@ -220,11 +220,11 @@
+@@ -222,11 +222,11 @@
      "EnableSMTPAuth": false,
      "SMTPUsername": "",
      "SMTPPassword": "",
@@ -77,7 +77,7 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -260,7 +260,7 @@
+@@ -262,7 +262,7 @@
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -86,7 +86,7 @@ Index: config/config.json
    },
    "AnnouncementSettings": {
      "EnableBanner": false,
-@@ -366,7 +366,7 @@
+@@ -368,7 +368,7 @@
    },
    "ComplianceSettings": {
      "Enable": false,
@@ -95,7 +95,7 @@ Index: config/config.json
      "EnableDaily": false,
      "BatchSize": 30000
    },
-@@ -522,8 +522,8 @@
+@@ -524,8 +524,8 @@
      "EnableUploads": false,
      "AllowInsecureDownloadURL": false,
      "EnableHealthCheck": true,
@@ -106,8 +106,8 @@ Index: config/config.json
      "Plugins": {},
      "PluginStates": {
        "com.mattermost.nps": {
-@@ -591,11 +591,11 @@
-     "NormalizeLdapDNs": false
+@@ -596,11 +596,11 @@
+     "GraphQL": false
    },
    "ImportSettings": {
 -    "Directory": "./import",

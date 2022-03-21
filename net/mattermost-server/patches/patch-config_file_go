@@ -1,7 +1,7 @@
 Index: config/file.go
 --- config/file.go.orig
 +++ config/file.go
-@@ -53,7 +53,7 @@ func resolveConfigFilePath(path string) (string, error
+@@ -66,7 +66,7 @@ func resolveConfigFilePath(path string) (string, error
  
  	// Search for the relative path to the file in the config folder, taking into account
  	// various common starting points.
