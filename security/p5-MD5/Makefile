@@ -1,13 +1,14 @@
 COMMENT=	interface to md5 message-digest algorithm
 
 MODULES=	cpan
-DISTNAME=	MD5-1.7
-REVISION=	7
+CPAN_AUTHOR=	GAAS
+PKG_ARCH=	*
+
+DISTNAME=	MD5-2.03
+
 CATEGORIES=	security
 
 # Perl
 PERMIT_PACKAGE=	Yes
-
-WANTLIB += c perl
 
 .include <bsd.port.mk>

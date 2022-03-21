@@ -1,7 +1,2 @@
-${P5ARCH}/
-${P5ARCH}/MD5.pm
-${P5ARCH}/auto/
-${P5ARCH}/auto/MD5/
-${P5ARCH}/auto/MD5/MD5.so
-${P5ARCH}/auto/MD5/autosplit.ix
+${P5SITE}/MD5.pm
 @man man/man3p/MD5.3p
