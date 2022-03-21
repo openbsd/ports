@@ -1,3 +1,5 @@
+BROKEN-aarch64 = segfault during configure stage
+
 COMMENT =	Perl interface to the swish-e C library
 
 DISTNAME =	swish-e-2.4.7
