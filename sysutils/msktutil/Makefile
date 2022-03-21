@@ -1,10 +1,8 @@
 COMMENT=	tool for ActiveDirectory interoperability
 
-GH_ACCOUNT=	msktutil
-GH_PROJECT=	msktutil
-GH_COMMIT=	58858f18026f9b167e15b395337343f7f1716fbe
-
-DISTNAME=	msktutil-1.2pre20220111
+V=		1.2
+DISTNAME=	msktutil-$V
+MASTER_SITES=	https://github.com/msktutil/msktutil/releases/download/v$V/
 
 CATEGORIES=	sysutils
 
@@ -17,10 +15,7 @@ COMPILER=	base-clang ports-gcc
 LIB_DEPENDS+=	databases/openldap
 RUN_DEPENDS=	security/cyrus-sasl2,gssapi
 
-CONFIGURE_STYLE= autoreconf
-AUTORECONF=	./autogen.sh
-AUTOCONF_VERSION= 2.71
-AUTOMAKE_VERSION= 1.16
+CONFIGURE_STYLE= gnu
 
 MODULES+=	security/heimdal
 CONFIGURE_ARGS=	--with-krb5-config="/usr/local/heimdal/bin/krb5-config"
