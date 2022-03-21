@@ -34,6 +34,7 @@ $XDG_CONFIG_HOME/gtk-3.0 r
 $XDG_CONFIG_HOME/mimeapps.list r
 $XDG_CONFIG_HOME/mozilla rwc
 $XDG_CONFIG_HOME/user-dirs.dirs r
+$XDG_CACHE_HOME/fontconfig r
 $XDG_DATA_HOME/applications r
 $XDG_DATA_HOME/applnk r
 $XDG_DATA_HOME/fonts r
