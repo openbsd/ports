@@ -1,7 +1,8 @@
 Re-instate the chroot by default code.
 
---- pidfile.c.orig	Thu Feb  6 02:56:16 2014
-+++ pidfile.c	Thu Feb  6 02:57:38 2014
+Index: pidfile.c
+--- pidfile.c.orig
++++ pidfile.c
 @@ -29,9 +29,10 @@
  static int pidfd = -1;
  static const char *pidname = NULL;

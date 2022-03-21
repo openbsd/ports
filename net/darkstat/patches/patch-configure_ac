@@ -1,7 +1,8 @@
 Re-instate the chroot by default code.
 
---- configure.ac.orig	Thu Feb  6 02:47:13 2014
-+++ configure.ac	Thu Feb  6 02:47:48 2014
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -6,6 +6,31 @@ AC_CONFIG_HEADER([config.h])
  
  RULE="------------------------------------------------------------"

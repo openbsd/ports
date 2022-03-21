@@ -1,12 +1,14 @@
 COMMENT=		network statistics gatherer with graphs
 
+PORTROACH=		site:https://github.com/emikulic/darkstat/archive/
+
 DISTNAME=		darkstat-3.0.719
 CATEGORIES=		net www
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		1
+REVISION=		2
 
-HOMEPAGE=		http://unix4lyfe.org/darkstat/
+HOMEPAGE=		https://unix4lyfe.org/darkstat/
 
 # GPLv2 and BSD
 PERMIT_PACKAGE=	Yes

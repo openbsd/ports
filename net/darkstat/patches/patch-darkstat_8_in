@@ -1,5 +1,6 @@
---- darkstat.8.in.orig	Sat Jan 25 21:39:41 2014
-+++ darkstat.8.in	Sat Jan 25 22:29:54 2014
+Index: darkstat.8.in
+--- darkstat.8.in.orig
++++ darkstat.8.in
 @@ -126,6 +126,7 @@ Errors, warnings, and verbose messages will go to \fBs
  daemon, priority debug) instead of \fBstderr\fR.
  

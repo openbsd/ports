@@ -1,5 +1,6 @@
---- err.c.orig	Thu Aug  8 06:32:22 2013
-+++ err.c	Thu Oct  3 21:03:57 2013
+Index: err.c
+--- err.c.orig
++++ err.c
 @@ -50,7 +50,7 @@ to_syslog(const char *type, const int want_err,
        strlcat(buf, ": ", sizeof(buf));
        strlcat(buf, strerror(saved_errno), sizeof(buf));

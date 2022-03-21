@@ -1,7 +1,8 @@
 Re-instate the chroot by default code.
 
---- conv.c.orig	Sun May 24 03:40:25 2015
-+++ conv.c	Sun May 24 16:31:58 2015
+Index: conv.c
+--- conv.c.orig
++++ conv.c
 @@ -289,7 +289,9 @@ daemonize_finish(void)
   * For security, chroot (optionally) and drop privileges.
   * Pass a NULL chroot_dir to disable chroot() behaviour.
