@@ -1,27 +1,23 @@
 COMMENT=	small 3rd-party letsencrypt client
 
-GH_ACCOUNT=	diafygi
-GH_PROJECT=	acme-tiny
-GH_TAGNAME=	4.0.4
+MODPY_EGG_VERSION= 5.0.1
+DISTNAME=	acme-tiny-${MODPY_EGG_VERSION}
 EPOCH=		0
-REVISION=	4
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI=	No
-MODPY_SETUPTOOLS= No
+MODPY_PI=	Yes
+MODPY_PI_DIR=	a/acme_tiny
+MODPY_SETUPTOOLS= Yes
 
-NO_BUILD=	Yes
-# there are tests, but need a relatively complex infrastructure
+# there are tests, but they need to run Pebble as a local CA (separate go-lang
+# software)
 NO_TEST=	Yes
 
-MODPY_ADJ_FILES=	acme_tiny.py
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/acme_tiny.py ${PREFIX}/bin/acme-tiny
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/acme-tiny
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/acme-tiny/
 
