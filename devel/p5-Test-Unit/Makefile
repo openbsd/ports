@@ -1,18 +1,19 @@
-COMMENT=	Perl unit testing framework
+COMMENT =	Perl unit testing framework
 
-DISTNAME=	Test-Unit-0.25
-REVISION=	2
-CATEGORIES=	devel
+DISTNAME =	Test-Unit-0.25
+REVISION =	3
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-MODULES=	cpan
-PKG_ARCH=	*
+# Perl
+PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Devel-Symdump \
-		devel/p5-Error \
-		devel/p5-Class-Inner
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Class-Inner \
+			devel/p5-Devel-Symdump \
+			devel/p5-Error \
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
