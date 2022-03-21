@@ -241,6 +241,7 @@
      SUBDIR += puzzles
      SUBDIR += py-chess,python3
      SUBDIR += py-minecraft-launcher-lib,python3
+     SUBDIR += py-steam,python3
      SUBDIR += pygame_sdl2
      SUBDIR += pyganim
      SUBDIR += pysol
@@ -285,6 +286,7 @@
      SUBDIR += spider
      SUBDIR += starfighter
      SUBDIR += starlanes
+     SUBDIR += steamctl
      SUBDIR += steamworks-nosteam
      SUBDIR += stepmania
      SUBDIR += stockfish

@@ -75,6 +75,7 @@
      SUBDIR += ppmtoTbmp
      SUBDIR += py-html2text,python3
      SUBDIR += py-num2words,python3
+     SUBDIR += py-vdf,python3
      SUBDIR += qprint
      SUBDIR += recode
      SUBDIR += ripmime

@@ -1287,6 +1287,7 @@
      SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh,python3
+     SUBDIR += py-arrow,python3
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
@@ -1376,6 +1377,7 @@
      SUBDIR += py-futures
      SUBDIR += py-gast,python3
      SUBDIR += py-gevent,python3
+     SUBDIR += py-gevent-eventemitter,python3
      SUBDIR += py-gitdb,python3
      SUBDIR += py-gitpython,python3
      SUBDIR += py-gobject
