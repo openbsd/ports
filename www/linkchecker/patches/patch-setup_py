@@ -1,8 +1,8 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -326,13 +326,11 @@ for (src, dst) in list_message_files(AppName):
-     data_files.append((dst, [src]))
+@@ -322,13 +322,11 @@ data_files = [
+ ]
  
  if os.name == "posix":
 -    data_files.append(("share/man/man1", ["doc/man/en/linkchecker.1"]))
