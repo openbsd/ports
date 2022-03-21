@@ -5,7 +5,7 @@ COMMENT=		next generation GNOME shell
 # !!! check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		41.4
+GNOME_VERSION=		41.5
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -42,7 +42,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/autoar \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=41.0 \
+			x11/gnome/mutter \
 			x11/gtk+4
 
 # configure looks for gnome-keybindings.pc;
