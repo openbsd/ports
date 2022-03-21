@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	dlang
 GH_PROJECT =	dub
-GH_TAGNAME =	v1.27.0
+GH_TAGNAME =	v1.28.0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -11,7 +11,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 FLAVORS =	dmd
-FLAVOR ?=
+FLAVOR ?=	dmd
 
 .if ${FLAVOR:Mdmd}
 ONLY_FOR_ARCHS =	amd64

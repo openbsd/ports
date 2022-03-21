@@ -3,7 +3,7 @@ The GDC binary is named egdc on OpenBSD.
 Index: source/dub/dub.d
 --- source/dub/dub.d.orig
 +++ source/dub/dub.d
-@@ -1478,7 +1478,7 @@ class Dub {
+@@ -1479,7 +1479,7 @@ class Dub {
  		version (Windows) enum sep = ";", exe = ".exe";
  		version (Posix) enum sep = ":", exe = "";
  
