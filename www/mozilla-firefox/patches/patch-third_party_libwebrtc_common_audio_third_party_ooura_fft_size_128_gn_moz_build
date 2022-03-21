@@ -1,0 +1,31 @@
+Fix builds on !intel arches
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1760484
+
+Index: third_party/libwebrtc/common_audio/third_party/ooura/fft_size_128_gn/moz.build
+--- third_party/libwebrtc/common_audio/third_party/ooura/fft_size_128_gn/moz.build.orig
++++ third_party/libwebrtc/common_audio/third_party/ooura/fft_size_128_gn/moz.build
+@@ -90,10 +90,6 @@ if CONFIG["OS_TARGET"] == "Linux":
+ 
+ if CONFIG["OS_TARGET"] == "OpenBSD":
+ 
+-    CXXFLAGS += [
+-        "-msse2"
+-    ]
+-
+     DEFINES["USE_GLIB"] = "1"
+     DEFINES["WEBRTC_BSD"] = True
+     DEFINES["WEBRTC_POSIX"] = True
+@@ -102,6 +98,12 @@ if CONFIG["OS_TARGET"] == "OpenBSD":
+     DEFINES["_LARGEFILE_SOURCE"] = True
+     DEFINES["__STDC_CONSTANT_MACROS"] = True
+     DEFINES["__STDC_FORMAT_MACROS"] = True
++
++if CONFIG["CPU_ARCH"] == "x86" and CONFIG["OS_TARGET"] == "OpenBSD":
++
++    CXXFLAGS += [
++        "-msse2"
++    ]
+ 
+     UNIFIED_SOURCES += [
+         "/third_party/libwebrtc/common_audio/third_party/ooura/fft_size_128/ooura_fft_sse2.cc"
