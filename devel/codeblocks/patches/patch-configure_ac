@@ -1,0 +1,14 @@
+undefined reference to `free'
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -42,8 +42,6 @@ AC_PROG_LN_S
+ AC_PROG_MAKE_SET
+ AC_PROG_AWK
+ 
+-CODEBLOCKS_CHECK_LINK_FLAG([-Wl,--no-undefined],[LDFLAGS="-Wl,--no-undefined $LDFLAGS"])
+-
+ CODEBLOCKS_SETUP_FOR_TARGET
+ 
+ dnl Checks for header files.

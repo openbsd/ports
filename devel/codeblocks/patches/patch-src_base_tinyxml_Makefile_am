@@ -1,0 +1,15 @@
+Make sure bundled tinyxml is ahead of system tinyxml in search path
+
+Index: src/base/tinyxml/Makefile.am
+--- src/base/tinyxml/Makefile.am.orig
++++ src/base/tinyxml/Makefile.am
+@@ -1,7 +1,8 @@
+ AM_CPPFLAGS = $(WX_CXXFLAGS) \
+ 				-I$(top_srcdir)/src/sdk/wxscintilla/include \
+ 				-I$(top_srcdir)/src/include \
+-				-I$(top_srcdir)/src/include/tinyxml
++				-I$(top_srcdir)/src/include/tinyxml \
++				$(WX_CXXFLAGS)
+ 
+ noinst_LTLIBRARIES = libtinyxml.la
+ 

@@ -1,0 +1,12 @@
+Index: bootstrap
+--- bootstrap.orig
++++ bootstrap
+@@ -64,7 +64,7 @@ rm -rf autom4te.cache
+ 
+ # Make the build more robust if a Makefile.am is removed from the file system, but it is not removed
+ # from the configure.ac file.
+-find . | grep -v wxSmithSTC/stc| grep Makefile.in$ | xargs rm -v
++find . | grep -v wxSmithSTC/stc| grep Makefile.in$ | xargs -r rm -v
+ 
+ rm -vf debian/control
+ echo "Note: If you want to build debian packages you have to first run the debian/setup_control.sh script. See the script for details how to use it."

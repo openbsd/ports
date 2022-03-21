@@ -2,18 +2,6 @@
 @bin bin/cb_share_config
 @bin bin/codeblocks
 include/codeblocks/
-include/codeblocks/Alignment.h
-include/codeblocks/Assertions.h
-include/codeblocks/Attributes.h
-include/codeblocks/CharDistribution.h
-include/codeblocks/Compiler.h
-include/codeblocks/ErrorList.h
-include/codeblocks/JpCntx.h
-include/codeblocks/Likely.h
-include/codeblocks/NullPtr.h
-include/codeblocks/TypedEnum.h
-include/codeblocks/Types.h
-include/codeblocks/Util.h
 include/codeblocks/annoyingdialog.h
 include/codeblocks/autodetectcompilers.h
 include/codeblocks/backgroundthread.h
@@ -48,11 +36,13 @@ include/codeblocks/configurationpanel.h
 include/codeblocks/configuretoolsdlg.h
 include/codeblocks/confirmreplacedlg.h
 include/codeblocks/crc32.h
+include/codeblocks/cygwin.h
 include/codeblocks/debuggermanager.h
 include/codeblocks/editarrayfiledlg.h
 include/codeblocks/editarrayorderdlg.h
 include/codeblocks/editarraystringdlg.h
 include/codeblocks/editor_hooks.h
+include/codeblocks/editor_utils.h
 include/codeblocks/editorbase.h
 include/codeblocks/editorcolourset.h
 include/codeblocks/editorlexerloader.h
@@ -85,40 +75,12 @@ include/codeblocks/menuitemsmanager.h
 include/codeblocks/misctreeitemdata.h
 include/codeblocks/multiselectdlg.h
 include/codeblocks/newfromtemplatedlg.h
-include/codeblocks/nsBig5Prober.h
-include/codeblocks/nsCharSetProber.h
-include/codeblocks/nsCodingStateMachine.h
-include/codeblocks/nsDebug.h
-include/codeblocks/nsEUCJPProber.h
-include/codeblocks/nsEUCKRProber.h
-include/codeblocks/nsEUCTWProber.h
-include/codeblocks/nsError.h
-include/codeblocks/nsEscCharsetProber.h
-include/codeblocks/nsGB2312Prober.h
-include/codeblocks/nsHebrewProber.h
-include/codeblocks/nsLatin1Prober.h
-include/codeblocks/nsMBCSGroupProber.h
-include/codeblocks/nsMemory.h
-include/codeblocks/nsPkgInt.h
-include/codeblocks/nsSBCSGroupProber.h
-include/codeblocks/nsSBCharSetProber.h
-include/codeblocks/nsSJISProber.h
-include/codeblocks/nsUTF8Prober.h
-include/codeblocks/nsUniversalDetector.h
-include/codeblocks/nscore.h
 include/codeblocks/personalitymanager.h
 include/codeblocks/pipedprocess.h
 include/codeblocks/pluginmanager.h
 include/codeblocks/pluginsconfigurationdlg.h
-include/codeblocks/prcpucfg.h
-include/codeblocks/prcpucfg_darwin.h
-include/codeblocks/prcpucfg_linux.h
-include/codeblocks/prcpucfg_openbsd.h
-include/codeblocks/prcpucfg_win95.h
-include/codeblocks/prcpucfg_winnt.h
 include/codeblocks/prep.h
 include/codeblocks/printing_types.h
-include/codeblocks/prmem.h
 include/codeblocks/projectbuildtarget.h
 include/codeblocks/projectfile.h
 include/codeblocks/projectfileoptionsdlg.h
@@ -128,15 +90,12 @@ include/codeblocks/projectloader_hooks.h
 include/codeblocks/projectmanager.h
 include/codeblocks/projectsfilemasksdlg.h
 include/codeblocks/projecttemplateloader.h
-include/codeblocks/prtypes.h
 include/codeblocks/safedelete.h
 include/codeblocks/scripting/
 include/codeblocks/scripting/bindings/
-include/codeblocks/scripting/bindings/sc_base_types.h
 include/codeblocks/scripting/bindings/sc_plugin.h
 include/codeblocks/scripting/include/
-include/codeblocks/scripting/include/sqdbgserver.h
-include/codeblocks/scripting/include/sqrdbg.h
+include/codeblocks/scripting/include/sqconfig.h
 include/codeblocks/scripting/include/sqstdaux.h
 include/codeblocks/scripting/include/sqstdblob.h
 include/codeblocks/scripting/include/sqstdio.h
@@ -144,12 +103,6 @@ include/codeblocks/scripting/include/sqstdmath.h
 include/codeblocks/scripting/include/sqstdstring.h
 include/codeblocks/scripting/include/sqstdsystem.h
 include/codeblocks/scripting/include/squirrel.h
-include/codeblocks/scripting/sqplus/
-include/codeblocks/scripting/sqplus/SqPlusConst.h
-include/codeblocks/scripting/sqplus/SquirrelBindingsUtils.h
-include/codeblocks/scripting/sqplus/SquirrelObject.h
-include/codeblocks/scripting/sqplus/SquirrelVM.h
-include/codeblocks/scripting/sqplus/sqplus.h
 include/codeblocks/scriptingmanager.h
 include/codeblocks/scriptsecuritywarningdlg.h
 include/codeblocks/scrollingdialog.h
@@ -267,6 +220,7 @@ include/codeblocks/wxscintilla/
 include/codeblocks/wxscintilla/include/
 include/codeblocks/wxscintilla/include/wx/
 include/codeblocks/wxscintilla/include/wx/wxscintilla.h
+include/codeblocks/wxstringhash.h
 include/codeblocks/xtra_res.h
 include/wxsmith/
 include/wxsmith/properties/
@@ -287,6 +241,7 @@ include/wxsmith/properties/wxspropertygridmanager.h
 include/wxsmith/properties/wxspropertystream.h
 include/wxsmith/properties/wxsquickpropspanel.h
 include/wxsmith/properties/wxsstringproperty.h
+include/wxsmith/properties/wxstwolongproperty.h
 include/wxsmith/wxsadvqpp.h
 include/wxsmith/wxsadvqppchild.h
 include/wxsmith/wxsautoresourcetreeimage.h
@@ -471,9 +426,6 @@ lib/pkgconfig/wxsmithaui.pc
 @man man/man1/cb_share_config.1
 @man man/man1/codeblocks.1
 @man man/man1/codesnippets.1
-share/appdata/
-share/appdata/codeblocks-contrib.metainfo.xml
-share/appdata/codeblocks.appdata.xml
 share/applications/codeblocks.desktop
 share/codeblocks/
 share/codeblocks/Astyle.zip
@@ -513,6 +465,7 @@ share/codeblocks/SpellChecker/16x16/en_CA.png
 share/codeblocks/SpellChecker/16x16/en_GB.png
 share/codeblocks/SpellChecker/16x16/en_NZ.png
 share/codeblocks/SpellChecker/16x16/en_US.png
+share/codeblocks/SpellChecker/16x16/es_ES.png
 share/codeblocks/SpellChecker/16x16/fr_FR.png
 share/codeblocks/SpellChecker/16x16/ru_RU.png
 share/codeblocks/SpellChecker/20x20/
@@ -525,6 +478,7 @@ share/codeblocks/SpellChecker/20x20/en_CA.png
 share/codeblocks/SpellChecker/20x20/en_GB.png
 share/codeblocks/SpellChecker/20x20/en_NZ.png
 share/codeblocks/SpellChecker/20x20/en_US.png
+share/codeblocks/SpellChecker/20x20/es_ES.png
 share/codeblocks/SpellChecker/20x20/fr_FR.png
 share/codeblocks/SpellChecker/20x20/ru_RU.png
 share/codeblocks/SpellChecker/24x24/
@@ -537,6 +491,7 @@ share/codeblocks/SpellChecker/24x24/en_CA.png
 share/codeblocks/SpellChecker/24x24/en_GB.png
 share/codeblocks/SpellChecker/24x24/en_NZ.png
 share/codeblocks/SpellChecker/24x24/en_US.png
+share/codeblocks/SpellChecker/24x24/es_ES.png
 share/codeblocks/SpellChecker/24x24/fr_FR.png
 share/codeblocks/SpellChecker/24x24/ru_RU.png
 share/codeblocks/SpellChecker/28x28/
@@ -549,6 +504,7 @@ share/codeblocks/SpellChecker/28x28/en_CA.png
 share/codeblocks/SpellChecker/28x28/en_GB.png
 share/codeblocks/SpellChecker/28x28/en_NZ.png
 share/codeblocks/SpellChecker/28x28/en_US.png
+share/codeblocks/SpellChecker/28x28/es_ES.png
 share/codeblocks/SpellChecker/28x28/fr_FR.png
 share/codeblocks/SpellChecker/28x28/ru_RU.png
 share/codeblocks/SpellChecker/32x32/
@@ -561,6 +517,7 @@ share/codeblocks/SpellChecker/32x32/en_CA.png
 share/codeblocks/SpellChecker/32x32/en_GB.png
 share/codeblocks/SpellChecker/32x32/en_NZ.png
 share/codeblocks/SpellChecker/32x32/en_US.png
+share/codeblocks/SpellChecker/32x32/es_ES.png
 share/codeblocks/SpellChecker/32x32/fr_FR.png
 share/codeblocks/SpellChecker/32x32/ru_RU.png
 share/codeblocks/SpellChecker/40x40/
@@ -573,6 +530,7 @@ share/codeblocks/SpellChecker/40x40/en_CA.png
 share/codeblocks/SpellChecker/40x40/en_GB.png
 share/codeblocks/SpellChecker/40x40/en_NZ.png
 share/codeblocks/SpellChecker/40x40/en_US.png
+share/codeblocks/SpellChecker/40x40/es_ES.png
 share/codeblocks/SpellChecker/40x40/fr_FR.png
 share/codeblocks/SpellChecker/40x40/ru_RU.png
 share/codeblocks/SpellChecker/48x48/
@@ -585,6 +543,7 @@ share/codeblocks/SpellChecker/48x48/en_CA.png
 share/codeblocks/SpellChecker/48x48/en_GB.png
 share/codeblocks/SpellChecker/48x48/en_NZ.png
 share/codeblocks/SpellChecker/48x48/en_US.png
+share/codeblocks/SpellChecker/48x48/es_ES.png
 share/codeblocks/SpellChecker/48x48/fr_FR.png
 share/codeblocks/SpellChecker/48x48/ru_RU.png
 share/codeblocks/SpellChecker/56x56/
@@ -597,6 +556,7 @@ share/codeblocks/SpellChecker/56x56/en_CA.png
 share/codeblocks/SpellChecker/56x56/en_GB.png
 share/codeblocks/SpellChecker/56x56/en_NZ.png
 share/codeblocks/SpellChecker/56x56/en_US.png
+share/codeblocks/SpellChecker/56x56/es_ES.png
 share/codeblocks/SpellChecker/56x56/fr_FR.png
 share/codeblocks/SpellChecker/56x56/ru_RU.png
 share/codeblocks/SpellChecker/64x64/
@@ -609,6 +569,7 @@ share/codeblocks/SpellChecker/64x64/en_CA.png
 share/codeblocks/SpellChecker/64x64/en_GB.png
 share/codeblocks/SpellChecker/64x64/en_NZ.png
 share/codeblocks/SpellChecker/64x64/en_US.png
+share/codeblocks/SpellChecker/64x64/es_ES.png
 share/codeblocks/SpellChecker/64x64/fr_FR.png
 share/codeblocks/SpellChecker/64x64/ru_RU.png
 share/codeblocks/SpellChecker/OnlineSpellChecking.xml
@@ -633,6 +594,11 @@ share/codeblocks/compilers/compiler_bfin-elf-gcc.xml
 share/codeblocks/compilers/compiler_clang.xml
 share/codeblocks/compilers/compiler_dmc.xml
 share/codeblocks/compilers/compiler_dmd.xml
+share/codeblocks/compilers/compiler_gcc-mingw64.xml
+share/codeblocks/compilers/compiler_gcc-msys2-mingw32.xml
+share/codeblocks/compilers/compiler_gcc-msys2-mingw64.xml
+share/codeblocks/compilers/compiler_gcc-tdm-32.xml
+share/codeblocks/compilers/compiler_gcc-tdm-64.xml
 share/codeblocks/compilers/compiler_ldc.xml
 share/codeblocks/compilers/compiler_lm32-gcc.xml
 share/codeblocks/compilers/compiler_lm8-gcc.xml
@@ -669,6 +635,11 @@ share/codeblocks/compilers/options_cygwin.xml
 share/codeblocks/compilers/options_dmc.xml
 share/codeblocks/compilers/options_dmd.xml
 share/codeblocks/compilers/options_g95.xml
+share/codeblocks/compilers/options_gcc-mingw64.xml
+share/codeblocks/compilers/options_gcc-msys2-mingw32.xml
+share/codeblocks/compilers/options_gcc-msys2-mingw64.xml
+share/codeblocks/compilers/options_gcc-tdm-32.xml
+share/codeblocks/compilers/options_gcc-tdm-64.xml
 share/codeblocks/compilers/options_gcc.xml
 share/codeblocks/compilers/options_gdc.xml
 share/codeblocks/compilers/options_gfortran.xml
@@ -698,6 +669,8 @@ share/codeblocks/compilers/options_zpu-gcc.xml
 share/codeblocks/copystrings.zip
 share/codeblocks/debugger.zip
 share/codeblocks/defaultmimehandler.zip
+share/codeblocks/docs/
+share/codeblocks/docs/index.ini
 share/codeblocks/dragscroll.zip
 share/codeblocks/envvars.zip
 share/codeblocks/exporter.zip
@@ -754,6 +727,8 @@ share/codeblocks/images/settings/autosave-off.png
 share/codeblocks/images/settings/autosave.png
 share/codeblocks/images/settings/batch-off.png
 share/codeblocks/images/settings/batch.png
+share/codeblocks/images/settings/browsetracker-off.png
+share/codeblocks/images/settings/browsetracker.png
 share/codeblocks/images/settings/codecompletion-off.png
 share/codeblocks/images/settings/codecompletion.png
 share/codeblocks/images/settings/codestats-off.png
@@ -788,6 +763,8 @@ share/codeblocks/images/settings/help-plugin-off.png
 share/codeblocks/images/settings/help-plugin.png
 share/codeblocks/images/settings/incsearch-off.png
 share/codeblocks/images/settings/incsearch.png
+share/codeblocks/images/settings/mousesap-off.png
+share/codeblocks/images/settings/mousesap.png
 share/codeblocks/images/settings/net-off.png
 share/codeblocks/images/settings/net.png
 share/codeblocks/images/settings/notebook-appearance-off.png
@@ -865,6 +842,12 @@ share/codeblocks/images/wxsmith/wxComboBox16.png
 share/codeblocks/images/wxsmith/wxComboBox32.png
 share/codeblocks/images/wxsmith/wxContextHelpButton16.png
 share/codeblocks/images/wxsmith/wxContextHelpButton32.png
+share/codeblocks/images/wxsmith/wxDataViewCtrl16.png
+share/codeblocks/images/wxsmith/wxDataViewCtrl32.png
+share/codeblocks/images/wxsmith/wxDataViewListCtrl16.png
+share/codeblocks/images/wxsmith/wxDataViewListCtrl32.png
+share/codeblocks/images/wxsmith/wxDataViewTreeCtrl16.png
+share/codeblocks/images/wxsmith/wxDataViewTreeCtrl32.png
 share/codeblocks/images/wxsmith/wxDatePickerCtrl16.png
 share/codeblocks/images/wxsmith/wxDatePickerCtrl32.png
 share/codeblocks/images/wxsmith/wxDialUpManager16.png
@@ -1164,6 +1147,7 @@ share/codeblocks/scripts/startup.script
 share/codeblocks/scripts/tests/
 share/codeblocks/scripts/tests/menu_test_plugin.script
 share/codeblocks/scripts/tests/script_test_plugin.script
+share/codeblocks/scripts/tests/sdk_test.script
 share/codeblocks/scripts/tests/test_base.script
 share/codeblocks/scripts/tests/user_dialog_test_plugin.script
 share/codeblocks/scripts/tests/wx_test.script
@@ -1775,6 +1759,9 @@ share/codeblocks/wxsmith.zip
 share/codeblocks/wxsmithcontribitems.zip
 share/icons/hicolor/48x48/mimetypes/application-x-codeblocks-workspace.png
 share/icons/hicolor/48x48/mimetypes/application-x-codeblocks.png
+share/metainfo/
+share/metainfo/codeblocks-contrib.metainfo.xml
+share/metainfo/codeblocks.appdata.xml
 share/mime/packages/codeblocks.xml
 share/pixmaps/
 share/pixmaps/codeblocks.png

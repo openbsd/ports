@@ -1,13 +1,17 @@
 BROKEN-alpha=	sqvm.cpp:394:1: internal compiler error: Segmentation fault
 COMMENT=	Code::Blocks C/C++ IDE
 
+R=		12751
 V=		20.03
-DISTNAME=	codeblocks-${V}
-PKGNAME=	codeblocks-${V}
-EXTRACT_SUFX=	.tar.xz
-REVISION=	2
 
-WRKDIST=	${WRKDIR}/codeblocks-${V}
+DISTNAME=	codeblocks-${V}pl${R}
+EXTRACT_SUFX=	.tar.xz
+
+# source tarball for this OpenBSD-specific patch level:
+MASTER_SITES=	https://jggimi.net/codeblocks/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
+
+DEBUG_PACKAGES=${BUILD_PACKAGES}
 
 SHARED_LIBS +=  codeblocks           0.1      # 0.1
 SHARED_LIBS +=  wxchartctrl          0.1      # 0.1
@@ -31,7 +35,7 @@ HOMEPAGE=	http://www.codeblocks.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
+WANTLIB += Xau Xdmcp Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
 WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 boost_system bz2 c cairo
 WANTLIB += cairo-gobject curses epoxy execinfo expat ffi fontconfig
 WANTLIB += freetype fribidi gamin-1 gdk-3 gdk_pixbuf-2.0 gio-2.0
@@ -43,8 +47,6 @@ WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
 WANTLIB += wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
 WANTLIB += wx_gtk3u_propgrid-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_richtext-3.0
 WANTLIB += wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm z zstd
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=codeblocks/Sources/${V}/}
 
 BUILD_DEPENDS=	archivers/zip
 
@@ -67,7 +69,9 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
+AUTORECONF=	./bootstrap
+
 CXXFLAGS +=	-std=c++11
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -75,15 +79,11 @@ CONFIGURE_ARGS=	--with-contrib-plugins=all
 CONFIGURE_ARGS += --enable-debug
 CONFIGURE_ARGS += --with-boost-libdir=${LOCALBASE}/lib
 
-MAKE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION}
-
-pre-patch:
-	cd ${WRKSRC}; \
-	env \
-	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	${WRKSRC}/bootstrap
+post-patch:
+	echo : > ${WRKSRC}/update_revision.sh
+	echo 'm4_define([SVN_REV], ${R})' > ${WRKSRC}/revision.m4
+	echo 'm4_define([SVN_REVISION], ${V}svn${R})' >> ${WRKSRC}/revision.m4
+	echo 'm4_define([SVN_DATE], )' >> ${WRKSRC}/revision.m4
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp

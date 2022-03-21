@@ -1,4 +1,4 @@
-Fix the build on !x86
+Guard the trap with LOGGING
 
 Index: src/plugins/contrib/dragscroll/dragscrollcfg.h
 --- src/plugins/contrib/dragscroll/dragscrollcfg.h.orig
@@ -8,7 +8,7 @@ Index: src/plugins/contrib/dragscroll/dragscrollcfg.h
          void OnApply();
          void OnCancel(){}
 +#if defined(LOGGING)
-         virtual void InitDialog(){ asm("int3");} /*trap*/
+         virtual void InitDialog() { } /*trap*/
 +#endif
  
          // pointer to owner of the configuration diaglog needed to

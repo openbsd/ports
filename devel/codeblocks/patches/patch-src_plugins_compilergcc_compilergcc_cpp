@@ -3,7 +3,7 @@ Always use cb_console_runner from installed PREFIX.
 Index: src/plugins/compilergcc/compilergcc.cpp
 --- src/plugins/compilergcc/compilergcc.cpp.orig
 +++ src/plugins/compilergcc/compilergcc.cpp
-@@ -160,7 +160,7 @@ namespace
+@@ -166,7 +166,7 @@ namespace
  {
      PluginRegistrant<CompilerGCC> reg(_T("Compiler"));
  
@@ -12,7 +12,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
      static const wxString strSLASH(_T("/"));
      static const wxString strSPACE(_T(" "));
      static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
-@@ -1832,8 +1832,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+@@ -1855,8 +1855,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
  
      wxString baseDir = ConfigManager::GetExecutableFolder();
      wxString crunnStr = strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE;
@@ -22,7 +22,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
  
      if (!command.Replace(_T("$SCRIPT"), exe_filename))
          command << strQUOTE << exe_filename << strQUOTE; // if they didn't specify $SCRIPT, append:
-@@ -1950,7 +1949,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -1973,7 +1972,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      : EscapeSpaces(m_CdRun);
      wxString crunnStr = platform::windows
                        ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
@@ -31,7 +31,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
      wxString hostapStr = platform::windows
                         ? strQUOTE + target->GetHostApplication() + strQUOTE
                         : EscapeSpaces(target->GetHostApplication());
-@@ -1988,8 +1987,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -2011,8 +2010,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
  
          if (target->GetUseConsoleRunner())
          {
@@ -40,7 +40,7 @@ Index: src/plugins/compilergcc/compilergcc.cpp
                  command << crunnStr << strSPACE;
  
                  if (!platform::windows)
-@@ -2001,7 +1998,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+@@ -2024,7 +2021,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
                      QuoteStringIfNeeded(strLinkerPath);
                      command << strLinkerPath << strSPACE;
                  }
