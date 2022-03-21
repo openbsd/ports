@@ -6,6 +6,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -75,6 +76,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/firefox.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
+
+	# make sure TwemojiMozilla.ttf is found
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/
+	mv ${PREFIX}/lib/${MOZILLA_PROJECT}/fonts ${PREFIX}/share/fonts/${MOZILLA_PROJECT}
 
 	# install icon for desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/

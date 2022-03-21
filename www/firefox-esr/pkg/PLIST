@@ -51,8 +51,6 @@ lib/${MOZILLA_PROJECT}/distribution/
 lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
-lib/${MOZILLA_PROJECT}/fonts/
-lib/${MOZILLA_PROJECT}/fonts/TwemojiMozilla.ttf
 lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
@@ -70,6 +68,9 @@ lib/${MOZILLA_PROJECT}/platform.ini
 lib/${MOZILLA_PROJECT}/removed-files
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
+share/fonts/
+@fontdir share/fonts/${MOZILLA_PROJECT}/
+share/fonts/${MOZILLA_PROJECT}/TwemojiMozilla.ttf
 share/pixmaps/
 share/pixmaps/${MOZILLA_PROJECT}.png
 @tag update-desktop-database
