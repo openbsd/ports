@@ -13,6 +13,8 @@ MODPY_PI=	Yes
 MODPY_PI_DIR=	a/acme_tiny
 MODPY_SETUPTOOLS= Yes
 
+BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
+
 # there are tests, but they need to run Pebble as a local CA (separate go-lang
 # software)
 NO_TEST=	Yes
