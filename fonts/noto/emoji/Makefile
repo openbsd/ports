@@ -2,9 +2,12 @@ COMMENT =		emoji fonts for the noto font family
 
 NOTO_PROJECT =		emoji
 
-V =			2020-04-08
-GH_TAGNAME =		v$V-unicode12_1
-REVISION =		0
+# use date as version number for consistency with other noto fonts
+V =			2021-11-01
+GH_TAGNAME =		v2.034
+
+pre-install:
+	rm ${WRKDIST}/fonts/NotoColorEmoji_WindowsCompatible.ttf
 
 do-install:
 	${INSTALL_DATA_DIR} ${NOTO_INSTALLDIR}
