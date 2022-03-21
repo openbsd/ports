@@ -1,0 +1,2 @@
+VPK is Valve's file format for storing game assets. Pythonic access to VPK files
+and their contents together with a cli tool.
