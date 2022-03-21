@@ -1,6 +1,6 @@
 COMMENT =		open source alternative to glut
 
-DISTNAME =		freeglut-3.2.1
+DISTNAME =		freeglut-3.2.2
 
 SHARED_LIBS +=  glut                      7.0
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://freeglut.sourceforge.net/
 # X11
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL ICE SM X11 Xext Xi Xrandr Xxf86vm m
+WANTLIB += GL X11 Xi Xrandr Xxf86vm m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=freeglut/}
 
