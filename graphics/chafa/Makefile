@@ -1,7 +1,7 @@
 COMMENT =		character art facsimile generator
-DISTNAME =		chafa-1.8.0
+DISTNAME =		chafa-1.10.0
 
-SHARED_LIBS +=  	chafa                     2.0 # 6.0
+SHARED_LIBS +=  	chafa                     2.1 # 7.0
 
 CATEGORIES =		graphics
 
