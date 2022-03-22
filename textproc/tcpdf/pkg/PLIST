@@ -2,6 +2,7 @@ tcpdf/
 tcpdf/CHANGELOG.TXT
 tcpdf/LICENSE.TXT
 tcpdf/README.md
+tcpdf/VERSION
 tcpdf/composer.json
 tcpdf/config/
 tcpdf/config/tcpdf_config.php
@@ -102,6 +103,7 @@ tcpdf/examples/example_062.php
 tcpdf/examples/example_063.php
 tcpdf/examples/example_064.php
 tcpdf/examples/example_065.php
+tcpdf/examples/example_066.php
 tcpdf/examples/images/
 tcpdf/examples/images/_blank.png
 tcpdf/examples/images/alpha.png
@@ -173,7 +175,6 @@ tcpdf/fonts/
 tcpdf/fonts/ae_fonts_2.0/
 tcpdf/fonts/ae_fonts_2.0/COPYING
 tcpdf/fonts/ae_fonts_2.0/ChangeLog
-tcpdf/fonts/ae_fonts_2.0/ChangeLog.9745.BAK
 tcpdf/fonts/ae_fonts_2.0/README
 tcpdf/fonts/aealarabiya.ctg.z
 tcpdf/fonts/aealarabiya.php
@@ -196,7 +197,6 @@ tcpdf/fonts/dejavu-fonts-ttf-2.33/LICENSE
 tcpdf/fonts/dejavu-fonts-ttf-2.33/NEWS
 tcpdf/fonts/dejavu-fonts-ttf-2.33/README
 tcpdf/fonts/dejavu-fonts-ttf-2.33/langcover.txt
-tcpdf/fonts/dejavu-fonts-ttf-2.33/status.txt
 tcpdf/fonts/dejavu-fonts-ttf-2.33/unicover.txt
 tcpdf/fonts/dejavu-fonts-ttf-2.34/
 tcpdf/fonts/dejavu-fonts-ttf-2.34/AUTHORS
@@ -205,7 +205,6 @@ tcpdf/fonts/dejavu-fonts-ttf-2.34/LICENSE
 tcpdf/fonts/dejavu-fonts-ttf-2.34/NEWS
 tcpdf/fonts/dejavu-fonts-ttf-2.34/README
 tcpdf/fonts/dejavu-fonts-ttf-2.34/langcover.txt
-tcpdf/fonts/dejavu-fonts-ttf-2.34/status.txt
 tcpdf/fonts/dejavu-fonts-ttf-2.34/unicover.txt
 tcpdf/fonts/dejavusans.ctg.z
 tcpdf/fonts/dejavusans.php
@@ -282,7 +281,6 @@ tcpdf/fonts/freefont-20120503/AUTHORS
 tcpdf/fonts/freefont-20120503/COPYING
 tcpdf/fonts/freefont-20120503/CREDITS
 tcpdf/fonts/freefont-20120503/ChangeLog
-tcpdf/fonts/freefont-20120503/ChangeLog.10070.BAK
 tcpdf/fonts/freefont-20120503/INSTALL
 tcpdf/fonts/freefont-20120503/README
 tcpdf/fonts/freefont-20120503/TROUBLESHOOTING

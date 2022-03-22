@@ -1,17 +1,15 @@
 COMMENT=	PHP class for generating PDF documents
-DISTNAME =	tcpdf_6_2_13
-PKGNAME =	tcpdf-6.2.13
-REVISION =	3
+
+GH_ACCOUNT=	tecnickcom
+GH_PROJECT=	TCPDF
+GH_TAGNAME=	6.4.4
+PKGNAME=	${DISTNAME:L}
 CATEGORIES=	textproc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcpdf/}
+HOMEPAGE=	https://tcpdf.org/
 
-HOMEPAGE=	http://www.tcpdf.org/
-
-# LGPL
+# LGPLv3+
 PERMIT_PACKAGE=	Yes
-
-EXTRACT_SUFX =	.zip
 
 MODULES=	lang/php
 MODPHP_BUILDDEP=No
@@ -19,7 +17,6 @@ MODPHP_BUILDDEP=No
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-WRKDIST=	${WRKDIR}/tcpdf
 PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/tcpdf
 
