@@ -236,6 +236,7 @@
      SUBDIR += p5-Unix-OpenBSD-Random
      SUBDIR += pass-import
      SUBDIR += pass-otp
+     SUBDIR += passphraseme
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
      SUBDIR += password-store
