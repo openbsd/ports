@@ -1,5 +1,5 @@
 COMMENT =		manual tiling window manager
-DISTNAME =		herbstluftwm-0.9.3
+DISTNAME =		herbstluftwm-0.9.4
 CATEGORIES =		x11
 
 HOMEPAGE =		https://herbstluftwm.org/
@@ -10,8 +10,8 @@ MAINTAINER =		Lucas <lucas@sexy.is>, \
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xft Xinerama Xrandr Xrender
-WANTLIB += c freetype m z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xfixes Xft Xinerama Xrandr
+WANTLIB += Xrender c freetype m z
 
 MASTER_SITES =		https://herbstluftwm.org/tarballs/
 
