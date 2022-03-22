@@ -1,0 +1,3 @@
+A quick and simple cryptographically secure script to generate high
+entropy passphrases using the Electronic Frontier Foundation's
+wordlists, including their fandom-inspired wordlists.
