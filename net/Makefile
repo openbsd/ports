@@ -548,6 +548,7 @@
      SUBDIR += py-dnspython,python3
      SUBDIR += py-dpkt
      SUBDIR += py-eapi,python3
+     SUBDIR += py-engineio,python3
      SUBDIR += py-ftpdlib,python3
      SUBDIR += py-geventhttpclient,python3
      SUBDIR += py-idna
@@ -583,6 +584,7 @@
      SUBDIR += py-slixmpp,python3
      SUBDIR += py-smbc,python3
      SUBDIR += py-snmp,python3
+     SUBDIR += py-socketio,python3
      SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks,python3
      SUBDIR += py-stem,python3
