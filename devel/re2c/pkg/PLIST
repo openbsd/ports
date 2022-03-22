@@ -1,7 +1,9 @@
 @bin bin/re2c
 @bin bin/re2go
+@bin bin/re2rust
 @man man/man1/re2c.1
 @man man/man1/re2go.1
+@man man/man1/re2rust.1
 share/re2c/
 share/re2c/stdlib/
 share/re2c/stdlib/unicode_categories.re
