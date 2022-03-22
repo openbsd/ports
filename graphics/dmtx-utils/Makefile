@@ -1,14 +1,12 @@
 COMMENT =		tools for handling data matrix barcodes
 
-DISTNAME =		dmtx-utils-0.7.4
-REVISION =		9
+GH_ACCOUNT =		dmtx
+GH_PROJECT =		dmtx-utils
+GH_TAGNAME =		v0.7.6
+
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://www.libdmtx.org/
-
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdmtx/}
 
 # LGPLv2
 PERMIT_PACKAGE =		Yes
@@ -23,7 +21,11 @@ LIB_DEPENDS +=		converters/libiconv \
 			graphics/libdmtx
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+AUTORECONF =		./autogen.sh
+
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>
