@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-extras=	0
+
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -34,7 +36,8 @@ RUN_DEPENDS-main +=	net/avahi
 ################################################################################
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
-RUN_DEPENDS-extras +=	x11/gnome/builder \
+RUN_DEPENDS-extras +=	sysutils/dspy \
+			x11/gnome/builder \
 			x11/gnome/dconf-editor \
 			x11/gnome/devhelp
 
