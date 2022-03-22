@@ -11,7 +11,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-argcomplete${MODPY_FLAVOR} \

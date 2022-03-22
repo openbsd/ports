@@ -25,7 +25,6 @@ MODULES =	devel/cmake \
 		lang/python
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \

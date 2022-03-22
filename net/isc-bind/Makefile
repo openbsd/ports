@@ -31,7 +31,6 @@ MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 MASTER_SITES0=	${MASTER_SITE_ISC:=bind9/$V/patches/}
 
 MODULES=	lang/python
-MODPY_VERSION=	${MODPY_DEFAULT_VERSION_3}
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 MODPY_RUNDEP=	No
 BUILD_DEPENDS=	devel/py-ply${MODPY_FLAVOR}
