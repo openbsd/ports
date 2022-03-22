@@ -2,9 +2,9 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		41.4
+GNOME_VERSION=		41.5
 
-SHARED_LIBS += gnome-desktop-3           2.3 # 19.1.10
+SHARED_LIBS += gnome-desktop-3           2.3 # 19.1.11
 
 CATEGORIES=		x11
 
