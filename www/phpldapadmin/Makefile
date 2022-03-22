@@ -3,7 +3,9 @@ COMMENT=	web-based LDAP browser to manage LDAP servers
 CATEGORIES=	www
 
 GH_ACCOUNT=	leenooks
-GH_TAGNAME=	1.2.6.2
+GH_TAGNAME=	1.2.6.3
+# https://github.com/leenooks/phpLDAPadmin/pull/149
+MODPHP_VERSION=	7.4
 GH_PROJECT=	phpLDAPadmin
 DISTNAME=	phpldapadmin-${GH_TAGNAME}
 
