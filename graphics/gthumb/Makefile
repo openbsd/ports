@@ -1,8 +1,7 @@
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	3.12.0
-REVISION=	1
+GNOME_VERSION=	3.12.1
 
 CATEGORIES=	graphics
 
