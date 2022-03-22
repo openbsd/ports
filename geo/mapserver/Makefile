@@ -31,6 +31,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php lang/python devel/cmake
+MODPHP_VERSION=	7.4
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 MODPY_SETUPTOOLS=	Yes

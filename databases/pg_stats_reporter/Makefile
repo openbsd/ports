@@ -18,6 +18,7 @@ INSTDIR =	${PREFIX}/pg_stats_reporter_lib/
 
 SUBST_VARS +=	INSTDIR MODPHP_BIN
 MODULES =	lang/php
+MODPHP_VERSION = 7.4
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-pgsql \
 		lang/php/${MODPHP_VERSION},-intl
 

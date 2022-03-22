@@ -32,6 +32,7 @@ MODULES=	lang/python \
 
 MODPHP_DO_SAMPLE=mapi
 MODPHP_BUILDDEP=Yes
+MODPHP_VERSION=	7.4
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 

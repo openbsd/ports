@@ -1,8 +1,9 @@
 COMMENT=		web-based VirtualBox front-end
-	
+
 GH_PROJECT=		phpvirtualbox
 GH_ACCOUNT=		phpvirtualbox
 GH_TAGNAME=		5.2-1
+MODPHP_VERSION=		7.4
 PKGNAME=		phpvirtualbox-${GH_TAGNAME:S/-/./}
 REVISION=		0
 

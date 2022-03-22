@@ -21,8 +21,9 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MASTER_SITES =		${HOMEPAGE}files/
 
+# for tests
 MODULES =		lang/php
-
+MODPHP_VERSION =	7.4
 MODPHP_BUILDDEP =	No
 MODPHP_RUNDEP =		No
 

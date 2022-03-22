@@ -2,6 +2,7 @@ COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
 V=			2.18
 DISTNAME=		selfoss-$V
+MODPHP_VERSION=		7.4
 REVISION=		6
 
 CATEGORIES=		www

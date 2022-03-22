@@ -1,6 +1,7 @@
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
 DISTNAME=	phpPgAdmin-5.6.0
+MODPHP_VERSION=	7.4
 CATEGORIES=	www databases
 HOMEPAGE=	http://phppgadmin.sourceforge.net/
 REVISION=	1

@@ -29,7 +29,8 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://cdn.zabbix.com/zabbix/sources/stable/${MAJV}/
 
-MODULES=		lang/php
+MODULES =		lang/php
+MODPHP_VERSION =		7.4
 MODPHP_BUILDDEP =	No
 
 MULTI_PACKAGES =	-main -web

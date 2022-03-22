@@ -18,6 +18,7 @@ NO_TEST =	Yes
 PKG_ARCH =	*
 
 MODULES =	lang/php
+MODPHP_VERSION = 7.4
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
 
 pre-configure:

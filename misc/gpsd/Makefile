@@ -26,6 +26,7 @@ WANTLIB-main +=	c dbus-1 m curses pthread usb-1.0 ${COMPILER_LIBCXX}
 WANTLIB-php =
 
 MODULES +=		devel/scons lang/python lang/php
+MODPHP_VERSION=		7.4
 MODPHP_BUILDDEP=	No
 MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 			qt=no \

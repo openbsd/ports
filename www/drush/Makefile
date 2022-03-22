@@ -3,6 +3,7 @@ COMMENT =	command line access to most of Drupal
 CATEGORIES =	www devel
 
 DISTNAME=	drush-8.4.6
+MODPHP_VERSION=	7.4
 
 HOMEPAGE=	https://www.drush.org/
 

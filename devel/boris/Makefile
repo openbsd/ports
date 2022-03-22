@@ -13,6 +13,7 @@ HOMEPAGE =		https://github.com/d11wtq/boris
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/php
+MODPHP_VERSION =	7.4
 RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl
 
 NO_BUILD =		Yes

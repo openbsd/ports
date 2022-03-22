@@ -23,6 +23,7 @@ TINSTDIR=	${TRUEPREFIX}/z-push
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.4
 RUN_DEPENDS=	mail/kopano/core,-mapi \
 		lang/php/${MODPHP_VERSION},-imap
 

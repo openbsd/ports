@@ -2,6 +2,7 @@ COMMENT =	CalDAV/CardDav calendar/contacts server
 
 DISTNAME =	davical_1.1.10.orig
 PKGNAME =	davical-1.1.10
+MODPHP_VERSION = 7.4
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	productivity net
 
@@ -12,7 +13,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WRKSRC= 	${WRKDIR}
+WRKSRC =	${WRKDIR}
 MODULES =	lang/php
 PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/davical

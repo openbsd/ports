@@ -1,8 +1,9 @@
 COMMENT-main =	Nagios/Icinga addon which graphs performance data
 COMMENT-cgi =	pnp4nagios CGI scripts
 
-V = 		0.6.26
+V =		0.6.26
 DISTNAME =	pnp4nagios-${V}
+MODPHP_VERSION = 7.4
 PKGNAME-main =	${DISTNAME}
 PKGNAME-cgi =	pnp4nagios-cgi-${V}
 REVISION-main = 3

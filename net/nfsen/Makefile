@@ -12,6 +12,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nfsen/}
 
 MODULES=	perl lang/php
+MODPHP_VERSION=	7.4
 RUN_DEPENDS=	net/rrdtool \
 		mail/p5-Mail-Tools \
 		net/p5-Socket6 \

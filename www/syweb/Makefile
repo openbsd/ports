@@ -2,6 +2,7 @@ BROKEN=		needs adapting for PHP >7.3
 
 COMMENT=	web frontend to symon
 DISTNAME=	syweb-0.65
+MODPHP_VERSION=	7.4
 REVISION=	11
 CATEGORIES=	www sysutils
 

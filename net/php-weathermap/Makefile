@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${HOMEPAGE}files/
 
 MODULES=	lang/php
+MODPHP_VERSION=	7.4
 
 RUN_DEPENDS=	www/pear \
 		lang/php/${MODPHP_VERSION},-gd
