@@ -10,6 +10,7 @@
 @bin libexec/got-read-gotconfig
 @bin libexec/got-read-object
 @bin libexec/got-read-pack
+@bin libexec/got-read-patch
 @bin libexec/got-read-tag
 @bin libexec/got-read-tree
 @bin libexec/got-send-pack

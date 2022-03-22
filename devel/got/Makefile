@@ -1,7 +1,7 @@
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 
-V =			0.67
+V =			0.68
 DISTNAME =		got-${V}
 PKGNAME-web =		gotweb-${V}
 CATEGORIES =		devel
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -web
 
 # uses pledge()
-WANTLIB-main =		c curses panel pthread util z
+WANTLIB-main =		c curses m panel pthread util z
 WANTLIB-web =		c util z
 
 MAKE_FLAGS =		CC="${CC}"
