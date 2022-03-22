@@ -1,5 +1,5 @@
 include/dmtx.h
-lib/libdmtx.a
+@static-lib lib/libdmtx.a
 lib/libdmtx.la
 @lib lib/libdmtx.so.${LIBdmtx_VERSION}
 lib/pkgconfig/libdmtx.pc

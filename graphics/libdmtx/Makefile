@@ -1,19 +1,22 @@
 COMMENT =		library for handling data matrix barcodes
 
-DISTNAME =		libdmtx-0.7.4
-CATEGORIES =		devel graphics
-SHARED_LIBS +=		dmtx	0.0 # 0.0
-REVISION =		0
+GH_ACCOUNT =		dmtx
+GH_PROJECT =		libdmtx
+GH_TAGNAME =		v0.7.5
 
-HOMEPAGE =		http://www.libdmtx.org/
+CATEGORIES =		devel graphics
+SHARED_LIBS +=		dmtx	0.1
+
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libdmtx/}
 
 # BSD
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		m
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTORECONF =		./autogen.sh
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
 
 .include <bsd.port.mk>
