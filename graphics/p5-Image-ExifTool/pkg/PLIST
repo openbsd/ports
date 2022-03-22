@@ -19,6 +19,7 @@ ${P5SITE}/Image/ExifTool/BPG.pm
 ${P5SITE}/Image/ExifTool/BZZ.pm
 ${P5SITE}/Image/ExifTool/BigTIFF.pm
 ${P5SITE}/Image/ExifTool/BuildTagLookup.pm
+${P5SITE}/Image/ExifTool/CBOR.pm
 ${P5SITE}/Image/ExifTool/Canon.pm
 ${P5SITE}/Image/ExifTool/CanonCustom.pm
 ${P5SITE}/Image/ExifTool/CanonRaw.pm
@@ -242,6 +243,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::BZZ.3p
 @man man/man3p/Image::ExifTool::BigTIFF.3p
 @man man/man3p/Image::ExifTool::BuildTagLookup.3p
+@man man/man3p/Image::ExifTool::CBOR.3p
 @man man/man3p/Image::ExifTool::Canon.3p
 @man man/man3p/Image::ExifTool::CanonCustom.3p
 @man man/man3p/Image::ExifTool::CanonRaw.3p
