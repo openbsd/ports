@@ -1,4 +1,4 @@
-@pkgpath net/py-socketio-client,python3
+@pkgpath net/py-socketio-client
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/
 lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

@@ -3,7 +3,7 @@ COMMENT =		python socket.io client library
 MODPY_EGG_VERSION =	0.6.7
 DISTNAME =		socketIO_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-socketIO-client-${MODPY_EGG_VERSION}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		net
 
