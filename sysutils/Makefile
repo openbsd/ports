@@ -286,6 +286,7 @@
      SUBDIR += py-distro,python3
      SUBDIR += py-dotenv,python3
      SUBDIR += py-elasticsearch-curator	# unflavoured (standalone?) but uses python3
+     SUBDIR += py-find,python3
      SUBDIR += py-ghmi,python3
      SUBDIR += py-hpilo,python3
      SUBDIR += py-joblib,python3
