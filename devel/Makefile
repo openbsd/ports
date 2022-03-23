@@ -1449,7 +1449,7 @@
      SUBDIR += py-pbr,python3
      SUBDIR += py-pebble,python3
      SUBDIR += py-pexpect,python3
-     SUBDIR += py-pip
+     SUBDIR += py2-pip
      SUBDIR += py-pip,python3
      SUBDIR += py-pkgconfig,python3
      SUBDIR += py-pluggy,python3
