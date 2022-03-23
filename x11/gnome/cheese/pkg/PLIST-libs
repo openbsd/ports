@@ -16,5 +16,4 @@ lib/pkgconfig/cheese-gtk.pc
 lib/pkgconfig/cheese.pc
 share/gir-1.0/Cheese-3.0.gir
 share/glib-2.0/schemas/org.gnome.Cheese.gschema.xml
-share/metainfo/org.gnome.Cheese.appdata.xml
 @tag glib-compile-schemas
