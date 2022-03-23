@@ -1,0 +1,8 @@
+share/doc/doulos-cipher/
+share/doc/doulos-cipher/FONTLOG.txt
+share/doc/doulos-cipher/OFL-FAQ.txt
+share/doc/doulos-cipher/OFL.txt
+share/doc/doulos-cipher/README.txt
+share/fonts/
+@fontdir share/fonts/doulos-cipher/
+share/fonts/doulos-cipher/DoulosSILCipher-R.ttf
