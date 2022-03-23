@@ -29,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/${MODPY_PYCACHE}utils.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pygit2/_build.py
 @so lib/python${MODPY_VERSION}/site-packages/pygit2/_libgit2${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/pygit2/_pygit2.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pygit2/_pygit2.pyi
 lib/python${MODPY_VERSION}/site-packages/pygit2/_run.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/blame.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/callbacks.py
