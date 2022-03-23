@@ -2,7 +2,7 @@ COMMENT=	PHP support for rar archives
 
 DISTNAME=	rar-4.2.0
 CATEGORIES=	archivers
-REVISION=	1
+REVISION=	2
 
 # PHP
 PERMIT_PACKAGE=	Yes

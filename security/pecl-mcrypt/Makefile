@@ -2,7 +2,7 @@ COMMENT=	PHP bindings for the libmcrypt library
 
 DISTNAME=	mcrypt-1.0.4
 DIST_SUBDIR=	pecl
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	security
 

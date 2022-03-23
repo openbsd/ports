@@ -11,6 +11,7 @@ DISTNAME=	composer-$V
 DISTFILES=	composer-$V{composer}.phar
 EXTRACT_SUFX=	.phar
 EXTRACT_ONLY=
+REVISION=	0
 
 HOMEPAGE=	https://getcomposer.org/
 

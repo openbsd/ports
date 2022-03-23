@@ -1,7 +1,7 @@
 COMMENT=		PHP wrapper for pledge(2) and unveil(2)
 
 DISTNAME=		pledge-2.0.2
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		www
 

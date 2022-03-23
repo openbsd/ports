@@ -18,9 +18,7 @@
 @group
 @sample ${SYSCONFDIR}/php-fpm.d/
 @rcscript ${RCDIR}/php${SV}_fpm
-bin/phar
 bin/phar-${PV}
-bin/php
 @bin bin/php-${PV}
 bin/php-config-${PV}
 bin/phpize-${PV}

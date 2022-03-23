@@ -17,7 +17,8 @@ WANTLIB += iconv icudata icui18n icuuc idn intl m z
 COMPILER=	base-clang ports-gcc base-gcc
 
 MODULES=	lang/php/pecl
-FLAVORS=	php73 php74
+FLAVOR=		php74
+FLAVORS=	php74
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --with-http-libcurl-dir=${LOCALBASE}

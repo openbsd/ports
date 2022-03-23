@@ -23,7 +23,6 @@ INSTDIR=	${WRKINST}${TINSTDIR}
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
-MODPHP_VERSION=	8.0
 
 RUN_DEPENDS=	mail/roundcubemail>=0.9 \
 		lang/php/${MODPHP_VERSION},-curl \

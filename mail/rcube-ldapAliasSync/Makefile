@@ -23,7 +23,6 @@ TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR TINSTDIR
 
 MODULES=	lang/php
-MODPHP_VERSION=	8.0
 
 RUN_DEPENDS=	mail/roundcubemail>=1.1 \
 		lang/php/${MODPHP_VERSION},-ldap

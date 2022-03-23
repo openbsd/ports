@@ -3,7 +3,10 @@ COMMENT=	PHP class for generating PDF documents
 GH_ACCOUNT=	tecnickcom
 GH_PROJECT=	TCPDF
 GH_TAGNAME=	6.4.4
+REVISION=	0
+
 PKGNAME=	${DISTNAME:L}
+
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://tcpdf.org/
