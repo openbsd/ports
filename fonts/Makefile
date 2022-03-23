@@ -21,6 +21,7 @@
      SUBDIR += dai-banna
      SUBDIR += dina-fonts
      SUBDIR += doulos
+     SUBDIR += doulos-cipher
      SUBDIR += ecoliercourt-fonts
      SUBDIR += fantasque-sans
      SUBDIR += farsi-bfonts-ttf
