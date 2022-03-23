@@ -81,7 +81,7 @@ LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
 .endif
 
-MODCMAKE_USE_SAHRED_LIBS = No
+MODCMAKE_USE_SHARED_LIBS = No
 
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
 				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
