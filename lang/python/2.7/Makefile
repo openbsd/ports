@@ -7,7 +7,7 @@ FULL_VERSION =		2.7.18
 SHARED_LIBS =		python2.7 0.0
 VERSION_SPEC =		>=2.7,<2.8
 
-REVISION-main =		5
+REVISION-main =		6
 REVISION-idle =		1
 REVISION-tests =	1
 REVISION-bsddb =	0
