@@ -1,7 +1,7 @@
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.15.4
+GNOME_VERSION=		0.15.5
 
 # see BACKEND_DIR in config.h
 API_V=			26
@@ -17,18 +17,18 @@ HOMEPAGE=		https://wiki.gnome.org/Projects/Folks
 
 WANTLIB += c ebook-1.2 ebook-contacts-1.2 edataserver-1.2 gee-0.8
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl readline
-WANTLIB += telepathy-glib xml2 ${COMPILER_LIBCXX}
+WANTLIB += telepathy-glib xml2
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/dconf \
 			devel/meson \
 			lang/python \
 			x11/gnome
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-MODPY_ADJ_FILES =	tests/tools/manager-file.py
+MODPY_ADJ_FILES=	tests/tools/manager-file.py
 
 LIB_DEPENDS=		databases/evolution-data-server \
 			devel/libgee \
@@ -39,9 +39,9 @@ RUN_DEPENDS=		net/telepathy/telepathy-mission-control
 
 TEST_DEPENDS=		${FULLPKGNAME}:${BASE_PKGPATH}
 
-MODGNOME_TOOLS +=	gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
-CONFIGURE_STYLE =	meson
+CONFIGURE_STYLE=	meson
 
 # requires libofono (not ported)
 CONFIGURE_ARGS += 	-Dofono_backend=false
