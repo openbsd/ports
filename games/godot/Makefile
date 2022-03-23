@@ -2,7 +2,7 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
 COMMENT =	2D and 3D game engine
 
-V =		3.4.3
+V =		3.4.4
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}

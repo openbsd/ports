@@ -17,7 +17,7 @@ Index: core/project_settings.cpp
  
  	Compression::zlib_level = GLOBAL_GET("compression/formats/zlib/compression_level");
  
-@@ -1237,12 +1235,8 @@ ProjectSettings::ProjectSettings() {
+@@ -1233,12 +1231,8 @@ ProjectSettings::ProjectSettings() {
  	GLOBAL_DEF("debug/settings/profiler/max_functions", 16384);
  	custom_prop_info["debug/settings/profiler/max_functions"] = PropertyInfo(Variant::INT, "debug/settings/profiler/max_functions", PROPERTY_HINT_RANGE, "128,65535,1");
  
