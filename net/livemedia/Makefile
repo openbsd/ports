@@ -3,6 +3,7 @@ COMMENT=	LIVE555 streaming media library
 VERSION=	2022.02.07
 DISTNAME=	live.${VERSION}
 PKGNAME=	liveMedia-${VERSION:S/.//g}
+REVISION=	0
 CATEGORIES=	net devel
 MASTER_SITES=	https://download.videolan.org/contrib/live555/
 
@@ -12,6 +13,10 @@ HOMEPAGE=	http://www.live555.com/liveMedia/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c m ssl crypto pthread ${COMPILER_LIBCXX}
+
+.for lib in liveMedia BasicUsageEnvironment UsageEnvironment groupsock
+SHARED_LIBS += ${lib} 0.0
+.endfor
 
 COMPILER=	base-clang ports-gcc base-gcc
 
@@ -24,46 +29,12 @@ WRKDIST=	${WRKDIR}/live
 NO_TEST=	Yes
 
 CFLAGS+=	-fPIC -DXLOCALE_NOT_USED
+MAKE_FLAGS+=	LIBliveMedia_VERSION=${LIBliveMedia_VERSION}
 
 post-extract:
-	@cp -f ${FILESDIR}/config.fixed-openbsd ${WRKSRC}/
+	cp -f ${FILESDIR}/config.fixed-openbsd ${WRKSRC}/
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/live
-	${INSTALL_DATA_DIR} ${PREFIX}/live/groupsock
-	${INSTALL_DATA_DIR} ${PREFIX}/live/liveMedia
-	${INSTALL_DATA_DIR} ${PREFIX}/live/UsageEnvironment
-	${INSTALL_DATA_DIR} ${PREFIX}/live/BasicUsageEnvironment
-	${INSTALL_DATA_DIR} ${PREFIX}/live/groupsock/include
-	${INSTALL_DATA_DIR} ${PREFIX}/live/liveMedia/include
-	${INSTALL_DATA_DIR} ${PREFIX}/live/UsageEnvironment/include
-	${INSTALL_DATA_DIR} ${PREFIX}/live/BasicUsageEnvironment/include
-	${INSTALL_PROGRAM} ${WRKSRC}/testProgs/playSIP ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/testProgs/openRTSP ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/testProgs/sapWatch ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/BasicUsageEnvironment/libBasicUsageEnvironment.a \
-	    ${PREFIX}/live/BasicUsageEnvironment/
-	ln -sf libBasicUsageEnvironment.a \
-	    ${PREFIX}/live/BasicUsageEnvironment/libBasicUsageEnvironment_pic.a
-	${INSTALL_DATA} ${WRKSRC}/UsageEnvironment/libUsageEnvironment.a \
-	    ${PREFIX}/live/UsageEnvironment/
-	ln -sf libUsageEnvironment.a \
-	    ${PREFIX}/live/UsageEnvironment/libUsageEnvironment_pic.a
-	${INSTALL_DATA} ${WRKSRC}/groupsock/libgroupsock.a \
-	    ${PREFIX}/live/groupsock/
-	ln -sf libgroupsock.a \
-	    ${PREFIX}/live/groupsock/libgroupsock_pic.a
-	${INSTALL_DATA} ${WRKSRC}/liveMedia/libliveMedia.a \
-	    ${PREFIX}/live/liveMedia/
-	ln -sf libliveMedia.a \
-	    ${PREFIX}/live/liveMedia/libliveMedia_pic.a
-	cd ${WRKSRC}/BasicUsageEnvironment/include && \
-	    ${INSTALL_DATA} *.hh ${PREFIX}/live/BasicUsageEnvironment/include/
-	cd ${WRKSRC}/UsageEnvironment/include && \
-	    ${INSTALL_DATA} *.hh ${PREFIX}/live/UsageEnvironment/include/
-	cd ${WRKSRC}/groupsock/include && \
-	    ${INSTALL_DATA} *.h *.hh ${PREFIX}/live/groupsock/include/
-	cd ${WRKSRC}/liveMedia/include && \
-	    ${INSTALL_DATA} *.hh ${PREFIX}/live/liveMedia/include/
+post-install:
+	rm ${PREFIX}/lib/*.so
 
 .include <bsd.port.mk>

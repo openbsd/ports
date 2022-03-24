@@ -1,202 +1,227 @@
+@bin bin/MPEG2TransportStreamIndexer
+@bin bin/live555HLSProxy
+@bin bin/live555MediaServer
+@bin bin/live555ProxyServer
+@bin bin/mikeyParse
 @bin bin/openRTSP
 @bin bin/playSIP
+@bin bin/registerRTSPStream
 @bin bin/sapWatch
-live/
-live/BasicUsageEnvironment/
-live/BasicUsageEnvironment/include/
-live/BasicUsageEnvironment/include/BasicHashTable.hh
-live/BasicUsageEnvironment/include/BasicUsageEnvironment.hh
-live/BasicUsageEnvironment/include/BasicUsageEnvironment0.hh
-live/BasicUsageEnvironment/include/BasicUsageEnvironment_version.hh
-live/BasicUsageEnvironment/include/DelayQueue.hh
-live/BasicUsageEnvironment/include/HandlerSet.hh
-live/BasicUsageEnvironment/libBasicUsageEnvironment.a
-live/BasicUsageEnvironment/libBasicUsageEnvironment_pic.a
-live/UsageEnvironment/
-live/UsageEnvironment/include/
-live/UsageEnvironment/include/Boolean.hh
-live/UsageEnvironment/include/HashTable.hh
-live/UsageEnvironment/include/UsageEnvironment.hh
-live/UsageEnvironment/include/UsageEnvironment_version.hh
-live/UsageEnvironment/include/strDup.hh
-live/UsageEnvironment/libUsageEnvironment.a
-live/UsageEnvironment/libUsageEnvironment_pic.a
-live/groupsock/
-live/groupsock/include/
-live/groupsock/include/GroupEId.hh
-live/groupsock/include/Groupsock.hh
-live/groupsock/include/GroupsockHelper.hh
-live/groupsock/include/IOHandlers.hh
-live/groupsock/include/NetAddress.hh
-live/groupsock/include/NetCommon.h
-live/groupsock/include/NetInterface.hh
-live/groupsock/include/groupsock_version.hh
-live/groupsock/libgroupsock.a
-live/groupsock/libgroupsock_pic.a
-live/liveMedia/
-live/liveMedia/include/
-live/liveMedia/include/AC3AudioFileServerMediaSubsession.hh
-live/liveMedia/include/AC3AudioRTPSink.hh
-live/liveMedia/include/AC3AudioRTPSource.hh
-live/liveMedia/include/AC3AudioStreamFramer.hh
-live/liveMedia/include/ADTSAudioFileServerMediaSubsession.hh
-live/liveMedia/include/ADTSAudioFileSource.hh
-live/liveMedia/include/ADTSAudioStreamDiscreteFramer.hh
-live/liveMedia/include/AMRAudioFileServerMediaSubsession.hh
-live/liveMedia/include/AMRAudioFileSink.hh
-live/liveMedia/include/AMRAudioFileSource.hh
-live/liveMedia/include/AMRAudioRTPSink.hh
-live/liveMedia/include/AMRAudioRTPSource.hh
-live/liveMedia/include/AMRAudioSource.hh
-live/liveMedia/include/AVIFileSink.hh
-live/liveMedia/include/AudioInputDevice.hh
-live/liveMedia/include/AudioRTPSink.hh
-live/liveMedia/include/Base64.hh
-live/liveMedia/include/BasicUDPSink.hh
-live/liveMedia/include/BasicUDPSource.hh
-live/liveMedia/include/BitVector.hh
-live/liveMedia/include/ByteStreamFileSource.hh
-live/liveMedia/include/ByteStreamMemoryBufferSource.hh
-live/liveMedia/include/ByteStreamMultiFileSource.hh
-live/liveMedia/include/DVVideoFileServerMediaSubsession.hh
-live/liveMedia/include/DVVideoRTPSink.hh
-live/liveMedia/include/DVVideoRTPSource.hh
-live/liveMedia/include/DVVideoStreamFramer.hh
-live/liveMedia/include/DeviceSource.hh
-live/liveMedia/include/DigestAuthentication.hh
-live/liveMedia/include/FileServerMediaSubsession.hh
-live/liveMedia/include/FileSink.hh
-live/liveMedia/include/FramedFileSource.hh
-live/liveMedia/include/FramedFilter.hh
-live/liveMedia/include/FramedSource.hh
-live/liveMedia/include/GSMAudioRTPSink.hh
-live/liveMedia/include/GenericMediaServer.hh
-live/liveMedia/include/H261VideoRTPSource.hh
-live/liveMedia/include/H263plusVideoFileServerMediaSubsession.hh
-live/liveMedia/include/H263plusVideoRTPSink.hh
-live/liveMedia/include/H263plusVideoRTPSource.hh
-live/liveMedia/include/H263plusVideoStreamFramer.hh
-live/liveMedia/include/H264VideoFileServerMediaSubsession.hh
-live/liveMedia/include/H264VideoFileSink.hh
-live/liveMedia/include/H264VideoRTPSink.hh
-live/liveMedia/include/H264VideoRTPSource.hh
-live/liveMedia/include/H264VideoStreamDiscreteFramer.hh
-live/liveMedia/include/H264VideoStreamFramer.hh
-live/liveMedia/include/H264or5VideoFileSink.hh
-live/liveMedia/include/H264or5VideoRTPSink.hh
-live/liveMedia/include/H264or5VideoStreamDiscreteFramer.hh
-live/liveMedia/include/H264or5VideoStreamFramer.hh
-live/liveMedia/include/H265VideoFileServerMediaSubsession.hh
-live/liveMedia/include/H265VideoFileSink.hh
-live/liveMedia/include/H265VideoRTPSink.hh
-live/liveMedia/include/H265VideoRTPSource.hh
-live/liveMedia/include/H265VideoStreamDiscreteFramer.hh
-live/liveMedia/include/H265VideoStreamFramer.hh
-live/liveMedia/include/HLSSegmenter.hh
-live/liveMedia/include/HMAC_SHA1.hh
-live/liveMedia/include/HMAC_hash.hh
-live/liveMedia/include/InputFile.hh
-live/liveMedia/include/JPEG2000VideoRTPSink.hh
-live/liveMedia/include/JPEG2000VideoRTPSource.hh
-live/liveMedia/include/JPEGVideoRTPSink.hh
-live/liveMedia/include/JPEGVideoRTPSource.hh
-live/liveMedia/include/JPEGVideoSource.hh
-live/liveMedia/include/Locale.hh
-live/liveMedia/include/MIKEY.hh
-live/liveMedia/include/MP3ADU.hh
-live/liveMedia/include/MP3ADURTPSink.hh
-live/liveMedia/include/MP3ADURTPSource.hh
-live/liveMedia/include/MP3ADUTranscoder.hh
-live/liveMedia/include/MP3ADUinterleaving.hh
-live/liveMedia/include/MP3AudioFileServerMediaSubsession.hh
-live/liveMedia/include/MP3FileSource.hh
-live/liveMedia/include/MP3Transcoder.hh
-live/liveMedia/include/MPEG1or2AudioRTPSink.hh
-live/liveMedia/include/MPEG1or2AudioRTPSource.hh
-live/liveMedia/include/MPEG1or2AudioStreamFramer.hh
-live/liveMedia/include/MPEG1or2Demux.hh
-live/liveMedia/include/MPEG1or2DemuxedElementaryStream.hh
-live/liveMedia/include/MPEG1or2DemuxedServerMediaSubsession.hh
-live/liveMedia/include/MPEG1or2FileServerDemux.hh
-live/liveMedia/include/MPEG1or2VideoFileServerMediaSubsession.hh
-live/liveMedia/include/MPEG1or2VideoRTPSink.hh
-live/liveMedia/include/MPEG1or2VideoRTPSource.hh
-live/liveMedia/include/MPEG1or2VideoStreamDiscreteFramer.hh
-live/liveMedia/include/MPEG1or2VideoStreamFramer.hh
-live/liveMedia/include/MPEG2IndexFromTransportStream.hh
-live/liveMedia/include/MPEG2TransportFileServerMediaSubsession.hh
-live/liveMedia/include/MPEG2TransportStreamAccumulator.hh
-live/liveMedia/include/MPEG2TransportStreamDemux.hh
-live/liveMedia/include/MPEG2TransportStreamFramer.hh
-live/liveMedia/include/MPEG2TransportStreamFromESSource.hh
-live/liveMedia/include/MPEG2TransportStreamFromPESSource.hh
-live/liveMedia/include/MPEG2TransportStreamIndexFile.hh
-live/liveMedia/include/MPEG2TransportStreamMultiplexor.hh
-live/liveMedia/include/MPEG2TransportStreamTrickModeFilter.hh
-live/liveMedia/include/MPEG2TransportUDPServerMediaSubsession.hh
-live/liveMedia/include/MPEG4ESVideoRTPSink.hh
-live/liveMedia/include/MPEG4ESVideoRTPSource.hh
-live/liveMedia/include/MPEG4GenericRTPSink.hh
-live/liveMedia/include/MPEG4GenericRTPSource.hh
-live/liveMedia/include/MPEG4LATMAudioRTPSink.hh
-live/liveMedia/include/MPEG4LATMAudioRTPSource.hh
-live/liveMedia/include/MPEG4VideoFileServerMediaSubsession.hh
-live/liveMedia/include/MPEG4VideoStreamDiscreteFramer.hh
-live/liveMedia/include/MPEG4VideoStreamFramer.hh
-live/liveMedia/include/MPEGVideoStreamFramer.hh
-live/liveMedia/include/MatroskaFile.hh
-live/liveMedia/include/MatroskaFileServerDemux.hh
-live/liveMedia/include/Media.hh
-live/liveMedia/include/MediaSession.hh
-live/liveMedia/include/MediaSink.hh
-live/liveMedia/include/MediaSource.hh
-live/liveMedia/include/MediaTranscodingTable.hh
-live/liveMedia/include/MultiFramedRTPSink.hh
-live/liveMedia/include/MultiFramedRTPSource.hh
-live/liveMedia/include/OggFile.hh
-live/liveMedia/include/OggFileServerDemux.hh
-live/liveMedia/include/OggFileSink.hh
-live/liveMedia/include/OnDemandServerMediaSubsession.hh
-live/liveMedia/include/OutputFile.hh
-live/liveMedia/include/PassiveServerMediaSubsession.hh
-live/liveMedia/include/ProxyServerMediaSession.hh
-live/liveMedia/include/QCELPAudioRTPSource.hh
-live/liveMedia/include/QuickTimeFileSink.hh
-live/liveMedia/include/QuickTimeGenericRTPSource.hh
-live/liveMedia/include/RTCP.hh
-live/liveMedia/include/RTPInterface.hh
-live/liveMedia/include/RTPSink.hh
-live/liveMedia/include/RTPSource.hh
-live/liveMedia/include/RTSPClient.hh
-live/liveMedia/include/RTSPCommon.hh
-live/liveMedia/include/RTSPRegisterSender.hh
-live/liveMedia/include/RTSPServer.hh
-live/liveMedia/include/RawVideoFrameParameters.hh
-live/liveMedia/include/RawVideoRTPSink.hh
-live/liveMedia/include/RawVideoRTPSource.hh
-live/liveMedia/include/SIPClient.hh
-live/liveMedia/include/SRTPCryptographicContext.hh
-live/liveMedia/include/ServerMediaSession.hh
-live/liveMedia/include/SimpleRTPSink.hh
-live/liveMedia/include/SimpleRTPSource.hh
-live/liveMedia/include/StreamReplicator.hh
-live/liveMedia/include/T140TextRTPSink.hh
-live/liveMedia/include/TLSState.hh
-live/liveMedia/include/TextRTPSink.hh
-live/liveMedia/include/TheoraVideoRTPSink.hh
-live/liveMedia/include/TheoraVideoRTPSource.hh
-live/liveMedia/include/VP8VideoRTPSink.hh
-live/liveMedia/include/VP8VideoRTPSource.hh
-live/liveMedia/include/VP9VideoRTPSink.hh
-live/liveMedia/include/VP9VideoRTPSource.hh
-live/liveMedia/include/VideoRTPSink.hh
-live/liveMedia/include/VorbisAudioRTPSink.hh
-live/liveMedia/include/VorbisAudioRTPSource.hh
-live/liveMedia/include/WAVAudioFileServerMediaSubsession.hh
-live/liveMedia/include/WAVAudioFileSource.hh
-live/liveMedia/include/liveMedia.hh
-live/liveMedia/include/liveMedia_version.hh
-live/liveMedia/include/ourMD5.hh
-live/liveMedia/include/uLawAudioFilter.hh
-live/liveMedia/libliveMedia.a
-live/liveMedia/libliveMedia_pic.a
+@bin bin/testAMRAudioStreamer
+@bin bin/testDVVideoStreamer
+@bin bin/testH264VideoStreamer
+@bin bin/testH264VideoToHLSSegments
+@bin bin/testH264VideoToTransportStream
+@bin bin/testH265VideoStreamer
+@bin bin/testH265VideoToTransportStream
+@bin bin/testMKVSplitter
+@bin bin/testMKVStreamer
+@bin bin/testMP3Receiver
+@bin bin/testMP3Streamer
+@bin bin/testMPEG1or2AudioVideoStreamer
+@bin bin/testMPEG1or2ProgramToTransportStream
+@bin bin/testMPEG1or2Splitter
+@bin bin/testMPEG1or2VideoReceiver
+@bin bin/testMPEG1or2VideoStreamer
+@bin bin/testMPEG2TransportReceiver
+@bin bin/testMPEG2TransportStreamSplitter
+@bin bin/testMPEG2TransportStreamTrickPlay
+@bin bin/testMPEG2TransportStreamer
+@bin bin/testMPEG4VideoStreamer
+@bin bin/testOggStreamer
+@bin bin/testOnDemandRTSPServer
+@bin bin/testRTSPClient
+@bin bin/testRelay
+@bin bin/testReplicator
+@bin bin/testWAVAudioStreamer
+@bin bin/vobStreamer
+include/BasicUsageEnvironment/
+include/BasicUsageEnvironment/BasicHashTable.hh
+include/BasicUsageEnvironment/BasicUsageEnvironment.hh
+include/BasicUsageEnvironment/BasicUsageEnvironment0.hh
+include/BasicUsageEnvironment/BasicUsageEnvironment_version.hh
+include/BasicUsageEnvironment/DelayQueue.hh
+include/BasicUsageEnvironment/HandlerSet.hh
+include/UsageEnvironment/
+include/UsageEnvironment/Boolean.hh
+include/UsageEnvironment/HashTable.hh
+include/UsageEnvironment/UsageEnvironment.hh
+include/UsageEnvironment/UsageEnvironment_version.hh
+include/UsageEnvironment/strDup.hh
+include/groupsock/
+include/groupsock/GroupEId.hh
+include/groupsock/Groupsock.hh
+include/groupsock/GroupsockHelper.hh
+include/groupsock/IOHandlers.hh
+include/groupsock/NetAddress.hh
+include/groupsock/NetCommon.h
+include/groupsock/NetInterface.hh
+include/groupsock/groupsock_version.hh
+include/liveMedia/
+include/liveMedia/AC3AudioFileServerMediaSubsession.hh
+include/liveMedia/AC3AudioRTPSink.hh
+include/liveMedia/AC3AudioRTPSource.hh
+include/liveMedia/AC3AudioStreamFramer.hh
+include/liveMedia/ADTSAudioFileServerMediaSubsession.hh
+include/liveMedia/ADTSAudioFileSource.hh
+include/liveMedia/ADTSAudioStreamDiscreteFramer.hh
+include/liveMedia/AMRAudioFileServerMediaSubsession.hh
+include/liveMedia/AMRAudioFileSink.hh
+include/liveMedia/AMRAudioFileSource.hh
+include/liveMedia/AMRAudioRTPSink.hh
+include/liveMedia/AMRAudioRTPSource.hh
+include/liveMedia/AMRAudioSource.hh
+include/liveMedia/AVIFileSink.hh
+include/liveMedia/AudioInputDevice.hh
+include/liveMedia/AudioRTPSink.hh
+include/liveMedia/Base64.hh
+include/liveMedia/BasicUDPSink.hh
+include/liveMedia/BasicUDPSource.hh
+include/liveMedia/BitVector.hh
+include/liveMedia/ByteStreamFileSource.hh
+include/liveMedia/ByteStreamMemoryBufferSource.hh
+include/liveMedia/ByteStreamMultiFileSource.hh
+include/liveMedia/DVVideoFileServerMediaSubsession.hh
+include/liveMedia/DVVideoRTPSink.hh
+include/liveMedia/DVVideoRTPSource.hh
+include/liveMedia/DVVideoStreamFramer.hh
+include/liveMedia/DeviceSource.hh
+include/liveMedia/DigestAuthentication.hh
+include/liveMedia/FileServerMediaSubsession.hh
+include/liveMedia/FileSink.hh
+include/liveMedia/FramedFileSource.hh
+include/liveMedia/FramedFilter.hh
+include/liveMedia/FramedSource.hh
+include/liveMedia/GSMAudioRTPSink.hh
+include/liveMedia/GenericMediaServer.hh
+include/liveMedia/H261VideoRTPSource.hh
+include/liveMedia/H263plusVideoFileServerMediaSubsession.hh
+include/liveMedia/H263plusVideoRTPSink.hh
+include/liveMedia/H263plusVideoRTPSource.hh
+include/liveMedia/H263plusVideoStreamFramer.hh
+include/liveMedia/H264VideoFileServerMediaSubsession.hh
+include/liveMedia/H264VideoFileSink.hh
+include/liveMedia/H264VideoRTPSink.hh
+include/liveMedia/H264VideoRTPSource.hh
+include/liveMedia/H264VideoStreamDiscreteFramer.hh
+include/liveMedia/H264VideoStreamFramer.hh
+include/liveMedia/H264or5VideoFileSink.hh
+include/liveMedia/H264or5VideoRTPSink.hh
+include/liveMedia/H264or5VideoStreamDiscreteFramer.hh
+include/liveMedia/H264or5VideoStreamFramer.hh
+include/liveMedia/H265VideoFileServerMediaSubsession.hh
+include/liveMedia/H265VideoFileSink.hh
+include/liveMedia/H265VideoRTPSink.hh
+include/liveMedia/H265VideoRTPSource.hh
+include/liveMedia/H265VideoStreamDiscreteFramer.hh
+include/liveMedia/H265VideoStreamFramer.hh
+include/liveMedia/HLSSegmenter.hh
+include/liveMedia/HMAC_SHA1.hh
+include/liveMedia/HMAC_hash.hh
+include/liveMedia/InputFile.hh
+include/liveMedia/JPEG2000VideoRTPSink.hh
+include/liveMedia/JPEG2000VideoRTPSource.hh
+include/liveMedia/JPEGVideoRTPSink.hh
+include/liveMedia/JPEGVideoRTPSource.hh
+include/liveMedia/JPEGVideoSource.hh
+include/liveMedia/Locale.hh
+include/liveMedia/MIKEY.hh
+include/liveMedia/MP3ADU.hh
+include/liveMedia/MP3ADURTPSink.hh
+include/liveMedia/MP3ADURTPSource.hh
+include/liveMedia/MP3ADUTranscoder.hh
+include/liveMedia/MP3ADUinterleaving.hh
+include/liveMedia/MP3AudioFileServerMediaSubsession.hh
+include/liveMedia/MP3FileSource.hh
+include/liveMedia/MP3Transcoder.hh
+include/liveMedia/MPEG1or2AudioRTPSink.hh
+include/liveMedia/MPEG1or2AudioRTPSource.hh
+include/liveMedia/MPEG1or2AudioStreamFramer.hh
+include/liveMedia/MPEG1or2Demux.hh
+include/liveMedia/MPEG1or2DemuxedElementaryStream.hh
+include/liveMedia/MPEG1or2DemuxedServerMediaSubsession.hh
+include/liveMedia/MPEG1or2FileServerDemux.hh
+include/liveMedia/MPEG1or2VideoFileServerMediaSubsession.hh
+include/liveMedia/MPEG1or2VideoRTPSink.hh
+include/liveMedia/MPEG1or2VideoRTPSource.hh
+include/liveMedia/MPEG1or2VideoStreamDiscreteFramer.hh
+include/liveMedia/MPEG1or2VideoStreamFramer.hh
+include/liveMedia/MPEG2IndexFromTransportStream.hh
+include/liveMedia/MPEG2TransportFileServerMediaSubsession.hh
+include/liveMedia/MPEG2TransportStreamAccumulator.hh
+include/liveMedia/MPEG2TransportStreamDemux.hh
+include/liveMedia/MPEG2TransportStreamFramer.hh
+include/liveMedia/MPEG2TransportStreamFromESSource.hh
+include/liveMedia/MPEG2TransportStreamFromPESSource.hh
+include/liveMedia/MPEG2TransportStreamIndexFile.hh
+include/liveMedia/MPEG2TransportStreamMultiplexor.hh
+include/liveMedia/MPEG2TransportStreamTrickModeFilter.hh
+include/liveMedia/MPEG2TransportUDPServerMediaSubsession.hh
+include/liveMedia/MPEG4ESVideoRTPSink.hh
+include/liveMedia/MPEG4ESVideoRTPSource.hh
+include/liveMedia/MPEG4GenericRTPSink.hh
+include/liveMedia/MPEG4GenericRTPSource.hh
+include/liveMedia/MPEG4LATMAudioRTPSink.hh
+include/liveMedia/MPEG4LATMAudioRTPSource.hh
+include/liveMedia/MPEG4VideoFileServerMediaSubsession.hh
+include/liveMedia/MPEG4VideoStreamDiscreteFramer.hh
+include/liveMedia/MPEG4VideoStreamFramer.hh
+include/liveMedia/MPEGVideoStreamFramer.hh
+include/liveMedia/MatroskaFile.hh
+include/liveMedia/MatroskaFileServerDemux.hh
+include/liveMedia/Media.hh
+include/liveMedia/MediaSession.hh
+include/liveMedia/MediaSink.hh
+include/liveMedia/MediaSource.hh
+include/liveMedia/MediaTranscodingTable.hh
+include/liveMedia/MultiFramedRTPSink.hh
+include/liveMedia/MultiFramedRTPSource.hh
+include/liveMedia/OggFile.hh
+include/liveMedia/OggFileServerDemux.hh
+include/liveMedia/OggFileSink.hh
+include/liveMedia/OnDemandServerMediaSubsession.hh
+include/liveMedia/OutputFile.hh
+include/liveMedia/PassiveServerMediaSubsession.hh
+include/liveMedia/ProxyServerMediaSession.hh
+include/liveMedia/QCELPAudioRTPSource.hh
+include/liveMedia/QuickTimeFileSink.hh
+include/liveMedia/QuickTimeGenericRTPSource.hh
+include/liveMedia/RTCP.hh
+include/liveMedia/RTPInterface.hh
+include/liveMedia/RTPSink.hh
+include/liveMedia/RTPSource.hh
+include/liveMedia/RTSPClient.hh
+include/liveMedia/RTSPCommon.hh
+include/liveMedia/RTSPRegisterSender.hh
+include/liveMedia/RTSPServer.hh
+include/liveMedia/RawVideoFrameParameters.hh
+include/liveMedia/RawVideoRTPSink.hh
+include/liveMedia/RawVideoRTPSource.hh
+include/liveMedia/SIPClient.hh
+include/liveMedia/SRTPCryptographicContext.hh
+include/liveMedia/ServerMediaSession.hh
+include/liveMedia/SimpleRTPSink.hh
+include/liveMedia/SimpleRTPSource.hh
+include/liveMedia/StreamReplicator.hh
+include/liveMedia/T140TextRTPSink.hh
+include/liveMedia/TLSState.hh
+include/liveMedia/TextRTPSink.hh
+include/liveMedia/TheoraVideoRTPSink.hh
+include/liveMedia/TheoraVideoRTPSource.hh
+include/liveMedia/VP8VideoRTPSink.hh
+include/liveMedia/VP8VideoRTPSource.hh
+include/liveMedia/VP9VideoRTPSink.hh
+include/liveMedia/VP9VideoRTPSource.hh
+include/liveMedia/VideoRTPSink.hh
+include/liveMedia/VorbisAudioRTPSink.hh
+include/liveMedia/VorbisAudioRTPSource.hh
+include/liveMedia/WAVAudioFileServerMediaSubsession.hh
+include/liveMedia/WAVAudioFileSource.hh
+include/liveMedia/liveMedia.hh
+include/liveMedia/liveMedia_version.hh
+include/liveMedia/ourMD5.hh
+include/liveMedia/uLawAudioFilter.hh
+@lib lib/libBasicUsageEnvironment.so.${LIBBasicUsageEnvironment_VERSION}
+@lib lib/libUsageEnvironment.so.${LIBUsageEnvironment_VERSION}
+@lib lib/libgroupsock.so.${LIBgroupsock_VERSION}
+@lib lib/libliveMedia.so.${LIBliveMedia_VERSION}
