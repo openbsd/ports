@@ -4,7 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES =	parallel
-V =		3.6.2
+V =		3.6.3
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
