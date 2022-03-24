@@ -3,6 +3,7 @@ COMMENT=	simple RADIUS client library
 SHARED_LIBS +=	radcli               1.0      # 8.0
 
 V=		1.3.0
+REVISION=	0
 DISTNAME=	radcli-$V
 
 CATEGORIES=	net
@@ -12,8 +13,8 @@ HOMEPAGE=	https://radcli.github.io/radcli/
 # recent code BSD, some old MERIT/Livingston
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit
-WANTLIB += pthread tasn1 unistring
+WANTLIB += brotlidec brotlienc gmp gnutls hogweed iconv idn2 intl
+WANTLIB += nettle p11-kit pthread tasn1 unistring z zstd
 
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/$V/
 

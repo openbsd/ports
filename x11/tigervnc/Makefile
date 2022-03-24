@@ -3,7 +3,7 @@ COMMENT=	high performance, multi-platform VNC client and server
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
 GH_TAGNAME=	v1.12.0
-REVISION=	0
+REVISION=	1
 
 # update the post-patch target if moving to a new major branch of xorg-server
 # there's no patchset in tigervnc for xorg-server-21.1.1.tar.xz:0 yet
@@ -22,10 +22,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst c fltk fltk_images
-WANTLIB += fontconfig fontenc freetype gmp gnutls hogweed iconv
-WANTLIB += idn2 intl jpeg kvm m nettle p11-kit pixman-1 tasn1
-WANTLIB += unistring xcb xshmfence z
+WANTLIB += Xfont2 Xft Xi Xinerama Xrandr Xrender Xtst brotlidec
+WANTLIB += brotlienc c fltk fltk_images fontconfig fontenc freetype
+WANTLIB += gmp gnutls hogweed iconv idn2 intl jpeg kvm m nettle
+WANTLIB += p11-kit pixman-1 tasn1 unistring xcb xshmfence z zstd
 
 MASTER_SITES0=	https://www.x.org/releases/individual/xserver/
 

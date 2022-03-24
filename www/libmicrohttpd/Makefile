@@ -1,5 +1,6 @@
 COMMENT =	tiny embeddable httpd library written in C
 DISTNAME =	libmicrohttpd-0.9.70
+REVISION =	0
 CATEGORIES =	www
 
 SHARED_LIBS +=	microhttpd                0.4 # 65.0
@@ -10,8 +11,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit
-WANTLIB += pthread tasn1 unistring
+WANTLIB += brotlidec brotlienc gmp gnutls hogweed iconv idn2 intl
+WANTLIB += nettle p11-kit pthread tasn1 unistring z zstd
 
 MASTER_SITES =	${MASTER_SITE_GNU:=libmicrohttpd/}
 

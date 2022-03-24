@@ -11,15 +11,16 @@ SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 		xmlsec1-gcrypt	0.0 \
 		xmlsec1		8.1
 REVISION-docs=	0
-REVISION-main=	1
+REVISION-main=	2
 
 HOMEPAGE=	https://www.aleksey.com/xmlsec/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed iconv idn2 intl ltdl m
-WANTLIB += nettle pthread ssl tasn1 unistring xml2 xslt z p11-kit ffi lzma
+WANTLIB += brotlidec brotlienc c crypto gcrypt gmp gnutls gpg-error
+WANTLIB += hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
+WANTLIB += pthread ssl tasn1 unistring xml2 xslt z zstd
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \

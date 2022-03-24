@@ -1,6 +1,7 @@
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-8.20
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               4.5 # 5.6
 
@@ -11,8 +12,9 @@ HOMEPAGE=	https://www.infradead.org/openconnect/
 # LGPLv2.1 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed iconv idn2 intl lz4 lzma m
-WANTLIB += nettle p11-kit pthread tasn1 unistring xml2 z
+WANTLIB += brotlidec brotlienc c ffi gmp gnutls hogweed iconv
+WANTLIB += idn2 intl lz4 lzma m nettle p11-kit tasn1 unistring
+WANTLIB += xml2 z zstd
 
 COMPILER =	base-clang ports-gcc base-gcc
 
