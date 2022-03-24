@@ -1,14 +1,12 @@
 COMMENT =		library supporting Blu-ray playback
 
-V =			1.3.0
+V =			1.3.1
 DISTNAME =		libbluray-${V}
-REVISION =		2
 CATEGORIES =		multimedia
 
 HOMEPAGE =		https://www.videolan.org/developers/libbluray.html
 
-MASTER_SITES =		https://download.videolan.org/pub/videolan/libbluray/${V}/ \
-			ftp://ftp.videolan.org/pub/videolan/libbluray/${V}/
+MASTER_SITES =		https://download.videolan.org/pub/videolan/libbluray/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1
