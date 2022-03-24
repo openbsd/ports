@@ -1,6 +1,7 @@
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.12
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -48,7 +49,7 @@ LIB_DEPENDS=	audio/flac \
 		graphics/libmng \
 		graphics/png \
 		graphics/vcdimager \
-		multimedia/libbluray>=0.8.0 \
+		multimedia/libbluray \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
 		multimedia/libv4l \
