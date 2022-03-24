@@ -326,8 +326,9 @@ WANTLIB-pcntl=		pthread
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
 HOMEPAGE-pdo_dblib=	https://www.php.net/pdo_dblib
 LIB_DEPENDS-pdo_dblib=	databases/freetds
-WANTLIB-pdo_dblib=	gmp gnutls hogweed iconv idn2 intl \
-			nettle p11-kit pthread sybdb tasn1 unistring
+WANTLIB-pdo_dblib=	brotlidec brotlienc gmp gnutls hogweed iconv \
+			idn2 intl nettle p11-kit pthread sybdb tasn1 \
+			unistring z zstd
 .if ${BUILD_PACKAGES:M-pdo_dblib}
 CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
 .endif
