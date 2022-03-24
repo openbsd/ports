@@ -1,4 +1,5 @@
 BROKEN-sparc64 = uses sse, but fails an assert even without sse
+ONLY_FOR_ARCHS = amd64 i386 # build configuration forces sse
 
 V =		1.0.1
 COMMENT =	third person, 3D physics game
