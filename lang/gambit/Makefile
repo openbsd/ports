@@ -3,6 +3,7 @@ BROKEN-riscv64=	gsi and gsi-script segfault at startup
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
 V=		4.9.4
+REVISION=	0
 DISTNAME=	gambit-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 API_V=		${V:R:S/./0/}00${V:E}
@@ -52,8 +53,3 @@ do-test:
 		${TEST_FLAGS} -f makefile ${TEST_TARGET}
 
 .include <bsd.port.mk>
-
-# It takes forever to build the package with Clang 13
-.if ${CHOSEN_COMPILER} == "base-clang"
-MAKE_ENV +=	CLANG_FLAGS=-O1
-.endif
