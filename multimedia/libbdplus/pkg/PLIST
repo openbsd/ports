@@ -1,7 +1,7 @@
 include/libbdplus/
 include/libbdplus/bdplus-version.h
 include/libbdplus/bdplus.h
-lib/libbdplus.a
+@static-lib lib/libbdplus.a
 lib/libbdplus.la
 @lib lib/libbdplus.so.${LIBbdplus_VERSION}
 lib/pkgconfig/libbdplus.pc

@@ -1,14 +1,12 @@
 COMMENT =		BD+ support library for Blu-ray playback
 
-V =			0.1.2
+V =			0.2.0
 DISTNAME =		libbdplus-${V}
-REVISION =		0
 
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://www.videolan.org/developers/libbdplus.html
-MASTER_SITES =		https://download.videolan.org/pub/videolan/libbdplus/${V}/ \
-			ftp://ftp.videolan.org/pub/videolan/libbdplus/${V}/
+MASTER_SITES =		https://download.videolan.org/pub/videolan/libbdplus/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
 # LGPL v2.1
@@ -16,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =  gcrypt gpg-error iconv intl pthread
 
-SHARED_LIBS +=		bdplus	0.0	# 1.0
-
+SHARED_LIBS +=		bdplus	0.1	# 1.0
 
 LIB_DEPENDS =		security/libgcrypt
 
