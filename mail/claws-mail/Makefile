@@ -12,7 +12,7 @@ PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 
-REVISION-main=		0
+REVISION=		1
 
 CATEGORIES=		mail news
 
@@ -39,7 +39,7 @@ RUN_DEPENDS-bogofilter=	${BUILD_PKGPATH} \
 RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 			mail/p5-Mail-SpamAssassin
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
 WANTLIB += crypto curl etpan execinfo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
@@ -55,6 +55,7 @@ WANTLIB-main += gpgme gthread-2.0 gumbo hogweed ical icalss icalvcal
 WANTLIB-main += icudata icui18n icuuc idn2 ltdl lz4 lzma nettle notify
 WANTLIB-main += ogg p11-kit perl rsvg-2 startup-notification-1 tasn1
 WANTLIB-main += unistring vorbis vorbisfile xcb-util xml2 zstd
+WANTLIB-main += brotlidec brotlienc db_cxx
 
 WANTLIB-gdata = ${WANTLIB}
 WANTLIB-gdata += brotlicommon brotlidec gck-1 gcr-base-3

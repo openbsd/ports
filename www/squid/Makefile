@@ -7,7 +7,7 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
 DPB_PROPERTIES=	parallel
-REVISION=	1
+REVISION=	2
 
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME-ldap = squid-ldap-$V
@@ -25,8 +25,9 @@ PERMIT_PACKAGE=	Yes
 # perhaps this can go away again later
 USE_GMAKE=	Yes
 
-cWANTLIB=	${COMPILER_LIBCXX} c execinfo gmp gnutls hogweed iconv
-cWANTLIB+=	idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
+cWANTLIB=	${COMPILER_LIBCXX} brotlidec brotlienc c execinfo \
+		gmp gnutls hogweed iconv idn2 intl m nettle p11-kit \
+		pthread ssl tasn1 unistring z zstd
 
 # repo at https://github.com/squid-cache/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:R}/ \
