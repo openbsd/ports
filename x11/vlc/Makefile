@@ -184,7 +184,6 @@ CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		LIBS_libvlccore="-lexecinfo" \
-		LIVE555_PREFIX="${LOCALBASE}/live" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
 		RCC="${LOCALBASE}/bin/rcc-qt5"
 
