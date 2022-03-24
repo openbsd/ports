@@ -1,3 +1,5 @@
+BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
+
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
