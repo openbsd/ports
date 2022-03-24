@@ -1,6 +1,7 @@
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-1.3.9
+REVISION=	0
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
 SHARED_LIBS +=  sybdb                8.1      # 6.0
@@ -18,8 +19,9 @@ MASTER_SITES=	https://www.freetds.org/files/stable/ \
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses gmp gnutls hogweed iconv idn2 intl iodbc
-WANTLIB += iodbcinst nettle p11-kit pthread readline tasn1 unistring
+WANTLIB += brotlidec brotlienc c curses gmp gnutls hogweed iconv
+WANTLIB += idn2 intl iodbc iodbcinst nettle p11-kit pthread readline
+WANTLIB += tasn1 unistring z zstd
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
