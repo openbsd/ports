@@ -1,10 +1,9 @@
 COMMENT =		matrices describing affine transformation of the plane
 
-MODPY_EGG_VERSION =	2.3.0
+MODPY_EGG_VERSION =	2.3.1
 DISTNAME =		affine-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		3
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
