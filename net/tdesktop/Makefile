@@ -73,10 +73,6 @@ CONFIGURE_ARGS +=	-DDESKTOP_APP_USE_PACKAGED=ON
 CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 			-DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
 
-# hardcode path to fix restarts when started via PATH lookup since we have no
-# procfs(5) or sysctl(2) to get an absoloute path to the process image
-CONFIGURE_ARGS +=	-DDESKTOP_APP_EXECUTABLE_PATH_OVERRIDE=/usr/local/bin/telegram-desktop
-
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
 			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
