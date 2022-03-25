@@ -1,9 +1,7 @@
-USE_WXNEEDED =	Yes
-
 COMMENT =	client for Matrix chat
 VERSION =	1.2.0
 DISTNAME =	neochat-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=	net
 
