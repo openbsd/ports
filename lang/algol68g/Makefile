@@ -12,6 +12,10 @@ MASTER_SITES =	https://jmvdveer.home.xs4all.nl/
 
 WANTLIB += c curses m pthread
 
+# ports-gcc used because of C99 and crashes spotted at runtime on sparc64
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS =	--disable-gsl \
 			--disable-mathib \
