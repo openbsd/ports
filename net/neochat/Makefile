@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	client for Matrix chat
 VERSION =	1.2.0
 DISTNAME =	neochat-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	net
 
@@ -23,6 +23,7 @@ MODULES =	devel/kf5
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kitemmodels \
 		devel/kf5/qqc2-desktop-style \
+		devel/kf5/sonnet \
 		graphics/kquickimageeditor \
 		x11/gtk+3,-guic
 
