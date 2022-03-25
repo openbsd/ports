@@ -737,6 +737,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gamesparks/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gamesparks/2021-08-17/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gamesparks/2021-08-17/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gamesparks/2021-08-17/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/glacier/2012-06-01/examples-1.json
