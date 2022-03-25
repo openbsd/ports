@@ -367,5 +367,6 @@ post-install:
 	@mv ${WRKINST}/${SYSCONFDIR}/asterisk ${EXAMPLEDIR}/default
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}
 	@rm -rf ${WRKINST}/{etc,var/{log,run,spool}}/asterisk
-	@rm ${PREFIX}/lib/libasterisk{pj,ssl}.so
+	@rm ${PREFIX}/lib/libasterisk{pj,ssl}.so \
+	    ${PREFIX}/share/examples/asterisk/basic-pbx/*conf${PATCHORIG}
 	@find ${WRKINST}/opt -type d -delete
