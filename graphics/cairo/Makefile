@@ -58,4 +58,9 @@ pre-configure:
 post-install:
 	chmod +x ${PREFIX}/bin/cairo-trace
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
