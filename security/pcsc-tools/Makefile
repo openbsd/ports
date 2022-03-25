@@ -10,6 +10,9 @@ HOMEPAGE=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c pcsclite pthread
 
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-tools/
