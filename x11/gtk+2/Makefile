@@ -9,7 +9,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-cups=		0
 
 CATEGORIES=		x11 devel
 
@@ -24,18 +25,19 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo expat
 WANTLIB += ffi fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 harfbuzz
-WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += iconv intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png xcb xcb-render xcb-shm z
 
 WANTLIB-main += ${WANTLIB} c
 
 WANTLIB-cups += ${WANTLIB}
-WANTLIB-cups += avahi-client avahi-common cups dbus-1 gdk-x11-2.0 gmp fribidi
-WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn2 nettle p11-kit tasn1 unistring
+WANTLIB-cups += avahi-client avahi-common brotlidec brotlienc cups dbus-1
+WANTLIB-cups += execinfo gdk-x11-2.0 gmp fribidi gnutls gtk-x11-2.0 hogweed
+WANTLIB-cups += idn2 nettle p11-kit tasn1 unistring zstd
 
 MULTI_PACKAGES=		-main -cups
 
