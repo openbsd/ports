@@ -1,7 +1,7 @@
 COMMENT=	companion library to APR
 
 V=		1.6.1
-REVISION=	3
+REVISION=	4
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.1     # .6.0
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib \
 			--with-ldap
 LIB_DEPENDS+=		databases/openldap
-WANTLIB+=		sasl2 lber-2.4 ldap-2.4
+WANTLIB+=		sasl2 lber ldap
 .else
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif

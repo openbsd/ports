@@ -13,6 +13,7 @@ PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
 
 REVISION=		1
+REVISION-main=		2
 
 CATEGORIES=		mail news
 
@@ -124,7 +125,7 @@ CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 
 .if ${FLAVOR:Mldap}
-WANTLIB-main+=		lber-2.4 ldap-2.4
+WANTLIB-main+=		lber ldap
 LIB_DEPENDS-main+=	databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
