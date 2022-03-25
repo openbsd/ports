@@ -37,23 +37,16 @@ Index: content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -371,11 +375,14 @@ void PreloadLibraryCdms() {
+@@ -371,7 +375,7 @@ void PreloadLibraryCdms() {
  }
  #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
  
 -#if BUILDFLAG(USE_ZYGOTE_HANDLE)
 +#if BUILDFLAG(USE_ZYGOTE_HANDLE) || BUILDFLAG(IS_BSD)
  void PreSandboxInit() {
-+  // arc4random
-+#if !BUILDFLAG(IS_BSD) 
    // Pre-acquire resources needed by BoringSSL. See
    // https://boringssl.googlesource.com/boringssl/+/HEAD/SANDBOXING.md
-   CRYPTO_pre_sandbox_init();
-+#endif
- 
- #if BUILDFLAG(ENABLE_PLUGINS)
-   // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -387,6 +394,11 @@ void PreSandboxInit() {
+@@ -387,6 +391,11 @@ void PreSandboxInit() {
  #endif
    InitializeWebRtcModule();
  
@@ -65,7 +58,7 @@ Index: content/app/content_main_runner_impl.cc
    // Set the android SkFontMgr for blink. We need to ensure this is done
    // before the sandbox is initialized to allow the font manager to access
    // font configuration files on disk.
-@@ -556,7 +568,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
+@@ -556,7 +565,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
    delegate->ZygoteStarting(&zygote_fork_delegates);
    media::InitializeMediaLibrary();
  
@@ -74,7 +67,7 @@ Index: content/app/content_main_runner_impl.cc
    PreSandboxInit();
  #endif
  
-@@ -732,11 +744,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -732,11 +741,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -88,7 +81,7 @@ Index: content/app/content_main_runner_impl.cc
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -925,6 +936,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -925,6 +933,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
    }
  #endif
  
@@ -105,7 +98,7 @@ Index: content/app/content_main_runner_impl.cc
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE_HANDLE)
-@@ -980,7 +1001,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -980,7 +998,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
        mojo::core::InitFeatures();
      }
  
@@ -114,7 +107,7 @@ Index: content/app/content_main_runner_impl.cc
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -1013,6 +1034,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1013,6 +1031,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();
