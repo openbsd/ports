@@ -5,7 +5,7 @@
 @ask-update openldap-server-<2.4 You will need to recreate the database. Make sure your existing database is backed up
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
-@extraunexec rm -Rf ${SYSCONFDIR}/openldap/slapd.d/*
+@extraunexec rm -Rf ${LDAP_SYSCONF}/slapd.d/*
 @extraunexec rm -Rf /var/openldap-data/*
 @rcscript ${RCDIR}/slapd
 @bin libexec/slapd
@@ -82,50 +82,64 @@ share/examples/openldap/DB_CONFIG.example
 @owner
 @group
 share/examples/openldap/schema/
-@sample ${SYSCONFDIR}/openldap/schema/
+@sample ${LDAP_SYSCONF}/schema/
 share/examples/openldap/schema/README
 share/examples/openldap/schema/collective.ldif
+@sample ${LDAP_SYSCONF}/schema/collective.ldif
 share/examples/openldap/schema/collective.schema
-@sample ${SYSCONFDIR}/openldap/schema/collective.schema
+@sample ${LDAP_SYSCONF}/schema/collective.schema
 share/examples/openldap/schema/corba.ldif
+@sample ${LDAP_SYSCONF}/schema/corba.ldif
 share/examples/openldap/schema/corba.schema
-@sample ${SYSCONFDIR}/openldap/schema/corba.schema
+@sample ${LDAP_SYSCONF}/schema/corba.schema
 share/examples/openldap/schema/core.ldif
+@sample ${LDAP_SYSCONF}/schema/core.ldif
 share/examples/openldap/schema/core.schema
-@sample ${SYSCONFDIR}/openldap/schema/core.schema
+@sample ${LDAP_SYSCONF}/schema/core.schema
 share/examples/openldap/schema/cosine.ldif
+@sample ${LDAP_SYSCONF}/schema/cosine.ldif
 share/examples/openldap/schema/cosine.schema
-@sample ${SYSCONFDIR}/openldap/schema/cosine.schema
+@sample ${LDAP_SYSCONF}/schema/cosine.schema
 share/examples/openldap/schema/duaconf.ldif
+@sample ${LDAP_SYSCONF}/schema/duaconf.ldif
 share/examples/openldap/schema/duaconf.schema
-@sample ${SYSCONFDIR}/openldap/schema/duaconf.schema
+@sample ${LDAP_SYSCONF}/schema/duaconf.schema
 share/examples/openldap/schema/dyngroup.ldif
+@sample ${LDAP_SYSCONF}/schema/dyngroup.ldif
 share/examples/openldap/schema/dyngroup.schema
-@sample ${SYSCONFDIR}/openldap/schema/dyngroup.schema
+@sample ${LDAP_SYSCONF}/schema/dyngroup.schema
 share/examples/openldap/schema/inetorgperson.ldif
+@sample ${LDAP_SYSCONF}/schema/inetorgperson.ldif
 share/examples/openldap/schema/inetorgperson.schema
-@sample ${SYSCONFDIR}/openldap/schema/inetorgperson.schema
+@sample ${LDAP_SYSCONF}/schema/inetorgperson.schema
 share/examples/openldap/schema/java.ldif
+@sample ${LDAP_SYSCONF}/schema/java.ldif
 share/examples/openldap/schema/java.schema
-@sample ${SYSCONFDIR}/openldap/schema/java.schema
+@sample ${LDAP_SYSCONF}/schema/java.schema
 share/examples/openldap/schema/misc.ldif
+@sample ${LDAP_SYSCONF}/schema/misc.ldif
 share/examples/openldap/schema/misc.schema
-@sample ${SYSCONFDIR}/openldap/schema/misc.schema
+@sample ${LDAP_SYSCONF}/schema/misc.schema
 share/examples/openldap/schema/nis.ldif
+@sample ${LDAP_SYSCONF}/schema/nis.ldif
 share/examples/openldap/schema/nis.schema
-@sample ${SYSCONFDIR}/openldap/schema/nis.schema
+@sample ${LDAP_SYSCONF}/schema/nis.schema
 share/examples/openldap/schema/openldap.ldif
+@sample ${LDAP_SYSCONF}/schema/openldap.ldif
 share/examples/openldap/schema/openldap.schema
-@sample ${SYSCONFDIR}/openldap/schema/openldap.schema
+@sample ${LDAP_SYSCONF}/schema/openldap.schema
 share/examples/openldap/schema/pmi.ldif
+@sample ${LDAP_SYSCONF}/schema/pmi.ldif
 share/examples/openldap/schema/pmi.schema
-@sample ${SYSCONFDIR}/openldap/schema/pmi.schema
+@sample ${LDAP_SYSCONF}/schema/pmi.schema
 share/examples/openldap/schema/ppolicy.ldif
+@sample ${LDAP_SYSCONF}/schema/ppolicy.ldif
 share/examples/openldap/schema/ppolicy.schema
-@sample ${SYSCONFDIR}/openldap/schema/ppolicy.schema
+@sample ${LDAP_SYSCONF}/schema/ppolicy.schema
 share/examples/openldap/slapd.conf
 @comment -- slapd.conf is intentionally not @sampled -- see commit r1.22
 share/examples/openldap/slapd.ldif
+@sample ${LDAP_SYSCONF}/slapd.ldif
 @mode 0750
 @group _openldap
-@sample ${SYSCONFDIR}/openldap/slapd.d/
+@sample ${LDAP_SYSCONF}/slapd.d/
