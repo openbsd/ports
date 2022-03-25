@@ -1,0 +1,68 @@
+- Use int64_t when calculating pts
+  7fd1885d7c3be202ed48609ee3f63ed1b642df9f
+- Fix use-after-free
+  af586f66a0d446c2ca9d3967a4fcdd534dbd0759
+
+Index: src/demuxers/demux_smjpeg.c
+--- src/demuxers/demux_smjpeg.c.orig
++++ src/demuxers/demux_smjpeg.c
+@@ -75,6 +75,7 @@ typedef struct {
+   /* video information */
+   unsigned int         video_type;
+   xine_bmiheader       bih;
++  int64_t              last_frame_pts;
+ 
+   /* audio information */
+   unsigned int         audio_type;
+@@ -194,7 +195,6 @@ static int demux_smjpeg_send_chunk(demux_plugin_t *thi
+   unsigned int remaining_sample_bytes;
+   unsigned char preamble[SMJPEG_CHUNK_PREAMBLE_SIZE];
+   off_t current_file_pos;
+-  int64_t last_frame_pts = 0;
+   unsigned int audio_frame_count = 0;
+ 
+   /* load the next sample */
+@@ -228,9 +228,7 @@ static int demux_smjpeg_send_chunk(demux_plugin_t *thi
+    * Therefore, manually compute the pts values for the audio samples.
+    */
+   if (chunk_tag == sndD_TAG) {
+-    pts = audio_frame_count;
+-    pts *= 90000;
+-    pts /= (this->audio_sample_rate * this->audio_channels);
++    pts = INT64_C(90000) * audio_frame_count / ((int64_t)this->audio_sample_rate * this->audio_channels);
+     audio_frame_count += ((remaining_sample_bytes - 4) * 2);
+   } else {
+     pts = _X_BE_32(&preamble[4]);
+@@ -255,12 +253,12 @@ static int demux_smjpeg_send_chunk(demux_plugin_t *thi
+       buf->extra_info->input_time = pts / 90;
+       buf->pts = pts;
+ 
+-      if (last_frame_pts) {
++      if (this->last_frame_pts) {
+         buf->decoder_flags |= BUF_FLAG_FRAMERATE;
+-        buf->decoder_info[0] = buf->pts - last_frame_pts;
++        buf->decoder_info[0] = buf->pts - this->last_frame_pts;
+       }
+ 
+-      if ((int)remaining_sample_bytes > buf->max_size)
++      if (remaining_sample_bytes > (unsigned)buf->max_size)
+         buf->size = buf->max_size;
+       else
+         buf->size = remaining_sample_bytes;
+@@ -294,7 +292,7 @@ static int demux_smjpeg_send_chunk(demux_plugin_t *thi
+   }
+ 
+   if (chunk_tag == vidD_TAG)
+-    last_frame_pts = buf->pts;
++    this->last_frame_pts = pts;
+ 
+   return this->status;
+ }
+@@ -359,6 +357,7 @@ static int demux_smjpeg_seek (demux_plugin_t *this_gen
+ 
+     this->status = DEMUX_OK;
+   }
++  this->last_frame_pts = 0;
+ 
+   return this->status;
+ }

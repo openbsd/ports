@@ -1,0 +1,15 @@
+Use int64_t when calculating pts
+7fd1885d7c3be202ed48609ee3f63ed1b642df9f
+
+Index: src/post/visualizations/tdaudioanalyzer.c
+--- src/post/visualizations/tdaudioanalyzer.c.orig
++++ src/post/visualizations/tdaudioanalyzer.c
+@@ -846,7 +846,7 @@ static void tdaan_port_put_buffer (
+   if (pts) {
+     int offs = (this->ring_put - this->ring_get) & RING_MASK;
+     offs    -= this->samples_per_frame >> 1;
+-    pts     -= 90000 * offs / (int)port->rate;
++    pts     -= INT64_C(90000) * offs / (int)port->rate;
+   }
+   /* buffer incoming audio */
+   do {

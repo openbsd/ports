@@ -1,7 +1,7 @@
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -60,6 +60,8 @@ LIB_DEPENDS=	audio/flac \
 CFLAGS+=	-ffast-math
 
 MAKE_ENV=	V=1
+
+FIX_CRLF_FILES=	src/demuxers/asfheader.c
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf

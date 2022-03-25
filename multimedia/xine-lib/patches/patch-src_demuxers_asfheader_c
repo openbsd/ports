@@ -1,0 +1,15 @@
+Fix freeing uninitialized pointer (error path)
+bf940cd3fc5773a1dd63ff52657a3829cf31f80f
+
+Index: src/demuxers/asfheader.c
+--- src/demuxers/asfheader.c.orig
++++ src/demuxers/asfheader.c
+@@ -415,7 +415,7 @@ static int asf_header_parse_stream_extended_properties
+ 
+   /* get stream names */
+   if (asf_stream_extension->stream_name_count) {
+-    asf_stream_extension->stream_names = malloc (asf_stream_extension->stream_name_count * sizeof (void*));
++    asf_stream_extension->stream_names = calloc (asf_stream_extension->stream_name_count, sizeof (void*));
+     for (i = 0; i < asf_stream_extension->stream_name_count; i++) {
+       char *name;
+       uint16_t length;
