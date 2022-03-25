@@ -1,6 +1,7 @@
-COMMENT =	libunbound bindings for Lua
+COMMENT =	Lua bindings for libunbound
 
 DISTNAME =	luaunbound-1.0.0
+REVISION =	0
 
 CATEGORIES =	net
 
