@@ -9,10 +9,10 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION-ldap=	3
+REVISION-ldap=	4
 REVISION-main=	2
-REVISION-mysql=	2
-REVISION-pgsql=	2
+REVISION-mysql=	3
+REVISION-pgsql=	3
 
 CATEGORIES=	mail
 
@@ -73,7 +73,7 @@ LIB_DEPENDS-main=	${cLIB_DEPENDS} \
 
 LIB_DEPENDS-ldap=	${cLIB_DEPENDS} security/cyrus-sasl2 \
 			databases/openldap
-WANTLIB-ldap=		crypto lber-2.4 ldap-2.4 sasl2 ssl util ${cWANTLIB}
+WANTLIB-ldap=		crypto lber ldap sasl2 ssl util ${cWANTLIB}
 
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--disable-ldap
@@ -85,9 +85,8 @@ CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 
 LIB_DEPENDS-mysql=	${cLIB_DEPENDS} databases/mariadb \
 			vanessa_adt->=0.0.9:devel/vanessa/adt
-WANTLIB-mysql=		crypto pthread ssl ${COMPILER_LIBCXX} util m z \
-			lib/mysql/mysqlclient ${cWANTLIB} \
-			vanessa_adt>=1.0
+WANTLIB-mysql=		${cWANTLIB} crypto m mariadb pthread ssl util \
+			vanessa_adt z
 
 .if !${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+=	--disable-mysql
@@ -98,7 +97,7 @@ CONFIGURE_ARGS+=	--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 
 LIB_DEPENDS-pgsql=	${cLIB_DEPENDS} databases/postgresql \
 			vanessa_adt->=0.0.9:devel/vanessa/adt
-WANTLIB-pgsql=		crypto pq ssl util ${cWANTLIB} vanessa_adt>=1.0
+WANTLIB-pgsql=		${cWANTLIB} crypto m pq ssl util vanessa_adt>=1.0
 
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--disable-pg
