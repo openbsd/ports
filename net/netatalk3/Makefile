@@ -1,12 +1,11 @@
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.12
+V=			3.1.13
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
-REVISION=		4
 
-SHARED_LIBS +=  atalk                16.0     # 16.0
+SHARED_LIBS +=  atalk                16.0     # 18.0
 
 CATEGORIES=		net
 
