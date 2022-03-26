@@ -122,6 +122,7 @@
      SUBDIR += kimageannotator
      SUBDIR += kquickimageeditor
      SUBDIR += krita
+     SUBDIR += krita-gmic-plugin
      SUBDIR += ksnip
      SUBDIR += l2p
      SUBDIR += lcms
