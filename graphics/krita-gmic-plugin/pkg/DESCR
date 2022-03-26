@@ -1,0 +1,5 @@
+This package contains the G'MIC plugin for krita.
+
+The krita developers decided to fork and patch G'MIC to enable a tighter
+integration in krita. This version is based on this fork and works
+independently from the system G'MIC.

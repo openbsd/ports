@@ -1,0 +1,21 @@
+Index: src/gmic.cpp
+--- src/gmic.cpp.orig
++++ src/gmic.cpp
+@@ -2473,6 +2473,8 @@ CImgList<void*> gmic::list_p_is_abort = CImgList<void*
+ bool *gmic::abort_ptr(bool *const p_is_abort) {
+ #if defined(__MACOSX__) || defined(__APPLE__)
+   void* tid = (void*)(cimg_ulong)getpid();
++#elif defined(__OpenBSD__)
++  void* tid = (void*)pthread_self();
+ #elif cimg_OS==1
+   void* tid = (void*)(cimg_ulong)syscall(SYS_gettid);
+ #elif cimg_OS==2
+@@ -2815,6 +2817,8 @@ gmic::~gmic() {
+   cimg::mutex(21);
+ #if defined(__MACOSX__) || defined(__APPLE__)
+   void* tid = (void*)(cimg_ulong)getpid();
++#elif defined(__OpenBSD__)
++  void* tid = (void*)pthread_self();
+ #elif cimg_OS==1
+   void* tid = (void*)(cimg_ulong)syscall(SYS_gettid);
+ #elif cimg_OS==2
