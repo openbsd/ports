@@ -1,6 +1,6 @@
 COMMENT=		commandline screen capture util
 
-V=			1.6
+V=			1.7
 DISTNAME=		scrot-${V}
 
 CATEGORIES=		graphics
@@ -22,5 +22,7 @@ FAKE_FLAGS+=		docsdir=${PREFIX}/share/doc/scrot/
 .if !${PROPERTIES:Mclang}
 CFLAGS+=	-std=gnu99
 .endif
+
+SEPARATE_BUILD=		Yes
 
 .include <bsd.port.mk>
