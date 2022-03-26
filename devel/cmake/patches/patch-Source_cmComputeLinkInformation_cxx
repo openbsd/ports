@@ -12,7 +12,7 @@ Index: Source/cmComputeLinkInformation.cxx
    this->OrderRuntimeSearchPath->SetImplicitDirectories(this->ImplicitLinkDirs);
    if (this->OrderDependentRPath) {
      this->OrderDependentRPath->SetImplicitDirectories(this->ImplicitLinkDirs);
-@@ -713,10 +714,16 @@ void cmComputeLinkInformation::AddItem(BT<std::string>
+@@ -713,10 +714,20 @@ void cmComputeLinkInformation::AddItem(BT<std::string>
          // This is a directory.
          this->DropDirectoryItem(item.Value);
        } else {
@@ -25,14 +25,18 @@ Index: Source/cmComputeLinkInformation.cxx
 +          this->AddFullItem(item);
 +          this->AddLibraryRuntimeInfo(item.Value);
 +        } else {
-+          std::string file = cmSystemTools::GetFilenameName(item.Value);
-+          this->AddUserItem(file, false);
++          if (cmHasLiteralSuffix(item.Value, ".o"))
++            this->AddFullItem(item);
++          else {
++            std::string file = cmSystemTools::GetFilenameName(item.Value);
++            this->AddUserItem(file, false);
++	  }
 +          this->OrderLinkerSearchPath->AddLinkLibrary(item.Value);
 +        }
        }
      } else {
        // This is a library or option specified by the user.
-@@ -1049,11 +1056,18 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
+@@ -1049,11 +1060,18 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
      this->SharedLibrariesLinked.insert(target);
    }
  
@@ -55,7 +59,7 @@ Index: Source/cmComputeLinkInformation.cxx
    }
  
    // For compatibility with CMake 2.4 include the item's directory in
-@@ -1066,6 +1080,27 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
+@@ -1066,6 +1084,27 @@ void cmComputeLinkInformation::AddTargetItem(BT<std::s
  
    // Now add the full path to the library.
    this->Items.emplace_back(item, true, target);
