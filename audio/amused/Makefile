@@ -1,11 +1,10 @@
 COMMENT =	minimalistic music player
 
-V =		0.4
-DISTNAME =	amused-$V
+DISTNAME =	amused-0.5
 
 CATEGORIES =	audio
 
-HOMEPAGE =	https://git.omarpolo.com/amused/about
+HOMEPAGE =	https://projects.omarpolo.com/amused.html
 
 MAINTAINER =	Omar Polo <op@omarpolo.com>
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE = Yes
 # uses pledge
 WANTLIB += FLAC c event m mpg123 opusfile sndio util vorbisfile
 
-MASTER_SITES =	https://github.com/omar-polo/amused/releases/download/$V/
+MASTER_SITES =	https://ftp.omarpolo.com/
 
 LIB_DEPENDS =	audio/flac \
 		audio/libvorbis \
