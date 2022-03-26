@@ -1,0 +1,23 @@
+--- impressive.py.orig	Sat Mar 26 11:10:53 2022
++++ impressive.py	Sat Mar 26 11:34:40 2022
+@@ -1059,9 +1059,9 @@
+     # first, ask politely
+     try:
+         if Platform.use_omxplayer and VideoPlaying:
+-            MPlayerProcess.stdin.write('q')
++            MPlayerProcess.stdin.write('q'.encode())
+         else:
+-            MPlayerProcess.stdin.write('quit\n')
++            MPlayerProcess.stdin.write('quit\n'.encode())
+         MPlayerProcess.stdin.flush()
+         for i in range(10):
+             if MPlayerProcess.poll() is None:
+@@ -5571,7 +5571,7 @@
+         cmd = omxplayer_cmd if Platform.use_omxplayer else (mplayer_cmd + '\n')
+         if not cmd: return
+         try:
+-            MPlayerProcess.stdin.write(cmd)
++            MPlayerProcess.stdin.write(cmd.encode())
+             MPlayerProcess.stdin.flush()
+         except:
+             StopMPlayer()
