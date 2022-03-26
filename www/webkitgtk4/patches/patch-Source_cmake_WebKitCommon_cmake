@@ -26,9 +26,9 @@ Index: Source/cmake/WebKitCommon.cmake
 -    find_package(Ruby 1.9)
 -    if (NOT RUBY_EXECUTABLE OR RUBY_VERSION VERSION_LESS 1.9)
 -        message(FATAL_ERROR "Ruby 1.9 or higher is required.")
-+    find_package(Ruby ${MODRUBY_LIBREV})
-+    if (NOT RUBY_EXECUTABLE OR RUBY_VERSION VERSION_LESS ${MODRUBY_LIBREV})
-+        message(FATAL_ERROR "Ruby ${MODRUBY_LIBREV} or higher is required.")
++    find_package(Ruby 3.0)
++    if (NOT RUBY_EXECUTABLE OR RUBY_VERSION VERSION_LESS 3.0)
++        message(FATAL_ERROR "Ruby 3.0 or higher is required.")
      endif ()
  
      # -----------------------------------------------------------------------------

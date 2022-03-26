@@ -11,7 +11,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.34.6
+V =			2.36.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 
@@ -20,8 +20,8 @@ API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.5 # 18.13.3
-SHARED_LIBS +=  webkit2gtk-${API}            3.5 # 37.37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.6 # 18.13.3
+SHARED_LIBS +=  webkit2gtk-${API}            3.6 # 37.37.2
 
 CATEGORIES =		www
 
@@ -57,6 +57,7 @@ MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
 # XXX set DEBUG=-g1 because libWebCoreGTK.a is too big (4.1G)
+# https://bugs.webkit.org/show_bug.cgi?id=140384
 # ld.lld: error: lib/libWebCoreGTK.a:
 # could not get the member for symbol WebCore::WorkerThread::runEventLoop():
 # truncated or malformed archive (terminator characters in archive member "ar" not the correct "`\n" values for the archive member header for 12__retguard_29)
@@ -91,8 +92,11 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 			-DENABLE_MINIBROWSER=ON \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
-			-DUSE_SYSTEMD=OFF \
+			-DENABLE_JOURNALD_LOG=OFF \
 			-DUSE_SOUP2=ON
+
+# XXX broken at run time
+#CONFIGURE_ARGS +=	-DUSE_SYSTEM_MALLOC=ON
 
 # required for faking a better user-agent
 .if ${MACHINE_ARCH} == "amd64"
@@ -119,11 +123,11 @@ CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
 .endif
 
 
+# we don't want an allocation of 1GB, it's above the default ulimit
 .if ${MACHINE_ARCH} == "amd64"
-# On amd64 we don't want an initial allocation of 1GB,
-# it's above the default ulimit, so let's do 128M instead.
-CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=128
+CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=512
 .endif
+CXXFLAGS +=		-DSTRUCTURE_HEAP_ADDRESS_SIZE_IN_MB=256
 
 # XXX fatal error: 'X11/Xlib.h' file not found
 CXXFLAGS +=		-I${X11BASE}/include

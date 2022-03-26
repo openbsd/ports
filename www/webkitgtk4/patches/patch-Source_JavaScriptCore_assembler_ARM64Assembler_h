@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/assembler/ARM64Assembler.h
 --- Source/JavaScriptCore/assembler/ARM64Assembler.h.orig
 +++ Source/JavaScriptCore/assembler/ARM64Assembler.h
-@@ -2950,6 +2950,8 @@ class ARM64Assembler { (public)
+@@ -2945,6 +2945,8 @@ class ARM64Assembler { (public)
      {
  #if OS(DARWIN)
          sys_cache_control(kCacheFunctionPrepareForExecution, code, size);

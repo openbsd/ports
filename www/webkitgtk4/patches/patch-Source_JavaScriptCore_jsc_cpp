@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/jsc.cpp
 --- Source/JavaScriptCore/jsc.cpp.orig
 +++ Source/JavaScriptCore/jsc.cpp
-@@ -75,6 +75,7 @@
+@@ -78,6 +78,7 @@
  #include "WasmCapabilities.h"
  #include "WasmFaultSignalHandler.h"
  #include "WasmMemory.h"

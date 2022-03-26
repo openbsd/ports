@@ -1,32 +1,16 @@
-Our ar(1) is too old and have not support for `T'.
 Put the internal library path first so that we can 
 build with an older webkitgtk4 package installed.
 
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -14,10 +14,10 @@ if (USE_THIN_ARCHIVES)
-     elseif ("${AR_ERROR}")
-         message(WARNING "Error from `ar`: ${AR_ERROR}")
-     elseif ("${AR_VERSION}" MATCHES "^GNU ar")
--        set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> crT <TARGET> <LINK_FLAGS> <OBJECTS>")
--        set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> crT <TARGET> <LINK_FLAGS> <OBJECTS>")
--        set(CMAKE_CXX_ARCHIVE_APPEND "<CMAKE_AR> rT <TARGET> <LINK_FLAGS> <OBJECTS>")
--        set(CMAKE_C_ARCHIVE_APPEND "<CMAKE_AR> rT <TARGET> <LINK_FLAGS> <OBJECTS>")
-+        set(CMAKE_CXX_ARCHIVE_CREATE "<CMAKE_AR> cr <TARGET> <LINK_FLAGS> <OBJECTS>")
-+        set(CMAKE_C_ARCHIVE_CREATE "<CMAKE_AR> cr <TARGET> <LINK_FLAGS> <OBJECTS>")
-+        set(CMAKE_CXX_ARCHIVE_APPEND "<CMAKE_AR> r <TARGET> <LINK_FLAGS> <OBJECTS>")
-+        set(CMAKE_C_ARCHIVE_APPEND "<CMAKE_AR> r <TARGET> <LINK_FLAGS> <OBJECTS>")
-     endif ()
+@@ -180,6 +180,9 @@ if (NOT PORT STREQUAL "GTK" AND NOT PORT STREQUAL "WPE
+     set(LIBEXEC_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Absolute path to install executables executed by the library")
  endif ()
  
-@@ -161,6 +161,9 @@ check_type_size("__int128_t" INT128_VALUE)
- if (HAVE_INT128_VALUE)
-   SET_AND_EXPOSE_TO_BUILD(HAVE_INT128_T INT128_VALUE)
- endif ()
-+
 +# make sure that the internal library dir is the first in the path
 +link_directories("${CMAKE_BINARY_DIR}/lib")
- 
- # Check which filesystem implementation is available if any
- if (STD_FILESYSTEM_IS_AVAILABLE)
++
+ # Check whether features.h header exists.
+ # Including glibc's one defines __GLIBC__, that is used in Platform.h
+ WEBKIT_CHECK_HAVE_INCLUDE(HAVE_FEATURES_H features.h)

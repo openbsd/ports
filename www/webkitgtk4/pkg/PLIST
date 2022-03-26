@@ -79,6 +79,7 @@ include/webkitgtk-${API}/webkit2/WebKitSettings.h
 include/webkitgtk-${API}/webkit2/WebKitURIRequest.h
 include/webkitgtk-${API}/webkit2/WebKitURIResponse.h
 include/webkitgtk-${API}/webkit2/WebKitURISchemeRequest.h
+include/webkitgtk-${API}/webkit2/WebKitURISchemeResponse.h
 include/webkitgtk-${API}/webkit2/WebKitURIUtilities.h
 include/webkitgtk-${API}/webkit2/WebKitUserContent.h
 include/webkitgtk-${API}/webkit2/WebKitUserContentFilterStore.h

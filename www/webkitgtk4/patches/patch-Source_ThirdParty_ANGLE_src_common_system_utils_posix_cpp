@@ -1,0 +1,16 @@
+Index: Source/ThirdParty/ANGLE/src/common/system_utils_posix.cpp
+--- Source/ThirdParty/ANGLE/src/common/system_utils_posix.cpp.orig
++++ Source/ThirdParty/ANGLE/src/common/system_utils_posix.cpp
+@@ -222,10 +222,12 @@ Library *OpenSharedLibraryWithExtensionAndGetError(con
+     }
+ 
+     int extraFlags = 0;
++#if !ANGLE_PLATFORM_OPENBSD
+     if (searchType == SearchType::AlreadyLoaded)
+     {
+         extraFlags = RTLD_NOLOAD;
+     }
++#endif
+ 
+     std::string fullPath = directory + libraryName;
+ #if ANGLE_PLATFORM_IOS
