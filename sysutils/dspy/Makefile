@@ -20,4 +20,9 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=		x11/gnome/libadwaita
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
