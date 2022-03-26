@@ -3,8 +3,8 @@ COMMENT =	lepton electronic design automation suite
 V =		1.9.17-20211219
 DISTNAME =	lepton-eda-${V:C/-.*//}
 
-SHARED_LIBS +=	lepton               0.0      # 8.0
-SHARED_LIBS +=	leptongui            0.0      # 2.0
+SHARED_LIBS +=	lepton               0.0      # 10.0
+SHARED_LIBS +=	leptongui            0.0      # 4.0
 
 CATEGORIES =	cad
 
@@ -51,6 +51,11 @@ CONFIGURE_ENV =	GROFF=false \
 		MAKEINFO=gmakeinfo \
 		M4=/usr/bin/m4
 
+pre-configure:
+	if [ -r ${TRUEPREFIX}/include/libguile.h ]; then \
+	    echo "XXX will miscompile due to presence of lang/guile headers"; \
+	    exit 1; fi
+
 post-install:
 	# would be nice to precompile the guile files otherwise
 	# they're done per-user at startup. it should be similar
@@ -59,5 +64,9 @@ post-install:
 	#     prefix=${PREFIX} precompile
 	mv ${PREFIX}/share/doc/lepton-eda/examples \
 	    ${PREFIX}/share/examples/lepton-eda
+
+	if nm -s ${PREFIX}/lib/libleptongui.so.* | grep scm_i_freelist; then \
+	    echo "XXX miscompiled due to presence of lang/guile during build"; \
+	    exit 1; fi
 
 .include <bsd.port.mk>
