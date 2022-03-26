@@ -4,6 +4,7 @@ DISTNAME=	tiff-4.3.0
 SHARED_LIBS=	tiff	41.0	# 12.0
 SHARED_LIBS+=	tiffxx	41.0	# 12.0
 CATEGORIES=	graphics
+REVISION=	0
 
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 
