@@ -1,7 +1,7 @@
 Index: res/res_pjsip_pubsub.c
 --- res/res_pjsip_pubsub.c.orig
 +++ res/res_pjsip_pubsub.c
-@@ -4744,7 +4744,7 @@ static int persistence_expires_str2struct(const struct
+@@ -4872,7 +4872,7 @@ static int persistence_expires_str2struct(const struct
  static int persistence_expires_struct2str(const void *obj, const intptr_t *args, char **buf)
  {
  	const struct subscription_persistence *persistence = obj;
