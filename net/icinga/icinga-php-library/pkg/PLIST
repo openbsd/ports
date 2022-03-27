@@ -15,6 +15,7 @@ icinga-php/ipl/asset/
 icinga-php/ipl/asset/css/
 icinga-php/ipl/asset/css/awesome-icons.less
 icinga-php/ipl/asset/css/balls.less
+icinga-php/ipl/asset/css/cancel-button.less
 icinga-php/ipl/asset/css/controls.less
 icinga-php/ipl/asset/css/datetime-picker.less
 icinga-php/ipl/asset/css/fontawesome.css
@@ -23,9 +24,12 @@ icinga-php/ipl/asset/css/icinga-icons.less
 icinga-php/ipl/asset/css/icons-base.less
 icinga-php/ipl/asset/css/mixin/
 icinga-php/ipl/asset/css/mixin/card.less
+icinga-php/ipl/asset/css/mixin/mixins.less
+icinga-php/ipl/asset/css/mixin/state-badges.less
 icinga-php/ipl/asset/css/search-bar.less
 icinga-php/ipl/asset/css/search-base.less
 icinga-php/ipl/asset/css/search-editor.less
+icinga-php/ipl/asset/css/state-badge.less
 icinga-php/ipl/asset/css/variables.less
 icinga-php/ipl/asset/css/vendor/
 icinga-php/ipl/asset/css/vendor/flatpickr.css
@@ -140,6 +144,7 @@ icinga-php/ipl/vendor/ipl/html/src/Contract/
 icinga-php/ipl/vendor/ipl/html/src/Contract/FormElement.php
 icinga-php/ipl/vendor/ipl/html/src/Contract/FormElementDecorator.php
 icinga-php/ipl/vendor/ipl/html/src/Contract/FormSubmitElement.php
+icinga-php/ipl/vendor/ipl/html/src/Contract/ValueCandidates.php
 icinga-php/ipl/vendor/ipl/html/src/Contract/Wrappable.php
 icinga-php/ipl/vendor/ipl/html/src/DeferredText.php
 icinga-php/ipl/vendor/ipl/html/src/Error.php
@@ -159,6 +164,7 @@ icinga-php/ipl/vendor/ipl/html/src/FormElement/HiddenElement.php
 icinga-php/ipl/vendor/ipl/html/src/FormElement/InputElement.php
 icinga-php/ipl/vendor/ipl/html/src/FormElement/LocalDateTimeElement.php
 icinga-php/ipl/vendor/ipl/html/src/FormElement/NumberElement.php
+icinga-php/ipl/vendor/ipl/html/src/FormElement/PasswordElement.php
 icinga-php/ipl/vendor/ipl/html/src/FormElement/SelectElement.php
 icinga-php/ipl/vendor/ipl/html/src/FormElement/SelectOption.php
 icinga-php/ipl/vendor/ipl/html/src/FormElement/SubFormElement.php
@@ -264,6 +270,7 @@ icinga-php/ipl/vendor/ipl/stdlib/
 icinga-php/ipl/vendor/ipl/stdlib/LICENSE
 icinga-php/ipl/vendor/ipl/stdlib/composer.json
 icinga-php/ipl/vendor/ipl/stdlib/src/
+icinga-php/ipl/vendor/ipl/stdlib/src/BaseFilter.php
 icinga-php/ipl/vendor/ipl/stdlib/src/Contract/
 icinga-php/ipl/vendor/ipl/stdlib/src/Contract/Filterable.php
 icinga-php/ipl/vendor/ipl/stdlib/src/Contract/Paginatable.php
@@ -303,7 +310,6 @@ icinga-php/ipl/vendor/ipl/stdlib/src/Seq.php
 icinga-php/ipl/vendor/ipl/stdlib/src/Str.php
 icinga-php/ipl/vendor/ipl/stdlib/src/functions.php
 icinga-php/ipl/vendor/ipl/stdlib/src/functions_include.php
-icinga-php/ipl/vendor/ipl/stdlib/src/polyfill-php70.php
 icinga-php/ipl/vendor/ipl/stdlib/src/polyfill-php71.php
 icinga-php/ipl/vendor/ipl/validator/
 icinga-php/ipl/vendor/ipl/validator/LICENSE
@@ -325,11 +331,13 @@ icinga-php/ipl/vendor/ipl/web/src/Common/Card.php
 icinga-php/ipl/vendor/ipl/web/src/Common/CsrfCounterMeasure.php
 icinga-php/ipl/vendor/ipl/web/src/Common/FormUid.php
 icinga-php/ipl/vendor/ipl/web/src/Common/RedirectOption.php
+icinga-php/ipl/vendor/ipl/web/src/Common/StateBadges.php
 icinga-php/ipl/vendor/ipl/web/src/Compat/
 icinga-php/ipl/vendor/ipl/web/src/Compat/CompatController.php
 icinga-php/ipl/vendor/ipl/web/src/Compat/CompatDecorator.php
 icinga-php/ipl/vendor/ipl/web/src/Compat/CompatForm.php
 icinga-php/ipl/vendor/ipl/web/src/Compat/Multipart.php
+icinga-php/ipl/vendor/ipl/web/src/Compat/SearchControls.php
 icinga-php/ipl/vendor/ipl/web/src/Compat/ViewRenderer.php
 icinga-php/ipl/vendor/ipl/web/src/Control/
 icinga-php/ipl/vendor/ipl/web/src/Control/LimitControl.php
@@ -367,6 +375,7 @@ icinga-php/ipl/vendor/ipl/web/src/Widget/HorizontalKeyValue.php
 icinga-php/ipl/vendor/ipl/web/src/Widget/IcingaIcon.php
 icinga-php/ipl/vendor/ipl/web/src/Widget/Icon.php
 icinga-php/ipl/vendor/ipl/web/src/Widget/Link.php
+icinga-php/ipl/vendor/ipl/web/src/Widget/StateBadge.php
 icinga-php/ipl/vendor/ipl/web/src/Widget/StateBall.php
 icinga-php/ipl/vendor/ipl/web/src/Widget/Tabs.php
 icinga-php/ipl/vendor/ipl/web/src/Widget/TimeAgo.php
