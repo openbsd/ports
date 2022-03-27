@@ -4,6 +4,7 @@ BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.28.12
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -18,11 +19,11 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common avahi-glib
-WANTLIB += c crypto cups dbus-1 execinfo expat ffi fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
-WANTLIB += hogweed iconv idn2 intl jpeg lcms2 lzma m nettle openjp2
-WANTLIB += p11-kit pcre png poppler poppler-cpp qpdf ssl tasn1 tiff
-WANTLIB += unistring z zstd
+WANTLIB += brotlidec brotlienc c crypto cups dbus-1 execinfo expat
+WANTLIB += ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gmp gnutls gobject-2.0 hogweed iconv idn2 intl jpeg
+WANTLIB += lcms2 lzma m nettle openjp2 p11-kit pcre png poppler
+WANTLIB += poppler-cpp qpdf ssl tasn1 tiff unistring z zstd
 
 MASTER_SITES=	https://www.openprinting.org/download/cups-filters/
 
@@ -69,7 +70,7 @@ FLAVORS=	ldap
 FLAVOR?=
 
 .if ${FLAVOR:Mldap}
-WANTLIB += crypto lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB += lber ldap sasl2
 LIB_DEPENDS +=		databases/openldap
 .else
 CONFIGURE_ARGS +=	--disable-ldap
