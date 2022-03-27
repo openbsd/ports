@@ -2,8 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.1
-REVISION=	2
+GH_TAGNAME=	3.2
 
 CATEGORIES=	mail
 
@@ -16,8 +15,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += blas c crypto glib-2.0 fmt icudata icui18n icuio icuuc
-WANTLIB += intl m pcre sodium sqlite3 ssl util z zstd
+WANTLIB += intl m pcre2-8 sodium sqlite3 ssl util z zstd
 
+# XXX switch to vectorscan for wider arch support?
+# https://github.com/VectorCamp/vectorscan
 FLAVORS=	no_luajit hyperscan
 .if ${MACHINE_ARCH} == "amd64"
 # amd64: any flavour
@@ -45,7 +46,7 @@ LIB_DEPENDS=	archivers/zstd \
 		devel/fmt \
 		devel/gettext,-runtime \
 		devel/glib2 \
-		devel/pcre \
+		devel/pcre2 \
 		security/libsodium \
 		textproc/icu4c
 RUN_DEPENDS=	databases/redis
@@ -75,18 +76,8 @@ CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
 		-DSYSTEM_ZSTD=ON
 
 # to line up @samples in plist
-RSPAMDCONF=	${SYSCONFDIR}/rspamd
-SUBST_VARS+=	RSPAMDCONF
-
-# The check for this pulls in cmake modules which check for LLVM
-# toolchain components (llvm-ar/llvm-ranlib) which are only present
-# in the version of LLVM in ports not the version in base; it then
-# tries to use them in the build, e.g. llvm-ar instead of ar when
-# archiving libraries.
-# There is a cmake variable _CMAKE_TOOLCHAIN_LOCATION which looks like
-# it should force only checking in a certain path, but it doesn't seem
-# to work.
-CONFIGURE_ARGS+= -DENABLE_LTO=off
+ETC=		${SYSCONFDIR}
+SUBST_VARS+=	ETC
 
 .if ${FLAVOR:Mno_luajit}
 CONFIGURE_ARGS+= -DENABLE_LUAJIT=0
@@ -126,10 +117,20 @@ NO_TEST=	Yes
 #		${LOCALBASE}/bin/robot${MODPY_BIN_SUFFIX} \
 #		test/functional/cases
 
-# no trailing crlf
-post-extract:
-	for i in hiredis http-parser lc-btrie libottery; do \
-	    echo >> ${WRKSRC}/contrib/$$i/CMakeLists.txt; done
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlld}
+BUILD_DEPENDS=	devel/llvm
+# llvm toolchain binaries are available in base on LLD archs, but under
+# names which are not expected by cmake's Compiler/Clang-FindBinUtils
+# and CMakeFindBinUtils modules. I have tried symlinks from llvm-ar and
+# llvm-ranlib in ${WRKDIR}/bin to the relevant binaries but the cmake
+# module does not pick them up, so just depend on the package instead.
+.else
+# On !LLD archs, disable the option that is causing those cmake modules
+# to be pulled in, so that ports-clang toolchain are not picked up by
+# mistake.
+CONFIGURE_ARGS+= -DENABLE_LTO=off
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/interface/README.md
