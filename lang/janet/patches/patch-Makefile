@@ -20,7 +20,7 @@ Index: Makefile
  JANET_PKG_CONFIG_PATH?=$(LIBDIR)/pkgconfig
  JANET_DIST_DIR?=janet-dist
  JPM_TAG?=master
-@@ -278,15 +278,12 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
+@@ -279,15 +279,12 @@ install: $(JANET_TARGET) $(JANET_LIBRARY) $(JANET_STAT
  	cp -r build/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet'
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
