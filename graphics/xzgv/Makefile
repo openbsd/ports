@@ -1,6 +1,6 @@
 COMMENT=	picture viewer for X, with thumbnail-based file selector
 DISTNAME=	xzgv-0.9
-REVISION=	7
+REVISION=	8
 CATEGORIES=	graphics
 FIX_EXTRACT_PERMISSIONS=Yes
 
@@ -12,8 +12,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB =  GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0>=0.11 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0>=0.11 iconv intl m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0>=0.11 harfbuzz iconv intl
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xzgv/}

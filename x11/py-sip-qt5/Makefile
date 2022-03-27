@@ -4,8 +4,9 @@ MODPY_EGG_VERSION=	12.9.0
 
 DISTNAME=	PyQt5_sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
+WANTLIB =  pthread
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/

@@ -5,16 +5,16 @@ PKGNAME =		${DISTNAME:C/_/-/}
 CATEGORIES =		games
 HOMEPAGE =		https://instead.syscall.ru/
 MAINTAINER =		Roman Yakovlev <obsd@51t.ru>
-REVISION =		1
+REVISION =		2
 
 # MIT, LGPL (SDL_anigif), zlib (SDL_gfx), 3-clause BSDL (tinymt32)
 PERMIT_PACKAGE =	Yes
 
+WANTLIB =  ${MODLUA_WANTLIB}
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf atk-1.0 c cairo gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 iconv m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangoxft-1.0 pthread z
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 pthread z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=instead/}
 

@@ -3,13 +3,13 @@ COMMENT=	perl interface to the Pango libraries
 DISTNAME =	Pango-1.227
 CATEGORIES=	x11 devel
 CPAN_AUTHOR=	XAOC
-REVISION =	2
+REVISION =	3
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c cairo fontconfig freetype glib-2.0 gobject-2.0 iconv intl m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 perl z
+WANTLIB =  c cairo fontconfig freetype glib-2.0 gobject-2.0 harfbuzz
+WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 perl z
 
 MODULES=	cpan
 

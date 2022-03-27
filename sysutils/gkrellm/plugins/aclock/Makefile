@@ -2,7 +2,7 @@ COMMENT=	analog clock for GkrellM2
 
 V=		0.3.3
 DISTNAME=	gkrellaclock-${V}
-REVISION=	18
+REVISION=	19
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.geocities.com/m_muthukumar/gkrellaclock.html

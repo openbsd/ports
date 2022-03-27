@@ -3,7 +3,7 @@ COMMENT=	GTK+2 front-end for command line archiving tools
 V=		0.2.8-6
 DISTNAME=	xarchive-$V
 PKGNAME=	xarchive-${V:S/-/./}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11
 
 HOMEPAGE=	http://xarchive.sourceforge.net/
@@ -11,11 +11,10 @@ HOMEPAGE=	http://xarchive.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread z
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xarchive/}
 

@@ -1,7 +1,7 @@
 COMMENT=		C C++ API for memcached
 
 VERSION=		1.0.18
-REVISION=		3
+REVISION=		4
 DISTNAME=		libmemcached-${VERSION}
 CATEGORIES=		devel misc
 
@@ -17,7 +17,7 @@ SHARED_LIBS +=  memcachedutil             1.0 # 1.0
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c ${COMPILER_LIBCXX} m pthread sasl2
+WANTLIB += ${COMPILER_LIBCXX} c crypto m pthread sasl2
 
 COMPILER =		base-clang ports-gcc base-gcc
 

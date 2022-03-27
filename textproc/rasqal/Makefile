@@ -1,7 +1,7 @@
 COMMENT=		RDF Query Library for Redland
 DISTNAME=		rasqal-0.9.33
 CATEGORIES=		textproc
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  rasqal               2.0      # 3.0
 
@@ -12,8 +12,8 @@ MASTER_SITES=		http://download.librdf.org/source/
 # LGPL 2.1+, GPL 2+ or Apache 2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto curl gcrypt gmp gpg-error iconv intl lzma m mpfr
-WANTLIB += nghttp2 pcre pthread raptor2 ssl uuid xml2 xslt yajl z
+WANTLIB =  c crypto curl execinfo gcrypt gmp gpg-error iconv intl lzma m
+WANTLIB += mpfr nghttp2 pcre pthread raptor2 ssl uuid xml2 xslt yajl z
 
 LIB_DEPENDS=		devel/mpfr \
 			devel/pcre \

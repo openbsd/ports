@@ -4,8 +4,9 @@ MODPY_EGG_VERSION =	1.1.1
 DISTNAME =		PyWavelets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		3
+REVISION =		4
 
+WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # MIT

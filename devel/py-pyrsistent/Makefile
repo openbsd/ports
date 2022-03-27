@@ -4,8 +4,9 @@ MODPY_EGG_VERSION =	0.18.0
 
 DISTNAME =	pyrsistent-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
+WANTLIB =  pthread
 CATEGORIES =	devel
 
 HOMEPAGE =	http://github.com/tobgu/pyrsistent/

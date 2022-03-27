@@ -2,14 +2,17 @@ COMMENT=	turbo assembler compatible cross-assembler for 65xx
 
 DISTNAME=	64tass-1.55.2176-src
 PKGNAME=	${DISTNAME:S/-src//}
+REVISION=	0
 EXTRACT_SUFX=	.zip
 CATEGORIES=	devel
 
 HOMEPAGE=	http://tass64.sourceforge.net/
-MAINTAINER=	Marcus Glocker <marcus@nazgul.ch> 
+MAINTAINER=	Marcus Glocker <marcus@nazgul.ch>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
+
+WANTLIB += c m
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tass64/}
 

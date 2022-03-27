@@ -1,6 +1,6 @@
 COMMENT=		XML parser designed for Jabber applications
 DISTNAME=		iksemel-1.4
-REVISION=		13
+REVISION=		14
 
 SHARED_LIBS=		iksemel		0.1	# .4.0
 
@@ -11,8 +11,8 @@ HOMEPAGE=		https://github.com/meduketto/iksemel
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += brotlidec brotlienc c gmp gnutls hogweed iconv idn2
-WANTLIB += intl nettle p11-kit pthread tasn1 unistring z zstd
+WANTLIB =  brotlidec brotlienc c gmp gnutls hogweed iconv idn2 intl
+WANTLIB += nettle p11-kit pthread tasn1 unistring z zstd
 
 MASTER_SITES=		${MASTER_SITE_GOOGLECODE:=iksemel/}
 

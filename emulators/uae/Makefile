@@ -1,6 +1,6 @@
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-REVISION=	11
+REVISION=	12
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/
@@ -11,8 +11,9 @@ WANTLIB=  ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB+= Xfixes Xi Xinerama Xrandr Xrender Xxf86dga Xxf86vm atk-1.0 c
 WANTLIB+= cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB+= gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB+= pixman-1 png pthread xcb xcb-render xcb-render-util z
+WANTLIB+= gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB+= pangoft2-1.0 pixman-1 png pthread xcb xcb-render
+WANTLIB+= xcb-render-util z
 
 MASTER_SITES=	ftp://ftp.coresystems.de/pub/uae/sources/develop/
 

@@ -3,6 +3,7 @@
 COMMENT=	PDF transformation and inspection utility
 
 DISTNAME=	qpdf-10.6.3
+REVISION=	0
 
 SHARED_LIBS +=  qpdf                 9.4      # 34.3
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto gmp gnutls hogweed iconv
 WANTLIB += idn2 intl jpeg m nettle p11-kit ssl tasn1 unistring
-WANTLIB += z
+WANTLIB += z brotlidec brotlienc zstd
 
 COMPILER=	base-clang ports-gcc base-gcc
 

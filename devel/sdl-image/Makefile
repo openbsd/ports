@@ -2,7 +2,7 @@ COMMENT=	SDL image library
 
 DISTNAME=	SDL_image-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel graphics
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -13,7 +13,8 @@ HOMEPAGE=	https://www.libsdl.org/projects/SDL_image/
 # Zlib
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	SDL iconv jpeg m png pthread sndio tiff usbhid webp z
+WANTLIB=  SDL iconv jpeg lzma m png pthread sndio tiff usbhid webp z
+WANTLIB+= zstd
 
 LIB_DEPENDS=	devel/sdl \
 		graphics/jpeg \

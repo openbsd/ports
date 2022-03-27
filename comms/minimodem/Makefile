@@ -4,13 +4,14 @@ COMMENT =	general-purpose software audio FSK modem
 # next version should have a native sndio backend
 DISTNAME =	minimodem-0.24
 CATEGORIES =	comms
+REVISION =	0
 
 HOMEPAGE =	http://www.whence.com/minimodem/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c fftw3f fftw3f_threads intl m pulse pulse-simple
+WANTLIB =  c fftw3f fftw3f_threads intl m pthread pulse pulse-simple
 WANTLIB += sndfile
 
 MASTER_SITES =	http://www.whence.com/minimodem/

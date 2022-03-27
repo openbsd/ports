@@ -3,7 +3,7 @@ COMMENT=	GkrellM2 plugin to monitor multiple mailboxes
 V=		2.4.3
 DISTNAME=	gkrellm-mailwatch-${V}
 PKGNAME=	gkrellmmailwatch-${V}
-REVISION=	10
+REVISION=	11
 CATEGORIES=	mail
 
 HOMEPAGE=	http://gkrellm.luon.net/mailwatch.phtml

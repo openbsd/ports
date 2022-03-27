@@ -1,11 +1,12 @@
 COMMENT=	PHP interface to memcached via libmemcached
 
 DISTNAME=	memcached-3.2.0
+REVISION=	0
 
 # PHP
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c memcached memcachedutil pthread sasl2 z
+WANTLIB =  c crypto memcached memcachedutil pthread sasl2 z
 
 MODULES=	lang/php/pecl
 LIB_DEPENDS=	devel/libmemcached

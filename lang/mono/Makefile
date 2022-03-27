@@ -5,7 +5,7 @@ COMMENT=	cross platform, open source .NET developement framework
 V=		6.12.0.122
 
 DISTNAME=	mono-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
@@ -26,7 +26,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv2, LGPL, MIT X11, MPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m pthread z
+WANTLIB=  c execinfo m pthread z
 
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 EXTRACT_SUFX=	.tar.xz

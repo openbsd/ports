@@ -1,6 +1,7 @@
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-5.16.6
+REVISION=		0
 
 SHARED_LIBS +=  mission-control-plugins 3.0      # 5.1
 
@@ -8,8 +9,9 @@ HOMEPAGE=		https://telepathy.freedesktop.org/components/telepathy-mission-contro
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-mission-control/}
 
-WANTLIB =  c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl pcre pthread telepathy-glib z
+WANTLIB =  c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl pcre pthread
+WANTLIB += telepathy-glib z
 
 MODULES=		devel/dconf \
 			lang/python

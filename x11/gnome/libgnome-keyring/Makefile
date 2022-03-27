@@ -2,15 +2,15 @@ COMMENT=	library for gnome keyring integration
 
 GNOME_PROJECT=	libgnome-keyring
 GNOME_VERSION=	3.12.0
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS +=  gnome-keyring        7.0      # 2.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += dbus-1 ffi gcrypt glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error pcre pthread iconv intl
+WANTLIB =  dbus-1 execinfo ffi gcrypt glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error iconv intl pcre pthread
 
 MODULES=	x11/gnome
 

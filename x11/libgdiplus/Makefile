@@ -1,6 +1,7 @@
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-6.0.5
+REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -16,12 +17,9 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB += X11 Xext Xrender cairo exif expat fontconfig freetype
-WANTLIB += gif glib-2.0
-WANTLIB += iconv intl jpeg m
-WANTLIB += pcre pixman-1 png pthread tiff xcb xcb-render
-WANTLIB += xcb-shm z
-WANTLIB += lzma zstd
+WANTLIB =  X11 Xau Xdmcp Xext Xrender cairo exif expat fontconfig
+WANTLIB += freetype gif glib-2.0 iconv intl jpeg lzma m pcre pixman-1
+WANTLIB += png pthread tiff xcb xcb-render xcb-shm z zstd
 
 MASTER_SITES=	http://download.mono-project.com/sources/libgdiplus/
 

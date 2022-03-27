@@ -3,7 +3,7 @@ COMMENT=		configuration database system for GNOME
 GNOME_PROJECT=		GConf
 GNOME_VERSION=		3.2.6
 PKGNAME=		gconf2-${GNOME_VERSION}
-REVISION=		12
+REVISION=		13
 
 SHARED_LIBS +=  gconf-2              6.2      # 5.5
 
@@ -15,9 +15,9 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 iconv intl lzma m pcre pthread
-WANTLIB += xml2 z
+WANTLIB =  c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl lzma m pcre
+WANTLIB += pthread xml2 z
 
 MODULES=		x11/gnome
 

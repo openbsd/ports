@@ -1,7 +1,7 @@
 COMMENT=	GkrellM2 plugin to display sun rise/set times
 
 DISTNAME=	gkrellsun-1.0.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	astro
 
 HOMEPAGE=	http://gkrellsun.sourceforge.net/

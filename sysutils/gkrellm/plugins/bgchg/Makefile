@@ -2,7 +2,7 @@ COMMENT=	change background image with GkrellM2
 
 DISTNAME=	gkrellmbgchg2-0.1.11
 CATEGORIES=	x11
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.bender-suhl.de/stefan/english/comp/gkrellmbgchg.html
 

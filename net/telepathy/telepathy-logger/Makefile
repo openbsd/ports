@@ -1,7 +1,7 @@
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.8.2
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=  telepathy-logger     4.1      # 6.0
 
@@ -10,9 +10,9 @@ HOMEPAGE=	${HOMEPAGE_TP:=Logger}
 MASTER_SITES=	${MASTER_SITES_TP:=telepathy-logger/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB =  c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 iconv intl lzma m pcre pthread sqlite3
-WANTLIB += telepathy-glib xml2 z
+WANTLIB =  c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 iconv intl lzma m pcre pthread
+WANTLIB += sqlite3 telepathy-glib xml2 z
 
 MODULES=	devel/dconf \
 		lang/python \

@@ -4,6 +4,7 @@ COMMENT =		manage IPv4 ranges
 V =			1.0.4
 DISTNAME =		iprange-${V}
 CATEGORIES =		net
+REVISION =		0
 
 HOMEPAGE =		https://github.com/firehol/iprange
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://github.com/firehol/iprange/releases/download/v${V}/
 
-WANTLIB =		c
+WANTLIB =  c pthread
 
 CONFIGURE_STYLE =	autoconf
 

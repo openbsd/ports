@@ -7,6 +7,7 @@ COMMENT=		printer driver for Epson ESC/P-R inkjets
 
 DISTNAME=		epson-inkjet-printer-escpr-1.7.18
 EXTRACT_SUFX=		-1lsb3.2.tar.gz
+REVISION=		0
 
 SHARED_LIBS +=	escpr                     0.0 # 1.0
 
@@ -19,9 +20,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += avahi-client avahi-common c cups cupsimage dbus-1 execinfo
-WANTLIB += gmp gnutls hogweed iconv idn2 intl m nettle p11-kit
-WANTLIB += pthread tasn1 unistring z
+WANTLIB =  avahi-client avahi-common brotlidec brotlienc c cups
+WANTLIB += cupsimage dbus-1 execinfo gmp gnutls hogweed iconv idn2 intl
+WANTLIB += m nettle p11-kit pthread tasn1 unistring z zstd
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			print/cups,-libs

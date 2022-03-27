@@ -1,7 +1,7 @@
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 V=		2.2.12
-REVISION=	5
+REVISION=	6
 DISTNAME=	AfterStep-${V}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=     x11
@@ -15,10 +15,11 @@ HOMEPAGE=	http://www.afterstep.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB =  ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo curses dbus-1 execinfo fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 png readline rsvg-2 tiff z
+WANTLIB += Xrandr Xrender atk-1.0 c cairo curses dbus-1 execinfo
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz intl jpeg m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png readline rsvg-2
+WANTLIB += tiff z
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		shells/bash \

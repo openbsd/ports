@@ -1,7 +1,7 @@
 COMMENT=	simple GTK+ text editor
 
 DISTNAME=	leafpad-0.8.18.1
-REVISION=	7
+REVISION=	8
 CATEGORIES=	editors x11
 
 HOMEPAGE=	http://tarot.freeshell.org/leafpad/
@@ -13,8 +13,8 @@ WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread xcb xcb-render xcb-shm z
+WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=leafpad/}
 

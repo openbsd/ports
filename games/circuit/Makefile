@@ -4,7 +4,7 @@ CATEGORIES =	games
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME =	circuit-0.1.4
-REVISION =	10
+REVISION =	11
 MASTER_SITES =	https://distfiles.sigtrap.nl/
 
 # BSD
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =  GL X11 Xau Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread xcb xcb-render xcb-shm z
 
 LIB_DEPENDS =	x11/gtk+2

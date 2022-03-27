@@ -3,7 +3,7 @@ COMMENT =		template and text document library for Qt5
 VERSION =		5.2.0
 PKGNAME =		grantlee-qt5-${VERSION}
 DISTNAME =		grantlee-${VERSION}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  Grantlee_Templates        1.0 # 5.1
 SHARED_LIBS +=  Grantlee_TextDocument     0.0 # 5.1
@@ -16,7 +16,7 @@ HOMEPAGE =		https://github.com/steveire/grantlee
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Qml
-WANTLIB += m
+WANTLIB += c m
 
 MASTER_SITES =		http://downloads.grantlee.org/ \
 			http://www.loegria.net/grantlee/

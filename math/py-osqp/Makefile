@@ -4,8 +4,9 @@ MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		osqp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		4
+REVISION =		5
 
+WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # Apache v2

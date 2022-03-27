@@ -3,6 +3,7 @@ COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 VERSION=	13.5
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
+REVISION=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
@@ -17,7 +18,7 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto curses m perl readline ssl xml2 z
+WANTLIB =  c crypto curses execinfo m perl readline ssl xml2 z
 
 MASTER_SITES=	https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/

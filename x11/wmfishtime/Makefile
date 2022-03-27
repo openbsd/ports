@@ -1,7 +1,7 @@
 COMMENT=		wm-dockapp; clock application with clock, date and fish
 
 DISTNAME=		wmfishtime-1.24
-REVISION=		3
+REVISION=		4
 CATEGORIES=     	x11 x11/windowmaker
 
 HOMEPAGE=		http://www.ne.jp/asahi/linux/timecop/
@@ -11,11 +11,11 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/software/
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread z
+WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread
+WANTLIB += z
 
 LIB_DEPENDS=		devel/gettext,-runtime \
 			x11/gtk+2

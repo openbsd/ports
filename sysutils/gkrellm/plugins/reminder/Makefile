@@ -3,7 +3,7 @@ COMMENT=	GKrellM2 will remind you to do important events
 V=		2.0.0
 DISTNAME=	gkrellm-reminder-${V}
 PKGNAME=	gkrellmreminder-${V}
-REVISION=	11
+REVISION=	12
 CATEGORIES=	misc
 
 HOMEPAGE=	http://members.dslextreme.com/users/billw/gkrellm/Plugins.html\#REMINDER

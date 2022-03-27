@@ -3,6 +3,7 @@ COMMENT =	lightweight web browser
 V =	9.0
 DISTNAME =	midori-v${V}
 PKGNAME =	midori-${V}
+REVISION =	0
 
 HOMEPAGE =	https://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -28,11 +29,12 @@ BUILD_DEPENDS =	lang/vala \
 		devel/gettext,-tools \
 		x11/gnome/librsvg
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gck-1 gcr-base-3 gcr-ui-3
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 intl javascriptcoregtk-4.0
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 peas-1.0 peas-gtk-1.0
-WANTLIB += soup-2.4 sqlite3 webkit2gtk-4.0 archive json-glib-1.0
+WANTLIB =  archive atk-1.0 c cairo cairo-gobject gck-1 gcr-base-3
+WANTLIB += gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 harfbuzz intl
+WANTLIB += javascriptcoregtk-4.0 json-glib-1.0 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 peas-1.0 peas-gtk-1.0 soup-2.4 sqlite3
+WANTLIB += webkit2gtk-4.0
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

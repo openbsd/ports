@@ -3,7 +3,7 @@ COMMENT=		Gtk-based GUI client for the Gnutella Network
 DISTNAME=		gtk-gnutella-0.97.1
 EPOCH=			0
 CATEGORIES=		net
-REVISION=		6
+REVISION=		7
 FIX_EXTRACT_PERMISSIONS=Yes
 
 # this litle shit has its own mkdep that stashes /usr/local dependencies
@@ -17,8 +17,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB =  X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 c cairo fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv
-WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtk-gnutella/}
 EXTRACT_SUFX=	.tar.bz2
