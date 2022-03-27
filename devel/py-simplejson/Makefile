@@ -21,7 +21,4 @@ MODPY_PYTEST_ARGS =	simplejson/tests
 FLAVORS =		python3
 FLAVOR ?=
 
-xpre-test:
-	@${MODPY_CMD} build_ext --inplace
-
 .include <bsd.port.mk>
