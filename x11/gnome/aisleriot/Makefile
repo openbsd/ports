@@ -38,7 +38,7 @@ CONFIGURE_ARGS =	-Dtheme_kde=false
 
 # XXX horrible hack: make it possible to build when both guile and guile2 are
 # installed (take precedence over -I${LOCALBASE}/include because meson reorders
-# headers so we can't use MODGNOME_CPPFLAGS)
+# FLAGS so we can't use MODGNOME_CPPFLAGS)
 post-configure:
 	sed -i "s,cc,cc -I${LOCALBASE}/include/guile/2.2," ${WRKDIR}/bin/cc
 
