@@ -1,7 +1,7 @@
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.23
+V =			1.6.24
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
@@ -18,16 +18,18 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		bz2 c z
 
 WANTLIB-nfprofile =  ${WANTLIB}
-WANTLIB-nfprofile += X11 Xext Xrender cairo expat fontconfig freetype glib-2.0
-WANTLIB-nfprofile += gobject-2.0 graphite2 harfbuzz iconv intl lzma m nfdump
-WANTLIB-nfprofile += pango-1.0 pangocairo-1.0 pixman-1 png pthread rrd xcb
-WANTLIB-nfprofile += xcb-render xcb-shm xml2
+WANTLIB-nfprofile += X11 cairo expat freetype glib-2.0 gobject-2.0 harfbuzz
+WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0 png
+WANTLIB-nfprofile += pthread rrd xcb xml2
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+AUTORECONF =		./autogen.sh
 
 CONFIGURE_ARGS +=	--enable-compat15 \
 			--enable-ftconv \
@@ -61,9 +63,5 @@ post-install:
 CONFIGURE_ENV =		LDFLAGS="${LDFLAGS} -L${X11BASE}/lib" \
 			ac_cv_path_DOXYGEN=
 TEST_FLAGS =		TZ=CET
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
-AUTORECONF =		./autogen.sh
 
 .include <bsd.port.mk>
