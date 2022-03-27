@@ -103,6 +103,8 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 BUILD_DEPENDS+=		archivers/bzip2 \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
+MODULES+=		lang/python
+MODPY_RUNDEP=		No
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
@@ -225,7 +227,7 @@ LIB_DEPENDS-kqueue=
 WANTLIB-kqueue=		pthread
 
 # lua
-MODULES=		lang/lua
+MODULES+=		lang/lua
 MODLUA_SA=		yes
 MODLUA_RUNDEP=		no
 MODLUA_VERSION=		5.3
