@@ -1,6 +1,6 @@
 COMMENT =	Python library for OAuth
 
-MODPY_EGG_VERSION = 3.1.1
+MODPY_EGG_VERSION = 3.2.0
 
 GH_ACCOUNT =	idan
 GH_PROJECT =	oauthlib
