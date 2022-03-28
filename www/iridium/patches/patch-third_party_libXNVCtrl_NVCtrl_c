@@ -1,5 +1,6 @@
---- third_party/libXNVCtrl/NVCtrl.c.orig.port	Fri Mar 22 02:13:35 2013
-+++ third_party/libXNVCtrl/NVCtrl.c	Tue Apr  2 21:05:17 2013
+Index: third_party/libXNVCtrl/NVCtrl.c
+--- third_party/libXNVCtrl/NVCtrl.c.orig
++++ third_party/libXNVCtrl/NVCtrl.c
 @@ -27,10 +27,6 @@
   * libXNVCtrl library properly protects the Display connection.
   */

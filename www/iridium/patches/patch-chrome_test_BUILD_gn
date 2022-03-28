@@ -1,12 +1,12 @@
 Index: chrome/test/BUILD.gn
 --- chrome/test/BUILD.gn.orig
 +++ chrome/test/BUILD.gn
-@@ -8692,7 +8692,7 @@ test("chrome_app_unittests") {
+@@ -8875,7 +8875,7 @@ test("chrome_app_unittests") {
      "//components/safe_browsing:buildflags",
      "//pdf:pdf_ppapi",
    ]
 -  if (!is_fuchsia) {
-+  if (!is_fuchsia && !is_openbsd) {
++  if (!is_fuchsia && !is_bsd) {
      deps += [ "//third_party/breakpad:client" ]
    }
    if (enable_gwp_asan) {

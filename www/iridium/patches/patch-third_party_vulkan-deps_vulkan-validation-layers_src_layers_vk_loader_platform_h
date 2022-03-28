@@ -5,8 +5,8 @@ Index: third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_loader_pla
  #undef NOMINMAX
  #include "vulkan/vk_sdk_platform.h"
  
--#if defined(__linux__) || defined(__APPLE__)
-+#if defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+-#if defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)
  /* Linux-specific common code: */
  
  // Headers:

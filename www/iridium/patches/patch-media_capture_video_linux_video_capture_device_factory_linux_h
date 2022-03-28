@@ -1,7 +1,7 @@
 Index: media/capture/video/linux/video_capture_device_factory_linux.h
 --- media/capture/video/linux/video_capture_device_factory_linux.h.orig
 +++ media/capture/video/linux/video_capture_device_factory_linux.h
-@@ -53,7 +53,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryLinux
+@@ -52,7 +52,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryLinux
  
   private:
    // Simple wrapper to do HANDLE_EINTR(v4l2_->ioctl(fd, ...)).

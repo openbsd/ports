@@ -5,8 +5,8 @@ Index: chrome/browser/crash_upload_list/crash_upload_list.cc
  // to log uploads in CrashUploadList::kReporterLogFilename.
  // Linux is handled below.
  #if !(BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS) || \
--      defined(OS_LINUX))
-+      defined(OS_LINUX) || defined(OS_BSD))
+-      BUILDFLAG(IS_LINUX))
++      BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
    if (crash_reporter::IsCrashpadEnabled()) {
      return new CrashUploadListCrashpad();
    }

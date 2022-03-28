@@ -5,7 +5,7 @@ Index: third_party/blink/renderer/platform/wtf/stack_util.cc
  extern "C" void* __libc_stack_end;  // NOLINT
  #endif
  
-+#if defined(OS_OPENBSD)
++#if defined(OS_BSD)
 +#include <sys/signal.h>
 +#include <pthread_np.h>
 +#endif

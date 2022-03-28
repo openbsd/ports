@@ -6,7 +6,7 @@ Index: third_party/angle/util/BUILD.gn
      libs = []
  
 -    if (is_linux || is_chromeos) {
-+    if ((is_linux || is_chromeos) && !is_openbsd) {
++    if ((is_linux || is_chromeos) && !is_bsd) {
        libs += [
          "rt",
          "dl",

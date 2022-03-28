@@ -6,7 +6,7 @@ Index: third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
  
      # Determine //buildtools/<platform>/ directory
 -    if sys.platform.startswith("linux"):
-+    if sys.platform.startswith("linux") or sys.platform.startswith("openbsd"):
++    if sys.platform.startswith(("linux","openbsd","freebsd")):
          platform = "linux64"
          exe_suffix = ""
      elif sys.platform.startswith("darwin"):

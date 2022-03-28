@@ -1,21 +1,12 @@
 Index: ui/base/resource/resource_bundle.cc
 --- ui/base/resource/resource_bundle.cc.orig
 +++ ui/base/resource/resource_bundle.cc
-@@ -817,7 +817,7 @@ void ResourceBundle::ReloadFonts() {
+@@ -849,7 +849,7 @@ void ResourceBundle::ReloadFonts() {
  }
  
  ResourceScaleFactor ResourceBundle::GetMaxResourceScaleFactor() const {
--#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    return max_scale_factor_;
  #else
    return GetSupportedResourceScaleFactors().back();
-@@ -871,7 +871,7 @@ void ResourceBundle::InitSharedInstance(Delegate* dele
-   // For Windows we have a separate case in this function.
-   supported_scale_factors.push_back(k100Percent);
- #if defined(OS_MAC) || defined(OS_LINUX) || defined(OS_CHROMEOS) || \
--    defined(OS_WIN)
-+    defined(OS_WIN) || defined(OS_BSD)
-   supported_scale_factors.push_back(k200Percent);
- #endif
- #endif

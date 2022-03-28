@@ -1,15 +1,15 @@
 Index: gpu/vulkan/x/vulkan_implementation_x11.cc
 --- gpu/vulkan/x/vulkan_implementation_x11.cc.orig
 +++ gpu/vulkan/x/vulkan_implementation_x11.cc
-@@ -71,7 +71,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
+@@ -72,7 +72,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
  
-     path = path.Append("libvk_swiftshader.so");
-   } else {
+       path = path.Append("libvk_swiftshader.so");
+     } else {
 +#if defined(OS_BSD)
-+    path = base::FilePath("libvulkan.so");
++      path = base::FilePath("libvulkan.so");
 +#else
-     path = base::FilePath("libvulkan.so.1");
+       path = base::FilePath("libvulkan.so.1");
 +#endif
-   }
+     }
  
-   if (!InitializeVulkanFunctionPointers(path, vulkan_function_pointers))
+     VulkanFunctionPointers* vulkan_function_pointers =

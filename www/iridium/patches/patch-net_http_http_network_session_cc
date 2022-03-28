@@ -1,8 +1,8 @@
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig
 +++ net/http/http_network_session.cc
-@@ -19,7 +19,9 @@
- #include "base/values.h"
+@@ -20,7 +20,9 @@
+ #include "build/build_config.h"
  #include "net/base/features.h"
  #include "net/dns/host_resolver.h"
 +#if defined(USE_KERBEROS)

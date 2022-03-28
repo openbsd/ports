@@ -1,21 +1,21 @@
 Index: content/browser/webui/web_ui_main_frame_observer.h
 --- content/browser/webui/web_ui_main_frame_observer.h.orig
 +++ content/browser/webui/web_ui_main_frame_observer.h
-@@ -43,7 +43,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
+@@ -45,7 +45,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
  
  // TODO(crbug.com/1129544) This is currently disabled due to Windows DLL
  // thunking issues. Fix & re-enable.
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    // On official Google builds, capture and report JavaScript error messages on
    // WebUI surfaces back to Google. This allows us to fix JavaScript errors and
    // exceptions.
-@@ -59,7 +59,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
+@@ -61,7 +61,7 @@ class CONTENT_EXPORT WebUIMainFrameObserver : public W
    void ReadyToCommitNavigation(NavigationHandle* navigation_handle) override;
  
   private:
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    void MaybeEnableWebUIJavaScriptErrorReporting(
        NavigationHandle* navigation_handle);
  

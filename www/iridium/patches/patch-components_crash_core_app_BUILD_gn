@@ -6,7 +6,7 @@ Index: components/crash/core/app/BUILD.gn
    ]
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "breakpad_linux.cc",
        "breakpad_linux.h",
@@ -14,7 +14,7 @@ Index: components/crash/core/app/BUILD.gn
      ]
    }
  
-+  if (is_openbsd) {
++  if (is_bsd) {
 +    sources -= [ "crashpad.cc" ]
 +  }
 +
@@ -26,7 +26,7 @@ Index: components/crash/core/app/BUILD.gn
    }
  
 -  if (is_android || is_linux || is_chromeos) {
-+  if ((is_android || is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_android || is_linux || is_chromeos) && !is_bsd) {
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
@@ -35,11 +35,11 @@ Index: components/crash/core/app/BUILD.gn
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      deps += [ "//third_party/breakpad:client" ]
    }
  
-@@ -215,11 +219,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+@@ -216,11 +220,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
    # define custom UserStreamDataSources.
    executable("chrome_crashpad_handler") {
      sources = [ "chrome_crashpad_handler.cc" ]
@@ -49,5 +49,5 @@ Index: components/crash/core/app/BUILD.gn
 -      "//third_party/crashpad/crashpad/handler",
 -    ]
  
-     if (is_mac && is_component_build) {
+     if (is_mac && (is_component_build || is_asan)) {
        ldflags = [

@@ -1,0 +1,12 @@
+Index: content/zygote/BUILD.gn
+--- content/zygote/BUILD.gn.orig
++++ content/zygote/BUILD.gn
+@@ -5,7 +5,7 @@
+ import("//build/config/nacl/config.gni")
+ import("//content/public/common/zygote/features.gni")
+ 
+-if (is_linux || is_chromeos) {
++if ((is_linux || is_chromeos) && !is_bsd) {
+   source_set("zygote") {
+     sources = [
+       "zygote_linux.cc",

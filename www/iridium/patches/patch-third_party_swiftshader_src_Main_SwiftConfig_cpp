@@ -5,7 +5,7 @@ Index: third_party/swiftshader/src/Main/SwiftConfig.cpp
  		struct stat status;
  		int lastModified = ini.getInteger("LastModified", "Time", 0);
  
-+#if !defined(__OpenBSD__)
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
  		bool noConfig = stat("SwiftShader.ini", &status) != 0;
 +#else
 +		bool noConfig = false;

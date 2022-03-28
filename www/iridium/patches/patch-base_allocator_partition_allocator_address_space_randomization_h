@@ -1,7 +1,7 @@
 Index: base/allocator/partition_allocator/address_space_randomization.h
 --- base/allocator/partition_allocator/address_space_randomization.h.orig
 +++ base/allocator/partition_allocator/address_space_randomization.h
-@@ -36,7 +36,7 @@ AslrMask(uintptr_t bits) {
+@@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  
  #if defined(ARCH_CPU_64_BITS)
  

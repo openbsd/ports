@@ -6,7 +6,7 @@ Index: third_party/crc32c/BUILD.gn
  
    # Android added <sys/auxv.h> in API level 18.
 -  if (is_linux || is_chromeos || is_android) {
-+  if (is_linux || is_chromeos || is_android && !is_openbsd) {
++  if (is_linux || is_chromeos || is_android && !is_bsd) {
      defines += [
        "HAVE_STRONG_GETAUXVAL=1",
        "HAVE_WEAK_GETAUXVAL=1",

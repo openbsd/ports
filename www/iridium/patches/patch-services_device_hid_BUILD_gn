@@ -1,7 +1,7 @@
 Index: services/device/hid/BUILD.gn
 --- services/device/hid/BUILD.gn.orig
 +++ services/device/hid/BUILD.gn
-@@ -33,6 +33,16 @@ source_set("hid") {
+@@ -35,6 +35,25 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  
@@ -13,6 +13,15 @@ Index: services/device/hid/BUILD.gn
 +      "hid_service_fido.h",
 +    ]
 +    libs = ["fido2", "cbor", "usbhid", "crypto", "util"]
++  }
++
++  if (is_freebsd) {
++    sources += [
++      "hid_connection_freebsd.cc",
++      "hid_connection_freebsd.h",
++      "hid_service_freebsd.cc",
++      "hid_service_freebsd.h",
++    ]
 +  }
 +
    if ((is_linux || is_chromeos) && use_udev) {

@@ -1,10 +1,10 @@
 Index: base/test/launcher/test_launcher.cc
 --- base/test/launcher/test_launcher.cc.orig
 +++ base/test/launcher/test_launcher.cc
-@@ -62,6 +62,7 @@
+@@ -63,6 +63,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
  
- #if defined(OS_POSIX)
+ #if BUILDFLAG(IS_POSIX)
 +#include <signal.h>
  #include <fcntl.h>
  

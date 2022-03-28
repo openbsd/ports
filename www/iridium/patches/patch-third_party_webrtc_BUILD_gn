@@ -1,11 +1,11 @@
 Index: third_party/webrtc/BUILD.gn
 --- third_party/webrtc/BUILD.gn.orig
 +++ third_party/webrtc/BUILD.gn
-@@ -188,6 +188,9 @@ config("common_inherited_config") {
+@@ -191,6 +191,9 @@ config("common_inherited_config") {
    if (is_linux || is_chromeos) {
      defines += [ "WEBRTC_LINUX" ]
    }
-+  if (is_openbsd) {
++  if (is_bsd) {
 +    defines += [ "WEBRTC_BSD" ]
 +  }
    if (is_mac) {

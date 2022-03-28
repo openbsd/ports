@@ -6,4 +6,4 @@ Index: content/public/common/zygote/features.gni
  # found in the LICENSE file.
  
 -use_zygote_handle = is_posix && !is_android && !is_mac
-+use_zygote_handle = is_posix && !is_android && !is_mac && !is_openbsd
++use_zygote_handle = is_posix && !is_android && !is_mac && !is_bsd

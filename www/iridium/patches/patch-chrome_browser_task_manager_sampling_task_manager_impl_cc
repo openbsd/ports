@@ -5,8 +5,8 @@ Index: chrome/browser/task_manager/sampling/task_manager_impl.cc
  }
  
  int TaskManagerImpl::GetOpenFdCount(TaskId task_id) const {
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    return GetTaskGroupByTaskId(task_id)->open_fd_count();
  #else
    return -1;

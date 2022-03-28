@@ -1,12 +1,12 @@
 Index: base/base_switches.cc
 --- base/base_switches.cc.orig
 +++ base/base_switches.cc
-@@ -161,7 +161,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
+@@ -170,7 +170,7 @@ const char kForceFieldTrialParams[] = "force-fieldtria
  
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // Controls whether or not retired instruction counts are surfaced for threads
  // in trace events on Linux.
  //

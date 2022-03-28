@@ -1,30 +1,30 @@
 Index: content/renderer/render_process_impl.cc
 --- content/renderer/render_process_impl.cc.orig
 +++ content/renderer/render_process_impl.cc
-@@ -48,7 +48,7 @@
- #if defined(OS_WIN)
+@@ -47,7 +47,7 @@
+ #if BUILDFLAG(IS_WIN)
  #include "base/win/win_util.h"
  #endif
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
+-#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_64)
  #include "v8/include/v8-wasm-trap-handler-posix.h"
  #endif
- namespace {
-@@ -142,7 +142,7 @@ RenderProcessImpl::RenderProcessImpl()
+ 
+@@ -146,7 +146,7 @@ RenderProcessImpl::RenderProcessImpl()
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtection,
                          "--no-wasm-write-protect-code-memory");
  
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
+-#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_64)
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -230,7 +230,7 @@ RenderProcessImpl::RenderProcessImpl()
-   SetV8FlagIfFeature(features::kWebAssemblyTiering, "--wasm-tier-up");
-   SetV8FlagIfNotFeature(features::kWebAssemblyTiering, "--no-wasm-tier-up");
+@@ -227,7 +227,7 @@ RenderProcessImpl::RenderProcessImpl()
+   SetV8FlagIfFeature(features::kWebAssemblyDynamicTiering,
+                      "--wasm-dynamic-tiering");
  
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)) && defined(ARCH_CPU_X86_64)
+-#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_64)
    if (base::FeatureList::IsEnabled(features::kWebAssemblyTrapHandler)) {
      if (command_line->HasSwitch(switches::kEnableCrashpad) ||
          command_line->HasSwitch(switches::kEnableCrashReporter) ||

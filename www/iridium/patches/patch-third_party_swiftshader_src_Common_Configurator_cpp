@@ -5,7 +5,7 @@ Index: third_party/swiftshader/src/Common/Configurator.cpp
  
  	bool Configurator::readFile()
  	{
-+#if defined(__OpenBSD__)
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
 +		return false;
 +#endif
 +

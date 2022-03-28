@@ -1,11 +1,12 @@
 Index: third_party/blink/renderer/platform/BUILD.gn
 --- third_party/blink/renderer/platform/BUILD.gn.orig
 +++ third_party/blink/renderer/platform/BUILD.gn
-@@ -106,6 +106,7 @@ executable("character_data_generator") {
-     "//build/win:default_exe_manifest",
-     "//third_party/icu",
+@@ -1902,7 +1902,7 @@ static_library("test_support") {
    ]
-+  libs = [ "c++abi" ]
- }
  
- # This isn't strictly necessary since we can just add the deps to "platform",
+   # fuzzed_data_provider may not work with a custom toolchain.
+-  if (custom_toolchain == "" && is_clang) {
++  if ((custom_toolchain == "" && is_clang) && !is_bsd) {
+     sources += [
+       "testing/fuzzed_data_provider.cc",
+       "testing/fuzzed_data_provider.h",

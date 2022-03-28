@@ -1,5 +1,6 @@
---- net/disk_cache/blockfile/disk_format.h.orig.port	Wed Feb 24 00:02:01 2016
-+++ net/disk_cache/blockfile/disk_format.h	Thu Mar  3 09:43:26 2016
+Index: net/disk_cache/blockfile/disk_format.h
+--- net/disk_cache/blockfile/disk_format.h.orig
++++ net/disk_cache/blockfile/disk_format.h
 @@ -149,7 +149,9 @@ struct RankingsNode {
  };
  #pragma pack(pop)

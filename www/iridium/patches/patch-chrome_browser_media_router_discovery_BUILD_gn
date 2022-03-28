@@ -1,0 +1,12 @@
+Index: chrome/browser/media/router/discovery/BUILD.gn
+--- chrome/browser/media/router/discovery/BUILD.gn.orig
++++ chrome/browser/media/router/discovery/BUILD.gn
+@@ -93,7 +93,7 @@ static_library("discovery") {
+     "media_sink_discovery_metrics.h",
+   ]
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [ "discovery_network_list_wifi_linux.cc" ]
+   }
+ 

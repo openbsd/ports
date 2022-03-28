@@ -9,8 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2021.12.96
-REVISION=		1
+V=			2022.03.99.1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -125,10 +124,11 @@ GN_ARGS=	enable_nacl=false \
 		is_official_build=true \
 		is_debug=false \
 		is_cfi=false \
-		optimize_webui=false \
+		optimize_webui=true \
 		enable_js_type_check=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
+		enable_hangout_services_extension=true \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
@@ -145,6 +145,12 @@ GN_ARGS=	enable_nacl=false \
 		use_allocator_shim=false \
 		disable_fieldtrial_testing_config=true \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false \
+		use_custom_libcxx=false \
+		enable_wmax_tokens=false \
+		use_thin_lto=false \
+		thin_lto_enable_optimizations=false \
+		use_udev=false \
 		fatal_linker_warnings=false
 
 # notyet
@@ -196,15 +202,12 @@ pre-configure:
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
 .  endfor
 .endfor
-	@mkdir -p ${WRKSRC}/media/audio/sndio ${WRKSRC}/media/audio/openbsd
-	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${WRKSRC}/services/device/hid
-	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${WRKSRC}/media/audio/sndio
-	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${WRKSRC}/media/audio/openbsd
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py \
+		${WRKSRC}/base/third_party/libevent/BUILD.gn
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs
@@ -254,6 +257,7 @@ do-install:
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
+	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
 .for f in libEGL.so libGLESv2.so
 	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
 .endfor

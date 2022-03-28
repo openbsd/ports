@@ -6,7 +6,7 @@ Index: build/config/compiler/pgo/pgo.gni
        # target_os switch for lacros-chrome is completed.
        (is_win || is_mac ||
 -       (is_linux && !chromeos_is_browser_only && !is_chromecast))) {
-+       (is_linux && !chromeos_is_browser_only && !is_chromecast && !is_openbsd))) {
++       (is_linux && !chromeos_is_browser_only && !is_chromecast && !is_bsd))) {
      chrome_pgo_phase = 2
    }
  

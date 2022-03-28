@@ -5,8 +5,8 @@ Index: chrome/browser/policy/browser_signin_policy_handler.cc
    const base::Value* value = policies.GetValue(policy_name());
    switch (static_cast<BrowserSigninMode>(value->GetInt())) {
      case BrowserSigninMode::kForced:
--#if !defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if !defined(OS_LINUX) && !defined(OS_CHROMEOS) && !defined(OS_BSD)
+-#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD)
        prefs->SetValue(prefs::kForceBrowserSignin, base::Value(true));
  #endif
-       FALLTHROUGH;
+       [[fallthrough]];

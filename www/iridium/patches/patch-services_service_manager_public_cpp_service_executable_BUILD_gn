@@ -6,7 +6,7 @@ Index: services/service_manager/public/cpp/service_executable/BUILD.gn
    ]
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      deps += [
        "//sandbox/linux:sandbox",
        "//sandbox/linux:sandbox_services",

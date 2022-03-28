@@ -5,7 +5,7 @@ Index: third_party/libsync/src/include/sync/sync.h
  #include <sys/cdefs.h>
  #include <stdint.h>
  
-+#if !defined(__OpenBSD__)
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
  #include <linux/types.h>
 +#endif
  

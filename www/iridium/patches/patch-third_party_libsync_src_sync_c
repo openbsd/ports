@@ -15,7 +15,7 @@ Index: third_party/libsync/src/sync.c
  
  #include <sync/sync.h>
  
-+#if defined(__OpenBSD__)
++#if defined(__OpenBSD__) || defined(__FreeBSD__)
 +typedef __uint8_t __u8;
 +typedef __uint32_t __u32;
 +typedef __int32_t __s32;

@@ -1,12 +1,16 @@
 Index: sandbox/policy/mojom/sandbox.mojom
 --- sandbox/policy/mojom/sandbox.mojom.orig
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -45,7 +45,7 @@ enum Sandbox {
- 
-   // Equivalent to no sandbox on all non-Fuchsia platforms.
-   // Minimally privileged sandbox on Fuchsia.
--  [EnableIf=is_fuchsia]
-+  [EnableIf=is_openbsd]
+@@ -68,6 +68,12 @@ enum Sandbox {
+   [EnableIf=is_fuchsia]
    kVideoCapture,
  
++  [EnableIf=is_openbsd]
++  kVideoCapture,
++
++  [EnableIf=is_freebsd]
++  kVideoCapture,
++
    // Allows access to file contents and Windows APIs for parsing icons from PE
+   // files.
+   [EnableIf=is_win]

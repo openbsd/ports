@@ -6,7 +6,7 @@ Index: sandbox/BUILD.gn
        "//sandbox/mac/mojom",
      ]
 -  } else if (is_linux || is_chromeos || is_android) {
-+  } else if ((is_linux && !is_openbsd) || is_chromeos || is_android) {
++  } else if ((is_linux && !is_bsd) || is_chromeos || is_android) {
      public_deps = [ "//sandbox/linux:sandbox" ]
    }
  }

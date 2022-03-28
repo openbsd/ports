@@ -5,7 +5,7 @@ Index: net/disk_cache/simple/simple_file_tracker.cc
  }  // namespace
  
  SimpleFileTracker::SimpleFileTracker(int file_limit)
-+#if defined(OS_BSD)
++#if defined(OS_OPENBSD)
 +{
 +  // cap the file descriptor limit at 85% of the size of the
 +  // file descriptor table and also substract the amount of

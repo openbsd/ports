@@ -5,7 +5,7 @@ Index: services/device/serial/BUILD.gn
        ]
      }
  
-+    if (is_openbsd) {
++    if (is_bsd) {
 +      sources -= [
 +        "serial_device_enumerator_linux.cc",
 +        "serial_device_enumerator_linux.h"

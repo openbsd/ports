@@ -5,8 +5,8 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
    ~EnterpriseReportingPrivateGetDeviceIdFunction() override;
  };
  
--#if !defined(OS_LINUX)
-+#if !defined(OS_LINUX) && !defined(OS_BSD)
+-#if !BUILDFLAG(IS_LINUX)
++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
  
  class EnterpriseReportingPrivateGetPersistentSecretFunction
      : public ExtensionFunction {

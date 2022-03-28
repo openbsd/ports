@@ -1,3 +1,4 @@
+@so iridium/libvk_swiftshader.so
 iridium/swiftshader/
 @so iridium/swiftshader/libEGL.so
 @so iridium/swiftshader/libGLESv2.so

@@ -5,8 +5,8 @@ Index: remoting/host/evaluate_capability.cc
    }
  #endif
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    if (path.BaseName().value() ==
        FILE_PATH_LITERAL("chrome-remote-desktop-host")) {
      return path;

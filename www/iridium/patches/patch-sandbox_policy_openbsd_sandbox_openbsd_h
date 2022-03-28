@@ -1,7 +1,7 @@
 Index: sandbox/policy/openbsd/sandbox_openbsd.h
 --- sandbox/policy/openbsd/sandbox_openbsd.h.orig
 +++ sandbox/policy/openbsd/sandbox_openbsd.h
-@@ -0,0 +1,278 @@
+@@ -0,0 +1,282 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -13,11 +13,10 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +#include <vector>
 +
 +#include "base/logging.h"
-+#include "base/macros.h"
 +#include "base/posix/global_descriptors.h"
 +#include "sandbox/policy/export.h"
 +#include "sandbox/policy/linux/sandbox_seccomp_bpf_linux.h"
-+#include "sandbox/policy/sandbox_type.h"
++#include "sandbox/policy/mojom/sandbox.mojom.h"
 +#include "sandbox/policy/sanitizer_buildflags.h"
 +
 +#if BUILDFLAG(USING_SANITIZER)
@@ -121,8 +120,11 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Get our singleton instance.
 +  static SandboxLinux* GetInstance();
 +
++  SandboxLinux(const SandboxLinux&) = delete;
++  SandboxLinux& operator=(const SandboxLinux&) = delete;
++
 +  bool SetPledge(const char *pstring, const char *ppath);
-+  bool SetUnveil(const std::string process_type, SandboxType sandbox_type);
++  bool SetUnveil(const std::string process_type, sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Do some initialization that can only be done before any of the sandboxes
 +  // are enabled. If using the setuid sandbox, this should be called manually
@@ -133,7 +135,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Otherwise file descriptors that bypass the security of the setuid sandbox
 +  // would be kept open. One must be particularly careful if a process performs
 +  // a fork().
-+  void PreinitializeSandbox(SandboxType sandbox_type);
++  void PreinitializeSandbox(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Check that the current process is the init process of a new PID
 +  // namespace and then proceed to drop access to the file system by using
@@ -153,7 +155,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Currently the layer-2 sandbox is composed of seccomp-bpf and address space
 +  // limitations.
 +  // This function should only be called without any thread running.
-+  bool InitializeSandbox(SandboxType sandbox_type,
++  bool InitializeSandbox(sandbox::mojom::Sandbox sandbox_type,
 +                         PreSandboxHook hook,
 +                         const Options& options);
 +
@@ -168,7 +170,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // is called from inside these processes.
 +  int GetStatus();
 +
-+  static std::string GetSandboxTypeInEnglish(SandboxType sandbox_type);
++  static std::string GetSandboxTypeInEnglish(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Returns true if the current process is single-threaded or if the number
 +  // of threads cannot be determined.
@@ -177,10 +179,13 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  // Returns true if we started Seccomp BPF.
 +  bool seccomp_bpf_started() const;
 +
++  // Returns true if unveil(2) is used.
++  bool unveil_initialized() const;
++
 +  // Check the policy and eventually start the seccomp-bpf sandbox. This should
 +  // never be called with threads started. If we detect that threads have
 +  // started we will crash.
-+  bool StartSeccompBPF(SandboxType sandbox_type,
++  bool StartSeccompBPF(sandbox::mojom::Sandbox sandbox_type,
 +                       PreSandboxHook hook,
 +                       const Options& options);
 +
@@ -248,7 +253,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +
 +  // GetStatus() makes promises as to how the sandbox will behave. This
 +  // checks that no promises have been broken.
-+  void CheckForBrokenPromises(SandboxType sandbox_type);
++  void CheckForBrokenPromises(sandbox::mojom::Sandbox sandbox_type);
 +
 +  // Stop |thread| and make sure it does not appear in /proc/self/tasks/
 +  // anymore.
@@ -260,6 +265,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  int proc_fd_;
 +
 +  bool seccomp_bpf_started_;
++  bool unveil_initialized_;
 +  // The value returned by GetStatus(). Gets computed once and then cached.
 +  int sandbox_status_flags_;
 +  // Did PreinitializeSandbox() run?
@@ -272,8 +278,6 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.h
 +  std::unique_ptr<__sanitizer_sandbox_arguments> sanitizer_args_;
 +#endif
 +  sandbox::syscall_broker::BrokerProcess* broker_process_;  // Leaked as global.
-+
-+  DISALLOW_COPY_AND_ASSIGN(SandboxLinux);
 +};
 +
 +}  // namespace policy

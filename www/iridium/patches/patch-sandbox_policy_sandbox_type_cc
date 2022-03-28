@@ -1,39 +1,39 @@
 Index: sandbox/policy/sandbox_type.cc
 --- sandbox/policy/sandbox_type.cc.orig
 +++ sandbox/policy/sandbox_type.cc
-@@ -34,7 +34,7 @@ bool IsUnsandboxedSandboxType(SandboxType sandbox_type
+@@ -39,7 +39,7 @@ bool IsUnsandboxedSandboxType(Sandbox sandbox_type) {
  #endif
-     case SandboxType::kAudio:
+     case Sandbox::kAudio:
        return false;
--#if defined(OS_FUCHSIA)
-+#if defined(OS_FUCHSIA) || defined(OS_BSD)
-     case SandboxType::kVideoCapture:
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+     case Sandbox::kVideoCapture:
        return false;
  #endif
-@@ -120,7 +120,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
+@@ -122,7 +122,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
  #endif
-     case SandboxType::kPrintCompositor:
-     case SandboxType::kAudio:
--#if defined(OS_FUCHSIA)
-+#if defined(OS_FUCHSIA) || defined(OS_BSD)
-     case SandboxType::kVideoCapture:
+     case Sandbox::kPrintCompositor:
+     case Sandbox::kAudio:
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+     case Sandbox::kVideoCapture:
  #endif
- #if defined(OS_WIN)
-@@ -248,7 +248,7 @@ std::string StringFromUtilitySandboxType(SandboxType s
+ #if BUILDFLAG(IS_WIN)
+@@ -247,7 +247,7 @@ std::string StringFromUtilitySandboxType(Sandbox sandb
        return switches::kUtilitySandbox;
-     case SandboxType::kAudio:
+     case Sandbox::kAudio:
        return switches::kAudioSandbox;
--#if defined(OS_FUCHSIA)
-+#if defined(OS_FUCHSIA) || defined(OS_BSD)
-     case SandboxType::kVideoCapture:
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+     case Sandbox::kVideoCapture:
        return switches::kVideoCaptureSandbox;
  #endif
-@@ -350,7 +350,7 @@ SandboxType UtilitySandboxTypeFromString(const std::st
-     return SandboxType::kAudio;
+@@ -355,7 +355,7 @@ sandbox::mojom::Sandbox UtilitySandboxTypeFromString(
+     return Sandbox::kAudio;
    if (sandbox_string == switches::kSpeechRecognitionSandbox)
-     return SandboxType::kSpeechRecognition;
--#if defined(OS_FUCHSIA)
-+#if defined(OS_FUCHSIA) || defined(OS_BSD)
+     return Sandbox::kSpeechRecognition;
+-#if BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    if (sandbox_string == switches::kVideoCaptureSandbox)
-     return SandboxType::kVideoCapture;
+     return Sandbox::kVideoCapture;
  #endif

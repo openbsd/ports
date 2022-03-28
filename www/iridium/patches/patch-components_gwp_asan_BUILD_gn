@@ -6,7 +6,7 @@ Index: components/gwp_asan/BUILD.gn
      "//testing/gtest",
    ]
 -  if (is_win || is_mac || is_linux || is_chromeos || is_android) {
-+  if ((is_win || is_mac || is_linux || is_chromeos || is_android) && !is_openbsd) {
++  if ((is_win || is_mac || is_linux || is_chromeos || is_android) && !is_bsd) {
      deps += [
        "//components/gwp_asan/client:unit_tests",
        "//components/gwp_asan/crash_handler:unit_tests",

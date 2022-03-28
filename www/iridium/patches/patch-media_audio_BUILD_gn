@@ -1,19 +1,19 @@
 Index: media/audio/BUILD.gn
 --- media/audio/BUILD.gn.orig
 +++ media/audio/BUILD.gn
-@@ -238,9 +238,20 @@ source_set("audio") {
+@@ -237,9 +237,20 @@ source_set("audio") {
      ]
    }
  
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !use_sndio) {
      sources += [ "linux/audio_manager_linux.cc" ]
    }
 +
-+  if (is_openbsd) {
++  if (use_sndio) {
 +    libs += [ "sndio" ]
 +    sources += [
-+      "openbsd/audio_manager_openbsd.cc",
++      "sndio/audio_manager_sndio.cc",
 +      "sndio/sndio_input.cc",
 +      "sndio/sndio_input.h",
 +      "sndio/sndio_output.cc",

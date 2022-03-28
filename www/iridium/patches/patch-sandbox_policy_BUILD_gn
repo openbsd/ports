@@ -6,14 +6,15 @@ Index: sandbox/policy/BUILD.gn
    ]
    public_deps = []
 -  if (is_linux || is_chromeos) {
-+  if ((is_linux || is_chromeos) && !is_openbsd) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -89,6 +89,16 @@ component("policy") {
+@@ -88,6 +88,27 @@ component("policy") {
+       "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
-     ]
++    ]
 +  }
 +  if (is_openbsd) {
 +    sources += [
@@ -22,8 +23,18 @@ Index: sandbox/policy/BUILD.gn
 +    ]
 +    deps += [
 +      "//sandbox:sandbox_buildflags",
++      "//ui/gfx/x",
 +    ]
 +    libs = [ "util" ]
++  }
++  if (is_freebsd) {
++    sources += [
++      "freebsd/sandbox_freebsd.cc",
++      "freebsd/sandbox_freebsd.h",
++    ]
++    deps += [
++      "//sandbox:sandbox_buildflags",
++      "//ui/gfx/x",
+     ]
    }
    if (is_chromeos_ash) {
-     sources += [
