@@ -140,7 +140,7 @@ CXXFLAGS +=		-I${X11BASE}/include
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
-.if ${MACHINE_ARCH} == "powerpc"
+.if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "i386"
 # Don't make LLVM run out of memory
 DPB_PROPERTIES =       lonesome
 .endif
