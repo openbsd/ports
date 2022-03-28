@@ -1,6 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict php-${PHP_PKGSPEC}
+@conflict php->=7.4,<7.4.28p1
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}.sample/*
 @extraunexec rm -f ${SYSCONFDIR}/php-fpm.d/*
 @mode 1700
