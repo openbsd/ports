@@ -1,0 +1,11 @@
+Index: data/freedesktop.org.xml.in
+--- data/freedesktop.org.xml.in.orig
++++ data/freedesktop.org.xml.in
+@@ -6638,6 +6638,7 @@ command to generate the output files.
+     <comment>Python 3 script</comment>
+     <sub-class-of type='text/x-python'/>
+     <magic priority="60"><!-- higher priority than text/x-python -->
++      <match type="string" value="#!${MODPY_BIN}" offset="0"/>
+       <match type="string" value="#!/bin/python3" offset="0"/>
+       <match type="string" value="#! /bin/python3" offset="0"/>
+       <match type="string" value='eval \"exec /bin/python3' offset="0"/>
