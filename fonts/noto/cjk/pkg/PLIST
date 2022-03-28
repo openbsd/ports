@@ -1,10 +1,4 @@
 share/fonts/
 @fontdir share/fonts/noto/
-share/fonts/noto/NotoSansCJK.ttc
-share/fonts/noto/NotoSerifCJK-Black.ttc
-share/fonts/noto/NotoSerifCJK-Bold.ttc
-share/fonts/noto/NotoSerifCJK-ExtraLight.ttc
-share/fonts/noto/NotoSerifCJK-Light.ttc
-share/fonts/noto/NotoSerifCJK-Medium.ttc
-share/fonts/noto/NotoSerifCJK-Regular.ttc
-share/fonts/noto/NotoSerifCJK-SemiBold.ttc
+share/fonts/noto/NotoSansCJK-VF.otf.ttc
+share/fonts/noto/NotoSerifCJK-VF.otf.ttc

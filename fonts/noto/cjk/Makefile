@@ -2,16 +2,17 @@ COMMENT =		east asian fonts for the noto font family
 
 NOTO_PROJECT =		cjk
 
-V =			2.001
-GH_TAGNAME =		NotoSansV$V
-REVISION =		0
+V =			20220127
 
-BUILD_DEPENDS =		archivers/unzip
+MASTER_SITES0 =		https://github.com/googlefonts/noto-cjk/releases/download/Sans2.004/
+MASTER_SITES1 =		https://github.com/googlefonts/noto-cjk/releases/download/Serif2.001/
+DISTFILES =		01_NotoSansCJK-OTF-VF.zip:0 \
+			02_NotoSerifCJK-OTF-VF.zip:1
+DIST_SUBDIR =		noto-cjk-$V
+WRKDIST =		${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${NOTO_INSTALLDIR}
-	${INSTALL_DATA} ${WRKDIST}/NotoSerifCJK-*.ttc ${NOTO_INSTALLDIR}
-	cd ${NOTO_INSTALLDIR} && unzip ${WRKDIST}/NotoSansCJK.ttc.zip
-	rm -rf ${NOTO_INSTALLDIR}/__MACOSX
+	${INSTALL_DATA} ${WRKDIST}/Variable/OTC/*.ttc ${NOTO_INSTALLDIR}
 
 .include <bsd.port.mk>
