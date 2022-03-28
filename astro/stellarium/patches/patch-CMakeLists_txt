@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -572,7 +572,7 @@ IF(ENABLE_GPS)
+@@ -592,7 +592,7 @@ IF(ENABLE_GPS)
       ADD_DEFINITIONS(-DENABLE_GPS)
       IF(WIN32)
            SET(ENABLE_LIBGPS 0)

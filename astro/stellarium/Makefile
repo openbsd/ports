@@ -2,10 +2,9 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.21.3
+GH_TAGNAME=		v0.22.0
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
-REVISION=		2
 
 CATEGORIES=		astro x11
 
@@ -16,11 +15,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Multimedia
-WANTLIB += Qt5MultimediaWidgets Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Script Qt5SerialPort
-WANTLIB += Qt5WebChannel Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5Widgets c m z
+WANTLIB += ${COMPILER_LIBCXX} Qt5Charts Qt5Concurrent Qt5Core
+WANTLIB += Qt5Gui Qt5Multimedia Qt5MultimediaWidgets Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Script Qt5SerialPort Qt5WebChannel Qt5WebEngine
+WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets c m
+WANTLIB += z
 
 MODULES=		devel/cmake \
 			lang/python \
@@ -28,7 +28,8 @@ MODULES=		devel/cmake \
 
 MODPY_RUNDEP=		No
 
-LIB_DEPENDS=		x11/qt5/qtlocation \
+LIB_DEPENDS=		x11/qt5/qtcharts \
+			x11/qt5/qtlocation \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtscript \
 			x11/qt5/qtserialport \
