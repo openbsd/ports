@@ -6,18 +6,14 @@
 FULL_VERSION =		3.9.10
 SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
+PORTROACH =		limit:^3\.9
 
-# override "@comment" setting for the MODPY_DEFAULT_VERSION_3 version
+REVISION =		0
+
+# This is the MODPY_DEFAULT_VERSION_3 version of Python:
+# - override "@comment" setting so that bin/python3 etc are installed
 PY_DEFAULTONLY =
-
-
+# - disable bundled pip in favour of the version from devel/py-pip
 CONFIGURE_ARGS +=	--with-ensurepip=no
-CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
-
-CONFIGURE_STYLE = autoconf
-
-PORTROACH =             limit:^3\.9
-
-TEST_IS_INTERACTIVE =	Yes
 
 .include <bsd.port.mk>

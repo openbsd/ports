@@ -6,18 +6,8 @@
 FULL_VERSION =		3.8.12
 SHARED_LIBS =		python3.8 0.0
 VERSION_SPEC =		>=3.8,<3.9
+PORTROACH =		limit:^3\.8
 
-REVISION-main =		4
-REVISION-idle =		0
-
-
-CONFIGURE_ARGS +=	--with-ensurepip=no
-CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
-
-CONFIGURE_STYLE = autoconf
-
-PORTROACH =             limit:^3\.8
-
-TEST_IS_INTERACTIVE =	Yes
+REVISION =		5
 
 .include <bsd.port.mk>

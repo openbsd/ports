@@ -6,15 +6,8 @@
 FULL_VERSION =		3.10.2
 SHARED_LIBS =		python3.10 0.0
 VERSION_SPEC =		>=3.10,<3.11
-#PSUBDIR =		python/3.10.0
+PORTROACH =		limit:^3\.10
 
-CONFIGURE_ARGS +=	--with-ensurepip=no
-CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
-
-CONFIGURE_STYLE = autoconf
-
-PORTROACH =             limit:^3\.10
-
-TEST_IS_INTERACTIVE =	Yes
+REVISION =		0
 
 .include <bsd.port.mk>

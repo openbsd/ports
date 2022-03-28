@@ -45,15 +45,13 @@ PERMIT_PACKAGE =	Yes
 .if ${VERSION} == "2.7"
 MULTI_PACKAGES =	-main -tests -tools -gdbm -idle -tkinter -bsddb
 DEBUG_PACKAGES ?=	-main -gdbm -tkinter -bsddb
-.else
-MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
-DEBUG_PACKAGES ?=	-main -gdbm -tkinter
-.endif
 
 # Python 2.7 lists BSD db 4.6.x as unstable on most architectures (see
 # setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
-.if ${VERSION} == "2.7"
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
+.else
+MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
+DEBUG_PACKAGES ?=	-main -gdbm -tkinter
 .endif
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -108,13 +106,15 @@ AUTOCONF_VERSION =	2.69
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--enable-shared
-# --srcdir is needed for systrace to work correctly
-CONFIGURE_ARGS +=	--srcdir=${WRKSRC} \
-			--with-fpectl \
+CONFIGURE_ARGS +=	--with-fpectl \
 			--with-threads \
 			--enable-ipv6 \
 			--with-system-expat \
 			--with-system-ffi
+.if ${VERSION} != "2.7"
+CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
+TEST_IS_INTERACTIVE =	Yes
+.endif
 
 CONFIGURE_ENV += OPT='${CFLAGS} -fPIC' CPPFLAGS='-I${LOCALBASE}/include' \
 		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
@@ -126,6 +126,7 @@ FAKE_FLAGS +=	RANLIB=:
 
 # Used in PLISTs for files which should not be installed for non-default
 # versions of Python (i.e. /usr/local/bin/python3).
+# Overridden in subdirectory for the default version.
 PY_DEFAULTONLY ?= "@comment "
 
 PY_PLATFORM =	openbsd${OSMAJOR}
@@ -174,6 +175,8 @@ post-install:
 		tar -xf -)
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
 		${PREFIX}/bin/python${VERSION}-2to3
+.else
+	rm -f ${PREFIX}/bin/pip3 # in devel/py-pip for default Python version
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
