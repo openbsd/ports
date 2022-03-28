@@ -3,8 +3,7 @@ BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.28.12
-REVISION=	0
+DISTNAME=	cups-filters-1.28.13
 
 CATEGORIES=	print
 
