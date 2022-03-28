@@ -26,7 +26,8 @@ MASTER_SITES ?=		http://pub.mate-desktop.org/releases/${MATE_VERSION:C/^([0-9]+\
 CATEGORIES +=		x11/mate
 .  endif
 .  if ${NO_BUILD:L} == "no"
-# XXX not ideal; some autoconf and cmake based projects moved to gettext-tools
+# XXX not ideal: some autoconf and cmake based projects moved to gettext-tools;
+# since intltool depends on gettext-tools, that's not that big of a deal
 .    if ${CONFIGURE_STYLE:Mmeson}
 BUILD_DEPENDS +=	devel/gettext,-tools
 .    else
