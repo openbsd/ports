@@ -342,7 +342,6 @@ lib/guile/2.2/site-ccache/gnucash/eguile/eguile-utilities.go
 lib/guile/2.2/site-ccache/gnucash/engine/
 lib/guile/2.2/site-ccache/gnucash/engine.go
 lib/guile/2.2/site-ccache/gnucash/engine/business-core.go
-lib/guile/2.2/site-ccache/gnucash/engine/commodity-table.go
 lib/guile/2.2/site-ccache/gnucash/engine/gnc-numeric.go
 lib/guile/2.2/site-ccache/gnucash/gnc-module.go
 lib/guile/2.2/site-ccache/gnucash/gnome-utils/
@@ -503,6 +502,7 @@ share/doc/gnucash/ChangeLog.2017
 share/doc/gnucash/ChangeLog.2018
 share/doc/gnucash/ChangeLog.2019
 share/doc/gnucash/ChangeLog.2020
+share/doc/gnucash/ChangeLog.2021
 share/doc/gnucash/DOCUMENTERS
 share/doc/gnucash/HACKING
 share/doc/gnucash/LICENSE
@@ -934,8 +934,10 @@ share/gnucash/accounts/pt_BR/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/pt_BR/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/pt_PT/
 share/gnucash/accounts/pt_PT/acctchrt_brokerage.gnucash-xea
+share/gnucash/accounts/pt_PT/acctchrt_business.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_carloan.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_cdmoneymkt.gnucash-xea
+share/gnucash/accounts/pt_PT/acctchrt_checkbook.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_childcare.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_common.gnucash-xea
 share/gnucash/accounts/pt_PT/acctchrt_eduloan.gnucash-xea
@@ -1052,6 +1054,7 @@ share/gnucash/gtkbuilder/assistant-hierarchy.glade
 share/gnucash/gtkbuilder/assistant-loan.glade
 share/gnucash/gtkbuilder/assistant-qif-import.glade
 share/gnucash/gtkbuilder/assistant-stock-split.glade
+share/gnucash/gtkbuilder/assistant-stock-transaction.glade
 share/gnucash/gtkbuilder/assistant-xml-encoding.glade
 share/gnucash/gtkbuilder/business-options-gnome.glade
 share/gnucash/gtkbuilder/business-prefs.glade
@@ -1315,7 +1318,6 @@ share/guile/site/2.2/gnucash/eguile/eguile-utilities.scm
 share/guile/site/2.2/gnucash/engine/
 share/guile/site/2.2/gnucash/engine.scm
 share/guile/site/2.2/gnucash/engine/business-core.scm
-share/guile/site/2.2/gnucash/engine/commodity-table.scm
 share/guile/site/2.2/gnucash/engine/gnc-numeric.scm
 share/guile/site/2.2/gnucash/gnc-module.scm
 share/guile/site/2.2/gnucash/gnome-utils/
