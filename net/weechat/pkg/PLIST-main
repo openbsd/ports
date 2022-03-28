@@ -29,7 +29,6 @@ share/doc/weechat/weechat_plugin_api.en.adoc
 share/doc/weechat/weechat_quickstart.en.adoc
 share/doc/weechat/weechat_relay_protocol.en.adoc
 share/doc/weechat/weechat_scripting.en.adoc
-share/doc/weechat/weechat_tester.en.adoc
 share/doc/weechat/weechat_user.en.adoc
 share/locale/cs/LC_MESSAGES/weechat.mo
 share/locale/de/LC_MESSAGES/weechat.mo

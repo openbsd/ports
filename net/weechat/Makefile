@@ -4,8 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		3.3
-REVISION-python= 0
+V=		3.4.1
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -75,8 +74,7 @@ CONFIGURE_ARGS+=	-DENABLE_GUILE=OFF \
 			-DENABLE_TESTS=ON \
 			-DHAVE_BACKTRACE=OFF
 
-CONFIGURE_ARGS+=	-DCA_FILE=/etc/ssl/cert.pem \
-			-DTCL_TCLSH=${MODTCL_BIN} \
+CONFIGURE_ARGS+=	-DTCL_TCLSH=${MODTCL_BIN} \
 			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 			-DMODTCL_LIB=${MODTCL_LIB}
 
