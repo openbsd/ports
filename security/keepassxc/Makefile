@@ -1,6 +1,6 @@
 COMMENT =	management tool for password and sensitive data
 
-V =		2.6.6
+V =		2.7.0
 DISTNAME =	keepassxc-${V}
 
 CATEGORIES =	security
@@ -13,9 +13,8 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xi Xtst
-WANTLIB += argon2 c gcrypt gpg-error m qrencode quazip5 readline
-WANTLIB += sodium z
+WANTLIB += Qt5Network Qt5Svg Qt5Widgets Qt5X11Extras X11 Xtst
+WANTLIB += argon2 botan-2 c m minizip qrencode readline z
 
 MASTER_SITES =	\
 	https://github.com/keepassxreboot/keepassxc/releases/download/${V}/
@@ -24,10 +23,9 @@ EXTRACT_SUFX =	-src.tar.xz
 MODULES =	x11/qt5 \
 		devel/cmake
 
-LIB_DEPENDS =	archivers/quazip \
-		security/libgcrypt \
-		security/libsodium \
+LIB_DEPENDS =	archivers/minizip \
 		security/argon2 \
+		security/botan2 \
 		graphics/libqrencode \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras  # needed for auto-type
@@ -52,10 +50,11 @@ FLAVORS =	browser yubikey
 FLAVOR ?=
 
 .if ${FLAVOR:Myubikey}
-LIB_DEPENDS +=		security/yubico/yubico-c \
+LIB_DEPENDS +=		devel/libusb1 \
+			security/yubico/yubico-c \
 			security/yubico/yubikey-personalization
 CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
-WANTLIB += yubikey ykpers-1
+WANTLIB += yubikey ykpers-1 usb-1.0
 .endif
 
 .if ${FLAVOR:Mbrowser}
@@ -65,12 +64,13 @@ CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 			-DWITH_XC_NETWORKING=ON
 .endif
 
+FIX_CRLF_FILES =	src/keeshare/ShareExport.cpp
+
 # ld: error: unable to find library -lX11
 CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${X11BASE}/lib"
 
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
-		core/ScreenLockListenerPrivate.cpp \
 		gui/MainWindow.cpp \
 		main.cpp \
 		browser/BrowserSettingsWidget.cpp \

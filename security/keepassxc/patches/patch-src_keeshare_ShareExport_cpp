@@ -1,0 +1,22 @@
+Index: src/keeshare/ShareExport.cpp
+--- src/keeshare/ShareExport.cpp.orig
++++ src/keeshare/ShareExport.cpp
+@@ -27,7 +27,8 @@
+ 
+ #include <QBuffer>
+ #include <botan/pubkey.h>
+-#include <zip.h>
++#include <minizip/zip.h>
++#include <zlib.h>
+ 
+ namespace
+ {
+@@ -108,7 +109,7 @@ namespace
+ 
+     bool writeZipFile(void* zf, const QString& fileName, const QByteArray& data)
+     {
+-        zipOpenNewFileInZip64(zf,
++        zipOpenNewFileInZip_64(zf,
+                               fileName.toLatin1().data(),
+                               nullptr,
+                               nullptr,
