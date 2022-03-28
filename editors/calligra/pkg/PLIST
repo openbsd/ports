@@ -184,8 +184,6 @@ lib/qt5/plugins/calligra/tools/
 @so lib/qt5/plugins/calligradocinfopropspage.so
 @so lib/qt5/plugins/calligraimagethumbnail.so
 lib/qt5/plugins/calligrasheets/
-lib/qt5/plugins/calligrasheets/extensions/
-@so lib/qt5/plugins/calligrasheets/extensions/sheetssolver.so
 lib/qt5/plugins/calligrasheets/functions/
 @so lib/qt5/plugins/calligrasheets/functions/kspreadbitopsmodule.so
 @so lib/qt5/plugins/calligrasheets/functions/kspreadconversionmodule.so
@@ -222,6 +220,8 @@ lib/qt5/plugins/karbon/extensions/
 @so lib/qt5/plugins/karbon/extensions/karbon_refinepath.so
 @so lib/qt5/plugins/karbon/extensions/karbon_roundcorners.so
 @so lib/qt5/plugins/karbon/extensions/karbon_whirlpinch.so
+lib/qt5/plugins/okular/
+lib/qt5/plugins/okular/generators/
 @so lib/qt5/plugins/okular/generators/okularGenerator_doc_calligra.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_docx_calligra.so
 @so lib/qt5/plugins/okular/generators/okularGenerator_odp_calligra.so
@@ -4822,8 +4822,6 @@ share/calligrasheets/templates/HomeFamily/BMI.desktop
 share/calligrasheets/templates/HomeFamily/CreditCardTracker.desktop
 share/calligrasheets/templates/HomeFamily/MenuPlan.desktop
 share/calligrasheets/templates/HomeFamily/VacationChecklist.desktop
-share/calligrasheets/viewplugins/
-share/calligrasheets/viewplugins/solver.rc
 share/calligrastage/
 share/calligrastage/animations/
 share/calligrastage/animations/animations.xml
@@ -5115,6 +5113,7 @@ share/color/icc/calligra/sRGB-elle-V4-g10.icc
 share/color/icc/calligra/sRGB-elle-V4-labl.icc
 share/color/icc/calligra/sRGB-elle-V4-srgbtrc.icc
 share/color/icc/calligra/scRGB.icm
+share/config.kcfg/
 share/config.kcfg/calligrasheets.kcfg
 share/doc/HTML/ca/calligra/
 share/doc/HTML/ca/calligra/index.cache.bz2
@@ -5872,6 +5871,7 @@ share/kservices5/words_docx_thumbnail.desktop
 share/kservices5/words_msword_thumbnail.desktop
 share/kservices5/words_odt_thumbnail.desktop
 share/kservices5/words_rtf_thumbnail.desktop
+share/kxmlgui5/
 share/kxmlgui5/calligrasheets/
 share/kxmlgui5/calligrasheets/calligrasheets.rc
 share/kxmlgui5/calligrasheets/calligrasheets_readonly.rc
@@ -7972,6 +7972,7 @@ share/locale/zh_TW/LC_MESSAGES/krossmodulesheets.mo
 share/locale/zh_TW/LC_MESSAGES/krossmodulewords.mo
 share/locale/zh_TW/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/zh_TW/LC_MESSAGES/okularGenerator_odt.mo
+share/metainfo/
 share/metainfo/org.kde.calligragemini.appdata.xml
 share/metainfo/org.kde.calligrasheets.appdata.xml
 share/metainfo/org.kde.calligrastage.appdata.xml

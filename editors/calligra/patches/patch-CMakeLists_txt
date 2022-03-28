@@ -2,7 +2,7 @@
 - Switch to C++17
 - Update Cmake and deps, Fix Freetype and FontConfig Linkage,
   from upstream
-
+- disable GSL support for now. devel/gsl needs an update
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
@@ -25,7 +25,7 @@ Index: CMakeLists.txt
  
  ############
  #############
-@@ -391,8 +392,14 @@ endif ()
+@@ -391,21 +392,27 @@ endif ()
  ## Check for OpenEXR
  ##
  
@@ -42,6 +42,28 @@ Index: CMakeLists.txt
  
  ##
  ## Test for GNU Scientific Library
+ ##
+-macro_optional_find_package(GSL 1.7)
+-set_package_properties(GSL_FOUND PROPERTIES
+-    DESCRIPTION "GNU Scientific Library"
+-    URL "https://www.gnu.org/software/gsl"
+-    PURPOSE "Required by Sheets' solver plugin"
+-    TYPE OPTIONAL
+-    )
+-macro_bool_to_01(GSL_FOUND HAVE_GSL)
+-configure_file(config-gsl.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-gsl.h )
++#macro_optional_find_package(GSL 1.7)
++#set_package_properties(GSL_FOUND PROPERTIES
++#    DESCRIPTION "GNU Scientific Library"
++#    URL "https://www.gnu.org/software/gsl"
++#    PURPOSE "Required by Sheets' solver plugin"
++#    TYPE OPTIONAL
++#    )
++#macro_bool_to_01(GSL_FOUND HAVE_GSL)
++#configure_file(config-gsl.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-gsl.h )
+ 
+ ##
+ ## Test for Phonon4Qt5
 @@ -641,8 +648,8 @@ if(NOT WIN32 AND NOT APPLE)
  	)
  endif()

@@ -3,7 +3,7 @@ HOMEPAGE =	https://www.calligra.org
 VERSION =	3.2.1
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	7
+REVISION =	8
 
 SHARED_LIBS =   RtfReader                 51.0 # 0.0
 SHARED_LIBS +=  basicflakes               50.0 # 0.0
@@ -48,22 +48,20 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 DPB_PROPERTIES =	parallel
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Imath-3_1
-WANTLIB += KChart KF5Activities KF5Archive
-WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils KF5KDELibs4Support
-WANTLIB += KF5KHtml KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5UnitConversion
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Okular5Core Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext c fontconfig freetype gsl gslcblas
-WANTLIB += iconv lcms2 m phonon4qt5 phonon4qt5experimental poppler
-WANTLIB += poppler-qt5 qca-qt5 z
+WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
+WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
+WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
+WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5UnitConversion KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Okular5Core Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
+WANTLIB += fontconfig freetype iconv lcms2 m phonon4qt5 phonon4qt5experimental
+WANTLIB += poppler poppler-qt5 qca-qt5 z
 
 MODULES =	devel/kf5
 
@@ -88,7 +86,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 LIB_DEPENDS =	converters/libiconv \
-		devel/gsl \
 		devel/kf5/kactivities \
 		devel/kf5/karchive \
 		devel/kf5/kcmutils \
