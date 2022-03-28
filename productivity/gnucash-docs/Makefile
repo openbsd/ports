@@ -1,7 +1,7 @@
 COMMENT =		user documentation module for GnuCash
 
 GNOME_PROJECT =		gnucash-docs
-GNOME_VERSION =		4.9
+GNOME_VERSION =		4.10
 EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		productivity
@@ -17,10 +17,11 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
 MODULES =		devel/cmake \
 			x11/gnome
+
 BUILD_DEPENDS =		shells/bash
 
 MODGNOME_TOOLS =	yelp
 
-PKG_ARCH=		*
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
