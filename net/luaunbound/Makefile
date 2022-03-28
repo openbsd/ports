@@ -1,7 +1,7 @@
 COMMENT =	Lua bindings for libunbound
 
 DISTNAME =	luaunbound-1.0.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -20,7 +20,8 @@ MODULES =	lang/lua
 
 LIB_DEPENDS =	net/libunbound
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
+		LD="${CC}" LDFLAGS="${LDFLAGS}" \
 		LUA_LIBDIR="${MODLUA_LIBDIR}"
 
 USE_GMAKE =	Yes
