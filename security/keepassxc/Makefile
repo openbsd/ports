@@ -2,6 +2,7 @@ COMMENT =	management tool for password and sensitive data
 
 V =		2.7.0
 DISTNAME =	keepassxc-${V}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -51,10 +52,11 @@ FLAVOR ?=
 
 .if ${FLAVOR:Myubikey}
 LIB_DEPENDS +=		devel/libusb1 \
+			security/pcsc-lite \
 			security/yubico/yubico-c \
 			security/yubico/yubikey-personalization
 CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
-WANTLIB += yubikey ykpers-1 usb-1.0
+WANTLIB += pcsclite usb-1.0
 .endif
 
 .if ${FLAVOR:Mbrowser}
