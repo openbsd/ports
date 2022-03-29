@@ -1,3 +1,5 @@
+MODGO_VERSION =	v0.13.0
+
 MODGO_MODULES =	\
 	bazil.org/fuse						 v0.0.0-20200407214033-5883e5a4b512 \
 	cloud.google.com/go					 v0.84.0 \
@@ -36,7 +38,6 @@ MODGO_MODULES =	\
 	github.com/coreos/go-systemd/v22			 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.0 \
 	github.com/davecgh/go-spew				 v1.1.1 \
-	github.com/dchest/siphash				 v1.2.2 \
 	github.com/dnaeon/go-vcr				 v1.2.0 \
 	github.com/dustin/go-humanize				 v1.0.0 \
 	github.com/elithrar/simple-scrypt			 v1.3.0 \
@@ -100,13 +101,13 @@ MODGO_MODULES =	\
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pty					 v1.1.1 \
 	github.com/kr/text					 v0.1.0 \
-	github.com/kurin/blazer					 v0.5.3 \
+	github.com/kurin/blazer					 v0.5.4-0.20211030221322-ba894c124ac6 \
 	github.com/magiconair/properties			 v1.8.5 \
 	github.com/mattn/go-colorable				 v0.0.9 \
 	github.com/mattn/go-isatty				 v0.0.3 \
 	github.com/miekg/dns					 v1.0.14 \
 	github.com/minio/md5-simd				 v1.1.0 \
-	github.com/minio/minio-go/v7				 v7.0.12 \
+	github.com/minio/minio-go/v7				 v7.0.14 \
 	github.com/minio/sha256-simd				 v1.0.0 \
 	github.com/mitchellh/cli				 v1.0.0 \
 	github.com/mitchellh/go-homedir				 v1.1.0 \
@@ -117,13 +118,13 @@ MODGO_MODULES =	\
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.1 \
 	github.com/modocache/gover				 v0.0.0-20171022184752-b58185e213c5 \
-	github.com/ncw/swift					 v1.0.53 \
+	github.com/ncw/swift/v2					 v2.0.0 \
 	github.com/pascaldekloe/goe				 v0.0.0-20180627143212-57f6aae5913c \
 	github.com/pelletier/go-toml				 v1.9.3 \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pkg/profile					 v1.6.0 \
 	github.com/pkg/sftp					 v1.13.2 \
-	github.com/pkg/xattr					 v0.4.3 \
+	github.com/pkg/xattr					 v0.4.5 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/posener/complete				 v1.1.1 \
 	github.com/prometheus/client_model			 v0.0.0-20190812154241-14fe0d1b01d4 \
