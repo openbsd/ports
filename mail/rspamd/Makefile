@@ -119,7 +119,7 @@ NO_TEST=	Yes
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mlld}
-BUILD_DEPENDS=	devel/llvm
+BUILD_DEPENDS+=	devel/llvm
 # llvm toolchain binaries are available in base on LLD archs, but under
 # names which are not expected by cmake's Compiler/Clang-FindBinUtils
 # and CMakeFindBinUtils modules. I have tried symlinks from llvm-ar and
