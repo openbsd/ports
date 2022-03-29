@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1571 2022/03/15 13:57:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1572 2022/03/29 10:00:40 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3298,10 +3298,16 @@ _internal-clean:
 .elif ${_clean:Mbuild} && ${SEPARATE_BUILD:L} != "no"
 	@${_PBUILD} rm -rf ${WRKBUILD} ${_CONFIGURE_COOKIE} ${_BUILD_COOKIE}
 .endif
+# these commands are split up because go.port.mk distfiles are redonculous
 .if ${_clean:Mdist}
 	@${ECHO_MSG} "===>  Dist cleaning for ${FULLPKGNAME${SUBPACKAGE}}"
 	@if cd ${DISTDIR} 2>/dev/null; then \
-		${_PFETCH} rm -f ${MAKESUMFILES} ${MAKESUMFILES:S/$/.part/}; \
+		${_PFETCH} rm -f ${MAKESUMFILES}; \
+	fi
+	@if cd ${DISTDIR} 2>/dev/null; then \
+		${_PFETCH} rm -f ${MAKESUMFILES:=.part}; \
+	fi
+	@if cd ${DISTDIR} 2>/dev/null; then \
 		${_PFETCH} rmdir -p ${MAKESUMFILES:C@/[^/]*$@@} 2>/dev/null || true; \
 	fi
 .endif
