@@ -1,1 +1,3 @@
+@conflict gmic-qt-krita-<=3.0.2
+@pkgpath graphics/gmic-qt/krita
 @so lib/kritaplugins/krita_gmic_qt.so

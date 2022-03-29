@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1380 2022/03/21 12:46:22 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1381 2022/03/29 18:31:13 sdk Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -719,6 +719,7 @@ my $stem_extensions = {
 	'py-tz' => 'py3-tz',
 	'py-pretend' => 'py3-pretend',
 	'py-mock' => 'py3-mock',
+	'gmic-qt-krita' => 'krita-gmic-plugin',
 };
 
 my $obsolete_reason = {};
