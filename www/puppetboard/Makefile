@@ -1,6 +1,6 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	3.3.0
+MODPY_EGG_VERSION=	3.4.1
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
 CATEGORIES=		www
 
