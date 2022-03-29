@@ -1,6 +1,6 @@
 COMMENT =	krita gmic plugin
 
-V =		3.0.0.1
+V =		3.0.2.1
 DISTNAME =	krita-gmic-plugin-${V}
 
 CATEGORIES =	graphics
