@@ -65,7 +65,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-metrics					 v0.0.0-20180917152333-f0300d1749da \
 	github.com/armon/go-radix					 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/armon/go-socks5					 v0.0.0-20160902184237-e75332964ef5 \
-	github.com/atc0005/go-teams-notify/v2				 v2.6.0 \
+	github.com/atc0005/go-teams-notify/v2				 v2.6.1 \
 	github.com/aws/aws-sdk-go					 v1.42.24 \
 	github.com/aws/aws-sdk-go-v2					 v1.11.2 \
 	github.com/aws/aws-sdk-go-v2/config				 v1.11.0 \
@@ -87,20 +87,19 @@ MODGO_MODULES =	\
 	github.com/bgentry/speakeasy					 v0.1.0 \
 	github.com/bketelsen/crypt					 v0.0.3-0.20200106085610-5cbc8cc4026c \
 	github.com/blakesmith/ar					 v0.0.0-20190502131153-809d4375e1fb \
-	github.com/bradleyfalzon/ghinstallation/v2			 v2.0.3 \
+	github.com/bradleyfalzon/ghinstallation/v2			 v2.0.4 \
 	github.com/caarlos0/ctrlc					 v1.0.0 \
 	github.com/caarlos0/env/v6					 v6.9.1 \
 	github.com/caarlos0/go-reddit/v3				 v3.0.1 \
 	github.com/caarlos0/go-rpmutils					 v0.2.1-0.20211112020245-2cd62ff89b11 \
 	github.com/caarlos0/go-shellwords				 v1.0.12 \
 	github.com/caarlos0/testfs					 v0.4.4 \
-	github.com/cavaliercoder/go-cpio				 v0.0.0-20180626203310-925f9528c45e \
 	github.com/cavaliergopher/cpio					 v1.0.1 \
 	github.com/cenkalti/backoff/v4					 v4.1.2 \
 	github.com/census-instrumentation/opencensus-proto		 v0.3.0 \
 	github.com/cespare/xxhash					 v1.1.0 \
 	github.com/cespare/xxhash/v2					 v2.1.2 \
-	github.com/charmbracelet/keygen					 v0.2.0 \
+	github.com/charmbracelet/keygen					 v0.2.1 \
 	github.com/chzyer/logex						 v1.1.10 \
 	github.com/chzyer/readline					 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test						 v0.0.0-20180213035817-a1ea475d72b1 \
@@ -167,9 +166,9 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf					 v1.5.2 \
 	github.com/golang/snappy					 v0.0.3 \
 	github.com/google/btree						 v1.0.0 \
-	github.com/google/go-cmp					 v0.5.6 \
-	github.com/google/go-github/v39					 v39.0.0 \
-	github.com/google/go-github/v42					 v42.0.0 \
+	github.com/google/go-cmp					 v0.5.7 \
+	github.com/google/go-github/v41					 v41.0.0 \
+	github.com/google/go-github/v43					 v43.0.0 \
 	github.com/google/go-querystring				 v1.1.0 \
 	github.com/google/go-replayers/grpcreplay			 v1.1.0 \
 	github.com/google/go-replayers/httpreplay			 v1.0.0 \
@@ -178,7 +177,7 @@ MODGO_MODULES =	\
 	github.com/google/martian/v3					 v3.2.1 \
 	github.com/google/pprof						 v0.0.0-20210720184732-4bb14d4b1be1 \
 	github.com/google/renameio					 v0.1.0 \
-	github.com/google/rpmpack					 v0.0.0-20211125064518-d0ed9b1b61b9 \
+	github.com/google/rpmpack					 v0.0.0-20220314092521-38642b5e571e \
 	github.com/google/subcommands					 v1.0.1 \
 	github.com/google/uuid						 v1.3.0 \
 	github.com/google/wire						 v0.5.0 \
@@ -186,7 +185,7 @@ MODGO_MODULES =	\
 	github.com/gopherjs/gopherjs					 v0.0.0-20181017120253-0766667cb4d1 \
 	github.com/goreleaser/chglog					 v0.1.2 \
 	github.com/goreleaser/fileglob					 v1.3.0 \
-	github.com/goreleaser/nfpm/v2					 v2.13.0 \
+	github.com/goreleaser/nfpm/v2					 v2.15.0 \
 	github.com/gorilla/websocket					 v1.4.2 \
 	github.com/grpc-ecosystem/go-grpc-middleware			 v1.0.0 \
 	github.com/grpc-ecosystem/go-grpc-prometheus			 v1.2.0 \
@@ -235,6 +234,7 @@ MODGO_MODULES =	\
 	github.com/kisielk/errcheck					 v1.1.0 \
 	github.com/kisielk/gotool					 v1.0.0 \
 	github.com/klauspost/compress					 v1.13.6 \
+	github.com/klauspost/pgzip					 v1.2.5 \
 	github.com/konsorten/go-windows-terminal-sequences		 v1.0.1 \
 	github.com/kr/fs						 v0.1.0 \
 	github.com/kr/logfmt						 v0.0.0-20140226030751-b84e30acd515 \
@@ -292,7 +292,7 @@ MODGO_MODULES =	\
 	github.com/sergi/go-diff					 v1.2.0 \
 	github.com/shurcoo!l/sanitized_anchor_name			 v1.0.0 \
 	github.com/sirupsen/logrus					 v1.7.0 \
-	github.com/slack-go/slack					 v0.10.1 \
+	github.com/slack-go/slack					 v0.10.2 \
 	github.com/smartystreets/assertions				 v1.0.0 \
 	github.com/smartystreets/go-aws-auth				 v0.0.0-20180515143844-0c1422d1fdb9 \
 	github.com/smartystreets/goconvey				 v1.6.4 \
@@ -306,7 +306,7 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag						 v1.0.5 \
 	github.com/spf13/viper						 v1.7.1 \
 	github.com/stretchr/objx					 v0.2.0 \
-	github.com/stretchr/testify					 v1.7.0 \
+	github.com/stretchr/testify					 v1.7.1 \
 	github.com/subosito/gotenv					 v1.2.0 \
 	github.com/technoweenie/multipartstreamer			 v1.0.1 \
 	github.com/tj/assert						 v0.0.3 \
@@ -318,7 +318,7 @@ MODGO_MODULES =	\
 	github.com/ugorji/go						 v1.1.7 \
 	github.com/ugorji/go/codec					 v1.1.7 \
 	github.com/ulikunitz/xz						 v0.5.10 \
-	github.com/xanzy/go-gitlab					 v0.55.1 \
+	github.com/xanzy/go-gitlab					 v0.59.0 \
 	github.com/xanzy/ssh-agent					 v0.3.1 \
 	github.com/xi2/xz						 v0.0.0-20171230120015-48954b6210f8 \
 	github.com/xiang90/probing					 v0.0.0-20190116061207-43a291ad63a2 \
@@ -541,6 +541,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp					 v0.5.3 \
 	github.com/google/go-cmp					 v0.5.4 \
 	github.com/google/go-cmp					 v0.5.5 \
+	github.com/google/go-cmp					 v0.5.6 \
 	github.com/google/go-querystring				 v1.0.0 \
 	github.com/google/martian					 v2.1.0+incompatible \
 	github.com/google/martian/v3					 v3.0.0 \
@@ -561,7 +562,6 @@ MODGO_MODFILES =	\
 	github.com/google/pprof						 v0.0.0-20210601050228-01bbb1931b22 \
 	github.com/google/pprof						 v0.0.0-20210609004039-a478d1d731e9 \
 	github.com/google/pprof						 v0.0.0-20210715191844-86eeefc3e471 \
-	github.com/google/rpmpack					 v0.0.0-20210518075352-dc539ef4f2ea \
 	github.com/google/uuid						 v1.1.1 \
 	github.com/google/uuid						 v1.1.2 \
 	github.com/google/uuid						 v1.2.0 \
@@ -588,7 +588,6 @@ MODGO_MODFILES =	\
 	github.com/kevinburke/ssh_config				 v0.0.0-20190725054713-01f96b0aa0cd \
 	github.com/kevinburke/ssh_config				 v0.0.0-20201106050909-4977a11b4351 \
 	github.com/klauspost/compress					 v1.10.3 \
-	github.com/klauspost/compress					 v1.11.7 \
 	github.com/klauspost/compress					 v1.13.5 \
 	github.com/kr/pretty						 v0.1.0 \
 	github.com/kr/pretty						 v0.2.0 \
@@ -645,6 +644,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify					 v1.4.0 \
 	github.com/stretchr/testify					 v1.5.1 \
 	github.com/stretchr/testify					 v1.6.1 \
+	github.com/stretchr/testify					 v1.7.0 \
 	github.com/tj/assert						 v0.0.0-20171129193455-018094318fb0 \
 	github.com/xanzy/ssh-agent					 v0.2.1 \
 	github.com/xanzy/ssh-agent					 v0.3.0 \
