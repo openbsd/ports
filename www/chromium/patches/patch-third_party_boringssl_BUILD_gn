@@ -9,4 +9,4 @@ Index: third_party/boringssl/BUILD.gn
 +      if ((is_linux || is_chromeos || is_android) && !is_freebsd) {
          sources += crypto_sources_linux_aarch64
        } else if (is_apple) {
-         # TODO(davidben): Rename all the file lists, etc., upstream from mac
+         sources += crypto_sources_apple_aarch64

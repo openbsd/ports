@@ -1,7 +1,7 @@
 Index: chrome/updater/util.cc
 --- chrome/updater/util.cc.orig
 +++ chrome/updater/util.cc
-@@ -219,7 +219,7 @@ GURL AppendQueryParameter(const GURL& url,
+@@ -253,7 +253,7 @@ GURL AppendQueryParameter(const GURL& url,
    return url.ReplaceComponents(replacements);
  }
  

@@ -1,3 +1,4 @@
+@so chrome/libvk_swiftshader.so
 chrome/swiftshader/
 @so chrome/swiftshader/libEGL.so
 @so chrome/swiftshader/libGLESv2.so

@@ -1,7 +1,7 @@
 Index: third_party/angle/src/common/system_utils_posix.cpp
 --- third_party/angle/src/common/system_utils_posix.cpp.orig
 +++ third_party/angle/src/common/system_utils_posix.cpp
-@@ -248,7 +248,9 @@ Library *OpenSharedLibraryWithExtensionAndGetError(con
+@@ -197,7 +197,9 @@ void *OpenSystemLibraryWithExtensionAndGetError(const 
      int extraFlags = 0;
      if (searchType == SearchType::AlreadyLoaded)
      {

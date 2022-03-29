@@ -1,7 +1,7 @@
 Index: chromecast/renderer/cast_content_renderer_client.cc
 --- chromecast/renderer/cast_content_renderer_client.cc.orig
 +++ chromecast/renderer/cast_content_renderer_client.cc
-@@ -193,7 +193,7 @@ void CastContentRendererClient::RenderFrameCreated(
+@@ -194,7 +194,7 @@ void CastContentRendererClient::RenderFrameCreated(
    dispatcher->OnRenderFrameCreated(render_frame);
  #endif
  

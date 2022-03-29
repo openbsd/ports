@@ -1,7 +1,7 @@
 Index: extensions/browser/extension_prefs.cc
 --- extensions/browser/extension_prefs.cc.orig
 +++ extensions/browser/extension_prefs.cc
-@@ -2265,7 +2265,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
+@@ -2269,7 +2269,7 @@ void ExtensionPrefs::RegisterProfilePrefs(
    registry->RegisterStringPref(pref_names::kLastChromeVersion, std::string());
    registry->RegisterDictionaryPref(kInstallSignature);
    registry->RegisterListPref(kExternalUninstalls);

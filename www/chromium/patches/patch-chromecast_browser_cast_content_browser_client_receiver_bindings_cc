@@ -10,7 +10,7 @@ Index: chromecast/browser/cast_content_browser_client_receiver_bindings.cc
  #include "chromecast/browser/webview/js_channel_service.h"
  #include "chromecast/common/mojom/js_channel.mojom.h"
  #endif
-@@ -227,7 +227,7 @@ void CastContentBrowserClient::RunServiceInstance(
+@@ -234,7 +234,7 @@ void CastContentBrowserClient::RunServiceInstance(
  void CastContentBrowserClient::BindHostReceiverForRenderer(
      content::RenderProcessHost* render_process_host,
      mojo::GenericPendingReceiver receiver) {

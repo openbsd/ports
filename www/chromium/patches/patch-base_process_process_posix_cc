@@ -36,7 +36,7 @@ Index: base/process/process_posix.cc
      // On Mac we can wait on non child processes.
      return WaitForSingleNonChildProcess(handle, timeout);
  #else
-@@ -358,7 +363,55 @@ void Process::Exited(int exit_code) const {}
+@@ -356,7 +361,55 @@ void Process::Exited(int exit_code) const {}
  
  int Process::GetPriority() const {
    DCHECK(IsValid());

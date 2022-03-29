@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			99.0.4844.84
+V=			100.0.4896.60
 
 DISTNAME=		chromium-${V}
 
@@ -116,12 +116,16 @@ TEST_TARGET=		base_unittests \
 			components_unittests \
 			content_unittests \
 			crypto_unittests \
+			gl_tests \
+			gpu_unittests \
 			headless_unittests \
 			media_unittests \
 			mojo_unittests \
 			net_unittests \
 			printing_unittests \
-			url_unittests
+			skia_unittests \
+			url_unittests \
+			wm_unittests
 
 DIST_TARGET_DIR=	chrome
 
@@ -272,6 +276,7 @@ do-install:
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
+	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
 .for f in libEGL.so libGLESv2.so
 	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
 .endfor

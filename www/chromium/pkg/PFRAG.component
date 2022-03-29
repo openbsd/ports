@@ -330,7 +330,6 @@
 @so chrome/libviz_common.so
 @so chrome/libviz_resource_format_utils.so
 @so chrome/libviz_vulkan_context_provider.so
-@so chrome/libvk_swiftshader.so
 @so chrome/libvr_base.so
 @so chrome/libvr_common.so
 @so chrome/libvr_orientation.so

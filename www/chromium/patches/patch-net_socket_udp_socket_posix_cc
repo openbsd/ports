@@ -1,7 +1,7 @@
 Index: net/socket/udp_socket_posix.cc
 --- net/socket/udp_socket_posix.cc.orig
 +++ net/socket/udp_socket_posix.cc
-@@ -636,7 +636,7 @@ int UDPSocketPosix::SetDoNotFragment() {
+@@ -574,7 +574,7 @@ int UDPSocketPosix::SetDoNotFragment() {
  }
  
  void UDPSocketPosix::SetMsgConfirm(bool confirm) {
