@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS = amd64 i386
+ONLY_FOR_ARCHS = aarch64 amd64 i386 powerpc powerpc64 riscv64 sparc64
 DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
@@ -43,6 +43,10 @@ CONFIGURE_ARGS =	-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DWITH_CYCLES_EMBREE=OFF \
 			-DWITH_JACK=OFF \
 			-DWITH_PULSEAUDIO=OFF
+
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
+CONFIGURE_ARGS+=	-DWITH_CPU_SIMD=OFF
+.endif
 
 BUILD_DEPENDS = math/py-numpy${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
