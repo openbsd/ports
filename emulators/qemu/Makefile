@@ -5,6 +5,8 @@ COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
 VERSION=	6.2.0
+REVISION-ga=	0
+REVISION-main=	0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
@@ -65,7 +67,7 @@ LIB_DEPENDS-ga=	${LIB_DEPENDS}
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -DBSD_GUEST_AGENT
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # until the system headers are fixed properly.
@@ -75,7 +77,8 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
+		--prefix=${PREFIX} \
 		--sysconfdir=${SYSCONFDIR} \
 		--mandir=${PREFIX}/man \
 		--python=${MODPY_BIN} \
@@ -127,6 +130,8 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
 	    ${PREFIX}/share/examples/qemu
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown \
+	    ${PREFIX}/share/examples/qemu
+	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ga.conf \
 	    ${PREFIX}/share/examples/qemu
 
 .include <bsd.port.mk>

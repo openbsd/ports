@@ -48,7 +48,6 @@
 @man man/man8/qemu-pr-helper.8
 share/applications/qemu.desktop
 share/doc/pkg-readmes/${PKGSTEM}
-share/doc/qemu/
 share/doc/qemu/.buildinfo
 share/doc/qemu/_static/
 share/doc/qemu/_static/basic.css
@@ -141,7 +140,6 @@ share/doc/qemu/devel/vfio-migration.html
 share/doc/qemu/devel/writing-monitor-commands.html
 share/doc/qemu/genindex.html
 share/doc/qemu/index.html
-share/doc/qemu/interop/
 share/doc/qemu/interop/barrier.html
 share/doc/qemu/interop/bitmaps.html
 share/doc/qemu/interop/dbus-vmstate.html
@@ -289,7 +287,6 @@ share/doc/qemu/tools/virtiofsd.html
 share/doc/qemu/user/
 share/doc/qemu/user/index.html
 share/doc/qemu/user/main.html
-share/examples/qemu/
 share/examples/qemu/qemu-ifdown
 @mode 755
 @sample ${SYSCONFDIR}/qemu-ifdown

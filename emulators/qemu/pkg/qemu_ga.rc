@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/qemu-ga -d"
+daemon_flags="-t /var/run/qemu-ga -f /var/run/qemu-ga/qemu-ga.pid"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre() {
+	install -d -o ${daemon_user} /var/run/qemu-ga
+}
+
+rc_cmd $1

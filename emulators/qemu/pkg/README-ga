@@ -1,0 +1,25 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+To use qemu-ga, configure QEMU to present the guest agent interface as
+an isa-serial port.
+
+If you use Proxmox Virtual Environment, you can do this in the "Options"
+section; edit "QEMU Guest Agent", enable it, tick the box to show advanced
+settings, and set "Type" to ISA.
+
+An rc.d(8) script is provided; as usual you can enable it to start at
+boot with:
+
+# rcctl enable qemu_ga
+
+By default the script uses /dev/cua01 for the connection as would be
+the case where you have also enabled a serial console device. If you have
+not done this and the Guest Agent interface is on a different port, set
+that with e.g.
+
+# rcctl set qemu_ga flags -t /var/run/qemu-ga \
+	-f /var/run/qemu-ga/qemu-ga.pid -m isa-serial -p /dev/cua00
+
+Currently only a basic set of commands are available via this interface.

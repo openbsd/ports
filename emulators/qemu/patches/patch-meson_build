@@ -1,4 +1,5 @@
 - sndio module
+- localstatedir doesn't belong under prefix
 - Remove hardcoding of optimization
 
 Index: meson.build
@@ -33,6 +34,15 @@ Index: meson.build
      (targetos == 'linux' ? [] : [ 'sdl' ])
    audio_drivers_default = []
    foreach k: audio_drivers_priority
+@@ -1418,7 +1424,7 @@ config_host_data.set_quoted('CONFIG_QEMU_FIRMWAREPATH'
+ config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
+ config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
+ config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
+-config_host_data.set_quoted('CONFIG_QEMU_LOCALSTATEDIR', get_option('prefix') / get_option('localstatedir'))
++config_host_data.set_quoted('CONFIG_QEMU_LOCALSTATEDIR', get_option('localstatedir'))
+ config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
+ config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
+ 
 @@ -3234,11 +3240,9 @@ if targetos == 'windows'
    endif
  endif
