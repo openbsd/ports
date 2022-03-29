@@ -1,6 +1,5 @@
 include/CL/
 include/CL/cl.h
-include/CL/cl2.hpp
 include/CL/cl_d3d10.h
 include/CL/cl_d3d11.h
 include/CL/cl_dx9_media_sharing.h
@@ -16,6 +15,7 @@ include/CL/cl_platform.h
 include/CL/cl_va_api_media_sharing_intel.h
 include/CL/cl_version.h
 include/CL/opencl.h
+include/CL/opencl.hpp
 include/arm_compute/
 include/arm_compute/Acl.h
 include/arm_compute/Acl.hpp
@@ -148,6 +148,7 @@ include/arm_compute/graph/backends/CL/CLSubTensorHandle.h
 include/arm_compute/graph/backends/CL/CLTensorHandle.h
 include/arm_compute/graph/backends/FunctionHelpers.h
 include/arm_compute/graph/backends/FusedConvolutionBatchNormalizationFunction.h
+include/arm_compute/graph/backends/FusedConvolutionBatchNormalizationWithPostOpsFunction.h
 include/arm_compute/graph/backends/FusedDepthwiseConvolutionBatchNormalizationFunction.h
 include/arm_compute/graph/backends/NEON/
 include/arm_compute/graph/backends/NEON/NEDeviceBackend.h
@@ -197,6 +198,7 @@ include/arm_compute/graph/nodes/EltwiseLayerNode.h
 include/arm_compute/graph/nodes/FlattenLayerNode.h
 include/arm_compute/graph/nodes/FullyConnectedLayerNode.h
 include/arm_compute/graph/nodes/FusedConvolutionBatchNormalizationNode.h
+include/arm_compute/graph/nodes/FusedConvolutionBatchNormalizationWithPostOpsNode.h
 include/arm_compute/graph/nodes/FusedConvolutionWithPostOpNode.h
 include/arm_compute/graph/nodes/FusedDepthwiseConvolutionBatchNormalizationNode.h
 include/arm_compute/graph/nodes/GenerateProposalsLayerNode.h
@@ -324,7 +326,6 @@ include/arm_compute/runtime/CL/functions/CLROIPoolingLayer.h
 include/arm_compute/runtime/CL/functions/CLRange.h
 include/arm_compute/runtime/CL/functions/CLReduceMean.h
 include/arm_compute/runtime/CL/functions/CLReductionOperation.h
-include/arm_compute/runtime/CL/functions/CLRemap.h
 include/arm_compute/runtime/CL/functions/CLReorgLayer.h
 include/arm_compute/runtime/CL/functions/CLReshapeLayer.h
 include/arm_compute/runtime/CL/functions/CLReverse.h
@@ -451,7 +452,6 @@ include/arm_compute/runtime/NEON/functions/NEROIPoolingLayer.h
 include/arm_compute/runtime/NEON/functions/NERange.h
 include/arm_compute/runtime/NEON/functions/NEReduceMean.h
 include/arm_compute/runtime/NEON/functions/NEReductionOperation.h
-include/arm_compute/runtime/NEON/functions/NERemap.h
 include/arm_compute/runtime/NEON/functions/NEReorgLayer.h
 include/arm_compute/runtime/NEON/functions/NEReshapeLayer.h
 include/arm_compute/runtime/NEON/functions/NEReverse.h

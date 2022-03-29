@@ -1,40 +1,30 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -422,7 +422,8 @@ undefined_flag = '-Wl,-undefined,error' if 'macos' in 
- arm_compute_env.Append(LINKFLAGS=[undefined_flag])
- arm_compute_env.Append(CPPPATH =[Dir("./src/core/").path] )
+@@ -610,7 +610,7 @@ else:
+     elif 'sve' in env['arch']:
+         lib_files += lib_files_sve
  
--arm_compute_env.Append(LIBS = ['dl'])
-+if env['os'] != 'openbsd':
-+    arm_compute_env.Append(LIBS = ['dl'])
+-    arm_compute_a = build_library('arm_compute-static', arm_compute_env, lib_files, static=True)
++    arm_compute_a = build_library('arm_compute', arm_compute_env, lib_files, static=True)
  
- with (open(Dir('#').path + '/filelist.json')) as fp:
-     filelist = json.load(fp)
-@@ -526,7 +527,7 @@ if (env['fat_binary']):
-     sve_o = build_sve_objs(lib_files_sve)
-     arm_compute_a = build_library('arm_compute-static', arm_compute_env, lib_files + sve_o, static=True)
- else:
--    arm_compute_a = build_library('arm_compute-static', arm_compute_env, lib_files + lib_files_sve, static=True)
-+    arm_compute_a = build_library('arm_compute', arm_compute_env, lib_files + lib_files_sve, static=True)
  Export('arm_compute_a')
  
- # Build shared libraries
-@@ -539,7 +540,7 @@ if env['os'] != 'bare_metal' and not env['standalone']
-     Export('arm_compute_so')
+@@ -629,7 +629,7 @@ if env['os'] == 'macos':
+     # macos static library archiver fails if given an empty list of files
+     arm_compute_core_a = build_library('arm_compute_core-static', arm_compute_env, lib_files, static=True)
+ else:
+-    arm_compute_core_a = build_library('arm_compute_core-static', arm_compute_env, [], static=True)
++    arm_compute_core_a = build_library('arm_compute_core', arm_compute_env, [], static=True)
  
- # Generate dummy core lib for backwards compatibility
--arm_compute_core_a = build_library('arm_compute_core-static', arm_compute_env, [], static=True)
-+arm_compute_core_a = build_library('arm_compute_core', arm_compute_env, [], static=True)
  Export('arm_compute_core_a')
  
- if env['os'] != 'bare_metal' and not env['standalone']:
-@@ -551,7 +552,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
+@@ -642,7 +642,7 @@ arm_compute_graph_env = arm_compute_env.Clone()
  # Build graph libraries
  arm_compute_graph_env.Append(CXXFLAGS = ['-Wno-redundant-move', '-Wno-pessimizing-move'])
  
--arm_compute_graph_a = build_library('arm_compute_graph-static', arm_compute_graph_env, graph_files, static=True, libs = [ arm_compute_a])
-+arm_compute_graph_a = build_library('arm_compute_graph', arm_compute_graph_env, graph_files, static=True, libs = [ arm_compute_a])
+-arm_compute_graph_a = build_library('arm_compute_graph-static', arm_compute_graph_env, graph_files, static=True, libs = [ arm_compute_a ])
++arm_compute_graph_a = build_library('arm_compute_graph', arm_compute_graph_env, graph_files, static=True, libs = [ arm_compute_a ])
  Export('arm_compute_graph_a')
  
  if env['os'] != 'bare_metal' and not env['standalone']:

@@ -1,16 +1,7 @@
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -94,7 +94,7 @@ vars.AddVariables(
-                   allowed_values=("armv7a", "armv7a-hf", "arm64-v8a", "arm64-v8.2-a", "arm64-v8.2-a-sve", "arm64-v8.2-a-sve2", "x86_32", "x86_64",
-                                   "armv8a", "armv8.2-a", "armv8.2-a-sve", "armv8.6-a", "armv8.6-a-sve", "armv8.6-a-sve2", "armv8r64", "x86")),
-     EnumVariable("estate", "Execution State", "auto", allowed_values=("auto", "32", "64")),
--    EnumVariable("os", "Target OS", "linux", allowed_values=("linux", "android", "tizen", "macos", "bare_metal")),
-+    EnumVariable("os", "Target OS", "linux", allowed_values=("linux", "android", "tizen", "macos", "bare_metal", "openbsd")),
-     EnumVariable("build", "Build type", "cross_compile", allowed_values=("native", "cross_compile", "embed_only")),
-     BoolVariable("examples", "Build example programs", True),
-     BoolVariable("gemm_tuner", "Build gemm_tuner programs", True),
-@@ -214,17 +214,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
+@@ -215,17 +215,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
  if env['os'] == 'android' and ( 'clang++' not in cpp_compiler or 'clang' not in c_compiler ):
      print( "WARNING: Only clang is officially supported to build the Compute Library for Android")
  
@@ -19,7 +10,7 @@ Index: SConstruct
 -elif 'armclang' in cpp_compiler:
 -    pass
 -else:
--    env.Append(CXXFLAGS = ['-Wlogical-op','-Wnoexcept','-Wstrict-null-sentinel'])
+-    env.Append(CXXFLAGS = ['-Wlogical-op','-Wnoexcept','-Wstrict-null-sentinel', '-Wno-misleading-indentation'])
 +env.Append(CXXFLAGS = ['-Wno-vla-extension'])
  
 -if cpp_compiler == 'g++':
@@ -29,10 +20,11 @@ Index: SConstruct
  if env['cppthreads']:
      env.Append(CPPDEFINES = [('ARM_COMPUTE_CPP_SCHEDULER', 1)])
  
-@@ -336,25 +327,6 @@ if not GetOption("help"):
+@@ -352,25 +343,6 @@ if not GetOption("help"):
+     except OSError:
          print("ERROR: Compiler '%s' not found" % env['CXX'])
          Exit(1)
- 
+-
 -    if 'armclang' in cpp_compiler:
 -        pass
 -    elif 'clang++' not in cpp_compiler:
@@ -51,17 +43,6 @@ Index: SConstruct
 -
 -        if not version_at_least(compiler_ver, '7.0.0') and env['os'] == 'bare_metal':
 -            env.Append(LINKFLAGS = ['-fstack-protector-strong'])
--
- if env['fat_binary']:
-     if env['arch'] != 'armv8.2-a':
-         print("Currently fat binary is only supported with armv8.2-a")
-@@ -420,6 +392,9 @@ if env['opencl']:
  
- if env["os"] not in ["android", "bare_metal"] and (env['opencl'] or env['cppthreads']):
-     env.Append(LIBS = ['pthread'])
-+
-+if env['os'] == 'openbsd':
-+    env.Append(LIBS = ['c'])
- 
- if env['opencl']:
-     if env['embed_kernels']:
+ if env['high_priority'] and env['build_config']:
+     print("The high priority library cannot be built in conjunction with a user-specified build configuration")

@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		21.11
+V = 		22.02
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -15,7 +15,7 @@ HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
-SO_VERSION =	1.0
+SO_VERSION =	2.0
 ACL_LIBS =	arm_compute \
 		arm_compute_core \
 		arm_compute_graph
@@ -33,13 +33,15 @@ COMPILER =	base-clang ports-gcc
 
 # "build=native" here just means "not cross-compiled"
 MODSCONS_FLAGS =	Werror=0 neon=1 opencl=0 embed_kernels=0 examples=0 \
-			os=openbsd arch=arm64-v8a build=native \
-			extra_cxx_flags=-fPIC
+			os=openbsd arch=arm64-v8a build=native
 
 MODULES =	devel/scons
 
 MAKE_ENV =	CC="${CC}" \
 		CXX="${CXX}"
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} ${MODSCONS_FLAGS}
 
 do-install:
 .for dir in arm_compute support utils
