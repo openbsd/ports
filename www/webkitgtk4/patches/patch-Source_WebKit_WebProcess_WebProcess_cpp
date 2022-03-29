@@ -1,0 +1,40 @@
+REVERT: https://github.com/WebKit/WebKit/commit/28d9d62aa2662266c2d9cb0032b036a257c6c8ab
+This prevents a crash at exit time for any application using WebkitGTK.
+From 28d9d62aa2662266c2d9cb0032b036a257c6c8ab Mon Sep 17 00:00:00 2001
+From: Pablo Saavedra <psaavedra@igalia.com>
+Date: Wed, 23 Feb 2022 09:32:13 +0000
+Subject: [PATCH] [GTK][WPE] PlatformDisplay::terminateEglDisplays() is never called https://bugs.webkit.org/show_bug.cgi?id=217655
+
+Index: Source/WebKit/WebProcess/WebProcess.cpp
+--- Source/WebKit/WebProcess/WebProcess.cpp.orig
++++ Source/WebKit/WebProcess/WebProcess.cpp
+@@ -257,7 +257,6 @@ namespace WebKit {
+ using namespace JSC;
+ using namespace WebCore;
+ 
+-#if !PLATFORM(GTK) && !PLATFORM(WPE)
+ NO_RETURN static void callExit(IPC::Connection*)
+ {
+ #if OS(WINDOWS)
+@@ -267,7 +266,6 @@ NO_RETURN static void callExit(IPC::Connection*)
+     _exit(EXIT_SUCCESS);
+ #endif
+ }
+-#endif
+ 
+ WebProcess& WebProcess::singleton()
+ {
+@@ -361,13 +359,9 @@ void WebProcess::initializeConnection(IPC::Connection*
+ {
+     AuxiliaryProcess::initializeConnection(connection);
+ 
+-// Do not call exit in background queue for GTK and WPE because we need to ensure
+-// atexit handlers are called in the main thread to cleanup resources like EGL displays.
+-#if !PLATFORM(GTK) && !PLATFORM(WPE)
+     // We call _exit() directly from the background queue in case the main thread is unresponsive
+     // and AuxiliaryProcess::didClose() does not get called.
+     connection->setDidCloseOnConnectionWorkQueueCallback(callExit);
+-#endif
+ 
+ #if !PLATFORM(GTK) && !PLATFORM(WPE) && !ENABLE(IPC_TESTING_API)
+     connection->setShouldExitOnSyncMessageSendFailure(true);
