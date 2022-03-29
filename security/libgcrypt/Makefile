@@ -1,9 +1,9 @@
 COMMENT=		crypto library based on code used in GnuPG
 
-DISTNAME=		libgcrypt-1.10.0
+DISTNAME=		libgcrypt-1.10.1
 CATEGORIES=		security
 
-SHARED_LIBS +=  gcrypt               21.0     # 24.0
+SHARED_LIBS +=  gcrypt               21.0     # 24.1
 
 HOMEPAGE=		https://www.gnupg.org/software/libgcrypt/index.html
 
