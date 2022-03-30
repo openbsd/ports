@@ -1,6 +1,6 @@
 COMMENT=		C++ and python library of 2D and 3D vector & matrix
 
-V=			3.1.4
+V=			3.1.5
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
@@ -9,8 +9,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # /!\ see symlinks creation in post-install (LIBImath-3_1_VERSION is used)
 .for solib in Imath PyImath_Python3_9
-SHARED_LIBS +=  ${solib}     1.0 # 28
-SHARED_LIBS +=  ${solib}-3_1 1.0 # 28
+SHARED_LIBS +=  ${solib}     1.1 # 28
+SHARED_LIBS +=  ${solib}-3_1 1.1 # 28
 .endfor
 
 CATEGORIES=		math graphics devel
