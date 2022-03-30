@@ -77,10 +77,12 @@ post-extract:
 	@cp ${FULLDISTDIR}/unifi_sh_api-$V ${WRKSRC}/unifi_sh_api
 
 do-configure:
-	@echo "** Overriding snappy-java from upstream with ${SNAPPY_V}"; echo
-	@if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then \
+	@cd ${WRKSRC}/lib; echo \
+	    "** Overriding `echo snappy-java-*.jar` from upstream for ${SNAPPY_V}${SNAPPY_S}"; \
+	if ! [ -r ${WRKSRC}/lib/snappy-java-${SNAPPY_V}.jar ]; then \
 	    ln -fs snappy-java-${SNAPPY_V}${SNAPPY_S}.jar \
-		${WRKSRC}/lib/snappy-java-*.jar; fi
+		${WRKSRC}/lib/snappy-java-*.jar; \
+	fi
 	@cp ${FULLDISTDIR}/snappy-java-${SNAPPY_V}${SNAPPY_S}.jar ${WRKSRC}/lib
 	@cd ${WRKSRC}; ls -l lib/snappy-java*; echo
 .if ${REPLACE_LOG4J} == Yes
