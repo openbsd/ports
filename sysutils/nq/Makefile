@@ -2,7 +2,7 @@ COMMENT =	command line queue utility
 
 GH_ACCOUNT =	leahneukirchen
 GH_PROJECT =	nq
-GH_TAGNAME =	v0.4
+GH_TAGNAME =	v0.5
 
 CATEGORIES =	sysutils
 
