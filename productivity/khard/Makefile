@@ -1,8 +1,8 @@
-COMMENT =		console CardDAV client
+COMMENT =		console vCard address book
 
 MODPY_EGG_VERSION =	0.17.0
 DISTNAME =		khard-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 

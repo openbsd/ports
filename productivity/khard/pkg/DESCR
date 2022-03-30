@@ -1,2 +1,9 @@
-Khard is an address book for the console. It creates, reads, modifies and
-removes CardDAV address book entries at your local machine.
+Khard is an address book for the console. By itself, it allows creating,
+reading, modifying, removing and searching for vCard address book entries
+(vcf files) in a directory on your local machine.
+
+Used in conjunction with vdirsyncer, it can be used to access and manage
+address books stored on a remote server via CardDAV.
+
+See https://khard.readthedocs.io/en/latest/scripting.html#integration
+for information about integrating with Mutt etc.
