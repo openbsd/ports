@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.12.3
+MODPY_EGG_VERSION =	2.12.4
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -35,6 +35,7 @@ TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR}
 
 TEST_ENV =		HOME=${WRKSRC} ANSIBLE_REMOTE_TMP=${WRKSRC}
+NO_TEST =		Yes
 
 post-patch:
 	sed -i -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
