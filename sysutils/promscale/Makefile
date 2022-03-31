@@ -1,6 +1,7 @@
 COMMENT =	observability backend for metrics and traces powered by SQL
 
 V =		0.7.1
+REVISION =	0
 CDATE =		2021-12-03T15-45-58Z
 CID =		493efa289605a1bf6c1c586595251bd4e0fdc162
 SHORTCID =	${CID:C/(............).*/\1/}
@@ -19,6 +20,8 @@ MAINTAINER =	Denis Fondras <denis@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE = Yes
+
+WANTLIB += c pthread
 
 MODULES=	lang/go
 

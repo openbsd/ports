@@ -1,9 +1,9 @@
 COMMENT =	library to access the Windows Shell Item format
 
-VERSION = 	20191221
+VERSION =	20191221
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  fwsi                       0.0 # 1.0
 
@@ -18,7 +18,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += m pthread util ${MODPY_WANTLIB}
+WANTLIB += iconv intl m pthread util ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python3

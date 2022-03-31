@@ -11,7 +11,7 @@ PKGNAME-libs=		heimdal-libs-${V}
 
 REVISION-main=		1
 REVISION-devel-docs=	0
-REVISION-libs=		1
+REVISION-libs=		2
 
 CATEGORIES=		security net
 
@@ -72,8 +72,7 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${V}
 PKG_ARCH-devel-docs=	*
 WANTLIB-devel-docs=	# empty
 
-WANTLIB-libs=		${WANTLIB} com_err
-WANTLIB-libs +=		com_err
+WANTLIB-libs=		${WANTLIB} com_err execinfo
 LIB_DEPENDS-libs=	sysutils/e2fsprogs
 
 MODGNU_CONFIG_GUESS_DIRS= \

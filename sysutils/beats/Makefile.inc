@@ -15,7 +15,7 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 # Apachev2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c pthread
+WANTLIB +=		c pthread
 
 MODULES =		lang/go
 

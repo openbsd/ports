@@ -1,7 +1,7 @@
 COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13
-REVISION=	11
+REVISION=	12
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
@@ -11,8 +11,8 @@ MASTER_SITES=	${HOMEPAGE}/download/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  adns bz2 c expat fontconfig freetype gd iconv intl jpeg m
-WANTLIB += pcre png pthread tiff webp z
+WANTLIB =  ${COMPILER_LIBCXX} adns bz2 c expat fontconfig freetype gd
+WANTLIB += iconv intl jpeg lzma m pcre png pthread tiff webp z zstd
 
 
 LIB_DEPENDS=	archivers/bzip2 \

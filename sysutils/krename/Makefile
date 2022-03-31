@@ -2,7 +2,7 @@ COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.1
 DISTNAME =	krename-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils x11
 
@@ -20,7 +20,7 @@ WANTLIB += KF5ItemViews KF5JSApi KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
 WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml c exiv2 freetype
-WANTLIB += m podofo tag
+WANTLIB += m podofo tag z X11
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krename/${VERSION}/src/}
 

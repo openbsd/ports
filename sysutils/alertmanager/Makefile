@@ -1,6 +1,7 @@
 COMMENT =	handles alerts sent by the Prometheus server
 
 MODGO_MODNAME =	github.com/prometheus/alertmanager
+REVISION =	0
 MODGO_VERSION =	v0.24.0
 
 MODGO_LDFLAGS += -X github.com/prometheus/common/version.Version=${MODGO_VERSION}
@@ -14,6 +15,8 @@ MAINTAINER =	Denis Fondras <denis@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += c pthread
 
 MODULES =	lang/go
 

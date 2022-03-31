@@ -15,6 +15,8 @@ PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
 
+REVISION-main =		0
+
 HOMEPAGE =		https://www.rsyslog.com/
 
 MAINTAINER =		Remi Locherer <remi@openbsd.org>
@@ -24,9 +26,11 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-WANTLIB-main += 	c crypto curl estr fastjson gcrypt gmp gnutls
+WANTLIB-main +=		c crypto curl estr fastjson gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl nettle nghttp2
 WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
+WANTLIB-main +=		brotlidec brotlienc execinfo zstd
+
 
 WANTLIB-mysql +=	crypto m mariadb pthread ssl z
 
@@ -55,7 +59,7 @@ RUN_DEPENDS-elasticsearch =	${PKGNAME-main}:${PKGPATH},-main
 MASTER_SITES =		https://www.rsyslog.com/files/download/rsyslog/
 
 CONFIGURE_STYLE =	gnu
-LIBTOOL_FLAGS = 	--tag=disable-static
+LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mysql \
 			--enable-mail \

@@ -1,11 +1,12 @@
 DISTNAME=       xps-4.2
-REVISION=	9
+REVISION=	10
 CATEGORIES=     sysutils x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif-pstree/}
 
 PERMIT_PACKAGE=	Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm m Xm
+
+WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm m Xm elf
 
 COMMENT=	graphically display and dynamically update the process tree
 

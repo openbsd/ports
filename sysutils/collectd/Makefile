@@ -31,16 +31,16 @@ PKGNAME-prometheus =	collectd-prometheus-$V
 PKGNAME-ping =		collectd-ping-$V
 CATEGORIES =		sysutils
 REVISION-main =		0
-REVISION-memcachec =	0
+REVISION-memcachec =	1
 REVISION-mqtt =		0
 REVISION-mysql =	1
 REVISION-nut =		1
 REVISION-pgsql =	0
 REVISION-ping =		0
-REVISION-prometheus =	2
+REVISION-prometheus =	3
 REVISION-python =	1
 REVISION-redis =	0
-REVISION-riemann =	2
+REVISION-riemann =	3
 REVISION-rrdtool =	2
 REVISION-snmp =		0
 REVISION-virt =		3
@@ -58,7 +58,8 @@ MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 
-MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python -memcachec -mqtt -nut -riemann -redis -prometheus -ping
+MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python \
+			-memcachec -mqtt -nut -riemann -redis -prometheus -ping
 
 WANTLIB-mysql =		mariadb pthread
 LIB_DEPENDS-mysql =	databases/mariadb
@@ -91,7 +92,7 @@ RUN_DEPENDS-python =	collectd-$V:${BASE_PKGPATH},-main \
 			${MODPY_RUN_DEPENDS}
 
 LIB_DEPENDS-memcachec =	devel/libmemcached
-WANTLIB-memcachec =	m memcached sasl2 pthread
+WANTLIB-memcachec =	crypto m memcached sasl2 pthread
 RUN_DEPENDS-memcachec =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-nut =	nut->=2.7.3p0:sysutils/nut
@@ -101,7 +102,7 @@ WANTLIB-nut =		crypto pthread ssl upsclient
 LIB_DEPENDS-riemann =	sysutils/riemann-c-client
 WANTLIB-riemann =	gmp gnutls hogweed intl iconv idn2 nettle \
 			protobuf-c p11-kit pthread riemann-client tasn1 \
-			unistring
+			unistring brotlidec brotlienc z zstd
 RUN_DEPENDS-riemann =	collectd-$V:${BASE_PKGPATH},-main
 
 LIB_DEPENDS-mqtt =	net/mosquitto
@@ -112,7 +113,8 @@ LIB_DEPENDS-prometheus =	www/libmicrohttpd \
 				devel/protobuf-c
 RUN_DEPENDS-prometheus =	collectd-$V:${BASE_PKGPATH},-main
 WANTLIB-prometheus =	gmp gnutls hogweed iconv idn2 intl microhttpd \
-			nettle p11-kit protobuf-c pthread tasn1 unistring
+			nettle p11-kit protobuf-c pthread tasn1 unistring \
+			brotlidec brotlienc z zstd
 
 LIB_DEPENDS-redis =	databases/libhiredis
 RUN_DEPENDS-redis =	collectd-$V:${BASE_PKGPATH},-main

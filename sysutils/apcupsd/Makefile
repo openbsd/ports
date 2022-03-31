@@ -7,7 +7,7 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
 REVISION-main =		6
-REVISION-x11 =		3
+REVISION-x11 =		4
 REVISION-cgi =		3
 
 CATEGORIES =		sysutils
@@ -75,7 +75,7 @@ WANTLIB-x11 += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-x11 += Xrandr Xrender atk-1.0 cairo fontconfig freetype gconf-2
 WANTLIB-x11 += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB-x11 += gthread-2.0 gtk-x11-2.0 intl pango-1.0 pangocairo-1.0
-WANTLIB-x11 += pangoft2-1.0 z
+WANTLIB-x11 += pangoft2-1.0 z harfbuzz
 .endif
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples/apcupsd/etc

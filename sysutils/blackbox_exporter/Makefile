@@ -2,6 +2,8 @@ COMMENT=	Prometheus exporter to test HTTP/DNS/TCP/ICMP endpoints
 
 MODGO_MODNAME=	github.com/prometheus/blackbox_exporter
 MODGO_VERSION=	v0.19.0
+REVISION=	0
+
 DISTNAME=	blackbox_exporter-${MODGO_VERSION}
 
 CATEGORIES=	sysutils
@@ -10,6 +12,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Apache 2.0
 PERMIT_PACKAGE=Yes
+
+WANTLIB += c pthread
 
 USE_GMAKE=	Yes
 
