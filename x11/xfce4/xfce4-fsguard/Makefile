@@ -2,6 +2,7 @@ COMMENT =	Xfce4 disk usage monitor panel plugin
 
 XFCE_VERSION =	1.1.2
 XFCE_PLUGIN =	fsguard
+REVISION =	0
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -19,5 +20,6 @@ WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread startup-notification-1 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util z
 WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 .include <bsd.port.mk>

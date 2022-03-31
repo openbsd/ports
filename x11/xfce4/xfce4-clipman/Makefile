@@ -2,6 +2,7 @@ COMMENT=	Xfce4 clipboard history panel plugin
 
 XFCE_VERSION=	1.6.2
 XFCE_PLUGIN=	clipman
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -27,5 +28,6 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		X11-xcb ffi xcb-util xfconf-0 qrencode jpeg \
 		atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 xfce4panel-2.0 \
 		gthread-2.0 xcb-render xcb-shm harfbuzz graphite2 iconv intl
+WANTLIB += Xau Xdmcp execinfo
 
 .include <bsd.port.mk>

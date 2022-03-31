@@ -2,6 +2,7 @@ COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.3.0
 XFCE_PLUGIN=	mailwatch
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -20,6 +21,7 @@ WANTLIB += iconv idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png startup-notification-1
 WANTLIB += tasn1 unistring xcb xcb-render xcb-shm xcb-util xfce4ui-2
 WANTLIB += xfce4util z
+WANTLIB += Xau Xdmcp brotlidec brotlienc execinfo jpeg zstd
 
 LIB_DEPENDS+=	security/gnutls
 

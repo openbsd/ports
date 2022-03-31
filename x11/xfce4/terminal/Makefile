@@ -3,6 +3,7 @@ COMMENT=	Xfce4 vte-based terminal
 XFCE_VERSION=	0.9.2
 XFCE_GOODIE=	xfce4-terminal
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,5 +26,6 @@ WANTLIB += idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += tasn1 unistring vte-2.91 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0 z execinfo jpeg
+WANTLIB += brotlidec brotlienc zstd
 
 .include <bsd.port.mk>

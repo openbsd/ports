@@ -2,6 +2,7 @@ COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
 XFCE_VERSION=	4.16.2
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -31,6 +32,7 @@ WANTLIB += xfce4util xfconf-0 xkbfile xklavier xml2 z garcon-1
 WANTLIB += harfbuzz graphite2 lzma iconv intl fribidi
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy exo-2 gdk-3
 WANTLIB += gtk-3 xfce4kbd-private-3 xfce4ui-2
+WANTLIB += Xau Xdmcp execinfo
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \

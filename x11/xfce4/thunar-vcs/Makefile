@@ -1,7 +1,7 @@
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.2.0
-REVISION =	0
+REVISION =	1
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 # GPLv2
@@ -19,6 +19,7 @@ WANTLIB += svn_fs_x-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 thunarx-3 xcb xcb-render
 WANTLIB += xcb-shm xfce4util z iconv intl ${COMPILER_LIBCXX}
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy fribidi lz4
+WANTLIB += Xau Xdmcp crypto execinfo jpeg
 
 MODULES =	x11/xfce4
 

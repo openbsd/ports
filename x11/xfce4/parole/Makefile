@@ -1,4 +1,5 @@
 COMMENT =	Xfce4 media player
+REVISION =	0
 
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
@@ -16,6 +17,7 @@ WANTLIB += harfbuzz m notify orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} tag tag_c xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z iconv intl
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 

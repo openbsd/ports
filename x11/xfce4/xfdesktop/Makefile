@@ -1,4 +1,5 @@
 COMMENT=	Xfce4 desktop manager
+REVISION=	0
 
 XFCE_PROJECT=	xfdesktop
 
@@ -32,6 +33,7 @@ WANTLIB += xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 FAKE_FLAGS=	menudir=${PREFIX}/share/examples/xfdesktop
 

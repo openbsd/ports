@@ -1,4 +1,5 @@
 COMMENT=	D-Bus thumbnailing service
+REVISION=	0
 
 XFCE_PROJECT=	tumbler
 
@@ -17,6 +18,7 @@ WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
 WANTLIB += ${COMPILER_LIBCXX} ass avfilter avresample fribidi
 WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
 WANTLIB += vpx x264 x265 xvidcore theoradec theoraenc zstd
+WANTLIB += Xau Xdmcp vidstab
 
 COMPILER =		base-clang ports-gcc base-gcc
 

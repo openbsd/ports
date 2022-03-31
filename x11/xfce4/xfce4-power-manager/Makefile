@@ -1,4 +1,5 @@
 COMMENT =	Xfce4 power manager
+REVISION =	0
 
 XFCE_PROJECT =	xfce4-power-manager
 
@@ -35,5 +36,6 @@ WANTLIB += xcb-util xcb-render xcb-shm xfce4panel-2.0 xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z upower-glib iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 fribidi
 WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 .include <bsd.port.mk>

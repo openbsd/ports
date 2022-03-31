@@ -2,6 +2,7 @@ COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 XFCE_VERSION=	4.16.3
+REVISION=	0
 
 SHARED_LIBS=	xfce4panel-2.0	0.2 # 4.0
 
@@ -18,7 +19,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread startup-notification-1 wnck-3 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += iconv intl exo-2 jpeg
-WANTLIB += dbusmenu-glib dbusmenu-gtk3
+WANTLIB += dbusmenu-glib dbusmenu-gtk3 Xau Xdmcp execinfo
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	x11/xfce4

@@ -3,6 +3,7 @@ COMMENT=	Xfce4 gnome-shell like dashboard
 XFCE_GOODIE =	xfdashboard
 XFCE_VERSION =	0.8.1
 SHARED_LIBS +=	xfdashboard	0.0 # 600.0
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,6 +19,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread startup-notification-1
 WANTLIB += wnck-3 xcb xcb-dri2 xcb-dri3 xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xfce4ui-2 xfce4util xfconf-0
 WANTLIB += xshmfence z
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 HOMEPAGE =	https://goodies.xfce.org/projects/applications/xfdashboard/start
 MODULES=	x11/xfce4

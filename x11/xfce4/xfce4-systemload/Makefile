@@ -2,6 +2,7 @@ COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
 XFCE_VERSION=	1.2.4
 XFCE_PLUGIN=	systemload
+REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -19,6 +20,7 @@ WANTLIB += startup-notification-1 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4util xfce4ui-2 z
 WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
+WANTLIB += Xau Xdmcp execinfo jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

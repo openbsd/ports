@@ -2,6 +2,7 @@ COMMENT=	Xfce4 datetime and calendar plugin
 
 XFCE_VERSION=	0.8.1
 XFCE_PLUGIN=	datetime
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,5 +19,6 @@ WANTLIB += ICE SM X11-xcb ffi pcre startup-notification-1
 WANTLIB += harfbuzz graphite2 pthread iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 .include <bsd.port.mk>

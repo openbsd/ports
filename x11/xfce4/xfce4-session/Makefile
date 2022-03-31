@@ -1,4 +1,5 @@
 COMMENT=	Xfce4 session manager
+REVISION=	0
 
 XFCE_PROJECT=	xfce4-session
 
@@ -32,6 +33,7 @@ WANTLIB += startup-notification-1 wnck-3 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 polkit-gobject-1 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
+WANTLIB += Xau Xdmcp execinfo jpeg
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session \

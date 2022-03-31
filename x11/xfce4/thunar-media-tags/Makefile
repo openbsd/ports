@@ -1,7 +1,7 @@
 COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.3.0
-REVISION=	0
+REVISION=	1
 THUNAR_PLUGIN=	thunar-media-tags-plugin
 
 # GPLv3
@@ -19,6 +19,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext fribidi \
 		thunarx-3 tag tag_c xcb-render xcb-shm \
 		atk-bridge-2.0 cairo-gobject epoxy fribidi \
 		harfbuzz pthread graphite2 iconv intl
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 LIB_DEPENDS=	x11/xfce4/thunar>=1.7.0 \
 		audio/taglib
