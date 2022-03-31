@@ -3,7 +3,7 @@ DISTNAME =		gimp-deskew-plugin-0.0.20141025
 GH_ACCOUNT =		prokoudine
 GH_PROJECT =		gimp-deskew-plugin
 GH_COMMIT =		b9214ddc8acf9ff5b01afdd44a9bdf96fe7d6e8e
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		graphics x11
 
@@ -18,7 +18,7 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gimp-2.0 gimpbase-2.0 gimpcolor-2.0
 WANTLIB += gimpconfig-2.0 gimpmath-2.0 gimpmodule-2.0 gimpui-2.0
 WANTLIB += gimpwidgets-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 ${COMPILER_LIBCXX}
-WANTLIB += z
+WANTLIB += z babl-0.1 gegl-0.4 gmodule-2.0 harfbuzz json-glib-1.0
 
 COMPILER =		base-clang ports-gcc base-gcc
 

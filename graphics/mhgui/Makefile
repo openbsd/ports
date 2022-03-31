@@ -2,7 +2,7 @@ COMMENT=	GUI widget library used in MakeHuman
 
 DISTNAME=	mhgui-0.2
 CATEGORIES=	graphics
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=  mhgui                1.0      # unknown
 
@@ -15,6 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 X11-xcb Xdamage Xext
 WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm animorph drm expat
 WANTLIB += glapi glut m png pthread xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z
+WANTLIB += Xau Xdmcp xcb-shm
 
 COMPILER =	base-clang ports-gcc base-gcc
 

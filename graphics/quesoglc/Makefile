@@ -1,7 +1,7 @@
 COMMENT=	implementation of the OpenGL Character Renderer
 
 DISTNAME=	quesoglc-0.7.2
-REVISION=	8
+REVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=quesoglc/}
 
@@ -18,6 +18,7 @@ WANTLIB += GL GLU X11 Xdamage Xext Xfixes Xxf86vm drm expat fontconfig
 WANTLIB += X11-xcb glapi pthread xcb-dri2
 WANTLIB += freetype fribidi m xcb xcb-glx z
 WANTLIB += xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence
+WANTLIB += Xau Xdmcp xcb-shm
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -1,7 +1,7 @@
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-1.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics
 
@@ -16,7 +16,8 @@ WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl ltdl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += xcb-render xcb-shm z Xau Xdmcp jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 

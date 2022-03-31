@@ -1,7 +1,7 @@
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.30
-REVISION =	0
+REVISION =	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -36,7 +36,7 @@ WANTLIB += lcms lcms2 lzma m mng mypaint nettle openjp2 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 paper pcre pixman-1
 WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
-WANTLIB += xcb-render xcb-shm xml2 z zstd
+WANTLIB += xcb-render xcb-shm xml2 z zstd brotlidec brotlienc
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

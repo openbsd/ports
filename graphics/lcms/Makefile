@@ -3,7 +3,7 @@ COMMENT =	color management library
 DISTNAME =	lcms-1.19
 CATEGORIES =	graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lcms/}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  lcms                 2.0      # 1.19
 
@@ -14,7 +14,8 @@ LIB_DEPENDS +=	graphics/jpeg \
 
 # MIT
 PERMIT_PACKAGE =	Yes
-WANTLIB =		c m z jpeg tiff
+
+WANTLIB =		c m z jpeg tiff lzma pthread zstd
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

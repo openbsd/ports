@@ -1,7 +1,7 @@
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 
 DISTNAME =	birdfont-2.29.4
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics print
 
 SHARED_LIBS +=	birdfont			17.0 # 2.11.7
@@ -20,7 +20,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 intl javascriptcoregtk-4.0 m notify pango-1.0
 WANTLIB += pangocairo-1.0 soup-2.4 sqlite3 webkit2gtk-4.0 xmlbird
-WANTLIB += z harfbuzz
+WANTLIB += z harfbuzz gmodule-2.0 pthread
 
 MODULES =	lang/python
 

@@ -1,6 +1,7 @@
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.28
+REVISION=	0
 SHARED_LIBS=	djvulibre	27.0	# 28.0
 CATEGORIES=	graphics print
 
@@ -11,9 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 
-WANTLIB=	c iconv m jpeg pthread ${COMPILER_LIBCXX} tiff z
+WANTLIB=	c iconv m jpeg pthread ${COMPILER_LIBCXX} tiff z lzma zstd
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	converters/libiconv \
 		graphics/jpeg \

@@ -1,6 +1,7 @@
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.4.10
+REVISION=	0
 SHARED_LIBS=	Imlib2	6.0	# .5.9
 CATEGORIES=	graphics
 
@@ -12,7 +13,8 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
 WANTLIB=	X11 Xext c freetype m xcb z \
-		jpeg>=62 gif>=5 png>=2 tiff>=35 bz2 id3tag>=3
+		jpeg>=62 gif>=5 png>=2 tiff>=35 bz2 id3tag>=3 \
+		lzma pthread zstd
 LIB_DEPENDS+=	graphics/jpeg \
 		graphics/giflib \
 		graphics/png \

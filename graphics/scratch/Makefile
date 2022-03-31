@@ -2,7 +2,7 @@ COMMENT =	visual programming environment and toolkit
 
 DISTNAME =	${PKGNAME}.src
 PKGNAME =	scratch-1.4.0.7
-REVISION =	10
+REVISION =	11
 CATEGORIES =	graphics
 HOMEPAGE =	http://scratch.mit.edu/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -14,6 +14,7 @@ WANTLIB =  X11 Xau Xdmcp Xext Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi glib-2.0 gobject-2.0 graphite2 harfbuzz
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png xcb xcb-render xcb-shm z
+WANTLIB += Xft gio-2.0 gmodule-2.0 harfbuzz-gobject lzo2 pthread
 
 MASTER_SITES =	http://download.scratch.mit.edu/
 # not actually needed to build, but avoid wasting time on !squeak arches.

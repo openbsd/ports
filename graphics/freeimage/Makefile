@@ -2,7 +2,7 @@ COMMENT=		c++ library for common image format
 
 DISTNAME=		FreeImage3152
 PKGNAME=		freeimage-3.15.2
-REVISION=		7
+REVISION=		8
 CATEGORIES=		graphics
 
 SHARED_LIBS+=		freeimage	2.0
@@ -12,7 +12,7 @@ HOMEPAGE=		http://freeimage.sourceforge.net/
 # GPL / "FreeImage Public Nons^WLicense"
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		${COMPILER_LIBCXX}
+WANTLIB=		${COMPILER_LIBCXX} m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
