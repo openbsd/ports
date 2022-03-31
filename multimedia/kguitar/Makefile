@@ -6,7 +6,7 @@ GH_COMMIT =	a7c73491ef236134de55cbdcfc9f8cafa2a76ae1
 
 # commit date YYYYMMDD
 DISTNAME =	${GH_PROJECT}-20170809
-REVISION =	6
+REVISION =	7
 
 # override kf5
 EXTRACT_SUFX =	.tar.gz
@@ -26,6 +26,7 @@ WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOWidgets KF5Parts
 WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += KF5KIOGui KF5Solid KF5WindowSystem X11
 
 MODULES =	devel/cmake \
 		devel/kf5

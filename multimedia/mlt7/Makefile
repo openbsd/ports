@@ -4,6 +4,8 @@ VERSION =		7.4.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		mlt7-${VERSION}
 PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
+REVISION-gpl2 =		0
+REVISION-main =		0
 
 CATEGORIES =		multimedia devel
 
@@ -27,7 +29,7 @@ WANTLIB-main += ${COMPILER_LIBCXX} SDL SDL2 avcodec avdevice avfilter
 WANTLIB-main += avformat avutil c ebur128 exif fftw3 fontconfig freetype
 WANTLIB-main += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 harfbuzz intl jack
 WANTLIB-main += m pango-1.0 pangoft2-1.0 sox swresample swscale vorbis
-WANTLIB-main += vorbisfile xml2 z
+WANTLIB-main += vorbisfile xml2 z X11
 
 WANTLIB-gpl2 += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Svg Qt5Widgets
 WANTLIB-gpl2 += Qt5Xml exif fftw3 m mlt++-7 mlt-7 pulse pulse-simple

@@ -1,7 +1,7 @@
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	18
+REVISION=	19
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
@@ -18,6 +18,7 @@ WANTLIB += m mp3lame mpeg2 mpeg2convert ogg opus postproc pthread
 WANTLIB += quicktime sndio speex ssl theora
 WANTLIB += usbhid vorbis vorbisenc vorbisfile vpx x264 xcb xml2 z
 WANTLIB += lzma ${COMPILER_LIBCXX} swresample x265
+WANTLIB += aom dav1d theoradec theoraenc
 
 # xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
 # want to track changes to the ABI to ensure transcode is updated if needed.

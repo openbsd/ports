@@ -1,7 +1,7 @@
 COMMENT =		curses media indexer and player for vi users
 
 DISTNAME =		vitunes-2.3
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		multimedia
 
@@ -13,11 +13,11 @@ FIX_EXTRACT_PERMISSIONS=Yes
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses m tag tag_c util
+WANTLIB += c curses m tag tag_c util z
 
 LIB_DEPENDS =		audio/taglib
 RUN_DEPENDS =		x11/mplayer
-			
+
 MASTER_SITES =		${HOMEPAGE}/files/
 
 ALL_TARGET =		vitunes

@@ -1,7 +1,7 @@
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.2.4
-REVISION=	15
+REVISION=	16
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -22,7 +22,8 @@ WANTLIB += ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread sndio speex ${COMPILER_LIBCXX}
 WANTLIB += swresample swscale vorbisenc vorbisfile vpx x264 x265
 WANTLIB += xcb xcb-dri2 xcb-glx xcb-render xcb-shm xvidcore z
-WANTLIB += atk-1.0 vorbis
+WANTLIB += atk-1.0 vorbis aom dav1d fribidi lzma theoradec theoraenc
+WANTLIB += xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence
 
 COMPILER =		base-clang ports-gcc base-gcc
 

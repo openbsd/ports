@@ -4,6 +4,7 @@ COMMENT =	video effects library
 V =		1.2.0
 DISTNAME =	webvfx-$V
 DISTFILES = 	webvfx-{}$V${EXTRACT_SUFX}
+REVISION =	0
 
 SHARED_LIBS +=  webvfx                    0.0 # 1.2
 
@@ -17,7 +18,7 @@ MASTER_SITES = https://github.com/mltframework/webvfx/archive/
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5Qml Qt5Quick Qt5WebKit Qt5WebKitWidgets Qt5Widgets
-WANTLIB += c m mlt
+WANTLIB += c m mlt Qt5QmlModels
 
 COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		devel/qmake \

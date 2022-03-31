@@ -1,6 +1,6 @@
 COMMENT =		lightweight and simple DVD slide show maker
 DISTNAME =		imagination-3.0
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		multimedia
 
@@ -17,6 +17,8 @@ WANTLIB += harfbuzz iconv id3tag intl m mad mp3lame ogg opus opusfile
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread sndfile sndio sox twolame vorbis vorbisenc vorbisfile
 WANTLIB += wavpack xcb xcb-render xcb-shm z
+WANTLIB += Xau Xdmcp crypto jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=imagination/}
 

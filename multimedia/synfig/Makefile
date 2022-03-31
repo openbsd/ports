@@ -6,7 +6,7 @@ COMMENT =		2D animation software
 V=			1.2.1
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS +=  synfig                    2.0 # 0.0
 
@@ -29,6 +29,7 @@ WANTLIB += intl jasper jbig jpeg lcms lcms2 ltdl lzma m mlt mlt++
 WANTLIB += mng openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png raw_r sigc-2.0 tiff webp webpdemux webpmux
 WANTLIB += x265 xcb xcb-render xcb-shm xml++-2.6 xml2 z zstd
+WANTLIB += Xau Xdmcp
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 

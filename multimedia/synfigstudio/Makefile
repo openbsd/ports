@@ -6,7 +6,7 @@ BROKEN-sparc64 =	terminate called after throwing an instance of 'synfig::Excepti
 V =			1.2.1
 DISTNAME =		synfigstudio-$V
 API_V =			0.0
-REVISION =		6
+REVISION =		7
 
 SHARED_LIBS +=  synfigapp                 2.0 # 0.0
 
@@ -31,6 +31,7 @@ WANTLIB += mlt mlt++ openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangomm-1.4 pcre pixman-1 png raw_r sigc-2.0 synfig
 WANTLIB += tiff webp webpdemux webpmux x265 xcb xcb-render xcb-shm
 WANTLIB += xml++-2.6 xml2 z zstd
+WANTLIB += Xau Xdmcp
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
 

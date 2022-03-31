@@ -2,7 +2,7 @@ V = 		1.3.3
 COMMENT =	open source video transcoder
 DISTNAME =	HandBrake-${V}-source
 PKGNAME =	handbrake-${V}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	multimedia x11
 
@@ -25,6 +25,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png postproc speex ssl swresample swscale theoradec
 WANTLIB += theoraenc vorbis vorbisenc vpx x264 x265 xcb xcb-render
 WANTLIB += xcb-shm xml2 xvidcore z
+WANTLIB += Xau Xdmcp execinfo jpeg udfread vidstab
 
 MASTER_SITES =	https://github.com/HandBrake/HandBrake/releases/download/${V}/
 
