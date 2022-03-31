@@ -11,6 +11,10 @@ V=			3.22.2
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
+REVISION-hpaio=		0
+REVISION-hpcups=	0
+REVISION-main=		0
+
 # https://bugs.launchpad.net/ubuntu/+source/hplip/+bug/1745383
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/hplip/raw/rawhide/f/
 PATCHFILES=		0026-Call-QMessageBox-constructors-of-PyQT5-with-the-corr.patch:0
@@ -64,6 +68,7 @@ WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
 WANTLIB-main += hpdiscovery hpipp idn2 iconv intl unistring
 WANTLIB-main += ${COMPILER_LIBCXX} c avahi-core execinfo
+WANTLIB-main += brotlidec brotlienc zstd
 
 LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
@@ -98,6 +103,7 @@ WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 gmp gnutls
 WANTLIB-hpaio += hogweed hpip hpipp hpmud netsnmp nettle p11-kit idn2
 WANTLIB-hpaio += sane tasn1 usb-1.0 z hpdiscovery iconv intl unistring
 WANTLIB-hpaio += lzma xml2 avahi-core execinfo
+WANTLIB-hpaio += brotlidec brotlienc zstd
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -111,6 +117,7 @@ WANTLIB-hpcups += c jpeg ${COMPILER_LIBCXX} hpip cups cupsimage dbus-1 idn2
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
 WANTLIB-hpcups += gmp gnutls hogweed nettle p11-kit tasn1
 WANTLIB-hpcups += unistring avahi-core execinfo
+WANTLIB-hpcups += brotlidec brotlienc zstd
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/hplip,-common \

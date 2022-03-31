@@ -6,6 +6,8 @@ DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
 WRKDIST =		${WRKDIR}/texlive-${DIST_V}-source
 
+REVISION-main =		0
+
 MULTI_PACKAGES =	-main -mktexlsr -synctex
 PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
@@ -26,6 +28,7 @@ WANTLIB += gmp gnutls graphite2 gs harfbuzz hogweed iconv icudata
 WANTLIB += icui18n icuio icuuc idn2 ijs intl jbig2dec jpeg kpathsea
 WANTLIB += lcms2 lzma m nettle p11-kit paper pcre pixman-1 png tasn1
 WANTLIB += tiff unistring webp xcb xcb-render xcb-shm z zstd zzip
+WANTLIB += brotlidec brotlienc execinfo idn openjp2
 
 WANTLIB-mktexlsr += c
 
