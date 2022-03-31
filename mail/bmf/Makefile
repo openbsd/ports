@@ -1,6 +1,6 @@
 COMMENT=		easy to use Bayesian spam filter
 DISTNAME=		bmf-0.9.4
-REVISION=		10
+REVISION=		11
 CATEGORIES=		mail
 HOMEPAGE=		http://sourceforge.net/projects/bmf/
 
@@ -20,7 +20,7 @@ CONFIGURE_ARGS=		--without-mysql \
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=		databases/mariadb
-WANTLIB +=		mysqlclient pthread
+WANTLIB +=		mariadb pthread
 CONFIGURE_ARGS+=	--without-libdb --with-mysql="${LOCALBASE}"
 CFLAGS+=		"-I${LOCALBASE}/include/mysql"
 .endif

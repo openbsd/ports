@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =		fast Qt IMAP e-mail client
 
 DISTNAME =		trojita-0.7
-REVISION =		14
+REVISION =		15
 
 SHARED_LIBS =		trojita_plugins	2.0 # 2.0
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Sql Qt5WebKit Qt5WebKitWidgets Qt5Widgets c gpgmepp
-WANTLIB += m mimetic qt5keychain z
+WANTLIB += m mimetic qt5keychain z gpgme qgpgme
 
 MODULES =		devel/cmake x11/qt5
 

@@ -6,7 +6,7 @@ DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		mail
 
@@ -57,7 +57,7 @@ EXIM_MAKECAT +=		"LOOKUP_MYSQL=yes\n"
 EXIM_LOOKUP_INCLUDE +=	-I${LOCALBASE}/include/mysql
 EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 LIB_DEPENDS-main +=	databases/mariadb
-WANTLIB-main +=		lib/mysql/mysqlclient pthread
+WANTLIB-main +=		mariadb pthread
 .endif
 
 .if ${FLAVOR:Mpostgresql}
