@@ -1,6 +1,7 @@
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6
+REVISION=	0
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
 
@@ -13,7 +14,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2/GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c jpeg m tiff z
+WANTLIB=	c jpeg lzma m pthread tiff z zstd
 
 WRKDIST=	${WRKDIR}/spandsp-0.0.6
 

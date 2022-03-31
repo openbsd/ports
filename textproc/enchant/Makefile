@@ -6,7 +6,7 @@ V=			1.6.1
 GH_ACCOUNT=		AbiWord
 GH_PROJECT=		enchant
 GH_TAGNAME=		enchant-${V:S/./-/g}
-REVISION=		2
+REVISION=		3
 
 # XXX needed for portroach (DISTNAME must match the GH_PROJECT-GH_TAGNAME)
 MASTER_SITES=		https://github.com/AbiWord/enchant/releases/download/${GH_PROJECT}-${V:S/./-/g}/
@@ -24,7 +24,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += aspell c glib-2.0 gmodule-2.0 hunspell-1.7 iconv intl
+WANTLIB += aspell c curses glib-2.0 gmodule-2.0 hunspell-1.7 iconv intl
 WANTLIB += m pcre pthread ${LIBCXX}
 
 # c++11

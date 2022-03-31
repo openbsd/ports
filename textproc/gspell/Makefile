@@ -3,6 +3,8 @@ COMMENT=		spell-checking library for GTK+
 GNOME_PROJECT=		gspell
 GNOME_VERSION=		1.8.4
 
+REVISION=		0
+
 CATEGORIES=		textproc
 
 SHARED_LIBS +=  gspell-1             4.0      # 5.0
@@ -18,7 +20,7 @@ WANTLIB += c cairo cairo-gobject enchant-2 epoxy expat ffi fontconfig
 WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz iconv
 WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png xcb xcb-render xcb-shm z
+WANTLIB += png xcb xcb-render xcb-shm z Xau Xdmcp execinfo jpeg
 
 MODULES=		x11/gnome
 

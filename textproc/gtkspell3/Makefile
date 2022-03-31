@@ -3,6 +3,8 @@ COMMENT=	gtk+3 spelling checker
 DISTNAME=	gtkspell3-3.0.10
 EXTRACT_SUFX=	.tar.xz
 
+REVISION=	0
+
 SHARED_LIBS +=  gtkspell3-3          0.3      # 2.0
 
 CATEGORIES=	textproc x11
@@ -21,7 +23,7 @@ WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z Xau Xdmcp c++ c++abi execinfo jpeg
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
 

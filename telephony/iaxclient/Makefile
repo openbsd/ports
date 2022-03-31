@@ -4,7 +4,7 @@ COMMENT-tcl=	IAX client library, tcl bindings
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION=	29
+REVISION=	30
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \
@@ -27,7 +27,7 @@ cWANTLIB	+= speexdsp sndio theora theoradec vidcap z
 
 WANTLIB-main	+= ${cWANTLIB} ${COMPILER_LIBCXX} avutil c dav1d
 WANTLIB-main	+= iconv lzma mp3lame opus swresample theoraenc vorbis
-WANTLIB-main	+= vorbisenc vpx x264 x265 xvidcore
+WANTLIB-main	+= vorbisenc vpx x264 x265 xvidcore aom
 
 WANTLIB-tcl	+= X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo
@@ -36,7 +36,7 @@ WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-tcl	+= gtk-x11-2.0 iaxclient iconv intl pango-1.0 pangocairo-1.0
 WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png xcb xcb-render
 WANTLIB-tcl	+= graphite2 harfbuzz vorbis fribidi
-WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB}
+WANTLIB-tcl	+= xcb-shm ffi ${cWANTLIB} Xau Xdmcp jpeg ${COMPILER_LIBCXX}
 
 
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}

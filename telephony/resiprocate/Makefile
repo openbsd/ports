@@ -4,7 +4,7 @@ COMMENT-return =	reSIProcate STUN/TURN client and server
 
 V =			1.12.0
 DISTNAME =		resiprocate-${V}
-REVISION =		2
+REVISION =		3
 PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}
@@ -28,8 +28,9 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} cares crypto ffi gmp gnutls hogweed
 WANTLIB-main += iconv idn2 intl m nettle p11-kit radcli ssl tasn1 unistring
+WANTLIB-main += brotlidec brotlienc z zstd
 
-WANTLIB-repro += ${WANTLIB-main} c db_cxx dum mariadb pq resip rutil z
+WANTLIB-repro += ${WANTLIB-main} c db_cxx dum mariadb pq resip rutil
 
 WANTLIB-return += ${WANTLIB-main} boost_system c rutil
 
