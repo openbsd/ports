@@ -2,6 +2,7 @@ COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
 GNOME_VERSION=	3.40.1
+REVISION=	0
 
 SHARED_LIBS +=  goa-1.0              4.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      4.0      # .1.0
@@ -26,6 +27,7 @@ WANTLIB += secret-1 soup-2.4 soup-gnome-2.4 sqlite3 tasn1 unistring
 WANTLIB += webkit2gtk-4.0 webp webpdemux woff2common woff2dec
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xml2 xshmfence xslt z
+WANTLIB += lcms2
 
 COMPILER=	base-clang ports-gcc base-gcc
 

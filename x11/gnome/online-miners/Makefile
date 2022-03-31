@@ -2,7 +2,7 @@ COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.34.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -14,7 +14,7 @@ WANTLIB += gobject-2.0 gpg-error grilo-0.3 gthread-2.0 iconv icudata
 WANTLIB += icui18n icuuc idn2 intl json-glib-1.0 kvm lzma m p11-kit
 WANTLIB += pcre psl rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 tracker-miner-2.0
 WANTLIB += tracker-sparql-2.0 unistring uuid xml2 z zapojit-0.0
-WANTLIB += lib/tracker-2.0/tracker-data
+WANTLIB += lib/tracker-2.0/tracker-data execinfo stemmer
 
 MODULES=		devel/dconf \
 			x11/gnome

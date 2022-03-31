@@ -2,7 +2,7 @@ COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		3.22.0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 
@@ -27,6 +27,7 @@ WANTLIB += m nettle notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread secret-1 tasn1
 WANTLIB += telepathy-glib xcb xcb-render xcb-shm z
 WANTLIB += fribidi idn2 unistring ${COMPILER_LIBCXX} execinfo
+WANTLIB += Xau Xdmcp brotlidec brotlienc zstd
 
 MODULES=		devel/dconf \
 			x11/gnome
