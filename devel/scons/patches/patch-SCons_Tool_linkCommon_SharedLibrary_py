@@ -1,0 +1,17 @@
+generate a soname that respects SHARED_LIBS
+
+Index: SCons/Tool/linkCommon/SharedLibrary.py
+--- SCons/Tool/linkCommon/SharedLibrary.py.orig
++++ SCons/Tool/linkCommon/SharedLibrary.py
+@@ -93,9 +93,8 @@ def _soversion(target, source, env, for_signature):
+     if "SOVERSION" in env:
+         return ".$SOVERSION"
+     elif "SHLIBVERSION" in env:
+-        shlibversion = env.subst("$SHLIBVERSION")
+-        # We use only the most significant digit of SHLIBVERSION
+-        return "." + shlibversion.split(".")[0]
++        shlibversion = env.subst("$SHLIBVERSION").split(".")
++        return "." + shlibversion[0] + "." + shlibversion[1]
+     else:
+         return ""
+ 
