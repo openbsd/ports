@@ -4,7 +4,7 @@ COMMENT=		open source 68k Macintosh emulator
 
 DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
-REVISION=		11
+REVISION=		12
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://basilisk.cebix.net/
@@ -20,6 +20,7 @@ WANTLIB += Xinerama Xrandr Xrender Xxf86dga Xxf86vm c atk-1.0 SDL
 WANTLIB += cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread ${COMPILER_LIBCXX} z
+WANTLIB += harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -4,7 +4,8 @@ COMMENT-libretro =	Nintendo Entertainment System core for retroarch
 V =			1.49
 DISTNAME =		nestopia-$V
 PKGNAME-libretro =	libretro-nestopia-$V
-REVISION-main =		0
+REVISION-main =		1
+REVISION-libretro =	0
 
 MULTI_PACKAGES =	-main -libretro
 
@@ -21,7 +22,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB-main += ${COMPILER_LIBCXX} SDL2 ao archive atk-1.0 c cairo
 WANTLIB-main += cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0 z
+WANTLIB-main += gobject-2.0 gtk-3 intl m pango-1.0 pangocairo-1.0 z harfbuzz
 WANTLIB-libretro =	${COMPILER_LIBCXX} m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc

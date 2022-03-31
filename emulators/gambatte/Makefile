@@ -4,7 +4,7 @@ REV =			571
 V =			0.5.0.${REV}
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-$V
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		emulators
 
@@ -15,7 +15,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL c m
+WANTLIB += ${COMPILER_LIBCXX} SDL c m z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

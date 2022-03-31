@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	Nintendo DS emulator
 
 DISTNAME =	desmume-0.9.11
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	emulators
 
@@ -20,6 +20,7 @@ WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 SDL SoundTouch
 WANTLIB += atk-1.0 cairo gdk-x11-2.0 gtk-x11-2.0 iconv intl
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 zzip
+WANTLIB += harfbuzz
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=desmume/}
 

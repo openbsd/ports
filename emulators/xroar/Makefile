@@ -1,6 +1,7 @@
 COMMENT =		Dragon and CoCo emulator
 
 DISTNAME =		xroar-1.0.9
+REVISION =		0
 
 CATEGORIES =		emulators
 
@@ -16,7 +17,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 gtkglext-x11-1.0
 WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pthread sndfile z
+WANTLIB += pthread sndfile z ICE SM
 
 MASTER_SITES =		https://www.6809.org.uk/xroar/dl/
 

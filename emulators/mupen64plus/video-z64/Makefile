@@ -1,11 +1,11 @@
 COMMENT =		n64 emulator video plugin
 
-REVISION =		0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		GL GLEW GLU SDL2 c m pthread ${COMPILER_LIBCXX}
+WANTLIB += GL GLEW GLU SDL2 X11 Xext Xi Xmu c m pthread ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
