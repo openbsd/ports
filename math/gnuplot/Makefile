@@ -5,7 +5,7 @@ PATCHLEVEL =	7
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.gnuplot.info/
 
@@ -60,7 +60,7 @@ CONFIGURE_ARGS += --without-cairo
 LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/pango \
 		graphics/cairo
-WANTLIB +=	cairo gobject-2.0 glib-2.0 intl pango-1.0 pangocairo-1.0
+WANTLIB +=	cairo gobject-2.0 glib-2.0 intl pango-1.0 pangocairo-1.0 harfbuzz
 .endif
 
 .include <bsd.port.mk>

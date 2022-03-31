@@ -13,7 +13,7 @@ V = 		3.4.2
 V1 =		2.22
 V2 =		1.13
 
-REVISION-python =       1
+REVISION-python =       2
 
 
 DISTNAME = 	mlpack-$V
@@ -39,6 +39,7 @@ FULLPKGNAME-main = 	mlpack-$V
 FULLPKGPATH-main = 	${PKGPATH},-main
 FULLPKGNAME-python = 	${MODPY_PY_PREFIX}mlpack-$V
 FULLPKGPATH-python = 	${PKGPATH},-python${FLAVOR_EXT:S/-/,/g}
+REVISION-main =         0
 
 WANTLIB += 	${COMPILER_LIBCXX} m
 
@@ -48,7 +49,8 @@ WANTLIB-main = 	${WANTLIB} armadillo \
 
 COMPILER =	base-clang ports-gcc
 
-WANTLIB-python = ${WANTLIB} ${MODPY_WANTLIB} boost_serialization mlpack
+WANTLIB-python = ${WANTLIB} ${MODPY_WANTLIB} boost_serialization mlpack \
+		armadillo boost_serialization-mt
 
 MODULES = 	devel/cmake \
 		lang/python

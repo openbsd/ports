@@ -1,6 +1,6 @@
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/
@@ -17,7 +17,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsl gslcblas
 WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pq readline spread-sheet-widget ssl xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += xcb-render xcb-shm xml2 z Xau Xdmcp execinfo jpeg
 
 MASTER_SITES =	${MASTER_SITE_GNU:=pspp/}
 

@@ -4,12 +4,14 @@ MODPY_EGG_VERSION =	1.0.25
 DISTNAME =		cvxpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		4
+REVISION =		5
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # Apache v2
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += ${COMPILER_LIBCXX} m pthread
 
 MODULES =		lang/python
 

@@ -2,7 +2,7 @@ COMMENT =	high-level language for numerical computations
 
 VERSION =	5.2.0
 DISTNAME =	octave-${VERSION}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	math
 
 SHARED_LIBS +=	octave		13.0
@@ -68,6 +68,7 @@ WANTLIB += m nghttp2 ogg pcre pcre2-16 png portaudio pthread qhull
 WANTLIB += qrupdate sndfile sndio ssl ${COMPILER_LIBCXX} suitesparseconfig
 WANTLIB += umfpack util vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-sync xcb-xfixes xshmfence z zstd
+WANTLIB += Xau Xdmcp opus xcb-shm
 
 
 SEPARATE_BUILD =	Yes

@@ -5,12 +5,14 @@ DISTNAME =		scs-${MODPY_EGG_VERSION}
 V =			${MODPY_EGG_VERSION:S/-/./}
 PKGNAME =		py-scs-${V}
 CATEGORIES =		math
-REVISION =		4
+REVISION =		5
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += blas cblas lapack pthread
 
 MODULES =		lang/python
 
