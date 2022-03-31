@@ -2,7 +2,7 @@ COMMENT =	scim input method module for anthy
 
 DISTNAME =	scim-anthy-1.2.7
 
-REVISION =	12
+REVISION =	13
 
 CATEGORIES =	inputmethods japanese
 
@@ -18,7 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += scim-1.0 scim-gtkutils-1.0 scim-x11utils-1.0 ${COMPILER_LIBCXX} xcb
-WANTLIB += xcb-render xcb-shm z fribidi
+WANTLIB += xcb-render xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 

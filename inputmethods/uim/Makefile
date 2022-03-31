@@ -10,9 +10,9 @@ PKGNAME-main=		uim-$V
 PKGNAME-gtk=		uim-gtk-$V
 PKGNAME-gtk3=		uim-gtk3-$V
 
-REVISION-main=		2
-REVISION-gtk=		0
-REVISION-gtk3=		1
+REVISION-main=		3
+REVISION-gtk=		1
+REVISION-gtk3=		2
 
 MASTER_SITES=		https://github.com/uim/uim/releases/download/$V/
 HOMEPAGE=		https://github.com/uim/uim
@@ -25,6 +25,7 @@ SHARED_LIBS +=	uim-custom           0.0      # .2.0
 PERMIT_PACKAGE=	Yes
 
 cWANTLIB += X11 Xext Xrender fontconfig freetype iconv intl m
+cWANTLIB += Xau Xdmcp jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -55,7 +56,7 @@ WANTLIB-gtk += uim uim-custom uim-scm xcb xcb-render xcb-shm z
 LIB_DEPENDS-gtk=	inputmethods/uim \
 			x11/gtk+2
 
-WANTLIB-gtk3 += ${cWANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-gtk3 += ${cWANTLIB} ${COMPILER_LIBCXX} execinfo
 WANTLIB-gtk3 += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB-gtk3 += Xrandr atk-1.0 atk-bridge-2.0 c cairo cairo-gobject
 WANTLIB-gtk3 += expat ffi gcroots gdk-3 gdk_pixbuf-2.0 gio-2.0

@@ -2,7 +2,7 @@ COMMENT=	chewing input method for uim
 
 V =		0.1.0
 DISTNAME=	uim-chewing-$V
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	inputmethods chinese
 
@@ -11,7 +11,7 @@ HOMEPAGE= 	https://github.com/uim/uim-chewing
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  chewing gcroots iconv intl uim uim-scm
+WANTLIB =  chewing gcroots iconv intl uim uim-scm m pthread sqlite3 z
 
 MASTER_SITES=	https://github.com/uim/uim-chewing/releases/download/uim-chewing-$V/
 
