@@ -2,7 +2,7 @@ COMMENT =		bundle of plugins for gmpc
 
 VERSION =		11.8.16
 DISTNAME =		gmpc-plugins-${VERSION}
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		audio
 
@@ -22,7 +22,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += iconv intl lzma m mpd pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread sqlite3 ${COMPILER_LIBCXX}
 WANTLIB += tag tag_c xcb xcb-render xcb-shm xml2 z fribidi
-WANTLIB += execinfo jpeg
+WANTLIB += execinfo jpeg Xau Xdmcp
 
 COMPILER =		base-clang ports-gcc base-gcc
 

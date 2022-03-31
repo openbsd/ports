@@ -4,7 +4,7 @@ V =			0.125.0
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
 CATEGORIES =		audio
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=		jack		2.0	# 0.28
 SHARED_LIBS +=		jackserver	2.0	# 0.28
@@ -15,7 +15,7 @@ HOMEPAGE =		http://jackaudio.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC c celt0>=1 curses db m ogg pthread readline samplerate
-WANTLIB += sndfile sndio vorbis vorbisenc
+WANTLIB += sndfile sndio vorbis vorbisenc opus
 
 MASTER_SITES =		${HOMEPAGE}downloads/
 

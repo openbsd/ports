@@ -1,7 +1,7 @@
 COMMENT=	OpenAL Utility Toolkit
 
 DISTNAME=	freealut-1.1.0
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=  alut                 1.0      # .1.0
 CATEGORIES=	audio
 
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.openal.org/
 # LGPL
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	m openal>=1.0 pthread sndio
+WANTLIB=	${COMPILER_LIBCXX} m openal>=1.0 pthread sndio
 
 MASTER_SITES=	http://connect.creativelabs.com/openal/Downloads/ALUT/
 

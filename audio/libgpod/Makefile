@@ -1,7 +1,7 @@
 COMMENT=	library to access the contents of an iPod
 
 DISTNAME=	libgpod-0.8.0
-REVISION=	13
+REVISION=	14
 
 SHARED_LIBS=	gpod	721.0	# 7.1
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += iconv intl lzma m pcre plist pthread sqlite3 usb-1.0
-WANTLIB += xml2 z
+WANTLIB += xml2 z jpeg png
 
 USE_GMAKE=	Yes
 

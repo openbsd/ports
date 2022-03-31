@@ -1,7 +1,7 @@
 COMMENT =	music collection manager and player
 DISTNAME =	gogglesmm-0.12.7
 EXTRACT_SUFX =	.tar.xz
-REVISION =	13
+REVISION =	14
 CATEGORIES =	audio x11
 
 HOMEPAGE =	https://gogglesmm.github.io/
@@ -10,7 +10,7 @@ HOMEPAGE =	https://gogglesmm.github.io/
 PERMIT_PACKAGE =		Yes
 
 WANTLIB += FOX-1.6 GL GLU X11 c dbus-1 expat intl m sqlite3 ${COMPILER_LIBCXX}
-WANTLIB += tag xine
+WANTLIB += tag xine z
 
 MASTER_SITES =	http://www.linklevel.net/distfiles/
 

@@ -1,7 +1,7 @@
 COMMENT =	GTK2-based MPD client inspired by Rhythmbox
 DISTNAME =	ario-1.5.1
 CATEGORIES =	audio x11
-REVISION =	19
+REVISION =	20
 
 SHARED_LIBS +=	audioscrobbler		0.0 # 0.0
 SHARED_LIBS +=	filesystem		0.0 # 0.0
@@ -27,7 +27,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += soup-2.4 sqlite3 ssl tag tag_c tasn1 unique-1.0
 WANTLIB += unistring xcb xcb-render xcb-shm xml2 z
 WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlidec execinfo
-WANTLIB += fribidi jpeg psl
+WANTLIB += fribidi jpeg psl Xau Xdmcp brotlienc zstd
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ario-player/}
 
