@@ -2,7 +2,7 @@ COMMENT=	GkrellM2 plugin that shows Internet time
 
 V=		1.0.1
 DISTNAME=	gkrellmitime-${V}
-REVISION=	19
+REVISION=	20
 CATEGORIES=	net
 
 EXTRA_WANTLIB=	gthread-2.0

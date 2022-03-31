@@ -2,7 +2,7 @@ COMMENT=	snapshot and background plugin for Gkrellm2
 
 V=		0.4.4
 DISTNAME=	gkrellshoot-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gkrellshoot.sourceforge.net

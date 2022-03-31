@@ -1,7 +1,7 @@
 COMMENT=	phase of the Moon for GkrellM2
 
 DISTNAME=	gkrellmoon-0.6
-REVISION=	20
+REVISION=	21
 CATEGORIES=	astro
 
 FIX_EXTRACT_PERMISSIONS=Yes

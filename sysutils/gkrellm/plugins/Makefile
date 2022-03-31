@@ -1,7 +1,7 @@
      SUBDIR =
-     SUBDIR += aclock 
+     SUBDIR += aclock
      SUBDIR += bgchg
-     SUBDIR += flynn 
+     SUBDIR += flynn
      SUBDIR += itime
      SUBDIR += kam
      SUBDIR += launch
