@@ -15,6 +15,7 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/asciidoctor
 ${GEM_LIB}/gems/${DISTNAME}/data/
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-ar.adoc
+${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-be.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-bg.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-ca.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-cs.adoc
@@ -29,7 +30,7 @@ ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-hu.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-id.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-it.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-ja.adoc
-${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-kr.adoc
+${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-ko.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-nb.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-nl.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-nn.adoc
@@ -41,8 +42,10 @@ ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-ru.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-sr.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-sr_Latn.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-sv.adoc
+${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-th.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-tr.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-uk.adoc
+${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-vi.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-zh_CN.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes-zh_TW.adoc
 ${GEM_LIB}/gems/${DISTNAME}/data/locale/attributes.adoc
