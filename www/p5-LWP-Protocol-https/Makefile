@@ -1,8 +1,7 @@
 COMMENT =	adds support for https to p5-libwww
 
-DISTNAME =	LWP-Protocol-https-6.07
+DISTNAME =	LWP-Protocol-https-6.10
 CATEGORIES =	www net security
-REVISION =	0
 
 MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
