@@ -1,6 +1,7 @@
 COMMENT=	OpenGL extension to GTK+ 2.0 and later
 
 DISTNAME=	gtkglext-1.2.0.20191219
+REVISION=	0
 
 CATEGORIES=	x11 graphics devel
 
@@ -19,7 +20,8 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
-WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z
+WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z Xau Xdmcp jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 # https://gitlab.gnome.org/Archive/gtkglext/merge_requests/1
 GIT_COMMIT=	ad95fbab68398f81d7a5c895276903b0695887e2

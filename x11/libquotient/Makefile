@@ -3,6 +3,7 @@ COMMENT =	Qt5 library for writing cross-platform Matrix clients
 GH_ACCOUNT =	quotient-im
 GH_PROJECT =	libQuotient
 GH_TAGNAME =	0.6.6
+REVISION =	0
 
 SHARED_LIBS +=  Quotient                  0.0 # 0.6
 
@@ -12,7 +13,7 @@ CATEGORIES =	x11 devel
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network
-WANTLIB += QtOlm m
+WANTLIB += QtOlm m olm
 
 MODULES =	devel/cmake \
 		x11/qt5

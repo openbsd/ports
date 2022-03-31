@@ -3,7 +3,7 @@ COMMENT=	Aurora GTK+2 engine
 V=		1.5.1
 DISTNAME=	56438-aurora-${V}
 PKGNAME=	gtk2-aurora-engine-${V}
-REVISION=	10
+REVISION=	11
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -20,7 +20,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread ${COMPILER_LIBCXX} xcb
-WANTLIB += xcb-render xcb-shm z fribidi
+WANTLIB += xcb-render xcb-shm z fribidi jpeg
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -1,6 +1,6 @@
 COMMENT =	C++ API for dbus
 DISTNAME =	libdbus-c++-0.9.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	dbus-c++-1	0.1 \
 		dbus-c++-glib-1	0.0
@@ -11,9 +11,9 @@ HOMEPAGE =	http://dbus-cplusplus.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
-WANTLIB =		${COMPILER_LIBCXX} c dbus-1 expat glib-2.0 iconv \
-			intl m pcre
 
+WANTLIB =		${COMPILER_LIBCXX} c dbus-1 expat glib-2.0 iconv \
+			intl m pcre execinfo
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dbus-cplusplus/}
 

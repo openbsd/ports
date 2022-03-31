@@ -3,7 +3,7 @@ COMMENT =		KDE Oxygen widget theme for GTK+3
 V =			1.3.5
 DISTNAME =		oxygen-gtk3-${V}
 PKGNAME =		gtk3-oxygen-engine-${V}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		x11
 HOMEPAGE =		https://projects.kde.org/projects/playground/artwork/oxygen-gtk/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += X11 atk-1.0 c cairo cairo-gobject fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread
-WANTLIB += ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 
