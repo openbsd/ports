@@ -1,6 +1,6 @@
 COMMENT=		MySQL drivers for the Perl DBI
 DISTNAME=		DBD-mysql-4.050
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		databases
 
@@ -12,8 +12,7 @@ CPAN_AUTHOR=		DVEEDEN
 # Perl
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c crypto m perl pthread ssl z
-WANTLIB+=		lib/mysql/mysqlclient
+WANTLIB=		c crypto m mariadb perl pthread ssl z
 
 BUILD_DEPENDS=		databases/p5-DBI>=1.08 \
 			devel/p5-Devel-CheckLib

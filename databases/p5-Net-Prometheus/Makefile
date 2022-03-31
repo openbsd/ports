@@ -1,12 +1,15 @@
 COMMENT=	export monitoring metrics for prometheus
 
 DISTNAME=	Net-Prometheus-0.11
+REVISION=	0
 CATEGORIES=	databases
 
 MAINTAINER=	Sven <svenfalempin@gmail.com>
 
 # Perl
 PERMIT_PACKAGE=	Yes
+
+WANTLIB += c perl
 
 MODULES=		cpan
 MAKE_ENV=		TEST_POD=1

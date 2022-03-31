@@ -1,6 +1,5 @@
 V =			0.9.0
-REVISION =		3
-REVISION-freetds =	4
+REVISION =		5
 COMMENT-main =		mysql driver for libdbi
 COMMENT-pgsql =		pgsql driver for libdbi
 COMMENT-sqlite3 =	sqlite3 driver for libdbi
@@ -37,7 +36,7 @@ CONFIGURE_ARGS =	--disable-docs \
 			--with-freetds-incdir=${LOCALBASE}/include \
 			--with-freetds-libdir=${LOCALBASE}/lib
 
-WANTLIB-main =		crypto m pthread ssl ${COMPILER_LIBCXX} z mysqlclient dbi
+WANTLIB-main =		crypto dbi m mariadb pthread ssl ${COMPILER_LIBCXX} z
 LIB_DEPENDS-main =	databases/mariadb \
 			databases/libdbi
 RUN_DEPENDS-main =
@@ -54,7 +53,7 @@ RUN_DEPENDS-sqlite3 =
 
 WANTLIB-freetds =	ct dbi iconv m pthread ffi gmp gnutls
 WANTLIB-freetds +=	hogweed idn2 intl nettle p11-kit tasn1
-WANTLIB-freetds +=	unistring
+WANTLIB-freetds +=	unistring brotlidec brotlienc z zstd
 
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi

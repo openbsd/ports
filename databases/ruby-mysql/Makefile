@@ -1,7 +1,7 @@
 COMMENT=	access a MySQL database from Ruby
 
 DISTNAME=	mysql-2.9.1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	databases
 
 HOMEPAGE=	http://tmtm.org/mysql/ruby/
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	databases/mariadb lang/ruby
 
-WANTLIB=	mysqlclient crypto pthread ssl z
+WANTLIB=	mariadb crypto pthread ssl z
 
 LIB_DEPENDS=	databases/mariadb
 

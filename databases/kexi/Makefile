@@ -5,7 +5,7 @@ COMMENT =	visual database applications creator
 
 VERSION =	3.2.0
 DISTNAME =	kexi-${VERSION}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  kexicore3.2               0.0 # 3.2
 SHARED_LIBS +=  kexidatatable3.2          0.0 # 3.2
@@ -39,7 +39,7 @@ WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui KPropertyCore3 KPropertyWidgets3 KReport3
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
-WANTLIB += c glib-2.0 iconv m mariadb
+WANTLIB += c glib-2.0 iconv m mariadb X11
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kexi/src/}
 EXTRACT_SUFX =	.tar.xz

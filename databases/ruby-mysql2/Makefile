@@ -1,6 +1,7 @@
 COMMENT=	modern, simple and very fast MySQL library for Ruby
 
 DISTNAME=	mysql2-0.5.3
+REVISION=	0
 CATEGORIES=	databases
 
 HOMEPAGE=	https://github.com/brianmario/mysql2
@@ -12,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/ruby
 
-WANTLIB=	crypto mysqlclient ssl z
+WANTLIB=	crypto mariadb ssl z
 
 LIB_DEPENDS=	databases/mariadb
 
