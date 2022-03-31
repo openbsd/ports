@@ -6,7 +6,7 @@ VERSION=		2.${MAJOR}.${MINOR}
 
 DISTNAME=		gtk-sharp-${VERSION}
 PKGNAME=		mono-gtk2-${VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -21,7 +21,8 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += xml2 z Xau Xdmcp jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=		https://download.mono-project.com/sources/gtk-sharp2${MAJOR}/
 

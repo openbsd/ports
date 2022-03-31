@@ -1,6 +1,6 @@
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.8.3
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS+=	mef	0.0 # 1.0
 SHARED_LIBS+=	pobl	0.0 # 1.0
@@ -18,7 +18,8 @@ WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += util xcb xcb-render xcb-shm z
+WANTLIB += util xcb xcb-render xcb-shm z Xau Xdmcp jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
 

@@ -2,7 +2,7 @@ COMMENT =	main plugins for compiz
 
 V =		0.8.8
 DISTNAME =	compiz-plugins-main-${V}
-REVISION =	5
+REVISION =	6
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
 
@@ -12,7 +12,9 @@ WANTLIB += fontconfig freetype glapi glib-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz iconv intl jpeg lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-dri2 xcb-glx xcb-render
-WANTLIB += xcb-shm xcb-util xml2 xslt z
+WANTLIB += xcb-shm xcb-util xml2 xslt z Xau Xdmcp fribidi gio-2.0
+WANTLIB += gmodule-2.0
+WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	textproc/intltool
 

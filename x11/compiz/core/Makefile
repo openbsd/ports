@@ -2,7 +2,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8
 DISTNAME =	compiz-${V}
-REVISION =	9
+REVISION =	10
 
 SHARED_LIBS =	decoration	1.0
 
@@ -19,6 +19,8 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread rsvg-2 startup-notification-1 wnck-1 xcb
 WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xml2 xshmfence xslt z
+WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
