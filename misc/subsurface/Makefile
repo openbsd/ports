@@ -4,7 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	divelog program for recreational, tech, and free-divers
 
 VER =		4.8.5
-REVISION =	2
+REVISION =	3
 PKGNAME =	subsurface-${VER}
 DISTNAME =	Subsurface-${VER}
 
@@ -21,6 +21,7 @@ WANTLIB += Qt5Core Qt5Gui Qt5Location Qt5Network Qt5Positioning
 WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets c crypto curl
 WANTLIB += git2 m sqlite3 ssh2 ssl usb-1.0 xml2 xslt zip
+WANTLIB += Qt5PositioningQuick Qt5QmlModels
 
 MASTER_SITES =	https://subsurface-divelog.org/downloads/
 EXTRACT_SUFX =	.tgz

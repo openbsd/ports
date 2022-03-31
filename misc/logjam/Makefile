@@ -1,7 +1,7 @@
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2
-REVISION =	4
+REVISION =	5
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
@@ -17,6 +17,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv idn2 intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl soup-2.4
 WANTLIB += sqlite3 unistring xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xau Xdmcp execinfo jpeg
 
 MASTER_SITES =	${HOMEPAGE}/download/
 EXTRACT_SUFX =	.tar.bz2
