@@ -14,7 +14,7 @@ COMMENT =		GTK+ port of the WebKit rendering engine
 V =			2.36.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 API =			4.0

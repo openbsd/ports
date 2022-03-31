@@ -1,0 +1,13 @@
+https://bugs.webkit.org/show_bug.cgi?id=238494
+
+Index: Source/WebCore/platform/graphics/libwpe/PlatformDisplayLibWPE.cpp
+--- Source/WebCore/platform/graphics/libwpe/PlatformDisplayLibWPE.cpp.orig
++++ Source/WebCore/platform/graphics/libwpe/PlatformDisplayLibWPE.cpp
+@@ -59,7 +59,6 @@ std::unique_ptr<PlatformDisplayLibWPE> PlatformDisplay
+ }
+ 
+ PlatformDisplayLibWPE::PlatformDisplayLibWPE()
+-    : PlatformDisplay(NativeDisplayOwned::No)
+ {
+ #if PLATFORM(GTK)
+     PlatformDisplay::setSharedDisplayForCompositing(*this);
