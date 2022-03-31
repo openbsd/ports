@@ -3,6 +3,7 @@ COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
 CATEGORIES =	devel audio
+REVISION =	0
 
 SHARED_LIBS +=  SDL2_mixer		0.1	# 2.2
 
@@ -14,6 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC SDL2 c m mikmod modplug ogg opus opusfile pthread sndio usbhid
 WANTLIB += vorbis vorbisfile samplerate mpg123
+WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm xcb
 
 MASTER_SITES =	https://www.libsdl.org/projects/SDL_mixer/release/
 

@@ -3,6 +3,7 @@ COMMENT =		C++ parser for the HOCON configuration language
 GH_TAGNAME =		0.3.0
 GH_ACCOUNT =		puppetlabs
 GH_PROJECT =		cpp-hocon
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,6 +18,7 @@ MODULES =		devel/cmake
 WANTLIB =  ${COMPILER_LIBCXX} m
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_system-mt boost_thread-mt
+WANTLIB += boost_filesystem-mt boost_regex-mt
 WANTLIB += leatherman_locale leatherman_util
 
 

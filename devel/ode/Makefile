@@ -2,6 +2,7 @@ COMMENT =	high performance library for simulating rigid body dynamics
 SHARED_LIBS += 	ode	4.0	# 8.0
 DISTNAME = 	ode-0.16.2
 CATEGORIES =	devel
+REVISION =      0
 
 HOMEPAGE =	https://www.ode.org/
 
@@ -15,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += GL GLU X11 X11-xcb Xdamage Xext Xfixes Xxf86vm
 WANTLIB += c drm expat glapi m pthread ${COMPILER_LIBCXX} xcb xcb-dri2
 WANTLIB += xcb-glx xcb-dri3 xcb-present xcb-sync xcb-xfixes xshmfence z
+WANTLIB += Xau Xdmcp xcb-shm
 
 COMPILER =		base-clang ports-gcc base-gcc
 

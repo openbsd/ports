@@ -3,7 +3,7 @@ COMMENT =	SDL2 cross-platform networking library
 DISTNAME =	SDL2_net-${V}
 PKGNAME =	sdl2-net-${V}
 CATEGORIES =	devel net
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	SDL2_net		0.0 # 0.0
 
@@ -13,6 +13,8 @@ HOMEPAGE =	https://www.libsdl.org/projects/SDL_net/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 m pthread sndio usbhid
+WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm
+WANTLIB += samplerate xcb
 
 MASTER_SITES =	https://www.libsdl.org/projects/SDL_net/release/
 

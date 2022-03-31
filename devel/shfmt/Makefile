@@ -4,6 +4,7 @@ MODGO_MODNAME =	mvdan.cc/sh/v3
 MODGO_VERSION =	v3.4.3
 
 DISTNAME =	shfmt-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -13,6 +14,8 @@ HOMEPAGE =	https://github.com/mvdan/sh
 
 # BSD-3
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += c pthread
 
 MODULES =		lang/go
 

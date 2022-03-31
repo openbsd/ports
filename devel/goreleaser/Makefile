@@ -8,11 +8,14 @@ HOMEPAGE =	https://goreleaser.com/
 MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 DISTNAME =	goreleaser-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += c pthread
 
 MODULES =		lang/go
 

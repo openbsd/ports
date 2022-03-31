@@ -3,14 +3,14 @@ COMMENT =	lightweight in-process concurrent programming
 MODPY_EGG_VERSION = 1.1.2
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB} pthread
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} pthread m
 
 MODPY_PI =	Yes
 

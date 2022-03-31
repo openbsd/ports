@@ -2,7 +2,7 @@ COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.7
 GNOME_PROJECT=	giggle
-REVISION=	11
+REVISION=	12
 
 CATEGORIES=	devel x11
 
@@ -19,7 +19,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread vte-2.91 xcb xcb-render xcb-shm xml2 z
-WANTLIB += fribidi ${COMPILER_LIBCXX}
+WANTLIB += fribidi ${COMPILER_LIBCXX} Xau Xdmcp execinfo jpeg
 
 MODULES=	x11/gnome
 

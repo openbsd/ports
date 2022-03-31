@@ -2,7 +2,7 @@ COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.2.0
 DISTNAME =	kreport-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -19,6 +19,9 @@ WANTLIB += ${COMPILER_LIBCXX} KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5WidgetsAddons KPropertyCore3 KPropertyWidgets3 Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml Qt5WebKit
 WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml m marblewidget-qt5
+WANTLIB += Qt5Positioning Qt5QmlModels Qt5Quick Qt5WebChannel
+WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
+
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/kreport/src/}}
 EXTRACT_SUFX =	.tar.xz

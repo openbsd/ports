@@ -5,6 +5,7 @@ GH_ACCOUNT =	universal-ctags
 GH_PROJECT =	ctags
 GH_TAGNAME =	p${V}
 DISTNAME =	universal-ctags-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -12,7 +13,7 @@ HOMEPAGE =	https://ctags.io/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-WANTLIB += c xml2 yaml-0
+WANTLIB += c xml2 yaml-0 pthread
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

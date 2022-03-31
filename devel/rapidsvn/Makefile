@@ -4,7 +4,7 @@ COMMENT=	graphical subversion client
 VERSION=	0.12.1
 DISTNAME=	rapidsvn-${VERSION}
 CATEGORIES=	devel
-REVISION=	14
+REVISION=	15
 
 HOMEPAGE=	http://www.rapidsvn.org/
 
@@ -30,6 +30,7 @@ WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 tiff usbhid wx_baseu-3.0
 WANTLIB += wx_baseu_net-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0
 WANTLIB += wx_gtk3u_core-3.0 wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0
 WANTLIB += wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm z
+WANTLIB += Xau Xdmcp Xss crypto execinfo lzma zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 

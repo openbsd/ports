@@ -1,6 +1,7 @@
 COMMENT=	helper library for networking and security applications
 
 DISTNAME=	gwenhywfar-5.4.0
+REVISION=	0
 
 SHARED_LIBS +=  gwenhywfar           2.1      # 83.0
 SHARED_LIBS +=  gwengui-cpp          1.0      # 83.0
@@ -26,6 +27,7 @@ WANTLIB += icuuc idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-16 pixman-1 png ssl tasn1 unistring
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render
 WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z zstd
+WANTLIB += Xau Xdmcp brotlidec brotlienc jpeg
 
 MASTER_SITES=		https://www.aquamaniac.de/rdm/attachments/download/331/
 

@@ -6,7 +6,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		libglade2-${GNOME_VERSION}
 EPOCH=			0
-REVISION=		18
+REVISION=		19
 
 SHARED_LIBS +=  glade-2.0            1.0      # 1.0
 
@@ -24,7 +24,7 @@ WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += xml2 z Xau Xdmcp jpeg
 
 MODULES=		x11/gnome
 

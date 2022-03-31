@@ -5,11 +5,13 @@ COMMENT =	Python bindings for keystone
 MODPY_EGG_VERSION = ${GH_TAGNAME}
 
 PKGNAME =       py-${DISTNAME}
-REVISION =      0
+REVISION =      1
 
 MODULES =      devel/cmake \
 	       lang/python
 MODPY_SETUPTOOLS =Yes
+
+WANTLIB +=	${COMPILER_LIBCXX} m
 
 WRKDIST =       ${WRKDIR}/${DISTNAME}/bindings/python
 

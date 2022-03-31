@@ -1,7 +1,7 @@
 COMMENT=	small and lightweight IDE
 
 DISTNAME =	geany-1.36
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=  geany                     0.0 # 0.0
 
 CATEGORIES=	devel
@@ -29,7 +29,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm
-WANTLIB += z fribidi
+WANTLIB += z fribidi Xau Xdmcp execinfo jpeg
 
 LIB_DEPENDS=	x11/gtk+3
 RUN_DEPENDS=	devel/desktop-file-utils \

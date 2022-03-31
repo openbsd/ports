@@ -4,7 +4,7 @@ COMMENT=	MPEG video player library with sound support
 DISTNAME=	smpeg2-2.0.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.libsdl.org/projects/smpeg/release/
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	smpeg2	2.0
 
@@ -14,6 +14,8 @@ HOMEPAGE=	http://icculus.org/smpeg/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	SDL2 c m pthread sndio ${COMPILER_LIBCXX} usbhid
+WANTLIB += X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss
+WANTLIB += Xxf86vm samplerate xcb
 
 COMPILER =		base-clang ports-gcc base-gcc
 

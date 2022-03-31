@@ -7,14 +7,16 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.1
 REVISION=		0
-REVISION-python=	1
+REVISION-main=		1
+REVISION-python=	2
+REVISION-ruby=		1
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 PKGNAME-perl=		p5-SVN-${VERSION}
 PKGNAME-python=		py3-subversion-${VERSION}
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-subversion-${VERSION}
 PKGNAME-ap2=		ap2-subversion-${VERSION}
-PKGNAME-gnome-keyring= 	gnome-keyring-subversion-${VERSION}
+PKGNAME-gnome-keyring=	gnome-keyring-subversion-${VERSION}
 
 MODRUBY_REV ?=	2.7
 # Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
@@ -73,8 +75,7 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/gettext,-runtime \
 		security/cyrus-sasl2
 
-WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 db sasl2>=2 serf-1>=1.0 ssl sqlite3 \
-		c crypto
+WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 c db sasl2>=2 serf-1>=1.0 ssl sqlite3
 RUN_DEPENDS-main=
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
@@ -104,7 +105,7 @@ WANTLIB-perl +=	${_lib}>=${SO_VERSION}
 .endfor
 
 WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 \
-			db m sasl2 serf-1>=1.0 \
+			crypto db m sasl2 serf-1>=1.0 \
 			sqlite3 util ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} \
@@ -114,7 +115,7 @@ WANTLIB-python +=	${_lib}>=${SO_VERSION}
 .endfor
 
 WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 \
-			db m sasl2 serf-1>=1.0 sqlite3 \
+			crypto db m sasl2 serf-1>=1.0 sqlite3 \
 			${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \

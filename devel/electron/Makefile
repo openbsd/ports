@@ -13,7 +13,7 @@ COMMENT=		cross-platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
-REVISION=		4
+REVISION=		5
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \
@@ -69,7 +69,7 @@ WANTLIB += harfbuzz
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
-WANTLIB += Xft harfbuzz-subset
+WANTLIB += Xft harfbuzz-subset harfbuzz-gobject jpeg lzo2 tiff
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
