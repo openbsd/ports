@@ -3,7 +3,7 @@ COMMENT =	user-friendly TeX/LaTeX editor for KDE
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://kile.sourceforge.io
 
@@ -19,6 +19,7 @@ WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Script Qt5Widgets Qt5Xml c m poppler poppler-qt5
+WANTLIB += KF5KIOGui KF5SyntaxHighlighting X11
 
 # dlopen(3)
 WANTLIB += Okular5Core

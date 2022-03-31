@@ -4,7 +4,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	editors
 
@@ -27,6 +27,7 @@ WANTLIB += nghttp2 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png raptor2 rasqal rdf rsvg-2 spectre
 WANTLIB += ssl tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt yajl z zstd
+WANTLIB += Xau Xdmcp brotlidec brotlienc
 
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
 

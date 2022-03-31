@@ -7,9 +7,9 @@ GH_ACCOUNT =		TeXworks
 GH_PROJECT =		texworks
 GH_TAGNAME =		release-${V}
 
-REVISION-lua =		1
-REVISION-python =	2
-REVISION-main =		5
+REVISION-lua =		2
+REVISION-python =	3
+REVISION-main =		6
 
 EPOCH =			0
 
@@ -31,12 +31,12 @@ COMPILER =		base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml c hunspell-1.7
-WANTLIB += m poppler poppler-qt5 synctex z
+WANTLIB += m poppler poppler-qt5 synctex z GL
 
 WANTLIB-lua += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} Qt5Concurrent Qt5Core
-WANTLIB-lua += Qt5DBus Qt5Gui Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m
+WANTLIB-lua += Qt5DBus Qt5Gui Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m GL
 
-WANTLIB-python += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB-python += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui GL
 WANTLIB-python += Qt5Script Qt5ScriptTools Qt5Widgets Qt5Xml m ${MODPY_WANTLIB}
 
 MULTI_PACKAGES =	-main -lua -python

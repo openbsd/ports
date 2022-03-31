@@ -2,7 +2,7 @@ COMMENT=		GTK+ subtitles editor
 
 V=			0.54.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics editors
 
@@ -26,7 +26,7 @@ WANTLIB += gstsdp-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gtkmm-3.0 harfbuzz iconv intl lzma m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre pixman-1
 WANTLIB += png sigc-2.0 xcb xcb-render xcb-shm xml++-2.6 xml2
-WANTLIB += z
+WANTLIB += z Xau Xdmcp execinfo jpeg
 
 MASTER_SITES=		https://github.com/kitone/subtitleeditor/releases/download/${V}/
 
