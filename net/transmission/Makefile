@@ -13,6 +13,9 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	https://transmissionbt.com/
 MAINTAINER=	Josh Grosse <josh@jggimi.net>
+REVISION-gtk=	0
+REVISION-main=	0
+REVISION-qt=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -44,7 +47,8 @@ WANTLIB-gtk=	${WANTLIB-common} X11 Xcomposite Xcursor Xdamage \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
 		harfbuzz pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre xcb \
-		xcb-render xcb-shm epoxy nghttp2 iconv
+		xcb-render xcb-shm epoxy nghttp2 iconv \
+		Xau Xdmcp execinfo jpeg ${COMPILER_LIBCXX}
 WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
 		GL Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets \
 		fontconfig freetype $(COMPILER_LIBCXX)

@@ -3,13 +3,14 @@ COMMENT =		ncurses-based Tox client
 GH_ACCOUNT =		Jfreegman
 GH_PROJECT =		toxic
 GH_TAGNAME =		v0.11.3
+REVISION =		0
 
 CATEGORIES =		net
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += alut c config curses curl m openal png pthread
+WANTLIB += alut c config curses curl m openal png pthread intl
 WANTLIB += qrencode toxcore util z ${MODPY_WANTLIB}
 
 LIB_DEPENDS =		audio/freealut \
@@ -34,7 +35,7 @@ FLAVOR ?=
 MAKE_ENV +=		DISABLE_DESKTOP_NOTIFY=1 \
 			DISABLE_X11=1
 .else
-WANTLIB +=		intl X11 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB +=		X11 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB +=		notify vpx
 LIB_DEPENDS +=		devel/libnotify
 

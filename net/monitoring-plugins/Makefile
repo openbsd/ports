@@ -10,7 +10,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.3.1
-REVISION=	2
+REVISION=	3
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -107,6 +107,7 @@ RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
 LIB_DEPENDS-radius=	net/radcli
 WANTLIB-radius+=	${WANTLIB} gmp gnutls hogweed idn2 nettle
 WANTLIB-radius+=	p11-kit radcli tasn1 unistring
+WANTLIB-radius+=	brotlidec brotlienc z zstd
 
 # MYSQL
 .if !${BUILD_PACKAGES:M-mysql}

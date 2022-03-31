@@ -1,6 +1,6 @@
 COMMENT=	utility to create virtual hosts on a network
 DISTNAME=	honeyd-1.5c
-REVISION=	13
+REVISION=	14
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -10,7 +10,7 @@ HOMEPAGE=	http://www.honeyd.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c edit event m curses pcap pthread util z
+WANTLIB +=	c edit event m curses pcap pthread util z iconv intl
 WANTLIB +=	${MODPY_WANTLIB} dnet>=1 pcre>=1 eventextra>=1
 
 .if ${MACHINE_ARCH} == "sparc64"

@@ -1,7 +1,7 @@
 COMMENT=	tool to mirror contents of HTTP and FTP servers
 
 DISTNAME=	pavuk-0.9.35
-REVISION=	12
+REVISION=	13
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pavuk.org/
@@ -32,7 +32,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xmu Xrandr Xrender atk-1.0 cairo
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0 harfbuzz
 .else
 CONFIGURE_ARGS+= --disable-gtk
 .endif

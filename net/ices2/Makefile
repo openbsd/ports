@@ -2,7 +2,7 @@ COMMENT=	icecast source for streaming Ogg Vorbis
 
 DISTNAME=	ices-2.0.2
 CATEGORIES=	net audio
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	https://icecast.org/ices/
 
@@ -10,7 +10,7 @@ HOMEPAGE=	https://icecast.org/ices/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv lzma m ogg pthread shout sndio speex theora vorbis
-WANTLIB += vorbisenc xml2 z
+WANTLIB += vorbisenc xml2 z crypto ssl
 
 MASTER_SITES=	https://downloads.xiph.org/releases/ices/
 

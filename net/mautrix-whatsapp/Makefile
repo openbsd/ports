@@ -4,6 +4,7 @@ MODGO_VERSION =	v0.3.0
 MODGO_MODNAME =	maunium.net/go/mautrix-whatsapp
 
 DISTNAME =	mautrix-whatsapp-${MODGO_VERSION}
+REVISION =	0
 
 EPOCH =		0
 
@@ -12,13 +13,14 @@ CATEGORIES =	net
 HOMEPAGE =	https://github.com/tulir/mautrix-whatsapp
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
-WANTLIB +=	c m pthread
-
-BUILD_DEPENDS =	devel/olm
-RUN_DEPENDS =	devel/olm
 
 # GNU Affero General Public License v3.0
 PERMIT_PACKAGE =	Yes
+
+WANTLIB +=	${COMPILER_LIBCXX} c m pthread olm
+
+BUILD_DEPENDS =	devel/olm
+RUN_DEPENDS =	devel/olm
 
 MODULES =	lang/go
 

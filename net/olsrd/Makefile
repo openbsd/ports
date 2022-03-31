@@ -6,8 +6,8 @@ DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
 
-REVISION-main=		3
-REVISION-gui=		2
+REVISION-main=		4
+REVISION-gui=		3
 
 CATEGORIES=	net
 
@@ -30,7 +30,7 @@ WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gui += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB-gui += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB-gui += gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gui += z
+WANTLIB-gui += z harfbuzz
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes

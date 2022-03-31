@@ -5,7 +5,7 @@ COMMENT =		P2P payment system
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
 GH_TAGNAME =		v0.18.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  bitcoinconsensus          2.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
@@ -22,7 +22,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_filesystem boost_system boost_thread-mt
 WANTLIB += c crypto db_cxx event_core event_extra event_pthreads
-WANTLIB += m sodium ssl zmq zstd
+WANTLIB += m sodium ssl zmq zstd boost_chrono-mt boost_unit_test_framework-mt
 
 LIB_DEPENDS =		archivers/zstd \
 			databases/db/v4 \

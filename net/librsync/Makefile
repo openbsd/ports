@@ -2,6 +2,7 @@ COMMENT=	library for delta compression of streams
 
 V =		2.3.2
 DISTNAME =	librsync-${V}
+REVISION =	0
 
 SHARED_LIBS =	rsync	5.1
 
@@ -12,7 +13,7 @@ HOMEPAGE=	https://librsync.github.io/
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += b2 c popt
+WANTLIB += b2 c popt iconv intl
 
 MASTER_SITES =	https://github.com/librsync/librsync/releases/download/v${V}/
 

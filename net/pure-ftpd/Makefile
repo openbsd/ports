@@ -1,7 +1,7 @@
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
 DISTNAME=	pure-ftpd-1.0.49
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	https://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -42,7 +42,7 @@ CONF_FILE+= pureftpd-ldap.conf
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB +=	lib/mysql/mysqlclient m z
+WANTLIB +=	mariadb m z
 CONFIGURE_ARGS+= --with-mysql="${LOCALBASE}"
 DOCS+=	README.MySQL
 CONF_FILE+= pureftpd-mysql.conf

@@ -2,7 +2,7 @@ COMMENT =		authoritative DNS server
 
 # update net/py-libknot when updating this
 DISTNAME =		knot-3.1.6
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	dnssec               3.1      # .8.0
 SHARED_LIBS +=	knot                 7.3      # .12.0
@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c curses edit gmp gnutls hogweed iconv idn2 intl
 WANTLIB += lmdb m nettle nghttp2 p11-kit pthread tasn1 unistring urcu
-WANTLIB += urcu-common
+WANTLIB += urcu-common brotlidec brotlienc z zstd
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz

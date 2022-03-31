@@ -4,7 +4,7 @@ GH_ACCOUNT =		dm0-
 GH_PROJECT =		window_merge
 GH_COMMIT =		b4811ae1807a6c124fb06a717951bb2541be19f7
 CATEGORIES =		net
-REVISION =		2
+REVISION =		3
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -15,7 +15,8 @@ WANTLIB += freetype fribidi gadu gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv idn intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread purple
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z Xau Xdmcp ${COMPILER_LIBCXX}
+WANTLIB += execinfo jpeg
 
 BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

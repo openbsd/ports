@@ -3,7 +3,7 @@ COMMENT =	access web services that claim to be RESTful
 GNOME_VERSION =	0.8.1
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net devel
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += iconv intl lzma m pcre pthread soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 xml2 z idn2 psl unistring
+WANTLIB += sqlite3 xml2 z idn2 psl unistring brotlicommon brotlidec
 
 MODULES =		x11/gnome
 MODGNOME_TOOLS +=	gobject-introspection

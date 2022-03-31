@@ -3,7 +3,7 @@ PORTROACH=	limit:^2
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -13,7 +13,7 @@ HOMEPAGE=	http://netatalk.sourceforge.net/
 # GPLv2+ and BSD or similar
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto db gcrypt gpg-error iconv intl rpcsvc
+WANTLIB += c crypto db gcrypt gpg-error iconv intl rpcsvc execinfo
 
 LIB_DEPENDS=	databases/db/v4 \
 		security/libgcrypt 

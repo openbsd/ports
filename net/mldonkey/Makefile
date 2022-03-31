@@ -2,7 +2,7 @@ COMMENT =	e-donkey client
 
 VER =		3.1.6
 DISTNAME =	mldonkey-${VER}
-REVISION =	11
+REVISION =	12
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -15,7 +15,7 @@ WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo charset fontconfig
 WANTLIB += freetype fribidi gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 iconv intl jpeg m magic
 WANTLIB += miniupnpc natpmp pango-1.0 pangocairo-1.0 pangoft2-1.0 png
-WANTLIB += pthread rsvg-2 ${COMPILER_LIBCXX} tiff webp z
+WANTLIB += pthread rsvg-2 ${COMPILER_LIBCXX} tiff webp z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 

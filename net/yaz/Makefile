@@ -1,6 +1,7 @@
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-5.31.1
 CATEGORIES=		net
+REVISION=		0
 
 SHARED_LIBS+=		yaz		1.2	# 5.0
 SHARED_LIBS+=		yaz_icu		1.3	# 5.0
@@ -13,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c iconv intl m curses pthread readline z \
 			xml2 gpg-error gcrypt exslt xslt icudata \
-			icui18n icuuc lzma ${COMPILER_LIBCXX} 
+			icui18n icuuc lzma execinfo ${COMPILER_LIBCXX} 
 
 COMPILER =		base-clang ports-gcc base-gcc
 
