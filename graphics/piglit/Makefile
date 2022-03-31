@@ -6,7 +6,7 @@ DISTNAME =	piglit-20210128
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
 GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	graphics
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm drm_intel gbm
 WANTLIB += m xcb xcb-dri2 z
-WANTLIB += png waffle-1
+WANTLIB += png waffle-1 vulkan
 
 COMPILER =		base-clang ports-gcc base-gcc
 

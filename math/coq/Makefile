@@ -4,7 +4,7 @@ V=			8.13.2
 GH_ACCOUNT =		coq
 GH_PROJECT =		coq
 GH_TAGNAME =		V${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=		math
 HOMEPAGE=		https://coq.inria.fr/
@@ -15,7 +15,7 @@ MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += atk-1.0 c cairo cairo-gobject fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtksourceview-3.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp gobject-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz intl m pango-1.0 pangocairo-1.0 pthread z
 
 MODULES=	lang/ocaml
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	x11/lablgtk3 \
 		shells/bash \
 		sysutils/findlib
 RUN_DEPENDS=	x11/lablgtk3
+LIB_DEPENDS=	devel/gmp
 
 DESTDIRNAME=	COQINSTALLPREFIX
 

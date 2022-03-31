@@ -1,6 +1,7 @@
 COMMENT =		module for compiling and processing lexical rules
 
 V =			0.2.7
+REVISION =		0
 DISTNAME =		apertium-lex-tools-$V
 
 CATEGORIES =		textproc
@@ -16,7 +17,8 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 
-#WANTLIB += apertium3-3.7 c lttoolbox3-3.5 m pthread ${COMPILER_LIBCXX} xml2 z
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += apertium3-3.7 c lttoolbox3-3.5 m xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

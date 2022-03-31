@@ -4,12 +4,14 @@ MODPY_EGG_VERSION =	1.2.6
 DISTNAME =		cvxopt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += amd blas cholmod colamd lapack m pthread suitesparseconfig umfpack
 
 MODULES =		lang/python
 

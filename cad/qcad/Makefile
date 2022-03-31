@@ -3,7 +3,7 @@ COMMENT =	Qt-based 2D CAD system
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
 GH_TAGNAME =	v3.24.3.0
-REVISION =	1
+REVISION =	2
 
 SO_VERSION =	1.0
 QCAD_LIBS =	qcadcore \
@@ -32,7 +32,7 @@ PERMIT_PACKAGE =Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5Gui Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport
 WANTLIB += Qt5Script Qt5ScriptTools Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += Qt5XmlPatterns c cups jpeg m sqlite3 tiff z
+WANTLIB += Qt5XmlPatterns c cups jpeg m sqlite3 stemmer tiff z
 
 MODULES =	devel/qmake \
 		x11/qt5
@@ -40,6 +40,7 @@ MODULES =	devel/qmake \
 BUILD_DEPENDS =	x11/qt5/qtimageformats
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	print/cups,-libs \
+		textproc/libstemmer \
 		x11/qt5/qtscript \
 		x11/qt5/qtsvg \
 		x11/qt5/qttools \

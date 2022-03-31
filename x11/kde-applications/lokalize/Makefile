@@ -1,5 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
+REVISION =	0
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
@@ -10,6 +11,16 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
+
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Notifications KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql Qt5Widgets
+WANTLIB += Qt5Xml X11 c hunspell-1.7 m
 
 MODULES +=	lang/python
 

@@ -5,13 +5,15 @@ GH_ACCOUNT =	baresip
 GH_PROJECT =	baresip
 GH_TAGNAME =	v1.1.0
 REVISION-gtk =	0
+REVISION-main =	0
+
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
 
 WANTLIB-main += X11 Xext avcodec avdevice avfilter avformat avutil
 WANTLIB-main += c gsm m mosquitto mp3lame mpg123 opus png postproc
 WANTLIB-main += pthread re rem sndfile sndio spandsp speexdsp swresample
-WANTLIB-main += swscale twolame v4l2 vpx
+WANTLIB-main += swscale twolame v4l2 vpx opencore-amrnb
 
 WANTLIB-gtk += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk += glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
@@ -22,6 +24,7 @@ BUILD_DEPENDS =		telephony/libzrtp>=0.20170512
 LIB_DEPENDS-main =	audio/gsm \
 			audio/libsndfile \
 			audio/mpg123 \
+			audio/opencore-amr \
 			audio/opus \
 			audio/twolame \
 			graphics/ffmpeg \

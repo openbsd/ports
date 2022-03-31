@@ -2,7 +2,7 @@ COMMENT=	Qt widgets for technical applications
 
 VERSION =	6.1.6
 DISTNAME =	qwt-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qwt${QTLIBSUFFIX} 7.1
 
@@ -17,8 +17,8 @@ EXTRACT_SUFX =	.tar.bz2
 # http://qwt.sourceforge.net/qwtlicense.html
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml
-WANTLIB += m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += Qt5Concurrent Qt5OpenGL Qt5PrintSupport Qt5Svg m
 
 MODULES =	x11/qt5 \
 		devel/qmake
@@ -29,6 +29,7 @@ NO_TEST =	Yes
 USE_GMAKE =	Yes
 
 BUILD_DEPENDS =	x11/qt5/qtsvg
+LIB_DEPENDS =	x11/qt5/qttools,-main
 RUN_DEPENDS =	x11/qt5/qtsvg
 
 QTVER =		qt5

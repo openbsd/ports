@@ -12,7 +12,7 @@ DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
-REVISION-main=		1
+REVISION-main=		2
 REVISION-qt=		3
 CATEGORIES=		geo
 
@@ -40,8 +40,8 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			devel/libusb-compat \
 			devel/shapelib
 
-cWANTLIB = 		c m pthread
-WANTLIB-main += shp>=1 usb z ${cWANTLIB} ${COMPILER_LIBCXX}
+cWANTLIB =		c m pthread
+WANTLIB-main += Qt5Core shp>=1 usb z ${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-tk =
 WANTLIB-qt += ${COMPILER_LIBCXX} ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Network
 WANTLIB-qt += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel

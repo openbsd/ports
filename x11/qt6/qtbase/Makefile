@@ -6,6 +6,7 @@ COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
 REVISION =		4
+REVISION-main =		5
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
@@ -33,7 +34,7 @@ SHARED_LIBS +=  Qt6OpenGLWidgets             0.0 # 6.0
 
 WANTLIB-global =
 
-WANTLIB-main += ${COMPILER_LIBCXX} EGL GL X11 atk-1.0 brotlidec c cairo
+WANTLIB-main += ${COMPILER_LIBCXX} EGL GL X11 atk-1.0 b2 brotlidec c cairo
 WANTLIB-main += cairo-gobject crypto cups dbus-1 double-conversion
 WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
@@ -61,6 +62,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			graphics/gdk-pixbuf2 \
 			math/double-conversion \
 			print/cups,-libs \
+			security/libb2 \
 			textproc/icu4c \
 			x11/dbus \
 			x11/gtk+3
