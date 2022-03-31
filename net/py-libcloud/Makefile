@@ -1,6 +1,6 @@
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	3.5.0
+MODPY_EGG_VERSION=	3.5.1
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
 
