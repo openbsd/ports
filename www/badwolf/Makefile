@@ -1,5 +1,6 @@
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
 DISTNAME =	badwolf-1.2.2
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf
@@ -16,7 +17,7 @@ COMPILER_LANGS =	c
 
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 harfbuzz intl javascriptcoregtk-4.0 pango-1.0
-WANTLIB += pangocairo-1.0 soup-2.4 webkit2gtk-4.0 xml2
+WANTLIB += pangocairo-1.0 soup-2.4 webkit2gtk-4.0 xml2 gmodule-2.0 pthread
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		textproc/libxml

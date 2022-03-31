@@ -11,6 +11,7 @@ MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
+REVISION-main =		0
 PKGNAME-lightning =	lightning-seamonkey-5.8.11.1
 EPOCH-lightning =	0
 
@@ -54,7 +55,7 @@ CONFIGURE_ENV +=	ac_cv_needs_atomic=no
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
-WANTLIB += Xcursor Xi harfbuzz
+WANTLIB += Xcursor Xi harfbuzz Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=
 
