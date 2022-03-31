@@ -1837,7 +1837,7 @@ share/libgdx/1.9.11/com/badlogic/gdx/utils/viewport/ScalingViewport.class
 share/libgdx/1.9.11/com/badlogic/gdx/utils/viewport/ScreenViewport.class
 share/libgdx/1.9.11/com/badlogic/gdx/utils/viewport/StretchViewport.class
 share/libgdx/1.9.11/com/badlogic/gdx/utils/viewport/Viewport.class
-@so share/libgdx/1.9.11/libgdx-box2d${M_ARCH}.so
-@so share/libgdx/1.9.11/libgdx-controllers-desktop${M_ARCH}.so
-@so share/libgdx/1.9.11/libgdx-freetype${M_ARCH}.so
-@so share/libgdx/1.9.11/libgdx${M_ARCH}.so
+@so share/libgdx/1.9.11/libgdx-box2d${M_ARCH}
+@so share/libgdx/1.9.11/libgdx-controllers-desktop${M_ARCH}
+@so share/libgdx/1.9.11/libgdx-freetype${M_ARCH}
+@so share/libgdx/1.9.11/libgdx${M_ARCH}

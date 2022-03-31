@@ -2,9 +2,9 @@ COMMENT ?=		java game development framework
 PKGNAME ?=		libgdx-${VERSION}
 
 .if ${MACHINE_ARCH} == "i386"
-M_ARCH ?=		""
+M_ARCH ?=		.so
 .elif ${MACHINE_ARCH} == "amd64"
-M_ARCH ?=		64
+M_ARCH ?=		64.so
 .endif
 
 GH_ACCOUNT ?=		libgdx
@@ -92,16 +92,16 @@ do-build:
 
 do-install:
 	mkdir -p ${PREFIX}/share/libgdx/${VERSION}
-	${INSTALL_DATA} ${WRKBUILD}/gdx/libs/openbsd/libgdx${M_ARCH}.so \
+	${INSTALL_DATA} ${WRKBUILD}/gdx/libs/openbsd/libgdx${M_ARCH} \
 		${PREFIX}/share/libgdx/${VERSION}/
 	${INSTALL_DATA} \
-		${WRKBUILD}/extensions/gdx-box2d/gdx-box2d/libs/openbsd/libgdx-box2d${M_ARCH}.so \
+		${WRKBUILD}/extensions/gdx-box2d/gdx-box2d/libs/openbsd/libgdx-box2d${M_ARCH} \
 		${PREFIX}/share/libgdx/${VERSION}/
 	${INSTALL_DATA} \
-		${WRKBUILD}/extensions/gdx-freetype/libs/openbsd/libgdx-freetype${M_ARCH}.so \
+		${WRKBUILD}/extensions/gdx-freetype/libs/openbsd/libgdx-freetype${M_ARCH} \
 		${PREFIX}/share/libgdx/${VERSION}/
 	${INSTALL_DATA} \
-		${WRKBUILD}/extensions/gdx-controllers/gdx-controllers-desktop/libs/openbsd/libgdx-controllers-desktop${M_ARCH}.so \
+		${WRKBUILD}/extensions/gdx-controllers/gdx-controllers-desktop/libs/openbsd/libgdx-controllers-desktop${M_ARCH} \
 		${PREFIX}/share/libgdx/${VERSION}/
 	cp -R   ${WRKBUILD}/gdx/target/classes/com \
 		${WRKBUILD}/backends/gdx-backend-lwjgl/target/classes/com \
