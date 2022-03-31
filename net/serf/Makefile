@@ -1,5 +1,6 @@
 COMMENT =		high performance HTTP client library
 DISTNAME =		serf-1.3.9
+REVISION =		0
 SHARED_LIBS = 		serf-1                    1.0 # 1.3.0
 CATEGORIES =		net
 HOMEPAGE =		https://serf.apache.org/

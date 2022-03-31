@@ -4,6 +4,7 @@ COMMENT =	Arm compute library
 
 V = 		22.02
 PKGNAME =	arm-compute-library-${V}
+REVISION =	0
 
 GH_ACCOUNT =	ARM-software
 GH_PROJECT =	ComputeLibrary
