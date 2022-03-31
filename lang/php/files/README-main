@@ -10,7 +10,7 @@ case with simple "static" files) or pass the request on to other
 software for handling. The web server must be configured to handle
 this - different methods are used depending on the server software.
 
-FastCGI: httpd(8), nginx, lighttpd, etc
+FastCGI: httpd(8), NGINX, lighttpd, etc
 ---------------------------------------
 Most modern web servers support FastCGI which is a simple method of
 interfacing to many kinds of application server. This is usually the
@@ -26,7 +26,7 @@ and start it at runtime:
     rcctl enable php${SV}_fpm
     rcctl start php${SV}_fpm
 
-php-fpm has its own configuration file, ${SYSCONFDIR}/php-fpm.conf
+php-fpm has its own configuration file, by default ${SYSCONFDIR}/php-fpm.conf.
 This controls how the php processes are started. The default settings
 are suitable for many standard cases, but can be changed to provide
 greater control for sites handling high loads or to provide
@@ -34,14 +34,28 @@ separation between different php applications by running them
 under different uids or in individual chroot(2) jails.
 
 Your HTTP server needs to be configured to pass requests for PHP
-resources to php-fpm. See the documentation and sample configuration.
-For nginx, see the "FastCGI server listening on unix socket" example
-provided in ${LOCALBASE}/share/nginx/nginx.conf
+resources to php-fpm, usually done by unix socket. See the documentation
+and sample configuration. For nginx, see the "FastCGI server listening
+on unix socket" example provided in ${LOCALBASE}/share/nginx/nginx.conf.
 For OpenBSD base's httpd(8) you can use a configuration fragment like:
 
 	location "*.php" {
 		fastcgi socket "/run/php-fpm.sock"
 	}
+
+If you need to run multiple versions of PHP on one machine, create
+another configuration file (e.g. php-fpm-X.Y.conf) and set it to use a
+different socket path. Configure rc.d(8) to pass the parameter when
+starting php-fpm, for example
+
+    rcctl set phpXY_fpm flags -y /etc/php-fpm-X.Y.conf
+
+NGINX Unit
+----------
+NGINX Unit (https://unit.nginx.org/) is a standalone application server,
+distinct to the standard NGINX web server. It uses its own compiled module
+to provide PHP support. Install the relevant package (e.g.  unit-php${SV})
+and follow the usual documentation for Unit.
 
 Apache httpd
 ------------
