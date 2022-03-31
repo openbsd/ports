@@ -3,7 +3,7 @@ COMMENT=		file manager for the MATE desktop
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
 MATE_PROJECT=		caja
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -18,7 +18,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl lzma m mate-desktop-2 notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

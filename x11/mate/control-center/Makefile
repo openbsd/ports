@@ -4,7 +4,7 @@ SHARED_LIBS +=  mate-slab                 0.0 # 0.0
 SHARED_LIBS +=  mate-window-settings      1.0 # 1.0
 
 MATE_PROJECT=		mate-control-center
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -22,7 +22,7 @@ WANTLIB += mate-desktop-2 mate-menu matekbd matekbdui ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
 WANTLIB += rsvg-2 startup-notification-1 vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xcb-util xkbfile xklavier xml2 z
-WANTLIB += execinfo jpeg
+WANTLIB += execinfo jpeg Xau Xdmcp
 
 MODULES=		x11/gnome
 

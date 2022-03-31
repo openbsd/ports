@@ -2,7 +2,7 @@ COMMENT=		MATE power manager
 
 MATE_PROJECT=		mate-power-manager
 
-REVISION=		0
+REVISION=		1
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -16,7 +16,7 @@ WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl ltdl m mate-panel-applet-4 notify ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += upower-glib vorbis vorbisfile xcb xcb-render xcb-shm z
-WANTLIB += ${COMPILER_LIBCXX} jpeg secret-1
+WANTLIB += ${COMPILER_LIBCXX} jpeg secret-1 Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,4 +1,5 @@
 COMMENT=		MATE terminal
+REVISION=		0
 
 MATE_PROJECT=		mate-terminal
 
@@ -13,7 +14,8 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pcre2-8 pixman-1 png pthread tasn1
 WANTLIB += unistring vte-2.91 xcb xcb-render xcb-shm z
-WANTLIB += ${COMPILER_LIBCXX} execinfo icudata icuuc jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo icudata icuuc jpeg Xau Xdmcp
+WANTLIB += brotlidec brotlienc zstd
 
 MODULES=		devel/dconf \
 			x11/gnome

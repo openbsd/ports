@@ -1,6 +1,7 @@
 USE_WXNEEDED=		Yes
 
 COMMENT=		image viewer for the MATE desktop
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -22,7 +23,7 @@ WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += peas-1.0 peas-gtk-1.0 rsvg-2 startup-notification-1
 WANTLIB += SM Xt bz2 jasper openjp2 tiff webp webpdemux webpmux
 WANTLIB += zstd MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += djvulibre jbig raw_r
+WANTLIB += djvulibre jbig raw_r Xau Xdmcp
 WANTLIB += ${COMPILER_LIBCXX} aom dav1d de265 execinfo heif x265
 
 MODULES=		devel/dconf \

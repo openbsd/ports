@@ -1,4 +1,5 @@
 COMMENT=		MATE keyboard configuration library
+REVISION=		0
 
 MATE_PROJECT=		libmatekbd
 
@@ -17,7 +18,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-3 harfbuzz iconv intl lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread xcb
 WANTLIB += xcb-render xcb-shm xkbfile xkbfile xklavier xml2 z
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

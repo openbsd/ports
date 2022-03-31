@@ -1,4 +1,5 @@
 COMMENT=		panel component for MATE
+REVISION=		0
 
 SHARED_LIBS +=  mate-panel-applet-4       1.1 # 1.1
 
@@ -18,7 +19,7 @@ WANTLIB += harfbuzz iconv idn2 intl lzma m mate-desktop-2 mate-menu
 WANTLIB += mateweather pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread soup-2.4 startup-notification-1
 WANTLIB += unistring wnck-3 xcb xcb-render xcb-shm xcb-util xml2 z
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,4 +1,5 @@
 COMMENT=		extensions for Caja, the MATE file manager
+REVISION=		0
 
 MATE_PROJECT=		caja-extensions
 
@@ -16,7 +17,7 @@ WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
 WANTLIB += startup-notification-1 unistring xcb xcb-render xcb-shm
 WANTLIB += xcb-util xml2 z
 WANTLIB += brotlicommon brotlidec
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

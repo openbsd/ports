@@ -1,4 +1,5 @@
 COMMENT=		MATE support utilities
+REVISION=		0
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 
@@ -17,7 +18,7 @@ WANTLIB += canberra-gtk3 canberra gdk-3 graphite2 gtk-3
 WANTLIB += gtop-2.0 harfbuzz ltdl mate-panel-applet-4 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 WANTLIB += fribidi
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

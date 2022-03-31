@@ -1,4 +1,5 @@
 COMMENT=		MATE notification daemon
+REVISION=		0
 
 MATE_PROJECT=		mate-notification-daemon
 
@@ -15,7 +16,7 @@ WANTLIB += pixman-1 png pthread vorbis vorbisfile wnck-3 xcb xcb-render
 WANTLIB += xcb-shm z
 WANTLIB += ${COMPILER_LIBCXX} X11-xcb dconf execinfo jpeg lzma
 WANTLIB += startup-notification-1 xcb-util xml2
-WANTLIB += mate-desktop-2 mate-panel-applet-4 
+WANTLIB += mate-desktop-2 mate-panel-applet-4  Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

@@ -1,4 +1,5 @@
 COMMENT=		MATE system monitor
+REVISION=		0
 
 MATE_PROJECT=		mate-system-monitor
 
@@ -17,7 +18,7 @@ WANTLIB += gtk-3 gtkmm-3.0 gtop-2.0 harfbuzz iconv intl kvm lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png rsvg-2 sigc-2.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 z
-WANTLIB += execinfo jpeg
+WANTLIB += execinfo jpeg Xdmcp
 
 COMPILER =		base-clang ports-gcc base-gcc
 

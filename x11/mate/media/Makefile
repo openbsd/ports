@@ -1,4 +1,5 @@
 COMMENT=		media tools for the MATE desktop
+REVISION=		0
 
 MATE_PROJECT=		mate-media
 
@@ -18,7 +19,7 @@ WANTLIB += dconf lzma mate-desktop-2 matemixer xml2
 WANTLIB += X11-xcb startup-notification-1 xcb-util
 WANTLIB += fribidi
 WANTLIB += mate-panel-applet-4
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 
 MODULES=		devel/dconf \
 			x11/gnome

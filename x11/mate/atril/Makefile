@@ -1,6 +1,7 @@
 USE_WXNEEDED=		Yes
 
 COMMENT=		document viewer for the MATE desktop
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -34,7 +35,7 @@ WANTLIB += Xau Xdmcp b2 charset
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
 WANTLIB += woff2dec
 WANTLIB += xcb-dri3 xcb-present xcb-sync xshmfence zstd
-WANTLIB += execinfo gstallocators-1.0
+WANTLIB += execinfo gstallocators-1.0 brotlienc
 
 COMPILER =		base-clang ports-gcc base-gcc
 
