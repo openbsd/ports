@@ -2,7 +2,7 @@ COMMENT-term=	cli client for Intel AMT serial-over-lan
 COMMENT-main=	client and tools for Intel AMT serial-over-lan
 
 V=		1.6
-REVISION=	0
+REVISION=	1
 DISTNAME=	amtterm-$V
 PKGNAME-term=	amtterm-cli-$V
 MULTI_PACKAGES=	-main -term
@@ -14,7 +14,7 @@ HOMEPAGE=	https://www.kraxel.org/blog/linux/amtterm/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB-term += c
+WANTLIB-term += c crypto ssl
 WANTLIB += atk-1.0 c cairo cairo-gobject crypto gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
 WANTLIB += pangocairo-1.0 ssl vte-2.91

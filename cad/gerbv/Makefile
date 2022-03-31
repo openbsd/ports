@@ -1,6 +1,6 @@
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.7.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		cad graphics
 
 HOMEPAGE=		http://gerbv.geda-project.org/
@@ -17,7 +17,7 @@ WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z Xau Xdmcp jpeg
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gerbv/}
 

@@ -1,7 +1,7 @@
 COMMENT=	gtk PSK31 send and receive
 
 DISTNAME=	gpsk31-0.3
-REVISION=	18
+REVISION=	19
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://www.qsl.net/pg4i/linux/gpsk31.html
@@ -18,7 +18,7 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gthread-2.0
 WANTLIB += gobject-2.0 iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread sndio ${COMPILER_LIBCXX} xcb xcb-render
 WANTLIB += z gtk-x11-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 GL
-WANTLIB += xcb-shm
+WANTLIB += xcb-shm harfbuzz
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
 
