@@ -1401,6 +1401,7 @@ lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationcriteriapage
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationdialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage-mobile.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/validationhelptabpage.ui
+lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/warnautocorrect.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/xmlsourcedialog.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/zoombox.ui
 lib/libreoffice/share/config/soffice.cfg/modules/scalc/ui/ztestdialog.ui

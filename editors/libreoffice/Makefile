@@ -24,7 +24,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.3
-VERSION=	${BV}.1.3
+VERSION=	${BV}.2.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -97,7 +97,7 @@ DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.133.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
-DISTFILES += language-subtag-registry-2021-08-06.tar.bz2:0
+DISTFILES += language-subtag-registry-2021-12-29.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
 DISTFILES += libcdr-0.1.7.tar.xz:0
 DISTFILES += libcmis-0.5.2.tar.xz:0
