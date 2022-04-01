@@ -2,6 +2,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
 V=		3.0.17.3
+REVISION-main=	0
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -25,12 +26,12 @@ WANTLIB-main=	EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras \
 		SDL SDL_image SM X11 X11-xcb Xau Xcomposite Xcursor \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
 		Xxf86vm aom archive ass atk-1.0 atk-bridge-2.0 avahi-client \
-		avahi-common avcodec avformat avutil b2 bluray bz2 \
-		c cairo cairo-gobject cddb charset crypto dav1d double-conversion \
-		drm dvbpsi dvdnav dvdread ebml epoxy execinfo expat \
-		ffi fontconfig freetype fribidi gbm gcrypt gdk-3 gdk_pixbuf-2.0 \
-		gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 \
-		gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz \
+		avahi-common avcodec avformat avutil b2 bluray brotlidec \
+		brotlienc bz2 c cairo cairo-gobject cddb charset crypto dav1d \
+		double-conversion drm dvbpsi dvdnav dvdread ebml epoxy execinfo \
+		expat ffi fontconfig freetype fribidi gbm gcrypt gdk-3 \
+		gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0 gmodule-2.0 gmp gnutls \
+		gobject-2.0 gpg-error graphite2 gsm gthread-2.0 gtk-3 harfbuzz \
 		hogweed icudata icui18n icuuc idn2 jpeg lcms2 lz4 lzma \
 		matroska mp3lame nettle nfs notify ogg opus p11-kit \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pcre2-16 \

@@ -6,6 +6,8 @@ DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 FULLPKGNAME-lang=	windowmaker-lang-${V}
 
+REVISION-main=		0
+
 SHARED_LIBS +=  WINGs                     1.0 # 4.0
 SHARED_LIBS +=  WMaker                    0.0 # 1.1
 SHARED_LIBS +=  WUtil                     0.0 # 5.0
@@ -22,7 +24,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xmu Xpm Xrandr Xrender
 WANTLIB += Xt c expat fontconfig freetype gif iconv intl jpeg
-WANTLIB += kvm m png pthread tiff xcb z
+WANTLIB += kvm m png pthread tiff xcb z lzma zstd
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 

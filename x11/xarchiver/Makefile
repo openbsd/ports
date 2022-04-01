@@ -3,6 +3,7 @@ CATEGORIES =	x11 archivers
 GH_ACCOUNT =	ib
 GH_PROJECT =	xarchiver
 GH_TAGNAME =	0.5.4.17
+REVISION =	0
 
 HOMEPAGE =	http://xarchiver.sourceforge.net
 
@@ -10,7 +11,7 @@ HOMEPAGE =	http://xarchiver.sourceforge.net
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 c cairo Xau Xdmcp execinfo jpeg
 WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz iconv intl m

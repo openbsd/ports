@@ -4,6 +4,7 @@ V=		1.8
 DISTNAME=	v${V}
 DIST_SUBDIR=	xbanish
 PKGNAME=	${DIST_SUBDIR}-${V}
+REVISION=	0
 
 CATEGORIES=	x11
 HOMEPAGE=	https://github.com/jcs/xbanish
@@ -16,7 +17,7 @@ MASTER_SITES=	${HOMEPAGE}/archive/
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB+=	X11 Xfixes Xi c
+WANTLIB+=	X11 Xfixes Xi c Xext
 
 FAKE_FLAGS=	DESTDIR=
 

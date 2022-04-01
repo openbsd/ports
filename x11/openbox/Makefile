@@ -1,7 +1,7 @@
 COMMENT =	small, fast & usable window manager
 
 V =		3.6.1
-REVISION =	8
+REVISION =	9
 DISTNAME =	openbox-${V}
 SHARED_LIBS +=	obrender	12.0	# 32.0
 SHARED_LIBS +=	obt		1.1	# 2.2
@@ -22,7 +22,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pangoxft-1.0 pcre pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Xdmcp jpeg
 
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 

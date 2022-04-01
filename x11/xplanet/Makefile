@@ -1,7 +1,7 @@
 COMMENT=	draw pictures of the earth textured by an image
 
 DISTNAME=	xplanet-1.3.0
-REVISION=	4
+REVISION=	5
 CATEGORIES=	astro geo x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xplanet/}
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += X11 c charset fontconfig freetype gif glib-2.0 gobject-2.0
-WANTLIB += iconv intl jpeg m pango-1.0 pangoft2-1.0 png pthread
+WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangoft2-1.0 png pthread
 WANTLIB += ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc

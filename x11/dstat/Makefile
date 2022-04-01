@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	${APM_ARCHS}
 COMMENT =		dwm status bar statistics
 
 DISTNAME =		dstat-0.8
+REVISION =		0
 
 CATEGORIES =		x11 sysutils
 
@@ -13,7 +14,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		X11 c util
+WANTLIB =		X11 c util sndio
 
 MASTER_SITES =		${HOMEPAGE}/dl/
 

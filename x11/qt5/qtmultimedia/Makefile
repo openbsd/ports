@@ -1,5 +1,6 @@
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
@@ -12,6 +13,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5Qml Qt5Quick Qt5Widgets glib-2.0 gobject-2.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstphotography-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 intl m openal pulse pulse-mainloop-glib
+WANTLIB += Qt5QmlModels gstallocators-1.0 gstgl-1.0
 
 BUILD_DEPENDS =		multimedia/gstreamer1/mm
 

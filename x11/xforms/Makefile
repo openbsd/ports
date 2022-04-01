@@ -1,7 +1,7 @@
 COMMENT=		GUI toolkit for X11
 
 DISTNAME=		xforms-1.2.4
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 SHARED_LIBS +=  forms                2.0      # 3.3
@@ -17,7 +17,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xdamage Xext Xfixes
 WANTLIB += Xpm Xxf86vm c drm glapi jpeg m pthread
-WANTLIB += xcb xcb-dri2 xcb-glx expat
+WANTLIB += xcb xcb-dri2 xcb-glx expat Xau Xdmcp xcb-dri3 xcb-present
+WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z
 
 LIB_DEPENDS=		graphics/jpeg
 

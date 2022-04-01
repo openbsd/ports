@@ -5,6 +5,7 @@ COMMENT =	lightweight color picker
 GH_ACCOUNT =	Soft
 GH_PROJECT =	xcolor
 GH_TAGNAME =	0.5.1
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -15,7 +16,7 @@ MAINTAINER =	Laurence Tratt <laurie@tratt.net>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c c++abi m pthread xcb xcb-shape
+WANTLIB += c c++abi m pthread xcb xcb-shape X11 X11-xcb Xcursor
 
 MODULES =		devel/cargo \
 			lang/python

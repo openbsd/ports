@@ -5,6 +5,7 @@ COMMENT-webkit = wxWebView class for wxWidgets
 V =		3.0.5.1
 REVISION-main =	2
 REVISION-media = 0
+REVISION-webkit = 0
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
@@ -85,7 +86,7 @@ WANTLIB-webkit += ${COMPILER_LIBCXX} SM X11 Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB-webkit += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB-webkit += gtk-3 harfbuzz iconv intl jpeg javascriptcoregtk-4.0 m notify
 WANTLIB-webkit += pango-1.0 pangocairo-1.0 png soup-2.4 tiff webkit2gtk-4.0
-WANTLIB-webkit += wx_baseu-3.0 wx_gtk3u_core-3.0 z
+WANTLIB-webkit += wx_baseu-3.0 wx_gtk3u_core-3.0 z gmodule-2.0
 
 DEBUG_PACKAGES=${BUILD_PACKAGES}
 

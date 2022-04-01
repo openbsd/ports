@@ -1,7 +1,7 @@
 COMMENT =	GNUstep database abstraction layer
 
 VERSION =	1.8.1
-REVISION =	10
+REVISION =	11
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
 
@@ -16,7 +16,7 @@ MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_GUI = 	No
-WANTLIB +=		Performance pq ecpg mysqlclient sqlite3
+WANTLIB +=		Performance pq ecpg mariadb sqlite3
 WANTLIB += ${COMPILER_LIBCXX}
 LIB_DEPENDS +=		x11/gnustep/performance \
 			databases/mariadb \

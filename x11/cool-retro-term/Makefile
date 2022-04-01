@@ -5,7 +5,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	Swordfish90
 GH_PROJECT =	cool-retro-term
 GH_TAGNAME =	1.1.1
-REVISION =	1
+REVISION =	2
 
 QMLTERMWIDGET =	48274c75660e28d44af7c195e79accdf1bd44963
 MASTER_SITES0 =	https://github.com/Swordfish90/qmltermwidget/archive/
@@ -20,7 +20,7 @@ HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql
-WANTLIB += Qt5Widgets c m pthread
+WANTLIB += Qt5Widgets Qt5QmlModels c m pthread
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES =	devel/qmake x11/qt5

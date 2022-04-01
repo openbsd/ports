@@ -1,4 +1,5 @@
 COMMENT =		minimalistic text based status bar
+REVISION =		0
 
 MODCABAL_STEM =		xmobar
 MODCABAL_VERSION =	0.41
@@ -10,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
 			Xss c charset ffi gmp iconv \
-			lib/inotify/inotify m pthread util xml2
+			lib/inotify/inotify m pthread util xml2 z
 
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	with_xft with_mpd with_mpris with_inotify
