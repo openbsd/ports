@@ -2,6 +2,7 @@ COMMENT =	free clone of Blokus board game
 DISTNAME =	pentobi-18.1
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://pentobi.sourceforge.net/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -11,6 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Qml Qt5Quick Qt5QuickControls2 Qt5Svg Qt5Widgets c m
+WANTLIB += lzma zstd
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pentobi/}
 

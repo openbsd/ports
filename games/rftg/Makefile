@@ -10,7 +10,7 @@ MASTER_SITES = ${HOMEPAGE}
 MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
 
-REVISION-client = 1
+REVISION-client = 2
 #REVISION-server =
 
 # Licence: GPL
@@ -40,7 +40,7 @@ WANTLIB-client = ${cWANTLIB} X11 Xcomposite Xcursor Xdamage Xext \
 	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 	gobject-2.0 gtk-x11-2.0 intl pango-1.0 \
 	pangocairo-1.0 pangoft2-1.0 \
-	z
+	z harfbuzz
 
 WANTLIB-server = ${cWANTLIB} c m pthread mysqlclient
 

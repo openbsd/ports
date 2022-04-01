@@ -1,7 +1,7 @@
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
 DISTNAME=	crack-attack-1.1.14
-REVISION=	16
+REVISION=	17
 CATEGORIES=	games
 
 MAINTAINER=	Mattieu Baptiste <mattieu@brimbelle.org>
@@ -16,7 +16,7 @@ WANTLIB = GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 	freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 glut>=4 \
 	gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0 \
 	pangoft2-1.0 pixman-1 png pthread ${COMPILER_LIBCXX} xcb xcb-render \
-	xcb-shm z
+	xcb-shm z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 

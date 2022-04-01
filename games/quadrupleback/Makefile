@@ -1,7 +1,7 @@
 COMMENT =		clone of Doubleback, an intruder circling game
 
 DISTNAME =		quadrupleback-0.1.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += FLAC SDL SDL_gfx SDL_image SDL_mixer c flatzebra-0.1 iconv
 WANTLIB += jpeg m mikmod ogg png pthread smpeg sndio ${COMPILER_LIBCXX} tiff
-WANTLIB += usbhid vorbis vorbisfile webp z
+WANTLIB += usbhid vorbis vorbisfile webp z lzma zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 

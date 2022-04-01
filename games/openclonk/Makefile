@@ -5,7 +5,7 @@ V =		8.1
 COMMENT =	tactical action game focusing on controlling Clonks
 DISTNAME =	openclonk-${V}-src
 PKGNAME =	openclonk-${V}
-REVISION =	4
+REVISION =	5
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games x11
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Qt5Core Qt5Gui Qt5Widgets
 WANTLIB += SDL2 X11 alut c freetype jpeg m miniupnpc ogg openal
-WANTLIB += png tinyxml vorbis vorbisfile z
+WANTLIB += png tinyxml vorbis vorbisfile z Qt5QmlModels
 
 MASTER_SITES =	https://www.openclonk.org/builds/release/${V}/
 

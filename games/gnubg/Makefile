@@ -4,7 +4,7 @@ DISTNAME =		gnubg-release-$V-sources
 PKGNAME =		gnubg-$V
 CATEGORIES =		games x11
 HOMEPAGE =		http://gnubg.org/
-REVISION =		9
+REVISION =		10
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -19,7 +19,7 @@ WANTLIB += harfbuzz iconv intl ltdl m nghttp2 ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread readline sqlite3
 WANTLIB += ssl util vorbis vorbisfile xcb xcb-dri2 xcb-dri3 xcb-glx
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xshmfence z
+WANTLIB += xshmfence z execinfo
 WANTLIB += ${MODPY_WANTLIB}
 
 MASTER_SITES =		http://gnubg.org/media/sources/

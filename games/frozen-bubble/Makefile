@@ -3,8 +3,8 @@ COMMENT-server =	server for the frozen-bubble bubble popping game
 
 VER =			2.2.0
 DISTNAME =		frozen-bubble-${VER}
-REVISION-main =		15
-REVISION-server =	10
+REVISION-main =		16
+REVISION-server =	11
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.frozen-bubble.org
@@ -41,7 +41,7 @@ LIB_DEPENDS-server =	devel/gettext,-runtime \
 			devel/glib2
 
 WANTLIB-main =		SDL SDL_Pango SDL_mixer glib-2.0 gobject-2.0 \
-			intl m pango-1.0 pthread
+			intl m pango-1.0 pthread c harfbuzz perl
 WANTLIB-server =	c glib-2.0 intl pthread
 
 MULTI_PACKAGES =	-main -server

@@ -5,7 +5,7 @@ PKGNAME =	abuse-0.8
 EPOCH =		0
 ABUSE_SFX =	abuse-free-sounds-20120309
 CATEGORIES =	games x11
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://abuse.zoy.org/
 
@@ -17,7 +17,8 @@ WANTLIB += FLAC GL SDL SDL_mixer X11 Xdamage Xext Xfixes
 WANTLIB += Xxf86vm c drm iconv m mikmod ogg pthread smpeg
 WANTLIB += sndio ${COMPILER_LIBCXX} usbhid vorbis vorbisfile xcb
 WANTLIB += X11-xcb glapi xcb-dri2 xcb-glx
-WANTLIB += expat
+WANTLIB += expat Xau Xdmcp xcb-dri3 xcb-present xcb-shm
+WANTLIB += xcb-sync xcb-xfixes xshmfence z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
