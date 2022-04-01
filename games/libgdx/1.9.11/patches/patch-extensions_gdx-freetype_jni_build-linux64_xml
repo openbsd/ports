@@ -16,7 +16,7 @@ Index: extensions/gdx-freetype/jni/build-linux64.xml
 +	<property name="libsDir" value="../libs/openbsd" />
  	<!-- the name of the shared library -->
 -	<property name="libName" value="libgdx-freetype64.so"/>
-+	<property name="libName" value="libgdx-freetype${M_ARCH}.so"/>
++	<property name="libName" value="libgdx-freetype${M_ARCH}"/>
  	<!-- the jni header jniPlatform to use -->
  	<property name="jniPlatform" value="linux"/>
  	<!-- the compilerPrefix for the C & C++ compilers -->
