@@ -1,4 +1,7 @@
-https://bugs.webkit.org/show_bug.cgi?id=238494
+From 72fad08f2bfe7d2744c3217fe0ec0afcc671c53e Mon Sep 17 00:00:00 2001
+From: Carlos Garcia Campos <carlosgc@webkit.org>
+Date: Fri, 1 Apr 2022 09:00:32 +0000
+Subject: [PATCH] REGRESSION(r290360): [GLX] Crash on process exit https://bugs.webkit.org/show_bug.cgi?id=238494
 
 Index: Source/WebCore/platform/graphics/PlatformDisplay.cpp
 --- Source/WebCore/platform/graphics/PlatformDisplay.cpp.orig
