@@ -2,7 +2,7 @@ COMMENT =	gpx file viewer
 
 VERSION =	0.4.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	14
+REVISION =	15
 
 CATEGORIES =	geo x11
 
@@ -22,7 +22,8 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv idn2 intl json-glib-1.0 lzma
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl
 WANTLIB += pthread soup-2.4 sqlite3 unistring xcb xcb-dri2 xcb-dri3
 WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes xml2
-WANTLIB += xshmfence z
+WANTLIB += xshmfence z Xau Xdmcp brotlicommon brotlidec execinfo jpeg
+WANTLIB += ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 

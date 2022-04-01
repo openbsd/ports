@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS = amd64 i386
 COMMENT =	interpreter of the R7RS Scheme programming language
 
 DISTNAME =	chibi-scheme-0.10.0
+REVISION =	0
 
 SHARED_LIBS =	chibi-scheme 4.0 # 1.0
 
@@ -15,7 +16,7 @@ MAINTAINER =	Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 # New BSD License
 PERMIT_PACKAGE = Yes
 
-WANTLIB =	c m
+WANTLIB =	c m util
 
 MASTER_SITES =	http://synthcode.com/scheme/chibi/ \
 		https://download.tuxfamily.org/jod/lang/chibi-scheme/ \

@@ -2,7 +2,7 @@ COMMENT =		labels and business card designer
 
 GNOME_PROJECT =		glabels
 GNOME_VERSION =		3.4.1
-REVISION =		11
+REVISION =		12
 
 CATEGORIES =		productivity graphics
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  glbarcode-3.0             0.0 # 0.0
 
 HOMEPAGE =		http://glabels.org/
 
-# GPLv3/LGPLv3/MIT      
+# GPLv3/LGPLv3/MIT
 # Attribution-ShareAlike 3.0 Unported
 PERMIT_PACKAGE =	Yes
 
@@ -27,7 +27,9 @@ WANTLIB += idn2 iec16022 intl json-glib-1.0 lzma m nspr4 nss3
 WANTLIB += nssutil3 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png psl qrencode rsvg-2 secret-1
 WANTLIB += smime3 soup-2.4 sqlite3 ssl3 unistring xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z protobuf
+WANTLIB += Xau Xdmcp boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_system-mt boost_ thread-mt execinfo jpeg phonenumber
 
 COMPILER =		base-clang ports-gcc base-gcc
 

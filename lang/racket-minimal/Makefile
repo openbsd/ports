@@ -4,6 +4,7 @@ COMMENT =		multi-paradigm programming language
 
 V =			8.4
 PKGNAME =		racket-minimal-$V
+REVISION =		0
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}
 
@@ -36,7 +37,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/mpfr \
 			devel/uuid
 
-WANTLIB += c ffi iconv m pthread
+WANTLIB += c ffi iconv m pthread curses
 # Required by CS
 WANTLIB += ossp-uuid lz4
 # Loaded using FFI:

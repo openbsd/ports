@@ -1,6 +1,7 @@
 COMMENT =	GUI for spatialite
 DISTNAME =	spatialite_gui-2.1.0-beta1
 PKGNAME =	spatialite_gui-2.1.0beta1
+REVISION =	0
 PROJECT =	spatialite_gui
 MASTER_SITES =	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/
 
@@ -24,7 +25,7 @@ WANTLIB += png proj samplerate sndio spatialite sqlite3 tiff
 WANTLIB += usbhid wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0 wx_gtk3u_core-3.0
 WANTLIB += wx_gtk3u_html-3.0 wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z Xau Xdmcp execinfo
 WANTLIB += Xss bz2 charset crypto curl gif lz4 minizip nghttp2
 WANTLIB += openjp2 pq rasterlite2 rttopo ssl virtualpg webp zstd
 

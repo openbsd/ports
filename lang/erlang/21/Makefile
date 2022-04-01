@@ -11,7 +11,7 @@ PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
 
-REVISION-main=	4
+REVISION-main=	5
 REVISION-wx=	3
 
 VERSION_SPEC=	>=21v0,<22v0
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=--without-jinterface	\
 MULTI_PACKAGES = -main -wx
 
 WANTLIB =	m pthread
-WANTLIB-main =	${WANTLIB} c crypto kvm curses util
+WANTLIB-main =	${WANTLIB} c crypto kvm curses util z
 
 WANTLIB-wx += ${WANTLIB} GL GLU ${COMPILER_LIBCXX}
 WANTLIB-wx += wx_baseu-3.0 wx_baseu_xml-3.0 wx_gtk3u_adv-3.0 wx_gtk3u_aui-3.0
