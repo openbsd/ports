@@ -12,7 +12,7 @@ DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
-REVISION-main=		2
+REVISION-main=		3
 REVISION-qt=		3
 CATEGORIES=		geo
 
@@ -36,7 +36,9 @@ MULTI_PACKAGES=		-main -tk -qt
 MODULES=		devel/qmake x11/tk x11/qt5
 MODQMAKE_PROJECTS =	gui/app.pro
 
+# /usr/local/bin/gpsbabel (from the -main subpackage) is linked against Qt5Core
 LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
+			x11/qt5/qtbase \
 			devel/libusb-compat \
 			devel/shapelib
 
