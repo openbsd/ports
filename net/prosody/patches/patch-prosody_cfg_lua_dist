@@ -12,10 +12,10 @@ Index: prosody.cfg.lua.dist
 +-- Enable POSIX-only options
 +pidfile = "/var/prosody/prosody.pid"
 +
- -- Enable use of libevent for better performance under high load
- -- For more information see: https://prosody.im/doc/libevent
- --use_libevent = true
-@@ -164,8 +171,8 @@ archive_expires_after = "1w" -- Remove archived messag
+ -- This option allows you to specify additional locations where Prosody
+ -- will search first for modules. For additional modules you can install, see
+ -- the community module repository at https://modules.prosody.im/
+@@ -183,8 +190,8 @@ archive_expires_after = "1w" -- Remove archived messag
  -- Logging configuration
  -- For advanced logging see https://prosody.im/doc/logging
  log = {
@@ -24,5 +24,5 @@ Index: prosody.cfg.lua.dist
 +	info = "/var/prosody/prosody.log"; -- Change 'info' to 'debug' for verbose logging
 +	error = "/var/prosody/prosody.err";
  	-- "*syslog"; -- Uncomment this for logging to syslog
- 	-- "*console"; -- Log to the console, useful for debugging with daemonize=false
+ 	-- "*console"; -- Log to the console, useful for debugging when running in the foreground
  }

@@ -1,5 +1,5 @@
 COMMENT =	communications server for Jabber/XMPP written in Lua
-DISTNAME =	prosody-0.11.13
+DISTNAME =	prosody-0.12.0
 CATEGORIES =	net
 HOMEPAGE =	https://prosody.im/
 
@@ -11,20 +11,22 @@ MASTER_SITES =	https://prosody.im/downloads/source/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/lua
-MODLUA_VERSION =	5.2
+MODLUA_VERSION =	5.3
 
-MODLUA_RUN_DEPENDS +=	databases/luadbi \
-			devel/lua-bitop \
+MODLUA_RUN_DEPENDS +=	converters/luastruct \
+			databases/luadbi \
 			devel/luafs \
+			devel/luarocks \
+			net/luaunbound \
 			security/luasec \
 			textproc/luaexpat
-LIB_DEPENDS =		devel/libidn
+LIB_DEPENDS =		textproc/icu4c
 
 # fails, depends on busted not yet in
 NO_TEST =		Yes
 TEST_DEPENDS =		${MODLUA_RUN_DEPENDS}
 
-WANTLIB += crypto idn
+WANTLIB += crypto icudata icui18n icuuc
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix="${PREFIX}" \
@@ -34,6 +36,7 @@ CONFIGURE_ARGS +=	--prefix="${PREFIX}" \
 			--with-lua-include="${MODLUA_INCL_DIR}" \
 			--lua-version="${MODLUA_VERSION}" \
 			--no-example-certs \
+			--idn-library=icu \
 			--c-compiler="${CC}" \
 			--linker="${CC}" \
 			--ldflags="-L/usr/lib -L${LOCALBASE}/lib -shared" \
@@ -46,6 +49,9 @@ FAKE_FLAGS +=		CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 pre-configure:
 	cd ${WRKSRC}; sed -i -e 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' -e \
 		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/util/prosodyctl.lua
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody

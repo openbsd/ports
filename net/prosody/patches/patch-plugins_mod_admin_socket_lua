@@ -1,0 +1,16 @@
+Upstream fix for older LuaSocket
+ref: https://hg.prosody.im/timber/rev/55590a970de7
+
+Index: plugins/mod_admin_socket.lua
+--- plugins/mod_admin_socket.lua.orig
++++ plugins/mod_admin_socket.lua
+@@ -2,6 +2,9 @@ module:set_global();
+ 
+ local have_unix, unix = pcall(require, "socket.unix");
+ 
++if have_unix and type(unix) == "function" then
++	unix = { stream = unix };
++end
+ if not have_unix or type(unix) ~= "table" then
+ 	module:log_status("error", "LuaSocket unix socket support not available or incompatible, ensure it is up to date");
+ 	return;

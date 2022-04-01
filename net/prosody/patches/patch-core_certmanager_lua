@@ -1,7 +1,7 @@
 Index: core/certmanager.lua
 --- core/certmanager.lua.orig
 +++ core/certmanager.lua
-@@ -110,7 +110,7 @@ end
+@@ -202,7 +202,7 @@ end
  
  -- Built-in defaults
  local core_defaults = {
@@ -9,4 +9,4 @@ Index: core/certmanager.lua
 +	cafile = "/etc/ssl/cert.pem";
  	depth = 9;
  	protocol = "tlsv1+";
- 	verify = (ssl_x509 and { "peer", "client_once", }) or "none";
+ 	verify = "none";

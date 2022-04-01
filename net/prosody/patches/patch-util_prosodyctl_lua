@@ -1,12 +1,21 @@
 Index: util/prosodyctl.lua
 --- util/prosodyctl.lua.orig
 +++ util/prosodyctl.lua
-@@ -240,7 +240,7 @@ local function start(source_dir)
+@@ -180,7 +180,7 @@ local function start(source_dir, lua)
  	if not source_dir then
- 		os.execute("./prosody -D");
+ 		os.execute(lua .. "./prosody -D");
  	else
--		os.execute(source_dir.."/../../bin/prosody -D");
-+		os.execute(source_dir.."/../../sbin/prosody -D");
+-		os.execute(lua .. source_dir.."/../../bin/prosody -D");
++		os.execute(lua .. source_dir.."/../../sbin/prosody -D");
  	end
  	return true;
  end
+@@ -221,7 +221,7 @@ local render_cli = interpolation.new("%b{}", function 
+ 
+ local function call_luarocks(operation, mod, server)
+ 	local dir = prosody.paths.installer;
+-	local ok, _, code = os.execute(render_cli("luarocks --lua-version={luav} {op} --tree={dir} {server&--server={server}} {mod?}", {
++	local ok, _, code = os.execute(render_cli("luarocks-${MODLUA_VERSION} --lua-version={luav} {op} --tree={dir} {server&--server={server}} {mod?}", {
+ 				dir = dir; op = operation; mod = mod; server = server; luav = _VERSION:match("5%.%d");
+ 		}));
+ 	if type(ok) == "number" then code = ok; end
