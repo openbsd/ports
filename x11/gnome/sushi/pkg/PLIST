@@ -5,6 +5,7 @@ lib/sushi/girepository-1.0/Sushi-1.0.typelib
 @so lib/sushi/libsushi-1.0.so
 libexec/org.gnome.NautilusPreviewer
 share/dbus-1/services/org.gnome.NautilusPreviewer.service
+share/locale/ab/LC_MESSAGES/sushi.mo
 share/locale/af/LC_MESSAGES/sushi.mo
 share/locale/an/LC_MESSAGES/sushi.mo
 share/locale/ar/LC_MESSAGES/sushi.mo
@@ -46,8 +47,6 @@ share/locale/kn/LC_MESSAGES/sushi.mo
 share/locale/ko/LC_MESSAGES/sushi.mo
 share/locale/lt/LC_MESSAGES/sushi.mo
 share/locale/lv/LC_MESSAGES/sushi.mo
-share/locale/mjw/
-share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/sushi.mo
 share/locale/ml/LC_MESSAGES/sushi.mo
 share/locale/mr/LC_MESSAGES/sushi.mo
@@ -80,7 +79,6 @@ share/locale/vi/LC_MESSAGES/sushi.mo
 share/locale/zh_CN/LC_MESSAGES/sushi.mo
 share/locale/zh_HK/LC_MESSAGES/sushi.mo
 share/locale/zh_TW/LC_MESSAGES/sushi.mo
-share/metainfo/
 share/metainfo/org.gnome.NautilusPreviewer.appdata.xml
 share/sushi/
 share/sushi/gir-1.0/
