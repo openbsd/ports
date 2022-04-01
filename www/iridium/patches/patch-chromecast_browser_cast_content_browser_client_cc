@@ -1,7 +1,7 @@
 Index: chromecast/browser/cast_content_browser_client.cc
 --- chromecast/browser/cast_content_browser_client.cc.orig
 +++ chromecast/browser/cast_content_browser_client.cc
-@@ -133,7 +133,7 @@
+@@ -135,7 +135,7 @@
  #include "extensions/common/constants.h"                            // nogncheck
  #endif
  

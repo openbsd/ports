@@ -3,7 +3,8 @@ bin/iridium
 iridium/
 iridium/chrome_100_percent.pak
 iridium/chrome_200_percent.pak
-iridium/headless_lib.pak
+iridium/headless_lib_data.pak
+iridium/headless_lib_strings.pak
 iridium/icudtl.dat
 %%component%%
 @bin iridium/iridium

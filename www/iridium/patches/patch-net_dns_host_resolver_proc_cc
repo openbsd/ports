@@ -12,7 +12,7 @@ Index: net/dns/host_resolver_proc.cc
  namespace net {
  
  HostResolverProc* HostResolverProc::default_proc_ = nullptr;
-@@ -177,7 +173,7 @@ int SystemHostResolverCall(const std::string& host,
+@@ -192,7 +188,7 @@ int SystemHostResolverCall(const std::string& host,
                                                  base::BlockingType::WILL_BLOCK);
  
  #if BUILDFLAG(IS_POSIX) && \
@@ -20,4 +20,4 @@ Index: net/dns/host_resolver_proc.cc
 +    !(BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD) || BUILDFLAG(IS_ANDROID))
    DnsReloaderMaybeReload();
  #endif
-   absl::optional<AddressInfo> ai;
+   auto [ai, err, os_error] = AddressInfo::Get(host, hints, nullptr, network);

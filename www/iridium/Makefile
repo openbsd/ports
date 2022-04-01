@@ -9,8 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2022.03.99.1
-REVISION=		0
+V=			2022.04.100.0
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -151,8 +150,7 @@ GN_ARGS=	enable_nacl=false \
 		enable_wmax_tokens=false \
 		use_thin_lto=false \
 		thin_lto_enable_optimizations=false \
-		use_udev=false \
-		fatal_linker_warnings=false
+		use_udev=false
 
 # notyet
 GN_ARGS+=	use_vaapi=false

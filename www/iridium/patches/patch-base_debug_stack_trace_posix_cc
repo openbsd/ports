@@ -1,7 +1,7 @@
 Index: base/debug/stack_trace_posix.cc
 --- base/debug/stack_trace_posix.cc.orig
 +++ base/debug/stack_trace_posix.cc
-@@ -37,7 +37,7 @@
+@@ -38,7 +38,7 @@
  #include <AvailabilityMacros.h>
  #endif
  

@@ -5,9 +5,9 @@ Index: third_party/blink/renderer/platform/scheduler/common/thread.cc
        std::make_unique<scheduler::CompositorThread>(params);
    compositor_thread->Init();
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS)
-+// pledge
-+#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_OPENBSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++// pledge(2)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_OPENBSD)
    if (base::FeatureList::IsEnabled(
            features::kBlinkCompositorUseDisplayThreadPriority)) {
      compositor_thread->GetTaskRunner()->PostTaskAndReplyWithResult(

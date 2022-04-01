@@ -1,7 +1,7 @@
 Index: content/common/user_agent.cc
 --- content/common/user_agent.cc.orig
 +++ content/common/user_agent.cc
-@@ -244,6 +244,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -245,6 +245,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

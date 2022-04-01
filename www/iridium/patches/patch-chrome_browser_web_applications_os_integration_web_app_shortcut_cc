@@ -1,6 +1,6 @@
-Index: chrome/browser/web_applications/web_app_shortcut.cc
---- chrome/browser/web_applications/web_app_shortcut.cc.orig
-+++ chrome/browser/web_applications/web_app_shortcut.cc
+Index: chrome/browser/web_applications/os_integration/web_app_shortcut.cc
+--- chrome/browser/web_applications/os_integration/web_app_shortcut.cc.orig
++++ chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 @@ -43,7 +43,7 @@ namespace {
  
  #if BUILDFLAG(IS_MAC)

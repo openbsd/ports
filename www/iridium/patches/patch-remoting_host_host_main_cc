@@ -19,7 +19,7 @@ Index: remoting/host/host_main.cc
      "  --audio-pipe-name=<pipe> - Sets the pipe name to capture audio on "
      "Linux.\n"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -152,7 +152,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
+@@ -154,7 +154,7 @@ MainRoutineFn SelectMainRoutine(const std::string& pro
    } else if (process_type == kProcessTypeUrlForwarderConfigurator) {
      main_routine = &UrlForwarderConfiguratorMain;
  #endif  // BUILDFLAG(IS_WIN)

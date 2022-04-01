@@ -1,6 +1,6 @@
-Index: third_party/dawn/src/dawn_native/vulkan/BackendVk.cpp
---- third_party/dawn/src/dawn_native/vulkan/BackendVk.cpp.orig
-+++ third_party/dawn/src/dawn_native/vulkan/BackendVk.cpp
+Index: third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp
+--- third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp.orig
++++ third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp
 @@ -37,7 +37,7 @@ constexpr char kSwiftshaderLibName[] = "libvk_swiftsha
  #endif
  

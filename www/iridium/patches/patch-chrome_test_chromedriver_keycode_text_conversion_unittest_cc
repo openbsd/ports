@@ -5,8 +5,8 @@ Index: chrome/test/chromedriver/keycode_text_conversion_unittest.cc
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  // Fails on bots: crbug.com/174962
  #define MAYBE_KeyCodeToText DISABLED_KeyCodeToText
  #else
@@ -14,8 +14,8 @@ Index: chrome/test/chromedriver/keycode_text_conversion_unittest.cc
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
--#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if defined(OS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
  // Fails on bots: crbug.com/174962
  #define MAYBE_CharToKeyCode DISABLED_CharToKeyCode
  #else
