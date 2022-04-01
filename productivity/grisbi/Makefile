@@ -1,6 +1,7 @@
 COMMENT=	personal accounting application
 
 DISTNAME=	grisbi-2.0.5
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.bz2
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grisbi/}
@@ -24,6 +25,7 @@ WANTLIB += pthread ${COMPILER_LIBCXX} xcb xcb-render xcb-shm xml2 z
 WANTLIB += ICE SM atk-bridge-2.0 avahi-common cairo-gobject zstd
 WANTLIB += epoxy gmp gs hogweed idn2 jpeg nettle p11-kit rsvg-2
 WANTLIB += spectre tasn1 unistring xslt iconv intl fribidi
+WANTLIB += brotlidec brotlienc
 
 COMPILER =		base-clang ports-gcc base-gcc
 

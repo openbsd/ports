@@ -4,7 +4,7 @@ COMMENT =		accounting for KDE 5
 
 VERSION =		5.1.2
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity x11
 
@@ -41,7 +41,7 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5
 WANTLIB += aqbanking c db gmp gpgmepp gwengui-cpp gwengui-qt5
-WANTLIB += gwenhywfar ical icalss icalvcal icui18n icuuc m ofx
+WANTLIB += gwenhywfar ical icalss icalvcal icui18n icuuc m ofx db_cxx
 WANTLIB += osp ${MODPY_WANTLIB}
 
 

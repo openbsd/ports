@@ -2,6 +2,7 @@ COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.8
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	productivity x11
 
@@ -19,7 +20,7 @@ WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-x11-2.0 harfbuzz iconv intl jpeg lzma m notify
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png xcb xcb-render xcb-shm xml2 z
+WANTLIB += png xcb xcb-render xcb-shm xml2 z Xau Xdmcp
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rubrica.berlios/}
 

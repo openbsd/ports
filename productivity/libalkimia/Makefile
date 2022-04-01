@@ -6,7 +6,7 @@ CATEGORIES =	productivity x11
 V =		8.0.4
 PKGNAME =	libalkimia-$V
 DISTNAME =	alkimia-$V
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =  alkimia5  1.0 # 8.0.4
 
@@ -28,7 +28,7 @@ WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5UnitConversion
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
 WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml c gmp
-WANTLIB += m
+WANTLIB += m X11
 
 MODULES =	devel/kf5
 
