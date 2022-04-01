@@ -1,7 +1,7 @@
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	27
+REVISION=	28
 CATEGORIES=	audio
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tagtool/}
@@ -15,7 +15,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 id3 intl m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile xml2
-WANTLIB += z
+WANTLIB += z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 

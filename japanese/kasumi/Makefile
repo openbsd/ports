@@ -1,7 +1,7 @@
 COMMENT =	personal dictionary manager for anthy
 
 DISTNAME =	kasumi-2.5
-REVISION =	10
+REVISION =	11
 
 CATEGORIES =	japanese
 
@@ -16,7 +16,7 @@ WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender anthy anthydic atk-1.0 c cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pthread ${COMPILER_LIBCXX} z
+WANTLIB += pangoft2-1.0 pthread ${COMPILER_LIBCXX} z harfbuzz
 
 COMPILER =		base-clang ports-gcc base-gcc
 

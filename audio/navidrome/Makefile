@@ -2,6 +2,7 @@ COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
 MODGO_VERSION =	v0.47.5
+REVISION =	0
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
@@ -21,6 +22,8 @@ MASTER_SITES0 =		https://deftly.net/dist/
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} pthread z c m tag
+
 LIB_DEPENDS =		audio/taglib
 
 RUN_DEPENDS =		graphics/ffmpeg
@@ -28,8 +31,6 @@ RUN_DEPENDS =		graphics/ffmpeg
 MODULES =		lang/go
 
 SUBST_VARS =		VARBASE
-
-WANTLIB += c m tag
 
 post-extract:
 	cd ${WRKSRC} && tar -C ${WRKSRC}/ui/ -zxf \

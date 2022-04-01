@@ -2,7 +2,7 @@ V =		1.5.6
 COMMENT =	minimal audio player for manual speech transcription
 DISTNAME =	parlatype-${V}
 CATEGORIES =	audio x11
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	parlatype                 0.0 # 1.6
 
@@ -19,7 +19,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gsttag-1.0 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl m orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z Xau Xdmcp ${COMPILER_LIBCXX} execinfo jpeg
 
 MASTER_SITES =	https://github.com/gkarsay/parlatype/releases/download/v${V}/
 

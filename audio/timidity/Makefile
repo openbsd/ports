@@ -4,7 +4,7 @@ V=		2.15.0
 DISTNAME=	TiMidity++-${V}
 PKGNAME=	timidity-${V}
 CATEGORIES=	audio
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timidity/}
 MASTER_SITES0=	https://mirrors.nycbug.org/pub/distfiles/
@@ -43,7 +43,7 @@ WANTLIB+=	X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		glib-2.0 gio-2.0 gobject-2.0 \
 		gtk-x11-2.0 intl pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pthread z
+		pangoft2-1.0 pthread z harfbuzz
 .endif
 
 .if ${FLAVOR:Mxaw}

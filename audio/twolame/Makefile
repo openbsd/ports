@@ -1,7 +1,7 @@
 COMMENT=	optimised MPEG Audio Layer 2 (MP2) encoder
 
 DISTNAME=	twolame-0.3.13
-REVISION=	1
+REVISION=	2
 SHARED_LIBS +=  twolame              0.0      # 0.0
 
 CATEGORIES=	audio
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=twolame/}
 
-WANTLIB=	c m sndfile FLAC ogg vorbis vorbisenc
+WANTLIB=	c m sndfile FLAC ogg vorbis vorbisenc opus
 
 LIB_DEPENDS=	audio/libsndfile
 

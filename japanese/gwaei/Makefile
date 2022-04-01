@@ -1,7 +1,7 @@
 COMMENT =	japanese-english dictionary program
 
 DISTNAME =	gwaei-3.2.0
-REVISION =	22
+REVISION =	23
 
 SHARED_LIBS =	waei	0.0
 
@@ -18,7 +18,8 @@ WANTLIB += crypto curl epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv intl m nghttp2
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread ssl xcb xcb-render xcb-shm z
+WANTLIB += png pthread ssl xcb xcb-render xcb-shm z Xau Xdmcp
+WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/}
 

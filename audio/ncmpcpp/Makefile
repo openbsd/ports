@@ -4,7 +4,7 @@ BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'B
 COMMENT =		ncurses mpd client inspired by ncmpc
 
 DISTNAME =		ncmpcpp-0.9.2
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -19,7 +19,7 @@ WANTLIB += ${COMPILER_LIBCXX} boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += curl curses ereadline icudata icui18n icuuc m mpdclient
-WANTLIB += nghttp2 ssl tag z
+WANTLIB += nghttp2 ssl tag z boost_atomic-mt
 
 MASTER_SITES =		${HOMEPAGE}stable/
 

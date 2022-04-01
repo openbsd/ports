@@ -4,7 +4,7 @@ V =		3.5
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	MuseScore-${V}.0
 PKGNAME =	musescore-${V}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.zip
 CATEGORIES =	audio x11
 
@@ -18,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Help
 WANTLIB += Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick
 WANTLIB += Qt5QuickControls2 Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Test
 WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c freetype m ogg portaudio
-WANTLIB += sndfile vorbis vorbisfile z
+WANTLIB += sndfile vorbis vorbisfile z Qt5QmlModels Qt5QuickTemplates2
 
 MASTER_SITES =	https://github.com/musescore/MuseScore/releases/download/v${V}/
 
