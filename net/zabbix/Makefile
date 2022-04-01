@@ -13,6 +13,10 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
+REVISION-main =		1
+REVISION-server =	1
+REVISION-proxy =	1
+
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 HOMEPAGE =		http://www.zabbix.com/
@@ -25,7 +29,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://cdn.zabbix.com/zabbix/sources/stable/${MAJV}/
 
 MODULES =		lang/php
-MODPHP_VERSION =		7.4
+MODPHP_VERSION =	7.4
 MODPHP_BUILDDEP =	No
 
 MULTI_PACKAGES =	-main -web
@@ -35,24 +39,23 @@ FLAVORS =		mysql pgsql sqlite3
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
 WANTLIB =		c iconv kvm m execinfo lber ldap crypto ssl z \
-			curl nghttp2 pcre pthread
+			curl nghttp2 pcre pthread xml2
 
 LIB_DEPENDS =		converters/libiconv \
 			databases/openldap \
 			devel/pcre \
-			net/curl
+			net/curl \
+			textproc/libxml
 
 RUN_DEPENDS-main =
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
-			textproc/libxml \
 			net/net-snmp \
 			security/libssh2
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
-WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp \
-			xml2 ssh2
+WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp ssh2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \
@@ -79,9 +82,8 @@ ZABBIX_WEB =		${PREFIX-web}/zabbix
 
 LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
 			net/net-snmp \
-			security/libssh2 \
-			textproc/libxml
-WANTLIB-proxy =		${WANTLIB} netsnmp ssh2 xml2
+			security/libssh2
+WANTLIB-proxy =		${WANTLIB} netsnmp ssh2
 RUN_DEPENDS-proxy =	# empty
 
 FLAVOR ?=		no_server

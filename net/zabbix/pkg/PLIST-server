@@ -16,6 +16,7 @@ share/zabbix-server/schema/
 @comment share/zabbix-server/schema/mysql/Makefile
 @comment share/zabbix-server/schema/mysql/Makefile.am
 @comment share/zabbix-server/schema/mysql/Makefile.in
+share/zabbix-server/schema/mysql/
 share/zabbix-server/schema/mysql/data.sql
 share/zabbix-server/schema/mysql/double.sql
 share/zabbix-server/schema/mysql/images.sql
