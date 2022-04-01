@@ -1,7 +1,6 @@
 COMMENT =	community-developed python astronomy tools
 
 MODPY_EGG_VERSION =	4.0.5
-REVISION =	0
 
 DISTNAME =	astropy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -12,6 +11,8 @@ HOMEPAGE =	https://astropy.org
 
 # BSD license
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += pthread
 
 MODULES =		lang/python
 
