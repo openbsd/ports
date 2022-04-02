@@ -17,8 +17,8 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU Qt5Core Qt5Gui Qt5Widgets
-WANTLIB += SDL2 X11 alut c freetype jpeg m miniupnpc ogg openal
-WANTLIB += png tinyxml vorbis vorbisfile z Qt5QmlModels
+WANTLIB += SDL2 X11 alut c execinfo freetype jpeg m miniupnpc ogg openal
+WANTLIB += png tinyxml vorbis vorbisfile z
 
 MASTER_SITES =	https://www.openclonk.org/builds/release/${V}/
 
