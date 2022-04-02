@@ -1,7 +1,6 @@
 COMMENT=	small SSH server and client
 
-DISTNAME=	dropbear-2020.81
-REVISION=	1
+DISTNAME=	dropbear-2022.82
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security net
@@ -20,8 +19,5 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= gnu
 USE_GMAKE=	Yes
 NO_TEST=	Yes
-
-post-configure:
-	${SUBST_CMD} ${WRKSRC}/default_options.h
 
 .include <bsd.port.mk>
