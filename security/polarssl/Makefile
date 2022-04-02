@@ -38,4 +38,9 @@ post-install:
 	echo "should not be relied upon by the normal end-user.") \
 	> ${PREFIX}/share/examples/mbedtls/README
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS += -std=gnu99
+.endif
+
 .include <bsd.port.mk>

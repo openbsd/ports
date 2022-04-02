@@ -19,3 +19,12 @@ Index: CMakeLists.txt
      set(CMAKE_C_FLAGS_COVERAGE    "-O0 -g3 --coverage")
      set(CMAKE_C_FLAGS_ASAN        "-fsanitize=address -fno-common -fsanitize=undefined -fno-sanitize-recover=all -O3")
      set(CMAKE_C_FLAGS_ASANDBG     "-fsanitize=address -fno-common -fsanitize=undefined -fno-sanitize-recover=all -O1 -g3 -fno-omit-frame-pointer -fno-optimize-sibling-calls")
+@@ -236,7 +232,7 @@ if(MBEDTLS_FATAL_WARNINGS)
+     endif(CMAKE_COMPILER_IS_MSVC)
+ 
+     if(CMAKE_COMPILER_IS_CLANG OR CMAKE_COMPILER_IS_GNU)
+-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
++        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+         if(UNSAFE_BUILD)
+             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-error=cpp")
+             set(CMAKE_C_FLAGS_ASAN "${CMAKE_C_FLAGS_ASAN} -Wno-error=cpp")
