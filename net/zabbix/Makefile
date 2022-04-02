@@ -13,7 +13,7 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-main =		1
+REVISION-main =		2
 REVISION-server =	1
 REVISION-proxy =	1
 
