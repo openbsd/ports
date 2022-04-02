@@ -1,6 +1,7 @@
 COMMENT=	small SSH server and client
 
 DISTNAME=	dropbear-2020.81
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security net
