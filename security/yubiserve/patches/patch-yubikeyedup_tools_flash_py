@@ -1,0 +1,24 @@
+Index: yubikeyedup/tools/flash.py
+--- yubikeyedup/tools/flash.py.orig
++++ yubikeyedup/tools/flash.py
+@@ -23,7 +23,7 @@ def gen_random(size):
+ def get_public(name):
+     return name.rjust(8, 'q')[:8]
+ 
+-if __name__ == '__main__':
++def main():
+     if len(sys.argv) != 3:
+         print('Usage: %s <name> <db.sqlite3>' % sys.argv[0])
+         print('eg: %s bobama db/yubikeys.sqlite3' % sys.argv[0])
+@@ -65,7 +65,10 @@ if __name__ == '__main__':
+     #     sys.exit(ret)
+ 
+     cwd = os.path.dirname(os.path.realpath(__file__))
+-    dbconf = os.path.join(cwd, 'dbconf.py')
++    dbconf = 'yubikeyedup-dbconf'
+     subprocess.call([ dbconf, '-yk', name, db ])
+     subprocess.call([ dbconf, '-ya', name, public_m, uid, aeskey, db ])
+     subprocess.call([ dbconf, '-yl', db])
++
++if __name__ == '__main__':
++    main()
