@@ -1,7 +1,7 @@
 Index: driver/passwd-pwent.c
 --- driver/passwd-pwent.c.orig
 +++ driver/passwd-pwent.c
-@@ -133,7 +133,7 @@ user_name (void)
+@@ -121,7 +121,7 @@ user_name (void)
       still work.  Right?) */
    if (!u || !*u)
      {
@@ -10,12 +10,12 @@ Index: driver/passwd-pwent.c
        u = (p ? p->pw_name : 0);
      }
  
-@@ -177,7 +177,7 @@ get_encrypted_passwd(const char *user)
+@@ -158,7 +158,7 @@ get_encrypted_passwd (const char *user)
  
    if (user && *user && !result)
      {					/* Check non-shadow passwords too. */
 -      struct passwd *p = getpwnam(user);
 +      struct passwd *p = getpwnam_shadow(user);
        if (p && passwd_known_p (p->pw_passwd))
- 	result = strdup(p->pw_passwd);
+         result = strdup(p->pw_passwd);
      }

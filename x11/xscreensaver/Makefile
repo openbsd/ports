@@ -1,6 +1,14 @@
 COMMENT=	screen saver and locker for the X Window System
 
-DISTNAME=	xscreensaver-5.45
+# No driver for BSD Authentication so xscreensaver-auth uses the
+# driver/passwd-pwent.c backend using getpwnam_shadow() which is using
+# setuid root for access to the shadow password db. For some reason
+# unlock fails to ask for a password with just setgid _shadow - maybe
+# related to setgroups() failing, maybe something else.
+#
+# Ideally this wants a bsdauth driver to be written, change to being
+# installed setgid auth, and figure out any issues resulting.
+DISTNAME=	xscreensaver-6.03
 
 CATEGORIES=	x11
 
@@ -9,9 +17,9 @@ HOMEPAGE=	https://www.jwz.org/xscreensaver/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += c cairo fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB =  EGL GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0 c cairo
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 gle glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-x11-2.0 harfbuzz intl jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread util xml2 z
@@ -39,8 +47,7 @@ USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-hackdir="${PREFIX}/libexec/xscreensaver" \
-		--with-x-app-defaults="${PREFIX}/lib/X11/app-defaults" \
+CONFIGURE_ARGS= --with-app-defaults="${PREFIX}/lib/X11/app-defaults" \
 		--without-pam
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
