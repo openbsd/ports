@@ -246,15 +246,4 @@ MASTER_SITES =		???
 #INSTALL_TARGET =	???
 #TEST_TARGET =		???
 
-# For ports that use a script or autoreconf to generate autoconf/automake
-# files (where "CONFIGURE_STYLE=autoconf" isn't enough), use some/all of these
-# dependencies, and add a do-gen target:
-# 
-#BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-#			${MODGNU_AUTOMAKE_DEPENDS} \
-#			devel/libtool
-#
-#do-gen:
-#	cd ${WRKSRC}; ${AUTOCONF_ENV} ./autogen.sh
-
 .include <bsd.port.mk>
