@@ -1,0 +1,35 @@
+Dropbear's check for a locked account is "did crypt(userpassword,
+oldhash) fail". If the existing hashed password entry from getpwnam_shadow
+is blank (i.e. no password set) then crypt fails, so as-is the "is locked"
+error is logged when the password is blank.
+
+Swap the "locked password" and "blank password" checks, so that the
+correct message is logged for a blank password.
+
+Index: svr-authpasswd.c
+--- svr-authpasswd.c.orig
++++ svr-authpasswd.c
+@@ -89,17 +89,17 @@ void svr_auth_password(int valid_user) {
+ 		return;
+ 	}
+ 
+-	if (testcrypt == NULL) {
+-		/* crypt() with an invalid salt like "!!" */
+-		dropbear_log(LOG_WARNING, "User account '%s' is locked",
++	/* check for empty password */
++	if (passwdcrypt[0] == '\0') {
++		dropbear_log(LOG_WARNING, "User '%s' has blank password, rejected",
+ 				ses.authstate.pw_name);
+ 		send_msg_userauth_failure(0, 1);
+ 		return;
+ 	}
+ 
+-	/* check for empty password */
+-	if (passwdcrypt[0] == '\0') {
+-		dropbear_log(LOG_WARNING, "User '%s' has blank password, rejected",
++	if (testcrypt == NULL) {
++		/* crypt() with an invalid salt like "!!" */
++		dropbear_log(LOG_WARNING, "User account '%s' is locked",
+ 				ses.authstate.pw_name);
+ 		send_msg_userauth_failure(0, 1);
+ 		return;
