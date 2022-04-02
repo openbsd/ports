@@ -1,0 +1,15 @@
+Index: tests/cmocka-common.h
+
+<stdarg.h> must be included before <cmocka.h> as documented in the latter.
+Fixes "unknown type name 'va_list'" error on aarch64.
+
+--- tests/cmocka-common.h.orig
++++ tests/cmocka-common.h
+@@ -1,6 +1,7 @@
+ #ifndef GNUTLS_TESTS_CMOCKA_COMMON_H
+ #define GNUTLS_TESTS_CMOCKA_COMMON_H
+ 
++#include <stdarg.h>
+ #include <stddef.h>
+ #include <setjmp.h>
+ #include <cmocka.h>
