@@ -1,0 +1,23 @@
+Use unprivileged read from %tick register to avoid SIGILL on sparc64.
+
+Index: library/timing.c
+--- library/timing.c.orig
++++ library/timing.c
+@@ -137,7 +137,7 @@ unsigned long mbedtls_timing_hardclock( void )
+ #if !defined(HAVE_HARDCLOCK) && defined(MBEDTLS_HAVE_ASM) &&  \
+     defined(__GNUC__) && defined(__sparc64__)
+ 
+-#if defined(__OpenBSD__)
++#if 0
+ #warning OpenBSD does not allow access to tick register using software version instead
+ #else
+ #define HAVE_HARDCLOCK
+@@ -145,7 +145,7 @@ unsigned long mbedtls_timing_hardclock( void )
+ unsigned long mbedtls_timing_hardclock( void )
+ {
+     unsigned long tick;
+-    asm volatile( "rdpr %%tick, %0;" : "=&r" (tick) );
++    asm volatile( "rd %%tick, %0;" : "=&r" (tick) );
+     return( tick );
+ }
+ #endif /* __OpenBSD__ */
