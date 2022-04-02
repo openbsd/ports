@@ -3,15 +3,14 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-GH_ACCOUNT=	networkupstools
-GH_PROJECT=	nut
-GH_COMMIT=	29e40fd648da86253fe97ab47e72525e1194b885
-DISTNAME=	nut-2.8.0pre20220312
+V=		2.8.0-rc1
+DISTNAME=	nut-${V}
+PKGNAME=	nut-${V:S/-//}
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-cgi=	${DISTNAME:S/-/-cgi-/}
-PKGNAME-snmp=	${DISTNAME:S/-/-snmp-/}
-PKGNAME-xml=	${DISTNAME:S/-/-xml-/}
+PKGNAME-main=	${PKGNAME}
+PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
+PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
+PKGNAME-xml=	${PKGNAME:S/-/-xml-/}
 
 SHARED_LIBS +=	upsclient            4.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
@@ -27,18 +26,18 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc base-gcc
 
 COMMON +=	c crypto pthread
-WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb usb-1.0
+WANTLIB-main +=	${COMMON} ltdl m ssl ${COMPILER_LIBCXX} usb-1.0
 WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z
+WANTLIB-snmp +=	${COMMON} m netsnmp
 WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
-WANTLIB-snmp +=	${COMMON} m netsnmp
 
-#MASTER_SITES=		${HOMEPAGE}source/2.7/
+MASTER_SITES=	https://github.com/networkupstools/nut/releases/download/v$V/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 # if avahi is present at build time, avahi support is built in nut-scanner,
-# but it's dlopen()'d at runtime, so support is optional, so we don't list a
+# but it is dlopen()'d at runtime, so support is optional. don't list a
 # hard run dependency for this (to reduce deps in the common case).
 BUILD_DEPENDS+=	net/avahi,-libs
 BUILD_DEPENDS+=	textproc/asciidoc>=8.6.8 \
@@ -47,10 +46,10 @@ BUILD_DEPENDS+=	textproc/asciidoc>=8.6.8 \
 WEB_ROOT=	/var/www
 SUBST_VARS=	BASESYSCONFDIR WEB_ROOT
 
-CONFIGURE_STYLE= autoreconf
-AUTOCONF_VERSION= 2.71
-AUTOMAKE_VERSION= 1.16
-AUTORECONF=	./autogen.sh
+CONFIGURE_STYLE= gnu
+#AUTOCONF_VERSION= 2.71
+#AUTOMAKE_VERSION= 1.16
+#AUTORECONF=	./autogen.sh
 
 SYSCONFDIR=	${BASESYSCONFDIR}/nut
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
@@ -87,7 +86,7 @@ MULTI_PACKAGES+=	-xml
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libtool,-ltdl \
-			devel/libusb-compat
+			devel/libusb1
 RUN_DEPENDS-main=	# empty
 
 PREFIX-cgi=		${WEB_ROOT}

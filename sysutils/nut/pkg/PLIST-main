@@ -214,6 +214,7 @@ lib/pkgconfig/libupsclient.pc
 @man man/man8/nut-scanner.8
 @man man/man8/nutdrv_atcl_usb.8
 @man man/man8/nutdrv_qx.8
+@man man/man8/nutdrv_siemens_sitop.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
@@ -250,9 +251,9 @@ lib/pkgconfig/libupsclient.pc
 share/doc/nut/
 share/doc/nut/AUTHORS
 share/doc/nut/COPYING
+share/doc/nut/ChangeLog
 share/doc/nut/INSTALL
 share/doc/nut/INSTALL.nut
-share/doc/nut/Jenkinsfile-dynamatrix
 share/doc/nut/LICENSE-GPL2
 share/doc/nut/LICENSE-GPL3
 share/doc/nut/MAINTAINERS
@@ -289,30 +290,10 @@ share/doc/nut/images/cables/mge-66049.png
 share/doc/nut/images/cables/mge-db9-rj12.jpg
 share/doc/nut/images/cables/mge-db9-rj45.jpg
 share/doc/nut/images/cables/mge-usb-rj45.jpg
-share/doc/nut/images/ci/
-share/doc/nut/images/ci/fosshost.org_Host_Dark_56px.png
-share/doc/nut/images/ci/fosshost.org_Host_Light_309px.png
-share/doc/nut/images/ci/fosshost.org_Host_Light_38px.png
-share/doc/nut/images/ci/jenkins-nut-large-256px.png
-share/doc/nut/images/ci/jenkins-nut-large-squared.png
-share/doc/nut/images/ci/jenkins-nut-large.pdn
-share/doc/nut/images/ci/jenkins-nut-large.png
-share/doc/nut/images/ci/jenkins-nut-small-256px.png
-share/doc/nut/images/ci/jenkins-nut-small.pdn
-share/doc/nut/images/ci/jenkins-nut-small.png
-share/doc/nut/images/ci/jenkins-nut-squared.png
-share/doc/nut/images/ci/jenkins-nut-transparent-bg-40px.png
-share/doc/nut/images/ci/jenkins-nut-transparent-bg.png
-share/doc/nut/images/ci/jenkins-nut.css
-share/doc/nut/images/ci/jenkins-nut.png
-share/doc/nut/images/ci/jenkins-nut.txt
 share/doc/nut/images/hostedby.png
 share/doc/nut/images/note.png
-share/doc/nut/images/nut-banner.png
 share/doc/nut/images/nut-logo.png
-share/doc/nut/images/nut.svg
 share/doc/nut/images/nut_layering.png
-share/doc/nut/images/nut_layering.svg
 share/doc/nut/images/old-cgi.png
 share/doc/nut/images/simple.png
 share/doc/nut/images/warning.png
