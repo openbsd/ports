@@ -8,8 +8,10 @@ MODPY_DEFAULT_VERSION_2 = 2.7
 MODPY_DEFAULT_VERSION_3 = 3.9
 
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
+# - All ports with a run/lib dep on python must be REVISION-bumped.
 # - Move PY_DEFAULTONLY and --with-ensurepip=no from 3.x/Makefile
-#   to 3.y/Makefile (remove from old, add to new)
+#   to 3.y/Makefile (remove from old, add to new), regenerate PLISTs
+#   to add/remove "ensurepip" files.
 # - In 3.x/Makefile and 3.y/Makefile, bump REVISION for -main and -idle
 #   (i.e. those PLISTs with "PY_DEFAULTONLY" lines)
 # - In 3.y/PLIST-main and 3.y/PLIST-idle add a @conflict on the old
@@ -19,7 +21,8 @@ MODPY_DEFAULT_VERSION_3 = 3.9
 #   PLIST-main: @conflict python->=3,<3.8.12p3
 #   PLIST-idle: @conflict python-idle->=3,<3.8.12p0
 #   (Bear in mind that the subpackages might have different REVISIONs)
-# - Regenerate PLISTs for "ensurepip" files
+# - In 3.x (old default) add a conflict marker with the old py3-pip version
+#   (bin/pip3.x was in pip but will now be in python3.x)
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
 # If later *removing* an old version:
