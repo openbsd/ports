@@ -42,6 +42,8 @@ MODULES=		devel/dconf \
 
 USE_GMAKE=		Yes
 
+BUILD_DEPENDS=		devel/gobject-introspection
+
 LIB_DEPENDS=		devel/json-glib \
 			devel/libpeas \
 			textproc/enchant2 \
@@ -58,6 +60,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--docdir=${PREFIX}/share/doc/liferea
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# https://github.com/lwindolf/liferea/issues/767
+MAKE_ENV +=		WEBKIT_DISABLE_COMPOSITING_MODE=1
 
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 
