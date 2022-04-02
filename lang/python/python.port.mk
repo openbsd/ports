@@ -21,8 +21,10 @@ MODPY_DEFAULT_VERSION_3 = 3.9
 #   PLIST-main: @conflict python->=3,<3.8.12p3
 #   PLIST-idle: @conflict python-idle->=3,<3.8.12p0
 #   (Bear in mind that the subpackages might have different REVISIONs)
-# - In 3.x (old default) add a conflict marker with the old py3-pip version
-#   (bin/pip3.x was in pip but will now be in python3.x)
+# - In 3.x (old default) add a conflict marker with the old versions of
+#   py3-pip and py3-setuptools (bin/pip3.x and lib/python3.x files were
+#   in pip/setuptools packages but will now be in python3.x "ensurepip"
+#   files)
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
 # If later *removing* an old version:
