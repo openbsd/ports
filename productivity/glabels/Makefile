@@ -29,7 +29,7 @@ WANTLIB += pcre pixman-1 plc4 plds4 png psl qrencode rsvg-2 secret-1
 WANTLIB += smime3 soup-2.4 sqlite3 ssl3 unistring xcb xcb-render
 WANTLIB += xcb-shm xml2 z protobuf
 WANTLIB += Xau Xdmcp boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_system-mt boost_ thread-mt execinfo jpeg phonenumber
+WANTLIB += boost_system-mt boost_thread-mt execinfo jpeg phonenumber
 
 COMPILER =		base-clang ports-gcc base-gcc
 
