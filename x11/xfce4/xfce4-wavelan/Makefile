@@ -2,7 +2,7 @@ COMMENT=	Xfce4 wireless interface monitor panel plugin
 
 XFCE_VERSION=	0.6.2
 XFCE_PLUGIN=	wavelan
-REVISION=	0
+REVISION=	1
 
 # BSD
 PERMIT_PACKAGE=	Yes

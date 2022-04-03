@@ -32,7 +32,7 @@ MODXFCE_RUN_DEPENDS+=  x11/gtk+3,-guic
 .endif
 
 .if defined(XFCE_PLUGIN)
-HOMEPAGE?=	https://goodies.xfce.org/projects/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin
+HOMEPAGE?=	https://docs.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/start
 
 MASTER_SITES?=	https://archive.xfce.org/src/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/${XFCE_BRANCH}/
 MASTER_SITES_GIT?=	https://gitlab.xfce.org/panel-plugins/xfce4-${XFCE_PLUGIN}-plugin/-/archive/${XFCE_COMMIT}/
@@ -44,7 +44,7 @@ MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
 MODXFCE_WANTLIB?=	xfce4panel-2.0
 MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 .elif defined(XFCE_GOODIE)
-HOMEPAGE?=	https://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
+HOMEPAGE?=	https://docs.xfce.org/apps/${XFCE_GOODIE}/start
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MASTER_SITES?=	https://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
@@ -58,14 +58,14 @@ HOMEPAGE?=	https://www.xfce.org/projects/
 MASTER_SITES?=	https://archive.xfce.org/src/art/${XFCE_ARTWORK}/${XFCE_BRANCH}/
 DISTNAME?=	${XFCE_ARTWORK}-${XFCE_VERSION}
 .elif defined(THUNAR_PLUGIN)
-HOMEPAGE?=	https://goodies.xfce.org/projects/thunar-plugins/${THUNAR_PLUGIN}
+HOMEPAGE?=	https://docs.xfce.org/xfce/thunar/${THUNAR_PLUGIN:S/thunar-//:S/-plugin//}
 
 MASTER_SITES?=	https://archive.xfce.org/src/thunar-plugins/${THUNAR_PLUGIN}/${XFCE_BRANCH}/
 DISTNAME?=	${THUNAR_PLUGIN}-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 MODXFCE_PURGE_LA ?=	lib/thunarx-2
 .elif defined(XFCE_PROJECT)
-HOMEPAGE?=	https://www.xfce.org/projects/${XFCE_PROJECT}
+HOMEPAGE?=	https://docs.xfce.org/xfce/${XFCE_PROJECT}/start
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MASTER_SITES?=	https://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/

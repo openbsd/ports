@@ -2,7 +2,7 @@ COMMENT=	Xfce4 command line panel plugin
 
 XFCE_VERSION=	2.0.1
 XFCE_PLUGIN=	verve
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

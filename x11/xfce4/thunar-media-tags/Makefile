@@ -1,7 +1,7 @@
 COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.3.0
-REVISION=	1
+REVISION=	2
 THUNAR_PLUGIN=	thunar-media-tags-plugin
 
 # GPLv3

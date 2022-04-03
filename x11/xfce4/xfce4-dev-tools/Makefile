@@ -2,7 +2,6 @@ COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
 REVISION =	2
-HOMEPAGE =	https://docs.xfce.org/xfce/xfce4-dev-tools/start
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

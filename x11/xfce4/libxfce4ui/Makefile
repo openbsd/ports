@@ -2,12 +2,10 @@ COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
 XFCE_VERSION=	4.16.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	xfce4ui-2		0.2	\
 		xfce4kbd-private-3	0.0	# 0.0
-
-HOMEPAGE=	http://www.xfce.org/projects/libraries
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes

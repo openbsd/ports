@@ -2,9 +2,9 @@ COMMENT=	Xfce4 extension library
 
 XFCE_PROJECT=	exo
 XFCE_VERSION=	4.16.3
-SHARED_LIBS=	exo-2	1.0 # 1.0
+REVISION=	0
 
-HOMEPAGE=	http://www.xfce.org/projects
+SHARED_LIBS=	exo-2	1.0 # 1.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=	Yes

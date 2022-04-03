@@ -2,7 +2,6 @@ COMMENT=	Xfce4 settings daemon
 
 XFCE_PROJECT=	xfconf
 SHARED_LIBS =	xfconf-0 1.0 # 2.0
-HOMEPAGE =	https://docs.xfce.org/xfce/xfconf/start
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

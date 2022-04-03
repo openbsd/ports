@@ -1,7 +1,7 @@
 COMMENT=	D-Bus thumbnailing service
-REVISION=	0
 
 XFCE_PROJECT=	tumbler
+REVISION=	1
 
 SHARED_LIBS+=	tumbler-1 0.0
 

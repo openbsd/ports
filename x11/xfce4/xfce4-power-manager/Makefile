@@ -1,7 +1,7 @@
 COMMENT =	Xfce4 power manager
-REVISION =	0
 
 XFCE_PROJECT =	xfce4-power-manager
+REVISION =	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

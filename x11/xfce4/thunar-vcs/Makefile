@@ -1,8 +1,10 @@
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.2.0
-REVISION =	1
+REVISION =	2
 THUNAR_PLUGIN =	thunar-vcs-plugin
+
+HOMEPAGE = https://docs.xfce.org/xfce/thunar/${THUNAR_PLUGIN}
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

@@ -2,6 +2,7 @@ COMMENT=	Xfce4 disk performance panel plugin
 
 XFCE_VERSION=	2.7.0
 XFCE_PLUGIN=	diskperf
+REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes

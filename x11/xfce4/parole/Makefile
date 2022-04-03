@@ -1,7 +1,8 @@
 COMMENT =	Xfce4 media player
-REVISION =	0
 
 XFCE_GOODIE =	parole
+REVISION =	1
+
 CATEGORIES +=	audio
 
 # GPLv2

@@ -2,7 +2,7 @@ COMMENT=	Xfce4 vte-based terminal
 
 XFCE_VERSION=	1.0.0
 XFCE_GOODIE=	xfce4-terminal
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

@@ -2,7 +2,7 @@ COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.3.0
 XFCE_GOODIE=	xfmpc
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

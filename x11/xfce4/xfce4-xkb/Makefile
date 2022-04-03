@@ -2,7 +2,7 @@ COMMENT=	Xfce4 xkb layout switcher panel plugin
 
 XFCE_VERSION=	0.8.2
 XFCE_PLUGIN=	xkb
-REVISION=	0
+REVISION=	1
 
 # BSD
 PERMIT_PACKAGE=	Yes

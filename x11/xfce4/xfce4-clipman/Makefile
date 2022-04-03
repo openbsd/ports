@@ -2,7 +2,7 @@ COMMENT=	Xfce4 clipboard history panel plugin
 
 XFCE_VERSION=	1.6.2
 XFCE_PLUGIN=	clipman
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
