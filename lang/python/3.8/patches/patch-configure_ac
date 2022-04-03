@@ -14,16 +14,7 @@ Index: configure.ac
  
  # The later defininition of _XOPEN_SOURCE disables certain features
  # on Linux, so we need _GNU_SOURCE to re-enable them (makedev, tm_zone).
-@@ -719,7 +719,7 @@ then
- fi
- 
- 
--MULTIARCH=$($CC --print-multiarch 2>/dev/null)
-+MULTIARCH=$(false)
- AC_SUBST(MULTIARCH)
- 
- AC_MSG_CHECKING([for the platform triplet based on compiler characteristics])
-@@ -735,8 +735,8 @@ cat >> conftest.c <<EOF
+@@ -732,8 +732,8 @@ cat >> conftest.c <<EOF
  #undef powerpc
  #undef sparc
  #undef unix
@@ -34,7 +25,16 @@ Index: configure.ac
  #elif defined(__linux__)
  # if defined(__x86_64__) && defined(__LP64__)
          x86_64-linux-gnu
-@@ -2811,18 +2811,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
+@@ -875,7 +875,7 @@ fi
+ rm -f conftest.c conftest.out
+ 
+ if test x$PLATFORM_TRIPLET != xdarwin; then
+-  MULTIARCH=$($CC --print-multiarch 2>/dev/null)
++  MULTIARCH=$(false)
+ fi
+ AC_SUBST(MULTIARCH)
+ 
+@@ -2813,18 +2813,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
  AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
  
  # checks for uuid.h location

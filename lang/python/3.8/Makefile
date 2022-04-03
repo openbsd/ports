@@ -3,12 +3,9 @@
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.8.12
+FULL_VERSION =		3.8.13
 SHARED_LIBS =		python3.8 0.0
 VERSION_SPEC =		>=3.8,<3.9
 PORTROACH =		limit:^3\.8
-
-REVISION =		5
-REVISION-main =		7
 
 .include <bsd.port.mk>
