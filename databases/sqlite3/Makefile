@@ -1,10 +1,10 @@
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3360000
-PKGNAME=	sqlite3-3.36.0
+DISTNAME =	sqlite-autoconf-3380200
+PKGNAME=	sqlite3-3.38.2
 
 # XXX needs bumps every time :-
-SHARED_LIBS +=  sqlite3                   37.14 # 8.6
+SHARED_LIBS +=  sqlite3                   37.15 # 8.6
 # sqlite suggests that users might like to assert() that library and header
 # versions match, so bumps are needed even if function signatures don't change.
 # ... at the current time the only one noticed is a < check (in subversion)
@@ -20,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m pthread readline z
 
-MASTER_SITES =	${HOMEPAGE}2021/
+MASTER_SITES =	${HOMEPAGE}2022/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-static-shell
