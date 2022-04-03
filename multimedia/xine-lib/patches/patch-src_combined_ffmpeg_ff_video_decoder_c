@@ -1,0 +1,95 @@
+- Drop always true check
+  b1ecb15deaf85079b3543b8b27f876abe580acd9
+- Drop redundant flag
+  584638837b26fb35ec4ce082304e2943af51072d
+- Check for NULL
+  fc5c2dde344ea039391e111bd7b0d5ab8198a544
+
+Index: src/combined/ffmpeg/ff_video_decoder.c
+--- src/combined/ffmpeg/ff_video_decoder.c.orig
++++ src/combined/ffmpeg/ff_video_decoder.c
+@@ -127,7 +127,6 @@ struct ff_video_decoder_s {
+ 
+   uint8_t           decoder_ok:1;
+   uint8_t           decoder_init_mode:1;
+-  uint8_t           is_mpeg12:1;
+ #ifdef HAVE_POSTPROC
+   uint8_t           pp_available:1;
+ #endif
+@@ -1699,7 +1698,7 @@ static int ff_vc1_find_header(ff_video_decoder_t *this
+ 
+ static int ff_check_extradata(ff_video_decoder_t *this, unsigned int codec_type, buf_element_t *buf)
+ {
+-  if (this->context && this->context->extradata)
++  if (this->context->extradata)
+     return 1;
+ 
+   switch (codec_type) {
+@@ -1713,8 +1712,6 @@ static int ff_check_extradata(ff_video_decoder_t *this
+ 
+ static void ff_init_mpeg12_mode(ff_video_decoder_t *this)
+ {
+-  this->is_mpeg12 = 1;
+-
+   if (this->decoder_init_mode) {
+     _x_meta_info_set_utf8(this->stream, XINE_META_INFO_VIDEOCODEC,
+                           "mpeg-1 (ffmpeg)");
+@@ -1725,7 +1722,8 @@ static void ff_init_mpeg12_mode(ff_video_decoder_t *th
+ 
+   if ( this->mpeg_parser == NULL ) {
+     this->mpeg_parser = calloc(1, sizeof(mpeg_parser_t));
+-    mpeg_parser_init(this->mpeg_parser, AV_INPUT_BUFFER_PADDING_SIZE);
++    if (this->mpeg_parser)
++      mpeg_parser_init(this->mpeg_parser, AV_INPUT_BUFFER_PADDING_SIZE);
+   }
+ }
+ 
+@@ -1739,7 +1737,7 @@ static void ff_handle_preview_buffer (ff_video_decoder
+     ff_init_mpeg12_mode(this);
+   }
+ 
+-  if (this->decoder_init_mode && !this->is_mpeg12) {
++  else if (this->decoder_init_mode && !this->mpeg_parser) {
+ 
+     if (!ff_check_extradata(this, codec_type, buf))
+       return;
+@@ -2066,9 +2064,12 @@ static void ff_handle_mpeg12_buffer (ff_video_decoder_
+ 
+   lprintf("handle_mpeg12_buffer\n");
+ 
+-  if (!this->is_mpeg12) {
++  if (!this->mpeg_parser) {
+     /* initialize mpeg parser */
+     ff_init_mpeg12_mode(this);
++    if (!this->mpeg_parser) {
++      return;
++    }
+   }
+ 
+ #ifdef DEBUG_MPEG_PARSER
+@@ -2653,7 +2654,7 @@ static void ff_decode_data (video_decoder_t *this_gen,
+       }
+ 
+     } else {
+-      if (this->decoder_init_mode && !this->is_mpeg12)
++      if (this->decoder_init_mode)
+         ff_handle_preview_buffer(this, buf);
+ 
+       /* decode */
+@@ -2875,7 +2876,7 @@ static void ff_reset (video_decoder_t *this_gen) {
+ #endif
+   }
+ 
+-  if (this->is_mpeg12)
++  if (this->mpeg_parser)
+     mpeg_parser_reset(this->mpeg_parser);
+ 
+   /* this->pts_tag_pass = 0; */
+@@ -2997,7 +2998,6 @@ static video_decoder_t *ff_video_open_plugin (video_de
+ #ifndef HAVE_ZERO_SAFE_MEM
+   this->size            = 0;
+   this->decoder_ok      = 0;
+-  this->is_mpeg12       = 0;
+   this->aspect_ratio    = 0;
+   this->pts_tag_pass    = 0;
+ #ifdef HAVE_POSTPROC

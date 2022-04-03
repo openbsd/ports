@@ -1,0 +1,26 @@
+- ffmpeg_encoder: fix setting codec option
+  81ba6f23b5362d8bb9140b210dd562f05add1bb0
+- Add const
+  2750d2ee4ad1beb661bffd9cb696d6a5d619e5cf
+
+Index: src/dxr3/ffmpeg_encoder.c
+--- src/dxr3/ffmpeg_encoder.c.orig
++++ src/dxr3/ffmpeg_encoder.c
+@@ -123,7 +123,7 @@ static int lavc_prepare_frame(lavc_data_t *this, dxr3_
+ static int lavc_on_update_format(dxr3_driver_t *drv, dxr3_frame_t *frame)
+ {
+   lavc_data_t *this = (lavc_data_t *)drv->enc;
+-  AVCodec *codec;
++  const AVCodec *codec;
+   unsigned char use_quantizer;
+ 
+   if (this->context) {
+@@ -223,7 +223,7 @@ static int lavc_on_update_format(dxr3_driver_t *drv, d
+   this->context->gop_size = 0; /*intra frames only */
+ /* TJ. this version is known to have that but maybe its not the first. */
+ #if LIBAVCODEC_VERSION_INT >= XFF_INT_VERSION(56,56,101)
+-  av_opt_set_int (codec, "motion_est", 0 /* "zero" */, 0);
++  av_opt_set_int (this->context->priv_data, "motion_est", 0 /* "zero" */, 0);
+ #else
+   this->context->me_method = ME_ZERO; /*motion estimation type*/
+ #endif

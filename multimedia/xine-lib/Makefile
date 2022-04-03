@@ -1,7 +1,7 @@
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
