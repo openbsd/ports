@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -1049,6 +1049,8 @@ class PyBuildExt(build_ext):
+@@ -1051,6 +1051,8 @@ class PyBuildExt(build_ext):
                                                       'termcap'):
                  readline_libs.append('termcap')
              self.add(Extension('readline', ['readline.c'],
@@ -10,7 +10,7 @@ Index: setup.py
                                 library_dirs=['/usr/lib/termcap'],
                                 extra_link_args=readline_extra_link_args,
                                 libraries=readline_libs))
-@@ -1776,7 +1778,7 @@ class PyBuildExt(build_ext):
+@@ -1778,7 +1780,7 @@ class PyBuildExt(build_ext):
          uuid_h = sysconfig.get_config_var("HAVE_UUID_H")
          uuid_uuid_h = sysconfig.get_config_var("HAVE_UUID_UUID_H")
          if uuid_h or uuid_uuid_h:
@@ -19,7 +19,7 @@ Index: setup.py
                  uuid_libs = ["uuid"]
              else:
                  uuid_libs = []
-@@ -1995,8 +1997,7 @@ class PyBuildExt(build_ext):
+@@ -1997,8 +1999,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None

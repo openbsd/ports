@@ -3,12 +3,10 @@
 # requirement of the PSF license, if it constitutes a change to
 # Python itself.
 
-FULL_VERSION =		3.9.10
+FULL_VERSION =		3.9.12
 SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
-
-REVISION =		0
 
 # This is the MODPY_DEFAULT_VERSION_3 version of Python:
 # - override "@comment" setting so that bin/python3 etc are installed

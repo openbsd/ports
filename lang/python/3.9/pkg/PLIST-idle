@@ -199,6 +199,9 @@ lib/python3.9/idlelib/__pycache__/tree.cpython-39.pyc
 lib/python3.9/idlelib/__pycache__/undo.cpython-39.opt-1.pyc
 lib/python3.9/idlelib/__pycache__/undo.cpython-39.opt-2.pyc
 lib/python3.9/idlelib/__pycache__/undo.cpython-39.pyc
+lib/python3.9/idlelib/__pycache__/util.cpython-39.opt-1.pyc
+lib/python3.9/idlelib/__pycache__/util.cpython-39.opt-2.pyc
+lib/python3.9/idlelib/__pycache__/util.cpython-39.pyc
 lib/python3.9/idlelib/__pycache__/window.cpython-39.opt-1.pyc
 lib/python3.9/idlelib/__pycache__/window.cpython-39.opt-2.pyc
 lib/python3.9/idlelib/__pycache__/window.cpython-39.pyc
@@ -423,6 +426,9 @@ lib/python3.9/idlelib/idle_test/__pycache__/test_tree.cpython-39.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_undo.cpython-39.opt-1.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_undo.cpython-39.opt-2.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_undo.cpython-39.pyc
+lib/python3.9/idlelib/idle_test/__pycache__/test_util.cpython-39.opt-1.pyc
+lib/python3.9/idlelib/idle_test/__pycache__/test_util.cpython-39.opt-2.pyc
+lib/python3.9/idlelib/idle_test/__pycache__/test_util.cpython-39.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_warning.cpython-39.opt-1.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_warning.cpython-39.opt-2.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_warning.cpython-39.pyc
@@ -435,6 +441,8 @@ lib/python3.9/idlelib/idle_test/__pycache__/test_zoomheight.cpython-39.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_zzdummy.cpython-39.opt-1.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_zzdummy.cpython-39.opt-2.pyc
 lib/python3.9/idlelib/idle_test/__pycache__/test_zzdummy.cpython-39.pyc
+lib/python3.9/idlelib/idle_test/example_noext
+lib/python3.9/idlelib/idle_test/example_stub.pyi
 lib/python3.9/idlelib/idle_test/htest.py
 lib/python3.9/idlelib/idle_test/mock_idle.py
 lib/python3.9/idlelib/idle_test/mock_tk.py
@@ -493,6 +501,7 @@ lib/python3.9/idlelib/idle_test/test_textview.py
 lib/python3.9/idlelib/idle_test/test_tooltip.py
 lib/python3.9/idlelib/idle_test/test_tree.py
 lib/python3.9/idlelib/idle_test/test_undo.py
+lib/python3.9/idlelib/idle_test/test_util.py
 lib/python3.9/idlelib/idle_test/test_warning.py
 lib/python3.9/idlelib/idle_test/test_window.py
 lib/python3.9/idlelib/idle_test/test_zoomheight.py
@@ -525,6 +534,7 @@ lib/python3.9/idlelib/textview.py
 lib/python3.9/idlelib/tooltip.py
 lib/python3.9/idlelib/tree.py
 lib/python3.9/idlelib/undo.py
+lib/python3.9/idlelib/util.py
 lib/python3.9/idlelib/window.py
 lib/python3.9/idlelib/zoomheight.py
 lib/python3.9/idlelib/zzdummy.py
