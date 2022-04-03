@@ -4,9 +4,12 @@ searching through JSON data. It also supports YAML.
 jless will pretty print your files and apply syntax highlighting.
 Use it when exploring external APIs, or debugging request payloads.
 
+jless has a large suite of vim-inspired commands that make exploring
+data a breeze. See https://jless.io/user-guide.html or type ":help"
+for a reference to available keys.
+
 Expand and collapse Objects and Arrays to grasp the high- and low-level
-structure of a document. jless has a large suite of vim-inspired
-commands that make exploring data a breeze.
+structure of a document (left/right cursor or h/l keys).
 
 jless supports full text regular-expression based search. Quickly find
 the data you're looking for in long String values, or jump between

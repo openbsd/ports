@@ -1,2 +1,4 @@
 @conflict ja-less-*
 @bin bin/jless
+share/doc/jless/
+share/doc/jless/jless.help
