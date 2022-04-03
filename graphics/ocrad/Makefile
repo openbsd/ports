@@ -1,6 +1,6 @@
-COMMENT=	OCR program for pnm files
+COMMENT=	OCR program for pnm/PNG files
 
-DISTNAME=	ocrad-0.27
+DISTNAME=	ocrad-0.28
 
 CATEGORIES=	graphics
 EXTRACT_SUFX=	.tar.lz
@@ -8,15 +8,19 @@ EXTRACT_SUFX=	.tar.lz
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c m ${COMPILER_LIBCXX}
+WANTLIB=	c m pthread png ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 MASTER_SITES=	${MASTER_SITE_GNU:=ocrad/}
 
 CONFIGURE_STYLE=simple
 
-MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+LIB_DEPENDS=	graphics/png
+
+MAKE_FLAGS=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	infodir="${PREFIX}/info" \
 		mandir="${PREFIX}/man"
 
