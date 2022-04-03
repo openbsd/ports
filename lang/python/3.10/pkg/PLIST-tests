@@ -544,6 +544,9 @@ lib/python3.10/test/__pycache__/ann_module5.cpython-310.pyc
 lib/python3.10/test/__pycache__/ann_module6.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/ann_module6.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/ann_module6.cpython-310.pyc
+lib/python3.10/test/__pycache__/ann_module7.cpython-310.opt-1.pyc
+lib/python3.10/test/__pycache__/ann_module7.cpython-310.opt-2.pyc
+lib/python3.10/test/__pycache__/ann_module7.cpython-310.pyc
 lib/python3.10/test/__pycache__/audiotests.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/audiotests.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/audiotests.cpython-310.pyc
@@ -2005,6 +2008,7 @@ lib/python3.10/test/ann_module3.py
 lib/python3.10/test/ann_module4.py
 lib/python3.10/test/ann_module5.py
 lib/python3.10/test/ann_module6.py
+lib/python3.10/test/ann_module7.py
 lib/python3.10/test/audiodata/
 lib/python3.10/test/audiodata/pluck-alaw.aifc
 lib/python3.10/test/audiodata/pluck-pcm16.aiff
@@ -2543,9 +2547,6 @@ lib/python3.10/test/test_asyncio/__pycache__/echo3.cpython-310.pyc
 lib/python3.10/test/test_asyncio/__pycache__/functional.cpython-310.opt-1.pyc
 lib/python3.10/test/test_asyncio/__pycache__/functional.cpython-310.opt-2.pyc
 lib/python3.10/test/test_asyncio/__pycache__/functional.cpython-310.pyc
-lib/python3.10/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-310.opt-1.pyc
-lib/python3.10/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-310.opt-2.pyc
-lib/python3.10/test/test_asyncio/__pycache__/test_asyncio_waitfor.cpython-310.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_base_events.cpython-310.opt-1.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_base_events.cpython-310.opt-2.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_base_events.cpython-310.pyc
@@ -2615,6 +2616,9 @@ lib/python3.10/test/test_asyncio/__pycache__/test_transports.cpython-310.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_unix_events.cpython-310.opt-1.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_unix_events.cpython-310.opt-2.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_unix_events.cpython-310.pyc
+lib/python3.10/test/test_asyncio/__pycache__/test_waitfor.cpython-310.opt-1.pyc
+lib/python3.10/test/test_asyncio/__pycache__/test_waitfor.cpython-310.opt-2.pyc
+lib/python3.10/test/test_asyncio/__pycache__/test_waitfor.cpython-310.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_windows_events.cpython-310.opt-1.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_windows_events.cpython-310.opt-2.pyc
 lib/python3.10/test/test_asyncio/__pycache__/test_windows_events.cpython-310.pyc
@@ -2628,7 +2632,6 @@ lib/python3.10/test/test_asyncio/echo.py
 lib/python3.10/test/test_asyncio/echo2.py
 lib/python3.10/test/test_asyncio/echo3.py
 lib/python3.10/test/test_asyncio/functional.py
-lib/python3.10/test/test_asyncio/test_asyncio_waitfor.py
 lib/python3.10/test/test_asyncio/test_base_events.py
 lib/python3.10/test/test_asyncio/test_buffered_proto.py
 lib/python3.10/test/test_asyncio/test_context.py
@@ -2652,6 +2655,7 @@ lib/python3.10/test/test_asyncio/test_tasks.py
 lib/python3.10/test/test_asyncio/test_threads.py
 lib/python3.10/test/test_asyncio/test_transports.py
 lib/python3.10/test/test_asyncio/test_unix_events.py
+lib/python3.10/test/test_asyncio/test_waitfor.py
 lib/python3.10/test/test_asyncio/test_windows_events.py
 lib/python3.10/test/test_asyncio/test_windows_utils.py
 lib/python3.10/test/test_asyncio/utils.py

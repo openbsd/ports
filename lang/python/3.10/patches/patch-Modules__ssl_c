@@ -12,7 +12,7 @@ Index: Modules/_ssl.c
    #ifndef PY_SSL_MIN_PROTOCOL
      #define PY_SSL_MIN_PROTOCOL TLS1_2_VERSION
    #endif
-@@ -3567,6 +3567,12 @@ set_num_tickets(PySSLContext *self, PyObject *arg, voi
+@@ -3579,6 +3579,12 @@ set_num_tickets(PySSLContext *self, PyObject *arg, voi
  PyDoc_STRVAR(PySSLContext_num_tickets_doc,
  "Control the number of TLSv1.3 session tickets");
  #endif /* TLS1_3_VERSION */

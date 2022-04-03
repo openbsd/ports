@@ -198,6 +198,9 @@ lib/python3.10/idlelib/__pycache__/tree.cpython-310.pyc
 lib/python3.10/idlelib/__pycache__/undo.cpython-310.opt-1.pyc
 lib/python3.10/idlelib/__pycache__/undo.cpython-310.opt-2.pyc
 lib/python3.10/idlelib/__pycache__/undo.cpython-310.pyc
+lib/python3.10/idlelib/__pycache__/util.cpython-310.opt-1.pyc
+lib/python3.10/idlelib/__pycache__/util.cpython-310.opt-2.pyc
+lib/python3.10/idlelib/__pycache__/util.cpython-310.pyc
 lib/python3.10/idlelib/__pycache__/window.cpython-310.opt-1.pyc
 lib/python3.10/idlelib/__pycache__/window.cpython-310.opt-2.pyc
 lib/python3.10/idlelib/__pycache__/window.cpython-310.pyc
@@ -422,6 +425,9 @@ lib/python3.10/idlelib/idle_test/__pycache__/test_tree.cpython-310.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_undo.cpython-310.opt-1.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_undo.cpython-310.opt-2.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_undo.cpython-310.pyc
+lib/python3.10/idlelib/idle_test/__pycache__/test_util.cpython-310.opt-1.pyc
+lib/python3.10/idlelib/idle_test/__pycache__/test_util.cpython-310.opt-2.pyc
+lib/python3.10/idlelib/idle_test/__pycache__/test_util.cpython-310.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_warning.cpython-310.opt-1.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_warning.cpython-310.opt-2.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_warning.cpython-310.pyc
@@ -434,6 +440,11 @@ lib/python3.10/idlelib/idle_test/__pycache__/test_zoomheight.cpython-310.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_zzdummy.cpython-310.opt-1.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_zzdummy.cpython-310.opt-2.pyc
 lib/python3.10/idlelib/idle_test/__pycache__/test_zzdummy.cpython-310.pyc
+lib/python3.10/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-310.opt-1.pyc
+lib/python3.10/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-310.opt-2.pyc
+lib/python3.10/idlelib/idle_test/__pycache__/tkinter_testing_utils.cpython-310.pyc
+lib/python3.10/idlelib/idle_test/example_noext
+lib/python3.10/idlelib/idle_test/example_stub.pyi
 lib/python3.10/idlelib/idle_test/htest.py
 lib/python3.10/idlelib/idle_test/mock_idle.py
 lib/python3.10/idlelib/idle_test/mock_tk.py
@@ -492,10 +503,12 @@ lib/python3.10/idlelib/idle_test/test_textview.py
 lib/python3.10/idlelib/idle_test/test_tooltip.py
 lib/python3.10/idlelib/idle_test/test_tree.py
 lib/python3.10/idlelib/idle_test/test_undo.py
+lib/python3.10/idlelib/idle_test/test_util.py
 lib/python3.10/idlelib/idle_test/test_warning.py
 lib/python3.10/idlelib/idle_test/test_window.py
 lib/python3.10/idlelib/idle_test/test_zoomheight.py
 lib/python3.10/idlelib/idle_test/test_zzdummy.py
+lib/python3.10/idlelib/idle_test/tkinter_testing_utils.py
 lib/python3.10/idlelib/iomenu.py
 lib/python3.10/idlelib/macosx.py
 lib/python3.10/idlelib/mainmenu.py
@@ -524,6 +537,7 @@ lib/python3.10/idlelib/textview.py
 lib/python3.10/idlelib/tooltip.py
 lib/python3.10/idlelib/tree.py
 lib/python3.10/idlelib/undo.py
+lib/python3.10/idlelib/util.py
 lib/python3.10/idlelib/window.py
 lib/python3.10/idlelib/zoomheight.py
 lib/python3.10/idlelib/zzdummy.py
