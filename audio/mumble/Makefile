@@ -5,7 +5,7 @@ VERSION =		1.4.230
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
 REVISION-main =		2
-REVISION-server =	1
+REVISION-server =	2
 
 CATEGORIES =		audio net
 
@@ -94,6 +94,9 @@ CONFIGURE_ARGS +=	-Dtests=ON
 
 SERVER_CONFIG_FILE =	${WRKSRC}/scripts/murmur.ini
 SERVER_EXAMPLES_DIR =	${PREFIX}/share/examples/murmur
+
+pre-configure:
+	${SUBST_CMD} ${SERVER_CONFIG_FILE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${SERVER_EXAMPLES_DIR}
