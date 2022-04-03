@@ -1,0 +1,27 @@
+Index: minecraft_launcher_lib/runtime.py
+--- minecraft_launcher_lib/runtime.py.orig
++++ minecraft_launcher_lib/runtime.py
+@@ -25,6 +25,8 @@ def _get_jvm_platform_string() -> str:
+             return "linux"
+     elif platform.system() == "Darwin":
+         return "mac-os"
++    elif platform.system() == "OpenBSD":
++        return "openbsd"
+ 
+ 
+ def get_jvm_runtimes() -> List[str]:
+@@ -87,7 +89,13 @@ def get_executable_path(jvm_version: str, minecraft_di
+     """
+     Returns the path to the executable. Returns None if none is found.
+     """
+-    java_path = os.path.join(minecraft_directory, "runtime", jvm_version, _get_jvm_platform_string(), jvm_version, "bin", "java")
++    print( jvm_version )
++    if jvm_version == "java-runtime-legacy":
++        java_path = "/usr/local/jdk-11/bin/java"
++    elif jvm_version == "java-runtime-beta":
++        java_path = "/usr/local/jdk-17/bin/java"
++    else:
++        java_path = "/usr/local/jdk-11/bin/java"
+     if os.path.isfile(java_path):
+         return java_path
+     elif os.path.isfile(java_path + ".exe"):
