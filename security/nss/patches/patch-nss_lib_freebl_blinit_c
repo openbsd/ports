@@ -1,6 +1,7 @@
 Index: nss/lib/freebl/blinit.c
 
 Enable aarch64 hardware crypto support.
+https://bugzilla.mozilla.org/show_bug.cgi?id=1762831
 
 --- nss/lib/freebl/blinit.c.orig
 +++ nss/lib/freebl/blinit.c
