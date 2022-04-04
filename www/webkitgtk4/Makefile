@@ -135,15 +135,15 @@ CXXFLAGS +=		-I${X11BASE}/include
 
 .include <bsd.port.arch.mk>
 
-# ld.lld does not have this option
-# save memory on 32bit arches
-.if !${PROPERTIES:Mlld} && ${MACHINE_ARCH} != "amd64"
-LDFLAGS +=		-Wl,--no-keep-memory
+# disable thin archives for bfd
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-DUSE_THIN_ARCHIVES=FALSE
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "i386"
 # Don't make LLVM run out of memory
 DPB_PROPERTIES =       lonesome
+LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
 post-extract:
