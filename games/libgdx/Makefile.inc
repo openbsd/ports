@@ -2,10 +2,10 @@ COMMENT ?=		java game development framework
 PKGNAME ?=		libgdx-${VERSION}
 
 # used in patches as well as PLISTs
-.if ${MACHINE_ARCH} == "i386"
-M_ARCH ?=		.so
-.elif ${MACHINE_ARCH} == "amd64"
+.if ${PROPERTIES:Mlp64}
 M_ARCH ?=		64.so
+.else
+M_ARCH ?=		.so
 .endif
 
 GH_ACCOUNT ?=		libgdx
