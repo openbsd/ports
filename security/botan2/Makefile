@@ -3,7 +3,7 @@ COMMENT =	crypto and TLS for C++11
 VERSION =	2.19.1
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	botan-2		15.0
 
@@ -46,10 +46,6 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--with-openssl \
 			--with-zlib \
 			--without-sphinx
-
-.if ${MACHINE_ARCH} == "aarch64"
-CONFIGURE_ARGS +=	--disable-armv8crypto
-.endif
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
