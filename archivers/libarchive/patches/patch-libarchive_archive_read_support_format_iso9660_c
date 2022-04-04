@@ -1,0 +1,22 @@
+From 9ad5f077491b9536f01dadca1724385c39cd7613 Mon Sep 17 00:00:00 2001
+From: Martin Matuska <martin@matuska.org>
+Date: Wed, 30 Mar 2022 21:14:00 +0200
+Subject: [PATCH] ISO reader: fix possible heap buffer overflow in
+ read_children()
+
+OSS-Fuzz issue: 38764
+Fixes #1685
+
+Index: libarchive/archive_read_support_format_iso9660.c
+--- libarchive/archive_read_support_format_iso9660.c.orig
++++ libarchive/archive_read_support_format_iso9660.c
+@@ -1007,7 +1007,8 @@ read_children(struct archive_read *a, struct file_info
+ 		p = b;
+ 		b += iso9660->logical_block_size;
+ 		step -= iso9660->logical_block_size;
+-		for (; *p != 0 && p < b && p + *p <= b; p += *p) {
++		for (; *p != 0 && p + DR_name_offset < b && p + *p <= b;
++			p += *p) {
+ 			struct file_info *child;
+ 
+ 			/* N.B.: these special directory identifiers
