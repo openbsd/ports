@@ -3,7 +3,7 @@ COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		6.0.2
+VERSION =		6.0.3
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -12,10 +12,6 @@ PKGNAME-proxy =		zabbix-proxy-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-
-REVISION-main =		2
-REVISION-server =	1
-REVISION-proxy =	1
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 

@@ -1,7 +1,7 @@
 Index: src/libs/zbxcrypto/tls.h
 --- src/libs/zbxcrypto/tls.h.orig
 +++ src/libs/zbxcrypto/tls.h
-@@ -31,7 +31,7 @@
+@@ -33,7 +33,7 @@
  #	include <openssl/rand.h>
  #endif
  
