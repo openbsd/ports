@@ -3,7 +3,7 @@
 @conflict python-${VERSION_SPEC}
 @conflict python->=3.2,<3.8
 @conflict py3-pip-<=20.3.4p0
-@conflict py3-setuptools-<=57.4.0v0
+@conflict py3-setuptools-<57.4.0p0v0
 @pkgpath lang/python/3.2,-main
 @pkgpath lang/python/3.3,-main
 @pkgpath lang/python/3.4,-main
