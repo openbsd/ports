@@ -3,14 +3,14 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	98.0.2
+MOZILLA_VERSION =	99.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	111.0
+SO_VERSION =	112.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3 ipcclientcerts
@@ -37,7 +37,7 @@ BUILD_DEPENDS +=	devel/m4
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
-WANTLIB += Xcomposite Xdamage Xfixes
+WANTLIB += Xcomposite Xdamage Xfixes Xrandr Xtst
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes

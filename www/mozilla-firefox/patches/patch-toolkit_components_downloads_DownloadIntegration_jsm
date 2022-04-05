@@ -23,7 +23,7 @@ Index: toolkit/components/downloads/DownloadIntegration.jsm
          } catch (ex) {
            Cu.reportError(ex);
            // Either the preference isn't set or the directory cannot be created.
-@@ -954,8 +953,8 @@ var DownloadIntegration = {
+@@ -958,8 +957,8 @@ var DownloadIntegration = {
      );
  
      // Create the Downloads folder and ignore if it already exists.
