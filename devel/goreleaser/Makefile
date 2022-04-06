@@ -1,3 +1,5 @@
+BROKEN =	does not build with Go 1.17
+
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser
