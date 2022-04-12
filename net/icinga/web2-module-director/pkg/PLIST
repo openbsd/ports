@@ -473,6 +473,9 @@ icinga-web2/modules/director/library/Director/Db/MembershipHousekeeping.php
 icinga-web2/modules/director/library/Director/Db/Migration.php
 icinga-web2/modules/director/library/Director/Db/Migrations.php
 icinga-web2/modules/director/library/Director/Deployment/
+icinga-web2/modules/director/library/Director/Deployment/ConditionalConfigRenderer.php
+icinga-web2/modules/director/library/Director/Deployment/ConditionalDeployment.php
+icinga-web2/modules/director/library/Director/Deployment/DeploymentGracePeriod.php
 icinga-web2/modules/director/library/Director/Deployment/DeploymentInfo.php
 icinga-web2/modules/director/library/Director/Deployment/DeploymentStatus.php
 icinga-web2/modules/director/library/Director/DirectorObject/
