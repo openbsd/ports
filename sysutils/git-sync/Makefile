@@ -3,6 +3,7 @@ COMMENT =	safe, simple git synchronization
 GH_ACCOUNT =	simonthum
 GH_PROJECT =	git-sync
 GH_COMMIT =	23bfc0ea32121a30aeb8e557bfb189693cb15603
+REVISION =	0
 
 DISTNAME =	git-sync-20220127
 
