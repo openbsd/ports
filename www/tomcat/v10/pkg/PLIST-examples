@@ -1388,6 +1388,7 @@ webapps/docs/api/org/apache/tomcat/SimpleInstanceManager.html
 webapps/docs/api/org/apache/tomcat/buildutil/
 webapps/docs/api/org/apache/tomcat/buildutil/CheckEol.html
 webapps/docs/api/org/apache/tomcat/buildutil/MimeTypeMappings.html
+webapps/docs/api/org/apache/tomcat/buildutil/RepeatableArchive.html
 webapps/docs/api/org/apache/tomcat/buildutil/Txt2Html.html
 webapps/docs/api/org/apache/tomcat/buildutil/Utils.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-summary.html
@@ -3123,12 +3124,9 @@ webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
 webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
 webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
 webapps/examples/WEB-INF/jsp/
-webapps/examples/WEB-INF/jsp/applet/
-webapps/examples/WEB-INF/jsp/applet/Clock2.java
 webapps/examples/WEB-INF/jsp/debug-taglib.tld
 webapps/examples/WEB-INF/jsp/example-taglib.tld
-webapps/examples/WEB-INF/jsp2/
-webapps/examples/WEB-INF/jsp2/jsp2-example-taglib.tld
+webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
 webapps/examples/WEB-INF/lib/
 webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5-migrated-0.0.1.jar
 webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5-migrated-0.0.1.jar
@@ -3290,13 +3288,6 @@ webapps/examples/jsp/num/
 webapps/examples/jsp/num/numguess.html
 webapps/examples/jsp/num/numguess.jsp
 webapps/examples/jsp/num/numguess.jsp.html
-webapps/examples/jsp/plugin/
-webapps/examples/jsp/plugin/applet/
-webapps/examples/jsp/plugin/applet/Clock2.class
-webapps/examples/jsp/plugin/applet/Clock2.java
-webapps/examples/jsp/plugin/plugin.html
-webapps/examples/jsp/plugin/plugin.jsp
-webapps/examples/jsp/plugin/plugin.jsp.html
 webapps/examples/jsp/security/
 webapps/examples/jsp/security/protected/
 webapps/examples/jsp/security/protected/error.jsp
