@@ -12,6 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/DcxImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/DdsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/EpsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ExifTags.py
+lib/python${MODPY_VERSION}/site-packages/PIL/FitsImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FitsStubImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FliImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/FontFile.py
@@ -100,6 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}DcxImagePlugin.${MO
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}DdsImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}EpsImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}ExifTags.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FitsStubImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FliImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}FontFile.${MODPY_PYC_MAGIC_TAG}pyc
@@ -198,5 +200,6 @@ lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
