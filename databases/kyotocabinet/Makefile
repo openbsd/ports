@@ -6,12 +6,13 @@ NOT_FOR_ARCHS=		${GCC3_ARCHS}
 COMMENT=	straightforward implementation of DBM
 
 DISTNAME=	kyotocabinet-1.2.79
+REVISION=	0
 
 SHARED_LIBS +=	kyotocabinet 0.0 # 16.0
 
 CATEGORIES=	databases
 
-HOMEPAGE=	https://fallabs.com/kyotocabinet/
+HOMEPAGE=	http://fallabs.com/kyotocabinet/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
