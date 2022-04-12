@@ -1,6 +1,6 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
-V=			3.19.3
+V=			3.20.0
 MODPY_EGG_VERSION=	${V:S/-//g}
 TAG=			v${V:S/rc-/rc/}
 
