@@ -1,6 +1,6 @@
 COMMENT =		automation tool
 
-MODPY_EGG_VERSION =	0.34.1
+MODPY_EGG_VERSION =	0.35.0
 DISTNAME =		doit-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
