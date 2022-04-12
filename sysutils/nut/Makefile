@@ -7,6 +7,7 @@ V=		2.8.0-rc1
 DISTNAME=	nut-${V}
 #PKGNAME=	nut-${V:S/-//}
 PKGNAME=	nut-2.8.0pre20220401
+REVISION-main=	0
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
