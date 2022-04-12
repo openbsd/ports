@@ -3,6 +3,6 @@ PKGSPEC-main =	tomcat->=8,<9
 
 MAJ_VER =	8
 MIN_VER =	5
-MICRO_VER =	75
+MICRO_VER =	78
 
 .include <bsd.port.mk>
