@@ -1,0 +1,21 @@
+XXX these functions don't exist in our old libcurses, but the
+toolchain doesn't return an error when trying to link a program
+that has missing functions, you actually need to try to run it
+to notice the problem
+
+Index: auto.def
+--- auto.def.orig
++++ auto.def
+@@ -754,9 +754,9 @@ cc-with [list -libs -L$ncurses_prefix/$::libdir_tail] 
+     user-error "Unable to find ncursesw library"
+   }
+ 
+-  foreach f {bkgrndset setcchar} {
+-    cc-check-function-in-lib $f $ncurses_lib
+-  }
++#  foreach f {bkgrndset setcchar} {
++#    cc-check-function-in-lib $f $ncurses_lib
++#  }
+ }
+ 
+ # Locate the directory containing ncurses.h

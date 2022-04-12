@@ -1,7 +1,7 @@
 Index: conn/sasl.c
 --- conn/sasl.c.orig
 +++ conn/sasl.c
-@@ -276,7 +276,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
+@@ -277,7 +277,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
   *
   * Call before doing an SASL exchange (initialises library if necessary).
   */

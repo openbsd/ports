@@ -2,9 +2,7 @@ COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20211029
-REVISION=	0
-DISTFILES=	neomutt-20211029-upd{neomutt-20211029}.tar.gz
+GH_TAGNAME=	20220408
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
