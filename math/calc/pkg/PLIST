@@ -10,6 +10,7 @@ bin/cscript/simple
 bin/cscript/square
 include/calc/
 include/calc/alloc.h
+include/calc/attribute.h
 include/calc/banned.h
 include/calc/blkcpy.h
 include/calc/block.h
