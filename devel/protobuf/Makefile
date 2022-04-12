@@ -1,15 +1,15 @@
 COMMENT =		c++ protocol buffers
 
-V =			3.19.3
+V =			3.20.0
 TAG =			v${V:S/rc-/rc/}
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-${V:S/-//g}
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
-SHARED_LIBS +=		protobuf-lite	13.0    # 30.3
-SHARED_LIBS +=		protobuf	15.0    # 30.3
-SHARED_LIBS +=		protoc		16.0    # 30.3
+SHARED_LIBS +=		protobuf-lite	14.0    # 31.0
+SHARED_LIBS +=		protobuf	16.0    # 31.0
+SHARED_LIBS +=		protoc		17.0    # 31.0
 
 CATEGORIES =		devel
 
