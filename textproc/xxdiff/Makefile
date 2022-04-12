@@ -1,52 +1,50 @@
 COMMENT=	graphical file comparator and merge tool
 
-PKGNAME=	xxdiff-4.0.1.20170623
-DISTNAME=	5e5f885dfc43559549a81c59e9e8c9525306356a
+GH_ACCOUNT=	blais
+GH_PROJECT=	xxdiff
+GH_COMMIT=	f0d6fd44b3f31a852cbd765596b6db05a8e78276
+
+DISTNAME=	xxdiff-20220318
 
 CATEGORIES=	textproc x11
 
-HOMEPAGE=	http://furius.ca/xxdiff/
+HOMEPAGE=	https://furius.ca/xxdiff/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Widgets c m
 
-MASTER_SITES=	https://bitbucket.org/blais/xxdiff/get/
+WRKSRC=		${WRKDIST}/src
 
 MODULES=	devel/qmake \
 		lang/python \
 		x11/qt5
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS=	devel/bison
 
+USE_GMAKE=	Yes
 MAKE_FLAGS=	MAKEDIR=${WRKDIST}
-
-SEPARATE_BUILD=	No
-
 MODPY_ADJ_FILES= ../bin/termdiff
-
 NO_TEST=	Yes
 
-WRKDIST=	${WRKDIR}/blais-xxdiff-${DISTNAME:C/([0-9a-f]{12}).*/\1/}/src
-
-post-extract:
-	@rm ${WRKDIST}/getopt.h
-	@rm ${WRKDIST}/getopt.c
-	@rm ${WRKDIST}/getopt1.c
-
 post-configure:
-	cat ${WRKSRC}/Makefile.extra >>${WRKBUILD}/Makefile
+	${MAKE_PROGRAM} -C ${WRKSRC} -f Makefile.bootstrap QMAKE=${MODQT5_QMAKE}
+	${MAKE_PROGRAM} -C ${WRKSRC} resParser_lex.h doc.h version.h
 
 do-install:
-	cd ${WRKSRC}/../bin; \
+	cd ${WRKSRC}/bin; \
 	${INSTALL_PROGRAM} xxdiff ${PREFIX}/bin/xxdiff; \
-	${INSTALL_MAN} ${WRKSRC}/xxdiff.1 ${PREFIX}/man/man1/xxdiff.1; \
-	cd .. ; \
+	${INSTALL_MAN} ${WRKSRC}/xxdiff.1 ${PREFIX}/man/man1/xxdiff.1
+
+	cd ${WRKDIST}; \
 	${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./${MODPY_SETUP} \
 	    ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 	    ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}; \
-	${INSTALL_SCRIPT} bin/termdiff ${PREFIX}/bin
+	# previous versions of this port installed the termdiff script;
+	# it doesn't support Python 3 yet (and other Python parts of xxdiff
+	# don't support Python 2 any more), also the previous version was
+	# quite buggy, so skip for now.
+	#${INSTALL_SCRIPT} bin/termdiff ${PREFIX}/bin
 
 .include <bsd.port.mk>
