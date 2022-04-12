@@ -2,7 +2,7 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,
 # ESV branched occasionally.  9.16.x is ESV.
-V=		9.16.27
+V=		9.18.1
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
@@ -21,8 +21,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto execinfo iconv idn2 json-c lzma m pthread ssl
-WANTLIB += unistring uv xml2 z
+WANTLIB += c crypto execinfo iconv idn2 json-c lzma m nghttp2
+WANTLIB += pthread ssl unistring uv xml2 z
 
 FLAVORS=	geoip
 FLAVOR?=
@@ -33,16 +33,17 @@ MASTER_SITES0=	${MASTER_SITE_ISC:=bind9/$V/patches/}
 MODULES=	lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 MODPY_RUNDEP=	No
-BUILD_DEPENDS=	devel/py-ply${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS=	converters/libiconv \
 		devel/json-c \
 		devel/libidn2 \
 		devel/libuv \
-		textproc/libxml
+		textproc/libxml \
+		www/nghttp2
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
+USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ARGS=	--enable-full-report \
 		--with-libtool \
@@ -50,6 +51,7 @@ CONFIGURE_ARGS=	--enable-full-report \
 		--without-lmdb \
 		--without-readline \
 		--without-cmocka \
+		--without-gssapi \
 		--with-python=${MODPY_BIN}
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 

@@ -1,9 +1,9 @@
 Patch to use pledge on OpenBSD.
 
-Index: lib/isc/unix/net.c
---- lib/isc/unix/net.c.orig
-+++ lib/isc/unix/net.c
-@@ -223,6 +223,13 @@ isc_net_probeunix(void) {
+Index: lib/isc/net.c
+--- lib/isc/net.c.orig
++++ lib/isc/net.c
+@@ -221,6 +221,13 @@ isc_net_probeunix(void) {
  
  static void
  try_ipv6only(void) {
@@ -17,7 +17,7 @@ Index: lib/isc/unix/net.c
  #ifdef IPV6_V6ONLY
  	int s, on;
  	char strbuf[ISC_STRERRORSIZE];
-@@ -673,7 +680,7 @@ try_dscp_v6(void) {
+@@ -671,7 +678,7 @@ try_dscp_v6(void) {
  		dscp_result |= ISC_NET_DSCPSETV6;
  	}
  

@@ -7,18 +7,31 @@
 @bin bin/arpaname
 @bin bin/delv
 @bin bin/dig
+@bin bin/dnssec-cds
+@bin bin/dnssec-dsfromkey
+@bin bin/dnssec-importkey
+@bin bin/dnssec-keyfromlabel
+@bin bin/dnssec-keygen
+@bin bin/dnssec-revoke
+@bin bin/dnssec-settime
+@bin bin/dnssec-signzone
+@bin bin/dnssec-verify
 bin/edig
 bin/ehost
 bin/enslookup
 @bin bin/host
 @bin bin/mdig
+@bin bin/named-checkconf
+@bin bin/named-checkzone
+@bin bin/named-compilezone
+@bin bin/named-journalprint
 @bin bin/named-rrchecker
+@bin bin/nsec3hash
 @bin bin/nslookup
 @bin bin/nsupdate
 include/bind9/
 include/bind9/check.h
 include/bind9/getaddresses.h
-include/bind9/version.h
 include/dns/
 include/dns/acl.h
 include/dns/adb.h
@@ -34,7 +47,6 @@ include/dns/clientinfo.h
 include/dns/compress.h
 include/dns/db.h
 include/dns/dbiterator.h
-include/dns/dbtable.h
 include/dns/diff.h
 include/dns/dispatch.h
 include/dns/dlz.h
@@ -46,7 +58,6 @@ include/dns/dnstap.h
 include/dns/ds.h
 include/dns/dsdigest.h
 include/dns/dyndb.h
-include/dns/ecdb.h
 include/dns/ecs.h
 include/dns/edns.h
 include/dns/enumclass.h
@@ -64,9 +75,7 @@ include/dns/keyflags.h
 include/dns/keymgr.h
 include/dns/keytable.h
 include/dns/keyvalues.h
-include/dns/lib.h
 include/dns/librpz.h
-include/dns/lmdb.h
 include/dns/log.h
 include/dns/lookup.h
 include/dns/master.h
@@ -80,7 +89,6 @@ include/dns/nta.h
 include/dns/opcode.h
 include/dns/order.h
 include/dns/peer.h
-include/dns/portlist.h
 include/dns/private.h
 include/dns/rbt.h
 include/dns/rcode.h
@@ -106,17 +114,15 @@ include/dns/secproto.h
 include/dns/soa.h
 include/dns/ssu.h
 include/dns/stats.h
-include/dns/tcpmsg.h
 include/dns/time.h
-include/dns/timer.h
 include/dns/tkey.h
+include/dns/transport.h
 include/dns/tsec.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
 include/dns/update.h
 include/dns/validator.h
-include/dns/version.h
 include/dns/view.h
 include/dns/xfrin.h
 include/dns/zone.h
@@ -126,15 +132,8 @@ include/dns/zt.h
 include/dst/
 include/dst/dst.h
 include/dst/gssapi.h
-include/dst/result.h
 include/irs/
-include/irs/context.h
-include/irs/dnsconf.h
-include/irs/netdb.h
-include/irs/platform.h
 include/irs/resconf.h
-include/irs/types.h
-include/irs/version.h
 include/isc/
 include/isc/aes.h
 include/isc/align.h
@@ -142,13 +141,13 @@ include/isc/app.h
 include/isc/assertions.h
 include/isc/astack.h
 include/isc/atomic.h
+include/isc/attributes.h
 include/isc/backtrace.h
 include/isc/barrier.h
 include/isc/base32.h
 include/isc/base64.h
 include/isc/bind9.h
 include/isc/buffer.h
-include/isc/bufferlist.h
 include/isc/cmocka.h
 include/isc/commandline.h
 include/isc/condition.h
@@ -165,6 +164,7 @@ include/isc/file.h
 include/isc/formatcheck.h
 include/isc/fsaccess.h
 include/isc/fuzz.h
+include/isc/glob.h
 include/isc/hash.h
 include/isc/heap.h
 include/isc/hex.h
@@ -176,9 +176,6 @@ include/isc/interfaceiter.h
 include/isc/iterated_hash.h
 include/isc/lang.h
 include/isc/lex.h
-include/isc/lfsr.h
-include/isc/lib.h
-include/isc/likely.h
 include/isc/list.h
 include/isc/log.h
 include/isc/magic.h
@@ -187,7 +184,6 @@ include/isc/md.h
 include/isc/mem.h
 include/isc/meminfo.h
 include/isc/mutex.h
-include/isc/mutexatomic.h
 include/isc/mutexblock.h
 include/isc/net.h
 include/isc/netaddr.h
@@ -199,7 +195,6 @@ include/isc/offset.h
 include/isc/once.h
 include/isc/os.h
 include/isc/parseint.h
-include/isc/platform.h
 include/isc/pool.h
 include/isc/portset.h
 include/isc/print.h
@@ -213,13 +208,11 @@ include/isc/regex.h
 include/isc/region.h
 include/isc/resource.h
 include/isc/result.h
-include/isc/resultclass.h
 include/isc/rwlock.h
 include/isc/safe.h
 include/isc/serial.h
 include/isc/siphash.h
 include/isc/sockaddr.h
-include/isc/socket.h
 include/isc/stat.h
 include/isc/stats.h
 include/isc/stdatomic.h
@@ -234,39 +227,35 @@ include/isc/taskpool.h
 include/isc/thread.h
 include/isc/time.h
 include/isc/timer.h
+include/isc/tls.h
 include/isc/tm.h
 include/isc/types.h
 include/isc/url.h
 include/isc/utf8.h
 include/isc/util.h
-include/isc/version.h
 include/isccc/
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
 include/isccc/ccmsg.h
 include/isccc/events.h
-include/isccc/result.h
 include/isccc/sexpr.h
 include/isccc/symtab.h
 include/isccc/symtype.h
 include/isccc/types.h
 include/isccc/util.h
-include/isccc/version.h
 include/isccfg/
 include/isccfg/aclconf.h
 include/isccfg/cfg.h
-include/isccfg/dnsconf.h
 include/isccfg/grammar.h
 include/isccfg/kaspconf.h
 include/isccfg/log.h
 include/isccfg/namedconf.h
-include/isccfg/version.h
 include/ns/
 include/ns/client.h
+include/ns/events.h
 include/ns/hooks.h
 include/ns/interfacemgr.h
-include/ns/lib.h
 include/ns/listenlist.h
 include/ns/log.h
 include/ns/notify.h
@@ -276,16 +265,12 @@ include/ns/sortlist.h
 include/ns/stats.h
 include/ns/types.h
 include/ns/update.h
-include/ns/version.h
 include/ns/xfrout.h
-include/pk11/
-include/pk11/constants.h
-include/pk11/internal.h
-include/pk11/pk11.h
-include/pk11/result.h
-include/pk11/site.h
-include/pkcs11/
-include/pkcs11/pkcs11.h
+lib/bind/
+lib/bind/filter-a.la
+@so lib/bind/filter-a.so
+lib/bind/filter-aaaa.la
+@so lib/bind/filter-aaaa.so
 @so lib/libbind9-${V}.so
 lib/libbind9.la
 @so lib/libbind9.so
@@ -307,99 +292,45 @@ lib/libisccfg.la
 @so lib/libns-${V}.so
 lib/libns.la
 @so lib/libns.so
-lib/named/
-@so lib/named/filter-aaaa.so
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
-lib/python${MODPY_VERSION}/site-packages/isc/
-lib/python${MODPY_VERSION}/site-packages/isc-2.0-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/isc/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}checkds.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}coverage.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}dnskey.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}eventlist.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keydict.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keyevent.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keymgr.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keyseries.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}keyzone.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}parsetab.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}policy.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}rndc.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isc/checkds.py
-lib/python${MODPY_VERSION}/site-packages/isc/coverage.py
-lib/python${MODPY_VERSION}/site-packages/isc/dnskey.py
-lib/python${MODPY_VERSION}/site-packages/isc/eventlist.py
-lib/python${MODPY_VERSION}/site-packages/isc/keydict.py
-lib/python${MODPY_VERSION}/site-packages/isc/keyevent.py
-lib/python${MODPY_VERSION}/site-packages/isc/keymgr.py
-lib/python${MODPY_VERSION}/site-packages/isc/keyseries.py
-lib/python${MODPY_VERSION}/site-packages/isc/keyzone.py
-lib/python${MODPY_VERSION}/site-packages/isc/parsetab.py
-lib/python${MODPY_VERSION}/site-packages/isc/policy.py
-lib/python${MODPY_VERSION}/site-packages/isc/rndc.py
-lib/python${MODPY_VERSION}/site-packages/isc/utils.py
 @man man/man1/arpaname.1
 @man man/man1/delv.1
 @man man/man1/dig.1
+@man man/man1/dnssec-cds.1
+@man man/man1/dnssec-dsfromkey.1
+@man man/man1/dnssec-importkey.1
+@man man/man1/dnssec-keyfromlabel.1
+@man man/man1/dnssec-keygen.1
+@man man/man1/dnssec-revoke.1
+@man man/man1/dnssec-settime.1
+@man man/man1/dnssec-signzone.1
+@man man/man1/dnssec-verify.1
 @man man/man1/edig.1
 @man man/man1/ehost.1
 @man man/man1/enslookup.1
 @man man/man1/host.1
 @man man/man1/mdig.1
+@man man/man1/named-checkconf.1
+@man man/man1/named-checkzone.1
+@man man/man1/named-compilezone.1
+@man man/man1/named-journalprint.1
 @man man/man1/named-rrchecker.1
+@man man/man1/nsec3hash.1
 @man man/man1/nslookup.1
 @man man/man1/nsupdate.1
 @man man/man5/named.conf.5
 @man man/man5/rndc.conf.5
 @man man/man8/ddns-confgen.8
-@man man/man8/dnssec-cds.8
-@man man/man8/dnssec-checkds.8
-@man man/man8/dnssec-coverage.8
-@man man/man8/dnssec-dsfromkey.8
-@man man/man8/dnssec-importkey.8
-@man man/man8/dnssec-keyfromlabel.8
-@man man/man8/dnssec-keygen.8
-@man man/man8/dnssec-keymgr.8
-@man man/man8/dnssec-revoke.8
-@man man/man8/dnssec-settime.8
-@man man/man8/dnssec-signzone.8
-@man man/man8/dnssec-verify.8
+@man man/man8/filter-a.8
 @man man/man8/filter-aaaa.8
-@man man/man8/named-checkconf.8
-@man man/man8/named-checkzone.8
-@man man/man8/named-compilezone.8
-@man man/man8/named-journalprint.8
 @man man/man8/named.8
-@man man/man8/nsec3hash.8
 @man man/man8/rndc-confgen.8
 @man man/man8/rndc.8
 @man man/man8/tsig-keygen.8
 @bin sbin/ddns-confgen
-@bin sbin/dnssec-cds
-sbin/dnssec-checkds
-sbin/dnssec-coverage
-@bin sbin/dnssec-dsfromkey
-@bin sbin/dnssec-importkey
-@bin sbin/dnssec-keyfromlabel
-@bin sbin/dnssec-keygen
-sbin/dnssec-keymgr
-@bin sbin/dnssec-revoke
-@bin sbin/dnssec-settime
-@bin sbin/dnssec-signzone
-@bin sbin/dnssec-verify
 @bin sbin/named
-@bin sbin/named-checkconf
-@bin sbin/named-checkzone
-sbin/named-compilezone
-@bin sbin/named-journalprint
-@bin sbin/nsec3hash
 @bin sbin/rndc
 @bin sbin/rndc-confgen
-sbin/tsig-keygen
+@bin sbin/tsig-keygen
 @sample ${LOCALSTATEDIR}/named/
 @mode 750
 @group _bind

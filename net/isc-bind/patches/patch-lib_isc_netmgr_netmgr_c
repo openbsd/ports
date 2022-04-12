@@ -1,0 +1,42 @@
+Patch to use pledge on OpenBSD.
+
+Index: lib/isc/netmgr/netmgr.c
+--- lib/isc/netmgr/netmgr.c.orig
++++ lib/isc/netmgr/netmgr.c
+@@ -3157,7 +3157,8 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
+ 	 * Disable the Path MTU Discovery on IP packets
+ 	 */
+ 	if (sa_family == AF_INET6) {
+-#if defined(IPV6_DONTFRAG)
++/* disabled for pledge */
++#if !defined(__OpenBSD__) && defined(IPV6_DONTFRAG)
+ 		if (setsockopt_off(fd, IPPROTO_IPV6, IPV6_DONTFRAG) == -1) {
+ 			return (ISC_R_FAILURE);
+ 		} else {
+@@ -3175,7 +3176,12 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
+ 		UNUSED(fd);
+ #endif
+ 	} else if (sa_family == AF_INET) {
+-#if defined(IP_DONTFRAG)
++/*
++   OpenBSD doesn't have this yet but if we do get it sometime,
++   it will probably need the same pledge handling as IPV6_DONTFRAG
++   above
++ */
++#if !defined(__OpenBSD__) && defined(IP_DONTFRAG)
+ 		if (setsockopt_off(fd, IPPROTO_IP, IP_DONTFRAG) == -1) {
+ 			return (ISC_R_FAILURE);
+ 		} else {
+@@ -3205,7 +3211,11 @@ isc__nm_socket_v6only(uv_os_sock_t fd, sa_family_t sa_
+ 	 * Enable the IPv6-only option on IPv6 sockets
+ 	 */
+ 	if (sa_family == AF_INET6) {
+-#if defined(IPV6_V6ONLY)
++/*
++ * pledge doesn't allow setting IPV6_V6ONLY, but that's ok,
++ * IPV6_V6ONLY is always enabled on OpenBSD
++ */
++#if !defined(__OpenBSD__) && defined(IPV6_V6ONLY)
+ 		if (setsockopt_on(fd, IPPROTO_IPV6, IPV6_V6ONLY) == -1) {
+ 			return (ISC_R_FAILURE);
+ 		} else {
