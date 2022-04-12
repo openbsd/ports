@@ -24,6 +24,7 @@ share/doc/newsboat/contrib/colorschemes/schleichfahrt
 share/doc/newsboat/contrib/colorschemes/simple
 share/doc/newsboat/contrib/colorschemes/solarized-dark
 share/doc/newsboat/contrib/colorschemes/solarized-light
+share/doc/newsboat/contrib/colorschemes/universal-color
 share/doc/newsboat/contrib/exportOPMLWithTags.py
 share/doc/newsboat/contrib/feedgrabber.rb
 share/doc/newsboat/contrib/getpocket.com/
@@ -37,6 +38,7 @@ share/doc/newsboat/contrib/image-preview/README.org
 share/doc/newsboat/contrib/image-preview/nbparser
 share/doc/newsboat/contrib/image-preview/nbrun
 share/doc/newsboat/contrib/image-preview/vifmimg
+share/doc/newsboat/contrib/kitty-img-pager.sh
 share/doc/newsboat/contrib/pinboard.pl
 share/doc/newsboat/contrib/slashdot.rb
 share/doc/newsboat/contrib/urls-maintenance.sh
