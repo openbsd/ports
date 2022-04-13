@@ -2,14 +2,11 @@ COMMENT =		japanese input engine for ibus
 
 GH_ACCOUNT =		ibus
 GH_PROJECT =		ibus-anthy
-GH_TAGNAME =		1.5.13
-REVISION =		1
+GH_TAGNAME =		1.5.14
 
-SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.513
+SHARED_LIBS +=  anthygobject-1.0     1.1      # 5.514
 
 CATEGORIES =		inputmethods japanese
-
-HOMEPAGE =		https://github.com/fujiwarat/ibus-anthy/wiki
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
