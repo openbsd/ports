@@ -31,6 +31,7 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -305,6 +306,7 @@ CONFIGURE_ARGS+=\
 		--with-compat-oowrappers \
 		--with-external-tar=${DISTDIR}/libreoffice \
 		--with-fonts \
+		--with-help=html \
 		--with-myspell-dicts \
 		--with-system-harfbuzz \
 		--with-system-clucene \
