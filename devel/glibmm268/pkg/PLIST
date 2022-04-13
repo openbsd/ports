@@ -7,6 +7,7 @@ include/giomm-2.68/giomm/action.h
 include/giomm-2.68/giomm/actiongroup.h
 include/giomm-2.68/giomm/actionmap.h
 include/giomm-2.68/giomm/appinfo.h
+include/giomm-2.68/giomm/appinfomonitor.h
 include/giomm-2.68/giomm/applaunchcontext.h
 include/giomm-2.68/giomm/application.h
 include/giomm-2.68/giomm/applicationcommandline.h
@@ -100,6 +101,7 @@ include/giomm-2.68/giomm/private/action_p.h
 include/giomm-2.68/giomm/private/actiongroup_p.h
 include/giomm-2.68/giomm/private/actionmap_p.h
 include/giomm-2.68/giomm/private/appinfo_p.h
+include/giomm-2.68/giomm/private/appinfomonitor_p.h
 include/giomm-2.68/giomm/private/applaunchcontext_p.h
 include/giomm-2.68/giomm/private/application_p.h
 include/giomm-2.68/giomm/private/applicationcommandline_p.h
