@@ -1,6 +1,6 @@
 COMMENT =	code editor from elementary OS
 PKGNAME =	${DISTNAME:S/^/elementary-/}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=	codecore                  0.0 # 0.0
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c editorconfig fontconfig gdk-3 gee-0.8 gio-2.0 git2-glib-1.0
 WANTLIB += glib-2.0 gobject-2.0 granite gtk-3 gtksourceview-3.0
 WANTLIB += gtkspell3-3 intl pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0 soup-2.4 vala-0.54 vte-2.91 webkit2gtk-4.0
+WANTLIB += peas-1.0 peas-gtk-1.0 soup-2.4 vala-0.56 vte-2.91 webkit2gtk-4.0
 
 MODULES =	devel/dconf
 
