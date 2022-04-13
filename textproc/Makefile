@@ -57,6 +57,7 @@
      SUBDIR += fstrcmp
      SUBDIR += fzy
      SUBDIR += gdiff
+     SUBDIR += gi-docgen
      SUBDIR += go-text
      SUBDIR += gpresent
      SUBDIR += grepcidr
@@ -430,8 +431,9 @@
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml,python3
      SUBDIR += py-ruamel.yaml.clib,python3
-     SUBDIR += py-signedjson,python3
      SUBDIR += py-semver,python3
+     SUBDIR += py-signedjson,python3
+     SUBDIR += py-smartypants,python3
      SUBDIR += py-snowballstemmer,python3
      SUBDIR += py-spdx,python3
      SUBDIR += py-spdx-lookup,python3
@@ -446,6 +448,7 @@
      SUBDIR += py-textfsm,python3
      SUBDIR += py-toml,python3
      SUBDIR += py-tomli,python3
+     SUBDIR += py-typogrify,python3
      SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode,python3
      SUBDIR += py-unpaddedbase64,python3
