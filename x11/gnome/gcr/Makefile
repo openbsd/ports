@@ -2,6 +2,7 @@ COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
 GNOME_VERSION=		3.41.0
+REVISION=		0
 
 SHARED_LIBS += gck-1                     2.1 # 0.0.0
 SHARED_LIBS += gcr-base-3                3.1 # 1.0.0
@@ -27,11 +28,12 @@ LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \
 			security/p11-kit
 
-BUILD_DEPENDS=		security/gnupg
+BUILD_DEPENDS=		security/gnupg \
+			textproc/gtk-doc
+
 RUN_DEPENDS=		security/gnupg
 
-CONFIGURE_ARGS=		-Dgtk_doc=false \
-			-Dsystemd=disabled
+CONFIGURE_ARGS=		-Dsystemd=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

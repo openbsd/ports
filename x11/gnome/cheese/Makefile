@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2022/04/13 06:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2022/04/13 14:57:34 ajacoutot Exp $
 
 COMMENT-main=		take photos and videos, with fun graphical effects
 COMMENT-libs=		webcam display and capture widgets
@@ -6,7 +6,7 @@ COMMENT-libs=		webcam display and capture widgets
 GNOME_PROJECT=		cheese
 GNOME_VERSION=		41.1
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-libs=		0
 
 PKGNAME-libs=		libcheese-${GNOME_VERSION}
@@ -37,7 +37,7 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS= 	desktop-file-utils docbook gobject-introspection \
 			gtk-update-icon-cache vala yelp
 
-CONFIGURE_ARGS=		-Dgtk_doc=false
+BUILD_DEPENDS=		textproc/gtk-doc
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			x11/gnome/desktop

@@ -2,6 +2,7 @@ COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.40
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 CATEGORIES=		x11 net
 
@@ -37,7 +38,8 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/spice-protocol \
 			lang/vala \
 			sysutils/usbutils \
-			textproc/asciidoc
+			textproc/asciidoc \
+			textproc/gtk-doc
 
 RUN_DEPENDS=		sysutils/usbutils
 
@@ -56,8 +58,7 @@ LIB_DEPENDS=		archivers/lz4 \
 CONFIGURE_ARGS=		-Dsmartcard=disabled \
 			-Dusbredir=disabled \
 			-Dwayland-protocols=disabled \
-			-Dlibcap-ng=disabled \
-			-Dgtk_doc=disabled
+			-Dlibcap-ng=disabled
 
 # XXX requires new phodav port
 CONFIGURE_ARGS +=	-Dwebdav=disabled
