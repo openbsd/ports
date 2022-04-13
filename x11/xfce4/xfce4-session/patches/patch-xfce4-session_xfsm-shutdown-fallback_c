@@ -1,4 +1,5 @@
 https://gitlab.xfce.org/xfce/xfce4-session/-/issues/134
+https://gitlab.xfce.org/xfce/xfce4-session/-/merge_requests/27
 
 Index: xfce4-session/xfsm-shutdown-fallback.c
 --- xfce4-session/xfsm-shutdown-fallback.c.orig
