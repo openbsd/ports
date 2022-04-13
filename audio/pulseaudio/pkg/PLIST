@@ -171,7 +171,9 @@ share/examples/pulseaudio/pulse/system.pa
 share/examples/pulseaudio/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/pulseaudio/xdg/Xwayland-session.d/
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/
 share/examples/pulseaudio/xdg/Xwayland-session.d/00-pulseaudio-x11
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/00-pulseaudio-x11
 share/examples/pulseaudio/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
