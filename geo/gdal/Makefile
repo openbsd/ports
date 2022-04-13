@@ -85,6 +85,7 @@ INSTALL_TARGET =	install install-man
 
 CONFIGURE_ARGS =--without-cfitsio \
 		--without-cryptopp \
+		--without-blosc \
 		--without-xerces \
 		--without-mysql \
 		--without-heif \
