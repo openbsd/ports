@@ -8,6 +8,7 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-assistant.1
 @man man/man1/${MODCABAL_STEM}-calckey.1
 @man man/man1/${MODCABAL_STEM}-checkpresentkey.1
+@man man/man1/${MODCABAL_STEM}-config.1
 @man man/man1/${MODCABAL_STEM}-contentlocation.1
 @man man/man1/${MODCABAL_STEM}-copy.1
 @man man/man1/${MODCABAL_STEM}-dead.1
@@ -23,6 +24,7 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-examinekey.1
 @man man/man1/${MODCABAL_STEM}-expire.1
 @man man/man1/${MODCABAL_STEM}-export.1
+@man man/man1/${MODCABAL_STEM}-filter-branch.1
 @man man/man1/${MODCABAL_STEM}-find.1
 @man man/man1/${MODCABAL_STEM}-findref.1
 @man man/man1/${MODCABAL_STEM}-fix.1
@@ -87,6 +89,7 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-ungroup.1
 @man man/man1/${MODCABAL_STEM}-uninit.1
 @man man/man1/${MODCABAL_STEM}-unlock.1
+@man man/man1/${MODCABAL_STEM}-unregisterurl.1
 @man man/man1/${MODCABAL_STEM}-untrust.1
 @man man/man1/${MODCABAL_STEM}-unused.1
 @man man/man1/${MODCABAL_STEM}-upgrade.1
@@ -101,5 +104,6 @@ bin/git-remote-tor-annex
 @man man/man1/${MODCABAL_STEM}-watch.1
 @man man/man1/${MODCABAL_STEM}-webapp.1
 @man man/man1/${MODCABAL_STEM}-whereis.1
+@man man/man1/${MODCABAL_STEM}-whereused.1
 @man man/man1/${MODCABAL_STEM}.1
 @man man/man1/git-remote-tor-annex.1
