@@ -1,0 +1,91 @@
+From 069b68f393c46ebfc6734708f1446419ceed95da Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Wed, 1 Dec 2021 08:21:36 +0100
+Subject: [PATCH] vala: Fix accessibility of constant intializer expression
+
+From ba78631c2d1293575f9fef3d90989f3bcb97d077 Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Wed, 1 Dec 2021 08:22:54 +0100
+Subject: [PATCH] vala: Reference of [GtkChild] field is handled by GtkBuilder, type must be unowned
+
+Index: bindings/vala/app.vala
+--- bindings/vala/app.vala.orig
++++ bindings/vala/app.vala
+@@ -24,16 +24,16 @@ class SearchPopover : Gtk.Popover
+ {
+   public Vte.Terminal terminal { get; construct set; }
+ 
+-  [GtkChild] private Gtk.SearchEntry search_entry;
+-  [GtkChild] private Gtk.Button search_prev_button;
+-  [GtkChild] private Gtk.Button search_next_button;
+-  [GtkChild] private Gtk.Button close_button;
+-  [GtkChild] private Gtk.ToggleButton  match_case_checkbutton;
+-  [GtkChild] private Gtk.ToggleButton entire_word_checkbutton;
+-  [GtkChild] private Gtk.ToggleButton regex_checkbutton;
+-  [GtkChild] private Gtk.ToggleButton wrap_around_checkbutton;
+-  [GtkChild] private Gtk.Button reveal_button;
+-  [GtkChild] private Gtk.Revealer revealer;
++  [GtkChild] private unowned Gtk.SearchEntry search_entry;
++  [GtkChild] private unowned Gtk.Button search_prev_button;
++  [GtkChild] private unowned Gtk.Button search_next_button;
++  [GtkChild] private unowned Gtk.Button close_button;
++  [GtkChild] private unowned Gtk.ToggleButton  match_case_checkbutton;
++  [GtkChild] private unowned Gtk.ToggleButton entire_word_checkbutton;
++  [GtkChild] private unowned Gtk.ToggleButton regex_checkbutton;
++  [GtkChild] private unowned Gtk.ToggleButton wrap_around_checkbutton;
++  [GtkChild] private unowned Gtk.Button reveal_button;
++  [GtkChild] private unowned Gtk.Revealer revealer;
+ 
+   private bool regex_caseless = false;
+   private string? regex_pattern = null;
+@@ -175,14 +175,14 @@ class SearchPopover : Gtk.Popover
+ [GtkTemplate (ui = "/org/gnome/vte/test/app/ui/window.ui")]
+ class Window : Gtk.ApplicationWindow
+ {
+-  [GtkChild] private Gtk.Scrollbar scrollbar;
+-  [GtkChild] private Gtk.Box terminal_box;
+-  /* [GtkChild] private Gtk.Box notifications_box; */
+-  [GtkChild] private Gtk.Widget readonly_emblem;
+-  /* [GtkChild] private Gtk.Button copy_button; */
+-  /* [GtkChild] private Gtk.Button paste_button; */
+-  [GtkChild] private Gtk.ToggleButton find_button;
+-  [GtkChild] private Gtk.MenuButton gear_button;
++  [GtkChild] private unowned Gtk.Scrollbar scrollbar;
++  [GtkChild] private unowned Gtk.Box terminal_box;
++  /* [GtkChild] private unowned Gtk.Box notifications_box; */
++  [GtkChild] private unowned Gtk.Widget readonly_emblem;
++  /* [GtkChild] private unowned Gtk.Button copy_button; */
++  /* [GtkChild] private unowned Gtk.Button paste_button; */
++  [GtkChild] private unowned Gtk.ToggleButton find_button;
++  [GtkChild] private unowned Gtk.MenuButton gear_button;
+ 
+   private Vte.Terminal terminal;
+   private Gtk.Clipboard clipboard;
+@@ -822,11 +822,11 @@ class App : Gtk.Application
+   {
+     public static bool audible = false;
+     public static string? command = null;
+-    private static string? cjk_ambiguous_width_string = null;
+-    private static string? cursor_blink_mode_string = null;
+-    private static string? cursor_background_color_string = null;
+-    private static string? cursor_foreground_color_string = null;
+-    private static string? cursor_shape_string = null;
++    public static string? cjk_ambiguous_width_string = null;
++    public static string? cursor_blink_mode_string = null;
++    public static string? cursor_background_color_string = null;
++    public static string? cursor_foreground_color_string = null;
++    public static string? cursor_shape_string = null;
+     public static string[]? dingus = null;
+     public static bool debug = false;
+     public static string? encoding = null;
+@@ -834,8 +834,8 @@ class App : Gtk.Application
+     public static int extra_margin = 0;
+     public static string? font_string = null;
+     public static string? geometry = null;
+-    private static string? hl_bg_color_string = null;
+-    private static string? hl_fg_color_string = null;
++    public static string? hl_bg_color_string = null;
++    public static string? hl_fg_color_string = null;
+     public static string? icon_title = null;
+     public static bool keep = false;
+     public static bool no_argb_visual = false;
