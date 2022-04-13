@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1382 2022/04/13 08:42:18 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1383 2022/04/13 10:01:43 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1662,8 +1662,9 @@ setup_obsolete_reason(
 	31 => 'py-ipaddress',
 	31 => 'py-scandir',
 	3 => 'd-feet',
-# 7.1
+# 7.2
 	6 => 'tepl',
+	3 => 'gnome-documents',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
