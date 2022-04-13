@@ -30,8 +30,7 @@ CONFIGURE_ARGS +=	-Dcrypto-library=openssl
 # unset default [docker,veth,virbr,vnet] to respect vether(4), vnet(4/sparc64)
 CONFIGURE_ARGS +=	-Dignored-network-interface-prefix=''
 
-CONFIGURE_ARGS +=	-Dexamples=disabled \
-			-Dgtk_doc=disabled
+CONFIGURE_ARGS +=	-Dexamples=disabled
 
 .include <bsd.port.arch.mk>
 # disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
