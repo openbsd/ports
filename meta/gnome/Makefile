@@ -9,7 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		0
-REVISION-extras=	0
+REVISION-extras=	1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -115,7 +115,6 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			x11/gnome/books \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
-			x11/gnome/documents \
 			x11/gnome/file-roller \
 			x11/gnome/ghex \
 			x11/gnome/gitg \
