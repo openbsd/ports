@@ -38,8 +38,7 @@ MODGNOME_TOOLS=		gobject-introspection vala
 # needed for tests
 PORTHOME=		${WRKDIR}
 
-CONFIGURE_ARGS=		-Dgtk_doc=false \
-			-Dinstalled_tests=false
+CONFIGURE_ARGS=		-Dinstalled_tests=false
 
 .include <bsd.port.mk>
 
