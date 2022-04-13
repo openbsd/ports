@@ -1,7 +1,7 @@
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.52.8
+STABLE_VERSION=		2.54.0
 OLD_VERSION=		2.40.21
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
@@ -15,9 +15,12 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
-SHARED_LIBS +=  rsvg-2               40.0     # 50.0
+SHARED_LIBS +=  rsvg-2               41.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
-BUILD_DEPENDS=		lang/rust
+MODULES +=		lang/python
+MODPY_RUNDEP=		No
+BUILD_DEPENDS=		lang/rust \
+			textproc/py-docutils${MODPY_FLAVOR}
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
 			CARGO_HOME=${WRKBUILD}/cargo-home \
@@ -25,14 +28,17 @@ MAKE_ENV +=		CARGO_BUILD_JOBS=${MAKE_JOBS} \
 			CARGO_PROFILE_RELEASE_DEBUG=1
 MAKE_FLAGS +=		V=1
 WANTLIB += ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 .else
 ### old
-REVISION=		2
+REVISION=		3
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
 PKG_ARGS=		-Dold=1 -Dstable=0
-WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre
+WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre Xau Xdmcp
 LIB_DEPENDS +=		www/libcroco
 .endif
 
@@ -47,7 +53,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
 
-MODULES=		x11/gnome
+MODULES +=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
@@ -55,7 +61,7 @@ LIB_DEPENDS +=		devel/pango \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS=		--disable-tools
 
 .include <bsd.port.arch.mk>

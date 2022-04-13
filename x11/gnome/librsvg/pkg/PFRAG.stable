@@ -5,15 +5,3 @@ share/doc/librsvg/COMPILING.md
 share/doc/librsvg/CONTRIBUTING.md
 share/doc/librsvg/README.md
 share/doc/librsvg/code-of-conduct.md
-share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
-share/gtk-doc/html/rsvg-2.0/ch01.html
-share/gtk-doc/html/rsvg-2.0/ch01s02.html
-share/gtk-doc/html/rsvg-2.0/ch01s03.html
-share/gtk-doc/html/rsvg-2.0/ch02.html
-share/gtk-doc/html/rsvg-2.0/ch03.html
-share/gtk-doc/html/rsvg-2.0/migrating-to-geometry-apis.html
-share/gtk-doc/html/rsvg-2.0/recommendations-assets.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Deprecated-functions-to-render-to-GdkPixbuf.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Deprecated-functions-to-render-with-Cairo.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-Cairo.html
-share/gtk-doc/html/rsvg-2.0/rsvg-Version-checks.html

@@ -1,0 +1,40 @@
+From 14a7d3853e586694d814de13ad6bd39dc0bb89c4 Mon Sep 17 00:00:00 2001
+From: Kleis Auke Wolthuizen <github@kleisauke.nl>
+Date: Thu, 24 Mar 2022 18:40:37 +0100
+Subject: [PATCH] (#859): Make rst2man and gi-docgen optional
+
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -1,5 +1,9 @@
+-SUBDIRS = . gdk-pixbuf-loader tests doc win32
++if HAVE_GI_DOCGEN
++RSVG_DOC = doc
++endif
+ 
++SUBDIRS = . gdk-pixbuf-loader tests $(RSVG_DOC) win32
++
+ NULL =
+ 
+ lib_LTLIBRARIES = librsvg-@RSVG_API_MAJOR_VERSION@.la
+@@ -229,11 +233,20 @@ rsvg-convert$(EXEEXT): $(RSVG_CONVERT_BIN)
+ 	cd $(LIBRSVG_BUILD_DIR) && mv $(RSVG_CONVERT_BIN) rsvg-convert$(EXEEXT)
+ 
+ rsvg-convert.1: rsvg-convert.rst
++if HAVE_RST2MAN
+ 	$(RST2MAN) $(top_srcdir)/rsvg-convert.rst rsvg-convert.1
++else
++	@echo "========================================"
++	@echo "You need rst2man installed to make dist"
++	@echo "========================================"
++	@false
++endif
+ 
++if HAVE_RST2MAN
+ man1_MANS = rsvg-convert.1
+ 
+ CLEANFILES += rsvg-convert.1
++endif
+ 
+ dist_doc_DATA =				\
+ 	COMPILING.md			\
