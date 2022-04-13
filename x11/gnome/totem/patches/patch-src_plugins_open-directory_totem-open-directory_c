@@ -1,0 +1,14 @@
+64 bit time_t
+
+Index: src/plugins/open-directory/totem-open-directory.c
+--- src/plugins/open-directory/totem-open-directory.c.orig
++++ src/plugins/open-directory/totem-open-directory.c
+@@ -43,7 +43,7 @@ TOTEM_PLUGIN_REGISTER(TOTEM_TYPE_OPEN_DIRECTORY_PLUGIN
+ static char *
+ get_notification_id (void)
+ {
+-	return g_strdup_printf ("%s_TIME%ld",
++	return g_strdup_printf ("%s_TIME%lld",
+ 				"totem",
+ 				g_get_monotonic_time () / G_TIME_SPAN_SECOND);
+ }

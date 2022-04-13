@@ -1,7 +1,7 @@
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.38.2
+GNOME_VERSION=		42.0
 REVISION=		1
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
@@ -11,12 +11,12 @@ CATEGORIES=		multimedia
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 atk-1.0 c cairo cairo-gobject clutter-1.0 clutter-gst-3.0
-WANTLIB += clutter-gtk-1.0 cogl gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 grilo-0.3
-WANTLIB += grlpls-0.3 gstaudio-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 intl m pango-1.0 pangocairo-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0 totem-plparser
+WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gobject-2.0 grilo-0.3 grlpls-0.3 gstaudio-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 handy-1
+WANTLIB += intl m pango-1.0 pangocairo-1.0 peas-1.0 peas-gtk-1.0
+WANTLIB += totem-plparser
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -43,10 +43,9 @@ RUN_DEPENDS +=		x11/gnome/tracker3-miners
 LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/gobject-introspection \
 			devel/libpeas \
-			graphics/clutter/clutter-gst \
-			graphics/clutter/clutter-gtk \
 			x11/gnome/desktop \
-			x11/gnome/grilo
+			x11/gnome/grilo \
+			x11/libhandy
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files

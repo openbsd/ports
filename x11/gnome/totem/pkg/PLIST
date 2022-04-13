@@ -20,17 +20,12 @@ lib/totem/plugins/apple-trailers/apple-trailers.plugin
 lib/totem/plugins/autoload-subtitles/
 lib/totem/plugins/autoload-subtitles/autoload-subtitles.plugin
 @so lib/totem/plugins/autoload-subtitles/libautoload-subtitles.so
-lib/totem/plugins/dbus/
-${MODPY_COMMENT}lib/totem/plugins/dbus/${MODPY_PYCACHE}/
-lib/totem/plugins/dbus/${MODPY_PYCACHE}dbusservice.${MODPY_PYC_MAGIC_TAG}pyc
-lib/totem/plugins/dbus/dbusservice.plugin
-lib/totem/plugins/dbus/dbusservice.py
 lib/totem/plugins/im-status/
 @so lib/totem/plugins/im-status/libtotem-im-status.so
 lib/totem/plugins/im-status/totem-im-status.plugin
-lib/totem/plugins/media-player-keys/
-@so lib/totem/plugins/media-player-keys/libmedia-player-keys.so
-lib/totem/plugins/media-player-keys/media-player-keys.plugin
+lib/totem/plugins/mpris/
+@so lib/totem/plugins/mpris/libmpris.so
+lib/totem/plugins/mpris/mpris.plugin
 lib/totem/plugins/open-directory/
 @so lib/totem/plugins/open-directory/libopen-directory.so
 lib/totem/plugins/open-directory/open-directory.plugin
@@ -65,13 +60,11 @@ lib/totem/plugins/screensaver/
 @so lib/totem/plugins/screensaver/libscreensaver.so
 lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/
-lib/totem/plugins/screenshot/gallery.ui
 @so lib/totem/plugins/screenshot/libscreenshot.so
 lib/totem/plugins/screenshot/screenshot.plugin
 lib/totem/plugins/skipto/
 @so lib/totem/plugins/skipto/libskipto.so
 lib/totem/plugins/skipto/skipto.plugin
-lib/totem/plugins/skipto/skipto.ui
 lib/totem/plugins/variable-rate/
 @so lib/totem/plugins/variable-rate/libvariable-rate.so
 lib/totem/plugins/variable-rate/variable-rate.plugin
@@ -547,6 +540,31 @@ share/help/ja/totem/troubleshooting-DVD.page
 share/help/ja/totem/troubleshooting-debug.page
 share/help/ja/totem/troubleshooting-subtitles.page
 share/help/ja/totem/view-zoom.page
+share/help/ko/totem/
+share/help/ko/totem/adjust-speed.page
+share/help/ko/totem/channels.page
+share/help/ko/totem/figures/
+share/help/ko/totem/figures/dvd-gnome-notification.png
+share/help/ko/totem/figures/dvd-nautilus.png
+share/help/ko/totem/figures/org.gnome.Totem.svg
+share/help/ko/totem/figures/volume-button-slider.png
+share/help/ko/totem/file-open.page
+share/help/ko/totem/index.page
+share/help/ko/totem/navigation.page
+share/help/ko/totem/playing-DVD.page
+share/help/ko/totem/preferences.page
+share/help/ko/totem/properties.page
+share/help/ko/totem/screenshot-gallery.page
+share/help/ko/totem/screenshot.page
+share/help/ko/totem/sound-language.page
+share/help/ko/totem/sound-volume.page
+share/help/ko/totem/subtitles.page
+share/help/ko/totem/supported-formats.page
+share/help/ko/totem/troubleshooting-Audio-CD.page
+share/help/ko/totem/troubleshooting-DVD.page
+share/help/ko/totem/troubleshooting-debug.page
+share/help/ko/totem/troubleshooting-subtitles.page
+share/help/ko/totem/view-zoom.page
 share/help/nb/
 share/help/nb/totem/
 share/help/nb/totem/adjust-speed.page
@@ -1005,12 +1023,8 @@ share/locale/zu/LC_MESSAGES/totem.mo
 share/metainfo/org.gnome.Totem.appdata.xml
 share/thumbnailers/totem.thumbnailer
 share/totem/
-share/totem/controls.ui
-share/totem/playlist.ui
-share/totem/preferences.ui
 share/totem/shortcuts.ui
 share/totem/totem.ui
-share/totem/uri.ui
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag glib-compile-schemas
