@@ -1,3 +1,4 @@
+@so lib/gio/modules/libgioenvironmentproxy.so
 @so lib/gio/modules/libgiognomeproxy.so
 @so lib/gio/modules/libgiognutls.so
 @so lib/gio/modules/libgiolibproxy.so
