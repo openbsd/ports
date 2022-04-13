@@ -91,7 +91,6 @@
      SUBDIR += shell-extensions
      SUBDIR += sushi
      SUBDIR += system-monitor
-     SUBDIR += tepl
      SUBDIR += terminal
      SUBDIR += text-editor
      SUBDIR += themes-extra
