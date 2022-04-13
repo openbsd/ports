@@ -97,7 +97,6 @@
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tour
-     SUBDIR += tracker
      SUBDIR += tracker3
      SUBDIR += tracker3-miners
      SUBDIR += tweaks
