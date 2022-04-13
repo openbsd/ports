@@ -1,8 +1,7 @@
 COMMENT=		sytem monitor for GNOME
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		41.0
-REVISION=		0
+GNOME_VERSION=		42.0
 
 CATEGORIES=		sysutils
 
@@ -21,7 +20,7 @@ MODULES=		devel/dconf \
 # c++11
 COMPILER =		base-clang ports-gcc
 
-LIB_DEPENDS=		devel/libgtop2>=2.38.0 \
+LIB_DEPENDS=		devel/libgtop2 \
 			x11/gnome/librsvg \
 			x11/gtk3mm \
 			x11/libhandy
