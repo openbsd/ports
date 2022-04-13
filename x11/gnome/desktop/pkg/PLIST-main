@@ -1,0 +1,19 @@
+@pkgpath x11/gnome/desktop
+include/gnome-desktop-3.0/
+include/gnome-desktop-3.0/libgnome-desktop/
+include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-slide-show.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-bg.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-idle-monitor.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-languages.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-config.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-systemd.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-wall-clock.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-xkb-info.h
+lib/girepository-1.0/GnomeDesktop-3.0.typelib
+@lib lib/libgnome-desktop-3.so.${LIBgnome-desktop-3_VERSION}
+lib/pkgconfig/gnome-desktop-3.0.pc
+share/gir-1.0/GnomeDesktop-3.0.gir

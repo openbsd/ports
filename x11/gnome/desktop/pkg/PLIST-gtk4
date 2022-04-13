@@ -1,0 +1,30 @@
+include/gnome-desktop-4.0/
+include/gnome-desktop-4.0/gnome-bg/
+include/gnome-desktop-4.0/gnome-bg/gnome-bg-slide-show.h
+include/gnome-desktop-4.0/gnome-bg/gnome-bg.h
+include/gnome-desktop-4.0/gnome-rr/
+include/gnome-desktop-4.0/gnome-rr/gnome-rr-config.h
+include/gnome-desktop-4.0/gnome-rr/gnome-rr-output-info.h
+include/gnome-desktop-4.0/gnome-rr/gnome-rr-screen.h
+include/gnome-desktop-4.0/gnome-rr/gnome-rr-types.h
+include/gnome-desktop-4.0/gnome-rr/gnome-rr.h
+include/gnome-desktop-4.0/libgnome-desktop/
+include/gnome-desktop-4.0/libgnome-desktop/gnome-desktop-thumbnail.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-idle-monitor.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-languages.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-pnp-ids.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-systemd.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-wall-clock.h
+include/gnome-desktop-4.0/libgnome-desktop/gnome-xkb-info.h
+lib/girepository-1.0/GnomeBG-4.0.typelib
+lib/girepository-1.0/GnomeDesktop-4.0.typelib
+lib/girepository-1.0/GnomeRR-4.0.typelib
+@lib lib/libgnome-bg-4.so.${LIBgnome-bg-4_VERSION}
+@lib lib/libgnome-desktop-4.so.${LIBgnome-desktop-4_VERSION}
+@lib lib/libgnome-rr-4.so.${LIBgnome-rr-4_VERSION}
+lib/pkgconfig/gnome-bg-4.pc
+lib/pkgconfig/gnome-desktop-4.pc
+lib/pkgconfig/gnome-rr-4.pc
+share/gir-1.0/GnomeBG-4.0.gir
+share/gir-1.0/GnomeDesktop-4.0.gir
+share/gir-1.0/GnomeRR-4.0.gir
