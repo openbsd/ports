@@ -3,8 +3,7 @@ PKG_ARCH=		*
 COMMENT=		utilities to manage documentation for Yelp and the web
 
 GNOME_PROJECT=		yelp-tools
-GNOME_VERSION=		41.0
-REVISION=		0
+GNOME_VERSION=		42.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
