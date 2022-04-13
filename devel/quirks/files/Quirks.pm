@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1384 2022/04/13 10:06:17 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1385 2022/04/13 11:11:57 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -722,6 +722,7 @@ my $stem_extensions = {
 	'gmic-qt-krita' => 'krita-gmic-plugin',
 # 7.2
 	'tracker-miners' => 'tracker3-miners',
+	'tracker' => 'tracker3',
 };
 
 my $obsolete_reason = {};
@@ -1667,7 +1668,6 @@ setup_obsolete_reason(
 # 7.2
 	6 => 'tepl',
 	3 => 'gnome-documents',
-	3 => 'tracker-miners',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
