@@ -1,8 +1,7 @@
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.40.0
-REVISION=	0
+GNOME_VERSION=	3.42.0
 
 CATEGORIES=	archivers
 
@@ -10,7 +9,7 @@ CATEGORIES=	archivers
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += archive c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-3 intl json-glib-1.0 m nautilus-extension
+WANTLIB += gobject-2.0 gtk-3 handy-1 intl json-glib-1.0 m nautilus-extension
 WANTLIB += notify pango-1.0
 
 MODULES=	devel/dconf \
@@ -30,10 +29,11 @@ RUN_DEPENDS=	archivers/gcpio \
 # "The Unarchiver" has not been ported to OpenBSD yet
 RUN_DEPENDS +=	archivers/unrar
 
-LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
+LIB_DEPENDS=	archivers/libarchive \
 		devel/json-glib \
 		devel/libnotify \
-		x11/gnome/nautilus
+		x11/gnome/nautilus \
+		x11/libhandy
 
 MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
 
