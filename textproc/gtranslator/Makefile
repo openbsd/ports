@@ -1,16 +1,16 @@
 COMMENT=		gettext(1) files editor for GNOME
 
 GNOME_PROJECT=		gtranslator
-GNOME_VERSION=		41.0
+GNOME_VERSION=		42.0
 
 CATEGORIES=		textproc devel
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += atk-1.0 c cairo dazzle-1.0 gda-6.0 gdk-3 gettextpo
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
-WANTLIB += handy-1 intl json-glib-1.0 pango-1.0 soup-2.4 xml2
+WANTLIB += atk-1.0 c cairo gda-6.0 gdk-3 gettextpo gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gspell-1 gtk-3 gtksourceview-4 handy-1
+WANTLIB += intl json-glib-1.0 pango-1.0 soup-3.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -24,9 +24,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 
 LIB_DEPENDS=		devel/gettext,-tools \
 			devel/json-glib \
-			devel/libsoup \
+			devel/libsoup3 \
 			textproc/gspell \
-			x11/gnome/libdazzle \
 			x11/gtksourceview4 \
 			x11/gnome/libgda \
 			x11/libhandy

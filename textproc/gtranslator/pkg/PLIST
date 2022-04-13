@@ -4,9 +4,8 @@ include/gtr-marshal.h
 share/applications/org.gnome.Gtranslator.desktop
 share/glib-2.0/schemas/org.gnome.Gtranslator.gschema.xml
 share/glib-2.0/schemas/org.gnome.gtranslator.plugins.translation-memory.gschema.xml
+share/gtksourceview-4/language-specs/gtranslator.lang
 share/gtranslator/
-share/gtranslator/sourceview/
-share/gtranslator/sourceview/gtranslator.lang
 share/gtranslator/ui/
 share/gtranslator/ui/gtr-languages.ini
 share/gtranslator/ui/gtr-plural-forms.ini
