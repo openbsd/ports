@@ -13,8 +13,8 @@ Index: gnome-initial-setup/meson.build
 -    dependency ('libnma', version: '>= 1.0'),
      dependency ('polkit-gobject-1', version: '>= 0.103'),
      dependency ('accountsservice'),
-     dependency ('gnome-desktop-3.0', version: '>= 3.7.5'),
-@@ -65,7 +63,8 @@ executable(
+     dependency ('gnome-desktop-4', fallback: ['gnome-desktop', 'libgnome_desktop_base_dep']),
+@@ -66,7 +64,8 @@ executable(
      include_directories: config_h_dir,
      dependencies: dependencies,
      install: true,
