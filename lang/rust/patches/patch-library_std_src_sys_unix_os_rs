@@ -5,10 +5,10 @@ Index: library/std/src/sys/unix/os.rs
 +++ library/std/src/sys/unix/os.rs
 @@ -338,14 +338,17 @@ pub fn current_exe() -> io::Result<PathBuf> {
          if argv[0].is_null() {
-             return Err(io::Error::new_const(
+             return Err(io::const_io_error!(
                  io::ErrorKind::Uncategorized,
--                &"no current exe available",
-+                &"no current exe available (null)",
+-                "no current exe available",
++                "no current exe available (null)",
              ));
          }
          let argv0 = CStr::from_ptr(argv[0]).to_bytes();
@@ -16,9 +16,9 @@ Index: library/std/src/sys/unix/os.rs
              crate::fs::canonicalize(OsStr::from_bytes(argv0))
          } else {
 -            Ok(PathBuf::from(OsStr::from_bytes(argv0)))
-+            Err(io::Error::new_const(
++            Err(io::const_io_error!(
 +                io::ErrorKind::Uncategorized,
-+                &"no current exe available (short)",
++                "no current exe available (short)",
 +            ))
          }
      }

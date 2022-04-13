@@ -11,13 +11,13 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.59.0
+V =			1.60.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.59.0-20220224
-BV-amd64 =		1.59.0-20220223
-BV-i386 =		1.59.0-20220223
+BV-aarch64 =		1.60.0-20220406
+BV-amd64 =		1.60.0-20220405
+BV-i386 =		1.60.0-20220405
 BV-sparc64 =		1.59.0-20220223
 BV =			${BV-${MACHINE_ARCH}}
 
