@@ -1,0 +1,35 @@
+Index: src/editor-path.c
+--- src/editor-path.c.orig
++++ src/editor-path.c
+@@ -24,14 +24,14 @@
+ 
+ #include <string.h>
+ #include <unistd.h>
+-#include <wordexp.h>
++#include <glob.h>
+ 
+ #include "editor-path-private.h"
+ 
+ gchar *
+ _editor_path_expand (const gchar *path)
+ {
+-  wordexp_t state = { 0 };
++  glob_t state = { 0 };
+   char *escaped = NULL;
+   char *ret = NULL;
+   int r;
+@@ -40,10 +40,10 @@ _editor_path_expand (const gchar *path)
+     return NULL;
+ 
+   escaped = g_shell_quote (path);
+-  r = wordexp (escaped, &state, WRDE_NOCMD);
+-  if (r == 0 && state.we_wordc > 0)
+-    ret = g_strdup (state.we_wordv [0]);
+-  wordfree (&state);
++  r = glob (escaped, GLOB_ERR, NULL, &state);
++  if (r == 0 && state.gl_pathc > 0)
++    ret = g_strdup (state.gl_pathv [0]);
++  globfree (&state);
+ 
+   if (!g_path_is_absolute (ret))
+     {
