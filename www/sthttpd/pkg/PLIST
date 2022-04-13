@@ -1,14 +1,18 @@
 @conflict thttpd-*
 @pkgpath www/thttpd
+@rcscript ${RCDIR}/thttpd
 libexec/sthttpd/
+@bin libexec/sthttpd/phf
+libexec/sthttpd/printenv
 @bin libexec/sthttpd/redirect
 @bin libexec/sthttpd/ssi
+@man man/man1/makeweb.1
 @man man/man1/th_htpasswd.1
 @man man/man8/redirect.8
 @man man/man8/ssi.8
 @man man/man8/syslogtocern.8
 @man man/man8/thttpd.8
+@bin sbin/makeweb
 sbin/syslogtocern
 @bin sbin/th_htpasswd
 @bin sbin/thttpd
-@rcscript ${RCDIR}/thttpd

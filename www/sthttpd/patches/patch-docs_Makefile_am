@@ -1,0 +1,6 @@
+Index: docs/Makefile.am
+--- docs/Makefile.am.orig
++++ docs/Makefile.am
+@@ -1 +1 @@
+-dist_man_MANS = htpasswd.1 makeweb.1 redirect.8 ssi.8 syslogtocern.8 thttpd.8
++dist_man_MANS = th_htpasswd.1 makeweb.1 redirect.8 ssi.8 syslogtocern.8 thttpd.8

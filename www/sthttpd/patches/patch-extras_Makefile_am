@@ -1,0 +1,14 @@
+Index: extras/Makefile.am
+--- extras/Makefile.am.orig
++++ extras/Makefile.am
+@@ -1,8 +1,8 @@
+ AM_CPPFLAGS = -DWEBDIR='"$(WEBDIR)"'
+ 
+-sbin_PROGRAMS = makeweb htpasswd
++sbin_PROGRAMS = makeweb th_htpasswd
+ makeweb_SOURCES = makeweb.c
+-htpasswd_SOURCES = htpasswd.c
++th_htpasswd_SOURCES = htpasswd.c
+ 
+ dist_sbin_SCRIPTS = syslogtocern
+ 

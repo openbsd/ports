@@ -1,5 +1,6 @@
---- src/thttpd.h.orig	Sun Aug  5 04:59:29 2012
-+++ src/thttpd.h	Sun Aug  5 04:59:46 2012
+Index: src/thttpd.h
+--- src/thttpd.h.orig
++++ src/thttpd.h
 @@ -237,7 +237,7 @@
  ** initializing.  If this user (or the one specified by the -u flag) does
  ** not exist, the program will refuse to run.
