@@ -1,13 +1,12 @@
 COMMENT =	japanese libkkc engine for ibus
 
-VERSION =	20170607
+VERSION =	20220105
 DISTNAME =	ibus-kkc
 PKGNAME =	ibus-kkc-${VERSION}
-REVISION =	0
 
 GH_ACCOUNT =	ueno
 GH_PROJECT =	ibus-kkc
-GH_COMMIT =	f7516ae20cb648cd8b0904aec5853d3a3d2611c4
+GH_COMMIT =	80f21121b908f1eb88243cc61c3c4cec2a425936
 
 CATEGORIES =	inputmethods japanese
 
