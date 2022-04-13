@@ -1,4 +1,7 @@
+${P5ARCH}/XML/LibXSLT/
 ${P5ARCH}/XML/LibXSLT.pm
+${P5ARCH}/XML/LibXSLT/Quick.pm
 ${P5ARCH}/auto/XML/LibXSLT/
 @so ${P5ARCH}/auto/XML/LibXSLT/LibXSLT.so
 @man man/man3p/XML::LibXSLT.3p
+@man man/man3p/XML::LibXSLT::Quick.3p
