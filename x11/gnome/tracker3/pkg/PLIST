@@ -1,3 +1,5 @@
+@conflict tracker-*
+@pkgpath x11/gnome/tracker
 @bin bin/tracker3
 include/tracker-3.0/
 include/tracker-3.0/libtracker-sparql/
@@ -23,7 +25,6 @@ lib/girepository-1.0/Tracker-3.0.typelib
 lib/pkgconfig/tracker-sparql-3.0.pc
 lib/pkgconfig/tracker-testutils-3.0.pc
 lib/tracker-3.0/
-@so lib/tracker-3.0/libtracker-remote-soup2.so
 @so lib/tracker-3.0/libtracker-remote-soup3.so
 lib/tracker-3.0/trackertestutils/
 lib/tracker-3.0/trackertestutils/__init__.py
