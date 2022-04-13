@@ -1,0 +1,18 @@
+REVERT:
+From 198adeb521780ec4c2dc312fb22f61cee66a4c7a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Germ=C3=A1n=20Poo-Caama=C3=B1o?= <gpoo@gnome.org>
+Date: Wed, 2 Mar 2022 01:15:44 -0300
+Subject: [PATCH] build: Require poppler 22.02.0 for PDF rendering
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -399,7 +399,7 @@ elif get_option('dvi').auto()
+ endif
+ 
+ # *** PDF ***
+-poppler_req_version = '>= 22.02.0'
++poppler_req_version = '>= 0.86.0'
+ poppler_glib_dep = dependency('poppler-glib', version: poppler_req_version, required: get_option('pdf'))
+ 
+ libxml_req_version = '>= 2.5.0'
