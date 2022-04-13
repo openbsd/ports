@@ -1,0 +1,8 @@
+clipmenu is a simple clipboard manager using dmenu or rofi.  Despite
+being only <300 lines, clipmenu has many useful features, including:
+
+ * Customising the maximum number of clips stored (default 1000)
+ * Disabling clip collection temporarily with clipctl
+ * Not storing clipboard changes from certain programs, like password
+   managers
+ * Taking direct ownership of the clipboard
