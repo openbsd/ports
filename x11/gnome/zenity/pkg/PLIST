@@ -990,12 +990,6 @@ share/locale/zh_CN/LC_MESSAGES/zenity.mo
 share/locale/zh_HK/LC_MESSAGES/zenity.mo
 share/locale/zh_TW/LC_MESSAGES/zenity.mo
 share/zenity/
-share/zenity/clothes/
-share/zenity/clothes/gnome-tshirt.png
-share/zenity/clothes/hawaii-shirt.png
-share/zenity/clothes/monk.png
-share/zenity/clothes/sunglasses.png
-share/zenity/clothes/surfboard.png
 share/zenity/zenity-calendar.png
 share/zenity/zenity-entry.png
 share/zenity/zenity-file.png
