@@ -2,6 +2,7 @@ COMMENT=		document and e-books manager for GNOME
 
 GNOME_PROJECT=		gnome-books
 GNOME_VERSION=		40.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes

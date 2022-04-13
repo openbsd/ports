@@ -2,7 +2,7 @@ COMMENT=		document manager application for GNOME
 
 GNOME_PROJECT=		gnome-documents
 GNOME_VERSION=		3.34.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
