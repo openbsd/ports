@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		41.0
+GNOME_VERSION=		42.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -15,14 +15,13 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		geo/geoclue2 \
 			x11/gnome/gjs \
-			x11/gnome/libgweather \
-			x11/libhandy
+			x11/gnome/libadwaita \
+			x11/gnome/libgweather4
 
 RUN_DEPENDS=		geo/geoclue2 \
-			x11/gnome/desktop \
 			x11/gnome/gjs \
-			x11/gnome/libgweather \
-			x11/libhandy
+			x11/gnome/libadwaita \
+			x11/gnome/libgweather4
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
