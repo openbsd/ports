@@ -17,7 +17,7 @@ MODGO_MODULES =	\
 	github.com/!azure/go-autorest/logger				 v0.2.1 \
 	github.com/!azure/go-autorest/tracing				 v0.6.0 \
 	github.com/!azure/go-ntlmssp					 v0.0.0-20200615164410-66371956d46c \
-	github.com/!burnt!sushi/toml					 v0.3.1 \
+	github.com/!burnt!sushi/toml					 v0.4.1 \
 	github.com/!burnt!sushi/xgb					 v0.0.0-20160522181843-27f122750802 \
 	github.com/!chris!trenkamp/goxpath				 v0.0.0-20190607011252-c5096ec8773d \
 	github.com/!masterminds/goutils					 v1.1.0 \
@@ -256,7 +256,7 @@ MODGO_MODULES =	\
 	github.com/xanzy/ssh-agent					 v0.3.1 \
 	github.com/xiang90/probing					 v0.0.0-20190116061207-43a291ad63a2 \
 	github.com/xlab/treeprint					 v0.0.0-20161029104018-1d6e34225557 \
-	github.com/yuin/goldmark					 v1.4.0 \
+	github.com/yuin/goldmark					 v1.4.1 \
 	github.com/zclconf/go-cty					 v1.10.0 \
 	github.com/zclconf/go-cty-debug					 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml					 v1.0.2 \
@@ -268,18 +268,19 @@ MODGO_MODULES =	\
 	go.uber.org/zap							 v1.10.0 \
 	golang.org/x/crypto						 v0.0.0-20211108221036-ceb1ce70b4fa \
 	golang.org/x/exp						 v0.0.0-20200224162631-6cc2880d07d6 \
+	golang.org/x/exp/typeparams					 v0.0.0-20220218215828-6cf2b201936e \
 	golang.org/x/image						 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint						 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile						 v0.0.0-20190719004257-d2bd2a29d028 \
-	golang.org/x/mod						 v0.4.2 \
+	golang.org/x/mod						 v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 \
 	golang.org/x/net						 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2						 v0.0.0-20210514164344-f6687ab2804c \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys						 v0.0.0-20210809222454-d867a43fc93e \
+	golang.org/x/sys						 v0.0.0-20211019181941-9d821ace8654 \
 	golang.org/x/term						 v0.0.0-20210220032956-6a3ed077a48d \
-	golang.org/x/text						 v0.3.6 \
+	golang.org/x/text						 v0.3.7 \
 	golang.org/x/time						 v0.0.0-20211116232009-f0f3c7e86c11 \
-	golang.org/x/tools						 v0.1.7 \
+	golang.org/x/tools						 v0.1.11-0.20220316014157-77aa08bb151a \
 	golang.org/x/xerrors						 v0.0.0-20200804184101-5ec99f83aff1 \
 	google.golang.org/api						 v0.44.0-impersonate-preview \
 	google.golang.org/appengine					 v1.6.7 \
@@ -299,7 +300,7 @@ MODGO_MODULES =	\
 	gopkg.in/tomb.v1						 v1.0.0-20141024135613-dd632973f1e7 \
 	gopkg.in/yaml.v2						 v2.4.0 \
 	gopkg.in/yaml.v3						 v3.0.0-20210107192922-496545a6307b \
-	honnef.co/go/tools						 v0.3.0-0.dev \
+	honnef.co/go/tools						 v0.3.0 \
 	k8s.io/api							 v0.21.3 \
 	k8s.io/apimachinery						 v0.21.3 \
 	k8s.io/client-go						 v0.21.3 \
@@ -360,6 +361,7 @@ MODGO_MODFILES =	\
 	github.com/!azure/go-autorest/autorest/validation		 v0.3.0 \
 	github.com/!azure/go-autorest/logger				 v0.2.0 \
 	github.com/!azure/go-ntlmssp					 v0.0.0-20180810175552-4a21cbd618b4 \
+	github.com/!burnt!sushi/toml					 v0.3.1 \
 	github.com/!chris!trenkamp/goxpath				 v0.0.0-20170922090931-c385f95c6022 \
 	github.com/agext/levenshtein					 v1.2.1 \
 	github.com/agext/levenshtein					 v1.2.2 \
@@ -598,6 +600,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod						 v0.3.0 \
 	golang.org/x/mod						 v0.4.0 \
 	golang.org/x/mod						 v0.4.1 \
+	golang.org/x/mod						 v0.4.2 \
 	golang.org/x/net						 v0.0.0-20180530234432-1e491301e022 \
 	golang.org/x/net						 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net						 v0.0.0-20180811021610-c39426892332 \
@@ -645,7 +648,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net						 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net						 v0.0.0-20210405180319-a5a99cb37ef4 \
 	golang.org/x/net						 v0.0.0-20210525063256-abc453219eb5 \
-	golang.org/x/net						 v0.0.0-20210805182204-aaa1db679c0d \
+	golang.org/x/net						 v0.0.0-20211015210444-4f30a5c0130f \
 	golang.org/x/oauth2						 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2						 v0.0.0-20190226205417-e64efc72b421 \
 	golang.org/x/oauth2						 v0.0.0-20190604053449-0f29369cfe45 \
@@ -735,6 +738,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text						 v0.3.3 \
 	golang.org/x/text						 v0.3.4 \
 	golang.org/x/text						 v0.3.5 \
+	golang.org/x/text						 v0.3.6 \
 	golang.org/x/time						 v0.0.0-20180412165947-fbb02b2291d2 \
 	golang.org/x/time						 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time						 v0.0.0-20190308202827-9d24e82272b4 \
