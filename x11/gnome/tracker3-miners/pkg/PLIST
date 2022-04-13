@@ -1,5 +1,5 @@
-@pkgpath x11/gnome/tracker-miners
 @conflict tracker-miners-*
+@pkgpath x11/gnome/tracker-miners
 lib/tracker-miners-3.0/
 lib/tracker-miners-3.0/extract-modules/
 @so lib/tracker-miners-3.0/extract-modules/libextract-abw.so
@@ -138,6 +138,7 @@ share/tracker3-miners/extract-rules/10-comics.rule
 share/tracker3-miners/extract-rules/10-desktop.rule
 share/tracker3-miners/extract-rules/10-ebooks.rule
 share/tracker3-miners/extract-rules/10-epub.rule
+share/tracker3-miners/extract-rules/10-folder.rule
 share/tracker3-miners/extract-rules/10-gif.rule
 share/tracker3-miners/extract-rules/10-html.rule
 share/tracker3-miners/extract-rules/10-ico.rule

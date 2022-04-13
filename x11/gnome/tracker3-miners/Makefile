@@ -1,17 +1,16 @@
 COMMENT=		tracker miners and metadata extractors
 
 GNOME_PROJECT=		tracker-miners
-GNOME_VERSION=		3.2.2
+GNOME_VERSION=		3.3.0
 PKGNAME=		tracker3-miners-${GNOME_VERSION}
-REVISION=		0
 
-# LGPLv2.1+; GPLv2+
+# LGPLv2.1+ - GPLv2+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c cue exempi exif gexiv2 gif gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gsf-1 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gxps icui18n intl iptcdata jpeg kvm m osinfo-1.0 png
-WANTLIB += poppler-glib tiff totem-plparser tracker-sparql-3.0
+WANTLIB += blkid c cue exempi exif gexiv2 gif gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gxps icui18n intl iptcdata jpeg kvm m osinfo-1.0
+WANTLIB += png poppler-glib tiff totem-plparser tracker-sparql-3.0
 WANTLIB += upower-glib xml2
 
 MODULES=		devel/dconf \
@@ -36,6 +35,7 @@ LIB_DEPENDS=		audio/libcue \
 			misc/osinfo/libosinfo \
 			multimedia/gstreamer1/plugins-base \
 			print/poppler \
+			sysutils/e2fsprogs \
 			sysutils/upower \
 			textproc/exempi \
 			textproc/icu4c \
