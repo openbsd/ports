@@ -1,7 +1,7 @@
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		41.3
+GNOME_VERSION=		42.0
 
 CATEGORIES=		x11
 
