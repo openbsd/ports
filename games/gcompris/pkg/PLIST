@@ -18,8 +18,8 @@ share/gcompris-qt/rcc/algebra_div.rcc
 share/gcompris-qt/rcc/algebra_minus.rcc
 share/gcompris-qt/rcc/algebra_plus.rcc
 share/gcompris-qt/rcc/algorithm.rcc
-share/gcompris-qt/rcc/align4-2players.rcc
 share/gcompris-qt/rcc/align4.rcc
+share/gcompris-qt/rcc/align4_2players.rcc
 share/gcompris-qt/rcc/alphabet-sequence.rcc
 share/gcompris-qt/rcc/analog_electricity.rcc
 share/gcompris-qt/rcc/baby_keyboard.rcc
