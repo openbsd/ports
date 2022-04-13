@@ -1,8 +1,8 @@
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		1.2.2
-V_SHARDS =	0.16.0
+V =		1.4.0
+V_SHARDS =	0.17.0
 V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
@@ -22,7 +22,7 @@ WANTLIB +=	${COMPILER_LIBCXX} c event_core gc iconv m pcre yaml-0
 # current version of Crystal there, then checking out the source for that
 # version, applying patches included in this port, and running:
 #
-# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.0"
+# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.1"
 #
 # The result will be built at .build/crystal.o
 #
@@ -32,7 +32,7 @@ MASTER_SITES0 =	https://jcs.org/distfiles/
 MASTER_SITES1 =	https://github.com/crystal-lang/shards/archive/
 MASTER_SITES2 =	https://github.com/crystal-lang/crystal-molinillo/archive/
 DISTFILES =	crystal-${V}{${V}}.tar.gz \
-		crystal-${V}-OpenBSD7.0.tar.gz:0 \
+		crystal-${V}-OpenBSD7.1.tar.gz:0 \
 		shards-${V}{v${V_SHARDS}}.tar.gz:1 \
 		crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz:2
 

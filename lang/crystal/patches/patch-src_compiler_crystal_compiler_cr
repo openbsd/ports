@@ -1,3 +1,5 @@
+# This patch must also be applied to the source tree on the cross-compiling
+# host when building crystal.o
 Index: src/compiler/crystal/compiler.cr
 --- src/compiler/crystal/compiler.cr.orig
 +++ src/compiler/crystal/compiler.cr
