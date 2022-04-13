@@ -193,8 +193,6 @@ share/doc/libvirt/html/css/main.css
 share/doc/libvirt/html/css/mobile.css
 share/doc/libvirt/html/daemons.html
 share/doc/libvirt/html/dbus.html
-share/doc/libvirt/html/developer-tooling.html
-share/doc/libvirt/html/devguide.html
 share/doc/libvirt/html/docs.html
 share/doc/libvirt/html/downloads.html
 share/doc/libvirt/html/drivers.html
@@ -322,6 +320,7 @@ share/doc/libvirt/html/kbase/qemu-passthrough-security.html
 share/doc/libvirt/html/kbase/rpm-deployment.html
 share/doc/libvirt/html/kbase/s390_protected_virt.html
 share/doc/libvirt/html/kbase/secureusage.html
+share/doc/libvirt/html/kbase/snapshots.html
 share/doc/libvirt/html/kbase/systemtap.html
 share/doc/libvirt/html/kbase/virtiofs.html
 share/doc/libvirt/html/libvirt-go-xml.html
@@ -413,7 +412,6 @@ share/doc/libvirt/html/testsuites.html
 share/doc/libvirt/html/testtck.html
 share/doc/libvirt/html/tlscerts.html
 share/doc/libvirt/html/uri.html
-share/doc/libvirt/html/virshcmdref.html
 share/doc/libvirt/html/windows.html
 share/examples/libvirt/
 @sample ${SYSCONFDIR}/libvirt/
