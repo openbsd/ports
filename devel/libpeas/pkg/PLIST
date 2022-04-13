@@ -45,6 +45,7 @@ share/icons/hicolor/22x22/actions/libpeas-plugin.png
 share/icons/hicolor/32x32/actions/libpeas-plugin.png
 share/icons/hicolor/scalable/actions/libpeas-plugin.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/locale/ab/LC_MESSAGES/libpeas-1.0.mo
 share/locale/an/LC_MESSAGES/libpeas-1.0.mo
 share/locale/ar/LC_MESSAGES/libpeas-1.0.mo
 share/locale/as/LC_MESSAGES/libpeas-1.0.mo

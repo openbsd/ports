@@ -1,13 +1,12 @@
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
-GNOME_VERSION=	1.30.0
-REVISION=	0
+GNOME_VERSION=	1.32.0
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  peas-1.0             400.3      # 0.2600.0
-SHARED_LIBS +=  peas-gtk-1.0         400.3      # 0.2600.0
+SHARED_LIBS += peas-1.0                  400.3 # 0.3200.0
+SHARED_LIBS += peas-gtk-1.0              400.3 # 0.3200.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -35,6 +34,6 @@ CONFIGURE_ARGS +=	-Dglade_catalog=false\
 			-Dlua51=false \
 			-Dpython2=false
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
