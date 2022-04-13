@@ -1,0 +1,17 @@
+../gthumb-3.12.2/gthumb/gth-browser.c:2460:7: warning:
+using integer absolute value function 'abs' when argument is of floating point type [-Wabsolute-value]
+
+Index: gthumb/gth-browser.c
+--- gthumb/gth-browser.c.orig
++++ gthumb/gth-browser.c
+@@ -2457,8 +2457,8 @@ viewer_motion_notify_event_cb (GtkWidget      *widget,
+ 	if (browser->priv->last_mouse_y == 0.0)
+ 		browser->priv->last_mouse_y = event->y;
+ 
+-	if ((abs (browser->priv->last_mouse_x - event->x) > MOTION_THRESHOLD)
+-	    || (abs (browser->priv->last_mouse_y - event->y) > MOTION_THRESHOLD))
++	if ((fabs (browser->priv->last_mouse_x - event->x) > MOTION_THRESHOLD)
++	    || (fabs (browser->priv->last_mouse_y - event->y) > MOTION_THRESHOLD))
+ 	{
+ 		if (! browser->priv->pointer_visible) {
+ 			browser->priv->pointer_visible = TRUE;
