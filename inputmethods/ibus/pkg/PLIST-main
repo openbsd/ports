@@ -86,6 +86,11 @@ share/examples/ibus/dconf/db/ibus.d/00-upstream-settings
 share/examples/ibus/dconf/profile/
 share/examples/ibus/dconf/profile/ibus
 @sample ${SYSCONFDIR}/dconf/profile/ibus
+share/examples/ibus/xdg/
+share/examples/ibus/xdg/Xwayland-session.d/
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/
+share/examples/ibus/xdg/Xwayland-session.d/10-ibus-x11
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/10-ibus-x11
 share/gettext/its/ibus.its
 share/gettext/its/ibus.loc
 share/gir-1.0/IBus-1.0.gir

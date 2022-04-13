@@ -6,17 +6,13 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.25
+GH_TAGNAME =		1.5.26
 
 PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		4
-REVISION-gtk2 =		2
-REVISION-gtk4 =		3
-
-SHARED_LIBS +=  ibus-1.0             4.3      # 5.525
+SHARED_LIBS +=  ibus-1.0             4.3      # 5.526
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -81,6 +77,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS =	--disable-python2 \
+			--disable-systemd-services \
 			--enable-gtk4 \
 			--enable-introspection \
 		 	--enable-vala \
