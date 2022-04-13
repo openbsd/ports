@@ -40,6 +40,7 @@
      SUBDIR += ghex
      SUBDIR += gitg
      SUBDIR += gjs
+     SUBDIR += gom
      SUBDIR += grilo
      SUBDIR += grilo-plugins
      SUBDIR += gucharmap
@@ -58,6 +59,7 @@
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomekbd
      SUBDIR += libgweather
+     SUBDIR += libgweather4
      SUBDIR += libmediaart
      SUBDIR += librsvg
      SUBDIR += libsecret
