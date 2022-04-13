@@ -93,6 +93,7 @@
      SUBDIR += pypy
      SUBDIR += python
      SUBDIR += pythran
+     SUBDIR += qbe
      SUBDIR += quickjs
      SUBDIR += racket-minimal
      SUBDIR += racket-minimal,no_jit
