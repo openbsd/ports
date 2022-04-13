@@ -1,7 +1,11 @@
 @bin bin/gnome-tour
 share/applications/org.gnome.Tour.desktop
+share/gnome-tour/
+share/gnome-tour/resources.gresource
 share/icons/hicolor/scalable/apps/org.gnome.Tour.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Tour-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-tour.mo
+share/locale/bg/LC_MESSAGES/gnome-tour.mo
 share/locale/ca/LC_MESSAGES/gnome-tour.mo
 share/locale/cs/LC_MESSAGES/gnome-tour.mo
 share/locale/da/LC_MESSAGES/gnome-tour.mo
@@ -20,6 +24,7 @@ share/locale/he/LC_MESSAGES/gnome-tour.mo
 share/locale/hr/LC_MESSAGES/gnome-tour.mo
 share/locale/hu/LC_MESSAGES/gnome-tour.mo
 share/locale/id/LC_MESSAGES/gnome-tour.mo
+share/locale/is/LC_MESSAGES/gnome-tour.mo
 share/locale/it/LC_MESSAGES/gnome-tour.mo
 share/locale/ja/LC_MESSAGES/gnome-tour.mo
 share/locale/kk/LC_MESSAGES/gnome-tour.mo
@@ -27,6 +32,7 @@ share/locale/ko/LC_MESSAGES/gnome-tour.mo
 share/locale/lt/LC_MESSAGES/gnome-tour.mo
 share/locale/lv/LC_MESSAGES/gnome-tour.mo
 share/locale/nb/LC_MESSAGES/gnome-tour.mo
+share/locale/ne/LC_MESSAGES/gnome-tour.mo
 share/locale/nl/LC_MESSAGES/gnome-tour.mo
 share/locale/oc/LC_MESSAGES/gnome-tour.mo
 share/locale/pa/LC_MESSAGES/gnome-tour.mo
@@ -34,6 +40,7 @@ share/locale/pl/LC_MESSAGES/gnome-tour.mo
 share/locale/pt/LC_MESSAGES/gnome-tour.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-tour.mo
 share/locale/ro/LC_MESSAGES/gnome-tour.mo
+share/locale/ru/LC_MESSAGES/gnome-tour.mo
 share/locale/sk/LC_MESSAGES/gnome-tour.mo
 share/locale/sl/LC_MESSAGES/gnome-tour.mo
 share/locale/sr/LC_MESSAGES/gnome-tour.mo

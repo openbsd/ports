@@ -1,7 +1,7 @@
 COMMENT=		GNOME's Tour & Greeter
 
 GNOME_PROJECT=		gnome-tour
-GNOME_VERSION=		40.1
+GNOME_VERSION=		42.0
 
 # needed due to the devel/cargo MODULE
 DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
@@ -13,7 +13,7 @@ DISTFILES=		${GNOME_PROJECT}-${GNOME_VERSION}${EXTRACT_SUFX}
 # gnome-tour source code results in effective GPLv3+ for the resulting binary
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c c++abi gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 handy-1
+WANTLIB += adwaita-1 c c++abi gio-2.0 glib-2.0 gobject-2.0 gtk-4
 WANTLIB += intl m pango-1.0 pthread
 
 MODULES=		devel/meson \
@@ -23,7 +23,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		lang/rust
 
-LIB_DEPENDS=		x11/libhandy
+LIB_DEPENDS=		x11/gnome/libadwaita
 
 # don't rebuild the gettext crate
 MAKE_ENV=		GETTEXT_DIR=${LOCALBASE}
