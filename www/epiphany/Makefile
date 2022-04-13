@@ -1,8 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	41.3
-REVISION=	1
+GNOME_VERSION=	42.1
 
 CATEGORIES=	www
 
@@ -12,9 +11,9 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += archive atk-1.0 c cairo dazzle-1.0 gcr-base-3 gcr-ui-3 gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp gobject-2.0 gtk-3
-WANTLIB += handy-1 hogweed intl javascriptcoregtk-4.0 json-glib-1.0
+WANTLIB += archive atk-1.0 c cairo dazzle-1.0 gcr-base-3 gcr-ui-3
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmp gobject-2.0
+WANTLIB += gtk-3 handy-1 hogweed intl javascriptcoregtk-4.0 json-glib-1.0
 WANTLIB += m nettle pango-1.0 secret-1 soup-2.4 sqlite3 webkit2gtk-4.0
 WANTLIB += xml2
 
