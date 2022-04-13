@@ -1,6 +1,6 @@
 COMMENT =		owncloud sync client
 
-V = 			2.10.0.6519
+V = 			2.10.1.7187
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 
@@ -17,8 +17,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml c gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain
-WANTLIB += secret-1 sqlite3 z ${COMPILER_LIBCXX} lib/inotify/inotify
+WANTLIB += Qt5Xml c m qt5keychain sqlite3 z
+WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
 
 MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
 			https://download.owncloud.com/desktop/ownCloud/stable/${V}/
@@ -33,7 +33,6 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/libinotify \
 			security/qtkeychain
-#			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
