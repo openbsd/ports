@@ -71,7 +71,6 @@ share/doc/ghostscript/${VERSION}/
 share/doc/ghostscript/${VERSION}/API.htm
 share/doc/ghostscript/${VERSION}/C-style.htm
 share/doc/ghostscript/${VERSION}/COPYING
-share/doc/ghostscript/${VERSION}/Commprod.htm
 share/doc/ghostscript/${VERSION}/DLL.htm
 share/doc/ghostscript/${VERSION}/Deprecated.htm
 share/doc/ghostscript/${VERSION}/Develop.htm
@@ -97,7 +96,6 @@ share/doc/ghostscript/${VERSION}/Use.htm
 share/doc/ghostscript/${VERSION}/VectorDevices.htm
 share/doc/ghostscript/${VERSION}/WhatIsGS.htm
 share/doc/ghostscript/${VERSION}/gdevds32.c
-share/doc/ghostscript/${VERSION}/gs-style.css
 share/doc/ghostscript/${VERSION}/images/
 share/doc/ghostscript/${VERSION}/images/Artifex_logo.png
 share/doc/ghostscript/${VERSION}/images/favicon.png
@@ -105,10 +103,8 @@ share/doc/ghostscript/${VERSION}/images/ghostscript_logo.png
 share/doc/ghostscript/${VERSION}/images/hamburger-light.png
 share/doc/ghostscript/${VERSION}/images/x-light.png
 share/doc/ghostscript/${VERSION}/index.html
-share/doc/ghostscript/${VERSION}/index.js
 share/doc/ghostscript/${VERSION}/pscet_status.txt
 share/doc/ghostscript/${VERSION}/sample_downscale_device.htm
-share/doc/ghostscript/${VERSION}/style.css
 share/doc/ghostscript/${VERSION}/subclass.htm
 share/doc/ghostscript/${VERSION}/thirdparty.htm
 share/ghostscript/
