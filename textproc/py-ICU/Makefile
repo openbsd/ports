@@ -1,6 +1,6 @@
 COMMENT=		Python extension wrapping the ICU C++ API
 
-MODPY_EGG_VERSION=	2.8.1
+MODPY_EGG_VERSION=	2.9
 DISTNAME=		PyICU-${MODPY_EGG_VERSION}
 PKGNAME=		py-ICU-${MODPY_EGG_VERSION}
 
@@ -29,14 +29,6 @@ LIB_DEPENDS=		textproc/icu4c
 TEST_DEPENDS=		devel/py-six${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
 
-.if !${FLAVOR:Mpython3}
-WANTLIB +=	${MODPY_WANTLIB}
-LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
-.endif
-
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/setup.py
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
