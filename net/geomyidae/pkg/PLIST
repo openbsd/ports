@@ -4,7 +4,7 @@
 @bin bin/geomyidae
 @man man/man8/geomyidae.8
 share/doc/geomyidae/
-share/doc/geomyidae/CGI
+share/doc/geomyidae/CGI.md
 share/doc/geomyidae/README
 @mode 755
 @owner root

@@ -1,8 +1,7 @@
 COMMENT =		Gopher protocol daemon
 
-DISTNAME =		geomyidae-v0.34
+DISTNAME =		geomyidae-v0.50.1
 PKGNAME =		${DISTNAME:S/-v/-/}
-EXTRACT_SUFX =		.tgz
 
 CATEGORIES =		net
 
@@ -28,7 +27,7 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/geomyidae.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/geomyidae
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/geomyidae
-	cd ${WRKSRC} && ${INSTALL_DATA} CGI README \
+	cd ${WRKSRC} && ${INSTALL_DATA} CGI.md README \
 	    ${PREFIX}/share/doc/geomyidae
 	cd ${WRKSRC} && ${INSTALL_DATA} index.gph \
 	    ${PREFIX}/share/examples/geomyidae
