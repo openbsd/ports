@@ -1,0 +1,17 @@
+From 60856db2ca1b37079e9a7a2e1cbbbc9d2dcb43fa Mon Sep 17 00:00:00 2001
+From: Michael Terry <mike@mterry.name>
+Date: Wed, 9 Mar 2022 12:28:18 -0500
+Subject: [PATCH] build: fix test case ownership with latest valac
+
+Index: libdeja/tests/unit/unit-tests.vala
+--- libdeja/tests/unit/unit-tests.vala.orig
++++ libdeja/tests/unit/unit-tests.vala
+@@ -138,7 +138,7 @@ int main(string[] args)
+   unit.add(new TestCase("parse-dir", setup, parse_dir, teardown));
+   unit.add(new TestCase("parse-version", setup, parse_version, teardown));
+   unit.add(new TestCase("prompt", setup, prompt, teardown));
+-  TestSuite.get_root().add_suite(unit);
++  TestSuite.get_root().add_suite((owned)unit);
+ 
+   return Test.run();
+ }

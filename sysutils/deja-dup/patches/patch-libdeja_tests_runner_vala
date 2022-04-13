@@ -1,0 +1,26 @@
+From 60856db2ca1b37079e9a7a2e1cbbbc9d2dcb43fa Mon Sep 17 00:00:00 2001
+From: Michael Terry <mike@mterry.name>
+Date: Wed, 9 Mar 2022 12:28:18 -0500
+Subject: [PATCH] build: fix test case ownership with latest valac
+
+Index: libdeja/tests/runner.vala
+--- libdeja/tests/runner.vala.orig
++++ libdeja/tests/runner.vala
+@@ -1032,7 +1032,7 @@ int main(string[] args)
+   if (keyfile.has_group("Duplicity")) {
+     var suite = new TestSuite("duplicity");
+     suite.add(new TestCase(testname, backup_setup, duplicity_run, backup_teardown));
+-    TestSuite.get_root().add_suite(suite);
++    TestSuite.get_root().add_suite((owned)suite);
+     found_group = true;
+   }
+ 
+@@ -1040,7 +1040,7 @@ int main(string[] args)
+   if (keyfile.has_group("Restic")) {
+     var suite = new TestSuite("restic");
+     suite.add(new TestCase(testname, backup_setup, restic_run, backup_teardown));
+-    TestSuite.get_root().add_suite(suite);
++    TestSuite.get_root().add_suite((owned)suite);
+     found_group = true;
+   }
+ #endif
