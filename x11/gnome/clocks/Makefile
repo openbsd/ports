@@ -1,15 +1,14 @@
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		41.0
-REVISION=		1
+GNOME_VERSION=		42.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c gdk-3 geoclue-2 geocode-glib gio-2.0 glib-2.0
-WANTLIB += gnome-desktop-3 gobject-2.0 gsound gtk-3 gweather-3
-WANTLIB += handy-1 intl m
+WANTLIB += adwaita-1 c geoclue-2 geocode-glib gio-2.0 glib-2.0
+WANTLIB += gnome-desktop-4 gobject-2.0 gsound gtk-4 gweather-4
+WANTLIB += intl m
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -17,9 +16,9 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		audio/gsound \
 			geo/geocode-glib \
-			x11/gnome/desktop \
-			x11/gnome/libgweather \
-			x11/libhandy
+			x11/gnome/desktop,-gtk4 \
+			x11/gnome/libgweather4 \
+			x11/gnome/libadwaita
 
 # geocoding.vala
 BUILD_DEPENDS +=	geo/geoclue2
