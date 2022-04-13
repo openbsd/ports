@@ -14,7 +14,7 @@ COMMENT =		GTK+ port of the WebKit rendering engine
 V =			2.36.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
-REVISION =		1
+REVISION =		2
 
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
@@ -57,13 +57,7 @@ MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
 MODGNOME_TOOLS =	gobject-introspection
 
-# XXX set DEBUG=-g1 because libWebCoreGTK.a is too big (4.1G)
-# https://bugs.webkit.org/show_bug.cgi?id=140384
-# ld.lld: error: lib/libWebCoreGTK.a:
-# could not get the member for symbol WebCore::WorkerThread::runEventLoop():
-# truncated or malformed archive (terminator characters in archive member "ar" not the correct "`\n" values for the archive member header for 12__retguard_29)
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-DEBUG =			-g1
 
 NO_TEST =		Yes
 
@@ -124,9 +118,9 @@ CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
 .endif
 
 
-# we don't want an allocation of 1GB, it's above the default ulimit
+# we don't want an allocation of 1GB, it's above the "default" class ulimit
 .if ${MACHINE_ARCH} == "amd64"
-CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=512
+CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=384
 .endif
 CXXFLAGS +=		-DSTRUCTURE_HEAP_ADDRESS_SIZE_IN_MB=256
 
@@ -135,9 +129,13 @@ CXXFLAGS +=		-I${X11BASE}/include
 
 .include <bsd.port.arch.mk>
 
-# disable thin archives for bfd
+# disable thin archives for bfd;
+# and set DEBUG=-g1 for GNU ar(1) arches (libWebCoreGTK.a is too big (4.1G)):
+# ../../lib/libWebCoreGTK.a: could not read symbols: Malformed archive
+# https://bugs.webkit.org/show_bug.cgi?id=140384
 .if !${PROPERTIES:Mlld}
 CONFIGURE_ARGS +=	-DUSE_THIN_ARCHIVES=FALSE
+DEBUG =			-g1
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "i386"
