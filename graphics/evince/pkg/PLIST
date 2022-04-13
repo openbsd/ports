@@ -36,7 +36,6 @@ include/evince/${MAJ_V}/libdocument/ev-document-type-builtins.h
 include/evince/${MAJ_V}/libdocument/ev-document.h
 include/evince/${MAJ_V}/libdocument/ev-file-exporter.h
 include/evince/${MAJ_V}/libdocument/ev-file-helpers.h
-include/evince/${MAJ_V}/libdocument/ev-form-field-private.h
 include/evince/${MAJ_V}/libdocument/ev-form-field.h
 include/evince/${MAJ_V}/libdocument/ev-image.h
 include/evince/${MAJ_V}/libdocument/ev-init.h
@@ -48,6 +47,7 @@ include/evince/${MAJ_V}/libdocument/ev-macros.h
 include/evince/${MAJ_V}/libdocument/ev-mapping-list.h
 include/evince/${MAJ_V}/libdocument/ev-media.h
 include/evince/${MAJ_V}/libdocument/ev-page.h
+include/evince/${MAJ_V}/libdocument/ev-portal.h
 include/evince/${MAJ_V}/libdocument/ev-render-context.h
 include/evince/${MAJ_V}/libdocument/ev-selection.h
 include/evince/${MAJ_V}/libdocument/ev-transition-effect.h

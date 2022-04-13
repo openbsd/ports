@@ -1,8 +1,7 @@
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		41.4
-REVISION=		0
+GNOME_VERSION=		42.1
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -31,7 +30,7 @@ MODULES=		devel/dconf \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection gi-docgen
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
@@ -51,8 +50,7 @@ RUN_DEPENDS=		archivers/unrar \
 
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
-CONFIGURE_ARGS +=	-Dt1lib=disabled \
-			-Dsystemduserunitdir=no \
+CONFIGURE_ARGS +=	-Dsystemduserunitdir=no \
 			-Dgtk_doc=false
 
 # fix build with clang
@@ -83,7 +81,7 @@ LIB_DEPENDS +=		graphics/djvulibre \
 			x11/gnome/desktop \
 			x11/gnome/nautilus
 WANTLIB += archive djvulibre gnome-desktop-3 gstreamer-1.0 gstvideo-1.0
-WANTLIB += gxps intl kpathsea m nautilus-extension spectre z
+WANTLIB += gxps intl kpathsea m nautilus-extension spectre
 
 # XXX not sure that's needed automatic conversion
 RUN_DEPENDS +=	print/texlive/base,-main
