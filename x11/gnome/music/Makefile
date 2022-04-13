@@ -1,13 +1,14 @@
+# XXX check if gobject-introspection is needed at next update
+# (checked by meson but doesn't seem to be used)
+
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		41.0
-REVISION=		2
+GNOME_VERSION=		42.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
-
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -19,10 +20,10 @@ MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-LIB_DEPENDS=		devel/glib2
-
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			devel/libsoup \
 			x11/gnome/grilo-plugins \
+			x11/gnome/libadwaita \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/online-accounts \
@@ -30,8 +31,9 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/libhandy
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
+			devel/libsoup \
 			x11/gnome/grilo-plugins \
+			x11/gnome/libadwaita \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/online-accounts \
