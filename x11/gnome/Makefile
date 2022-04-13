@@ -76,6 +76,7 @@
      SUBDIR += online-miners
      SUBDIR += orca
      SUBDIR += photos
+     SUBDIR += polari
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += quadrapassel
@@ -92,6 +93,7 @@
      SUBDIR += system-monitor
      SUBDIR += tepl
      SUBDIR += terminal
+     SUBDIR += text-editor
      SUBDIR += themes-extra
      SUBDIR += todo
      SUBDIR += totem
