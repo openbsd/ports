@@ -1,9 +1,9 @@
 COMMENT=	accessibility toolkit used by gtk+
 
 GNOME_PROJECT=	atk
-GNOME_VERSION=	2.36.0
+GNOME_VERSION=	2.38.0
 
-SHARED_LIBS +=  atk-1.0              21809.4  # 0.23609.1
+SHARED_LIBS += atk-1.0                   21809.4 # 0.23809.1
 
 CATEGORIES=	devel
 

@@ -1,5 +1,6 @@
 include/atk-1.0/
 include/atk-1.0/atk/
+include/atk-1.0/atk/atk-autocleanups.h
 include/atk-1.0/atk/atk-enum-types.h
 include/atk-1.0/atk/atk.h
 include/atk-1.0/atk/atkaction.h
