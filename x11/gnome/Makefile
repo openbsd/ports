@@ -25,7 +25,6 @@
      SUBDIR += devel-docs
      SUBDIR += devhelp
      SUBDIR += dictionary
-     SUBDIR += documents
      SUBDIR += eog
      SUBDIR += eog-plugins
      SUBDIR += epub-thumbnailer
