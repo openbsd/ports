@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1383 2022/04/13 10:01:43 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1384 2022/04/13 10:06:17 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -495,7 +495,7 @@ my $stem_extensions = {
 	'py-websocket-client' => 'py3-websocket-client',
 	'libmesode' => 'libstrophe',
 	'py-stem' => 'py3-stem',
-# 7.1	    
+# 7.1
 	'py-jsonschema' => 'py3-jsonschema',
 	'py-CherryPy' => 'py3-CherryPy',
 	'py-IP' => 'py3-IP',
@@ -720,6 +720,8 @@ my $stem_extensions = {
 	'py-pretend' => 'py3-pretend',
 	'py-mock' => 'py3-mock',
 	'gmic-qt-krita' => 'krita-gmic-plugin',
+# 7.2
+	'tracker-miners' => 'tracker3-miners',
 };
 
 my $obsolete_reason = {};
@@ -1665,6 +1667,7 @@ setup_obsolete_reason(
 # 7.2
 	6 => 'tepl',
 	3 => 'gnome-documents',
+	3 => 'tracker-miners',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
