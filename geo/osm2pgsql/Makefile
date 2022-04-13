@@ -3,7 +3,7 @@ COMMENT =		OSM data to PostgreSQL converter
 GH_TAGNAME =		1.4.2
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		geo databases
 
@@ -28,6 +28,7 @@ LIB_DEPENDS =		databases/postgresql	\
 			devel/boost		\
 
 BUILD_DEPENDS =		devel/libtool \
+			devel/fmt \
 			devel/protozero \
 			geo/libosmium>=2.15.6
 
@@ -46,6 +47,7 @@ MODLUA_SA =		Yes
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
 			-DEXTERNAL_LIBOSMIUM=ON \
 			-DEXTERNAL_PROTOZERO=ON \
+			-DEXTERNAL_FMT=ON \
 			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/utfcpp \
 				${CXXFLAGS}"
 
