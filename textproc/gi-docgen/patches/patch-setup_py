@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -56,7 +56,7 @@ package_data = {
+ 
+ data_files = [
+     ('share/pkgconfig', ['gi-docgen.pc']),
+-    ('share/man/man1', ['docs/gi-docgen.1']),
++    ('man/man1', ['docs/gi-docgen.1']),
+ ]
+ 
+ if __name__ == '__main__':
