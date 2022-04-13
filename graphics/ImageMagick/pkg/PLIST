@@ -213,7 +213,7 @@ share/ImageMagick/english.xml
 share/ImageMagick/francais.xml
 share/ImageMagick/locale.xml
 share/doc/ImageMagick/
-share/doc/ImageMagick/ChangeLog
+share/doc/ImageMagick/ChangeLog.md
 share/doc/ImageMagick/LICENSE
 share/doc/ImageMagick/NEWS.txt
 share/doc/ImageMagick/images/
@@ -333,7 +333,6 @@ share/doc/ImageMagick/images/wizard.jpg
 share/doc/ImageMagick/images/wizard.png
 share/doc/ImageMagick/index.html
 share/doc/ImageMagick/www/
-share/doc/ImageMagick/www/ImageMagickObject.html
 share/doc/ImageMagick/www/Magick++/
 share/doc/ImageMagick/www/Magick++/Blob.html
 share/doc/ImageMagick/www/Magick++/Cache.fig
