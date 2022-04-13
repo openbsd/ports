@@ -1,0 +1,26 @@
+https://github.com/collectd/collectd/commit/17d2fbe443b656bb0f74c204eb003cea22f94e60
+https://github.com/collectd/collectd/commit/7e2f3e27e92640b1728a5d434b706e5c6a6ec704
+
+Index: src/python.c
+--- src/python.c.orig
++++ src/python.c
+@@ -1136,8 +1136,8 @@ static void *cpy_interactive(void *pipefd) {
+     cpy_log_exception("interactive session init");
+   }
+   cur_sig = PyOS_setsig(SIGINT, python_sigint_handler);
+-  PyOS_AfterFork();
+-  PyEval_InitThreads();
++  PyOS_AfterFork_Child();
++  Py_Initialize();
+   close(*(int *)pipefd);
+   PyRun_InteractiveLoop(stdin, "<stdin>");
+   PyOS_setsig(SIGINT, cur_sig);
+@@ -1174,7 +1174,7 @@ static int cpy_init(void) {
+       ;
+     (void)close(pipefd[0]);
+   } else {
+-    PyEval_InitThreads();
++    Py_Initialize();
+     state = PyEval_SaveThread();
+   }
+   CPY_LOCK_THREADS

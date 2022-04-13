@@ -38,10 +38,10 @@ REVISION-nut =		1
 REVISION-pgsql =	0
 REVISION-ping =		0
 REVISION-prometheus =	3
-REVISION-python =	1
+REVISION-python =	2
 REVISION-redis =	0
 REVISION-riemann =	3
-REVISION-rrdtool =	2
+REVISION-rrdtool =	3
 REVISION-snmp =		0
 REVISION-virt =		3
 
@@ -55,7 +55,6 @@ MASTER_SITES =		${HOMEPAGE}/files/
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =		No
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp -virt -python \
@@ -69,12 +68,12 @@ WANTLIB-pgsql =		pq pthread
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-rrdtool =	X11 Xext Xrender cairo expat fontconfig \
+WANTLIB-rrdtool =	X11 cairo expat \
 			freetype glib-2.0 gobject-2.0 \
 			harfbuzz iconv intl lzma m \
 			pango-1.0 pangocairo-1.0 \
-			pixman-1 png pthread rrd xcb \
-			xcb-render xcb-shm xml2 z
+			png pthread rrd xcb \
+			xml2 z
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
