@@ -1,6 +1,6 @@
 COMMENT =	simple tool for managing encrypted backups in the cloud
 
-V =		0.10.6
+V =		0.10.7
 MODGO_MODNAME =	github.com/kopia/kopia
 MODGO_VERSION =	v${V}
 
