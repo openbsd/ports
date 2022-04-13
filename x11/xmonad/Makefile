@@ -4,7 +4,7 @@ MODCABAL_STEM =		xmonad
 MODCABAL_VERSION =	0.17.0
 
 PKGNAME =		${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 

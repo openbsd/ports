@@ -2,7 +2,7 @@
 
 output_file="${1}"
 
-if [ "${output_file}" -nt xmonad.hs ]; then
+if [ "${output_file}" -nt xmonad.hs ] && [ "${output_file}" -nt /usr/local/bin/xmonad ]; then
     echo "${output_file}" is newer than xmonad.hs
     exit 0
 fi
