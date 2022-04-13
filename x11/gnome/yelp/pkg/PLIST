@@ -26,27 +26,6 @@ lib/yelp/web-extensions/
 @so lib/yelp/web-extensions/libyelpwebextension.so
 share/applications/yelp.desktop
 share/glib-2.0/schemas/org.gnome.yelp.gschema.xml
-share/gtk-doc/html/libyelp/
-share/gtk-doc/html/libyelp/YelpDocument.html
-share/gtk-doc/html/libyelp/YelpSettings.html
-share/gtk-doc/html/libyelp/YelpSimpleDocument.html
-share/gtk-doc/html/libyelp/YelpUri.html
-share/gtk-doc/html/libyelp/YelpView.html
-share/gtk-doc/html/libyelp/api-index-full.html
-share/gtk-doc/html/libyelp/ch01.html
-share/gtk-doc/html/libyelp/ch01s02.html
-share/gtk-doc/html/libyelp/home.png
-share/gtk-doc/html/libyelp/index.html
-share/gtk-doc/html/libyelp/left-insensitive.png
-share/gtk-doc/html/libyelp/left.png
-share/gtk-doc/html/libyelp/libyelp-yelp-error.html
-share/gtk-doc/html/libyelp/libyelp.devhelp2
-share/gtk-doc/html/libyelp/object-tree.html
-share/gtk-doc/html/libyelp/right-insensitive.png
-share/gtk-doc/html/libyelp/right.png
-share/gtk-doc/html/libyelp/style.css
-share/gtk-doc/html/libyelp/up-insensitive.png
-share/gtk-doc/html/libyelp/up.png
 share/icons/hicolor/scalable/apps/org.gnome.Yelp.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Yelp-symbolic.svg
 share/locale/af/LC_MESSAGES/yelp.mo
