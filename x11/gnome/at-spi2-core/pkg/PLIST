@@ -50,7 +50,9 @@ share/examples/at-spi2-core/
 share/examples/at-spi2-core/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/at-spi2-core/xdg/Xwayland-session.d/
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/
 share/examples/at-spi2-core/xdg/Xwayland-session.d/00-at-spi
+@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/00-at-spi
 share/examples/at-spi2-core/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/at-spi2-core/xdg/autostart/at-spi-dbus-bus.desktop
@@ -92,6 +94,7 @@ share/locale/hi/LC_MESSAGES/at-spi2-core.mo
 share/locale/hr/LC_MESSAGES/at-spi2-core.mo
 share/locale/hu/LC_MESSAGES/at-spi2-core.mo
 share/locale/id/LC_MESSAGES/at-spi2-core.mo
+share/locale/is/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
 share/locale/ja/LC_MESSAGES/at-spi2-core.mo
 share/locale/kk/LC_MESSAGES/at-spi2-core.mo
