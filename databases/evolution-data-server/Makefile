@@ -1,19 +1,19 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.42.4
+GNOME_VERSION=		3.44.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            41.6
-SHARED_LIBS +=  edataserver-1.2      22.6
-SHARED_LIBS +=  ebackend-1.2         8.6
-SHARED_LIBS +=  edataserverui-1.2    4.6
-SHARED_LIBS +=  ebook-contacts-1.2   5.6
-SHARED_LIBS +=  edata-book-1.2       20.4
-SHARED_LIBS +=  ebook-1.2            23.4
-SHARED_LIBS +=  ecal-2.0             0.4
-SHARED_LIBS +=  edata-cal-2.0        0.4
+SHARED_LIBS +=  camel-1.2            41.7
+SHARED_LIBS +=  edataserver-1.2      22.7
+SHARED_LIBS +=  ebackend-1.2         8.7
+SHARED_LIBS +=  edataserverui-1.2    4.7
+SHARED_LIBS +=  ebook-contacts-1.2   5.7
+SHARED_LIBS +=  edata-book-1.2       20.5
+SHARED_LIBS +=  ebook-1.2            23.5
+SHARED_LIBS +=  ecal-2.0             0.5
+SHARED_LIBS +=  edata-cal-2.0        0.5
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -24,7 +24,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += ${COMPILER_LIBCXX} X11 atk-1.0 boost_thread-mt c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 db gck-1 gcr-base-3
 WANTLIB += gcr-ui-3 gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gtk-3 gweather-3 harfbuzz
+WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gtk-3 gweather-4 harfbuzz
 WANTLIB += ical ical-glib icalss icalvcal icudata icui18n icuuc
 WANTLIB += intl javascriptcoregtk-4.0 json-glib-1.0 lber ldap
 WANTLIB += m nspr4 nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0
@@ -49,7 +49,7 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			textproc/libical,-glib \
 			www/webkitgtk4 \
 			x11/gnome/gcr \
-			x11/gnome/libgweather \
+			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts
 
 MODPY_RUNDEP=		No
@@ -63,7 +63,8 @@ CONFIGURE_ARGS=		-DWITH_KRB5=OFF \
 			-DWITH_LIBDB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			-DWITH_LIBDB_LIBS="-L${LOCALBASE}/lib -ldb" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include"
+			-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			-DWITH_GWEATHER4=ON
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
