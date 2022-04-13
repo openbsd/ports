@@ -1,3 +1,5 @@
+@pkgpath x11/gnome/tracker-miners
+@conflict tracker-miners-*
 lib/tracker-miners-3.0/
 lib/tracker-miners-3.0/extract-modules/
 @so lib/tracker-miners-3.0/extract-modules/libextract-abw.so
