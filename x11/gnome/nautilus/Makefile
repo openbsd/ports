@@ -1,8 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		41.5
-REVISION=		0
+GNOME_VERSION=		42.0
 
 SHARED_LIBS += nautilus-extension        3.0 # 1.5.0
 
@@ -14,7 +13,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
 WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
 WANTLIB += gnome-desktop-3 gobject-2.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gtk-3 handy-1 intl m pango-1.0 pangocairo-1.0 tracker-sparql-3.0
+WANTLIB += gtk-3 handy-1 intl m pango-1.0 tracker-sparql-3.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
