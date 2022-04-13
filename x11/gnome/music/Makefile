@@ -5,7 +5,7 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		42.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -39,6 +39,9 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/online-accounts \
 			x11/gnome/tracker3 \
 			x11/libhandy
+
+# org.freedesktop.Tracker3.Miner.Files
+RUN_DEPENDS +=		x11/gnome/tracker3-miners
 
 # sndio(7) support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-base

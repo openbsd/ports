@@ -2,7 +2,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		42.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -36,9 +36,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
-
-# org.freedesktop.Tracker3.Miner.Files
-RUN_DEPENDS +=		x11/gnome/tracker3-miners
 
 LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/gobject-introspection \

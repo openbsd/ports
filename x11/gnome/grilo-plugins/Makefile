@@ -4,7 +4,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.3.14
-REVISION=	2
+REVISION=	3
 
 API=		0.3
 SUBST_VARS=	API
@@ -36,6 +36,9 @@ LIB_DEPENDS=	devel/libgdata \
 
 # com.intel.dleyna-server
 RUN_DEPENDS +=	net/dleyna/server
+
+# org.freedesktop.Tracker3.Miner.Files
+RUN_DEPENDS +=	x11/gnome/tracker3
 
 MODGNOME_TOOLS=	yelp
 MODLUA_VERSION=	5.3
