@@ -10,8 +10,8 @@ Index: lib/impersonation.cpp
  #include <crypt.h>
  #include <shadow.h>
  #endif
-@@ -58,7 +58,7 @@ passwd_holder get_passwd(fz::native_string const& user
- 	return ret;
+@@ -79,7 +79,7 @@ std::optional<gid_t> get_group(fz::native_string const
+ 	return {};
  }
  
 -#if FZ_UNIX
@@ -19,7 +19,7 @@ Index: lib/impersonation.cpp
  struct shadow_holder {
  	shadow_holder() = default;
  	shadow_holder(shadow_holder const&) = delete;
-@@ -150,7 +150,7 @@ std::vector<gid_t> get_supplementary(std::string const
+@@ -171,7 +171,7 @@ std::vector<gid_t> get_supplementary(std::string const
  
  bool check_auth(fz::native_string const& username, fz::native_string const& password)
  {

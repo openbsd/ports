@@ -1,9 +1,8 @@
 COMMENT =	support library for FileZilla
 
-DISTNAME =	libfilezilla-0.36.0
-REVISION =	0
+DISTNAME =	libfilezilla-0.37.1
 
-SHARED_LIBS +=  filezilla	12.0 # 24.0.0
+SHARED_LIBS +=  filezilla	13.0 # 25.0.0
 
 CATEGORIES =	net
 
@@ -14,8 +13,9 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} gmp gnutls hogweed iconv idn2 intl
-WANTLIB += m nettle p11-kit tasn1 unistring brotlidec brotlienc z zstd
+WANTLIB +=	${COMPILER_LIBCXX} brotlidec brotlienc gmp gnutls hogweed
+WANTLIB +=	iconv idn2 intl m nettle p11-kit tasn1 unistring z
+WANTLIB +=	zstd
 
 MASTER_SITES =		https://download.filezilla-project.org/libfilezilla/
 EXTRACT_SUFX =		.tar.bz2
