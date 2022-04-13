@@ -28,14 +28,11 @@ include/gio-unix-2.0/
 include/gio-unix-2.0/gio/
 include/gio-unix-2.0/gio/gdesktopappinfo.h
 include/gio-unix-2.0/gio/gfiledescriptorbased.h
-include/gio-unix-2.0/gio/gunixconnection.h
-include/gio-unix-2.0/gio/gunixcredentialsmessage.h
 include/gio-unix-2.0/gio/gunixfdlist.h
 include/gio-unix-2.0/gio/gunixfdmessage.h
 include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
 include/gio-unix-2.0/gio/gunixoutputstream.h
-include/gio-unix-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/
 include/glib-2.0/gio/
 include/glib-2.0/gio/gaction.h
@@ -82,6 +79,8 @@ include/glib-2.0/gio/gdbusobjectskeleton.h
 include/glib-2.0/gio/gdbusproxy.h
 include/glib-2.0/gio/gdbusserver.h
 include/glib-2.0/gio/gdbusutils.h
+include/glib-2.0/gio/gdebugcontroller.h
+include/glib-2.0/gio/gdebugcontrollerdbus.h
 include/glib-2.0/gio/gdrive.h
 include/glib-2.0/gio/gdtlsclientconnection.h
 include/glib-2.0/gio/gdtlsconnection.h
@@ -184,6 +183,9 @@ include/glib-2.0/gio/gtlsfiledatabase.h
 include/glib-2.0/gio/gtlsinteraction.h
 include/glib-2.0/gio/gtlspassword.h
 include/glib-2.0/gio/gtlsserverconnection.h
+include/glib-2.0/gio/gunixconnection.h
+include/glib-2.0/gio/gunixcredentialsmessage.h
+include/glib-2.0/gio/gunixsocketaddress.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
 include/glib-2.0/gio/gvolumemonitor.h
@@ -282,6 +284,7 @@ include/glib-2.0/glib/gwin32.h
 include/glib-2.0/gmodule.h
 include/glib-2.0/gobject/
 include/glib-2.0/gobject/gbinding.h
+include/glib-2.0/gobject/gbindinggroup.h
 include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
@@ -294,6 +297,7 @@ include/glib-2.0/gobject/gobjectnotifyqueue.c
 include/glib-2.0/gobject/gparam.h
 include/glib-2.0/gobject/gparamspecs.h
 include/glib-2.0/gobject/gsignal.h
+include/glib-2.0/gobject/gsignalgroup.h
 include/glib-2.0/gobject/gsourceclosure.h
 include/glib-2.0/gobject/gtype.h
 include/glib-2.0/gobject/gtypemodule.h
@@ -349,8 +353,8 @@ share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${PKGSTEM}
 share/gdb/auto-load/usr/local/lib/
-share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7000.5-gdb.py
-share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7000.5-gdb.py
+share/gdb/auto-load/usr/local/lib/libglib-2.0.so.0.7200.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libgobject-2.0.so.0.7200.0-gdb.py
 share/gettext/its/
 share/gettext/its/gschema.its
 share/gettext/its/gschema.loc
@@ -360,6 +364,7 @@ share/glib-2.0/codegen/__init__.py
 share/glib-2.0/codegen/codegen.py
 share/glib-2.0/codegen/codegen_docbook.py
 share/glib-2.0/codegen/codegen_main.py
+share/glib-2.0/codegen/codegen_rst.py
 share/glib-2.0/codegen/config.py
 share/glib-2.0/codegen/dbustypes.py
 share/glib-2.0/codegen/parser.py
