@@ -19,6 +19,9 @@ share/doc/vmetrics/vmalert_cluster.png
 share/doc/vmetrics/vmalert_ha.png
 share/doc/vmetrics/vmalert_multicluster.png
 share/doc/vmetrics/vmalert_single.png
+share/doc/vmetrics/vmanomaly-holtwinters-example.png
+share/doc/vmetrics/vmanomaly-prophet-example.png
+share/doc/vmetrics/vmanomaly.md
 share/doc/vmetrics/vmauth.md
 share/doc/vmetrics/vmauth_example_config.yml
 share/doc/vmetrics/vmbackup.md
