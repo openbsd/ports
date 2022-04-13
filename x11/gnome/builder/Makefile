@@ -4,8 +4,7 @@
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		41.3
-REVISION=		0
+GNOME_VERSION=		42.0
 
 CATEGORIES=		devel
 
@@ -15,9 +14,9 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c cairo cairo-gobject clang cmark dazzle-1.0 enchant-2
 WANTLIB += fontconfig gdk-3 gio-2.0 girepository-1.0 git2 git2-glib-1.0
 WANTLIB += gladeui-2 glib-2.0 gobject-2.0 gspell-1 gtk-3 gtksourceview-4
-WANTLIB += intl json-glib-1.0 jsonrpc-glib-1.0 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 template_glib-1.0 vte-2.91
-WANTLIB += webkit2gtk-4.0 xml2
+WANTLIB += handy-1 intl json-glib-1.0 jsonrpc-glib-1.0 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 template_glib-1.0
+WANTLIB += vte-2.91 webkit2gtk-4.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -51,7 +50,8 @@ LIB_DEPENDS=		devel/glade \
 			textproc/cmark \
 			textproc/gspell \
 			x11/gnome/libdazzle \
-			x11/gtksourceview4
+			x11/gtksourceview4 \
+			x11/libhandy
 
 CONFIGURE_ARGS=		-Dplugin_valgrind=false \
 			-Dplugin_flatpak=false \
