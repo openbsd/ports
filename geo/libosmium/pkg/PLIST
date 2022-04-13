@@ -22,7 +22,6 @@ include/osmium/area/stats.hpp
 include/osmium/builder/
 include/osmium/builder/attr.hpp
 include/osmium/builder/builder.hpp
-include/osmium/builder/builder_helper.hpp
 include/osmium/builder/osm_object_builder.hpp
 include/osmium/diff_handler.hpp
 include/osmium/diff_iterator.hpp
@@ -77,7 +76,6 @@ include/osmium/index/map/flex_mem.hpp
 include/osmium/index/map/sparse_file_array.hpp
 include/osmium/index/map/sparse_mem_array.hpp
 include/osmium/index/map/sparse_mem_map.hpp
-include/osmium/index/map/sparse_mem_table.hpp
 include/osmium/index/map/sparse_mmap_array.hpp
 include/osmium/index/multimap/
 include/osmium/index/multimap.hpp
@@ -99,6 +97,7 @@ include/osmium/io/compression.hpp
 include/osmium/io/debug_output.hpp
 include/osmium/io/detail/
 include/osmium/io/detail/debug_output_format.hpp
+include/osmium/io/detail/ids_output_format.hpp
 include/osmium/io/detail/input_format.hpp
 include/osmium/io/detail/lz4.hpp
 include/osmium/io/detail/o5m_input_format.hpp
@@ -126,6 +125,7 @@ include/osmium/io/file_compression.hpp
 include/osmium/io/file_format.hpp
 include/osmium/io/gzip_compression.hpp
 include/osmium/io/header.hpp
+include/osmium/io/ids_output.hpp
 include/osmium/io/input_iterator.hpp
 include/osmium/io/o5m_input.hpp
 include/osmium/io/opl_input.hpp
@@ -199,7 +199,6 @@ include/osmium/thread/pool.hpp
 include/osmium/thread/queue.hpp
 include/osmium/thread/util.hpp
 include/osmium/util/
-include/osmium/util/cast.hpp
 include/osmium/util/compatibility.hpp
 include/osmium/util/config.hpp
 include/osmium/util/delta.hpp
