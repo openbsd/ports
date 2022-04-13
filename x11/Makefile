@@ -35,6 +35,8 @@
      SUBDIR += byzi
      SUBDIR += cegui
      SUBDIR += chbg
+     SUBDIR += clipmenu
+     SUBDIR += clipnotify
      SUBDIR += coma
      SUBDIR += compiz
      SUBDIR += compton
