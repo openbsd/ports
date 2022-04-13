@@ -6,4 +6,5 @@ share/examples/reed-alert/example-full.lisp
 share/examples/reed-alert/example-simple.lisp
 share/reed-alert/
 share/reed-alert/functions.lisp
+share/reed-alert/output2html.sh
 share/reed-alert/probes.lisp
