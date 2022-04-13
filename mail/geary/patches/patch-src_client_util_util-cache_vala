@@ -1,0 +1,17 @@
+From 0f75e7a84a39492d0748cec2ba6028e08cae3644 Mon Sep 17 00:00:00 2001
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Date: Sun, 30 Jan 2022 19:54:11 +0100
+Subject: [PATCH] Util.Cache.Lru: Workaround missing generic type argument
+
+Index: src/client/util/util-cache.vala
+--- src/client/util/util-cache.vala.orig
++++ src/client/util/util-cache.vala
+@@ -12,7 +12,7 @@ public class Util.Cache.Lru<T> : Geary.BaseObject {
+     private class CacheEntry<T> {
+ 
+ 
+-        public static int lru_compare(CacheEntry<T> a, CacheEntry<T> b) {
++        public static int lru_compare(CacheEntry a, CacheEntry b) {
+             if (a.key == b.key) {
+                 return 0;
+             }
