@@ -5,15 +5,13 @@ COMMENT-nfs=		GVFS mount module for NFS
 COMMENT-google=		GVFS mount module for Google Drive
 
 GNOME_PROJECT=		gvfs
-GNOME_VERSION=		1.48.1
+GNOME_VERSION=		1.50.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
-
-REVISION-main=		1
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -27,7 +25,7 @@ WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += archive avahi-client avahi-common avahi-glib gcr-base-3
-WANTLIB-main += gcrypt secret-1 soup-2.4 util xml2
+WANTLIB-main += gcrypt secret-1 soup-3.0 util xml2
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += smbclient
@@ -44,7 +42,7 @@ WANTLIB-google += gdata goa-1.0
 MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS-main=	archivers/libarchive \
-			devel/libsoup \
+			devel/libsoup3 \
 			net/avahi,-glib \
 			x11/gnome/gcr \
 			x11/gnome/libsecret
