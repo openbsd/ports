@@ -1,4 +1,4 @@
-# Module for GNOME ports
+# Module for GNOME ports; see gnome-module(5)
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION)) || \
     (defined(MATE_PROJECT) && defined(MATE_VERSION))
@@ -29,7 +29,7 @@ CATEGORIES +=		x11/mate
 # XXX not ideal: some autoconf and cmake based projects moved to gettext-tools;
 # since intltool depends on gettext-tools, that's not that big of a deal
 .    if ${CONFIGURE_STYLE:Mmeson}
-BUILD_DEPENDS +=	devel/gettext,-tools
+MODGNOME_BUILD_DEPENDS +=	devel/gettext,-tools
 .    else
 MODULES +=		textproc/intltool
 .    endif
@@ -77,6 +77,7 @@ MODGNOME_pre-configure += ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python;
 #                       @exec %D/bin/update-desktop-database
 #                       @unexec-delete %D/bin/update-desktop-database
 # * docbook: Build man pages with docbook.
+# * gi-docgen: Build documentation with gi-docgen.
 # * gobject-introspection: Build and enable GObject Introspection data.
 # * gtk-update-icon-cache: Enable if there are icon files under share/icons/.
 #                          Requires the following tag in PLIST (adapt
@@ -100,7 +101,7 @@ MODGNOME_CONFIGURE_ARGS_vala=	-DENABLE_VALA_BINDINGS=OFF
 .endif
 
 .if defined(MODGNOME_TOOLS)
-_VALID_TOOLS=desktop-file-utils docbook gobject-introspection \
+_VALID_TOOLS=desktop-file-utils docbook gi-docgen gobject-introspection \
     gtk-update-icon-cache shared-mime-info vala yelp
 .   for _t in ${MODGNOME_TOOLS}
 .       if !${_VALID_TOOLS:M${_t}}
@@ -115,6 +116,10 @@ MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-valida
 
 .   if ${MODGNOME_TOOLS:Mdocbook}
 MODGNOME_BUILD_DEPENDS +=	textproc/docbook-xsl
+.   endif
+
+.   if ${MODGNOME_TOOLS:Mgi-docgen}
+MODGNOME_BUILD_DEPENDS +=	textproc/gi-docgen
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgobject-introspection}
