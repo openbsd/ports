@@ -2,6 +2,7 @@ COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
 GNOME_VERSION=		1.6.6
+REVISION=		0
 
 SHARED_LIBS +=  json-glib-1.0        6.1 # 0.600.0
 
@@ -20,9 +21,7 @@ MODULES=		devel/meson \
 
 LIB_DEPENDS=		devel/glib2
 
-MODGNOME_TOOLS += 	docbook gobject-introspection
-
-CONFIGURE_ARGS =	-Dgtk_doc=disabled
+MODGNOME_TOOLS= 	docbook gi-docgen gobject-introspection
 
 # Remove installed tests which only make sense in a CI environment
 post-install:

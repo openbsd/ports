@@ -15,9 +15,11 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS +=  rsvg-2               41.0     # 50.0
 GNOME_VERSION=		${STABLE_VERSION}
-MODULES +=		lang/python
+MODULES +=	 	lang/python
+MODGNOME_TOOLS +=	gi-docgen
 MODPY_RUNDEP=		No
 BUILD_DEPENDS=		lang/rust \
 			textproc/py-docutils${MODPY_FLAVOR}
@@ -55,7 +57,7 @@ WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES +=		x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS +=		gobject-introspection vala
 
 LIB_DEPENDS +=		devel/pango \
 			graphics/gdk-pixbuf2 \
