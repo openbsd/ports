@@ -8,6 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -51,7 +52,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/adwaita-icon-theme \
 			x11/gnome/backgrounds \
 			x11/gnome/control-center \
-			x11/gnome/desktop=${V} \
+			x11/gnome/desktop \
 			x11/gnome/gdm \
 			x11/gnome/gvfs \
 			x11/gnome/initial-setup \
