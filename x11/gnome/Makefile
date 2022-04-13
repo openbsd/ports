@@ -99,7 +99,6 @@
      SUBDIR += tour
      SUBDIR += tracker
      SUBDIR += tracker3
-     SUBDIR += tracker-miners
      SUBDIR += tracker3-miners
      SUBDIR += tweaks
      SUBDIR += usage
