@@ -1,0 +1,17 @@
+Needs Wayland support in x11/gtk+4 which requires wayland>=1.20.0 but we have
+1.19.0.
+
+Index: vapi/gdk-wayland-3.0.vapi
+--- vapi/gdk-wayland-3.0.vapi.orig
++++ vapi/gdk-wayland-3.0.vapi
+@@ -1,10 +0,0 @@
+-[CCode (cheader_filename = "gdk/gdkwayland.h")]
+-namespace Gdk.Wayland {
+-    [CCode (type_id = "GDK_TYPE_WAYLAND_WINDOW", type_check_function = "GDK_IS_WAYLAND_WINDOW")]
+-    public class Window : Gdk.Window {
+-        public bool export_handle (owned WindowExported callback);
+-    }
+-
+-    [CCode (instance_pos = 2.9)]
+-    public delegate void WindowExported (Gdk.Window window, string handle);
+-}

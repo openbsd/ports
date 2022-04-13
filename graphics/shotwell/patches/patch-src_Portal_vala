@@ -1,0 +1,23 @@
+Needs Wayland support in x11/gtk+4 which requires wayland>=1.20.0 but we have
+1.19.0.
+
+Index: src/Portal.vala
+--- src/Portal.vala.orig
++++ src/Portal.vala
+@@ -53,15 +53,7 @@ public class Portal : GLib.Object {
+     private static async string get_parent_window () {
+         var window = AppWindow.get_instance().get_window ();
+ 
+-        if (window is Gdk.Wayland.Window) {
+-            var handle = "wayland:";
+-            ((Gdk.Wayland.Window) window).export_handle ((w, h) => {
+-                handle += h;
+-                get_parent_window.callback ();
+-            });
+-            yield;
+-            return handle;
+-        } else if (window is Gdk.X11.Window) {
++        if (window is Gdk.X11.Window) {
+             return "x11:%x".printf ((uint) ((Gdk.X11.Window) window).get_xid ());
+         } else {
+             warning ("Could not get parent window");

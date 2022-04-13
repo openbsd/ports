@@ -1,0 +1,15 @@
+Needs Wayland support in x11/gtk+4 which requires wayland>=1.20.0 but we have
+1.19.0.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -64,7 +64,7 @@ endif
+ libraw = dependency('libraw', version : '>= 0.13.2')
+ libexif = dependency('libexif', version : '>= 0.6.16')
+ unity = dependency('unity', required : false)
+-gdk = [ dependency('gdk-x11-3.0'), dependency('gdk-wayland-3.0') ]
++gdk = dependency('gdk-x11-3.0')
+ 
+ unity_available = false
+ if unity.found() and get_option('unity-support')
