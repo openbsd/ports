@@ -4,7 +4,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.3.14
-REVISION=	1
+REVISION=	2
 
 API=		0.3
 SUBST_VARS=	API
@@ -15,9 +15,9 @@ CATEGORIES+=	multimedia
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += archive avahi-client avahi-glib dmapsharing-3.0 gdata
-WANTLIB += gio-2.0 glib-2.0 goa-1.0 gobject-2.0 grilo-0.3 grlnet-0.3
-WANTLIB += grlpls-0.3 gstreamer-1.0 intl json-glib-1.0 lua5.3
-WANTLIB += mediaart-2.0 oauth soup-2.4 sqlite3 totem-plparser
+WANTLIB += gio-2.0 glib-2.0 goa-1.0 gobject-2.0 gom-1.0 grilo-0.3
+WANTLIB += grlnet-0.3 grlpls-0.3 gstreamer-1.0 intl json-glib-1.0
+WANTLIB += lua5.3 mediaart-2.0 oauth soup-2.4 sqlite3 totem-plparser
 WANTLIB += totem-plparser-mini tracker-sparql-3.0 xml2
 
 MODULES=	devel/meson \
@@ -28,6 +28,7 @@ BUILD_DEPENDS=	devel/gperf
 
 LIB_DEPENDS=	devel/libgdata \
 		net/avahi,-glib \
+		x11/gnome/gom \
 		x11/gnome/grilo \
 		x11/gnome/libdmapsharing \
 		x11/gnome/libmediaart \

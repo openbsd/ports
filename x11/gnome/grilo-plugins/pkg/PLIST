@@ -1,3 +1,4 @@
+@so lib/grilo-${API}/libgrlbookmarks.so
 @so lib/grilo-${API}/libgrlchromaprint.so
 @so lib/grilo-${API}/libgrldaap.so
 @so lib/grilo-${API}/libgrldleyna.so
@@ -15,6 +16,7 @@
 @so lib/grilo-${API}/libgrlpodcasts.so
 @so lib/grilo-${API}/libgrlraitv.so
 @so lib/grilo-${API}/libgrlshoutcast.so
+@so lib/grilo-${API}/libgrlthetvdb.so
 @so lib/grilo-${API}/libgrltmdb.so
 @so lib/grilo-${API}/libgrltracker3.so
 @so lib/grilo-${API}/libgrlyoutube.so
