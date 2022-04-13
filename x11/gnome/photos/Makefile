@@ -2,6 +2,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		42.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -30,14 +31,17 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/tracker3 \
 			x11/libhandy
 
+# org.gnome.OnlineMiners.MediaServer
+RUN_DEPENDS += x11/gnome/tracker3-miners
+
+# org.freedesktop.Tracker3.Miner.Files
+RUN_DEPENDS += x11/gnome/online-miners
+
 # com.intel.dleyna-renderer
 RUN_DEPENDS +=		net/dleyna/renderer
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
-
-# org.freedesktop.Tracker3 schema
-RUN_DEPENDS +=		x11/gnome/tracker3-miners
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
