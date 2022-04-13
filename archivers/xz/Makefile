@@ -1,7 +1,7 @@
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.2.5
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	lzma                 2.1      # 7.5
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
