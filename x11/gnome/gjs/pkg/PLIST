@@ -17,7 +17,6 @@ lib/pkgconfig/gjs-1.0.pc
 share/examples/gjs/
 share/examples/gjs/README
 share/examples/gjs/calc.js
-share/examples/gjs/clutter.js
 share/examples/gjs/dbus-client.js
 share/examples/gjs/dbus-service.js
 share/examples/gjs/gettext.js
@@ -33,6 +32,7 @@ share/examples/gjs/http-client.js
 share/examples/gjs/http-server.js
 share/examples/gjs/test.jpg
 share/examples/gjs/test.jpg.license
+share/examples/gjs/timers.js
 share/examples/gjs/webkit.js
 share/examples/gjs/websocket-client.js
 share/gjs-1.0/
