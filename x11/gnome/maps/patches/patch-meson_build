@@ -1,0 +1,16 @@
+From 4cf50f14662bbaf0724e3dc3c13be49107278305 Mon Sep 17 00:00:00 2001
+From: Marcus Lundblad <ml@dfupdate.se>
+Date: Wed, 6 Apr 2022 19:02:07 +0200
+Subject: [PATCH] meson: Add dependency of libgweather-4
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -37,6 +37,7 @@ girepository = dependency('gobject-introspection-1.0',
+ gtk3 = dependency('gtk+-3.0', version: '>= 3.22.0')
+ geoclue2 = dependency('geoclue-2.0', version: '>= 0.12.99')
+ handy = dependency('libhandy-1', version: '>= 1.5.0')
++gweather = dependency('gweather4', version: '>= 3.90.0')
+ 
+ libmaps_deps = [
+ 	dependency('gee-0.8', version: '>= 0.16.0'),
