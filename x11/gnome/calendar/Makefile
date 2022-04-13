@@ -2,6 +2,7 @@ COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
 GNOME_VERSION =		41.2
+REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -17,8 +18,9 @@ MODULES =		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-LIB_DEPENDS =		databases/evolution-data-server>=3.34.0 \
+LIB_DEPENDS =		databases/evolution-data-server \
 			x11/gnome/libdazzle \
+			x11/gnome/libgweather \
 			x11/libhandy
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
