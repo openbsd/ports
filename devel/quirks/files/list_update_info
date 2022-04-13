@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: list_update_info,v 1.3 2022/03/14 08:04:13 espie Exp $
+# $OpenBSD: list_update_info,v 1.4 2022/04/13 10:00:27 espie Exp $
 #
 # Copyright (c) 2022 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,11 @@ sub handle_file
 	my ($self, $f) = @_;
 	my $plist = OpenBSD::PackingList->fromfile($f,
 	    \&OpenBSD::PackingList::UpdateInfoOnly);
+	# we can't write sensible information for always-update, so 
+	# don't bother
+	return if $plist->has('always-update');
+
+	# TODO think about generating a "total size" annotation ?
 	$plist->write_for_locate($plist->pkgname, $self->{output});
 }
 
