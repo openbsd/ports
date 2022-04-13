@@ -2,6 +2,7 @@ COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		41.5
+REVISION=		1
 
 SHARED_LIBS += mutter-cogl-9             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-pango-9       0.0 # 0.0.0
@@ -32,6 +33,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 
 LIB_DEPENDS=		audio/libcanberra \
 			devel/startup-notification \
+			graphics/graphene \
 			x11/gnome/desktop \
 			x11/xkbcommon
 
