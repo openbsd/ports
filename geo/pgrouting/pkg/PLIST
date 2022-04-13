@@ -18,5 +18,6 @@ share/postgresql/extension/pgrouting--3.1.4--${V}.sql
 share/postgresql/extension/pgrouting--3.2.0--${V}.sql
 share/postgresql/extension/pgrouting--3.2.1--${V}.sql
 share/postgresql/extension/pgrouting--3.2.2--${V}.sql
+share/postgresql/extension/pgrouting--3.3.0--${V}.sql
 share/postgresql/extension/pgrouting--${V}.sql
 share/postgresql/extension/pgrouting.control
