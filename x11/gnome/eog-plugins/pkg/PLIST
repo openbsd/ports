@@ -1,22 +1,11 @@
-lib/eog/plugins/${MODPY_PYCACHE}/
-lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/${MODPY_PYCACHE}export-to-folder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/${MODPY_PYCACHE}fullscreenbg.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/${MODPY_PYCACHE}maximize-windows.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/${MODPY_PYCACHE}slideshowshuffle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/export-to-folder.plugin
 lib/eog/plugins/export-to-folder.py
 lib/eog/plugins/fit-to-width.plugin
 lib/eog/plugins/fullscreenbg.plugin
 lib/eog/plugins/fullscreenbg.py
-lib/eog/plugins/hide-titlebar.plugin
 @so lib/eog/plugins/libexif-display.so
 @so lib/eog/plugins/libfit-to-width.so
-@so lib/eog/plugins/libhide-titlebar.so
 @so lib/eog/plugins/liblight-theme.so
 @so lib/eog/plugins/libmap.so
 @so lib/eog/plugins/libpostasa.so
@@ -29,31 +18,11 @@ lib/eog/plugins/postasa.plugin
 lib/eog/plugins/pythonconsole/
 lib/eog/plugins/pythonconsole.plugin
 lib/eog/plugins/pythonconsole/__init__.py
-${MODPY_COMMENT}lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}/
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/eog/plugins/pythonconsole/${MODPY_PYCACHE}console.${MODPY_PYC_MAGIC_TAG}pyc
 lib/eog/plugins/pythonconsole/config.py
 lib/eog/plugins/pythonconsole/console.py
 lib/eog/plugins/send-by-mail.plugin
 lib/eog/plugins/slideshowshuffle.plugin
 lib/eog/plugins/slideshowshuffle.py
-share/appdata/
-share/appdata/eog-exif-display.metainfo.xml
-share/appdata/eog-export-to-folder.metainfo.xml
-share/appdata/eog-fit-to-width.metainfo.xml
-share/appdata/eog-fullscreenbg.metainfo.xml
-share/appdata/eog-hide-titlebar.metainfo.xml
-share/appdata/eog-light-theme.metainfo.xml
-share/appdata/eog-map.metainfo.xml
-share/appdata/eog-maximize-windows.metainfo.xml
-share/appdata/eog-postasa.metainfo.xml
-share/appdata/eog-pythonconsole.metainfo.xml
-share/appdata/eog-send-by-mail.metainfo.xml
-share/appdata/eog-slideshowshuffle.metainfo.xml
 share/eog/plugins/
 share/eog/plugins/export-to-folder/
 share/eog/plugins/export-to-folder/preferences_dialog.ui
@@ -124,3 +93,14 @@ share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/eog-plugins.mo
 @tag glib-compile-schemas
+share/metainfo/eog-exif-display.appdata.xml
+share/metainfo/eog-export-to-folder.appdata.xml
+share/metainfo/eog-fit-to-width.appdata.xml
+share/metainfo/eog-fullscreenbg.appdata.xml
+share/metainfo/eog-light-theme.appdata.xml
+share/metainfo/eog-map.appdata.xml
+share/metainfo/eog-maximize-windows.appdata.xml
+share/metainfo/eog-postasa.appdata.xml
+share/metainfo/eog-pythonconsole.appdata.xml
+share/metainfo/eog-send-by-mail.appdata.xml
+share/metainfo/eog-slideshowshuffle.appdata.xml
