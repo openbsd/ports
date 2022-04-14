@@ -3,20 +3,19 @@
 COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		41.4
-REVISION=		1
+GNOME_VERSION=		42.0
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 accountsservice atk-1.0 c cairo cheese cheese-gtk
-WANTLIB += cups epoxy fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gnome-desktop-3 goa-1.0 goa-backend-1.0 gobject-2.0
-WANTLIB += gsound gtk-3 gtop-2.0 handy-1 ibus-1.0 intl m pango-1.0
-WANTLIB += pangocairo-1.0 polkit-gobject-1 pulse pulse-mainloop-glib
-WANTLIB += pwquality smbclient upower-glib xml2
+WANTLIB += X11 accountsservice adwaita-1 c cairo cups epoxy fontconfig
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gnome-bg-4 gnome-desktop-4
+WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gsound gtk-3 gtk-4
+WANTLIB += gtop-2.0 ibus-1.0 intl m pango-1.0 pangocairo-1.0 polkit-gobject-1
+WANTLIB += pulse pulse-mainloop-glib pwquality smbclient upower-glib
+WANTLIB += xml2
 
 MODULES=		devel/meson \
 			devel/dconf \
@@ -34,10 +33,9 @@ LIB_DEPENDS=		audio/gsound \
 			security/libpwquality \
 			sysutils/accountsservice \
 			sysutils/upower \
-			x11/gnome/cheese,-libs \
-			x11/gnome/desktop \
+			x11/gnome/desktop,-gtk4 \
 			x11/gnome/online-accounts \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 BUILD_DEPENDS=		devel/iso-codes \
 			devel/gsettings-desktop-schemas \

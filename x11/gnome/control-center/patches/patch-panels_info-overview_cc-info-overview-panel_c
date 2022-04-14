@@ -1,17 +1,24 @@
 No udisks2 on OpenBSD (XXX add HAVE_UDISKS2 to meson_options.txt)
 
+REVERT:
+From 25518a6bca6d84199cfadf4ab0dc49fd86ac3e58 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Tue, 25 Jan 2022 23:12:58 +0100
+Subject: [PATCH] info: Use udev to get the hardware RAM size
+
 XXX implement minimal support for get_os_name() on OpenBSD;
 we should port cc_os_release_get_values
 
 Index: panels/info-overview/cc-info-overview-panel.c
 --- panels/info-overview/cc-info-overview-panel.c.orig
 +++ panels/info-overview/cc-info-overview-panel.c
-@@ -37,10 +37,16 @@
+@@ -37,11 +37,16 @@
  #include <glibtop/mountlist.h>
  #include <glibtop/mem.h>
  #include <glibtop/sysinfo.h>
 +#ifdef HAVE_UDISKS2
  #include <udisks/udisks.h>
+-#include <gudev/gudev.h>
 +#endif
  
  #include <gdk/gdk.h>
@@ -21,9 +28,9 @@ Index: panels/info-overview/cc-info-overview-panel.c
 +#endif
 +
  #ifdef GDK_WINDOWING_WAYLAND
- #include <gdk/gdkwayland.h>
+ #include <gdk/wayland/gdkwayland.h>
  #endif
-@@ -417,6 +423,7 @@ get_graphics_hardware_string (void)
+@@ -415,6 +420,7 @@ get_graphics_hardware_string (void)
  static char *
  get_os_name (void)
  {
@@ -31,7 +38,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
    g_autofree gchar *name = NULL;
    g_autofree gchar *version_id = NULL;
    g_autofree gchar *pretty_name = NULL;
-@@ -450,6 +457,18 @@ get_os_name (void)
+@@ -448,6 +454,18 @@ get_os_name (void)
      }
  
    return result;
@@ -50,7 +57,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
  }
  
  static char *
-@@ -466,6 +485,7 @@ get_os_type (void)
+@@ -464,6 +482,7 @@ get_os_type (void)
  static void
  get_primary_disc_info (CcInfoOverviewPanel *self)
  {
@@ -58,7 +65,7 @@ Index: panels/info-overview/cc-info-overview-panel.c
    g_autoptr(UDisksClient) client = NULL;
    GDBusObjectManager *manager;
    g_autolist(GDBusObject) objects = NULL;
-@@ -512,6 +532,9 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
+@@ -510,6 +529,9 @@ get_primary_disc_info (CcInfoOverviewPanel *self)
      {
        cc_list_row_set_secondary_label (self->disk_row,  _("Unknown"));
      }
@@ -68,3 +75,54 @@ Index: panels/info-overview/cc-info-overview-panel.c
  }
  
  static void
+@@ -727,7 +749,7 @@ get_windowing_system (void)
+ }
+ 
+ static guint64
+-get_ram_size_libgtop (void)
++get_ram_size (void)
+ {
+   glibtop_mem mem;
+ 
+@@ -735,30 +757,6 @@ get_ram_size_libgtop (void)
+   return mem.total;
+ }
+ 
+-static guint64
+-get_ram_size_dmi (void)
+-{
+-  g_autoptr(GUdevClient) client = NULL;
+-  g_autoptr(GUdevDevice) dmi = NULL;
+-  const gchar * const subsystems[] = {"dmi", NULL };
+-  guint64 ram_total = 0;
+-  guint64 num_ram;
+-  guint i;
+-
+-  client = g_udev_client_new (subsystems);
+-  dmi = g_udev_client_query_by_sysfs_path (client, "/sys/devices/virtual/dmi/id");
+-  if (!dmi)
+-    return 0;
+-  num_ram = g_udev_device_get_property_as_uint64 (dmi, "MEMORY_ARRAY_NUM_DEVICES");
+-  for (i = 0; i < num_ram ; i++) {
+-    g_autofree char *prop = NULL;
+-
+-    prop = g_strdup_printf ("MEMORY_DEVICE_%d_SIZE", i);
+-    ram_total += g_udev_device_get_property_as_uint64 (dmi, prop);
+-  }
+-  return ram_total;
+-}
+-
+ static void
+ info_overview_panel_setup_overview (CcInfoOverviewPanel *self)
+ {
+@@ -778,9 +776,7 @@ info_overview_panel_setup_overview (CcInfoOverviewPane
+ 
+   get_hardware_model (self);
+ 
+-  ram_size = get_ram_size_dmi ();
+-  if (ram_size == 0)
+-    ram_size = get_ram_size_libgtop ();
++  ram_size = get_ram_size ();
+   memory_text = g_format_size_full (ram_size, G_FORMAT_SIZE_IEC_UNITS);
+   cc_list_row_set_secondary_label (self->memory_row, memory_text);
+ 

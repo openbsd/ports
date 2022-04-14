@@ -8,6 +8,6 @@ Index: panels/display/meson.build
  
  deps = common_deps + [
 -  colord_dep,
-   gnome_desktop_dep,
+   gnome_rr_dep,
    m_dep,
    upower_glib_dep

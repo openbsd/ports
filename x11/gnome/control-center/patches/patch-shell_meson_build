@@ -13,7 +13,7 @@ Index: shell/meson.build
    liblanguage_dep,
    libwidgets_dep,
    x11_dep,
-@@ -129,7 +128,8 @@ executable(
+@@ -125,7 +124,8 @@ executable(
           dependencies : shell_deps,
                 c_args : cflags,
              link_with : panels_libs,
