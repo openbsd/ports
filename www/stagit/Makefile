@@ -1,6 +1,6 @@
 COMMENT =		static git page generator
 
-DISTNAME =		stagit-1.0
+DISTNAME =		stagit-1.1
 
 CATEGORIES =		www
 
