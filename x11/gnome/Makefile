@@ -58,7 +58,6 @@
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomekbd
-     SUBDIR += libgweather
      SUBDIR += libgweather4
      SUBDIR += libmediaart
      SUBDIR += librsvg
