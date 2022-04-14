@@ -2,9 +2,8 @@ COMMENT =	high performance C++ OpenPGP library and tools
 
 GH_ACCOUNT =	rnpgp
 GH_PROJECT =	rnp
-GH_TAGNAME =	v0.15.2
-REVISION =	0
-SHARED_LIBS =	rnp 0.0
+GH_TAGNAME =	v0.16.0
+SHARED_LIBS =	rnp 0.1
 
 CATEGORIES =	security
 
