@@ -6,7 +6,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PKGNAME =	arx-libertatis-${GH_TAGNAME}
 GH_ACCOUNT =	arx
 GH_PROJECT =	ArxLibertatis
-GH_TAGNAME =	1.2
+GH_TAGNAME =	1.2.1
 
 SHARED_LIBS +=	ArxIO                     0.0 # 1.2
 

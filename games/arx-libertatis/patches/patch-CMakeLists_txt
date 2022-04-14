@@ -4,7 +4,7 @@ neuter doxygen
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -590,8 +590,6 @@ if(BUILD_CRASHREPORTER OR BUILD_PROFILER)
+@@ -593,8 +593,6 @@ if(BUILD_CRASHREPORTER OR BUILD_PROFILER)
  	
  endif()
  
@@ -13,7 +13,7 @@ Index: CMakeLists.txt
  find_package(PythonInterp)
  
  # Check for consistent configuration between SDL and libepoxy/GLEW
-@@ -1831,7 +1829,7 @@ if(BUILD_IO_LIBRARY)
+@@ -1841,7 +1839,7 @@ if(BUILD_IO_LIBRARY)
  		list(APPEND ArxIO_SOURCES src/platform/WindowsUtils.cpp)
  	endif()
  	
@@ -22,7 +22,7 @@ Index: CMakeLists.txt
  	
  	add_library_shared(ArxIO "${ArxIO_SOURCES}" "${ArxIO_LIBRARIES}")
  	set_binary_public_headers(ArxIO src/lib/ArxIO.h)
-@@ -1897,19 +1895,6 @@ endif()
+@@ -1907,19 +1905,6 @@ endif()
  
  
  # Custom make targets
