@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.146 2022/03/15 14:33:29 espie Exp $
+# $OpenBSD: Engine.pm,v 1.147 2022/04/14 19:39:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -54,6 +54,7 @@ sub new
 	    locks => DPB::LockList->new,
 	    nfslist => DPB::NFSList->new,
 	    ts => Time::HiRes::time(),
+	    built_packages => 0,
 	    requeued => DPB::ListQueue->new,
 	    ignored => DPB::ListQueue->new}, $class;
 	$o->{buildable} = $class->build_subengine_class($state)->new($o, 
@@ -164,6 +165,7 @@ sub log_as_built
 	my ($self, $v) = @_;
 	my $n = $v->fullpkgname;
 	my $fh = $self->{logger}->append("built-packages");
+	$self->{built_packages}++;
 	print $fh "$n.tgz\n";
 }
 

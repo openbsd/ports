@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.144 2022/03/15 14:33:29 espie Exp $
+# $OpenBSD: dpb,v 1.145 2022/04/14 19:39:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -356,9 +356,12 @@ if ($state->{scan_only}) {
 	main_loop();
 	if ($state->{all} && !$state->defines("NO_QUIRKS")) {
 		my $core = DPB::Core->get;
+		my $w = DPB::PkgPath->new('devel/quirks');
+		if ($state->{engine}{built_packages}) {
+			$state->grabber->clean_packages($core, $w->fullpkgpath);
+		}
 		my $subdirlist = {};
-		DPB::PkgPath->new('devel/quirks')->
-		    add_to_subdirlist($subdirlist);
+		$w->add_to_subdirlist($subdirlist);
 		$state->grabber->grab_subdirs($core, $subdirlist, undef);
 		$state->engine->check_buildable;
 		$core->mark_ready;
