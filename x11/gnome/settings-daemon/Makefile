@@ -3,15 +3,14 @@
 COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
-GNOME_VERSION=		41.0
-REVISION=		1
+GNOME_VERSION=		42.1
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += X11 Xext Xfixes Xi c canberra canberra-gtk3 cups fontconfig
 WANTLIB += gdk-3 geoclue-2 geocode-glib gio-2.0 glib-2.0 gnome-desktop-3
-WANTLIB += gobject-2.0 gtk-3 gweather-3 intl m notify nspr4 nss3
+WANTLIB += gobject-2.0 gtk-3 gweather-4 intl m notify nspr4 nss3
 WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib upower-glib
 
 MODULES=		devel/dconf \
@@ -26,7 +25,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			security/nss \
 			sysutils/upower \
 			x11/gnome/desktop \
-			x11/gnome/libgweather
+			x11/gnome/libgweather4
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
