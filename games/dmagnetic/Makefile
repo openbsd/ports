@@ -1,4 +1,4 @@
-V =		0.32
+V =		0.33
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
