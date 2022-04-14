@@ -1,8 +1,7 @@
 COMMENT=	Perl implementation of DMARC
 
-DISTNAME=	Mail-DMARC-1.20200214
+DISTNAME=	Mail-DMARC-1.20211209
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
-REVISION=	1
 
 CATEGORIES=	mail
 
@@ -23,6 +22,7 @@ RUN_DEPENDS=	converters/p5-JSON \
 		devel/p5-Net-Server \
 		devel/p5-Test-File-ShareDir \
 		mail/p5-Email-MIME \
+		mail/p5-Email-Sender \
 		mail/p5-Email-Simple \
 		mail/p5-Mail-DKIM \
 		net/p5-Net-DNS \

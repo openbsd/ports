@@ -33,6 +33,7 @@ ${P5SITE}/Mail/DMARC/Report/Send/
 ${P5SITE}/Mail/DMARC/Report/Send.pm
 ${P5SITE}/Mail/DMARC/Report/Send/HTTP.pm
 ${P5SITE}/Mail/DMARC/Report/Send/SMTP.pm
+${P5SITE}/Mail/DMARC/Report/Sender.pm
 ${P5SITE}/Mail/DMARC/Report/Store/
 ${P5SITE}/Mail/DMARC/Report/Store.pm
 ${P5SITE}/Mail/DMARC/Report/Store/SQL/
@@ -45,6 +46,8 @@ ${P5SITE}/Mail/DMARC/Report/URI.pm
 ${P5SITE}/Mail/DMARC/Result/
 ${P5SITE}/Mail/DMARC/Result.pm
 ${P5SITE}/Mail/DMARC/Result/Reason.pm
+${P5SITE}/Mail/DMARC/Test/
+${P5SITE}/Mail/DMARC/Test/Transport.pm
 ${P5SITE}/auto/share/dist/Mail-DMARC/
 ${P5SITE}/auto/share/dist/Mail-DMARC/dmarc_whitelist
 ${P5SITE}/auto/share/dist/Mail-DMARC/html/
