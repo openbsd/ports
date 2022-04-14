@@ -18,7 +18,8 @@ MODGNOME_TOOLS=		gobject-introspection
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+			graphics/gdk-pixbuf2
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/glib2
