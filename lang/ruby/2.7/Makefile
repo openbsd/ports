@@ -1,10 +1,8 @@
-VERSION =		2.7.5
+VERSION =		2.7.6
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby27	0.0
 NEXTVER =		2.8
 PKGSPEC-main ?=         ruby->=2.7.0,<${NEXTVER}
-
-REVISION-main =		0
 
 MASTER_SITES0 =		https://github.com/ruby/ruby/commit/
 # Backport fix for regression in 2.7.2+ to avoid crash in ffi_closure_free

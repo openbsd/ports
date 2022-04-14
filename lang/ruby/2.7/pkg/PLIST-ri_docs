@@ -18606,6 +18606,8 @@ share/ri/${REV}/system/Zlib/GzipWriter/putc-i.ri
 share/ri/${REV}/system/Zlib/GzipWriter/puts-i.ri
 share/ri/${REV}/system/Zlib/GzipWriter/tell-i.ri
 share/ri/${REV}/system/Zlib/GzipWriter/write-i.ri
+share/ri/${REV}/system/Zlib/InProgressError/
+share/ri/${REV}/system/Zlib/InProgressError/cdesc-InProgressError.ri
 share/ri/${REV}/system/Zlib/Inflate/
 share/ri/${REV}/system/Zlib/Inflate/%3c%3c-i.ri
 share/ri/${REV}/system/Zlib/Inflate/add_dictionary-i.ri
