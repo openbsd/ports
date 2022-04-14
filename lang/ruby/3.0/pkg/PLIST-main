@@ -206,7 +206,7 @@ include/ruby-${REV}/ruby/util.h
 include/ruby-${REV}/ruby/version.h
 include/ruby-${REV}/ruby/vm.h
 include/ruby-${REV}/${SUB}/
-include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.0.3.h
+include/ruby-${REV}/${SUB}/rb_mjit_min_header-3.0.4.h
 include/ruby-${REV}/${SUB}/ruby/
 include/ruby-${REV}/${SUB}/ruby/config.h
 @so lib/libruby30.so
@@ -445,6 +445,8 @@ lib/ruby/${REV}/bundler/templates/newgem/lib/newgem/version.rb.tt
 lib/ruby/${REV}/bundler/templates/newgem/newgem.gemspec.tt
 lib/ruby/${REV}/bundler/templates/newgem/rspec.tt
 lib/ruby/${REV}/bundler/templates/newgem/rubocop.yml.tt
+lib/ruby/${REV}/bundler/templates/newgem/sig/
+lib/ruby/${REV}/bundler/templates/newgem/sig/newgem.rbs.tt
 lib/ruby/${REV}/bundler/templates/newgem/spec/
 lib/ruby/${REV}/bundler/templates/newgem/spec/newgem_spec.rb.tt
 lib/ruby/${REV}/bundler/templates/newgem/spec/spec_helper.rb.tt
@@ -465,6 +467,7 @@ lib/ruby/${REV}/bundler/ui/silent.rb
 lib/ruby/${REV}/bundler/uri_credentials_filter.rb
 lib/ruby/${REV}/bundler/vendor/
 lib/ruby/${REV}/bundler/vendor/connection_pool/
+lib/ruby/${REV}/bundler/vendor/connection_pool/LICENSE
 lib/ruby/${REV}/bundler/vendor/connection_pool/lib/
 lib/ruby/${REV}/bundler/vendor/connection_pool/lib/connection_pool/
 lib/ruby/${REV}/bundler/vendor/connection_pool/lib/connection_pool.rb
@@ -475,6 +478,7 @@ lib/ruby/${REV}/bundler/vendor/fileutils/
 lib/ruby/${REV}/bundler/vendor/fileutils/lib/
 lib/ruby/${REV}/bundler/vendor/fileutils/lib/fileutils.rb
 lib/ruby/${REV}/bundler/vendor/molinillo/
+lib/ruby/${REV}/bundler/vendor/molinillo/LICENSE
 lib/ruby/${REV}/bundler/vendor/molinillo/lib/
 lib/ruby/${REV}/bundler/vendor/molinillo/lib/molinillo/
 lib/ruby/${REV}/bundler/vendor/molinillo/lib/molinillo.rb
@@ -510,6 +514,7 @@ lib/ruby/${REV}/bundler/vendor/net-http-persistent/lib/net/http/persistent/conne
 lib/ruby/${REV}/bundler/vendor/net-http-persistent/lib/net/http/persistent/pool.rb
 lib/ruby/${REV}/bundler/vendor/net-http-persistent/lib/net/http/persistent/timed_stack_multi.rb
 lib/ruby/${REV}/bundler/vendor/thor/
+lib/ruby/${REV}/bundler/vendor/thor/LICENSE.md
 lib/ruby/${REV}/bundler/vendor/thor/lib/
 lib/ruby/${REV}/bundler/vendor/thor/lib/thor/
 lib/ruby/${REV}/bundler/vendor/thor/lib/thor.rb
@@ -1178,6 +1183,7 @@ lib/ruby/${REV}/rubygems/name_tuple.rb
 lib/ruby/${REV}/rubygems/openssl.rb
 lib/ruby/${REV}/rubygems/optparse/
 lib/ruby/${REV}/rubygems/optparse.rb
+lib/ruby/${REV}/rubygems/optparse/COPYING
 lib/ruby/${REV}/rubygems/optparse/lib/
 lib/ruby/${REV}/rubygems/optparse/lib/optionparser.rb
 lib/ruby/${REV}/rubygems/optparse/lib/optparse/
@@ -1245,6 +1251,7 @@ lib/ruby/${REV}/rubygems/resolver/lock_set.rb
 lib/ruby/${REV}/rubygems/resolver/lock_specification.rb
 lib/ruby/${REV}/rubygems/resolver/molinillo/
 lib/ruby/${REV}/rubygems/resolver/molinillo.rb
+lib/ruby/${REV}/rubygems/resolver/molinillo/LICENSE
 lib/ruby/${REV}/rubygems/resolver/molinillo/lib/
 lib/ruby/${REV}/rubygems/resolver/molinillo/lib/molinillo/
 lib/ruby/${REV}/rubygems/resolver/molinillo/lib/molinillo.rb
@@ -1491,10 +1498,10 @@ lib/ruby/gems/${REV}/gems/abbrev-0.1.0/
 lib/ruby/gems/${REV}/gems/base64-0.1.0/
 lib/ruby/gems/${REV}/gems/benchmark-0.1.1/
 lib/ruby/gems/${REV}/gems/bigdecimal-3.0.0/
-lib/ruby/gems/${REV}/gems/bundler-2.2.32/
-lib/ruby/gems/${REV}/gems/bundler-2.2.32/libexec/
-lib/ruby/gems/${REV}/gems/bundler-2.2.32/libexec/bundle
-lib/ruby/gems/${REV}/gems/bundler-2.2.32/libexec/bundler
+lib/ruby/gems/${REV}/gems/bundler-2.2.33/
+lib/ruby/gems/${REV}/gems/bundler-2.2.33/libexec/
+lib/ruby/gems/${REV}/gems/bundler-2.2.33/libexec/bundle
+lib/ruby/gems/${REV}/gems/bundler-2.2.33/libexec/bundler
 lib/ruby/gems/${REV}/gems/cgi-0.2.1/
 lib/ruby/gems/${REV}/gems/csv-3.1.9/
 lib/ruby/gems/${REV}/gems/date-3.1.3/
@@ -2735,7 +2742,7 @@ lib/ruby/gems/${REV}/specifications/default/abbrev-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/base64-0.1.0.gemspec
 lib/ruby/gems/${REV}/specifications/default/benchmark-0.1.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/bigdecimal-3.0.0.gemspec
-lib/ruby/gems/${REV}/specifications/default/bundler-2.2.32.gemspec
+lib/ruby/gems/${REV}/specifications/default/bundler-2.2.33.gemspec
 lib/ruby/gems/${REV}/specifications/default/cgi-0.2.1.gemspec
 lib/ruby/gems/${REV}/specifications/default/csv-3.1.9.gemspec
 lib/ruby/gems/${REV}/specifications/default/date-3.1.3.gemspec
