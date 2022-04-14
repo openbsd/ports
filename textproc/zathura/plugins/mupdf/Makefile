@@ -1,4 +1,4 @@
-V =		0.3.7
+V =		0.3.8
 COMMENT =	mupdf pdf plugin for zathura
 PROJECT =	zathura-pdf-mupdf
 
@@ -12,7 +12,6 @@ LIB_DEPENDS +=	graphics/jbig2dec \
 WANTLIB += cairo girara-gtk3 glib-2.0 harfbuzz jbig2dec
 WANTLIB += gumbo jpeg openjp2
 
-CONFIGURE_ARGS +=	-D link-external=true
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
