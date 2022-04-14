@@ -18,6 +18,7 @@
      SUBDIR += chrome-gnome-shell
      SUBDIR += clocks
      SUBDIR += connections
+     SUBDIR += console
      SUBDIR += contacts
      SUBDIR += control-center
      SUBDIR += dconf-editor
