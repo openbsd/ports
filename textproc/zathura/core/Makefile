@@ -1,4 +1,4 @@
-V =			0.4.8
+V =			0.4.9
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
