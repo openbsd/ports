@@ -4,6 +4,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		42.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -39,9 +40,6 @@ RUN_DEPENDS +=		sysutils/consolekit
 # plugins/datetime/geoclue.c
 BUILD_DEPENDS +=	geo/geoclue2
 RUN_DEPENDS +=		geo/geoclue2
-
-# libexec/gnome-settings-daemon-localeexec
-RUN_DEPENDS +=		inputmethods/ibus
 
 # plugins/power/gsd-power-manager.c; optional dependency
 # cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
