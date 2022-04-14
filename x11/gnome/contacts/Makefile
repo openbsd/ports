@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.89 2022/04/13 06:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2022/04/14 13:28:46 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		41.0
-REVISION=		1
+GNOME_VERSION=		42.0
 
 CATEGORIES=		productivity
 
 # GPLv2+
 PERMIT_PACKAGE= 	Yes
 
-WANTLIB += atk-1.0 c cairo cheese cheese-gtk edataserver-1.2 edataserverui-1.2
-WANTLIB += folks folks-eds gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0
-WANTLIB += glib-2.0 gnome-desktop-3 goa-1.0 gobject-2.0 gtk-3
-WANTLIB += handy-1 intl m pango-1.0
+WANTLIB += adwaita-1 c cairo edataserver-1.2 folks folks-eds gdk_pixbuf-2.0
+WANTLIB += gee-0.8 gio-2.0 glib-2.0 goa-1.0 gobject-2.0 gtk-4
+WANTLIB += intl m pango-1.0
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -25,11 +23,12 @@ MODULES=		devel/meson \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 LIB_DEPENDS=		net/telepathy/folks \
-			x11/gnome/cheese,-libs \
-			x11/gnome/desktop \
-			x11/libhandy
+			x11/gnome/libadwaita
 
 MODGNOME_TOOLS=		desktop-file-utils docbook \
 			gobject-introspection gtk-update-icon-cache vala
+
+# XXX needs libportal
+CONFIGURE_ARGS +=	-Dcamera=false
 
 .include <bsd.port.mk>

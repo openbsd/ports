@@ -1,0 +1,41 @@
+XXX should obey the value of "camera" in meson_options.txt
+
+Index: src/contacts-avatar-selector.vala
+--- src/contacts-avatar-selector.vala.orig
++++ src/contacts-avatar-selector.vala
+@@ -81,8 +81,6 @@ public class Contacts.AvatarSelector : Gtk.Dialog {
+   [GtkChild]
+   private unowned Gtk.Button camera_button;
+ 
+-  private Xdp.Portal? portal = null;
+-
+   private Gdk.Pixbuf? _selected_avatar = null;
+   public Gdk.Pixbuf? selected_avatar {
+     owned get { return scale_pixbuf_for_avatar_use (this._selected_avatar); }
+@@ -96,8 +94,6 @@ public class Contacts.AvatarSelector : Gtk.Dialog {
+     this.thumbnail_grid.selected_children_changed.connect (on_thumbnails_selected);
+     this.thumbnail_grid.child_activated.connect (on_thumbnail_activated);
+     update_thumbnail_grid ();
+-
+-    this.setup_camera_portal.begin ();
+   }
+ 
+   private void on_thumbnails_selected (Gtk.FlowBox thumbnail_grid) {
+@@ -115,17 +111,6 @@ public class Contacts.AvatarSelector : Gtk.Dialog {
+     unowned var thumbnail = (Thumbnail) child;
+     this.selected_avatar = thumbnail.source_pixbuf;
+     this.response (Gtk.ResponseType.ACCEPT);
+-  }
+-
+-  private async void setup_camera_portal () {
+-    this.portal = new Xdp.Portal ();
+-
+-    if (portal.is_camera_present ()) {
+-      this.camera_button.sensitive = true;
+-    } else {
+-      this.camera_button.tooltip_text = _("No Camera Detected");
+-      this.camera_button.sensitive = false;
+-    }
+   }
+ 
+   private Gdk.Pixbuf? scale_pixbuf_for_avatar_use (Gdk.Pixbuf? pixbuf) {

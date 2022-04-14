@@ -1,0 +1,15 @@
+XXX should obey the value of "camera" in meson_options.txt
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -56,7 +56,8 @@ libebook = dependency('libebook-1.2', version: '>=' + 
+ libedataserver = dependency('libedataserver-1.2', version: '>=' + min_eds_version)
+ # libedataserverui = dependency('libedataserverui-1.2', version: '>=' + min_eds_version)
+ # Portals (needed for camera access)
+-libportal_dep = dependency('libportal', version: '>= 0.5')
++# libportal_dep = dependency('libportal', version: '>= 0.5')
++libportal_dep = []
+ # Cheese
+ # cheese_dep = dependency('cheese', required: get_option('cheese'))
+ # cheese_gtk_dep = dependency('cheese-gtk', version: '>= 3.3.91', required: get_option('cheese'))
