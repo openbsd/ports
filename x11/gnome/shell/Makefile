@@ -5,7 +5,7 @@ COMMENT=		next generation GNOME shell
 # !!! check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		41.5
+GNOME_VERSION=		42.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -14,11 +14,11 @@ WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
 WANTLIB += edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
 WANTLIB += gobject-2.0 graphene-1.0 gtk-3 gtk-4 ical-glib intl json-glib-1.0
-WANTLIB += m mutter-9 pango-1.0 pangocairo-1.0 polkit-agent-1
+WANTLIB += m mutter-10 pango-1.0 pangocairo-1.0 polkit-agent-1
 WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib
-WANTLIB += lib/mutter-9/mutter-clutter-9
-WANTLIB += lib/mutter-9/mutter-cogl-9
-WANTLIB += lib/mutter-9/mutter-cogl-pango-9
+WANTLIB += lib/mutter-10/mutter-clutter-10
+WANTLIB += lib/mutter-10/mutter-cogl-10
+WANTLIB += lib/mutter-10/mutter-cogl-pango-10
 
 MODULES=		devel/dconf \
 			devel/meson \

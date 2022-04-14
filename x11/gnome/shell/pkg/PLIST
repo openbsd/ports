@@ -53,6 +53,7 @@ share/examples/gnome-shell/xdg/autostart/gnome-shell-overrides-migration.desktop
 share/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
+share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
 share/gnome-shell/Shell-0.1.gir
@@ -60,6 +61,7 @@ share/gnome-shell/St-1.0.gir
 share/gnome-shell/gir-1.0/
 share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
+share/gnome-shell/gnome-shell-icons.gresource
 share/gnome-shell/gnome-shell-osk-layouts.gresource
 share/gnome-shell/gnome-shell-theme.gresource
 share/gnome-shell/org.gnome.Extensions
