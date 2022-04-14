@@ -1,6 +1,8 @@
 @option no-default-conflict
 @option is-branch
 @pkgpath games/libgdx
+bin/libgdx-run
+bin/libgdx-setup
 share/libgdx/
 share/libgdx/1.9.11/
 share/libgdx/1.9.11/com/
