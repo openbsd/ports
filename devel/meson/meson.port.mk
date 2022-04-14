@@ -1,3 +1,9 @@
+# to figure out dependencies, meson(1) uses pkg-config(1) then fallback to
+# cmake(1); we do not want to enforce a dependency on devel/cmake, so teach
+# dpb(1) to not junk at configure time (which could create a race between
+# finding foo.cmake and junking it if cmake is found & used)
+DPB_PROPERTIES +=	noconfigurejunk
+
 BUILD_DEPENDS +=	devel/meson>=0.62.0v0
 SEPARATE_BUILD ?=	Yes
 
