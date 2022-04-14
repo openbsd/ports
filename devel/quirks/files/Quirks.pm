@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1386 2022/04/14 00:01:23 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1387 2022/04/14 15:10:30 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -723,6 +723,7 @@ my $stem_extensions = {
 # 7.2
 	'tracker-miners' => 'tracker3-miners',
 	'tracker' => 'tracker3',
+	'libgweather' => 'libgweather4',
 };
 
 my $obsolete_reason = {};
