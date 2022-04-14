@@ -2,7 +2,7 @@ COMMENT=	DNSsec Zone Key Tool
 
 DISTNAME=	zkt-1.1.4
 CATEGORIES=	security
-REVISION=	3
+REVISION=	4
 
 # also https://github.com/hzuleger/ZKT http://www.zonekeytool.de/
 HOMEPAGE=	https://www.hznet.de/dns/zkt/
@@ -18,7 +18,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc \
-			--enable-bind_util_path=${LOCALBASE}/sbin
+			--enable-bind_util_path=${LOCALBASE}/bin
 
 NO_TEST=		Yes
 
