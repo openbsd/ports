@@ -1,12 +1,11 @@
 XXX mutter rendering is broken with amdgpu and DRI 3
 XXX on anything other than glibc
-
 https://gitlab.gnome.org/GNOME/mutter/-/issues/2103
 
 Index: src/backends/meta-stage-impl.c
 --- src/backends/meta-stage-impl.c.orig
 +++ src/backends/meta-stage-impl.c
-@@ -571,10 +571,14 @@ meta_stage_impl_redraw_view_primary (MetaStageImpl    
+@@ -621,10 +621,14 @@ meta_stage_impl_redraw_view_primary (MetaStageImpl    
     * the resize anyway so it should only exhibit temporary
     * artefacts.
     */

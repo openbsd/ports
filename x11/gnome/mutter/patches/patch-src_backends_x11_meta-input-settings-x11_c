@@ -9,7 +9,7 @@ Index: src/backends/x11/meta-input-settings-x11.c
  } MetaInputSettingsX11Private;
  
  G_DEFINE_TYPE_WITH_PRIVATE (MetaInputSettingsX11, meta_input_settings_x11,
-@@ -765,11 +766,10 @@ meta_input_settings_x11_set_tablet_aspect_ratio (MetaI
+@@ -766,11 +767,10 @@ meta_input_settings_x11_set_tablet_aspect_ratio (MetaI
  static void
  meta_input_settings_x11_dispose (GObject *object)
  {
@@ -22,7 +22,7 @@ Index: src/backends/x11/meta-input-settings-x11.c
    g_clear_object (&priv->udev_client);
  #endif
  
-@@ -938,11 +938,10 @@ meta_input_settings_x11_class_init (MetaInputSettingsX
+@@ -939,11 +939,10 @@ meta_input_settings_x11_class_init (MetaInputSettingsX
  static void
  meta_input_settings_x11_init (MetaInputSettingsX11 *settings)
  {

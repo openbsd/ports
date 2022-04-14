@@ -1,13 +1,12 @@
-COMMENT=		window and compositing manager
+COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		41.5
-REVISION=		1
+GNOME_VERSION=		42.0
 
-SHARED_LIBS += mutter-cogl-9             0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-pango-9       0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-9          0.0 # 0.0.0
-SHARED_LIBS += mutter-9                  0.0 # 0.0.0
+SHARED_LIBS +=	mutter-10                 0.0 # 0.0
+SHARED_LIBS +=	mutter-clutter-10         0.0 # 0.0
+SHARED_LIBS +=	mutter-cogl-10            0.0 # 0.0
+SHARED_LIBS +=	mutter-cogl-pango-10      0.0 # 0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
