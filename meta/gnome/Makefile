@@ -2,14 +2,11 @@ COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with gnome-desktop GNOME_VERSION
-V=			41.5
+V=			42.0
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
-
-REVISION-main=		1
-REVISION-extras=	3
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -32,15 +29,12 @@ RUN_DEPENDS-main +=	x11/xdg-user-dirs-gtk
 # add avahi-daemon for convenience as a few GNOME apps can make use of it
 RUN_DEPENDS-main +=	net/avahi
 
+# the main ibus package only contain support for gtk+3
+RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
+
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
 ################################################################################
-
-# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
-RUN_DEPENDS-extras +=	sysutils/dspy \
-			x11/gnome/builder \
-			x11/gnome/dconf-editor \
-			x11/gnome/devhelp
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-os-services.bst
 RUN_DEPENDS-main +=	sysutils/accountsservice \
@@ -52,7 +46,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/adwaita-icon-theme \
 			x11/gnome/backgrounds \
 			x11/gnome/control-center \
-			x11/gnome/desktop \
+			x11/gnome/desktop=${V} \
 			x11/gnome/gdm \
 			x11/gnome/gvfs \
 			x11/gnome/initial-setup \
@@ -73,6 +67,7 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/calendar \
 			x11/gnome/characters \
 			x11/gnome/clocks \
+			x11/gnome/console \
 			x11/gnome/contacts \
 			x11/gnome/eog \
 			evince-*-!light:graphics/evince \
@@ -82,7 +77,6 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/nautilus \
 			x11/gnome/photos \
 			x11/gnome/screenshot \
-			x11/gnome/terminal \
 			x11/gnome/text-editor \
 			x11/gnome/weather \
 			x11/gnome/yelp
@@ -97,21 +91,22 @@ RUN_DEPENDS-extras +=	graphics/simple-scan \
 			x11/gnome/system-monitor \
 			x11/gnome/totem
 
-################################################################################
-# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst
-################################################################################
-
-RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
-			x11/gnome/online-accounts \
-			x11/gnome/tracker3-miners
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
+RUN_DEPENDS-extras +=	sysutils/dspy \
+			x11/gnome/builder \
+			x11/gnome/dconf-editor \
+			x11/gnome/devhelp
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/world.bst
 ################################################################################
 
-RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
+RUN_DEPENDS-extras +=	devel/glade \
 			mail/evolution \
 			net/gupnp/igd \
+			net/telepathy/telepathy-glib \
+			net/telepathy/telepathy-logger \
+			net/telepathy/telepathy-mission-control \
 			x11/gnome/books \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
@@ -123,6 +118,7 @@ RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			x11/gnome/online-miners \
 			x11/gnome/polari \
 			x11/gnome/seahorse \
+			x11/gnome/terminal \
 			x11/gnome/todo \
 			x11/gnome/tweaks
 
@@ -132,9 +128,6 @@ RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
 			x11/gnome/caribou,-gtk2 \
 			x11/gnome/themes-extra \
 			x11/gtk+2,-cups
-
-# gtk+4
-RUN_DEPENDS-extras +=	inputmethods/ibus,-gtk4
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
