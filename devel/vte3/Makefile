@@ -1,12 +1,13 @@
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.66.2
+GNOME_VERSION=		0.68.0
 API_V=			2.91
+SUBST_VARS +=		API_V
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
-SHARED_LIBS +=  vte-2.91              2.7      # 0.6000.2
+SHARED_LIBS += vte-2.91                  2.8 # 0.6800.0
 
 CATEGORIES=		devel
 
@@ -40,11 +41,7 @@ LIB_DEPENDS=		devel/pcre2>=10.22p0 \
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-CONFIGURE_ARGS =	-Dgtk4=false
-
 TEST_DEPENDS=		shells/bash
-
-SUBST_VARS +=		API_V
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}

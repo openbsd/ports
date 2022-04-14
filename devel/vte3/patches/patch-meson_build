@@ -1,0 +1,16 @@
+XXX push upstream
+meson-logs/meson-log.txt, at configure time:
+error: use of undeclared identifier 'pwrite'; did you mean 'pwrite'?
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -387,7 +387,7 @@ foreach func: check_functions
+     __code,
+     args: [
+       '-D_GNU_SOURCE',
+-      '-D_XOPEN_SOURCE',
++      '-D_XOPEN_SOURCE=700',
+     ],
+     dependencies: __deps,
+     name: __name,
