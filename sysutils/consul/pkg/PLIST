@@ -7,8 +7,8 @@ share/examples/consul/
 @mode 0640
 @owner _consul
 @group _consul
-share/examples/consul/config.json
-@sample ${SYSCONFDIR}/consul.d/config.json
+share/examples/consul/consul.hcl
+@sample ${SYSCONFDIR}/consul.d/consul.hcl
 @mode
 @sample ${LOCALSTATEDIR}/consul/
 @owner

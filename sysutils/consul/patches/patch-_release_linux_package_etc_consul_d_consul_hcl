@@ -1,0 +1,45 @@
+Index: .release/linux/package/etc/consul.d/consul.hcl
+--- .release/linux/package/etc/consul.d/consul.hcl.orig
++++ .release/linux/package/etc/consul.d/consul.hcl
+@@ -7,6 +7,10 @@
+ # single LAN.
+ #datacenter = "my-dc-1"
+ 
++# The name of this node in the cluster. This must be unique within the cluster.
++# By default this is the hostname of the machine.
++#node_name = "myname"
++
+ # data_dir
+ # This flag provides a data directory for the agent to store state. This is required
+ # for all agents. The directory should be durable across reboots. This is especially
+@@ -14,7 +18,7 @@
+ # cluster state. Additionally, the directory must support the use of filesystem
+ # locking, meaning some types of mounted folders (e.g. VirtualBox shared folders) may
+ # not be suitable.
+-data_dir = "/opt/consul"
++data_dir = "${LOCALSTATEDIR}/consul"
+ 
+ # client_addr
+ # The address to which Consul will bind client interfaces, including the HTTP and DNS
+@@ -94,3 +98,21 @@ data_dir = "/opt/consul"
+ #retry_join = ["provider=azure tag_name=... tag_value=... tenant_id=... client_id=... subscription_id=... secret_access_key=..."]
+ #retry_join = ["provider=gce project_name=... tag_value=..."]
+  
++# This flag enables logging to syslog.
++enable_syslog = true
++
++# The level of logging to show after the Consul agent has started. This defaults to "info".
++# The available log levels are "trace", "debug", "info", "warn", and "err".
++# You can always connect to an agent via consul monitor and use any log level.
++# Also, the log level can be changed during a config reload.
++log_level = "warn"
++
++# Disables automatic checking for security bulletins and new version releases.
++# This is disabled in Consul Enterprise.
++disable_update_check = true
++
++# This allows users to disable metrics deprecated in 1.9 so they are no longer emitted,
++# saving on performance and storage in large deployments. Defaults to false.
++telemetry {
++  disable_compat_1.9 = true
++}
