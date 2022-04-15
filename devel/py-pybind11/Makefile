@@ -1,6 +1,6 @@
 COMMENT =		headers for interoperability between C++ and Python
 
-MODPY_EGG_VERSION =	2.9.1
+MODPY_EGG_VERSION =	2.9.2
 DISTNAME =		pybind11-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
