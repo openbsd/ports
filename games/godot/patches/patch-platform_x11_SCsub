@@ -1,0 +1,12 @@
+Index: platform/x11/SCsub
+--- platform/x11/SCsub.orig
++++ platform/x11/SCsub
+@@ -10,7 +10,7 @@ common_x11 = [
+     "crash_handler_x11.cpp",
+     "os_x11.cpp",
+     "key_mapping_x11.cpp",
+-    "joypad_linux.cpp",
++    "joypad_openbsd.cpp",
+     "power_x11.cpp",
+     "detect_prime.cpp",
+ ]

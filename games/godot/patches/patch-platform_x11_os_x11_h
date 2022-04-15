@@ -1,16 +1,30 @@
 load sndio
+use OpenBSD joypad class
 
 Index: platform/x11/os_x11.h
 --- platform/x11/os_x11.h.orig
 +++ platform/x11/os_x11.h
-@@ -37,6 +37,7 @@
+@@ -37,9 +37,10 @@
  #include "crash_handler_x11.h"
  #include "drivers/alsa/audio_driver_alsa.h"
  #include "drivers/alsamidi/midi_driver_alsamidi.h"
 +#include "drivers/sndio/audio_driver_sndio.h"
  #include "drivers/pulseaudio/audio_driver_pulseaudio.h"
  #include "drivers/unix/os_unix.h"
- #include "joypad_linux.h"
+-#include "joypad_linux.h"
++#include "joypad_openbsd.h"
+ #include "main/input_default.h"
+ #include "power_x11.h"
+ #include "servers/audio_server.h"
+@@ -197,7 +198,7 @@ class OS_X11 : public OS_Unix {
+ 	InputDefault *input;
+ 
+ #ifdef JOYDEV_ENABLED
+-	JoypadLinux *joypad;
++	JoypadOpenBSD *joypad;
+ #endif
+ 
+ #ifdef ALSA_ENABLED
 @@ -206,6 +207,10 @@ class OS_X11 : public OS_Unix {
  
  #ifdef ALSAMIDI_ENABLED

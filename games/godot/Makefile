@@ -6,6 +6,7 @@ V =		3.4.4
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
+REVISION =	0
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
 MAINTAINER =	Omar Polo <op@omarpolo.com>
@@ -17,7 +18,7 @@ WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
 WANTLIB += LinearMath GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
 WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio steam_api theora
-WANTLIB += theoradec vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
+WANTLIB += theoradec usbhid vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -37,7 +38,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
-			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec" \
+			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid" \
 			builtin_bullet=no \
 			builtin_enet=no \
 			builtin_freetype=no \
@@ -84,6 +85,7 @@ LIB_DEPENDS =		archivers/zstd \
 			security/polarssl
 RUN_DEPENDS =		devel/desktop-file-utils
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 NO_TEST =		Yes
 
 DPB_PROPERTIES =	parallel
@@ -96,7 +98,9 @@ WANTLIB +=     atomic
 CFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
 
 post-extract:
-	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers
+	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
+	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
+		${WRKDIST}/platform/x11/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp

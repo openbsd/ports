@@ -1,4 +1,5 @@
 remove hardcoded -O2, found by bcallah@. Add sndio
+enable joydev
 
 Index: platform/x11/detect.py
 --- platform/x11/detect.py.orig
@@ -33,14 +34,24 @@ Index: platform/x11/detect.py
      ## Architecture
  
      is64 = sys.maxsize > 2 ** 32
-@@ -330,6 +307,10 @@ def configure(env):
-         env.Append(CPPDEFINES=["ALSA_ENABLED", "ALSAMIDI_ENABLED"])
+@@ -331,6 +308,10 @@ def configure(env):
      else:
          print("Warning: ALSA libraries not found. Disabling the ALSA audio driver.")
-+
+ 
 +    print("Enabling sndio")
 +    env.Append(CPPDEFINES=["SNDIO_ENABLED"])
 +    env.Append(LINKFLAGS=["-lsndio"])
- 
++
      if env["pulseaudio"]:
          if os.system("pkg-config --exists libpulse") == 0:  # 0 means found
+             env.Append(CPPDEFINES=["PULSEAUDIO_ENABLED"])
+@@ -347,6 +328,9 @@ def configure(env):
+                 print("Warning: libudev development libraries not found. Disabling controller hotplugging support.")
+     else:
+         env["udev"] = False  # Linux specific
++
++    if platform.system() == "OpenBSD":
++        env.Append(CPPDEFINES=["JOYDEV_ENABLED"])
+ 
+     # Linkflags below this line should typically stay the last ones
+     if not env["builtin_zlib"]:
