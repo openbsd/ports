@@ -2,7 +2,7 @@ COMMENT=		user-friendly terminal emulator for GNOME
 
 GNOME_PROJECT=		gnome-console
 GNOME_VERSION=		42.beta
-PKGNAME=		${GNOME_PROJECT}-42beta
+PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.//}
 
 CATEGORIES=		x11
 
