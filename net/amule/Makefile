@@ -87,7 +87,7 @@ CONFIGURE_ARGS +=	--enable-debug
 .endif
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS=-lexecinfo \
+			LDFLAGS="-lexecinfo -L${X11BASE}/lib" \
 			LOCALDIR="${LOCALBASE}" \
 			X11R6DIR="${X11BASE}" \
 			ac_cv_header_bfd_h=false
