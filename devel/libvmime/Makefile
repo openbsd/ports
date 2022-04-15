@@ -21,7 +21,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += icuuc m pthread ${COMPILER_LIBCXX}
 
 # C++11 (else falls back on boost)
-COMPILER=	base-clang ports-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake
 
