@@ -15,10 +15,6 @@ share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/dash/running4.svg
 share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/
 share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/calendar-today-active.svg
 share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/calendar-today.svg
-share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-down.svg
-share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-left.svg
-share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-right.svg
-share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-up.svg
 share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/panel/
 share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/panel/activities-active.svg
 share/themes/Arc-Dark-${ARC_TYPE}/gnome-shell/common-assets/panel/activities.svg
@@ -674,10 +670,6 @@ share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/dash/running4.svg
 share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/
 share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/calendar-today-active.svg
 share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/calendar-today.svg
-share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-down.svg
-share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-left.svg
-share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-right.svg
-share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/misc/ws-switch-arrow-up.svg
 share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/panel/
 share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/panel/activities-active.svg
 share/themes/Arc-${ARC_TYPE}/gnome-shell/common-assets/panel/activities.svg

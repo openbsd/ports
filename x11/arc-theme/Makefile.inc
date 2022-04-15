@@ -3,6 +3,7 @@ COMMENT=		flat theme for GTK and GNOME shell (${ARC_TYPE})
 V=			20220405
 DISTNAME=		arc-theme-${V}
 PKGNAME=		arc-theme-${ARC_TYPE}-${V}
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -22,7 +23,7 @@ BUILD_DEPENDS +=	devel/glib2 \
 PKG_ARCH=		*
 
 CONFIGURE_ARGS +=	-Dgnome_shell_gresource=true \
-			-Dgnome_shell_version=41 \
+			-Dgnome_shell_version=42 \
 			-Dthemes="gnome-shell,gtk2,gtk3,gtk4,xfwm"
 
 CHECKSUM_FILE=		${.CURDIR}/../distinfo
