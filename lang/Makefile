@@ -99,6 +99,7 @@
      SUBDIR += racket-minimal,no_jit
      SUBDIR += rakudo
      SUBDIR += regina
+     SUBDIR += rsm
      SUBDIR += ruby
      SUBDIR += rust
      SUBDIR += sbcl
