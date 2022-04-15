@@ -110,9 +110,7 @@ share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_w
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_06_finish_with_ticket.png
 share/doc/icinga2/markdown/images/distributed-monitoring/icinga2_windows_setup_wizard_examine_config.png
 share/doc/icinga2/markdown/images/installation/
-share/doc/icinga2/markdown/images/installation/mariadb-centos7.png
 share/doc/icinga2/markdown/images/installation/nano-syntax.png
-share/doc/icinga2/markdown/images/installation/postgr-import-ido.png
 share/doc/icinga2/markdown/images/installation/vim-syntax.png
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/icinga2/

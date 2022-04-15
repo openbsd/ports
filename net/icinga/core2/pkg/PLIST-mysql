@@ -9,7 +9,9 @@ share/icinga2-ido-mysql/schema/upgrade/
 share/icinga2-ido-mysql/schema/upgrade/2.0.2.sql
 share/icinga2-ido-mysql/schema/upgrade/2.1.0.sql
 share/icinga2-ido-mysql/schema/upgrade/2.11.0.sql
+share/icinga2-ido-mysql/schema/upgrade/2.12.7.sql
 share/icinga2-ido-mysql/schema/upgrade/2.13.0.sql
+share/icinga2-ido-mysql/schema/upgrade/2.13.3.sql
 share/icinga2-ido-mysql/schema/upgrade/2.2.0.sql
 share/icinga2-ido-mysql/schema/upgrade/2.3.0.sql
 share/icinga2-ido-mysql/schema/upgrade/2.4.0.sql
