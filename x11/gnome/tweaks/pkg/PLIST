@@ -34,7 +34,6 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_gro
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_title_bar.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_top_bar.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_windows.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_workspaces.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_group_xkb.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/${MODPY_PYCACHE}tweak_wacom.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_appearance.py
@@ -47,7 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_test.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_title_bar.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_top_bar.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_windows.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_workspaces.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_group_xkb.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_wacom.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweakview.py

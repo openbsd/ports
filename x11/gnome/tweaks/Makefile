@@ -1,7 +1,8 @@
 COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
-GNOME_VERSION=		40.10
+GNOME_VERSION=		42.beta
+PKGNAME=		${GNOME_PROJECT}-${GNOME_VERSION:S/.//}
 
 CATEGORIES=		sysutils
 
@@ -15,17 +16,11 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			x11/gtk+3
+BUILD_DEPENDS=		x11/libhandy
 
-RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/settings-daemon \
 			x11/libhandy
-
-# pygobject GTK3 introspection (not provided by indirect dependencies)
-RUN_DEPENDS +=		x11/gtk+3
 
 # Notify introspection libs: site-packages/gtweak/utils.py
 RUN_DEPENDS +=		devel/libnotify
