@@ -4,6 +4,7 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		42.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -28,6 +29,7 @@ CFLAGS +=		-std=gnu99
 LIB_DEPENDS=		audio/gsound \
 			audio/pulseaudio \
 			devel/libgtop2 \
+			inputmethods/ibus \
 			net/samba \
 			print/cups,-libs \
 			security/libpwquality \
