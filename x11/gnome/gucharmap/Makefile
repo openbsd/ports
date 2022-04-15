@@ -1,8 +1,7 @@
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		14.0.1
-REVISION=		0
+GNOME_VERSION=		14.0.3
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
@@ -24,10 +23,11 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala yelp
 
 BUILD_DEPENDS=		archivers/unzip \
 			devel/gsettings-desktop-schemas \
+			textproc/gtk-doc \
 			textproc/unicode-ucd
 
 RUN_DEPENDS =		devel/gsettings-desktop-schemas
@@ -35,8 +35,7 @@ RUN_DEPENDS =		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		devel/pcre2 \
 			x11/gtk+3,-main
 
-CONFIGURE_ARGS +=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/ \
-			-Ddocs=false
+CONFIGURE_ARGS +=	-Ducd_path=${LOCALBASE}/share/unicode/ucd/
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
