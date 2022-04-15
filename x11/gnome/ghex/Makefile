@@ -19,7 +19,8 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		x11/gtk+4
 
-MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
+			gtk-update-icon-cache yelp
 
 # XXX
 # Checking for function "mremap" : NO 
