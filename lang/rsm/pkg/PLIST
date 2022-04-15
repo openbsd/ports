@@ -1,0 +1,5 @@
+@bin bin/rsm
+share/rsm/
+share/rsm/COPYING
+share/rsm/README.adoc
+share/rsm/utils.rsm

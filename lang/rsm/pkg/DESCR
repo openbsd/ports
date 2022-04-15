@@ -1,0 +1,13 @@
+M or MUMPS is a a high performance transaction processing key-value database
+with integrated programming language. It was originally developed at
+Massachusetts General Hospital for managing hospital laboratory information
+systems. It is widely used in the healthcare and banking sectors.
+
+Reference Standard M (RSM) is an implementation of the M programming language
+and database, which was originally created by Ray Douglas Newman as MUMPS V1
+(MV1). The name change to Reference Standard M reflects its role as a reference
+implementation for the M Development Committee (MDC). RSM attempts to track and
+implement the latest M standard that is released by the MDC, currently ANSI
+X11.1-1995.
+
+RSM is developed and maintained by David Wicksell.
