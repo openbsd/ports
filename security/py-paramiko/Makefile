@@ -1,10 +1,9 @@
 COMMENT =	Python module that implements the SSH2 protocol
 
-MODPY_EGG_VERSION =	2.8.0
+MODPY_EGG_VERSION =	2.10.3
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		0
 
 HOMEPAGE =		https://www.paramiko.org/
 

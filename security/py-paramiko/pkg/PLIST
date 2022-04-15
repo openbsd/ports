@@ -52,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ssh_exception.
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}ssh_gss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}transport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}win_openssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/${MODPY_PYCACHE}win_pageant.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/_version.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/_winapi.py
@@ -96,6 +97,7 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_exception.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/ssh_gss.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/transport.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/util.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/win_openssh.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/win_pageant.py
 share/doc/${MODPY_PY_PREFIX}paramiko/
 share/doc/${MODPY_PY_PREFIX}paramiko/_sources/
