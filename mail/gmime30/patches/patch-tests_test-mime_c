@@ -7,8 +7,8 @@ Index: tests/test-mime.c
  			tz_offset *= sign;
  			
  			if (time != dates[i].date)
--				throw (exception_new ("time_t's do not match: %ld vs %ld", time, dates[i].date));
-+				throw (exception_new ("time_t's do not match: %lld vs %lld", time, dates[i].date));
+-				throw (exception_new ("time_t's do not match: actual: %ld; expected: %ld", time, dates[i].date));
++				throw (exception_new ("time_t's do not match: actual: %lld; expected: %lld", time, dates[i].date));
  			
  			if (tz_offset != dates[i].tzone)
  				throw (exception_new ("timezones do not match"));

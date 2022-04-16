@@ -1,14 +1,13 @@
 COMMENT=		MIME messages creation and parsing library
 
-GNOME_PROJECT=		gmime
-GNOME_VERSION=		3.2.7
-PKGNAME=		gmime30-${GNOME_VERSION}
+GH_ACCOUNT=		jstedfast
+GH_PROJECT=		gmime
+GH_TAGNAME=		3.2.11
+PKGNAME=		gmime30-${GH_TAGNAME}
 
-SHARED_LIBS +=  gmime-3.0            2.2      # 206.0
+SHARED_LIBS +=  gmime-3.0            2.2      # 208.3
 
 CATEGORIES=		mail devel
-
-HOMEPAGE=		http://spruce.sourceforge.net/gmime/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -19,15 +18,24 @@ WANTLIB += assuan ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error gpgme gthread-2.0 iconv idn2 intl pcre pthread
 WANTLIB += unistring z
 
-MODULES +=		x11/gnome
+USE_GMAKE=		Yes
 
-MODGNOME_TOOLS=		gobject-introspection vala
+BUILD_DEPENDS=		devel/gobject-introspection \
+			lang/vala
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/libidn2 \
 			security/gpgme
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
+AUTORECONF=		./autogen.sh
+BUILD_DEPENDS +=	textproc/gtk-doc
+
+CONFIGURE_STYLE=	autoreconf
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
