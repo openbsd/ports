@@ -4,6 +4,7 @@
      SUBDIR += libxfce4util
      SUBDIR += libxfce4ui
      SUBDIR += mousepad
+     SUBDIR += orage
      SUBDIR += parole
      SUBDIR += ristretto
      SUBDIR += terminal
