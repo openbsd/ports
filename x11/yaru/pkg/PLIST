@@ -1,4 +1,3 @@
-share/glib-2.0/schemas/99_Yaru.gschema.override
 share/gnome-shell/
 share/gnome-shell/modes/
 share/gnome-shell/modes/yaru.json
@@ -316,9 +315,7 @@ share/gnome-shell/theme/Yaru/checkbox-off-focused-light.svg
 share/gnome-shell/theme/Yaru/checkbox-off-light.svg
 share/gnome-shell/theme/Yaru/dash-placeholder.svg
 share/gnome-shell/theme/Yaru/gnome-shell-high-contrast.css
-share/gnome-shell/theme/Yaru/gnome-shell-icons.gresource
 share/gnome-shell/theme/Yaru/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
 share/gnome-shell/theme/Yaru/gnome-shell.css
 share/gnome-shell/theme/Yaru/pad-osd.css
 share/gnome-shell/theme/Yaru/process-working.svg
@@ -23521,11 +23518,6 @@ share/themes/Yaru/metacity-1/unmaximize_focused_pressed.svg
 share/themes/Yaru/metacity-1/unmaximize_unfocused.svg
 share/themes/Yaru/metacity-1/unmaximize_unfocused_prelight.svg
 share/themes/Yaru/metacity-1/unmaximize_unfocused_pressed.svg
-share/wayland-sessions/
-share/wayland-sessions/Yaru.desktop
-share/xsessions/
-share/xsessions/Yaru-xorg.desktop
-@tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/Yaru
 @tag gtk-update-icon-cache %D/share/icons/Yaru-bark
 @tag gtk-update-icon-cache %D/share/icons/Yaru-magenta
