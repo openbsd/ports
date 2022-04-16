@@ -4390,7 +4390,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-cluster-sna
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-db-snapshot.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/copy-option-group.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-custom-availability-zone.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-cluster-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-cluster-snapshot.rst
@@ -4404,7 +4403,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-db-subnet-gr
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-event-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-global-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/create-option-group.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-custom-availability-zone.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-cluster-endpoint.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-cluster-parameter-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-cluster-snapshot.rst
@@ -4417,11 +4415,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-snapshot.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-db-subnet-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-event-subscription.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-global-cluster.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-installation-media.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/delete-option-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-account-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-certificates.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-custom-availability-zones.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-backtracks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-db-cluster-parameter-groups.rst
@@ -4446,7 +4442,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-event-subs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-events.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-export-tasks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-global-clusters.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-installation-media.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-option-group-options.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-option-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-orderable-db-instance-options.rst
@@ -4458,7 +4453,6 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/describe-valid-db-i
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/download-db-log-file-portion.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/generate-auth-token.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/generate-db-auth-token.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/import-installation-media.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/list-tags-for-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-certificates.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/rds/modify-current-db-cluster-capacity.rst
