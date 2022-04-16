@@ -13,8 +13,8 @@ Index: Makefile
 +MAN_DIR?=$(PREFIX)/man
  SHARE_DIR=$(PREFIX)/share/kore
  INCLUDE_DIR=$(PREFIX)/include/kore
- 
-@@ -28,10 +28,9 @@ S_SRC=	src/kore.c src/buf.c src/config.c src/connectio
+ TLS_BACKEND?=openssl
+@@ -30,10 +30,10 @@ S_SRC+= src/tls_$(TLS_BACKEND).c
  FEATURES=
  FEATURES_INC=
  
@@ -22,11 +22,12 @@ Index: Makefile
 +CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes
  CFLAGS+=-Wmissing-declarations -Wshadow -Wpointer-arith -Wcast-qual
  CFLAGS+=-Wsign-compare -Iinclude/kore -I$(OBJDIR) -std=c99 -pedantic
--CFLAGS+=-Wtype-limits
+-CFLAGS+=-Wtype-limits -fno-common
++CFLAGS+=-fno-common
  CFLAGS+=-DPREFIX='"$(PREFIX)"' -fstack-protector-all
  
- ifneq ("$(OPENSSL_PATH)", "")
-@@ -53,8 +52,6 @@ endif
+ LDFLAGS+=-rdynamic
+@@ -67,8 +67,6 @@ endif
  
  ifneq ("$(NOOPT)", "")
  	CFLAGS+=-O0

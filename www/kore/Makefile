@@ -1,7 +1,6 @@
 COMMENT =	web application framework for writing scalable web APIs in C
 
-DISTNAME =	kore-4.1.0
-REVISION =	2
+DISTNAME =	kore-4.2.1
 
 CATEGORIES =	www
 

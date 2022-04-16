@@ -12,6 +12,8 @@ include/kore/pgsql.h
 include/kore/python_api.h
 include/kore/python_methods.h
 include/kore/seccomp.h
+include/kore/sha1.h
+include/kore/sha2.h
 include/kore/tasks.h
 @man man/man1/kodev.1
 share/doc/kore/
@@ -22,6 +24,7 @@ share/kore/
 share/kore/Makefile
 share/kore/RELEASE
 share/kore/features
+share/kore/ffdhe4096.pem
 share/kore/include/
 share/kore/include/kore/
 share/kore/include/kore/acme.h
@@ -34,11 +37,15 @@ share/kore/include/kore/pgsql.h
 share/kore/include/kore/python_api.h
 share/kore/include/kore/python_methods.h
 share/kore/include/kore/seccomp.h
+share/kore/include/kore/sha1.h
+share/kore/include/kore/sha2.h
 share/kore/include/kore/tasks.h
+share/kore/linker
 share/kore/misc/
 share/kore/misc/curl/
 share/kore/misc/curl-extract-opt.sh
 share/kore/misc/curl/python_curlopt.h
+share/kore/misc/ffdhe4096.pem
 share/kore/misc/kore-build/
 share/kore/misc/kore-build/build-curl.sh
 share/kore/misc/kore-build/build-kodev.sh
@@ -69,9 +76,10 @@ share/kore/src/fileref.c
 share/kore/src/http.c
 share/kore/src/json.c
 share/kore/src/jsonrpc.c
-share/kore/src/keymgr.c
+share/kore/src/keymgr_openssl.c
 share/kore/src/kore.c
 share/kore/src/linux.c
+share/kore/src/log.c
 share/kore/src/mem.c
 share/kore/src/module.c
 share/kore/src/msg.c
@@ -79,10 +87,15 @@ share/kore/src/net.c
 share/kore/src/pgsql.c
 share/kore/src/pool.c
 share/kore/src/python.c
+share/kore/src/route.c
 share/kore/src/runtime.c
 share/kore/src/seccomp.c
+share/kore/src/sha1.c
+share/kore/src/sha2.c
 share/kore/src/tasks.c
 share/kore/src/timer.c
+share/kore/src/tls_none.c
+share/kore/src/tls_openssl.c
 share/kore/src/utils.c
 share/kore/src/validator.c
 share/kore/src/websocket.c
