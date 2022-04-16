@@ -1,0 +1,12 @@
+Index: ncdump/test_scope.sh
+--- ncdump/test_scope.sh.orig
++++ ncdump/test_scope.sh
+@@ -27,7 +27,7 @@ setup() {
+ testcycle() {
+ ${NCCOPY} ${execdir}/$1.nc ${execdir}/$1_copy.nc
+ ${NCDUMP} -h -n $1 ${execdir}/$1_copy.nc > copy_$1.cdl
+-diff -wB ${srcdir}/$1.cdl ${execdir}/copy_$1.cdl
++gdiff -wB ${srcdir}/$1.cdl ${execdir}/copy_$1.cdl
+ }
+ 
+ typescope() {

@@ -1,14 +1,13 @@
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.7.4
+V=		4.8.1
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	2
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		7.0 # 18.0
+SHARED_LIBS=	netcdf		8.0 # 19.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
@@ -17,29 +16,31 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c m z pthread
-WANTLIB+=		curl crypto nghttp2 ssl
+WANTLIB=		c m z pthread execinfo
+WANTLIB+=		crypto ssl
 WANTLIB+=		hdf5 hdf5_hl
 
-LIB_DEPENDS =		net/curl \
-			math/hdf5
+LIB_DEPENDS =		math/hdf5
 
-TEST_DEPENDS=		shells/bash \
+TEST_DEPENDS=		net/curl \
+			shells/bash \
 			textproc/gdiff
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		ftp://ftp.unidata.ucar.edu/pub/netcdf/
+MASTER_SITES=		https://downloads.unidata.ucar.edu/netcdf-c/$V/
 
+MODULES=		fortran
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
+			CPPFLAGS="-I${LOCALBASE}/include -DH5_USE_110_API"
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-doxygen \
 			--enable-netcdf-4 \
 			--enable-dap \
-			--prefix=${PREFIX}
+			--prefix=${PREFIX} \
+			FC=egfortran
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes

@@ -1,6 +1,6 @@
-Index: ncgen3/ncgenyy.c
---- ncgen3/ncgenyy.c.orig
-+++ ncgen3/ncgenyy.c
+Index: ncgen3/ncgenl.c
+--- ncgen3/ncgenl.c.orig
++++ ncgen3/ncgenl.c
 @@ -1081,8 +1081,6 @@ char *yytext;
     We include lexical definitions for all three, but use the second version.
  */

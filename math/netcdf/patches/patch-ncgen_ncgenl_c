@@ -1,9 +1,9 @@
 Index: ncgen/ncgenl.c
 --- ncgen/ncgenl.c.orig
 +++ ncgen/ncgenl.c
-@@ -1204,8 +1204,6 @@ char *ncgtext;
- #include "ncgen.h"
+@@ -1439,8 +1439,6 @@ char *yytext;
  #include "ncgeny.h"
+ #include "isnan.h"
  
 -EXTERNL int fileno(FILE*);
 -

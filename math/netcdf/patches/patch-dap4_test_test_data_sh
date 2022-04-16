@@ -1,17 +1,15 @@
 Index: dap4_test/test_data.sh
 --- dap4_test/test_data.sh.orig
 +++ dap4_test/test_data.sh
-@@ -21,8 +21,8 @@ for f in $F ; do
+@@ -23,7 +23,7 @@ for f in $F ; do
      fi
      ${NCDUMP} ./results_test_data/${f}.nc > ./results_test_data/${f}.d4d
      if test "x${TEST}" = x1 ; then
--	if ! diff -wBb ${BASELINE}/${f}.d4d ./results_test_data/${f}.d4d ; then
--	    failure "diff -wBb ${BASELINE}/${f}.d4d ./results_test_data/${f}.d4d"
-+	if ! gdiff -wBb ${BASELINE}/${f}.d4d ./results_test_data/${f}.d4d ; then
-+	    failure "gdiff -wBb ${BASELINE}/${f}.d4d ./results_test_data/${f}.d4d"
- 	fi
+-	diff -wBb ${BASELINE}/${f}.d4d ./results_test_data/${f}.d4d
++	gdiff -wBb ${BASELINE}/${f}.d4d ./results_test_data/${f}.d4d
      elif test "x${RESET}" = x1 ; then
  	echo "${f}:"
+ 	cp ./results_test_data/${f}.d4d ${BASELINE}/${f}.d4d
 @@ -77,13 +77,13 @@ if test "x${CDLDIFF}" = x1 ; then
        echo "Not found: ${CDLTESTFILES}/${STEM}.cdl"
        continue
@@ -23,8 +21,8 @@ Index: dap4_test/test_data.sh
      trim ./results_test_data/${f}.d4d ./r1
      baseclean b1 b2
      resultclean r1 r2
--    if ! diff -wBb ./b2 ./r2 ; then
-+    if ! gdiff -wBb ./b2 ./r2 ; then
- 	failure "${f}"
-     fi
+-    diff -wBb ./b2 ./r2
++    gdiff -wBb ./b2 ./r2
    done
+ fi
+ 

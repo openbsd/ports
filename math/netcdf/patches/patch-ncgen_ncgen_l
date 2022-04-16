@@ -1,9 +1,9 @@
 Index: ncgen/ncgen.l
 --- ncgen/ncgen.l.orig
 +++ ncgen/ncgen.l
-@@ -38,8 +38,6 @@
- #include "ncgen.h"
+@@ -39,8 +39,6 @@
  #include "ncgeny.h"
+ #include "isnan.h"
  
 -EXTERNL int fileno(FILE*);
 -
