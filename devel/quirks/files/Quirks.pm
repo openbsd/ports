@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1388 2022/04/15 08:11:39 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1389 2022/04/16 06:49:10 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1359,7 +1359,6 @@ setup_obsolete_reason(
 	3 => 'qt3-sqlite2',
 	6 => 'gtk3mm-documentation',
 	5 => 'libxml++3',
-	3 => 'orage',
 	3 => 'xfce4-statusnotifier',
 	3 => 'pylint3-gui',
 	3 => 'e_dbus',
