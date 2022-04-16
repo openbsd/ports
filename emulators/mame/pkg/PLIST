@@ -72,6 +72,7 @@ share/mame/artwork/chess/wp.svg
 share/mame/artwork/chess/wq.svg
 share/mame/artwork/chess/wr.svg
 share/mame/artwork/dir.txt
+share/mame/artwork/lut-default.png
 share/mame/artwork/monochrome-chessboard.png
 share/mame/artwork/monochrome-matrix.png
 share/mame/artwork/scanlines.png
