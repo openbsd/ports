@@ -1,0 +1,12 @@
+Index: plugins/inputs/unbound/unbound.go
+--- plugins/inputs/unbound/unbound.go.orig
++++ plugins/inputs/unbound/unbound.go
+@@ -108,7 +108,7 @@ func unboundRunner(unbound Unbound) (*bytes.Buffer, er
+ 
+ 	if unbound.UseSudo {
+ 		cmdArgs = append([]string{unbound.Binary}, cmdArgs...)
+-		cmd = exec.Command("sudo", cmdArgs...)
++		cmd = exec.Command("doas", cmdArgs...)
+ 	}
+ 
+ 	var out bytes.Buffer
