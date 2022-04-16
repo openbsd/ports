@@ -1,12 +1,13 @@
-COMMENT =		ospf link-state database viewer
+COMMENT =	ospf link-state database viewer
 
-DISTNAME =		OSPF-LSDB-1.13
+DISTNAME =	OSPF-LSDB-1.14
+CPAN_AUTHOR =	BLUHM
 
-CATEGORIES =		net
+CATEGORIES =	net
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# bsd
+# BSD
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
