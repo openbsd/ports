@@ -8,6 +8,9 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+REVISION-extras=	0
+
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -76,7 +79,6 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/music \
 			x11/gnome/nautilus \
 			x11/gnome/photos \
-			x11/gnome/screenshot \
 			x11/gnome/text-editor \
 			x11/gnome/weather \
 			x11/gnome/yelp
@@ -117,6 +119,7 @@ RUN_DEPENDS-extras +=	devel/glade \
 			x11/gnome/notes \
 			x11/gnome/online-miners \
 			x11/gnome/polari \
+			x11/gnome/screenshot \
 			x11/gnome/seahorse \
 			x11/gnome/terminal \
 			x11/gnome/todo \
