@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -23098,9 +23098,9 @@ $as_echo X"$file" |
+@@ -22866,9 +22866,9 @@ $as_echo X"$file" |
  #define  JOEDOG_PATH_H
  
  #define SIEGE_HOME     "$prefix"
