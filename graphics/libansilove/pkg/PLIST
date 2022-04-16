@@ -1,4 +1,5 @@
 include/ansilove.h
+@static-lib lib/libansilove-static.a
 @lib lib/libansilove.so.${LIBansilove_VERSION}
 @man man/man3/ansilove_ansi.3
 @man man/man3/ansilove_artworx.3
