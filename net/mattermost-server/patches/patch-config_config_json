@@ -77,7 +77,14 @@ Index: config/config.json
      "PushNotificationServer": "https://push-test.mattermost.com",
      "PushNotificationContents": "full",
      "PushNotificationBuffer": 1000,
-@@ -262,7 +262,7 @@
+@@ -256,13 +256,13 @@
+   "SupportSettings": {
+     "TermsOfServiceLink": "https://mattermost.com/terms-of-use/",
+     "PrivacyPolicyLink": "https://mattermost.com/privacy-policy/",
+-    "AboutLink": "https://docs.mattermost.com/about/product.html/",
++    "AboutLink": "https://docs.mattermost.com/about/product.html",
+     "HelpLink": "https://mattermost.com/default-help/",
+     "ReportAProblemLink": "https://mattermost.com/default-report-a-problem/",
      "SupportEmail": "",
      "CustomTermsOfServiceEnabled": false,
      "CustomTermsOfServiceReAcceptancePeriod": 365,
@@ -105,8 +112,8 @@ Index: config/config.json
 +    "ClientDirectory": "${LOCALSTATEDIR}/mattermost/client/plugins",
      "Plugins": {},
      "PluginStates": {
-       "com.mattermost.nps": {
-@@ -596,11 +596,11 @@
+       "com.mattermost.apps": {
+@@ -595,11 +595,11 @@
      "GraphQL": false
    },
    "ImportSettings": {
