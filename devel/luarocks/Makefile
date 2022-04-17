@@ -1,10 +1,9 @@
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
-V =		3.8.0
+V =		3.9.0
 DISTNAME =	luarocks-${V}
 FULLPKGNAME =	luarocks-${FLAVOR}-${V}
 CATEGORIES =	devel
-REVISION =	1
 
 HOMEPAGE =	https://luarocks.org/
 
@@ -33,6 +32,7 @@ CONFIGURE_ARGS =	--with-lua-include=${MODLUA_INCL_DIR} \
 			--lua-version=${MODLUA_VERSION}
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
 
+# needs busted
 NO_TEST =		Yes
 
 PKG_ARCH =		*

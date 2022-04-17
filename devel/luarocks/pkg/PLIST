@@ -72,11 +72,9 @@ share/lua/${MODLUA_VERSION}/luarocks/fetch/sscm.lua
 share/lua/${MODLUA_VERSION}/luarocks/fetch/svn.lua
 share/lua/${MODLUA_VERSION}/luarocks/fs/
 share/lua/${MODLUA_VERSION}/luarocks/fs.lua
-share/lua/${MODLUA_VERSION}/luarocks/fs/freebsd.lua
 share/lua/${MODLUA_VERSION}/luarocks/fs/linux.lua
 share/lua/${MODLUA_VERSION}/luarocks/fs/lua.lua
 share/lua/${MODLUA_VERSION}/luarocks/fs/macosx.lua
-share/lua/${MODLUA_VERSION}/luarocks/fs/netbsd.lua
 share/lua/${MODLUA_VERSION}/luarocks/fs/tools.lua
 share/lua/${MODLUA_VERSION}/luarocks/fs/unix/
 share/lua/${MODLUA_VERSION}/luarocks/fs/unix.lua
