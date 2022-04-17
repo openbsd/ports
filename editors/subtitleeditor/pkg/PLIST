@@ -1,76 +1,76 @@
 @bin bin/subtitleeditor
-lib/libsubtitleeditor.a
+@static-lib lib/libsubtitleeditor.a
 lib/libsubtitleeditor.la
 @lib lib/libsubtitleeditor.so.${LIBsubtitleeditor_VERSION}
 lib/subtitleeditor/
 lib/subtitleeditor/plugins/
 lib/subtitleeditor/plugins/actions/
-lib/subtitleeditor/plugins/actions/libabout.so
-lib/subtitleeditor/plugins/actions/libadjusttime.so
-lib/subtitleeditor/plugins/actions/libapplytranslation.so
-lib/subtitleeditor/plugins/actions/libbestfit.so
-lib/subtitleeditor/plugins/actions/libchangeframerate.so
-lib/subtitleeditor/plugins/actions/libclipboard.so
-lib/subtitleeditor/plugins/actions/libcombinesubtitles.so
-lib/subtitleeditor/plugins/actions/libcommand.so
-lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.so
-lib/subtitleeditor/plugins/actions/libdialoguize.so
-lib/subtitleeditor/plugins/actions/libdocumentmanagement.so
-lib/subtitleeditor/plugins/actions/libdocumentsnavigation.so
-lib/subtitleeditor/plugins/actions/libduplicatesubtitle.so
-lib/subtitleeditor/plugins/actions/libeditcell.so
-lib/subtitleeditor/plugins/actions/liberrorchecking.so
-lib/subtitleeditor/plugins/actions/libextendlength.so
-lib/subtitleeditor/plugins/actions/libexternalvideoplayer.so
-lib/subtitleeditor/plugins/actions/libfindandreplace.so
-lib/subtitleeditor/plugins/actions/libinsertsubtitle.so
-lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
-lib/subtitleeditor/plugins/actions/libitalicize.so
-lib/subtitleeditor/plugins/actions/libjoindocument.so
-lib/subtitleeditor/plugins/actions/libkeyframesmanagement.so
-lib/subtitleeditor/plugins/actions/libminimizeduration.so
-lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.so
-lib/subtitleeditor/plugins/actions/libmovesubtitles.so
-lib/subtitleeditor/plugins/actions/libplaintext.so
-lib/subtitleeditor/plugins/actions/libpreferences.so
-lib/subtitleeditor/plugins/actions/libremovesubtitle.so
-lib/subtitleeditor/plugins/actions/libreversetextandtranslation.so
-lib/subtitleeditor/plugins/actions/libscalesubtitles.so
-lib/subtitleeditor/plugins/actions/libselection.so
-lib/subtitleeditor/plugins/actions/libsortsubtitles.so
-lib/subtitleeditor/plugins/actions/libspellchecking.so
-lib/subtitleeditor/plugins/actions/libsplitdocument.so
-lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
-lib/subtitleeditor/plugins/actions/libstacksubtitles.so
-lib/subtitleeditor/plugins/actions/libstyleeditor.so
-lib/subtitleeditor/plugins/actions/libstylize.so
-lib/subtitleeditor/plugins/actions/libtemplate.so
-lib/subtitleeditor/plugins/actions/libtextcorrection.so
-lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
-lib/subtitleeditor/plugins/actions/libtimingfromplayer.so
-lib/subtitleeditor/plugins/actions/libtypewriter.so
-lib/subtitleeditor/plugins/actions/libvideoplayermanagement.so
-lib/subtitleeditor/plugins/actions/libviewmanager.so
-lib/subtitleeditor/plugins/actions/libwaveformmanagement.so
+@so lib/subtitleeditor/plugins/actions/libabout.so
+@so lib/subtitleeditor/plugins/actions/libadjusttime.so
+@so lib/subtitleeditor/plugins/actions/libapplytranslation.so
+@so lib/subtitleeditor/plugins/actions/libbestfit.so
+@so lib/subtitleeditor/plugins/actions/libchangeframerate.so
+@so lib/subtitleeditor/plugins/actions/libclipboard.so
+@so lib/subtitleeditor/plugins/actions/libcombinesubtitles.so
+@so lib/subtitleeditor/plugins/actions/libcommand.so
+@so lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.so
+@so lib/subtitleeditor/plugins/actions/libdialoguize.so
+@so lib/subtitleeditor/plugins/actions/libdocumentmanagement.so
+@so lib/subtitleeditor/plugins/actions/libdocumentsnavigation.so
+@so lib/subtitleeditor/plugins/actions/libduplicatesubtitle.so
+@so lib/subtitleeditor/plugins/actions/libeditcell.so
+@so lib/subtitleeditor/plugins/actions/liberrorchecking.so
+@so lib/subtitleeditor/plugins/actions/libextendlength.so
+@so lib/subtitleeditor/plugins/actions/libexternalvideoplayer.so
+@so lib/subtitleeditor/plugins/actions/libfindandreplace.so
+@so lib/subtitleeditor/plugins/actions/libinsertsubtitle.so
+@so lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
+@so lib/subtitleeditor/plugins/actions/libitalicize.so
+@so lib/subtitleeditor/plugins/actions/libjoindocument.so
+@so lib/subtitleeditor/plugins/actions/libkeyframesmanagement.so
+@so lib/subtitleeditor/plugins/actions/libminimizeduration.so
+@so lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.so
+@so lib/subtitleeditor/plugins/actions/libmovesubtitles.so
+@so lib/subtitleeditor/plugins/actions/libplaintext.so
+@so lib/subtitleeditor/plugins/actions/libpreferences.so
+@so lib/subtitleeditor/plugins/actions/libremovesubtitle.so
+@so lib/subtitleeditor/plugins/actions/libreversetextandtranslation.so
+@so lib/subtitleeditor/plugins/actions/libscalesubtitles.so
+@so lib/subtitleeditor/plugins/actions/libselection.so
+@so lib/subtitleeditor/plugins/actions/libsortsubtitles.so
+@so lib/subtitleeditor/plugins/actions/libspellchecking.so
+@so lib/subtitleeditor/plugins/actions/libsplitdocument.so
+@so lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
+@so lib/subtitleeditor/plugins/actions/libstacksubtitles.so
+@so lib/subtitleeditor/plugins/actions/libstyleeditor.so
+@so lib/subtitleeditor/plugins/actions/libstylize.so
+@so lib/subtitleeditor/plugins/actions/libtemplate.so
+@so lib/subtitleeditor/plugins/actions/libtextcorrection.so
+@so lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
+@so lib/subtitleeditor/plugins/actions/libtimingfromplayer.so
+@so lib/subtitleeditor/plugins/actions/libtypewriter.so
+@so lib/subtitleeditor/plugins/actions/libvideoplayermanagement.so
+@so lib/subtitleeditor/plugins/actions/libviewmanager.so
+@so lib/subtitleeditor/plugins/actions/libwaveformmanagement.so
 lib/subtitleeditor/plugins/subtitleformats/
-lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.so
-lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.so
-lib/subtitleeditor/plugins/subtitleformats/libadvancedsubstationalpha.so
-lib/subtitleeditor/plugins/subtitleformats/libavidds.so
-lib/subtitleeditor/plugins/subtitleformats/libbitc.so
-lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.so
-lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.so
-lib/subtitleeditor/plugins/subtitleformats/libmpl2.so
-lib/subtitleeditor/plugins/subtitleformats/libmpsub.so
-lib/subtitleeditor/plugins/subtitleformats/libplaintextformat.so
-lib/subtitleeditor/plugins/subtitleformats/libsami.so
-lib/subtitleeditor/plugins/subtitleformats/libsbv.so
-lib/subtitleeditor/plugins/subtitleformats/libsprucestl.so
-lib/subtitleeditor/plugins/subtitleformats/libsubrip.so
-lib/subtitleeditor/plugins/subtitleformats/libsubstationalpha.so
-lib/subtitleeditor/plugins/subtitleformats/libsubtitleeditorproject.so
-lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.so
-lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.so
+@so lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.so
+@so lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.so
+@so lib/subtitleeditor/plugins/subtitleformats/libadvancedsubstationalpha.so
+@so lib/subtitleeditor/plugins/subtitleformats/libavidds.so
+@so lib/subtitleeditor/plugins/subtitleformats/libbitc.so
+@so lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.so
+@so lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.so
+@so lib/subtitleeditor/plugins/subtitleformats/libmpl2.so
+@so lib/subtitleeditor/plugins/subtitleformats/libmpsub.so
+@so lib/subtitleeditor/plugins/subtitleformats/libplaintextformat.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsami.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsbv.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsprucestl.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsubrip.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsubstationalpha.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsubtitleeditorproject.so
+@so lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.so
+@so lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.so
 @man man/man1/subtitleeditor.1
 share/appdata/
 share/appdata/subtitleeditor.appdata.xml
