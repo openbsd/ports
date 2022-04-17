@@ -12,6 +12,9 @@ MAINTAINER=	Martin Ziemer <horrad@horrad.de>
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB=		c m
 
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/
