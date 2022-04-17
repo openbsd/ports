@@ -3,11 +3,12 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-V=		2.8.0-rc1
+V=		2.8.0-rc2
 DISTNAME=	nut-${V}
 #PKGNAME=	nut-${V:S/-//}
-PKGNAME=	nut-2.8.0pre20220401
-REVISION-main=	0
+# this is really 2.8.0rc2 but pre/rc can't be compared in pkg_add sort;
+# go back to the default after 2.8.0 release
+PKGNAME=	nut-2.8.0pre20220410
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
