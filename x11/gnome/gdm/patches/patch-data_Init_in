@@ -1,0 +1,20 @@
+https://github.com/rnagy/gdm/pull/1
+
+Index: data/Init.in
+--- data/Init.in.orig
++++ data/Init.in
+@@ -6,12 +6,8 @@
+ PATH="@X_PATH@:$PATH"
+ OLD_IFS=$IFS
+ 
+-# enhance fade in look;
+-# gnome-shell-3.38.1/data/theme/gnome-shell-sass/widgets/_screen-shield.scss:
+-# #lockDialogGroup {
+-#   background-color: lighten(#2e3436, 8%);
+-# }
+-xsetroot -solid "#2e3436"
++# overlap the root weave pattern
++xsetroot -solid black
+ 
+ # wait for ttys to be initialized
+ while ! pgrep -qf "^/usr/libexec/getty "; do
