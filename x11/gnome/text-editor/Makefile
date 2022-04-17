@@ -8,6 +8,10 @@ CATEGORIES=		editors
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
+# gnu17
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += adwaita-1 c cairo enchant-2 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-4 gtksourceview-5 icuuc intl m pango-1.0 pcre
 
