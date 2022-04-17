@@ -1,8 +1,7 @@
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		42.1
-REVISION=		0
+GNOME_VERSION=		42.2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -51,7 +50,7 @@ RUN_DEPENDS=		archivers/unrar \
 
 CONFIGURE_ENV=		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
-CONFIGURE_ARGS +=	-Dsystemduserunitdir=no
+CONFIGURE_ARGS=		-Dsystemduserunitdir=no
 
 # fix build with clang
 CFLAGS +=		-Wno-error=format-nonliteral
