@@ -8,17 +8,21 @@ COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
 MOZILLA_VERSION =	91
 SUBST_VARS =		MOZILLA_VERSION
 
+SO_VERSION =		${LIBmozjs-${MOZILLA_VERSION}_VERSION}
+SUBST_VARS +=		SO_VERSION
+
 V =			${MOZILLA_VERSION}.8.0
 DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
+REVISION =		0
 
 SHARED_LIBS =		mozjs-91 0.0
 
 CATEGORIES =		devel
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE =		https://spidermonkey.dev/
 MASTER_SITES =          https://ftp.mozilla.org/pub/firefox/releases/${V}esr/source/
@@ -80,12 +84,13 @@ CONFIGURE_ARGS = 	--disable-debug \
 CONFIGURE_ARGS +=	--disable-ion
 .endif
 
-SO_VERSION =		${LIBmozjs-${MOZILLA_VERSION}_VERSION}
-SUBST_VARS +=		SO_VERSION
-
 CONFIGURE_ENV =		LIBS=-lncurses \
 			SHELL=/bin/sh \
 			SO_VERSION=${SO_VERSION}
+
+# Autoconf requires GNU m4 1.1 or later
+CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
+BUILD_DEPENDS +=	devel/m4
 
 MAKE_ENV =		SHELL=/bin/sh \
 			SO_VERSION=${SO_VERSION}
