@@ -52,6 +52,7 @@
      SUBDIR += chroma-enigma
      SUBDIR += chromium-bsu
      SUBDIR += circuit
+     SUBDIR += clidle
      SUBDIR += clines
      SUBDIR += clonekeen
      SUBDIR += cmatrix
