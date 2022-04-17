@@ -28,4 +28,9 @@ MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
 # Required C function not found: mremap
 CONFIGURE_ARGS +=	-Dmmap-buffer-backend=false
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
