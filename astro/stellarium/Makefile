@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.22.0
+GH_TAGNAME=		v0.22.1
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 
