@@ -1,4 +1,7 @@
-https://github.com/rnagy/gdm/pull/1
+From 50b24f13fccb7fd8d08448d689f098d119fc6f74 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sun, 17 Apr 2022 12:25:26 +0200
+Subject: [PATCH] background: overlap the root weave pattern
 
 Index: data/Init.in
 --- data/Init.in.orig
