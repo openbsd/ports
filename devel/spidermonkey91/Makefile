@@ -49,6 +49,7 @@ AUTOCONF_VERSION=	2.13
 BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
 			devel/cbindgen \
 			devel/llvm \
+			devel/m4 \
 			lang/rust
 
 SEPARATE_BUILD =	Yes
