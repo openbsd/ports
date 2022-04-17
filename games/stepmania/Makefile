@@ -1,3 +1,5 @@
+BROKEN-sparc64 =	Uses -msse2
+
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
 
