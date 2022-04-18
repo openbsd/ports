@@ -24,6 +24,7 @@ share/afl/dictionaries/js.dict
 share/afl/dictionaries/json.dict
 share/afl/dictionaries/pdf.dict
 share/afl/dictionaries/png.dict
+share/afl/dictionaries/regexp.dict
 share/afl/dictionaries/sql.dict
 share/afl/dictionaries/tiff.dict
 share/afl/dictionaries/webp.dict
@@ -103,6 +104,11 @@ share/afl/testcases/others/pcap/
 share/afl/testcases/others/pcap/small_capture.pcap
 share/afl/testcases/others/pdf/
 share/afl/testcases/others/pdf/small.pdf
+share/afl/testcases/others/regexp/
+share/afl/testcases/others/regexp/reg1
+share/afl/testcases/others/regexp/reg2
+share/afl/testcases/others/regexp/reg3
+share/afl/testcases/others/regexp/reg4
 share/afl/testcases/others/rtf/
 share/afl/testcases/others/rtf/small_document.rtf
 share/afl/testcases/others/sql/
@@ -114,7 +120,7 @@ share/afl/testcases/others/xml/small_document.xml
 share/doc/afl/
 share/doc/afl/ChangeLog
 share/doc/afl/QuickStartGuide.txt
-share/doc/afl/README
+share/doc/afl/README.md
 share/doc/afl/env_variables.txt
 share/doc/afl/historical_notes.txt
 share/doc/afl/life_pro_tips.txt
