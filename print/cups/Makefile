@@ -7,6 +7,7 @@ GH_PROJECT=		cups
 GH_TAGNAME=		v2.4.1
 
 REVISION-main=		0
+REVISION-libs=		0
 
 CATEGORIES=		print sysutils
 

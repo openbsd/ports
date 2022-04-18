@@ -1,5 +1,5 @@
 @newgroup _saned:553
-@newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
+@newuser _saned:553:_saned::SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
 @rcscript ${RCDIR}/saned
 @bin bin/gamma4scanimage

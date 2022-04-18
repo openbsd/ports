@@ -1,6 +1,6 @@
 @comment Error switching to user _polkitd: Error changing to home directory /nonexistent
 @newgroup _polkitd:701
-@newuser _polkitd:701:_polkitd:daemon:Polkit Daemon User:/var/empty:/sbin/nologin
+@newuser _polkitd:701:_polkitd::Polkit Daemon User:/var/empty:/sbin/nologin
 @bin bin/pkaction
 @bin bin/pkcheck
 @mode 4755

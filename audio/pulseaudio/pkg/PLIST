@@ -1,6 +1,6 @@
 @newgroup _pulse:683
 @newgroup _pulse-access:684
-@newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
+@newuser _pulse:683:683::PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
 @unexec-delete rm -rf /var/db/pulse
 @bin bin/pacat
 @bin bin/pacmd

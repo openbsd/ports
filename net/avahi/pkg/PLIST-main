@@ -1,6 +1,6 @@
 @conflict howl-*
 @newgroup _avahi:629
-@newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
+@newuser _avahi:629:629::Avahi User:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/avahi_daemon
 @rcscript ${RCDIR}/avahi_dnsconfd
 @bin bin/avahi-browse
