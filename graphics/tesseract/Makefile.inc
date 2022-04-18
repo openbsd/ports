@@ -1,4 +1,4 @@
-GH_TAGNAME ?=	4.1.1
+GH_TAGNAME ?=	5.1.0
 GH_ACCOUNT=	tesseract-ocr
 
 CATEGORIES +=	graphics textproc

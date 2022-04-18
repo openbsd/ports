@@ -1,9 +1,8 @@
 COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
-REVISION=	1
 
-SHARED_LIBS +=  tesseract            4.0
+SHARED_LIBS +=  tesseract            4.1
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xext Xrender archive b2 bz2
 WANTLIB += c cairo charset crypto curl expat ffi fontconfig freetype
@@ -15,6 +14,8 @@ WANTLIB += xcb xcb-render xcb-shm z zstd Xau Xdmcp
 
 # c++11: needed to build the training tools
 COMPILER=		base-clang ports-gcc
+
+USE_GMAKE=		Yes
 
 LIB_DEPENDS=		archivers/libarchive \
 			devel/pango \

@@ -6,7 +6,6 @@
 @bin bin/combine_lang_model
 @bin bin/combine_tessdata
 @bin bin/dawg2wordlist
-bin/language-specific.sh
 @bin bin/lstmeval
 @bin bin/lstmtraining
 @bin bin/merge_unicharsets
@@ -14,31 +13,22 @@ bin/language-specific.sh
 @bin bin/set_unicharset_properties
 @bin bin/shapeclustering
 @bin bin/tesseract
-bin/tesstrain.sh
-bin/tesstrain_utils.sh
 @bin bin/text2image
 @bin bin/unicharset_extractor
 @bin bin/wordlist2dawg
 include/tesseract/
-include/tesseract/apitypes.h
 include/tesseract/baseapi.h
 include/tesseract/capi.h
-include/tesseract/genericvector.h
-include/tesseract/helpers.h
+include/tesseract/export.h
 include/tesseract/ltrresultiterator.h
 include/tesseract/ocrclass.h
 include/tesseract/osdetect.h
 include/tesseract/pageiterator.h
-include/tesseract/platform.h
 include/tesseract/publictypes.h
 include/tesseract/renderer.h
 include/tesseract/resultiterator.h
-include/tesseract/serialis.h
-include/tesseract/strngs.h
-include/tesseract/tess_version.h
-include/tesseract/tesscallback.h
-include/tesseract/thresholder.h
 include/tesseract/unichar.h
+include/tesseract/version.h
 @static-lib lib/libtesseract.a
 lib/libtesseract.la
 @lib lib/libtesseract.so.${LIBtesseract_VERSION}

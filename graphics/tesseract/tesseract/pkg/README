@@ -16,4 +16,4 @@ Here's a quick HOWTO about optical character recognition using:
 $ scanimage --mode gray --resolution 300 > scan.pnm
 $ unpaper -b 0.5 -w 0.8 -l single scan.pnm scan1.pnm
 $ convert scan1.pnm scan.tif
-$ tesseract scan.tif scan.txt
+$ tesseract scan.tif scan
