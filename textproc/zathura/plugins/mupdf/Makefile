@@ -1,6 +1,9 @@
 V =		0.3.8
+REVISION =	0
 COMMENT =	mupdf pdf plugin for zathura
 PROJECT =	zathura-pdf-mupdf
+
+# please check runtime if updating, mupdf linking is Very Annoying
 
 BUILD_DEPENDS = textproc/mupdf \
 		textproc/zathura/core

@@ -1,0 +1,55 @@
+revert some of the changes in 0.3.8 to unbreak runtime
+
+mupdf library linking is Very Annoying; mupdf upstream refuse to support
+building as a shared library ("We do not intend to support building
+MuPDF as a shared library. Shared libraries are a lot more trouble than
+they are worth"), and don't provide la/pc files with information about
+required dependencies, so software depending on the static lib needs to
+provide that itself.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -19,7 +19,7 @@ zathura = dependency('zathura', version: '>=0.3.9')
+ girara = dependency('girara-gtk3')
+ glib = dependency('glib-2.0')
+ cairo = dependency('cairo')
+-mupdf = dependency('mupdf', required: false)
++mupdf = cc.find_library('mupdf')
+ mupdfthird = cc.find_library('mupdf-third')
+ 
+ build_dependencies = [
+@@ -29,32 +29,19 @@ build_dependencies = [
+   cairo,
+ ]
+ 
+-if not mupdf.found()
+-  # normal build of mupdf
+-  mupdf = cc.find_library('mupdf')
+   build_dependencies += [mupdf, mupdfthird]
+-else
+-  # build from Debian's libmupdf-dev
+-  build_dependencies += [mupdf, mupdfthird]
+ 
+   libjpeg = dependency('libjpeg')
+   libjbig2dec = cc.find_library('jbig2dec')
+   libopenjp2 = dependency('libopenjp2')
+   gumbo = dependency('gumbo')
+-  tesseract = dependency('tesseract')
+-  leptonica = dependency('lept')
+-  mujs = dependency('mujs')
+ 
+   build_dependencies += [
+     libjpeg,
+     libjbig2dec,
+     libopenjp2,
+-    gumbo,
+-    tesseract,
+-    leptonica,
+-    mujs
++    gumbo
+   ]
+-endif
+ 
+ if get_option('plugindir') == ''
+   plugindir = zathura.get_pkgconfig_variable('plugindir')
