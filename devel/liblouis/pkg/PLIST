@@ -90,7 +90,6 @@ share/liblouis/tables/countries.cti
 share/liblouis/tables/cs-chardefs.cti
 share/liblouis/tables/cs-comp8.utb
 share/liblouis/tables/cs-g1.ctb
-share/liblouis/tables/cs-letterDef8Dots.uti
 share/liblouis/tables/cs-translation.cti
 share/liblouis/tables/cs.tbl
 share/liblouis/tables/cy-cy-g1.utb
@@ -114,6 +113,7 @@ share/liblouis/tables/de-accents.cti
 share/liblouis/tables/de-chardefs6.cti
 share/liblouis/tables/de-chardefs8.cti
 share/liblouis/tables/de-chess.ctb
+share/liblouis/tables/de-comp6.utb
 share/liblouis/tables/de-de-comp8.ctb
 share/liblouis/tables/de-de.dis
 share/liblouis/tables/de-eurobrl6.dis
@@ -214,6 +214,7 @@ share/liblouis/tables/hr-g1.ctb
 share/liblouis/tables/hr-g1.tbl
 share/liblouis/tables/hr-translation.cti
 share/liblouis/tables/hu-backtranslate-correction.dis
+share/liblouis/tables/hu-backtranslate-word-corrections.cti
 share/liblouis/tables/hu-chardefs.cti
 share/liblouis/tables/hu-exceptionwords.cti
 share/liblouis/tables/hu-hu-comp8.ctb
@@ -249,6 +250,7 @@ share/liblouis/tables/it-it-comp6.utb
 share/liblouis/tables/it-it-comp8.utb
 share/liblouis/tables/it.tbl
 share/liblouis/tables/iu-ca-g1.ctb
+share/liblouis/tables/ja-kantenji.utb
 share/liblouis/tables/ka-in-g1.utb
 share/liblouis/tables/kannada.cti
 share/liblouis/tables/kh-in-g1.utb
@@ -273,6 +275,7 @@ share/liblouis/tables/kru.tbl
 share/liblouis/tables/ks-in-g1.utb
 share/liblouis/tables/latinLetterDef6Dots.uti
 share/liblouis/tables/latinLetterDef8Dots.uti
+share/liblouis/tables/latinUppercaseComp6.uti
 share/liblouis/tables/litdigits6Dots.uti
 share/liblouis/tables/litdigits6DotsPlusDot6.uti
 share/liblouis/tables/loweredDigits6Dots.uti
@@ -307,14 +310,11 @@ share/liblouis/tables/my-g2.ctb
 share/liblouis/tables/ne.ctb
 share/liblouis/tables/ne.tbl
 share/liblouis/tables/nemethdefs.cti
-share/liblouis/tables/nl-BE-g0.utb
 share/liblouis/tables/nl-BE.dis
 share/liblouis/tables/nl-NL-g0.utb
 share/liblouis/tables/nl-chardefs.uti
 share/liblouis/tables/nl-comp8.utb
-share/liblouis/tables/nl-g0.uti
 share/liblouis/tables/nl.tbl
-share/liblouis/tables/nl_BE.tbl
 share/liblouis/tables/no-no-8dot-fallback-6dot-g0.utb
 share/liblouis/tables/no-no-8dot.utb
 share/liblouis/tables/no-no-braillo-047-01.dis
@@ -348,13 +348,12 @@ share/liblouis/tables/pt.tbl
 share/liblouis/tables/pu-in-g1.utb
 share/liblouis/tables/ro.ctb
 share/liblouis/tables/ro.tbl
-share/liblouis/tables/ru-chardefs.cti
+share/liblouis/tables/ru-brf.dis
 share/liblouis/tables/ru-compbrl.ctb
 share/liblouis/tables/ru-letters.dis
 share/liblouis/tables/ru-litbrl-detailed.utb
 share/liblouis/tables/ru-litbrl.ctb
 share/liblouis/tables/ru-ru-g1.ctb
-share/liblouis/tables/ru-ru.dis
 share/liblouis/tables/ru-unicode.dis
 share/liblouis/tables/ru.ctb
 share/liblouis/tables/sa-in-g1.utb

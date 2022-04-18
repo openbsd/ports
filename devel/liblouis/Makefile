@@ -1,9 +1,9 @@
 COMMENT=	braille translator, back-translator and formatter
 
-V=		3.19.0
+V=		3.21.0
 DISTNAME=	liblouis-${V}
 
-SHARED_LIBS +=  louis                8.0      # 20.7
+SHARED_LIBS +=  louis                8.0      # 20.9
 
 CATEGORIES=	devel
 
