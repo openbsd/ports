@@ -1,5 +1,3 @@
-MODGO_VERSION =	v0.0.0-20220208035357-5e4a725489f9
-
 MODGO_MODULES =	\
 	github.com/!microsoft/go-winio				 v0.4.16 \
 	github.com/!proton!mail/go-crypto			 v0.0.0-20210428141323-04723f9f07d7 \
