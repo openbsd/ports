@@ -7,7 +7,25 @@ Also Eliminate -Werror to fix sparc64 build
 Index: cpp/CMakeLists.txt
 --- cpp/CMakeLists.txt.orig
 +++ cpp/CMakeLists.txt
-@@ -351,7 +351,7 @@ add_metadata_gen_target (
+@@ -18,7 +18,7 @@ cmake_minimum_required (VERSION 3.11)
+ 
+ # Pick the C++ standard to compile with.
+ # Abseil currently supports C++11, C++14, and C++17.
+-set(CMAKE_CXX_STANDARD 11)
++set(CMAKE_CXX_STANDARD 17)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+ 
+ project (libphonenumber)
+@@ -126,6 +126,8 @@ if (${USE_BOOST} STREQUAL "OFF" AND ${USE_STDMUTEX} ST
+   find_package (Threads)
+ endif()
+ 
++find_package (absl REQUIRED)
++
+ find_or_build_gtest ()
+ 
+ if (${USE_RE2} STREQUAL "ON")
+@@ -356,7 +358,7 @@ add_metadata_gen_target (
    ${TEST_METADATA_TARGET}
    "${RESOURCES_DIR}/PhoneNumberMetadataForTesting.xml"
    "test_metadata"
@@ -16,7 +34,7 @@ Index: cpp/CMakeLists.txt
  )
  list (APPEND TESTING_LIBRARY_SOURCES "src/phonenumbers/test_metadata.cc")
  
-@@ -381,7 +381,7 @@ if (${USE_ICU_REGEXP} STREQUAL "ON")
+@@ -386,7 +388,7 @@ if (${USE_ICU_REGEXP} STREQUAL "ON")
  endif ()
  
  if (NOT WIN32)
@@ -25,3 +43,30 @@ Index: cpp/CMakeLists.txt
  endif ()
  
  include_directories ("src")
+@@ -477,7 +479,7 @@ endif ()
+ # Safeguarding against any potential link errors as mentioned in
+ # https://github.com/abseil/abseil-cpp/issues/225
+ set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
+-list (APPEND LIBRARY_DEPS absl::strings)
++list (APPEND LIBRARY_DEPS absl::strings absl::node_hash_set)
+ list (APPEND COMMON_DEPS absl::synchronization)
+ 
+ if (APPLE)
+@@ -570,7 +572,7 @@ if (NOT WIN32)
+   list (APPEND TEST_LIBS pthread)
+ endif ()
+ 
+-target_link_libraries (libphonenumber_test ${TEST_LIBS} absl::node_hash_set)
++target_link_libraries (libphonenumber_test ${TEST_LIBS})
+ 
+ # Unfortunately add_custom_target() can't accept a single command provided as a
+ # list of commands.
+@@ -677,7 +679,7 @@ if (${BUILD_GEOCODER} STREQUAL "ON")
+     geocoding_test_program
+     "test/phonenumbers/geocoding/geocoding_test_program.cc"
+   )
+-  target_link_libraries (geocoding_test_program geocoding phonenumber absl::node_hash_set)
++  target_link_libraries (geocoding_test_program geocoding phonenumber)
+ endif ()
+ 
+ # Build an RPM
