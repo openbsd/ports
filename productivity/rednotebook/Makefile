@@ -1,10 +1,9 @@
 COMMENT=		diary and journal application
 
-MODPY_EGG_VERSION=	2.22
+MODPY_EGG_VERSION=	2.24
 GH_TAGNAME=		v${MODPY_EGG_VERSION}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
-REVISION=		0
 
 CATEGORIES=		productivity
 
