@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_ode_odeconfig_h,v 1.1 2022/04/18 23:34:06 jca Exp $
+
+Sync this file with upstream, up to commit 92362ac.
+https://bitbucket.org/odedevs/ode/src/92362ac1e6cf3a12343493f67807780505253e1c/include/ode/odeconfig.h
+Lets this build on riscv64 and friends.
+
+Index: src/ode/odeconfig.h
+--- src/ode/odeconfig.h.orig
++++ src/ode/odeconfig.h
+@@ -80,8 +80,12 @@
+ #endif // #if !defined(__GNUC__)
+ 
+ 
+-/* Well-defined common data types...need to define for 64 bit systems */
+-#if defined(__aarch64__)
++/* Well-defined common data types...need to be defined for 64 bit systems */
++#if defined(__aarch64__) || defined(__alpha__) || defined(__ppc64__) \
++    || defined(__s390__) || defined(__s390x__) || defined(__zarch__) \
++    || defined(__mips__) || defined(__powerpc64__) || defined(__riscv) \
++    || defined(__loongarch64) \
++    || (defined(__sparc__) && defined(__arch64__))
+     #include <stdint.h>
+     typedef int64_t         dint64;
+     typedef uint64_t        duint64;
+@@ -97,13 +101,13 @@
+     typedef ptrdiff_t       ddiffint;
+     typedef size_t          dsizeint;
+ 
+-#elif defined(_M_IA64) || defined(__ia64__) || defined(_M_AMD64) || defined(__x86_64__)
++#elif (defined(_M_IA64) || defined(__ia64__) || defined(_M_AMD64) || defined(__x86_64__)) && !defined(__ILP32__) && !defined(_ILP32)
+   #define X86_64_SYSTEM   1
+ #if defined(_MSC_VER)
+   typedef __int64         dint64;
+   typedef unsigned __int64 duint64;
+ #else
+-#if defined(_LP64)
++#if defined(_LP64) || defined(__LP64__)
+ typedef long              dint64;
+ typedef unsigned long     duint64;
+ #else
+@@ -210,6 +214,20 @@ typedef unsigned long     duint64;
+   #define _ode_nextafterf(x, y) nextafterf(x, y)
+   #define _ode_nextafter(x, y) nextafter(x, y)
+ #endif
++
++
++#if defined(_MSC_VER) && _MSC_VER < 1700 // Also mind similar defines in ccd/vec3.h 
++/* Define fmin, fmax, fminf, fmaxf which are missing from MSVC (up to VS2008 at least) */
++  static __inline double _ode_fmin(double x, double y) { return __min(x, y); }
++  static __inline double _ode_fmax(double x, double y) { return __max(x, y); }
++  static __inline float _ode_fminf(float x, float y) { return __min(x, y); }
++  static __inline float _ode_fmaxf(float x, float y) { return __max(x, y); }
++#else // #if !defined(_MSC_VER) || _MSC_VER >= 1700
++  #define _ode_fmin(x, y) fmin(x, y)
++  #define _ode_fmax(x, y) fmax(x, y)
++  #define _ode_fminf(x, y) fminf(x, y)
++  #define _ode_fmaxf(x, y) fmaxf(x, y)
++#endif // #if !defined(_MSC_VER) || _MSC_VER >= 1700
+ 
+ 
+ #endif

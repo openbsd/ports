@@ -1,6 +1,3 @@
-BROKEN-sparc64 = uses sse, but fails an assert even without sse
-ONLY_FOR_ARCHS = amd64 i386 # build configuration forces sse
-
 V =		1.0.1
 COMMENT =	third person, 3D physics game
 DISTNAME =	irrlamb-$Vr613-src
@@ -30,6 +27,13 @@ RUN_DEPENDS =	devel/desktop-file-utils
 WRKDIST =	${WRKDIR}/irrlamb-$Vr613
 
 NO_TEST =	Yes
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+SSE_FLAGS =	-msse -mfpmath=sse
+.else
+SSE_FLAGS =
+.endif
+SUBST_VARS +=	SSE_FLAGS
 
 post-extract:
 	rm -rf ${WRKSRC}/src/irrlicht

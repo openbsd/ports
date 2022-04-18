@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -29,7 +29,6 @@ if(WIN32)
+@@ -29,11 +29,10 @@ if(WIN32)
  elseif(UNIX)
  	add_definitions(-DPLATFORM=0)
  	add_definitions(-DLUA_USE_LINUX)
@@ -9,6 +9,11 @@ Index: CMakeLists.txt
  endif()
  
  # compiler flags
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-deprecated-declarations -pedantic -std=gnu++11 -msse -mfpmath=sse")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-deprecated-declarations -pedantic -std=gnu++11 ${SSE_FLAGS}")
+ set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DdNODEBUG -s")
+ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DdNODEBUG -s")
+ 
 @@ -72,7 +71,7 @@ find_package(Threads REQUIRED)
  
  # include paths
