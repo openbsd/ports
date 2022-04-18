@@ -1,16 +1,11 @@
 Index: bindings/python/Makefile.in
 --- bindings/python/Makefile.in.orig
 +++ bindings/python/Makefile.in
-@@ -464,10 +464,10 @@ _clinkgrammar_la_CPPFLAGS = \
- # 2.4.6).  This is bad for Python modules, as they must have an identifier
- # name.
- # On MinGW, Python DLLs end with ".pyd". But Cygwin needs them with ".dll".
--@OS_WIN32_TRUE@AVOID_VERSION = -avoid-version
-+AVOID_VERSION = -avoid-version
- @OS_CYGWIN_FALSE@@OS_WIN32_TRUE@PYMODULE_EXT = -shrext .pyd
- _clinkgrammar_la_LDFLAGS = \
--    -version-info @VERSION_INFO@ $(AVOID_VERSION) \
-+    $(AVOID_VERSION) \
-     $(PYTHON_LDFLAGS) -module -no-undefined $(PYMODULE_EXT)
+@@ -459,6 +459,7 @@ _clinkgrammar_la_CPPFLAGS = \
+    -I$(top_builddir)
  
- _clinkgrammar_la_LIBADD = \
+ @OS_NETBSD_TRUE@AVOID_VERSION = -avoid-version
++AVOID_VERSION = -avoid-version
+ 
+ # On Cygwin and MinGW, a DLL with version is named name-major.EXT with no
+ # symlink to it of an unversioned name (at least up and including libtool

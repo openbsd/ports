@@ -1,3 +1,4 @@
+@bin bin/link-generator
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
@@ -12,6 +13,7 @@ lib/pkgconfig/link-grammar.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
 @so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so
+@man man/man1/link-generator.1
 @man man/man1/link-parser.1
 share/link-grammar/
 share/link-grammar/ady/
@@ -488,6 +490,66 @@ share/link-grammar/ru/words/words.96
 share/link-grammar/ru/words/words.97
 share/link-grammar/ru/words/words.98
 share/link-grammar/ru/words/words.99
+share/link-grammar/th/
+share/link-grammar/th/4.0.affix
+share/link-grammar/th/4.0.constituent-knowledge
+share/link-grammar/th/4.0.dialect
+share/link-grammar/th/4.0.dict
+share/link-grammar/th/4.0.knowledge
+share/link-grammar/th/4.0.regex
+share/link-grammar/th/words/
+share/link-grammar/th/words/words.adj.common
+share/link-grammar/th/words/words.adj.lhs
+share/link-grammar/th/words/words.adv.attrmod
+share/link-grammar/th/words/words.adv.cohesive
+share/link-grammar/th/words/words.adv.common
+share/link-grammar/th/words/words.adv.qf
+share/link-grammar/th/words/words.adverbial.common
+share/link-grammar/th/words/words.any
+share/link-grammar/th/words/words.aux.common
+share/link-grammar/th/words/words.cl.common
+share/link-grammar/th/words/words.cl.noun
+share/link-grammar/th/words/words.cl.verb
+share/link-grammar/th/words/words.conj.common
+share/link-grammar/th/words/words.conj.discont
+share/link-grammar/th/words/words.conj.noun
+share/link-grammar/th/words/words.conj.prep
+share/link-grammar/th/words/words.conj.verb
+share/link-grammar/th/words/words.connector
+share/link-grammar/th/words/words.intj.common
+share/link-grammar/th/words/words.n.attribute
+share/link-grammar/th/words/words.n.common
+share/link-grammar/th/words/words.n.designator
+share/link-grammar/th/words/words.n.prefix
+share/link-grammar/th/words/words.n.proper
+share/link-grammar/th/words/words.n.title
+share/link-grammar/th/words/words.neg.lhs
+share/link-grammar/th/words/words.neg.rhs
+share/link-grammar/th/words/words.nominal.common
+share/link-grammar/th/words/words.num.common
+share/link-grammar/th/words/words.num.movable
+share/link-grammar/th/words/words.num.ordinal
+share/link-grammar/th/words/words.ordmark
+share/link-grammar/th/words/words.part.common
+share/link-grammar/th/words/words.passmark
+share/link-grammar/th/words/words.prep-n.n
+share/link-grammar/th/words/words.prep-n.nv
+share/link-grammar/th/words/words.prep-n.v
+share/link-grammar/th/words/words.prep-v.n
+share/link-grammar/th/words/words.prep-v.nv
+share/link-grammar/th/words/words.prep-v.v
+share/link-grammar/th/words/words.prep.lw
+share/link-grammar/th/words/words.prep.n
+share/link-grammar/th/words/words.prep.nv
+share/link-grammar/th/words/words.prep.v
+share/link-grammar/th/words/words.pro.common
+share/link-grammar/th/words/words.qf.common
+share/link-grammar/th/words/words.qf.lhs
+share/link-grammar/th/words/words.qf.rhs
+share/link-grammar/th/words/words.relpro.common
+share/link-grammar/th/words/words.sclmark
+share/link-grammar/th/words/words.v.attribute
+share/link-grammar/th/words/words.v.common
 share/link-grammar/tr/
 share/link-grammar/tr/4.0.affix
 share/link-grammar/tr/4.0.constituent-knowledge

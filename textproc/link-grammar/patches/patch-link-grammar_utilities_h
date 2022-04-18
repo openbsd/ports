@@ -1,7 +1,7 @@
 Index: link-grammar/utilities.h
 --- link-grammar/utilities.h.orig
 +++ link-grammar/utilities.h
-@@ -161,16 +161,20 @@ int strncasecmp(const char *s1, const char *s2, size_t
+@@ -165,16 +165,20 @@ int strncasecmp(const char *s1, const char *s2, size_t
  /* Cygwin < 2.6.0 doesn't have locale_t. */
  #ifdef HAVE_LOCALE_T
  locale_t newlocale_LC_CTYPE(const char *);
@@ -10,8 +10,7 @@ Index: link-grammar/utilities.h
 +#include <cstddef>
 +#include <support/xlocale/__nop_locale_mgmt.h>
  #else
--typedef int locale_t;
-+typedef void *locale_t;
+ typedef void *locale_t;
 +#define freelocale(l)
 +#endif /* HAVE_LOCALE_T */
  #define iswupper_l(c, l) iswupper(c)
