@@ -1,8 +1,7 @@
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
-GNOME_VERSION =		3.22.12
-REVISION =		0
+GNOME_VERSION =		3.22.22
 
 # override gnome MODULE
 MASTER_SITES =		https://gitlab.gnome.org/GNOME/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
@@ -20,7 +19,7 @@ MODULES =		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+MODGNOME_LDFLAGS =	-L${X11BASE}/lib
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache yelp
 
 CFLAGS +=		-Wno-strict-prototypes
