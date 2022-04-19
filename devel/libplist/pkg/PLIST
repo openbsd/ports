@@ -15,11 +15,12 @@ include/plist/Structure.h
 include/plist/Uid.h
 include/plist/plist++.h
 include/plist/plist.h
-@static-lib lib/libplist++.a
-lib/libplist++.la
-@lib lib/libplist++.so.${LIBplist++_VERSION}
-@static-lib lib/libplist.a
-lib/libplist.la
-@lib lib/libplist.so.${LIBplist_VERSION}
-lib/pkgconfig/libplist++.pc
-lib/pkgconfig/libplist.pc
+@static-lib lib/libplist++-2.0.a
+lib/libplist++-2.0.la
+@lib lib/libplist++-2.0.so.${LIBplist++-2.0_VERSION}
+@static-lib lib/libplist-2.0.a
+lib/libplist-2.0.la
+@lib lib/libplist-2.0.so.${LIBplist-2.0_VERSION}
+lib/pkgconfig/libplist++-2.0.pc
+lib/pkgconfig/libplist-2.0.pc
+@man man/man1/plistutil.1

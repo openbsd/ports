@@ -1,10 +1,10 @@
-COMMENT =		library to handle Apple Property List format
+COMMENT =		library to handle Apple Property List files
 
-DISTNAME =		libplist-1.12
-REVISION =		2
+V=			2.2.0
+DISTNAME =		libplist-${V}
 
-SHARED_LIBS +=  plist                2.0      # 3.0
-SHARED_LIBS +=  plist++              2.0      # 3.0
+SHARED_LIBS +=  plist-2.0            0.0      # 6.0
+SHARED_LIBS +=  plist++-2.0          0.0      # 6.0
 
 CATEGORIES =		devel audio
 
@@ -13,14 +13,10 @@ HOMEPAGE =		https://www.libimobiledevice.org
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m xml2 z
-
-# for 2.2.0, tar.bz2 (proper tarball) now at github
-MASTER_SITES =		${HOMEPAGE}/downloads/
+MASTER_SITES =		https://github.com/libimobiledevice/libplist/releases/download/${V}/
 EXTRACT_SUFX =		.tar.bz2
 
-LIB_DEPENDS =		converters/libiconv \
-			textproc/libxml
+WANTLIB += ${COMPILER_LIBCXX} c m
 
 COMPILER =		base-clang ports-gcc
 

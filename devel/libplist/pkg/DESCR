@@ -1,1 +1,2 @@
-Library for handling Apple binary and XML property lists.
+The project provides an interface to read and write plist files in binary or
+XML format alongside a command-line utility named `plistutil`.
