@@ -19,7 +19,7 @@ MAKE_ENV =	LC_ALL=en_US.UTF-8
 
 MODULES =		devel/cabal
 MODCABAL_STEM =		hledger
-MODCABAL_VERSION =	1.24.1
+MODCABAL_VERSION =	1.25
 
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/hledger.1 ${PREFIX}/man/man1
@@ -43,14 +43,14 @@ MODCABAL_MANIFEST	= \
 	base-orphans	0.8.6	0	\
 	bifunctors	5.5.11	1	\
 	blaze-builder	0.4.2.2	1	\
-	blaze-html	0.9.1.2	1	\
-	blaze-markup	0.8.2.8	1	\
+	blaze-html	0.9.1.2	2	\
+	blaze-markup	0.8.2.8	2	\
 	cabal-doctest	1.0.9	0	\
 	call-stack	0.4.0	0	\
 	case-insensitive	1.2.1.0	0	\
 	cassava	0.5.2.0	7	\
 	cassava-megaparsec	2.0.4	0	\
-	clock	0.8.2	0	\
+	clock	0.8.3	0	\
 	cmdargs	0.10.21	0	\
 	colour	2.3.6	0	\
 	comonad	5.0.8	1	\
@@ -72,7 +72,7 @@ MODCABAL_MANIFEST	= \
 	githash	0.1.6.2	0	\
 	hashable	1.4.0.2	0	\
 	hashtables	1.3	0	\
-	hledger-lib	1.24.1	0	\
+	hledger-lib	1.25	0	\
 	html	1.0.1.2	0	\
 	indexed-traversable	0.1.2	1	\
 	indexed-traversable-instances	0.1.1	0	\
@@ -84,7 +84,7 @@ MODCABAL_MANIFEST	= \
 	microlens-th	0.4.3.10	0	\
 	mmorph	1.2.0	1	\
 	old-locale	1.0.0.7	2	\
-	optparse-applicative	0.16.1.0	2	\
+	optparse-applicative	0.17.0.0	0	\
 	parser-combinators	1.3.0	0	\
 	pretty-simple	4.0.0.0	0	\
 	prettyprinter	1.7.1	0	\
@@ -92,12 +92,12 @@ MODCABAL_MANIFEST	= \
 	primitive	0.7.3.0	0	\
 	random	1.2.1	0	\
 	regex-base	0.94.0.2	0	\
-	regex-tdfa	1.3.1.1	2	\
+	regex-tdfa	1.3.1.2	0	\
 	safe	0.3.19	0	\
 	scientific	0.3.7.0	2	\
 	semialign	1.2.0.1	1	\
 	semigroupoids	5.3.7	0	\
-	shakespeare	2.0.25.1	0	\
+	shakespeare	2.0.26	0	\
 	split	0.2.3.4	2	\
 	splitmix	0.1.0.4	0	\
 	strict	0.4.0.1	4	\
@@ -116,7 +116,7 @@ MODCABAL_MANIFEST	= \
 	transformers-compat	0.7.1	1	\
 	uglymemo	0.1.0.1	0	\
 	unbounded-delays	0.1.1.1	0	\
-	unordered-containers	0.2.16.0	0	\
+	unordered-containers	0.2.17.0	0	\
 	utf8-string	1.0.2	0	\
 	utility-ht	0.0.16	0	\
 	uuid-types	1.0.5	2	\
