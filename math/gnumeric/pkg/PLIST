@@ -329,8 +329,6 @@ lib/pkgconfig/libspreadsheet-${GNUMERIC_API_VERSION}.pc
 @man man/man1/ssdiff.1
 @man man/man1/ssgrep.1
 @man man/man1/ssindex.1
-share/appdata/
-share/appdata/gnumeric.appdata.xml
 share/applications/gnumeric.desktop
 share/gir-1.0/Gnm-${GNUMERIC_API_VERSION}.gir
 share/glib-2.0/schemas/org.gnome.gnumeric.dialogs.gschema.xml
@@ -2357,6 +2355,7 @@ share/locale/zh_HK/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/zh_HK/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
+share/metainfo/gnumeric.appdata.xml
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
