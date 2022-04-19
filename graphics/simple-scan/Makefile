@@ -1,7 +1,7 @@
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
-GNOME_VERSION=		42.0
+GNOME_VERSION=		42.1
 
 CATEGORIES=		graphics
 
