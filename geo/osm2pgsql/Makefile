@@ -1,9 +1,8 @@
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		1.4.2
+GH_TAGNAME =		1.6.0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		openstreetmap
-REVISION =		1
 
 CATEGORIES =		geo databases
 
@@ -30,7 +29,10 @@ LIB_DEPENDS =		databases/postgresql	\
 BUILD_DEPENDS =		devel/libtool \
 			devel/fmt \
 			devel/protozero \
-			geo/libosmium>=2.15.6
+			geo/libosmium>=2.17.0
+
+RUN_DEPENDS +=		geo/py-osmium${MODPY_FLAVOR} \
+			databases/py-psycopg2${MODPY_FLAVOR}
 
 # postgresql,-contrib is needed for hstore extension
 TEST_DEPENDS =		databases/py-psycopg2	\
