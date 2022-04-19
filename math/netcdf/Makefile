@@ -33,7 +33,8 @@ MASTER_SITES=		https://downloads.unidata.ucar.edu/netcdf-c/$V/
 MODULES=		fortran
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
-			CPPFLAGS="-I${LOCALBASE}/include -DH5_USE_110_API"
+			CPPFLAGS="-I${LOCALBASE}/include -DH5_USE_110_API" \
+			ac_cv_lib_zip_zip_open=
 
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-doxygen \
