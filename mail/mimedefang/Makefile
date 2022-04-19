@@ -1,7 +1,7 @@
 COMMENT=	mailfilter to identify and mark spam
 
 DISTNAME=	mimedefang-2.86
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail
 

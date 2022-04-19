@@ -3,7 +3,7 @@
 @pkgpath mail/cyrus-imapd,-perl
 @pkgpath mail/cyrus-imapd,drac
 @newgroup _cyrus:543
-@newuser _cyrus:543:_cyrus:daemon:Cyrus Account:/nonexistent:/sbin/nologin
+@newuser _cyrus:543:_cyrus::Cyrus Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/cyrus_imapd
 bin/cyradm
 cyrus/

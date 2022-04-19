@@ -1,5 +1,5 @@
 @newgroup _nomad:819
-@newuser _nomad:819:_nomad:daemon:Nomad Agent:/nonexistent:/sbin/nologin
+@newuser _nomad:819:_nomad::Nomad Agent:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/nomad
 @bin bin/nomad
 share/examples/nomad/

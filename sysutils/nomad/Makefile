@@ -12,6 +12,7 @@ VERSION=		1.2.6
 # and running "go mod tidy" + "go mod vendor"
 DISTNAME=		nomad-vendored-${VERSION}
 PKGNAME=		nomad-${VERSION}
+REVISION=		0
 
 CATEGORIES=		sysutils
 

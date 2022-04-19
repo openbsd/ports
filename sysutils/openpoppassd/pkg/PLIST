@@ -1,5 +1,5 @@
 @newgroup _poppassd:595
-@newuser _poppassd:595:595:daemon:Password change Daemon:/var/empty:/sbin/nologin
+@newuser _poppassd:595:595::Password change Daemon:/var/empty:/sbin/nologin
 @bin libexec/openpoppassd
 @man man/man8/openpoppassd.8
 @rcscript ${RCDIR}/openpoppassd

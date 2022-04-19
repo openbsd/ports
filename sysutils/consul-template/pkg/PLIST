@@ -1,5 +1,5 @@
 @newgroup _consul-template:781
-@newuser _consul-template:781:_consul-template:daemon:Consul Template user:/nonexistent:/sbin/nologin
+@newuser _consul-template:781:_consul-template::Consul Template user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/consul_template
 @bin bin/consul-template
 share/doc/pkg-readmes/${PKGSTEM}

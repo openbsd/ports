@@ -1,7 +1,7 @@
 @pkgpath net/gnugk,mysql
 @pkgpath net/gnugk,pgsq
 @newgroup _gnugk:586
-@newuser _gnugk:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
+@newuser _gnugk:586:586::Gatekeeper Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/gnugk/*
 @rcscript ${RCDIR}/gnugk
 @bin bin/addpasswd

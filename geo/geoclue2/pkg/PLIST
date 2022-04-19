@@ -1,7 +1,7 @@
 @conflict geoclue-*
 @pkgpath geo/geoclue
 @newgroup _geoclue:731
-@newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
+@newuser _geoclue:731:_geoclue::GeoClue service user:/nonexistent:/sbin/nologin
 include/libgeoclue-2.0/
 include/libgeoclue-2.0/gclue-client.h
 include/libgeoclue-2.0/gclue-enum-types.h

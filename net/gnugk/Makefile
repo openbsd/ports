@@ -7,7 +7,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
 PKGNAME=		gnugk-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net telephony
 

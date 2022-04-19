@@ -1,7 +1,8 @@
 COMMENT=		daemon for changing passwords
 
 DISTNAME=		openpoppassd-1.1
-REVISION =		11
+REVISION =		12
+
 FIX_EXTRACT_PERMISSIONS=Yes
 
 CATEGORIES=		sysutils mail

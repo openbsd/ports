@@ -1,6 +1,6 @@
 @comment non-volatile homedir needed for sa-learn(1), MD sets user_dir to QUARANTINEDIR
 @newgroup _mdefang:570
-@newuser _mdefang:570:_mdefang:daemon:MIMEDefang User:/var/spool/MD-Quarantine:/sbin/nologin
+@newuser _mdefang:570:_mdefang::MIMEDefang User:/var/spool/MD-Quarantine:/sbin/nologin
 @extraunexec rm -rf /var/spool/MIMEDefang/*
 @extraunexec rm -rf /var/spool/MD-Quarantine/*
 @rcscript ${RCDIR}/mimedefang
