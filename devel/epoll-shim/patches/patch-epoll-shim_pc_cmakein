@@ -1,0 +1,10 @@
+Index: epoll-shim.pc.cmakein
+--- epoll-shim.pc.cmakein.orig
++++ epoll-shim.pc.cmakein
+@@ -8,5 +8,5 @@ URL: https://github.com/jiixyj/epoll-shim
+ Description: Small epoll implementation using kqueue
+ Version: 
+ Libs: -L${libdir} -lepoll-shim
+-Libs.private: -pthread -lrt
++Libs.private: -pthread
+ Cflags: -I${includedir}/libepoll-shim
