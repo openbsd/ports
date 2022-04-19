@@ -1,0 +1,40 @@
+From 46d147703337b5ab9e81266869e41c89e6481e08 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Wed, 17 Jun 2020 11:52:43 +0200
+Subject: [PATCH] configure.ac: Add support for libplist 2.2
+
+- TagLib is only used by test-rebuild-db
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -42,7 +42,9 @@ AC_CHECK_FUNCS([localtime_r])
+ AC_CHECK_MEMBERS([struct tm.tm_gmtoff],,,[#include <time.h>])
+ dnl sqlite3 is needed for newer ipod models (nano5g), and libplist is needed 
+ dnl by libgpod sqlite code
+-PKG_CHECK_MODULES(LIBGPOD, glib-2.0 >= 2.16.0 gobject-2.0 sqlite3 libplist >= 1.0 gmodule-2.0)
++LIBPLIST_DEP=libplist
++PKG_CHECK_EXISTS(libplist-2.0, LIBPLIST_DEP=libplist-2.0)
++PKG_CHECK_MODULES(LIBGPOD, glib-2.0 >= 2.16.0 gobject-2.0 sqlite3 $LIBPLIST_DEP >= 1.0 gmodule-2.0)
+ 
+ dnl ***************************************************
+ dnl The following functions are only available starting
+@@ -204,18 +206,6 @@ AC_ARG_WITH(libgpod-blob-dir, [AC_HELP_STRING([--with-
+             [with_libgpod_blob_dir='${libdir}/libgpod'])
+ LIBGPOD_BLOB_DIR=$with_libgpod_blob_dir
+ AC_SUBST(LIBGPOD_BLOB_DIR)
+-
+-dnl **************************************************
+-dnl * TagLib is only used by test-rebuild-db 
+-dnl **************************************************
+-PKG_CHECK_MODULES(TAGLIB, taglib, have_taglib=yes, have_taglib=no)
+-if test x"$have_taglib" = xyes; then
+-   AH_TEMPLATE([HAVE_TAGLIB], [Whether TagLib is installed, it's only used in a test program])
+-   AC_DEFINE_UNQUOTED(HAVE_TAGLIB, 1)
+-fi
+-AC_SUBST(TAGLIB_CFLAGS)
+-AC_SUBST(TAGLIB_LIBS)
+-AM_CONDITIONAL(HAVE_TAGLIB, test x"$have_taglib" = xyes)
+ 
+ dnl **************************************************
+ dnl * libxml is used to parse the plist files (aka SysInfoExtended)

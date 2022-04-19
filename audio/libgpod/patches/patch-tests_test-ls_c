@@ -1,0 +1,17 @@
+64bit time_t
+
+Index: tests/test-ls.c
+--- tests/test-ls.c.orig
++++ tests/test-ls.c
+@@ -58,9 +58,9 @@ display_recently_played (Itdb_iTunesDB *db)
+             strftime (date, sizeof (date), "%F %H:%M:%S",
+                       localtime (&track_time));
+             g_print ("\tlocal: %s\n", date);
+-            g_print ("track: %ld ", track_time);
++            g_print ("track: %lld ", track_time);
+             time (&track_time);
+-            g_print ("current: %ld\n", track_time);
++            g_print ("current: %lld\n", track_time);
+             g_print ("\n");
+         }
+     }
