@@ -1,10 +1,14 @@
 @pkgpath editors/emacs21,-main
+share/applications/emacs-mail.desktop
 share/applications/emacs.desktop
+share/applications/emacsclient-mail.desktop
+share/applications/emacsclient.desktop
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/24x24/apps/emacs.png
 share/icons/hicolor/32x32/apps/emacs.png
 share/icons/hicolor/48x48/apps/emacs.png
+share/icons/hicolor/scalable/apps/emacs.ico
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document23.svg

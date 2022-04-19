@@ -1,8 +1,7 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-VERSION=		27.2
+VERSION=		28.1
 DISTNAME=		emacs-${VERSION}
-REVISION=		4
 
 CATEGORIES=		editors
 
@@ -70,7 +69,7 @@ RUN_DEPENDS+=		devel/desktop-file-utils \
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d
-WANTLIB += ICE SM X11 X11-xcb Xaw3d Xext Xfixes Xft Xinerama Xmu
+WANTLIB += ICE SM X11 X11-xcb Xaw3d Xext Xfixes Xinerama Xmu
 WANTLIB += Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig freetype
 WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0 harfbuzz
 WANTLIB += intl jpeg lcms2 m17n-core m17n-flt otf png rsvg-2 tiff
