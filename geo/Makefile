@@ -53,6 +53,7 @@
      SUBDIR += py-fiona,python3
      SUBDIR += py-laspy,python3
      SUBDIR += py-mercantile,python3
+     SUBDIR += py-osmium,python3
      SUBDIR += py-owslib,python3
      SUBDIR += py-planet,python3
      SUBDIR += py-proj,python3
