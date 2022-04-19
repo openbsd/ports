@@ -3,6 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 R=		12751
 V=		20.03
+REVISION=	0
 
 DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
