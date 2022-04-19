@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: pkg_check-version,v 1.3 2021/06/25 15:35:30 abieber Exp $
+# $OpenBSD: pkg_check-version,v 1.4 2022/04/19 14:10:31 espie Exp $
 #
 # Copyright (c) 2021 Marc Espie <espie@openbsd.org>
 #
@@ -78,6 +78,7 @@ sub human_print
 sub add_to_stems
 {
 	my ($self, $h) = @_;
+	# XXX note that we use "to_pattern", so the "stem" includes flavors"
 	push(@{$h->{$self->to_pattern}}, $self);
 }
 
@@ -129,9 +130,30 @@ sub parse_and_run
 		my $h = $state->opt('v') ?
 		    "#1 sorts as (older to newer): #2" :
 		    "#1 sorted: #2";
-		$state->say($h, $stem,
-		    join(' ', map {$_->to_string} 
-		    	sort {$a->compare($b)} @$list));
+		# XXX some versions are actually not comparable (compare
+		# will return undef). Sort will try to do "something" anyway.
+
+		my @sorted = sort {$a->compare($b)} @$list;
+		$state->say($h, $stem, join(' ', map {$_->to_string} @sorted));
+
+		# but the ordering relation is still a valid order through
+		# partial, so we can check the result on adjacent pairs !
+		# (so it's still linear)
+
+		# if we don't find any discrepancy, then we found a total
+		# ordering for our list !
+		my ($older, $newer);
+		while (@sorted != 0) {
+			$older //= $newer;
+			$newer = shift @sorted;
+			next if !defined $older;
+			my $r = $older->compare($newer);
+			next if !defined $r;
+			$state->errsay(
+			    "WARNING: #1 and #2 are actually not comparable",
+			    $older->to_string, $newer->to_string);
+			$rc = 1;
+		}
 	}
 	return $rc;
 }
