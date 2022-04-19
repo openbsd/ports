@@ -4,7 +4,7 @@ GH_ACCOUNT=	corbosman
 GH_PROJECT=	dovecot_ident
 GH_TAGNAME=	2.2
 PKGNAME=	rcube-${DISTNAME}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	mail www
 
@@ -21,7 +21,7 @@ PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/roundcubemail/plugins
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	mail/roundcubemail>=1.1
+RUN_DEPENDS=	mail/roundcubemail>=1.5
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/dovecot_ident

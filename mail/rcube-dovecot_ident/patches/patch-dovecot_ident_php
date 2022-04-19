@@ -1,0 +1,15 @@
+https://github.com/roundcube/roundcubemail/issues/5336
+
+Index: dovecot_ident.php
+--- dovecot_ident.php.orig
++++ dovecot_ident.php
+@@ -17,8 +17,7 @@ class dovecot_ident extends rcube_plugin 
+ 
+   function add_ident($args)
+   {
+-    $args['ident'] = $args['ident'] ? array_merge($args['ident'], array('x-originating-ip' => $_SERVER['REMOTE_ADDR']))
+-									: array('x-originating-ip' => $_SERVER['REMOTE_ADDR']);
++    $args['preauth_ident'] = array_key_exists('preauth_ident',$args) ? array_merge($args['preauth_ident'], array('x-originating-ip' => $_SERVER['REMOTE_ADDR'])) : array('x-originating-ip' => $_SERVER['REMOTE_ADDR']);
+     return $args;
+   }
+ }
