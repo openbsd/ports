@@ -1,0 +1,14 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -113,8 +113,8 @@ class CMakeBuild(build_ext):
+         elif os.path.exists(os.path.join(BASEDIR, 'contrib', 'protozero', 'include', 'protozero', 'version.hpp')):
+             cmake_args += ['-DPROTOZERO_INCLUDE_DIR={}/contrib/protozero/include'.format(BASEDIR)]
+ 
+-        if 'PYBIND11_PREFIX' in env:
+-            cmake_args += ['-DPYBIND11_PREFIX={}'.format(env['PYBIND11_PREFIX'])]
++        if 'pybind11_DIR' in env:
++            cmake_args += ['-Dpybind11_DIR={}'.format(env['pybind11_DIR'])]
+         elif os.path.exists(os.path.join(BASEDIR, 'contrib', 'pybind11')):
+             cmake_args += ['-DPYBIND11_PREFIX={}/contrib/pybind11'.format(BASEDIR)]
+ 
