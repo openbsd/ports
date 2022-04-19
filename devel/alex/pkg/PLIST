@@ -2,21 +2,8 @@ bin/${MODCABAL_STEM}
 libexec/cabal/
 @bin libexec/cabal/${MODCABAL_STEM}
 share/${PKGNAME}/
-share/${PKGNAME}/AlexTemplate
-share/${PKGNAME}/AlexTemplate-debug
-share/${PKGNAME}/AlexTemplate-ghc
-share/${PKGNAME}/AlexTemplate-ghc-debug
-share/${PKGNAME}/AlexTemplate-ghc-nopred
-share/${PKGNAME}/AlexWrapper-basic
-share/${PKGNAME}/AlexWrapper-basic-bytestring
-share/${PKGNAME}/AlexWrapper-gscan
-share/${PKGNAME}/AlexWrapper-monad
-share/${PKGNAME}/AlexWrapper-monad-bytestring
-share/${PKGNAME}/AlexWrapper-monadUserState
-share/${PKGNAME}/AlexWrapper-monadUserState-bytestring
-share/${PKGNAME}/AlexWrapper-posn
-share/${PKGNAME}/AlexWrapper-posn-bytestring
-share/${PKGNAME}/AlexWrapper-strict-bytestring
+share/${PKGNAME}/AlexTemplate.hs
+share/${PKGNAME}/AlexWrappers.hs
 share/doc/${MODCABAL_STEM}/
 @comment share/doc/${PKGNAME}/
 @comment share/doc/${PKGNAME}/LICENSE
