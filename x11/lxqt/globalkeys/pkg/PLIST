@@ -18,8 +18,8 @@ include/lxqt-globalkeys/lxqt-globalkeys.h
 include/lxqt-globalkeys/lxqtglobalkeys.h
 @lib lib/liblxqt-globalkeys-ui.so.${LIBlxqt-globalkeys-ui_VERSION}
 @lib lib/liblxqt-globalkeys.so.${LIBlxqt-globalkeys_VERSION}
-libdata/pkgconfig/lxqt-globalkeys-ui.pc
-libdata/pkgconfig/lxqt-globalkeys.pc
+lib/pkgconfig/lxqt-globalkeys-ui.pc
+lib/pkgconfig/lxqt-globalkeys.pc
 share/applications/lxqt-config-globalkeyshortcuts.desktop
 share/cmake/lxqt-globalkeys/
 share/cmake/lxqt-globalkeys-ui/

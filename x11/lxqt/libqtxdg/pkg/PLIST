@@ -31,10 +31,10 @@ include/qt5xdgiconloader/3.8.0/private/xdgiconloader/xdgiconloader_p.h
 include/qt5xdgiconloader/xdgiconloader_export.h
 @lib lib/libQt5Xdg.so.${LIBQt5Xdg_VERSION}
 @lib lib/libQt5XdgIconLoader.so.${LIBQt5XdgIconLoader_VERSION}
+lib/pkgconfig/Qt5Xdg.pc
+lib/pkgconfig/Qt5XdgIconLoader.pc
 @so lib/qt5/plugins/iconengines/libQt5XdgIconPlugin.so
-libdata/pkgconfig/
-libdata/pkgconfig/Qt5Xdg.pc
-libdata/pkgconfig/Qt5XdgIconLoader.pc
+share/cmake/
 share/cmake/qt5xdg/
 share/cmake/qt5xdg/qt5xdg-config-version.cmake
 share/cmake/qt5xdg/qt5xdg-config.cmake

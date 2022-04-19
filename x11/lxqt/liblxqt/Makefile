@@ -1,6 +1,7 @@
 COMMENT =	core utility library for all LXQt components
 
 NAME =		liblxqt
+REVISION =	0
 
 SHARED_LIBS +=  lxqt                      1.0 # 1.0.0
 

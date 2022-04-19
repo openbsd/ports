@@ -1,6 +1,7 @@
 COMMENT =	daemon used to register global keyboard shortcuts
 
 NAME =		lxqt-globalkeys
+REVISION =	0
 
 SHARED_LIBS +=  lxqt-globalkeys-ui        0.0 # 1.00
 SHARED_LIBS +=  lxqt-globalkeys           0.0 # 1.00

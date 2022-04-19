@@ -13,8 +13,8 @@ include/sysstat-qt5/netstat.h
 include/sysstat-qt5/sysstat_global.h
 include/sysstat-qt5/version.h
 @lib lib/libsysstat-qt5.so.${LIBsysstat-qt5_VERSION}
-libdata/pkgconfig/
-libdata/pkgconfig/sysstat-qt5.pc
+lib/pkgconfig/sysstat-qt5.pc
+share/cmake/
 share/cmake/sysstat-qt5/
 share/cmake/sysstat-qt5/sysstat-qt5-config-version.cmake
 share/cmake/sysstat-qt5/sysstat-qt5-config.cmake

@@ -42,7 +42,7 @@ include/lxqt/LXQt/lxqtsettings.h
 include/lxqt/LXQt/lxqtsingleapplication.h
 include/lxqt/LXQt/lxqttranslator.h
 @lib lib/liblxqt.so.${LIBlxqt_VERSION}
-libdata/pkgconfig/lxqt.pc
+lib/pkgconfig/lxqt.pc
 share/cmake/lxqt/
 share/cmake/lxqt/lxqt-config-version.cmake
 share/cmake/lxqt/lxqt-config.cmake

@@ -13,8 +13,7 @@ lib/cmake/qtermwidget5/qtermwidget5-config.cmake
 lib/cmake/qtermwidget5/qtermwidget5-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/qtermwidget5/qtermwidget5-targets.cmake
 @lib lib/libqtermwidget5.so.${LIBqtermwidget5_VERSION}
-libdata/pkgconfig/
-libdata/pkgconfig/qtermwidget5.pc
+lib/pkgconfig/qtermwidget5.pc
 share/qtermwidget5/
 share/qtermwidget5/color-schemes/
 share/qtermwidget5/color-schemes/BlackOnLightYellow.colorscheme

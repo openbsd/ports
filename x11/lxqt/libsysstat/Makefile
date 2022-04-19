@@ -1,6 +1,7 @@
 COMMENT =	library used to query system info and statistics
 
 VERSION =	0.4.6
+REVISION =	0
 
 NAME =		libsysstat
 

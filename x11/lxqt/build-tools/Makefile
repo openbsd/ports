@@ -1,7 +1,7 @@
 COMMENT =	various packaging tools and scripts for LXQt applications
 
 VERSION =	0.10.0
-REVISION =	0
+REVISION =	1
 
 NAME =		lxqt-build-tools
 
