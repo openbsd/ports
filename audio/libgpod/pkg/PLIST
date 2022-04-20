@@ -33,7 +33,6 @@ share/gtk-doc/html/libgpod/photodb.html
 share/gtk-doc/html/libgpod/right.png
 share/gtk-doc/html/libgpod/style.css
 share/gtk-doc/html/libgpod/up.png
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/libgpod.mo
 share/locale/es/LC_MESSAGES/libgpod.mo
 share/locale/fr/LC_MESSAGES/libgpod.mo

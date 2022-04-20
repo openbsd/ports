@@ -1,6 +1,7 @@
 COMMENT=	library to access the contents of an iPod
 
 DISTNAME=	libgpod-0.8.3
+REVISION=	0
 
 SHARED_LIBS +=  gpod                 722.0    # 7.2
 
@@ -38,8 +39,5 @@ CONFIGURE_ARGS=	--without-hal \
 		--without-python \
 		--disable-pygobject \
 		--disable-udev
-
-post-install:
-	rm -r ${WRKINST}/lib/
 
 .include <bsd.port.mk>
