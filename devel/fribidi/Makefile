@@ -1,6 +1,6 @@
 COMMENT=		library implementing the Unicode Bidirectional Algorithm
 
-V=			1.0.11
+V=			1.0.12
 
 GH_PROJECT=		fribidi
 GH_ACCOUNT=		fribidi
