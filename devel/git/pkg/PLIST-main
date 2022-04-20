@@ -80,11 +80,13 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-format-patch
 @bin libexec/git/git-fsck
 @bin libexec/git/git-fsck-objects
+@bin libexec/git/git-fsmonitor--daemon
 @bin libexec/git/git-gc
 @bin libexec/git/git-get-tar-commit-id
 @bin libexec/git/git-grep
 @bin libexec/git/git-hash-object
 @bin libexec/git/git-help
+@bin libexec/git/git-hook
 @bin libexec/git/git-http-backend
 @bin libexec/git/git-http-fetch
 @bin libexec/git/git-http-push
@@ -266,11 +268,13 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-format-patch.1
 @man man/man1/git-fsck-objects.1
 @man man/man1/git-fsck.1
+@man man/man1/git-fsmonitor--daemon.1
 @man man/man1/git-gc.1
 @man man/man1/git-get-tar-commit-id.1
 @man man/man1/git-grep.1
 @man man/man1/git-hash-object.1
 @man man/man1/git-help.1
+@man man/man1/git-hook.1
 @man man/man1/git-http-backend.1
 @man man/man1/git-http-fetch.1
 @man man/man1/git-http-push.1
