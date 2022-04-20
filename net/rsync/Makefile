@@ -1,11 +1,9 @@
 COMMENT =	mirroring/synchronization over low bandwidth links
 
 DISTNAME =	rsync-3.2.3
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
-
-MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 FLAVORS =	iconv
 FLAVOR ?=
