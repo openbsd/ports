@@ -1,9 +1,9 @@
-COMMENT =	exceptions to pkg_add rules
+COMMENT =	exceptions to pkg_add rules and cache
 CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-5.14
+PKGNAME =	quirks-5.15
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

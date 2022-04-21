@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: list_update_info,v 1.4 2022/04/13 10:00:27 espie Exp $
+# $OpenBSD: list_update_info,v 1.5 2022/04/21 15:18:58 espie Exp $
 #
 # Copyright (c) 2022 Marc Espie <espie@openbsd.org>
 #
@@ -43,18 +43,25 @@ use OpenBSD::AddCreateDelete;
 use OpenBSD::PackingList;
 use OpenBSD::PackageRepository;
 use File::Path;
+use Digest::SHA;
 
 sub handle_file
 {
 	my ($self, $f) = @_;
 	my $plist = OpenBSD::PackingList->fromfile($f,
 	    \&OpenBSD::PackingList::UpdateInfoOnly);
-	# we can't write sensible information for always-update, so 
-	# don't bother
-	return if $plist->has('always-update');
-
-	# TODO think about generating a "total size" annotation ?
-	$plist->write_for_locate($plist->pkgname, $self->{output});
+	return if $plist->pkgname =~ m/^quirks\-/;
+	if ($plist->has('always-update')) {
+		my $content;
+		open my $fh, '>', \$content;
+		$plist->write($fh);
+		close $fh;
+		my $digest = Digest::SHA::sha256_base64(\$content);
+		print {$self->{output}} $plist->pkgname, ':@option always-update ', $digest, "\n";
+	} else {
+		# TODO think about generating a "total size" annotation ?
+		$plist->write_for_locate($plist->pkgname, $self->{output});
+	}
 }
 
 sub handle_options
