@@ -1,13 +1,13 @@
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 riscv64
 
 COMMENT =	tiny C compiler
-DISTNAME =	tcc-0.9.27.20220220
+DISTNAME =	tcc-0.9.27.20220419
 CATEGORIES =	lang
 
 # 0.9.27 release pre-dates OpenBSD support; use GH_COMMIT
 GH_ACCOUNT =	TinyCC
 GH_PROJECT =	tinycc
-GH_COMMIT =	7225282ea58a72fdfa1630d12ed065743e091362
+GH_COMMIT =	5a3d1024d9299510a20be89f1a02c342e4ccc6e6
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
