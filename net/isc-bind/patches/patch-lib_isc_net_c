@@ -17,7 +17,7 @@ Index: lib/isc/net.c
  #ifdef IPV6_V6ONLY
  	int s, on;
  	char strbuf[ISC_STRERRORSIZE];
-@@ -671,7 +678,7 @@ try_dscp_v6(void) {
+@@ -670,7 +677,7 @@ try_dscp_v6(void) {
  		dscp_result |= ISC_NET_DSCPSETV6;
  	}
  
