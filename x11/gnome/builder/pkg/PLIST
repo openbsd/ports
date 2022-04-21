@@ -360,7 +360,7 @@ lib/gnome-builder/plugins/vala_langserv.py
 lib/gnome-builder/plugins/vala_pack_plugin.py
 lib/gnome-builder/plugins/waf.plugin
 lib/gnome-builder/plugins/waf_plugin.py
-lib/pkgconfig/gnome-builder-42.0.pc
+lib/pkgconfig/gnome-builder-42.1.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ide.py
 @bin libexec/gnome-builder-clang
 @bin libexec/gnome-builder-git
