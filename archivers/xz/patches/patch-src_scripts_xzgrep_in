@@ -1,6 +1,8 @@
+CVE-2022-1271
 https://tukaani.org/xz/xzgrep-ZDI-CAN-16587.patch
 
-CVE-2022-1271
+Replace "don't" with "do not" to work around a ksh bug.
+/usr/local/bin/xzgrep[221]: no closing quote
 
 Index: src/scripts/xzgrep.in
 --- src/scripts/xzgrep.in.orig
@@ -28,7 +30,7 @@ Index: src/scripts/xzgrep.in
        esac
 -      sed_script="s|^|$i:|"
  
-+      # $i already ends with a colon so don't add it here.
++      # $i already ends with a colon so do not add it here.
 +      sed_script="s|^|$i|"
 +
        # Fail if grep or sed fails.
