@@ -2,7 +2,7 @@ COMMENT =	provides an API to access LDAP directory servers for Python
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
-MODPY_EGG_VERSION =	1.4.7
+MODPY_EGG_VERSION =	1.4.9
 
 DISTNAME =	ldap0-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
