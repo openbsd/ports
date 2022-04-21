@@ -1,0 +1,3 @@
+@rcscript ${RCDIR}/obsdfreqd
+@man man/man1/obsdfreqd.1
+@bin sbin/obsdfreqd

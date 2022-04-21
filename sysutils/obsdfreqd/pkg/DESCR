@@ -1,0 +1,7 @@
+obsdfreqd is a CPU frequency scheduler daemon working in userland.
+
+It has many parameters to tweak the frequency like min/max frequency,
+polling frequency, inertia, step up/down size. obsdfreqd also support
+limiting the frequency upon reaching a given temperature to avoid
+a system spending time above the threshold. While it has many
+parameters, the defaults are good enough for everyone.
