@@ -222,6 +222,7 @@
      SUBDIR += nq
      SUBDIR += ntfs-3g
      SUBDIR += nut
+     SUBDIR += obsdfreqd
      SUBDIR += oc
      SUBDIR += od1000_firmware
      SUBDIR += opam
