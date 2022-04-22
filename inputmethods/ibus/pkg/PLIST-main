@@ -88,7 +88,6 @@ share/examples/ibus/dconf/profile/ibus
 @sample ${SYSCONFDIR}/dconf/profile/ibus
 share/examples/ibus/xdg/
 share/examples/ibus/xdg/Xwayland-session.d/
-@sample ${SYSCONFDIR}/xdg/Xwayland-session.d/
 share/examples/ibus/xdg/Xwayland-session.d/10-ibus-x11
 @sample ${SYSCONFDIR}/xdg/Xwayland-session.d/10-ibus-x11
 share/gettext/its/ibus.its

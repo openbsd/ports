@@ -12,7 +12,7 @@ Index: data/dconf/make-dconf-override-db.sh
  # better, but not everyone has it yet.
  export DBUS_FATAL_WARNINGS=0
 -export TMPDIR=$(mktemp -d --tmpdir="$PWD")
-+export TMPDIR=$(mktemp -d -t -p "$PWD")
++export TMPDIR=$(TMPDIR="$PWD" mktemp -d)
  export XDG_CONFIG_HOME="$TMPDIR/config"
  export XDG_CACHE_HOME="$TMPDIR/cache"
  export GSETTINGS_SCHEMA_DIR="$TMPDIR/schemas"
