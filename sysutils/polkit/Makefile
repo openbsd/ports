@@ -1,7 +1,7 @@
 COMMENT=		framework for granting privileged operations to users
 
 DISTNAME=		polkit-0.120
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
 SHARED_LIBS += polkit-agent-1            2.0 # 0.0.0
@@ -16,7 +16,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c expat gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += intl mozjs-78
+WANTLIB += intl mozjs-91
 
 MASTER_SITES=		https://www.freedesktop.org/software/polkit/releases/
 
@@ -33,7 +33,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection
 
 LIB_DEPENDS=		devel/glib2 \
-			devel/spidermonkey78
+			devel/spidermonkey91
 
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=		x11/dbus,-suid
