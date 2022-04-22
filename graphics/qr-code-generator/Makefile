@@ -1,10 +1,9 @@
 COMMENT =		QR Code generator library
 GH_ACCOUNT =		nayuki
 GH_PROJECT =		QR-Code-generator
-GH_TAGNAME =		v1.7.0
+GH_TAGNAME =		v1.8.0
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		2
 
 # upstream has no shared library versions
 SHARED_LIBS +=		qrcodegen	0.0

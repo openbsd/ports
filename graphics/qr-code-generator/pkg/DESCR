@@ -6,4 +6,4 @@ multiple languages.  The primary goals are flexible options and absolute
 correctness. Secondary goals are compact implementation size and good
 documentation comments.
 
-This package only contains libraries for C++ and C.
+This package only contains dynamically linked libraries for C++ and C.
