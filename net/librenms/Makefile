@@ -3,8 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.3.0
-REVISION=	0
+GH_TAGNAME=	22.4.0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -86,7 +85,7 @@ do-install:
 
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
-	t=`mktemp -d /tmp/librenms.XXXXXXXXXX`; \
+	@set -x; t=`mktemp -d /tmp/librenms.XXXXXXXXXX`; \
 	f=$$t/${DISTNAME}-vendor.tar.xz; \
 	cd $$t; \
 	tar xzf ${FULLDISTDIR}/${GH_DISTFILE:C,\{.*,,}; \
