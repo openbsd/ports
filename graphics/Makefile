@@ -276,10 +276,8 @@
      SUBDIR += rawtherapee
      SUBDIR += ruby-color
      SUBDIR += ruby-gruff
-     SUBDIR += ruby-rmagick,ruby27
      SUBDIR += ruby-rmagick,ruby30
      SUBDIR += ruby-rmagick,ruby31
-     SUBDIR += ruby-rqrcode-core,ruby27
      SUBDIR += ruby-rqrcode-core,ruby30
      SUBDIR += ruby-rqrcode-core,ruby31
      SUBDIR += s10sh

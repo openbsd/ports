@@ -206,10 +206,8 @@
      SUBDIR += rnnoise
      SUBDIR += rtunes
      SUBDIR += rubberband
-     SUBDIR += ruby-taglib,ruby27
      SUBDIR += ruby-taglib,ruby30
      SUBDIR += ruby-taglib,ruby31
-     SUBDIR += ruby-vorbis_comment,ruby27
      SUBDIR += ruby-vorbis_comment,ruby30
      SUBDIR += ruby-vorbis_comment,ruby31
      SUBDIR += schismtracker

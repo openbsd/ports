@@ -619,15 +619,12 @@
      SUBDIR += rtg
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
-     SUBDIR += ruby-cbor,ruby27
      SUBDIR += ruby-cbor,ruby30
      SUBDIR += ruby-cbor,ruby31
-     SUBDIR += ruby-eventmachine,ruby27
      SUBDIR += ruby-eventmachine,ruby30
      SUBDIR += ruby-eventmachine,ruby31
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-mfi
-     SUBDIR += ruby-msgpack,ruby27
      SUBDIR += ruby-msgpack,ruby30
      SUBDIR += ruby-msgpack,ruby31
      SUBDIR += ruby-net-dns
