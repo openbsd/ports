@@ -1,10 +1,10 @@
 @bin bin/ghostwriter
 @man man/man1/ghostwriter.1
-share/appdata/
-share/appdata/ghostwriter.appdata.xml
 share/applications/ghostwriter.desktop
 share/ghostwriter/
 share/ghostwriter/translations/
+share/ghostwriter/translations/ghostwriter_ar.qm
+share/ghostwriter/translations/ghostwriter_ca.qm
 share/ghostwriter/translations/ghostwriter_cs.qm
 share/ghostwriter/translations/ghostwriter_de.qm
 share/ghostwriter/translations/ghostwriter_en.qm
@@ -12,9 +12,12 @@ share/ghostwriter/translations/ghostwriter_es.qm
 share/ghostwriter/translations/ghostwriter_fr.qm
 share/ghostwriter/translations/ghostwriter_it.qm
 share/ghostwriter/translations/ghostwriter_ja.qm
+share/ghostwriter/translations/ghostwriter_nb_NO.qm
+share/ghostwriter/translations/ghostwriter_nl.qm
 share/ghostwriter/translations/ghostwriter_pl.qm
 share/ghostwriter/translations/ghostwriter_pt_BR.qm
 share/ghostwriter/translations/ghostwriter_ru.qm
+share/ghostwriter/translations/ghostwriter_sv.qm
 share/ghostwriter/translations/ghostwriter_zh.qm
 share/icons/hicolor/128x128/apps/ghostwriter.png
 share/icons/hicolor/16x16/apps/ghostwriter.png
@@ -25,7 +28,7 @@ share/icons/hicolor/32x32/apps/ghostwriter.png
 share/icons/hicolor/48x48/apps/ghostwriter.png
 share/icons/hicolor/64x64/apps/ghostwriter.png
 share/icons/hicolor/scalable/apps/ghostwriter.svg
-share/pixmaps/
-share/pixmaps/ghostwriter.xpm
+share/metainfo/
+share/metainfo/ghostwriter.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
