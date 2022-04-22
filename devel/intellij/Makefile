@@ -1,6 +1,6 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2021.3.2
+V=			2022.1
 DISTNAME=		ideaIC-${V}-no-jbr
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
@@ -23,7 +23,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=	${WRKDIR}/idea-IC-213.6777.52
+WRKDIST=	${WRKDIR}/idea-IC-221.5080.210
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
