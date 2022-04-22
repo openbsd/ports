@@ -1,7 +1,9 @@
 @conflict spidermonkey-*
 @conflict spidermonkey68-*
+@conflict spidermonkey78-*
 @pkgpath devel/spidermonkey60
 @pkgpath devel/spidermonkey68
+@pkgpath devel/spidermonkey78
 bin/js${MOZILLA_VERSION}-config
 include/mozjs-${MOZILLA_VERSION}/
 include/mozjs-${MOZILLA_VERSION}/BaseProfiler.h
