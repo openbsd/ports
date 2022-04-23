@@ -62,6 +62,7 @@ share/icons/hicolor/symbolic/apps/org.gnome.Adwaita1.Demo-symbolic.svg
 share/locale/ab/
 share/locale/ab/LC_MESSAGES/
 share/locale/ab/LC_MESSAGES/libadwaita.mo
+share/locale/bg/LC_MESSAGES/libadwaita.mo
 share/locale/ca/LC_MESSAGES/libadwaita.mo
 share/locale/cs/LC_MESSAGES/libadwaita.mo
 share/locale/da/LC_MESSAGES/libadwaita.mo
