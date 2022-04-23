@@ -23,7 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}namespaces.${MOD
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}old_dispatcher.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}simplexml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}smacks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}structs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -171,7 +170,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/old_dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/plugin.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/protocol.py
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/resolver.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/simplexml.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/smacks.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/structs.py
