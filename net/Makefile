@@ -125,6 +125,7 @@
      SUBDIR += grsync
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
+     SUBDIR += guacamole
      SUBDIR += gupnp
      SUBDIR += h323plus
      SUBDIR += haproxy
