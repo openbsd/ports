@@ -11,6 +11,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
+# C library compatible with POSIX.1-2008 is required
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += avcodec avformat avutil c m
 
 MASTER_SITES=		https://www.flameeyes.eu/files/
