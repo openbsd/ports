@@ -270,6 +270,7 @@ include/dmd/druntime/import/core/sys/openbsd/dlfcn.d
 include/dmd/druntime/import/core/sys/openbsd/err.d
 include/dmd/druntime/import/core/sys/openbsd/execinfo.d
 include/dmd/druntime/import/core/sys/openbsd/pthread_np.d
+include/dmd/druntime/import/core/sys/openbsd/pwd.d
 include/dmd/druntime/import/core/sys/openbsd/stdlib.d
 include/dmd/druntime/import/core/sys/openbsd/string.d
 include/dmd/druntime/import/core/sys/openbsd/sys/
