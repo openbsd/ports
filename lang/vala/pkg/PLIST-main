@@ -214,6 +214,10 @@ share/vala-${API_V}/vapi/gtk+-unix-print-3.0.deps
 share/vala-${API_V}/vapi/gtk+-unix-print-3.0.vapi
 share/vala-${API_V}/vapi/gtk4-unix-print.deps
 share/vala-${API_V}/vapi/gtk4-unix-print.vapi
+share/vala-${API_V}/vapi/gtk4-wayland.deps
+share/vala-${API_V}/vapi/gtk4-wayland.vapi
+share/vala-${API_V}/vapi/gtk4-x11.deps
+share/vala-${API_V}/vapi/gtk4-x11.vapi
 share/vala-${API_V}/vapi/gtk4.deps
 share/vala-${API_V}/vapi/gtk4.vapi
 share/vala-${API_V}/vapi/gtkmozembed.deps
