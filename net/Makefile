@@ -221,6 +221,7 @@
      SUBDIR += librsync
      SUBDIR += libshout
      SUBDIR += libsignal-protocol-c
+     SUBDIR += libslirp
      SUBDIR += libsmi
      SUBDIR += libst
      SUBDIR += libstrophe
