@@ -1,7 +1,7 @@
 COMMENT =	SSL/SSH multiplexer
 
 DISTNAME =	sslh-v1.22c
-REVISION =	0
+REVISION =	1
 PKGNAME =	${DISTNAME:S/-v/-/}
 
 CATEGORIES =	security net

@@ -1,5 +1,5 @@
 @newgroup _sabnzbd:810
-@newuser _sabnzbd:810:_sabnzbd:daemon:Sabnzbd:/var/sabnzbd:/bin/sh
+@newuser _sabnzbd:810:_sabnzbd::Sabnzbd:/var/sabnzbd:/bin/sh
 @owner _sabnzbd
 @group _sabnzbd
 @sample /var/sabnzbd/
