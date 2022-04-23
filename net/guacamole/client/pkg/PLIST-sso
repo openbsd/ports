@@ -1,0 +1,4 @@
+share/guacamole/extensions/
+share/guacamole/extensions/guacamole-auth-sso-cas.jar
+share/guacamole/extensions/guacamole-auth-sso-openid.jar
+share/guacamole/extensions/guacamole-auth-sso-saml.jar

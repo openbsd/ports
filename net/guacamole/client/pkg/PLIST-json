@@ -1,0 +1,5 @@
+share/doc/guacamole-auth-json/
+share/doc/guacamole-auth-json/README.md
+share/doc/guacamole-auth-json/encrypt-json.sh
+share/guacamole/extensions/
+share/guacamole/extensions/guacamole-auth-json.jar

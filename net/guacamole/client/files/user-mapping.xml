@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Guacamole's default authentication module uses this XML file.
+
+  Each user is specified in an <authorize> tag, which contains a set of
+  <connection> tags describing the connections available to that user.
+  Many parameters are available including wake-on-lan, session recording
+  and others.
+
+  As an alternative to this XML file, various databases and other
+  methods can be used via extensions.
+
+  For more details about configuration, see
+  https://guacamole.apache.org/doc/gug/configuring-guacamole.html -->
+
+<user-mapping>
+    <authorize username="guacamole" password="guacamole">
+	<!-- connection name="vnc">
+		<protocol>vnc</protocol>
+		<param name="hostname">localhost</param>
+		<param name="port">5901</param>
+		<param name="password">somepass, optional</param>
+	</connection -->
+	<!-- connection name="rdp">
+		<protocol>rdp</protocol>
+		<param name="hostname">localhost</param>
+		<param name="port">3389</param>
+	</connection> -->
+	<connection name="ssh">
+		<protocol>ssh</protocol>
+		<param name="hostname">localhost</param>
+		<param name="port">22</param>
+		<param name="font-name">monospace</param>
+	</connection>
+    </authorize>
+</user-mapping>

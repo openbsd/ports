@@ -1,0 +1,13 @@
+Apache Guacamole is a remote desktop gateway. It allows users to connect
+using an HTML5 web browser and access systems using standard remote client
+protocols like VNC, RDP, and SSH.
+
+It comprises "guacamole-client", the front-end web application written
+in Java which accepts connections from end-users web browsers, and
+"guacamole-server" (the guacd proxy daemon and related libraries,
+written in C), which runs on a gateway machine, accepting connections
+from guacamole-client and connecting out to remote machines using their
+standard protocol. Both guacamole-client and guacamole-server can run
+on the same machine.
+
+This package is for "guacamole-server".

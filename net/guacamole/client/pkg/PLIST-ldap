@@ -1,0 +1,8 @@
+share/doc/guacamole-auth-ldap/
+share/doc/guacamole-auth-ldap/examples/
+share/doc/guacamole-auth-ldap/examples/exampleConfigGroup.ldif
+share/doc/guacamole-auth-ldap/schema/
+share/doc/guacamole-auth-ldap/schema/guacConfigGroup.ldif
+share/doc/guacamole-auth-ldap/schema/guacConfigGroup.schema
+share/guacamole/extensions/
+share/guacamole/extensions/guacamole-auth-ldap.jar

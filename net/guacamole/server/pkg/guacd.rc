@@ -1,0 +1,8 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/guacd"
+daemon_user="_guacd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

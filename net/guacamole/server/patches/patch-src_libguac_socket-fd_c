@@ -1,0 +1,15 @@
+Not supported on OpenBSD, but guacd seems to run OK without this anyway.
+
+Index: src/libguac/socket-fd.c
+--- src/libguac/socket-fd.c.orig
++++ src/libguac/socket-fd.c
+@@ -431,7 +431,9 @@ guac_socket* guac_socket_open(int fd) {
+     socket->data = data;
+ 
+     pthread_mutexattr_init(&lock_attributes);
++#ifndef __OpenBSD__
+     pthread_mutexattr_setpshared(&lock_attributes, PTHREAD_PROCESS_SHARED);
++#endif
+ 
+     /* Init locks */
+     pthread_mutex_init(&(data->socket_lock), &lock_attributes);

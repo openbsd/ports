@@ -1,0 +1,99 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+A minimal Guacamole installation requires the following components:
+
+- a Java servlet container (usually Tomcat). This could be described as a
+specialist web server for running Java-based web services.
+
+This can be used directly to provide an externally-accessible HTTP service,
+but in some cases it may be preferable to front-end it with a "reverse proxy"
+(nginx run as a forwarder, relayd, haproxy, or others) either to provide
+extra controls or more familiar configuration.
+
+- "guacamole-client", a Java web service which accepts user connections,
+authenticates them, and passes connections to guacd. This is run by
+the servlet container.
+
+- guacd (from "guacamole-server"), a separate proxy daemon. It accepts
+Guacamole connections from the web service and makes outgoing connections
+using various remote access protocols (including RDP, VNC, ssh).
+
+Authentication is done via the web service. The default method is
+configured via a single XML file, which is suitable for many small
+deployments. Authentication via other mechanisms is available by
+extensions which are packaged separately.
+
+Simple configuration of Guacamole
+---------------------------------
+You can link the web application into Tomcat's service directory:
+
+# ln -s /usr/local/share/guacamole/guacamole.war /var/tomcat/webapps/
+
+Edit the sample user authentication file:
+
+# vi /etc/guacamole/user-mapping.xml
+
+Enable and (re)start guacd and Tomcat:
+
+# rcctl enable guacd tomcat
+# rcctl restart guacd tomcat
+
+Connect a browser to http://localhost:8080/guacamole and login, you should
+see a list of desktop endpoints from the user-mapping file and be able to
+connect to them.
+
+Check Tomcat logs (usually /var/tomcat/logs/catalina.out) if you have problems.
+
+Enabling extensions
+-------------------
+Various extensions are available, mostly providing different methods to
+hold authentication information and configuration of which machines a user
+may connect to:
+
+guacamole-auth-duo		Duo two-factor authentication
+guacamole-auth-header		HTTP header authentication
+guacamole-auth-jdbc		JDBC (SQL) authentication
+guacamole-auth-json		Encrypted JSON authentication
+guacamole-auth-ldap		LDAP authentication
+guacamole-auth-sso		OpenID/SAML/CAS authentication
+guacamole-auth-totp		TOTP two-factor authentication
+
+Also, not really an authentication plugin, but packaged in the same way:
+
+guacamole-auth-quickconnect	Ad-hoc connections (direct URI entry)
+
+At startup, guacamole-client searches /etc/guacamole/extensions and loads
+any extensions discovered there. In common with standard practice for
+other OpenBSD packages, extensions are not enabled automatically when
+installed; you must take another step to do this.
+
+For the JDBC extensions, as well as the extension itself, the relevant
+JDBC connector for the database is required as you are using; versions
+which should be suitable are available in /usr/local/share/guacamole/lib.
+
+You can either symlink the entire installed extensions (and lib, if
+needed) directories from the package into place:
+
+# ln -s /usr/local/share/guacamole/extensions /etc/guacamole/
+# ln -s /usr/local/share/guacamole/lib /etc/guacamole/
+
+Alternatively, take a targetted approach and symlink only the files
+you need:
+
+# mkdir /etc/guacamole/{extensions,lib}
+# ln -s /usr/local/share/guacamole/extensions/guacamole-auth-quickconnect.jar \
+     /etc/guacamole/extensions/
+# ln -s /usr/local/share/guacamole/lib/mssql-jdbc.jar /etc/guacamole/extensions/
+
+Add any required configuration for the extension, and restart Tomcat to
+pick up the changes:
+
+# vi /etc/guacamole/guacamole.properties
+# rcctl restart tomcat
+
+If an extension is packaged with documentation or database schemas that
+should be used, you'll find them in /usr/local/share/doc/guacamole-auth-*.
+Otherwise check the online documentation for Guacamole for more information
+(https://guacamole.apache.org/doc/gug/jdbc-auth.html etc).

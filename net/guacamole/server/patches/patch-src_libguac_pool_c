@@ -1,0 +1,15 @@
+Not supported on OpenBSD, but guacd seems to run OK without this anyway.
+
+Index: src/libguac/pool.c
+--- src/libguac/pool.c.orig
++++ src/libguac/pool.c
+@@ -41,7 +41,9 @@ guac_pool* guac_pool_alloc(int size) {
+ 
+     /* Init lock */
+     pthread_mutexattr_init(&lock_attributes);
++#ifndef __OpenBSD__
+     pthread_mutexattr_setpshared(&lock_attributes, PTHREAD_PROCESS_SHARED);
++#endif
+     pthread_mutex_init(&(pool->__lock), &lock_attributes);
+ 
+     return pool;

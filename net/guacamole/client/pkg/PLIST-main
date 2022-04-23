@@ -1,0 +1,21 @@
+@sample ${SYSCONFDIR}/guacamole/
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/guacamole/
+share/examples/guacamole/guacamole.properties
+@mode 640
+@owner root
+@group _tomcat
+@sample ${SYSCONFDIR}/guacamole/guacamole.properties
+@mode
+@owner
+@group
+share/examples/guacamole/user-mapping.xml
+@mode 640
+@owner root
+@group _tomcat
+@sample ${SYSCONFDIR}/guacamole/user-mapping.xml
+@mode
+@owner
+@group
+share/guacamole/
+share/guacamole/guacamole.war
