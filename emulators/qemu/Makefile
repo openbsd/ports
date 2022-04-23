@@ -5,8 +5,8 @@ COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
 VERSION=	6.2.0
-REVISION-ga=	0
-REVISION-main=	0
+REVISION-main=	1
+REVISION-ga=	1
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
@@ -23,7 +23,7 @@ WANTLIB=	c glib-2.0 pthread
 WANTLIB-main=	${COMPILER_LIBCXX} ${WANTLIB} SDL2 X11 bz2 cairo capstone curl \
 		curses epoxy fdt gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls \
 		gobject-2.0 gtk-3 iconv intl iscsi jpeg lzo2 m nfs pixman-1 \
-		png sndio ssh usb-1.0 util vte-2.91 xkbcommon z zstd
+		png slirp sndio ssh usb-1.0 util vte-2.91 xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
 
 MULTI_PACKAGES=	-main -ga
@@ -58,6 +58,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		graphics/jpeg \
 		graphics/png \
 		net/curl \
+		net/libslirp \
 		security/gnutls \
 		security/libssh \
 		x11/gtk+3 \

@@ -3,6 +3,7 @@
 @bin bin/qemu-ga
 @man man/man7/qemu-ga-ref.7
 @man man/man8/qemu-ga.8
+share/doc/pkg-readmes/${PKGSTEM}
 share/doc/qemu/
 share/doc/qemu/interop/
 share/doc/qemu/interop/qemu-ga-ref.html
@@ -11,4 +12,3 @@ share/examples/qemu/
 @sample ${SYSCONFDIR}/qemu/
 share/examples/qemu/qemu-ga.conf
 @sample ${SYSCONFDIR}/qemu/qemu-ga.conf
-share/doc/pkg-readmes/${PKGSTEM}
