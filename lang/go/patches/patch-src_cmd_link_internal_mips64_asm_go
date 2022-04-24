@@ -179,7 +179,7 @@ Index: src/cmd/link/internal/mips64/asm.go
  			return val, 1, true
  		}
  	}
-@@ -163,7 +295,11 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
+@@ -162,7 +294,11 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
  
  	case objabi.R_ADDRMIPSTLS,
  		objabi.R_CALLMIPS,

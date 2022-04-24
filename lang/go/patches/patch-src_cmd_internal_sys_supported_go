@@ -1,7 +1,7 @@
 Index: src/cmd/internal/sys/supported.go
 --- src/cmd/internal/sys/supported.go.orig
 +++ src/cmd/internal/sys/supported.go
-@@ -39,13 +39,11 @@ func MSanSupported(goos, goarch string) bool {
+@@ -74,13 +74,11 @@ func FuzzInstrumented(goos, goarch string) bool {
  func MustLinkExternal(goos, goarch string) bool {
  	switch goos {
  	case "android":

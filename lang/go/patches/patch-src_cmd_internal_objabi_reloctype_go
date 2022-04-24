@@ -1,7 +1,7 @@
 Index: src/cmd/internal/objabi/reloctype.go
 --- src/cmd/internal/objabi/reloctype.go.orig
 +++ src/cmd/internal/objabi/reloctype.go
-@@ -238,6 +238,11 @@ const (
+@@ -250,6 +250,11 @@ const (
  	// TODO(mundaym): remove once variants can be serialized - see issue 14218.
  	R_PCRELDBL
  

@@ -1,7 +1,7 @@
 Index: src/runtime/tls_mips64x.s
 --- src/runtime/tls_mips64x.s.orig
 +++ src/runtime/tls_mips64x.s
-@@ -14,8 +14,10 @@
+@@ -13,8 +13,10 @@
  //
  // NOTE: mcall() assumes this clobbers only R23 (REGTMP).
  TEXT runtime·save_g(SB),NOSPLIT|NOFRAME,$0-0
