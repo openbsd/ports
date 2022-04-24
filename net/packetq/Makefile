@@ -1,6 +1,6 @@
 COMMENT =	run SQL queries directly on PCAP files
 
-DISTNAME =	packetq-1.5.0
+DISTNAME =	packetq-1.7.0
 
 CATEGORIES =	net
 
@@ -9,11 +9,13 @@ HOMEPAGE =	https://www.dns-oarc.net/tools/packetq
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} c m z
+WANTLIB +=	${COMPILER_LIBCXX} c m maxminddb z
 
 MASTER_SITES =	https://www.dns-oarc.net/files/packetq/
 
 COMPILER =	base-clang ports-gcc
+
+LIB_DEPENDS =	net/libmaxminddb
 
 CONFIGURE_STYLE = gnu
 
