@@ -2,6 +2,7 @@ COMMENT =		Netscape Portable Runtime
 
 VER=			4.33
 DISTNAME=		nspr-${VER}
+REVISION=		0
 
 SO_VERSION=		24.0
 .for _lib in nspr4 plc4 plds4
