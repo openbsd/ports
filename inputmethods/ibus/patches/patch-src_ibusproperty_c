@@ -1,0 +1,121 @@
+From 17648f0522910480b6c5dd4f5356ca1f6c160bf5 Mon Sep 17 00:00:00 2001
+From: Carlos Garnacho <carlosg@gnome.org>
+Date: Tue, 29 Mar 2022 22:48:19 +0200
+Subject: [PATCH] src: Fix refcounting issues
+
+Index: src/ibusproperty.c
+--- src/ibusproperty.c.orig
++++ src/ibusproperty.c
+@@ -336,20 +336,17 @@ ibus_property_destroy (IBusProperty *prop)
+     prop->priv->icon = NULL;
+ 
+     if (prop->priv->label) {
+-        if (!ibus_text_get_is_static (prop->priv->label))
+-            g_object_unref (prop->priv->label);
++        g_object_unref (prop->priv->label);
+         prop->priv->label = NULL;
+     }
+ 
+     if (prop->priv->symbol) {
+-        if (!ibus_text_get_is_static (prop->priv->symbol))
+-            g_object_unref (prop->priv->symbol);
++        g_object_unref (prop->priv->symbol);
+         prop->priv->symbol = NULL;
+     }
+ 
+     if (prop->priv->tooltip) {
+-        if (!ibus_text_get_is_static (prop->priv->tooltip))
+-            g_object_unref (prop->priv->tooltip);
++        g_object_unref (prop->priv->tooltip);
+         prop->priv->tooltip = NULL;
+     }
+ 
+@@ -404,7 +401,7 @@ ibus_property_deserialize (IBusProperty *prop,
+     g_variant_get_child (variant, retval++, "u", &prop->priv->type);
+ 
+     GVariant *subvar = g_variant_get_child_value (variant, retval++);
+-    if (prop->priv->label && !ibus_text_get_is_static (prop->priv->label)) {
++    if (prop->priv->label) {
+         g_object_unref (prop->priv->label);
+     }
+     prop->priv->label = IBUS_TEXT (ibus_serializable_deserialize (subvar));
+@@ -414,7 +411,7 @@ ibus_property_deserialize (IBusProperty *prop,
+     ibus_g_variant_get_child_string (variant, retval++, &prop->priv->icon);
+ 
+     subvar = g_variant_get_child_value (variant, retval++);
+-    if (prop->priv->tooltip && !ibus_text_get_is_static (prop->priv->tooltip)) {
++    if (prop->priv->tooltip) {
+         g_object_unref (prop->priv->tooltip);
+     }
+     prop->priv->tooltip = IBUS_TEXT (ibus_serializable_deserialize (subvar));
+@@ -435,7 +432,7 @@ ibus_property_deserialize (IBusProperty *prop,
+ 
+     /* Keep the serialized order for the compatibility when add new members. */
+     subvar = g_variant_get_child_value (variant, retval++);
+-    if (prop->priv->symbol && !ibus_text_get_is_static (prop->priv->symbol)) {
++    if (prop->priv->symbol) {
+         g_object_unref (prop->priv->symbol);
+     }
+     prop->priv->symbol = IBUS_TEXT (ibus_serializable_deserialize (subvar));
+@@ -567,7 +564,7 @@ ibus_property_set_label (IBusProperty *prop,
+     g_assert (IBUS_IS_PROPERTY (prop));
+     g_return_if_fail (label == NULL || IBUS_IS_TEXT (label));
+ 
+-    if (prop->priv->label && !ibus_text_get_is_static (prop->priv->label)) {
++    if (prop->priv->label) {
+         g_object_unref (prop->priv->label);
+     }
+ 
+@@ -575,8 +572,10 @@ ibus_property_set_label (IBusProperty *prop,
+         prop->priv->label = ibus_text_new_from_static_string ("");
+     }
+     else {
+-        prop->priv->label = g_object_ref_sink (label);
++        prop->priv->label = label;
+     }
++
++    g_object_ref_sink (prop->priv->label);
+ }
+ 
+ void
+@@ -586,7 +585,7 @@ ibus_property_set_symbol (IBusProperty *prop,
+     g_assert (IBUS_IS_PROPERTY (prop));
+     g_return_if_fail (symbol == NULL || IBUS_IS_TEXT (symbol));
+ 
+-    if (prop->priv->symbol && !ibus_text_get_is_static (prop->priv->symbol)) {
++    if (prop->priv->symbol) {
+         g_object_unref (prop->priv->symbol);
+     }
+ 
+@@ -594,8 +593,10 @@ ibus_property_set_symbol (IBusProperty *prop,
+         prop->priv->symbol = ibus_text_new_from_static_string ("");
+     }
+     else {
+-        prop->priv->symbol = g_object_ref_sink (symbol);
++        prop->priv->symbol = symbol;
+     }
++
++    g_object_ref_sink (prop->priv->symbol);
+ }
+ 
+ void
+@@ -615,7 +616,7 @@ ibus_property_set_tooltip (IBusProperty *prop,
+     g_assert (IBUS_IS_PROPERTY (prop));
+     g_assert (tooltip == NULL || IBUS_IS_TEXT (tooltip));
+ 
+-    if (prop->priv->tooltip && !ibus_text_get_is_static (prop->priv->tooltip)) {
++    if (prop->priv->tooltip) {
+         g_object_unref (prop->priv->tooltip);
+     }
+ 
+@@ -624,8 +625,9 @@ ibus_property_set_tooltip (IBusProperty *prop,
+     }
+     else {
+         prop->priv->tooltip = tooltip;
+-        g_object_ref_sink (prop->priv->tooltip);
+     }
++
++    g_object_ref_sink (prop->priv->tooltip);
+ }
+ 
+ void

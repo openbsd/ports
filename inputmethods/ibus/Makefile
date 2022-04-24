@@ -12,7 +12,7 @@ PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		0
+REVISION-main =		1
 
 SHARED_LIBS +=  ibus-1.0             4.3      # 5.526
 
