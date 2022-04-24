@@ -1,6 +1,6 @@
 COMMENT =		versatile Commodore emulator
 
-DISTNAME =		vice-3.5
+DISTNAME =		vice-3.6.1
 
 CATEGORIES =		emulators
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS +=	--without-alsa \
 			--without-pulse \
 			--disable-lame \
 			--disable-portaudio \
+			--disable-html-docs \
 			--disable-pdf-docs \
 			--enable-sdlui2
 
