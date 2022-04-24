@@ -7,5 +7,5 @@ ${P5ARCH}/auto/MaxMind/DB/
 ${P5ARCH}/auto/MaxMind/DB/Reader/
 ${P5ARCH}/auto/MaxMind/DB/Reader/XS/
 ${P5ARCH}/auto/MaxMind/DB/Reader/XS/XS.bs
-${P5ARCH}/auto/MaxMind/DB/Reader/XS/XS.so
+@so ${P5ARCH}/auto/MaxMind/DB/Reader/XS/XS.so
 @man man/man3p/MaxMind::DB::Reader::XS.3p
