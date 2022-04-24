@@ -1,0 +1,13 @@
+https://gitlab.gnome.org/World/deja-dup/-/issues/294
+
+Index: app/meson.build
+--- app/meson.build.orig
++++ app/meson.build
+@@ -50,6 +50,7 @@ deja_dup = executable('deja-dup',
+         adwaita_dep,
+         gio_unix_dep,
+         gtk_dep,
++        gtk_x11_dep,
+         packagekit_dep,
+         secret_dep,
+     ],
