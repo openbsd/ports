@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -32,7 +32,8 @@ RUN_DEPENDS-main +=	x11/xdg-user-dirs-gtk
 # add avahi-daemon for convenience as a few GNOME apps can make use of it
 RUN_DEPENDS-main +=	net/avahi
 
-# the main ibus package only contain support for gtk+3
+# ibus IM modules
+RUN_DEPENDS-main +=	inputmethods/ibus,-gtk3
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
 
 ################################################################################
