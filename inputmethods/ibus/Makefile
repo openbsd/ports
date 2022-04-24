@@ -2,6 +2,7 @@
 
 COMMENT-main =		intelligent input bus framework
 COMMENT-gtk2 =		IBus IM module for GTK2
+COMMENT-gtk3 =		IBus IM module for GTK3
 COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
@@ -10,9 +11,13 @@ GH_TAGNAME =		1.5.26
 
 PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
+PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		1
+REVISION-main =		2
+REVISION-gtk2 =		0
+REVISION-gtk3 =		0
+REVISION-gtk4 =		0
 
 SHARED_LIBS +=  ibus-1.0             4.3      # 5.526
 
@@ -23,7 +28,7 @@ HOMEPAGE =		https://github.com/ibus/ibus/wiki
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES =	-main -gtk2 -gtk4
+MULTI_PACKAGES =	-main -gtk2 -gtk3 -gtk4
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender cairo expat ffi fontconfig
@@ -33,12 +38,16 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png xcb xcb-render
 WANTLIB += xcb-shm z execinfo jpeg
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dbus-1 dconf
-WANTLIB-main += epoxy gdk-3 gthread-2.0 gtk-3 Xcomposite
+WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
+WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite
 
 WANTLIB-gtk2 += ${WANTLIB}
 WANTLIB-gtk2 += atk-1.0 dbus-1 gdk-x11-2.0 gtk-x11-2.0 ibus-1.0
 WANTLIB-gtk2 += Xcomposite
+
+WANTLIB-gtk3 += ${WANTLIB}
+WANTLIB-gtk3 += Xcomposite atk-1.0 atk-bridge-2.0 cairo-gobject dbus-1
+WANTLIB-gtk3 += epoxy gdk-3 gtk-3 ibus-1.0
 
 WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
@@ -58,14 +67,23 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/iso-codes \
 			x11/gtk+3,-guic
 
+# default IM module
+RUN_DEPENDS-main +=	${BASE_PKGPATH},-gtk3
+
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS-main +=	devel/py-gobject3${MODPY_FLAVOR}
 
 LIB_DEPENDS-main =	x11/gtk+3
 
+RUN_DEPENDS-gtk2 =	# empty
 LIB_DEPENDS-gtk2 =	${BASE_PKGPATH},-main \
 			x11/gtk+2
 
+RUN_DEPENDS-gtk3 =	# empty
+LIB_DEPENDS-gtk3 =	${BASE_PKGPATH},-main \
+			x11/gtk+3
+
+RUN_DEPENDS-gtk4 =	# empty
 LIB_DEPENDS-gtk4 =	${BASE_PKGPATH},-main \
 			x11/gtk+4
 
