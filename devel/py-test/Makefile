@@ -1,6 +1,6 @@
 COMMENT =		cross-project testing tool for Python
 
-MODPY_EGG_VERSION =	7.1.0
+MODPY_EGG_VERSION =	7.1.2
 DISTNAME =		pytest-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-${MODPY_EGG_VERSION}
 
