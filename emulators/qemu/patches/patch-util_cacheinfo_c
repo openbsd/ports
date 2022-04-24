@@ -3,7 +3,7 @@ Set OpenBSD/powerpc cache sizes.
 Index: util/cacheinfo.c
 --- util/cacheinfo.c.orig
 +++ util/cacheinfo.c
-@@ -145,6 +145,13 @@ static void arch_cache_info(int *isize, int *dsize)
+@@ -146,6 +146,13 @@ static void arch_cache_info(int *isize, int *dsize)
      }
  }
  

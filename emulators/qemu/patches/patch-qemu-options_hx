@@ -3,7 +3,7 @@ sndio module
 Index: qemu-options.hx
 --- qemu-options.hx.orig
 +++ qemu-options.hx
-@@ -657,6 +657,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
+@@ -710,6 +710,9 @@ DEF("audiodev", HAS_ARG, QEMU_OPTION_audiodev,
      "-audiodev sdl,id=id[,prop[=value][,...]]\n"
      "                in|out.buffer-count= number of buffers\n"
  #endif
@@ -13,7 +13,7 @@ Index: qemu-options.hx
  #ifdef CONFIG_SPICE
      "-audiodev spice,id=id[,prop[=value][,...]]\n"
  #endif
-@@ -819,6 +822,19 @@ SRST
+@@ -875,6 +878,19 @@ SRST
  
      ``in|out.buffer-count=count``
          Sets the count of the buffers.

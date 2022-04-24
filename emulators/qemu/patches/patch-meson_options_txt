@@ -3,7 +3,7 @@ sndio module
 Index: meson_options.txt
 --- meson_options.txt.orig
 +++ meson_options.txt
-@@ -13,7 +13,7 @@ option('sphinx_build', type : 'string', value : '',
+@@ -17,7 +17,7 @@ option('iasl', type : 'string', value : '',
  option('default_devices', type : 'boolean', value : true,
         description: 'Include a default selection of devices in emulators')
  option('audio_drv_list', type: 'array', value: ['default'],
@@ -12,7 +12,7 @@ Index: meson_options.txt
         description: 'Set audio driver list')
  option('fuzzing_engine', type : 'string', value : '',
         description: 'fuzzing engine library for OSS-Fuzz')
-@@ -184,6 +184,8 @@ option('oss', type: 'feature', value: 'auto',
+@@ -212,6 +212,8 @@ option('oss', type: 'feature', value: 'auto',
         description: 'OSS sound support')
  option('pa', type: 'feature', value: 'auto',
         description: 'PulseAudio sound support')

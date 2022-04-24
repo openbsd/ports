@@ -97,6 +97,7 @@ share/doc/qemu/about/deprecated.html
 share/doc/qemu/about/index.html
 share/doc/qemu/about/license.html
 share/doc/qemu/about/removed-features.html
+share/doc/qemu/dbus-dbusindex.html
 share/doc/qemu/devel/
 share/doc/qemu/devel/atomics.html
 share/doc/qemu/devel/bitops.html
@@ -110,6 +111,11 @@ share/doc/qemu/devel/control-flow-integrity.html
 share/doc/qemu/devel/decodetree.html
 share/doc/qemu/devel/ebpf_rss.html
 share/doc/qemu/devel/fuzzing.html
+share/doc/qemu/devel/index-api.html
+share/doc/qemu/devel/index-build.html
+share/doc/qemu/devel/index-internals.html
+share/doc/qemu/devel/index-process.html
+share/doc/qemu/devel/index-tcg.html
 share/doc/qemu/devel/index.html
 share/doc/qemu/devel/kconfig.html
 share/doc/qemu/devel/loads-stores.html
@@ -142,6 +148,7 @@ share/doc/qemu/genindex.html
 share/doc/qemu/index.html
 share/doc/qemu/interop/barrier.html
 share/doc/qemu/interop/bitmaps.html
+share/doc/qemu/interop/dbus-display.html
 share/doc/qemu/interop/dbus-vmstate.html
 share/doc/qemu/interop/dbus.html
 share/doc/qemu/interop/index.html
@@ -152,20 +159,26 @@ share/doc/qemu/interop/qemu-storage-daemon-qmp-ref.html
 share/doc/qemu/interop/vhost-user-gpu.html
 share/doc/qemu/interop/vhost-user.html
 share/doc/qemu/interop/vhost-vdpa.html
+share/doc/qemu/interop/virtio-balloon-stats.html
 share/doc/qemu/objects.inv
 share/doc/qemu/search.html
 share/doc/qemu/searchindex.js
 share/doc/qemu/specs/
 share/doc/qemu/specs/acpi_cpu_hotplug.html
+share/doc/qemu/specs/acpi_erst.html
 share/doc/qemu/specs/acpi_hest_ghes.html
 share/doc/qemu/specs/acpi_hw_reduced_hotplug.html
 share/doc/qemu/specs/acpi_mem_hotplug.html
 share/doc/qemu/specs/acpi_nvdimm.html
 share/doc/qemu/specs/acpi_pci_hotplug.html
 share/doc/qemu/specs/index.html
+share/doc/qemu/specs/ppc-spapr-hcalls.html
+share/doc/qemu/specs/ppc-spapr-hotplug.html
 share/doc/qemu/specs/ppc-spapr-numa.html
+share/doc/qemu/specs/ppc-spapr-uv-hcalls.html
 share/doc/qemu/specs/ppc-spapr-xive.html
 share/doc/qemu/specs/ppc-xive.html
+share/doc/qemu/specs/sev-guest-firmware.html
 share/doc/qemu/specs/tpm.html
 share/doc/qemu/system/
 share/doc/qemu/system/arm/
@@ -205,9 +218,11 @@ share/doc/qemu/system/arm/xscale.html
 share/doc/qemu/system/authz.html
 share/doc/qemu/system/barrier.html
 share/doc/qemu/system/bootindex.html
+share/doc/qemu/system/confidential-guest-support.html
 share/doc/qemu/system/cpu-hotplug.html
 share/doc/qemu/system/device-emulation.html
 share/doc/qemu/system/devices/
+share/doc/qemu/system/devices/can.html
 share/doc/qemu/system/devices/ivshmem.html
 share/doc/qemu/system/devices/net.html
 share/doc/qemu/system/devices/nvme.html
@@ -219,6 +234,7 @@ share/doc/qemu/system/gdb.html
 share/doc/qemu/system/generic-loader.html
 share/doc/qemu/system/guest-loader.html
 share/doc/qemu/system/i386/
+share/doc/qemu/system/i386/amd-memory-encryption.html
 share/doc/qemu/system/i386/cpu.html
 share/doc/qemu/system/i386/kvm-pv.html
 share/doc/qemu/system/i386/microvm.html
@@ -395,9 +411,7 @@ share/qemu/openbios-ppc
 share/qemu/openbios-sparc32
 share/qemu/openbios-sparc64
 share/qemu/opensbi-riscv32-generic-fw_dynamic.bin
-share/qemu/opensbi-riscv32-generic-fw_dynamic.elf
 share/qemu/opensbi-riscv64-generic-fw_dynamic.bin
-share/qemu/opensbi-riscv64-generic-fw_dynamic.elf
 share/qemu/palcode-clipper
 share/qemu/petalogix-ml605.dtb
 share/qemu/petalogix-s3adsp1800.dtb
@@ -428,5 +442,7 @@ share/qemu/vgabios-stdvga.bin
 share/qemu/vgabios-virtio.bin
 share/qemu/vgabios-vmware.bin
 share/qemu/vgabios.bin
+share/qemu/vof-nvram.bin
+share/qemu/vof.bin
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

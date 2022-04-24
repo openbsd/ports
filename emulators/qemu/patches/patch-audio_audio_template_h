@@ -3,7 +3,7 @@ sndio module
 Index: audio/audio_template.h
 --- audio/audio_template.h.orig
 +++ audio/audio_template.h
-@@ -337,6 +337,8 @@ AudiodevPerDirectionOptions *glue(audio_get_pdo_, TYPE
+@@ -336,6 +336,8 @@ AudiodevPerDirectionOptions *glue(audio_get_pdo_, TYPE
          return qapi_AudiodevPaPerDirectionOptions_base(dev->u.pa.TYPE);
      case AUDIODEV_DRIVER_SDL:
          return qapi_AudiodevSdlPerDirectionOptions_base(dev->u.sdl.TYPE);

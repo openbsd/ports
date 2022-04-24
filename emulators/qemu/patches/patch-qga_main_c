@@ -1,9 +1,9 @@
-adapted from https://github.com/aborche/qemu-guest-agent
+Adapted from https://github.com/aborche/qemu-guest-agent
 
 Index: qga/main.c
 --- qga/main.c.orig
 +++ qga/main.c
-@@ -46,9 +46,15 @@
+@@ -45,9 +45,15 @@
  #endif
  
  #ifndef _WIN32
@@ -19,7 +19,7 @@ Index: qga/main.c
  #else
  #define QGA_VIRTIO_PATH_DEFAULT "\\\\.\\Global\\org.qemu.guest_agent.0"
  #define QGA_STATE_RELATIVE_DIR  "qemu-ga"
-@@ -1471,7 +1477,11 @@ int main(int argc, char **argv)
+@@ -1470,7 +1476,11 @@ int main(int argc, char **argv)
      }
  
      if (config->method == NULL) {

@@ -1,12 +1,12 @@
-adapted from https://github.com/aborche/qemu-guest-agent
+Adapted from https://github.com/aborche/qemu-guest-agent
 
-adds support for
+Adds support for
 "guest-get-fsinfo"
 "guest-get-vcpus"
 "guest-network-get-interfaces"
 and guest shutdown from host.
 
-setting user password isnt supported on OpenBSD
+Setting user password is not supported on OpenBSD.
 
 Index: qga/commands-posix.c
 --- qga/commands-posix.c.orig

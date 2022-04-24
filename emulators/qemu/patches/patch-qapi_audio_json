@@ -3,7 +3,7 @@ sndio module
 Index: qapi/audio.json
 --- qapi/audio.json.orig
 +++ qapi/audio.json
-@@ -106,6 +106,28 @@
+@@ -107,6 +107,28 @@
      '*threshold': 'uint32' } }
  
  ##
@@ -19,7 +19,7 @@ Index: qapi/audio.json
 +#
 +# @latency: play buffer size (in microseconds)
 +#
-+# Since: 7.0
++# Since: 7.1
 +##
 +{ 'struct': 'AudiodevSndioOptions',
 +  'data': {
@@ -32,16 +32,16 @@ Index: qapi/audio.json
  # @AudiodevCoreaudioPerDirectionOptions:
  #
  # Options of the Core Audio backend that are used for both playback and
-@@ -387,7 +409,7 @@
+@@ -388,7 +410,7 @@
  ##
  { 'enum': 'AudiodevDriver',
-   'data': [ 'none', 'alsa', 'coreaudio', 'dsound', 'jack', 'oss', 'pa',
+   'data': [ 'none', 'alsa', 'coreaudio', 'dbus', 'dsound', 'jack', 'oss', 'pa',
 -            'sdl', 'spice', 'wav' ] }
 +            'sdl', 'sndio', 'spice', 'wav' ] }
  
  ##
  # @Audiodev:
-@@ -417,5 +439,6 @@
+@@ -419,5 +441,6 @@
      'oss':       'AudiodevOssOptions',
      'pa':        'AudiodevPaOptions',
      'sdl':       'AudiodevSdlOptions',

@@ -3,7 +3,7 @@ sndio module
 Index: audio/audio.c
 --- audio/audio.c.orig
 +++ audio/audio.c
-@@ -2005,6 +2005,7 @@ void audio_create_pdos(Audiodev *dev)
+@@ -2025,6 +2025,7 @@ void audio_create_pdos(Audiodev *dev)
          CASE(OSS, oss, Oss);
          CASE(PA, pa, Pa);
          CASE(SDL, sdl, Sdl);
