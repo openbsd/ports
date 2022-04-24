@@ -1,6 +1,6 @@
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.37
+DISTNAME=	GraphicsMagick-1.3.38
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
@@ -16,9 +16,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # http://www.graphicsmagick.org/www/Copyright.html
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext bz2 c
-WANTLIB += freetype iconv jasper jbig jpeg lcms2 ltdl lzma m png
-WANTLIB += tiff webp webpmux wmflite-0.2 xcb xml2 z zstd
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext aom bz2 c
+WANTLIB += dav1d de265 freetype heif iconv jasper jbig jpeg lcms2
+WANTLIB += ltdl lzma m png tiff webp webpmux wmflite-0.2 x265 xcb
+WANTLIB += xml2 z zstd
 
 WANTLIB += perl # uses perl ABI
 
@@ -36,6 +37,7 @@ LIB_DEPENDS=		archivers/bzip2 \
 			graphics/libwmf \
 			graphics/png \
 			graphics/tiff \
+			multimedia/libheif \
 			textproc/libxml
 RUN_DEPENDS=		print/ghostscript/gnu \
 			print/transfig

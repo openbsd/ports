@@ -137,6 +137,8 @@ lib/GraphicsMagick/modules-Q16/coders/gradient.la
 @so lib/GraphicsMagick/modules-Q16/coders/gradient.so
 lib/GraphicsMagick/modules-Q16/coders/gray.la
 @so lib/GraphicsMagick/modules-Q16/coders/gray.so
+lib/GraphicsMagick/modules-Q16/coders/heif.la
+@so lib/GraphicsMagick/modules-Q16/coders/heif.so
 lib/GraphicsMagick/modules-Q16/coders/histogram.la
 @so lib/GraphicsMagick/modules-Q16/coders/histogram.so
 lib/GraphicsMagick/modules-Q16/coders/hrz.la
@@ -371,6 +373,7 @@ share/doc/GraphicsMagick/www/ChangeLog-2017.html
 share/doc/GraphicsMagick/www/ChangeLog-2018.html
 share/doc/GraphicsMagick/www/ChangeLog-2019.html
 share/doc/GraphicsMagick/www/ChangeLog-2020.html
+share/doc/GraphicsMagick/www/ChangeLog-2021.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
