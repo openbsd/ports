@@ -3,7 +3,4 @@
 @bin bin/vger
 @man man/man8/vger.8
 share/doc/pkg-readmes/${PKGSTEM}
-@mode 755
-@owner _vger
-@group _vger
 @sample /var/gemini/

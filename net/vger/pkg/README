@@ -2,43 +2,41 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
-Modify configuration files
-==========================
+Configuring inetd(8) and relayd(8)
+==================================
 
-In order to run Vger, you need to modify /etc/inetd.conf and /etc/relayd.conf.
+Vger is meant to be run run by inetd(8) behind a relay daemon offering
+TLS capabilities like relayd(8).
 
-inetd.conf
-----------
+sample inetd.conf
+-----------------
 
 	127.0.0.1:11965 stream tcp nowait _vger ${TRUEPREFIX}/bin/vger vger
 
-relayd.conf
------------
+sample relayd.conf
+------------------
 
 	log connection
+
 	tcp protocol "gemini" {
 		tls keypair hostname.example
 	}
 
 	relay "gemini" {
-	listen on hostname.example port 1965 tls
-	protocol "gemini"
-	forward to 127.0.0.1 port 11965
+		listen on hostname.example port 1965 tls
+		protocol "gemini"
+		forward to 127.0.0.1 port 11965
 	}
 
+Then enable and start inetd and relayd:
 
-Enable respective services
-==========================
-
-You need to enable and start inetd and relayd.
-
-$ rcctl enable relayd inetd
-$ rcctl start relayd inetd
+    # rcctl enable relayd inetd
+    # rcctl start relayd inetd
 
 Firewall configuration
 ======================
 
-Enable TCP port 1965.
+Allow TCP traffic on port 1965.
 
 Usage
 =====

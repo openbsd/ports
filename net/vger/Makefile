@@ -1,5 +1,5 @@
 COMMENT =		gemini server written in C used with inetd
-V =			1.09
+V =			1.10
 DISTNAME =		vger-${V}
 
 CATEGORIES =		net
