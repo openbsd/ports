@@ -1,0 +1,25 @@
+Index: ext/mysql2/statement.c
+
+Remove use of tainted string function.
+
+Undef Mysql2::Statement alloc function to avoid warning on Ruby 3.2.
+
+--- ext/mysql2/statement.c.orig
++++ ext/mysql2/statement.c
+@@ -46,7 +46,7 @@ void rb_raise_mysql2_stmt_error(mysql_stmt_wrapper *st
+   VALUE e;
+   GET_CLIENT(stmt_wrapper->client);
+   VALUE rb_error_msg = rb_str_new2(mysql_stmt_error(stmt_wrapper->stmt));
+-  VALUE rb_sql_state = rb_tainted_str_new2(mysql_stmt_sqlstate(stmt_wrapper->stmt));
++  VALUE rb_sql_state = rb_str_new2(mysql_stmt_sqlstate(stmt_wrapper->stmt));
+ 
+   rb_encoding *conn_enc;
+   conn_enc = rb_to_encoding(wrapper->encoding);
+@@ -576,6 +576,7 @@ void init_mysql2_statement() {
+   cBigDecimal = rb_const_get(rb_cObject, rb_intern("BigDecimal"));
+ 
+   cMysql2Statement = rb_define_class_under(mMysql2, "Statement", rb_cObject);
++  rb_undef_alloc_func(cMysql2Statement);
+   rb_define_method(cMysql2Statement, "param_count", rb_mysql_stmt_param_count, 0);
+   rb_define_method(cMysql2Statement, "field_count", rb_mysql_stmt_field_count, 0);
+   rb_define_method(cMysql2Statement, "_execute", rb_mysql_stmt_execute, -1);

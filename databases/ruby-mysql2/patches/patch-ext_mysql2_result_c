@@ -1,0 +1,14 @@
+Index: ext/mysql2/result.c
+
+Undef Mysql2::Result alloc function to avoid warning on Ruby 3.2.
+
+--- ext/mysql2/result.c.orig
++++ ext/mysql2/result.c
+@@ -969,6 +969,7 @@ void init_mysql2_result() {
+   cDateTime = rb_const_get(rb_cObject, rb_intern("DateTime"));
+ 
+   cMysql2Result = rb_define_class_under(mMysql2, "Result", rb_cObject);
++  rb_undef_alloc_func(cMysql2Result);
+   rb_define_method(cMysql2Result, "each", rb_mysql_result_each, -1);
+   rb_define_method(cMysql2Result, "fields", rb_mysql_result_fetch_fields, 0);
+   rb_define_method(cMysql2Result, "free", rb_mysql_result_free_, 0);
