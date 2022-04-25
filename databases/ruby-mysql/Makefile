@@ -1,7 +1,7 @@
 COMMENT=	access a MySQL database from Ruby
 
 DISTNAME=	mysql-2.9.1
-REVISION=	6
+REVISION=	7
 CATEGORIES=	databases
 
 HOMEPAGE=	http://tmtm.org/mysql/ruby/
