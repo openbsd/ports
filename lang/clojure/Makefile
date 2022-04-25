@@ -1,6 +1,6 @@
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
-V =			1.10.3.1029
+V =			1.11.1.1107
 DISTNAME =		clojure-tools-$V
 PKGNAME =		clojure-$V
 
@@ -9,6 +9,8 @@ PKG_ARCH =		*
 CATEGORIES =		lang
 
 HOMEPAGE =		https://www.clojure.org/
+
+MAINTAINER =		Omar Polo <op@openbsd.org>
 
 # Eclipse Public License EPL 1.0
 PERMIT_PACKAGE =	Yes
@@ -25,6 +27,7 @@ RUN_DEPENDS =		java/javaPathHelper \
 			misc/rlwrap \
 			shells/bash
 
+NO_BUILD =		Yes
 NO_TEST =		Yes
 
 CLOJURE_HOME =		${PREFIX}/clojure
