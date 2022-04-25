@@ -1,6 +1,6 @@
 COMMENT=	Python syntax highlighter
 
-MODPY_EGG_VERSION = 2.11.2
+MODPY_EGG_VERSION = 2.12.0
 
 DISTNAME=	Pygments-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L:S/^/py-/}
@@ -20,9 +20,9 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-TEST_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR}
-
 # requires port for wcag_contrast_ratio
-NO_TEST=	Yes
+MODPY_PYTEST_ARGS =	--ignore tests/contrast/test_contrasts.py
+
+TEST_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
