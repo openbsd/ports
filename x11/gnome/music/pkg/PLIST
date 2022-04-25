@@ -3,7 +3,6 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/application.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/artcache.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/artistart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/asyncqueue.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/corealbum.py
@@ -14,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/coremodel.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coreselection.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coresong.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coverpaintable.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/defaulticon.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/embeddedart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/fileexistsasync.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/griloartqueue.py
@@ -25,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/grltrackerplay
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/grltrackerwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/gstplayer.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/inhibitsuspend.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/mediaartloader.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/mpris.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/musiclogger.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/notificationmanager.py
@@ -36,6 +35,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/search.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/songart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/songtoast.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/storeart.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/texturecache.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/trackerwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/utils.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/views/
@@ -55,7 +55,6 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/appmenu.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistalbumswidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistsearchtile.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artisttile.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artstack.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/discbox.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/headerbar.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/lastfmdialog.py
@@ -434,6 +433,22 @@ share/help/uk/gnome-music/playlist-remove-songs.page
 share/help/uk/gnome-music/playlist-repeat.page
 share/help/uk/gnome-music/playlist-shuffle.page
 share/help/uk/gnome-music/search.page
+share/help/zh_CN/
+share/help/zh_CN/gnome-music/
+share/help/zh_CN/gnome-music/figures/
+share/help/zh_CN/gnome-music/figures/org.gnome.Music.svg
+share/help/zh_CN/gnome-music/index.page
+share/help/zh_CN/gnome-music/introduction.page
+share/help/zh_CN/gnome-music/legal.xml
+share/help/zh_CN/gnome-music/play-music.page
+share/help/zh_CN/gnome-music/playlist-create-albums.page
+share/help/zh_CN/gnome-music/playlist-create-artists.page
+share/help/zh_CN/gnome-music/playlist-create-songs.page
+share/help/zh_CN/gnome-music/playlist-delete.page
+share/help/zh_CN/gnome-music/playlist-remove-songs.page
+share/help/zh_CN/gnome-music/playlist-repeat.page
+share/help/zh_CN/gnome-music/playlist-shuffle.page
+share/help/zh_CN/gnome-music/search.page
 share/icons/hicolor/scalable/apps/org.gnome.Music.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Music-symbolic.svg
 share/locale/af/LC_MESSAGES/org.gnome.Music.mo
