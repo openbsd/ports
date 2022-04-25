@@ -1,6 +1,6 @@
 COMMENT =		c++ protocol buffers
 
-V =			3.20.0
+V =			3.20.1
 TAG =			v${V:S/rc-/rc/}
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-${V:S/-//g}
