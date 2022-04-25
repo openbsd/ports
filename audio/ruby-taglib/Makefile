@@ -1,12 +1,11 @@
 COMMENT =	reads and writes metadata/tags for many audio formats
 
-VERSION =	0.7.1
+VERSION =	1.1.2
 DISTNAME =	taglib-ruby-${VERSION}
 PKGNAME =	taglib-${VERSION}
-REVISION =	3
 CATEGORIES =	audio
 
-HOMEPAGE =	http://robinst.github.io/taglib-ruby/
+HOMEPAGE =	https://robinst.github.io/taglib-ruby/
 
 # MIT
 PERMIT_PACKAGE =	Yes

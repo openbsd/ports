@@ -1,9 +1,8 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/
-${GEM_LIB}/extensions/${MODRUBY_ARCH}/${MODRUBY_LIBREV}/
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
-${GEM_LIB}/gems/${DISTNAME}/CHANGES.md
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/Guardfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
@@ -27,92 +26,6 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/ogg.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/riff.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/vorbis.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/wav.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/extconf_common.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/includes.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/relativevolumeframe.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/
-@comment ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/.RUBYARCHDIR.time
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav.i
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav.so
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/valgrind-suppressions.txt
-${GEM_LIB}/gems/${DISTNAME}/ext/win.cmake
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib.rb
@@ -127,16 +40,17 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/ogg.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/vorbis.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/wav.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_aiff.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_base.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_flac.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_id3v1.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_id3v2.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_mp4.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_mpeg.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_ogg.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_vorbis.so
-${GEM_LIB}/gems/${DISTNAME}/lib/taglib_wav.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_aiff.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_base.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_flac.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_flac_picture.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_id3v1.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_id3v2.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_mp4.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_mpeg.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_ogg.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_vorbis.so
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/taglib_wav.so
 ${GEM_LIB}/gems/${DISTNAME}/taglib-ruby.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/docs_coverage.rake
@@ -155,6 +69,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/aiff-sample.aiff
 ${GEM_LIB}/gems/${DISTNAME}/test/data/crash.mp3
 ${GEM_LIB}/gems/${DISTNAME}/test/data/flac-create.cpp
 ${GEM_LIB}/gems/${DISTNAME}/test/data/flac.flac
+${GEM_LIB}/gems/${DISTNAME}/test/data/flac_nopic.flac
 ${GEM_LIB}/gems/${DISTNAME}/test/data/get_picture_data.cpp
 ${GEM_LIB}/gems/${DISTNAME}/test/data/globe_east_540.jpg
 ${GEM_LIB}/gems/${DISTNAME}/test/data/globe_east_90.jpg
@@ -176,7 +91,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/fileref_properties_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/fileref_write_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/flac_file_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/flac_file_write_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/flac_picture_memory_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/id3v1_genres_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v1_tag_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_frames_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/id3v2_header_test.rb
