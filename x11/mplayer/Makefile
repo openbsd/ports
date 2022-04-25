@@ -1,9 +1,9 @@
 COMMENT=	movie player supporting many formats
 
 V=		20211106
-FFMPEG_V=	4.4.1
+FFMPEG_V=	4.4.2
 DISTNAME=	mplayer-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 multimedia
 MASTER_SITES=	https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -40,7 +40,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		graphics/libmng \
 		graphics/png \
 		multimedia/libass \
-		multimedia/libbluray>=0.8.0 \
+		multimedia/libbluray \
 		multimedia/libdv \
 		multimedia/libdvdnav \
 		multimedia/x264
