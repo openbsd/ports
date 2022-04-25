@@ -2,11 +2,10 @@ COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
 COMMENT-pgsql=	PostgreSQL driver for luadbi
 
-V=		0.6
+V=		0.7.2
 GH_ACCOUNT=	mwild1
 GH_PROJECT=	luadbi
 GH_TAGNAME=	v${V}
-REVISION=	1
 
 PKGNAME=		luadbi-$V
 FULLPKGNAME-main=	${_MODLUA_PKG_PREFIX}dbi-$V
