@@ -1,6 +1,6 @@
 COMMENT=	distributed memory object caching system
 
-DISTNAME=	memcached-1.6.9
+DISTNAME=	memcached-1.6.15
 CATEGORIES=	misc
 
 HOMEPAGE=	https://www.memcached.org/

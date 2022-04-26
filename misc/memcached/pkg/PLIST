@@ -5,6 +5,7 @@
 bin/memcached-tool
 include/memcached/
 include/memcached/protocol_binary.h
+include/memcached/xxhash.h
 @man man/man1/memcached-tool.1
 @man man/man1/memcached.1
 share/doc/memcached/
