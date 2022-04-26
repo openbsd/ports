@@ -1,0 +1,5 @@
+Library to apply JSON Patches according to RFC 6902.
+
+JSON Patch is a format identified by the "application/json-patch+json"
+media type for expressing a sequence of operations to apply to a target
+JSON document. It is suitable for use with the HTTP PATCH method.
