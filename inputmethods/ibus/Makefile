@@ -14,7 +14,7 @@ PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		2
+REVISION-main =		3
 REVISION-gtk2 =		0
 REVISION-gtk3 =		0
 REVISION-gtk4 =		0
@@ -66,9 +66,6 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
 			devel/iso-codes \
 			x11/gtk+3,-guic
-
-# default IM module
-RUN_DEPENDS-main +=	${BASE_PKGPATH},-gtk3
 
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS-main +=	devel/py-gobject3${MODPY_FLAVOR}
