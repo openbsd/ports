@@ -1,8 +1,9 @@
 COMMENT =		library for manipulating JSON data
 
-DISTNAME =		jansson-2.13.1
+V = 			2.14
+DISTNAME =		jansson-${V}
 
-SHARED_LIBS =		jansson 4.1
+SHARED_LIBS =		jansson 4.2
 
 CATEGORIES =		devel
 
@@ -13,7 +14,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://digip.org/jansson/releases/
+MASTER_SITES =		https://github.com/akheron/jansson/releases/download/v${V}/
 
 SEPARATE_BUILD = 	Yes
 CONFIGURE_STYLE =	gnu
