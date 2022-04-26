@@ -1,12 +1,16 @@
-https://gitlab.gnome.org/World/deja-dup/-/issues/294
+From 9c17deb0526b90b834bd421db872737c96f7227c Mon Sep 17 00:00:00 2001
+From: Michael Terry <mike@mterry.name>
+Date: Sun, 24 Apr 2022 10:59:56 -0400
+Subject: [PATCH] build: add gtk wayland and x11 dep objects to deja-dup executable
 
 Index: app/meson.build
 --- app/meson.build.orig
 +++ app/meson.build
-@@ -50,6 +50,7 @@ deja_dup = executable('deja-dup',
+@@ -50,6 +50,8 @@ deja_dup = executable('deja-dup',
          adwaita_dep,
          gio_unix_dep,
          gtk_dep,
++        gtk_wayland_dep,
 +        gtk_x11_dep,
          packagekit_dep,
          secret_dep,
