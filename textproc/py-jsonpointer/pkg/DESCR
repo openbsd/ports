@@ -1,0 +1,6 @@
+Library to resolve JSON Pointers according to RFC 6901.
+
+JSON Pointer is a standardized (RFC6901) way to select a value inside
+a JSON Document (DOM). This is analogous to XPath for an XML document.
+However, JSON Pointer is much simpler, and a single JSON Pointer only
+points to a single value.
