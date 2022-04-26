@@ -1,0 +1,42 @@
+fix build with reentrant qhull
+
+https://salsa.debian.org/science-team/plplot/-/blob/master/debian/patches/reentrant-qhull.patch
+
+Index: cmake/modules/FindQHULL.cmake
+--- cmake/modules/FindQHULL.cmake.orig
++++ cmake/modules/FindQHULL.cmake
+@@ -16,27 +16,27 @@ include(FindPackageHandleStandardArgs)
+ # that is what is supplied by upstream qhull, and if the user is
+ # finding a local install of the upstream library below, he wants to
+ # access that same upstream version of the headers to be consistent.
+-find_file(QHULL_HEADER_FILE NAMES libqhull/qhull_a.h qhull/qhull_a.h)
++find_file(QHULL_HEADER_FILE NAMES libqhull_r/qhull_ra.h)
+ if(QHULL_HEADER_FILE)
+   # message(STATUS "QHULL_HEADER_FILE = ${QHULL_HEADER_FILE}")
+-  if(QHULL_HEADER_FILE MATCHES "libqhull")
++  if(QHULL_HEADER_FILE MATCHES "libqhull_r")
+     set(HAS_LIBQHULL_INCLUDE ON)
+-  else(QHULL_HEADER_FILE MATCHES "libqhull")
++  else()
+     set(HAS_LIBQHULL_INCLUDE OFF)
+-  endif(QHULL_HEADER_FILE MATCHES "libqhull")
++  endif()
+   # Determine grandparent directory of header file
+   get_filename_component(QHULL_INCLUDE_DIRS ${QHULL_HEADER_FILE} DIRECTORY)
+   get_filename_component(QHULL_INCLUDE_DIRS ${QHULL_INCLUDE_DIRS} DIRECTORY)
+ elseif(NOT QHULL_HEADER_FILE AND NOT QHULL_FIND_QUIETLY)
+-  message(STATUS "Neither qhull/qhull_a.h header nor libqhull/qhull_a.h could be found")
++  message(STATUS "libqhull_r/qhull_ra.h could not be found")
+ endif(QHULL_HEADER_FILE)
+ 
+-find_library(QHULL_LIBRARY qhull)
++find_library(QHULL_LIBRARY qhull_r)
+ if( QHULL_LIBRARY )
+   get_filename_component(QHULL_LIBRARY_DIRS ${QHULL_LIBRARY} DIRECTORY)
+   set(QHULL_LIBRARIES ${QHULL_LIBRARY})
+ elseif(NOT QHULL_LIBRARY AND NOT QHULL_FIND_QUIETLY)
+-  message(STATUS "qhull library could not be found")
++  message(STATUS "qhull_r library could not be found")
+ endif(QHULL_LIBRARY)
+ 
+ find_package_handle_standard_args(QHULL

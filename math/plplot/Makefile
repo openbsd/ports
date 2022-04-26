@@ -16,7 +16,7 @@ PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
 REVISION-c++ =	0
 REVISION-fortran =	0
-REVISION-main =	0
+REVISION-main =	1
 
 CATEGORIES =	math graphics
 
@@ -64,7 +64,7 @@ MULTI_PACKAGES =	-main -c++ -fortran
 
 myWANTLIB += ICE SM X11 Xext cairo glib-2.0
 myWANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0
-myWANTLIB += qhull intl ltdl shp harfbuzz
+myWANTLIB += qhull_r intl ltdl shp harfbuzz
 
 WANTLIB-main =	${myWANTLIB} c pthread
 WANTLIB-c++ =	plplot m ${COMPILER_LIBCXX}

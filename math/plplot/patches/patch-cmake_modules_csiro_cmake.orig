@@ -1,25 +1,10 @@
-last chunk: fix build with reentrant qhull
+fix build with reentrant qhull
 
 https://salsa.debian.org/science-team/plplot/-/blob/master/debian/patches/reentrant-qhull.patch
 
 Index: cmake/modules/csiro.cmake
 --- cmake/modules/csiro.cmake.orig
 +++ cmake/modules/csiro.cmake
-@@ -30,11 +30,11 @@ if(PL_HAVE_QHULL OR WITH_CSA)
-   if(CMAKE_SYSTEM_PROCESSOR MATCHES "i[0-9]86" AND NOT CMAKE_C_COMPILER MATCHES "gcc")
-     set(NAN_CFLAGS "${NAN_CFLAGS} -mieee-fp")
-   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "alpha.*")
--    if(CMAKE_C_COMPILER MATCHES "gcc")
-+    if(CMAKE_COMPILER_IS_GNUCC)
-       set(NAN_CFLAGS "${NAN_CFLAGS} -mieee")
--    else(CMAKE_C_COMPILER MATCHES "gcc")
-+    else(CMAKE_COMPILER_IS_GNUCC)
-       set(NAN_CFLAGS "${NAN_CFLAGS} -ieee")
--    endif(CMAKE_C_COMPILER MATCHES "gcc")
-+    endif(CMAKE_COMPILER_IS_GNUCC)
-   endif(CMAKE_SYSTEM_PROCESSOR MATCHES "i[0-9]86" AND NOT CMAKE_C_COMPILER MATCHES "gcc")
-   if(NOT DEFINED NaNAwareCCompiler)
-     message(STATUS "Check for NaN awareness in C compiler")
 @@ -89,11 +89,7 @@ if(PL_HAVE_QHULL)
        message(STATUS "WARNING: function qh_new_qhull not found.  Setting PL_HAVE_QHULL to OFF.")
        set(PL_HAVE_QHULL OFF CACHE BOOL "Enable use of the Qhull library" FORCE)
