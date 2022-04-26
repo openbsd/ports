@@ -1,9 +1,8 @@
 COMMENT=	LIVE555 streaming media library
 
-VERSION=	2022.02.07
+VERSION=	2022.04.25
 DISTNAME=	live.${VERSION}
 PKGNAME=	liveMedia-${VERSION:S/.//g}
-REVISION=	0
 CATEGORIES=	net devel
 MASTER_SITES=	https://download.videolan.org/contrib/live555/
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c m ssl crypto pthread ${COMPILER_LIBCXX}
 
 .for lib in liveMedia BasicUsageEnvironment UsageEnvironment groupsock
-SHARED_LIBS += ${lib} 0.0
+SHARED_LIBS += ${lib} 0.1
 .endfor
 
 COMPILER=	base-clang ports-gcc base-gcc
