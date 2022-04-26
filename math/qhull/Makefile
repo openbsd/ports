@@ -1,9 +1,13 @@
 COMMENT =		computing the convex hull
 
-DISTNAME =		qhull-2012.1
+DISTNAME =		qhull-${VERSION}
 
-SHARED_LIBS =		qhull_p		0.0 # 6.0
-SHARED_LIBS +=		qhull		0.0 # 6.0
+SHARED_LIBS =		qhull_p		1.0
+SHARED_LIBS +=		qhull		1.0
+SHARED_LIBS +=		qhull_r		0.0
+
+VERSION =		2020.2
+QHULL_REV =		8.0.2
 
 CATEGORIES =		math
 
@@ -15,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c m
 
 MASTER_SITES =		${HOMEPAGE}download/
-DISTFILES =		${DISTNAME}-src${EXTRACT_SUFX}
+DISTFILES =		${DISTNAME:R}-src-${QHULL_REV}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/cmake
