@@ -10,12 +10,13 @@ extension of librsync's rdiff to directories---it can be used to produce
 signatures and deltas of directories as well as regular files. These
 signatures and deltas are in GNU tar format.
 
-All possible dependencies aren't enforced in this package and must be installed
-according to the requirements (e.g. backup to S3):
+Only minimal dependencies are enforced, other backends require
+additional dependencies (some are available in packages, some not).
+For S3, "pkg_add py3-boto3" and use the URL boto3+s3://bucket/subdir.
+
+Other options are:
 # azure
 # b2sdk
-# boto
-# boto3
 # dropbox==6.9.0
 # gdata
 # jottalib
