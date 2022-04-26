@@ -10,6 +10,7 @@ FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
+REVISION-main =	0
 
 SHARED_LIBS =	gdal 42.1 # 30.1
 CATEGORIES =	geo devel
@@ -55,7 +56,7 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 
 WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff \
 			gif hdf5 hdf5_hl iconv jpeg json-c lzma lz4 m \
-			netcdf nghttp2 openjp2 pcre2-8 png pq proj pthread qhull \
+			netcdf nghttp2 openjp2 pcre2-8 png pq proj pthread qhull_r \
 			minizip rttopo spatialite sqlite3 ssl tiff xml2 webp z zstd \
 			${COMPILER_LIBCXX}
 
