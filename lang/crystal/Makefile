@@ -1,7 +1,7 @@
 # Hopefully ${CLANG_ARCHS} at some point.
 ONLY_FOR_ARCHS=	amd64
 
-V =		1.4.0
+V =		1.4.1
 V_SHARDS =	0.17.0
 V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
