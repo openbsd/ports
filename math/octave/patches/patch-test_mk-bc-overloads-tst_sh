@@ -1,0 +1,65 @@
+Upstream Patch https://hg.savannah.gnu.org/hgweb/octave/rev/3c3abe6dbe58
+Fixes https://savannah.gnu.org/bugs/index.php?62295
+
+Index: test/mk-bc-overloads-tst.sh
+--- test/mk-bc-overloads-tst.sh.orig
++++ test/mk-bc-overloads-tst.sh
+@@ -48,16 +48,16 @@ if [ $# -eq 2 ]; then
+   shift
+   case "$1" in
+     --list-files)
+-      echo $output_dir/tbcover.m
+-      echo $output_dir/bc-overloads.tst
++      echo tbcover.m
++      echo bc-overloads.tst
+       for class in $CLASSES; do
+-        echo $output_dir/@$class/tbcover.m
++        echo @$class/tbcover.m
+       done
+       exit
+     ;;
+     --list-dirs)
+       for class in $CLASSES; do
+-        echo $output_dir/@$class
++        echo @$class
+       done
+       exit
+     ;;
+@@ -70,16 +70,16 @@ if [ $# -eq 2 ]; then
+     ;;
+   esac
+ else
+-  echo "usage: build-bc-overload-tests.sh output_dir option" 1>&2
++  echo "usage: mk-bc-overload-tests.sh output_dir option" 1>&2
+   exit 1
+ fi
+ 
+ for class in $CLASSES; do
+-  DIR="$output_dir/@$class"
++  DIR="@$class"
+   test -d $DIR || mkdir $DIR || { echo "error: could not create $DIR"; exit; }
+   cat > $DIR/tbcover.m << EOF
+ % !!! DO NOT EDIT !!!
+-% generated automatically by build-bc-overload-tests.sh
++% generated automatically by mk-bc-overload-tests.sh
+ function s = tbcover (x, y)
+   s = '$class';
+ EOF
+@@ -87,7 +87,7 @@ done
+ 
+ cat > $output_dir/tbcover.m << EOF
+ % !!! DO NOT EDIT !!!
+-% generated automatically by build-bc-overload-tests.sh
++% generated automatically by mk-bc-overload-tests.sh
+ function s = tbcover (x, y)
+   s = 'none';
+ EOF
+@@ -99,7 +99,7 @@ fi
+ cat > $output_dir/bc-overloads.tst << EOF
+ ## !!! DO NOT EDIT !!!
+ ## THIS IS AN AUTOMATICALLY GENERATED FILE
+-## modify build-bc-overload-tests.sh to generate the tests you need.
++## modify mk-bc-overload-tests.sh to generate the tests you need.
+ 
+ %!shared ex
+ %! ex.double = 1;

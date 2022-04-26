@@ -1,0 +1,22 @@
+Force usage of gtar
+
+Index: scripts/miscellaneous/private/tar_is_bsd.m
+--- scripts/miscellaneous/private/tar_is_bsd.m.orig
++++ scripts/miscellaneous/private/tar_is_bsd.m
+@@ -37,15 +37,6 @@
+ 
+ function out = tar_is_bsd ()
+ 
+-  ## BSD tar needs to be handled differently from GNU tar
+-  persistent cache
+-  if (isempty (cache))
+-    [status, tar_ver_str] = system ("tar --version");
+-    if (status)
+-      error ("tar: Failed executing tar --version (status = %d)", status);
+-    endif
+-    cache = ! isempty (regexp (tar_ver_str, "bsdtar"));
+-  endif
+-  out = cache;
++ out = 0;
+ 
+ endfunction

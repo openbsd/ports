@@ -1,0 +1,32 @@
+memory() is only implemented for Linux and Windows
+Show warning/error and skip test
+
+Index: scripts/miscellaneous/memory.m
+--- scripts/miscellaneous/memory.m.orig
++++ scripts/miscellaneous/memory.m
+@@ -131,7 +131,7 @@
+ 
+ function [userdata, systemdata] = memory ()
+ 
+-  if ((! isunix () || ismac ()) && ! ispc ())
++  if (1)
+     if (nargout > 0)
+       error ("memory: function not yet implemented for this architecture");
+     else
+@@ -260,14 +260,14 @@ function [status, meminfo] = lmemory ()
+ endfunction
+ 
+ 
+-%!testif ; (isunix () && ! ismac ()) || ispc ()
++%!testif ; (0)
+ %! [user, syst] = memory ();
+ %! assert (user.mem_used_octave > 0);
+ %! assert (user.ram_used_octave <= user.mem_used_octave);
+ %! assert (user.mem_used_octave < syst.SystemMemory.Total);
+ %! assert (user.MemAvailableAllArrays <= syst.SystemMemory.Available);
+ 
+-%!testif ; (! isunix () || ismac ()) && ! ispc ()
++%!testif ; (1)
+ %! fail ("[user] = memory ()",
+ %!       "function not yet implemented for this architecture");
+ %! fail ("memory ()", "warning",

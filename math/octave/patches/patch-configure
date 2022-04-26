@@ -3,29 +3,39 @@ Use GNU readline as our base readline lacks rl_prefer_env_winsize.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -67123,13 +67123,13 @@ fi
+@@ -81074,7 +81074,7 @@ printf "%s\n" "$as_me: WARNING: $warn_rapidjson" >&2;}
+ 
+ fi
+ 
+-### Check for readline library.
++### Check for ereadline library.
+ 
+ 
+   TERM_LIBS=
+@@ -81177,14 +81177,14 @@ fi
  
      ac_octave_save_LIBS="$LIBS"
      LIBS="$TERM_LIBS"
--    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lreadline" >&5
--$as_echo_n "checking for rl_set_keyboard_input_timeout in -lreadline... " >&6; }
-+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lereadline" >&5
-+$as_echo_n "checking for rl_set_keyboard_input_timeout in -lereadline... " >&6; }
- if ${ac_cv_lib_readline_rl_set_keyboard_input_timeout+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lreadline" >&5
+-printf %s "checking for rl_set_keyboard_input_timeout in -lreadline... " >&6; }
++    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lereadline" >&5
++printf %s "checking for rl_set_keyboard_input_timeout in -lereadline... " >&6; }
+ if test ${ac_cv_lib_readline_rl_set_keyboard_input_timeout+y}
+ then :
+   printf %s "(cached) " >&6
+ else $as_nop
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lreadline  $LIBS"
 +LIBS="-lereadline  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -67168,7 +67168,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&5
- $as_echo "$ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&6; }
- if test "x$ac_cv_lib_readline_rl_set_keyboard_input_timeout" = xyes; then :
+@@ -81222,7 +81222,7 @@ fi
+ printf "%s\n" "$ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&6; }
+ if test "x$ac_cv_lib_readline_rl_set_keyboard_input_timeout" = xyes
+ then :
 -  READLINE_LIBS="-lreadline"
 +  READLINE_LIBS="-lereadline"
  
- $as_echo "#define USE_READLINE 1" >>confdefs.h
+ printf "%s\n" "#define USE_READLINE 1" >>confdefs.h
  

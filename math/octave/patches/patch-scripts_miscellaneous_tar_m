@@ -1,0 +1,14 @@
+Force usage of gtar
+
+Index: scripts/miscellaneous/tar.m
+--- scripts/miscellaneous/tar.m.orig
++++ scripts/miscellaneous/tar.m
+@@ -70,7 +70,7 @@ function filelist = tar (tarfile, files, rootdir = "."
+     cmd = sprintf ("tar cvf %s -C %s %s 2>&1",
+                             tarfile, rootdir, sprintf (" '%s'", files{:}));
+   else
+-    cmd = sprintf ("tar cvf %s -C %s %s",
++    cmd = sprintf ("gtar cvf %s -C %s %s",
+                             tarfile, rootdir, sprintf (" %s", files{:}));
+   endif
+ 

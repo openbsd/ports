@@ -1,7 +1,7 @@
 Index: scripts/pkg/private/configure_make.m
 --- scripts/pkg/private/configure_make.m.orig
 +++ scripts/pkg/private/configure_make.m
-@@ -91,7 +91,7 @@ function configure_make (desc, packdir, verbose)
+@@ -110,7 +110,7 @@ function configure_make (desc, packdir, verbose)
      endif
  
      if (exist (fullfile (src, "Makefile"), "file"))
@@ -9,4 +9,4 @@ Index: scripts/pkg/private/configure_make.m
 +      [status, output] = shell (sprintf ("%s gmake --jobs %i --directory '%s'",
                                           scenv, jobs, src), verbose);
        if (status != 0)
-         rmdir (desc.dir, "s");
+         disp (output);
