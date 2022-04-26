@@ -2,6 +2,7 @@ COMMENT=		IRC Client for GNOME
 
 GNOME_PROJECT=		polari
 GNOME_VERSION=		42.0
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -20,5 +21,8 @@ MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
 
 LIB_DEPENDS=		net/telepathy/telepathy-glib \
 			x11/gnome/gjs
+
+BUILD_DEPENDS=		x11/gnome/libadwaita # to pull up x11/gtk+3,-guic
+RUN_DEPENDS=		x11/gnome/libadwaita
 
 .include <bsd.port.mk>
