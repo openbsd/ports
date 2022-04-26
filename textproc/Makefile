@@ -403,6 +403,8 @@
      SUBDIR += py-iniconfig,python3
      SUBDIR += py-iso8601,python3
      SUBDIR += py-jellyfish,python3
+     SUBDIR += py-jsonpatch,python3
+     SUBDIR += py-jsonpointer,python3
      SUBDIR += py-lxml
      SUBDIR += py-lxml,python3
      SUBDIR += py-markdown,python3
