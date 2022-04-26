@@ -1,4 +1,4 @@
-@bin bin/fish
+@shell bin/fish
 @bin bin/fish_indent
 @bin bin/fish_key_reader
 @man man/man1/fish.1
