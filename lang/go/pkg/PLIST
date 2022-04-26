@@ -1,4 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.57 2022/04/24 13:16:01 jsing Exp $
 bin/go
 bin/gofmt
 go/
@@ -406,6 +405,11 @@ go/misc/cgo/testplugin/testdata/method2/main.go
 go/misc/cgo/testplugin/testdata/method2/p/
 go/misc/cgo/testplugin/testdata/method2/p/p.go
 go/misc/cgo/testplugin/testdata/method2/plugin.go
+go/misc/cgo/testplugin/testdata/method3/
+go/misc/cgo/testplugin/testdata/method3/main.go
+go/misc/cgo/testplugin/testdata/method3/p/
+go/misc/cgo/testplugin/testdata/method3/p/p.go
+go/misc/cgo/testplugin/testdata/method3/plugin.go
 go/misc/cgo/testplugin/testdata/plugin1/
 go/misc/cgo/testplugin/testdata/plugin1/plugin1.go
 go/misc/cgo/testplugin/testdata/plugin2/
@@ -2240,6 +2244,8 @@ go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51472.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51509.go
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51578.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51593.go2
+go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51607.go2
+go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51658.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue6977.src
 go/src/cmd/compile/internal/types2/testdata/manual.go2
 go/src/cmd/compile/internal/types2/testdata/spec/
@@ -3385,6 +3391,7 @@ go/src/cmd/go/testdata/script/test_benchmark_fatal.txt
 go/src/cmd/go/testdata/script/test_benchmark_labels.txt
 go/src/cmd/go/testdata/script/test_benchmark_timeout.txt
 go/src/cmd/go/testdata/script/test_build_failure.txt
+go/src/cmd/go/testdata/script/test_buildvcs.txt
 go/src/cmd/go/testdata/script/test_cache_inputs.txt
 go/src/cmd/go/testdata/script/test_chatty_fail.txt
 go/src/cmd/go/testdata/script/test_chatty_parallel_fail.txt
@@ -3542,6 +3549,7 @@ go/src/cmd/go/testdata/script/work_use_deleted.txt
 go/src/cmd/go/testdata/script/work_use_dot.txt
 go/src/cmd/go/testdata/script/work_use_issue50958.txt
 go/src/cmd/go/testdata/script/work_use_noargs.txt
+go/src/cmd/go/testdata/script/work_use_only_dirs.txt
 go/src/cmd/go/testdata/script/work_vet.txt
 go/src/cmd/go/testdata/script/work_why_download_graph.txt
 go/src/cmd/go/testdata/testterminal18153/
@@ -6332,6 +6340,8 @@ go/src/go/types/testdata/fixedbugs/issue51472.go2
 go/src/go/types/testdata/fixedbugs/issue51509.go
 go/src/go/types/testdata/fixedbugs/issue51578.go2
 go/src/go/types/testdata/fixedbugs/issue51593.go2
+go/src/go/types/testdata/fixedbugs/issue51658.go2
+go/src/go/types/testdata/fixedbugs/issue52031.go
 go/src/go/types/testdata/fixedbugs/issue6977.src
 go/src/go/types/testdata/manual.go2
 go/src/go/types/testdata/spec/
@@ -12010,6 +12020,7 @@ go/test/fixedbugs/issue51437.go
 go/test/fixedbugs/issue51531.go
 go/test/fixedbugs/issue5162.go
 go/test/fixedbugs/issue5172.go
+go/test/fixedbugs/issue51839.go
 go/test/fixedbugs/issue5231.go
 go/test/fixedbugs/issue5244.go
 go/test/fixedbugs/issue5259.dir/
@@ -12939,6 +12950,13 @@ go/test/typeparam/issue51423.dir/b.go
 go/test/typeparam/issue51423.go
 go/test/typeparam/issue51522a.go
 go/test/typeparam/issue51522b.go
+go/test/typeparam/issue51733.go
+go/test/typeparam/issue51765.go
+go/test/typeparam/issue51836.dir/
+go/test/typeparam/issue51836.dir/a.go
+go/test/typeparam/issue51836.dir/aa.go
+go/test/typeparam/issue51836.dir/p.go
+go/test/typeparam/issue51836.go
 go/test/typeparam/list.go
 go/test/typeparam/list2.go
 go/test/typeparam/listimp.dir/
@@ -12975,6 +12993,7 @@ go/test/typeparam/mdempsky/12.dir/a.go
 go/test/typeparam/mdempsky/12.dir/main.go
 go/test/typeparam/mdempsky/12.go
 go/test/typeparam/mdempsky/13.go
+go/test/typeparam/mdempsky/13b.go
 go/test/typeparam/mdempsky/14.go
 go/test/typeparam/mdempsky/15.go
 go/test/typeparam/mdempsky/2.go

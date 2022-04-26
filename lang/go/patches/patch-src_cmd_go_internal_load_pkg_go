@@ -1,7 +1,7 @@
 Index: src/cmd/go/internal/load/pkg.go
 --- src/cmd/go/internal/load/pkg.go.orig
 +++ src/cmd/go/internal/load/pkg.go
-@@ -2482,11 +2482,11 @@ func externalLinkingForced(p *Package) bool {
+@@ -2498,11 +2498,11 @@ func externalLinkingForced(p *Package) bool {
  	// Some targets must use external linking even inside GOROOT.
  	switch cfg.BuildContext.GOOS {
  	case "android":
