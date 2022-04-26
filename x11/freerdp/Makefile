@@ -1,15 +1,12 @@
-# Also:  __sync_fetch_and_add_4 __sync_add_and_fetch_4 __sync_sub_and_fetch_4
-BROKEN-hppa =		undefined reference to __sync_val_compare_and_swap_4
-
 COMMENT =		client for Microsoft RDP (remote desktop protocol)
-DISTNAME =		freerdp-2.6.1
+DISTNAME =		freerdp-2.7.0
 DPB_PROPERTIES =	parallel
 CATEGORIES =		x11 net
 
 SHARED_LIBS +=  freerdp-client2           1.0
 SHARED_LIBS +=  freerdp2                  1.2
 SHARED_LIBS +=  winpr-tools2              1.0
-SHARED_LIBS +=  winpr2                    1.1
+SHARED_LIBS +=  winpr2                    2.0
 
 HOMEPAGE =		https://www.freerdp.com/
 MASTER_SITES =		https://pub.freerdp.com/releases/

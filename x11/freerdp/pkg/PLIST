@@ -157,6 +157,7 @@ include/freerdp2/freerdp/window.h
 include/winpr2/
 include/winpr2/winpr/
 include/winpr2/winpr/asn1.h
+include/winpr2/winpr/assert.h
 include/winpr2/winpr/bcrypt.h
 include/winpr2/winpr/bitstream.h
 include/winpr2/winpr/clipboard.h
