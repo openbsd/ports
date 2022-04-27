@@ -1,6 +1,8 @@
 COMMENT =		modern CSS selector implementation for Beautiful Soup
 
-MODPY_EGG_VERSION =	2.3.2
+# XXX 2.3.2 uses a different build system that ports doesn't handle yet
+MODPY_EGG_VERSION =	2.3.1
+EPOCH =			0
 DISTNAME =		soupsieve-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
