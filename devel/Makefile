@@ -72,6 +72,7 @@
      SUBDIR += chmlib
      SUBDIR += cil
      SUBDIR += cjose
+     SUBDIR += cjson
      SUBDIR += clang-tools-extra
      SUBDIR += cln
      SUBDIR += cmake
