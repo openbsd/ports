@@ -612,6 +612,7 @@ share/doc/py-sqlalchemy/_modules/examples/postgis/
 share/doc/py-sqlalchemy/_modules/examples/postgis/postgis.html
 share/doc/py-sqlalchemy/_modules/examples/sharding/
 share/doc/py-sqlalchemy/_modules/examples/sharding/separate_databases.html
+share/doc/py-sqlalchemy/_modules/examples/sharding/separate_schema_translates.html
 share/doc/py-sqlalchemy/_modules/examples/sharding/separate_tables.html
 share/doc/py-sqlalchemy/_modules/examples/space_invaders/
 share/doc/py-sqlalchemy/_modules/examples/space_invaders/space_invaders.html
@@ -630,9 +631,12 @@ share/doc/py-sqlalchemy/_modules/index.html
 share/doc/py-sqlalchemy/_static/
 share/doc/py-sqlalchemy/_static/basic.css
 share/doc/py-sqlalchemy/_static/changelog.css
+share/doc/py-sqlalchemy/_static/clipboard.min.js
+share/doc/py-sqlalchemy/_static/copybutton.css
+share/doc/py-sqlalchemy/_static/copybutton.js
+share/doc/py-sqlalchemy/_static/copybutton_funcs.js
 share/doc/py-sqlalchemy/_static/deepalchemy.png
 share/doc/py-sqlalchemy/_static/deepalchemy_original.png
-share/doc/py-sqlalchemy/_static/detectmobile.js
 share/doc/py-sqlalchemy/_static/docs.css
 share/doc/py-sqlalchemy/_static/doctools.js
 share/doc/py-sqlalchemy/_static/documentation_options.js
@@ -745,6 +749,7 @@ share/doc/py-sqlalchemy/build/errors.rst
 share/doc/py-sqlalchemy/build/faq/
 share/doc/py-sqlalchemy/build/faq/connections.rst
 share/doc/py-sqlalchemy/build/faq/index.rst
+share/doc/py-sqlalchemy/build/faq/installation.rst
 share/doc/py-sqlalchemy/build/faq/metadata_schema.rst
 share/doc/py-sqlalchemy/build/faq/ormconfiguration.rst
 share/doc/py-sqlalchemy/build/faq/performance.rst
@@ -766,6 +771,7 @@ share/doc/py-sqlalchemy/build/orm/contextual.rst
 share/doc/py-sqlalchemy/build/orm/declarative_config.rst
 share/doc/py-sqlalchemy/build/orm/declarative_mapping.rst
 share/doc/py-sqlalchemy/build/orm/declarative_mixins.rst
+share/doc/py-sqlalchemy/build/orm/declarative_styles.rst
 share/doc/py-sqlalchemy/build/orm/declarative_tables.rst
 share/doc/py-sqlalchemy/build/orm/events.rst
 share/doc/py-sqlalchemy/build/orm/examples.rst
@@ -811,6 +817,7 @@ share/doc/py-sqlalchemy/build/orm/nonstandard_mappings.rst
 share/doc/py-sqlalchemy/build/orm/persistence_techniques.rst
 share/doc/py-sqlalchemy/build/orm/query.rst
 share/doc/py-sqlalchemy/build/orm/queryguide.rst
+share/doc/py-sqlalchemy/build/orm/quickstart.rst
 share/doc/py-sqlalchemy/build/orm/relationship_api.rst
 share/doc/py-sqlalchemy/build/orm/relationship_persistence.rst
 share/doc/py-sqlalchemy/build/orm/relationships.rst
@@ -919,6 +926,7 @@ share/doc/py-sqlalchemy/errors.html
 share/doc/py-sqlalchemy/faq/
 share/doc/py-sqlalchemy/faq/connections.html
 share/doc/py-sqlalchemy/faq/index.html
+share/doc/py-sqlalchemy/faq/installation.html
 share/doc/py-sqlalchemy/faq/metadata_schema.html
 share/doc/py-sqlalchemy/faq/ormconfiguration.html
 share/doc/py-sqlalchemy/faq/performance.html
@@ -942,6 +950,7 @@ share/doc/py-sqlalchemy/orm/contextual.html
 share/doc/py-sqlalchemy/orm/declarative_config.html
 share/doc/py-sqlalchemy/orm/declarative_mapping.html
 share/doc/py-sqlalchemy/orm/declarative_mixins.html
+share/doc/py-sqlalchemy/orm/declarative_styles.html
 share/doc/py-sqlalchemy/orm/declarative_tables.html
 share/doc/py-sqlalchemy/orm/events.html
 share/doc/py-sqlalchemy/orm/examples.html
@@ -987,6 +996,7 @@ share/doc/py-sqlalchemy/orm/nonstandard_mappings.html
 share/doc/py-sqlalchemy/orm/persistence_techniques.html
 share/doc/py-sqlalchemy/orm/query.html
 share/doc/py-sqlalchemy/orm/queryguide.html
+share/doc/py-sqlalchemy/orm/quickstart.html
 share/doc/py-sqlalchemy/orm/relationship_api.html
 share/doc/py-sqlalchemy/orm/relationship_persistence.html
 share/doc/py-sqlalchemy/orm/relationships.html
@@ -1102,6 +1112,7 @@ share/examples/py-sqlalchemy/postgis/postgis.py
 share/examples/py-sqlalchemy/sharding/
 share/examples/py-sqlalchemy/sharding/__init__.py
 share/examples/py-sqlalchemy/sharding/separate_databases.py
+share/examples/py-sqlalchemy/sharding/separate_schema_translates.py
 share/examples/py-sqlalchemy/sharding/separate_tables.py
 share/examples/py-sqlalchemy/space_invaders/
 share/examples/py-sqlalchemy/space_invaders/__init__.py

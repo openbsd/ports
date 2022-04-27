@@ -2,10 +2,9 @@ COMMENT =		database toolkit for Python
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
-MODPY_EGG_VERSION =	1.4.31
+MODPY_EGG_VERSION =	1.4.36
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		databases
 
