@@ -1,0 +1,20 @@
+--- Makefile.orig	Wed Nov 20 19:20:49 2002
++++ Makefile	Thu Apr 28 05:30:13 2022
+@@ -5,7 +5,7 @@
+ #-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+ 
+ # Change this PREFIX to where you want docker to be installed
+-PREFIX=/usr/local
++# PREFIX=/usr/local
+ # Change this XLIBPATH to point to your X11 development package's installation
+ XLIBPATH=/usr/X11R6/lib
+ 
+@@ -21,7 +21,7 @@ CFLAGS=-pedantic -Wall -W -O
+ PACKAGE=docker
+ VERSION=1.5
+ 
+-target=docker
++target=wmdocker
+ sources=docker.c kde.c icons.c xproperty.c net.c
+ headers=docker.h kde.h icons.h xproperty.h net.h version.h
+ extra=README COPYING version.h.in

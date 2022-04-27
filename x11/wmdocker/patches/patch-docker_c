@@ -1,0 +1,11 @@
+--- docker.c.orig	Wed Nov 20 19:20:49 2002
++++ docker.c	Sat Apr 23 19:35:24 2022
+@@ -329,7 +329,7 @@ int main(int c, char **v)
+   sigaction(SIGINT, &act, NULL);
+   sigaction(SIGHUP, &act, NULL);
+ 
+-  parse_cmd_line(argc, argv);
++  parse_cmd_line();
+ 
+   display = XOpenDisplay(display_string);
+   if (!display) {

@@ -1,0 +1,10 @@
+--- icons.c.orig	Wed Nov 20 19:20:49 2002
++++ icons.c	Sat Apr 23 19:40:38 2022
+@@ -6,7 +6,6 @@
+ gboolean error;
+ int window_error_handler(Display *d, XErrorEvent *e)
+ {
+-  d=d;e=e;
+   if (e->error_code == BadWindow) {
+     error = TRUE;
+   } else {
