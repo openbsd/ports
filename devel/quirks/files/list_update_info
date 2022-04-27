@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: list_update_info,v 1.5 2022/04/21 15:18:58 espie Exp $
+# $OpenBSD: list_update_info,v 1.6 2022/04/27 15:48:45 espie Exp $
 #
 # Copyright (c) 2022 Marc Espie <espie@openbsd.org>
 #
@@ -56,7 +56,7 @@ sub handle_file
 		open my $fh, '>', \$content;
 		$plist->write($fh);
 		close $fh;
-		my $digest = Digest::SHA::sha256_base64(\$content);
+		my $digest = Digest::SHA::sha256_base64($content);
 		print {$self->{output}} $plist->pkgname, ':@option always-update ', $digest, "\n";
 	} else {
 		# TODO think about generating a "total size" annotation ?
