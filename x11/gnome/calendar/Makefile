@@ -1,7 +1,7 @@
 COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
-GNOME_VERSION =		42.0
+GNOME_VERSION =		42.1
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
