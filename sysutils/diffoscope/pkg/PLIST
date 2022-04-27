@@ -93,6 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rpm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rpm_fallback.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}socket_or_fifo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}squashfs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -168,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rdata.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rpm.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rpm_fallback.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/rust.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/socket_or_fifo.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/sphinx.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/squashfs.py
