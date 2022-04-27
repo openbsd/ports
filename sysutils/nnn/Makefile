@@ -1,6 +1,6 @@
 COMMENT =		the missing terminal file browser for X
 
-V =			4.4
+V =			4.5
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
 
