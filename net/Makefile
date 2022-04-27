@@ -411,6 +411,7 @@
      SUBDIR += p5-Net-Inspect
      SUBDIR += p5-Net-Jabber
      SUBDIR += p5-Net-LibIDN
+     SUBDIR += p5-Net-LibIDN2
      SUBDIR += p5-Net-MySQL
      SUBDIR += p5-Net-NTP
      SUBDIR += p5-Net-Netmask
