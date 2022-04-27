@@ -12,7 +12,6 @@
 @man man/man1/hugo-convert.1
 @man man/man1/hugo-deploy.1
 @man man/man1/hugo-env.1
-@man man/man1/hugo-gen-autocomplete.1
 @man man/man1/hugo-gen-chromastyles.1
 @man man/man1/hugo-gen-doc.1
 @man man/man1/hugo-gen-man.1
