@@ -212,6 +212,7 @@
      SUBDIR += ruby-vorbis_comment,ruby31
      SUBDIR += schismtracker
      SUBDIR += scmpc
+     SUBDIR += shairport-sync
      SUBDIR += shntool
      SUBDIR += shorten
      SUBDIR += sidplay
