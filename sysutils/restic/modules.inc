@@ -1,5 +1,3 @@
-MODGO_VERSION =	v0.13.0
-
 MODGO_MODULES =	\
 	bazil.org/fuse						 v0.0.0-20200407214033-5883e5a4b512 \
 	cloud.google.com/go					 v0.84.0 \
