@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			100.0.4896.127
+V=			101.0.4951.41
 
 DISTNAME=		chromium-${V}
 
@@ -137,6 +137,7 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	libevent \
+		libxml \
 		libxslt
 
 GN_ARGS=	enable_nacl=false \

@@ -10,3 +10,12 @@ Index: chrome/app/chrome_command_ids.h
  #define IDC_USE_SYSTEM_TITLE_BAR        34051
  #define IDC_RESTORE_WINDOW              34052
  #endif
+@@ -447,7 +447,7 @@
+ #define IDC_CONTENT_CONTEXT_QUICK_ANSWERS_INLINE_QUERY 52414
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ // Screen AI
+ #define IDC_RUN_SCREEN_AI 52420
+ #endif

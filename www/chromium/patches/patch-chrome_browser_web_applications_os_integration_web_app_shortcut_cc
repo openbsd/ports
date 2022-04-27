@@ -28,7 +28,7 @@ Index: chrome/browser/web_applications/os_integration/web_app_shortcut.cc
      bool success =
          scoped_override->desktop.CreateUniqueTempDirUnderPath(base_path);
      DCHECK(success);
-@@ -195,7 +195,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
+@@ -197,7 +197,7 @@ std::unique_ptr<ScopedShortcutOverrideForTesting> Over
  #elif BUILDFLAG(IS_MAC)
      bool success = scoped_override->chrome_apps_folder.CreateUniqueTempDir();
      DCHECK(success);
@@ -36,4 +36,4 @@ Index: chrome/browser/web_applications/os_integration/web_app_shortcut.cc
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      bool success = scoped_override->desktop.CreateUniqueTempDir();
      DCHECK(success);
- #endif
+     success = scoped_override->startup.CreateUniqueTempDir();

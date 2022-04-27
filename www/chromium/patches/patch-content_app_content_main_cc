@@ -1,7 +1,7 @@
 Index: content/app/content_main.cc
 --- content/app/content_main.cc.orig
 +++ content/app/content_main.cc
-@@ -254,7 +254,7 @@ RunContentProcess(ContentMainParams params,
+@@ -260,7 +260,7 @@ RunContentProcess(ContentMainParams params,
      base::allocator::InstallDanglingRawPtrChecks();
      base::EnableTerminationOnOutOfMemory();
  

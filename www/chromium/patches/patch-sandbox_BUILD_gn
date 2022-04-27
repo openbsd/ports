@@ -1,7 +1,7 @@
 Index: sandbox/BUILD.gn
 --- sandbox/BUILD.gn.orig
 +++ sandbox/BUILD.gn
-@@ -27,7 +27,7 @@ group("sandbox") {
+@@ -36,7 +36,7 @@ group("sandbox") {
        "//sandbox/mac:system_services",
        "//sandbox/mac/mojom",
      ]

@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/chrome_pages.cc
 --- chrome/browser/ui/chrome_pages.cc.orig
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -550,7 +550,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
+@@ -553,7 +553,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

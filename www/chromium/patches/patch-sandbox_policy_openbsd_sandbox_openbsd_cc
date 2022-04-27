@@ -134,7 +134,7 @@ Index: sandbox/policy/openbsd/sandbox_openbsd.cc
 +    auto* display = connection->GetXlibDisplay().display();
 +
 +    char buf[1];
-+    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, base::size(buf));
++    XGetErrorDatabaseText(display, "XProtoError", "0", "",  buf, std::size(buf));
 +  }
 +
 +  if (process_type.empty()) {

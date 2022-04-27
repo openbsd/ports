@@ -8,7 +8,7 @@ Index: content/public/common/content_switches.h
 +CONTENT_EXPORT extern const char kDisableUnveil[];
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
- CONTENT_EXPORT extern const char kEnableNewCanvas2DAPI[];
+ CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
 @@ -267,7 +268,7 @@ CONTENT_EXPORT extern const char kRendererWaitForJavaD
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch

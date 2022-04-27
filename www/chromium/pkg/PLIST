@@ -14,6 +14,8 @@ chrome/icudtl.dat
 @so chrome/libVkICD_mock_icd.so
 @so chrome/libvulkan.so
 chrome/locales/
+chrome/locales/af.pak
+chrome/locales/af.pak.info
 chrome/locales/am.pak
 chrome/locales/am.pak.info
 chrome/locales/ar.pak
@@ -114,6 +116,8 @@ chrome/locales/tr.pak
 chrome/locales/tr.pak.info
 chrome/locales/uk.pak
 chrome/locales/uk.pak.info
+chrome/locales/ur.pak
+chrome/locales/ur.pak.info
 chrome/locales/vi.pak
 chrome/locales/vi.pak.info
 chrome/locales/zh-CN.pak

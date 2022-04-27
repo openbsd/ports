@@ -10,7 +10,7 @@ Index: content/test/BUILD.gn
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -2850,7 +2850,7 @@ test("content_unittests") {
+@@ -2866,7 +2866,7 @@ test("content_unittests") {
      deps += [ "//third_party/boringssl" ]
    }
  

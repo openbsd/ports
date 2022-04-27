@@ -1,7 +1,7 @@
 Index: sandbox/policy/features.cc
 --- sandbox/policy/features.cc.orig
 +++ sandbox/policy/features.cc
-@@ -16,7 +16,11 @@ namespace features {
+@@ -14,7 +14,11 @@ namespace sandbox::policy::features {
  // Enables network service sandbox.
  // (Only causes an effect when feature kNetworkService is enabled.)
  const base::Feature kNetworkServiceSandbox{"NetworkServiceSandbox",
