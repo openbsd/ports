@@ -334,6 +334,7 @@
      SUBDIR += wmclockmon
      SUBDIR += wmctrl
      SUBDIR += wmdate
+     SUBDIR += wmdocker
      SUBDIR += wmfishtime
      SUBDIR += wmi
      SUBDIR += wmii
