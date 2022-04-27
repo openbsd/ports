@@ -1,0 +1,9 @@
+${P5ARCH}/
+${P5ARCH}/Net/
+${P5ARCH}/Net/LibIDN2.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Net/
+${P5ARCH}/auto/Net/LibIDN2/
+${P5ARCH}/auto/Net/LibIDN2/LibIDN2.bs
+@so ${P5ARCH}/auto/Net/LibIDN2/LibIDN2.so
+@man man/man3p/Net::LibIDN2.3p

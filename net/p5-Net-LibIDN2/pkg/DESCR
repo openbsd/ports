@@ -1,0 +1,3 @@
+Perl bindings for GNU Libidn2.  Provides bindings for GNU Libidn2,
+a C library for handling internationalized domain names based on
+IDNA 2008, Punycode and TR46.
