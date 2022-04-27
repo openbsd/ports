@@ -1,6 +1,6 @@
 COMMENT =		readthedocs.org theme for Sphinx
 
-MODPY_EGG_VERSION =	0.5.1
+MODPY_EGG_VERSION =	1.0.0
 GH_ACCOUNT =		readthedocs
 GH_PROJECT =		sphinx_rtd_theme
 GH_TAGNAME =		${MODPY_EGG_VERSION}
@@ -8,7 +8,6 @@ GH_TAGNAME =		${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 DISTFILES =		${DISTNAME}.tar.gz \
 			sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz:0
-REVISION =		0
 
 CATEGORIES =		textproc
 
