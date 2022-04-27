@@ -1,7 +1,7 @@
 COMMENT=		all-in-one management software
 
-MV=			13.0
-SV=			20220110
+MV=			15.0
+SV=			20220427
 V=			${MV}.${SV}
 
 DISTNAME=		odoo_${V}
@@ -31,8 +31,10 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			devel/py-stdnum${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
+			graphics/py-qrcode${MODPY_FLAVOR} \
 			lang/node \
 			print/py-reportlab${MODPY_FLAVOR} \
+			security/py-openssl${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			telephony/py-phonenumbers${MODPY_FLAVOR} \
