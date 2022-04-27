@@ -3,7 +3,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
-GH_TAGNAME =	2.4.1
+GH_TAGNAME =	2.5
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -13,6 +13,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c onig
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+# C11
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	textproc/oniguruma
 
