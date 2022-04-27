@@ -2,14 +2,11 @@ COMMENT=		full text search plugin for Dovecot using Xapian
 
 GH_ACCOUNT=		grosjo
 GH_PROJECT=		fts-xapian
-GH_TAGNAME=		1.4.8
-REVISION=		2
+GH_TAGNAME=		1.5.5
 
 PKGNAME=		dovecot-${DISTNAME}
 
 CATEGORIES=		mail
-
-MAINTAINER=		Tom Wong-Cornall <tom@wongcornall.com>
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes
