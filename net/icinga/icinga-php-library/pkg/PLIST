@@ -95,6 +95,7 @@ icinga-php/ipl/vendor/
 icinga-php/ipl/vendor/autoload.php
 icinga-php/ipl/vendor/composer/
 icinga-php/ipl/vendor/composer/ClassLoader.php
+icinga-php/ipl/vendor/composer/InstalledVersions.php
 icinga-php/ipl/vendor/composer/LICENSE
 icinga-php/ipl/vendor/composer/autoload_classmap.php
 icinga-php/ipl/vendor/composer/autoload_files.php
@@ -103,6 +104,8 @@ icinga-php/ipl/vendor/composer/autoload_psr4.php
 icinga-php/ipl/vendor/composer/autoload_real.php
 icinga-php/ipl/vendor/composer/autoload_static.php
 icinga-php/ipl/vendor/composer/installed.json
+icinga-php/ipl/vendor/composer/installed.php
+icinga-php/ipl/vendor/composer/platform_check.php
 icinga-php/ipl/vendor/evenement/
 icinga-php/ipl/vendor/evenement/evenement/
 icinga-php/ipl/vendor/evenement/evenement/LICENSE
