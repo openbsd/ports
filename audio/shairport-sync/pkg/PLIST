@@ -1,0 +1,11 @@
+@newgroup _shairport:876
+@newuser _shairport:876:876::Shairport-sync Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/shairport_sync
+@bin bin/shairport-sync
+@man man/man1/shairport-sync.1
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/shairport-sync/
+share/examples/shairport-sync/shairport-sync.conf
+@owner _shairport
+@group _shairport
+@sample ${SYSCONFDIR}/shairport-sync.conf

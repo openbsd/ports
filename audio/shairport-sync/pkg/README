@@ -1,0 +1,9 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+shairport-sync requires avahi-daemon(8) to be running first. To start it at
+boot time, the rc.conf.local(8) pkg_scripts line can be edited as follow:
+
+    rcctl enable messagebus avahi_daemon shairport_sync
+    rcctl order messagebus avahi_daemon shairport_sync
