@@ -1,6 +1,6 @@
 COMMENT=		Python module to talk to Google Chromecast
 
-MODPY_EGG_VERSION=	11.0.0
+MODPY_EGG_VERSION=	12.0.0
 DISTNAME=		PyChromecast-${MODPY_EGG_VERSION}
 PKGNAME=		py-chromecast-${MODPY_EGG_VERSION}
 
