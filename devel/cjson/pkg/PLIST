@@ -1,0 +1,10 @@
+include/cjson/
+include/cjson/cJSON.h
+lib/cmake/
+lib/cmake/cJSON/
+lib/cmake/cJSON/cJSONConfig.cmake
+lib/cmake/cJSON/cJSONConfigVersion.cmake
+lib/cmake/cJSON/cjson${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cJSON/cjson.cmake
+@lib lib/libcjson.so.${LIBcjson_VERSION}
+lib/pkgconfig/libcjson.pc
