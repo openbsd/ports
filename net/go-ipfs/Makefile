@@ -1,3 +1,5 @@
+BROKEN =	error during build "quic-go doesn't build on Go 1.18 yet"
+
 COMMENT =	global, versioned, peer-to-peer filesystem
 
 MODGO_MODNAME =	github.com/ipfs/go-ipfs
