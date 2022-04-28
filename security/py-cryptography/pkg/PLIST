@@ -27,8 +27,6 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}/

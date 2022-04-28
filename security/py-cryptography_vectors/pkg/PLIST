@@ -165,6 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Ser
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_private_key_encrypted.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/ec_public_key.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa-bad-1025-q-is-2.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa_private_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PEM_Serialization/rsa_public_key.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/
@@ -188,6 +189,11 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/p
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/pkcs12_s2k_pem-X_9931.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/pkcs12_s2k_pem-X_9932.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/private.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/rsa_pss_2048.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/rsa_pss_2048_hash.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/rsa_pss_2048_hash_mask.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/rsa_pss_2048_hash_mask_diff.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/rsa_pss_2048_hash_mask_salt.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/unenc-dsa-pkcs8.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/unenc-dsa-pkcs8.pub.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/asymmetric/PKCS8/unenc-rsa-pkcs8.pem
@@ -479,6 +485,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM/gc
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/GCM/gcmEncryptExtIV256.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OCB3/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OCB3/rfc7253.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OCB3/test-vector-1-nonce104.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OCB3/test-vector-1-nonce112.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OCB3/test-vector-1-nonce120.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OFB/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OFB/OFBGFSbox128.rsp
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/ciphers/AES/OFB/OFBGFSbox192.rsp
@@ -684,6 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/no-name-no-
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/no-name-pwd.p12
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs12/no-password.p12
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/amazon-roots.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/amazon-roots.p7b
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/enveloped.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/pkcs7/isrg.pem
@@ -2326,6 +2336,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invali
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid-sct-version.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_signature_cert.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_signature_crl.pem
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_utf8_common_name.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/invalid_version.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_excluded.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/custom/nc_invalid_ip4_netmask.der
@@ -2379,6 +2390,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ed448/server-
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/letsencryptx3.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/ocsp-army.deps.mil-resp.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/ocsp-army.inapplicable-req.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/ocsp-army.revoked-req.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/ocsp-army.valid-req.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-duplicate-ext.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-ext-nonce.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/ocsp/req-ext-unknown-oid.der
@@ -2427,6 +2441,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/unsu
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/requests/unsupported_extension_critical.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/san_edipartyname.der
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/san_x400address.der
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/scottishpower-bitstring-dn.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/tls-feature-ocsp-staple.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/unique_identifier.pem
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/x509/utf8-dnsname.pem
