@@ -2,9 +2,8 @@ COMMENT =	C++-native, header-only, test framework for unit-tests
 
 GH_ACCOUNT =	catchorg
 GH_PROJECT =	Catch2
-GH_TAGNAME =	v2.13.8
+GH_TAGNAME =	v2.13.9
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	devel
 
