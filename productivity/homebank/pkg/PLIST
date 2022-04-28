@@ -181,6 +181,9 @@ share/homebank/icons/
 share/homebank/icons/hicolor/
 share/homebank/icons/hicolor/16x16/
 share/homebank/icons/hicolor/16x16/status/
+share/homebank/icons/hicolor/16x16/status/flt-exclude.png
+share/homebank/icons/hicolor/16x16/status/flt-inactive.png
+share/homebank/icons/hicolor/16x16/status/flt-include.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-auto.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-budget.png
 share/homebank/icons/hicolor/16x16/status/hb-ope-cleared.png
