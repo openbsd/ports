@@ -1,7 +1,7 @@
 COMMENT=		DNS toolkit for Python
 
-# dnspython>=2 is py3-only; some deps are hard to update:
-# mail/mailman net/samba textproc/calibre
+# dnspython>=2 is py3-only; this is kept around until mail/mailman can be
+# updated
 MODPY_EGG_VERSION=	1.16.0
 REVISION=		6
 DISTNAME=		dnspython-${MODPY_EGG_VERSION}
