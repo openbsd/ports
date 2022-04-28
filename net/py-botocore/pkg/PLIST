@@ -225,6 +225,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-identity/2021-04-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-media-pipelines/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-media-pipelines/2021-07-15/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-media-pipelines/2021-07-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-media-pipelines/2021-07-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/2021-07-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/chime-sdk-meetings/2021-07-15/paginators-1.json
@@ -890,6 +894,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivs/2020-07-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/2018-11-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/2018-11-14/paginators-1.json
