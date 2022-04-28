@@ -2,7 +2,7 @@ Index: src/tools/wat2wasm.cc
 --- src/tools/wat2wasm.cc.orig
 +++ src/tools/wat2wasm.cc
 @@ -21,6 +21,9 @@
- #include <cstdio>
+ #include <cstdlib>
  #include <string>
  
 +#include <err.h>

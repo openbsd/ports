@@ -2,7 +2,7 @@ Index: src/tools/wast2json.cc
 --- src/tools/wast2json.cc.orig
 +++ src/tools/wast2json.cc
 @@ -21,6 +21,9 @@
- #include <cstdio>
+ #include <cstdlib>
  #include <string>
  
 +#include <err.h>
@@ -10,7 +10,7 @@ Index: src/tools/wast2json.cc
 +
  #include "config.h"
  
- #include "src/binary-writer.h"
+ #include "src/binary-writer-spec.h"
 @@ -102,6 +105,9 @@ int ProgramMain(int argc, char** argv) {
  
    ParseOptions(argc, argv);

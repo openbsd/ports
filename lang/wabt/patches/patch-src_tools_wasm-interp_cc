@@ -12,8 +12,8 @@ Index: src/tools/wasm-interp.cc
  #include "src/error-formatter.h"
  #include "src/feature.h"
 @@ -326,6 +329,11 @@ int ProgramMain(int argc, char** argv) {
- 
    ParseOptions(argc, argv);
+   s_store.setFeatures(s_features);
  
 +  if (unveil(s_infile, "r") != 0)
 +    err(1, "unveil: %s", s_infile);
