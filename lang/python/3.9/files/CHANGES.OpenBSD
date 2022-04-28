@@ -15,5 +15,9 @@ multi-arch platform and it causes build problems.
 5.  Make sure CPPFLAGS/LDFLAGS passed to ./configure don't end up
 in PY_CPPFLAGS/PY_LDFLAGS and thus leaking to python extensions.
 
+6.  Allow Python to build with LTO on OpenBSD clang architectures.
+OpenBSD's version of llvm-ar is installed as /usr/bin/ar, and the
+compiler as passed to ports builds is /usr/bin/cc.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.9.
