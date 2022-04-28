@@ -1,9 +1,9 @@
 COMMENT =	embeddable JavaScript engine
 
-DISTNAME =	duktape-2.6.0
+DISTNAME =	duktape-2.7.0
 EXTRACT_SUFX =	.tar.xz
 
-SHARED_LIBS +=	duktape	1.2	# 206
+SHARED_LIBS +=	duktape	1.2	# 207
 
 CATEGORIES =	lang
 
