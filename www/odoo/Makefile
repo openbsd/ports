@@ -3,6 +3,7 @@ COMMENT=		all-in-one management software
 MV=			15.0
 SV=			20220427
 V=			${MV}.${SV}
+REVISION=		0
 
 DISTNAME=		odoo_${V}
 
@@ -28,9 +29,11 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-decorator${MODPY_FLAVOR} \
 			devel/py-gevent${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-stdnum${MODPY_FLAVOR} \
 			devel/py-xlsxwriter${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
+			graphics/py-dot${MODPY_FLAVOR} \
 			graphics/py-qrcode${MODPY_FLAVOR} \
 			lang/node \
 			print/py-reportlab${MODPY_FLAVOR} \
@@ -41,8 +44,10 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			textproc/py-PyPDF2${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
+			textproc/py-ofxparse${MODPY_FLAVOR} \
 			textproc/py-polib${MODPY_FLAVOR} \
 			textproc/py-vobject${MODPY_FLAVOR} \
+			textproc/py-xlwt${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			textproc/wkhtmltopdf \
 			www/py-jinja2${MODPY_FLAVOR} \
