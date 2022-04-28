@@ -327,9 +327,17 @@ share/krita/actions/KisToolTransform.action
 share/krita/actions/MoveTool.action
 share/krita/actions/PathTool.action
 share/krita/actions/SvgTextTool.action
+share/krita/actions/asccdl.action
+share/krita/actions/colorsfilters.action
+share/krita/actions/convertheightnormalmap.action
 share/krita/actions/dbexplorer.action
+share/krita/actions/gaussianhighpass.action
+share/krita/actions/gradientmap.action
+share/krita/actions/halftone.action
 share/krita/actions/krita.action
 share/krita/actions/kritamenu.action
+share/krita/actions/normalize.action
+share/krita/actions/palettize.action
 share/krita/actions/recorder.action
 share/krita/actions/threshold.action
 share/krita/actions/tools.action
@@ -1020,6 +1028,7 @@ share/locale/hne/LC_MESSAGES/krita.mo
 share/locale/hr/LC_MESSAGES/krita.mo
 share/locale/hu/LC_MESSAGES/krita.mo
 share/locale/ia/LC_MESSAGES/krita.mo
+share/locale/id/LC_MESSAGES/krita.mo
 share/locale/is/LC_MESSAGES/krita.mo
 share/locale/it/LC_MESSAGES/krita.mo
 share/locale/ja/LC_MESSAGES/krita.mo

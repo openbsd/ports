@@ -1,6 +1,6 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.0.2
+VERSION =	5.0.5
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
@@ -10,7 +10,7 @@ SHARED_LIBS +=  kritapigment              7.0 # 16.0
 SHARED_LIBS +=  kritaplugin               2.0 # 16.0
 SHARED_LIBS +=  kritastore                3.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              6.0 # 16.0
+SHARED_LIBS +=  kritawidgets              6.1 # 16.0
 SHARED_LIBS +=  kritawidgetutils          5.0 # 16.0
 SHARED_LIBS +=  kritacommand              3.0 # 16.0
 SHARED_LIBS +=  kritaimpex                2.0 # 16.0
@@ -19,16 +19,16 @@ SHARED_LIBS +=  kritalibkra               5.0 # 16.0
 SHARED_LIBS +=  kritaqml                  3.0 # 16.0
 SHARED_LIBS +=  kritametadata             1.0 # 18.0
 SHARED_LIBS +=  kritaqmicinterface        0.0 # 17.0
-SHARED_LIBS +=  kritaresources            1.0 # 17.0
+SHARED_LIBS +=  kritaresources            2.0 # 17.0
 SHARED_LIBS +=  kritaresourcewidgets      0.0 # 17.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  4.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
 SHARED_LIBS +=  kritaglobal               5.1 # 14.0
-SHARED_LIBS +=  kritaimage                62.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             57.0 # 0.0
+SHARED_LIBS +=  kritaimage                63.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             58.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           57.0 # 0.0
-SHARED_LIBS +=  kritaui                   64.0 # 0.0
+SHARED_LIBS +=  kritaui                   65.0 # 0.0
 
 CATEGORIES =	graphics
 
@@ -53,7 +53,7 @@ WANTLIB += jpeg lcms2 m openjp2 png poppler poppler-qt5 quazip5
 WANTLIB += raw tiff webp z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
-EXTRACT_SUFX =	.tar.gz
+EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/kf5 \
 		lang/python
