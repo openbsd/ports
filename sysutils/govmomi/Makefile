@@ -2,7 +2,7 @@ COMMENT-main=		vSphere CLI built on top of govmomi
 COMMENT-vcsim=		vCenter and ESXi API based simulator
 
 MODGO_MODNAME=		github.com/vmware/govmomi
-MODGO_VERSION=		v0.27.4
+MODGO_VERSION=		v0.28.0
 DISTNAME=		govmomi-${MODGO_VERSION}
 
 WRKDIST=		${WRKDIR}/github.com/vmware/govmomi@${MODGO_VERSION}
@@ -31,15 +31,6 @@ do-build:
 	cd ${WRKSRC}/${_d} && ${MODGO_BUILD_CMD}
 .endfor
 
-MODGO_MODULES =	\
-	github.com/a8m/tree		 v0.0.0-20210115125333-10a5fd5b637d \
-	github.com/davecgh/go-xdr	 v0.0.0-20161123171359-e6a2ba005892 \
-	github.com/dougm/pretty		 v0.0.0-20171025230240-2ee9d7453c02 \
-	github.com/google/uuid		 v1.2.0 \
-	github.com/kr/pretty		 v0.1.0 \
-	github.com/kr/pty		 v1.1.1 \
-	github.com/kr/text		 v0.1.0 \
-	github.com/rasky/go-xdr		 v0.0.0-20170217172119-4930550ba2e2 \
-	github.com/vmware/vmw-guestinfo	 v0.0.0-20170707015358-25eff159a728
+.include "modules.inc"
 
 .include <bsd.port.mk>
