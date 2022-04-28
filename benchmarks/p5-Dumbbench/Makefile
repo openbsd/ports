@@ -1,6 +1,6 @@
 COMMENT =	more reliable benchmarking
 
-DISTNAME =	Dumbbench-0.501
+DISTNAME =	Dumbbench-0.503
 CPAN_AUTHOR =	BDFOY
 
 CATEGORIES =	benchmarks
