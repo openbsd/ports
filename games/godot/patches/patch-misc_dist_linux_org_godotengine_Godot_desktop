@@ -1,0 +1,12 @@
+Index: misc/dist/linux/org.godotengine.Godot.desktop
+--- misc/dist/linux/org.godotengine.Godot.desktop.orig
++++ misc/dist/linux/org.godotengine.Godot.desktop
+@@ -2,7 +2,7 @@
+ Name=Godot Engine
+ GenericName=Libre game engine
+ Comment=Multi-platform 2D and 3D game engine with a feature-rich editor
+-Exec=godot %f
++Exec=${TRUEPREFIX}/bin/godot-tools %f
+ Icon=godot
+ Terminal=false
+ PrefersNonDefaultGPU=true

@@ -1,24 +1,32 @@
 BROKEN-powerpc =	fails at runtime, the UI is totally blank
 
-COMMENT =	2D and 3D game engine
+COMMENT-main =	2D and 3D game engine
+COMMENT-tools=	2D and 3D game engine (with tools)
 
 V =		3.4.4
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION =	0
+REVISION-main =	1
+
 CATEGORIES =	games
+
 HOMEPAGE =	https://godotengine.org/
+
 MAINTAINER =	Omar Polo <op@omarpolo.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+MULTI_PACKAGES =	-main -tools
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
 WANTLIB += LinearMath GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
 WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio steam_api theora
 WANTLIB += theoradec usbhid vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
+
+WANTLIB-tools = ${WANTLIB}
 
 # C++14
 COMPILER =	base-clang ports-gcc
@@ -58,7 +66,6 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			custom_modules=${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam \
 			progress=no \
 			pulseaudio=no \
-			target=release_debug \
 			verbose=yes \
 			warnings=extra \
 			werror=no
@@ -83,7 +90,8 @@ LIB_DEPENDS =		archivers/zstd \
 			multimedia/libvpx \
 			net/enet \
 			security/polarssl
-RUN_DEPENDS =		devel/desktop-file-utils
+
+RUN_DEPENDS-tools =	devel/desktop-file-utils
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 NO_TEST =		Yes
@@ -103,15 +111,21 @@ post-extract:
 		${WRKDIST}/platform/x11/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp
+	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
 	sed -E -i 's/ISteamHTMLSurface:://g' \
 		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.cpp
 	sed -E -i 's/Connection_DEPRECATED/Connection/g' \
 		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.cpp
 
+do-build:
+	@${MODSCONS_BUILD_TARGET} tools=no  target=release
+	@${MODSCONS_BUILD_TARGET} tools=yes target=release_debug
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot* \
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.[36]* \
 		${PREFIX}/bin/godot
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.tools.* \
+		${PREFIX}/bin/godot-tools
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
 		${PREFIX}/man/man6
