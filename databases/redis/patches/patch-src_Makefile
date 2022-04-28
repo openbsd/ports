@@ -5,7 +5,7 @@ Changes in this file:
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -64,7 +64,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
+@@ -66,7 +66,7 @@ ifneq (,$(filter aarch64 armv,$(uname_M)))
          CFLAGS+=-funwind-tables
  else
  ifneq (,$(findstring armv,$(uname_M)))
@@ -14,7 +14,7 @@ Index: src/Makefile
  endif
  endif
  
-@@ -95,7 +95,7 @@ DEBUG=-g -ggdb
+@@ -97,7 +97,7 @@ DEBUG=-g -ggdb
  
  # Linux ARM32 needs -latomic at linking time
  ifneq (,$(findstring armv,$(uname_M)))
@@ -23,7 +23,7 @@ Index: src/Makefile
  endif
  
  ifeq ($(uname_S),SunOS)
-@@ -388,7 +388,7 @@ distclean: clean
+@@ -390,7 +390,7 @@ distclean: clean
  .PHONY: distclean
  
  test: $(REDIS_SERVER_NAME) $(REDIS_CHECK_AOF_NAME) $(REDIS_CLI_NAME) $(REDIS_BENCHMARK_NAME)
@@ -32,7 +32,7 @@ Index: src/Makefile
  
  test-modules: $(REDIS_SERVER_NAME)
  	@(cd ..; ./runtest-moduleapi)
-@@ -431,7 +431,7 @@ src/help.h:
+@@ -433,7 +433,7 @@ src/help.h:
  	@../utils/generate-command-help.rb > help.h
  
  install: all
