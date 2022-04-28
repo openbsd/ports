@@ -362,7 +362,7 @@ MODGO_MODULES =	\
 	go.etcd.io/bbolt					 v1.3.3 \
 	go.etcd.io/etcd						 v0.0.0-20191023171146-3cf2f69b5738 \
 	go.mozilla.org/gopgagent				 v0.0.0-20170926210634-4d7ea76ff71a \
-	go.mozilla.org/sops/v3					 v3.7.0 \
+	go.mozilla.org/sops/v3					 v3.7.2 \
 	go.opencensus.io					 v0.23.0 \
 	go.opentelemetry.io/proto/otlp				 v0.7.0 \
 	go.uber.org/atomic					 v1.3.2 \

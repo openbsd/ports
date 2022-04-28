@@ -1145,8 +1145,8 @@ SHA256 (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.mod) = 
 SHA256 (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.zip) = T6k0WCeXPTV73D0ZHzpS56EHQQEq6eXyJxLtQonpm0Q=
 SHA256 (go_modules/go.mozilla.org/gopgagent/@v/v0.0.0-20170926210634-4d7ea76ff71a.mod) = g9z0oXbcqqSaC2s2MO+lfDoN2+EFbCYhlAGv3GzZE+o=
 SHA256 (go_modules/go.mozilla.org/gopgagent/@v/v0.0.0-20170926210634-4d7ea76ff71a.zip) = GLIFV9GpLeRq3VbVe9xD7pusZPci9usEHWksHj5No8I=
-SHA256 (go_modules/go.mozilla.org/sops/v3/@v/v3.7.0.mod) = UvHL4OL/IS+XO1IMSQ6pusBitxK1bDDynzALsvl4fbM=
-SHA256 (go_modules/go.mozilla.org/sops/v3/@v/v3.7.0.zip) = hs8dmh/hGbFbsxKC5vw9oy31/Jm/dvIZd8ogBqVbyS0=
+SHA256 (go_modules/go.mozilla.org/sops/v3/@v/v3.7.2.mod) = Ey5luwzspdB06RLX1bam25QUW4rrqAshAmPYOlRfyjs=
+SHA256 (go_modules/go.mozilla.org/sops/v3/@v/v3.7.2.zip) = xwLWIXo5LCusJzipDvY5Wf7x1qDP6j8BM+qJ0YgMOD4=
 SHA256 (go_modules/go.opencensus.io/@v/v0.20.1.mod) = h2bKGejBdXc6R5OP1dlPtMv/8kaPjnPc3K46ud8n8S4=
 SHA256 (go_modules/go.opencensus.io/@v/v0.20.2.mod) = h2bKGejBdXc6R5OP1dlPtMv/8kaPjnPc3K46ud8n8S4=
 SHA256 (go_modules/go.opencensus.io/@v/v0.21.0.mod) = ieCSXaA6WvmIebPPtdlps3ZFVLKe3LQ4ROy/EtYVxUI=
@@ -1778,7 +1778,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = GiqBAxR
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.36.7.zip) = ibu++CYsdhhuxCEpMHXywo437its/F/eXJ3uuJrOk+w=
+SHA256 (terragrunt-v0.36.8.zip) = vSUcBB2yVKwNpC23LnCnbkqP2xp3aihiU6TTC74pD5g=
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.mod) = 22
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.zip) = 220662
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -2926,8 +2926,8 @@ SIZE (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.mod) = 21
 SIZE (go_modules/go.etcd.io/etcd/@v/v0.0.0-20191023171146-3cf2f69b5738.zip) = 7085205
 SIZE (go_modules/go.mozilla.org/gopgagent/@v/v0.0.0-20170926210634-4d7ea76ff71a.mod) = 32
 SIZE (go_modules/go.mozilla.org/gopgagent/@v/v0.0.0-20170926210634-4d7ea76ff71a.zip) = 3498
-SIZE (go_modules/go.mozilla.org/sops/v3/@v/v3.7.0.mod) = 2368
-SIZE (go_modules/go.mozilla.org/sops/v3/@v/v3.7.0.zip) = 238107
+SIZE (go_modules/go.mozilla.org/sops/v3/@v/v3.7.2.mod) = 4335
+SIZE (go_modules/go.mozilla.org/sops/v3/@v/v3.7.2.zip) = 240663
 SIZE (go_modules/go.opencensus.io/@v/v0.20.1.mod) = 408
 SIZE (go_modules/go.opencensus.io/@v/v0.20.2.mod) = 408
 SIZE (go_modules/go.opencensus.io/@v/v0.21.0.mod) = 305
@@ -3559,4 +3559,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = 220145
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.36.7.zip) = 2698304
+SIZE (terragrunt-v0.36.8.zip) = 2698518
