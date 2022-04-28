@@ -1,7 +1,9 @@
 COMMENT=		DNS toolkit for Python
 
-# dnspython>=2 is py3-only; this is kept around until mail/mailman can be
-# updated
+# dnspython>=2 is py3-only; this old version is kept around for
+# python 2 until mail/mailman can be updated
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+
 MODPY_EGG_VERSION=	1.16.0
 REVISION=		6
 DISTNAME=		dnspython-${MODPY_EGG_VERSION}
@@ -16,14 +18,8 @@ PERMIT_PACKAGE=		Yes
 MASTER_SITES=		${HOMEPAGE}kits/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
 MODPY_ADJ_FILES=	examples/*.py
-MODPY_PYTEST=		Yes
-
-TEST_DEPENDS=		security/py-ecdsa \
-			devel/py-typing
-
-TEST_ENV+=		PYTHONPATH="${WRKSRC}"
+NO_TEST=		Yes
 
 .include <bsd.port.mk>
