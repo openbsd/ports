@@ -18,14 +18,15 @@ lib/ocp/autoload/
 @so lib/ocp/autoload/30-opltype.so
 @so lib/ocp/autoload/30-playsid.so
 @so lib/ocp/autoload/30-plrbase.so
-@so lib/ocp/autoload/30-smpbase.so
+@so lib/ocp/autoload/30-sidconfig.so
+@so lib/ocp/autoload/30-timidityconfig.so
 @so lib/ocp/autoload/30-ymtype.so
 @so lib/ocp/autoload/35-cpiface.so
 @so lib/ocp/autoload/40-cphlpif.so
+@so lib/ocp/autoload/60-cdfs.so
 @so lib/ocp/devpdisk.so
 @so lib/ocp/devpnone.so
 @so lib/ocp/devpsdl2.so
-@so lib/ocp/devsnone.so
 @so lib/ocp/devwmix.so
 @so lib/ocp/devwmixf.so
 @so lib/ocp/devwnone.so
@@ -42,6 +43,7 @@ lib/ocp/autoload/
 @so lib/ocp/loadult.so
 @so lib/ocp/medialib.so
 @so lib/ocp/playay.so
+@so lib/ocp/playcda.so
 @so lib/ocp/playflac.so
 @so lib/ocp/playgmd.so
 @so lib/ocp/playhvl.so
@@ -54,6 +56,7 @@ lib/ocp/autoload/
 @so lib/ocp/playwav.so
 @so lib/ocp/playxm.so
 @so lib/ocp/playym.so
+@man man/man1/ocp.1
 share/applications/cubic.org-opencubicplayer.desktop
 share/doc/ocp/
 share/doc/ocp/AUTHORS
@@ -62,21 +65,28 @@ share/doc/ocp/COPYING
 share/doc/ocp/CREDITS
 share/doc/ocp/KEYBOARD_REMAPS
 share/doc/ocp/SUID
-share/doc/ocp/TODO
 share/doc/ocp/html/
 share/doc/ocp/html/configuration.html
 share/doc/ocp/html/faq.html
 share/doc/ocp/html/fileselector.html
 share/doc/ocp/html/index.html
-share/doc/ocp/html/mdz.html
 share/doc/ocp/html/player.html
 share/doc/ocp/html/specialdrive.html
 share/doc/ocp/html/starting.html
 share/doc/ocp/html/support.html
 share/doc/ocp/html/wap.html
+share/icons/hicolor/128x128/apps/opencubicplayer.png
+share/icons/hicolor/16x16/apps/opencubicplayer.png
+share/icons/hicolor/22x22/apps/opencubicplayer.png
+share/icons/hicolor/24x24/apps/opencubicplayer.png
+share/icons/hicolor/32x32/apps/opencubicplayer.png
+share/icons/hicolor/48x48/apps/opencubicplayer.png
+share/icons/hicolor/64x64/apps/opencubicplayer.png
+share/icons/hicolor/scalable/apps/opencubicplayer.svg
 share/ocp/
 share/ocp/data/
 share/ocp/data/ocp.hlp
 share/ocp/etc/
 share/ocp/etc/ocp.ini
 @tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

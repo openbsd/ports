@@ -1,12 +1,12 @@
 Index: filesel/Makefile
 --- filesel/Makefile.orig
 +++ filesel/Makefile
-@@ -50,7 +50,7 @@ cdrom$(LIB_SUFFIX): $(cdrom_so)
- 	$(CC) $(SHARED_FLAGS) -o $@ $^
+@@ -54,7 +54,7 @@ cdrom$(LIB_SUFFIX): $(cdrom_so)
+ 	$(CC) $(SHARED_FLAGS) -o $@ $^ $(PTHREAD_LIBS) $(LIBDISCID_LIBS)
  
  pfilesel$(LIB_SUFFIX): $(pfilesel_so)
--	$(CC) $(SHARED_FLAGS) $(MATH_LIBS) $(ICONV_LIBS) -o $@ $^ -lbz2 -lz
-+	$(CC) $(LDFLAGS) $(SHARED_FLAGS) $(MATH_LIBS) $(ICONV_LIBS) -o $@ $^ -lbz2 -lz
+-	$(CC) $(SHARED_FLAGS) -o $@ $^ -lbz2 -lz $(MATH_LIBS) $(ICONV_LIBS) $(LIBCJSON_LIBS)
++	$(CC) $(LDFLAGS) $(SHARED_FLAGS) -o $@ $^ -lbz2 -lz $(MATH_LIBS) $(ICONV_LIBS) $(LIBCJSON_LIBS)
  
  clean:
- 	rm -f *.o *$(LIB_SUFFIX) adbmeta-test dirdb-test filesystem-bzip2-test filesystem-filehandle-cache-test filesystem-gzip-test filesystem-tar-test
+ 	$(MAKE) -C cdfs TOPDIR=../$(TOPDIR) clean

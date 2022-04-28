@@ -3,7 +3,7 @@ BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-0.2.90
+DISTNAME =	ocp-0.2.95
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
@@ -11,16 +11,17 @@ HOMEPAGE =	https://stian.cubic.org/project-ocp.php
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 adplug binio bz2 c curses
-WANTLIB +=	freetype iconv jpeg m mad ogg png vorbis vorbisfile
-WANTLIB +=	z
+WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 adplug binio bz2 c cjson
+WANTLIB +=	curses discid freetype iconv jpeg m mad ogg png vorbis
+WANTLIB +=	vorbisfile z
 
 MASTER_SITES =	https://stian.cubic.org/ocp/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		fonts/unifont
+		fonts/unifont \
+		x11/gtk+3,-guic
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/xa
@@ -28,9 +29,11 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 LIB_DEPENDS =	archivers/bzip2 \
 		audio/adplug \
 		audio/flac \
+		audio/libdiscid \
 		audio/libmad \
 		audio/libogg \
 		audio/libvorbis \
+		devel/cjson \
 		devel/libbinio \
 		devel/sdl2 \
 		graphics/jpeg \
@@ -56,10 +59,10 @@ NO_TEST =	Yes
 
 pre-configure:
 	# Prevent bundled Timidity to pick archivers/libzip's zip.h header
-	@cd ${WRKSRC}/playgmi/timidity-git/libarc && mv zip.h libarc-zip.h
+	@cd ${WRKSRC}/playtimidity/timidity-git/libarc && mv zip.h libarc-zip.h
 	@sed -i 's|"zip.h"|"libarc-zip.h"|' \
-		${WRKSRC}/playgmi/timidity-git/libarc/*.c \
-		${WRKSRC}/playgmi/timidity-git/timidity/*.c
+		${WRKSRC}/playtimidity/timidity-git/libarc/*.c \
+		${WRKSRC}/playtimidity/timidity-git/timidity/*.c
 
 post-install:
 	gunzip ${PREFIX}/info/ocp.info.gz
