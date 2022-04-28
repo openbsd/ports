@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c charset crypto curl expat freexl gdal geos geos_c geotiff gif iconv intl
 WANTLIB += jpeg json-c lz4 lzma m nghttp2 openjp2 pcre2-8 png pq>=5.3 protobuf-c zstd
 WANTLIB += proj pthread qhull_r spatialite sqlite3 ssl ${COMPILER_LIBCXX} tiff webp xml2 z
-WANTLIB += hdf5 hdf5_hl minizip netcdf rttopo fontconfig freetype lcms2 poppler execinfo
+WANTLIB += hdf5 hdf5_hl minizip netcdf rttopo
 
 COMPILER =		base-clang ports-gcc base-gcc
 
