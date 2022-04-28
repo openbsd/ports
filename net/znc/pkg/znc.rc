@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${PREFIX}/bin/znc"
+daemon_flags="-d ${VARBASE}/znc"
+daemon_user="_znc"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

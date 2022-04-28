@@ -1,3 +1,13 @@
+@pkgpath net/znc
+@newgroup _znc:877
+@newuser _znc:877:877:default:ZNC Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/znc
+@owner _znc
+@group _znc
+@sample ${VARBASE}/znc/
+@sample ${VARBASE}/znc/configs/
+@owner
+@group
 @bin bin/znc
 bin/znc-buildmod
 include/znc/
@@ -92,6 +102,7 @@ lib/znc/
 @so lib/znc/webadmin.so
 @man man/man1/znc-buildmod.1
 @man man/man1/znc.1
+share/doc/pkg-readmes/${PKGSTEM}
 share/znc/
 share/znc/cmake/
 share/znc/cmake/ZNCConfig.cmake
