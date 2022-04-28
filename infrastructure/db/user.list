@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.398 2022/04/27 02:20:03 abieber Exp $
+$OpenBSD: user.list,v 1.399 2022/04/28 22:10:28 op Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -385,3 +385,4 @@ id  user		group		port
 874 _snowflakeproxy	_snowflakeproxy	net/snowflake_proxy
 875 _guacd		_guacd		net/guacamole/server
 876 _shairport		_shairport	audio/shairport-sync
+877 _znc		_znc		net/znc
