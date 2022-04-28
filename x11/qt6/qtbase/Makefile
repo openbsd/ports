@@ -118,6 +118,6 @@ post-extract:
 
 .include <bsd.port.mk>
 
-.if ${USE_CCACHE:L} != "yes"
+.if ${USE_CCACHE:L} == "yes"
 CONFIGURE_ARGS +=	-DQT_USE_CCACHE=ON
 .endif
