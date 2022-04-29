@@ -1,0 +1,21 @@
+Index: libao2/ao_sndio.c
+--- libao2/ao_sndio.c.orig
++++ libao2/ao_sndio.c
+@@ -179,7 +179,7 @@ static void uninit(int immed)
+  */
+ static void reset(void)
+ {
+-    if (!sio_stop(hdl))
++    if (!sio_flush(hdl))
+         mp_msg(MSGT_AO, MSGL_ERR, "ao2: reset: couldn't stop\n");
+     delay = 0;
+     if (!sio_start(hdl))
+@@ -235,7 +235,7 @@ static void audio_pause(void)
+      * sndio can't pause, so just stop
+      */
+     prepause_delay = delay;
+-    if (!sio_stop(hdl))
++    if (!sio_flush(hdl))
+         mp_msg(MSGT_AO, MSGL_ERR, "ao2: pause: couldn't stop\n");
+     delay = 0;
+ }
