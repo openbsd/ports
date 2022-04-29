@@ -1,0 +1,22 @@
+Set profile for rust build, based on 'release' profile, see
+https://doc.rust-lang.org/cargo/reference/profiles.html#release
+and devel/cargo/cargo.port.mk. The default doesn't work for i386.
+
+Index: .cargo/config
+--- .cargo/config.orig
++++ .cargo/config
+@@ -3,3 +3,14 @@ replace-with = "vendored-sources"
+ 
+ [source.vendored-sources]
+ directory = "vendor"
++
++[profile.release]
++opt-level = 2
++debug = 0
++debug-assertions = false
++overflow-checks = false
++lto = false
++panic = 'unwind'
++incremental = false
++codegen-units = 4
++rpath = false
