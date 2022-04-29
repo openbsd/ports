@@ -2031,6 +2031,7 @@ lib/python3.10/lib-dynload/
 @so lib/python3.10/lib-dynload/_dbm.cpython-310.so
 @so lib/python3.10/lib-dynload/_decimal.cpython-310.so
 @so lib/python3.10/lib-dynload/_elementtree.cpython-310.so
+@so lib/python3.10/lib-dynload/_hashlib.cpython-310.so
 @so lib/python3.10/lib-dynload/_heapq.cpython-310.so
 @so lib/python3.10/lib-dynload/_json.cpython-310.so
 @so lib/python3.10/lib-dynload/_lsprof.cpython-310.so
