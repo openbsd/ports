@@ -1,7 +1,4 @@
-XXX these functions don't exist in our old libcurses, but the
-toolchain doesn't return an error when trying to link a program
-that has missing functions, you actually need to try to run it
-to notice the problem
+Cope with some problem, possibly related to the old version of curses in OpenBSD
 
 Index: auto.def
 --- auto.def.orig
