@@ -7,6 +7,8 @@ CATEGORIES =	converters textproc
 
 HOMEPAGE =	https://pandoc.org
 
+MAINTAINER = 	Evan Silberman <evan@jklol.net>
+
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
@@ -22,7 +24,7 @@ NO_TEST =		Yes
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	embed_data_files
 MODCABAL_STEM =		pandoc
-MODCABAL_VERSION =	2.17.1.1
+MODCABAL_VERSION =	2.18
 
 # Avoids cloning from github
 post-extract:
@@ -63,10 +65,10 @@ MODCABAL_MANIFEST	= \
 	cabal-doctest	1.0.9	0	\
 	case-insensitive	1.2.1.0	0	\
 	cereal	0.5.8.2	0	\
-	citeproc	0.6.0.1	0	\
+	citeproc	0.7	0	\
 	colour	2.3.6	0	\
-	commonmark	0.2.1.1	0	\
-	commonmark-extensions	0.2.3	0	\
+	commonmark	0.2.2	0	\
+	commonmark-extensions	0.2.3.1	0	\
 	commonmark-pandoc	0.2.1.2	0	\
 	comonad	5.0.8	1	\
 	conduit	1.3.4.2	0	\
@@ -84,8 +86,8 @@ MODCABAL_MANIFEST	= \
 	digest	0.0.1.3	0	\
 	distributive	0.6.2.1	1	\
 	dlist	1.0	0	\
-	doclayout	0.3.1.1	0	\
-	doctemplates	0.10.0.1	0	\
+	doclayout	0.4	0	\
+	doctemplates	0.10.0.2	0	\
 	emojis	0.1.2	0	\
 	errors	2.3.0	2	\
 	file-embed	0.0.15.0	0	\
@@ -95,17 +97,18 @@ MODCABAL_MANIFEST	= \
 	haskell-lexer	1.1	0	\
 	hourglass	0.2.12	0	\
 	hsc2hs	0.68.8	0	\
-	hslua	2.1.0	0	\
-	hslua-aeson	2.1.0	0	\
-	hslua-classes	2.1.0	0	\
-	hslua-core	2.1.0	0	\
-	hslua-marshalling	2.1.0	0	\
+	hslua	2.2.0	0	\
+	hslua-aeson	2.2.0	0	\
+	hslua-classes	2.2.0	0	\
+	hslua-core	2.2.0	0	\
+	hslua-marshalling	2.2.0	0	\
+	hslua-module-doclayout	1.0.4	0	\
 	hslua-module-path	1.0.2	0	\
 	hslua-module-system	1.0.2	0	\
 	hslua-module-text	1.0.2	0	\
 	hslua-module-version	1.0.2	0	\
-	hslua-objectorientation	2.1.0	0	\
-	hslua-packaging	2.1.0	0	\
+	hslua-objectorientation	2.2.0	0	\
+	hslua-packaging	2.2.0	0	\
 	http-client	0.7.11	1	\
 	http-client-tls	0.3.6.1	0	\
 	http-types	0.12.3	0	\
@@ -117,7 +120,7 @@ MODCABAL_MANIFEST	= \
 	jira-wiki-markup	1.4.0	0	\
 	libyaml	0.1.2	0	\
 	lpeg	1.0.3	0	\
-	lua	2.1.0	0	\
+	lua	2.2.0	0	\
 	memory	0.17.0	0	\
 	mime-types	0.1.0.9	0	\
 	mono-traversable	1.0.15.3	0	\
@@ -125,7 +128,7 @@ MODCABAL_MANIFEST	= \
 	network-uri	2.6.4.1	0	\
 	old-locale	1.0.0.7	2	\
 	pandoc-lua-marshal	0.1.5.1	0	\
-	pandoc-types	1.22.1	0	\
+	pandoc-types	1.22.2	0	\
 	pem	0.2.4	0	\
 	pretty-show	1.10	0	\
 	primitive	0.7.3.0	0	\
@@ -146,7 +149,7 @@ MODCABAL_MANIFEST	= \
 	tagged	0.8.6.1	2	\
 	tagsoup	0.14.8	0	\
 	temporary	1.3	0	\
-	texmath	0.12.4	0	\
+	texmath	0.12.5	0	\
 	text-conversions	0.3.1	0	\
 	text-short	0.1.5	0	\
 	th-abstraction	0.4.3.0	0	\
@@ -163,7 +166,7 @@ MODCABAL_MANIFEST	= \
 	unicode-transforms	0.4.0.1	0	\
 	uniplate	1.6.13	1	\
 	unliftio-core	0.2.0.1	2	\
-	unordered-containers	0.2.17.0	0	\
+	unordered-containers	0.2.19.1	0	\
 	utf8-string	1.0.2	0	\
 	uuid-types	1.0.5	2	\
 	vector	0.12.3.1	1	\
