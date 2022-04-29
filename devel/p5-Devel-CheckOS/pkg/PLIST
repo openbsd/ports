@@ -3,6 +3,8 @@ ${P5SITE}/Devel/
 ${P5SITE}/Devel/AssertOS/
 ${P5SITE}/Devel/AssertOS.pm
 ${P5SITE}/Devel/AssertOS/AIX.pm
+${P5SITE}/Devel/AssertOS/Alias/
+${P5SITE}/Devel/AssertOS/Alias/MacOS.pm
 ${P5SITE}/Devel/AssertOS/Amiga.pm
 ${P5SITE}/Devel/AssertOS/Android.pm
 ${P5SITE}/Devel/AssertOS/Apple.pm
@@ -96,6 +98,7 @@ ${P5SITE}/Devel/CheckOS/Families.pod
 @man man/man1/use-devel-assertos.1
 @man man/man3p/Devel::AssertOS.3p
 @man man/man3p/Devel::AssertOS::AIX.3p
+@man man/man3p/Devel::AssertOS::Alias::MacOS.3p
 @man man/man3p/Devel::AssertOS::Amiga.3p
 @man man/man3p/Devel::AssertOS::Apple.3p
 @man man/man3p/Devel::AssertOS::BSDOS.3p
