@@ -1,10 +1,10 @@
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3380200
-PKGNAME=	sqlite3-3.38.2
+DISTNAME =	sqlite-autoconf-3380300
+PKGNAME=	sqlite3-3.38.3
 
 # XXX needs bumps every time :-
-SHARED_LIBS +=  sqlite3                   37.15 # 8.6
+SHARED_LIBS +=  sqlite3                   37.16 # 8.6
 # sqlite suggests that users might like to assert() that library and header
 # versions match, so bumps are needed even if function signatures don't change.
 # ... at the current time the only one noticed is a < check (in subversion)
