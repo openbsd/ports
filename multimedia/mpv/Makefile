@@ -4,7 +4,7 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.34.1
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		mpv		0.2 # 1.109
 
