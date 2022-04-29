@@ -29,7 +29,8 @@ WANTLIB +=	${COMPILER_LIBCXX} bz2 expat lz4 m z
 
 # cmake is run under the control of the setuptools script, this
 # doesn't work with MODULES=devel/cmake
-BUILD_DEPENDS +=	devel/cmake \
+BUILD_DEPENDS +=	devel/boost \
+			devel/cmake \
 			geo/libosmium \
 			devel/protozero \
 			devel/py-pybind11${MODPY_FLAVOR}
