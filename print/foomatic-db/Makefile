@@ -2,7 +2,7 @@ PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data
 
-V=			20201104
+V=			20210611
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 # tarballs are only available for a 24 hour period
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/
-MASTER_SITES=		https://src.fedoraproject.org/repo/extras/foomatic-db/${DISTFILES}/sha512/ad087bcb69479370c32ed3a34600377b21468bff02ce47432ba0bc065bd6aee5b508088402abea908e444cba4344318242c62a1dd2e5de0061bec0100a0aac06/
+MASTER_SITES=		https://src.fedoraproject.org/repo/extras/foomatic-db/${DISTFILES}/sha512/b6d2526f6c392620f1bb1511063ff8c709f66a8b20ee2f9026017884d29b80cdf52727d6c44f98559f2b461c2cabeb3c672284af7218a4316921ff1698499d27/
 
 BUILD_DEPENDS=		print/cups,-libs
 
