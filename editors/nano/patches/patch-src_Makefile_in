@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1658,7 +1658,7 @@ nano_SOURCES = \
+@@ -1683,7 +1683,7 @@ nano_SOURCES = \
  		utils.c \
  		winio.c
  
@@ -10,7 +10,7 @@ Index: src/Makefile.in
  		$(LIB_CLOCK_GETTIME) $(LIBTHREAD)
  
  all: all-am
-@@ -2031,7 +2031,7 @@ winio.o: revision.h
+@@ -2056,7 +2056,7 @@ winio.o: revision.h
  
  # Always run the commands in this rule.  But update the target
  # only when the revision actually changed.
