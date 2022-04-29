@@ -1,0 +1,12 @@
+Index: src/sndio/sndio.cc
+--- src/sndio/sndio.cc.orig
++++ src/sndio/sndio.cc
+@@ -344,7 +344,7 @@ void SndioPlugin::flush ()
+ {
+     pthread_mutex_lock (& m_mutex);
+ 
+-    sio_stop (m_handle);
++    sio_flush (m_handle);
+ 
+     m_frames_buffered = 0;
+     m_last_write_time = timeval ();

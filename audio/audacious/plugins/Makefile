@@ -1,7 +1,7 @@
 COMMENT =		input and output plugins for Audacious
 
 DISTNAME =		audacious-plugins-${VERSION}
-REVISION =		2
+REVISION =		3
 
 # BSD / GPL
 PERMIT_PACKAGE =	Yes
