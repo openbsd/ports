@@ -1,6 +1,6 @@
 COMMENT=	JVM-based scripting language for web apps (open-source CFML)
 
-V=		5.3.8.206
+V=		5.3.9.133
 DISTNAME=	lucee-$V
 PKGNAME=	${DISTNAME:S/-RC/rc0/}
 EXTRACT_SUFX=	.war
@@ -19,7 +19,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://release.lucee.org/rest/update/provider/war/
 
 # doesn't actually need tomcat to build, but listing it here avoids
-# wasting time on arch where it's unavailable
+# providing a useless package on arch where it's unavailable
 BUILD_DEPENDS=	archivers/unzip \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	www/tomcat/v9
