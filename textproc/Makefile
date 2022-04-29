@@ -463,6 +463,7 @@
      SUBDIR += py-xmltodict,python3
      SUBDIR += py-yaml
      SUBDIR += py-yaml,python3
+     SUBDIR += qpdfview
      SUBDIR += raptor
      SUBDIR += rasqal
      SUBDIR += recutils
