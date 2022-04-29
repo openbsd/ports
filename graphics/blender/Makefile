@@ -1,4 +1,8 @@
-ONLY_FOR_ARCHS = aarch64 amd64 i386 powerpc powerpc64 riscv64 sparc64
+# powerpc - tbb 64-bit atomics
+# sparc64 - OpenColorIO 2.1.1 broken due to missing locale functions in
+#           libstdc++, which libc++ mostly provides wrappers for, but OCIO
+#           exposed issues there as well / fix tbb
+ONLY_FOR_ARCHS = aarch64 amd64 i386 powerpc64 riscv64
 DPB_PROPERTIES = parallel
 
 COMMENT =	3D creation software
