@@ -1,0 +1,43 @@
+@bin bin/qpdfview
+@so lib/libqpdfview_djvu.so
+@so lib/libqpdfview_image.so
+@so lib/libqpdfview_pdf.so
+@so lib/libqpdfview_ps.so
+@man man/man1/qpdfview.1
+share/applications/qpdfview.desktop
+share/icons/hicolor/scalable/apps/qpdfview.svg
+share/qpdfview/
+share/qpdfview.appdata.xml
+share/qpdfview/help.html
+share/qpdfview/help_az.html
+share/qpdfview/help_bg.html
+share/qpdfview/help_ca.html
+share/qpdfview/help_cs.html
+share/qpdfview/help_da.html
+share/qpdfview/help_de.html
+share/qpdfview/help_en_GB.html
+share/qpdfview/help_es.html
+share/qpdfview/help_fa.html
+share/qpdfview/help_fi.html
+share/qpdfview/help_fr.html
+share/qpdfview/help_gl.html
+share/qpdfview/help_it.html
+share/qpdfview/help_ja.html
+share/qpdfview/help_ko.html
+share/qpdfview/help_ku.html
+share/qpdfview/help_lt.html
+share/qpdfview/help_ms.html
+share/qpdfview/help_pl.html
+share/qpdfview/help_pt.html
+share/qpdfview/help_pt_BR.html
+share/qpdfview/help_ru.html
+share/qpdfview/help_sk.html
+share/qpdfview/help_sr.html
+share/qpdfview/help_sv.html
+share/qpdfview/help_tr.html
+share/qpdfview/help_uk.html
+share/qpdfview/help_vi.html
+share/qpdfview/help_zh_CN.html
+share/qpdfview/help_zh_TW.html
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

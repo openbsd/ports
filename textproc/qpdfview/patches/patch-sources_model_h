@@ -1,0 +1,11 @@
+Index: sources/model.h
+--- sources/model.h.orig
++++ sources/model.h
+@@ -27,6 +27,7 @@ along with qpdfview.  If not, see <http://www.gnu.org/
+ #include <QtPlugin>
+ #include <QWidget>
+ #include <QVector>
++#include <QPainterPath>
+ 
+ class QAbstractItemModel;
+ class QColor;
