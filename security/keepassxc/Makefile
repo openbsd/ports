@@ -1,8 +1,7 @@
 COMMENT =	management tool for password and sensitive data
 
-V =		2.7.0
+V =		2.7.1
 DISTNAME =	keepassxc-${V}
-REVISION =	0
 
 CATEGORIES =	security
 
@@ -52,9 +51,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Myubikey}
 LIB_DEPENDS +=		devel/libusb1 \
-			security/pcsc-lite \
-			security/yubico/yubico-c \
-			security/yubico/yubikey-personalization
+			security/pcsc-lite
 CONFIGURE_ARGS +=	-DWITH_XC_YUBIKEY=ON
 WANTLIB += pcsclite usb-1.0
 .endif
