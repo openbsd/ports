@@ -1,14 +1,12 @@
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_EGG_VERSION =	3.3.0
+MODPY_EGG_VERSION =	3.3.1
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
 
 CATEGORIES =		geo
 
 HOMEPAGE =		https://github.com/jswhit/pyproj
-
-MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
