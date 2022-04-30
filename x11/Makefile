@@ -277,6 +277,7 @@
      SUBDIR += sclock
      SUBDIR += screenkey
      SUBDIR += sct
+     SUBDIR += sdorfehs
      SUBDIR += skippy
      SUBDIR += slock
      SUBDIR += smplayer
