@@ -1,6 +1,6 @@
 COMMENT =	open source Slack-alternative
 
-V =		6.6.0
+V =		6.6.1
 GH_ACCOUNT =	mattermost
 GH_PROJECT =	mattermost-server
 GH_TAGNAME =	v${V}
