@@ -26,8 +26,20 @@ MAKE_ENV =	LC_ALL=en_US.UTF-8
 
 MODCABAL_STEM =		git-annex
 MODCABAL_VERSION =	10.20220322
+MODCABAL_BUILD_ARGS =	--allow-newer
 
 MAN1_STAGING_DIR = ${WRKBUILD}/man1_staging
+
+# Two dependencies don't have new releases yet. This is a rare situation
+# and so far there was no need to patch the dependencies. Thus it is
+# done ad-hoc instead of supporting directly via normal `make patch`.
+# If this code doesn't disappear by 2023, it'd make sense to support
+# this flow properly in cabal.port.mk.
+post-patch:
+	# https://github.com/bos/bloomfilter/pull/20
+	${PATCH} -d ${WRKDIR}/bloomfilter-2.0.1.0 < ${PATCHDIR}/0001-Fix-build-with-GHC-9.2.patch
+	# https://github.com/aristidb/aws/pull/277
+	${PATCH} -d ${WRKDIR}/aws-0.22 < ${PATCHDIR}/0001-build-with-aeson-2.patch
 
 post-build:
 	@mkdir -p ${MAN1_STAGING_DIR}
@@ -58,7 +70,7 @@ MODCABAL_MANIFEST = \
 	abstract-deque	0.3	0	\
 	abstract-par	0.3.3	0	\
 	adjunctions	4.4	2	\
-	aeson	1.5.6.0	5	\
+	aeson	2.0.3.0	0	\
 	alex	3.2.7.1	0	\
 	ansi-terminal	0.11.1	0	\
 	ansi-wl-pprint	0.6.9	3	\
@@ -133,11 +145,11 @@ MODCABAL_MANIFEST = \
 	fast-logger	3.1.1	0	\
 	feed	1.3.2.1	0	\
 	file-embed	0.0.15.0	0	\
-	filepath-bytestring	1.4.2.1.9	0	\
+	filepath-bytestring	1.4.2.1.10	0	\
 	free	5.1.7	1	\
 	git-lfs	1.2.0	0	\
 	happy	1.20.0	0	\
-	hashable	1.3.5.0	1	\
+	hashable	1.4.0.2	0	\
 	hjsmin	0.2.0.4	2	\
 	hourglass	0.2.12	0	\
 	hsc2hs	0.68.8	0	\
@@ -188,7 +200,7 @@ MODCABAL_MANIFEST = \
 	parallel	3.2.2.0	4	\
 	path-pieces	0.2.1	1	\
 	pem	0.2.4	0	\
-	persistent	2.13.3.4	0	\
+	persistent	2.14.0.0	0	\
 	persistent-sqlite	2.13.1.0	0	\
 	persistent-template	2.12.0.0	0	\
 	primitive	0.7.3.0	0	\
@@ -204,6 +216,7 @@ MODCABAL_MANIFEST = \
 	sandi	0.5	1	\
 	scientific	0.3.7.0	2	\
 	securemem	0.1.10	0	\
+	semialign	1.2.0.1	1	\
 	semigroupoids	5.3.7	0	\
 	semigroups	0.20	0	\
 	setenv	0.1.1.3	1	\
@@ -258,11 +271,12 @@ MODCABAL_MANIFEST = \
 	void	0.7.3	0	\
 	wai	3.2.3	0	\
 	wai-app-static	3.1.7.4	0	\
-	wai-extra	3.1.8	0	\
+	wai-extra	3.1.10	0	\
 	wai-logger	2.4.0	0	\
 	warp	3.3.20	0	\
 	warp-tls	3.3.2	0	\
 	wcwidth	0.0.2	0	\
+	witherable	0.4.2	2	\
 	word8	0.1.3	0	\
 	x509	1.7.6	0	\
 	x509-store	1.6.9	0	\
@@ -274,9 +288,9 @@ MODCABAL_MANIFEST = \
 	xss-sanitize	0.3.7	1	\
 	yaml	0.11.8.0	0	\
 	yesod	1.6.2	0	\
-	yesod-core	1.6.22.0	0	\
+	yesod-core	1.6.23	0	\
 	yesod-form	1.7.0	0	\
-	yesod-persistent	1.6.0.7	0	\
+	yesod-persistent	1.6.0.8	0	\
 	yesod-static	1.6.1.0	0	\
 	zlib	0.6.2.3	1	\
 

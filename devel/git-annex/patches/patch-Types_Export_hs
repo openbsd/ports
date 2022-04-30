@@ -1,0 +1,14 @@
+Make an import qualified to avoid name conflicts in Types.Export
+ 
+Index: Types/Export.hs
+--- Types/Export.hs.orig
++++ Types/Export.hs
+@@ -21,7 +21,7 @@ import Git.FilePath
+ import Utility.Split
+ import Utility.FileSystemEncoding
+ 
+-import Data.ByteString.Short as S
++import qualified Data.ByteString.Short as S
+ import qualified System.FilePath.Posix as Posix
+ import GHC.Generics
+ import Control.DeepSeq
