@@ -1,5 +1,5 @@
-# Not yet ported to other architectures
-ONLY_FOR_ARCHS =	i386 amd64
+# Not yet ported to other architectures (i386 bootstrap recipe is broken).
+ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -58,7 +58,7 @@ DISTFILES =		ghc-${GHC_VERSION}-src.tar.xz \
 			ghc-${GHC_VERSION}-testsuite.tar.xz \
 			${BINDISTFILE}
 
-.for m in amd64 i386
+.for m in amd64
 BINDISTFILE-$m =	ghc-${BIN_VER}-$m-unknown-openbsd.tar.xz:0 \
 			ghc-${BIN_VER}-shlibs-$m.tar.gz:0
 SUPDISTFILES +=		${BINDISTFILE-$m}
@@ -150,15 +150,6 @@ post-extract:
 
 BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
 
-# Disables haddock as it runs out of memory on i386.
-.if ${MACHINE_ARCH:Mi386}
-HADDOCK_DOCS =	NO
-PKG_ARGS =	-Dno_i386=0
-.else
-HADDOCK_DOCS =	YES
-PKG_ARGS =	-Dno_i386=1
-.endif
-
 post-patch:
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	LD_LIBRARY_PATH=${BOOTSTRAP_SHLIBS} \
@@ -178,7 +169,7 @@ post-patch:
 	done
 	cp ${WRKSRC}/mk/build.mk{.sample,}
 	echo libraries/base_CONFIGURE_OPTS+=--configure-option=--with-libcharset=no >> ${WRKSRC}/mk/build.mk
-	echo HADDOCK_DOCS=${HADDOCK_DOCS} >> ${WRKSRC}/mk/build.mk
+	echo HADDOCK_DOCS=YES >> ${WRKSRC}/mk/build.mk
 
 do-test:
 	ulimit -c 0 -n 1024 && \
