@@ -1,10 +1,9 @@
 COMMENT=	tiling window manager with a weird name
 
-V=		1.3
-DISTNAME=	sdorfehs-${V}
-GH_TAGNAME=	v${V}
+GH_TAGNAME=	v1.3
 GH_ACCOUNT=	jcs
 GH_PROJECT=	sdorfehs
+REVISION=	0
 
 CATEGORIES=	x11
 
