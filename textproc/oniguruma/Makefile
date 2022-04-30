@@ -1,11 +1,10 @@
 COMMENT=	regular expressions library
 
-V=		6.9.7.1
+V=		6.9.8
 DISTNAME=	onig-$V
 PKGNAME=	oniguruma-$V
-WRKDIST=	${WRKDIR}/onig-6.9.7
 
-SHARED_LIBS +=  onig                 7.2      # 6.0
+SHARED_LIBS +=  onig                 8.0      # 8.0
 
 CATEGORIES=	textproc
 
