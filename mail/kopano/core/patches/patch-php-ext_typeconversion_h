@@ -1,0 +1,61 @@
+commit 9b3bbd27ea63af180ce73a30a218d34b6e6535a4
+Author: Jelle van der Waa <j.vanderwaa@kopano.com>
+Date:   Tue May 18 09:23:55 2021 +0000
+
+    Add PHP 8 compiliation support
+
+Index: php-ext/typeconversion.h
+--- php-ext/typeconversion.h.orig
++++ php-ext/typeconversion.h
+@@ -36,20 +36,20 @@ typedef std::unique_ptr<zend_string, zstr_delete> zstr
+ // These allocate the structure and copy the data into it, then returns the entire allocated structure, allocation
+ // via lpBase if non null, otherwise just as MAPIAllocateBuffer
+ 
+-HRESULT			PHPArraytoSBinaryArray(zval * entryid_array, void *lpBase, LPENTRYLIST *lppEntryList TSRMLS_DC);
+-HRESULT			PHPArraytoSortOrderSet(zval * sortorder_array, void *lpBase, LPSSortOrderSet *lppSortOrderSet TSRMLS_DC);
+-HRESULT			PHPArraytoPropTagArray(zval * prop_value_array, void *lpBase, LPSPropTagArray *lppPropTagArray TSRMLS_DC);
+-HRESULT			PHPArraytoPropValueArray(zval* phpArray, void *lpBase, ULONG *lpcValues, LPSPropValue *lppPropValues TSRMLS_DC);
+-HRESULT			PHPArraytoAdrList(zval *phpArray, void *lpBase, LPADRLIST *lppAdrList TSRMLS_DC);
+-HRESULT			PHPArraytoRowList(zval *phpArray, void *lpBase, LPROWLIST *lppRowList TSRMLS_DC);
+-HRESULT			PHPArraytoSRestriction(zval *phpVal, void *lpBase, LPSRestriction *lppRestriction TSRMLS_DC);
+-HRESULT			PHPArraytoReadStateArray(zval *phpVal, void *lpBase, ULONG *lpcValues, LPREADSTATE *lppReadStates TSRMLS_DC);
+-HRESULT			PHPArraytoGUIDArray(zval *phpVal, void *lpBase, ULONG *lpcValues, LPGUID *lppGUIDs TSRMLS_DC);
++HRESULT			PHPArraytoSBinaryArray(zval * entryid_array, void *lpBase, LPENTRYLIST *lppEntryList);
++HRESULT			PHPArraytoSortOrderSet(zval * sortorder_array, void *lpBase, LPSSortOrderSet *lppSortOrderSet);
++HRESULT			PHPArraytoPropTagArray(zval * prop_value_array, void *lpBase, LPSPropTagArray *lppPropTagArray);
++HRESULT			PHPArraytoPropValueArray(zval* phpArray, void *lpBase, ULONG *lpcValues, LPSPropValue *lppPropValues);
++HRESULT			PHPArraytoAdrList(zval *phpArray, void *lpBase, LPADRLIST *lppAdrList);
++HRESULT			PHPArraytoRowList(zval *phpArray, void *lpBase, LPROWLIST *lppRowList);
++HRESULT			PHPArraytoSRestriction(zval *phpVal, void *lpBase, LPSRestriction *lppRestriction);
++HRESULT			PHPArraytoReadStateArray(zval *phpVal, void *lpBase, ULONG *lpcValues, LPREADSTATE *lppReadStates);
++HRESULT			PHPArraytoGUIDArray(zval *phpVal, void *lpBase, ULONG *lpcValues, LPGUID *lppGUIDs);
+ 
+ // These functions fill a pre-allocated structure, possibly allocating more memory via lpBase
+ 
+-HRESULT		 	PHPArraytoSBinaryArray(zval * entryid_array, void *lpBase, LPENTRYLIST lpEntryList TSRMLS_DC);
+-extern HRESULT PHPArraytoSRestriction(zval *, void *base, SRestriction * TSRMLS_DC) __attribute__((nonnull(2)));
++HRESULT		 	PHPArraytoSBinaryArray(zval * entryid_array, void *lpBase, LPENTRYLIST lpEntryList);
++extern HRESULT PHPArraytoSRestriction(zval *, void *base, SRestriction *) __attribute__((nonnull(2)));
+ 
+ /* imtoinet, imtomapi options */
+ extern HRESULT PHPArraytoSendingOptions(zval *, KC::sending_options *);
+@@ -60,11 +60,11 @@ extern HRESULT PHPArraytoDeliveryOptions(zval *, KC::d
+  *
+  * All functions return a newly allocated ZVAL structure which must be FREE_ZVAL()'ed by the caller.
+  */
+- 
+-extern HRESULT SBinaryArraytoPHPArray(const SBinaryArray *, zval *ret TSRMLS_DC);
+-extern HRESULT PropTagArraytoPHPArray(ULONG nvals, const SPropTagArray *, zval *ret TSRMLS_DC);
+-extern HRESULT PropValueArraytoPHPArray(ULONG nvals, const SPropValue *, zval *ret TSRMLS_DC);
+-extern HRESULT SRestrictiontoPHPArray(const SRestriction *, int level, zval *ret TSRMLS_DC);
+-extern HRESULT RowSettoPHPArray(const SRowSet *, zval *ret TSRMLS_DC);
+-extern HRESULT ReadStateArraytoPHPArray(ULONG nvals, const READSTATE *, zval *ret TSRMLS_DC);
+-extern HRESULT NotificationstoPHPArray(ULONG nvals, const NOTIFICATION *, zval *ret TSRMLS_DC);
++
++extern HRESULT SBinaryArraytoPHPArray(const SBinaryArray *, zval *ret);
++extern HRESULT PropTagArraytoPHPArray(ULONG nvals, const SPropTagArray *, zval *ret);
++extern HRESULT PropValueArraytoPHPArray(ULONG nvals, const SPropValue *, zval *ret);
++extern HRESULT SRestrictiontoPHPArray(const SRestriction *, int level, zval *ret);
++extern HRESULT RowSettoPHPArray(const SRowSet *, zval *ret);
++extern HRESULT ReadStateArraytoPHPArray(ULONG nvals, const READSTATE *, zval *ret);
++extern HRESULT NotificationstoPHPArray(ULONG nvals, const NOTIFICATION *, zval *ret);

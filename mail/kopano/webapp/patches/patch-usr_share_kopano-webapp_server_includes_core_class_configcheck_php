@@ -1,0 +1,12 @@
+Index: usr/share/kopano-webapp/server/includes/core/class.configcheck.php
+--- usr/share/kopano-webapp/server/includes/core/class.configcheck.php.orig
++++ usr/share/kopano-webapp/server/includes/core/class.configcheck.php
+@@ -23,7 +23,7 @@ class ConfigCheck
+ 		$this->checkPHPsetting("session.auto_start", "off", "Modify this setting in '%s'");
+ 		$this->checkPHPsetting("output_handler", "", "With this option set, it is unsure if the Kopano WebApp will work correctly");
+ 		$this->checkPHPsetting("zlib.output_handler", "", "With this option set, it is unsure if the Kopano WebApp will work correctly");
+-		$this->checkPHPsetting("zlib.output_compression", "off", "With this option set, it could occure that XMLHTTP-requests will fail");
++		$this->checkPHPsetting("zlib.output_compression", "", "With this option set, it could occure that XMLHTTP-requests will fail");
+ 
+ 		if (CONFIG_CHECK_COOKIES_HTTP) {
+ 			$this->checkPHPsecurity("session.cookie_httponly", "on", "Modify this setting in '%s'");

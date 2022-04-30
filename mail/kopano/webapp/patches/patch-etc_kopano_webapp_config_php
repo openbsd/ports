@@ -1,7 +1,7 @@
 Index: etc/kopano/webapp/config.php
 --- etc/kopano/webapp/config.php.orig
 +++ etc/kopano/webapp/config.php
-@@ -61,7 +61,7 @@
+@@ -75,7 +75,7 @@
  
  	// Defines the temp path (absolute). Here uploaded attachments will be saved.
  	// The web client doesn't work without this directory.

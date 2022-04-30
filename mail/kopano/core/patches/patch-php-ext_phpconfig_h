@@ -1,0 +1,14 @@
+commit 9b3bbd27ea63af180ce73a30a218d34b6e6535a4
+Author: Jelle van der Waa <j.vanderwaa@kopano.com>
+Date:   Tue May 18 09:23:55 2021 +0000
+
+    Add PHP 8 compiliation support
+
+Index: php-ext/phpconfig.h
+--- php-ext/phpconfig.h.orig
++++ php-ext/phpconfig.h
+@@ -50,4 +50,3 @@
+ 
+ /* Define to 1 if you have strtok_r in <string.h>. */
+ #define HAVE_STRTOK_R 1
+-

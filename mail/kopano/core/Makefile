@@ -8,6 +8,8 @@ PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
+REVISION=	0
+
 CATEGORIES=	mail www productivity
 
 SHARED_LIBS +=  mapi			  3.0 # 0.0
@@ -32,7 +34,7 @@ MODULES=	lang/python \
 
 MODPHP_DO_SAMPLE=mapi
 MODPHP_BUILDDEP=Yes
-MODPHP_VERSION=	7.4
+#MODPHP_VERSION=	7.4
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 

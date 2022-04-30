@@ -33,7 +33,15 @@ Index: configure.ac
  		]
  	)
  	AC_CHECK_HEADERS([ncurses.h])
-@@ -423,7 +425,7 @@ LDAP_FLAGS=""
+@@ -290,6 +292,7 @@ AS_IF([test "$with_php" != "no"], [
+ 	AS_CASE([$PHP_VERSION],
+ 		[5.*], [AC_MSG_ERROR([php5 is not supported])],
+ 		[7.*], [with_php=7]
++		[8.*], [with_php=7]
+ 	)
+ ])
+ PKG_CHECK_MODULES([libHX], [libHX >= 1.10])
+@@ -423,7 +426,7 @@ LDAP_FLAGS=""
  LDAP_LIBS=""
  AC_CHECK_HEADERS([ldap.h], [
  	LDAP_FLAGS="-DLDAP_DEPRECATED=1"
@@ -42,7 +50,7 @@ Index: configure.ac
  	want_ldap=yes
  ])
  AC_SUBST(LDAP_LIBS)
-@@ -448,7 +450,7 @@ iconv_t i; i = iconv_open("", "");
+@@ -448,7 +451,7 @@ iconv_t i; i = iconv_open("", "");
  	[ AC_MSG_RESULT([yes]) ],
  	[ AC_MSG_RESULT([no])
  	  AC_MSG_CHECKING([for iconv in -liconv])
@@ -51,7 +59,7 @@ Index: configure.ac
  	  AC_LINK_IFELSE([ AC_LANG_SOURCE([
  #include <stdlib.h>
  #include <iconv.h>
-@@ -467,7 +469,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
+@@ -467,7 +470,7 @@ AC_SEARCH_LIBS([crypt_r], [crypt], [
  ])
  LIBS="$LIBS_system"
  AC_SEARCH_LIBS([clock_gettime], [rt], [
@@ -60,7 +68,7 @@ Index: configure.ac
  ])
  LIBS="$LIBS_system"
  AC_SUBST([CRYPT_LIBS])
-@@ -585,9 +587,9 @@ AC_LINK_IFELSE([LIBINTLTEST], [
+@@ -585,9 +588,9 @@ AC_LINK_IFELSE([LIBINTLTEST], [
  ], [
  	AC_MSG_RESULT([no])
  	AC_MSG_CHECKING([dcgettext in -lintl])
@@ -72,3 +80,12 @@ Index: configure.ac
  		AC_MSG_RESULT([yes])
  	], [
  		AC_MSG_RESULT([no])
+@@ -696,7 +699,7 @@ AM_CONDITIONAL([WITH_EPOLL], [test "$want_epoll" = "ye
+ AM_CONDITIONAL([WITH_KRB5], [test -n "$KRB5_LIBS"])
+ AM_CONDITIONAL([WITH_LDAP], [test "$want_ldap" = yes])
+ AM_CONDITIONAL([WITH_PAM], [test -n "$PAM_LIBS"])
+-AM_CONDITIONAL([WITH_PHP7], [test "$with_php" = 7])
++AM_CONDITIONAL([WITH_PHP7], [test "$with_php" = 7 -o "$with_php" = 8])
+ AM_CONDITIONAL([WITH_UNIX], [test "$want_unix" = yes])
+ AS_IF([test -n "$PYTHON_LIBS" || test -n "$PYTHON"], [AM_PATH_PYTHON([2.5])])
+ 

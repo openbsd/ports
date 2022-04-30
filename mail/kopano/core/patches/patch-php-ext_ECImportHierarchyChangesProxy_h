@@ -1,0 +1,24 @@
+commit 9b3bbd27ea63af180ce73a30a218d34b6e6535a4
+Author: Jelle van der Waa <j.vanderwaa@kopano.com>
+Date:   Tue May 18 09:23:55 2021 +0000
+
+    Add PHP 8 compiliation support
+
+Index: php-ext/ECImportHierarchyChangesProxy.h
+--- php-ext/ECImportHierarchyChangesProxy.h.orig
++++ php-ext/ECImportHierarchyChangesProxy.h
+@@ -11,12 +11,12 @@ class ECImportHierarchyChangesProxy final : (private)
+     ULONG m_cRef;
+ 	zval m_lpObj;
+ public:
+-	ECImportHierarchyChangesProxy(const zval *v TSRMLS_DC);
++	ECImportHierarchyChangesProxy(const zval *v);
+     ~ECImportHierarchyChangesProxy();
+ 	virtual ULONG AddRef() override;
+ 	virtual ULONG Release() override;
+ 	virtual HRESULT QueryInterface(const IID &, void **) override;
+-    
++
+ 	virtual HRESULT GetLastError(HRESULT result, unsigned int flags, MAPIERROR **) override;
+ 	virtual HRESULT Config(IStream *, unsigned int flags) override;
+ 	virtual HRESULT UpdateState(IStream *) override;
