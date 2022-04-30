@@ -12,7 +12,7 @@ Index: rts/Stats.c
  static void statsFlush( void );
  static void statsClose( void );
  
-@@ -1024,8 +1024,10 @@ static void report_summary(const RTSSummaryStats* sum)
+@@ -992,8 +992,10 @@ static void report_summary(const RTSSummaryStats* sum)
  
          for (g = 0; g < RtsFlags.GcFlags.generations; g++) {
              int prefix_length = 0;
@@ -25,7 +25,7 @@ Index: rts/Stats.c
              prefix_length -= col_width[0];
              int suffix_length = col_width[1] + prefix_length;
              suffix_length =
-@@ -1735,19 +1737,21 @@ void getRTSStats( RTSStats *s )
+@@ -1713,19 +1715,21 @@ void getRTSStats( RTSStats *s )
     Dumping stuff in the stats file, or via the debug message interface
     -------------------------------------------------------------------------- */
  

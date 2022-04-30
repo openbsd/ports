@@ -14,7 +14,7 @@ Index: rts/RtsMessages.c
  RtsMsgFunction *errorMsgFn           = rtsErrorMsgFn;
  RtsMsgFunction *sysErrorMsgFn        = rtsSysErrorMsgFn;
  
-@@ -102,10 +102,10 @@ debugBelch(const char*s, ...)
+@@ -108,10 +108,10 @@ debugBelch(const char*s, ...)
    va_end(ap);
  }
  
@@ -27,7 +27,7 @@ Index: rts/RtsMessages.c
  }
  
  /* -----------------------------------------------------------------------------
-@@ -285,16 +285,16 @@ rtsSysErrorMsgFn(const char *s, va_list ap)
+@@ -291,16 +291,16 @@ rtsSysErrorMsgFn(const char *s, va_list ap)
  #endif
  }
  
@@ -46,7 +46,7 @@ Index: rts/RtsMessages.c
  
           r = vsnprintf(buf, BUFSIZE, s, ap);
           if (r > 0 && r < BUFSIZE) {
-@@ -305,12 +305,13 @@ rtsDebugMsgFn(const char *s, va_list ap)
+@@ -311,12 +311,13 @@ rtsDebugMsgFn(const char *s, va_list ap)
  #endif
    {
       /* don't fflush(stdout); WORKAROUND bug in Linux glibc */

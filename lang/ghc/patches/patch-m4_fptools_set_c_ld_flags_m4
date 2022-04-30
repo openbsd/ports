@@ -1,7 +1,7 @@
-Index: aclocal.m4
---- aclocal.m4.orig
-+++ aclocal.m4
-@@ -767,6 +767,12 @@ AC_DEFUN([FPTOOLS_SET_C_LD_FLAGS],
+Index: m4/fptools_set_c_ld_flags.m4
+--- m4/fptools_set_c_ld_flags.m4.orig
++++ m4/fptools_set_c_ld_flags.m4
+@@ -95,6 +95,11 @@ AC_DEFUN([FPTOOLS_SET_C_LD_FLAGS],
          $4="$$4 -z wxneeded"
          ;;
  
@@ -10,7 +10,6 @@ Index: aclocal.m4
 +        $3="$$3 -Wl,-z,wxneeded -Wl,-z,notext"
 +        $4="$$4 -z wxneeded -z notext"
 +        ;;
-+
      esac
  
      AC_MSG_RESULT([done])

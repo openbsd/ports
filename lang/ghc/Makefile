@@ -12,15 +12,13 @@ COMMENT =		compiler for the functional language Haskell
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
 
-GHC_VERSION =		8.10.6
+GHC_VERSION =		9.2.2
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
-REVISION =		1
-
 # Version of the precompiled binaries
-BIN_VER =		8.10.3.20210429
+BIN_VER =		8.10.7.20220419
 
 # lang/python needed for regression tests.
 MODULES =		lang/python
@@ -49,8 +47,7 @@ RUN_DEPENDS =
 #      loadObj_() instead.
 USE_WXNEEDED =		special
 
-MASTER_SITES =		${HOMEPAGE}dist/${GHC_VERSION}/ \
-			${HOMEPAGE}dist/stable/dist/
+MASTER_SITES =		https://downloads.haskell.org/ghc/${GHC_VERSION}/
 MASTER_SITES0 =		https://openbsd.dead-parrot.de/distfiles/
 
 DIST_SUBDIR =		ghc
@@ -70,31 +67,32 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 # Substvars for all libraries, assuming that ghc-boot, ghc-boot-th,
 # ghc-heap and ghci will always have the same version number as ghc.
 GHC_ITEMS = \
-        CABAL			3.2.1.0          \
-        ARRAY			0.5.4.0    	 \
-        BASE			4.14.3.0   	 \
-        BINARY			0.8.8.0 	 \
-        BYTESTRING		0.10.12.0	 \
-        CONTAINERS		0.6.5.1		 \
-        DEEPSEQ			1.4.4.0		 \
-        DIRECTORY		1.3.6.0		 \
-        EXCEPTIONS		0.10.4		 \
-        FILEPATH		1.4.2.1		 \
-        GHC			8.10.6		 \
-        GHC_COMPACT		0.1.0.0		 \
-        GHC_PRIM		0.6.1		 \
-        HASKELINE		0.8.2		 \
-        HPC			0.6.1.0		 \
-        INTEGER_GMP		1.0.3.0		 \
-        MTL			2.2.2		 \
-        PARSEC			3.1.14.0	 \
-        PRETTY			1.1.3.6		 \
-        PROCESS			1.6.13.2	 \
-        STM			2.5.0.1		 \
-	TEMPLATE-HASKELL	2.16.0.0	 \
-	TERMINFO		0.4.1.4		 \
-	TEXT			1.2.4.1		 \
-	TIME			1.9.3		 \
+	CABAL			3.6.3.0		 \
+	ARRAY			0.5.4.0		 \
+	BASE			4.16.1.0	 \
+	BINARY			0.8.9.0		 \
+	BYTESTRING		0.11.3.0	 \
+	CONTAINERS		0.6.5.1		 \
+	DEEPSEQ			1.4.6.1		 \
+	DIRECTORY		1.3.6.2		 \
+	EXCEPTIONS		0.10.4		 \
+	FILEPATH		1.4.2.2		 \
+	GHC			9.2.2		 \
+	GHC_BIGNUM		1.2		 \
+	GHC_COMPACT		0.1.0.0		 \
+	GHC_PRIM		0.8.0		 \
+	HASKELINE		0.8.2		 \
+	HPC			0.6.1.0		 \
+	INTEGER_GMP		1.1		 \
+	MTL			2.2.2		 \
+	PARSEC			3.1.15.0	 \
+	PRETTY			1.1.3.6		 \
+	PROCESS			1.6.13.2	 \
+	STM			2.5.0.2		 \
+	TEMPLATE-HASKELL	2.18.0.0	 \
+	TERMINFO		0.4.1.5		 \
+	TEXT			1.2.5.0		 \
+	TIME			1.11.1.1	 \
 	TRANSFORMERS		0.5.6.2		 \
 	UNIX			2.7.2.2		 \
 	XHTML			3000.2.2.1
@@ -136,6 +134,9 @@ MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
 			HSCOLOUR_SRCS=NO \
 			BUILD_SPHINX_PDF=NO
+
+# haddock: ... <stdout>: commitBuffer: invalid argument (invalid character)
+MAKE_ENV =	LC_ALL=en_US.UTF-8
 
 # For mktexpk (via dvips when building the PostScript documentation):
 PORTHOME =		${WRKDIR}
@@ -197,8 +198,8 @@ BOOTSTRAP_DATE =	20210429
 # ghc and creates a `bindist', i.e. a tarball with binaries that
 # can be used for bootstrapping.
 bootstrap: patch
-	@if [ ! -x ${LOCALBASE}/bin/autoconf-2.69 ]; then \
-		echo Please install autoconf-2.69.; \
+	@if [ ! -x ${LOCALBASE}/bin/autoconf-${AUTOCONF_VERSION} ]; then \
+		echo Please install autoconf-${AUTOCONF_VERSION}.; \
 		false; \
 	fi
 	@if [ ! -x ${LOCALBASE}/bin/automake-1.4 ]; then \
@@ -211,7 +212,7 @@ bootstrap: patch
 	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
 
 	${MAKE} build ALL_TARGET="all binary-dist" \
-		AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.4
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=1.4
 
 	$(_PBUILD) $(MAKE) _bootstrap_finish
 

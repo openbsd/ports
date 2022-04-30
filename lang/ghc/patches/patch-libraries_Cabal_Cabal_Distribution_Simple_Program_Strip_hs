@@ -1,9 +1,9 @@
 Work around unresolved symbols when linking against hs packages
 that use FFI and contain some code compiled from C sources.
-
-Index: libraries/Cabal/Cabal/Distribution/Simple/Program/Strip.hs
---- libraries/Cabal/Cabal/Distribution/Simple/Program/Strip.hs.orig
-+++ libraries/Cabal/Cabal/Distribution/Simple/Program/Strip.hs
+       
+Index: libraries/Cabal/Cabal/src/Distribution/Simple/Program/Strip.hs
+--- libraries/Cabal/Cabal/src/Distribution/Simple/Program/Strip.hs.orig
++++ libraries/Cabal/Cabal/src/Distribution/Simple/Program/Strip.hs
 @@ -55,6 +55,8 @@ stripLib verbosity (Platform arch os) progdb path = do
      IOS -> return ()
      AIX -> return ()
