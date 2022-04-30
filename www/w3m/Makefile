@@ -1,8 +1,7 @@
 COMMENT=	pager/text-based web browser
 
 V=		0.5.3
-P=		20210102
-REVISION=	0
+P=		20220429
 
 DISTNAME=	w3m_$V+git$P
 PKGNAME=	w3m-$Vpl$P

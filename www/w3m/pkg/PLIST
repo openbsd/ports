@@ -74,7 +74,11 @@ share/doc/w3m/keymap.lynx
 share/doc/w3m/menu.default
 share/doc/w3m/menu.submenu
 share/locale/de/LC_MESSAGES/w3m.mo
+share/locale/it/LC_MESSAGES/w3m.mo
 share/locale/ja/LC_MESSAGES/w3m.mo
+share/locale/sv_SE/
+share/locale/sv_SE/LC_MESSAGES/
+share/locale/sv_SE/LC_MESSAGES/w3m.mo
 share/locale/zh_CN/LC_MESSAGES/w3m.mo
 share/locale/zh_TW/LC_MESSAGES/w3m.mo
 share/w3m/
