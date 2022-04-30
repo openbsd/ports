@@ -1,12 +1,13 @@
---- examples/xmobar.config.orig	Mon Aug  8 23:40:59 2016
-+++ examples/xmobar.config	Wed Aug 10 09:45:35 2016
+Index: examples/xmobar.config
+--- examples/xmobar.config.orig
++++ examples/xmobar.config
 @@ -1,4 +1,4 @@
 -Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 +Config { font = "fixed"
         , additionalFonts = []
         , borderColor = "black"
         , border = TopB
-@@ -20,19 +20,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+@@ -21,19 +21,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                                            "--normal","green",
                                            "--high","red",
                                            "--low","lightblue"] 36000

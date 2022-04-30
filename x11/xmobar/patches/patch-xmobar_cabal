@@ -3,7 +3,7 @@ Hook in APM bindings
 Index: xmobar.cabal
 --- xmobar.cabal.orig
 +++ xmobar.cabal
-@@ -150,6 +150,7 @@ library
+@@ -157,6 +157,7 @@ library
                     Xmobar.Plugins.NotmuchMail,
                     Xmobar.Plugins.Monitors,
                     Xmobar.Plugins.Monitors.Batt,
@@ -11,7 +11,7 @@ Index: xmobar.cabal
                     Xmobar.Plugins.Monitors.Batt.Common,
                     Xmobar.Plugins.Monitors.Common.Output,
                     Xmobar.Plugins.Monitors.Common.Parsers,
-@@ -175,6 +176,7 @@ library
+@@ -182,6 +183,7 @@ library
                     Xmobar.Plugins.Monitors.CatInt
  
      extra-libraries: Xrandr Xrender
