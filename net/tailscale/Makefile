@@ -2,11 +2,12 @@ BROKEN-i386 =	unix.EPROTO not defined
 
 COMMENT =	modern overlay-like VPN built on top of WireGuard
 
+V =		1.24.2
 MODGO_MODNAME =	tailscale.com
-MODGO_VERSION =	v1.22.2
+MODGO_VERSION =	v${V}
 
 DISTNAME =	tailscale.com-${MODGO_VERSION}
-PKGNAME =	tailscale-${MODGO_VERSION:S/v//}
+PKGNAME =	tailscale-${V}
 
 CATEGORIES =	net
 
@@ -20,6 +21,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c pthread
 
 MODULES =		lang/go
+
+MODGO_LDFLAGS +=	-X tailscale.com/version.Long=${V}
+MODGO_LDFLAGS +=	-X tailscale.com/version.Short=${V}
 
 WRKDIST =	${WRKSRC}
 
