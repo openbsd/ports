@@ -45,6 +45,7 @@ CFLAGS +=	-O1
 .if ${FLAVOR:Mimage}
 LIB_DEPENDS+=	graphics/imlib2
 CONFIGURE_ARGS+= --with-imagelib=imlib2
+CONFIGURE_ENV+=	CPPFLAGS=-I/usr/X11R6/include
 WANTLIB+=	Imlib2 X11
 .else
 CONFIGURE_ARGS+= --enable-image=no
