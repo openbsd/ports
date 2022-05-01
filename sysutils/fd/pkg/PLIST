@@ -1,0 +1,2 @@
+@bin bin/fd
+@man man/man1/fd.1
