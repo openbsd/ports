@@ -1,5 +1,5 @@
 @newgroup _shairport:876
-@newuser _shairport:876:876::Shairport-sync Account:/var/empty:/sbin/nologin
+@newuser _shairport:876:876::Shairport-sync Account:/var/spool/shairport-sync:/sbin/nologin
 @rcscript ${RCDIR}/shairport_sync
 @bin bin/shairport-sync
 @man man/man1/shairport-sync.1
@@ -9,3 +9,4 @@ share/examples/shairport-sync/shairport-sync.conf
 @owner _shairport
 @group _shairport
 @sample ${SYSCONFDIR}/shairport-sync.conf
+@sample /var/spool/shairport-sync/

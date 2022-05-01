@@ -3,6 +3,7 @@ COMMENT =	AirPlay audio player
 GH_ACCOUNT =	mikebrady
 GH_PROJECT =	shairport-sync
 GH_TAGNAME =	3.3.9
+REVISION =	0
 
 CATEGORIES =	audio
 
