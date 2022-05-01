@@ -96,6 +96,7 @@
      SUBDIR += facette
      SUBDIR += facter
      SUBDIR += faubackup
+     SUBDIR += fd
      SUBDIR += fdupes
      SUBDIR += fff
      SUBDIR += find2perl
