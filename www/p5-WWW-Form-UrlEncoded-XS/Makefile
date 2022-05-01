@@ -1,9 +1,8 @@
 COMMENT =	parser and builder for x-www-form-urlencoded in XS
 
-DISTNAME =	WWW-Form-UrlEncoded-XS-0.26
+DISTNAME =	WWW-Form-UrlEncoded-XS-0.27
 CATEGORIES =	www
 MODULES =	cpan
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes

@@ -8,5 +8,5 @@ ${P5ARCH}/auto/WWW/
 ${P5ARCH}/auto/WWW/Form/
 ${P5ARCH}/auto/WWW/Form/UrlEncoded/
 ${P5ARCH}/auto/WWW/Form/UrlEncoded/XS/
-${P5ARCH}/auto/WWW/Form/UrlEncoded/XS/XS.so
+@so ${P5ARCH}/auto/WWW/Form/UrlEncoded/XS/XS.so
 @man man/man3p/WWW::Form::UrlEncoded::XS.3p
