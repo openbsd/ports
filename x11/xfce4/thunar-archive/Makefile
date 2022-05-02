@@ -1,7 +1,6 @@
 COMMENT =	Thunar archive plugin
 
-XFCE_VERSION =	0.4.0
-REVISION =	2
+XFCE_VERSION =	0.5.0
 THUNAR_PLUGIN =	thunar-archive-plugin
 
 # GPLv2
@@ -14,7 +13,7 @@ MODXFCE_PURGE_LA =	lib/thunarx-3
 
 LIB_DEPENDS =	x11/xfce4/thunar>=1.7.0
 
-RUN_DEPENDS =	xarchiver-*|file-roller-*|kdeutils-*:x11/xarchiver
+RUN_DEPENDS =	xarchiver-*|file-roller-*|ark-*|engrampa-*:x11/xarchiver
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo exo-2 expat ffi
