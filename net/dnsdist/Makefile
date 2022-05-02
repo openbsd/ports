@@ -1,6 +1,6 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.7.0
+DISTNAME=		dnsdist-1.7.1
 EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		net
