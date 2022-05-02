@@ -1,0 +1,25 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Installing Game Data
+====================
+
+You need the original game data of Heroes of Might & Magic 2, or alternatively
+download the free demo version of the game. Then copy at least the directories
+DATA, MAPS, and MUSIC to ~/.fheroes2/:
+
+# cp -R /path/to/game/{ANIM,DATA,MAPS,MUSIC} ~/.fheroes2/
+
+If you need to run the game from a different data location, you can use the
+environment variable FHEROES2_DATA:
+
+$ env FHEROES2_DATA=/path/to/game fheroes2
+
+Key bindings can be adjusted in the file fheroes2.key. Copy it first to
+~/.fheroes2/ to work with it:
+
+$ cp ${PREFIX}/share/fheroes2/fheroes2.key ~/.fheroes2/
+
+The port includes a script to download the freeware demo data at
+${PREFIX}/share/fheroes2/download_demo_version.sh.

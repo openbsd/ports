@@ -1,0 +1,23 @@
+@bin bin/fheroes2
+share/doc/pkg-readmes/${PKGSTEM}
+share/fheroes2/
+share/fheroes2/download_demo_version.sh
+share/fheroes2/fheroes2.key
+share/fheroes2/files/
+share/fheroes2/files/data/
+share/fheroes2/files/data/resurrection.h2d
+share/fheroes2/files/lang/
+share/fheroes2/files/lang/cs.mo
+share/fheroes2/files/lang/de.mo
+share/fheroes2/files/lang/es.mo
+share/fheroes2/files/lang/fr.mo
+share/fheroes2/files/lang/hu.mo
+share/fheroes2/files/lang/it.mo
+share/fheroes2/files/lang/lt.mo
+share/fheroes2/files/lang/nb.mo
+share/fheroes2/files/lang/nl.mo
+share/fheroes2/files/lang/pl.mo
+share/fheroes2/files/lang/pt.mo
+share/fheroes2/files/lang/ru.mo
+share/fheroes2/files/lang/sv.mo
+share/fheroes2/files/lang/tr.mo

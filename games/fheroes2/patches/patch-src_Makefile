@@ -1,0 +1,25 @@
+remove hardcoded -O flags
+use bsd platform path
+
+Index: src/Makefile
+--- src/Makefile.orig
++++ src/Makefile
+@@ -35,8 +35,6 @@ LDFLAGS := -pthread
+ 
+ ifdef FHEROES2_WITH_DEBUG
+ CCFLAGS := $(CCFLAGS) -O0 -g
+-else
+-CCFLAGS := $(CCFLAGS) -O3
+ endif
+ 
+ ifneq ($(or $(FHEROES2_WITH_ASAN),$(FHEROES2_WITH_TSAN)),)
+@@ -66,6 +64,9 @@ ifeq ($(OS),Windows_NT)
+ PLATFORM := mingw
+ endif
+ ifeq ($(OS),FreeBSD)
++PLATFORM := bsd
++endif
++ifeq ($(OS),OpenBSD)
+ PLATFORM := bsd
+ endif
+ ifeq ($(OS),Darwin)

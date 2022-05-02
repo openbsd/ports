@@ -1,0 +1,60 @@
+used UTF-8 so that sed doesn't fail because of different string lengths
+add in missing instructions for languages (hu, lt, nl, sv, pt, tr)
+
+Index: files/lang/Makefile
+--- files/lang/Makefile.orig
++++ files/lang/Makefile
+@@ -31,14 +31,14 @@ merge:
+ # Spanish: drop accents transliterated with `"` (which breaks translation file format)
+ # and transliterate the rest using the es_ES.UTF-8 locale
+ es.mo: es.po
+-	sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	LANG=es_ES.UTF-8 LC_CTYPE=es_ES.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
+ 	LANG=es_ES.UTF-8 LC_ALL=es_ES.UTF-8 LC_CTYPE=es_ES.UTF-8 iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
+ 	msgfmt $<.2.tmp -o $@
+ 
+ # In French, accented characters are mapped to unused ASCII characters
+ # Non-mapped characters are replaced by their non-accented equivalents
+ fr.mo: fr.po
+-	sed -e 'y/àâçéèêîïôùûüÉÊÀ/@*^~`|><#&$$uEEA/' $< > $<.tmp
++	LANG=fr_FR.UTF-8 LC_CTYPE=fr_FR.UTF-8 sed -e 'y/àâçéèêîïôùûüÉÊÀ/@*^~`|><#&$$uEEA/' $< > $<.tmp
+ 	sed -i~ -e 's/œ/oe/g' $<.tmp
+ 	msgfmt $<.tmp -o $@
+ 
+@@ -78,6 +78,36 @@ nb.mo: nb.po
+ it.mo: it.po
+ 	iconv -f utf-8 -t CP1252 $< > $<.tmp
+ 	LANG=it.CP1252 LC_ALL=it.CP1252 LC_CTYPE=it.CP1252 sed -e 's/UTF-8/CP1252/' $<.tmp > $<.2.tmp
++	msgfmt $<.2.tmp -o $@
++
++hu.mo: hu.po
++	LANG=hu_HU.UTF-8 LC_ALL=hu_HU.UTF-8 LC_CTYPE=hu_HU.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
++	msgfmt $<.2.tmp -o $@
++
++lt.mo: lt.po
++	LANG=lt_LT.UTF-8 LC_ALL=lt_LT.UTF-8 LC_CTYPE=lt_LT.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
++	msgfmt $<.2.tmp -o $@
++
++nl.mo: nl.po
++	LANG=nl_NL.UTF-8 LC_ALL=nl_NL.UTF-8 LC_CTYPE=nl_NL.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
++	msgfmt $<.2.tmp -o $@
++
++sv.mo: sv.po
++	LANG=sv_SV.UTF-8 LC_ALL=sv_SV.UTF-8 LC_CTYPE=sv_SV.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
++	msgfmt $<.2.tmp -o $@
++
++pt.mo: pt.po
++	LANG=pt_PT.UTF-8 LC_ALL=pt_PT.UTF-8 LC_CTYPE=pt_PT.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
++	msgfmt $<.2.tmp -o $@
++
++tr.mo: tr.po
++	LANG=tr_TR.UTF-8 LC_ALL=tr_TR.UTF-8 LC_CTYPE=tr_TR.UTF-8 sed -e 'y/äëïöőüűÄËÏŐÖÜŰ/aeioouuAEIOOUU/' $< > $<.tmp
++	iconv -f utf-8 -t ascii//TRANSLIT $<.tmp > $<.2.tmp
+ 	msgfmt $<.2.tmp -o $@
+ 
+ # All other languages: drop accents transliterated with `"` (which breaks translation file format)

@@ -1,0 +1,12 @@
+g++ => c++
+
+Index: src/Makefile.bsd
+--- src/Makefile.bsd.orig
++++ src/Makefile.bsd
+@@ -19,5 +19,5 @@
+ ###########################################################################
+ 
+ AR := ar
+-CXX := g++
++CXX := c++
+ LDFLAGS := $(LDFLAGS) -L/usr/local/lib

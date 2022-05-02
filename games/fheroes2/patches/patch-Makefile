@@ -1,0 +1,13 @@
+also build translation files (*.mo)
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -37,6 +37,7 @@ PROJECT_VERSION := 0.9.14
+ 
+ all:
+ 	$(MAKE) -C src
++	$(MAKE) -C files/lang
+ ifndef FHEROES2_MACOS_APP_BUNDLE
+ 	@cp src/dist/$(TARGET) .
+ endif
