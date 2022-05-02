@@ -1,4 +1,5 @@
 Disable breaking if no haptic feedback support which disallows gamecontroller API
+allow custom SDL GetPlatform name with env var SDL_PLATFORM
 
 Index: src/SDL.c
 --- src/SDL.c.orig
@@ -13,3 +14,15 @@ Index: src/SDL.c
  #endif
      }
  
+@@ -508,6 +505,11 @@ SDL_GetRevisionNumber(void)
+ const char *
+ SDL_GetPlatform(void)
+ {
++    const char *platform;
++    if (platform = SDL_getenv("SDL_PLATFORM")) {
++        printf("Custom SDL_PLATFORM: %s\n", platform);
++        return platform;
++    }
+ #if __AIX__
+     return "AIX";
+ #elif __ANDROID__
