@@ -1,0 +1,12 @@
+Index: test/pingtest.c
+--- test/pingtest.c.orig
++++ test/pingtest.c
+@@ -35,6 +35,8 @@ int slirp_inet_aton(const char *cp, struct in_addr *ia
+ }
+ #define inet_aton slirp_inet_aton
+ #else
++#include <sys/socket.h>
++#include <arpa/inet.h>
+ #include <poll.h>
+ #endif
+ 

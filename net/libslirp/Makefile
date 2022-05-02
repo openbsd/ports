@@ -1,13 +1,13 @@
 COMMENT=	general purpose TCP-IP emulator library
 
-VER=		4.6.1
+VER=		4.7.0
 DISTNAME=	libslirp-v${VER}
 PKGNAME=	libslirp-${VER}
 CATEGORIES=	net
 MASTER_SITES=	https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS+=	slirp	0.0
+SHARED_LIBS+=	slirp	0.1
 
 HOMEPAGE=	https://gitlab.freedesktop.org/slirp/libslirp
 
@@ -23,7 +23,5 @@ MODULES=	devel/meson
 LIB_DEPENDS+=	devel/glib2
 
 CONFIGURE_ARGS+=-Ddefault_library=both
-
-NO_TEST=	Yes
 
 .include <bsd.port.mk>
