@@ -96,6 +96,7 @@
      SUBDIR += f1spirit
      SUBDIR += falconseye
      SUBDIR += fallingtime
+     SUBDIR += fheroes2
      SUBDIR += fifechan
      SUBDIR += fifengine
      SUBDIR += fillets-ng
