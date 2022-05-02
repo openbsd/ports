@@ -61,6 +61,7 @@ include/argus/argus_grep.h
 include/argus/argus_histo.h
 include/argus/argus_int.h
 include/argus/argus_isis.h
+include/argus/argus_json.h
 include/argus/argus_label.h
 include/argus/argus_llc.h
 include/argus/argus_main.h
@@ -143,6 +144,7 @@ share/examples/argus-clients/Config/iana-port-numbers
 share/examples/argus-clients/Config/local.addrs
 share/examples/argus-clients/Config/racluster.conf
 share/examples/argus-clients/Config/racolor.conf
+share/examples/argus-clients/Config/raconvert.zeek.conf
 share/examples/argus-clients/Config/radium.conf
 share/examples/argus-clients/Config/ragetcountrycodes.sh
 share/examples/argus-clients/Config/ralabel.conf

@@ -1,10 +1,13 @@
 COMMENT =	utilities to read and parse Argus data
 
-DISTNAME =	argus-clients-3.0.8.3
+VERSION =	3.0.8.4
+DISTNAME =	argus-clients-${VERSION}
 CATEGORIES =	net
 
-HOMEPAGE =	http://qosient.com/argus/
-MASTER_SITES =	${HOMEPAGE}/src/
+HOMEPAGE =	https://openargus.org/
+GH_ACCOUNT =	openargus
+GH_PROJECT =	clients
+GH_TAGNAME =	v${VERSION}
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
