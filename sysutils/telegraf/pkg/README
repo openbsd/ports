@@ -1,0 +1,30 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+doas(1) support
+===============
+If you use any of the following input plugins, you do not need to
+install and configure sudo:
+
+* pf
+* NSD
+* OpenNTPD
+* OpenSMTPD
+* Unbound
+
+Below are some example doas.conf(5) lines which could be used. If you
+have a nonstandard configuration of those daemons, adjustments to the
+location of binaries and arguments may be needed.
+
+permit nopass _telegraf as _unbound cmd /usr/sbin/unbound-control \
+	args stats_noreset
+permit nopass _telegraf as _nsd cmd /usr/sbin/nsd-control args stats_noreset
+permit nopass _telegraf cmd /sbin/pfctl args -s info
+permit nopass _telegraf cmd /usr/sbin/ntpctl args -s peers
+permit nopass _telegraf cmd /usr/sbin/smtpctl args show stats
+
+Resource Limits
+===============
+telegraf runs with a dedicated login class. See /etc/login.conf.d/telegraf
+and refer to getcap(3), login.conf(5), and rc.d(8) for further details.

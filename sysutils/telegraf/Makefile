@@ -2,7 +2,7 @@ COMMENT =	plugin-driven server agent for collecting metrics
 
 BROKEN-arm =	build fails, no error message
 
-MODGO_VERSION=	v1.22.1
+MODGO_VERSION=	v1.22.3
 MODGO_MODNAME=	github.com/influxdata/telegraf
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
