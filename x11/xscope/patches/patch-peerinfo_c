@@ -1,0 +1,15 @@
+Index: peerinfo.c
+--- peerinfo.c.orig
++++ peerinfo.c
+@@ -43,7 +43,11 @@ static pid_t
+ GetPidFromFd(FD fd)
+ {
+ #ifdef SO_PEERCRED
++#ifndef __OpenBSD__
+     struct ucred cred;
++#else
++    struct sockpeercred cred;
++#endif
+     socklen_t cred_len = sizeof(cred);
+ 
+     if (getsockopt(fd, SOL_SOCKET, SO_PEERCRED, &cred, &cred_len) == 0 &&

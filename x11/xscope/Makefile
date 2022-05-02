@@ -1,8 +1,8 @@
 COMMENT =	X Window Protocol Viewer
-DISTNAME =	xscope-1.4.1
+DISTNAME =	xscope-1.4.2
 CATEGORIES =	x11
 
-HOMEPAGE =	http://wiki.X.Org/
+HOMEPAGE =	https://gitlab.freedesktop.org/xorg/app/xscope
 
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
