@@ -4,6 +4,7 @@ V =			7.3.5
 MODPY_EGG_VERSION =	${V}.606
 DISTNAME =		renpy-${V}-source
 PKGNAME =		renpy-${V}
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -25,8 +26,7 @@ BUILD_DEPENDS =		devel/pygame \
 			games/pygame_sdl2 \
 			lang/cython,python3
 
-RUN_DEPENDS =		games/pygame_sdl2 \
-			x11/gnome/zenity
+RUN_DEPENDS =		games/pygame_sdl2
 
 # XXX enable fribidi support
 LIB_DEPENDS =		graphics/ffmpeg \
