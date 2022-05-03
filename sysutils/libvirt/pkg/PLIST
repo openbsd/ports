@@ -204,7 +204,6 @@ share/doc/libvirt/html/drvlxc.html
 share/doc/libvirt/html/drvnodedev.html
 share/doc/libvirt/html/drvopenvz.html
 share/doc/libvirt/html/drvqemu.html
-share/doc/libvirt/html/drvremote.html
 share/doc/libvirt/html/drvsecret.html
 share/doc/libvirt/html/drvtest.html
 share/doc/libvirt/html/drvvbox.html
@@ -291,12 +290,6 @@ share/doc/libvirt/html/images/migration-native.png
 share/doc/libvirt/html/images/migration-tunnel.png
 share/doc/libvirt/html/images/migration-unmanaged-direct.png
 share/doc/libvirt/html/index.html
-share/doc/libvirt/html/internals/
-share/doc/libvirt/html/internals.html
-share/doc/libvirt/html/internals/command.html
-share/doc/libvirt/html/internals/eventloop.html
-share/doc/libvirt/html/internals/locking.html
-share/doc/libvirt/html/internals/rpc.html
 share/doc/libvirt/html/java.html
 share/doc/libvirt/html/js/
 share/doc/libvirt/html/js/main.js
@@ -304,8 +297,15 @@ share/doc/libvirt/html/kbase/
 share/doc/libvirt/html/kbase/backing_chains.html
 share/doc/libvirt/html/kbase/debuglogs.html
 share/doc/libvirt/html/kbase/domainstatecapture.html
-share/doc/libvirt/html/kbase/incrementalbackupinternals.html
 share/doc/libvirt/html/kbase/index.html
+share/doc/libvirt/html/kbase/internals/
+share/doc/libvirt/html/kbase/internals/command.html
+share/doc/libvirt/html/kbase/internals/eventloop.html
+share/doc/libvirt/html/kbase/internals/incremental-backup.html
+share/doc/libvirt/html/kbase/internals/locking.html
+share/doc/libvirt/html/kbase/internals/migration.html
+share/doc/libvirt/html/kbase/internals/overview.html
+share/doc/libvirt/html/kbase/internals/rpc.html
 share/doc/libvirt/html/kbase/kvm-realtime.html
 share/doc/libvirt/html/kbase/launch_security_sev.html
 share/doc/libvirt/html/kbase/live_full_disk_backup.html
@@ -314,7 +314,6 @@ share/doc/libvirt/html/kbase/locking-sanlock.html
 share/doc/libvirt/html/kbase/locking.html
 share/doc/libvirt/html/kbase/memorydevices.html
 share/doc/libvirt/html/kbase/merging_disk_image_chains.html
-share/doc/libvirt/html/kbase/migrationinternals.html
 share/doc/libvirt/html/kbase/qemu-core-dump.html
 share/doc/libvirt/html/kbase/qemu-passthrough-security.html
 share/doc/libvirt/html/kbase/rpm-deployment.html
@@ -322,6 +321,7 @@ share/doc/libvirt/html/kbase/s390_protected_virt.html
 share/doc/libvirt/html/kbase/secureusage.html
 share/doc/libvirt/html/kbase/snapshots.html
 share/doc/libvirt/html/kbase/systemtap.html
+share/doc/libvirt/html/kbase/tlscerts.html
 share/doc/libvirt/html/kbase/virtiofs.html
 share/doc/libvirt/html/libvirt-go-xml.html
 share/doc/libvirt/html/libvirt-go.html
@@ -410,7 +410,6 @@ share/doc/libvirt/html/support.html
 share/doc/libvirt/html/testapi.html
 share/doc/libvirt/html/testsuites.html
 share/doc/libvirt/html/testtck.html
-share/doc/libvirt/html/tlscerts.html
 share/doc/libvirt/html/uri.html
 share/doc/libvirt/html/windows.html
 share/examples/libvirt/
