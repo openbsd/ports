@@ -1,5 +1,5 @@
 COMMENT =	simple markdown translator
-DISTNAME =	lowdown-0.9.2
+DISTNAME =	lowdown-0.10.0
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://kristaps.bsd.lv/lowdown/
