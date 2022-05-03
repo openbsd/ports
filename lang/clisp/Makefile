@@ -3,9 +3,9 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 COMMENT =		ANSI Common Lisp implementation
 
 DISTNAME=		clisp-2.49
-REVISION =		5
+REVISION =		6
 CATEGORIES=		lang
-HOMEPAGE=		http://clisp.cons.org/
+HOMEPAGE=		https://clisp.sourceforge.io/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
