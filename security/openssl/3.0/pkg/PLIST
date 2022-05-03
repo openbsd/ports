@@ -2671,9 +2671,11 @@ ${MAN_PREFIX}/man3/OPENSSL_sk_sort.3
 ${MAN_PREFIX}/man3/OPENSSL_sk_unshift.3
 ${MAN_PREFIX}/man3/OPENSSL_sk_value.3
 ${MAN_PREFIX}/man3/OPENSSL_sk_zero.3
+${MAN_PREFIX}/man3/OPENSSL_strcasecmp.3
 ${MAN_PREFIX}/man3/OPENSSL_strdup.3
 ${MAN_PREFIX}/man3/OPENSSL_strlcat.3
 ${MAN_PREFIX}/man3/OPENSSL_strlcpy.3
+${MAN_PREFIX}/man3/OPENSSL_strncasecmp.3
 ${MAN_PREFIX}/man3/OPENSSL_strndup.3
 ${MAN_PREFIX}/man3/OPENSSL_thread_stop.3
 ${MAN_PREFIX}/man3/OPENSSL_thread_stop_ex.3
@@ -3841,9 +3843,11 @@ ${MAN_PREFIX}/man3/SSL_CTX_flush_sessions.3
 ${MAN_PREFIX}/man3/SSL_CTX_free.3
 ${MAN_PREFIX}/man3/SSL_CTX_generate_session_ticket_fn.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_CA_list.3
+${MAN_PREFIX}/man3/SSL_CTX_get0_chain_cert_store.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_chain_certs.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_param.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_security_ex_data.3
+${MAN_PREFIX}/man3/SSL_CTX_get0_verify_cert_store.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_app_data.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_cert_store.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_ciphers.3
@@ -3872,6 +3876,7 @@ ${MAN_PREFIX}/man3/SSL_CTX_get_recv_max_early_data.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_security_callback.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_security_level.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_session_cache_mode.3
+${MAN_PREFIX}/man3/SSL_CTX_get_ssl_method.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_timeout.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_tlsext_status_arg.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_tlsext_status_cb.3
@@ -3981,6 +3986,7 @@ ${MAN_PREFIX}/man3/SSL_CTX_set_psk_client_callback.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_psk_find_session_callback.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_psk_server_callback.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_psk_use_session_callback.3
+${MAN_PREFIX}/man3/SSL_CTX_set_purpose.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_quiet_shutdown.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_read_ahead.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_record_padding_callback.3
@@ -4015,6 +4021,7 @@ ${MAN_PREFIX}/man3/SSL_CTX_set_tlsext_use_srtp.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_tmp_dh.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_tmp_dh_callback.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_tmp_ecdh.3
+${MAN_PREFIX}/man3/SSL_CTX_set_trust.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_verify.3
 ${MAN_PREFIX}/man3/SSL_CTX_set_verify_depth.3
 ${MAN_PREFIX}/man3/SSL_CTX_up_ref.3
@@ -4132,6 +4139,7 @@ ${MAN_PREFIX}/man3/SSL_free.3
 ${MAN_PREFIX}/man3/SSL_free_buffers.3
 ${MAN_PREFIX}/man3/SSL_get0_CA_list.3
 ${MAN_PREFIX}/man3/SSL_get0_alpn_selected.3
+${MAN_PREFIX}/man3/SSL_get0_chain_cert_store.3
 ${MAN_PREFIX}/man3/SSL_get0_chain_certs.3
 ${MAN_PREFIX}/man3/SSL_get0_dane_authority.3
 ${MAN_PREFIX}/man3/SSL_get0_dane_tlsa.3
@@ -4144,6 +4152,7 @@ ${MAN_PREFIX}/man3/SSL_get0_peername.3
 ${MAN_PREFIX}/man3/SSL_get0_security_ex_data.3
 ${MAN_PREFIX}/man3/SSL_get0_session.3
 ${MAN_PREFIX}/man3/SSL_get0_verified_chain.3
+${MAN_PREFIX}/man3/SSL_get0_verify_cert_store.3
 ${MAN_PREFIX}/man3/SSL_get1_curves.3
 ${MAN_PREFIX}/man3/SSL_get1_groups.3
 ${MAN_PREFIX}/man3/SSL_get1_peer_certificate.3
@@ -4334,6 +4343,7 @@ ${MAN_PREFIX}/man3/SSL_set_psk_client_callback.3
 ${MAN_PREFIX}/man3/SSL_set_psk_find_session_callback.3
 ${MAN_PREFIX}/man3/SSL_set_psk_server_callback.3
 ${MAN_PREFIX}/man3/SSL_set_psk_use_session_callback.3
+${MAN_PREFIX}/man3/SSL_set_purpose.3
 ${MAN_PREFIX}/man3/SSL_set_quiet_shutdown.3
 ${MAN_PREFIX}/man3/SSL_set_read_ahead.3
 ${MAN_PREFIX}/man3/SSL_set_record_padding_callback.3
@@ -4360,6 +4370,7 @@ ${MAN_PREFIX}/man3/SSL_set_tlsext_use_srtp.3
 ${MAN_PREFIX}/man3/SSL_set_tmp_dh.3
 ${MAN_PREFIX}/man3/SSL_set_tmp_dh_callback.3
 ${MAN_PREFIX}/man3/SSL_set_tmp_ecdh.3
+${MAN_PREFIX}/man3/SSL_set_trust.3
 ${MAN_PREFIX}/man3/SSL_set_verify.3
 ${MAN_PREFIX}/man3/SSL_set_verify_depth.3
 ${MAN_PREFIX}/man3/SSL_set_verify_result.3
