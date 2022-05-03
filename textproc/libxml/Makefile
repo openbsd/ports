@@ -4,6 +4,9 @@ COMMENT-python=		Python bindings for libxml
 GNOME_VERSION=		2.9.13
 GNOME_PROJECT=		libxml2
 
+REVISION-main=		1
+REVISION-python=	1
+
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
 
