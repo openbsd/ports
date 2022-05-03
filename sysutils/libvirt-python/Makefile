@@ -1,6 +1,6 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	8.2.0
+MODPY_EGG_VERSION =	8.3.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
 
@@ -27,6 +27,8 @@ TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+MODPY_SETUPTOOLS =	Yes
 
 do-test:
 	${MODPY_TEST_TARGET} ${TEST_TARGET}

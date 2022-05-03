@@ -8,7 +8,11 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirt_qemu.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirtaio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libvirt.py
 lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
-lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/libvirt_python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py
 lib/python${MODPY_VERSION}/site-packages/libvirtaio.py
 @so lib/python${MODPY_VERSION}/site-packages/libvirtmod.${MODPY_PYC_MAGIC_TAG}so
