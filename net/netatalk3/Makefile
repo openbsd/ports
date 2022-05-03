@@ -1,9 +1,20 @@
+# XXX before upgrade to a newer release, make sure these are fixed:
+# https://sourceforge.net/p/netatalk/bugs/670/
+# https://sourceforge.net/p/netatalk/bugs/669/
+# https://github.com/Netatalk/Netatalk/issues/175
+# configure: WARNING: unrecognized options: --with-libevent-header, --with-libevent-lib
+# Initial update to 3.1.13:
+#     https://github.com/openbsd/ports/commit/76cd8557b7ca4dfd2d0fd5470bfdd63636cb962d
+
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.13
+V=			3.1.12
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
+EPOCH=			0
+
+REVISION=		0
 
 SHARED_LIBS +=  atalk                16.0     # 18.0
 
@@ -48,8 +59,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_MYSQL_CONFIG=
 
-CONFIGURE_ARGS=		--disable-cups \
-			--with-pkgconfdir=${SYSCONFDIR}/netatalk \
+CONFIGURE_ARGS=		--with-pkgconfdir=${SYSCONFDIR}/netatalk \
 			--with-ssl-dir=/usr \
 			--with-tdb=${LOCALBASE} \
 			--with-libevent-header=${LOCALBASE}/include \
@@ -59,6 +69,9 @@ CONFIGURE_ARGS=		--disable-cups \
 
 # XXX does not build
 CONFIGURE_ARGS +=	--disable-quota
+
+# don't pickup z11/gnome/tracker3
+CONFIGURE_ARGS +=	--with-tracker-pkgconfig-version=0
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

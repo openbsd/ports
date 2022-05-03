@@ -1,0 +1,12 @@
+Index: doc/manpages/man1/asip-status.pl.1.xml
+--- doc/manpages/man1/asip-status.pl.1.xml.orig
++++ doc/manpages/man1/asip-status.pl.1.xml
+@@ -75,7 +75,7 @@
+     supports both IPv4 and IPv6. It's decided by your system which IP version
+     to use. You can use -4 or -6 option to specify IP version.</para>
+ 
+-    <note><para><command>asip-status.pl</command> requires IO::Socket::INET6
++    <note><para><command>asip-status.pl</command> requires IO::Socket::IP
+     module.</para></note>
+ 
+   </refsect1>

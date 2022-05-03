@@ -1,14 +1,13 @@
 Pick-up libevent2 from LOCALBASE.
 
-Index: etc/netatalk/Makefile.in
---- etc/netatalk/Makefile.in.orig
-+++ etc/netatalk/Makefile.in
-@@ -433,7 +433,7 @@ netatalk_LDADD = \
- 	@ZEROCONF_LIBS@ \
- 	$(top_builddir)/libatalk/libatalk.la
+--- etc/netatalk/Makefile.in.orig	Tue Dec 29 03:02:05 2015
++++ etc/netatalk/Makefile.in	Wed Dec 30 06:50:05 2015
+@@ -101,7 +101,7 @@ sbin_PROGRAMS = netatalk$(EXEEXT)
+ @USE_BUILTIN_LIBEVENT_TRUE@	$(top_builddir)/libevent/libevent.la
  
--netatalk_LDFLAGS = @LIBEVENT_LDFLAGS@ -levent
-+netatalk_LDFLAGS = @LIBEVENT_LDFLAGS@ $$(pkg-config --libs libevent)
- noinst_HEADERS = afp_zeroconf.h afp_avahi.h afp_mdns.h
- all: all-am
- 
+ @USE_BUILTIN_LIBEVENT_FALSE@am__append_3 = @LIBEVENT_CFLAGS@
+-@USE_BUILTIN_LIBEVENT_FALSE@am__append_4 = @LIBEVENT_LDFLAGS@ -levent
++@USE_BUILTIN_LIBEVENT_FALSE@am__append_4 = @LIBEVENT_LDFLAGS@ $$(pkg-config --libs libevent)
+ subdir = etc/netatalk
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/macros/afs-check.m4 \

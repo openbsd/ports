@@ -1,0 +1,12 @@
+Index: man/man1/asip-status.pl.1.in
+--- man/man1/asip-status.pl.1.in.orig
++++ man/man1/asip-status.pl.1.in
+@@ -63,7 +63,7 @@ supports both IPv4 and IPv6\&. It\*(Aqs decided by you
+ .br
+ .PP
+ \fBasip\-status\&.pl\fR
+-requires IO::Socket::INET6 module\&.
++requires IO::Socket::IP module\&.
+ .sp .5v
+ .RE
+ .SH "OPTIONS"

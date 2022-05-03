@@ -1,0 +1,21 @@
+Index: contrib/shell_utils/asip-status.pl.in
+--- contrib/shell_utils/asip-status.pl.in.orig
++++ contrib/shell_utils/asip-status.pl.in
+@@ -20,7 +20,7 @@
+ #
+ 
+ use strict;
+-use IO::Socket::INET6;			# sucks because Timeout doesn't
++use IO::Socket::IP;			# sucks because Timeout doesn't
+ 
+ my ($arg);
+ my ($hostport);
+@@ -137,7 +137,7 @@ sub sendpacket 
+ 
+ 	print "opening $host:$port\n" if ($main::debug);
+ 
+-	my ($asip_sock) = IO::Socket::INET6->new( 
++	my ($asip_sock) = IO::Socket::IP->new( 
+ 		Domain => $main::ipv,
+ 		PeerAddr => $host, 
+ 		PeerPort => $port, 
