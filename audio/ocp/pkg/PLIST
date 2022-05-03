@@ -15,7 +15,6 @@ lib/ocp/autoload/
 @so lib/ocp/autoload/30-flacptype.so
 @so lib/ocp/autoload/30-fstypes.so
 @so lib/ocp/autoload/30-mcpbase.so
-@so lib/ocp/autoload/30-opltype.so
 @so lib/ocp/autoload/30-playsid.so
 @so lib/ocp/autoload/30-plrbase.so
 @so lib/ocp/autoload/30-sidconfig.so
@@ -23,6 +22,8 @@ lib/ocp/autoload/
 @so lib/ocp/autoload/30-ymtype.so
 @so lib/ocp/autoload/35-cpiface.so
 @so lib/ocp/autoload/40-cphlpif.so
+@so lib/ocp/autoload/40-cpifontdebug.so
+@so lib/ocp/autoload/40-playopl.so
 @so lib/ocp/autoload/60-cdfs.so
 @so lib/ocp/devpdisk.so
 @so lib/ocp/devpnone.so
@@ -50,7 +51,6 @@ lib/ocp/autoload/
 @so lib/ocp/playit.so
 @so lib/ocp/playmp2.so
 @so lib/ocp/playogg.so
-@so lib/ocp/playopl.so
 @so lib/ocp/playsid.so
 @so lib/ocp/playtimidity.so
 @so lib/ocp/playwav.so
@@ -85,6 +85,7 @@ share/icons/hicolor/64x64/apps/opencubicplayer.png
 share/icons/hicolor/scalable/apps/opencubicplayer.svg
 share/ocp/
 share/ocp/data/
+share/ocp/data/adplug.db
 share/ocp/data/ocp.hlp
 share/ocp/etc/
 share/ocp/etc/ocp.ini

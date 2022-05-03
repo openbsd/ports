@@ -3,7 +3,7 @@ BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-0.2.95
+DISTNAME =	ocp-0.2.96
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
@@ -11,9 +11,9 @@ HOMEPAGE =	https://stian.cubic.org/project-ocp.php
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 adplug binio bz2 c cjson
-WANTLIB +=	curses discid freetype iconv jpeg m mad ogg png vorbis
-WANTLIB +=	vorbisfile z
+WANTLIB +=	${COMPILER_LIBCXX} FLAC SDL2 bz2 c cjson curses discid
+WANTLIB +=	freetype iconv jpeg m mad ogg png vorbis vorbisfile
+WANTLIB +=	z
 
 MASTER_SITES =	https://stian.cubic.org/ocp/
 
@@ -27,14 +27,12 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/xa
 
 LIB_DEPENDS =	archivers/bzip2 \
-		audio/adplug \
 		audio/flac \
 		audio/libdiscid \
 		audio/libmad \
 		audio/libogg \
 		audio/libvorbis \
 		devel/cjson \
-		devel/libbinio \
 		devel/sdl2 \
 		graphics/jpeg \
 		graphics/png
