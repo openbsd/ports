@@ -1,6 +1,7 @@
      SUBDIR =
      SUBDIR += abook
      SUBDIR += adcomplain
+     SUBDIR += aerc
      SUBDIR += alpine
      SUBDIR += altermime
      SUBDIR += amavisd-new
