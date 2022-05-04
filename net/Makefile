@@ -111,6 +111,7 @@
      SUBDIR += geomyidae
      SUBDIR += glib2-networking
      SUBDIR += gloox
+     SUBDIR += gmid
      SUBDIR += gmudix
      SUBDIR += gnugk
      SUBDIR += go-ipfs
