@@ -1,10 +1,9 @@
 COMMENT =		pure-Python implementation of immutable URLs
 
-MODPY_EGG_VERSION =	19.0.0
+MODPY_EGG_VERSION =	21.0.0
 
 DISTNAME =		hyperlink-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		www
 
