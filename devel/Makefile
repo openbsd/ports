@@ -1513,6 +1513,7 @@
      SUBDIR += py-stdnum,python3
      SUBDIR += py-straight.plugin,python3
      SUBDIR += py-suds
+     SUBDIR += py-sure,python3
      SUBDIR += py-tabulate
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora,python3
