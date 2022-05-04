@@ -31,7 +31,7 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -300,6 +300,7 @@ CONFIGURE_ARGS+=\
 		--enable-mergelibs \
 		--enable-gio \
 		--enable-kf5 \
+		--enable-lto \
 		--enable-qt5 \
 		--enable-release-build \
 		--enable-cairo-canvas \
