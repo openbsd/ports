@@ -1,13 +1,11 @@
 COMMENT=	semaphore-file tool for shell scripting
 
-DISTNAME=	procmail-3.22
-PKGNAME=	lockfile-3.22
-REVISION=	1
-CATEGORIES=	sysutils
+GH_ACCOUNT=	BuGlessRB
+GH_PROJECT=	procmail
+GH_TAGNAME=	v3.24
+PKGNAME=	lockfile-${GH_TAGNAME:S/v//}
 
-MASTER_SITES=	http://ftp.kfki.hu/packages/mail/procmail/ \
-		http://www.ring.gr.jp/archives/net/mail/procmail/ \
-		ftp://ftp.fu-berlin.de/pub/unix/mail/procmail/
+CATEGORIES=	sysutils
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
