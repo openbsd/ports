@@ -2,6 +2,7 @@ COMMENT =	continuous integration framework
 
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME}
+REVISION =	0
 
 RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
 		databases/py-alembic${MODPY_FLAVOR} \
@@ -11,6 +12,7 @@ RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR} \
 		devel/py-future${MODPY_FLAVOR} \
 		devel/py-txaio${MODPY_FLAVOR} \
 		net/py-msgpack${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
 		www/py-autobahn${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}
