@@ -1,0 +1,5 @@
+Sure is a Python library for Python that leverages a DSL for writing
+assertions.
+
+In CPython it monkey-patches the object type, adding some methods and
+properties purely for test purposes.
