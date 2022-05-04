@@ -2,7 +2,7 @@ COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.21.0
+GH_TAGNAME =		v0.23.0
 
 CATEGORIES =		devel
 
