@@ -1,0 +1,11 @@
+@newgroup _gmid:878
+@newuser _gmid:878:878::Gmid User:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/gmid
+@bin bin/gg
+@bin bin/gmid
+@man man/man1/gg.1
+@man man/man1/gmid.1
+share/examples/gmid/
+share/examples/gmid/gmid.conf
+@sample ${SYSCONFDIR}/gmid.conf
+@sample /var/gemini/

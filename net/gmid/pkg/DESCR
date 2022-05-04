@@ -1,0 +1,3 @@
+gmid is a small but featureful gemini server for Unix-like operating
+systems.  Features include support for CGI and FastCGI, reverse proxying
+capabilities, IRI (RFC3987) support, per-location rules and more.

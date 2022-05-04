@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/gmid"
+daemon_flags="-c ${SYSCONFDIR}/gmid.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	# use rcexec here since daemon_flags may contain arguments with spaces
+	${rcexec} "${daemon} -n ${daemon_flags}"
+}
+
+rc_cmd $1
