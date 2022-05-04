@@ -1,0 +1,4 @@
+Aerc is a terminal email client with IMAP and Maildir support.  Features
+include asynchronous IMAP and IMAP IDLE support, a tabbed multitasking
+interface, built-in terminal multiplexer, and customizable rendering
+filters for message parts.

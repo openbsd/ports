@@ -1,0 +1,30 @@
+@bin bin/aerc
+@man man/man1/aerc-search.1
+@man man/man1/aerc.1
+@man man/man5/aerc-config.5
+@man man/man5/aerc-imap.5
+@man man/man5/aerc-maildir.5
+@man man/man5/aerc-notmuch.5
+@man man/man5/aerc-sendmail.5
+@man man/man5/aerc-smtp.5
+@man man/man7/aerc-stylesets.7
+@man man/man7/aerc-templates.7
+@man man/man7/aerc-tutorial.7
+share/aerc/
+share/aerc/accounts.conf
+share/aerc/aerc.conf
+share/aerc/binds.conf
+share/aerc/filters/
+share/aerc/filters/colorize
+share/aerc/filters/hldiff
+share/aerc/filters/html
+share/aerc/filters/plaintext
+share/aerc/stylesets/
+share/aerc/stylesets/default
+share/aerc/templates/
+share/aerc/templates/forward_as_body
+share/aerc/templates/new_message
+share/aerc/templates/quoted_reply
+share/applications/aerc.desktop
+share/doc/pkg-readmes/${PKGSTEM}
+@tag update-desktop-database
