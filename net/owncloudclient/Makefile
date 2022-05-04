@@ -1,6 +1,6 @@
 COMMENT =		owncloud sync client
 
-V = 			2.10.1.7187
+V = 			2.10.1.7389
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 
@@ -21,7 +21,7 @@ WANTLIB += Qt5Xml c m qt5keychain sqlite3 z
 WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify
 
 MASTER_SITES =		https://download.owncloud.com/desktop/ownCloud/stable/latest/source/ \
-			https://download.owncloud.com/desktop/ownCloud/stable/${V}/
+			https://download.owncloud.com/desktop/ownCloud/stable/${V}/source/
 EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/cmake x11/qt5
