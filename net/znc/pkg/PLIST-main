@@ -1,6 +1,6 @@
 @pkgpath net/znc
 @newgroup _znc:877
-@newuser _znc:877:877:default:ZNC Daemon:/nonexistent:/sbin/nologin
+@newuser _znc:877:877::ZNC Daemon:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/znc
 @owner _znc
 @group _znc
