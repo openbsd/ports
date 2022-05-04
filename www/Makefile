@@ -431,6 +431,7 @@
      SUBDIR += py-httpbin,python3
      SUBDIR += py-httpie	# standalone cli tool, uses python3
      SUBDIR += py-httplib2,python3
+     SUBDIR += py-httpretty,python3
      SUBDIR += py-hyperlink,python3
      SUBDIR += py-itsdangerous,python3
      SUBDIR += py-jinja2,python3
