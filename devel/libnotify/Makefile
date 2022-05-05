@@ -1,6 +1,6 @@
 COMMENT=		send desktop notifications to a notification daemon
 
-GNOME_VERSION=		0.7.11
+GNOME_VERSION=		0.7.12
 GNOME_PROJECT=		libnotify
 
 CATEGORIES=		devel
