@@ -1,7 +1,7 @@
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -2478,7 +2478,6 @@ def mk_config():
+@@ -2573,7 +2573,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -9,7 +9,7 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2491,7 +2490,7 @@ def mk_config():
+@@ -2586,7 +2585,7 @@ def mk_config():
          elif sysname == 'Linux':
              CXXFLAGS       = '%s -D_LINUX_' % CXXFLAGS
              OS_DEFINES     = '-D_LINUX_'
@@ -18,7 +18,7 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
              SLIBEXTRAFLAGS = '%s -Wl,-soname,libz3.so' % SLIBEXTRAFLAGS
          elif sysname == 'GNU':
-@@ -2528,9 +2527,9 @@ def mk_config():
+@@ -2629,9 +2628,9 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)
