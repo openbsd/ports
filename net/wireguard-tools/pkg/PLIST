@@ -6,4 +6,3 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/wg
 share/bash-completion/completions/wg-quick
-share/doc/pkg-readmes/${PKGSTEM}

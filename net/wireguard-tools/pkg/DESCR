@@ -1,2 +1,5 @@
 WireGuard is an extremely simple yet fast and modern VPN that utilizes
 state-of-the-art cryptography.
+
+This package provides the standard tools for use with WireGuard, useful
+in some situations. The VPN itself is handled by wg(4) in the base OS.
