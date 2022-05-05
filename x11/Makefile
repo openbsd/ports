@@ -227,6 +227,7 @@
      SUBDIR += p5-X11-Protocol-Other
      SUBDIR += paper-gtk-theme
      SUBDIR += paper-icon-theme
+     SUBDIR += papirus-icon-theme
      SUBDIR += parcellite
      SUBDIR += pcmanfm
      SUBDIR += peksystray
