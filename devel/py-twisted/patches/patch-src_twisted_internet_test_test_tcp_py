@@ -1,7 +1,7 @@
 Index: src/twisted/internet/test/test_tcp.py
 --- src/twisted/internet/test/test_tcp.py.orig
 +++ src/twisted/internet/test/test_tcp.py
-@@ -3037,7 +3037,11 @@ class SimpleUtilityTests(TestCase):
+@@ -2925,7 +2925,11 @@ class SimpleUtilityTests(TestCase):
          accidentally block if it receives bad input.)
          """
          err = self.assertRaises(socket.gaierror, _resolveIPv6, "::1", "http")
@@ -12,5 +12,5 @@ Index: src/twisted/internet/test/test_tcp.py
 +        else:
 +            self.assertEqual(err.args[0], socket.EAI_NONAME)
  
-     if platform.isWindows():
-         test_resolveNumericService.skip = ("The AI_NUMERICSERV flag is not "
+     def test_resolveIPv6(self):
+         """

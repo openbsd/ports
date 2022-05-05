@@ -1,11 +1,9 @@
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	20.3.0
+MODPY_EGG_VERSION =	22.4.0
 
-EXTRACT_SUFX =		.tar.bz2
 DISTNAME =		Twisted-${MODPY_EGG_VERSION}
 PKGNAME =		py-twisted-${MODPY_EGG_VERSION}
-REVISION =		4
 
 CATEGORIES =		devel
 
@@ -24,10 +22,12 @@ MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		devel/py-incremental${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}		\
+			devel/py-attrs${MODPY_FLAVOR}		\
 			devel/py-automat${MODPY_FLAVOR}		\
 			devel/py-constantly${MODPY_FLAVOR}	\
 			devel/py-hamcrest${MODPY_FLAVOR}	\
 			devel/py-incremental${MODPY_FLAVOR}	\
+			devel/py-typing-extensions${MODPY_FLAVOR} \
 			devel/py-zopeinterface${MODPY_FLAVOR}	\
 			net/py-idna${MODPY_FLAVOR}		\
 			security/py-bcrypt${MODPY_FLAVOR}	\
