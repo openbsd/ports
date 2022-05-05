@@ -6,6 +6,7 @@ COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.14.2
+REVISION-ruby=		0
 DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 PKGNAME-perl=		p5-SVN-${VERSION}
@@ -14,24 +15,18 @@ PKGNAME-ruby=		ruby${MODRUBY_BINREV}-subversion-${VERSION}
 PKGNAME-ap2=		ap2-subversion-${VERSION}
 PKGNAME-gnome-keyring=	gnome-keyring-subversion-${VERSION}
 
-MODRUBY_REV ?=	2.7
-# Work around for SHARED_LIBS not picking up MODRUBY_BINREV from ruby module
-MODRUBY_BINREV=	${MODRUBY_REV:S/.//}
-
 SO_VERSION=	6.0
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_fs_x-1 \
 		svn_ra-1 svn_ra_serf-1 svn_ra_local-1 \
 		svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
-SVN_EXT_LIBS=	svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby${MODRUBY_BINREV}-1 \
+SVN_EXT_LIBS=	svn_swig_perl-1 svn_swig_py-1 \
 		svn_auth_gnome_keyring-1
 .for _lib in ${SVN_LIBS} ${SVN_EXT_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
-# Work around for PLIST not being to handle dynamic variable names in
-# substitutions
-LIBsvn_swig_ruby-1_VERSION =	${LIBsvn_swig_ruby${MODRUBY_BINREV}-1_VERSION}
+SHARED_LIBS+=	svn_swig_ruby${MODRUBY_BINREV}-1  0.0 # XXX not under ports control
 
 CATEGORIES=	devel
 
@@ -185,7 +180,7 @@ CONFIGURE_ARGS+=--without-gnome-keyring
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
 TEST_DEPENDS+=	${FULLPKGNAME-gnome-keyring}:${BUILD_PKGPATH},-gnome-keyring
 SUBST_VARS+=	LOCALBASE SO_VERSION MODRUBY_BINREV
-SUBST_VARS+=	LIBsvn_swig_ruby-1_VERSION MODPY_WANTLIB PY_CONFLICT
+UPDATE_PLIST_ARGS= -I MODPY_WANTLIB
 
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
