@@ -5,14 +5,13 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.11.1
+MOZILLA_VERSION =	2.53.12
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
-PKGNAME-lightning =	lightning-seamonkey-5.8.11.1
+PKGNAME-lightning =	lightning-seamonkey-5.8.12
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
@@ -54,7 +53,7 @@ CONFIGURE_ENV +=	ac_cv_needs_atomic=no
 .endif
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
-WANTLIB += X11-xcb intl pixman-1 xcb xcb-shm
+WANTLIB += X11-xcb intl xcb xcb-shm
 WANTLIB += Xcursor Xi harfbuzz Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=

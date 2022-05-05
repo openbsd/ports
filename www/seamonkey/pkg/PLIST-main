@@ -80,8 +80,6 @@ lib/${MOZILLA_PROJECT}/dictionaries/en-US.dic
 lib/${MOZILLA_PROJECT}/extensions/
 lib/${MOZILLA_PROJECT}/extensions/modern@themes.mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-lib/${MOZILLA_PROJECT}/gtk2/
-@lib lib/${MOZILLA_PROJECT}/gtk2/libmozgtk.so.${LIBmozgtk_VERSION}
 lib/${MOZILLA_PROJECT}/isp/
 lib/${MOZILLA_PROJECT}/isp/Bogofilter.sfd
 lib/${MOZILLA_PROJECT}/isp/DSPAM.sfd
