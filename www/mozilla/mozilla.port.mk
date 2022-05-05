@@ -124,11 +124,6 @@ CONFIGURE_ARGS +=	--with-system-zlib	\
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
 MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
-# for NPAPI support (see #1377445 for the dependency removal)
-.if ${MOZILLA_MAJOR_VERSION} < 90
-MODMOZ_LIB_DEPENDS +=	x11/gtk+2
-MODMOZ_WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
-.endif
 
 PORTHOME =	${WRKSRC}
 
