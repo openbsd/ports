@@ -4,7 +4,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 VERSION=	1.7.2
 REVISION=	1
-REVISION-ruby=	2
+REVISION-ruby=	3
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}

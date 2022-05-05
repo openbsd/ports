@@ -2,6 +2,7 @@ COMMENT =	WordPress security scanner
 
 DISTNAME =	wpscan-3.8.21
 CATEGORIES =	security
+REVISION =	0
 
 HOMEPAGE =	https://wpscan.org/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>

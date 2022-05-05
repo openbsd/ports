@@ -4,7 +4,7 @@ GH_TAGNAME =		v0.4.9
 GH_PROJECT=		WhatWeb
 GH_ACCOUNT=		urbanadventurer
 
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		net www
 

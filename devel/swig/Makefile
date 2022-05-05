@@ -2,7 +2,7 @@ COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
 VERSION =	4.0.2
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel

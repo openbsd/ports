@@ -1,7 +1,7 @@
 COMMENT=	emacs-based mail client
 
 DISTNAME=	mew-6.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mew.org/
 

@@ -10,6 +10,7 @@ PKGNAME-python=		py3-librdf-$V
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-librdf-$V
 REVISION=		6
 REVISION-python=	7
+REVISION-ruby=		7
 
 HOMEPAGE=		https://librdf.org/bindings/
 
