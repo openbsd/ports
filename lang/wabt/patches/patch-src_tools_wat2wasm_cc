@@ -11,7 +11,7 @@ Index: src/tools/wat2wasm.cc
  #include "config.h"
  
  #include "src/binary-writer.h"
-@@ -125,6 +128,13 @@ int ProgramMain(int argc, char** argv) {
+@@ -130,6 +133,13 @@ int ProgramMain(int argc, char** argv) {
    InitStdio();
  
    ParseOptions(argc, argv);
