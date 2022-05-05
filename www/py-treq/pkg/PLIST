@@ -8,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/treq-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/treq/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_agentspy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
@@ -17,7 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}content.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}multipart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/treq/_utils.py
+lib/python${MODPY_VERSION}/site-packages/treq/_agentspy.py
 lib/python${MODPY_VERSION}/site-packages/treq/_version.py
 lib/python${MODPY_VERSION}/site-packages/treq/api.py
 lib/python${MODPY_VERSION}/site-packages/treq/auth.py
@@ -29,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/treq/test/
 lib/python${MODPY_VERSION}/site-packages/treq/test/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_agentspy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
@@ -37,7 +38,6 @@ lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_multipar
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_treq_integration.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/local_httpbin/
 lib/python${MODPY_VERSION}/site-packages/treq/test/local_httpbin/__init__.py
@@ -59,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/treq/test/local_httpbin/test/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/treq/test/local_httpbin/test/test_child.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/local_httpbin/test/test_parent.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/local_httpbin/test/test_shared.py
+lib/python${MODPY_VERSION}/site-packages/treq/test/test_agentspy.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_api.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_auth.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_client.py
@@ -67,6 +68,5 @@ lib/python${MODPY_VERSION}/site-packages/treq/test/test_multipart.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_response.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_testing.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_treq_integration.py
-lib/python${MODPY_VERSION}/site-packages/treq/test/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/util.py
 lib/python${MODPY_VERSION}/site-packages/treq/testing.py
