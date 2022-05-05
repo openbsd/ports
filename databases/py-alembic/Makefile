@@ -5,6 +5,7 @@ FIX_EXTRACT_PERMISSIONS = Yes
 
 DISTNAME =		alembic-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
 
@@ -21,8 +22,6 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-RUN_DEPENDS =		databases/py-sqlalchemy${MODPY_FLAVOR}>=1.3.0 \
-			devel/py-importlib_resources${MODPY_FLAVOR} \
-			devel/py-importlib-metadata${MODPY_FLAVOR}
+RUN_DEPENDS =		databases/py-sqlalchemy${MODPY_FLAVOR}>=1.3.0
 
 .include <bsd.port.mk>
