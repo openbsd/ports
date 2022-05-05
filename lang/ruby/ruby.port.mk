@@ -43,9 +43,9 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 3.0.
+# Without a FLAVOR, assume the use of ruby 3.1.
 .    if empty(FLAVOR)
-FLAVOR =		ruby30
+FLAVOR =		ruby31
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
@@ -64,8 +64,8 @@ ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .endif
 
 # The default ruby version to use for non-gem ports.  Defaults to ruby
-# 3.0 for consistency with the default ruby30 FLAVOR for gem ports.
-MODRUBY_REV?=		3.0
+# 3.1 for consistency with the default ruby31 FLAVOR for gem ports.
+MODRUBY_REV?=		3.1
 
 # Because the jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
