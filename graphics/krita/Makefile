@@ -1,6 +1,6 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.0.5
+VERSION =	5.0.6
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
