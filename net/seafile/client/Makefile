@@ -2,9 +2,9 @@ COMMENT =		seafile client
 
 GH_PROJECT =		seafile-client
 # upstream keep on sliding tags to pull in new commits
-# this commit is from the "v8.0.6" tag
-GH_COMMIT =		c9f91fcbde945f5ab246a839c0b10a58a3b68381
-DISTNAME =		seafile-client-8.0.6pl20220228
+# this commit is from the "v8.0.7" tag
+GH_COMMIT =		5077237d9d8fb98bda5f832c8844dec48e6f9877
+DISTNAME =		seafile-client-8.0.7pl20220504
 
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets c
 WANTLIB += crypto event_core event_extra gio-2.0 glib-2.0 gobject-2.0

@@ -3,8 +3,8 @@ COMMENT =		simple RPC framework based on GObject system
 GH_PROJECT =		libsearpc
 # upstream keep on sliding tags to pull in new commits
 # this commit is from the "v3.2-latest" tag
-GH_COMMIT =		e72c1158c8feb344ef44d2b4a60638e7dbfd1a8e
-DISTNAME =		libsearpc-3.2.0pl20220228
+GH_COMMIT =		54145b03f4240222e336a9a2f402e93facefde65
+DISTNAME =		libsearpc-3.2.0pl20220504
 
 SHARED_LIBS +=		searpc		0.0 # 1.2
 
