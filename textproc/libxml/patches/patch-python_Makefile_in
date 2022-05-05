@@ -1,7 +1,7 @@
 Index: python/Makefile.in
 --- python/Makefile.in.orig
 +++ python/Makefile.in
-@@ -911,7 +911,7 @@ info: info-recursive
+@@ -912,7 +912,7 @@ info: info-recursive
  
  info-am:
  

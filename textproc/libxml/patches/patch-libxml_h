@@ -4,7 +4,7 @@ public interfaces through the plt within libxml.so.
 Index: libxml.h
 --- libxml.h.orig
 +++ libxml.h
-@@ -120,7 +120,7 @@ int xmlInputReadCallbackNop(void *context, char *buffe
+@@ -123,7 +123,7 @@ int xmlInputReadCallbackNop(void *context, char *buffe
  #ifdef IN_LIBXML
  #ifdef __GNUC__
  #ifdef PIC

@@ -1,7 +1,7 @@
 Index: python/tests/Makefile.in
 --- python/tests/Makefile.in.orig
 +++ python/tests/Makefile.in
-@@ -424,7 +424,6 @@ PYTESTS = \
+@@ -425,7 +425,6 @@ PYTESTS = \
      readererr.py\
      relaxng.py	\
      schema.py	\
