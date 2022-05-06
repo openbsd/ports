@@ -1,8 +1,8 @@
 Index: cmake/QtFeature.cmake
 --- cmake/QtFeature.cmake.orig
 +++ cmake/QtFeature.cmake
-@@ -1023,4 +1023,20 @@ function(qt_make_features_available target)
-     endforeach()
+@@ -1054,7 +1054,23 @@ function(qt_get_platform_try_compile_vars out_var)
+     set("${out_var}" "${flags_cmd_line}" PARENT_SCOPE)
  endfunction()
  
 +# function to add libs to an INTERFACE library target if the lib exists,
@@ -10,7 +10,7 @@ Index: cmake/QtFeature.cmake
 +# LIBRARIES argument if PROJECT_PATH is not set.
 +function(qt_test_lib_target)
 +qt_parse_all_arguments(arg "qt_test_lib_target" "" "TARGET" "LIBS" ${ARGN})
- 
+ # Set out_var to the first value of CMAKE_OSX_ARCHITECTURES.
 +if(TARGET ${arg_TARGET})
 +    return()
 +endif()
@@ -22,3 +22,6 @@ Index: cmake/QtFeature.cmake
 +    endif()
 +endforeach()
 +endfunction()
+ # Sets an empty string if no architecture is present.
+ function(qt_internal_get_first_osx_arch out_var)
+     set(value "")

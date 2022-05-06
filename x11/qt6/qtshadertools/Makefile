@@ -4,6 +4,10 @@ COMMENT =		Qt6 shader tools module
 
 SHARED_LIBS =  Qt6ShaderTools              0.0 # 6.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui c m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui c m xkbcommon
+
+BUILD_DEPENDS =		graphics/vulkan-loader
+
+LIB_DEPENDS =		x11/xkbcommon
 
 .include <bsd.port.mk>

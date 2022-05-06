@@ -5,41 +5,41 @@ COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
-REVISION =		4
-REVISION-main =		5
-
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
 PKGNAME-psql =		qt6-postgresql-${VERSION}
 
 PKG_ARCH-global =	*
 
-SHARED_LIBS +=  Qt6Concurrent                0.0 # 6.0
-SHARED_LIBS +=  Qt6Core                      0.0 # 6.0
-SHARED_LIBS +=  Qt6DBus                      0.0 # 6.0
-SHARED_LIBS +=  Qt6Gui                       0.0 # 6.0
-SHARED_LIBS +=  Qt6Network                   0.0 # 6.0
-SHARED_LIBS +=  Qt6OpenGL                    0.0 # 6.0
-SHARED_LIBS +=  Qt6PrintSupport              0.0 # 6.0
-SHARED_LIBS +=  Qt6Sql                       0.0 # 6.0
-SHARED_LIBS +=  Qt6Test                      0.0 # 6.0
-SHARED_LIBS +=  Qt6Widgets                   0.0 # 6.0
-SHARED_LIBS +=  Qt6Xml                       0.0 # 6.0
-SHARED_LIBS +=  Qt6EglFSDeviceIntegration    0.0 # 6.0
-SHARED_LIBS +=  Qt6EglFsKmsSupport           0.0 # 6.0
-SHARED_LIBS +=  Qt6OpenGLExtensions          0.0 # 6.0
-SHARED_LIBS +=  Qt6XcbQpa                    0.0 # 6.0
-SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.0 # 6.0
-SHARED_LIBS +=  Qt6OpenGLWidgets             0.0 # 6.0
+SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.3
+SHARED_LIBS +=  Qt6Core                      0.1 # 6.3
+SHARED_LIBS +=  Qt6DBus                      0.1 # 6.3
+SHARED_LIBS +=  Qt6Gui                       0.1 # 6.3
+SHARED_LIBS +=  Qt6Network                   0.1 # 6.3
+SHARED_LIBS +=  Qt6OpenGL                    0.1 # 6.3
+SHARED_LIBS +=  Qt6PrintSupport              0.1 # 6.3
+SHARED_LIBS +=  Qt6Sql                       0.1 # 6.3
+SHARED_LIBS +=  Qt6Test                      0.1 # 6.3
+SHARED_LIBS +=  Qt6Widgets                   0.1 # 6.3
+SHARED_LIBS +=  Qt6Xml                       0.1 # 6.3
+SHARED_LIBS +=  Qt6EglFSDeviceIntegration    0.1 # 6.3
+SHARED_LIBS +=  Qt6EglFsKmsSupport           0.1 # 6.3
+SHARED_LIBS +=  Qt6OpenGLExtensions          0.1 # 6.3
+SHARED_LIBS +=  Qt6XcbQpa                    0.1 # 6.3
+SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.1 # 6.3
+SHARED_LIBS +=  Qt6OpenGLWidgets             0.1 # 6.3
 
 WANTLIB-global =
 
-WANTLIB-main += ${COMPILER_LIBCXX} EGL GL X11 atk-1.0 b2 brotlidec c cairo
-WANTLIB-main += cairo-gobject crypto cups dbus-1 double-conversion
-WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB-main += icudata icui18n icuuc iodbc jpeg m pango-1.0 pangocairo-1.0
-WANTLIB-main += pcre2-16 png ssl z zstd
+WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
+WANTLIB-main += b2 brotlidec c cairo cairo-gobject crypto cups dbus-1
+WANTLIB-main += double-conversion drm execinfo fontconfig freetype
+WANTLIB-main += gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB-main += gthread-2.0 gtk-3 harfbuzz icudata icui18n icuuc iodbc
+WANTLIB-main += jpeg m pango-1.0 pangocairo-1.0 pcre2-16 png ssl xcb
+WANTLIB-main += xcb-glx xcb-icccm xcb-image xcb-keysyms xcb-randr xcb-render
+WANTLIB-main += xcb-render-util xcb-shape xcb-shm xcb-sync xcb-xfixes
+WANTLIB-main += xcb-xkb xkbcommon xkbcommon-x11 z zstd
 
 # those come from gthread-2.0, not used by Qt itself
 WANTLIB-main +=		intl
@@ -56,6 +56,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			databases/iodbc \
 			devel/atk \
 			devel/harfbuzz \
+			x11/xkbcommon \
 			devel/pango \
 			devel/pcre2 \
 			graphics/cairo \
@@ -70,7 +71,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 LIB_DEPENDS-global =
 
 LIB_DEPENDS-main +=	devel/gettext,-runtime
-
 
 LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION} \
 			${MODGCC4_CPPLIBDEP} \
@@ -90,8 +90,14 @@ RUN_DEPENDS-global =
 RUN_DEPENDS-mysql =
 RUN_DEPENDS-psql =
 
-CONFIGURE_ARGS =	-DQT_DEFAULT_PLATFORM_DEFINITION_DIR_ABSOLUTE=${WRKDIST}/mkspecs/openbsd-g++/
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS +=	-DQT_QMAKE_TARGET_MKSPEC=openbsd-clang
+.else
+CONFIGURE_ARGS +=	-DQT_QMAKE_TARGET_MKSPEC=openbsd-g++
+.endif
 
+# cmake/configure-cmake-mapping.md
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DINSTALL_BINDIR=lib/qt6/bin \
 			-DINSTALL_DOCDIR=share/doc/qt6 \
@@ -101,13 +107,14 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DINSTALL_MKSPECSDIR=lib/qt6/mkspecs \
 			-DINSTALL_EXAMPLESDIR=share/doc/qt6/examples \
 			-DINSTALL_PLUGINSDIR=lib/qt6/plugins \
+			-DBUILD_WITH_PCH=OFF \
 			-DQT_FEATURE_journald=OFF \
 			-DQT_FEATURE_openssl_linked=ON \
 			-DQT_FEATURE_dtls=OFF
 
 LDFLAGS +=		-lexecinfo
 
-MODQT6_DEPS =		no
+MODQT6_DEPS =		No
 
 post-extract:
 	mkdir -p ${WRKDIST}/mkspecs/openbsd-clang

@@ -1,9 +1,9 @@
 Index: cmake/QtBuild.cmake
 --- cmake/QtBuild.cmake.orig
 +++ cmake/QtBuild.cmake
-@@ -330,6 +330,20 @@ elseif(QNX)
-             set(QT_DEFAULT_MKSPEC qnx-${arch}-qcc)
-         endif()
+@@ -436,6 +436,20 @@ if(CMAKE_HOST_APPLE AND APPLE)
+         set(CMAKE_${lang}_ARCHIVE_APPEND "<CMAKE_AR> qS <TARGET> <LINK_FLAGS> <OBJECTS>")
+         set(CMAKE_${lang}_ARCHIVE_FINISH "<CMAKE_RANLIB> -no_warning_for_no_symbols <TARGET>")
      endforeach()
 +elseif(FREEBSD)
 +    if(CLANG)
@@ -21,4 +21,4 @@ Index: cmake/QtBuild.cmake
 +    endif()
  endif()
  
- if(NOT QT_QMAKE_TARGET_MKSPEC)
+ # Functions and macros:

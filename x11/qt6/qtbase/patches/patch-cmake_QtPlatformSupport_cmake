@@ -1,7 +1,7 @@
 Index: cmake/QtPlatformSupport.cmake
 --- cmake/QtPlatformSupport.cmake.orig
 +++ cmake/QtPlatformSupport.cmake
-@@ -20,6 +20,8 @@ qt_set01(WASM CMAKE_SYSTEM_NAME STREQUAL "Emscripten")
+@@ -21,6 +21,8 @@ qt_set01(SOLARIS CMAKE_SYSTEM_NAME STREQUAL "SunOS")
  
  qt_set01(BSD APPLE OR OPENBSD OR FREEBSD OR NETBSD)
  

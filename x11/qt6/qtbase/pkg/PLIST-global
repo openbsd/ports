@@ -46,6 +46,7 @@ share/doc/qt6/global/externalsites.qdocconf
 share/doc/qt6/global/externalsites/external-resources.qdoc
 share/doc/qt6/global/externalsites/qt-webpages.qdoc
 share/doc/qt6/global/externalsites/qtcreator.qdoc
+share/doc/qt6/global/externalsites/qtdesignstudio.qdoc
 share/doc/qt6/global/externalsites/rfc.qdoc
 share/doc/qt6/global/fileextensions.qdocconf
 share/doc/qt6/global/html-config.qdocconf
@@ -56,6 +57,7 @@ share/doc/qt6/global/html-header-online.qdocconf
 share/doc/qt6/global/includes/
 share/doc/qt6/global/includes-online/
 share/doc/qt6/global/includes-online/search.qdoc
+share/doc/qt6/global/includes/cli-build-cmake.qdocinc
 share/doc/qt6/global/includes/examples-run.qdocinc
 share/doc/qt6/global/includes/module-use.qdocinc
 share/doc/qt6/global/includes/standardpath/

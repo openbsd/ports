@@ -7,7 +7,6 @@ bin/pixeltool-qt6
 bin/qdbus-qt6
 bin/qdoc-qt6
 bin/qtdiag-qt6
-include/X11/qt6/
 include/X11/qt6/QtDesigner/
 include/X11/qt6/QtDesigner/${VERSION}/
 include/X11/qt6/QtDesigner/${VERSION}/QtDesigner/
@@ -273,14 +272,13 @@ include/X11/qt6/QtUiTools/QtUiToolsVersion
 include/X11/qt6/QtUiTools/qtuitoolsglobal.h
 include/X11/qt6/QtUiTools/qtuitoolsversion.h
 include/X11/qt6/QtUiTools/quiloader.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
+lib/cmake/Qt6/FindWrapLibClang.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtToolsTestsConfig.cmake
 lib/cmake/Qt6Designer/
 lib/cmake/Qt6Designer/Qt6DesignerAdditionalTargetInfo.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfig.cmake
 lib/cmake/Qt6Designer/Qt6DesignerConfigVersion.cmake
+lib/cmake/Qt6Designer/Qt6DesignerConfigVersionImpl.cmake
 lib/cmake/Qt6Designer/Qt6DesignerDependencies.cmake
 lib/cmake/Qt6Designer/Qt6DesignerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Designer/Qt6DesignerTargets.cmake
@@ -288,21 +286,23 @@ lib/cmake/Qt6Designer/Qt6DesignerVersionlessTargets.cmake
 lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginConfig.cmake
 lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginConfigVersion.cmake
-lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginDependencies.cmake
+lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Designer/Qt6QQuickWidgetPluginTargets.cmake
-lib/cmake/Qt6DesignerComponents/
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsAdditionalTargetInfo.cmake
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsConfig.cmake
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsConfigVersion.cmake
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsDependencies.cmake
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsTargets.cmake
-lib/cmake/Qt6DesignerComponents/Qt6DesignerComponentsVersionlessTargets.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateConfig.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateConfigVersion.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateDependencies.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateTargets.cmake
+lib/cmake/Qt6DesignerComponentsPrivate/Qt6DesignerComponentsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Help/
 lib/cmake/Qt6Help/Qt6HelpAdditionalTargetInfo.cmake
 lib/cmake/Qt6Help/Qt6HelpConfig.cmake
 lib/cmake/Qt6Help/Qt6HelpConfigVersion.cmake
+lib/cmake/Qt6Help/Qt6HelpConfigVersionImpl.cmake
 lib/cmake/Qt6Help/Qt6HelpDependencies.cmake
 lib/cmake/Qt6Help/Qt6HelpTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Help/Qt6HelpTargets.cmake
@@ -311,13 +311,16 @@ lib/cmake/Qt6Linguist/
 lib/cmake/Qt6Linguist/Qt6LinguistAdditionalTargetInfo.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistConfig.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistConfigVersion.cmake
+lib/cmake/Qt6Linguist/Qt6LinguistConfigVersionImpl.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistDependencies.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistTargets.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistVersionlessTargets.cmake
 lib/cmake/Qt6LinguistTools/
+lib/cmake/Qt6LinguistTools/GenerateLUpdateProject.cmake
 lib/cmake/Qt6LinguistTools/Qt6LinguistToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfig.cmake
 lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersion.cmake
+lib/cmake/Qt6LinguistTools/Qt6LinguistToolsConfigVersionImpl.cmake
 lib/cmake/Qt6LinguistTools/Qt6LinguistToolsDependencies.cmake
 lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake
 lib/cmake/Qt6LinguistTools/Qt6LinguistToolsTargets${MODCMAKE_BUILD_SUFFIX}
@@ -327,6 +330,7 @@ lib/cmake/Qt6Tools/
 lib/cmake/Qt6Tools/Qt6ToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Tools/Qt6ToolsConfig.cmake
 lib/cmake/Qt6Tools/Qt6ToolsConfigVersion.cmake
+lib/cmake/Qt6Tools/Qt6ToolsConfigVersionImpl.cmake
 lib/cmake/Qt6Tools/Qt6ToolsDependencies.cmake
 lib/cmake/Qt6Tools/Qt6ToolsTargets.cmake
 lib/cmake/Qt6Tools/Qt6ToolsVersionlessTargets.cmake
@@ -334,6 +338,7 @@ lib/cmake/Qt6ToolsTools/
 lib/cmake/Qt6ToolsTools/Qt6ToolsToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6ToolsTools/Qt6ToolsToolsConfig.cmake
 lib/cmake/Qt6ToolsTools/Qt6ToolsToolsConfigVersion.cmake
+lib/cmake/Qt6ToolsTools/Qt6ToolsToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ToolsTools/Qt6ToolsToolsDependencies.cmake
 lib/cmake/Qt6ToolsTools/Qt6ToolsToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ToolsTools/Qt6ToolsToolsTargets.cmake
@@ -342,6 +347,7 @@ lib/cmake/Qt6UiPlugin/
 lib/cmake/Qt6UiPlugin/Qt6UiPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6UiPlugin/Qt6UiPluginConfig.cmake
 lib/cmake/Qt6UiPlugin/Qt6UiPluginConfigVersion.cmake
+lib/cmake/Qt6UiPlugin/Qt6UiPluginConfigVersionImpl.cmake
 lib/cmake/Qt6UiPlugin/Qt6UiPluginDependencies.cmake
 lib/cmake/Qt6UiPlugin/Qt6UiPluginTargets.cmake
 lib/cmake/Qt6UiPlugin/Qt6UiPluginVersionlessTargets.cmake
@@ -349,6 +355,7 @@ lib/cmake/Qt6UiTools/
 lib/cmake/Qt6UiTools/Qt6UiToolsAdditionalTargetInfo.cmake
 lib/cmake/Qt6UiTools/Qt6UiToolsConfig.cmake
 lib/cmake/Qt6UiTools/Qt6UiToolsConfigVersion.cmake
+lib/cmake/Qt6UiTools/Qt6UiToolsConfigVersionImpl.cmake
 lib/cmake/Qt6UiTools/Qt6UiToolsDependencies.cmake
 lib/cmake/Qt6UiTools/Qt6UiToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6UiTools/Qt6UiToolsTargets.cmake
@@ -361,29 +368,29 @@ lib/libQt6Help.prl
 @lib lib/libQt6Help.so.${LIBQt6Help_VERSION}
 lib/libQt6UiTools.prl
 @lib lib/libQt6UiTools.so.${LIBQt6UiTools_VERSION}
-lib/qt6/
-lib/qt6/bin/
+lib/metatypes/qt6designer_release_metatypes.json
+lib/metatypes/qt6designercomponentsprivate_release_metatypes.json
+lib/metatypes/qt6help_release_metatypes.json
+lib/metatypes/qt6uitools_release_metatypes.json
 @bin lib/qt6/bin/assistant
 @bin lib/qt6/bin/designer
 @bin lib/qt6/bin/lconvert
 @bin lib/qt6/bin/linguist
-@bin lib/qt6/bin/lprodump
 @bin lib/qt6/bin/lrelease
-@bin lib/qt6/bin/lrelease-pro
 @bin lib/qt6/bin/lupdate
-@bin lib/qt6/bin/lupdate-pro
 @bin lib/qt6/bin/pixeltool
 @bin lib/qt6/bin/qdbus
 @bin lib/qt6/bin/qdbusviewer
 @bin lib/qt6/bin/qdistancefieldgenerator
 @bin lib/qt6/bin/qdoc
-@bin lib/qt6/bin/qhelpgenerator
-@bin lib/qt6/bin/qtattributionsscanner
 @bin lib/qt6/bin/qtdiag
-@bin lib/qt6/bin/qtpaths
+@bin lib/qt6/bin/qtdiag6
 @bin lib/qt6/bin/qtplugininfo
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
+@bin lib/qt6/libexec/lprodump
+@bin lib/qt6/libexec/lrelease-pro
+@bin lib/qt6/libexec/lupdate-pro
+@bin lib/qt6/libexec/qhelpgenerator
+@bin lib/qt6/libexec/qtattributionsscanner
 lib/qt6/mkspecs/modules/qt_lib_designer.pri
 lib/qt6/mkspecs/modules/qt_lib_designer_private.pri
 lib/qt6/mkspecs/modules/qt_lib_designercomponents_private.pri
@@ -395,13 +402,10 @@ lib/qt6/mkspecs/modules/qt_lib_tools_private.pri
 lib/qt6/mkspecs/modules/qt_lib_uiplugin.pri
 lib/qt6/mkspecs/modules/qt_lib_uitools.pri
 lib/qt6/mkspecs/modules/qt_lib_uitools_private.pri
-lib/qt6/plugins/
 lib/qt6/plugins/designer/
 @so lib/qt6/plugins/designer/libqquickwidget.so
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/Designer.json
-share/qt6/modules/DesignerComponents.json
+share/qt6/modules/DesignerComponentsPrivate.json
 share/qt6/modules/Help.json
 share/qt6/modules/Linguist.json
 share/qt6/modules/Tools.json

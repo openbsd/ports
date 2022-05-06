@@ -1,12 +1,7 @@
-Add LibreSSL support
-
-Based on:
-https://github.com/gentoo/libressl/blob/master/dev-qt/qtnetwork/files/qtnetwork-5.15.2-libressl.patch
-
-Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
---- src/network/ssl/qsslsocket_openssl_symbols.cpp.orig
-+++ src/network/ssl/qsslsocket_openssl_symbols.cpp
-@@ -146,26 +146,39 @@ DEFINEFUNC(const BIO_METHOD *, BIO_s_mem, void, DUMMYA
+Index: src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
+--- src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp.orig
++++ src/plugins/tls/openssl/qsslsocket_openssl_symbols.cpp
+@@ -147,23 +147,36 @@ DEFINEFUNC(const BIO_METHOD *, BIO_s_mem, void, DUMMYA
  DEFINEFUNC2(int, BN_is_word, BIGNUM *a, a, BN_ULONG w, w, return 0, return)
  DEFINEFUNC(int, EVP_CIPHER_CTX_reset, EVP_CIPHER_CTX *c, c, return 0, return)
  DEFINEFUNC(int, EVP_PKEY_up_ref, EVP_PKEY *a, a, return 0, return)
@@ -15,9 +10,6 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(int, EVP_PKEY_param_check, EVP_PKEY_CTX *ctx, ctx, return 0, return)
  DEFINEFUNC(void, EVP_PKEY_CTX_free, EVP_PKEY_CTX *ctx, ctx, return, return)
 +#endif // OPENSSL_NO_DEPRECATED_3_0
- DEFINEFUNC(int, EVP_PKEY_base_id, EVP_PKEY *a, a, return NID_undef, return)
- DEFINEFUNC(int, RSA_bits, RSA *a, a, return 0, return)
- DEFINEFUNC(int, DSA_bits, DSA *a, a, return 0, return)
 +#ifndef LIBRESSL_VERSION_NUMBER
  DEFINEFUNC(int, OPENSSL_sk_num, OPENSSL_STACK *a, a, return -1, return)
  DEFINEFUNC2(void, OPENSSL_sk_pop_free, OPENSSL_STACK *a, a, void (*b)(void*), b, return, DUMMYARG)
@@ -58,7 +50,17 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(long, OpenSSL_version_num, void, DUMMYARG, return 0, return)
  DEFINEFUNC(const char *, OpenSSL_version, int a, a, return nullptr, return)
  DEFINEFUNC(unsigned long, SSL_SESSION_get_ticket_lifetime_hint, const SSL_SESSION *session, session, return 0, return)
-@@ -249,7 +266,9 @@ DEFINEFUNC(long, ASN1_INTEGER_get, ASN1_INTEGER *a, a,
+@@ -228,7 +245,9 @@ DEFINEFUNC5(int, OCSP_id_get0_info, ASN1_OCTET_STRING 
+             ASN1_OCTET_STRING **piKeyHash, piKeyHash, ASN1_INTEGER **pserial, pserial, OCSP_CERTID *cid, cid,
+             return 0, return)
+ DEFINEFUNC2(OCSP_RESPONSE *, OCSP_response_create, int status, status, OCSP_BASICRESP *bs, bs, return nullptr, return)
++#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+ DEFINEFUNC(const STACK_OF(X509) *, OCSP_resp_get0_certs, const OCSP_BASICRESP *bs, bs, return nullptr, return)
++#endif
+ DEFINEFUNC2(int, OCSP_id_cmp, OCSP_CERTID *a, a, OCSP_CERTID *b, b, return -1, return)
+ DEFINEFUNC7(OCSP_SINGLERESP *, OCSP_basic_add1_status, OCSP_BASICRESP *r, r, OCSP_CERTID *c, c, int s, s,
+             int re, re, ASN1_TIME *rt, rt, ASN1_TIME *t, t, ASN1_TIME *n, n, return nullptr, return)
+@@ -249,7 +268,9 @@ DEFINEFUNC(long, ASN1_INTEGER_get, ASN1_INTEGER *a, a,
  DEFINEFUNC2(int, ASN1_INTEGER_cmp, const ASN1_INTEGER *a, a, const ASN1_INTEGER *b, b, return 1, return)
  DEFINEFUNC(int, ASN1_STRING_length, ASN1_STRING *a, a, return 0, return)
  DEFINEFUNC2(int, ASN1_STRING_to_UTF8, unsigned char **a, a, ASN1_STRING *b, b, return 0, return)
@@ -68,8 +70,8 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC4(long, BIO_ctrl, BIO *a, a, int b, b, long c, c, void *d, d, return -1, return)
  DEFINEFUNC(int, BIO_free, BIO *a, a, return 0, return)
  DEFINEFUNC2(BIO *, BIO_new_mem_buf, void *a, a, int b, b, return nullptr, return)
-@@ -362,12 +381,14 @@ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a
- DEFINEFUNC2(int, SSL_CTX_use_RSAPrivateKey, SSL_CTX *a, a, RSA *b, b, return -1, return)
+@@ -325,12 +346,14 @@ DEFINEFUNC3(int, SSL_CTX_use_certificate_file, SSL_CTX
+ DEFINEFUNC2(int, SSL_CTX_use_PrivateKey, SSL_CTX *a, a, EVP_PKEY *b, b, return -1, return)
  DEFINEFUNC3(int, SSL_CTX_use_PrivateKey_file, SSL_CTX *a, a, const char *b, b, int c, c, return -1, return)
  DEFINEFUNC(X509_STORE *, SSL_CTX_get_cert_store, const SSL_CTX *a, a, return nullptr, return)
 +#ifndef LIBRESSL_VERSION_NUMBER
@@ -83,40 +85,30 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
  DEFINEFUNC(void, SSL_free, SSL *a, a, return, DUMMYARG)
  DEFINEFUNC(STACK_OF(SSL_CIPHER) *, SSL_get_ciphers, const SSL *a, a, return nullptr, return)
  DEFINEFUNC(const SSL_CIPHER *, SSL_get_current_cipher, SSL *a, a, return nullptr, return)
-@@ -855,17 +876,21 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(ASN1_STRING_get0_data)
+@@ -894,9 +917,11 @@ bool q_resolveOpenSslSymbols()
      RESOLVEFUNC(EVP_CIPHER_CTX_reset)
+     RESOLVEFUNC(AUTHORITY_INFO_ACCESS_free)
      RESOLVEFUNC(EVP_PKEY_up_ref)
 +#ifdef OPENSSL_NO_DEPRECATED_3_0
      RESOLVEFUNC(EVP_PKEY_CTX_new)
      RESOLVEFUNC(EVP_PKEY_param_check)
      RESOLVEFUNC(EVP_PKEY_CTX_free)
 +#endif // OPENSSL_NO_DEPRECATED_3_0
-     RESOLVEFUNC(EVP_PKEY_base_id)
-     RESOLVEFUNC(RSA_bits)
-+#ifndef LIBRESSL_VERSION_NUMBER
      RESOLVEFUNC(OPENSSL_sk_new_null)
      RESOLVEFUNC(OPENSSL_sk_push)
      RESOLVEFUNC(OPENSSL_sk_free)
-     RESOLVEFUNC(OPENSSL_sk_num)
-     RESOLVEFUNC(OPENSSL_sk_pop_free)
-     RESOLVEFUNC(OPENSSL_sk_value)
+@@ -990,7 +1015,9 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(OCSP_check_validity)
+     RESOLVEFUNC(OCSP_cert_to_id)
+     RESOLVEFUNC(OCSP_id_get0_info)
++#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+     RESOLVEFUNC(OCSP_resp_get0_certs)
 +#endif
-     RESOLVEFUNC(DH_get0_pqg)
-     RESOLVEFUNC(SSL_CTX_set_options)
-     RESOLVEFUNC(SSL_set_info_callback)
-@@ -961,7 +986,9 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(ASN1_INTEGER_cmp)
-     RESOLVEFUNC(ASN1_STRING_length)
-     RESOLVEFUNC(ASN1_STRING_to_UTF8)
-+#ifndef LIBRESSL_VERSION_NUMBER
-     RESOLVEFUNC(ASN1_TIME_to_tm)
-+#endif
-     RESOLVEFUNC(BIO_ctrl)
-     RESOLVEFUNC(BIO_free)
-     RESOLVEFUNC(BIO_new)
-@@ -1072,12 +1099,14 @@ bool q_resolveOpenSslSymbols()
-     RESOLVEFUNC(SSL_CTX_use_RSAPrivateKey)
+     RESOLVEFUNC(OCSP_basic_sign)
+     RESOLVEFUNC(OCSP_response_create)
+     RESOLVEFUNC(i2d_OCSP_RESPONSE)
+@@ -1086,12 +1113,14 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(SSL_CTX_use_PrivateKey)
      RESOLVEFUNC(SSL_CTX_use_PrivateKey_file)
      RESOLVEFUNC(SSL_CTX_get_cert_store);
 +#ifndef LIBRESSL_VERSION_NUMBER
@@ -130,32 +122,13 @@ Index: src/network/ssl/qsslsocket_openssl_symbols.cpp
      RESOLVEFUNC(SSL_accept)
      RESOLVEFUNC(SSL_clear)
      RESOLVEFUNC(SSL_connect)
-@@ -1223,11 +1252,28 @@ QDateTime q_getTimeFromASN1(const ASN1_TIME *aTime)
-     QDateTime result;
-     tm lTime;
+@@ -1141,7 +1170,9 @@ bool q_resolveOpenSslSymbols()
+     RESOLVEFUNC(RSA_free)
  
-+#ifdef LIBRESSL_VERSION_NUMBER
-+    const char *data;
-+    size_t len;
-+    int type;
-+
-+    data = (const char*)ASN1_STRING_get0_data((const ASN1_STRING *)aTime);
-+    len = ASN1_STRING_length(aTime);
-+    type = ASN1_STRING_type(aTime);
-+
-+    if (ASN1_time_parse(data, len, &lTime, type) == type) {
-+        QDate resDate(lTime.tm_year + 1900, lTime.tm_mon + 1, lTime.tm_mday);
-+        QTime resTime(lTime.tm_hour, lTime.tm_min, lTime.tm_sec);
-+        result = QDateTime(resDate, resTime, Qt::UTC);
-+    }
-+
-+#else
-     if (q_ASN1_TIME_to_tm(aTime, &lTime)) {
-         QDate resDate(lTime.tm_year + 1900, lTime.tm_mon + 1, lTime.tm_mday);
-         QTime resTime(lTime.tm_hour, lTime.tm_min, lTime.tm_sec);
-         result = QDateTime(resDate, resTime, Qt::UTC);
-     }
+     RESOLVEFUNC(DH_bits)
++#if !defined(LIBRESSL_VERSION_NUMBER) || (LIBRESSL_VERSION_NUMBER >= 0x3050000fL)
+     RESOLVEFUNC(DSA_bits)
 +#endif
+     RESOLVEFUNC(RSA_bits)
  
-     return result;
- }
+ #ifndef OPENSSL_NO_EC

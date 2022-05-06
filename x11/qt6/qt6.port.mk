@@ -29,64 +29,16 @@ MODQT_LRELEASE ?=	${MODQT6_LRELEASE}
 MODQT6_LUPDATE =	${LOCALBASE}/bin/lupdate-qt6
 MODQT_LUPDATE ?=	${MODQT6_LUPDATE}
 
-_MODQT6_CMAKE_PKGS = \
-	Qt6 \
-	Qt6Core5Compat \
-	Qt6Concurrent \
-	Qt6Core \
-	Qt6DBus \
-	Qt6Gui \
-	Qt6Network \
-	Qt6OpenGL \
-	Qt6PrintSupport \
-	Qt6Sql \
-	Qt6Test \
-	Qt6Widgets \
-	Qt6Xml \
-	Qt6EglFSDeviceIntegration \
-	Qt6EglFsKmsSupport \
-	Qt6OpenGLExtensions \
-	Qt6XcbQpa \
-	Qt6EglFsKmsGbmSupport \
-	Qt6OpenGLWidgets \
-	Qt6Qml \
-	Qt6Quick \
-	Qt6QuickParticles \
-	Qt6QuickTest \
-	Qt6QuickWidgets \
-	Qt6QuickShapes \
-	Qt6QmlModels \
-	Qt6QmlWorkerScript \
-	Qt6Quick3D \
-	Qt6Quick3DAssetImport \
-	Qt6Quick3DRuntimeRender \
-	Qt6Quick3DUtils \
-	Qt6QuickControls2 \
-	Qt6QuickTemplates2 \
-	Qt6QuickControls2Impl \
-	Qt6ShaderTools \
-	Qt6Svg \
-	Qt6SvgWidgets \
-	Qt6Designer \
-	Qt6DesignerComponents \
-	Qt6Help \
-	Qt6UiTools
-.for _p in ${_MODQT6_CMAKE_PKGS}
-_MODQT6_SETUP +=	${_p}_DIR=${MODQT6_LIBDIR}/cmake
-.endfor
+_MODQT6_SETUP +=	Qt6_DIR=${MODQT6_LIBDIR}/cmake
 
 MODQT6_LIB_DEPENDS =	x11/qt6/qtbase
 MODQT_LIB_DEPENDS ?=	${MODQT6_LIB_DEPENDS}
-
-MODQT6_BUILD_DEPENDS =	x11/qt6/qttools
-MODQT_BUILD_DEPENDS ?=	${MODQT6_BUILD_DEPENDS}
 
 MODQT_DEPS ?=		Yes
 MODQT6_DEPS ?=		${MODQT_DEPS}
 
 .if ${MODQT6_DEPS:L} == "yes"
 LIB_DEPENDS +=		${MODQT6_LIB_DEPENDS}
-BUILD_DEPENDS += 	${MODQT6_BUILD_DEPENDS}
 .endif
 
 CONFIGURE_ENV +=	${_MODQT6_SETUP}

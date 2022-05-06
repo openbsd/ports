@@ -2,7 +2,7 @@ Index: qmake/generators/unix/unixmake.h
 --- qmake/generators/unix/unixmake.h.orig
 +++ qmake/generators/unix/unixmake.h
 @@ -61,6 +61,7 @@ class UnixMakefileGenerator : public MakefileGenerator
-     std::pair<bool, QString> writeObjectsPart(QTextStream &, bool do_incremental);
+     bool writeObjectsPart(QTextStream &, bool do_incremental);
  private:
      void init2();
 +    void separateInternalLibdirs(ProStringList &libs, ProStringList &libdirsInt, QString prefix);
