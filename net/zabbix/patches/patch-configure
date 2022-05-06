@@ -9,7 +9,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main ()
-@@ -15406,16 +15407,16 @@ LIBS="$LIBS $ICONV_LIBS"
+@@ -15448,16 +15449,16 @@ LIBS="$LIBS $ICONV_LIBS"
  RANLIB="ranlib"
  
  

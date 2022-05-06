@@ -1420,6 +1420,10 @@ zabbix/locale/el/LC_MESSAGES/frontend.po
 zabbix/locale/en/
 zabbix/locale/en/LC_MESSAGES/
 zabbix/locale/en/LC_MESSAGES/frontend.pot
+zabbix/locale/en_GB/
+zabbix/locale/en_GB/LC_MESSAGES/
+zabbix/locale/en_GB/LC_MESSAGES/frontend.mo
+zabbix/locale/en_GB/LC_MESSAGES/frontend.po
 zabbix/locale/es/
 zabbix/locale/es/LC_MESSAGES/
 zabbix/locale/es/LC_MESSAGES/frontend.mo
