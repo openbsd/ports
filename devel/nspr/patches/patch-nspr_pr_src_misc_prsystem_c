@@ -1,5 +1,7 @@
 have PR_GetNumberOfProcessors() report online CPUs not all CPUs
 
+https://bugzilla.mozilla.org/show_bug.cgi?id=1768141
+
 Index: nspr/pr/src/misc/prsystem.c
 --- nspr/pr/src/misc/prsystem.c.orig
 +++ nspr/pr/src/misc/prsystem.c
