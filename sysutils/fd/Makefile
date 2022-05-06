@@ -3,6 +3,7 @@ COMMENT =		simple, fast and user-friendly alternative to 'find'
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		fd
 GH_TAGNAME =		v8.3.2
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -21,7 +22,7 @@ MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-MODCARGO_BUILD_ARGS =	--no-default-features
+MODCARGO_NO_DEFAULT_FEATURES =	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/fd.1 ${PREFIX}/man/man1
