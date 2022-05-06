@@ -1,9 +1,8 @@
 COMMENT =	Qt-based MPD client
 
-V =		2.4.2
+V =		2.5.0
 DISTNAME =	cantata-${V}
 HOMEPAGE =	https://github.com/CDrummond/cantata
-REVISION =	2
 
 MASTER_SITES =	https://github.com/CDrummond/cantata/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.bz2
