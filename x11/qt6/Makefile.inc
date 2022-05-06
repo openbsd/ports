@@ -7,6 +7,8 @@ NEXT_VERSION ?=		${QT6_NEXT_VERSION}
 QT6_PKGSPEC ?=		>=${VERSION},<${NEXT_VERSION}
 DISTNAME ?=		${QT6NAME:L}-everywhere-src-${VERSION}
 
+MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
+
 PKGNAME ?=		qt6-${DISTNAME:C/-everywhere-src//:C/-${VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
 
