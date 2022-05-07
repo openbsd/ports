@@ -1,6 +1,6 @@
 COMMENT =		Chinese truetype font derived from Klee One
 
-V =			0.940
+V =			0.943
 PKGNAME =		zh-iansui-${V}
 
 GH_ACCOUNT =		ButTaiwan
