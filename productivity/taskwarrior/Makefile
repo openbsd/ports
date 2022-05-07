@@ -1,6 +1,6 @@
 COMMENT =	command line todo list manager
 
-VERSION =	2.6.1
+VERSION =	2.6.2
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
 CATEGORIES =	productivity
