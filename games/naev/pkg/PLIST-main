@@ -1,21 +1,18 @@
 @pkgpath games/naev/base
 @bin bin/naev
 @man man/man6/naev.6
-share/applications/org.naev.naev.desktop
+share/applications/org.naev.Naev.desktop
 share/doc/naev/
-share/doc/naev/CHANGELOG
 share/doc/naev/LICENSE
-share/doc/naev/README
 share/doc/naev/Readme.md
-share/doc/naev/TODO
-share/doc/naev/code_of_conduct.md
-share/icons/hicolor/256x256/apps/naev.png
-share/locale/de/LC_MESSAGES/naev_src.mo
-share/locale/ja/LC_MESSAGES/naev_src.mo
-share/locale/ko/LC_MESSAGES/naev_src.mo
+share/doc/naev/gpl.txt
+share/icons/hicolor/128x128/apps/org.naev.Naev.png
+share/icons/hicolor/16x16/apps/org.naev.Naev.png
+share/icons/hicolor/256x256/apps/org.naev.Naev.png
+share/icons/hicolor/32x32/apps/org.naev.Naev.png
+share/icons/hicolor/64x64/apps/org.naev.Naev.png
 share/metainfo/
-share/metainfo/org.naev.naev.metainfo.xml
+share/metainfo/org.naev.Naev.metainfo.xml
 share/naev/
-share/naev/naev-confupdate.sh
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

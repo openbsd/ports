@@ -1,0 +1,11 @@
+Index: src/nstring.h
+--- src/nstring.h.orig
++++ src/nstring.h
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <stdarg.h>
+ /** @endcond */
+ 
+ #include "attributes.h"

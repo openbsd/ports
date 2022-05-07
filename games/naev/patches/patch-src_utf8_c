@@ -1,15 +1,12 @@
 Index: src/utf8.c
 --- src/utf8.c.orig
 +++ src/utf8.c
-@@ -22,8 +22,10 @@
- 
- #if HAS_WIN32
- #include <malloc.h>
--#else /* HAS_WIN32 */
-+#elif HAS_LINUX
- #include <alloca.h> /* Not available in windows, necessary for linux. */
-+#else
-+#include <sys/malloc.h>
- #endif /* HAS_WIN32 */
+@@ -19,7 +19,7 @@
+ #endif /* HAVE_ALLOCA_H */
  #include <assert.h>
- 
+ #if HAVE_MALLOC_H
+-#   include <malloc.h>
++#   include <sys/malloc.h>
+ #endif /* HAVE_MALLOC_H */
+ #include <stdio.h>
+ #include <string.h>
