@@ -1,4 +1,4 @@
-MODPY_EGG_VERSION =	5.0.8
+MODPY_EGG_VERSION =	5.0.9
 TRYTON_MODULE =		account_asset
 
 TRYTON_DEPENDS +=	account \

@@ -1,4 +1,4 @@
-MODPY_EGG_VERSION =	5.0.8
+MODPY_EGG_VERSION =	5.0.9
 TRYTON_MODULE =		stock_supply
 
 TRYTON_DEPENDS +=	account \
