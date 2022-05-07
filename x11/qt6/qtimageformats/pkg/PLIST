@@ -1,0 +1,58 @@
+lib/cmake/
+lib/cmake/Qt6/
+lib/cmake/Qt6/FindLibmng.cmake
+lib/cmake/Qt6/FindWrapJasper.cmake
+lib/cmake/Qt6/FindWrapWebP.cmake
+lib/cmake/Qt6Gui/
+lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QICNSPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QICNSPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QICNSPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QICNSPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QJp2PluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QJp2PluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QJp2PluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QJp2PluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QJp2PluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QJp2PluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QMngPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QMngPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QTgaPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QTgaPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QTgaPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QTgaPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QTgaPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QTgaPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QTiffPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QTiffPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QTiffPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QTiffPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QTiffPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QTiffPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QWbmpPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QWbmpPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QWbmpPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QWbmpPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QWbmpPluginTargets.cmake
+lib/cmake/Qt6Gui/Qt6QWebpPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Gui/Qt6QWebpPluginConfig.cmake
+lib/cmake/Qt6Gui/Qt6QWebpPluginConfigVersion.cmake
+lib/cmake/Qt6Gui/Qt6QWebpPluginConfigVersionImpl.cmake
+lib/cmake/Qt6Gui/Qt6QWebpPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake
+lib/qt6/
+lib/qt6/plugins/
+lib/qt6/plugins/imageformats/
+@so lib/qt6/plugins/imageformats/libqicns.so
+@so lib/qt6/plugins/imageformats/libqjp2.so
+@so lib/qt6/plugins/imageformats/libqmng.so
+@so lib/qt6/plugins/imageformats/libqtga.so
+@so lib/qt6/plugins/imageformats/libqtiff.so
+@so lib/qt6/plugins/imageformats/libqwbmp.so
+@so lib/qt6/plugins/imageformats/libqwebp.so
