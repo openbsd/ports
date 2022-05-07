@@ -1,7 +1,7 @@
 COMMENT =		dotfiles manager across multiple diverse machines
 
 MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
-MODGO_VERSION =		v2.9.5
+MODGO_VERSION =		v2.15.1
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
 
@@ -19,9 +19,6 @@ WANTLIB += 		c pthread
 MODULES =		lang/go
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/chezmoi
-	${INSTALL_DATA} ${WRKSRC}/docs/*md ${PREFIX}/share/doc/chezmoi/
-
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi.zsh \
 		${PREFIX}/share/zsh/site-functions/_chezmoi
