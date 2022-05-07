@@ -21,3 +21,7 @@ share/doc/freeradius/schemas/ldap/samba/freeradius-user.ldif
 @group _freeradius
 share/examples/freeradius/mods-available/ldap
 @sample ${FREERADIUS_ETC}/mods-available/ldap
+share/examples/freeradius/mods-available/ldap_google
+@sample ${FREERADIUS_ETC}/mods-available/ldap_google
+share/examples/freeradius/sites-available/google-ldap-auth
+@sample ${FREERADIUS_ETC}/sites-available/google-ldap-auth

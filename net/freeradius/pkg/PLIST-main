@@ -105,7 +105,6 @@ lib/freeradius/
 @so lib/freeradius/rlm_cache_rbtree.so
 @so lib/freeradius/rlm_chap.so
 @so lib/freeradius/rlm_counter.so
-@so lib/freeradius/rlm_cram.so
 @so lib/freeradius/rlm_date.so
 @so lib/freeradius/rlm_detail.so
 @so lib/freeradius/rlm_dhcp.so
@@ -126,10 +125,10 @@ lib/freeradius/
 @so lib/freeradius/rlm_expr.so
 @so lib/freeradius/rlm_files.so
 @so lib/freeradius/rlm_ippool.so
+@so lib/freeradius/rlm_json.so
 @so lib/freeradius/rlm_linelog.so
 @so lib/freeradius/rlm_logintime.so
 @so lib/freeradius/rlm_mschap.so
-@so lib/freeradius/rlm_otp.so
 @comment lib/freeradius/rlm_pam.so
 @so lib/freeradius/rlm_pap.so
 @so lib/freeradius/rlm_passwd.so
@@ -393,8 +392,8 @@ share/examples/freeradius/mods-available/attr_filter
 @sample ${FREERADIUS_ETC}/mods-available/attr_filter
 share/examples/freeradius/mods-available/cache
 @sample ${FREERADIUS_ETC}/mods-available/cache
-share/examples/freeradius/mods-available/cache_eap
-@sample ${FREERADIUS_ETC}/mods-available/cache_eap
+share/examples/freeradius/mods-available/cache_auth
+@sample ${FREERADIUS_ETC}/mods-available/cache_auth
 share/examples/freeradius/mods-available/chap
 @sample ${FREERADIUS_ETC}/mods-available/chap
 share/examples/freeradius/mods-available/couchbase
@@ -445,6 +444,8 @@ share/examples/freeradius/mods-available/inner-eap
 @sample ${FREERADIUS_ETC}/mods-available/inner-eap
 share/examples/freeradius/mods-available/ippool
 @sample ${FREERADIUS_ETC}/mods-available/ippool
+share/examples/freeradius/mods-available/json
+@sample ${FREERADIUS_ETC}/mods-available/json
 share/examples/freeradius/mods-available/krb5
 @sample ${FREERADIUS_ETC}/mods-available/krb5
 share/examples/freeradius/mods-available/linelog
@@ -463,8 +464,6 @@ share/examples/freeradius/mods-available/ntlm_auth
 @sample ${FREERADIUS_ETC}/mods-available/ntlm_auth
 share/examples/freeradius/mods-available/opendirectory
 @sample ${FREERADIUS_ETC}/mods-available/opendirectory
-share/examples/freeradius/mods-available/otp
-@sample ${FREERADIUS_ETC}/mods-available/otp
 @comment share/examples/freeradius/mods-available/pam
 share/examples/freeradius/mods-available/pap
 @sample ${FREERADIUS_ETC}/mods-available/pap
@@ -636,7 +635,6 @@ share/examples/freeradius/mods-config/sql/moonshot-targeted-ids/sqlite/schema.sq
 share/examples/freeradius/mods-enabled/
 share/examples/freeradius/mods-enabled/always
 share/examples/freeradius/mods-enabled/attr_filter
-share/examples/freeradius/mods-enabled/cache_eap
 share/examples/freeradius/mods-enabled/chap
 share/examples/freeradius/mods-enabled/date
 share/examples/freeradius/mods-enabled/detail
@@ -749,6 +747,8 @@ share/examples/freeradius/sites-available/status
 @sample ${FREERADIUS_ETC}/sites-available/status
 share/examples/freeradius/sites-available/tls
 @sample ${FREERADIUS_ETC}/sites-available/tls
+share/examples/freeradius/sites-available/tls-cache
+@sample ${FREERADIUS_ETC}/sites-available/tls-cache
 share/examples/freeradius/sites-available/totp
 @sample ${FREERADIUS_ETC}/sites-available/totp
 share/examples/freeradius/sites-available/virtual.example.com
@@ -773,6 +773,7 @@ share/freeradius/dictionary.acc
 share/freeradius/dictionary.acme
 share/freeradius/dictionary.actelis
 share/freeradius/dictionary.adtran
+share/freeradius/dictionary.adva
 share/freeradius/dictionary.aerohive
 share/freeradius/dictionary.airespace
 share/freeradius/dictionary.alcatel
@@ -825,6 +826,7 @@ share/freeradius/dictionary.columbia_university
 share/freeradius/dictionary.compat
 share/freeradius/dictionary.compatible
 share/freeradius/dictionary.cosine
+share/freeradius/dictionary.covaro
 share/freeradius/dictionary.dante
 share/freeradius/dictionary.dellemc
 share/freeradius/dictionary.dhcp
@@ -847,6 +849,7 @@ share/freeradius/dictionary.fortinet
 share/freeradius/dictionary.foundry
 share/freeradius/dictionary.freedhcp
 share/freeradius/dictionary.freeradius
+share/freeradius/dictionary.freeradius.evs5
 share/freeradius/dictionary.freeradius.internal
 share/freeradius/dictionary.freeswitch
 share/freeradius/dictionary.gandalf
@@ -874,6 +877,7 @@ share/freeradius/dictionary.localweb
 share/freeradius/dictionary.lucent
 share/freeradius/dictionary.manzara
 share/freeradius/dictionary.meinberg
+share/freeradius/dictionary.mellanox
 share/freeradius/dictionary.meraki
 share/freeradius/dictionary.merit
 share/freeradius/dictionary.meru
@@ -886,6 +890,7 @@ share/freeradius/dictionary.motorola.illegal
 share/freeradius/dictionary.motorola.wimax
 share/freeradius/dictionary.navini
 share/freeradius/dictionary.net
+share/freeradius/dictionary.netelastic
 share/freeradius/dictionary.netscreen
 share/freeradius/dictionary.networkphysics
 share/freeradius/dictionary.nexans

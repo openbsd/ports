@@ -16,8 +16,8 @@ Index: doc/README
    the server, then run it in debugging mode, as root, from the
    command line:
  
--  # radiusd -X
-+  # /usr/local/sbin/radiusd -X
+-    # radiusd -X
++    # /usr/local/sbin/radiusd -X
  
    It will produce a large number of messages.  The answers to many
    questions, and the solution to many problems, can usually be found in

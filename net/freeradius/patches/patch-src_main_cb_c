@@ -10,7 +10,7 @@ Index: src/main/cb.c
  			if (SSL_get_state(s) == TLS_ST_SR_CLNT_HELLO) {
  				int i;
  				int num_ciphers;
-@@ -192,7 +192,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
+@@ -201,7 +201,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
  		state->info.alert_level = 0x00;
  		state->info.alert_description = 0x00;
  
