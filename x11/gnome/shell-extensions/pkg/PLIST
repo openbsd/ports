@@ -14,7 +14,6 @@ share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.gi
 share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/prefs.js
-share/gnome-shell/extensions/auto-move-windows@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -22,11 +21,9 @@ share/gnome-shell/extensions/drive-menu@gnome-shell-extensions.gcampax.github.co
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/native-window-placement@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -40,7 +37,6 @@ share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.co
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/prefs.js
-share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/util.js
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/classic.css
@@ -62,12 +58,7 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
 share/gnome-shell/theme/
-share/gnome-shell/theme/calendar-today.svg
 share/gnome-shell/theme/classic-process-working.svg
-share/gnome-shell/theme/classic-toggle-off-intl.svg
-share/gnome-shell/theme/classic-toggle-off-us.svg
-share/gnome-shell/theme/classic-toggle-on-intl.svg
-share/gnome-shell/theme/classic-toggle-on-us.svg
 share/gnome-shell/theme/gnome-classic-high-contrast.css
 share/gnome-shell/theme/gnome-classic.css
 share/locale/ab/LC_MESSAGES/gnome-shell-extensions.mo
@@ -105,6 +96,7 @@ share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/is/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ja/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ka/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/kab/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/kk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/km/LC_MESSAGES/gnome-shell-extensions.mo
