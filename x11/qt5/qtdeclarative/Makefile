@@ -1,8 +1,6 @@
-# qmlplugindump
-USE_WXNEEDED =		Yes
-
 QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
+REVISION =		0
 
 MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
