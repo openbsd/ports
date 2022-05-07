@@ -1,10 +1,11 @@
 TYPEFACE =		gentium
-V =			6.001
+V =			6.101
 COMMENT =		readable font for Latin, Cyrillic, and Greek
 DISTNAME =		GentiumPlus-$V
 CATEGORIES =		fonts
 
 HOMEPAGE =		https://software.sil.org/gentium/
+MAINTAINER =		George Rosamond <george@nycbug.org>
 
 # SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
