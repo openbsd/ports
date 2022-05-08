@@ -17,6 +17,9 @@ MODULES=		devel/meson
 BUILD_DEPENDS=		shells/bash \
 			www/sassc
 
+# glib-compile-resources(1)
+BUILD_DEPENDS +=	devel/glib2
+
 # grealpath(1)
 BUILD_DEPENDS +=	sysutils/coreutils
 
