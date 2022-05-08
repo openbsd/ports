@@ -24,14 +24,13 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.3
-VERSION=	${BV}.2.2
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
-REVISION=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -132,7 +131,7 @@ DISTFILES += skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
 DISTFILES += xmlsec1-1.2.33.tar.gz:0
-DISTFILES += libnumbertext-1.0.8.tar.xz:0
+DISTFILES += libnumbertext-1.0.10.tar.xz:0
 DISTFILES += box2d-2.3.1.tar.gz:0
 DISTFILES += zxing-cpp-1.2.0.tar.gz:0
 
