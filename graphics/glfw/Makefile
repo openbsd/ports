@@ -1,12 +1,13 @@
 COMMENT =	open source, multi-platform library for creating windows
-V =		3.3.4
+
+V =		3.3.7
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
 
 SHARED_LIBS +=  glfw                      1.1 # 3.1
 
 HOMEPAGE =	http://www.glfw.org/
-MAINTAINER =	Gregor Best <gbe@unobtanium.de>
+MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 
 # zlib
 PERMIT_PACKAGE =	Yes

@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -163,13 +163,6 @@ endif()
+@@ -168,13 +168,6 @@ endif()
  # Find and add Unix math and time libraries
  #--------------------------------------------------------------------
  if (UNIX AND NOT APPLE)
