@@ -3,6 +3,7 @@
 @pkgpath net/unison/snapshot${FLAVOR_COMMA}
 @pkgpath net/unison/stable${FLAVOR_COMMA}
 @bin bin/unison
+@man man/man1/unison.1
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/unison/
 share/doc/unison/NEWS.md

@@ -2,7 +2,7 @@ COMMENT =	multi-platform file synchronization tool
 
 GH_ACCOUNT =	bcpierce00
 GH_PROJECT =	unison
-GH_TAGNAME =    v2.52.0
+GH_TAGNAME =    v2.52.1
 
 CATEGORIES =	net
 
@@ -55,10 +55,14 @@ PORTHOME =	${WRKDIR}
 WRKDIST =	${WRKDIR}/${DISTNAME}/src
 DOCS =		NEWS.md README.md
 
+post-build:
+	@cd ${WRKSRC}/../man && ${MAKE}
+
 # Avoid the nightmare of their Makefile install target.
 # Do not use INSTALL_PROGRAM, as the bytecode version must not be stripped!
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/unison ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/../man/unison.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/unison
 	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/unison
 
