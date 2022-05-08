@@ -1,7 +1,7 @@
 Index: clients/upsset.c
 --- clients/upsset.c.orig
 +++ clients/upsset.c
-@@ -192,7 +192,7 @@ static void do_pickups(const char *currfunc)
+@@ -193,7 +193,7 @@ static void do_pickups(const char *currfunc)
  	char	hostfn[SMALLBUF];
  	PCONF_CTX_t	ctx;
  
@@ -10,7 +10,7 @@ Index: clients/upsset.c
  
  	printf("<FORM METHOD=\"POST\" ACTION=\"upsset.cgi\">\n");
  
-@@ -1017,7 +1017,7 @@ static void check_conf(void)
+@@ -1018,7 +1018,7 @@ static void check_conf(void)
  	char	fn[SMALLBUF];
  	PCONF_CTX_t	ctx;
  

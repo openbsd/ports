@@ -3,12 +3,8 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-V=		2.8.0-rc2
+V=		2.8.0
 DISTNAME=	nut-${V}
-#PKGNAME=	nut-${V:S/-//}
-# this is really 2.8.0rc2 but pre/rc can't be compared in pkg_add sort;
-# go back to the default after 2.8.0 release
-PKGNAME=	nut-2.8.0pre20220410
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
@@ -50,9 +46,6 @@ WEB_ROOT=	/var/www
 SUBST_VARS=	BASESYSCONFDIR WEB_ROOT
 
 CONFIGURE_STYLE= gnu
-#AUTOCONF_VERSION= 2.71
-#AUTOMAKE_VERSION= 1.16
-#AUTORECONF=	./autogen.sh
 
 SYSCONFDIR=	${BASESYSCONFDIR}/nut
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
