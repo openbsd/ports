@@ -1,11 +1,10 @@
 COMMENT =	SDL multi protocol navigator
 VERSION =	1.13.3
+REVISION =	0
 
 DISTNAME =	lagrange-${VERSION}
 
 CATEGORIES =	net x11
-
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 

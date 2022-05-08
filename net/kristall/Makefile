@@ -5,10 +5,9 @@ DISTNAME =	kristall-2021111500
 GH_ACCOUNT =	MasterQ32
 GH_PROJECT =	kristall
 GH_COMMIT =	9744a24ffbf4d5ea6ad8b418d740c90336ee33b8
+REVISION =	0
 
 CATEGORIES =	net x11
-
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLv3
 PERMIT_PACKAGE =Yes

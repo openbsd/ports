@@ -2,12 +2,11 @@ COMMENT=	diary and journal application
 
 CATEGORIES=	productivity
 
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
-
 HOMEPAGE=	http://lifeograph.sourceforge.net
 
 V=		2.0.2
 DISTNAME=	lifeograph-${V}
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

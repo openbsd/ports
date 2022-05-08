@@ -4,13 +4,11 @@ GH_ACCOUNT =		digarok
 GH_PROJECT =		gsplus
 GH_COMMIT =		480572054518112647c8fae5d7ea7046a6d6ecfb
 DISTNAME =		${GH_PROJECT}-20190816
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://apple2.gs/plus/
-
-MAINTAINER =		Solene Rapenne <solene@perso.pw>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

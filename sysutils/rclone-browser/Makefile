@@ -4,10 +4,9 @@ GH_ACCOUNT =	kapitainsky
 GH_PROJECT =	RcloneBrowser
 GH_TAGNAME =	1.8.0
 PKGNAME =	rclone-browser-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils x11
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # MIT
 PERMIT_PACKAGE =Yes

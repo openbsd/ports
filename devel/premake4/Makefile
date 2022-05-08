@@ -5,13 +5,11 @@ COMMENT=		build configuration tool
 # of the affected files in ${FILESDIR}.
 DISTNAME=		premake-4.4-beta5-src
 PKGNAME=		premake4-4.4beta5
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
 HOMEPAGE=		https://premake.github.io
-
-MAINTAINER=		Solene Rapenne <solene@perso.pw>
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=premake/}
 EXTRACT_SUFX=		.zip

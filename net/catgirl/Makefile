@@ -1,11 +1,10 @@
 COMMENT =	curses TLS-only IRC client
 DISTNAME =	catgirl-2.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
-MAINTAINER =	Solene Rapenne <solene@perso.pw>, \
-		Klemens Nanni <kn@openbsd.org>
+MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 HOMEPAGE =	https://git.causal.agency/catgirl
 

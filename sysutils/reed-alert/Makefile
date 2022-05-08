@@ -1,11 +1,11 @@
 COMMENT =	system monitoring and alert notifier
 DISTNAME =	reed-alert-v1.05
+REVISION =	0
 PKGNAME =	${DISTNAME:S/-v/-/}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://dataswamp.org/~solene/2018-01-17-reed-alert.html
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # MIT
 PERMIT_PACKAGE =	Yes

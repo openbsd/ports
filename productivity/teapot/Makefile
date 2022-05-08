@@ -1,13 +1,11 @@
 COMMENT =	three dimensional console spreadsheet
 V =		2.3.0
 DISTNAME =	teapot-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	productivity
 
 HOMEPAGE =	https://www.syntax-k.de/projekte/teapot/
-
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

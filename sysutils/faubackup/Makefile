@@ -2,10 +2,9 @@ COMMENT =	full and incremental backups on filesystem
 V =		v0.6.0
 DISTNAME =	faubackup-${V}
 PKGNAME =       ${DISTNAME:S/-v/-/}
+REVISION =	0
 
 CATEGORIES =	sysutils
-
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 HOMEPAGE =	https://framagit.org/soleneBSD/faubackup/
 

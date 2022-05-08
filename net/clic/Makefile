@@ -1,11 +1,11 @@
 COMMENT =	text based gopher client
 DISTNAME =	clic-v1.1.5
+REVISION =	0
 PKGNAME =	${DISTNAME:S/-v/-/}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	net
 
 HOMEPAGE =	gopher://bitreich.org/1/scm/clic
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # 2-Clause BSD
 PERMIT_PACKAGE =	Yes

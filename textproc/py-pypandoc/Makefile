@@ -4,11 +4,9 @@ MODPY_EGG_VERSION =	1.6.4
 
 DISTNAME =		pypandoc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
-
-MAINTAINER =		Solene Rapenne <solene@perso.pw>
 
 HOMEPAGE =		https://github.com/bebraw/pypandoc
 

@@ -1,11 +1,10 @@
 COMMENT =		completion input-method to speed up typing
 VERSION =		2.15.7
+REVISION =		0
 
 DISTNAME =		ibus-typing-booster-${VERSION}
 
 CATEGORIES =		inputmethods
-
-MAINTAINER =		Solene Rapenne <solene@perso.pw>
 
 HOMEPAGE =		https://mike-fabian.github.io/ibus-typing-booster/
 

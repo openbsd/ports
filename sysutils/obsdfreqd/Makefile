@@ -1,12 +1,11 @@
 COMMENT =		userland daemon to manage CPU frequency
 V =			1.0.1
+REVISION =		0
 DISTNAME =		obsdfreqd-${V}
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://tildegit.org/solene/obsdfreqd/
-
-MAINTAINER =		Solene Rapenne <solene@perso.pw>
 
 # ISC
 PERMIT_PACKAGE =	Yes

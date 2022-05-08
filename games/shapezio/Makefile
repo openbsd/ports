@@ -1,10 +1,10 @@
 V =		1.2.2pl202012070000
 COMMENT =	factorio inspired base building game
 DISTNAME =	shapezio-${V}
+REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/tobspr/shapez.io/
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLv3
 PERMIT_PACKAGE =Yes

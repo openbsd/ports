@@ -11,6 +11,7 @@ COMMENT-data =	data for Tales of Maj'Eyal
 V =		1.7.4
 PKGNAME =	tome4-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 MASTER_SITES =	https://te4.org/dl/t-engine/
 
@@ -19,8 +20,6 @@ EXTRACT_SUFX =	.tar.bz2
 HOMEPAGE =	https://te4.org/
 
 MULTI_PACKAGES =-main -data
-
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLV3+ and bundled MIT, zlib, BSD in games/thirdparty/licenses/
 PERMIT_PACKAGE =	Yes

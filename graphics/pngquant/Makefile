@@ -3,10 +3,9 @@ COMMENT =	PNG compressor
 GH_ACCOUNT =	kornelski
 GH_PROJECT =	pngquant
 GH_TAGNAME =	2.15.1
+REVISION =	0
 
 CATEGORIES =	graphics
-
-MAINTAINER =	Solene Rapenne <solene@perso.pw>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
