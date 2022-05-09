@@ -13,6 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}__main__.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_cell_widths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_emoji_codes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_emoji_replace.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_export_format.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_extension.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_inspect.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_log_render.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_loop.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,7 +25,9 @@ lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_ratio.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_spinners.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_stack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_timer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_win32_console.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_windows.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_windows_renderer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}_wrap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}align.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,6 +49,7 @@ lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}errors.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}file_proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}filesize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}highlighter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}jupyter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}layout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}live.${MODPY_PYC_MAGIC_TAG}pyc
@@ -62,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}progress.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}progress_bar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}region.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}repr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}scope.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}screen.${MODPY_PYC_MAGIC_TAG}pyc
@@ -72,7 +79,6 @@ lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}style.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}styled.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}syntax.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}table.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}tabulate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}terminal_theme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}theme.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,6 +88,8 @@ lib/python${MODPY_VERSION}/site-packages/rich/${MODPY_PYCACHE}tree.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/rich/_cell_widths.py
 lib/python${MODPY_VERSION}/site-packages/rich/_emoji_codes.py
 lib/python${MODPY_VERSION}/site-packages/rich/_emoji_replace.py
+lib/python${MODPY_VERSION}/site-packages/rich/_export_format.py
+lib/python${MODPY_VERSION}/site-packages/rich/_extension.py
 lib/python${MODPY_VERSION}/site-packages/rich/_inspect.py
 lib/python${MODPY_VERSION}/site-packages/rich/_log_render.py
 lib/python${MODPY_VERSION}/site-packages/rich/_loop.py
@@ -92,7 +100,9 @@ lib/python${MODPY_VERSION}/site-packages/rich/_ratio.py
 lib/python${MODPY_VERSION}/site-packages/rich/_spinners.py
 lib/python${MODPY_VERSION}/site-packages/rich/_stack.py
 lib/python${MODPY_VERSION}/site-packages/rich/_timer.py
+lib/python${MODPY_VERSION}/site-packages/rich/_win32_console.py
 lib/python${MODPY_VERSION}/site-packages/rich/_windows.py
+lib/python${MODPY_VERSION}/site-packages/rich/_windows_renderer.py
 lib/python${MODPY_VERSION}/site-packages/rich/_wrap.py
 lib/python${MODPY_VERSION}/site-packages/rich/abc.py
 lib/python${MODPY_VERSION}/site-packages/rich/align.py
@@ -114,6 +124,7 @@ lib/python${MODPY_VERSION}/site-packages/rich/errors.py
 lib/python${MODPY_VERSION}/site-packages/rich/file_proxy.py
 lib/python${MODPY_VERSION}/site-packages/rich/filesize.py
 lib/python${MODPY_VERSION}/site-packages/rich/highlighter.py
+lib/python${MODPY_VERSION}/site-packages/rich/json.py
 lib/python${MODPY_VERSION}/site-packages/rich/jupyter.py
 lib/python${MODPY_VERSION}/site-packages/rich/layout.py
 lib/python${MODPY_VERSION}/site-packages/rich/live.py
@@ -132,6 +143,8 @@ lib/python${MODPY_VERSION}/site-packages/rich/progress_bar.py
 lib/python${MODPY_VERSION}/site-packages/rich/prompt.py
 lib/python${MODPY_VERSION}/site-packages/rich/protocol.py
 lib/python${MODPY_VERSION}/site-packages/rich/py.typed
+lib/python${MODPY_VERSION}/site-packages/rich/region.py
+lib/python${MODPY_VERSION}/site-packages/rich/repr.py
 lib/python${MODPY_VERSION}/site-packages/rich/rule.py
 lib/python${MODPY_VERSION}/site-packages/rich/scope.py
 lib/python${MODPY_VERSION}/site-packages/rich/screen.py
@@ -142,7 +155,6 @@ lib/python${MODPY_VERSION}/site-packages/rich/style.py
 lib/python${MODPY_VERSION}/site-packages/rich/styled.py
 lib/python${MODPY_VERSION}/site-packages/rich/syntax.py
 lib/python${MODPY_VERSION}/site-packages/rich/table.py
-lib/python${MODPY_VERSION}/site-packages/rich/tabulate.py
 lib/python${MODPY_VERSION}/site-packages/rich/terminal_theme.py
 lib/python${MODPY_VERSION}/site-packages/rich/text.py
 lib/python${MODPY_VERSION}/site-packages/rich/theme.py
