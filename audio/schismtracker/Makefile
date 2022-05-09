@@ -2,11 +2,11 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20220125
+GH_TAGNAME =	20220506
 
 CATEGORIES =	audio x11
 
-HOMEPAGE =	http://schismtracker.org/
+HOMEPAGE =	https://schismtracker.org/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
