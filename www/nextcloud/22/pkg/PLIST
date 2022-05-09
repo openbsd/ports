@@ -8951,6 +8951,8 @@ nextcloud/apps/accessibility/l10n/es_DO.js
 nextcloud/apps/accessibility/l10n/es_DO.json
 nextcloud/apps/accessibility/l10n/es_EC.js
 nextcloud/apps/accessibility/l10n/es_EC.json
+nextcloud/apps/accessibility/l10n/es_GT.js
+nextcloud/apps/accessibility/l10n/es_GT.json
 nextcloud/apps/accessibility/l10n/es_MX.js
 nextcloud/apps/accessibility/l10n/es_MX.json
 nextcloud/apps/accessibility/l10n/et_EE.js
@@ -9124,6 +9126,8 @@ nextcloud/apps/activity/l10n/ast.js
 nextcloud/apps/activity/l10n/ast.json
 nextcloud/apps/activity/l10n/az.js
 nextcloud/apps/activity/l10n/az.json
+nextcloud/apps/activity/l10n/be.js
+nextcloud/apps/activity/l10n/be.json
 nextcloud/apps/activity/l10n/bg.js
 nextcloud/apps/activity/l10n/bg.json
 nextcloud/apps/activity/l10n/bn_BD.js
@@ -9502,8 +9506,10 @@ nextcloud/apps/admin_audit/lib/Actions/UserManagement.php
 nextcloud/apps/admin_audit/lib/Actions/Versions.php
 nextcloud/apps/admin_audit/lib/AppInfo/
 nextcloud/apps/admin_audit/lib/AppInfo/Application.php
+nextcloud/apps/admin_audit/lib/AuditLogger.php
 nextcloud/apps/admin_audit/lib/BackgroundJobs/
 nextcloud/apps/admin_audit/lib/BackgroundJobs/Rotate.php
+nextcloud/apps/admin_audit/lib/IAuditLogger.php
 nextcloud/apps/admin_audit/lib/Listener/
 nextcloud/apps/admin_audit/lib/Listener/CriticalActionPerformedEventListener.php
 nextcloud/apps/circles/
@@ -9883,6 +9889,7 @@ nextcloud/apps/circles/lib/Exceptions/OwnerNotFoundException.php
 nextcloud/apps/circles/lib/Exceptions/ParseMemberLevelException.php
 nextcloud/apps/circles/lib/Exceptions/PayloadDeliveryException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteAlreadyExistsException.php
+nextcloud/apps/circles/lib/Exceptions/RemoteCircleException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteInstanceException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteNotFoundException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteResourceNotFoundException.php
@@ -9896,6 +9903,7 @@ nextcloud/apps/circles/lib/Exceptions/SharingFrameAlreadyExistException.php
 nextcloud/apps/circles/lib/Exceptions/SharingFrameDoesNotExistException.php
 nextcloud/apps/circles/lib/Exceptions/SharingFrameSourceCannotBeAppCirclesException.php
 nextcloud/apps/circles/lib/Exceptions/SingleCircleNotFoundException.php
+nextcloud/apps/circles/lib/Exceptions/SuperSessionException.php
 nextcloud/apps/circles/lib/Exceptions/TokenDoesNotExistException.php
 nextcloud/apps/circles/lib/Exceptions/UnknownFederatedItemException.php
 nextcloud/apps/circles/lib/Exceptions/UnknownInterfaceException.php
@@ -10000,6 +10008,7 @@ nextcloud/apps/circles/lib/Migration/Version0022Date20220703115023.php
 nextcloud/apps/circles/lib/Migration/Version0023Date20211216113101.php
 nextcloud/apps/circles/lib/Migration/Version0024Date20220203123901.php
 nextcloud/apps/circles/lib/Migration/Version0024Date20220203123902.php
+nextcloud/apps/circles/lib/Migration/Version0024Date20220317190331.php
 nextcloud/apps/circles/lib/Model/
 nextcloud/apps/circles/lib/Model/BaseCircle.php
 nextcloud/apps/circles/lib/Model/BaseMember.php
@@ -14997,6 +15006,8 @@ nextcloud/apps/lookup_server_connector/l10n/es.js
 nextcloud/apps/lookup_server_connector/l10n/es.json
 nextcloud/apps/lookup_server_connector/l10n/eu.js
 nextcloud/apps/lookup_server_connector/l10n/eu.json
+nextcloud/apps/lookup_server_connector/l10n/fi.js
+nextcloud/apps/lookup_server_connector/l10n/fi.json
 nextcloud/apps/lookup_server_connector/l10n/fr.js
 nextcloud/apps/lookup_server_connector/l10n/fr.json
 nextcloud/apps/lookup_server_connector/l10n/gl.js
@@ -18155,12 +18166,8 @@ nextcloud/apps/text/l10n/eo.js
 nextcloud/apps/text/l10n/eo.json
 nextcloud/apps/text/l10n/es.js
 nextcloud/apps/text/l10n/es.json
-nextcloud/apps/text/l10n/es_AR.js
-nextcloud/apps/text/l10n/es_AR.json
 nextcloud/apps/text/l10n/es_MX.js
 nextcloud/apps/text/l10n/es_MX.json
-nextcloud/apps/text/l10n/et_EE.js
-nextcloud/apps/text/l10n/et_EE.json
 nextcloud/apps/text/l10n/eu.js
 nextcloud/apps/text/l10n/eu.json
 nextcloud/apps/text/l10n/fa.js
@@ -21280,8 +21287,6 @@ nextcloud/core/l10n/tr.js
 nextcloud/core/l10n/tr.json
 nextcloud/core/l10n/uk.js
 nextcloud/core/l10n/uk.json
-nextcloud/core/l10n/vi.js
-nextcloud/core/l10n/vi.json
 nextcloud/core/l10n/zh_CN.js
 nextcloud/core/l10n/zh_CN.json
 nextcloud/core/l10n/zh_HK.js
