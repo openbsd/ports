@@ -8517,6 +8517,8 @@ nextcloud/apps/accessibility/l10n/es_DO.js
 nextcloud/apps/accessibility/l10n/es_DO.json
 nextcloud/apps/accessibility/l10n/es_EC.js
 nextcloud/apps/accessibility/l10n/es_EC.json
+nextcloud/apps/accessibility/l10n/es_GT.js
+nextcloud/apps/accessibility/l10n/es_GT.json
 nextcloud/apps/accessibility/l10n/es_MX.js
 nextcloud/apps/accessibility/l10n/es_MX.json
 nextcloud/apps/accessibility/l10n/et_EE.js
@@ -8694,6 +8696,8 @@ nextcloud/apps/activity/l10n/ast.js
 nextcloud/apps/activity/l10n/ast.json
 nextcloud/apps/activity/l10n/az.js
 nextcloud/apps/activity/l10n/az.json
+nextcloud/apps/activity/l10n/be.js
+nextcloud/apps/activity/l10n/be.json
 nextcloud/apps/activity/l10n/bg.js
 nextcloud/apps/activity/l10n/bg.json
 nextcloud/apps/activity/l10n/bn_BD.js
@@ -9074,8 +9078,10 @@ nextcloud/apps/admin_audit/lib/Actions/UserManagement.php
 nextcloud/apps/admin_audit/lib/Actions/Versions.php
 nextcloud/apps/admin_audit/lib/AppInfo/
 nextcloud/apps/admin_audit/lib/AppInfo/Application.php
+nextcloud/apps/admin_audit/lib/AuditLogger.php
 nextcloud/apps/admin_audit/lib/BackgroundJobs/
 nextcloud/apps/admin_audit/lib/BackgroundJobs/Rotate.php
+nextcloud/apps/admin_audit/lib/IAuditLogger.php
 nextcloud/apps/admin_audit/lib/Listener/
 nextcloud/apps/admin_audit/lib/Listener/CriticalActionPerformedEventListener.php
 nextcloud/apps/circles/
@@ -9423,6 +9429,7 @@ nextcloud/apps/circles/lib/Exceptions/GroupDoesNotExistException.php
 nextcloud/apps/circles/lib/Exceptions/GroupNotFoundException.php
 nextcloud/apps/circles/lib/Exceptions/InitiatorNotConfirmedException.php
 nextcloud/apps/circles/lib/Exceptions/InitiatorNotFoundException.php
+nextcloud/apps/circles/lib/Exceptions/InsufficientPermissionException.php
 nextcloud/apps/circles/lib/Exceptions/InvalidIdException.php
 nextcloud/apps/circles/lib/Exceptions/InvalidModelException.php
 nextcloud/apps/circles/lib/Exceptions/JsonException.php
@@ -9455,6 +9462,7 @@ nextcloud/apps/circles/lib/Exceptions/OwnerNotFoundException.php
 nextcloud/apps/circles/lib/Exceptions/ParseMemberLevelException.php
 nextcloud/apps/circles/lib/Exceptions/PayloadDeliveryException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteAlreadyExistsException.php
+nextcloud/apps/circles/lib/Exceptions/RemoteCircleException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteInstanceException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteNotFoundException.php
 nextcloud/apps/circles/lib/Exceptions/RemoteResourceNotFoundException.php
@@ -9468,6 +9476,7 @@ nextcloud/apps/circles/lib/Exceptions/SharingFrameAlreadyExistException.php
 nextcloud/apps/circles/lib/Exceptions/SharingFrameDoesNotExistException.php
 nextcloud/apps/circles/lib/Exceptions/SharingFrameSourceCannotBeAppCirclesException.php
 nextcloud/apps/circles/lib/Exceptions/SingleCircleNotFoundException.php
+nextcloud/apps/circles/lib/Exceptions/SuperSessionException.php
 nextcloud/apps/circles/lib/Exceptions/TokenDoesNotExistException.php
 nextcloud/apps/circles/lib/Exceptions/UnknownFederatedItemException.php
 nextcloud/apps/circles/lib/Exceptions/UnknownInterfaceException.php
@@ -9572,6 +9581,7 @@ nextcloud/apps/circles/lib/Migration/Version0022Date20220703115023.php
 nextcloud/apps/circles/lib/Migration/Version0023Date20211216113101.php
 nextcloud/apps/circles/lib/Migration/Version0024Date20220203123901.php
 nextcloud/apps/circles/lib/Migration/Version0024Date20220203123902.php
+nextcloud/apps/circles/lib/Migration/Version0024Date20220317190331.php
 nextcloud/apps/circles/lib/Model/
 nextcloud/apps/circles/lib/Model/BaseCircle.php
 nextcloud/apps/circles/lib/Model/BaseMember.php
@@ -9647,6 +9657,7 @@ nextcloud/apps/circles/lib/Service/MigrationService.php
 nextcloud/apps/circles/lib/Service/MiscService.php
 nextcloud/apps/circles/lib/Service/NotificationService.php
 nextcloud/apps/circles/lib/Service/OutputService.php
+nextcloud/apps/circles/lib/Service/PermissionService.php
 nextcloud/apps/circles/lib/Service/RemoteDownstreamService.php
 nextcloud/apps/circles/lib/Service/RemoteService.php
 nextcloud/apps/circles/lib/Service/RemoteStreamService.php
@@ -14576,6 +14587,8 @@ nextcloud/apps/lookup_server_connector/l10n/es.js
 nextcloud/apps/lookup_server_connector/l10n/es.json
 nextcloud/apps/lookup_server_connector/l10n/eu.js
 nextcloud/apps/lookup_server_connector/l10n/eu.json
+nextcloud/apps/lookup_server_connector/l10n/fi.js
+nextcloud/apps/lookup_server_connector/l10n/fi.json
 nextcloud/apps/lookup_server_connector/l10n/fr.js
 nextcloud/apps/lookup_server_connector/l10n/fr.json
 nextcloud/apps/lookup_server_connector/l10n/gl.js
@@ -16301,6 +16314,8 @@ nextcloud/apps/settings/js/templates/
 nextcloud/apps/settings/js/templates.js
 nextcloud/apps/settings/js/templates/federationscopemenu.handlebars
 nextcloud/apps/settings/js/usersettings.js
+nextcloud/apps/settings/js/vue-settings-admin-basic-settings.js
+nextcloud/apps/settings/js/vue-settings-admin-basic-settings.js.map
 nextcloud/apps/settings/js/vue-settings-admin-delegation.js
 nextcloud/apps/settings/js/vue-settings-admin-delegation.js.map
 nextcloud/apps/settings/js/vue-settings-admin-security.js
@@ -17764,12 +17779,8 @@ nextcloud/apps/text/l10n/eo.js
 nextcloud/apps/text/l10n/eo.json
 nextcloud/apps/text/l10n/es.js
 nextcloud/apps/text/l10n/es.json
-nextcloud/apps/text/l10n/es_AR.js
-nextcloud/apps/text/l10n/es_AR.json
 nextcloud/apps/text/l10n/es_MX.js
 nextcloud/apps/text/l10n/es_MX.json
-nextcloud/apps/text/l10n/et_EE.js
-nextcloud/apps/text/l10n/et_EE.json
 nextcloud/apps/text/l10n/eu.js
 nextcloud/apps/text/l10n/eu.json
 nextcloud/apps/text/l10n/fa.js
@@ -19909,9 +19920,11 @@ nextcloud/core/doc/admin/_images/ldap-wizard-4-group.png
 nextcloud/core/doc/admin/_images/local.png
 nextcloud/core/doc/admin/_images/mount_options.png
 nextcloud/core/doc/admin/_images/oauth2-settings.png
+nextcloud/core/doc/admin/_images/office.png
 nextcloud/core/doc/admin/_images/openstack.png
 nextcloud/core/doc/admin/_images/phpinfo.png
 nextcloud/core/doc/admin/_images/preview_images.png
+nextcloud/core/doc/admin/_images/profile_default_setting.png
 nextcloud/core/doc/admin/_images/rackspace.png
 nextcloud/core/doc/admin/_images/retention_sample.png
 nextcloud/core/doc/admin/_images/security-setup-warning-1.png
@@ -20008,6 +20021,7 @@ nextcloud/core/doc/admin/_sources/configuration_user/index.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_user/instruction_set_for_apps.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_user/instruction_set_for_groups.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_user/instruction_set_for_users.rst.txt
+nextcloud/core/doc/admin/_sources/configuration_user/profile_configuration.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_user/reset_admin_password.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_user/reset_user_password.rst.txt
 nextcloud/core/doc/admin/_sources/configuration_user/two_factor-auth.rst.txt
@@ -20061,6 +20075,15 @@ nextcloud/core/doc/admin/_sources/maintenance/package_upgrade.rst.txt
 nextcloud/core/doc/admin/_sources/maintenance/restore.rst.txt
 nextcloud/core/doc/admin/_sources/maintenance/update.rst.txt
 nextcloud/core/doc/admin/_sources/maintenance/upgrade.rst.txt
+nextcloud/core/doc/admin/_sources/office/
+nextcloud/core/doc/admin/_sources/office/configuration.rst.txt
+nextcloud/core/doc/admin/_sources/office/example-docker.rst.txt
+nextcloud/core/doc/admin/_sources/office/example-ubuntu.rst.txt
+nextcloud/core/doc/admin/_sources/office/index.rst.txt
+nextcloud/core/doc/admin/_sources/office/installation.rst.txt
+nextcloud/core/doc/admin/_sources/office/migration.rst.txt
+nextcloud/core/doc/admin/_sources/office/proxy.rst.txt
+nextcloud/core/doc/admin/_sources/office/troubleshooting.rst.txt
 nextcloud/core/doc/admin/_sources/release_notes.rst.txt
 nextcloud/core/doc/admin/_sources/release_schedule.rst.txt
 nextcloud/core/doc/admin/_static/
@@ -20178,6 +20201,7 @@ nextcloud/core/doc/admin/configuration_user/index.html
 nextcloud/core/doc/admin/configuration_user/instruction_set_for_apps.html
 nextcloud/core/doc/admin/configuration_user/instruction_set_for_groups.html
 nextcloud/core/doc/admin/configuration_user/instruction_set_for_users.html
+nextcloud/core/doc/admin/configuration_user/profile_configuration.html
 nextcloud/core/doc/admin/configuration_user/reset_admin_password.html
 nextcloud/core/doc/admin/configuration_user/reset_user_password.html
 nextcloud/core/doc/admin/configuration_user/two_factor-auth.html
@@ -20233,6 +20257,15 @@ nextcloud/core/doc/admin/maintenance/restore.html
 nextcloud/core/doc/admin/maintenance/update.html
 nextcloud/core/doc/admin/maintenance/upgrade.html
 nextcloud/core/doc/admin/objects.inv
+nextcloud/core/doc/admin/office/
+nextcloud/core/doc/admin/office/configuration.html
+nextcloud/core/doc/admin/office/example-docker.html
+nextcloud/core/doc/admin/office/example-ubuntu.html
+nextcloud/core/doc/admin/office/index.html
+nextcloud/core/doc/admin/office/installation.html
+nextcloud/core/doc/admin/office/migration.html
+nextcloud/core/doc/admin/office/proxy.html
+nextcloud/core/doc/admin/office/troubleshooting.html
 nextcloud/core/doc/admin/release_notes.html
 nextcloud/core/doc/admin/release_schedule.html
 nextcloud/core/doc/admin/search.html
@@ -20922,8 +20955,6 @@ nextcloud/core/l10n/tr.js
 nextcloud/core/l10n/tr.json
 nextcloud/core/l10n/uk.js
 nextcloud/core/l10n/uk.json
-nextcloud/core/l10n/vi.js
-nextcloud/core/l10n/vi.json
 nextcloud/core/l10n/zh_CN.js
 nextcloud/core/l10n/zh_CN.json
 nextcloud/core/l10n/zh_HK.js
@@ -21931,6 +21962,7 @@ nextcloud/lib/private/Repair/Owncloud/CleanPreviews.php
 nextcloud/lib/private/Repair/Owncloud/CleanPreviewsBackgroundJob.php
 nextcloud/lib/private/Repair/Owncloud/DropAccountTermsTable.php
 nextcloud/lib/private/Repair/Owncloud/InstallCoreBundle.php
+nextcloud/lib/private/Repair/Owncloud/MigrateOauthTables.php
 nextcloud/lib/private/Repair/Owncloud/MoveAvatars.php
 nextcloud/lib/private/Repair/Owncloud/MoveAvatarsBackgroundJob.php
 nextcloud/lib/private/Repair/Owncloud/SaveAccountsTableData.php
