@@ -56,8 +56,11 @@ include/syslog-ng/compat/string.h
 include/syslog-ng/compat/time.h
 include/syslog-ng/compat/un.h
 include/syslog-ng/control/
+include/syslog-ng/control/control-command-thread.h
 include/syslog-ng/control/control-commands.h
+include/syslog-ng/control/control-connection.h
 include/syslog-ng/control/control-main.h
+include/syslog-ng/control/control-server-unix.h
 include/syslog-ng/control/control-server.h
 include/syslog-ng/control/control.h
 include/syslog-ng/crypto.h
@@ -112,6 +115,7 @@ include/syslog-ng/logmsg/serialization.h
 include/syslog-ng/logmsg/tags-serialize.h
 include/syslog-ng/logmsg/tags.h
 include/syslog-ng/logmsg/timestamp-serialize.h
+include/syslog-ng/logmsg/type-hinting.h
 include/syslog-ng/logpipe.h
 include/syslog-ng/logproto/
 include/syslog-ng/logproto/logproto-buffered-server.h
@@ -142,6 +146,7 @@ include/syslog-ng/logwriter.h
 include/syslog-ng/mainloop-call.h
 include/syslog-ng/mainloop-control.h
 include/syslog-ng/mainloop-io-worker.h
+include/syslog-ng/mainloop-threaded-worker.h
 include/syslog-ng/mainloop-worker.h
 include/syslog-ng/mainloop.h
 include/syslog-ng/memtrace.h
@@ -177,6 +182,7 @@ include/syslog-ng/rewrite/
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/rewrite/rewrite-expr.h
 include/syslog-ng/rewrite/rewrite-groupset.h
+include/syslog-ng/rewrite/rewrite-rename.h
 include/syslog-ng/rewrite/rewrite-set-facility.h
 include/syslog-ng/rewrite/rewrite-set-pri.h
 include/syslog-ng/rewrite/rewrite-set-severity.h
@@ -268,7 +274,6 @@ include/syslog-ng/transport/transport-pipe.h
 include/syslog-ng/transport/transport-socket.h
 include/syslog-ng/transport/transport-tls.h
 include/syslog-ng/transport/transport-udp-socket.h
-include/syslog-ng/type-hinting.h
 include/syslog-ng/userdb.h
 include/syslog-ng/utf8utils.h
 include/syslog-ng/uuid.h
@@ -280,22 +285,22 @@ include/syslog-ng/value-pairs/transforms.h
 include/syslog-ng/value-pairs/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/window-size-counter.h
-@lib lib/libevtlog-3.34.so.${LIBevtlog-3.34_VERSION}
+@lib lib/libevtlog-3.36.so.${LIBevtlog-3.36_VERSION}
 @static-lib lib/libevtlog.a
 lib/libevtlog.la
 @lib lib/libevtlog.so.${LIBevtlog_VERSION}
-@lib lib/libloggen_helper-3.34.so.${LIBloggen_helper-3.34_VERSION}
+@lib lib/libloggen_helper-3.36.so.${LIBloggen_helper-3.36_VERSION}
 @static-lib lib/libloggen_helper.a
 lib/libloggen_helper.la
 @lib lib/libloggen_helper.so.${LIBloggen_helper_VERSION}
-@lib lib/libloggen_plugin-3.34.so.${LIBloggen_plugin-3.34_VERSION}
+@lib lib/libloggen_plugin-3.36.so.${LIBloggen_plugin-3.36_VERSION}
 @static-lib lib/libloggen_plugin.a
 lib/libloggen_plugin.la
 @lib lib/libloggen_plugin.so.${LIBloggen_plugin_VERSION}
 @static-lib lib/libsecret-storage.a
 lib/libsecret-storage.la
 @lib lib/libsecret-storage.so.${LIBsecret-storage_VERSION}
-@lib lib/libsyslog-ng-3.34.so.${LIBsyslog-ng-3.34_VERSION}
+@lib lib/libsyslog-ng-3.36.so.${LIBsyslog-ng-3.36_VERSION}
 @static-lib lib/libsyslog-ng-native-connector.a
 @static-lib lib/libsyslog-ng.a
 lib/libsyslog-ng.la
@@ -329,6 +334,7 @@ lib/syslog-ng/
 @so lib/syslog-ng/libmap-value-pairs.so
 @so lib/syslog-ng/libopenbsd.so
 @so lib/syslog-ng/libpseudofile.so
+@so lib/syslog-ng/librate-limit-filter.so
 @so lib/syslog-ng/libregexp-parser.so
 @so lib/syslog-ng/libsecure-logging.so
 @so lib/syslog-ng/libstardate.so

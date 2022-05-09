@@ -4,7 +4,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -10234,11 +10234,7 @@ modules_test_subdirs = \
+@@ -10412,11 +10412,7 @@ modules_test_subdirs = \
  
  syslog_ng_syslog_ng_SOURCES = syslog-ng/main.c
  
@@ -17,7 +17,7 @@ Index: Makefile.in
  
  syslog_ng_syslog_ng_LINK = @SYSLOGNG_LINK@
  syslog_ng_syslog_ng_DEPENDENCIES = lib/libsyslog-ng.la
-@@ -28960,7 +28956,7 @@ scl-install-data-local:
+@@ -29392,7 +29388,7 @@ scl-install-data-local:
  		fi; \
  	done
  	$(mkinstalldirs) $(DESTDIR)/$(scldir)

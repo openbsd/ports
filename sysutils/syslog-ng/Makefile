@@ -1,7 +1,7 @@
 COMMENT=	log management solution
 
-V =		3.34.1
-REL =		3.34.1
+V =		3.36.1
+REL =		3.36.1
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
 
@@ -18,15 +18,15 @@ WANTLIB += ssl z
 
 MASTER_SITES =	https://github.com/balabit/syslog-ng/releases/download/${DISTNAME}/
 
-SHARED_LIBS =	evtlog			4.0 \
-		evtlog-3.34		4.0 \
-		syslog-ng		7.0 \
-		syslog-ng-3.34		7.0 \
-		loggen_helper		2.0 \
-		loggen_helper-3.34	2.0 \
-		loggen_plugin		2.0 \
-		loggen_plugin-3.34	2.0 \
-		secret-storage		2.0
+SHARED_LIBS =	evtlog			5.0 \
+		evtlog-3.36		5.0 \
+		syslog-ng		8.0 \
+		syslog-ng-3.36		8.0 \
+		loggen_helper		3.0 \
+		loggen_helper-3.36	3.0 \
+		loggen_plugin		3.0 \
+		loggen_plugin-3.36	3.0 \
+		secret-storage		3.0
 
 # needs a newer compiler due to libmaxminddb header
 COMPILER =	base-clang ports-gcc
