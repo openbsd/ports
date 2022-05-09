@@ -1,10 +1,12 @@
 COMMENT =	SDL multi protocol navigator
 VERSION =	1.13.3
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	lagrange-${VERSION}
 
 CATEGORIES =	net x11
+
+MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
 HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 

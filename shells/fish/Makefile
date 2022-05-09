@@ -2,9 +2,11 @@ COMMENT =		friendly interactive shell
 
 V =			3.4.1
 DISTNAME =		fish-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		shells
+
+MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 
 HOMEPAGE =		https://fishshell.com/
 

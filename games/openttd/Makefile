@@ -3,9 +3,11 @@ COMMENT=	open source clone of the game Transport Tycoon Deluxe
 V =		12.1
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	games
+
+MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
 HOMEPAGE=	https://www.openttd.org/en/
 

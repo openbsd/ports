@@ -1,9 +1,11 @@
 COMMENT =		userland daemon to manage CPU frequency
 V =			1.0.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		obsdfreqd-${V}
 
 CATEGORIES =		sysutils
+
+MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 
 HOMEPAGE =		https://tildegit.org/solene/obsdfreqd/
 
