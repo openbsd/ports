@@ -1,6 +1,6 @@
 COMMENT =	renames multiple files
 
-DISTNAME =	File-Rename-1.30
+DISTNAME =	File-Rename-1.31
 
 CATEGORIES =	sysutils
 
