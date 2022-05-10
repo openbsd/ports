@@ -10,15 +10,3 @@ Index: src/qml/configure.json
              "comment": "On arm and arm64 we need a specialization of cacheFlush() for each OS to be
                          enabeled. Therefore the config white list.
                          Also Mind that e.g. x86_32 has arch.x86_64 but 32bit pointers. Therefore
-Index: src/qml/configure.json
---- src/qml/configure.json.orig
-+++ src/qml/configure.json
-@@ -103,7 +103,7 @@
-                      && (config.linux || config.ios || config.tvos || config.qnx || config.integrity))"
-             ],
-             "output": [ "privateFeature" ],
--            "autoDetect": "!config.ios && !config.tvos",
-+            "autoDetect": "!config.ios && !config.tvos && !config.openbsd",
-             "comment": "On arm and arm64 we need a specialization of cacheFlush() for each OS to be
-                         enabeled. Therefore the config white list.
-                         Also Mind that e.g. x86_32 has arch.x86_64 but 32bit pointers. Therefore
