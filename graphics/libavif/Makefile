@@ -2,10 +2,10 @@ COMMENT=	library for encoding and decoding .avif files
 
 GH_ACCOUNT=	AOMediaCodec
 GH_PROJECT=	libavif
-GH_TAGNAME=	v0.9.3
+GH_TAGNAME=	v0.10.1
 CATEGORIES=	graphics
 
-SHARED_LIBS=	avif	4.2
+SHARED_LIBS=	avif	5.0
 
 HOMEPAGE=	https://github.com/AOMediaCodec/libavif
 
@@ -22,7 +22,7 @@ MODULES=	devel/cmake
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
-		multimedia/aom>=2.0.0rc1 \
+		multimedia/aom \
 		multimedia/dav1d
 
 CONFIGURE_ARGS+=-DAVIF_BUILD_APPS=ON \
@@ -31,8 +31,7 @@ CONFIGURE_ARGS+=-DAVIF_BUILD_APPS=ON \
 		-DAVIF_CODEC_AOM_DECODE=OFF \
 		-DAVIF_CODEC_DAV1D=ON
 
-# https://github.com/AOMediaCodec/libavif/commit/11d6725af628b116066f4bd2e5b810498c584438
 do-test:
-	${WRKBUILD}/aviftest ${WRKSRC}/tests/data --io-only
+	${WRKBUILD}/tests/aviftest ${WRKSRC}/tests/data
 
 .include <bsd.port.mk>
