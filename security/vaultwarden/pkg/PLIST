@@ -1,0 +1,12 @@
+@newgroup _vaultwarden:878
+@newuser _vaultwarden:878:878:default:Vaultwarden Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/vaultwarden
+@bin bin/vaultwarden
+share/doc/vaultwarden/
+share/doc/vaultwarden/.env.template
+@owner _vaultwarden
+@group _vaultwarden
+@mode 640
+@sample /var/vaultwarden/.env
+@mode 750
+@sample /var/vaultwarden/data/

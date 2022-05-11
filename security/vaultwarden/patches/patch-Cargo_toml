@@ -1,0 +1,103 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -3,7 +3,7 @@ name = "vaultwarden"
+ version = "1.0.0"
+ authors = ["Daniel García <dani-garcia@users.noreply.github.com>"]
+ edition = "2021"
+-rust-version = "1.60"
++rust-version = "1.56"
+ resolver = "2"
+ 
+ repository = "https://github.com/dani-garcia/vaultwarden"
+@@ -13,6 +13,7 @@ publish = false
+ build = "build.rs"
+ 
+ [features]
++# default = ["sqlite"]
+ # Empty to keep compatibility, prefer to set USE_SYSLOG=true
+ enable_syslog = []
+ mysql = ["diesel/mysql", "diesel_migrations/mysql"]
+@@ -29,22 +30,22 @@ unstable = []
+ syslog = "4.0.1"
+ 
+ [dependencies]
+-# Web framework for nightly with a focus on ease-of-use, expressibility, and speed.
+-rocket = { version = "=0.5.0-dev", features = ["tls"], default-features = false }
+-rocket_contrib = "=0.5.0-dev"
++# Web framework
++rocket = { version = "0.5.0-rc.1", features = ["tls", "json"], default-features = false }
+ 
+-# HTTP client
+-reqwest = { version = "0.11.8", features = ["blocking", "json", "gzip", "brotli", "socks", "cookies", "trust-dns"] }
++# Async futures
++futures = "0.3.19"
++tokio = { version = "1.16.1", features = ["rt-multi-thread", "fs", "io-util", "parking_lot"] }
++ 
++ # HTTP client
++reqwest = { version = "0.11.9", features = ["stream", "json", "gzip", "brotli", "socks", "cookies", "trust-dns"] }
++bytes = "1.1.0"
+ 
+ # Used for custom short lived cookie jar
+ cookie = "0.15.1"
+ cookie_store = "0.15.1"
+-bytes = "1.1.0"
+ url = "2.2.2"
+ 
+-# multipart/form-data support
+-multipart = { version = "0.18.0", features = ["server"], default-features = false }
+-
+ # WebSockets library
+ ws = { version = "0.11.1", package = "parity-ws" }
+ 
+@@ -55,8 +56,8 @@ rmpv = "1.0.0"
+ chashmap = "2.2.2"
+ 
+ # A generic serialization/deserialization framework
+-serde = { version = "1.0.132", features = ["derive"] }
+-serde_json = "1.0.73"
++serde = { version = "1.0.136", features = ["derive"] }
++serde_json = "1.0.78"
+ 
+ # Logging
+ log = "0.4.14"
+@@ -95,7 +96,7 @@ jsonwebtoken = "7.2.0"
+ 
+ # U2F library
+ u2f = "0.2.0"
+-webauthn-rs = "0.3.1"
++webauthn-rs = "0.3.2"
+ 
+ # Yubico Library
+ yubico = { version = "0.10.0", features = ["online-tokio"], default-features = false }
+@@ -115,7 +116,7 @@ tracing = { version = "0.1.29", features = ["log"] } #
+ lettre = { version = "0.10.0-rc.4", features = ["smtp-transport", "builder", "serde", "native-tls", "hostname", "tracing"], default-features = false }
+ 
+ # Template library
+-handlebars = { version = "4.1.6", features = ["dir_source"] }
++handlebars = { version = "4.2.1", features = ["dir_source"] }
+ 
+ # For favicon extraction from main website
+ html5ever = "0.25.1"
+@@ -135,16 +136,16 @@ idna = "0.2.3"
+ pico-args = "0.4.2"
+ 
+ # Logging panics to logfile instead stderr only
+-backtrace = "0.3.63"
++backtrace = "0.3.64"
+ 
+ # Macro ident concatenation
+ paste = "1.0.6"
+-governor = "0.3.2"
++governor = "0.4.1"
+ 
++ctrlc = { version = "3.2.1", features = ["termination"] }
++
+ [patch.crates-io]
+-# Use newest ring
+-rocket = { git = 'https://github.com/SergioBenitez/Rocket', rev = '263e39b5b429de1913ce7e3036575a7b4d88b6d7' }
+-rocket_contrib = { git = 'https://github.com/SergioBenitez/Rocket', rev = '263e39b5b429de1913ce7e3036575a7b4d88b6d7' }
++rocket = { git = 'https://github.com/SergioBenitez/Rocket', rev = '8cae077ba1d54b92cdef3e171a730b819d5eeb8e' }
+ 
+ # The maintainer of the `job_scheduler` crate doesn't seem to have responded
+ # to any issues or PRs for almost a year (as of April 2021). This hopefully

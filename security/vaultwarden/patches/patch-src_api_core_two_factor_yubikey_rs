@@ -1,0 +1,10 @@
+Index: src/api/core/two_factor/yubikey.rs
+--- src/api/core/two_factor/yubikey.rs.orig
++++ src/api/core/two_factor/yubikey.rs
+@@ -1,5 +1,5 @@
++use rocket::serde::json::Json;
+ use rocket::Route;
+-use rocket_contrib::json::Json;
+ use serde_json::Value;
+ use yubico::{config::Config, verify};
+ 

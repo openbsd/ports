@@ -1,0 +1,11 @@
+Index: src/api/core/two_factor/u2f.rs
+--- src/api/core/two_factor/u2f.rs.orig
++++ src/api/core/two_factor/u2f.rs
+@@ -1,6 +1,6 @@
+ use once_cell::sync::Lazy;
++use rocket::serde::json::Json;
+ use rocket::Route;
+-use rocket_contrib::json::Json;
+ use serde_json::Value;
+ use u2f::{
+     messages::{RegisterResponse, SignResponse, U2fSignRequest},
