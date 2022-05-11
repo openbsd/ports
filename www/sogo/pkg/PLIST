@@ -2833,6 +2833,8 @@ share/doc/sogo/sql-update-3.0.0-to-combined.sh
 share/doc/sogo/sql-update-3.2.10_to_4.0.0-mysql.sh
 share/doc/sogo/sql-update-3.2.10_to_4.0.0.sh
 share/doc/sogo/updates.php
+share/examples/login.conf.d/sogod
+@sample ${SYSCONFDIR}/login.conf.d/sogod
 @mode 750
 @owner _sogo
 @group _sogo
