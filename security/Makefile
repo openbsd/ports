@@ -389,6 +389,7 @@
      SUBDIR += towitoko
      SUBDIR += uacme
      SUBDIR += vault
+     SUBDIR += vaultwarden
      SUBDIR += veracrypt
      SUBDIR += volatility
      SUBDIR += vpnc

@@ -568,6 +568,7 @@
      SUBDIR += urlwatch
      SUBDIR += uwebsockets
      SUBDIR += varnish
+     SUBDIR += vaultwarden-web
      SUBDIR += vimb
      SUBDIR += visitors
      SUBDIR += vnu
