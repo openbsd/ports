@@ -1,8 +1,8 @@
-ONLY_FOR_ARCHS=	${LP64_ARCHS}
+ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
 
 COMMENT=	scalable AV1 encoder/decoder
 
-VER=		0.9.1
+VER=		1.0.0
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia

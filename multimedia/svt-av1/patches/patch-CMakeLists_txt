@@ -1,0 +1,28 @@
+cmake: fix clang check for adding Werror
+8cdbf6f74aebe31851412ec6c1d30bc33102a4e6
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -216,9 +216,7 @@ function(check_flag lang flag)
+     string(REGEX REPLACE "[^A-Za-z0-9]" "_" flag_var "${flag}")
+     if(NOT DEFINED ${lang}_FLAG${flag_var})
+         execute_process(COMMAND ${CMAKE_COMMAND} -E echo_append "-- Checking ${lang} flag support for: [${flag}] - ")
+-        if(NOT MSVC AND CLANG)
+-            set(STORE_CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+-            set(STORE_CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++        if(CMAKE_C_COMPILER_ID MATCHES "Clang")
+             set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror=unused-command-line-argument")
+             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror=unused-command-line-argument")
+         endif()
+@@ -226,10 +224,6 @@ function(check_flag lang flag)
+             check_cxx_compiler_flag("${flag}" "${lang}_FLAG${flag_var}")
+         else()
+             check_c_compiler_flag("${flag}" "${lang}_FLAG${flag_var}")
+-        endif()
+-        if(NOT MSVC AND CLANG)
+-            set(CMAKE_C_FLAGS "${STORE_CMAKE_C_FLAGS}")
+-            set(CMAKE_CXX_FLAGS "${STORE_CMAKE_CXX_FLAGS}")
+         endif()
+         if(${lang}_FLAG${flag_var})
+             execute_process(COMMAND ${CMAKE_COMMAND} -E echo "Yes")
