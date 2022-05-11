@@ -92,6 +92,7 @@ include/dlib/cmake_utils/check_if_sse4_instructions_executable_on_host.cmake
 include/dlib/cmake_utils/find_blas.cmake
 include/dlib/cmake_utils/find_libjpeg.cmake
 include/dlib/cmake_utils/find_libpng.cmake
+include/dlib/cmake_utils/find_libwebp.cmake
 include/dlib/cmake_utils/set_compiler_specific_options.cmake
 include/dlib/cmake_utils/tell_visual_studio_to_use_static_runtime.cmake
 include/dlib/cmake_utils/test_for_avx/
@@ -215,7 +216,6 @@ include/dlib/dnn/layers.h
 include/dlib/dnn/layers_abstract.h
 include/dlib/dnn/loss.h
 include/dlib/dnn/loss_abstract.h
-include/dlib/dnn/misc.h
 include/dlib/dnn/solvers.h
 include/dlib/dnn/solvers_abstract.h
 include/dlib/dnn/trainer.h
@@ -223,6 +223,8 @@ include/dlib/dnn/trainer_abstract.h
 include/dlib/dnn/utilities.h
 include/dlib/dnn/utilities_abstract.h
 include/dlib/dnn/validation.h
+include/dlib/dnn/visitors.h
+include/dlib/dnn/visitors_abstract.h
 include/dlib/enable_if.h
 include/dlib/entropy_decoder/
 include/dlib/entropy_decoder.h
@@ -469,6 +471,8 @@ include/dlib/image_loader/load_image.h
 include/dlib/image_loader/load_image_abstract.h
 include/dlib/image_loader/png_loader.h
 include/dlib/image_loader/png_loader_abstract.h
+include/dlib/image_loader/webp_loader.h
+include/dlib/image_loader/webp_loader_abstract.h
 include/dlib/image_processing/
 include/dlib/image_processing.h
 include/dlib/image_processing/box_overlap_testing.h
@@ -514,6 +518,8 @@ include/dlib/image_saver/save_jpeg.h
 include/dlib/image_saver/save_jpeg_abstract.h
 include/dlib/image_saver/save_png.h
 include/dlib/image_saver/save_png_abstract.h
+include/dlib/image_saver/save_webp.h
+include/dlib/image_saver/save_webp_abstract.h
 include/dlib/image_transforms/
 include/dlib/image_transforms.h
 include/dlib/image_transforms/assign_image.h

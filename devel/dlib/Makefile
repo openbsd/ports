@@ -1,8 +1,8 @@
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.23
+DISTNAME =		dlib-19.24
 
-SHARED_LIBS +=  dlib                      5.0 # 19.22
+SHARED_LIBS +=  dlib                      5.1 # 19.24
 
 CATEGORIES =		devel
 
@@ -14,7 +14,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext gif jpeg m png sqlite3
-WANTLIB += z
+WANTLIB += webp z
 
 MASTER_SITES =		http://dlib.net/files/
 EXTRACT_SUFX =		.tar.bz2
@@ -26,6 +26,7 @@ COMPILER =		base-clang ports-clang ports-gcc
 LIB_DEPENDS =		graphics/jpeg \
 			graphics/png \
 			graphics/giflib \
+			graphics/libwebp \
 			databases/sqlite3
 
 # XXX Disable searching for blas (cblas lacks)
