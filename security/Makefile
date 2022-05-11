@@ -390,6 +390,8 @@
      SUBDIR += uacme
      SUBDIR += vault
      SUBDIR += vaultwarden
+     SUBDIR += vaultwarden,mysql
+     SUBDIR += vaultwarden,postgresql
      SUBDIR += veracrypt
      SUBDIR += volatility
      SUBDIR += vpnc
