@@ -8,6 +8,8 @@ GH_TAGNAME =		1.24.0
 
 CATEGORIES =		security
 
+MAINTAINER =		Aisha Tammy <openbsd@aisha.cc>
+
 # GPL-3.0
 PERMIT_PACKAGE =	Yes
 
