@@ -1,15 +1,6 @@
 Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h
 --- src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h.orig
 +++ src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h
-@@ -2,7 +2,7 @@
- 
- #include "common/common_pch.h"
- 
--#if defined(SYS_LINUX)
-+#if defined(SYS_LINUX) || defined(SYS_BSD)
- 
- #include "mkvtoolnix-gui/jobs/program_runner.h"
- 
 @@ -10,12 +10,12 @@ namespace mtx::gui {
  
  namespace Jobs {

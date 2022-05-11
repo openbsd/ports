@@ -1,16 +1,9 @@
 Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
 --- src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp.orig
 +++ src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
-@@ -1,26 +1,26 @@
- #include "common/common_pch.h"
- 
--#if defined(SYS_LINUX)
-+#if defined(SYS_LINUX) || defined(SYS_BSD)
- 
- #include <QDebug>
- #include <QProcess>
- 
+@@ -9,20 +9,20 @@
  #include "common/list_utils.h"
+ #include "common/path.h"
  #include "common/qt.h"
 -#include "mkvtoolnix-gui/jobs/program_runner/linux_program_runner.h"
 +#include "mkvtoolnix-gui/jobs/program_runner/unix_program_runner.h"
@@ -33,7 +26,7 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
    if (ProgramRunner::isRunProgramTypeSupported(type))
      return true;
  
-@@ -28,8 +28,8 @@ LinuxProgramRunner::isRunProgramTypeSupported(Util::Se
+@@ -33,8 +33,8 @@ LinuxProgramRunner::isRunProgramTypeSupported(Util::Se
  }
  
  void
@@ -44,7 +37,7 @@ Index: src/mkvtoolnix-gui/jobs/program_runner/unix_program_runner.cpp
  
    auto args   = QStringList{} << action;
    auto result = QProcess::execute(Q("systemctl"), args);
-@@ -37,21 +37,21 @@ LinuxProgramRunner::systemctlAction(QString const &act
+@@ -42,21 +42,21 @@ LinuxProgramRunner::systemctlAction(QString const &act
    if (result == 0)
      return;
  
