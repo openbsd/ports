@@ -1,3 +1,7 @@
+Forcibly disable the JIT on OpenBSD. The W+X mapping was rejected anyway
+unless the binary using this library has an OPENBSD_WXNEEDED ELF
+section, but avoids SIGABRT if the user has set kern.wxabort=1.
+
 Index: src/qml/configure.json
 --- src/qml/configure.json.orig
 +++ src/qml/configure.json
