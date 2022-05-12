@@ -1,17 +1,15 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.2.26
+VERSION=	1.2.34
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	5.0 \
-		xmlsec1-openssl	4.0 \
+		xmlsec1-openssl	4.1 \
 		xmlsec1-gcrypt	0.0 \
-		xmlsec1		8.1
-REVISION-docs=	0
-REVISION-main=	2
+		xmlsec1		8.2
 
 HOMEPAGE=	https://www.aleksey.com/xmlsec/
 
@@ -22,23 +20,21 @@ WANTLIB += brotlidec brotlienc c crypto gcrypt gmp gnutls gpg-error
 WANTLIB += hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += pthread ssl tasn1 unistring xml2 xslt z zstd
 
-MASTER_SITES=	${HOMEPAGE}/download/ \
-		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
-		ftp://ftp.xmlsoft.org/xmlsec/releases/ \
-		ftp://ftp.rpmfind.net/pub/XML/xmlsec/releases/
+MASTER_SITES=	${HOMEPAGE}/download/
 
-MULTI_PACKAGES=		-main -docs
+MULTI_PACKAGES=	-main -docs
 
 PKG_ARCH-docs=		*
 WANTLIB-docs=
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-LIB_DEPENDS=		devel/libtool,-ltdl \
-			textproc/libxslt \
-			security/gnutls
+LIB_DEPENDS=	devel/libtool,-ltdl \
+		textproc/libxslt \
+		security/gnutls
+LIBTOOL_FLAGS=	--tag=disable-static
 
-USE_GMAKE=		Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-nss \
