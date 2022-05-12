@@ -4,6 +4,8 @@
 @extraunexec rm /var/log/solr/*
 @rcscript ${RCDIR}/solr
 bin/solr
+share/examples/login.conf.d/solr
+@sample ${SYSCONFDIR}/login.conf.d/solr
 share/solr/
 @mode 770
 @owner _solr
