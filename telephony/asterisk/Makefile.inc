@@ -1,7 +1,12 @@
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
+DISTFILES=	${DISTNAME}.tar.gz
+# from asterisk mirror:
+DISTFILES+=	pjproject-${PJ_V}.tar.gz:0
+# from pjsip original:
+#DISTFILES+=	pjproject-{}${PJ_V}.tar.gz:1
+
 PKGNAME-main=	asterisk-${VER}
 SHORTVER=	${.CURDIR:T}
 
@@ -18,8 +23,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += c crypto curl curses edit gsm iconv iksemel
-WANTLIB-main += jansson lzma m ogg portaudio pthread radcli
-WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
+WANTLIB-main += jansson m ogg portaudio pthread radcli spandsp
+WANTLIB-main += sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
@@ -92,8 +97,8 @@ RUN_DEPENDS-main=	telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
-MASTER_SITES0=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/ \
-		https://www.pjsip.org/release/${PJ_V}/
+MASTER_SITES0=	https://raw.githubusercontent.com/asterisk/third-party/master/pjproject/$(PJ_V)/
+MASTER_SITES1=	https://github.com/pjsip/pjproject/archive/refs/tags/
 
 USE_GMAKE=		Yes
 
@@ -185,8 +190,8 @@ WANTLIB-main +=		${MODGCC4_CPPWANTLIB}
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
-WANTLIB-calendar=	crypto expat ical iconv intl iksemel lzma
-WANTLIB-calendar+=	m neon proxy pthread ssl xml2 z
+WANTLIB-calendar=	crypto expat ical intl iksemel neon \
+			proxy pthread ssl xml2 z
 LIB_DEPENDS-calendar=	devel/gettext,-runtime \
 			net/neon \
 			textproc/libical
