@@ -28,7 +28,7 @@ LIB_DEPENDS =		devel/gettext,-runtime\
 			graphics/exiv2 \
 			graphics/GraphicsMagick \
 			print/poppler
-TEST_DEPENDS =		devel/py-nose
+TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
