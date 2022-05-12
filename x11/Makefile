@@ -256,7 +256,7 @@
      SUBDIR += qdirstat
      SUBDIR += qt5
      SUBDIR += qt5ct
-     #SUBDIR += qt6
+     SUBDIR += qt6
      SUBDIR += qtfm
      SUBDIR += qwt
      SUBDIR += ratmen
