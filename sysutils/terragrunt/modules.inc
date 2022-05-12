@@ -192,7 +192,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-azure-helpers			 v0.14.0 \
 	github.com/hashicorp/go-checkpoint			 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
-	github.com/hashicorp/go-getter				 v1.5.7 \
+	github.com/hashicorp/go-getter				 v1.5.11 \
 	github.com/hashicorp/go-hclog				 v0.15.0 \
 	github.com/hashicorp/go-immutable-radix			 v1.1.0 \
 	github.com/hashicorp/go-kms-wrapping/entropy		 v0.1.0 \
