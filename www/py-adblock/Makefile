@@ -45,7 +45,7 @@ do-build:
 		${MODCARGO_BUILD_ARGS} ;
 
 do-test:
-	pip${MODPY_VERSION} install --isolated \
+	pip${MODPY_VERSION} install --no-cache-dir --isolated \
 		--target=${WRKSRC}/tests \
 		--ignore-installed \
 		--no-deps ${WRKSRC}/target/wheels/*.whl
@@ -53,7 +53,7 @@ do-test:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/target/release/libadblock.so ${PREFIX}/lib
-	pip${MODPY_VERSION} install --isolated \
+	pip${MODPY_VERSION} install --no-cache-dir --isolated \
 		--root=${WRKINST} \
 		--ignore-installed \
 		--no-deps ${WRKSRC}/target/wheels/*.whl
