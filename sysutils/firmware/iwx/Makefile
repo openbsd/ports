@@ -1,5 +1,6 @@
 FW_DRIVER=	iwx
 FW_VER=		20220110
+REVISION=	0
 DISTNAME=	linux-firmware-iwlwifi-fw-2022-01-10
 EXTRACT_FILES=	${DISTNAME}/{LICENCE.\*,iwlwifi-\*-\*.ucode,iwlwifi-*.pnvm}
 
@@ -15,6 +16,7 @@ FW=	cc-a0		63 \
 	cc-a0		67 \
 	so-a0-gf-a0	67 \
 	so-a0-gf4-a0	67 \
+	so-a0-hr-b0	64 \
 	so-a0-jf-b0	64 \
 	ty-a0-gf-a0	67 \
 	Qu-b0-hr-b0	63 \
