@@ -1,10 +1,10 @@
      SUBDIR =
-     SUBDIR += qttranslations
+     #SUBDIR += qttranslations
      SUBDIR += qttools
      SUBDIR += qtsvg
      SUBDIR += qtshadertools
      SUBDIR += qtquicktimeline
-     SUBDIR += qtquick3d
+     #SUBDIR += qtquick3d
      #SUBDIR += qtdoc
      SUBDIR += qtdeclarative
      SUBDIR += qtlanguageserver
