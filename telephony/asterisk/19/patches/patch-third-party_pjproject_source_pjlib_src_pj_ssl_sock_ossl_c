@@ -1,9 +1,9 @@
 Index: third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
 --- third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c.orig
 +++ third-party/pjproject/source/pjlib/src/pj/ssl_sock_ossl.c
-@@ -122,10 +122,12 @@ static unsigned get_nid_from_cid(unsigned cid)
- #endif
- 
+@@ -156,10 +156,12 @@ static void update_certs_info(pj_ssl_sock_t* ssock,
+ 			      pj_ssl_cert_info *remote_cert_info,
+ 			      pj_bool_t is_verify);
  
 -#if !USING_LIBRESSL && OPENSSL_VERSION_NUMBER >= 0x10100000L
 +#if OPENSSL_VERSION_NUMBER >= 0x10100000L

@@ -148,6 +148,8 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
+include/asterisk/res_aeap.h
+include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
 include/asterisk/res_fax.h
 include/asterisk/res_hep.h
@@ -370,6 +372,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_dialplan.so
 @so lib/asterisk/modules/func_enum.so
 @so lib/asterisk/modules/func_env.so
+@so lib/asterisk/modules/func_evalexten.so
 @so lib/asterisk/modules/func_extstate.so
 @so lib/asterisk/modules/func_frame_drop.so
 @so lib/asterisk/modules/func_frame_trace.so
@@ -521,6 +524,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_sorcery_memory_cache.so
 @so lib/asterisk/modules/res_sorcery_realtime.so
 @so lib/asterisk/modules/res_speech.so
+@so lib/asterisk/modules/res_speech_aeap.so
 @so lib/asterisk/modules/res_srtp.so
 @so lib/asterisk/modules/res_stasis.so
 @so lib/asterisk/modules/res_stasis_answer.so
@@ -708,7 +712,6 @@ share/examples/asterisk/default/minivm.conf
 share/examples/asterisk/default/modules.conf
 share/examples/asterisk/default/motif.conf
 share/examples/asterisk/default/musiconhold.conf
-share/examples/asterisk/default/muted.conf
 @comment share/examples/asterisk/default/ooh323.conf
 share/examples/asterisk/default/osp.conf
 @comment share/examples/asterisk/default/oss.conf
