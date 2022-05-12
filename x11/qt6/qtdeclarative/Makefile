@@ -3,6 +3,7 @@ USE_WXNEEDED =		Yes
 
 QT6NAME =		QtDeclarative
 COMMENT =		Qt6 Quick and QML components
+PKGSPEC =		qt6-qtdeclarative-${QT6_PKGSPEC}
 
 SHARED_LIBS =   Qt6Qml                    0.1 # 6.3
 SHARED_LIBS +=  Qt6Quick                  0.1 # 6.3
@@ -35,8 +36,8 @@ WANTLIB += Qt6Sql Qt6Test Qt6Widgets c m xkbcommon
 MODULES =		lang/python
 CONFIGURE_STYLE =	cmake
 
-BUILD_DEPENDS =		x11/qt6/qtshadertools>=${VERSION},<${NEXT_VERSION} \
-			x11/qt6/qtlanguageserver>=${VERSION},<${NEXT_VERSION} \
+BUILD_DEPENDS =		x11/qt6/qtshadertools \
+			x11/qt6/qtlanguageserver \
 			graphics/vulkan-loader
 
 pre-configure:

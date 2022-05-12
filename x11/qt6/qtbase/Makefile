@@ -5,6 +5,8 @@ COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
 
+PKGSPEC-main =	qt6-qtbase-${QT6_PKGSPEC}
+
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
 PKGNAME-psql =		qt6-postgresql-${VERSION}
@@ -72,11 +74,11 @@ LIB_DEPENDS-global =
 
 LIB_DEPENDS-main +=	devel/gettext,-runtime
 
-LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION} \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH},-main \
 			${MODGCC4_CPPLIBDEP} \
 			databases/mariadb
 
-LIB_DEPENDS-psql =	${BASE_PKGPATH},-main>=${VERSION:R},<${NEXT_VERSION} \
+LIB_DEPENDS-psql =	${BASE_PKGPATH},-main \
 			${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
 

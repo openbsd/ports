@@ -1,5 +1,6 @@
 QT6NAME =		QtSVG
 COMMENT =		SVG support for Qt6
+PKGSPEC =		qt6-qtsvg-${QT6_PKGSPEC}
 
 SHARED_LIBS +=  Qt6Svg              0.1 # 6.3
 SHARED_LIBS +=  Qt6SvgWidgets       0.1 # 6.3
