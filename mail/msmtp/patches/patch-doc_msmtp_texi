@@ -1,0 +1,21 @@
+Index: doc/msmtp.texi
+--- doc/msmtp.texi.orig
++++ doc/msmtp.texi
+@@ -1477,7 +1477,7 @@ just like @ref{passwordeval} in msmtp) or, if none is 
+ from the key ring or, if that fails, from a prompt.
+ @end table
+ 
+-@node Example using msmtpd as a system service
++@node Example using msmtpd as a system service,,,Minimal SMTP server (msmtpd)
+ @section Example: using msmtpd as a system service
+ 
+ Only use a local interface to listen on. Run msmtpd with correct user rights
+@@ -1494,7 +1494,7 @@ start-stop-daemon --start --pidfile /var/run/msmtpd.pi
+ start-stop-daemon --stop  --pidfile /var/run/msmtpd.pid --remove-pidfile --quiet --signal TERM
+ @end example
+ 
+-@node Example using msmtpd to handle outgoing mail for an SMTP-based mail client
++@node Example using msmtpd to handle outgoing mail for an SMTP-based mail client,,,Minimal SMTP server (msmtpd)
+ @section Example: using msmtpd to handle outgoing mail for an SMTP-based mail client
+ 
+ Some mail clients cannot send outgoing mail with a program like msmtp and

@@ -1,6 +1,6 @@
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.8.19
+DISTNAME =		msmtp-1.8.20
 CATEGORIES =		mail
 
 HOMEPAGE =		https://marlam.de/msmtp/
@@ -8,20 +8,22 @@ HOMEPAGE =		https://marlam.de/msmtp/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB = c iconv idn2 intl gnutls
+WANTLIB = c iconv idn2 intl tls
 
 MASTER_SITES =		https://marlam.de/msmtp/releases/
 EXTRACT_SUFX =		.tar.xz
 
 LIB_DEPENDS =		devel/libidn2 \
-			security/gnutls
+			devel/gettext
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
-			--with-tls=gnutls \
+			--with-tls=libtls \
 			--without-libsecret
+CONFIGURE_ENV +=	libtls_LIBS="-L/usr/lib -l tls" \
+			libtls_CFLAGS="-I/usr/include"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/msmtp
