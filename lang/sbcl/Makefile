@@ -1,33 +1,15 @@
-BROKEN-i386 =		build fails in "Compiling file [...]/src/compiler/generic/genesis.lisp"
-# ;; Compiling file /pobj/sbcl-2.0.1/sbcl-2.0.1/src/compiler/generic/genesis.lisp ...
-# ;; Wrote file /pobj/sbcl-2.0.1/sbcl-2.0.1/obj/from-host/src/compiler/generic/genesis.fas-tmp
-# 0 errors, 0 warnings
-# ;;  Loading file obj/from-host/src/compiler/generic/genesis.fas ...
-# ;;  Loaded file obj/from-host/src/compiler/generic/genesis.fas
-# *** - OPEN: File
-#       #P"/pobj/sbcl-2.0.1/sbcl-2.0.1/obj/from-xc/tls-init.lisp-expr" does not
-#       exist
-# The following restarts are available:
-# SKIP           :R1      skip (GENESIS OBJECT-FILE-NAMES # ...)
-# RETRY          :R2      retry (GENESIS OBJECT-FILE-NAMES # ...)
-# STOP           :R3      stop loading file /pobj/sbcl-2.0.1/sbcl-2.0.1/make-genesis-2.lisp
-# ABORT-BUILD    :R4      Abort building SBCL.
-# ABORT          :R5      Abort main loop
-# //testing for consistency of first and second GENESIS passes
-# diff: output/genesis-2: No such file or directory   
-# error: header files do not match between first and second GENESIS
-
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			2.1.11
+V =			2.2.4
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
 EXTRACT_SUFX=		.tar.bz2
+PATCHORIG =		.orig.port
 
 CATEGORIES=		lang
 HOMEPAGE=		http://www.sbcl.org/
@@ -56,10 +38,17 @@ WANTLIB+=		pthread
 MAKE_PARAMS +=		--with-sb-core-compression \
 			--with-sb-xref-for-internals
 
+# contrib/sb-capstone/test.lisp uses it at build-time if present
+BUILD_DEPENDS =		devel/capstone/main
+
 .if ${FLAVOR:Mnative_bootstrap}
 BUILD_DEPENDS+=		lang/sbcl
 BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
 			--disable-debugger --no-sysinit --no-userinit
+.elif ${MACHINE_ARCH:Mi386}
+# ecl is slower but lang/clisp fails to build sbcl on i386
+BUILD_DEPENDS +=	lang/ecl
+BOOTSTRAP_CMD =		${LOCALBASE}/bin/ecl -q --norc
 .else
 BUILD_DEPENDS +=	lang/clisp
 BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
