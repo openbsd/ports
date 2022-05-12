@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -52,7 +52,7 @@ share/doc/asciinema =
+     README.md
+     doc/asciicast-v1.md
+     doc/asciicast-v2.md
+-share/man/man1 =
++man/man1 =
+     man/asciinema.1
+ 
+ [pycodestyle]

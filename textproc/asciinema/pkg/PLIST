@@ -14,12 +14,13 @@ lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}__main__.${MO
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}async_worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}file_writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}http_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}notifier.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}player.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}pty.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}pty_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}recorder.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}term.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}tty_.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/${MODPY_PYCACHE}urllib_http_adapter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/asciinema/api.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/asciicast/
@@ -54,12 +55,13 @@ lib/python${MODPY_VERSION}/site-packages/asciinema/commands/upload.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/config.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/data/
 lib/python${MODPY_VERSION}/site-packages/asciinema/data/icon-256x256.png
+lib/python${MODPY_VERSION}/site-packages/asciinema/file_writer.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/http_adapter.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/notifier.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/player.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/pty.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/pty_.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/recorder.py
-lib/python${MODPY_VERSION}/site-packages/asciinema/term.py
+lib/python${MODPY_VERSION}/site-packages/asciinema/tty_.py
 lib/python${MODPY_VERSION}/site-packages/asciinema/urllib_http_adapter.py
 @man man/man1/asciinema.1
 share/doc/asciinema/
