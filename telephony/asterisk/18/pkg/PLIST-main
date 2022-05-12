@@ -161,6 +161,8 @@ include/asterisk/poll-compat.h
 include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
+include/asterisk/res_aeap.h
+include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
 include/asterisk/res_fax.h
 include/asterisk/res_hep.h
@@ -390,6 +392,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_dialplan.so
 @so lib/asterisk/modules/func_enum.so
 @so lib/asterisk/modules/func_env.so
+@so lib/asterisk/modules/func_evalexten.so
 @so lib/asterisk/modules/func_extstate.so
 @so lib/asterisk/modules/func_frame_drop.so
 @so lib/asterisk/modules/func_frame_trace.so
@@ -435,6 +438,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/pbx_realtime.so
 @so lib/asterisk/modules/pbx_spool.so
 @so lib/asterisk/modules/res_adsi.so
+@so lib/asterisk/modules/res_aeap.so
 @so lib/asterisk/modules/res_ael_share.so
 @so lib/asterisk/modules/res_agi.so
 @so lib/asterisk/modules/res_ari.so
@@ -541,6 +545,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_sorcery_memory_cache.so
 @so lib/asterisk/modules/res_sorcery_realtime.so
 @so lib/asterisk/modules/res_speech.so
+@so lib/asterisk/modules/res_speech_aeap.so
 @so lib/asterisk/modules/res_srtp.so
 @so lib/asterisk/modules/res_stasis.so
 @so lib/asterisk/modules/res_stasis_answer.so
@@ -662,6 +667,7 @@ share/examples/asterisk/basic-pbx/voicemail.conf
 share/examples/asterisk/default/
 share/examples/asterisk/default/acl.conf
 share/examples/asterisk/default/adsi.conf
+share/examples/asterisk/default/aeap.conf
 share/examples/asterisk/default/agents.conf
 share/examples/asterisk/default/alarmreceiver.conf
 @comment share/examples/asterisk/default/alsa.conf

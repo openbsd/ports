@@ -1,4 +1,4 @@
-asterisk: vfprintf %s NULL in "%.*s %.*s/%u%s%.*s"
+openbsd writes a warning to the kernel log when you sprintf a null pointer
 
 Index: third-party/pjproject/source/pjmedia/src/pjmedia/sdp.c
 --- third-party/pjproject/source/pjmedia/src/pjmedia/sdp.c.orig
