@@ -10,6 +10,7 @@
      SUBDIR += apachetop
      SUBDIR += apcd
      SUBDIR += apcupsd
+     SUBDIR += appmanager
      SUBDIR += arm-trusted-firmware
      SUBDIR += augeas
      SUBDIR += autossh
