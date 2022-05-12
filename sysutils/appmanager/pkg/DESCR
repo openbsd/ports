@@ -1,0 +1,14 @@
+A graphical interface for the OpenBSD package manager.
+
+It has features such as:
+- fast local search
+- including packages DESCR content in searches
+- packages sorted in categories: GUI, Terminal UI, Other
+
+The categories are determined by looking at each packages dependencies
+and trying to guess in which category it belongs. The process is done
+at build time when creating the packages database to be efficient.
+
+GUI: packages using toolkits such as Gtk, Qt, SDL...
+Terminal UI: packages using curses
+Other: packages that didn't match any criteria

@@ -1,0 +1,14 @@
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+bin/appmanager
+share/AppManager/
+share/AppManager/Node2D.gd
+share/AppManager/Node2D.tscn
+share/AppManager/PackageLine.tscn
+share/AppManager/boot-splash.png
+share/AppManager/boot-splash.png.import
+share/AppManager/default_env.tres
+share/AppManager/pkg.json
+share/AppManager/project.godot
+share/applications/appmanager.desktop
+share/icons/hicolor/128x128/apps/appmanager.png
