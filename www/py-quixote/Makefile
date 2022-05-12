@@ -1,5 +1,7 @@
 COMMENT=		simple Python framework for web-based applications
 
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
+
 MODPY_EGG_VERSION=	2.8
 REVISION=		2
 DISTNAME=		Quixote-${MODPY_EGG_VERSION}
@@ -16,11 +18,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODPY_WANTLIB} pthread
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS=	Yes
-
-TEST_DEPENDS=	www/twill \
-    			devel/py-nose
+NO_TEST=		Yes
 
 # Clean up root-owned files.
 post-install:
