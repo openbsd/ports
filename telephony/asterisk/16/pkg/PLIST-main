@@ -370,6 +370,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_dialplan.so
 @so lib/asterisk/modules/func_enum.so
 @so lib/asterisk/modules/func_env.so
+@so lib/asterisk/modules/func_evalexten.so
 @so lib/asterisk/modules/func_extstate.so
 @so lib/asterisk/modules/func_frame_drop.so
 @so lib/asterisk/modules/func_frame_trace.so

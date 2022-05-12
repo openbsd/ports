@@ -1,4 +1,4 @@
-cope with ancient nameser.h
+cope with openbsd ancient nameser.h
 
 Index: main/dns_core.c
 --- main/dns_core.c.orig

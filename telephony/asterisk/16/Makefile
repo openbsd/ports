@@ -1,5 +1,5 @@
-VER=		16.25.3
-PJ_V=		2.10
+VER=		16.26.0
+PJ_V=		2.12
 SHLIB_V=	0.0
 VERSION_SPEC=	>=16.0,<17.0
 PORTROACH=	limit:^16\.
