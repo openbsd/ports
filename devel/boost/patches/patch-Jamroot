@@ -3,7 +3,7 @@ Index: Jamroot
 +++ Jamroot
 @@ -146,11 +146,12 @@ import tools/boost\_install/boost-install ;
  path-constant BOOST_ROOT : . ;
- constant BOOST_VERSION : 1.78.0 ;
+ constant BOOST_VERSION : 1.79.0 ;
  constant BOOST_JAMROOT_MODULE : $(__name__) ;
 +constant SO_VERSION : ${SO_VERSION} ;
  

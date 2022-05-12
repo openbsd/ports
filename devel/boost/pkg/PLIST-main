@@ -252,6 +252,7 @@ include/boost/any.hpp
 include/boost/any/bad_any_cast.hpp
 include/boost/any/basic_any.hpp
 include/boost/any/fwd.hpp
+include/boost/any/unique_any.hpp
 include/boost/archive/
 include/boost/archive/archive_exception.hpp
 include/boost/archive/basic_archive.hpp
@@ -394,6 +395,7 @@ include/boost/asio/basic_streambuf.hpp
 include/boost/asio/basic_streambuf_fwd.hpp
 include/boost/asio/basic_waitable_timer.hpp
 include/boost/asio/basic_writable_pipe.hpp
+include/boost/asio/bind_allocator.hpp
 include/boost/asio/bind_cancellation_slot.hpp
 include/boost/asio/bind_executor.hpp
 include/boost/asio/buffer.hpp
@@ -598,7 +600,6 @@ include/boost/asio/detail/reactive_socket_service.hpp
 include/boost/asio/detail/reactive_socket_service_base.hpp
 include/boost/asio/detail/reactive_wait_op.hpp
 include/boost/asio/detail/reactor.hpp
-include/boost/asio/detail/reactor_fwd.hpp
 include/boost/asio/detail/reactor_op.hpp
 include/boost/asio/detail/reactor_op_queue.hpp
 include/boost/asio/detail/recycling_allocator.hpp
@@ -927,6 +928,7 @@ include/boost/asio/read.hpp
 include/boost/asio/read_at.hpp
 include/boost/asio/read_until.hpp
 include/boost/asio/readable_pipe.hpp
+include/boost/asio/recycling_allocator.hpp
 include/boost/asio/redirect_error.hpp
 include/boost/asio/registered_buffer.hpp
 include/boost/asio/require.hpp
@@ -2266,6 +2268,7 @@ include/boost/container/detail/function_detector.hpp
 include/boost/container/detail/guards_dended.hpp
 include/boost/container/detail/is_container.hpp
 include/boost/container/detail/is_contiguous_container.hpp
+include/boost/container/detail/is_pair.hpp
 include/boost/container/detail/is_sorted.hpp
 include/boost/container/detail/iterator.hpp
 include/boost/container/detail/iterator_to_raw_pointer.hpp
@@ -2470,6 +2473,7 @@ include/boost/core/
 include/boost/core/addressof.hpp
 include/boost/core/alloc_construct.hpp
 include/boost/core/allocator_access.hpp
+include/boost/core/allocator_traits.hpp
 include/boost/core/bit.hpp
 include/boost/core/checked_delete.hpp
 include/boost/core/cmath.hpp
@@ -2503,6 +2507,7 @@ include/boost/core/typeinfo.hpp
 include/boost/core/uncaught_exceptions.hpp
 include/boost/core/underlying_type.hpp
 include/boost/core/use_default.hpp
+include/boost/core/verbose_terminate_handler.hpp
 include/boost/coroutine/
 include/boost/coroutine/all.hpp
 include/boost/coroutine/asymmetric_coroutine.hpp
@@ -3173,6 +3178,7 @@ include/boost/functional/hash/extensions.hpp
 include/boost/functional/hash/hash.hpp
 include/boost/functional/hash/hash_fwd.hpp
 include/boost/functional/hash_fwd.hpp
+include/boost/functional/identity.hpp
 include/boost/functional/lightweight_forward_adapter.hpp
 include/boost/functional/overloaded_function/
 include/boost/functional/overloaded_function.hpp
@@ -4309,6 +4315,7 @@ include/boost/geometry/algorithms/azimuth.hpp
 include/boost/geometry/algorithms/buffer.hpp
 include/boost/geometry/algorithms/centroid.hpp
 include/boost/geometry/algorithms/clear.hpp
+include/boost/geometry/algorithms/closest_points.hpp
 include/boost/geometry/algorithms/comparable_distance.hpp
 include/boost/geometry/algorithms/convert.hpp
 include/boost/geometry/algorithms/convex_hull.hpp
@@ -4338,11 +4345,20 @@ include/boost/geometry/algorithms/detail/calculate_point_order.hpp
 include/boost/geometry/algorithms/detail/calculate_sum.hpp
 include/boost/geometry/algorithms/detail/centroid/
 include/boost/geometry/algorithms/detail/centroid/translating_transformer.hpp
-include/boost/geometry/algorithms/detail/check_iterator_range.hpp
 include/boost/geometry/algorithms/detail/closest_feature/
 include/boost/geometry/algorithms/detail/closest_feature/geometry_to_range.hpp
 include/boost/geometry/algorithms/detail/closest_feature/point_to_range.hpp
 include/boost/geometry/algorithms/detail/closest_feature/range_to_range.hpp
+include/boost/geometry/algorithms/detail/closest_points/
+include/boost/geometry/algorithms/detail/closest_points/implementation.hpp
+include/boost/geometry/algorithms/detail/closest_points/interface.hpp
+include/boost/geometry/algorithms/detail/closest_points/linear_or_areal_to_areal.hpp
+include/boost/geometry/algorithms/detail/closest_points/linear_to_linear.hpp
+include/boost/geometry/algorithms/detail/closest_points/multipoint_to_geometry.hpp
+include/boost/geometry/algorithms/detail/closest_points/point_to_geometry.hpp
+include/boost/geometry/algorithms/detail/closest_points/range_to_geometry_rtree.hpp
+include/boost/geometry/algorithms/detail/closest_points/segment_to_segment.hpp
+include/boost/geometry/algorithms/detail/closest_points/utilities.hpp
 include/boost/geometry/algorithms/detail/comparable_distance/
 include/boost/geometry/algorithms/detail/comparable_distance/implementation.hpp
 include/boost/geometry/algorithms/detail/comparable_distance/interface.hpp
@@ -4588,6 +4604,7 @@ include/boost/geometry/algorithms/discrete_frechet_distance.hpp
 include/boost/geometry/algorithms/discrete_hausdorff_distance.hpp
 include/boost/geometry/algorithms/disjoint.hpp
 include/boost/geometry/algorithms/dispatch/
+include/boost/geometry/algorithms/dispatch/closest_points.hpp
 include/boost/geometry/algorithms/dispatch/disjoint.hpp
 include/boost/geometry/algorithms/dispatch/distance.hpp
 include/boost/geometry/algorithms/dispatch/envelope.hpp
@@ -5215,6 +5232,7 @@ include/boost/geometry/strategies/cartesian/buffer_side_straight.hpp
 include/boost/geometry/strategies/cartesian/centroid_average.hpp
 include/boost/geometry/strategies/cartesian/centroid_bashein_detmer.hpp
 include/boost/geometry/strategies/cartesian/centroid_weighted_length.hpp
+include/boost/geometry/strategies/cartesian/closest_points_pt_seg.hpp
 include/boost/geometry/strategies/cartesian/densify.hpp
 include/boost/geometry/strategies/cartesian/disjoint_box_box.hpp
 include/boost/geometry/strategies/cartesian/disjoint_segment_box.hpp
@@ -5248,6 +5266,11 @@ include/boost/geometry/strategies/centroid/cartesian.hpp
 include/boost/geometry/strategies/centroid/geographic.hpp
 include/boost/geometry/strategies/centroid/services.hpp
 include/boost/geometry/strategies/centroid/spherical.hpp
+include/boost/geometry/strategies/closest_points/
+include/boost/geometry/strategies/closest_points/cartesian.hpp
+include/boost/geometry/strategies/closest_points/geographic.hpp
+include/boost/geometry/strategies/closest_points/services.hpp
+include/boost/geometry/strategies/closest_points/spherical.hpp
 include/boost/geometry/strategies/comparable_distance_result.hpp
 include/boost/geometry/strategies/compare.hpp
 include/boost/geometry/strategies/concepts/
@@ -5310,6 +5333,7 @@ include/boost/geometry/strategies/geographic.hpp
 include/boost/geometry/strategies/geographic/area.hpp
 include/boost/geometry/strategies/geographic/azimuth.hpp
 include/boost/geometry/strategies/geographic/buffer_point_circle.hpp
+include/boost/geometry/strategies/geographic/closest_points_pt_seg.hpp
 include/boost/geometry/strategies/geographic/densify.hpp
 include/boost/geometry/strategies/geographic/disjoint_segment_box.hpp
 include/boost/geometry/strategies/geographic/distance.hpp
@@ -5383,6 +5407,7 @@ include/boost/geometry/strategies/spherical/
 include/boost/geometry/strategies/spherical.hpp
 include/boost/geometry/strategies/spherical/area.hpp
 include/boost/geometry/strategies/spherical/azimuth.hpp
+include/boost/geometry/strategies/spherical/closest_points_pt_seg.hpp
 include/boost/geometry/strategies/spherical/compare.hpp
 include/boost/geometry/strategies/spherical/densify.hpp
 include/boost/geometry/strategies/spherical/disjoint_box_box.hpp
@@ -5425,8 +5450,10 @@ include/boost/geometry/strategy/cartesian/area.hpp
 include/boost/geometry/strategy/cartesian/area_box.hpp
 include/boost/geometry/strategy/cartesian/envelope.hpp
 include/boost/geometry/strategy/cartesian/envelope_box.hpp
+include/boost/geometry/strategy/cartesian/envelope_boxes.hpp
 include/boost/geometry/strategy/cartesian/envelope_multipoint.hpp
 include/boost/geometry/strategy/cartesian/envelope_point.hpp
+include/boost/geometry/strategy/cartesian/envelope_range.hpp
 include/boost/geometry/strategy/cartesian/envelope_segment.hpp
 include/boost/geometry/strategy/cartesian/expand_box.hpp
 include/boost/geometry/strategy/cartesian/expand_point.hpp
@@ -5442,6 +5469,7 @@ include/boost/geometry/strategy/geographic/
 include/boost/geometry/strategy/geographic/area.hpp
 include/boost/geometry/strategy/geographic/area_box.hpp
 include/boost/geometry/strategy/geographic/envelope.hpp
+include/boost/geometry/strategy/geographic/envelope_range.hpp
 include/boost/geometry/strategy/geographic/envelope_segment.hpp
 include/boost/geometry/strategy/geographic/expand_segment.hpp
 include/boost/geometry/strategy/relate.hpp
@@ -5450,8 +5478,10 @@ include/boost/geometry/strategy/spherical/area.hpp
 include/boost/geometry/strategy/spherical/area_box.hpp
 include/boost/geometry/strategy/spherical/envelope.hpp
 include/boost/geometry/strategy/spherical/envelope_box.hpp
+include/boost/geometry/strategy/spherical/envelope_boxes.hpp
 include/boost/geometry/strategy/spherical/envelope_multipoint.hpp
 include/boost/geometry/strategy/spherical/envelope_point.hpp
+include/boost/geometry/strategy/spherical/envelope_range.hpp
 include/boost/geometry/strategy/spherical/envelope_segment.hpp
 include/boost/geometry/strategy/spherical/expand_box.hpp
 include/boost/geometry/strategy/spherical/expand_point.hpp
@@ -7075,6 +7105,7 @@ include/boost/io/detail/
 include/boost/io/detail/buffer_fill.hpp
 include/boost/io/detail/ostream_guard.hpp
 include/boost/io/ios_state.hpp
+include/boost/io/nullstream.hpp
 include/boost/io/ostream_joiner.hpp
 include/boost/io/ostream_put.hpp
 include/boost/io/quoted.hpp
@@ -7272,7 +7303,6 @@ include/boost/json/detail/impl/handler.ipp
 include/boost/json/detail/impl/shared_resource.ipp
 include/boost/json/detail/impl/stack.ipp
 include/boost/json/detail/impl/string_impl.ipp
-include/boost/json/detail/index_sequence.hpp
 include/boost/json/detail/object.hpp
 include/boost/json/detail/ryu/
 include/boost/json/detail/ryu/detail/
@@ -7308,6 +7338,7 @@ include/boost/json/impl/object.hpp
 include/boost/json/impl/object.ipp
 include/boost/json/impl/parse.ipp
 include/boost/json/impl/parser.ipp
+include/boost/json/impl/pointer.ipp
 include/boost/json/impl/serialize.ipp
 include/boost/json/impl/serializer.ipp
 include/boost/json/impl/static_resource.ipp
@@ -7386,10 +7417,16 @@ include/boost/leaf/
 include/boost/leaf.hpp
 include/boost/leaf/capture.hpp
 include/boost/leaf/common.hpp
+include/boost/leaf/config/
+include/boost/leaf/config.hpp
+include/boost/leaf/config/tls.hpp
+include/boost/leaf/config/tls_array.hpp
+include/boost/leaf/config/tls_cpp11.hpp
+include/boost/leaf/config/tls_freertos.hpp
+include/boost/leaf/config/tls_globals.hpp
 include/boost/leaf/context.hpp
 include/boost/leaf/detail/
 include/boost/leaf/detail/all.hpp
-include/boost/leaf/detail/config.hpp
 include/boost/leaf/detail/demangle.hpp
 include/boost/leaf/detail/function_traits.hpp
 include/boost/leaf/detail/mp11.hpp
@@ -7401,6 +7438,7 @@ include/boost/leaf/handle_errors.hpp
 include/boost/leaf/on_error.hpp
 include/boost/leaf/pred.hpp
 include/boost/leaf/result.hpp
+include/boost/leaf/to_variant.hpp
 include/boost/lexical_cast/
 include/boost/lexical_cast.hpp
 include/boost/lexical_cast/bad_lexical_cast.hpp
@@ -7767,6 +7805,7 @@ include/boost/log/utility/manipulators.hpp
 include/boost/log/utility/manipulators/add_value.hpp
 include/boost/log/utility/manipulators/auto_newline.hpp
 include/boost/log/utility/manipulators/dump.hpp
+include/boost/log/utility/manipulators/invoke.hpp
 include/boost/log/utility/manipulators/optional.hpp
 include/boost/log/utility/manipulators/range.hpp
 include/boost/log/utility/manipulators/to_log.hpp
@@ -7820,17 +7859,28 @@ include/boost/math/ccmath/abs.hpp
 include/boost/math/ccmath/ccmath.hpp
 include/boost/math/ccmath/ceil.hpp
 include/boost/math/ccmath/copysign.hpp
+include/boost/math/ccmath/detail/
+include/boost/math/ccmath/detail/swap.hpp
 include/boost/math/ccmath/div.hpp
 include/boost/math/ccmath/fabs.hpp
+include/boost/math/ccmath/fdim.hpp
 include/boost/math/ccmath/floor.hpp
+include/boost/math/ccmath/fmax.hpp
+include/boost/math/ccmath/fmin.hpp
 include/boost/math/ccmath/fmod.hpp
 include/boost/math/ccmath/fpclassify.hpp
 include/boost/math/ccmath/frexp.hpp
+include/boost/math/ccmath/hypot.hpp
 include/boost/math/ccmath/ilogb.hpp
 include/boost/math/ccmath/isfinite.hpp
+include/boost/math/ccmath/isgreater.hpp
+include/boost/math/ccmath/isgreaterequal.hpp
 include/boost/math/ccmath/isinf.hpp
+include/boost/math/ccmath/isless.hpp
+include/boost/math/ccmath/islessequal.hpp
 include/boost/math/ccmath/isnan.hpp
 include/boost/math/ccmath/isnormal.hpp
+include/boost/math/ccmath/isunordered.hpp
 include/boost/math/ccmath/ldexp.hpp
 include/boost/math/ccmath/logb.hpp
 include/boost/math/ccmath/modf.hpp
@@ -8090,6 +8140,8 @@ include/boost/math/special_functions/lanczos.hpp
 include/boost/math/special_functions/legendre.hpp
 include/boost/math/special_functions/legendre_stieltjes.hpp
 include/boost/math/special_functions/log1p.hpp
+include/boost/math/special_functions/logaddexp.hpp
+include/boost/math/special_functions/logsumexp.hpp
 include/boost/math/special_functions/math_fwd.hpp
 include/boost/math/special_functions/modf.hpp
 include/boost/math/special_functions/next.hpp
@@ -8132,7 +8184,9 @@ include/boost/math/tools/big_constant.hpp
 include/boost/math/tools/bivariate_statistics.hpp
 include/boost/math/tools/centered_continued_fraction.hpp
 include/boost/math/tools/cohen_acceleration.hpp
+include/boost/math/tools/color_maps.hpp
 include/boost/math/tools/complex.hpp
+include/boost/math/tools/concepts.hpp
 include/boost/math/tools/condition_numbers.hpp
 include/boost/math/tools/config.hpp
 include/boost/math/tools/convert_from_string.hpp
@@ -8260,7 +8314,6 @@ include/boost/math/tools/header_deprecated.hpp
 include/boost/math/tools/is_constant_evaluated.hpp
 include/boost/math/tools/is_detected.hpp
 include/boost/math/tools/is_standalone.hpp
-include/boost/math/tools/lexical_cast.hpp
 include/boost/math/tools/luroth_expansion.hpp
 include/boost/math/tools/minima.hpp
 include/boost/math/tools/mp.hpp
@@ -8270,6 +8323,7 @@ include/boost/math/tools/polynomial.hpp
 include/boost/math/tools/polynomial_gcd.hpp
 include/boost/math/tools/precision.hpp
 include/boost/math/tools/promotion.hpp
+include/boost/math/tools/quartic_roots.hpp
 include/boost/math/tools/random_vector.hpp
 include/boost/math/tools/rational.hpp
 include/boost/math/tools/real_cast.hpp
@@ -8649,9 +8703,11 @@ include/boost/move/algorithm.hpp
 include/boost/move/core.hpp
 include/boost/move/default_delete.hpp
 include/boost/move/detail/
+include/boost/move/detail/addressof.hpp
 include/boost/move/detail/config_begin.hpp
 include/boost/move/detail/config_end.hpp
 include/boost/move/detail/destruct_n.hpp
+include/boost/move/detail/force_ptr.hpp
 include/boost/move/detail/fwd_macros.hpp
 include/boost/move/detail/iterator_to_raw_pointer.hpp
 include/boost/move/detail/iterator_traits.hpp
@@ -10067,19 +10123,24 @@ include/boost/multiprecision/detail/constexpr.hpp
 include/boost/multiprecision/detail/default_ops.hpp
 include/boost/multiprecision/detail/digits.hpp
 include/boost/multiprecision/detail/dynamic_array.hpp
+include/boost/multiprecision/detail/empty_value.hpp
 include/boost/multiprecision/detail/endian.hpp
 include/boost/multiprecision/detail/et_ops.hpp
+include/boost/multiprecision/detail/float128_functions.hpp
 include/boost/multiprecision/detail/float_string_cvt.hpp
+include/boost/multiprecision/detail/fpclassify.hpp
 include/boost/multiprecision/detail/functions/
 include/boost/multiprecision/detail/functions/constants.hpp
 include/boost/multiprecision/detail/functions/pow.hpp
 include/boost/multiprecision/detail/functions/trig.hpp
+include/boost/multiprecision/detail/functions/trunc.hpp
 include/boost/multiprecision/detail/generic_interconvert.hpp
 include/boost/multiprecision/detail/hash.hpp
 include/boost/multiprecision/detail/integer_ops.hpp
 include/boost/multiprecision/detail/itos.hpp
 include/boost/multiprecision/detail/min_max.hpp
 include/boost/multiprecision/detail/no_et_ops.hpp
+include/boost/multiprecision/detail/no_exceptions_support.hpp
 include/boost/multiprecision/detail/number_base.hpp
 include/boost/multiprecision/detail/number_compare.hpp
 include/boost/multiprecision/detail/precision.hpp
@@ -10088,6 +10149,7 @@ include/boost/multiprecision/detail/standalone_config.hpp
 include/boost/multiprecision/detail/static_array.hpp
 include/boost/multiprecision/detail/tables.hpp
 include/boost/multiprecision/detail/ublas_interop.hpp
+include/boost/multiprecision/detail/uniform_int_distribution.hpp
 include/boost/multiprecision/detail/utype_helper.hpp
 include/boost/multiprecision/eigen.hpp
 include/boost/multiprecision/float128.hpp
@@ -10108,6 +10170,7 @@ include/boost/multiprecision/traits/extract_exponent_type.hpp
 include/boost/multiprecision/traits/is_backend.hpp
 include/boost/multiprecision/traits/is_byte_container.hpp
 include/boost/multiprecision/traits/is_complex.hpp
+include/boost/multiprecision/traits/is_convertible_arithmetic.hpp
 include/boost/multiprecision/traits/is_restricted_conversion.hpp
 include/boost/multiprecision/traits/is_variable_precision.hpp
 include/boost/multiprecision/traits/max_digits10.hpp
@@ -11272,6 +11335,7 @@ include/boost/predef/architecture/blackfin.h
 include/boost/predef/architecture/convex.h
 include/boost/predef/architecture/e2k.h
 include/boost/predef/architecture/ia64.h
+include/boost/predef/architecture/loongarch.h
 include/boost/predef/architecture/m68k.h
 include/boost/predef/architecture/mips.h
 include/boost/predef/architecture/parisc.h
@@ -12572,6 +12636,7 @@ include/boost/qvm/gen/vec_operations2.hpp
 include/boost/qvm/gen/vec_operations3.hpp
 include/boost/qvm/gen/vec_operations4.hpp
 include/boost/qvm/inline.hpp
+include/boost/qvm/is_scalar.hpp
 include/boost/qvm/lite.hpp
 include/boost/qvm/map.hpp
 include/boost/qvm/map_mat_mat.hpp
@@ -14605,6 +14670,7 @@ include/boost/system/detail/std_category.hpp
 include/boost/system/detail/system_category.hpp
 include/boost/system/detail/system_category_condition_win32.hpp
 include/boost/system/detail/system_category_impl.hpp
+include/boost/system/detail/system_category_message.hpp
 include/boost/system/detail/system_category_message_win32.hpp
 include/boost/system/detail/throws.hpp
 include/boost/system/errc.hpp

@@ -1,0 +1,36 @@
+Boost.JSON array::erase can segfault
+https://github.com/boostorg/json/issues/692
+
+Index: libs/json/test/array.cpp
+--- libs/json/test/array.cpp.orig
++++ libs/json/test/array.cpp
+@@ -1270,6 +1270,21 @@ class array_test (public)
+     }
+ 
+     void
++    testIssue692()
++    {
++	    array a;
++	    object obj;
++	    obj["test1"] = "hello";
++	    a.push_back(obj);
++	    a.push_back(obj);
++	    a.push_back(obj);
++	    a.push_back(obj);
++	    a.push_back(obj);
++	    while(a.size())
++		    a.erase(a.begin());
++    }
++
++    void
+     run()
+     {
+         testDestroy();
+@@ -1283,6 +1298,7 @@ class array_test (public)
+         testExceptions();
+         testEquality();
+         testHash();
++        testIssue692();
+     }
+ };
+ 

@@ -3,7 +3,7 @@ NOT_FOR_ARCHS-md = alpha hppa sparc64
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.78.0
+VERSION=	1.79.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
@@ -12,7 +12,7 @@ MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/sour
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	19.0
+SO_VERSION=	20.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
