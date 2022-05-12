@@ -1,6 +1,6 @@
 COMMENT =		tool for installing Python packages
 
-MODPY_EGG_VERSION =	22.0.4
+MODPY_EGG_VERSION =	22.1
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
