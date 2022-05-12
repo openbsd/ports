@@ -1826,6 +1826,7 @@ google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/${MODPY_PYCACHE}instance_prop_re
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/${MODPY_PYCACHE}instances.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/${MODPY_PYCACHE}network.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/${MODPY_PYCACHE}operations.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/${MODPY_PYCACHE}users_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/api_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/cert.py
@@ -1843,6 +1844,7 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/ssl/${MODPY_PYCA
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/ssl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/ssl/${MODPY_PYCACHE}server_ca_certs.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/ssl/server_ca_certs.py
+google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/users_util.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/validate.py
 google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/
 google-cloud-sdk/lib/googlecloudsdk/api_lib/storage/__init__.py
@@ -5251,6 +5253,7 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCA
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}export_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}flags.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}generate_login_token_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}import_util.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}instances.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}reschedule_maintenance_util.${MODPY_PYC_MAGIC_TAG}pyc
@@ -5258,6 +5261,7 @@ google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}users.${MODP
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/export_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/flags.py
+google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/generate_login_token_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/import_util.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/instances.py
 google-cloud-sdk/lib/googlecloudsdk/command_lib/sql/reschedule_maintenance_util.py
@@ -11631,7 +11635,8 @@ google-cloud-sdk/lib/surface/artifacts/files/
 google-cloud-sdk/lib/surface/artifacts/files/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/artifacts/files/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/artifacts/files/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/surface/artifacts/files/list.yaml
+google-cloud-sdk/lib/surface/artifacts/files/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/artifacts/files/list.py
 google-cloud-sdk/lib/surface/artifacts/googet/
 google-cloud-sdk/lib/surface/artifacts/googet/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/artifacts/googet/${MODPY_PYCACHE}/
@@ -15036,6 +15041,18 @@ google-cloud-sdk/lib/surface/container/fleet/service_directory/describe.py
 google-cloud-sdk/lib/surface/container/fleet/service_directory/disable.py
 google-cloud-sdk/lib/surface/container/fleet/service_directory/enable.py
 google-cloud-sdk/lib/surface/container/fleet/update.py
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/container/fleet/workload_certificate/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/${MODPY_PYCACHE}disable.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/${MODPY_PYCACHE}enable.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/describe.py
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/disable.py
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/enable.py
+google-cloud-sdk/lib/surface/container/fleet/workload_certificate/update.py
 google-cloud-sdk/lib/surface/container/get_server_config.py
 google-cloud-sdk/lib/surface/container/hub/
 google-cloud-sdk/lib/surface/container/hub/__init__.py
@@ -20421,6 +20438,7 @@ google-cloud-sdk/lib/surface/sql/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/sql/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/sql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/sql/${MODPY_PYCACHE}connect.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/sql/${MODPY_PYCACHE}generate_login_token.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/sql/${MODPY_PYCACHE}reschedule_maintenance.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/sql/backups/
 google-cloud-sdk/lib/surface/sql/backups/__init__.py
@@ -20472,6 +20490,7 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/sql/flags/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/sql/flags/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/sql/flags/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/sql/flags/list.py
+google-cloud-sdk/lib/surface/sql/generate_login_token.py
 google-cloud-sdk/lib/surface/sql/import/
 google-cloud-sdk/lib/surface/sql/import/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/sql/import/${MODPY_PYCACHE}/
