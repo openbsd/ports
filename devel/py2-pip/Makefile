@@ -1,5 +1,6 @@
 COMMENT =		tool for installing Python packages
 
+PORTROACH=		limit:^20\.
 MODPY_EGG_VERSION =	20.3.4
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
