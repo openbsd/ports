@@ -1,6 +1,8 @@
 MODKF5_VERSION =	5.91.0
 
+.if empty(GH_ACCOUNT)
 EXTRACT_SUFX ?=		.tar.xz
+.endif
 
 .if ${PKGPATH:Ndevel/kf5/extra-cmake-modules}
 BUILD_DEPENDS +=	devel/kf5/extra-cmake-modules>=${MODKF5_VERSION}
