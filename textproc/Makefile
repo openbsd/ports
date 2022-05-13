@@ -28,6 +28,7 @@
      SUBDIR += codesearch
      SUBDIR += codespell
      SUBDIR += crossfire
+     SUBDIR += crunch
      SUBDIR += csvquote
      SUBDIR += dblatex
      SUBDIR += delta
