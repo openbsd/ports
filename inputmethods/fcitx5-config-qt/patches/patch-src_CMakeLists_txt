@@ -1,0 +1,11 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -7,4 +7,6 @@ if (ENABLE_CONFIG_QT)
+     add_subdirectory(configtool)
+ endif()
+ 
+-add_subdirectory(migrator)
++if (ENABLE_MIGRATOR)
++    add_subdirectory(migrator)
++endif()
