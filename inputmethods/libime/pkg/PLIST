@@ -1,0 +1,76 @@
+@tag update-desktop-database
+@bin bin/libime_history
+@bin bin/libime_migrate_fcitx4_pinyin
+@bin bin/libime_migrate_fcitx4_table
+@bin bin/libime_pinyindict
+@bin bin/libime_prediction
+@bin bin/libime_slm_build_binary
+@bin bin/libime_tabledict
+include/LibIME/
+include/LibIME/libime/
+include/LibIME/libime/core/
+include/LibIME/libime/core/datrie.h
+include/LibIME/libime/core/decoder.h
+include/LibIME/libime/core/dictionary.h
+include/LibIME/libime/core/historybigram.h
+include/LibIME/libime/core/inputbuffer.h
+include/LibIME/libime/core/languagemodel.h
+include/LibIME/libime/core/lattice.h
+include/LibIME/libime/core/libimecore_export.h
+include/LibIME/libime/core/lrucache.h
+include/LibIME/libime/core/prediction.h
+include/LibIME/libime/core/segmentgraph.h
+include/LibIME/libime/core/triedictionary.h
+include/LibIME/libime/core/userlanguagemodel.h
+include/LibIME/libime/core/utils.h
+include/LibIME/libime/pinyin/
+include/LibIME/libime/pinyin/libimepinyin_export.h
+include/LibIME/libime/pinyin/pinyincontext.h
+include/LibIME/libime/pinyin/pinyindata.h
+include/LibIME/libime/pinyin/pinyindecoder.h
+include/LibIME/libime/pinyin/pinyindictionary.h
+include/LibIME/libime/pinyin/pinyinencoder.h
+include/LibIME/libime/pinyin/pinyinime.h
+include/LibIME/libime/pinyin/pinyinmatchstate.h
+include/LibIME/libime/pinyin/pinyinmatchstate_p.h
+include/LibIME/libime/pinyin/shuangpindata.h
+include/LibIME/libime/pinyin/shuangpinprofile.h
+include/LibIME/libime/table/
+include/LibIME/libime/table/autophrasedict.h
+include/LibIME/libime/table/libimetable_export.h
+include/LibIME/libime/table/tablebaseddictionary.h
+include/LibIME/libime/table/tablecontext.h
+include/LibIME/libime/table/tabledecoder.h
+include/LibIME/libime/table/tableoptions.h
+include/LibIME/libime/table/tablerule.h
+lib/cmake/LibIMECore/
+lib/cmake/LibIMECore/LibIMECoreConfig.cmake
+lib/cmake/LibIMECore/LibIMECoreConfigVersion.cmake
+lib/cmake/LibIMECore/LibIMECoreTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibIMECore/LibIMECoreTargets.cmake
+lib/cmake/LibIMEPinyin/
+lib/cmake/LibIMEPinyin/LibIMEPinyinConfig.cmake
+lib/cmake/LibIMEPinyin/LibIMEPinyinConfigVersion.cmake
+lib/cmake/LibIMEPinyin/LibIMEPinyinTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibIMEPinyin/LibIMEPinyinTargets.cmake
+lib/cmake/LibIMETable/
+lib/cmake/LibIMETable/LibIMETableConfig.cmake
+lib/cmake/LibIMETable/LibIMETableConfigVersion.cmake
+lib/cmake/LibIMETable/LibIMETableTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/LibIMETable/LibIMETableTargets.cmake
+@lib lib/libIMECore.so.${LIBIMECore_VERSION}
+@lib lib/libIMEPinyin.so.${LIBIMEPinyin_VERSION}
+@lib lib/libIMETable.so.${LIBIMETable_VERSION}
+lib/libime/
+lib/libime/zh_CN.lm
+lib/libime/zh_CN.lm.predict
+share/libime/
+share/libime/cj.main.dict
+share/libime/db.main.dict
+share/libime/erbi.main.dict
+share/libime/qxm.main.dict
+share/libime/sc.dict
+share/libime/wanfeng.main.dict
+share/libime/wbpy.main.dict
+share/libime/wbx.main.dict
+share/libime/zrm.main.dict

@@ -1,0 +1,12 @@
+Index: src/libime/core/kenlm/util/bit_packing.hh
+--- src/libime/core/kenlm/util/bit_packing.hh.orig
++++ src/libime/core/kenlm/util/bit_packing.hh
+@@ -24,7 +24,7 @@
+ #elif __linux__
+ #include <endian.h>
+ #elif !defined(_WIN32) && !defined(_WIN64)
+-#include <arpa/nameser_compat.h>
++#include <arpa/nameser.h>
+ #endif
+ 
+ #include <stdint.h>
