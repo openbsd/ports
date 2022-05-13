@@ -1,0 +1,11 @@
+Index: gui/CMakeLists.txt
+--- gui/CMakeLists.txt.orig
++++ gui/CMakeLists.txt
+@@ -22,7 +22,6 @@ add_definitions(-DQT_NO_KEYWORDS -std=c++11)
+ target_include_directories(fcitx5-kkc-config PRIVATE ${PROJECT_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+ 
+ set_target_properties(fcitx5-kkc-config PROPERTIES
+-                      LINK_FLAGS "-Wl,--no-undefined"
+                       AUTOMOC TRUE
+                       AUTOUIC TRUE
+                       AUTOUIC_OPTIONS "-tr=fcitx::tr2fcitx;--include=fcitxqti18nhelper.h")
