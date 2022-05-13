@@ -9,7 +9,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 # (dovecot-fts-xapian, dovecot-fts-flatcurve, dovecot-pigeonhole if
 # not updated anyway)
 V_MAJOR=	2.3
-V_DOVECOT=	2.3.18
+V_DOVECOT=	2.3.19
 EPOCH=		0
 
 DISTNAME=	dovecot-${V_DOVECOT}
@@ -23,17 +23,15 @@ CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 DPB_PROPERTIES=	parallel
 
-REVISION-server=0
-
 SHARED_LIBS=	dovecot-compression 1.1 \
-		dovecot-dsync	1.0 \
+		dovecot-dsync	2.0 \
 		dovecot-fts	1.0 \
 		dovecot-lda	3.0 \
 		dovecot-ldap    1.0 \
 		dovecot-login	4.0 \
 		dovecot-sql	3.0 \
-		dovecot-storage	4.0 \
-		dovecot		4.0
+		dovecot-storage	4.1 \
+		dovecot		5.0
 
 HOMEPAGE=	https://dovecot.org/
 

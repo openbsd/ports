@@ -498,6 +498,7 @@ include/dovecot/pop3c-sync.h
 include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
+include/dovecot/process-stat.h
 include/dovecot/process-title.h
 include/dovecot/program-client.h
 include/dovecot/push-notification-drivers.h
@@ -544,6 +545,7 @@ include/dovecot/sdbox-storage.h
 include/dovecot/sdbox-sync.h
 include/dovecot/sendfile-util.h
 include/dovecot/seq-range-array.h
+include/dovecot/seq-set-builder.h
 include/dovecot/service-settings.h
 include/dovecot/settings-parser.h
 include/dovecot/settings.h
