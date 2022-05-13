@@ -1,0 +1,5 @@
+@bin bin/crunch
+@man man/man1/crunch.1
+share/crunch/
+share/crunch/charset.lst
+share/doc/crunch/
