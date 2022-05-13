@@ -1,20 +1,25 @@
      SUBDIR =
      SUBDIR += anthy
      SUBDIR += cellwriter
-     SUBDIR += fcitx
-     SUBDIR += fcitx-anthy
-     SUBDIR += fcitx-chewing
-     SUBDIR += fcitx-configtool
-     SUBDIR += fcitx-kkc
-     SUBDIR += fcitx-m17n
-     SUBDIR += fcitx-pinyin
-     SUBDIR += fcitx-qt5
-     SUBDIR += fcitx-tables
+     SUBDIR += fcitx5
+     SUBDIR += fcitx5-anthy
+     SUBDIR += fcitx5-chewing
+     SUBDIR += fcitx5-chinese-addons
+     SUBDIR += fcitx5-config-qt
+     SUBDIR += fcitx5-gtk
+     SUBDIR += fcitx5-hangul
+     SUBDIR += fcitx5-kkc
+     SUBDIR += fcitx5-lua
+     SUBDIR += fcitx5-m17n
+     SUBDIR += fcitx5-qt
+     SUBDIR += fcitx5-table-extra
+     SUBDIR += fcitx5-unikey
      SUBDIR += ibus
      SUBDIR += ibus-anthy
      SUBDIR += ibus-kkc
      SUBDIR += ibus-skk
      SUBDIR += ibus-typing-booster
+     SUBDIR += libime
      SUBDIR += libkkc
      SUBDIR += libkkc-data
      SUBDIR += libskk
@@ -30,5 +35,6 @@
      SUBDIR += uim
      SUBDIR += uim-chewing
      SUBDIR += uim-tomoe-gtk
+     SUBDIR += xcb-imdkit
      
 .include <bsd.port.subdir.mk>
