@@ -73,6 +73,7 @@ lib/kamailio/modules/
 @so lib/kamailio/modules/lcr.so
 @so lib/kamailio/modules/log_custom.so
 @so lib/kamailio/modules/lost.so
+@so lib/kamailio/modules/lrkproxy.so
 @so lib/kamailio/modules/mangler.so
 @so lib/kamailio/modules/matrix.so
 @so lib/kamailio/modules/maxfwd.so
@@ -146,7 +147,7 @@ lib/kamailio/modules/
 @so lib/kamailio/modules/uid_gflags.so
 @so lib/kamailio/modules/uid_uri_db.so
 @so lib/kamailio/modules/uri_db.so
-@so lib/kamailio/modules/userblacklist.so
+@so lib/kamailio/modules/userblocklist.so
 @so lib/kamailio/modules/usrloc.so
 @so lib/kamailio/modules/utils.so
 @so lib/kamailio/modules/websocket.so
@@ -227,6 +228,7 @@ share/doc/kamailio/modules/README.kex
 share/doc/kamailio/modules/README.lcr
 share/doc/kamailio/modules/README.log_custom
 share/doc/kamailio/modules/README.lost
+share/doc/kamailio/modules/README.lrkproxy
 share/doc/kamailio/modules/README.mangler
 share/doc/kamailio/modules/README.matrix
 share/doc/kamailio/modules/README.maxfwd
@@ -300,7 +302,7 @@ share/doc/kamailio/modules/README.uid_domain
 share/doc/kamailio/modules/README.uid_gflags
 share/doc/kamailio/modules/README.uid_uri_db
 share/doc/kamailio/modules/README.uri_db
-share/doc/kamailio/modules/README.userblacklist
+share/doc/kamailio/modules/README.userblocklist
 share/doc/kamailio/modules/README.usrloc
 share/doc/kamailio/modules/README.utils
 share/doc/kamailio/modules/README.websocket
@@ -344,7 +346,7 @@ share/kamailio/dbtext/kamailio/dr_gateways
 share/kamailio/dbtext/kamailio/dr_groups
 share/kamailio/dbtext/kamailio/dr_gw_lists
 share/kamailio/dbtext/kamailio/dr_rules
-share/kamailio/dbtext/kamailio/globalblacklist
+share/kamailio/dbtext/kamailio/globalblocklist
 share/kamailio/dbtext/kamailio/grp
 share/kamailio/dbtext/kamailio/htable
 share/kamailio/dbtext/kamailio/imc_members
@@ -388,7 +390,7 @@ share/kamailio/dbtext/kamailio/uid_uri
 share/kamailio/dbtext/kamailio/uid_uri_attrs
 share/kamailio/dbtext/kamailio/uid_user_attrs
 share/kamailio/dbtext/kamailio/uri
-share/kamailio/dbtext/kamailio/userblacklist
+share/kamailio/dbtext/kamailio/userblocklist
 share/kamailio/dbtext/kamailio/usr_preferences
 share/kamailio/dbtext/kamailio/version
 share/kamailio/dbtext/kamailio/watchers

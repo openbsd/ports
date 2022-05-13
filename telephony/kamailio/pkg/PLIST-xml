@@ -96,7 +96,7 @@ share/kamailio/xhttp_pi/uid_uri_db-mod
 share/kamailio/xhttp_pi/uid_uri_db-table
 share/kamailio/xhttp_pi/uri_db-mod
 share/kamailio/xhttp_pi/uri_db-table
-share/kamailio/xhttp_pi/userblacklist-mod
-share/kamailio/xhttp_pi/userblacklist-table
+share/kamailio/xhttp_pi/userblocklist-mod
+share/kamailio/xhttp_pi/userblocklist-table
 share/kamailio/xhttp_pi/usrloc-mod
 share/kamailio/xhttp_pi/usrloc-table

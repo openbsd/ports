@@ -1,7 +1,6 @@
 COMMENT-main =		mature and flexible open source SIP server
 
-VERSION =		5.4.5
-REVISION-main =		0
+VERSION =		5.5.4
 
 DISTNAME =		kamailio-${VERSION}_src
 

@@ -14,44 +14,57 @@ Index: src/Makefile.defs
  
  alpha_macros= __alpha__ __alpha _M_ALPHA_
  
-@@ -991,8 +991,8 @@ else		# CC_NAME, gcc
+@@ -946,8 +946,7 @@ $(call				set_if_empty,CPUTYPE,generic)
+ 					CFLAGS+=-m32 -minline-all-stringops \
+ 							-falign-loops \
+ 							-ftree-vectorize \
+-							-fno-strict-overflow \
+-							-mtune=$(CPUTYPE)
++							-fno-strict-overflow
+ 					LDFLAGS+=-m32
+ else
+ 			#if gcc 4.0+
+@@ -996,7 +995,7 @@ else		# CC_NAME, gcc
  ifeq		($(CC_NAME), clang)
  $(call                          set_if_empty,CPUTYPE,athlon64)
  					C_DEFS+=-DCC_GCC_LIKE_ASM
--					CFLAGS+=-g -m32 $(CC_OPT) -mtune=$(CPUTYPE)
--					LDFLAGS+=-m32
-+					CFLAGS+=
-+					LDFLAGS+=
+-					CFLAGS+=-m32 $(CC_OPT) -mtune=$(CPUTYPE)
++					CFLAGS+=-m32 $(CC_OPT)
+ 					LDFLAGS+=-m32
  else			# CC_NAME, clang
  ifeq		($(CC_NAME), icc)
- 			C_DEFS+=-DCC_GCC_LIKE_ASM
-@@ -1073,9 +1073,8 @@ else		# CC_NAME, gcc
- ifeq            ($(CC_NAME), clang)
- $(call                          set_if_empty,CPUTYPE,opteron)
- 					C_DEFS+=-DCC_GCC_LIKE_ASM
--                                        CFLAGS+=-g -m64 \
--                                                $(CC_OPT)
--                                        LDFLAGS+=-m64
-+                                        CFLAGS+=
-+                                        LDFLAGS+=
- else      	# CC_NAME, clang
- ifeq		($(CC_NAME), icc)
- 			C_DEFS+=-DCC_GCC_LIKE_ASM
-@@ -1172,6 +1171,9 @@ endif			#CC_SHORTVER, 4.x
- endif			#CC_SHORTVER, 9.0+ 8.0+ 7.0+, 6.0+, 5.0+, 4.5+ or 4.2+
- 
- else		#CC_NAME, gcc
-+ifeq		($(CC_NAME), clang)
-+					C_DEFS+=-DCC_GCC_LIKE_ASM
-+else		# CC_NAME, clang
- ifeq		($(CC_NAME), suncc)
- 			C_DEFS+=-DCC_GCC_LIKE_ASM
- 			C_DEFS+=-DSPARC64_MODE
-@@ -1184,6 +1186,7 @@ else
- 				#other compilers
- $(error 			Unsupported compiler ($(CC):$(CC_NAME)), try gcc)
- endif		#CC_NAME, suncc
-+endif		#CC_NAME, clang
- endif		#CC_NAME, gcc
- endif	#ARCH, sparc64
- 
+@@ -1028,8 +1027,7 @@ $(call				set_if_empty,CPUTYPE,generic)
+ 					CFLAGS+=-m64 -minline-all-stringops \
+ 							-falign-loops \
+ 							-ftree-vectorize \
+-							-fno-strict-overflow \
+-							-mtune=$(CPUTYPE)
++							-fno-strict-overflow
+ 					LDFLAGS+=-m64
+ else
+ 			#if gcc 4.0+
+@@ -1112,7 +1110,6 @@ ifeq (,$(strip $(filter-out 4.2+ 4.5+ 5.0+ 6.0+ 7.0+ 8
+ $(call				set_if_empty,CPUTYPE,ultrasparc)
+ 					#use 32bit for now
+ 					CFLAGS+=-m64 -mcpu=ultrasparc  \
+-							-mtune=$(CPUTYPE) \
+ 							-fno-strict-overflow \
+ 							-ftree-vectorize
+ 					# use -m64 to force 64 bit (but add it also to LDFLAGS and
+@@ -1604,7 +1601,6 @@ ifeq 				($(NOALTIVEC),)
+ 						CFLAGS += -ftree-vectorize
+ 						CFLAGS += -maltivec
+ 						CFLAGS += -fno-strict-overflow
+-						CFLAGS += -mtune=$(CPUTYPE)
+ endif
+ else
+ 			#if gcc 4.0+
+@@ -1658,7 +1654,7 @@ ifeq (,$(strip $(filter-out 4.2+ 4.5+ 5.0+ 6.0+ 7.0+ 8
+ $(call				set_if_empty,CPUTYPE,powerpc64)
+ 					CFLAGS+=-ftree-vectorize \
+ 							-fno-strict-overflow \
+-							-mtune=$(CPUTYPE) -maltivec
++							-maltivec
+ else
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)

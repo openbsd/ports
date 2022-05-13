@@ -27,7 +27,7 @@ share/kamailio/db_berkeley/kamailio/dr_gateways
 share/kamailio/db_berkeley/kamailio/dr_groups
 share/kamailio/db_berkeley/kamailio/dr_gw_lists
 share/kamailio/db_berkeley/kamailio/dr_rules
-share/kamailio/db_berkeley/kamailio/globalblacklist
+share/kamailio/db_berkeley/kamailio/globalblocklist
 share/kamailio/db_berkeley/kamailio/grp
 share/kamailio/db_berkeley/kamailio/htable
 share/kamailio/db_berkeley/kamailio/imc_members
@@ -71,7 +71,7 @@ share/kamailio/db_berkeley/kamailio/uid_uri
 share/kamailio/db_berkeley/kamailio/uid_uri_attrs
 share/kamailio/db_berkeley/kamailio/uid_user_attrs
 share/kamailio/db_berkeley/kamailio/uri
-share/kamailio/db_berkeley/kamailio/userblacklist
+share/kamailio/db_berkeley/kamailio/userblocklist
 share/kamailio/db_berkeley/kamailio/usr_preferences
 share/kamailio/db_berkeley/kamailio/version
 share/kamailio/db_berkeley/kamailio/watchers

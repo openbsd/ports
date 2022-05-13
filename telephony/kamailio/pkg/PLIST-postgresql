@@ -45,5 +45,5 @@ share/kamailio/postgres/uid_domain-create.sql
 share/kamailio/postgres/uid_gflags-create.sql
 share/kamailio/postgres/uid_uri_db-create.sql
 share/kamailio/postgres/uri_db-create.sql
-share/kamailio/postgres/userblacklist-create.sql
+share/kamailio/postgres/userblocklist-create.sql
 share/kamailio/postgres/usrloc-create.sql

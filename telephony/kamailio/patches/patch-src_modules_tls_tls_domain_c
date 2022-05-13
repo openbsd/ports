@@ -1,7 +1,7 @@
 Index: src/modules/tls/tls_domain.c
 --- src/modules/tls/tls_domain.c.orig
 +++ src/modules/tls/tls_domain.c
-@@ -132,7 +132,7 @@ static void setup_dh(SSL_CTX *ctx)
+@@ -146,7 +146,7 @@ static void setup_dh(SSL_CTX *ctx)
  		return;
  	}
  
@@ -10,7 +10,7 @@ Index: src/modules/tls/tls_domain.c
  	/* libssl >= v1.1.0 */
  	DH_set0_pqg(dh, p, NULL, g);
  #else
-@@ -1028,7 +1028,7 @@ static int ksr_tls_fix_domain(tls_domain_t* d, tls_dom
+@@ -1059,7 +1059,7 @@ static int ksr_tls_fix_domain(tls_domain_t* d, tls_dom
  	memset(d->ctx, 0, sizeof(SSL_CTX*) * procs_no);
  	for(i = 0; i < procs_no; i++) {
  

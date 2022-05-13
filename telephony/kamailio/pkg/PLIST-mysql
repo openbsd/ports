@@ -49,5 +49,5 @@ share/kamailio/mysql/uid_domain-create.sql
 share/kamailio/mysql/uid_gflags-create.sql
 share/kamailio/mysql/uid_uri_db-create.sql
 share/kamailio/mysql/uri_db-create.sql
-share/kamailio/mysql/userblacklist-create.sql
+share/kamailio/mysql/userblocklist-create.sql
 share/kamailio/mysql/usrloc-create.sql
