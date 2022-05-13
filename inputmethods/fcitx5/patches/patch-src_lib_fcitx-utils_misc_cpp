@@ -1,0 +1,12 @@
+Index: src/lib/fcitx-utils/misc.cpp
+--- src/lib/fcitx-utils/misc.cpp.orig
++++ src/lib/fcitx-utils/misc.cpp
+@@ -86,7 +86,7 @@ std::string getProcessName(pid_t pid) {
+         struct kinfo_proc2 *kp = kvm_getproc2(vm, KERN_PROC_PID, pid,
+                                               sizeof(struct kinfo_proc2), &cnt);
+ #else
+-        struct kinfo_proc *kp = kvm_getprocs(vm, KERN_PROC_PID, pid, &cnt);
++	struct kinfo_proc *kp = kvm_getprocs(vm, KERN_PROC_PID, pid, sizeof(struct kinfo_proc), &cnt);
+ #endif
+         if ((cnt != 1) || (kp == 0)) {
+             break;
