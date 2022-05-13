@@ -147,6 +147,7 @@
      SUBDIR += ports-readmes
      SUBDIR += ports-readmes-dancer
      SUBDIR += postgresql
+     SUBDIR += postgresql-ip4r
      SUBDIR += postgresql-odbc
      SUBDIR += postgresql-pllua
      SUBDIR += postgresql-plr
