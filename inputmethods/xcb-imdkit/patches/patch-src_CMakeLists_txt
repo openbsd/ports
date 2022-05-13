@@ -1,0 +1,12 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -36,8 +36,6 @@ target_include_directories(xcb-imdkit
+ set_target_properties(xcb-imdkit PROPERTIES
+                       VERSION ${XCB_IMDKIT_VERSION}
+                       SOVERSION ${XCB_IMDKIT_SOVERSION}
+-                      C_VISIBILITY_PRESET hidden
+-                      LINK_FLAGS "-Wl,--no-undefined"
+                       EXPORT_NAME XCBImdkit)
+ 
+ target_link_libraries(xcb-imdkit
