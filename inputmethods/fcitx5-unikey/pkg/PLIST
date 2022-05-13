@@ -1,0 +1,25 @@
+lib/fcitx5/
+lib/fcitx5/qt5/
+@so lib/fcitx5/qt5/libfcitx5-unikey-macro-editor.so
+@so lib/fcitx5/unikey.so
+share/fcitx5/
+share/fcitx5/addon/
+share/fcitx5/addon/unikey.conf
+share/fcitx5/inputmethod/
+share/fcitx5/inputmethod/unikey.conf
+share/icons/hicolor/128x128/apps/fcitx-unikey.png
+share/icons/hicolor/128x128/apps/org.fcitx.Fcitx5.fcitx-unikey.png
+share/locale/ca/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/da/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/de/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/he/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/ja/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/ko/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/ru/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/tr/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/vi/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/zh_CN/LC_MESSAGES/fcitx5-unikey.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx5-unikey.mo
+share/metainfo/
+share/metainfo/org.fcitx.Fcitx5.Addon.Unikey.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
