@@ -218,6 +218,7 @@
      SUBDIR += ruby-mime-types-data
      SUBDIR += ruby-mini_mime
      SUBDIR += s-nail
+     SUBDIR += s-postgray
      SUBDIR += sendmail
      SUBDIR += sendmail,ldap
      SUBDIR += sendmail,ldap,sasl
