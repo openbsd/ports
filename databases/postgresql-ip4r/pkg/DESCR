@@ -1,0 +1,13 @@
+IP4R is a PostgreSQL extension which supports 6 data types allowing
+you to store IPv4 & IPv6 addresses in a PostgreSQL table:
+
+  ip4   - a single IPv4 address
+  ip4r  - an arbitrary range of IPv4 addresses
+  ip6   - a single IPv6 address
+  ip6r  - an arbitrary range of IPv6 addresses
+  ipaddress  - a single IPv4 or IPv6 address
+  iprange    - an arbitrary range of IPv4 or IPv6 addresses
+
+While PostgreSQL already has builtin types 'inet' and 'cidr', the
+authors of this module found that they had a number of requirements
+that were not addressed by the builtin types.
