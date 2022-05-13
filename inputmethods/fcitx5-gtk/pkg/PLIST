@@ -1,0 +1,15 @@
+include/Fcitx5/GClient/
+include/Fcitx5/GClient/fcitx-gclient/
+include/Fcitx5/GClient/fcitx-gclient/fcitxgclient.h
+include/Fcitx5/GClient/fcitx-gclient/fcitxgwatcher.h
+lib/cmake/Fcitx5GClient/
+lib/cmake/Fcitx5GClient/Fcitx5GClientConfig.cmake
+lib/cmake/Fcitx5GClient/Fcitx5GClientConfigVersion.cmake
+lib/cmake/Fcitx5GClient/Fcitx5GClientTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Fcitx5GClient/Fcitx5GClientTargets.cmake
+lib/girepository-1.0/FcitxG-1.0.typelib
+@so lib/gtk-3.0/3.0.0/immodules/im-fcitx5.so
+@lib lib/libFcitx5GClient.so.${LIBFcitx5GClient_VERSION}
+lib/pkgconfig/Fcitx5GClient.pc
+share/gir-1.0/FcitxG-1.0.gir
+@tag gtk-query-immodules-3.0

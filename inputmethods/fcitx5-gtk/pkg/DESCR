@@ -1,0 +1,4 @@
+GTK input module for fcitx5.
+
+Usage requires setting the following in the environment:
+export GTK_IM_MODULE="fcitx"
