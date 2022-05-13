@@ -21,7 +21,6 @@ WANTLIB += ${COMPILER_LIBCXX} Fcitx5Utils Qt5Concurrent Qt5Core
 WANTLIB += Qt5DBus Qt5Gui Qt5Widgets c m xcb xkbcommon
 
 MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5-qt/
-EXTRACT_SUFX = .tar.xz
 
 MODULES =	devel/kf5
 

@@ -21,7 +21,6 @@ WANTLIB += anthy anthydic m
 PERMIT_PACKAGE=	Yes
 
 MODULES =       devel/kf5
-EXTRACT_SUFX =	.tar.gz
 MODQT5_DEPS =	No
 
 BUILD_DEPENDS =		devel/gettext,-tools \

@@ -21,7 +21,6 @@ WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += chewing m
 
 MODULES =       devel/kf5
-EXTRACT_SUFX =	.tar.gz
 MODQT5_DEPS =	No
 
 BUILD_DEPENDS =		devel/gettext,-tools \

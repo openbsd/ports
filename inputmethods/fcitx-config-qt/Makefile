@@ -21,7 +21,6 @@ WANTLIB += KF5WidgetsAddons Qt5Qml Qt5QmlModels Qt5Quick Qt5X11Extras
 WANTLIB += X11 c m xkbcommon xkbfile
 
 MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-configtool/
-EXTRACT_SUFX =		.tar.xz
 DIST_SUBDIR =		fcitx
 
 MODULES =		devel/kf5

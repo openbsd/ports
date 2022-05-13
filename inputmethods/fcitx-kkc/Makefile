@@ -22,7 +22,6 @@ WANTLIB += Fcitx5Utils Qt5Core Qt5Gui Qt5Widgets gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl json-glib-1.0 kkc m
 
 MODULES =       devel/kf5
-EXTRACT_SUFX =	.tar.gz
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			inputmethods/fcitx \

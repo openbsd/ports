@@ -14,7 +14,6 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =  https://download.fcitx-im.org/fcitx5/fcitx5-lua/
-EXTRACT_SUFX = .tar.xz
 
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += m

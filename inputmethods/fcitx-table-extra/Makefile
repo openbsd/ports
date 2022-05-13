@@ -15,7 +15,6 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-table-extra/
-EXTRACT_SUFX =		.tar.xz
 DIST_SUBDIR =		fcitx
 
 MODULES =		devel/kf5

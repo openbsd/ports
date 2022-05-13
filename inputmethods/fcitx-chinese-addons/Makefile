@@ -21,7 +21,6 @@ WANTLIB += boost_iostreams-mt boost_regex-mt c m opencc
 
 MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_SUFX =		.tar.xz
 DIST_SUBDIR =		fcitx
 
 MASTER_SITES0 =		https://download.fcitx-im.org/data/
