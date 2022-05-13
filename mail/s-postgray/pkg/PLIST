@@ -1,0 +1,2 @@
+@bin libexec/s-postgray
+@man man/man8/s-postgray.8

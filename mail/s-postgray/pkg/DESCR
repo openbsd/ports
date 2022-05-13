@@ -1,0 +1,10 @@
+RFC 6647 graylisting policy server, following the recommended practice
+noted in the standard document.
+Graylisting defers message acceptance (for a specific recipient / sender
+/ client_address value tuple) a configurable number of times
+via a standardized SMTP response (see allow(5), RFC 5321), which does
+not prevent message delivery from SMTP M(ail) T(ransfer) A(gent)s,
+but can help against simple spam producing programs.
+s-postgray is started via spawn(8), with the given user credentials,
+therefore the built-in DB store path is /tmp -- you surely want to
+change this via configuration file or command line option.
