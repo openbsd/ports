@@ -1,7 +1,4 @@
 Index: lib/accelerated/aarch64/aarch64-common.c
-
-Enable aarch64 hardware crypto support.
-
 --- lib/accelerated/aarch64/aarch64-common.c.orig
 +++ lib/accelerated/aarch64/aarch64-common.c
 @@ -41,6 +41,10 @@

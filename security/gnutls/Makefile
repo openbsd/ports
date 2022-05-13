@@ -1,13 +1,12 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.7.4
+V=			3.7.5
 DISTNAME=		gnutls-${V}
-REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gnutls               47.3     # 62.0
+SHARED_LIBS +=  gnutls               47.4     # 63.0
 SHARED_LIBS +=  gnutlsxx             30.1     # 30.0
 SHARED_LIBS +=  gnutls-dane          1.1      # 4.1
 
@@ -55,10 +54,6 @@ CONFIGURE_ARGS=		--disable-guile \
 # requires security/trousers: not committed (aja@), needs kernel support
 # for tpm(4): http://bsssd.sourceforge.net/
 CONFIGURE_ARGS +=	--without-tpm
-
-# prevents dependency on devel/autogen
-CONFIGURE_ARGS +=	--enable-local-libopts
-CONFIGURE_ARGS +=	ac_cv_prog_autogen=
 
 LDFLAGS=		-L${LOCALBASE}/lib
 .if ${MACHINE_ARCH:Mi386}
