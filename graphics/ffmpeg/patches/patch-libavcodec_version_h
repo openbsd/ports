@@ -1,0 +1,14 @@
+avcodec/libsvtav1: deprecate some options
+
+Index: libavcodec/version.h
+--- libavcodec/version.h.orig
++++ libavcodec/version.h
+@@ -168,5 +168,8 @@
+ #ifndef FF_API_INIT_PACKET
+ #define FF_API_INIT_PACKET         (LIBAVCODEC_VERSION_MAJOR < 60)
+ #endif
++#ifndef FF_API_SVTAV1_OPTS
++#define FF_API_SVTAV1_OPTS         (LIBAVCODEC_VERSION_MAJOR < 60)
++#endif
+ 
+ #endif /* AVCODEC_VERSION_H */

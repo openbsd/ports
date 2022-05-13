@@ -1,0 +1,69 @@
+- lavc/aomenc: Force default qmax of 0 if crf was set to 0
+- avcodec/libaomenc: Avoid copying data, allow user-supplied buffers
+- avcodec/libaomenc: use ctx->usage to get default cfg
+
+Index: libavcodec/libaomenc.c
+--- libavcodec/libaomenc.c.orig
++++ libavcodec/libaomenc.c
+@@ -36,6 +36,7 @@
+ 
+ #include "av1.h"
+ #include "avcodec.h"
++#include "encode.h"
+ #include "internal.h"
+ #include "packet_internal.h"
+ #include "profiles.h"
+@@ -596,7 +597,7 @@ static av_cold int aom_init(AVCodecContext *avctx,
+     av_log(avctx, AV_LOG_INFO, "%s\n", aom_codec_version_str());
+     av_log(avctx, AV_LOG_VERBOSE, "%s\n", aom_codec_build_config());
+ 
+-    if ((res = aom_codec_enc_config_default(iface, &enccfg, 0)) != AOM_CODEC_OK) {
++    if ((res = aom_codec_enc_config_default(iface, &enccfg, ctx->usage)) != AOM_CODEC_OK) {
+         av_log(avctx, AV_LOG_ERROR, "Failed to get config: %s\n",
+                aom_codec_err_to_string(res));
+         return AVERROR(EINVAL);
+@@ -620,8 +621,6 @@ static av_cold int aom_init(AVCodecContext *avctx,
+     enccfg.g_threads      =
+         FFMIN(avctx->thread_count ? avctx->thread_count : av_cpu_count(), 64);
+ 
+-    enccfg.g_usage        = ctx->usage;
+-
+     if (ctx->lag_in_frames >= 0)
+         enccfg.g_lag_in_frames = ctx->lag_in_frames;
+ 
+@@ -654,8 +653,11 @@ static av_cold int aom_init(AVCodecContext *avctx,
+ 
+     if (avctx->qmin >= 0)
+         enccfg.rc_min_quantizer = avctx->qmin;
+-    if (avctx->qmax >= 0)
++    if (avctx->qmax >= 0) {
+         enccfg.rc_max_quantizer = avctx->qmax;
++    } else if (!ctx->crf) {
++        enccfg.rc_max_quantizer = 0;
++    }
+ 
+     if (enccfg.rc_end_usage == AOM_CQ || enccfg.rc_end_usage == AOM_Q) {
+         if (ctx->crf < enccfg.rc_min_quantizer || ctx->crf > enccfg.rc_max_quantizer) {
+@@ -967,7 +969,7 @@ static int storeframe(AVCodecContext *avctx, struct Fr
+ {
+     AOMContext *ctx = avctx->priv_data;
+     int av_unused pict_type;
+-    int ret = ff_alloc_packet2(avctx, pkt, cx_frame->sz, 0);
++    int ret = ff_get_encode_buffer(avctx, pkt, cx_frame->sz, 0);
+     if (ret < 0) {
+         av_log(avctx, AV_LOG_ERROR,
+                "Error getting output packet of size %"SIZE_SPECIFIER".\n", cx_frame->sz);
+@@ -1341,11 +1343,12 @@ AVCodec ff_libaom_av1_encoder = {
+     .long_name      = NULL_IF_CONFIG_SMALL("libaom AV1"),
+     .type           = AVMEDIA_TYPE_VIDEO,
+     .id             = AV_CODEC_ID_AV1,
++    .capabilities   = AV_CODEC_CAP_DR1 | AV_CODEC_CAP_DELAY |
++                      AV_CODEC_CAP_OTHER_THREADS,
+     .priv_data_size = sizeof(AOMContext),
+     .init           = av1_init,
+     .encode2        = aom_encode,
+     .close          = aom_free,
+-    .capabilities   = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_OTHER_THREADS,
+     .caps_internal  = FF_CODEC_CAP_AUTO_THREADS,
+     .profiles       = NULL_IF_CONFIG_SMALL(ff_av1_profiles),
+     .priv_class     = &class_aom,
