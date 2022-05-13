@@ -1,7 +1,9 @@
-COMMENT =	fcitx5-table-extra provides extra table for Fcitx5
+COMMENT =	extra table for Fcitx5
 
 V =		5.0.9
 DISTNAME =	fcitx5-table-extra-$V
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
@@ -13,11 +15,9 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-table-extra/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_SUFX = 		.tar.xz
+EXTRACT_SUFX =		.tar.xz
 DIST_SUBDIR =		fcitx
 
-COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
@@ -27,8 +27,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			misc/shared-mime-info
 
-LIB_DEPENDS =		inputmethods/fcitx5 \
-			inputmethods/fcitx5-chinese-addons \
+LIB_DEPENDS =		inputmethods/fcitx \
+			inputmethods/fcitx-chinese-addons \
 			devel/boost,-main \
 			converters/opencc
 

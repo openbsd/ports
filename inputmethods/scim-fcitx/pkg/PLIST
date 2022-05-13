@@ -1,4 +1,4 @@
-@conflict fcitx5-*
+@conflict fcitx-*
 @bin bin/createPYMB
 @bin bin/mb2txt
 @bin bin/txt2mb

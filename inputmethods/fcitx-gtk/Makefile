@@ -1,6 +1,8 @@
 COMMENT =	GTK IM module for fcitx5
 
 DISTNAME =	fcitx5-gtk-5.0.13
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 SHARED_LIBS =	Fcitx5GClient			0.0 # 0.0
 
@@ -18,21 +20,18 @@ WANTLIB += X11 cairo cairo-gobject harfbuzz pango-1.0 pangocairo-1.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl m
 
 MASTER_SITES =	https://download.fcitx-im.org/fcitx5/fcitx5-gtk/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX = .tar.xz
-
-COMPILER =	base-clang ports-clang ports-gcc
 
 MODULES =	devel/kf5
 MODQT5_DEPS =	No
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			inputmethods/fcitx5 \
+			inputmethods/fcitx \
 			devel/gobject-introspection \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			inputmethods/fcitx5 \
+			inputmethods/fcitx \
 			misc/shared-mime-info
 
 LIB_DEPENDS =		devel/harfbuzz,-main \

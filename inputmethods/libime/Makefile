@@ -1,6 +1,7 @@
 COMMENT =	library to support generic input method implementation
 
 DISTNAME =	libime-1.0.11
+REVISION =	0
 
 SHARED_LIBS +=	IMECore		0.0 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.0 # 0.0
@@ -41,7 +42,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info
 
-LIB_DEPENDS =		inputmethods/fcitx5 \
+LIB_DEPENDS =		inputmethods/fcitx \
 			devel/boost
 post-patch:
 			@cp ${FULLDISTDIR}/dict.utf8-20211021.tar.xz \

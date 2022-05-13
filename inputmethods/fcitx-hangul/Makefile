@@ -1,7 +1,8 @@
 COMMENT =	Hangul wrapper for fcitx5
 
 V =		5.0.8
-PKGNAME =	fcitx5-hangul-$V
+PKGNAME =	fcitx-hangul-$V
+REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-hangul
@@ -19,22 +20,19 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += hangul iconv intl m
 
-EXTRACT_SUFX =	.tar.gz
-
-COMPILER =      base-clang ports-clang ports-gcc
-
 MODULES =       devel/kf5
+EXTRACT_SUFX =	.tar.gz
 MODQT5_DEPS =	No
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			inputmethods/fcitx5 \
+			inputmethods/fcitx \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			misc/shared-mime-info
 
-LIB_DEPENDS =		inputmethods/fcitx5 \
+LIB_DEPENDS =		inputmethods/fcitx \
 			korean/libhangul
 
 .include <bsd.port.mk>

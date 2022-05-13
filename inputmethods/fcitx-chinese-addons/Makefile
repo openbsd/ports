@@ -1,7 +1,9 @@
-COMMENT =	Addons related to Chinese with IME bundled inside fcitx4
+COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
 V =		5.0.12
 DISTNAME =	fcitx5-chinese-addons-$V
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 
@@ -19,27 +21,26 @@ WANTLIB += boost_iostreams-mt boost_regex-mt c m opencc
 
 MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_SUFX = 		.tar.xz
+EXTRACT_SUFX =		.tar.xz
 DIST_SUBDIR =		fcitx
 
 MASTER_SITES0 =		https://download.fcitx-im.org/data/
 DISTFILES +=		py_table-20121124.tar.gz:0
 DISTFILES +=		py_stroke-20121124.tar.gz:0
 
-COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			inputmethods/fcitx5-lua \
+			inputmethods/fcitx-lua \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			inputmethods/fcitx5-lua \
+			inputmethods/fcitx-lua \
 			x11/gtk+3,-guic \
 			misc/shared-mime-info
 
-LIB_DEPENDS =		inputmethods/fcitx5 \
-			inputmethods/fcitx5-qt \
+LIB_DEPENDS =		inputmethods/fcitx \
+			inputmethods/fcitx-qt \
 			inputmethods/libime \
 			devel/boost,-main \
 			converters/opencc
@@ -48,9 +49,9 @@ CONFIGURE_ARGS =	-DENABLE_BROWSER=OFF \
 			-DENABLE_CLOUDPINYIN=OFF
 
 post-patch:
-			cp ${FULLDISTDIR}/py_table-20121124.tar.gz \
-                		${WRKSRC}/modules/pinyinhelper/
-			cp ${FULLDISTDIR}/py_stroke-20121124.tar.gz \
-                		${WRKSRC}/modules/pinyinhelper/
+	cp ${FULLDISTDIR}/py_table-20121124.tar.gz \
+		${WRKSRC}/modules/pinyinhelper/
+	cp ${FULLDISTDIR}/py_stroke-20121124.tar.gz \
+		${WRKSRC}/modules/pinyinhelper/
 
 .include <bsd.port.mk>

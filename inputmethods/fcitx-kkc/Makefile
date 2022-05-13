@@ -1,7 +1,8 @@
 COMMENT =	libkkc wrapper for fcitx5
 
 V =		5.0.8
-PKGNAME =	fcitx5-kkc-$V
+PKGNAME =	fcitx-kkc-$V
+REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-kkc
@@ -20,12 +21,11 @@ WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt5WidgetsAddons
 WANTLIB += Fcitx5Utils Qt5Core Qt5Gui Qt5Widgets gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl json-glib-1.0 kkc m
 
+MODULES =       devel/kf5
 EXTRACT_SUFX =	.tar.gz
 
-MODULES =       devel/kf5
-
 BUILD_DEPENDS =		devel/gettext,-tools \
-			inputmethods/fcitx5 \
+			inputmethods/fcitx \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -33,11 +33,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		inputmethods/fcitx5 \
-			inputmethods/fcitx5-qt \
+LIB_DEPENDS =		inputmethods/fcitx \
+			inputmethods/fcitx-qt \
 			inputmethods/libkkc
-
-COMPILER =		base-clang ports-clang
 
 # ninja: error: unknown target 'test'
 NO_TEST =		Yes

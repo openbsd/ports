@@ -2,7 +2,8 @@ COMMENT =	GUI configure tool for fcitx5
 
 V =		5.0.12
 DISTNAME =	fcitx5-configtool-$V
-PKGNAME = 	fcitx5-configtool-qt-$V
+PKGNAME =	fcitx-configtool-qt-$V
+REVISION =	0
 
 CATEGORIES =	inputmethods
 
@@ -20,11 +21,9 @@ WANTLIB += KF5WidgetsAddons Qt5Qml Qt5QmlModels Qt5Quick Qt5X11Extras
 WANTLIB += X11 c m xkbcommon xkbfile
 
 MASTER_SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-configtool/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_SUFX = 		.tar.xz
+EXTRACT_SUFX =		.tar.xz
 DIST_SUBDIR =		fcitx
 
-COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
@@ -37,7 +36,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kirigami2 \
 			misc/shared-mime-info
 
-LIB_DEPENDS =		inputmethods/fcitx5-qt \
+LIB_DEPENDS =		inputmethods/fcitx-qt \
 			x11/qt5/qtx11extras \
 			devel/kf5/kdeclarative \
 			devel/kf5/ki18n \

@@ -1,12 +1,12 @@
 COMMENT =	anthy wrapper for fcitx5
 
 V =		5.0.10
-PKGNAME =	fcitx5-anthy-$V
+PKGNAME =	fcitx-anthy-$V
+REVISION =      0
 
 GH_ACCOUNT =    fcitx
 GH_PROJECT =    fcitx5-anthy
 GH_TAGNAME =    $V
-EXTRACT_SUFX =	.tar.gz
 
 CATEGORIES =	inputmethods japanese
 
@@ -20,20 +20,19 @@ WANTLIB += anthy anthydic m
 # LGPL-2.1+
 PERMIT_PACKAGE=	Yes
 
-COMPILER =      base-clang ports-clang ports-gcc
-
 MODULES =       devel/kf5
+EXTRACT_SUFX =	.tar.gz
 MODQT5_DEPS =	No
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			inputmethods/fcitx5 \
+			inputmethods/fcitx \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		inputmethods/fcitx5 \
+LIB_DEPENDS =		inputmethods/fcitx \
 			inputmethods/anthy
 
 # ninja: error: unknown target 'test'
