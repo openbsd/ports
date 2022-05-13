@@ -1,0 +1,44 @@
+include/Fcitx5Qt5/
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitx5qt5dbusaddons_export.h
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtcontrollerproxy.h
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtdbustypes.h
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtinputcontextproxy.h
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtinputmethodproxy.h
+include/Fcitx5Qt5/Fcitx5Qt5DBusAddons/fcitxqtwatcher.h
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitx5qt5widgetsaddons_export.h
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqtconfiguifactory.h
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqtconfiguiplugin.h
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqtconfiguiwidget.h
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqti18nhelper.h
+include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqtkeysequencewidget.h
+include/Fcitx5Qt5/fcitx5qt5dbusaddons_version.h
+include/Fcitx5Qt5/fcitx5qt5widgetsaddons_version.h
+lib/cmake/Fcitx5Qt5DBusAddons/
+lib/cmake/Fcitx5Qt5DBusAddons/Fcitx5Qt5DBusAddonsConfig.cmake
+lib/cmake/Fcitx5Qt5DBusAddons/Fcitx5Qt5DBusAddonsConfigVersion.cmake
+lib/cmake/Fcitx5Qt5DBusAddons/Fcitx5Qt5DBusAddonsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Fcitx5Qt5DBusAddons/Fcitx5Qt5DBusAddonsTargets.cmake
+lib/cmake/Fcitx5Qt5WidgetsAddons/
+lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsConfig.cmake
+lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsConfigVersion.cmake
+lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsTargets.cmake
+lib/fcitx5/qt5/
+@so lib/fcitx5/qt5/libfcitx-quickphrase-editor5.so
+@lib lib/libFcitx5Qt5DBusAddons.so.${LIBFcitx5Qt5DBusAddons_VERSION}
+@lib lib/libFcitx5Qt5WidgetsAddons.so.${LIBFcitx5Qt5WidgetsAddons_VERSION}
+@so lib/qt5/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
+@bin libexec/fcitx5-qt5-gui-wrapper
+share/locale/ca/LC_MESSAGES/fcitx5-qt.mo
+share/locale/da/LC_MESSAGES/fcitx5-qt.mo
+share/locale/de/LC_MESSAGES/fcitx5-qt.mo
+share/locale/es/LC_MESSAGES/fcitx5-qt.mo
+share/locale/fr/LC_MESSAGES/fcitx5-qt.mo
+share/locale/he/LC_MESSAGES/fcitx5-qt.mo
+share/locale/ja/LC_MESSAGES/fcitx5-qt.mo
+share/locale/ko/LC_MESSAGES/fcitx5-qt.mo
+share/locale/ru/LC_MESSAGES/fcitx5-qt.mo
+share/locale/zh_CN/LC_MESSAGES/fcitx5-qt.mo
+share/locale/zh_TW/LC_MESSAGES/fcitx5-qt.mo

@@ -1,0 +1,5 @@
+fcitx5-qt provides Qt library and Qt IM module for fcitx5.
+
+To enable it, add the following line to your ~/.xsession or ~/.xinitrc
+
+    export QT_IM_MODULE=fcitx
