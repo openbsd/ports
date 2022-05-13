@@ -1,10 +1,9 @@
 COMMENT =	neomutt and isync configuration with good defaults
 CATEGORIES =	mail
-DISTNAME =	mutt-wizard-3.2.1.20220121
 
 GH_ACCOUNT =	LukeSmithxyz
 GH_PROJECT =	mutt-wizard
-GH_COMMIT =	29b7b59ffd1b0dfad10c74b5daa6ff67954261b9
+GH_TAGNAME =	v3.3.1
 
 EPOCH =		0
 

@@ -1,0 +1,13 @@
+add ctrl-l for open, as default ctrl-o is set to discard in shell
+
+Index: share/mutt-wizard.muttrc
+--- share/mutt-wizard.muttrc.orig
++++ share/mutt-wizard.muttrc
+@@ -109,6 +109,7 @@ set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
+ bind index,pager \Ck sidebar-prev
+ bind index,pager \Cj sidebar-next
+ bind index,pager \Co sidebar-open
++bind index,pager \Cl sidebar-open
+ bind index,pager \Cp sidebar-prev-new
+ bind index,pager \Cn sidebar-next-new
+ bind index,pager B sidebar-toggle-visible

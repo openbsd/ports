@@ -1,7 +1,7 @@
 Index: bin/mailsync
 --- bin/mailsync.orig
 +++ bin/mailsync
-@@ -40,7 +40,7 @@ case "$(uname)" in
+@@ -42,7 +42,7 @@ case "$(uname)" in
  			*systemd*|*openrc*) export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus ;;
  		esac
  		# remember if a display server is running since `ps` doesn't always contain a display

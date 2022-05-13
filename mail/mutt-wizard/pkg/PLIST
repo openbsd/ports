@@ -1,6 +1,8 @@
 bin/mailsync
 bin/mw
-bin/openfile
+lib/mutt-wizard/
+lib/mutt-wizard/openfile
+@man man/man1/mailsync.1
 @man man/man1/mw.1
 share/mutt-wizard/
 share/mutt-wizard/domains.csv
