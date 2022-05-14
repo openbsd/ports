@@ -1,6 +1,17 @@
+#1: this is subst'ed in "make install"; patch to avoid using share/examples/...
+
 Index: servers/slapd/slapd.conf
 --- servers/slapd/slapd.conf.orig
 +++ servers/slapd/slapd.conf
+@@ -2,7 +2,7 @@
+ # See slapd.conf(5) for details on configuration options.
+ # This file should NOT be world readable.
+ #
+-include		%SYSCONFDIR%/schema/core.schema
++include		/etc/openldap/schema/core.schema
+ 
+ # Define global ACLs to disable default read access.
+ 
 @@ -10,8 +10,8 @@ include		%SYSCONFDIR%/schema/core.schema
  # service AND an understanding of referrals.
  #referral	ldap://root.openldap.org
@@ -11,4 +22,4 @@ Index: servers/slapd/slapd.conf
 +argsfile	%LOCALSTATEDIR%/run/openldap/slapd.args
  
  # Load dynamic backend modules:
- # modulepath	%MODULEDIR%
+ modulepath	%MODULEDIR%

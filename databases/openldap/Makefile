@@ -1,21 +1,18 @@
-DPB_PROPERTIES =	parallel
+COMMENT-main =	  LDAP client library and tools
+COMMENT-server =  LDAP directory server
 
-COMMENT-main =		open-source LDAP software (client)
-COMMENT-server =	open-source LDAP software (server)
+DISTNAME =	  openldap-2.6.2
 
-DISTNAME =		openldap-2.4.59
-REVISION =		1
+MULTI_PACKAGES =  -main -server
+PKGNAME-main =	  ${DISTNAME:S/-/-client-/}
+EXTRACT_SUFX =		.tgz
+# aci only affects the server; override pkgname/path for the client
+FULLPKGNAME-main = ${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
+FULLPKGPATH-main = databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
+EPOCH =		0
 
-PKGNAME-main =		${DISTNAME:S/-/-client-/}
-EPOCH =			0
-
-# overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
-FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}${FLAVOR_EXT:S/-aci//}
-FULLPKGPATH-main =	databases/openldap,-main${FLAVOR_EXT:S/-aci//:S/-/,/g}
-
-SHARED_LIBS +=	lber                 15.0
-SHARED_LIBS +=	ldap                 15.0
-SHARED_LIBS +=	ldap_r               15.0
+SHARED_LIBS +=	lber	16.0
+SHARED_LIBS +=	ldap	16.0
 
 CATEGORIES =	databases net
 
@@ -27,7 +24,7 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB=	c crypto pthread sasl2 ssl
-WANTLIB-server=	${WANTLIB} lber ldap_r lib/db4/db>=4 m perl
+WANTLIB-server=	${WANTLIB} lber ldap ltdl m perl sodium
 
 MASTER_SITES =	https://openldap.org/software/download/OpenLDAP/openldap-release/ \
 		https://mirror.eu.oneandone.net/software/openldap/ \
@@ -35,13 +32,13 @@ MASTER_SITES =	https://openldap.org/software/download/OpenLDAP/openldap-release/
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/
 
 COMPILER =		base-clang ports-gcc
-
-EXTRACT_SUFX =		.tgz
+DPB_PROPERTIES =	parallel
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 SEPARATE_BUILD =	Yes
-AUTOCONF_VERSION =	2.65
+AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+USE_GMAKE =		Yes
 
 FLAVOR ?=
 FLAVORS =		aci gssapi
@@ -50,29 +47,41 @@ CONFIGURE_ARGS +=	--enable-dynamic \
 			--enable-ipv6 \
 			--with-tls=openssl
 
-# slapd options
-CONFIGURE_ARGS +=	--enable-slapd \
+# lloadd needs the ports version of libevent, autoconf check
+# needs tweaking for this
+CONFIGURE_ARGS +=	--disable-balancer
+# --enable-balancer / --enable-balancer=mod
+
+# options
+CONFIGURE_ARGS +=	--enable-argon2 \
 			--enable-cleartext \
 			--enable-crypt \
-			--with-cyrus-sasl \
-			--enable-spasswd
+			--enable-modules \
+			--enable-spasswd \
+			--with-argon2=libsodium \
+			--with-cyrus-sasl
 
-# slapd modules
-CONFIGURE_ARGS +=	--enable-bdb \
-			--enable-dnssrv \
-			--enable-hdb \
-			--enable-ldap \
-			--enable-meta \
-			--enable-null \
-			--enable-overlays \
-			--enable-passwd \
-			--enable-perl
+# default to using modules rather than linked in to slapd directly
+# doing this enables everything by default rather than having a mix of
+# on/off so some are either disabled below or set to 'yes' to link in
+# directly. link in the mdb backend and syncprov overlay to slapd
+# itself so in the common case there's no need to change config to
+# load modules.
+CONFIGURE_ARGS +=	--enable-backends=mod \
+			--enable-mdb=yes \
+			--enable-overlays=mod \
+			--enable-syncprov=yes
 
-# Enable MDB support, N.B. patch-servers_slapd_back-mdb_init_c.
-CONFIGURE_ARGS +=	--enable-mdb
+# disabled backends (other available backends are built as modules)
+CONFIGURE_ARGS +=	--disable-passwd \
+			--disable-sock \
+			--disable-sql \
+			--disable-wt
 
+# aci cannot be built as a module
 .if ${FLAVOR:Maci}
-CONFIGURE_ARGS +=	--enable-aci
+CONFIGURE_ARGS +=	--enable-dynacl \
+			--enable-aci
 .endif
 
 .if ${FLAVOR:Mgssapi}
@@ -88,34 +97,32 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
 TEST_TARGET =		test
 TEST_DEPENDS =		shells/bash
 
-MULTI_PACKAGES =	-main -server
-
-# formatting is ok with mandoc, but soelim is used at build time
-BUILD_DEPENDS +=	textproc/groff
 LIB_DEPENDS +=		security/cyrus-sasl2
-LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
-			databases/db/v4,no_java,no_tcl \
-			databases/openldap,-main
+LIB_DEPENDS-server =	${LIB_DEPENDS} \
+			${BUILD_PKGPATH},-main \
+			devel/libtool,-ltdl \
+			security/libsodium
 
-CPPFLAGS =		-I${LOCALBASE}/include/sasl \
-			-I${LOCALBASE}/include/db4 \
-			-I${LOCALBASE}/include
+CPPFLAGS =		-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include
+LDFLAGS =		-L${LOCALBASE}/lib -Wl,--export-dynamic
 CFLAGS +=		-Wno-format-extra-args
+CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CONFIGURE_ENV +=	CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
+# bypass autoconf check for OpenSSL 1.1.1+ function which is not
+# actually used in OpenLDAP code
+CONFIGURE_ENV +=	ac_cv_lib_ssl_SSL_export_keying_material_early=yes
 
+# just to allow lining up @samples in PLISTs
 LDAP_SYSCONF =		${SYSCONFDIR}/openldap
 SUBST_VARS +=		LDAP_SYSCONF
-FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/openldap
 
-pre-build:
-	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
+post-extract:
+	${INSTALL_SCRIPT} ${FILESDIR}/soelim.awk ${WRKDIR}/bin/soelim
 
+# mv config files rather than overriding in FAKE_FLAGS; the filenames
+# are merged into manpages during fake-install
 post-install:
-	rm ${PREFIX}/share/examples/openldap/{slapd.conf,slapd.ldif,ldap.conf}.default
-
-pre-test:
-	sed -i 's,^#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/tests/scripts/test064-constraint
+	mv ${WRKINST}${SYSCONFDIR}/openldap ${PREFIX}/share/examples/
+	rm ${PREFIX}/share/examples/openldap/*.default
 
 .include <bsd.port.mk>

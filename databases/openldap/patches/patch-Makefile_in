@@ -1,13 +1,10 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -36,3 +36,9 @@ distclean: veryclean FORCE
+@@ -36,3 +36,6 @@ distclean: veryclean FORCE
  check: test
  test: FORCE
- 	cd tests; $(MAKE) test
+ 	cd tests && $(MAKE) test
 +
 +test-ldbm: FORCE
 +	cd tests; $(MAKE) ldbm
-+
-+test-bdb: FORCE
-+	cd tests; $(MAKE) bdb

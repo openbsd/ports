@@ -1,0 +1,12 @@
+Index: include/ldap_pvt.h
+--- include/ldap_pvt.h.orig
++++ include/ldap_pvt.h
+@@ -178,7 +178,7 @@ ldap_pvt_get_hname LDAP_P((
+ 	char **herr ));
+ 
+ #ifdef LDAP_PF_LOCAL
+-#define LDAP_IPADDRLEN	(MAXPATHLEN + sizeof("PATH="))
++#define LDAP_IPADDRLEN	(PATH_MAX + sizeof("PATH="))
+ #elif defined(LDAP_PF_INET6)
+ #define LDAP_IPADDRLEN	sizeof("IP=[ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff]:65535")
+ #else

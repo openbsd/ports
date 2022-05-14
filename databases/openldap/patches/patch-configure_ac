@@ -1,14 +1,13 @@
 OpenLDAP's first choice uuid functions are close to but not quite the same
 as we have in libc, differences being that we don't have uuid_to_str() (in
 fact I don't see which other OS might have it either, no other software in
-debian codesearch uses this), and it needs uuid.h not sys/uuid.h.
+Debian codesearch uses this), and it needs uuid.h not sys/uuid.h.
+Patch to use it, avoiding the need for Linux/libext2fs libuuid.
 
-Patch to use it, avoiding the need for Linux libuuid.
-
-Index: configure.in
---- configure.in.orig
-+++ configure.in
-@@ -1018,11 +1018,11 @@ dnl --------------------------------------------------
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -1066,11 +1066,11 @@ dnl --------------------------------------------------
  dnl UUID Support
  
  have_uuid=no

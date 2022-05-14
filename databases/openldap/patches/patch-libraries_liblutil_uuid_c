@@ -2,7 +2,6 @@ OpenLDAP's first choice uuid functions are close to but not quite the same
 as we have in libc, differences being that we don't have uuid_to_str() (in
 fact I don't see which other OS might have it either, no other software in
 debian codesearch uses this), and it needs uuid.h not sys/uuid.h.
-
 Patch to use it, avoiding the need for Linux libuuid.
 
 Index: libraries/liblutil/uuid.c
