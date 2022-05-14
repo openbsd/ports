@@ -25,6 +25,7 @@ MODQT5_DEPS =	No
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			inputmethods/fcitx \
+			devel/fmt \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
