@@ -1,0 +1,15 @@
+Index: make/common/MakeBase.gmk
+--- make/common/MakeBase.gmk.orig
++++ make/common/MakeBase.gmk
+@@ -318,11 +318,6 @@ SCM_TIP_FILECMD := $(PRINTF) "$(SCM):%s" \
+ # Emit the scm:id pair to $@
+ define GetSourceTips
+ 	$(CD) $(SRC_ROOT) ; \
+-	if [ -d $(SCM_DIR) -a "$(SCM_VERSION)" != "" ] ; then \
+-	  $(ID_COMMAND) >> $@ ; \
+-	elif [ -f $(SCM_TIP_FILENAME) ] ; then \
+-          $(SCM_TIP_FILECMD) >> $@ ; \
+-	fi;
+ 	$(PRINTF) "\n" >> $@
+ endef
+ 
