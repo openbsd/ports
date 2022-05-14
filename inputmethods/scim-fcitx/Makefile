@@ -3,7 +3,7 @@ COMMENT=	scim input method module for fcitx
 V=		3.1.1
 DISTNAME=	scim-fcitx.$V
 PKGNAME=	scim-fcitx-$V
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	inputmethods chinese
 
