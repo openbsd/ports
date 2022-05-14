@@ -1,5 +1,6 @@
---- Makefile.in.orig	Mon May  9 05:36:18 2016
-+++ Makefile.in	Fri Sep  2 23:15:23 2016
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -3,7 +3,7 @@ exec_prefix = @exec_prefix@
  bindir = @bindir@
  mandir = @mandir@
@@ -7,5 +8,5 @@
 -CFLAGS  = @CFLAGS@ -O -Wall
 +CFLAGS  = @CFLAGS@ -Wall
  LDFLAGS = @LDFLAGS@
+ CC = @CC@
  VERSION = `git tag | tail -1 | sed -e 's/v//'`
- 

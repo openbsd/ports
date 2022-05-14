@@ -1,8 +1,9 @@
 COMMENT=		PGP packet visualizer
 
-DISTNAME=		pgpdump-0.33
+DISTNAME=		pgpdump-0.35
 CATEGORIES=		security
 
+# https://github.com/kazu-yamamoto/pgpdump
 HOMEPAGE=		https://www.mew.org/~kazu/proj/pgpdump/
 
 # BSD
@@ -14,10 +15,11 @@ MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 
-NO_TEST=		Yes
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgpdump ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/pgpdump.1 ${PREFIX}/man/man1
+
+do-test:
+	${WRKSRC}/data/test.sh -v
 
 .include <bsd.port.mk>
