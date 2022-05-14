@@ -667,6 +667,7 @@
      SUBDIR += softflowd
      SUBDIR += spectrum-tools
      SUBDIR += srain
+     SUBDIR += sshuttle
      SUBDIR += ssldump
      SUBDIR += sslh
      SUBDIR += sslsniffer
