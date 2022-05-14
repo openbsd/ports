@@ -14,7 +14,7 @@ PKGNAME-ldap=		powerdns-ldap-${V}
 #REVISION-main=		0
 #REVISION-mysql=		0
 #REVISION-pgsql=		0
-#REVISION-ldap=		0
+REVISION-ldap=		0
 
 CATEGORIES=		net
 
@@ -115,7 +115,7 @@ LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 			databases/openldap,-main \
 			security/heimdal,-libs
 RUN_DEPENDS-ldap=	net/powerdns
-WANTLIB-ldap=		${WANTLIB} ldap_r
+WANTLIB-ldap=		${WANTLIB} ldap
 WANTLIB-ldap+=          c com_err lber sasl2 util
 WANTLIB-ldap+=          heimdal/lib/asn1 heimdal/lib/hcrypto heimdal/lib/heimbase
 WANTLIB-ldap+=          heimdal/lib/heimsqlite heimdal/lib/hx509 heimdal/lib/krb5

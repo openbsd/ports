@@ -1,14 +1,14 @@
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
 DISTNAME=	smsmail-1.0.2
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	mail
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c pthread ldap_r>=8 lber>=8
+WANTLIB=	c pthread ldap lber
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz

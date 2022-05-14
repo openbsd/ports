@@ -1,6 +1,7 @@
 COMMENT=		LDAP client API for Python
 
 MODPY_EGG_VERSION =	3.4.0
+REVISION=		0
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=		py-ldap-${MODPY_EGG_VERSION}
 
@@ -11,7 +12,7 @@ HOMEPAGE=		https://www.python-ldap.org/
 # Python
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += lber ldap_r pthread ${MODPY_WANTLIB}
+WANTLIB += lber ldap pthread ${MODPY_WANTLIB}
 
 MODULES=		lang/python
 

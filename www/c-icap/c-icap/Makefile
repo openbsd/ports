@@ -4,6 +4,7 @@ COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
 V=		0.5.10
+REVISION-ldap=	0
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
@@ -44,7 +45,7 @@ WANTLIB-db=	${WANTLIB} c db icapapi
 LIB_DEPENDS-ldap= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		databases/openldap
-WANTLIB-ldap=	${WANTLIB} crypto icapapi lber ldap_r sasl2 ssl
+WANTLIB-ldap=	${WANTLIB} crypto icapapi lber ldap sasl2 ssl
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/c-icap.conf.in

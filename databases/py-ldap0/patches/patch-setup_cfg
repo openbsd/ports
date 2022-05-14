@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -2,7 +2,7 @@
+ defines = 
+ extra_compile_args = -Wall -O1 -g -DPYMALLOC_DEBUG
+ extra_objects = 
+-libs = ldap_r
++libs = ldap
+ 
+ [metadata]
+ license_files = LICENSE

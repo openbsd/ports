@@ -1,12 +1,15 @@
 Index: src/ldapvacation/Makefile
 --- src/ldapvacation/Makefile.orig
 +++ src/ldapvacation/Makefile
-@@ -3,8 +3,6 @@
+@@ -3,10 +3,8 @@
  PROG=		ldapvacation
  SRCS=		ldapvacation.c parse.y scan.l
  
 -CLEANFILES+=	y.tab.h
 -
  CFLAGS+=	-pthread -Wall -I/usr/local/include -DLDAP_DEPRECATED
- LDADD+=		-L/usr/local/lib -lldap_r -llber -lpthread
+-LDADD+=		-L/usr/local/lib -lldap_r -llber -lpthread
++LDADD+=		-L/usr/local/lib -lldap -llber -lpthread
  LINTFLAGS+=	-u
+ 
+ MAN=		ldapvacation.1 ldapvacation.conf.5

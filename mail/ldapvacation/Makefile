@@ -1,14 +1,14 @@
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
 DISTNAME=	ldapvacation-1.1.3
-REVISION =	5
+REVISION=	6
 
 CATEGORIES=	mail
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c pthread ldap_r>=8 lber>=8
+WANTLIB=	c pthread ldap lber
 
 MASTER_SITES=	https://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tgz

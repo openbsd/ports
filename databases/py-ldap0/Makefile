@@ -3,6 +3,7 @@ COMMENT =	provides an API to access LDAP directory servers for Python
 FIX_EXTRACT_PERMISSIONS = Yes
 
 MODPY_EGG_VERSION =	1.4.9
+REVISION =	0
 
 DISTNAME =	ldap0-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -16,7 +17,7 @@ MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	${MODPY_WANTLIB} pthread ldap_r
+WANTLIB +=	${MODPY_WANTLIB} pthread ldap
 
 MODULES =	lang/python
 FLAVOR =	python3

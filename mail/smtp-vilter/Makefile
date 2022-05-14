@@ -2,7 +2,7 @@ COMMENT=	sendmail milter to scan messages for viruses and spam
 
 DISTNAME=	smtp-vilter-1.3.6
 EPOCH=		0
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	mail
 
@@ -24,7 +24,7 @@ FLAVOR?=
 .if ${FLAVOR:Mldap}
 MAKE_FLAGS+=	-DENABLE_LDAP
 LIB_DEPENDS+=	databases/openldap
-WANTLIB += ldap_r lber
+WANTLIB += ldap lber
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include

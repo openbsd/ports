@@ -10,3 +10,10 @@ Index: bin/smtp-vilter/Makefile
  
  MAN=		smtp-vilter.8 smtp-vilter.conf.5
  MANDIR= 	/usr/local/man/cat
+@@ -27,5 +27,5 @@ BINDIR= 	/usr/local/sbin
+ CFLAGS+= 	-I/usr/local/include -DENABLE_LDAP -DLDAP_DEPRECATED
+ .endif
+ .if defined(ENABLE_LDAP) || defined(WANT_LDAP)
+-LDADD+=		-lldap_r -llber
++LDADD+=		-lldap -llber
+ .endif

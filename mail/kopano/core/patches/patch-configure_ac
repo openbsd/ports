@@ -46,7 +46,7 @@ Index: configure.ac
  AC_CHECK_HEADERS([ldap.h], [
  	LDAP_FLAGS="-DLDAP_DEPRECATED=1"
 -	LDAP_LIBS="-lldap_r"
-+	LDAP_LIBS="-L/usr/local/lib -lldap_r"
++	LDAP_LIBS="-L/usr/local/lib -lldap"
  	want_ldap=yes
  ])
  AC_SUBST(LDAP_LIBS)

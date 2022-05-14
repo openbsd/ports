@@ -7,7 +7,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
 PKGNAME=		gnugk-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net telephony
 
@@ -19,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto curl h323 kvm lber ldap
-WANTLIB += ldap_r lua5.2 m maxminddb netsnmp netsnmpagent netsnmpmibs
+WANTLIB += ldap lua5.2 m maxminddb netsnmp netsnmpagent netsnmpmibs
 WANTLIB += pt sasl2 ssh ssl z
 
 COMPILER=		base-clang ports-gcc base-gcc

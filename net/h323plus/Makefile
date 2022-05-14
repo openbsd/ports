@@ -4,7 +4,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		h323plus
 GH_TAGNAME=		v1_27_2
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net devel
 
@@ -17,7 +17,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL (dlopen(3) GPL modules)
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto lber ldap ldap_r m pt sasl2
+WANTLIB += ${COMPILER_LIBCXX} c crypto lber ldap m pt sasl2
 WANTLIB += ssl
 
 COMPILER=		base-clang ports-gcc base-gcc

@@ -9,6 +9,7 @@ PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
 REVISION=	0
+REVISION-main=	1
 
 CATEGORIES=	mail www productivity
 
@@ -54,7 +55,7 @@ WANTLIB-main += curl nghttp2 ical icalss
 WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++
 WANTLIB-main += ${LIBCXX}
-WANTLIB-main += icalvcal ldap_r HX jsoncpp
+WANTLIB-main += icalvcal ldap HX jsoncpp
 WANTLIB-main += X11 expat freetype
 WANTLIB-main += xcb
 WANTLIB-main += cairo glib-2.0 gobject-2.0
