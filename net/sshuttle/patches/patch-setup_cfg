@@ -1,0 +1,15 @@
+__main__.py: error: unrecognized arguments: --cov=sshuttle --cov-branch --cov-report=term-missing
+
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -13,9 +13,6 @@ count = true
+ show-source = true
+ statistics = true
+ 
+-[tool:pytest]
+-addopts = --cov=sshuttle --cov-branch --cov-report=term-missing
+-
+ [egg_info]
+ tag_build = 
+ tag_date = 0
