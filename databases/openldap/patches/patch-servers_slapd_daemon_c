@@ -1,5 +1,10 @@
 https://bugs.openldap.org/show_bug.cgi?id=9847#c3
 
+From ced6652efb8835fcc8c4e7cd8d92830f7d8e2580 Mon Sep 17 00:00:00 2001
+From: Howard Chu <hyc@openldap.org>
+Date: Sat, 14 May 2022 17:16:02 +0100
+Subject: [PATCH] ITS#9847 slapd: fix kqueue for FreeBSD/MacOSX/OpenBSD
+
 Index: servers/slapd/daemon.c
 --- servers/slapd/daemon.c.orig
 +++ servers/slapd/daemon.c
@@ -9,8 +14,8 @@ Index: servers/slapd/daemon.c
  
 -/* a kqueue fd obtained before a fork can't be used in child process.
 - * close it and reacquire it.
-+/* a kqueue(2) fd "is not inherited by a child created with fork(2)".
-+ * no need to close the old one, but a new one must be acquired.
++/* a kqueue fd obtained before a fork isn't inherited by child process.
++ * reacquire it.
   */
  # define SLAP_SOCK_INIT2() do { \
 -	close(slap_daemon[0].sd_kq); \
