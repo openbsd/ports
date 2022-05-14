@@ -1,6 +1,6 @@
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.8.27
+DISTNAME=		mc-4.8.28
 CATEGORIES=		misc
 
 HOMEPAGE=		https://www.midnight-commander.org/
