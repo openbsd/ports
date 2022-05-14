@@ -1,0 +1,11 @@
+Queries content and data of audio CDs through s-cdda(1), collects
+informations (artist, album, song titles, etc.) of desired tracks,
+if possible correlates data with a web query against MusicBrainz,
+then places encoded tracks as well as a human readable and easily
+parseable database in a per-CD directory under a directory tree.
+The user is asked to edit the collected information and is given
+a hand for the rather sophisticated classical music aware database
+layout while doing so.
+
+The audio encoders (and sox(1) without --no-volume-normalize) need
+to be installed separately.
