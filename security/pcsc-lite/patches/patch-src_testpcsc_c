@@ -3,7 +3,7 @@ Make regress suite noninteractive.
 Index: src/testpcsc.c
 --- src/testpcsc.c.orig
 +++ src/testpcsc.c
-@@ -463,8 +463,6 @@ wait_for_card_again:
+@@ -470,8 +470,6 @@ wait_for_card_again:
  		free(pcReader);
  #endif
  
