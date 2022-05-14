@@ -1,7 +1,7 @@
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.4.3
+V =		3.5.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -11,7 +11,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 
-SHARED_LIBS =	gdal 42.1 # 30.1
+SHARED_LIBS =	gdal 43.0 # 30.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
@@ -24,7 +24,8 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES =	https://download.osgeo.org/gdal/${V:C/rc.//}/
 WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 
-MODULES =	lang/python
+MODULES =	devel/cmake \
+		lang/python
 FLAVORS =	python3
 FLAVOR =	python3
 
@@ -37,13 +38,14 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			archivers/zstd \
 			graphics/tiff \
 			net/curl \
-			math/qhull \
+			math/qhull>=2020.2 \
 			math/hdf5 \
 			math/netcdf \
 			databases/postgresql \
 			geo/geos \
 			geo/spatialite/libspatialite \
 			devel/json-c \
+			print/poppler \
 			graphics/png \
 			graphics/giflib \
 			graphics/libwebp \
@@ -53,10 +55,10 @@ LIB_DEPENDS-main =	databases/sqlite3 \
 			devel/proj>=6.0 \
 			devel/geotiff>=1.5.0
 
-WANTLIB-main =		c charset crypto curl expat freexl geos geos_c geotiff \
-			gif hdf5 hdf5_hl iconv jpeg json-c lzma lz4 m \
-			netcdf nghttp2 openjp2 pcre2-8 png pq proj pthread qhull_r \
-			minizip rttopo spatialite sqlite3 ssl tiff xml2 webp z zstd \
+WANTLIB-main =		c crypto curl expat freexl geos_c geotiff \
+			gif hdf5 iconv jpeg json-c lzma lz4 m \
+			netcdf openjp2 pcre2-8 png poppler pq proj pthread qhull_r \
+			spatialite sqlite3 ssl tiff xml2 webp z zstd \
 			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
@@ -64,7 +66,9 @@ RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
 LIB_DEPENDS-python =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 
-BUILD_DEPENDS +=	${RUN_DEPENDS} math/py-numpy${MODPY_FLAVOR} devel/swig
+BUILD_DEPENDS +=	${RUN_DEPENDS} \
+			math/py-numpy${MODPY_FLAVOR} \
+			devel/swig
 
 MODPY_PYTEST =		Yes
 TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
@@ -75,46 +79,28 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_EGG_VERSION =	${V:C/rc.//}
 MODPY_ADJ_FILES =	swig/python/gdal-utils/osgeo_utils/samples/*.py swig/python/gdal-utils/scripts/*.py
 
-MAKE_FILE =	GNUmakefile
-MAKE_FLAGS =	LIBTOOL_FINISH=:
-USE_GMAKE =	Yes
-CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-INSTALL_TARGET =	install install-man
 
-CONFIGURE_ARGS =--without-cfitsio \
-		--without-cryptopp \
-		--without-blosc \
-		--without-xerces \
-		--without-mysql \
-		--without-heif \
-		--without-odbc \
-		--without-oci \
-		--without-grass \
-		--without-idb \
-		--without-sde \
-		--without-exr \
-		--without-libgrass \
-		--without-jasper \
-		--without-perl \
-		--with-hide-internal-symbols \
-		--with-pg \
-		--with-python=${MODPY_BIN} \
-		--with-geos \
-		--with-gnm \
-		--with-freexl=${LOCALBASE} \
-		--with-spatialite=${LOCALBASE} \
-		--with-png=${LOCALBASE} \
-		--with-geotiff=${LOCALBASE} \
-		--with-libtiff=${LOCALBASE} \
-		--with-curl=${LOCALBASE} \
-		--with-gif=${LOCALBASE} \
-		--with-jpeg=${LOCALBASE} \
-		--with-zstd=${LOCALBASE} \
-		--with-libjson-c=${LOCALBASE} \
-		--with-hdf5=${LOCALBASE} \
-		--with-netcdf=${LOCALBASE}
+CONFIGURE_ARGS =-DGDAL_USE_CFITSIO:BOOL=OFF \
+		-DGDAL_USE_CRYPTOPP:BOOL=OFF \
+		-DGDAL_USE_XERCESC:BOOL=OFF \
+		-DGDAL_USE_BLOSC:BOOL=OFF \
+		-DGDAL_USE_MYSQL:BOOL=OFF \
+		-DGDAL_USE_HEIF:BOOL=OFF \
+		-DGDAL_USE_ODBC:BOOL=OFF \
+		-DGDAL_USE_JASPER:BOOL=OFF \
+		-DGDAL_USE_IDB:BOOL=OFF \
+		-DGDAL_USE_OPENEXR:BOOL=OFF \
+		-DPython_ROOT=${LOCALBASE} \
+		-DGEOS_ROOT=${LOCALBASE} \
+		-DSPATIALITE_ROOT=${LOCALBASE} \
+		-DPNG_ROOT=${LOCALBASE} \
+		-DTIFF_ROOT=${LOCALBASE} \
+		-DCURL_ROOT=${LOCALBASE} \
+		-DGIF_ROOT=${LOCALBASE} \
+		-DJPEG_ROOT=${LOCALBASE} \
+		-DOpenJPEG_ROOT=${LOCALBASE}
 
 post-extract:
 	ln -sf ${WRKDIR}/gdalautotest-${V:C/rc.//} ${WRKSRC}/autotest

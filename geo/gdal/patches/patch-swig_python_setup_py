@@ -1,7 +1,7 @@
 Index: swig/python/setup.py
 --- swig/python/setup.py.orig
 +++ swig/python/setup.py
-@@ -271,7 +271,7 @@ class gdal_ext(build_ext):
+@@ -270,7 +270,7 @@ class gdal_ext(build_ext):
          return build_ext.build_extension(self, ext)
  
  
