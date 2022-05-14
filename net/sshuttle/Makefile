@@ -26,6 +26,7 @@ USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR}
 
 post-build:
 	cd ${WRKBUILD}/docs && ${SETENV} ${MAKE_ENV} \
