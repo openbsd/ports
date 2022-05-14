@@ -248,6 +248,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/cloud9/2017-09-23/service
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudcontrol/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudcontrol/2021-09-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudcontrol/2021-09-30/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudcontrol/2021-09-30/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudcontrol/2021-09-30/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cloudcontrol/2021-09-30/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/clouddirectory/
