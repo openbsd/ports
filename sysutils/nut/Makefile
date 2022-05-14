@@ -5,6 +5,7 @@ COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
 V=		2.8.0
 DISTNAME=	nut-${V}
+REVISION-cgi=	0
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
@@ -45,7 +46,9 @@ BUILD_DEPENDS+=	textproc/asciidoc>=8.6.8 \
 WEB_ROOT=	/var/www
 SUBST_VARS=	BASESYSCONFDIR WEB_ROOT
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoreconf
+AUTOCONF_VERSION= 2.69
+AUTOMAKE_VERSION= 1.16
 
 SYSCONFDIR=	${BASESYSCONFDIR}/nut
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
