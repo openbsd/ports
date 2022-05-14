@@ -210,6 +210,8 @@
      SUBDIR += ruby-taglib,ruby31
      SUBDIR += ruby-vorbis_comment,ruby30
      SUBDIR += ruby-vorbis_comment,ruby31
+     SUBDIR += s-cdda
+     SUBDIR += s-cdda-to-db
      SUBDIR += schismtracker
      SUBDIR += scmpc
      SUBDIR += shairport-sync
