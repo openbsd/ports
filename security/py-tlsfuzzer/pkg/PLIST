@@ -111,6 +111,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-invalid-version.${MODPY_PYC_MAGIC_T
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-large-hello.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-large-number-of-extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-legacy-renegotiation.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-lengths.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-lucky13.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-message-duplication.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-message-skipping.${MODPY_PYC_MAGIC_TAG}pyc
@@ -161,6 +162,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-keyupdate-from-server.${MODPY
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-keyupdate.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-large-number-of-extensions.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-legacy-version.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-lengths.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-multiple-ccs-messages.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-nociphers.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-non-support.${MODPY_PYC_MAGIC_TAG}pyc
@@ -256,6 +258,7 @@ share/tlsfuzzer/scripts/test-invalid-version.py
 share/tlsfuzzer/scripts/test-large-hello.py
 share/tlsfuzzer/scripts/test-large-number-of-extensions.py
 share/tlsfuzzer/scripts/test-legacy-renegotiation.py
+share/tlsfuzzer/scripts/test-lengths.py
 share/tlsfuzzer/scripts/test-lucky13.py
 share/tlsfuzzer/scripts/test-message-duplication.py
 share/tlsfuzzer/scripts/test-message-skipping.py
@@ -306,6 +309,7 @@ share/tlsfuzzer/scripts/test-tls13-keyupdate-from-server.py
 share/tlsfuzzer/scripts/test-tls13-keyupdate.py
 share/tlsfuzzer/scripts/test-tls13-large-number-of-extensions.py
 share/tlsfuzzer/scripts/test-tls13-legacy-version.py
+share/tlsfuzzer/scripts/test-tls13-lengths.py
 share/tlsfuzzer/scripts/test-tls13-multiple-ccs-messages.py
 share/tlsfuzzer/scripts/test-tls13-nociphers.py
 share/tlsfuzzer/scripts/test-tls13-non-support.py
