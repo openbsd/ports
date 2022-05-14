@@ -1,0 +1,23 @@
+Prevent pickig up old automake which breaks with:
+configure.ac:52: option `dist-xz' not recognized
+
+Index: autogen.sh
+--- autogen.sh.orig
++++ autogen.sh
+@@ -91,14 +91,14 @@ fi
+ 
+ touch ChangeLog
+ 
+-${ACLOCAL} -I m4/ ${ACLOCAL_FLAGS} || exit $?
++aclocal -I m4/ ${ACLOCAL_FLAGS} || exit $?
+ 
+ ${LIBTOOLIZE} --force || exit $?
+ gtkdocize || exit $?
+ 
+ autoheader || exit $?
+ 
+-${AUTOMAKE} --add-missing || exit $?
++automake --add-missing || exit $?
+ autoconf || exit $?
+ cd ${ORIGDIR} || exit $?
+ 
