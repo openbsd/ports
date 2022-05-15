@@ -31,6 +31,7 @@ MODULES =		devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			inputmethods/fcitx-lua \
+			devel/fmt \
 			devel/iso-codes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
