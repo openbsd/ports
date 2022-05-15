@@ -9,6 +9,6 @@ Index: samples/knot.sample.conf.in
      rundir: "@run_dir@"
 -    user: knot:knot
 +    user: _knot:_knot
+     automatic-acl: on
  #    listen: [ 127.0.0.1@53, ::1@53 ]
  
- log:
