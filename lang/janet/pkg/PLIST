@@ -1,5 +1,6 @@
 @bin bin/janet
 include/janet/
+include/janet.h
 include/janet/janet.h
 lib/janet/
 @static-lib lib/libjanet.a
