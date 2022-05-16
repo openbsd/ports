@@ -18,7 +18,7 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 FLAVORS =	everything small
 FLAVOR ?=
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xmu Xt c m ptytty
