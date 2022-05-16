@@ -1,6 +1,6 @@
-COMMENT =	compiler cache
+COMMENT =	C/C++ compiler front-end to cache compiled object code
 
-V =		4.6
+V =		4.6.1
 DISTNAME =	ccache-$V
 
 CATEGORIES =	devel
@@ -28,6 +28,7 @@ LIB_DEPENDS =		archivers/zstd \
 # Failure in cpp1 test appears to be due to an embedded filename
 # in a .o file present in one file, and not present in the file being
 # compared with.
+PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		shells/bash
 TEST_ENV =		CC="${CC}"
 
