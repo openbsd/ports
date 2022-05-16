@@ -53,6 +53,11 @@ CONFIGURE_ENV =		ac_cv_path_HAVE_PDFLATEX= \
 			ac_cv_path_CBINDGEN= \
 			CARGO_HOME=${WRKBUILD}/cargo-home
 
+# prevent textproc/hyperscan from being picked up
+CONFIGURE_ENV +=	ac_cv_header_hs_h=no \
+			libhs_CFLAGS=-I${LOCALBASE}/include \
+			libhs_LIBS=-L${LOCALBASE}/lib \
+
 CONFIGURE_ARGS =	--disable-gccmarch-native \
 			--enable-geoip \
 			--enable-ipfw
