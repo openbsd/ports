@@ -2,14 +2,13 @@ COMMENT =	interactive process viewer
 
 V =		3.2.0
 DISTNAME =	htop-$V
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 EXTRACT_SUFX =	.tar.xz
 HOMEPAGE =	https://htop.dev
 MASTER_SITES =	https://github.com/htop-dev/htop/releases/download/$V/
-
-MAINTAINER =	Ian Sutton <ian@ce.gl>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
