@@ -8,8 +8,8 @@ vaultwarden/web-vault/404/styles.css
 vaultwarden/web-vault/70501c97b33df95adb32.json
 vaultwarden/web-vault/app/
 vaultwarden/web-vault/app-id.json
-vaultwarden/web-vault/app/main.419a37c31d0035e19b79.js
-vaultwarden/web-vault/app/main.419a37c31d0035e19b79.js.map
+vaultwarden/web-vault/app/main.f41b38d53bc6a993aee8.js
+vaultwarden/web-vault/app/main.f41b38d53bc6a993aee8.js.map
 vaultwarden/web-vault/app/main.ff15047d4cd7f141acd4.css
 vaultwarden/web-vault/app/main.ff15047d4cd7f141acd4.css.map
 vaultwarden/web-vault/app/polyfills.d92dcdb0a986e964fec8.js
@@ -34,10 +34,10 @@ vaultwarden/web-vault/connectors/sso.0f8c449a83a2674028e8.css
 vaultwarden/web-vault/connectors/sso.0f8c449a83a2674028e8.css.map
 vaultwarden/web-vault/connectors/sso.b7061ac2d48d6f00d606.js
 vaultwarden/web-vault/connectors/sso.b7061ac2d48d6f00d606.js.map
+vaultwarden/web-vault/connectors/webauthn-fallback.24b800f9ca818ff119b1.js
+vaultwarden/web-vault/connectors/webauthn-fallback.24b800f9ca818ff119b1.js.map
 vaultwarden/web-vault/connectors/webauthn-fallback.4af40b184c14041b8704.css
 vaultwarden/web-vault/connectors/webauthn-fallback.4af40b184c14041b8704.css.map
-vaultwarden/web-vault/connectors/webauthn-fallback.9b6aaa63bda94017d719.js
-vaultwarden/web-vault/connectors/webauthn-fallback.9b6aaa63bda94017d719.js.map
 vaultwarden/web-vault/connectors/webauthn.23cf804cd44e7c534791.js
 vaultwarden/web-vault/connectors/webauthn.23cf804cd44e7c534791.js.map
 vaultwarden/web-vault/connectors/webauthn.4af40b184c14041b8704.css
