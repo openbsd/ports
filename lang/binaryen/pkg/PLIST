@@ -1,0 +1,15 @@
+@bin bin/binaryen-unittests
+@bin bin/wasm-as
+@bin bin/wasm-ctor-eval
+@bin bin/wasm-dis
+@bin bin/wasm-emscripten-finalize
+@bin bin/wasm-fuzz-types
+@bin bin/wasm-metadce
+@bin bin/wasm-opt
+@bin bin/wasm-reduce
+@bin bin/wasm-shell
+@bin bin/wasm-split
+@bin bin/wasm2js
+include/binaryen-c.h
+include/wasm-delegations.def
+@so lib/libbinaryen.so

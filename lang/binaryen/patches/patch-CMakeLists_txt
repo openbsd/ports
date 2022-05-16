@@ -1,0 +1,13 @@
+Remove hardcoded optimizations.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -273,7 +273,6 @@ else()
+   endif()
+   add_debug_compile_flag("-O0")
+   add_debug_compile_flag("-g3")
+-  add_nondebug_compile_flag("-O2")
+   if(BYN_ENABLE_ASSERTIONS)
+     # On non-Debug builds cmake automatically defines NDEBUG, so we
+     # explicitly undefine it:
