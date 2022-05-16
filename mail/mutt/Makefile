@@ -1,6 +1,6 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.2.4
+DISTNAME=	mutt-2.2.5
 EPOCH=		3
 
 CATEGORIES=	mail
@@ -45,18 +45,20 @@ CONFIGURE_ARGS+= --enable-compressed \
 		--enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
-		--enable-hcache \
 		--with-idn2 \
 		--enable-imap \
 		--enable-pop \
 		--enable-sidebar \
 		--enable-smtp \
 		--mandir=${PREFIX}/man \
-		--without-gdbm \
-		--without-tokyocabinet \
-		--with-qdbm \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
 		--with-ssl
+# the header cache can use various db backends; kyotocabinet, tokyocabinet,
+# lmdb, qdbm, gdbm, bdb. changing it will invalidate the cache which is
+# painful for users with poorly performing imap servers so try to avoid it
+# unless some other change invalidates the cache anyway
+CONFIGURE_ARGS+= --enable-hcache \
+		--with-qdbm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ISPELL="${LOCALBASE}/bin/ispell"
