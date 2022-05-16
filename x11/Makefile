@@ -273,6 +273,8 @@
      SUBDIR += ruby-tk,ruby30
      SUBDIR += ruby-tk,ruby31
      SUBDIR += rxvt-unicode
+     SUBDIR += rxvt-unicode,small
+     SUBDIR += rxvt-unicode,everything
      SUBDIR += sakura
      SUBDIR += sawfish
      SUBDIR += sclock
