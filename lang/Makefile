@@ -5,6 +5,7 @@
      SUBDIR += algol68g
      SUBDIR += apl
      SUBDIR += bacon
+     SUBDIR += binaryen
      SUBDIR += bootgcc
      SUBDIR += brainfuck
      SUBDIR += brandy
