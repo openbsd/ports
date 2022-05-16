@@ -1,16 +1,17 @@
 COMMENT =	interactive process viewer
 
-GH_ACCOUNT =	htop-dev
-GH_PROJECT =	htop
-GH_TAGNAME =	3.1.2
+V =		3.2.0
+DISTNAME =	htop-$V
 
 CATEGORIES =	sysutils
 
+EXTRACT_SUFX =	.tar.xz
 HOMEPAGE =	https://htop.dev
+MASTER_SITES =	https://github.com/htop-dev/htop/releases/download/$V/
 
 MAINTAINER =	Ian Sutton <ian@ce.gl>
 
-# GPLv2 only
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c curses execinfo kvm m
@@ -21,10 +22,7 @@ NO_TEST =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =	2.71
-AUTOMAKE_VERSION =	1.16
-AUTORECONF =		./autogen.sh
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-unicode \
 			--disable-taskstats
 
