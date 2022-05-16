@@ -13,6 +13,7 @@ include/bkpublic.h
 include/cspublic.h
 include/cstypes.h
 include/ctpublic.h
+include/odbcss.h
 include/sqldb.h
 include/sqlfront.h
 include/sybdb.h
