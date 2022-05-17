@@ -45,6 +45,7 @@
      SUBDIR += geckodriver
      SUBDIR += gitea
      SUBDIR += goaccess
+     SUBDIR += gotosocial
      SUBDIR += gumbo
      SUBDIR += h2o
      SUBDIR += h2o,mruby
