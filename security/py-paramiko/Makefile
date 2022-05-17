@@ -1,6 +1,6 @@
-COMMENT =	Python module that implements the SSH2 protocol
+COMMENT =	low-level pure Python implementation of SSHv2
 
-MODPY_EGG_VERSION =	2.10.4
+MODPY_EGG_VERSION =	2.11.0
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security

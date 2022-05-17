@@ -11,25 +11,30 @@ Index: tests/test_client.py
  from mock import patch, Mock
  
  import paramiko
-@@ -685,13 +684,6 @@ class PasswordPassphraseTests(ClientTest):
+@@ -731,15 +730,7 @@ class PasswordPassphraseTests(ClientTest):
          # Straightforward / duplicate of earlier basic password test.
          self._test_connection(password="pygmalion")
  
 -    # TODO: more granular exception pending #387; should be signaling "no auth
 -    # methods available" because no key and no password
 -    @raises(SSHException)
+     @requires_sha1_signing
 -    def test_passphrase_kwarg_not_used_for_password_auth(self):
 -        # Using the "right" password in the "wrong" field shouldn't work.
 -        self._test_connection(passphrase="pygmalion")
 -
+-    @requires_sha1_signing
      def test_passphrase_kwarg_used_for_key_passphrase(self):
          # Straightforward again, with new passphrase kwarg.
          self._test_connection(
-@@ -708,14 +700,3 @@ class PasswordPassphraseTests(ClientTest):
+@@ -755,17 +746,4 @@ class PasswordPassphraseTests(ClientTest):
+         self._test_connection(
+             key_filename=_support("test_rsa_password.key"),
              password="television",
-         )
- 
+-        )
+-
 -    @raises(AuthenticationException)  # TODO: more granular
+-    @requires_sha1_signing
 -    def test_password_kwarg_not_used_for_passphrase_when_passphrase_kwarg_given(  # noqa
 -        self
 -    ):
@@ -39,4 +44,4 @@ Index: tests/test_client.py
 -            key_filename=_support("test_rsa_password.key"),
 -            password="television",
 -            passphrase="wat? lol no",
--        )
+         )

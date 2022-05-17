@@ -1,2 +1,7 @@
-paramiko is a module for Python  that implements the SSH2 protocol for
-secure connections to remote machines.
+Paramiko is a pure-Python implementation of the SSHv2 protocol
+providing both client and server functionality.
+
+Direct use of Paramiko itself is only intended for users who need
+advanced/low-level primitives or want to run an in-Python sshd.
+If you're looking for a high-level SSH library for common client
+use-cases, try Fabric (https://fabfile.org) which uses Paramiko.
