@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.401 2022/05/11 12:13:09 denis Exp $
+$OpenBSD: user.list,v 1.402 2022/05/17 08:36:18 op Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -388,3 +388,4 @@ id  user		group		port
 877 _znc		_znc		net/znc
 878 _gmid		_gmid		net/gmid
 879 _vaultwarden	_vaultwarden	security/vaultwarden
+880 _gotosocial		_gotosocial	www/gotosocial
