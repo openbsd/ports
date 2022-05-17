@@ -2246,6 +2246,7 @@ go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51578.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51593.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51607.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue51658.go2
+go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue52529.go2
 go/src/cmd/compile/internal/types2/testdata/fixedbugs/issue6977.src
 go/src/cmd/compile/internal/types2/testdata/manual.go2
 go/src/cmd/compile/internal/types2/testdata/spec/
@@ -2877,6 +2878,7 @@ go/src/cmd/go/testdata/script/bug.txt
 go/src/cmd/go/testdata/script/build_GOTMPDIR.txt
 go/src/cmd/go/testdata/script/build_acl_windows.txt
 go/src/cmd/go/testdata/script/build_arm.txt
+go/src/cmd/go/testdata/script/build_buildvcs_auto.txt
 go/src/cmd/go/testdata/script/build_cache_arch_mode.txt
 go/src/cmd/go/testdata/script/build_cache_compile.txt
 go/src/cmd/go/testdata/script/build_cache_disabled.txt
@@ -3300,6 +3302,7 @@ go/src/cmd/go/testdata/script/mod_retract_rationale.txt
 go/src/cmd/go/testdata/script/mod_retract_rename.txt
 go/src/cmd/go/testdata/script/mod_retract_replace.txt
 go/src/cmd/go/testdata/script/mod_retract_versions.txt
+go/src/cmd/go/testdata/script/mod_run_issue52331.txt
 go/src/cmd/go/testdata/script/mod_run_nonmain.txt
 go/src/cmd/go/testdata/script/mod_run_path.txt
 go/src/cmd/go/testdata/script/mod_run_pkg_version.txt
@@ -6342,6 +6345,7 @@ go/src/go/types/testdata/fixedbugs/issue51578.go2
 go/src/go/types/testdata/fixedbugs/issue51593.go2
 go/src/go/types/testdata/fixedbugs/issue51658.go2
 go/src/go/types/testdata/fixedbugs/issue52031.go
+go/src/go/types/testdata/fixedbugs/issue52529.go2
 go/src/go/types/testdata/fixedbugs/issue6977.src
 go/src/go/types/testdata/manual.go2
 go/src/go/types/testdata/spec/
@@ -8277,8 +8281,8 @@ go/src/runtime/example_test.go
 go/src/runtime/export_aix_test.go
 go/src/runtime/export_arm_test.go
 go/src/runtime/export_darwin_test.go
-go/src/runtime/export_debug_regabiargs_off_test.go
-go/src/runtime/export_debug_regabiargs_on_test.go
+go/src/runtime/export_debug_amd64_test.go
+go/src/runtime/export_debug_arm64_test.go
 go/src/runtime/export_debug_test.go
 go/src/runtime/export_debuglog_test.go
 go/src/runtime/export_linux_test.go
@@ -12022,6 +12026,7 @@ go/test/fixedbugs/issue5162.go
 go/test/fixedbugs/issue5172.go
 go/test/fixedbugs/issue51839.go
 go/test/fixedbugs/issue5231.go
+go/test/fixedbugs/issue52438.go
 go/test/fixedbugs/issue5244.go
 go/test/fixedbugs/issue5259.dir/
 go/test/fixedbugs/issue5259.dir/bug.go
@@ -12031,6 +12036,7 @@ go/test/fixedbugs/issue5260.dir/
 go/test/fixedbugs/issue5260.dir/a.go
 go/test/fixedbugs/issue5260.dir/b.go
 go/test/fixedbugs/issue5260.go
+go/test/fixedbugs/issue52612.go
 go/test/fixedbugs/issue5291.dir/
 go/test/fixedbugs/issue5291.dir/pkg1.go
 go/test/fixedbugs/issue5291.dir/prog.go
@@ -12950,6 +12956,7 @@ go/test/typeparam/issue51423.dir/b.go
 go/test/typeparam/issue51423.go
 go/test/typeparam/issue51522a.go
 go/test/typeparam/issue51522b.go
+go/test/typeparam/issue51700.go
 go/test/typeparam/issue51733.go
 go/test/typeparam/issue51765.go
 go/test/typeparam/issue51836.dir/
@@ -12957,6 +12964,12 @@ go/test/typeparam/issue51836.dir/a.go
 go/test/typeparam/issue51836.dir/aa.go
 go/test/typeparam/issue51836.dir/p.go
 go/test/typeparam/issue51836.go
+go/test/typeparam/issue52026.go
+go/test/typeparam/issue52117.dir/
+go/test/typeparam/issue52117.dir/a.go
+go/test/typeparam/issue52117.dir/b.go
+go/test/typeparam/issue52117.go
+go/test/typeparam/issue52228.go
 go/test/typeparam/list.go
 go/test/typeparam/list2.go
 go/test/typeparam/listimp.dir/
