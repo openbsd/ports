@@ -5,7 +5,7 @@ daemon_user="_riemann"
 
 . /etc/rc.d/rc.subr
 
-java="$(${LOCALBASE}/bin/javaPathHelper -c clojure)"
+java="$(${LOCALBASE}/bin/javaPathHelper -c riemann)"
 
 pexp="${java}.*riemann.*"
 rc_bg=YES

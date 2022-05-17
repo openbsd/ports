@@ -2,6 +2,7 @@ COMMENT =	network event stream processing system
 
 V =		0.3.8
 DISTNAME =	riemann-${V}
+REVISION =	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://riemann.io
@@ -18,8 +19,7 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	java
 MODJAVA_VER =	1.8+
 
-RUN_DEPENDS =	java/javaPathHelper \
-		lang/clojure
+RUN_DEPENDS =	java/javaPathHelper
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
