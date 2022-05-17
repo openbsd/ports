@@ -1,0 +1,18 @@
+#!/bin/ksh
+
+daemon="${LOCALBASE}/bin/gotosocial"
+daemon_user="_gotosocial"
+daemon_flags="--config-path ${SYSCONFDIR}/gotosocial.yaml"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon} .*"
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} server start"
+}
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

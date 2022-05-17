@@ -1,0 +1,77 @@
+@newgroup _gotosocial:880
+@newuser _gotosocial:880:880::GoToSocial Daemon:${PREFIX}/gotosocial:/sbin/nologin
+@rcscript ${RCDIR}/gotosocial
+gotosocial/
+@mode 750
+@owner _gotosocial
+@group _gotosocial
+gotosocial/storage/
+@mode
+@owner
+@group
+gotosocial/web/
+gotosocial/web/assets/
+gotosocial/web/assets/Fork-Awesome/
+gotosocial/web/assets/Fork-Awesome/CONTRIBUTORS.md
+gotosocial/web/assets/Fork-Awesome/LICENSES
+gotosocial/web/assets/Fork-Awesome/css/
+gotosocial/web/assets/Fork-Awesome/css/fork-awesome.css
+gotosocial/web/assets/Fork-Awesome/css/fork-awesome.min.css
+gotosocial/web/assets/Fork-Awesome/css/fork-awesome.min.css.map
+gotosocial/web/assets/Fork-Awesome/css/v5-compat.css
+gotosocial/web/assets/Fork-Awesome/css/v5-compat.min.css
+gotosocial/web/assets/Fork-Awesome/css/v5-compat.min.css.map
+gotosocial/web/assets/Fork-Awesome/fonts/
+gotosocial/web/assets/Fork-Awesome/fonts/forkawesome-webfont.eot
+gotosocial/web/assets/Fork-Awesome/fonts/forkawesome-webfont.svg
+gotosocial/web/assets/Fork-Awesome/fonts/forkawesome-webfont.ttf
+gotosocial/web/assets/Fork-Awesome/fonts/forkawesome-webfont.woff
+gotosocial/web/assets/Fork-Awesome/fonts/forkawesome-webfont.woff2
+gotosocial/web/assets/base.css
+gotosocial/web/assets/colors.css
+gotosocial/web/assets/default_avatars/
+gotosocial/web/assets/default_avatars/GoToSocial_icon1.svg
+gotosocial/web/assets/default_avatars/GoToSocial_icon2.svg
+gotosocial/web/assets/default_avatars/GoToSocial_icon3.svg
+gotosocial/web/assets/default_avatars/GoToSocial_icon4.svg
+gotosocial/web/assets/default_avatars/GoToSocial_icon5.svg
+gotosocial/web/assets/default_avatars/GoToSocial_icon6.svg
+gotosocial/web/assets/logo.png
+gotosocial/web/assets/profile.css
+gotosocial/web/assets/status.css
+gotosocial/web/assets/tusky.svg
+gotosocial/web/gotosocial-styling/
+gotosocial/web/gotosocial-styling/.eslintrc.js
+gotosocial/web/gotosocial-styling/.gitignore
+gotosocial/web/gotosocial-styling/LICENSE
+gotosocial/web/gotosocial-styling/README.md
+gotosocial/web/gotosocial-styling/colors.css
+gotosocial/web/gotosocial-styling/index.js
+gotosocial/web/gotosocial-styling/package.json
+gotosocial/web/gotosocial-styling/templates/
+gotosocial/web/gotosocial-styling/templates/base.css
+gotosocial/web/gotosocial-styling/templates/profile.css
+gotosocial/web/gotosocial-styling/templates/status.css
+gotosocial/web/gotosocial-styling/yarn.lock
+gotosocial/web/template/
+gotosocial/web/template/404.tmpl
+gotosocial/web/template/authorize.tmpl
+gotosocial/web/template/confirmed.tmpl
+gotosocial/web/template/email_confirm_html.tmpl
+gotosocial/web/template/email_confirm_text.tmpl
+gotosocial/web/template/email_reset_html.tmpl
+gotosocial/web/template/email_reset_text.tmpl
+gotosocial/web/template/error.tmpl
+gotosocial/web/template/footer.tmpl
+gotosocial/web/template/header.tmpl
+gotosocial/web/template/index.tmpl
+gotosocial/web/template/profile.tmpl
+gotosocial/web/template/sign-in.tmpl
+gotosocial/web/template/status.tmpl
+gotosocial/web/template/thread.tmpl
+@cwd ${LOCALBASE}
+@bin bin/gotosocial
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/gotosocial/
+share/examples/gotosocial/gotosocial.yaml
+@sample ${SYSCONFDIR}/gotosocial.yaml

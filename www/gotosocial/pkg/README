@@ -1,0 +1,43 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+GoToSocial Management
+=====================
+
+On OpenBSD GoToSocial is installed in ${LOCALSTATEDIR}/gotosocial and
+runs as dedicated user _gotosocial.
+
+GoToSocial management tasks must be run as the _gotosocial user using
+doas(1), sudo(1) or su(1).
+
+For example, to create an account:
+
+    $ doas -u _gotosocial gotosocial \
+        --config-path ${SYSCONFDIR}/gotosocial.yaml admin account create \
+            --username username \
+            --email some_email@whatever.org \
+            --password PASSWORD
+
+To confirm it:
+
+    $ doas -u _gotosocial gotosocial \
+        --config-path ${SYSCONFDIR}/gotosocial.yaml admin account confirm \
+            --username username
+
+Promote to admin rights:
+
+    $ doas -u _gotosocial gotosocial \
+        --config-path ${SYSCONFDIR}/gotosocial.yaml admin account promote \
+            --username username
+
+GoToSocial Admin Interface
+==========================
+
+GoToSocial does not come with an admin interface by default.
+
+However, you can use a public instance at:
+https://gts.superseriousbusiness.org/admin/
+
+You can also build one from source with:
+https://github.com/superseriousbusiness/gotosocial-admin
