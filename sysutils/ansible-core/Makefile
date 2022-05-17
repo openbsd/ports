@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.12.5
+MODPY_EGG_VERSION =	2.13.0
 DISTNAME =		ansible-core-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -16,6 +16,13 @@ MODULES =		lang/python
 
 MODPY_PI =              Yes
 MODPY_SETUPTOOLS =	Yes
+
+BUILD_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
+			devel/py-straight.plugin${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR} \
+			textproc/py-docutils${MODPY_FLAVOR} \
+			textproc/py-yaml${MODPY_FLAVOR} \
+			www/py-jinja2${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
@@ -34,11 +41,16 @@ TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR}
 
-TEST_ENV =		HOME=${WRKSRC} ANSIBLE_REMOTE_TMP=${WRKSRC}
-NO_TEST =		Yes
+USE_GMAKE =		Yes
 
-post-patch:
-	sed -i -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
+TEST_ENV =		HOME=${WRKSRC} ANSIBLE_REMOTE_TMP=${WRKSRC}
+
+pre-install:
+	cd ${WRKSRC} && env PYTHONPATH=lib HOME=./ ${MODPY_BIN} \
+		bin/ansible-config init --disabled -t all > examples/ansible.cfg
+	cd ${WRKSRC} && ${SETENV} HOME=${WRKSRC} PYTHON=${MODPY_BIN} \
+		${MAKE_PROGRAM} docs
+	sed -i -e "s,/usr/,${TRUEPREFIX}/,g;" \
 		${WRKSRC}/examples/ansible.cfg \
 		${WRKSRC}/docs/man/man1/*.1
 	sed -i -e "s,/usr/bin/python,${MODPY_BIN},g;" \
@@ -56,6 +68,10 @@ post-install:
 		-o -name '.travis.yml' \) -delete
 
 pre-test:
+	-rm -rf ${WRKSRC}/test/units/ansible_test
+	-rm -rf	${WRKSRC}/test/units/cli/galaxy
+	-rm -rf	${WRKSRC}/test/units/galaxy
+	-rm ${WRKSRC}/test/units/cli/test_galaxy.py
 	-rm ${WRKSRC}/test/units/module_utils/basic/test_selinux.py
 	-rm ${WRKSRC}/test/units/module_utils/urls/test_Request.py
 	@echo "[defaults]\nremote_tmp = ${WRKSRC}/.ansible/tmp" > \
