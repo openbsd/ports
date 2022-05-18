@@ -1,7 +1,8 @@
-VERSION =		4.15.6
+VERSION =		4.15.7
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION-tevent =	4
+REVISION-ldb =		0
+REVISION-tevent =	5
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
