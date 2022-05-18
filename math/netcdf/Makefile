@@ -4,6 +4,7 @@ V=		4.8.1
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	math
 
@@ -17,13 +18,14 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=		c m z pthread execinfo
-WANTLIB+=		crypto ssl
+WANTLIB+=		curl crypto nghttp2 ssl
 WANTLIB+=		hdf5 hdf5_hl
 
-LIB_DEPENDS =		math/hdf5
+# curl ist needed for DAP support
+LIB_DEPENDS=		net/curl \
+			math/hdf5
 
-TEST_DEPENDS=		net/curl \
-			shells/bash \
+TEST_DEPENDS=		shells/bash \
 			textproc/gdiff
 
 COMPILER =		base-clang ports-gcc base-gcc
