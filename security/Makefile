@@ -30,6 +30,7 @@
      SUBDIR += cryptcat
      SUBDIR += ctunnel
      SUBDIR += cvechecker
+     SUBDIR += cyrus-sasl-xoauth2
      SUBDIR += cyrus-sasl2
      SUBDIR += cyrus-sasl2,db4
      SUBDIR += cyrus-sasl2,gssapi
