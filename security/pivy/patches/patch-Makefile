@@ -1,12 +1,48 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -205,7 +205,7 @@ PIVTOOL_CFLAGS=		$(PCSC_CFLAGS) \
+@@ -33,7 +33,7 @@ VERSION		= 0.9.0
+ 
+ SECURITY_CFLAGS	= \
+ 	-fstack-protector-all -fwrapv -fPIC \
+-	-D_FORTIFY_SOURCE=2 -Wall -g -O2 -gdwarf-2
++	-D_FORTIFY_SOURCE=2 -Wall
+ 
+ SYSTEM		:= $(shell uname -s)
+ ifeq ($(SYSTEM), Linux)
+@@ -227,7 +227,7 @@ LIBSSH_CFLAGS=		$(PCSC_CFLAGS) \
  			$(SYSTEM_CFLAGS) \
  			$(SECURITY_CFLAGS) \
  			$(CONFIG_CFLAGS) \
 -			-O2 -g -D_GNU_SOURCE \
-+			$(COPTFLAGS) -D_GNU_SOURCE \
++			-D_GNU_SOURCE \
+ 			-I$(OPENSSH) \
  			-DPIVY_VERSION='"$(VERSION)"'
- PIVTOOL_LDFLAGS=	$(SYSTEM_LDFLAGS)
- PIVTOOL_LIBS=		$(PCSC_LIBS) \
+ LIBSSH_LDFLAGS=		$(SYSTEM_LDFLAGS) \
+@@ -295,7 +295,7 @@ PIVTOOL_CFLAGS=		$(PCSC_CFLAGS) \
+ 			$(SECURITY_CFLAGS) \
+ 			$(CONFIG_CFLAGS) \
+ 			$(OPTIM_CFLAGS) \
+-			-O2 -g -D_GNU_SOURCE \
++			-D_GNU_SOURCE \
+ 			-DPIVY_VERSION='"$(VERSION)"'
+ PIVTOOL_LDFLAGS=	$(SYSTEM_LDFLAGS) \
+ 			$(OPTIM_LDFLAGS)
+@@ -384,7 +384,7 @@ PIVYBOX_CFLAGS=		$(PCSC_CFLAGS) \
+ 			$(OPTIM_CFLAGS) \
+ 			$(CONFIG_CFLAGS) \
+ 			$(SECURITY_CFLAGS) \
+-			-O2 -g -D_GNU_SOURCE -std=gnu99
++			-D_GNU_SOURCE -std=gnu99
+ PIVYBOX_LDFLAGS=	$(SYSTEM_LDFLAGS) \
+ 			$(OPTIM_LDFLAGS)
+ PIVYBOX_LIBS=		$(PCSC_LIBS) \
+@@ -560,7 +560,7 @@ AGENT_CFLAGS=		$(PCSC_CFLAGS) \
+ 			$(OPTIM_CFLAGS) \
+ 			$(CONFIG_CFLAGS) \
+ 			$(SECURITY_CFLAGS) \
+-			-O2 -g -D_GNU_SOURCE
++			-D_GNU_SOURCE
+ AGENT_LDFLAGS=		$(SYSTEM_LDFLAGS) \
+ 			$(OPTIM_LDFLAGS)
+ AGENT_LIBS=		$(PCSC_LIBS) \
