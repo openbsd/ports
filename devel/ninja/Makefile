@@ -7,8 +7,7 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.10.2
-REVISION =		1
+GH_TAGNAME =		v1.11.0
 
 CATEGORIES =		devel
 
@@ -25,8 +24,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		lang/python
 
 MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	bootstrap.py \
-			configure.py \
+MODPY_ADJ_FILES =	configure.py \
 			misc/ninja_syntax.py \
 			src/browse.py
 
