@@ -3,6 +3,7 @@ COMMENT =		Clojure project automation
 GH_ACCOUNT =		technomancy
 GH_PROJECT =		leiningen
 GH_TAGNAME =		2.9.8
+REVISION =		0
 
 JAR_FILE =		${DISTNAME}-standalone.jar
 
@@ -20,8 +21,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		java
 # upstream recommends OpenJDK 8, do not use + since JAVA_HOME is used
 MODJAVA_VER =		1.8
-
-RUN_DEPENDS =		lang/clojure>=1.10.1.0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
