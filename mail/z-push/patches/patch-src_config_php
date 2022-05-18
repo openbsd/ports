@@ -1,7 +1,7 @@
 Index: src/config.php
 --- src/config.php.orig
 +++ src/config.php
-@@ -65,7 +65,7 @@
+@@ -68,7 +68,7 @@
   *           State migration script is available, more informations: https://wiki.z-hub.io/x/xIAa
   */
      define('STATE_MACHINE', 'FILE');

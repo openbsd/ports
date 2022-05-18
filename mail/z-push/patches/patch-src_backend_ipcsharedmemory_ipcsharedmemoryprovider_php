@@ -1,0 +1,12 @@
+Index: src/backend/ipcsharedmemory/ipcsharedmemoryprovider.php
+--- src/backend/ipcsharedmemory/ipcsharedmemoryprovider.php.orig
++++ src/backend/ipcsharedmemory/ipcsharedmemoryprovider.php
+@@ -42,7 +42,7 @@ class IpcSharedMemoryProvider implements IIpcProvider 
+         $this->allocate = $allocate;
+ 
+         if ($this->initSharedMem())
+-            ZLog::Write(LOGLEVEL_DEBUG, sprintf("%s(): Initialized mutexid %s and memid %s.", $class, $this->mutexid, $this->memid));
++            ZLog::Write(LOGLEVEL_DEBUG, sprintf("%s(): Initialized mutexid %s and memid %s.", $class, $this->mutexid::class, $this->memid::class));
+     }
+ 
+     /**

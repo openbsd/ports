@@ -2,7 +2,7 @@ COMMENT=	ActiveSync protocol implementation
 
 V=		2.6.2
 DISTNAME=	z-push-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www
 
