@@ -1,6 +1,6 @@
 COMMENT =	port of Quake 1 using Vulkan instead of OpenGL
 
-V =		1.12.2
+V =		1.13.1
 PKGNAME =	vkquake-${V}
 GH_ACCOUNT =	Novum
 GH_PROJECT =	vkQuake
