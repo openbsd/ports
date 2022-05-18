@@ -1,0 +1,2 @@
+lib/sasl2/libxoauth2.la
+@lib lib/sasl2/libxoauth2.so.${LIBxoauth2_VERSION}
