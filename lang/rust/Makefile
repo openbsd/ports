@@ -11,14 +11,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.60.0
+V =			1.61.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.60.0-20220406
-BV-amd64 =		1.60.0-20220405
-BV-i386 =		1.60.0-20220405
-BV-sparc64 =		1.59.0-20220223
+BV-aarch64 =		1.61.0-20220518
+BV-amd64 =		1.61.0-20220517
+BV-i386 =		1.61.0-20220517
+BV-sparc64 =		1.60.0-20220420
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -142,11 +142,6 @@ RUN_DEPENDS-rustfmt +=	lang/rust,-main
 MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
-
-# cargo assert() on i386 with standard libz
-.if "${MACHINE_ARCH}" == "i386"
-MAKE_ENV += 	LIBZ_SYS_STATIC=1
-.endif
 
 TEST_ENV +=	RUST_BACKTRACE=0
 
@@ -294,6 +289,7 @@ bootstrap: build
 		| sed -ne 's,.* \(/.*/lib/lib.*\.so.[.0-9]*\)$$,\1,p' \
 		| xargs -r -J % ${_PBUILD} cp % ${BOOTSTRAPDIR}/lib || true
 	${BOOTSTRAPDIR}/bin/${_bin} -vV >/dev/null
+	${_PBUILD} chmod -R a+rX ${BOOTSTRAPDIR}
 .endfor
 
 .include <bsd.port.mk>
