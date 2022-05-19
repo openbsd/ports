@@ -11,6 +11,7 @@ CATEGORIES =		security
 # MIT license
 PERMIT_PACKAGE =	Yes
 
+BUILD_DEPENDS =		security/cyrus-sasl2
 RUN_DEPENDS =		security/cyrus-sasl2
 
 CONFIGURE_STYLE =	autoreconf
