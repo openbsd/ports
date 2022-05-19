@@ -1,2 +1,4 @@
-SHA256 (tdesktop-3.6.1-full.tar.gz) = HoffCXCxNdVm9a9LxsJpX8mLo4fcETcQCkePAtSMEug=
-SIZE (tdesktop-3.6.1-full.tar.gz) = 41226549
+SHA256 (tdesktop-3.6.3-full.tar.gz) = UtV41oi52czysVNTVaOl+VaJfYJym55dTl2rvMymAQo=
+SHA256 (tdesktop-fix-rangev3+clang13+qt6-build-2b383a423.patch) = voMd83pSsmwNiGW9XlWz4BLWAiEJIafcPSRO+Q9LtHU=
+SIZE (tdesktop-3.6.3-full.tar.gz) = 41362993
+SIZE (tdesktop-fix-rangev3+clang13+qt6-build-2b383a423.patch) = 2074
