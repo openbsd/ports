@@ -331,7 +331,9 @@ share/vim/${P}/doc/usr_42.txt
 share/vim/${P}/doc/usr_43.txt
 share/vim/${P}/doc/usr_44.txt
 share/vim/${P}/doc/usr_45.txt
-share/vim/${P}/doc/usr_46.txt
+share/vim/${P}/doc/usr_50.txt
+share/vim/${P}/doc/usr_51.txt
+share/vim/${P}/doc/usr_52.txt
 share/vim/${P}/doc/usr_90.txt
 share/vim/${P}/doc/usr_toc.txt
 share/vim/${P}/doc/various.txt
