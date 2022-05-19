@@ -410,11 +410,13 @@ share/vim/${P}/ftplugin/dtrace.vim
 share/vim/${P}/ftplugin/dune.vim
 share/vim/${P}/ftplugin/eiffel.vim
 share/vim/${P}/ftplugin/elinks.vim
+share/vim/${P}/ftplugin/elixir.vim
 share/vim/${P}/ftplugin/elm.vim
 share/vim/${P}/ftplugin/erlang.vim
 share/vim/${P}/ftplugin/eruby.vim
 share/vim/${P}/ftplugin/eterm.vim
 share/vim/${P}/ftplugin/falcon.vim
+share/vim/${P}/ftplugin/fennel.vim
 share/vim/${P}/ftplugin/fetchmail.vim
 share/vim/${P}/ftplugin/flexwiki.vim
 share/vim/${P}/ftplugin/fortran.vim
@@ -593,6 +595,8 @@ share/vim/${P}/ftplugin/vhdl.vim
 share/vim/${P}/ftplugin/vim.vim
 share/vim/${P}/ftplugin/vroom.vim
 share/vim/${P}/ftplugin/wast.vim
+share/vim/${P}/ftplugin/wget.vim
+share/vim/${P}/ftplugin/wget2.vim
 share/vim/${P}/ftplugin/xdefaults.vim
 share/vim/${P}/ftplugin/xf86conf.vim
 share/vim/${P}/ftplugin/xhtml.vim
@@ -607,6 +611,9 @@ share/vim/${P}/ftplugin/zimbu.vim
 share/vim/${P}/ftplugin/zsh.vim
 share/vim/${P}/ftplugof.vim
 share/vim/${P}/gvimrc_example.vim
+share/vim/${P}/import/
+share/vim/${P}/import/dist/
+share/vim/${P}/import/dist/vimhelp.vim
 share/vim/${P}/indent/
 share/vim/${P}/indent.vim
 share/vim/${P}/indent/README.txt
@@ -650,6 +657,7 @@ share/vim/${P}/indent/erlang.vim
 share/vim/${P}/indent/eruby.vim
 share/vim/${P}/indent/eterm.vim
 share/vim/${P}/indent/falcon.vim
+share/vim/${P}/indent/fennel.vim
 share/vim/${P}/indent/fortran.vim
 share/vim/${P}/indent/framescript.vim
 share/vim/${P}/indent/freebasic.vim
@@ -671,6 +679,7 @@ share/vim/${P}/indent/json.vim
 share/vim/${P}/indent/jsonc.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/julia.vim
+share/vim/${P}/indent/krl.vim
 share/vim/${P}/indent/ld.vim
 share/vim/${P}/indent/less.vim
 share/vim/${P}/indent/lifelines.vim
@@ -1243,6 +1252,7 @@ share/vim/${P}/syntax/julia.vim
 share/vim/${P}/syntax/kconfig.vim
 share/vim/${P}/syntax/kivy.vim
 share/vim/${P}/syntax/kix.vim
+share/vim/${P}/syntax/krl.vim
 share/vim/${P}/syntax/kscript.vim
 share/vim/${P}/syntax/kwt.vim
 share/vim/${P}/syntax/lace.vim
@@ -1345,6 +1355,7 @@ share/vim/${P}/syntax/occam.vim
 share/vim/${P}/syntax/omnimark.vim
 share/vim/${P}/syntax/opam.vim
 share/vim/${P}/syntax/openroad.vim
+share/vim/${P}/syntax/openscad.vim
 share/vim/${P}/syntax/opl.vim
 share/vim/${P}/syntax/ora.vim
 share/vim/${P}/syntax/pamconf.vim
@@ -1589,6 +1600,7 @@ share/vim/${P}/syntax/wdiff.vim
 share/vim/${P}/syntax/web.vim
 share/vim/${P}/syntax/webmacro.vim
 share/vim/${P}/syntax/wget.vim
+share/vim/${P}/syntax/wget2.vim
 share/vim/${P}/syntax/whitespace.vim
 share/vim/${P}/syntax/winbatch.vim
 share/vim/${P}/syntax/wml.vim
