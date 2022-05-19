@@ -11,14 +11,13 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		1fe5e68d999e0bf88d0128ad813438726732f6e0
-DISTNAME =		${GH_PROJECT}-0.0.0.20220316
-REVISION =		0
+GH_COMMIT =		63a934db1ed212ebf8aaaa20f0010dd7b0d7b396
+DISTNAME =		${GH_PROJECT}-0.0.0.20220413
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	2.0	# 0.0.0
+SHARED_LIBS =		tg_owt	2.1	# 0.0.0
 
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
