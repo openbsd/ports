@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1572 2022/03/29 10:00:40 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1573 2022/05/19 13:12:40 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1907,7 +1907,7 @@ _list_port_libs = \
 .if empty(_PLIST_DB)
 _register_plist =:
 .else
-_register_plist = ${_PBUILD} install -d ${PLISTDIR_MODE} ${_PLIST_DB} && ${_PBUILD} ${_PERLSCRIPT}/register-plist ${REGISTER_PLIST_OPTS} -DFAKEDIR=${WRKINST} ${_PLIST_DB}
+_register_plist = ${_PBUILD} install -d ${PLISTDIR_MODE} ${_PLIST_DB} && ${_PBUILD} ${_PERLSCRIPT}/register-plist ${REGISTER_PLIST_OPTS} ${_PLIST_DB}
 .endif
 .if ${CHECK_LIB_DEPENDS:L} == "yes"
 _check_lib_depends = ${_CHECK_LIB_DEPENDS}
