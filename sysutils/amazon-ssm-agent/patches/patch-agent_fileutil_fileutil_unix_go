@@ -1,7 +1,7 @@
 Index: agent/fileutil/fileutil_unix.go
 --- agent/fileutil/fileutil_unix.go.orig
 +++ agent/fileutil/fileutil_unix.go
-@@ -96,14 +96,14 @@ func GetDiskSpaceInfo() (diskSpaceInfo DiskSpaceInfo, 
+@@ -100,14 +100,14 @@ func GetDiskSpaceInfo() (diskSpaceInfo DiskSpaceInfo, 
  	syscall.Statfs(wd, &stat)
  
  	// get block size
