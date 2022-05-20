@@ -2,8 +2,8 @@ COMMENT =	Rocket.chat support for Pidgin
 
 GH_ACCOUNT=	EionRobb
 GH_PROJECT=	purple-rocketchat
-GH_COMMIT=	5c08ad0eacd39914d27b692d7eb42a94a991fb4c
-V =		0.20211002
+GH_COMMIT=	484e5bf9c7579b681f297fea7a1fa36c91a54baf
+V =		0.20220130
 DISTNAME =	${GH_PROJECT}-$V
 CATEGORIES =	net
 
