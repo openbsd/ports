@@ -4,7 +4,7 @@ https://github.com/desktop-app/tg_owt/pull/94
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -829,8 +829,6 @@ PRIVATE
+@@ -804,8 +804,6 @@ PRIVATE
      media/engine/webrtc_media_engine_defaults.cc
      media/engine/webrtc_video_engine.cc
      media/engine/webrtc_voice_engine.cc
@@ -12,4 +12,4 @@ Index: CMakeLists.txt
 -    media/sctp/dcsctp_transport.h
      media/sctp/sctp_transport_factory.cc
      media/sctp/sctp_transport_factory.h
-     media/sctp/usrsctp_transport.cc
+     system_wrappers/include/denormal_disabler.h

@@ -11,33 +11,43 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		63a934db1ed212ebf8aaaa20f0010dd7b0d7b396
-DISTNAME =		${GH_PROJECT}-0.0.0.20220413
+GH_COMMIT =		10d5f4bf77333ef6b43516f90d2ce13273255f41
+DISTNAME =		${GH_PROJECT}-0.0.0.20220507
+DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	2.1	# 0.0.0
+SHARED_LIBS =		tg_owt	3.0	# 0.0.0
 
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
-# clone of https://chromium.googlesource.com/libyuv/libyuv which has no releases
-# or tags, main/master/stable/<commit> tarballs are *unstable*;
+# https://chromium.googlesource.com/libyuv/libyuv clone, no releases or tags
+# main/master/stable/<commit> tarballs are *not reproducible*
 # use Andrew's mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
-LIBYUV_COMMIT =		3aebf69d668177e7ee6dbbe0025e5c3dbb525ff2
-LIBYUV_DISTNAME =	libyuv-20220316-${LIBYUV_COMMIT:C/(........).*/\1/}
-DISTFILES =		${GH_DISTFILE} \
-			${LIBYUV_DISTNAME}{${LIBYUV_COMMIT}}.tar.gz:0
-EXTRACT_CASES =		${LIBYUV_DISTNAME}.tar.gz) ${TAR} -xz \
+LIBYUV_COMMIT =		966768e899c0eb932e1cd72935d37e15284daec0
+LIBYUV_DISTNAME =	libyuv-20220513-${LIBYUV_COMMIT:C/(........).*/\1/}
+DISTFILES +=		${LIBYUV_DISTNAME}{${LIBYUV_COMMIT}}.tar.gz:0
+EXTRACT_CASES +=	${LIBYUV_DISTNAME}.tar.gz) ${TAR} -xz \
 			    -f ${FULLDISTDIR}/$$archive \
 			    -C ${WRKSRC}/src/third_party/ \
 			    -s ,^libyuv-${LIBYUV_COMMIT},libyuv, ;;
 
+# no releases but old tags
+MASTER_SITES2 =		https://github.com/google/crc32c/archive/
+CRC32C_COMMIT =		21fc8ef30415a635e7351ffa0e5d5367943d4a94
+CRC32C_DISTNAME =	crc32c-20220208-${CRC32C_COMMIT:C/(........).*/\1/}
+DISTFILES +=		${CRC32C_DISTNAME}{${CRC32C_COMMIT}}.tar.gz:2
+EXTRACT_CASES +=	${CRC32C_DISTNAME}.tar.gz) ${TAR} -xz \
+			    -f ${FULLDISTDIR}/$$archive \
+			    -C ${WRKSRC}/src/third_party/ \
+			    -s ,^crc32c-${CRC32C_COMMIT},crc32c/src, ;;
+
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
-PATCHFILES +=		tg_owt-defer-third-party-sources-{}bf55efe3.patch:1
+PATCHFILES +=		tg_owt-defer-third-party-sources-{}f95ce167.patch:1
 # Pending "libabsl: Use system include directories"
 # https://github.com/desktop-app/tg_owt/pull/87
 PATCHFILES +=		tg_owt-libabsl-use-includes-{}fb12b4bd.patch:1
@@ -69,8 +79,7 @@ WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
 WANTLIB += absl_str_format_internal absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone avcodec avformat avutil crypto
-WANTLIB += jpeg m openh264 opus protobuf ssl swresample swscale
-WANTLIB += usrsctp vpx
+WANTLIB += jpeg m openh264 opus protobuf ssl swresample swscale vpx
 
 # C++17 set below, some components use -std=gnu++20
 COMPILER =		base-clang ports-gcc
@@ -90,8 +99,7 @@ LIB_DEPENDS =		audio/opus \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			multimedia/libvpx>=1.10.0 \
-			multimedia/openh264>=2.1.1p0 \
-			net/usrsctp>=0.9.5.0p2
+			multimedia/openh264>=2.1.1p0
 
 # look for system libraries and build a shared library, despite upstream
 # treating it as "community effort" with less support
@@ -115,7 +123,7 @@ NEEDED_BUNDLES +=	rnnoise
 # security/libsrtp is too new and tg_owt does not support it as system library
 NEEDED_BUNDLES +=	libsrtp
 # unported and required
-NEEDED_BUNDLES +=	libyuv pffft
+NEEDED_BUNDLES +=	libyuv pffft crc32c
 
 post-extract:
 	# All bundles:
