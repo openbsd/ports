@@ -1,7 +1,6 @@
 COMMENT=	RSS and Atom feeds parser written in Python
 
-MODPY_EGG_VERSION=	6.0.8
-REVISION=	0
+MODPY_EGG_VERSION=	6.0.9
 DISTNAME=	feedparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
