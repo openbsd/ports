@@ -4,7 +4,7 @@ http://www.sisyphus.ru/cgi-bin/srpm.pl/Sisyphus/telegram-desktop/getpatch/1
 Index: Telegram/cmake/lib_tgcalls.cmake
 --- Telegram/cmake/lib_tgcalls.cmake.orig
 +++ Telegram/cmake/lib_tgcalls.cmake
-@@ -251,6 +251,7 @@ PRIVATE
+@@ -267,6 +267,7 @@ PRIVATE
      ${tgcalls_loc}
  )
  

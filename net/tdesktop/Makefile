@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.6.3
+V =			3.7.5
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -14,13 +14,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
-
-MASTER_SITES0 =		https://github.com/telegramdesktop/tdesktop/commit/
-# Merged (3.7.4) "Explicitly specify QVector element type to fix build with clang13+qt6"
-# https://github.com/telegramdesktop/tdesktop/pull/24435
-PATCHFILES +=		tdesktop-fix-rangev3+clang13+qt6-build-{}2b383a423.patch:0
-
-PATCH_DIST_STRIP = 	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -61,7 +54,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/libsigc++-2 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20220413 \
+			net/tg_owt>=0.0.0.20220507 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			x11/qt6/qtsvg
@@ -111,11 +104,3 @@ post-extract:
 		mv .need/* . && rmdir .need/ && ls -x
 
 .include <bsd.port.mk>
-
-.if ${CHOSEN_COMPILER:M*-clang}
-# `stack-clash-protecion' is explicitly disabled in base and ports clang and
-# thus spams the following while ports-gcc does not warn
-# cc/c++: warning: argument unused during compilation: '-fstack-clash-protection'
-CFLAGS +=		-Wno-unused-command-line-argument
-CXXFLAGS +=		-Wno-unused-command-line-argument
-.endif
