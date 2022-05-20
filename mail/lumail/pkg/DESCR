@@ -1,5 +1,0 @@
-lumail is a modern console-based e-mail client. It operates exclusively
-on Maildir hierarchies, there is no support for POP3 or IMAP. lumail has
-built in Lua scripting support. Its configuration is done in Lua and
-there are a number of useful primitives you can use to control its
-behavior and functionality.

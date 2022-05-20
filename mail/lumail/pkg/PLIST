@@ -1,6 +1,0 @@
-@bin bin/lumail
-@bin bin/lumailctl
-share/examples/lumail/
-share/examples/lumail/lumail.lua
-share/lumail/
-share/lumail/lumail.help

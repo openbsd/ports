@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1391 2022/04/26 07:49:37 kirby Exp $
+# $OpenBSD: Quirks.pm,v 1.1392 2022/05/20 07:03:15 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1670,6 +1670,7 @@ setup_obsolete_reason(
 	6 => 'tepl',
 	3 => 'gnome-documents',
 	6 => 'amtk',
+	3 => 'lumail',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

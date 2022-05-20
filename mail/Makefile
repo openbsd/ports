@@ -66,7 +66,6 @@
      SUBDIR += libetpan
      SUBDIR += libspf2
      SUBDIR += libsrs2
-     SUBDIR += lumail
      SUBDIR += maildrop
      SUBDIR += maildrop,postfix
      SUBDIR += mailest
