@@ -3,10 +3,10 @@ COMMENT =		Tool Command Language
 DISTNAME =		tcl8.5.19
 PKGNAME =		tcl-8.5.19
 PKGSTEM =		tcl-8.5
-REVISION =		5
+REVISION =		6
 SHARED_LIBS =		tcl85 1.8
 CATEGORIES =		lang lang/tcl
-HOMEPAGE =		http://www.tcl.tk/
+HOMEPAGE =		http://www.tcl-lang.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD

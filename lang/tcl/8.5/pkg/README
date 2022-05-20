@@ -98,8 +98,8 @@ manpath ${TRUEPREFIX}/lib/tcl/tk8.5/man
 Tcl/Tk Resources
 ================
 Newsgroup: nntp://comp.lang.tcl
-Wiki:      http://wiki.tcl.tk
-Tutorial:  http://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html
+Wiki:      http://wiki.tcl-lang.org
+Tutorial:  http://www.tcl-lang.org/man/tcl8.5/tutorial/tcltutorial.html
 Wikibook:  http://en.wikibooks.org/wiki/Programming:Tcl
 Book:      Practical Programming in Tcl and Tk, 4th Edition
            ISBN: 0-13-038560-3
