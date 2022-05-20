@@ -7,6 +7,7 @@ COMMENT=		compiler and runtime system for ANSI Common Lisp
 V =			2.2.4
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
+REVISION=		0
 WRKDIST=		${WRKDIR}/sbcl-${V}
 EXTRACT_SUFX=		.tar.bz2
 PATCHORIG =		.orig.port
