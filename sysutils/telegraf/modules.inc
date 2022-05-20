@@ -1,4 +1,4 @@
-MODGO_VERSION =	v1.22.3
+MODGO_VERSION =	v1.22.4
 
 MODGO_MODULES =	\
 	4d63.com/gochecknoglobals						 v0.0.0-20201008074935-acfc0b28355a \
@@ -275,7 +275,7 @@ MODGO_MODULES =	\
 	github.com/edsrzf/mmap-go						 v1.0.0 \
 	github.com/elazarl/goproxy						 v0.0.0-20180725130230-947c36da3153 \
 	github.com/emicklei/go-restful						 v2.9.5+incompatible \
-	github.com/envoyproxy/go-control-plane					 v0.9.10-0.20210907150352-cf90f659a021 \
+	github.com/envoyproxy/go-control-plane					 v0.10.2-0.20220325020618-49ff273808a1 \
 	github.com/envoyproxy/protoc-gen-validate				 v0.1.0 \
 	github.com/esimonov/ifshort						 v1.0.1 \
 	github.com/evanphx/json-patch						 v4.12.0+incompatible \
@@ -470,9 +470,9 @@ MODGO_MODULES =	\
 	github.com/influxdata/flux						 v0.65.1 \
 	github.com/influxdata/go-syslog/v3					 v3.0.0 \
 	github.com/influxdata/influxdb						 v1.8.4 \
-	github.com/influxdata/influxdb-observability/common			 v0.2.18 \
-	github.com/influxdata/influxdb-observability/influx2otel		 v0.2.18 \
-	github.com/influxdata/influxdb-observability/otel2influx		 v0.2.18 \
+	github.com/influxdata/influxdb-observability/common			 v0.2.20 \
+	github.com/influxdata/influxdb-observability/influx2otel		 v0.2.20 \
+	github.com/influxdata/influxdb-observability/otel2influx		 v0.2.20 \
 	github.com/influxdata/influxdb1-client					 v0.0.0-20191209144304-8bf82d3c094d \
 	github.com/influxdata/influxql						 v1.1.1-0.20200828144457-65d3ef77d385 \
 	github.com/influxdata/line-protocol					 v0.0.0-20180522152040-32c6aa80de5e \
@@ -751,7 +751,7 @@ MODGO_MODULES =	\
 	github.com/shirou/gopsutil						 v3.21.5+incompatible \
 	github.com/shirou/gopsutil/v3						 v3.22.3 \
 	github.com/shopspring/decimal						 v1.2.0 \
-	github.com/showwin/speedtest-go						 v1.1.4 \
+	github.com/showwin/speedtest-go						 v1.1.5 \
 	github.com/shurcoo!l/go							 v0.0.0-20180423040247-9e1955d9fb6e \
 	github.com/shurcoo!l/go-goon						 v0.0.0-20170922171312-37c2f522c041 \
 	github.com/shurcoo!l/httpfs						 v0.0.0-20190707220628-8d4bc4ba7749 \
@@ -868,8 +868,7 @@ MODGO_MODULES =	\
 	go.mozilla.org/pkcs7							 v0.0.0-20200128120323-432b2356ecb1 \
 	go.opencensus.io							 v0.23.0 \
 	go.opentelemetry.io/collector						 v0.28.0 \
-	go.opentelemetry.io/collector/model					 v0.49.0 \
-	go.opentelemetry.io/collector/pdata					 v0.49.0 \
+	go.opentelemetry.io/collector/pdata					 v0.51.0 \
 	go.opentelemetry.io/otel						 v1.6.0 \
 	go.opentelemetry.io/otel/exporters/otlp/internal/retry			 v1.6.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric			 v0.28.0 \
@@ -912,7 +911,7 @@ MODGO_MODULES =	\
 	google.golang.org/appengine						 v1.6.7 \
 	google.golang.org/cloud							 v0.0.0-20151119220103-975617b05ea8 \
 	google.golang.org/genproto						 v0.0.0-20220207164111-0872dc986b00 \
-	google.golang.org/grpc							 v1.45.0 \
+	google.golang.org/grpc							 v1.46.0 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc				 v1.1.0 \
 	google.golang.org/protobuf						 v1.28.0 \
 	gopkg.in/airbrake/gobrake.v2						 v2.0.9 \
@@ -1194,6 +1193,7 @@ MODGO_MODFILES =	\
 	github.com/cncf/xds/go							 v0.0.0-20210312221358-fbca930ec8ed \
 	github.com/cncf/xds/go							 v0.0.0-20210805033703-aa0b78936158 \
 	github.com/cncf/xds/go							 v0.0.0-20210922020428-25de7278fc84 \
+	github.com/cncf/xds/go							 v0.0.0-20211001041855-01bcc9b48dfe \
 	github.com/containerd/aufs						 v0.0.0-20200908144142-dab0cbea06f4 \
 	github.com/containerd/aufs						 v0.0.0-20201003224125-76a6863f2989 \
 	github.com/containerd/aufs						 v0.0.0-20210316121734-20793ff83c97 \
@@ -1295,6 +1295,7 @@ MODGO_MODFILES =	\
 	github.com/envoyproxy/go-control-plane					 v0.6.9 \
 	github.com/envoyproxy/go-control-plane					 v0.9.0 \
 	github.com/envoyproxy/go-control-plane					 v0.9.1-0.20191026205805-5f8ba28d4473 \
+	github.com/envoyproxy/go-control-plane					 v0.9.10-0.20210907150352-cf90f659a021 \
 	github.com/envoyproxy/go-control-plane					 v0.9.4 \
 	github.com/envoyproxy/go-control-plane					 v0.9.7 \
 	github.com/envoyproxy/go-control-plane					 v0.9.9-0.20201210154907-fd9021fe5dad \
@@ -2692,6 +2693,7 @@ MODGO_MODFILES =	\
 	google.golang.org/grpc							 v1.40.0 \
 	google.golang.org/grpc							 v1.40.1 \
 	google.golang.org/grpc							 v1.43.0 \
+	google.golang.org/grpc							 v1.45.0 \
 	google.golang.org/grpc							 v1.8.0 \
 	google.golang.org/protobuf						 v0.0.0-20200109180630-ec00e32a8dfd \
 	google.golang.org/protobuf						 v0.0.0-20200221191635-4d8936d0db64 \

@@ -2,12 +2,14 @@ COMMENT =	plugin-driven server agent for collecting metrics
 
 BROKEN-arm =	build fails, no error message
 
-MODGO_VERSION=	v1.22.3
+MODGO_VERSION=	v1.22.4
 MODGO_MODNAME=	github.com/influxdata/telegraf
 GH_ACCOUNT =	influxdata
 GH_PROJECT =	telegraf
 GH_TAGNAME =	${MODGO_VERSION}
 HOMEPAGE =	https://www.influxdata.com/time-series-platform/telegraf/
+
+MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
 
 CATEGORIES =		sysutils
 
