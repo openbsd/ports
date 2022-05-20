@@ -50,7 +50,6 @@
      SUBDIR += geary
      SUBDIR += getmail
      SUBDIR += gmail-oauth2
-     SUBDIR += gmime
      SUBDIR += gmime30
      SUBDIR += grepmail
      SUBDIR += greyscanner
