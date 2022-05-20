@@ -1,3 +1,6 @@
+# has deps that can build only on OpenBSD/amd64
+ONLY_FOR_ARCHS = amd64
+
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
