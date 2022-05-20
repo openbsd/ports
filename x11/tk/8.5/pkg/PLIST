@@ -17,11 +17,11 @@ include/tk8.5/tkUnixInt.h
 include/tk8.5/tkUnixPort.h
 include/tk8.5/ttkDecls.h
 include/tk8.5/ttkTheme.h
-lib/libtk85.a
+@static-lib lib/libtk85.a
 @lib lib/libtk85.so.${LIBtk85_VERSION}
-lib/libtk85_pic.a
-lib/libtkstub85.a
-lib/libtkstub85_pic.a
+@static-lib lib/libtk85_pic.a
+@static-lib lib/libtkstub85.a
+@static-lib lib/libtkstub85_pic.a
 lib/pkgconfig/tk85.pc
 lib/tcl/tk8.5/
 lib/tcl/tk8.5/bgerror.tcl

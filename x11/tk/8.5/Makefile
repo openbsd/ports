@@ -3,10 +3,10 @@ COMMENT =		graphical toolkit for Tcl
 P =			19
 DISTNAME =		tk8.5.${P}
 PKGNAME =		tk-8.5.${P}
-REVISION =		1
+REVISION =		2
 SHARED_LIBS =		tk85 0.${P}
 CATEGORIES =		x11 x11/tk
-HOMEPAGE =		http://www.tcl.tk/
+HOMEPAGE =		http://www.tcl-lang.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
