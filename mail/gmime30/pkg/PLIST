@@ -1,3 +1,5 @@
+@conflict gmime-*
+@pkgpath mail/gmime
 include/gmime-3.0/
 include/gmime-3.0/gmime/
 include/gmime-3.0/gmime/gmime-application-pkcs7-mime.h
