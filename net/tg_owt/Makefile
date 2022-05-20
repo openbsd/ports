@@ -13,6 +13,7 @@ GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
 GH_COMMIT =		10d5f4bf77333ef6b43516f90d2ce13273255f41
 DISTNAME =		${GH_PROJECT}-0.0.0.20220507
+REVISION =		0
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
 
@@ -143,13 +144,14 @@ post-configure:
 	# nice_target_sources()/remove_target_sources() calls in CMakeLists.txt
 	cd ${WRKSRC}/src/ && rm -r -- \
 	    modules/audio_device/{android,mac,win}/ \
-	    modules/desktop_capture/{mac,win}/ \
+	    modules/desktop_capture/{mac,win,linux/wayland}/ \
 	    modules/video_capture/windows/ \
 	    rtc_base/{win/,win32*.h}
 
 post-install:
 	# remove bundled sources not needed to build tdesktop
 	cd ${PREFIX}/include/tg_owt/ && rm -r -- \
-	    third_party/{libsrtp,rnnoise,pffft}
+	    third_party/{libsrtp,rnnoise,pffft,crc32c}
+	find ${PREFIX}/include/tg_owt/ -type d -name test -exec rm -r -- {} +
 
 .include <bsd.port.mk>
