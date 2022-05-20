@@ -36,7 +36,7 @@ MODPHP_INCDIR=		${LOCALBASE}/include/php-${MODPHP_VERSION}
 MODPHP_LIBDIR=		${LOCALBASE}/lib/php-${MODPHP_VERSION}
 
 MODPHP_CONFIGURE_ARGS=	--with-php-config=${LOCALBASE}/bin/php-config-${MODPHP_VERSION}
-SUBST_VARS+=		MODPHP_VERSION
+SUBST_VARS+=		MODPHP_VERSION MODPHP_BIN
 
 # build a string that can be included in RUN_DEPENDS to match suitable PDO types
 MODPHP_PDO_ALLOWED?=	mysql pgsql sqlite
