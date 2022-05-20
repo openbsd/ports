@@ -1,6 +1,6 @@
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_EGG_VERSION =	4.0.2
+MODPY_EGG_VERSION =	5.1.3
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -21,6 +21,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	-rs -v -o addopts=
+CFLAGS +=		-I/usr/local/include
 
 FLAVORS =		python3
 FLAVOR =		python3

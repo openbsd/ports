@@ -28,11 +28,15 @@ lib/python${MODPY_VERSION}/site-packages/pikepdf/models/
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}_content_stream.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}_transcoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}encryption.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}matrix.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/${MODPY_PYCACHE}outlines.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/models/_content_stream.py
+lib/python${MODPY_VERSION}/site-packages/pikepdf/models/_transcoding.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/encryption.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/image.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/matrix.py
