@@ -1,0 +1,21 @@
+Mitogen is a Python library for writing distributed self-replicating
+programs. Its main feature is enabling your Python program to bootstrap
+and communicate with new copies of itself under its control running on
+remote machines, using only an existing installed Python interpreter and
+SSH client,
+
+There is no requirement for installing packages, copying files around,
+writing shell snippets, upfront configuration, or providing any
+secondary link to a remote machine aside from an SSH connection. Due
+to its origins for use in managing potentially damaged infrastructure,
+the remote machine need not even have free disk space or a writeable
+filesystem.
+
+This includes Mitogen for Ansible, a redesigned UNIX connection layer
+and module runtime for Ansible. Requiring minimal configuration changes,
+it updates Ansible's and wasteful shell-centric implementation with
+pure-Python equivalents, invoked via highly efficient remote procedure
+calls to persistent interpreters tunnelled over SSH. No changes are
+required to target hosts. (See the documentation for more information;
+use ${PREFIX}/share/ansible_mitogen/plugins/strategy as your path for
+strategy_plugins).
