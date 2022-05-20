@@ -1,6 +1,6 @@
 COMMENT =		strong, neutral, principles-driven typeface
 
-V =			2.000
+V =			2.001
 DISTNAME =		public-sans-v$V
 PKGNAME =		public-sans-$V
 
