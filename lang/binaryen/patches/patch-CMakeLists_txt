@@ -3,7 +3,7 @@ Remove hardcoded optimizations.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -273,7 +273,6 @@ else()
+@@ -283,7 +283,6 @@ else()
    endif()
    add_debug_compile_flag("-O0")
    add_debug_compile_flag("-g3")
