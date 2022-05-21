@@ -143,6 +143,11 @@ MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
+# cargo assert() on i386 with standard libz
+.if "${MACHINE_ARCH}" == "i386"
+MAKE_ENV += 	LIBZ_SYS_STATIC=1
+.endif
+
 TEST_ENV +=	RUST_BACKTRACE=0
 
 .ifdef DEBUG
