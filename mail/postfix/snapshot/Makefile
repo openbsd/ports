@@ -1,7 +1,7 @@
 BROKEN=		outdated; newer versions require OpenSSL 1.1.1 API
 
 VERSION=	3.6-20200627
-REVISION=	2
+REVISION=	3
 
 MASTER_SITES=	${MASTER_SITE_POSTFIX:=experimental/}
 

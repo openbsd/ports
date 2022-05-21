@@ -7,7 +7,7 @@ daemon="${TRUEPREFIX}/libexec/postfix/master"
 pexp="${daemon}.*"
 
 rc_start() {
-	${TRUEPREFIX}/sbin/postfix ${daemon_flags} start
+	rc_exec "${TRUEPREFIX}/sbin/postfix ${daemon_flags} start"
 }
 
 rc_stop() {
