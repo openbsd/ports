@@ -9,8 +9,8 @@ pexp="/usr/bin/perl ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_start() {
-	${LOCALBASE}/bin/spawn-fcgi -s /var/www/run/smokeping.sock \
-	    -u _smokeping -U www -M 0660 ${daemon} ${daemon_flags}
+	rc_exec "${LOCALBASE}/bin/spawn-fcgi -s /var/www/run/smokeping.sock \
+	    -u _smokeping -U www -M 0660 ${daemon} ${daemon_flags}"
 }
 
 rc_cmd $1
