@@ -9,6 +9,10 @@ daemon_timeout=300
 
 rc_usercheck=NO
 
+# rc_exec is used because
+# pg_ctl: cannot be run as root
+# Please log in (using, e.g., "su") as the (unprivileged) user that will own the server process.
+
 rc_check() {
 	rc_exec "${daemon} status ${daemon_flags}"
 }
