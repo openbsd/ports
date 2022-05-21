@@ -1,6 +1,7 @@
---- lib/tools/c_src/Makefile.in.orig	Tue Jun 21 20:55:58 2016
-+++ lib/tools/c_src/Makefile.in	Mon Jun 27 11:29:11 2016
-@@ -111,7 +111,7 @@ EMEM_INCLUDES =	-I$(ERL_TOP)/erts/include \
+Index: lib/tools/c_src/Makefile.in
+--- lib/tools/c_src/Makefile.in.orig
++++ lib/tools/c_src/Makefile.in
+@@ -110,7 +110,7 @@ EMEM_INCLUDES =	-I$(ERL_TOP)/erts/include \
  EMEM_HEADERS = erl_memory_trace_block_table.h
  EMEM_SRCS = erl_memory.c erl_memory_trace_block_table.c
  

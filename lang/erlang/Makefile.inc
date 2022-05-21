@@ -5,8 +5,9 @@ CATEGORIES =	lang
 # Apachev2
 PERMIT_PACKAGE =	Yes
 
-HOMEPAGE =	http://www.erlang.org/
-MASTER_SITES ?=	${HOMEPAGE}download/
+HOMEPAGE =	https://www.erlang.org/
+MASTER_SITES =	https://github.com/erlang/otp/releases/download/OTP-${V}/
+MAJ_V =		${V:C/\.[0-9]+//g}
 
 DISTFILES ?=	${DISTNAME}.tar.gz \
 		otp_doc_man_${V}.tar.gz
@@ -15,7 +16,9 @@ EXTRACT_ONLY ?=	${DISTNAME}.tar.gz
 
 CONFIGURE_STYLE ?=	autoconf no-autoheader
 CONFIGURE_ENV ?=	LDFLAGS="${LDFLAGS} -pthread" \
+			ERL_TOP=${WRKSRC} \
 			ac_cv_prog_LLVM_PROFDATA=no
+MAKE_ENV ?=		ERL_TOP=${WRKSRC}
 AUTOCONF_VERSION ?=	2.59
 AUTOCONF_DIR ?=		${WRKSRC} \
 			${WRKSRC}/erts \
@@ -41,8 +44,6 @@ USE_GMAKE=	Yes
 
 MAKE_ENV +=	DESTDIR=$(DESTDIR)
 
-NO_TEST ?=	Yes
-
 .for _n _v in ${ERL_VERSIONS}
 ${_n} =		${_v}
 ERL_${_n:S/_VSN//} = ${_n:S/_VSN//:L}-${_v}
@@ -51,7 +52,14 @@ SUBST_VARS +=	ERL_${_n:S/_VSN//}
 
 COMPILER=	base-clang ports-gcc
 
-SUBST_VARS+=	SYSTEM_VSN MAJ_V
+
+UPDATE_PLIST_ARGS+= -i MAJ_V
+ERLANG_V= 	erlang${MAJ_V}
+SUBST_VARS+=	ERLANG_V MAJ_V
+
+# Needed to run tests
+PORTHOME =	${WRKDIST}
+TEST_DEPENDS =	archivers/gtar
 
 # special cases
 ERL_EI=			erl_interface-${EI_VSN}
@@ -61,7 +69,7 @@ ERL_COSFILETRANSFER=	cosFileTransfer-${COSFILETRANSFER_VSN}
 ERL_COSNOTIFICATION=	cosNotification-${COSNOTIFICATION_VSN}
 ERL_COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
 ERL_COSTIME=		cosTime-${COSTIME_VSN}
-ERL_COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
+ERL_COSTRANSACTIONS=	cosTransactions-${COSTRANSACTIONS_VSN}
 
 # Special maintainer target, scan through vsn.mk files and build 'ERL_VERSIONS'
 # list
@@ -80,6 +88,22 @@ pre-configure:
 		     ${WRKSRC}/erts/etc/common/typer.c \
 		     ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl \
 		     ${WRKSRC}/lib/wx/configure.in
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar && \
+	cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} \
+	${GMAKE} release_tests
+
+do-test:
+	cd ${WRKSRC}/release/tests/test_server && \
+	ln -fs ${WRKSRC}/bin/erl ${WRKSRC}/bin/erl${MAJ_V} && \
+	${SETENV} ${MAKE_ENV} \
+	PATH=${PATH}:${WRKDIST}/bin \
+	erl -s ts install -s ts smoke_test batch -s init stop
+
+post-test:
+	rm ${WRKSRC}/bin/erl${MAJ_V}
 
 post-install:
 	ln -sf ../lib/erlang${MAJ_V}/lib/${ERL_EI}/bin/erl_call ${PREFIX}/bin/erl_call${MAJ_V}
