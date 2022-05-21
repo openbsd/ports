@@ -13,7 +13,7 @@ rc_pre() {
 }
 
 rc_start() {
-	${rcexec} "${daemon} start"
+	rc_exec "${daemon} start"
 }
 
 rc_reload() {

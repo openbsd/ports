@@ -3,7 +3,7 @@ COMMENT =	HTML5 validator
 V =		20.6.30
 DISTNAME =	vnu.jar_$V
 PKGNAME =	vnu-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

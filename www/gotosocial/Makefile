@@ -7,6 +7,7 @@ MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
 MODGO_VERSION =	v0.3.3
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -11,11 +11,11 @@ rc_pre() {
 }
 
 rc_start() {
-	${rcexec} "${TRUEPREFIX}/sbin/kamctl start"
+	rc_exec "${TRUEPREFIX}/sbin/kamctl start"
 }
 
 rc_stop() {
-	${rcexec} "${TRUEPREFIX}/sbin/kamctl stop"
+	rc_exec "${TRUEPREFIX}/sbin/kamctl stop"
 }
 
 rc_reload=NO

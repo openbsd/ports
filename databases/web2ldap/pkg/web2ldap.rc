@@ -9,7 +9,7 @@ rc_reload=NO
 rc_bg=YES
 
 rc_start() {
-	${rcexec} "${daemon}"
+	rc_exec "${daemon}"
 }
 
 pexp="${MODPY_BIN} ${daemon}"

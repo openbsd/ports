@@ -4,6 +4,7 @@ GH_ACCOUNT=	blueness
 GH_PROJECT=	sthttpd
 GH_TAGNAME=	v2.27.1
 CATEGORIES=	www
+REVISION=	0
 
 HOMEPAGE=	https://github.com/blueness/sthttpd
 

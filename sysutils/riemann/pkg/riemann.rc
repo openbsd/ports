@@ -11,7 +11,7 @@ pexp="${java}.*riemann.*"
 rc_bg=YES
 
 rc_start() {
-	${rcexec} "JAVA_CMD=\"${java}\" ${daemon}"
+	rc_exec "JAVA_CMD=\"${java}\" ${daemon}"
 }
 
 rc_cmd $1

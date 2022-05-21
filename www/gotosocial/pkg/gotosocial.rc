@@ -9,7 +9,7 @@ daemon_flags="--config-path ${SYSCONFDIR}/gotosocial.yaml"
 pexp="${daemon} .*"
 
 rc_start() {
-	${rcexec} "${daemon} ${daemon_flags} server start"
+	rc_exec "${daemon} ${daemon_flags} server start"
 }
 
 rc_bg=YES

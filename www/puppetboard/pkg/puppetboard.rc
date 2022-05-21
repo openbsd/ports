@@ -9,7 +9,7 @@ daemon_user="_puppetboard"
 pexp="${MODPY_BIN}.*${daemon_flags:+ ${daemon_flags}} ${daemon}:application"
 
 rc_start() {
-	${rcexec} "cd ${INSTDIR} && \
+	rc_exec "cd ${INSTDIR} && \
 		${LOCALBASE}/bin/gunicorn --daemon ${daemon_flags} ${daemon}:application"
 }
 

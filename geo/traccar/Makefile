@@ -1,6 +1,6 @@
 COMMENT =	modern GPS tracking platform
 V =		4.15
-REVISION =	0
+REVISION =	1
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip

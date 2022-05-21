@@ -9,7 +9,7 @@ daemon_flags="${LOCALSTATEDIR}/synapse/homeserver.yaml"
 pexp="${MODPY_BIN} -m synapse.app.homeserver -c ${daemon_flags} --daemonize"
 
 rc_start() {
-	${rcexec} "${daemon} start ${daemon_flags}"
+	rc_exec "${daemon} start ${daemon_flags}"
 }
 
 rc_stop() {

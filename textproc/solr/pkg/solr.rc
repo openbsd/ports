@@ -10,7 +10,7 @@ pexp="$(${LOCALBASE}/bin/javaPathHelper -c solr) .*-Dsolr.solr.home=${LOCALSTATE
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "SOLR_INCLUDE=${SYSCONFDIR}/solr.in.sh ${daemon} start"
+	rc_exec "SOLR_INCLUDE=${SYSCONFDIR}/solr.in.sh ${daemon} start"
 }
 
 rc_stop() {

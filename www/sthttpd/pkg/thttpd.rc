@@ -10,7 +10,7 @@ rc_stop_signal=USR1
 # supplies. This addresses the awkward fact that thttpd defaults to the
 # current working directory.
 rc_start() {
-	${rcexec} "cd /var/www; ${daemon} ${daemon_flags}"
+	rc_exec "cd /var/www; ${daemon} ${daemon_flags}"
 }
 
 rc_cmd $1

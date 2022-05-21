@@ -12,7 +12,7 @@ rc_reload=NO
 pexp="$(${LOCALBASE}/bin/javaPathHelper -c vnu) -cp ${daemon} nu.validator.servlet.Main ${daemon_flags}"
 
 rc_start() {
-	${rcexec} "$(${LOCALBASE}/bin/javaPathHelper -c vnu) -cp ${daemon} nu.validator.servlet.Main ${daemon_flags}"
+	rc_exec "$(${LOCALBASE}/bin/javaPathHelper -c vnu) -cp ${daemon} nu.validator.servlet.Main ${daemon_flags}"
 }
 
 rc_cmd $1

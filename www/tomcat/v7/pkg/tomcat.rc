@@ -11,7 +11,7 @@ pexp="$(${LOCALBASE}/bin/javaPathHelper -c tomcat) .*-Dcatalina.base=${CATALINA_
 rc_reload=NO
 
 rc_start() {
-        ${rcexec} \
+        rc_exec \
 	    "CATALINA_BASE=\"${CATALINA_BASE}\" \
 	    CATALINA_OPTS=\"${daemon_flags}\" \
 	    JAVA_HOME=\"$(${LOCALBASE}/bin/javaPathHelper -h tomcat)\" ${daemon} start"

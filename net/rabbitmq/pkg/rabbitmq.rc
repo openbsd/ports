@@ -14,7 +14,7 @@ rc_pre() {
 
 rc_check() {
 	# return 1 is needed: rabbitmqctl returns a higher error code on failure
-	$rcexec ${TRUEPREFIX}/bin/rabbitmqctl status || return 1
+	rc_exec ${TRUEPREFIX}/bin/rabbitmqctl status || return 1
 }
 
 rc_stop() {

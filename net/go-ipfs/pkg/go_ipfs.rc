@@ -10,7 +10,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "IPFS_PATH=\"${VARBASE}/go-ipfs\" ${daemon} ${daemon_flags}"
+	rc_exec "IPFS_PATH=\"${VARBASE}/go-ipfs\" ${daemon} ${daemon_flags}"
 }
 
 rc_cmd $1

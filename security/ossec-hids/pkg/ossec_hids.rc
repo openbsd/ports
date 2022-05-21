@@ -7,7 +7,7 @@ daemon="${TRUEPREFIX}/ossec-hids/bin/ossec-control"
 rc_usercheck=NO
 
 rc_start() {
-	${rcexec} "${daemon} ${daemon_flags} start"
+	rc_exec "${daemon} ${daemon_flags} start"
 }
 
 rc_check() {

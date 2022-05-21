@@ -9,7 +9,7 @@ daemon_user="_buildbot"
 pexp="${MODPY_BIN} .*logfile=twistd.log --python=buildbot.tac"
 
 rc_start() {
-	${rcexec} "${daemon} start ${daemon_flags}"
+	rc_exec "${daemon} start ${daemon_flags}"
 }
 
 rc_reload() {

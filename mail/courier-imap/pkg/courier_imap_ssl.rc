@@ -7,7 +7,7 @@ daemon="${TRUEPREFIX}/libexec/imapd-ssl.rc"
 pexp="${LOCALBASE}/sbin/courierlogger .* -start -name=imapd-ssl .*"
 
 rc_start() {
-	${rcexec} "${daemon} start"
+	rc_exec "${daemon} start"
 }
 
 rc_stop() {

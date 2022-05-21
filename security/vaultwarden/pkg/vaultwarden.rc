@@ -6,7 +6,7 @@ daemon_user="_vaultwarden"
 . /etc/rc.d/rc.subr
 
 rc_start() {
-	${rcexec} "cd ${VARBASE}/vaultwarden; ${daemon} ${daemon_flags}"
+	rc_exec "cd ${VARBASE}/vaultwarden; ${daemon} ${daemon_flags}"
 }
 
 rc_bg=YES

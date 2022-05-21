@@ -10,20 +10,20 @@ daemon_timeout=300
 rc_usercheck=NO
 
 rc_check() {
-	${rcexec} "${daemon} status ${daemon_flags}"
+	rc_exec "${daemon} status ${daemon_flags}"
 }
 
 rc_reload() {
-	${rcexec} "${daemon} reload ${daemon_flags}"
+	rc_exec "${daemon} reload ${daemon_flags}"
 }
 
 rc_start() {
-	${rcexec} "${daemon} start ${daemon_flags}"
+	rc_exec "${daemon} start ${daemon_flags}"
 }
 
 rc_stop() {
-	${rcexec} "${daemon} stop ${daemon_flags} -m fast" || \
-		${rcexec} "${daemon} stop ${daemon_flags} -m immediate"
+	rc_exec "${daemon} stop ${daemon_flags} -m fast" || \
+		rc_exec "${daemon} stop ${daemon_flags} -m immediate"
 }
 
 rc_cmd $1

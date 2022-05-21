@@ -5,6 +5,7 @@ PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
+REVISION=	0
 
 .for i in kea-asiodns kea-asiolink kea-cc kea-cfgclient kea-cryptolink \
     kea-d2srv kea-database kea-dhcp++ kea-dhcp_ddns kea-dhcpsrv kea-dns++ \

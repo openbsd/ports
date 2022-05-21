@@ -6,6 +6,7 @@ MODGO_MODNAME =	github.com/ipfs/go-ipfs
 MODGO_VERSION =	v0.11.0
 
 DISTNAME =	go-ipfs-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://ipfs.io

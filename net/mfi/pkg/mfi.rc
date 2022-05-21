@@ -12,7 +12,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "${java} ${daemon_flags} -jar ${daemon} start"
+	rc_exec "${java} ${daemon_flags} -jar ${daemon} start"
 }
 
 rc_stop() {

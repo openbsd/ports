@@ -13,7 +13,7 @@ rc_reload=NO
 
 rc_start() {
 	cd ${LOCALBASE}/share/unifi
-	${rcexec} "${java} ${daemon_flags} -cp 'lib/*' com/ubnt/ace/Launcher start"
+	rc_exec "${java} ${daemon_flags} -cp 'lib/*' com/ubnt/ace/Launcher start"
 }
 
 rc_cmd $1

@@ -9,6 +9,7 @@ VERSION=	14.3
 PREV_MAJOR=	13
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
+REVISION-server=0
 
 DPB_PROPERTIES=	parallel
 

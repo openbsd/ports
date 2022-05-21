@@ -7,7 +7,7 @@ daemon="${TRUEPREFIX}/sbin/asterisk"
 pexp="${daemon}.*"
 
 rc_start() {
-	${rcexec} "${TRUEPREFIX}/sbin/safe_asterisk"
+	rc_exec "${TRUEPREFIX}/sbin/safe_asterisk"
 }
 
 rc_stop() {

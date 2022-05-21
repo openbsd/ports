@@ -11,7 +11,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "env LC_ALL=en_US.UTF-8 ${daemon} ${daemon_flags}"
+	rc_exec "env LC_ALL=en_US.UTF-8 ${daemon} ${daemon_flags}"
 }
 
 rc_cmd $1

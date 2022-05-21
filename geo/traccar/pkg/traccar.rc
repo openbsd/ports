@@ -11,7 +11,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-        ${rcexec} "${java} ${daemon_flags} -XX:-UsePerfData -jar ${daemon} /etc/traccar/traccar.xml"
+        rc_exec "${java} ${daemon_flags} -XX:-UsePerfData -jar ${daemon} /etc/traccar/traccar.xml"
 }
 
 rc_cmd $1

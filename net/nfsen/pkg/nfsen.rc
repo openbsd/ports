@@ -11,7 +11,7 @@ pexp="/usr/bin/perl -w ${daemon}"
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "${ctl} start"
+	rc_exec "${ctl} start"
 }
 
 rc_stop() {
