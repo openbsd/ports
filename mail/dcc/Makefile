@@ -2,6 +2,7 @@ COMMENT=	bulk mail detection (Distributed Checksum Clearinghouses)
 
 DISTNAME=	dcc-2.3.168
 EXTRACT_SUFX=	.tar.Z
+REVISION=	0
 
 CATEGORIES=	mail
 
