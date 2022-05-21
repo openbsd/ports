@@ -90,3 +90,5 @@ share/apertium-apy/tools/upstart/apertium-all.conf
 share/apertium-apy/tools/upstart/apertium-apy-gateway.conf
 share/apertium-apy/tools/upstart/apertium-apy.conf
 share/apertium-apy/tools/upstart/apertium-html-tools.conf
+share/examples/login.conf.d/apertium_apy
+@sample ${SYSCONFDIR}/login.conf.d/apertium_apy

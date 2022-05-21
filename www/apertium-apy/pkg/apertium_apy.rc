@@ -1,17 +1,13 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/apertium-apy"
-daemon_user="_apertium-apy"
 daemon_flags="${LOCALBASE}/share/apertium"
+daemon_user="_apertium-apy"
 
 . /etc/rc.d/rc.subr
 
 pexp="${LOCALBASE}/bin/python.* ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_bg=YES
 rc_reload=NO
-
-rc_start() {
-	rc_exec "env LC_ALL=en_US.UTF-8 ${daemon} ${daemon_flags}"
-}
 
 rc_cmd $1
