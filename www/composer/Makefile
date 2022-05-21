@@ -23,8 +23,6 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-SUBST_VARS=	MODPHP_BIN
-
 do-extract:
 	mkdir ${WRKSRC}; \
 	  cp ${FULLDISTDIR}/composer-$V.phar ${WRKSRC}/composer.phar

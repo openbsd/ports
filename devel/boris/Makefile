@@ -19,8 +19,6 @@ RUN_DEPENDS +=		lang/php/${MODPHP_VERSION},-pcntl
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-SUBST_VARS +=		MODPHP_BIN
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/boris ${PREFIX}/lib/boris
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,README.md} ${PREFIX}/share/doc/boris

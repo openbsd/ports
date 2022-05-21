@@ -18,7 +18,6 @@ PERMIT_PACKAGE=	Yes
 NO_BUILD=	Yes
 RUN_DEPENDS=	archivers/gtar \
 		${MODPHP_PDO_DEPENDS}
-SUBST_VARS=	MODPHP_BIN
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/drush

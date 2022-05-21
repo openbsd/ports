@@ -35,7 +35,6 @@ PREFIX-utils=	/usr/local
 NO_TEST=	Yes
 
 BUILD_DEPENDS+=	devel/p5-Expect
-SUBST_VARS=	MODPHP_BIN
 
 do-extract:
 	cp ${FULLDISTDIR}/go-pear-${VERSION}.phar ${WRKSRC}/go-pear.phar

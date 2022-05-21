@@ -46,7 +46,7 @@ NO_TEST=	Yes
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/librenms
-SUBST_VARS=	INSTDIR MODPHP_BIN
+SUBST_VARS=	INSTDIR
 UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;

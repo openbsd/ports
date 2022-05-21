@@ -22,8 +22,6 @@ NO_BUILD =	Yes
 
 NO_TEST =	Yes
 
-SUBST_VARS +=	MODPHP_BIN
-
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
 	cp ${FULLDISTDIR}/${DISTNAME}.phar ${PREFIX}/bin/wp-cli.phar
