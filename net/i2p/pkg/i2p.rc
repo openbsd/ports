@@ -7,11 +7,11 @@ daemon_user="_i2p"
 . /etc/rc.d/rc.subr
 
 rc_check() {
-	rc_exec "${daemon} status"
+	${daemon} status
 }
 
 rc_stop() {
-	rc_exec "${daemon} stop"
+	${daemon} stop
 }
 
 rc_cmd $1
