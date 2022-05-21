@@ -7,8 +7,8 @@ PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
 
-REVISION-main=		1
-REVISION-pop3=		1
+REVISION-main=		2
+REVISION-pop3=		2
 
 CATEGORIES=		mail
 
