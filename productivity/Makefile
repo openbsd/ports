@@ -30,6 +30,7 @@
      SUBDIR += librcps
      SUBDIR += lifeograph
      SUBDIR += mcds
+     SUBDIR += monica
      SUBDIR += novprog
      SUBDIR += osmo
      SUBDIR += p5-Business-Tax-VAT-Validation
