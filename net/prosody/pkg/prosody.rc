@@ -6,12 +6,10 @@ daemon_user="_prosody"
 . /etc/rc.d/rc.subr
 
 pexp="${MODLUA_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
-
 rc_usercheck=NO
 
 rc_check() {
-	# return 1 is needed: prosodyctl returns a higher error code on failure
-	${TRUEPREFIX}/sbin/prosodyctl status || return 1
+	${TRUEPREFIX}/sbin/prosodyctl status
 }
 
 rc_cmd $1
