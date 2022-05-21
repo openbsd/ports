@@ -16,7 +16,7 @@ PKGNAME-perl =		kamailio-perl-${VERSION}
 PKGNAME-presence =	kamailio-presence-${VERSION}
 PKGNAME-radius =	kamailio-radius-${VERSION}
 
-REVISION-main =		0
+REVISION-main =		1
 
 CATEGORIES =		telephony
 HOMEPAGE =		https://www.kamailio.org/

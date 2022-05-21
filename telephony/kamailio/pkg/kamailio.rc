@@ -15,7 +15,7 @@ rc_start() {
 }
 
 rc_stop() {
-	rc_exec "${TRUEPREFIX}/sbin/kamctl stop"
+	${TRUEPREFIX}/sbin/kamctl stop
 }
 
 rc_reload=NO
