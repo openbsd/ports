@@ -1,8 +1,8 @@
 COMMENT=	lists of the country, language and currency iso names
 
-V =		4.5.0
-DISTNAME=	iso-codes-iso-codes-$V
-PKGNAME =	iso-codes-$V
+V =		4.9.0
+DISTNAME=	iso-codes-v${V}
+PKGNAME =	iso-codes-${V}
 CATEGORIES=	devel
 
 HOMEPAGE=	https://salsa.debian.org/iso-codes-team/iso-codes
@@ -12,7 +12,7 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES =	https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/iso-codes-$V/
+MASTER_SITES = https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v${V}/
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
