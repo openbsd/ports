@@ -1,7 +1,15 @@
 Index: bin/solr
 --- bin/solr.orig
 +++ bin/solr
-@@ -125,8 +125,8 @@ elif [ -n "$JAVA_HOME" ]; then
+@@ -81,6 +81,7 @@ DEFAULT_SERVER_DIR="$SOLR_TIP/server"
+ if [ -z "$SOLR_INCLUDE" ]; then
+   # Locations (in order) to use when searching for an include file.
+   for include in "`dirname "$0"`/solr.in.sh" \
++               ${SYSCONFDIR}/solr.in.sh \
+                "$HOME/.solr.in.sh" \
+                /usr/share/solr/solr.in.sh \
+                /usr/local/share/solr/solr.in.sh \
+@@ -125,8 +126,8 @@ elif [ -n "$JAVA_HOME" ]; then
      exit 1
    fi
  else
@@ -12,7 +20,7 @@ Index: bin/solr
  fi
  
  if [ -z "$SOLR_STOP_WAIT" ]; then
-@@ -2289,13 +2289,13 @@ function start_solr() {
+@@ -2289,13 +2290,13 @@ function start_solr() {
  	echo ""
      fi
      # no lsof on cygwin though

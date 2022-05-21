@@ -1,7 +1,7 @@
 COMMENT=	full-text search engine based on Lucene
 
 V=		8.11.1
-REVISION=	1
+REVISION=	2
 DISTNAME=	solr-$V
 EXTRACT_SUFX=	.tgz
 
