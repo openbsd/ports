@@ -9,8 +9,7 @@ CFLAGS +=		-O0
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		40.0
-REVISION=		2
+GNOME_VERSION=		42.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -56,6 +55,12 @@ MODPY_BUILDDEP=		No
 MODPY_ADJ_FILES=	build/tap-driver
 # couldn't connect to dbus session bus: Cannot autolaunch D-Bus without X11 $DISPLAY
 TEST_IS_INTERACTIVE=	x11
+
+# XXX daemon/dbus/gkd-daemon-generated.c:13:10: fatal error:
+# '/home/niels/jhbuild/checkout/gnome-keyring/daemon/dbus/gkd-daemon-generated.h' file not found
+# #include "/home/niels/jhbuild/checkout/gnome-keyring/daemon/dbus/gkd-daemon-generated.h"
+post-extract:
+	find ${WRKSRC} -name '*-generated*' | xargs rm
 
 pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
