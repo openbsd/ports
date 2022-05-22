@@ -1,6 +1,6 @@
 COMMENT =		fast, cost-effective and scalable time series database
 
-V =			1.77.1
+V =			1.77.2
 GH_ACCOUNT =		VictoriaMetrics
 GH_PROJECT =		VictoriaMetrics
 GH_TAGNAME =		v${V}
