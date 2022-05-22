@@ -2,8 +2,7 @@ COMMENT =		penetration testing tool to detect/exploit SQL injection
 
 GH_ACCOUNT =		sqlmapproject
 GH_PROJECT =		sqlmap
-GH_TAGNAME =		1.5.7
-REVISION =		0
+GH_TAGNAME =		1.6.5
 
 CATEGORIES =		security
 

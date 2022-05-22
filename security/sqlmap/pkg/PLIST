@@ -7,9 +7,9 @@ share/sqlmap/.github/FUNDING.yml
 share/sqlmap/.github/ISSUE_TEMPLATE/
 share/sqlmap/.github/ISSUE_TEMPLATE/bug_report.md
 share/sqlmap/.github/ISSUE_TEMPLATE/feature_request.md
+share/sqlmap/.github/workflows/
+share/sqlmap/.github/workflows/tests.yml
 share/sqlmap/.pylintrc
-share/sqlmap/.travis.yml
-share/sqlmap/COMMITMENT
 share/sqlmap/LICENSE
 ${MODPY_COMMENT}share/sqlmap/${MODPY_PYCACHE}/
 share/sqlmap/${MODPY_PYCACHE}sqlmap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -936,6 +936,7 @@ share/sqlmap/plugins/generic/users.py
 share/sqlmap/sqlmap.conf
 share/sqlmap/sqlmap.py
 share/sqlmap/sqlmapapi.py
+share/sqlmap/sqlmapapi.yaml
 share/sqlmap/tamper/
 share/sqlmap/tamper/0eunion.py
 share/sqlmap/tamper/__init__.py
@@ -975,6 +976,7 @@ share/sqlmap/tamper/${MODPY_PYCACHE}misunion.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}modsecurityversioned.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}modsecurityzeroversioned.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}multiplespaces.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/tamper/${MODPY_PYCACHE}ord2ascii.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}overlongutf8.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}overlongutf8more.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/tamper/${MODPY_PYCACHE}percentage.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1038,6 +1040,7 @@ share/sqlmap/tamper/misunion.py
 share/sqlmap/tamper/modsecurityversioned.py
 share/sqlmap/tamper/modsecurityzeroversioned.py
 share/sqlmap/tamper/multiplespaces.py
+share/sqlmap/tamper/ord2ascii.py
 share/sqlmap/tamper/overlongutf8.py
 share/sqlmap/tamper/overlongutf8more.py
 share/sqlmap/tamper/percentage.py
@@ -1096,14 +1099,13 @@ ${MODPY_COMMENT}share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}/
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}big5freq.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}big5prober.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}chardetect.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}chardistribution.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}charsetgroupprober.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}charsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}codingstatemachine.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
-share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}cp949prober.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}escprober.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}escsm.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}eucjpprober.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1122,6 +1124,7 @@ share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}langgreekmodel.${MODPY_PYC_MAGIC
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}langhebrewmodel.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}langhungarianmodel.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}langthaimodel.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}langturkishmodel.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}latin1prober.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}mbcharsetprober.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}mbcsgroupprober.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1131,16 +1134,16 @@ share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}sbcsgroupprober.${MODPY_PYC_MAGI
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}sjisprober.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}universaldetector.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}utf8prober.${MODPY_PYC_MAGIC_TAG}pyc
+share/sqlmap/thirdparty/chardet/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 share/sqlmap/thirdparty/chardet/big5freq.py
 share/sqlmap/thirdparty/chardet/big5prober.py
-share/sqlmap/thirdparty/chardet/chardetect.py
 share/sqlmap/thirdparty/chardet/chardistribution.py
 share/sqlmap/thirdparty/chardet/charsetgroupprober.py
 share/sqlmap/thirdparty/chardet/charsetprober.py
 share/sqlmap/thirdparty/chardet/codingstatemachine.py
 share/sqlmap/thirdparty/chardet/compat.py
-share/sqlmap/thirdparty/chardet/constants.py
 share/sqlmap/thirdparty/chardet/cp949prober.py
+share/sqlmap/thirdparty/chardet/enums.py
 share/sqlmap/thirdparty/chardet/escprober.py
 share/sqlmap/thirdparty/chardet/escsm.py
 share/sqlmap/thirdparty/chardet/eucjpprober.py
@@ -1159,6 +1162,7 @@ share/sqlmap/thirdparty/chardet/langgreekmodel.py
 share/sqlmap/thirdparty/chardet/langhebrewmodel.py
 share/sqlmap/thirdparty/chardet/langhungarianmodel.py
 share/sqlmap/thirdparty/chardet/langthaimodel.py
+share/sqlmap/thirdparty/chardet/langturkishmodel.py
 share/sqlmap/thirdparty/chardet/latin1prober.py
 share/sqlmap/thirdparty/chardet/mbcharsetprober.py
 share/sqlmap/thirdparty/chardet/mbcsgroupprober.py
@@ -1168,6 +1172,7 @@ share/sqlmap/thirdparty/chardet/sbcsgroupprober.py
 share/sqlmap/thirdparty/chardet/sjisprober.py
 share/sqlmap/thirdparty/chardet/universaldetector.py
 share/sqlmap/thirdparty/chardet/utf8prober.py
+share/sqlmap/thirdparty/chardet/version.py
 share/sqlmap/thirdparty/clientform/
 share/sqlmap/thirdparty/clientform/__init__.py
 ${MODPY_COMMENT}share/sqlmap/thirdparty/clientform/${MODPY_PYCACHE}/
