@@ -22,6 +22,9 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/w/w3m/}
 BUILD_DEPENDS=	devel/gettext,-tools
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 LIB_DEPENDS=	devel/boehm-gc \
 		devel/gettext,-runtime
 
@@ -34,7 +37,6 @@ CONFIGURE_ARGS=	--disable-xface \
 		--with-gc=${LOCALBASE}
 
 NO_TEST=	Yes
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .if ${MACHINE_ARCH} == aarch64
 # XXX somehow if w3m is compiled with -O2, boehm-gc (linked library)
