@@ -4,7 +4,7 @@ output with the name of the searched command.
 Index: LibreNMS/Config.php
 --- LibreNMS/Config.php.orig
 +++ LibreNMS/Config.php
-@@ -528,8 +528,12 @@ class Config
+@@ -521,8 +521,12 @@ class Config
      public static function locateBinary($binary)
      {
          if (! Str::contains($binary, '/')) {

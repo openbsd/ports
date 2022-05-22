@@ -967,7 +967,10 @@ librenms/app/Jobs/PingCheck.php
 librenms/app/Listeners/
 librenms/app/Listeners/AuthEventListener.php
 librenms/app/Listeners/CheckAlerts.php
+librenms/app/Listeners/LegacyQueryListener.php
 librenms/app/Listeners/MarkNotificationsRead.php
+librenms/app/Listeners/QueryDebugListener.php
+librenms/app/Listeners/QueryMetricListener.php
 librenms/app/Listeners/UpdateDeviceGroups.php
 librenms/app/Logging/
 librenms/app/Logging/CliColorFormatter.php
@@ -1128,12 +1131,14 @@ librenms/app/Providers/AuthServiceProvider.php
 librenms/app/Providers/BroadcastServiceProvider.php
 librenms/app/Providers/CliServiceProvider.php
 librenms/app/Providers/ComposerServiceProvider.php
+librenms/app/Providers/ConfigServiceProvider.php
 librenms/app/Providers/DatastoreServiceProvider.php
 librenms/app/Providers/EventServiceProvider.php
 librenms/app/Providers/LegacyUserProvider.php
 librenms/app/Providers/PluginProvider.php
 librenms/app/Providers/RouteServiceProvider.php
 librenms/app/Providers/SnmptrapProvider.php
+librenms/app/Providers/SocialiteListenersServiceProvider.php
 librenms/app/Providers/TokenUserProvider.php
 librenms/app/StreamedOutput.php
 librenms/app/View/
@@ -1961,6 +1966,7 @@ librenms/html/images/os/bdcom.svg
 librenms/html/images/os/beagleboard.png
 librenms/html/images/os/benuos.png
 librenms/html/images/os/bintec.png
+librenms/html/images/os/bke.png
 librenms/html/images/os/bktel.png
 librenms/html/images/os/bladeshelterpdu.svg
 librenms/html/images/os/bluecoat.png
@@ -2559,6 +2565,7 @@ librenms/includes/definitions/binos.yaml
 librenms/includes/definitions/binox.yaml
 librenms/includes/definitions/bintec-beip-plus.yaml
 librenms/includes/definitions/bintec-smart.yaml
+librenms/includes/definitions/bke.yaml
 librenms/includes/definitions/bktel-oa.yaml
 librenms/includes/definitions/bluecatnetworks.yaml
 librenms/includes/definitions/bnt.yaml
@@ -2703,6 +2710,7 @@ librenms/includes/definitions/discovery/binos.yaml
 librenms/includes/definitions/discovery/binox.yaml
 librenms/includes/definitions/discovery/bintec-beip-plus.yaml
 librenms/includes/definitions/discovery/bintec-smart.yaml
+librenms/includes/definitions/discovery/bke.yaml
 librenms/includes/definitions/discovery/bktel-oa.yaml
 librenms/includes/definitions/discovery/bluecatnetworks.yaml
 librenms/includes/definitions/discovery/bnt.yaml
@@ -2778,6 +2786,7 @@ librenms/includes/definitions/discovery/e3meterdc.yaml
 librenms/includes/definitions/discovery/eaton-ats.yaml
 librenms/includes/definitions/discovery/eaton-matrix.yaml
 librenms/includes/definitions/discovery/eaton-mgeups.yaml
+librenms/includes/definitions/discovery/eaton-sc200.yaml
 librenms/includes/definitions/discovery/eatonpdu.yaml
 librenms/includes/definitions/discovery/eatonups.yaml
 librenms/includes/definitions/discovery/eatonupsm2.yaml
@@ -3178,6 +3187,7 @@ librenms/includes/definitions/e3meterdc.yaml
 librenms/includes/definitions/eaton-ats.yaml
 librenms/includes/definitions/eaton-matrix.yaml
 librenms/includes/definitions/eaton-mgeups.yaml
+librenms/includes/definitions/eaton-sc200.yaml
 librenms/includes/definitions/eatonpdu.yaml
 librenms/includes/definitions/eatonups.yaml
 librenms/includes/definitions/eatonupsm2.yaml
@@ -4621,6 +4631,17 @@ librenms/includes/html/graphs/application/squid_serverbw.inc.php
 librenms/includes/html/graphs/application/squid_sysnumread.inc.php
 librenms/includes/html/graphs/application/supervisord_totals.inc.php
 librenms/includes/html/graphs/application/supervisord_uptime.inc.php
+librenms/includes/html/graphs/application/suricata_alert.inc.php
+librenms/includes/html/graphs/application/suricata_app_flows.inc.php
+librenms/includes/html/graphs/application/suricata_app_tx.inc.php
+librenms/includes/html/graphs/application/suricata_bytes.inc.php
+librenms/includes/html/graphs/application/suricata_dec_proto.inc.php
+librenms/includes/html/graphs/application/suricata_flow_proto.inc.php
+librenms/includes/html/graphs/application/suricata_mem_use.inc.php
+librenms/includes/html/graphs/application/suricata_nasty_delta.inc.php
+librenms/includes/html/graphs/application/suricata_nasty_percent.inc.php
+librenms/includes/html/graphs/application/suricata_packets.inc.php
+librenms/includes/html/graphs/application/suricata_uptime.inc.php
 librenms/includes/html/graphs/application/tinydns_dnssec.inc.php
 librenms/includes/html/graphs/application/tinydns_errors.inc.php
 librenms/includes/html/graphs/application/tinydns_other.inc.php
@@ -5309,6 +5330,7 @@ librenms/includes/html/pages/device/apps/shoutcast.inc.php
 librenms/includes/html/pages/device/apps/smart.inc.php
 librenms/includes/html/pages/device/apps/squid.inc.php
 librenms/includes/html/pages/device/apps/supervisord.inc.php
+librenms/includes/html/pages/device/apps/suricata.inc.php
 librenms/includes/html/pages/device/apps/tinydns.inc.php
 librenms/includes/html/pages/device/apps/unbound.inc.php
 librenms/includes/html/pages/device/apps/ups-apcups.inc.php
@@ -5729,6 +5751,7 @@ librenms/includes/polling/applications/shoutcast.inc.php
 librenms/includes/polling/applications/smart.inc.php
 librenms/includes/polling/applications/squid.inc.php
 librenms/includes/polling/applications/supervisord.inc.php
+librenms/includes/polling/applications/suricata.inc.php
 librenms/includes/polling/applications/tinydns.inc.php
 librenms/includes/polling/applications/unbound.inc.php
 librenms/includes/polling/applications/ups-apcups.inc.php
@@ -5820,6 +5843,7 @@ librenms/includes/polling/sensors/ber/
 librenms/includes/polling/sensors/ber/junos.inc.php
 librenms/includes/polling/sensors/count/
 librenms/includes/polling/sensors/count/dhcpatriot.inc.php
+librenms/includes/polling/sensors/count/fortigate.inc.php
 librenms/includes/polling/sensors/current/
 librenms/includes/polling/sensors/current/ict-pdu.inc.php
 librenms/includes/polling/sensors/dbm/
@@ -5834,7 +5858,6 @@ librenms/includes/polling/sensors/state/ctm.inc.php
 librenms/includes/polling/sensors/state/dhcpatriot.inc.php
 librenms/includes/polling/sensors/state/eds.inc.php
 librenms/includes/polling/sensors/state/eurostor.inc.php
-librenms/includes/polling/sensors/state/fortigate.inc.php
 librenms/includes/polling/sensors/state/printer.inc.php
 librenms/includes/polling/sensors/temperature/
 librenms/includes/polling/sensors/temperature/aos-emu2.inc.php
@@ -6602,6 +6625,8 @@ librenms/mibs/bintec/BIANCA-BRICK-MIB
 librenms/mibs/bintec/BIANCA-BRICK-MIBRES-MIB
 librenms/mibs/bintec/BINTEC-MIB
 librenms/mibs/bintec/RFC1158-MIB
+librenms/mibs/bke/
+librenms/mibs/bke/PNETMOD-MIB
 librenms/mibs/bktel/
 librenms/mibs/bktel/BKTEL-HFC862-BASE-MIB
 librenms/mibs/bktel/BKTEL-HFC862-BES-V01-MIB
@@ -7753,6 +7778,7 @@ librenms/mibs/eaton/EATON-OIDS
 librenms/mibs/eaton/EATON-SENSOR-MIB
 librenms/mibs/eaton/MG-SNMP-UPS-MIB
 librenms/mibs/eaton/PDU-MIB
+librenms/mibs/eaton/RPS-SC200-MIB
 librenms/mibs/eaton/TELECOM-MIB
 librenms/mibs/eaton/XUPS-MIB
 librenms/mibs/edfa/
@@ -10538,6 +10564,7 @@ librenms/resources/js/components/SettingBoolean.vue
 librenms/resources/js/components/SettingDirectory.vue
 librenms/resources/js/components/SettingEmail.vue
 librenms/resources/js/components/SettingExecutable.vue
+librenms/resources/js/components/SettingFloat.vue
 librenms/resources/js/components/SettingInteger.vue
 librenms/resources/js/components/SettingLdapGroups.vue
 librenms/resources/js/components/SettingMultiple.vue
@@ -13173,22 +13200,15 @@ librenms/vendor/jenssegers/model/tests/stubs/
 librenms/vendor/jenssegers/model/tests/stubs/ModelStub.php
 librenms/vendor/justinrainbow/
 librenms/vendor/justinrainbow/json-schema/
-librenms/vendor/justinrainbow/json-schema/.php_cs.dist
 librenms/vendor/justinrainbow/json-schema/LICENSE
 librenms/vendor/justinrainbow/json-schema/README.md
 librenms/vendor/justinrainbow/json-schema/bin/
 librenms/vendor/justinrainbow/json-schema/bin/validate-json
 librenms/vendor/justinrainbow/json-schema/composer.json
-librenms/vendor/justinrainbow/json-schema/demo/
-librenms/vendor/justinrainbow/json-schema/demo/README.md
-librenms/vendor/justinrainbow/json-schema/demo/data.json
-librenms/vendor/justinrainbow/json-schema/demo/demo.php
-librenms/vendor/justinrainbow/json-schema/demo/schema.json
 librenms/vendor/justinrainbow/json-schema/dist/
 librenms/vendor/justinrainbow/json-schema/dist/schema/
 librenms/vendor/justinrainbow/json-schema/dist/schema/json-schema-draft-03.json
 librenms/vendor/justinrainbow/json-schema/dist/schema/json-schema-draft-04.json
-librenms/vendor/justinrainbow/json-schema/phpunit.xml.dist
 librenms/vendor/justinrainbow/json-schema/src/
 librenms/vendor/justinrainbow/json-schema/src/JsonSchema/
 librenms/vendor/justinrainbow/json-schema/src/JsonSchema/Constraints/
@@ -19370,10 +19390,12 @@ librenms/vendor/symfony/polyfill-php73/composer.json
 librenms/vendor/symfony/polyfill-php80/
 librenms/vendor/symfony/polyfill-php80/LICENSE
 librenms/vendor/symfony/polyfill-php80/Php80.php
+librenms/vendor/symfony/polyfill-php80/PhpToken.php
 librenms/vendor/symfony/polyfill-php80/README.md
 librenms/vendor/symfony/polyfill-php80/Resources/
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php
+librenms/vendor/symfony/polyfill-php80/Resources/stubs/PhpToken.php
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
 librenms/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
