@@ -1,6 +1,6 @@
 COMMENT=	parse and convert to JSON (JavaScript Object Notation)
 
-DISTNAME=	JSON-4.05
+DISTNAME=	JSON-4.06
 CATEGORIES=	converters
 
 # Perl
