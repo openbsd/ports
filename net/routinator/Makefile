@@ -4,7 +4,7 @@ COMMENT =		RPKI "relying party" software
 
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
-GH_TAGNAME =		v0.10.2
+GH_TAGNAME =		v0.11.2
 
 ROUTINATOR_UI_URL =	https://github.com/NLnetLabs/routinator-ui/releases/download/
 ROUTINATOR_UI_VERSION =	0.3.4
@@ -17,8 +17,12 @@ SUBST_VARS +=		DISTDIR
 
 CATEGORIES =		net
 
-# BSD
+# code: BSD
+# ARIN TAL: ridiculous license. at runtime the file is not easily available
+# without agreeing to it, which seems to comply with what ARIN want, but it's
+# in the clear in the distfile
 PERMIT_PACKAGE =	Yes
+PERMIT_DISTFILES =	includes bundled ARIN TAL which requires agreement with https://www.arin.net/resources/manage/rpki/rpa.pdf
 
 WANTLIB += c c++abi m pthread
 
