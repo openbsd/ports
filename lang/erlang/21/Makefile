@@ -3,7 +3,7 @@ BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_in
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-PORTROACH=	limit:^21\.
+PORTROACH=	limit:^OTP-21\.
 
 V=		21.3.8.24
 EPOCH=		0
