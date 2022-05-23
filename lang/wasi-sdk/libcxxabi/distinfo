@@ -1,0 +1,6 @@
+SHA256 (libcxx-13.0.0.src.tar.xz) = NoLxbOM7sKiVH8LHMK8vmwGhO3GysNwa4ecDTH2Gyho=
+SHA256 (libcxxabi-13.0.0.src.tar.xz) = vs1fHNLAPNYYdVjptNyKgLbXdP8oKf7eiKoVdsUjTOM=
+SHA256 (llvm-13.0.0.src.tar.xz) = QI0RcIZD6oJvUZ/3l2H838EtZBolECKe7EWecvgWMCA=
+SIZE (libcxx-13.0.0.src.tar.xz) = 2086032
+SIZE (libcxxabi-13.0.0.src.tar.xz) = 554780
+SIZE (llvm-13.0.0.src.tar.xz) = 45471992

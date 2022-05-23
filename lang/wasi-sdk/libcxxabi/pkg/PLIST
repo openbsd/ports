@@ -1,0 +1,4 @@
+share/wasi-sysroot/
+share/wasi-sysroot/lib/
+share/wasi-sysroot/lib/wasm32-wasi/
+@static-lib share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a
