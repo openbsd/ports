@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	1.0.3
+XFCE_VERSION=	1.0.4
 XFCE_GOODIE=	xfce4-terminal
 
 # GPLv2
