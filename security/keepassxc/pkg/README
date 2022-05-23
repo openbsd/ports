@@ -1,9 +1,14 @@
-+-----------------------------------------------------------------------
++-------------------------------------------------------------------------------
 | Running ${PKGSTEM} on OpenBSD
-+-----------------------------------------------------------------------
++-------------------------------------------------------------------------------
 
-In order to use browser integration with firefox you need to add following
-unveil rule to /etc/firefox/unveil.main:
+In order to use browser integration you need to add following unveil rule:
 
 # for using the KeePassXC-Browser addon with the keepassxc--browser package
+${LOCALBASE}/bin r
 ${LOCALBASE}/bin/keepassxc-proxy rx
+
+to the corresponding configuration file:
+* Chromium ->	${SYSCONFDIR}/chromium/unveil.main
+* Firefox ->	${SYSCONFDIR}/firefox/unveil.main
+* Iridium ->	${SYSCONFDIR}/iridium/unveil.main
