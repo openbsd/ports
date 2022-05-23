@@ -1,5 +1,8 @@
 ARPACK is a collection of Fortran77 subroutines designed to solve large
 scale eigenvalue problems.
+It is a fork of the Rice University ARPACK, that was created as a joint project
+between Debian, Octave and Scilab and is now a community project maintained by
+a few volunteers.
 
 The package is designed to compute a few eigenvalues and corresponding
 eigenvectors of a general n by n matrix A. It is most appropriate for
@@ -24,3 +27,6 @@ auxiliary storage is required. A set of Schur basis vectors for the
 desired k-dimensional eigen-space is computed which is numerically
 orthogonal to working precision. Numerically accurate eigenvectors are
 available on request.
+
+Flavors:
+	mpi - Build with OpenMPI support

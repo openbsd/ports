@@ -1,43 +1,48 @@
-COMMENT=	solve large scale eigenvalue problems
+COMMENT-main =	F77 subroutines for solving large scale eigenvalue problems
+COMMENT-mpi =	openmpi for arpack
 
-DISTNAME=	arpack96
-PKGNAME=	arpack-96
-REVISION=	8
-SHARED_LIBS=	arpack 1.0
-CATEGORIES=	math
+GH_TAGNAME =	3.8.0
+DISTNAME =	arpack-ng-${GH_TAGNAME}
+PKGNAME =	arpack-${GH_TAGNAME}
+GH_ACCOUNT =	opencollab
+GH_PROJECT =	arpack-ng
 
-HOMEPAGE=	http://www.caam.rice.edu/software/ARPACK/
+MULTI_PACKAGES =	-main -mpi
+FLAVORS =		no_mpi
+FLAVOR ?=
 
-# BSD license (not in distfile)
-PERMIT_PACKAGE=	Yes
+SHARED_LIBS +=	arpack 2.0
+SHARED_LIBS +=	parpack 1.0
 
-MASTER_SITES=	${HOMEPAGE}SRC/
-DISTFILES=	${DISTNAME}.tar.gz patch.tar.gz ug.ps.gz
-DIST_SUBDIR=	arpack
+CATEGORIES =	math
 
-MODULES=		fortran
-MODFORTRAN_COMPILER =	gfortran
-BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
+HOMEPAGE =	https://github.com/opencollab/arpack-ng
 
-LIB_DEPENDS =	math/lapack \
-		math/blas
-WANTLIB =	lapack>=1 blas>=1 m
+# BSD 3-Clause
+PERMIT_PACKAGE =	Yes
 
-WRKDIST=	${WRKDIR}/ARPACK
-WRKSRC=		${WRKDIST}/SRC
-PICFLAG=	-fPIC
-MAKE_FILE=	${FILESDIR}/Makefile
-MAKE_ENV=	SHLIB_MAJOR=${LIBarpack_VERSION:R} \
-		SHLIB_MINOR=${LIBarpack_VERSION:E} \
-		FC="${MODFORTRAN_COMPILER} -cpp" \
-		CC=${MODFORTRAN_COMPILER} \
-		NOPROFILE=1
-FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
+MODULES =	fortran \
+		devel/cmake
 
-NO_TEST=	Yes
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS:BOOL=ON \
+			-D ICB=ON
 
-post-extract:
-	@cd ${WRKDIST}/UTIL && mv *.f ${WRKSRC}
+LIB_DEPENDS-main = 	math/lapack \
+			math/blas
+
+WANTLIB +=	lapack blas m
+
+LIB_DEPENDS-mpi =	devel/openmpi \
+			math/arpack,-main
+
+WANTLIB-mpi +=	${WANTLIB} arpack execinfo pciaccess pthread util z
+WANTLIB-mpi +=	mpi mpi_mpifh mpi_usempi_ignore_tkr
+WANTLIB-mpi +=	mpi_usempif08 open-pal open-rte
+
+.include <bsd.port.arch.mk>
+.if ${BUILD_PACKAGES:M-mpi}
+CONFIGURE_ARGS +=	-D MPI=ON
+.endif
 
 post-install:
 .for i in BAND COMPLEX NONSYM SIMPLE SVD SYM
@@ -49,7 +54,6 @@ post-install:
 		${PREFIX}/share/examples/arpack
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/arpack
 	${INSTALL_DATA} ${WRKDIST}/DOCUMENTS/* ${PREFIX}/share/doc/arpack
-	${INSTALL_DATA} ${WRKDIR}/ug.ps ${PREFIX}/share/doc/arpack
-	${INSTALL_DATA} ${FILESDIR}/LICENSE ${PREFIX}/share/doc/arpack
+	${INSTALL_DATA} ${WRKDIST}/COPYING ${PREFIX}/share/doc/arpack
 
 .include <bsd.port.mk>

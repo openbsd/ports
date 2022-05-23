@@ -1,0 +1,4 @@
+include/arpack/parpack.h
+include/arpack/parpack.hpp
+@lib lib/libparpack.so.${LIBparpack_VERSION}
+lib/pkgconfig/parpack.pc
