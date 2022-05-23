@@ -4,6 +4,7 @@ SHARED_LIBS = 	armadillo 3.1	# 9.900.4
 CATEGORIES = 	math
 HOMEPAGE = 	http://arma.sourceforge.net/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
+REVISION =	0
 
 # MPL v2
 PERMIT_PACKAGE = Yes

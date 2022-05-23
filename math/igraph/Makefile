@@ -1,6 +1,7 @@
 COMMENT = 	C graph library
 V =		0.9.5
 DISTNAME =	igraph-$V
+REVISION =	0
 
 SHARED_LIBS =	igraph 0.0	# 0.0
 

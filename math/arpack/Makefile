@@ -6,6 +6,7 @@ DISTNAME =	arpack-ng-${GH_TAGNAME}
 PKGNAME =	arpack-${GH_TAGNAME}
 GH_ACCOUNT =	opencollab
 GH_PROJECT =	arpack-ng
+EPOCH =		0
 
 MULTI_PACKAGES =	-main -mpi
 FLAVORS =		no_mpi

@@ -4,6 +4,7 @@ VERSION =	7.1.0
 DISTNAME =	octave-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
+REVISION =	0
 
 SHARED_LIBS +=	octave		14.0
 SHARED_LIBS +=	octgui		8.0
