@@ -125,6 +125,8 @@
      SUBDIR += vala,
      SUBDIR += verilator
      SUBDIR += wabt
+     SUBDIR += wasi-libc
+     SUBDIR += wasi-sdk
      SUBDIR += zig
 
 .include <bsd.port.subdir.mk>
