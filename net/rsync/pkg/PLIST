@@ -4,6 +4,7 @@
 bin/rrsync
 @bin bin/rsync
 bin/rsync-ssl
+@man man/man1/rrsync.1
 @man man/man1/rsync-ssl.1
 @man man/man1/rsync.1
 @man man/man5/rsyncd.conf.5

@@ -1,12 +1,12 @@
 Index: support/rrsync
 --- support/rrsync.orig
 +++ support/rrsync
-@@ -11,7 +11,7 @@ use File::Glob ':glob';
+@@ -10,7 +10,7 @@
  
- # You may configure these values to your liking.  See also the section
- # of options if you want to disable any options that rsync accepts.
--use constant RSYNC => '/usr/bin/rsync';
-+use constant RSYNC => '${PREFIX}/bin/rsync';
- use constant LOGFILE => 'rrsync.log';
+ # You may configure these 2 values to your liking.  See also the section of
+ # short & long options if you want to disable any options that rsync accepts.
+-RSYNC = '/usr/bin/rsync'
++RSYNC = '${PREFIX}/bin/rsync'
+ LOGFILE = 'rrsync.log' # NOTE: the file must exist for a line to be appended!
  
- my $Usage = <<EOM;
+ # The following options are mainly the options that a client rsync can send

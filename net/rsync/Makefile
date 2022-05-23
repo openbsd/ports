@@ -1,7 +1,6 @@
 COMMENT =	mirroring/synchronization over low bandwidth links
 
-DISTNAME =	rsync-3.2.3
-REVISION =	1
+DISTNAME =	rsync-3.2.4
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
 
@@ -16,6 +15,12 @@ WANTLIB =	c crypto
 MASTER_SITES =	https://rsync.samba.org/ftp/rsync/src/ \
 		https://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/src/
 
+MODULES =	lang/python
+
+MODPY_RUNDEP =	No
+
+BUILD_DEPENDS =	textproc/py-commonmark${MODPY_FLAVOR}
+
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS =--disable-lz4 \
@@ -23,9 +28,17 @@ CONFIGURE_ARGS =--disable-lz4 \
 		--disable-zstd \
 		--with-included-popt \
 		--with-included-zlib \
+		--with-rrsync \
 		--with-rsyncd-conf="${SYSCONFDIR}/rsyncd.conf" \
 		--with-rsh=/usr/bin/ssh \
+		--with-nobody-user=_rsync \
 		--with-nobody-group=_rsync
+
+.include <bsd.port.arch.mk>
+
+.if ${ARCH:Mamd64}
+CONFIGURE_ARGS +=--enable-md5-asm
+.endif
 
 .if ${FLAVOR:Miconv}
 CONFIGURE_ENV +=CPPFLAGS='-I${LOCALBASE}/include' \
@@ -38,12 +51,10 @@ DOCDIR =	${PREFIX}/share/doc/rsync
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/rsyncd.conf.5 \
-		${WRKSRC}/support/rrsync
+	${SUBST_CMD} ${WRKSRC}/support/rrsync
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${DOCDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/support/rrsync ${PREFIX}/bin
 
 .include <bsd.port.mk>
