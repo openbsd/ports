@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			3.7.5
+REVISION =		0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -15,6 +16,14 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
+MASTER_SITES0 =		https://salsa.debian.org/debian/telegram-desktop/-/raw/
+FORCE_QT5_COMMIT =	93b4a99d86eb60141612767935b038b29db65345
+FORCE_QT5_ORIGPATCH =	${FORCE_QT5_COMMIT}/debian/patches/Compatible-setScreen
+FORCE_QT5_NEWPATCH =	tdesktop-force-qt5-${FORCE_QT5_COMMIT:C/(........).*/\1/}
+PATCHFILES +=		${FORCE_QT5_NEWPATCH}{${FORCE_QT5_ORIGPATCH}}.patch:0
+
+PATCH_DIST_STRIP =	-p1
+
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
@@ -22,13 +31,12 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # rlottie: LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
-WANTLIB += avcodec avformat avutil c crypto gio-2.0 giomm-2.4
-WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal qrcodegencpp rnnoise sigc-2.0 swresample swscale
-WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5Svg
+WANTLIB += Qt5Widgets absl_strings avcodec avformat avutil c crypto
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7
+WANTLIB += jpeg lz4 m openal qrcodegencpp rnnoise sigc-2.0 swresample
+WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
+WANTLIB += xxhash z
 
 # C++17 set below
 COMPILER =		base-clang ports-gcc
@@ -38,7 +46,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python \
-			x11/qt6
+			x11/qt5
 MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/microsoft-gsl \
@@ -57,15 +65,11 @@ LIB_DEPENDS =		archivers/lz4 \
 			net/tg_owt>=0.0.0.20220507 \
 			sysutils/xxhash \
 			textproc/hunspell \
-			x11/qt6/qtsvg
-
-# tdesktop 3.6.3beta and later require Qt 6.2+
-LIB_DEPENDS +=		x11/qt6/qt5compat \
-			x11/qt6/qtbase>=6.2
+			x11/qt5/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
-			x11/qt6/qtimageformats
+			x11/qt5/qtimageformats
 
 # look for system libraries and build a shared library, despite upstream
 # treating it as "community effort" with less support
@@ -79,7 +83,8 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
-			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
+			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
+			-DDESKTOP_APP_QT6=OFF
 
 # match standard version with abseil
 CONFIGURE_ARGS +=	-DCMAKE_CXX_STANDARD=17

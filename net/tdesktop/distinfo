@@ -1,2 +1,4 @@
 SHA256 (tdesktop-3.7.5-full.tar.gz) = hUduVBtXhj6oIhjKSwX1rDggviX/T8tHm06BhJhhNoI=
+SHA256 (tdesktop-force-qt5-93b4a99d.patch) = pIv3XMgVL+dnAGNncU9gL4h3qBCmSYFCG8o8zqiQ7GI=
 SIZE (tdesktop-3.7.5-full.tar.gz) = 41570684
+SIZE (tdesktop-force-qt5-93b4a99d.patch) = 2282
