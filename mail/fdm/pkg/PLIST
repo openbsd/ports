@@ -5,6 +5,7 @@ share/doc/fdm/
 share/doc/fdm/MANUAL
 share/doc/fdm/README
 share/examples/fdm/
+share/examples/fdm/example_imap_folder.conf
 share/examples/fdm/f-terbeck.conf
 share/examples/fdm/g-lando.conf
 share/examples/fdm/n-marriott.conf
