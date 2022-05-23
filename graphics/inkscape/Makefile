@@ -1,7 +1,6 @@
 COMMENT =	SVG vector drawing application
 
-DISTNAME =	inkscape-1.1.2
-REVISION =	0
+DISTNAME =	inkscape-1.2
 
 CATEGORIES =	graphics
 
@@ -65,7 +64,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/py-lxml${MODPY_FLAVOR} \
 		x11/gtk+3,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-1.1.2_2022-02-04_0a00cf5339
+WRKDIST =	${WRKDIR}/inkscape-1.2_2022-05-15_dc2aedaf03
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
