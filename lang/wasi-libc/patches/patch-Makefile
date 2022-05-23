@@ -1,0 +1,15 @@
+https://cgit.freebsd.org/ports/tree/devel/wasi-libc/Makefile#n40
+avoid rebuilding everything in fake
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -565,7 +565,7 @@ check-symbols: startup_files libc
+ 	# This ignores whitespace because on Windows the output has CRLF line endings.
+ 	diff -wur "$(CURDIR)/expected/$(MULTIARCH_TRIPLE)" "$(SYSROOT_SHARE)"
+ 
+-install: finish
++install:
+ 	mkdir -p "$(INSTALL_DIR)"
+ 	cp -r "$(SYSROOT)/lib" "$(SYSROOT)/share" "$(SYSROOT)/include" "$(INSTALL_DIR)"
+ 
