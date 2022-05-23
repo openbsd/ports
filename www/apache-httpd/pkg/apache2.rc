@@ -9,7 +9,7 @@ pexp=".*${daemon}.*"
 rc_reload=NO
 
 rc_start() {
-	${TRUEPREFIX}/sbin/apachectl2 graceful ${daemon_flags}
+	rc_exec "${TRUEPREFIX}/sbin/apachectl2 graceful ${daemon_flags}"
 }
 
 rc_stop() {
