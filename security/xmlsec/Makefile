@@ -49,4 +49,9 @@ CONFIGURE_ENV +=	ac_cv_header_ansidecl_h=no
 TEST_DEPENDS=		xmlsec-${VERSION}:security/xmlsec
 TEST_FLAGS=		ABS_BUILDDIR="${WRKSRC}"
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
