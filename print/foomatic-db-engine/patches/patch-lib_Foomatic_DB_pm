@@ -1,0 +1,28 @@
+From 75de02d9065b6280482d7cd011e9462badb19f83 Mon Sep 17 00:00:00 2001
+From: Andreas Gruenbacher <agruenba@redhat.com>
+Date: Thu, 30 Jan 2020 23:08:23 +0100
+Subject: [PATCH] Recognize fractional numbers in PageSize
+
+Index: lib/Foomatic/DB.pm
+--- lib/Foomatic/DB.pm.orig
++++ lib/Foomatic/DB.pm
+@@ -4032,7 +4032,7 @@ sub getppd (  $ $ $ ) {
+ 			# option.
+ 			my $size = $v->{'driverval'};
+ 			if ($size =~ /([\d\.]+)x([\d\.]+)([a-z]+)\b/) {
+-			    # 2 positive integers separated by 
++			    # 2 positive numbers separated by
+ 			    # an 'x' with a unit
+ 			    my $w = $1;
+ 			    my $h = $2;
+@@ -4050,8 +4050,8 @@ sub getppd (  $ $ $ ) {
+ 			    $w = sprintf("%.2f", $w) if $w =~ /\./;
+ 			    $h = sprintf("%.2f", $h) if $h =~ /\./;
+ 			    $size = "$w $h";
+-			} elsif (($size =~ /(\d+)[x\s]+(\d+)/) ||
+-			    # 2 positive integers separated by 
++			} elsif (($size =~ /([\d\.]+)[x\s]+([\d\.]+)/) ||
++			    # 2 positive numbers separated by
+ 			    # whitespace or an 'x'
+ 				 ($size =~ /\-dDEVICEWIDTHPOINTS\=(\d+)\s+\-dDEVICEHEIGHTPOINTS\=(\d+)/)) {
+ 			    # "-dDEVICEWIDTHPOINTS=..."/"-dDEVICEHEIGHTPOINTS=..."

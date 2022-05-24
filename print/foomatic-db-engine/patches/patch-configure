@@ -26,7 +26,7 @@ Index: configure
  
  # There is a bug in some versions of autoconf that causes
  # bad expansion of paths in the AC_PATH_* macros.  This is very annoying
-@@ -4210,7 +4209,7 @@ fi
+@@ -4210,7 +4210,7 @@ fi
  
  
  # Check for bourne shell
@@ -35,7 +35,7 @@ Index: configure
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -5668,8 +5667,8 @@ fi
+@@ -5668,8 +5668,8 @@ fi
  done
  test -n "$CUPS_LPINFO" || CUPS_LPINFO="/usr/sbin/lpinfo"
  
@@ -45,7 +45,7 @@ Index: configure
  for ac_dir in pdq
  do
  # Extract the first word of "$ac_dir", so it can be a program name with args.
-@@ -5804,9 +5803,11 @@ fi
+@@ -5804,9 +5804,11 @@ fi
    test -n "$PDQ_PRINT" && break
  done
  test -n "$PDQ_PRINT" || PDQ_PRINT="/usr/bin/pdq"
@@ -57,7 +57,7 @@ Index: configure
  for ac_prog in ppr/bin/pprd
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
-@@ -6119,7 +6120,7 @@ fi
+@@ -6119,7 +6121,7 @@ fi
    test -n "$PPR_PPOP" && break
  done
  test -n "$PPR_PPOP" || PPR_PPOP="/usr/bin/ppop"
