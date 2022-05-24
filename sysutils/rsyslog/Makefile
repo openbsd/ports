@@ -6,7 +6,7 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.2102.0
+V =			8.2204.1
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
@@ -14,8 +14,6 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
-
-REVISION-main =		0
 
 HOMEPAGE =		https://www.rsyslog.com/
 
@@ -27,10 +25,9 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc base-gcc
 
 WANTLIB-main +=		c crypto curl estr fastjson gcrypt gmp gnutls
-WANTLIB-main +=		gpg-error hogweed iconv idn2 intl nettle nghttp2
+WANTLIB-main +=		gpg-error hogweed iconv idn2 intl m nettle nghttp2
 WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
 WANTLIB-main +=		brotlidec brotlienc execinfo zstd
-
 
 WANTLIB-mysql +=	crypto m mariadb pthread ssl z
 
@@ -65,6 +62,7 @@ CONFIGURE_ARGS +=	--enable-pgsql \
 			--enable-mail \
 			--enable-mmnormalize \
 			--enable-gnutls \
+			--enable-openssl \
 			--enable-relp \
 			--enable-elasticsearch \
 			--enable-imfile

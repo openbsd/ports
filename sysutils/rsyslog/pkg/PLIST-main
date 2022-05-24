@@ -15,6 +15,7 @@ lib/rsyslog/
 @so lib/rsyslog/lmnet.so
 @so lib/rsyslog/lmnetstrms.so
 @so lib/rsyslog/lmnsd_gtls.so
+@so lib/rsyslog/lmnsd_ossl.so
 @so lib/rsyslog/lmnsd_ptcp.so
 @so lib/rsyslog/lmregexp.so
 @so lib/rsyslog/lmtcpclt.so
