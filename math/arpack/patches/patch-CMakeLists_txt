@@ -1,0 +1,20 @@
+Setup for openmpi tests.
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -663,12 +663,12 @@ if(ICB)
+     add_executable(icb_parpack_c PARPACK/TESTS/MPI/icb_parpack_c.c)
+     target_include_directories(icb_parpack_c PUBLIC ${PROJECT_SOURCE_DIR}/ICB MPI::MPI_C) # Get parpack.h mpi.h
+     target_link_libraries(icb_parpack_c parpack arpack BLAS::BLAS LAPACK::LAPACK ${EXTRA_LDFLAGS} MPI::MPI_C)
+-    add_test(icb_parpack_c_tst mpirun -n 2 ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/icb_parpack_c)
++    add_test(icb_parpack_c_tst env PMIX_MCA_gds=hash mpirun -np 2 -H localhost:2 -mca btl tcp,self -mca mpi_yield_when_idle 1 -- ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/icb_parpack_c)
+ 
+     add_executable(icb_parpack_cpp PARPACK/TESTS/MPI/icb_parpack_cpp.cpp)
+     target_include_directories(icb_parpack_cpp PUBLIC ${PROJECT_SOURCE_DIR}/ICB MPI::MPI_CXX) # Get parpack.hpp mpi.h
+     target_link_libraries(icb_parpack_cpp parpack arpack BLAS::BLAS LAPACK::LAPACK ${EXTRA_LDFLAGS} MPI::MPI_CXX)
+-    add_test(icb_parpack_cpp_tst mpirun -n 2 ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/icb_parpack_cpp)
++    add_test(icb_parpack_cpp_tst env PMIX_MCA_gds=hash mpirun -np 2 -H localhost:2 -mca btl tcp,self -mca mpi_yield_when_idle 1 -- ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/icb_parpack_cpp)
+   endif()
+ endif()
+ 
