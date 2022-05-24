@@ -2,8 +2,8 @@ include/tdbc/
 include/tdbc/tdbc.h
 include/tdbc/tdbcDecls.h
 include/tdbc/tdbcInt.h
-@lib lib/libtdbc106.so.${LIBtdbc106_VERSION}
-lib/libtdbcstub106.a
+@lib lib/libtdbc${VER}.so.${LIBtdbc${VER}_VERSION}
+@static-lib lib/libtdbcstub${VER}.a
 lib/tcl/tdbc/
 lib/tcl/tdbc/pkgIndex.tcl
 lib/tcl/tdbc/tdbc.tcl
