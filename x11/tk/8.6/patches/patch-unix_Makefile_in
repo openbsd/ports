@@ -1,7 +1,7 @@
 Index: unix/Makefile.in
 --- unix/Makefile.in.orig
 +++ unix/Makefile.in
-@@ -737,10 +737,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+@@ -742,10 +742,10 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
@@ -13,16 +13,16 @@ Index: unix/Makefile.in
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -758,7 +758,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+@@ -763,7 +763,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
- 	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
--	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk.pc
-+	@$(INSTALL_DATA) tk.pc $(LIB_INSTALL_DIR)/pkgconfig/tk86.pc
+ 	@$(INSTALL_DATA_DIR) "$(LIB_INSTALL_DIR)/pkgconfig"
+-	@$(INSTALL_DATA) tk.pc "$(LIB_INSTALL_DIR)/pkgconfig/tk.pc"
++	@$(INSTALL_DATA) tk.pc "$(LIB_INSTALL_DIR)/pkgconfig/tk86.pc"
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
-@@ -813,6 +813,7 @@ install-demos:
+@@ -818,6 +818,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -30,11 +30,10 @@ Index: unix/Makefile.in
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -852,6 +853,9 @@ install-doc:
+@@ -857,6 +858,8 @@ install-doc:
  	@for i in $(TOP_DIR)/doc/*.n; do \
  	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
  	done
-+
 +	@echo "Installing license.terms to $(MAN_INSTALL_DIR)/"
 +	@$(INSTALL_DATA) $(TOP_DIR)/license.terms "$(MAN_INSTALL_DIR)"
  

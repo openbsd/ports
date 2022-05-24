@@ -7,7 +7,7 @@ include/tk8.6/tk.h
 include/tk8.6/tkDecls.h
 include/tk8.6/tkPlatDecls.h
 @lib lib/libtk86.so.${LIBtk86_VERSION}
-lib/libtkstub86.a
+@static-lib lib/libtkstub86.a
 lib/pkgconfig/tk86.pc
 lib/tcl/tk8.6/
 lib/tcl/tk8.6/bgerror.tcl
@@ -42,6 +42,9 @@ lib/tcl/tk8.6/man/license.terms
 lib/tcl/tk8.6/man/man1/
 @man lib/tcl/tk8.6/man/man1/wish.1
 lib/tcl/tk8.6/man/man3/
+@man lib/tcl/tk8.6/man/man3/FindPhoto.3
+@man lib/tcl/tk8.6/man/man3/FontId.3
+@man lib/tcl/tk8.6/man/man3/MeasureChar.3
 @man lib/tcl/tk8.6/man/man3/Tk_3DBorderColor.3
 @man lib/tcl/tk8.6/man/man3/Tk_3DBorderGC.3
 @man lib/tcl/tk8.6/man/man3/Tk_3DHorizontalBevel.3
@@ -169,6 +172,7 @@ lib/tcl/tk8.6/man/man3/
 @man lib/tcl/tk8.6/man/man3/Tk_GetHWND.3
 @man lib/tcl/tk8.6/man/man3/Tk_GetImage.3
 @man lib/tcl/tk8.6/man/man3/Tk_GetImageMasterData.3
+@man lib/tcl/tk8.6/man/man3/Tk_GetImageModelData.3
 @man lib/tcl/tk8.6/man/man3/Tk_GetItemTypes.3
 @man lib/tcl/tk8.6/man/man3/Tk_GetJoinStyle.3
 @man lib/tcl/tk8.6/man/man3/Tk_GetJustify.3

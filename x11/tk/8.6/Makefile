@@ -1,17 +1,17 @@
 COMMENT =		graphical toolkit for Tcl
 
-P =			8
+P =			12
 DISTNAME =		tk8.6.${P}
 PKGNAME =		tk-8.6.${P}
 SHARED_LIBS =		tk86 1.${P}
 CATEGORIES =		x11 x11/tk
-HOMEPAGE =		http://www.tcl.tk/
+HOMEPAGE =		http://www.tcl-lang.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		X11 Xext Xft Xss c fontconfig m pthread tcl86 z
+WANTLIB =		X11 Xext Xft Xss c fontconfig freetype m pthread tcl86 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
