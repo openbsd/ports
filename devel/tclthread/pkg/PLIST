@@ -1,5 +1,5 @@
 include/tclThread.h
-@lib lib/libtclthread282.so.${LIBtclthread282_VERSION}
+@lib lib/libtclthread${VER}.so.${LIBtclthread${VER}_VERSION}
 lib/tcl/tclthread/
 lib/tcl/tclthread/pkgIndex.tcl
 lib/tcl/tclthread/ttrace.tcl
