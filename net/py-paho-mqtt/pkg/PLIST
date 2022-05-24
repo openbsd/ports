@@ -47,9 +47,11 @@ share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_sub_opts.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/context.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/loop_asyncio.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/loop_select.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/loop_trio.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_multiple.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_single.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_utf8-27.py
+share/examples/${MODPY_PY_PREFIX}paho-mqtt/publish_utf8-3.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/server_rpc_math.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/subscribe_callback.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/subscribe_simple.py
