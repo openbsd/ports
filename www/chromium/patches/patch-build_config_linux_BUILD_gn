@@ -1,10 +1,10 @@
 Index: build/config/linux/BUILD.gn
 --- build/config/linux/BUILD.gn.orig
 +++ build/config/linux/BUILD.gn
-@@ -42,7 +42,7 @@ config("runtime_library") {
+@@ -41,7 +41,7 @@ config("runtime_library") {
+   }
  
-   if ((!(is_chromeos_ash || is_chromeos_lacros) ||
-        default_toolchain != "//build/toolchain/cros:target") &&
+   if ((!is_chromeos || default_toolchain != "//build/toolchain/cros:target") &&
 -      (!use_custom_libcxx || current_cpu == "mipsel")) {
 +      (!use_custom_libcxx || current_cpu == "mipsel") && !is_bsd) {
      libs = [ "atomic" ]

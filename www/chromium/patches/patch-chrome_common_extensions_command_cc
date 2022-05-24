@@ -8,5 +8,5 @@ Index: chrome/common/extensions/command.cc
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return values::kKeybindingPlatformLinux;
- #else
-   return "";
+ #elif BUILDFLAG(IS_FUCHSIA)
+   // TODO(crbug.com/1312215): Change this once we decide what string should be

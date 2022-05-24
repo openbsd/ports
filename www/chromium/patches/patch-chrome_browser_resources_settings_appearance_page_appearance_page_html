@@ -14,8 +14,8 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
              </cr-button>
            </template>
  </if>
--<if expr="is_linux and not chromeos and not lacros">
-+<if expr="is_posix and not chromeos and not lacros">
+-<if expr="is_linux and not chromeos_ash and not chromeos_lacros">
++<if expr="is_posix and not chromeos_ash and not chromeos_lacros">
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                    prefs.extensions.theme.id.value, useSystemTheme_)]]"
@@ -23,8 +23,8 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
              pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
              label="$i18n{showBookmarksBar}">
          </settings-toggle-button>
--<if expr="is_linux and not chromeos and not lacros">
-+<if expr="is_posix and not chromeos and not lacros">
+-<if expr="is_linux and not chromeos_ash and not chromeos_lacros">
++<if expr="is_posix and not chromeos_ash and not chromeos_lacros">
          <div class="hr" hidden="[[!pageVisibility.bookmarksBar]]"></div>
          <settings-toggle-button
              hidden="[[!showCustomChromeFrame_]]"

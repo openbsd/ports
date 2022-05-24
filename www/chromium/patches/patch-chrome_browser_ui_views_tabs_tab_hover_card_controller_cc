@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
 --- chrome/browser/ui/views/tabs/tab_hover_card_controller.cc.orig
 +++ chrome/browser/ui/views/tabs/tab_hover_card_controller.cc
-@@ -68,7 +68,7 @@ GetMemoryPressureOverride() {
+@@ -71,7 +71,7 @@ GetMemoryPressureOverride() {
  // Fetches the Omnibox drop-down widget, or returns null if the drop-down is
  // not visible.
  void FixWidgetStackOrder(views::Widget* widget, const Browser* browser) {

@@ -10,8 +10,8 @@ Index: chrome/browser/ui/browser_commands.cc
  #include "ui/accessibility/ax_action_data.h"
  #include "ui/accessibility/ax_enums.mojom.h"
  #endif
-@@ -1873,7 +1873,7 @@ void FollowSite(Browser* browser, content::WebContents
-   feed::FollowSite(web_contents);
+@@ -1859,7 +1859,7 @@ void UnfollowSite(content::WebContents* web_contents) 
+   feed::UnfollowSite(web_contents);
  }
  
 -#if BUILDFLAG(IS_LINUX)

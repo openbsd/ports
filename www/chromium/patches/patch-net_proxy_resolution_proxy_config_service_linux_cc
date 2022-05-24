@@ -27,7 +27,7 @@ Index: net/proxy_resolution/proxy_config_service_linux.cc
  
  }  // namespace
  
-@@ -1222,9 +1226,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1223,9 +1227,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:

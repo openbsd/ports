@@ -1,7 +1,7 @@
 Index: net/base/network_change_notifier_posix.cc
 --- net/base/network_change_notifier_posix.cc.orig
 +++ net/base/network_change_notifier_posix.cc
-@@ -93,7 +93,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
+@@ -92,7 +92,7 @@ void NetworkChangeNotifierPosix::GetCurrentMaxBandwidt
  NetworkChangeNotifier::NetworkChangeCalculatorParams
  NetworkChangeNotifierPosix::NetworkChangeCalculatorParamsPosix() {
    NetworkChangeCalculatorParams params;

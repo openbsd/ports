@@ -1,7 +1,7 @@
 Index: v8/tools/run.py
 --- v8/tools/run.py.orig
 +++ v8/tools/run.py
-@@ -11,7 +11,7 @@ from __future__ import print_function
+@@ -9,7 +9,7 @@ scripts."""
  import subprocess
  import sys
  

@@ -1,7 +1,7 @@
 Index: content/shell/browser/shell_browser_main_parts.cc
 --- content/shell/browser/shell_browser_main_parts.cc.orig
 +++ content/shell/browser/shell_browser_main_parts.cc
-@@ -50,7 +50,7 @@
+@@ -51,7 +51,7 @@
  #include "net/base/network_change_notifier.h"
  #endif
  
@@ -10,7 +10,7 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  
-@@ -130,7 +130,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -131,7 +131,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {

@@ -1,7 +1,7 @@
 Index: ui/strings/app_locale_settings.grd
 --- ui/strings/app_locale_settings.grd.orig
 +++ ui/strings/app_locale_settings.grd
-@@ -217,7 +217,7 @@
+@@ -218,7 +218,7 @@
            75%
          </message>
        </if>

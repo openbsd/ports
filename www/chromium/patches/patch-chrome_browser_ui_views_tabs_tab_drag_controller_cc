@@ -28,7 +28,7 @@ Index: chrome/browser/ui/views/tabs/tab_drag_controller.cc
  
        // Keeping maximized state breaks snap to Grid on Windows when dragging
        // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
-@@ -2359,7 +2359,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2358,7 +2358,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

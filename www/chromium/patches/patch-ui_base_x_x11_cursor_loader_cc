@@ -1,7 +1,7 @@
 Index: ui/base/x/x11_cursor_loader.cc
 --- ui/base/x/x11_cursor_loader.cc.orig
 +++ ui/base/x/x11_cursor_loader.cc
-@@ -137,7 +137,11 @@ std::string CursorPathFromLibXcursor() {
+@@ -136,7 +136,11 @@ std::string CursorPathFromLibXcursor() {
      void operator()(void* ptr) const { dlclose(ptr); }
    };
  

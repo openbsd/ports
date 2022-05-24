@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/web_applications/app_browser_controller.cc
 --- chrome/browser/ui/web_applications/app_browser_controller.cc.orig
 +++ chrome/browser/ui/web_applications/app_browser_controller.cc
-@@ -379,7 +379,7 @@ CustomThemeSupplier* AppBrowserController::GetThemeSup
+@@ -385,7 +385,7 @@ CustomThemeSupplier* AppBrowserController::GetThemeSup
  }
  
  bool AppBrowserController::ShouldUseSystemTheme() const {
@@ -10,7 +10,7 @@ Index: chrome/browser/ui/web_applications/app_browser_controller.cc
    return browser_->profile()->GetPrefs()->GetBoolean(prefs::kUsesSystemTheme);
  #else
    return false;
-@@ -387,7 +387,7 @@ bool AppBrowserController::ShouldUseSystemTheme() cons
+@@ -393,7 +393,7 @@ bool AppBrowserController::ShouldUseSystemTheme() cons
  }
  
  bool AppBrowserController::ShouldUseCustomFrame() const {

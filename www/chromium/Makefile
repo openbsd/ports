@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			101.0.4951.67
+V=			102.0.5005.61
 
 DISTNAME=		chromium-${V}
 
@@ -27,7 +27,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		component
-PSEUDO_FLAVORS=		debug
+PSEUDO_FLAVORS=		debug lto
 FLAVOR?=
 
 # BSD-like
@@ -137,7 +137,6 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
 GN_SYSTEM_LIBS=	libevent \
-		libxml \
 		libxslt
 
 GN_ARGS=	enable_nacl=false \
@@ -168,8 +167,6 @@ GN_ARGS=	enable_nacl=false \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
 		enable_wmax_tokens=false \
-		use_thin_lto=false \
-		thin_lto_enable_optimizations=false \
 		use_udev=false
 
 # notyet
@@ -211,6 +208,16 @@ GN_ARGS+=	symbol_level=0
 GN_ARGS+=	is_component_build=true
 .else
 GN_ARGS+=	is_component_build=false
+.endif
+
+.if ${FLAVOR:Mlto}
+GN_ARGS+=	extra_cflags=\"-fno-ret-protector -mno-retpoline\" \
+		extra_cxxflags=\"-fno-ret-protector -mno-retpoline\" \
+		use_thin_lto=true \
+		thin_lto_enable_optimizations=true
+.else
+GN_ARGS+=	use_thin_lto=false \
+		thin_lto_enable_optimizations=true
 .endif
 
 pre-configure:
@@ -276,11 +283,7 @@ do-install:
 
 .if ${MACHINE_ARCH} != "aarch64"
 	# SwiftShader
-	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
 	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
-.for f in libEGL.so libGLESv2.so
-	${INSTALL_DATA} ${BUILDDIR}/swiftshader/${f} ${PREFIX}/${DIST_TARGET_DIR}/swiftshader
-.endfor
 .endif
 
 .if ${FLAVOR:Mcomponent}

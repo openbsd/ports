@@ -1,9 +1,9 @@
 Index: content/browser/webui/web_ui_main_frame_observer.cc
 --- content/browser/webui/web_ui_main_frame_observer.cc.orig
 +++ content/browser/webui/web_ui_main_frame_observer.cc
-@@ -12,7 +12,7 @@
- #include "content/browser/webui/web_ui_impl.h"
+@@ -13,7 +13,7 @@
  #include "content/public/browser/navigation_handle.h"
+ #include "content/public/browser/web_ui_controller.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
