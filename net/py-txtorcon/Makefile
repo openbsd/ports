@@ -1,9 +1,8 @@
 COMMENT =		control-spec implementation for Tor
 
-MODPY_EGG_VERSION =	20.0.0
+MODPY_EGG_VERSION =	22.0.0
 DISTNAME =		txtorcon-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 HOMEPAGE =		https://txtorcon.readthedocs.org
 
