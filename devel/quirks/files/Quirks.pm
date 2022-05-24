@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1393 2022/05/20 07:07:59 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1394 2022/05/24 12:19:50 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -26,14 +26,14 @@ package OpenBSD::Quirks;
 sub new
 {
 	my ($class, $version) = @_;
-	if ($version <= 4) {
-		return OpenBSD::Quirks4->new;
+	if ($version <= 5) {
+		return OpenBSD::Quirks5->new;
 	} else {
 		return undef;
 	}
 }
 
-package OpenBSD::Quirks4;
+package OpenBSD::Quirks5;
 use Config;
 sub new
 {
@@ -1813,14 +1813,25 @@ sub tweak_search
 		return;
 	}
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
+	$self->may_add_stems($l->[0], $stem, $state);
+}
+
+# ->may_add_stems($object, $stem, $state):
+# 	may add stems to an object using $object->add_stem
+#	based on a given stem.
+
+sub may_add_stems
+{
+	my ($self, $object, $stem, $state) = @_;
+
 	my $extra = $stem_extensions->{$stem};
 	if (defined $extra) {
 		if (ref $extra) {
 			for my $e (@$extra) {
-				$l->[0]->add_stem($e);
+				$object->add_stem($e);
 			}
 		} else {
-			$l->[0]->add_stem($extra);
+			$object->add_stem($extra);
 		}
 	}
 }

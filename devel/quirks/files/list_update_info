@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: list_update_info,v 1.6 2022/04/27 15:48:45 espie Exp $
+# $OpenBSD: list_update_info,v 1.7 2022/05/24 12:19:50 espie Exp $
 #
 # Copyright (c) 2022 Marc Espie <espie@openbsd.org>
 #
@@ -24,18 +24,43 @@ package OpenBSD::PackingElement;
 
 sub write_for_locate
 {
-	my ($self, $pkgname, $output) = @_;
-	print {$output} "$pkgname:";
+}
+
+package OpenBSD::PackingElement::Meta;
+sub write_for_locate
+{
+	my ($self, $plist, $output) = @_;
+	print {$output} $plist->pkgname, ":";
 	$self->write($output);
+}
+
+package OpenBSD::PackingElement::Comment;
+sub write_for_locate
+{
 }
 
 package OpenBSD::PackingElement::SpecialFile;
 sub write_for_locate
-{}
+{
+}
 
-package OpenBSD::PackingElement::FileObject;
+package OpenBSD::PackingElement::ExtraInfo;
 sub write_for_locate
-{}
+{
+	&OpenBSD::PackingElement::Meta::write_for_locate;
+}
+
+package OpenBSD::PackingElement::AlwaysUpdate;
+sub write_for_locate
+{
+	my ($self, $plist, $output) = @_;
+	my $content;
+	open my $fh, '>', \$content;
+	$plist->write($fh);
+	close $fh;
+	my $digest = Digest::SHA::sha256_base64($content);
+	print {$output} $plist->pkgname, ':@option always-update ', $digest, "\n";
+}
 
 package Scanner;
 use OpenBSD::PackageInfo;
@@ -51,17 +76,8 @@ sub handle_file
 	my $plist = OpenBSD::PackingList->fromfile($f,
 	    \&OpenBSD::PackingList::UpdateInfoOnly);
 	return if $plist->pkgname =~ m/^quirks\-/;
-	if ($plist->has('always-update')) {
-		my $content;
-		open my $fh, '>', \$content;
-		$plist->write($fh);
-		close $fh;
-		my $digest = Digest::SHA::sha256_base64($content);
-		print {$self->{output}} $plist->pkgname, ':@option always-update ', $digest, "\n";
-	} else {
-		# TODO think about generating a "total size" annotation ?
-		$plist->write_for_locate($plist->pkgname, $self->{output});
-	}
+	# TODO think about generating a "total size" annotation ?
+	$plist->write_for_locate($plist, $self->{output});
 }
 
 sub handle_options
