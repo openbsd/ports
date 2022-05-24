@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="/usr/local/ossec-hids/bin/ossec-control"
+daemon="${TRUEPREFIX}/ossec-hids/bin/ossec-control"
 daemon_flags="start"
 
 . /etc/rc.d/rc.subr
