@@ -1,6 +1,6 @@
 COMMENT =		Python library for rich text and beautiful formatting
 
-MODPY_EGG_VERSION =	12.4.0
+MODPY_EGG_VERSION =	12.4.4
 DISTNAME =		rich-${MODPY_EGG_VERSION}
 PKGNAME =		py-rich-${MODPY_EGG_VERSION}
 
