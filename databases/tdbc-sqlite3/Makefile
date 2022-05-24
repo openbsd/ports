@@ -1,11 +1,11 @@
 COMMENT =		SQLite3 module for TDBC
 
-V =			1.0.6
+V =			1.1.3
 
 DISTNAME =		tdbcsqlite3-${V}
 PKGNAME =		tdbc-sqlite3-${V}
 CATEGORIES =		databases
-HOMEPAGE =		http://tdbc.tcl.tk/
+HOMEPAGE =		http://tdbc.tcl-lang.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
@@ -13,8 +13,6 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 MODULES =		lang/tcl
-
-# TDBC needs TclOO, which is in Tcl 8.6
 MODTCL_VERSION =	8.6
 
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS} \
@@ -26,20 +24,19 @@ RUN_DEPENDS =		${MODTCL_RUN_DEPENDS} \
 
 TEST_DEPENDS =		databases/sqlite3-tcl
 FAKE_FLAGS =		tmdir=${MODTCL_MODDIR}/${MODTCL_VERSION:S/.//}
-
-TEST_FLAGS =		SCRIPT='${WRKSRC}/tests/all.tcl ${TESTFLAGS} \
-				-load "package ifneeded tdbc::sqlite3 ${V} \
-				[list source ${WRKSRC}/library/tdbcsqlite3.tcl]"'
-
+TEST_FLAGS =		TESTFLAGS='${TESTFLAGS}'
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tdbc=${MODTCL_TCLDIR}/tdbc
 
-TEST_TARGET =		shell
+TEST_TARGET =		test
 NO_BUILD =		Yes
 
-SUBST_VARS +=		V
+SUBST_VARS =		V
+
+# Use TESTFLAGS to control the Tdbc-sqlite3 tests
+TESTFLAGS =
 
 .include <bsd.port.mk>
