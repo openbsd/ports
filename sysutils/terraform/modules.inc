@@ -272,7 +272,7 @@ MODGO_MODULES =	\
 	go.uber.org/atomic						 v1.3.2 \
 	go.uber.org/multierr						 v1.1.0 \
 	go.uber.org/zap							 v1.10.0 \
-	golang.org/x/crypto						 v0.0.0-20220427172511-eb4f295cb31f \
+	golang.org/x/crypto						 v0.0.0-20220518034528-6f7dac969898 \
 	golang.org/x/exp						 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/exp/typeparams					 v0.0.0-20220218215828-6cf2b201936e \
 	golang.org/x/image						 v0.0.0-20190802002840-cff245a6509b \
