@@ -1,6 +1,7 @@
---- library/tm.tcl.orig	Mon Jul 28 10:43:55 2014
-+++ library/tm.tcl	Sat Oct 11 14:16:12 2014
-@@ -316,10 +316,11 @@ proc ::tcl::tm::Defaults {} {
+Index: library/tm.tcl
+--- library/tm.tcl.orig
++++ library/tm.tcl
+@@ -321,10 +321,11 @@ proc ::tcl::tm::Defaults {} {
  
      # Note that we're using [::list], not [list] because [list] means
      # something other than [::list] in this namespace.

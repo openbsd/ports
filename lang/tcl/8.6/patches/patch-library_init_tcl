@@ -1,18 +1,19 @@
---- library/init.tcl.orig	Thu Feb 26 11:58:16 2015
-+++ library/init.tcl	Mon Apr  6 03:54:27 2015
-@@ -52,9 +52,14 @@ namespace eval tcl {
+Index: library/init.tcl
+--- library/init.tcl.orig
++++ library/init.tcl
+@@ -57,9 +57,14 @@ namespace eval tcl {
+ 		lappend ::auto_path $Dir
+ 	    }
+ 	}
++
++	# OpenBSD layout.
++	# Tcl extensions shouldn't be installed in ${LOCALBASE}/lib.
++	# Don't add ${LOCALBASE}/lib to the auto_path.
++
+ 	set Dir [file join [file dirname [file dirname \
+ 		[info nameofexecutable]]] lib]
+-	if {$Dir ni $::auto_path} {
++	if {$Dir ne {${LOCALBASE}/lib} && $Dir ni $::auto_path} {
  	    lappend ::auto_path $Dir
  	}
-     }
-+
-+# OpenBSD layout.
-+# Tcl extensions shouldn't be installed in ${LOCALBASE}/lib.
-+# Don't add ${LOCALBASE}/lib to the auto_path.
-+
-     set Dir [file join [file dirname [file dirname \
- 	    [info nameofexecutable]]] lib]
--    if {$Dir ni $::auto_path} {
-+    if {$Dir ne {${LOCALBASE}/lib} && $Dir ni $::auto_path} {
- 	lappend ::auto_path $Dir
-     }
-     catch {
+ 	if {[info exists ::tcl_pkgPath]} { catch {

@@ -1,14 +1,13 @@
 COMMENT =		Tool Command Language
 
-P =			8
+P =			12
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
 PKGSTEM = 		tcl-8.6
 SHARED_LIBS =		tcl86 1.${P}
 CATEGORIES =		lang lang/tcl
-HOMEPAGE =		http://www.tcl.tk/
+HOMEPAGE =		http://www.tcl-lang.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =		3
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -25,6 +24,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_DATA="${INSTALL_DATA}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			CONFIG_INSTALL_DIR='$$(SCRIPT_INSTALL_DIR)' \
+			MODULE_INSTALL_DIR='$$(SCRIPT_INSTALL_DIR)/modules' \
 			INSTALL_PACKAGE_TARGETS=''
 
 TEST_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
@@ -36,6 +36,7 @@ CONFIGURE_ARGS +=	--includedir="${PREFIX}/include/tcl8.6" \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \
 			--disable-rpath \
+			TCL_PACKAGE_PATH="${PREFIX}/lib/tcl" \
 			SHLIB_VERSION="${LIBtcl86_VERSION}"
 
 WRKSRC =		${WRKDIST}/unix

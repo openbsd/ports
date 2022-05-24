@@ -11,7 +11,7 @@ include/tcl8.6/tclPlatDecls.h
 include/tcl8.6/tclTomMath.h
 include/tcl8.6/tclTomMathDecls.h
 @lib lib/libtcl86.so.${LIBtcl86_VERSION}
-lib/libtclstub86.a
+@static-lib lib/libtclstub86.a
 lib/pkgconfig/tcl86.pc
 lib/tcl/
 lib/tcl/modules/
@@ -23,6 +23,7 @@ lib/tcl/tcl8.6/clock.tcl
 lib/tcl/tcl8.6/encoding/
 lib/tcl/tcl8.6/encoding/ascii.enc
 lib/tcl/tcl8.6/encoding/big5.enc
+lib/tcl/tcl8.6/encoding/cns11643.enc
 lib/tcl/tcl8.6/encoding/cp1250.enc
 lib/tcl/tcl8.6/encoding/cp1251.enc
 lib/tcl/tcl8.6/encoding/cp1252.enc
@@ -66,6 +67,7 @@ lib/tcl/tcl8.6/encoding/iso2022-kr.enc
 lib/tcl/tcl8.6/encoding/iso2022.enc
 lib/tcl/tcl8.6/encoding/iso8859-1.enc
 lib/tcl/tcl8.6/encoding/iso8859-10.enc
+lib/tcl/tcl8.6/encoding/iso8859-11.enc
 lib/tcl/tcl8.6/encoding/iso8859-13.enc
 lib/tcl/tcl8.6/encoding/iso8859-14.enc
 lib/tcl/tcl8.6/encoding/iso8859-15.enc
@@ -109,6 +111,9 @@ lib/tcl/tcl8.6/man/license.terms
 lib/tcl/tcl8.6/man/man1/
 @man lib/tcl/tcl8.6/man/man1/tclsh.1
 lib/tcl/tcl8.6/man/man3/
+@man lib/tcl/tcl8.6/man/man3/DString.3
+@man lib/tcl/tcl8.6/man/man3/Notifier.3
+@man lib/tcl/tcl8.6/man/man3/RegExp.3
 @man lib/tcl/tcl8.6/man/man3/TCL_MEM_DEBUG.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_Access.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_AddErrorInfo.3
@@ -188,6 +193,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_CreateAliasObj.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CreateChannel.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CreateChannelHandler.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_CreateChild.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CreateCloseHandler.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CreateCommand.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_CreateEncoding.3
@@ -363,6 +369,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetChannelThread.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetChannelType.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetCharLength.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_GetChild.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetClassAsObject.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetCommandFromObj.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetCommandFullName.3
@@ -406,6 +413,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetLongFromObj.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetMaster.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetMathFuncInfo.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_GetMemoryInfo.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetModeFromStat.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetModificationTimeFromStat.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetNameOfExecutable.3
@@ -418,6 +426,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetObjectName.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetObjectNamespace.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetOpenFile.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_GetParent.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetPathType.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetRange.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_GetRegExpFromObj.3
@@ -499,6 +508,8 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_LoadFile.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_LogCommandInfo.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_Main.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_MainEx.3
+@man lib/tcl/tcl8.6/man/man3/Tcl_MainExW.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_MakeFileChannel.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_MakeSafe.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_MakeTcpClientChannel.3
@@ -756,6 +767,7 @@ lib/tcl/tcl8.6/man/man3/
 @man lib/tcl/tcl8.6/man/man3/Tcl_ZlibStreamGetCommandName.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_ZlibStreamInit.3
 @man lib/tcl/tcl8.6/man/man3/Tcl_ZlibStreamPut.3
+@man lib/tcl/tcl8.6/man/man3/Thread.3
 @man lib/tcl/tcl8.6/man/man3/attemptckalloc.3
 @man lib/tcl/tcl8.6/man/man3/attemptckrealloc.3
 @man lib/tcl/tcl8.6/man/man3/ckalloc.3
@@ -823,6 +835,7 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/join.n
 @man lib/tcl/tcl8.6/man/mann/lappend.n
 @man lib/tcl/tcl8.6/man/mann/lassign.n
+@man lib/tcl/tcl8.6/man/mann/library.n
 @man lib/tcl/tcl8.6/man/mann/lindex.n
 @man lib/tcl/tcl8.6/man/mann/linsert.n
 @man lib/tcl/tcl8.6/man/mann/list.n
@@ -851,9 +864,11 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/oo::object.n
 @man lib/tcl/tcl8.6/man/mann/open.n
 @man lib/tcl/tcl8.6/man/mann/package.n
+@man lib/tcl/tcl8.6/man/mann/packagens.n
 @man lib/tcl/tcl8.6/man/mann/parray.n
 @man lib/tcl/tcl8.6/man/mann/pid.n
 @man lib/tcl/tcl8.6/man/mann/pkg::create.n
+@man lib/tcl/tcl8.6/man/mann/pkgMkIndex.n
 @man lib/tcl/tcl8.6/man/mann/pkg_mkIndex.n
 @man lib/tcl/tcl8.6/man/mann/platform.n
 @man lib/tcl/tcl8.6/man/mann/platform::shell.n
@@ -903,6 +918,7 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/tell.n
 @man lib/tcl/tcl8.6/man/mann/throw.n
 @man lib/tcl/tcl8.6/man/mann/time.n
+@man lib/tcl/tcl8.6/man/mann/timerate.n
 @man lib/tcl/tcl8.6/man/mann/tm.n
 @man lib/tcl/tcl8.6/man/mann/trace.n
 @man lib/tcl/tcl8.6/man/mann/transchan.n
@@ -920,12 +936,12 @@ lib/tcl/tcl8.6/man/mann/
 @man lib/tcl/tcl8.6/man/mann/yieldto.n
 @man lib/tcl/tcl8.6/man/mann/zlib.n
 lib/tcl/tcl8.6/modules/
-lib/tcl/tcl8.6/modules/http-2.8.12.tm
+lib/tcl/tcl8.6/modules/http-2.9.5.tm
 lib/tcl/tcl8.6/modules/msgcat-1.6.1.tm
 lib/tcl/tcl8.6/modules/platform/
-lib/tcl/tcl8.6/modules/platform-1.0.14.tm
+lib/tcl/tcl8.6/modules/platform-1.0.18.tm
 lib/tcl/tcl8.6/modules/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/tcltest-2.4.1.tm
+lib/tcl/tcl8.6/modules/tcltest-2.5.3.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg

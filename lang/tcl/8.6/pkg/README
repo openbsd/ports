@@ -75,13 +75,6 @@ ${TRUEPREFIX}/lib/tcl8/...
 now
 ${TRUEPREFIX}/lib/tcl/modules/{85,86}
 
-Libraries
-=========
-On architectures that support shared libraries, additional static
-libraries (libtcl86.a, libtk86.a) are built from the pic-compiled
-object (.o) files.  A symbolic link from any lib.a to lib_pic.a
-is created in order to satisfy libtool.
-
 Manual Page Configuration
 =========================
 Adding the following lines to /etc/man.conf wil enable man(1)
@@ -93,8 +86,8 @@ manpath ${TRUEPREFIX}/lib/tcl/tk8.6/man
 Tcl/Tk Resources
 ================
 Newsgroup: nntp://comp.lang.tcl
-Wiki:      http://wiki.tcl.tk
-Tutorial:  http://www.tcl.tk/man/tcl8.5/tutorial/tcltutorial.html
+Wiki:      http://wiki.tcl-lang.org
+Tutorial:  http://www.tcl-lang.org/man/tcl8.5/tutorial/tcltutorial.html
 Wikibook:  http://en.wikibooks.org/wiki/Programming:Tcl
 Book:      Practical Programming in Tcl and Tk, 4th Edition
            ISBN: 0-13-038560-3
