@@ -1,6 +1,6 @@
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-2.7
+DISTNAME =		cppcheck-2.8
 
 CATEGORIES =		devel
 
