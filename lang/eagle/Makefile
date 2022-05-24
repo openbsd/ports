@@ -1,9 +1,9 @@
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		6781.49000
+P =		7945.33333
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}beta42
+PKGNAME =	${DISTNAME}beta49
 EPOCH =		0
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	https://eagle.to/
@@ -41,7 +41,7 @@ EAGLE_BIN =	${PREFIX}/bin/eagle
 EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle perf*.eagle'
 
 # Skip tests that may hang or fail
-EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2'
+EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2 socket-6.1 string-99.400'
 
 # "-namespaces 1" enables namespace tests
 # "set no(bigLists) 1" avoids oom problems
