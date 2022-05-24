@@ -6,12 +6,12 @@ daemon_user="_traccar"
 . /etc/rc.d/rc.subr
 
 java="$(${LOCALBASE}/bin/javaPathHelper -c traccar)"
-pexp="${java}${daemon_flags:+ ${daemon_flags}} -XX:-UsePerfData -jar ${daemon} /etc/traccar/traccar.xml"
+pexp="${java}${daemon_flags:+ ${daemon_flags}} -XX:-UsePerfData -jar ${daemon} ${SYSCONFDIR}/traccar/traccar.xml"
 rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-        rc_exec "${java} ${daemon_flags} -XX:-UsePerfData -jar ${daemon} /etc/traccar/traccar.xml"
+        rc_exec "${java} ${daemon_flags} -XX:-UsePerfData -jar ${daemon} ${SYSCONFDIR}/traccar/traccar.xml"
 }
 
 rc_cmd $1

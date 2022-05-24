@@ -4,7 +4,7 @@ daemon="${TRUEPREFIX}/bin/bitcoind"
 daemon_timeout="300"
 daemon_user="_bitcoind"
 data_dir="${VARBASE}/bitcoin"
-daemon_flags="-daemon -conf=/etc/bitcoin.conf -datadir=${data_dir}"
+daemon_flags="-daemon -conf=${SYSCONFDIR}/bitcoin.conf -datadir=${data_dir}"
 
 . /etc/rc.d/rc.subr
 

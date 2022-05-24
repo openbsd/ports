@@ -6,6 +6,8 @@ GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
 GH_TAGNAME =		v0.21.2
 
+REVISION =		0
+
 SHARED_LIBS +=  bitcoinconsensus          4.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
 SHARED_LIBS +=  univalue                  0.0 # 100.3
