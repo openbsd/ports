@@ -1,12 +1,12 @@
 COMMENT =	multi-protocol browser for the small internet
-V =		0.7.1
+V =		0.8
 DISTNAME =	telescope-${V}
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://telescope.omarpolo.com
 
-MAINTAINER =	Omar Polo <op@omarpolo.com>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes
