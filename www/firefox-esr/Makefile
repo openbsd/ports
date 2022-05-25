@@ -6,6 +6,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
+REVISION =	0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -73,7 +74,10 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/firefox.desktop \
+	awk '/^\[/{ if ($$0 == "[Desktop Entry]") flag=1; else flag=0} /^Name/{if (flag) print $$0, "- ESR"; else print} !/^Name/' \
+		${WRKSRC}/taskcluster/docker/firefox-snap/firefox.desktop \
+		> ${WRKSRC}/taskcluster/docker/firefox-snap/firefox.desktop.fixed
+	${SUBST_DATA} ${WRKSRC}/taskcluster/docker/firefox-snap/firefox.desktop.fixed \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# make sure TwemojiMozilla.ttf is found
