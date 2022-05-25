@@ -1,5 +1,5 @@
 COMMENT =	multi-protocol browser for the small internet
-V =		0.8
+V =		0.8.1
 DISTNAME =	telescope-${V}
 
 CATEGORIES =	net
