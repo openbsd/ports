@@ -1,6 +1,6 @@
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
-VERSION =	3.1.13
+VERSION =	3.1.18
 DISTNAME =	bcrypt-${VERSION}
 CATEGORIES =	security
 
