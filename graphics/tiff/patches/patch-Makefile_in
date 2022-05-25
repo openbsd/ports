@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -434,7 +434,7 @@ EXTRA_DIST = \
+@@ -436,7 +436,7 @@ EXTRA_DIST = \
  	libtiff-4.pc.in
  
  dist_doc_DATA = $(docfiles)

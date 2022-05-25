@@ -9,7 +9,7 @@ Index: libtiff/tif_open.c
  
  	/* The following are configuration checks. They should be redundant, but should not
  	 * compile to any actual code in an optimised release build anyway. If any of them
-@@ -115,14 +116,15 @@ TIFFClientOpen(
+@@ -114,14 +115,15 @@ TIFFClientOpen(
  	m = _TIFFgetMode(mode, module);
  	if (m == -1)
  		goto bad2;

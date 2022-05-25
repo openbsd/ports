@@ -1,12 +1,12 @@
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.3.0
-SHARED_LIBS=	tiff	41.0	# 12.0
-SHARED_LIBS+=	tiffxx	41.0	# 12.0
+DISTNAME=	tiff-4.4.0rc1
+SHARED_LIBS=	tiff	41.1	# 13.0
+SHARED_LIBS+=	tiffxx	41.0	# 13.0
 CATEGORIES=	graphics
-REVISION=	0
 
 MASTER_SITES=	https://download.osgeo.org/libtiff/
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://www.simplesystems.org/libtiff/
 
@@ -20,6 +20,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 # BSD
 PERMIT_PACKAGE=	Yes
 
+WRKDIST=	${WRKDIR}/tiff-4.4.0
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-jbig \
 		--disable-libdeflate \
