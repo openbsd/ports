@@ -11,6 +11,7 @@
      SUBDIR += py-astral,python3
      SUBDIR += py-astropy,python3
      SUBDIR += py-de421,python3
+     SUBDIR += py-erfa,python3
      SUBDIR += py-jplephem,python3
      SUBDIR += py-metar,python3
      SUBDIR += py-sgp4,python3
