@@ -3,6 +3,7 @@ COMMENT=		full text search plugin for Dovecot using Xapian
 GH_ACCOUNT=		grosjo
 GH_PROJECT=		fts-xapian
 GH_TAGNAME=		1.5.5
+REVISION=		0
 
 PKGNAME=		dovecot-${DISTNAME}
 
