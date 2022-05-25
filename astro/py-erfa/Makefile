@@ -1,0 +1,35 @@
+COMMENT=	Python wrapper for ERFA
+
+MODPY_EGG_VERSION=	2.0.0.1
+
+DISTNAME=	pyerfa-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:S/py/py-/}
+
+CATEGORIES=	astro
+
+# https://github.com/liberfa/pyerfa
+HOMEPAGE=	https://pyerfa.readthedocs.io/
+
+# BSD
+PERMIT_PACKAGE=	Yes
+
+MAINTAINER=	Wen Heping <wenheping2000@hotmail.com>
+
+MODULES=	lang/python
+
+MODPY_PI=		Yes
+MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST_ARGS=	erfa/tests
+
+FLAVOR=		python3
+FLAVORS=	python3
+
+BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR} \
+		sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-doctestplus${MODPY_FLAVOR}
+
+pre-test:
+	${MODPY_CMD} build_ext --inplace
+
+.include <bsd.port.mk>

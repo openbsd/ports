@@ -1,0 +1,4 @@
+This package contains a plugin for the pytest framework that provides
+advanced doctest support and enables the testing of reStructuredText
+(".rst") files. It was originally part of the astropy core package, but
+has been moved to a separate package in order to be of more general use.

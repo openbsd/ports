@@ -1,0 +1,5 @@
+The pytest-openfiles plugin allows for the detection of open I/O
+resources at the end of unit tests. This is particularly useful for
+testing code that manipulates file handles or other I/O resources. It
+allows developers to ensure that this kind of code properly cleans up
+I/O resources when they are no longer needed.
