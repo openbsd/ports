@@ -1,6 +1,6 @@
 COMMENT =	metapackage for testing machinery used by Astropy
 
-MODPY_EGG_VERSION =	0.9.0
+MODPY_EGG_VERSION =	0.10.0
 
 DISTNAME =	pytest-astropy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
