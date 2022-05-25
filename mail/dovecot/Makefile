@@ -11,6 +11,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 V_MAJOR=	2.3
 V_DOVECOT=	2.3.19
 EPOCH=		0
+REVISION-server=0
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}

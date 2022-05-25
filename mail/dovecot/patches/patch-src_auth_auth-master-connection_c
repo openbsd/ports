@@ -1,0 +1,21 @@
+From 30e69471792aec818dbbfa64adb868db14a6d8e2 Mon Sep 17 00:00:00 2001
+From: Timo Sirainen <timo.sirainen@open-xchange.com>
+Date: Wed, 18 May 2022 11:31:44 +0300
+Subject: [PATCH] auth: Fix assert-crash in iterating multiple userdbs
+
+Broken by 501e17ba6b448ba3c88338596e0e8f99f0693f79
+
+Fixes:
+Panic: file userdb-blocking.c: line 125 (userdb_blocking_iter_next): assertion failed: (ctx->conn != NULL)
+
+Index: src/auth/auth-master-connection.c
+--- src/auth/auth-master-connection.c.orig
++++ src/auth/auth-master-connection.c
+@@ -514,7 +514,6 @@ static void master_input_list_callback(const char *use
+ 		ctx->auth_request->userdb = userdb;
+ 		ctx->iter = userdb_blocking_iter_init(ctx->auth_request,
+ 					master_input_list_callback, ctx);
+-		userdb_blocking_iter_next(ctx->iter);
+ 		return;
+ 	}
+ 
