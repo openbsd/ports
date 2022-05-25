@@ -1,6 +1,6 @@
 COMMENT =	community-developed python astronomy tools
 
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.1
 
 DISTNAME =	astropy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -44,6 +44,8 @@ TEST_DEPENDS =		astro/py-skyfield${MODPY_FLAVOR} \
 			math/py-h5py${MODPY_FLAVOR} \
 			math/py-pandas${MODPY_FLAVOR} \
 			math/py-scikit-image${MODPY_FLAVOR}
+# this covers main tests, but skips some.
+# note if looking at adding more, pyarrow != arrow
 
 pre-test:
 	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
