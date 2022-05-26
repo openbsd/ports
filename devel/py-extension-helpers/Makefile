@@ -16,6 +16,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
+BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
 MODPY_PYTEST_ARGS= extension_helpers/tests
 
 # wants py-coverage<5
