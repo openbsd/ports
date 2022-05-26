@@ -5,9 +5,9 @@ Index: cola/app.py
 +++ cola/app.py
 @@ -102,7 +102,7 @@ def setup_environment():
      elif sys.platform == 'darwin':
-         askpass = resources.share('bin', 'ssh-askpass-darwin')
+         askpass = resources.package_command('ssh-askpass-darwin')
      else:
--        askpass = resources.share('bin', 'ssh-askpass')
+-        askpass = resources.package_command('ssh-askpass')
 +        askpass = '${X11BASE}/bin/ssh-askpass'
  
      compat.setenv('GIT_ASKPASS', askpass)
