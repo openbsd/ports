@@ -2,10 +2,9 @@ COMMENT=	Java Native Access (JNA)
 
 GH_PROJECT=	jna
 GH_ACCOUNT=	java-native-access
-GH_TAGNAME=	4.4.0
+GH_TAGNAME=	5.11.0
 CATEGORIES=	devel
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
-REVISION=	4
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 
@@ -13,7 +12,7 @@ HOMEPAGE=	https://github.com/java-native-access/jna
 PERMIT_PACKAGE=	Yes
 
 MODULES=	java
-MODJAVA_VER=	1.8
+MODJAVA_VER=	11
 MODJAVA_BUILD=	ant
 
 # use the system libffi
@@ -33,10 +32,6 @@ MAKE_ENV=	CC="${CC}" \
 
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86-64/:S/i386/x86/:S/sparc64/sparcv9/}
 
-# XXX: remove stale distribution file
-post-extract:
-	rm ${WRKSRC}/native/libffi/src/powerpc/linux64_closure.S.orig
-
 pre-configure:
 	sed -i -e 's,-Wno-unknown-warning-option,,' \
 		-e 's,-Wno-clobbered,,' ${WRKSRC}/native/Makefile
@@ -51,6 +46,7 @@ do-install:
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
 		${MODJAVA_BUILD_ARGS} test
-	${SHELL} ${FILESDIR}/test.sh
+	# needs to be run interactively with lang/clojure set up
+	#${SHELL} ${FILESDIR}/test.sh
 
 .include <bsd.port.mk>

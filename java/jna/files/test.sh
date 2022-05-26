@@ -5,7 +5,7 @@
 expected=`mktemp`
 results=`mktemp`
 echo "Hello, World\n-> 42\nint: 42\nfloat: 42.00\n# ignore statvfs" > $expected
-/usr/local/bin/clojure files/jna.clj > $results
+cd files && /usr/local/bin/clojure -M jna.clj > $results
 
 cmp $expected $results || exit 1
 

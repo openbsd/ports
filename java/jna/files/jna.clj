@@ -1,5 +1,7 @@
 ;;; Basic set of JNA tests for use with Clojure
 
+(import '(com.sun.jna Library))
+
 (gen-interface
  :name jna.CLibrary
  :extends [com.sun.jna.Library]
