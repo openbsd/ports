@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/share/unifi/lib/ace.jar"
+daemon_execdir="${LOCALBASE}/share/unifi"
 daemon_user="_unifi"
 
 . /etc/rc.d/rc.subr
@@ -12,7 +13,6 @@ rc_bg=YES
 rc_reload=NO
 
 rc_start() {
-	cd ${LOCALBASE}/share/unifi
 	rc_exec "${java} ${daemon_flags} -cp 'lib/*' com/ubnt/ace/Launcher start"
 }
 

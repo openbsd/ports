@@ -1,13 +1,10 @@
 #!/bin/ksh
 
 daemon="${PREFIX}/bin/vaultwarden"
+daemon_execdir="${VARBASE}/vaultwarden"
 daemon_user="_vaultwarden"
 
 . /etc/rc.d/rc.subr
-
-rc_start() {
-	rc_exec "cd ${VARBASE}/vaultwarden; ${daemon} ${daemon_flags}"
-}
 
 rc_bg=YES
 rc_reload=NO

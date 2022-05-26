@@ -1,6 +1,6 @@
 V=		5.6.42
 SNAPPY_V=	1.1.2.6
 SNAPPY_S=
-REVISION=	14
+REVISION=	15
 
 .include <bsd.port.mk>

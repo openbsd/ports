@@ -1,6 +1,7 @@
 #!/bin/ksh
 
 daemon="puppetboard_wsgi"
+daemon_execdir="${INSTDIR}"
 daemon_flags="--workers 4"
 daemon_user="_puppetboard"
 
@@ -9,8 +10,7 @@ daemon_user="_puppetboard"
 pexp="${MODPY_BIN}.*${daemon_flags:+ ${daemon_flags}} ${daemon}:application"
 
 rc_start() {
-	rc_exec "cd ${INSTDIR} && \
-		${LOCALBASE}/bin/gunicorn --daemon ${daemon_flags} ${daemon}:application"
+	${LOCALBASE}/bin/gunicorn --daemon ${daemon_flags} ${daemon}:application
 }
 
 rc_cmd $1
