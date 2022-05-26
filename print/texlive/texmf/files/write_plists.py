@@ -23,7 +23,6 @@ INFO_RE = re.compile(r'^info/.*\.info')
 
 TOP_MATTER = {
     "-buildset": [
-        "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -36,7 +35,6 @@ TOP_MATTER = {
         "share/texmf-local/",
     ],
     "-main": [
-        "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -46,7 +44,6 @@ TOP_MATTER = {
         "@pkgpath print/teTeX/texmf",
     ],
     "-context": [
-        "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -55,7 +52,6 @@ TOP_MATTER = {
         "@conflict texlive_texmf-minimal-<%s" % YEAR,
     ],
     "-full": [
-        "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-*",
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-docs-<%s" % YEAR,
@@ -66,7 +62,6 @@ TOP_MATTER = {
         "@pkgpath print/teTeX/texmf",
     ],
     "-docs": [
-        "@comment $" "OpenBSD$",
         "@conflict teTeX_texmf-doc-*",
         "@conflict texlive_base-<%s" % YEAR,
         "@conflict texlive_texmf-minimal-<%s" % YEAR,
