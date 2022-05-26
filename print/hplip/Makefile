@@ -25,6 +25,10 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
+REVISION-main=		0
+REVISION-hpaio=		0
+REVISION-hpcups=	0
+
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
 SHARED_LIBS +=  hpipp                0.0      # 0.1
@@ -59,12 +63,10 @@ BUILD_DEPENDS +=	lang/gawk
 cWANTLIB += crypto m pthread
 
 ### -main
-WANTLIB-main += ${cWANTLIB}
-WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
-WANTLIB-main += gmp gnutls hogweed nettle p11-kit tasn1 usb-1.0 z
-WANTLIB-main += hpdiscovery hpipp idn2 iconv intl unistring
-WANTLIB-main += ${COMPILER_LIBCXX} c avahi-core execinfo
-WANTLIB-main += brotlidec brotlienc zstd
+WANTLIB-main += ${cWANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp execinfo
+WANTLIB-main += usb-1.0 z ssl hpdiscovery hpipp iconv intl avahi-core c
+WANTLIB-main += hpdiscovery hpipp iconv intl
 
 LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
@@ -95,11 +97,9 @@ RUN_DEPENDS-common=	# empty
 
 ### -hpaio
 WANTLIB-hpaio += ${cWANTLIB}
-WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 gmp gnutls
-WANTLIB-hpaio += hogweed hpip hpipp hpmud netsnmp nettle p11-kit idn2
-WANTLIB-hpaio += sane tasn1 usb-1.0 z hpdiscovery iconv intl unistring
+WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 hpip hpipp ssl
+WANTLIB-hpaio += hpmud netsnmp sane usb-1.0 z hpdiscovery iconv intl
 WANTLIB-hpaio += lzma xml2 avahi-core execinfo
-WANTLIB-hpaio += brotlidec brotlienc zstd
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -108,12 +108,9 @@ LIB_DEPENDS-hpaio=	print/hplip,-common \
 RUN_DEPENDS-hpaio=	# empty
 
 ### -hpcups
-WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl
-WANTLIB-hpcups += c jpeg ${COMPILER_LIBCXX} hpip cups cupsimage dbus-1 idn2
-WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud
-WANTLIB-hpcups += gmp gnutls hogweed nettle p11-kit tasn1
-WANTLIB-hpcups += unistring avahi-core execinfo
-WANTLIB-hpcups += brotlidec brotlienc zstd
+WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl execinfo ssl
+WANTLIB-hpcups += c jpeg ${COMPILER_LIBCXX} hpip cups cupsimage dbus-1
+WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud avahi-core
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/hplip,-common \

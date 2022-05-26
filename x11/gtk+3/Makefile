@@ -15,6 +15,8 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
+REVISION-cups=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS +=  gdk-3                2201.1   # 2404.30
@@ -62,15 +64,13 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 RUN_DEPENDS-cups=
 
-WANTLIB-cups += ${WANTLIB} ${COMPILER_LIBCXX} epoxy idn2 fribidi
-WANTLIB-cups += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
-WANTLIB-cups += graphite2 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-cups += pixman-1 xcb xcb-render png avahi-client avahi-common
-WANTLIB-cups += cups gdk-3 gmp xcb-shm gnutls gtk-3 hogweed nettle
-WANTLIB-cups += p11-kit tasn1 unistring execinfo Xau Xdmcp
-WANTLIB-cups += brotlidec brotlienc zstd
+WANTLIB-cups += ${WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB-cups += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-cups += Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB-cups += avahi-client avahi-common cairo cairo-gobject crypto
+WANTLIB-cups += cups dbus-1 epoxy execinfo expat fontconfig freetype
+WANTLIB-cups += fribidi gdk-3 graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-cups += pangoft2-1.0 pixman-1 png ssl xcb xcb-render xcb-shm
 
 LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
 RUN_DEPENDS-guic=	x11/hicolor-icon-theme

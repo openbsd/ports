@@ -2,8 +2,7 @@ COMMENT=		high quality print drivers for foomatic and CUPS
 
 V=			5.3.4
 DISTNAME=		gutenprint-${V}
-
-REVISION=		0
+REVISION=		1
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -24,10 +23,9 @@ PERMIT_PACKAGE=	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB += avahi-client avahi-common c cups curses dbus-1 gmp
-WANTLIB += gnutls hogweed iconv idn2 intl m nettle p11-kit pthread
-WANTLIB += readline tasn1 unistring usb-1.0 z
-WANTLIB += brotlidec brotlienc execinfo zstd
+WANTLIB += avahi-client avahi-common c crypto cups curses dbus-1
+WANTLIB += execinfo iconv intl m pthread readline ssl usb-1.0
+WANTLIB += z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
 

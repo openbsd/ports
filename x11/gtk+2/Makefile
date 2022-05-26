@@ -10,7 +10,7 @@ PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
 REVISION-main=		1
-REVISION-cups=		0
+REVISION-cups=		1
 
 CATEGORIES=		x11 devel
 
@@ -35,9 +35,8 @@ WANTLIB += pcre pixman-1 png xcb xcb-render xcb-shm z
 WANTLIB-main += ${WANTLIB} c
 
 WANTLIB-cups += ${WANTLIB}
-WANTLIB-cups += avahi-client avahi-common brotlidec brotlienc cups dbus-1
-WANTLIB-cups += execinfo gdk-x11-2.0 gmp fribidi gnutls gtk-x11-2.0 hogweed
-WANTLIB-cups += idn2 nettle p11-kit tasn1 unistring zstd
+WANTLIB-cups += avahi-client avahi-common crypto cups dbus-1 execinfo
+WANTLIB-cups += gdk-x11-2.0 gtk-x11-2.0 ssl
 
 MULTI_PACKAGES=		-main -cups
 
