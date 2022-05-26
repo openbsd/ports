@@ -4,10 +4,7 @@ COMMENT-libs=		CUPS libraries and headers
 VERSION=		${GH_TAGNAME:S/v//:S/op/./}
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
-GH_TAGNAME=		v2.4.1
-
-REVISION-main=		2
-REVISION-libs=		1
+GH_TAGNAME=		v2.4.2
 
 CATEGORIES=		print sysutils
 
@@ -29,7 +26,7 @@ WANTLIB += avahi-client avahi-common iconv m pthread z
 WANTLIB-main += ${WANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += c cups dbus-1 usb-1.0
 
-WANTLIB-libs += ${WANTLIB} gnutls
+WANTLIB-libs += ${WANTLIB} crypto ssl
 
 MULTI_PACKAGES=		-main -libs
 
@@ -37,8 +34,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 # bootstrap prevents a cyclic dep: gtk+{2,3}->cups->avahi->gtk+{2,3}
-LIB_DEPENDS-libs=	net/avahi,no_gui,bootstrap,-libs \
-			security/gnutls
+LIB_DEPENDS-libs=	net/avahi,no_gui,bootstrap,-libs
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \
 			devel/libusb1
