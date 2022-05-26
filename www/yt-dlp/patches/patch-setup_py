@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -60,7 +60,7 @@ else:
+@@ -71,7 +71,7 @@ else:
          ('share/zsh/site-functions', ['completions/zsh/_yt-dlp']),
          ('share/fish/vendor_completions.d', ['completions/fish/yt-dlp.fish']),
          ('share/doc/yt_dlp', ['README.txt']),
