@@ -136,6 +136,9 @@ lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/html/main
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/irr-as-set/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/irr-as-set/plain_rpsl.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/irr-as-set/ripe_ripeinator_yml.j2
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/md/
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/md/macros.j2
+lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/md/main.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/openbgpd/
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/openbgpd/clients.j2
 lib/python${MODPY_VERSION}/site-packages/pierky/arouteserver/templates/openbgpd/filters.j2
