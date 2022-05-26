@@ -21,6 +21,7 @@ NO_TEST =		Yes
 FLAVOR =	python3
 FLAVORS =	python3
 
+BUILD_DEPENDS =	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-attrs${MODPY_FLAVOR} \
 		devel/py-hypothesis${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
