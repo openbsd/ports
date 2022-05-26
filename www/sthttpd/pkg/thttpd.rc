@@ -1,16 +1,10 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/sbin/thttpd"
+daemon_flags="-d /var/www"
 
 . /etc/rc.d/rc.subr
 
 rc_stop_signal=USR1
-
-# The /var/www root directory will be overridden by any -d flag the user
-# supplies. This addresses the awkward fact that thttpd defaults to the
-# current working directory.
-rc_start() {
-	rc_exec "cd /var/www; ${daemon} ${daemon_flags}"
-}
 
 rc_cmd $1
