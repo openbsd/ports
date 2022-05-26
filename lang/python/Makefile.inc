@@ -187,6 +187,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gdb/auto-load/usr/local/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/python-gdb.py \
 		${PREFIX}/share/gdb/auto-load/usr/local/bin/python${VERSION}-gdb.py
+	@for i in _hashlib _ssl; do \
+	    if ! [ -r ${PREFIX}/lib/python*/lib-dynload/$$i*.so ]; then echo; \
+		echo "*** check logs - $$i was not built!"; echo; exit 1; fi; done
 
 TEST_TARGET=	test
 TEST_FLAGS=	"EXTRATESTOPTS=-w"
