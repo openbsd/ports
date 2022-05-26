@@ -3,7 +3,7 @@ cc1: error: unrecognized command line option "-Wno-psabi"
 Index: testsuite/lib/libffi.exp
 --- testsuite/lib/libffi.exp.orig
 +++ testsuite/lib/libffi.exp
-@@ -488,7 +488,7 @@ proc run-many-tests { testcases extra_flags } {
+@@ -491,7 +491,7 @@ proc run-many-tests { testcases extra_flags } {
          }
        }
        "gnu" {

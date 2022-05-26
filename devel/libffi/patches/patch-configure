@@ -3,7 +3,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18475,6 +18475,12 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
+@@ -18650,6 +18650,12 @@ $as_echo "#define SYMBOL_UNDERSCORE 1" >>confdefs.h
  
  fi
  

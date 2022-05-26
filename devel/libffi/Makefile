@@ -1,8 +1,8 @@
 COMMENT=		Foreign Function Interface
 
-DISTNAME=		libffi-3.3
-REVISION=		1
-SHARED_LIBS +=  ffi                  1.2      # .6.4
+V=			3.4.2
+DISTNAME=		libffi-$V
+SHARED_LIBS +=  ffi                  2.0      # 9.0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -17,8 +17,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c++abi
 .endif
 
-MASTER_SITES=		https://sourceware.org/pub/libffi/ \
-			ftp://sourceware.org/pub/libffi/
+MASTER_SITES= https://github.com/libffi/libffi/releases/download/v$V/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

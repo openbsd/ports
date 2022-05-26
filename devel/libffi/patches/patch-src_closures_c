@@ -1,15 +1,15 @@
 Index: src/closures.c
 --- src/closures.c.orig
 +++ src/closures.c
-@@ -837,6 +837,7 @@ dlmmap (void *start, size_t length, int prot,
- 	  && flags == (MAP_PRIVATE | MAP_ANONYMOUS)
- 	  && fd == -1 && offset == 0);
+@@ -878,6 +878,7 @@ dlmmap (void *start, size_t length, int prot,
+       return ptr;
+     }
  
 +#if 0
    if (execfd == -1 && is_emutramp_enabled ())
      {
        ptr = mmap (start, length, prot & ~PROT_EXEC, flags, fd, offset);
-@@ -855,6 +856,7 @@ dlmmap (void *start, size_t length, int prot,
+@@ -896,6 +897,7 @@ dlmmap (void *start, size_t length, int prot,
  	 with ((prot & ~PROT_WRITE) | PROT_EXEC) and mremap with
  	 MREMAP_DUP and prot at this point.  */
      }
