@@ -3,7 +3,7 @@
 COMMENT=	library for rendering Postscript documents
 
 DISTNAME=	libspectre-0.2.10
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	print
 
@@ -16,11 +16,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ICE SM X11 Xext Xt avahi-client avahi-common brotlidec
-WANTLIB += brotlienc cups dbus-1 execinfo expat fontconfig freetype gmp
-WANTLIB += gnutls gs hogweed iconv idn idn2 ijs intl jbig2dec jpeg lzma
-WANTLIB += m nettle openjp2 p11-kit paper png pthread tasn1 tiff
-WANTLIB += unistring xcb z zstd
+WANTLIB += ICE SM X11 Xext Xt avahi-client avahi-common crypto
+WANTLIB += cups dbus-1 execinfo expat fontconfig freetype gs iconv
+WANTLIB += idn ijs intl jbig2dec jpeg lzma m openjp2 paper png
+WANTLIB += pthread ssl tiff xcb z zstd
 
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
