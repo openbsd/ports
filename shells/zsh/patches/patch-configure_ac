@@ -1,0 +1,41 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -2401,6 +2401,37 @@ dnl ---------------
+ zsh_CHECK_SOCKLEN_T
+ 
+ dnl ---------------
++dnl Check for openpty support
++dnl ---------------
++AH_TEMPLATE([HAVE_OPENPTY],
++  [Define to 1 if you have the `openpty' function.])
++AH_TEMPLATE([OPENPTY_REQUIRES_PTY],
++  [Define to 1 if the `openpty' function requires pty.h.])
++AH_TEMPLATE([OPENPTY_REQUIRES_UTIL],
++  [Define to 1 if the `openpty' function requires termios.h and util.h.])
++AC_MSG_CHECKING([for openpty])
++openpty=no
++AC_LINK_IFELSE([AC_LANG_SOURCE(
++[[#include<pty.h>
++int main () { int (*p)(int *, int *, char *, const struct termios *, const struct winsize *) = openpty; }]])],
++  [AC_DEFINE([HAVE_OPENPTY])
++   AC_DEFINE([OPENPTY_REQUIRES_PTY])
++   openpty=yes])
++if test $openpty = no; then
++AC_LINK_IFELSE([AC_LANG_SOURCE(
++[[#include<termios.h>
++#include <util.h>
++int main () { int (*p)(int *, int *, char *, const struct termios *, const struct winsize *) = openpty; }]])],
++  [AC_DEFINE([HAVE_OPENPTY])
++   AC_DEFINE([OPENPTY_REQUIRES_UTIL])
++   openpty=yes])
++fi
++AC_MSG_RESULT([$openpty])
++if test $openpty = yes; then
++AC_SEARCH_LIBS(openpty, util)
++fi
++
++dnl ---------------
+ dnl Check for pty multiplexer for use in pty module.
+ dnl We need to open it read/write, so make sure it is writeable.
+ dnl Yet another test which won't work when cross-compiling.

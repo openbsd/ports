@@ -1,0 +1,63 @@
+Index: Src/Modules/zpty.c
+--- Src/Modules/zpty.c.orig
++++ Src/Modules/zpty.c
+@@ -37,6 +37,15 @@
+ #endif
+ #endif
+ 
++#ifdef HAVE_OPENPTY
++#ifdef OPENPTY_REQUIRES_PTY
++#include <pty.h>
++#elif defined(OPENPTY_REQUIRES_UTIL)
++#include <termios.h>
++#include <util.h>
++#endif
++#endif
++
+ /* The number of bytes we normally read when given no pattern and the
+  * upper bound on the number of bytes we read (even if we are give a
+  * pattern). */
+@@ -161,9 +170,27 @@ getptycmd(char *name)
+     return NULL;
+ }
+ 
+-/* posix_openpt() seems to have some problem on OpenBSD */
+-#if defined(USE_DEV_PTMX) && !defined(__OpenBSD__)
++#ifdef HAVE_OPENPTY
+ 
++static int
++get_pty(int master, int *retfd)
++{
++    static int mfd, sfd;
++
++    if (master) {
++	if (openpty(&mfd, &sfd, NULL, NULL, NULL) == -1) {
++	    return 1;
++	}
++	*retfd = mfd;
++	return 0;
++    }
++
++    *retfd = sfd;
++    return 0;
++}
++
++#elifdef USE_DEV_PTMX
++
+ #ifdef HAVE_SYS_STROPTS_H
+ #include <sys/stropts.h>
+ #endif
+@@ -261,12 +288,7 @@ get_pty(int master, int *retfd)
+ #elif defined(__FreeBSD__) || defined(__DragonFly__)
+     static char char1[] = "pqrsPQRS";
+     static char char2[] = "0123456789abcdefghijklmnopqrstuv";
+-#elif defined(__OpenBSD__)
+-    static char char1[] = "pqrstuvwxyzPQRST";
+-    static char char2[] = "0123456789"
+-                          "abcdefghijklmnopqrstuvwxyz"
+-                          "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+-#else /* __FreeBSD__ || __DragonFly__  || __OpenBSD*/
++#else /* __FreeBSD__ || __DragonFly__ */
+     static char char1[] = "pqrstuvwxyzPQRST";
+     static char char2[] = "0123456789abcdef";
+ #endif

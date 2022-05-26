@@ -34,6 +34,7 @@ lib/zsh/${V}/zsh/param/
 @so lib/zsh/${V}/zsh/system.so
 @so lib/zsh/${V}/zsh/termcap.so
 @so lib/zsh/${V}/zsh/terminfo.so
+@so lib/zsh/${V}/zsh/watch.so
 @so lib/zsh/${V}/zsh/zftp.so
 @so lib/zsh/${V}/zsh/zle.so
 @so lib/zsh/${V}/zsh/zleparameter.so
@@ -113,13 +114,18 @@ share/zsh/${V}/functions/Completion/BSD/_freebsd-update
 share/zsh/${V}/functions/Completion/BSD/_fstat
 share/zsh/${V}/functions/Completion/BSD/_fw_update
 share/zsh/${V}/functions/Completion/BSD/_gstat
+share/zsh/${V}/functions/Completion/BSD/_ipfw
 share/zsh/${V}/functions/Completion/BSD/_jail
 share/zsh/${V}/functions/Completion/BSD/_jails
 share/zsh/${V}/functions/Completion/BSD/_jexec
 share/zsh/${V}/functions/Completion/BSD/_jls
 share/zsh/${V}/functions/Completion/BSD/_jot
+share/zsh/${V}/functions/Completion/BSD/_kdump
 share/zsh/${V}/functions/Completion/BSD/_kld
+share/zsh/${V}/functions/Completion/BSD/_ktrace
+share/zsh/${V}/functions/Completion/BSD/_ktrace_points
 share/zsh/${V}/functions/Completion/BSD/_ldap
+share/zsh/${V}/functions/Completion/BSD/_login_classes
 share/zsh/${V}/functions/Completion/BSD/_mixerctl
 share/zsh/${V}/functions/Completion/BSD/_nbsd_architectures
 share/zsh/${V}/functions/Completion/BSD/_obsd_architectures
@@ -132,10 +138,17 @@ share/zsh/${V}/functions/Completion/BSD/_portsnap
 share/zsh/${V}/functions/Completion/BSD/_powerd
 share/zsh/${V}/functions/Completion/BSD/_procstat
 share/zsh/${V}/functions/Completion/BSD/_rcctl
+share/zsh/${V}/functions/Completion/BSD/_routing_domains
+share/zsh/${V}/functions/Completion/BSD/_routing_tables
 share/zsh/${V}/functions/Completion/BSD/_signify
 share/zsh/${V}/functions/Completion/BSD/_sockstat
+share/zsh/${V}/functions/Completion/BSD/_sysclean
+share/zsh/${V}/functions/Completion/BSD/_sysmerge
+share/zsh/${V}/functions/Completion/BSD/_syspatch
 share/zsh/${V}/functions/Completion/BSD/_sysrc
 share/zsh/${V}/functions/Completion/BSD/_systat
+share/zsh/${V}/functions/Completion/BSD/_sysupgrade
+share/zsh/${V}/functions/Completion/BSD/_usbconfig
 share/zsh/${V}/functions/Completion/BSD/_vmctl
 share/zsh/${V}/functions/Completion/BSD/_watch-snoop
 share/zsh/${V}/functions/Completion/Base/
@@ -183,6 +196,7 @@ share/zsh/${V}/functions/Completion/Base/_next_label
 share/zsh/${V}/functions/Completion/Base/_next_tags
 share/zsh/${V}/functions/Completion/Base/_normal
 share/zsh/${V}/functions/Completion/Base/_nothing
+share/zsh/${V}/functions/Completion/Base/_numbers
 share/zsh/${V}/functions/Completion/Base/_oldlist
 share/zsh/${V}/functions/Completion/Base/_pick_variant
 share/zsh/${V}/functions/Completion/Base/_prefix
@@ -270,6 +284,7 @@ share/zsh/${V}/functions/Completion/Debian/_debdiff
 share/zsh/${V}/functions/Completion/Debian/_debfoster
 share/zsh/${V}/functions/Completion/Debian/_deborphan
 share/zsh/${V}/functions/Completion/Debian/_debsign
+share/zsh/${V}/functions/Completion/Debian/_debsnap
 share/zsh/${V}/functions/Completion/Debian/_debuild
 share/zsh/${V}/functions/Completion/Debian/_dlocate
 share/zsh/${V}/functions/Completion/Debian/_dpatch-edit-patch
@@ -279,6 +294,7 @@ share/zsh/${V}/functions/Completion/Debian/_dpkg-cross
 share/zsh/${V}/functions/Completion/Debian/_dpkg-repack
 share/zsh/${V}/functions/Completion/Debian/_dpkg_source
 share/zsh/${V}/functions/Completion/Debian/_dput
+share/zsh/${V}/functions/Completion/Debian/_dscverify
 share/zsh/${V}/functions/Completion/Debian/_dupload
 share/zsh/${V}/functions/Completion/Debian/_git-buildpackage
 share/zsh/${V}/functions/Completion/Debian/_grep-excuses
@@ -308,10 +324,13 @@ share/zsh/${V}/functions/Completion/Linux/_acpi
 share/zsh/${V}/functions/Completion/Linux/_acpitool
 share/zsh/${V}/functions/Completion/Linux/_alsa-utils
 share/zsh/${V}/functions/Completion/Linux/_analyseplugin
+share/zsh/${V}/functions/Completion/Linux/_basenc
 share/zsh/${V}/functions/Completion/Linux/_brctl
 share/zsh/${V}/functions/Completion/Linux/_btrfs
+share/zsh/${V}/functions/Completion/Linux/_capabilities
 share/zsh/${V}/functions/Completion/Linux/_chattr
 share/zsh/${V}/functions/Completion/Linux/_chcon
+share/zsh/${V}/functions/Completion/Linux/_choom
 share/zsh/${V}/functions/Completion/Linux/_chrt
 share/zsh/${V}/functions/Completion/Linux/_cpupower
 share/zsh/${V}/functions/Completion/Linux/_cryptsetup
@@ -334,14 +353,19 @@ share/zsh/${V}/functions/Completion/Linux/_kpartx
 share/zsh/${V}/functions/Completion/Linux/_losetup
 share/zsh/${V}/functions/Completion/Linux/_lsattr
 share/zsh/${V}/functions/Completion/Linux/_lsblk
+share/zsh/${V}/functions/Completion/Linux/_lsns
 share/zsh/${V}/functions/Completion/Linux/_lsusb
 share/zsh/${V}/functions/Completion/Linux/_ltrace
+share/zsh/${V}/functions/Completion/Linux/_mat
+share/zsh/${V}/functions/Completion/Linux/_mat2
 share/zsh/${V}/functions/Completion/Linux/_mdadm
 share/zsh/${V}/functions/Completion/Linux/_mii-tool
 share/zsh/${V}/functions/Completion/Linux/_modutils
 share/zsh/${V}/functions/Completion/Linux/_mondo
 share/zsh/${V}/functions/Completion/Linux/_networkmanager
+share/zsh/${V}/functions/Completion/Linux/_nsenter
 share/zsh/${V}/functions/Completion/Linux/_opkg
+share/zsh/${V}/functions/Completion/Linux/_perf
 share/zsh/${V}/functions/Completion/Linux/_pidof
 share/zsh/${V}/functions/Completion/Linux/_pkgtool
 share/zsh/${V}/functions/Completion/Linux/_pmap
@@ -351,6 +375,7 @@ share/zsh/${V}/functions/Completion/Linux/_selinux_contexts
 share/zsh/${V}/functions/Completion/Linux/_selinux_roles
 share/zsh/${V}/functions/Completion/Linux/_selinux_types
 share/zsh/${V}/functions/Completion/Linux/_selinux_users
+share/zsh/${V}/functions/Completion/Linux/_setpriv
 share/zsh/${V}/functions/Completion/Linux/_setsid
 share/zsh/${V}/functions/Completion/Linux/_slabtop
 share/zsh/${V}/functions/Completion/Linux/_ss
@@ -362,6 +387,7 @@ share/zsh/${V}/functions/Completion/Linux/_tpb
 share/zsh/${V}/functions/Completion/Linux/_tracepath
 share/zsh/${V}/functions/Completion/Linux/_tune2fs
 share/zsh/${V}/functions/Completion/Linux/_uml
+share/zsh/${V}/functions/Completion/Linux/_unshare
 share/zsh/${V}/functions/Completion/Linux/_valgrind
 share/zsh/${V}/functions/Completion/Linux/_vserver
 share/zsh/${V}/functions/Completion/Linux/_wakeup_capable_devices
@@ -469,7 +495,9 @@ share/zsh/${V}/functions/Completion/Unix/_cpio
 share/zsh/${V}/functions/Completion/Unix/_cplay
 share/zsh/${V}/functions/Completion/Unix/_crontab
 share/zsh/${V}/functions/Completion/Unix/_cscope
+share/zsh/${V}/functions/Completion/Unix/_csplit
 share/zsh/${V}/functions/Completion/Unix/_cssh
+share/zsh/${V}/functions/Completion/Unix/_ctags
 share/zsh/${V}/functions/Completion/Unix/_ctags_tags
 share/zsh/${V}/functions/Completion/Unix/_curl
 share/zsh/${V}/functions/Completion/Unix/_cut
@@ -501,6 +529,7 @@ share/zsh/${V}/functions/Completion/Unix/_doas
 share/zsh/${V}/functions/Completion/Unix/_domains
 share/zsh/${V}/functions/Completion/Unix/_dos2unix
 share/zsh/${V}/functions/Completion/Unix/_drill
+share/zsh/${V}/functions/Completion/Unix/_dropbox
 share/zsh/${V}/functions/Completion/Unix/_dsh
 share/zsh/${V}/functions/Completion/Unix/_dtruss
 share/zsh/${V}/functions/Completion/Unix/_du
@@ -606,6 +635,7 @@ share/zsh/${V}/functions/Completion/Unix/_locale
 share/zsh/${V}/functions/Completion/Unix/_localedef
 share/zsh/${V}/functions/Completion/Unix/_locales
 share/zsh/${V}/functions/Completion/Unix/_locate
+share/zsh/${V}/functions/Completion/Unix/_logger
 share/zsh/${V}/functions/Completion/Unix/_look
 share/zsh/${V}/functions/Completion/Unix/_lp
 share/zsh/${V}/functions/Completion/Unix/_ls
@@ -661,6 +691,7 @@ share/zsh/${V}/functions/Completion/Unix/_objdump
 share/zsh/${V}/functions/Completion/Unix/_object_files
 share/zsh/${V}/functions/Completion/Unix/_od
 share/zsh/${V}/functions/Completion/Unix/_openstack
+share/zsh/${V}/functions/Completion/Unix/_opustools
 share/zsh/${V}/functions/Completion/Unix/_other_accounts
 share/zsh/${V}/functions/Completion/Unix/_pack
 share/zsh/${V}/functions/Completion/Unix/_pandoc
@@ -677,12 +708,14 @@ share/zsh/${V}/functions/Completion/Unix/_perl
 share/zsh/${V}/functions/Completion/Unix/_perl_basepods
 share/zsh/${V}/functions/Completion/Unix/_perl_modules
 share/zsh/${V}/functions/Completion/Unix/_perldoc
+share/zsh/${V}/functions/Completion/Unix/_pgids
 share/zsh/${V}/functions/Completion/Unix/_pgrep
 share/zsh/${V}/functions/Completion/Unix/_php
 share/zsh/${V}/functions/Completion/Unix/_picocom
 share/zsh/${V}/functions/Completion/Unix/_pids
 share/zsh/${V}/functions/Completion/Unix/_pine
 share/zsh/${V}/functions/Completion/Unix/_ping
+share/zsh/${V}/functions/Completion/Unix/_pip
 share/zsh/${V}/functions/Completion/Unix/_pkg-config
 share/zsh/${V}/functions/Completion/Unix/_pkg_instance
 share/zsh/${V}/functions/Completion/Unix/_pkgadd
@@ -693,6 +726,7 @@ share/zsh/${V}/functions/Completion/Unix/_ports
 share/zsh/${V}/functions/Completion/Unix/_postfix
 share/zsh/${V}/functions/Completion/Unix/_postgresql
 share/zsh/${V}/functions/Completion/Unix/_postscript
+share/zsh/${V}/functions/Completion/Unix/_pr
 share/zsh/${V}/functions/Completion/Unix/_printenv
 share/zsh/${V}/functions/Completion/Unix/_printers
 share/zsh/${V}/functions/Completion/Unix/_process_names
@@ -700,6 +734,7 @@ share/zsh/${V}/functions/Completion/Unix/_prove
 share/zsh/${V}/functions/Completion/Unix/_ps
 share/zsh/${V}/functions/Completion/Unix/_pspdf
 share/zsh/${V}/functions/Completion/Unix/_psutils
+share/zsh/${V}/functions/Completion/Unix/_ptx
 share/zsh/${V}/functions/Completion/Unix/_pump
 share/zsh/${V}/functions/Completion/Unix/_pv
 share/zsh/${V}/functions/Completion/Unix/_pwgen
@@ -803,6 +838,7 @@ share/zsh/${V}/functions/Completion/Unix/_tput
 share/zsh/${V}/functions/Completion/Unix/_tr
 share/zsh/${V}/functions/Completion/Unix/_transmission
 share/zsh/${V}/functions/Completion/Unix/_tree
+share/zsh/${V}/functions/Completion/Unix/_truncate
 share/zsh/${V}/functions/Completion/Unix/_truss
 share/zsh/${V}/functions/Completion/Unix/_tty
 share/zsh/${V}/functions/Completion/Unix/_ttys
@@ -821,7 +857,7 @@ share/zsh/${V}/functions/Completion/Unix/_user_admin
 share/zsh/${V}/functions/Completion/Unix/_user_at_host
 share/zsh/${V}/functions/Completion/Unix/_users
 share/zsh/${V}/functions/Completion/Unix/_users_on
-share/zsh/${V}/functions/Completion/Unix/_vcsh
+share/zsh/${V}/functions/Completion/Unix/_vi
 share/zsh/${V}/functions/Completion/Unix/_vim
 share/zsh/${V}/functions/Completion/Unix/_visudo
 share/zsh/${V}/functions/Completion/Unix/_vmstat
@@ -850,10 +886,8 @@ share/zsh/${V}/functions/Completion/Unix/_zcat
 share/zsh/${V}/functions/Completion/Unix/_zdump
 share/zsh/${V}/functions/Completion/Unix/_zfs
 share/zsh/${V}/functions/Completion/Unix/_zfs_dataset
-share/zsh/${V}/functions/Completion/Unix/_zfs_keysource_props
 share/zsh/${V}/functions/Completion/Unix/_zfs_pool
 share/zsh/${V}/functions/Completion/Unix/_zip
-share/zsh/${V}/functions/Completion/Unix/_zpool
 share/zsh/${V}/functions/Completion/Unix/_zsh
 share/zsh/${V}/functions/Completion/X/
 share/zsh/${V}/functions/Completion/X/_acroread
@@ -907,6 +941,7 @@ share/zsh/${V}/functions/Completion/X/_xclip
 share/zsh/${V}/functions/Completion/X/_xdvi
 share/zsh/${V}/functions/Completion/X/_xfig
 share/zsh/${V}/functions/Completion/X/_xft_fonts
+share/zsh/${V}/functions/Completion/X/_xinput
 share/zsh/${V}/functions/Completion/X/_xloadimage
 share/zsh/${V}/functions/Completion/X/_xmodmap
 share/zsh/${V}/functions/Completion/X/_xournal
@@ -921,6 +956,7 @@ share/zsh/${V}/functions/Completion/X/_xv
 share/zsh/${V}/functions/Completion/X/_xwit
 share/zsh/${V}/functions/Completion/X/_zeal
 share/zsh/${V}/functions/Completion/Zsh/
+share/zsh/${V}/functions/Completion/Zsh/__arguments
 share/zsh/${V}/functions/Completion/Zsh/_add-zle-hook-widget
 share/zsh/${V}/functions/Completion/Zsh/_add-zsh-hook
 share/zsh/${V}/functions/Completion/Zsh/_alias
@@ -1001,6 +1037,8 @@ share/zsh/${V}/functions/Completion/Zsh/_user_math_func
 share/zsh/${V}/functions/Completion/Zsh/_value
 share/zsh/${V}/functions/Completion/Zsh/_vared
 share/zsh/${V}/functions/Completion/Zsh/_vars
+share/zsh/${V}/functions/Completion/Zsh/_vcs_info
+share/zsh/${V}/functions/Completion/Zsh/_vcs_info_hooks
 share/zsh/${V}/functions/Completion/Zsh/_wait
 share/zsh/${V}/functions/Completion/Zsh/_which
 share/zsh/${V}/functions/Completion/Zsh/_widgets
@@ -1056,6 +1094,7 @@ share/zsh/${V}/functions/Misc/promptnl
 share/zsh/${V}/functions/Misc/regexp-replace
 share/zsh/${V}/functions/Misc/relative
 share/zsh/${V}/functions/Misc/run-help
+share/zsh/${V}/functions/Misc/run-help-btrfs
 share/zsh/${V}/functions/Misc/run-help-git
 share/zsh/${V}/functions/Misc/run-help-ip
 share/zsh/${V}/functions/Misc/run-help-openssl
@@ -1157,7 +1196,10 @@ share/zsh/${V}/functions/VCS_Info/VCS_INFO_patch2subject
 share/zsh/${V}/functions/VCS_Info/VCS_INFO_quilt
 share/zsh/${V}/functions/VCS_Info/VCS_INFO_reposub
 share/zsh/${V}/functions/VCS_Info/VCS_INFO_set
+share/zsh/${V}/functions/VCS_Info/VCS_INFO_set-branch-format
 share/zsh/${V}/functions/VCS_Info/VCS_INFO_set-patch-format
+share/zsh/${V}/functions/VCS_Info/test-repo-git-rebase-apply
+share/zsh/${V}/functions/VCS_Info/test-repo-git-rebase-merge
 share/zsh/${V}/functions/VCS_Info/vcs_info
 share/zsh/${V}/functions/VCS_Info/vcs_info_hookadd
 share/zsh/${V}/functions/VCS_Info/vcs_info_hookdel
@@ -1306,7 +1348,6 @@ share/zsh/${V}/help/kill
 share/zsh/${V}/help/let
 share/zsh/${V}/help/limit
 share/zsh/${V}/help/local
-share/zsh/${V}/help/log
 share/zsh/${V}/help/logout
 share/zsh/${V}/help/noglob
 share/zsh/${V}/help/popd

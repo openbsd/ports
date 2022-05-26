@@ -1,6 +1,6 @@
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.8.1
+V=		5.9
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -21,7 +21,7 @@ WANTLIB=	c curses iconv m pcre
 LIB_DEPENDS=	converters/libiconv \
 		devel/pcre
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -34,6 +34,8 @@ CONFIGURE_ARGS=	--disable-zsh-mem \
 		--disable-gdbm \
 		--with-tcsetpgrp
 
+AUTOCONF_VERSION=	2.71
+
 SUBST_VARS=	V
 
 EXTFILES=	Calendar/calendar_add Example/cat Example/zless \
@@ -43,6 +45,7 @@ EXTFILES=	Calendar/calendar_add Example/cat Example/zless \
 		Misc/zed Misc/zkbd
 
 pre-configure:
+	cd ${WRKSRC} && ./Util/preconfig
 .for i in ${EXTFILES}
 	sed -i -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" \
 		${WRKSRC}/Functions/${i}
