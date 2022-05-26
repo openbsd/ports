@@ -1,6 +1,6 @@
 COMMENT =		tools to fiddle with dates and times
 
-DISTNAME =		dateutils-0.4.9
+DISTNAME =		dateutils-0.4.10
 
 CATEGORIES =		sysutils
 
