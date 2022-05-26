@@ -1,5 +1,5 @@
 COMMENT=	virus scanner
-DISTNAME=	clamav-0.104.3
+DISTNAME=	clamav-0.105.0
 
 CATEGORIES=	security
 
@@ -16,11 +16,12 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += bz2 c crypto curl curses iconv json-c m milter mspack
-WANTLIB += pcre2-8 ssl xml2 z
+WANTLIB += bz2 c crypto curl curses execinfo iconv json-c m milter
+WANTLIB += mspack pcre2-8 ssl util xml2 z
 
 COMPILER=		base-clang ports-gcc
 
+BUILD_DEPENDS=		lang/rust
 LIB_DEPENDS=		archivers/bzip2 \
 			archivers/libmspack \
 			devel/json-c \
@@ -47,7 +48,7 @@ CONFIGURE_ARGS+=	-DBYTECODE_RUNTIME=interpreter
 # for tests
 MODULES+=		lang/python
 MODPY_RUNDEP=		No
-BUILD_DEPENDS=		devel/check
+BUILD_DEPENDS+=		devel/check
 CONFIGURE_ARGS+=	-DENABLE_TESTS=on
 
 post-install:

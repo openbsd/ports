@@ -1,0 +1,12 @@
+Index: libclamav_rust/.cargo/vendor/image/Cargo.toml
+--- libclamav_rust/.cargo/vendor/image/Cargo.toml.orig
++++ libclamav_rust/.cargo/vendor/image/Cargo.toml
+@@ -135,7 +135,7 @@ avif-encoder = ["ravif", "rgb"]
+ benchmarks = []
+ bmp = []
+ dds = ["dxt"]
+-default = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld", "jpeg_rayon", "openexr"]
++default = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "webp", "bmp", "hdr", "dxt", "dds", "farbfeld", "jpeg_rayon"]
+ dxt = []
+ farbfeld = []
+ hdr = ["scoped_threadpool"]
