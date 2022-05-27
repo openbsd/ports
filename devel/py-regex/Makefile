@@ -1,6 +1,6 @@
 COMMENT =		alternative regular expression module to replace re
 
-MODPY_EGG_VERSION =	2022.3.2
+MODPY_EGG_VERSION =	2022.4.24
 DISTNAME =		regex-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
