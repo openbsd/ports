@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.3.3
+MODGO_VERSION =	v0.3.4
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -15,7 +14,7 @@ HOMEPAGE =	https://docs.gotosocial.org
 
 MAINTAINER =	Hukadan <me@hukadan.org>
 
-# AGPL-3.0
+# AGPL-3.0+
 PERMIT_PACKAGE =	yes
 
 WANTLIB += 	c pthread

@@ -8,8 +8,9 @@ MODGO_MODULES =	\
 	cloud.google.com/go/storage					 v1.14.0 \
 	codeberg.org/gruf/go-bitutil					 v1.0.0 \
 	codeberg.org/gruf/go-bytes					 v1.0.2 \
-	codeberg.org/gruf/go-byteutil					 v1.0.0 \
+	codeberg.org/gruf/go-byteutil					 v1.0.1 \
 	codeberg.org/gruf/go-cache					 v1.1.2 \
+	codeberg.org/gruf/go-cache/v2					 v2.0.1 \
 	codeberg.org/gruf/go-debug					 v1.1.2 \
 	codeberg.org/gruf/go-errors/v2					 v2.0.1 \
 	codeberg.org/gruf/go-fastcopy					 v1.1.1 \
@@ -264,7 +265,7 @@ MODGO_MODULES =	\
 	golang.org/x/lint						 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile						 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod						 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
-	golang.org/x/net						 v0.0.0-20220425223048-2871e0cb64e4 \
+	golang.org/x/net						 v0.0.0-20220524220425-1d687d428aca \
 	golang.org/x/oauth2						 v0.0.0-20220411215720-9780585627b5 \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
 	golang.org/x/sys						 v0.0.0-20220429233432-b5fbb4746d32 \
@@ -295,18 +296,18 @@ MODGO_MODULES =	\
 	honnef.co/go/tools						 v0.0.1-2020.1.4 \
 	lukechampine.com/uint128					 v1.2.0 \
 	modernc.org/cc/v3						 v3.36.0 \
-	modernc.org/ccgo/v3						 v3.16.4 \
+	modernc.org/ccgo/v3						 v3.16.6 \
 	modernc.org/ccorpus						 v1.11.6 \
 	modernc.org/httpfs						 v1.0.6 \
-	modernc.org/libc						 v1.16.1 \
+	modernc.org/libc						 v1.16.7 \
 	modernc.org/mathutil						 v1.4.1 \
 	modernc.org/memory						 v1.1.1 \
 	modernc.org/opt							 v0.1.3 \
-	modernc.org/sqlite						 v1.17.0 \
+	modernc.org/sqlite						 v1.17.2 \
 	modernc.org/strutil						 v1.1.1 \
-	modernc.org/tcl							 v1.12.0 \
+	modernc.org/tcl							 v1.13.1 \
 	modernc.org/token						 v1.0.0 \
-	modernc.org/z							 v1.4.0 \
+	modernc.org/z							 v1.5.1 \
 	mvdan.cc/xurls/v2						 v2.3.0 \
 	rsc.io/binaryregexp						 v0.2.0 \
 	rsc.io/quote/v3							 v3.1.0 \
@@ -347,6 +348,7 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/storage				 v1.6.0 \
 	cloud.google.com/go/storage				 v1.8.0 \
 	codeberg.org/gruf/go-bytes				 v1.0.0 \
+	codeberg.org/gruf/go-byteutil				 v1.0.0 \
 	codeberg.org/gruf/go-errors/v2				 v2.0.0 \
 	codeberg.org/gruf/go-fastpath				 v1.0.1 \
 	codeberg.org/gruf/go-nowish				 v1.0.0 \
@@ -684,7 +686,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20200930185726-fdedc70b468f \
 	golang.org/x/sys					 v0.0.0-20201014080544-cc95f250f6bc \
 	golang.org/x/sys					 v0.0.0-20201119102817-f84b799fce68 \
-	golang.org/x/sys					 v0.0.0-20201126233918-771906719818 \
 	golang.org/x/sys					 v0.0.0-20201201145000-ef89a241ccb3 \
 	golang.org/x/sys					 v0.0.0-20210104204734-6f8348627aad \
 	golang.org/x/sys					 v0.0.0-20210119212857-b64e53b001e4 \
@@ -694,7 +695,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys					 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys					 v0.0.0-20210806184541-e5e7981a1069 \
-	golang.org/x/sys					 v0.0.0-20210902050250-f475640dd07b \
 	golang.org/x/sys					 v0.0.0-20211007075335-d3039528d8ac \
 	golang.org/x/sys					 v0.0.0-20211019181941-9d821ace8654 \
 	golang.org/x/sys					 v0.0.0-20211216021012-1d35b9e2eb4e \
@@ -880,132 +880,12 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.1-2019.2.3 \
 	honnef.co/go/tools					 v0.0.1-2020.1.3 \
 	lukechampine.com/uint128				 v1.1.1 \
-	modernc.org/cc/v3					 v3.33.11 \
-	modernc.org/cc/v3					 v3.33.6 \
-	modernc.org/cc/v3					 v3.33.9 \
-	modernc.org/cc/v3					 v3.34.0 \
-	modernc.org/cc/v3					 v3.35.0 \
-	modernc.org/cc/v3					 v3.35.10 \
-	modernc.org/cc/v3					 v3.35.15 \
-	modernc.org/cc/v3					 v3.35.16 \
-	modernc.org/cc/v3					 v3.35.17 \
-	modernc.org/cc/v3					 v3.35.18 \
-	modernc.org/cc/v3					 v3.35.20 \
-	modernc.org/cc/v3					 v3.35.22 \
-	modernc.org/cc/v3					 v3.35.24 \
-	modernc.org/cc/v3					 v3.35.25 \
-	modernc.org/cc/v3					 v3.35.26 \
-	modernc.org/cc/v3					 v3.35.4 \
-	modernc.org/cc/v3					 v3.35.5 \
-	modernc.org/cc/v3					 v3.35.7 \
-	modernc.org/cc/v3					 v3.35.8 \
 	modernc.org/ccgo/v3					 v3.0.0-20220428102840-41399a37e894 \
 	modernc.org/ccgo/v3					 v3.0.0-20220430103911-bc99d88307be \
-	modernc.org/ccgo/v3					 v3.10.0 \
-	modernc.org/ccgo/v3					 v3.11.0 \
-	modernc.org/ccgo/v3					 v3.11.1 \
-	modernc.org/ccgo/v3					 v3.11.3 \
-	modernc.org/ccgo/v3					 v3.12.11 \
-	modernc.org/ccgo/v3					 v3.12.14 \
-	modernc.org/ccgo/v3					 v3.12.18 \
-	modernc.org/ccgo/v3					 v3.12.20 \
-	modernc.org/ccgo/v3					 v3.12.21 \
-	modernc.org/ccgo/v3					 v3.12.22 \
-	modernc.org/ccgo/v3					 v3.12.25 \
-	modernc.org/ccgo/v3					 v3.12.29 \
-	modernc.org/ccgo/v3					 v3.12.36 \
-	modernc.org/ccgo/v3					 v3.12.38 \
-	modernc.org/ccgo/v3					 v3.12.4 \
-	modernc.org/ccgo/v3					 v3.12.43 \
-	modernc.org/ccgo/v3					 v3.12.46 \
-	modernc.org/ccgo/v3					 v3.12.47 \
-	modernc.org/ccgo/v3					 v3.12.50 \
-	modernc.org/ccgo/v3					 v3.12.51 \
-	modernc.org/ccgo/v3					 v3.12.53 \
-	modernc.org/ccgo/v3					 v3.12.54 \
-	modernc.org/ccgo/v3					 v3.12.55 \
-	modernc.org/ccgo/v3					 v3.12.56 \
-	modernc.org/ccgo/v3					 v3.12.57 \
-	modernc.org/ccgo/v3					 v3.12.6 \
-	modernc.org/ccgo/v3					 v3.12.60 \
-	modernc.org/ccgo/v3					 v3.12.66 \
-	modernc.org/ccgo/v3					 v3.12.67 \
-	modernc.org/ccgo/v3					 v3.12.73 \
-	modernc.org/ccgo/v3					 v3.12.8 \
-	modernc.org/ccgo/v3					 v3.12.81 \
-	modernc.org/ccgo/v3					 v3.12.84 \
-	modernc.org/ccgo/v3					 v3.12.86 \
-	modernc.org/ccgo/v3					 v3.12.90 \
-	modernc.org/ccgo/v3					 v3.12.92 \
-	modernc.org/ccgo/v3					 v3.13.1 \
-	modernc.org/ccgo/v3					 v3.15.10 \
-	modernc.org/ccgo/v3					 v3.15.12 \
-	modernc.org/ccgo/v3					 v3.15.14 \
-	modernc.org/ccgo/v3					 v3.15.15 \
-	modernc.org/ccgo/v3					 v3.15.16 \
-	modernc.org/ccgo/v3					 v3.15.17 \
-	modernc.org/ccgo/v3					 v3.15.19 \
-	modernc.org/ccgo/v3					 v3.15.9 \
-	modernc.org/ccgo/v3					 v3.16.0 \
-	modernc.org/ccgo/v3					 v3.16.1 \
-	modernc.org/ccgo/v3					 v3.16.2 \
-	modernc.org/ccgo/v3					 v3.9.5 \
-	modernc.org/ccorpus					 v1.11.1 \
+	modernc.org/ccgo/v3					 v3.16.4 \
 	modernc.org/libc					 v0.0.0-20220428101251-2d5f3daf273b \
-	modernc.org/libc					 v1.11.0 \
-	modernc.org/libc					 v1.11.101 \
-	modernc.org/libc					 v1.11.11 \
-	modernc.org/libc					 v1.11.13 \
-	modernc.org/libc					 v1.11.16 \
-	modernc.org/libc					 v1.11.19 \
-	modernc.org/libc					 v1.11.2 \
-	modernc.org/libc					 v1.11.24 \
-	modernc.org/libc					 v1.11.26 \
-	modernc.org/libc					 v1.11.27 \
-	modernc.org/libc					 v1.11.28 \
-	modernc.org/libc					 v1.11.31 \
-	modernc.org/libc					 v1.11.34 \
-	modernc.org/libc					 v1.11.37 \
-	modernc.org/libc					 v1.11.39 \
-	modernc.org/libc					 v1.11.42 \
-	modernc.org/libc					 v1.11.44 \
-	modernc.org/libc					 v1.11.45 \
-	modernc.org/libc					 v1.11.47 \
-	modernc.org/libc					 v1.11.49 \
-	modernc.org/libc					 v1.11.5 \
-	modernc.org/libc					 v1.11.51 \
-	modernc.org/libc					 v1.11.53 \
-	modernc.org/libc					 v1.11.54 \
-	modernc.org/libc					 v1.11.55 \
-	modernc.org/libc					 v1.11.56 \
-	modernc.org/libc					 v1.11.58 \
-	modernc.org/libc					 v1.11.6 \
-	modernc.org/libc					 v1.11.71 \
-	modernc.org/libc					 v1.11.75 \
-	modernc.org/libc					 v1.11.82 \
-	modernc.org/libc					 v1.11.86 \
-	modernc.org/libc					 v1.11.87 \
-	modernc.org/libc					 v1.11.88 \
-	modernc.org/libc					 v1.11.98 \
-	modernc.org/libc					 v1.12.0 \
-	modernc.org/libc					 v1.14.1 \
-	modernc.org/libc					 v1.14.10 \
-	modernc.org/libc					 v1.14.12 \
-	modernc.org/libc					 v1.14.2 \
-	modernc.org/libc					 v1.14.3 \
-	modernc.org/libc					 v1.14.6 \
-	modernc.org/libc					 v1.14.7 \
-	modernc.org/libc					 v1.14.8 \
-	modernc.org/libc					 v1.15.0 \
 	modernc.org/libc					 v1.16.0 \
-	modernc.org/libc					 v1.9.11 \
-	modernc.org/libc					 v1.9.8 \
-	modernc.org/mathutil					 v1.1.1 \
+	modernc.org/libc					 v1.16.1 \
 	modernc.org/mathutil					 v1.2.2 \
-	modernc.org/mathutil					 v1.4.0 \
-	modernc.org/memory					 v1.0.4 \
-	modernc.org/memory					 v1.0.5 \
-	modernc.org/memory					 v1.0.6 \
-	modernc.org/memory					 v1.0.7 \
 	modernc.org/opt						 v0.1.1
 
