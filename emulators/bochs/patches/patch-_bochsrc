@@ -1,6 +1,7 @@
---- .bochsrc.orig	Sun Apr  2 11:43:48 2017
-+++ .bochsrc	Tue Apr 11 21:57:44 2017
-@@ -571,7 +571,7 @@ pci: enabled=1, chipset=i440fx
+Index: .bochsrc
+--- .bochsrc.orig
++++ .bochsrc
+@@ -613,7 +613,7 @@ pci: enabled=1, chipset=i440fx
  #
  # Default value are sync=none, rtc_sync=0, time0=local
  #=======================================================================
@@ -9,7 +10,7 @@
  
  #=======================================================================
  # CMOSIMAGE:
-@@ -627,13 +627,13 @@ private_colormap: enabled=0
+@@ -669,13 +669,13 @@ private_colormap: enabled=0
  # The optional parameter 'write_protected' can be used to control the media
  # write protect switch. By default it is turned off.
  #=======================================================================
@@ -25,7 +26,7 @@
  
  #=======================================================================
  # FLOPPYB:
-@@ -759,8 +759,8 @@ floppy_bootsig_check: disabled=0
+@@ -800,8 +800,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================

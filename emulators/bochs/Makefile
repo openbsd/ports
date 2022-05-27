@@ -1,11 +1,10 @@
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.6.9
+DISTNAME=	bochs-2.7
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
-REVISION=	2
 
-HOMEPAGE=	http://bochs.sourceforge.net/
+HOMEPAGE=	https://bochs.sourceforge.net/
 
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE=	Yes
@@ -14,7 +13,7 @@ WANTLIB += ${COMPILER_LIBCXX} c curses m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= gnu autoconf no-autoheader
 CONFIGURE_ARGS=	--enable-all-optimizations \
 		--enable-avx \
 		--enable-e1000 \
@@ -28,7 +27,11 @@ CONFIGURE_ARGS=	--enable-all-optimizations \
 		--enable-usb \
 		--enable-usb-ohci \
 		--enable-vmx=2 \
-		--with-term
+		--with-term \
+		--enable-cet \
+		--enable-evex
+
+AUTOCONF_VERSION = 2.69
 
 FLAVORS=	debug no_x11
 FLAVOR?=
