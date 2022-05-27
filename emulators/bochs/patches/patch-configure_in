@@ -1,0 +1,25 @@
+the configure script tries to use pkg-config to get the LDFLAGS for
+ncurses, but we don't have .pc files for libncurses, so fall back to the
+hardcoded -lncurses.
+
+Index: configure.in
+--- configure.in.orig
++++ configure.in
+@@ -2929,17 +2929,7 @@ AC_SUBST(CI_SUPPORT_OBJS)
+ AC_SUBST(EXPORT_DYNAMIC)
+ 
+ if test "$use_curses" = yes; then
+-  if test "$PKGCONFIG" != not_found; then
+-    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs curses`")
+-    AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs ncurses`")
+-    AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs termlib`")
+-    AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM="`pkg-config --libs pdcurses`")
+-  else
+-    AC_CHECK_LIB(curses, mvaddch, GUI_LINK_OPTS_TERM='-lcurses')
+     AC_CHECK_LIB(ncurses, mvaddch, GUI_LINK_OPTS_TERM='-lncurses')
+-    AC_CHECK_LIB(termlib, mvaddch, GUI_LINK_OPTS_TERM='-ltermlib')
+-    AC_CHECK_LIB(pdcurses, mvaddch, GUI_LINK_OPTS_TERM='-lpdcurses')
+-  fi
+   if test "$GUI_LINK_OPTS_TERM" = ""; then
+     echo Curses library not found: tried curses, ncurses, termlib and pdcurses.
+     exit 1

@@ -1,7 +1,6 @@
 @bin bin/bochs
 @bin bin/bxhub
 @bin bin/bximage
-@man man/man1/bochs-dlx.1
 @man man/man1/bochs.1
 @man man/man1/bximage.1
 @man man/man5/bochsrc.5
@@ -9,14 +8,16 @@ share/bochs/
 share/bochs/BIOS-bochs-latest
 share/bochs/BIOS-bochs-legacy
 share/bochs/SeaBIOS-README
+share/bochs/SeaVGABIOS-README
 share/bochs/VGABIOS-elpin-2.40
 share/bochs/VGABIOS-elpin-LICENSE
 share/bochs/VGABIOS-lgpl-README
 share/bochs/VGABIOS-lgpl-latest
+share/bochs/VGABIOS-lgpl-latest-banshee
 share/bochs/VGABIOS-lgpl-latest-cirrus
 share/bochs/VGABIOS-lgpl-latest-cirrus-debug
 share/bochs/VGABIOS-lgpl-latest-debug
-share/bochs/bios.bin-1.7.5
+share/bochs/bios.bin-1.13.0
 share/bochs/bochsrc
 share/bochs/keymaps/
 share/bochs/keymaps/sdl-pc-de.map
@@ -31,9 +32,11 @@ share/bochs/keymaps/x11-pc-fr.map
 share/bochs/keymaps/x11-pc-it.map
 share/bochs/keymaps/x11-pc-ru.map
 share/bochs/keymaps/x11-pc-se.map
+share/bochs/keymaps/x11-pc-sg.map
 share/bochs/keymaps/x11-pc-si.map
 share/bochs/keymaps/x11-pc-uk.map
 share/bochs/keymaps/x11-pc-us.map
+share/bochs/vgabios-cirrus.bin-1.13.0
 share/doc/bochs/
 share/doc/bochs/CHANGES
 share/doc/bochs/COPYING
@@ -42,3 +45,4 @@ share/doc/bochs/README
 share/doc/bochs/TODO
 share/doc/bochs/bxdebugger.html
 share/doc/bochs/slirp.conf
+share/doc/bochs/vnet.conf

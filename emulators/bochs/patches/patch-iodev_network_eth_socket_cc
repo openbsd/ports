@@ -1,20 +1,11 @@
---- iodev/network/eth_socket.cc.orig	Tue Apr 11 22:08:35 2017
-+++ iodev/network/eth_socket.cc	Tue Apr 11 22:10:14 2017
-@@ -83,12 +83,14 @@ extern "C" {
- #include <sys/types.h>
+Index: iodev/network/eth_socket.cc
+--- iodev/network/eth_socket.cc.orig
++++ iodev/network/eth_socket.cc
+@@ -93,7 +93,6 @@ extern "C" {
  #include <sys/socket.h>
  #include <sys/ioctl.h>
--#include <netpacket/packet.h>
  #include <netinet/in.h>
 -#include <net/ethernet.h>
  #include <net/if.h>
--#include <linux/types.h>
- #include <netdb.h>
-+#ifdef __linux__
-+#include <netpacket/packet.h>
-+#include <net/ethernet.h>
-+#include <linux/types.h>
-+#endif
- #define closesocket(s) close(s)
- typedef int SOCKET;
- #ifndef INVALID_SOCKET
+ #ifdef __linux__
+ #include <linux/types.h>

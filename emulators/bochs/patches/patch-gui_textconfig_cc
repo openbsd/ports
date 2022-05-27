@@ -1,0 +1,11 @@
+Index: gui/textconfig.cc
+--- gui/textconfig.cc.orig
++++ gui/textconfig.cc
+@@ -36,6 +36,7 @@
+ // isn't even defined in this context.
+ //
+ 
++#include "bochs.h"
+ #include "config.h"
+ 
+ #if BX_USE_TEXTCONFIG
