@@ -1,6 +1,6 @@
-Index: unix/uxnoise.c
---- unix/uxnoise.c.orig
-+++ unix/uxnoise.c
+Index: unix/noise.c
+--- unix/noise.c.orig
++++ unix/noise.c
 @@ -18,25 +18,7 @@
  
  static bool read_dev_urandom(char *buf, int len)

@@ -1,7 +1,7 @@
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
-V=		0.76
+V=		0.77
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
@@ -14,18 +14,14 @@ MASTER_SITES=	https://the.earth.li/~sgtatham/putty/$V/ \
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m pthread
+WANTLIB += c m
 
-WANTLIB-gui+=	X11 atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB-gui+=	gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl harfbuzz pango-1.0
-WANTLIB-gui+=	pangocairo-1.0 ${WANTLIB}
+WANTLIB-gui += ${WANTLIB}
+WANTLIB-gui += ICE SM X11 Xext atk-1.0 cairo cairo-gobject gdk-3
+WANTLIB-gui += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
+WANTLIB-gui += harfbuzz intl pango-1.0 pangocairo-1.0
 
-CONFIGURE_STYLE=	autoreconf
-AUTORECONF=		${WRKDIST}/mkauto.sh
-CONFIGURE_ENV=		CPPFLAGS="-I.././" \
-			LDFLAGS="-L${X11BASE}/lib"
-MAKE_FLAGS=		WARNINGOPTS=-Wall # strip upstream's usual -Werror for clang
-WRKSRC=			${WRKDIST}/unix
+MODULES=		devel/cmake
 
 MULTI_PACKAGES=		-main -gui
 
@@ -33,11 +29,5 @@ LIB_DEPENDS-gui=	devel/gettext,-runtime \
 			x11/gtk+3
 
 NO_TEST=		Yes
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.16
-
-do-gen:
-	cd ${WRKDIST}; ${AUTOCONF_ENV} perl mkfiles.pl
 
 .include <bsd.port.mk>

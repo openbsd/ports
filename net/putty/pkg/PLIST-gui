@@ -2,8 +2,6 @@
 @bin bin/pageant
 @bin bin/pterm
 @bin bin/putty
-@bin bin/puttytel
 @man man/man1/pageant.1
 @man man/man1/pterm.1
 @man man/man1/putty.1
-@man man/man1/puttytel.1
