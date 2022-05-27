@@ -1,6 +1,6 @@
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
-V =			1.3-20220414
+V =			1.3-20220526
 DISTNAME =		dialog-${V}
 PKGNAME =		dialog-${V:S/-/./}
 
