@@ -4,7 +4,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.5
 DISTNAME=	abiword-${VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	editors
 
@@ -15,19 +15,18 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender aspell atk-1.0
-WANTLIB += atk-bridge-2.0 avahi-common bz2 c cairo cairo-gobject
-WANTLIB += crypto curl dbus-1 enchant-2 epoxy execinfo expat ffi
-WANTLIB += fontconfig freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0 goffice-0.10
-WANTLIB += gpg-error graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += hogweed iconv idn2 intl jpeg ltdl lzma m mpfr nettle
-WANTLIB += nghttp2 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png raptor2 rasqal rdf rsvg-2 spectre
-WANTLIB += ssl tasn1 unistring uuid wmf-0.2 wmflite-0.2 wv-1.2
-WANTLIB += xcb xcb-render xcb-shm xml2 xslt yajl z zstd
-WANTLIB += Xau Xdmcp brotlidec brotlienc
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += aspell atk-1.0 atk-bridge-2.0 avahi-common bz2 c cairo
+WANTLIB += cairo-gobject crypto curl dbus-1 enchant-2 epoxy execinfo
+WANTLIB += expat ffi fontconfig freetype fribidi gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gobject-2.0
+WANTLIB += goffice-0.10 gpg-error graphite2 gs gsf-1 gthread-2.0
+WANTLIB += gtk-3 harfbuzz iconv intl jpeg ltdl lzma m mpfr nghttp2
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png raptor2 rasqal rdf rsvg-2 spectre ssl uuid wmf-0.2
+WANTLIB += wmflite-0.2 wv-1.2 xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += yajl z zstd
 
 MASTER_SITES=	http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
