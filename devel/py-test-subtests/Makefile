@@ -1,7 +1,6 @@
 COMMENT =	unittest subTest() support and subtests fixture
 
-# 0.7.0 needs pytest 0.7.0
-MODPY_EGG_VERSION =	0.6.0
+MODPY_EGG_VERSION =	0.8.0
 
 DISTNAME =	pytest-subtests-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
