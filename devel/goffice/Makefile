@@ -2,6 +2,7 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.10.52
+REVISION=	0
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -23,11 +24,10 @@ WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 atk-bridge-2.0 avahi-common bz2 cairo cairo-gobject
 WANTLIB += dbus-1 epoxy execinfo expat ffi fontconfig freetype
 WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gmp gobject-2.0 graphite2 gs gsf-1 gtk-3 harfbuzz hogweed
-WANTLIB += iconv idn2 intl jpeg lzma m nettle p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png rsvg-2
-WANTLIB += spectre tasn1 unistring xcb xcb-render xcb-shm xml2
-WANTLIB += xslt z zstd brotlidec brotlienc
+WANTLIB += gobject-2.0 graphite2 gs gsf-1 gtk-3 harfbuzz iconv
+WANTLIB += intl jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png rsvg-2 spectre xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z zstd
 
 MODULES=		x11/gnome
 
