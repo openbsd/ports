@@ -21,6 +21,7 @@ MODPY_PYTEST=	Yes
 FLAVOR=		python3
 FLAVORS=	python3
 
+BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS=	devel/py-test${MODPY_FLAVOR}
 TEST_DEPENDS=	devel/py-test-remotedata${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
