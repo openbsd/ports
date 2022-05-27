@@ -1,9 +1,8 @@
 COMMENT =		library for getting/setting process names
 
-MODPY_EGG_VERSION =	1.2.2
+MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
