@@ -1,13 +1,9 @@
 Index: 3rdparty/bx/src/thread.cpp
 --- 3rdparty/bx/src/thread.cpp.orig
 +++ 3rdparty/bx/src/thread.cpp
-@@ -22,9 +22,10 @@
- 	|| BX_PLATFORM_IOS     \
- 	|| BX_PLATFORM_OSX     \
+@@ -24,7 +24,7 @@
  	|| BX_PLATFORM_PS4     \
--	|| BX_PLATFORM_RPI
-+	|| BX_PLATFORM_RPI     \
-+	|| BX_PLATFORM_BSD
+ 	|| BX_PLATFORM_RPI
  #	include <pthread.h>
 -#	if defined(__FreeBSD__)
 +#	if defined(__FreeBSD__) || defined(__OpenBSD__)
