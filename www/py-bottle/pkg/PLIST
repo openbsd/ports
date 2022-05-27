@@ -1,6 +1,7 @@
-@pkgpath www/py-bottle
 @conflict py-bottle-<0.12.16p1
+@pkgpath www/py-bottle
 bin/bottle.py
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}bottle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/bottle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

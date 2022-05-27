@@ -1,7 +1,6 @@
 COMMENT=		simple WSGI-framework for small web-applications
 
-MODPY_EGG_VERSION=	0.12.19
-REVISION=		1
+MODPY_EGG_VERSION=	0.12.21
 DISTNAME=		bottle-${MODPY_EGG_VERSION}
 PKGNAME=		py-bottle-${MODPY_EGG_VERSION}
 
