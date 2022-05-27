@@ -1,10 +1,9 @@
 COMMENT=		library implementing the 'SemVer' scheme
 
-MODPY_EGG_VERSION=	2.8.5
+MODPY_EGG_VERSION=	2.10.0
 
 DISTNAME=		semantic_version-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -17,6 +16,7 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+MODPY_PYTEST=		Yes
 
 FLAVORS=	python3
 FLAVOR=		python3
