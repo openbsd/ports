@@ -2,7 +2,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.96
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		mail
 
@@ -16,7 +16,16 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xt Xxf86vm archive aspell atk-1.0 atk-bridge-2.0
+WANTLIB += Xrender Xt Xxf86vm absl_bad_optional_access absl_bad_variant_access
+WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB += absl_debugging_internal absl_demangle_internal absl_exponential_biased
+WANTLIB += absl_graphcycles_internal absl_hash absl_hashtablez_sampler
+WANTLIB += absl_int128 absl_log_severity absl_low_level_hash absl_malloc_internal
+WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
+WANTLIB += absl_stacktrace absl_strings absl_strings_internal
+WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
+WANTLIB += absl_time absl_time_zone archive aspell atk-1.0 atk-bridge-2.0
 WANTLIB += b2 boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_system-mt boost_thread-mt brotlicommon brotlidec
 WANTLIB += bz2 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
