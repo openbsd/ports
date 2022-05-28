@@ -27,8 +27,8 @@ MODULES =		devel/cmake
 
 # Note that odamex won't build against the system libjsoncpp (doesn't build
 # with std=gnu++98), so we use the bundled one. Upstream notified.
-CONFIGURE_ENV +=	CXXFLAGS=-I${LOCALBASE}/include/miniupnpc \
-			LDFLAGS=-L${LOCALBASE}/lib
+CXXFLAGS +=		-I${LOCALBASE}/include/miniupnpc
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-DNO_AG-ODALAUNCH_TARGET=YES
 
 LIB_DEPENDS =		x11/wxWidgets \

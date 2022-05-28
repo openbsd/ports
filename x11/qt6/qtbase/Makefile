@@ -114,7 +114,7 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DQT_FEATURE_openssl_linked=ON \
 			-DQT_FEATURE_dtls=OFF
 
-LDFLAGS +=		-lexecinfo
+MODCMAKE_LDFLAGS +=	-lexecinfo
 
 MODQT6_DEPS =		No
 

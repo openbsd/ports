@@ -17,6 +17,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 LIB_DEPENDS =	audio/cdparanoia \
 		audio/flac \
 		audio/libvorbis \

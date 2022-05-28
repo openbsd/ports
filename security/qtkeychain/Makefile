@@ -20,10 +20,9 @@ MODULES =		devel/cmake \
 			x11/qt5
 LIB_DEPENDS += 		x11/gnome/libsecret
 
-CONFIGURE_ARGS += 	-DCMAKE_SHARED_LINKER_FLAGS="-L${PREFIX}/lib" \
-			-DCMAKE_MODULE_LINKER_FLAGS="-L${PREFIX}/lib" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${PREFIX}/lib" \
-			-DECM_MKSPECS_INSTALL_DIR="${PREFIX}/lib/${QT}/mkspecs/modules"
+CONFIGURE_ARGS += 	-DECM_MKSPECS_INSTALL_DIR="${PREFIX}/lib/${QT}/mkspecs/modules"
+
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
 
 LIBNAME = 		Qt5Keychain
 LIBNAME_L = 		qt5keychain

@@ -32,6 +32,8 @@ LIB_DEPENDS =		audio/libvorbis \
 
 CONFIGURE_ARGS =	-DSYSTEM_INSTALL=Yes
 
+MODCMAKE_LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

@@ -67,8 +67,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 CONFIGURE_ARGS =	-DBoost_INCLUDE_DIR="${LOCALBASE}/include" \
 			-DQT_QMAKE_EXECUTABLE="${LOCALBASE}/bin/qmake-qt5" \
 			-DQt5WebEngine_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5WebEngine" \
-			-DQt5WebEngineWidgets_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5WebEngineWidgets" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib/inotify -linotify -rpath ${LOCALBASE}/lib/inotify -rpath ${LOCALBASE}/lib/R/lib"
+			-DQt5WebEngineWidgets_DIR="${LOCALBASE}/lib/qt5/cmake/Qt5WebEngineWidgets"
+
+MODCMAKE_LDFLAGS = 		-L${LOCALBASE}/lib/inotify -linotify -rpath ${LOCALBASE}/lib/inotify -rpath ${LOCALBASE}/lib/R/lib
 
 NO_TEST =	Yes
 

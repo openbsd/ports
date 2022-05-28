@@ -123,6 +123,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 TEST_IS_INTERACTIVE =	X11
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 pre-configure:
 	sed -i -e "s,QGpgme,qgpgme,g" -e "s,Gpgmepp,gpgmepp,g" \
 		${WRKSRC}/kaddressbook/editorpages/CMakeLists.txt \

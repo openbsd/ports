@@ -25,8 +25,9 @@ LIB_DEPENDS =	textproc/hunspell \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_INSTALL_PREFIX="${PREFIX}"
+CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX="${PREFIX}"
+
+CXXFLAGS +=	-I${LOCALBASE}/include
 
 NO_TEST =	Yes
 

@@ -44,14 +44,11 @@ CONFIGURE_STYLE = cmake
 # tput wants a terminal name to do something, and gmic
 # initial run creates loads of temporary files
 MAKE_ENV = 	TERM=xterm TMP=${WRKDIR}/tmp
-LDFLAGS = 	-L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS = 	-L${LOCALBASE}/lib
 
 # XXX does not do what it says it does
 CONFIGURE_ARGS += -DCUSTOM_CFLAGS=Yes
 
-CONFIGURE_ARGS += -DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}"
-CONFIGURE_ARGS += -DCMAKE_MODULE_LINKER_FLAGS="${LDFLAGS}"
-CONFIGURE_ARGS += -DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
 CONFIGURE_ARGS += -DENABLE_OPENCV=ON
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}

@@ -32,8 +32,10 @@ TEST_DEPENDS = 		devel/cmake
 
 CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-DINSTALL_BASH_COMPLETION=OFF \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
 			-Wno-dev
+
+CFLAGS +=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib -liconv -lintl
 
 FLAVORS += 		mysql pgsql
 FLAVOR ?=

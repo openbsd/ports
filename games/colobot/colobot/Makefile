@@ -24,11 +24,11 @@ LIB_DEPENDS =		audio/libsndfile \
 RUN_DEPENDS =		games/colobot/data \
 			games/colobot/music
 
-CONFIGURE_ARGS +=	-DCOLOBOT_INSTALL_BIN_DIR="${PREFIX}/bin" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
-				-I${X11BASE}/include" \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="-lintl"
+CONFIGURE_ARGS +=	-DCOLOBOT_INSTALL_BIN_DIR="${PREFIX}/bin"
+
+CFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lintl
 
 NO_TEST =		Yes
 

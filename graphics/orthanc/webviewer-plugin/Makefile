@@ -33,9 +33,9 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/jsoncpp \
 			graphics/gdcm
 
-CONFIGURE_ARGS +=       -DCMAKE_C_FLAGS="-I${LOCALBASE}/include -pthread" \
-                        -DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include -pthread" \
-                        -DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -luuid"
+CFLAGS=			-I${LOCALBASE}/include -pthread
+CXXFLAGS=		-I${LOCALBASE}/include -pthread
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib -luuid
 
 post-extract:
 	mkdir ${WRKSRC}/ThirdPartyDownloads/

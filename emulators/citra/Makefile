@@ -39,10 +39,12 @@ LIB_DEPENDS =	devel/cryptopp \
 		net/enet \
 		x11/qt5/qtmultimedia
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
-			-DCMAKE_PREFIX_PATH="-I${LOCALBASE}/lib/qt5/cmake/Qt5/" \
+CONFIGURE_ARGS =	-DCMAKE_PREFIX_PATH="-I${LOCALBASE}/lib/qt5/cmake/Qt5/" \
 			-DENABLE_CUBEB=OFF \
 			-DENABLE_WEB_SERVICE=OFF
+
+CXXFLAGS +=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 do-test:
 	cd ${WRKBUILD}/src/tests && ./tests

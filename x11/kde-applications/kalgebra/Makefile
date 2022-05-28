@@ -50,8 +50,10 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtwebengine
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS +=	-DREADLINE_INCLUDE_DIR=${LOCALBASE}/include/ereadline \
+			-DREADLINE_LIBRARY_DIR=${LOCALBASE}/lib \
 			-DREADLINE_LIBRARY=ereadline \
 			-DCURSES_LIBRARIES=ncurses
 

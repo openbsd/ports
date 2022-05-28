@@ -54,8 +54,8 @@ LIB_DEPENDS =	databases/xapian-core \
 		x11/kde-applications/messagelib \
 		x11/kde-applications/pimcommon
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include/KF5" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include/KF5"
+CFLAGS +=	-I${LOCALBASE}/include/KF5
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5
 
 TEST_IS_INTERACTIVE =	X11
 

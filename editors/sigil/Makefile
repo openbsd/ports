@@ -32,6 +32,8 @@ LIB_DEPENDS =		textproc/hunspell \
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_LIBS=ON
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>

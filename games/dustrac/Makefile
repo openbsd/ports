@@ -31,4 +31,6 @@ CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 			-DDOC_PATH=${PREFIX}/share/dustrac \
 			-DQOpenGLFunctions=OFF
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 .include <bsd.port.mk>

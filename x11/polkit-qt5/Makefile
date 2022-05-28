@@ -34,7 +34,7 @@ LIB_DEPENDS=	sysutils/polkit
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=	sysutils/consolekit
 
-CONFIGURE_ARGS= -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST=	Yes
 

@@ -25,9 +25,9 @@ LIB_DEPENDS =		databases/postgresql \
 			devel/boost \
 			devel/jsoncpp
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include -pthread" \
-			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include -pthread" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
+CFLAGS=			-I${LOCALBASE}/include -pthread
+CXXFLAGS=		-I${LOCALBASE}/include -pthread
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 
 # XXX: undefined references to testing libs, and requires running postgres
 CONFIGURE_ARGS +=	-DBUILD_UNIT_TESTS=Off

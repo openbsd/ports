@@ -30,6 +30,8 @@ SUBST_VARS +=	V
 # c++17
 COMPILER =	base-clang ports-gcc
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 BUILD_DEPENDS =	devel/boost \
 		devel/gtest \
 		lang/cython${MODPY_FLAVOR} \

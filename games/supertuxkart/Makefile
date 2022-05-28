@@ -26,6 +26,8 @@ EXTRACT_SUFX =		.tar.xz
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
 
+MODCMAKE_LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \
 			audio/libvorbis \

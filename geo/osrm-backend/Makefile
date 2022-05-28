@@ -33,9 +33,9 @@ LIB_DEPENDS =		archivers/bzip2 \
 			devel/tbb
 
 CONFIGURE_ARGS =	-DOSMIUM_INCLUDE_DIR=${LOCALBASE}/include/osmium \
-			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/utfcpp \
-				${CXXFLAGS}" \
 			-DENABLE_CCACHE=Off
+
+CXXFLAGS +=		-I${LOCALBASE}/include/utfcpp
 
 # Requires network access, and http access to sample osrm data is 403'd
 NO_TEST =		Yes

@@ -21,7 +21,7 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	devel/gsl
 
 # Really really not C99
-CONFIGURE_ARGS = -DCMAKE_C_FLAGS="${CFLAGS} -Wno-return-type"
+CFLAGS +=	-Wno-return-type
 
 NO_TEST =	Yes
 

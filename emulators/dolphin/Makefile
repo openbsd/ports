@@ -66,6 +66,8 @@ CONFIGURE_ARGS +=	-Dmandir:=${PREFIX}/man \
 			-DUSE_DISCORD_PRESENCE=OFF
 TEST_TARGET =		unittests
 
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 FIX_CRLF_FILES =	Externals/soundtouch/SoundTouch.cpp \
 			Externals/soundtouch/SoundTouch.h
 

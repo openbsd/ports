@@ -67,19 +67,9 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_SharedMimeInfo=ON
 # Do not install under /etc/Nextcloud
 CONFIGURE_ARGS +=	-DSYSCONF_INSTALL_DIR=${SYSCONFDIR}
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} \
-				-I${LOCALBASE}/include/inotify \
-				-I${LOCALBASE}/include/qtkeychain \
-				-I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
-				-I${LOCALBASE}/include/inotify \
-				-I${LOCALBASE}/include/qtkeychain \
-				-I${LOCALBASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
-				-L${LOCALBASE}/lib/inotify \
-				-L${LOCALBASE}/lib \
-				-linotify \
-				-Wl,-rpath=${LOCALBASE}/lib/inotify"
+CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath=${LOCALBASE}/lib/inotify
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/Nextcloud/

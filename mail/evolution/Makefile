@@ -57,6 +57,7 @@ BUILD_DEPENDS +=	textproc/highlight
 RUN_DEPENDS +=		textproc/highlight
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+CFLAGS=			-I${X11BASE}/include -I${LOCALBASE}/include
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
@@ -64,7 +65,6 @@ CONFIGURE_ARGS=		-DWITH_BOGOFILTER="${LOCALBASE}/bin/bogofilter" \
 			-DWITH_SPAMASSASSIN="${LOCALBASE}/bin/spamassassin" \
 			-DWITH_OPENLDAP=${LOCALBASE} \
 			-DVERSION_SUBSTRING=" (OpenBSD Ports)" \
-			-DCMAKE_C_FLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 			-DMAN_INSTALL_DIR="${PREFIX}/man" \
 			-DWITH_ENCHANT_VERSION=2 \
 			-DWITH_GWEATHER4=ON

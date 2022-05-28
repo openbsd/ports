@@ -20,8 +20,8 @@ LIB_DEPENDS =	devel/boost \
 		devel/kf5/ki18n \
 		x11/qt5/qtdeclarative
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CFLAGS +=	-I${LOCALBASE}/include
+CXXFLAGS +=	-I${LOCALBASE}/include
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

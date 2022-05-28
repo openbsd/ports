@@ -39,8 +39,9 @@ LIB_DEPENDS =		${MODTK_LIB_DEPENDS}
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS} \
 			shells/bash
 
-CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include ${CXXFLAGS}" \
-			-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src"
+CONFIGURE_ARGS +=	-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src"
+
+CXXFLAGS +=		-I${X11BASE}/include
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mlp64}

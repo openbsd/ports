@@ -28,8 +28,4 @@ LIB_DEPENDS =	audio/libxmp \
 
 NO_TEST =	Yes
 
-# CONFIGURE_ARGS = -DCMAKE_C_FLAGS_RELEASE="${CFLAGS}" does not catch
-do-gen:
-	sed -i 's,-O2,${CFLAGS},g' ${WRKSRC}/CMakeLists.txt
-
 .include <bsd.port.mk>

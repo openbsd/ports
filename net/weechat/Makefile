@@ -78,6 +78,8 @@ CONFIGURE_ARGS+=	-DTCL_TCLSH=${MODTCL_BIN} \
 			-DTCL_INCLUDE_PATH=${MODTCL_INCDIR} \
 			-DMODTCL_LIB=${MODTCL_LIB}
 
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 # needed for ruby 3 on llvm

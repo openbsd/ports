@@ -44,7 +44,6 @@ CONFIGURE_ARGS += 	-DBINDIR=${LOCALBASE}/bin \
 			-DDATADIR:PATH=${LOCALBASE}/share/openmw \
 			-DSYSCONFDIR=${PREFIX}/share/examples/openmw \
 			-DGLOBAL_CONFIG_PATH="${SYSCONFDIR}" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${X11BASE}/lib" \
 			-DMORROWIND_DATA_FILES="${LOCALBASE}/share/openmw/data"\
 			-DOPENMW_RESOURCE_FILES="${LOCALBASE}/share/openmw/resources" \
 			-DCMAKE_PREFIX_PATH="${LOCALBASE}/lib/qt5/cmake" \
@@ -55,7 +54,8 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/openmw-openmw-$V
 
 CFLAGS += 		-I${X11BASE}/include -pthread
-CXXFLAGS += 		-I${X11BASE}/include -pthread
+CXXFLAGS +=		-I${X11BASE}/include -pthread
+MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
 
 post-extract:
 	mkdir ${WRKDIST}/extern/fetched

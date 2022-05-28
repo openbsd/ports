@@ -37,8 +37,8 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		net/libvncserver \
 		x11/qt5/qtx11extras
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
+CFLAGS +=	-I${LOCALBASE}/include
+CXXFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

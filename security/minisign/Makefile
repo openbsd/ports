@@ -17,7 +17,7 @@ WANTLIB =  c pthread sodium
 MODULES =		devel/cmake
 LIB_DEPENDS =		security/libsodium
 
-CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include ${CFLAGS}"
+CFLAGS +=	-I${LOCALBASE}/include
 
 NO_TEST =		Yes
 

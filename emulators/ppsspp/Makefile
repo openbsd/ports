@@ -58,13 +58,13 @@ LIB_DEPENDS =		archivers/snappy \
 			graphics/png
 COMPILER =		base-clang ports-gcc
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DUSE_SYSTEM_FFMPEG=ON \
+CONFIGURE_ARGS =	-DUSE_SYSTEM_FFMPEG=ON \
 			-DUSE_SYSTEM_LIBZIP=ON \
 			-DUSE_SYSTEM_SNAPPY=ON \
 			-DUSE_DISCORD=OFF \
 			-DUSING_EGL=OFF
+
+CXXFLAGS +=	-I${X11BASE}/include
 
 NO_TEST =		Yes
 

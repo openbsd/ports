@@ -47,8 +47,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 # Appindicator is only used by Ubuntu's Unity.
 CONFIGURE_ARGS +=	-DHAVE_LIBAPPINDICATOR=OFF \
 			-DWITH_ICON_CACHE=OFF \
-			-DWITH_UPDATE_DESKTOP_DB=OFF \
-			-DCMAKE_C_FLAGS="-I${X11BASE}/include -I${LOCALBASE}/include ${CFLAGS}"
+			-DWITH_UPDATE_DESKTOP_DB=OFF
+
+CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 
 # disable phone-home
 CONFIGURE_ARGS +=	-DWITH_NEWS=OFF

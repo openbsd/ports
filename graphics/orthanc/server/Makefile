@@ -46,9 +46,9 @@ CONFIGURE_ARGS +=	-DUSE_SYSTEM_MONGOOSE=Off \
 			-DORTHANC_BUILD_UNIT_TESTS=Off
 
 # override these as otherwise the tests from Compiler.cmake won't pick them up yet
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include -pthread" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -luuid" \
-			-DCMAKE_SHARED_LINKER_FLAGS="-L${LOCALBASE}/lib" \
+CFLAGS=			-I${LOCALBASE}/include -pthread
+CXXFLAGS=		-I${LOCALBASE}/include -pthread
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib -luuid
 
 # CMAKE_COMPILER_IS_GNUCXX isn't set for clang as we invoke the compiler
 # as 'c++' and not 'clang++' (ref: CMakeDetermineCXXCompiler.cmake)

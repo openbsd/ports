@@ -24,6 +24,8 @@ BUILD_DEPENDS =		print/texlive/base
 LIB_DEPENDS =		graphics/freeglut \
 			graphics/png
 
+MODCMAKE_LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 TEST_IS_INTERACTIVE =	x11
 
 TEST_TMP=${WRKDIR}/test_tmp

@@ -26,6 +26,8 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 WRKDIST =	${WRKDIR}/irrlamb-$Vr613
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 NO_TEST =	Yes
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"

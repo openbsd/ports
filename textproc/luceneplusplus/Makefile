@@ -26,6 +26,8 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/gtest
 LIB_DEPENDS =		devel/boost
 
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+
 do-test:
 	cd ${WRKBUILD} && ./src/test/lucene++-tester \
 		--test_dir="${WRKSRC}/src/test/testfiles/"

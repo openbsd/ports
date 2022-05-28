@@ -66,8 +66,7 @@ CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 
 FIX_CRLF_FILES =	src/keeshare/ShareExport.cpp
 
-# ld: error: unable to find library -lX11
-CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${X11BASE}/lib"
+MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
 
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \

@@ -26,13 +26,9 @@ WANTLIB += crypto http_parser pcre pcreposix pthread ssh2 ssl
 WANTLIB += z
 
 CONFIGURE_ARGS=		-DUSE_SSH=ON \
-			-DUSE_HTTP_PARSER=system \
-			-DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
-			-DCMAKE_SHARED_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib"
+			-DUSE_HTTP_PARSER=system
 
-# XXX
-# libgit2-1.4.0/libgit2-1.4.0/deps/ntlmclient/unicode_builtin.h:13:10:
-# fatal error: 'iconv.h' file not found
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="-I${LOCALBASE}/include"
+CFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

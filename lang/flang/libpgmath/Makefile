@@ -20,7 +20,7 @@ COMPILER =	ports-gcc
 # Attempt to prevent libestdc++ and libc++ symbol conflicts in the edge case
 # where you're on aarch64 and you are linking together both Fortran and C++
 # code into a single object.
-CONFIGURE_ARGS += -DCMAKE_SHARED_LINKER_FLAGS='-static-libstdc++ -static-libgcc'
+MODCMAKE_LDFLAGS =	-static-libstdc++ -static-libgcc
 .endif
 
 MODULES =	devel/cmake \

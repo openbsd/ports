@@ -48,6 +48,8 @@ WANTLIB += qrencode signal-protocol-c soup-2.4 sqlite3 srtp2
 
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON
 
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+
 do-test:
 	find ${WRKBUILD} -type f -perm -+x -name \*-test -print -exec {} \;
 

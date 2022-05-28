@@ -41,8 +41,9 @@ RUN_DEPENDS =	x11/py-xcbgen${MODPY_FLAVOR} \
 		fonts/siji \
 		fonts/unifont
 
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify
+
 CONFIGURE_ARGS =	-DENABLE_CCACHE=OFF \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -lintl -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath,${LOCALBASE}/lib/inotify" \
 			-DENABLE_I3=ON
 
 NO_TEST =	Yes

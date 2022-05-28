@@ -38,9 +38,9 @@ RUN_DEPENDS =	devel/desktop-file-utils
 BUILD_DEPENDS =	devel/gettext,-runtime \
 		devel/gettext,-tools
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include \
-				-I${X11BASE}/include -I${MODLUA_INCL_DIR}"
-CXXFLAGS +=		-Wno-mismatched-tags
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS +=	-I${MODLUA_INCL_DIR} -Wno-mismatched-tags
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 NO_TEST =		Yes
 

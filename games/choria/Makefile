@@ -16,6 +16,8 @@ WANTLIB += Irrlicht c m pthread sqlite3 ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
+
 MASTER_SITES =	${MASTER_SITE_GOOGLECODE:=choria/}
 
 MODULES =	devel/cmake

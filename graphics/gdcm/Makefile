@@ -30,6 +30,7 @@ MODULES =			devel/cmake
 # c++-14
 COMPILER =			base-clang ports-gcc
 CXXFLAGS +=			-std=c++14
+MODCMAKE_LDFLAGS =			-L${LOCALBASE}/lib
 
 WANTLIB += ${COMPILER_LIBCXX} c crypto expat json-c m openjp2
 WANTLIB += poppler ssl uuid xml2 z

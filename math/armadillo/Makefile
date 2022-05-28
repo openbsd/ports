@@ -23,6 +23,8 @@ LIB_DEPENDS += 	math/arpack \
 CONFIGURE_STYLE = cmake
 CONFIGURE_ARGS += -DCMAKE_INSTALL_PREFIX=${PREFIX}
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 NO_TEST = 	Yes
 
 .include <bsd.port.mk>

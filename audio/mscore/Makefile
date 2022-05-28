@@ -41,7 +41,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		-DCMAKE_CXX_FLAGS="${CXXFLAGS} -Wno-inconsistent-missing-override" \
 		-DBUILD_ALSA=OFF \
 		-DBUILD_JACK=OFF \
 		-DBUILD_PORTMIDI=OFF \
@@ -52,6 +51,10 @@ CONFIGURE_ARGS =-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_CRASH_REPORTER=OFF \
 		-DDOWNLOAD_SOUNDFONT=OFF \
 		-DBUILD_TELEMETRY_MODULE=OFF
+
+CXXFLAGS +=	-Wno-inconsistent-missing-override
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 .if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
 CXXFLAGS +=	-mxgot

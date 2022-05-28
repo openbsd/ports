@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -37,7 +37,7 @@ set(REQUIRED_KPROPERTY_VERSION 3.2.0)
+ 
+ # Required components to build this framework
+ # TODO move Widgets/KF5WidgetsAddons-dependent part to a libKReportDesigner
+-find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core Widgets Xml PrintSupport)
++find_package(Qt5 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Core Widgets Xml PrintSupport Sensors)
+ find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED CoreAddons WidgetsAddons GuiAddons Config)
+ find_package(KPropertyWidgets ${REQUIRED_KPROPERTY_VERSION} COMPONENTS KF)
+ set_package_properties(KPropertyWidgets PROPERTIES TYPE REQUIRED

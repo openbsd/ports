@@ -25,7 +25,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -std=gnu99"
+CFLAGS +=	-std=gnu99
 
 NO_TEST =	Yes
 

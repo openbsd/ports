@@ -27,7 +27,8 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		devel/libusb1 \
 			math/fftw3,float
 
-CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST =		Yes
 

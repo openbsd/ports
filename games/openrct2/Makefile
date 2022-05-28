@@ -22,6 +22,8 @@ MASTER_SITES =	https://mirrors.nycbug.org/pub/distfiles/
 # C++17
 COMPILER =	base-clang ports-gcc
 
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 MODULES =	devel/cmake
 
 LIB_DEPENDS =	archivers/libzip \

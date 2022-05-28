@@ -27,8 +27,9 @@ MODULES =		devel/cmake \
 
 LIB_DEPENDS =		textproc/libmarisa,-main
 
-CONFIGURE_ARGS =	-DUSE_SYSTEM_MARISA=ON \
-			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	-DUSE_SYSTEM_MARISA=ON
+
+CXXFLAGS +=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 MODPY_RUNDEP =		No
 

@@ -30,6 +30,8 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DENABLE_FGCOM=OFF \
 			-DENABLE_QT=OFF
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 NO_TEST =	Yes
 
 # Keep C++ #include <version> from picking up this unrelated file

@@ -45,9 +45,10 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 # Remember to update VERSION_HASH when updating!
 CONFIGURE_ARGS =	-DBUILD_PRO=ON \
-			-DCMAKE_C_FLAGS="${CFLAGS} `sdl2-config --cflags` -I${MODLUA_INCL_DIR}" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} `sdl2-config --libs`" \
 			-DVERSION_HASH=a838293
+
+CFLAGS +=	`sdl2-config --cflags` -I${MODLUA_INCL_DIR}
+MODCMAKE_LDFLAGS =	`sdl2-config --libs`
 
 NO_TEST =	Yes
 

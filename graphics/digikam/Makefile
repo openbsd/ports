@@ -121,4 +121,6 @@ CONFIGURE_ARGS +=	-DENABLE_MYSQLSUPPORT=ON
 # XXX W^X binary outside wxallowed
 TEST_IS_INTERACTIVE =	X11
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 .include <bsd.port.mk>

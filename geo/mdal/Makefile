@@ -28,7 +28,8 @@ LIB_DEPENDS =	math/netcdf>=4 \
 
 BUILD_DEPENDS =	devel/gtest
 
-CONFIGURE_ARGS=	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CXXFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 WANTLIB += ${COMPILER_LIBCXX} c gdal hdf5 m netcdf sqlite3 xml2 z
 

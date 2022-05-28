@@ -42,9 +42,9 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 
 CONFIGURE_ARGS =	-DBUILD_SHARED=ON \
 			-DOPTION_OMP=OFF \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
-			-DCMAKE_EXE_LINKER_FLAGS=-L${X11BASE}/lib \
 			-Wno-dev
+
+MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
 
 NO_TEST = 		Yes
 

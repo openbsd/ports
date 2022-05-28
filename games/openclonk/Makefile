@@ -42,12 +42,12 @@ LIB_DEPENDS =	audio/freealut \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-# CMAKE_EXE_LINKER_FLAGS to make lld happy.
 CONFIGURE_ARGS +=	-DFREETYPE_INCLUDE_DIRS="${X11BASE}/include/freetype2" \
 			-DHAVE_PRECOMPILED_HEADERS:BOOL=OFF \
-			-DGLDEBUGPROCARB_USERPARAM_IS_CONST=ON \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
+			-DGLDEBUGPROCARB_USERPARAM_IS_CONST=ON
+
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 # Random, intermittent failures with Ninja during fake.
 USE_NINJA =	No

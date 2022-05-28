@@ -26,9 +26,10 @@ LIB_DEPENDS=	converters/libunistring \
 		graphics/png \
 		graphics/tiff
 
-CONFIGURE_ARGS+=	-DCMAKE_INCLUDE_PATH=${X11BASE}/include \
-			-DCMAKE_LIBRARY_PATH=${X11BASE}/lib \
-			-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
+CXXFLAGS =	-I${X11BASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib
+
+CONFIGURE_ARGS+=	-DFREETYPE_INCLUDE_DIR=${X11BASE}/include/freetype2 \
 			-DPODOFO_BUILD_SHARED=True \
 			-DPODOFO_BUILD_STATIC=True
 

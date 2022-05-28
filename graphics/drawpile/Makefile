@@ -36,7 +36,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CXXFLAGS +=	-I${LOCALBASE}/include
 
 NO_TEST =	Yes
 

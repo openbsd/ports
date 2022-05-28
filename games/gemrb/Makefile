@@ -37,8 +37,6 @@ RUN_DEPENDS = 		devel/desktop-file-utils \
 CONFIGURE_ARGS +=	-DSYSCONF_DIR=${SYSCONFDIR}/gemrb \
 			-DEXAMPLE_CONF_DIR=${PREFIX}/share/examples/gemrb/ \
 			-DMAN_DIR=${PREFIX}/man/man6 \
-			-DCMAKE_MODULE_LINKER_FLAGS=-lc \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DDISABLE_WERROR=1 \
 			-DSDL_BACKEND=SDL \
 			-Wno-dev

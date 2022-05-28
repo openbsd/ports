@@ -28,8 +28,9 @@ MODULES =		devel/cmake
 BUILD_DEPENDS =		devel/ois
 LIB_DEPENDS =		x11/ogre,-main
 
-CONFIGURE_ARGS += 	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -fPIC" \
-			-DMYGUI_BUILD_TOOLS=false \
+CXXFLAGS +=		-fPIC
+
+CONFIGURE_ARGS += 	-DMYGUI_BUILD_TOOLS=false \
 			-DMYGUI_BUILD_PLUGINS=false
 
 NO_TEST =		Yes

@@ -28,7 +28,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -Wno-narrowing"
+CXXFLAGS +=	-Wno-narrowing
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

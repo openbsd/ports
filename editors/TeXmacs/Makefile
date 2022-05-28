@@ -35,6 +35,8 @@ LIB_DEPENDS=	databases/sqlite3 \
 		lang/guile \
 		x11/qt5/qtsvg,-main
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 # requires Xorg access
 NO_TEST =		Yes
 

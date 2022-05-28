@@ -57,9 +57,10 @@ LIB_DEPENDS =		devel/harfbuzz,-main \
 			x11/xkbcommon
 
 CONFIGURE_ARGS =	-DENABLE_WAYLAND=OFF \
-			-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples \
-			-DCMAKE_CXX_FLAGS="-I${X11BASE}/include \
-					   -I${LOCALBASE}/include"
+			-DCMAKE_INSTALL_SYSCONFDIR=${PREFIX}/share/examples
+
+CFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 
 post-patch:
 	cp ${FULLDISTDIR}/en_dict-20121020.tar.gz \

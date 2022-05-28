@@ -26,7 +26,7 @@ LIB_DEPENDS =		graphics/kcolorpicker \
 			graphics/kimageannotator>=0.4.1 \
 			x11/qt5/qtx11extras
 
-CONFIGURE_ARGS +=	-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ENV +=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CXXFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

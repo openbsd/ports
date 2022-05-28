@@ -51,7 +51,7 @@ LIB_DEPENDS-doc=	# empty
 RUN_DEPENDS-doc=	# empty
 WANTLIB-doc=		# empty
 
-CONFIGURE_ARGS=		-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib"
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
 
 post-install:
 # fix links target; symlinks are required for FindIlmbase.cmake etc. to find the

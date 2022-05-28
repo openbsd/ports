@@ -22,7 +22,7 @@ LIB_DEPENDS +=		graphics/jpeg \
 			security/libmcrypt \
 			security/mhash
 
-CONFIGURE_ARGS =        -DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include ${CXXFLAGS}" \
-			-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+CXXFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

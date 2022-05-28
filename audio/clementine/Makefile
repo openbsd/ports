@@ -60,6 +60,8 @@ CONFIGURE_ARGS +=	-DBUILD_WERROR=ON
 # is missing. To be investigated.
 CONFIGURE_ARGS +=	-DBUNDLE_PROJECTM_PRESETS=ON
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 post-extract:
 	cp ${FILESDIR}/config.h.in ${WRKSRC}/ext/libclementine-common/
 

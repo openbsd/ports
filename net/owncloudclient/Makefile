@@ -37,26 +37,15 @@ LIB_DEPENDS =		databases/sqlite3 \
 CONFIGURE_ARGS +=	-Wno-dev \
 			-DSYSCONF_INSTALL_DIR=${SYSCONFDIR} \
 			-DKDE_INSTALL_PLUGINDIR=${PREFIX}/lib/ownCloud/plugins/ \
-			-DCMAKE_C_FLAGS="${CFLAGS} \
-				-I/usr/include \
-				-I${LOCALBASE}/include/inotify \
-				-I${LOCALBASE}/include/qtkeychain \
-				-I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
-				-I/usr/include \
-				-I${LOCALBASE}/include/inotify \
-				-I${LOCALBASE}/include/qtkeychain \
-				-I${LOCALBASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
-				-L${LOCALBASE}/lib/inotify \
-				-L${LOCALBASE}/lib \
-				-linotify \
-				-Wl,-rpath=${LOCALBASE}/lib/inotify" \
 			-DCMAKE_DISABLE_FIND_PACKAGE_KF5=TRUE \
 			-DCMAKE_DISABLE_FIND_PACKAGE_CMocka=TRUE \
 			-DInotify_INCLUDE_DIRS=${LOCALBASE}/include/inotify \
 			-DInotify_LIBRARIES=${LOCALBASE}/lib/inotify \
 			-DCSYNC_REQUIRED_LIBRARIES=c
+
+CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/inotify -I${LOCALBASE}/include/qtkeychain
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/inotify -linotify -Wl,-rpath=${LOCALBASE}/lib/inotify
 
 NO_TEST =		Yes
 

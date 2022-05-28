@@ -77,12 +77,14 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 TEST_IS_INTERACTIVE =	X11
 
+CFLAGS +=		-I${LOCALBASE}/include
+CXXFLAGS +=		-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
+
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Inotify=On
+
 # XXX fix me
 #CONFIGURE_ARGS +=	-DKDEPIM_RUN_AKONADI_TEST=OFF
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 pre-configure:
 	find ${WRKSRC}/{messagecomposer,templateparser,mimetreeparser,messageviewer} \

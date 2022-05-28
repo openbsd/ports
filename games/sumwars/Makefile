@@ -41,9 +41,10 @@ LIB_DEPENDS =		x11/cegui \
 			net/enet
 
 CONFIGURE_ARGS += \
-	-DCMAKE_EXE_LINKER_FLAGS="-L${LOCALBASE}/lib -liconv -lintl" \
 	-DSUMWARS_NO_ENET=ON \
 	-DSUMWARS_NO_TINYXML=ON
+
+MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib -liconv -lintl
 
 NO_TEST =		Yes
 

@@ -28,12 +28,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+3,-guic
 
 
-CONFIGURE_ARGS +=	-DCMAKE_C_FLAGS="${CFLAGS} \
-				-I${LOCALBASE}/include" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} \
-				-I${LOCALBASE}/include" \
-			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
-				-L${LOCALBASE}/lib"
+CFLAGS +=	-I${LOCALBASE}/include
+CXXFLAGS +=	-I${LOCALBASE}/include
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST =	Yes
 

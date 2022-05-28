@@ -49,9 +49,9 @@ MODLUA_SA =		Yes
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
 			-DEXTERNAL_LIBOSMIUM=ON \
 			-DEXTERNAL_PROTOZERO=ON \
-			-DEXTERNAL_FMT=ON \
-			-DCMAKE_CXX_FLAGS="-I${LOCALBASE}/include/utfcpp \
-				${CXXFLAGS}"
+			-DEXTERNAL_FMT=ON
+
+CXXFLAGS +=		-I${LOCALBASE}/include/utfcpp
 
 # bump postgresql,-server limits according to its README otherwise some
 # tests fail

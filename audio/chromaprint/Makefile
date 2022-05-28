@@ -32,6 +32,8 @@ CONFIGURE_ARGS =	-DBUILD_TOOLS=ON \
 
 TEST_TARGET =		check
 
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindGTest.cmake
 

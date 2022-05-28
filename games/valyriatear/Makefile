@@ -24,6 +24,7 @@ MASTER_SITES =	https://github.com/ValyriaTear/ValyriaTear/releases/download/${V}
 
 # C++11
 COMPILER =	base-clang ports-gcc
+MODCMAKE_LDFLAGS = 	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 MODULES =	devel/cmake \
 		lang/lua
