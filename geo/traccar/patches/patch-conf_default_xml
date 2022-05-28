@@ -9,12 +9,12 @@ Index: conf/default.xml
      <entry key='web.port'>8082</entry>
 -    <entry key='web.path'>./web</entry>
 +    <entry key='web.address'>127.0.0.1</entry>
-+    <entry key='web.path'>${LOCALBASE}/share/traccar/web</entry>
++    <entry key='web.path'>/usr/local/share/traccar/web</entry>
+     <entry key='web.sanitize'>true</entry>
      <entry key='web.persistSession'>false</entry>
  
-     <entry key='geocoder.enable'>true</entry>
-@@ -20,7 +21,7 @@
-     <entry key='geocoder.key'>pk.689d849289c8c63708068b2ff1f63b2d</entry>
+@@ -23,7 +24,7 @@
+     <entry key='geocoder.ignorePositions'>true</entry>
  
      <entry key='logger.level'>info</entry>
 -    <entry key='logger.file'>./logs/tracker-server.log</entry>
@@ -22,24 +22,22 @@ Index: conf/default.xml
      <entry key='logger.rotate'>true</entry>
  
      <entry key='filter.enable'>true</entry>
-@@ -30,17 +31,16 @@
+@@ -33,16 +34,14 @@
      <entry key='processing.computedAttributes.enable'>true</entry>
      <entry key='processing.engineHours.enable'>true</entry>
  
 -    <entry key='media.path'>./media</entry>
-+    <entry key='media.path'>${LOCALBASE}/share/traccar/media</entry>
++    <entry key='media.path'>/usr/local/share/traccar/media</entry>
  
      <entry key='notificator.types'>web,mail</entry>
-+    <entry key='templates.rootPath'>${LOCALBASE}/share/traccar/templates</entry>
  
 -    <entry key='server.statistics'>https://www.traccar.org/analytics/</entry>
 -
      <entry key='commands.queueing'>true</entry>
  
      <entry key='database.ignoreUnknown'>true</entry>
-     <entry key='database.generateQueries'>true</entry>
 -    <entry key='database.changelog'>./schema/changelog-master.xml</entry>
-+    <entry key='database.changelog'>../..${LOCALBASE}/share/traccar/schema/changelog-master.xml</entry>
-  
-     <entry key='database.loginUser'>
-         SELECT * FROM tc_users
++    <entry key='database.changelog'>../../usr/local/share/traccar/schema/changelog-master.xml</entry>
+ 
+     <entry key='gps103.port'>5001</entry>
+     <entry key='tk103.port'>5002</entry>
