@@ -83,13 +83,15 @@ DISTFILES +=	${MODGO_DIST_SUBDIR}/{}${_modpath}/@v/${_modver}.mod:${MODGO_MASTER
 _MODGO_SETUP_MOD +=	${_modpath}/@v/${_modver}
 .  endfor
 MAKE_ENV +=		GOPROXY=file://${WRKDIR}/go_modules
-MAKE_ENV +=		GO111MODULE=on GOPATH="${MODGO_GOPATH}"
+MODGO_GO111MODULE ?=	on
+MAKE_ENV +=		GO111MODULE=${MODGO_GO111MODULE} GOPATH="${MODGO_GOPATH}"
 .else
 # ports are not allowed to fetch from the network at build time; point
 # GOPROXY at an unreachable host so that failures are also visible to
 # developers who don't have PORTS_PRIVSEP and a "deny .. _pbuild" PF rule.
 MAKE_ENV +=		GOPROXY=invalid://ports.should.not.fetch.at.buildtime/
-MAKE_ENV +=		GO111MODULE=off GOPATH="${MODGO_GOPATH}"
+MODGO_GO111MODULE ?=	off
+MAKE_ENV +=		GO111MODULE=${MODGO_GO111MODULE} GOPATH="${MODGO_GOPATH}"
 .  if defined(GH_ACCOUNT) && defined(GH_PROJECT)
 ALL_TARGET ?=          github.com/${GH_ACCOUNT}/${GH_PROJECT}
 .  endif
