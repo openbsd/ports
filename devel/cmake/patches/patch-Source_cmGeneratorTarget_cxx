@@ -1,7 +1,7 @@
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -4837,6 +4837,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -5113,6 +5113,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;
  
@@ -35,15 +35,15 @@ Index: Source/cmGeneratorTarget.cxx
 +          this->LocalGenerator->IssueMessage(MessageType::INTERNAL_ERROR, msg);
 +        }
 +        else {
-+          version = new std::string(lib_version);
-+          soversion = new std::string(lib_version);
++          version = cmValue(new std::string(lib_version));
++          soversion = cmValue(new std::string(lib_version));
 +        }
 +      }
 +    }
 +    else {
 +      if (soversion) {
-+        version = new std::string("0.0");
-+        soversion = new std::string("0.0");
++        version = cmValue(new std::string("0.0"));
++        soversion = cmValue(new std::string("0.0"));
 +      }
 +    }
 +  }

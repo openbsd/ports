@@ -3,13 +3,14 @@ Add libs and paths. Ensure the lib is used for the C case.
 Index: Modules/FindOpenMP.cmake
 --- Modules/FindOpenMP.cmake.orig
 +++ Modules/FindOpenMP.cmake
-@@ -101,8 +101,8 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
+@@ -101,9 +101,9 @@ function(_OPENMP_FLAG_CANDIDATES LANG)
    if(NOT OpenMP_${LANG}_FLAG)
      unset(OpenMP_FLAG_CANDIDATES)
  
 -    set(OMP_FLAG_GNU "-fopenmp")
--    set(OMP_FLAG_Clang "-fopenmp=libomp" "-fopenmp=libiomp5" "-fopenmp" "-Xclang -fopenmp")
 +    set(OMP_FLAG_GNU "-fopenmp -lgomp")
+     set(OMP_FLAG_LCC "-fopenmp")
+-    set(OMP_FLAG_Clang "-fopenmp=libomp" "-fopenmp=libiomp5" "-fopenmp" "-Xclang -fopenmp")
 +    set(OMP_FLAG_Clang "-fopenmp -I${LOCALBASE}/include -Wl,-L${LOCALBASE}/lib,-lomp")
      set(OMP_FLAG_AppleClang "-Xclang -fopenmp")
      set(OMP_FLAG_HP "+Oopenmp")

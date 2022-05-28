@@ -4,12 +4,12 @@ on ports-gcc arches.
 Index: Source/kwsys/CMakeLists.txt
 --- Source/kwsys/CMakeLists.txt.orig
 +++ Source/kwsys/CMakeLists.txt
-@@ -513,7 +513,7 @@ if(KWSYS_USE_SystemInformation)
+@@ -529,7 +529,7 @@ if(KWSYS_USE_SystemInformation)
      set_property(SOURCE SystemInformation.cxx APPEND PROPERTY
        COMPILE_DEFINITIONS KWSYS_CXX_HAS_RLIMIT64=1)
    endif()
--  if(UNIX)
-+  if(UNIX AND NOT (CMAKE_SYSTEM MATCHES "OpenBSD"))
+-  if(UNIX AND NOT KWSYS_NO_EXECINFO)
++  if(UNIX AND NOT KWSYS_NO_EXECINFO AND NOT (CMAKE_SYSTEM MATCHES "OpenBSD"))
      include(CheckIncludeFileCXX)
      # check for simple stack trace
      # usually it's in libc but on FreeBSD

@@ -1,7 +1,7 @@
 Index: Source/cmTarget.cxx
 --- Source/cmTarget.cxx.orig
 +++ Source/cmTarget.cxx
-@@ -310,7 +310,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
+@@ -312,7 +312,7 @@ cmTarget::cmTarget(std::string const& name, cmStateEnu
      initProp("INSTALL_NAME_DIR");
      initProp("INSTALL_REMOVE_ENVIRONMENT_RPATH");
      initPropValue("INSTALL_RPATH", "");

@@ -1,7 +1,7 @@
 Index: Source/cmFileCommand.cxx
 --- Source/cmFileCommand.cxx.orig
 +++ Source/cmFileCommand.cxx
-@@ -1599,6 +1599,12 @@ bool HandleDownloadCommand(std::vector<std::string> co
+@@ -1751,6 +1751,12 @@ bool HandleDownloadCommand(std::vector<std::string> co
                             cmExecutionStatus& status)
  {
  #if !defined(CMAKE_BOOTSTRAP)
@@ -14,7 +14,7 @@ Index: Source/cmFileCommand.cxx
    auto i = args.begin();
    if (args.size() < 2) {
      status.SetError("DOWNLOAD must be called with at least two arguments.");
-@@ -1985,6 +1991,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
+@@ -2135,6 +2141,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
                           cmExecutionStatus& status)
  {
  #if !defined(CMAKE_BOOTSTRAP)

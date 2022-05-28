@@ -2,13 +2,14 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
-VER =		3.20.3
+VER =		3.23.1
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	6
 
 HOMEPAGE =	https://www.cmake.org/
+
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 MASTER_SITES =	https://www.cmake.org/files/v${VER:R}/
 
