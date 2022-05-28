@@ -1,6 +1,6 @@
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.4.0rc1
+DISTNAME=	tiff-4.4.0
 SHARED_LIBS=	tiff	41.1	# 13.0
 SHARED_LIBS+=	tiffxx	41.0	# 13.0
 CATEGORIES=	graphics
@@ -20,7 +20,6 @@ COMPILER =	base-clang ports-gcc base-gcc
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WRKDIST=	${WRKDIR}/tiff-4.4.0
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-jbig \
 		--disable-libdeflate \
