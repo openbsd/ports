@@ -1,2 +1,4 @@
-SHA256 (vim-8.2.4981.tar.gz) = 0ecsFJumfHGia3qBOfj1OYiyMqN8ajWoRz/qw85rkLg=
-SIZE (vim-8.2.4981.tar.gz) = 16447506
+SHA256 (vim-8.2.5036.tar.gz) = YRD2gkXGDj70qyzFpLc2lLGw5BqLHn3ThG9bzuYbfL8=
+SHA256 (vim-colorschemes-20220522.tar.gz) = ZLEncSHAesz6zZtKXY0zromtzA86ebdfJtLzpUxjMOw=
+SIZE (vim-8.2.5036.tar.gz) = 16493540
+SIZE (vim-colorschemes-20220522.tar.gz) = 66041

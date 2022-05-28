@@ -2,10 +2,14 @@ COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		8.2.4981
+V=		8.2.5036
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
+
+MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
+DISTFILES=	${GH_DISTFILE} \
+		vim-colorschemes-20220522{9d3d216b72dd77a2ce4c27e8746708b916864645}.tar.gz:0
 
 T=		${V:C/\.0+/./}
 PKGNAME=	vim-$T
@@ -139,6 +143,20 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/{doc,syntax}
 	${INSTALL_DATA} ${FILESDIR}/openbsd.vim \
 		${PREFIX}/share/vim/vimfiles/syntax/
+	# the new colour schemes are more consistent in different
+	# environments, but in some cases significantly change what
+	# people are familiar with.
+	# https://github.com/vim/colorschemes
+	# https://github.com/vim/vim/issues/10449#issuecomment-1140195027=
+	#
+	# install a copy of the legacy colour schemes under a different
+	# directory to make it easier to revert if desired.
+	# you can either use directly in config, or copy the relevant
+	# files to .vim/colors which take priority over the files
+	# in /usr/local/share/vim.
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/${P}/colors/legacy
+	${INSTALL_DATA} ${WRKDIR}/colorschemes-*/legacy_colors/* \
+		${PREFIX}/share/vim/${P}/colors/legacy
 
 .if ! ${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
