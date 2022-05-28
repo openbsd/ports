@@ -6,7 +6,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      status: {
        valid_values: ["stable", "experimental", "test"],
 -      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux"]
-+      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux","OpenBSD","FreeBSD"]
++      valid_keys: ["Android", "Win", "ChromeOS_Ash", "ChromeOS_Lacros", "Mac", "Linux", "OpenBSD", "FreeBSD"]
      },
  
      // "implied_by" or "depends_on" specifies relationship to other features:
