@@ -1,14 +1,16 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
-V=			3.20.1
+PYMAJOR=		4
+CPPMAJOR=		3
+PROTOBUF_VERSION=	21.0
+V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
-TAG=			v${V:S/rc-/rc/}
+TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
 
 DISTNAME=		protobuf-python-$V
 PKGNAME=		py-protobuf-${MODPY_EGG_VERSION}
-REVISION=		0
 
-WRKDIST=		${WRKDIR}/protobuf-$V/python
+WRKDIST=		${WRKDIR}/protobuf-${CPPMAJOR}.${PROTOBUF_VERSION}/python
 
 CATEGORIES=		devel
 

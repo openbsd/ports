@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}text_en
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}text_format.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}timestamp_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}type_pb2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}unknown_fields.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}wrappers_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/any_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/api_pb2.py
@@ -92,6 +93,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/text_encoding.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/text_format.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/timestamp_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/type_pb2.py
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/unknown_fields.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/util/${MODPY_PYCACHE}/
