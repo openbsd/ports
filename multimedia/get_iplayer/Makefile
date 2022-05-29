@@ -2,7 +2,7 @@ COMMENT=		download/stream programmes from BBC iPlayer
 
 GH_ACCOUNT=		get-iplayer
 GH_PROJECT=		get_iplayer
-GH_TAGNAME=		v3.29
+GH_TAGNAME=		v3.30
 
 CATEGORIES=		multimedia
 
