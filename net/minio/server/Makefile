@@ -2,8 +2,8 @@ BROKEN-i386 =	github.com/tklauser/go-sysconf@v0.3.4/sysconf_openbsd.go:22:28: un
 
 COMMENT =	object storage server compatible with Amazon S3 APIs
 
-V =		2022-04-12T06-55-35Z
-CID =		e162a055cc29feedfb20e1be1f5402571cb36100
+V =		2022-05-26T05-48-41Z
+CID =		372a08be49a2213a4a01de1fb7b271d98f38215c
 SHORTCID =	${CID:C/(............).*/\1/}
 
 MODGO_MODNAME =	github.com/minio/minio
