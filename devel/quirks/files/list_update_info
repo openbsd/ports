@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: list_update_info,v 1.7 2022/05/24 12:19:50 espie Exp $
+# $OpenBSD: list_update_info,v 1.8 2022/05/29 12:12:42 espie Exp $
 #
 # Copyright (c) 2022 Marc Espie <espie@openbsd.org>
 #
@@ -29,9 +29,9 @@ sub write_for_locate
 package OpenBSD::PackingElement::Meta;
 sub write_for_locate
 {
-	my ($self, $plist, $output) = @_;
-	print {$output} $plist->pkgname, ":";
-	$self->write($output);
+	my ($self, $plist, $o) = @_;
+	print {$o->{output}} $plist->pkgname, ":";
+	$self->write($o->{output});
 }
 
 package OpenBSD::PackingElement::Comment;
@@ -53,13 +53,13 @@ sub write_for_locate
 package OpenBSD::PackingElement::AlwaysUpdate;
 sub write_for_locate
 {
-	my ($self, $plist, $output) = @_;
-	my $content;
-	open my $fh, '>', \$content;
-	$plist->write($fh);
-	close $fh;
-	my $digest = Digest::SHA::sha256_base64($content);
-	print {$output} $plist->pkgname, ':@option always-update ', $digest, "\n";
+	my ($self, $plist, $o) = @_;
+	if (!defined $self->{hash}) {
+		$o->{ui}->fatal("Update pkg tools and regen package #1\n"
+		    ."\t(outdated \@option always-update annotation)",
+		    $o->{pkgname});
+	}
+	&OpenBSD::PackingElement::Meta::write_for_locate;
 }
 
 package Scanner;
@@ -77,7 +77,8 @@ sub handle_file
 	    \&OpenBSD::PackingList::UpdateInfoOnly);
 	return if $plist->pkgname =~ m/^quirks\-/;
 	# TODO think about generating a "total size" annotation ?
-	$plist->write_for_locate($plist, $self->{output});
+	$self->{pkgname} = $plist->pkgname;
+	$plist->write_for_locate($plist, $self);
 }
 
 sub handle_options
