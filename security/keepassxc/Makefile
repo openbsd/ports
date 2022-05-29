@@ -66,7 +66,7 @@ CONFIGURE_ARGS +=	-DWITH_XC_BROWSER=ON \
 
 FIX_CRLF_FILES =	src/keeshare/ShareExport.cpp
 
-MODCMAKE_LDFLAGS =		-L${X11BASE}/lib
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 post-patch:
 	cd ${WRKSRC}/src/; sed -i -e 's/Q_OS_LINUX/Q_OS_UNIX/g' \
