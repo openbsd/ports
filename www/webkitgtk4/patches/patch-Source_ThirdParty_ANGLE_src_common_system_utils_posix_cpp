@@ -1,7 +1,7 @@
 Index: Source/ThirdParty/ANGLE/src/common/system_utils_posix.cpp
 --- Source/ThirdParty/ANGLE/src/common/system_utils_posix.cpp.orig
 +++ Source/ThirdParty/ANGLE/src/common/system_utils_posix.cpp
-@@ -222,10 +222,12 @@ Library *OpenSharedLibraryWithExtensionAndGetError(con
+@@ -199,10 +199,12 @@ void *OpenSystemLibraryWithExtensionAndGetError(const 
      }
  
      int extraFlags = 0;
