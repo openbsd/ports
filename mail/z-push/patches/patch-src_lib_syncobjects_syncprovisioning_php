@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_lib_syncobjects_syncprovisioning_php,v 1.1 2022/05/29 12:35:51 robert Exp $
+
+Index: src/lib/syncobjects/syncprovisioning.php
+--- src/lib/syncobjects/syncprovisioning.php.orig
++++ src/lib/syncobjects/syncprovisioning.php
+@@ -264,7 +264,7 @@ class SyncProvisioning extends SyncObject {
+         $this->mindevpwlenngth = 4;
+         $this->maxinacttimedevlock = 900;
+         $this->maxdevpwfailedattempts = 8;
+-        $this->maxattsize = '';
++        $this->maxattsize = -1;
+         $this->allowsimpledevpw = 1;
+         $this->devpwexpiration = 0;
+         $this->devpwhistory = 0;

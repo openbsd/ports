@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_policies_ini,v 1.1 2022/05/29 12:35:51 robert Exp $
+
+Index: src/policies.ini
+--- src/policies.ini.orig
++++ src/policies.ini
+@@ -67,7 +67,7 @@ maxinacttimedevlock = 900
+ maxdevpwfailedattempts = 8
+ 
+ ; The maximum attachment size in bytes as determined by security policy.
+-maxattsize = ''
++maxattsize = -1
+ 
+ ; Specifies if the device allows simple passwords. A simple password contains
+ ; repeated ("0000") or sequential ("xyz") characters only.
+@@ -231,4 +231,4 @@ allowconsumeremail = 1
+ ; Specifies if the device allows the use of Internet Sharing.
+ ; 0 - Do not allow the use of Internet Sharing.
+ ; 1 - Allow the use of Internet Sharing.
+-allowinternetsharing = 1
+\ No newline at end of file
++allowinternetsharing = 1
