@@ -379,6 +379,7 @@ include/bullet/BulletDynamics/Featherstone/btMultiBodyMLCPConstraintSolver.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodyPoint2Point.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodySliderConstraint.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodySolverConstraint.h
+include/bullet/BulletDynamics/Featherstone/btMultiBodySphericalJointLimit.h
 include/bullet/BulletDynamics/Featherstone/btMultiBodySphericalJointMotor.h
 include/bullet/BulletDynamics/MLCPSolvers/
 include/bullet/BulletDynamics/MLCPSolvers/btDantzigLCP.h
@@ -411,6 +412,11 @@ include/bullet/BulletRobotics/BoxStack.h
 include/bullet/BulletRobotics/FixJointBoxes.h
 include/bullet/BulletRobotics/JointLimit.h
 include/bullet/BulletSoftBody/
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableBody.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableBodyHelpers.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableBodySolver.h
+include/bullet/BulletSoftBody/BulletReducedDeformableBody/btReducedDeformableContactConstraint.h
 include/bullet/BulletSoftBody/DeformableBodyInplaceSolverIslandCallback.h
 include/bullet/BulletSoftBody/btCGProjection.h
 include/bullet/BulletSoftBody/btConjugateGradient.h
@@ -504,6 +510,7 @@ include/bullet/DeformableDemo/DeformableRigid.h
 include/bullet/DeformableDemo/DeformableSelfCollision.h
 include/bullet/DeformableDemo/GraspDeformable.h
 include/bullet/DeformableDemo/LargeDeformation.h
+include/bullet/DeformableDemo/LoadDeformed.h
 include/bullet/DeformableDemo/MultibodyClothAnchor.h
 include/bullet/DeformableDemo/Pinch.h
 include/bullet/DeformableDemo/PinchFriction.h
@@ -741,6 +748,16 @@ include/bullet/Planar2D/
 include/bullet/Planar2D/Planar2D.h
 include/bullet/Raycast/
 include/bullet/Raycast/RaytestDemo.h
+include/bullet/ReducedDeformableDemo/
+include/bullet/ReducedDeformableDemo/ConservationTest.h
+include/bullet/ReducedDeformableDemo/FreeFall.h
+include/bullet/ReducedDeformableDemo/FrictionSlope.h
+include/bullet/ReducedDeformableDemo/ModeVisualizer.h
+include/bullet/ReducedDeformableDemo/ReducedBenchmark.h
+include/bullet/ReducedDeformableDemo/ReducedCollide.h
+include/bullet/ReducedDeformableDemo/ReducedGrasp.h
+include/bullet/ReducedDeformableDemo/ReducedMotorGrasp.h
+include/bullet/ReducedDeformableDemo/Springboard.h
 include/bullet/RenderingExamples/
 include/bullet/RenderingExamples/CoordinateSystemDemo.h
 include/bullet/RenderingExamples/DynamicTexturedCubeDemo.h
