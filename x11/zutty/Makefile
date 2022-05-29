@@ -2,8 +2,7 @@ COMMENT =	X terminal which uses OpenGL ES Compute Shaders
 
 GH_ACCOUNT =	tomszilagyi
 GH_PROJECT =	zutty
-GH_TAGNAME =	0.11
-REVISION =	0
+GH_TAGNAME =	0.12
 
 CATEGORIES =	x11
 
