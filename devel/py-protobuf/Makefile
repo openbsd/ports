@@ -2,7 +2,7 @@ COMMENT=		Google data interchange format (protocol buffers)
 
 PYMAJOR=		4
 CPPMAJOR=		3
-PROTOBUF_VERSION=	21.0
+PROTOBUF_VERSION=	21.1
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
 TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
