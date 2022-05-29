@@ -14,6 +14,15 @@ Index: CMakeLists.txt
  endif()
  
  if (PkgConfig_FOUND)
+@@ -85,7 +85,7 @@ if (PkgConfig_FOUND)
+ endif()
+ 
+ find_package(Qt5 5.6 REQUIRED COMPONENTS
+-  Core DBus Widgets Svg Xml Test PrintSupport)
++  Core DBus Widgets Svg Xml Test PrintSupport WebChannel Positioning Sensors Quick)
+ find_package(Qt5 5.6 OPTIONAL_COMPONENTS
+   Sql Concurrent QuickWidgets)
+ 
 @@ -238,7 +238,7 @@ if(ENABLE_OFXIMPORTER)
      set(PATH_TO_LIBOFX_HEADER "${PATH_TO_LIBOFX_HEADER}/libofx/libofx.h")
      unset(LIBOFX_HAVE_CLIENTUID)

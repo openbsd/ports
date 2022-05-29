@@ -4,7 +4,7 @@ COMMENT =		accounting for KDE 5
 
 VERSION =		5.1.2
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity x11
 
