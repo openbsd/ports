@@ -1,6 +1,7 @@
 COMMENT=	validating DNS resolver library
 
 DISTNAME=	unbound-1.15.0
+REVISION=	0
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS +=  unbound              4.1      # 9.3
@@ -25,6 +26,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # in sync with src/usr.sbin/unbound, apart from --enable-allsymbols
 # (enabled in src) and --with-pthreads (enabled here)
 CONFIGURE_ARGS+= \
+		--enable-event-api \
 		--enable-shared \
 		--with-ssl=/usr \
 		--with-libevent=/usr \

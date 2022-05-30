@@ -1,4 +1,5 @@
 @conflict unbound-*
+include/unbound-event.h
 include/unbound.h
 @static-lib lib/libunbound.a
 lib/libunbound.la
