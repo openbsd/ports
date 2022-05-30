@@ -42,7 +42,7 @@ Index: Src/Modules/zpty.c
 +    return 0;
 +}
 +
-+#elifdef USE_DEV_PTMX
++#elif defined USE_DEV_PTMX
 +
  #ifdef HAVE_SYS_STROPTS_H
  #include <sys/stropts.h>
