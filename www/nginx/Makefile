@@ -15,11 +15,9 @@ COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
 
-VERSION=	1.20.2
+VERSION=	1.22.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-
-REVISION-main=	0
 
 VERSION-rtmp=	1.2.1
 
@@ -37,8 +35,6 @@ PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
-
-REVISION-passenger=	0
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
@@ -184,6 +180,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-stream=dynamic \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
+			--without-pcre2 \
 			--add-dynamic-module=${WRKSRC}/naxsi/naxsi_src/ \
 			--add-dynamic-module=${WRKSRC}/ngx_devel_kit \
 			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module \

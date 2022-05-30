@@ -1,44 +1,7 @@
 Index: conf/mime.types
 --- conf/mime.types.orig
 +++ conf/mime.types
-@@ -15,6 +15,7 @@ types {
-     text/vnd.wap.wml                                 wml;
-     text/x-component                                 htc;
- 
-+    image/avif                                       avif;
-     image/png                                        png;
-     image/svg+xml                                    svg svgz;
-     image/tiff                                       tif tiff;
-@@ -40,22 +41,30 @@ types {
-     application/vnd.ms-excel                         xls;
-     application/vnd.ms-fontobject                    eot;
-     application/vnd.ms-powerpoint                    ppt;
-+    application/vnd.oasis.opendocument.chart                 odc;
-+    application/vnd.oasis.opendocument.chart-template        otc;
-+    application/vnd.oasis.opendocument.database              odb;
-+    application/vnd.oasis.opendocument.formula               odf;
-+    application/vnd.oasis.opendocument.formula-template      otf;
-+    application/vnd.oasis.opendocument.image                 odi;
-+    application/vnd.oasis.opendocument.image-template        oti;
-     application/vnd.oasis.opendocument.graphics      odg;
-+    application/vnd.oasis.opendocument.graphics-template     otg;
-     application/vnd.oasis.opendocument.presentation  odp;
-+    application/vnd.oasis.opendocument.presentation-template otp;
-     application/vnd.oasis.opendocument.spreadsheet   ods;
-+    application/vnd.oasis.opendocument.spreadsheet-template  ots;
-     application/vnd.oasis.opendocument.text          odt;
--    application/vnd.openxmlformats-officedocument.presentationml.presentation
--                                                     pptx;
--    application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
--                                                     xlsx;
--    application/vnd.openxmlformats-officedocument.wordprocessingml.document
--                                                     docx;
-+    application/vnd.oasis.opendocument.text-master           odm;
-+    application/vnd.oasis.opendocument.text-template         ott;
-+    application/vnd.oasis.opendocument.text-web              oth;
-     application/vnd.wap.wmlc                         wmlc;
-     application/x-7z-compressed                      7z;
-     application/x-cocoa                              cco;
+@@ -58,6 +58,7 @@ types {
      application/x-java-archive-diff                  jardiff;
      application/x-java-jnlp-file                     jnlp;
      application/x-makeself                           run;
@@ -46,23 +9,15 @@ Index: conf/mime.types
      application/x-perl                               pl pm;
      application/x-pilot                              prc pdb;
      application/x-rar-compressed                     rar;
-@@ -67,7 +76,6 @@ types {
-     application/x-x509-ca-cert                       der pem crt;
-     application/x-xpinstall                          xpi;
-     application/xhtml+xml                            xhtml;
--    application/xspf+xml                             xspf;
-     application/zip                                  zip;
- 
-     application/octet-stream                         bin exe dll;
-@@ -76,6 +84,7 @@ types {
+@@ -78,6 +79,7 @@ types {
      application/octet-stream                         iso img;
      application/octet-stream                         msi msp msm;
  
-+    audio/basic                           au snd;
++    audio/basic                                      au snd;
      audio/midi                                       mid midi kar;
      audio/mpeg                                       mp3;
      audio/ogg                                        ogg;
-@@ -90,6 +99,7 @@ types {
+@@ -92,6 +94,7 @@ types {
      video/webm                                       webm;
      video/x-flv                                      flv;
      video/x-m4v                                      m4v;
