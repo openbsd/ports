@@ -1,8 +1,7 @@
 COMMENT =		transparent file encryption in Git
 
-DISTNAME =		git-crypt-0.6.0
+DISTNAME =		git-crypt-0.7.0
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://www.agwa.name/projects/git-crypt/
 MAINTAINER =		Paco Esteban <paco@openbsd.org>
