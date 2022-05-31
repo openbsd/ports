@@ -1,5 +1,6 @@
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.105.0
+REVISION=	0
 
 CATEGORIES=	security
 
