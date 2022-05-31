@@ -3,14 +3,14 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	100.0.2
+MOZILLA_VERSION =	101.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	113.0
+SO_VERSION =	114.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3 ipcclientcerts
@@ -31,9 +31,14 @@ MODCLANG_ARCHS =	amd64 i386
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 #1670807
 BUILD_DEPENDS +=	devel/m4
+# wasi
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
+			lang/wasi-sdk/libcxxabi \
+			lang/wasi-sdk/libcxx \
+			lang/wasi-libc
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
@@ -51,7 +56,7 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
-CONFIGURE_ARGS +=	--without-wasm-sandboxed-libraries
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 
 # XXX badly formed debug ?

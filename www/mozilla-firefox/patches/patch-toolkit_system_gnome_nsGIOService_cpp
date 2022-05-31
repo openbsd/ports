@@ -10,18 +10,20 @@ unveiled.
 Index: toolkit/system/gnome/nsGIOService.cpp
 --- toolkit/system/gnome/nsGIOService.cpp.orig
 +++ toolkit/system/gnome/nsGIOService.cpp
-@@ -223,11 +223,21 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
+@@ -234,13 +234,24 @@ nsGIOMimeApp::LaunchWithURI(nsIURI* aUri,
    uris.data = const_cast<char*>(spec.get());
  
    GUniquePtr<GError> error;
--  gboolean result =
--      g_app_info_launch_uris(mApp, &uris, nullptr, getter_Transfers(error));
+-  gboolean result = g_app_info_launch_uris(
+-      mApp, &uris, GetLaunchContext().get(), getter_Transfers(error));
+-  if (!result) {
+-    g_warning("Cannot launch application: %s", error->message);
 +  gchar *path = g_filename_from_uri(spec.get(), NULL, NULL);
 +  const gchar *bin = g_app_info_get_executable(mApp);
 +  if (!bin) {
 +    g_warning("no executable found for %s, maybe not unveiled ?", g_app_info_get_name(mApp));
-+    return NS_ERROR_FAILURE;
-+  }
+     return NS_ERROR_FAILURE;
+   }
 +  g_message("LaunchWithURI: spawning %s %s for %s", bin, path, spec.get());
 +  const gchar * const argv[] = { bin, path, NULL };
  
@@ -29,13 +31,15 @@ Index: toolkit/system/gnome/nsGIOService.cpp
 +                                               G_SPAWN_DO_NOT_REAP_CHILD);
 +  gboolean result = g_spawn_async( NULL, (char**) argv, NULL, flags, NULL, NULL, NULL, getter_Transfers(error));
 +
-   if (!result) {
--    g_warning("Cannot launch application: %s", error->message);
++   if (!result) {
 +    g_warning("Cannot launch application %s with arg %s: %s", bin, path, error->message);
-     return NS_ERROR_FAILURE;
-   }
++    return NS_ERROR_FAILURE;
++  }
++
+   return NS_OK;
+ }
  
-@@ -481,23 +491,18 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
+@@ -491,23 +502,18 @@ nsGIOService::GetAppForMimeType(const nsACString& aMim
      return NS_ERROR_NOT_AVAILABLE;
    }
  
@@ -66,11 +70,11 @@ Index: toolkit/system/gnome/nsGIOService.cpp
    RefPtr<nsGIOMimeApp> mozApp = new nsGIOMimeApp(app_info.forget());
    mozApp.forget(aApp);
    return NS_OK;
-@@ -527,8 +532,24 @@ nsGIOService::ShowURI(nsIURI* aURI) {
-   nsresult rv = aURI->GetSpec(spec);
-   NS_ENSURE_SUCCESS(rv, rv);
+@@ -535,8 +541,24 @@ nsresult nsGIOService::ShowURI(nsIURI* aURI) {
+   nsAutoCString spec;
+   MOZ_TRY(aURI->GetSpec(spec));
    GUniquePtr<GError> error;
--  if (!g_app_info_launch_default_for_uri(spec.get(), nullptr,
+-  if (!g_app_info_launch_default_for_uri(spec.get(), GetLaunchContext().get(),
 -                                         getter_Transfers(error))) {
 +  gboolean result_uncertain;
 +  gchar *path = g_filename_from_uri(spec.get(), NULL, NULL);
@@ -93,11 +97,11 @@ Index: toolkit/system/gnome/nsGIOService.cpp
      g_warning("Could not launch default application for URI: %s",
                error->message);
      return NS_ERROR_FAILURE;
-@@ -542,8 +563,23 @@ nsGIOService::ShowURIForInput(const nsACString& aUri) 
-       g_file_new_for_commandline_arg(PromiseFlatCString(aUri).get()));
+@@ -549,8 +571,23 @@ static nsresult LaunchPath(const nsACString& aPath) {
+       g_file_new_for_commandline_arg(PromiseFlatCString(aPath).get()));
    GUniquePtr<char> spec(g_file_get_uri(file));
    GUniquePtr<GError> error;
--  g_app_info_launch_default_for_uri(spec.get(), nullptr,
+-  g_app_info_launch_default_for_uri(spec.get(), GetLaunchContext().get(),
 -                                    getter_Transfers(error));
 +  gboolean result_uncertain;
 +  gchar *path = g_filename_from_uri(spec.get(), NULL, NULL);
