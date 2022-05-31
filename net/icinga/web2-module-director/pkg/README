@@ -3,12 +3,9 @@
 +-------------------------------------------------------------------------------
 
 To use this module, assuming you already have a basic Icinga Web 2
-configuration, first you should enable the dependent modules and then
-Director itself:
+configuration, first you should enable the required modules:
 
-  # ${PREFIX}/icinga-web2/bin/icingacli module enable ipl; \
-    ${PREFIX}/icinga-web2/bin/icingacli module enable incubator; \
-    ${PREFIX}/icinga-web2/bin/icingacli module enable reactbundle; \
+  # ${PREFIX}/icinga-web2/bin/icingacli module enable incubator; \
     ${PREFIX}/icinga-web2/bin/icingacli module enable director
 
 You should have a list something like this:
@@ -16,11 +13,9 @@ You should have a list something like this:
   # ${PREFIX}/icinga-web2/bin/icingacli module list
 
     MODULE         VERSION   STATE     DESCRIPTION
-    director       1.8.0     enabled   Director - Config tool for Icinga 2
-    incubator      0.6.0     enabled   Incubator provides bleeding-edge libraries
-    ipl            v0.5.0    enabled   The Icinga PHP library
-    monitoring     2.8.2     enabled   Icinga monitoring module
-    reactbundle    0.8.0     enabled   ReactPHP-based 3rd party libraries
+    director       1.9.0     enabled   Director - Config tool for Icinga 2
+    incubator      0.13.0    enabled   Incubator provides bleeding-edge libraries
+    monitoring     2.10.0    enabled   Icinga monitoring module
 
 Then follow the instructions in the main Director documentation
 (https://github.com/Icinga/icingaweb2-module-director/tree/master/doc)
