@@ -36,7 +36,8 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 # bootstrap prevents a cyclic dep: gtk+{2,3}->cups->avahi->gtk+{2,3}
 LIB_DEPENDS-libs=	net/avahi,no_gui,bootstrap,-libs
 
-LIB_DEPENDS-main=	${BASE_PKGPATH},-libs=${VERSION} \
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			${BASE_PKGPATH},-libs=${VERSION} \
 			devel/libusb1
 
 RUN_DEPENDS-main=	print/cups-filters
