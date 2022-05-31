@@ -1,7 +1,7 @@
 Index: audio/audio_driver.c
 --- audio/audio_driver.c.orig
 +++ audio/audio_driver.c
-@@ -80,7 +80,7 @@ static const audio_driver_t *audio_drivers[] = {
+@@ -93,7 +93,7 @@ audio_driver_t *audio_drivers[] = {
  #if defined(HAVE_AUDIOIO)
     &audio_audioio,
  #endif

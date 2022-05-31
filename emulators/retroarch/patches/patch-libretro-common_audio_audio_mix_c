@@ -4,7 +4,7 @@ doesn't use it.
 Index: libretro-common/audio/audio_mix.c
 --- libretro-common/audio/audio_mix.c.orig
 +++ libretro-common/audio/audio_mix.c
-@@ -24,8 +24,6 @@
+@@ -28,8 +28,6 @@
  
  #if defined(__SSE2__)
  #include <emmintrin.h>
@@ -12,4 +12,4 @@ Index: libretro-common/audio/audio_mix.c
 -#include <altivec.h>
  #endif
  
- #include <stdio.h>
+ #include <retro_miscellaneous.h>
