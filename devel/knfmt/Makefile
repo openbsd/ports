@@ -1,6 +1,6 @@
 COMMENT =	kernel normal form formatter
 
-V =		2.0.0
+V =		2.1.0
 DISTNAME =	knfmt-${V}
 
 CATEGORIES =	devel
