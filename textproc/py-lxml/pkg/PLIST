@@ -134,6 +134,9 @@ share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/lxml/html/_setmixin.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/lxml/html/builder.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/lxml/html/formfill.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/lxml/isoschematron.html
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/xml/
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/xml/sax/
+share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_modules/xml/sax/handler.html
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_sources/
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_sources/index.rst.txt
 share/doc/${MODPY_PY_PREFIX}lxml/html/apidoc/_sources/lxml.ElementInclude.rst.txt

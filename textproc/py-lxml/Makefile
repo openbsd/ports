@@ -1,6 +1,6 @@
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_EGG_VERSION=	4.8.0
+MODPY_EGG_VERSION=	4.9.0
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
 
