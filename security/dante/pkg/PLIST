@@ -2,11 +2,12 @@
 @conflict socks5-*
 @newgroup _sockd:728
 @newuser _sockd:728:_sockd:daemon:sockd daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/sockd
 bin/socksify
 include/socks.h
 lib/libdsocks.la
 @lib lib/libdsocks.so.${LIBdsocks_VERSION}
-lib/libsocks.a
+@static-lib lib/libsocks.a
 lib/libsocks.la
 @lib lib/libsocks.so.${LIBsocks_VERSION}
 @man man/man1/socksify.1
@@ -31,4 +32,3 @@ share/examples/dante/socks-simple-withoutnameserver.conf
 share/examples/dante/socks-simple.conf
 @sample ${SYSCONFDIR}/socks.conf
 share/examples/dante/socks.conf
-@rcscript ${RCDIR}/sockd
