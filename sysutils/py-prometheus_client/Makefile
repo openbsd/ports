@@ -1,9 +1,8 @@
 COMMENT =		python client for the prometheus monitoring system
 
-MODPY_EGG_VERSION =	0.11.0
+MODPY_EGG_VERSION =	0.14.1
 DISTNAME =		prometheus_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		sysutils
 

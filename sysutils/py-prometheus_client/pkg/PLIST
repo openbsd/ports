@@ -54,6 +54,7 @@ lib/python${MODPY_VERSION}/site-packages/prometheus_client/openmetrics/parser.py
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/parser.py
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/platform_collector.py
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/process_collector.py
+lib/python${MODPY_VERSION}/site-packages/prometheus_client/py.typed
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/registry.py
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/samples.py
 lib/python${MODPY_VERSION}/site-packages/prometheus_client/twisted/
