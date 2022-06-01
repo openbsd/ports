@@ -1,6 +1,6 @@
 COMMENT =		client for the sslmate.com online certificate service
 
-DISTNAME =		sslmate-1.7.1
+DISTNAME =		sslmate-1.9.1
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://sslmate.com/
@@ -8,6 +8,8 @@ MASTER_SITES =		https://packages.sslmate.com/other/
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+PKG_ARCH =		*
 
 RUN_DEPENDS =		www/p5-libwww \
 			www/p5-LWP-Protocol-https
