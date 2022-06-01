@@ -1,6 +1,6 @@
 COMMENT =		lightweight HTTP/SSL proxy
 
-V =			1.11.0
+V =			1.11.1
 DISTNAME =		tinyproxy-$V
 CATEGORIES =		www net
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += c pthread
 
-BUILD_DEPENDS =		textproc/asciidoc>=8.6.8
+BUILD_DEPENDS =		textproc/asciidoc
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
