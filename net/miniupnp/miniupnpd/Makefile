@@ -1,7 +1,13 @@
 COMMENT=	UPnP IGD daemon
 
-DISTNAME=	miniupnpd-2.3.0
-REVISION=	0
+## this block can be removed when moving back to a proper release
+GH_ACCOUNT=	miniupnp
+GH_PROJECT=	miniupnp
+GH_COMMIT=	1cdf9ba7447ef409566740e7b74081970378cf18
+WRKDIST=	${WRKDIR}/miniupnp-${GH_COMMIT}/miniupnpd
+##
+
+DISTNAME=	miniupnpd-2.3.0pl20220601
 
 # uses pledge()
 WANTLIB += c crypto kvm ssl
