@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1394 2022/05/24 12:19:50 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.1395 2022/06/01 11:58:18 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -726,6 +726,7 @@ my $stem_extensions = {
 	'libgweather' => 'libgweather4',
 	'spidermonkey78' => 'spidermonkey91',
 	'gmime' => 'gmime30',
+	'fcitx-pinyin' => 'fcitx-chinese-addons',
 };
 
 my $obsolete_reason = {};
