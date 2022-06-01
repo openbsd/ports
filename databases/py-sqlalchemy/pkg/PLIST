@@ -1024,7 +1024,6 @@ share/doc/py-sqlalchemy/tutorial/index.html
 share/doc/py-sqlalchemy/tutorial/metadata.html
 share/doc/py-sqlalchemy/tutorial/orm_data_manipulation.html
 share/doc/py-sqlalchemy/tutorial/orm_related_objects.html
-share/doc/py-sqlalchemy/tutorial/tutorial_nav_include.html
 share/examples/py-sqlalchemy/
 share/examples/py-sqlalchemy/__init__.py
 share/examples/py-sqlalchemy/adjacency_list/
