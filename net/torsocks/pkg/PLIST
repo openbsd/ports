@@ -1,11 +1,15 @@
 bin/torsocks
 lib/torsocks/
-lib/torsocks/libtorsocks.a
+@static-lib lib/torsocks/libtorsocks.a
 lib/torsocks/libtorsocks.la
 @lib lib/torsocks/libtorsocks.so.${LIBtorsocks_VERSION}
 @man man/man1/torsocks.1
 @man man/man5/torsocks.conf.5
 @man man/man8/torsocks.8
+share/doc/torsocks/
+share/doc/torsocks/DEBUG
+share/doc/torsocks/SOCKS5
+share/doc/torsocks/socks-extensions.txt
 share/examples/torsocks/
 share/examples/torsocks/tor/
 share/examples/torsocks/tor/torsocks.conf

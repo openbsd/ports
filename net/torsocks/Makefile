@@ -1,11 +1,6 @@
 COMMENT =		socks proxy for use with tor
 
-DISTNAME =		torsocks-2.2.0
-REVISION =		0
-
-GH_PROJECT =		torsocks
-GH_ACCOUNT =		dgoulet
-GH_TAGNAME =		v2.2.0
+DISTNAME =		torsocks-2.3.0
 
 SHARED_LIBS =		torsocks	1.0 # 0.0
 
@@ -19,6 +14,9 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += pthread
+
+MASTER_SITES=	https://gitweb.torproject.org/torsocks.git/snapshot/
+EXTRACT_SUFX=	.tar.gz
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15

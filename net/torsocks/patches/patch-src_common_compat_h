@@ -20,7 +20,7 @@ Index: src/common/compat.h
  
  #if defined(__linux__)
  #include <unistd.h>
-@@ -176,7 +177,8 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
+@@ -196,7 +197,8 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
  
  #endif /* __linux__ */
  
@@ -30,7 +30,7 @@ Index: src/common/compat.h
  
  #include <sys/syscall.h>
  #include <unistd.h>
-@@ -195,7 +197,7 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
+@@ -215,7 +217,7 @@ void tsocks_once(tsocks_once_t *o, void (*init_routine
  #define TSOCKS_NR_LISTEN    SYS_listen
  #define TSOCKS_NR_RECVMSG   SYS_recvmsg
  
