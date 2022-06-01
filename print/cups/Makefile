@@ -34,7 +34,8 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS}
 
 # bootstrap prevents a cyclic dep: gtk+{2,3}->cups->avahi->gtk+{2,3}
-LIB_DEPENDS-libs=	net/avahi,no_gui,bootstrap,-libs
+LIB_DEPENDS-libs=	${LIB_DEPENDS} \
+			net/avahi,no_gui,bootstrap,-libs
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-libs=${VERSION} \
