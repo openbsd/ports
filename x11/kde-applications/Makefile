@@ -199,7 +199,6 @@
      SUBDIR += incidenceeditor
      #SUBDIR += kaccounts-integration
      #SUBDIR += kaccounts-providers
-     #SUBDIR += kalarmcal
      SUBDIR += kcalutils
      SUBDIR += kdeedu-data
      SUBDIR += kidentitymanagement
