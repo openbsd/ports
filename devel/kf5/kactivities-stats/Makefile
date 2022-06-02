@@ -1,7 +1,7 @@
 COMMENT =	statistics for the KDE Activity concept
 DISTNAME =	kactivities-stats-${VERSION}
 
-SHARED_LIBS =	KF5ActivitiesStats	10.0
+SHARED_LIBS =	KF5ActivitiesStats	10.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5ConfigCore Qt5Core
 WANTLIB += Qt5DBus Qt5Sql m
@@ -16,6 +16,6 @@ LIB_DEPENDS =	devel/kf5/kactivities>=${MODKF5_VERSION} \
 		devel/kf5/kconfig>=${MODKF5_VERSION}
 
 # For boost
-CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
+CXXFLAGS=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

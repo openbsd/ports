@@ -35,10 +35,6 @@ lib/cmake/KF5GuiAddons/KF5GuiAddonsConfigVersion.cmake
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5GuiAddons/KF5GuiAddonsTargets.cmake
 @lib lib/libKF5GuiAddons.so.${LIBKF5GuiAddons_VERSION}
-lib/qt5/plugins/kf5/
-lib/qt5/plugins/kf5/kguiaddons/
-lib/qt5/plugins/kf5/kguiaddons/kmodifierkey/
-@so lib/qt5/plugins/kf5/kguiaddons/kmodifierkey/kmodifierkey_xcb.so
 share/applications/google-maps-geo-handler.desktop
 share/applications/openstreetmap-geo-handler.desktop
 share/applications/qwant-maps-geo-handler.desktop

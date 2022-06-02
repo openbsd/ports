@@ -1,0 +1,12 @@
+Fake it
+Index: metainfo.yaml
+--- metainfo.yaml.orig
++++ metainfo.yaml
+@@ -8,6 +8,7 @@ release: true
+ platforms:
+     - name: Linux
+       note: Functional only with running BlueZ 5
++    - name: FreeBSD
+ libraries:
+     - qmake: BluezQt
+       cmake: KF5::BluezQt

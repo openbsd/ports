@@ -67,6 +67,7 @@ lib/qt5/qml/org/kde/kirigami.2/Label.qml
 lib/qt5/qml/org/kde/kirigami.2/LinkButton.qml
 lib/qt5/qml/org/kde/kirigami.2/ListItemDragHandle.qml
 lib/qt5/qml/org/kde/kirigami.2/ListSectionHeader.qml
+lib/qt5/qml/org/kde/kirigami.2/LoadingPlaceholder.qml
 lib/qt5/qml/org/kde/kirigami.2/MenuDialog.qml
 lib/qt5/qml/org/kde/kirigami.2/NavigationTabBar.qml
 lib/qt5/qml/org/kde/kirigami.2/NavigationTabButton.qml

@@ -8,7 +8,7 @@ HOMEPAGE ?=		https://projects.kde.org/projects/frameworks/${DISTNAME:C/-[0-9].*/
 # LGPLv2.1+, GPLv2+
 PERMIT_PACKAGE =	Yes
 
-CONFIGURE_STYLE =	cmake
+CONFIGURE_STYLE ?=	cmake
 MODULES :=		devel/kf5 ${MODULES}
 
 IS_PORTING_AID ?=	No

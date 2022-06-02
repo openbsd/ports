@@ -185,6 +185,7 @@ include/KF5/KIOGui/KIO/
 include/KF5/KIOGui/KIO/ApplicationLauncherJob
 include/KF5/KIOGui/KIO/CommandLauncherJob
 include/KF5/KIOGui/KIO/FavIconRequestJob
+include/KF5/KIOGui/KIO/KCoreUrlNavigator
 include/KF5/KIOGui/KIO/OpenUrlJob
 include/KF5/KIOGui/KTerminalLauncherJob
 include/KF5/KIOGui/kemailclientlauncherjob.h
@@ -192,6 +193,7 @@ include/KF5/KIOGui/kio/
 include/KF5/KIOGui/kio/applicationlauncherjob.h
 include/KF5/KIOGui/kio/commandlauncherjob.h
 include/KF5/KIOGui/kio/faviconrequestjob.h
+include/KF5/KIOGui/kio/kcoreurlnavigator.h
 include/KF5/KIOGui/kio/openurljob.h
 include/KF5/KIOGui/kiogui_export.h
 include/KF5/KIOGui/kterminallauncherjob.h
@@ -327,6 +329,7 @@ lib/qt5/plugins/kf5/urifilters/
 @bin libexec/kf5/kioslave5
 @bin libexec/kf5/kpac_dhcp_helper
 @man man/man8/kcookiejar5.8
+share/applications/kcm_trash.desktop
 share/applications/ktelnetservice5.desktop
 share/dbus-1/interfaces/kf5_org.kde.KCookieServer.xml
 share/dbus-1/interfaces/kf5_org.kde.KDirNotify.xml
@@ -1081,6 +1084,8 @@ share/kservices5/searchproviders/call.desktop
 share/kservices5/searchproviders/cia.desktop
 share/kservices5/searchproviders/citeseer.desktop
 share/kservices5/searchproviders/cpan.desktop
+share/kservices5/searchproviders/cplusplus.desktop
+share/kservices5/searchproviders/cppreference.desktop
 share/kservices5/searchproviders/ctan.desktop
 share/kservices5/searchproviders/ctan_cat.desktop
 share/kservices5/searchproviders/dbug.desktop
@@ -1102,6 +1107,7 @@ share/kservices5/searchproviders/en2it.desktop
 share/kservices5/searchproviders/es2en.desktop
 share/kservices5/searchproviders/facebook.desktop
 share/kservices5/searchproviders/feedster.desktop
+share/kservices5/searchproviders/flatpak.desktop
 share/kservices5/searchproviders/flickr.desktop
 share/kservices5/searchproviders/flickrcc.desktop
 share/kservices5/searchproviders/foldoc.desktop
@@ -1130,6 +1136,8 @@ share/kservices5/searchproviders/identica_notices.desktop
 share/kservices5/searchproviders/identica_people.desktop
 share/kservices5/searchproviders/imdb.desktop
 share/kservices5/searchproviders/invent.desktop
+share/kservices5/searchproviders/invent_issues.desktop
+share/kservices5/searchproviders/invent_mr.desktop
 share/kservices5/searchproviders/invent_repo.desktop
 share/kservices5/searchproviders/it2en.desktop
 share/kservices5/searchproviders/jamendo.desktop
@@ -1137,12 +1145,17 @@ share/kservices5/searchproviders/jeeves.desktop
 share/kservices5/searchproviders/kde.desktop
 share/kservices5/searchproviders/kde_apps.desktop
 share/kservices5/searchproviders/kde_forums.desktop
-share/kservices5/searchproviders/kde_look.desktop
+share/kservices5/searchproviders/kde_store.desktop
 share/kservices5/searchproviders/kde_techbase.desktop
 share/kservices5/searchproviders/kde_userbase.desktop
+share/kservices5/searchproviders/kreddit.desktop
+share/kservices5/searchproviders/krita.desktop
+share/kservices5/searchproviders/learncpp.desktop
 share/kservices5/searchproviders/leo.desktop
+share/kservices5/searchproviders/linguee.desktop
 share/kservices5/searchproviders/magnatune.desktop
 share/kservices5/searchproviders/metacrawler.desktop
+share/kservices5/searchproviders/microsoft_cpp.desktop
 share/kservices5/searchproviders/msdn.desktop
 share/kservices5/searchproviders/multitran-deru.desktop
 share/kservices5/searchproviders/multitran-enru.desktop
@@ -1154,11 +1167,13 @@ share/kservices5/searchproviders/netcraft.desktop
 share/kservices5/searchproviders/nl-telephone.desktop
 share/kservices5/searchproviders/nl-teletekst.desktop
 share/kservices5/searchproviders/opendesktop.desktop
+share/kservices5/searchproviders/opensuse.desktop
 share/kservices5/searchproviders/pgpkeys.desktop
 share/kservices5/searchproviders/php.desktop
+share/kservices5/searchproviders/protondb.desktop
 share/kservices5/searchproviders/python.desktop
-share/kservices5/searchproviders/qt.desktop
-share/kservices5/searchproviders/qt4.desktop
+share/kservices5/searchproviders/qt5.desktop
+share/kservices5/searchproviders/qt6.desktop
 share/kservices5/searchproviders/qwant.desktop
 share/kservices5/searchproviders/qwant_images.desktop
 share/kservices5/searchproviders/qwant_news.desktop
@@ -1167,15 +1182,18 @@ share/kservices5/searchproviders/qwant_social.desktop
 share/kservices5/searchproviders/qwant_videos.desktop
 share/kservices5/searchproviders/rae.desktop
 share/kservices5/searchproviders/rag.desktop
+share/kservices5/searchproviders/reddit.desktop
 share/kservices5/searchproviders/rfc.desktop
 share/kservices5/searchproviders/rpmfind.desktop
 share/kservices5/searchproviders/ruby_application_archive.desktop
+share/kservices5/searchproviders/rust.desktop
 share/kservices5/searchproviders/soundcloud.desktop
 share/kservices5/searchproviders/sourceforge.desktop
 share/kservices5/searchproviders/technorati.desktop
 share/kservices5/searchproviders/technoratitags.desktop
 share/kservices5/searchproviders/thesaurus.desktop
 share/kservices5/searchproviders/tvtome.desktop
+share/kservices5/searchproviders/ubuntu.desktop
 share/kservices5/searchproviders/urbandictionary.desktop
 share/kservices5/searchproviders/uspto.desktop
 share/kservices5/searchproviders/vimeo.desktop
@@ -1184,6 +1202,7 @@ share/kservices5/searchproviders/webster.desktop
 share/kservices5/searchproviders/wikia.desktop
 share/kservices5/searchproviders/wikipedia.desktop
 share/kservices5/searchproviders/wiktionary.desktop
+share/kservices5/searchproviders/wine.desktop
 share/kservices5/searchproviders/wolfram_alpha.desktop
 share/kservices5/searchproviders/wordref.desktop
 share/kservices5/searchproviders/yahoo.desktop
@@ -1191,6 +1210,7 @@ share/kservices5/searchproviders/yahoo_image.desktop
 share/kservices5/searchproviders/yahoo_local.desktop
 share/kservices5/searchproviders/yahoo_shopping.desktop
 share/kservices5/searchproviders/yahoo_video.desktop
+share/kservices5/searchproviders/yandex.desktop
 share/kservices5/searchproviders/youtube.desktop
 share/kservices5/smb.desktop
 share/kservices5/webshortcuts.desktop
@@ -1240,6 +1260,7 @@ share/locale/id/LC_MESSAGES/kio5.mo
 share/locale/is/LC_MESSAGES/kio5.mo
 share/locale/it/LC_MESSAGES/kio5.mo
 share/locale/ja/LC_MESSAGES/kio5.mo
+share/locale/ka/LC_MESSAGES/kio5.mo
 share/locale/kk/LC_MESSAGES/kio5.mo
 share/locale/km/LC_MESSAGES/kio5.mo
 share/locale/ko/LC_MESSAGES/kio5.mo
@@ -1276,6 +1297,7 @@ share/locale/sv/LC_MESSAGES/kio5.mo
 share/locale/ta/LC_MESSAGES/kio5.mo
 share/locale/tg/LC_MESSAGES/kio5.mo
 share/locale/th/LC_MESSAGES/kio5.mo
+share/locale/tok/LC_MESSAGES/kio5.mo
 share/locale/tr/LC_MESSAGES/kio5.mo
 share/locale/ug/LC_MESSAGES/kio5.mo
 share/locale/uk/LC_MESSAGES/kio5.mo

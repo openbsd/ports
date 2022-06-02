@@ -7,7 +7,7 @@ SHARED_LIBS += KF5PeopleWidgets  6.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5CoreAddons KF5I18n KF5ItemViews
 WANTLIB += KF5WidgetsAddons Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Qml Qt5Sql Qt5Widgets m
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql Qt5Widgets m
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/gettext,-tools

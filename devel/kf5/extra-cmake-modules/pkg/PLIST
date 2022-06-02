@@ -67,6 +67,7 @@ share/ECM/kde-modules/KDEInstallDirs.cmake
 share/ECM/kde-modules/KDEInstallDirs5.cmake
 share/ECM/kde-modules/KDEInstallDirs6.cmake
 share/ECM/kde-modules/KDEInstallDirsCommon.cmake
+share/ECM/kde-modules/KDEMetaInfoPlatformCheck.cmake
 share/ECM/kde-modules/KDEPackageAppTemplates.cmake
 share/ECM/kde-modules/KDESetupPrefixScript.cmake
 share/ECM/kde-modules/appstreamtest.cmake
@@ -116,6 +117,7 @@ share/ECM/modules/ECMQtDeclareLoggingCategory.cmake
 share/ECM/modules/ECMQtDeclareLoggingCategory.cpp.in
 share/ECM/modules/ECMQtDeclareLoggingCategory.h.in
 share/ECM/modules/ECMQueryQmake.cmake
+share/ECM/modules/ECMQueryQt.cmake
 share/ECM/modules/ECMSetupQtPluginMacroNames.cmake
 share/ECM/modules/ECMSetupVersion.cmake
 share/ECM/modules/ECMSourceVersionControl.cmake
@@ -186,6 +188,7 @@ share/doc/ECM/html/_sources/kde-module/KDEGitCommitHooks.rst.txt
 share/doc/ECM/html/_sources/kde-module/KDEInstallDirs.rst.txt
 share/doc/ECM/html/_sources/kde-module/KDEInstallDirs5.rst.txt
 share/doc/ECM/html/_sources/kde-module/KDEInstallDirs6.rst.txt
+share/doc/ECM/html/_sources/kde-module/KDEMetaInfoPlatformCheck.rst.txt
 share/doc/ECM/html/_sources/kde-module/KDEPackageAppTemplates.rst.txt
 share/doc/ECM/html/_sources/manual/
 share/doc/ECM/html/_sources/manual/ecm-developer.7.rst.txt
@@ -195,6 +198,7 @@ share/doc/ECM/html/_sources/manual/ecm-modules.7.rst.txt
 share/doc/ECM/html/_sources/manual/ecm-toolchains.7.rst.txt
 share/doc/ECM/html/_sources/manual/ecm.7.rst.txt
 share/doc/ECM/html/_sources/module/
+share/doc/ECM/html/_sources/module/CheckAtomic.rst.txt
 share/doc/ECM/html/_sources/module/ECMAddAppIcon.rst.txt
 share/doc/ECM/html/_sources/module/ECMAddQch.rst.txt
 share/doc/ECM/html/_sources/module/ECMAddQtDesignerPlugin.rst.txt
@@ -206,6 +210,7 @@ share/doc/ECM/html/_sources/module/ECMCreateQmFromPoFiles.rst.txt
 share/doc/ECM/html/_sources/module/ECMDeprecationSettings.rst.txt
 share/doc/ECM/html/_sources/module/ECMEnableSanitizers.rst.txt
 share/doc/ECM/html/_sources/module/ECMFindModuleHelpers.rst.txt
+share/doc/ECM/html/_sources/module/ECMFindQmlModule.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateDBusServiceFile.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateExportHeader.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateHeaders.rst.txt
@@ -218,14 +223,16 @@ share/doc/ECM/html/_sources/module/ECMMarkNonGuiExecutable.rst.txt
 share/doc/ECM/html/_sources/module/ECMOptionalAddSubdirectory.rst.txt
 share/doc/ECM/html/_sources/module/ECMPackageConfigHelpers.rst.txt
 share/doc/ECM/html/_sources/module/ECMPoQmTools.rst.txt
-share/doc/ECM/html/_sources/module/ECMQMLModules.rst.txt
+share/doc/ECM/html/_sources/module/ECMQmlModule.rst.txt
 share/doc/ECM/html/_sources/module/ECMQtDeclareLoggingCategory.rst.txt
+share/doc/ECM/html/_sources/module/ECMQueryQt.rst.txt
 share/doc/ECM/html/_sources/module/ECMSetupQtPluginMacroNames.rst.txt
 share/doc/ECM/html/_sources/module/ECMSetupVersion.rst.txt
 share/doc/ECM/html/_sources/module/ECMSourceVersionControl.rst.txt
 share/doc/ECM/html/_sources/module/ECMUninstallTarget.rst.txt
 share/doc/ECM/html/_sources/module/ECMUseFindModules.rst.txt
 share/doc/ECM/html/_sources/module/ECMWinResolveSymlinks.rst.txt
+share/doc/ECM/html/_sources/module/QtVersionOption.rst.txt
 share/doc/ECM/html/_sources/toolchain/
 share/doc/ECM/html/_sources/toolchain/Android.rst.txt
 share/doc/ECM/html/_static/
@@ -290,6 +297,7 @@ share/doc/ECM/html/kde-module/KDEGitCommitHooks.html
 share/doc/ECM/html/kde-module/KDEInstallDirs.html
 share/doc/ECM/html/kde-module/KDEInstallDirs5.html
 share/doc/ECM/html/kde-module/KDEInstallDirs6.html
+share/doc/ECM/html/kde-module/KDEMetaInfoPlatformCheck.html
 share/doc/ECM/html/kde-module/KDEPackageAppTemplates.html
 share/doc/ECM/html/manual/
 share/doc/ECM/html/manual/ecm-developer.7.html
@@ -299,6 +307,7 @@ share/doc/ECM/html/manual/ecm-modules.7.html
 share/doc/ECM/html/manual/ecm-toolchains.7.html
 share/doc/ECM/html/manual/ecm.7.html
 share/doc/ECM/html/module/
+share/doc/ECM/html/module/CheckAtomic.html
 share/doc/ECM/html/module/ECMAddAppIcon.html
 share/doc/ECM/html/module/ECMAddQch.html
 share/doc/ECM/html/module/ECMAddQtDesignerPlugin.html
@@ -310,6 +319,7 @@ share/doc/ECM/html/module/ECMCreateQmFromPoFiles.html
 share/doc/ECM/html/module/ECMDeprecationSettings.html
 share/doc/ECM/html/module/ECMEnableSanitizers.html
 share/doc/ECM/html/module/ECMFindModuleHelpers.html
+share/doc/ECM/html/module/ECMFindQmlModule.html
 share/doc/ECM/html/module/ECMGenerateDBusServiceFile.html
 share/doc/ECM/html/module/ECMGenerateExportHeader.html
 share/doc/ECM/html/module/ECMGenerateHeaders.html
@@ -322,14 +332,16 @@ share/doc/ECM/html/module/ECMMarkNonGuiExecutable.html
 share/doc/ECM/html/module/ECMOptionalAddSubdirectory.html
 share/doc/ECM/html/module/ECMPackageConfigHelpers.html
 share/doc/ECM/html/module/ECMPoQmTools.html
-share/doc/ECM/html/module/ECMQMLModules.html
+share/doc/ECM/html/module/ECMQmlModule.html
 share/doc/ECM/html/module/ECMQtDeclareLoggingCategory.html
+share/doc/ECM/html/module/ECMQueryQt.html
 share/doc/ECM/html/module/ECMSetupQtPluginMacroNames.html
 share/doc/ECM/html/module/ECMSetupVersion.html
 share/doc/ECM/html/module/ECMSourceVersionControl.html
 share/doc/ECM/html/module/ECMUninstallTarget.html
 share/doc/ECM/html/module/ECMUseFindModules.html
 share/doc/ECM/html/module/ECMWinResolveSymlinks.html
+share/doc/ECM/html/module/QtVersionOption.html
 share/doc/ECM/html/search.html
 share/doc/ECM/html/searchindex.js
 share/doc/ECM/html/toolchain/
