@@ -31,6 +31,7 @@
      SUBDIR += luasqlite3
      SUBDIR += mariadb
      SUBDIR += mdbtools
+     SUBDIR += mongo-tools
      SUBDIR += mongodb
      SUBDIR += mydumper
      SUBDIR += mysql-utilities
