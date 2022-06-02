@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.26 2020/01/26 13:02:32 sthen Exp $
+# $OpenBSD: Distant.pm,v 1.27 2022/06/02 08:52:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -41,6 +41,14 @@ sub is_alive
 sub coreclass
 {
 	return "DPB::Core::Distant";
+}
+
+sub create
+{
+	my ($class, $name, $prop) = @_;
+	my $o = $class->SUPER::create($name, $prop);
+	DPB::Ssh::Master->find($o);
+	return $o;
 }
 
 package DPB::Ssh;
