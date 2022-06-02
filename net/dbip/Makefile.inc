@@ -1,4 +1,4 @@
-V =		2022-05
+V =		2022-06
 
 CATEGORIES =	net
 
