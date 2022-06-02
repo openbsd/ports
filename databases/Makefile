@@ -230,6 +230,7 @@
      SUBDIR += tdb
      SUBDIR += tdbc
      SUBDIR += tdbc-mysql
+     SUBDIR += tdbc-odbc
      SUBDIR += tdbc-postgres
      SUBDIR += tdbc-sqlite3
      SUBDIR += timescaledb
