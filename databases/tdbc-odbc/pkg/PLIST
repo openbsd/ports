@@ -1,0 +1,5 @@
+lib/tcl/tdbcodbc/
+@so lib/tcl/tdbcodbc/libtdbcodbc${VER}.so
+lib/tcl/tdbcodbc/pkgIndex.tcl
+lib/tcl/tdbcodbc/tdbcodbc.tcl
+@man man/mann/tdbc_odbc.n
