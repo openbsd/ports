@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =		Akonadi calendar application
 
-DISTNAME =		kalendar-1.0.0
+DISTNAME =		kalendar-${MODKDE_VERSION}
 
 CATEGORIES =		productivity x11
 
@@ -13,7 +13,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3+, LGPL-2.1+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${MASTER_SITE_KDE:=stable/kalendar/}
+MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiAgentBase
 WANTLIB += KF5AkonadiCalendar KF5AkonadiContact KF5AkonadiCore
@@ -22,14 +22,13 @@ WANTLIB += KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5Contacts KF5CoreAddons KF5DBusAddons KF5EventViews
 WANTLIB += KF5GrantleeTheme KF5I18n KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5KIOCore KF5KIOGui KF5Mime KF5Notifications KF5PimTextEdit
-WANTLIB += KF5Service KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Location Qt5Network
-WANTLIB += Qt5Positioning Qt5PositioningQuick Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml X11 c m
+WANTLIB += KF5Mime KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml X11 c m
 
-MODULES =		devel/kf5
+MODULES =	x11/kde-applications \
+		devel/kf5
 
 CONFIGURE_STYLE =	cmake
 
@@ -43,6 +42,9 @@ BUILD_DEPENDS =		devel/boost \
 			devel/kf5/qqc2-desktop-style \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
+			devel/kf5/kio \
+			devel/kf5/kservice \
+			devel/kf5/knotifications \
 			misc/shared-mime-info
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -58,10 +60,7 @@ LIB_DEPENDS =		devel/kf5/kauth \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kdbusaddons \
 			devel/kf5/ki18n\
-			devel/kf5/kio \
 			devel/kf5/kitemmodels \
-			devel/kf5/knotifications \
-			devel/kf5/kservice \
 			devel/kf5/kwidgetsaddons  \
 			devel/kf5/kxmlgui \
 			x11/kde-applications/akonadi \
@@ -72,9 +71,7 @@ LIB_DEPENDS =		devel/kf5/kauth \
 			x11/kde-applications/kcalutils \
 			x11/kde-applications/kidentitymanagement \
 			x11/kde-applications/kmime \
-			x11/kde-applications/kpimtextedit \
 			x11/qt5/qtdeclarative \
-			x11/qt5/qtlocation \
 			x11/qt5/qtsvg
 
 
