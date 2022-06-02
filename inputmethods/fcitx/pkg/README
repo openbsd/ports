@@ -1,20 +1,18 @@
 +-----------------------------------------------------------------------
-| Setting up and running ${PKGSTEM} on OpenBSD
+| Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-The "fcitx5" package on its own focused on providing a framework for
-typing with many languages all over the world with a large number of
-engines. To make fcitx5 useful, the corresponding engines for your
-languages as well as supporting modules for your graphical environment
-(e.g. GTK/QT) need to be installed.
+The "fcitx" package provides a framework for multilingual typing.
+You will also need to install packages providing support for your
+chosen languages and graphical environments (e.g. Qt, GTK+).
 
-A basic installation of fcitx5 would be:
+A basic installation of fcitx would be:
 
-	# pkg_add fcitx5 fcitx5-config-qt fcitx5-gtk fcitx5-qt
-	# pkg_add $YOUR_PREFERED_INPUT_METHOD
+	# pkg_add fcitx fcitx-config-qt fcitx-gtk fcitx-qt
+	# pkg_add $YOUR_PREFERRED_INPUT_METHOD
 
-then configure fcitx5 to start with your DE/WM and setup your IM
-engine. For Chinese/Japanese/Korean user, remember to install a font
+then configure fcitx to start with your DE/WM and setup your IM
+engine. For Chinese/Japanese/Korean users, remember to install a font
 with CJK support. To install noto-cjk:
 
 	# pkg_add noto-cjk
@@ -22,12 +20,12 @@ with CJK support. To install noto-cjk:
 |=============================================================|
 | Language/Method    | Language engine package to install     |
 |=============================================================|
-| M17N               | fcitx5-m17n                            |
-| Vietnamese Telex   | fcitx5-unikey                          |
-| Korean             | fcitx5-hangul                          |
-| Japanese           | fcitx5-skk / fcitx5-kkc / fcitx5-anthy |
-| Symbols (e.g. IPA) | fcitx5-table-other                     |
-| Other tables [1]   | fcitx5-table-other                     |
+| M17N               | fcitx-m17n                             |
+| Vietnamese Telex   | fcitx-unikey                           |
+| Korean             | fcitx-hangul                           |
+| Japanese           | fcitx-skk / fcitx-kkc / fcitx-anthy    |
+| Symbols (e.g. IPA) | fcitx-table-other                      |
+| Other tables [1]   | fcitx-table-other                      |
 |=============================================================|
 
 [1]: https://github.com/fcitx/fcitx5-table-other/tree/master/tables
@@ -36,19 +34,19 @@ Chinese Method
 ==============
 
 For PinYin / CangJie / ShuangPin / WuBi / ErBi / ZiRanMa, install
-fcitx5-chinese-addons.
+fcitx-chinese-addons.
 
 For ZhengMa / Boshiamy / Quick and other WuBi / CangJie tables,
-install fcitx5-table-extra.
+install fcitx-table-extra.
 
-For ZhuYin, install fcitx5-chewing.
+For ZhuYin, install fcitx-chewing.
 
-Starting fcitx5
+Starting fcitx
 ===============
 
-You need to start fcitx5 with your desktop environment/window manager
-for it to be useful, if your desktop environment supports XDG Autostart,
-fcitx should start automatically. Otherwise, adding the following lines
+You need to start fcitx with your desktop environment/window manager
+for it to be useful. If your desktop environment supports XDG Autostart,
+fcitx should start automatically. Otherwise, add the following lines
 to ~/.xsession *BEFORE INVOKING YOUR DE/WM* and then login again:
 
 export XMODIFIERS=@im=fcitx
@@ -60,22 +58,21 @@ ${TRUEPREFIX}/bin/fcitx5 &
 Setting up input engines
 ========================
 
-To setup input engine, run fcitx5-configtool after starting fcitx5,
-then select and add your prefered input method from the Avaliable
+To setup an input engine, run fcitx5-configtool after starting fcitx5,
+then select and add your preferred input method from the Avaliable
 Input Method panel. You might need to uncheck 'Only Show Current
-Language' to find your prefered input method.
+Language' to find your preferred input method.
 
 Troubleshooting
 ===============
 
-Fcitx5 bundles with fcitx5-diagnose, a tool to help you troubleshoot,
-in case of sending bug report to upstream or openbsd-ports mailing
-list, remember to attach a copy of its output, with sensitive
-information removed.
+Fcitx includes fcitx5-diagnose, a tool to help you troubleshoot.
+If you need to send a bug report, remember to attach a copy of its
+output, with sensitive information removed.
 
 Migrating from fcitx4
 =====================
 
-Pinyin and table input method engines that are previous bundled inside
-fcitx4 are now packaged separately as "fcitx5-chinese-addons", install
+Pinyin and table input method engines were previously included in fcitx4.
+These are now packaged separately as "fcitx-chinese-addons", install
 it to use those methods.

@@ -2,7 +2,7 @@ COMMENT =	flexible input method framework
 
 DISTNAME =	fcitx5-5.0.15
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  Fcitx5Config			0.0 # 0.0
 SHARED_LIBS +=  Fcitx5Core			0.0 # 0.0
