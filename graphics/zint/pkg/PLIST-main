@@ -1,6 +1,7 @@
 @bin bin/zint
 include/zint.h
 @lib lib/libzint.so.${LIBzint_VERSION}
+@man man/man1/zint.1
 @comment share/applications/
 share/cmake/
 share/cmake/Modules/

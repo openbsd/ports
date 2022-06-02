@@ -1,12 +1,12 @@
 COMMENT-main =		library for encoding data in several barcode variants
 COMMENT-x11 = 		graphical interface for the zint barcode generator
 
-V = 			2.10.0
+V = 			2.11.0
 DISTNAME =		zint-${V}-src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
 
-SHARED_LIBS += 		zint	4.1 # 2.9
+SHARED_LIBS += 		zint	5.0
 
 CATEGORIES =		graphics
 
@@ -19,13 +19,14 @@ PERMIT_PACKAGE =	Yes
 
 cWANTLIB = c m png z
 WANTLIB-main = ${cWANTLIB}
-WANTLIB-x11 += ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml zint pthread
-WANTLIB-x11 += ${COMPILER_LIBCXX}
+WANTLIB-x11 += ${cWANTLIB} GL Qt5Core Qt5Gui Qt5Widgets Qt5Xml pthread
+WANTLIB-x11 += zint ${COMPILER_LIBCXX}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zint/}
 
 MODULES =		devel/cmake
-CONFIGURE_ARGS += 	-DDATA_INSTALL_DIR=OFF
+CONFIGURE_ARGS += 	-DDATA_INSTALL_DIR=OFF \
+			-DMAN_INSTALL_DIR=${PREFIX}/man
 
 LIB_DEPENDS-main = 		graphics/png
 
