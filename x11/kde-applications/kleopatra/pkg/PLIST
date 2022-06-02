@@ -214,7 +214,9 @@ share/locale/zh_TW/LC_MESSAGES/kleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/kwatchgnupg.mo
 share/metainfo/
 share/metainfo/org.kde.kleopatra.appdata.xml
+share/mime/packages/application-vnd-kde-kleopatra.xml
 share/qlogging-categories5/kleopatra.categories
 share/qlogging-categories5/kleopatra.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+@tag update-mime-database

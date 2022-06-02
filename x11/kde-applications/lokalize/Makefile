@@ -1,6 +1,5 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
-REVISION =	0
 CATEGORIES =	x11 devel
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
@@ -38,16 +37,13 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knotifications \
-		devel/kf5/kparts \
-		devel/kf5/kross \
 		devel/kf5/kservice \
 		devel/kf5/ktextwidgets \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
-		textproc/hunspell \
-		x11/qt5/qtscript
+		textproc/hunspell
 
 MODPY_ADJ_FILES =	scripts/xliffmerge.py
 

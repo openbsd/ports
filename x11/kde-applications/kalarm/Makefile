@@ -2,20 +2,23 @@ COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
 
+SHARED_LIBS +=  kalarmprivate             1.0 # 0.0
+
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
-WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5AlarmCalendar
-WANTLIB += KF5Auth KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
+WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
+WANTLIB += KF5AuthCore KF5Bookmarks KF5CalendarCore KF5CalendarUtils
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GlobalAccel KF5GrantleeTheme KF5GuiAddons
-WANTLIB += KF5Holidays KF5I18n KF5IdentityManagement KF5IdleTime
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5MailTransport
-WANTLIB += KF5MailTransportAkonadi KF5Mime KF5Notifications KF5NotifyConfig
-WANTLIB += KF5PimCommon KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c m phonon4qt5
+WANTLIB += KF5Holidays KF5I18n KF5IdentityManagement KF5IdentityManagementWidgets
+WANTLIB += KF5IdleTime KF5ItemModels KF5ItemViews KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mime KF5Notifications
+WANTLIB += KF5NotifyConfig KF5PimCommon KF5PimTextEdit KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
+WANTLIB += c m phonon4qt5
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -65,7 +68,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/grantleetheme \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
-		x11/kde-applications/kalarmcal \
 		x11/kde-applications/kcalutils \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmailtransport \

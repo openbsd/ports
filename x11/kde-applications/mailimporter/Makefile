@@ -8,9 +8,9 @@ SHARED_LIBS +=  KF5MailImporterAkonadi       1.0 # 5.13.2
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5I18n KF5ItemModels
-WANTLIB += KF5KIOCore KF5Mime KF5PimCommon KF5Service KF5WidgetsAddons
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml m
+WANTLIB += KF5KIOCore KF5Mime KF5PimCommon KF5PimTextEdit KF5Service
+WANTLIB += KF5WidgetsAddons Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

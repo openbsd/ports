@@ -24,6 +24,9 @@ lib/qt5/plugins/kf5/parts/
 share/applications/org.kde.ark.desktop
 share/config.kcfg/
 share/config.kcfg/ark.kcfg
+share/doc/HTML/ca/ark/
+share/doc/HTML/ca/ark/index.cache.bz2
+share/doc/HTML/ca/ark/index.docbook
 share/doc/HTML/de/ark/
 share/doc/HTML/de/ark/ark-mainwindow.png
 share/doc/HTML/de/ark/index.cache.bz2

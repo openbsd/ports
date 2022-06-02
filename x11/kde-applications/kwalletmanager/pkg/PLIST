@@ -4,6 +4,7 @@
 @bin libexec/kauth/kcm_kwallet_helper5
 share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
+share/dbus-1/services/org.kde.kwalletmanager5.service
 share/dbus-1/system-services/org.kde.kcontrol.kcmkwallet5.service
 share/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
@@ -78,9 +79,6 @@ share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwalletmanager2.png
 share/kservices5/kwalletconfig5.desktop
 share/kservices5/kwalletmanager5_show.desktop
-share/kxmlgui5/
-share/kxmlgui5/kwalletmanager5/
-share/kxmlgui5/kwalletmanager5/kwalletmanager.rc
 share/locale/ar/LC_MESSAGES/kcmkwallet.mo
 share/locale/ar/LC_MESSAGES/kwalletmanager.mo
 share/locale/az/LC_MESSAGES/kcmkwallet.mo

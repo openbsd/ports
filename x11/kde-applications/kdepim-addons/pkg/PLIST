@@ -17,13 +17,13 @@ lib/contacteditor/editorpageplugins/
 @lib lib/libkmaillanguagetool.so.${LIBkmaillanguagetool_VERSION}
 @lib lib/libkmailmarkdown.so.${LIBkmailmarkdown_VERSION}
 @lib lib/libkmailquicktextpluginprivate.so.${LIBkmailquicktextpluginprivate_VERSION}
+@lib lib/libopenurlwithconfigure.so.${LIBopenurlwithconfigure_VERSION}
 @lib lib/libscamconfiguresettings.so.${LIBscamconfiguresettings_VERSION}
 @lib lib/libshorturlpluginprivate.so.${LIBshorturlpluginprivate_VERSION}
 @so lib/qt5/plugins/akonadi/emailaddressselectionldapdialogplugin.so
 @so lib/qt5/plugins/importwizard/evolutionv1importerplugin.so
 @so lib/qt5/plugins/importwizard/evolutionv2importerplugin.so
 @so lib/qt5/plugins/importwizard/gearyimporterplugin.so
-@so lib/qt5/plugins/importwizard/nylasmailimporterplugin.so
 @so lib/qt5/plugins/importwizard/operaimporterplugin.so
 lib/qt5/plugins/kaddressbook/
 lib/qt5/plugins/kaddressbook/importexportplugin/
@@ -39,6 +39,7 @@ lib/qt5/plugins/kaddressbook/mainview/
 @so lib/qt5/plugins/kaddressbook/mainview/kaddressbook_searchduplicatesplugin.so
 @so lib/qt5/plugins/kaddressbook/mainview/kaddressbook_sendmailplugin.so
 @so lib/qt5/plugins/kaddressbook/mainview/kaddressbook_sendvcardsplugin.so
+@so lib/qt5/plugins/kf5/mailtransport/mailtransport_sendplugin.so
 lib/qt5/plugins/kmail/
 lib/qt5/plugins/kmail/mainview/
 @so lib/qt5/plugins/kmail/mainview/kmail_antispamplugin.so
@@ -73,7 +74,6 @@ lib/qt5/plugins/kmail/plugineditorinit/
 lib/qt5/plugins/libksieve/
 @so lib/qt5/plugins/libksieve/emaillineeditplugin.so
 @so lib/qt5/plugins/libksieve/imapfoldercompletionplugin.so
-@so lib/qt5/plugins/mailtransport/mailtransport_sendplugin.so
 lib/qt5/plugins/messageviewer/bodypartformatter/
 @so lib/qt5/plugins/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_gnupgwks.so
 @so lib/qt5/plugins/messageviewer/bodypartformatter/messageviewer_bodypartformatter_application_mstnef.so
@@ -90,6 +90,7 @@ lib/qt5/plugins/messageviewer/configuresettings/
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_expireaccounttrashfolderconfigplugin.so
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_folderconfiguresettingsplugin.so
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_gravatarconfigplugin.so
+@so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_openurlwithconfigplugin.so
 @so lib/qt5/plugins/messageviewer/configuresettings/messageviewer_scamconfiguresettingsplugin.so
 @so lib/qt5/plugins/messageviewer/grantlee/5.0/kitinerary_grantlee_extension.so
 @so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_briefheaderstyleplugin.so
@@ -169,6 +170,7 @@ share/locale/az/LC_MESSAGES/cryptopageplugin.mo
 share/locale/az/LC_MESSAGES/importwizard_plugins.mo
 share/locale/az/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/az/LC_MESSAGES/kmail_plugins.mo
+share/locale/az/LC_MESSAGES/korganizer_plugins.mo
 share/locale/az/LC_MESSAGES/messageviewer_bodypartformatter_pkpass.mo
 share/locale/az/LC_MESSAGES/pimeventsplugin.mo
 share/locale/be/LC_MESSAGES/kaddressbook_importexportplugins.mo

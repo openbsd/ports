@@ -1,5 +1,9 @@
-@so lib/qt5/plugins/kcm_kamera.so
 @so lib/qt5/plugins/kf5/kio/kio_kamera.so
+lib/qt5/plugins/plasma/
+lib/qt5/plugins/plasma/kcms/
+lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kamera.so
+share/applications/kamera.desktop
 share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/kamera/
 share/doc/HTML/ca/kcontrol/kamera/index.cache.bz2
@@ -64,8 +68,8 @@ share/doc/HTML/uk/kcontrol/
 share/doc/HTML/uk/kcontrol/kamera/
 share/doc/HTML/uk/kcontrol/kamera/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kamera/index.docbook
-share/kservices5/kamera.desktop
 share/locale/ar/LC_MESSAGES/kcmkamera.mo
+share/locale/ar/LC_MESSAGES/kio5_kamera.mo
 share/locale/ast/LC_MESSAGES/kio5_kamera.mo
 share/locale/az/LC_MESSAGES/kcmkamera.mo
 share/locale/az/LC_MESSAGES/kio5_kamera.mo
@@ -155,6 +159,7 @@ share/locale/ug/LC_MESSAGES/kcmkamera.mo
 share/locale/uk/LC_MESSAGES/kcmkamera.mo
 share/locale/uk/LC_MESSAGES/kio5_kamera.mo
 share/locale/vi/LC_MESSAGES/kcmkamera.mo
+share/locale/vi/LC_MESSAGES/kio5_kamera.mo
 share/locale/zh_CN/LC_MESSAGES/kcmkamera.mo
 share/locale/zh_CN/LC_MESSAGES/kio5_kamera.mo
 share/locale/zh_TW/LC_MESSAGES/kcmkamera.mo
@@ -164,3 +169,4 @@ share/metainfo/org.kde.kamera.metainfo.xml
 share/solid/
 share/solid/actions/
 share/solid/actions/solid_camera.desktop
+@tag update-desktop-database

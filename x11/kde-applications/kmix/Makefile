@@ -10,7 +10,7 @@ WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += Qt5Xml X11 c canberra m pulse pulse-mainloop-glib
+WANTLIB += Qt5Xml X11 c canberra m pulse
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

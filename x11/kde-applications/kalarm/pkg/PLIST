@@ -1,12 +1,12 @@
 @bin bin/kalarm
 @bin bin/kalarmautostart
+@lib lib/libkalarmprivate.so.${LIBkalarmprivate_VERSION}
 @bin libexec/kauth/kalarm_helper
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg
 share/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
 share/dbus-1/system-services/org.kde.kalarm.rtcwake.service
 share/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
 share/doc/HTML/ca/kalarm/
 share/doc/HTML/ca/kalarm/alarmmessage.png
 share/doc/HTML/ca/kalarm/editwindow-simple.png
@@ -45,9 +45,6 @@ share/doc/HTML/pt/kalarm/index.docbook
 share/doc/HTML/pt_BR/kalarm/
 share/doc/HTML/pt_BR/kalarm/index.cache.bz2
 share/doc/HTML/pt_BR/kalarm/index.docbook
-share/doc/HTML/ru/kalarm/
-share/doc/HTML/ru/kalarm/index.cache.bz2
-share/doc/HTML/ru/kalarm/index.docbook
 share/doc/HTML/sv/kalarm/
 share/doc/HTML/sv/kalarm/index.cache.bz2
 share/doc/HTML/sv/kalarm/index.docbook
@@ -58,7 +55,6 @@ share/examples/kalarm/
 share/examples/kalarm/xdg/
 share/examples/kalarm/xdg/autostart/
 share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/kalarm.autostart.desktop
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
 share/icons/hicolor/22x22/apps/kalarm.png
@@ -145,7 +141,7 @@ share/locale/zh_CN/LC_MESSAGES/kalarm.mo
 share/locale/zh_TW/LC_MESSAGES/kalarm.mo
 share/metainfo/org.kde.kalarm.appdata.xml
 share/polkit-1/actions/org.kde.kalarm.rtcwake.policy
-@tag update-desktop-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories5/kalarm.categories
 share/qlogging-categories5/kalarm.renamecategories
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database

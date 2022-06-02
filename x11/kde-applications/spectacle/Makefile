@@ -6,8 +6,8 @@ HOMEPAGE =	https://apps.kde.org/spectacle/
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5DBusAddons KF5GlobalAccel KF5I18n
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Kipi
+WANTLIB += KF5CoreAddons KF5DBusAddons KF5GlobalAccel KF5GuiAddons
+WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Purpose
 WANTLIB += KF5PurposeWidgets KF5Service KF5Solid KF5WaylandClient
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
@@ -41,7 +41,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kxmlgui \
 		devel/kf5/purpose \
 		devel/kf5/kwayland \
-		x11/kde-applications/libkipi \
 		x11/qt5/qtx11extras
 
 post-install:

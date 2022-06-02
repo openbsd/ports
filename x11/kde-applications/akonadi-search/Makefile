@@ -3,7 +3,7 @@ DISTNAME =	akonadi-search-${VERSION}
 CATEGORIES =	devel
 
 SHARED_LIBS +=  KF5AkonadiSearchCore           1.0 # 5.13.2
-SHARED_LIBS +=  KF5AkonadiSearchDebug          1.0 # 5.13.2
+SHARED_LIBS +=  KF5AkonadiSearchDebug          2.0 # 5.13.2
 SHARED_LIBS +=  KF5AkonadiSearchPIM            1.0 # 5.13.2
 SHARED_LIBS +=  KF5AkonadiSearchXapian         1.0 # 5.13.2
 

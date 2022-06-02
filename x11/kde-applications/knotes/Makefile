@@ -4,7 +4,7 @@ CATEGORIES =	net www
 
 HOMEPAGE =	http://knotesapp.com/
 
-SHARED_LIBS +=  knotesprivate           1.0 # 5.13.2
+SHARED_LIBS +=  knotesprivate           1.1 # 5.13.2
 SHARED_LIBS +=  notesharedprivate       3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates ICE KF5AkonadiAgentBase

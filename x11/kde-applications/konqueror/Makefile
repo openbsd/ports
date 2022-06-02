@@ -4,7 +4,7 @@ COMMENT =	KDE File Manager & Web Browser
 DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
-SHARED_LIBS +=  KF5Konq              1.1 # 5.97.0
+SHARED_LIBS +=  KF5Konq              1.2 # 5.97.0
 SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0
 SHARED_LIBS +=  konqsidebarplugin    1.1 # 20.08.0
 
@@ -18,7 +18,7 @@ WANTLIB += KF5Service KF5Solid KF5SonnetCore KF5SonnetUi KF5Su
 WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Script Qt5TextToSpeech Qt5WebChannel Qt5WebEngine
+WANTLIB += Qt5Quick Qt5TextToSpeech Qt5WebChannel Qt5WebEngine
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml SM X11 Xext c m z
 
@@ -65,7 +65,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/sonnet \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
-		x11/qt5/qtscript \
 		x11/qt5/qtspeech \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine \

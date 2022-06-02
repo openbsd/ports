@@ -128,7 +128,7 @@ include/KF5/KIMAP/kimap/statusjob.h
 include/KF5/KIMAP/kimap/storejob.h
 include/KF5/KIMAP/kimap/subscribejob.h
 include/KF5/KIMAP/kimap/unsubscribejob.h
-include/KF5/kimap_version.h
+include/KF5/KIMAP/kimap_version.h
 include/KF5/kimaptest/
 include/KF5/kimaptest/fakeserver.h
 include/KF5/kimaptest/mockjob.h
@@ -140,6 +140,7 @@ lib/cmake/KF5IMAP/KF5IMAPTargets.cmake
 @lib lib/libKF5IMAP.so.${LIBKF5IMAP_VERSION}
 @static-lib lib/libkimaptest.a
 share/kf5/mkspecs/qt_KIMAP.pri
+share/locale/ar/LC_MESSAGES/libkimap5.mo
 share/locale/bs/LC_MESSAGES/libkimap5.mo
 share/locale/ca/LC_MESSAGES/libkimap5.mo
 share/locale/ca@valencia/LC_MESSAGES/libkimap5.mo

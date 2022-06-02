@@ -3,6 +3,7 @@
 @bin bin/kate
 @bin bin/kwrite
 lib/qt5/plugins/ktexteditor/
+@so lib/qt5/plugins/ktexteditor/cmaketoolsplugin.so
 @so lib/qt5/plugins/ktexteditor/compilerexplorer.so
 @so lib/qt5/plugins/ktexteditor/externaltoolsplugin.so
 @so lib/qt5/plugins/ktexteditor/katebacktracebrowserplugin.so
@@ -287,6 +288,25 @@ share/doc/HTML/pt_BR/katepart/vi.docbook
 share/doc/HTML/pt_BR/kwrite/
 share/doc/HTML/pt_BR/kwrite/index.cache.bz2
 share/doc/HTML/pt_BR/kwrite/index.docbook
+share/doc/HTML/ru/kate/
+share/doc/HTML/ru/kate/configuring.docbook
+share/doc/HTML/ru/kate/development.docbook
+share/doc/HTML/ru/kate/fundamentals.docbook
+share/doc/HTML/ru/kate/index.cache.bz2
+share/doc/HTML/ru/kate/index.docbook
+share/doc/HTML/ru/kate/menus.docbook
+share/doc/HTML/ru/kate/plugins.docbook
+share/doc/HTML/ru/katepart/
+share/doc/HTML/ru/katepart/advanced.docbook
+share/doc/HTML/ru/katepart/configuring.docbook
+share/doc/HTML/ru/katepart/development.docbook
+share/doc/HTML/ru/katepart/fundamentals.docbook
+share/doc/HTML/ru/katepart/index.cache.bz2
+share/doc/HTML/ru/katepart/index.docbook
+share/doc/HTML/ru/katepart/menus.docbook
+share/doc/HTML/ru/katepart/part.docbook
+share/doc/HTML/ru/katepart/regular-expressions.docbook
+share/doc/HTML/ru/katepart/vi.docbook
 share/doc/HTML/ru/kwrite/
 share/doc/HTML/ru/kwrite/index.cache.bz2
 share/doc/HTML/ru/kwrite/index.docbook
@@ -1540,9 +1560,12 @@ share/locale/tr/LC_MESSAGES/kate.mo
 share/locale/tr/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/tr/LC_MESSAGES/katebuild-plugin.mo
 share/locale/tr/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/tr/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/tr/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/tr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/tr/LC_MESSAGES/katefiletree.mo
 share/locale/tr/LC_MESSAGES/kategdbplugin.mo
+share/locale/tr/LC_MESSAGES/kategitblameplugin.mo
 share/locale/tr/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/tr/LC_MESSAGES/kateproject.mo
 share/locale/tr/LC_MESSAGES/katesearch.mo
@@ -1552,7 +1575,9 @@ share/locale/tr/LC_MESSAGES/katesymbolviewer.mo
 share/locale/tr/LC_MESSAGES/katetextfilter.mo
 share/locale/tr/LC_MESSAGES/katexmlcheck.mo
 share/locale/tr/LC_MESSAGES/katexmltools.mo
+share/locale/tr/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/tr/LC_MESSAGES/kwrite.mo
+share/locale/tr/LC_MESSAGES/lspclient.mo
 share/locale/tr/LC_MESSAGES/plasma_applet_org.kde.plasma.katesessions.mo
 share/locale/tr/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ug/LC_MESSAGES/kate-ctags-plugin.mo

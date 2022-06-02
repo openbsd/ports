@@ -10,11 +10,10 @@ WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
 WANTLIB += KF5CoreAddons KF5GrantleeTheme KF5I18n KF5I18nLocaleData
 WANTLIB += KF5IconThemes KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Libkleo KF5Mime KF5Prison
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Mime KF5Prison KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 assuan gpgme
-WANTLIB += gpgmepp m qgpgme
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml X11 m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -39,8 +38,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kmime \
-		x11/kde-applications/libkleo
+		x11/kde-applications/kmime
 
 TEST_IS_INTERACTIVE =	X11
 

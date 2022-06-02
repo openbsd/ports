@@ -89,6 +89,7 @@ share/kollision/sounds/ball_leaving.ogg
 share/kollision/sounds/hit_wall.ogg
 share/kollision/sounds/start.ogg
 share/kollision/sounds/you_lose.ogg
+share/locale/ar/LC_MESSAGES/kollision.mo
 share/locale/bs/LC_MESSAGES/kollision.mo
 share/locale/ca/LC_MESSAGES/kollision.mo
 share/locale/ca@valencia/LC_MESSAGES/kollision.mo

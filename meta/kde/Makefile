@@ -258,7 +258,6 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/baloo-widgets \
 	x11/kde-applications/grantleetheme \
 	x11/kde-applications/incidenceeditor \
-	x11/kde-applications/kalarmcal \
 	x11/kde-applications/kcalutils \
 	x11/kde-applications/kdeedu-data \
 	x11/kde-applications/kidentitymanagement \

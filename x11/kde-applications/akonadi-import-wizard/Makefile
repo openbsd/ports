@@ -9,14 +9,14 @@ WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
 WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5GrantleeTheme KF5I18n KF5IMAP
-WANTLIB += KF5IdentityManagement KF5ItemModels KF5KIOCore KF5Libkdepim
-WANTLIB += KF5Libkleo KF5MailCommon KF5MailImporter KF5MailImporterAkonadi
-WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml assuan c gpgme
-WANTLIB += gpgmepp m qgpgme qt5keychain
+WANTLIB += KF5IdentityManagement KF5IdentityManagementWidgets
+WANTLIB += KF5ItemModels KF5KIOCore KF5Libkdepim KF5Libkleo KF5MailCommon
+WANTLIB += KF5MailImporter KF5MailImporterAkonadi KF5MailTransport
+WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer
+WANTLIB += KF5Mime KF5MimeTreeParser KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5PimTextEdit KF5Service KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml assuan c gpgme gpgmepp m qgpgme qt5keychain
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
@@ -48,6 +48,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/kmime \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/libkdepim \
+		x11/kde-applications/libkleo \
 		x11/kde-applications/mailimporter \
 		x11/kde-applications/messagelib \
 		x11/kde-applications/pimcommon \

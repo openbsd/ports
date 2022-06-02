@@ -4,7 +4,7 @@ COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_VERSION}
 
-SHARED_LIBS +=  ktcore                    2.1 # 0.0
+SHARED_LIBS +=  ktcore                    3.0 # 0.0
 
 CATEGORIES =	net
 
@@ -31,8 +31,8 @@ WANTLIB += Qt5Widgets Qt5Xml X11 c gcrypt gmp m phonon4qt5 tag
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
-MODULES =	x11/kde-applications \
-		devel/kf5
+MODULES =		x11/kde-applications \
+			devel/kf5
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost

@@ -182,6 +182,8 @@ share/ktouch/courses/fr.dvarok.xml
 share/ktouch/courses/fr.xml
 share/ktouch/courses/gb.xml
 share/ktouch/courses/gr.xml
+share/ktouch/courses/in.mal_enhanced1.xml
+share/ktouch/courses/in.mal_enhanced2.xml
 share/ktouch/courses/ir.xml
 share/ktouch/courses/it.xml
 share/ktouch/courses/it2.xml
@@ -228,6 +230,7 @@ share/ktouch/keyboardlayouts/gb.xml
 share/ktouch/keyboardlayouts/hu.xml
 share/ktouch/keyboardlayouts/il.xml
 share/ktouch/keyboardlayouts/in.kan.xml
+share/ktouch/keyboardlayouts/in.mal_enhanced.xml
 share/ktouch/keyboardlayouts/in.tam_unicode.xml
 share/ktouch/keyboardlayouts/ir.xml
 share/ktouch/keyboardlayouts/it.xml
@@ -279,6 +282,8 @@ share/locale/he/LC_MESSAGES/ktouch.mo
 share/locale/hi/LC_MESSAGES/ktouch.mo
 share/locale/hr/LC_MESSAGES/ktouch.mo
 share/locale/hu/LC_MESSAGES/ktouch.mo
+share/locale/ia/LC_MESSAGES/ktouch.mo
+share/locale/id/LC_MESSAGES/ktouch.mo
 share/locale/is/LC_MESSAGES/ktouch.mo
 share/locale/it/LC_MESSAGES/ktouch.mo
 share/locale/ja/LC_MESSAGES/ktouch.mo

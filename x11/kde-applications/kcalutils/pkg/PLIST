@@ -1,6 +1,7 @@
 include/KF5/KCalUtils/
 include/KF5/KCalUtils/KCalUtils/
 include/KF5/KCalUtils/KCalUtils/DndFactory
+include/KF5/KCalUtils/KCalUtils/HTMLExportSettings
 include/KF5/KCalUtils/KCalUtils/HtmlExport
 include/KF5/KCalUtils/KCalUtils/ICalDrag
 include/KF5/KCalUtils/KCalUtils/IncidenceFormatter
@@ -8,7 +9,6 @@ include/KF5/KCalUtils/KCalUtils/RecurrenceActions
 include/KF5/KCalUtils/KCalUtils/Stringify
 include/KF5/KCalUtils/KCalUtils/VCalDrag
 include/KF5/KCalUtils/kcalutils/
-include/KF5/KCalUtils/kcalutils/HTMLExportSettings
 include/KF5/KCalUtils/kcalutils/dndfactory.h
 include/KF5/KCalUtils/kcalutils/htmlexport.h
 include/KF5/KCalUtils/kcalutils/htmlexportsettings.h
@@ -18,7 +18,7 @@ include/KF5/KCalUtils/kcalutils/kcalutils_export.h
 include/KF5/KCalUtils/kcalutils/recurrenceactions.h
 include/KF5/KCalUtils/kcalutils/stringify.h
 include/KF5/KCalUtils/kcalutils/vcaldrag.h
-include/KF5/kcalutils_version.h
+include/KF5/KCalUtils/kcalutils_version.h
 lib/cmake/KF5CalendarUtils/
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsConfig.cmake
 lib/cmake/KF5CalendarUtils/KF5CalendarUtilsConfigVersion.cmake

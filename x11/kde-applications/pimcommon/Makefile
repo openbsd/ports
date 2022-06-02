@@ -2,8 +2,8 @@ COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5PimCommon              2.3 # 5.13.3
-SHARED_LIBS +=  KF5PimCommonAkonadi       5.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommon              3.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommonAkonadi       6.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiSearchPIM KF5AkonadiWidgets

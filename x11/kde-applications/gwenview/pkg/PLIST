@@ -6,6 +6,7 @@
 lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/gvpart.so
 share/applications/org.kde.gwenview.desktop
+share/applications/org.kde.gwenview_importer.desktop
 share/doc/HTML/ca/gwenview/
 share/doc/HTML/ca/gwenview/browse_mode.png
 share/doc/HTML/ca/gwenview/index.cache.bz2
@@ -57,6 +58,9 @@ share/doc/HTML/pt/gwenview/index.docbook
 share/doc/HTML/pt_BR/gwenview/
 share/doc/HTML/pt_BR/gwenview/index.cache.bz2
 share/doc/HTML/pt_BR/gwenview/index.docbook
+share/doc/HTML/ru/gwenview/
+share/doc/HTML/ru/gwenview/index.cache.bz2
+share/doc/HTML/ru/gwenview/index.docbook
 share/doc/HTML/sr/gwenview/
 share/doc/HTML/sr/gwenview/index.cache.bz2
 share/doc/HTML/sr/gwenview/index.docbook

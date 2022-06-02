@@ -2,10 +2,13 @@
 @pkgpath x11/kde4/konsole
 @bin bin/konsole
 bin/konsoleprofile
+lib/kconf_update_bin/
+@bin lib/kconf_update_bin/konsole_globalaccel
 @lib lib/libkonsoleapp.so.${LIBkonsoleapp_VERSION}
 @lib lib/libkonsoleprivate.so.${LIBkonsoleprivate_VERSION}
 @so lib/qt5/plugins/konsolepart.so
 lib/qt5/plugins/konsoleplugins/
+@so lib/qt5/plugins/konsoleplugins/konsole_quickcommandsplugin.so
 @so lib/qt5/plugins/konsoleplugins/konsole_sshmanagerplugin.so
 share/applications/org.kde.konsole.desktop
 share/doc/HTML/ca/konsole/
@@ -33,6 +36,9 @@ share/doc/HTML/pt_BR/konsole/
 share/doc/HTML/pt_BR/konsole/draganddrop-contextmenu.png
 share/doc/HTML/pt_BR/konsole/index.cache.bz2
 share/doc/HTML/pt_BR/konsole/index.docbook
+share/doc/HTML/ru/konsole/
+share/doc/HTML/ru/konsole/index.cache.bz2
+share/doc/HTML/ru/konsole/index.docbook
 share/doc/HTML/sr/konsole/
 share/doc/HTML/sr/konsole/index.cache.bz2
 share/doc/HTML/sr/konsole/index.docbook
@@ -46,8 +52,10 @@ share/doc/HTML/uk/konsole/index.docbook
 share/doc/HTML/zh_CN/konsole/
 share/doc/HTML/zh_CN/konsole/index.cache.bz2
 share/doc/HTML/zh_CN/konsole/index.docbook
-share/khotkeys/
-share/khotkeys/konsole.khotkeys
+share/kconf_update/konsole_globalaccel.upd
+share/kio/
+share/kio/servicemenus/
+share/kio/servicemenus/konsolerun.desktop
 share/knotifications5/konsole.notifyrc
 share/knsrcfiles/
 share/knsrcfiles/konsole.knsrc
@@ -71,8 +79,6 @@ share/konsole/default.keytab
 share/konsole/linux.keytab
 share/konsole/macos.keytab
 share/konsole/solaris.keytab
-share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/konsolerun.desktop
 share/kservices5/konsolepart.desktop
 share/kservicetypes5/terminalemulator.desktop
 share/locale/ar/LC_MESSAGES/konsole.mo

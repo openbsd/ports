@@ -3,7 +3,7 @@ DISTNAME =	libkdegames-${VERSION}
 PKGNAME =	libkdegames-kf5-${VERSION}
 CATEGORIES =	devel games
 
-SHARED_LIBS +=  KF5KDEGames               3.0 # 7.0
+SHARED_LIBS +=  KF5KDEGames               3.1 # 7.0
 SHARED_LIBS +=  KF5KDEGamesPrivate        3.0 # 1.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore

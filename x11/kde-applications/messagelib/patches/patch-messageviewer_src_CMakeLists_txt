@@ -1,7 +1,7 @@
 Index: messageviewer/src/CMakeLists.txt
 --- messageviewer/src/CMakeLists.txt.orig
 +++ messageviewer/src/CMakeLists.txt
-@@ -43,9 +43,6 @@ set_package_properties(Qca-qt5 PROPERTIES DESCRIPTION 
+@@ -37,9 +37,6 @@ set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPE
  
  configure_file(config-messageviewer.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-messageviewer.h)
  

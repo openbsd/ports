@@ -1,4 +1,21 @@
 @conflict kdebase-<4
+include/KCddb5/
+include/KCddb5/KCDDB/
+include/KCddb5/KCDDB/CDInfo
+include/KCddb5/KCDDB/Categories
+include/KCddb5/KCDDB/Client
+include/KCddb5/KCDDB/Config
+include/KCddb5/KCDDB/Genres
+include/KCddb5/KCDDB/KCDDB
+include/KCddb5/kcddb/
+include/KCddb5/kcddb/categories.h
+include/KCddb5/kcddb/cdinfo.h
+include/KCddb5/kcddb/client.h
+include/KCddb5/kcddb/config.h
+include/KCddb5/kcddb/configbase.h
+include/KCddb5/kcddb/genres.h
+include/KCddb5/kcddb/kcddb.h
+include/KCddb5/kcddb/kcddb_export.h
 include/KF5/KCddb/
 include/KF5/KCddb/Categories
 include/KF5/KCddb/Cdinfo
@@ -9,10 +26,8 @@ include/KF5/KCddb/KcddbConfig
 include/KF5/KCddb/categories.h
 include/KF5/KCddb/cdinfo.h
 include/KF5/KCddb/client.h
-include/KF5/KCddb/configbase.h
 include/KF5/KCddb/genres.h
 include/KF5/KCddb/kcddb.h
-include/KF5/KCddb/kcddb_export.h
 include/KF5/KCddb/kcddbconfig.h
 include/KF5/kcddb_version.h
 lib/cmake/KF5Cddb/

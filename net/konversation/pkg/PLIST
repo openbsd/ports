@@ -1,5 +1,6 @@
 @bin bin/konversation
 share/applications/org.kde.konversation.desktop
+share/dbus-1/services/org.kde.konversation.service
 share/doc/HTML/ca/konversation/
 share/doc/HTML/ca/konversation/index.cache.bz2
 share/doc/HTML/ca/konversation/index.docbook
@@ -38,6 +39,7 @@ share/doc/HTML/en/konversation/led_green_on.png
 share/doc/HTML/en/konversation/led_red_on.png
 share/doc/HTML/en/konversation/led_yellow_on.png
 share/doc/HTML/en/konversation/logviewer_co.png
+share/doc/HTML/en/konversation/monospace-text.png
 share/doc/HTML/en/konversation/nicksonline_co.png
 share/doc/HTML/en/konversation/nickthemes_screen_co.png
 share/doc/HTML/en/konversation/notification_screen_co.png
@@ -92,6 +94,9 @@ share/doc/HTML/pt/konversation/index.docbook
 share/doc/HTML/pt_BR/konversation/
 share/doc/HTML/pt_BR/konversation/index.cache.bz2
 share/doc/HTML/pt_BR/konversation/index.docbook
+share/doc/HTML/ru/konversation/
+share/doc/HTML/ru/konversation/index.cache.bz2
+share/doc/HTML/ru/konversation/index.docbook
 share/doc/HTML/sv/konversation/
 share/doc/HTML/sv/konversation/addchannel.png
 share/doc/HTML/sv/konversation/addnetwork_co.png

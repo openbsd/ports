@@ -2,7 +2,8 @@ COMMENT =	KDE pim identities
 DISTNAME =	kidentitymanagement-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5IdentityManagement     1.2 # 5.10
+SHARED_LIBS +=  KF5IdentityManagement        2.0 # 5.10
+SHARED_LIBS +=  KF5IdentityManagementWidgets 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

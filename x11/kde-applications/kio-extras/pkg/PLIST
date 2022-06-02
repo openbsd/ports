@@ -6,14 +6,6 @@ lib/cmake/KioArchive/KioArchiveConfigVersion.cmake
 lib/cmake/KioArchive/KioArchiveTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KioArchive/KioArchiveTargets.cmake
 @lib lib/libkioarchive.so.${LIBkioarchive_VERSION}
-@so lib/qt5/plugins/audiothumbnail.so
-@so lib/qt5/plugins/comicbookthumbnail.so
-@so lib/qt5/plugins/cursorthumbnail.so
-@so lib/qt5/plugins/djvuthumbnail.so
-@so lib/qt5/plugins/ebookthumbnail.so
-@so lib/qt5/plugins/exrthumbnail.so
-@so lib/qt5/plugins/imagethumbnail.so
-@so lib/qt5/plugins/jpegthumbnail.so
 @so lib/qt5/plugins/kf5/kded/filenamesearchmodule.so
 @so lib/qt5/plugins/kf5/kded/recentdocumentsnotifier.so
 @so lib/qt5/plugins/kf5/kded/smbwatcher.so
@@ -35,13 +27,22 @@ lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kio/smb.so
 @so lib/qt5/plugins/kf5/kio/thumbnail.so
 @so lib/qt5/plugins/kf5/kiod/kmtpd.so
+lib/qt5/plugins/kf5/thumbcreator/
+@so lib/qt5/plugins/kf5/thumbcreator/audiothumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/comicbookthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/cursorthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/djvuthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/ebookthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/exrthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/imagethumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/jpegthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/kritathumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/opendocumentthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/svgthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/textthumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/windowsexethumbnail.so
+@so lib/qt5/plugins/kf5/thumbcreator/windowsimagethumbnail.so
 @so lib/qt5/plugins/kfileaudiopreview.so
-@so lib/qt5/plugins/kritathumbnail.so
-@so lib/qt5/plugins/opendocumentthumbnail.so
-@so lib/qt5/plugins/svgthumbnail.so
-@so lib/qt5/plugins/textthumbnail.so
-@so lib/qt5/plugins/windowsexethumbnail.so
-@so lib/qt5/plugins/windowsimagethumbnail.so
 @bin libexec/kf5/smbnotifier
 share/config.kcfg/
 share/config.kcfg/jpegcreatorsettings5.kcfg
@@ -479,21 +480,45 @@ share/doc/HTML/pt_BR/kioslave5/thumbnail/index.docbook
 share/doc/HTML/pt_BR/kioslave5/xz/
 share/doc/HTML/pt_BR/kioslave5/xz/index.cache.bz2
 share/doc/HTML/pt_BR/kioslave5/xz/index.docbook
+share/doc/HTML/ru/kioslave5/bookmarks/
+share/doc/HTML/ru/kioslave5/bookmarks/index.cache.bz2
+share/doc/HTML/ru/kioslave5/bookmarks/index.docbook
+share/doc/HTML/ru/kioslave5/bzip2/
+share/doc/HTML/ru/kioslave5/bzip2/index.cache.bz2
+share/doc/HTML/ru/kioslave5/bzip2/index.docbook
+share/doc/HTML/ru/kioslave5/fish/
+share/doc/HTML/ru/kioslave5/fish/index.cache.bz2
+share/doc/HTML/ru/kioslave5/fish/index.docbook
 share/doc/HTML/ru/kioslave5/gzip/
 share/doc/HTML/ru/kioslave5/gzip/index.cache.bz2
 share/doc/HTML/ru/kioslave5/gzip/index.docbook
+share/doc/HTML/ru/kioslave5/info/
+share/doc/HTML/ru/kioslave5/info/index.cache.bz2
+share/doc/HTML/ru/kioslave5/info/index.docbook
+share/doc/HTML/ru/kioslave5/man/
+share/doc/HTML/ru/kioslave5/man/index.cache.bz2
+share/doc/HTML/ru/kioslave5/man/index.docbook
 share/doc/HTML/ru/kioslave5/nfs/
 share/doc/HTML/ru/kioslave5/nfs/index.cache.bz2
 share/doc/HTML/ru/kioslave5/nfs/index.docbook
+share/doc/HTML/ru/kioslave5/recentdocuments/
+share/doc/HTML/ru/kioslave5/recentdocuments/index.cache.bz2
+share/doc/HTML/ru/kioslave5/recentdocuments/index.docbook
 share/doc/HTML/ru/kioslave5/sftp/
 share/doc/HTML/ru/kioslave5/sftp/index.cache.bz2
 share/doc/HTML/ru/kioslave5/sftp/index.docbook
+share/doc/HTML/ru/kioslave5/smb/
+share/doc/HTML/ru/kioslave5/smb/index.cache.bz2
+share/doc/HTML/ru/kioslave5/smb/index.docbook
 share/doc/HTML/ru/kioslave5/tar/
 share/doc/HTML/ru/kioslave5/tar/index.cache.bz2
 share/doc/HTML/ru/kioslave5/tar/index.docbook
 share/doc/HTML/ru/kioslave5/thumbnail/
 share/doc/HTML/ru/kioslave5/thumbnail/index.cache.bz2
 share/doc/HTML/ru/kioslave5/thumbnail/index.docbook
+share/doc/HTML/ru/kioslave5/xz/
+share/doc/HTML/ru/kioslave5/xz/index.cache.bz2
+share/doc/HTML/ru/kioslave5/xz/index.docbook
 share/doc/HTML/sr/kioslave5/bookmarks/
 share/doc/HTML/sr/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/sr/kioslave5/bookmarks/index.docbook
@@ -572,6 +597,9 @@ share/doc/HTML/sv/kioslave5/thumbnail/index.docbook
 share/doc/HTML/sv/kioslave5/xz/
 share/doc/HTML/sv/kioslave5/xz/index.cache.bz2
 share/doc/HTML/sv/kioslave5/xz/index.docbook
+share/doc/HTML/sv/kioslave5/zstd/
+share/doc/HTML/sv/kioslave5/zstd/index.cache.bz2
+share/doc/HTML/sv/kioslave5/zstd/index.docbook
 share/doc/HTML/uk/kioslave5/bookmarks/
 share/doc/HTML/uk/kioslave5/bookmarks/index.cache.bz2
 share/doc/HTML/uk/kioslave5/bookmarks/index.docbook
@@ -626,21 +654,7 @@ share/konqueror/dirtree/
 share/konqueror/dirtree/remote/
 share/konqueror/dirtree/remote/mtp-network.desktop
 share/konqueror/dirtree/remote/smb-network.desktop
-share/kservices5/audiothumbnail.desktop
-share/kservices5/comicbookthumbnail.desktop
-share/kservices5/cursorthumbnail.desktop
 share/kservices5/directorythumbnail.desktop
-share/kservices5/djvuthumbnail.desktop
-share/kservices5/ebookthumbnail.desktop
-share/kservices5/exrthumbnail.desktop
-share/kservices5/imagethumbnail.desktop
-share/kservices5/jpegthumbnail.desktop
-share/kservices5/kraorathumbnail.desktop
-share/kservices5/opendocumentthumbnail.desktop
-share/kservices5/svgthumbnail.desktop
-share/kservices5/textthumbnail.desktop
-share/kservices5/windowsexethumbnail.desktop
-share/kservices5/windowsimagethumbnail.desktop
 share/kservicetypes5/thumbcreator.desktop
 share/locale/ar/LC_MESSAGES/kfileaudiopreview5.mo
 share/locale/ar/LC_MESSAGES/kio5_activities.mo
@@ -936,6 +950,7 @@ share/locale/hu/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/hu/LC_MESSAGES/kio5_fish.mo
 share/locale/hu/LC_MESSAGES/kio5_info.mo
 share/locale/hu/LC_MESSAGES/kio5_man.mo
+share/locale/hu/LC_MESSAGES/kio5_mtp.mo
 share/locale/hu/LC_MESSAGES/kio5_nfs.mo
 share/locale/hu/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/hu/LC_MESSAGES/kio5_sftp.mo
@@ -955,11 +970,13 @@ share/locale/ia/LC_MESSAGES/kio5_sftp.mo
 share/locale/ia/LC_MESSAGES/kio5_smb.mo
 share/locale/ia/LC_MESSAGES/kio5_thumbnail.mo
 share/locale/id/LC_MESSAGES/kfileaudiopreview5.mo
+share/locale/id/LC_MESSAGES/kio5_activities.mo
 share/locale/id/LC_MESSAGES/kio5_archive.mo
 share/locale/id/LC_MESSAGES/kio5_bookmarks.mo
 share/locale/id/LC_MESSAGES/kio5_fish.mo
 share/locale/id/LC_MESSAGES/kio5_info.mo
 share/locale/id/LC_MESSAGES/kio5_man.mo
+share/locale/id/LC_MESSAGES/kio5_mtp.mo
 share/locale/id/LC_MESSAGES/kio5_nfs.mo
 share/locale/id/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/id/LC_MESSAGES/kio5_sftp.mo
@@ -1397,6 +1414,7 @@ share/locale/zh_TW/LC_MESSAGES/kio5_recentdocuments.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_sftp.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_smb.mo
 share/locale/zh_TW/LC_MESSAGES/kio5_thumbnail.mo
+share/mime/packages/org.kde.kio.smb.xml
 share/qlogging-categories5/kio-extras.categories
 share/qlogging-categories5/kio-extras.renamecategories
 share/remoteview/

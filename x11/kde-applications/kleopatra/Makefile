@@ -21,7 +21,8 @@ MODKDE5_DOCS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-RUN_DEPENDS =	security/gnupg
+RUN_DEPENDS =	security/gnupg \
+		misc/shared-mime-info
 
 BUILD_DEPENDS =	devel/boost \
 		devel/git

@@ -1,16 +1,15 @@
 COMMENT =	Hex Editor
-VERSION =	0.26.6
+VERSION =	0.26.8
 DISTNAME =	okteta-${VERSION}
 CATEGORIES =	editors
 EPOCH =		0
-REVISION =	1
 
-SHARED_LIBS +=  Kasten4Controllers        0.1 # 0.4
+SHARED_LIBS +=  Kasten4Controllers        0.3 # 0.4
 SHARED_LIBS +=  Kasten4Core               0.0 # 0.4
-SHARED_LIBS +=  Kasten4Gui                0.0 # 0.4
-SHARED_LIBS +=  Kasten4Okteta2Controllers 0.0 # 0.4
+SHARED_LIBS +=  Kasten4Gui                0.2 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Controllers 0.2 # 0.4
 SHARED_LIBS +=  Kasten4Okteta2Core        0.0 # 0.4
-SHARED_LIBS +=  Kasten4Okteta2Gui         0.0 # 0.4
+SHARED_LIBS +=  Kasten4Okteta2Gui         0.2 # 0.4
 SHARED_LIBS +=  Okteta3Core               0.0 # 0.10
 SHARED_LIBS +=  Okteta3Gui                0.2 # 0.10
 

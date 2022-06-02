@@ -11,6 +11,23 @@
 @bin bin/akonadiserver
 @bin bin/akonaditest
 @bin bin/asapcat
+include/KF5/Akonadi/
+include/KF5/Akonadi/akonadi/
+include/KF5/Akonadi/akonadi/private/
+include/KF5/Akonadi/akonadi/private/akonadiprivate_export.h
+include/KF5/Akonadi/akonadi/private/capabilities_p.h
+include/KF5/Akonadi/akonadi/private/compressionstream_p.h
+include/KF5/Akonadi/akonadi/private/dbus_p.h
+include/KF5/Akonadi/akonadi/private/externalpartstorage_p.h
+include/KF5/Akonadi/akonadi/private/imapparser_p.h
+include/KF5/Akonadi/akonadi/private/imapset_p.h
+include/KF5/Akonadi/akonadi/private/instance_p.h
+include/KF5/Akonadi/akonadi/private/protocol_exception_p.h
+include/KF5/Akonadi/akonadi/private/protocol_gen.h
+include/KF5/Akonadi/akonadi/private/protocol_p.h
+include/KF5/Akonadi/akonadi/private/scope_p.h
+include/KF5/Akonadi/akonadi/private/standarddirs_p.h
+include/KF5/Akonadi/akonadi/private/tristate_p.h
 include/KF5/AkonadiAgentBase/
 include/KF5/AkonadiAgentBase/Akonadi/
 include/KF5/AkonadiAgentBase/Akonadi/AccountsIntegration
@@ -134,6 +151,7 @@ include/KF5/AkonadiCore/Akonadi/UnlinkJob
 include/KF5/AkonadiCore/Akonadi/VectorHelper
 include/KF5/AkonadiCore/akonadi/
 include/KF5/AkonadiCore/akonadi/abstractdifferencesreporter.h
+include/KF5/AkonadiCore/akonadi/abstractsearchplugin.h
 include/KF5/AkonadiCore/akonadi/agentconfigurationbase.h
 include/KF5/AkonadiCore/akonadi/agentconfigurationfactorybase.h
 include/KF5/AkonadiCore/akonadi/agentfilterproxymodel.h
@@ -305,23 +323,6 @@ include/KF5/AkonadiXml/akonadi/xmldocument.h
 include/KF5/AkonadiXml/akonadi/xmlreader.h
 include/KF5/AkonadiXml/akonadi/xmlwritejob.h
 include/KF5/AkonadiXml/akonadi/xmlwriter.h
-include/KF5/akonadi/
-include/KF5/akonadi/abstractsearchplugin.h
-include/KF5/akonadi/private/
-include/KF5/akonadi/private/akonadiprivate_export.h
-include/KF5/akonadi/private/capabilities_p.h
-include/KF5/akonadi/private/compressionstream_p.h
-include/KF5/akonadi/private/dbus_p.h
-include/KF5/akonadi/private/externalpartstorage_p.h
-include/KF5/akonadi/private/imapparser_p.h
-include/KF5/akonadi/private/imapset_p.h
-include/KF5/akonadi/private/instance_p.h
-include/KF5/akonadi/private/protocol_exception_p.h
-include/KF5/akonadi/private/protocol_gen.h
-include/KF5/akonadi/private/protocol_p.h
-include/KF5/akonadi/private/scope_p.h
-include/KF5/akonadi/private/standarddirs_p.h
-include/KF5/akonadi/private/tristate_p.h
 include/KF5/akonadi_version.h
 lib/cmake/KF5Akonadi/
 lib/cmake/KF5Akonadi/KF5AkonadiConfig.cmake
@@ -379,8 +380,6 @@ share/icons/hicolor/32x32/apps/akonadi.png
 share/icons/hicolor/48x48/apps/akonadi.png
 share/icons/hicolor/64x64/apps/akonadi.png
 share/icons/hicolor/scalable/apps/akonadi.svgz
-share/kdevappwizard/templates/akonadiresource.tar.bz2
-share/kdevappwizard/templates/akonadiserializer.tar.bz2
 share/kf5/akonadi/
 share/kf5/akonadi/akonadi-xml.xsd
 share/kf5/akonadi/kcfg2dbus.xsl

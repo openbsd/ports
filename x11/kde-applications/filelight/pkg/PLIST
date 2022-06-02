@@ -1,6 +1,9 @@
 @pkgpath x11/kde4/filelight
 @bin bin/filelight
 share/applications/org.kde.filelight.desktop
+share/doc/HTML/ca/filelight/
+share/doc/HTML/ca/filelight/index.cache.bz2
+share/doc/HTML/ca/filelight/index.docbook
 share/doc/HTML/de/filelight/
 share/doc/HTML/de/filelight/config_appear.png
 share/doc/HTML/de/filelight/config_scan.png

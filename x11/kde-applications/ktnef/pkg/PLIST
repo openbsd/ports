@@ -18,7 +18,7 @@ include/KF5/KTNEF/ktnef/ktnefparser.h
 include/KF5/KTNEF/ktnef/ktnefproperty.h
 include/KF5/KTNEF/ktnef/ktnefpropertyset.h
 include/KF5/KTNEF/ktnef/ktnefwriter.h
-include/KF5/ktnef_version.h
+include/KF5/KTNEF/ktnef_version.h
 lib/cmake/KF5Tnef/
 lib/cmake/KF5Tnef/KF5TnefConfig.cmake
 lib/cmake/KF5Tnef/KF5TnefConfigVersion.cmake

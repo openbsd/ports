@@ -53,7 +53,6 @@ share/doc/HTML/nl/lokalize/index.docbook
 share/doc/HTML/pt/lokalize/
 share/doc/HTML/pt/lokalize/index.cache.bz2
 share/doc/HTML/pt/lokalize/index.docbook
-share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/lokalize/
 share/doc/HTML/pt_BR/lokalize/index.cache.bz2
 share/doc/HTML/pt_BR/lokalize/index.docbook
@@ -85,7 +84,6 @@ share/icons/hicolor/128x128/apps/lokalize.png
 share/icons/hicolor/32x32/apps/lokalize.png
 share/icons/hicolor/64x64/apps/lokalize.png
 share/icons/hicolor/scalable/apps/lokalize.svgz
-share/knotifications5/
 share/knotifications5/lokalize.notifyrc
 share/kxmlgui5/
 share/kxmlgui5/lokalize/

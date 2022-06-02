@@ -17,6 +17,5 @@ lib/cmake/KPimPkPass/KPimPkPassConfigVersion.cmake
 lib/cmake/KPimPkPass/KPimPkPassTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPimPkPass/KPimPkPassTargets.cmake
 @lib lib/libKPimPkPass.so.${LIBKPimPkPass_VERSION}
-share/mime/packages/application-vnd-apple-pkpass.xml
 share/qlogging-categories5/org_kde_kpkpass.categories
 @tag update-mime-database

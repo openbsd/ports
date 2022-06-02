@@ -7,10 +7,10 @@ HOMEPAGE =	https://kate-editor.org/
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Package KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Package
+WANTLIB += KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
@@ -46,17 +46,14 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kguiaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
-		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/knewstuff \
 		devel/kf5/kpackage \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
-		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
 		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
 		devel/kf5/kwallet \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \

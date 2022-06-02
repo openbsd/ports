@@ -14,8 +14,8 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
 WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Notifications
 WANTLIB += KF5NotifyConfig KF5Parts KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c m phonon4qt5 qca-qt5
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5Widgets Qt5Xml X11 c m qca-qt5
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3
@@ -27,9 +27,11 @@ MODULES =	x11/kde-applications \
 		devel/kf5 \
 		lang/python
 
-BUILD_DEPENDS =	devel/kf5/kdoctools \
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/kf5/kdoctools \
 		devel/kf5/kitemmodels \
-		devel/gettext,-tools
+		multimedia/phonon \
+		x11/qt5/qtx11extras
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
@@ -47,16 +49,14 @@ LIB_DEPENDS =	devel/kf5/karchive  \
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
 		devel/kf5/knewstuff \
-		devel/kf5/knotifications  \
+		devel/kf5/knotifications \
 		devel/kf5/knotifyconfig \
 		devel/kf5/kparts \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/solid \
-		multimedia/phonon \
-		security/qca-qt5 \
-		x11/qt5/qtx11extras
+		security/qca-qt5
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

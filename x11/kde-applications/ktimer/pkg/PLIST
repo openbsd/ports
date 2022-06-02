@@ -46,9 +46,6 @@ share/doc/HTML/pt_BR/ktimer/index.docbook
 share/doc/HTML/pt_BR/ktimer/main.png
 share/doc/HTML/pt_BR/ktimer/running.png
 share/doc/HTML/pt_BR/ktimer/two_at_once.png
-share/doc/HTML/ru/ktimer/
-share/doc/HTML/ru/ktimer/index.cache.bz2
-share/doc/HTML/ru/ktimer/index.docbook
 share/doc/HTML/sr/ktimer/
 share/doc/HTML/sr/ktimer/index.cache.bz2
 share/doc/HTML/sr/ktimer/index.docbook
@@ -122,6 +119,7 @@ share/locale/tg/LC_MESSAGES/ktimer.mo
 share/locale/tr/LC_MESSAGES/ktimer.mo
 share/locale/ug/LC_MESSAGES/ktimer.mo
 share/locale/uk/LC_MESSAGES/ktimer.mo
+share/locale/vi/LC_MESSAGES/ktimer.mo
 share/locale/zh_CN/LC_MESSAGES/ktimer.mo
 share/locale/zh_TW/LC_MESSAGES/ktimer.mo
 share/metainfo/

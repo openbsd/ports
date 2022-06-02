@@ -61,6 +61,11 @@ share/doc/HTML/pt_BR/step/examples.docbook
 share/doc/HTML/pt_BR/step/index.cache.bz2
 share/doc/HTML/pt_BR/step/index.docbook
 share/doc/HTML/pt_BR/step/tutorials.docbook
+share/doc/HTML/ru/step/
+share/doc/HTML/ru/step/examples.docbook
+share/doc/HTML/ru/step/index.cache.bz2
+share/doc/HTML/ru/step/index.docbook
+share/doc/HTML/ru/step/tutorials.docbook
 share/doc/HTML/sv/step/
 share/doc/HTML/sv/step/examples.docbook
 share/doc/HTML/sv/step/index.cache.bz2

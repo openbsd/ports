@@ -79,6 +79,9 @@ share/doc/HTML/pt_BR/kgpg/keyserver.png
 share/doc/HTML/pt_BR/kgpg/options.png
 share/doc/HTML/pt_BR/kgpg/select-secret-key.png
 share/doc/HTML/pt_BR/kgpg/systray.png
+share/doc/HTML/ru/kgpg/
+share/doc/HTML/ru/kgpg/index.cache.bz2
+share/doc/HTML/ru/kgpg/index.docbook
 share/doc/HTML/sr/kgpg/
 share/doc/HTML/sr/kgpg/index.cache.bz2
 share/doc/HTML/sr/kgpg/index.docbook
@@ -148,9 +151,9 @@ share/icons/hicolor/scalable/status/key-single.svgz
 share/kgpg/
 share/kgpg/tips
 share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/encryptfile.desktop
-share/kservices5/ServiceMenus/encryptfolder.desktop
-share/kservices5/ServiceMenus/viewdecrypted.desktop
+share/kservices5/ServiceMenus/kgpg_encryptfile.desktop
+share/kservices5/ServiceMenus/kgpg_encryptfolder.desktop
+share/kservices5/ServiceMenus/kgpg_viewdecrypted.desktop
 share/kxmlgui5/
 share/kxmlgui5/kgpg/
 share/kxmlgui5/kgpg/keysmanager.rc

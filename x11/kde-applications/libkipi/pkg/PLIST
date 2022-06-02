@@ -43,3 +43,4 @@ share/kxmlgui5/
 share/kxmlgui5/kipi/
 share/kxmlgui5/kipi/kipiplugin_kxmlhelloworldui.rc
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/kipi.categories

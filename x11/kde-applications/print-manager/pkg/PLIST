@@ -3,18 +3,20 @@
 @bin bin/kde-add-printer
 @bin bin/kde-print-queue
 @lib lib/libkcupslib.so.${LIBkcupslib_VERSION}
-@so lib/qt5/plugins/kcm_printer_manager.so
 @so lib/qt5/plugins/kf5/kded/printmanager.so
+lib/qt5/plugins/plasma/
+lib/qt5/plugins/plasma/kcms/
+lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_printer_manager.so
 lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/printmanager/
 @so lib/qt5/qml/org/kde/plasma/printmanager/libprintmanager.so
 lib/qt5/qml/org/kde/plasma/printmanager/qmldir
+share/applications/kcm_printer_manager.desktop
 share/applications/org.kde.ConfigurePrinter.desktop
 share/applications/org.kde.PrintQueue.desktop
 share/applications/org.kde.kde-add-printer.desktop
 share/knotifications5/printmanager.notifyrc
-share/kservices5/kcm_printer_manager.desktop
-share/kservices5/plasma-applet-org.kde.plasma.printmanager.desktop
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
 share/locale/ar/LC_MESSAGES/print-manager.mo
 share/locale/ast/LC_MESSAGES/plasma_applet_org.kde.plasma.printmanager.mo
@@ -126,6 +128,5 @@ share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PopupDialog.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/PrinterItem.qml
 share/plasma/plasmoids/org.kde.plasma.printmanager/contents/ui/printmanager.qml
-share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.printmanager/metadata.json
 @tag update-desktop-database

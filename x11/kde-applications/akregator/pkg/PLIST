@@ -90,9 +90,6 @@ share/doc/HTML/pt/akregator/index.docbook
 share/doc/HTML/pt_BR/akregator/
 share/doc/HTML/pt_BR/akregator/index.cache.bz2
 share/doc/HTML/pt_BR/akregator/index.docbook
-share/doc/HTML/ru/akregator/
-share/doc/HTML/ru/akregator/index.cache.bz2
-share/doc/HTML/ru/akregator/index.docbook
 share/doc/HTML/sv/akregator/
 share/doc/HTML/sv/akregator/index.cache.bz2
 share/doc/HTML/sv/akregator/index.docbook
@@ -123,17 +120,7 @@ share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/64x64/apps/akregator.png
 share/icons/hicolor/scalable/apps/akregator.svg
 share/knotifications5/akregator.notifyrc
-share/kservices5/akregator_config_advanced.desktop
-share/kservices5/akregator_config_appearance.desktop
-share/kservices5/akregator_config_archive.desktop
-share/kservices5/akregator_config_browser.desktop
-share/kservices5/akregator_config_general.desktop
-share/kservices5/akregator_config_plugins.desktop
-share/kservices5/akregator_config_security.desktop
-share/kservices5/akregator_config_userfeedback.desktop
 share/kservices5/akregator_mk4storage_plugin.desktop
-share/kservices5/kontact/
-share/kservices5/kontact/akregatorplugin.desktop
 share/kservicetypes5/akregator_plugin.desktop
 share/locale/ar/LC_MESSAGES/akregator.mo
 share/locale/az/LC_MESSAGES/akregator.mo

@@ -8,13 +8,13 @@ WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
 WANTLIB += KF5AuthCore KF5CalendarCore KF5CalendarUtils KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5Contacts KF5CoreAddons KF5GrantleeTheme KF5I18n
-WANTLIB += KF5IdentityManagement KF5ItemModels KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5PimTextEdit KF5Service KF5Solid KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += X11 m
+WANTLIB += KF5Contacts KF5CoreAddons KF5DBusAddons KF5GrantleeTheme
+WANTLIB += KF5I18n KF5IdentityManagement KF5ItemModels KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5MailTransport
+WANTLIB += KF5MailTransportAkonadi KF5Mime KF5Notifications KF5Service
+WANTLIB += KF5Solid KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_TRANSLATIONS = yes
 

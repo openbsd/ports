@@ -1,8 +1,8 @@
 Index: mimetreeparser/src/CMakeLists.txt
 --- mimetreeparser/src/CMakeLists.txt.orig
 +++ mimetreeparser/src/CMakeLists.txt
-@@ -9,9 +9,6 @@ if (BUILD_QCH)
- endif()
+@@ -3,9 +3,6 @@
+ 
  add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser\")
  
 -# target_include_directories does not handle empty include paths
@@ -11,7 +11,7 @@ Index: mimetreeparser/src/CMakeLists.txt
  add_library(KF5MimeTreeParser)
  add_library(KF5::MimeTreeParser ALIAS KF5MimeTreeParser)
  
-@@ -156,6 +153,10 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+@@ -150,6 +147,10 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
      set_target_properties(KF5MimeTreeParser PROPERTIES UNITY_BUILD ON)
  endif()
  

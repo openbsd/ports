@@ -1,7 +1,7 @@
 Index: kaddressbook/importexportplugins/vcards/CMakeLists.txt
 --- kaddressbook/importexportplugins/vcards/CMakeLists.txt.orig
 +++ kaddressbook/importexportplugins/vcards/CMakeLists.txt
-@@ -24,7 +24,11 @@ target_link_libraries(kaddressbook_importexportvcardpl
+@@ -27,7 +27,11 @@ target_link_libraries(kaddressbook_importexportvcardpl
      KF5::Contacts
      KF5::JobWidgets
      KF5::AkonadiContact

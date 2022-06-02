@@ -191,20 +191,6 @@ share/doc/HTML/pt_BR/umbrello/umbrello-ui.png
 share/doc/HTML/pt_BR/umbrello/uml_basics.docbook
 share/doc/HTML/pt_BR/umbrello/use-case-diagram.png
 share/doc/HTML/pt_BR/umbrello/working_with_umbrello.docbook
-share/doc/HTML/ru/umbrello/
-share/doc/HTML/ru/umbrello/apphelp/
-share/doc/HTML/ru/umbrello/apphelp/index.cache.bz2
-share/doc/HTML/ru/umbrello/apphelp/index.docbook
-share/doc/HTML/ru/umbrello/authors.docbook
-share/doc/HTML/ru/umbrello/code_import_and_generation.docbook
-share/doc/HTML/ru/umbrello/credits.docbook
-share/doc/HTML/ru/umbrello/index.cache.bz2
-share/doc/HTML/ru/umbrello/index.docbook
-share/doc/HTML/ru/umbrello/introduction.docbook
-share/doc/HTML/ru/umbrello/other_features.docbook
-share/doc/HTML/ru/umbrello/settings.docbook
-share/doc/HTML/ru/umbrello/uml_basics.docbook
-share/doc/HTML/ru/umbrello/working_with_umbrello.docbook
 share/doc/HTML/sv/umbrello/
 share/doc/HTML/sv/umbrello/apphelp/
 share/doc/HTML/sv/umbrello/apphelp/index.cache.bz2
@@ -318,6 +304,7 @@ share/locale/hr/LC_MESSAGES/umbrello_kdevphp5.mo
 share/locale/hu/LC_MESSAGES/umbrello.mo
 share/locale/hu/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/hu/LC_MESSAGES/umbrello_kdevphp5.mo
+share/locale/ia/LC_MESSAGES/umbrello.mo
 share/locale/it/LC_MESSAGES/umbrello.mo
 share/locale/it/LC_MESSAGES/umbrello_kdevphp.mo
 share/locale/it/LC_MESSAGES/umbrello_kdevphp5.mo
@@ -441,6 +428,7 @@ share/umbrello5/simple4125/sdocbookref-custom.dtd
 share/umbrello5/simple4125/sdocbookref.dtd
 share/umbrello5/simple4125/sinclist.mod
 share/umbrello5/xmi.css
+share/umbrello5/xmi1docbook.xsl
 share/umbrello5/xmi2docbook.xsl
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

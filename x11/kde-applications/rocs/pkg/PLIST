@@ -76,13 +76,6 @@ share/doc/HTML/pt/rocs/index.docbook
 share/doc/HTML/pt_BR/rocs/
 share/doc/HTML/pt_BR/rocs/index.cache.bz2
 share/doc/HTML/pt_BR/rocs/index.docbook
-share/doc/HTML/ru/rocs/
-share/doc/HTML/ru/rocs/index.cache.bz2
-share/doc/HTML/ru/rocs/index.docbook
-share/doc/HTML/ru/rocs/rocs-interfaces.png
-share/doc/HTML/ru/rocs/rocs-screenshot.png
-share/doc/HTML/ru/rocs/rocs-toolbar-alignment.png
-share/doc/HTML/ru/rocs/rocs-toolbar-main.png
 share/doc/HTML/sv/rocs/
 share/doc/HTML/sv/rocs/index.cache.bz2
 share/doc/HTML/sv/rocs/index.docbook
@@ -117,6 +110,8 @@ share/icons/hicolor/scalable/apps/rocs.svgz
 share/kxmlgui5/
 share/kxmlgui5/rocs/
 share/kxmlgui5/rocs/rocsui.rc
+share/locale/ar/LC_MESSAGES/libgraphtheory.mo
+share/locale/ar/LC_MESSAGES/rocs.mo
 share/locale/bs/LC_MESSAGES/libgraphtheory.mo
 share/locale/bs/LC_MESSAGES/rocs.mo
 share/locale/ca/LC_MESSAGES/libgraphtheory.mo

@@ -256,6 +256,9 @@ share/doc/HTML/et/akonadi_sendlater_agent/index.docbook
 share/doc/HTML/et/ktnef/
 share/doc/HTML/et/ktnef/index.cache.bz2
 share/doc/HTML/et/ktnef/index.docbook
+share/doc/HTML/fr/akonadi_sendlater_agent/
+share/doc/HTML/fr/akonadi_sendlater_agent/index.cache.bz2
+share/doc/HTML/fr/akonadi_sendlater_agent/index.docbook
 share/doc/HTML/it/akonadi_archivemail_agent/
 share/doc/HTML/it/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/it/akonadi_archivemail_agent/index.docbook
@@ -488,17 +491,6 @@ share/knotifications5/akonadi_mailfilter_agent.notifyrc
 share/knotifications5/akonadi_mailmerge_agent.notifyrc
 share/knotifications5/akonadi_sendlater_agent.notifyrc
 share/knotifications5/kmail2.notifyrc
-share/kservices5/kcmkmailsummary.desktop
-share/kservices5/kcmkontactsummary.desktop
-share/kservices5/kmail_config_accounts.desktop
-share/kservices5/kmail_config_appearance.desktop
-share/kservices5/kmail_config_composer.desktop
-share/kservices5/kmail_config_misc.desktop
-share/kservices5/kmail_config_plugins.desktop
-share/kservices5/kmail_config_security.desktop
-share/kservices5/kontact/
-share/kservices5/kontact/kmailplugin.desktop
-share/kservices5/kontact/summaryplugin.desktop
 share/kxmlgui5/
 share/kxmlgui5/kontactsummary/
 share/kxmlgui5/kontactsummary/kontactsummary_part.rc
@@ -507,6 +499,7 @@ share/locale/ar/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ar/LC_MESSAGES/kmail.mo
+share/locale/ar/LC_MESSAGES/ktnef.mo
 share/locale/az/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/az/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/az/LC_MESSAGES/akonadi_mailfilter_agent.mo
@@ -810,6 +803,8 @@ share/locale/sv/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
 share/locale/sv/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/sv/LC_MESSAGES/kmail.mo
 share/locale/sv/LC_MESSAGES/ktnef.mo
+share/locale/ta/LC_MESSAGES/akonadi_unifiedmailbox_agent.mo
+share/locale/ta/LC_MESSAGES/kmail-refresh-settings.mo
 share/locale/ta/LC_MESSAGES/kmail.mo
 share/locale/tg/LC_MESSAGES/kmail.mo
 share/locale/tr/LC_MESSAGES/akonadi_followupreminder_agent.mo

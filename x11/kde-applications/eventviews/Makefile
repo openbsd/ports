@@ -2,7 +2,7 @@ COMMENT =	KDE PIM library for creating events
 DISTNAME =	eventviews-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5EventViews       5.0 # 5.13.2
+SHARED_LIBS +=  KF5EventViews       5.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
 WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5CalendarCore
@@ -10,8 +10,8 @@ WANTLIB += KF5CalendarSupport KF5CalendarUtils KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5Contacts
 WANTLIB += KF5CoreAddons KF5GuiAddons KF5Holidays KF5I18n KF5IconThemes
 WANTLIB += KF5IdentityManagement KF5ItemModels KF5Libkdepim KF5Mime
-WANTLIB += KF5PimTextEdit KF5Service KF5WidgetsAddons KGantt Qt5Core
-WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml m
+WANTLIB += KF5Service KF5WidgetsAddons KGantt Qt5Core Qt5Gui Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -42,7 +42,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/calendarsupport \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmime \
-		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/libkdepim
 
 .include <bsd.port.mk>

@@ -70,7 +70,6 @@ share/icons/hicolor/scalable/actions/games-kajongg-law.svgz
 share/icons/hicolor/scalable/apps/kajongg.svgz
 share/kajongg/
 ${MODPY_COMMENT}share/kajongg/${MODPY_PYCACHE}/
-share/kajongg/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}altint.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}animation.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}appversion.${MODPY_PYC_MAGIC_TAG}pyc
@@ -93,6 +92,7 @@ share/kajongg/${MODPY_PYCACHE}hand.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}handboard.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}humanclient.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}intelligence.${MODPY_PYC_MAGIC_TAG}pyc
+share/kajongg/${MODPY_PYCACHE}kajcsv.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}kajongg.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}kajonggserver.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}kde.${MODPY_PYC_MAGIC_TAG}pyc
@@ -139,7 +139,6 @@ share/kajongg/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}visible.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}wall.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}wind.${MODPY_PYC_MAGIC_TAG}pyc
-share/kajongg/about.py
 share/kajongg/altint.py
 share/kajongg/animation.py
 share/kajongg/appversion.py
@@ -163,6 +162,7 @@ share/kajongg/hand.py
 share/kajongg/handboard.py
 share/kajongg/humanclient.py
 share/kajongg/intelligence.py
+share/kajongg/kajcsv.py
 share/kajongg/kajongg.py
 share/kajongg/kajonggserver.py
 share/kajongg/kajonggui.rc
@@ -571,6 +571,7 @@ share/kajongg/voices/male2/ws.ogg
 share/kajongg/voices/male2/ww.ogg
 share/kajongg/wall.py
 share/kajongg/wind.py
+share/locale/ar/LC_MESSAGES/kajongg.mo
 share/locale/bg/LC_MESSAGES/kajongg.mo
 share/locale/bs/LC_MESSAGES/kajongg.mo
 share/locale/ca/LC_MESSAGES/kajongg.mo

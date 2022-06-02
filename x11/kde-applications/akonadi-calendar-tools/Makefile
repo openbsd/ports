@@ -5,9 +5,9 @@ CATEGORIES =	devel
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
 WANTLIB += KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5CoreAddons KF5I18n
-WANTLIB += KF5IdentityManagement KF5ItemModels KF5Mime KF5PimTextEdit
-WANTLIB += KF5WidgetsAddons Qt5Core Qt5DBus Qt5Gui Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c m
+WANTLIB += KF5ItemModels KF5Mime KF5WidgetsAddons Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml c m
+WANTLIB += KF5IdentityManagement
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
@@ -26,7 +26,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/akonadi-calendar \
-		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/kmime \
 		x11/kde-applications/calendarsupport
 

@@ -6,8 +6,8 @@ SHARED_LIBS +=  KF5CalendarUtils          2.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5CalendarCore
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5CoreAddons
-WANTLIB += KF5I18n KF5IconThemes KF5IdentityManagement KF5PimTextEdit
-WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
+WANTLIB += KF5I18n KF5IconThemes KF5IdentityManagement KF5WidgetsAddons
+WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 

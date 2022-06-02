@@ -3,7 +3,7 @@ DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
 
 SHARED_LIBS +=  KF5MailTransport             2.1 # 5.13.3
-SHARED_LIBS +=  KF5MailTransportAkonadi      1.0 # 5.13.3
+SHARED_LIBS +=  KF5MailTransportAkonadi      2.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets
 WANTLIB += KF5Auth KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore

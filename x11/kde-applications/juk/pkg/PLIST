@@ -118,9 +118,10 @@ share/juk/
 share/juk/pics/
 share/juk/pics/playing.png
 share/juk/pics/theme.svg
+share/kio/
+share/kio/servicemenus/
+share/kio/servicemenus/jukservicemenu.desktop
 share/knotifications5/juk.notifyrc
-share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/jukservicemenu.desktop
 share/kxmlgui5/
 share/kxmlgui5/juk/
 share/kxmlgui5/juk/jukui-rtl.rc

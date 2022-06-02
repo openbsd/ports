@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -41,6 +41,10 @@ else()
+@@ -37,6 +37,10 @@ else()
      set(USE_WMLIB true)
  endif()
  

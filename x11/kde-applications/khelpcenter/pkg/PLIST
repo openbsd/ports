@@ -3,9 +3,10 @@
 libexec/khc_mansearch.pl
 @bin libexec/khc_xapianindexer
 @bin libexec/khc_xapiansearch
-share/applications/org.kde.Help.desktop
+share/applications/org.kde.khelpcenter.desktop
 share/config.kcfg/
 share/config.kcfg/khelpcenter.kcfg
+share/dbus-1/services/org.kde.khelpcenter.service
 share/doc/HTML/ca/fundamentals/
 share/doc/HTML/ca/fundamentals/colors.png
 share/doc/HTML/ca/fundamentals/config.docbook
@@ -498,6 +499,6 @@ share/locale/wa/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_CN/LC_MESSAGES/khelpcenter5.mo
 share/locale/zh_TW/LC_MESSAGES/khelpcenter5.mo
 share/metainfo/
-share/metainfo/org.kde.Help.appdata.xml
+share/metainfo/org.kde.khelpcenter.metainfo.xml
 share/qlogging-categories5/khelpcenter.categories
 @tag update-desktop-database

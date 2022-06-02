@@ -4,21 +4,21 @@
 @bin bin/ktorrent
 @bin bin/ktupnptest
 @lib lib/libktcore.so.${LIBktcore_VERSION}
-lib/qt5/plugins/ktorrent/
-@so lib/qt5/plugins/ktorrent/ktorrent_bwscheduler.so
-@so lib/qt5/plugins/ktorrent/ktorrent_downloadorder.so
-@so lib/qt5/plugins/ktorrent/ktorrent_infowidget.so
-@so lib/qt5/plugins/ktorrent/ktorrent_ipfilter.so
-@so lib/qt5/plugins/ktorrent/ktorrent_logviewer.so
-@so lib/qt5/plugins/ktorrent/ktorrent_magnetgenerator.so
-@so lib/qt5/plugins/ktorrent/ktorrent_mediaplayer.so
-@so lib/qt5/plugins/ktorrent/ktorrent_scanfolder.so
-@so lib/qt5/plugins/ktorrent/ktorrent_scanforlostfiles.so
-@so lib/qt5/plugins/ktorrent/ktorrent_search.so
-@so lib/qt5/plugins/ktorrent/ktorrent_stats.so
-@so lib/qt5/plugins/ktorrent/ktorrent_syndication.so
-@so lib/qt5/plugins/ktorrent/ktorrent_upnp.so
-@so lib/qt5/plugins/ktorrent/ktorrent_zeroconf.so
+lib/qt5/plugins/ktorrent_plugins/
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_bwscheduler.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_downloadorder.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_infowidget.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_ipfilter.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_logviewer.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_magnetgenerator.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_mediaplayer.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_scanfolder.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_scanforlostfiles.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_search.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_stats.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_syndication.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_upnp.so
+@so lib/qt5/plugins/ktorrent_plugins/ktorrent_zeroconf.so
 share/applications/org.kde.ktorrent.desktop
 share/doc/HTML/ca/ktorrent/
 share/doc/HTML/ca/ktorrent/index.cache.bz2

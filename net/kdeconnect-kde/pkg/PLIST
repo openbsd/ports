@@ -9,6 +9,10 @@
 @lib lib/libkdeconnectpluginkcm.so.${LIBkdeconnectpluginkcm_VERSION}
 @so lib/qt5/plugins/kcm_kdeconnect.so
 lib/qt5/plugins/kdeconnect/
+lib/qt5/plugins/kdeconnect/kcms/
+@so lib/qt5/plugins/kdeconnect/kcms/kdeconnect_runcommand_config.so
+@so lib/qt5/plugins/kdeconnect/kcms/kdeconnect_sendnotifications_config.so
+@so lib/qt5/plugins/kdeconnect/kcms/kdeconnect_share_config.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_battery.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_bigscreen.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_clipboard.so
@@ -34,9 +38,6 @@ lib/qt5/plugins/kdeconnect/
 @so lib/qt5/plugins/kdeconnect/kdeconnect_share.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_sms.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_telephony.so
-@so lib/qt5/plugins/kdeconnect_runcommand_config.so
-@so lib/qt5/plugins/kdeconnect_sendnotifications_config.so
-@so lib/qt5/plugins/kdeconnect_share_config.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/kdeconnectfileitemaction.so
 @so lib/qt5/plugins/kf5/kio/kdeconnect.so
@@ -152,9 +153,6 @@ share/kdeconnect/kdeconnect_sendnotifications_config.qml
 share/kdeconnect/kdeconnect_share_config.qml
 share/knotifications5/kdeconnect.notifyrc
 share/kservices5/kcm_kdeconnect.desktop
-share/kservices5/kdeconnect_runcommand_config.desktop
-share/kservices5/kdeconnect_sendnotifications_config.desktop
-share/kservices5/kdeconnect_share_config.desktop
 share/kservices5/plasma-kdeconnect.desktop
 share/locale/ar/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/ar/LC_MESSAGES/kdeconnect-core.mo
@@ -755,7 +753,7 @@ share/locale/zh_TW/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/metainfo/
 share/metainfo/org.kde.kdeconnect.appdata.xml
-share/metainfo/org.kde.kdeconnect.kcm.appdata.xml
+share/metainfo/org.kde.kdeconnect.metainfo.xml
 share/nautilus-python/
 share/nautilus-python/extensions/
 ${MODPY_COMMENT}share/nautilus-python/extensions/${MODPY_PYCACHE}/

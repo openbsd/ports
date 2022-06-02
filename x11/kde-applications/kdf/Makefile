@@ -4,7 +4,7 @@ CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.kdf
 
-SHARED_LIBS +=  kdfprivate               2.0 # 18.12.0
+SHARED_LIBS +=  kdfprivate               2.1 # 18.12.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

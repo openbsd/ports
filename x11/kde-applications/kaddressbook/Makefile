@@ -12,11 +12,11 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5Contacts KF5CoreAddons
 WANTLIB += KF5Crash KF5GrantleeTheme KF5I18n KF5IMAP KF5ItemModels
 WANTLIB += KF5JobWidgets KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5KontactInterface KF5Libkdepim KF5Mime KF5Parts KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5Prison KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 c m
+WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Prison KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui KUserFeedbackCore KUserFeedbackWidgets
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

@@ -14,7 +14,7 @@ include/KF5/KontactInterface/kontactinterface/plugin.h
 include/KF5/KontactInterface/kontactinterface/processes.h
 include/KF5/KontactInterface/kontactinterface/summary.h
 include/KF5/KontactInterface/kontactinterface/uniqueapphandler.h
-include/KF5/kontactinterface_version.h
+include/KF5/KontactInterface/kontactinterface_version.h
 lib/cmake/KF5KontactInterface/
 lib/cmake/KF5KontactInterface/KF5KontactInterfaceConfig.cmake
 lib/cmake/KF5KontactInterface/KF5KontactInterfaceConfigVersion.cmake

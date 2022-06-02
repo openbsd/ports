@@ -1,7 +1,6 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
-REVISION =	1
 
 SHARED_LIBS +=	kdeconnectcore		2.0 # 1.4
 SHARED_LIBS +=	kdeconnectinterfaces	2.0 # 1.4
@@ -18,15 +17,14 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DBusAddons KF5I18n
-WANTLIB += KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
+WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5DBusAddons KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KCMUtils
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIONTLM KF5KIOWidgets
 WANTLIB += KF5Notifications KF5People KF5Service KF5Solid KF5WaylandClient
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickControls2 Qt5WaylandClient Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml SM X11 Xext Xtst c fakekey m qca-qt5
-WANTLIB += wayland-client
+WANTLIB += Qt5Quick Qt5QuickControls2 Qt5Widgets Qt5X11Extras
+WANTLIB += Qt5Xml SM X11 Xext Xtst c fakekey m qca-qt5
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 
@@ -72,7 +70,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/libfakekey \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtquickcontrols2 \
-		x11/qt5/qtwayland \
 		x11/qt5/qtx11extras
 
 MODPY_ADJ_FILES =	nautilus-extension/kdeconnect-share.py
