@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1395 2022/06/01 11:58:18 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1396 2022/06/02 12:48:09 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -593,7 +593,6 @@ my $stem_extensions = {
 	'py-cairocffi' => 'py3-cairocffi',
 	'py-cffi' => 'py3-cffi',
 	'py-characteristic' => 'py3-characteristic',
-	'py-cheetah' => 'py3-cheetah',
 	'py-clint' => 'py3-clint',
 	'py-colored' => 'py3-colored',
 	'py-configobj' => 'py3-configobj',

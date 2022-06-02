@@ -1,8 +1,7 @@
 @conflict py-cheetah-<3.1.0p4
-@pkgpath devel/py-cheetah
-bin/cheetah
-bin/cheetah-analyze
-bin/cheetah-compile
+${MODPY_COMMENT}bin/cheetah
+${MODPY_COMMENT}bin/cheetah-analyze
+${MODPY_COMMENT}bin/cheetah-compile
 lib/python${MODPY_VERSION}/site-packages/Cheetah/
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheRegion.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/CacheStore.py

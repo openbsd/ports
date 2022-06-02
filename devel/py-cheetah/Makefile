@@ -16,17 +16,16 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
+FLAVORS=		python3
+FLAVOR?=
+
+.if ${FLAVOR:Mpython3}
 TEST_DEPENDS=		textproc/py-markdown${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
+.endif
 
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 MODPY_PYTEST=		Yes
-
-xxdo-test:
-	cd ${WRKSRC} && ${MODPY_BIN} Cheetah/Tests/Test.py
 
 .include <bsd.port.mk>
