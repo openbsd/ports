@@ -1,10 +1,8 @@
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION=	4.0.0
-
-GH_ACCOUNT =	git-cola
-GH_PROJECT =	git-cola
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	4.0.0
+DISTNAME =		git-cola-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =	devel x11
 
@@ -16,12 +14,14 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/git \
 		devel/git,-x11 \
+		devel/py-setuptools_scm${MODPY_FLAVOR} \
 		textproc/xxdiff \
 		x11/py-qt5${MODPY_FLAVOR} \
 		x11/py-qtpy${MODPY_FLAVOR}
