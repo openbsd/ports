@@ -1,18 +1,18 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.0.6
+VERSION =	5.0.8
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                7.0 # 16.0
+SHARED_LIBS +=  kritaflake                8.0 # 16.0
 SHARED_LIBS +=  kritapigment              7.0 # 16.0
 SHARED_LIBS +=  kritaplugin               2.0 # 16.0
 SHARED_LIBS +=  kritastore                3.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
 SHARED_LIBS +=  kritawidgets              6.1 # 16.0
-SHARED_LIBS +=  kritawidgetutils          5.0 # 16.0
-SHARED_LIBS +=  kritacommand              3.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          6.0 # 16.0
+SHARED_LIBS +=  kritacommand              4.0 # 16.0
 SHARED_LIBS +=  kritaimpex                2.0 # 16.0
 SHARED_LIBS +=  kritalibkis               3.0 # 16.0
 SHARED_LIBS +=  kritalibkra               5.0 # 16.0
@@ -28,7 +28,7 @@ SHARED_LIBS +=  kritaglobal               5.1 # 14.0
 SHARED_LIBS +=  kritaimage                63.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             58.0 # 0.0
 SHARED_LIBS +=  kritalibpaintop           57.0 # 0.0
-SHARED_LIBS +=  kritaui                   65.0 # 0.0
+SHARED_LIBS +=  kritaui                   66.0 # 0.0
 
 CATEGORIES =	graphics
 
