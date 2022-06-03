@@ -1,6 +1,6 @@
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-2.07
+DISTNAME =	WWW-Mechanize-2.08
 
 CATEGORIES =	www
 
@@ -29,10 +29,8 @@ TEST_DEPENDS =		devel/p5-Path-Tiny \
 			devel/p5-Test-Taint>=1.08 \
 			devel/p5-Test-Warn \
 			devel/p5-Test-Warnings \
-			www/p5-CGI>=4.32 \
 			www/p5-HTTP-Daemon>=6.12 \
-			www/p5-HTTP-Message \
-			www/p5-HTTP-Server-Simple
+			www/p5-HTTP-Message
 
 PKG_ARCH =		*
 
