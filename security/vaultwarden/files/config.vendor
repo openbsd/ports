@@ -1,11 +1,6 @@
-[source."https://github.com/SergioBenitez/Rocket"]
-git = "https://github.com/SergioBenitez/Rocket"
-rev = "8cae077ba1d54b92cdef3e171a730b819d5eeb8e"
-replace-with = "vendored-sources"
-
-[source."https://github.com/jjlin/job_scheduler"]
-git = "https://github.com/jjlin/job_scheduler"
-rev = "ee023418dbba2bfe1e30a5fd7d937f9e33739806"
+[source."https://github.com/BlackDex/job_scheduler"]
+git = "https://github.com/BlackDex/job_scheduler"
+rev = "9100fc596a083fd9c0b560f8f11f108e0a19d07e"
 replace-with = "vendored-sources"
 
 [source.vendored-sources]
