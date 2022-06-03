@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.28 2022/06/03 07:44:33 espie Exp $
+# $OpenBSD: Distant.pm,v 1.29 2022/06/03 07:45:37 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,7 +48,7 @@ sub create
 	my ($class, $name, $prop) = @_;
 	my $o = $class->SUPER::create($name, $prop);
 	my $m = DPB::Ssh::Master->find($o);
-	for my $tries (0 .. 10) {
+	for my $tries (0 .. 120) {
 		last if -e $m->socket;
 		sleep 1;
 	}
