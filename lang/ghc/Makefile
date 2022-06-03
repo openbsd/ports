@@ -3,11 +3,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		compiler for the functional language Haskell
 
-# Note: please never ever set DPB_PROPERTIES=parallel (or some other
-# magic that enables parallel builds) for this port! Not even if it
-# appears to work. (search the upstream bug tracker for terms like
-# "non-deterministic", "unresolved symbol", "signature mismatch" etc. to
-# find the appropriate bug tickets)
+DPB_PROPERTIES =	parallel
 
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
@@ -41,11 +37,6 @@ BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/gtar \
 			textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
 RUN_DEPENDS =
-
-# GHC build uses -Wl,-z,wxneeded on OpenBSD.
-# XXX: wxneeded is a hack. Fix rts/Linker.c, mmapForLinker() and
-#      loadObj_() instead.
-USE_WXNEEDED =		special
 
 MASTER_SITES =		https://downloads.haskell.org/ghc/${GHC_VERSION}/
 MASTER_SITES0 =		https://openbsd.dead-parrot.de/distfiles/
