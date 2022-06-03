@@ -9,6 +9,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
+DPB_PROPERTIES =	later
 
 PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 
