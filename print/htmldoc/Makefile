@@ -1,6 +1,6 @@
 COMMENT =		convert HTML pages to PDF/PS format
 
-V =			1.9.15
+V =			1.9.16
 DISTNAME =		htmldoc-${V}
 CATEGORIES =		print www
 
