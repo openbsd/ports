@@ -467,66 +467,66 @@ lib/qt5/plugins/grantlee/
 lib/qt5/plugins/grantlee/5.2/
 @so lib/qt5/plugins/grantlee/5.2/kdev_filters.so
 lib/qt5/plugins/kdevplatform/
-lib/qt5/plugins/kdevplatform/35/
-@so lib/qt5/plugins/kdevplatform/35/kdevandroid.so
-@so lib/qt5/plugins/kdevplatform/35/kdevappwizard.so
-@so lib/qt5/plugins/kdevplatform/35/kdevastyle.so
-@so lib/qt5/plugins/kdevplatform/35/kdevbazaar.so
-@so lib/qt5/plugins/kdevplatform/35/kdevclangsupport.so
-@so lib/qt5/plugins/kdevplatform/35/kdevclangtidy.so
-@so lib/qt5/plugins/kdevplatform/35/kdevclassbrowser.so
-@so lib/qt5/plugins/kdevplatform/35/kdevclazy.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcmakebuilder.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcmakedocumentation.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcmakemanager.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcodeutils.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcontextbrowser.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcppcheck.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcustombuildsystem.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcustommakemanager.so
-@so lib/qt5/plugins/kdevplatform/35/kdevcustomscript.so
-@so lib/qt5/plugins/kdevplatform/35/kdevdefinesandincludesmanager.so
-@so lib/qt5/plugins/kdevplatform/35/kdevdocker.so
-@so lib/qt5/plugins/kdevplatform/35/kdevdocumentswitcher.so
-@so lib/qt5/plugins/kdevplatform/35/kdevdocumentview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevexecute.so
-@so lib/qt5/plugins/kdevplatform/35/kdevexecuteplasmoid.so
-@so lib/qt5/plugins/kdevplatform/35/kdevexecutescript.so
-@so lib/qt5/plugins/kdevplatform/35/kdevexternalscript.so
-@so lib/qt5/plugins/kdevplatform/35/kdevfilemanager.so
-@so lib/qt5/plugins/kdevplatform/35/kdevfiletemplates.so
-@so lib/qt5/plugins/kdevplatform/35/kdevflatpak.so
-@so lib/qt5/plugins/kdevplatform/35/kdevgdb.so
-@so lib/qt5/plugins/kdevplatform/35/kdevgenericmanager.so
-@so lib/qt5/plugins/kdevplatform/35/kdevghprovider.so
-@so lib/qt5/plugins/kdevplatform/35/kdevgit.so
-@so lib/qt5/plugins/kdevplatform/35/kdevgrepview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevheaptrack.so
-@so lib/qt5/plugins/kdevplatform/35/kdevkonsoleview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevlldb.so
-@so lib/qt5/plugins/kdevplatform/35/kdevmakebuilder.so
-@so lib/qt5/plugins/kdevplatform/35/kdevmanpage.so
-@so lib/qt5/plugins/kdevplatform/35/kdevmesonmanager.so
-@so lib/qt5/plugins/kdevplatform/35/kdevninja.so
-@so lib/qt5/plugins/kdevplatform/35/kdevokteta.so
-@so lib/qt5/plugins/kdevplatform/35/kdevopenwith.so
-@so lib/qt5/plugins/kdevplatform/35/kdevoutlineview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevpatchreview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevperforce.so
-@so lib/qt5/plugins/kdevplatform/35/kdevproblemreporter.so
-@so lib/qt5/plugins/kdevplatform/35/kdevprojectfilter.so
-@so lib/qt5/plugins/kdevplatform/35/kdevprojectmanagerview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevqmljslanguagesupport.so
-@so lib/qt5/plugins/kdevplatform/35/kdevqthelp.so
-@so lib/qt5/plugins/kdevplatform/35/kdevquickopen.so
-@so lib/qt5/plugins/kdevplatform/35/kdevscratchpad.so
-@so lib/qt5/plugins/kdevplatform/35/kdevsourceformatter.so
-@so lib/qt5/plugins/kdevplatform/35/kdevstandardoutputview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevsubversion.so
-@so lib/qt5/plugins/kdevplatform/35/kdevswitchtobuddy.so
-@so lib/qt5/plugins/kdevplatform/35/kdevtestview.so
-@so lib/qt5/plugins/kdevplatform/35/kdevvcschangesviewplugin.so
-@so lib/qt5/plugins/kdevplatform/35/kdevwelcomepage.so
+lib/qt5/plugins/kdevplatform/36/
+@so lib/qt5/plugins/kdevplatform/36/kdevandroid.so
+@so lib/qt5/plugins/kdevplatform/36/kdevappwizard.so
+@so lib/qt5/plugins/kdevplatform/36/kdevastyle.so
+@so lib/qt5/plugins/kdevplatform/36/kdevbazaar.so
+@so lib/qt5/plugins/kdevplatform/36/kdevclangsupport.so
+@so lib/qt5/plugins/kdevplatform/36/kdevclangtidy.so
+@so lib/qt5/plugins/kdevplatform/36/kdevclassbrowser.so
+@so lib/qt5/plugins/kdevplatform/36/kdevclazy.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcmakebuilder.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcmakedocumentation.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcmakemanager.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcodeutils.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcontextbrowser.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcppcheck.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcustombuildsystem.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcustommakemanager.so
+@so lib/qt5/plugins/kdevplatform/36/kdevcustomscript.so
+@so lib/qt5/plugins/kdevplatform/36/kdevdefinesandincludesmanager.so
+@so lib/qt5/plugins/kdevplatform/36/kdevdocker.so
+@so lib/qt5/plugins/kdevplatform/36/kdevdocumentswitcher.so
+@so lib/qt5/plugins/kdevplatform/36/kdevdocumentview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevexecute.so
+@so lib/qt5/plugins/kdevplatform/36/kdevexecuteplasmoid.so
+@so lib/qt5/plugins/kdevplatform/36/kdevexecutescript.so
+@so lib/qt5/plugins/kdevplatform/36/kdevexternalscript.so
+@so lib/qt5/plugins/kdevplatform/36/kdevfilemanager.so
+@so lib/qt5/plugins/kdevplatform/36/kdevfiletemplates.so
+@so lib/qt5/plugins/kdevplatform/36/kdevflatpak.so
+@so lib/qt5/plugins/kdevplatform/36/kdevgdb.so
+@so lib/qt5/plugins/kdevplatform/36/kdevgenericmanager.so
+@so lib/qt5/plugins/kdevplatform/36/kdevghprovider.so
+@so lib/qt5/plugins/kdevplatform/36/kdevgit.so
+@so lib/qt5/plugins/kdevplatform/36/kdevgrepview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevheaptrack.so
+@so lib/qt5/plugins/kdevplatform/36/kdevkonsoleview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevlldb.so
+@so lib/qt5/plugins/kdevplatform/36/kdevmakebuilder.so
+@so lib/qt5/plugins/kdevplatform/36/kdevmanpage.so
+@so lib/qt5/plugins/kdevplatform/36/kdevmesonmanager.so
+@so lib/qt5/plugins/kdevplatform/36/kdevninja.so
+@so lib/qt5/plugins/kdevplatform/36/kdevokteta.so
+@so lib/qt5/plugins/kdevplatform/36/kdevopenwith.so
+@so lib/qt5/plugins/kdevplatform/36/kdevoutlineview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevpatchreview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevperforce.so
+@so lib/qt5/plugins/kdevplatform/36/kdevproblemreporter.so
+@so lib/qt5/plugins/kdevplatform/36/kdevprojectfilter.so
+@so lib/qt5/plugins/kdevplatform/36/kdevprojectmanagerview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevqmljslanguagesupport.so
+@so lib/qt5/plugins/kdevplatform/36/kdevqthelp.so
+@so lib/qt5/plugins/kdevplatform/36/kdevquickopen.so
+@so lib/qt5/plugins/kdevplatform/36/kdevscratchpad.so
+@so lib/qt5/plugins/kdevplatform/36/kdevsourceformatter.so
+@so lib/qt5/plugins/kdevplatform/36/kdevstandardoutputview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevsubversion.so
+@so lib/qt5/plugins/kdevplatform/36/kdevswitchtobuddy.so
+@so lib/qt5/plugins/kdevplatform/36/kdevtestview.so
+@so lib/qt5/plugins/kdevplatform/36/kdevvcschangesviewplugin.so
+@so lib/qt5/plugins/kdevplatform/36/kdevwelcomepage.so
 lib/qt5/plugins/kf5/krunner/
 @so lib/qt5/plugins/kf5/krunner/krunner_kdevelopsessions.so
 lib/qt5/qml/org/kde/kdevplatform/
@@ -3018,6 +3018,8 @@ share/locale/uk/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/uk/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/uk/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/uk/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
+share/locale/vi/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
+share/locale/vi/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/zh_CN/LC_MESSAGES/kdevandroid.mo
 share/locale/zh_CN/LC_MESSAGES/kdevappwizard.mo
 share/locale/zh_CN/LC_MESSAGES/kdevastyle.mo
