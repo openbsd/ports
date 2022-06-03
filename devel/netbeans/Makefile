@@ -1,6 +1,6 @@
 COMMENT=		NetBeans Java IDE
 
-V=			12.6
+V=			13
 DISTNAME=		netbeans-${V}-bin
 PKGNAME=		netbeans-${V}
 CATEGORIES=		devel
@@ -16,7 +16,7 @@ MASTER_SITES=		${MASTER_SITE_APACHE:=netbeans/netbeans/${V}/}
 EXTRACT_SUFX=		.zip
 
 MODULES=		java
-MODJAVA_VER=		1.8+
+MODJAVA_VER=		11
 
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
