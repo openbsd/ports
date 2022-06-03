@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.27 2022/06/02 08:52:50 espie Exp $
+# $OpenBSD: Distant.pm,v 1.28 2022/06/03 07:44:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -47,7 +47,11 @@ sub create
 {
 	my ($class, $name, $prop) = @_;
 	my $o = $class->SUPER::create($name, $prop);
-	DPB::Ssh::Master->find($o);
+	my $m = DPB::Ssh::Master->find($o);
+	for my $tries (0 .. 10) {
+		last if -e $m->socket;
+		sleep 1;
+	}
 	return $o;
 }
 
@@ -57,7 +61,7 @@ our @ISA = qw(DPB::Shell::Chroot);
 sub ssh
 {
 	my ($class, $socket) = @_;
-	return ('ssh', '-T', '-S', $socket);
+	return ('ssh', '-S', $socket);
 }
 
 sub new
@@ -110,7 +114,7 @@ sub _run
 	$) = $(;
 	$> = $<;
 	exec {OpenBSD::Paths->ssh}
-	    ($self->ssh($self->socket), $self->hostname, join(' ', @cmd));
+	    ($self->ssh($self->socket), '-T', $self->hostname, join(' ', @cmd));
 }
 
 sub quote
@@ -142,7 +146,6 @@ sub run
 		'-o', "ForwardX11=no",
 		'-o', "ForwardAgent=no",
 		'-o', "GatewayPorts=no",
-		'-o', "BatchMode=yes",
 		'-N', '-M', $host) or
 	    exit(1);
 }
