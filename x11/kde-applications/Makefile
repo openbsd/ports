@@ -251,6 +251,8 @@
      # net/libktorrent
      # net/ktorrent
      # x11/yakuake
+     # devel/kdevelop
+     # productivity/kalendar
 
      # TODO
      # kosmindoormap
