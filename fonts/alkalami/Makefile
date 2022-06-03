@@ -1,5 +1,5 @@
 COMMENT =		Unicode font for African Arabic script
-V =			1.200
+V =			1.300
 DISTNAME =		Alkalami-${V}
 PKGNAME =		alkalami-${V}
 CATEGORIES =		fonts
