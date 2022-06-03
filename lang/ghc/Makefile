@@ -8,7 +8,7 @@ DPB_PROPERTIES =	parallel
 # ghc hardcodes ${WRKDIR}/bin/gcc when the package is compiled with ccache
 NO_CCACHE =		Yes
 
-GHC_VERSION =		9.2.2
+GHC_VERSION =		9.2.3
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -60,15 +60,15 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 GHC_ITEMS = \
 	CABAL			3.6.3.0		 \
 	ARRAY			0.5.4.0		 \
-	BASE			4.16.1.0	 \
+	BASE			4.16.2.0	 \
 	BINARY			0.8.9.0		 \
-	BYTESTRING		0.11.3.0	 \
+	BYTESTRING		0.11.3.1	 \
 	CONTAINERS		0.6.5.1		 \
 	DEEPSEQ			1.4.6.1		 \
 	DIRECTORY		1.3.6.2		 \
 	EXCEPTIONS		0.10.4		 \
 	FILEPATH		1.4.2.2		 \
-	GHC			9.2.2		 \
+	GHC			9.2.3		 \
 	GHC_BIGNUM		1.2		 \
 	GHC_COMPACT		0.1.0.0		 \
 	GHC_PRIM		0.8.0		 \
@@ -97,7 +97,8 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
 AUTOCONF_VERSION =	2.71
-CONFIGURE_STYLE =	gnu autoconf no-autoheader
+AUTOMAKE_VERSION =	1.16
+CONFIGURE_STYLE =	gnu autoreconf no-autoheader
 CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			--with-ffi-libraries=${LOCALBASE}/lib \
 			--with-gmp-includes=${LOCALBASE}/include \
@@ -135,6 +136,7 @@ PORTHOME =		${WRKDIR}
 TEST_DEPENDS =	print/ghostscript/gnu ${MODPY_RUN_DEPENDS}
 
 post-extract:
+	cd ${WRKSRC} && ${AUTOCONF_ENV} ./boot
 	cd ${WRKSRC}/libraries/unix && \
 	mkdir -p System/OpenBSD && \
 	install -m 644 ${FILESDIR}/Process.hsc System/OpenBSD
