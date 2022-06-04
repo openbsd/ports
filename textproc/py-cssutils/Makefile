@@ -1,8 +1,8 @@
-COMMENT =	python package to parse and build CSS
+COMMENT =	Python package to parse and build CSS
 
 CATEGORIES =	textproc
 
-MODPY_EGG_VERSION =	2.4.0
+MODPY_EGG_VERSION =	2.4.1
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 MODPY_PI =	Yes
