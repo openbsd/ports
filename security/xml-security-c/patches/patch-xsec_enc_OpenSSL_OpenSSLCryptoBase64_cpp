@@ -1,0 +1,14 @@
+LibreSSL has long made EVP_ENCODE_CTX opaque.
+
+Index: xsec/enc/OpenSSL/OpenSSLCryptoBase64.cpp
+--- xsec/enc/OpenSSL/OpenSSLCryptoBase64.cpp.orig
++++ xsec/enc/OpenSSL/OpenSSLCryptoBase64.cpp
+@@ -48,7 +48,7 @@ XERCES_CPP_NAMESPACE_USE
+ //           Construction/Destruction
+ // --------------------------------------------------------------------------------
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER_TOO_OLD)
+ OpenSSLCryptoBase64::OpenSSLCryptoBase64() : mp_ectx(&m_ectx_store), mp_dctx(&m_dctx_store) { }
+ OpenSSLCryptoBase64::~OpenSSLCryptoBase64() { }
+ #else

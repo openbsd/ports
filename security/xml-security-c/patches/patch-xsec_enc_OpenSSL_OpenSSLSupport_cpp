@@ -1,0 +1,14 @@
+LibreSSL has long made EVP_ENCODE_CTX opaque.
+
+Index: xsec/enc/OpenSSL/OpenSSLSupport.cpp
+--- xsec/enc/OpenSSL/OpenSSLSupport.cpp.orig
++++ xsec/enc/OpenSSL/OpenSSLSupport.cpp
+@@ -273,7 +273,7 @@ int ECDSA_SIG_set0(ECDSA_SIG *sig, BIGNUM *r, BIGNUM *
+ 
+ #endif
+ 
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER_TOO_OLD)
+ EvpEncodeCtxRAII::EvpEncodeCtxRAII() : mp_ctx(&mp_ctx_store) { };
+ EvpEncodeCtxRAII::~EvpEncodeCtxRAII() { }
+ #else

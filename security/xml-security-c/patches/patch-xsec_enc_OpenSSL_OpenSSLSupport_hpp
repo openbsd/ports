@@ -1,0 +1,14 @@
+LibreSSL has long made EVP_ENCODE_CTX opaque.
+
+Index: xsec/enc/OpenSSL/OpenSSLSupport.hpp
+--- xsec/enc/OpenSSL/OpenSSLSupport.hpp.orig
++++ xsec/enc/OpenSSL/OpenSSLSupport.hpp
+@@ -88,7 +88,7 @@ class EvpEncodeCtxRAII (public)
+ 
+ private:
+     EVP_ENCODE_CTX *mp_ctx;
+-#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER)
++#if (OPENSSL_VERSION_NUMBER < 0x10100000L) || defined(LIBRESSL_VERSION_NUMBER_TOO_OLD)
+     EVP_ENCODE_CTX mp_ctx_store;
+ #endif    
+ };

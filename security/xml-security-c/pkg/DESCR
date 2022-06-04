@@ -1,0 +1,4 @@
+Apache XML Security for C++: This library includes a mature Digital Signature
+and Encryption implementation using a proprietary C++ API on top of the Xerces-C
+XML Parser's DOM API. It includes a pluggable cryptographic layer, but support
+for alternatives to OpenSSL are less complete and less mature.
