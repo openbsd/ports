@@ -1,6 +1,6 @@
 COMMENT =	use libraries from a t/lib directory
 
-DISTNAME =	Test-Lib-0.002
+DISTNAME =	Test-Lib-0.003
 
 CATEGORIES =	devel
 
