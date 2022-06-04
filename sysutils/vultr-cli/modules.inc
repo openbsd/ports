@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.100.2 \
 	cloud.google.com/go/bigquery				 v1.8.0 \
-	cloud.google.com/go/compute				 v1.5.0 \
+	cloud.google.com/go/compute				 v1.6.1 \
 	cloud.google.com/go/datastore				 v1.1.0 \
 	cloud.google.com/go/firestore				 v1.6.1 \
 	cloud.google.com/go/pubsub				 v1.3.1 \
@@ -17,27 +17,30 @@ MODGO_MODULES =	\
 	github.com/client9/misspell				 v0.3.4 \
 	github.com/cncf/udpa/go					 v0.0.0-20201120205902-5459f2c99403 \
 	github.com/coreos/go-semver				 v0.3.0 \
+	github.com/coreos/go-systemd/v22			 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.1 \
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/envoyproxy/go-control-plane			 v0.9.9-0.20201210154907-fd9021fe5dad \
 	github.com/envoyproxy/protoc-gen-validate		 v0.1.0 \
 	github.com/fatih/color					 v1.13.0 \
-	github.com/fsnotify/fsnotify				 v1.5.1 \
+	github.com/frankban/quicktest				 v1.14.3 \
+	github.com/fsnotify/fsnotify				 v1.5.4 \
 	github.com/go-gl/glfw					 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw				 v0.0.0-20200222043503-6f7a984d4dc4 \
+	github.com/gogo/protobuf				 v1.3.2 \
 	github.com/golang/glog					 v0.0.0-20160126235308-23def4e6c14b \
 	github.com/golang/groupcache				 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/golang/mock					 v1.4.4 \
 	github.com/golang/protobuf				 v1.5.2 \
 	github.com/google/btree					 v1.0.0 \
-	github.com/google/go-cmp				 v0.5.7 \
+	github.com/google/go-cmp				 v0.5.8 \
 	github.com/google/go-querystring			 v1.1.0 \
 	github.com/google/martian				 v2.1.0+incompatible \
 	github.com/google/martian/v3				 v3.1.0 \
 	github.com/google/pprof					 v0.0.0-20201218002935-b9804c9f04c2 \
 	github.com/google/renameio				 v0.1.0 \
 	github.com/google/uuid					 v1.1.2 \
-	github.com/googleapis/gax-go/v2				 v2.3.0 \
+	github.com/googleapis/gax-go/v2				 v2.4.0 \
 	github.com/googleapis/google-cloud-go-testing		 v0.0.0-20200911160855-bcd43fbb19e8 \
 	github.com/hashicorp/consul/api				 v1.12.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
@@ -54,65 +57,69 @@ MODGO_MODULES =	\
 	github.com/jstemmer/go-junit-report			 v0.9.1 \
 	github.com/kisielk/gotool				 v1.0.0 \
 	github.com/kr/fs					 v0.1.0 \
-	github.com/kr/pretty					 v0.2.0 \
+	github.com/kr/pretty					 v0.3.0 \
 	github.com/kr/pty					 v1.1.1 \
-	github.com/kr/text					 v0.1.0 \
+	github.com/kr/text					 v0.2.0 \
 	github.com/magiconair/properties			 v1.8.6 \
 	github.com/mattn/go-colorable				 v0.1.12 \
 	github.com/mattn/go-isatty				 v0.0.14 \
 	github.com/mitchellh/go-homedir				 v1.1.0 \
-	github.com/mitchellh/mapstructure			 v1.4.3 \
+	github.com/mitchellh/mapstructure			 v1.5.0 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.2 \
-	github.com/pelletier/go-toml				 v1.9.4 \
-	github.com/pelletier/go-toml/v2				 v2.0.0-beta.8 \
+	github.com/pelletier/go-toml				 v1.9.5 \
+	github.com/pelletier/go-toml/v2				 v2.0.1 \
 	github.com/pkg/errors					 v0.9.1 \
 	github.com/pkg/sftp					 v1.13.1 \
 	github.com/pmezard/go-difflib				 v1.0.0 \
 	github.com/prometheus/client_model			 v0.0.0-20190812154241-14fe0d1b01d4 \
-	github.com/rogpeppe/go-internal				 v1.3.0 \
+	github.com/rogpeppe/go-internal				 v1.6.1 \
 	github.com/russross/blackfriday/v2			 v2.1.0 \
-	github.com/sagikazarmark/crypt				 v0.5.0 \
+	github.com/sagikazarmark/crypt				 v0.6.0 \
 	github.com/spf13/afero					 v1.8.2 \
-	github.com/spf13/cast					 v1.4.1 \
+	github.com/spf13/cast					 v1.5.0 \
 	github.com/spf13/cobra					 v1.4.0 \
 	github.com/spf13/jwalterweatherman			 v1.1.0 \
 	github.com/spf13/pflag					 v1.0.5 \
-	github.com/spf13/viper					 v1.11.0 \
+	github.com/spf13/viper					 v1.12.0 \
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/testify				 v1.7.1 \
-	github.com/subosito/gotenv				 v1.2.0 \
-	github.com/vultr/govultr/v2				 v2.16.0 \
+	github.com/subosito/gotenv				 v1.3.0 \
+	github.com/vultr/govultr/v2				 v2.17.1 \
 	github.com/yuin/goldmark				 v1.2.1 \
-	go.etcd.io/etcd/api/v3					 v3.5.2 \
-	go.etcd.io/etcd/client/pkg/v3				 v3.5.2 \
-	go.etcd.io/etcd/client/v2				 v2.305.2 \
+	go.etcd.io/etcd/api/v3					 v3.5.4 \
+	go.etcd.io/etcd/client/pkg/v3				 v3.5.4 \
+	go.etcd.io/etcd/client/v2				 v2.305.4 \
+	go.etcd.io/etcd/client/v3				 v3.5.4 \
 	go.opencensus.io					 v0.23.0 \
+	go.uber.org/atomic					 v1.7.0 \
+	go.uber.org/multierr					 v1.6.0 \
+	go.uber.org/zap						 v1.17.0 \
 	golang.org/x/crypto					 v0.0.0-20220411220226-7b82a4e95df4 \
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod					 v0.4.1 \
-	golang.org/x/net					 v0.0.0-20220412020605-290c469a71a5 \
+	golang.org/x/net					 v0.0.0-20220520000938-2e3eb7b945c2 \
 	golang.org/x/oauth2					 v0.0.0-20220411215720-9780585627b5 \
 	golang.org/x/sync					 v0.0.0-20201207232520-09787c993a3a \
-	golang.org/x/sys					 v0.0.0-20220412211240-33da011f77ad \
+	golang.org/x/sys					 v0.0.0-20220520151302-bc2c85ada10a \
 	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/text					 v0.3.7 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
 	golang.org/x/tools					 v0.1.0 \
-	golang.org/x/xerrors					 v0.0.0-20220411194840-2f41105eb62f \
-	google.golang.org/api					 v0.74.0 \
+	golang.org/x/xerrors					 v0.0.0-20220517211312-f3a8303e98df \
+	google.golang.org/api					 v0.81.0 \
 	google.golang.org/appengine				 v1.6.7 \
-	google.golang.org/genproto				 v0.0.0-20220407144326-9054f6ed7bac \
-	google.golang.org/grpc					 v1.45.0 \
+	google.golang.org/genproto				 v0.0.0-20220519153652-3a47de7e79bd \
+	google.golang.org/grpc					 v1.46.2 \
 	google.golang.org/protobuf				 v1.28.0 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/errgo.v2					 v2.1.0 \
 	gopkg.in/ini.v1						 v1.66.4 \
 	gopkg.in/yaml.v2					 v2.4.0 \
-	gopkg.in/yaml.v3					 v3.0.0-20210107192922-496545a6307b \
+	gopkg.in/yaml.v3					 v3.0.0 \
 	honnef.co/go/tools					 v0.0.1-2020.1.4 \
 	rsc.io/binaryregexp					 v0.2.0 \
 	rsc.io/quote/v3						 v3.1.0 \
@@ -195,6 +202,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp		 v0.5.2 \
 	github.com/google/go-cmp		 v0.5.4 \
 	github.com/google/go-cmp		 v0.5.5 \
+	github.com/google/go-cmp		 v0.5.7 \
 	github.com/google/martian/v3		 v3.0.0 \
 	github.com/google/pprof			 v0.0.0-20181206194817-3ea8567a2e57 \
 	github.com/google/pprof			 v0.0.0-20190515194954-54271f7e092f \
@@ -214,6 +222,8 @@ MODGO_MODFILES =	\
 	github.com/ianlancetaylor/demangle	 v0.0.0-20181102032728-5e5cf60278f6 \
 	github.com/jstemmer/go-junit-report	 v0.0.0-20190106144839-af01ea7f8024 \
 	github.com/kr/pretty			 v0.1.0 \
+	github.com/kr/text			 v0.1.0 \
+	github.com/rogpeppe/go-internal		 v1.3.0 \
 	github.com/stretchr/testify		 v1.2.2 \
 	github.com/stretchr/testify		 v1.4.0 \
 	github.com/stretchr/testify		 v1.5.1 \
@@ -346,8 +356,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20210225134936-a50acf3fe073 \
 	golang.org/x/sys			 v0.0.0-20210423185535-09eb48e85fd7 \
 	golang.org/x/sys			 v0.0.0-20210615035016-665e8c7367d1 \
-	golang.org/x/sys			 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys			 v0.0.0-20211216021012-1d35b9e2eb4e \
+	golang.org/x/sys			 v0.0.0-20220412211240-33da011f77ad \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text			 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text			 v0.3.0 \
