@@ -1,6 +1,6 @@
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	6.39.0
+MODPY_EGG_VERSION =	6.46.11
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
