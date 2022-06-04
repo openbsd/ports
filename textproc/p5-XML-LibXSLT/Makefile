@@ -1,12 +1,12 @@
 COMMENT =	interface to the GNOME libxslt library
 
-DISTNAME =	XML-LibXSLT-2.000000
+DISTNAME =	XML-LibXSLT-2.002000
 
 CATEGORIES =	textproc
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# Perl
+# Perl, MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c exslt>=7 gcrypt gpg-error iconv intl lzma m perl \
