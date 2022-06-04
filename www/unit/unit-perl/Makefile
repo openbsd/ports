@@ -1,7 +1,5 @@
 UNIT_MODNAME=	perl
 
-REVISION=	0
-
 WANTLIB=	c m perl
 MODULES=	perl
 
