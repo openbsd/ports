@@ -3,7 +3,7 @@
 Index: src/calibre/gui2/__init__.py
 --- src/calibre/gui2/__init__.py.orig
 +++ src/calibre/gui2/__init__.py
-@@ -855,7 +855,7 @@ def load_builtin_fonts():
+@@ -875,7 +875,7 @@ def load_builtin_fonts():
  
  
  def setup_gui_option_parser(parser):

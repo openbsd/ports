@@ -2078,6 +2078,8 @@ lib/calibre/calibre/gui2/store/
 lib/calibre/calibre/gui2/store/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}/
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}amazon_base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}amazon_live.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}basic_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}basic_config_widget_ui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2085,6 +2087,8 @@ lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}opensearch_store.${MODPY_PYC_MAGI
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}search_result.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}web_store.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/gui2/store/${MODPY_PYCACHE}web_store_dialog.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/gui2/store/amazon_base.py
+lib/calibre/calibre/gui2/store/amazon_live.py
 lib/calibre/calibre/gui2/store/basic_config.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
 lib/calibre/calibre/gui2/store/config/
@@ -2576,6 +2580,14 @@ lib/calibre/calibre/plugins/
 lib/calibre/calibre/prints.py
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/rpdb.py
+lib/calibre/calibre/scraper/
+lib/calibre/calibre/scraper/__init__.py
+${MODPY_COMMENT}lib/calibre/calibre/scraper/${MODPY_PYCACHE}/
+lib/calibre/calibre/scraper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/scraper/${MODPY_PYCACHE}simple.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/scraper/${MODPY_PYCACHE}simple_backend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/scraper/simple.py
+lib/calibre/calibre/scraper/simple_backend.py
 lib/calibre/calibre/spell/
 lib/calibre/calibre/spell/__init__.py
 ${MODPY_COMMENT}lib/calibre/calibre/spell/${MODPY_PYCACHE}/
@@ -2738,6 +2750,7 @@ lib/calibre/calibre/utils/${MODPY_PYCACHE}search_query_parser_test.${MODPY_PYC_M
 lib/calibre/calibre/utils/${MODPY_PYCACHE}serialize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}seven_zip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}shared_file.${MODPY_PYC_MAGIC_TAG}pyc
+lib/calibre/calibre/utils/${MODPY_PYCACHE}shm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}short_uuid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}smartypants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/calibre/calibre/utils/${MODPY_PYCACHE}smtp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -2916,6 +2929,7 @@ lib/calibre/calibre/utils/search_query_parser_test.py
 lib/calibre/calibre/utils/serialize.py
 lib/calibre/calibre/utils/seven_zip.py
 lib/calibre/calibre/utils/shared_file.py
+lib/calibre/calibre/utils/shm.py
 lib/calibre/calibre/utils/short_uuid.py
 lib/calibre/calibre/utils/smartypants.py
 lib/calibre/calibre/utils/smtp.py
@@ -3562,6 +3576,7 @@ share/calibre/mime.types
 share/calibre/mozilla-ca-certs.pem
 share/calibre/pdf-mathjax-loader.js
 share/calibre/pdf-preprint.js
+share/calibre/pin-template.svg
 share/calibre/quick_start/
 share/calibre/quick_start/deu.epub
 share/calibre/quick_start/eng.epub
@@ -3589,6 +3604,7 @@ share/calibre/recipes/7seri.recipe
 share/calibre/recipes/7x7.recipe
 share/calibre/recipes/DrawAndCook.png
 share/calibre/recipes/DrawAndCook.recipe
+share/calibre/recipes/TheMITPressReader.recipe
 share/calibre/recipes/aabenraalokalavisen_dk.png
 share/calibre/recipes/aabenraalokalavisen_dk.recipe
 share/calibre/recipes/aachener_nachrichten.png
@@ -3684,6 +3700,7 @@ share/calibre/recipes/appledaily_tw.png
 share/calibre/recipes/appledaily_tw.recipe
 share/calibre/recipes/aprospect.png
 share/calibre/recipes/aprospect.recipe
+share/calibre/recipes/ara.recipe
 share/calibre/recipes/ara_info.png
 share/calibre/recipes/ara_info.recipe
 share/calibre/recipes/arabian_business.png
@@ -3696,6 +3713,7 @@ share/calibre/recipes/arret_sur_images.png
 share/calibre/recipes/arret_sur_images.recipe
 share/calibre/recipes/ars_technica.png
 share/calibre/recipes/ars_technica.recipe
+share/calibre/recipes/asahi_shimbun_en.recipe
 share/calibre/recipes/asco_de_vida.png
 share/calibre/recipes/asco_de_vida.recipe
 share/calibre/recipes/asia_one.recipe
@@ -3825,6 +3843,7 @@ share/calibre/recipes/business_insider.png
 share/calibre/recipes/business_insider.recipe
 share/calibre/recipes/business_standard.png
 share/calibre/recipes/business_standard.recipe
+share/calibre/recipes/business_today.recipe
 share/calibre/recipes/businessworldin.png
 share/calibre/recipes/businessworldin.recipe
 share/calibre/recipes/cacm.png
@@ -3842,6 +3861,7 @@ share/calibre/recipes/capital_de.png
 share/calibre/recipes/capital_de.recipe
 share/calibre/recipes/capital_gr.recipe
 share/calibre/recipes/caravan_magazine.recipe
+share/calibre/recipes/caravan_magazine_hindi.recipe
 share/calibre/recipes/carta.png
 share/calibre/recipes/carta.recipe
 share/calibre/recipes/catavencii.png
@@ -3946,6 +3966,7 @@ share/calibre/recipes/cosmopolitan.png
 share/calibre/recipes/cosmopolitan.recipe
 share/calibre/recipes/cosmopolitan_de.recipe
 share/calibre/recipes/cosmopolitan_uk.recipe
+share/calibre/recipes/cosmos.recipe
 share/calibre/recipes/cotidianul.png
 share/calibre/recipes/cotidianul.recipe
 share/calibre/recipes/counterpunch.recipe
@@ -4000,6 +4021,7 @@ share/calibre/recipes/dailyreckoning.png
 share/calibre/recipes/dailyreckoning.recipe
 share/calibre/recipes/dailytportal.png
 share/calibre/recipes/dailytportal.recipe
+share/calibre/recipes/dainik_bhaskar.recipe
 share/calibre/recipes/dallas.recipe
 share/calibre/recipes/danas.png
 share/calibre/recipes/danas.recipe
@@ -4084,6 +4106,7 @@ share/calibre/recipes/diariovasco.png
 share/calibre/recipes/diariovasco.recipe
 share/calibre/recipes/diepresse.png
 share/calibre/recipes/diepresse.recipe
+share/calibre/recipes/digit_magazine.recipe
 share/calibre/recipes/digital_arts.png
 share/calibre/recipes/digital_arts.recipe
 share/calibre/recipes/digitaljournal.png
@@ -4119,6 +4142,7 @@ share/calibre/recipes/dobreprogamy.recipe
 share/calibre/recipes/doghousediaries.recipe
 share/calibre/recipes/dominion.png
 share/calibre/recipes/dominion.recipe
+share/calibre/recipes/donga.recipe
 share/calibre/recipes/dorfener_anzeiger.png
 share/calibre/recipes/dorfener_anzeiger.recipe
 share/calibre/recipes/dosisdiarias.png
@@ -4188,6 +4212,7 @@ share/calibre/recipes/editor_and_publisher.recipe
 share/calibre/recipes/editoriali.png
 share/calibre/recipes/editoriali.recipe
 share/calibre/recipes/edmonton_journal.recipe
+share/calibre/recipes/eenadu.recipe
 share/calibre/recipes/egedallokalavisen_dk.png
 share/calibre/recipes/egedallokalavisen_dk.recipe
 share/calibre/recipes/egirl.png
@@ -4218,6 +4243,7 @@ share/calibre/recipes/el_mostrador.recipe
 share/calibre/recipes/el_mundo_co.png
 share/calibre/recipes/el_mundo_co.recipe
 share/calibre/recipes/el_mundo_today.recipe
+share/calibre/recipes/el_nacional.recipe
 share/calibre/recipes/el_observador.png
 share/calibre/recipes/el_observador.recipe
 share/calibre/recipes/el_pais.png
@@ -4338,6 +4364,8 @@ share/calibre/recipes/film_org_pl.png
 share/calibre/recipes/film_org_pl.recipe
 share/calibre/recipes/film_web.png
 share/calibre/recipes/film_web.recipe
+share/calibre/recipes/financial_times.recipe
+share/calibre/recipes/financial_times_print_edition.recipe
 share/calibre/recipes/financialsense.png
 share/calibre/recipes/financialsense.recipe
 share/calibre/recipes/financiarul.png
@@ -4396,6 +4424,7 @@ share/calibre/recipes/fredericialokalavisen_dk.recipe
 share/calibre/recipes/frederiksbergbladet_dk.recipe
 share/calibre/recipes/frederikssundlokalavisen_dk.png
 share/calibre/recipes/frederikssundlokalavisen_dk.recipe
+share/calibre/recipes/free_inquiry.recipe
 share/calibre/recipes/freenature.png
 share/calibre/recipes/freenature.recipe
 share/calibre/recipes/freeway.recipe
@@ -4547,6 +4576,7 @@ share/calibre/recipes/harpers.recipe
 share/calibre/recipes/harpers_full.recipe
 share/calibre/recipes/hatalska.png
 share/calibre/recipes/hatalska.recipe
+share/calibre/recipes/hbr.recipe
 share/calibre/recipes/heavy_metal_it.recipe
 share/calibre/recipes/heise.png
 share/calibre/recipes/heise.recipe
@@ -4560,6 +4590,8 @@ share/calibre/recipes/hindu.recipe
 share/calibre/recipes/hindu_business_line.recipe
 share/calibre/recipes/hindu_human_rights.recipe
 share/calibre/recipes/hindu_post.recipe
+share/calibre/recipes/hinduism_today.recipe
+share/calibre/recipes/hindustan.recipe
 share/calibre/recipes/hindustan_times.recipe
 share/calibre/recipes/historia_pl.png
 share/calibre/recipes/historia_pl.recipe
@@ -4615,6 +4647,7 @@ share/calibre/recipes/ideal_jaen.recipe
 share/calibre/recipes/idg_se.recipe
 share/calibre/recipes/idnes.png
 share/calibre/recipes/idnes.recipe
+share/calibre/recipes/ieee_spectrum_mag.recipe
 share/calibre/recipes/ieeespectrum.png
 share/calibre/recipes/ieeespectrum.recipe
 share/calibre/recipes/iekspries.png
@@ -4888,6 +4921,8 @@ share/calibre/recipes/le_monde.png
 share/calibre/recipes/le_monde.recipe
 share/calibre/recipes/le_monde_diplomatique_fr.png
 share/calibre/recipes/le_monde_diplomatique_fr.recipe
+share/calibre/recipes/le_monde_en.png
+share/calibre/recipes/le_monde_en.recipe
 share/calibre/recipes/le_monde_sub.png
 share/calibre/recipes/le_monde_sub.recipe
 share/calibre/recipes/le_monde_sub_paper.png
@@ -4950,6 +4985,7 @@ share/calibre/recipes/list_apart.png
 share/calibre/recipes/list_apart.recipe
 share/calibre/recipes/livemint.png
 share/calibre/recipes/livemint.recipe
+share/calibre/recipes/livescience.recipe
 share/calibre/recipes/living_stones.recipe
 share/calibre/recipes/lomza.png
 share/calibre/recipes/lomza.recipe
@@ -4969,6 +5005,7 @@ share/calibre/recipes/lupa.recipe
 share/calibre/recipes/lvivs_ks_ghazieta.recipe
 share/calibre/recipes/lwn.png
 share/calibre/recipes/lwn.recipe
+share/calibre/recipes/lwn_free.recipe
 share/calibre/recipes/lwn_weekly.png
 share/calibre/recipes/lwn_weekly.recipe
 share/calibre/recipes/lyngby-taarbaeklokalavisen_dk.png
@@ -5158,6 +5195,7 @@ share/calibre/recipes/new_yorker.png
 share/calibre/recipes/new_yorker.recipe
 share/calibre/recipes/news24.png
 share/calibre/recipes/news24.recipe
+share/calibre/recipes/news324.recipe
 share/calibre/recipes/news_busters.recipe
 share/calibre/recipes/news_times.png
 share/calibre/recipes/news_times.recipe
@@ -5312,6 +5350,7 @@ share/calibre/recipes/osw.recipe
 share/calibre/recipes/ottawa_citizen.recipe
 share/calibre/recipes/ourdailybread.png
 share/calibre/recipes/ourdailybread.recipe
+share/calibre/recipes/outlook_business_magazine.recipe
 share/calibre/recipes/outlook_india.recipe
 share/calibre/recipes/oxford_mail.png
 share/calibre/recipes/oxford_mail.recipe
@@ -5492,6 +5531,7 @@ share/calibre/recipes/real_world_economics_review.png
 share/calibre/recipes/real_world_economics_review.recipe
 share/calibre/recipes/realitatea.png
 share/calibre/recipes/realitatea.recipe
+share/calibre/recipes/reason_magazine.recipe
 share/calibre/recipes/rebelion.png
 share/calibre/recipes/rebelion.recipe
 share/calibre/recipes/red_aragon.png
@@ -5601,7 +5641,6 @@ share/calibre/recipes/science_based_medicine.png
 share/calibre/recipes/science_based_medicine.recipe
 share/calibre/recipes/science_news.recipe
 share/calibre/recipes/science_news_recent_issues.png
-share/calibre/recipes/science_news_recent_issues.recipe
 share/calibre/recipes/sciencedaily.png
 share/calibre/recipes/sciencedaily.recipe
 share/calibre/recipes/scientific_american.recipe
@@ -5687,6 +5726,7 @@ share/calibre/recipes/spin_magazine.recipe
 share/calibre/recipes/sportowefakty.png
 share/calibre/recipes/sportowefakty.recipe
 share/calibre/recipes/sports_illustrated.recipe
+share/calibre/recipes/sportstar.recipe
 share/calibre/recipes/sporza_be.recipe
 share/calibre/recipes/st_louis_post_dispatch.png
 share/calibre/recipes/st_louis_post_dispatch.recipe
@@ -5790,6 +5830,7 @@ share/calibre/recipes/the_budget_fashionista.recipe
 share/calibre/recipes/the_clinic_online.recipe
 share/calibre/recipes/the_conversation.recipe
 share/calibre/recipes/the_daily_news_egypt.recipe
+share/calibre/recipes/the_diplomat.recipe
 share/calibre/recipes/the_escapist.png
 share/calibre/recipes/the_escapist.recipe
 share/calibre/recipes/the_feature.recipe
@@ -6114,6 +6155,7 @@ share/calibre/recipes/znadplanszy_pl.recipe
 share/calibre/recipes/zougla.recipe
 share/calibre/recipes/zycie_warszawy.png
 share/calibre/recipes/zycie_warszawy.recipe
+share/calibre/scraper.js
 share/calibre/scripts.calibre_msgpack
 share/calibre/template-functions.json
 share/calibre/templates/
