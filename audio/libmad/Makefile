@@ -1,14 +1,14 @@
 COMMENT=	high-quality MPEG audio decoder
 
 DISTNAME=	libmad-0.15.1b
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio
-HOMEPAGE=	http://www.underbit.com/products/mad/
+HOMEPAGE=	https://www.underbit.com/products/mad/
 SHARED_LIBS +=	mad                  2.1      # .2.1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
