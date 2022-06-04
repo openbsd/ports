@@ -1,11 +1,10 @@
 COMMENT=		cross-platform networked sound server
 
-VERSION=		15.0
+VERSION=		16.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		2
 
-SHARED_LIBS += pulse                     7.2 # 0.24.0
+SHARED_LIBS += pulse                     7.2 # 0.24.2
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
 SHARED_LIBS += pulse-mainloop-glib       1.2 # 0.0.6
 
@@ -20,7 +19,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xtst c crypto dbus-1 execinfo glib-2.0
+WANTLIB += ICE SM X11 X11-xcb Xtst c crypto dbus-1 execinfo gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
 WANTLIB += iconv intl ltdl m pthread sndfile sndio speexdsp tdb
 WANTLIB += xcb
 
@@ -47,6 +47,7 @@ LIB_DEPENDS=		audio/libsndfile \
 			databases/tdb \
 			devel/glib2 \
 			devel/libtool,-ltdl \
+			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
 # module-console-kit.so
@@ -100,7 +101,7 @@ post-extract:
 .include <bsd.port.arch.mk>
 pre-configure:
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \
-		${WRKSRC}/shell-completion/bash/pulseaudio
+		${WRKSRC}/shell-completion/bash/pactl
 .if !${PROPERTIES:Mclang}
 	sed -i "/libintl_dep = \[\]/ s/\[\]/cc.find_library('intl')/" \
 		${WRKSRC}/meson.build

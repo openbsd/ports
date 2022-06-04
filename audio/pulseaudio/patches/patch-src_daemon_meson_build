@@ -6,9 +6,9 @@ Index: src/daemon/meson.build
 @@ -31,7 +31,7 @@ executable('pulseaudio',
    include_directories : [configinc, topinc],
    link_args : ['-ffast-math'],
-   link_with : [libpulsecore, libpulsecommon, libpulse],
--  dependencies : [ltdl_dep, cap_dep, dbus_dep, libsystemd_dep, dl_dep, libintl_dep, platform_dep, platform_socket_dep],
-+  dependencies : [libpthread_dep, ltdl_dep, cap_dep, dbus_dep, libsystemd_dep, dl_dep, libintl_dep, platform_dep, platform_socket_dep],
+   link_with : [libpulsecore],
+-  dependencies : [ltdl_dep, cap_dep, dbus_dep, libsystemd_dep, dl_dep, libintl_dep, platform_dep, platform_socket_dep, libpulsecommon_dep, libpulse_dep],
++  dependencies : [libpthread_dep, ltdl_dep, cap_dep, dbus_dep, libsystemd_dep, dl_dep, libintl_dep, platform_dep, platform_socket_dep, libpulsecommon_dep, libpulse_dep],
    c_args : pa_c_args,
  )
  

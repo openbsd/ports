@@ -55,80 +55,79 @@ lib/cmake/PulseAudio/PulseAudioConfigVersion.cmake
 lib/pkgconfig/libpulse-mainloop-glib.pc
 lib/pkgconfig/libpulse-simple.pc
 lib/pkgconfig/libpulse.pc
-lib/pulse-${VERSION}/
-lib/pulse-${VERSION}/modules/
-@so lib/pulse-${VERSION}/modules/libcli.so
-@so lib/pulse-${VERSION}/modules/libprotocol-cli.so
-@so lib/pulse-${VERSION}/modules/libprotocol-http.so
-@so lib/pulse-${VERSION}/modules/libprotocol-native.so
-@so lib/pulse-${VERSION}/modules/libprotocol-simple.so
-@so lib/pulse-${VERSION}/modules/libraop.so
-@so lib/pulse-${VERSION}/modules/librtp.so
-@so lib/pulse-${VERSION}/modules/module-allow-passthrough.so
-@so lib/pulse-${VERSION}/modules/module-always-sink.so
-@so lib/pulse-${VERSION}/modules/module-always-source.so
-@so lib/pulse-${VERSION}/modules/module-augment-properties.so
-@so lib/pulse-${VERSION}/modules/module-card-restore.so
-@so lib/pulse-${VERSION}/modules/module-cli-protocol-tcp.so
-@so lib/pulse-${VERSION}/modules/module-cli-protocol-unix.so
-@so lib/pulse-${VERSION}/modules/module-cli.so
-@so lib/pulse-${VERSION}/modules/module-combine-sink.so
-@so lib/pulse-${VERSION}/modules/module-combine.so
-@so lib/pulse-${VERSION}/modules/module-console-kit.so
-@so lib/pulse-${VERSION}/modules/module-dbus-protocol.so
-@so lib/pulse-${VERSION}/modules/module-default-device-restore.so
-@so lib/pulse-${VERSION}/modules/module-detect.so
-@so lib/pulse-${VERSION}/modules/module-device-manager.so
-@so lib/pulse-${VERSION}/modules/module-device-restore.so
-@so lib/pulse-${VERSION}/modules/module-echo-cancel.so
-@so lib/pulse-${VERSION}/modules/module-filter-apply.so
-@so lib/pulse-${VERSION}/modules/module-filter-heuristics.so
-@so lib/pulse-${VERSION}/modules/module-http-protocol-tcp.so
-@so lib/pulse-${VERSION}/modules/module-http-protocol-unix.so
-@so lib/pulse-${VERSION}/modules/module-intended-roles.so
-@so lib/pulse-${VERSION}/modules/module-ladspa-sink.so
-@so lib/pulse-${VERSION}/modules/module-loopback.so
-@so lib/pulse-${VERSION}/modules/module-match.so
-@so lib/pulse-${VERSION}/modules/module-native-protocol-fd.so
-@so lib/pulse-${VERSION}/modules/module-native-protocol-tcp.so
-@so lib/pulse-${VERSION}/modules/module-native-protocol-unix.so
-@so lib/pulse-${VERSION}/modules/module-null-sink.so
-@so lib/pulse-${VERSION}/modules/module-null-source.so
-@so lib/pulse-${VERSION}/modules/module-pipe-sink.so
-@so lib/pulse-${VERSION}/modules/module-pipe-source.so
-@so lib/pulse-${VERSION}/modules/module-position-event-sounds.so
-@so lib/pulse-${VERSION}/modules/module-raop-sink.so
-@so lib/pulse-${VERSION}/modules/module-remap-sink.so
-@so lib/pulse-${VERSION}/modules/module-remap-source.so
-@so lib/pulse-${VERSION}/modules/module-rescue-streams.so
-@so lib/pulse-${VERSION}/modules/module-role-cork.so
-@so lib/pulse-${VERSION}/modules/module-role-ducking.so
-@so lib/pulse-${VERSION}/modules/module-rtp-recv.so
-@so lib/pulse-${VERSION}/modules/module-rtp-send.so
-@so lib/pulse-${VERSION}/modules/module-rygel-media-server.so
-@so lib/pulse-${VERSION}/modules/module-simple-protocol-tcp.so
-@so lib/pulse-${VERSION}/modules/module-simple-protocol-unix.so
-@so lib/pulse-${VERSION}/modules/module-sine-source.so
-@so lib/pulse-${VERSION}/modules/module-sine.so
-@so lib/pulse-${VERSION}/modules/module-sndio.so
-@so lib/pulse-${VERSION}/modules/module-stream-restore.so
-@so lib/pulse-${VERSION}/modules/module-suspend-on-idle.so
-@so lib/pulse-${VERSION}/modules/module-switch-on-connect.so
-@so lib/pulse-${VERSION}/modules/module-switch-on-port-available.so
-@so lib/pulse-${VERSION}/modules/module-tunnel-sink-new.so
-@so lib/pulse-${VERSION}/modules/module-tunnel-sink.so
-@so lib/pulse-${VERSION}/modules/module-tunnel-source-new.so
-@so lib/pulse-${VERSION}/modules/module-tunnel-source.so
-@so lib/pulse-${VERSION}/modules/module-virtual-sink.so
-@so lib/pulse-${VERSION}/modules/module-virtual-source.so
-@so lib/pulse-${VERSION}/modules/module-volume-restore.so
-@so lib/pulse-${VERSION}/modules/module-x11-bell.so
-@so lib/pulse-${VERSION}/modules/module-x11-cork-request.so
-@so lib/pulse-${VERSION}/modules/module-x11-publish.so
-@so lib/pulse-${VERSION}/modules/module-x11-xsmp.so
 lib/pulseaudio/
 @so lib/pulseaudio/libpulsecommon-${VERSION}.so
 @so lib/pulseaudio/libpulsecore-${VERSION}.so
+lib/pulseaudio/modules/
+@so lib/pulseaudio/modules/libcli.so
+@so lib/pulseaudio/modules/libprotocol-cli.so
+@so lib/pulseaudio/modules/libprotocol-http.so
+@so lib/pulseaudio/modules/libprotocol-native.so
+@so lib/pulseaudio/modules/libprotocol-simple.so
+@so lib/pulseaudio/modules/libraop.so
+@so lib/pulseaudio/modules/librtp.so
+@so lib/pulseaudio/modules/module-allow-passthrough.so
+@so lib/pulseaudio/modules/module-always-sink.so
+@so lib/pulseaudio/modules/module-always-source.so
+@so lib/pulseaudio/modules/module-augment-properties.so
+@so lib/pulseaudio/modules/module-card-restore.so
+@so lib/pulseaudio/modules/module-cli-protocol-tcp.so
+@so lib/pulseaudio/modules/module-cli-protocol-unix.so
+@so lib/pulseaudio/modules/module-cli.so
+@so lib/pulseaudio/modules/module-combine-sink.so
+@so lib/pulseaudio/modules/module-combine.so
+@so lib/pulseaudio/modules/module-console-kit.so
+@so lib/pulseaudio/modules/module-dbus-protocol.so
+@so lib/pulseaudio/modules/module-default-device-restore.so
+@so lib/pulseaudio/modules/module-detect.so
+@so lib/pulseaudio/modules/module-device-manager.so
+@so lib/pulseaudio/modules/module-device-restore.so
+@so lib/pulseaudio/modules/module-echo-cancel.so
+@so lib/pulseaudio/modules/module-filter-apply.so
+@so lib/pulseaudio/modules/module-filter-heuristics.so
+@so lib/pulseaudio/modules/module-http-protocol-tcp.so
+@so lib/pulseaudio/modules/module-http-protocol-unix.so
+@so lib/pulseaudio/modules/module-intended-roles.so
+@so lib/pulseaudio/modules/module-ladspa-sink.so
+@so lib/pulseaudio/modules/module-loopback.so
+@so lib/pulseaudio/modules/module-match.so
+@so lib/pulseaudio/modules/module-native-protocol-fd.so
+@so lib/pulseaudio/modules/module-native-protocol-tcp.so
+@so lib/pulseaudio/modules/module-native-protocol-unix.so
+@so lib/pulseaudio/modules/module-null-sink.so
+@so lib/pulseaudio/modules/module-null-source.so
+@so lib/pulseaudio/modules/module-pipe-sink.so
+@so lib/pulseaudio/modules/module-pipe-source.so
+@so lib/pulseaudio/modules/module-position-event-sounds.so
+@so lib/pulseaudio/modules/module-raop-sink.so
+@so lib/pulseaudio/modules/module-remap-sink.so
+@so lib/pulseaudio/modules/module-remap-source.so
+@so lib/pulseaudio/modules/module-rescue-streams.so
+@so lib/pulseaudio/modules/module-role-cork.so
+@so lib/pulseaudio/modules/module-role-ducking.so
+@so lib/pulseaudio/modules/module-rtp-recv.so
+@so lib/pulseaudio/modules/module-rtp-send.so
+@so lib/pulseaudio/modules/module-rygel-media-server.so
+@so lib/pulseaudio/modules/module-simple-protocol-tcp.so
+@so lib/pulseaudio/modules/module-simple-protocol-unix.so
+@so lib/pulseaudio/modules/module-sine-source.so
+@so lib/pulseaudio/modules/module-sine.so
+@so lib/pulseaudio/modules/module-sndio.so
+@so lib/pulseaudio/modules/module-stream-restore.so
+@so lib/pulseaudio/modules/module-suspend-on-idle.so
+@so lib/pulseaudio/modules/module-switch-on-connect.so
+@so lib/pulseaudio/modules/module-switch-on-port-available.so
+@so lib/pulseaudio/modules/module-tunnel-sink-new.so
+@so lib/pulseaudio/modules/module-tunnel-sink.so
+@so lib/pulseaudio/modules/module-tunnel-source-new.so
+@so lib/pulseaudio/modules/module-tunnel-source.so
+@so lib/pulseaudio/modules/module-virtual-sink.so
+@so lib/pulseaudio/modules/module-virtual-source.so
+@so lib/pulseaudio/modules/module-volume-restore.so
+@so lib/pulseaudio/modules/module-x11-bell.so
+@so lib/pulseaudio/modules/module-x11-cork-request.so
+@so lib/pulseaudio/modules/module-x11-publish.so
+@so lib/pulseaudio/modules/module-x11-xsmp.so
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
@@ -204,6 +203,7 @@ share/locale/hu/LC_MESSAGES/pulseaudio.mo
 share/locale/id/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
 share/locale/ja/LC_MESSAGES/pulseaudio.mo
+share/locale/ka/LC_MESSAGES/pulseaudio.mo
 share/locale/kk/LC_MESSAGES/pulseaudio.mo
 share/locale/kn/LC_MESSAGES/pulseaudio.mo
 share/locale/ko/LC_MESSAGES/pulseaudio.mo
