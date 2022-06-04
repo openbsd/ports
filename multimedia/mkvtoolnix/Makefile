@@ -1,6 +1,6 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-67.0.0
+DISTNAME=	mkvtoolnix-68.0.0
 
 CATEGORIES=	multimedia x11
 
@@ -11,10 +11,10 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += FLAC Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Widgets c cmark dvdread ebml fmt gmp
-WANTLIB += iconv intl m matroska ogg pugixml vorbis z
+WANTLIB += ${COMPILER_LIBCXX} FLAC Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Svg Qt5Widgets c
+WANTLIB += cmark dvdread ebml fmt gmp iconv intl m matroska ogg
+WANTLIB += pugixml vorbis z
 
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/
 
@@ -50,7 +50,8 @@ LIB_DEPENDS=	audio/flac \
 		textproc/cmark \
 		textproc/libebml>=1.4.0 \
 		textproc/pugixml \
-		x11/qt5/qtmultimedia
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtsvg
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
@@ -63,9 +64,6 @@ CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
 		--disable-qt6 \
 		--with-boost=${LOCALBASE} \
-		--with-boost-filesystem=boost_filesystem \
-		--with-boost-system=boost_system \
-		--with-boost-regex=boost_regex \
 		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
 
 MAKE_ENV+=	V=1
