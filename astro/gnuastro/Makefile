@@ -1,9 +1,9 @@
 COMMENT =	GNU Astronomy Utilities
-DISTNAME =	gnuastro-0.16.1-e0f1
+DISTNAME =	gnuastro-0.17
 CATEGORIES =	astro
-PKGNAME =	gnuastro-0.16.1
+PKGNAME =	gnuastro-0.17
 
-SHARED_LIBS +=	gnuastro                  2.2 # 14.0
+SHARED_LIBS +=	gnuastro                  3.0 # 15.0
 
 HOMEPAGE =	https://www.gnu.org/software/gnuastro/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

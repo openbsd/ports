@@ -12,6 +12,12 @@
 @bin bin/astnoisechisel
 @bin bin/astquery
 bin/astscript-ds9-region
+bin/astscript-fits-view
+bin/astscript-psf-scale-factor
+bin/astscript-psf-select-stars
+bin/astscript-psf-stamp
+bin/astscript-psf-subtract
+bin/astscript-psf-unite
 bin/astscript-radial-profile
 bin/astscript-sort-by-night
 @bin bin/astsegment
@@ -95,6 +101,12 @@ lib/pkgconfig/gnuastro.pc
 @man man/man1/astnoisechisel.1
 @man man/man1/astquery.1
 @man man/man1/astscript-ds9-region.1
+@man man/man1/astscript-fits-view.1
+@man man/man1/astscript-psf-scale-factor.1
+@man man/man1/astscript-psf-select-stars.1
+@man man/man1/astscript-psf-stamp.1
+@man man/man1/astscript-psf-subtract.1
+@man man/man1/astscript-psf-unite.1
 @man man/man1/astscript-radial-profile.1
 @man man/man1/astscript-sort-by-night.1
 @man man/man1/astsegment.1

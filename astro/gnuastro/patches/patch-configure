@@ -3,7 +3,7 @@ Remove hardcoded -O3
 Index: configure
 --- configure.orig
 +++ configure
-@@ -20757,7 +20757,7 @@ if test "x$enable_debug" = "xyes"
+@@ -21239,7 +21239,7 @@ if test "x$enable_debug" = "xyes"
  then :
    cflags_add="-g -O0"; enable_shared=no
  else $as_nop
@@ -12,7 +12,7 @@ Index: configure
  fi
  CFLAGS="-Wall $cflags_add $CFLAGS"
  CXXFLAGS="-Wall $cflags_add $CXXFLAGS"
-@@ -30076,7 +30076,7 @@ printf %s "checking for shell to use with libtool... "
+@@ -30528,7 +30528,7 @@ printf %s "checking for shell to use with libtool... "
          cprog=libtool_shell_test.c
          printf "%s\n" "#include <stdio.h>"                                 > $cprog
          printf "%s\n" "int main(void){printf(\"success\\n\"); return 0;}" >> $cprog
