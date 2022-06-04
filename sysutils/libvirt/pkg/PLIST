@@ -305,6 +305,9 @@ share/doc/libvirt/html/kbase/internals/incremental-backup.html
 share/doc/libvirt/html/kbase/internals/locking.html
 share/doc/libvirt/html/kbase/internals/migration.html
 share/doc/libvirt/html/kbase/internals/overview.html
+share/doc/libvirt/html/kbase/internals/qemu-event-handlers.html
+share/doc/libvirt/html/kbase/internals/qemu-migration.html
+share/doc/libvirt/html/kbase/internals/qemu-threads.html
 share/doc/libvirt/html/kbase/internals/rpc.html
 share/doc/libvirt/html/kbase/kvm-realtime.html
 share/doc/libvirt/html/kbase/launch_security_sev.html
@@ -469,6 +472,7 @@ share/libvirt/cpu_map/arm_cortex-a72.xml
 share/libvirt/cpu_map/arm_features.xml
 share/libvirt/cpu_map/arm_vendors.xml
 share/libvirt/cpu_map/index.xml
+share/libvirt/cpu_map/ppc64_POWER10.xml
 share/libvirt/cpu_map/ppc64_POWER6.xml
 share/libvirt/cpu_map/ppc64_POWER7.xml
 share/libvirt/cpu_map/ppc64_POWER8.xml
