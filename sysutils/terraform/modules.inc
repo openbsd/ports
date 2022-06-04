@@ -1,3 +1,5 @@
+MODGO_VERSION =	v1.2.2
+
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.81.0 \
 	cloud.google.com/go/bigquery					 v1.8.0 \
@@ -131,7 +133,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-checkpoint				 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp				 v0.5.2 \
 	github.com/hashicorp/go-cty					 v1.4.1-0.20200414143053-d3edf31b6320 \
-	github.com/hashicorp/go-getter					 v1.5.10 \
+	github.com/hashicorp/go-getter					 v1.6.1 \
 	github.com/hashicorp/go-hclog					 v0.15.0 \
 	github.com/hashicorp/go-immutable-radix				 v1.0.0 \
 	github.com/hashicorp/go-msgpack					 v0.5.4 \
@@ -195,7 +197,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-shellwords					 v1.0.4 \
 	github.com/matttproud/golang_protobuf_extensions		 v1.0.1 \
 	github.com/miekg/dns						 v1.1.26 \
-	github.com/mitchellh/cli					 v1.1.3 \
+	github.com/mitchellh/cli					 v1.1.4 \
 	github.com/mitchellh/colorstring				 v0.0.0-20190213212951-d06e56a500db \
 	github.com/mitchellh/copystructure				 v1.2.0 \
 	github.com/mitchellh/go-homedir					 v1.1.0 \
@@ -282,7 +284,7 @@ MODGO_MODULES =	\
 	golang.org/x/net						 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2						 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys						 v0.0.0-20211019181941-9d821ace8654 \
+	golang.org/x/sys						 v0.0.0-20220517195934-5e4e11fc645e \
 	golang.org/x/term						 v0.0.0-20210615171337-6886f2dfbf5b \
 	golang.org/x/text						 v0.3.7 \
 	golang.org/x/time						 v0.0.0-20220224211638-0e9765cccd65 \
@@ -753,6 +755,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys						 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys						 v0.0.0-20210831042530-f4d43177bf5e \
+	golang.org/x/sys						 v0.0.0-20211019181941-9d821ace8654 \
 	golang.org/x/term						 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text						 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text						 v0.3.0 \
@@ -947,3 +950,4 @@ MODGO_MODFILES =	\
 	k8s.io/utils							 v0.0.0-20210802155522-efc7438f0176 \
 	sigs.k8s.io/structured-merge-diff/v4				 v4.0.2 \
 	sigs.k8s.io/yaml						 v1.1.0
+
