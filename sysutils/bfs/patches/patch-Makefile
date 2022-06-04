@@ -3,12 +3,12 @@ Install manual page to the correct directory.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -48,7 +48,7 @@ DEPFLAGS ?= -MD -MP -MF $(@:.o=.d)
- 
+@@ -38,7 +38,7 @@ RM ?= rm -f
+ export BUILDDIR ?= .
  DESTDIR ?=
  PREFIX ?= /usr
 -MANDIR ?= $(PREFIX)/share/man
 +MANDIR ?= $(PREFIX)/man
  
- LOCAL_CPPFLAGS := \
-     -D__EXTENSIONS__ \
+ BIN := $(BUILDDIR)/bin
+ OBJ := $(BUILDDIR)/obj

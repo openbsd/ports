@@ -1,9 +1,9 @@
-touch -h is a GNU extension
+touch -h is a GNU extension.
 
-Index: tests.sh
---- tests.sh.orig
-+++ tests.sh
-@@ -990,7 +990,7 @@ function make_times() {
+Index: tests/tests.sh
+--- tests/tests.sh.orig
++++ tests/tests.sh
+@@ -1019,7 +1019,7 @@ function make_times() {
      $TOUCH -t 199112140001 "$1/b"
      $TOUCH -t 199112140002 "$1/c"
      ln -s a "$1/l"

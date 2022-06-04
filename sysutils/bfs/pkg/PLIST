@@ -3,3 +3,6 @@
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/bfs
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_bfs
