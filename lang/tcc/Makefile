@@ -1,19 +1,20 @@
 ONLY_FOR_ARCHS =	amd64 arm64 armv7 i386 riscv64
 
 COMMENT =	tiny C compiler
-DISTNAME =	tcc-0.9.27.20220419
+DISTNAME =	tcc-0.9.27.20220526
 CATEGORIES =	lang
 
 # 0.9.27 release pre-dates OpenBSD support; use GH_COMMIT
 GH_ACCOUNT =	TinyCC
 GH_PROJECT =	tinycc
-GH_COMMIT =	5a3d1024d9299510a20be89f1a02c342e4ccc6e6
+GH_COMMIT =	afc136262e93ae85fb3643005b36dbfc30d99c42
 
 HOMEPAGE =	https://bellard.org/tcc/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1+
 # stdatomic.h: Apache 2.0 with LLVM exceptions
+# dwarf.h: LGPLv3+ or GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c m pthread
