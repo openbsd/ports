@@ -1,0 +1,12 @@
+Replace x/crypto after ssh-agent authentication with non-RSA keys was broken:
+https://github.com/golang/crypto/commit/46612604a0f90acbdd4722d44b8fd66ab69ed2a4
+
+Index: go.mod
+--- go.mod.orig
++++ go.mod
+@@ -266,3 +266,5 @@ require (
+ )
+ 
+ go 1.17
++
++replace golang.org/x/crypto v0.0.0-20220427172511-eb4f295cb31f => golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e

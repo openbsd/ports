@@ -7,6 +7,7 @@ COMMENT=		tool for building machine images
 MODGO_MODNAME=		github.com/hashicorp/packer
 MODGO_VERSION=		v1.8.1
 DISTNAME=		packer-${MODGO_VERSION}
+REVISION=		1
 
 CATEGORIES=		sysutils
 
@@ -20,6 +21,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 MODULES=		lang/go
+
+WRKDIST=		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
 
 .include "modules.inc"
 

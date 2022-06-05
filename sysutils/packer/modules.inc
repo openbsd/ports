@@ -458,6 +458,7 @@ MODGO_MODULES =	\
 	go.uber.org/multierr						 v1.1.0 \
 	go.uber.org/zap							 v1.10.0 \
 	golang.org/x/crypto						 v0.0.0-20220427172511-eb4f295cb31f \
+	golang.org/x/crypto						 v0.0.0-20220525230936-793ad666bf5e \
 	golang.org/x/exp						 v0.0.0-20200331195152-e8c3332aa8e5 \
 	golang.org/x/image						 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint						 v0.0.0-20210508222113-6edffad5e616 \

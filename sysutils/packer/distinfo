@@ -1418,6 +1418,8 @@ SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20210817164053-32db794688a5.mod
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.mod) = zWMRYSoqpNDX4DxBs6ofvC1fiVqz9hCJ+rgL/p+PVIU=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20220427172511-eb4f295cb31f.mod) = ryyI7r/wPjoq/ssbA2afxU6dEiyI97Ls/tBR7F28i7s=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20220427172511-eb4f295cb31f.zip) = aQRjC0vG92e8AktUTEBSOadzpOb4OShgCesEdK3dGyg=
+SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20220525230936-793ad666bf5e.mod) = ryyI7r/wPjoq/ssbA2afxU6dEiyI97Ls/tBR7F28i7s=
+SHA256 (go_modules/golang.org/x/crypto/@v/v0.0.0-20220525230936-793ad666bf5e.zip) = C8pw2di3Lkt7CUf9ghq9+JQnwmmTiV+thvlpmSMscIc=
 SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20190121172915-509febef88a4.mod) = n/HQfKjAlFhFDrX0B2qgOQ71x9sMepQhUOiCWKeLU4M=
 SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20190306152737-a1d7652674e8.mod) = n/HQfKjAlFhFDrX0B2qgOQ71x9sMepQhUOiCWKeLU4M=
 SHA256 (go_modules/golang.org/x/exp/@v/v0.0.0-20190510132918-efd6b22b2522.mod) = ek5Zmvq0IQ2nxD5mNEEfLjs0WPkJhpB201EKjkS6JHw=
@@ -3368,6 +3370,8 @@ SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20210817164053-32db794688a5.mod) 
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20210921155107-089bfa567519.mod) = 247
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20220427172511-eb4f295cb31f.mod) = 255
 SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20220427172511-eb4f295cb31f.zip) = 1776378
+SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20220525230936-793ad666bf5e.mod) = 255
+SIZE (go_modules/golang.org/x/crypto/@v/v0.0.0-20220525230936-793ad666bf5e.zip) = 1778869
 SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20190121172915-509febef88a4.mod) = 24
 SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20190306152737-a1d7652674e8.mod) = 24
 SIZE (go_modules/golang.org/x/exp/@v/v0.0.0-20190510132918-efd6b22b2522.mod) = 327
