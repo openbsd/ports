@@ -1,7 +1,7 @@
 COMMENT=	graphical tool to change Tux Paint's settings
 #'
 
-DISTNAME=	tuxpaint-config-0.0.18
+DISTNAME=	tuxpaint-config-0.0.19
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -16,7 +16,7 @@ WANTLIB += Xft Xinerama c fltk fontconfig iconv intl m paper unibreak
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

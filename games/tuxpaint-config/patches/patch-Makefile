@@ -45,19 +45,7 @@ Index: Makefile
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS) \
-@@ -89,11 +83,6 @@ ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS)
- # "make" with no arguments builds the program and man page from sources:
- 
- all:	tuxpaint-config translations
--	@echo
--	@echo "Done compiling."
--	@echo "Now (probably as 'root' superuser), run 'make install'"
--	@echo "to install Tux Paint Configuration Tool."
--	@echo
- 
- releaseclean:
- 	@echo
-@@ -178,16 +167,9 @@ install-win32:
+@@ -210,16 +204,9 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -76,7 +64,7 @@ Index: Makefile
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -266,24 +248,15 @@ install-kde-icons:
+@@ -298,24 +285,15 @@ install-kde-icons:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
@@ -105,7 +93,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -299,31 +272,15 @@ install-data:
+@@ -331,31 +309,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
@@ -141,7 +129,7 @@ Index: Makefile
  
  
  # Build the program!
-@@ -331,22 +288,22 @@ install-man:
+@@ -363,22 +325,22 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking
