@@ -1,6 +1,6 @@
 COMMENT =		file, shell and text manipulation utilities
 
-DISTNAME =		coreutils-9.0
+DISTNAME =		coreutils-9.1
 CATEGORIES =		sysutils
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
