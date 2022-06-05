@@ -1,5 +1,6 @@
---- src/SDL_Pango.h.orig	Tue Apr 25 21:48:18 2017
-+++ src/SDL_Pango.h	Tue Apr 25 21:49:43 2017
+Index: src/SDL_Pango.h
+--- src/SDL_Pango.h.orig
++++ src/SDL_Pango.h
 @@ -47,10 +47,10 @@ typedef struct _SDLPango_Matrix {
  } SDLPango_Matrix;
  
@@ -72,7 +73,42 @@
  /*!
      Specifies transparent back and transparent letter.
      This is useful for KARAOKE like rendering.
-@@ -184,17 +184,15 @@ extern DECLSPEC void SDLCALL SDLPango_SetBaseDirection
+@@ -109,12 +109,20 @@ typedef enum {
+     SDLPANGO_DIRECTION_NEUTRAL	/*! Neutral */
+ } SDLPango_Direction;
+ 
++/*!
++    Specifies alignment of text. See Pango reference for detail
++*/
++typedef enum {
++    SDLPANGO_ALIGN_LEFT,
++    SDLPANGO_ALIGN_CENTER,
++    SDLPANGO_ALIGN_RIGHT
++} SDLPango_Alignment;
+ 
+-
+ extern DECLSPEC int SDLCALL SDLPango_Init();
+ 
+ extern DECLSPEC int SDLCALL SDLPango_WasInit();
+ 
++extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext_GivenFontDesc(const char* font_desc);
+ extern DECLSPEC SDLPango_Context* SDLCALL SDLPango_CreateContext();
+ 
+ extern DECLSPEC void SDLCALL SDLPango_FreeContext(
+@@ -157,6 +165,12 @@ extern DECLSPEC void SDLCALL SDLPango_SetMarkup(
+     const char *markup,
+     int length);
+ 
++extern DECLSPEC void SDLCALL SDLPango_SetText_GivenAlignment(
++    SDLPango_Context *context,
++    const char *text,
++    int length,
++    SDLPango_Alignment alignment);
++
+ extern DECLSPEC void SDLCALL SDLPango_SetText(
+     SDLPango_Context *context,
+     const char *markup,
+@@ -170,17 +184,15 @@ extern DECLSPEC void SDLCALL SDLPango_SetBaseDirection
      SDLPango_Context *context,
      SDLPango_Direction direction);
  

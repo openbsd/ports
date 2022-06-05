@@ -1,6 +1,5 @@
-include/SDL/
 include/SDL/SDL_Pango.h
-lib/libSDL_Pango.a
+@static-lib lib/libSDL_Pango.a
 lib/libSDL_Pango.la
 @lib lib/libSDL_Pango.so.${LIBSDL_Pango_VERSION}
 lib/pkgconfig/SDL_Pango.pc

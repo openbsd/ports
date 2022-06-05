@@ -3,25 +3,23 @@ COMMENT=	SDL wrapper around the Pango library
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
 PKGNAME=	sdl-pango-${V}
-REVISION=	14
+REVISION=	15
+
 CATEGORIES=	devel x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlpango/}
-MASTER_SITES0=	http://zarb.org/~gc/t/
 
-PATCHFILES=	SDL_Pango-0.1.2-API-adds.patch:0
-
-SHARED_LIBS=	SDL_Pango	0.0 # .2.0
+SHARED_LIBS +=  SDL_Pango            0.0      # 2.0
 
 HOMEPAGE=	http://sdlpango.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += SDL expat ffi fontconfig freetype fribidi glib-2.0
-WANTLIB+= gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz iconv
-WANTLIB+= intl m pango-1.0 pangoft2-1.0 pcre pthread sndio usbhid z
-WANTLIB+= gio-2.0
-WANTLIB+= ${COMPILER_LIBCXX}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlpango/}
+
+WANTLIB += ${COMPILER_LIBCXX} SDL expat ffi fontconfig freetype
+WANTLIB += fribidi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += harfbuzz iconv intl m pango-1.0 pangoft2-1.0 pcre sndio
+WANTLIB += usbhid z
 
 FIX_CRLF_FILES=	src/SDL_Pango.h
 
