@@ -1,0 +1,12 @@
+Index: src/libs/utils/qtcassert.cpp
+--- src/libs/utils/qtcassert.cpp.orig
++++ src/libs/utils/qtcassert.cpp
+@@ -40,7 +40,7 @@ void dumpBacktrace(int maxdepth)
+ {
+     if (maxdepth == -1)
+         maxdepth = 1000;
+-#if defined(Q_OS_UNIX)
++#if defined(Q_OS_UNIX) && !defined(__OpenBSD__)
+     void *bt[1000] = {nullptr};
+     int size = backtrace(bt, sizeof(bt) / sizeof(bt[0]));
+     char **lines = backtrace_symbols(bt, size);

@@ -59,7 +59,6 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libConan.so
 @so lib/qtcreator/plugins/libCore.so
 @so lib/qtcreator/plugins/libCppEditor.so
-@so lib/qtcreator/plugins/libCppTools.so
 @so lib/qtcreator/plugins/libCppcheck.so
 @so lib/qtcreator/plugins/libCtfVisualizer.so
 @so lib/qtcreator/plugins/libDebugger.so
@@ -90,7 +89,6 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libPython.so
 @so lib/qtcreator/plugins/libQbsProjectManager.so
 @so lib/qtcreator/plugins/libQmakeProjectManager.so
-@so lib/qtcreator/plugins/libQmlDesigner.so
 @so lib/qtcreator/plugins/libQmlJSEditor.so
 @so lib/qtcreator/plugins/libQmlJSTools.so
 @so lib/qtcreator/plugins/libQmlPreview.so
@@ -103,7 +101,6 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libScxmlEditor.so
 @so lib/qtcreator/plugins/libSerialTerminal.so
 @so lib/qtcreator/plugins/libSilverSearcher.so
-@so lib/qtcreator/plugins/libStudioWelcome.so
 @so lib/qtcreator/plugins/libSubversion.so
 @so lib/qtcreator/plugins/libTaskList.so
 @so lib/qtcreator/plugins/libTextEditor.so
@@ -114,11 +111,6 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libWebAssembly.so
 @so lib/qtcreator/plugins/libWelcome.so
 @so lib/qtcreator/plugins/libWinRt.so
-lib/qtcreator/plugins/qmldesigner/
-@so lib/qtcreator/plugins/qmldesigner/libassetexporterplugin.so
-@so lib/qtcreator/plugins/qmldesigner/libcomponentsplugin.so
-@so lib/qtcreator/plugins/qmldesigner/libqmlpreviewplugin.so
-@so lib/qtcreator/plugins/qmldesigner/libqtquickplugin.so
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/clangbackend
@@ -130,6 +122,7 @@ libexec/qtcreator/
 @bin libexec/qtcreator/qml2puppet
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
+@bin libexec/qtcreator/qtcreator_processlauncher
 @bin libexec/qtcreator/qtpromaker
 @bin libexec/qtcreator/sdktool
 share/applications/org.qt-project.qtcreator.desktop
@@ -295,6 +288,8 @@ share/qtcreator/qml/qmlpuppet/commands/informationchangedcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/informationchangedcommand.h
 share/qtcreator/qml/qmlpuppet/commands/inputeventcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/inputeventcommand.h
+share/qtcreator/qml/qmlpuppet/commands/nanotracecommand.cpp
+share/qtcreator/qml/qmlpuppet/commands/nanotracecommand.h
 share/qtcreator/qml/qmlpuppet/commands/pixmapchangedcommand.cpp
 share/qtcreator/qml/qmlpuppet/commands/pixmapchangedcommand.h
 share/qtcreator/qml/qmlpuppet/commands/puppetalivecommand.cpp
@@ -459,6 +454,7 @@ share/qtcreator/qml/qmlpuppet/mockfiles/qt6/ModelNodeView.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/qt6/MoveGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/qt6/NodeNodeView.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/qt6/Overlay2D.qml
+share/qtcreator/qml/qmlpuppet/mockfiles/qt6/ParticleEmitterGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/qt6/ParticleSystemGizmo.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/qt6/PlanarDraggable.qml
 share/qtcreator/qml/qmlpuppet/mockfiles/qt6/PlanarMoveHandle.qml
@@ -506,6 +502,8 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/import3d/import3d.pri
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/anchorchangesnodeinstance.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/animationdriver.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/animationdriver.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/behaviornodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/behaviornodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/capturenodeinstanceserverdispatcher.cpp
@@ -563,6 +561,8 @@ share/qtcreator/qml/qmlpuppet/qml2puppet/instances/quickitemnodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/quickitemnodeinstance.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/servernodeinstance.cpp
 share/qtcreator/qml/qmlpuppet/qml2puppet/instances/servernodeinstance.h
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/viewconfig.cpp
+share/qtcreator/qml/qmlpuppet/qml2puppet/instances/viewconfig.h
 share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pri
 share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppet.pro
 share/qtcreator/qml/qmlpuppet/qml2puppet/qml2puppetmain.cpp
@@ -584,11 +584,54 @@ share/qtcreator/qml/qmlpuppet/types/types.pri
 share/qtcreator/qmldesigner/
 share/qtcreator/qmldesigner/formatconfiguration.json
 share/qtcreator/qmldesigner/itemLibraryQmlSources/
-share/qtcreator/qmldesigner/itemLibraryQmlSources/AddImport.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/AddModuleView.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/Assets.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/ItemDelegate.qml
 share/qtcreator/qmldesigner/itemLibraryQmlSources/ItemsView.qml
-share/qtcreator/qmldesigner/itemLibraryQmlSources/LibraryHeader.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/PlusButton.qml
+share/qtcreator/qmldesigner/itemLibraryQmlSources/SearchBox.qml
+share/qtcreator/qmldesigner/misc/
+share/qtcreator/qmldesigner/misc/BusyIndicator.qml
+share/qtcreator/qmldesigner/newprojectdialog/
+share/qtcreator/qmldesigner/newprojectdialog/NewProjectDialog.qml
+share/qtcreator/qmldesigner/newprojectdialog/image/
+share/qtcreator/qmldesigner/newprojectdialog/image/logo.png
+share/qtcreator/qmldesigner/newprojectdialog/image/logo@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-basic.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-basic@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-default.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-default@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-error.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-error@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-fusion.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-fusion@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-imagine.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-imagine@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-macos.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-macos@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-material_dark.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-material_dark@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-material_light.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-material_light@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-universal_dark.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-universal_dark@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-universal_light.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-universal_light@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-universal_system.png
+share/qtcreator/qmldesigner/newprojectdialog/image/style-universal_system@2x.png
+share/qtcreator/qmldesigner/newprojectdialog/imports/
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/Details.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/DialogValues.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialog.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialogButton.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/PopupDialogButtonBox.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/PresetView.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/Styles.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/NewProjectDialog/qmldir
+share/qtcreator/qmldesigner/newprojectdialog/imports/ProjectType/
+share/qtcreator/qmldesigner/newprojectdialog/imports/ProjectType/DefaultProject.qml
+share/qtcreator/qmldesigner/newprojectdialog/imports/ProjectType/qmldir
 share/qtcreator/qmldesigner/propertyEditorQmlSources/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/BooleanEditorTemplate.template
@@ -604,6 +647,14 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/TextEdito
 share/qtcreator/qmldesigner/propertyEditorQmlSources/PropertyTemplates/UrlEditorTemplate.template
 share/qtcreator/qmldesigner/propertyEditorQmlSources/Qt5HelperWindow.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/Qt6HelperWindow.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/AudioOutputSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/AudioSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/MediaPlayerSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/MediaPlayerSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/VideoOutputSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/VideoSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtMultimedia/VideoSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/ConnectionsSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQml/QtObjectPane.qml
@@ -684,6 +735,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Layouts/GridLayoutS
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Layouts/RowLayoutSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Layouts/StackLayoutSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ListViewSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/LoaderSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/MouseAreaSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/NumberAnimationSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ParallelAnimationSpecifics.qml
@@ -693,6 +745,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/PropertyActionSpeci
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/PropertyAnimationSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/QtObjectPane.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/RectangleSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/RepeaterSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/RowSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/ScriptActionSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/SequentialAnimationSpecifics.qml
@@ -704,6 +757,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/TextInputSpecifics.
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/TextSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Window/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/Window/WindowSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/WindowSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/emptyPane.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/project.qmlproject
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/
@@ -812,6 +866,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Chec
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ComboBoxInput.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ContextMenu.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/FilterComboBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/InfinityLoopIndicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ItemDelegate.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/LinkIndicator2D.qml
@@ -821,6 +876,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Menu
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuItem.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuItemWithIcon.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/MenuSeparator.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RadioButton.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSliderPopup.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSpinBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/RealSpinBoxIndicator.qml
@@ -833,14 +889,17 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Sect
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SectionLayout.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Slider.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SliderPopup.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SortFilterModel.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxIndicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxInput.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Switch.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TabBar.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TabButton.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TextArea.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TextField.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TranslationIndicator.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/VerticalScrollBar.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/qmldir
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioTheme/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioTheme/Constants.qml
@@ -854,14 +913,241 @@ share/qtcreator/qmldesigner/qt4mcu/qul-14.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-17.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-18.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-19.qml
+share/qtcreator/qmldesigner/qt4mcu/qul-20.qml
+share/qtcreator/qmldesigner/qt4mcu/qul-21.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/
 share/qtcreator/qmldesigner/statesEditorQmlSources/StatesDelegate.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/StatesList.qml
 share/qtcreator/qmldesigner/statesEditorQmlSources/images/
 share/qtcreator/qmldesigner/statesEditorQmlSources/images/checkers.png
+share/qtcreator/qmldesigner/studio_templates/
+share/qtcreator/qmldesigner/studio_templates/files/
+share/qtcreator/qmldesigner/studio_templates/files/custombutton/
+share/qtcreator/qmldesigner/studio_templates/files/custombutton/custom_button.png
+share/qtcreator/qmldesigner/studio_templates/files/custombutton/custom_button@2.png
+share/qtcreator/qmldesigner/studio_templates/files/custombutton/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/custombutton/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/customcheckbox/
+share/qtcreator/qmldesigner/studio_templates/files/customcheckbox/custom_checkbox.png
+share/qtcreator/qmldesigner/studio_templates/files/customcheckbox/custom_checkbox@2.png
+share/qtcreator/qmldesigner/studio_templates/files/customcheckbox/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/customcheckbox/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/customdial/
+share/qtcreator/qmldesigner/studio_templates/files/customdial/custom_dial.png
+share/qtcreator/qmldesigner/studio_templates/files/customdial/custom_dial@2.png
+share/qtcreator/qmldesigner/studio_templates/files/customdial/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/customdial/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/customslider/
+share/qtcreator/qmldesigner/studio_templates/files/customslider/custom_slider.png
+share/qtcreator/qmldesigner/studio_templates/files/customslider/custom_slider@2.png
+share/qtcreator/qmldesigner/studio_templates/files/customslider/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/customslider/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/customspinbox/
+share/qtcreator/qmldesigner/studio_templates/files/customspinbox/custom_spinbox.png
+share/qtcreator/qmldesigner/studio_templates/files/customspinbox/custom_spinbox@2.png
+share/qtcreator/qmldesigner/studio_templates/files/customspinbox/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/customspinbox/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/customswitch/
+share/qtcreator/qmldesigner/studio_templates/files/customswitch/custom_switch.png
+share/qtcreator/qmldesigner/studio_templates/files/customswitch/custom_switch@2.png
+share/qtcreator/qmldesigner/studio_templates/files/customswitch/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/customswitch/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/flowitem/
+share/qtcreator/qmldesigner/studio_templates/files/flowitem/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/flowitem/flow_item.png
+share/qtcreator/qmldesigner/studio_templates/files/flowitem/flow_item@2.png
+share/qtcreator/qmldesigner/studio_templates/files/flowitem/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/flowview/
+share/qtcreator/qmldesigner/studio_templates/files/flowview/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/flowview/flow_view.png
+share/qtcreator/qmldesigner/studio_templates/files/flowview/flowview2.png
+share/qtcreator/qmldesigner/studio_templates/files/flowview/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/javascript/
+share/qtcreator/qmldesigner/studio_templates/files/javascript/file.js.tpl
+share/qtcreator/qmldesigner/studio_templates/files/javascript/file_javascript.png
+share/qtcreator/qmldesigner/studio_templates/files/javascript/file_javascript@2.png
+share/qtcreator/qmldesigner/studio_templates/files/javascript/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/listmodel/
+share/qtcreator/qmldesigner/studio_templates/files/listmodel/data_listmodel.png
+share/qtcreator/qmldesigner/studio_templates/files/listmodel/data_listmodel@2.png
+share/qtcreator/qmldesigner/studio_templates/files/listmodel/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/listmodel/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/pane/
+share/qtcreator/qmldesigner/studio_templates/files/pane/custom_panes.png
+share/qtcreator/qmldesigner/studio_templates/files/pane/custom_panes@2.png
+share/qtcreator/qmldesigner/studio_templates/files/pane/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/pane/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/qtquickfile/
+share/qtcreator/qmldesigner/studio_templates/files/qtquickfile/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtquickfile/file_qml.png
+share/qtcreator/qmldesigner/studio_templates/files/qtquickfile/file_qml@2.png
+share/qtcreator/qmldesigner/studio_templates/files/qtquickfile/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/DataModel.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/GridDelegate.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/GridView.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/ListDelegate.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/ListView.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/data_gridmodel.png
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/data_gridmodel@2.png
+share/qtcreator/qmldesigner/studio_templates/files/qtquickviews/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/qtuiquickfile/
+share/qtcreator/qmldesigner/studio_templates/files/qtuiquickfile/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/qtuiquickfile/file_ui.png
+share/qtcreator/qmldesigner/studio_templates/files/qtuiquickfile/file_ui@2.png
+share/qtcreator/qmldesigner/studio_templates/files/qtuiquickfile/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/stackedlayout/
+share/qtcreator/qmldesigner/studio_templates/files/stackedlayout/custom_stacked_view.png
+share/qtcreator/qmldesigner/studio_templates/files/stackedlayout/custom_stacked_view@2.png
+share/qtcreator/qmldesigner/studio_templates/files/stackedlayout/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/stackedlayout/wizard.json
+share/qtcreator/qmldesigner/studio_templates/files/swipeview/
+share/qtcreator/qmldesigner/studio_templates/files/swipeview/custom_swipe_view.png
+share/qtcreator/qmldesigner/studio_templates/files/swipeview/custom_swipe_view@2.png
+share/qtcreator/qmldesigner/studio_templates/files/swipeview/file.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/files/swipeview/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/
+share/qtcreator/qmldesigner/studio_templates/projects/app_mcu.qmlproject
+share/qtcreator/qmldesigner/studio_templates/projects/application/
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/contentmodule.main.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/desktop_blank.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/desktop_blank@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-3d/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/CMakeLists.txt
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/Constants.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/DirectoryFontLoader.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/Button.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/CheckBox.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/DefaultStyle.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/Dial.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/ProgressBar.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/RadioButton.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/Slider.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/SwipeView.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/Switch.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/button-disabled.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/button-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/button.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox-checked-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox-checked.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox-disabled.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox-partially-checked-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox-partially-checked.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/checkbox.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/dial-background-disabled.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/dial-background.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/dial-progress.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/progressbar-background.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/progressbar-progress.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/radiobutton-checked-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/radiobutton-checked.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/radiobutton-disabled.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/radiobutton-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/radiobutton.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-background-disabled-vertical.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-background-disabled.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-background-vertical.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-background.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-handle-disabled-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-handle-disabled.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-handle-pressed.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-handle.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-progress-vertical.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/slider-progress.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/switch-bg.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/switch-handle.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/switch-i.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/images/switch-o.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/qmldir
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/desktop_blank.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/desktop_blank@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/main.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/mcuqtquickcontrols2.conf
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/qmldir
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/application/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application/desktop_blank.png
+share/qtcreator/qmldesigner/studio_templates/projects/application/desktop_blank@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/application/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application/place_holder.png
+share/qtcreator/qmldesigner/studio_templates/projects/application/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/common/
+share/qtcreator/qmldesigner/studio_templates/projects/common/App.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/CMakeLists.content.txt.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/CMakeLists.imports.txt.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/CMakeLists.main.txt.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/app.qmlproject.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/app_environment.h.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/contentmodule.main.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/fonts.txt
+share/qtcreator/qmldesigner/studio_templates/projects/common/import_qml_plugins.h.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/main.cpp.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/main.qml
+share/qtcreator/qmldesigner/studio_templates/projects/common/qmlmodules.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/common/qtquickcontrols2.conf
+share/qtcreator/qmldesigner/studio_templates/projects/common/qtquickcontrols2.conf.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/defaults/
+share/qtcreator/qmldesigner/studio_templates/projects/defaults/qmlapplication-project-page.json
+share/qtcreator/qmldesigner/studio_templates/projects/desktop-launcher/
+share/qtcreator/qmldesigner/studio_templates/projects/desktop-launcher/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/desktop-launcher/desktop_launcher.png
+share/qtcreator/qmldesigner/studio_templates/projects/desktop-launcher/desktop_launcher@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/desktop-launcher/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/desktop-launcher/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/fonts.txt
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-scroll/
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-scroll/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-scroll/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-scroll/mobile_scroll.png
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-scroll/mobile_scroll@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-scroll/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/App.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/CMakeLists.content.txt.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/Screen02.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/mobile_stack.png
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/mobile_stack@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-stack/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/App.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/CMakeLists.content.txt.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/Screen01.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/Screen02.ui.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/mobile_swipe.png
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/mobile_swipe@2.png
+share/qtcreator/qmldesigner/studio_templates/projects/mobile-swipe/wizard.json
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/CMakeLists.importmodule.txt.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/Constants.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/DirectoryFontLoader.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/EventListModel.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/EventListSimulator.qml.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/designer/
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/designer/plugin.metainfo
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/importmodule.qmldir.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/qmldir
 share/qtcreator/qmldesigner/workspacePresets/
-share/qtcreator/qmldesigner/workspacePresets/3D_Preset.wrk
+share/qtcreator/qmldesigner/workspacePresets/Animation-2D.wrk
+share/qtcreator/qmldesigner/workspacePresets/Animation-3D.wrk
+share/qtcreator/qmldesigner/workspacePresets/Basic.wrk
+share/qtcreator/qmldesigner/workspacePresets/Code.wrk
+share/qtcreator/qmldesigner/workspacePresets/Essentials-3D.wrk
 share/qtcreator/qmldesigner/workspacePresets/Essentials.wrk
+share/qtcreator/qmldesigner/workspacePresets/UX-Design.wrk
+share/qtcreator/qmldesigner/workspacePresets/Views-All.wrk
 share/qtcreator/qmlicons/
 share/qtcreator/qmlicons/Qt/
 share/qtcreator/qmlicons/Qt/16x16/
@@ -960,6 +1246,8 @@ share/qtcreator/templates/wizards/autotest/files/
 share/qtcreator/templates/wizards/autotest/files/catch2_tst.cpp
 share/qtcreator/templates/wizards/autotest/files/googlecommon.js
 share/qtcreator/templates/wizards/autotest/files/gtest_dependency.pri
+share/qtcreator/templates/wizards/autotest/files/setup.cpp
+share/qtcreator/templates/wizards/autotest/files/setup.h
 share/qtcreator/templates/wizards/autotest/files/tst.pro
 share/qtcreator/templates/wizards/autotest/files/tst.qbs
 share/qtcreator/templates/wizards/autotest/files/tst.txt
@@ -984,10 +1272,6 @@ share/qtcreator/templates/wizards/classes/itemmodel/wizard.json
 share/qtcreator/templates/wizards/classes/python/
 share/qtcreator/templates/wizards/classes/python/file.py
 share/qtcreator/templates/wizards/classes/python/wizard.json
-share/qtcreator/templates/wizards/classes/qtquickui/
-share/qtcreator/templates/wizards/classes/qtquickui/file.qml.tpl
-share/qtcreator/templates/wizards/classes/qtquickui/fileForm.ui.qml.tpl
-share/qtcreator/templates/wizards/classes/qtquickui/wizard.json
 share/qtcreator/templates/wizards/codesnippet/
 share/qtcreator/templates/wizards/codesnippet/main.cpp
 share/qtcreator/templates/wizards/codesnippet/project.pro
@@ -1164,6 +1448,7 @@ share/qtcreator/templates/wizards/projects/qtquick2-extension/project.pro
 share/qtcreator/templates/wizards/projects/qtquick2-extension/qmldir
 share/qtcreator/templates/wizards/projects/qtquick2-extension/wizard.json
 share/qtcreator/templates/wizards/projects/qtquickapplication/
+share/qtcreator/templates/wizards/projects/qtquickapplication/CMakeLists.6.x.txt
 share/qtcreator/templates/wizards/projects/qtquickapplication/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/qtquickapplication/app.pro
 share/qtcreator/templates/wizards/projects/qtquickapplication/app.qbs
@@ -1175,29 +1460,6 @@ share/qtcreator/templates/wizards/projects/qtquickapplication/empty/qml.qrc
 share/qtcreator/templates/wizards/projects/qtquickapplication/empty/wizard.json
 share/qtcreator/templates/wizards/projects/qtquickapplication/main.cpp
 share/qtcreator/templates/wizards/projects/qtquickapplication/qtquickcontrols2.conf
-share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/
-share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/icon.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/icon@2x.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/main.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/qml.qrc
-share/qtcreator/templates/wizards/projects/qtquickapplication/scroll/wizard.json
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/HomeForm.ui.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/Page1Form.ui.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/Page2Form.ui.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/icon.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/icon@2x.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/main.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/qml.qrc
-share/qtcreator/templates/wizards/projects/qtquickapplication/stack/wizard.json
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/Page1Form.ui.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/Page2Form.ui.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/icon.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/icon@2x.png
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/main.qml.tpl
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/qml.qrc
-share/qtcreator/templates/wizards/projects/qtquickapplication/swipe/wizard.json
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/app.qmlproject
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype.png
@@ -1248,17 +1510,6 @@ share/qtcreator/templates/wizards/qtcreatorplugin/mypluginconstants.h
 share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin.png
 share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin@2x.png
 share/qtcreator/templates/wizards/qtcreatorplugin/wizard.json
-share/qtcreator/templates/wizards/qtquickstyleicons/
-share/qtcreator/templates/wizards/qtquickstyleicons/default.png
-share/qtcreator/templates/wizards/qtquickstyleicons/default@2x.png
-share/qtcreator/templates/wizards/qtquickstyleicons/material-dark.png
-share/qtcreator/templates/wizards/qtquickstyleicons/material-dark@2x.png
-share/qtcreator/templates/wizards/qtquickstyleicons/material-light.png
-share/qtcreator/templates/wizards/qtquickstyleicons/material-light@2x.png
-share/qtcreator/templates/wizards/qtquickstyleicons/universal-dark.png
-share/qtcreator/templates/wizards/qtquickstyleicons/universal-dark@2x.png
-share/qtcreator/templates/wizards/qtquickstyleicons/universal-light.png
-share/qtcreator/templates/wizards/qtquickstyleicons/universal-light@2x.png
 share/qtcreator/themes/
 share/qtcreator/themes/dark.creatortheme
 share/qtcreator/themes/default.creatortheme

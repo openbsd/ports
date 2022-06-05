@@ -2,10 +2,9 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			5.0.3
+V =			7.0.2
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
-REVISION =		0
 
 SHARED_LIBS +=  Aggregation               1.0 # 0.0
 SHARED_LIBS +=  CPlusPlus                 5.0 # 0.0
@@ -75,6 +74,7 @@ LIB_DEPENDS =	devel/llvm \
 
 CONFIGURE_ARGS =	-DBUILD_CPLUSPLUS_TOOLS=ON \
 			-DENABLE_SVG_SUPPORT=ON \
+			-DBUILD_WITH_PCH=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Qt6=ON
 
 GDB_ADJ_FILES = \
@@ -84,6 +84,8 @@ GDB_ADJ_FILES = \
 	tests/auto/debugger/tst_dumpers.cpp \
 	tests/system/suite_general/tst_openqt_creator/testdata/projecttree_creator.tsv
 
+CFLAGS +=	-I${LOCALBASE}/include/KF5/KSyntaxHighlighting/KSyntaxHighlighting
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5/KSyntaxHighlighting/KSyntaxHighlighting
 
 pre-configure:
 	cd ${WRKSRC}; sed -i 's,"gdb","egdb",g' ${GDB_ADJ_FILES}
