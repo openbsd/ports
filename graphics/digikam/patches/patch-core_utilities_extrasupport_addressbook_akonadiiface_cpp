@@ -1,0 +1,12 @@
+Index: core/utilities/extrasupport/addressbook/akonadiiface.cpp
+--- core/utilities/extrasupport/addressbook/akonadiiface.cpp.orig
++++ core/utilities/extrasupport/addressbook/akonadiiface.cpp
+@@ -49,7 +49,7 @@
+ #include <AkonadiCore/Item>
+ #endif
+ 
+-#include <Akonadi/Contact/ContactSearchJob>
++#include <AkonadiContact/Akonadi/ContactSearchJob>
+ #include <KContacts/Addressee>
+ 
+ #if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
