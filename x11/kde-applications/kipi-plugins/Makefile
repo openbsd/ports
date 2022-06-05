@@ -2,7 +2,7 @@ COMMENT =	plugins for the KDE KIPI interface
 DISTNAME =	kipi-plugins-${VERSION}
 CATEGORIES =	devel graphics
 
-SHARED_LIBS +=  KF5kipiplugins   0.0 # 5.9.1
+SHARED_LIBS +=  KF5kipiplugins   1.0 # 5.9.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
