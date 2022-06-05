@@ -3,7 +3,7 @@ BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-0.2.97
+DISTNAME =	ocp-0.2.98
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
