@@ -187,6 +187,7 @@ share/doc/tuxpaint/en/magic-docs/html/reflection.html
 share/doc/tuxpaint/en/magic-docs/html/ripples.html
 share/doc/tuxpaint/en/magic-docs/html/rosette.html
 share/doc/tuxpaint/en/magic-docs/html/roygbiv_rainbow.html
+share/doc/tuxpaint/en/magic-docs/html/rush.html
 share/doc/tuxpaint/en/magic-docs/html/sharpen.html
 share/doc/tuxpaint/en/magic-docs/html/shift.html
 share/doc/tuxpaint/en/magic-docs/html/silhouette.html
@@ -202,6 +203,7 @@ share/doc/tuxpaint/en/magic-docs/html/string_v.html
 share/doc/tuxpaint/en/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/en/magic-docs/html/symmetry_up_down.html
 share/doc/tuxpaint/en/magic-docs/html/tiles.html
+share/doc/tuxpaint/en/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/en/magic-docs/html/tint.html
 share/doc/tuxpaint/en/magic-docs/html/toothpaste.html
 share/doc/tuxpaint/en/magic-docs/html/tornado.html
@@ -237,6 +239,7 @@ share/doc/tuxpaint/en/magic-docs/reflection.txt
 share/doc/tuxpaint/en/magic-docs/ripples.txt
 share/doc/tuxpaint/en/magic-docs/rosette.txt
 share/doc/tuxpaint/en/magic-docs/roygbiv_rainbow.txt
+share/doc/tuxpaint/en/magic-docs/rush.txt
 share/doc/tuxpaint/en/magic-docs/sharpen.txt
 share/doc/tuxpaint/en/magic-docs/shift.txt
 share/doc/tuxpaint/en/magic-docs/silhouette.txt
@@ -252,6 +255,7 @@ share/doc/tuxpaint/en/magic-docs/string_v.txt
 share/doc/tuxpaint/en/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/en/magic-docs/symmetry_up_down.txt
 share/doc/tuxpaint/en/magic-docs/tiles.txt
+share/doc/tuxpaint/en/magic-docs/tilezoom.txt
 share/doc/tuxpaint/en/magic-docs/tint.txt
 share/doc/tuxpaint/en/magic-docs/toothpaste.txt
 share/doc/tuxpaint/en/magic-docs/tornado.txt
@@ -365,6 +369,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/reflection.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/rosette.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/roygbiv_rainbow.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/sharpen.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/shift.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/silhouette.html
@@ -380,6 +385,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/symmetry_up_down.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tiles.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tint.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/toothpaste.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tornado.html
@@ -415,6 +421,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/reflection.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/rosette.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/roygbiv_rainbow.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/sharpen.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/shift.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/silhouette.txt
@@ -430,6 +437,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/symmetry_up_down.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tiles.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tint.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/toothpaste.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tornado.txt
@@ -560,6 +568,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/reflection.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/rosette.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/roygbiv_rainbow.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/sharpen.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/shift.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/silhouette.html
@@ -575,6 +584,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/symmetry_up_down.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tiles.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tint.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/toothpaste.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tornado.html
@@ -610,6 +620,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/reflection.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/rosette.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/roygbiv_rainbow.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/sharpen.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/shift.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/silhouette.txt
@@ -625,6 +636,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/symmetry_up_down.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tiles.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tint.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/toothpaste.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tornado.txt
@@ -776,6 +788,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/reflection.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/rosette.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/roygbiv_rainbow.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/sharpen.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/shift.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/silhouette.html
@@ -791,6 +804,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/symmetry_up_down.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tiles.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tint.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/toothpaste.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tornado.html
@@ -826,6 +840,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/reflection.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/rosette.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/roygbiv_rainbow.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/sharpen.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/shift.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/silhouette.txt
@@ -841,6 +856,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/symmetry_up_down.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tiles.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tint.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/toothpaste.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tornado.txt
@@ -855,6 +871,9 @@ share/doc/tuxpaint/html/images/
 share/doc/tuxpaint/html/images/brush_edit.png
 share/doc/tuxpaint/html/images/canvas.jpg
 share/doc/tuxpaint/html/images/colors.jpg
+share/doc/tuxpaint/html/images/colors_mixer.png
+share/doc/tuxpaint/html/images/colors_rainbow_palette.png
+share/doc/tuxpaint/html/images/colors_special.png
 share/doc/tuxpaint/html/images/ex_colorable.png
 share/doc/tuxpaint/html/images/ex_lines.png
 share/doc/tuxpaint/html/images/ex_paint.png
@@ -888,6 +907,7 @@ share/doc/tuxpaint/html/images/tool_redo.png
 share/doc/tuxpaint/html/images/tool_save.png
 share/doc/tuxpaint/html/images/tool_sfx.png
 share/doc/tuxpaint/html/images/tool_shapes.png
+share/doc/tuxpaint/html/images/tool_slider.png
 share/doc/tuxpaint/html/images/tool_stamp.png
 share/doc/tuxpaint/html/images/tool_stamp_categories.png
 share/doc/tuxpaint/html/images/tool_stamp_controls.png
@@ -1000,6 +1020,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/reflection.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/rosette.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/roygbiv_rainbow.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/sharpen.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/shift.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/silhouette.html
@@ -1015,6 +1036,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/symmetry_up_down.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tiles.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tint.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/toothpaste.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tornado.html
@@ -1050,6 +1072,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/reflection.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/rosette.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/roygbiv_rainbow.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/sharpen.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/shift.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/silhouette.txt
@@ -1065,6 +1088,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/symmetry_up_down.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tiles.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tint.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/toothpaste.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tornado.txt
@@ -1395,10 +1419,17 @@ share/tuxpaint/brushes/chisle.png
 share/tuxpaint/brushes/cutout_square_diamond.png
 share/tuxpaint/brushes/cutout_star_circle.png
 share/tuxpaint/brushes/diamond.png
+share/tuxpaint/brushes/dog.dat
+share/tuxpaint/brushes/dog.png
+share/tuxpaint/brushes/flower_5.dat
 share/tuxpaint/brushes/flower_5.png
+share/tuxpaint/brushes/flower_5_small.dat
 share/tuxpaint/brushes/flower_5_small.png
+share/tuxpaint/brushes/flower_6.dat
 share/tuxpaint/brushes/flower_6.png
+share/tuxpaint/brushes/flower_6_small.dat
 share/tuxpaint/brushes/flower_6_small.png
+share/tuxpaint/brushes/flower_7.dat
 share/tuxpaint/brushes/flower_7.png
 share/tuxpaint/brushes/footprints-human-shoes.dat
 share/tuxpaint/brushes/footprints-human-shoes.png
@@ -1406,6 +1437,7 @@ share/tuxpaint/brushes/footprints-human.dat
 share/tuxpaint/brushes/footprints-human.png
 share/tuxpaint/brushes/footprints-paws.dat
 share/tuxpaint/brushes/footprints-paws.png
+share/tuxpaint/brushes/heart.dat
 share/tuxpaint/brushes/heart.png
 share/tuxpaint/brushes/hexagon.png
 share/tuxpaint/brushes/inksplat.dat
@@ -1427,6 +1459,7 @@ share/tuxpaint/brushes/slash_20_lt.png
 share/tuxpaint/brushes/slash_20_rt.png
 share/tuxpaint/brushes/sparkles.dat
 share/tuxpaint/brushes/sparkles.png
+share/tuxpaint/brushes/sphere.dat
 share/tuxpaint/brushes/sphere.png
 share/tuxpaint/brushes/spiral.dat
 share/tuxpaint/brushes/spiral.png
@@ -1441,6 +1474,7 @@ share/tuxpaint/brushes/square_fuzz.png
 share/tuxpaint/brushes/square_seethru.png
 share/tuxpaint/brushes/squirrel.dat
 share/tuxpaint/brushes/squirrel.png
+share/tuxpaint/brushes/star.dat
 share/tuxpaint/brushes/star.png
 share/tuxpaint/brushes/tiny.png
 share/tuxpaint/brushes/triangle_down.png
@@ -1612,6 +1646,7 @@ share/tuxpaint/images/magic/realrainbow.png
 share/tuxpaint/images/magic/reflection.png
 share/tuxpaint/images/magic/ripples.png
 share/tuxpaint/images/magic/rosette.png
+share/tuxpaint/images/magic/rush.png
 share/tuxpaint/images/magic/sharpen.png
 share/tuxpaint/images/magic/shift.png
 share/tuxpaint/images/magic/silhouette.png
@@ -1627,6 +1662,7 @@ share/tuxpaint/images/magic/symmetric_leftright.png
 share/tuxpaint/images/magic/symmetric_updown.png
 share/tuxpaint/images/magic/thick.png
 share/tuxpaint/images/magic/thin.png
+share/tuxpaint/images/magic/tilezoom.png
 share/tuxpaint/images/magic/tint.png
 share/tuxpaint/images/magic/toothpaste.png
 share/tuxpaint/images/magic/tornado.png
@@ -1643,6 +1679,10 @@ share/tuxpaint/images/shapes/circle.png
 share/tuxpaint/images/shapes/circle_f.png
 share/tuxpaint/images/shapes/diamond.png
 share/tuxpaint/images/shapes/diamond_f.png
+share/tuxpaint/images/shapes/heptagon.png
+share/tuxpaint/images/shapes/heptagon_f.png
+share/tuxpaint/images/shapes/hexagon.png
+share/tuxpaint/images/shapes/hexagon_f.png
 share/tuxpaint/images/shapes/octagon.png
 share/tuxpaint/images/shapes/octagon_f.png
 share/tuxpaint/images/shapes/oval.png
@@ -1671,6 +1711,7 @@ share/tuxpaint/images/tools/brush.png
 share/tuxpaint/images/tools/eraser.png
 share/tuxpaint/images/tools/fill.png
 share/tuxpaint/images/tools/label.png
+share/tuxpaint/images/tools/label_apply.png
 share/tuxpaint/images/tools/label_select.png
 share/tuxpaint/images/tools/lines.png
 share/tuxpaint/images/tools/magic.png
@@ -1713,9 +1754,11 @@ share/tuxpaint/images/ui/btnsm_hold.png
 share/tuxpaint/images/ui/btnsm_nav.png
 share/tuxpaint/images/ui/btnsm_off.png
 share/tuxpaint/images/ui/btnsm_up.png
+share/tuxpaint/images/ui/cmix.png
 share/tuxpaint/images/ui/color_btn_down.png
 share/tuxpaint/images/ui/color_btn_up.png
 share/tuxpaint/images/ui/color_picker.png
+share/tuxpaint/images/ui/color_picker_val.png
 share/tuxpaint/images/ui/csel.png
 share/tuxpaint/images/ui/cursor_down.png
 share/tuxpaint/images/ui/cursor_down_large.png
