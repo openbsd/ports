@@ -1,6 +1,7 @@
---- tools/v8_gypfiles/v8.gyp.orig	Sat Jan  1 17:10:14 2022
-+++ tools/v8_gypfiles/v8.gyp	Sat Jan  1 17:10:14 2022
-@@ -838,7 +838,7 @@
+Index: tools/v8_gypfiles/v8.gyp
+--- tools/v8_gypfiles/v8.gyp.orig
++++ tools/v8_gypfiles/v8.gyp
+@@ -796,7 +796,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
