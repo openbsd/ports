@@ -43,6 +43,7 @@ bin/mysqlhotcopy
 @bin bin/replace
 @bin bin/resolve_stack_dump
 @bin bin/resolveip
+bin/wsrep_sst_backup
 bin/wsrep_sst_common
 bin/wsrep_sst_mariabackup
 bin/wsrep_sst_mysqldump
@@ -125,6 +126,7 @@ include/mysql/server/mysql/service_my_snprintf.h
 include/mysql/server/mysql/service_progress_report.h
 include/mysql/server/mysql/service_sha1.h
 include/mysql/server/mysql/service_sha2.h
+include/mysql/server/mysql/service_sql.h
 include/mysql/server/mysql/service_thd_alloc.h
 include/mysql/server/mysql/service_thd_autoinc.h
 include/mysql/server/mysql/service_thd_error_context.h
@@ -265,6 +267,7 @@ include/mysql/server/private/mysqld.h
 include/mysql/server/private/mysqld_default_groups.h
 include/mysql/server/private/mysqld_suffix.h
 include/mysql/server/private/mysys_err.h
+include/mysql/server/private/opt_histogram_json.h
 include/mysql/server/private/opt_range.h
 include/mysql/server/private/opt_subselect.h
 include/mysql/server/private/opt_trace.h
@@ -288,6 +291,13 @@ include/mysql/server/private/probes_mysql.h
 include/mysql/server/private/probes_mysql_nodtrace.h
 include/mysql/server/private/procedure.h
 include/mysql/server/private/protocol.h
+include/mysql/server/private/providers/
+include/mysql/server/private/providers/bzlib.h
+include/mysql/server/private/providers/lz4.h
+include/mysql/server/private/providers/lzma.h
+include/mysql/server/private/providers/lzo/
+include/mysql/server/private/providers/lzo/lzo1x.h
+include/mysql/server/private/providers/snappy-c.h
 include/mysql/server/private/proxy_protocol.h
 include/mysql/server/private/queues.h
 include/mysql/server/private/records.h
@@ -394,13 +404,14 @@ include/mysql/server/private/sql_sort.h
 include/mysql/server/private/sql_statistics.h
 include/mysql/server/private/sql_string.h
 include/mysql/server/private/sql_table.h
-include/mysql/server/private/sql_tablespace.h
 include/mysql/server/private/sql_test.h
 include/mysql/server/private/sql_time.h
 include/mysql/server/private/sql_trigger.h
 include/mysql/server/private/sql_truncate.h
 include/mysql/server/private/sql_tvc.h
 include/mysql/server/private/sql_type.h
+include/mysql/server/private/sql_type_fixedbin.h
+include/mysql/server/private/sql_type_fixedbin_storage.h
 include/mysql/server/private/sql_type_geom.h
 include/mysql/server/private/sql_type_int.h
 include/mysql/server/private/sql_type_json.h
@@ -496,6 +507,12 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/metadata_lock_info.so
 @so lib/mysql/plugin/mypluglib.so
 @so lib/mysql/plugin/mysql_clear_password.so
+@so lib/mysql/plugin/password_reuse_check.so
+@so lib/mysql/plugin/provider_bzip2.so
+@so lib/mysql/plugin/provider_lz4.so
+@so lib/mysql/plugin/provider_lzma.so
+@so lib/mysql/plugin/provider_lzo.so
+@so lib/mysql/plugin/provider_snappy.so
 @so lib/mysql/plugin/qa_auth_client.so
 @so lib/mysql/plugin/qa_auth_interface.so
 @so lib/mysql/plugin/qa_auth_server.so
@@ -507,6 +524,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/sql_errlog.so
 @so lib/mysql/plugin/type_mysql_json.so
 @so lib/mysql/plugin/wsrep_info.so
+@so lib/mysql/plugin/zstd.so
 @bin libexec/mariadbd
 libexec/mysqld
 @man man/man1/aria_chk.1
@@ -567,6 +585,7 @@ share/examples/login.conf.d/mysqld
 share/examples/mysql/
 share/examples/mysql/binary-configure
 share/examples/mysql/magic
+share/examples/mysql/mini-benchmark
 share/examples/mysql/my.cnf
 @sample ${SYSCONFDIR}/my.cnf
 share/examples/mysql/mysql-log-rotate
@@ -585,6 +604,8 @@ share/examples/mysql/policy/selinux/mariadb.te
 share/examples/mysql/wsrep.cnf
 share/examples/mysql/wsrep_notify
 share/mysql/
+share/mysql/bulgarian/
+share/mysql/bulgarian/errmsg.sys
 share/mysql/charsets/
 share/mysql/charsets/Index.xml
 share/mysql/charsets/README
@@ -612,6 +633,8 @@ share/mysql/charsets/latin7.xml
 share/mysql/charsets/macce.xml
 share/mysql/charsets/macroman.xml
 share/mysql/charsets/swe7.xml
+share/mysql/chinese/
+share/mysql/chinese/errmsg.sys
 share/mysql/czech/
 share/mysql/czech/errmsg.sys
 share/mysql/danish/

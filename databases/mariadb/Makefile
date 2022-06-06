@@ -2,17 +2,16 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.6.7
+VERSION=	10.8.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
-REVISION=	0
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
 
-LIB_VERSION=	29
+LIB_VERSION=	30
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0 \
 		mariadb		${LIB_VERSION}.0
@@ -26,7 +25,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c crypto execinfo m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
-WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2
+WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2 zstd
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
@@ -42,7 +41,7 @@ MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS}
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.6v1,<10.7v1 \
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.8v1,<10.9v1 \
 			databases/p5-DBD-MariaDB
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
@@ -50,10 +49,11 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/lzo2 \
 			archivers/snappy \
 			archivers/xz \
+			archivers/zstd \
 			devel/pcre2 \
 			net/curl \
 			textproc/libxml
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.6v1,<10.7v1
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.8v1,<10.9v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			devel/pcre2
 

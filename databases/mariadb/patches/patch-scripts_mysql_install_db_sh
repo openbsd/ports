@@ -1,8 +1,3 @@
-Remove --group command-line handling as the option is not valid for
-mariadbd.
-
-https://jira.mariadb.org/browse/MDEV-27823
-
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
 +++ scripts/mysql_install_db.sh
@@ -17,7 +12,7 @@ Index: scripts/mysql_install_db.sh
  silent_startup="--silent-startup"
  
  force=0
-@@ -334,7 +334,6 @@ then
+@@ -339,7 +339,6 @@ then
    srcpkgdatadir="$srcdir/scripts"
    buildpkgdatadir="$builddir/scripts"
    plugindir="$builddir/plugin/auth_socket"
@@ -25,7 +20,7 @@ Index: scripts/mysql_install_db.sh
  elif test -n "$basedir"
  then
    bindir="$basedir/bin" # only used in the help text
-@@ -363,8 +362,7 @@ then
+@@ -368,8 +367,7 @@ then
      cannot_find_file fill_help_tables.sql @pkgdata_locations@
      exit 1
    fi
@@ -35,7 +30,7 @@ Index: scripts/mysql_install_db.sh
  # relative from where the script was run for a relocatable install
  elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mariadbd"
  then
-@@ -375,7 +373,6 @@ then
+@@ -380,7 +378,6 @@ then
    srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    buildpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
    plugindir="$basedir/@INSTALL_PLUGINDIR@"
@@ -43,7 +38,7 @@ Index: scripts/mysql_install_db.sh
  else
    basedir="@prefix@"
    bindir="@bindir@"
-@@ -384,7 +381,6 @@ else
+@@ -389,7 +386,6 @@ else
    srcpkgdatadir="@pkgdatadir@"
    buildpkgdatadir="@pkgdatadir@"
    plugindir="@pkgplugindir@"
@@ -51,7 +46,7 @@ Index: scripts/mysql_install_db.sh
  fi
  
  # Set up paths to SQL scripts required for bootstrap
-@@ -476,13 +472,13 @@ do
+@@ -488,13 +484,13 @@ do
    then
      if test -z "$group"
      then
@@ -68,7 +63,7 @@ Index: scripts/mysql_install_db.sh
        echo "user.  Check that you have the necessary permissions and try again."
        exit 1
      fi
-@@ -491,33 +487,9 @@ done
+@@ -503,25 +499,6 @@ done
  
  if test -n "$user"
  then
@@ -94,15 +89,7 @@ Index: scripts/mysql_install_db.sh
    args="$args --user=$user"
  fi
  
--if test -n "$group"
--then
--  args="$args --group=$group"
--fi
--
- if test -f "$ldata/mysql/user.frm"
- then
-     echo "mysql.user table already exists!"
-@@ -620,10 +592,6 @@ fi
+@@ -639,10 +616,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -113,7 +100,7 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -655,10 +623,7 @@ then
+@@ -674,10 +647,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"
