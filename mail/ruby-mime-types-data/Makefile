@@ -1,6 +1,6 @@
 COMMENT=		MIME types data for Ruby
 
-DISTNAME=		mime-types-data-3.2019.1009
+DISTNAME=		mime-types-data-3.2022.0105
 CATEGORIES=		mail
 
 HOMEPAGE=		https://github.com/mime-types/mime-types-data/

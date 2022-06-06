@@ -8,6 +8,8 @@ ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/data/
+${GEM_LIB}/gems/${DISTNAME}/data/content_type_mime.db
+${GEM_LIB}/gems/${DISTNAME}/data/ext_mime.db
 ${GEM_LIB}/gems/${DISTNAME}/data/mime-types.json
 ${GEM_LIB}/gems/${DISTNAME}/data/mime.content_type.column
 ${GEM_LIB}/gems/${DISTNAME}/data/mime.docs.column
@@ -33,6 +35,7 @@ ${GEM_LIB}/gems/${DISTNAME}/types/image.yaml
 ${GEM_LIB}/gems/${DISTNAME}/types/message.yaml
 ${GEM_LIB}/gems/${DISTNAME}/types/model.yaml
 ${GEM_LIB}/gems/${DISTNAME}/types/multipart.yaml
+${GEM_LIB}/gems/${DISTNAME}/types/provisional-standard-types.yaml
 ${GEM_LIB}/gems/${DISTNAME}/types/text.yaml
 ${GEM_LIB}/gems/${DISTNAME}/types/video.yaml
 ${GEM_LIB}/gems/${DISTNAME}/types/world.yaml
