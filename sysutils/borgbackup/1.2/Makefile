@@ -1,4 +1,4 @@
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.2.1
 
 WANTLIB =		pthread
 
