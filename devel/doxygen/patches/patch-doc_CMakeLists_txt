@@ -1,12 +1,11 @@
 - only manual pages
 - remove doxywizard.1, see devel/doxygen-gui
 
-
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -15,9 +15,6 @@ include (${TOP}/cmake/version.cmake)
- string(TIMESTAMP DATE "%d-%m-%Y")
+@@ -16,9 +16,6 @@ string(TIMESTAMP DATE "%d-%m-%Y")
+ string(TIMESTAMP YEAR "%Y")
  
  find_package(PythonInterp REQUIRED)
 -find_program(EPSTOPDF NAMES epstopdf )
@@ -15,7 +14,7 @@ Index: doc/CMakeLists.txt
  include(GNUInstallDirs)
  
  if (doxygen_BINARY_DIR)
-@@ -103,7 +100,6 @@ set(DOC_FILES
+@@ -104,7 +101,6 @@ set(DOC_FILES
          maintainers.txt
          translator.py
          smile.png
@@ -23,7 +22,7 @@ Index: doc/CMakeLists.txt
  )
  
  set(DOC_FILES_IMAGES
-@@ -162,9 +158,6 @@ endforeach()
+@@ -163,9 +159,6 @@ endforeach()
  configure_file(${PROJECT_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
@@ -33,7 +32,7 @@ Index: doc/CMakeLists.txt
  
  # doc/language.doc (see tag Doxyfile:INPUT)
  add_custom_command(
-@@ -184,37 +177,7 @@ add_custom_command(
+@@ -185,37 +178,7 @@ add_custom_command(
  )
  set_source_files_properties(config.doc PROPERTIES GENERATED 1)
  ################################################################################
@@ -71,7 +70,7 @@ Index: doc/CMakeLists.txt
  # return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
  # output is redirected to "nul" as we are on windows no problem
  if (build_doc_chm)
-@@ -242,22 +205,9 @@ endif ()
+@@ -243,22 +206,9 @@ endif ()
  ################################################################################
  install(FILES
          "${PROJECT_BINARY_DIR}/man/doxygen.1"
@@ -94,7 +93,7 @@ Index: doc/CMakeLists.txt
  if (build_doc_chm)
  install(CODE "if(NOT EXISTS \"${PROJECT_BINARY_DIR}/chm/doxygen_manual.chm\")
      message(FATAL_ERROR \"\nTerminating:\n    CHM documentation has not been generated, \n    create CHM documentation by using the 'docs_chm' target followed by an 'install'\n\")
-@@ -269,8 +219,3 @@ install(FILES
+@@ -270,8 +220,3 @@ install(FILES
          DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
  )
  endif ()
