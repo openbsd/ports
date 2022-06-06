@@ -1,6 +1,6 @@
 COMMENT=	portable ASS/SSA subtitle renderer
 
-VER=		0.15.2
+VER=		0.16.0
 DISTNAME=	libass-${VER}
 CATEGORIES=	multimedia devel
 MASTER_SITES=	https://github.com/libass/libass/releases/download/${VER}/
@@ -33,8 +33,5 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ASFLAGS="-DPIC=1 "
-
-post-patch:
-	chmod ${BINMODE} ${WRKSRC}/ltnasm.sh
 
 .include <bsd.port.mk>
