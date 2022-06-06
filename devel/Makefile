@@ -1317,7 +1317,6 @@
      SUBDIR += py-cffi,python3
      SUBDIR += py-cflow2dot,python3
      SUBDIR += py-characteristic,python3
-     SUBDIR += py-cheetah
      SUBDIR += py-cheetah,python3
      SUBDIR += py-click,python3
      SUBDIR += py-click-log,python3
