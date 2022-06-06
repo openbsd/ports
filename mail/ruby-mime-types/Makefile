@@ -1,6 +1,6 @@
 COMMENT=		MIME type library for Ruby
 
-DISTNAME=		mime-types-3.3.1
+DISTNAME=		mime-types-3.4.1
 CATEGORIES=		mail
 
 HOMEPAGE=		https://github.com/mime-types/ruby-mime-types/
