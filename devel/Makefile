@@ -1713,7 +1713,6 @@
      SUBDIR += ruby-zentest
      SUBDIR += samurai
      SUBDIR += scons
-     SUBDIR += scons-py2
      SUBDIR += sdcc
      SUBDIR += sdl
      SUBDIR += sdl-gfx
