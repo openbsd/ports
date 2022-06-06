@@ -88,6 +88,8 @@
      SUBDIR += ekg
      SUBDIR += enet
      SUBDIR += epic4
+     SUBDIR += epic5
+     SUBDIR += epic5,python
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
      SUBDIR += exabgp
