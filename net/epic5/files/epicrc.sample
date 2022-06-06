@@ -1,0 +1,27 @@
+# By default EPIC5 is very minimalistic, but yet it is very powerful
+# IRC client, which can be greatly extended by embeded scripting
+# language, customizing almost every aspect of IRC. Since EPIC4 a lot of
+# functionality has been moved from C code to ircII scripts, which made
+# client more secure and more customizable. Without loading at least
+# several scripts at the beginning, client will be almost unusable.
+
+# set default paths where to look for the scripts
+set load_path ~/.epic:/usr/local/share/epic5/script
+
+# global script provides functions which were coded in C before (up/down
+# arrows for history, ctcp, some internal functions, etc), this script
+# is almost always required to get other scripts working
+load global
+
+# tabkey and reconnect functionality is implemented as a scripts, take
+# a look inside this files to better customize their settings
+load tabkey.ce
+load reconnect
+
+# switch windows by alt+<number>
+load altchan
+
+# by default client has no color formatting at all, if you prefer more
+# colorful look, load this script, also a good start to understand basic
+# scripting capabilities of epic5
+load colors

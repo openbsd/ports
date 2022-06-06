@@ -1,0 +1,33 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+First ~/.epicrc
+===============
+
+Sample ~/.epicrc has been installed to
+${TRUEPREFIX}/share/epic5/script/epicrc.sample
+Take a look to get basic understanding of how to use the client.
+
+Changing default server list
+============================
+
+To change default server list set IRCLIB environment variable in your shell
+pointing to a directory (e.g. ~/.epic/) and put ircII.servers file there, each
+line of the file describing a server, format is documented in
+http://help.epicsol.org/server_description
+
+Example for Libera.Chat:
+
+irc.libera.chat:7000:password=MYPASSWORD:nick=MYNICK:type=IRC-SSL
+
+Don't forget to 'chmod 0600' the file, if you use passwords there.
+
+SASL is supported by sasl_auth (PLAIN method only, use SSL) and sasl_nistp256
+scripts. Look comments in those scripts to get more details how to use them.
+
+pledge(2) and unveil(2)
+=======================
+
+EPIC5 has support for the syscalls on OpenBSD, you can use it in your script.
+More info about the usage is in UPDATES document.
