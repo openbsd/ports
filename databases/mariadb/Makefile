@@ -38,7 +38,8 @@ SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	SOCKET_DIR
 
 MODULES=	devel/cmake
-BUILD_DEPENDS=	devel/bison
+BUILD_DEPENDS=	devel/bison \
+		devel/fmt
 
 LIB_DEPENDS-main=	${LIB_DEPENDS}
 RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.8v1,<10.9v1 \
