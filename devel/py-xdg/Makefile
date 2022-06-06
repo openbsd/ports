@@ -1,9 +1,8 @@
 COMMENT=		python library to access freedesktop.org standards
 
-MODPY_EGG_VERSION=	0.27
+MODPY_EGG_VERSION=	0.28
 DISTNAME=		pyxdg-${MODPY_EGG_VERSION}
 PKGNAME=		py-xdg-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		devel
 
