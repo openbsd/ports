@@ -1,0 +1,12 @@
+Index: buildscripts/aggregate_tracefiles.py
+--- buildscripts/aggregate_tracefiles.py.orig
++++ buildscripts/aggregate_tracefiles.py
+@@ -16,7 +16,7 @@ def aggregate(inputs, output):
+ 
+     args += ['-o', output]
+ 
+-    print ' '.join(args)
++    print(' '.join(args))
+     
+     return subprocess.call(args)  
+ 

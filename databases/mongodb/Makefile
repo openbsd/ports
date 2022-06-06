@@ -8,8 +8,9 @@ DPB_PROPERTIES = parallel
 COMMENT =	scalable, high-performance document-oriented database
 
 # db upgrades are only supported across one major version (3.2-3.4,
-# 3.4-3.6, etc) so holding off on 3.6 until after OpenBSD 7.1.
-DISTNAME =	mongodb-src-r3.4.24
+# 3.4-3.6, 3.6-4.0, etc) and mongodump wasn't in ports until after
+# OpenBSD-7.1, so holding off on >3.6 until after OpenBSD 7.2.
+DISTNAME =	mongodb-src-r3.6.23
 PKGNAME =	${DISTNAME:S/src-r//}
 CATEGORIES =	databases
 
@@ -32,20 +33,19 @@ WANTLIB += kvm m pcre pcrecpp snappy ssl stemmer yaml-cpp z
 MASTER_SITES =	https://fastdl.mongodb.org/src/
 FIX_CRLF_FILES = src/third_party/IntelRDFPMathLib20U1/LIBRARY/src/bid_functions.h
 
+PATCH_LIST =	patch-* python3-*
 MODULES =	devel/scons \
 		lang/python
 
-# C++14 (newer versions: C++17)
+# C++14 (newer versions: C++17; when updating remove -Wno-c++17-extensions)
 COMPILER =	base-clang ports-gcc
 
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP =	No
-MODSCONS_USE_V2 = Yes
 MODSCONS_ENV =	CC="${CC}" \
 		CXX="${CXX}" \
-		CCFLAGS="${CFLAGS} -DBOOST_NO_USER_CONFIG" \
-		CXXFLAGS="${CXXFLAGS}" \
-		LINKFLAGS="${LDFLAGS}" \
+		CCFLAGS="${CFLAGS} -DBOOST_NO_USER_CONFIG -isystem ${LOCALBASE}/include/bind" \
+		CXXFLAGS="${CXXFLAGS} -Wno-c++17-extensions" \
+		LINKFLAGS="${LDFLAGS} ${LOCALBASE}/lib/libbind/libbind.a" \
 		CPPPATH="${LOCALBASE}/include" \
 		LIBPATH="${LOCALBASE}/lib" \
 		VERBOSE=true
@@ -75,9 +75,12 @@ LIB_DEPENDS =	archivers/snappy \
 		textproc/icu4c \
 		textproc/libstemmer
 TEST_DEPENDS =	databases/py-mongo${MODPY_FLAVOR}
-BUILD_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
-# later versions: BDEPs on devel/py-cheetah${MODPY_FLAVOR}
-#		sysutils/py-psutil${MODPY_FLAVOR}
+# - later versions may need sysutils/py-psutil${MODPY_FLAVOR}
+# - can't cope with OpenBSD's nameser.h with ancient defines, plus uses
+# res_ninit/res_nclose which are not supported by the libc resolver
+BUILD_DEPENDS =	devel/py-cheetah${MODPY_FLAVOR} \
+		net/libbind \
+		textproc/py-yaml${MODPY_FLAVOR}
 
 # later versions: post-extract:
 # cd ${WRKSRC}/src/third_party/mozjs-60/platform/x86_64/ && cp -R freebsd openbsd

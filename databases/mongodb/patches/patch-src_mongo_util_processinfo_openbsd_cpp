@@ -3,7 +3,7 @@
 Index: src/mongo/util/processinfo_openbsd.cpp
 --- src/mongo/util/processinfo_openbsd.cpp.orig
 +++ src/mongo/util/processinfo_openbsd.cpp
-@@ -182,19 +182,24 @@ bool ProcessInfo::supported() {
+@@ -188,19 +188,24 @@ bool ProcessInfo::supported() {
  }
  
  bool ProcessInfo::blockCheckSupported() {
@@ -29,7 +29,7 @@ Index: src/mongo/util/processinfo_openbsd.cpp
      out->resize(numPages);
      // int mincore(const void *addr, size_t len, char *vec);
      if (mincore((void*)alignToStartOfPage(start), numPages * getPageSize(), &(out->front()))) {
-@@ -205,5 +210,8 @@ bool ProcessInfo::pagesInMemory(const void* start, siz
+@@ -211,6 +216,9 @@ bool ProcessInfo::pagesInMemory(const void* start, siz
          (*out)[i] = 0x1;
      }
      return true;
@@ -37,4 +37,5 @@ Index: src/mongo/util/processinfo_openbsd.cpp
 +    return false;
 +#endif
  }
- }
+ 
+ // get the number of CPUs available to the scheduler

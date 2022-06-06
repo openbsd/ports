@@ -4,7 +4,7 @@ starting with pcre-8.41.
 Index: src/mongo/db/repl/master_slave.cpp
 --- src/mongo/db/repl/master_slave.cpp.orig
 +++ src/mongo/db/repl/master_slave.cpp
-@@ -78,6 +78,7 @@ using std::endl;
+@@ -83,6 +83,7 @@ using std::endl;
  using std::max;
  using std::min;
  using std::set;
