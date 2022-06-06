@@ -1,25 +1,15 @@
-Allow KDE5 libraries to be built without having to link to libc explicitly.
+https://invent.kde.org/frameworks/extra-cmake-modules/-/merge_requests/272
 Index: kde-modules/KDECompilerSettings.cmake
 --- kde-modules/KDECompilerSettings.cmake.orig
 +++ kde-modules/KDECompilerSettings.cmake
-@@ -530,6 +530,8 @@ endfunction()
- # Better diagnostics (warnings, errors)
- ############################################################
- 
-+set(ALLOW_UNDEFINED_LIB_SYMBOLS No CACHE BOOL "allow undefined symbols in generated shared objects")
-+
- if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPLE) OR
-         (CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT APPLE) OR
-         (CMAKE_CXX_COMPILER_ID STREQUAL "Intel" AND NOT WIN32))
-@@ -537,9 +539,11 @@ if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPL
-     set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_SHARED_LINKER_FLAGS}")
+@@ -538,8 +538,11 @@ if ((CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT APPL
      set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--fatal-warnings ${CMAKE_MODULE_LINKER_FLAGS}")
  
--    # Do not allow undefined symbols, even in non-symbolic shared libraries
+     # Do not allow undefined symbols, even in non-symbolic shared libraries
 -    set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
 -    set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_MODULE_LINKER_FLAGS}")
-+    if (NOT ${ALLOW_UNDEFINED_LIB_SYMBOLS})
-+        # Do not allow undefined symbols, even in non-symbolic shared libraries
++    # On OpenBSD we must disable this to allow the stuff to properly compile without explicit libc specification
++    if (NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
 +        set(CMAKE_SHARED_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_SHARED_LINKER_FLAGS}")
 +        set(CMAKE_MODULE_LINKER_FLAGS "-Wl,--no-undefined ${CMAKE_MODULE_LINKER_FLAGS}")
 +    endif()

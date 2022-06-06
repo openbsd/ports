@@ -25,9 +25,6 @@ CONFIGURE_ARGS += \
 	-DKDE_INSTALL_MANDIR=${PREFIX}/man \
 	-DKDE_INSTALL_QMLDIR=${MODQT_LIBDIR}/qml
 
-# XXX it's very strange this is off by default
-CONFIGURE_ARGS +=	-DALLOW_UNDEFINED_LIB_SYMBOLS=ON
-
 # The PythonModuleGeneration CMake find module picks up highest Python3
 # version it could find, and fails to build anyway.
 # The module needs more fixes. Also, it's not clear how to deal
