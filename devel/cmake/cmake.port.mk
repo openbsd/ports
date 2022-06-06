@@ -142,6 +142,23 @@ TEST_TARGET ?=	test
 MODCMAKE_WANTCOLOR ?= No
 MODCMAKE_VERBOSE ?= Yes
 
+# https://cmake.org/cmake/help/latest/command/enable_language.html
+# 3.23: Swift OBJCXX OBJC ISPC HIP Fortran CXX CUDA C
+_CMAKE_PROCESSING_LANGUAGE = ASM OBJCXX OBJC Fortran CXX C
+.for LANG in ${_CMAKE_PROCESSING_LANGUAGE}
+CONFIGURE_ARGS :=	-DCMAKE_${LANG}_COMPILER_AR:FILEPATH=/usr/bin/ar \
+			-DCMAKE_${LANG}_COMPILER_RANLIB:FILEPATH=/usr/bin/ranlib \
+			${CONFIGURE_ARGS}
+.endfor
+
+CONFIGURE_ARGS :=	-DCMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line \
+			-DCMAKE_AR:FILEPATH=/usr/bin/ar \
+			-DCMAKE_NM:FILEPATH=/usr/bin/nm \
+			-DCMAKE_RANLIB:FILEPATH=/usr/bin/ranlib \
+			-DCMAKE_READELF:FILEPATH=/usr/bin/readelf \
+			-DCMAKE_STRIP:FILEPATH=/usr/bin/strip \
+			${CONFIGURE_ARGS}
+
 # Disable cmake's default optimization flags, putting them under ports control
 CONFIGURE_ENV += MODCMAKE_PORT_BUILD=yes
 MAKE_ENV += MODCMAKE_PORT_BUILD=yes
