@@ -26,7 +26,6 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
-MODCLANG_ARCHS =	amd64 i386
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -34,13 +33,11 @@ BUILD_DEPENDS +=	lang/node
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 #1670807
 BUILD_DEPENDS +=	devel/m4
-.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxxabi \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
-.endif
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
@@ -58,11 +55,7 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
-.if ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Mamd64}
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-.else
-CONFIGURE_ARGS +=	--without-wasm-sandboxed-libraries
-.endif
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 
 # XXX badly formed debug ?
