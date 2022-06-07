@@ -13,7 +13,7 @@ Index: CMakeLists.txt
  
  # Options that control generation of various targets.
  option(FMT_DOC "Generate the doc target." ${FMT_MASTER_PROJECT})
-@@ -281,7 +282,7 @@ endif ()
+@@ -286,7 +287,7 @@ endif ()
  
  if (BUILD_SHARED_LIBS)
    if (UNIX AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "SunOS" AND

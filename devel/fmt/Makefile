@@ -2,13 +2,11 @@ COMMENT=		alternative formatting library for C and C++
 
 GH_ACCOUNT=		fmtlib
 GH_PROJECT=		fmt
-GH_TAGNAME=		8.0.1
+GH_TAGNAME=		8.1.1
 
-SHARED_LIBS=		fmt	1.0
+SHARED_LIBS=		fmt	1.1
 
 CATEGORIES=		devel
-
-MAINTAINER=		Ashton Fagg <ashton@fagg.id.au>
 
 # MIT
 PERMIT_PACKAGE=	Yes
