@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
 
-VERSION =		3.14.22
+VERSION =		3.14.23
 DISTNAME =		facter-${VERSION}
 SHARED_LIBS +=  	facter                    3.3
 PKGSPEC =		facter->=3.0,<4.0
