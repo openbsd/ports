@@ -16,7 +16,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread
 
 MASTER_SITES=	https://gitweb.torproject.org/torsocks.git/snapshot/
-EXTRACT_SUFX=	.tar.gz
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
