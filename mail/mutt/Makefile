@@ -2,6 +2,7 @@ COMMENT=	tty-based e-mail client
 
 DISTNAME=	mutt-2.2.6
 EPOCH=		3
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
@@ -28,7 +29,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-FLAVORS=	debug gpgme sasl slang
+FLAVORS=	gpgme sasl slang
 FLAVOR?=
 
 CONFIGURE_STYLE=  gnu
@@ -42,6 +43,7 @@ MODPY_BUILDDEP=	No
 MODPY_ADJ_FILES= contrib/markdown2html
 
 CONFIGURE_ARGS+= --enable-compressed \
+		--enable-debug \
 		--enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
@@ -66,10 +68,6 @@ SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 
 ## standard flavours:
-
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
 
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --enable-autocrypt \
