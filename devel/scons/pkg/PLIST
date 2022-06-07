@@ -1,4 +1,3 @@
-@pkgpath devel/scons-py2
 bin/scons
 bin/scons-configure-cache
 bin/sconsign

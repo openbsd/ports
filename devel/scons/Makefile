@@ -3,7 +3,7 @@ COMMENT=	Python-based build system
 MODPY_EGG_VERSION= 4.3.0
 DISTNAME=	SCons-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 HOMEPAGE=	https://www.scons.org/
