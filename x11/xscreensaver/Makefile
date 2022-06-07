@@ -8,7 +8,7 @@ COMMENT=	screen saver and locker for the X Window System
 #
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
-DISTNAME=	xscreensaver-6.03
+DISTNAME=	xscreensaver-6.04
 
 CATEGORIES=	x11
 
@@ -21,8 +21,8 @@ WANTLIB =  EGL GL GLU ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0 c cairo
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gdk_pixbuf_xlib-2.0 gio-2.0 gle glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 harfbuzz intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread util xml2 z
+WANTLIB += gobject-2.0 gtk-x11-2.0 harfbuzz iconv intl jpeg m
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread util xml2 z
 
 MASTER_SITES=	${HOMEPAGE}
 

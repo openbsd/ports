@@ -43,6 +43,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/carousel
 @bin libexec/xscreensaver/ccurve
 @bin libexec/xscreensaver/celtic
+@bin libexec/xscreensaver/chompytower
 @bin libexec/xscreensaver/circuit
 @bin libexec/xscreensaver/cityflow
 @bin libexec/xscreensaver/cloudlife
@@ -165,6 +166,7 @@ libexec/xscreensaver/mapscroller.pl
 @bin libexec/xscreensaver/morph3d
 @bin libexec/xscreensaver/mountain
 @bin libexec/xscreensaver/munch
+@bin libexec/xscreensaver/nakagin
 @bin libexec/xscreensaver/nerverot
 @bin libexec/xscreensaver/noof
 @bin libexec/xscreensaver/noseguy
@@ -303,6 +305,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/carousel.6
 @man man/man6/ccurve.6
 @man man/man6/celtic.6
+@man man/man6/chompytower.6
 @man man/man6/cityflow.6
 @man man/man6/cloudlife.6
 @man man/man6/companioncube.6
@@ -421,6 +424,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/morph3d.6
 @man man/man6/mountain.6
 @man man/man6/munch.6
+@man man/man6/nakagin.6
 @man man/man6/nerverot.6
 @man man/man6/noof.6
 @man man/man6/noseguy.6
@@ -557,6 +561,7 @@ share/applications/screensavers/cage.desktop
 share/applications/screensavers/carousel.desktop
 share/applications/screensavers/ccurve.desktop
 share/applications/screensavers/celtic.desktop
+share/applications/screensavers/chompytower.desktop
 share/applications/screensavers/circuit.desktop
 share/applications/screensavers/cityflow.desktop
 share/applications/screensavers/cloudlife.desktop
@@ -693,6 +698,7 @@ share/applications/screensavers/molecule.desktop
 share/applications/screensavers/morph3d.desktop
 share/applications/screensavers/mountain.desktop
 share/applications/screensavers/munch.desktop
+share/applications/screensavers/nakagin.desktop
 share/applications/screensavers/nerverot.desktop
 share/applications/screensavers/noof.desktop
 share/applications/screensavers/noseguy.desktop
@@ -793,7 +799,8 @@ share/applications/screensavers/xmatrix.desktop
 share/applications/screensavers/xrayswarm.desktop
 share/applications/screensavers/xspirograph.desktop
 share/applications/screensavers/zoom.desktop
-share/applications/xscreensaver-properties.desktop
+share/applications/xscreensaver-settings.desktop
+share/applications/xscreensaver.desktop
 share/fonts/
 @fontdir share/fonts/xscreensaver/
 share/fonts/xscreensaver/OCRAStd.otf
@@ -802,7 +809,7 @@ share/fonts/xscreensaver/clacon.ttf
 share/fonts/xscreensaver/gallant12x22.ttf
 share/fonts/xscreensaver/luximr.ttf
 share/pixmaps/
-share/pixmaps/xscreensaver.xpm
+share/pixmaps/xscreensaver.png
 share/xscreensaver/
 share/xscreensaver/config/
 share/xscreensaver/config/README
@@ -838,6 +845,7 @@ share/xscreensaver/config/cage.xml
 share/xscreensaver/config/carousel.xml
 share/xscreensaver/config/ccurve.xml
 share/xscreensaver/config/celtic.xml
+share/xscreensaver/config/chompytower.xml
 share/xscreensaver/config/circuit.xml
 share/xscreensaver/config/cityflow.xml
 share/xscreensaver/config/cloudlife.xml
@@ -959,6 +967,7 @@ share/xscreensaver/config/molecule.xml
 share/xscreensaver/config/morph3d.xml
 share/xscreensaver/config/mountain.xml
 share/xscreensaver/config/munch.xml
+share/xscreensaver/config/nakagin.xml
 share/xscreensaver/config/nerverot.xml
 share/xscreensaver/config/noof.xml
 share/xscreensaver/config/noseguy.xml
@@ -1060,3 +1069,4 @@ share/xscreensaver/ui/screensaver-power.png
 share/xscreensaver/ui/screensaver-snap.png
 share/xscreensaver/ui/xscreensaver.ui
 @tag update-desktop-database
+share/xscreensaver/xscreensaver.service
