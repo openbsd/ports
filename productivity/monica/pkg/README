@@ -2,10 +2,23 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
-Configuration file
-==================
+Configuration and setup
+=======================
 
-The configuration file for monica is ${LOCALSTATEDIR}/www/monica/.env .
+The configuration file for monica is ${LOCALSTATEDIR}/www/monica/.env which
+should be configure according to the upstream documentation at
+https://github.com/monicahq/monica/blob/main/docs/installation/providers/generic.md
+
+The initial setup should be done as follows:
+
+# cd ${LOCALSTATEDIR}/www/monica && \
+    su -s /bin/ksh www -c "${MODPHP_BIN} artisan setup:production -v"
+
+Monica sets up absolute paths during the above setup, which can cause issues
+when using a web server, such as httpd(8) or nginx, which run in a chroot
+inside /var/www/. To work around this issue, create a relative symlink such as:
+
+# ln -s .. /var/www/var/www
 
 Exposing a webserver
 ====================

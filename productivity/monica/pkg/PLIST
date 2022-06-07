@@ -717,15 +717,15 @@ www/monica/app/ViewHelpers/ContactHelper.php
 www/monica/artisan
 www/monica/bootstrap/
 www/monica/bootstrap/app.php
-@mode 775
+@mode 770
 @owner www
 @group www
 www/monica/bootstrap/cache/
-www/monica/bootstrap/cache/packages.php
-www/monica/bootstrap/cache/services.php
 @mode
 @owner
 @group
+www/monica/bootstrap/cache/packages.php
+www/monica/bootstrap/cache/services.php
 www/monica/composer.json
 www/monica/composer.lock
 www/monica/config/
@@ -20335,3 +20335,5 @@ www/monica/vendor/xantios/mimey/tests/src/MimeMappingGeneratorTest.php
 www/monica/vendor/xantios/mimey/tests/src/MimeTypesTest.php
 www/monica/webpack.mix.js
 www/monica/yarn.lock
+@cwd ${LOCALBASE}
+share/doc/pkg-readmes/${PKGSTEM}
