@@ -2,47 +2,49 @@ ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT =		kart racing game with OSS mascots
 
-V =			0.9.3
-BASENAME =		supertuxkart-${V}
-DISTNAME =		${BASENAME}-src
-PKGNAME =		${BASENAME}
-REVISION =		1
+V =			1.3
+DISTNAME =		SuperTuxKart-${V}
+PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://supertuxkart.sourceforge.net
+HOMEPAGE =		https://supertuxkart.net/Main_Page
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL X11 Xrandr c curl freetype jpeg
-WANTLIB += m ogg openal png vorbis vorbisenc vorbisfile z SDL
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c crypto curl freetype harfbuzz
+WANTLIB += jpeg m openal png sqlite3 vorbisfile z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
-EXTRACT_SUFX =		.tar.xz
+MASTER_SITES =		https://github.com/supertuxkart/stk-code/releases/download/$V/
+EXTRACT_SUFX =		-src.tar.xz
 
 MODULES =		devel/cmake
+
+# gnu++0x
 COMPILER =		base-clang ports-gcc
 
-MODCMAKE_LDFLAGS =		-L${X11BASE}/lib -L${LOCALBASE}/lib
+CXXFLAGS +=		-I${X11BASE}/include
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
+
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \
 			audio/libvorbis \
-			devel/sdl \
+			devel/harfbuzz \
+			devel/sdl2 \
 			net/curl \
 			graphics/png \
 			graphics/jpeg
 
 CONFIGURE_ARGS +=	-DUSE_WIIUSE=OFF \
-			-DUSE_FRIBIDI=OFF \
+			-DUSE_DNS_C=ON \
 			-DBUILD_RECORDER=OFF
 
-WRKDIST =		${WRKDIR}/supertuxkart-${V}
-FIX_CRLF_FILES =	lib/irrlicht/include/IrrCompileConfig.h \
-			lib/irrlicht/source/Irrlicht/CIrrDeviceSDL.cpp
+WRKDIST =		${WRKDIR}/${DISTNAME}-src
 
 NO_TEST =		Yes
 
