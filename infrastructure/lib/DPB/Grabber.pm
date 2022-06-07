@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.44 2019/11/09 17:06:37 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.45 2022/06/07 16:13:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -50,6 +50,8 @@ sub new
 		builder => $state->builder,
 		state => $state,
 		errors => 0,
+		do_later => 1,
+		later => [],
 		eventloopcode => $eventloopcode
 	    }, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
@@ -87,6 +89,25 @@ sub expire_old_distfiles
 	return $self->{fetch}->run_expire_old($core, $opt_e);
 }
 
+sub add_to_build
+{
+	my ($self, $v) = @_;
+	if ($self->{do_later}) {
+		if (defined $v->{info} && $v->{info}->has_property('later')) {
+			push(@{$self->{later}}, $v);
+			return;
+		}
+	}
+	$self->{engine}->new_path($v);
+}
+
+sub later
+{
+	my $self = shift;
+	$self->{do_later} = 0;
+	return @{$self->{later}};
+}
+
 sub finish
 {
 	my ($self, $h) = @_;
@@ -97,7 +118,7 @@ sub finish
 		} else {
 			if ($v->{wantbuild}) {
 				delete $v->{wantbuild};
-				$self->{engine}->new_path($v);
+				$self->add_to_build($v);
 			}
 			if ($v->{dontjunk}) {
 				$self->{builder}->dontjunk($v);
