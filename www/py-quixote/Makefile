@@ -1,9 +1,6 @@
 COMMENT=		simple Python framework for web-based applications
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
-
-MODPY_EGG_VERSION=	2.8
-REVISION=		2
+MODPY_EGG_VERSION=	3.5
 DISTNAME=		Quixote-${MODPY_EGG_VERSION}
 PKGNAME=		py-quixote-${MODPY_EGG_VERSION}
 
@@ -17,14 +14,15 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
+FLAVOR=			python3
+FLAVORS=		python3
+
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
-NO_TEST=		Yes
+MODPY_PI=		Yes
+MODPY_PYTEST=		Yes
 
-# Clean up root-owned files.
 post-install:
-	rm -fr ${WRKSRC}/Quixote.egg-info
-	rm -fr ${WRKSRC}/Quixote-$V.egg-info
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-quixote
 .for i in LICENSE.txt doc/*txt
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/py-quixote

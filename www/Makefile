@@ -447,7 +447,7 @@
      SUBDIR += py-ndg-httpsclient,python3
      SUBDIR += py-qtwebengine,python3
      SUBDIR += py-query,python3
-     SUBDIR += py-quixote
+     SUBDIR += py-quixote,python3
      SUBDIR += py-repoze-lru,python3
      SUBDIR += py-repoze-profile,python3
      SUBDIR += py-repoze-who,python3
