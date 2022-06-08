@@ -1,0 +1,16 @@
+Fix bogus error (no idea how this is is supposed to work...):
+
+  gmake: *** No rule to make target '-lxerces-c', needed by '...'.
+
+Index: xsd/build/import/libxerces-c/stub.make
+--- xsd/build/import/libxerces-c/stub.make.orig
++++ xsd/build/import/libxerces-c/stub.make
+@@ -12,7 +12,7 @@ ifdef libxerces_c_installed
+ 
+ ifeq ($(libxerces_c_installed),y)
+ 
+-$(call export,l: -lxerces-c,cpp-options: )
++#$(call export,l: -lxerces-c,cpp-options: )
+ 
+ else
+ 

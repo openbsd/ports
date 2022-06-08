@@ -1,0 +1,1 @@
+xsd is installed as xsdcxx(1) to avoid conflicts with lang/mono's xsd(1).
