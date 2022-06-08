@@ -1,0 +1,29 @@
+${P5ARCH}/CBOR/
+${P5ARCH}/CBOR/Free/
+${P5ARCH}/CBOR/Free.pm
+${P5ARCH}/CBOR/Free/AddOne.pm
+${P5ARCH}/CBOR/Free/Decoder/
+${P5ARCH}/CBOR/Free/Decoder.pm
+${P5ARCH}/CBOR/Free/Decoder/Base.pm
+${P5ARCH}/CBOR/Free/SequenceDecoder.pm
+${P5ARCH}/CBOR/Free/Tagged.pm
+${P5ARCH}/CBOR/Free/X/
+${P5ARCH}/CBOR/Free/X.pm
+${P5ARCH}/CBOR/Free/X/Base.pm
+${P5ARCH}/CBOR/Free/X/CannotDecode64Bit.pm
+${P5ARCH}/CBOR/Free/X/Incomplete.pm
+${P5ARCH}/CBOR/Free/X/InvalidControl.pm
+${P5ARCH}/CBOR/Free/X/InvalidMapKey.pm
+${P5ARCH}/CBOR/Free/X/InvalidUTF8.pm
+${P5ARCH}/CBOR/Free/X/NegativeIntTooLow.pm
+${P5ARCH}/CBOR/Free/X/Recursion.pm
+${P5ARCH}/CBOR/Free/X/Unrecognized.pm
+${P5ARCH}/CBOR/Free/X/WideCharacter.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/CBOR/
+${P5ARCH}/auto/CBOR/Free/
+@so ${P5ARCH}/auto/CBOR/Free/Free.so
+@man man/man3p/CBOR::Free.3p
+@man man/man3p/CBOR::Free::Decoder.3p
+@man man/man3p/CBOR::Free::SequenceDecoder.3p
+@man man/man3p/CBOR::Free::Tagged.3p
