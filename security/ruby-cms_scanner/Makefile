@@ -1,6 +1,6 @@
 COMMENT =	framework to implement CMS scanners
 
-DISTNAME =	cms_scanner-0.13.7
+DISTNAME =	cms_scanner-0.13.8
 CATEGORIES =	security
 
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
