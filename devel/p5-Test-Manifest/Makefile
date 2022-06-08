@@ -1,6 +1,6 @@
 COMMENT =	interact with a t/test_manifest file
 
-DISTNAME =	Test-Manifest-2.022
+DISTNAME =	Test-Manifest-2.023
 
 CATEGORIES =	devel
 
