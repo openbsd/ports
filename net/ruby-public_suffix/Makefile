@@ -1,6 +1,6 @@
 COMMENT=		parse and decompose a domain names
 
-DISTNAME=		public_suffix-4.0.6
+DISTNAME=		public_suffix-4.0.7
 CATEGORIES=		net
 HOMEPAGE=		https://simonecarletti.com/code/publicsuffix-ruby/
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>

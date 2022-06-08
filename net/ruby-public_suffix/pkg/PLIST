@@ -2,12 +2,13 @@ ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
+${GEM_LIB}/gems/${DISTNAME}/.github/dependabot.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+${GEM_LIB}/gems/${DISTNAME}/.github/workflows/release.yml
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/tests.yml
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop_opinionated.yml
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
 ${GEM_LIB}/gems/${DISTNAME}/2.0-Upgrade.md
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
@@ -18,7 +19,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/SECURITY.md
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/console
-${GEM_LIB}/gems/${DISTNAME}/codecov.yml
 ${GEM_LIB}/gems/${DISTNAME}/data/
 ${GEM_LIB}/gems/${DISTNAME}/data/list.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/
