@@ -28,11 +28,11 @@ libexec/sudo/system_group.la
 @man man/man5/sudo.conf.5
 @man man/man5/sudo_logsrv.proto.5
 @man man/man5/sudo_logsrvd.conf.5
+@man man/man5/sudo_plugin.5
 @man man/man5/sudoers.5
 @man man/man5/sudoers_timestamp.5
 @man man/man8/sudo.8
 @man man/man8/sudo_logsrvd.8
-@man man/man8/sudo_plugin.8
 @man man/man8/sudo_sendlog.8
 @man man/man8/sudoedit.8
 @man man/man8/sudoreplay.8

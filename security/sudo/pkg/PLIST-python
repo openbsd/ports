@@ -1,6 +1,6 @@
 libexec/sudo/python_plugin.la
 @so libexec/sudo/python_plugin.so
-@man man/man8/sudo_plugin_python.8
+@man man/man5/sudo_plugin_python.5
 share/examples/sudo/example_approval_plugin.py
 share/examples/sudo/example_audit_plugin.py
 share/examples/sudo/example_conversation.py
