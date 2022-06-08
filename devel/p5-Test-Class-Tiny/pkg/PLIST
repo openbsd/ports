@@ -1,0 +1,4 @@
+${P5SITE}/Test/
+${P5SITE}/Test/Class/
+${P5SITE}/Test/Class/Tiny.pm
+@man man/man3p/Test::Class::Tiny.3p

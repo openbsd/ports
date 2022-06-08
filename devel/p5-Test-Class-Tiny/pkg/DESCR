@@ -1,0 +1,4 @@
+Test::Class has served Perl's xUnit needs for a long time but is
+incompatible with the Test2 framework.  This module allows for a
+similar workflow but in a way that works with both Test2 and the
+older, Test::Builder-based modules.
