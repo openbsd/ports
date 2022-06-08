@@ -1,9 +1,8 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	3.4.1
+MODPY_EGG_VERSION=	3.5.1
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
 CATEGORIES=		www
-REVISION=		1
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

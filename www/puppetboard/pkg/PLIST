@@ -53,6 +53,7 @@ puppetboard/puppetboard/static/css/radiator.css
 puppetboard/puppetboard/static/custom-natural-time-delta/
 puppetboard/puppetboard/static/custom-natural-time-delta/natural-time-delta.js
 puppetboard/puppetboard/static/datatables-buttons-2.2.1/
+puppetboard/puppetboard/static/datatables-buttons-2.2.1/buttons.colVis.min.js
 puppetboard/puppetboard/static/datatables-buttons-2.2.1/buttons.html5.min.js
 puppetboard/puppetboard/static/datatables-buttons-2.2.1/buttons.semanticui.min.css
 puppetboard/puppetboard/static/datatables-buttons-2.2.1/buttons.semanticui.min.js
@@ -86,6 +87,7 @@ puppetboard/puppetboard/static/js/tables.js
 puppetboard/puppetboard/static/js/timestamps.js
 puppetboard/puppetboard/static/jszip-3.7.1/
 puppetboard/puppetboard/static/jszip-3.7.1/jszip.min.js
+puppetboard/puppetboard/static/luxon.min.js
 puppetboard/puppetboard/static/moment.js-2.7.0/
 puppetboard/puppetboard/static/moment.js-2.7.0/moment.min.js
 puppetboard/puppetboard/templates/
@@ -144,6 +146,7 @@ puppetboard/setup.py
 puppetboard/test/
 puppetboard/test/test_app.py
 puppetboard/test/test_app_error.py
+puppetboard/test/test_core.py
 puppetboard/test/test_docker_settings.py
 puppetboard/test/test_form.py
 puppetboard/test/test_utils.py
