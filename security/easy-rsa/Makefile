@@ -1,8 +1,8 @@
 COMMENT =	small RSA key management package
 
-V =		3.0.8
-PKGNAME =	easy-rsa-$V
-DISTNAME =	EasyRSA-$V
+V =		3.1.0
+PKGNAME =	easy-rsa-${V}
+DISTNAME =	EasyRSA-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	security
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://openvpn.net/
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/v$V/
+MASTER_SITES =	https://github.com/OpenVPN/easy-rsa/releases/download/v${V}/
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
