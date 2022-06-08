@@ -1,8 +1,9 @@
 COMMENT=		configuration file parser library
-V =			3.2.2
+
+V=			3.3
 DISTNAME=		confuse-${V}
 PKGNAME=		lib${DISTNAME}
-SHARED_LIBS +=  confuse              2.2      # 2.0
+SHARED_LIBS +=  confuse              3.0      # 3.0
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/martinh/libconfuse
