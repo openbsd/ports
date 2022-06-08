@@ -1794,6 +1794,7 @@
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
+     SUBDIR += xsd
      SUBDIR += xtensa-elf
      SUBDIR += xtensa-esp32-elf
      SUBDIR += xtensa-lx106-elf
