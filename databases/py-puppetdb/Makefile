@@ -1,6 +1,6 @@
 COMMENT=		library for working with the PuppetDB API
 
-MODPY_EGG_VERSION=	2.5.1
+MODPY_EGG_VERSION=	2.5.2
 DISTNAME=		pypuppetdb-${MODPY_EGG_VERSION}
 PKGNAME=		py-puppetdb-${MODPY_EGG_VERSION}
 CATEGORIES=		databases www
