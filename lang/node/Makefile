@@ -5,14 +5,16 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v16.15.1
+NODE_VERSION =		v16.14.2
 PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
-			${DISTNAME}-headers.tar.xz \
-			${DISTNAME}.tar.xz
+			${DISTNAME}-headers.tar.gz \
+			${DISTNAME}.tar.gz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
+
+EPOCH =			0
 
 MASTER_SITES0 =		https://github.com/qbit/node-pledge/archive/
 
@@ -44,9 +46,6 @@ BUILD_DEPENDS =		sysutils/flock
 
 RUN_DEPENDS =		devel/gmake \
 			sysutils/flock
-
-# Needed to build js_native_api_v8_internals.h
-TEST_DEPENDS =		devel/gtest
 
 TEST_TARGET =		test-only
 CONFIGURE_STYLE =	simple
@@ -83,8 +82,12 @@ LIB_DEPENDS +=		archivers/brotli \
 EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl11
 EOPENSSL_INC =		${LOCALBASE}/include/eopenssl11
 
-post-extract:
-	mv ${WRKDIR}/node-pledge-${PLEDGE_VER} \
+do-extract:
+	mkdir ${WRKSRC}; \
+	tar -C ${WRKDIR} -zxf ${FULLDISTDIR}/${DISTNAME}.tar.gz && \
+	tar -C ${WRKSRC}/deps/npm/node_modules/ -zxf \
+		${FULLDISTDIR}/node-pledge-${PLEDGE_VER}.tar.gz && \
+	mv ${WRKSRC}/deps/npm/node_modules/node-pledge-${PLEDGE_VER} \
 		${WRKSRC}/deps/npm/node_modules/node-pledge
 
 pre-configure:
@@ -99,8 +102,8 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/update-gyp.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
-	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.xz \
-		${PREFIX}/share/node/${DISTNAME}-headers.tar.xz
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
+		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
 	ln -s ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
 		${PREFIX}/bin/node-gyp;
 	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \

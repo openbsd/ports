@@ -1,7 +1,7 @@
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -412,7 +412,9 @@
+@@ -409,7 +409,9 @@
            }],
            ['OS=="openbsd"', {
              'cflags': [ '-I/usr/local/include' ],
