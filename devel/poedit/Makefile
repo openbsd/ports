@@ -1,10 +1,12 @@
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
-V=		3.0.1
+V=		3.1
 DISTNAME=	poedit-${V}
-CATEGORIES=	devel
+CATEGORIES=	devel textproc
 
 HOMEPAGE=	https://www.poedit.net/
+
+MAINTAINER=	Omar Polo <op@openbsd.org>
 
 MASTER_SITES=	https://github.com/vslavik/poedit/releases/download/v${V}-oss/
 
