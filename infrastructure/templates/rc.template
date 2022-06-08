@@ -6,25 +6,27 @@ See rc.subr(8) for more information.
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/foobar"
+#daemon_execdir=
 #daemon_flags=
 #daemon_logger=
 #daemon_rtable=0
-#daemon_timeout="30"
-#daemon_user="root"
+#daemon_timeout=30
+#daemon_user=root
 
 . /etc/rc.d/rc.subr
 
 #pexp="$(eval echo ${daemon}${daemon_flags:+ ${daemon_flags}})"
 #rc_bg= # (undefined or "NO")
 #rc_reload= # (undefined or "NO")
+#rc_reload_signal=HUP
+#rc_stop_signal=TERM
 #rc_usercheck= # (undefined or "NO")
 
 #rc_pre() {
 #}
 
 #rc_start() {
-#	${rcexec} "${daemon_logger:+set -o pipefail; }${daemon} ${daemon_flags}${daemon_logger:+ 2>&1 |
-#		logger -ip ${daemon_logger} -t ${_name}}"
+#	rc_exec "${daemon} ${daemon_flags}"
 #}
 
 #rc_check() {
@@ -32,11 +34,11 @@ daemon="${TRUEPREFIX}/bin/foobar"
 #}
 
 #rc_reload() {
-#	pkill -HUP -T "${daemon_rtable}" -xf "${pexp}"
+#	pkill -${rc_reload_signal} -T "${daemon_rtable}" -xf "${pexp}"
 #}
 
 #rc_stop() {
-#	pkill -T "${daemon_rtable}" -xf "${pexp}"
+#	pkill -${rc_stop_signal} -T "${daemon_rtable}" -xf "${pexp}"
 #}
 
 #rc_post() {
