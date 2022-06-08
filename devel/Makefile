@@ -1092,6 +1092,7 @@
      SUBDIR += p5-Test-CPAN-Meta
      SUBDIR += p5-Test-CheckManifest
      SUBDIR += p5-Test-Class
+     SUBDIR += p5-Test-Class-Tiny
      SUBDIR += p5-Test-ClassAPI
      SUBDIR += p5-Test-CleanNamespaces
      SUBDIR += p5-Test-Cmd
@@ -1180,6 +1181,7 @@
      SUBDIR += p5-Test2-Plugin-NoWarnings
      SUBDIR += p5-Test2-Suite
      SUBDIR += p5-Test2-Tools-Explain
+     SUBDIR += p5-Text-Control
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Text-vFile-asData
      SUBDIR += p5-Throwable
@@ -1223,6 +1225,7 @@
      SUBDIR += p5-Variable-Magic
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef
+     SUBDIR += p5-X-Tiny
      SUBDIR += p5-YAML
      SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
