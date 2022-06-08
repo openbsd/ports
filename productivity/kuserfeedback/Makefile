@@ -29,4 +29,6 @@ BUILD_DEPENDS =	devel/bison
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Php=ON
+
 .include <bsd.port.mk>
