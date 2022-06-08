@@ -1,0 +1,18 @@
+Index: Source/Qt5WebKitConfig.cmake.in
+
+Fix build of ports using cmake/QtWebKit with cmake >= 3.23. Borrowed from
+http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/x11/qt5-qtwebkit/patches/patch-Source_Qt5WebKitConfig.cmake.in?rev=1.1&content-type=text/x-cvsweb-markup&only_with_tag=MAIN
+
+--- Source/Qt5WebKitConfig.cmake.in.orig
++++ Source/Qt5WebKitConfig.cmake.in
+@@ -4,6 +4,10 @@
+ find_dependency_with_major_and_minor(Qt5Core @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
+ find_dependency_with_major_and_minor(Qt5Gui @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
+ find_dependency_with_major_and_minor(Qt5Network @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
++find_dependency_with_major_and_minor(Qt5Sensors @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
++find_dependency_with_major_and_minor(Qt5Positioning @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
++find_dependency_with_major_and_minor(Qt5Quick @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
++find_dependency_with_major_and_minor(Qt5WebChannel @Qt5_VERSION_MAJOR@ @Qt5_VERSION_MINOR@)
+ 
+ include("${CMAKE_CURRENT_LIST_DIR}/WebKitTargets.cmake")
+ 
