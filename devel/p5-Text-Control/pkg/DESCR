@@ -1,0 +1,4 @@
+These are transforms of control characters useful for debugging.
+This module considers byte numbers 32 - 126 to be "printable"; i.e.,
+they represent actual ASCII characters.  Anything outside this range
+is thus "nonprintable".
