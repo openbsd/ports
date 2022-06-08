@@ -29,6 +29,7 @@ BUILD_DEPENDS =	databases/sqlite3 \
 		devel/boost \
 		devel/kf5/kinit \
 		devel/kf5/kitemmodels \
+		devel/kf5/kparts \
 		x11/qt5/qtquickcontrols
 
 RUN_DEPENDS =	databases/sqlite3 \
