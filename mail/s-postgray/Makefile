@@ -1,11 +1,10 @@
 COMMENT=		fast and secure postfix graylisting policy server
 
-DISTNAME=		s-postgray-0.6.0
+DISTNAME=		s-postgray-0.7.0
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-postgray
 
 MASTER_SITES=		https://ftp.sdaoden.eu/
-FIX_EXTRACT_PERMISSIONS=Yes
 
 MAINTAINER=		Steffen Nurpmeso <steffen@sdaoden.eu>
 
