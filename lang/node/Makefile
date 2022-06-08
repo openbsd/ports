@@ -5,11 +5,11 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v16.14.2
+NODE_VERSION =		v16.15.1
 PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
-			${DISTNAME}-headers.tar.gz \
-			${DISTNAME}.tar.gz
+			${DISTNAME}-headers.tar.xz \
+			${DISTNAME}.tar.xz
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -47,6 +47,9 @@ BUILD_DEPENDS =		sysutils/flock
 RUN_DEPENDS =		devel/gmake \
 			sysutils/flock
 
+# Needed to build js_native_api_v8_internals.h
+TEST_DEPENDS =		devel/gtest
+
 TEST_TARGET =		test-only
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure
@@ -62,15 +65,10 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--shared-openssl-libpath=${EOPENSSL_LIB} \
 			--shared-openssl-includes=${EOPENSSL_INC}
 
-SUBST_VARS += 		DISTNAME
-SUBST_VARS += 		DISTFILES
-SUBST_VARS += 		EXTRACT_SUFX
-SUBST_VARS += 		LOCALBASE
-SUBST_VARS += 		PREFIX
+SUBST_VARS +=		DISTNAME
 SUBST_VARS +=		WRKDIST
-SUBST_VARS +=		MAKE_PROGRAM
 SUBST_VARS +=		NODE_VERSION
-SUBST_VARS += 		EOPENSSL_LIB
+SUBST_VARS +=		EOPENSSL_LIB
 
 LIB_DEPENDS +=		archivers/brotli \
 			devel/libuv \
@@ -82,12 +80,8 @@ LIB_DEPENDS +=		archivers/brotli \
 EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl11
 EOPENSSL_INC =		${LOCALBASE}/include/eopenssl11
 
-do-extract:
-	mkdir ${WRKSRC}; \
-	tar -C ${WRKDIR} -zxf ${FULLDISTDIR}/${DISTNAME}.tar.gz && \
-	tar -C ${WRKSRC}/deps/npm/node_modules/ -zxf \
-		${FULLDISTDIR}/node-pledge-${PLEDGE_VER}.tar.gz && \
-	mv ${WRKSRC}/deps/npm/node_modules/node-pledge-${PLEDGE_VER} \
+post-extract:
+	mv ${WRKDIR}/node-pledge-${PLEDGE_VER} \
 		${WRKSRC}/deps/npm/node_modules/node-pledge
 
 pre-configure:
@@ -102,8 +96,8 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/update-gyp.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/node
-	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.gz \
-		${PREFIX}/share/node/${DISTNAME}-headers.tar.gz
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}-headers.tar.xz \
+		${PREFIX}/share/node/${DISTNAME}-headers.tar.xz
 	ln -s ${TRUEPREFIX}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp \
 		${PREFIX}/bin/node-gyp;
 	cd ${PREFIX}/lib/node_modules/npm/node_modules && for x in *; do \

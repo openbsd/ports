@@ -1,7 +1,7 @@
 Index: node.gyp
 --- node.gyp.orig
 +++ node.gyp
-@@ -356,7 +356,7 @@
+@@ -357,7 +357,7 @@
          '<(SHARED_INTERMEDIATE_DIR)' # for node_natives.h
        ],
        'dependencies': [
@@ -10,7 +10,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
        ],
-@@ -1081,8 +1081,8 @@
+@@ -1082,8 +1082,8 @@
  
        'dependencies': [
          '<(node_lib_target_name)',
@@ -21,7 +21,7 @@ Index: node.gyp
          'deps/histogram/histogram.gyp:histogram',
          'deps/uvwasi/uvwasi.gyp:uvwasi',
          'node_dtrace_header',
-@@ -1156,6 +1156,10 @@
+@@ -1157,6 +1157,10 @@
          }],
          ['OS=="solaris"', {
            'ldflags': [ '-I<(SHARED_INTERMEDIATE_DIR)' ]
