@@ -30,7 +30,7 @@ for the \f[B]\f[CB]trash\f[B]\f[R] specific features.
 \f[B]\f[R]\f[C]-d\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--dir\f[R]\f[B]\f[R]
 Remove empty directories.
 .TP
-\f[B]\f[R]\f[C]-r\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--recursive\f[R]\f[B]\f[R]
+\f[B]\f[R]\f[C]-r\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]-R\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--recursive\f[R]\f[B]\f[R]
 Delete directories and their contents.
 .TP
 \f[B]\f[R]\f[C]-v\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--verbose\f[R]\f[B]\f[R]
@@ -38,6 +38,9 @@ Print more information.
 .TP
 \f[B]\f[R]\f[C]-i\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--interactive\f[R]\f[B]\f[R]
 Ask before each deletion.
+.TP
+\f[B]\f[R]\f[C]-I\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--interact-once\f[R]\f[B]\f[R]
+Ask before deleting 3 or more files, or deleting recursively
 .TP
 \f[B]\f[R]\f[C]-f\f[R]\f[B]\f[R], \f[B]\f[R]\f[C]--force\f[R]\f[B]\f[R]
 Don\[cq]t prompt and ignore errors.
@@ -82,18 +85,27 @@ trash bin and NOT empty it.
 precedence order.
 .SS Compatibility with \f[B]\f[CB]rm\f[B]\f[R](1)
 .PP
-One of trash-d\[cq]s primary goals is near compatibility with the
-standard \f[B]\f[CB]rm\f[B]\f[R] tool.
+One of trash-d\[cq]s primary goals is near compatibility with the GNU
+\f[B]\f[CB]rm(1)\f[B]\f[R] tool.
 The keyword here is \[lq]near\[rq].
 The goal is not exact flag-for-flag compatibility with
 \f[B]\f[CB]rm\f[B]\f[R], but you should be able to
 `\f[C]alias rm=trash\f[R]' and not notice the difference.
+But since \f[B]\f[CB]rm\f[B]\f[R] has different failure states and error
+messages it can never be 100% compatible.
 .PP
-Because of this, \f[B]\f[CB]trash\f[B]\f[R] will silently ignore unknown
-options.
-Be warned that this may be subject to change as
-\f[B]\f[CB]trash\f[B]\f[R]\[cq]s compatibility with
-\f[B]\f[CB]rm\f[B]\f[R] increases.
+Additionally since there are a few different implementations of
+\f[B]\f[CB]rm(1)\f[B]\f[R] (BSDs and so on) that are all subtly
+incompatible with each other I can\[cq]t guarantee compatibility with
+all versions.
+.PP
+As of version 16 unknown options will throw an error.
+Prior to version 16 unknown options were silently ignored.
+.PP
+As of version 17 trash-d will not follow symlinks recursively through
+directories.
+This may in some cases be inconsistent with \f[B]\f[CB]rm\f[B]\f[R] but
+errs on the side of not deleting your files.
 .SH ENVIRONMENT
 .TP
 \f[B]\f[R]\f[C]XDG_DATA_HOME\f[R]\f[B]\f[R]
