@@ -179,6 +179,9 @@ GN_ARGS+=	is_official_build=true \
 MAKE_ENV+=	PATH=${PATH}:${WRKSRC}/electron/node_modules/.bin \
 		NODE_PATH=${WRKSRC}/electron/node_modules
 
+# https://github.com/npm/cli/issues/4996
+MAKE_ENV+=	npm_config_cache=${WRKDIR}
+
 # manually de-jsonified list from electron/patches/config.json
 ELECTRON_PATCH_CONFIG+= electron/patches/chromium:.
 ELECTRON_PATCH_CONFIG+= electron/patches/boringssl:third_party/boringssl/src
