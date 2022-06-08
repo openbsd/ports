@@ -1,0 +1,15 @@
+Fix -Wsign-conversion compiler error.
+https://github.com/open62541/open62541/commit/4a0f9795165aa08aa4cad473bf5e066ab33d31fd
+
+Index: tests/check_securechannel.c
+--- tests/check_securechannel.c.orig
++++ tests/check_securechannel.c
+@@ -365,7 +365,7 @@ START_TEST(Securechannel_sendAsymmetricOPNMessage_extr
+     if(extraPadding) {
+         extraPaddingByte = paddingByte;
+         paddingByte = sentData.data[sentData.length - keySizes.asym_lcl_sig_size - 2];
+-        paddingSize = (extraPaddingByte << 8u) + paddingByte;
++        paddingSize = ((size_t)extraPaddingByte << 8u) + paddingByte;
+         paddingSize += 1;
+     }
+ 

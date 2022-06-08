@@ -85,8 +85,6 @@ share/open62541/tools/ua-nodeset/FDI/OpcUaFdiPart5Model.xml
 share/open62541/tools/ua-nodeset/FDI/OpcUaFdiPart7Model.csv
 share/open62541/tools/ua-nodeset/FDI/OpcUaFdiPart7Model.xml
 share/open62541/tools/ua-nodeset/FDT/
-share/open62541/tools/ua-nodeset/FDT/NodeIds.csv
-share/open62541/tools/ua-nodeset/FDT/Opc.Ua.FDT.NodeSet2.xml
 share/open62541/tools/ua-nodeset/GDS/
 share/open62541/tools/ua-nodeset/GDS/Opc.Ua.Gds.Classes.cs
 share/open62541/tools/ua-nodeset/GDS/Opc.Ua.Gds.Constants.cs
@@ -140,16 +138,6 @@ share/open62541/tools/ua-nodeset/MachineVision/
 share/open62541/tools/ua-nodeset/MachineVision/NodeIds.csv
 share/open62541/tools/ua-nodeset/MachineVision/Opc.Ua.MachineVision.NodeSet2.xml
 share/open62541/tools/ua-nodeset/PLCopen/
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.Classes.cs
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.Constants.cs
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.DataTypes.cs
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.NodeSet2.xml
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.PredefinedNodes.uanodes
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.PredefinedNodes.xml
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.Types.bsd
-share/open62541/tools/ua-nodeset/PLCopen/Opc.Ua.Plc.Types.xsd
-share/open62541/tools/ua-nodeset/PLCopen/OpcUaPLCopenModel.csv
-share/open62541/tools/ua-nodeset/PLCopen/OpcUaPLCopenModel.xml
 share/open62541/tools/ua-nodeset/POWERLINK/
 share/open62541/tools/ua-nodeset/POWERLINK/Opc.Ua.POWERLINK.NodeIds.csv
 share/open62541/tools/ua-nodeset/POWERLINK/Opc.Ua.POWERLINK.NodeSet2.xml

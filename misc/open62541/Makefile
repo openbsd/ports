@@ -1,11 +1,10 @@
 COMMENT =	library implementation of OPC UA
 
-VERSION =	1.0.6
-REVISION =	0
+VERSION =	1.3.1
 DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
 
-SHARED_LIBS =	open62541	1.0
+SHARED_LIBS =	open62541	2.0
 
 CATEGORIES =	misc
 
@@ -21,7 +20,7 @@ WANTLIB =		c m mbedcrypto mbedtls mbedx509 pthread
 MASTER_SITES =		https://github.com/open62541/open62541/
 MASTER_SITES0 =		https://github.com/OPCFoundation/UA-Nodeset/archive/
 DISTFILES =		open62541-{archive/refs/tags/v}${VERSION}.tar.gz \
-			UA-1.04.5-2020-03-06.tar.gz:0
+			UA-1.04.10-2021-09-15.tar.gz:0
 
 MODULES =		devel/cmake
 
@@ -53,8 +52,7 @@ FLAVORS =		ns0_full
 FLAVOR ?=
 
 .if ${FLAVOR:Mns0_full}
-CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=FULL \
-			-DUA_ENABLE_MICRO_EMB_DEV_PROFILE=ON
+CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=FULL
 .else
 CONFIGURE_ARGS +=	-DUA_NAMESPACE_ZERO=REDUCED
 .endif
