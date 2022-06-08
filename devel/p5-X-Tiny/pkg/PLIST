@@ -1,0 +1,6 @@
+${P5SITE}/X/
+${P5SITE}/X/Tiny/
+${P5SITE}/X/Tiny.pm
+${P5SITE}/X/Tiny/Base.pm
+@man man/man3p/X::Tiny.3p
+@man man/man3p/X::Tiny::Base.3p
