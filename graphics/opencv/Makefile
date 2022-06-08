@@ -4,7 +4,7 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.5.5
+V =			4.6.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
@@ -20,7 +20,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 9.3
+SHARED_LIBS += $i 10.0
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} avcodec avformat avutil OpenEXR-3_1
@@ -70,14 +70,8 @@ LIB_DEPENDS-java =	${BUILD_PKGPATH},-main=${V}
 # XXX PIE cannot be produced due to problems with inline assembly.
 # Since OpenCV is mostly used as a LIBrary, switch to PIC.
 .if ${MACHINE_ARCH:Mi386}
-CONFIGURE_ENV =		CFLAGS="${CFLAGS} -fPIC" \
-			CXXFLAGS="${CXXFLAGS} -fPIC"
-.endif
-
-# Fix "undefined reference to `__atomic_store_8'" (and more)
-.if ${MACHINE_ARCH:Mhppa}
-WANTLIB-main +=		atomic
-CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
+CFLAGS +=	-fPIC
+CXXFLAGS +=	-fPIC
 .endif
 
 CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \

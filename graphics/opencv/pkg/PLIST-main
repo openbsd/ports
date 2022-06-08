@@ -140,6 +140,7 @@ include/opencv4/opencv2/core/utils/
 include/opencv4/opencv2/core/utils/allocator_stats.hpp
 include/opencv4/opencv2/core/utils/allocator_stats.impl.hpp
 include/opencv4/opencv2/core/utils/filesystem.hpp
+include/opencv4/opencv2/core/utils/fp_control_utils.hpp
 include/opencv4/opencv2/core/utils/instrumentation.hpp
 include/opencv4/opencv2/core/utils/logger.defines.hpp
 include/opencv4/opencv2/core/utils/logger.hpp
