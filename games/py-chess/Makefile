@@ -1,6 +1,6 @@
 COMMENT =		pure Python chess library
 
-MODPY_EGG_VERSION =	1.8.0
+MODPY_EGG_VERSION =	1.9.1
 DISTNAME =		chess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,5 +18,6 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
