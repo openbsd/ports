@@ -1,27 +1,26 @@
-COMMENT=		library for manipulating structured configuration files
+COMMENT=	library for manipulating structured configuration files
 
-DISTNAME=		libconfig-1.7.2
-REVISION=		1
+DISTNAME=	libconfig-1.7.3
 
-SHARED_LIBS +=  config               11.0     # 11.2
-SHARED_LIBS +=  config++             11.0     # 11.2
+SHARED_LIBS +=  config               12.0     # 12.0
+SHARED_LIBS +=  config++             12.0     # 12.0
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
-HOMEPAGE=		https://hyperrealm.github.io/libconfig/
+HOMEPAGE=	https://hyperrealm.github.io/libconfig/
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
-MASTER_SITES=		https://hyperrealm.github.io/libconfig/dist/
+MASTER_SITES=	https://hyperrealm.github.io/libconfig/dist/
 
 CONFIGURE_STYLE=	gnu
 
-TEST_TARGET =		test
+TEST_TARGET=	test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libconfig

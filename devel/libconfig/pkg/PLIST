@@ -6,10 +6,10 @@ lib/cmake/libconfig/
 lib/cmake/libconfig++/
 lib/cmake/libconfig++/libconfig++Config.cmake
 lib/cmake/libconfig/libconfigConfig.cmake
-lib/libconfig++.a
+@static-lib lib/libconfig++.a
 lib/libconfig++.la
 @lib lib/libconfig++.so.${LIBconfig++_VERSION}
-lib/libconfig.a
+@static-lib lib/libconfig.a
 lib/libconfig.la
 @lib lib/libconfig.so.${LIBconfig_VERSION}
 lib/pkgconfig/libconfig++.pc
