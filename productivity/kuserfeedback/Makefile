@@ -3,6 +3,7 @@ COMMENT =	KDE framework for collecting user feedback
 GH_ACCOUNT =	KDE
 GH_PROJECT =	kuserfeedback
 GH_TAGNAME =	v1.2.0
+REVISION =	0
 
 SHARED_LIBS =	KUserFeedbackCore	0.1
 SHARED_LIBS +=	KUserFeedbackWidgets	0.0
