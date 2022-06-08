@@ -1,0 +1,20 @@
+Found in the Debian port:
+http://deb.debian.org/debian/pool/main/t/tcltls/tcltls_1.7.22-2.debian.tar.xz
+
+Index: tlsBIO.c
+--- tlsBIO.c.orig
++++ tlsBIO.c
+@@ -231,9 +231,12 @@ static long BioCtrl(BIO *bio, int cmd, long num, void 
+ 	switch (cmd) {
+ 		case BIO_CTRL_RESET:
+ 			dprintf("Got BIO_CTRL_RESET");
+-			num = 0;
++			ret = 0;
++			break;
+ 		case BIO_C_FILE_SEEK:
+ 			dprintf("Got BIO_C_FILE_SEEK");
++			ret = 0;
++			break;
+ 		case BIO_C_FILE_TELL:
+ 			dprintf("Got BIO_C_FILE_TELL");
+ 			ret = 0;

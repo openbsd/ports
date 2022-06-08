@@ -1,6 +1,5 @@
-lib/tcl/tls/
-lib/tcl/tls/libtls${VER}.so
-lib/tcl/tls/pkgIndex.tcl
-lib/tcl/tls/tls.tcl
+lib/tcl/tcltls/
+lib/tcl/tcltls/pkgIndex.tcl
+@so lib/tcl/tcltls/tcltls.so
 share/doc/tcltls/
 share/doc/tcltls/tls.htm
