@@ -3746,6 +3746,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/batch-get-stream-ke
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/create-stream-key.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-channel.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-playback-key-pair.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-recording-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ivs/delete-stream-key.rst
