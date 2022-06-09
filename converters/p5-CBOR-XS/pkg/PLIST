@@ -1,0 +1,7 @@
+${P5ARCH}/CBOR/
+${P5ARCH}/CBOR/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/CBOR/
+${P5ARCH}/auto/CBOR/XS/
+@so ${P5ARCH}/auto/CBOR/XS/XS.so
+@man man/man3p/CBOR::XS.3p

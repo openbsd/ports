@@ -1,0 +1,5 @@
+This module converts Perl data structures to the Concise Binary
+Object Representation (CBOR) and vice versa.  CBOR is a fast binary
+serialisation format that aims to use an (almost) superset of the
+JSON data model, i.e. when you can represent something useful in
+JSON, you should be able to represent it in CBOR.
