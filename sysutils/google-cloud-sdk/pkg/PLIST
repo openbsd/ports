@@ -6733,16 +6733,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha/${MODPY_PYC
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha/alloydb_v1alpha_client.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha/alloydb_v1alpha_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha/resources.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/__init__.py
-${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/${MODPY_PYCACHE}/
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/${MODPY_PYCACHE}alloydb_v1alpha1_client.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/${MODPY_PYCACHE}alloydb_v1alpha1_messages.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/alloydb_v1alpha1_client.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/alloydb_v1alpha1_messages.py
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1alpha1/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1beta/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1beta/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1beta/${MODPY_PYCACHE}/
@@ -6754,7 +6744,6 @@ google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1beta/alloydb_v1be
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1beta/alloydb_v1beta_messages.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb/v1beta/resources.py
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb_v1alpha.json
-google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb_v1alpha1.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/alloydb_v1beta.json
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/
 google-cloud-sdk/lib/googlecloudsdk/third_party/apis/anthosevents/__init__.py
@@ -11332,12 +11321,14 @@ google-cloud-sdk/lib/surface/anthos/config/controller/${MODPY_PYCACHE}__init__.$
 google-cloud-sdk/lib/surface/anthos/config/controller/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/anthos/config/controller/${MODPY_PYCACHE}get_config_connector_identity.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/anthos/config/controller/${MODPY_PYCACHE}get_credentials.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/anthos/config/controller/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/anthos/config/controller/create.py
 google-cloud-sdk/lib/surface/anthos/config/controller/delete.yaml
 google-cloud-sdk/lib/surface/anthos/config/controller/describe.yaml
 google-cloud-sdk/lib/surface/anthos/config/controller/get_config_connector_identity.py
 google-cloud-sdk/lib/surface/anthos/config/controller/get_credentials.py
 google-cloud-sdk/lib/surface/anthos/config/controller/list.yaml
+google-cloud-sdk/lib/surface/anthos/config/controller/update.py
 google-cloud-sdk/lib/surface/anthos/config/operations/
 google-cloud-sdk/lib/surface/anthos/config/operations/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/anthos/config/operations/${MODPY_PYCACHE}/
@@ -11908,7 +11899,9 @@ google-cloud-sdk/lib/surface/assured/workloads/violations/
 google-cloud-sdk/lib/surface/assured/workloads/violations/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/assured/workloads/violations/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/assured/workloads/violations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/assured/workloads/violations/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/assured/workloads/violations/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/assured/workloads/violations/describe.py
 google-cloud-sdk/lib/surface/assured/workloads/violations/list.py
 google-cloud-sdk/lib/surface/auth/
 google-cloud-sdk/lib/surface/auth/__init__.py
@@ -16071,8 +16064,10 @@ google-cloud-sdk/lib/surface/deploy/releases/
 google-cloud-sdk/lib/surface/deploy/releases/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/deploy/releases/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/deploy/releases/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/deploy/releases/${MODPY_PYCACHE}abandon.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/releases/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/deploy/releases/${MODPY_PYCACHE}promote.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/deploy/releases/abandon.py
 google-cloud-sdk/lib/surface/deploy/releases/create.py
 google-cloud-sdk/lib/surface/deploy/releases/describe.yaml
 google-cloud-sdk/lib/surface/deploy/releases/list.yaml
@@ -17856,6 +17851,7 @@ google-cloud-sdk/lib/surface/immersive_stream/xr/operations/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/immersive_stream/xr/operations/${MODPY_PYCACHE}/
 google-cloud-sdk/lib/surface/immersive_stream/xr/operations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/immersive_stream/xr/operations/describe.yaml
+google-cloud-sdk/lib/surface/immersive_stream/xr/operations/list.yaml
 google-cloud-sdk/lib/surface/immersive_stream/xr/operations/wait.yaml
 google-cloud-sdk/lib/surface/info.py
 google-cloud-sdk/lib/surface/init.py
@@ -18926,6 +18922,12 @@ ${MODPY_COMMENT}google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_
 google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_router_appliances/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_router_appliances/create.yaml
 google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_router_appliances/update.yaml
+google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpc_network/
+google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpc_network/__init__.py
+${MODPY_COMMENT}google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpc_network/${MODPY_PYCACHE}/
+google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpc_network/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpc_network/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpc_network/create.py
 google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpn_tunnels/
 google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpn_tunnels/__init__.py
 ${MODPY_COMMENT}google-cloud-sdk/lib/surface/network_connectivity/spokes/linked_vpn_tunnels/${MODPY_PYCACHE}/
@@ -19910,6 +19912,7 @@ google-cloud-sdk/lib/surface/run/jobs/${MODPY_PYCACHE}delete.${MODPY_PYC_MAGIC_T
 google-cloud-sdk/lib/surface/run/jobs/${MODPY_PYCACHE}describe.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/run/jobs/${MODPY_PYCACHE}execute.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/run/jobs/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
+google-cloud-sdk/lib/surface/run/jobs/${MODPY_PYCACHE}replace.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/run/jobs/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
 google-cloud-sdk/lib/surface/run/jobs/add_iam_policy_binding.yaml
 google-cloud-sdk/lib/surface/run/jobs/create.py
@@ -19937,6 +19940,7 @@ google-cloud-sdk/lib/surface/run/jobs/executions/tasks/list.py
 google-cloud-sdk/lib/surface/run/jobs/get_iam_policy.yaml
 google-cloud-sdk/lib/surface/run/jobs/list.py
 google-cloud-sdk/lib/surface/run/jobs/remove_iam_policy_binding.yaml
+google-cloud-sdk/lib/surface/run/jobs/replace.py
 google-cloud-sdk/lib/surface/run/jobs/set_iam_policy.yaml
 google-cloud-sdk/lib/surface/run/jobs/update.py
 google-cloud-sdk/lib/surface/run/regions/
