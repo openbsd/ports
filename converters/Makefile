@@ -32,6 +32,7 @@
      SUBDIR += opencc
      SUBDIR += otf2bdf
      SUBDIR += p5-CBOR-Free
+     SUBDIR += p5-CBOR-XS
      SUBDIR += p5-Calendar-Simple
      SUBDIR += p5-Catalyst-Plugin-Charsets-Japanese
      SUBDIR += p5-Catalyst-View-JSON
