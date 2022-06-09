@@ -38,6 +38,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/unpacker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/bigint.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/core_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/factory.rb
 @so ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/msgpack.so
@@ -50,6 +51,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/msgpack/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/msgpack.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/msgpack.org.md
 ${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/bigint_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases.json
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases.msg
 ${GEM_LIB}/gems/${DISTNAME}/spec/cases_compact.msg

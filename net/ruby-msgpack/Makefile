@@ -1,6 +1,6 @@
 COMMENT =	binary-based efficient object serialization library
 
-DISTNAME =	msgpack-1.4.5
+DISTNAME =	msgpack-1.5.2
 CATEGORIES =	net devel
 
 HOMEPAGE =	http://msgpack.org/
