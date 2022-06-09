@@ -1,7 +1,11 @@
 COMMENT=	write distributed self-replicating programs in Python
 
-MODPY_EGG_VERSION=	0.3.2
-DISTNAME=	mitogen-${MODPY_EGG_VERSION}
+GH_ACCOUNT=	mitogen-hq
+GH_PROJECT=	mitogen
+GH_COMMIT=	c0d3deeac571eb36dfccbe5ca2f1579f2aceca2a
+
+MODPY_EGG_VERSION=	0.3.3
+DISTNAME=	mitogen-${MODPY_EGG_VERSION}pre0
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	sysutils
@@ -13,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_PI=	Yes
+#MODPY_PI=	Yes
 MODPY_SETUPTOOLS= Yes
 
 FLAVORS=	python3

@@ -62,6 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MO
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_lxc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_lxd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_machinectl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_podman.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_setns.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/${MODPY_PYCACHE}mitogen_su.${MODPY_PYC_MAGIC_TAG}pyc
@@ -75,6 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mito
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_lxc.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_lxd.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_machinectl.py
+lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_podman.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_setns.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_ssh.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/plugins/connection/mitogen_su.py
@@ -139,10 +141,8 @@ lib/python${MODPY_VERSION}/site-packages/mitogen/compat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitogen/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitogen/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/compat/${MODPY_PYCACHE}pkgutil.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/mitogen/compat/${MODPY_PYCACHE}shutil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/compat/${MODPY_PYCACHE}tokenize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mitogen/compat/pkgutil.py
-lib/python${MODPY_VERSION}/site-packages/mitogen/compat/shutil.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/compat/tokenize.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/core.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/debug.py
