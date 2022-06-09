@@ -1,0 +1,2 @@
+This login_ldap package is provided for backwards compatibility but should
+be replaced by login_ldap(8) from the OpenBSD base OS.

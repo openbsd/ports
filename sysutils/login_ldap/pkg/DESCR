@@ -1,2 +1,8 @@
 login_ldap provides an authentication mechanism through bsdauth to
 authenticate users against an LDAP server.
+
+New installations should not use this package, but instead use
+login_ldap(8) in the base OS. This package is provided for backwards
+compatibility because the configuration method is different (the version
+in the base OS uses login_ldap.conf instead of various parameters in
+/etc/login.conf).
