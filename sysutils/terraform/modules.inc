@@ -1,5 +1,3 @@
-MODGO_VERSION =	v1.2.2
-
 MODGO_MODULES =	\
 	cloud.google.com/go						 v0.81.0 \
 	cloud.google.com/go/bigquery					 v1.8.0 \
@@ -950,4 +948,3 @@ MODGO_MODFILES =	\
 	k8s.io/utils							 v0.0.0-20210802155522-efc7438f0176 \
 	sigs.k8s.io/structured-merge-diff/v4				 v4.0.2 \
 	sigs.k8s.io/yaml						 v1.1.0
-
