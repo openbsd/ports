@@ -192,7 +192,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-azure-helpers			 v0.14.0 \
 	github.com/hashicorp/go-checkpoint			 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
-	github.com/hashicorp/go-getter				 v1.5.11 \
+	github.com/hashicorp/go-getter				 v1.6.1 \
 	github.com/hashicorp/go-hclog				 v0.15.0 \
 	github.com/hashicorp/go-immutable-radix			 v1.1.0 \
 	github.com/hashicorp/go-kms-wrapping/entropy		 v0.1.0 \
@@ -377,7 +377,7 @@ MODGO_MODULES =	\
 	golang.org/x/net					 v0.0.0-20210813160813-60bc85c4be6d \
 	golang.org/x/oauth2					 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys					 v0.0.0-20210823070655-63515b42dcdf \
+	golang.org/x/sys					 v0.0.0-20220517195934-5e4e11fc645e \
 	golang.org/x/term					 v0.0.0-20201210144234-2321bbc49cbf \
 	golang.org/x/text					 v0.3.7 \
 	golang.org/x/time					 v0.0.0-20200630173020-3af7569d3a1e \
