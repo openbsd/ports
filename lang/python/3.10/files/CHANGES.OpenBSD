@@ -24,4 +24,4 @@ OpenBSD's version of llvm-ar is installed as /usr/bin/ar, and the
 compiler as passed to ports builds is /usr/bin/cc.
 
 These changes are available in the OpenBSD CVS repository
-<http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.9.
+<http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.10.

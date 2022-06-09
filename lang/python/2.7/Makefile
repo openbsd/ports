@@ -8,12 +8,12 @@ SHARED_LIBS =		python2.7 0.0
 VERSION_SPEC =		>=2.7,<2.8
 PORTROACH =		limit:^2\.7
 
-REVISION-main =		7
+REVISION-main =		8
 REVISION-idle =		1
 REVISION-tests =	1
 REVISION-bsddb =	0
 REVISION-gdbm =		0
-REVISION-tkinter =	0
+REVISION-tkinter =	1
 REVISION-tools =	0
 
 CONFIGURE_ARGS +=	--with-ensurepip=no

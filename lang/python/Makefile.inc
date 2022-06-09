@@ -8,7 +8,7 @@ COMMENT-bsddb =	Berkeley db module for Python
 COMMENT-gdbm =	GNU dbm module for Python
 COMMENT-idle =	IDE for Python
 COMMENT-tests =	Python test suite
-COMMENT-tkinter = tk GUI module for Python
+COMMENT-tkinter = Python interface to the Tk graphical toolkit
 COMMENT-tools =	extra tools for Python
 
 VERSION =	${FULL_VERSION:R}
@@ -95,11 +95,16 @@ RUN_DEPENDS-idle =	lang/python/${VERSION},-tkinter \
 WANTLIB-idle =
 
 MODULES +=		x11/tk
-# Tcl/Tk version needs to be in sync with patch-setup_py's one
+
+.if ${VERSION} == "2.7"
 MODTK_VERSION =		8.5
+.else
+MODTK_VERSION =		8.6
+.endif
+
 LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
 			${MODTK_LIB_DEPENDS}
-WANTLIB-tkinter =	X11 pthread python${VERSION} \
+WANTLIB-tkinter =	pthread python${VERSION} \
 			${MODTK_WANTLIB}
 
 AUTOCONF_VERSION =	2.69
@@ -110,7 +115,10 @@ CONFIGURE_ARGS +=	--with-fpectl \
 			--with-threads \
 			--enable-ipv6 \
 			--with-system-expat \
-			--with-system-ffi
+			--with-system-ffi \
+			--with-tcltk-includes='-I${MODTCL_INCDIR} -I${MODTK_INCDIR} -I${X11BASE}/include' \
+			--with-tcltk-libs='-L${X11BASE}/lib -l${MODTCL_LIB} -l${MODTK_LIB}'
+
 .if ${VERSION} != "2.7"
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
 .  if ${PROPERTIES:Mlld}
