@@ -1,15 +1,19 @@
 COMMENT =	module to check for C library availablity
 
-MODULES =	cpan
-DISTNAME =	Devel-CheckLib-1.14
+DISTNAME =	Devel-CheckLib-1.16
+
 CATEGORIES =	devel
 
-# perl
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
+
+# Perl
 PERMIT_PACKAGE =	Yes
 
-TEST_DEPENDS =	sysutils/p5-Capture-Tiny \
-		devel/p5-Mock-Config>=0.02
+MODULES =		cpan
 
-PKG_ARCH =	*
+TEST_DEPENDS =		devel/p5-Mock-Config>=0.02 \
+			sysutils/p5-Capture-Tiny
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
