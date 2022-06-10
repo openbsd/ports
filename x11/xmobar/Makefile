@@ -1,8 +1,7 @@
 COMMENT =		minimalistic text based status bar
-REVISION =		0
 
 MODCABAL_STEM =		xmobar
-MODCABAL_VERSION =	0.42
+MODCABAL_VERSION =	0.43
 CATEGORIES =		x11
 HOMEPAGE =		https://xmobar.org
 
@@ -15,8 +14,6 @@ WANTLIB =		X11 Xext Xft Xinerama Xrandr Xrender \
 
 MODULES =		devel/cabal
 MODCABAL_FLAGS =	with_xft with_mpd with_mpris with_inotify
-# Until https://github.com/jaor/xmobar/issues/617 gets resolved
-MODCABAL_BUILD_ARGS =	--allow-newer
 
 # % cabal get xmobar-0.42
 # % cd ./xmobar-0.42
@@ -28,7 +25,7 @@ MODCABAL_MANIFEST	= \
 	StateVar	1.2.2	0	\
 	X11	1.10.2	0	\
 	X11-xft	0.3.4	0	\
-	adjunctions	4.4	2	\
+	adjunctions	4.4.1	0	\
 	aeson	2.0.3.0	0	\
 	appar	0.1.8	0	\
 	asn1-encoding	0.9.6	2	\
@@ -42,18 +39,18 @@ MODCABAL_MANIFEST	= \
 	base-orphans	0.8.6	0	\
 	base64-bytestring	1.2.1.0	0	\
 	basement	0.0.14	0	\
-	bifunctors	5.5.11	1	\
+	bifunctors	5.5.12	0	\
 	blaze-builder	0.4.2.2	1	\
 	blaze-html	0.9.1.2	2	\
 	blaze-markup	0.8.2.8	2	\
 	byteorder	1.0.4	0	\
-	cabal-doctest	1.0.9	0	\
+	cabal-doctest	1.0.9	1	\
 	call-stack	0.4.0	0	\
 	case-insensitive	1.2.1.0	0	\
-	cereal	0.5.8.2	0	\
+	cereal	0.5.8.2	1	\
 	comonad	5.0.8	1	\
 	conduit	1.3.4.2	0	\
-	conduit-extra	1.3.5	0	\
+	conduit-extra	1.3.6	0	\
 	connection	0.3.1	1	\
 	contravariant	1.5.5	0	\
 	cookie	0.4.5	0	\
@@ -64,7 +61,7 @@ MODCABAL_MANIFEST	= \
 	distributive	0.6.2.1	1	\
 	dlist	1.0	0	\
 	extensible-exceptions	0.1.1.4	0	\
-	free	5.1.7	1	\
+	free	5.1.8	0	\
 	hashable	1.4.0.2	0	\
 	hinotify	0.4.1	0	\
 	hourglass	0.2.12	0	\
@@ -76,10 +73,10 @@ MODCABAL_MANIFEST	= \
 	indexed-traversable	0.1.2	1	\
 	indexed-traversable-instances	0.1.1	0	\
 	integer-logarithms	1.0.3.1	2	\
-	invariant	0.5.5	0	\
+	invariant	0.5.6	0	\
 	iproute	1.7.12	0	\
-	kan-extensions	5.2.3	0	\
-	lens	5.1	1	\
+	kan-extensions	5.2.4	0	\
+	lens	5.1.1	0	\
 	libmpd	0.10.0.0	0	\
 	memory	0.17.0	0	\
 	mime-types	0.1.0.9	0	\
@@ -90,15 +87,15 @@ MODCABAL_MANIFEST	= \
 	parallel	3.2.2.0	4	\
 	parsec-numbers	0.1.0	0	\
 	pem	0.2.4	0	\
-	primitive	0.7.3.0	0	\
+	primitive	0.7.4.0	0	\
 	profunctors	5.6.2	2	\
-	random	1.2.1	0	\
+	random	1.2.1.1	0	\
 	reflection	2.1.6	1	\
-	regex-base	0.94.0.2	0	\
-	regex-compat	0.95.2.1	1	\
-	regex-posix	0.96.0.1	0	\
-	resourcet	1.2.4.3	1	\
-	safe-exceptions	0.1.7.2	0	\
+	regex-base	0.94.0.2	1	\
+	regex-compat	0.95.2.1	2	\
+	regex-posix	0.96.0.1	1	\
+	resourcet	1.2.5	0	\
+	safe-exceptions	0.1.7.3	0	\
 	scientific	0.3.7.0	2	\
 	semialign	1.2.0.1	1	\
 	semigroupoids	5.3.7	0	\
@@ -111,19 +108,19 @@ MODCABAL_MANIFEST	= \
 	tagged	0.8.6.1	2	\
 	text-short	0.1.5	0	\
 	th-abstraction	0.4.3.0	0	\
-	th-compat	0.1.3	0	\
+	th-compat	0.1.3	1	\
 	th-lift	0.8.2	1	\
 	these	1.1.1.1	5	\
 	time-compat	1.9.6.1	3	\
 	tls	1.5.7	0	\
 	transformers-base	0.4.6	0	\
 	transformers-compat	0.7.1	1	\
-	typed-process	0.2.8.0	0	\
+	typed-process	0.2.8.0	1	\
 	unliftio-core	0.2.0.1	2	\
-	unordered-containers	0.2.17.0	0	\
+	unordered-containers	0.2.19.1	0	\
 	utf8-string	1.0.2	0	\
 	uuid-types	1.0.5	2	\
-	vector	0.12.3.1	1	\
+	vector	0.12.3.1	2	\
 	vector-algorithms	0.8.0.4	1	\
 	void	0.7.3	0	\
 	witherable	0.4.2	2	\
@@ -131,9 +128,9 @@ MODCABAL_MANIFEST	= \
 	x509-store	1.6.9	0	\
 	x509-system	1.6.7	0	\
 	x509-validation	1.6.12	0	\
-	xml-conduit	1.9.1.1	0	\
+	xml-conduit	1.9.1.1	1	\
 	xml-types	0.3.8	0	\
-	zlib	0.6.2.3	1	\
+	zlib	0.6.3.0	0	\
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
