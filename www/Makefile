@@ -451,7 +451,6 @@
      SUBDIR += py-repoze-lru,python3
      SUBDIR += py-repoze-profile,python3
      SUBDIR += py-repoze-who,python3
-     SUBDIR += py-requests
      SUBDIR += py-requests,python3
      SUBDIR += py-requests-cache,python3
      SUBDIR += py-requests-futures,python3
