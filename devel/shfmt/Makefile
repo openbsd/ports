@@ -1,10 +1,9 @@
 COMMENT =	shell parser, formatter, and interpreter
 
 MODGO_MODNAME =	mvdan.cc/sh/v3
-MODGO_VERSION =	v3.4.3
+MODGO_VERSION =	v3.5.1
 
 DISTNAME =	shfmt-${MODGO_VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 
