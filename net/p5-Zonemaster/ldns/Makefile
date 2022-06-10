@@ -2,7 +2,7 @@ COMMENT=	module to interface the DNS resolver using the ldns library
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-DISTNAME=	Zonemaster-LDNS-2.2.1
+DISTNAME=	Zonemaster-LDNS-2.2.2
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
