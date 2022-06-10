@@ -29,8 +29,6 @@ RUN_DEPENDS =	textproc/py-yaml \
 		security/py-viv_utils \
 		devel/py-enum34
 
-TEST_DEPENDS =	devel/py-test
-
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
