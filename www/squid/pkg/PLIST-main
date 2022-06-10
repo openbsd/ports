@@ -8,6 +8,7 @@
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/logs/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/run/squid/*
 @rcscript ${RCDIR}/squid
 %%krb5%%
 @bin bin/purge
@@ -66,13 +67,14 @@ share/examples/squid/
 @sample ${SYSCONFDIR}/
 share/examples/squid/cachemgr.conf.default
 @sample ${SYSCONFDIR}/cachemgr.conf
-@mode 771
+@mode 775
 @owner _squid
 @group _squid
 @sample ${LOCALSTATEDIR}/
 @sample ${LOCALSTATEDIR}/cache/
-@mode 775
 @sample ${LOCALSTATEDIR}/logs/
+@sample ${LOCALSTATEDIR}/run/
+@sample ${LOCALSTATEDIR}/run/squid/
 @mode
 @owner
 @group

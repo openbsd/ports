@@ -6,6 +6,7 @@ DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
+REVISION=	0
 DPB_PROPERTIES=	parallel
 
 # subpackages aren't flavoured, so overwrite the default name/path
@@ -85,7 +86,7 @@ CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--enable-ssl-crtd \
 		--enable-stacktraces \
 		--with-openssl \
-		--enable-storeio="aufs ufs diskd" \
+		--enable-storeio="aufs ufs diskd rock" \
 		--with-default-user="_squid" \
 		--with-filedescriptors=8192 \
 		--with-pidfile="/var/run/squid.pid" \
