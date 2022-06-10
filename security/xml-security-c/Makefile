@@ -37,6 +37,9 @@ CONFIGURE_ARGS +=	--with-xalan=/usr/local
 CONFIGURE_ARGS +=	--without-nss \
 			--with-openssl
 
+# Do not pick up coreutils gmakedir(1) as "race-free mkdir -p"
+CONFIGURE_ARGS +=	ac_cv_path_mkdir=/bin/mkdir
+
 do-test:
 	${WRKBUILD}/xsec/xsec-xtest
 
