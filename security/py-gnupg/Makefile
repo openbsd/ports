@@ -1,6 +1,6 @@
 COMMENT=		Python module for GnuPG interface
 
-MODPY_EGG_VERSION=	0.4.8
+MODPY_EGG_VERSION=	0.4.9
 DISTNAME=		python-gnupg-${MODPY_EGG_VERSION}
 PKGNAME=		py-gnupg-${MODPY_EGG_VERSION}
 
