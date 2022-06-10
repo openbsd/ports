@@ -11,5 +11,6 @@ PORTROACH =		limit:^3\.10
 REVISION =		1
 REVISION-main =		3
 REVISION-tests =	2
+REVISION-tkinter =	3
 
 .include <bsd.port.mk>
