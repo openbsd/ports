@@ -10,10 +10,10 @@
 @bin bin/dendrite-generate-keys
 @bin bin/dendrite-monolith-server
 @bin bin/dendrite-polylith-multi
-@comment bin/dendrite-upgrade-tests
 @comment bin/dendritejs
-@comment bin/dendritejs-pinecone
 @comment bin/federation-api-proxy
+@comment bin/dendrite-upgrade-tests
+@comment bin/dendritejs-pinecone
 @comment bin/furl
 @comment bin/goose
 @comment bin/resolve-state
