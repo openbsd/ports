@@ -1,6 +1,6 @@
 COMMENT=		store and access your passwords safely
 
-MODPY_EGG_VERSION=	23.4.0
+MODPY_EGG_VERSION=	23.6.0
 DISTNAME=		keyring-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 

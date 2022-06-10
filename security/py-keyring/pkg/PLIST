@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/keyring/${MODPY_PYCACHE}credentials.${M
 lib/python${MODPY_VERSION}/site-packages/keyring/${MODPY_PYCACHE}devpi_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/keyring/${MODPY_PYCACHE}py310compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/keyring/backend.py
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/
 lib/python${MODPY_VERSION}/site-packages/keyring/backends/OS_X.py
@@ -55,6 +56,7 @@ lib/python${MODPY_VERSION}/site-packages/keyring/devpi_client.py
 lib/python${MODPY_VERSION}/site-packages/keyring/errors.py
 lib/python${MODPY_VERSION}/site-packages/keyring/http.py
 lib/python${MODPY_VERSION}/site-packages/keyring/py.typed
+lib/python${MODPY_VERSION}/site-packages/keyring/py310compat.py
 lib/python${MODPY_VERSION}/site-packages/keyring/testing/
 lib/python${MODPY_VERSION}/site-packages/keyring/testing/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/keyring/testing/${MODPY_PYCACHE}/
@@ -84,6 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/lib/keyring/${MODPY_PYCACHE}credentials
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/${MODPY_PYCACHE}devpi_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lib/keyring/${MODPY_PYCACHE}py310compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backend.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/backends/OS_X.py
@@ -117,6 +120,7 @@ lib/python${MODPY_VERSION}/site-packages/lib/keyring/credentials.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/devpi_client.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/errors.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/http.py
+lib/python${MODPY_VERSION}/site-packages/lib/keyring/py310compat.py
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/testing/
 lib/python${MODPY_VERSION}/site-packages/lib/keyring/testing/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lib/keyring/testing/${MODPY_PYCACHE}/
