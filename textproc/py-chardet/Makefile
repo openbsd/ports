@@ -1,10 +1,9 @@
 COMMENT=		character encoding auto-detection in Python
 
-# 5.0.0+ is py3-only; py2 used by py-requests
 MODPY_EGG_VERSION=	4.0.0
 DISTNAME=		chardet-${MODPY_EGG_VERSION}
 PKGNAME=		py-chardet-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		textproc
 
@@ -22,9 +21,6 @@ MODPY_PYTEST =		Yes
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
-
-post-install:
-	mv ${PREFIX}/bin/chardetect{,${MODPY_BIN_SUFFIX}}
+FLAVOR =		python3
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
+@pkgpath textproc/py-chardet
 @conflict py-chardet-<3.0.4p3
-bin/chardetect${MODPY_BIN_SUFFIX}
+bin/chardetect
 lib/python${MODPY_VERSION}/site-packages/chardet/
 lib/python${MODPY_VERSION}/site-packages/chardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/chardet-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

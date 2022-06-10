@@ -377,7 +377,6 @@
      SUBDIR += py-bracex,python3
      SUBDIR += py-canonicaljson,python3
      SUBDIR += py-cchardet,python3
-     SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
      SUBDIR += py-charset-normalizer,python3
      SUBDIR += py-colored,python3
