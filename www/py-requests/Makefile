@@ -20,7 +20,7 @@ MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST_ARGS=	tests
 
-RUN_DEPENDS=		archivers/py-brotli${MODPY_FLAVOR}
+RUN_DEPENDS=		archivers/py-brotli${MODPY_FLAVOR} \
 			devel/py-certifi${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
 			textproc/py-charset-normalizer${MODPY_FLAVOR} \
