@@ -24,7 +24,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.3
-VERSION=	${BV}.3.2
+VERSION=	${BV}.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -124,7 +124,7 @@ DISTFILES += libwpd-0.10.3.tar.xz:0
 DISTFILES += libwpg-0.3.3.tar.xz:0
 DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
-DISTFILES += mdds-2.0.1.tar.bz2:0
+DISTFILES += mdds-2.0.3.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
 DISTFILES += pdfium-4699.tar.bz2:0
 DISTFILES += skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:0
