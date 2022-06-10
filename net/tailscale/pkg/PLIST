@@ -6,8 +6,9 @@
 @comment bin/hello
 @comment bin/mkpkg
 @comment bin/printdep
+@comment bin/proxy-to-grafana
 @comment bin/speedtest
 @bin bin/tailscale
 @bin bin/tailscaled
 @comment bin/testcontrol
-@comment bin/tsshd
+@comment bin/viewer
