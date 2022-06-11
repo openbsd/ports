@@ -1,6 +1,6 @@
 COMMENT =		take control of Steam from your terminal
 
-MODPY_EGG_VERSION =	0.9.1
+MODPY_EGG_VERSION =	0.9.3
 DISTNAME =		steamctl-${MODPY_EGG_VERSION}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steamctl

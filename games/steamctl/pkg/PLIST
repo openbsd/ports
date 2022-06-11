@@ -99,12 +99,14 @@ lib/python${MODPY_VERSION}/site-packages/steamctl/utils/
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}apps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}format.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}storage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}tqdm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}versions_report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/${MODPY_PYCACHE}web.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/steamctl/utils/apps.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/format.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/prompt.py
 lib/python${MODPY_VERSION}/site-packages/steamctl/utils/storage.py
