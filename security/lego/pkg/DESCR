@@ -8,9 +8,9 @@ Features:
 - Renew certificates
 - Revoke certificates
 - Robust implementation of all ACME challenges
-- HTTP (http-01)
-- DNS (dns-01)
-- TLS (tls-alpn-01)
+  - HTTP (http-01)
+  - DNS (dns-01)
+  - TLS (tls-alpn-01)
 - SAN certificate support
 - Comes with multiple optional DNS providers
 - Custom challenge solvers
