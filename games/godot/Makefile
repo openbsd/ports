@@ -7,8 +7,8 @@ V =		3.4.4
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION-main =	2
-REVISION-tools = 0
+REVISION-main =	3
+REVISION-tools = 1
 
 CATEGORIES =	games
 

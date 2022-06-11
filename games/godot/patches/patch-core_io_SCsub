@@ -1,9 +1,0 @@
-Index: core/io/SCsub
---- core/io/SCsub.orig
-+++ core/io/SCsub
-@@ -3,3 +3,5 @@
- Import("env")
- 
- env.add_source_files(env.core_sources, "*.cpp")
-+
-+env.Append(CCFLAGS="-DZSTD_STATIC_LINKING_ONLY")
