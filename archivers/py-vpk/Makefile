@@ -1,6 +1,6 @@
 COMMENT =		tool and library for working with Valve Pak files
 
-MODPY_EGG_VERSION =	1.3.3
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		vpk-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		archivers
@@ -18,5 +18,7 @@ FLAVOR =		python3
 
 # tests not included in pypi tarball
 NO_TEST =		Yes
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 .include <bsd.port.mk>
