@@ -216,6 +216,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-pynewsleecher.
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-rarfile.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/licenses/License-systrayicon.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/org.sabnzbd.sabnzbd.appdata.xml
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/org.sabnzbd.sabnzbd.sharedmimeinfo
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/sabnzbd.bash-completion
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/sabnzbd.desktop
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/linux/sabnzbd@.service
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/cs/
@@ -364,7 +368,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}panic.$
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}par2file.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}postproc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}powersup.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}rating.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}rss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}sabtray.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/${MODPY_PYCACHE}sabtraylinux.${MODPY_PYC_MAGIC_TAG}pyc
@@ -406,7 +409,6 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/panic.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/par2file.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/postproc.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/powersup.py
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/rating.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/rss.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/sabtray.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/sabtraylinux.py
@@ -457,12 +459,10 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/utils/systrayiconthread
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/version.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/zconfig.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Deobfuscate.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.cmd
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.py
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/Sample-PostProc.sh
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}Deobfuscate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/scripts/${MODPY_PYCACHE}Sample-PostProc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sabnzbd/tools/${MODPY_PYCACHE}/
