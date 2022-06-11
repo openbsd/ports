@@ -3,7 +3,7 @@ include/iec16022/
 include/iec16022/iec16022ecc200.h
 include/iec16022/image.h
 include/iec16022/reedsol.h
-lib/libiec16022.a
+@static-lib lib/libiec16022.a
 lib/libiec16022.la
 @lib lib/libiec16022.so.${LIBiec16022_VERSION}
 lib/pkgconfig/libiec16022.pc

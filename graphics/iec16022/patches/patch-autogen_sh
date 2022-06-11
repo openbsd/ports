@@ -1,5 +1,6 @@
---- autogen.sh.orig	Thu Feb 11 11:41:55 2016
-+++ autogen.sh	Thu Feb 11 11:41:56 2016
+Index: autogen.sh
+--- autogen.sh.orig
++++ autogen.sh
 @@ -7,4 +7,3 @@ autoheader
  automake --add-missing
  autoconf configure.ac > configure

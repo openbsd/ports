@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -48,7 +48,7 @@ AC_SEARCH_LIBS([poptGetContext], [popt], POPT_LIBS=-lp
+ # AC_CHECK_LIB([z], [main],,AC_MSG_ERROR([Missing library: zlib not found.]))
+ 
+ ac_orig_ldflags="$LDFLAGS"
+-LDFLAGS="$LDFLAGS -Wl,--as-needed -Wl,--no-undefined"
++LDFLAGS="$LDFLAGS -Wl,--as-needed"
+ AC_LINK_IFELSE([AC_LANG_SOURCE([int main() { return 0; }])], [], [LDFLAGS="$ac_orig_ldflags"])
+ 
+ dnl Output the files

@@ -1,9 +1,8 @@
 COMMENT=	2D barcodes / DataMatrix creation tool
 
-V=		0.3.0
+V=		0.3.1
 DISTNAME=	iec16022-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
 
 SHARED_LIBS +=  iec16022                  3.0 # unknown
 
