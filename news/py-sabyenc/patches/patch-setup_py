@@ -1,0 +1,11 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -107,7 +107,6 @@ class SAByEncBuild(build_ext):
+                 "-fomit-frame-pointer",
+                 "-fno-rtti",
+                 "-fno-exceptions",
+-                "-O3",
+                 "-fPIC",
+                 "-fwrapv",
+             ]
