@@ -2,6 +2,7 @@ COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.8
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 
 SHARED_LIBS +=  hogweed                   3.0 # 6.3
 SHARED_LIBS +=  nettle                    7.1 # 8.3
@@ -32,15 +33,16 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ENV +=	CCPIC=-fPIC
 .endif
 
-# * arm / aarch64 (relies on GNU m4 extension):
-# chacha-4core.s:125:23: error: invalid operand for instruction
-#        add             v24.4s, v24.4s, v160.4s
+.if ${MACHINE_ARCH} == "aarch64"
+BUILD_DEPENDS=		devel/m4
+CONFIGURE_ENV +=	M4=${LOCALBASE}/bin/gm4
+.endif
+
 # * powerpc:
 # aes-encrypt-internal-2.s:326:1: error: unexpected token at start of statement
 # .0:
 # ^
-.if ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "arm" || \
-	${MACHINE_ARCH} == "aarch64"
+.if ${MACHINE_ARCH} == "powerpc64"
 CONFIGURE_ARGS +=	--disable-assembler
 .endif
 
