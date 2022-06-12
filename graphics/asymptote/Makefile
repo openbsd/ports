@@ -56,7 +56,7 @@ PORTHOME=		${WRKDIR}
 MODPY_ADJ_FILES=	GUI/*.py
 
 pre-build:
-	ln -s ${LOCALBASE}/bin/gmakeinfo ${WRKDIR}/bin/makeinfo
+	ln -sf ${LOCALBASE}/bin/gmakeinfo ${WRKDIR}/bin/makeinfo
 
 post-install:
 	mv ${PREFIX}/man/man1/xasy.1x ${PREFIX}/man/man1/xasy.1
