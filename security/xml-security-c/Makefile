@@ -1,6 +1,7 @@
 COMMENT =		C++ implementation of W3C security standards for XML
 
 V =			2.0.4
+REVISION =		0
 DISTNAME =		xml-security-c-${V}
 CATEGORIES =		security textproc
 
@@ -25,7 +26,7 @@ LIB_DEPENDS =		textproc/icu4c \
 			textproc/xalan-c \
 			textproc/xerces-c>=3.2
 
-CONFIGURE_STYLE =	simple
+CONFIGURE_STYLE =	gnu
 
 # ChangeLog lists --with-xerces and --with-xalan, but
 # a) configure does not support --with-xerces
@@ -36,9 +37,6 @@ CONFIGURE_ARGS +=	--with-xalan=/usr/local
 # configure: WARNING: NSS is no longer officially supported
 CONFIGURE_ARGS +=	--without-nss \
 			--with-openssl
-
-# Do not pick up coreutils gmakedir(1) as "race-free mkdir -p"
-CONFIGURE_ARGS +=	ac_cv_path_mkdir=/bin/mkdir
 
 do-test:
 	${WRKBUILD}/xsec/xsec-xtest
