@@ -1,11 +1,10 @@
 COMMENT=	library to determine file type
 
-V=		5.41
+V=		5.42
 DISTNAME=	file-${V}
 PKGNAME=	libmagic-${V}
-REVISION=	0
 
-SHARED_LIBS +=  magic                5.0      # 1.0
+SHARED_LIBS +=  magic                5.1      # 1.0
 
 CATEGORIES=	sysutils devel
 
