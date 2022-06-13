@@ -1,7 +1,6 @@
 COMMENT =	support for the scrypt key derivation function
 
-MODPY_EGG_VERSION =	0.8.18
-REVISION =	2
+MODPY_EGG_VERSION =	0.8.20
 
 DISTNAME =	scrypt-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -19,8 +18,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-TEST_ENV =		PY_IGNORE_IMPORTMISMATCH=1
+MODPY_PYTEST_ARGS =	scrypt/tests
 
 FLAVORS =	python3
 FLAVOR =	python3
