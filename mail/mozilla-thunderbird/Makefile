@@ -9,7 +9,7 @@ MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-REVISION =	0
+REVISION =	1
 
 # XXX badly formed debug in libxul ?
 DWZ = :
