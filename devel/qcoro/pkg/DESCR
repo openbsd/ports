@@ -1,0 +1,2 @@
+QCoro is a C++ library that provide set of tools to make use of C++20
+coroutines in connection with certain asynchronous Qt actions.
