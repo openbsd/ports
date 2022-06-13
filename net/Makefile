@@ -631,6 +631,7 @@
      SUBDIR += ruby-eventmachine,ruby31
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-mfi
+     SUBDIR += ruby-msgpack,ruby27
      SUBDIR += ruby-msgpack,ruby30
      SUBDIR += ruby-msgpack,ruby31
      SUBDIR += ruby-net-dns

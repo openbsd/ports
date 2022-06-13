@@ -503,6 +503,7 @@
      SUBDIR += ruby-passenger,ruby31
      SUBDIR += ruby-puma,ruby30
      SUBDIR += ruby-puma,ruby31
+     SUBDIR += ruby-rack,ruby27
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-protection
      SUBDIR += ruby-rack-test
@@ -516,6 +517,7 @@
      SUBDIR += ruby-thin,ruby30
      SUBDIR += ruby-thin,ruby31
      SUBDIR += ruby-typhoeus
+     SUBDIR += ruby-unicorn,ruby27
      SUBDIR += ruby-unicorn,ruby30
      SUBDIR += ruby-unicorn,ruby31
      SUBDIR += ruby-vegas
