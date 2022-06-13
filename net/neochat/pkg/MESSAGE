@@ -1,0 +1,2 @@
+If updating from neochat 1.2.0 delete the configuration file in
+ ~/.config/KDE/neochat.conf, otherwise it will crash at start-up.
