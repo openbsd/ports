@@ -3,7 +3,7 @@ COMMENT =	KDE framework for collecting user feedback
 GH_ACCOUNT =	KDE
 GH_PROJECT =	kuserfeedback
 GH_TAGNAME =	v1.2.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	KUserFeedbackCore	0.1
 SHARED_LIBS +=	KUserFeedbackWidgets	0.0
@@ -30,6 +30,6 @@ BUILD_DEPENDS =	devel/bison
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Php=ON
-
+CONFIGURE_ARGS +=	-DENABLE_PHP=OFF \
+			-DENABLE_PHP_UNIT=OFF
 .include <bsd.port.mk>
