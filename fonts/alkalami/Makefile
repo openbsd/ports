@@ -1,5 +1,5 @@
 COMMENT =		Unicode font for African Arabic script
-V =			1.300
+V =			2.000
 DISTNAME =		Alkalami-${V}
 PKGNAME =		alkalami-${V}
 CATEGORIES =		fonts
@@ -17,6 +17,7 @@ MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+PKG_ARCH =		*
 
 FONTDIR =		${PREFIX}/share/fonts/alkalami
 DOCDIR =		${PREFIX}/share/doc/alkalami
