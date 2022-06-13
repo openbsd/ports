@@ -12025,6 +12025,10 @@ go/test/fixedbugs/issue51531.go
 go/test/fixedbugs/issue5162.go
 go/test/fixedbugs/issue5172.go
 go/test/fixedbugs/issue51839.go
+go/test/fixedbugs/issue52279.dir/
+go/test/fixedbugs/issue52279.dir/lib.go
+go/test/fixedbugs/issue52279.dir/main.go
+go/test/fixedbugs/issue52279.go
 go/test/fixedbugs/issue5231.go
 go/test/fixedbugs/issue52438.go
 go/test/fixedbugs/issue5244.go
@@ -12964,12 +12968,14 @@ go/test/typeparam/issue51836.dir/a.go
 go/test/typeparam/issue51836.dir/aa.go
 go/test/typeparam/issue51836.dir/p.go
 go/test/typeparam/issue51836.go
+go/test/typeparam/issue51840.go
 go/test/typeparam/issue52026.go
 go/test/typeparam/issue52117.dir/
 go/test/typeparam/issue52117.dir/a.go
 go/test/typeparam/issue52117.dir/b.go
 go/test/typeparam/issue52117.go
 go/test/typeparam/issue52228.go
+go/test/typeparam/issue52241.go
 go/test/typeparam/list.go
 go/test/typeparam/list2.go
 go/test/typeparam/listimp.dir/
