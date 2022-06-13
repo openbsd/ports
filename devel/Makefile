@@ -1600,6 +1600,7 @@
      SUBDIR += pystring			# not python ;)
      SUBDIR += pyusb,python3
      SUBDIR += qbs
+     SUBDIR += qcoro
      SUBDIR += qgit
      SUBDIR += qjson
      SUBDIR += qp
