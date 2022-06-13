@@ -1,20 +1,22 @@
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.7
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
-HOMEPAGE=	https://bochs.sourceforge.net/
+HOMEPAGE=	https://bochs.sourceforge.io/
 
 # LGPLv2.1+ and MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c curses m pthread
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc base-gcc
 
 CONFIGURE_STYLE= gnu autoconf no-autoheader
-CONFIGURE_ARGS=	--enable-all-optimizations \
+CONFIGURE_ARGS=	--disable-docbook \
+		--enable-all-optimizations \
 		--enable-avx \
 		--enable-e1000 \
 		--enable-es1370 \
