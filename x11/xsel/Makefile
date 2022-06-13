@@ -1,13 +1,13 @@
 COMMENT=	command-line program for managing X selection contents
 
-V=		1.2.0.20200526
+V=		1.2.0.20220310
 DISTNAME=	xsel-${V}
 CATEGORIES=	x11
 HOMEPAGE=	http://www.vergenet.net/~conrad/software/xsel/
 
 GH_ACCOUNT=	kfish
 GH_PROJECT=	xsel
-GH_COMMIT=	062e6d373537c60829fa9b5dcddbcd942986b3c3
+GH_COMMIT=	9fc4e3e4e3f1231cabfdc2e1438155f9390bc517
 
 # BSD-style
 PERMIT_PACKAGE=	Yes
