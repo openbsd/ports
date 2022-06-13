@@ -1,13 +1,15 @@
-lib/cmake/
 lib/cmake/KQuickImageEditor/
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfig.cmake
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
-lib/qt5/
-lib/qt5/qml/
 lib/qt5/qml/org/
 lib/qt5/qml/org/kde/
 lib/qt5/qml/org/kde/kquickimageeditor/
 lib/qt5/qml/org/kde/kquickimageeditor/BasicResizeHandle.qml
+lib/qt5/qml/org/kde/kquickimageeditor/CropBackground.qml
+lib/qt5/qml/org/kde/kquickimageeditor/RectangleCutout.qml
+lib/qt5/qml/org/kde/kquickimageeditor/SelectionBackground.qml
+lib/qt5/qml/org/kde/kquickimageeditor/SelectionHandle.qml
+lib/qt5/qml/org/kde/kquickimageeditor/SelectionTool.qml
 @so lib/qt5/qml/org/kde/kquickimageeditor/libkquickimageeditorplugin.so
 lib/qt5/qml/org/kde/kquickimageeditor/plugins.qmltypes
 lib/qt5/qml/org/kde/kquickimageeditor/qmldir
