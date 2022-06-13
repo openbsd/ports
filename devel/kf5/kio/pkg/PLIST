@@ -295,10 +295,7 @@ lib/cmake/KF5KIO/KF5KIOTargets.cmake
 @lib lib/libKF5KIONTLM.so.${LIBKF5KIONTLM_VERSION}
 @lib lib/libKF5KIOWidgets.so.${LIBKF5KIOWidgets_VERSION}
 @so lib/qt5/plugins/designer/kio5widgets.so
-@so lib/qt5/plugins/kcm_cookies.so
-@so lib/qt5/plugins/kcm_netpref.so
 @so lib/qt5/plugins/kcm_proxy.so
-@so lib/qt5/plugins/kcm_smb.so
 @so lib/qt5/plugins/kcm_trash.so
 @so lib/qt5/plugins/kcm_webshortcuts.so
 lib/qt5/plugins/kf5/kded/
@@ -323,6 +320,15 @@ lib/qt5/plugins/kf5/urifilters/
 @so lib/qt5/plugins/kf5/urifilters/kuriikwsfilter.so
 @so lib/qt5/plugins/kf5/urifilters/kurisearchfilter.so
 @so lib/qt5/plugins/kf5/urifilters/localdomainurifilter.so
+lib/qt5/plugins/plasma/
+lib/qt5/plugins/plasma/kcms/
+lib/qt5/plugins/plasma/kcms/systemsettings/
+@so lib/qt5/plugins/plasma/kcms/systemsettings/kcm_smb.so
+lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cookies.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_netpref.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_proxy.so
+@so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts.so
 @bin libexec/kf5/kio_http_cache_cleaner
 @bin libexec/kf5/kiod5
 @bin libexec/kf5/kioexec

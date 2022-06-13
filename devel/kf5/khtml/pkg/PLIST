@@ -53,7 +53,6 @@ lib/qt5/plugins/kf5/parts/
 @so lib/qt5/plugins/kf5/parts/khtmladaptorpart.so
 @so lib/qt5/plugins/kf5/parts/khtmlimagepart.so
 @so lib/qt5/plugins/kf5/parts/khtmlpart.so
-@so lib/qt5/plugins/kf5/parts/kjavaappletviewer.so
 @so lib/qt5/plugins/kf5/parts/kmultipart.so
 share/examples/khtml/
 share/examples/khtml/xdg/
@@ -65,15 +64,10 @@ share/kf5/khtml/css/html4.css
 share/kf5/khtml/css/presentational.css
 share/kf5/khtml/css/quirks.css
 share/kf5/khtml/error.html
-share/kf5/kjava/
-share/kf5/kjava/kjava.jar
-share/kf5/kjava/kjava.policy
-share/kf5/kjava/pluginsinfo
 share/kf5/mkspecs/qt_KHtml.pri
 share/kservices5/khtml.desktop
 share/kservices5/khtmladaptorpart.desktop
 share/kservices5/khtmlimage.desktop
-share/kservices5/kjavaappletviewer.desktop
 share/kservices5/kmultipart.desktop
 share/locale/af/LC_MESSAGES/khtml5.mo
 share/locale/ar/LC_MESSAGES/khtml5.mo

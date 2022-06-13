@@ -82,6 +82,7 @@ lib/qt5/qml/org/kde/kirigami.2/PromptDialog.qml
 lib/qt5/qml/org/kde/kirigami.2/RouterWindow.qml
 lib/qt5/qml/org/kde/kirigami.2/ScrollablePage.qml
 lib/qt5/qml/org/kde/kirigami.2/SearchField.qml
+lib/qt5/qml/org/kde/kirigami.2/SelectableLabel.qml
 lib/qt5/qml/org/kde/kirigami.2/Separator.qml
 lib/qt5/qml/org/kde/kirigami.2/ShadowedImage.qml
 lib/qt5/qml/org/kde/kirigami.2/SwipeListItem.qml

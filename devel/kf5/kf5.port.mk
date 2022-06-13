@@ -1,4 +1,4 @@
-MODKF5_VERSION =	5.94.0
+MODKF5_VERSION =	5.95.0
 
 .if empty(GH_ACCOUNT)
 EXTRACT_SUFX ?=		.tar.xz

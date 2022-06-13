@@ -1,21 +1,21 @@
 COMMENT =	core components and tools of the Plasma Workspaces
 DISTNAME =	plasma-framework-${VERSION}
 
-SHARED_LIBS =	KF5Plasma		12.0
-SHARED_LIBS +=	KF5PlasmaQuick		8.1
+SHARED_LIBS =	KF5Plasma		12.1
+SHARED_LIBS +=	KF5PlasmaQuick		8.2
 
 WANTLIB += ${COMPILER_LIBCXX} ICE KF5Activities KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5CalendarEvents KF5Codecs KF5Completion
-WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
-WANTLIB += KF5Declarative KF5GlobalAccel KF5GuiAddons KF5I18n
-WANTLIB += KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Kirigami2 KF5Notifications KF5Package KF5QuickAddons
-WANTLIB += KF5Service KF5Solid KF5WaylandClient KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Sql
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
-WANTLIB += m xcb xcb-composite xcb-damage xcb-render xcb-shape
-WANTLIB += xcb-xfixes
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigQml KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Declarative KF5GlobalAccel KF5GuiAddons
+WANTLIB += KF5I18n KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Kirigami2 KF5Notifications KF5Package
+WANTLIB += KF5QuickAddons KF5Service KF5Solid KF5WaylandClient
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml
+WANTLIB += SM X11 Xext c m xcb xcb-composite xcb-damage xcb-render
+WANTLIB += xcb-shape xcb-xfixes
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		devel/gettext,-tools \

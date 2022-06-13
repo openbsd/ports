@@ -13,8 +13,8 @@ SHARED_LIBS =	KF5FileMetaData		7.3 # 5.20
 MULTI_PACKAGES =	-main -locale
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CoreAddons KF5I18n
-WANTLIB += Qt5Core Qt5Xml avcodec avformat avutil epub exiv2 m
-WANTLIB += poppler poppler-qt5 tag
+WANTLIB += Qt5Core Qt5Gui Qt5Xml avcodec avformat avutil epub
+WANTLIB += exiv2 m poppler poppler-qt5 qmobipocket tag
 
 WANTLIB-locale =
 
@@ -36,7 +36,8 @@ LIB_DEPENDS-main =	audio/taglib \
 			graphics/exiv2 \
 			graphics/ffmpeg \
 			print/poppler,-qt5 \
-			textproc/ebook-tools
+			textproc/ebook-tools \
+			x11/kde-applications/kdegraphics-mobipocket
 
 PKG_ARCH-locale =	*
 

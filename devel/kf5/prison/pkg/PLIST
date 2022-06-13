@@ -2,6 +2,12 @@
 @pkgpath graphics/prison
 include/KF5/
 include/KF5/Prison/
+include/KF5/Prison/Prison/
+include/KF5/Prison/Prison/AbstractBarcode
+include/KF5/Prison/Prison/Prison
+include/KF5/Prison/Prison/abstractbarcode.h
+include/KF5/Prison/Prison/prison.h
+include/KF5/Prison/Prison/prison_export.h
 include/KF5/Prison/prison/
 include/KF5/Prison/prison/AbstractBarcode
 include/KF5/Prison/prison/Prison

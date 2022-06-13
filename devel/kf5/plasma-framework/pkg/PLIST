@@ -75,7 +75,6 @@ lib/qt5/plugins/kpackage/packagestructure/
 @so lib/qt5/plugins/kpackage/packagestructure/plasma_dataengine.so
 @so lib/qt5/plugins/kpackage/packagestructure/plasma_generic.so
 @so lib/qt5/plugins/kpackage/packagestructure/plasma_theme.so
-lib/qt5/plugins/plasma/
 lib/qt5/plugins/plasma/dataengine/
 @so lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_customDataContainers.so
 @so lib/qt5/plugins/plasma/dataengine/plasma_dataengine_example_simpleEngine.so
