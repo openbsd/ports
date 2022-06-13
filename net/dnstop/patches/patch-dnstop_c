@@ -1,6 +1,7 @@
---- dnstop.c.orig	Mon Sep 15 18:54:51 2014
-+++ dnstop.c	Tue Sep 16 11:23:38 2014
-@@ -46,6 +46,7 @@ static const char *Version = "20140915";
+Index: dnstop.c
+--- dnstop.c.orig
++++ dnstop.c
+@@ -48,6 +48,7 @@ static const char *Version = "@VERSION@";
  #include <netdb.h>
  
  #ifdef HAVE_NET_IF_PPP_H
