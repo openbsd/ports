@@ -28,4 +28,6 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		textproc/xerces-c \
 			textproc/icu4c
 
+CONFIGURE_ARGS +=	-Ddoxygen=OFF
+
 .include <bsd.port.mk>
