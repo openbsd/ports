@@ -1,6 +1,6 @@
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
-V =			1.11.1.1113
+V =			1.11.1.1129
 DISTNAME =		clojure-tools-$V
 PKGNAME =		clojure-$V
 
@@ -19,7 +19,6 @@ MASTER_SITES =		https://download.clojure.org/install/
 
 MODULES =		java
 MODJAVA_VER =		1.8+
-NO_BUILD =		Yes
 
 WRKDIST =		${WRKDIR}/clojure-tools
 
