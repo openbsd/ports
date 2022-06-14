@@ -2,7 +2,7 @@ COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.8
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  hogweed                   3.0 # 6.3
 SHARED_LIBS +=  nettle                    7.1 # 8.3
@@ -31,19 +31,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 # fix relocation errors
 .if ${MACHINE_ARCH} == "sparc64"
 CONFIGURE_ENV +=	CCPIC=-fPIC
-.endif
-
-.if ${MACHINE_ARCH} == "aarch64"
-BUILD_DEPENDS=		devel/m4
-CONFIGURE_ENV +=	M4=${LOCALBASE}/bin/gm4
-.endif
-
-# * powerpc:
-# aes-encrypt-internal-2.s:326:1: error: unexpected token at start of statement
-# .0:
-# ^
-.if ${MACHINE_ARCH} == "powerpc64"
-CONFIGURE_ARGS +=	--disable-assembler
 .endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

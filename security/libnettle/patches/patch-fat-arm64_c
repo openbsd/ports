@@ -1,4 +1,5 @@
-Enable aarch64 hardware crypto support.
+Enable runtime arm64 feature detection on openbsd
+https://git.lysator.liu.se/nettle/nettle/-/commit/b874bdead2903d715c6964b2e8f9ed7d2b61db12
 
 Index: fat-arm64.c
 --- fat-arm64.c.orig
