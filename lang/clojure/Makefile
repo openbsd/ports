@@ -34,7 +34,7 @@ SUBST_VARS +=		V
 
 # Maintainer target to generate completions file
 completions: install
-	${LOCALBASE}/bin/clojure ${FILESDIR}/clj_completions.clj
+	${LOCALBASE}/bin/clojure -M ${FILESDIR}/clj_completions.clj
 
 pre-configure:
 	sed -i 's,PREFIX,${CLOJURE_HOME},' ${WRKSRC}/clojure
