@@ -2,11 +2,10 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	portable build system
 
-VER =		3.23.1
+VER =		3.23.2
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://www.cmake.org/
 
@@ -84,7 +83,8 @@ pre-configure:
 	${SUBST_CMD} ${SUBST_FILES}
 
 post-install:
-	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" -o -name "*${PATCHORIG}" \
-	    -o -name "*.beforesubst" \) -delete
+	@find ${WRKINST}${LOCALBASE} \( -name "*.bak" \
+		-o -name "*${PATCHORIG}" \
+		-o -name "*.beforesubst" \) -delete
 
 .include <bsd.port.mk>

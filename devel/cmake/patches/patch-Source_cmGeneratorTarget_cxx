@@ -1,7 +1,7 @@
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -5113,6 +5113,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -5115,6 +5115,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    // The library name.
    targetNames.Output = prefix + targetNames.Base + suffix;
  
