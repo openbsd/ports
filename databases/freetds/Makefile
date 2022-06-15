@@ -1,6 +1,6 @@
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-1.3.10
+DISTNAME=	freetds-1.3.12
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
 SHARED_LIBS +=  sybdb                8.1      # 6.0
@@ -43,6 +43,9 @@ CONFIGURE_ARGS=	--enable-static \
 
 # picks up com_err.h from e2fsprogs for gssapi support
 CONFIGURE_ENV+=	ac_cv_header_com_err_h=no
+
+# doesn't install this header if already present in the system
+CONFIGURE_ENV+=	ac_cv_header_odbcss_h=no
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/freetds
 
