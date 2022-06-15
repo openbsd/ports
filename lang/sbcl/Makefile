@@ -4,10 +4,9 @@ USE_WXNEEDED =		Yes
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			2.2.4
+V =			2.2.5
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
-REVISION=		0
 WRKDIST=		${WRKDIR}/sbcl-${V}
 EXTRACT_SUFX=		.tar.bz2
 PATCHORIG =		.orig.port
