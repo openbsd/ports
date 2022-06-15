@@ -15,11 +15,11 @@ WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5Crash KF5DBusAddons
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews KF5JS
 WANTLIB += KF5JobWidgets KF5KHtml KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOWidgets KF5Parts KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextEditor KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5Script Qt5Widgets Qt5Xml c m poppler poppler-qt5
-WANTLIB += KF5KIOGui KF5SyntaxHighlighting X11
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Parts KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Script Qt5Widgets
+WANTLIB += Qt5Xml X11 c m poppler poppler-qt5
 
 # dlopen(3)
 WANTLIB += Okular5Core

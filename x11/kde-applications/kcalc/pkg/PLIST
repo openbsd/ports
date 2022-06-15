@@ -3,6 +3,10 @@
 share/applications/org.kde.kcalc.desktop
 share/config.kcfg/
 share/config.kcfg/kcalc.kcfg
+share/doc/HTML/ca/kcalc/
+share/doc/HTML/ca/kcalc/commands.docbook
+share/doc/HTML/ca/kcalc/index.cache.bz2
+share/doc/HTML/ca/kcalc/index.docbook
 share/doc/HTML/de/kcalc/
 share/doc/HTML/de/kcalc/commands.docbook
 share/doc/HTML/de/kcalc/index.cache.bz2

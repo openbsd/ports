@@ -488,6 +488,9 @@ share/kxmlgui5/marble/marble_part.rc
 share/kxmlgui5/marble/marbleui.rc
 share/locale/ar/LC_MESSAGES/marble.mo
 share/locale/ar/LC_MESSAGES/marble_qt.qm
+share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
+share/locale/ar/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/ar/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/be/LC_MESSAGES/marble.mo
 share/locale/be/LC_MESSAGES/marble_qt.qm
 share/locale/bg/LC_MESSAGES/marble.mo
@@ -645,6 +648,7 @@ share/locale/pt_BR/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/ro/LC_MESSAGES/marble.mo
 share/locale/ro/LC_MESSAGES/marble_qt.qm
+share/locale/ro/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/ru/LC_MESSAGES/marble.mo
 share/locale/ru/LC_MESSAGES/marble_qt.qm
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo

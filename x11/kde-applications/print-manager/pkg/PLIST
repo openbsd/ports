@@ -4,9 +4,6 @@
 @bin bin/kde-print-queue
 @lib lib/libkcupslib.so.${LIBkcupslib_VERSION}
 @so lib/qt5/plugins/kf5/kded/printmanager.so
-lib/qt5/plugins/plasma/
-lib/qt5/plugins/plasma/kcms/
-lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/
 @so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kcm_printer_manager.so
 lib/qt5/qml/org/kde/plasma/
 lib/qt5/qml/org/kde/plasma/printmanager/

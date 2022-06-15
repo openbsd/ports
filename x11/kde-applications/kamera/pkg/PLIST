@@ -1,7 +1,4 @@
 @so lib/qt5/plugins/kf5/kio/kio_kamera.so
-lib/qt5/plugins/plasma/
-lib/qt5/plugins/plasma/kcms/
-lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/
 @so lib/qt5/plugins/plasma/kcms/systemsettings_qwidgets/kamera.so
 share/applications/kamera.desktop
 share/doc/HTML/ca/kcontrol/

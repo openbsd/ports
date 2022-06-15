@@ -6,6 +6,9 @@ bin/memprof2calltree
 bin/op2calltree
 bin/pprof2calltree
 share/applications/org.kde.kcachegrind.desktop
+share/doc/HTML/ca/kcachegrind/
+share/doc/HTML/ca/kcachegrind/index.cache.bz2
+share/doc/HTML/ca/kcachegrind/index.docbook
 share/doc/HTML/de/kcachegrind/
 share/doc/HTML/de/kcachegrind/index.cache.bz2
 share/doc/HTML/de/kcachegrind/index.docbook

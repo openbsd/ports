@@ -9,7 +9,6 @@ share/icons/hicolor/64x64/apps/kgeotag.png
 share/kgeotag/
 share/kgeotag/timezones.json
 share/kgeotag/timezones.png
-share/kxmlgui5/
 share/kxmlgui5/kgeotag/
 share/kxmlgui5/kgeotag/kgeotagui.rc
 share/locale/ca/LC_MESSAGES/kgeotag.mo
@@ -35,6 +34,5 @@ share/locale/sv/LC_MESSAGES/kgeotag.mo
 share/locale/tr/LC_MESSAGES/kgeotag.mo
 share/locale/uk/LC_MESSAGES/kgeotag.mo
 share/locale/zh_CN/LC_MESSAGES/kgeotag.mo
-share/metainfo/
 share/metainfo/org.kde.kgeotag.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

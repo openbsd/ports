@@ -39,6 +39,8 @@ include/notmuch.h
 @man man/man7/notmuch-properties.7
 @man man/man7/notmuch-search-terms.7
 @man man/man7/notmuch-sexp-queries.7
+share/applications/
+share/emacs/
 share/notmuch/
 share/notmuch/bash_completion.d/
 share/notmuch/bash_completion.d/notmuch
