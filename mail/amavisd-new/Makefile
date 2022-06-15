@@ -1,13 +1,11 @@
 COMMENT-main=		interface between mailer MTA and content checkers
 COMMENT-utils=		utilities to monitor amavisd-new server
 
-V=			2.12.0
+V=			2.12.2
 DISTNAME=		amavis-v${V}
 PKGNAME-main=		amavisd-new-${V}
 PKGNAME-utils=		amavisd-new-utils-${V}
 CATEGORIES=		mail security
-
-REVISION-main=		0
 
 HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
@@ -39,6 +37,7 @@ RUN_DEPENDS=		archivers/arc \
 			net/p5-IO-Socket-INET6 \
 			net/p5-Net-LibIDN \
 			security/clamav \
+			security/p5-IO-Socket-SSL \
 			sysutils/p5-Unix-Syslog
 
 RUN_DEPENDS-utils=	devel/p5-ZMQ \
