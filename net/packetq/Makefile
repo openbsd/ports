@@ -1,6 +1,6 @@
 COMMENT =	run SQL queries directly on PCAP files
 
-DISTNAME =	packetq-1.7.0
+DISTNAME =	packetq-1.7.1
 
 CATEGORIES =	net
 
