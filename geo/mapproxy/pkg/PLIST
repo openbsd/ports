@@ -432,6 +432,9 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_combined_sources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_coverage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_decorate_img.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_demo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_demo_with_extra_service.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_dimensions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_disable_storage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_formats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/${MODPY_PYCACHE}test_inspire_vs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -507,6 +510,8 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_s3.y
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/cache_source.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/combined_sources.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/coverage.yaml
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/demo.yaml
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/dimension.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/disable_storage.yaml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/empty_ogrdata.geojson
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/fixture/formats.yaml
@@ -566,6 +571,9 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_cache_source.
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_combined_sources.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_coverage.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_decorate_img.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_demo.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_demo_with_extra_service.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_dimensions.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_disable_storage.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_formats.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/system/test_inspire_vs.py
@@ -634,6 +642,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_image_mask.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_image_messages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_image_options.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_isodate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_multiapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_ogr_reader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/${MODPY_PYCACHE}test_request.${MODPY_PYC_MAGIC_TAG}pyc
@@ -684,6 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_image.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_image_mask.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_image_messages.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_image_options.py
+lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_isodate.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_multiapp.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_ogr_reader.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/test/unit/test_request.py
@@ -758,8 +768,10 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/${MODPY_PYCACHE}duration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/${MODPY_PYCACHE}parse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/duration.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/parse.py
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/test/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/util/ext/wmsparse/test/__init__.py
