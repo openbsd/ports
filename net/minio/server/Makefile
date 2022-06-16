@@ -1,4 +1,5 @@
 BROKEN-i386 =	github.com/tklauser/go-sysconf@v0.3.4/sysconf_openbsd.go:22:28: undefined: unix.RLIMIT_NPROC
+BROKEN-arm64 =	github.com/shirou/gopsutil/v3@v3.22.2/cpu/cpu_openbsd.go:63:14: undefined: cpuTimes
 
 COMMENT =	object storage server compatible with Amazon S3 APIs
 
