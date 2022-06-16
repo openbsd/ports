@@ -1233,7 +1233,8 @@ SHA256 (go_modules/golang.org/x/mod/@v/v0.3.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.0.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.1.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
 SHA256 (go_modules/golang.org/x/mod/@v/v0.4.2.mod) = sojwiP2FGIWm00gzni9YjlipTmx25eY0rh1nwnSetBM=
-SHA256 (go_modules/golang.org/x/mod/@v/v0.4.2.zip) = ObybFXBmYwC6XIYkRiH/vMY7AHzmnmt6Rv+6dpGSliE=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.5.1.mod) = uVQhGJtkdk7en2hHL039Id48lyso3LjrKqkp0Qa8aQs=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.5.1.zip) = i+0UiRIOlCimSsqXw6DRMGWjPRVkWTquReXHMcSI+XU=
 SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20170114055629-f2499483f923.mod) = Pgj0h93aGFG4kd9bHQS7GgG4TW1wKqgtnvvM3gqn34E=
 SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20180530234432-1e491301e022.mod) = Pgj0h93aGFG4kd9bHQS7GgG4TW1wKqgtnvvM3gqn34E=
 SHA256 (go_modules/golang.org/x/net/@v/v0.0.0-20180724234803-3673e40ba225.mod) = Pgj0h93aGFG4kd9bHQS7GgG4TW1wKqgtnvvM3gqn34E=
@@ -1778,7 +1779,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = GiqBAxR
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terragrunt-v0.37.2.zip) = 222hfPmZke5uWoaCShKGvwILaB+qBJpNgg/U5fYifXo=
+SHA256 (terragrunt-v0.37.4.zip) = G/yI6J0vXLVgWVYPe/tDGOPr+dUA/jnwuO7btsrxOIw=
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.mod) = 22
 SIZE (go_modules/bazil.org/fuse/@v/v0.0.0-20160811212531-371fbbdaa898.zip) = 220662
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
@@ -3014,7 +3015,8 @@ SIZE (go_modules/golang.org/x/mod/@v/v0.3.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.0.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.1.mod) = 214
 SIZE (go_modules/golang.org/x/mod/@v/v0.4.2.mod) = 214
-SIZE (go_modules/golang.org/x/mod/@v/v0.4.2.zip) = 141789
+SIZE (go_modules/golang.org/x/mod/@v/v0.5.1.mod) = 214
+SIZE (go_modules/golang.org/x/mod/@v/v0.5.1.zip) = 150900
 SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20170114055629-f2499483f923.mod) = 24
 SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20180530234432-1e491301e022.mod) = 24
 SIZE (go_modules/golang.org/x/net/@v/v0.0.0-20180724234803-3673e40ba225.mod) = 24
@@ -3559,4 +3561,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.0.1.zip) = 220145
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terragrunt-v0.37.2.zip) = 2702064
+SIZE (terragrunt-v0.37.4.zip) = 2704172

@@ -373,7 +373,7 @@ MODGO_MODULES =	\
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile					 v0.0.0-20190719004257-d2bd2a29d028 \
-	golang.org/x/mod					 v0.4.2 \
+	golang.org/x/mod					 v0.5.1 \
 	golang.org/x/net					 v0.0.0-20210813160813-60bc85c4be6d \
 	golang.org/x/oauth2					 v0.0.0-20210819190943-2bc19b11175f \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
@@ -926,6 +926,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod					 v0.3.0 \
 	golang.org/x/mod					 v0.4.0 \
 	golang.org/x/mod					 v0.4.1 \
+	golang.org/x/mod					 v0.4.2 \
 	golang.org/x/net					 v0.0.0-20170114055629-f2499483f923 \
 	golang.org/x/net					 v0.0.0-20180530234432-1e491301e022 \
 	golang.org/x/net					 v0.0.0-20180724234803-3673e40ba225 \
