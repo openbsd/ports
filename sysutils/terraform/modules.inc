@@ -131,7 +131,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-checkpoint				 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp				 v0.5.2 \
 	github.com/hashicorp/go-cty					 v1.4.1-0.20200414143053-d3edf31b6320 \
-	github.com/hashicorp/go-getter					 v1.6.1 \
+	github.com/hashicorp/go-getter					 v1.6.2 \
 	github.com/hashicorp/go-hclog					 v0.15.0 \
 	github.com/hashicorp/go-immutable-radix				 v1.0.0 \
 	github.com/hashicorp/go-msgpack					 v0.5.4 \
