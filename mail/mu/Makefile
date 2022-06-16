@@ -1,6 +1,6 @@
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V=		1.6.10
+V=		1.6.11
 GUILE_V=	2.2
 
 DISTNAME=	mu-$V
