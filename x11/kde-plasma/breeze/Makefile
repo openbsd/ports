@@ -5,9 +5,9 @@ SHARED_LIBS +=  breezecommon5         1.0 # 5.12.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5GuiAddons
-WANTLIB += KF5I18n KF5IconThemes KF5KCMUtils KF5Service KF5Style
-WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
+WANTLIB += KF5I18n KF5IconThemes KF5KCMUtils KF5Kirigami2 KF5Service
+WANTLIB += KF5Style KF5WidgetsAddons KF5WindowSystem Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
 WANTLIB += Qt5X11Extras Qt5Xml X11 c kdecorations2 m xcb
 
 MODKDE5_TRANSLATIONS = Yes
@@ -25,6 +25,7 @@ LIB_DEPENDS =		devel/kf5/frameworkintegration \
 			devel/kf5/kcoreaddons \
 			devel/kf5/kguiaddons \
 			devel/kf5/ki18n \
+			devel/kf5/kirigami2 \
 			devel/kf5/kservice \
 			devel/kf5/kwindowsystem \
 			x11/kde-plasma/kdecoration \
