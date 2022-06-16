@@ -1,7 +1,7 @@
 COMMENT=	Icinga PHP Library
 
 GH_PROJECT=	icinga-php-library
-GH_TAGNAME=	v0.8.1
+GH_TAGNAME=	v0.9.0
 
 MODULE_DEST=	${PREFIX}/icinga-php/ipl
 
