@@ -1,6 +1,6 @@
 COMMENT =		Atari 2600 VCS emulator
 
-V =			6.6
+V =			6.7
 DISTNAME =		stella-$V
 CATEGORIES =		emulators
 EXTRACT_SUFX =		-src.tar.xz
