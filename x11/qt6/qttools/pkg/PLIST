@@ -372,6 +372,11 @@ lib/metatypes/qt6designer_release_metatypes.json
 lib/metatypes/qt6designercomponentsprivate_release_metatypes.json
 lib/metatypes/qt6help_release_metatypes.json
 lib/metatypes/qt6uitools_release_metatypes.json
+lib/pkgconfig/Qt6Designer.pc
+lib/pkgconfig/Qt6Help.pc
+lib/pkgconfig/Qt6Linguist.pc
+lib/pkgconfig/Qt6UiPlugin.pc
+lib/pkgconfig/Qt6UiTools.pc
 @bin lib/qt6/bin/assistant
 @bin lib/qt6/bin/designer
 @bin lib/qt6/bin/lconvert

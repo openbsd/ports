@@ -14,20 +14,20 @@ PKGNAME-psql =		qt6-postgresql-${VERSION}
 PKG_ARCH-global =	*
 
 SHARED_LIBS +=  Qt6Concurrent                0.1 # 6.3
-SHARED_LIBS +=  Qt6Core                      0.1 # 6.3
+SHARED_LIBS +=  Qt6Core                      0.2 # 6.3
 SHARED_LIBS +=  Qt6DBus                      0.1 # 6.3
-SHARED_LIBS +=  Qt6Gui                       0.1 # 6.3
-SHARED_LIBS +=  Qt6Network                   0.1 # 6.3
+SHARED_LIBS +=  Qt6Gui                       1.0 # 6.3
+SHARED_LIBS +=  Qt6Network                   0.2 # 6.3
 SHARED_LIBS +=  Qt6OpenGL                    0.1 # 6.3
 SHARED_LIBS +=  Qt6PrintSupport              0.1 # 6.3
 SHARED_LIBS +=  Qt6Sql                       0.1 # 6.3
-SHARED_LIBS +=  Qt6Test                      0.1 # 6.3
-SHARED_LIBS +=  Qt6Widgets                   0.1 # 6.3
+SHARED_LIBS +=  Qt6Test                      1.0 # 6.3
+SHARED_LIBS +=  Qt6Widgets                   0.2 # 6.3
 SHARED_LIBS +=  Qt6Xml                       0.1 # 6.3
 SHARED_LIBS +=  Qt6EglFSDeviceIntegration    0.1 # 6.3
 SHARED_LIBS +=  Qt6EglFsKmsSupport           0.1 # 6.3
 SHARED_LIBS +=  Qt6OpenGLExtensions          0.1 # 6.3
-SHARED_LIBS +=  Qt6XcbQpa                    0.1 # 6.3
+SHARED_LIBS +=  Qt6XcbQpa                    1.0 # 6.3
 SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.1 # 6.3
 SHARED_LIBS +=  Qt6OpenGLWidgets             0.1 # 6.3
 

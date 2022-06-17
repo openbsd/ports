@@ -1,9 +1,6 @@
-lib/cmake/
-lib/cmake/Qt6/
 lib/cmake/Qt6/FindLibmng.cmake
 lib/cmake/Qt6/FindWrapJasper.cmake
 lib/cmake/Qt6/FindWrapWebP.cmake
-lib/cmake/Qt6Gui/
 lib/cmake/Qt6Gui/Qt6QICNSPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QICNSPluginConfig.cmake
 lib/cmake/Qt6Gui/Qt6QICNSPluginConfigVersion.cmake
@@ -46,9 +43,6 @@ lib/cmake/Qt6Gui/Qt6QWebpPluginConfigVersion.cmake
 lib/cmake/Qt6Gui/Qt6QWebpPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Gui/Qt6QWebpPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake
-lib/qt6/
-lib/qt6/plugins/
-lib/qt6/plugins/imageformats/
 @so lib/qt6/plugins/imageformats/libqicns.so
 @so lib/qt6/plugins/imageformats/libqjp2.so
 @so lib/qt6/plugins/imageformats/libqmng.so

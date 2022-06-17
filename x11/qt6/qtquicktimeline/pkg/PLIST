@@ -1,4 +1,3 @@
-include/X11/qt6/
 include/X11/qt6/QtQuickTimeline/
 include/X11/qt6/QtQuickTimeline/${VERSION}/
 include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/
@@ -15,12 +14,7 @@ include/X11/qt6/QtQuickTimeline/QtQuickTimelineVersion
 include/X11/qt6/QtQuickTimeline/qtquicktimelineexports.h
 include/X11/qt6/QtQuickTimeline/qtquicktimelineglobal.h
 include/X11/qt6/QtQuickTimeline/qtquicktimelineversion.h
-lib/cmake/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuickTimelineTestsConfig.cmake
-lib/cmake/Qt6Qml/
-lib/cmake/Qt6Qml/QmlPlugins/
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfigVersion.cmake
@@ -38,19 +32,12 @@ lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets.cmake
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionlessTargets.cmake
 lib/libQt6QuickTimeline.prl
 @lib lib/libQt6QuickTimeline.so.${LIBQt6QuickTimeline_VERSION}
-lib/metatypes/
 lib/metatypes/qt6quicktimeline_release_metatypes.json
-lib/qt6/
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
+lib/pkgconfig/Qt6QuickTimeline.pc
 lib/qt6/mkspecs/modules/qt_lib_quicktimeline.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktimeline_private.pri
-lib/qt6/qml/
-lib/qt6/qml/QtQuick/
 lib/qt6/qml/QtQuick/Timeline/
 @so lib/qt6/qml/QtQuick/Timeline/libqtquicktimelineplugin.so
 lib/qt6/qml/QtQuick/Timeline/plugins.qmltypes
 lib/qt6/qml/QtQuick/Timeline/qmldir
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/QuickTimeline.json

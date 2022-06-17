@@ -54,6 +54,7 @@ share/doc/qt6/global/html-footer-online.qdocconf
 share/doc/qt6/global/html-footer.qdocconf
 share/doc/qt6/global/html-header-offline.qdocconf
 share/doc/qt6/global/html-header-online.qdocconf
+share/doc/qt6/global/htmltabs.qdocconf
 share/doc/qt6/global/includes/
 share/doc/qt6/global/includes-online/
 share/doc/qt6/global/includes-online/search.qdoc
@@ -119,6 +120,7 @@ share/doc/qt6/global/template/style/cookie-confirm.css
 share/doc/qt6/global/template/style/cookiebar-x.png
 share/doc/qt6/global/template/style/doc_search.png
 share/doc/qt6/global/template/style/gsc.css
+share/doc/qt6/global/template/style/htmltabs.css
 share/doc/qt6/global/template/style/icomoon.eot
 share/doc/qt6/global/template/style/icomoon.svg
 share/doc/qt6/global/template/style/icomoon.ttf

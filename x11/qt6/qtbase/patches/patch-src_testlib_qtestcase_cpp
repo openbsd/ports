@@ -1,7 +1,7 @@
 Index: src/testlib/qtestcase.cpp
 --- src/testlib/qtestcase.cpp.orig
 +++ src/testlib/qtestcase.cpp
-@@ -1708,7 +1708,7 @@ class FatalSignalHandler (public)
+@@ -1818,7 +1818,7 @@ class FatalSignalHandler (public)
          __attribute__((section(".lbss.altstack"), aligned(4096)))
  #    endif
          static QVarLengthArray<char, 32 * 1024> alternateStack;

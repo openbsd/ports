@@ -13,16 +13,7 @@ Index: src/corelib/plugin/qelfparser_p.cpp
      case ELFOSABI_IRIX:     d << " (IRIX"; break;
      case ELFOSABI_FREEBSD:  d << " (FreeBSD"; break;
      case ELFOSABI_OPENBSD:  d << " (OpenBSD"; break;
-@@ -409,7 +409,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION static QDebug &oper
-     case EM_NONE:       d << ", no machine"; break;
-     case EM_ARM:        d << ", ARM"; break;
-     case EM_AARCH64:    d << ", AArch64"; break;
--    case EM_BLACKFIN:   d << ", Blackfin"; break;
-+    //case EM_BLACKFIN:   d << ", Blackfin"; break;
-     case EM_IA_64:      d << ", IA-64"; break;
-     case EM_MIPS:       d << ", MIPS"; break;
-     case EM_PPC:        d << ", PowerPC"; break;
-@@ -417,7 +417,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION static QDebug &oper
+@@ -419,7 +419,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION static QDebug &oper
  #ifdef EM_RISCV
      case EM_RISCV:      d << ", RISC-V"; break;
  #endif

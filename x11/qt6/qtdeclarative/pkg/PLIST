@@ -1,5 +1,4 @@
 bin/qml-qt6
-include/X11/qt6/
 include/X11/qt6/QtLabsAnimation/
 include/X11/qt6/QtLabsAnimation/${VERSION}/
 include/X11/qt6/QtLabsAnimation/${VERSION}/QtLabsAnimation/
@@ -429,6 +428,7 @@ include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscompiler_p.
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsfunctioninitializer_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsimporter_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsimportvisitor_p.h
+include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsliteralbindingcheck_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsloadergenerator_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljslogger_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsmetatypes_p.h
@@ -1309,10 +1309,6 @@ include/X11/qt6/QtQuickWidgets/qquickwidget.h
 include/X11/qt6/QtQuickWidgets/qtquickwidgetsexports.h
 include/X11/qt6/QtQuickWidgets/qtquickwidgetsglobal.h
 include/X11/qt6/QtQuickWidgets/qtquickwidgetsversion.h
-lib/cmake/
-lib/cmake/Qt6/
-lib/cmake/Qt6BuildInternals/
-lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtDeclarativeTestsConfig.cmake
 lib/cmake/Qt6LabsAnimation/
 lib/cmake/Qt6LabsAnimation/Qt6LabsAnimationAdditionalTargetInfo.cmake
@@ -1966,7 +1962,6 @@ lib/libQt6QuickTest.prl
 lib/libQt6QuickTestUtils.prl
 lib/libQt6QuickWidgets.prl
 @lib lib/libQt6QuickWidgets.so.${LIBQt6QuickWidgets_VERSION}
-lib/metatypes/
 lib/metatypes/qt6labsanimation_release_metatypes.json
 lib/metatypes/qt6labsfolderlistmodel_release_metatypes.json
 lib/metatypes/qt6labsqmlmodels_release_metatypes.json
@@ -2002,13 +1997,35 @@ lib/objects-Release/
 lib/objects-Release/QmlCompilerPrivate_resources_1/
 lib/objects-Release/QmlCompilerPrivate_resources_1/.rcc/
 lib/objects-Release/QmlCompilerPrivate_resources_1/.rcc/qrc_builtins.cpp.o
-lib/qt6/
-lib/qt6/bin/
+lib/pkgconfig/Qt6LabsAnimation.pc
+lib/pkgconfig/Qt6LabsFolderListModel.pc
+lib/pkgconfig/Qt6LabsQmlModels.pc
+lib/pkgconfig/Qt6LabsSettings.pc
+lib/pkgconfig/Qt6LabsSharedImage.pc
+lib/pkgconfig/Qt6LabsWavefrontMesh.pc
+lib/pkgconfig/Qt6Qml.pc
+lib/pkgconfig/Qt6QmlCore.pc
+lib/pkgconfig/Qt6QmlIntegration.pc
+lib/pkgconfig/Qt6QmlLocalStorage.pc
+lib/pkgconfig/Qt6QmlModels.pc
+lib/pkgconfig/Qt6QmlWorkerScript.pc
+lib/pkgconfig/Qt6QmlXmlListModel.pc
+lib/pkgconfig/Qt6Quick.pc
+lib/pkgconfig/Qt6QuickControls2.pc
+lib/pkgconfig/Qt6QuickControls2Impl.pc
+lib/pkgconfig/Qt6QuickDialogs2.pc
+lib/pkgconfig/Qt6QuickDialogs2QuickImpl.pc
+lib/pkgconfig/Qt6QuickDialogs2Utils.pc
+lib/pkgconfig/Qt6QuickLayouts.pc
+lib/pkgconfig/Qt6QuickTemplates2.pc
+lib/pkgconfig/Qt6QuickTest.pc
+lib/pkgconfig/Qt6QuickWidgets.pc
 @bin lib/qt6/bin/qml
 @bin lib/qt6/bin/qmldom
 @bin lib/qt6/bin/qmleasing
 @bin lib/qt6/bin/qmlformat
 @bin lib/qt6/bin/qmllint
+@bin lib/qt6/bin/qmlls
 @bin lib/qt6/bin/qmlplugindump
 @bin lib/qt6/bin/qmlpreview
 @bin lib/qt6/bin/qmlprofiler
@@ -2016,16 +2033,12 @@ lib/qt6/bin/
 @bin lib/qt6/bin/qmltc
 @bin lib/qt6/bin/qmltestrunner
 @bin lib/qt6/bin/qmltime
-lib/qt6/libexec/
 @bin lib/qt6/libexec/qmlcachegen
 @bin lib/qt6/libexec/qmlimportscanner
 @bin lib/qt6/libexec/qmltyperegistrar
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/features/
 lib/qt6/mkspecs/features/qmlcache.prf
 lib/qt6/mkspecs/features/qmltypes.prf
 lib/qt6/mkspecs/features/qtquickcompiler.prf
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_labsanimation.pri
 lib/qt6/mkspecs/modules/qt_lib_labsanimation_private.pri
 lib/qt6/mkspecs/modules/qt_lib_labsfolderlistmodel.pri
@@ -2081,7 +2094,6 @@ lib/qt6/mkspecs/modules/qt_lib_quicktemplates2_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri
 lib/qt6/mkspecs/modules/qt_lib_quickwidgets.pri
 lib/qt6/mkspecs/modules/qt_lib_quickwidgets_private.pri
-lib/qt6/plugins/
 lib/qt6/plugins/qmltooling/
 @so lib/qt6/plugins/qmltooling/libqmldbg_debugger.so
 @so lib/qt6/plugins/qmltooling/libqmldbg_inspector.so
@@ -2531,6 +2543,9 @@ lib/qt6/qml/QtQuick/Controls/designer/images/checkbox-icon@2x.png
 lib/qt6/qml/QtQuick/Controls/designer/images/combobox-icon.png
 lib/qt6/qml/QtQuick/Controls/designer/images/combobox-icon16.png
 lib/qt6/qml/QtQuick/Controls/designer/images/combobox-icon@2x.png
+lib/qt6/qml/QtQuick/Controls/designer/images/control-icon.png
+lib/qt6/qml/QtQuick/Controls/designer/images/control-icon16.png
+lib/qt6/qml/QtQuick/Controls/designer/images/control-icon@2x.png
 lib/qt6/qml/QtQuick/Controls/designer/images/delaybutton-icon.png
 lib/qt6/qml/QtQuick/Controls/designer/images/delaybutton-icon16.png
 lib/qt6/qml/QtQuick/Controls/designer/images/delaybutton-icon@2x.png
@@ -2732,8 +2747,6 @@ lib/qt6/qml/QtTest/qmldir
 lib/qt6/qml/QtTest/testlogger.js
 lib/qt6/qml/builtins.qmltypes
 lib/qt6/qml/jsroot.qmltypes
-share/qt6/
-share/qt6/modules/
 share/qt6/modules/LabsAnimation.json
 share/qt6/modules/LabsFolderListModel.json
 share/qt6/modules/LabsQmlModels.json
