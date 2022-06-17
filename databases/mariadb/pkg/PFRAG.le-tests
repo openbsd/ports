@@ -388,6 +388,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/r/index_btree_equal_datetime.res
 share/mysql-test/plugin/mroonga/mroonga/storage/r/index_btree_equal_time.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/index_btree_equal_timestamp.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/index_btree_normal_column_insert.result
+share/mysql-test/plugin/mroonga/mroonga/storage/r/index_desc.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/index_hash_id_normal.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/index_hash_id_primary.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/index_hash_id_unique.result
@@ -989,6 +990,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/t/index_btree_equal_datetime.tes
 share/mysql-test/plugin/mroonga/mroonga/storage/t/index_btree_equal_time.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/index_btree_equal_timestamp.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/index_btree_normal_column_insert.test
+share/mysql-test/plugin/mroonga/mroonga/storage/t/index_desc.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/index_hash_id_normal.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/index_hash_id_primary.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/index_hash_id_unique.test
