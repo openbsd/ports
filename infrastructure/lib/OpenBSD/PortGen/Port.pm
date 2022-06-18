@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.24 2022/01/05 21:23:18 sdk Exp $
+# $OpenBSD: Port.pm,v 1.25 2022/06/18 19:32:19 kirby Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -355,12 +355,10 @@ sub write_makefile
 		    grep { $_->{name} ne 'EXTRACT_SUFX' }
 		    grep { ref } @template;
 	} else {
-		my $tag = 'OpenBSD';
 		my $template =
 		    ports_dir() . '/infrastructure/templates/Makefile.template';
 
 		@template = (
-		    "# \$$tag\$",
 		    grep { $_ !~ /^\#/x } $self->parse_makefile($template)
 		);
 	}
