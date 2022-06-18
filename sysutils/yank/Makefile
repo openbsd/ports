@@ -1,6 +1,6 @@
 COMMENT =	yank terminal output to clipboard
 
-V =		1.2.0
+V =		1.3.0
 DISTNAME =	yank-${V}
 CATEGORIES =	sysutils
 
