@@ -23,7 +23,7 @@
      #SUBDIR += qtremoteobjects
      #SUBDIR += qtpositioning
      #SUBDIR += qtnetworkauth
-     #SUBDIR += qtmultimedia
+     SUBDIR += qtmultimedia
      #SUBDIR += qtlottie
      SUBDIR += qtimageformats
      #SUBDIR += qtdatavis3d
