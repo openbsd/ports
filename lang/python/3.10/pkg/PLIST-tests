@@ -599,6 +599,9 @@ lib/python3.10/test/__pycache__/dis_module.cpython-310.pyc
 lib/python3.10/test/__pycache__/doctest_aliases.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/doctest_aliases.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/doctest_aliases.cpython-310.pyc
+lib/python3.10/test/__pycache__/doctest_lineno.cpython-310.opt-1.pyc
+lib/python3.10/test/__pycache__/doctest_lineno.cpython-310.opt-2.pyc
+lib/python3.10/test/__pycache__/doctest_lineno.cpython-310.pyc
 lib/python3.10/test/__pycache__/double_const.cpython-310.opt-1.pyc
 lib/python3.10/test/__pycache__/double_const.cpython-310.opt-2.pyc
 lib/python3.10/test/__pycache__/double_const.cpython-310.pyc
@@ -2247,6 +2250,7 @@ lib/python3.10/test/decimaltestdata/tointegralx.decTest
 lib/python3.10/test/decimaltestdata/xor.decTest
 lib/python3.10/test/dis_module.py
 lib/python3.10/test/doctest_aliases.py
+lib/python3.10/test/doctest_lineno.py
 lib/python3.10/test/double_const.py
 lib/python3.10/test/dtracedata/
 lib/python3.10/test/dtracedata/__pycache__/
