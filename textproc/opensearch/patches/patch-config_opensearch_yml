@@ -1,0 +1,17 @@
+Index: config/opensearch.yml
+--- config/opensearch.yml.orig
++++ config/opensearch.yml
+@@ -30,11 +30,11 @@
+ #
+ # Path to directory where to store the data (separate multiple locations by comma):
+ #
+-#path.data: /path/to/data
++path.data: ${VARBASE}/opensearch/
+ #
+ # Path to log files:
+ #
+-#path.logs: /path/to/logs
++path.logs: ${VARBASE}/log/opensearch/
+ #
+ # ----------------------------------- Memory -----------------------------------
+ #

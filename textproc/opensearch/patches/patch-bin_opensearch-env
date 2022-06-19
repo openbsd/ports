@@ -1,0 +1,34 @@
+- fix JAVA_HOME
+- add java/jna jars to the CLASSPATH
+- fix the config dir
+
+Index: bin/opensearch-env
+--- bin/opensearch-env.orig
++++ bin/opensearch-env
+@@ -4,6 +4,8 @@ set -e -o pipefail
+ 
+ CDPATH=""
+ 
++JAVA_HOME="$(${TRUEPREFIX}/bin/javaPathHelper -h opensearch)"
++
+ SCRIPT="$0"
+ 
+ UNAME=$(uname -s)
+@@ -42,7 +44,7 @@ done
+ OPENSEARCH_HOME=`dirname "$OPENSEARCH_HOME"`
+ 
+ # now set the classpath
+-OPENSEARCH_CLASSPATH="$OPENSEARCH_HOME/lib/*"
++OPENSEARCH_CLASSPATH="$OPENSEARCH_HOME/lib/*:${MODJAVA_JAR_DIR}/jna.jar:${MODJAVA_JAR_DIR}/jna-platform.jar"
+ 
+ # now set the path to java: OPENSEARCH_JAVA_HOME -> JAVA_HOME -> bundled JDK
+ if [ ! -z "$OPENSEARCH_JAVA_HOME" ]; then
+@@ -94,7 +96,7 @@ fi
+ export HOSTNAME=$HOSTNAME
+ 
+ if [ -z "$OPENSEARCH_PATH_CONF" ]; then
+-  if [ -z "$OPENSEARCH_PATH_CONF" ]; then OPENSEARCH_PATH_CONF="$OPENSEARCH_HOME"/config; fi
++  if [ -z "$OPENSEARCH_PATH_CONF" ]; then OPENSEARCH_PATH_CONF="${BASESYSCONFDIR}"/opensearch; fi
+ fi
+ 
+ if [ -z "$OPENSEARCH_PATH_CONF" ]; then

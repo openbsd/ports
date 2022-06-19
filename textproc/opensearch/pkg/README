@@ -1,0 +1,85 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Initial Node/Cluster Configuration
+==================================
+
+Configuration files are located in ${SYSCONFDIR}/opensearch
+
+The security plugin is enabled by default and needs to be configured
+before starting OpenSearch.  
+For demo/testing purposes, basic security configuration can be created
+by running:
+
+	# doas -u _opensearch \
+		${TRUEPREFIX}/opensearch/plugins/opensearch-security/tools/install_demo_configuration.sh
+
+Upstream documentation:
+https://opensearch.org/docs/latest/security-plugin/configuration/index
+
+By default, OpenSearch binds to a localhost addresses. Since OpenBSD does
+not support IPv4 to IPv6 address mapping, either IPv4 or IPv6 can be
+used, but not both of them (see JDK/JRE package README for more details.)
+
+Thus by default OpenSearch will bind to 127.0.0.1 and will not be useful
+for anything except testing.
+
+After configuring network.host to non-default localhost address,
+OpenSearch will assume it's in "production" mode and will enforce
+the following bootstrap checks:
+- maximum number of open file descriptors must be >= 65535 (see below)
+- discovery.seed_hosts and cluster.initial_cluster_manager_nodes
+  must be configured in ${SYSCONFDIR}/opensearch/opensearch.yml
+
+Upstream documentation:
+https://opensearch.org/docs/latest/opensearch/configuration/#configuration-file
+
+Resource Limits: File Descriptors
+=================================
+
+A sample login class has been provided in /etc/login.conf.d/elasticsearch.
+To raise the default system limit, adjust kern.maxfiles:
+
+	# sysctl kern.maxfiles=65535
+	# echo kern.maxfiles=65535 >> /etc/sysctl.conf
+
+For a busy OpenSearch node with lots of indexes, maxfiles/openfiles limits
+should be increased even more, e.g. 131070.
+
+You can query the number of open file descriptors along with the maximum
+allowed by running
+
+	$ ftp -S dont -o - 'https://admin:admin@localhost:9200/_nodes/stats/process?pretty'
+
+and searching for "open_file_descriptors" and "max_file_descriptors"
+values.
+
+Resource Limits: Maximum Number of File Locks
+=============================================
+
+If you are getting "java.io.IOException: No locks available" errors,
+increase kern.maxlocksperuid over the default of 1024:
+
+	# sysctl kern.maxlocksperuid=2048
+	# echo kern.maxlocksperuid=2048 >> /etc/sysctl.conf
+
+OpenSearch Plugins Management
+=============================
+
+Installing plugins may involve running Java code which can download and
+execute arbitrary code from the Internet.  To avoid running these tasks
+as root, use doas(1):
+
+	# doas -u _opensearch \
+	    ${TRUEPREFIX}/opensearch/bin/opensearch-plugin install ...
+
+Migrate from ElasticSearch
+==========================
+
+There are different approaches to migrate from ElasticSearch to
+OpenSearch.  Upstream documents three migration strategies:
+https://opensearch.org/docs/2.0/upgrade-to/index
+
+Regardless of the approach choosen, to safeguard against data loss, is
+recommend to take a snapshot of all indices prior to any migration.

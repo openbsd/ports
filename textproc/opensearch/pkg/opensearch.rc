@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/opensearch/bin/opensearch"
+daemon_flags="-d -p /var/run/opensearch/opensearch.pid"
+daemon_user="_opensearch"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c opensearch) .*org.opensearch.bootstrap.OpenSearch.*"
+
+rc_reload=NO
+
+rc_pre() {
+	install -d -o _opensearch /var/run/opensearch/
+}
+
+rc_cmd $1
