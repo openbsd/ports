@@ -16,7 +16,7 @@
      #SUBDIR += qtwebchannel
      #SUBDIR += qtwayland
      #SUBDIR += qtvirtualkeyboard
-     #SUBDIR += qtserialport
+     #SUBDIR += qtserialport Could NOT find Libudev (missing: Libudev_DIR)
      #SUBDIR += qtserialbus
      #SUBDIR += qtsensors
      #SUBDIR += qtscxml
