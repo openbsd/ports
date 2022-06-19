@@ -166,6 +166,7 @@
      SUBDIR += odt2txt
      SUBDIR += oniguruma
      SUBDIR += openjade
+     SUBDIR += opensearch
      SUBDIR += opensp
      SUBDIR += ots
      SUBDIR += p5-Blatte
