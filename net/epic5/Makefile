@@ -1,6 +1,6 @@
 COMMENT=	enhanced programmable ircII client 5th generation
 
-VERSION=	2.1.11
+VERSION=	2.1.12
 DISTNAME=	epic5-${VERSION}
 CATEGORIES=	net
 HOMEPAGE=	http://www.epicsol.org/
@@ -34,8 +34,7 @@ WANTLIB+=	${MODPY_WANTLIB} intl pthread util
 
 NO_TEST=	Yes
 
-# scripts/reconnect.orig
-PATCHORIG=	.orig.port
+SEPARATE_BUILD=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/epic5/

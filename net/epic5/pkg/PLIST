@@ -1,5 +1,5 @@
 bin/epic5
-@bin bin/epic5-2071
+@bin bin/epic5-2078
 @bin libexec/epic5-wserv4
 @man man/man1/epic5.1
 share/doc/epic5/
@@ -75,7 +75,7 @@ share/epic5/script/paste
 share/epic5/script/pipe
 share/epic5/script/python
 share/epic5/script/reconnect
-share/epic5/script/reconnect.orig
+share/epic5/script/reconnect.old
 share/epic5/script/rejoin
 share/epic5/script/renumber
 share/epic5/script/revdcc
