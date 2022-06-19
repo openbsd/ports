@@ -29,7 +29,8 @@
      #SUBDIR += qtdatavis3d
      #SUBDIR += qtconnectivity
      #SUBDIR += qtcharts
-     #SUBDIR += qtactiveqt
      #SUBDIR += qt3d
 
+# Windows only
+#     SUBDIR += qtactiveqt
 .include <bsd.port.subdir.mk>
