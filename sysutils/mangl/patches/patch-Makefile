@@ -5,9 +5,9 @@ Index: Makefile
 +++ Makefile
 @@ -1,5 +1,5 @@
 -CFLAGS = -g -O2 -Wall $(shell pkg-config --cflags zlib gl freetype2)
--LDFLAGS = -lm -lglut $(shell pkg-config --libs zlib gl freetype2)
-+CCFLAGS += -Wall $(shell pkg-config --cflags zlib gl freetype2) -I${LOCALBASE}/include
-+LDFLAGS += -lm -lutil -L${LOCALBASE}/lib -lglut $(shell pkg-config --libs zlib gl freetype2)
+-LDFLAGS = -lm -lglfw $(shell pkg-config --libs zlib gl freetype2)
++CCFLAGS += -Wall $(shell pkg-config --cflags zlib gl freetype2 glfw3)
++LDFLAGS += -lm -lutil $(shell pkg-config --libs zlib gl freetype2 glfw3)
  
  LIBMAN_OBJS	 = mandoc/man.o \
  			   mandoc/man_macro.o \
@@ -18,5 +18,5 @@ Index: Makefile
 -	$(CC) $(CFLAGS) -o $@ $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES) $(LDFLAGS)
 +	$(CC) $(CFLAGS) $(CCFLAGS) -o $@ $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES) $(LDFLAGS)
  
- .PHONY: install
- install: mangl
+ sanitizer: CFLAGS += -fsanitize=address
+ sanitizer: mangl
