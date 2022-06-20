@@ -1,6 +1,7 @@
 COMMENT =		adds methods to set text color, background color, etc
 
-DISTNAME =		colorize-0.7.7
+DISTNAME =		colorize-0.8.1
+HOMEPAGE =		https://github.com/fazibear/colorize
 CATEGORIES =		devel
 
 # GPLv2

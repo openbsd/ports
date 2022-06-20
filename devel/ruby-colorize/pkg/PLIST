@@ -10,6 +10,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/colorize/
 ${GEM_LIB}/gems/${DISTNAME}/lib/colorize.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/colorize/class_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/colorize/instance_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/colorized_string.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_colorize.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
