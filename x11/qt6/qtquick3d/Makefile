@@ -20,4 +20,6 @@ WANTLIB += Qt6Widgets c m xkbcommon z
 LIB_DEPENDS =	x11/qt6/qtshadertools>=${VERSION},<${NEXT_VERSION} \
 		x11/qt6/qtdeclarative>=${VERSION},<${NEXT_VERSION}
 
+BUILD_DEPENDS =		graphics/vulkan-loader
+
 .include <bsd.port.mk>
