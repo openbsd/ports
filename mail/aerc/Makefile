@@ -1,9 +1,9 @@
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
-MODGO_VERSION =	v0.0.0-20220321211628-4c699d35f88d
+MODGO_VERSION =	v0.0.0-20220508163649-4a4050ee0f33
 
-V =		0.10.0
+V =		0.10.0pl0
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail

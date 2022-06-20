@@ -18,7 +18,9 @@ share/aerc/filters/
 share/aerc/filters/colorize
 share/aerc/filters/hldiff
 share/aerc/filters/html
+share/aerc/filters/html-unsafe
 share/aerc/filters/plaintext
+share/aerc/filters/show-ics-details.py
 share/aerc/stylesets/
 share/aerc/stylesets/default
 share/aerc/templates/
