@@ -23,9 +23,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_alphanumeric.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_bit_buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_code.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_math.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_multi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_numeric.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_polynomial.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_rs_block.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_segment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/qrcode/qr_util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode_core/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/rqrcode_core.gemspec

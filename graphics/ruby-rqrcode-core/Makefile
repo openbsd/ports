@@ -1,8 +1,8 @@
 COMMENT =		library to encode QR Codes
 
-DISTNAME =		rqrcode_core-1.1.0
+DISTNAME =		rqrcode_core-1.2.0
 
-CATEGORIES =		graphics
+CATEGORIES =		graphics devel
 
 HOMEPAGE =		https://github.com/whomwah/rqrcode_core
 
