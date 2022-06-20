@@ -1,9 +1,9 @@
 COMMENT =	ruby internationalization and localization solution
 
-DISTNAME =	i18n-1.6.0
+DISTNAME =	i18n-1.10.0
 CATEGORIES =	devel
 
-HOMEPAGE=	https://github.com/svenfuchs/i18n
+HOMEPAGE=	https://github.com/ruby-i18n/i18n
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS =	devel/ruby-concurrent-ruby,${MODRUBY_FLAVOR},>=1.0,<2

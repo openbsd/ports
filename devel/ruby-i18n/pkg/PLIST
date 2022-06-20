@@ -17,14 +17,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/flatten.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/gettext.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/interpolation_compiler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/key_value.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/lazy_loadable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/memoize.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/metadata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/pluralization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/simple.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/backend/transliterator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/config.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/i18n/core_ext/
-${GEM_LIB}/gems/${DISTNAME}/lib/i18n/core_ext/hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/exceptions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/gettext/
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/gettext.rb
@@ -56,5 +55,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/tests/localization/time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/tests/lookup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/tests/pluralization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/tests/procs.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/i18n/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/i18n/version.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
