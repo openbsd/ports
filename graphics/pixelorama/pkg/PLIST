@@ -1,0 +1,7 @@
+bin/pixelorama
+share/applications/pixelorama.desktop
+share/pixelorama/
+share/pixelorama/Pixelorama.pck
+share/pixmaps/
+share/pixmaps/pixelorama.png
+@tag update-desktop-database

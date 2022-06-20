@@ -1,0 +1,17 @@
+Pixelorama is a free and open source pixel art editor, proudly created with the
+Godot Engine, by Orama Interactive. Whether you want to make animated pixel
+art, game graphics, tiles and any kind of pixel art you want, Pixelorama has
+you covered with its variety of tools and features.
+
+Features:
+
+* Are you an animator? Pixelorama has its own animation timeline just for you!
+  You can work at an individual cel level, where each cel refers to a unique
+  layer and frame. Supports onion skinning, cel linking, motion drawing and
+  frame grouping with tags.
+* Custom brushes, including random brushes.
+* Create or import custom palettes.
+* Export your gorgeous art as PNG, as a single file, a spritesheet or multiple
+  files, or GIF file.  Horizontal & vertical mirrored drawing.
+* Tile Mode for pattern creation.
+* Scale, rotate and apply multiple image effects to your drawings.

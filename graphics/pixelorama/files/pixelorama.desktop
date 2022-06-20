@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pixelorama
+Comment=A free & open-source 2D sprite editor, made with the Godot Engine!
+Exec=pixelorama
+Icon=pixelorama
+Terminal=false
+Categories=Graphics;2DGraphics
+Type=Application
