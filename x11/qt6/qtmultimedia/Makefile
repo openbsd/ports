@@ -12,6 +12,8 @@ WANTLIB += gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstphotography-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 intl m xkbcommon
 
 BUILD_DEPENDS =		audio/pulseaudio \
+			graphics/vulkan-loader \
+			x11/qt6/qtshadertools \
 			x11/qt6/qtsvg
 
 LIB_DEPENDS =		devel/glib2 \
