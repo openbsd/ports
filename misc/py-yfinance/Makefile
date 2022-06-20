@@ -1,6 +1,6 @@
 COMMENT=		fetching finanical market data with Python
 
-MODPY_EGG_VERSION=	0.1.70
+MODPY_EGG_VERSION=	0.1.72
 DISTNAME=		yfinance-${MODPY_EGG_VERSION}
 PKGNAME=		py-yfinance-${MODPY_EGG_VERSION}
 
