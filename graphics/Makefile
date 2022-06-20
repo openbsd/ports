@@ -237,6 +237,7 @@
      SUBDIR += pho
      SUBDIR += piglit
      SUBDIR += pinta
+     SUBDIR += pixelorama
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcheck
