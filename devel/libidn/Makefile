@@ -1,6 +1,6 @@
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.38
+DISTNAME=		libidn-1.40
 
 SHARED_LIBS +=  idn                  18.0     # 18.3
 
