@@ -1,14 +1,12 @@
 COMMENT =	SSL/SSH multiplexer
 
 DISTNAME =	sslh-v1.22c
-REVISION =	1
+REVISION =	2
 PKGNAME =	${DISTNAME:S/-v/-/}
 
 CATEGORIES =	security net
 
 HOMEPAGE =	https://www.rutschle.net/tech/sslh/README.html
-
-MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
