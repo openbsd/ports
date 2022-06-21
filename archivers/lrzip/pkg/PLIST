@@ -1,0 +1,40 @@
+bin/lrunzip
+bin/lrz
+bin/lrzcat
+@bin bin/lrzip
+bin/lrztar
+bin/lrzuntar
+@man man/man1/lrunzip.1
+@man man/man1/lrz.1
+@man man/man1/lrzcat.1
+@man man/man1/lrzip.1
+@man man/man1/lrztar.1
+@man man/man1/lrzuntar.1
+@man man/man5/lrzip.conf.5
+share/doc/lrzip/
+share/doc/lrzip/AUTHORS
+share/doc/lrzip/BUGS
+share/doc/lrzip/COPYING
+share/doc/lrzip/ChangeLog
+share/doc/lrzip/README-NOT-BACKWARD-COMPATIBLE
+share/doc/lrzip/README.Assembler
+share/doc/lrzip/README.benchmarks
+share/doc/lrzip/README.lzo_compresses.test.txt
+share/doc/lrzip/README.md
+share/doc/lrzip/TODO
+share/doc/lrzip/WHATS-NEW
+share/doc/lrzip/lrzip.conf.example
+share/doc/lrzip/lzma/
+share/doc/lrzip/lzma/7zC.txt
+share/doc/lrzip/lzma/7zFormat.txt
+share/doc/lrzip/lzma/Methods.txt
+share/doc/lrzip/lzma/README
+share/doc/lrzip/lzma/README-Alloc
+share/doc/lrzip/lzma/history.txt
+share/doc/lrzip/lzma/lzma.txt
+share/doc/lrzip/magic.header.txt
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/lrzip/
+@sample ${SYSCONFDIR}/lrzip/
+share/examples/lrzip/lrzip.conf.example
+@sample ${SYSCONFDIR}/lrzip/lrzip.conf

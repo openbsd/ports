@@ -1,0 +1,7 @@
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Lrzip might require an abusive amount of memory for compression and
+decompression.  The default limits for datasize may need to be bumped to
+use this software.

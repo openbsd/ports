@@ -1,0 +1,5 @@
+LRZIP (Long Range ZIP) is a file compression program designed to
+do particularly well on very large files containing long distance
+redundancy. The larger the file and the more memory you have, the better
+the compression advantage this will provide. A variety of compression
+options allow optimizing for size and speed.
