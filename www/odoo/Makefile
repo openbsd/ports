@@ -3,7 +3,7 @@ COMMENT=		all-in-one management software
 MV=			15.0
 SV=			20220427
 V=			${MV}.${SV}
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		odoo_${V}
 
@@ -42,6 +42,7 @@ RUN_DEPENDS=		converters/py-html2text${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			telephony/py-phonenumbers${MODPY_FLAVOR} \
 			textproc/py-PyPDF2${MODPY_FLAVOR} \
+			textproc/py-chardet${MODPY_FLAVOR} \
 			textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR} \
 			textproc/py-ofxparse${MODPY_FLAVOR} \
