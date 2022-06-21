@@ -1,10 +1,7 @@
-BROKEN-i386 =	github.com/tklauser/go-sysconf@v0.3.4/sysconf_openbsd.go:22:28: undefined: unix.RLIMIT_NPROC
-BROKEN-arm64 =	github.com/shirou/gopsutil/v3@v3.22.2/cpu/cpu_openbsd.go:63:14: undefined: cpuTimes
-
 COMMENT =	object storage server compatible with Amazon S3 APIs
 
-V =		2022-05-26T05-48-41Z
-CID =		372a08be49a2213a4a01de1fb7b271d98f38215c
+V =		2022-06-20T23-13-45Z
+CID =		b3ebc69034bff982ca2c1a6ca43afd20838e99d5
 SHORTCID =	${CID:C/(............).*/\1/}
 
 MODGO_MODNAME =	github.com/minio/minio

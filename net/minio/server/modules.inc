@@ -280,18 +280,18 @@ MODGO_MODULES =	\
 	github.com/minio/argon2					 v1.0.0 \
 	github.com/minio/cli					 v1.22.0 \
 	github.com/minio/colorjson				 v1.0.2 \
-	github.com/minio/console				 v0.17.2 \
+	github.com/minio/console				 v0.19.0 \
 	github.com/minio/csvparser				 v1.0.0 \
-	github.com/minio/dperf					 v0.3.6 \
+	github.com/minio/dperf					 v0.4.2 \
 	github.com/minio/filepath				 v1.0.0 \
 	github.com/minio/highwayhash				 v1.0.2 \
 	github.com/minio/kes					 v0.19.2 \
 	github.com/minio/madmin-go				 v1.3.14 \
 	github.com/minio/mc					 v0.0.0-20220512134321-aa60a8db1e4d \
 	github.com/minio/md5-simd				 v1.1.2 \
-	github.com/minio/minio-go/v7				 v7.0.27 \
+	github.com/minio/minio-go/v7				 v7.0.29 \
 	github.com/minio/operator				 v0.0.0-20220414212219-ba4c097324b2 \
-	github.com/minio/pkg					 v1.1.23 \
+	github.com/minio/pkg					 v1.1.25 \
 	github.com/minio/selfupdate				 v0.4.0 \
 	github.com/minio/sha256-simd				 v1.0.0 \
 	github.com/minio/simdjson-go				 v0.4.2 \
@@ -371,7 +371,7 @@ MODGO_MODULES =	\
 	github.com/scylladb/termtables				 v0.0.0-20191203121021-c4c0b6d42ff4 \
 	github.com/sean-/seed					 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/secure-io/sio-go				 v0.3.1 \
-	github.com/shirou/gopsutil/v3				 v3.22.2 \
+	github.com/shirou/gopsutil/v3				 v3.22.5 \
 	github.com/shurcoo!l/go					 v0.0.0-20200502201357-93f07166e636 \
 	github.com/shurcoo!l/httpfs				 v0.0.0-20190707220628-8d4bc4ba7749 \
 	github.com/shurcoo!l/sanitized_anchor_name		 v1.0.0 \
@@ -761,6 +761,7 @@ MODGO_MODFILES =	\
 	github.com/minio/pkg					 v1.1.14 \
 	github.com/minio/pkg					 v1.1.20 \
 	github.com/minio/pkg					 v1.1.22 \
+	github.com/minio/pkg					 v1.1.23 \
 	github.com/minio/sha256-simd				 v0.1.1 \
 	github.com/mitchellh/go-homedir				 v1.0.0 \
 	github.com/mitchellh/mapstructure			 v0.0.0-20160808181253-ca63d7c062ee \
@@ -823,6 +824,7 @@ MODGO_MODFILES =	\
 	github.com/rs/xid					 v1.3.0 \
 	github.com/shirou/gopsutil/v3				 v3.21.12 \
 	github.com/shirou/gopsutil/v3				 v3.21.6 \
+	github.com/shirou/gopsutil/v3				 v3.22.2 \
 	github.com/sirupsen/logrus				 v1.2.0 \
 	github.com/sirupsen/logrus				 v1.4.0 \
 	github.com/sirupsen/logrus				 v1.4.1 \
@@ -1092,7 +1094,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20210616094352-59db8d763f22 \
 	golang.org/x/sys					 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys					 v0.0.0-20210806184541-e5e7981a1069 \
-	golang.org/x/sys					 v0.0.0-20210816074244-15123e1e1f71 \
 	golang.org/x/sys					 v0.0.0-20210823070655-63515b42dcdf \
 	golang.org/x/sys					 v0.0.0-20210908233432-aa78b53d3365 \
 	golang.org/x/sys					 v0.0.0-20210927094055-39ccf1dd6fa6 \
