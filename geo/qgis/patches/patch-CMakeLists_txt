@@ -5,7 +5,7 @@ relax flex requirement as QGIS builds and runs fine with our flex.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -327,7 +327,7 @@ if(WITH_CORE)
+@@ -329,7 +329,7 @@ if(WITH_CORE)
      set (USING_NINJA TRUE)
    endif()
  
