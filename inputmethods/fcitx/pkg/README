@@ -8,7 +8,7 @@ chosen languages and graphical environments (e.g. Qt, GTK+).
 
 A basic installation of fcitx would be:
 
-	# pkg_add fcitx fcitx-config-qt fcitx-gtk fcitx-qt
+	# pkg_add fcitx fcitx-configtool-qt fcitx-gtk fcitx-qt
 	# pkg_add $YOUR_PREFERRED_INPUT_METHOD
 
 then configure fcitx to start with your DE/WM and setup your IM
@@ -54,6 +54,9 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 ${TRUEPREFIX}/bin/fcitx5 &
 
+To use fcitx with kitty terminal, also add the following line:
+
+export GLFW_IM_MODULE=ibus
 
 Setting up input engines
 ========================
@@ -62,6 +65,9 @@ To setup an input engine, run fcitx5-configtool after starting fcitx5,
 then select and add your preferred input method from the Avaliable
 Input Method panel. You might need to uncheck 'Only Show Current
 Language' to find your preferred input method.
+
+For more information, please refer to Fcitx's wiki page:
+https://www.fcitx-im.org/wiki/Setup_Fcitx_5
 
 Troubleshooting
 ===============
