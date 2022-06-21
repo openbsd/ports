@@ -1,8 +1,7 @@
 # bump security/sslscan if updating
 PORTROACH=	limit:^1\.1\.[0-9][a-z] skipb:0 skipv:1.1.1
-V=		1.1.1o
+V=		1.1.1p
 PKGSPEC=	openssl->=1.1.0,<1.2
-REVISION=	0
 
 SHLIBVER=	11.6
 SHARED_LIBS=	crypto ${SHLIBVER} \

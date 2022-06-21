@@ -2629,9 +2629,11 @@ ${MAN_PREFIX}/man3/SSL_CTX_flush_sessions.3
 ${MAN_PREFIX}/man3/SSL_CTX_free.3
 ${MAN_PREFIX}/man3/SSL_CTX_generate_session_ticket_fn.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_CA_list.3
+${MAN_PREFIX}/man3/SSL_CTX_get0_chain_cert_store.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_chain_certs.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_param.3
 ${MAN_PREFIX}/man3/SSL_CTX_get0_security_ex_data.3
+${MAN_PREFIX}/man3/SSL_CTX_get0_verify_cert_store.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_cert_store.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_ciphers.3
 ${MAN_PREFIX}/man3/SSL_CTX_get_client_CA_list.3
@@ -2887,6 +2889,7 @@ ${MAN_PREFIX}/man3/SSL_free.3
 ${MAN_PREFIX}/man3/SSL_free_buffers.3
 ${MAN_PREFIX}/man3/SSL_get0_CA_list.3
 ${MAN_PREFIX}/man3/SSL_get0_alpn_selected.3
+${MAN_PREFIX}/man3/SSL_get0_chain_cert_store.3
 ${MAN_PREFIX}/man3/SSL_get0_chain_certs.3
 ${MAN_PREFIX}/man3/SSL_get0_dane_authority.3
 ${MAN_PREFIX}/man3/SSL_get0_dane_tlsa.3
@@ -2898,6 +2901,7 @@ ${MAN_PREFIX}/man3/SSL_get0_peername.3
 ${MAN_PREFIX}/man3/SSL_get0_security_ex_data.3
 ${MAN_PREFIX}/man3/SSL_get0_session.3
 ${MAN_PREFIX}/man3/SSL_get0_verified_chain.3
+${MAN_PREFIX}/man3/SSL_get0_verify_cert_store.3
 ${MAN_PREFIX}/man3/SSL_get1_curves.3
 ${MAN_PREFIX}/man3/SSL_get1_groups.3
 ${MAN_PREFIX}/man3/SSL_get1_session.3
