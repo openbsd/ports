@@ -24,6 +24,7 @@
      SUBDIR += libmspack
      SUBDIR += libtar
      SUBDIR += libzip
+     SUBDIR += lrzip
      SUBDIR += luazlib
      SUBDIR += lxsplit
      SUBDIR += lz4
