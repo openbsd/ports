@@ -2,15 +2,8 @@ COMMENT =		range library for C++14/17/20
 
 GH_ACCOUNT =		ericniebler
 GH_PROJECT =		range-v3
-GH_TAGNAME =		0.11.0
-REVISION =		2
+GH_TAGNAME =		0.12.0
 CATEGORIES =		devel
-
-MASTER_SITES0 =		https://github.com/ericniebler/range-v3/commit/
-# both merged upstream
-PATCHFILES +=		range-v3-clang13-libcpp-fix-{}0487cca2.patch:0
-PATCHFILES +=		range-v3-recognise-openbsd-{}badc97b4.patch:0
-PATCH_DIST_STRIP =	-p1
 
 # BSL 1.0 (boost software license)
 PERMIT_PACKAGE =	Yes
