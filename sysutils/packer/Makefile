@@ -5,9 +5,8 @@ ONLY_FOR_ARCHS=		${LP64_ARCHS}
 COMMENT=		tool for building machine images
 
 MODGO_MODNAME=		github.com/hashicorp/packer
-MODGO_VERSION=		v1.8.1
+MODGO_VERSION=		v1.8.2
 DISTNAME=		packer-${MODGO_VERSION}
-REVISION=		1
 
 CATEGORIES=		sysutils
 

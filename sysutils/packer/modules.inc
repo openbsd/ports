@@ -6,7 +6,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/pubsub					 v1.3.1 \
 	cloud.google.com/go/storage					 v1.18.2 \
 	dmitri.shuralyov.com/gpu/mtl					 v0.0.0-20190408044501-666a987793e9 \
-	github.com/!azure/azure-sdk-for-go				 v55.7.0+incompatible \
+	github.com/!azure/azure-sdk-for-go				 v64.0.0+incompatible \
 	github.com/!azure/go-ansiterm					 v0.0.0-20170929234023-d6e3b3328b78 \
 	github.com/!azure/go-autorest					 v14.2.0+incompatible \
 	github.com/!azure/go-autorest/autorest				 v0.11.19 \
@@ -72,7 +72,6 @@ MODGO_MODULES =	\
 	github.com/biogo/hts						 v1.4.3 \
 	github.com/bmatcuk/doublestar					 v1.1.5 \
 	github.com/c2h5oh/datasize					 v0.0.0-20200825124411-48ed595a09d2 \
-	github.com/caarlos0/env/v6					 v6.7.2 \
 	github.com/cenkalti/backoff/v3					 v3.2.2 \
 	github.com/census-instrumentation/opencensus-proto		 v0.2.1 \
 	github.com/cespare/xxhash					 v1.1.0 \
@@ -217,10 +216,9 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-checkpoint				 v0.0.0-20171009173528-1545e56e46de \
 	github.com/hashicorp/go-cleanhttp				 v0.5.2 \
 	github.com/hashicorp/go-cty-funcs				 v0.0.0-20200930094925-2721b1e36840 \
-	github.com/hashicorp/go-getter					 v1.4.1 \
-	github.com/hashicorp/go-getter/gcs/v2				 v2.0.0-20200604122502-a6995fa1edad \
-	github.com/hashicorp/go-getter/s3/v2				 v2.0.0-20200604122502-a6995fa1edad \
-	github.com/hashicorp/go-getter/v2				 v2.0.2 \
+	github.com/hashicorp/go-getter/gcs/v2				 v2.1.0 \
+	github.com/hashicorp/go-getter/s3/v2				 v2.1.0 \
+	github.com/hashicorp/go-getter/v2				 v2.1.0 \
 	github.com/hashicorp/go-hclog					 v0.16.2 \
 	github.com/hashicorp/go-immutable-radix				 v1.3.1 \
 	github.com/hashicorp/go-kms-wrapping/entropy			 v0.1.0 \
@@ -245,7 +243,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/packer-plugin-alicloud			 v1.0.2 \
 	github.com/hashicorp/packer-plugin-amazon			 v1.1.0 \
 	github.com/hashicorp/packer-plugin-ansible			 v1.0.2 \
-	github.com/hashicorp/packer-plugin-azure			 v1.0.8 \
+	github.com/hashicorp/packer-plugin-azure			 v1.1.0 \
 	github.com/hashicorp/packer-plugin-chef				 v1.0.2 \
 	github.com/hashicorp/packer-plugin-cloudstack			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-converge			 v1.0.1 \
@@ -254,7 +252,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/packer-plugin-googlecompute		 v1.0.13 \
 	github.com/hashicorp/packer-plugin-hcloud			 v1.0.4 \
 	github.com/hashicorp/packer-plugin-hyperone			 v1.0.1 \
-	github.com/hashicorp/packer-plugin-hyperv			 v1.0.3 \
+	github.com/hashicorp/packer-plugin-hyperv			 v1.0.4 \
 	github.com/hashicorp/packer-plugin-inspec			 v1.0.0 \
 	github.com/hashicorp/packer-plugin-jdcloud			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-linode			 v1.0.3 \
@@ -265,20 +263,20 @@ MODGO_MODULES =	\
 	github.com/hashicorp/packer-plugin-openstack			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-oracle			 v1.0.2 \
 	github.com/hashicorp/packer-plugin-outscale			 v1.0.2 \
-	github.com/hashicorp/packer-plugin-parallels			 v1.0.2 \
+	github.com/hashicorp/packer-plugin-parallels			 v1.0.3 \
 	github.com/hashicorp/packer-plugin-profitbricks			 v1.0.2 \
-	github.com/hashicorp/packer-plugin-proxmox			 v1.0.7 \
+	github.com/hashicorp/packer-plugin-proxmox			 v1.0.8 \
 	github.com/hashicorp/packer-plugin-puppet			 v1.0.1 \
-	github.com/hashicorp/packer-plugin-qemu				 v1.0.4 \
+	github.com/hashicorp/packer-plugin-qemu				 v1.0.5 \
 	github.com/hashicorp/packer-plugin-salt				 v1.0.0 \
-	github.com/hashicorp/packer-plugin-sdk				 v0.2.13 \
+	github.com/hashicorp/packer-plugin-sdk				 v0.3.0 \
 	github.com/hashicorp/packer-plugin-tencentcloud			 v1.0.5 \
 	github.com/hashicorp/packer-plugin-triton			 v1.0.1 \
 	github.com/hashicorp/packer-plugin-ucloud			 v1.0.1 \
-	github.com/hashicorp/packer-plugin-vagrant			 v1.0.2 \
-	github.com/hashicorp/packer-plugin-virtualbox			 v1.0.3 \
-	github.com/hashicorp/packer-plugin-vmware			 v1.0.6 \
-	github.com/hashicorp/packer-plugin-vsphere			 v1.0.4 \
+	github.com/hashicorp/packer-plugin-vagrant			 v1.0.3 \
+	github.com/hashicorp/packer-plugin-virtualbox			 v1.0.4 \
+	github.com/hashicorp/packer-plugin-vmware			 v1.0.7 \
+	github.com/hashicorp/packer-plugin-vsphere			 v1.0.5 \
 	github.com/hashicorp/packer-plugin-yandex			 v1.1.1 \
 	github.com/hashicorp/serf					 v0.9.5 \
 	github.com/hashicorp/vault/api					 v1.1.1 \
@@ -482,7 +480,7 @@ MODGO_MODULES =	\
 	gopkg.in/airbrake/gobrake.v2					 v2.0.9 \
 	gopkg.in/alecthomas/kingpin.v2					 v2.2.6 \
 	gopkg.in/check.v1						 v1.0.0-20201130134442-10cb98267c6c \
-	gopkg.in/cheggaaa/pb.v1						 v1.0.27 \
+	gopkg.in/cheggaaa/pb.v1						 v1.0.28 \
 	gopkg.in/errgo.v2						 v2.1.0 \
 	gopkg.in/fsnotify.v1						 v1.4.7 \
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2			 v2.1.2 \
@@ -581,7 +579,6 @@ MODGO_MODFILES =	\
 	github.com/asaskevich/govalidator				 v0.0.0-20190424111038-f61b66f89f4a \
 	github.com/asaskevich/govalidator				 v0.0.0-20200108200545-475eaeb16496 \
 	github.com/asaskevich/govalidator				 v0.0.0-20200428143746-21a406dcc535 \
-	github.com/aws/aws-sdk-go					 v1.15.78 \
 	github.com/aws/aws-sdk-go					 v1.25.37 \
 	github.com/aws/aws-sdk-go					 v1.30.27 \
 	github.com/aws/aws-sdk-go					 v1.30.8 \
@@ -783,8 +780,10 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/errwrap					 v1.0.0 \
 	github.com/hashicorp/go-cleanhttp				 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp				 v0.5.1 \
+	github.com/hashicorp/go-getter/gcs/v2				 v2.0.0-20200604122502-a6995fa1edad \
+	github.com/hashicorp/go-getter/s3/v2				 v2.0.0-20200604122502-a6995fa1edad \
 	github.com/hashicorp/go-getter/v2				 v2.0.0 \
-	github.com/hashicorp/go-getter/v2				 v2.0.0-20200511090339-3107ec4af37a \
+	github.com/hashicorp/go-getter/v2				 v2.0.2 \
 	github.com/hashicorp/go-hclog					 v0.0.0-20180709165350-ff2cf002a8dd \
 	github.com/hashicorp/go-hclog					 v0.12.0 \
 	github.com/hashicorp/go-hclog					 v0.14.1 \
@@ -812,6 +811,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/golang-lru					 v0.5.3 \
 	github.com/hashicorp/hcl/v2					 v2.10.1 \
 	github.com/hashicorp/packer-plugin-sdk				 v0.2.12 \
+	github.com/hashicorp/packer-plugin-sdk				 v0.2.13 \
 	github.com/hashicorp/packer-plugin-sdk				 v0.2.3 \
 	github.com/hashicorp/packer-plugin-sdk				 v0.2.5 \
 	github.com/hashicorp/packer-plugin-sdk				 v0.2.7 \
@@ -825,7 +825,6 @@ MODGO_MODFILES =	\
 	github.com/ianlancetaylor/demangle				 v0.0.0-20181102032728-5e5cf60278f6 \
 	github.com/imdario/mergo					 v0.3.11 \
 	github.com/imdario/mergo					 v0.3.6 \
-	github.com/jmespath/go-jmespath					 v0.0.0-20160202185014-0b12d6b521d8 \
 	github.com/jmespath/go-jmespath					 v0.0.0-20180206201540-c2b33e8439af \
 	github.com/jmespath/go-jmespath					 v0.3.0 \
 	github.com/json-iterator/go					 v1.1.5 \
@@ -858,10 +857,8 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty					 v0.0.11 \
 	github.com/mattn/go-isatty					 v0.0.12 \
 	github.com/mattn/go-isatty					 v0.0.3 \
-	github.com/mattn/go-isatty					 v0.0.4 \
 	github.com/mattn/go-isatty					 v0.0.8 \
 	github.com/mattn/go-runewidth					 v0.0.3 \
-	github.com/mattn/go-runewidth					 v0.0.4 \
 	github.com/mattn/go-runewidth					 v0.0.9 \
 	github.com/miekg/dns						 v1.0.14 \
 	github.com/mitchellh/cli					 v1.0.0 \
@@ -944,7 +941,6 @@ MODGO_MODFILES =	\
 	github.com/ugorji/go						 v1.1.4 \
 	github.com/ugorji/go/codec					 v0.0.0-20181204163529-d75b2dcb6bc8 \
 	github.com/ugorji/go/codec					 v1.2.4 \
-	github.com/ulikunitz/xz						 v0.5.5 \
 	github.com/ulikunitz/xz						 v0.5.6 \
 	github.com/ulikunitz/xz						 v0.5.8 \
 	github.com/vmware/govmomi					 v0.24.1 \
