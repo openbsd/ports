@@ -164,6 +164,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-sqlite3					 v2.0.3+incompatible \
 	github.com/memcachier/mc					 v2.0.1+incompatible \
 	github.com/microcosm-cc/bluemonday				 v1.0.18 \
+	github.com/miekg/dns						 v1.1.49 \
 	github.com/mitchellh/go-homedir					 v1.1.0 \
 	github.com/mitchellh/mapstructure				 v1.5.0 \
 	github.com/modern-go/concurrent					 v0.0.0-20180306012644-bacd9c7ef1dd \
@@ -525,6 +526,7 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark				 v1.1.27 \
 	github.com/yuin/goldmark				 v1.1.32 \
 	github.com/yuin/goldmark				 v1.2.1 \
+	github.com/yuin/goldmark				 v1.3.5 \
 	go.opencensus.io					 v0.21.0 \
 	go.opencensus.io					 v0.22.0 \
 	go.opencensus.io					 v0.22.2 \
@@ -583,6 +585,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod					 v0.3.0 \
 	golang.org/x/mod					 v0.4.0 \
 	golang.org/x/mod					 v0.4.1 \
+	golang.org/x/mod					 v0.4.2 \
 	golang.org/x/mod					 v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 \
 	golang.org/x/net					 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net					 v0.0.0-20180826012351-8a410e7b638d \
@@ -620,7 +623,9 @@ MODGO_MODFILES =	\
 	golang.org/x/net					 v0.0.0-20201209123823-ac852fbbde11 \
 	golang.org/x/net					 v0.0.0-20201224014010-6772e930b67b \
 	golang.org/x/net					 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net					 v0.0.0-20210405180319-a5a99cb37ef4 \
 	golang.org/x/net					 v0.0.0-20210614182718-04defd469f4e \
+	golang.org/x/net					 v0.0.0-20210726213435-c6fcb2dbf985 \
 	golang.org/x/net					 v0.0.0-20211015210444-4f30a5c0130f \
 	golang.org/x/net					 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net					 v0.0.0-20220127200216-cd36cc0744dd \
@@ -690,8 +695,10 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20210104204734-6f8348627aad \
 	golang.org/x/sys					 v0.0.0-20210119212857-b64e53b001e4 \
 	golang.org/x/sys					 v0.0.0-20210225134936-a50acf3fe073 \
+	golang.org/x/sys					 v0.0.0-20210330210617-4fbd30eecc44 \
 	golang.org/x/sys					 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys					 v0.0.0-20210423185535-09eb48e85fd7 \
+	golang.org/x/sys					 v0.0.0-20210510120138-977fb7262007 \
 	golang.org/x/sys					 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys					 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys					 v0.0.0-20210806184541-e5e7981a1069 \
@@ -767,6 +774,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools					 v0.0.0-20210105154028-b0ab187a4818 \
 	golang.org/x/tools					 v0.0.0-20210108195828-e2f9c7f1fc8e \
 	golang.org/x/tools					 v0.1.0 \
+	golang.org/x/tools					 v0.1.6-0.20210726203631-07bc1bf47fb2 \
 	golang.org/x/xerrors					 v0.0.0-20190410155217-1f06c39b4373 \
 	golang.org/x/xerrors					 v0.0.0-20190513163551-3ee3066db522 \
 	golang.org/x/xerrors					 v0.0.0-20190717185122-a985d3407aa7 \

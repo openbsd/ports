@@ -30,14 +30,3 @@ Promote to admin rights:
     $ doas -u _gotosocial gotosocial \
         --config-path ${SYSCONFDIR}/gotosocial.yaml admin account promote \
             --username username
-
-GoToSocial Admin Interface
-==========================
-
-GoToSocial does not come with an admin interface by default.
-
-However, you can use a public instance at:
-https://gts.superseriousbusiness.org/admin/
-
-You can also build one from source with:
-https://github.com/superseriousbusiness/gotosocial-admin

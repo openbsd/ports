@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.3.4
+MODGO_VERSION =	v0.3.6
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
@@ -13,6 +13,10 @@ CATEGORIES =	www
 HOMEPAGE =	https://docs.gotosocial.org
 
 MAINTAINER =	Hukadan <me@hukadan.org>
+
+# fetch the web assets built for the release
+DISTFILES +=	gotosocial_${MODGO_VERSION:S/v//}_web-assets.tar.gz:0
+MASTER_SITES0 =	https://github.com/superseriousbusiness/gotosocial/releases/download/${MODGO_VERSION}/
 
 # AGPL-3.0+
 PERMIT_PACKAGE =	yes
@@ -25,6 +29,10 @@ WRKDIST =	${WRKSRC}
 
 PREFIX =	${VARBASE}
 INSTDIR =	${PREFIX}/gotosocial
+
+post-extract:
+	tar -C ${WRKDIR} -xzf \
+		${FULLDISTDIR}/gotosocial_${MODGO_VERSION:S/v//}_web-assets.tar.gz
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/example/config.yaml
@@ -40,7 +48,7 @@ do-install:
 		${WRKINST}/${LOCALBASE}/share/examples/gotosocial/gotosocial.yaml
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	${INSTALL_DATA_DIR} ${INSTDIR}/storage
-	cp -R ${WRKSRC}/web ${INSTDIR}
+	cp -R ${WRKDIR}/web ${INSTDIR}
 
 .include "modules.inc"
 
