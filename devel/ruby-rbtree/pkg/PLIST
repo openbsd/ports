@@ -1,0 +1,9 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/MANIFEST
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/lib/
+@so ${GEM_LIB}/gems/${DISTNAME}/lib/rbtree.so
+${GEM_LIB}/gems/${DISTNAME}/test.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
