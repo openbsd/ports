@@ -1684,6 +1684,8 @@
      SUBDIR += ruby-rake-remote_task
      SUBDIR += ruby-rb-gsl,ruby30
      SUBDIR += ruby-rb-gsl,ruby31
+     SUBDIR += ruby-rbtree,ruby30
+     SUBDIR += ruby-rbtree,ruby31
      SUBDIR += ruby-ref
      SUBDIR += ruby-regexp_parser
      SUBDIR += ruby-rgen
@@ -1697,6 +1699,8 @@
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-shims
+     SUBDIR += ruby-sorted_set,ruby30
+     SUBDIR += ruby-sorted_set,ruby31
      SUBDIR += ruby-subset_sum,ruby30
      SUBDIR += ruby-subset_sum,ruby31
      SUBDIR += ruby-sync
