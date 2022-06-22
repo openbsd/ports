@@ -7,6 +7,6 @@ Index: third_party/angle/src/libANGLE/renderer/vulkan/DisplayVk_api.h
  
 -#if defined(ANGLE_PLATFORM_LINUX)
 +#if defined(ANGLE_PLATFORM_POSIX)
- bool IsVulkanXcbDisplayAvailable();
- DisplayImpl *CreateVulkanXcbDisplay(const egl::DisplayState &state);
+ bool IsVulkanWaylandDisplayAvailable();
+ DisplayImpl *CreateVulkanWaylandDisplay(const egl::DisplayState &state);
  

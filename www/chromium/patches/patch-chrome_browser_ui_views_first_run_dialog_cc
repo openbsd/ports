@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/first_run_dialog.cc
 --- chrome/browser/ui/views/first_run_dialog.cc.orig
 +++ chrome/browser/ui/views/first_run_dialog.cc
-@@ -38,7 +38,7 @@
+@@ -34,7 +34,7 @@
  
  namespace {
  
@@ -16,6 +16,6 @@ Index: chrome/browser/ui/views/first_run_dialog.cc
    ChangeMetricsReportingState(report_crashes_->GetChecked());
 -#else
 +#elif !BUILDFLAG(IS_BSD)
- #if BUILDFLAG(IS_CHROMEOS_ASH)
-   metrics::structured::NeutrinoDevicesLog(
-       metrics::structured::NeutrinoDevicesLocation::kFirstRunDialog);
+   ChangeMetricsReportingStateWithReply(
+       report_crashes_->GetChecked(),
+       base::BindOnce(&InitCrashReporterIfEnabled));

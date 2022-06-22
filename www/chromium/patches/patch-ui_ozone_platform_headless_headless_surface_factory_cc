@@ -10,7 +10,7 @@ Index: ui/ozone/platform/headless/headless_surface_factory.cc
  #include "ui/ozone/platform/headless/vulkan_implementation_headless.h"
  #endif
  
-@@ -280,7 +280,7 @@ void HeadlessSurfaceFactory::CheckBasePath() const {
+@@ -281,7 +281,7 @@ void HeadlessSurfaceFactory::CheckBasePath() const {
      PLOG(FATAL) << "Unable to write to output location";
  }
  

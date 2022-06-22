@@ -1,9 +1,9 @@
-Index: chrome/common/extensions/command.cc
---- chrome/common/extensions/command.cc.orig
-+++ chrome/common/extensions/command.cc
-@@ -295,7 +295,7 @@ std::string Command::CommandPlatform() {
+Index: extensions/common/command.cc
+--- extensions/common/command.cc.orig
++++ extensions/common/command.cc
+@@ -288,7 +288,7 @@ std::string Command::CommandPlatform() {
    return values::kKeybindingPlatformMac;
- #elif BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
+ #elif BUILDFLAG(IS_CHROMEOS)
    return values::kKeybindingPlatformChromeOs;
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

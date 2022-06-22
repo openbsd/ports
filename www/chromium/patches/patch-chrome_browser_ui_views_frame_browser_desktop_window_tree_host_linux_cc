@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc
 --- chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc.orig
 +++ chrome/browser/ui/views/frame/browser_desktop_window_tree_host_linux.cc
-@@ -151,7 +151,7 @@ bool BrowserDesktopWindowTreeHostLinux::SupportsClient
+@@ -145,7 +145,7 @@ bool BrowserDesktopWindowTreeHostLinux::SupportsClient
  }
  
  void BrowserDesktopWindowTreeHostLinux::UpdateFrameHints() {

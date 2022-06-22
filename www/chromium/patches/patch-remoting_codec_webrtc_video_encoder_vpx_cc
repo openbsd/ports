@@ -9,4 +9,4 @@ Index: remoting/codec/webrtc_video_encoder_vpx.cc
 +#if (BUILDFLAG(IS_BSD) || BUILDFLAG(IS_LINUX)) && !BUILDFLAG(IS_CHROMEOS_LACROS)
    // On Linux, using too many threads for VP8 encoding has been linked to high
    // CPU usage on machines that are under stress. See http://crbug.com/1151148.
-   config->g_threads = std::min(config->g_threads, 2U);
+   // 5/3/2022 update: Perf testing has shown that doubling the number of threads

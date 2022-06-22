@@ -10,7 +10,7 @@ Index: gpu/command_buffer/service/external_vk_image_backing.cc
  #include "gpu/command_buffer/service/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -570,7 +570,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
+@@ -571,7 +571,7 @@ ExternalVkImageBacking::ProduceDawn(SharedImageManager
                                      MemoryTypeTracker* tracker,
                                      WGPUDevice wgpuDevice,
                                      WGPUBackendType backend_type) {

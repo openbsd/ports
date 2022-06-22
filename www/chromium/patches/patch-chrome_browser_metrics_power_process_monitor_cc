@@ -1,7 +1,7 @@
-Index: chrome/browser/performance_monitor/process_monitor.cc
---- chrome/browser/performance_monitor/process_monitor.cc.orig
-+++ chrome/browser/performance_monitor/process_monitor.cc
-@@ -64,7 +64,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
+Index: chrome/browser/metrics/power/process_monitor.cc
+--- chrome/browser/metrics/power/process_monitor.cc.orig
++++ chrome/browser/metrics/power/process_monitor.cc
+@@ -59,7 +59,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
    metrics.precise_cpu_usage = process_metrics.GetPreciseCPUUsage();
  #endif
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -10,7 +10,7 @@ Index: chrome/browser/performance_monitor/process_monitor.cc
    metrics.idle_wakeups = process_metrics.GetIdleWakeupsPerSecond();
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -119,7 +119,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
+@@ -114,7 +114,7 @@ ProcessMonitor::Metrics& operator+=(ProcessMonitor::Me
  #endif
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

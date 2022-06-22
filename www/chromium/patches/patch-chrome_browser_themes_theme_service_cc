@@ -10,7 +10,7 @@ Index: chrome/browser/themes/theme_service.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -511,7 +511,7 @@ ThemeService::BrowserThemeProvider::GetColorProviderCo
+@@ -489,7 +489,7 @@ ThemeService::BrowserThemeProvider::GetColorProviderCo
          native_theme = ui::NativeTheme::GetInstanceForDarkUI();
        } else {
          native_theme = ui::NativeTheme::GetInstanceForNativeUi();
@@ -19,7 +19,7 @@ Index: chrome/browser/themes/theme_service.cc
          if (const auto* linux_ui = views::LinuxUI::instance()) {
            native_theme =
                linux_ui->GetNativeTheme(delegate_->ShouldUseSystemTheme());
-@@ -631,7 +631,7 @@ CustomThemeSupplier* ThemeService::GetThemeSupplier() 
+@@ -611,7 +611,7 @@ CustomThemeSupplier* ThemeService::GetThemeSupplier() 
  }
  
  bool ThemeService::ShouldUseSystemTheme() const {
@@ -28,7 +28,7 @@ Index: chrome/browser/themes/theme_service.cc
    return profile_->GetPrefs()->GetBoolean(prefs::kUsesSystemTheme);
  #else
    return false;
-@@ -639,7 +639,7 @@ bool ThemeService::ShouldUseSystemTheme() const {
+@@ -619,7 +619,7 @@ bool ThemeService::ShouldUseSystemTheme() const {
  }
  
  bool ThemeService::ShouldUseCustomFrame() const {

@@ -1,7 +1,7 @@
 Index: chrome/updater/configurator.cc
 --- chrome/updater/configurator.cc.orig
 +++ chrome/updater/configurator.cc
-@@ -39,7 +39,7 @@
+@@ -40,7 +40,7 @@
  #include "chrome/updater/win/net/network.h"
  #elif BUILDFLAG(IS_MAC)
  #include "chrome/updater/mac/net/network.h"

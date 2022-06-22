@@ -39,7 +39,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
  
      # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -904,7 +911,7 @@ config("compiler_cpu_abi") {
+@@ -903,7 +910,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -48,7 +48,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -918,7 +925,7 @@ config("compiler_cpu_abi") {
+@@ -917,7 +924,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -57,7 +57,7 @@ Index: build/config/compiler/BUILD.gn
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1239,7 +1246,7 @@ config("compiler_deterministic") {
+@@ -1238,7 +1245,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -66,7 +66,7 @@ Index: build/config/compiler/BUILD.gn
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1530,7 +1537,7 @@ config("default_warnings") {
+@@ -1529,12 +1536,12 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -74,9 +74,6 @@ Index: build/config/compiler/BUILD.gn
 +      if (!is_nacl && !is_bsd) {
          # TODO(https://crbug.com/1300731) Clean up and enable.
          cflags += [ "-Wno-unqualified-std-cast-call" ]
- 
-@@ -1538,7 +1545,7 @@ config("default_warnings") {
-         cflags += [ "-Wno-deprecated-non-prototype" ]
        }
  
 -      if (!is_nacl && !(is_chromeos ||
@@ -84,7 +81,7 @@ Index: build/config/compiler/BUILD.gn
                          default_toolchain == "//build/toolchain/cros:target")) {
          # TODO(https://crbug.com/1316298): Re-enable once test failure is figured out
          cflags += [
-@@ -1723,7 +1730,7 @@ config("no_chromium_code") {
+@@ -1719,7 +1726,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -93,7 +90,7 @@ Index: build/config/compiler/BUILD.gn
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2237,7 +2244,7 @@ config("afdo_optimize_size") {
+@@ -2233,7 +2240,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -102,7 +99,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2253,7 +2260,7 @@ config("afdo") {
+@@ -2249,7 +2256,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -111,7 +108,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2396,7 +2403,8 @@ config("symbols") {
+@@ -2392,7 +2399,8 @@ config("symbols") {
      }
    }
  

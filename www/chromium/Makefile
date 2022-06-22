@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			102.0.5005.115
+V=			103.0.5060.53
 
 DISTNAME=		chromium-${V}
 
@@ -14,7 +14,7 @@ DISTFILES+=		${EXTRACT_ONLY} \
 			${REGRESS_DISTFILES}
 
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX} \
-			test_fonts-cd96fc55dc243f6c6f4cb63ad117cad6cd48dceb.tar.gz:0
+			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:0
 
 EXTRACT_ONLY=		chromium-${V}${EXTRACT_SUFX}
 

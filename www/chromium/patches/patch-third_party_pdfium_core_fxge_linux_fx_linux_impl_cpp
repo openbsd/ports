@@ -2,7 +2,7 @@ Index: third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 --- third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp.orig
 +++ third_party/pdfium/core/fxge/linux/fx_linux_impl.cpp
 @@ -18,7 +18,7 @@
- #include "third_party/base/cxx17_backports.h"
+ #include "third_party/base/check.h"
  
  #if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_FUCHSIA) && \
 -    !defined(OS_ASMJS)

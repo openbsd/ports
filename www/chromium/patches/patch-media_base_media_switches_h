@@ -1,7 +1,7 @@
 Index: media/base/media_switches.h
 --- media/base/media_switches.h.orig
 +++ media/base/media_switches.h
-@@ -195,7 +195,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
+@@ -199,7 +199,7 @@ MEDIA_EXPORT extern const base::Feature kUseDecoderStr
  MEDIA_EXPORT extern const base::Feature kUseFakeDeviceForMediaStream;
  MEDIA_EXPORT extern const base::Feature kUseMediaHistoryStore;
  MEDIA_EXPORT extern const base::Feature kUseR16Texture;
@@ -10,7 +10,7 @@ Index: media/base/media_switches.h
  MEDIA_EXPORT extern const base::Feature kVaapiVideoDecodeLinux;
  MEDIA_EXPORT extern const base::Feature kVaapiVideoEncodeLinux;
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -278,7 +278,7 @@ MEDIA_EXPORT extern const base::Feature kD3D11Vp9kSVCH
+@@ -306,7 +306,7 @@ MEDIA_EXPORT extern const base::FeatureParam<
  MEDIA_EXPORT extern const base::Feature kDeprecateLowUsageCodecs;
  #endif
  

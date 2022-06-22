@@ -1,7 +1,7 @@
 Index: chrome/updater/app/app_install.cc
 --- chrome/updater/app/app_install.cc.orig
 +++ chrome/updater/app/app_install.cc
-@@ -188,7 +188,7 @@ void AppInstall::WakeCandidate() {
+@@ -197,7 +197,7 @@ void AppInstall::WakeCandidate() {
        update_service_internal, base::WrapRefCounted(this)));
  }
  

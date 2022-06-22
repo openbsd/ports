@@ -1,7 +1,7 @@
 Index: ui/views/linux_ui/linux_ui.cc
 --- ui/views/linux_ui/linux_ui.cc.orig
 +++ ui/views/linux_ui/linux_ui.cc
-@@ -21,7 +21,7 @@ void LinuxUI::SetInstance(std::unique_ptr<LinuxUI> ins
+@@ -24,7 +24,7 @@ void LinuxUI::SetInstance(std::unique_ptr<LinuxUI> ins
    g_linux_ui = instance.release();
  
    SkiaFontDelegate::SetInstance(g_linux_ui);

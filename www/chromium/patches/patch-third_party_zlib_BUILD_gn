@@ -19,7 +19,7 @@ Index: third_party/zlib/BUILD.gn
        include_dirs = [ "." ]
  
        if (!is_win && !is_clang) {
-@@ -396,7 +396,7 @@ static_library("minizip") {
+@@ -398,7 +398,7 @@ static_library("minizip") {
      ]
    }
  

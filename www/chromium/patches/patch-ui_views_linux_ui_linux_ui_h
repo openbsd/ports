@@ -1,7 +1,7 @@
 Index: ui/views/linux_ui/linux_ui.h
 --- ui/views/linux_ui/linux_ui.h.orig
 +++ ui/views/linux_ui/linux_ui.h
-@@ -21,7 +21,7 @@
+@@ -23,7 +23,7 @@
  #include "ui/views/controls/button/button.h"
  #include "ui/views/views_export.h"
  
@@ -10,7 +10,7 @@ Index: ui/views/linux_ui/linux_ui.h
  #include "ui/shell_dialogs/shell_dialog_linux.h"
  #endif
  
-@@ -57,7 +57,7 @@ class WindowFrameProvider;
+@@ -59,7 +59,7 @@ class WindowFrameProvider;
  // project that wants to do linux desktop native rendering.
  class VIEWS_EXPORT LinuxUI : public ui::LinuxInputMethodContextFactory,
                               public gfx::SkiaFontDelegate,
