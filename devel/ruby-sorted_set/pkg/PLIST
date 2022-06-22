@@ -1,0 +1,18 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/test.yml
+@comment ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/console
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/setup
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/sorted_set.rb
+${GEM_LIB}/gems/${DISTNAME}/sorted_set.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

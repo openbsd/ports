@@ -1,0 +1,10 @@
+SortedSet implements a Set whose elements are sorted in ascending
+order (according to the return values of their <=> methods) when
+iterating over them.
+
+Every element in SortedSet must be mutually comparable to every
+other: comparison with <=> must not return nil for any pair of
+elements. Otherwise ArgumentError will be raised.
+
+Currently this library does nothing for JRuby, as it has its own
+version of Set and SortedSet.
