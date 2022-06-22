@@ -8,6 +8,7 @@ SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
 
+REVISION-main =		0
 REVISION-tkinter =	0
 
 # This is the MODPY_DEFAULT_VERSION_3 version of Python:

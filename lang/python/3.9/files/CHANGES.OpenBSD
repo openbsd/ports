@@ -19,5 +19,8 @@ in PY_CPPFLAGS/PY_LDFLAGS and thus leaking to python extensions.
 OpenBSD's version of llvm-ar is installed as /usr/bin/ar, and the
 compiler as passed to ports builds is /usr/bin/cc.
 
+7.  Use closefrom(2) instead of looping through all the file descriptors
+and calling close(2) on them.
+
 These changes are available in the OpenBSD CVS repository
 <http://www.openbsd.org/anoncvs.html> in ports/lang/python/3.9.
