@@ -1240,7 +1240,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/playbooks/windows_ho
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/playbooks/windows_hosts_prepare.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/playbooks/windows_hosts_restore.ps1
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/playbooks/windows_hosts_restore.yml
-lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest.ini
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/config/
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/config/default.ini
+lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/pytest/config/legacy.ini
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/requirements/
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/requirements/ansible.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_test/_data/requirements/constraints.txt
