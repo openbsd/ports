@@ -37,6 +37,8 @@ share/recoll/examples/mimeconf
 share/recoll/examples/mimemap
 share/recoll/examples/mimeview
 share/recoll/examples/rclmon.sh
+share/recoll/examples/recoll-common.css
+share/recoll/examples/recoll-common.qss
 share/recoll/examples/recoll-dark.css
 share/recoll/examples/recoll-dark.qss
 share/recoll/examples/recoll.conf
