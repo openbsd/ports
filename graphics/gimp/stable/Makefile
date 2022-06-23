@@ -1,7 +1,6 @@
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME =	gimp-2.10.30
-REVISION =	1
+DISTNAME =	gimp-2.10.32
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -23,20 +22,20 @@ EXTRACT_SUFX=	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += ICE Iex-3_1 IlmThread-3_1 OpenEXR-3_1 OpenEXRCore-3_1 OpenEXRUtil-3_1
-WANTLIB += Imath-3_1 SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xau Xdmcp Xi Xinerama Xmu Xpm Xrandr Xrender Xt aa aom atk-1.0
-WANTLIB += avahi-client avahi-common babl-0.1 bz2 c cairo cairo-gobject
-WANTLIB += cups curses dav1d dbus-1 de265 execinfo exiv2 expat
-WANTLIB += ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gegl-0.4 gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
-WANTLIB += gobject-2.0 graphite2 gs gtk-x11-2.0 harfbuzz heif
-WANTLIB += hogweed iconv idn idn2 ijs intl jbig2dec jpeg json-c json-glib-1.0
-WANTLIB += lcms lcms2 lzma m mng mypaint nettle openjp2 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 paper pcre pixman-1
-WANTLIB += png poppler poppler-glib rsvg-2 tasn1 tiff unistring
+WANTLIB += ICE Iex-3_1 IlmThread-3_1 Imath-3_1 OpenEXR-3_1 OpenEXRCore-3_1
+WANTLIB += OpenEXRUtil-3_1 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xt aa aom atk-1.0 avahi-client avahi-common babl-0.1
+WANTLIB += bz2 c cairo cairo-gobject crypto cups curses dav1d
+WANTLIB += dbus-1 de265 execinfo exiv2 expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gegl-0.4 gexiv2
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gs gtk-x11-2.0 harfbuzz heif iconv idn ijs intl jbig2dec
+WANTLIB += jpeg json-c json-glib-1.0 lcms lcms2 lzma m mng mypaint
+WANTLIB += openjp2 pango-1.0 pangocairo-1.0 pangoft2-1.0 paper
+WANTLIB += pcre pixman-1 png poppler poppler-glib rsvg-2 ssl tiff
 WANTLIB += webp webpdemux webpmux wmf-0.2 wmflite-0.2 x265 xcb
-WANTLIB += xcb-render xcb-shm xml2 z zstd brotlidec brotlienc
+WANTLIB += xcb-render xcb-shm xml2 z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
