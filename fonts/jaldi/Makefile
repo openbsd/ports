@@ -1,0 +1,22 @@
+COMMENT =	libre Devanagari typeface family
+
+TYPEFACE =	jaldi
+V =		1.007
+
+DISTFILES =	${V}.zip
+MASTER_SITES =	https://github.com/Omnibus-Type/Jaldi/archive/refs/tags/
+
+MAINTAINER =	George Rosamond <george@nycbug.org>
+
+# SIL OFL 1.1
+PERMIT_PACKAGE =	Yes
+
+MODULES =	font
+
+NO_BUILD =	Yes
+NO_TEST =	Yes
+PKG_ARCH =	*
+
+WRKSRC =	${WRKDIST}/Jaldi-${V}/Fonts
+
+.include <bsd.port.mk>

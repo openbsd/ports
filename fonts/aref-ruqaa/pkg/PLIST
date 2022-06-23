@@ -1,0 +1,6 @@
+share/fonts/
+@fontdir share/fonts/aref-ruqaa/
+share/fonts/aref-ruqaa/ArefRuqaa-Bold.ttf
+share/fonts/aref-ruqaa/ArefRuqaa-Regular.ttf
+share/fonts/aref-ruqaa/ArefRuqaaInk-Bold.ttf
+share/fonts/aref-ruqaa/ArefRuqaaInk-Regular.ttf

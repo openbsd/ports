@@ -1,0 +1,11 @@
+share/fonts/
+@fontdir share/fonts/vazirmatn/
+share/fonts/vazirmatn/Vazirmatn-Black.ttf
+share/fonts/vazirmatn/Vazirmatn-Bold.ttf
+share/fonts/vazirmatn/Vazirmatn-ExtraBold.ttf
+share/fonts/vazirmatn/Vazirmatn-ExtraLight.ttf
+share/fonts/vazirmatn/Vazirmatn-Light.ttf
+share/fonts/vazirmatn/Vazirmatn-Medium.ttf
+share/fonts/vazirmatn/Vazirmatn-Regular.ttf
+share/fonts/vazirmatn/Vazirmatn-SemiBold.ttf
+share/fonts/vazirmatn/Vazirmatn-Thin.ttf

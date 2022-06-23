@@ -1,0 +1,4 @@
+share/fonts/
+@fontdir share/fonts/jaldi/
+share/fonts/jaldi/Jaldi-Bold.ttf
+share/fonts/jaldi/Jaldi-Regular.ttf
