@@ -1,7 +1,7 @@
 Index: src/core/settings.c
 --- src/core/settings.c.orig
 +++ src/core/settings.c
-@@ -726,7 +726,7 @@ static CONFIG_REC *parse_configfile(const char *fname)
+@@ -750,7 +750,7 @@ static CONFIG_REC *parse_configfile(const char *fname)
  	else {
  		/* user configuration file not found, use the default one
  		   from sysconfdir */

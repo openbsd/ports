@@ -6,7 +6,7 @@ MULTI_PACKAGES = -main -otr
 COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
-V =		1.2.3
+V =		1.4.1
 DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
@@ -57,8 +57,5 @@ PORTHOME =	${WRKDIR}
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/irssi.1
-
-post-install:
-	${INSTALL_DATA} ${WRKBUILD}/irssi-config ${PREFIX}/include/irssi/
 
 .include <bsd.port.mk>

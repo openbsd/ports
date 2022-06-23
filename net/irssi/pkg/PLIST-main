@@ -1,7 +1,6 @@
 @pkgpath net/irssi,socks
 @bin bin/irssi
 include/irssi/
-include/irssi/irssi-config
 include/irssi/irssi-config.h
 include/irssi/irssi-version.h
 include/irssi/src/
@@ -42,6 +41,7 @@ include/irssi/src/core/queries.h
 include/irssi/src/core/query-rec.h
 include/irssi/src/core/rawlog.h
 include/irssi/src/core/recode.h
+include/irssi/src/core/refstrings.h
 include/irssi/src/core/server-connect-rec.h
 include/irssi/src/core/server-rec.h
 include/irssi/src/core/server-setup-rec.h
@@ -102,6 +102,7 @@ include/irssi/src/fe-text/mainwindows.h
 include/irssi/src/fe-text/statusbar-item.h
 include/irssi/src/fe-text/statusbar.h
 include/irssi/src/fe-text/term.h
+include/irssi/src/fe-text/textbuffer-formats.h
 include/irssi/src/fe-text/textbuffer-view.h
 include/irssi/src/fe-text/textbuffer.h
 include/irssi/src/irc/
@@ -151,6 +152,7 @@ lib/irssi/
 lib/irssi/modules/
 lib/irssi/modules/libirc_proxy.la
 @so lib/irssi/modules/libirc_proxy.so
+lib/pkgconfig/irssi-1.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi.pm
