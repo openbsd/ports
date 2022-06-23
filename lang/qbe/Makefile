@@ -2,14 +2,9 @@
 ONLY_FOR_ARCHS =	amd64 arm64 riscv64
 
 COMMENT =	small, quick compiler backend
-DISTNAME =	qbe-0.0.0
-PKGNAME =	${DISTNAME}pl20220411
+DISTNAME =	qbe-1.0
+EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang devel
-
-# No releases yet, so I set up a mirror for easy package maintenance
-GH_ACCOUNT =	ibara
-GH_PROJECT =	qbe
-GH_TAGNAME =	2caa26e388b1c904d2f12fb09f84df7e761d8331
 
 HOMEPAGE =	https://c9x.me/compile/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -19,13 +14,12 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
+MASTER_SITES =	https://c9x.me/compile/
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-USE_GMAKE =	Yes
-ALL_TARGET =	obj/qbe
-MAKE_FLAGS =	V=
-
-FAKE_FLAGS =	DESTDIR=
+ALL_TARGET =	qbe
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -std=c99"
 
 TEST_TARGET =	check
 
