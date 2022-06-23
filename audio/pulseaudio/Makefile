@@ -1,6 +1,6 @@
 COMMENT=		cross-platform networked sound server
 
-VERSION=		16.0
+VERSION=		16.1
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
