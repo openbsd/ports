@@ -1,7 +1,9 @@
+BROKEN=			needs to be updated to support irssi >1.0.0
+
 COMMENT=		XMPP plugin for irssi
 
 DISTNAME=		irssi-xmpp-0.54
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 
