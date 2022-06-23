@@ -1,7 +1,9 @@
 - rip off mkntfs_get_page_size() from mkntfs.c, to avoid a build error
   on archs where PAGE_SIZE is unusable.
---- libntfs-3g/mft.c.orig	Sat Mar 14 15:10:12 2015
-+++ libntfs-3g/mft.c	Sun Jul 19 19:03:42 2015
+
+Index: libntfs-3g/mft.c
+--- libntfs-3g/mft.c.orig
++++ libntfs-3g/mft.c
 @@ -27,6 +27,9 @@
  #include "config.h"
  #endif
@@ -12,7 +14,7 @@
  #ifdef HAVE_STDLIB_H
  #include <stdlib.h>
  #endif
-@@ -454,9 +457,28 @@ static int ntfs_is_mft(ntfs_inode *ni)
+@@ -522,9 +525,28 @@ static int ntfs_is_mft(ntfs_inode *ni)
  	return 0;
  }
  
@@ -43,7 +45,7 @@
  
  #define RESERVED_MFT_RECORDS   64
  
-@@ -482,6 +504,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -550,6 +572,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  	s64 pass_end, ll, data_pos, pass_start, ofs, bit;
  	ntfs_attr *mftbmp_na;
  	u8 *buf, *byte;
@@ -51,7 +53,7 @@
  	unsigned int size;
  	u8 pass, b;
  	int ret = -1;
-@@ -493,7 +516,8 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -561,7 +584,8 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  	 * Set the end of the pass making sure we do not overflow the mft
  	 * bitmap.
  	 */
@@ -61,7 +63,7 @@
  	pass_end = vol->mft_na->allocated_size >> vol->mft_record_size_bits;
  	ll = mftbmp_na->initialized_size << 3;
  	if (pass_end > ll)
-@@ -519,7 +543,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -587,7 +611,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  		pass = 2;
  	}
  	pass_start = data_pos;
@@ -70,7 +72,7 @@
  	if (!buf)
  		goto leave;
  	
-@@ -532,7 +556,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
+@@ -600,7 +624,7 @@ static int ntfs_mft_bitmap_find_free_rec(ntfs_volume *
  	b = 0;
  #endif
  	/* Loop until a free mft record is found. */

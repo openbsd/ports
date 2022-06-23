@@ -1,11 +1,10 @@
 COMMENT =	FUSE NTFS driver with read/write support
 
-V =		2017.3.23
+V =		2022.5.17
 DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
-SHARED_LIBS +=	ntfs-3g		0.2	# .88
+SHARED_LIBS +=	ntfs-3g		1.0	# 89.0
 CATEGORIES =	sysutils
-REVISION =	3
 
 HOMEPAGE =	https://www.tuxera.com/community/open-source-ntfs-3g/
 
@@ -30,5 +29,8 @@ CONFIGURE_ARGS =	--disable-ldconfig \
 			--enable-extras \
 			--enable-mount-helper \
 			--with-fuse=external
+
+post-install:
+	rmdir ${PREFIX}/lib/ntfs-3g
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 Index: ntfsprogs/ntfsclone.c
 --- ntfsprogs/ntfsclone.c.orig
 +++ ntfsprogs/ntfsclone.c
-@@ -848,7 +848,7 @@ static void copy_cluster(int rescue, u64 rescue_lcn, u
+@@ -852,7 +852,7 @@ static void copy_cluster(int rescue, u64 rescue_lcn, u
  #ifndef NO_STATFS
  		int err = errno;
  		perr_printf("Write failed");
@@ -10,7 +10,7 @@ Index: ntfsprogs/ntfsclone.c
  			Printf("Apparently you tried to clone to a remote "
  			       "Windows computer but they don't\nhave "
  			       "efficient sparse file handling by default. "
-@@ -2277,7 +2277,7 @@ static void set_filesize(s64 filesize)
+@@ -2312,7 +2312,7 @@ static void set_filesize(s64 filesize)
  		Printf("WARNING: Couldn't get filesystem type: "
  		       "%s\n", strerror(errno));
  	else

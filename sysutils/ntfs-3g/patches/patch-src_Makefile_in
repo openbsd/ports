@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -81,8 +81,7 @@ build_triplet = @build@
+@@ -91,8 +91,7 @@ build_triplet = @build@
  host_triplet = @host@
  target_triplet = @target@
  @ENABLE_NTFS_3G_TRUE@bin_PROGRAMS = ntfs-3g.probe$(EXEEXT)
@@ -9,9 +9,9 @@ Index: src/Makefile.in
 -@ENABLE_NTFS_3G_TRUE@	lowntfs-3g$(EXEEXT)
 +@ENABLE_NTFS_3G_TRUE@rootbin_PROGRAMS = ntfs-3g$(EXEEXT)
  subdir = src
- DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
- 	$(srcdir)/ntfs-3g.8.in $(srcdir)/ntfs-3g.probe.8.in \
-@@ -528,7 +527,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/libtool.m4 \
+@@ -543,7 +542,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
  	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
  	    test -z "$$files" || { \
  	    echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(rootbindir)$$dir'"; \
@@ -20,7 +20,7 @@ Index: src/Makefile.in
  	    } \
  	; done
  
-@@ -970,7 +969,7 @@ uninstall-man: uninstall-man8
+@@ -1004,7 +1003,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-exec-local:	install-rootbinPROGRAMS
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"

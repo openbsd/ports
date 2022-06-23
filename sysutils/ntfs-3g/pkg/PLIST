@@ -51,7 +51,7 @@ include/ntfs-3g/types.h
 include/ntfs-3g/unistr.h
 include/ntfs-3g/volume.h
 include/ntfs-3g/xattrs.h
-lib/libntfs-3g.a
+@static-lib lib/libntfs-3g.a
 lib/libntfs-3g.la
 @lib lib/libntfs-3g.so.${LIBntfs-3g_VERSION}
 lib/pkgconfig/libntfs-3g.pc

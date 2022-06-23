@@ -1,7 +1,7 @@
 Index: libntfs-3g/security.c
 --- libntfs-3g/security.c.orig
 +++ libntfs-3g/security.c
-@@ -47,6 +47,10 @@
+@@ -44,6 +44,10 @@
  #ifdef HAVE_SYS_STAT_H
  #include <sys/stat.h>
  #endif
@@ -12,7 +12,7 @@ Index: libntfs-3g/security.c
  
  #include <unistd.h>
  #include <pwd.h>
-@@ -1228,6 +1232,68 @@ static BOOL groupmember(struct SECURITY_CONTEXT *scx, 
+@@ -1225,6 +1229,68 @@ static BOOL groupmember(struct SECURITY_CONTEXT *scx, 
  		close(fd);
  		}
  	}
