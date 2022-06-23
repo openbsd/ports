@@ -68,6 +68,7 @@
      SUBDIR += py-caption,python3
      SUBDIR += py-casttube,python3
      SUBDIR += py-chromecast,python3
+     SUBDIR += py-ffmpeg-progress-yield,python3
      SUBDIR += py-guessit,python3
      SUBDIR += py-pafy,python3
      SUBDIR += qtav
