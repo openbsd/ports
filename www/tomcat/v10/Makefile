@@ -1,9 +1,8 @@
-COMMENT-main =	Java servlet 5.0 and Java server pages 3.0 server
-PKGSPEC-main =	tomcat->=10,<11
+COMMENT-main=	Java servlet 5.0 and Java server pages 3.0 server
+PKGSPEC-main=	tomcat->=10,<11
 
-MAJ_VER =	10
-MIN_VER =	0
-MICRO_VER =	20
-REVISION-main =	0
+MAJ_VER=	10
+MIN_VER=	0
+MICRO_VER=	22
 
 .include <bsd.port.mk>

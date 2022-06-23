@@ -342,6 +342,7 @@ webapps/docs/api/org/apache/catalina/filters/CorsFilter.CORSRequestType.html
 webapps/docs/api/org/apache/catalina/filters/CorsFilter.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.LruCache.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.NonceCache.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilterBase.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.Duration.html
@@ -1677,6 +1678,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/SynchronizedStack.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
+webapps/docs/api/org/apache/tomcat/util/compat/Jre19Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreCompat.html
 webapps/docs/api/org/apache/tomcat/util/compat/JrePlatform.html
 webapps/docs/api/org/apache/tomcat/util/compat/JreVendor.html
@@ -1767,6 +1769,7 @@ webapps/docs/api/org/apache/tomcat/util/digester/RuleSet.html
 webapps/docs/api/org/apache/tomcat/util/digester/RuleSetBase.html
 webapps/docs/api/org/apache/tomcat/util/digester/Rules.html
 webapps/docs/api/org/apache/tomcat/util/digester/RulesBase.html
+webapps/docs/api/org/apache/tomcat/util/digester/ServiceBindingPropertySource.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetNextRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/SetPropertiesRule.html
 webapps/docs/api/org/apache/tomcat/util/digester/SystemPropertySource.html
