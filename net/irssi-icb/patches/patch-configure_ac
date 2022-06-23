@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -33,7 +33,7 @@ IRSSI_INCLUDE=`cd $with_irssi; pwd`
+ 
+ AC_SUBST(IRSSI_INCLUDE)
+ 
+-AS_IF([test ! -f "$IRSSI_INCLUDE/irssi-config"],
++AS_IF([test ! -f "$IRSSI_INCLUDE/irssi-config.h"],
+       [AC_ERROR(Not irssi directory: $IRSSI_INCLUDE)]
+ )
+ 

@@ -1,5 +1,5 @@
 @comment lib/irssi/modules/libfe_icb.la
-lib/irssi/modules/libfe_icb.so
+@so lib/irssi/modules/libfe_icb.so
 @comment lib/irssi/modules/libicb_core.la
-lib/irssi/modules/libicb_core.so
+@so lib/irssi/modules/libicb_core.so
 share/doc/irssi/icb-plugin.txt
