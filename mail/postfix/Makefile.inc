@@ -22,8 +22,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # IBM Public License 1.0 / Eclipse Public License 2.0
 PERMIT_PACKAGE=	Yes
 
-LIB_DEPENDS+=	devel/pcre
-
 MAKE_DEBUG?=
 MAKE_CCARGS+=	-I. -I../../include
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
@@ -33,10 +31,12 @@ MAKE_CCARGS+=	-DUSE_TLS
 MAKE_CCARGS+=	-DUSE_SASL_AUTH
 # no UTF-8 support for now
 MAKE_CCARGS+=	-DNO_EAI
-MAKE_AUXLIBS+=	-lssl -lcrypto -lsqlite3 -pthread
+MAKE_AUXLIBS+=	-lsqlite3 -pthread
 
-WANTLIB=	c crypto pcre pthread sqlite3 ssl
-LIB_DEPENDS+=	databases/sqlite3
+WANTLIB+=	c pcre2-8 pthread sqlite3
+
+LIB_DEPENDS+=	databases/sqlite3 \
+		devel/pcre2
 
 ALL_TARGET=	default
 
@@ -45,11 +45,30 @@ NO_TEST=	Yes
 FLAVORS+=	sasl2 ldap mysql pgsql
 FLAVOR?=
 
+# TLS support in Postfix 3.6+ requires OpenSSL 1.1.1+ and does require
+# APIs which are not available in LibreSSL. It is linked statically
+# to avoid conflicting with shared libssl/libcrypto from the base OS
+# pulled in via dependencies (for ldap/mysql/pgsql).
+#
+# Kept behind a variable to simplify building against libressl for
+# development work.
+NEEDS_OPENSSL?=	No
+
 .if ${FLAVOR:Msasl2}
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
 MAKE_CCARGS+=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
+.endif
+
+.if ${NEEDS_OPENSSL:L:Myes}
+BUILD_DEPENDS+=	security/openssl/3.0
+MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl30
+MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl30/libcrypto.a \
+		${LOCALBASE}/lib/eopenssl30/libssl.a
+.else
+MAKE_AUXLIBS+=	-lssl -lcrypto
+WANTLIB+=	crypto ssl
 .endif
 
 .if ${FLAVOR:Mldap}
