@@ -1,8 +1,7 @@
 COMMENT =		obtain expiration date of SSL certificate
 
-DISTNAME =		Net-SSL-ExpireDate-1.20
+DISTNAME =		Net-SSL-ExpireDate-1.24
 CATEGORIES =		security
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
