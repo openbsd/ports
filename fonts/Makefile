@@ -8,6 +8,7 @@
      SUBDIR += anonymous-pro
      SUBDIR += apl-fonts
      SUBDIR += arabeyes-ttf
+     SUBDIR += aref-ruqaa
      SUBDIR += artwiz-aleczapka
      SUBDIR += b612-font
      SUBDIR += blockzone
@@ -47,6 +48,7 @@
      SUBDIR += ja-funetfonts
      SUBDIR += ja-kanjistrokeorders-ttf
      SUBDIR += ja-sazanami-ttf
+     SUBDIR += jaldi
      SUBDIR += jetbrains-mono
      SUBDIR += jmk-fonts
      SUBDIR += juliamono
@@ -105,6 +107,7 @@
      SUBDIR += ubuntu-fonts
      SUBDIR += un-fonts
      SUBDIR += unifont
+     SUBDIR += vazirmatn
      SUBDIR += vlgothic
      SUBDIR += vollkorn
      SUBDIR += work-sans
