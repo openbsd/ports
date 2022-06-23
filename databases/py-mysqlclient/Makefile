@@ -1,6 +1,6 @@
 COMMENT =		Python interface to MySQL
 
-MODPY_EGG_VERSION =	2.1.0
+MODPY_EGG_VERSION =	2.1.1
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
