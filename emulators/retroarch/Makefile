@@ -5,6 +5,7 @@ PKGNAME =		retroarch-${GH_TAGNAME:S/v//}
 GH_ACCOUNT =		libretro
 GH_PROJECT =		RetroArch
 GH_TAGNAME =		v1.10.3
+REVISION = 		0
 
 CATEGORIES =		emulators
 
@@ -50,6 +51,7 @@ CONFIGURE_ARGS =	--disable-discord \
 			--disable-pulse \
 			--disable-oss \
 			--disable-v4l2 \
+			--disable-caca \
 			--enable-al
 
 NO_TEST =		Yes
