@@ -2,7 +2,7 @@ COMMENT=	roundcube plugin: context-sensitive menus
 
 GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-contextmenu
-GH_TAGNAME=	3.3
+GH_TAGNAME=	3.3.1
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
 
 CATEGORIES=	mail www

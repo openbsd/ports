@@ -6,6 +6,7 @@ roundcubemail/plugins/contextmenu/composer.json
 roundcubemail/plugins/contextmenu/contextmenu.js
 roundcubemail/plugins/contextmenu/contextmenu.php
 roundcubemail/plugins/contextmenu/localization/
+roundcubemail/plugins/contextmenu/localization/ar.inc
 roundcubemail/plugins/contextmenu/localization/bg_BG.inc
 roundcubemail/plugins/contextmenu/localization/ca_ES.inc
 roundcubemail/plugins/contextmenu/localization/cs_CZ.inc
