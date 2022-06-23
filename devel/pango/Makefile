@@ -1,3 +1,5 @@
+PORTROACH=		skipv:1.90.0
+
 COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.50.7
