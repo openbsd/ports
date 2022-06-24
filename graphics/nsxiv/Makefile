@@ -2,9 +2,11 @@ COMMENT =	neo simple X Image Viewer
 
 GH_PROJECT =	nsxiv
 GH_ACCOUNT =	nsxiv
-GH_TAGNAME =	v29
+GH_TAGNAME =	v30
 
 CATEGORIES =	graphics x11
+
+HOMEPAGE =	https://nsxiv.codeberg.page/
 
 MAINTAINER =	Thim Cederlund <thim@cederlund.de>
 
@@ -41,6 +43,7 @@ MAKE_FLAGS =	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 
+FAKE_TARGET =	install-all
 NO_TEST =	Yes
 
 post-patch:
