@@ -1,9 +1,14 @@
 COMMENT =	window manager based on the original Blackbox code
 DISTNAME =	fluxbox-1.3.7
 CATEGORIES =	x11
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://fluxbox.org/
+
+MASTER_SITES0 =         http://git.fluxbox.org/fluxbox.git/patch/
+# Backport fix for maxDepth to fix usage with Firefox
+PATCHFILES =            fluxbox-firefox-fix.patch{?id=dcdde4d32c93d01df205bc06d7dfcbd356be031f}:0
+PATCH_DIST_STRIP =      -p1
 
 # X11
 PERMIT_PACKAGE =	Yes
