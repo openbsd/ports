@@ -3,7 +3,7 @@ CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	flameshot-org
 GH_PROJECT =	flameshot
-GH_TAGNAME =	v11.0.0
+GH_TAGNAME =	v12.0.0
 
 HOMEPAGE =	https://flameshot.org/
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
