@@ -30,8 +30,9 @@ CONFIGURE_ARGS =	--with-libwrap=no \
 			--with-logfile=var/log/tac_plus/tac.log \
 			--with-whologfile=/var/log/tac_plus/tacwho.log
 
-# don't allow picking up pam
+# don't allow picking up pam, gmake
 CONFIGURE_ENV =	ac_cv_lib_pam_pam_start=false \
+		MAKE=/usr/bin/make \
 		YACC=bison
 
 post-install:
