@@ -1,11 +1,7 @@
-.if ${MACHINE_ARCH} == "i386"
-USE_LLD =		No
-.endif
-
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
 VERSION =		2.0.4
-REVISION =		0
+REVISION =		1
 GH_ACCOUNT =		threerings
 GH_PROJECT =		openvpn-auth-ldap
 GH_TAGNAME =		auth-ldap-${VERSION}

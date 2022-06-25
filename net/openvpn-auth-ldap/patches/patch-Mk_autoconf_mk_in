@@ -1,0 +1,14 @@
+The bit of C code was not being built PIC.
+
+Index: Mk/autoconf.mk.in
+--- Mk/autoconf.mk.in.orig
++++ Mk/autoconf.mk.in
+@@ -2,7 +2,7 @@ SHELL			= @SHELL@
+ 
+ CC			= @CC@
+ 
+-CFLAGS			= @CFLAGS@ @DEFS@ -Wall
++CFLAGS			= -fPIC @CFLAGS@ @DEFS@ -Wall
+ OBJCFLAGS		= -fPIC @OBJCFLAGS@ ${OBJC_RUNTIME_FLAGS} ${OBJC_PTHREAD_CFLAGS} -fno-strict-aliasing ${CFLAGS}
+ OBJC_LIBS		= -fPIC @OBJC_LIBS@ ${OBJC_PTHREAD_LIBS}
+ 
