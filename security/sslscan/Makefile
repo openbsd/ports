@@ -2,8 +2,7 @@ COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
-GH_TAGNAME=	2.0.13
-REVISION=	1
+GH_TAGNAME=	2.0.14
 
 CATEGORIES=	security net
 
