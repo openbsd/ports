@@ -5,8 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			3.7.5
-REVISION =		0
+V =			4.0.0
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -16,13 +15,9 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 HOMEPAGE =		https://desktop.telegram.org
 MASTER_SITES =		https://github.com/telegramdesktop/tdesktop/releases/download/v${V}/
 
-MASTER_SITES0 =		https://salsa.debian.org/debian/telegram-desktop/-/raw/
-FORCE_QT5_COMMIT =	93b4a99d86eb60141612767935b038b29db65345
-FORCE_QT5_ORIGPATCH =	${FORCE_QT5_COMMIT}/debian/patches/Compatible-setScreen
-FORCE_QT5_NEWPATCH =	tdesktop-force-qt5-${FORCE_QT5_COMMIT:C/(........).*/\1/}
-PATCHFILES +=		${FORCE_QT5_NEWPATCH}{${FORCE_QT5_ORIGPATCH}}.patch:0
-
-PATCH_DIST_STRIP =	-p1
+PATCH_LIST =		patch-*
+# Patches only relevant while building against Qt5
+PATCH_LIST +=		qt5-patch-*
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
