@@ -1431,6 +1431,7 @@ share/racket/LICENSE-GPL.txt
 share/racket/LICENSE-LGPL.txt
 share/racket/LICENSE-MIT.txt
 share/racket/LICENSE-libscheme.txt
+share/racket/LICENSE.txt
 share/racket/collects/
 share/racket/collects/acks/
 share/racket/collects/acks/acks.rkt
