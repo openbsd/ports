@@ -629,6 +629,7 @@ share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike-polymorphic.html
 share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike.html
 share/doc/py-sqlalchemy/_modules/index.html
 share/doc/py-sqlalchemy/_static/
+share/doc/py-sqlalchemy/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/py-sqlalchemy/_static/basic.css
 share/doc/py-sqlalchemy/_static/changelog.css
 share/doc/py-sqlalchemy/_static/clipboard.min.js
@@ -644,7 +645,7 @@ share/doc/py-sqlalchemy/_static/dragons.png
 share/doc/py-sqlalchemy/_static/dragons_original.png
 share/doc/py-sqlalchemy/_static/file.png
 share/doc/py-sqlalchemy/_static/init.js
-share/doc/py-sqlalchemy/_static/jquery-3.5.1.js
+share/doc/py-sqlalchemy/_static/jquery-3.6.0.js
 share/doc/py-sqlalchemy/_static/jquery.js
 share/doc/py-sqlalchemy/_static/language_data.js
 share/doc/py-sqlalchemy/_static/minus.png
@@ -768,6 +769,7 @@ share/doc/py-sqlalchemy/build/orm/collections.rst
 share/doc/py-sqlalchemy/build/orm/composites.rst
 share/doc/py-sqlalchemy/build/orm/constructors.rst
 share/doc/py-sqlalchemy/build/orm/contextual.rst
+share/doc/py-sqlalchemy/build/orm/dataclasses.rst
 share/doc/py-sqlalchemy/build/orm/declarative_config.rst
 share/doc/py-sqlalchemy/build/orm/declarative_mapping.rst
 share/doc/py-sqlalchemy/build/orm/declarative_mixins.rst
@@ -947,6 +949,7 @@ share/doc/py-sqlalchemy/orm/collections.html
 share/doc/py-sqlalchemy/orm/composites.html
 share/doc/py-sqlalchemy/orm/constructors.html
 share/doc/py-sqlalchemy/orm/contextual.html
+share/doc/py-sqlalchemy/orm/dataclasses.html
 share/doc/py-sqlalchemy/orm/declarative_config.html
 share/doc/py-sqlalchemy/orm/declarative_mapping.html
 share/doc/py-sqlalchemy/orm/declarative_mixins.html
