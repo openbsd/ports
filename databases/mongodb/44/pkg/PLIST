@@ -1,3 +1,4 @@
+@option is-branch
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/mongod
@@ -11,14 +12,12 @@
 @owner
 @group
 @bin bin/mongo
-@bin bin/mongobridge
 @bin bin/mongod
-@bin bin/mongoperf
 @bin bin/mongos
 @man man/man1/mongo.1
 @man man/man1/mongod.1
-@man man/man1/mongoperf.1
 @man man/man1/mongos.1
+@man man/man5/mongodb-parameters.5
 share/examples/mongodb/
 share/examples/mongodb/mongodb.conf
 @sample ${SYSCONFDIR}/mongodb.conf

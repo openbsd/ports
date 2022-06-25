@@ -1,0 +1,11 @@
+Index: src/mongo/util/net/sock.h
+--- src/mongo/util/net/sock.h.orig
++++ src/mongo/util/net/sock.h
+@@ -37,6 +37,7 @@
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ #include <sys/un.h>
++#include <unistd.h>
+ 
+ #ifdef __OpenBSD__
+ #include <sys/uio.h>

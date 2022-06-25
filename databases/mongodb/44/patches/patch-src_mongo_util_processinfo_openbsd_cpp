@@ -1,0 +1,34 @@
+- mincore(2) has been removed
+
+Index: src/mongo/util/processinfo_openbsd.cpp
+--- src/mongo/util/processinfo_openbsd.cpp.orig
++++ src/mongo/util/processinfo_openbsd.cpp
+@@ -46,6 +46,8 @@
+ #include "mongo/util/scopeguard.h"
+ #include "processinfo.h"
+ 
++using std::string;
++
+ namespace mongo {
+ 
+ ProcessInfo::ProcessInfo(ProcessId pid) : _pid(pid) {}
+@@ -195,9 +197,10 @@ bool ProcessInfo::supported() {
+ }
+ 
+ bool ProcessInfo::blockCheckSupported() {
+-    return true;
++    return false;
+ }
+ 
++#if 0
+ bool ProcessInfo::blockInMemory(const void* start) {
+     char x = 0;
+     if (mincore((void*)alignToStartOfPage(start), getPageSize(), &x)) {
+@@ -223,6 +226,7 @@ bool ProcessInfo::pagesInMemory(const void* start, siz
+     }
+     return true;
+ }
++#endif
+ 
+ // get the number of CPUs available to the scheduler
+ boost::optional<unsigned long> ProcessInfo::getNumCoresForProcess() {

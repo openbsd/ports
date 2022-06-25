@@ -1,0 +1,13 @@
+fix with Boost 1.79
+
+Index: src/mongo/db/storage/wiredtiger/wiredtiger_util.cpp
+--- src/mongo/db/storage/wiredtiger/wiredtiger_util.cpp.orig
++++ src/mongo/db/storage/wiredtiger/wiredtiger_util.cpp
+@@ -36,6 +36,7 @@
+ #include <limits>
+ 
+ #include <boost/filesystem.hpp>
++#include <boost/filesystem/fstream.hpp>
+ #include <boost/filesystem/path.hpp>
+ 
+ #include "mongo/base/simple_string_data_comparator.h"

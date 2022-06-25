@@ -1,0 +1,13 @@
+fix with Boost 1.79
+
+Index: src/mongo/db/storage/storage_repair_observer.cpp
+--- src/mongo/db/storage/storage_repair_observer.cpp.orig
++++ src/mongo/db/storage/storage_repair_observer.cpp
+@@ -41,6 +41,7 @@
+ #include <sys/types.h>
+ #endif
+ 
++#include <boost/filesystem/fstream.hpp>
+ #include <boost/filesystem/path.hpp>
+ 
+ #include "mongo/db/dbhelpers.h"
