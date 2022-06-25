@@ -36,7 +36,6 @@ NO_TEST =	Yes
 AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.16
 CONFIGURE_STYLE = autoreconf
-AUTORECONF =	./autogen.sh
 
 ## for an easier time if we ever get gimp 3.0
 GIMPV = 2.0
