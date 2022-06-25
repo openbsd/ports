@@ -4,7 +4,7 @@ DISTFILES=	mFi-$V{mFi.unix}.zip
 V=		2.1.2
 FW_VER=		2.1.2.1297
 PKGNAME=	mfi-$V
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	net
 
@@ -19,7 +19,7 @@ MASTER_SITES=	http://dl.ubnt.com/mfi/$V/
 MODULES=	java
 MODJAVA_VER=	1.8
 
-RUN_DEPENDS=	databases/mongodb \
+RUN_DEPENDS=	databases/mongodb/36 \
 		java/javaPathHelper
 
 NO_BUILD=	Yes
