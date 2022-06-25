@@ -1,4 +1,4 @@
-V =		3.7.1
+V =		3.8.5
 COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}
 EXTRACT_SUFX =	.tar.bz2

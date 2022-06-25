@@ -2,7 +2,7 @@
 @man man/man1/sakura.1
 share/applications/sakura.desktop
 share/doc/sakura/
-share/doc/sakura/INSTALL
+share/doc/sakura/README.md
 share/locale/ca/LC_MESSAGES/sakura.mo
 share/locale/cs/LC_MESSAGES/sakura.mo
 share/locale/de/LC_MESSAGES/sakura.mo
