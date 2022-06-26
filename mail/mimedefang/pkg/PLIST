@@ -12,7 +12,35 @@ bin/mimedefang-util
 bin/mimedefang.pl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
+libdata/perl5/site_perl/Mail/MIMEDefang/
+libdata/perl5/site_perl/Mail/MIMEDefang.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Actions.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Antispam.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Antivirus.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Authres.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/DKIM/
+libdata/perl5/site_perl/Mail/MIMEDefang/DKIM.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/DKIM/ARC.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/MIME.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Mail.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Net.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/RFC2822.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Unit.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/Utils.pm
 @man man/man1/mimedefang-util.1
+@man man/man3/Mail::MIMEDefang.3
+@man man/man3/Mail::MIMEDefang::Actions.3
+@man man/man3/Mail::MIMEDefang::Antispam.3
+@man man/man3/Mail::MIMEDefang::Antivirus.3
+@man man/man3/Mail::MIMEDefang::Authres.3
+@man man/man3/Mail::MIMEDefang::DKIM.3
+@man man/man3/Mail::MIMEDefang::DKIM::ARC.3
+@man man/man3/Mail::MIMEDefang::MIME.3
+@man man/man3/Mail::MIMEDefang::Mail.3
+@man man/man3/Mail::MIMEDefang::Net.3
+@man man/man3/Mail::MIMEDefang::RFC2822.3
+@man man/man3/Mail::MIMEDefang::Unit.3
+@man man/man3/Mail::MIMEDefang::Utils.3
 @man man/man5/mimedefang-filter.5
 @man man/man7/mimedefang-notify.7
 @man man/man7/mimedefang-protocol.7

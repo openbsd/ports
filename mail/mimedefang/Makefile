@@ -1,14 +1,13 @@
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-2.86
-REVISION=	1
+DISTNAME=	mimedefang-3.0
 
 CATEGORIES=	mail
 
 HOMEPAGE=	https://www.mimedefang.org/
 MASTER_SITES=	${HOMEPAGE}releases/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,7 +18,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	mail/p5-Mail-Tools \
 		mail/p5-MIME-tools \
 		security/p5-Crypt-OpenSSL-Random \
-		security/p5-Digest-SHA1 \
 		security/p5-IO-Socket-SSL \
 		sysutils/p5-Unix-Syslog
 
@@ -30,7 +28,7 @@ RUN_DEPENDS +=	www/p5-HTML-Parser
 LIB_DEPENDS=	mail/sendmail,-libmilter
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" PERLINSTALLPRIVLIB=$PREFIX/libdata/perl5
 CONFIGURE_ARGS=	--with-user=_mdefang \
 		--with-ipheader \
 		--disable-anti-virus \
