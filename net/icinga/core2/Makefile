@@ -44,12 +44,6 @@ WANTLIB += boost_system-mt boost_thread-mt c curses edit execinfo m
 # libressl
 WANTLIB += crypto ssl
 
-# openssl
-#WANTLIB +=		lib/eopenssl11/crypto lib/eopenssl11/ssl
-#LIB_DEPENDS-main +=	security/openssl/1.1
-#CONFIGURE_ARGS +=	-DCMAKE_PREFIX_PATH="${LOCALBASE}/include/eopenssl11;${LOCALBASE}/lib/eopenssl11"
-#LDFLAGS +=		-Wl,-rpath=${LOCALBASE}/lib/eopenssl11 -L${LOCALBASE}/lib/eopenssl11
-
 MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc
