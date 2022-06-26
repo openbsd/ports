@@ -70,6 +70,7 @@ SUBST_VARS +=		WRKDIST
 SUBST_VARS +=		NODE_VERSION
 SUBST_VARS +=		EOPENSSL_LIB
 
+# OpenSSL used: {X,Ed}25519 via EVP, SSL_CIPHER_standard_name and 5-10 other missing symbols/defines.
 LIB_DEPENDS +=		archivers/brotli \
 			devel/libuv \
 			net/libcares \
