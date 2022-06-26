@@ -25,6 +25,7 @@ NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"
 
 .if ${FLAVOR:Med25519}
+# OpenSSL used for EVP_PKEY_ED25519
 MAKE_ENV+=	HAVE_ED25519=1
 MAKE_ENV+=	LIBCRYPTOPC=libecrypto11
 LIB_DEPENDS+=	security/openssl/1.1

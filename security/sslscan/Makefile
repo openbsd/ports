@@ -26,6 +26,7 @@ MAKE_FLAGS=	BINDIR=${TRUEPREFIX}/bin \
 		GIT_VERSION="${GH_TAGNAME}" \
 		CC="${CC}"
 
+# OpenSSL used because sslscan wants to enable obsolete protocols for detection
 BUILD_DEPENDS=	security/openssl/1.1:patch
 ALL_TARGET=	static
 CFLAGS+=	-I${WRKSRC}/openssl/include

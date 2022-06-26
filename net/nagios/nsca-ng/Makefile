@@ -18,9 +18,7 @@ WANTLIB-main=	${WANTLIB} confuse
 
 MASTER_SITES=		https://github.com/weiss/nsca-ng/releases/download/v$V/
 
-# as a special case, this is linked against OpenSSL because LibreSSL
-# does not support PSK.
-
+# OpenSSL used for PSK (SSL_get_psk_identity)
 LIB_DEPENDS=		devel/libev \
 			security/openssl/1.1
 LIB_DEPENDS-main=	${LIB_DEPENDS} \

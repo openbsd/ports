@@ -17,6 +17,8 @@ WANTLIB =		c lib/eopenssl11/crypto lib/eopenssl11/ssl
 
 MASTER_SITES =		https://causal.agency/libretls/
 
+# OpenSSL used because this port is specifically intended for testing
+# portable versions of OpenBSD daemons against OpenSSL+libretls
 LIB_DEPENDS =		security/openssl/1.1
 
 USE_LIBTOOL =		gnu
