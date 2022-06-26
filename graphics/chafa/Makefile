@@ -1,7 +1,7 @@
 COMMENT =		character art facsimile generator
-DISTNAME =		chafa-1.10.0
+DISTNAME =		chafa-1.12.1
 
-SHARED_LIBS +=  	chafa                     2.1 # 7.0
+SHARED_LIBS +=  	chafa                     3.0 # 8.1
 
 CATEGORIES =		graphics
 
@@ -12,11 +12,12 @@ MAINTAINER =		Florian Viehweger <openbsd@out-of-creativity.de>
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += 		ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
-WANTLIB += 		aom bz2 c dav1d de265 djvulibre expat fontconfig
-WANTLIB +=		freetype glib-2.0 heif iconv intl jasper jbig jpeg
-WANTLIB += 		lcms2 lzma m openjp2 pcre png pthread raw_r tiff webp
-WANTLIB += 		webpdemux webpmux x265 xcb xml2 z zstd
+WANTLIB += X11 Xau Xdmcp Xext Xrender c cairo cairo-gobject expat
+WANTLIB += ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 harfbuzz iconv intl jpeg lzma
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread rsvg-2 tiff webp webpdemux xcb xcb-render
+WANTLIB += xcb-shm xml2 z zstd
 
 MASTER_SITES =		https://hpjansson.org/chafa/releases/
 EXTRACT_SUFX =		.tar.xz
@@ -24,9 +25,11 @@ EXTRACT_SUFX =		.tar.xz
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/glib2 \
-			graphics/ImageMagick
+			graphics/libwebp \
+			x11/gnome/librsvg
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--without-imagemagick
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/chafa.1 ${PREFIX}/man/man1
