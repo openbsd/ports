@@ -1,4 +1,8 @@
 @so lib/xfce4/panel/plugins/libsystemload.so
+share/icons/hicolor/128x128/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/16x16/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/32x32/apps/org.xfce.panel.systemload.png
+share/icons/hicolor/scalable/apps/org.xfce.panel.systemload.svg
 share/locale/ar/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/be/LC_MESSAGES/xfce4-systemload-plugin.mo
@@ -52,3 +56,4 @@ share/locale/vi/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-systemload-plugin.mo
 share/xfce4/panel/plugins/systemload.desktop
+@tag gtk-update-icon-cache %D/share/icons/hicolor
