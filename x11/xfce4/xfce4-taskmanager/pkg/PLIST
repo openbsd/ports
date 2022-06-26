@@ -16,8 +16,6 @@ share/locale/cs/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/da/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/de/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/el/LC_MESSAGES/xfce4-taskmanager.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/es/LC_MESSAGES/xfce4-taskmanager.mo
@@ -29,15 +27,9 @@ share/locale/gl/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/he/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/hr/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/hu/LC_MESSAGES/xfce4-taskmanager.mo
-share/locale/hy_AM/
-share/locale/hy_AM/LC_MESSAGES/
 share/locale/hy_AM/LC_MESSAGES/xfce4-taskmanager.mo
-share/locale/hye/
-share/locale/hye/LC_MESSAGES/
 share/locale/hye/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/id/LC_MESSAGES/xfce4-taskmanager.mo
-share/locale/ie/
-share/locale/ie/LC_MESSAGES/
 share/locale/ie/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/is/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/it/LC_MESSAGES/xfce4-taskmanager.mo
@@ -67,8 +59,6 @@ share/locale/tr/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/ug/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/uk/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/ur/LC_MESSAGES/xfce4-taskmanager.mo
-share/locale/ur_PK/
-share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/vi/LC_MESSAGES/xfce4-taskmanager.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-taskmanager.mo
