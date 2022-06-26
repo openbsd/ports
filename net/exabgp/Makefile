@@ -1,6 +1,6 @@
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
-MODPY_EGG_VERSION=	4.2.16
+MODPY_EGG_VERSION=	4.2.20
 GH_ACCOUNT=		exa-networks
 GH_PROJECT=		exabgp
 GH_TAGNAME=		${MODPY_EGG_VERSION}
@@ -45,7 +45,7 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/exabgp.conf ${PREFIX}/share/examples/exabgp/
 	${INSTALL_DATA} ${WRKSRC}/exabgp*env ${PREFIX}/share/examples/exabgp/
 	${INSTALL_DATA} ${WRKSRC}/etc/exabgp/*.conf ${PREFIX}/share/examples/exabgp/etc/
-	find ${WRKINST}${MODPY_SITEPKG} \( -name '*.orig' -or -name '*.beforesubst' \) -delete
+	find ${WRKINST}${MODPY_SITEPKG} \( -name '*${PATCHORIG}' -or -name '*.beforesubst' \) -delete
 .for i in 1 5
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.$i ${PREFIX}/man/man$i/
 .endfor

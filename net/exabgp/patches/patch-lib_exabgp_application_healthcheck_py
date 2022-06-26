@@ -14,7 +14,7 @@ Index: lib/exabgp/application/healthcheck.py
      }
  
  Use :option:`--help` to get options accepted by this program. A
-@@ -266,6 +266,8 @@ def setup_logging(debug, silent, name, syslog_facility
+@@ -269,6 +269,8 @@ def setup_logging(debug, silent, name, syslog_facility
              return "/var/run/log"
          if sys.platform.startswith("netbsd"):
              return "/var/run/log"
