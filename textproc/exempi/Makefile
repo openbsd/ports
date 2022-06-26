@@ -1,10 +1,9 @@
 COMMENT =		implementation of XMP
-DISTNAME =		exempi-2.6.1
-REVISION =		0
+DISTNAME =		exempi-2.6.2
 
 CATEGORIES =		textproc
 
-SHARED_LIBS +=  exempi               2.0      # 9.1
+SHARED_LIBS +=  exempi               2.1      # 9.2
 
 HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 

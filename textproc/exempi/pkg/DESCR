@@ -1,1 +1,2 @@
 Exempi is an implementation of XMP and is based on Adobe XMP SDK.
+It provides a library and a command-line tool to manipulate XMP metadata.

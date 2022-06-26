@@ -9,7 +9,7 @@ Index: samples/source/Makefile.in
  subdir = samples/source
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/m4/ax_append_compile_flags.m4 \
-@@ -439,7 +438,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/public/include -I$(top_s
+@@ -438,7 +437,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/public/include -I$(top_s
  XMPLIBS = $(top_builddir)/XMPCore/source/libXMPCore.la \
  	$(top_builddir)/XMPFiles/source/libXMPFiles.la \
  	$(top_builddir)/source/libxmpcommon.la -lexpat -lz \
