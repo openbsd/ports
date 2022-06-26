@@ -1,15 +1,13 @@
 COMMENT=	Xfce4 gnome-shell like dashboard
 
 XFCE_GOODIE =	xfdashboard
-XFCE_VERSION =	0.8.1
-REVISION =	1
-
-SHARED_LIBS +=	xfdashboard	0.0 # 600.0
+XFCE_VERSION =	0.9.90
+SHARED_LIBS +=	xfdashboard	1.0 # 900.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += EGL ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
+WANTLIB += EGL ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c
 WANTLIB += cairo cairo-gobject clutter-1.0 cogl cogl-pango cogl-path
 WANTLIB += ${COMPILER_LIBCXX} drm epoxy expat ffi fontconfig freetype

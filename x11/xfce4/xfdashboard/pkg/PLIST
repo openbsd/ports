@@ -8,7 +8,6 @@ include/xfdashboard/libxfdashboard/animation.h
 include/xfdashboard/libxfdashboard/application-button.h
 include/xfdashboard/libxfdashboard/application-database.h
 include/xfdashboard/libxfdashboard/application-tracker.h
-include/xfdashboard/libxfdashboard/application.h
 include/xfdashboard/libxfdashboard/applications-menu-model.h
 include/xfdashboard/libxfdashboard/applications-search-provider.h
 include/xfdashboard/libxfdashboard/applications-view.h
@@ -20,6 +19,7 @@ include/xfdashboard/libxfdashboard/button.h
 include/xfdashboard/libxfdashboard/click-action.h
 include/xfdashboard/libxfdashboard/collapse-box.h
 include/xfdashboard/libxfdashboard/compat.h
+include/xfdashboard/libxfdashboard/core.h
 include/xfdashboard/libxfdashboard/css-selector.h
 include/xfdashboard/libxfdashboard/debug.h
 include/xfdashboard/libxfdashboard/desktop-app-info-action.h
@@ -31,6 +31,7 @@ include/xfdashboard/libxfdashboard/emblem-effect.h
 include/xfdashboard/libxfdashboard/fill-box-layout.h
 include/xfdashboard/libxfdashboard/focus-manager.h
 include/xfdashboard/libxfdashboard/focusable.h
+include/xfdashboard/libxfdashboard/gradient-color.h
 include/xfdashboard/libxfdashboard/image-content.h
 include/xfdashboard/libxfdashboard/label.h
 include/xfdashboard/libxfdashboard/libxfdashboard.h
@@ -39,6 +40,7 @@ include/xfdashboard/libxfdashboard/live-window.h
 include/xfdashboard/libxfdashboard/live-workspace.h
 include/xfdashboard/libxfdashboard/model.h
 include/xfdashboard/libxfdashboard/outline-effect.h
+include/xfdashboard/libxfdashboard/plugin-settings.h
 include/xfdashboard/libxfdashboard/plugin.h
 include/xfdashboard/libxfdashboard/plugins-manager.h
 include/xfdashboard/libxfdashboard/popup-menu-item-button.h
@@ -53,6 +55,7 @@ include/xfdashboard/libxfdashboard/search-provider.h
 include/xfdashboard/libxfdashboard/search-result-container.h
 include/xfdashboard/libxfdashboard/search-result-set.h
 include/xfdashboard/libxfdashboard/search-view.h
+include/xfdashboard/libxfdashboard/settings.h
 include/xfdashboard/libxfdashboard/stage-interface.h
 include/xfdashboard/libxfdashboard/stage.h
 include/xfdashboard/libxfdashboard/stylable.h
@@ -91,11 +94,12 @@ lib/libxfdashboard.la
 lib/pkgconfig/libxfdashboard.pc
 lib/xfdashboard/
 lib/xfdashboard/plugins/
+@so lib/xfdashboard/plugins/autopin-windows.so
 @so lib/xfdashboard/plugins/clock-view.so
-@so lib/xfdashboard/plugins/example-search-provider.so
 @so lib/xfdashboard/plugins/gnome-shell-search-provider.so
 @so lib/xfdashboard/plugins/hot-corner.so
 @so lib/xfdashboard/plugins/middle-click-window-close.so
+@so lib/xfdashboard/plugins/recently-used-search-provider.so
 share/applications/org.xfce.xfdashboard-settings.desktop
 share/applications/org.xfce.xfdashboard.desktop
 share/examples/xfdashboard/
@@ -107,22 +111,27 @@ share/icons/hicolor/24x24/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/32x32/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/48x48/apps/org.xfce.xfdashboard.png
 share/icons/hicolor/scalable/apps/org.xfce.xfdashboard.svg
+share/locale/be/LC_MESSAGES/xfdashboard.mo
 share/locale/bg/LC_MESSAGES/xfdashboard.mo
 share/locale/ca/LC_MESSAGES/xfdashboard.mo
 share/locale/da/LC_MESSAGES/xfdashboard.mo
 share/locale/de/LC_MESSAGES/xfdashboard.mo
 share/locale/el/LC_MESSAGES/xfdashboard.mo
 share/locale/es/LC_MESSAGES/xfdashboard.mo
+share/locale/et/LC_MESSAGES/xfdashboard.mo
+share/locale/eu/LC_MESSAGES/xfdashboard.mo
 share/locale/fr/LC_MESSAGES/xfdashboard.mo
 share/locale/gl/LC_MESSAGES/xfdashboard.mo
 share/locale/he/LC_MESSAGES/xfdashboard.mo
 share/locale/id/LC_MESSAGES/xfdashboard.mo
 share/locale/ie/LC_MESSAGES/xfdashboard.mo
+share/locale/it/LC_MESSAGES/xfdashboard.mo
 share/locale/it_IT/
 share/locale/it_IT/LC_MESSAGES/
 share/locale/it_IT/LC_MESSAGES/xfdashboard.mo
 share/locale/ja/LC_MESSAGES/xfdashboard.mo
 share/locale/kk/LC_MESSAGES/xfdashboard.mo
+share/locale/ko/LC_MESSAGES/xfdashboard.mo
 share/locale/lt/LC_MESSAGES/xfdashboard.mo
 share/locale/nb/LC_MESSAGES/xfdashboard.mo
 share/locale/nl/LC_MESSAGES/xfdashboard.mo
