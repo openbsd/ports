@@ -1,5 +1,5 @@
-@pkgpath databases/mongodb
 @option is-branch
+@pkgpath databases/mongodb
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/mongod
