@@ -1,7 +1,6 @@
 COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
-XFCE_VERSION=	0.10.2
-REVISION=	2
+XFCE_VERSION=	0.11.0
 XFCE_PLUGIN=	weather
 
 # GPLv2
@@ -24,7 +23,7 @@ WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png psl pthread soup-2.4 sqlite3
 WANTLIB += startup-notification-1 unistring upower-glib xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xml2 z brotlicommon brotlidec
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += Xau Xdmcp execinfo jpeg gthread-2.0 xfconf-0
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
