@@ -1,8 +1,8 @@
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.40
+DISTNAME=		libidn-1.41
 
-SHARED_LIBS +=  idn                  18.0     # 18.3
+SHARED_LIBS +=  idn                  18.0     # 18.4
 
 CATEGORIES=		devel
 
