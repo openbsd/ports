@@ -40,8 +40,6 @@ WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_context-mt boost_coroutine-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c curses edit execinfo m
-
-# libressl
 WANTLIB += crypto ssl
 
 MODULES =		devel/cmake
