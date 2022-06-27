@@ -9,8 +9,9 @@ GH_ACCOUNT =	tdlib
 GH_PROJECT =	td
 GH_COMMIT =	7eabd8ca60de025e45e99d4e5edd39f4ebd9467e
 DISTNAME =	tdlib-1.8.4
+REVISION =	0
 
-SHARED_LIBS +=	tdjson	0.1	# 1.7.7
+SHARED_LIBS +=	tdjson	0.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://core.telegram.org/tdlib
