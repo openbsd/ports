@@ -3433,6 +3433,7 @@ roundcubemail/vendor/guzzlehttp/psr7/src/StreamDecoratorTrait.php
 roundcubemail/vendor/guzzlehttp/psr7/src/StreamWrapper.php
 roundcubemail/vendor/guzzlehttp/psr7/src/UploadedFile.php
 roundcubemail/vendor/guzzlehttp/psr7/src/Uri.php
+roundcubemail/vendor/guzzlehttp/psr7/src/UriComparator.php
 roundcubemail/vendor/guzzlehttp/psr7/src/UriNormalizer.php
 roundcubemail/vendor/guzzlehttp/psr7/src/UriResolver.php
 roundcubemail/vendor/guzzlehttp/psr7/src/Utils.php
