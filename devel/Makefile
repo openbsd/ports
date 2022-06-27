@@ -1621,6 +1621,7 @@
      SUBDIR += reposurgeon
      SUBDIR += rgbds
      SUBDIR += riscv-elf
+     SUBDIR += riscv32-esp-elf
      SUBDIR += rlog
      SUBDIR += robin-hood-hashing
      SUBDIR += robin-map
@@ -1805,6 +1806,8 @@
      SUBDIR += xsd
      SUBDIR += xtensa-elf
      SUBDIR += xtensa-esp32-elf
+     SUBDIR += xtensa-esp32s2-elf
+     SUBDIR += xtensa-esp32s3-elf
      SUBDIR += xtensa-lx106-elf
      SUBDIR += yaml-cpp
      SUBDIR += yarn
