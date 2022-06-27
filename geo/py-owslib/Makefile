@@ -1,6 +1,6 @@
 COMMENT =		library for accessing OGC Web Services
 
-MODPY_EGG_VERSION =	0.25.0
+MODPY_EGG_VERSION =	0.26.0
 DISTNAME =		OWSLib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 

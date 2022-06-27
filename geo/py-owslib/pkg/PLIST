@@ -18,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}fes.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}fes2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}fgdc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}gm03.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}gml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}iso.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}iso_che.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/fes.py
 lib/python${MODPY_VERSION}/site-packages/owslib/fes2.py
 lib/python${MODPY_VERSION}/site-packages/owslib/fgdc.py
 lib/python${MODPY_VERSION}/site-packages/owslib/gm03.py
+lib/python${MODPY_VERSION}/site-packages/owslib/gml.py
 lib/python${MODPY_VERSION}/site-packages/owslib/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/owslib/iso.py
 lib/python${MODPY_VERSION}/site-packages/owslib/iso_che.py

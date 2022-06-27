@@ -1,0 +1,12 @@
+revert https://github.com/geopython/OWSLib/pull/807
+Index: requirements.txt
+--- requirements.txt.orig
++++ requirements.txt
+@@ -1,6 +1,6 @@
+ python-dateutil>=1.5
+ pytz
+ requests>=1.0
+-pyproj < 3.3.0
++pyproj
+ pyyaml
+ dataclasses; python_version < '3.7'
