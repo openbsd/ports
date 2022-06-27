@@ -8,7 +8,7 @@ Index: configs/samples/asterisk.conf.sample
 -;runuser = asterisk		; The user to run as.
 -;rungroup = asterisk		; The group to run as.
 +runuser = _asterisk		; The user to run as.
-+rungroup = _asterisk		; The group to run as.
++;rungroup = _asterisk		; The group to run as (otherwise uses default groups for the runuser)
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be
