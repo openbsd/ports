@@ -1,5 +1,5 @@
 COMMENT =	esp32 arduino core toolset
-V =		2.0.1
+V =		2.0.3
 DISTNAME =	esp32-${V}
 PKGNAME =	arduino-${DISTNAME}
 
