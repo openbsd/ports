@@ -1,7 +1,7 @@
 Index: platform/x11/curl_stream.c
 --- platform/x11/curl_stream.c.orig
 +++ platform/x11/curl_stream.c
-@@ -393,7 +393,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
+@@ -397,7 +397,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
  	{
  		unlock(state);
  		if (state->data_arrived == 0)
@@ -10,7 +10,7 @@ Index: platform/x11/curl_stream.c
  		return EOF;
  	}
  
-@@ -407,7 +407,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
+@@ -411,7 +411,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
  		if (read_point + len > state->current_fill_start)
  		{
  			unlock(state);
@@ -19,7 +19,7 @@ Index: platform/x11/curl_stream.c
  		}
  		memcpy(buf, state->buffer + read_point, len);
  		unlock(state);
-@@ -430,7 +430,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
+@@ -434,7 +434,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
  		{
  			state->next_fill_start = block<<BLOCK_SHIFT;
  			unlock(state);
@@ -28,7 +28,7 @@ Index: platform/x11/curl_stream.c
  		}
  		block++;
  		memcpy(buf, state->buffer + read_point, left_over);
-@@ -453,7 +453,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
+@@ -457,7 +457,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
  			stream->pos += len_read;
  			/* If we haven't fetched anything, throw. */
  			if (len_read == 0)
@@ -37,7 +37,7 @@ Index: platform/x11/curl_stream.c
  			/* Otherwise, we got at least one byte, so we can safely return that. */
  			return *stream->rp++;
  		}
-@@ -478,7 +478,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
+@@ -482,7 +482,7 @@ static int cs_next(fz_context *ctx, fz_stream *stream,
  			stream->pos += len_read;
  			/* If we haven't fetched anything, throw. */
  			if (len_read == 0)

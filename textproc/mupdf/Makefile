@@ -1,7 +1,7 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.19.1
-REVISION =	0
+# bump and test textproc/zathura/plugins/mupdf if updating
+V =		1.20.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 

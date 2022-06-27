@@ -12,7 +12,7 @@ Index: source/tools/pdfinfo.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -1056,6 +1058,12 @@ int pdfinfo_main(int argc, char **argv)
+@@ -1058,6 +1060,12 @@ int pdfinfo_main(int argc, char **argv)
  	{
  		infousage();
  		return 1;
