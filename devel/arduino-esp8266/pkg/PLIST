@@ -1,3 +1,4 @@
+@pkgpath devel/esptool-ck
 share/arduino/hardware/
 share/arduino/hardware/espressif/
 share/arduino/hardware/espressif/esp8266/

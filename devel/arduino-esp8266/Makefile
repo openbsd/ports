@@ -2,7 +2,7 @@ COMMENT =	esp8266 arduino core toolset
 V =		3.0.2
 DISTNAME =	esp8266-${V}
 PKGNAME =	arduino-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -20,7 +20,6 @@ BUILD_DEPENDS =		devel/xtensa-lx106-elf/gcc \
 			devel/xtensa-lx106-elf/lx106-hal \
 			devel/xtensa-lx106-elf/newlib
 RUN_DEPENDS +=		devel/arduino \
-			devel/esptool-ck \
 			devel/mklittlefs \
 			devel/mkspiffs \
 			devel/py-esptool${MODPY_FLAVOR} \
