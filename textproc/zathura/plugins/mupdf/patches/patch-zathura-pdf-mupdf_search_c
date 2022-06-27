@@ -1,0 +1,25 @@
+From 2896b1f846b2c953e34cdee449dd51f5e600e39a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Philipp=20R=C3=B6sner?= <rndxelement@protonmail.com>
+Date: Tue, 21 Jun 2022 22:01:24 +0200
+Subject: [PATCH] Adapt search.c to MuPDF API change
+
+In MuPdf-1.20.0 the search API, in particular the function
+fz_search_stext_page was extended by an additional parameter.
+
+Because of that, building zathura-pdf-mupdf against MuPDF-1.20.0 fails.
+
+Therefore, I adapted the fz_search_stext_page call, adding NULL as the
+new hit_mark parameter.
+
+Index: zathura-pdf-mupdf/search.c
+--- zathura-pdf-mupdf/search.c.orig
++++ zathura-pdf-mupdf/search.c
+@@ -41,7 +41,7 @@ pdf_page_search_text(zathura_page_t* page, void* data,
+ 
+   fz_quad* hit_bbox = fz_malloc_array(mupdf_page->ctx, N_SEARCH_RESULTS, fz_quad);
+   int num_results = fz_search_stext_page(mupdf_page->ctx, mupdf_page->text,
+-      text, hit_bbox, N_SEARCH_RESULTS);
++      text, NULL, hit_bbox, N_SEARCH_RESULTS);
+ 
+   fz_rect r;
+   for (int i = 0; i < num_results; i++) {
