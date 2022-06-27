@@ -1,0 +1,55 @@
+Index: gdb/gdbserver/xtensa-xtregs.c
+--- gdb/gdbserver/xtensa-xtregs.c.orig
++++ gdb/gdbserver/xtensa-xtregs.c
+@@ -1,20 +1,25 @@
+-/* Table mapping between kernel xtregset and GDB register cache.
+-   Copyright (C) 2007-2020 Free Software Foundation, Inc.
++/* Customized table mapping between kernel xtregset and GDB register cache.
+ 
+-   This file is part of GDB.
++   Customer ID=14525; Build=0x787b1; Copyright (c) 2007-2010 Tensilica Inc.
+ 
+-   This program is free software; you can redistribute it and/or
+-   modify it under the terms of the GNU General Public License as
+-   published by the Free Software Foundation; either version 3 of the
+-   License, or (at your option) any later version.
++   Permission is hereby granted, free of charge, to any person obtaining
++   a copy of this software and associated documentation files (the
++   "Software"), to deal in the Software without restriction, including
++   without limitation the rights to use, copy, modify, merge, publish,
++   distribute, sublicense, and/or sell copies of the Software, and to
++   permit persons to whom the Software is furnished to do so, subject to
++   the following conditions:
+ 
+-   This program is distributed in the hope that it will be useful,
+-   but WITHOUT ANY WARRANTY; without even the implied warranty of
+-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+-   General Public License for more details.
++   The above copyright notice and this permission notice shall be included
++   in all copies or substantial portions of the Software.
+ 
+-   You should have received a copy of the GNU General Public License
+-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
++   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
++   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
++   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
++   IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
++   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
++   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
++   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  */
+ 
+ 
+ typedef struct {
+@@ -28,10 +33,10 @@ typedef struct {
+   char* name
+ ;} xtensa_regtable_t;
+ 
+-#define XTENSA_ELF_XTREG_SIZE	4
++#define XTENSA_ELF_XTREG_SIZE	0
+ 
+ const xtensa_regtable_t  xtensa_regmap_table[] = {
+   /* gnum,gofs,cpofs,ofs,siz,cp, dbnum,  name */
+-  {   44, 176,   0,   0,  4, -1, 0x020c, "scompare1" },
+   { 0 }
+ };
++
