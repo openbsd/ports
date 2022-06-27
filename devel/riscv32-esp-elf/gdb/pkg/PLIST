@@ -1,0 +1,38 @@
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-gdb
+riscv32-esp-elf/bin/riscv32-esp-elf-gdb-add-index
+riscv32-esp-elf/include/
+riscv32-esp-elf/include/gdb/
+riscv32-esp-elf/include/gdb/jit-reader.h
+riscv32-esp-elf/lib/charset.alias
+riscv32-esp-elf/riscv32-esp-elf/lib/
+@static-lib riscv32-esp-elf/riscv32-esp-elf/lib/libiberty.a
+riscv32-esp-elf/share/gdb/
+riscv32-esp-elf/share/gdb/syscalls/
+riscv32-esp-elf/share/gdb/syscalls/aarch64-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/amd64-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/arm-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/freebsd.xml
+riscv32-esp-elf/share/gdb/syscalls/gdb-syscalls.dtd
+riscv32-esp-elf/share/gdb/syscalls/i386-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/mips-n32-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/mips-n64-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/mips-o32-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/ppc-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/ppc64-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/s390-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/s390x-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/sparc-linux.xml
+riscv32-esp-elf/share/gdb/syscalls/sparc64-linux.xml
+riscv32-esp-elf/share/gdb/system-gdbinit/
+riscv32-esp-elf/share/gdb/system-gdbinit/elinos.py
+riscv32-esp-elf/share/gdb/system-gdbinit/wrs-linux.py
+@info riscv32-esp-elf/share/info/
+@info riscv32-esp-elf/share/info/annotate.info
+@comment @info riscv32-esp-elf/share/info/bfd.info
+@info riscv32-esp-elf/share/info/gdb.info
+@info riscv32-esp-elf/share/info/stabs.info
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-gdb-add-index.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-gdb.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-gdbserver.1
+riscv32-esp-elf/share/man/man5/
+@man riscv32-esp-elf/share/man/man5/riscv32-esp-elf-gdbinit.5

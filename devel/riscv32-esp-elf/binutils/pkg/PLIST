@@ -1,0 +1,103 @@
+riscv32-esp-elf/
+riscv32-esp-elf/bin/
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-addr2line
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-ar
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-as
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-c++filt
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-elfedit
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-gprof
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-ld
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-ld.bfd
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-nm
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-objcopy
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-objdump
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-ranlib
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-readelf
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-size
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-strings
+@bin riscv32-esp-elf/bin/riscv32-esp-elf-strip
+riscv32-esp-elf/lib/
+riscv32-esp-elf/lib/ldscripts/
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.x
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xbn
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xc
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xce
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xd
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xdc
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xdce
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xde
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xdw
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xdwe
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xe
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xn
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xr
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xs
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xsc
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xsce
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xse
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xsw
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xswe
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xu
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xw
+riscv32-esp-elf/lib/ldscripts/elf32lriscv.xwe
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.x
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xbn
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xc
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xce
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xd
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xdc
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xdce
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xde
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xdw
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xdwe
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xe
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xn
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xr
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xs
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xsc
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xsce
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xse
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xsw
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xswe
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xu
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xw
+riscv32-esp-elf/lib/ldscripts/elf64lriscv.xwe
+riscv32-esp-elf/riscv32-esp-elf/
+riscv32-esp-elf/riscv32-esp-elf/bin/
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/ar
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/as
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/ld
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/ld.bfd
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/nm
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/objcopy
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/objdump
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/ranlib
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/readelf
+@bin riscv32-esp-elf/riscv32-esp-elf/bin/strip
+riscv32-esp-elf/share/
+@info riscv32-esp-elf/share/info/
+@info riscv32-esp-elf/share/info/as.info
+@info riscv32-esp-elf/share/info/bfd.info
+@info riscv32-esp-elf/share/info/binutils.info
+@info riscv32-esp-elf/share/info/gprof.info
+@info riscv32-esp-elf/share/info/ld.info
+@mandir riscv32-esp-elf/share/man/
+riscv32-esp-elf/share/man/man1/
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-addr2line.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-ar.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-as.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-c++filt.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-dlltool.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-elfedit.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-gprof.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-ld.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-nm.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-objcopy.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-objdump.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-ranlib.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-readelf.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-size.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-strings.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-strip.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-windmc.1
+@man riscv32-esp-elf/share/man/man1/riscv32-esp-elf-windres.1
