@@ -1,6 +1,6 @@
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_EGG_VERSION =	1.8.1.post1
+MODPY_EGG_VERSION =	1.8.2
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
