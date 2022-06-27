@@ -1,9 +1,8 @@
 COMMENT =	point cloud storage extension for PostgreSQL
 
-GH_TAGNAME =	v1.2.1
+GH_TAGNAME =	v1.2.2
 GH_PROJECT =	pointcloud
 GH_ACCOUNT =	pgpointcloud
-REVISION =	0
 
 CATEGORIES =	geo databases
 
