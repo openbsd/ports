@@ -1,0 +1,45 @@
+xtensa-esp32s3-elf/
+xtensa-esp32s3-elf/bin/
+@bin xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gdb
+xtensa-esp32s3-elf/bin/xtensa-esp32s3-elf-gdb-add-index
+xtensa-esp32s3-elf/include/
+xtensa-esp32s3-elf/include/gdb/
+xtensa-esp32s3-elf/include/gdb/jit-reader.h
+xtensa-esp32s3-elf/lib/
+xtensa-esp32s3-elf/lib/charset.alias
+xtensa-esp32s3-elf/share/
+xtensa-esp32s3-elf/share/gdb/
+xtensa-esp32s3-elf/share/gdb/syscalls/
+xtensa-esp32s3-elf/share/gdb/syscalls/aarch64-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/amd64-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/arm-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/freebsd.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/gdb-syscalls.dtd
+xtensa-esp32s3-elf/share/gdb/syscalls/i386-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/mips-n32-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/mips-n64-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/mips-o32-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/ppc-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/ppc64-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/s390-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/s390x-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/sparc-linux.xml
+xtensa-esp32s3-elf/share/gdb/syscalls/sparc64-linux.xml
+xtensa-esp32s3-elf/share/gdb/system-gdbinit/
+xtensa-esp32s3-elf/share/gdb/system-gdbinit/elinos.py
+xtensa-esp32s3-elf/share/gdb/system-gdbinit/wrs-linux.py
+@info xtensa-esp32s3-elf/share/info/
+@info xtensa-esp32s3-elf/share/info/annotate.info
+@comment @info xtensa-esp32s3-elf/share/info/bfd.info
+@info xtensa-esp32s3-elf/share/info/gdb.info
+@info xtensa-esp32s3-elf/share/info/stabs.info
+@mandir xtensa-esp32s3-elf/share/man/
+xtensa-esp32s3-elf/share/man/man1/
+@man xtensa-esp32s3-elf/share/man/man1/xtensa-esp32s3-elf-gdb-add-index.1
+@man xtensa-esp32s3-elf/share/man/man1/xtensa-esp32s3-elf-gdb.1
+@man xtensa-esp32s3-elf/share/man/man1/xtensa-esp32s3-elf-gdbserver.1
+xtensa-esp32s3-elf/share/man/man5/
+@man xtensa-esp32s3-elf/share/man/man5/xtensa-esp32s3-elf-gdbinit.5
+xtensa-esp32s3-elf/xtensa-esp32s3-elf/
+xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/
+@static-lib xtensa-esp32s3-elf/xtensa-esp32s3-elf/lib/libiberty.a
