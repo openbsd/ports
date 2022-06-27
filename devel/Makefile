@@ -143,7 +143,6 @@
      SUBDIR += elfcat
      SUBDIR += elftoolchain
      SUBDIR += epoll-shim
-     SUBDIR += esptool-ck
      SUBDIR += etl
      SUBDIR += expect-lite
      SUBDIR += fasm
