@@ -62,7 +62,7 @@ TEST_DEPENDS +=	databases/py-mongo${MODPY_FLAVOR}
 
 # - can't cope with OpenBSD's nameser.h with ancient defines, plus uses
 # res_ninit/res_nclose which are not supported by the libc resolver
-BUILD_DEPENDS =	devel/py-cheetah${MODPY_FLAVOR} \
+BUILD_DEPENDS += devel/py-cheetah${MODPY_FLAVOR} \
 		net/libbind \
 		textproc/py-yaml${MODPY_FLAVOR}
 
