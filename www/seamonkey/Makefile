@@ -13,6 +13,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.12
 EPOCH-lightning =	0
+REVISION-main =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 
