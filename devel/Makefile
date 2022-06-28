@@ -82,6 +82,7 @@
      SUBDIR += coccinelle
      SUBDIR += codeblocks
      SUBDIR += codeworker
+     SUBDIR += coeurl
      SUBDIR += colordiff
      SUBDIR += commoncpp
      SUBDIR += coxpcall
@@ -427,6 +428,7 @@
      SUBDIR += msgpack
      SUBDIR += msp430
      SUBDIR += mspdebug
+     SUBDIR += mtxclient
      SUBDIR += mygui
      SUBDIR += nagelfar
      SUBDIR += naken430asm
@@ -1753,6 +1755,7 @@
      SUBDIR += snare
      SUBDIR += sord
      SUBDIR += sparsehash
+     SUBDIR += spdlog
      SUBDIR += spice-protocol
      SUBDIR += spidermonkey91
      SUBDIR += splint
