@@ -5,12 +5,12 @@ lib/baresip/modules/
 @so lib/baresip/modules/account.so
 @so lib/baresip/modules/amr.so
 @so lib/baresip/modules/aubridge.so
+@so lib/baresip/modules/auconv.so
 @so lib/baresip/modules/aufile.so
-@so lib/baresip/modules/auloop.so
+@so lib/baresip/modules/auresamp.so
 @so lib/baresip/modules/ausine.so
 @so lib/baresip/modules/avcodec.so
 @so lib/baresip/modules/avformat.so
-@so lib/baresip/modules/b2bua.so
 @so lib/baresip/modules/cons.so
 @so lib/baresip/modules/contact.so
 @so lib/baresip/modules/ctrl_tcp.so
@@ -28,6 +28,7 @@ lib/baresip/modules/
 @so lib/baresip/modules/l16.so
 @so lib/baresip/modules/menu.so
 @so lib/baresip/modules/mixausrc.so
+@so lib/baresip/modules/mixminus.so
 @so lib/baresip/modules/mpa.so
 @so lib/baresip/modules/mqtt.so
 @so lib/baresip/modules/multicast.so
@@ -42,7 +43,6 @@ lib/baresip/modules/
 @so lib/baresip/modules/snapshot.so
 @so lib/baresip/modules/sndfile.so
 @so lib/baresip/modules/sndio.so
-@so lib/baresip/modules/speex_pp.so
 @so lib/baresip/modules/srtp.so
 @so lib/baresip/modules/stdio.so
 @so lib/baresip/modules/stun.so
@@ -53,12 +53,10 @@ lib/baresip/modules/
 @so lib/baresip/modules/v4l2.so
 @comment lib/baresip/modules/v4l2_codec.so
 @so lib/baresip/modules/vidbridge.so
-@so lib/baresip/modules/vidloop.so
 @so lib/baresip/modules/vp8.so
 @so lib/baresip/modules/vp9.so
 @so lib/baresip/modules/vumeter.so
 @so lib/baresip/modules/x11.so
-@so lib/baresip/modules/x11grab.so
 @so lib/baresip/modules/zrtp.so
 share/baresip/
 share/baresip/autoanswer.wav

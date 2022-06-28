@@ -3,9 +3,7 @@ COMMENT-gtk =		GTK+-based modules for baresip
 
 GH_ACCOUNT =	baresip
 GH_PROJECT =	baresip
-GH_TAGNAME =	v1.1.0
-REVISION-gtk =	0
-REVISION-main =	0
+GH_TAGNAME =	v2.4.0
 
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
@@ -17,13 +15,12 @@ WANTLIB-main += swscale twolame v4l2 vpx opencore-amrnb
 
 WANTLIB-gtk += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB-gtk += glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB-gtk += gtk-3 harfbuzz intl mpg123 pango-1.0 pangocairo-1.0
+WANTLIB-gtk += gtk-3 harfbuzz intl pango-1.0 pangocairo-1.0
 WANTLIB-gtk += re
 
 BUILD_DEPENDS =		telephony/libzrtp>=0.20170512
 LIB_DEPENDS-main =	audio/gsm \
 			audio/libsndfile \
-			audio/mpg123 \
 			audio/opencore-amr \
 			audio/opus \
 			audio/twolame \
@@ -32,12 +29,11 @@ LIB_DEPENDS-main =	audio/gsm \
 			multimedia/libv4l \
 			multimedia/libvpx>=1.3.0 \
 			net/mosquitto \
-			telephony/baresip/re>=2.0.1 \
-			telephony/baresip/rem>=1.0.0 \
+			telephony/baresip/re>=2.4.0 \
+			telephony/baresip/rem>=2.4.0 \
 			telephony/spandsp
 LIB_DEPENDS-gtk =	multimedia/gstreamer1/plugins-base \
-			telephony/baresip/re>=2.0.1 \
-			audio/mpg123 \
+			telephony/baresip/re>=2.4.0 \
 			x11/gtk+3,-main
 RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main>=1.1.0
 
