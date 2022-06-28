@@ -31,6 +31,7 @@ WANTLIB-admin += harfbuzz iconv intl iodbc iodbcinst m pango-1.0 pangocairo-1.0
 WANTLIB-admin += pangoft2-1.0 pcre pixman-1 png pthread xcb xcb-render
 WANTLIB-admin += xcb-shm z Xau Xdmcp ${COMPILER_LIBCXX} jpeg
 
+PSEUDO_FLAVORS = bootstrap no_admin
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
 			--disable-libodbc
@@ -41,6 +42,11 @@ LIB_DEPENDS-admin=	databases/iodbc,-main \
 			x11/gtk+2
 
 LIB_DEPENDS-main=	# empty
+
+.include <bsd.port.arch.mk>
+.if !${BUILD_PACKAGES:M-admin}
+CONFIGURE_ARGS += 	--disable-gui
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iodbc/
