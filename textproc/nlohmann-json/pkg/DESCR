@@ -1,0 +1,18 @@
+There are myriads of JSON libraries out there, and each may even have its reason
+to exist. This class had these design goals:
+
+  * Intuitive syntax. In languages such as Python, JSON feels like a first class
+    data type. Here all the operator magic of modern C++ was used to achieve
+    the same feeling in code.
+
+  * Trivial integration. The whole code consists of a single header file
+    json.hpp. That's it. No library, no subproject, no dependencies, no complex
+    build system. The class is written in vanilla C++11. All in all, everything
+    should require no adjustment of your compiler flags or project settings.
+
+  * Serious testing. The class is heavily unit-tested and covers 100% of the
+    code, including all exceptional behavior. Furthermore, it's checked with
+    Valgrind and the Clang Sanitizers that there are no memory leaks. Google
+    OSS-Fuzz additionally runs fuzz tests against all parsers 24/7, effectively
+    executing billions of tests so far. To maintain high quality, the project is
+    following the Core Infrastructure Initiative (CII) best practices.
