@@ -163,6 +163,7 @@
      SUBDIR += namazu
      SUBDIR += naturaldocs
      SUBDIR += nfoview
+     SUBDIR += nlohmann-json
      SUBDIR += odt2txt
      SUBDIR += oniguruma
      SUBDIR += openjade
