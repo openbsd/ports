@@ -16,6 +16,7 @@ include/dmd/druntime/import/core/gc/
 include/dmd/druntime/import/core/gc/config.d
 include/dmd/druntime/import/core/gc/gcinterface.d
 include/dmd/druntime/import/core/gc/registry.d
+include/dmd/druntime/import/core/int128.d
 include/dmd/druntime/import/core/internal/
 include/dmd/druntime/import/core/internal/abort.d
 include/dmd/druntime/import/core/internal/array/
@@ -697,6 +698,7 @@ include/dmd/phobos/std/format/spec.d
 include/dmd/phobos/std/format/write.d
 include/dmd/phobos/std/functional.d
 include/dmd/phobos/std/getopt.d
+include/dmd/phobos/std/int128.d
 include/dmd/phobos/std/internal/
 include/dmd/phobos/std/internal/attributes.d
 include/dmd/phobos/std/internal/cstring.d
