@@ -14,9 +14,9 @@ Index: third_party/libwebrtc/common_audio/third_party/ooura/fft_size_128_gn/moz.
 -    ]
 -
      DEFINES["USE_GLIB"] = "1"
+     DEFINES["USE_X11"] = "1"
      DEFINES["WEBRTC_BSD"] = True
-     DEFINES["WEBRTC_POSIX"] = True
-@@ -101,6 +97,12 @@ if CONFIG["OS_TARGET"] == "OpenBSD":
+@@ -102,6 +98,12 @@ if CONFIG["OS_TARGET"] == "OpenBSD":
      DEFINES["_LARGEFILE_SOURCE"] = True
      DEFINES["__STDC_CONSTANT_MACROS"] = True
      DEFINES["__STDC_FORMAT_MACROS"] = True
