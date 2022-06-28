@@ -1,0 +1,23 @@
+find our php-config-${PHP_VERSION}
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -9924,14 +9924,14 @@ done
+       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PHP header files" >&5
+ $as_echo_n "checking for PHP header files... " >&6; }
+             case $PHP in
+-        *7.*)
+-          PHPCONFIG=`echo "$PHP"|sed 's/7\...*$/-config&/'` ;;
++        *8.*)
++          PHPCONFIG=`echo "$PHP"|sed 's/\(-8\..\)/-config\1/'` ;;
+         *)
+           PHPCONFIG=$PHP-config ;;
+       esac
+       php_version=`$PHPCONFIG --version 2>/dev/null`
+       case $php_version in
+-      7.*)
++      8.*)
+         PHPINC=`$PHPCONFIG --includes 2>/dev/null`
+         if test -n "$PHPINC"; then
+           { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PHPINC" >&5
