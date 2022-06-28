@@ -1,9 +1,15 @@
-Don't include user and hostname into build.
+Don't include user and hostname into build and build verbose.
 
 Index: .promu.yml
 --- .promu.yml.orig
 +++ .promu.yml
-@@ -15,7 +15,7 @@ build:
+@@ -10,12 +10,12 @@ build:
+           path: ./cmd/prometheus
+         - name: promtool
+           path: ./cmd/promtool
+-    flags: -a -tags netgo,builtinassets
++    flags: -v -a -tags netgo,builtinassets
+     ldflags: |
          -X github.com/prometheus/common/version.Version={{.Version}}
          -X github.com/prometheus/common/version.Revision={{.Revision}}
          -X github.com/prometheus/common/version.Branch={{.Branch}}
@@ -11,4 +17,4 @@ Index: .promu.yml
 +        -X github.com/prometheus/common/version.BuildUser=OpenBSD
          -X github.com/prometheus/common/version.BuildDate={{date "20060102-15:04:05"}}
  tarball:
-     files:
+     # Whenever there are new files to include in the tarball,

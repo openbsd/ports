@@ -1,23 +1,24 @@
 COMMENT =		systems monitoring and alerting toolkit
 
-V =			2.24.1
+V =			2.36.2
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
 GH_TAGNAME =		v${V}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://prometheus.io/
 
 MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
-DISTFILES +=		prometheus-${V}.tar.gz \
-			prometheus-reactui-${V}.tar.gz:0
+DISTFILES =		prometheus-${V}.tar.gz \
+			prometheus-web-ui-${V}.tar.gz:0
+DISTFILES +=		prometheus-vendor-${V}.tar.gz:1
+
+MASTER_SITES0 =		https://github.com/prometheus/prometheus/releases/download/${GH_TAGNAME}/
+MASTER_SITES1 =		https://www.zyd.ch/distfiles/
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
-
-MASTER_SITES0 =		https://www.zyd.ch/distfiles/
 
 WANTLIB =		c pthread
 
@@ -25,12 +26,16 @@ BUILD_DEPENDS =		devel/promu
 
 USE_GMAKE =		Yes
 
-MODULES=		lang/go
-MODGO_GOPATH=		${MODGO_WORKSPACE}
+MODULES =		lang/go
+MODGO_GOPATH =		${MODGO_WORKSPACE}
+
+post-extract:
+	mv ${WRKDIR}/static/react ${WRKDIST}/web/ui/static/
 
 # promu doesn't like the default PREFIX
 do-build:
-	cd ${WRKSRC} && ${MAKE_ENV} GOMAXPROCS=${MAKE_JOBS} PREFIX=. ${MAKE_PROGRAM} \
+	cd ${WRKSRC} && \
+	${MAKE_ENV} GOMAXPROCS=${MAKE_JOBS} PREFIX=. ${MAKE_PROGRAM} \
 	    PROMU="${LOCALBASE}/bin/promu -v" build
 
 do-install:
@@ -49,9 +54,15 @@ do-install:
 		${PREFIX}/share/examples/prometheus/prometheus.yml
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/prometheus/
 	${INSTALL_DATA} ${WRKSRC}/NOTICE ${PREFIX}/share/doc/prometheus/
-	${INSTALL_DATA} ${WRKSRC}/npm_licenses.tar.bz2 ${PREFIX}/share/doc/prometheus/
 
 do-test:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} test
+
+vendor: patch
+	cd ${WRKDIR}/prometheus-$V; \
+	go mod tidy; \
+	go mod vendor; \
+	cd ..; \
+	tar cvzf prometheus-vendor-${V}.tar.gz prometheus-$V/vendor
 
 .include <bsd.port.mk>

@@ -3,12 +3,21 @@ The react build is provided via extra distfile
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -38,7 +38,7 @@ $(REACT_APP_OUTPUT_DIR): $(REACT_APP_NODE_MODULES_PATH
- 	@$(REACT_APP_BUILD_SCRIPT)
+@@ -60,7 +60,7 @@ ui-lint:
+ 	cd $(UI_PATH) && npm run lint
  
  .PHONY: assets
--assets: $(REACT_APP_OUTPUT_DIR)
+-assets: ui-install ui-build
 +assets:
- 	@echo ">> writing assets"
- 	# Un-setting GOOS and GOARCH here because the generated Go code is always the same,
- 	# but the cached object code is incompatible between architectures and OSes (which
+ 
+ .PHONY: assets-compress
+ assets-compress: assets
+@@ -101,7 +101,7 @@ plugins/plugins.go: plugins.yml plugins/generate.go
+ plugins: plugins/plugins.go
+ 
+ .PHONY: build
+-build: assets npm_licenses assets-compress common-build plugins
++build: assets-compress common-build plugins
+ 
+ .PHONY: bench_tsdb
+ bench_tsdb: $(PROMU)

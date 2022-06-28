@@ -1,0 +1,11 @@
+Just use /bin/sh for this trivial script
+
+Index: scripts/compress_assets.sh
+--- scripts/compress_assets.sh.orig
++++ scripts/compress_assets.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # compress static assets
+ 

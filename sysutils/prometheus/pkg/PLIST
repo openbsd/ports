@@ -7,7 +7,6 @@
 share/doc/prometheus/
 share/doc/prometheus/LICENSE
 share/doc/prometheus/NOTICE
-share/doc/prometheus/npm_licenses.tar.bz2
 share/examples/prometheus/
 share/examples/prometheus/console_libraries/
 share/examples/prometheus/console_libraries/menu.lib
