@@ -1,35 +1,26 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -24,8 +24,6 @@ LIBRE_MK  := $(shell [ -f /usr/local/share/re/re.mk ] 
- 	echo "/usr/local/share/re/re.mk")
- endif
- 
--include $(LIBRE_MK)
--
- # List of modules
- MODULES += fir goertzel
- MODULES += g711
-@@ -81,15 +79,13 @@ all: $(SHARED) $(STATIC)
+@@ -137,15 +137,13 @@ all: $(SHARED) $(STATIC)
  
  
- $(SHARED): $(OBJS)
+ $(SHARED): $(OBJS) librem.pc
 -	@echo "  LD      $@"
--	@$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
-+	$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -lre $(LIBS) -o $@
+-	@$(LD) $(LFLAGS) $(SH_LFLAGS) $(OBJS) -L$(LIBRE_SO) -lre $(LIBS) -o $@
++	$(LD) $(LFLAGS) $(SH_LFLAGS) $(OBJS) -L$(LIBRE_SO) -lre $(LIBS) -o $@
  
  
- $(STATIC): $(OBJS)
+ $(STATIC): $(OBJS) librem.pc
 -	@echo "  AR      $@"
--	@$(AR) $(AFLAGS) $@ $^
-+	$(AR) $(AFLAGS) $@ $^
+-	@$(AR) $(AFLAGS) $@ $(OBJS)
++	$(AR) $(AFLAGS) $@ $(OBJS)
  ifneq ($(RANLIB),)
 -	@$(RANLIB) $@
 +	$(RANLIB) $@
  endif
  
- librem.pc:
-@@ -106,17 +102,15 @@ librem.pc:
+ librem.pc: Makefile
+@@ -162,14 +160,12 @@ librem.pc: Makefile
  	@echo 'Libs: -L$${libdir} -lrem -lre' >> librem.pc
  	@echo 'Cflags: -I$${includedir}' >> librem.pc
  
@@ -37,30 +28,14 @@ Index: Makefile
 -	@echo "  CC      $@"
 -	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
 +$(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MODMKS)
-+	$(CC) $(CFLAGS) -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
  
  
 -$(BUILD)/%.o: src/%.S $(BUILD) Makefile $(MK) $(MODMKS)
 -	@echo "  AS      $@"
 -	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
 +$(BUILD)/%.o: src/%.S $(BUILD) Makefile $(MODMKS)
-+	$(CC) $(CFLAGS) -c $< -o $@
- 
- 
--$(BUILD): Makefile $(MK) $(MODMKS)
-+$(BUILD): Makefile $(MODMKS)
- 	@mkdir -p $(patsubst %,$(BUILD)/%,$(sort $(dir $(SRCS))))
- 	@touch $@
- 
-@@ -145,9 +139,7 @@ uninstall:
- -include test.d
- 
- test.o:	test.c
--	@echo "  CC      $@"
--	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
 +	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
  
- test$(BIN_SUFFIX): test.o $(SHARED) $(STATIC)
--	@echo "  LD      $@"
--	@$(LD) $(LFLAGS) $< -L. -lrem -lre $(LIBS) -o $@
-+	$(LD) $(LFLAGS) $< -L. -lrem -lre $(LIBS) -o $@
+ 
+ $(BUILD): Makefile $(MK) $(MODMKS)

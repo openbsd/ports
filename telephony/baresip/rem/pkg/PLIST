@@ -6,6 +6,7 @@ include/rem/rem_aubuf.h
 include/rem/rem_auconv.h
 include/rem/rem_audio.h
 include/rem/rem_aufile.h
+include/rem/rem_auframe.h
 include/rem/rem_aulevel.h
 include/rem/rem_aumix.h
 include/rem/rem_auresamp.h
@@ -17,7 +18,6 @@ include/rem/rem_fir.h
 include/rem/rem_flv.h
 include/rem/rem_g711.h
 include/rem/rem_goertzel.h
-include/rem/rem_h264.h
 include/rem/rem_vid.h
 include/rem/rem_vidconv.h
 include/rem/rem_video.h
