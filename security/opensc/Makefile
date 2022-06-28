@@ -1,7 +1,7 @@
 COMMENT=	set of libraries and utilities to access smart cards
 
 V=		0.22.0
-REVISION=	0
+REVISION=	1
 DISTNAME=	opensc-${V}
 
 SHARED_LIBS +=	opensc 7.3	# 8.0

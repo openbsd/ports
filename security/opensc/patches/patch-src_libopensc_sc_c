@@ -1,0 +1,30 @@
+Avoid mlock; not really useful unless non-default vm.swapencrypt.enable=0
+is used, and prevents opensc being used by pledge()'d callers.
+
+Belt and braces with calloc_conceal: upstream already uses explicit_bzero,
+but we might as well use this which conceals secure allocations from dumps.
+
+Index: src/libopensc/sc.c
+--- src/libopensc/sc.c.orig
++++ src/libopensc/sc.c
+@@ -912,14 +912,18 @@ void *sc_mem_secure_alloc(size_t len)
+ 		len = pages * page_size;
+ 	}
+ 
++#ifdef HAVE_CALLOC_CONCEAL
++	p = calloc_conceal(1, len);
++#else
+ 	p = calloc(1, len);
+ 	if (p == NULL) {
+ 		return NULL;
+ 	}
+-#ifdef _WIN32
++#  ifdef _WIN32
+ 	VirtualLock(p, len);
+-#else
++#  else
+ 	mlock(p, len);
++#  endif
+ #endif
+ 
+ 	return p;
