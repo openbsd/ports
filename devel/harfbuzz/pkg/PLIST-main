@@ -9,6 +9,7 @@ include/harfbuzz/hb-aat.h
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
+include/harfbuzz/hb-cplusplus.hh
 include/harfbuzz/hb-deprecated.h
 include/harfbuzz/hb-draw.h
 include/harfbuzz/hb-face.h
