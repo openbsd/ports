@@ -1,12 +1,12 @@
 Index: pkg/cmd/grafana-cli/commands/commands.go
 --- pkg/cmd/grafana-cli/commands/commands.go.orig
 +++ pkg/cmd/grafana-cli/commands/commands.go
-@@ -57,7 +57,7 @@ func runPluginCommand(command func(commandLine utils.C
+@@ -95,7 +95,7 @@ func runPluginCommand(command func(commandLine utils.C
  			return err
  		}
  
--		logger.Info("\nRestart grafana after installing plugins . <service grafana-server restart>\n\n")
-+		logger.Info("\nRestart grafana after installing plugins . <rcctl restart grafana>\n\n")
+-		logger.Info(color.GreenString("Please restart Grafana after installing plugins. Refer to Grafana documentation for instructions if necessary.\n\n"))
++		logger.Info(color.GreenString("Please restart Grafana after installing plugins. rcctl restart grafana\n\n"))
  		return nil
  	}
  }
