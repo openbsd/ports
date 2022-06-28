@@ -3,9 +3,8 @@
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	dump DMI/SMBIOS contents in human-readable format
-DISTNAME=	dmidecode-3.3
+DISTNAME=	dmidecode-3.4
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	sysutils
 
