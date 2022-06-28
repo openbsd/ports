@@ -1,9 +1,9 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -20,10 +20,6 @@ ABI_MAJOR := $(shell expr $(ABI_CUR) - $(ABI_AGE))
- PROJECT   := re
- VERSION   := $(VER_MAJOR).$(VER_MINOR).$(VER_PATCH)
+@@ -30,10 +30,6 @@ else
+ VERSION   := $(VER_MAJOR).$(VER_MINOR).$(VER_PATCH)-$(VER_PRE)
+ endif
  
 -MK	:= mk/re.mk
 -
@@ -12,7 +12,7 @@ Index: Makefile
  # List of modules
  MODULES += sip sipevent sipreg sipsess
  MODULES += uri http httpauth msg websock
-@@ -54,6 +50,10 @@ endif
+@@ -69,6 +65,10 @@ endif
  INCDIR  := $(PREFIX)/include/re
  MKDIR   := $(PREFIX)/share/re
  CFLAGS	+= -Iinclude
@@ -23,60 +23,26 @@ Index: Makefile
  
  MODMKS         := $(patsubst %,src/%/mod.mk,$(MODULES))
  SHARED         := libre$(LIB_SUFFIX)
-@@ -78,13 +78,11 @@ all: $(SHARED) $(STATIC)
- 
- 
- $(SHARED): $(OBJS)
--	@echo "  LD      $@"
--	@$(LD) $(LFLAGS) $(SH_LFLAGS) $^ $(LIBS) -o $@
-+	$(LD) $(LFLAGS) $(SH_LFLAGS) $^ $(LIBS) -o $@
- 
- 
- $(STATIC): $(OBJS)
--	@echo "  AR      $@"
--	@$(AR) $(AFLAGS) $@ $^
-+	$(AR) $(AFLAGS) $@ $^
- ifneq ($(RANLIB),)
- 	@$(RANLIB) $@
- endif
-@@ -103,12 +101,11 @@ libre.pc:
+@@ -119,12 +119,12 @@ libre.pc: Makefile
  	@echo 'Libs.private: -L$${libdir} -lre ${LIBS}' >> libre.pc
  	@echo 'Cflags: -I$${includedir}' >> libre.pc
  
 -$(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MK) $(MODMKS)
--	@echo "  CC      $@"
--	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
 +$(BUILD)/%.o: src/%.c $(BUILD) Makefile $(MODMKS)
-+	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
+ 	@echo "  CC      $@"
+ 	$(HIDE)$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
  
  
 -$(BUILD): Makefile $(MK) $(MODMKS)
 +$(BUILD): Makefile $(MODMKS)
- 	@mkdir -p $(patsubst %,$(BUILD)/%,$(sort $(dir $(SRCS))))
- 	@touch $@
+ 	$(HIDE)mkdir -p $(patsubst %,$(BUILD)/%,$(sort $(dir $(SRCS))))
+ 	$(HIDE)touch $@
  
-@@ -132,7 +129,6 @@ else
+@@ -150,7 +150,6 @@ else
  endif
  	$(INSTALL) -m 0755 $(STATIC) $(DESTDIR)$(LIBDIR)
  	$(INSTALL) -m 0644 libre.pc $(DESTDIR)$(LIBDIR)/pkgconfig
 -	$(INSTALL) -m 0644 $(MK) $(DESTDIR)$(MKDIR)
  
  uninstall:
- 	@rm -rf $(DESTDIR)$(INCDIR)
-@@ -144,13 +140,11 @@ uninstall:
- 
- -include test.d
- 
--test.o:	test.c Makefile $(MK)
--	@echo "  CC      $@"
--	@$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
-+test.o:	test.c Makefile
-+	$(CC) $(CFLAGS) -c $< -o $@ $(DFLAGS)
- 
- test$(BIN_SUFFIX): test.o $(SHARED) $(STATIC)
--	@echo "  LD      $@"
--	@$(LD) $(LFLAGS) $< -L. -lre $(LIBS) -o $@
-+	$(LD) $(LFLAGS) $< -L. -lre $(LIBS) -o $@
- 
- sym:	$(SHARED)
- 	@nm $(SHARED) | grep " U " | perl -pe 's/\s*U\s+(.*)/$${1}/' \
+ 	$(HIDE)rm -rf $(DESTDIR)$(INCDIR)
