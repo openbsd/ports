@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			no-rc5 no-ssl2 no-ssl3 \
 			shared
 
-# install to unusual directory name - this port is *not* intended to be
+# Install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
 # common names like lib/openssl, openssl/lib, etc, *do* get picked up.
 MAKE_FLAGS+=	CC="${CC}" \
