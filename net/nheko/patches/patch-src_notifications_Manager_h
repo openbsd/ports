@@ -1,0 +1,12 @@
+Index: src/notifications/Manager.h
+--- src/notifications/Manager.h.orig
++++ src/notifications/Manager.h
+@@ -12,7 +12,7 @@
+ #include <mtx/responses/notifications.hpp>
+ 
+ // convenience definition
+-#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(Q_OS_HAIKU)
++#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD) || defined(Q_OS_HAIKU) || defined(Q_OS_OPENBSD)
+ #define NHEKO_DBUS_SYS
+ #endif
+ 

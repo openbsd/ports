@@ -1,0 +1,12 @@
+Index: src/LoginPage.h
+--- src/LoginPage.h.orig
++++ src/LoginPage.h
+@@ -99,6 +99,8 @@ class LoginPage : public QObject (public)
+         return "Nheko on Windows";
+ #elif defined(Q_OS_FREEBSD)
+         return "Nheko on FreeBSD";
++#elif defined(Q_OS_OPENBSD)
++        return "Nheko on OpenBSD";
+ #else
+         return "Nheko";
+ #endif
