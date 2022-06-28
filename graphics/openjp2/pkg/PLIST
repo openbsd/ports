@@ -2,16 +2,16 @@
 @bin bin/opj_compress
 @bin bin/opj_decompress
 @bin bin/opj_dump
-include/openjpeg-2.4/
-include/openjpeg-2.4/openjpeg.h
-include/openjpeg-2.4/opj_config.h
-include/openjpeg-2.4/opj_stdint.h
+include/openjpeg-2.5/
+include/openjpeg-2.5/openjpeg.h
+include/openjpeg-2.5/opj_config.h
+include/openjpeg-2.5/opj_stdint.h
 @static-lib lib/libopenjp2.a
 @lib lib/libopenjp2.so.${LIBopenjp2_VERSION}
-lib/openjpeg-2.4/
-lib/openjpeg-2.4/OpenJPEGConfig.cmake
-lib/openjpeg-2.4/OpenJPEGTargets${MODCMAKE_BUILD_SUFFIX}
-lib/openjpeg-2.4/OpenJPEGTargets.cmake
+lib/openjpeg-2.5/
+lib/openjpeg-2.5/OpenJPEGConfig.cmake
+lib/openjpeg-2.5/OpenJPEGTargets${MODCMAKE_BUILD_SUFFIX}
+lib/openjpeg-2.5/OpenJPEGTargets.cmake
 lib/pkgconfig/libopenjp2.pc
 @man man/man1/opj_compress.1
 @man man/man1/opj_decompress.1

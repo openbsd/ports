@@ -1,7 +1,7 @@
 Index: src/bin/jp2/convert.c
 --- src/bin/jp2/convert.c.orig
 +++ src/bin/jp2/convert.c
-@@ -664,7 +664,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
+@@ -662,7 +662,7 @@ static int tga_readheader(FILE *fp, unsigned int *bits
      return 1;
  }
  

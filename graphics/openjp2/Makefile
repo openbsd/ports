@@ -2,10 +2,10 @@ COMMENT=	open-source JPEG 2000 codec library
 
 GH_ACCOUNT=	uclouvain
 GH_PROJECT=	openjpeg
-GH_TAGNAME=	v2.4.0
+GH_TAGNAME=	v2.5.0
 DISTNAME=	openjp2-${GH_TAGNAME:S/v//}
 
-SHARED_LIBS +=	openjp2	4.0
+SHARED_LIBS +=	openjp2	5.0
 
 CATEGORIES=	graphics
 
