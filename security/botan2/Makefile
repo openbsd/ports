@@ -1,11 +1,10 @@
 COMMENT =	crypto and TLS for C++11
 
-VERSION =	2.19.1
+VERSION =	2.19.2
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
-REVISION =	1
 
-SHARED_LIBS =	botan-2		15.0
+SHARED_LIBS =	botan-2		16.0
 
 CATEGORIES =	security
 
@@ -16,7 +15,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # BSD 2-Clause
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} bz2 c crypto lzma m z
+WANTLIB =		${COMPILER_LIBCXX} bz2 c lzma m z
 
 MASTER_SITES =		${HOMEPAGE}releases/
 
@@ -43,7 +42,6 @@ CONFIGURE_ARGS =	--with-build-dir=${WRKBUILD} \
 			--with-external-libdir=${LOCALBASE}/lib \
 			--with-bzip2 \
 			--with-lzma \
-			--with-openssl \
 			--with-zlib \
 			--without-sphinx
 
