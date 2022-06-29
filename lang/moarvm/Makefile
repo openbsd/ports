@@ -2,11 +2,11 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv6
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2021.12
+V =			2022.06
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
-SHARED_LIBS =		moar	11.0
+SHARED_LIBS =		moar	12.0
 
 CATEGORIES =		lang
 
@@ -40,7 +40,8 @@ CONFIGURE_ARGS +=	--cc="${CC}" --ld="${CC}" --no-optimize \
 			--has-libffi \
 			--has-libatomic_ops \
 			--has-libuv \
-			--no-jit
+			--no-jit \
+			--no-mimalloc
 CONFIGURE_ENV =		SO_VERSION="${LIBmoar_VERSION}" \
 			CFLAGS="-std=gnu99 ${CFLAGS}"
 
