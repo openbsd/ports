@@ -1,17 +1,17 @@
-Remove hardcoded optimization flags; add needed include and lib flags.
+Remove hardcoded optimization flags.
 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -1,5 +1,5 @@
--CFLAGS = -g -O2 -Wall $(shell pkg-config --cflags zlib gl freetype2)
--LDFLAGS = -lm -lglfw $(shell pkg-config --libs zlib gl freetype2)
+@@ -1,6 +1,6 @@
+ include mandoc/Makefile.local
+ 
+-CFLAGS = -g -O2 -Wall $(shell pkg-config --cflags zlib gl freetype2 glfw3)
 +CCFLAGS += -Wall $(shell pkg-config --cflags zlib gl freetype2 glfw3)
-+LDFLAGS += -lm -lutil $(shell pkg-config --libs zlib gl freetype2 glfw3)
+ LDFLAGS = -lm $(shell pkg-config --libs zlib gl freetype2 glfw3) ${LDADD}
  
  LIBMAN_OBJS	 = mandoc/man.o \
- 			   mandoc/man_macro.o \
-@@ -69,7 +69,7 @@ MANGL_SOURCES = mandoc/tree.c \
+@@ -56,7 +56,7 @@ MANGL_SOURCES = mandoc/tree.c \
  				main.c
  
  mangl: $(COMPAT_OBJS) $(LIBMANDOC_OBJS) $(MANGL_SOURCES)

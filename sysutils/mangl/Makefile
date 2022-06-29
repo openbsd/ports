@@ -3,7 +3,7 @@ CATEGORIES =	sysutils x11
 
 GH_ACCOUNT =	zigalenarcic
 GH_PROJECT =	mangl
-GH_TAGNAME =	v1.1.0
+GH_TAGNAME =	v1.1.1
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -17,11 +17,10 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 LIB_DEPENDS =	graphics/glfw
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_SCRIPT =	mandoc/configure
 
 USE_GMAKE =	Yes
 ALL_TARGET =	mangl
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -std=c99 -I."
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_TEST =	Yes
 
