@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1573 2022/05/19 13:12:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1574 2022/06/29 08:46:28 op Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -447,7 +447,8 @@ CCACHE_ENV ?=
 CCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.ccache
 MAKE_ENV += CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV}
 CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
-COMPILER_WRAPPER += ccache
+# scons cleans the environment when calling the compiler
+COMPILER_WRAPPER += env CCACHE_DIR=${CCACHE_DIR} ${CCACHE_ENV} ccache
 .  if !exists(${LOCALBASE}/bin/ccache)
 ERRORS += "Fatal: USE_CCACHE is set, but ccache is not installed."
 .  endif
