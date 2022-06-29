@@ -2,7 +2,7 @@ COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
 VERSION =	4.0.2
-REVISION =	3
+REVISION =	4
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
@@ -25,6 +25,7 @@ MODULES =	lang/python \
 MODRUBY_RUNDEP = No
 
 MODPY_RUNDEP =	No
+MODPHP_BUILDDEP =	Yes
 
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile
@@ -35,10 +36,10 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
 		 --with-tcllib=${MODTCL_LIBDIR} \
 		 --with-guilelib=${LOCALBASE}/lib \
+		 --with-php=${MODPHP_BIN} \
 		 --with-python=${MODPY_BIN} \
 		 --with-ruby=${RUBY} \
 		 --without-mzscheme \
-		 --without-php \
 		 --without-ocaml
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/Tools/config
 
