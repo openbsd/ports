@@ -1,6 +1,7 @@
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-1.3.12
+REVISION=	0
 
 SHARED_LIBS +=  ct                   6.1      # 4.0
 SHARED_LIBS +=  sybdb                8.1      # 6.0
@@ -28,7 +29,7 @@ COMPILER_LANGS=	c
 # buildtime detected in doc/Makefile
 BUILD_DEPENDS=	textproc/xmlto
 LIB_DEPENDS=	converters/libiconv \
-		databases/iodbc,-main \
+		databases/iodbc,bootstrap,no_admin,-main \
 		security/gnutls
 
 # requires database server
