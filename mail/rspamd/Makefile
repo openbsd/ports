@@ -118,17 +118,7 @@ NO_TEST=	Yes
 #		test/functional/cases
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mlld}
-BUILD_DEPENDS+=	devel/llvm
-# llvm toolchain binaries are available in base on LLD archs, but under
-# names which are not expected by cmake's Compiler/Clang-FindBinUtils
-# and CMakeFindBinUtils modules. I have tried symlinks from llvm-ar and
-# llvm-ranlib in ${WRKDIR}/bin to the relevant binaries but the cmake
-# module does not pick them up, so just depend on the package instead.
-.else
-# On !LLD archs, disable the option that is causing those cmake modules
-# to be pulled in, so that ports-clang toolchain are not picked up by
-# mistake.
+.if !${PROPERTIES:Mlld}
 CONFIGURE_ARGS+= -DENABLE_LTO=off
 .endif
 
