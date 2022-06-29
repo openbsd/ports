@@ -27,6 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS = databases/lmdbxx \
 		devel/boost \
+		devel/spdlog \
 		textproc/asciidoc \
 		x11/qt5/qtbase
 
