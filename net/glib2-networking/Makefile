@@ -1,6 +1,6 @@
 COMMENT=		network-related gio modules for GLib
 
-GNOME_VERSION=		2.72.0
+GNOME_VERSION=		2.72.1
 GNOME_PROJECT=		glib-networking
 PKGNAME=		glib2-networking-${GNOME_VERSION}
 
