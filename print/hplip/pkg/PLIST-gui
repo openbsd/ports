@@ -469,7 +469,6 @@ share/hplip/ui5/plugindialog.py
 share/hplip/ui5/plugindialog_base.py
 share/hplip/ui5/pluginlicensedialog.py
 share/hplip/ui5/pluginlicensedialog_base.py
-share/hplip/ui5/plugins/
 share/hplip/ui5/pqdiagdialog.py
 share/hplip/ui5/pqdiagdialog_base.py
 share/hplip/ui5/printdialog.py
