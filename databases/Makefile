@@ -162,6 +162,7 @@
      SUBDIR += py-carbon,python3
      SUBDIR += py-flask-sqlalchemy,python3
      SUBDIR += py-influxdb,python3
+     SUBDIR += py-influxdb_client,python3
      SUBDIR += py-ldap,python3
      SUBDIR += py-ldap0,python3
      SUBDIR += py-ldap3,python3
