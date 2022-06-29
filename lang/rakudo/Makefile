@@ -2,10 +2,10 @@ BROKEN-arm =		MoarVM panic: Memory allocation failed; could not allocate 312268 
 
 COMMENT =		Rakudo compiler for the Raku language
 
-V =			2021.12
+V =			2022.06
 DISTNAME =		rakudo-$V
 
-NQP_VERSION =		2021.12
+NQP_VERSION =		2022.06
 
 CATEGORIES =		lang perl6
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB += atomic_ops c ffi kvm m moar pthread uv zstd
+WANTLIB += c ffi kvm m moar pthread uv zstd
 
 MASTER_SITES =		https://rakudo.org/dl/rakudo/
 
