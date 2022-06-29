@@ -1,9 +1,9 @@
 COMMENT =		Not Quite Perl
 
-V =			2021.12
+V =			2022.06
 DISTNAME =		nqp-$V
 
-MOAR_VERSION =		2021.12
+MOAR_VERSION =		2022.06
 
 CATEGORIES =		lang
 
@@ -23,7 +23,7 @@ GH_TAGNAME =		$V
 
 # Take the missing WRKDIST/3rdparty/nqp-configure from rakudo.
 MASTER_SITES0 =		https://rakudo.org/dl/rakudo/
-RAKUDO_VERSION =	2021.12
+RAKUDO_VERSION =	2022.06
 DISTFILES =		nqp-$V.tar.gz \
 			rakudo-${RAKUDO_VERSION}.tar.gz:0
 EXTRACT_ONLY =		nqp-$V.tar.gz
