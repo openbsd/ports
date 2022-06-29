@@ -3,13 +3,12 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	91.10.0
+MOZILLA_VERSION =	91.11.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-REVISION =	2
 
 # XXX badly formed debug in libxul ?
 DWZ = :
