@@ -1,7 +1,6 @@
 COMMENT=	ICB protocol plugin for Pidgin
 
-DISTNAME=	pidgin-icb-20070505
-REVISION=	7
+DISTNAME=	pidgin-icb-20100207
 CATEGORIES=	net
 
 HOMEPAGE=	http://nic.com.pl/~alek/pidgin-icb/
