@@ -28,9 +28,11 @@ include/digikam/dhistoryview.h
 include/digikam/digikam_config.h
 include/digikam/digikam_core_export.h
 include/digikam/digikam_database_export.h
+include/digikam/digikam_debug.h
 include/digikam/digikam_export.h
 include/digikam/digikam_globals.h
 include/digikam/digikam_gui_export.h
+include/digikam/digikam_version.h
 include/digikam/dimg.h
 include/digikam/dimgbuiltinfilter.h
 include/digikam/dimgloaderobserver.h
@@ -96,6 +98,10 @@ include/digikam/rginfo.h
 include/digikam/thumbnailinfo.h
 include/digikam/thumbnailloadthread.h
 include/digikam/wbcontainer.h
+include/digikam/wsitem.h
+include/digikam/wslogindialog.h
+include/digikam/wsnewalbumdialog.h
+include/digikam/wssettingswidget.h
 include/digikam/wstooldialog.h
 include/digikam/wstoolutils.h
 lib/cmake/DigikamCore/
@@ -246,9 +252,7 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_SmugMug_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_TimeAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Twitter_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_VKontakte_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_YandexFotki_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_iNaturalist_Plugin.so
 lib/qt5/plugins/digikam/rawimport/
 @so lib/qt5/plugins/digikam/rawimport/RawImport_DarkTable_Plugin.so
@@ -837,6 +841,7 @@ share/locale/id/LC_MESSAGES/digikam.mo
 share/locale/is/LC_MESSAGES/digikam.mo
 share/locale/it/LC_MESSAGES/digikam.mo
 share/locale/ja/LC_MESSAGES/digikam.mo
+share/locale/ka/LC_MESSAGES/digikam.mo
 share/locale/km/LC_MESSAGES/digikam.mo
 share/locale/ko/LC_MESSAGES/digikam.mo
 share/locale/lt/LC_MESSAGES/digikam.mo
