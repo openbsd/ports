@@ -21,6 +21,8 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLINFO_ACTIVESOCKET.3
 @man man/man3/CURLINFO_APPCONNECT_TIME.3
 @man man/man3/CURLINFO_APPCONNECT_TIME_T.3
+@man man/man3/CURLINFO_CAINFO.3
+@man man/man3/CURLINFO_CAPATH.3
 @man man/man3/CURLINFO_CERTINFO.3
 @man man/man3/CURLINFO_CONDITION_UNMET.3
 @man man/man3/CURLINFO_CONNECT_TIME.3
