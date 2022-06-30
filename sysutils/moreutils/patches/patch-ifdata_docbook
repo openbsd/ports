@@ -1,0 +1,15 @@
+fix whitespace in xsltproc output
+
+Index: ifdata.docbook
+--- ifdata.docbook.orig
++++ ifdata.docbook
+@@ -62,8 +62,7 @@ with this program; if not, write to the Free Software 
+ 			<command>ifdata</command> can be used to check for
+ 			the existence of a network interface, or to get
+ 			information about the interface, such as its IP
+-			address. Unlike <command>ifconfig</command> or
+-			<command>ip</command>, <command>ifdata</command>
++			address. Unlike <command>ifconfig</command> or <command>ip</command>, <command>ifdata</command>
+ 			has simple to parse output that is designed to be
+ 			easily used by a shell script.
+ 		</para>

@@ -1,0 +1,15 @@
+fix whitespace in xsltproc output
+
+Index: lckdo.docbook
+--- lckdo.docbook.orig
++++ lckdo.docbook
+@@ -50,8 +50,7 @@ Public domain.
+ 		
+ 		<para><command>lckdo</command> runs a program with a lock
+ 		held, in order to prevent multiple processes from running in
+-		parallel. Use just like <command>nice</command> or
+-		<command>nohup</command>.</para>
++		parallel. Use just like <command>nice</command> or <command>nohup</command>.</para>
+ 
+ 		<para>Now that util-linux contains a similar command
+ 		named <command>flock</command>, lckdo is deprecated,

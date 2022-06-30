@@ -1,0 +1,18 @@
+fix whitespace in xsltproc output
+
+Index: pee.docbook
+--- pee.docbook.orig
++++ pee.docbook
+@@ -67,10 +67,8 @@ with this program; if not, write to the Free Software 
+ 		standard input. The output of all commands is sent to
+ 		stdout.</para>
+ 
+-		<para>Note that while this is similar to
+-		<command>tee</command>, a copy of the input is not sent
+-		to stdout, like tee does. If that is desired, use 
+-		<command>pee cat ...</command></para>
++		<para>Note that while this is similar to <command>tee</command>, a copy of the input is not sent
++		to stdout, like tee does. If that is desired, use <command>pee cat ...</command></para>
+ 	</refsect1>
+ 
+ 	<refsect1>

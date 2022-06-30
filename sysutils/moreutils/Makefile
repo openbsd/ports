@@ -1,6 +1,7 @@
 COMMENT =	miscellaneous unix tools
 
 V =		0.65
+REVISION =	0
 DISTNAME =	moreutils_$V.orig
 PKGNAME =	moreutils-$V
 WRKDIST =	${WRKDIR}/moreutils-$V
