@@ -1,7 +1,7 @@
 Index: man/man.pro
 --- man/man.pro.orig
 +++ man/man.pro
-@@ -11,7 +11,7 @@ MAN_SRC      = qdirstat.1                 \
+@@ -15,7 +15,7 @@ MAN_SRC      = qdirstat.1                 \
  MAN_TARGET   = qdirstat.1.gz              \
                 qdirstat-cache-writer.1.gz
  
