@@ -1,6 +1,6 @@
 COMMENT=		elegant and simple HTTP library for Python
 
-MODPY_EGG_VERSION=	2.28.0
+MODPY_EGG_VERSION=	2.28.1
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
