@@ -7,6 +7,7 @@ DISTNAME =		openssl-ruby-tests-${VERSION}
 GH_ACCOUNT =		ruby
 GH_PROJECT =		openssl
 GH_COMMIT =		e9798b1ec794d0c8f0a591b320ebb45afb037b52
+REVISION =		0
 
 CATEGORIES =		security devel
 
