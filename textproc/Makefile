@@ -391,6 +391,7 @@
      SUBDIR += py-cssutils,python3
      SUBDIR += py-defusedxml,python3
      SUBDIR += py-demjson,python3
+     SUBDIR += py-dict2xml,python3
      SUBDIR += py-dicttoxml,python3
      SUBDIR += py-docutils,python3
      SUBDIR += py-elasticsearch,python3
