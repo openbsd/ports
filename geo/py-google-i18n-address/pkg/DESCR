@@ -1,0 +1,10 @@
+This package contains a copy of Google's i18n address metadata
+repository that contains great data but comes with no uptime guarantees.
+
+Contents of this package will allow you to programatically build address
+forms that adhere to rules of a particular region or country, validate
+local addresses and format them to produce a valid address label for
+delivery.
+
+The package also contains a Python interface for address validation,
+normalization, latinization and formatting.
