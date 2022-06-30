@@ -1,5 +1,12 @@
 @bin bin/wordgrinder
 @bin bin/xwordgrinder
 @man man/man1/wordgrinder.1
+@man man/man1/xwordgrinder.1
+share/applications/wordgrinder.desktop
 share/doc/wordgrinder/
 share/doc/wordgrinder/README.wg
+share/mime-info/
+share/mime-info/wordgrinder.mime
+share/pixmaps/
+share/pixmaps/wordgrinder.png
+@tag update-desktop-database

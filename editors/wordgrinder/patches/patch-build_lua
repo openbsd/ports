@@ -1,7 +1,7 @@
 Index: build.lua
 --- build.lua.orig
 +++ build.lua
-@@ -90,7 +90,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
+@@ -97,7 +97,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
  
      local cflags = {
          "$CFLAGS",
@@ -9,7 +9,7 @@ Index: build.lua
          "-DVERSION='\""..VERSION.."\"'",
          "-DFILEFORMAT="..FILEFORMAT,
          "-DNOUNCRYPT",
-@@ -107,7 +106,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
+@@ -114,7 +113,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
          "$LDFLAGS",
          "-lz",
          "-lm",
@@ -17,7 +17,7 @@ Index: build.lua
      }
      local objs = {}
  
-@@ -126,12 +124,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
+@@ -133,13 +131,6 @@ function build_wordgrinder_binary(exe, luapackage, fro
          cflags[#cflags+1] = "-DEMULATED_WCWIDTH"
      end
  
@@ -25,22 +25,23 @@ Index: build.lua
 -        cflags[#cflags+1] = "-O0"
 -    else
 -        cflags[#cflags+1] = "-Os"
+-        cflags[#cflags+1] = "-DNDEBUG"
 -    end
 -
      if luapackage == "builtin" then
          cflags[#cflags+1] = "-Isrc/c/emu/lua-5.1.5"
-         cflags[#cflags+1] = "-DLUA_USE_MKSTEMP"
-@@ -405,9 +397,11 @@ if want_frontend("curses") then
+         cflags[#cflags+1] = "-DWINSHIM"
+@@ -451,9 +442,11 @@ if want_frontend("curses") then
  end
  if want_frontend("x11") then
      emit("X11_CFLAGS = ", package_flags("freetype2", "--cflags"),
--	" ", package_flags(XFT_PACKAGE, "--cflags"))
-+	" ", package_flags(XFT_PACKAGE, "--cflags"), " ",
-+	package_flags("x11", "--cflags"))
+-    " ", package_flags(XFT_PACKAGE, "--cflags"))
++    " ", package_flags(XFT_PACKAGE, "--cflags"), " ",
++    package_flags("x11", "--cflags"))
      emit("X11_LDFLAGS = ", package_flags("freetype2", "--libs"),
--	" ",  package_flags(XFT_PACKAGE, "--libs"))
-+	" ",  package_flags(XFT_PACKAGE, "--libs"), " ",
-+	package_flags("x11", "--libs"))
+-    " ",  package_flags(XFT_PACKAGE, "--libs"))
++    " ",  package_flags(XFT_PACKAGE, "--libs"), " ",
++    package_flags("x11", "--libs"))
  end
  emit("LUA_INTERPRETER = ", LUA_INTERPRETER)
  emit("WINDRES = ", WINDRES)

@@ -2,7 +2,7 @@ COMMENT =	simple, Unicode-aware word processor on the console
 
 GH_ACCOUNT =	davidgiven
 GH_PROJECT =	wordgrinder
-GH_TAGNAME =	0.7.2
+GH_TAGNAME =	0.8
 
 CATEGORIES =	editors
 
@@ -17,6 +17,7 @@ WANTLIB += X11 Xft c curses freetype m z
 MODULES =		lang/lua
 MODLUA_VERSION =	5.3
 BUILD_DEPENDS =		devel/ninja
+RUN_DEPENDS =		devel/desktop-file-utils
 
 MAKE_FLAGS =		CC="${CC}" \
 			CURSES_PACKAGE="--cflags={-I/usr/include} \
