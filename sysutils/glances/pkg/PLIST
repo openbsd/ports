@@ -33,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}password.${MODP
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}password_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}ports_list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}programs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}secure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/${MODPY_PYCACHE}snmp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -80,6 +81,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances
 lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_elasticsearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_export.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_graph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_graphite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_influxdb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_influxdb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/exports/${MODPY_PYCACHE}glances_json.${MODPY_PYC_MAGIC_TAG}pyc
@@ -98,6 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_csv.py
 lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_elasticsearch.py
 lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_export.py
 lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_graph.py
+lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_graphite.py
 lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_influxdb.py
 lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_influxdb2.py
 lib/python${MODPY_VERSION}/site-packages/glances/exports/glances_json.py
@@ -127,16 +130,20 @@ lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_curses_browser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_sparklines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout_apidoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout_csv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_stdout_issue.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/${MODPY_PYCACHE}glances_unicode.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_bars.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_bottle.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_curses.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_curses_browser.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_sparklines.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout.py
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout_apidoc.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout_csv.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_stdout_issue.py
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/glances_unicode.py
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/.gitignore
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/README.md
@@ -282,7 +289,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/js/services/stat
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/package-lock.json
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/package.json
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/public/
-lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/public/9a360c92ce9bda60a8da6389741dcfbf.png
+lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/public/87708faeed9a66b0fcdb.png
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/public/favicon.ico
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/public/glances.js
 lib/python${MODPY_VERSION}/site-packages/glances/outputs/static/public/glances.map.js
@@ -369,6 +376,7 @@ lib/python${MODPY_VERSION}/site-packages/glances/plugins/sensors/glances_batperc
 lib/python${MODPY_VERSION}/site-packages/glances/plugins/sensors/glances_hddtemp.py
 lib/python${MODPY_VERSION}/site-packages/glances/ports_list.py
 lib/python${MODPY_VERSION}/site-packages/glances/processes.py
+lib/python${MODPY_VERSION}/site-packages/glances/programs.py
 lib/python${MODPY_VERSION}/site-packages/glances/secure.py
 lib/python${MODPY_VERSION}/site-packages/glances/server.py
 lib/python${MODPY_VERSION}/site-packages/glances/snmp.py

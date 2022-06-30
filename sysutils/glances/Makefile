@@ -1,7 +1,6 @@
 COMMENT =		cross-platform curses-based monitoring tool
 
-MODPY_EGG_VERSION =	3.1.7
-REVISION =		1
+MODPY_EGG_VERSION =	3.2.6.4
 
 DISTNAME =		Glances-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
@@ -19,6 +18,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
+			textproc/py-defusedxml${MODPY_FLAVOR} \
 			www/py-bottle${MODPY_FLAVOR}
 
 pre-configure:
