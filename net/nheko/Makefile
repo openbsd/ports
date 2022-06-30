@@ -29,6 +29,7 @@ BUILD_DEPENDS = databases/lmdbxx \
 		devel/boost \
 		devel/spdlog \
 		textproc/asciidoc \
+		textproc/nlohmann-json \
 		x11/qt5/qtbase
 
 LIB_DEPENDS =	databases/lmdb \
