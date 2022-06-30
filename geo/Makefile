@@ -51,6 +51,7 @@
      SUBDIR += postgis
      SUBDIR += py-cligj,python3
      SUBDIR += py-fiona,python3
+     SUBDIR += py-google-i18n-address,python3
      SUBDIR += py-laspy,python3
      SUBDIR += py-mercantile,python3
      SUBDIR += py-osmium,python3
