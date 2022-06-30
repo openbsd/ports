@@ -1,0 +1,17 @@
+Super Simple utility to convert a python dictionary into an xml string.
+
+from dict2xml import dict2xml
+
+data = {
+  'a': 1,
+  'b': [2, 3],
+  'c': {
+    'd': [
+      {'p': 9},
+      {'o': 10}
+    ],
+    'e': 7
+  }
+}
+
+print (dict2xml(data, wrap="all", indent="  "))
