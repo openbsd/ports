@@ -2,7 +2,7 @@ COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
-GH_TAGNAME =	v2.10.1
+GH_TAGNAME =	v2.11.0
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
 MODULES=	lang/php

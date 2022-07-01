@@ -1,8 +1,9 @@
 Make icingacli <module> <command> available outside of chroot
+
 Index: library/Icinga/Application/Modules/Manager.php
 --- library/Icinga/Application/Modules/Manager.php.orig
 +++ library/Icinga/Application/Modules/Manager.php
-@@ -301,7 +301,28 @@ class Manager
+@@ -305,7 +305,28 @@ class Manager
              return $this;
          }
  
