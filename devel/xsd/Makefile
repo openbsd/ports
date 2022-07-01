@@ -45,10 +45,10 @@ MAKE_FLAGS =		AS=${AS:Q} \
 # show compiler lines
 MAKE_FLAGS +=		verbose=1
 
-XERCES_CFLAGS !=	pkg-config --cflags xerces-c
+XERCES_CFLAGS =		`pkg-config --cflags xerces-c`
 CXXFLAGS +=		${XERCES_CFLAGS}
 
-XERCES_LIBS !=		pkg-config --libs xerces-c
+XERCES_LIBS =		`pkg-config --libs xerces-c`
 LDFLAGS +=		${XERCES_LIBS}
 
 # using PREFIX in FAKE_FLAGS is not enough
