@@ -1,3 +1,4 @@
+@pkgpath geo/geocode-glib
 include/geocode-glib-1.0/
 include/geocode-glib-1.0/geocode-glib/
 include/geocode-glib-1.0/geocode-glib/geocode-backend.h
@@ -15,19 +16,3 @@ lib/girepository-1.0/GeocodeGlib-1.0.typelib
 @lib lib/libgeocode-glib.so.${LIBgeocode-glib_VERSION}
 lib/pkgconfig/geocode-glib-1.0.pc
 share/gir-1.0/GeocodeGlib-1.0.gir
-share/icons/gnome/
-share/icons/gnome/scalable/
-share/icons/gnome/scalable/places/
-share/icons/gnome/scalable/places/poi-airport.svg
-share/icons/gnome/scalable/places/poi-bar.svg
-share/icons/gnome/scalable/places/poi-building.svg
-share/icons/gnome/scalable/places/poi-bus-stop.svg
-share/icons/gnome/scalable/places/poi-car.svg
-share/icons/gnome/scalable/places/poi-light-rail-station.svg
-share/icons/gnome/scalable/places/poi-marker.svg
-share/icons/gnome/scalable/places/poi-place-of-worship.svg
-share/icons/gnome/scalable/places/poi-railway-station.svg
-share/icons/gnome/scalable/places/poi-restaurant.svg
-share/icons/gnome/scalable/places/poi-school.svg
-share/icons/gnome/scalable/places/poi-town.svg
-@tag gtk-update-icon-cache %D/share/icons/gnome

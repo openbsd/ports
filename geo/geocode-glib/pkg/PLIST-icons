@@ -1,0 +1,13 @@
+share/icons/hicolor/scalable/places/poi-airport.svg
+share/icons/hicolor/scalable/places/poi-bar.svg
+share/icons/hicolor/scalable/places/poi-building.svg
+share/icons/hicolor/scalable/places/poi-bus-stop.svg
+share/icons/hicolor/scalable/places/poi-car.svg
+share/icons/hicolor/scalable/places/poi-light-rail-station.svg
+share/icons/hicolor/scalable/places/poi-marker.svg
+share/icons/hicolor/scalable/places/poi-place-of-worship.svg
+share/icons/hicolor/scalable/places/poi-railway-station.svg
+share/icons/hicolor/scalable/places/poi-restaurant.svg
+share/icons/hicolor/scalable/places/poi-school.svg
+share/icons/hicolor/scalable/places/poi-town.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
