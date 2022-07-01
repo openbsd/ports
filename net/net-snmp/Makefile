@@ -1,7 +1,7 @@
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.9.1
+V=		5.9.2
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
@@ -13,10 +13,10 @@ FULLPKGNAME-tkmib= net-snmp-tkmib-$V
 
 # N.B. p5 module picks up installed libs in /usr/local
 # please check sysutils/snmp_exporter "make test" if updating
-SHARED_LIBS += netsnmp		18.0
+SHARED_LIBS += netsnmp		19.0
 SHARED_LIBS += netsnmpagent	17.0
 SHARED_LIBS += netsnmphelpers	15.1
-SHARED_LIBS += netsnmpmibs	18.0
+SHARED_LIBS += netsnmpmibs	19.0
 SHARED_LIBS += netsnmptrapd	15.1
 
 CATEGORIES=	net perl5

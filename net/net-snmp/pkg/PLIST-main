@@ -109,7 +109,6 @@ include/net-snmp/library/container_null.h
 include/net-snmp/library/data_list.h
 include/net-snmp/library/default_store.h
 include/net-snmp/library/dir_utils.h
-include/net-snmp/library/factory.h
 include/net-snmp/library/fd_event_manager.h
 include/net-snmp/library/file_utils.h
 include/net-snmp/library/getopt.h
