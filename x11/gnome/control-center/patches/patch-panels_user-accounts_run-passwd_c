@@ -1,17 +1,17 @@
 Index: panels/user-accounts/run-passwd.c
 --- panels/user-accounts/run-passwd.c.orig
 +++ panels/user-accounts/run-passwd.c
-@@ -139,6 +139,9 @@ static void
- ignore_sigpipe (gpointer data)
+@@ -141,6 +141,9 @@ child_setup_cb (gpointer data)
  {
-         signal (SIGPIPE, SIG_IGN);
+ 	signal (SIGPIPE, SIG_IGN);
+ 	dup2 (fileno (stdout), fileno (stderr));
 +#if defined(__OpenBSD__)
-+        setsid();
++	setsid();
 +#endif
  }
  
  /* Spawn passwd backend
-@@ -366,6 +369,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -354,6 +357,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
  {
          static GString *str = NULL;     /* Persistent buffer */
  
@@ -19,7 +19,7 @@ Index: panels/user-accounts/run-passwd.c
          gchar           buf[BUFSIZE];           /* Temporary buffer */
          gsize           bytes_read;
          g_autoptr(GError) gio_error = NULL;
-@@ -377,8 +381,8 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -365,8 +369,8 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
                  str = g_string_new ("");
          }
  
@@ -30,7 +30,7 @@ Index: panels/user-accounts/run-passwd.c
                  g_warning ("IO Channel read error: %s", gio_error->message);
                  return TRUE;
          }
-@@ -390,11 +394,13 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -378,11 +382,13 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
                  case PASSWD_STATE_AUTH:
                          /* Passwd is asking for our current password */
  
@@ -47,7 +47,7 @@ Index: panels/user-accounts/run-passwd.c
                                          /* Authentication successful */
  
                                          passwd_handler->backend_state = PASSWD_STATE_NEW;
-@@ -432,7 +438,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -420,7 +426,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
                  case PASSWD_STATE_NEW:
                          /* Passwd is asking for our new password */
  
@@ -56,7 +56,7 @@ Index: panels/user-accounts/run-passwd.c
                                  /* Advance to next state */
                                  passwd_handler->backend_state = PASSWD_STATE_RETYPE;
  
-@@ -465,6 +471,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -453,6 +459,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
                                                  "failure",
                                                  "DIFFERENT",
                                                  "BAD PASSWORD",
@@ -64,7 +64,7 @@ Index: panels/user-accounts/run-passwd.c
                                                  NULL)) {
  
                                  if (strstr (str->str, "successfully") != NULL) {
-@@ -481,7 +488,8 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -469,7 +476,8 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
                                          /* Ohnoes! */
                                          g_autoptr(GError) error = NULL;
  
@@ -74,7 +74,7 @@ Index: panels/user-accounts/run-passwd.c
                                                  /* What does this indicate?
                                                   * "Authentication information cannot be recovered?" from libpam? */
                                                  error = g_error_new_literal (PASSWD_ERROR, PASSWD_ERROR_UNKNOWN,
-@@ -548,7 +556,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
+@@ -536,7 +544,7 @@ io_watch_stdout (GIOChannel *source, GIOCondition cond
                          break;
                  case PASSWD_STATE_NONE:
                          /* Passwd is not asking for anything yet */
