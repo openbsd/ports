@@ -6,7 +6,6 @@
      SUBDIR += evolution-data-server
      SUBDIR += freetds
      SUBDIR += gdbm
-     SUBDIR += gnats
      SUBDIR += influxdb
      SUBDIR += iodbc
      SUBDIR += jxplorer
