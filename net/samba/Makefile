@@ -1,8 +1,7 @@
-VERSION =		4.15.7
+VERSION =		4.15.8
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION-ldb =		0
-REVISION-tevent =	5
+REVISION-tevent =	6
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-ldb =		LDAP-like embedded database
@@ -18,7 +17,7 @@ PKGNAME-docs =		samba-docs-${VERSION}
 
 PKG_ARCH-docs =		*
 
-LDB_V =			2.4.2
+LDB_V =			2.4.3
 TEVENT_V =		0.11.0
 
 SHARED_LIBS =		asn1-samba4		2.0 \
