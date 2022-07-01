@@ -11,14 +11,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.61.0
+V =			1.62.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.61.0-20220518
-BV-amd64 =		1.61.0-20220517
-BV-i386 =		1.61.0-20220517
-BV-sparc64 =		1.60.0-20220420
+BV-aarch64 =		1.62.0-20220629
+BV-amd64 =		1.62.0-20220628
+BV-i386 =		1.62.0-20220628
+BV-sparc64 =		1.61.0-20220531
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}

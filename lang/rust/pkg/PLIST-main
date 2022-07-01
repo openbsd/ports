@@ -37,6 +37,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libtest-${LIBR_METADATA_test}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libunicode_width-${LIBR_METADATA_unicode_width}.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBR_METADATA_unwind}.rlib
 @bin libexec/cargo-credential-1password
+@man man/man1/cargo-add.1
 @man man/man1/cargo-bench.1
 @man man/man1/cargo-build.1
 @man man/man1/cargo-check.1
