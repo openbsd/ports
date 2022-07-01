@@ -1,0 +1,14 @@
+For S_IRUSR.
+
+Index: ompi/mca/sharedfp/sm/sharedfp_sm.c
+--- ompi/mca/sharedfp/sm/sharedfp_sm.c.orig
++++ ompi/mca/sharedfp/sm/sharedfp_sm.c
+@@ -34,6 +34,8 @@
+ 
+ #include "opal/util/basename.h"
+ 
++#include <sys/stat.h>
++
+ /*
+  * *******************************************************************
+  * ************************ actions structure ************************
