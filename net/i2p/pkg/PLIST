@@ -18,9 +18,14 @@ share/i2p/LICENSE.txt
 share/i2p/blocklist.txt
 share/i2p/certificates/
 share/i2p/certificates/family/
+share/i2p/certificates/family/SUNYSB.crt
+share/i2p/certificates/family/bandura.crt
 share/i2p/certificates/family/gostcoin.crt
 share/i2p/certificates/family/i2p-dev.crt
 share/i2p/certificates/family/i2pd-dev.crt
+share/i2p/certificates/family/memcpy.crt
+share/i2p/certificates/family/mibhq.crt
+share/i2p/certificates/family/stormycloud.crt
 share/i2p/certificates/family/volatile.crt
 share/i2p/certificates/news/
 share/i2p/certificates/news/ampernand_at_gmail.com.crt
@@ -39,8 +44,10 @@ share/i2p/certificates/reseed/creativecowpat_at_mail.i2p.crt
 share/i2p/certificates/reseed/echelon3_at_mail.i2p.crt
 share/i2p/certificates/reseed/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/reseed/hottuna_at_mail.i2p.crt
+share/i2p/certificates/reseed/i2p-reseed_at_mk16.de.crt
 share/i2p/certificates/reseed/igor_at_novg.net.crt
 share/i2p/certificates/reseed/lazygravy_at_mail.i2p.crt
+share/i2p/certificates/reseed/r4sas-reseed_at_mail.i2p.crt
 share/i2p/certificates/reseed/rambler_at_mail.i2p.crt
 share/i2p/certificates/reseed/reseed_at_diva.exchange.crt
 share/i2p/certificates/router/
