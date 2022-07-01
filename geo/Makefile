@@ -4,6 +4,7 @@
      SUBDIR += gdal,python3
      SUBDIR += geoclue2
      SUBDIR += geocode-glib
+     SUBDIR += geocode-glib,soup3
      SUBDIR += geos
      SUBDIR += gimgtools
      SUBDIR += globe
