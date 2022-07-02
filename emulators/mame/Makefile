@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		244
+V =		245
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
@@ -23,14 +23,14 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 SDL2_ttf X11 Xext Xi
 WANTLIB += Xinerama c expat fontconfig freetype jpeg lua${MODLUA_VERSION} m
 WANTLIB += pugixml sqlite3 util z
 
-COMPILER =	base-clang ports-gcc base-gcc
-
 MODULES =	lang/lua \
 		lang/python
 
 MODLUA_VERSION = 5.3
 
 MODPY_RUNDEP = No
+
+BUILD_DEPENDS =	sysutils/ggrep
 
 LIB_DEPENDS =	audio/flac \
 		databases/sqlite3 \
@@ -81,6 +81,9 @@ post-extract:
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
 	@grep -Rl '"png\.h"' ${WRKSRC}/src | \
 		xargs sed -i 's|"png.h"|"localpng.h"|'
+
+pre-configure:
+	@ln -s ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/mame
