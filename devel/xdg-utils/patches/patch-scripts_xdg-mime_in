@@ -1,7 +1,7 @@
 Index: scripts/xdg-mime.in
 --- scripts/xdg-mime.in.orig
 +++ scripts/xdg-mime.in
-@@ -421,6 +421,9 @@ defapp_generic()
+@@ -423,6 +423,9 @@ defapp_generic()
         for prefix in "$XDG_MENU_PREFIX" ""; do
            DEBUG 2 "Checking $x/applications/${prefix}defaults.list and $x/applications/${prefix}mimeinfo.cache"
            trader_result=`grep "$MIME=" $x/applications/${prefix}defaults.list $x/applications/${prefix}mimeinfo.cache 2> /dev/null | head -n 1 | cut -d '=' -f 2 | cut -d ';' -f 1`

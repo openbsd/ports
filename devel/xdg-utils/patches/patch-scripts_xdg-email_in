@@ -1,7 +1,7 @@
 Index: scripts/xdg-email.in
 --- scripts/xdg-email.in.orig
 +++ scripts/xdg-email.in
-@@ -314,7 +314,7 @@ LC_ALL="$ORIG_LC_ALL"
+@@ -317,7 +317,7 @@ LC_ALL="$ORIG_LC_ALL"
  
  options=
  mailto=
@@ -10,7 +10,7 @@ Index: scripts/xdg-email.in
  while [ $# -gt 0 ] ; do
      parm="$1"
      shift
-@@ -456,6 +456,7 @@ if [ x"$BROWSER" = x"" ]; then
+@@ -459,6 +459,7 @@ if [ x"$BROWSER" = x"" ]; then
      BROWSER=www-browser:links2:elinks:links:lynx:w3m
      if has_display; then
          BROWSER=x-www-browser:firefox:iceweasel:seamonkey:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER

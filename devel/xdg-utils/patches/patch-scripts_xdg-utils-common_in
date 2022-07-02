@@ -3,7 +3,7 @@ Make xdg-open work with toad(8) under KDE4.
 Index: scripts/xdg-utils-common.in
 --- scripts/xdg-utils-common.in.orig
 +++ scripts/xdg-utils-common.in
-@@ -313,6 +313,7 @@ detectDE()
+@@ -312,6 +312,7 @@ detectDE()
      if [ x"$DE" = x"" ]; then
        # classic fallbacks
        if [ x"$KDE_FULL_SESSION" != x"" ]; then DE=kde;
