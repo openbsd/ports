@@ -3,15 +3,11 @@
 @bin bin/gif2rgb
 @bin bin/gifbuild
 @bin bin/gifclrmp
-@bin bin/gifecho
-@bin bin/giffilter
 @bin bin/giffix
-@bin bin/gifinto
-@bin bin/gifsponge
 @bin bin/giftext
 @bin bin/giftool
 include/gif_lib.h
-lib/libgif.a
+@static-lib lib/libgif.a
 @lib lib/libgif.so.${LIBgif_VERSION}
 @man man/man1/gif2rgb.1
 @man man/man1/gifbg.1

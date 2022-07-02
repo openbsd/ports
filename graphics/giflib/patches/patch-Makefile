@@ -1,33 +1,56 @@
+hunk 1, disable -Wno-format-truncation, not available on some compilers?
+
+hunk 2, move quantize.c back to exported library, it was in the public
+API prior to 5.2 and is used by various downstream users
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=935088
+https://src.fedoraproject.org/rpms/giflib/c/109bf038d703a471b857aba44af673be103d7079?branch=master
+
+hunk 3-4, library naming
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -9,7 +9,7 @@
- CC    = gcc
+@@ -8,7 +8,7 @@
+ #
  OFLAGS = -O0 -g
- #OFLAGS  = -O2 -fwhole-program
+ OFLAGS  = -O2
 -CFLAGS  = -std=gnu99 -fPIC -Wall -Wno-format-truncation $(OFLAGS)
 +CFLAGS  = -std=gnu99 -fPIC -Wall $(OFLAGS)
- LDFLAGS = -g
  
  SHELL = /bin/sh
-@@ -60,13 +60,13 @@ UTILS = $(INSTALLABLE) \
+ TAR = tar
+@@ -29,11 +29,11 @@ LIBPOINT=0
+ LIBVER=$(LIBMAJOR).$(LIBMINOR).$(LIBPOINT)
+ 
+ SOURCES = dgif_lib.c egif_lib.c gifalloc.c gif_err.c gif_font.c \
+-	gif_hash.c openbsd-reallocarray.c
++	gif_hash.c openbsd-reallocarray.c quantize.c
+ HEADERS = gif_hash.h  gif_lib.h  gif_lib_private.h
+ OBJECTS = $(SOURCES:.c=.o)
+ 
+-USOURCES = qprintf.c quantize.c getarg.c 
++USOURCES = qprintf.c getarg.c
+ UHEADERS = getarg.h
+ UOBJECTS = $(USOURCES:.c=.o)
+ 
+@@ -61,13 +61,13 @@ UTILS = $(INSTALLABLE) \
  
  LDLIBS=libgif.a -lm
  
--all: libgif.so libgif.a $(UTILS)
-+all: libgif.so.$(LIBVER) libgif.a $(UTILS)
+-all: libgif.so libgif.a libutil.so libutil.a $(UTILS)
++all: libgif.so.${LIBVER} libgif.a libutil.so libutil.a $(UTILS)
  	$(MAKE) -C doc
  
- $(UTILS):: libgif.a
+ $(UTILS):: libgif.a libutil.a
  
 -libgif.so: $(OBJECTS) $(HEADERS)
--	$(CC) $(CFLAGS) -shared $(OFLAGS) -o libgif.so $(OBJECTS)
+-	$(CC) $(CFLAGS) -shared $(LDFLAGS) -Wl,-soname -Wl,libgif.so.$(LIBMAJOR) -o libgif.so $(OBJECTS)
 +libgif.so.$(LIBVER): $(OBJECTS) $(HEADERS)
 +	$(CC) $(CFLAGS) -shared $(OFLAGS) -o libgif.so.$(LIBVER) $(OBJECTS)
  
  libgif.a: $(OBJECTS) $(HEADERS)
- 	ar rcs libgif.a $(OBJECTS)
-@@ -92,9 +92,7 @@ install-include:
+ 	$(AR) rcs libgif.a $(OBJECTS)
+@@ -99,9 +99,7 @@ install-include:
  install-lib:
  	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
  	$(INSTALL) -m 644 libgif.a "$(DESTDIR)$(LIBDIR)/libgif.a"
@@ -36,5 +59,5 @@ Index: Makefile
 -	ln -sf libgif.so.$(LIBMAJOR) "$(DESTDIR)$(LIBDIR)/libgif.so"
 +	$(INSTALL) -m 755 libgif.so.$(LIBVER) "$(DESTDIR)$(LIBDIR)/libgif.so.$(LIBVER)"
  install-man:
- 	$(INSTALL) -d "$(DESTDIR)$(MANDIR)"
- 	$(INSTALL) -m 644 doc/*.1 "$(DESTDIR)$(MANDIR)"
+ 	$(INSTALL) -d "$(DESTDIR)$(MANDIR)/man1"
+ 	$(INSTALL) -m 644 doc/*.1 "$(DESTDIR)$(MANDIR)/man1"

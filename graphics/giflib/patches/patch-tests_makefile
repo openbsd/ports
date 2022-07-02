@@ -24,7 +24,7 @@ Index: tests/makefile
  	do \
  	    stem=`basename $${test} | sed -e "s/.gif$$//"`; \
  	    if echo "Testing RGB rendering of $${test}" >&2; \
-@@ -103,10 +103,10 @@ giffilter-regress:
+@@ -104,10 +104,10 @@ giffilter-regress:
  
  giffix-rebuild:
  	@echo "Rebuilding giffix test."
