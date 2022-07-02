@@ -21,7 +21,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-libplot	\
 		--without-emf	 	\
 		--without-swf		\
-		--without-magick
+		--without-magick	\
+		--disable-docs
 WANTLIB=	c ${COMPILER_LIBCXX} m
 
 # c++14
