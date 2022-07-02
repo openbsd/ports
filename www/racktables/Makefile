@@ -1,10 +1,9 @@
 COMMENT=	web-based rack/IP management
 
-DISTNAME=	RackTables-0.21.5
+DISTNAME=	RackTables-0.22.0
 MODPHP_VERSION=	7.4
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
-REVISION=	0
 
 HOMEPAGE=	https://www.racktables.org/
 
