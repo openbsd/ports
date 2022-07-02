@@ -1,6 +1,11 @@
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
+# py2 still used by print/printrun
+FLAVORS=	python3
+FLAVOR?=
+
 MODPY_EGG_VERSION=	4.9.1
+REVISION=	0
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
 
@@ -21,10 +26,6 @@ TEST_DEPENDS=	textproc/py-cssselect${MODPY_FLAVOR}
 MODPY_PI=	Yes
 MODPY_SETUPTOOLS=Yes
 MODPY_PYTEST=	Yes
-
-# py2 still used by print/printrun
-FLAVORS=	python3
-FLAVOR?=
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}lxml
