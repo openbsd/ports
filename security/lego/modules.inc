@@ -163,7 +163,7 @@ MODGO_MODULES =	\
 	github.com/mailru/easyjson					 v0.0.0-20190626092158-b2ccc519800e \
 	github.com/matryer/moq						 v0.0.0-20190312154309-6cfb0558e1bd \
 	github.com/mattn/go-colorable					 v0.1.8 \
-	github.com/mattn/go-isatty					 v0.0.12 \
+	github.com/mattn/go-isatty					 v0.0.14 \
 	github.com/mattn/go-runewidth					 v0.0.9 \
 	github.com/mattn/go-tty						 v0.0.3 \
 	github.com/matttproud/golang_protobuf_extensions		 v1.0.1 \
@@ -269,7 +269,7 @@ MODGO_MODULES =	\
 	golang.org/x/net						 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/oauth2						 v0.0.0-20200107190931-bf48bf16ab8d \
 	golang.org/x/sync						 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys						 v0.0.0-20220209214540-3681064d5158 \
+	golang.org/x/sys						 v0.0.0-20220615213510-4f61da869c0c \
 	golang.org/x/term						 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text						 v0.3.7 \
 	golang.org/x/time						 v0.0.0-20210611083556-38a9dc6acbc6 \
@@ -386,6 +386,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-colorable			 v0.1.4 \
 	github.com/mattn/go-colorable			 v0.1.7 \
 	github.com/mattn/go-isatty			 v0.0.10 \
+	github.com/mattn/go-isatty			 v0.0.12 \
 	github.com/mattn/go-isatty			 v0.0.3 \
 	github.com/mattn/go-isatty			 v0.0.8 \
 	github.com/mattn/go-isatty			 v0.0.9 \
@@ -580,6 +581,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys				 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys				 v0.0.0-20211216021012-1d35b9e2eb4e \
+	golang.org/x/sys				 v0.0.0-20220209214540-3681064d5158 \
 	golang.org/x/term				 v0.0.0-20201117132131-f5c789dd3221 \
 	golang.org/x/text				 v0.0.0-20170915032832-14c0d48ead0c \
 	golang.org/x/text				 v0.3.0 \
