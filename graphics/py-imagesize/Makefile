@@ -1,6 +1,6 @@
 COMMENT =		getting image size from png/jpeg/jpeg2000/gif file
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		imagesize-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
