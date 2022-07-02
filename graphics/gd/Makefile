@@ -1,10 +1,10 @@
 COMMENT=	library for dynamic creation of images
 
-V=		2.3.2
+V=		2.3.3
 DISTNAME=	libgd-$V
 PKGNAME=	gd-$V
 
-SHARED_LIBS +=	gd                   22.2     # 3.0
+SHARED_LIBS +=	gd                   23.0     # 3.0
 
 CATEGORIES=	graphics
 

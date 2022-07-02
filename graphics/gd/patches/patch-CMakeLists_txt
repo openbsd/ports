@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -299,27 +299,27 @@ else(WIN32)
+@@ -318,27 +318,27 @@ else(WIN32)
  endif(WIN32)
  
  

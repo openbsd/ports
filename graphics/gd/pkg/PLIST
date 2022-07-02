@@ -10,7 +10,6 @@ bin/bdftogd
 @bin bin/pngtogd
 @bin bin/pngtogd2
 @bin bin/webpng
-include/entities.h
 include/gd.h
 include/gd_color_map.h
 include/gd_errors.h
