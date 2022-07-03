@@ -16,6 +16,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xtrkcad-fork/}
 
 MODULES=	devel/cmake
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender c fontconfig freetype m pthread z
 WANTLIB += cairo gio-2.0 glib-2.0 gobject-2.0 iconv intl zip
