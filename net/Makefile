@@ -696,6 +696,7 @@
      SUBDIR += tcptrace
      SUBDIR += tcptraceroute
      SUBDIR += tdesktop
+     SUBDIR += tdesktop,qt6
      SUBDIR += tdlib
      SUBDIR += telegram-purple
      SUBDIR += telepathy
