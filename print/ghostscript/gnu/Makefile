@@ -88,7 +88,7 @@ CFLAGS +=	-DA4
 .endif
 
 # Needed to make the configure script detect libiconv
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST =	Yes
 
