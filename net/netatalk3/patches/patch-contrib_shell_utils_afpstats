@@ -6,12 +6,6 @@ Subject: [PATCH] make afpstats python 3 compatible
 Index: contrib/shell_utils/afpstats
 --- contrib/shell_utils/afpstats.orig
 +++ contrib/shell_utils/afpstats
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!/usr/local/bin/python3.9
- 
- usage = """Usage:
- python afpstats.py
 @@ -23,7 +23,7 @@ def main():
  
      reply = iface.GetUsers()

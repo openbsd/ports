@@ -1,20 +1,15 @@
-# XXX before upgrade to a newer release, make sure these are fixed:
-# https://sourceforge.net/p/netatalk/bugs/670/
-# https://sourceforge.net/p/netatalk/bugs/669/
-# https://github.com/Netatalk/Netatalk/issues/175
-# configure: WARNING: unrecognized options: --with-libevent-header, --with-libevent-lib
-# Initial update to 3.1.13:
-#     https://github.com/openbsd/ports/commit/76cd8557b7ca4dfd2d0fd5470bfdd63636cb962d
-
 COMMENT=		AFP file and print services for IP networks
 
-V=			3.1.12
+V=			3.1.13
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
-REVISION=		0
+# https://github.com/Netatalk/Netatalk/pull/174
+MASTER_SITES0=		https://src.fedoraproject.org/rpms/netatalk/raw/rawhide/f/
+PATCHFILES=		netatalk_add_entry.patch:0
+PATCH_DIST_STRIP=	-p1
 
 SHARED_LIBS +=  atalk                16.0     # 18.0
 
@@ -62,8 +57,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		--with-pkgconfdir=${SYSCONFDIR}/netatalk \
 			--with-ssl-dir=/usr \
 			--with-tdb=${LOCALBASE} \
-			--with-libevent-header=${LOCALBASE}/include \
-			--with-libevent-lib=${LOCALBASE}/lib \
 			--without-ldap \
 			--without-pam
 
