@@ -1,6 +1,7 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
 DISTNAME=	curl-7.84.0
+REVISION=	0
 SHARED_LIBS=	curl                 26.15    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
@@ -47,5 +48,10 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # runsshserver: sshserver.pl --user=$USER
 TEST_ENV=	USER=$$USER
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/mk-ca-bundle.pl \
+	    ${PREFIX}/bin/mk-ca-bundle
+	${INSTALL_MAN} ${WRKSRC}/docs/mk-ca-bundle.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
