@@ -14,7 +14,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL2 c m mad ogg vorbis vorbisfile vulkan
 
-COMPILER =	base-clang base-gcc gcc3
+# C11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 LIB_DEPENDS =	audio/libmad \
 		audio/libogg \
 		audio/libvorbis \

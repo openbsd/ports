@@ -3,6 +3,24 @@ remove hardcoded optimization flag
 Index: Quake/Makefile
 --- Quake/Makefile.orig
 +++ Quake/Makefile
+@@ -28,7 +28,7 @@ VORBISLIB=vorbis
+ # Helper functions
+ # ---------------------------
+ 
+-check_gcc = $(shell if echo | $(CC) $(1) -Werror -S -o /dev/null -xc - > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi;)
++check_gcc = $(shell if echo | $(CC) $(1) -S -o /dev/null -xc - > /dev/null 2>&1; then echo "$(1)"; else echo "$(2)"; fi;)
+ 
+ # ---------------------------
+ 
+@@ -48,7 +48,7 @@ STRIP ?= strip
+ CPUFLAGS=
+ DFLAGS ?=
+ CFLAGS ?=
+-CFLAGS += -Wall -Wno-trigraphs -Wno-unused-function -Werror -std=gnu99
++CFLAGS += -Wall -Wno-trigraphs -Wno-unused-function -std=gnu99
+ CFLAGS += $(CPUFLAGS)
+ ifneq ($(DEBUG),0)
+ DFLAGS += -D_DEBUG
 @@ -56,7 +56,6 @@ CFLAGS += -g
  do_strip=
  else
