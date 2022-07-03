@@ -1,17 +1,16 @@
 COMMENT=		digital camera library
 
-VERSION=		2.5.29
+VERSION=		2.5.30
 DISTNAME=		libgphoto2-${VERSION}
 PKGNAME=		libgphoto-${VERSION}
-REVISION=		0
 
-GPHOTO2_PORT_API=	0.12.0
+GPHOTO2_PORT_API=	0.12.1
 SUBST_VARS=		GPHOTO2_PORT_API VERSION
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS +=  gphoto2_port         8.1      # 12.0
-SHARED_LIBS +=  gphoto2              4.2      # 8.0
+SHARED_LIBS +=  gphoto2_port         8.2      # 13.0
+SHARED_LIBS +=  gphoto2              4.3      # 9.0
 
 HOMEPAGE=		http://www.gphoto.org/
 
