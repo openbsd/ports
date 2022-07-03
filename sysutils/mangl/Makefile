@@ -28,4 +28,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mangl ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/mangl.1 ${PREFIX}/man/man1
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
