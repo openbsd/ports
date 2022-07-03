@@ -45,10 +45,16 @@ MODULES+=		lang/ruby
 CONFIGURE_ARGS+=	--with-ruby \
 			--with-ruby-linking=so
 MODRUBY_RUNDEP=		No
-CONFIGURE_ENV+=		RUBY=${RUBY} CFLAGS="${CFLAGS} -fdeclspec"
+CONFIGURE_ENV+=		RUBY=${RUBY}
 LIB_DEPENDS-ruby=	${LIB_DEPENDS} ${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 WANTLIB-ruby=		${WANTLIB} ${MODRUBY_WANTLIB}
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+# needed for ruby 3 on llvm
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fdeclspec"
+.endif
 
 PORTHOME=${WRKDIR}
 
