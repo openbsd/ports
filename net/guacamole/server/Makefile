@@ -34,8 +34,9 @@ LIB_DEPENDS=	audio/pulseaudio \
 		x11/freerdp
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			-D_BSD_SOURCE" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--without-telnet
 
 # various source files have no linefeed before eof, which trips -Werror
