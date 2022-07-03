@@ -13,6 +13,9 @@ HOMEPAGE =	https://osmcode.org/pyosmium/
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 FLAVORS =		python3
 FLAVOR =		python3
 
