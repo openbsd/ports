@@ -2,7 +2,7 @@ COMMENT =		fuse-based cryptographic filesystem
 
 V =			1.9.5
 DISTNAME =		encfs-$V
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		security
 
@@ -15,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto fuse intl m ssl tinyxml2
 
 MASTER_SITES =		https://github.com/vgough/encfs/releases/download/v$V/
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python
