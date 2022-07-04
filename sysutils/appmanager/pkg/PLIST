@@ -7,8 +7,13 @@ share/AppManager/Node2D.tscn
 share/AppManager/PackageLine.tscn
 share/AppManager/boot-splash.png
 share/AppManager/boot-splash.png.import
+share/AppManager/build_json.py
 share/AppManager/default_env.tres
-share/AppManager/pkg.json
 share/AppManager/project.godot
+share/applications/
 share/applications/appmanager.desktop
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/appmanager.png

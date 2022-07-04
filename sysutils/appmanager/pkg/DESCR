@@ -6,8 +6,7 @@ It has features such as:
 - packages sorted in categories: GUI, Terminal UI, Other
 
 The categories are determined by looking at each packages dependencies
-and trying to guess in which category it belongs. The process is done
-at build time when creating the packages database to be efficient.
+and trying to guess in which category it belongs.
 
 GUI: packages using toolkits such as Gtk, Qt, SDL...
 Terminal UI: packages using curses
