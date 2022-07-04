@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		utilities to work on firmware images and hardware
 
-V =			4.16
+V =			4.17
 DISTNAME =		coreboot-${V}
 PKGNAME =		coreboot-utils-${V}
-REVISION =		0
 
 CATEGORIES =		sysutils devel
 
