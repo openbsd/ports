@@ -1,2 +1,4 @@
 SHA256 (ruby-3.1.2.tar.gz) = YYQxEjifArc1QotTu2TPmIrZ+4GFi4JI4i5XM28kqD4=
+SHA256 (ruby-octeon-fix.patch) = qFc5PJPaBF1ly9Kr9hXaQIYLmPPyUUw7ThMTkfE6y3A=
 SIZE (ruby-3.1.2.tar.gz) = 20553628
+SIZE (ruby-octeon-fix.patch) = 1880
