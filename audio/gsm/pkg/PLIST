@@ -1,6 +1,6 @@
-bin/tcat
+@bin bin/tcat
 @bin bin/toast
-bin/untoast
+@bin bin/untoast
 include/gsm.h
 @static-lib lib/libgsm.a
 @lib lib/libgsm.so.${LIBgsm_VERSION}
