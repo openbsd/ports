@@ -24,7 +24,14 @@ RUN_DEPENDS =	shells/bash
 CONFIGURE_STYLE = autoreconf
 CONFIGURE_ARGS = --disable-doc
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_prog_ASM_PROG='no '
+# don't pick up archivers/nasm; it breaks build
+# ld: error: undefined symbol: CrcUpdateT8
+# >>> referenced by 7zCrcT8.c
+# >>>               7zCrcT8.o:(CrcUpdate) in archive /pobj/lrzip-0.651/lrzip-0.651/.libs/libtmplrzip.a
+# >>> referenced by 7zCrcT8.c
+# >>>               7zCrcT8.o:(CrcCalc) in archive /pobj/lrzip-0.651/lrzip-0.651/.libs/libtmplrzip.a
 
 AUTOCONF_VERSION = 2.69
 AUTOMAKE_VERSION = 1.16
