@@ -1,0 +1,19 @@
+Fix the build of geo/qgis. py3-qt5's atexit handlers in Python cause a
+double free on aarch64 during the build, so use a hack as a workaround.
+
+Index: src/corelib/thread/qwaitcondition_unix.cpp
+--- src/corelib/thread/qwaitcondition_unix.cpp.orig
++++ src/corelib/thread/qwaitcondition_unix.cpp
+@@ -181,9 +181,12 @@ QWaitCondition::QWaitCondition()
+ 
+ QWaitCondition::~QWaitCondition()
+ {
++    if (d == nullptr)
++        return;
+     report_error(pthread_cond_destroy(&d->cond), "QWaitCondition", "cv destroy");
+     report_error(pthread_mutex_destroy(&d->mutex), "QWaitCondition", "mutex destroy");
+     delete d;
++    d = nullptr;
+ }
+ 
+ void QWaitCondition::wakeOne()

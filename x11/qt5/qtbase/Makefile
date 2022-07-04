@@ -7,7 +7,7 @@ COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-REVISION-main =		9
+REVISION-main =		10
 REVISION-examples =	0
 
 PKGNAME-mysql =		qt5-mysql-${VERSION}
