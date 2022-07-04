@@ -1,7 +1,7 @@
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 
-V =			0.72
+V =			0.73
 DISTNAME =		got-${V}
 PKGNAME-web =		gotweb-${V}
 CATEGORIES =		devel
