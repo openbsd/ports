@@ -1,6 +1,6 @@
 COMMENT =	find the path to your perl
 
-DISTNAME =	Devel-FindPerl-0.015
+DISTNAME =	Devel-FindPerl-0.016
 
 CATEGORIES =	devel
 
