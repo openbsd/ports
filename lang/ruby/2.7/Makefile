@@ -4,10 +4,8 @@ SHARED_LIBS =		ruby27	0.0
 NEXTVER =		2.8
 PKGSPEC-main ?=         ruby->=2.7.0,<${NEXTVER}
 
-MASTER_SITES0 =		https://github.com/ruby/ruby/commit/
 # Backport fix for regression in 2.7.2+ to avoid crash in ffi_closure_free
 PATCHFILES =		ruby-2.7-ffi-closure-fix{040cfc89b9a110cd0fb2abdcd35e8215b4a71f60}.patch:0
-PATCH_DIST_STRIP =	-p1
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
