@@ -1,7 +1,6 @@
 COMMENT =	simple gemini server
-V =		1.8.3
+V =		1.8.4
 DISTNAME =	gmid-${V}
-REVISION =	1
 
 CATEGORIES =	net
 

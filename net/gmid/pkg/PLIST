@@ -5,6 +5,7 @@
 @bin bin/gmid
 @man man/man1/gg.1
 @man man/man1/gmid.1
+@man man/man5/gmid.conf.5
 share/examples/gmid/
 share/examples/gmid/gmid.conf
 @sample ${SYSCONFDIR}/gmid.conf
