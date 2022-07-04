@@ -1,9 +1,8 @@
 COMMENT =		scalable, non-blocking web server
 
-MODPY_EGG_VERSION =	6.1
+MODPY_EGG_VERSION =	6.2
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -21,6 +20,7 @@ FLAVOR  =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST_ARGS =	tornado/test
 
 TEST_DEPENDS =		devel/py-twisted${MODPY_FLAVOR} \
 			net/py-cares${MODPY_FLAVOR} \
@@ -28,8 +28,5 @@ TEST_DEPENDS =		devel/py-twisted${MODPY_FLAVOR} \
 
 pre-test:
 	${MODPY_CMD} build_ext --inplace
-
-do-test:
-	@cd ${WRKSRC} && ${MODPY_BIN} -m tornado.test.runtests
 
 .include <bsd.port.mk>

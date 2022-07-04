@@ -72,13 +72,15 @@ lib/python${MODPY_VERSION}/site-packages/tornado/py.typed
 lib/python${MODPY_VERSION}/site-packages/tornado/queues.py
 lib/python${MODPY_VERSION}/site-packages/tornado/routing.py
 lib/python${MODPY_VERSION}/site-packages/tornado/simple_httpclient.py
-@so lib/python${MODPY_VERSION}/site-packages/tornado/speedups.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/tornado/speedups${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/tornado/tcpclient.py
 lib/python${MODPY_VERSION}/site-packages/tornado/tcpserver.py
 lib/python${MODPY_VERSION}/site-packages/tornado/template.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}asyncio_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/${MODPY_PYCACHE}auth_test.${MODPY_PYC_MAGIC_TAG}pyc
