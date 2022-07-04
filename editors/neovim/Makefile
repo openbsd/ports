@@ -13,7 +13,7 @@ COMMENT =	continuation and extension of Vim
 
 GH_ACCOUNT =	neovim
 GH_PROJECT =	neovim
-GH_TAGNAME =	v0.7.0
+GH_TAGNAME =	v0.7.2
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://neovim.io
@@ -21,7 +21,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # The versions listed here must match those in third-party/CMakeLists.txt.
 LUV_VER =	1.43.0-0
-LUAJIT_VER =	5e3c45c43bb0e0f1f2917d432e9d2dba12c42a6e
+LUAJIT_VER =	91bc6b8ad1f373c1ce9003dc024b2e21fad0e444
 
 MASTER_SITES0 =	https://github.com/luvit/luv/releases/download/${LUV_VER}/
 MASTER_SITES1 = https://github.com/LuaJIT/LuaJIT/archive/
