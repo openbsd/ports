@@ -1,0 +1,78 @@
+From f86b334504693afe9ee6ec61416182d23c66e1ad Mon Sep 17 00:00:00 2001
+From: Gabriel Kihlman <g.kihlman@yubico.com>
+Date: Mon, 27 Apr 2020 14:52:53 +0200
+Subject: [PATCH] Initialize bufs to 0 to avoid potentially leaking
+ uninitialized memory
+
+From 13f69440ac7cca05a94bd9cf9011e2ea352dad68 Mon Sep 17 00:00:00 2001
+From: Gabriel Kihlman <g.kihlman@yubico.com>
+Date: Mon, 27 Apr 2020 14:56:00 +0200
+Subject: [PATCH] Wipe stack memory containing key material before returning
+
+Index: ykpers.c
+--- ykpers.c.orig
++++ ykpers.c
+@@ -264,7 +264,7 @@ int ykp_get_supported_key_length(const YKP_CONFIG *cfg
+ 
+ /* Decode 128 bit AES key into cfg->ykcore_config.key */
+ int ykp_AES_key_from_hex(YKP_CONFIG *cfg, const char *hexkey) {
+-	char aesbin[256];
++	char aesbin[256] = {0};
+ 
+ 	/* Make sure that the hexkey is exactly 32 characters */
+ 	if (strlen(hexkey) != 32) {
+@@ -280,6 +280,7 @@ int ykp_AES_key_from_hex(YKP_CONFIG *cfg, const char *
+ 
+ 	yubikey_hex_decode(aesbin, hexkey, sizeof(aesbin));
+ 	memcpy(cfg->ykcore_config.key, aesbin, sizeof(cfg->ykcore_config.key));
++	insecure_memzero (aesbin, sizeof(aesbin));
+ 
+ 	return 0;
+ }
+@@ -311,7 +312,7 @@ int ykp_HMAC_key_from_raw(YKP_CONFIG *cfg, const char 
+  * and 32 bits into the first four bytes of cfg->ykcore_config.uid.
+ */
+ int ykp_HMAC_key_from_hex(YKP_CONFIG *cfg, const char *hexkey) {
+-	char aesbin[256];
++	char aesbin[256] = {0};
+ 	size_t i;
+ 
+ 	/* Make sure that the hexkey is exactly 40 characters */
+@@ -330,6 +331,7 @@ int ykp_HMAC_key_from_hex(YKP_CONFIG *cfg, const char 
+ 	i = sizeof(cfg->ykcore_config.key);
+ 	memcpy(cfg->ykcore_config.key, aesbin, i);
+ 	memcpy(cfg->ykcore_config.uid, aesbin + i, 20 - i);
++	insecure_memzero (aesbin, sizeof(aesbin));
+ 
+ 	return 0;
+ }
+@@ -351,9 +353,9 @@ int ykp_AES_key_from_passphrase(YKP_CONFIG *cfg, const
+ 			0
+ 		};
+ 		const char **random_place;
+-		uint8_t _salt[8];
++		uint8_t _salt[8] = {0};
+ 		size_t _salt_len = 0;
+-		unsigned char buf[sizeof(cfg->ykcore_config.key) + 4];
++		unsigned char buf[sizeof(cfg->ykcore_config.key) + 4] = {0};
+ 		int rc;
+ 		int key_bytes = ykp_get_supported_key_length(cfg);
+ 		YK_PRF_METHOD prf_method = {20, yk_hmac_sha1};
+@@ -931,7 +933,7 @@ static const char str_extended_flags[] = "extended_fla
+ 
+ static int _ykp_legacy_export_config(const YKP_CONFIG *cfg, char *buf, size_t len) {
+ 	if (cfg) {
+-		char buffer[256];
++		char buffer[256] = {0};
+ 		struct map_st *p;
+ 		unsigned char t_flags;
+ 		bool key_bits_in_uid = false;
+@@ -1131,7 +1133,7 @@ int ykp_write_config(const YKP_CONFIG *cfg,
+ 				   void *userdata),
+ 		     void *userdata) {
+ 	if(cfg) {
+-		char buffer[1024];
++		char buffer[1024] = {0};
+ 		int ret = _ykp_legacy_export_config(cfg, buffer, 1024);
+ 		if(ret) {
+ 			writer(buffer, strlen(buffer), userdata);

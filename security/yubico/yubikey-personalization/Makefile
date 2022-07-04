@@ -2,7 +2,7 @@ COMMENT=	library and tools to program YubiKeys
 
 YK_PROJECT=	yubikey-personalization
 DISTNAME=	ykpers-1.20.0
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	ykpers-1                  0.8 # 20.0
 
