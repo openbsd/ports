@@ -31,7 +31,7 @@ LIB_DEPENDS=		sysutils/polkit
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=		x11/dbus,-suid
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS=		--disable-pam-module \
 			--with-pam-module-dir=${LOCALBASE}/lib/security
 
@@ -40,19 +40,10 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 FAKE_FLAGS=		DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \
 			sysconfdir=${TRUEPREFIX}/share/examples/consolekit
 
+BUILD_DEPENDS +=	devel/gettext,-tools
+AUTORECONF=		./autogen.sh
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/gettext,-tools \
-			devel/libtool
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		NOCONFIGURE=1 \
-		/bin/sh ./autogen.sh ${CONFIGURE_ARGS}
 
 post-install:
 	rmdir ${WRKINST}/var/run/ConsoleKit
