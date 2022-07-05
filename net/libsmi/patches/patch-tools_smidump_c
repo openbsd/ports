@@ -1,7 +1,7 @@
 Index: tools/smidump.c
 --- tools/smidump.c.orig
 +++ tools/smidump.c
-@@ -233,11 +233,10 @@ static void usage()
+@@ -252,11 +252,10 @@ static void usage()
  	    printf_state=_set_printf_count_output(1);
      #endif
  #endif
