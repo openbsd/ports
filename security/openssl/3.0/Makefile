@@ -1,7 +1,7 @@
 # bump mail/postfix/stable and mail/postfix/snapshots if updating
 # (static linked)
 PORTROACH=	limit:^3
-V=		3.0.4
+V=		3.0.5
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3,<3.1
 
