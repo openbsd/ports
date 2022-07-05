@@ -3,10 +3,10 @@ more V4L2/video(4) cameras or network-based webcams, and is able to
 detect whether a significant part of the picture has changed. Or in
 other words, it can detect motion.
 
-Motion is a command line based tool. It has absolutely no graphical
-user interface. Everything is setup either via the command line or
-via a set of configuration files (simple ASCII files that can be
-edited by any ASCII editor).
+Motion is a command-line tool. It has a simple web interface as well.
+Everything is set up either via the command line or via a set of
+configuration files (simple ASCII files that can be edited by any
+ASCII editor).
 
 Motion can output JPEG/PPM images and MPEG video sequences, call
 external programs, log to a database, etc.
