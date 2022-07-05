@@ -430,6 +430,7 @@
      SUBDIR += virt-what
      SUBDIR += vmdktool
      SUBDIR += vmwh
+     SUBDIR += vorta
      SUBDIR += vultr-cli
      SUBDIR += whowatch
      SUBDIR += wmapm
