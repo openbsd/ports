@@ -3,7 +3,7 @@ COMMENT=		next-generation build system
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
-GH_TAGNAME=		0.62.2
+GH_TAGNAME=		0.63.0
 EPOCH=			0
 
 CATEGORIES=		devel
