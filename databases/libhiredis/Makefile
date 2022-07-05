@@ -2,10 +2,10 @@ COMMENT=	minimalistic C client for Redis
 
 GH_ACCOUNT=	redis
 GH_PROJECT=	hiredis
-GH_TAGNAME=	v0.14.1
+GH_TAGNAME=	v1.0.2
 PKGNAME=	lib${DISTNAME}
 
-SHARED_LIBS=	hiredis		0.2
+SHARED_LIBS=	hiredis		1.0
 
 CATEGORIES=	databases devel
 
