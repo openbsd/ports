@@ -5,7 +5,7 @@ HOMEPAGE =	http://moc.daper.net/
 MASTER_SITES =	http://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	8
+REVISION =	9
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
@@ -13,10 +13,10 @@ PERMIT_PACKAGE = Yes
 # uses pledge()
 WANTLIB += ${COMPILER_LIBCXX} FLAC aom avcodec avformat avutil
 WANTLIB += bz2 c crypto curl curses dav1d db faad gsm iconv id3tag
-WANTLIB += ltdl lzma m mad magic modplug mp3lame mpcdec nghttp2
-WANTLIB += ogg opus samplerate sndfile sndio speex ssl swresample
-WANTLIB += tag tag_c theoradec theoraenc vorbis vorbisenc vorbisfile
-WANTLIB += vpx wavpack x264 x265 xml2 xvidcore z
+WANTLIB += ltdl lzma m mad magic modplug mp3lame mpcdec mpg123
+WANTLIB += nghttp2 ogg opus samplerate sndfile sndio speex ssl
+WANTLIB += swresample tag tag_c theoradec theoraenc vorbis vorbisenc
+WANTLIB += vorbisfile vpx wavpack x264 x265 xml2 xvidcore z
 
 COMPILER =	base-clang ports-gcc base-gcc
 
