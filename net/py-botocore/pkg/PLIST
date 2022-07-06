@@ -1449,6 +1449,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/robomaker/2018-06-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/robomaker/2018-06-29/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/robomaker/2018-06-29/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/robomaker/2018-06-29/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/rolesanywhere/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53-recovery-cluster/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/route53-recovery-cluster/2019-12-02/
