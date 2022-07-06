@@ -1,18 +1,21 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -553,13 +553,12 @@ if ( INSTALL_ZKG )
-     # An etc/zkg directory for zkg's config file simplifies zkg's
-     # config file code.
-     set(ZEEK_ZKG_CONFIG_DIR "${ZEEK_ETC_INSTALL_DIR}/zkg")
--    set(ZEEK_ZKG_STATE_DIR "${ZEEK_ROOT_DIR}/var/lib/zkg")
-+    set(ZEEK_ZKG_STATE_DIR "/var/db/zkg")
+@@ -70,7 +70,7 @@ if ( NOT ZEEK_ETC_INSTALL_DIR )
+ endif ()
  
-     configure_file(
+ if ( NOT ZEEK_STATE_DIR )
+-    set(ZEEK_STATE_DIR ${ZEEK_ROOT_DIR}/var/lib)
++    set(ZEEK_STATE_DIR /var/db)
+ endif ()
+ 
+ if ( NOT ZEEK_SPOOL_DIR )
+@@ -639,7 +639,7 @@ if ( INSTALL_ZKG )
          ${CMAKE_CURRENT_SOURCE_DIR}/zkg-config.in
          ${CMAKE_CURRENT_BINARY_DIR}/zkg-config @ONLY)
  
 -    install(DIRECTORY DESTINATION var/lib/zkg)
++    install(DIRECTORY DESTINATION var/db/zkg)
      install(FILES ${CMAKE_CURRENT_BINARY_DIR}/zkg-config
          DESTINATION ${ZEEK_ZKG_CONFIG_DIR} RENAME config)
  endif ()

@@ -20,4 +20,4 @@ It's also recommended to enable housekeeping tasks by adding the following
 entry into root's crontab(5):
 */5	*	*	*	*	${TRUEPREFIX}/bin/zeekctl cron
 
-See https://docs.zeek.org/en/current/quickstart/index.html for details.
+See https://docs.zeek.org/en/current/quickstart.html for details.

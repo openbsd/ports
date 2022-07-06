@@ -1,0 +1,25 @@
+/hack/objdirs/pobj/zeek-5.0.0/zeek-5.0.0/src/analyzer/protocol/ssl/SSL.cc:173:43: error: use of undeclared identifier 'EVP_PKEY_TLS1_PRF'
+        EVP_PKEY_CTX* pctx = EVP_PKEY_CTX_new_id(EVP_PKEY_TLS1_PRF, NULL);
+                                                 ^
+/hack/objdirs/pobj/zeek-5.0.0/zeek-5.0.0/src/analyzer/protocol/ssl/SSL.cc:215:7: error: use of undeclared identifier 'EVP_PKEY_CTX_set_tls1_prf_md'
+        if ( EVP_PKEY_CTX_set_tls1_prf_md(pctx, EVP_sha384()) <= 0 )
+             ^
+/hack/objdirs/pobj/zeek-5.0.0/zeek-5.0.0/src/analyzer/protocol/ssl/SSL.cc:217:7: error: use of undeclared identifier 'EVP_PKEY_CTX_set1_tls1_prf_secret'
+        if ( EVP_PKEY_CTX_set1_tls1_prf_secret(pctx, secret.data(), secret.size()) <= 0 )
+             ^
+/hack/objdirs/pobj/zeek-5.0.0/zeek-5.0.0/src/analyzer/protocol/ssl/SSL.cc:219:7: error: use of undeclared identifier 'EVP_PKEY_CTX_add1_tls1_prf_seed'
+        if ( EVP_PKEY_CTX_add1_tls1_prf_seed(pctx, seed.data(), seed.size()) <= 0 )
+             ^
+
+Index: cmake/FindOpenSSL.cmake
+--- cmake/FindOpenSSL.cmake.orig
++++ cmake/FindOpenSSL.cmake
+@@ -131,7 +131,7 @@ endfunction()
+ 
+ if (UNIX)
+   find_package(PkgConfig QUIET)
+-  pkg_check_modules(_OPENSSL QUIET openssl)
++  pkg_check_modules(_OPENSSL QUIET eopenssl11)
+ endif ()
+ 
+ # Support preference of static libs by adjusting CMAKE_FIND_LIBRARY_SUFFIXES

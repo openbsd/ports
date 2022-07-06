@@ -4,15 +4,15 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			4.0.7
+V=			5.0.0
 DISTNAME=		zeek-${V}
 
-SHARED_LIBS +=	binpac                    2.0
-SHARED_LIBS +=  broccoli                  9.0
-SHARED_LIBS +=  broker                    3.0
-SHARED_LIBS +=  caf_core                  3.0
-SHARED_LIBS +=  caf_io                    3.0
-SHARED_LIBS +=  caf_openssl               3.0
+SHARED_LIBS +=	binpac                    3.0
+SHARED_LIBS +=  broccoli                  10.0
+SHARED_LIBS +=  broker                    4.0
+
+# only used at configure+build time; these libs aren't installed
+SHARED_LIBS +=  caf_core                  4.0
 
 CATEGORIES=		net security
 
@@ -23,8 +23,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto m maxminddb pcap pthread ssl z
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} lib/libbind/bind
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += c m maxminddb pcap pthread z
+WANTLIB += lib/eopenssl11/crypto lib/eopenssl11/ssl lib/libbind/bind
 
 MASTER_SITES=		https://download.zeek.org/ \
 			https://old.zeek.org/downloads/
@@ -53,7 +54,8 @@ BUILD_DEPENDS=		devel/bison \
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			net/libbind \
-			net/libmaxminddb
+			net/libmaxminddb \
+			security/openssl/1.1
 
 RUN_DEPENDS=		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city \
@@ -95,6 +97,10 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--with-python=${MODPY_BIN} \
 			--binary-package
 
+# XXX CMake Error at auxil/spicy/spicy/cmake/Util.cmake:85 (message):
+# Need Flex version >= 2.6, found 2.5.39
+CONFIGURE_ARGS +=	--disable-spicy
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/auxil/broker/CMakeLists.txt \
 		${WRKSRC}/auxil/binpac/lib/CMakeLists.txt \
@@ -103,7 +109,7 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}/etc/zeek ${PREFIX}/share/examples/zeek
-	rm -rf ${WRKINST}/var/{log,spool}/zeek
+	rm -rf ${WRKINST}/var/{log,spool}/zeek ${PREFIX}/var/
 	mv ${PREFIX}/share/zeek/site/ ${PREFIX}/share/examples/zeek/
 	cd ${PREFIX}/share/zeek && ln -sf ${SYSCONFDIR}/zeek/site
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/zeek/python

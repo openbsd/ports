@@ -10,7 +10,7 @@ Index: src/file_analysis/analyzer/x509/functions.bif
  	OCSP_RESPID* resp_id = basic_resp->tbsResponseData->responderId;
  
  	if ( resp_id->type == V_OCSP_RESPID_NAME )
-@@ -311,7 +311,7 @@ function x509_ocsp_verify%(certs: x509_opaque_vector, 
+@@ -359,7 +359,7 @@ function x509_ocsp_verify%(certs: x509_opaque_vector, 
  
  	// Because we actually want to be able to give nice error messages that show why we were
  	// not able to verify the OCSP response - do our own verification logic first.
@@ -19,7 +19,7 @@ Index: src/file_analysis/analyzer/x509/functions.bif
  	signer = x509_get_ocsp_signer(basic->certs, basic);
  #else
  	signer = x509_get_ocsp_signer(OCSP_resp_get0_certs(basic), basic);
-@@ -677,7 +677,7 @@ function sct_verify%(cert: opaque of x509, logid: stri
+@@ -730,7 +730,7 @@ function sct_verify%(cert: opaque of x509, logid: stri
  	uint32_t cert_length;
  	if ( precert )
  		{

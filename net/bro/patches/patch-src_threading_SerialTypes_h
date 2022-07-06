@@ -1,0 +1,20 @@
+/usr/local/include/bind/arpa/inet.h:95:17: warning: '__inet_makeaddr' has C-linkage specified, but returns incomplete type 'struct in_addr' which could be incompatible with C [-Wreturn-type-c-linkage]
+struct in_addr   inet_makeaddr __P((u_long , u_long));
+                 ^
+/usr/local/include/bind/arpa/inet.h:77:24: note: expanded from macro 'inet_makeaddr'
+#define inet_makeaddr           __inet_makeaddr
+                                ^
+
+Index: src/threading/SerialTypes.h
+--- src/threading/SerialTypes.h.orig
++++ src/threading/SerialTypes.h
+@@ -1,8 +1,8 @@
+ 
+ #pragma once
+ 
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ 
