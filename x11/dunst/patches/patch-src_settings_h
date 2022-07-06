@@ -8,5 +8,5 @@ Index: src/settings.h
 +enum mouse_button { BTN_LEFT, BTN_RIGHT, BTN_MIDDLE, BTN_TOUCH };
 +
  enum alignment { ALIGN_LEFT, ALIGN_CENTER, ALIGN_RIGHT };
- enum icon_position { ICON_LEFT, ICON_RIGHT, ICON_OFF };
  enum vertical_alignment { VERTICAL_TOP, VERTICAL_CENTER, VERTICAL_BOTTOM };
+ enum separator_color { SEP_FOREGROUND, SEP_AUTO, SEP_FRAME, SEP_CUSTOM };

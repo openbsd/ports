@@ -9,5 +9,5 @@ Index: src/input.c
  #include <linux/input-event-codes.h>
 +#endif
  
- struct notification *get_notification_at(const int y) {
-         int curr_y = settings.frame_width;
+ int get_notification_clickable_height(struct notification *n, bool first, bool last)
+ {

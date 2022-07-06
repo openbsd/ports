@@ -1,7 +1,7 @@
 Index: src/dunst.c
 --- src/dunst.c.orig
 +++ src/dunst.c
-@@ -95,7 +95,7 @@ static gboolean run(void *data)
+@@ -96,7 +96,7 @@ static gboolean run(void *data)
                  gint64 sleep = queues_get_next_datachange(now);
                  gint64 timeout_at = now + sleep;
  
@@ -9,4 +9,4 @@ Index: src/dunst.c
 +                LOG_D("Sleeping for %lli ms", (long long)sleep/1000);
  
                  if (sleep >= 0) {
-                         if (next_timeout < now || timeout_at < next_timeout) {
+                         if (reason == 0 || next_timeout < now || timeout_at < next_timeout) {
