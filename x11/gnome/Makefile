@@ -7,7 +7,6 @@
      SUBDIR += autoar
      SUBDIR += backgrounds
      SUBDIR += baobab
-     SUBDIR += books
      SUBDIR += builder
      SUBDIR += calculator
      SUBDIR += calendar
