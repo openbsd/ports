@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1574 2022/06/29 08:46:28 op Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1575 2022/07/06 08:54:59 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1027,8 +1027,10 @@ _FULLPKGPATH = ${PKGPATH},${SUBPACKAGE}${_FLAVOR_EXT2:S/-/,/g}
 
 
 .for _a in ${_authorized_chars}
-.  if ${CATEGORIES:M*[^${_a}]*}
+.  if defined(CATEGORIES)
+.    if ${CATEGORIES:M*[^${_a}]*}
 ERRORS += "Fatal: CATEGORIES=${CATEGORIES} uses forbidden characters '${CATEGORIES:C@[${_a}]@@g}'"
+.    endif
 .  endif
 .endfor
 
