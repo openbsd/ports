@@ -1,3 +1,5 @@
+BROKEN=			does not build with new meson
+
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
