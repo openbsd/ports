@@ -1,11 +1,7 @@
-BROKEN=			does not build with new meson
-
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		1.3.0
-
-PKGNAME=		${DISTNAME}
 
 SHARED_LIBS += gvnc-1.0                  1.2 # 0.0.1
 SHARED_LIBS += gvncpulse-1.0             0.1 # 0.0.1

@@ -1,0 +1,22 @@
+From b3eb04485cf4553b0e588a7ca78f7377e1c4f35e Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz93@gmail.com>
+Date: Mon, 27 Jun 2022 01:48:02 -0400
+Subject: [PATCH] fix invalid use of subprojects
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -49,9 +49,10 @@ spice_gtk_config_data.merge_from(spice_common.get_vari
+ spice_glib_deps += spice_common.get_variable('spice_common_client_dep')
+ spice_protocol_version = spice_common.get_variable('spice_protocol_version')
+ 
+-subproject('keycodemapdb')
+-keymapgen = files('subprojects/keycodemapdb/tools/keymap-gen')
+-keymapcsv = files('subprojects/keycodemapdb/data/keymaps.csv')
++keycodemapdb = subproject('keycodemapdb')
++
++keymapgen = find_program('keymap-gen')
++keymapcsv = keycodemapdb.get_variable('keymaps_csv')
+ 
+ #
+ # check for system headers

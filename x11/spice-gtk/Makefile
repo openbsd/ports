@@ -1,5 +1,3 @@
-BROKEN=			does not build with new meson
-
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
 DISTNAME=		spice-gtk-0.40

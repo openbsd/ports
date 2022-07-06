@@ -1,0 +1,17 @@
+From b3eb04485cf4553b0e588a7ca78f7377e1c4f35e Mon Sep 17 00:00:00 2001
+From: Eli Schwartz <eschwartz93@gmail.com>
+Date: Mon, 27 Jun 2022 01:48:02 -0400
+Subject: [PATCH] fix invalid use of subprojects
+
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -312,7 +312,7 @@ if spice_gtk_has_gtk
+   foreach keymap : keymaps
+     varname = 'keymap_@0@2xtkbd'.format(keymap)
+     target = 'vncdisplay@0@.h'.format(varname)
+-    cmd = [python, keymapgen, '--lang', 'glib2', '--varname', varname, 'code-map', keymapcsv, keymap, 'xtkbd']
++    cmd = [python, keymapgen, 'code-map', '--lang', 'glib2', '--varname', varname, keymapcsv, keymap, 'xtkbd']
+     spice_client_gtk_sources += custom_target(target,
+                                               output : target,
+                                               capture : true,
