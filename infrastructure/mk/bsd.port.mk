@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1575 2022/07/06 08:54:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1576 2022/07/06 09:30:41 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3311,7 +3311,7 @@ _internal-clean:
 		${_PFETCH} rm -f ${MAKESUMFILES:=.part}; \
 	fi
 	@if cd ${DISTDIR} 2>/dev/null; then \
-		${_PFETCH} rmdir -p ${MAKESUMFILES:C@/[^/]*$@@} 2>/dev/null || true; \
+		${_PFETCH} rmdir -p ${MAKESUMFILES:H} 2>/dev/null || true; \
 	fi
 .endif
 .if ${_clean:Minstall}
