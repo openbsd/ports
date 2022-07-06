@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-extras=	0
+
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -108,7 +110,6 @@ RUN_DEPENDS-extras +=	devel/glade \
 			net/telepathy/telepathy-glib \
 			net/telepathy/telepathy-logger \
 			net/telepathy/telepathy-mission-control \
-			x11/gnome/books \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
 			x11/gnome/file-roller \
