@@ -1,6 +1,6 @@
 COMMENT =	IP-Transparent Tor/I2P Hidden Service Connector
 
-V =		0.3.8
+V =		0.3.9
 DISTNAME =	onioncat-$V
 CATEGORIES =	net
 
