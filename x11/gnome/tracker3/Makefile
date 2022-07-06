@@ -1,7 +1,7 @@
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.3.1
+GNOME_VERSION=		3.3.2
 PKGNAME=		tracker3-${GNOME_VERSION}
 
 SHARED_LIBS += tracker-sparql-3.0        0.2 # 0.300.0
