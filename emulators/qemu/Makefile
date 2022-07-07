@@ -10,6 +10,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
 
+REVISION-main=	0
+
 HOMEPAGE=	https://www.qemu.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>

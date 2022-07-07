@@ -1,5 +1,6 @@
 COMMENT =		CMake modules required by KDE5
 DISTNAME =		extra-cmake-modules-${VERSION}
+REVISION =		0
 HOMEPAGE =		https://projects.kde.org/projects/kdesupport/extra-cmake-modules
 
 MODULES =		lang/python

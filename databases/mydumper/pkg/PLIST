@@ -18,13 +18,14 @@ share/doc/mydumper/html/_sources/index.rst.txt
 share/doc/mydumper/html/_sources/mydumper_usage.rst.txt
 share/doc/mydumper/html/_sources/myloader_usage.rst.txt
 share/doc/mydumper/html/_static/
+share/doc/mydumper/html/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/mydumper/html/_static/basic.css
 share/doc/mydumper/html/_static/classic.css
 share/doc/mydumper/html/_static/default.css
 share/doc/mydumper/html/_static/doctools.js
 share/doc/mydumper/html/_static/documentation_options.js
 share/doc/mydumper/html/_static/file.png
-share/doc/mydumper/html/_static/jquery-3.5.1.js
+share/doc/mydumper/html/_static/jquery-3.6.0.js
 share/doc/mydumper/html/_static/jquery.js
 share/doc/mydumper/html/_static/language_data.js
 share/doc/mydumper/html/_static/minus.png

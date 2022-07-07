@@ -13,6 +13,8 @@ DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
+REVISION =		0
+
 # Version of the precompiled binaries
 BIN_VER =		8.10.7.20220419
 

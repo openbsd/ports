@@ -5430,13 +5430,14 @@ share/doc/ghc/html/haddock/_sources/invoking.rst.txt
 share/doc/ghc/html/haddock/_sources/markup.rst.txt
 share/doc/ghc/html/haddock/_sources/multi-components.rst.txt
 share/doc/ghc/html/haddock/_static/
+share/doc/ghc/html/haddock/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/ghc/html/haddock/_static/alabaster.css
 share/doc/ghc/html/haddock/_static/basic.css
 share/doc/ghc/html/haddock/_static/custom.css
 share/doc/ghc/html/haddock/_static/doctools.js
 share/doc/ghc/html/haddock/_static/documentation_options.js
 share/doc/ghc/html/haddock/_static/file.png
-share/doc/ghc/html/haddock/_static/jquery-3.5.1.js
+share/doc/ghc/html/haddock/_static/jquery-3.6.0.js
 share/doc/ghc/html/haddock/_static/jquery.js
 share/doc/ghc/html/haddock/_static/language_data.js
 share/doc/ghc/html/haddock/_static/minus.png
@@ -8033,6 +8034,7 @@ share/doc/ghc/html/users_guide/_sources/what_glasgow_exts_does.rst.txt
 share/doc/ghc/html/users_guide/_sources/win32-dlls.rst.txt
 share/doc/ghc/html/users_guide/_static/
 share/doc/ghc/html/users_guide/_static/Recip.png
+share/doc/ghc/html/users_guide/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/ghc/html/users_guide/_static/basic.css
 share/doc/ghc/html/users_guide/_static/css/
 share/doc/ghc/html/users_guide/_static/css/badge_only.css
@@ -8047,7 +8049,7 @@ share/doc/ghc/html/users_guide/_static/fonts/fontawesome-webfont.svg
 share/doc/ghc/html/users_guide/_static/fonts/fontawesome-webfont.ttf
 share/doc/ghc/html/users_guide/_static/fonts/fontawesome-webfont.woff
 share/doc/ghc/html/users_guide/_static/fonts/fontawesome-webfont.woff2
-share/doc/ghc/html/users_guide/_static/jquery-3.5.1.js
+share/doc/ghc/html/users_guide/_static/jquery-3.6.0.js
 share/doc/ghc/html/users_guide/_static/jquery.js
 share/doc/ghc/html/users_guide/_static/js/
 share/doc/ghc/html/users_guide/_static/js/modernizr.min.js

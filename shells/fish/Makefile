@@ -2,7 +2,7 @@ COMMENT =		friendly interactive shell
 
 V =			3.4.1
 DISTNAME =		fish-$V
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		shells
 

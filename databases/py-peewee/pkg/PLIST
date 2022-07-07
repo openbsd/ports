@@ -92,13 +92,14 @@ share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/quickstart.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/relationships.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_sources/peewee/sqlite_ext.rst.txt
 share/doc/${MODPY_PY_PREFIX}peewee/_static/
+share/doc/${MODPY_PY_PREFIX}peewee/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/basic.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/classic.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/default.css
 share/doc/${MODPY_PY_PREFIX}peewee/_static/doctools.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/documentation_options.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/file.png
-share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery-3.5.1.js
+share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery-3.6.0.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/language_data.js
 share/doc/${MODPY_PY_PREFIX}peewee/_static/minus.png

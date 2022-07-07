@@ -8,6 +8,7 @@ share/doc/luacheck/_sources/inline.rst.txt
 share/doc/luacheck/_sources/module.rst.txt
 share/doc/luacheck/_sources/warnings.rst.txt
 share/doc/luacheck/_static/
+share/doc/luacheck/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/luacheck/_static/basic.css
 share/doc/luacheck/_static/css/
 share/doc/luacheck/_static/css/badge_only.css
@@ -33,7 +34,7 @@ share/doc/luacheck/_static/css/theme.css
 share/doc/luacheck/_static/doctools.js
 share/doc/luacheck/_static/documentation_options.js
 share/doc/luacheck/_static/file.png
-share/doc/luacheck/_static/jquery-3.5.1.js
+share/doc/luacheck/_static/jquery-3.6.0.js
 share/doc/luacheck/_static/jquery.js
 share/doc/luacheck/_static/js/
 share/doc/luacheck/_static/js/badge_only.js

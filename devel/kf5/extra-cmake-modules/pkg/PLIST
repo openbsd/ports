@@ -236,6 +236,7 @@ share/doc/ECM/html/_sources/module/QtVersionOption.rst.txt
 share/doc/ECM/html/_sources/toolchain/
 share/doc/ECM/html/_sources/toolchain/Android.rst.txt
 share/doc/ECM/html/_static/
+share/doc/ECM/html/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/ECM/html/_static/basic.css
 share/doc/ECM/html/_static/classic.css
 share/doc/ECM/html/_static/default.css
@@ -243,7 +244,7 @@ share/doc/ECM/html/_static/doctools.js
 share/doc/ECM/html/_static/documentation_options.js
 share/doc/ECM/html/_static/ecm.css
 share/doc/ECM/html/_static/file.png
-share/doc/ECM/html/_static/jquery-3.5.1.js
+share/doc/ECM/html/_static/jquery-3.6.0.js
 share/doc/ECM/html/_static/jquery.js
 share/doc/ECM/html/_static/kde-favicon.ico
 share/doc/ECM/html/_static/language_data.js

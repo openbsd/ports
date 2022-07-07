@@ -111,6 +111,7 @@ share/pgadmin3/docs/en_US/_images/slony-table.png
 share/pgadmin3/docs/en_US/_images/slony-upgrade.png
 share/pgadmin3/docs/en_US/_images/status.png
 share/pgadmin3/docs/en_US/_static/
+share/pgadmin3/docs/en_US/_static/_sphinx_javascript_frameworks_compat.js
 share/pgadmin3/docs/en_US/_static/backup-2.png
 share/pgadmin3/docs/en_US/_static/backup-3.png
 share/pgadmin3/docs/en_US/_static/backup-4.png
@@ -130,7 +131,7 @@ share/pgadmin3/docs/en_US/_static/grantwiz.png
 share/pgadmin3/docs/en_US/_static/gridopt-filter.png
 share/pgadmin3/docs/en_US/_static/gridopt-sort.png
 share/pgadmin3/docs/en_US/_static/guru-connect.png
-share/pgadmin3/docs/en_US/_static/jquery-3.5.1.js
+share/pgadmin3/docs/en_US/_static/jquery-3.6.0.js
 share/pgadmin3/docs/en_US/_static/jquery.js
 share/pgadmin3/docs/en_US/_static/language_data.js
 share/pgadmin3/docs/en_US/_static/locks.png

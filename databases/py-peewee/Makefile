@@ -3,6 +3,7 @@ COMMENT=		small expressive ORM
 MODPY_EGG_VERSION=	3.14.8
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee
@@ -34,17 +35,17 @@ MODPOSTGRESQL_TEST_CMD=		cd ${WRKSRC} && ${MODPY_BIN} runtests.py
 
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 DOCSRC =	${WRKSRC}/docs
+DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}peewee
+EXAMPLES =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}peewee
+
 post-build:
 	cd ${DOCSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
-DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}peewee
-EXAMPLES =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}peewee
 post-install:
 	${INSTALL_DATA_DIR} ${DOCS}
 	cd ${DOCSRC}/_build/html && pax -rw * ${DOCS}
 	${INSTALL_DATA_DIR} ${EXAMPLES}
 	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLES}
 	mv ${PREFIX}/bin/pwiz.py ${PREFIX}/bin/pwiz
-
 
 .include <bsd.port.mk>

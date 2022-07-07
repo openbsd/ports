@@ -16,13 +16,14 @@ share/doc/polybar/_sources/man/polybar.5.rst.txt
 share/doc/polybar/_sources/user/
 share/doc/polybar/_sources/user/actions.rst.txt
 share/doc/polybar/_static/
+share/doc/polybar/_static/_sphinx_javascript_frameworks_compat.js
 share/doc/polybar/_static/alabaster.css
 share/doc/polybar/_static/basic.css
 share/doc/polybar/_static/custom.css
 share/doc/polybar/_static/doctools.js
 share/doc/polybar/_static/documentation_options.js
 share/doc/polybar/_static/file.png
-share/doc/polybar/_static/jquery-3.5.1.js
+share/doc/polybar/_static/jquery-3.6.0.js
 share/doc/polybar/_static/jquery.js
 share/doc/polybar/_static/language_data.js
 share/doc/polybar/_static/minus.png
@@ -47,6 +48,5 @@ share/doc/polybar/user/
 share/doc/polybar/user/actions.html
 share/examples/polybar/
 share/examples/polybar/config
-share/zsh/site-functions/
 share/zsh/site-functions/_polybar
 share/zsh/site-functions/_polybar_msg

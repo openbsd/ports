@@ -5,7 +5,7 @@ GH_ACCOUNT=	mpeterv
 GH_PROJECT=	luacheck
 GH_TAGNAME=	0.21.2
 
-REVISION=	5
+REVISION=	6
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
