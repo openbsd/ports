@@ -3,9 +3,15 @@ https://trac.edgewall.org/ticket/13404
 Index: trac/util/presentation.py
 --- trac/util/presentation.py.orig
 +++ trac/util/presentation.py
-@@ -23,7 +23,10 @@ import re
+@@ -21,9 +21,15 @@ from datetime import datetime
+ from math import ceil
+ import re
  
- from jinja2 import Markup, Undefined, contextfilter, evalcontextfilter
+-from jinja2 import Markup, Undefined, contextfilter, evalcontextfilter
++from markupsafe import Markup
++from jinja2 import Undefined
++from jinja2 import pass_eval_context as evalcontextfilter
++from jinja2 import pass_context as contextfilter
  from jinja2.filters import make_attrgetter
 -from jinja2.utils import soft_unicode
 +try:

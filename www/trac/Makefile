@@ -1,6 +1,7 @@
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=1.5.3
+REVISION=	0
 #PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
 PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
@@ -20,6 +21,7 @@ PERMIT_PACKAGE=   Yes
 MODULES=	lang/python
 
 COMMON_DEPS=	devel/py-babel${MODPY_FLAVOR} \
+		textproc/py-MarkupSafe${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR}
 
 RUN_DEPENDS=	${COMMON_DEPS} \
