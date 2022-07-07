@@ -1,11 +1,7 @@
 COMMENT =	check Manifest matches your distro
 
-DISTNAME =	Test-CheckManifest-1.29
-CPAN_AUTHOR =	RENEEB
+DISTNAME =	Test-CheckManifest-1.42
 CATEGORIES =	devel
-REVISION =	0
-
-MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
