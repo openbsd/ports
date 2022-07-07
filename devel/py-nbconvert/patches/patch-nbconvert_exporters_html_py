@@ -7,3 +7,12 @@ Index: nbconvert/exporters/html.py
  """HTML Exporter class"""
  
  # Copyright (c) Jupyter Development Team.
+@@ -9,7 +10,7 @@ import os
+ from traitlets import default, Unicode
+ from traitlets.config import Config
+ from jupyter_core.paths import jupyter_path
+-from jinja2 import contextfilter
++from jinja2 import pass_context as contextfilter
+ 
+ from nbconvert.filters.highlight import Highlight2HTML
+ from nbconvert.filters.markdown_mistune import IPythonRenderer, MarkdownWithMath
