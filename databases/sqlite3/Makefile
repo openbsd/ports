@@ -2,6 +2,7 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3390000
 PKGNAME=	sqlite3-3.39.0
+REVISION=	0
 
 # XXX needs bumps every time :-
 SHARED_LIBS +=  sqlite3                   37.18 # 8.6
@@ -21,6 +22,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c curses m pthread readline z
 
 MASTER_SITES =	${HOMEPAGE}2022/
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-static-shell
