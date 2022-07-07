@@ -13,6 +13,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/a
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/ar/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/ar/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/ar/LC_MESSAGES/sphinxcontrib.serializinghtml.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bg/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bg/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bg/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bg/LC_MESSAGES/sphinxcontrib.serializinghtml.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bn/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bn/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/bn/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
@@ -170,6 +174,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/s
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sl/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sl/LC_MESSAGES/sphinxcontrib.serializinghtml.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sphinxcontrib.serializinghtml.pot
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sq/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sq/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sq/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sq/LC_MESSAGES/sphinxcontrib.serializinghtml.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sr/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/sr/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
@@ -190,6 +198,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/t
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/ta/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/ta/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/ta/LC_MESSAGES/sphinxcontrib.serializinghtml.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/te/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/te/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/te/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/te/LC_MESSAGES/sphinxcontrib.serializinghtml.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/tr/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/tr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/tr/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
