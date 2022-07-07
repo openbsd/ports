@@ -9,7 +9,7 @@ daemon_user="_smokeping"
 pexp="(perl:|/usr/bin/perl) ${daemon}( .*|$)"
 
 rc_pre() {
-	install -d -o _smokeping /var/run/smokeping
+	install -d -o ${daemon_user} /var/run/smokeping
 }
 
 rc_cmd $1
