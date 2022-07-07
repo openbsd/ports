@@ -1,6 +1,6 @@
 COMMENT =		fast, optionally sandboxed, Python template engine
 
-MODPY_EGG_VERSION =	3.0.3
+MODPY_EGG_VERSION =	3.1.2
 DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
