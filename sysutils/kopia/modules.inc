@@ -27,13 +27,12 @@ MODGO_MODULES =	\
 	github.com/alecthomas/units				 v0.0.0-20210927113745-59d0afb8317a \
 	github.com/alessio/shellescape				 v1.4.1 \
 	github.com/antihax/optional				 v1.0.0 \
-	github.com/aws/aws-sdk-go				 v1.44.47 \
+	github.com/aws/aws-sdk-go				 v1.44.49 \
 	github.com/benbjohnson/clock				 v1.1.0 \
 	github.com/beorn7/perks					 v1.0.1 \
 	github.com/census-instrumentation/opencensus-proto	 v0.2.1 \
 	github.com/cespare/xxhash				 v1.1.0 \
 	github.com/cespare/xxhash/v2				 v2.1.2 \
-	github.com/changkun/lockfree				 v0.0.1 \
 	github.com/chmduquesne/rollinghash			 v4.0.0+incompatible \
 	github.com/chromedp/cdproto				 v0.0.0-20220515234810-83d799542a04 \
 	github.com/chromedp/chromedp				 v0.8.2 \
@@ -72,7 +71,6 @@ MODGO_MODULES =	\
 	github.com/godbus/dbus/v5				 v5.0.6 \
 	github.com/gofrs/flock					 v0.8.1 \
 	github.com/gogo/protobuf				 v1.1.1 \
-	github.com/golang-design/lockfree			 v0.0.1 \
 	github.com/golang-jwt/jwt/v4				 v4.4.2 \
 	github.com/golang/glog					 v1.0.0 \
 	github.com/golang/groupcache				 v0.0.0-20210331224755-41bb18bfe9da \
@@ -110,7 +108,7 @@ MODGO_MODULES =	\
 	github.com/klauspost/cpuid/v2				 v2.0.12 \
 	github.com/klauspost/pgzip				 v1.2.5 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.3 \
-	github.com/kopia/htmluibuild				 v0.0.0-20220704183643-2abad2f87dcd \
+	github.com/kopia/htmluibuild				 v0.0.0-20220707030846-0a2bb1459cbd \
 	github.com/kr/fs					 v0.1.0 \
 	github.com/kr/logfmt					 v0.0.0-20140226030751-b84e30acd515 \
 	github.com/kr/pretty					 v0.3.0 \
@@ -123,7 +121,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-isatty				 v0.0.14 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
 	github.com/minio/md5-simd				 v1.1.2 \
-	github.com/minio/minio-go/v7				 v7.0.30 \
+	github.com/minio/minio-go/v7				 v7.0.31 \
 	github.com/minio/sha256-simd				 v1.0.0 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.2 \
