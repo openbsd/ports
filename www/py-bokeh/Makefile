@@ -1,6 +1,6 @@
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	2.4.2
+MODPY_EGG_VERSION=	2.4.3
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
@@ -19,7 +19,7 @@ FLAVOR=			python3
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
-MODPY_PYTEST_ARGS=	bokeh
+MODPY_PYTEST_ARGS=	tests
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR}>=3.10.0.0 \
@@ -30,7 +30,7 @@ RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
 
-TEST_DEPENDS=	 	devel/ipython${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/ipython${MODPY_FLAVOR} \
 			devel/py-flaky${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-nbconvert${MODPY_FLAVOR} \
