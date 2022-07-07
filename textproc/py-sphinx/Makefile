@@ -1,9 +1,8 @@
 COMMENT =		Python documentation generator
 
-MODPY_EGG_VERSION =	4.0.2
+MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -21,7 +20,10 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
+# remove after updating python to 3.10+
+RUN_DEPENDS +=		devel/py-importlib-metadata${MODPY_FLAVOR}
+
+RUN_DEPENDS +=		devel/py-babel${MODPY_FLAVOR} \
 			graphics/py-imagesize${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-alabaster${MODPY_FLAVOR} \
@@ -30,10 +32,10 @@ RUN_DEPENDS =		devel/py-babel${MODPY_FLAVOR} \
 			textproc/py-snowballstemmer${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/applehelp${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/devhelp${MODPY_FLAVOR} \
-			textproc/py-sphinxcontrib/htmlhelp${MODPY_FLAVOR} \
+			textproc/py-sphinxcontrib/htmlhelp${MODPY_FLAVOR}>=2.0.0 \
 			textproc/py-sphinxcontrib/jsmath${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/qthelp${MODPY_FLAVOR} \
-			textproc/py-sphinxcontrib/serializinghtml${MODPY_FLAVOR} \
+			textproc/py-sphinxcontrib/serializinghtml${MODPY_FLAVOR}>=1.1.5 \
 			textproc/py-sphinxcontrib/websupport${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
