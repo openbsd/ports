@@ -11,6 +11,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ar/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ar/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ar/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ar/LC_MESSAGES/sphinxcontrib.htmlhelp.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bg/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bg/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bg/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bg/LC_MESSAGES/sphinxcontrib.htmlhelp.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bn/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bn/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/bn/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
@@ -168,6 +172,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sl/LC_ME
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sl/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sl/LC_MESSAGES/sphinxcontrib.htmlhelp.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sphinxcontrib.htmlhelp.pot
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sq/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sq/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sq/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sq/LC_MESSAGES/sphinxcontrib.htmlhelp.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sr/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/sr/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
@@ -188,6 +196,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ta/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ta/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ta/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/ta/LC_MESSAGES/sphinxcontrib.htmlhelp.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/te/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/te/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/te/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/te/LC_MESSAGES/sphinxcontrib.htmlhelp.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/tr/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/tr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/tr/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
