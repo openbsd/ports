@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.46 2021/06/21 15:16:52 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.47 2022/07/07 07:20:28 op Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -595,7 +595,8 @@ sub analyze
 	unless ($state->{quiet} && keys %{$r->{wantlib}} == 0) {
 		$self->print_list($state, "Extra: ", $extra);
 	}
-	$self->print_list($state, "WANTLIB +=", $r->{wantlib});
+	my $subpkg = $plist->{extrainfo}{path}{subpackage} // '';
+	$self->print_list($state, "WANTLIB$subpkg +=", $r->{wantlib});
 	if ($state->{full}) {
 		$needed_libs->dump(\*STDOUT);
 	}
