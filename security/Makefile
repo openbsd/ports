@@ -284,6 +284,7 @@
      SUBDIR += py-dfdatetime,python3
      SUBDIR += py-dfvfs,python3
      SUBDIR += py-dfwinreg,python3
+     SUBDIR += py-duo_universal,python3
      SUBDIR += py-ecdsa
      SUBDIR += py-ecdsa,python3
      SUBDIR += py-elfesteem
