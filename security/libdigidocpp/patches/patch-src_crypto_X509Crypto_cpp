@@ -1,3 +1,5 @@
+LibreSSL provides d2i_ESS_ISSUER_SERIAL()
+
 Index: src/crypto/X509Crypto.cpp
 --- src/crypto/X509Crypto.cpp.orig
 +++ src/crypto/X509Crypto.cpp
