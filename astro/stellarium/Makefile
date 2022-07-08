@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.22.1
+GH_TAGNAME=		v0.22.2
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 
@@ -47,8 +47,8 @@ CONFIGURE_ARGS=		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DENABLE_LIBGPS=0 \
 			-DSTELLARIUM_RELEASE_BUILD=1
 
-CFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
-CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
+CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
+CXXFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 
 PORTHOME=		${WRKDIR}
 
