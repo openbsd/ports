@@ -1630,7 +1630,6 @@
      SUBDIR += ruby-abstract
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
-     SUBDIR += ruby-bundler
      SUBDIR += ruby-cicphash
      SUBDIR += ruby-colorator
      SUBDIR += ruby-colored2
