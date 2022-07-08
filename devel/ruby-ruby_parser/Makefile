@@ -1,7 +1,7 @@
 COMMENT =	Ruby parser written in pure Ruby
 
 DISTNAME =	ruby_parser-2.3.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 # MIT
@@ -14,8 +14,7 @@ CONFIGURE_STYLE = ruby gem
 BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS =	devel/ruby-sexp_processor,${MODRUBY_FLAVOR}>=3.0,<4.0
 
-TEST_DEPENDS = devel/ruby-hoe,${MODRUBY_FLAVOR} \
-		devel/ruby-minitest,${MODRUBY_FLAVOR}
+TEST_DEPENDS =	devel/ruby-hoe,${MODRUBY_FLAVOR}
 
 MODRUBY_TEST = rake
 
