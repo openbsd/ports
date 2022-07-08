@@ -1,32 +1,31 @@
 COMMENT=	lightweight library for extracting data from zip files
 
-DISTNAME=	zziplib-0.13.62
 CATEGORIES=	archivers
-REVISION=	1
 
-SHARED_LIBS +=	zzip		15.52 \
-		zzipfseeko	13.52 \
-		zzipmmapped	13.52 \
-		zzipwrap	13.52
+GH_ACCOUNT =	gdraheim
+GH_PROJECT =	zziplib
+GH_TAGNAME =	v0.13.72
 
-HOMEPAGE=	http://zziplib.sourceforge.net/
+SHARED_LIBS +=  zzip                      16.0 # 0.0
+SHARED_LIBS +=  zzipfseeko                14.0 # 0.0
+SHARED_LIBS +=  zzipmmapped               14.0 # 0.0
+SHARED_LIBS +=  zzipwrap                  14.0 # 0.0
 
 # LGPL/MPL license
 PERMIT_PACKAGE=		Yes
 
-WANTLIB=	c z
+WANTLIB += c z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=zziplib/}
-EXTRACT_SUFX=	.tar.bz2
+BUILD_DEPENDS=		archivers/zip \
+			devel/sdl2
 
-CONFIGURE_STYLE=	gnu
+MODULES =		devel/cmake \
+			lang/python
 
-BUILD_DEPENDS=		archivers/zip
+MODPY_RUNDEP =		No
 
-post-extract:
-	cd ${WRKDIST}/docs && tar xf ${WRKDIST}/docs/zziplib-manpages.tar
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
-post-install:
-	${INSTALL_MAN} ${WRKDIST}/docs/man3/*.3 ${PREFIX}/man/man3/
+TEST_TARGET =		tests
 
 .include <bsd.port.mk>

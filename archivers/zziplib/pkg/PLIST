@@ -1,15 +1,16 @@
 @bin bin/unzip-mem
 @bin bin/unzzip
-@bin bin/unzzipcat
-@bin bin/unzzipcat-mem
-@bin bin/unzzipcat-seeko
-@bin bin/unzzipdir
-@bin bin/unzzipdir-mem
+@bin bin/unzzip-big
+@bin bin/unzzip-mem
+@bin bin/unzzip-mix
 @bin bin/zzcat
 @bin bin/zzdir
 @bin bin/zzxorcat
 @bin bin/zzxorcopy
 @bin bin/zzxordir
+include/SDL_rwops_zzip/
+include/SDL_rwops_zzip/SDL_rwops_zzip.c
+include/SDL_rwops_zzip/SDL_rwops_zzip.h
 include/zzip/
 include/zzip-io.h
 include/zzip.h
@@ -33,19 +34,11 @@ include/zzip/write.h
 include/zzip/zzip.h
 include/zzip/zzip32.h
 include/zziplib.h
-lib/libzzip.a
-lib/libzzip.la
 @lib lib/libzzip.so.${LIBzzip_VERSION}
-lib/libzzipfseeko.a
-lib/libzzipfseeko.la
 @lib lib/libzzipfseeko.so.${LIBzzipfseeko_VERSION}
-lib/libzzipmmapped.a
-lib/libzzipmmapped.la
 @lib lib/libzzipmmapped.so.${LIBzzipmmapped_VERSION}
-lib/libzzipwrap.a
-lib/libzzipwrap.la
 @lib lib/libzzipwrap.so.${LIBzzipwrap_VERSION}
-lib/pkgconfig/zzip-zlib-config.pc
+lib/pkgconfig/SDL_rwops_zzip.pc
 lib/pkgconfig/zzipfseeko.pc
 lib/pkgconfig/zziplib.pc
 lib/pkgconfig/zzipmmapped.pc
@@ -110,6 +103,7 @@ lib/pkgconfig/zzipwrap.pc
 @man man/man3/zzip_file_read.3
 @man man/man3/zzip_file_real.3
 @man man/man3/zzip_file_stat.3
+@man man/man3/zzip_filesize.3
 @man man/man3/zzip_fopen.3
 @man man/man3/zzip_fread.3
 @man man/man3/zzip_freopen.3
