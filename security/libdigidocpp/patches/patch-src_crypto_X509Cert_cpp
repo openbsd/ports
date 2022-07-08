@@ -1,0 +1,14 @@
+Use old-style STACK_OF stuff for LibreSSL
+
+Index: src/crypto/X509Cert.cpp
+--- src/crypto/X509Cert.cpp.orig
++++ src/crypto/X509Cert.cpp
+@@ -86,7 +86,7 @@ DECLARE_ASN1_FUNCTIONS(QCStatement)
+  * QCStatements ::= SEQUENCE OF QCStatement
+  */
+ using QCStatements = STACK_OF(QCStatement);
+-#if OPENSSL_VERSION_NUMBER < 0x10010000L
++#if OPENSSL_VERSION_NUMBER < 0x10010000L || defined(LIBRESSL_VERSION_NUMBER)
+ #include <openssl/safestack.h>
+ #define sk_QCStatement_num(st) sk_num((_STACK*)st)
+ #define sk_QCStatement_value(st, i) (QCStatement*)sk_value((_STACK*)st, i)

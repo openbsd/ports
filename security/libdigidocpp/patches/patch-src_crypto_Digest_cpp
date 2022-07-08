@@ -1,0 +1,32 @@
+LibreSSL doesn't support sha3.
+
+Index: src/crypto/Digest.cpp
+--- src/crypto/Digest.cpp.orig
++++ src/crypto/Digest.cpp
+@@ -128,7 +128,7 @@ void Digest::reset(const string &uri)
+     case NID_sha256: result = EVP_DigestInit(d->ctx, EVP_sha256()); break;
+     case NID_sha384: result = EVP_DigestInit(d->ctx, EVP_sha384()); break;
+     case NID_sha512: result = EVP_DigestInit(d->ctx, EVP_sha512()); break;
+-#if OPENSSL_VERSION_NUMBER > 0x10101000L
++#if OPENSSL_VERSION_NUMBER > 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+     case NID_sha3_224: result = EVP_DigestInit(d->ctx, EVP_sha3_224()); break;
+     case NID_sha3_256: result = EVP_DigestInit(d->ctx, EVP_sha3_256()); break;
+     case NID_sha3_384: result = EVP_DigestInit(d->ctx, EVP_sha3_384()); break;
+@@ -167,7 +167,7 @@ int Digest::toMethod(const string &uri)
+     if(uri == URI_SHA256 || uri == URI_RSA_SHA256 || uri == URI_RSA_PSS_SHA256 || uri == URI_ECDSA_SHA256) return NID_sha256;
+     if(uri == URI_SHA384 || uri == URI_RSA_SHA384 || uri == URI_RSA_PSS_SHA384 || uri == URI_ECDSA_SHA384) return NID_sha384;
+     if(uri == URI_SHA512 || uri == URI_RSA_SHA512 || uri == URI_RSA_PSS_SHA512 || uri == URI_ECDSA_SHA512) return NID_sha512;
+-#if OPENSSL_VERSION_NUMBER > 0x10101000L
++#if OPENSSL_VERSION_NUMBER > 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+     if(uri == URI_SHA3_224 || uri == URI_RSA_PSS_SHA3_224) return NID_sha3_224;
+     if(uri == URI_SHA3_256 || uri == URI_RSA_PSS_SHA3_256) return NID_sha3_256;
+     if(uri == URI_SHA3_384 || uri == URI_RSA_PSS_SHA3_384) return NID_sha3_384;
+@@ -238,7 +238,7 @@ std::string Digest::toUri(int nid)
+     case NID_sha256: return URI_SHA256;
+     case NID_sha384: return URI_SHA384;
+     case NID_sha512: return URI_SHA512;
+-#if OPENSSL_VERSION_NUMBER > 0x10101000L
++#if OPENSSL_VERSION_NUMBER > 0x10101000L && !defined(LIBRESSL_VERSION_NUMBER)
+     case NID_sha3_224: return URI_SHA3_224;
+     case NID_sha3_256: return URI_SHA3_256;
+     case NID_sha3_384: return URI_SHA3_384;

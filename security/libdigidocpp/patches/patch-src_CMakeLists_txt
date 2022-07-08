@@ -1,0 +1,19 @@
+Link digidocpp against iconv to unbreak src/digidoc-tool and tests/TSLTests
+build:
+
+	ld: error: undefined symbol: libiconv_open
+
+https://github.com/open-eid/libdigidocpp/pull/470
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -227,7 +227,7 @@ set_target_properties(digidocpp PROPERTIES
+ 
+ target_link_libraries(digidocpp
+     PRIVATE ${CMAKE_DL_LIBS} minizip
+-    PUBLIC digidocpp_priv
++    PUBLIC digidocpp_priv Iconv::Iconv
+ )
+ 
+ if( BUILD_TOOLS )

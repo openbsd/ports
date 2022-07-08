@@ -1,0 +1,14 @@
+- Require iconv for libdigidocpp
+  https://github.com/open-eid/libdigidocpp/pull/470
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -56,6 +55,7 @@ if(UNIX AND NOT APPLE)
+     find_package(PkgConfig)
+     pkg_check_modules(MINIZIP minizip IMPORTED_TARGET)
+ endif()
++find_package(Iconv REQUIRED)
+ find_package(SWIG)
+ find_package(JNI)
+ 

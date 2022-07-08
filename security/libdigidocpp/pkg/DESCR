@@ -1,0 +1,4 @@
+libdigidocpp offers creating, signing and verification of digitally signed
+documents, according to XAdES and XML-DSIG standards.
+
+digidoc-tool(1) provides a simple CLI.

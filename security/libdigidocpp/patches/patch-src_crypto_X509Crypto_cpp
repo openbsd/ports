@@ -1,0 +1,12 @@
+Index: src/crypto/X509Crypto.cpp
+--- src/crypto/X509Crypto.cpp.orig
++++ src/crypto/X509Crypto.cpp
+@@ -37,7 +37,7 @@
+ using namespace digidoc;
+ using namespace std;
+ 
+-#if OPENSSL_VERSION_NUMBER >= 0x10100000L
++#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
+ /*-
+  * IssuerSerial ::= SEQUENCE {
+  *         issuer                   GeneralNames,

@@ -1,0 +1,49 @@
+@bin bin/digidoc-tool
+include/digidocpp/
+include/digidocpp/Conf.h
+include/digidocpp/Container.h
+include/digidocpp/DataFile.h
+include/digidocpp/Exception.h
+include/digidocpp/Exports.h
+include/digidocpp/Signature.h
+include/digidocpp/XmlConf.h
+include/digidocpp/crypto/
+include/digidocpp/crypto/PKCS11Signer.h
+include/digidocpp/crypto/PKCS12Signer.h
+include/digidocpp/crypto/Signer.h
+include/digidocpp/crypto/X509Cert.h
+@lib lib/libdigidocpp.so.${LIBdigidocpp_VERSION}
+lib/pkgconfig/libdigidocpp.pc
+@man man/man1/digidoc-tool.1
+share/examples/digidocpp/
+@sample ${SYSCONFDIR}/digidocpp/
+share/examples/digidocpp/798.p12
+@sample ${SYSCONFDIR}/digidocpp/798.p12
+share/examples/digidocpp/digidocpp.conf
+@sample ${SYSCONFDIR}/digidocpp/digidocpp.conf
+share/examples/digidocpp/schema/
+@sample ${SYSCONFDIR}/digidocpp/schema/
+share/examples/digidocpp/schema/OpenDocument_dsig.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/OpenDocument_dsig.xsd
+share/examples/digidocpp/schema/OpenDocument_manifest.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/OpenDocument_manifest.xsd
+share/examples/digidocpp/schema/XAdES01903v132-201601-relaxed.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/XAdES01903v132-201601-relaxed.xsd
+share/examples/digidocpp/schema/XAdES01903v132-201601.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/XAdES01903v132-201601.xsd
+share/examples/digidocpp/schema/XAdES01903v141-201601.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/XAdES01903v141-201601.xsd
+share/examples/digidocpp/schema/conf.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/conf.xsd
+share/examples/digidocpp/schema/en_31916201v010101.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/en_31916201v010101.xsd
+share/examples/digidocpp/schema/ts_119612v020101_additionaltypes_xsd.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/ts_119612v020101_additionaltypes_xsd.xsd
+share/examples/digidocpp/schema/ts_119612v020101_sie_xsd.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/ts_119612v020101_sie_xsd.xsd
+share/examples/digidocpp/schema/ts_119612v020201_201601xsd.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/ts_119612v020201_201601xsd.xsd
+share/examples/digidocpp/schema/xml.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/xml.xsd
+share/examples/digidocpp/schema/xmldsig-core-schema.xsd
+@sample ${SYSCONFDIR}/digidocpp/schema/xmldsig-core-schema.xsd
