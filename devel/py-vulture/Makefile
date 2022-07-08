@@ -1,6 +1,6 @@
 COMMENT =	finds unused code in Python programs
 
-MODPY_EGG_VERSION =	2.4
+MODPY_EGG_VERSION =	2.5
 
 DISTNAME =	vulture-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -23,6 +23,7 @@ MODPY_PYTEST =		Yes
 FLAVORS =	python3
 FLAVOR =	python3
 
+# requires py-pint for test_whitelists_with_python
 TEST_DEPENDS =  devel/py-test${MODPY_FLAVOR} \
                 devel/py-test-cov${MODPY_FLAVOR} \
 		textproc/py-toml${MODPY_FLAVOR}
