@@ -22,7 +22,6 @@ RUN_DEPENDS=		converters/ruby-multi_json,${MODRUBY_FLAVOR} \
 
 MODRUBY_TEST=		rake
 TEST_DEPENDS=		databases/redis \
-			devel/ruby-bundler,${MODRUBY_FLAVOR} \
 			devel/ruby-mocha,${MODRUBY_FLAVOR} \
 			www/ruby-rack-test,${MODRUBY_FLAVOR}
 

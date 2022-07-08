@@ -16,7 +16,6 @@ post-install:
 
 # Requires heckle and quite a few other libraries to run its own
 # specs, so this is currently broken.
-TEST_DEPENDS =	devel/ruby-bundler,${MODRUBY_FLAVOR}>=1.0.21
 MODRUBY_TEST =	rake rspec
 
 .include <bsd.port.mk>
