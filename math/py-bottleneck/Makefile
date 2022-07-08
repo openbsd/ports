@@ -1,6 +1,6 @@
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.3.4
+MODPY_EGG_VERSION =	1.3.5
 DISTNAME =		Bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math

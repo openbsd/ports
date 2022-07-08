@@ -65,6 +65,10 @@ lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}scalar
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}test_template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/common.py
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/data/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/data/template_test/
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/data/template_test/test_template.c
+lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/data/template_test/truth.c
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/input_modification_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/list_input_test.py
 lib/python${MODPY_VERSION}/site-packages/bottleneck/tests/memory_test.py
