@@ -1665,7 +1665,6 @@
      SUBDIR += ruby-locale
      SUBDIR += ruby-log4r
      SUBDIR += ruby-metaclass
-     SUBDIR += ruby-minitest
      SUBDIR += ruby-mini_portile2
      SUBDIR += ruby-mocha
      SUBDIR += ruby-narray,ruby30
