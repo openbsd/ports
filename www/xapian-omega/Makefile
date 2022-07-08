@@ -1,6 +1,6 @@
 COMMENT=	web search application
 
-V=		1.4.19
+V=		1.4.20
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
 

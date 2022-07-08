@@ -30,8 +30,8 @@ share/doc/xapian-bindings/python3/html/_static/default.css
 share/doc/xapian-bindings/python3/html/_static/doctools.js
 share/doc/xapian-bindings/python3/html/_static/documentation_options.js
 share/doc/xapian-bindings/python3/html/_static/file.png
-share/doc/xapian-bindings/python3/html/_static/jquery.js
 share/doc/xapian-bindings/python3/html/_static/jquery-3.6.0.js
+share/doc/xapian-bindings/python3/html/_static/jquery.js
 share/doc/xapian-bindings/python3/html/_static/language_data.js
 share/doc/xapian-bindings/python3/html/_static/minus.png
 share/doc/xapian-bindings/python3/html/_static/plus.png

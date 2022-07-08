@@ -2,14 +2,12 @@ COMMENT-main=	perl bindings for Xapian
 COMMENT-python=	python bindings for Xapian
 COMMENT-ruby=	ruby bindings for Xapian
 
-V=		1.4.19
+V=		1.4.20
 DISTNAME=	xapian-bindings-${V}
 
 PKGNAME-main=	xapian-bindings-perl-${V}
 PKGNAME-python=	xapian-bindings-python-${V}
 PKGNAME-ruby=	ruby${MODRUBY_BINREV}-xapian-${V}
-REVISION-ruby=	0
-REVISION-python= 0
 
 CATEGORIES=	databases textproc
 
@@ -48,7 +46,7 @@ RUN_DEPENDS-ruby =	${MODRUBY_RUN_DEPENDS}
 SUBST_VARS+=		MODRUBY_BINREV
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 CONFIGURE_ENV=		RUBY="${RUBY}" RDOC="${RUBY:S/ruby/rdoc/}"
 CONFIGURE_ARGS=		--with-perl \
 			--with-python3 \
