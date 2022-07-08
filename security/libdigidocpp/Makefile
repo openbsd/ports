@@ -2,7 +2,7 @@ COMMENT =		library for creating DigiDoc signature files
 
 V =			3.14.8
 DISTNAME =		libdigidocpp-${V}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		security
 
 SHARED_LIBS =		digidocpp	0.0	# 0.0
@@ -62,7 +62,7 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_MiniZip=ON
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 
 # dlopen()'ed "opensc-pkcs11.so" in libdigidocpp.so
-LIB_DEPEPNDS +=		security/opensc
+LIB_DEPENDS +=		security/opensc
 # alternative to https://github.com/open-eid/cmake/pull/35
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS} \
 			    -Wl,-rpath,/usr/local/lib/pkcs11"
