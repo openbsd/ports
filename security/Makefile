@@ -101,6 +101,7 @@
      SUBDIR += libassuan
      SUBDIR += libb2
      SUBDIR += libbde
+     SUBDIR += libdigidocpp
      SUBDIR += libewf
      SUBDIR += libfprint
      SUBDIR += libgcrypt
