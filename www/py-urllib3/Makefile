@@ -1,6 +1,6 @@
 COMMENT =	HTTP library for Python
 
-MODPY_EGG_VERSION = 1.26.9
+MODPY_EGG_VERSION = 1.26.10
 DISTNAME =	urllib3-${MODPY_EGG_VERSION}
 PKGNAME =	py-urllib3-${MODPY_EGG_VERSION}
 
@@ -24,10 +24,6 @@ TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			security/py-trustme${MODPY_FLAVOR} \
 			www/py-tornado${MODPY_FLAVOR}
-
-TEST_ENV +=		PYTHONPATH=${WRKSRC}/src
-.else
-NO_TEST =		Yes
 .endif
 
 .include <bsd.port.mk>
