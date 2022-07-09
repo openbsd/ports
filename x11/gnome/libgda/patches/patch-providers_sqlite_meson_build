@@ -1,0 +1,20 @@
+From 3e0c7583ddcc3649f24ad1f1b5d851072fd3f721 Mon Sep 17 00:00:00 2001
+From: Chris Mayo <aklhfex@gmail.com>
+Date: Fri, 17 Sep 2021 19:39:32 +0100
+Subject: [PATCH] Meson: Fix sqlcipher and sqlite pkg-config file generation
+
+Index: providers/sqlite/meson.build
+--- providers/sqlite/meson.build.orig
++++ providers/sqlite/meson.build
+@@ -58,7 +58,10 @@ libgda_sqlite_sources = files([
+ 	])
+ libgda_sqlite_sources += sqlite_resources
+ 
+-libgda_sqlite_providerpc = configure_file(output : 'libgda-sqlite-'+project_api_version+'.pc',
++libgda_sqlite_providerpc_name = 'libgda-sqlite-'+project_api_version+'.pc'
++libgda_sqlite_providerpc = configure_file(
++			input : libgda_sqlite_providerpc_name+'.in',
++			output : libgda_sqlite_providerpc_name,
+ 			configuration : conf,
+ 			install_dir: join_paths(get_option('libdir'),'pkgconfig')
+ 			)

@@ -12,6 +12,8 @@ PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 EPOCH-main=		2
 EPOCH-pgsql=		0
 
+REVISION-main=		0
+
 CATEGORIES=		databases
 
 SHARED_LIBS += gda-6.0                   0.0 # 6

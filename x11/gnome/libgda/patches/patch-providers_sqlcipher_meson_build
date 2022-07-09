@@ -1,0 +1,24 @@
+From 3e0c7583ddcc3649f24ad1f1b5d851072fd3f721 Mon Sep 17 00:00:00 2001
+From: Chris Mayo <aklhfex@gmail.com>
+Date: Fri, 17 Sep 2021 19:39:32 +0100
+Subject: [PATCH] Meson: Fix sqlcipher and sqlite pkg-config file generation
+
+Index: providers/sqlcipher/meson.build
+--- providers/sqlcipher/meson.build.orig
++++ providers/sqlcipher/meson.build
+@@ -97,10 +97,14 @@ sqlcipher_cargs += [
+ sqlcipher_cargs += c_args
+ 
+ 
+-libgda_sqlcipher_providerpc = configure_file(output : 'libgda-sqlcipher-'+project_api_version+'.pc',
++libgda_sqlcipher_providerpc_name = 'libgda-sqlcipher-'+project_api_version+'.pc'
++libgda_sqlcipher_providerpc = configure_file(
++			input : libgda_sqlcipher_providerpc_name+'.in',
++			output : libgda_sqlcipher_providerpc_name,
+ 			configuration : conf,
+ 			install_dir: join_paths(get_option('libdir'),'pkgconfig')
+ 			)
++
+ libgda_sqlcipher_provider = library ('gda-sqlcipher-'+project_api_version,
+ 	libgda_sqlcipher_sources,
+ 	dependencies: [
