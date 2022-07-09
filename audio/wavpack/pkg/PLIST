@@ -14,6 +14,7 @@ lib/pkgconfig/wavpack.pc
 @man man/man1/wvunpack.1
 share/doc/wavpack/
 share/doc/wavpack/ChangeLog
+share/doc/wavpack/README.md
 share/doc/wavpack/WavPack5FileFormat.pdf
 share/doc/wavpack/WavPack5LibraryDoc.pdf
 share/doc/wavpack/WavPack5PortingGuide.pdf

@@ -1,7 +1,6 @@
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
-VERSION =		5.4.0
-REVISION =		0
+VERSION =		5.5.0
 DISTNAME =		wavpack-${VERSION}
 CATEGORIES =		audio
 
@@ -19,6 +18,7 @@ WANTLIB =		c crypto iconv m
 MASTER_SITES =		https://github.com/dbry/wavpack/releases/download/${VERSION}/
 EXTRACT_SUFX =		.tar.xz
 
+BUILD_DEPENDS =		textproc/docbook-xsl
 LIB_DEPENDS =		converters/libiconv
 
 SEPARATE_BUILD =	Yes
@@ -27,16 +27,13 @@ CONFIGURE_ARGS =	--enable-legacy \
 			--enable-libcrypto \
 			--enable-tests
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			XSLTPROC=${LOCALBASE}/bin/xsltproc
 
 DOCDIR =		${PREFIX}/share/doc/wavpack
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/doc/* ${DOCDIR}
-	rm ${PREFIX}/bin/wvtest
-
-do-test:
-	${WRKBUILD}/cli/wvtest --default
 
 .include <bsd.port.mk>
