@@ -4,7 +4,7 @@ COMMENT =		tool for live-coding pixel shaders
 
 GH_ACCOUNT =		Gargaj
 GH_PROJECT =		Bonzomatic
-GH_TAGNAME =		2022-06-18
+GH_TAGNAME =		2022-07-08
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
 
 CATEGORIES =		graphics
@@ -30,7 +30,7 @@ LIB_DEPENDS =		graphics/glew \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-# C++
+# C++11
 COMPILER =		base-clang ports-gcc
 
 NO_TEST =		Yes
