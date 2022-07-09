@@ -1,0 +1,15 @@
+"sanitize DSD file types for invalid lengths"
+
+https://github.com/dbry/WavPack/commit/773f9d0803c6888ae7d5391878d7337f24216f4a
+
+Index: cli/dsf.c
+--- cli/dsf.c.orig
++++ cli/dsf.c
+@@ -113,6 +113,7 @@ int ParseDsfHeaderConfig (FILE *infile, char *infilena
+ 
+     if (format_chunk.ckSize != sizeof (DSFFormatChunk) || format_chunk.formatVersion != 1 ||
+         format_chunk.formatID != 0 || format_chunk.blockSize != DSF_BLOCKSIZE || format_chunk.reserved ||
++        format_chunk.sampleCount <= 0 || format_chunk.sampleCount > MAX_WAVPACK_SAMPLES * 8 ||
+         (format_chunk.bitsPerSample != 1 && format_chunk.bitsPerSample != 8) ||
+         format_chunk.numChannels < 1 || format_chunk.numChannels > 6 ||
+         format_chunk.chanType < 1 || format_chunk.chanType > NUM_CHAN_TYPES) {

@@ -1,0 +1,20 @@
+"sanitize DSD file types for invalid lengths"
+
+https://github.com/dbry/WavPack/commit/773f9d0803c6888ae7d5391878d7337f24216f4a
+
+Index: cli/dsdiff.c
+--- cli/dsdiff.c.orig
++++ cli/dsdiff.c
+@@ -278,6 +278,12 @@ int ParseDsdiffHeaderConfig (FILE *infile, char *infil
+             }
+ 
+             total_samples = dff_chunk_header.ckDataSize / config->num_channels;
++
++            if (total_samples <= 0 || total_samples > MAX_WAVPACK_SAMPLES) {
++                error_line ("%s is not a valid .DFF file!", infilename);
++                return WAVPACK_SOFT_ERROR;
++            }
++
+             break;
+         }
+         else {          // just copy unknown chunks to output file
