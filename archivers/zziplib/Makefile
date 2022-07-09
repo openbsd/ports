@@ -17,7 +17,8 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += c z
 
 BUILD_DEPENDS=		archivers/zip \
-			devel/sdl2
+			devel/sdl2 \
+			shells/bash
 
 MODULES =		devel/cmake \
 			lang/python
