@@ -7,6 +7,12 @@ GH_PROJECT =		Bonzomatic
 GH_TAGNAME =		2022-07-08
 PKGNAME =		bonzomatic-${GH_TAGNAME:S/-//g}
 
+MASTER_SITES0 =		https://github.com/Gargaj/Bonzomatic/pull/
+# merged into master, remove on next release
+PATCHFILES +=		bonzomatic-no-alsa-{}168.patch:0
+
+PATCH_DIST_STRIP =	-p1
+
 CATEGORIES =		graphics
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
