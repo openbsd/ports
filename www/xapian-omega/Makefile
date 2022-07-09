@@ -3,6 +3,7 @@ COMMENT=	web search application
 V=		1.4.20
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
+REVISION =	0
 
 CATEGORIES=	www textproc
 
@@ -11,7 +12,7 @@ HOMEPAGE=	https://xapian.org/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c iconv m magic pcre xapian z
+WANTLIB += ${COMPILER_LIBCXX} c iconv m magic pcre2-8 xapian z
 
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -21,7 +22,7 @@ COMPILER=       base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/xapian-core>=${V} \
-		devel/pcre \
+		devel/pcre2 \
 		devel/libmagic
 
 CONFIGURE_STYLE= gnu
