@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		3.5
+V=		3.6
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -25,12 +25,11 @@ MASTER_SITES=	https://www.weechat.org/files/src/
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
-WANTLIB-main=	aspell c curl iconv intl m curses perl pthread \
-		gcrypt gnutls gpg-error z
-
-WANTLIB-lua=	${MODLUA_WANTLIB} m
-WANTLIB-python=	${MODPY_WANTLIB}
-WANTLIB-tcl=	${MODTCL_WANTLIB}
+WANTLIB-main += aspell c curl curses gcrypt gnutls gpg-error iconv
+WANTLIB-main += intl m perl pthread z zstd
+WANTLIB-lua=${MODLUA_WANTLIB} m
+WANTLIB-python=${MODPY_WANTLIB}
+WANTLIB-tcl=${MODTCL_WANTLIB}
 
 MODULES=	devel/cmake \
 		lang/lua \
