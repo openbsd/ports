@@ -1,6 +1,6 @@
 COMMENT=	lists of the country, language and currency iso names
 
-V =		4.9.0
+V =		4.10.0
 DISTNAME=	iso-codes-v${V}
 PKGNAME =	iso-codes-${V}
 CATEGORIES=	devel
@@ -15,19 +15,12 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES = https://salsa.debian.org/iso-codes-team/iso-codes/-/archive/v${V}/
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
-MODPY_ADJ_FILES=bin/validate_json_data.py \
-		bin/xml_from_json.py \
-		bin/pot_from_json.py \
-		bin/check_valid_utf8.py
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-# hardcodes python3, which isn't needed as the script already has the x bit set
-post-extract:
-	sed -i 's,^\([[:space:]]\)python3 ,\1,' ${WRKSRC}/*/Makefile.in
+CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>
