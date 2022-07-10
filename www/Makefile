@@ -21,6 +21,7 @@
      SUBDIR += cgicc
      SUBDIR += cgiparse
      SUBDIR += cgit
+     SUBDIR += civetweb
      SUBDIR += chromium
      SUBDIR += cntlm
      SUBDIR += composer
