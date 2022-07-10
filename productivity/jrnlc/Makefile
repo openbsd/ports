@@ -2,7 +2,7 @@ COMMENT =	opinionated command line journal
 
 GH_ACCOUNT =	thexhr
 GH_PROJECT =	jrnlc
-GH_TAGNAME =	2021.b
+GH_TAGNAME =	2022.b
 
 CATEGORIES =	productivity
 
