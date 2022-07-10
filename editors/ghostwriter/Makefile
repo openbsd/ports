@@ -5,7 +5,7 @@ COMMENT =	distraction-free Markdown editor
 
 GH_ACCOUNT =	wereturtle
 GH_PROJECT =	ghostwriter
-GH_TAGNAME =	2.1.2
+GH_TAGNAME =	2.1.4
 
 CATEGORIES =	editors
 
