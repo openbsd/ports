@@ -1,6 +1,6 @@
 COMMENT =		lz4 bindings for Python
 
-MODPY_EGG_VERSION =	3.1.10
+MODPY_EGG_VERSION =	4.0.1
 
 DISTNAME =		lz4-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -19,6 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests/block tests/frame
 
 FLAVORS =		python3
 FLAVOR =		python3

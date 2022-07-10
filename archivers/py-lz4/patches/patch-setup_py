@@ -3,7 +3,7 @@ remove -O3
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -102,7 +102,6 @@ elif compiler in ('unix', 'mingw32'):
+@@ -111,7 +111,6 @@ elif compiler in ('unix', 'mingw32'):
          extension_kwargs = pkgconfig_parse('liblz4')
      else:
          extension_kwargs['extra_compile_args'] = [

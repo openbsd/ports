@@ -20,9 +20,4 @@ lib/python${MODPY_VERSION}/site-packages/lz4/frame/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lz4/frame/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lz4/frame/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/lz4/frame/_frame.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/lz4/stream/
-lib/python${MODPY_VERSION}/site-packages/lz4/stream/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lz4/stream/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/lz4/stream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/lz4/stream/_stream.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lz4/version.py
