@@ -1,0 +1,12 @@
+Index: libyara/Makefile.am
+--- libyara/Makefile.am.orig
++++ libyara/Makefile.am
+@@ -107,7 +107,7 @@ AM_CFLAGS+=-g
+ endif
+ 
+ if OPTIMIZATION
+-AM_CFLAGS+=-O3
++#AM_CFLAGS+=-O3
+ else
+ AM_CFLAGS+=-O0
+ endif

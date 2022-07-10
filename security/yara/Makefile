@@ -1,4 +1,4 @@
-SUBDIR = 
+SUBDIR =
 SUBDIR += main
 SUBDIR += python
 SUBDIR += python,python3

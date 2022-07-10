@@ -1,0 +1,12 @@
+Index: Makefile.am
+--- Makefile.am.orig
++++ Makefile.am
+@@ -15,7 +15,7 @@ AM_CFLAGS+=-g
+ endif
+ 
+ if OPTIMIZATION
+-AM_CFLAGS+=-O3
++#AM_CFLAGS+=-O3
+ else
+ AM_CFLAGS+=-O0
+ endif

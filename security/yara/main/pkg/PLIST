@@ -5,6 +5,7 @@ include/yara.h
 include/yara/ahocorasick.h
 include/yara/arena.h
 include/yara/atoms.h
+include/yara/base64.h
 include/yara/bitmask.h
 include/yara/compiler.h
 include/yara/error.h
@@ -17,6 +18,7 @@ include/yara/libyara.h
 include/yara/limits.h
 include/yara/mem.h
 include/yara/modules.h
+include/yara/notebook.h
 include/yara/object.h
 include/yara/parser.h
 include/yara/proc.h
@@ -32,7 +34,7 @@ include/yara/strutils.h
 include/yara/threading.h
 include/yara/types.h
 include/yara/utils.h
-lib/libyara.a
+@static-lib lib/libyara.a
 lib/libyara.la
 @lib lib/libyara.so.${LIByara_VERSION}
 lib/pkgconfig/yara.pc

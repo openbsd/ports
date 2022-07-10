@@ -2,9 +2,9 @@ COMMENT = Python extension that gives access to YARA
 
 GH_PROJECT = 	yara-python
 
-MODPY_EGG_VERSION =	${VERSION}
-PKGNAME = py-yara-${VERSION}
-REVISION =3
+MODPY_EGG_VERSION =	4.2.0
+PKGNAME =		py-yara-${MODPY_EGG_VERSION}
+GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
 WANTLIB += pthread ${MODPY_WANTLIB} yara
 
@@ -18,12 +18,12 @@ MODPY_DISTUTILS_BUILDARGS = --dynamic-linking
 MAKE_FLAG +=	CPPFLAGS="-I${LOCALBASE}/include/yara/"
 
 pre-configure:
-	        ${SUBST_CMD} ${WRKSRC}/setup.py
+	${SUBST_CMD} ${WRKSRC}/setup.py
 
 BUILD_DEPENDS = security/yara/main>=${VERSION}
-RUN_DEPENDS = 	security/yara/main>=${VERSION}
+RUN_DEPENDS =	security/yara/main>=${VERSION}
 
-TEST_DEPENDS =	security/yara/python${MODPY_FLAVOR}=${VERSION}
+TEST_DEPENDS =	security/yara/python${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} ./tests.py
