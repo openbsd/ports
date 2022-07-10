@@ -68,6 +68,7 @@ share/locale/ro/LC_MESSAGES/libhandy.mo
 share/locale/sl/LC_MESSAGES/libhandy.mo
 share/locale/sr/LC_MESSAGES/libhandy.mo
 share/locale/sv/LC_MESSAGES/libhandy.mo
+share/locale/tr/LC_MESSAGES/libhandy.mo
 share/locale/uk/LC_MESSAGES/libhandy.mo
 share/locale/zh_CN/LC_MESSAGES/libhandy.mo
 share/vala/vapi/libhandy-${API_V}.deps
