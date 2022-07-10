@@ -1,8 +1,7 @@
 COMMENT =	build automation tool
 
-DISTNAME =	gradle-6.7
+DISTNAME =	gradle-7.4.2
 EXTRACT_SUFX =	-bin.zip
-REVISION =	0
 
 CATEGORIES =	java
 
