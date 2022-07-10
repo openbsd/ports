@@ -27,6 +27,7 @@ share/aclocal/ax_berkeley_db_cxx.m4
 share/aclocal/ax_blas.m4
 share/aclocal/ax_blas_f77_func.m4
 share/aclocal/ax_boost_asio.m4
+share/aclocal/ax_boost_atomic.m4
 share/aclocal/ax_boost_base.m4
 share/aclocal/ax_boost_chrono.m4
 share/aclocal/ax_boost_context.m4
@@ -40,6 +41,7 @@ share/aclocal/ax_boost_log_setup.m4
 share/aclocal/ax_boost_process.m4
 share/aclocal/ax_boost_program_options.m4
 share/aclocal/ax_boost_python.m4
+share/aclocal/ax_boost_random.m4
 share/aclocal/ax_boost_regex.m4
 share/aclocal/ax_boost_serialization.m4
 share/aclocal/ax_boost_signals.m4
@@ -406,6 +408,7 @@ share/aclocal/ax_maintainer_mode_auto_silent.m4
 share/aclocal/ax_missing_prog.m4
 share/aclocal/ax_mpi.m4
 share/aclocal/ax_mpip.m4
+share/aclocal/ax_ms_cpprest.m4
 share/aclocal/ax_need_awk.m4
 share/aclocal/ax_normalize_path.m4
 share/aclocal/ax_not_enable_frame_pointer.m4
