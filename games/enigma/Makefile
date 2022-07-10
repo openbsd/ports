@@ -1,42 +1,47 @@
 COMMENT=	Oxyd/Rock'n'Roll clone
 
-V=		1.21
-DISTNAME=	enigma-${V}
-REVISION=	3
+V=		1.30
+PKGNAME=	enigma-${V}
+DISTNAME=	Enigma-${V}
 
 CATEGORIES=	games x11
 
-HOMEPAGE=	https://www.nongnu.org/enigma/
+HOMEPAGE=	https://github.com/Enigma-Game/Enigma/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL SDL_image SDL_mixer SDL_ttf
-WANTLIB += c curl enet intl m png xerces-c z zipios
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer SDL2_ttf
+WANTLIB += c curl enet iconv intl m png xerces-c z
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++14
+COMPILER =	base-clang ports-gcc
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enigma-game/}
+MASTER_SITES=	https://github.com/Enigma-Game/Enigma/releases/download/${V}/
+EXTRACT_SUFX =	-src.tar.gz
 
 WRKDIST=	${WRKDIR}/enigma-${V}
 
 BUILD_DEPENDS =	graphics/ImageMagick
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
-LIB_DEPENDS=	archivers/zipios \
-		devel/sdl-image \
-		devel/sdl-mixer \
-		devel/sdl-ttf \
+
+LIB_DEPENDS=	devel/gettext,-runtime \
+		converters/libiconv \
+		devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-ttf \
 		graphics/png \
 		net/curl \
-		net/enet>=1.3.3 \
-		textproc/xerces-c>=3.2.1
+		net/enet \
+		textproc/xerces-c
 
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-system-enet
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lintl -liconv"
 
 .include <bsd.port.mk>
