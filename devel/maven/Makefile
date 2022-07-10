@@ -1,18 +1,17 @@
 COMMENT=	software project management and comprehension tool
 
-V=		3.6.3
+V=		3.8.6
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
-REVISION=	0
 
-HOMEPAGE=	http://maven.apache.org/
+HOMEPAGE=	https://maven.apache.org/
 
 # Apache Software License 2.0
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=maven/maven-3/${V}/binaries/} \
-		http://archive.apache.org/dist/maven/binaries/
+		https://archive.apache.org/dist/maven/binaries/
 
 EXTRACT_SUFX=	-bin.tar.gz
 
