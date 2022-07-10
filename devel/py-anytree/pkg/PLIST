@@ -1,6 +1,7 @@
 @pkgpath devel/py-anytree
 lib/python${MODPY_VERSION}/site-packages/anytree/
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
@@ -9,11 +10,13 @@ lib/python${MODPY_VERSION}/site-packages/anytree-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/anytree/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}cachedsearch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}dotexport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}render.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}resolver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/${MODPY_PYCACHE}walker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/cachedsearch.py
 lib/python${MODPY_VERSION}/site-packages/anytree/dotexport.py
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/
 lib/python${MODPY_VERSION}/site-packages/anytree/exporter/__init__.py
@@ -57,13 +60,21 @@ lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}anynode.${
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}nodemixin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}symlinknode.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}symlinknodemixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/node/anynode.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/node.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/nodemixin.py
+lib/python${MODPY_VERSION}/site-packages/anytree/node/symlinknode.py
+lib/python${MODPY_VERSION}/site-packages/anytree/node/symlinknodemixin.py
 lib/python${MODPY_VERSION}/site-packages/anytree/node/util.py
 lib/python${MODPY_VERSION}/site-packages/anytree/render.py
 lib/python${MODPY_VERSION}/site-packages/anytree/resolver.py
 lib/python${MODPY_VERSION}/site-packages/anytree/search.py
+lib/python${MODPY_VERSION}/site-packages/anytree/util/
+lib/python${MODPY_VERSION}/site-packages/anytree/util/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/anytree/util/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/anytree/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/anytree/walker.py
