@@ -1,13 +1,12 @@
---- Source/LibOpenJPEG/opj_malloc.h.orig	Sat Feb 18 15:33:18 2012
-+++ Source/LibOpenJPEG/opj_malloc.h	Thu Jan 21 19:13:05 2016
-@@ -84,8 +84,8 @@ Allocate memory aligned to a 16 byte boundry
- 	#if defined(__sun)
- 		#define HAVE_MEMALIGN
+Index: Source/LibOpenJPEG/opj_malloc.h
+--- Source/LibOpenJPEG/opj_malloc.h.orig
++++ Source/LibOpenJPEG/opj_malloc.h
+@@ -96,7 +96,7 @@ Allocate memory aligned to a 16 byte boundry
+   #elif defined(__FreeBSD__)
+     #define HAVE_POSIX_MEMALIGN
  	/* Linux x86_64 and OSX always align allocations to 16 bytes */
--	#elif !defined(__amd64__) && !defined(__APPLE__)	
--		#define HAVE_MEMALIGN
-+	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(__OpenBSD__)
-+		#define HAVE_POSIX_MEMALIGN
+-	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)
++	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)  && !defined(__OpenBSD__)
+ 		#define HAVE_MEMALIGN
  		#include <malloc.h>			
  	#endif
- #endif

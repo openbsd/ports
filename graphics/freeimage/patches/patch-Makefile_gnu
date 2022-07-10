@@ -1,7 +1,7 @@
 Index: Makefile.gnu
 --- Makefile.gnu.orig
 +++ Makefile.gnu
-@@ -5,13 +5,13 @@ include Makefile.srcs
+@@ -5,9 +5,10 @@ include Makefile.srcs
  
  # General configuration variables:
  DESTDIR ?= /
@@ -10,16 +10,18 @@ Index: Makefile.gnu
 +INCDIR ?= $(PREFIX)/include
 +INSTALLDIR ?= $(PREFIX)/lib
  
++
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
  
--LIBRARIES = -lstdc++
-+LIBRARIES = 
- 
- MODULES = $(SRCS:.c=.o)
- MODULES := $(MODULES:.cpp=.o)
-@@ -20,16 +20,13 @@ CFLAGS += $(INCLUDE)
- CXXFLAGS ?= -O3 -fPIC -fexceptions -fvisibility=hidden -Wno-ctor-dtor-privacy
+@@ -23,19 +24,17 @@ CFLAGS += -DNO_LCMS
+ # LibJXR
+ CFLAGS += -DDISABLE_PERF_MEASUREMENT -D__ANSI__
+ CFLAGS += $(INCLUDE)
+-CXXFLAGS ?= -O3 -fPIC -fexceptions -fvisibility=hidden -Wno-ctor-dtor-privacy
++CXXFLAGS ?= -fPIC -fexceptions -fvisibility=hidden -Wno-ctor-dtor-privacy
+ # LibJXR
+ CXXFLAGS += -D__ANSI__
  CXXFLAGS += $(INCLUDE)
  
 -ifeq ($(shell sh -c 'uname -m 2>/dev/null || echo not'),x86_64)
@@ -34,20 +36,17 @@ Index: Makefile.gnu
 -SHAREDLIB = lib$(TARGET)-$(VER_MAJOR).$(VER_MINOR).so
 +SHAREDLIB = lib$(TARGET).so.$(LIBfreeimage_VERSION)
  LIBNAME	= lib$(TARGET).so
--VERLIBNAME = $(LIBNAME).$(VER_MAJOR)
+ VERLIBNAME = $(LIBNAME).$(VER_MAJOR)
  HEADER = Source/FreeImage.h
- 
- 
-@@ -40,7 +37,7 @@ all: dist
- 
+@@ -49,7 +48,6 @@ all: dist
  dist: FreeImage
- 	cp *.a Dist
--	cp *.so Dist
-+	cp *.so.* Dist
- 	cp Source/FreeImage.h Dist
+ 	mkdir -p Dist
+ 	cp *.a Dist/
+-	cp *.so Dist/
+ 	cp Source/FreeImage.h Dist/
  
  dos2unix:
-@@ -58,16 +55,13 @@ $(STATICLIB): $(MODULES)
+@@ -67,16 +65,13 @@ $(STATICLIB): $(MODULES)
  	$(AR) r $@ $(MODULES)
  
  $(SHAREDLIB): $(MODULES)
@@ -61,7 +60,7 @@ Index: Makefile.gnu
 -	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
 -	ln -sf $(SHAREDLIB) $(INSTALLDIR)/$(VERLIBNAME)
 -	ln -sf $(VERLIBNAME) $(INSTALLDIR)/$(LIBNAME)	
--	ldconfig
+-#	ldconfig
 +	install -m 644 -o root -g bin $(HEADER) $(INCDIR)
 +	install -m 644 -o root -g bin $(STATICLIB) $(INSTALLDIR)
 +	install -m 755 -o root -g bin $(SHAREDLIB) $(INSTALLDIR)

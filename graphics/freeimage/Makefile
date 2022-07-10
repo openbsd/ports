@@ -1,11 +1,10 @@
 COMMENT=		c++ library for common image format
 
-DISTNAME=		FreeImage3152
-PKGNAME=		freeimage-3.15.2
-REVISION=		8
+DISTNAME=		FreeImage3180
+PKGNAME=		freeimage-3.18.0
 CATEGORIES=		graphics
 
-SHARED_LIBS+=		freeimage	2.0
+SHARED_LIBS+=		freeimage	3.0
 
 HOMEPAGE=		http://freeimage.sourceforge.net/
 
