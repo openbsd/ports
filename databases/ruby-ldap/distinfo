@@ -1,2 +1,4 @@
 SHA256 (ruby-ldap-0.9.20.gem) = LUj2d36gzWSYSnOtAjiyeGn4Ni4BmPIVSHByVOzTMqM=
+SHA256 (ruby-ldap-taint-fix.patch) = os0NA2gy8ey9rmNu9+gAIic5XTa8MUbUXiE1XcVo1mA=
 SIZE (ruby-ldap-0.9.20.gem) = 67072
+SIZE (ruby-ldap-taint-fix.patch) = 757

@@ -1,11 +1,15 @@
 COMMENT=	Ruby interface to some common LDAP libraries
 
 PKGNAME=	ldap-0.9.20
-REVISION=	0
+REVISION=	1
 DISTNAME=	ruby-${PKGNAME}
 CATEGORIES=	databases
 
-HOMEPAGE=	https://github.com/alexey-chebotar/ruby-ldap
+MASTER_SITES0=	https://github.com/bearded/ruby-ldap/commit/
+PATCHFILES=	ruby-ldap-taint-fix{72a4a89b28a99560b018b78069b29632f362a7d0}.patch:0
+PATCH_DIST_STRIP=	-p1
+
+HOMEPAGE=	https://github.com/bearded/ruby-ldap
 
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
