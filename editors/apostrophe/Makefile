@@ -1,13 +1,14 @@
 COMMENT=		distraction free editor
 
-GH_TAGNAME=		v2.5
+GH_TAGNAME=		v2.6.3
 GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
-REVISION=		2
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
 
 CATEGORIES=		editors
+
+HOMEPAGE =		https://gitlab.gnome.org/World/apostrophe
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
