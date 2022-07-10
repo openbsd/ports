@@ -1,34 +1,28 @@
-COMMENT=	java-like zip interface
+COMMENT=	C++ library for reading and writing Zip files using streams
 
-DISTNAME=	zipios++-0.1.5.9+cvs.2004.02.07
-PKGNAME=	zipios++-0.1.5.9
-REVISION =	7
+GH_ACCOUNT =	Zipios
+GH_PROJECT =	Zipios
+GH_TAGNAME =	2.2.6
+
+PKGNAME=	zipios++-${GH_TAGNAME}
+
+HOMEPAGE =	https://snapwebsites.org/project/zipios
+
 CATEGORIES=	devel archivers
-MASTER_SITES=	https://distfiles.sigtrap.nl/
-MASTER_SITES0=	${MASTER_SITE_GNU:=automake/}
-SHARED_LIBS +=	zipios               1.0      # .0.0
 
-DISTFILES=	zipios++_0.1.5.9+cvs.2004.02.07.orig.tar.gz \
-		automake-1.7.tar.gz:0
+SHARED_LIBS +=	zipios               2.0      # .0.0
 
-# LGPLv2.1
+# LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		m ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} c m z
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++11
+COMPILER =	base-clang ports-gcc
 
-CONFIGURE_STYLE=	gnu
+MODULES =	devel/cmake
 
-post-extract:
-	for i in depcomp install-sh missing mkinstalldirs; do \
-		rm ${WRKDIST}/$$i; \
-		cp ${WRKDIR}/automake-1.7/lib/$$i ${WRKDIST}; \
-	done
-
-MAKE_FLAGS=SUBDIRS='zipios++ src'
-
-post-install:
-	${INSTALL_DATA} ${WRKBUILD}/zipios++/zipios-config.h ${PREFIX}/include/zipios++/
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
+			-DBUILD_ZIPIOS_TESTS=OFF
 
 .include <bsd.port.mk>
