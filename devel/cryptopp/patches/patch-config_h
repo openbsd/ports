@@ -1,7 +1,7 @@
 Index: config.h
 --- config.h.orig
 +++ config.h
-@@ -3,6 +3,10 @@
+@@ -16,6 +16,10 @@
  /// \file config.h
  /// \brief Library configuration file
  

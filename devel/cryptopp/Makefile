@@ -4,8 +4,7 @@ CATEGORIES =	devel security
 HOMEPAGE =	https://cryptopp.com/
 MASTER_SITES =	${HOMEPAGE}
 
-V =		8.2.0
-REVISION =	0
+V =		8.6.0
 DISTNAME =	cryptopp${V:S/.//g}
 PKGNAME =	cryptopp-$V
 
@@ -22,7 +21,7 @@ WANTLIB +=	m pthread ${COMPILER_LIBCXX}
 
 COMPILER =	base-clang ports-gcc
 
-SHARED_LIBS =	cryptopp	5.0
+SHARED_LIBS =	cryptopp	6.0
 
 CXXFLAGS +=	-fPIC -Wno-unused -DNDEBUG
 

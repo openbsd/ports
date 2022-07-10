@@ -1,7 +1,7 @@
 Index: osrng.cpp
 --- osrng.cpp.orig
 +++ osrng.cpp
-@@ -187,11 +187,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
+@@ -214,11 +214,7 @@ void NonblockingRng::GenerateBlock(byte *output, size_
  #ifdef BLOCKING_RNG_AVAILABLE
  
  #ifndef CRYPTOPP_BLOCKING_RNG_FILENAME
