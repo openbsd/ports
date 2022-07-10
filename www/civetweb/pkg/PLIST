@@ -1,0 +1,14 @@
+@bin bin/civetweb
+include/CivetServer.h
+include/civetweb.h
+lib/cmake/
+lib/cmake/civetweb/
+lib/cmake/civetweb/FindLibDl.cmake
+lib/cmake/civetweb/FindLibRt.cmake
+lib/cmake/civetweb/FindWinSock.cmake
+lib/cmake/civetweb/civetweb-config-version.cmake
+lib/cmake/civetweb/civetweb-config.cmake
+lib/cmake/civetweb/civetweb-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/civetweb/civetweb-targets.cmake
+@lib lib/libcivetweb-cpp.so.${LIBcivetweb-cpp_VERSION}
+@lib lib/libcivetweb.so.${LIBcivetweb_VERSION}
