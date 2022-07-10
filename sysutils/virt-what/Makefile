@@ -1,6 +1,6 @@
 COMMENT =		detect if we are running in a virtual machine
 
-DISTNAME =		virt-what-1.21
+DISTNAME =		virt-what-1.24
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://people.redhat.com/~rjones/virt-what/
