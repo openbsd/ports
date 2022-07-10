@@ -1,0 +1,21 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -58,7 +58,7 @@ else()
+ 
+     set( CMAKE_C_FLAGS           "${CMAKE_C_FLAGS} -fwrapv -fPIC"                                  )
+     set( CMAKE_C_FLAGS_DEBUG     "${CMAKE_C_FLAGS_DEBUG} -Werror -Wall -Wextra -Wunused-parameter" )
+-    set( CMAKE_C_FLAGS_RELEASE   "${CMAKE_C_FLAGS_RELEASE} -O3"                                    )
++    set( CMAKE_C_FLAGS_RELEASE   "${CMAKE_C_FLAGS_RELEASE}"                                    )
+     #
+     if( CYGWIN )
+         set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11"     )
+@@ -66,7 +66,7 @@ else()
+         set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC" )
+     endif()
+     set( CMAKE_CXX_FLAGS_DEBUG   "${CMAKE_CXX_FLAGS_DEBUG} -g -O0 -fdiagnostics-show-option -Werror -Wall -Wextra -pedantic -Wcast-align -Wcast-qual -Wctor-dtor-privacy -Wdisabled-optimization -Winit-self -Wlogical-op -Wmissing-include-dirs -Woverloaded-virtual -Wredundant-decls -Wshadow -Wsign-promo -Wstrict-null-sentinel -Wstrict-overflow=4 -Wundef -Wno-unused -Wunused-variable -Wno-variadic-macros -Wno-parentheses -Wno-unknown-pragmas -Wwrite-strings -Wswitch -Wunused-parameter -Wfloat-equal -Wold-style-cast -Wnoexcept" )
+-    set( CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3" )
++    set( CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}" )
+ endif()
+ 
+ option(BUILD_SHARED_LIBS "Build the ${PROJECT_NAME} libraries shared." ON)
