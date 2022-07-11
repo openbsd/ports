@@ -1,0 +1,27 @@
+auth: Fix handling passdbs with identical driver/args but different
+mechanisms/username_filter
+7bad6a24160e34bce8f10e73dbbf9e5fbbcd1904
+
+Index: src/auth/auth-request.c
+--- src/auth/auth-request.c.orig
++++ src/auth/auth-request.c
+@@ -553,8 +553,8 @@ auth_request_want_skip_passdb(struct auth_request *req
+ 			      struct auth_passdb *passdb)
+ {
+ 	/* if mechanism is not supported, skip */
+-	const char *const *mechs = passdb->passdb->mechanisms;
+-	const char *const *username_filter = passdb->passdb->username_filter;
++	const char *const *mechs = passdb->mechanisms;
++	const char *const *username_filter = passdb->username_filter;
+ 	const char *username;
+ 
+ 	username = request->fields.user;
+@@ -567,7 +567,7 @@ auth_request_want_skip_passdb(struct auth_request *req
+ 		return TRUE;
+ 	}
+ 
+-	if (passdb->passdb->username_filter != NULL &&
++	if (passdb->username_filter != NULL &&
+ 	    !auth_request_username_accepted(username_filter, username)) {
+ 		auth_request_log_debug(request,
+ 				       request->mech != NULL ? AUTH_SUBSYS_MECH
