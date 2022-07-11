@@ -1,6 +1,6 @@
 COMMENT =	computes positions for the stars, planets, and satellites
 
-MODPY_EGG_VERSION =	1.42
+MODPY_EGG_VERSION =	1.43.1
 
 DISTNAME =	skyfield-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}

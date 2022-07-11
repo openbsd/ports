@@ -88,6 +88,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-elements.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-ephemeris.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-framelib.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-iokit.rst
+lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-kepler.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-planetary.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-position.rst
 lib/python${MODPY_VERSION}/site-packages/skyfield/documentation/api-satellites.rst
