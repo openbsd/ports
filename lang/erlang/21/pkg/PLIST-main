@@ -1,5 +1,4 @@
 @option no-default-conflict
-@conflict erlang-<16b.03p4v0
 @pkgpath lang/erlang/21
 bin/ct_run21
 bin/dialyzer21

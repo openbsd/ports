@@ -6,11 +6,12 @@ COMMENT-wx=	WxWidgets bindings for Erlang
 PORTROACH=	limit:^OTP-21\.
 
 V=		21.3.8.24
-EPOCH=		0
+REVISION-main=	0
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
 PKGNAME-wx=	erlang-wx-$V
+EPOCH=		0
 
 VERSION_SPEC=	>=21v0,<22v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
