@@ -1,6 +1,6 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		1.19.1
+V =		1.20.3
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
@@ -32,10 +32,9 @@ do-build:
 		-no-upgrade install ${cmd}
 .endfor
 
-# The tests occasionally fail with a kevent(2) failure. The issue is to do with
-# the kqueue backend in the `notify` go module. We've not been unable to
-# understand the issue, but we also cannot reproduce a kevent(2) failure
-# outside of the tests. See: https://github.com/syncthing/syncthing/issues/6596
+# Connections test hangs and times out. This doesn't appear to interfere with
+# day-to-day running of Syncthing though.
+# https://github.com/syncthing/syncthing/issues/8421
 do-test:
 	cd ${WRKSRC} && ${MODGO_CMD} run build.go test
 
