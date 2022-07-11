@@ -4,14 +4,14 @@ COMMENT-common=		common API for various GNOME modules (common files)
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		42.2
+GNOME_VERSION=		42.3
 
 PKGNAME-gtk4=		gnome-desktop4-${GNOME_VERSION}
 PKGNAME-common=		gnome-desktop-common-${GNOME_VERSION}
 
-SHARED_LIBS += gnome-desktop-4           0.0 # 1.2.1
-SHARED_LIBS += gnome-bg-4                0.0 # 1.2.1
-SHARED_LIBS += gnome-rr-4                0.0 # 1.2.1
+SHARED_LIBS += gnome-desktop-4           0.0 # 1.2.3
+SHARED_LIBS += gnome-bg-4                0.0 # 1.2.3
+SHARED_LIBS += gnome-rr-4                0.0 # 1.2.3
 SHARED_LIBS += gnome-desktop-3           2.3 # 19.3.0
 
 CATEGORIES=		x11
