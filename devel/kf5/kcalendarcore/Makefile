@@ -2,7 +2,7 @@ COMMENT =	The KDE calendar access library
 DISTNAME =	kcalendarcore-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5CalendarCore           2.7 # 5.7
+SHARED_LIBS +=  KF5CalendarCore           2.8 # 5.7
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui ical icalss icalvcal
 WANTLIB += m

@@ -41,6 +41,7 @@ lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ScrollBar.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/ScrollView.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Slider.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/SpinBox.qml
+lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/StackView.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/Switch.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/SwitchDelegate.qml
 lib/qt5/qml/QtQuick/Controls.2/org.kde.desktop/SwitchIndicator.qml

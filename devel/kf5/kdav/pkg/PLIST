@@ -53,6 +53,7 @@ lib/cmake/KF5DAV/KF5DAVTargets.cmake
 share/kf5/mkspecs/qt_KDAV.pri
 share/locale/ar/LC_MESSAGES/libkdav.mo
 share/locale/az/LC_MESSAGES/libkdav.mo
+share/locale/bg/LC_MESSAGES/libkdav.mo
 share/locale/ca/LC_MESSAGES/libkdav.mo
 share/locale/ca@valencia/LC_MESSAGES/libkdav.mo
 share/locale/cs/LC_MESSAGES/libkdav.mo
