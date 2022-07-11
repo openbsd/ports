@@ -1,11 +1,10 @@
 COMMENT =	library implementation of OPC UA
 
-VERSION =	1.3.1
-REVISION =	0
+VERSION =	1.3.2
 DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
 
-SHARED_LIBS =	open62541	2.0
+SHARED_LIBS =	open62541	2.1
 
 CATEGORIES =	misc
 
