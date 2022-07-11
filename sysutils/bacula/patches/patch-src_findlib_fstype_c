@@ -1,9 +1,9 @@
 Index: src/findlib/fstype.c
 --- src/findlib/fstype.c.orig
 +++ src/findlib/fstype.c
-@@ -110,11 +110,13 @@ void add_mtab_item(void *user_ctx, struct stat *st, co
+@@ -238,11 +238,13 @@ bool fstype(char *fname, FF_PKT *ff_pkt, char *fs, int
   */
- uint32_t fstypeid(char *fname, FF_PKT *ff_pkt)
+ static uint64_t fstypeid(char *fname, FF_PKT *ff_pkt)
  {
 +#if !defined(HAVE_OPENBSD_OS)
     struct statfs st;

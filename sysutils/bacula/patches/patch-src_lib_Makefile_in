@@ -1,16 +1,16 @@
 Index: src/lib/Makefile.in
 --- src/lib/Makefile.in.orig
 +++ src/lib/Makefile.in
-@@ -111,7 +111,7 @@ libbac.a: $(LIBBAC_OBJS)
+@@ -117,7 +117,7 @@ libbac.a: $(LIBBAC_OBJS)
  
- libbac.la: Makefile $(LIBBAC_LOBJS) 
+ libbac.la: Makefile $(LIBBAC_LOBJS)
  	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS) 
+-	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
 +	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
  
  libbaccfg.a: $(LIBBACCFG_OBJS)
  	@echo "Making $@ ..."
-@@ -120,7 +120,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS)
+@@ -126,7 +126,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS)
  
  libbaccfg.la: Makefile $(LIBBACCFG_LOBJS)
  	@echo "Making $@ ..."

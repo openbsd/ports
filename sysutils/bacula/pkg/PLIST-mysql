@@ -14,6 +14,10 @@ libexec/bacula/make_mysql_tables
 libexec/bacula/update_mysql_tables
 libexec/bacula/updatedb/
 libexec/bacula/updatedb/update_mysql_tables
+libexec/bacula/updatedb/update_mysql_tables_1020_to_1021
+libexec/bacula/updatedb/update_mysql_tables_1021_to_1022
+libexec/bacula/updatedb/update_mysql_tables_1022_to_1023
+libexec/bacula/updatedb/update_mysql_tables_1023_to_1024
 libexec/bacula/updatedb/update_mysql_tables_10_to_11
 libexec/bacula/updatedb/update_mysql_tables_11_to_12
 libexec/bacula/updatedb/update_mysql_tables_4_to_5

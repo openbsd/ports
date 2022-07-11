@@ -1,15 +1,7 @@
 Index: examples/autochangers/chio-changer-openbsd
 --- examples/autochangers/chio-changer-openbsd.orig
 +++ examples/autochangers/chio-changer-openbsd
-@@ -90,28 +90,23 @@ case ${cmd} in 
- 		exit ${rtn}
- 		;;
- 	list)
--		${CHIO} -f ${ctl} status -v slot | \
--			sed -ne 's/^slot *\([0-9]*:\).*FULL.*voltag.*<\(.*\):.*/\1\2/p' | \
-+		${CHIO} -f ${ctl} status -vS | \
-+			sed -ne 's/.*FULL.*voltag.*<\(.*\):.*source.*<slot \([0-9]*\)>.*/\2:\1/p' | \
- 			awk -F: '{ print $1 + 1 ":" $2 }'
+@@ -96,22 +96,17 @@ case ${cmd} in 
  		exit $?
  		;;
  	listall)
