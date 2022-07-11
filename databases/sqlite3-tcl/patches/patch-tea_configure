@@ -1,7 +1,7 @@
 Index: tea/configure
 --- tea/configure.orig
 +++ tea/configure
-@@ -7249,7 +7249,7 @@ fi
+@@ -7913,7 +7913,7 @@ then :
  		    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
  fi
  		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
