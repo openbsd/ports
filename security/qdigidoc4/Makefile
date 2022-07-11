@@ -2,6 +2,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 V =			4.2.11
 DISTNAME =		qdigidoc4_${V}.110-1804
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 WRKDIST =		${WRKDIR}/qdigidoc4
 PKGNAME =		qdigidoc4-${V}
@@ -26,8 +27,8 @@ DISTFILES +=		qdigidoc4-{}config.json:0 \
 CONFIGURE_ENV +=	CONFIG_URL=file://${DISTDIR}/qdigidoc4-config.json
 
 MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
-DISTFILES +=		qdigidoc4-{}eu-lotl.xml:1
-CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/qdigidoc4-eu-lotl.xml
+DISTFILES +=		qdigidoc4-{}eu-lotl-pivot-300.xml:1
+CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/qdigidoc4-eu-lotl-pivot-300.xml
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
