@@ -1,6 +1,6 @@
 COMMENT =	Python implementation of SGP4 satellite tracking algorithm
 
-MODPY_EGG_VERSION =	2.20
+MODPY_EGG_VERSION =	2.21
 
 DISTNAME =	sgp4-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
