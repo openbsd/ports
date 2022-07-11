@@ -1,0 +1,15 @@
+Use Q_OS_UNIX do detect BSDs next to Linux
+https://github.com/open-eid/DigiDoc4-Client/pull/1072
+
+Index: client/dialogs/CertificateDetails.cpp
+--- client/dialogs/CertificateDetails.cpp.orig
++++ client/dialogs/CertificateDetails.cpp
+@@ -210,7 +210,7 @@ QString CertificateDetails::decodeCN(const QString &cn
+ #ifndef Q_OS_MAC
+ void CertificateDetails::showCertificate(const SslCertificate &cert, QWidget *parent, const QString &suffix)
+ {
+-#ifdef Q_OS_LINUX
++#ifdef Q_OS_UNIX
+ 	CertificateDetails(cert, parent).exec();
+ #else
+ 	Q_UNUSED(parent);

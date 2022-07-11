@@ -1,0 +1,12 @@
+Index: client/SslCertificate.cpp
+--- client/SslCertificate.cpp.orig
++++ client/SslCertificate.cpp
+@@ -59,7 +59,7 @@ static QByteArray i2dDer(Func func, Arg arg)
+ 	return der;
+ }
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ static void RSA_get0_key(const RSA *r, const BIGNUM **n, const BIGNUM **e, const BIGNUM **d)
+ {
+ 	if(n) *n = r->n;
