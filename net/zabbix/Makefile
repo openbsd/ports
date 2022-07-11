@@ -3,7 +3,7 @@ COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		6.0.5
+VERSION =		6.2.0
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -62,7 +62,6 @@ CONFIGURE_ARGS =	--enable-server \
 			--with-libxml2 \
 			--with-net-snmp \
 			--with-ldap \
-			--with-jabber="${LOCALBASE}" \
 			--with-ssh2 \
 			--with-openssl
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -109,8 +108,6 @@ WANTLIB-server +=	event pq
 MULTI_PACKAGES +=	-proxy
 CONFIGURE_ARGS +=	--with-sqlite3 \
 			--disable-server
-# The proxy does not use jabber, so just disable the check
-CONFIGURE_ARGS +=	--without-jabber
 
 WANTLIB-proxy +=	event sqlite3
 LIB_DEPENDS-proxy +=	databases/sqlite3

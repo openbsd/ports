@@ -6,24 +6,24 @@
 @newgroup _zabbix:623
 @newuser _zabbix:623:_zabbix::zabbix user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/zabbix/*
+@rcscript ${RCDIR}/zabbix_agentd
+@sample ${SYSCONFDIR}/zabbix/
 @bin bin/zabbix_get
 @bin bin/zabbix_sender
+@comment lib/modules/
 @man man/man1/zabbix_get.1
 @man man/man1/zabbix_sender.1
 @man man/man8/zabbix_agentd.8
 @bin sbin/zabbix_agentd
 share/examples/zabbix/
-@sample ${SYSCONFDIR}/zabbix/
 share/examples/zabbix/zabbix_agentd.conf
 @mode 640
 @group _zabbix
 @sample ${SYSCONFDIR}/zabbix/zabbix_agentd.conf
-@comment share/examples/zabbix/zabbix_agentd.win.conf
-@mode
-@group
 @mode 0755
 @owner _zabbix
+@group
 @sample /var/log/zabbix/
-@owner
+@comment share/examples/zabbix/zabbix_agentd.win.conf
 @mode
-@rcscript ${RCDIR}/zabbix_agentd
+@owner

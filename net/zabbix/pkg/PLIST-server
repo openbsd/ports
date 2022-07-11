@@ -1,7 +1,9 @@
 @conflict zabbix-agent-<=1.8.3p5
 @extraunexec rm -rf /var/log/zabbix/*
-@man man/man8/zabbix_server.8
+@rcscript ${RCDIR}/zabbix_server
 @sample ${SYSCONFDIR}/zabbix/
+@man man/man8/zabbix_server.8
+@bin bin/zabbix_js
 @bin sbin/zabbix_server
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/zabbix/
@@ -13,12 +15,13 @@ share/examples/zabbix/zabbix_server.conf
 @group
 share/zabbix-server/
 share/zabbix-server/schema/
+share/zabbix-server/schema/mysql/
 @comment share/zabbix-server/schema/mysql/Makefile
 @comment share/zabbix-server/schema/mysql/Makefile.am
 @comment share/zabbix-server/schema/mysql/Makefile.in
-share/zabbix-server/schema/mysql/
 share/zabbix-server/schema/mysql/data.sql
 share/zabbix-server/schema/mysql/double.sql
+share/zabbix-server/schema/mysql/history_pk_prepare.sql
 share/zabbix-server/schema/mysql/images.sql
 share/zabbix-server/schema/mysql/schema.sql
 share/zabbix-server/schema/postgresql/
@@ -27,12 +30,10 @@ share/zabbix-server/schema/postgresql/
 @comment share/zabbix-server/schema/postgresql/Makefile.in
 share/zabbix-server/schema/postgresql/data.sql
 share/zabbix-server/schema/postgresql/double.sql
+share/zabbix-server/schema/postgresql/history_pk_prepare.sql
 share/zabbix-server/schema/postgresql/images.sql
 share/zabbix-server/schema/postgresql/schema.sql
 share/zabbix-server/schema/postgresql/timescaledb.sql
 @mode 0755
 @owner _zabbix
 @sample /var/log/zabbix/
-@owner
-@mode
-@rcscript ${RCDIR}/zabbix_server

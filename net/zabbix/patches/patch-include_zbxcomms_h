@@ -1,9 +1,9 @@
-Index: src/libs/zbxcrypto/tls.h
---- src/libs/zbxcrypto/tls.h.orig
-+++ src/libs/zbxcrypto/tls.h
-@@ -33,7 +33,7 @@
- #	include <openssl/rand.h>
- #endif
+Index: include/zbxcomms.h
+--- include/zbxcomms.h.orig
++++ include/zbxcomms.h
+@@ -210,7 +210,7 @@ int	zbx_telnet_execute(ZBX_SOCKET socket_fd, const cha
+ /* TLS BLOCK */
+ #if defined(HAVE_GNUTLS) || defined(HAVE_OPENSSL)
  
 -#if defined(HAVE_OPENSSL) && OPENSSL_VERSION_NUMBER < 0x1010000fL || defined(LIBRESSL_VERSION_NUMBER)
 +#if defined(HAVE_OPENSSL) && OPENSSL_VERSION_NUMBER < 0x1010000fL

@@ -2,9 +2,9 @@ quick hack to fix building following if.h split; should really have an
 autoconf check for it but that's harder because AC_CHECK_HEADERS isn't enough
 for this file
 
-Index: include/sysinc.h
---- include/sysinc.h.orig
-+++ include/sysinc.h
+Index: include/common/zbxsysinc.h
+--- include/common/zbxsysinc.h.orig
++++ include/common/zbxsysinc.h
 @@ -305,6 +305,7 @@
  
  #ifdef HAVE_NET_IF_H
