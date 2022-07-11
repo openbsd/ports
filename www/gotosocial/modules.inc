@@ -150,6 +150,7 @@ MODGO_MODULES =	\
 	github.com/kidstuff/mongostore					 v0.0.0-20181113001930-e650cd85ee4b \
 	github.com/kisielk/gotool					 v1.0.0 \
 	github.com/klauspost/compress					 v1.13.6 \
+	github.com/klauspost/cpuid					 v1.3.1 \
 	github.com/konsorten/go-windows-terminal-sequences		 v1.0.2 \
 	github.com/kr/fs						 v0.1.0 \
 	github.com/kr/pretty						 v0.3.0 \
@@ -165,6 +166,9 @@ MODGO_MODULES =	\
 	github.com/memcachier/mc					 v2.0.1+incompatible \
 	github.com/microcosm-cc/bluemonday				 v1.0.18 \
 	github.com/miekg/dns						 v1.1.49 \
+	github.com/minio/md5-simd					 v1.1.0 \
+	github.com/minio/minio-go/v7					 v7.0.29 \
+	github.com/minio/sha256-simd					 v0.1.1 \
 	github.com/mitchellh/go-homedir					 v1.1.0 \
 	github.com/mitchellh/mapstructure				 v1.5.0 \
 	github.com/modern-go/concurrent					 v0.0.0-20180306012644-bacd9c7ef1dd \
@@ -207,7 +211,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify					 v1.7.1 \
 	github.com/subosito/gotenv					 v1.2.0 \
 	github.com/superseriousbusiness/activity			 v1.1.0-gts \
-	github.com/superseriousbusiness/exif-terminator			 v0.2.0 \
+	github.com/superseriousbusiness/exif-terminator			 v0.3.0 \
 	github.com/superseriousbusiness/go-jpeg-image-structure/v2	 v2.0.0-20220321154430-d89a106fdabe \
 	github.com/superseriousbusiness/oauth2/v4			 v4.3.2-!s!s!b \
 	github.com/tdewolff/minify/v2					 v2.11.2 \
@@ -476,6 +480,8 @@ MODGO_MODFILES =	\
 	github.com/jstemmer/go-junit-report			 v0.0.0-20190106144839-af01ea7f8024 \
 	github.com/klauspost/compress				 v1.10.10 \
 	github.com/klauspost/compress				 v1.10.4 \
+	github.com/klauspost/compress				 v1.13.5 \
+	github.com/klauspost/cpuid				 v1.2.3 \
 	github.com/konsorten/go-windows-terminal-sequences	 v1.0.1 \
 	github.com/kr/pretty					 v0.1.0 \
 	github.com/kr/pretty					 v0.2.1 \
@@ -548,6 +554,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto					 v0.0.0-20200622213623-75b288015ac9 \
 	golang.org/x/crypto					 v0.0.0-20201203163018-be400aefbc4c \
+	golang.org/x/crypto					 v0.0.0-20201216223049-8b5274cf687f \
 	golang.org/x/crypto					 v0.0.0-20210220033148-5ea612d1eb83 \
 	golang.org/x/crypto					 v0.0.0-20210421170649-83a5a9bb288b \
 	golang.org/x/crypto					 v0.0.0-20210616213533-5ff15b29337e \
@@ -686,6 +693,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20200515095857-1151b9dac4a9 \
 	golang.org/x/sys					 v0.0.0-20200519105757-fe76b779f299 \
 	golang.org/x/sys					 v0.0.0-20200523222454-059865788121 \
+	golang.org/x/sys					 v0.0.0-20200625212154-ddb9806d33ae \
 	golang.org/x/sys					 v0.0.0-20200803210538-64077c9b5642 \
 	golang.org/x/sys					 v0.0.0-20200905004654-be1d3432aa8f \
 	golang.org/x/sys					 v0.0.0-20200930185726-fdedc70b468f \
@@ -873,6 +881,7 @@ MODGO_MODFILES =	\
 	gopkg.in/check.v1					 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1					 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
+	gopkg.in/ini.v1						 v1.57.0 \
 	gopkg.in/square/go-jose.v2				 v2.5.1 \
 	gopkg.in/yaml.v2					 v2.2.2 \
 	gopkg.in/yaml.v2					 v2.2.4 \

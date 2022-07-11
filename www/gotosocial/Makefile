@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.3.6
+MODGO_VERSION =	v0.3.7
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
