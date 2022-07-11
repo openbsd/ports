@@ -1,6 +1,3 @@
-BROKEN-aarch64 =	SIGILL when running rclone
-BROKEN-arm =		SIGBUS when running rclone
-
 COMMENT =	rsync for cloud storage
 
 V =		1.58.0
@@ -12,6 +9,7 @@ CATEGORIES =	sysutils
 HOMEPAGE =	https://rclone.org/
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
+
 # MIT
 PERMIT_PACKAGE =	Yes
 
