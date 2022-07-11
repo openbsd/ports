@@ -324,6 +324,7 @@
      SUBDIR += py-vivisect
      SUBDIR += py-yaswfp,python3
      SUBDIR += qca-qt5
+     SUBDIR += qdigidoc4
      SUBDIR += qtkeychain
      SUBDIR += qtpass
      SUBDIR += radiusniff
