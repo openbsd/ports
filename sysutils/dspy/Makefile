@@ -1,9 +1,9 @@
 COMMENT=		D-Bus exploration tool
 
-GNOME_VERSION=		1.2.0
+GNOME_VERSION=		1.2.1
 GNOME_PROJECT=		dspy
 
-SHARED_LIBS +=	dspy-1                    0.0 # 0.0
+SHARED_LIBS += dspy-1                    0.0 # 1.0.0
 
 CATEGORIES=		sysutils
 
