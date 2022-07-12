@@ -1,0 +1,15 @@
+Prevent collisions during static analysis when multiple versions of
+erlang are installed
+
+Index: lib/dialyzer/src/dialyzer_plt.erl
+--- lib/dialyzer/src/dialyzer_plt.erl.orig
++++ lib/dialyzer/src/dialyzer_plt.erl
+@@ -238,7 +238,7 @@ get_default_plt() ->
+   case os:getenv("DIALYZER_PLT") of
+     false ->
+       CacheDir = filename:basedir(user_cache, "erlang"),
+-      filename:join(CacheDir, ".dialyzer_plt");
++      filename:join(CacheDir, ".dialyzer${MAJ_V}_plt");
+     UserSpecPlt -> UserSpecPlt
+   end.
+ 

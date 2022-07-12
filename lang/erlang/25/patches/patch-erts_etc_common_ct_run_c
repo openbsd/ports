@@ -1,0 +1,14 @@
+Let erlang test runner handle versioned binaries.
+
+Index: erts/etc/common/ct_run.c
+--- erts/etc/common/ct_run.c.orig
++++ erts/etc/common/ct_run.c
+@@ -41,7 +41,7 @@ static int eargc;		/* Number of arguments in eargv. */
+ #else
+ #  define QUOTE(s) s
+ #  define IS_DIRSEP(c) ((c) == '/')
+-#  define ERL_NAME "erl"
++#  define ERL_NAME "erl${MAJ_V}"
+ #endif
+ 
+ #define UNSHIFT(s) eargc++, eargv--; eargv[0] = QUOTE(s)

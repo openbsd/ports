@@ -78,6 +78,7 @@ gen-versions: extract
 	@find ${WRKSRC} -name 'vsn.mk' -exec awk -F'=' '/_VSN=/ { print $$1"\t"$$2 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sort
 	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3 }' | sort
 
+# Erlang >= 25 uses configure.ac instead of configure.in
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/make/install_bin \
 		     ${WRKSRC}/Makefile.in \
@@ -86,8 +87,10 @@ pre-configure:
 		     ${WRKSRC}/erts/etc/common/erlc.c \
 		     ${WRKSRC}/erts/etc/common/escript.c \
 		     ${WRKSRC}/erts/etc/common/typer.c \
-		     ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl \
-		     ${WRKSRC}/lib/wx/configure.in
+		     ${WRKSRC}/lib/dialyzer/src/dialyzer_plt.erl 
+	if [ -f ${WRKSRC}/lib/wx/configure.in ]; then ${SUBST_CMD} ${WRKSRC}/lib/wx/configure.in ; fi;
+	if [ -f ${WRKSRC}/lib/wx/configure.ac ]; then ${SUBST_CMD} ${WRKSRC}/lib/wx/configure.ac ; fi;
+
 
 pre-test:
 	ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar && \
