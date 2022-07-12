@@ -6,6 +6,9 @@ MODPY_EGG_VERSION =	4.2.0
 PKGNAME =		py-yara-${MODPY_EGG_VERSION}
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += pthread ${MODPY_WANTLIB} yara
 
 MODULES = lang/python
