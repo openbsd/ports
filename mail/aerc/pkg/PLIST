@@ -15,6 +15,7 @@ share/aerc/accounts.conf
 share/aerc/aerc.conf
 share/aerc/binds.conf
 share/aerc/filters/
+share/aerc/filters/calendar
 share/aerc/filters/colorize
 share/aerc/filters/hldiff
 share/aerc/filters/html
