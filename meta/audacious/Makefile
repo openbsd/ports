@@ -1,7 +1,6 @@
 COMMENT =	audacious meta-package
 
-VERSION =	4.1
-REVISION =	0
+VERSION =	4.2
 PKGNAME =	audacious-${VERSION}
 
 MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
