@@ -22,4 +22,4 @@ for direct printing using foomatic-rip(1) from the cups-filters package.
 Printers using CUPS native drivers (drv) or for which only schema definitions
 (xml) but no ppd exist will not be detected by foomatic-ppdfile(1) and must
 be installed using the CUPS tools, the CUPS web interface or native utilities
-(e.g. cups-genppd(1) from gutenprint).
+(e.g. cups-genppd(8) from gutenprint).
