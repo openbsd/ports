@@ -14,6 +14,9 @@ SHARED_LIBS +=  zzipwrap                  14.0 # 0.0
 # LGPL/MPL license
 PERMIT_PACKAGE=		Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += c z
 
 BUILD_DEPENDS=		archivers/zip \
