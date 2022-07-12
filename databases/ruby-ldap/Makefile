@@ -1,7 +1,7 @@
 COMMENT=	Ruby interface to some common LDAP libraries
 
 PKGNAME=	ldap-0.9.20
-REVISION=	1
+REVISION=	2
 DISTNAME=	ruby-${PKGNAME}
 CATEGORIES=	databases
 
@@ -18,11 +18,10 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/ruby
 
-WANTLIB=		crypto pthread ssl ldap lber
+WANTLIB=		crypto pthread ssl ldap lber sasl2
 
 LIB_DEPENDS=		databases/openldap
 
 CONFIGURE_STYLE=	ruby gem ext
-CONFIGURE_ARGS=		--without-libldap
 
 .include <bsd.port.mk>
