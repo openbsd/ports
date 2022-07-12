@@ -27,7 +27,7 @@ MODGO_MODULES =	\
 	github.com/alecthomas/units				 v0.0.0-20210927113745-59d0afb8317a \
 	github.com/alessio/shellescape				 v1.4.1 \
 	github.com/antihax/optional				 v1.0.0 \
-	github.com/aws/aws-sdk-go				 v1.44.49 \
+	github.com/aws/aws-sdk-go				 v1.44.51 \
 	github.com/benbjohnson/clock				 v1.1.0 \
 	github.com/beorn7/perks					 v1.0.1 \
 	github.com/census-instrumentation/opencensus-proto	 v0.2.1 \
@@ -158,10 +158,10 @@ MODGO_MODULES =	\
 	github.com/zeebo/blake3					 v0.2.3 \
 	github.com/zeebo/pcg					 v1.0.1 \
 	go.opencensus.io					 v0.23.0 \
-	go.opentelemetry.io/otel				 v1.7.0 \
-	go.opentelemetry.io/otel/exporters/jaeger		 v1.7.0 \
-	go.opentelemetry.io/otel/sdk				 v1.7.0 \
-	go.opentelemetry.io/otel/trace				 v1.7.0 \
+	go.opentelemetry.io/otel				 v1.8.0 \
+	go.opentelemetry.io/otel/exporters/jaeger		 v1.8.0 \
+	go.opentelemetry.io/otel/sdk				 v1.8.0 \
+	go.opentelemetry.io/otel/trace				 v1.8.0 \
 	go.opentelemetry.io/proto/otlp				 v0.7.0 \
 	go.uber.org/atomic					 v1.9.0 \
 	go.uber.org/goleak					 v1.1.11 \
