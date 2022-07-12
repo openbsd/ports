@@ -1,17 +1,16 @@
 COMMENT =	lepton electronic design automation suite
 
-V =		1.9.17-20211219
+V =		1.9.18-20220529
 DISTNAME =	lepton-eda-${V:C/-.*//}
-REVISION =	0
 
-SHARED_LIBS +=	lepton               0.0      # 10.0
-SHARED_LIBS +=	leptongui            0.0      # 4.0
+SHARED_LIBS +=	lepton               1.0      # 11.0
+SHARED_LIBS +=	leptongui            1.0      # 5.0
 
 CATEGORIES =	cad
 
 HOMEPAGE =	https://github.com/lepton-eda/lepton-eda
 
-MAINTAINER =	Dmitry Pryakhin <graahnul.grom@gmail.com>
+MAINTAINER =	Dmitry Pryakhin <graahnul.grom@ya.ru>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -44,7 +43,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-attrib \
-			--disable-update-xdg-database
+			--disable-update-xdg-database \
+			--enable-guild
 
 CONFIGURE_ENV =	GROFF=false \
 		GUILE=guile2.2 \
@@ -52,17 +52,16 @@ CONFIGURE_ENV =	GROFF=false \
 		MAKEINFO=gmakeinfo \
 		M4=/usr/bin/m4
 
-# XXX make sure guile2 headers are picked up first (over guile1);               
-# cannot use CPPFLAGS/CFLAGS since they get appended last                       
-CONFIGURE_ENV +=	"CC=${CC} -I${LOCALBASE}/include/guile/2.2"             
+# XXX make sure guile2 headers are picked up first (over guile1);
+# cannot use CPPFLAGS/CFLAGS since they get appended last
+CONFIGURE_ENV +=	"CC=${CC} -I${LOCALBASE}/include/guile/2.2"
 CONFIGURE_ENV +=	"CXX=${CXX} -I${LOCALBASE}/include/guile/2.2"
 
+# suppress tons of warnings
+# "compilation of /usr/local/bin/guild2.2 failed"
+MAKE_ENV +=	"GUILE_AUTO_COMPILE=0"
+
 post-install:
-	# would be nice to precompile the guile files otherwise
-	# they're done per-user at startup. it should be similar
-	# to this, but it needs more to get it to work:
-	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-	#     prefix=${PREFIX} precompile
 	mv ${PREFIX}/share/doc/lepton-eda/examples \
 	    ${PREFIX}/share/examples/lepton-eda
 
