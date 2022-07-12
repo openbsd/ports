@@ -1,8 +1,8 @@
-COMMENT=		high quality print drivers for foomatic and CUPS
+COMMENT=		suite of printer drivers for UNIX
 
 V=			5.3.4
 DISTNAME=		gutenprint-${V}
-REVISION=		1
+REVISION=		2
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -40,11 +40,12 @@ RUN_DEPENDS +=		print/cups-filters
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-cups-ppds-at-top-level \
-			--disable-translated-cups-ppds \
+
+CONFIGURE_ARGS=		--enable-simplified-cups-ppds \
 			--disable-libgutenprintui2 \
 			--with-cups=${LOCALBASE} \
 			--without-gimp2
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
