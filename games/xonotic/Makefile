@@ -6,10 +6,8 @@ COMMENT-server =	fast-paced first person shooter, server
 
 MULTI_PACKAGES =	-main -data -server
 
-V =			0.8.2
-REVISION =		1
+V =			0.8.5
 DISTNAME =		xonotic-${V}
-PKGNAME-main =		xonotic-${V}
 PKGNAME-data =		xonotic-data-${V}
 PKGNAME-server =	xonotic-server-${V}
 EXTRACT_SUFX =		.zip
@@ -17,8 +15,6 @@ EXTRACT_SUFX =		.zip
 CATEGORIES =		games x11
 MASTER_SITES =		https://dl.xonotic.org/
 HOMEPAGE =		https://xonotic.org
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -65,7 +61,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${d}/
 .endfor
 	${INSTALL_DATA} ${WRKDIST}/data/*.pk3 ${PREFIX}/share/xonotic/data/
-	${INSTALL_DATA} ${WRKDIST}/server/{server,help}.cfg \
+	${INSTALL_DATA} ${WRKDIST}/server/server.cfg \
 	    ${PREFIX}/share/examples/xonotic/
 	${INSTALL_DATA} ${WRKDIST}/server/rcon.pl \
 	    ${PREFIX}/share/xonotic/server/

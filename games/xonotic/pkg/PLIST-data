@@ -1,9 +1,9 @@
 @conflict Xonotic-data-*
 share/xonotic/
 share/xonotic/data/
-share/xonotic/data/font-unifont-20170401.pk3
-share/xonotic/data/font-xolonium-20170401.pk3
-share/xonotic/data/xonotic-20170401-data.pk3
-share/xonotic/data/xonotic-20170401-maps.pk3
-share/xonotic/data/xonotic-20170401-music.pk3
-share/xonotic/data/xonotic-20170401-nexcompat.pk3
+share/xonotic/data/font-unifont-20220627.pk3
+share/xonotic/data/font-xolonium-20220627.pk3
+share/xonotic/data/xonotic-20220627-data.pk3
+share/xonotic/data/xonotic-20220627-maps.pk3
+share/xonotic/data/xonotic-20220627-music.pk3
+share/xonotic/data/xonotic-20220627-nexcompat.pk3

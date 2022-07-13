@@ -1,7 +1,6 @@
 @conflict Xonotic-server-*
 @bin bin/xonotic-dedicated
 share/examples/xonotic/
-share/examples/xonotic/help.cfg
 share/examples/xonotic/server.cfg
 share/xonotic/server/
 share/xonotic/server/rcon.pl
