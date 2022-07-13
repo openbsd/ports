@@ -1,3 +1,10 @@
 include/zmusic.h
+lib/cmake/ZMusic/
+lib/cmake/ZMusic/ZMusicConfig.cmake
+lib/cmake/ZMusic/ZMusicConfigVersion.cmake
+lib/cmake/ZMusic/ZMusicFullTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/ZMusic/ZMusicFullTargets.cmake
+lib/cmake/ZMusic/ZMusicLiteTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/ZMusic/ZMusicLiteTargets.cmake
 @lib lib/libzmusic.so.${LIBzmusic_VERSION}
 @lib lib/libzmusiclite.so.${LIBzmusiclite_VERSION}
