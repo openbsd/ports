@@ -9,7 +9,9 @@ GH_PROJECT=	ipmitool
 GH_COMMIT=	4d25a93f4922885c3d557bf4f9a83968ad2edee9
 DISTNAME=	ipmitool-1.8.18pl20220331
 DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
-EXTRACT_ONLY=	${GH_DISTFILE:C/{.*//}
+# XXX can't use GH_DISTFILE since EXTRACT_ONLY expects filenames instead of
+# DISTFILES filename{url}sufx patterns
+EXTRACT_ONLY=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
 
 #V=		1.8.18
 #DISTNAME=	ipmitool-$V
