@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1576 2022/07/06 09:30:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1577 2022/07/13 12:40:51 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1290,7 +1290,7 @@ _warn_checksum += ;echo ">>> MASTER_SITES${_I} not ending in /: ${MASTER_SITES${
 EXTRACT_SUFX ?= .tar.gz
 
 .if !empty(GH_COMMIT)
-GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}}
+GH_DISTFILE = ${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}{${GH_COMMIT}}${EXTRACT_SUFX}
 DISTFILES ?= ${GH_DISTFILE}
 .elif defined(DISTNAME)
 DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
