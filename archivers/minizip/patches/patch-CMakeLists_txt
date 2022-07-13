@@ -3,7 +3,7 @@ install headers in include/minizip to avoid conflicts with libzip
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -81,7 +81,7 @@ include(FeatureSummary)
+@@ -86,7 +86,7 @@ include(cmake/clone-repo.cmake)
  
  set(INSTALL_BIN_DIR ${CMAKE_INSTALL_BINDIR} CACHE PATH "Installation directory for executables")
  set(INSTALL_LIB_DIR ${CMAKE_INSTALL_LIBDIR} CACHE PATH "Installation directory for libraries")
@@ -12,7 +12,7 @@ Index: CMakeLists.txt
  set(INSTALL_MAN_DIR ${CMAKE_INSTALL_MANDIR} CACHE PATH "Installation directory for manual pages")
  
  set(STDLIB_DEF)
-@@ -449,7 +449,6 @@ endif()
+@@ -442,7 +442,6 @@ endif()
  
  # Unix specific
  if(UNIX)
