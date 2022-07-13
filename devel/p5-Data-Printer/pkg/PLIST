@@ -2,14 +2,51 @@ ${P5SITE}/DDP.pm
 ${P5SITE}/Data/
 ${P5SITE}/Data/Printer/
 ${P5SITE}/Data/Printer.pm
+${P5SITE}/Data/Printer/Common.pm
+${P5SITE}/Data/Printer/Config.pm
 ${P5SITE}/Data/Printer/Filter/
 ${P5SITE}/Data/Printer/Filter.pm
+${P5SITE}/Data/Printer/Filter/ARRAY.pm
+${P5SITE}/Data/Printer/Filter/CODE.pm
+${P5SITE}/Data/Printer/Filter/ContentType.pm
 ${P5SITE}/Data/Printer/Filter/DB.pm
 ${P5SITE}/Data/Printer/Filter/DateTime.pm
 ${P5SITE}/Data/Printer/Filter/Digest.pm
+${P5SITE}/Data/Printer/Filter/FORMAT.pm
+${P5SITE}/Data/Printer/Filter/GLOB.pm
+${P5SITE}/Data/Printer/Filter/GenericClass.pm
+${P5SITE}/Data/Printer/Filter/HASH.pm
+${P5SITE}/Data/Printer/Filter/REF.pm
+${P5SITE}/Data/Printer/Filter/Regexp.pm
+${P5SITE}/Data/Printer/Filter/SCALAR.pm
+${P5SITE}/Data/Printer/Filter/VSTRING.pm
+${P5SITE}/Data/Printer/Filter/Web.pm
+${P5SITE}/Data/Printer/Object.pm
+${P5SITE}/Data/Printer/Profile/
+${P5SITE}/Data/Printer/Profile.pm
+${P5SITE}/Data/Printer/Profile/Dumper.pm
+${P5SITE}/Data/Printer/Profile/JSON.pm
+${P5SITE}/Data/Printer/Theme/
+${P5SITE}/Data/Printer/Theme.pm
+${P5SITE}/Data/Printer/Theme/Classic.pm
+${P5SITE}/Data/Printer/Theme/Material.pm
+${P5SITE}/Data/Printer/Theme/Monokai.pm
+${P5SITE}/Data/Printer/Theme/Solarized.pm
 @man man/man3p/DDP.3p
 @man man/man3p/Data::Printer.3p
+@man man/man3p/Data::Printer::Config.3p
 @man man/man3p/Data::Printer::Filter.3p
+@man man/man3p/Data::Printer::Filter::ContentType.3p
 @man man/man3p/Data::Printer::Filter::DB.3p
 @man man/man3p/Data::Printer::Filter::DateTime.3p
 @man man/man3p/Data::Printer::Filter::Digest.3p
+@man man/man3p/Data::Printer::Filter::Web.3p
+@man man/man3p/Data::Printer::Object.3p
+@man man/man3p/Data::Printer::Profile.3p
+@man man/man3p/Data::Printer::Profile::Dumper.3p
+@man man/man3p/Data::Printer::Profile::JSON.3p
+@man man/man3p/Data::Printer::Theme.3p
+@man man/man3p/Data::Printer::Theme::Classic.3p
+@man man/man3p/Data::Printer::Theme::Material.3p
+@man man/man3p/Data::Printer::Theme::Monokai.3p
+@man man/man3p/Data::Printer::Theme::Solarized.3p

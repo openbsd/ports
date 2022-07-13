@@ -1,7 +1,6 @@
 COMMENT =	colored pretty-print of Perl data structures and objects
 
-DISTNAME =	Data-Printer-0.40
-REVISION =	0
+DISTNAME =	Data-Printer-1.000004
 
 CATEGORIES =	devel
 
@@ -9,11 +8,6 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-
-RUN_DEPENDS =		devel/p5-Clone-PP \
-			devel/p5-File-HomeDir>=0.91 \
-			devel/p5-Package-Stash>=0.3 \
-			devel/p5-Sort-Naturally
 
 PKG_ARCH =		*
 
