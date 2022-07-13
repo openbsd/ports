@@ -9,9 +9,10 @@ GH_PROJECT=		gdm
 GH_COMMIT=		864881c9ff9629711d782071fa959f76f2d8c3a7
 EXTRACT_SUFX=		.tar.gz
 
-# bsd.port.mk:1288
-DISTFILES=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}{${GH_COMMIT}${EXTRACT_SUFX}} \
+DISTFILES=		${GH_DISTFILE} \
 			gdm-puffy.png:0
+# XXX can't use GH_DISTFILE since EXTRACT_ONLY expects filenames instead of
+# DISTFILES filename{url}sufx patterns
 EXTRACT_ONLY=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
 
 MASTER_SITES=		${MASTER_SITES_GITHUB}
