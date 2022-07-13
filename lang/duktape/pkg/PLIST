@@ -2,5 +2,7 @@
 include/duk_config.h
 include/duktape.h
 @lib lib/libduktape.so.${LIBduktape_VERSION}
+@lib lib/libduktaped.so.${LIBduktaped_VERSION}
+lib/pkgconfig/duktape.pc
 share/examples/duktape/
 share/examples/duktape/mandel.js
