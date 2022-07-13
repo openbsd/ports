@@ -2,7 +2,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 V =			4.2.11
 DISTNAME =		qdigidoc4_${V}.110-1804
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX =		.tar.xz
 WRKDIST =		${WRKDIR}/qdigidoc4
 PKGNAME =		qdigidoc4-${V}
@@ -15,20 +15,21 @@ HOMEPAGE =		https://www.id.ee/
 # LGPL 2.1+
 PERMIT_PACKAGE =	Yes
 
+DIST_SUBDIR =		${PKGSTEM}
 MASTER_SITES =		https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 MASTER_SITES0 =		https://id.eesti.ee/
-DISTFILES +=		qdigidoc4-{}config.json:0 \
-			qdigidoc4-{}config.pub:0 \
-			qdigidoc4-{}config.rsa:0
+DISTFILES +=		config.json:0 \
+			config.pub:0 \
+			config.rsa:0
 # ${WRKSRC}/common/CMakeLists.txt itself substitutes suffix in CONFIG_URL
-CONFIGURE_ENV +=	CONFIG_URL=file://${DISTDIR}/qdigidoc4-config.json
+CONFIGURE_ENV +=	CONFIG_URL=file://${DISTDIR}/${DIST_SUBDIR}/config.json
 
 MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
-DISTFILES +=		qdigidoc4-{}eu-lotl-pivot-300.xml:1
-CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/qdigidoc4-eu-lotl-pivot-300.xml
+DISTFILES +=		eu-lotl-pivot-300.xml:1
+CONFIGURE_ENV +=	TSL_URL=file://${DISTDIR}/${DIST_SUBDIR}/eu-lotl-pivot-300.xml
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
