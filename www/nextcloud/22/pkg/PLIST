@@ -1,11 +1,14 @@
 @option is-branch
 @conflict nextcloud-*
-@unexec-delete rm -f ${PREFIX}/conf/modules/httpd-nextcloud.conf
-@unexec-delete rm -f ${PREFIX}/conf/modules/apache-nextcloud.conf
+@pkgpath www/nextcloud
+@pkgpath www/nextcloud/20
+@pkgpath www/nextcloud/21
 conf/modules.sample/
 conf/modules.sample/apache-nextcloud.conf.dist
+@sample conf/modules.sample/apache-nextcloud.conf
 nextcloud/
 nextcloud/.htaccess.dist
+@sample nextcloud/.htaccess
 nextcloud/.user.ini
 nextcloud/3rdparty/
 nextcloud/3rdparty/.github/
@@ -8497,7 +8500,13 @@ nextcloud/3rdparty/web-auth/webauthn-lib/src/Util/
 nextcloud/3rdparty/web-auth/webauthn-lib/src/Util/CoseSignatureFixer.php
 nextcloud/AUTHORS
 nextcloud/COPYING
+@mode 0755
+@owner www
+@group www
 nextcloud/apps/
+@mode
+@owner
+@group
 nextcloud/apps/accessibility/
 nextcloud/apps/accessibility/appinfo/
 nextcloud/apps/accessibility/appinfo/info.xml
