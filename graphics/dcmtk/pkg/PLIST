@@ -1,3 +1,4 @@
+@bin bin/cda2dcm
 @bin bin/dcm2json
 @bin bin/dcm2pdf
 @bin bin/dcm2pnm
@@ -12,8 +13,11 @@
 @bin bin/dcmdrle
 @bin bin/dcmdspfn
 @bin bin/dcmdump
+@bin bin/dcmect_tests
+@bin bin/dcmfg_tests
 @bin bin/dcmftest
 @bin bin/dcmgpdir
+@bin bin/dcmicmp
 @bin bin/dcmiod_tests
 @bin bin/dcmj2pnm
 @bin bin/dcml2pnm
@@ -41,6 +45,7 @@
 @bin bin/dcmsend
 @bin bin/dcmsign
 @bin bin/dcmsr_tests
+@bin bin/dcmtls_tests
 @bin bin/dcod2lum
 @bin bin/dconvlum
 @bin bin/drtdump
@@ -58,6 +63,7 @@
 @bin bin/msgserv
 @bin bin/ofstd_tests
 @bin bin/pdf2dcm
+@bin bin/stl2dcm
 @bin bin/storescp
 @bin bin/storescu
 @bin bin/termscu
@@ -84,6 +90,7 @@ include/dcmtk/dcmdata/dcdicent.h
 include/dcmtk/dcmdata/dcdict.h
 include/dcmtk/dcmdata/dcdirrec.h
 include/dcmtk/dcmdata/dcelem.h
+include/dcmtk/dcmdata/dcencdoc.h
 include/dcmtk/dcmdata/dcerror.h
 include/dcmtk/dcmdata/dcfcache.h
 include/dcmtk/dcmdata/dcfilefo.h
@@ -92,6 +99,7 @@ include/dcmtk/dcmdata/dchashdi.h
 include/dcmtk/dcmdata/dcistrma.h
 include/dcmtk/dcmdata/dcistrmb.h
 include/dcmtk/dcmdata/dcistrmf.h
+include/dcmtk/dcmdata/dcistrms.h
 include/dcmtk/dcmdata/dcistrmz.h
 include/dcmtk/dcmdata/dcitem.h
 include/dcmtk/dcmdata/dcjson.h
@@ -103,6 +111,7 @@ include/dcmtk/dcmdata/dcofsetl.h
 include/dcmtk/dcmdata/dcostrma.h
 include/dcmtk/dcmdata/dcostrmb.h
 include/dcmtk/dcmdata/dcostrmf.h
+include/dcmtk/dcmdata/dcostrms.h
 include/dcmtk/dcmdata/dcostrmz.h
 include/dcmtk/dcmdata/dcovlay.h
 include/dcmtk/dcmdata/dcpath.h
@@ -144,12 +153,14 @@ include/dcmtk/dcmdata/dcvrobow.h
 include/dcmtk/dcmdata/dcvrod.h
 include/dcmtk/dcmdata/dcvrof.h
 include/dcmtk/dcmdata/dcvrol.h
+include/dcmtk/dcmdata/dcvrov.h
 include/dcmtk/dcmdata/dcvrpn.h
 include/dcmtk/dcmdata/dcvrpobw.h
 include/dcmtk/dcmdata/dcvrsh.h
 include/dcmtk/dcmdata/dcvrsl.h
 include/dcmtk/dcmdata/dcvrss.h
 include/dcmtk/dcmdata/dcvrst.h
+include/dcmtk/dcmdata/dcvrsv.h
 include/dcmtk/dcmdata/dcvrtm.h
 include/dcmtk/dcmdata/dcvruc.h
 include/dcmtk/dcmdata/dcvrui.h
@@ -158,6 +169,7 @@ include/dcmtk/dcmdata/dcvrulup.h
 include/dcmtk/dcmdata/dcvrur.h
 include/dcmtk/dcmdata/dcvrus.h
 include/dcmtk/dcmdata/dcvrut.h
+include/dcmtk/dcmdata/dcvruv.h
 include/dcmtk/dcmdata/dcwcache.h
 include/dcmtk/dcmdata/dcxfer.h
 include/dcmtk/dcmdata/libi2d/
@@ -168,12 +180,30 @@ include/dcmtk/dcmdata/libi2d/i2dimgs.h
 include/dcmtk/dcmdata/libi2d/i2djpgs.h
 include/dcmtk/dcmdata/libi2d/i2doutpl.h
 include/dcmtk/dcmdata/libi2d/i2dplnsc.h
+include/dcmtk/dcmdata/libi2d/i2dplop.h
 include/dcmtk/dcmdata/libi2d/i2dplsc.h
 include/dcmtk/dcmdata/libi2d/i2dplvlp.h
 include/dcmtk/dcmdata/vrscan.h
+include/dcmtk/dcmdata/xml2dcm.h
+include/dcmtk/dcmect/
+include/dcmtk/dcmect/def.h
+include/dcmtk/dcmect/enhanced_ct.h
+include/dcmtk/dcmect/types.h
 include/dcmtk/dcmfg/
+include/dcmtk/dcmfg/concatenationcreator.h
+include/dcmtk/dcmfg/concatenationloader.h
 include/dcmtk/dcmfg/fg.h
 include/dcmtk/dcmfg/fgbase.h
+include/dcmtk/dcmfg/fgctacquisitiondetails.h
+include/dcmtk/dcmfg/fgctacquisitiontype.h
+include/dcmtk/dcmfg/fgctadditionalxraysource.h
+include/dcmtk/dcmfg/fgctexposure.h
+include/dcmtk/dcmfg/fgctgeometry.h
+include/dcmtk/dcmfg/fgctimageframetype.h
+include/dcmtk/dcmfg/fgctposition.h
+include/dcmtk/dcmfg/fgctreconstruction.h
+include/dcmtk/dcmfg/fgcttabledynamics.h
+include/dcmtk/dcmfg/fgctxraydetails.h
 include/dcmtk/dcmfg/fgdefine.h
 include/dcmtk/dcmfg/fgderimg.h
 include/dcmtk/dcmfg/fgfact.h
@@ -182,6 +212,7 @@ include/dcmtk/dcmfg/fgframeanatomy.h
 include/dcmtk/dcmfg/fgframevoilut.h
 include/dcmtk/dcmfg/fgimagedatatype.h
 include/dcmtk/dcmfg/fginterface.h
+include/dcmtk/dcmfg/fgirradiationeventid.h
 include/dcmtk/dcmfg/fgparametricmapframetype.h
 include/dcmtk/dcmfg/fgpixeltransform.h
 include/dcmtk/dcmfg/fgpixmsr.h
@@ -191,11 +222,13 @@ include/dcmtk/dcmfg/fgplanpo.h
 include/dcmtk/dcmfg/fgplanposvol.h
 include/dcmtk/dcmfg/fgrealworldvaluemapping.h
 include/dcmtk/dcmfg/fgseg.h
+include/dcmtk/dcmfg/fgtemporalposition.h
 include/dcmtk/dcmfg/fgtypes.h
 include/dcmtk/dcmfg/fgusimagedescription.h
 include/dcmtk/dcmfg/stack.h
 include/dcmtk/dcmfg/stackinterface.h
 include/dcmtk/dcmimage/
+include/dcmtk/dcmimage/dcmicmph.h
 include/dcmtk/dcmimage/diargimg.h
 include/dcmtk/dcmimage/diargpxt.h
 include/dcmtk/dcmimage/dicdefin.h
@@ -384,7 +417,9 @@ include/dcmtk/dcmnet/dntypes.h
 include/dcmtk/dcmnet/dstorscp.h
 include/dcmtk/dcmnet/dstorscu.h
 include/dcmtk/dcmnet/dul.h
+include/dcmtk/dcmnet/dulstruc.h
 include/dcmtk/dcmnet/extneg.h
+include/dcmtk/dcmnet/helpers.h
 include/dcmtk/dcmnet/lst.h
 include/dcmtk/dcmnet/scp.h
 include/dcmtk/dcmnet/scpcfg.h
@@ -703,6 +738,7 @@ include/dcmtk/dcmseg/segment.h
 include/dcmtk/dcmseg/segtypes.h
 include/dcmtk/dcmseg/segutils.h
 include/dcmtk/dcmsign/
+include/dcmtk/dcmsign/dcsighlp.h
 include/dcmtk/dcmsign/dcsignat.h
 include/dcmtk/dcmsign/sialgo.h
 include/dcmtk/dcmsign/siautopr.h
@@ -711,19 +747,18 @@ include/dcmtk/dcmsign/sicert.h
 include/dcmtk/dcmsign/sicertvf.h
 include/dcmtk/dcmsign/sicreapr.h
 include/dcmtk/dcmsign/sidefine.h
-include/dcmtk/dcmsign/sidsa.h
+include/dcmtk/dcmsign/siexit.h
 include/dcmtk/dcmsign/simac.h
 include/dcmtk/dcmsign/simaccon.h
-include/dcmtk/dcmsign/simd5.h
+include/dcmtk/dcmsign/simdmac.h
 include/dcmtk/dcmsign/sinullpr.h
+include/dcmtk/dcmsign/sipkey.h
 include/dcmtk/dcmsign/siprivat.h
-include/dcmtk/dcmsign/siripemd.h
-include/dcmtk/dcmsign/sirsa.h
-include/dcmtk/dcmsign/sisha1.h
-include/dcmtk/dcmsign/sisha256.h
-include/dcmtk/dcmsign/sisha384.h
-include/dcmtk/dcmsign/sisha512.h
+include/dcmtk/dcmsign/sipurpos.h
 include/dcmtk/dcmsign/sisprof.h
+include/dcmtk/dcmsign/sisrpr.h
+include/dcmtk/dcmsign/sisrvpr.h
+include/dcmtk/dcmsign/sitsfs.h
 include/dcmtk/dcmsign/sitstamp.h
 include/dcmtk/dcmsign/sitypes.h
 include/dcmtk/dcmsr/
@@ -736,6 +771,7 @@ include/dcmtk/dcmsr/cmr/cid10033e.h
 include/dcmtk/dcmsr/cmr/cid11.h
 include/dcmtk/dcmsr/cmr/cid244.h
 include/dcmtk/dcmsr/cmr/cid244e.h
+include/dcmtk/dcmsr/cmr/cid247.h
 include/dcmtk/dcmsr/cmr/cid29.h
 include/dcmtk/dcmsr/cmr/cid29e.h
 include/dcmtk/dcmsr/cmr/cid4020.h
@@ -767,9 +803,11 @@ include/dcmtk/dcmsr/cmr/tid1501.h
 include/dcmtk/dcmsr/cmr/tid15def.h
 include/dcmtk/dcmsr/cmr/tid1600.h
 include/dcmtk/dcmsr/cmr/tid300.h
+include/dcmtk/dcmsr/cmr/tid4019.h
 include/dcmtk/dcmsr/codes/
 include/dcmtk/dcmsr/codes/dcm.h
 include/dcmtk/dcmsr/codes/ncit.h
+include/dcmtk/dcmsr/codes/sct.h
 include/dcmtk/dcmsr/codes/srt.h
 include/dcmtk/dcmsr/codes/ucum.h
 include/dcmtk/dcmsr/codes/umls.h
@@ -810,6 +848,8 @@ include/dcmtk/dcmsr/dsrmaccc.h
 include/dcmtk/dcmsr/dsrmamcc.h
 include/dcmtk/dcmsr/dsrnumtn.h
 include/dcmtk/dcmsr/dsrnumvl.h
+include/dcmtk/dcmsr/dsrpficc.h
+include/dcmtk/dcmsr/dsrplicc.h
 include/dcmtk/dcmsr/dsrpnmtn.h
 include/dcmtk/dcmsr/dsrposcn.h
 include/dcmtk/dcmsr/dsrprdcc.h
@@ -817,6 +857,7 @@ include/dcmtk/dcmsr/dsrprocc.h
 include/dcmtk/dcmsr/dsrrefin.h
 include/dcmtk/dcmsr/dsrreftn.h
 include/dcmtk/dcmsr/dsrrrdcc.h
+include/dcmtk/dcmsr/dsrrsdcc.h
 include/dcmtk/dcmsr/dsrrtpl.h
 include/dcmtk/dcmsr/dsrsaecc.h
 include/dcmtk/dcmsr/dsrsc3gr.h
@@ -850,6 +891,7 @@ include/dcmtk/dcmsr/dsrxmlc.h
 include/dcmtk/dcmsr/dsrxmld.h
 include/dcmtk/dcmsr/dsrxrdcc.h
 include/dcmtk/dcmtls/
+include/dcmtk/dcmtls/tlsciphr.h
 include/dcmtk/dcmtls/tlscond.h
 include/dcmtk/dcmtls/tlsdefin.h
 include/dcmtk/dcmtls/tlslayer.h
@@ -951,18 +993,29 @@ include/dcmtk/oflog/winconap.h
 include/dcmtk/oflog/windebap.h
 include/dcmtk/ofstd/
 include/dcmtk/ofstd/diag/
+include/dcmtk/ofstd/diag/asincond.def
 include/dcmtk/ofstd/diag/cnvrsn.def
+include/dcmtk/ofstd/diag/constexp.def
+include/dcmtk/ofstd/diag/ignrattr.def
+include/dcmtk/ofstd/diag/memacces.def
 include/dcmtk/ofstd/diag/mmtag.def
 include/dcmtk/ofstd/diag/nsdfti.def
 include/dcmtk/ofstd/diag/overflow.def
+include/dcmtk/ofstd/diag/pessmove.def
 include/dcmtk/ofstd/diag/piof.def
 include/dcmtk/ofstd/diag/pop.def
 include/dcmtk/ofstd/diag/push.def
 include/dcmtk/ofstd/diag/shadow.def
 include/dcmtk/ofstd/diag/signcmp.def
+include/dcmtk/ofstd/diag/slfassov.def
+include/dcmtk/ofstd/diag/stralias.def
+include/dcmtk/ofstd/diag/unreachb.def
+include/dcmtk/ofstd/diag/vsdeclpd.def
+include/dcmtk/ofstd/diag/vsobjdes.def
 include/dcmtk/ofstd/diag/vsprfw.def
 include/dcmtk/ofstd/ofalgo.h
 include/dcmtk/ofstd/ofalign.h
+include/dcmtk/ofstd/ofassert.h
 include/dcmtk/ofstd/ofbmanip.h
 include/dcmtk/ofstd/ofcast.h
 include/dcmtk/ofstd/ofchrenc.h
@@ -975,11 +1028,14 @@ include/dcmtk/ofstd/ofcrc32.h
 include/dcmtk/ofstd/ofdate.h
 include/dcmtk/ofstd/ofdatime.h
 include/dcmtk/ofstd/ofdefine.h
+include/dcmtk/ofstd/ofdeprec.h
 include/dcmtk/ofstd/ofdiag.h
 include/dcmtk/ofstd/oferror.h
 include/dcmtk/ofstd/ofexbl.h
+include/dcmtk/ofstd/ofexit.h
 include/dcmtk/ofstd/ofexport.h
 include/dcmtk/ofstd/offile.h
+include/dcmtk/ofstd/offilsys.h
 include/dcmtk/ofstd/offname.h
 include/dcmtk/ofstd/ofglobal.h
 include/dcmtk/ofstd/ofgrp.h
@@ -991,6 +1047,7 @@ include/dcmtk/ofstd/ofmem.h
 include/dcmtk/ofstd/ofoption.h
 include/dcmtk/ofstd/ofoset.h
 include/dcmtk/ofstd/ofpwd.h
+include/dcmtk/ofstd/ofrand.h
 include/dcmtk/ofstd/ofset.h
 include/dcmtk/ofstd/ofsetit.h
 include/dcmtk/ofstd/ofsockad.h
@@ -999,6 +1056,7 @@ include/dcmtk/ofstd/ofstd.h
 include/dcmtk/ofstd/ofstdinc.h
 include/dcmtk/ofstd/ofstream.h
 include/dcmtk/ofstd/ofstring.h
+include/dcmtk/ofstd/ofstrutl.h
 include/dcmtk/ofstd/oftempf.h
 include/dcmtk/ofstd/oftest.h
 include/dcmtk/ofstd/ofthread.h
@@ -1024,10 +1082,10 @@ lib/cmake/dcmtk/DCMTKConfig.cmake
 lib/cmake/dcmtk/DCMTKConfigVersion.cmake
 lib/cmake/dcmtk/DCMTKTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/dcmtk/DCMTKTargets.cmake
-@lib lib/libcharls.so.${LIBcharls_VERSION}
 @lib lib/libcmr.so.${LIBcmr_VERSION}
 @lib lib/libdcmdata.so.${LIBdcmdata_VERSION}
 @lib lib/libdcmdsig.so.${LIBdcmdsig_VERSION}
+@lib lib/libdcmect.so.${LIBdcmect_VERSION}
 @lib lib/libdcmfg.so.${LIBdcmfg_VERSION}
 @lib lib/libdcmimage.so.${LIBdcmimage_VERSION}
 @lib lib/libdcmimgle.so.${LIBdcmimgle_VERSION}
@@ -1041,6 +1099,7 @@ lib/cmake/dcmtk/DCMTKTargets.cmake
 @lib lib/libdcmrt.so.${LIBdcmrt_VERSION}
 @lib lib/libdcmseg.so.${LIBdcmseg_VERSION}
 @lib lib/libdcmsr.so.${LIBdcmsr_VERSION}
+@lib lib/libdcmtkcharls.so.${LIBdcmtkcharls_VERSION}
 @lib lib/libdcmtls.so.${LIBdcmtls_VERSION}
 @lib lib/libdcmtract.so.${LIBdcmtract_VERSION}
 @lib lib/libdcmwlm.so.${LIBdcmwlm_VERSION}
@@ -1050,6 +1109,8 @@ lib/cmake/dcmtk/DCMTKTargets.cmake
 @lib lib/libijg8.so.${LIBijg8_VERSION}
 @lib lib/liboflog.so.${LIBoflog_VERSION}
 @lib lib/libofstd.so.${LIBofstd_VERSION}
+lib/pkgconfig/dcmtk.pc
+@man man/man1/cda2dcm.1
 @man man/man1/dcm2json.1
 @man man/man1/dcm2pdf.1
 @man man/man1/dcm2pnm.1
@@ -1065,6 +1126,7 @@ lib/cmake/dcmtk/DCMTKTargets.cmake
 @man man/man1/dcmdump.1
 @man man/man1/dcmftest.1
 @man man/man1/dcmgpdir.1
+@man man/man1/dcmicmp.1
 @man man/man1/dcmj2pnm.1
 @man man/man1/dcml2pnm.1
 @man man/man1/dcmmkcrv.1
@@ -1100,6 +1162,7 @@ lib/cmake/dcmtk/DCMTKTargets.cmake
 @man man/man1/img2dcm.1
 @man man/man1/movescu.1
 @man man/man1/pdf2dcm.1
+@man man/man1/stl2dcm.1
 @man man/man1/storescp.1
 @man man/man1/storescu.1
 @man man/man1/termscu.1
@@ -1154,7 +1217,6 @@ share/dcmtk/wlistqry/wlistqry8.dump
 share/dcmtk/wlistqry/wlistqry9.dump
 share/doc/dcmtk/
 share/doc/dcmtk/ANNOUNCE
-share/doc/dcmtk/CHANGES
 share/doc/dcmtk/CHANGES.301
 share/doc/dcmtk/CHANGES.302
 share/doc/dcmtk/CHANGES.310
@@ -1175,13 +1237,16 @@ share/doc/dcmtk/CHANGES.354
 share/doc/dcmtk/CHANGES.360
 share/doc/dcmtk/CHANGES.362
 share/doc/dcmtk/CHANGES.363
+share/doc/dcmtk/CHANGES.364
+share/doc/dcmtk/CHANGES.365
+share/doc/dcmtk/CHANGES.366
+share/doc/dcmtk/CHANGES.367
 share/doc/dcmtk/COPYRIGHT
 share/doc/dcmtk/CREDITS
 share/doc/dcmtk/FAQ
 share/doc/dcmtk/HISTORY
 share/doc/dcmtk/VERSION
 share/doc/dcmtk/asconfig.txt
-share/doc/dcmtk/certstor.txt
 share/doc/dcmtk/ciphers.txt
 share/doc/dcmtk/config.txt
 share/doc/dcmtk/datadict.txt
@@ -1193,6 +1258,7 @@ share/doc/dcmtk/macros.txt
 share/doc/dcmtk/modules.txt
 share/doc/dcmtk/randseed.txt
 share/doc/dcmtk/testing.txt
+share/doc/dcmtk/wlmsetup.txt
 share/examples/dcmtk/
 @sample ${SYSCONFDIR}/dcmtk/
 share/examples/dcmtk/dcmpstat.cfg
