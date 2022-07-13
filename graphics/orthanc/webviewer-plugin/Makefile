@@ -1,8 +1,8 @@
 COMMENT =		web viewer plugin for Orthanc
 
-VERSION =		2.3
+VERSION =		2.8
+
 PLUGIN =		WebViewer
-REVISION =		3
 
 PLUGIN_3RDPARTY =	cornerstone-0.11.0.zip \
 			jquery-ui-1.11.3.zip \
@@ -13,34 +13,45 @@ PLUGIN_3RDPARTY =	cornerstone-0.11.0.zip \
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
-DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
 
+DISTFILES +=		${PLUGIN_3RDPARTY:C/$/:1/}
 MASTER_SITES1 =		https://www.orthanc-server.com/downloads/third-party/WebViewer/
 
+DISTFILES +=		${FRAMEWORK_DISTFILE:C/$/:2/}
+MASTER_SITES2 =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
+
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt gdcmCommon
-WANTLIB += gdcmDICT gdcmDSED gdcmIOD gdcmMSFF gtest jsoncpp m
-WANTLIB += sqlite3
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt jsoncpp
+WANTLIB += m sqlite3 uuid
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-BUILD_DEPENDS =		graphics/orthanc/server
+BUILD_DEPENDS =		graphics/orthanc/server \
+			devel/gtest
+
 RUN_DEPENDS =		graphics/orthanc/server
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \
-			devel/gtest \
 			devel/jsoncpp \
-			graphics/gdcm
+			sysutils/e2fsprogs
 
-CFLAGS=			-I${LOCALBASE}/include -pthread
-CXXFLAGS=		-I${LOCALBASE}/include -pthread
-MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib -luuid
+TEST_DEPENDS =		devel/gtest
+
+CONFIGURE_ARGS =	-DALLOW_DOWNLOADS=OFF \
+			-DUSE_SYSTEM_UUID=ON
+
+CONFIGURE_ARGS +=	-DORTHANC_FRAMEWORK_ROOT="${WRKSRC}/ThirdPartyDownloads/Orthanc-${FRAMEWORK_VERSION}/OrthancFramework/Sources" \
+			-DORTHANC_FRAMEWORK_SOURCE=path
 
 post-extract:
 	mkdir ${WRKSRC}/ThirdPartyDownloads/
 .for p in ${PLUGIN_3RDPARTY}
 	cp ${DISTDIR}/$p ${WRKSRC}/ThirdPartyDownloads/
 .endfor
+	tar -xzf ${DISTDIR}/${FRAMEWORK_DISTFILE} -C ${WRKSRC}/ThirdPartyDownloads/
+
+do-test:
+	cd ${WRKBUILD} && ./UnitTests
 
 .include <bsd.port.mk>

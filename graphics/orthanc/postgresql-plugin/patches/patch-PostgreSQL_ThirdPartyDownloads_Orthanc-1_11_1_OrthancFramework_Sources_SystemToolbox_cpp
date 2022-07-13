@@ -1,0 +1,29 @@
+Index: PostgreSQL/ThirdPartyDownloads/Orthanc-1.11.1/OrthancFramework/Sources/SystemToolbox.cpp
+--- PostgreSQL/ThirdPartyDownloads/Orthanc-1.11.1/OrthancFramework/Sources/SystemToolbox.cpp.orig
++++ PostgreSQL/ThirdPartyDownloads/Orthanc-1.11.1/OrthancFramework/Sources/SystemToolbox.cpp
+@@ -47,14 +47,14 @@
+ #endif
+ 
+ 
+-#if (defined(__APPLE__) && defined(__MACH__)) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__)
++#if (defined(__APPLE__) && defined(__MACH__)) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <net/if_dl.h>     // For GetMacAddresses()
+ #  include <net/if_types.h>  // For GetMacAddresses()
+ #  include <sys/sysctl.h>    // For GetMacAddresses()
+ #endif
+ 
+ 
+-#if defined(__linux__) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <limits.h>        // PATH_MAX
+ #  include <signal.h>
+ #  include <unistd.h>
+@@ -1095,7 +1095,7 @@ namespace Orthanc
+ 
+       while (!interfaces.IsDone())
+       {
+-#if (defined(__APPLE__) && defined(__MACH__)) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__)
++#if (defined(__APPLE__) && defined(__MACH__)) || defined(__FreeBSD_kernel__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+         int mib[6];
+         mib[0] = CTL_NET;
+         mib[1] = AF_ROUTE;

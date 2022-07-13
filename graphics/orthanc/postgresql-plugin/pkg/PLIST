@@ -1,2 +1,2 @@
-libexec/orthanc/plugins/libOrthancPostgreSQLIndex.so
-libexec/orthanc/plugins/libOrthancPostgreSQLStorage.so
+@so libexec/orthanc/plugins/libOrthancPostgreSQLIndex.so
+@so libexec/orthanc/plugins/libOrthancPostgreSQLStorage.so

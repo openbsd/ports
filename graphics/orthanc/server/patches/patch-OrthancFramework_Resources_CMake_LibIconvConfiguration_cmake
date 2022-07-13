@@ -1,0 +1,20 @@
+Index: OrthancFramework/Resources/CMake/LibIconvConfiguration.cmake
+--- OrthancFramework/Resources/CMake/LibIconvConfiguration.cmake.orig
++++ OrthancFramework/Resources/CMake/LibIconvConfiguration.cmake
+@@ -97,15 +97,10 @@ else() 
+ 
+   # Check whether the support for libiconv is bundled within the
+   # standard C library
+-  CHECK_FUNCTION_EXISTS(iconv_open HAVE_ICONV_LIB)
++  CHECK_FUNCTION_EXISTS(libiconv_open HAVE_ICONV_LIB)
+   if (NOT HAVE_ICONV_LIB)
+     # No builtin support for libiconv, try and find an external library.
+     # Open question: Does this make sense on any platform?
+-    CHECK_LIBRARY_EXISTS(iconv iconv_open "" HAVE_ICONV_LIB_2)
+-    if (NOT HAVE_ICONV_LIB_2)
+-      message(FATAL_ERROR "Please install the libiconv-dev package")
+-    else()
+       link_libraries(iconv)
+-    endif()
+   endif()
+ endif()

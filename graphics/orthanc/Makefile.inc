@@ -9,6 +9,9 @@ PERMIT_PACKAGE =	Yes
 
 BUILD_DEPENDS +=	archivers/unzip
 
+FRAMEWORK_VERSION ?=	1.11.1
+FRAMEWORK_DISTFILE ?=	Orthanc-${FRAMEWORK_VERSION}.tar.gz
+
 .if defined(PLUGIN)
 DISTNAME ?=		Orthanc${PLUGIN}-${VERSION}
 PKGNAME ?=		orthanc-plugin-${PLUGIN:L}-${VERSION}

@@ -1,0 +1,33 @@
+Index: OrthancServer/CMakeLists.txt
+--- OrthancServer/CMakeLists.txt.orig
++++ OrthancServer/CMakeLists.txt
+@@ -482,8 +482,7 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
+ 
+   set_target_properties(
+     ServeFolders PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
++    LINK_FLAGS "-Wl,-soname,libServeFolders.so"
+     )
+ 
+   install(
+@@ -525,8 +524,7 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
+ 
+   set_target_properties(
+     ModalityWorklists PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
++    LINK_FLAGS "-Wl,-soname,libModalityWorklists.so"
+     )
+ 
+   install(
+@@ -715,8 +713,7 @@ if (ENABLE_PLUGINS AND BUILD_HOUSEKEEPER)
+   
+   set_target_properties(
+     Housekeeper PROPERTIES 
+-    VERSION ${ORTHANC_VERSION} 
+-    SOVERSION ${ORTHANC_VERSION}
++    LINK_FLAGS "-Wl,-soname,libHousekeeper.so"
+     )
+   
+   install(

@@ -1,2 +1,4 @@
-SHA256 (OrthancPostgreSQL-2.0.tar.gz) = 2e90sBasiejimKtuXpiptIMcGYN34lTCMTCcEvUsN40=
-SIZE (OrthancPostgreSQL-2.0.tar.gz) = 99020
+SHA256 (Orthanc-1.11.1.tar.gz) = pjStyfbdCnTrrrQVZXtfPVGCK0+zR2QdxE87+LW1bbU=
+SHA256 (OrthancPostgreSQL-4.0.tar.gz) = pQSe2KXWu4tlKWNs8dn2MdG2H24Lv9xqzK5Fre1CusU=
+SIZE (Orthanc-1.11.1.tar.gz) = 1910916
+SIZE (OrthancPostgreSQL-4.0.tar.gz) = 318047

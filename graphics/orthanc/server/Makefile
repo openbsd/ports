@@ -1,25 +1,20 @@
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
-DISTNAME =		Orthanc-1.3.0
+DISTNAME =		Orthanc-1.11.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		7
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}:0 \
-			mongoose-3.8.tgz:1
-
-MASTER_SITES0 =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
-MASTER_SITES1 =		https://www.montefiore.ulg.ac.be/~jodogne/Orthanc/ThirdPartyDownloads/
+MASTER_SITES =		https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_locale-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c charls
-WANTLIB += charset cmr crypto curl dcmdata dcmdsig dcmfg dcmimage
-WANTLIB += dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap dcmpstat
-WANTLIB += dcmqrdb dcmrt dcmseg dcmsr dcmtls dcmtract dcmwlm gtest
-WANTLIB += i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp lua5.1 m oflog
-WANTLIB += ofstd png pugixml sqlite3 ssl tiff uuid xml2 z
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_locale-mt boost_regex-mt boost_system-mt boost_thread-mt
+WANTLIB += c civetweb cmr crypto curl dcmdata dcmdsig dcmect dcmfg
+WANTLIB += dcmimage dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap
+WANTLIB += dcmpstat dcmqrdb dcmrt dcmseg dcmsr dcmtkcharls dcmtls
+WANTLIB += dcmtract dcmwlm i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp
+WANTLIB += lua5.1 m oflog ofstd png pugixml sqlite3 ssl uuid z
 
 # c++11
 COMPILER =		base-clang ports-clang ports-gcc
@@ -27,53 +22,57 @@ COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/lua \
 			lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		devel/doxygen
+BUILD_DEPENDS =		devel/doxygen \
+			devel/gtest \
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \
-			devel/gtest \
 			devel/jsoncpp \
-			graphics/dcmtk>=3.6.2 \
+			graphics/dcmtk \
 			net/curl \
 			sysutils/e2fsprogs \
-			textproc/pugixml
+			textproc/pugixml \
+			www/civetweb
 
-CONFIGURE_ARGS +=	-DUSE_SYSTEM_MONGOOSE=Off \
-			-DORTHANC_BUILD_UNIT_TESTS=Off
+TEST_DEPENDS =		devel/gtest
 
-# override these as otherwise the tests from Compiler.cmake won't pick them up yet
-CFLAGS=			-I${LOCALBASE}/include -pthread
-CXXFLAGS=		-I${LOCALBASE}/include -pthread
-MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib -luuid
+CONFIGURE_ARGS +=	-DUSE_SYSTEM_BOOST=ON \
+			-DUSE_SYSTEM_CIVETWEB=ON \
+			-DUSE_SYSTEM_DCMTK=ON \
+			-DUSE_SYSTEM_GOOGLE_TEST=ON \
+			-DUSE_SYSTEM_JSONCPP=ON \
+			-DUSE_SYSTEM_LIBICONV=ON \
+			-DUSE_SYSTEM_LIBJPEG=ON \
+			-DUSE_SYSTEM_LIBPNG=ON \
+			-DUSE_SYSTEM_LUA=ON \
+			-DUSE_SYSTEM_OPENSSL=ON \
+			-DUSE_SYSTEM_PUGIXML=ON \
+			-DUSE_SYSTEM_SQLITE=ON \
+			-DUSE_SYSTEM_UUID=ON \
+			-DUSE_SYSTEM_ZLIB=ON
 
-# CMAKE_COMPILER_IS_GNUCXX isn't set for clang as we invoke the compiler
-# as 'c++' and not 'clang++' (ref: CMakeDetermineCXXCompiler.cmake)
-CONFIGURE_ARGS +=	-DCMAKE_COMPILER_IS_GNUCXX=Yes
+CONFIGURE_ARGS +=	-DBUILD_CONNECTIVITY_CHECKS=OFF \
+			-DBUILD_DELAYED_DELETION=OFF \
+			-DUNIT_TESTS_WITH_HTTP_CONNEXIONS=OFF
 
-SUBST_VARS +=		VARBASE
 
-FIX_CRLF_FILES =	CMakeLists.txt
-
-# Drop mongoose 3.8 inplace:
-# https://www.mail-archive.com/mongoose-users@googlegroups.com/msg00625.html
-post-extract:
-	mkdir ${WRKSRC}/ThirdPartyDownloads/
-	cp ${DISTDIR}/mongoose-3.8.tgz ${WRKSRC}/ThirdPartyDownloads/
+WRKSRC =		${WRKDIR}/${DISTNAME}/OrthancServer
 
 pre-configure:
 	sed -i 's,share/orthanc/plugins,libexec/orthanc/plugins,g' \
 		${WRKSRC}/CMakeLists.txt \
 		${WRKSRC}/Plugins/Samples/ModalityWorklists/CMakeLists.txt \
 		${WRKSRC}/Plugins/Samples/ServeFolders/CMakeLists.txt
-	${SUBST_CMD} ${WRKSRC}/Resources/CMake/Compiler.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/orthanc/
 	${SUBST_CMD} -c ${WRKSRC}/Resources/Configuration.json \
 		${PREFIX}/share/examples/orthanc/Configuration.json
+
+do-test:
+	cd ${WRKBUILD} && ./UnitTests
 
 .include <bsd.port.mk>

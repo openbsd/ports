@@ -1,1 +1,1 @@
-libexec/orthanc/plugins/libOrthancWebViewer.so
+@so libexec/orthanc/plugins/libOrthancWebViewer.so
