@@ -1,23 +1,9 @@
-From a6bedfd09b7bba753de7a107dc471da0db801858 Mon Sep 17 00:00:00 2001
-From: Xi Ruoyao <xry111@mengyan1223.wang>
-Date: Thu, 27 Jan 2022 10:16:32 +0000
-Subject: [PATCH] jsauthority: port to mozjs-91
-
 Fix check for whether setnetgrent has a return value
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -133,7 +133,7 @@ expat_dep = dependency('expat')
- assert(cc.has_header('expat.h', dependencies: expat_dep), 'Can\'t find expat.h. Please install expat.')
- assert(cc.has_function('XML_ParserCreate', dependencies: expat_dep), 'Can\'t find expat library. Please install expat.')
- 
--mozjs_dep = dependency('mozjs-78')
-+mozjs_dep = dependency('mozjs-91')
- 
- dbus_dep = dependency('dbus-1', required: false)
- dbus_policydir = pk_prefix / pk_datadir / 'dbus-1/system.d'
-@@ -163,8 +163,11 @@ setnetgrent_return_src = '''
+@@ -178,8 +178,11 @@ setnetgrent_return_src = '''
    };
  '''
  
