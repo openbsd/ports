@@ -3115,6 +3115,7 @@ go/src/cmd/go/testdata/script/mod_domain_root.txt
 go/src/cmd/go/testdata/script/mod_dot.txt
 go/src/cmd/go/testdata/script/mod_download.txt
 go/src/cmd/go/testdata/script/mod_download_concurrent_read.txt
+go/src/cmd/go/testdata/script/mod_download_git_decorate_full.txt
 go/src/cmd/go/testdata/script/mod_download_hash.txt
 go/src/cmd/go/testdata/script/mod_download_insecure_redirect.txt
 go/src/cmd/go/testdata/script/mod_download_json.txt
@@ -12045,7 +12046,13 @@ go/test/fixedbugs/issue5291.dir/
 go/test/fixedbugs/issue5291.dir/pkg1.go
 go/test/fixedbugs/issue5291.dir/prog.go
 go/test/fixedbugs/issue5291.go
+go/test/fixedbugs/issue53137.dir/
+go/test/fixedbugs/issue53137.dir/main.go
+go/test/fixedbugs/issue53137.go
+go/test/fixedbugs/issue53454.go
 go/test/fixedbugs/issue5358.go
+go/test/fixedbugs/issue53600.go
+go/test/fixedbugs/issue53600.out
 go/test/fixedbugs/issue5373.go
 go/test/fixedbugs/issue5470.dir/
 go/test/fixedbugs/issue5470.dir/a.go
@@ -12976,6 +12983,9 @@ go/test/typeparam/issue52117.dir/b.go
 go/test/typeparam/issue52117.go
 go/test/typeparam/issue52228.go
 go/test/typeparam/issue52241.go
+go/test/typeparam/issue53309.go
+go/test/typeparam/issue53419.go
+go/test/typeparam/issue53477.go
 go/test/typeparam/list.go
 go/test/typeparam/list2.go
 go/test/typeparam/listimp.dir/
