@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1577 2022/07/13 12:40:51 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1578 2022/07/13 12:54:26 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -612,8 +612,9 @@ GH_ACCOUNT ?=
 GH_PROJECT ?=
 
 .if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
-DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}
-GH_DISTFILE = ${GH_PROJECT}-${GH_TAGNAME:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}${EXTRACT_SUFX}
+_GH_TAG_DIST = ${GH_TAGNAME:C/^(v|V|ver|[Rr]el|[Rr]elease)[-._]?([0-9])/\2/}
+DISTNAME ?=   ${GH_PROJECT}-${_GH_TAG_DIST}
+GH_DISTFILE = ${GH_PROJECT}-${_GH_TAG_DIST}${EXTRACT_SUFX}
 .endif
 
 PKGNAME ?= ${DISTNAME}
