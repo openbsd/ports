@@ -1,7 +1,6 @@
 COMMENT =	software version control visualization tool
 
-DISTNAME =	gource-0.51
-REVISION =	0
+DISTNAME =	gource-0.53
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.io/
 
@@ -17,12 +16,12 @@ COMPILER =		base-clang ports-gcc
 
 
 WANTLIB += GL GLEW GLU SDL2 SDL2_image boost_filesystem boost_system
-WANTLIB += c freetype m pcre png pthread z ${COMPILER_LIBCXX}
+WANTLIB += c freetype m pcre2-8 png pthread z ${COMPILER_LIBCXX}
 WANTLIB += X11 Xext Xi Xmu
 
 BUILD_DEPENDS =		graphics/glm
 LIB_DEPENDS =           devel/boost \
-			devel/pcre \
+			devel/pcre2 \
 			devel/sdl2-image \
 			graphics/glew
 
