@@ -1,11 +1,9 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_EGG_VERSION =	5.8
+MODPY_EGG_VERSION =	6.2
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-
-REVISION =		1
 
 HOMEPAGE =		https://www.mercurial-scm.org
 
@@ -36,8 +34,7 @@ RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 
 FILES =			hgeditor hgweb.cgi
 
-CONTRIBFILES =		bash_completion mercurial.el \
-			tcsh_completion zsh_completion \
+CONTRIBFILES =		mercurial.el tcsh_completion \
 			mq.el
 
 CONTRIBDIRS =		hgsh vim
