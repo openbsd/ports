@@ -79,7 +79,11 @@ include/arm_compute/core/Window.h
 include/arm_compute/core/Window.inl
 include/arm_compute/core/WindowIterator.h
 include/arm_compute/core/experimental/
+include/arm_compute/core/experimental/ClWorkload.h
+include/arm_compute/core/experimental/DependencyGraph.h
 include/arm_compute/core/experimental/IPostOp.h
+include/arm_compute/core/experimental/IWorkload.h
+include/arm_compute/core/experimental/OperatorGraph.h
 include/arm_compute/core/experimental/PostOps.h
 include/arm_compute/core/experimental/Types.h
 include/arm_compute/core/utils/
@@ -316,6 +320,7 @@ include/arm_compute/runtime/CL/functions/CLPReluLayer.h
 include/arm_compute/runtime/CL/functions/CLPadLayer.h
 include/arm_compute/runtime/CL/functions/CLPermute.h
 include/arm_compute/runtime/CL/functions/CLPixelWiseMultiplication.h
+include/arm_compute/runtime/CL/functions/CLPooling3dLayer.h
 include/arm_compute/runtime/CL/functions/CLPoolingLayer.h
 include/arm_compute/runtime/CL/functions/CLPriorBoxLayer.h
 include/arm_compute/runtime/CL/functions/CLQLSTMLayer.h
@@ -442,6 +447,7 @@ include/arm_compute/runtime/NEON/functions/NEPReluLayer.h
 include/arm_compute/runtime/NEON/functions/NEPadLayer.h
 include/arm_compute/runtime/NEON/functions/NEPermute.h
 include/arm_compute/runtime/NEON/functions/NEPixelWiseMultiplication.h
+include/arm_compute/runtime/NEON/functions/NEPooling3dLayer.h
 include/arm_compute/runtime/NEON/functions/NEPoolingLayer.h
 include/arm_compute/runtime/NEON/functions/NEPriorBoxLayer.h
 include/arm_compute/runtime/NEON/functions/NEQLSTMLayer.h
@@ -486,6 +492,7 @@ include/arm_compute/runtime/Types.h
 include/arm_compute/runtime/common/
 include/arm_compute/runtime/common/LSTMParams.h
 include/arm_compute/runtime/experimental/
+include/arm_compute/runtime/experimental/ClCompositeOperator.h
 include/arm_compute/runtime/experimental/Types.h
 include/half/
 include/half/half.hpp
@@ -497,6 +504,7 @@ include/support/
 include/support/Bfloat16.h
 include/support/CRTP.h
 include/support/Cast.h
+include/support/DeepCopy.h
 include/support/Half.h
 include/support/ICloneable.h
 include/support/Iterable.h
@@ -536,6 +544,9 @@ include/utils/command_line/ToggleOption.h
 share/examples/arm-compute-library/
 share/examples/arm-compute-library/cl_cache.cpp
 share/examples/arm-compute-library/cl_sgemm.cpp
+share/examples/arm-compute-library/dynamic_fusion/
+share/examples/arm-compute-library/dynamic_fusion/cl_fused_conv2d_elementwise_add.cpp
+share/examples/arm-compute-library/dynamic_fusion/cl_ref_conv2d_elementwise_add.cpp
 share/examples/arm-compute-library/gemm_tuner/
 share/examples/arm-compute-library/gemm_tuner/CommonGemmExampleOptions.cpp
 share/examples/arm-compute-library/gemm_tuner/CommonGemmExampleOptions.h

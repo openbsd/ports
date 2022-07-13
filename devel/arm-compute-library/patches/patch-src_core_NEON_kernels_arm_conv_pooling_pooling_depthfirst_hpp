@@ -1,0 +1,13 @@
+Index: src/core/NEON/kernels/arm_conv/pooling/pooling_depthfirst.hpp
+--- src/core/NEON/kernels/arm_conv/pooling/pooling_depthfirst.hpp.orig
++++ src/core/NEON/kernels/arm_conv/pooling/pooling_depthfirst.hpp
+@@ -28,7 +28,9 @@
+ #include "src/core/NEON/kernels/arm_conv/addressing.hpp"
+ #include "utils.hpp"
+ 
++#if !defined(_WIN64) && !defined(__OpenBSD__)
+ #include <alloca.h>
++#endif /* !defined(_WIN64) && !defined(__OpenBSD__) */
+ #include <limits>
+ 
+ namespace arm_conv {
