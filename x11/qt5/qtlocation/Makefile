@@ -1,9 +1,6 @@
 QT5NAME =		QtLocation
 COMMENT-main =		Qt5 geo positioning APIs
 
-REVISION-main =		1
-REVISION-examples =	0
-
 SHARED_LIBS +=  Qt5Location               2.0 # 5.9
 SHARED_LIBS +=  Qt5Positioning            3.0 # 5.9
 SHARED_LIBS +=  Qt5PositioningQuick       0.0 # 5.13

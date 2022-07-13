@@ -1,9 +1,6 @@
 QT5NAME =		QtSVG
 COMMENT-main =		SVG support for Qt5
 
-REVISION-main =		0
-REVISION-examples =	0
-
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS =   Qt5Svg                    3.0 # 5.9

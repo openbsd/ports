@@ -19,7 +19,7 @@ LIB_DEPENDS =	wayland/wayland \
 BUILD_DEPENDS =	wayland/wayland-protocols \
 		graphics/vulkan-headers
 
-MODQMAKE_ARGS += QMAKE_WAYLAND_SCANNER=${PREFIX}/bin/wayland-scanner
+MODQMAKE_ARGS +=	QMAKE_WAYLAND_SCANNER=${PREFIX}/bin/wayland-scanner
 MODQMAKE_RECURSIVE =	No
 
 pre-configure:

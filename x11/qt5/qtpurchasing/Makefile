@@ -1,9 +1,6 @@
 QT5NAME =		QtPurchasing
 COMMENT-main =		in-app purchases in Qt5 and Qt5 Quick applications
 
-REVISION-main =		0
-REVISION-examples =	0
-
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5Purchasing                 1.0 # 5.9

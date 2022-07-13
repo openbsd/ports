@@ -1,9 +1,6 @@
 QT5NAME =		QtSensors
 COMMENT-main =		Qt5 hardware sensors support
 
-REVISION-main =		0
-REVISION-examples =	0
-
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5Sensors                 3.0 # 5.9

@@ -7,7 +7,7 @@ DPB_PROPERTIES =	parallel
 
 MULTI_PACKAGES =	-main -examples -webview
 
-SHARED_LIBS +=  Qt5Designer             3.0 # 5.9
+SHARED_LIBS +=  Qt5Designer             3.1 # 5.9
 SHARED_LIBS +=  Qt5DesignerComponents   3.0 # 5.9
 SHARED_LIBS +=  Qt5Help                 3.0 # 5.9
 

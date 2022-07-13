@@ -1,9 +1,6 @@
 QT5NAME =		QtWebSockets
 COMMENT-main =		Qt5 implementation of WebSocket protocol
 
-REVISION-main =		0
-REVISION-examples =	0
-
 SHARED_LIBS +=  Qt5WebSockets                3.0 # 5.9
 
 MULTI_PACKAGES =	-main -examples

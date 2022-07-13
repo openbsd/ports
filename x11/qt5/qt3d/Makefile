@@ -1,9 +1,6 @@
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
 
-REVISION-main =		0
-REVISION-examples =	0
-
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt53DCore                    2.0 # 5.9
@@ -12,7 +9,7 @@ SHARED_LIBS +=  Qt53DLogic                   2.0 # 5.9
 SHARED_LIBS +=  Qt53DQuick                   2.0 # 5.9
 SHARED_LIBS +=  Qt53DQuickInput              2.0 # 5.9
 SHARED_LIBS +=  Qt53DQuickRender             2.0 # 5.9
-SHARED_LIBS +=  Qt53DRender                  2.0 # 5.9
+SHARED_LIBS +=  Qt53DRender                  2.1 # 5.9
 SHARED_LIBS +=  Qt53DAnimation               1.0 # 5.9
 SHARED_LIBS +=  Qt53DExtras                  1.0 # 5.9
 SHARED_LIBS +=  Qt53DQuickAnimation          1.0 # 5.9

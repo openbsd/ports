@@ -1,9 +1,6 @@
 QT5NAME =		QtScxml
 COMMENT-main =		create state machines from SCXML files
 
-REVISION-main =		0
-REVISION-examples =	0
-
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5Scxml                1.0 # 5.9

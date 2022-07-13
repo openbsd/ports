@@ -1,8 +1,6 @@
 QT5NAME =		QtVirtualKeyboard
 COMMENT-main =		Qt5 virtual keyboard plugin
 
-REVISION-examples =	0
-
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5HunspellInputMethod    0.0 # 5.13

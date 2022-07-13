@@ -816,6 +816,7 @@ lib/pkgconfig/Qt5QuickWidgets.pc
 @bin lib/qt5/bin/qmlprofiler
 @bin lib/qt5/bin/qmlscene
 @bin lib/qt5/bin/qmltestrunner
+@bin lib/qt5/bin/qmltime
 @bin lib/qt5/bin/qmltyperegistrar
 lib/qt5/cmake/Qt5PacketProtocol/
 lib/qt5/cmake/Qt5PacketProtocol/Qt5PacketProtocolConfig.cmake

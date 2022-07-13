@@ -11,7 +11,14 @@ COMMENT =		Chromium-based web engine for Qt5
 
 # Many parts are copied from www/chromium port, so keep in sync
 QT5NAME =		QtWebEngine
-REVISION =		5
+VERSION =		${QT5_WEBENGINE_VERSION}
+DIST_VERSION =		${QT5_WEBENGINE_VERSION}
+DISTNAME =		${QT5NAME:L}-everywhere-src-${DIST_VERSION}
+PKGNAME ?=		${DISTNAME:C/-everywhere-src//:C/-${DIST_VERSION}/-${VERSION}/}
+REVISION =		6
+
+MASTER_SITES ?=		https://download.qt.io/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/ \
+			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_WEBENGINE_VERSION:R}/${QT5_WEBENGINE_VERSION}/submodules/
 
 CATEGORIES =		www
 

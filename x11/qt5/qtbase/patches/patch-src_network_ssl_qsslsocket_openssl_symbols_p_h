@@ -54,21 +54,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  int q_SSL_session_reused(SSL *a);
  unsigned long q_SSL_CTX_set_options(SSL_CTX *ctx, unsigned long op);
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-@@ -269,8 +295,13 @@ int q_DH_bits(DH *dh);
- # define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS \
-                                                        | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
- 
-+#ifndef LIBRESSL_VERSION_NUMBER
- #define q_SKM_sk_num(type, st) ((int (*)(const STACK_OF(type) *))q_OPENSSL_sk_num)(st)
- #define q_SKM_sk_value(type, st,i) ((type * (*)(const STACK_OF(type) *, int))q_OPENSSL_sk_value)(st, i)
-+#else
-+#define q_SKM_sk_num(type, st) ((int (*)(const STACK_OF(type) *))q_sk_num)(st)
-+#define q_SKM_sk_value(type, st,i) ((type * (*)(const STACK_OF(type) *, int))q_sk_value)(st, i)
-+#endif // LIBRESSL_VERSION_NUMBER
- 
- #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
-                                                                    | OPENSSL_INIT_ADD_ALL_DIGESTS \
-@@ -279,7 +310,11 @@ int q_DH_bits(DH *dh);
+@@ -279,7 +305,11 @@ int q_DH_bits(DH *dh);
                                                                      | OPENSSL_INIT_ADD_ALL_DIGESTS, NULL)
  
  int q_OPENSSL_init_crypto(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
@@ -80,7 +66,7 @@ Index: src/network/ssl/qsslsocket_openssl_symbols_p.h
  
  long q_OpenSSL_version_num();
  const char *q_OpenSSL_version(int type);
-@@ -497,12 +532,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
+@@ -497,12 +527,14 @@ int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_RSAPrivateKey(SSL_CTX *a, RSA *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);

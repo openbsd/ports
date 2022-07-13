@@ -14,5 +14,5 @@ Index: src/plugins/gstreamer/mediacapture/qgstreamerv4l2input.cpp
 +#  include <linux/videodev2.h>
 +#endif
  
- QT_BEGIN_NAMESPACE
- static inline uint qHash(const QSize& key) { return uint(key.width()*256+key.height()); }
+ #include <algorithm>
+ 

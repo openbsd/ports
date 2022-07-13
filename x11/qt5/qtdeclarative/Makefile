@@ -1,12 +1,11 @@
 QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
-REVISION =		0
 
 MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =   Qt5Qml                    3.0 # 5.9
-SHARED_LIBS +=  Qt5Quick                  3.0 # 5.9
+SHARED_LIBS =   Qt5Qml                    3.1 # 5.9
+SHARED_LIBS +=  Qt5Quick                  3.1 # 5.9
 SHARED_LIBS +=  Qt5QuickParticles         3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickTest              3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickWidgets           3.0 # 5.9

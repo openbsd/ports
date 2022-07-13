@@ -2279,6 +2279,7 @@ share/doc/qt5/qtremoteobjects/qtremoteobjects-repc.html
 share/doc/qt5/qtremoteobjects/qtremoteobjects-replica.html
 share/doc/qt5/qtremoteobjects/qtremoteobjects-source.html
 share/doc/qt5/qtremoteobjects/qtremoteobjects-troubleshooting.html
+share/doc/qt5/qtremoteobjects/qtremoteobjects.html
 share/doc/qt5/qtremoteobjects/qtroclientfactory.html
 share/doc/qt5/qtremoteobjects/qtroserverfactory.html
 share/doc/qt5/qtremoteobjects/remoteobjects-example-dynamic-replica.html

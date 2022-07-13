@@ -1,9 +1,6 @@
 QT5NAME =	QtConnectivity
 COMMENT-main =	Bluetooth and NFC support for Qt5
 
-REVISION-main =		0
-REVISION-examples =	0
-
 SHARED_LIBS +=  Qt5Bluetooth          3.0 # 5.9
 SHARED_LIBS +=  Qt5Nfc                3.0 # 5.9
 

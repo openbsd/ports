@@ -3,14 +3,16 @@ ONLY_FOR_ARCHS ?=	${GCC4_ARCHS} ${CLANG_ARCHS}
 .include "Makefile.version"
 
 # DIST_VERSION should be defined, e.g., when patch distfile gets issued,
-# e.g.: qtbase-everywhere-src-5.5.1-1.tar.gz
+# e.g.: qtbase-everywhere-opensource-src-5.5.1-1.tar.gz
 
 VERSION ?=		${QT5_VERSION}
 DIST_VERSION ?=		${QT5_DIST_VERSION}
 NEXT_VERSION ?=		${QT5_NEXT_VERSION}
-DISTNAME ?=		${QT5NAME:L}-everywhere-src-${DIST_VERSION}
+DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${DIST_VERSION}
 
-PKGNAME ?=		${DISTNAME:C/-everywhere-src//:C/-${DIST_VERSION}/-${VERSION}/}
+MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
+
+PKGNAME ?=		${DISTNAME:C/-everywhere-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 PKGNAME-main ?=		${PKGNAME}
 PKGNAME-examples ?=	${PKGNAME:C/(-[0-9])/-examples\1/}
 
@@ -60,6 +62,8 @@ MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
   MAKE_FLAGS +=		LIB${_l}_VERSION=${_v}
 .endfor
 
+WRKDIST ?=		${WRKDIR}/${DISTNAME:S/opensource-//}
+
 # qmake supports so-called "shadow" builds: it's like normal
 # out-of-source build but build directory is required to be located
 # under source root.
@@ -77,6 +81,7 @@ QT_PLUGINSDIR =	${QT_BASEDIR}/plugins
 QT_BINDIR =	${QT_BASEDIR}/bin
 QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
 QT_CMAKEDIR =	${QT_BASEDIR}/cmake
+QT_QMLDIR =	${QT_BASEDIR}/qml
 
 CONFIGURE_ENV +=	MAKE=make \
 			MAKEFLAGS="-j ${MAKE_JOBS}" \
@@ -155,33 +160,4 @@ qt5-post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/qt5/examples
 	cd ${WRKSRC}/examples; \
 	pax -rw */ ${PREFIX}/lib/qt5/examples
-.endif
-
-#
-# Helper targets, used during port development.
-#
-
-.PHONY: gen_pkg gen_pkg_plist gen_pkg_descr
-gen_pkg: gen_pkg_plist gen_pkg_descr
-
-# Generates DESCR-* from DESCR-main.
-QT5_DESCR_SRC ?=	-main
-QT5_DESCR_SRC :=	${PKGDIR}/DESCR${QT5_DESCR_SRC}
-gen_pkg_descr:
-	test -e ${QT5_DESCR_SRC}
-.if ${MULTI_PACKAGES:M-examples}
-	test X"${QT5_DESCR_SRC}" = X"${PKGDIR}/DESCR-examples" || \
-	sed '$$s/.*/This package contains sources for ${QT5NAME} usage examples./' \
-		<${QT5_DESCR_SRC} >${PKGDIR}/DESCR-examples
-.endif
-
-# Generates PLIST-* from PLIST-main.
-# Don't forget to run "rm pkg/PLIST-*; make plist" before this.
-gen_pkg_plist:
-	test -e ${PKGDIR}/PLIST-main
-.if ${BUILD_PACKAGES:M-examples}
-	echo -n '@comment $$Open'       >${PKGDIR}/PLIST-examples
-	echo                   'BSD$$' >>${PKGDIR}/PLIST-examples
-	egrep '^(@.* )?lib/qt5/examples/' ${PKGDIR}/PLIST-main >>${PKGDIR}/PLIST-examples
-	sed -Ei '\,^(@.* )?lib/qt5/examples/,d' ${PKGDIR}/PLIST-main
 .endif

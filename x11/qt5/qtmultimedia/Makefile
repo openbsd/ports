@@ -1,6 +1,5 @@
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
-REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 

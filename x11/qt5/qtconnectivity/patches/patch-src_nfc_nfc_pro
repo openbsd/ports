@@ -2,7 +2,7 @@ Let's try to build a functional NFC library.
 Index: src/nfc/nfc.pro
 --- src/nfc/nfc.pro.orig
 +++ src/nfc/nfc.pro
-@@ -56,7 +56,7 @@ SOURCES += \
+@@ -54,7 +54,7 @@ SOURCES += \
      qnearfieldsharetarget.cpp \
      qnfc.cpp
  

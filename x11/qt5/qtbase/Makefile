@@ -1,4 +1,4 @@
-DISTNAME =		qtbase-everywhere-src-${DIST_VERSION}
+DISTNAME =		qtbase-everywhere-opensource-src-${DIST_VERSION}
 QT5NAME =		Qt5 core
 
 COMMENT-main =		C++ general-purpose toolkit
@@ -21,15 +21,15 @@ PKG_ARCH-examples =	*
 DPB_PROPERTIES =	parallel
 
 SHARED_LIBS +=  Qt5Concurrent                3.0 # 5.9
-SHARED_LIBS +=  Qt5Core                      3.0 # 5.9
+SHARED_LIBS +=  Qt5Core                      3.1 # 5.9
 SHARED_LIBS +=  Qt5DBus                      3.0 # 5.9
 SHARED_LIBS +=  Qt5Gui                       3.0 # 5.9
 SHARED_LIBS +=  Qt5Network                   4.0 # 5.9
 SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.9
 SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.9
 SHARED_LIBS +=  Qt5Sql                       3.0 # 5.9
-SHARED_LIBS +=  Qt5Test                      3.0 # 5.9
-SHARED_LIBS +=  Qt5Widgets                   3.0 # 5.9
+SHARED_LIBS +=  Qt5Test                      3.1 # 5.9
+SHARED_LIBS +=  Qt5Widgets                   4.0 # 5.9
 SHARED_LIBS +=  Qt5Xml                       3.0 # 5.9
 SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.9
 SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.9
@@ -44,7 +44,7 @@ WANTLIB-main += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
 WANTLIB-main += pcre2-16 png sqlite3 ssl xcb xcb-glx xcb-icccm xcb-image
 WANTLIB-main += xcb-keysyms xcb-randr xcb-render xcb-render-util xcb-shape
 WANTLIB-main += xcb-shm xcb-sync xcb-xfixes xcb-xinerama xcb-xinput
-WANTLIB-main += xcb-util xcb-xkb xkbcommon xkbcommon-x11 z zstd
+WANTLIB-main += xcb-xkb xkbcommon xkbcommon-x11 z zstd
 
 WANTLIB-global =
 
@@ -115,17 +115,6 @@ CONFIGURE_STYLE =	simple
 
 FLAVORS =		debug
 FLAVOR ?=
-
-# readability macros
-QT_BASEDIR =	${PREFIX}/lib/qt5
-QT_INCDIR =	${PREFIX}/include/X11/qt5
-QT_EXAMPLES =	${QT_BASEDIR}/examples
-QT_DOC =	${PREFIX}/share/doc/qt5
-QT_PLUGINSDIR =	${QT_BASEDIR}/plugins
-QT_BINDIR =	${QT_BASEDIR}/bin
-QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
-QT_CMAKEDIR =	${QT_BASEDIR}/cmake
-QT_QMLDIR =	${QT_BASEDIR}/qml
 
 CONFIGURE_ARGS +=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto"
 
@@ -239,11 +228,15 @@ CONFIGURE_ARGS +=	-platform openbsd-g++
 TEST_IS_INTERACTIVE =	X11
 
 post-extract:
-	mkdir -p ${WRKDIST}/mkspecs/openbsd-clang
+	mkdir -p ${WRKDIST}/mkspecs/openbsd-{clang,g++}
 	cp ${FILESDIR}/clang-qmake.conf \
 		${WRKDIST}/mkspecs/openbsd-clang/qmake.conf
-	cp ${WRKDIST}/mkspecs/openbsd-g++/qplatformdefs.h \
+	cp ${FILESDIR}/g++-qmake.conf \
+		${WRKDIST}/mkspecs/openbsd-g++/qmake.conf
+	cp ${WRKDIST}/mkspecs/freebsd-clang/qplatformdefs.h \
 		${WRKDIST}/mkspecs/openbsd-clang/
+	cp ${WRKDIST}/mkspecs/freebsd-g++/qplatformdefs.h \
+		${WRKDIST}/mkspecs/openbsd-g++/
 
 post-install:
 	# often-used includes directory

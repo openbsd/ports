@@ -1,9 +1,6 @@
 QT5NAME =		QtQuickControls
 COMMENT-main =		Qt Quick based UI controls
 
-REVISION-main =		0
-REVISION-examples =	0
-
 MULTI_PACKAGES =	-main -examples
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml

@@ -4,7 +4,6 @@ COMMENT-qch =		qdoc-compiled documentation for Qt5
 PKGNAME =		qt5-docs-${QT5_VERSION}
 PKGNAME-html =		qt5-html-${QT5_VERSION}
 PKGNAME-qch =		qt5-qch-${QT5_VERSION}
-REVISION-html =		0
 
 MULTI_PACKAGES =	-html -qch
 SUBPACKAGE ?=		-html
@@ -37,7 +36,7 @@ DOC_COMPONENTS = \
 		qtx11extras \
 		qtxmlpatterns
 
-DISTFILES =	${DOC_COMPONENTS:C/$/-everywhere-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}
+DISTFILES =	${DOC_COMPONENTS:C/$/-everywhere-opensource-src-${QT5_DIST_VERSION}${EXTRACT_SUFX}/}
 
 MODQT5_USE_CXX11 =	No
 CONFIGURE_STYLE =	none
