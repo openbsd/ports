@@ -1,12 +1,11 @@
 COMMENT=		GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=		spice-gtk-0.40
+DISTNAME=		spice-gtk-0.41
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 CATEGORIES=		x11 net
 
-SHARED_LIBS += spice-client-glib-2.0     6.2 # 8.8.0
+SHARED_LIBS += spice-client-glib-2.0     6.2 # 8.8.1
 SHARED_LIBS += spice-client-gtk-3.0      4.2 # 5.1.0
 
 HOMEPAGE=		http://www.spice-space.org/page/Spice-Gtk
