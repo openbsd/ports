@@ -1,12 +1,20 @@
+- Use bundled zlib minizip instead of incompatible minizip-ng from ports
 - Require iconv for libdigidocpp
   https://github.com/open-eid/libdigidocpp/pull/470
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -56,6 +55,7 @@ if(UNIX AND NOT APPLE)
+@@ -51,11 +51,12 @@ find_package(Threads)
+ find_package(XmlSecurityC REQUIRED)
+ find_package(XSD 4.0 REQUIRED)
+ find_package(ZLIB REQUIRED)
+-find_package(MiniZip QUIET)
++find_package(MiniZip 0...<2.0.0 QUIET)
+ if(UNIX AND NOT APPLE)
      find_package(PkgConfig)
-     pkg_check_modules(MINIZIP minizip IMPORTED_TARGET)
+-    pkg_check_modules(MINIZIP minizip IMPORTED_TARGET)
++    pkg_check_modules(MINIZIP minizip IMPORTED_TARGET minizip<2.0.0)
  endif()
 +find_package(Iconv REQUIRED)
  find_package(SWIG)

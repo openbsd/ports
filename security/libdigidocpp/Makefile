@@ -2,14 +2,15 @@ COMMENT =		library for creating DigiDoc signature files
 
 V =			3.14.8
 DISTNAME =		libdigidocpp-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		security
 
 SHARED_LIBS =		digidocpp	0.0	# 0.0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# LGPL 2.1+
+# libdigidocpp: LGPL 2.1+
+# minizip: zlib
 PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.id.ee/
@@ -23,7 +24,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # C++11
 COMPILER =		base-clang ports-gcc
 
-WANTLIB +=		${COMPILER_LIBCXX} c crypto iconv m minizip ssl xalan-c
+WANTLIB +=		${COMPILER_LIBCXX} c crypto iconv m ssl xalan-c
 WANTLIB +=		xerces-c xml-security-c z
 
 MODULES =		devel/cmake
@@ -32,8 +33,7 @@ BUILD_DEPENDS =		devel/boost \
 			devel/xsd>=4.0 \
 			editors/vim,-main
 
-LIB_DEPENDS =		archivers/minizip \
-			converters/libiconv \
+LIB_DEPENDS =		converters/libiconv \
 			security/xml-security-c \
 			textproc/xalan-c \
 			textproc/xerces-c
@@ -55,10 +55,6 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_JNI=ON \
 # https://github.com/open-eid/libdigidocpp/issues/450
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_PoDoFo=ON
 
-# minizip's minizip-config.cmake:30 fails since zstd does not ship .cmake files
-# but minizip is still found through a later pkg_check_modules()
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_MiniZip=ON
-
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 
 # dlopen()'ed "opensc-pkcs11.so" in libdigidocpp.so
@@ -66,5 +62,9 @@ LIB_DEPENDS +=		security/opensc
 # alternative to https://github.com/open-eid/cmake/pull/35
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS} \
 			    -Wl,-rpath,/usr/local/lib/pkcs11"
+
+# fix src/minizip/ioapi.c warnings: off_t is always 64 bit,
+# no need for ftello64()
+CFLAGS +=		-DIOAPI_NO_64
 
 .include <bsd.port.mk>
