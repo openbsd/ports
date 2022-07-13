@@ -1,4 +1,3 @@
-# Qt5WebEngine
 USE_WXNEEDED =		Yes
 
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP

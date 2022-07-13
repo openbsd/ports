@@ -79,6 +79,7 @@ share/killbots/themes/robotkill.desktop
 share/killbots/themes/robotkill.png
 share/killbots/themes/robotkill.svgz
 share/locale/ar/LC_MESSAGES/killbots.mo
+share/locale/bg/LC_MESSAGES/killbots.mo
 share/locale/bs/LC_MESSAGES/killbots.mo
 share/locale/ca/LC_MESSAGES/killbots.mo
 share/locale/ca@valencia/LC_MESSAGES/killbots.mo

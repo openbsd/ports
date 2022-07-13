@@ -93,6 +93,7 @@ share/knotifications5/palapeli.notifyrc
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/palapeli_servicemenu.desktop
 share/kservices5/palathumbcreator.desktop
+share/locale/bg/LC_MESSAGES/palapeli.mo
 share/locale/bs/LC_MESSAGES/palapeli.mo
 share/locale/ca/LC_MESSAGES/palapeli.mo
 share/locale/ca@valencia/LC_MESSAGES/palapeli.mo

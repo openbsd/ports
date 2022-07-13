@@ -121,6 +121,7 @@ lib/cmake/KF5MailCommon/KF5MailCommonTargets.cmake
 @so lib/qt5/plugins/designer/mailcommonwidgets.so
 share/kf5/mkspecs/qt_MailCommon.pri
 share/locale/ar/LC_MESSAGES/libmailcommon.mo
+share/locale/bg/LC_MESSAGES/libmailcommon.mo
 share/locale/bs/LC_MESSAGES/libmailcommon.mo
 share/locale/ca/LC_MESSAGES/libmailcommon.mo
 share/locale/ca@valencia/LC_MESSAGES/libmailcommon.mo
