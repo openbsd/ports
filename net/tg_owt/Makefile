@@ -21,6 +21,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 SHARED_LIBS =		tg_owt	3.0	# 0.0.0
 
+DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
 #
 # https://chromium.googlesource.com/libyuv/libyuv clone, no releases or tags
@@ -48,20 +49,20 @@ EXTRACT_CASES +=	${CRC32C_DISTNAME}.tar.gz) ${TAR} -xz \
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
 # https://github.com/desktop-app/tg_owt/pull/85
-PATCHFILES +=		tg_owt-defer-third-party-sources-{}f95ce167.patch:1
+PATCHFILES +=		defer-third-party-sources-{}f95ce167.patch:1
 # Pending "libabsl: Use system include directories"
 # https://github.com/desktop-app/tg_owt/pull/87
-PATCHFILES +=		tg_owt-libabsl-use-includes-{}fb12b4bd.patch:1
+PATCHFILES +=		libabsl-use-includes-{}fb12b4bd.patch:1
 # Pending "libsrtp: Merge upstream LibreSSL fix"
 # https://github.com/desktop-app/tg_owt/pull/93
-PATCHFILES +=		tg_owt-libsrtp-libressl-fix-{}531dd25e.patch:1
+PATCHFILES +=		libsrtp-libressl-fix-{}531dd25e.patch:1
 
 PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
 
-# tg_owt, libsrtp, libyuv, rnnoise: BSD 3-clause;  pffft: FFTPACKv5
+# tg_owt, libsrtp, libyuv, rnnoise, crc32c: BSD 3-clause;  pffft: FFTPACKv5
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xdamage Xext Xfixes
@@ -107,7 +108,8 @@ LIB_DEPENDS =		audio/opus \
 CONFIGURE_ARGS +=	-DTG_OWT_PACKAGED_BUILD=ON \
 			-DBUILD_SHARED_LIBS=ON
 
-# do not use unported pipewire for desktop capture (or anything else)
+# Pending "Do not use PipeWire on OpenBSD"
+# https://github.com/desktop-app/tg_owt/pull/103
 CONFIGURE_ARGS +=	-DTG_OWT_USE_PIPEWIRE=OFF
 
 # match standard version with abseil
