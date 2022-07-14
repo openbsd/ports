@@ -29,22 +29,12 @@ DIST_SUBDIR =		tg_owt
 # use Andrew's mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
 LIBYUV_COMMIT =		966768e899c0eb932e1cd72935d37e15284daec0
-LIBYUV_DISTNAME =	libyuv-20220513-${LIBYUV_COMMIT:C/(........).*/\1/}
-DISTFILES +=		${LIBYUV_DISTNAME}{${LIBYUV_COMMIT}}.tar.gz:0
-EXTRACT_CASES +=	${LIBYUV_DISTNAME}.tar.gz) ${TAR} -xz \
-			    -f ${FULLDISTDIR}/$$archive \
-			    -C ${WRKSRC}/src/third_party/ \
-			    -s ,^libyuv-${LIBYUV_COMMIT},libyuv, ;;
+DISTFILES +=		libyuv-20220513-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
 # no releases but old tags
 MASTER_SITES2 =		https://github.com/google/crc32c/archive/
 CRC32C_COMMIT =		21fc8ef30415a635e7351ffa0e5d5367943d4a94
-CRC32C_DISTNAME =	crc32c-20220208-${CRC32C_COMMIT:C/(........).*/\1/}
-DISTFILES +=		${CRC32C_DISTNAME}{${CRC32C_COMMIT}}.tar.gz:2
-EXTRACT_CASES +=	${CRC32C_DISTNAME}.tar.gz) ${TAR} -xz \
-			    -f ${FULLDISTDIR}/$$archive \
-			    -C ${WRKSRC}/src/third_party/ \
-			    -s ,^crc32c-${CRC32C_COMMIT},crc32c/src, ;;
+DISTFILES +=		crc32c-20220208-{}${CRC32C_COMMIT}${EXTRACT_SUFX}:2
 
 MASTER_SITES1 =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Defer third-party source handling to when it is needed"
@@ -128,11 +118,17 @@ NEEDED_BUNDLES +=	libsrtp
 # unported and required
 NEEDED_BUNDLES +=	libyuv pffft crc32c
 
+THIRD_SRC =		${WRKSRC}/src/third_party
+
 post-extract:
+	# hook up prefetched submodules
+	rmdir ${THIRD_SRC}/{crc32c/src,libyuv}
+	ln -s ${WRKDIR}/crc32c-${CRC32C_COMMIT} ${THIRD_SRC}/crc32c/src
+	ln -s ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
 	# All bundles:
-	@cd ${WRKSRC}/src/third_party/ && ls -x
+	@cd ${THIRD_SRC}/ && ls -x
 	# Needed bundles (others are removed to prevent accidential use):
-	@cd ${WRKSRC}/src/third_party/ && mkdir .need/ && \
+	@cd ${THIRD_SRC}/ && mkdir .need/ && \
 		mv ${NEEDED_BUNDLES} .need/ && rm -r -- ./* && \
 		mv .need/* . && rmdir .need/ && ls -x
 	# all source headers get packaged, so remove those not needed at
