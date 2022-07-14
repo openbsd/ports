@@ -2,11 +2,6 @@ Should match b_lundef in meson(1).
 
 Use a version script (matches Linux).
 
-From 8da5e173ebdccbca60387ef2347c629be3c78dff Mon Sep 17 00:00:00 2001
-From: Eli Schwartz <eschwartz93@gmail.com>
-Date: Mon, 27 Jun 2022 01:36:07 -0400
-Subject: [PATCH] fix invalid use of subprojects
-
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
@@ -34,19 +29,7 @@ Index: src/meson.build
  
    gvncpulse_syms = join_paths(meson.current_source_dir(), 'libgvncpulse_sym.version')
    if host_machine.system() == 'linux'
-@@ -336,9 +330,10 @@ foreach keymap: keymaps
-   cmd = [
-     python,
-     keymapgen,
-+    'code-map',
-     '--lang', 'glib2',
-     '--varname', varname,
--    'code-map', keymapcsv, keymap, 'qnum'
-+    keymapcsv, keymap, 'qnum'
-   ]
-   gtk_vnc_sources += custom_target(
-     target,
-@@ -350,9 +345,6 @@ endforeach
+@@ -351,9 +345,6 @@ endforeach
  
  
  gtk_vnc_link_args = []

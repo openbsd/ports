@@ -1,7 +1,7 @@
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		1.3.0
+GNOME_VERSION=		1.3.1
 
 SHARED_LIBS += gvnc-1.0                  1.2 # 0.0.1
 SHARED_LIBS += gvncpulse-1.0             0.1 # 0.0.1
