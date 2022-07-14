@@ -1,11 +1,11 @@
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.36
+V=			0.4.38
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += gegl-0.4                  0.5 # 0.435.1
+SHARED_LIBS += gegl-0.4                  0.5 # 0.437.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION

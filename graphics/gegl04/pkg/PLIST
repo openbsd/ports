@@ -151,6 +151,7 @@ share/locale/hr/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/id/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/is/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/it/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/ka/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/kab/
 share/locale/kab/LC_MESSAGES/
 share/locale/kab/LC_MESSAGES/gegl-${API_VERSION}.mo
