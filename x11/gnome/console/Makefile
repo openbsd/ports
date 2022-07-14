@@ -1,7 +1,7 @@
 COMMENT=		user-friendly terminal emulator for GNOME
 
 GNOME_PROJECT=		gnome-console
-GNOME_VERSION=		42.0
+GNOME_VERSION=		42.2
 
 CATEGORIES=		x11
 
@@ -17,11 +17,18 @@ MODULES=		devel/dconf \
 
 MODGNOME_TOOLS= 	desktop-file-utils gtk-update-icon-cache
 
-BUILD_DEPENDS=		www/sassc
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			www/sassc
+
+# src/kgx-tab.c, src/kgx-terminal.c, meson.build
+BUILD_DEPENDS +=	devel/pcre2
 
 LIB_DEPENDS=		devel/libgtop2 \
 			devel/vte3 \
 			x11/libhandy \
 			x11/gnome/nautilus
+
+# org.gnome.system.proxy
+RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 .include <bsd.port.mk>
