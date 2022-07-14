@@ -448,7 +448,8 @@ SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.0.0.mod) = 6q6X6JmmLpyO
 SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.1.0.mod) = 6q6X6JmmLpyOAqxdFzw6toNDhfwY74m23L32mGurPtE=
 SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.2.0.mod) = 6q6X6JmmLpyOAqxdFzw6toNDhfwY74m23L32mGurPtE=
 SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.3.0.mod) = 6q6X6JmmLpyOAqxdFzw6toNDhfwY74m23L32mGurPtE=
-SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.3.0.zip) = oMH6DkgR9s99pifvB6/JUbNWJrDKIXEExanXOt85hME=
+SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.6.0.mod) = 6q6X6JmmLpyOAqxdFzw6toNDhfwY74m23L32mGurPtE=
+SHA256 (go_modules/github.com/hashicorp/go-version/@v/v1.6.0.zip) = vx2WvaUKv14tERv5nSINl4MUkH2BX9WPS9R3DceVm54=
 SHA256 (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.0.mod) = 7MVj0/TOy1MabwKUAdRbpsHQQzDhBLxFNdhKUYckmrA=
 SHA256 (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.1.mod) = 7MVj0/TOy1MabwKUAdRbpsHQQzDhBLxFNdhKUYckmrA=
 SHA256 (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.1.zip) = D4qvMR5I+6BGkg04uZnAZtppmXtHn07KEm/paImXF9o=
@@ -1266,7 +1267,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7Quay
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRelO2IPjOKMKW5R06o=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (terraform-v1.2.4.zip) = vDLOrosOuTXqq93Jx1P2CW7FInVedwgY/Hjrrv9kIiw=
+SHA256 (terraform-v1.2.5.zip) = BAYCb/CGLtEdvmUtO4deg37HTNGnosmO3xA1KcM5VEY=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1717,7 +1718,8 @@ SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.0.0.mod) = 39
 SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.1.0.mod) = 39
 SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.2.0.mod) = 39
 SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.3.0.mod) = 39
-SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.3.0.zip) = 17504
+SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.6.0.mod) = 39
+SIZE (go_modules/github.com/hashicorp/go-version/@v/v1.6.0.zip) = 19227
 SIZE (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.0.mod) = 39
 SIZE (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.1.mod) = 39
 SIZE (go_modules/github.com/hashicorp/golang-lru/@v/v0.5.1.zip) = 19548
@@ -2535,4 +2537,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (terraform-v1.2.4.zip) = 6637822
+SIZE (terraform-v1.2.5.zip) = 6823184

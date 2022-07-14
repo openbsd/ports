@@ -145,7 +145,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-syslog					 v1.0.0 \
 	github.com/hashicorp/go-tfe					 v1.0.0 \
 	github.com/hashicorp/go-uuid					 v1.0.2 \
-	github.com/hashicorp/go-version					 v1.3.0 \
+	github.com/hashicorp/go-version					 v1.6.0 \
 	github.com/hashicorp/golang-lru					 v0.5.1 \
 	github.com/hashicorp/hcl					 v0.0.0-20170504190234-a4b07c25de5f \
 	github.com/hashicorp/hcl/v2					 v2.12.0 \
@@ -479,6 +479,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-version					 v1.0.0 \
 	github.com/hashicorp/go-version					 v1.1.0 \
 	github.com/hashicorp/go-version					 v1.2.0 \
+	github.com/hashicorp/go-version					 v1.3.0 \
 	github.com/hashicorp/golang-lru					 v0.5.0 \
 	github.com/hashicorp/hcl/v2					 v2.0.0 \
 	github.com/hashicorp/hcl/v2					 v2.3.0 \
