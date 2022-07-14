@@ -6,7 +6,7 @@ CATEGORIES =	sysutils
 
 GH_ACCOUNT =	rushsteve1
 GH_PROJECT =	trash-d
-GH_TAGNAME =	17
+GH_TAGNAME =	18
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -23,14 +23,14 @@ BUILD_DEPENDS =	devel/dub,dmd
 #            Put the new trash.1 in ${FILESDIR}
 #            Update sha256 hash here
 post-patch:
-	@[ `sha256 < ${WRKSRC}/MANUAL.md` == e4b728a909c1fc782e731836681139e340fe39933f5c3faed502c493bd379ef8 ] || \
+	@[ `sha256 < ${WRKSRC}/MANUAL.md` == 3b6f8936d018781146eb4036a492281443ea60de06adea6471f065c70d1c466e ] || \
 		(echo "*** manpage changed; regenerate ${FILESDIR}/trash.1"; sleep 3)
 
 do-build:
 	cd ${WRKSRC} && dub build -b release --cache=local --compiler=dmd
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/trash ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/build/trash ${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/trash.1 ${PREFIX}/man/man1
 
 do-test:
