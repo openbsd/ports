@@ -1,10 +1,9 @@
 COMMENT =		easy to use progressbar library for python
 
-MODPY_EGG_VERSION =	1.5
+MODPY_EGG_VERSION =	1.6
 DISTNAME =		progress-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		2
 
 HOMEPAGE =		https://github.com/verigak/progress/
 
