@@ -16,6 +16,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		devel/cmake \
 			x11/qt5
 
+BUILD_DEPENDS =		x11/qt5/qtwebsockets
+
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Qt6=ON \
 			-DUSE_QT_VERSION=5
 
