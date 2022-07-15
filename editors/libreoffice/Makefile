@@ -25,6 +25,7 @@ SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
 BV=		7.3
 VERSION=	${BV}.4.2
+REVISION=	0
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -280,7 +281,7 @@ AUTOMAKE_VERSION=	1.12
 CONFIGURE_ENV=	CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		KDE5INC="${LOCALBASE}/include/kde4" KDE5LIB="${LOCALBASE}/lib/kde5/libs"\
+		KDE5INC="${LOCALBASE}/include/kde5" KDE5LIB="${LOCALBASE}/lib/kde5/libs"\
 		KF5INC="${LOCALBASE}/include" KF5LIB="${LOCALBASE}/lib" \
 		QT5DIR="${LOCALBASE}/lib/qt5" QT5LIB="${LOCALBASE}/qt5" \
 		QT5INC="${LOCALBASE}/include/X11/qt5" \
