@@ -1,0 +1,19 @@
+From 14b1df84060ea4ab085202382e80672ec1a104e3 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=2E=20David=20Ib=C3=A1=C3=B1ez?= <jdavid.ibp@gmail.com>
+Date: Thu, 14 Jul 2022 14:27:24 +0200
+Subject: [PATCH] Support libgit2 1.5
+
+Index: src/types.h
+--- src/types.h.orig
++++ src/types.h
+@@ -32,8 +32,8 @@
+ #include <Python.h>
+ #include <git2.h>
+ 
+-#if !(LIBGIT2_VER_MAJOR == 1 && LIBGIT2_VER_MINOR == 4)
+-#error You need a compatible libgit2 version (1.4.x)
++#if !(LIBGIT2_VER_MAJOR == 1 && LIBGIT2_VER_MINOR >= 4 && LIBGIT2_VER_MINOR <= 5)
++#error You need a compatible libgit2 version (1.4.x or 1.5.x)
+ #endif
+ 
+ /*
