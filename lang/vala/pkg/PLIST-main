@@ -122,6 +122,8 @@ share/vala-${API_V}/vapi/gdl-3.0.deps
 share/vala-${API_V}/vapi/gdl-3.0.vapi
 share/vala-${API_V}/vapi/geocode-glib-1.0.deps
 share/vala-${API_V}/vapi/geocode-glib-1.0.vapi
+share/vala-${API_V}/vapi/geocode-glib-2.0.deps
+share/vala-${API_V}/vapi/geocode-glib-2.0.vapi
 share/vala-${API_V}/vapi/gio-2.0.deps
 share/vala-${API_V}/vapi/gio-2.0.vapi
 share/vala-${API_V}/vapi/gio-unix-2.0.deps
@@ -322,8 +324,12 @@ share/vala-${API_V}/vapi/rasqal.vapi
 share/vala-${API_V}/vapi/readline.vapi
 share/vala-${API_V}/vapi/rest-0.7.deps
 share/vala-${API_V}/vapi/rest-0.7.vapi
+share/vala-${API_V}/vapi/rest-1.0.deps
+share/vala-${API_V}/vapi/rest-1.0.vapi
 share/vala-${API_V}/vapi/rest-extras-0.7.deps
 share/vala-${API_V}/vapi/rest-extras-0.7.vapi
+share/vala-${API_V}/vapi/rest-extras-1.0.deps
+share/vala-${API_V}/vapi/rest-extras-1.0.vapi
 share/vala-${API_V}/vapi/sdl2-android.deps
 share/vala-${API_V}/vapi/sdl2-android.vapi
 share/vala-${API_V}/vapi/sdl2-ios.deps
@@ -342,6 +348,7 @@ share/vala-${API_V}/vapi/udisks2.vapi
 share/vala-${API_V}/vapi/unique-1.0.deps
 share/vala-${API_V}/vapi/unique-1.0.vapi
 share/vala-${API_V}/vapi/v4l2.vapi
+share/vala-${API_V}/vapi/wayland-client.vapi
 share/vala-${API_V}/vapi/webkit2gtk-4.0.deps
 share/vala-${API_V}/vapi/webkit2gtk-4.0.vapi
 share/vala-${API_V}/vapi/webkit2gtk-4.1.deps
