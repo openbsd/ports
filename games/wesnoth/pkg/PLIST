@@ -262,7 +262,6 @@ share/wesnoth/data/ai/micro_ais/cas/ca_protect_unit_attack.lua
 share/wesnoth/data/ai/micro_ais/cas/ca_protect_unit_finish.lua
 share/wesnoth/data/ai/micro_ais/cas/ca_protect_unit_move.lua
 share/wesnoth/data/ai/micro_ais/cas/ca_recruit_random.lua
-share/wesnoth/data/ai/micro_ais/cas/ca_recruit_rushers.lua
 share/wesnoth/data/ai/micro_ais/cas/ca_return_guardian.lua
 share/wesnoth/data/ai/micro_ais/cas/ca_simple_attack.lua
 share/wesnoth/data/ai/micro_ais/cas/ca_stationed_guardian.lua
