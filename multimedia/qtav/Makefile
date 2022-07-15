@@ -3,7 +3,7 @@ COMMENT =	FFmpeg-based Qt multimedia framework
 GH_ACCOUNT =	wang-bin
 GH_PROJECT =	QtAV
 GH_TAGNAME =	v1.12.0
-REVISION =	5
+REVISION =	6
 
 PKGNAME =	${DISTNAME:L}
 
@@ -37,7 +37,7 @@ LIB_DEPENDS =		audio/openal \
 
 MODQMAKE_ENV +=		TRUEPREFIX=${TRUEPREFIX}
 
-SUBST_VARS =		QT5_VERSION
+SUBST_VARS +=		QT5_VERSION
 
 # The examples are GLPv3 licencensed and have too generic names, like 'Player',
 # so don't install them.
