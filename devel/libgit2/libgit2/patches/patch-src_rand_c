@@ -1,6 +1,6 @@
-Index: src/rand.c
---- src/rand.c.orig
-+++ src/rand.c
+Index: src/util/rand.c
+--- src/util/rand.c.orig
++++ src/util/rand.c
 @@ -10,8 +10,10 @@ See <http://creativecommons.org/publicdomain/zero/1.0/
  #include "rand.h"
  #include "runtime.h"
