@@ -1,3 +1,5 @@
+link libm to the duktape shared libraries; unbreaks at least polkit & gdm
+
 Index: Makefile.sharedlibrary
 --- Makefile.sharedlibrary.orig
 +++ Makefile.sharedlibrary
