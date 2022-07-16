@@ -2,11 +2,10 @@ COMMENT-main=	trivial database library
 COMMENT-python=	Python ${MODPY_VERSION} bindings for tdb
 
 # Keep in sync with the version bundled in net/samba
-V=		1.4.5
+V=		1.4.6
 
 DISTNAME=	tdb-$V
 PKGNAME-python=	py3-${DISTNAME}
-REVISION-python= 0
 
 MULTI_PACKAGES=	-main -python
 
