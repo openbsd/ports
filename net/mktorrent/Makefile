@@ -1,13 +1,14 @@
 COMMENT =	command-line .torrent file creator
 
 V =		1.1
-GH_ACCOUNT =	Rudde
+REVISION =	0
+GH_ACCOUNT =	pobrn
 GH_PROJECT =	mktorrent
 DISTNAME =	${GH_PROJECT}-${V}
 DISTFILES =	v${V}.tar.gz
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/Rudde/mktorrent
+HOMEPAGE =	https://github.com/pobrn/mktorrent
 MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
 # GPLv2
