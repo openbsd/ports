@@ -1,20 +1,23 @@
 Index: Makefile.sharedlibrary
 --- Makefile.sharedlibrary.orig
 +++ Makefile.sharedlibrary
-@@ -70,11 +70,11 @@ all: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.$(SO
+@@ -70,12 +70,12 @@ all: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.$(SO
  # to $INSTALL_PREFIX/include on installation.
  
  libduktape.$(SO_REALNAME_SUFFIX):
 -	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -fPIC -Wall -Wextra -Os -Wl,$(LD_SONAME_ARG),libduktape.$(SO_SONAME_SUFFIX) \
+-		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
 +	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -fPIC -Wall -Wextra -Wl,$(LD_SONAME_ARG),libduktape.so.$(REAL_VERSION) \
- 		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
++		-o $@ $(DUKTAPE_SRCDIR)/duktape.c -lm
  
  libduktaped.$(SO_REALNAME_SUFFIX):
 -	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -fPIC -g -Wall -Wextra -Os -Wl,$(LD_SONAME_ARG),libduktaped.$(SO_SONAME_SUFFIX) \
+-		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
 +	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -shared -fPIC -g -Wall -Wextra -Wl,$(LD_SONAME_ARG),libduktaped.$(REAL_VERSION) \
- 		-o $@ $(DUKTAPE_SRCDIR)/duktape.c
++		-o $@ $(DUKTAPE_SRCDIR)/duktape.c -lm
  
  duktape.pc:
+ 	sed -e "s|@PREFIX@|$(INSTALL_PREFIX)|" \
 @@ -99,6 +99,6 @@ install: libduktape.$(SO_REALNAME_SUFFIX) libduktaped.
  	mkdir -p $(DESTDIR)$(INSTALL_PREFIX)/include/
  	cp $(DUKTAPE_SRCDIR)/duktape.h $(DUKTAPE_SRCDIR)/duk_config.h $(DESTDIR)$(INSTALL_PREFIX)/include/

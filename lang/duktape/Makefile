@@ -2,7 +2,7 @@ COMMENT =	embeddable JavaScript engine
 
 DISTNAME =	duktape-2.7.0
 EXTRACT_SUFX =	.tar.xz
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	duktape	                 1.2 # 207
 SHARED_LIBS +=	duktaped                 1.2 # 207
