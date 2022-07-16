@@ -1,4 +1,5 @@
 - Use bundled zlib minizip instead of incompatible minizip-ng from ports
+  https://github.com/open-eid/libdigidocpp/pull/485
 - Require iconv for libdigidocpp
   https://github.com/open-eid/libdigidocpp/pull/470
 
