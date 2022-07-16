@@ -4,13 +4,13 @@ include/libnotify/notification.h
 include/libnotify/notify-enum-types.h
 include/libnotify/notify-features.h
 include/libnotify/notify.h
-lib/girepository-1.0/Notify-0.7.typelib
+lib/girepository-1.0/Notify-0.8.typelib
 @lib lib/libnotify.so.${LIBnotify_VERSION}
 lib/pkgconfig/libnotify.pc
 share/doc/libnotify/
 share/doc/libnotify/spec/
 share/doc/libnotify/spec/notification-spec.html
-share/gir-1.0/Notify-0.7.gir
+share/gir-1.0/Notify-0.8.gir
 share/gtk-doc/html/libnotify/
 share/gtk-doc/html/libnotify/NotifyNotification.html
 share/gtk-doc/html/libnotify/annotation-glossary.html
