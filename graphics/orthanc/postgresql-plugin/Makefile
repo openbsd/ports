@@ -25,6 +25,7 @@ MODPY_RUNDEP =		No
 CONFIGURE_STYLE =	cmake
 
 BUILD_DEPENDS =		databases/postgresql,-server \
+			devel/gtest \
 			graphics/orthanc/server
 
 RUN_DEPENDS =		graphics/orthanc/server
