@@ -1,8 +1,7 @@
 COMMENT=		library for AppStream metadata
 
-DISTNAME=		appstream-glib-0.7.18
+DISTNAME=		appstream-glib-0.8.0
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
 
 SHARED_LIBS += appstream-glib            3.7 # 8.0.10
 
@@ -15,9 +14,9 @@ HOMEPAGE=		http://people.freedesktop.org/~hughsient/appstream-glib/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += archive c cairo fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += archive c cairo curl fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl json-glib-1.0
-WANTLIB += pango-1.0 soup-2.4 stemmer uuid yaml-0
+WANTLIB += pango-1.0 stemmer uuid yaml-0
 
 MASTER_SITES=		http://people.freedesktop.org/~hughsient/appstream-glib/releases/
 
@@ -35,8 +34,8 @@ BUILD_DEPENDS=		devel/gperf
 
 LIB_DEPENDS=		archivers/libarchive \
 			devel/json-glib \
-			devel/libsoup \
 			devel/libyaml \
+			net/curl \
 			sysutils/e2fsprogs \
 			textproc/libstemmer \
 			x11/gtk+3
