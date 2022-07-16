@@ -1,8 +1,0 @@
-This package includes the following Samba4 components:
-
-libreplace:
-    Wrapper for some other required system components. Contains
-    implementation of routines not found in system.
-
-util_setid:
-    TODO

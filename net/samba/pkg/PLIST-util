@@ -1,5 +1,0 @@
-@lib lib/libreplace.so.${LIBreplace_VERSION}
-@lib lib/libutil-setid.so.${LIButil-setid_VERSION}
-lib/samba/
-@lib lib/samba/libreplace.so.${LIBreplace_VERSION}
-@lib lib/samba/libutil-setid.so.${LIButil-setid_VERSION}

@@ -7,9 +7,9 @@
 Index: buildtools/wafsamba/wafsamba.py
 --- buildtools/wafsamba/wafsamba.py.orig
 +++ buildtools/wafsamba/wafsamba.py
-@@ -208,6 +208,17 @@ def SAMBA_LIBRARY(bld, libname, source,
-     deps = TO_LIST(deps)
-     deps.append(obj_target)
+@@ -278,6 +278,17 @@ def SAMBA_LIBRARY(bld, libname, source,
+     # the library itself will depend on that object target
+     samba_deps.append(dep_target)
  
 +    saved_lib_version = vnum
 +    osvnum = os.getenv('LIB' + libname.replace('-', '_').replace('.', '_') + '_VERSION')
@@ -25,7 +25,7 @@ Index: buildtools/wafsamba/wafsamba.py
      realname = bld.map_shlib_extension(realname, python=(target_type=='PYTHON'))
      link_name = bld.map_shlib_extension(link_name, python=(target_type=='PYTHON'))
  
-@@ -322,9 +333,9 @@ def SAMBA_LIBRARY(bld, libname, source,
+@@ -398,9 +409,9 @@ def SAMBA_LIBRARY(bld, libname, source,
  
      if pc_files is not None and not private_library:
          if pyembed:

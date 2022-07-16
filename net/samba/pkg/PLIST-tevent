@@ -1,8 +1,0 @@
-include/samba-4.0/
-include/samba-4.0/tevent.h
-@lib lib/libtevent.so.${LIBtevent_VERSION}
-lib/pkgconfig/tevent.pc
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}tevent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}tevent.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/_tevent.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/tevent.py

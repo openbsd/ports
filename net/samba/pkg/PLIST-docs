@@ -1,4 +1,5 @@
 @pkgpath net/samba,-docs
+share/examples/samba/
 share/examples/samba/LDAP/
 share/examples/samba/LDAP/README
 share/examples/samba/LDAP/get_next_oid
