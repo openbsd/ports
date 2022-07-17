@@ -1,10 +1,9 @@
 COMMENT =	X C Binding - protocol binding generator
 
 # please keep in sync with the version in proto/xcb-proto in Xenocara
-VERSION =	1.14.1
+VERSION =	1.15.2
 DISTNAME =	xcb-proto-${VERSION}
 PKGNAME =	py-xcbgen-${VERSION}
-REVISION =	1
 
 CATEGORIES =	x11
 
