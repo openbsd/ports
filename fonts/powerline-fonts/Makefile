@@ -6,6 +6,7 @@ GH_ACCOUNT=	powerline
 GH_PROJECT=	fonts
 GH_COMMIT=	e80e3eba9091dac0655a0a77472e10f53e754bb0
 DISTNAME=	powerline-fonts-0.20181111
+REVISION=	0
 
 CATEGORIES=	fonts
 
@@ -22,6 +23,10 @@ FONTS_DIR=	${PREFIX}/share/fonts/powerline
 do-install:
 	${INSTALL_DATA_DIR} ${FONTS_DIR} ${DOCS_DIR}
 	cd ${WRKDIR}/fonts-${GH_COMMIT}; pax -rw [A-Z]* ${FONTS_DIR}
+# Updating font cache:
+# Couldn't read /usr/local/share/fonts/powerline/Meslo: No such file or directory
+	cd ${FONTS_DIR} && mv Meslo\ Dotted MesloDotted && \
+		mv Meslo\ Slashed MesloSlashed
 	chown -R ${SHAREOWN}:${SHAREGRP} ${FONTS_DIR}
 	mv ${FONTS_DIR}/Terminus/PCF/* ${FONTS_DIR}/Terminus
 	rm -rf ${FONTS_DIR}/Terminus/{BDF,PSF}

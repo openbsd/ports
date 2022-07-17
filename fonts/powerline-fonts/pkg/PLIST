@@ -85,36 +85,36 @@ share/fonts/powerline/LiberationMono/Literation Mono Powerline Bold.ttf
 share/fonts/powerline/LiberationMono/Literation Mono Powerline Italic.ttf
 share/fonts/powerline/LiberationMono/Literation Mono Powerline.ttf
 share/fonts/powerline/LiberationMono/README.rst
-@fontdir share/fonts/powerline/Meslo Dotted/
-share/fonts/powerline/Meslo Dotted/LICENSE.txt
-share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Bold Italic for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Bold for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Italic for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG L DZ Regular for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Bold Italic for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Bold for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Italic for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG M DZ Regular for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Bold Italic for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Bold for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Italic for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/Meslo LG S DZ Regular for Powerline.ttf
-share/fonts/powerline/Meslo Dotted/README.rst
-@fontdir share/fonts/powerline/Meslo Slashed/
-share/fonts/powerline/Meslo Slashed/LICENSE.txt
-share/fonts/powerline/Meslo Slashed/Meslo LG L Bold Italic for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG L Bold for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG L Italic for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG L Regular for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG M Bold Italic for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG M Bold for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG M Italic for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG M Regular for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG S Bold Italic for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG S Bold for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG S Italic for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/Meslo LG S Regular for Powerline.ttf
-share/fonts/powerline/Meslo Slashed/README.rst
+@fontdir share/fonts/powerline/MesloDotted/
+share/fonts/powerline/MesloDotted/LICENSE.txt
+share/fonts/powerline/MesloDotted/Meslo LG L DZ Bold Italic for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG L DZ Bold for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG L DZ Italic for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG L DZ Regular for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG M DZ Bold Italic for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG M DZ Bold for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG M DZ Italic for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG M DZ Regular for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG S DZ Bold Italic for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG S DZ Bold for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG S DZ Italic for Powerline.ttf
+share/fonts/powerline/MesloDotted/Meslo LG S DZ Regular for Powerline.ttf
+share/fonts/powerline/MesloDotted/README.rst
+@fontdir share/fonts/powerline/MesloSlashed/
+share/fonts/powerline/MesloSlashed/LICENSE.txt
+share/fonts/powerline/MesloSlashed/Meslo LG L Bold Italic for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG L Bold for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG L Italic for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG L Regular for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG M Bold Italic for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG M Bold for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG M Italic for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG M Regular for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG S Bold Italic for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG S Bold for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG S Italic for Powerline.ttf
+share/fonts/powerline/MesloSlashed/Meslo LG S Regular for Powerline.ttf
+share/fonts/powerline/MesloSlashed/README.rst
 @fontdir share/fonts/powerline/Monofur/
 share/fonts/powerline/Monofur/LICENSE.txt
 share/fonts/powerline/Monofur/Monofur Bold for Powerline.ttf
