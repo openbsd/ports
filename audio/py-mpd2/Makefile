@@ -15,14 +15,13 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	mpd/tests.py
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-TEST_DEPENDS =		${BUILD_PKGPATH} \
-			devel/py-mock${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/python${MODPY_VERSION} mpd/tests.py
+TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-twisted${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
