@@ -1,9 +1,8 @@
 COMMENT =	utility for modifying existing ELF executables and libraries
 
-V =			0.14.5
+V =			0.15.0
 DISTNAME =		patchelf-${V}
 MASTER_SITES =		https://github.com/NixOS/patchelf/releases/download/${V}/
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -25,8 +24,8 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man
 
 .include <bsd.port.arch.mk>
 
-# amd64:   TOTAL: 45, PASS: 44, FAIL:  1 (replace-add-needed.sh)
-# sparc64: TOTAL: 45, PASS: 33, FAIL: 12 (XXX: mostly 'Abort trap')
+# 0.15.0 amd64:   TOTAL: 46, PASS: 45, FAIL:  1 (replace-add-needed.sh)
+# 0.14.5 sparc64: TOTAL: 45, PASS: 33, FAIL: 12 (XXX: mostly 'Abort trap')
 TEST_TARGET =		check
 
 .if !${PROPERTIES:Mclang}
@@ -40,10 +39,8 @@ TEST_DEPENDS +=		devel/gas
 # strip `--build-ld' since base ld.bfd(1) 2.17 is too old to know it;
 # this unbreaks the test build/allows to run tests in the first place.
 TEST_FLAGS +=		libbuildid_so_LDFLAGS='$$(LDFLAGS_sharedlib)'
-.endif
 
 pre-test:
-.if !${PROPERTIES:Mclang}
 	ln -sf /usr/local/bin/gas ${WRKDIR}/bin/as
 .endif
 
