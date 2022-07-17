@@ -23,6 +23,7 @@ FONTS_DIR=	${PREFIX}/share/fonts/powerline
 do-install:
 	${INSTALL_DATA_DIR} ${FONTS_DIR} ${DOCS_DIR}
 	cd ${WRKDIR}/fonts-${GH_COMMIT}; pax -rw [A-Z]* ${FONTS_DIR}
+# XXX pkg_add:
 # Updating font cache:
 # Couldn't read /usr/local/share/fonts/powerline/Meslo: No such file or directory
 	cd ${FONTS_DIR} && mv Meslo\ Dotted MesloDotted && \
