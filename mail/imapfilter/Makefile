@@ -1,8 +1,7 @@
 COMMENT=		remote IMAP filtering utility
 
-V=			2.6.11
+V=			2.7.5
 DISTNAME=		imapfilter-${V}
-REVISION=		0
 
 GH_TAGNAME=		v${V}
 GH_ACCOUNT=		lefcha
@@ -15,12 +14,12 @@ MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto m ssl pcre ${MODLUA_WANTLIB}
+WANTLIB += c crypto ${MODLUA_WANTLIB} m pcre2-8 ssl
 
 MODULES=		lang/lua
 MODLUA_SA=		Yes
 
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		devel/pcre2 \
 			${MODLUA_LIB_DEPENDS}
 
 MAKE_FLAGS=		CC="${CC}" \
