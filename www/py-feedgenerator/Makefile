@@ -16,14 +16,13 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
+MODPY_PYTEST_ARGS =	tests_feedgenerator/
 
 FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
 			devel/py-tz${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover
 
 .include <bsd.port.mk>
