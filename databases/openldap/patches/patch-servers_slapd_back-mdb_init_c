@@ -1,7 +1,9 @@
+yes, we're still non-coherent for mmap/file io
+
 Index: servers/slapd/back-mdb/init.c
 --- servers/slapd/back-mdb/init.c.orig
 +++ servers/slapd/back-mdb/init.c
-@@ -169,6 +169,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
+@@ -170,6 +170,32 @@ mdb_db_open( BackendDB *be, ConfigReply *cr )
  
  	flags = mdb->mi_dbenv_flags;
  

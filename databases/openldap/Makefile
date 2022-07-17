@@ -1,7 +1,7 @@
 COMMENT-main =	  LDAP client library and tools
 COMMENT-server =  LDAP directory server
 
-DISTNAME =	  openldap-2.6.2
+DISTNAME =	  openldap-2.6.3
 
 MULTI_PACKAGES =  -main -server
 PKGNAME-main =	  ${DISTNAME:S/-/-client-/}
@@ -38,6 +38,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
 USE_GMAKE =		Yes
 
 FLAVOR ?=
@@ -92,11 +93,6 @@ WANTLIB += heimdal/lib/heimntlm
 WANTLIB += heimdal/lib/heimsqlite
 .endif
 
-MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/build
-
-TEST_TARGET =		test
-TEST_DEPENDS =		shells/bash
-
 LIB_DEPENDS +=		security/cyrus-sasl2
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			${BUILD_PKGPATH},-main \
@@ -124,5 +120,12 @@ post-extract:
 post-install:
 	mv ${WRKINST}${SYSCONFDIR}/openldap ${PREFIX}/share/examples/
 	rm ${PREFIX}/share/examples/openldap/*.default
+
+TEST_TARGET =		test
+TEST_DEPENDS =		shells/bash \
+			sysutils/coreutils
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gdate ${WRKDIR}/bin/date
 
 .include <bsd.port.mk>

@@ -1,3 +1,5 @@
+avoid format/type mismatch on ILP32 archs (time_t is always 64 bit on OpenBSD)
+
 Index: libraries/libldap/os-ip.c
 --- libraries/libldap/os-ip.c.orig
 +++ libraries/libldap/os-ip.c
