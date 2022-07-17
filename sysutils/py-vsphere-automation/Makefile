@@ -1,9 +1,9 @@
 COMMENT =		VMware vSphere Automation SDK for Python
 
-MODPY_EGG_VERSION =	7.0.3.2
+MODPY_EGG_VERSION =	8.0.0.0
 GH_ACCOUNT =		vmware
 GH_PROJECT =		vsphere-automation-sdk-python
-GH_TAGNAME =		v7.0.3.2
+GH_TAGNAME =		v8.0.0.0
 
 PKGNAME =		py-vsphere-automation-${MODPY_EGG_VERSION}
 
