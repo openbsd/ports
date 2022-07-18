@@ -62,7 +62,8 @@ BUILD_DEPENDS =	archivers/gtar \
 		devel/boost \
 		devel/clang-tools-extra \
 		devel/cppcheck \
-		devel/gettext,-tools \
+	 	devel/gettext,-tools \
+		shells/bash-completion \
 		lang/clazy \
 		misc/shared-mime-info
 

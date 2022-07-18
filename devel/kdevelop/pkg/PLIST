@@ -542,6 +542,7 @@ share/applications/org.kde.kdevelop_git.desktop
 share/applications/org.kde.kdevelop_kdev4.desktop
 share/applications/org.kde.kdevelop_ps.desktop
 share/applications/org.kde.kdevelop_svn.desktop
+share/bash-completion/completions/kdevelop
 share/doc/HTML/ca/kdevelop/
 share/doc/HTML/ca/kdevelop/index.cache.bz2
 share/doc/HTML/ca/kdevelop/index.docbook
