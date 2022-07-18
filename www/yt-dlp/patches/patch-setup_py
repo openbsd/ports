@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -71,7 +71,7 @@ else:
+@@ -86,7 +86,7 @@ def build_params():
          ('share/zsh/site-functions', ['completions/zsh/_yt-dlp']),
          ('share/fish/vendor_completions.d', ['completions/fish/yt-dlp.fish']),
          ('share/doc/yt_dlp', ['README.txt']),
 -        ('share/man/man1', ['yt-dlp.1'])
 +        ('man/man1', ['yt-dlp.1'])
      ]
-     root = os.path.dirname(os.path.abspath(__file__))
      data_files = []
+     for dirname, files in files_spec:
