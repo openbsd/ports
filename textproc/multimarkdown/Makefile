@@ -1,6 +1,5 @@
 V =		5.4.0
 COMMENT =	marked-up plain text to formatted document converter
-DISTNAME =	${GH_PROJECT}-${V}
 PKGNAME =	multimarkdown-${V:C/-/./}
 CATEGORIES =	textproc
 
@@ -10,8 +9,8 @@ GH_TAGNAME =	${V}
 
 TESTS_COMMIT =	8d5ad66e3bbaeb0de8646783bfe964261ddb39c7
 DIST_SUBDIR =	multimarkdown
-MASTER_SITES_GITHUB =	https://github.com/fletcher/MMD-Test-Suite/archive/
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} ${TESTS_COMMIT}${EXTRACT_SUFX}
+MASTER_SITES0 =	https://github.com/fletcher/MMD-Test-Suite/archive/
+DISTFILES =	${GH_DISTFILE} ${TESTS_COMMIT}${EXTRACT_SUFX}:0
 HOMEPAGE =	http://fletcherpenney.net/multimarkdown/
 MAINTAINER =	Sean Levy <attila@stalphonsos.com>
 
