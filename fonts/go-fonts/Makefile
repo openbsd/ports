@@ -1,8 +1,8 @@
 COMMENT=	Go TrueType fonts
 GH_ACCOUNT=	golang
 GH_PROJECT=	image
-GH_COMMIT=	ce0faa1867f5944a366e0174e7197b82089e9fa8
-DISTNAME=	go-image-20170401
+GH_COMMIT=	41969df76e82aeec85fa3821b1e24955ea993001
+DISTNAME=	go-image-20220616
 PKGNAME=	${DISTNAME:S/image/fonts/}
 HOMEPAGE=	https://blog.golang.org/go-fonts
 
