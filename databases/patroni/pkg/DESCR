@@ -1,0 +1,4 @@
+Patroni is a cluster manager used to customize and automate deployment
+and maintenance of PostgreSQL HA (High Availability) clusters.
+It uses distributed configuration stores like etcd, Consul, ZooKeeper or
+Kubernetes for maximum accessibility.

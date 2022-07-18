@@ -1,0 +1,111 @@
+scope: "<my_scope>"
+name: "<my_hostname>"
+
+restapi:
+  listen: "0.0.0.0:8008"
+  connect_address: "<my_fqdn>:8008"
+  certfile: "/etc/patroni/patroni.pem"
+  keyfile: "/etc/patroni/patroni.key"
+  cafile: "/etc/ssl/cert.pem"
+  ciphers:
+    "AEAD-CHACHA20-POLY1305-SHA256:AEAD-AES256-GCM-SHA384:AEAD-AES128-GCM-SHA256:TLS13-AES-128-GCM-SHA256:EECDH+CHACHA20:EECDH+AESGCM"
+  http_extra_headers:
+    'X-Frame-Options': 'SAMEORIGIN'
+    'X-XSS-Protection': '1; mode=block'
+    'X-Content-Type-Options': 'nosniff'
+  https_extra_headers:
+    'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'
+  allowlist: ['127.0.0.1', '<trusted_ip>']
+  allowlist_include_members: true
+  verify_client: optional
+
+consul:
+  cacert: /etc/ssl/cert.pem
+  url: "https://127.0.0.1:8501"
+  token: <consul_service_token>
+  register_service: true
+  service_check_tls_server_name: <my_fqdn>
+
+log:
+  level: "WARNING"
+  dir: /var/log/patroni/
+  file_num: 7
+  file_size: 10000000
+
+bootstrap:
+  dcs:
+    ttl: 30
+    loop_wait: 10
+    retry_timeout: 10
+    maximum_lag_on_failover: 1048576
+    postgresql:
+      use_pg_rewind: true
+      use_slots: true
+      check_timeline: true
+      parameters:
+        listen_addresses: "*"
+        #max_connections: 20
+        ssl: on
+        ssl_cert_file: "/etc/patroni/patroni.pem"
+        ssl_key_file: "/etc/patroni/patroni.key"
+        ssl_ciphers: "AEAD-CHACHA20-POLY1305-SHA256:AEAD-AES256-GCM-SHA384:AEAD-AES128-GCM-SHA256:TLS13-AES-128-GCM-SHA256:EECDH+CHACHA20:EECDH+AESGCM"
+        #shared_buffers: 128MB
+        #work_mem: 8MB
+        #dynamic_shared_memory_type: posix
+        #wal_level: replica
+        #wal_log_hints: off
+        #max_wal_size: 1GB
+        #min_wal_size: 80MB
+        #archive_mode: on
+        #archive_command: "/usr/local/bin/pgbackrest --stanza postgresql archive-push %p"
+        #max_wal_senders: 10
+        #max_replication_slots: 10
+        wal_keep_size: 2048
+        #hot_standby: on
+        logging_collector: on
+        log_directory: "/var/postgresql"
+        log_filename: "logfile"
+        #log_timezone: "<my_timezone>"
+        #datestyle: "iso, mdy"
+        #timezone: "<my_timezone>"
+        #lc_messages: "C"
+        #lc_monetary: "C"
+        #lc_numeric: "C"
+        #lc_time: "C"
+        #default_text_search_config: "pg_catalog.english"
+    initdb:
+      - encoding: UTF8
+      - data-checksums
+
+postgresql:
+  bin_dir: /usr/local/bin
+  data_dir: /var/postgresql/data
+  connect_address: "<my_ip>:5432"
+  use_unix_socket: true
+  use_pg_rewind: true
+  listen: "*:5432"
+  authentication:
+    superuser:
+      username: postgres
+      password: "<postgres_password>"
+    replication:
+      username: replicator
+      password: "<replicator_password>"
+    rewind:
+      username: rewind
+      password: "<pg_rewind_password>"
+  pg_hba:
+    - local     all             all                                     trust
+    - host      replication     replicator      127.0.0.1/32            scram-sha-256
+    - hostssl   replication     replicator      <partner_ip>/32         scram-sha-256
+    - host      all             all             127.0.0.1/32            scram-sha-256
+    - hostssl   all             all             all                     scram-sha-256
+
+watchdog:
+  mode: off
+
+tags:
+  nofailover: false
+  nosync: false
+  #noloadbalance: false
+  #clonefrom: false

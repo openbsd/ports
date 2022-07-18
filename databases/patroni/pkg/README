@@ -1,0 +1,23 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Patroni can be considered as a wrapper around PostgreSQL server which makes
+HA cluster management tasks easier.
+When running Patroni, make sure that postgresql is not enabled in
+rc.conf.local(8) and PostgreSQL administration tasks such as server startup
+and shutdown are performed with patronictl utility.
+
+Patroni can use different distributed configuration stores (DCS), and requires
+installation of the appropriate python module for DCS, e.g. to use HashiCorp
+Consul, install py3-consul module.
+Provided example configuration assumes that HashiCorp Consul is used for DCS.
+
+To initialize PostgreSQL Patroni cluster, review and edit example configuration
+file located in /etc/patroni/patroni.yml.
+
+Commented-out options show the PostgreSQL defaults which should be reviewed
+before cluster initialization.
+
+Topics related to system tuning, PostgreSQL upgrades are covered in PostgreSQL
+server port readme.

@@ -1,0 +1,14 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/patroni"
+daemon_flags="${SYSCONFDIR}/patroni/patroni.yml"
+daemon_user="_postgresql"
+daemon_timeout=300
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+pexp="${MODPY_BIN} ${daemon} ${daemon_flags}"
+
+rc_cmd $1
