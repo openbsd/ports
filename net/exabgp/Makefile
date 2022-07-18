@@ -1,6 +1,6 @@
 COMMENT=		BGP route injector (supporting flow routes, etc)
 
-MODPY_EGG_VERSION=	4.2.20
+MODPY_EGG_VERSION=	4.2.21
 GH_ACCOUNT=		exa-networks
 GH_PROJECT=		exabgp
 GH_TAGNAME=		${MODPY_EGG_VERSION}
