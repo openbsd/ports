@@ -64,8 +64,8 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 .if ${NEEDS_OPENSSL:L:Myes}
 BUILD_DEPENDS+=	security/openssl/3.0
 MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl30
-MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl30/libcrypto.a \
-		${LOCALBASE}/lib/eopenssl30/libssl.a
+MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl30/libssl.a \
+		${LOCALBASE}/lib/eopenssl30/libcrypto.a
 .else
 MAKE_AUXLIBS+=	-lssl -lcrypto
 WANTLIB+=	crypto ssl
@@ -80,9 +80,9 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 
 .if ${FLAVOR:Mmysql}
 LIB_DEPENDS+=	databases/mariadb
-WANTLIB+=	lib/mysql/mysqlclient
+WANTLIB+=	lib/mysql/mariadb
 MAKE_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmariadb
 .endif
 
 .if ${FLAVOR:Mpgsql}
