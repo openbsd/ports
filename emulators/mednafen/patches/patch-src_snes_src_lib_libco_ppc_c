@@ -1,0 +1,14 @@
+snes/src/lib/libco/ppc.c:396:21: error: expected value in expression
+
+Index: src/snes/src/lib/libco/ppc.c
+--- src/snes/src/lib/libco/ppc.c.orig
++++ src/snes/src/lib/libco/ppc.c
+@@ -393,7 +393,7 @@ void co_delete(cothread_t t) {
+ }
+ 
+ static void co_init_(void) {
+-  #if LIBCO_MPROTECT
++  #ifdef LIBCO_MPROTECT
+   long page_size = sysconf(_SC_PAGESIZE);
+   if(page_size > 0) {
+     uintptr_t align = page_size;
