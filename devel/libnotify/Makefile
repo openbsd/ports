@@ -1,11 +1,11 @@
 COMMENT=		send desktop notifications to a notification daemon
 
-GNOME_VERSION=		0.8.0
+GNOME_VERSION=		0.8.1
 GNOME_PROJECT=		libnotify
 
 CATEGORIES=		devel
 
-SHARED_LIBS += notify                    4.1 # 4.0.0
+SHARED_LIBS += notify                    5.0 # 4.0.0
 
 HOMEPAGE=		http://www.galago-project.org/
 
