@@ -126,6 +126,7 @@
      SUBDIR += p5-ldap
      SUBDIR += p5-pgsql
      SUBDIR += p5-sybperl
+     SUBDIR += patroni
      SUBDIR += pecl-redis,php74
      SUBDIR += pecl-redis,php80
      SUBDIR += pecl-redis,php81
@@ -135,6 +136,7 @@
      SUBDIR += pg_stats_reporter
      SUBDIR += pg_statsinfo
      SUBDIR += pgadmin3
+     SUBDIR += pgbackrest
      SUBDIR += pgbadger
      SUBDIR += pgbouncer
      SUBDIR += pgcluu
