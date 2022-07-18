@@ -1,0 +1,24 @@
+fix gzdoom.pk3 not found error, backport of
+https://github.com/coelckers/gzdoom/pull/1665
+
+Index: src/d_main.cpp
+--- src/d_main.cpp.orig
++++ src/d_main.cpp
+@@ -3534,6 +3534,8 @@ static int D_DoomMain_Internal (void)
+ 	
+ 	std::set_new_handler(NewFailure);
+ 	const char *batchout = Args->CheckValue("-errorlog");
++
++	D_DoomInit();
+ 	
+ 	// [RH] Make sure zdoom.pk3 is always loaded,
+ 	// as it contains magic stuff we need.
+@@ -3567,8 +3569,6 @@ static int D_DoomMain_Internal (void)
+ 	}
+ 
+ 	if (!batchrun) Printf(PRINT_LOG, "%s version %s\n", GAMENAME, GetVersionString());
+-
+-	D_DoomInit();
+ 
+ 	extern void D_ConfirmSendStats();
+ 	D_ConfirmSendStats();
