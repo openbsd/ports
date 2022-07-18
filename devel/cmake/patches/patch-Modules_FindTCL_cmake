@@ -42,7 +42,7 @@ Index: Modules/FindTCL.cmake
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -76,15 +93,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -76,15 +93,35 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -80,15 +80,13 @@ Index: Modules/FindTCL.cmake
 +    ${LOCALBASE}/lib/tcl/tk8.6
 +    ${LOCALBASE}/lib/tcl/tcl8.5
 +    ${LOCALBASE}/lib/tcl/tk8.5
-+    ${LOCALBASE}/lib/tcl/tcl8.4
-+    ${LOCALBASE}/lib/tcl/tk8.4
 +    )
 +endif()
 +
  set(TCLTK_POSSIBLE_LIB_PATH_SUFFIXES
    lib/tcl/tcl8.7
    lib/tcl/tk8.7
-@@ -167,16 +206,6 @@ if(Tk_FRAMEWORKS)
+@@ -167,16 +204,6 @@ if(Tk_FRAMEWORKS)
    endif()
  endif()
  
@@ -105,7 +103,7 @@ Index: Modules/FindTCL.cmake
  
  set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
    include/tcl${TK_LIBRARY_VERSION}
-@@ -193,6 +222,46 @@ set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
+@@ -193,6 +220,36 @@ set(TCLTK_POSSIBLE_INCLUDE_PATH_SUFFIXES
    include/tcl8.2
    include/tcl8.0
    )
@@ -133,20 +131,10 @@ Index: Modules/FindTCL.cmake
 +    ${TK_FRAMEWORK_INCLUDES}
 +    "${TCL_TCLSH_PATH_PARENT}/include"
 +    "${TK_WISH_PATH_PARENT}/include"
-+    /usr/include/tcl${TK_LIBRARY_VERSION}
-+    /usr/include/tcl${TCL_LIBRARY_VERSION}
-+    /usr/include/tcl8.6
-+    /usr/include/tcl8.5
-+    /usr/include/tcl8.4
-+    /usr/include/tcl8.3
-+    /usr/include/tcl8.2
-+    /usr/include/tcl8.0
 +    ${LOCALBASE}/include/tcl8.6
 +    ${LOCALBASE}/include/tk8.6
 +    ${LOCALBASE}/include/tcl8.5
 +    ${LOCALBASE}/include/tk8.5
-+    ${LOCALBASE}/include/tcl8.4
-+    ${LOCALBASE}/include/tk8.4
 +    )
 +endif()
  

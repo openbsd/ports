@@ -1,8 +1,9 @@
 Discussion here:
 https://gitlab.kitware.com/cmake/cmake/-/merge_requests/6132
 
---- Modules/CMakeUnixFindMake.cmake.orig	Fri Nov 11 15:37:13 2016
-+++ Modules/CMakeUnixFindMake.cmake	Fri Nov 25 22:31:44 2016
+Index: Modules/CMakeUnixFindMake.cmake
+--- Modules/CMakeUnixFindMake.cmake.orig
++++ Modules/CMakeUnixFindMake.cmake
 @@ -2,7 +2,7 @@
  # file Copyright.txt or https://cmake.org/licensing for details.
  

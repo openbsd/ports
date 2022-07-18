@@ -6,7 +6,7 @@ VER =		3.23.2
 EPOCH =		0
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://www.cmake.org/
 
