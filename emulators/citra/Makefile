@@ -39,11 +39,10 @@ LIB_DEPENDS =	devel/cryptopp \
 		net/enet \
 		x11/qt5/qtmultimedia
 
-CONFIGURE_ARGS =	-DCMAKE_PREFIX_PATH="-I${LOCALBASE}/lib/qt5/cmake/Qt5/" \
-			-DENABLE_CUBEB=OFF \
+CONFIGURE_ARGS =	-DENABLE_CUBEB=OFF \
 			-DENABLE_WEB_SERVICE=OFF
 
-CXXFLAGS +=		-I${LOCALBASE}/include
+CXXFLAGS +=		-I${LOCALBASE}/include -I${LOCALBASE}/lib/qt5/cmake/Qt5/
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 do-test:
