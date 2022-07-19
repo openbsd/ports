@@ -1,9 +1,10 @@
 COMMENT=	library for handling FITS data
-CATEGORIES=	math graphics devel
+CATEGORIES=	math astro graphics devel
 
 HOMEPAGE=	https://heasarc.gsfc.nasa.gov/fitsio/fitsio.html
 
 DISTNAME=	cfitsio-4.1.0
+REVISION=	0
 
 SHARED_LIBS +=  cfitsio                   2.0 # 0.0
 
