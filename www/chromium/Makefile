@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			103.0.5060.114
-REVISION=		1
+REVISION=		2
 
 DISTNAME=		chromium-${V}
 
@@ -51,40 +51,22 @@ MODPY_SETUPTOOLS=	Yes
 PATCHORIG=	.orig.port
 
 # uses pledge()
-WANTLIB += X11 Xext Xfixes Xrender c cups dbus-1 event
-WANTLIB += execinfo Xft
-WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
-WANTLIB += m
-WANTLIB += kvm pthread
-WANTLIB += xslt
-WANTLIB += sndio
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Xi Xtst
-WANTLIB += Xcursor Xrandr gio-2.0
-WANTLIB += nspr4 nss3 nssutil3 smime3
-WANTLIB += atk-bridge-2.0
-WANTLIB += X11-xcb xcb
-WANTLIB += GL expat
-WANTLIB += atk-1.0 cairo gdk-3 gtk-3 pango-1.0
-WANTLIB += pangocairo-1.0
-WANTLIB += Xcomposite Xdamage
-WANTLIB += EGL Xau Xdmcp Xinerama Xxf86vm atspi cairo-gobject
-WANTLIB += drm epoxy fontconfig freetype fribidi gmodule-2.0 graphite2
-WANTLIB += gthread-2.0 intl pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 util xcb-dri2 xcb-glx xcb-render xcb-shm
-WANTLIB += xml2 z
-WANTLIB += harfbuzz harfbuzz-subset harfbuzz-gobject
-WANTLIB += ffi png
-WANTLIB += iconv lzma
-WANTLIB += fido2 cbor usbhid crypto
-WANTLIB += gbm xkbcommon
-WANTLIB += tiff xshmfence
-WANTLIB += lzo2
+WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
+WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo
+WANTLIB+=	cbor crypto cups dbus-1 drm event execinfo expat ffi fido2
+WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
+WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm lzo2 m
+WANTLIB+=	nspr4 nss3 nssutil3 openh264 pango-1.0 pangocairo-1.0
+WANTLIB+=	pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread smime3
+WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
+		x11/gtk+3,-main \
 		x11/gtk+3,-guic \
 		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
@@ -95,14 +77,14 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/flock \
 		sysutils/pciutils \
 		devel/ninja \
-		x11/gtk+3 \
 		x11/py-xcbgen${MODPY_FLAVOR} \
 		${MODGCC4_CPPDEP}
-LIB_DEPENDS=	devel/harfbuzz \
-		graphics/tiff \
+LIB_DEPENDS=	archivers/snappy \
+		devel/harfbuzz \
+		multimedia/openh264 \
 		security/nss \
+		textproc/icu4c \
 		textproc/libxslt \
-		x11/gtk+3 \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
@@ -141,8 +123,14 @@ BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
 # These libraries are used from the system and the build infrastructure
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
-GN_SYSTEM_LIBS=	libevent \
-		libxslt
+GN_SYSTEM_LIBS=	icu \
+		libevent \
+		libjpeg \
+		libpng \
+		libxml \
+		libxslt \
+		openh264 \
+		snappy
 
 GN_ARGS=	enable_nacl=false \
 		is_official_build=true \
@@ -153,14 +141,16 @@ GN_ARGS=	enable_nacl=false \
 		enable_one_click_signin=true \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
+		use_bundled_fontconfig=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
 		use_system_libdrm=true \
-		use_bundled_fontconfig=false \
+		use_system_libjpeg=true \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
 		use_gnome_keyring=false \
+		icu_use_data_file=false \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -272,7 +262,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
-.for f in icudtl.dat snapshot_blob.bin v8_context_snapshot.bin
+.for f in snapshot_blob.bin v8_context_snapshot.bin
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
 .endfor
 
