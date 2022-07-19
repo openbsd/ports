@@ -2,9 +2,9 @@ COMMENT =		seafile daemon
 
 GH_PROJECT =		seafile
 # upstream keep on sliding tags to pull in new commits
-# this commit is from the "v8.0.7" tag
-GH_COMMIT =		eb4c34d0a1d912f7f1a650b01bfafe26296855ae
-DISTNAME =		seafile-daemon-8.0.7pl20220504
+# this commit is from the "v8.0.8" tag
+GH_COMMIT =		f57dae37854acab74b08b0891584cb7ecb98cd18
+DISTNAME =		seafile-daemon-8.0.8pl20220706
 
 SHARED_LIBS =		seafile 4.0
 
