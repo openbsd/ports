@@ -3,12 +3,9 @@ CATEGORIES=	math graphics devel
 
 HOMEPAGE=	https://heasarc.gsfc.nasa.gov/fitsio/fitsio.html
 
-DISTNAME=	cfitsio3450
+DISTNAME=	cfitsio-4.1.0
 
-PKGNAME=	cfitsio-3.450
-REVISION=	1
-
-SHARED_LIBS +=  cfitsio                   1.0 # 0.0
+SHARED_LIBS +=  cfitsio                   2.0 # 0.0
 
 MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/
@@ -16,12 +13,12 @@ MASTER_SITES=	https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 # Mostly BSD-style, with two chunks of GPL code
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c crypto curl m nghttp2 ssl z
+WANTLIB += c curl m z
 
 CONFIGURE_STYLE=gnu
 
-#ALL_TARGET=	all fitscopy imcopy shared fpack funpack
-ALL_TARGET=	utils shared
+# "shared" before "utils" so that the latter link against the shared library
+ALL_TARGET=	shared utils
 SHLIB_SUFFIX=	.so.${LIBcfitsio_VERSION}
 MAKE_FLAGS=	SHLIB_SUFFIX=${SHLIB_SUFFIX}
 
@@ -32,10 +29,8 @@ LIB_DEPENDS+=	net/curl
 
 DOCDIR=${PREFIX}/share/doc/cfitsio
 
-WRKDIST=	${WRKDIR}/cfitsio
-
 post-patch:
-	sed -i 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/*.[chl] ${WRKSRC}/zlib/*.h
+	sed -i 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/*.[chl]
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
