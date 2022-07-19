@@ -2,6 +2,7 @@ COMMENT =		simple distributed software configuration management
 
 DISTNAME =		fossil-2.18
 EPOCH =			0
+REVISION =		0
 CATEGORIES =		devel www
 
 MAINTAINER =		James Turner <james@calminferno.net>

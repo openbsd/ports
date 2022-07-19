@@ -13,13 +13,8 @@ installing it alone is not enough. You also need to run the following:
 
 $ fossil settings clearsign on -global
 
-This package can be built with a static FLAVOR, which makes it easier
-to use in a chrooted apache environment.  ${PREFIX}/bin/fossil must
-be copied to /var/www/bin.  Note that it requires /var/tmp in the
-chroot dir:
-
-# mkdir /var/www/var
-# mkdir -m 1777 /var/www/var/tmp
+This package can be built with a static FLAVOR, for use in a httpd(8)
+chrooted environment.
 
 After upgrading to a newer version of fossil, it is always a good idea
 to run: "fossil all rebuild". Running "rebuild" this way is not always
