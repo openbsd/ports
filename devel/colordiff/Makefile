@@ -1,5 +1,5 @@
 COMMENT =		colorized diff tool
-DISTNAME =		colordiff-1.0.19
+DISTNAME =		colordiff-1.0.20
 CATEGORIES =		devel
 HOMEPAGE =		https://www.colordiff.org/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -7,7 +7,8 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+MASTER_SITES =		https://www.colordiff.org/ \
+			https://www.colordiff.org/archive/
 
 MODULES =		perl
 
