@@ -1,0 +1,24 @@
+refactor(client): Refactor NetworkCallback to make the unit tests work
+https://github.com/open62541/open62541/commit/de9d691906547c9fc99e0a77198a80fe5bba54b1
+
+Index: src/client/ua_client_internal.h
+--- src/client/ua_client_internal.h.orig
++++ src/client/ua_client_internal.h
+@@ -95,6 +95,8 @@ void
+ UA_Client_AsyncService_cancel(UA_Client *client, AsyncServiceCall *ac,
+                               UA_StatusCode statusCode);
+ 
++typedef LIST_HEAD(UA_AsyncServiceList, AsyncServiceCall) UA_AsyncServiceList;
++
+ void
+ UA_Client_AsyncService_removeAll(UA_Client *client, UA_StatusCode statusCode);
+ 
+@@ -143,7 +145,7 @@ struct UA_Client {
+     UA_Boolean pendingConnectivityCheck;
+ 
+     /* Async Service */
+-    LIST_HEAD(, AsyncServiceCall) asyncServiceCalls;
++    UA_AsyncServiceList asyncServiceCalls;
+ 
+     /* Subscriptions */
+ #ifdef UA_ENABLE_SUBSCRIPTIONS
