@@ -2,7 +2,7 @@ COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 V =			4.2.11
 DISTNAME =		qdigidoc4_${V}.110-1804
-REVISION =		3
+REVISION =		4
 EXTRACT_SUFX =		.tar.xz
 WRKDIST =		${WRKDIR}/qdigidoc4
 PKGNAME =		qdigidoc4-${V}
