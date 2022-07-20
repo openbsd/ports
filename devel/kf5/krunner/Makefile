@@ -9,7 +9,9 @@ WANTLIB += KF5ThreadWeaver Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5Widgets
 WANTLIB += m
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		archivers/gtar
+
 LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
 		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/ki18n>=${MODKF5_VERSION} \
