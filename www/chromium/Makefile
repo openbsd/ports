@@ -7,6 +7,7 @@ DPB_PROPERTIES=		parallel parallel2
 COMMENT=		Chromium browser
 
 V=			103.0.5060.134
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -79,11 +80,13 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/py-xcbgen${MODPY_FLAVOR} \
 		${MODGCC4_CPPDEP}
 LIB_DEPENDS=	archivers/snappy \
-		devel/harfbuzz \
+		devel/pango \
+		graphics/jpeg \
 		multimedia/openh264 \
 		security/nss \
 		textproc/icu4c \
 		textproc/libxslt \
+		x11/gnome/at-spi2-atk \
 		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
