@@ -99,9 +99,12 @@ lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}__init__.${M
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}dds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}disconnection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}disconnection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}passwd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/${MODPY_PYCACHE}passwd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/dds.py
+lib/python${MODPY_VERSION}/site-packages/ldap/extop/disconnection.py
 lib/python${MODPY_VERSION}/site-packages/ldap/extop/passwd.py
 lib/python${MODPY_VERSION}/site-packages/ldap/filter.py
 lib/python${MODPY_VERSION}/site-packages/ldap/functions.py
