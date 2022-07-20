@@ -142,6 +142,8 @@ post-extract:
 	cd ${WRKSRC}/libraries/unix && \
 	mkdir -p System/OpenBSD && \
 	install -m 644 ${FILESDIR}/Process.hsc System/OpenBSD
+	chmod 644 ${WRKDIR}/ghc-*-shlibs-*/lib*.so* # XXX
+	cp /usr/lib/libc.so.96.1 ${WRKDIR}/ghc-*-shlibs-*/ # XXX
 
 BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
 
