@@ -1,7 +1,7 @@
 COMMENT =	library implementation of OPC UA
 
 VERSION =	1.3.2
-REVISION =	0
+REVISION =	1
 DISTNAME =	open62541-${VERSION}
 PKGNAME =	open62541-${VERSION}
 
