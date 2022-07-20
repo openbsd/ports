@@ -1,6 +1,6 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-2.4.17
+DISTNAME =	haproxy-2.6.1
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
@@ -8,9 +8,9 @@ MAINTAINER =	Daniel Jakots <obsd@chown.me>
 # GPLv2
 PERMIT_PACKAGE =		Yes
 
-WANTLIB +=	c crypto pcre pcreposix pthread ssl z
+WANTLIB +=	c crypto pcre2-8 pcre2-posix pthread ssl z
 
-MASTER_SITES =	${HOMEPAGE}/download/2.4/src/
+MASTER_SITES =	${HOMEPAGE}/download/2.6/src/
 
 HAPROXYCONF =	${SYSCONFDIR}/haproxy
 HAPROXYSTATE =	/var/haproxy
@@ -22,20 +22,15 @@ SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 USE_GMAKE =	Yes
 MAKE_FLAGS +=	CPU_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
-MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1 USE_ZLIB=1 V=1
+MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE2=1 USE_ZLIB=1 V=1
 MAKE_FLAGS +=	USE_LIBATOMIC=
+
+FAKE_FLAGS +=	DOCDIR="${PREFIX}/share/doc/haproxy"
+FAKE_FLAGS +=	MANDIR="${PREFIX}/man"
 
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	devel/pcre
-
-NO_TEST =	Yes
-
-DOCS =		architecture configuration gpl lgpl
-EXAMPLES =	acl-content-sw content-sw-sample option-http_proxy
-
-DOCSDIR =	${PREFIX}/share/doc/haproxy
-EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
+LIB_DEPENDS =	devel/pcre2
 
 # Fix undefined reference to __atomic_*
 .if ${MACHINE_ARCH} == "hppa"
@@ -43,20 +38,16 @@ LDFLAGS +=		"-latomic"
 WANTLIB +=		atomic
 .endif
 
-pre-install:
+NO_TEST =	Yes
+
+pre-build:
 	${SUBST_CMD} ${WRKSRC}/doc/haproxy.1
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/doc/haproxy.1 ${PREFIX}/man/man1/haproxy.1
-	${INSTALL_DATA_DIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file}.txt ${DOCSDIR}
-.endfor
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-.for file in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${file}.cfg ${EXAMPLESDIR}
-.endfor
-	${INSTALL_DATA} ${FILESDIR}/haproxy.cfg ${EXAMPLESDIR}
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/haproxy
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg \
+	    ${PREFIX}/share/examples/haproxy
+	${INSTALL_DATA} ${FILESDIR}/haproxy.cfg \
+	    ${PREFIX}/share/examples/haproxy
 
 .include <bsd.port.mk>

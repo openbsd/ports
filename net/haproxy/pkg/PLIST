@@ -6,13 +6,33 @@
 @sample ${HAPROXYCONF}/
 @sample ${HAPROXYSTATE}/
 share/doc/haproxy/
+share/doc/haproxy/51Degrees-device-detection.txt
+share/doc/haproxy/DeviceAtlas-device-detection.txt
+share/doc/haproxy/SOCKS4.protocol.txt
+share/doc/haproxy/SPOE.txt
+share/doc/haproxy/WURFL-device-detection.txt
 share/doc/haproxy/architecture.txt
+share/doc/haproxy/close-options.txt
 share/doc/haproxy/configuration.txt
-share/doc/haproxy/gpl.txt
-share/doc/haproxy/lgpl.txt
+share/doc/haproxy/cookie-options.txt
+share/doc/haproxy/intro.txt
+share/doc/haproxy/linux-syn-cookies.txt
+share/doc/haproxy/lua.txt
+share/doc/haproxy/management.txt
+share/doc/haproxy/netscaler-client-ip-insertion-protocol.txt
+share/doc/haproxy/network-namespaces.txt
+share/doc/haproxy/peers-v2.0.txt
+share/doc/haproxy/peers.txt
+share/doc/haproxy/proxy-protocol.txt
+share/doc/haproxy/regression-testing.txt
+share/doc/haproxy/seamless_reload.txt
 share/examples/haproxy/
-share/examples/haproxy/acl-content-sw.cfg
+share/examples/haproxy/basic-config-edge.cfg
 share/examples/haproxy/content-sw-sample.cfg
 share/examples/haproxy/haproxy.cfg
 @sample ${HAPROXYCONF}/haproxy.cfg
 share/examples/haproxy/option-http_proxy.cfg
+share/examples/haproxy/quick-test.cfg
+share/examples/haproxy/socks4.cfg
+share/examples/haproxy/transparent_proxy.cfg
+share/examples/haproxy/wurfl-example.cfg
