@@ -2,7 +2,7 @@ COMMENT = 		Erlang build tool
 
 GH_ACCOUNT =		erlang
 GH_PROJECT =		rebar3
-GH_TAGNAME =		3.15.2
+GH_TAGNAME =		3.19.0
 CATEGORIES =		devel
 HOMEPAGE =		https://www.rebar3.org
 MAINTAINER =		Jonathan Matthew <jmatthew@openbsd.org>
@@ -10,12 +10,13 @@ MAINTAINER =		Jonathan Matthew <jmatthew@openbsd.org>
 # APLv2
 PERMIT_PACKAGE =	Yes
 
-FLAVORS =		erlang21
-FLAVOR ?=		erlang21
+# rebar 3.19 only supports OTP 23..25
+FLAVORS =		erlang25
+FLAVOR ?=		erlang25
 
 MASTER_SITES1 = 	https://repo.hex.pm/tarballs/
 
-.if ${FLAVOR:Merlang21}
+.if ${FLAVOR:Merlang25}
 _EV =                   ${FLAVOR:C/.*([0-9][0-9]+\$)/\1/}
 RUN_DEPENDS =           lang/erlang/${_EV}
 ERL_VERSION =           ${_EV}
@@ -25,18 +26,16 @@ ERRORS +=               "Invalid FLAVOR set: ${FLAVOR}"
 
 EXTRACT_ONLY =		rebar3-${GH_TAGNAME}.tar.gz
 
-# certifi held back; >=2.6.0 -> "undefined parse transform 'certifi_pt'"
 HEX_MODULES = \
-	bbmustache		1.12.1 \
-	certifi			2.5.3 \
+	bbmustache		1.12.2 \
+	certifi			2.9.0 \
 	cf			0.3.1 \
 	cth_readable		1.5.1 \
 	erlware_commons		1.5.0 \
 	eunit_formatters	0.5.0 \
-	getopt			1.0.2 \
-	parse_trans		3.4.0 \
-	providers		1.8.1 \
-	relx			4.4.0 \
+	getopt			1.0.1 \
+	providers		1.9.0 \
+	relx			4.7.0 \
 	ssl_verify_fun		1.1.6
 # for tests
 HEX_MODULES += \
