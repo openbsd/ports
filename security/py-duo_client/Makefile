@@ -21,6 +21,7 @@ MODPY_PYTEST =		Yes
 FLAVOR =		python3
 FLAVORS =		python3
 
+BUILD_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
