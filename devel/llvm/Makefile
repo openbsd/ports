@@ -15,7 +15,7 @@ PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	2
+REVISION-main =	3
 
 CATEGORIES =	devel
 

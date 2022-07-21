@@ -16,7 +16,7 @@ DPB_PROPERTIES = parallel
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 11
+REVISION = 12
 
 ADASTRAP-amd64 = adastrap-amd64-8.3.0-2.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
