@@ -1,0 +1,17 @@
+This optimization breaks for ports-gcc. Patch it out.
+
+Index: json_object.c
+--- json_object.c.orig
++++ json_object.c
+@@ -145,10 +145,7 @@ static json_object_to_json_string_fn _json_object_user
+ #elif defined(__OS400__)
+ #define JSON_NORETURN
+ #else
+-/* 'cold' attribute is for optimization, telling the computer this code
+- * path is unlikely.
+- */
+-#define JSON_NORETURN __attribute__((noreturn, cold))
++#define JSON_NORETURN __attribute__((noreturn))
+ #endif
+ #endif
+ /**
