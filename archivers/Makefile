@@ -77,6 +77,7 @@
      SUBDIR += zipios
      SUBDIR += zoo
      SUBDIR += zopfli
+     SUBDIR += zpaqfranz
      SUBDIR += zstd
      SUBDIR += zziplib
 
