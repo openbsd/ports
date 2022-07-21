@@ -35,6 +35,7 @@ lib/cmake/KDecoration2/KDecoration2Targets.cmake
 @lib lib/libkdecorations2.so.${LIBkdecorations2_VERSION}
 @lib lib/libkdecorations2private.so.${LIBkdecorations2private_VERSION}
 share/locale/az/LC_MESSAGES/kdecoration.mo
+share/locale/bg/LC_MESSAGES/kdecoration.mo
 share/locale/ca/LC_MESSAGES/kdecoration.mo
 share/locale/ca@valencia/LC_MESSAGES/kdecoration.mo
 share/locale/cs/LC_MESSAGES/kdecoration.mo
