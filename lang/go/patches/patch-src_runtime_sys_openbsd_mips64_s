@@ -15,7 +15,7 @@ Index: src/runtime/sys_openbsd_mips64.s
  //
  
  #include "go_asm.h"
-@@ -14,387 +15,777 @@
+@@ -14,387 +15,783 @@
  #define CLOCK_REALTIME	$0
  #define	CLOCK_MONOTONIC	$3
  
@@ -33,11 +33,6 @@ Index: src/runtime/sys_openbsd_mips64.s
 +TEXT runtime·mstart_stub(SB),NOSPLIT,$160
 +	// R4 points to the m.
 +	// We are already on m's g0 stack.
-+
-+	// initialize REGSB = PC&0xffffffff00000000
-+	BGEZAL	R0, 1(PC)
-+	SRLV	$32, R31, RSB
-+	SLLV	$32, RSB
 +
 +	// Save callee-save registers (R16..R23, R30, F24..F31).
 +	MOVV	R16, (1*8)(R29)
@@ -57,6 +52,14 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVF	F29, (16*8)(R29)
 +	MOVF	F30, (17*8)(R29)
 +	MOVF	F31, (18*8)(R29)
++
++	// Preserve RSB (aka gp)
++	MOVV	RSB, (19*8)(R29)
++
++	// Initialize REGSB = PC&0xffffffff00000000
++	BGEZAL	R0, 1(PC)
++	SRLV	$32, R31, RSB
++	SLLV	$32, RSB
 +
 +	MOVV	m_g0(R4), g
 +	CALL	runtime·save_g(SB)
@@ -81,6 +84,9 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVF	(16*8)(R29), F29
 +	MOVF	(17*8)(R29), F30
 +	MOVF	(18*8)(R29), F31
++
++	// Restore RSB (aka gp)
++	MOVV	(19*8)(R29), RSB
 +
 +	// Go is all done with this OS thread.
 +	// Tell pthread everything is ok (we never join with this thread, so

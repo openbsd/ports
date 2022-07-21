@@ -1,0 +1,27 @@
+Index: src/cmd/link/internal/ld/elf.go
+--- src/cmd/link/internal/ld/elf.go.orig
++++ src/cmd/link/internal/ld/elf.go
+@@ -1465,6 +1465,15 @@ func (ctxt *Link) doelf() {
+ 		dynamic := ldr.CreateSymForUpdate(".dynamic", 0)
+ 		dynamic.SetType(sym.SELFSECT) // writable
+ 
++		// In the absence of a DT_MIPS_RLD_MAP entry, the openbsd/mips64
++		// dynamic loader marks the pages surrounding the DT_DEBUG entry
++		// as writeable, updates it, then marks the pages as read only.
++		// This leads to bad things happening if .dynamic is in a
++		// writeable section.
++		if ctxt.IsMIPS64() && ctxt.HeadType == objabi.Hopenbsd {
++			dynamic.SetType(sym.SELFROSECT)
++		}
++
+ 		if ctxt.IsS390X() {
+ 			// S390X uses .got instead of .got.plt
+ 			gotplt = got
+@@ -1514,6 +1523,7 @@ func (ctxt *Link) doelf() {
+ 		// DT_JMPREL is emitted so we have to defer generation of elf.DT_PLTREL,
+ 		// DT_PLTRELSZ, and elf.DT_JMPREL dynamic entries until after we know the
+ 		// size of .rel(a).plt section.
++
+ 		Elfwritedynent(ctxt.Arch, dynamic, elf.DT_DEBUG, 0)
+ 	}
+ 

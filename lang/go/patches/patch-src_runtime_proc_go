@@ -13,12 +13,18 @@ Index: src/runtime/proc.go
  	}
  	return false
  }
-@@ -1327,7 +1325,7 @@ func mStackIsSystemAllocated() bool {
+@@ -1323,13 +1321,8 @@ func usesLibcall() bool {
+ // system-allocated stack.
+ func mStackIsSystemAllocated() bool {
+ 	switch GOOS {
+-	case "aix", "darwin", "plan9", "illumos", "ios", "solaris", "windows":
++	case "aix", "darwin", "illumos", "ios", "openbsd", "plan9", "solaris", "windows":
  		return true
- 	case "openbsd":
- 		switch GOARCH {
+-	case "openbsd":
+-		switch GOARCH {
 -		case "386", "amd64", "arm", "arm64":
-+		case "386", "amd64", "arm", "arm64", "mips64":
- 			return true
- 		}
+-			return true
+-		}
  	}
+ 	return false
+ }

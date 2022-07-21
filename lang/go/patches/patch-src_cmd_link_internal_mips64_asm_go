@@ -1,28 +1,114 @@
 Index: src/cmd/link/internal/mips64/asm.go
 --- src/cmd/link/internal/mips64/asm.go.orig
 +++ src/cmd/link/internal/mips64/asm.go
-@@ -37,6 +37,7 @@ import (
+@@ -37,10 +37,92 @@ import (
  	"cmd/link/internal/loader"
  	"cmd/link/internal/sym"
  	"debug/elf"
 +	"fmt"
  )
  
- func gentext(ctxt *ld.Link, ldr *loader.Loader) {}
-@@ -59,8 +60,10 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+-func gentext(ctxt *ld.Link, ldr *loader.Loader) {}
++var (
++	mipsDTOffsets     map[elf.DynTag]int64
++	mipsDynSymCount   uint64
++	mipsGOTLocalCount uint64
++	mipsGOTSymIndex   uint64
++)
+ 
++func gentext(ctxt *ld.Link, ldr *loader.Loader) {
++	if ctxt.Target.IsExternal() {
++		return
++	}
++
++	dynamic := ldr.MakeSymbolUpdater(ctxt.ArchSyms.Dynamic)
++
++	ld.Elfwritedynent(ctxt.Arch, dynamic, elf.DT_MIPS_RLD_VERSION, 1)
++	ld.Elfwritedynent(ctxt.Arch, dynamic, elf.DT_MIPS_BASE_ADDRESS, 0)
++
++	// DT_* entries have to exist prior to elfdynhash(), which finalises the
++	// table by adding DT_NULL. However, the values for the following entries
++	// are not know until after dynreloc() has completed. Add the symbols now,
++	// then update their values prior to code generation.
++	dts := []elf.DynTag{
++		elf.DT_MIPS_LOCAL_GOTNO,
++		elf.DT_MIPS_SYMTABNO,
++		elf.DT_MIPS_GOTSYM,
++	}
++	mipsDTOffsets = make(map[elf.DynTag]int64)
++	for _, dt := range dts {
++		ld.Elfwritedynent(ctxt.Arch, dynamic, dt, 0)
++		mipsDTOffsets[dt] = dynamic.Size() - 8
++	}
++}
++
++func genSymsLate(ctxt *ld.Link, ldr *loader.Loader) {
++	if ctxt.Target.IsExternal() {
++		return
++	}
++
++	// Update DT_* entries now that we have the values to do so.
++	dynamic := ldr.MakeSymbolUpdater(ctxt.ArchSyms.Dynamic)
++	dynamic.SetUint(ctxt.Target.Arch, mipsDTOffsets[elf.DT_MIPS_LOCAL_GOTNO], mipsGOTLocalCount)
++	dynamic.SetUint(ctxt.Target.Arch, mipsDTOffsets[elf.DT_MIPS_SYMTABNO], mipsDynSymCount)
++	dynamic.SetUint(ctxt.Target.Arch, mipsDTOffsets[elf.DT_MIPS_GOTSYM], mipsGOTSymIndex)
++}
++
++func adddynrel(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, s loader.Sym, r loader.Reloc, rIdx int) bool {
++	targ := r.Sym()
++	var targType sym.SymKind
++	if targ != 0 {
++		targType = ldr.SymType(targ)
++	}
++
++	if r.Type() >= objabi.ElfRelocOffset {
++		ldr.Errorf(s, "unexpected relocation type %d (%s)", r.Type(), sym.RelocName(target.Arch, r.Type()))
++		return false
++	}
++
++	switch r.Type() {
++	case objabi.R_CALLMIPS, objabi.R_JMPMIPS:
++		if targType != sym.SDYNIMPORT {
++			// Nothing to do, the relocation will be laid out in reloc
++			return true
++		}
++		if target.IsExternal() {
++			// External linker will do this relocation.
++			return true
++		}
++
++		// Internal linking, build a PLT entry and change the relocation
++		// target to that entry.
++		if r.Add() != 0 {
++			ldr.Errorf(s, "PLT call with non-zero addend (%v)", r.Add())
++		}
++		addpltsym(target, ldr, syms, targ)
++		su := ldr.MakeSymbolUpdater(s)
++		su.SetRelocSym(rIdx, syms.PLT)
++		su.SetRelocAdd(rIdx, int64(ldr.SymPlt(targ)))
++		return true
++	}
++
++	return false
++}
++
+ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loader.Loader, s loader.Sym, r loader.ExtReloc, ri int, sectoff int64) bool {
+ 
+ 	// mips64 ELF relocation (endian neutral)
+@@ -59,8 +141,10 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
  	elfsym := ld.ElfSymForReloc(ctxt, r.Xsym)
  	out.Write32(uint32(elfsym))
  	out.Write8(0)
 -	out.Write8(0)
 -	out.Write8(0)
-+	if r.Type != objabi.R_MIPSGPRELHI && r.Type != objabi.R_MIPSGPRELLO {
++	if r.Type != objabi.R_MIPS_GPRELHI && r.Type != objabi.R_MIPS_GPRELLO {
 +		out.Write8(0)
 +		out.Write8(0)
 +	}
  	switch r.Type {
  	default:
  		return false
-@@ -85,9 +88,20 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+@@ -85,9 +169,20 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
  			// via the external linker.
  			addend += 0x7000
  		}
@@ -30,26 +116,108 @@ Index: src/cmd/link/internal/mips64/asm.go
 -		objabi.R_JMPMIPS:
 +	case objabi.R_CALLMIPS, objabi.R_JMPMIPS:
  		out.Write8(uint8(elf.R_MIPS_26))
-+	case objabi.R_MIPSGPRELHI:
++	case objabi.R_MIPS_GPRELHI:
 +		out.Write8(uint8(elf.R_MIPS_HI16))
 +		out.Write8(uint8(elf.R_MIPS_SUB))
 +		out.Write8(uint8(elf.R_MIPS_GPREL16))
-+	case objabi.R_MIPSGPRELLO:
++	case objabi.R_MIPS_GPRELLO:
 +		out.Write8(uint8(elf.R_MIPS_LO16))
 +		out.Write8(uint8(elf.R_MIPS_SUB))
 +		out.Write8(uint8(elf.R_MIPS_GPREL16))
-+	case objabi.R_MIPSCALL16:
++	case objabi.R_MIPS_CALL16:
 +		out.Write8(uint8(elf.R_MIPS_CALL16))
-+	case objabi.R_MIPSJALR:
++	case objabi.R_MIPS_JALR:
 +		out.Write8(uint8(elf.R_MIPS_JALR))
  	}
  	out.Write64(uint64(addend))
  
-@@ -102,6 +116,120 @@ func machoreloc1(*sys.Arch, *ld.OutBuf, *loader.Loader
+@@ -95,13 +190,174 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+ }
+ 
+ func elfsetupplt(ctxt *ld.Link, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
+-	return
++	if plt.Size() != 0 {
++		return
++	}
++
++	// Load resolver address from got[0] into r25.
++	plt.AddSymRef(ctxt.Arch, gotplt.Sym(), 0, objabi.R_ADDRMIPSU, 4)
++	plt.SetUint32(ctxt.Arch, plt.Size()-4, 0x3c0e0000) // lui   $14, %hi(&GOTPLT[0])
++	plt.AddSymRef(ctxt.Arch, gotplt.Sym(), 0, objabi.R_ADDRMIPS, 4)
++	plt.SetUint32(ctxt.Arch, plt.Size()-4, 0xddd90000) // ld    $25, %lo(&GOTPLT[0])($14)
++
++	// Turn got.plt address into index and JALR to resolver.
++	plt.AddSymRef(ctxt.Arch, gotplt.Sym(), 0, objabi.R_ADDRMIPS, 4)
++	plt.SetUint32(ctxt.Arch, plt.Size()-4, 0x25ce0000) // addiu $14, $14, %lo(&GOTPLT[0])
++	plt.AddUint32(ctxt.Arch, 0x030ec023)               // subu  $24, $24, $14
++	plt.AddUint32(ctxt.Arch, 0x03e07825)               // move  $15, $31
++	plt.AddUint32(ctxt.Arch, 0x0018c0c2)               // srl   $24, $24, 3
++	plt.AddUint32(ctxt.Arch, 0x0320f809)               // jalr $25
++	plt.AddUint32(ctxt.Arch, 0x2718fffe)               // subu  $24, $24, 2
++
++	if gotplt.Size() != 0 {
++		ctxt.Errorf(gotplt.Sym(), "got.plt is not empty")
++	}
++
++	// Reserve got[0] for resolver address (populated by dynamic loader).
++	gotplt.AddUint32(ctxt.Arch, 0)
++	gotplt.AddUint32(ctxt.Arch, 0)
++	mipsGOTLocalCount++
++
++	// Reserve got[1] for ELF object pointer (populated by dynamic loader).
++	gotplt.AddUint32(ctxt.Arch, 0)
++	gotplt.AddUint32(ctxt.Arch, 0)
++	mipsGOTLocalCount++
+ }
+ 
++func addpltsym(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, s loader.Sym) {
++	if ldr.SymPlt(s) >= 0 {
++		return
++	}
++
++	if mipsGOTSymIndex == 0 {
++		const dynSymEntrySize = 20
++		mipsGOTSymIndex = uint64(ldr.SymSize(syms.DynSym) / dynSymEntrySize)
++	}
++	ld.Adddynsym(ldr, target, syms, s)
++	mipsDynSymCount++
++
++	if !target.IsElf() {
++		ldr.Errorf(s, "addpltsym: unsupported binary format")
++	}
++
++	plt := ldr.MakeSymbolUpdater(syms.PLT)
++	gotplt := ldr.MakeSymbolUpdater(syms.GOTPLT)
++	if plt.Size() == 0 {
++		panic("plt is not set up")
++	}
++
++	// Load got.plt entry into r25.
++	plt.AddSymRef(target.Arch, gotplt.Sym(), gotplt.Size(), objabi.R_ADDRMIPSU, 4)
++	plt.SetUint32(target.Arch, plt.Size()-4, 0x3c0f0000) // lui   $15, %hi(.got.plt entry)
++	plt.AddSymRef(target.Arch, gotplt.Sym(), gotplt.Size(), objabi.R_ADDRMIPS, 4)
++	plt.SetUint32(target.Arch, plt.Size()-4, 0xddf90000) // ld    $25, %lo(.got.plt entry)($15)
++
++	// Place address of got.plt entry into r24 and JALR to address in r25.
++	plt.AddUint32(target.Arch, 0x03200008) // jr  $25
++	plt.AddSymRef(target.Arch, gotplt.Sym(), gotplt.Size(), objabi.R_ADDRMIPS, 4)
++	plt.SetUint32(target.Arch, plt.Size()-4, 0x65f80000) // daddiu $24, $15, %lo(.got.plt entry)
++
++	// Add pointer to plt[0] to got.plt
++	gotplt.AddAddrPlus(target.Arch, plt.Sym(), 0)
++
++	ldr.SetPlt(s, int32(plt.Size()-16))
++}
++
+ func machoreloc1(*sys.Arch, *ld.OutBuf, *loader.Loader, loader.Sym, loader.ExtReloc, int64) bool {
  	return false
  }
  
 +func trampoline(ctxt *ld.Link, ldr *loader.Loader, ri int, rs, s loader.Sym) {
++	if !ctxt.Target.IsExternal() {
++		return
++	}
++
 +	relocs := ldr.Relocs(s)
 +	r := relocs.At(ri)
 +	switch r.Type() {
@@ -61,21 +229,20 @@ Index: src/cmd/link/internal/mips64/asm.go
 +		if rs == 0 || ldr.SymType(rs) != sym.SDYNIMPORT {
 +			break
 +		}
++		if r.Add() != 0 {
++			ldr.Errorf(s, "PLT call with non-zero addend (%v)", r.Add())
++		}
 +
 +		// In the case of SDYNIMPORT symbols, add a trampoline that provides
 +		// the necessary calling convention and relocations.
 +
-+		// Look up existing trampolines first. if we found one within the range
++		// Look up existing trampolines first. If we found one within the range
 +		// of direct call, we can reuse it. otherwise create a new one.
 +		var tramp loader.Sym
 +		for i := 0; ; i++ {
 +			oName := ldr.SymName(rs)
 +			name := oName
-+			if r.Add() == 0 {
-+				name += fmt.Sprintf("-tramp%d", i)
-+			} else {
-+				name += fmt.Sprintf("%+x-tramp%d", r.Add(), i)
-+			}
++			name += fmt.Sprintf("-tramp%d", i)
 +			tramp = ldr.LookupOrCreateSym(name, int(ldr.SymVersion(rs)))
 +			ldr.SetAttrReachable(tramp, true)
 +			if ldr.SymType(tramp) == sym.SDYNIMPORT {
@@ -91,7 +258,7 @@ Index: src/cmd/link/internal/mips64/asm.go
 +			// trampoline does not exist, create one
 +			trampb := ldr.MakeSymbolUpdater(tramp)
 +			ctxt.AddTramp(trampb)
-+			gentramp(ctxt.Arch, ctxt.LinkMode, ldr, trampb, rs, int64(r.Add()))
++			genCallTramp(ctxt.Arch, ctxt.LinkMode, ldr, trampb, rs, int64(r.Add()))
 +		}
 +		// modify reloc to point to tramp, which will be resolved later
 +		sb := ldr.MakeSymbolUpdater(s)
@@ -104,91 +271,65 @@ Index: src/cmd/link/internal/mips64/asm.go
 +	}
 +}
 +
-+func gentramp(arch *sys.Arch, linkmode ld.LinkMode, ldr *loader.Loader, tramp *loader.SymbolBuilder, target loader.Sym, offset int64) {
++func genCallTramp(arch *sys.Arch, linkmode ld.LinkMode, ldr *loader.Loader, tramp *loader.SymbolBuilder, target loader.Sym, offset int64) {
 +	// Generate a trampoline that loads register 25 (t9) and jumps to that address.
 +	// The JALR is needed for the relocation and PIC code requires that t9 contain
 +	// the function address when called. The offset is based off the value that gp
-+	// was initialised to via the dynamic linker, now stored in runtime.libc_gp.
++	// was initialised to via the dynamic linker. This is loaded into register 23
++	// (s7) via a pair of GP relative relocations.
 +
-+	ops := []uint32{
-+		// Determine address of trampoline (our t9), preserving RA.
-+		// The bal instruction gives us the address three instructions
-+		// or 12 bytes into the trampoline.
-+		0x03e0b825, // move   s7,ra
-+		0x04110001, // bal    1(pc)
-+		0x00000000, // nop
-+		0x03e0c825, // move   t9,ra
-+		0x02e0f825, // move   ra,s7
-+		0x6339fff4, // daddi  t9,t9,-12
++	// Determine address of trampoline (our t9), preserving RA.
++	// The bal instruction gives us the address three instructions
++	// or 12 bytes into the trampoline.
++	tramp.AddUint32(arch, 0x03e0b825) // move   s7,ra
++	tramp.AddUint32(arch, 0x04110001) // bal    1(pc)
++	tramp.AddUint32(arch, 0x00000000) // nop
++	tramp.AddUint32(arch, 0x03e0c825) // move   t9,ra
++	tramp.AddUint32(arch, 0x02e0f825) // move   ra,s7
++	tramp.AddUint32(arch, 0x6339fff4) // daddi  t9,t9,-12
 +
-+		// Load R23 (aka REGTMP aka s7) with gp address.
-+		0x3c170000, // lui    s7,0x0	<- R_MIPS_GPREL16/SUB/HI16
-+		0x02f9b82d, // daddu  s7,s7,t9
-+		0x66f70000, // daddiu s7,s7,0   <- R_MIPS_GPREL16/SUB/LO16
-+		0x02e0e025, // move   gp,s7
++	// Load R23 (aka REGTMP aka s7) with gp address.
++	tramp.AddSymRef(arch, tramp.Sym(), 0, objabi.R_MIPS_GPRELHI, 4)
++	tramp.SetUint32(arch, tramp.Size()-4, 0x3c170000) // lui    s7,0x0
++	tramp.AddUint32(arch, 0x02f9b82d)                 // daddu  s7,s7,t9
++	tramp.AddSymRef(arch, tramp.Sym(), 0, objabi.R_MIPS_GPRELLO, 4)
++	tramp.SetUint32(arch, tramp.Size()-4, 0x66f70000) // daddiu s7,s7,0
++	tramp.AddUint32(arch, 0x02e0e025)                 // move   gp,s7
 +
-+		// Load R25 (aka t9) with function address and indirect call.
-+		0xdef90000, // ld     t9,0(s7)  <- R_MIPS_CALL16
-+		0x03200009, // jalr   zero,t9   <- R_MIPS_JALR
-+		0x00000000, // nop
-+	}
-+
-+	tramp.SetSize(int64(len(ops) * 4))
-+	ibs := make([]byte, tramp.Size())
-+	for i, op := range ops {
-+		arch.ByteOrder.PutUint32(ibs[i*4:], op)
-+	}
-+	tramp.SetData(ibs)
-+
-+	r1, _ := tramp.AddRel(objabi.R_MIPSGPRELHI)
-+	r1.SetSiz(4)
-+	r1.SetOff(6 * 4)
-+	r1.SetSym(tramp.Sym())
-+
-+	r2, _ := tramp.AddRel(objabi.R_MIPSGPRELLO)
-+	r2.SetSiz(4)
-+	r2.SetOff(8 * 4)
-+	r2.SetSym(tramp.Sym())
-+
-+	r3, _ := tramp.AddRel(objabi.R_MIPSCALL16)
-+	r3.SetSiz(4)
-+	r3.SetOff(10 * 4)
-+	r3.SetSym(target)
-+	r3.SetAdd(offset)
-+
-+	r4, _ := tramp.AddRel(objabi.R_MIPSJALR)
-+	r4.SetSiz(4)
-+	r4.SetOff(11 * 4)
-+	r4.SetSym(target)
-+	r4.SetAdd(offset)
++	// Load R25 (aka t9) with function address and indirect call.
++	tramp.AddSymRef(arch, target, offset, objabi.R_MIPS_CALL16, 4)
++	tramp.SetUint32(arch, tramp.Size()-4, 0xdef90000) // ld     t9,0(s7)
++	tramp.AddSymRef(arch, target, offset, objabi.R_MIPS_JALR, 4)
++	tramp.SetUint32(arch, tramp.Size()-4, 0x03200009) // jalr   zero,t9
++	tramp.AddUint32(arch, 0x00000000)                 // nop
 +}
 +
  func archreloc(target *ld.Target, ldr *loader.Loader, syms *ld.ArchSyms, r loader.Reloc, s loader.Sym, val int64) (o int64, nExtReloc int, ok bool) {
  	if target.IsExternal() {
  		switch r.Type() {
-@@ -112,7 +240,11 @@ func archreloc(target *ld.Target, ldr *loader.Loader, 
+@@ -112,7 +368,11 @@ func archreloc(target *ld.Target, ldr *loader.Loader, 
  			objabi.R_ADDRMIPSU,
  			objabi.R_ADDRMIPSTLS,
  			objabi.R_CALLMIPS,
 -			objabi.R_JMPMIPS:
 +			objabi.R_JMPMIPS,
-+			objabi.R_MIPSGPRELHI,
-+			objabi.R_MIPSGPRELLO,
-+			objabi.R_MIPSCALL16,
-+			objabi.R_MIPSJALR:
++			objabi.R_MIPS_GPRELHI,
++			objabi.R_MIPS_GPRELLO,
++			objabi.R_MIPS_CALL16,
++			objabi.R_MIPS_JALR:
  			return val, 1, true
  		}
  	}
-@@ -162,7 +294,11 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
+@@ -162,7 +422,11 @@ func extreloc(target *ld.Target, ldr *loader.Loader, r
  
  	case objabi.R_ADDRMIPSTLS,
  		objabi.R_CALLMIPS,
 -		objabi.R_JMPMIPS:
 +		objabi.R_JMPMIPS,
-+		objabi.R_MIPSGPRELHI,
-+		objabi.R_MIPSGPRELLO,
-+		objabi.R_MIPSCALL16,
-+		objabi.R_MIPSJALR:
++		objabi.R_MIPS_GPRELHI,
++		objabi.R_MIPS_GPRELLO,
++		objabi.R_MIPS_CALL16,
++		objabi.R_MIPS_JALR:
  		return ld.ExtrelocSimple(ldr, r), true
  	}
  	return loader.ExtReloc{}, false
