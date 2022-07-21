@@ -1,6 +1,6 @@
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-2.10
+DISTNAME =	WWW-Mechanize-2.11
 
 CATEGORIES =	www
 
