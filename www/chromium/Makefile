@@ -78,7 +78,8 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/py-xcbgen${MODPY_FLAVOR} \
-		${MODGCC4_CPPDEP}
+		${MODGCC4_CPPDEP} \
+		${RUN_DEPENDS}
 LIB_DEPENDS=	archivers/snappy \
 		devel/pango \
 		graphics/jpeg \
