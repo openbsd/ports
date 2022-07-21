@@ -1,0 +1,8 @@
+zpaq is a free and open source incremental, journaling command-line
+archiver, designed and first implemented by Matt Mahoney. zpaq is
+faster and compresses better than most other popular archivers and
+backup programs, especially for realistic backups that have a lot of
+duplicate files and a lot of already compressed files.
+
+zpaqfranz is a fork of the original zpaq archiver and continues to be
+maintained.
