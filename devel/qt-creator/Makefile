@@ -55,8 +55,7 @@ BUILD_DEPENDS =	devel/clang-tools-extra \
 		lang/clazy \
 		x11/qt5/qtquickcontrols
 
-RUN_DEPENDS =	
-		devel/clang-tools-extra \
+RUN_DEPENDS =	devel/clang-tools-extra \
 		devel/desktop-file-utils \
 		devel/gdb \
 		devel/gmake \
