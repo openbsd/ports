@@ -1,0 +1,12 @@
+Index: src/plugins/qmldesigner/qmldesignercore.cmake
+--- src/plugins/qmldesigner/qmldesignercore.cmake.orig
++++ src/plugins/qmldesigner/qmldesignercore.cmake
+@@ -423,7 +423,7 @@ function(extend_with_qmldesigner_core target_name)
+   )
+ 
+   extend_qtc_target(${target_name}
+-    CONDITION UNIX AND NOT APPLE
++    CONDITION UNIX AND (NOT APPLE) AND (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD") 
+     DEPENDS rt
+   )
+ 
