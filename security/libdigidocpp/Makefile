@@ -1,8 +1,7 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.14.8
+V =			3.14.10
 DISTNAME =		libdigidocpp-${V}
-REVISION =		2
 CATEGORIES =		security
 
 SHARED_LIBS =		digidocpp	0.0	# 0.0
@@ -16,12 +15,23 @@ PERMIT_PACKAGE =	Yes
 HOMEPAGE =		https://www.id.ee/
 MASTER_SITES =		https://github.com/open-eid/libdigidocpp/releases/download/v${V}/
 
+DIST_SUBDIR =		libdigidocpp
+MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
+# merged but after 3.14.10 release
+PATCHFILES +=		pkcs11-path-{pull/}473.patch:0
+# still pending (but approved)
+PATCHFILES +=		iconv-{pull/}470.patch:0
+PATCHFILES +=		libressl-{pull/}482.patch:0
+PATCHFILES +=		minizip--{pull/}485.patch:0
+
+PATCH_DIST_STRIP =	-p1
+
 # ${WRKSRC}/etc/schema/.../*.xsd.orig
 PATCHORIG =		.pat.orig
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-# C++11
+# -std=gnu++17
 COMPILER =		base-clang ports-gcc
 
 WANTLIB +=		${COMPILER_LIBCXX} c crypto iconv m ssl xalan-c
