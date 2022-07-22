@@ -1,10 +1,9 @@
 COMMENT =	Atari 8-bit computer systems and 5200 game console emulator
 
-V =		4.2.0
+V =		5.0.0
 DISTNAME =	atari800-${V}-src
 PKGNAME =	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tgz
-REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -13,11 +12,12 @@ HOMEPAGE =	https://atari800.github.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL c curses m pthread readline z
+WANTLIB +=	SDL c curses m mp3lame pthread readline z
 
 MASTER_SITES =	https://github.com/atari800/atari800/releases/download/ATARI800_${V:S/./_/g}/
 
-LIB_DEPENDS =	devel/sdl
+LIB_DEPENDS =	audio/lame \
+		devel/sdl
 
 WRKDIST =	${WRKDIR}/atari800-${V}
 
