@@ -2,8 +2,7 @@ COMMENT=	test tool for slow HTTP reads/posts
 
 GH_ACCOUNT=	shekyan
 GH_PROJECT=	slowhttptest
-GH_TAGNAME=	v1.8.2
-REVISION=	0
+GH_TAGNAME=	v1.9.0
 
 CATEGORIES=	www security
 
