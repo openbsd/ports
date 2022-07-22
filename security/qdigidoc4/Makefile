@@ -1,11 +1,7 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
-V =			4.2.11
-DISTNAME =		qdigidoc4_${V}.110-1804
-REVISION =		4
-EXTRACT_SUFX =		.tar.xz
-WRKDIST =		${WRKDIR}/qdigidoc4
-PKGNAME =		qdigidoc4-${V}
+V =			4.2.12
+DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -31,6 +27,20 @@ MASTER_SITES1 =		https://ec.europa.eu/tools/lotl/
 DISTFILES +=		eu-lotl-pivot-300.xml:1
 CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 
+MASTER_SITES2 =		https://github.com/open-eid/DigiDoc4-Client/
+# all pending
+PATCHFILES +=		bsd-{pull/}1072.patch:2
+
+MASTER_SITES3 =		https://github.com/open-eid/qt-common/
+# all pending
+PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:3
+PATCHFILES +=		qt-common-fix-i386-{pull/}124.patch:3
+PATCH_CASES +=		qt-common-*.patch) \
+				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
+				    -d${WRKSRC}/common ;;
+
+PATCH_DIST_STRIP =	-p1
+
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB +=		${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5PrintSupport
@@ -43,7 +53,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			x11/qt5/qttools
 
 LIB_DEPENDS =		databases/openldap,-main \
-			security/libdigidocpp>=3.14.8 \
+			security/libdigidocpp>=3.14.10 \
 			security/pcsc-lite \
 			x11/qt5/qtsvg
 
