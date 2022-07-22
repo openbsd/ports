@@ -1,6 +1,6 @@
 COMMENT =		Tcl bindings for SQLite3
 
-V =			3.39.0
+V =			3.39.2
 VER =			${V:S/.//g}
 
 DISTNAME =		sqlite-autoconf-${VER:C/.$/0\0/}00
