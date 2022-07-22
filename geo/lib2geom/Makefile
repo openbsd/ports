@@ -1,11 +1,11 @@
 COMMENT =	easy to use 2D geometry library in C++
 
-V =		1.1.0
-DISTNAME =	lib2geom-${V:S/.0//}
+V =		1.2
+DISTNAME =	lib2geom-${V}
 
 CATEGORIES =	geo graphics
 
-SHARED_LIBS +=  2geom 0.0 #1.1
+SHARED_LIBS +=  2geom 1.0 #1.1
 
 HOMEPAGE =	https://gitlab.com/inkscape/lib2geom
 
@@ -17,15 +17,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} cairo double-conversion glib-2.0
 WANTLIB += gsl gslcblas intl m
 
-MASTER_SITES =	https://gitlab.com/inkscape/lib2geom/-/archive/${V:S/.0//}/
+-MASTER_SITES =	https://gitlab.com/inkscape/lib2geom/-/archive/${V}/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =	devel/cmake \
 		lang/python
 
 MODPY_RUNDEP =	no
-
-SUBST_VARS +=	V
 
 # c++17
 COMPILER =	base-clang ports-gcc
