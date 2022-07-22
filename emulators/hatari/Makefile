@@ -13,7 +13,8 @@ HOMEPAGE =	https://hatari.tuxfamily.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE SDL2 SM X11 Xext c m png pthread readline z
+WANTLIB += ICE SDL2 SM X11 Xext c m png portmidi pthread readline
+WANTLIB += z
 
 MASTER_SITES =	https://download.tuxfamily.org/hatari/$V/
 
@@ -22,7 +23,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		sysutils/mtools \
 		x11/gtk+3,-guic
 
-LIB_DEPENDS =	devel/sdl2 \
+LIB_DEPENDS =	audio/portmidi \
+		devel/sdl2 \
 		graphics/png
 
 MODULES =	devel/cmake \

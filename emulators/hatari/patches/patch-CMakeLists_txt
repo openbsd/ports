@@ -1,17 +1,15 @@
-Make PortAudio, PortMidi and CAPSImage detection conditional and disabled
+Make PortAudio and CAPSImage detection conditional and disabled
 by default, and disable building the Python GTK+2 user interface.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -55,6 +55,14 @@ set(ENABLE_SMALL_MEM 0
+@@ -55,6 +55,12 @@ set(ENABLE_SMALL_MEM 0
      CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
  set(ENABLE_WINUAE_CPU 1
      CACHE BOOL "Enable WinUAE CPU core")
 +set(ENABLE_PORTAUDIO 0
 +    CACHE BOOL "Enable building with PortAudio to enable microphone input in Falcon mode")
-+set(ENABLE_PORTMIDI 0
-+    CACHE BOOL "Enable building with PortMidi")
 +set(ENABLE_CAPSIMAGE 0
 +    CACHE BOOL "Enable building with CAPSImage for using .IPF, .RAW and .CTR disk images")
 +set(ENABLE_UI 0
@@ -19,7 +17,7 @@ Index: CMakeLists.txt
  
  # Run-time checks with GCC / LLVM (Clang) AddressSanitizer:
  # - stack protection
-@@ -144,20 +152,26 @@ if (NOT ENABLE_OSX_BUNDLE)
+@@ -144,20 +150,24 @@ if (NOT ENABLE_OSX_BUNDLE)
  	endif(X11_FOUND)
  endif()
  
@@ -34,16 +32,10 @@ Index: CMakeLists.txt
 +	endif(PortAudio_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
--find_package(PortMidi)
--if(PortMidi_FOUND)
--	set(HAVE_PORTMIDI 1)
--endif(PortMidi_FOUND)
-+if(ENABLE_PORTMIDI)
-+	find_package(PortMidi)
-+	if(PortMidi_FOUND)
-+		set(HAVE_PORTMIDI 1)
-+	endif(PortMidi_FOUND)
-+endif(ENABLE_PORTMIDI)
+ find_package(PortMidi)
+ if(PortMidi_FOUND)
+ 	set(HAVE_PORTMIDI 1)
+ endif(PortMidi_FOUND)
  
 -find_package(CapsImage)
 -if(CapsImage_FOUND)
@@ -58,7 +50,7 @@ Index: CMakeLists.txt
  
  find_package(Udev)
  if(Udev_FOUND)
-@@ -346,10 +360,12 @@ add_subdirectory(doc)
+@@ -346,10 +356,12 @@ add_subdirectory(doc)
  add_subdirectory(tests)
  add_subdirectory(tools)
  
@@ -75,7 +67,7 @@ Index: CMakeLists.txt
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)
-@@ -397,23 +413,29 @@ else()
+@@ -397,11 +409,13 @@ else()
    message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
  endif(PNG_FOUND)
  
@@ -92,18 +84,11 @@ Index: CMakeLists.txt
 +  endif(PortAudio_FOUND)
 +endif(ENABLE_PORTAUDIO)
  
--if(PortMidi_FOUND)
--  message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
--else()
--  message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
--endif(PortMidi_FOUND)
-+if(ENABLE_PORTMIDI)
-+  if(PortMidi_FOUND)
-+    message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
-+  else()
-+    message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
-+  endif(PortMidi_FOUND)
-+endif(ENABLE_PORTMIDI)
+ if(PortMidi_FOUND)
+   message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
+@@ -409,11 +423,13 @@ else()
+   message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
+ endif(PortMidi_FOUND)
  
 -if(CapsImage_FOUND)
 -  message( "  - capsimage :\tv5 found, allow to use .IPF, .RAW and .CTR disk images" )
