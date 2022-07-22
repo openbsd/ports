@@ -11,6 +11,9 @@ MAINTAINER =	Kristaps Dzonsons <kristaps@bsd.lv>
 # ISC
 PERMIT_PACKAGE =	Yes
 
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 # uses pledge()
 WANTLIB += c curses sqlite3 tls z
 
