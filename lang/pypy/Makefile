@@ -24,11 +24,12 @@ DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
 #BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}-0.tar.xz
-BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
+#BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
+BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}-0.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
 SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
 SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		lang
 
@@ -86,8 +87,6 @@ post-extract:
 	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
 	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs:${WRKDIR}/bootstrap/pypy/lib exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
 	chmod +x ${WRKDIR}/bin/pypy
-	chmod 644 ${WRKDIR}/bootstrap/system-libs/libc.so.96.1 # XXX
-	cp /usr/lib/libc.so.96.1 ${WRKDIR}/bootstrap/system-libs # XXX
 .endif
 
 SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR MODTK_LIB MODTCL_LIB
