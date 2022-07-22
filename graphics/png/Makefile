@@ -3,6 +3,7 @@ COMMENT=	library for manipulating PNG images
 VERSION=	1.6.37
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
+REVISION=	0
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libpng/}
@@ -20,6 +21,13 @@ WANTLIB=	c m z
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
+
+# Enable SIMD support
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
+    ${MACHINE_ARCH} == "powerpc64"
+CONFIGURE_ARGS+=	--enable-hardware-optimizations
+.endif
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
