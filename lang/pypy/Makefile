@@ -22,12 +22,13 @@ V =			7.3.1
 BOOTSTRAP_V =		${V}
 DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
-BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
+#BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
+BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}-0.tar.xz
 BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
 SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
 SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		lang
 
@@ -45,7 +46,8 @@ WANTLIB +=		${MODTK_LIB} util z
 LIB_DEPENDS +=		databases/sqlite3
 
 MASTER_SITES =		https://downloads.python.org/pypy/
-MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/
+MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/ \
+			https://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
 PSEUDO_FLAVORS =	no_bootstrap
@@ -84,6 +86,8 @@ post-extract:
 	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
 	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs:${WRKDIR}/bootstrap/pypy/lib exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
 	chmod +x ${WRKDIR}/bin/pypy
+	chmod 644 ${WRKDIR}/bootstrap/system-libs/libc.so.96.1 # XXX
+	cp /usr/lib/libc.so.96.1 ${WRKDIR}/bootstrap/system-libs # XXX
 .endif
 
 SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR MODTK_LIB MODTCL_LIB
@@ -153,8 +157,13 @@ bootstrap: ${PYPY_PKG}
 	${_PBUILD} mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && ${_PBUILD} tar zxf ${PYPY_PKG}
 	${_PBUILD} rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
-	for i in `LD_LIBRARY_PATH=${WRKDIR}/prepare/bootstrap/pypy/lib ldd ${WRKDIR}/prepare/bootstrap/bin/pypy | grep 'lib/' | grep -v 'libpypy-c' | \
-	        awk '{ print $$7 }'` ; do \
-		${_PBUILD} cp $$i ${WRKDIR}/prepare/bootstrap/system-libs; done
+	for i in $$( \
+		for obj in bin/pypy pypy/lib_pypy/*.so*; do \
+			LD_LIBRARY_PATH=${WRKDIR}/prepare/bootstrap/pypy/lib \
+			ldd ${WRKDIR}/prepare/bootstrap/$$obj | grep 'lib/' | grep -v 'libpypy-c' | \
+			awk '{ print $$7 }'; done | sort -u); do \
+			${_PBUILD} cp $$i \
+			    ${WRKDIR}/prepare/bootstrap/system-libs; \
+	done
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
 	    xz | ${_PFETCH} tee ${FULLDISTDIR}/${BOOTSTRAP-${MACHINE_ARCH}} > /dev/null
