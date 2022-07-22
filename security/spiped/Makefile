@@ -2,11 +2,12 @@ COMMENT =		utility for creating secure pipes between socket addresses
 
 DISTNAME =		spiped-1.6.2
 CATEGORIES =		security sysutils
+REVISION =		0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
-HOMEPAGE =		http://www.tarsnap.com/spiped.html
-MASTER_SITES =		http://www.tarsnap.com/spiped/
+HOMEPAGE =		https://www.tarsnap.com/spiped.html
+MASTER_SITES =		https://www.tarsnap.com/spiped/
 
 # BSD
 PERMIT_PACKAGE =	Yes
