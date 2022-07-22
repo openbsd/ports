@@ -93,6 +93,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/html
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/http
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/hylang
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/idlang
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/idris
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/igorpro
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ini
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/io
@@ -113,6 +114,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/jsx
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/julia
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/kotlin
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/lasso
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/lean
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/liquid
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/literate_coffeescript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/literate_haskell
@@ -149,6 +151,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/perl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/php
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/plaintext
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/plist
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/plsql
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/pony
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/postscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/powershell
@@ -192,6 +195,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/stata
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/supercollider
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/swift
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/systemd
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/syzlang
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/syzprog
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tap
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/tcl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/terraform
@@ -331,6 +336,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/hylang.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/idlang.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/idris.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/igorpro.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ini.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/io.rb
@@ -354,6 +360,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/kotlin.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lasso/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lasso.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lasso/keywords.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/lean.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/liquid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/literate_coffeescript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/literate_haskell.rb
@@ -405,6 +412,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/php/keywords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plain_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plist.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/plsql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/pony.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/postscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/powershell.rb
@@ -452,6 +460,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/stata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/supercollider.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/swift.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/systemd.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/syzlang.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/syzprog.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/tcl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/terraform.rb
