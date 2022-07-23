@@ -1,0 +1,29 @@
+@bin bin/com.github.phase1geo.minder
+bin/minder
+share/applications/com.github.phase1geo.minder.desktop
+share/glib-2.0/schemas/com.github.phase1geo.minder.gschema.xml
+share/gtksourceview-3.0/
+share/gtksourceview-3.0/styles/
+share/gtksourceview-3.0/styles/com.github.phase1geo.minder.xml
+share/icons/hicolor/128x128/apps/com.github.phase1geo.minder.svg
+share/icons/hicolor/16x16/apps/com.github.phase1geo.minder.svg
+share/icons/hicolor/24x24/apps/com.github.phase1geo.minder.svg
+share/icons/hicolor/32x32/apps/com.github.phase1geo.minder.svg
+share/icons/hicolor/48x48/apps/com.github.phase1geo.minder.svg
+share/icons/hicolor/64x64/apps/com.github.phase1geo.minder.svg
+share/locale/cs/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/de/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/es/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/fr/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/it/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/nl/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/pl/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/pt/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/pt_BR/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/locale/ru/LC_MESSAGES/com.github.phase1geo.minder.mo
+share/metainfo/com.github.phase1geo.minder.appdata.xml
+share/mime/packages/com.github.phase1geo.minder.xml
+@tag update-desktop-database
+@tag glib-compile-schemas
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database

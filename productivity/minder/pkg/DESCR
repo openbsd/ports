@@ -1,0 +1,12 @@
+minder is a mind-mapping application with several features:
+
+- create maps using the keyboard and automatic layout
+- many tree layout choices
+- markdown formatting
+- able to add notes, tasks and images as well as stickers and node
+  groups.
+- search across nodes and connection titles, with filtering options
+- stylize nodes, links and connections
+- focus mode
+- import and export to several formats (OPML, FreeMind, FreePlane,
+  plain text, outliner ...)
