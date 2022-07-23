@@ -2,10 +2,10 @@ COMMENT=	reusable library for GPU-accelerated video/image rendering
 
 GH_ACCOUNT=	haasn
 GH_PROJECT=	libplacebo
-GH_TAGNAME=	v4.192.1
+GH_TAGNAME=	v4.208.0
 CATEGORIES=	graphics
 
-SHARED_LIBS=	placebo	6.0
+SHARED_LIBS=	placebo	7.0
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
@@ -28,5 +28,7 @@ CONFIGURE_ARGS+=-Ddefault_library=both \
 		-Dshaderc=disabled \
 		-Dunwind=disabled \
 		-Dvulkan=disabled
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
