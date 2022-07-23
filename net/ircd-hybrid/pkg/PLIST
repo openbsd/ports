@@ -93,6 +93,8 @@ lib/ircd-hybrid/modules/autoload/m_restart.la
 @so lib/ircd-hybrid/modules/autoload/m_restart.so
 lib/ircd-hybrid/modules/autoload/m_resv.la
 @so lib/ircd-hybrid/modules/autoload/m_resv.so
+lib/ircd-hybrid/modules/autoload/m_resync.la
+@so lib/ircd-hybrid/modules/autoload/m_resync.so
 lib/ircd-hybrid/modules/autoload/m_set.la
 @so lib/ircd-hybrid/modules/autoload/m_set.so
 lib/ircd-hybrid/modules/autoload/m_stats.la
@@ -166,6 +168,8 @@ lib/ircd-hybrid/modules/m_kill.la
 @so lib/ircd-hybrid/modules/m_kill.so
 lib/ircd-hybrid/modules/m_message.la
 @so lib/ircd-hybrid/modules/m_message.so
+lib/ircd-hybrid/modules/m_mlock.la
+@so lib/ircd-hybrid/modules/m_mlock.so
 lib/ircd-hybrid/modules/m_mode.la
 @so lib/ircd-hybrid/modules/m_mode.so
 lib/ircd-hybrid/modules/m_nick.la

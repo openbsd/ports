@@ -1,7 +1,7 @@
 Index: doc/reference.conf
 --- doc/reference.conf.orig
 +++ doc/reference.conf
-@@ -101,20 +101,20 @@ serverinfo {
+@@ -99,20 +99,20 @@ serverinfo {
  	 *    chown <ircd-user>.<ircd.group> rsa.key
  	 *    chmod 0600 rsa.key
  	 */
@@ -25,7 +25,7 @@ Index: doc/reference.conf
  
  	/*
  	 * tls_supported_groups: defines the curve to use for the
-@@ -294,7 +294,7 @@ motd {
+@@ -292,7 +292,7 @@ motd {
  	/*
  	 * file: path to the motd file.
  	 */
@@ -34,7 +34,7 @@ Index: doc/reference.conf
  };
  
  /*
-@@ -990,7 +990,7 @@ serverhide {
+@@ -1007,7 +1007,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */
@@ -43,7 +43,7 @@ Index: doc/reference.conf
  
  	/*
  	 * hidden: hide this server from a /links output on servers that
-@@ -1298,9 +1298,9 @@ modules {
+@@ -1315,9 +1315,9 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
@@ -56,7 +56,7 @@ Index: doc/reference.conf
  
  	/* module: the name of a module to load on startup/rehash. */
  #	module = "some_module.la";
-@@ -1315,49 +1315,49 @@ log {
+@@ -1332,49 +1332,49 @@ log {
  
  	file {
  		type = oper;
