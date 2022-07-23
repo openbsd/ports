@@ -1,8 +1,7 @@
 COMMENT=	console-based multitool to explore and arrange tabular data
 
-MODPY_EGG_VERSION=	2.8
+MODPY_EGG_VERSION=	2.9.1
 DISTNAME=	visidata-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	math textproc
 
@@ -18,7 +17,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
-# only bin/visidata
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR}
 
 # tests are available but not included in the standard pypi download
