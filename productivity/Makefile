@@ -30,6 +30,7 @@
      SUBDIR += librcps
      SUBDIR += lifeograph
      SUBDIR += mcds
+     SUBDIR += minder
      SUBDIR += monica
      SUBDIR += novprog
      SUBDIR += osmo
