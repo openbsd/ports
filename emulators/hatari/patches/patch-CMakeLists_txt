@@ -1,65 +1,36 @@
-Make PortAudio and CAPSImage detection conditional and disabled
-by default, and disable building the Python GTK+2 user interface.
+Make building the Python GTK+3 user interface conditional and disabled
+by default.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -55,6 +55,12 @@ set(ENABLE_SMALL_MEM 0
+@@ -53,6 +53,8 @@ set(ENABLE_TRACING 1
+     CACHE BOOL "Enable tracing messages for debugging")
+ set(ENABLE_SMALL_MEM 1
      CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
- set(ENABLE_WINUAE_CPU 1
-     CACHE BOOL "Enable WinUAE CPU core")
-+set(ENABLE_PORTAUDIO 0
-+    CACHE BOOL "Enable building with PortAudio to enable microphone input in Falcon mode")
-+set(ENABLE_CAPSIMAGE 0
-+    CACHE BOOL "Enable building with CAPSImage for using .IPF, .RAW and .CTR disk images")
 +set(ENABLE_UI 0
 +    CACHE BOOL "Enable building the Python GTK+2 user interface, requires GTK+2 bindings")
  
  # Run-time checks with GCC / LLVM (Clang) AddressSanitizer:
  # - stack protection
-@@ -144,20 +150,24 @@ if (NOT ENABLE_OSX_BUNDLE)
- 	endif(X11_FOUND)
- endif()
- 
--find_package(PortAudio)
--if(PortAudio_FOUND)
--	set(HAVE_PORTAUDIO 1)
--endif(PortAudio_FOUND)
-+if(ENABLE_PORTAUDIO)
-+	find_package(PortAudio)
-+	if(PortAudio_FOUND)
-+		set(HAVE_PORTAUDIO 1)
-+	endif(PortAudio_FOUND)
-+endif(ENABLE_PORTAUDIO)
- 
- find_package(PortMidi)
- if(PortMidi_FOUND)
- 	set(HAVE_PORTMIDI 1)
- endif(PortMidi_FOUND)
- 
--find_package(CapsImage)
--if(CapsImage_FOUND)
--	set(HAVE_CAPSIMAGE 1)
--endif(CapsImage_FOUND)
-+if(ENABLE_CAPSIMAGE)
-+	find_package(CapsImage)
-+	if(CapsImage_FOUND)
-+		set(HAVE_CAPSIMAGE 1)
-+	endif(CapsImage_FOUND)
-+endif(ENABLE_CAPSIMAGE)
- 
- find_package(Udev)
- if(Udev_FOUND)
-@@ -346,10 +356,12 @@ add_subdirectory(doc)
+@@ -319,14 +321,16 @@ add_subdirectory(doc)
  add_subdirectory(tests)
  add_subdirectory(tools)
  
 -include(FindPythonInterp)
+-if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
+-	message("Note: Hatari needs at least Python 3 ... ignoring older version")
+-	unset(PYTHONINTERP_FOUND)
+-endif()
 -if(PYTHONINTERP_FOUND)
 -	add_subdirectory(python-ui)
 -endif(PYTHONINTERP_FOUND)
 +if(ENABLE_UI)
 +	include(FindPythonInterp)
++	if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
++		message("Note: Hatari needs at least Python 3 ... ignoring older version")
++		unset(PYTHONINTERP_FOUND)
++	endif()
 +	if(PYTHONINTERP_FOUND)
 +		add_subdirectory(python-ui)
 +	endif(PYTHONINTERP_FOUND)
@@ -67,41 +38,3 @@ Index: CMakeLists.txt
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
  	add_subdirectory(share)
-@@ -397,11 +409,13 @@ else()
-   message( "  - png :\tnot found, install it to compress screenshot/avi files using png" )
- endif(PNG_FOUND)
- 
--if(PortAudio_FOUND)
--  message( "  - portaudio :\tfound, enables the microphone input in Falcon mode" )
--else()
--  message( "  - portaudio :\tnot found, install it to enable the Falcon microphone input" )
--endif(PortAudio_FOUND)
-+if(ENABLE_PORTAUDIO)
-+  if(PortAudio_FOUND)
-+    message( "  - portaudio :\tfound, enables the microphone input in Falcon mode" )
-+  else()
-+    message( "  - portaudio :\tnot found, install it to enable the Falcon microphone input" )
-+  endif(PortAudio_FOUND)
-+endif(ENABLE_PORTAUDIO)
- 
- if(PortMidi_FOUND)
-   message( "  - portmidi :\tfound, required for (non-Linux) MIDI support" )
-@@ -409,11 +423,13 @@ else()
-   message( "  - portmidi :\tnot found, install it for MIDI support on Windows / OSX" )
- endif(PortMidi_FOUND)
- 
--if(CapsImage_FOUND)
--  message( "  - capsimage :\tv5 found, allow to use .IPF, .RAW and .CTR disk images" )
--else()
--  message( "  - capsimage :\tv5 not found, install it to use .IPF, .RAW and .CTR disk images" )
--endif(CapsImage_FOUND)
-+if(ENABLE_CAPSIMAGE)
-+  if(CapsImage_FOUND)
-+    message( "  - capsimage :\tv5 found, allow to use .IPF, .RAW and .CTR disk images" )
-+  else()
-+    message( "  - capsimage :\tv5 not found, install it to use .IPF, .RAW and .CTR disk images" )
-+  endif(CapsImage_FOUND)
-+endif(ENABLE_CAPSIMAGE)
- 
- if(Udev_FOUND)
-   message( "  - udev :\tfound, required for media change detection in NatFeats SCSI" )

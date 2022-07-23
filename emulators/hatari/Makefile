@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS = i386 amd64 powerpc powerpc64 arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
-V =		2.3.1
+V =		2.4.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
 
@@ -29,7 +29,6 @@ LIB_DEPENDS =	audio/portmidi \
 
 MODULES =	devel/cmake \
 		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 MODPY_ADJ_FILES = tools/debugger/*.py \
 		  tools/hconsole/*.py \
