@@ -69,6 +69,7 @@ share/openttd/ai/compat_12.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs
+share/openttd/baseset/openttd.32.bmp
 share/openttd/baseset/openttd.grf
 share/openttd/baseset/opntitle.dat
 share/openttd/baseset/orig_dos.obg
