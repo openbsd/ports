@@ -4,6 +4,7 @@ CATEGORIES =	devel
 V =		v0.2.0
 DISTNAME =	coeurl-${V}
 PKGNAME =	${DISTNAME:S/v//}
+REVISION =	0
 
 SHARED_LIBS +=  coeurl                    0.0 # 0.2.0
 
@@ -19,8 +20,8 @@ MODULES =	devel/meson
 # C++17
 COMPILER =	base-clang ports-gcc
 
+BUILD_DEPENDS =	devel/spdlog
 LIB_DEPENDS =	devel/libevent2 \
-		devel/spdlog \
 		net/curl
 
 .include <bsd.port.mk>
