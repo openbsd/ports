@@ -1,4 +1,8 @@
 include/libfilezilla/
+include/libfilezilla/aio/
+include/libfilezilla/aio/aio.hpp
+include/libfilezilla/aio/reader.hpp
+include/libfilezilla/aio/writer.hpp
 include/libfilezilla/apply.hpp
 include/libfilezilla/buffer.hpp
 include/libfilezilla/encode.hpp
