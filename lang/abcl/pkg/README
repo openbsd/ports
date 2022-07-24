@@ -1,2 +1,0 @@
-In order to use CFFI to access foreign libraries the jna package needs
-to be installed. 

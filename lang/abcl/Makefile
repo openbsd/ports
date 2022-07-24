@@ -1,9 +1,8 @@
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
-V =			1.8.0
+V =			1.9.0
 DISTNAME =		abcl-src-${V}
 PKGNAME =		abcl-${V}
 PKG_ARCH =		*
-REVISION =		0
 
 CATEGORIES =		lang
 
@@ -19,17 +18,24 @@ MASTER_SITES =		${HOMEPAGE}/releases/${V}/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
+# Remember to keep MODJAVA_VER in sync with jna
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11
 MODJAVA_BUILD =		ant
 MODJAVA_BUILD_TARGET_NAME =	abcl.jar
 
+BUILD_DEPENDS =		shells/bash
+
 RUN_DEPENDS =		java/javaPathHelper \
+			java/jna \
 			misc/rlwrap
 
 NO_TEST =		Yes
 
 ABCL_HOME =		${PREFIX}/abcl
+
+pre-configure:
+	bash ${WRKSRC}/ci/create-abcl-properties.bash ${MODJAVA_VER}
 
 do-install:
 	${INSTALL_DATA_DIR} ${ABCL_HOME}

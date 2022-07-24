@@ -50,6 +50,7 @@ array-rank
 array-row-major-index
 array-total-size
 arrayp
+as-jar-pathname-archive
 ash
 asin
 asinh
@@ -128,7 +129,6 @@ cdddr
 cddr
 cdr
 ceiling
-cell-error-name
 cerror
 change-class
 char
@@ -284,7 +284,6 @@ ffloor
 fifth
 file-author
 file-directory-p
-file-error-pathname
 file-length
 file-namestring
 file-position
@@ -1816,7 +1815,6 @@ os-oldmac-p
 os-unix-p
 os-windows-p
 output-stream-p
-package-error-package
 package-local-nicknames
 package-locally-nicknamed-by-list
 package-name
@@ -2377,7 +2375,6 @@ system:case-body
 system:case-body-aux
 system:case-body-error
 system:casify
-system:cfp-output-file-default
 system:check-declaration-type
 system:check-disjoint
 system:check-for-circularity
@@ -2867,6 +2864,7 @@ system:read-evaluated-form
 system:read-feature
 system:read-list
 system:read-quote
+system:read-random-state
 system:read-right-paren
 system:read-string
 system:read-vector-unsigned-byte-8
@@ -3310,6 +3308,10 @@ xp:write-string++
 xp:write-string+++
 xp:xp-print
 xp:xp-structure-p
+y-or-n-p
+yes-or-no-p
+zerop
+-structure-p
 y-or-n-p
 yes-or-no-p
 zerop

@@ -295,7 +295,6 @@ abcl/src/org/armedbear/lisp/fasl-concat.lisp
 abcl/src/org/armedbear/lisp/fdefinition.lisp
 abcl/src/org/armedbear/lisp/featurep.lisp
 abcl/src/org/armedbear/lisp/file_author.java
-abcl/src/org/armedbear/lisp/file_error_pathname.java
 abcl/src/org/armedbear/lisp/file_length.java
 abcl/src/org/armedbear/lisp/file_string_length.java
 abcl/src/org/armedbear/lisp/file_write_date.java
@@ -387,7 +386,6 @@ abcl/src/org/armedbear/lisp/open_stream_p.java
 abcl/src/org/armedbear/lisp/or.lisp
 abcl/src/org/armedbear/lisp/output_stream_p.java
 abcl/src/org/armedbear/lisp/package.lisp
-abcl/src/org/armedbear/lisp/package_error_package.java
 abcl/src/org/armedbear/lisp/parse-integer.lisp
 abcl/src/org/armedbear/lisp/parse-lambda-list.lisp
 abcl/src/org/armedbear/lisp/pathnames.lisp
@@ -487,4 +485,3 @@ abcl/src/org/armedbear/lisp/with-standard-io-syntax.lisp
 abcl/src/org/armedbear/lisp/write-sequence.lisp
 abcl/src/org/armedbear/lisp/zip.java
 bin/abcl
-share/doc/pkg-readmes/${PKGSTEM}
