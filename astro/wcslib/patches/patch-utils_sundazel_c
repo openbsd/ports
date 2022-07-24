@@ -1,0 +1,13 @@
+Use pedantically correct definition of _POSIX_C_SOURCE (reported to upstream)
+Index: utils/sundazel.c
+--- utils/sundazel.c.orig
++++ utils/sundazel.c
+@@ -95,7 +95,7 @@ char usage[] =
+ "effective.\n";
+ 
+ // To get the declaration of localtime_r() from time.h.
+-#define _POSIX_C_SOURCE 1
++#define _POSIX_C_SOURCE 199506L
+ 
+ #include <math.h>
+ #include <time.h>

@@ -1,18 +1,17 @@
-BROKEN-hppa=	ICE on prj.c:4381
+#BROKEN-hppa=	ICE on prj.c:4381
 COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
-DISTNAME =	wcslib-5.19.1
-REVISION =	1
+DISTNAME =	wcslib-7.11
 HOMEPAGE =	https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
 
-SHARED_LIBS =	wcs		1.1
+SHARED_LIBS =	wcs		2.0
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c cfitsio m
 
-MASTER_SITES =	ftp://ftp.atnf.csiro.au/pub/software/wcslib/
+MASTER_SITES =	http://www.atnf.csiro.au/people/mcalabre/WCS/
 EXTRACT_SUFX =	.tar.bz2
 
 MODULES =		gcc4

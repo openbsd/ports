@@ -1,5 +1,7 @@
 @bin bin/HPXcvt
 @bin bin/fitshdr
+@bin bin/sundazel
+@bin bin/tofits
 @bin bin/wcsware
 include/wcslib
 include/${DISTNAME}/
@@ -43,11 +45,14 @@ include/${DISTNAME}/wcstrig.h
 include/${DISTNAME}/wcsunits.h
 include/${DISTNAME}/wcsunits.inc
 include/${DISTNAME}/wcsutil.h
-lib/libwcs.a
+include/${DISTNAME}/wtbarr.h
+@static-lib lib/libwcs.a
 @lib lib/libwcs.so.${LIBwcs_VERSION}
 lib/pkgconfig/wcslib.pc
 @man man/man1/HPXcvt.1
 @man man/man1/fitshdr.1
+@man man/man1/sundazel.1
+@man man/man1/tofits.1
 @man man/man1/wcsware.1
 share/doc/wcslib/
 share/doc/wcslib/CHANGES
@@ -70,7 +75,7 @@ share/doc/wcslib/html/dis_8h.html
 share/doc/wcslib/html/dis_8h_source.html
 share/doc/wcslib/html/doc.png
 share/doc/wcslib/html/doxygen.css
-share/doc/wcslib/html/doxygen.png
+share/doc/wcslib/html/doxygen.svg
 share/doc/wcslib/html/dynsections.js
 share/doc/wcslib/html/files.html
 share/doc/wcslib/html/fitshdr_8h.html
@@ -163,6 +168,7 @@ share/doc/wcslib/html/functions_d.html
 share/doc/wcslib/html/functions_e.html
 share/doc/wcslib/html/functions_f.html
 share/doc/wcslib/html/functions_g.html
+share/doc/wcslib/html/functions_h.html
 share/doc/wcslib/html/functions_i.html
 share/doc/wcslib/html/functions_j.html
 share/doc/wcslib/html/functions_k.html
@@ -183,6 +189,7 @@ share/doc/wcslib/html/functions_vars_d.html
 share/doc/wcslib/html/functions_vars_e.html
 share/doc/wcslib/html/functions_vars_f.html
 share/doc/wcslib/html/functions_vars_g.html
+share/doc/wcslib/html/functions_vars_h.html
 share/doc/wcslib/html/functions_vars_i.html
 share/doc/wcslib/html/functions_vars_j.html
 share/doc/wcslib/html/functions_vars_k.html
@@ -224,6 +231,7 @@ share/doc/wcslib/html/globals_func_f.html
 share/doc/wcslib/html/globals_func_h.html
 share/doc/wcslib/html/globals_func_l.html
 share/doc/wcslib/html/globals_func_m.html
+share/doc/wcslib/html/globals_func_o.html
 share/doc/wcslib/html/globals_func_p.html
 share/doc/wcslib/html/globals_func_q.html
 share/doc/wcslib/html/globals_func_s.html
@@ -239,6 +247,7 @@ share/doc/wcslib/html/globals_k.html
 share/doc/wcslib/html/globals_l.html
 share/doc/wcslib/html/globals_m.html
 share/doc/wcslib/html/globals_n.html
+share/doc/wcslib/html/globals_o.html
 share/doc/wcslib/html/globals_p.html
 share/doc/wcslib/html/globals_q.html
 share/doc/wcslib/html/globals_r.html
@@ -254,6 +263,7 @@ share/doc/wcslib/html/globals_z.html
 share/doc/wcslib/html/index.html
 share/doc/wcslib/html/intro.html
 share/doc/wcslib/html/jquery.js
+share/doc/wcslib/html/limits.html
 share/doc/wcslib/html/lin_8h.html
 share/doc/wcslib/html/lin_8h_source.html
 share/doc/wcslib/html/log_8h.html
@@ -278,6 +288,7 @@ share/doc/wcslib/html/sph_8h_source.html
 share/doc/wcslib/html/splitbar.png
 share/doc/wcslib/html/spx_8h.html
 share/doc/wcslib/html/spx_8h_source.html
+share/doc/wcslib/html/structauxprm.html
 share/doc/wcslib/html/structcelprm.html
 share/doc/wcslib/html/structdisprm.html
 share/doc/wcslib/html/structdpkey.html
@@ -327,4 +338,6 @@ share/doc/wcslib/html/wcsunits_8h.html
 share/doc/wcslib/html/wcsunits_8h_source.html
 share/doc/wcslib/html/wcsutil_8h.html
 share/doc/wcslib/html/wcsutil_8h_source.html
+share/doc/wcslib/html/wtbarr_8h.html
+share/doc/wcslib/html/wtbarr_8h_source.html
 share/doc/wcslib/wcslib.pdf
