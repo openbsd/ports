@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 xkb layout switcher panel plugin
 
-XFCE_VERSION=	0.8.2
+XFCE_VERSION=	0.8.3
 XFCE_PLUGIN=	xkb
 REVISION=	1
 
@@ -8,6 +8,7 @@ REVISION=	1
 PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
+MODXFCE_ICON_CACHE=	Yes
 LIB_DEPENDS =	x11/gnome/librsvg \
 		devel/libwnck3 \
 		x11/gnome/libxklavier>=5.4

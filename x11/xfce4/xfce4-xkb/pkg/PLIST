@@ -1,4 +1,8 @@
 @so lib/xfce4/panel/plugins/libxkb.so
+share/icons/hicolor/128x128/apps/org.xfce.panel.xkb.png
+share/icons/hicolor/16x16/apps/org.xfce.panel.xkb.png
+share/icons/hicolor/32x32/apps/org.xfce.panel.xkb.png
+share/icons/hicolor/scalable/apps/org.xfce.panel.xkb.svg
 share/locale/ar/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/be/LC_MESSAGES/xfce4-xkb-plugin.mo
@@ -146,3 +150,4 @@ share/xfce4/xkb/flags/uy.svg
 share/xfce4/xkb/flags/uz.svg
 share/xfce4/xkb/flags/vn.svg
 share/xfce4/xkb/flags/ye.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
