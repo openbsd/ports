@@ -21,11 +21,7 @@ MAKE_FLAGS +=	CXX="${CXX}" \
 		CPPFLAGS="${CPPFLAGS}"
 
 CPPFLAGS +=	-Dunix
-.if ${MACHINE_ARCH} == "amd64"
 USE_WXNEEDED=	Yes
-.else
-CPPFLAGS +=	-DNOJIT
-.endif
 
 NO_TEST =	yes
 
