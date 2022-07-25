@@ -1,11 +1,11 @@
 COMMENT =		diff functions for Tcl
 
-V =			0.4.0
+V =			0.4.2
 
 DISTNAME =		diffutiltcl-${V}
 GH_ACCOUNT =		pspjuth
 GH_PROJECT =		DiffUtilTcl
-GH_COMMIT =		6e65388c48ff21fc3a4ded3d1539892e6b50312e
+GH_COMMIT =		bc69eb7646bd42e5f5812ed18bd1b4f578cda5bc
 CATEGORIES =		devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 

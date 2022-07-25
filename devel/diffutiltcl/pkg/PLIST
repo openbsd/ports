@@ -1,4 +1,4 @@
 lib/tcl/diffutiltcl/
-lib/tcl/diffutiltcl/libDiffUtil${VER}.so
+@so lib/tcl/diffutiltcl/libDiffUtil${VER}.so
 lib/tcl/diffutiltcl/pkgIndex.tcl
 @man man/mann/diffutil.n
