@@ -8,6 +8,10 @@ GH_TAGNAME =	v2.4.0
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB-main += X11 Xext avcodec avdevice avfilter avformat avutil
 WANTLIB-main += c gsm m mosquitto mp3lame mpg123 opus png postproc
 WANTLIB-main += pthread re rem sndfile sndio spandsp speexdsp swresample
