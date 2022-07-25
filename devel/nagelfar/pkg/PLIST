@@ -2,9 +2,16 @@ bin/nagelfar
 lib/tcl/modules/85/textSearch-0.4.tm
 libdata/nagelfar/
 libdata/nagelfar/packagedb/
+libdata/nagelfar/packagedb/aesdb.tcl
+libdata/nagelfar/packagedb/base64db.tcl
+libdata/nagelfar/packagedb/cmdlinedb.tcl
+libdata/nagelfar/packagedb/controldb.tcl
+libdata/nagelfar/packagedb/csvdb.tcl
 libdata/nagelfar/packagedb/fileutildb.tcl
 libdata/nagelfar/packagedb/ftpdb.tcl
+libdata/nagelfar/packagedb/httpdb.tcl
 libdata/nagelfar/packagedb/inifiledb.tcl
+libdata/nagelfar/packagedb/jsondb.tcl
 libdata/nagelfar/packagedb/makepkg.tcl
 libdata/nagelfar/packagedb/makepkg2.tcl
 libdata/nagelfar/packagedb/profilerdb.tcl
@@ -17,8 +24,9 @@ libdata/nagelfar/packagedb/tkdnddb.tcl
 libdata/nagelfar/packagedb/vfs_mk4db.tcl
 libdata/nagelfar/syntaxbuild.tcl
 libdata/nagelfar/syntaxdb.tcl
-libdata/nagelfar/syntaxdb84.tcl
+libdata/nagelfar/syntaxdb85.tcl
 libdata/nagelfar/syntaxdb86.tcl
+libdata/nagelfar/syntaxdb87.tcl
 share/doc/nagelfar/
 share/doc/nagelfar/COPYING
 share/doc/nagelfar/README.txt
@@ -26,6 +34,7 @@ share/doc/nagelfar/call-by-name.txt
 share/doc/nagelfar/codecoverage.txt
 share/doc/nagelfar/inlinecomments.txt
 share/doc/nagelfar/messages.txt
+share/doc/nagelfar/oo.txt
 share/doc/nagelfar/plugins.txt
 share/doc/nagelfar/syntaxdatabases.txt
 share/doc/nagelfar/syntaxtokens.txt

@@ -1,0 +1,19 @@
+Index: doc/plugins.txt
+--- doc/plugins.txt.orig
++++ doc/plugins.txt
+@@ -52,13 +52,9 @@ Nagelfar searches for plugins (looking for names <plug
+ 
+ * . (Current directory)
+ 
+-* ./plugins
++* ./nagelfar_plugins
+ 
+-* <nagelfar source>/../..
+-
+-* <nagelfar source>/../../plugins
+-
+-* <nagelfar source>/../plugins
++* ~/nagelfar_plugins
+ 
+ * "-pluginpath <dir>" Option
+ 

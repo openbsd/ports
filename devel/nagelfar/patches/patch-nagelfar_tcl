@@ -17,9 +17,9 @@ Index: nagelfar.tcl
 -} else {
 -    lappend auto_path $libDir
  }
- set version "Version 1.2.5 2017-01-09"
+ set version "Version 1.3.2 2021-02-02"
  #----------------------------------------------------------------------
-@@ -6149,11 +6147,7 @@ proc addOptionsMenu {m} {
+@@ -6475,14 +6473,7 @@ proc addOptionsMenu {m} {
  #----------------------------------------------------------------------
  
  proc PluginSearchPath {} {
@@ -27,8 +27,11 @@ Index: nagelfar.tcl
 -    lappend dirs [file join $::thisDir .. ..]
 -    lappend dirs [file join $::thisDir .. .. plugins]
 -    lappend dirs [file join $::thisDir .. plugins]
+-    foreach d $::Nagelfar(pluginPath) {
+-        lappend dirs $d
+-    }
 -    return $dirs
-+    return [list . ./nagelfar_plugins ~/nagelfar_plugins]
++    return [list . ./nagelfar_plugins ~/nagelfar_plugins {*}$::Nagelfar(pluginPath)]
  }
  
  # Locate plugin source

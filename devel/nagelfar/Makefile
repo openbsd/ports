@@ -1,7 +1,7 @@
 COMMENT =	syntax analysis tool for Tcl
 
-DISTNAME =	nagelfar125
-PKGNAME =	nagelfar-1.2.5
+DISTNAME =	nagelfar132
+PKGNAME =	nagelfar-1.3.2
 CATEGORIES =	devel
 HOMEPAGE =	http://nagelfar.sourceforge.net/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
