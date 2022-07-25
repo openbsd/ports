@@ -20,7 +20,6 @@ share/geeqie/
 share/geeqie/applications/
 share/geeqie/applications/camera-import.desktop
 share/geeqie/applications/export-jpeg.desktop
-share/geeqie/applications/geeqie-ufraw-id.desktop
 @comment share/geeqie/applications/geeqie-ufraw-recursive.desktop
 @comment share/geeqie/applications/geeqie-ufraw.desktop
 share/geeqie/applications/image-crop.desktop

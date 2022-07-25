@@ -1,24 +1,24 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 
-DISTNAME=		geeqie-1.6
+V=			1.7.3
+DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
-REVISION=		0
 
-HOMEPAGE=		http://geeqie.org/
+HOMEPAGE=		https://www.geeqie.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} atk-1.0 c cairo cairo-gobject exiv2
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 harfbuzz intl jpeg lcms2 m openjp2 pango-1.0
-WANTLIB += pangocairo-1.0 tiff
+WANTLIB += gtk-3 harfbuzz heif intl jpeg lcms2 m openjp2 pango-1.0
+WANTLIB += pangocairo-1.0 raw tiff
 
 COMPILER=		base-clang ports-gcc base-gcc
 
-MASTER_SITES=		http://geeqie.org/
+MASTER_SITES=		https://github.com/BestImageViewer/geeqie/releases/download/v${V}/
 
 MODULES=		textproc/intltool
 
@@ -37,13 +37,14 @@ CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-doxygen-doc \
+			--disable-doxygen-html \
+			--disable-archive \
 			--disable-lirc \
 			--disable-lua \
 			--disable-ffmpegthumbnailer \
 			--disable-gpu-accel \
 			--disable-pdf \
 			--disable-djvu \
-			--disable-heif \
 			--disable-webp \
 			--enable-gtk3 \
 			--with-htmldir=${PREFIX}/share/doc/geeqie \
@@ -58,7 +59,14 @@ MAKE_ENV=		MKDIR_P='mkdir -p'
 # lxml.ElementInclude.FatalIncludeError: cannot load 'GuideMainWindowFilePane.xml' as 'xml'
 CONFIGURE_ENV +=	ac_cv_path_GNOME_DOC_TOOL=
 
+SEPARATE_BUILD=		Yes
+
+post-extract:
+	perl -pi -e 's,bash,sh,g' ${WRKSRC}/version.sh
+	perl -pi -e 's,./create-doxygen-lua-api.sh,,' \
+		${WRKSRC}/doc/Makefile.am
+	perl -pi -e 's,-Werror ,,g' ${WRKSRC}/configure.ac
 post-install:
-	rm -rf ${PREFIX}/share/doc/
+	rm -r ${PREFIX}/share/doc/
 
 .include <bsd.port.mk>
