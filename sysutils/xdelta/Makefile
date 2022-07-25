@@ -4,6 +4,7 @@ COMMENT =		tool for RFC3284 delta compression
 GH_ACCOUNT =		jmacd
 GH_PROJECT =		xdelta
 GH_TAGNAME =		v3.0.11
+REVISION =		0
 
 CATEGORIES =		sysutils devel
 
@@ -19,10 +20,13 @@ WRKSRC = 		${WRKDIST}/xdelta3
 PERMIT_PACKAGE =	Yes
 
 # C++ is only for disabled regression test suite
-WANTLIB =		c m
+WANTLIB =		c lzma m pthread
 
-#CONFIGURE_STYLE =	autoconf
+LIB_DEPENDS =		archivers/xz
+
 CONFIGURE_STYLE =	autoreconf
+
+CONFIGURE_ARGS =	--with-liblzma=yes
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15

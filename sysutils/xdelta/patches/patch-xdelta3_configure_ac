@@ -1,0 +1,19 @@
+Index: xdelta3/configure.ac
+--- xdelta3/configure.ac.orig
++++ xdelta3/configure.ac
+@@ -22,7 +22,15 @@ AC_ARG_WITH(
+     [USE_LIBLZMA=$withval],
+     [USE_LIBLZMA=auto])
+ 
++AC_PATH_PROG(PKG_CONFIG, pkg-config)
++
+ if test "x$USE_LIBLZMA" != xno ; then
++    if test -n "$PKG_CONFIG"; then
++        LZMA_CFLAGS="`$PKG_CONFIG --cflags liblzma`"
++        CFLAGS="$CFLAGS $LZMA_CFLAGS"
++        LZMA_LDFLAGS="`$PKG_CONFIG --libs liblzma`"
++        LDFLAGS="$LDFLAGS $LZMA_LDFLAGS"
++    fi
+     AC_CHECK_HEADERS([lzma.h],,[
+         if test "x$with_liblzma" = xyes ; then
+             AC_MSG_FAILURE([liblzma includes were not found])
