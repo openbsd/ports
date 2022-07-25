@@ -1,16 +1,18 @@
 COMMENT =	tool for resizing BDF format fonts
 
 DISTNAME =	bdfresize-1.5
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
+
+HOMEPAGE =	http://openlab.jp/efont/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c
 
-MASTER_SITES =	https://www.distfiles.pl/
+MASTER_SITES =	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
 
 CONFIGURE_STYLE = gnu
 
