@@ -1,21 +1,20 @@
 COMMENT =	high level interface to dbus-tcl
 
-V =		1.3
+V =		2.1
 
 DISTNAME =	dbif-${V}
 PKGNAME =	dbus-intf-${V}
 CATEGORIES =	x11
 HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbif/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =	0
 
 # ISC
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 MASTER_SITES =	${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
 BUILD_DEPENDS =	devel/tcllib
-RUN_DEPENDS =	x11/dbus-tcl>=2.1
+RUN_DEPENDS =	x11/dbus-tcl
 SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
