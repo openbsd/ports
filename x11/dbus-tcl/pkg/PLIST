@@ -1,5 +1,5 @@
 lib/tcl/dbus-tcl/
-lib/tcl/dbus-tcl/libdbus${VER}.so
+@so lib/tcl/dbus-tcl/libdbus${VER}.so
 lib/tcl/dbus-tcl/pkgIndex.tcl
 @man man/mann/dbus.n
 share/doc/dbus-tcl/

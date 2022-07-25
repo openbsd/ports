@@ -1,16 +1,15 @@
 COMMENT =	dbus bindings for Tcl
 
-V =		2.2
+V =		3.0
 
 DISTNAME =	dbus-${V}
 PKGNAME =	dbus-tcl-${V}
 CATEGORIES =	x11
 HOMEPAGE =	https://chiselapp.com/user/schelte/repository/dbus/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =	0
 
 # ISC
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 WANTLIB =	dbus-1
 MASTER_SITES =	${HOMEPAGE:=uv/}
@@ -30,8 +29,7 @@ SEPARATE_BUILD =Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR} \
-		--mandir='$${prefix}/man' \
-		--enable-threads
+		--mandir='$${prefix}/man'
 
 WRKDIST =	${WRKDIR}/dbus-${V}
 TEST_TARGET =	test
