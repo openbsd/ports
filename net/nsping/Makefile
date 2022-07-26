@@ -5,7 +5,7 @@ REVISION=	0
 DISTFILES=	nsping.tar.gz
 CATEGORIES=	net
 
-MASTER_SITES=	https://www.distfiles.pl/
+MASTER_SITES=	${MASTER_SITE_FREEBSD}
 
 PERMIT_PACKAGE=	Yes
 
