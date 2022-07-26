@@ -25,6 +25,10 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.rdd
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.rdd
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.socket
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.socket
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.utility
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.utility
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/pledge.utility-audioDecoder
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/pledge.utility-audioDecoder
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.content
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.content
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.gpu
@@ -35,6 +39,10 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.rdd
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.rdd
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.socket
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.socket
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility
+lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility-audioDecoder
+@sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility-audioDecoder
 lib/${MOZILLA_PROJECT}/browser/features/
 lib/${MOZILLA_PROJECT}/browser/features/doh-rollout@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
@@ -55,6 +63,7 @@ lib/${MOZILLA_PROJECT}/gmp-clearkey/
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/
 @lib lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/libclearkey.so.${LIBclearkey_VERSION}
 lib/${MOZILLA_PROJECT}/gmp-clearkey/0.1/manifest.json
+@lib lib/${MOZILLA_PROJECT}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}

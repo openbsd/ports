@@ -7,7 +7,7 @@ https://github.com/eqrion/cbindgen/issues/767#issuecomment-1153125949
 Index: gfx/webrender_bindings/webrender_ffi.h
 --- gfx/webrender_bindings/webrender_ffi.h.orig
 +++ gfx/webrender_bindings/webrender_ffi.h
-@@ -77,8 +77,6 @@ struct WrPipelineInfo;
+@@ -73,8 +73,6 @@ struct WrPipelineInfo;
  struct WrPipelineIdAndEpoch;
  using WrPipelineIdEpochs = nsTArray<WrPipelineIdAndEpoch>;
  

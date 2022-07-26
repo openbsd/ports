@@ -1,7 +1,7 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
-MOZILLA_VERSION =	91.11.0esr
+MOZILLA_VERSION =	102.1.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
@@ -10,8 +10,8 @@ MOZILLA_DIST =		firefox
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	8.0
-MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3
+SO_VERSION =	9.0
+MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 ipcclientcerts
 
 CATEGORIES =	www
 
@@ -24,18 +24,22 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
-MODCLANG_ARCHS =	amd64 i386
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
+BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 #1670807
 BUILD_DEPENDS +=	devel/m4
+# wasi
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
+			lang/wasi-sdk/libcxxabi \
+			lang/wasi-sdk/libcxx \
+			lang/wasi-libc
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
-WANTLIB += Xcomposite Xdamage Xfixes
+WANTLIB += Xcomposite Xdamage Xfixes Xrandr Xtst
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -52,15 +56,17 @@ CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
-# remove post 96
-CONFIGURE_ARGS +=	--disable-necko-wifi
 
-# XXX badly formed debug in libxul ?
+# XXX badly formed debug
 DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
 
 post-install:
 	# install prefs
@@ -91,8 +97,10 @@ post-install:
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln -f ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/chrome/icons/default/default{48,}.png
 
-.for f in unveil.content unveil.gpu unveil.main unveil.rdd unveil.socket pledge.content pledge.gpu pledge.main pledge.rdd pledge.socket
-	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
+.for f in unveil pledge
+.for t in content gpu main rdd socket utility utility-audioDecoder
+	${INSTALL_DATA} ${FILESDIR}/${f}.${t} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences/
+.endfor
 .endfor
 
 .include <bsd.port.mk>
