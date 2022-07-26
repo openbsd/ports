@@ -1,0 +1,21 @@
+fix build with geos 3.11.
+
+https://github.com/pcb2gcode/pcb2gcode/commit/f7b93da36eb607f92b4d35ea576658ae008ca6a5
+
+Index: geos_helpers.cpp
+--- geos_helpers.cpp.orig
++++ geos_helpers.cpp
+@@ -3,13 +3,10 @@
+ #include "geos_helpers.hpp"
+ #include "geometry.hpp"
+ #include <geos/io/WKTReader.h>
+-#include <geos/io/WKTReader.inl>
+ #include <geos/io/WKTWriter.h>
+ #include <geos/geom/CoordinateSequenceFactory.h>
+ #include <geos/geom/Coordinate.h>
+-#include <geos/geom/Coordinate.inl>
+ #include <geos/geom/GeometryFactory.h>
+-#include <geos/geom/GeometryFactory.inl>
+ #include <boost/pointer_cast.hpp>
+ 
+ linestring_type_fp from_geos(const geos::geom::LineString* ls) {
