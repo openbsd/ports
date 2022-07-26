@@ -1,7 +1,8 @@
 COMMENT =	bitmap fonts from SGI
 
-DISTNAME =	sgi-fonts
-PKGNAME =	${DISTNAME}-1.0
+V =		1.0
+DISTNAME =	sgi-fonts-${V}-1.src
+PKGNAME =	sgi-fonts-${V}
 REVISION =	2
 
 CATEGORIES =	fonts
@@ -10,15 +11,19 @@ CATEGORIES =	fonts
 PERMIT_PACKAGE = Yes
 
 MASTER_SITES =	https://www.distfiles.pl/
+EXTRACT_SUFX =	.rpm
 
 NO_TEST =	Yes
 USE_X11 =	Yes
 
 FONTDIR=	${PREFIX}/share/fonts/sgi-fonts
 
-WRKSRC =	${WRKDIST}/sgi
+WRKSRC =	${WRKDIR}/sgi-fonts/sgi
 
 PKG_ARCH =	*
+
+post-extract:
+	cd ${WRKDIR} && ${TAR} xf sgi-fonts.tar.gz
 
 do-build:
 	cd ${WRKSRC}; \
