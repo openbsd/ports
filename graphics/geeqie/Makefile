@@ -4,6 +4,7 @@ V=			1.7.3
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
+REVISION=		0
 EPOCH=			0
 
 HOMEPAGE=		https://www.geeqie.org/
@@ -28,7 +29,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			graphics/exiftran
 
 LIB_DEPENDS=		graphics/exiv2 \
+			graphics/libraw \
 			graphics/openjp2 \
+			multimedia/libheif \
 			x11/gtk+3
 
 USE_GMAKE=		Yes
@@ -62,10 +65,10 @@ CONFIGURE_ENV +=	ac_cv_path_GNOME_DOC_TOOL=
 SEPARATE_BUILD=		Yes
 
 post-extract:
-	perl -pi -e 's,bash,sh,g' ${WRKSRC}/version.sh
-	perl -pi -e 's,./create-doxygen-lua-api.sh,,' \
-		${WRKSRC}/doc/Makefile.am
-	perl -pi -e 's,-Werror ,,g' ${WRKSRC}/configure.ac
+	sed -i 's,bash,sh,g' ${WRKSRC}/version.sh
+	sed -i 's,./create-doxygen-lua-api.sh,,' ${WRKSRC}/doc/Makefile.am
+	sed -i 's,-Werror ,,g' ${WRKSRC}/configure.ac
+
 post-install:
 	rm -r ${PREFIX}/share/doc/
 
