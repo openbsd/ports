@@ -1,6 +1,7 @@
 QT6NAME =		QtShaderTools
 
 COMMENT =		Qt6 shader tools module
+REVISION =		0
 
 PKGSPEC =		qt6-qtshadertools-${QT6_PKGSPEC}
 
