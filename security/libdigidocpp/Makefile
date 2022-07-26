@@ -20,10 +20,10 @@ DIST_SUBDIR =		libdigidocpp
 MASTER_SITES0 =		https://github.com/open-eid/libdigidocpp/
 # merged but after 3.14.10 release
 PATCHFILES +=		pkcs11-path-{pull/}473.patch:0
-# still pending (but approved)
-PATCHFILES +=		iconv-{pull/}470.patch:0
 PATCHFILES +=		libressl-{pull/}482.patch:0
 PATCHFILES +=		minizip--{pull/}485.patch:0
+# still pending (but approved)
+PATCHFILES +=		iconv-{pull/}470.patch:0
 
 PATCH_DIST_STRIP =	-p1
 
