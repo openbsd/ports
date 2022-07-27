@@ -2,6 +2,7 @@
 @bin bin/lowdown-diff
 include/lowdown.h
 @static-lib lib/liblowdown.a
+@lib lib/liblowdown.so.${LIBlowdown_VERSION}
 lib/pkgconfig/lowdown.pc
 @man man/man1/lowdown-diff.1
 @man man/man1/lowdown.1
@@ -38,3 +39,6 @@ lib/pkgconfig/lowdown.pc
 @man man/man3/lowdown_term_rndr.3
 @man man/man3/lowdown_tree_rndr.3
 @man man/man5/lowdown.5
+share/lowdown/
+share/lowdown/odt/
+share/lowdown/odt/styles.xml

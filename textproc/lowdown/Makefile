@@ -1,6 +1,8 @@
 COMMENT =	simple markdown translator
-DISTNAME =	lowdown-0.10.0
+DISTNAME =	lowdown-1.0.0
 CATEGORIES =	textproc
+
+SHARED_LIBS =	lowdown		0.0	# 1
 
 HOMEPAGE =	https://kristaps.bsd.lv/lowdown/
 MAINTAINER =	Bryan Vyhmeister <bryan@bsdjournal.net>
@@ -16,8 +18,10 @@ WANTLIB +=	c m
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	PREFIX="${PREFIX}"
 
-ALL_TARGET =	lowdown
+MAKE_FLAGS +=	LIBVER="${LIBlowdown_VERSION}"
 
+ALL_TARGET =	lowdown
+FAKE_TARGET =	install install_libs
 TEST_TARGET =	regress
 
 .include <bsd.port.mk>
