@@ -1,11 +1,8 @@
 COMMENT =	Charting library for Perl
 
-DISTNAME =	Chart-2.4.10
+DISTNAME =	Chart-v2.403.6
+PKGNAME =	p5-${DISTNAME:S/v//}
 CATEGORIES =	graphics
-REVISION =	0
-
-RUN_DEPENDS =	graphics/p5-GD
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
@@ -14,5 +11,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 PKG_ARCH =	*
+
+RUN_DEPENDS =	graphics/p5-GD
+BUILD_DEPENDS = ${RUN_DEPENDS}
+TEST_DEPENDS =	devel/p5-Test-Warn
 
 .include <bsd.port.mk>

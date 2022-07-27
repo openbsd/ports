@@ -1,19 +1,41 @@
 ${P5SITE}/Chart/
-${P5SITE}/Chart.pod
+${P5SITE}/Chart.pm
 ${P5SITE}/Chart/Bars.pm
 ${P5SITE}/Chart/Base.pm
 ${P5SITE}/Chart/BrushStyles.pm
+${P5SITE}/Chart/Color/
+${P5SITE}/Chart/Color.pm
+${P5SITE}/Chart/Color/Constant.pm
+${P5SITE}/Chart/Color/Value.pm
 ${P5SITE}/Chart/Composite.pm
 ${P5SITE}/Chart/Constants.pm
 ${P5SITE}/Chart/Direction.pm
 ${P5SITE}/Chart/ErrorBars.pm
+${P5SITE}/Chart/Font.pm
 ${P5SITE}/Chart/HorizontalBars.pm
 ${P5SITE}/Chart/Lines.pm
 ${P5SITE}/Chart/LinesPoints.pm
+${P5SITE}/Chart/Manual/
+${P5SITE}/Chart/Manual.pod
+${P5SITE}/Chart/Manual/Methods.pod
+${P5SITE}/Chart/Manual/Properties.pod
+${P5SITE}/Chart/Manual/Types.pod
+${P5SITE}/Chart/Manual/Workflows.pod
 ${P5SITE}/Chart/Mountain.pm
 ${P5SITE}/Chart/Pareto.pm
 ${P5SITE}/Chart/Pie.pm
 ${P5SITE}/Chart/Points.pm
+${P5SITE}/Chart/Property.pm
 ${P5SITE}/Chart/Split.pm
 ${P5SITE}/Chart/StackedBars.pm
 @man man/man3p/Chart.3p
+@man man/man3p/Chart::Color.3p
+@man man/man3p/Chart::Color::Constant.3p
+@man man/man3p/Chart::Color::Value.3p
+@man man/man3p/Chart::Font.3p
+@man man/man3p/Chart::Manual.3p
+@man man/man3p/Chart::Manual::Methods.3p
+@man man/man3p/Chart::Manual::Properties.3p
+@man man/man3p/Chart::Manual::Types.3p
+@man man/man3p/Chart::Manual::Workflows.3p
+@man man/man3p/Chart::Property.3p
