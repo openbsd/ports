@@ -8,13 +8,12 @@ SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
 
-REVISION-main =		0
-REVISION-tkinter =	0
+REVISION =		1
 
 # This is the MODPY_DEFAULT_VERSION_3 version of Python:
 # - override "@comment" setting so that bin/python3 etc are installed
 PY_DEFAULTONLY =
 # - disable bundled pip in favour of the version from devel/py-pip
-CONFIGURE_ARGS +=	--with-ensurepip=no
+CONFIGURE_ARGS +=	--with-ensurepip=no --enable-optimizations
 
 .include <bsd.port.mk>

@@ -46,6 +46,15 @@ Index: configure.ac
        AC_SUBST(LLVM_AR_FOUND)
        if test -n "${LLVM_AR}" -a -x "${LLVM_AR}"
        then
+@@ -1476,7 +1477,7 @@ then
+ fi
+ LLVM_PROF_ERR=no
+ case $CC in
+-  *clang*)
++  *clang*|cc)
+     # Any changes made here should be reflected in the GCC+Darwin case below
+     PGO_PROF_GEN_FLAG="-fprofile-instr-generate"
+     PGO_PROF_USE_FLAG="-fprofile-instr-use=code.profclangd"
 @@ -2865,18 +2866,7 @@ AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/S
  AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
  

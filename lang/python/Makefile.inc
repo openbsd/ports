@@ -122,7 +122,7 @@ CONFIGURE_ARGS +=	--with-fpectl \
 .if ${VERSION} != "2.7"
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
 .  if ${PROPERTIES:Mlld}
-CONFIGURE_ARGS +=	--with-lto
+CONFIGURE_ARGS +=	--with-lto --enable-optimizations
 .  endif
 TEST_IS_INTERACTIVE =	Yes
 .endif
