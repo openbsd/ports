@@ -4959,13 +4959,6 @@ nextcloud/3rdparty/guzzlehttp/guzzle/src/TransferStats.php
 nextcloud/3rdparty/guzzlehttp/guzzle/src/Utils.php
 nextcloud/3rdparty/guzzlehttp/guzzle/src/functions.php
 nextcloud/3rdparty/guzzlehttp/guzzle/src/functions_include.php
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/php-cs-fixer/
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/php-cs-fixer/composer.json
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/phpstan/
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/phpstan/composer.json
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/psalm/
-nextcloud/3rdparty/guzzlehttp/guzzle/vendor-bin/psalm/composer.json
 nextcloud/3rdparty/guzzlehttp/promises/
 nextcloud/3rdparty/guzzlehttp/promises/CHANGELOG.md
 nextcloud/3rdparty/guzzlehttp/promises/LICENSE
@@ -5022,6 +5015,7 @@ nextcloud/3rdparty/guzzlehttp/psr7/src/StreamDecoratorTrait.php
 nextcloud/3rdparty/guzzlehttp/psr7/src/StreamWrapper.php
 nextcloud/3rdparty/guzzlehttp/psr7/src/UploadedFile.php
 nextcloud/3rdparty/guzzlehttp/psr7/src/Uri.php
+nextcloud/3rdparty/guzzlehttp/psr7/src/UriComparator.php
 nextcloud/3rdparty/guzzlehttp/psr7/src/UriNormalizer.php
 nextcloud/3rdparty/guzzlehttp/psr7/src/UriResolver.php
 nextcloud/3rdparty/guzzlehttp/psr7/src/Utils.php
@@ -7688,6 +7682,12 @@ nextcloud/3rdparty/symfony/console/Tester/ApplicationTester.php
 nextcloud/3rdparty/symfony/console/Tester/CommandTester.php
 nextcloud/3rdparty/symfony/console/Tester/TesterTrait.php
 nextcloud/3rdparty/symfony/console/composer.json
+nextcloud/3rdparty/symfony/deprecation-contracts/
+nextcloud/3rdparty/symfony/deprecation-contracts/.gitignore
+nextcloud/3rdparty/symfony/deprecation-contracts/LICENSE
+nextcloud/3rdparty/symfony/deprecation-contracts/README.md
+nextcloud/3rdparty/symfony/deprecation-contracts/composer.json
+nextcloud/3rdparty/symfony/deprecation-contracts/function.php
 nextcloud/3rdparty/symfony/event-dispatcher/
 nextcloud/3rdparty/symfony/event-dispatcher-contracts/
 nextcloud/3rdparty/symfony/event-dispatcher-contracts/.gitignore
@@ -9221,8 +9221,6 @@ nextcloud/apps/circles/l10n/ja.js
 nextcloud/apps/circles/l10n/ja.json
 nextcloud/apps/circles/l10n/ka_GE.js
 nextcloud/apps/circles/l10n/ka_GE.json
-nextcloud/apps/circles/l10n/kn.js
-nextcloud/apps/circles/l10n/kn.json
 nextcloud/apps/circles/l10n/ko.js
 nextcloud/apps/circles/l10n/ko.json
 nextcloud/apps/circles/l10n/lb.js
@@ -9245,8 +9243,6 @@ nextcloud/apps/circles/l10n/oc.js
 nextcloud/apps/circles/l10n/oc.json
 nextcloud/apps/circles/l10n/pl.js
 nextcloud/apps/circles/l10n/pl.json
-nextcloud/apps/circles/l10n/ps.js
-nextcloud/apps/circles/l10n/ps.json
 nextcloud/apps/circles/l10n/pt_BR.js
 nextcloud/apps/circles/l10n/pt_BR.json
 nextcloud/apps/circles/l10n/pt_PT.js
@@ -12504,7 +12500,6 @@ nextcloud/apps/files_pdfviewer/composer.json
 nextcloud/apps/files_pdfviewer/composer.lock
 nextcloud/apps/files_pdfviewer/css/
 nextcloud/apps/files_pdfviewer/css/minmode.css
-nextcloud/apps/files_pdfviewer/css/style.css
 nextcloud/apps/files_pdfviewer/css/viewer.css
 nextcloud/apps/files_pdfviewer/img/
 nextcloud/apps/files_pdfviewer/img/app.png
