@@ -1,0 +1,15 @@
+Make sure the TS_VERIFY_CTS_set_certs() macro gets picked up correctly.
+It is a function in OpenSSL 1.1 and a macro in LibreSSL and OpenSSL 3.
+
+Index: ext/openssl/extconf.rb
+--- ext/openssl/extconf.rb.orig
++++ ext/openssl/extconf.rb
+@@ -176,7 +176,7 @@ have_func("SSL_SESSION_get_protocol_version")
+ have_func("TS_STATUS_INFO_get0_status")
+ have_func("TS_STATUS_INFO_get0_text")
+ have_func("TS_STATUS_INFO_get0_failure_info")
+-have_func("TS_VERIFY_CTS_set_certs")
++have_func("TS_VERIFY_CTS_set_certs(NULL, NULL)", "openssl/ts.h")
+ have_func("TS_VERIFY_CTX_set_store")
+ have_func("TS_VERIFY_CTX_add_flags")
+ have_func("TS_RESP_CTX_set_time_cb")
