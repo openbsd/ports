@@ -1,6 +1,6 @@
 COMMENT=	lists of the country, language and currency iso names
 
-V =		4.10.0
+V =		4.11.0
 DISTNAME=	iso-codes-v${V}
 PKGNAME =	iso-codes-${V}
 CATEGORIES=	devel
