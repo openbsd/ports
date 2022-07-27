@@ -9287,8 +9287,6 @@ nextcloud/apps/circles/l10n/ja.js
 nextcloud/apps/circles/l10n/ja.json
 nextcloud/apps/circles/l10n/ka_GE.js
 nextcloud/apps/circles/l10n/ka_GE.json
-nextcloud/apps/circles/l10n/kn.js
-nextcloud/apps/circles/l10n/kn.json
 nextcloud/apps/circles/l10n/ko.js
 nextcloud/apps/circles/l10n/ko.json
 nextcloud/apps/circles/l10n/lb.js
@@ -9311,8 +9309,6 @@ nextcloud/apps/circles/l10n/oc.js
 nextcloud/apps/circles/l10n/oc.json
 nextcloud/apps/circles/l10n/pl.js
 nextcloud/apps/circles/l10n/pl.json
-nextcloud/apps/circles/l10n/ps.js
-nextcloud/apps/circles/l10n/ps.json
 nextcloud/apps/circles/l10n/pt_BR.js
 nextcloud/apps/circles/l10n/pt_BR.json
 nextcloud/apps/circles/l10n/pt_PT.js
@@ -12554,7 +12550,6 @@ nextcloud/apps/files_pdfviewer/composer.json
 nextcloud/apps/files_pdfviewer/composer.lock
 nextcloud/apps/files_pdfviewer/css/
 nextcloud/apps/files_pdfviewer/css/minmode.css
-nextcloud/apps/files_pdfviewer/css/style.css
 nextcloud/apps/files_pdfviewer/css/viewer.css
 nextcloud/apps/files_pdfviewer/img/
 nextcloud/apps/files_pdfviewer/img/app.png
