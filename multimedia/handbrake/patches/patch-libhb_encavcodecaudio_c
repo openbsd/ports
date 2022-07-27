@@ -1,0 +1,20 @@
+Fix missing audio tracks.
+
+ * https://bugzilla.rpmfusion.org/show_bug.cgi?id=6006
+ * https://github.com/HandBrake/HandBrake/commit/f28289fb06ab461ea082b4be56d6d1504c0c31c2
+
+Index: libhb/encavcodecaudio.c
+--- libhb/encavcodecaudio.c.orig
++++ libhb/encavcodecaudio.c
+@@ -409,7 +409,10 @@ static void Encode(hb_work_object_t *w, hb_buffer_list
+ 
+         // Prepare input frame
+         int     out_size;
+-        AVFrame frame = { .nb_samples = pv->samples_per_frame, };
++        AVFrame frame = { .nb_samples = pv->samples_per_frame,
++                          .format = pv->context->sample_fmt,
++                          .channels = pv->context->channels
++        };
+ 
+         out_size = av_samples_get_buffer_size(NULL,
+                                               pv->context->channels,
