@@ -1,17 +1,17 @@
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.11.1
+DISTNAME =	profanity-0.12.1
 CATEGORIES =	net
 
 HOMEPAGE =	https://profanity-im.github.io/
 
-MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 SHARED_LIBS +=  profanity                 1.0 # 0.0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =	https://profanity-im.github.io/
+MASTER_SITES =	https://profanity-im.github.io/tarballs/
 
 WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
@@ -56,5 +56,6 @@ post-patch:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/profanity/
 	${INSTALL_DATA} ${WRKSRC}/profrc.example ${PREFIX}/share/examples/profanity/
+	${INSTALL_MAN} ${WRKSRC}/docs/profanity*.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

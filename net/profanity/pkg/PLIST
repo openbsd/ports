@@ -25,6 +25,7 @@ lib/libprofanity.la
 @man man/man1/profanity-color.1
 @man man/man1/profanity-connect.1
 @man man/man1/profanity-console.1
+@man man/man1/profanity-correct-editor.1
 @man man/man1/profanity-correct.1
 @man man/man1/profanity-correction.1
 @man man/man1/profanity-disco.1
@@ -49,6 +50,7 @@ lib/libprofanity.la
 @man man/man1/profanity-logging.1
 @man man/man1/profanity-mainwin.1
 @man man/man1/profanity-mam.1
+@man man/man1/profanity-mood.1
 @man man/man1/profanity-msg.1
 @man man/man1/profanity-nick.1
 @man man/man1/profanity-notify.1
@@ -69,6 +71,7 @@ lib/libprofanity.la
 @man man/man1/profanity-quit.1
 @man man/man1/profanity-receipts.1
 @man man/man1/profanity-reconnect.1
+@man man/man1/profanity-register.1
 @man man/man1/profanity-reload.1
 @man man/man1/profanity-resource.1
 @man man/man1/profanity-role.1
@@ -128,6 +131,7 @@ share/profanity/themes/original
 share/profanity/themes/original_bright
 share/profanity/themes/shade
 share/profanity/themes/simple
+share/profanity/themes/snikket
 share/profanity/themes/solarized-dark
 share/profanity/themes/solarized-light
 share/profanity/themes/spawn
