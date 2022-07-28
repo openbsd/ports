@@ -8,6 +8,7 @@
      SUBDIR += allegropng
      SUBDIR += animorph
      SUBDIR += ansilove
+     SUBDIR += arcan
      SUBDIR += aspect-crop
      SUBDIR += asymptote
      SUBDIR += autopano-sift-c
