@@ -1,0 +1,78 @@
+@bin bin/afsrv_avfeed
+@bin bin/afsrv_decode
+@bin bin/afsrv_encode
+@bin bin/afsrv_game
+@bin bin/afsrv_net
+@bin bin/afsrv_remoting
+@bin bin/afsrv_terminal
+@bin bin/arcan
+@bin bin/arcan-net
+@bin bin/arcan_db
+@bin bin/arcan_frameserver
+@bin bin/arcan_headless
+@bin bin/arcan_sdl
+include/arcan/
+include/arcan/a12.h
+include/arcan/arcan_tui.h
+include/arcan/arcan_tui_bufferwnd.h
+include/arcan/arcan_tui_linewnd.h
+include/arcan/arcan_tui_listwnd.h
+include/arcan/arcan_tui_readline.h
+include/arcan/arcan_tuidefs.h
+include/arcan/arcan_tuisym.h
+include/arcan/shmif/
+include/arcan/shmif/arcan_shmif.h
+include/arcan/shmif/arcan_shmif_control.h
+include/arcan/shmif/arcan_shmif_defs.h
+include/arcan/shmif/arcan_shmif_event.h
+include/arcan/shmif/arcan_shmif_interop.h
+include/arcan/shmif/arcan_shmif_server.h
+include/arcan/shmif/arcan_shmif_sub.h
+@lib lib/libarcan_a12.so.${LIBarcan_a12_VERSION}
+@static-lib lib/libarcan_shmif.a
+@lib lib/libarcan_shmif.so.${LIBarcan_shmif_VERSION}
+@lib lib/libarcan_shmif_ext.so.${LIBarcan_shmif_ext_VERSION}
+@lib lib/libarcan_shmif_intext.so.${LIBarcan_shmif_intext_VERSION}
+@lib lib/libarcan_shmif_server.so.${LIBarcan_shmif_server_VERSION}
+@lib lib/libarcan_tui.so.${LIBarcan_tui_VERSION}
+lib/pkgconfig/arcan-shmif-ext.pc
+lib/pkgconfig/arcan-shmif-srv.pc
+lib/pkgconfig/arcan-shmif-tui.pc
+lib/pkgconfig/arcan-shmif.pc
+@man man/man1/arcan.1
+@man man/man1/arcan_db.1
+share/arcan/
+share/arcan/appl/
+share/arcan/appl/console/
+share/arcan/appl/console/console.lua
+share/arcan/appl/console/console_osdkbd.lua
+share/arcan/appl/console/cursor.png
+share/arcan/appl/console/wayland_client.lua
+share/arcan/appl/welcome/
+share/arcan/appl/welcome/welcome.lua
+share/arcan/resources/
+share/arcan/resources/fonts/
+share/arcan/resources/fonts/default.ttf
+share/arcan/resources/images/
+share/arcan/resources/images/icons/
+share/arcan/resources/images/icons/arcanicon.png
+share/arcan/resources/images/icons/arcanicon.svg
+share/arcan/scripts/
+share/arcan/scripts/builtin/
+share/arcan/scripts/builtin/debug.lua
+share/arcan/scripts/builtin/decorator.lua
+share/arcan/scripts/builtin/json.lua
+share/arcan/scripts/builtin/keyboard.lua
+share/arcan/scripts/builtin/mouse.lua
+share/arcan/scripts/builtin/osdkbd.lua
+share/arcan/scripts/builtin/string.lua
+share/arcan/scripts/builtin/table.lua
+share/arcan/scripts/builtin/wayland.lua
+share/arcan/scripts/builtin/wmsupport.lua
+share/arcan/scripts/hook/
+share/arcan/scripts/hook/alloc_debug.lua
+share/arcan/scripts/hook/debugstall.lua
+share/arcan/scripts/hook/external_input.lua
+share/arcan/scripts/hook/shutdown.lua
+share/arcan/scripts/hook/timed_dump.lua
+share/arcan/scripts/hook/touch_simulator.lua
