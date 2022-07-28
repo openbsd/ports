@@ -1,13 +1,11 @@
 COMMENT =		jq wrapper for YAML/XML documents
 
-MODPY_EGG_VERSION =	3.0.2
+MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		yq-${MODPY_EGG_VERSION}
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://kislyuk.github.io/yq/
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
