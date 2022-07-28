@@ -29,7 +29,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB-main +=	c m pthread
 
 MASTER_SITES =	https://github.com/maxmind/libmaxminddb/releases/download/${V}/
-MASTER_SITES0 =	https://www.distfiles.pl/
+MASTER_SITES0 =	https://spacehopper.org/mirrors/
 
 MULTI_PACKAGES = -main -db -city -asn
 
