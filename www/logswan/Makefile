@@ -1,6 +1,6 @@
 COMMENT =	fast web log analyzer using probabilistic data structures
 
-V =		2.1.12
+V =		2.1.13
 DISTNAME =	logswan-$V
 
 CATEGORIES =	www
