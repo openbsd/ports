@@ -1311,6 +1311,7 @@
      SUBDIR += py-blessings,python3
      SUBDIR += py-blinker,python3
      SUBDIR += py-blist,python3
+     SUBDIR += py-build,python3
      SUBDIR += py-buildbot		# subdir; uses python3
      SUBDIR += py-buildslave		# standalone, uses python3
      SUBDIR += py-cached-property,python3
@@ -1373,6 +1374,8 @@
      SUBDIR += py-fixtures,python3
      SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock,python3
+     SUBDIR += py-flit,python3
+     SUBDIR += py-flit_core,python3
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
      SUBDIR += py-funcsigs
@@ -1396,6 +1399,7 @@
      SUBDIR += py-importlib-metadata,python3
      SUBDIR += py-importlib_resources,python3
      SUBDIR += py-incremental,python3
+     SUBDIR += py-installer,python3
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
      SUBDIR += py-intelhex,python3
@@ -1454,6 +1458,7 @@
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr,python3
      SUBDIR += py-pebble,python3
+     SUBDIR += py-pep517,python3
      SUBDIR += py-pexpect,python3
      SUBDIR += py2-pip
      SUBDIR += py-pip,python3
