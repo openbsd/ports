@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1403 2022/07/06 06:11:03 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1404 2022/07/28 13:56:37 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1679,6 +1679,7 @@ setup_obsolete_reason(
 	3 => 'kalarmcal',
 	5 => 'gnats',
 	3 => 'gnome-books',
+	46 => 'go-bootstrap',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1737,6 +1738,7 @@ my $obsolete_message = {
 	43 => "using portgen instead is recommended",
 	44 => "qucs-s Qt4 UI not working correctly, suggest xschem or kicad's eeschema instead",
 	45 => "crashes in many different ways at runtime",
+	46 => "moved to binary bootstraps",
 };
 
 # ->is_base_system($handle, $state):
