@@ -43,7 +43,6 @@
      SUBDIR += ghc
      SUBDIR += gnucobol
      SUBDIR += go
-     SUBDIR += go-bootstrap
      SUBDIR += gpc
      SUBDIR += gprolog
      SUBDIR += gravity

@@ -82,8 +82,7 @@ ERRORS += "Fatal: This flavor requires an installed go package"
 .endif
 
 .if empty(GOROOT_BOOTSTRAP)
-BUILD_DEPENDS +=	lang/go-bootstrap
-GOROOT_BOOTSTRAP =	${GOROOT}/bootstrap
+ERRORS += "Fatal: No bootstrap available"
 .endif
 
 GOCFG =			/${GOOS}_${GOARCH}
