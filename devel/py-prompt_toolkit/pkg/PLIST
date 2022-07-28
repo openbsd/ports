@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}auto_suggest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}buffer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}cursor_shapes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}data_structures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}document.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
@@ -109,6 +110,7 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/contrib/telnet/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/contrib/telnet/log.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/contrib/telnet/protocol.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/contrib/telnet/server.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/cursor_shapes.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/data_structures.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/document.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/enums.py
@@ -272,6 +274,8 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}b
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}color_depth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}conemu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}defaults.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}flush_stdout.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}plain_text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}vt100.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}win32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/${MODPY_PYCACHE}windows10.${MODPY_PYC_MAGIC_TAG}pyc
@@ -279,6 +283,8 @@ lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/base.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/color_depth.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/conemu.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/defaults.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/flush_stdout.py
+lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/plain_text.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/vt100.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/win32.py
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/output/windows10.py

@@ -1,10 +1,10 @@
 COMMENT=		python library for building powerful interactive CLI
 
-MODPY_EGG_VERSION=	3.0.24
+# check ipython requirements; as of 2022/07, wants <3.1
+MODPY_EGG_VERSION=	3.0.30
 DISTNAME=		prompt_toolkit-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			1
-REVISION =		0
 
 CATEGORIES=		devel
 
