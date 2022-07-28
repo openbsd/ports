@@ -1,6 +1,6 @@
 COMMENT =	library for generating PDF documents for Tcl
 
-V =		0.9.1
+V =		0.9.4
 
 DISTNAME =	pdf4tcl${V:S/.//g}
 PKGNAME =	pdf4tcl-${V}
