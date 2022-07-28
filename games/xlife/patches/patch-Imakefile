@@ -1,0 +1,12 @@
+Index: Imakefile
+--- Imakefile.orig
++++ Imakefile
+@@ -52,7 +52,7 @@ COMMON2 = $(COMMON1) tile.h
+ COMMON3 = $(COMMON2) colors.h
+ COMMON4 = $(COMMON3) file.h
+ 
+-AllTarget($(PROGRAMS) table2r.script XLIFE-HISTORY.svg)
++AllTarget($(PROGRAMS) table2r.script)
+ ComplexProgramTarget_1(xlife,$(XONLYLIB),)
+ NormalProgramTarget(gen-multirules,gen-multirules.o,,,)
+ InstallProgram(gen-multirules,$(BINDIR))
