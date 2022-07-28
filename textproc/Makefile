@@ -453,6 +453,7 @@
      SUBDIR += py-textfsm,python3
      SUBDIR += py-toml,python3
      SUBDIR += py-tomli,python3
+     SUBDIR += py-tomli_w,python3
      SUBDIR += py-typogrify,python3
      SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode,python3
