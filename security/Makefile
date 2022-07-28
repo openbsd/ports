@@ -365,6 +365,7 @@
      SUBDIR += snort2pf
      SUBDIR += softhsm
      SUBDIR += softhsm2
+     SUBDIR += sops
      SUBDIR += spiped
      SUBDIR += sqlmap
      SUBDIR += ssdeep
