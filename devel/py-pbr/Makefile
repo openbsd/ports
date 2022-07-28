@@ -1,9 +1,8 @@
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	5.7.0
+MODPY_EGG_VERSION =	5.9.0
 DISTNAME =		pbr-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^/py-/}
-REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/openstack-dev/pbr
