@@ -1,27 +1,23 @@
-COMMENT =		advanced Unicode font for medievalists
-DISTNAME =		junicode-1.002
-EXTRACT_SUFX =		.zip
-CATEGORIES =		fonts
+COMMENT =	advanced Unicode font for medievalists
 
-HOMEPAGE =		http://junicode.sourceforge.net/
-MAINTAINER =		George Rosamond <george@nycbug.org>
+TYPEFACE =	junicode
+V =		1.003
 
-# OFL
+GH_ACCOUNT =	psb1558
+GH_PROJECT =	Junicode-font
+GH_TAGNAME =	v${V}
+
+MAINTAINER =	George Rosamond <george@nycbug.org>
+
+# SIL OFL 1.1
 PERMIT_PACKAGE =	Yes
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=junicode/}
 
 MODULES =		font
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
+PKG_ARCH =		*
 
-FONTDIR =		${PREFIX}/share/fonts/junicode
-DOCDIR =		${PREFIX}/share/doc/junicode
-
-do-install:
-	${INSTALL_DATA_DIR} ${FONTDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKDIR}/*.ttf ${FONTDIR}
-	${INSTALL_DATA} ${WRKDIR}/doc/*.pdf ${DOCDIR}
+WRKSRC =		${WRKDIST}/legacy
 
 .include <bsd.port.mk>

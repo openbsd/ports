@@ -1,7 +1,3 @@
-share/doc/junicode/
-share/doc/junicode/Junicode.pdf
-share/doc/junicode/aelfric_job.pdf
-share/doc/junicode/homer_sample.pdf
 share/fonts/
 @fontdir share/fonts/junicode/
 share/fonts/junicode/FoulisGreek.ttf
