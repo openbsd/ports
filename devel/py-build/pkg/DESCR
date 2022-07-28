@@ -1,0 +1,4 @@
+A simple, correct PEP 517 build frontend.
+
+"build" will invoke the PEP 517 hooks to build a distribution package.
+It is a simple build tool and does not perform any dependency management.

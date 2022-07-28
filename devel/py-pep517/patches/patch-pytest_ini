@@ -1,0 +1,11 @@
+Index: pytest.ini
+--- pytest.ini.orig
++++ pytest.ini
+@@ -2,7 +2,6 @@
+ addopts =
+     --strict-config
+     --strict-markers
+-    --flake8
+ xfail_strict = True
+ junit_family = xunit2
+ filterwarnings =
