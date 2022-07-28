@@ -1,15 +1,15 @@
 COMMENT =	simple, lightweight XMPP C library
 
-V =		0.11.0
+V =		0.12.1
 DISTNAME =	libstrophe-${V}
 
-SHARED_LIBS =	strophe                 3.1 # 3.0
+SHARED_LIBS =	strophe                 4.0 # 12.1
 
 CATEGORIES =	net devel
 
 HOMEPAGE =	https://strophe.im/libstrophe/
 
-MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # Dual licensed: MIT and GPLv3
 PERMIT_PACKAGE =	Yes
@@ -32,6 +32,5 @@ MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
 
 .include <bsd.port.mk>
