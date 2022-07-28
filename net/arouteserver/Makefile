@@ -1,6 +1,6 @@
 COMMENT =	tool to automatically build BGP route server configurations
 
-MODPY_EGG_VERSION =	1.16.1
+MODPY_EGG_VERSION =	1.17.0
 DISTNAME =	arouteserver-${MODPY_EGG_VERSION}
 
 CATEGORIES =	net
