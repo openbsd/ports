@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -370,7 +370,7 @@ speexenc_LDADD = $(top_builddir)/libspeex/libspeex.la 
+@@ -372,7 +372,7 @@ speexenc_LDADD = $(top_builddir)/libspeex/libspeex.la 
  
  speexdec_SOURCES = speexdec.c wav_io.c
  speexdec_LDADD = $(top_builddir)/libspeex/libspeex.la \

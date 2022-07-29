@@ -12,8 +12,8 @@ Index: src/speexdec.c
  #include <sys/types.h>
  #include <fcntl.h>
 @@ -91,6 +94,10 @@
-                            ((buf[base+1]<<8)&0xff00)| \
-                             (buf[base]&0xff))
+                       (((unsigned)buf[1]<<8)&0xff00)| \
+                        ((unsigned)buf[0]&0xff))
  
 +#ifdef USE_SNDIO
 +struct sio_hdl *hdl;
