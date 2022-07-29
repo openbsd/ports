@@ -1,7 +1,7 @@
 COMMENT =	code coverage metrics for Perl
 
 MODULES =	cpan
-DISTNAME =	Devel-Cover-1.36
+DISTNAME =	Devel-Cover-1.38
 CATEGORIES =	devel
 
 # Perl
