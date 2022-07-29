@@ -48,5 +48,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/monitor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pid.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pidfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/pidmem.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/daemons/reporter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/daemons/syslogio.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/daemons/version.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

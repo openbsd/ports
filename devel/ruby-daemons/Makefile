@@ -1,7 +1,6 @@
 COMMENT=	wrap existing Ruby scripts to be run as a daemon
 
-DISTNAME=	daemons-1.2.3
-REVISION=	0
+DISTNAME=	daemons-1.4.1
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/thuehlinger/daemons
