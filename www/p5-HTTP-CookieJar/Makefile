@@ -1,6 +1,6 @@
 COMMENT =	minimalist HTTP user agent cookie jar
 
-DISTNAME =	HTTP-CookieJar-0.012
+DISTNAME =	HTTP-CookieJar-0.014
 
 CATEGORIES =	www
 
