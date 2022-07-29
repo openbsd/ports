@@ -3,7 +3,7 @@ COMMENT=	remove files and directories with perl
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME =	File-Remove-1.60
+DISTNAME =	File-Remove-1.61
 CATEGORIES=	devel
 
 # perl
