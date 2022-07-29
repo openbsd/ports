@@ -43,6 +43,7 @@ CONFIGURE_ARGS+=	--enable-mandoc \
 
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
 	mv ${WRKINST}/${TRUEPREFIX}/bin/FvwmCommand{,3}
