@@ -8,22 +8,18 @@ ONLY_FOR_ARCHS =	amd64
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
-TL_VERSION =		0.2.33
-HE_VERSION =		2021.4.15
-REVISION =		1
+TL_VERSION =		0.2.37
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-91.10.0esr-11.0-1-build1
+DISTNAME =		src-firefox-tor-browser-91.12.0esr-11.5-1-build1
 
 FIX_EXTRACT_PERMISSIONS	= Yes
-EXTRACT_ONLY +=		${DISTNAME}.tar.xz \
+DISTFILES +=		${DISTNAME}.tar.xz \
 			src-tor-launcher-${TL_VERSION}.tar.xz \
 			tor-browser-linux64-${TB_VERSION}_en-US.tar.xz
-DISTFILES =		${EXTRACT_ONLY} \
-			https-everywhere-${HE_VERSION}-eff.xpi:0
 
 SO_VERSION =		7.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk
@@ -31,12 +27,11 @@ MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
 MOZILLA_LIBS +=		nspr4 mozsqlite3 plc4 plds4
 
-# mozilla public license for the browser; GPLv2+ for HTTPS Everywhere
+# mozilla public license for the browser
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES =		https://dist.torproject.org/torbrowser/${TB_VERSION}/ \
 			https://archive.torproject.org/tor-package-archive/torbrowser/${TB_VERSION}/
-MASTER_SITES0 =		https://www.eff.org/files/
 
 MODULES =		www/mozilla lang/python
 
@@ -74,7 +69,7 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
 			--with-tor-browser-version=${TB_VERSION}	\
-			--disable-tor-browser-update
+			--enable-tor-browser-data-outside-app-dir
 
 # for nss build system
 MAKE_ENV +=		BUILD_OPT=1 \
@@ -83,9 +78,7 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 BUILD_DEPENDS +=	devel/py-virtualenv
 
-BUILD_DEPENDS +=	archivers/unzip archivers/zip
-
-RUN_DEPENDS +=		net/tor>=0.4.7.7
+RUN_DEPENDS +=		net/tor>=0.4.7.8
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
@@ -116,6 +109,7 @@ post-patch:
 	# Not using a patch for this; patch context would contain UTF-8
 	sed -i 's/#ifdef XP_LINUX/#if defined(XP_LINUX) || defined(XP_OPENBSD)/' \
 	    ${WRKSRC}/browser/app/profile/000-tor-browser.js
+	ln -s ${WRKSRC}/mozconfig-linux-x86_64 ${WRKSRC}/.mozconfig
 
 BROWSER_DIR = ${PREFIX}/lib/${BROWSER_NAME}
 TRUEBROWSER_DIR = ${TRUEPREFIX}/lib/${BROWSER_NAME}
@@ -165,12 +159,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fonts
 	cp ${WRKSRC}/tor-browser_en-US/Browser/fonts/* \
 	    ${BROWSER_DIR}/browser/fonts
-
-	# Include HTTPS Everywhere in omni.ja
-	mkdir -p ${WRKSRC}/https-everywhere/chrome/torbutton/content/extensions/https-everywhere/
-	unzip -o ${FULLDISTDIR}/https-everywhere-${HE_VERSION}-eff.xpi \
-	    -d ${WRKSRC}/https-everywhere/chrome/torbutton/content/extensions/https-everywhere/
-	cd ${WRKSRC}/https-everywhere && find chrome/ | zip -X -@ ${BROWSER_DIR}/omni.ja
 
 	# install wrapper script (remove symlink first)
 	rm ${PREFIX}/bin/${BROWSER_NAME}

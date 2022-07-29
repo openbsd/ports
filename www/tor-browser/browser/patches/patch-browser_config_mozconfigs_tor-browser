@@ -1,0 +1,13 @@
+Disable the updater and related stuff. Does nothing under OpenBSD.
+
+Index: browser/config/mozconfigs/tor-browser
+--- browser/config/mozconfigs/tor-browser.orig
++++ browser/config/mozconfigs/tor-browser
+@@ -4,7 +4,4 @@ mk_add_options MOZ_APP_DISPLAYNAME="Tor Browser"
+ 
+ ac_add_options --with-relative-profile=TorBrowser/Data/Browser
+ 
+-ac_add_options --enable-tor-browser-update
+-ac_add_options --enable-verify-mar
+-
+ ac_add_options --with-distribution-id=org.torproject
