@@ -4,7 +4,7 @@ GH_ACCOUNT=	stremlau
 GH_PROJECT=	html5_notifier
 GH_TAGNAME=	v0.6.4
 PKGNAME=	rcube-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail www
 

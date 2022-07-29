@@ -4,7 +4,7 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-markasjunk2
 GH_TAGNAME=	1.11.2
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	mail www
 

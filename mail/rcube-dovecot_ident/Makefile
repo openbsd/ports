@@ -4,7 +4,7 @@ GH_ACCOUNT=	corbosman
 GH_PROJECT=	dovecot_ident
 GH_TAGNAME=	2.2
 PKGNAME=	rcube-${DISTNAME}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	mail www
 

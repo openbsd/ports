@@ -4,6 +4,7 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-contextmenu
 GH_TAGNAME=	3.3.1
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
+REVISION=	0
 
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#picontextmenu

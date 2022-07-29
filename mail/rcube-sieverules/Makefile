@@ -4,7 +4,7 @@ GH_ACCOUNT=	johndoh
 GH_PROJECT=	roundcube-sieverules
 GH_TAGNAME=	2.3
 PKGNAME=	${DISTNAME:S/roundcube/rcube/}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.tehinterweb.co.uk/roundcube/\#pisieverules
