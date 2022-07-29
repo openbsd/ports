@@ -1,9 +1,9 @@
 COMMENT=	speech processing DSP library
 
-DISTNAME=	speexdsp-1.2.0
+DISTNAME=	speexdsp-1.2.1
 CATEGORIES=	audio
 HOMEPAGE=	https://speex.org/
-SHARED_LIBS=	speexdsp	1.1	# 6.1
+SHARED_LIBS=	speexdsp	1.1	# 6.2
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -16,5 +16,6 @@ WANTLIB=	m
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
