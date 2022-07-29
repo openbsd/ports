@@ -23,6 +23,7 @@
      SUBDIR += tcpblast
      SUBDIR += tsung
      SUBDIR += ubench
+     SUBDIR += udpbench
      SUBDIR += wrk
      SUBDIR += xengine
 
