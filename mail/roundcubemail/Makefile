@@ -12,6 +12,9 @@ PKGNAME-main=	roundcubemail-${VS}
 PKGNAME-classic=rcube-skin-classic-${VS}
 PKGNAME-larry=	rcube-skin-larry-${VS}
 
+REVISION-classic= 0
+REVISION-larry= 0
+
 FIX_EXTRACT_PERMISSIONS= Yes
 
 CATEGORIES=	mail www

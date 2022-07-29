@@ -1,3 +1,4 @@
+@conflict roundcubemail-<1.6
 roundcubemail/skins/larry/
 roundcubemail/skins/larry/README.md
 roundcubemail/skins/larry/addressbook.css
