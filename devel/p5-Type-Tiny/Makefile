@@ -1,6 +1,6 @@
 COMMENT =		tiny, yet Moo(se)-compatible type constraint
 
-DISTNAME =		Type-Tiny-1.012004
+DISTNAME =		Type-Tiny-1.016006
 CATEGORIES =		devel
 
 # perl
