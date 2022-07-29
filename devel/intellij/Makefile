@@ -1,6 +1,6 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
-V=			2022.1.4
+V=			2022.2
 DISTNAME=		ideaIC-${V}-no-jbr
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		https://download.jetbrains.com/idea/
 
 MODULES=		java
-MODJAVA_VER=		11
+MODJAVA_VER=		17
 
 BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 
 NO_TEST=		Yes
 
-WRKDIST=	${WRKDIR}/idea-IC-221.6008.13
+WRKDIST=	${WRKDIR}/idea-IC-222.3345.118
 IJ=			${PREFIX}/intellij
 
 # If NO_BUILD is set, JAVA_HOME doesn't get defined. So do
@@ -36,6 +36,7 @@ do-install:
 	@cd ${WRKDIST} && pax -rw . ${IJ}
 	@rm -rf ${IJ}/bin/libdbm64.so
 	@rm -rf ${IJ}/plugins/android
+	@rm -rf ${IJ}/plugins/design-tools
 .for PLUGIN in darwin-x86-64 darwin-aarch64 win32-x86-64
 	@rm -rf ${IJ}/plugins/cwm-plugin/quiche-native/${PLUGIN}
 .endfor
