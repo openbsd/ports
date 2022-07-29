@@ -4,8 +4,7 @@ MODULES=	cpan
 
 PKG_ARCH=	*
 
-DISTNAME=	File-ShareDir-Install-0.13
-REVISION=	0
+DISTNAME =	File-ShareDir-Install-0.14
 
 CATEGORIES=	devel
 
