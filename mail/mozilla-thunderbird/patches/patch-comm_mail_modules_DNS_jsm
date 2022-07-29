@@ -1,23 +1,39 @@
 fix adding caldav calendar
 
 cf https://bugzilla.mozilla.org/show_bug.cgi?id=1737507
+https://bugzilla.mozilla.org/attachment.cgi?id=9282952
 Index: comm/mail/modules/DNS.jsm
 --- comm/mail/modules/DNS.jsm.orig
 +++ comm/mail/modules/DNS.jsm
-@@ -39,10 +39,8 @@ load_libresolv.prototype = {
+@@ -38,11 +38,22 @@ load_libresolv.prototype = {
+   _open() {
      function findLibrary() {
        let lastException = null;
-       let candidates = [
+-      let candidates = [
 -        { name: "resolv.9", suffix: "" },
 -        { name: "resolv", suffix: ".2" },
 -        { name: "resolv", suffix: "" },
 -      ];
-+        { name: "c", suffix: "" },
-+      ]
++      let candidates = [];
++      if(Services.appinfo.OS.toLowerCase() == "freebsd") {
++        candidates = [
++          { name: "c", suffix: ".7" },
++        ]
++      } else if(Services.appinfo.OS.toLowerCase() == "openbsd") {
++        candidates = [
++          { name: "c", suffix: "" },
++        ]
++      } else {
++        candidates = [
++          { name: "resolv.9", suffix: "" },
++          { name: "resolv", suffix: ".2" },
++          { name: "resolv", suffix: "" },
++        ];
++      }
        let tried = [];
        for (let candidate of candidates) {
          try {
-@@ -125,13 +123,13 @@ load_libresolv.prototype = {
+@@ -125,13 +136,13 @@ load_libresolv.prototype = {
        ctypes.unsigned_char.ptr
      );
      this.ns_get16 = declare(

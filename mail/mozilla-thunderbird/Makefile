@@ -3,7 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	91.11.0
+MOZILLA_VERSION =	102.1.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -15,11 +15,11 @@ DWZ = :
 
 HOMEPAGE =	https://www.thunderbird.net/
 
-SO_VERSION =	36.0
+SO_VERSION =	37.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = ldap60 ldif60 lgpllibs mozgtk mozsqlite3 prldap60 rnp xul
+MOZILLA_LIBS = lgpllibs mozgtk mozsqlite3 rnp xul
 
 CATEGORIES=	mail news
 
@@ -29,8 +29,8 @@ PERMIT_PACKAGE=	Yes
 MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
-COMPILER =	base-clang ports-clang
-MODCLANG_ARCHS =	amd64 i386
+COMPILER =	ports-clang
+MODCLANG_ARCHS =	amd64 aarch64
 
 # 56 requires 59.1
 MOZILLA_USE_BUNDLED_ICU =	Yes
@@ -45,6 +45,11 @@ BUILD_DEPENDS +=	devel/nasm
 .endif
 #1670807
 BUILD_DEPENDS +=	devel/m4
+# wasi
+BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
+			lang/wasi-sdk/libcxxabi \
+			lang/wasi-sdk/libcxx \
+			lang/wasi-libc
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 
@@ -55,9 +60,8 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 # pledge strings to be defined, and no multiprocess anyway..
 CONFIGURE_ARGS +=	--disable-sandbox
-# remove post 96
-CONFIGURE_ARGS +=	--disable-necko-wifi
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
+CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 # #1664111
 CONFIGURE_ARGS +=	--with-system-ffi
 # #1634963
@@ -75,7 +79,7 @@ LIB_DEPENDS +=	security/botan2 \
 		devel/libffi \
 		devel/json-c
 
-WANTLIB += X11-xcb Xcursor Xi botan-2 bz2 ffi harfbuzz intl json-c xcb xcb-shm
+WANTLIB += X11-xcb Xcursor Xi Xrandr Xtst botan-2 bz2 ffi harfbuzz intl json-c xcb xcb-shm
 
 ALL_TARGET =	default
 
