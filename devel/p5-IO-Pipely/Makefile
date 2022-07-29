@@ -1,7 +1,7 @@
+
 COMMENT =	portably create pipe() or pipe-like handles
-DISTNAME =	IO-Pipely-0.005
+DISTNAME =	IO-Pipely-0.006
 CATEGORIES =	devel
-REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes
