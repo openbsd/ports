@@ -1,0 +1,19 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+@comment ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/console
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/setup
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/
+${GEM_LIB}/gems/${DISTNAME}/lib/net-telnet.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/net/telnet/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/telnet.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/net/telnet/version.rb
+${GEM_LIB}/gems/${DISTNAME}/net-telnet.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
