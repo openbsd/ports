@@ -1,0 +1,2 @@
+@bin bin/udpbench
+@man man/man1/udpbench.1

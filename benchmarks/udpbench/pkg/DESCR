@@ -1,0 +1,3 @@
+Measure UDP send and receive performance.  Be very careful that the
+data is reliable.  Avoid unnecessary system calls that may affect
+the result.
