@@ -641,6 +641,7 @@
      SUBDIR += ruby-net-sftp
      SUBDIR += ruby-net-ssh
      SUBDIR += ruby-net-ssh-gateway
+     SUBDIR += ruby-net-telnet
      SUBDIR += ruby-public_suffix
      SUBDIR += ruby-snmp
      SUBDIR += ruby-sshkit
