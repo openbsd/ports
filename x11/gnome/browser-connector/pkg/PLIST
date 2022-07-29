@@ -1,0 +1,44 @@
+@conflict chrome-gnome-shell-*
+@pkgpath x11/gnome/chrome-gnome-shell
+bin/gnome-browser-connector
+bin/gnome-browser-connector-host
+lib/mozilla/
+lib/mozilla/native-messaging-hosts/
+lib/mozilla/native-messaging-hosts/org.gnome.browser_connector.json
+lib/mozilla/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}connector.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}logs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/application.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/base.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/connector.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/constants.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/helpers.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/logs.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/service.py
+lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/version.py
+share/applications/org.gnome.BrowserConnector.desktop
+share/dbus-1/services/org.gnome.BrowserConnector.service
+share/examples/chrome-gnome-shell/
+share/examples/chrome-gnome-shell/chromium/
+@sample ${SYSCONFDIR}/chromium/
+share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/
+share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/org.gnome.browser_connector.json
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/org.gnome.browser_connector.json
+share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+@sample ${SYSCONFDIR}/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+share/icons/hicolor/128x128/apps/org.gnome.BrowserConnector.png
+share/icons/hicolor/16x16/apps/org.gnome.BrowserConnector.png
+share/icons/hicolor/48x48/apps/org.gnome.BrowserConnector.png
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

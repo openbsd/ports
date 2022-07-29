@@ -7,13 +7,13 @@
      SUBDIR += autoar
      SUBDIR += backgrounds
      SUBDIR += baobab
+     SUBDIR += browser-connector
      SUBDIR += builder
      SUBDIR += calculator
      SUBDIR += calendar
      SUBDIR += caribou
      SUBDIR += characters
      SUBDIR += cheese
-     SUBDIR += chrome-gnome-shell
      SUBDIR += clocks
      SUBDIR += connections
      SUBDIR += console
