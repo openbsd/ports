@@ -1,6 +1,6 @@
 COMMENT =	fast, compact, powerful binary serialization
 
-DISTNAME =	Sereal-Encoder-4.023
+DISTNAME =	Sereal-Encoder-4.025
 
 CATEGORIES =	converters
 
