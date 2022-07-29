@@ -4,6 +4,7 @@ GH_ACCOUNT=	axboe
 GH_PROJECT=	fio
 GH_TAGNAME=	fio-3.30
 PKGNAME=	${GH_TAGNAME}
+REVISION=	0
 
 CATEGORIES=	benchmarks
 
@@ -19,7 +20,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB=	c m pthread z
+WANTLIB=	c m nfs pthread z
 
 USE_GMAKE=	Yes
 SEPARATE_BUILD= Yes
@@ -31,5 +32,7 @@ MAKE_FLAGS=	V=1 \
 
 CONFIGURE_ARGS=	--disable-optimizations \
 		--disable-native
+
+LIB_DEPENDS=	devel/libnfs
 
 .include <bsd.port.mk>
