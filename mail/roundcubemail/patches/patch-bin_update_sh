@@ -1,7 +1,7 @@
 Index: bin/update.sh
 --- bin/update.sh.orig
 +++ bin/update.sh
-@@ -266,7 +266,7 @@ if ($RCI->configured) {
+@@ -267,7 +267,7 @@ if ($RCI->configured) {
              echo "\n    }\n\n";
          }
  

@@ -1,2 +1,4 @@
-SHA256 (roundcubemail-1.5.3-complete.tar.gz) = S8+sIZ8uAAXJEtrDIndDzB7Q3tacgi90yBpw0EHlo70=
-SIZE (roundcubemail-1.5.3-complete.tar.gz) = 7857655
+SHA256 (roundcubemail-1.6.0-complete.tar.gz) = JAnM3+LkZfCGy5/BjIjf4Kr2zMI5JFZJdQYSCZIWlLo=
+SHA256 (roundcubemail-1.6.0-skins.tar.xz) = lRHmo8CQ/IbGaaJg1iXLpLRqzowQK7lcM3KtND9+jIQ=
+SIZE (roundcubemail-1.6.0-complete.tar.gz) = 5970153
+SIZE (roundcubemail-1.6.0-skins.tar.xz) = 400520

@@ -9,5 +9,5 @@ Index: config/config.inc.php.sample
 +// $config['db_dsnw'] = 'mysql://roundcube:pass@localhost/roundcubemail';
 +$config['db_dsnw'] = 'sqlite:///roundcubemail/db/sqlite.db?mode=0660';
  
- // The IMAP host chosen to perform the log-in.
- // Leave blank to show a textbox at login, give a list of hosts
+ // IMAP host chosen to perform the log-in.
+ // See defaults.inc.php for the option description.
