@@ -1,6 +1,6 @@
 COMMENT =	geospatial raster data API and CLI
 
-MODPY_EGG_VERSION =	1.2.10
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

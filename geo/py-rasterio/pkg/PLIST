@@ -13,9 +13,11 @@ lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/rasterio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_loading.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}coords.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}crs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}drivers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}dtypes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
@@ -38,19 +40,22 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}vrt.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}warp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}windows.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_base.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_crs.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_env.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_err.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_example.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_features.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_filepath.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_fill.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_io.${MODPY_PYC_MAGIC_TAG}so
-@so lib/python${MODPY_VERSION}/site-packages/rasterio/_shim.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/rasterio/_loading.py
+lib/python${MODPY_VERSION}/site-packages/rasterio/_path.py
+lib/python${MODPY_VERSION}/site-packages/rasterio/_show_versions.py
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_transform.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_version.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_warp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rasterio/control.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/coords.py
-lib/python${MODPY_VERSION}/site-packages/rasterio/crs.py
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/crs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rasterio/drivers.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/dtypes.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/enums.py
