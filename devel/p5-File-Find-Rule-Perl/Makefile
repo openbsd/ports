@@ -2,10 +2,9 @@ COMMENT=	common rules for searching for Perl things
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	File-Find-Rule-Perl-1.15
+DISTNAME =	File-Find-Rule-Perl-1.16
 CATEGORIES=	devel
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
