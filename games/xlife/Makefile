@@ -17,17 +17,18 @@ WRKDIST=	${WRKDIR}/xlife-6.7
 
 USE_GMAKE=	Yes
 
-MAKE_FLAGS=XLIFEPATSDIR=${PREFIX}/share/xlife \
-	   BINDIR=${PREFIX}/bin \
-	   MANDIR=${PREFIX}/man/man6
-FAKE_FLAGS=XLIFEPATSDIR=${TRUEPREFIX}/share/xlife
-
 NO_TEST=	Yes
 
 post-build:
 	cd ${WRKSRC} && ${MAKE} CFLAGS="${CFLAGS}"
 
-post-install:
+do-install:
+.for f in gen-multirules table2r xlife
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+.endfor
+	cd ${PREFIX}/bin && ln -sf xlife lifeconv
+	${INSTALL_DATA} ${WRKSRC}/xlife.man ${PREFIX}/man/man6/xlife.6
+	cd ${PREFIX}/man/man6 && ln -sf xlife.6 lifeconv.6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xlife
 	cp -r ${WRKDIST}/patterns ${PREFIX}/share/xlife
 #pre-install:

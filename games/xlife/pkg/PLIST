@@ -1,5 +1,5 @@
 @bin bin/gen-multirules
-@bin bin/lifeconv
+bin/lifeconv
 bin/table2r
 @bin bin/xlife
 @man man/man6/lifeconv.6
