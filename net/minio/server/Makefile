@@ -1,7 +1,7 @@
 COMMENT =	object storage server compatible with Amazon S3 APIs
 
-V =		2022-06-20T23-13-45Z
-CID =		b3ebc69034bff982ca2c1a6ca43afd20838e99d5
+V =		2022-07-29T19-40-48Z
+CID =		067ebab9d8b821a900bbbc7823b36c95ef96007c
 SHORTCID =	${CID:C/(............).*/\1/}
 
 MODGO_MODNAME =	github.com/minio/minio
