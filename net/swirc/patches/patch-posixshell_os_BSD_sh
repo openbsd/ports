@@ -1,0 +1,22 @@
+propagate cflags and neuter hardcoded optimizations
+
+Index: posixshell/os_BSD.sh
+--- posixshell/os_BSD.sh.orig
++++ posixshell/os_BSD.sh
+@@ -9,13 +9,11 @@ SHARED_FLAGS=-DBSD=1\\
+ 	-DUNIX=1\\
+ 	-D_XOPEN_SOURCE_EXTENDED=1\\
+ 	-I/usr/local/include\\
+-	-O2\\
+-	-Wall\\
+-	-pipe
++	-Wall
+ CC=cc
+-CFLAGS=\$(SHARED_FLAGS) -std=c17
++CFLAGS=\$(SHARED_FLAGS) -std=c17 ${CFLAGS}
+ CXX=c++
+-CXXFLAGS=\$(SHARED_FLAGS) -std=c++17
++CXXFLAGS=\$(SHARED_FLAGS) -std=c++17 ${CXXFLAGS}
+ LDFLAGS=-L/usr/local/lib
+ LDLIBS=-lcrypto\\
+ 	-lcurl\\
