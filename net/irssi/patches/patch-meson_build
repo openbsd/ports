@@ -1,0 +1,14 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -22,8 +22,8 @@ includedir          = get_option('includedir')
+ incdir              = 'irssi'
+ moduledir           = get_option('libdir') / incdir / 'modules'
+ helpdir             = get_option('datadir') / incdir / 'help'
+-themedir            = get_option('datadir') / incdir / 'themes'
+-scriptdir           = get_option('datadir') / incdir / 'scripts'
++themedir            = '${SYSCONFDIR}' / incdir / 'themes'
++scriptdir           = '${SYSCONFDIR}' / incdir / 'scripts'
+ docdir              = get_option('docdir') != '' ? get_option('docdir') : (get_option('datadir') / 'doc' / incdir)
+ 
+ want_textui         = get_option('without-textui') != 'yes'

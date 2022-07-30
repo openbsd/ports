@@ -1,4 +1,7 @@
 @pkgpath net/irssi,socks
+@sample ${SYSCONFDIR}/irssi/
+@sample ${SYSCONFDIR}/irssi/scripts/
+@sample ${SYSCONFDIR}/irssi/themes/
 @bin bin/irssi
 include/irssi/
 include/irssi/irssi-config.h
@@ -150,8 +153,9 @@ include/irssi/src/lib-config/iconfig.h
 include/irssi/src/lib-config/module.h
 lib/irssi/
 lib/irssi/modules/
-lib/irssi/modules/libirc_proxy.la
+@so lib/irssi/modules/libfe_perl.so
 @so lib/irssi/modules/libirc_proxy.so
+@so lib/irssi/modules/libperl_core.so
 lib/pkgconfig/irssi-1.pc
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Irssi/
@@ -183,19 +187,15 @@ share/doc/irssi/special_vars.txt
 share/doc/irssi/startup-HOWTO.html
 share/doc/irssi/startup-HOWTO.txt
 share/examples/irssi/
-@sample ${SYSCONFDIR}/irssi/
 share/examples/irssi/irssi.conf
 @sample ${SYSCONFDIR}/irssi/irssi.conf
 share/examples/irssi/scripts/
-@sample ${SYSCONFDIR}/irssi/scripts/
 share/examples/irssi/scripts/autoop.pl
 @sample ${SYSCONFDIR}/irssi/scripts/autoop.pl
 share/examples/irssi/scripts/autorejoin.pl
 @sample ${SYSCONFDIR}/irssi/scripts/autorejoin.pl
 share/examples/irssi/scripts/buf.pl
 @sample ${SYSCONFDIR}/irssi/scripts/buf.pl
-share/examples/irssi/scripts/command.pl
-@sample ${SYSCONFDIR}/irssi/scripts/command.pl
 share/examples/irssi/scripts/dns.pl
 @sample ${SYSCONFDIR}/irssi/scripts/dns.pl
 share/examples/irssi/scripts/kills.pl
@@ -204,18 +204,13 @@ share/examples/irssi/scripts/mail.pl
 @sample ${SYSCONFDIR}/irssi/scripts/mail.pl
 share/examples/irssi/scripts/mlock.pl
 @sample ${SYSCONFDIR}/irssi/scripts/mlock.pl
-share/examples/irssi/scripts/msg-event.pl
-@sample ${SYSCONFDIR}/irssi/scripts/msg-event.pl
 share/examples/irssi/scripts/quitmsg.pl
 @sample ${SYSCONFDIR}/irssi/scripts/quitmsg.pl
-share/examples/irssi/scripts/redirect.pl
-@sample ${SYSCONFDIR}/irssi/scripts/redirect.pl
 share/examples/irssi/scripts/scriptassist.pl
 @sample ${SYSCONFDIR}/irssi/scripts/scriptassist.pl
 share/examples/irssi/scripts/usercount.pl
 @sample ${SYSCONFDIR}/irssi/scripts/usercount.pl
 share/examples/irssi/themes/
-@sample ${SYSCONFDIR}/irssi/themes/
 share/examples/irssi/themes/colorless.theme
 @sample ${SYSCONFDIR}/irssi/themes/colorless.theme
 share/examples/irssi/themes/default.theme

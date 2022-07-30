@@ -6,7 +6,7 @@ MULTI_PACKAGES = -main -otr
 COMMENT-main =	modular IRC client with many features
 COMMENT-otr =	OTR (off-the-record) plugin for irssi
 
-V =		1.4.1
+V =		1.4.2
 DISTNAME =	irssi-$V
 PKGSPEC-main =	irssi-=$V
 PKGNAME-main =	irssi-$V
@@ -19,43 +19,41 @@ HOMEPAGE =	https://www.irssi.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 \
-		iconv intl m pcre perl pthread ssl
+WANTLIB +=	c crypto curses glib-2.0 gmodule-2.0 m perl ssl
 
 MASTER_SITES =	https://github.com/irssi/irssi/releases/download/${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+MODULES =	devel/meson
+
 LIB_DEPENDS =	devel/glib2>=2.28.0
 
-RUN_DEPENDS-otr = net/irssi,-main
-LIB_DEPENDS-otr = security/libgcrypt>=1.2.0 \
-		security/libotr>=4.1.0
-WANTLIB-otr =	gcrypt gpg-error iconv intl otr
+MODMESON_CONFIGURE_ARGS +=	-Ddisable-utf8proc=yes \
+				-Dwith-otr=yes \
+				-Dwith-perl=yes \
+				-Dwith-proxy=yes
 
-LIBTOOL_FLAGS +=	--tag=disable-static
+RUN_DEPENDS-otr =	net/irssi,-main
+LIB_DEPENDS-otr =	devel/glib2>=2.28.0 \
+			security/libgcrypt>=1.2.0 \
+			security/libotr>=4.1.0
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-utf8proc \
-			--with-otr=module \
-			--with-perl-lib=${PREFIX}/libdata/perl5/site_perl \
-			--with-perl=yes \
-			--with-pic \
-			--with-proxy
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-SEPARATE_BUILD =	Yes
-
-MAKE_FLAGS =	scriptdir="${SYSCONFDIR}/irssi/scripts" \
-		themedir="${SYSCONFDIR}/irssi/themes"
-FAKE_FLAGS =	confdir="${PREFIX}/share/examples/irssi" \
-		scriptdir="${PREFIX}/share/examples/irssi/scripts" \
-		themedir="${PREFIX}/share/examples/irssi/themes"
+WANTLIB-otr =	gcrypt glib-2.0 otr
 
 # tests write to it
 PORTHOME =	${WRKDIR}
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/docs/irssi.1
+	${SUBST_CMD} ${WRKSRC}/meson.build
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi/
+	${INSTALL_DATA} ${WRKSRC}/irssi.conf ${PREFIX}/share/examples/irssi/
+.for l in themes scripts
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/irssi/${l}/
+	mv ${WRKINST}${SYSCONFDIR}/irssi/${l}/* \
+		${PREFIX}/share/examples/irssi/${l}/
+.endfor
 
 .include <bsd.port.mk>
