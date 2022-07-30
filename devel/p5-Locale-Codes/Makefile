@@ -1,6 +1,6 @@
 COMMENT =	distribution of modules to handle locale codes
 
-DISTNAME =	Locale-Codes-3.70
+DISTNAME =	Locale-Codes-3.71
 
 CATEGORIES =	devel
 
