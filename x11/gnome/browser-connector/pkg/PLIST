@@ -28,14 +28,14 @@ lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/service.py
 lib/python${MODPY_VERSION}/site-packages/gnome_browser_connector/version.py
 share/applications/org.gnome.BrowserConnector.desktop
 share/dbus-1/services/org.gnome.BrowserConnector.service
-share/examples/chrome-gnome-shell/
-share/examples/chrome-gnome-shell/chromium/
+share/examples/gnome-browser-connector/
+share/examples/gnome-browser-connector/chromium/
 @sample ${SYSCONFDIR}/chromium/
-share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/
+share/examples/gnome-browser-connector/chromium/native-messaging-hosts/
 @sample ${SYSCONFDIR}/chromium/native-messaging-hosts/
-share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/org.gnome.browser_connector.json
+share/examples/gnome-browser-connector/chromium/native-messaging-hosts/org.gnome.browser_connector.json
 @sample ${SYSCONFDIR}/chromium/native-messaging-hosts/org.gnome.browser_connector.json
-share/examples/chrome-gnome-shell/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
+share/examples/gnome-browser-connector/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
 @sample ${SYSCONFDIR}/chromium/native-messaging-hosts/org.gnome.chrome_gnome_shell.json
 share/icons/hicolor/128x128/apps/org.gnome.BrowserConnector.png
 share/icons/hicolor/16x16/apps/org.gnome.BrowserConnector.png

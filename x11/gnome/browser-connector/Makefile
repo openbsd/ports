@@ -4,6 +4,7 @@ V=			42.0
 GNOME_PROJECT=		gnome-browser-connector
 GNOME_VERSION=		v${V}
 PKGNAME=		${GNOME_PROJECT}-${V}
+REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/nE0sIghT/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
@@ -23,9 +24,9 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/shell
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/chrome-gnome-shell
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-browser-connector
 	mv ${WRKINST}/etc/chromium \
-		${PREFIX}/share/examples/chrome-gnome-shell/
+		${PREFIX}/share/examples/gnome-browser-connector/
 	rm -r ${WRKINST}/etc/opt
 
 .include <bsd.port.mk>
