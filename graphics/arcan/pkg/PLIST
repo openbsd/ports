@@ -7,10 +7,12 @@
 @bin bin/afsrv_terminal
 @bin bin/arcan
 @bin bin/arcan-net
+@bin bin/arcan-wayland
 @bin bin/arcan_db
 @bin bin/arcan_frameserver
 @bin bin/arcan_headless
 @bin bin/arcan_sdl
+@bin bin/arcan_xwm
 include/arcan/
 include/arcan/a12.h
 include/arcan/arcan_tui.h
@@ -39,6 +41,7 @@ lib/pkgconfig/arcan-shmif-ext.pc
 lib/pkgconfig/arcan-shmif-srv.pc
 lib/pkgconfig/arcan-shmif-tui.pc
 lib/pkgconfig/arcan-shmif.pc
+@man man/man1/arcan-wayland.1
 @man man/man1/arcan.1
 @man man/man1/arcan_db.1
 share/arcan/
