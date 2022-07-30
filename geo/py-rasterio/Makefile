@@ -3,6 +3,7 @@ COMMENT =	geospatial raster data API and CLI
 MODPY_EGG_VERSION =	1.3.0
 DISTNAME =	rasterio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo
 
@@ -26,7 +27,8 @@ MODPY_PI =	Yes
 LIB_DEPENDS =	geo/gdal
 WANTLIB +=	${COMPILER_LIBCXX} gdal m
 
-BUILD_DEPENDS +=	math/py-numpy${MODPY_FLAVOR}
+BUILD_DEPENDS +=	lang/cython${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR}>=0.5 \
 		net/py-boto3${MODPY_FLAVOR} \
