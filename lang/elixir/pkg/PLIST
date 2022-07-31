@@ -41,8 +41,10 @@ lib/elixir/lib/elixir/ebin/Elixir.Calendar.UTCOnlyTimeZoneDatabase.beam
 lib/elixir/lib/elixir/ebin/Elixir.Calendar.beam
 lib/elixir/lib/elixir/ebin/Elixir.CaseClauseError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.Formatter.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Fragment.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.Identifier.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.LoadError.beam
+lib/elixir/lib/elixir/ebin/Elixir.Code.Normalizer.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.Typespec.beam
 lib/elixir/lib/elixir/ebin/Elixir.Code.beam
 lib/elixir/lib/elixir/ebin/Elixir.Collectable.BitString.beam
@@ -190,7 +192,6 @@ lib/elixir/lib/elixir/ebin/Elixir.Set.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.Reducers.beam
 lib/elixir/lib/elixir/ebin/Elixir.Stream.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Break.beam
-lib/elixir/lib/elixir/ebin/Elixir.String.Casing.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Atom.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.BitString.beam
 lib/elixir/lib/elixir/ebin/Elixir.String.Chars.Date.beam
@@ -212,6 +213,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Supervisor.Default.beam
 lib/elixir/lib/elixir/ebin/Elixir.Supervisor.Spec.beam
 lib/elixir/lib/elixir/ebin/Elixir.Supervisor.beam
 lib/elixir/lib/elixir/ebin/Elixir.SyntaxError.beam
+lib/elixir/lib/elixir/ebin/Elixir.System.SignalHandler.beam
 lib/elixir/lib/elixir/ebin/Elixir.System.beam
 lib/elixir/lib/elixir/ebin/Elixir.SystemLimitError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Task.Supervised.beam
@@ -221,6 +223,7 @@ lib/elixir/lib/elixir/ebin/Elixir.Time.beam
 lib/elixir/lib/elixir/ebin/Elixir.TokenMissingError.beam
 lib/elixir/lib/elixir/ebin/Elixir.TryClauseError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Tuple.beam
+lib/elixir/lib/elixir/ebin/Elixir.URI.Error.beam
 lib/elixir/lib/elixir/ebin/Elixir.URI.beam
 lib/elixir/lib/elixir/ebin/Elixir.UndefinedFunctionError.beam
 lib/elixir/lib/elixir/ebin/Elixir.UnicodeConversionError.beam
@@ -334,7 +337,6 @@ lib/elixir/lib/logger/ebin/Elixir.Logger.App.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.BackendSupervisor.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Backends.Console.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Config.beam
-lib/elixir/lib/logger/ebin/Elixir.Logger.Counter.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Filter.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Formatter.beam
 lib/elixir/lib/logger/ebin/Elixir.Logger.Handler.beam
@@ -345,6 +347,7 @@ lib/elixir/lib/logger/ebin/Elixir.Logger.beam
 lib/elixir/lib/logger/ebin/logger.app
 lib/elixir/lib/mix/
 lib/elixir/lib/mix/ebin/
+lib/elixir/lib/mix/ebin/Elixir.Collectable.Mix.Shell.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.CLI.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Compilers.ApplicationTracer.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Compilers.Elixir.beam
