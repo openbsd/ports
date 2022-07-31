@@ -1,5 +1,5 @@
 @newgroup _clamav:539
-@newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
+@newuser _clamav:539:539::Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
 @extraunexec rm -fr /var/spool/clamav/*
 @extraunexec rm -fr /var/clamav/quarantine/*
@@ -198,3 +198,5 @@ share/examples/clamav/clamd.conf.sample
 @sample ${SYSCONFDIR}/clamd.conf
 share/examples/clamav/freshclam.conf.sample
 @sample ${SYSCONFDIR}/freshclam.conf
+share/examples/login.conf.d/clamd
+@sample ${SYSCONFDIR}/login.conf.d/clamd
