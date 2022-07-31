@@ -3,6 +3,7 @@ COMMENT =		personal and small-business financial-accounting software
 GNOME_PROJECT =		gnucash
 GNOME_VERSION =		4.11
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 SHARED_LIBS +=  gnc-core-utils       1.1      # unknown
 SHARED_LIBS +=  gnc-module           1.0      # unknown
@@ -23,7 +24,7 @@ WANTLIB += ${COMPILER_LIBCXX} aqbanking atk-1.0 boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt c cairo cairo-gobject
 WANTLIB += dbi gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gtk-3 guile-2.2 gwengui-gtk3 gwenhywfar
+WANTLIB += gobject-2.0 gtk-3 guile-3.0 gwengui-gtk3 gwenhywfar
 WANTLIB += harfbuzz icudata icui18n icuuc intl javascriptcoregtk-4.0
 WANTLIB += m ofx pango-1.0 pangocairo-1.0 secret-1 soup-2.4
 WANTLIB += webkit2gtk-4.0 xml2 xslt z
@@ -53,7 +54,7 @@ LIB_DEPENDS =		databases/libdbi \
 			devel/boost \
 			devel/gwenhywfar \
 			devel/libofx \
-			lang/guile2 \
+			lang/guile3 \
 			productivity/aqbanking \
 			www/webkitgtk4
 
@@ -61,10 +62,10 @@ CONFIGURE_ARGS =	-DENABLE_BINRELOC=OFF \
 			-DCOMPILE_GSCHEMAS=OFF \
 			-DGNC_SHELL=/bin/sh
 
-# XXX make sure guile2 headers are picked up first (over guile1);
+# XXX make sure guile3 headers are picked up first (over guile1 or guile2);
 # cannot use CPPFLAGS/CFLAGS since they get appended last
-CONFIGURE_ENV +=	"CC=${CC} -I${LOCALBASE}/include/guile/2.2"
-CONFIGURE_ENV +=	"CXX=${CXX} -I${LOCALBASE}/include/guile/2.2"
+CONFIGURE_ENV +=	"CC=${CC} -I${LOCALBASE}/include/guile/3.0"
+CONFIGURE_ENV +=	"CXX=${CXX} -I${LOCALBASE}/include/guile/3.0"
 
 # XXX not picked up from config.h
 CFLAGS +=		-DHAVE_SCANF_LLD
