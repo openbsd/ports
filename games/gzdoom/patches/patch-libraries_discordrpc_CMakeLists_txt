@@ -1,0 +1,15 @@
+don't pick up clang-format is present
+
+Index: libraries/discordrpc/CMakeLists.txt
+--- libraries/discordrpc/CMakeLists.txt.orig
++++ libraries/discordrpc/CMakeLists.txt
+@@ -10,7 +10,8 @@ file(GLOB_RECURSE ALL_SOURCE_FILES
+ )
+ 
+ # Set CLANG_FORMAT_SUFFIX if you are using custom clang-format, e.g. clang-format-5.0
+-find_program(CLANG_FORMAT_CMD clang-format${CLANG_FORMAT_SUFFIX})
++#find_program(CLANG_FORMAT_CMD clang-format${CLANG_FORMAT_SUFFIX})
++set(CLANG_FORMAT_CMD, FALSE)
+ 
+ if (CLANG_FORMAT_CMD)
+     add_custom_target(
