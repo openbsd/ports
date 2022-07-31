@@ -47,8 +47,9 @@ CONFIGURE_ARGS +=	--disable-attrib \
 			--enable-guild
 
 CONFIGURE_ENV =	GROFF=false \
-		GUILE=guile2.2 \
-		GUILE_SNARF=guile-snarf2.2 \
+		GUILE_EFFECTIVE_VERSION=2.2 \
+		GUILE_CFLAGS="-I${LOCALBASE}/include/guile/2.2 -I${LOCALBASE}/include" \
+		GUILE_LIBS="-L${LOCALBASE}/lib -lguile-2.2 -lgc" \
 		MAKEINFO=gmakeinfo \
 		M4=/usr/bin/m4
 
