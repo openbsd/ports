@@ -1,0 +1,18 @@
+work around missing RLIMIT_AS
+
+Index: test-suite/standalone/test-stack-overflow
+--- test-suite/standalone/test-stack-overflow.orig
++++ test-suite/standalone/test-stack-overflow
+@@ -32,10 +32,10 @@ exec guile -q -s "$0" "$@"
+ ;; 100 MB.
+ (define *limit* (* 100 1024 1024))
+ 
+-(call-with-values (lambda () (getrlimit 'as))
++(call-with-values (lambda () (getrlimit 'stack))
+   (lambda (soft hard)
+     (unless (and soft (< soft *limit*))
+-      (setrlimit 'as (if hard (min *limit* hard) *limit*) hard))))
++      (setrlimit 'stack (if hard (min *limit* hard) *limit*) hard))))
+ 
+ (define (test)
+   (catch 'stack-overflow

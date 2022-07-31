@@ -1,0 +1,18 @@
+work around missing RLIMIT_AS
+
+Index: test-suite/standalone/test-out-of-memory
+--- test-suite/standalone/test-out-of-memory.orig
++++ test-suite/standalone/test-out-of-memory
+@@ -41,10 +41,10 @@ exec guile -q -s "$0" "$@"
+ ;; 50 MB.
+ (define *limit* (* 50 1024 1024))
+ 
+-(call-with-values (lambda () (getrlimit 'as))
++(call-with-values (lambda () (getrlimit 'data))
+   (lambda (soft hard)
+     (unless (and soft (< soft *limit*))
+-      (setrlimit 'as (if hard (min *limit* hard) *limit*) hard))))
++      (setrlimit 'data (if hard (min *limit* hard) *limit*) hard))))
+ 
+ (define (test thunk)
+   (catch 'out-of-memory
