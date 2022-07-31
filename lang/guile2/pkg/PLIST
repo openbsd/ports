@@ -132,8 +132,6 @@ include/guile/${V}/libguile/weak-set.h
 include/guile/${V}/libguile/weak-table.h
 include/guile/${V}/libguile/weak-vector.h
 include/guile/${V}/readline.h
-@info info/guile.info
-@info info/r5rs.info
 @comment lib/charset.alias
 lib/guile/
 lib/guile/${V}/

@@ -8,6 +8,7 @@ COMMENT=		GNU's Ubiquitous Intelligent Language for Extension
 VERSION=		2.2.7
 DISTNAME=		guile-${VERSION}
 PKGNAME=		guile2-${VERSION}
+REVISION=		0
 V=			${VERSION:R}
 SUBST_VARS=		V
 
@@ -75,6 +76,8 @@ post-install:
 	install -d ${PREFIX}/share/guile/site/${V}/
 	# fix conflict with devel/guile
 	mv ${PREFIX}/share/aclocal/guile{,${V}}.m4
+	# fix conflict with lang/guile3
+	rm -rf ${PREFIX}/info
 
 .include <bsd.port.mk>
 
