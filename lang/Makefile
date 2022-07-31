@@ -48,6 +48,7 @@
      SUBDIR += gravity
      SUBDIR += guile
      SUBDIR += guile2
+     SUBDIR += guile3
      SUBDIR += hashlink
      SUBDIR += haxe
      SUBDIR += icon
