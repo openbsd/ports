@@ -1,0 +1,15 @@
+Index: deps/rabbit/scripts/rabbitmq-defaults
+--- deps/rabbit/scripts/rabbitmq-defaults.orig
++++ deps/rabbit/scripts/rabbitmq-defaults
+@@ -9,6 +9,11 @@
+ ### next line potentially updated in package install steps
+ SYS_PREFIX=
+ 
++export RABBITMQ_MNESIA_BASE=/var/rabbitmq/mnesia
++export RABBITMQ_CONF_ENV_FILE=/etc/rabbitmq/rabbitmq-env.conf
++# ensure VM and Elixir scripts are running under the same locale
++export LANG=en_US.UTF-8
++
+ CLEAN_BOOT_FILE=start_clean
+ SASL_BOOT_FILE=start_sasl
+ BOOT_MODULE="rabbit"

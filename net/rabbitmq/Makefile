@@ -1,18 +1,9 @@
-BROKEN =	builds but not yet working.
-# we had rabbitmq-3.6.15 which used erlang 19, which was removed due to
-# not building with -fno-commons, leaving only erlang 21 in ports.
-# 3.8.8 is the newest version that officially supports erlang 21;
-# there maybe a couple more versions that do still run with it.
-# newest rabbitmq versions would require erlang 22 or 23 to be ported.
-# this update still needs more work as it dies shortly after startup.
-
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.8.8
+V =		3.10.6
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	2
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
@@ -24,15 +15,15 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	lang/erlang \
 		lang/python
-MODERL_VERSION = 21
+MODERL_VERSION = 25
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	archivers/unzip \
 		archivers/zip \
+		devel/gmake \
 		lang/elixir \
-		net/rsync \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/libxslt \
@@ -44,6 +35,8 @@ MAKE_FLAGS =	MANDIR=${PREFIX}/man \
 		PYTHON=${MODPY_BIN} \
 		VERSION=${V} \
 		V=2
+
+MAKE_ENV =	LC_ALL="en_US.UTF-8"
 
 SUBST_VARS +=	V MODERL_ERL
 
@@ -57,8 +50,9 @@ INSTALL_TARGET = install install-bin
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/deps/rabbit/scripts/rabbitmq-{server,env}
-	sed -i 's,/var/lib/rabbitmq,/var/rabbitmq,g' \
-	    ${WRKSRC}/scripts/rabbitmq-server-ha.ocf
+
+pre-build:
+	ln -fs ${LOCALBASE}/bin/${GMAKE} ${WRKDIR}/bin/make
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/rabbitmq \
