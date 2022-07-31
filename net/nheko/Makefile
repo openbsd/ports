@@ -3,6 +3,7 @@ COMMENT =	desktop client for Matrix using Qt and C++17
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
 GH_TAGNAME =	v0.9.3
+REVISION =	0
 
 CATEGORIES=	net
 
@@ -14,7 +15,7 @@ WANTLIB += Qt5Multimedia Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
 WANTLIB += Qt5QuickControls2 Qt5QuickWidgets Qt5Svg Qt5Widgets
 WANTLIB += c cmark coeurl crypto glib-2.0 gobject-2.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstsdp-1.0 gstwebrtc-1.0 intl lmdb m
-WANTLIB += matrix_client olm qt5keychain ssl xcb xcb-ewmh
+WANTLIB += matrix_client olm qt5keychain spdlog ssl xcb xcb-ewmh
 
 MODULES =	devel/cmake \
 		x11/qt5
@@ -27,7 +28,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS = databases/lmdbxx \
 		devel/boost \
-		devel/spdlog \
 		textproc/asciidoc \
 		textproc/nlohmann-json \
 		x11/qt5/qtbase
@@ -36,6 +36,7 @@ LIB_DEPENDS =	databases/lmdb \
 		devel/coeurl \
 		devel/mtxclient \
 		devel/olm \
+		devel/spdlog \
 		multimedia/gstreamer1/core \
 		multimedia/gstreamer1/plugins-base \
 		security/qtkeychain \
