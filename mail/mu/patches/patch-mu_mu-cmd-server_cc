@@ -3,12 +3,12 @@
 Index: mu/mu-cmd-server.cc
 --- mu/mu-cmd-server.cc.orig
 +++ mu/mu-cmd-server.cc
-@@ -109,7 +109,7 @@ Mu::mu_cmd_server (const MuConfig *opts, GError **err)
-                    store.metadata().root_maildir.c_str(),
-                    opts->debug ? "yes" : "no");
+@@ -130,7 +130,7 @@ Mu::mu_cmd_server(const MuConfig* opts) try {
+ 		  opts->debug ? "yes" : "no",
+ 		  have_readline() ? "yes" : "no");
  
--        tty = ::isatty(::fileno(stdout));
-+        tty = ::isatty(fileno(stdout));
- 
-         const auto eval = std::string {
-                 opts->commands ? "(help :full t)" : opts->eval ? opts->eval : ""};
+-	tty = ::isatty(::fileno(stdout));
++	tty = ::isatty(fileno(stdout));
+ 	const auto eval = std::string{opts->commands ? "(help :full t)"
+ 				      : opts->eval   ? opts->eval
+ 						     : ""};

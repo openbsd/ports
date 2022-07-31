@@ -4,6 +4,7 @@
 @man man/man1/mu-cfind.1
 @man man/man1/mu-easy.1
 @man man/man1/mu-extract.1
+@man man/man1/mu-fields.1
 @man man/man1/mu-find.1
 @man man/man1/mu-help.1
 @man man/man1/mu-index.1
@@ -27,16 +28,26 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/mu4e/
 share/emacs/site-lisp/mu4e/mu4e-actions.el
 share/emacs/site-lisp/mu4e/mu4e-actions.elc
+share/emacs/site-lisp/mu4e/mu4e-bookmarks.el
+share/emacs/site-lisp/mu4e/mu4e-bookmarks.elc
 share/emacs/site-lisp/mu4e/mu4e-compose.el
 share/emacs/site-lisp/mu4e/mu4e-compose.elc
+share/emacs/site-lisp/mu4e/mu4e-config.el
+share/emacs/site-lisp/mu4e/mu4e-config.elc
+share/emacs/site-lisp/mu4e/mu4e-contacts.el
+share/emacs/site-lisp/mu4e/mu4e-contacts.elc
 share/emacs/site-lisp/mu4e/mu4e-context.el
 share/emacs/site-lisp/mu4e/mu4e-context.elc
 share/emacs/site-lisp/mu4e/mu4e-contrib.el
 share/emacs/site-lisp/mu4e/mu4e-contrib.elc
 share/emacs/site-lisp/mu4e/mu4e-draft.el
 share/emacs/site-lisp/mu4e/mu4e-draft.elc
+share/emacs/site-lisp/mu4e/mu4e-folders.el
+share/emacs/site-lisp/mu4e/mu4e-folders.elc
 share/emacs/site-lisp/mu4e/mu4e-headers.el
 share/emacs/site-lisp/mu4e/mu4e-headers.elc
+share/emacs/site-lisp/mu4e/mu4e-helpers.el
+share/emacs/site-lisp/mu4e/mu4e-helpers.elc
 share/emacs/site-lisp/mu4e/mu4e-icalendar.el
 share/emacs/site-lisp/mu4e/mu4e-icalendar.elc
 share/emacs/site-lisp/mu4e/mu4e-lists.el
@@ -47,24 +58,18 @@ share/emacs/site-lisp/mu4e/mu4e-mark.el
 share/emacs/site-lisp/mu4e/mu4e-mark.elc
 share/emacs/site-lisp/mu4e/mu4e-message.el
 share/emacs/site-lisp/mu4e/mu4e-message.elc
-share/emacs/site-lisp/mu4e/mu4e-meta.el
-share/emacs/site-lisp/mu4e/mu4e-meta.elc
 share/emacs/site-lisp/mu4e/mu4e-org.el
 share/emacs/site-lisp/mu4e/mu4e-org.elc
-share/emacs/site-lisp/mu4e/mu4e-proc.el
-share/emacs/site-lisp/mu4e/mu4e-proc.elc
+share/emacs/site-lisp/mu4e/mu4e-search.el
+share/emacs/site-lisp/mu4e/mu4e-search.elc
+share/emacs/site-lisp/mu4e/mu4e-server.el
+share/emacs/site-lisp/mu4e/mu4e-server.elc
 share/emacs/site-lisp/mu4e/mu4e-speedbar.el
 share/emacs/site-lisp/mu4e/mu4e-speedbar.elc
-share/emacs/site-lisp/mu4e/mu4e-utils.el
-share/emacs/site-lisp/mu4e/mu4e-utils.elc
+share/emacs/site-lisp/mu4e/mu4e-update.el
+share/emacs/site-lisp/mu4e/mu4e-update.elc
 share/emacs/site-lisp/mu4e/mu4e-vars.el
 share/emacs/site-lisp/mu4e/mu4e-vars.elc
-share/emacs/site-lisp/mu4e/mu4e-view-common.el
-share/emacs/site-lisp/mu4e/mu4e-view-common.elc
-share/emacs/site-lisp/mu4e/mu4e-view-gnus.el
-share/emacs/site-lisp/mu4e/mu4e-view-gnus.elc
-share/emacs/site-lisp/mu4e/mu4e-view-old.el
-share/emacs/site-lisp/mu4e/mu4e-view-old.elc
 share/emacs/site-lisp/mu4e/mu4e-view.el
 share/emacs/site-lisp/mu4e/mu4e-view.elc
 share/emacs/site-lisp/mu4e/mu4e.el

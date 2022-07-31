@@ -1,7 +1,7 @@
 COMMENT=	maildir indexer and searcher with emacs frontend
 
-V=		1.6.11
-GUILE_V=	2.2
+V=		1.8.7
+GUILE_V=	3.0
 
 DISTNAME=	mu-$V
 
@@ -22,7 +22,7 @@ WANTLIB += ${COMPILER_LIBCXX} assuan c curses ffi gio-2.0 glib-2.0
 WANTLIB += gmime-3.0 gmodule-2.0 gobject-2.0 gpg-error gpgme gthread-2.0
 WANTLIB += iconv idn2 intl m pcre readline unistring xapian z
 
-MASTER_SITES=	https://github.com/djcb/mu/releases/download/${V}/
+MASTER_SITES=	https://github.com/djcb/mu/releases/download/v${V}/
 EXTRACT_SUFX=	.tar.xz
 
 BUILD_DEPENDS=	emacs->=24:editors/emacs
@@ -32,19 +32,17 @@ LIB_DEPENDS=	databases/xapian-core \
 		mail/gmime30 \
 		security/gpgme
 
-# C++14
+# C++17
 COMPILER=	base-clang ports-gcc
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 CONFIGURE_STYLE=	autoreconf
 
-CONFIGURE_ARGS=		--disable-gtk \
-			--disable-webkit
-
 .if ${FLAVOR} == "guile"
 WANTLIB +=		guile-${GUILE_V} gc ltdl gmp
-LIB_DEPENDS +=		lang/guile2
+LIB_DEPENDS +=		devel/libtool,-ltdl \
+			lang/guile3
 .else
 CONFIGURE_ARGS +=	--disable-guile
 .endif
