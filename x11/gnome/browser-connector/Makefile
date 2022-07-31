@@ -20,6 +20,8 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 MODPY_ADJ_FILES=	contrib/merge_json.py
 
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/shell
 
