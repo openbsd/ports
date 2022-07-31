@@ -5,15 +5,15 @@ CATEGORIES +=		lang/erlang
 USE_GMAKE ?=		Yes
 
 # Default Erlang version to use if MODERL_VERSION is not set.
-# XXX: Keep in sync with devel/rebar/Makefile
-MODERL_DEFAULT_VERSION =21
+# XXX: Keep in sync with devel/rebar3/Makefile
+MODERL_DEFAULT_VERSION =25
 
 # If the port already has flavors, append ours to it unless the port requires
 # a specific version of Erlang.
 .if !defined(MODERL_VERSION) && !defined(FLAVORS)
-FLAVORS ?=		erlang21
+FLAVORS ?=		erlang25
 .else
-FLAVORS +=		erlang21
+FLAVORS +=		erlang25
 .endif
 
 FLAVOR?=		# empty
@@ -29,18 +29,35 @@ _MODERL_FLAVOR ?=	# empty
 
 .if ${MODERL_VERSION} == 21
 _MODERL_FLAVOR =	erlang21
+.elif ${MODERL_VERSION} == 25
+_MODERL_FLAVOR =	erlang25
 .else
 ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
 .endif
 
 # If no configure style is set, then assume "rebar"
-.if ${CONFIGURE_STYLE} == ""
+.if ${CONFIGURE_STYLE} == "" && ${MODERL_VERSION} == 21
 CONFIGURE_STYLE =	rebar
+.endif
+
+.if ${CONFIGURE_STYLE} == "" && ${MODERL_VERSION} >= 25
+CONFIGURE_STYLE =	rebar3
+.endif
+
+.if ${CONFIGURE_STYLE} == "rebar"
 MODERL_BUILD_DEPENDS +=	devel/rebar
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar${MODERL_VERSION}
 # Make sure rebar gets called as 'rebar', otherwise escript tries to call the
 # binary name (e.g. rebar21) as the script entrypoint.
 _MODERL_LINKS +=	rebar${MODERL_VERSION} rebar
+.endif
+
+.if ${CONFIGURE_STYLE} == "rebar3"
+MODERL_BUILD_DEPENDS +=	devel/rebar3
+REBAR_BIN ?=		${LOCALBASE}/bin/rebar3-${MODERL_VERSION}
+# Make sure rebar gets called as 'rebar3', otherwise escript tries to call the
+# binary name (e.g. rebar3-25) as the script entrypoint.
+_MODERL_LINKS +=	rebar3-${MODERL_VERSION} rebar
 .endif
 
 # Append the flavor to all the Erlang dependencies
@@ -113,7 +130,7 @@ pre-configure:
 .endif
 .endif
 
-.if ${CONFIGURE_STYLE:L} == "rebar"
+.if ${CONFIGURE_STYLE:L} == "rebar" || ${CONFIGURE_STYLE:L} == "rebar3"
 # Some modules bundle their own rebar escript, force them to use the system
 # rebar instead.
 # While here, remove the deps{} block from rebar.config, we cannot download
