@@ -33,7 +33,8 @@ LIB_DEPENDS =		audio/libcanberra,-gtk3 \
 
 BUILD_DEPENDS =		shells/bash
 
-CONFIGURE_ARGS =	-Dtheme_kde=false
+CONFIGURE_ARGS =	-Dguile=2.2 \
+			-Dtheme_kde=false
 
 # XXX horrible hack: make it possible to build when both guile and guile2 are
 # installed (take precedence over -I${LOCALBASE}/include because meson reorders

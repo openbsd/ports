@@ -1,0 +1,31 @@
+don't pick up guile version newer than specified
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -331,16 +331,6 @@ endif
+ 
+ guile_req = 'guile-' + guile_version
+ 
+-if guile_version == '3.0'
+-  guile_req_version = guile_3_0_req_version
+-elif guile_version == '2.2'
+-  guile_req_version = guile_2_2_req_version
+-elif guile_version == '2.0'
+-  guile_req_version = guile_2_0_req_version
+-else
+-  assert(false, 'unsupported guile version')
+-endif
+-
+ ar_pkgguiledir = ar_pkglibdir / 'guile' / guile_version
+ 
+ # Dependencies
+@@ -349,7 +339,7 @@ cairo_dep = dependency('cairo',     version: '>=' + ca
+ gio_dep   = dependency('gio-2.0',   version: '>=' + gio_req_version,)
+ glib_dep  = dependency('glib-2.0',  version: '>=' + glib_req_version,)
+ gtk_dep   = dependency('gtk+-3.0',  version: '>=' + gtk_req_version,)
+-guile_dep = dependency(guile_req,   version: '>=' + guile_req_version,)
++guile_dep = dependency(guile_req,)
+ 
+ if get_option('gconf')
+   gconf_dep = dependency('gconf-2.0', version: '>=' + gconf_req_version, required: true,)
