@@ -1,3 +1,4 @@
+@conflict guile2-<2.2.7.p0
 @conflict r5rs-*
 bin/guild${V}
 bin/guile-config${V}
