@@ -3,8 +3,7 @@ PORTROACH=		skipv:3.90.0
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
-GNOME_VERSION=		3.41.0
-REVISION=		0
+GNOME_VERSION=		3.41.1
 
 SHARED_LIBS += gck-1                     2.1 # 0.0.0
 SHARED_LIBS += gcr-base-3                3.1 # 1.0.0
@@ -21,7 +20,7 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
+MODGNOME_TOOLS +=	desktop-file-utils gi-docgen gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info vala
 
 MODPY_RUNDEP=		No
@@ -30,8 +29,7 @@ LIB_DEPENDS=		x11/gtk+3 \
 			security/libgcrypt \
 			security/p11-kit
 
-BUILD_DEPENDS=		security/gnupg \
-			textproc/gtk-doc
+BUILD_DEPENDS=		security/gnupg
 
 RUN_DEPENDS=		security/gnupg
 
