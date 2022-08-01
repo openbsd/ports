@@ -31,6 +31,10 @@ CXXFLAGS +=		-I${LOCALBASE}/include/miniupnpc
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-DNO_AG-ODALAUNCH_TARGET=YES
 
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	-DUSE_DEFAULT_SIMD=OFF
+.endif
+
 LIB_DEPENDS =		x11/wxWidgets \
 			audio/portmidi \
 			graphics/png \
