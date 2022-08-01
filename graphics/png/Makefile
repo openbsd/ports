@@ -28,6 +28,12 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=	--enable-hardware-optimizations
 .endif
 
+# Enable VSX to prevent #error "This code requires VSX..." in
+# powerpc/filter_vsx_intrinsics.c
+.if ${MACHINE_ARCH} == "powerpc64"
+CFLAGS+=	-mvsx
+.endif
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-install:
