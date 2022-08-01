@@ -1,27 +1,43 @@
-Include the mingw directory in the PATH if cross compiling.
+Do not try to chown/chgrp when installing unless running
+as root. This is done for the same reasons as the patch for 
+lib/rubygems/ext/ext_conf_builder.rb in the Ruby port.
 
 Don't have it accidently use gmake, because the makefiles
 created can use BSD make extensions.
 
---- lib/rake/extensiontask.rb.orig	Wed Dec 31 16:00:00 1969
-+++ lib/rake/extensiontask.rb	Wed Nov 30 04:25:41 2011
-@@ -70,6 +70,8 @@ Rerun `rake` under MRI Ruby 1.8.x/1.9.x to cross/nativ
-       # only define cross platform functionality when enabled
-       return unless @cross_compile
- 
-+      ENV['PATH'] = "${LOCALBASE}/mingw32/bin:#{ENV['PATH']}"
-+
-       if cross_platform.is_a?(Array) then
-         cross_platform.each { |platf| define_cross_platform_tasks(platf) }
-       else
-@@ -359,9 +361,7 @@ Rerun `rake` under MRI Ruby 1.8.x/1.9.x to cross/nativ
-           if RUBY_PLATFORM =~ /mswin/ then
-             'nmake'
-           else
--            ENV['MAKE'] || %w[gmake make].find { |c|
--              system("#{c} -v >> #{dev_null} 2>&1")
--            }
-+            ENV['MAKE'] || 'make'
-           end
+Index: lib/rake/extensiontask.rb
+--- lib/rake/extensiontask.rb.orig
++++ lib/rake/extensiontask.rb
+@@ -157,7 +157,9 @@ module Rake
+       task "copy:#{@name}:#{platf}:#{ruby_ver}" => [lib_path, tmp_binary_path, "#{tmp_path}/Makefile"] do
+         # install in lib for native platform only
+         unless for_platform
+-          sh "#{make} install target_prefix=", chdir: tmp_path
++          command = "#{make} install target_prefix="
++          command +=  " INSTALL_PROG='/usr/bin/install -c -m 0755'" unless Process.uid == 0
++          sh command, chdir: tmp_path
+         end
        end
-       @make
+       # copy binary from temporary location to staging directory
+@@ -502,20 +504,7 @@ Java extension should be preferred.
+     end
+ 
+     def make
+-      unless @make
+-        @make =
+-          if RUBY_PLATFORM =~ /mswin/ then
+-            'nmake'
+-          else
+-            ENV['MAKE'] || find_make
+-          end
+-      end
+-
+-      unless @make
+-        raise "Couldn't find a suitable `make` tool. Use `MAKE` env to set an alternative."
+-      end
+-
+-      @make
++      @make ||= ENV['MAKE'] || 'make'
+     end
+ 
+     def find_make

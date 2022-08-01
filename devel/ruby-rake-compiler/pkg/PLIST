@@ -1,11 +1,12 @@
 ${GEM_BIN}/rake-compiler${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/History.txt
-${GEM_LIB}/gems/${DISTNAME}/Isolate
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/History.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/rake-compiler
 ${GEM_LIB}/gems/${DISTNAME}/cucumber.yml
@@ -52,7 +53,5 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/bootstrap.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/common.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/cucumber.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/gem.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/news.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/release.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
