@@ -1,6 +1,6 @@
 COMMENT =	udp network benchmarking tool
 
-VERSION =	1.01
+VERSION =	1.02
 DISTNAME =	udpbench-${VERSION}
 
 CATEGORIES =	benchmarks
@@ -13,7 +13,5 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		https://github.com/bluhm/udpbench/releases/download/v${VERSION}/
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
