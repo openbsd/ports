@@ -1,9 +1,10 @@
 COMMENT =		AT&T Korn Shell
 
+V =			1.0.0
 GH_ACCOUNT =		ksh93
 GH_PROJECT =		ksh
-GH_TAGNAME =		v1.0.0-beta.2
-PKGNAME =		ksh93-1.0.0beta2
+GH_TAGNAME =		v${V}
+PKGNAME =		ksh93-$V
 EPOCH =			0
 
 CATEGORIES =		shells
@@ -43,7 +44,6 @@ do-install:
 	${INSTALL_DATA} ${AST_INC}/ast* ${PREFIX}/include/ast
 	${INSTALL_DATA} ${AST_INC}/{sfio,sfio_s,shell,cdt,nval,option}.h \
 		${PREFIX}/include/ast
-	${INSTALL_DATA} ${AST_INC}/prototyped.h ${PREFIX}/include/ast
 
 do-test:
 	cd ${WRKSRC}/src/cmd/ksh93/tests && env -i \
