@@ -1,40 +1,44 @@
-Make building the Python GTK+3 user interface conditional and disabled
-by default.
+Check for the availability of Python Gtk before using the python-ui.
+
+Upstream commits 7464d78448514241ead1645d757e6cadb4edd5da and
+231a79eaae152160fc63fd6f3d8bd9aaac1f0c6b.
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -53,6 +53,8 @@ set(ENABLE_TRACING 1
-     CACHE BOOL "Enable tracing messages for debugging")
- set(ENABLE_SMALL_MEM 1
-     CACHE BOOL "Enable to use less memory - at the expense of emulation speed")
-+set(ENABLE_UI 0
-+    CACHE BOOL "Enable building the Python GTK+2 user interface, requires GTK+2 bindings")
- 
- # Run-time checks with GCC / LLVM (Clang) AddressSanitizer:
- # - stack protection
-@@ -319,14 +321,16 @@ add_subdirectory(doc)
- add_subdirectory(tests)
- add_subdirectory(tools)
- 
--include(FindPythonInterp)
--if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
--	message("Note: Hatari needs at least Python 3 ... ignoring older version")
--	unset(PYTHONINTERP_FOUND)
--endif()
--if(PYTHONINTERP_FOUND)
+@@ -324,8 +324,21 @@ if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
+ 	message("Note: Hatari needs at least Python 3 ... ignoring older version")
+ 	unset(PYTHONINTERP_FOUND)
+ endif()
++set(PYTHON_GTK_FOUND 0)
+ if(PYTHONINTERP_FOUND)
 -	add_subdirectory(python-ui)
--endif(PYTHONINTERP_FOUND)
-+if(ENABLE_UI)
-+	include(FindPythonInterp)
-+	if(PYTHONINTERP_FOUND AND PYTHON_VERSION_MAJOR LESS 3)
-+		message("Note: Hatari needs at least Python 3 ... ignoring older version")
-+		unset(PYTHONINTERP_FOUND)
-+	endif()
-+	if(PYTHONINTERP_FOUND)
++	execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "\
++import gi\n\
++gi.require_version('Gtk', '3.0')\n\
++from gi.repository import Gtk\n\
++from gi.repository import Gdk\n\
++from gi.repository import GdkPixbuf\n\
++from gi.repository import GLib"
++			RESULT_VARIABLE PYTHON_GTK_RESULT
++			OUTPUT_QUIET ERROR_QUIET)
++	if(${PYTHON_GTK_RESULT} EQUAL 0)
++		set(PYTHON_GTK_FOUND 1)
 +		add_subdirectory(python-ui)
-+	endif(PYTHONINTERP_FOUND)
-+endif(ENABLE_UI)
++	endif()
+ endif(PYTHONINTERP_FOUND)
  
  if(UNIX AND NOT ENABLE_OSX_BUNDLE)
- 	add_subdirectory(share)
+@@ -376,6 +389,12 @@ if(CapsImage_FOUND)
+ else()
+   message( "  - capsimage :\tv5 not found, install it to use .IPF, .RAW and .CTR disk images" )
+ endif(CapsImage_FOUND)
++
++if(PYTHON_GTK_FOUND)
++  message( "  - python Gtk:\tfound, python-ui can be used" )
++else()
++  message( "  - python Gtk:\tnot found, install it to enable the python-ui" )
++endif(PYTHON_GTK_FOUND)
+ 
+ if(Udev_FOUND)
+   message( "  - udev :\tfound, required for media change detection in NatFeats SCSI" )
