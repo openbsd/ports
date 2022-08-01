@@ -1,9 +1,7 @@
-- Fix GCC_VERSION and CLANG_VERSION detection
-
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -212,7 +212,7 @@ GENIEOS := freebsd
+@@ -214,7 +214,7 @@ GENIEOS := freebsd
  endif
  ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
  OS := openbsd
@@ -12,27 +10,3 @@ Index: makefile
  endif
  ifeq ($(firstword $(filter Darwin,$(UNAME))),Darwin)
  OS := macosx
-@@ -1483,6 +1483,23 @@ openbsd: openbsd_x86
- openbsd_x86: generate $(PROJECTDIR)/$(MAKETYPE)-openbsd/Makefile
- 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-openbsd config=$(CONFIG)32 precompile
- 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-openbsd config=$(CONFIG)32
-+
-+#-------------------------------------------------
-+# gmake-openbsd-clang
-+#-------------------------------------------------
-+
-+$(PROJECTDIR)/$(MAKETYPE)-openbsd-clang/Makefile: makefile $(SCRIPTS) $(GENIE)
-+	$(SILENT) $(GENIE) $(PARAMS) $(TARGET_PARAMS) --gcc=openbsd-clang --gcc_version=$(CLANG_VERSION) $(MAKETYPE)
-+
-+.PHONY: openbsd_x64_clang
-+openbsd_x64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-openbsd-clang/Makefile
-+	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-openbsd-clang config=$(CONFIG)64 precompile
-+	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-openbsd-clang config=$(CONFIG)64
-+
-+.PHONY: openbsd_x86_clang
-+openbsd_x86_clang: generate $(PROJECTDIR)/$(MAKETYPE)-openbsd-clang/Makefile
-+	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-openbsd-clang config=$(CONFIG)32 precompile
-+	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-openbsd-clang config=$(CONFIG)32
- 
- #-------------------------------------------------
- # Clean/bootstrap
