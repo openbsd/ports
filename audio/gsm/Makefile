@@ -1,8 +1,7 @@
 COMMENT=	GSM audio codec library and converter
 
-DISTNAME=	gsm-1.0.20
-REVISION=	0
-WRKDIST=	${WRKDIR}/gsm-1.0-pl20
+DISTNAME=	gsm-1.0.21
+WRKDIST=	${WRKDIR}/gsm-1.0-pl21
 
 SHARED_LIBS=	gsm	1.0
 
