@@ -14,7 +14,7 @@ include/nextcloudsync/mirall/syncfileitem.h
 include/nextcloudsync/mirall/syncresult.h
 @lib lib/libnextcloud_csync.so.${LIBnextcloud_csync_VERSION}
 @lib lib/libnextcloudsync.so.${LIBnextcloudsync_VERSION}
-@so lib/nextcloudsync_vfs_suffix.so
+@lib lib/libnextcloudsync_vfs_suffix.so.${LIBnextcloudsync_vfs_suffix_VERSION}
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 share/examples/Nextcloud/
 @sample ${SYSCONFDIR}/Nextcloud/

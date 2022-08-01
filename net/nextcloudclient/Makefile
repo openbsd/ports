@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.5.2
+V =		3.5.3
 DISTNAME =	nextcloudclient-${V}
 
 GH_ACCOUNT =	nextcloud
@@ -13,8 +13,9 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync    4.0 # 3.5.2
-SHARED_LIBS +=  nextcloud_csync  2.1 # 3.5.1
+SHARED_LIBS +=  nextcloudsync             4.0 # 3.5.2
+SHARED_LIBS +=  nextcloud_csync           2.1 # 3.5.1
+SHARED_LIBS +=  nextcloudsync_vfs_suffix  0.0 # 3.5.3
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 
