@@ -14,6 +14,6 @@ REVISION =		1
 # - override "@comment" setting so that bin/python3 etc are installed
 PY_DEFAULTONLY =
 # - disable bundled pip in favour of the version from devel/py-pip
-CONFIGURE_ARGS +=	--with-ensurepip=no --enable-optimizations
+CONFIGURE_ARGS +=	--with-ensurepip=no
 
 .include <bsd.port.mk>
