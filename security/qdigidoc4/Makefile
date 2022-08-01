@@ -1,6 +1,7 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 V =			4.2.12
+REVISION =		0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
 
@@ -65,7 +66,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 CONFIGURE_ENV +=	LDFLAGS=${LDFLAGS:Q}
 
 # dlopen()'ed "opensc-pkcs11.so" in qdigidoc4
-LIB_DEPENDS +=		security/opensc
+BUILD_DEPENDS +=	security/opensc
+RUN_DEPENDS +=		security/opensc
 CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
 			    -Wl,-rpath,/usr/local/lib/pkcs11"
 
