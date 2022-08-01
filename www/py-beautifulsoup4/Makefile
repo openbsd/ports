@@ -18,9 +18,7 @@ FLAVOR =	python3
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
-
-# test files moved to a separate repo
-NO_TEST =	Yes
+MODPY_PYTEST_ARGS =	bs4
 
 RUN_DEPENDS =	www/py-soupsieve${MODPY_FLAVOR}
 
