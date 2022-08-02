@@ -20,4 +20,6 @@ MODPY_PYTEST =	Yes
 FLAVOR =	python3
 FLAVORS =	python3
 
+# This port must have no/minimal deps.
+
 .include <bsd.port.mk>

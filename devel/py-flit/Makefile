@@ -1,6 +1,7 @@
 COMMENT =	simple packaging tool for simple packages
 
 MODPY_EGG_VERSION =	3.7.1
+REVISION =	0
 
 DISTNAME =	flit-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -29,23 +30,17 @@ MODPY_PYTEST =	Yes
 TEST_DEPENDS =	devel/py-testpath${MODPY_FLAVOR} \
 		www/py-responses${MODPY_FLAVOR}
 
-post-patch:
-	${SUBST_DATA} ${FILESDIR}/setup.py ${WRKSRC}/setup.py
+BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
+		devel/py-installer${MODPY_FLAVOR}
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
+
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
 
 pre-test:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
-post-install:
-	${SUBST_PROGRAM} ${FILESDIR}/flit ${PREFIX}/bin/flit
-
 .include <bsd.port.mk>
-
-setuppy: ${_EXTRACT_COOKIE}
-	cd ${WRKSRC}; ${_PBUILD} flit build --setup-py
-	${_PBUILD} tar xzf ${WRKSRC}/dist/${DISTNAME}.tar.gz -C ${WRKSRC} ${DISTNAME}/setup.py
-	${_PBUILD} sed -i 's/${MODPY_EGG_VERSION}/\$${MODPY_EGG_VERSION}/' \
-	    ${WRKSRC}/${DISTNAME}/setup.py; \
-	if ! diff -u ${FILESDIR}/setup.py ${WRKSRC}/${DISTNAME}/setup.py; then \
-	    cp ${FILESDIR}/setup.py ${FILESDIR}/setup.py.orig; \
-	    cp ${WRKSRC}/${DISTNAME}/setup.py ${FILESDIR}/setup.py; \
-	fi

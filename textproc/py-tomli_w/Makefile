@@ -1,6 +1,7 @@
 COMMENT =	lil' TOML writer
 
 MODPY_EGG_VERSION =	1.0.0
+REVISION =	0
 
 DISTNAME =	tomli_w-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -20,17 +21,14 @@ FLAVORS =	python3
 
 NO_TEST =	Yes
 
-post-patch:
-	${SUBST_DATA} ${FILESDIR}/setup.py ${WRKSRC}/setup.py
+BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
+		devel/py-installer${MODPY_FLAVOR}
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
+
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
 
 .include <bsd.port.mk>
-
-setuppy: ${_EXTRACT_COOKIE}
-	cd ${WRKSRC}; ${_PBUILD} flit build --setup-py
-	${_PBUILD} tar xzf ${WRKSRC}/dist/${DISTNAME}.tar.gz -C ${WRKSRC} ${DISTNAME}/setup.py
-	${_PBUILD} sed -i 's/${MODPY_EGG_VERSION}/\$${MODPY_EGG_VERSION}/' \
-	    ${WRKSRC}/${DISTNAME}/setup.py; \
-	if ! diff -u ${FILESDIR}/setup.py ${WRKSRC}/${DISTNAME}/setup.py; then \
-	    cp ${FILESDIR}/setup.py ${FILESDIR}/setup.py.orig; \
-	    cp ${WRKSRC}/${DISTNAME}/setup.py ${FILESDIR}/setup.py; \
-	fi

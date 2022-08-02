@@ -1,5 +1,0 @@
-#!${MODPY_BIN}
-import sys
-from flit import main
-if __name__ == '__main__':
-    sys.exit(main())

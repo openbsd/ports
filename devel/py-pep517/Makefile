@@ -1,6 +1,7 @@
 COMMENT =	wrappers to build Python packages using PEP 517 hooks
 
 MODPY_EGG_VERSION =	0.12.0
+REVISION =	0
 
 DISTNAME =	pep517-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -25,14 +26,14 @@ MODPY_PYTEST =	Yes
 TEST_DEPENDS =	devel/py-pip${MODPY_FLAVOR}
 PORTHOME =	${WRKDIR}
 
-.include <bsd.port.mk>
+BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
+		devel/py-installer${MODPY_FLAVOR}
 
-setuppy: ${_EXTRACT_COOKIE}
-	cd ${WRKSRC}; ${_PBUILD} flit build --setup-py
-	${_PBUILD} tar xzf ${WRKSRC}/dist/${DISTNAME}.tar.gz -C ${WRKSRC} ${DISTNAME}/setup.py
-	${_PBUILD} sed -i 's/${MODPY_EGG_VERSION}/\$${MODPY_EGG_VERSION}/' \
-	    ${WRKSRC}/${DISTNAME}/setup.py; \
-	if ! diff -u ${FILESDIR}/setup.py ${WRKSRC}/${DISTNAME}/setup.py; then \
-	    cp ${FILESDIR}/setup.py ${FILESDIR}/setup.py.orig; \
-	    cp ${WRKSRC}/${DISTNAME}/setup.py ${FILESDIR}/setup.py; \
-	fi
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
+
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
+
+.include <bsd.port.mk>
