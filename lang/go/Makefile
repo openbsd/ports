@@ -81,16 +81,16 @@ ERRORS += "Fatal: This flavor requires an installed go package"
 .  endif
 .endif
 
-.if empty(GOROOT_BOOTSTRAP)
-ERRORS += "Fatal: No bootstrap available"
-.endif
-
 GOCFG =			/${GOOS}_${GOARCH}
 GOTOOLS =		pkg/tool/${GOCFG}
 
 do-configure:
 .	if ${GOARCH} == "unknown"
 		@echo "Unable to determine GOARCH for ${MACHINE_ARCH}."
+		@exit 1
+.	endif
+.	if empty(GOROOT_BOOTSTRAP)
+		@echo "No bootstrap available for ${MACHINE_ARCH}."
 		@exit 1
 .	endif
 
