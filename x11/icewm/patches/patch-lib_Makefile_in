@@ -1,7 +1,7 @@
 Index: lib/Makefile.in
 --- lib/Makefile.in.orig
 +++ lib/Makefile.in
-@@ -367,7 +367,7 @@ target_vendor = @target_vendor@
+@@ -365,7 +365,7 @@ target_vendor = @target_vendor@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@

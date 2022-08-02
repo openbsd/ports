@@ -1,7 +1,7 @@
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		2.9.6
+V=		2.9.9
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
@@ -16,10 +16,10 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC ICE Imlib2 SM X11 Xau Xcomposite
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xft Xinerama Xpm Xrandr Xrender
 WANTLIB += ao c cairo cairo-gobject expat ffi fontconfig freetype
 WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 harfbuzz iconv intl jpeg lzma m ogg opus
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png rsvg-2 sndfile vorbis vorbisenc xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += gobject-2.0 harfbuzz iconv intl jpeg lzma m mp3lame
+WANTLIB += mpg123 ogg opus pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png rsvg-2 sndfile vorbis vorbisenc xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
