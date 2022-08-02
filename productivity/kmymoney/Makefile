@@ -2,24 +2,23 @@ USE_WXNEEDED =	Yes
 
 COMMENT =		accounting for KDE 5
 
-VERSION =		5.1.2
+VERSION =		5.1.3
 DISTNAME =		kmymoney-${VERSION}
-REVISION =		3
 
 CATEGORIES =		productivity x11
 
-HOMEPAGE =		https://kmymoney.org/
+HOMEPAGE =		https://kmymoney.org
 
 SHARED_LIBS +=  kmm_csvimportercore       0.0 # 5.1.2
 SHARED_LIBS +=  kmm_icons                 0.0 # 5.1.2
 SHARED_LIBS +=  kmm_menus                 0.0 # 5.1.2
 SHARED_LIBS +=  kmm_models                0.0 # 5.1.2
-SHARED_LIBS +=  kmm_mymoney               0.1 # 5.1.2
+SHARED_LIBS +=  kmm_mymoney               1.0 # 5.1.2
 SHARED_LIBS +=  kmm_payeeidentifier       0.0 # 5.1.0
 SHARED_LIBS +=  kmm_plugin                0.0 # 5.1.2
 SHARED_LIBS +=  kmm_printer               0.0 # 5.1.2
 SHARED_LIBS +=  kmm_settings              0.0 # 5.1.2
-SHARED_LIBS +=  kmm_widgets               0.1 # 5.1.2
+SHARED_LIBS +=  kmm_widgets               1.0 # 5.1.2
 
 MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -34,15 +33,14 @@ WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5Contacts KF5CoreAddons KF5Holidays KF5I18n KF5IconThemes
 WANTLIB += KF5IdentityManagement KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIONTLM KF5KIOWidgets KF5Notifications KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WebKit KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5
-WANTLIB += aqbanking c db gmp gpgmepp gwengui-cpp gwengui-qt5
-WANTLIB += gwenhywfar ical icalss icalvcal icui18n icuuc m ofx db_cxx
-WANTLIB += osp ${MODPY_WANTLIB}
+WANTLIB += KF5KIONTLM KF5KIOWidgets KF5Notifications KF5Service
+WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WebKit
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql Qt5WebKit
+WANTLIB += Qt5WebKitWidgets Qt5Widgets Qt5Xml X11 alkimia5 aqbanking
+WANTLIB += c db db_cxx gmp gpgmepp gwengui-cpp gwengui-qt5 gwenhywfar
+WANTLIB += ical icalss icalvcal icui18n icuuc m ofx ${MODPY_WANTLIB}
 
 
 MODULES =		lang/python \
@@ -103,13 +101,15 @@ LIB_DEPENDS =		devel/gwenhywfar \
 			textproc/libical \
 			x11/kde-applications/akonadi \
 			x11/kde-applications/kidentitymanagement \
-			x11/kde-applications/kpimtextedit \
 			x11/qt5/qtdeclarative \
 			x11/qt5/qtwebkit
 
 CONFIGURE_ARGS =	-DUSE_QT_DESIGNER=OFF \
 			-DENABLE_WEBENGINE=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
+
+CFLAGS +=	-I${LOCALBASE}/include/KF5
+CXXFLAGS +=	-I${LOCALBASE}/include/KF5
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 

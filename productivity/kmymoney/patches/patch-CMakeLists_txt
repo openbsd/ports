@@ -5,7 +5,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -76,7 +76,7 @@ if (Gpgmepp_FOUND)
+@@ -105,7 +105,7 @@ if (Gpgmepp_FOUND)
    set(GPG_FOUND TRUE)
  else()
    set(GPG_FOUND FALSE)
@@ -14,16 +14,16 @@ Index: CMakeLists.txt
  endif()
  
  if (PkgConfig_FOUND)
-@@ -85,7 +85,7 @@ if (PkgConfig_FOUND)
+@@ -114,7 +114,7 @@ if (PkgConfig_FOUND)
  endif()
  
  find_package(Qt5 5.6 REQUIRED COMPONENTS
 -  Core DBus Widgets Svg Xml Test PrintSupport)
 +  Core DBus Widgets Svg Xml Test PrintSupport WebChannel Positioning Sensors Quick)
  find_package(Qt5 5.6 OPTIONAL_COMPONENTS
-   Sql Concurrent QuickWidgets)
+   Sql Concurrent QuickWidgets WebEngineWidgets WebKitWidgets)
  
-@@ -238,7 +238,7 @@ if(ENABLE_OFXIMPORTER)
+@@ -267,7 +267,7 @@ if(ENABLE_OFXIMPORTER)
      set(PATH_TO_LIBOFX_HEADER "${PATH_TO_LIBOFX_HEADER}/libofx/libofx.h")
      unset(LIBOFX_HAVE_CLIENTUID)
      unset(LIBOFX_HAVE_CLIENTUID CACHE) #not doing this will prevent updating below check
@@ -32,7 +32,7 @@ Index: CMakeLists.txt
    endif()
  
    if (LIBOFX_HAVE_CLIENTUID)
-@@ -318,38 +318,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
+@@ -398,38 +398,7 @@ The default value is: 'RelWithDebInfo'" FORCE)
  include(KDECompilerSettings)
  kde_enable_exceptions()
  
@@ -71,7 +71,7 @@ Index: CMakeLists.txt
  # Set compiler flags
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wlogical-op -Wno-null-dereference -Wshadow -Wunused -Wno-misleading-indentation -Wsuggest-override -Wcast-qual -Wformat=2 -fno-common")
-@@ -366,14 +335,6 @@ endif()
+@@ -446,14 +415,6 @@ endif()
  set(CMAKE_POSITION_INDEPENDENT_CODE ON)
  
  if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")

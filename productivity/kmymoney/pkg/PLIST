@@ -140,7 +140,7 @@ lib/qt5/plugins/kmymoney/
 @so lib/qt5/plugins/kmymoney/reconciliationreport.so
 @so lib/qt5/plugins/kmymoney/reportsview.so
 @so lib/qt5/plugins/kmymoney/sqlstorage.so
-@so lib/qt5/plugins/kmymoney/weboob.so
+@so lib/qt5/plugins/kmymoney/woob.so
 @so lib/qt5/plugins/kmymoney/xmlstorage.so
 @man man/man1/kmymoney.1
 share/applications/org.kde.kmymoney.desktop
@@ -160,6 +160,7 @@ share/doc/HTML/ca/kmymoney/details-forecast.docbook
 share/doc/HTML/ca/kmymoney/details-formats.docbook
 share/doc/HTML/ca/kmymoney/details-impexp-csv.docbook
 share/doc/HTML/ca/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/ca/kmymoney/details-impexp-woob.docbook
 share/doc/HTML/ca/kmymoney/details-impexp.docbook
 share/doc/HTML/ca/kmymoney/details-institutions.docbook
 share/doc/HTML/ca/kmymoney/details-investments.docbook
@@ -259,6 +260,7 @@ share/doc/HTML/en/kmymoney/details-forecast.docbook
 share/doc/HTML/en/kmymoney/details-formats.docbook
 share/doc/HTML/en/kmymoney/details-impexp-csv.docbook
 share/doc/HTML/en/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/en/kmymoney/details-impexp-woob.docbook
 share/doc/HTML/en/kmymoney/details-impexp.docbook
 share/doc/HTML/en/kmymoney/details-institutions.docbook
 share/doc/HTML/en/kmymoney/details-investments.docbook
@@ -373,6 +375,7 @@ share/doc/HTML/it/kmymoney/details-forecast.docbook
 share/doc/HTML/it/kmymoney/details-formats.docbook
 share/doc/HTML/it/kmymoney/details-impexp-csv.docbook
 share/doc/HTML/it/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/it/kmymoney/details-impexp-woob.docbook
 share/doc/HTML/it/kmymoney/details-impexp.docbook
 share/doc/HTML/it/kmymoney/details-institutions.docbook
 share/doc/HTML/it/kmymoney/details-investments.docbook
@@ -406,6 +409,7 @@ share/doc/HTML/nl/kmymoney/details-forecast.docbook
 share/doc/HTML/nl/kmymoney/details-formats.docbook
 share/doc/HTML/nl/kmymoney/details-impexp-csv.docbook
 share/doc/HTML/nl/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/nl/kmymoney/details-impexp-woob.docbook
 share/doc/HTML/nl/kmymoney/details-impexp.docbook
 share/doc/HTML/nl/kmymoney/details-institutions.docbook
 share/doc/HTML/nl/kmymoney/details-investments.docbook
@@ -503,6 +507,7 @@ share/doc/HTML/sv/kmymoney/details-forecast.docbook
 share/doc/HTML/sv/kmymoney/details-formats.docbook
 share/doc/HTML/sv/kmymoney/details-impexp-csv.docbook
 share/doc/HTML/sv/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/sv/kmymoney/details-impexp-woob.docbook
 share/doc/HTML/sv/kmymoney/details-impexp.docbook
 share/doc/HTML/sv/kmymoney/details-institutions.docbook
 share/doc/HTML/sv/kmymoney/details-investments.docbook
@@ -536,6 +541,7 @@ share/doc/HTML/uk/kmymoney/details-forecast.docbook
 share/doc/HTML/uk/kmymoney/details-formats.docbook
 share/doc/HTML/uk/kmymoney/details-impexp-csv.docbook
 share/doc/HTML/uk/kmymoney/details-impexp-csvexp.docbook
+share/doc/HTML/uk/kmymoney/details-impexp-woob.docbook
 share/doc/HTML/uk/kmymoney/details-impexp.docbook
 share/doc/HTML/uk/kmymoney/details-institutions.docbook
 share/doc/HTML/uk/kmymoney/details-investments.docbook
@@ -1606,8 +1612,10 @@ share/kmymoney/templates/pt_BR/spouseinc.kmt
 share/kmymoney/templates/pt_BR/spouseretire.kmt
 share/kmymoney/templates/pt_PT/
 share/kmymoney/templates/pt_PT/brokerage.kmt
+share/kmymoney/templates/pt_PT/business.kmt
 share/kmymoney/templates/pt_PT/carloan.kmt
 share/kmymoney/templates/pt_PT/cdmoneymkt.kmt
+share/kmymoney/templates/pt_PT/checkbook.kmt
 share/kmymoney/templates/pt_PT/childcare.kmt
 share/kmymoney/templates/pt_PT/common.kmt
 share/kmymoney/templates/pt_PT/eduloan.kmt
@@ -1683,7 +1691,23 @@ share/kmymoney/templates/zh_CN/spouseretire.kmt
 share/kmymoney/templates/zh_HK/
 share/kmymoney/templates/zh_HK/business.kmt
 share/kmymoney/templates/zh_TW/
+share/kmymoney/templates/zh_TW/brokerage.kmt
 share/kmymoney/templates/zh_TW/business.kmt
+share/kmymoney/templates/zh_TW/carloan.kmt
+share/kmymoney/templates/zh_TW/cdmoneymkt.kmt
+share/kmymoney/templates/zh_TW/checkbook.kmt
+share/kmymoney/templates/zh_TW/childcare.kmt
+share/kmymoney/templates/zh_TW/common.kmt
+share/kmymoney/templates/zh_TW/eduloan.kmt
+share/kmymoney/templates/zh_TW/fixedassets.kmt
+share/kmymoney/templates/zh_TW/homeloan.kmt
+share/kmymoney/templates/zh_TW/homeown.kmt
+share/kmymoney/templates/zh_TW/otherloan.kmt
+share/kmymoney/templates/zh_TW/renter.kmt
+share/kmymoney/templates/zh_TW/retiremt.kmt
+share/kmymoney/templates/zh_TW/spouseinc.kmt
+share/kmymoney/templates/zh_TW/spouseretire.kmt
+share/kmymoney/templates/zh_TW/vehicle.kmt
 share/kmymoney/tips
 share/kservices5/kcm_checkprinting.desktop
 share/kservices5/kcm_csvimporter.desktop
@@ -1712,8 +1736,8 @@ share/kxmlgui5/qifimporter/
 share/kxmlgui5/qifimporter/qifimporter.rc
 share/kxmlgui5/sqlstorage/
 share/kxmlgui5/sqlstorage/sqlstorage.rc
-share/kxmlgui5/weboob/
-share/kxmlgui5/weboob/weboob.rc
+share/kxmlgui5/woob/
+share/kxmlgui5/woob/woob.rc
 share/locale/ar/LC_MESSAGES/kmymoney.mo
 share/locale/ast/LC_MESSAGES/kmymoney.mo
 share/locale/bg/LC_MESSAGES/kmymoney.mo
