@@ -1,6 +1,8 @@
 COMMENT =	introspect/set max threads in native libraries like BLAS
 
 MODPY_EGG_VERSION =	3.0.0
+REVISION =		0
+
 DISTNAME =		threadpoolctl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -17,11 +19,16 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 
-post-extract:
-	sed -i 's/python/python${MODPY_VERSION}/g' \
-		${WRKSRC}/tests/test_threadpoolctl.py
+BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
+		devel/py-installer${MODPY_FLAVOR}
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
+
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
 
 .include <bsd.port.mk>
