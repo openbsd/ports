@@ -99,6 +99,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_db_filename.3
 @man man/man3/sqlite3_db_handle.3
 @man man/man3/sqlite3_db_mutex.3
+@man man/man3/sqlite3_db_name.3
 @man man/man3/sqlite3_db_readonly.3
 @man man/man3/sqlite3_db_release_memory.3
 @man man/man3/sqlite3_db_status.3
