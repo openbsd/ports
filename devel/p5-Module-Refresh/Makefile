@@ -2,9 +2,8 @@ COMMENT=	refresh perl %INC files when updated on disk
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Module-Refresh-0.17
+DISTNAME =	Module-Refresh-0.18
 CATEGORIES=	devel
-REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE=	Yes
