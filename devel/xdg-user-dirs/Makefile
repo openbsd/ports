@@ -1,7 +1,6 @@
 COMMENT=		utilities to manage well known user directories
 
-DISTNAME=		xdg-user-dirs-0.17
-REVISION=		1
+DISTNAME=		xdg-user-dirs-0.18
 CATEGORIES=		devel
 
 HOMEPAGE=		http://freedesktop.org/wiki/Software/xdg-user-dirs/
@@ -9,7 +8,7 @@ HOMEPAGE=		http://freedesktop.org/wiki/Software/xdg-user-dirs/
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 MASTER_SITES=		http://user-dirs.freedesktop.org/releases/
 

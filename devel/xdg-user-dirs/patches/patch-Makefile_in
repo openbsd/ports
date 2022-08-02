@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -402,7 +402,7 @@ xdgdir = $(sysconfdir)/xdg
+@@ -407,7 +407,7 @@ xdgdir = $(sysconfdir)/xdg
  xdg_DATA = user-dirs.conf user-dirs.defaults
  xdgautostartdir = $(xdgdir)/autostart
  xdgautostart_DATA = xdg-user-dirs.desktop
