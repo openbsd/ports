@@ -25,6 +25,7 @@ BUILD_DEPENDS =	archivers/unzip \
 		archivers/zip \
 		devel/gmake \
 		lang/elixir \
+		net/rsync \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/libxslt \
