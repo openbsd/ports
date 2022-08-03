@@ -1,9 +1,8 @@
 COMMENT =	a serialization framework for Moose classes
 
-DISTNAME =	MooseX-Storage-0.52
+DISTNAME =	MooseX-Storage-0.53
 CATEGORIES =	devel
 FIX_EXTRACT_PERMISSIONS=Yes
-REVISION =	1
 
 # Perl
 PERMIT_PACKAGE =	Yes
@@ -22,6 +21,7 @@ TEST_DEPENDS =		devel/p5-MooseX-Types \
 			devel/p5-Test-Deep-JSON \
 			devel/p5-Test-Deep-Type \
 			devel/p5-Test-Fatal \
+			devel/p5-Test-Needs \
 			devel/p5-Test-Requires \
 			devel/p5-Test-Without-Module \
 			devel/p5-YAML-XS \
