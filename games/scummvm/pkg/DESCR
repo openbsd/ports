@@ -1,9 +1,3 @@
-ScummVM is a 'virtual machine' for several classic graphical point-and-click
-adventure games. It is designed to run: Adventure Soft's Simon the
-Sorcerer 1 and 2; Revolution's Beneath A Steel Sky, Broken Sword 1 and
-Broken Sword 2; Flight of the Amazon Queen and games based on LucasArts'
-SCUMM (Script Creation Utility for Maniac Mansion) system. SCUMM is used
-for many games, including Monkey Island, Day of the Tentacle, Sam and Max
-and more.
-
-Note that you must possess the original games to play in most cases.
+ScummVM is a program which allows you to run a wide variety of classic
+graphical point-and-click adventure games and role-playing games,
+provided you already have their data files.

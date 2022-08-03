@@ -1,30 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2312,22 +2312,6 @@ if test "$_release_build" = yes; then
- 	append_var DEFINES "-DRELEASE_BUILD"
- fi
- 
--# By default, we add -pedantic to the CXXFLAGS to catch some potentially
--# non-portable constructs, like use of GNU extensions.
--# However, some platforms use GNU extensions in system header files, so
--# for these we must not use -pedantic.
--case $_host_os in
--3ds | android | androidsdl | gamecube | psp | switch | wii)
--	;;
--*)
--	# ICC does not support pedantic, while GCC and clang do.
--	if test "$have_icc" = no ; then
--		# We *do* want the 'long long' extension.
--		append_var CXXFLAGS "-pedantic -Wno-long-long"
--	fi
--	;;
--esac
--
- # If possible, we want to use -Wglobal-constructors
- # However, not all compilers support that, so check whether the active one does.
- echocheck "whether C++ compiler accepts -Wglobal-constructors"
-@@ -4399,16 +4383,14 @@ if test "$_vorbis" = auto ; then
+@@ -4449,16 +4449,14 @@ if test "$_vorbis" = auto ; then
  int main(void) { vorbis_packet_blocksize(0,0); return 0; }
  EOF
  	if test "$_ogg" = yes ; then
@@ -45,7 +22,7 @@ Index: configure
  fi
  define_in_config_if_yes "$_vorbis" 'USE_VORBIS'
  echo "$_vorbis"
-@@ -4491,16 +4473,14 @@ int main(void) {
+@@ -4562,16 +4560,14 @@ int main(void) {
  }
  EOF
  	if test "$_ogg" = yes ; then

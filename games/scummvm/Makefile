@@ -1,5 +1,5 @@
-COMMENT=	graphical adventure game interpreter
-V=		2.5.1
+COMMENT=	game interpreter
+V=		2.6.0
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm/${V}/
@@ -8,15 +8,14 @@ HOMEPAGE=	https://www.scummvm.org/
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC SDL2 a52 c faad fluidsynth freetype fribidi gif iconv jpeg
 WANTLIB += m mad mpeg2 png ogg sndio ${COMPILER_LIBCXX} theoradec vorbis
 WANTLIB += vorbisfile z
 
-# GCC 4.2.1 miscompiles this on at least ppc, so play safe and
-# just use a newer compiler everywhere.
+# C++11
 COMPILER=	base-clang ports-gcc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -44,11 +43,12 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-cloud \
 		--disable-debug \
 		--disable-discord \
+		--disable-fluidlite \
 		--disable-gtk \
 		--disable-libcurl \
+		--disable-libunity \
 		--disable-nasm \
 		--disable-sdlnet \
-		--disable-seq-midi \
 		--disable-system-dialogs \
 		--disable-tts \
 		--enable-sndio \
@@ -59,7 +59,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 
-MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1
+MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1 USE_CURL=
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
