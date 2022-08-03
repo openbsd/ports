@@ -2,18 +2,13 @@ COMMENT =		return across multiple call levels
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Return-MultiLevel-0.05
+DISTNAME =		Return-MultiLevel-0.08
 CATEGORIES =		devel
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-CPAN_AUTHOR =		MAUKE
-
-BUILD_DEPENDS =		${RUN_DEPENDS}
-
-RUN_DEPENDS =		devel/p5-Data-Munge
+CPAN_AUTHOR =		PLICEASE
 
 TEST_DEPENDS =		devel/p5-Test-Fatal
 
