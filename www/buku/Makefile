@@ -1,12 +1,9 @@
 COMMENT =	powerful command-line bookmark manager
 
-MODPY_EGG_VERSION =	4.6
+MODPY_EGG_VERSION =	4.7.1
 DISTNAME =	buku-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	www
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

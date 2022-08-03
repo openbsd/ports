@@ -28,7 +28,6 @@ lib/python${MODPY_VERSION}/site-packages/bukuserver/static/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/Chart.js
-lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/Chart.min.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/static/bukuserver/js/bookmark.js
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/
 lib/python${MODPY_VERSION}/site-packages/bukuserver/templates/bukuserver/
