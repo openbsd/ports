@@ -3,7 +3,7 @@ COMMENT=	superclass for representing nodes in a tree
 MODULES=	cpan
 PKG_ARCH=	*
 CPAN_AUTHOR=	RSAVAGE
-DISTNAME =	Tree-DAG_Node-1.31
+DISTNAME =	Tree-DAG_Node-1.32
 CATEGORIES=	devel
 
 # Perl
