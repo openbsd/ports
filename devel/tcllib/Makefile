@@ -1,6 +1,6 @@
 COMMENT =	Tcl Standard Library
 
-DISTNAME =	tcllib-1.19pl0
+DISTNAME =	tcllib-1.21pl0
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

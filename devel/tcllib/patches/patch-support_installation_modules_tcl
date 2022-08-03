@@ -1,12 +1,8 @@
 Index: support/installation/modules.tcl
 --- support/installation/modules.tcl.orig
 +++ support/installation/modules.tcl
-@@ -32,119 +32,121 @@ array set guide {}
- 
- Exclude calendar
- Exclude exif
-+Exclude rest ;# Needs tDOM
-+Exclude processman ;# unripe
+@@ -44,69 +44,69 @@ Module  0compatibility _tcl  _null  _null
+ # implementations. See pkgIndex.tcl for more notes.
  
  #       name         pkg   doc   example
 -Module  aes         _tcl  _man  _null
@@ -26,6 +22,7 @@ Index: support/installation/modules.tcl
 +Module  blowfish    _tcm  _man  _null
  Module  cache       _tcl  _man  _null
  Module  calendar     _tci _man  _null
+ Module  clay        _tcl  _man _null
  Module  clock       _tcl  _man _null
 -Module  cmdline     _tcl  _man  _null
 -Module  comm        _tcl  _man  _null
@@ -69,16 +66,16 @@ Index: support/installation/modules.tcl
  Module  grammar_me  _tcl  _man  _null
  Module  grammar_peg _tcl  _man  _null
 -Module  hook        _tcl  _man  _null
+-Module  html        _tcl  _man  _null
+-Module  htmlparse   _tcl  _man  _exa
 +Module  hook        _tcm  _man  _null
++Module  html        _tcm  _man  _null
++Module  htmlparse   _tcm  _man  _exa
  Module  http        _tcl  _man  _null
  Module  httpd       _tcl  _man  _exa
  Module  httpwget    _tcl  _null _null
--Module  html        _tcl  _man  _null
--Module  htmlparse   _tcl  _man  _exa
 -Module  ident       _tcl  _man  _null
 -Module  imap4       _tcl  _man  _null
-+Module  html        _tcm  _man  _null
-+Module  htmlparse   _tcm  _man  _exa
 +Module  ident       _tcm  _man  _null
 +Module  imap4       _tcm  _man  _null
  Module  inifile     _tcl  _man  _null
@@ -90,18 +87,21 @@ Index: support/installation/modules.tcl
 +Module  jpeg        _tcm  _man  _null
  Module  json        _tcl  _man  _null
 -Module  lambda      _tcl  _man  _null
+-Module  lazyset     _tcl  _man  _null
 +Module  lambda      _tcm  _man  _null
++Module  lazyset     _tcm  _man  _null
  Module  ldap        _tcl  _man _exa
  Module  log          _msg _man  {_exax logger}
- Module  markdown     _tcl  _man  _null
  Module  map         _tcl  _man  _null
 -Module  mapproj     _tcl  _man _exa
 +Module  mapproj     _tcm  _man _exa
+ Module  markdown     _tcl  _man  _null
  Module  math         _tci _man _exa
  Module  md4         _tcl  _man  _null
- Module  md5         _tcl  _man  _null
+@@ -114,64 +114,64 @@ Module  md5         _tcl  _man  _null
  Module  md5crypt    _tcl  _man _null
  Module  mime        _tcl  _man _exa
+ Module  mkdoc       _tcl  _man  _null
 -Module  multiplexer _tcl  _man  _null
 -Module  namespacex  _tcl  _man  _null
 -Module  ncgi        _tcl  _man  _null
@@ -140,12 +140,13 @@ Index: support/installation/modules.tcl
  Module  rc4         _tcl  _man  _null
 -Module  rcs         _tcl  _man  _null
 -Module  report      _tcl  _man  _null
+-Module  rest        _tcl  _man  _null
 +Module  rcs         _tcm  _man  _null
 +Module  report      _tcm  _man  _null
- Module  rest        _tcl  _man  _null
++Module  rest        _tcm  _man  _null
  Module  ripemd      _tcl  _man  _null
  Module  sasl        _tcl  _man  _exa
- Module  sha1        _tcl  _man  _null
+ Module  sha1        _cfh  _man  _null
  Module  simulation  _tcl  _man  _null
 -Module  smtpd       _tcl  _man _exa
 +Module  smtpd       _tcm  _man _exa
@@ -165,9 +166,8 @@ Index: support/installation/modules.tcl
 -Module  tiff        _tcl  _man  _null
 +Module  tiff        _tcm  _man  _null
  Module  tool        _tcl  _man  _null
- Module  tool-ui     _tcl  _man  _null
- Module  tool_datatype        _tcl  _man  _null
-@@ -153,14 +155,14 @@ Module  treeql      _tcl  _man  _null
+ Module  transfer    _tcl  _man  _null
+ Module  treeql      _tcl  _man  _null
  Module  try         _tcl  _man  _null
  Module  udpcluster  _tcl  _man  _null
  Module  uev         _tcl  _man  _null

@@ -4,7 +4,7 @@ Perform shebang adjustments.
 Index: support/installation/actions.tcl
 --- support/installation/actions.tcl.orig
 +++ support/installation/actions.tcl
-@@ -90,23 +90,101 @@ proc _trt {module libdir} {
+@@ -110,23 +110,101 @@ proc _trt {module libdir} {
      return
  }
  
