@@ -1,8 +1,6 @@
 COMMENT=	allow your classes to do coercion of parameters
 
-DISTNAME=	Params-Coerce-0.14
-REVISION=	2
-
+DISTNAME =	Params-Coerce-0.15
 CATEGORIES=	devel
 
 # perl
