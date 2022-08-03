@@ -44,12 +44,15 @@ ${P5SITE}/auto/Log/Agent/bug.al
 ${P5SITE}/auto/Log/Agent/inited.al
 ${P5SITE}/auto/Log/Agent/log_default.al
 ${P5SITE}/auto/Log/Agent/logcarp.al
+${P5SITE}/auto/Log/Agent/logcluck.al
 ${P5SITE}/auto/Log/Agent/logconfess.al
 ${P5SITE}/auto/Log/Agent/logconfig.al
 ${P5SITE}/auto/Log/Agent/logcroak.al
 ${P5SITE}/auto/Log/Agent/logdbg.al
+${P5SITE}/auto/Log/Agent/logdebug.al
 ${P5SITE}/auto/Log/Agent/logdie.al
 ${P5SITE}/auto/Log/Agent/logerr.al
+${P5SITE}/auto/Log/Agent/loginfo.al
 ${P5SITE}/auto/Log/Agent/logsay.al
 ${P5SITE}/auto/Log/Agent/logtags.al
 ${P5SITE}/auto/Log/Agent/logtrc.al
