@@ -10,7 +10,7 @@ Index: chrome/browser/themes/theme_helper.cc
  #include "ui/views/linux_ui/linux_ui.h"
  #endif
  
-@@ -494,7 +494,7 @@ bool ThemeHelper::UseDarkModeColors(const CustomThemeS
+@@ -498,7 +498,7 @@ bool ThemeHelper::UseDarkModeColors(const CustomThemeS
  
    ui::NativeTheme const* native_theme =
        ui::NativeTheme::GetInstanceForNativeUi();

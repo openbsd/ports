@@ -18,7 +18,7 @@ Index: BUILD.gn
      "//net:net_unittests",
      "//services:services_unittests",
      "//services/service_manager/public/cpp",
-@@ -447,7 +446,7 @@ group("gn_all") {
+@@ -446,7 +445,7 @@ group("gn_all") {
      ]
    }
  
@@ -52,7 +52,7 @@ Index: BUILD.gn
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1167,7 +1175,7 @@ if (!is_ios) {
+@@ -1184,7 +1192,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -61,7 +61,7 @@ Index: BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1176,7 +1184,7 @@ if (!is_ios) {
+@@ -1193,7 +1201,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -70,7 +70,7 @@ Index: BUILD.gn
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1580,7 +1588,7 @@ group("chromium_builder_perf") {
+@@ -1592,7 +1600,7 @@ group("chromium_builder_perf") {
  
      if (is_win) {
        data_deps += [ "//chrome/installer/mini_installer:mini_installer" ]

@@ -1,7 +1,7 @@
 Index: net/socket/socket_posix.cc
 --- net/socket/socket_posix.cc.orig
 +++ net/socket/socket_posix.cc
-@@ -519,7 +519,7 @@ void SocketPosix::ReadCompleted() {
+@@ -516,7 +516,7 @@ void SocketPosix::ReadCompleted() {
  }
  
  int SocketPosix::DoWrite(IOBuffer* buf, int buf_len) {

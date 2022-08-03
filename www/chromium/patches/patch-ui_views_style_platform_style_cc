@@ -10,12 +10,3 @@ Index: ui/views/style/platform_style.cc
      false;
  #else
      true;
-@@ -82,7 +82,7 @@ gfx::Range PlatformStyle::RangeToDeleteBackwards(const
- #endif  // !BUILDFLAG(IS_MAC)
- 
- #if !BUILDFLAG(ENABLE_DESKTOP_AURA) || \
--    (!BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS))
-+    (!BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_BSD))
- // static
- std::unique_ptr<Border> PlatformStyle::CreateThemedLabelButtonBorder(
-     LabelButton* button) {

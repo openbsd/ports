@@ -1,7 +1,7 @@
 Index: third_party/ffmpeg/libavutil/cpu.c
 --- third_party/ffmpeg/libavutil/cpu.c.orig
 +++ third_party/ffmpeg/libavutil/cpu.c
-@@ -36,10 +36,7 @@
+@@ -38,10 +38,7 @@
  #if HAVE_GETPROCESSAFFINITYMASK || HAVE_WINRT
  #include <windows.h>
  #endif

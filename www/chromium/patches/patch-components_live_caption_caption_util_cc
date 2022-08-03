@@ -1,7 +1,7 @@
 Index: components/live_caption/caption_util.cc
 --- components/live_caption/caption_util.cc.orig
 +++ components/live_caption/caption_util.cc
-@@ -142,7 +142,7 @@ bool IsLiveCaptionFeatureSupported() {
+@@ -140,7 +140,7 @@ bool IsLiveCaptionFeatureSupported() {
      return false;
  #endif
  

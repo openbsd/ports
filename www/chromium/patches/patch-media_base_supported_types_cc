@@ -7,6 +7,6 @@ Index: media/base/supported_types.cc
  #if BUILDFLAG(ENABLE_PLATFORM_HEVC)
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   return GetSupplementalProfileCache()->IsProfileSupported(type.profile);
- #elif BUILDFLAG(IS_MAC)
-   if (__builtin_available(macOS 11.0, *))
+ #if BUILDFLAG(IS_CHROMEOS_LACROS)
+   // TODO(b/171813538): For Lacros, the supplemental profile cache will be
+   // asking lacros-gpu, but we will be doing decoding in ash-gpu. Until the

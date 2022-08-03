@@ -1,0 +1,19 @@
+Index: third_party/swiftshader/src/WSI/BUILD.gn
+--- third_party/swiftshader/src/WSI/BUILD.gn.orig
++++ third_party/swiftshader/src/WSI/BUILD.gn
+@@ -53,6 +53,15 @@ swiftshader_source_set("WSI") {
+     ]
+   }
+ 
++  if (is_openbsd) {
++    sources -= [
++      "WaylandSurfaceKHR.cpp",
++      "WaylandSurfaceKHR.hpp",
++      "libWaylandClient.cpp",
++      "libWaylandClient.hpp",
++    ]
++  }
++
+   if (is_win) {
+     sources += [
+       "Win32SurfaceKHR.cpp",

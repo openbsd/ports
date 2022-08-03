@@ -6,8 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			103.0.5060.134
-REVISION=		0
+V=			104.0.5112.79
 
 DISTNAME=		chromium-${V}
 
@@ -141,7 +140,6 @@ GN_ARGS=	enable_nacl=false \
 		is_cfi=false \
 		optimize_webui=true \
 		enable_js_type_check=false \
-		enable_one_click_signin=true \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
 		use_bundled_fontconfig=false \
