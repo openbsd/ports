@@ -1,7 +1,7 @@
 Index: support/installation/modules.tcl
 --- support/installation/modules.tcl.orig
 +++ support/installation/modules.tcl
-@@ -31,34 +31,33 @@ array set guide {}
+@@ -31,37 +31,37 @@ array set guide {}
  # @@ Registration START
  
  #      name           pkg   doc   example
@@ -31,9 +31,13 @@ Index: support/installation/modules.tcl
  Module mentry        _tab  _null _exa
  Module menubar       _tcl  _man  _exa
  Module ntext         _tcl  _man  _exa
+-Module notifywindow  _tcl  _man  _null
 -Module persistentSelection _tcl _man _exa
 +Module notifywindow  _tcm  _man  _null
++Module persistentSelection _tcm _man _exa
  Module plotchart     _tcl  _man  _exa
+ Module scrollutil    _tab  _null _exa
+ Module shtmlview     _tcl  _man  _null
  Module style         _tcl  _man  _null
 -Module swaplist      _tcl  _man  _null
 +Module swaplist      _tcm  _man  _null
@@ -44,6 +48,7 @@ Index: support/installation/modules.tcl
  Module widget        _tcl  _man  _exa
  Module widgetl       _tcl  _man  _null
 -Module widgetPlus    _tcl  _man  _exa
++Module widgetPlus    _tcm  _man  _exa
  Module widgetv       _tcl  _man  _null
  
  Application  diagram-viewer

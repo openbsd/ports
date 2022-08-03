@@ -1,9 +1,10 @@
 Install everything nicely.
 Generate tcllib.n.
 
---- installer.tcl.orig	Wed Apr 22 06:49:59 2015
-+++ installer.tcl	Thu Jun  4 01:43:54 2015
-@@ -84,16 +84,24 @@ if {![package vsatisfies [package provide Tcl] 8.0]} {
+Index: installer.tcl
+--- installer.tcl.orig
++++ installer.tcl
+@@ -82,16 +82,24 @@ proc gen_main_index {outdir package version} {
  
  proc xcopyfile {src dest} {
      # dest can be dir or file
@@ -28,7 +29,7 @@ Generate tcllib.n.
  	    set sub  [file join $dest $base]
  
  	    if {0 == [string compare CVS $base]} {continue}
-@@ -144,6 +152,7 @@ proc write_out {f text} {
+@@ -142,6 +150,7 @@ proc write_out {f text} {
      catch {file delete -force $f}
      puts -nonewline [set of [open $f w]] $text
      close $of
@@ -36,15 +37,15 @@ Generate tcllib.n.
  }
  
  
-@@ -184,7 +193,6 @@ proc run {args} {
-             return -code error "Install error:\n $msg" 
+@@ -182,7 +191,6 @@ proc run {args} {
+             return -code error "Install error:\n $msg"
          }
      }
 -    log* .
      return
  }
  
-@@ -209,18 +217,23 @@ proc ainstall {} {
+@@ -207,18 +215,23 @@ proc ainstall {} {
  	set aexe [file join $distribution apps $a]
  	set adst [file join $config(app,path) ${a}$ext]
  
@@ -61,7 +62,7 @@ Generate tcllib.n.
 +	_exafile $aexe $adst
 +	if {[file exists $aexe.man]} {
 +	    set fn [file tail $aexe].n
-+	    _manfile [file join $distribution embedded man files apps $fn] [file join $config(doc,nroff,path) $fn]
++	    _manfile [file join $distribution idoc man files apps $fn] [file join $config(doc,nroff,path) $fn]
 +	}
      }
      return
@@ -73,7 +74,7 @@ Generate tcllib.n.
  
      if {!$config(no-exclude)} {
  	foreach p $excluded {
-@@ -230,26 +243,35 @@ proc doinstall {} {
+@@ -228,26 +241,35 @@ proc doinstall {} {
  	}
      }
  
@@ -89,12 +90,12 @@ Generate tcllib.n.
      }
 -    if {$config(doc,nroff)} {
 +    if 0 {
- 	foreach dir [glob -directory $distribution/embedded/man/files/modules *] {
+ 	foreach dir [glob -directory $distribution/idoc/man/files/modules *] {
  	    xcopy $dir $config(doc,nroff,path) 1
  	}
- 	xcopy $distribution/embedded/man/files/apps $config(doc,nroff,path) 1
+ 	xcopy $distribution/idoc/man/files/apps $config(doc,nroff,path) 1
      }
-+    xinstall doc [file join $distribution embedded man files modules] $config(doc,nroff,path)
++    xinstall doc [file join $distribution idoc man files modules] $config(doc,nroff,path)
 +    foreach module {mentry tablelist wcb} {
 +	set srcdir [file join $distribution modules $module]
 +	set dstdir [file join $config(csb) $module]
@@ -103,7 +104,7 @@ Generate tcllib.n.
 +    }
      if {$config(doc,html)}  {
  	#xinstall doc html  html $config(doc,html,path)
- 	xcopy $distribution/embedded/www $config(doc,html,path) 1
+ 	xcopy $distribution/idoc/www $config(doc,html,path) 1
      }
 -    if {$config(exa)}       {xinstall exa $config(exa,path)}
 +    if {$config(exa)}       {xinstall exa [file join $distribution examples] $config(exa,path)}
@@ -112,7 +113,7 @@ Generate tcllib.n.
      log ""
      return
  }
-@@ -511,6 +533,10 @@ proc processargs {} {
+@@ -509,6 +531,10 @@ proc processargs {} {
  		set config(exa,path) [lindex $argv 1]
  		set argv             [lrange $argv 1 end]
  	    }
@@ -123,7 +124,7 @@ Generate tcllib.n.
  	    -help   -
  	    default {
  		puts stderr "usage: $argv0 ?-dry-run/-simulate? ?-no-wait? ?-no-gui? ?-html|-no-html? ?-nroff|-no-nroff? ?-examples|-no-examples? ?-pkgs|-no-pkgs? ?-pkg-path path? ?-apps|-no-apps? ?-app-path path? ?-nroff-path path? ?-html-path path? ?-example-path path?"
-@@ -566,6 +592,40 @@ proc wait {} {
+@@ -564,6 +590,40 @@ proc wait {} {
  	exit 0
      }
      return

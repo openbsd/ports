@@ -1,6 +1,6 @@
 COMMENT =	Tk Standard Library
 
-DISTNAME =	tklib-0.6pl5
+DISTNAME =	tklib-0.7pl0
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

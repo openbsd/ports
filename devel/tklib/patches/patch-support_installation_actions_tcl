@@ -1,9 +1,10 @@
 Retrieve module info from man pages.
 Perform shebang adjustments.
 
---- support/installation/actions.tcl.orig	Thu Apr  9 00:08:33 2015
-+++ support/installation/actions.tcl	Fri Apr 10 13:49:57 2015
-@@ -108,15 +108,96 @@ proc _tci {module libdir} {
+Index: support/installation/actions.tcl
+--- support/installation/actions.tcl.orig
++++ support/installation/actions.tcl
+@@ -113,15 +113,96 @@ proc _tci {module libdir} {
      return
  }
  
