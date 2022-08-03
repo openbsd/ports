@@ -2,6 +2,7 @@ COMMENT =	read and manage your digital comic collection
 
 V =		9.8.2
 DISTNAME =	yacreader-${V}.2106195
+PORTROACH =	skipv:9.8.2.2106204	# windows installer fix
 PKGNAME =	yacreader-${V}
 
 CATEGORIES =	graphics
