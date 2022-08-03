@@ -1,6 +1,6 @@
 COMMENT =		compact self-hosted Git service
 
-VERSION =		1.16.9
+VERSION =		1.17.0
 DISTNAME =		gitea-src-${VERSION}
 PKGNAME =		gitea-${VERSION}
 
@@ -31,10 +31,6 @@ RUN_DEPENDS =		devel/git
 
 ALL_TARGET =		code.gitea.io/gitea
 WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
-
-do-extract:
-	@mkdir ${WRKDIST}
-	@tar xzf ${FULLDISTDIR}/${DISTFILES} -C ${WRKDIST}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/custom/conf/app.example.ini
