@@ -1,7 +1,6 @@
 COMMENT =	create and use a local lib/ for perl modules with PERL5LIB
 
-DISTNAME =		local-lib-2.000027
-
+DISTNAME =		local-lib-2.000029
 CATEGORIES =		devel
 
 
