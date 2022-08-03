@@ -1,9 +1,8 @@
 COMMENT=	set of objects and strings
 
 MODULES=	cpan
-DISTNAME =	Set-Object-1.40
+DISTNAME =	Set-Object-1.42
 CATEGORIES=	devel
-REVISION =	0
 
 # Artistic License 2.0
 PERMIT_PACKAGE=	Yes
