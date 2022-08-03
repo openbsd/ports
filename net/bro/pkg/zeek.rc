@@ -6,15 +6,15 @@ daemon_flags="start"
 . /etc/rc.d/rc.subr
 
 rc_check() {
-	${daemon} status
+	rc_exec "${daemon} status"
 }
 
 rc_reload() {
-	${daemon} update
+	rc_exec "${daemon} update"
 }
 
 rc_stop() {
-	${daemon} stop
+	rc_exec "${daemon} stop"
 }
 
 rc_cmd $1

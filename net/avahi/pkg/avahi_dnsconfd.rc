@@ -5,15 +5,15 @@ daemon="${TRUEPREFIX}/sbin/avahi-dnsconfd -D"
 . /etc/rc.d/rc.subr
 
 rc_check() {
-	${daemon} --check
+	rc_exec "${daemon} --check"
 }
 
 rc_reload() {
-	${daemon} --refresh
+	rc_exec "${daemon} --refresh"
 }
 
 rc_stop() {
-	${daemon} --kill
+	rc_exec "${daemon} --kill"
 }
 
 rc_cmd $1

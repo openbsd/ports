@@ -21,7 +21,7 @@ PKGNAME-python=		py3-avahi-${V}
 REVISION-python=	4
 REVISION-gui=		6
 REVISION-gtk3=		3
-REVISION-main=		7
+REVISION-main=		8
 REVISION-libs=		2
 REVISION-glib=		1
 
