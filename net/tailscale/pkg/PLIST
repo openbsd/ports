@@ -3,6 +3,7 @@
 @comment bin/cloner
 @bin bin/derper
 @bin bin/derpprobe
+@comment bin/gitops-pusher
 @comment bin/hello
 @comment bin/mkpkg
 @comment bin/printdep
