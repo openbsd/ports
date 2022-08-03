@@ -1,5 +1,5 @@
 COMMENT=	collection of various tools for scummvm
-V=		2.5.0
+V=		2.6.0
 DISTNAME=	scummvm-tools-${V}
 CATEGORIES=	games
 MASTER_SITES=	https://downloads.scummvm.org/frs/scummvm-tools/${V}/
@@ -8,7 +8,7 @@ HOMEPAGE=	https://www.scummvm.org/
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-# GPLv2+
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC c freetype iconv m mad ogg
