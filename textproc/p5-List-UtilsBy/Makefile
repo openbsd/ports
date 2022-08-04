@@ -2,9 +2,8 @@ COMMENT =		higher-order list utility functions
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		List-UtilsBy-0.11
+DISTNAME =		List-UtilsBy-0.12
 CATEGORIES =		textproc
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
