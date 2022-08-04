@@ -1,7 +1,6 @@
 COMMENT =	helper routines for using Sub::Exporter to build methods
 
-DISTNAME =	Sub-Exporter-ForMethods-0.100052
-REVISION =	0
+DISTNAME =	Sub-Exporter-ForMethods-0.100054
 
 CATEGORIES =	devel
 
@@ -10,8 +9,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		devel/p5-Sub-Exporter>=0.978 \
-			devel/p5-Sub-Name
+RUN_DEPENDS =		devel/p5-Sub-Exporter>=0.978 
 
 TEST_DEPENDS =		devel/p5-namespace-autoclean
 
