@@ -2,7 +2,7 @@ COMMENT =		improved screen locker
 
 GH_ACCOUNT =		i3
 GH_PROJECT =		i3lock
-GH_TAGNAME =		2.13
+GH_TAGNAME =		2.14.1
 
 CATEGORIES =		x11
 
@@ -14,20 +14,18 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		https://i3wm.org/i3lock/
-EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX =		.tar.xz
 
-WANTLIB += c cairo ev m xcb xcb-image xcb-shm xcb-randr iconv xcb-xrm
+WANTLIB += c cairo ev m xcb xcb-image xcb-randr xcb-xrm
 WANTLIB += xcb-util xcb-xinerama xcb-xkb xkbcommon xkbcommon-x11
+
+MODULES =		devel/meson
 
 LIB_DEPENDS =		devel/libev \
 			graphics/cairo \
 			x11/xkbcommon
 
-AUTOCONF_VERSION =	2.69
-CONFIGURE_STYLE =	autoconf
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
-
-USE_GMAKE =		Yes
+CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 .include <bsd.port.mk>

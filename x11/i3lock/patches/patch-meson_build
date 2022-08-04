@@ -1,0 +1,25 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -118,6 +118,12 @@ host_os = host_machine.system()
+ if host_os != 'openbsd'
+   pam_dep = cc.find_library('pam', required: true)
+   i3lock_deps += [pam_dep]
++
++  install_subdir(
++    'pam',
++    strip_directory: true,
++    install_dir: join_paths(get_option('sysconfdir'), 'pam.d'),
++  )
+ endif
+ 
+ inc = include_directories('include')
+@@ -130,8 +136,3 @@ executable(
+   dependencies: i3lock_deps,
+ )
+ 
+-install_subdir(
+-  'pam',
+-  strip_directory: true,
+-  install_dir: join_paths(get_option('sysconfdir'), 'pam.d'),
+-)
