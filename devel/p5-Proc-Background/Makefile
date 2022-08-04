@@ -1,9 +1,9 @@
-COMMENT=	peek at lexical variables
+COMMENT =	peek at lexical variables
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Proc-Background-1.21
-CATEGORIES=	devel
+MODULES =	cpan
+PKG_ARCH =	*
+DISTNAME =	Proc-Background-1.30
+CATEGORIES =	devel
 
 # perl
 PERMIT_PACKAGE=	Yes
