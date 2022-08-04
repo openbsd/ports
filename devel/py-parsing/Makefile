@@ -1,10 +1,11 @@
 COMMENT =		Python parsing module
 
-MODPY_EGG_VERSION =	2.4.0
+# last py2 version; if updating then needs to be split into py2-parsing for
+# py-miasm and py2-compatible version of py-packaging
+MODPY_EGG_VERSION =	2.4.5
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		2
 
 HOMEPAGE =		http://pyparsing.wikispaces.com/
 
@@ -19,11 +20,5 @@ FLAVORS =		python3
 FLAVOR ?=
 
 NO_TEST =		Yes
-
-EXAMPLESDIR =		${PREFIX}/share/examples/${MODPY_PY_PREFIX}parsing
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
