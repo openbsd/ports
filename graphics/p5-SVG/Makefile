@@ -1,6 +1,6 @@
 COMMENT=	Scalable Vector Graphics (SVG) in perl
 
-DISTNAME=	SVG-2.86
+DISTNAME =	SVG-2.87
 CATEGORIES=	graphics devel
 
 # perl
