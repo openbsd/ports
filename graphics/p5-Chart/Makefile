@@ -1,6 +1,6 @@
 COMMENT =	Charting library for Perl
 
-DISTNAME =	Chart-v2.403.6
+DISTNAME =	Chart-v2.403.7
 PKGNAME =	p5-${DISTNAME:S/v//}
 CATEGORIES =	graphics
 

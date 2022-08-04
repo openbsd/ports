@@ -11,7 +11,6 @@ ${P5SITE}/Chart/Composite.pm
 ${P5SITE}/Chart/Constants.pm
 ${P5SITE}/Chart/Direction.pm
 ${P5SITE}/Chart/ErrorBars.pm
-${P5SITE}/Chart/Font.pm
 ${P5SITE}/Chart/HorizontalBars.pm
 ${P5SITE}/Chart/Lines.pm
 ${P5SITE}/Chart/LinesPoints.pm
@@ -25,17 +24,20 @@ ${P5SITE}/Chart/Mountain.pm
 ${P5SITE}/Chart/Pareto.pm
 ${P5SITE}/Chart/Pie.pm
 ${P5SITE}/Chart/Points.pm
+${P5SITE}/Chart/Property/
 ${P5SITE}/Chart/Property.pm
+${P5SITE}/Chart/Property/DataType/
+${P5SITE}/Chart/Property/DataType/Font.pm
 ${P5SITE}/Chart/Split.pm
 ${P5SITE}/Chart/StackedBars.pm
 @man man/man3p/Chart.3p
 @man man/man3p/Chart::Color.3p
 @man man/man3p/Chart::Color::Constant.3p
 @man man/man3p/Chart::Color::Value.3p
-@man man/man3p/Chart::Font.3p
 @man man/man3p/Chart::Manual.3p
 @man man/man3p/Chart::Manual::Methods.3p
 @man man/man3p/Chart::Manual::Properties.3p
 @man man/man3p/Chart::Manual::Types.3p
 @man man/man3p/Chart::Manual::Workflows.3p
 @man man/man3p/Chart::Property.3p
+@man man/man3p/Chart::Property::DataType::Font.3p
