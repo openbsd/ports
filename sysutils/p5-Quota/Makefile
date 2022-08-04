@@ -1,7 +1,7 @@
 COMMENT =	quota manipulation module
 
 MODULES =	cpan
-DISTNAME =	Quota-1.8.1
+DISTNAME =	Quota-1.8.2
 CATEGORIES =	sysutils
 
 # perl
