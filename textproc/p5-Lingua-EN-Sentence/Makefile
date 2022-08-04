@@ -1,12 +1,11 @@
-COMMENT=		module to split text into sentences
+COMMENT =		module to split text into sentences
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME =		Lingua-EN-Sentence-0.31
-CATEGORIES=		textproc
-REVISION =		0
+MODULES =		cpan
+PKG_ARCH =		*
+DISTNAME =		Lingua-EN-Sentence-0.33
+CATEGORIES =		textproc
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
 .include <bsd.port.mk>
