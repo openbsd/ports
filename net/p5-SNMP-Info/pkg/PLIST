@@ -8,6 +8,7 @@ ${P5SITE}/SNMP/Info/Airespace.pm
 ${P5SITE}/SNMP/Info/Bridge.pm
 ${P5SITE}/SNMP/Info/CDP.pm
 ${P5SITE}/SNMP/Info/CiscoAgg.pm
+${P5SITE}/SNMP/Info/CiscoBGP.pm
 ${P5SITE}/SNMP/Info/CiscoConfig.pm
 ${P5SITE}/SNMP/Info/CiscoPortSecurity.pm
 ${P5SITE}/SNMP/Info/CiscoPower.pm
@@ -136,6 +137,7 @@ ${P5SITE}/SNMP/Info/Layer7/APC.pm
 ${P5SITE}/SNMP/Info/Layer7/Arbor.pm
 ${P5SITE}/SNMP/Info/Layer7/CiscoIPS.pm
 ${P5SITE}/SNMP/Info/Layer7/Gigamon.pm
+${P5SITE}/SNMP/Info/Layer7/HWGroup.pm
 ${P5SITE}/SNMP/Info/Layer7/Liebert.pm
 ${P5SITE}/SNMP/Info/Layer7/Neoteris.pm
 ${P5SITE}/SNMP/Info/Layer7/Netscaler.pm
@@ -153,6 +155,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Bridge.3p
 @man man/man3p/SNMP::Info::CDP.3p
 @man man/man3p/SNMP::Info::CiscoAgg.3p
+@man man/man3p/SNMP::Info::CiscoBGP.3p
 @man man/man3p/SNMP::Info::CiscoConfig.3p
 @man man/man3p/SNMP::Info::CiscoPortSecurity.3p
 @man man/man3p/SNMP::Info::CiscoPower.3p
@@ -277,6 +280,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer7::Arbor.3p
 @man man/man3p/SNMP::Info::Layer7::CiscoIPS.3p
 @man man/man3p/SNMP::Info::Layer7::Gigamon.3p
+@man man/man3p/SNMP::Info::Layer7::HWGroup.3p
 @man man/man3p/SNMP::Info::Layer7::Liebert.3p
 @man man/man3p/SNMP::Info::Layer7::Neoteris.3p
 @man man/man3p/SNMP::Info::Layer7::Netscaler.3p
