@@ -6,7 +6,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
 V =			4.0.2
-REVISION =		0
+REVISION =		1
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -23,10 +23,13 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # rlottie: LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} absl_strings avcodec avformat avutil c crypto
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7 jpeg
-WANTLIB += lz4 m openal qrcodegencpp rnnoise sigc-2.0 swresample swscale tg_owt
-WANTLIB += xcb xcb-keysyms xcb-record xcb-screensaver xxhash z
+WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
+WANTLIB += avcodec avformat avutil c crypto gio-2.0 giomm-2.4
+WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7 jpeg lz4
+WANTLIB += m openal qrcodegencpp rnnoise sigc-2.0 swresample swscale
+WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
+WANTLIB += z
 
 # C++17 set below
 COMPILER =		base-clang ports-gcc
@@ -87,40 +90,10 @@ CFLAGS +=		-DIOAPI_NO_64
 # unported and required
 NEEDED_BUNDLES +=	rlottie tgcalls
 
-
-FLAVORS =		qt6
-FLAVOR ?=		# empty/qt5
-.if ${FLAVOR:Mqt6}
-# avoid conflict with unflavored package to allow installing both
-FULLPKGNAME =		tdesktop${FLAVOR_EXT}-${V}
-WANTLIB += Qt6Core Qt6Core5Compat Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6Svg Qt6Widgets
-
 MODULES +=		x11/qt6
 LIB_DEPENDS +=		x11/qt6/qt5compat \
 			x11/qt6/qtsvg
 RUN_DEPENDS +=		x11/qt6/qtimageformats
-
-post-install:
-	mv ${PREFIX}/bin/telegram-desktop{,${FLAVOR_EXT}}
-	mv ${PREFIX}/share/applications/telegramdesktop{,${FLAVOR_EXT}}.desktop
-	sed -i \
-	    -e /Name=/s,$$,' (${FLAVOR_EXT})', \
-	    -e /Exec=/s,desktop,\&${FLAVOR_EXT}, \
-	    -e /Icon=/s,$$,${FLAVOR_EXT}, \
-	    ${PREFIX}/share/applications/telegramdesktop${FLAVOR_EXT}.desktop
-	find ${PREFIX} -type f -name telegram.png -execdir \
-	    mv {} telegram${FLAVOR_EXT}.png \;
-	mv ${PREFIX}/share/metainfo/telegramdesktop{,${FLAVOR_EXT}}.metainfo.xml
-.else
-WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Svg Qt5Widgets
-
-MODULES +=		x11/qt5
-LIB_DEPENDS +=		x11/qt5/qtsvg
-RUN_DEPENDS +=		x11/qt5/qtimageformats
-CONFIGURE_ARGS +=	-DDESKTOP_APP_QT6=OFF
-.endif
-
 
 post-extract:
 	# All bundles:

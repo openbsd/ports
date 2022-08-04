@@ -1,6 +1,2 @@
 Telegram Desktop is the official desktop client for the Telegram messenger,
 based on the Telegram API and the MTProto secure protocol.
-
-Available flavors:
-
-  qt6: Built against Qt 6 (default upstream) instead of Qt 5

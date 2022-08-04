@@ -1,13 +1,14 @@
-@bin bin/telegram-desktop${FLAVOR_EXT}
-share/applications/telegramdesktop${FLAVOR_EXT}.desktop
-share/icons/hicolor/128x128/apps/telegram${FLAVOR_EXT}.png
-share/icons/hicolor/16x16/apps/telegram${FLAVOR_EXT}.png
-share/icons/hicolor/256x256/apps/telegram${FLAVOR_EXT}.png
-share/icons/hicolor/32x32/apps/telegram${FLAVOR_EXT}.png
-share/icons/hicolor/48x48/apps/telegram${FLAVOR_EXT}.png
-share/icons/hicolor/512x512/apps/telegram${FLAVOR_EXT}.png
-share/icons/hicolor/64x64/apps/telegram${FLAVOR_EXT}.png
+@pkgpath net/tdesktop,qt6
+@bin bin/telegram-desktop
+share/applications/telegramdesktop.desktop
+share/icons/hicolor/128x128/apps/telegram.png
+share/icons/hicolor/16x16/apps/telegram.png
+share/icons/hicolor/256x256/apps/telegram.png
+share/icons/hicolor/32x32/apps/telegram.png
+share/icons/hicolor/48x48/apps/telegram.png
+share/icons/hicolor/512x512/apps/telegram.png
+share/icons/hicolor/64x64/apps/telegram.png
 share/metainfo/
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/metainfo/telegramdesktop${FLAVOR_EXT}.metainfo.xml
+share/metainfo/telegramdesktop.metainfo.xml

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1405 2022/07/29 15:26:32 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1406 2022/08/04 15:11:54 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -731,6 +731,7 @@ my $stem_extensions = {
 	'py-requests' => 'py3-requests',
 	'py-chardet' => 'py3-chardet',
 	'chrome-gnome-shell' => 'gnome-browser-connector',
+	'tdesktop-qt6' => 'tdesktop',
 };
 
 my $obsolete_reason = {};
