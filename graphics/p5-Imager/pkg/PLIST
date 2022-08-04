@@ -58,6 +58,7 @@ ${P5ARCH}/Imager/Test.pm
 ${P5ARCH}/Imager/Threads.pod
 ${P5ARCH}/Imager/Transform.pm
 ${P5ARCH}/Imager/Transformations.pod
+${P5ARCH}/Imager/TrimColorList.pm
 ${P5ARCH}/Imager/Tutorial.pod
 ${P5ARCH}/Imager/include/
 ${P5ARCH}/Imager/include/draw.h
@@ -170,6 +171,7 @@ ${P5ARCH}/auto/Imager/Font/T1/
 @man man/man3p/Imager::Threads.3p
 @man man/man3p/Imager::Transform.3p
 @man man/man3p/Imager::Transformations.3p
+@man man/man3p/Imager::TrimColorList.3p
 @man man/man3p/Imager::Tutorial.3p
 @man man/man3p/Imager::interface.3p
 @man man/man3p/Imager::regmach.3p

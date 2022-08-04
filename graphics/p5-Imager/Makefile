@@ -1,9 +1,8 @@
 COMMENT=	generate and manipulate images
 
-DISTNAME=	Imager-1.012
+DISTNAME =	Imager-1.019
 CATEGORIES=	graphics
 MODULES=	cpan
-REVISION=	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
