@@ -3,6 +3,7 @@ COMMENT=		c++ library for common image format
 DISTNAME=		FreeImage3180
 PKGNAME=		freeimage-3.18.0
 CATEGORIES=		graphics
+REVISION=		0
 
 SHARED_LIBS+=		freeimage	3.0
 
@@ -28,6 +29,12 @@ MAKE_ENV=		LIBfreeimage_VERSION=${LIBfreeimage_VERSION} \
 MAKE_TARGET=		Makefile.gnu
 
 FIX_CRLF_FILES=		Makefile.gnu TestAPI/Makefile
+
+# The bundled libpng ships without the source for neon support, so
+# disable it to avoid undefined external references.
+.if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "arm"
+CFLAGS +=		-DPNG_ARM_NEON_OPT=0
+.endif
 
 do-test:
 	cd ${WRKSRC}/TestAPI && ${MAKE_PROGRAM} ${MAKE_ENV}
