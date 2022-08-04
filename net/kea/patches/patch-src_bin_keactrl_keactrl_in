@@ -1,7 +1,7 @@
 Index: src/bin/keactrl/keactrl.in
 --- src/bin/keactrl/keactrl.in.orig
 +++ src/bin/keactrl/keactrl.in
-@@ -335,8 +335,7 @@ run_conditional() {
+@@ -330,8 +330,7 @@ run_conditional() {
  # altered and only the handful of initial messages will be logged
  # to the default file.
  if [ -z "${KEA_LOGGER_DESTINATION+x}" ]; then

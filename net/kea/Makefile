@@ -1,17 +1,16 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	2.0.2
+VERSION=	2.2.0
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
-REVISION=	1
 
 .for i in kea-asiodns kea-asiolink kea-cc kea-cfgclient kea-cryptolink \
     kea-d2srv kea-database kea-dhcp++ kea-dhcp_ddns kea-dhcpsrv kea-dns++ \
     kea-eval kea-exceptions kea-hooks kea-http kea-log kea-mysql kea-pgsql \
     kea-process kea-stats kea-threads kea-util kea-util-io
-SHARED_LIBS +=  $i 9.0
+SHARED_LIBS +=  $i 10.0
 .endfor
 
 CATEGORIES=	net
@@ -44,9 +43,6 @@ LIBTOOL_FLAGS=	--tag=disable-static
 COMPILER=	base-clang ports-gcc
 
 .include <bsd.port.arch.mk>
-
-# cassandra
-RMFILES=	share/kea/scripts/cql
 
 .if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+= --with-mysql=${LOCALBASE}/bin/mysql_config

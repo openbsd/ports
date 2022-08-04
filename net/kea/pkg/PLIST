@@ -144,6 +144,7 @@ include/kea/dhcp/pkt_filter6.h
 include/kea/dhcp/pkt_filter_bpf.h
 include/kea/dhcp/pkt_filter_inet.h
 include/kea/dhcp/pkt_filter_inet6.h
+include/kea/dhcp/pkt_template.h
 include/kea/dhcp/protocol_util.h
 include/kea/dhcp/socket_info.h
 include/kea/dhcp/std_option_defs.h
@@ -212,6 +213,7 @@ include/kea/dhcpsrv/lease_file_loader.h
 include/kea/dhcpsrv/lease_file_stats.h
 include/kea/dhcpsrv/lease_mgr.h
 include/kea/dhcpsrv/lease_mgr_factory.h
+include/kea/dhcpsrv/memfile_lease_limits.h
 include/kea/dhcpsrv/memfile_lease_mgr.h
 include/kea/dhcpsrv/memfile_lease_storage.h
 include/kea/dhcpsrv/ncr_generator.h
@@ -243,7 +245,6 @@ include/kea/dhcpsrv/subnet.h
 include/kea/dhcpsrv/subnet_id.h
 include/kea/dhcpsrv/subnet_selector.h
 include/kea/dhcpsrv/timer_mgr.h
-include/kea/dhcpsrv/triplet.h
 include/kea/dhcpsrv/utils.h
 include/kea/dhcpsrv/writable_host_data_source.h
 include/kea/dns/
@@ -395,6 +396,7 @@ include/kea/util/
 include/kea/util/boost_time_utils.h
 include/kea/util/buffer.h
 include/kea/util/csv_file.h
+include/kea/util/dhcp_space.h
 include/kea/util/doubles.h
 include/kea/util/encode/
 include/kea/util/encode/base16_from_binary.h
@@ -405,6 +407,7 @@ include/kea/util/encode/binary_from_base16.h
 include/kea/util/encode/binary_from_base32hex.h
 include/kea/util/encode/hex.h
 include/kea/util/encode/utf8.h
+include/kea/util/file_utilities.h
 include/kea/util/filename.h
 include/kea/util/hash.h
 include/kea/util/io/
@@ -422,6 +425,7 @@ include/kea/util/pid_file.h
 include/kea/util/pointer_util.h
 include/kea/util/range_utilities.h
 include/kea/util/readwrite_mutex.h
+include/kea/util/reconnect_ctl.h
 include/kea/util/staged_value.h
 include/kea/util/state_model.h
 include/kea/util/stopwatch.h
@@ -429,6 +433,7 @@ include/kea/util/stopwatch_impl.h
 include/kea/util/strutil.h
 include/kea/util/thread_pool.h
 include/kea/util/time_utilities.h
+include/kea/util/triplet.h
 include/kea/util/unlock_guard.h
 include/kea/util/versioned_csv_file.h
 include/kea/util/watch_socket.h
@@ -515,6 +520,7 @@ share/doc/kea/examples/
 share/doc/kea/examples/agent/
 share/doc/kea/examples/agent/comments.json
 share/doc/kea/examples/agent/https.json
+share/doc/kea/examples/agent/rbac.json
 share/doc/kea/examples/agent/simple.json
 share/doc/kea/examples/ddns/
 share/doc/kea/examples/ddns/all-keys-netconf.json
@@ -536,7 +542,6 @@ share/doc/kea/examples/kea4/all-keys-netconf.json
 share/doc/kea/examples/kea4/all-keys.json
 share/doc/kea/examples/kea4/all-options.json
 share/doc/kea/examples/kea4/backends.json
-share/doc/kea/examples/kea4/cassandra.json
 share/doc/kea/examples/kea4/classify.json
 share/doc/kea/examples/kea4/classify2.json
 share/doc/kea/examples/kea4/comments.json
@@ -561,7 +566,6 @@ share/doc/kea/examples/kea6/all-keys-netconf.json
 share/doc/kea/examples/kea6/all-keys.json
 share/doc/kea/examples/kea6/all-options.json
 share/doc/kea/examples/kea6/backends.json
-share/doc/kea/examples/kea6/cassandra.json
 share/doc/kea/examples/kea6/classify.json
 share/doc/kea/examples/kea6/classify2.json
 share/doc/kea/examples/kea6/comments.json
@@ -644,6 +648,8 @@ share/kea/api/gss-tsig-key-get.json
 share/kea/api/gss-tsig-list.json
 share/kea/api/gss-tsig-purge-all.json
 share/kea/api/gss-tsig-purge.json
+share/kea/api/gss-tsig-rekey-all.json
+share/kea/api/gss-tsig-rekey.json
 share/kea/api/ha-continue.json
 share/kea/api/ha-heartbeat.json
 share/kea/api/ha-maintenance-cancel.json
@@ -788,11 +794,15 @@ share/kea/api/statistic-sample-count-set.json
 share/kea/api/status-get.json
 share/kea/api/subnet4-add.json
 share/kea/api/subnet4-del.json
+share/kea/api/subnet4-delta-add.json
+share/kea/api/subnet4-delta-del.json
 share/kea/api/subnet4-get.json
 share/kea/api/subnet4-list.json
 share/kea/api/subnet4-update.json
 share/kea/api/subnet6-add.json
 share/kea/api/subnet6-del.json
+share/kea/api/subnet6-delta-add.json
+share/kea/api/subnet6-delta-del.json
 share/kea/api/subnet6-get.json
 share/kea/api/subnet6-list.json
 share/kea/api/subnet6-update.json
