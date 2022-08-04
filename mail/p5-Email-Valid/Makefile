@@ -2,9 +2,8 @@ COMMENT=	check validity of Internet email addresses
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-Valid-1.202
+DISTNAME =	Email-Valid-1.203
 CATEGORIES=	mail
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes
