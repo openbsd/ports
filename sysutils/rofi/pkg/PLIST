@@ -11,6 +11,8 @@ lib/pkgconfig/rofi.pc
 @man man/man1/rofi-sensible-terminal.1
 @man man/man1/rofi-theme-selector.1
 @man man/man1/rofi.1
+@man man/man5/rofi-dmenu.5
+@man man/man5/rofi-keys.5
 @man man/man5/rofi-script.5
 @man man/man5/rofi-theme.5
 share/examples/rofi/

@@ -1,6 +1,6 @@
 COMMENT =		window switcher, run dialog and dmenu replacement
 
-V =			1.7.0
+V =			1.7.3
 DISTNAME =		rofi-${V}
 
 CATEGORIES =		sysutils x11
