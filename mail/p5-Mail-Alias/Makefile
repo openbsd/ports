@@ -1,6 +1,6 @@
 COMMENT=	manipulates e-mail alias files of various formats
 
-DISTNAME =	Mail-Alias-1.13
+DISTNAME =	Mail-Alias-1.15
 CATEGORIES=	mail
 CPAN_AUTHOR =	JIK
 
