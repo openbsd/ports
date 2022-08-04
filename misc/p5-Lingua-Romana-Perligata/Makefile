@@ -1,8 +1,7 @@
 COMMENT=		write Perl in Latin
 
-DISTNAME =		Lingua-Romana-Perligata-0.601
+DISTNAME =		Lingua-Romana-Perligata-0.602
 CATEGORIES=		misc
-REVISION =		0
 
 MODULES=		cpan
 PKG_ARCH=		*
