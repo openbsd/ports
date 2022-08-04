@@ -2,9 +2,8 @@ COMMENT=	perl implementation of XML-RPC
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	RPC-XML-0.80
+DISTNAME =	RPC-XML-0.82
 CATEGORIES=	net devel
-REVISION =	0
 
 # Artistic
 PERMIT_PACKAGE=	Yes
