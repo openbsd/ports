@@ -1,7 +1,6 @@
 COMMENT=	perl module to talk to a POP3 (RFC1081) server
 
-DISTNAME=	Mail-POP3Client-2.19
-REVISION=	1
+DISTNAME =	Mail-POP3Client-2.21
 CATEGORIES=	mail
 
 PERMIT_PACKAGE=	Yes
