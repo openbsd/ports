@@ -2,9 +2,8 @@ COMMENT=	module to map charset names registered with IANA
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	I18N-Charset-1.418
+DISTNAME =	I18N-Charset-1.419
 CATEGORIES=	misc
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
