@@ -3,9 +3,8 @@ COMMENT= 	deliver a piece of mail locally
 MODULES=	cpan
 PKG_ARCH=	*
 
-DISTNAME=	Email-LocalDelivery-1.200
+DISTNAME =	Email-LocalDelivery-1.201
 CATEGORIES=	mail
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes
