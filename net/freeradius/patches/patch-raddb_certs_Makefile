@@ -1,4 +1,5 @@
-Don't rely on gmake.
+Don't rely on gmake for this Makefile which is installed for the user
+to generate their own certificates.
 
 Index: raddb/certs/Makefile
 --- raddb/certs/Makefile.orig

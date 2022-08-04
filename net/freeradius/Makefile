@@ -66,7 +66,7 @@ COMPILER_LANGS = c
 MULTI_PACKAGES= -main -freetds -iodbc -ldap -memcached -mysql -pgsql -python -python3
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	no#...has its own _special_ libtool.
+USE_LIBTOOL=	no#...uses jlibtool, which is compiled during build
 
 RUN_DEPENDS-main=	#empty
 LIB_DEPENDS-main=	databases/gdbm \
