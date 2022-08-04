@@ -1,7 +1,7 @@
 COMMENT=	high speed arbitrary-size integer math
 
 MODULES=	cpan
-DISTNAME =	Math-GMP-2.24
+DISTNAME =	Math-GMP-2.25
 CATEGORIES=	math
 
 # LGPLv2+
