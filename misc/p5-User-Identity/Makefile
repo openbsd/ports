@@ -1,6 +1,6 @@
 COMMENT =		maintains info about a physical person
 
-DISTNAME =		User-Identity-1.00
+DISTNAME =		User-Identity-1.01
 CATEGORIES =		misc
 
 # perl
