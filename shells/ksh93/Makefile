@@ -1,6 +1,6 @@
 COMMENT =		AT&T Korn Shell
 
-V =			1.0.0
+V =			1.0.1
 GH_ACCOUNT =		ksh93
 GH_PROJECT =		ksh
 GH_TAGNAME =		v${V}
