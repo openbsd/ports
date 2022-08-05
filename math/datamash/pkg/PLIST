@@ -1,0 +1,51 @@
+@bin bin/datamash
+@bin bin/decorate
+@info info/datamash.info
+@man man/man1/datamash.1
+@man man/man1/decorate.1
+share/datamash/
+share/datamash/bash-completion.d/
+share/datamash/bash-completion.d/datamash
+share/datamash/examples/
+share/datamash/examples/genes.txt
+share/datamash/examples/genes_h.txt
+share/datamash/examples/readme.md
+share/datamash/examples/scores.txt
+share/datamash/examples/scores_h.txt
+share/locale/
+share/locale/da/
+share/locale/da/LC_MESSAGES/
+share/locale/da/LC_MESSAGES/datamash.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/datamash.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
+share/locale/eo/LC_MESSAGES/datamash.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/datamash.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/datamash.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
+share/locale/nb/LC_MESSAGES/datamash.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
+share/locale/nl/LC_MESSAGES/datamash.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/datamash.mo
+share/locale/sr/
+share/locale/sr/LC_MESSAGES/
+share/locale/sr/LC_MESSAGES/datamash.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
+share/locale/sv/LC_MESSAGES/datamash.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
+share/locale/uk/LC_MESSAGES/datamash.mo
+share/locale/vi/
+share/locale/vi/LC_MESSAGES/
+share/locale/vi/LC_MESSAGES/datamash.mo
