@@ -1,4 +1,3 @@
-@comment share/applications/
 share/freeciv/
 share/freeciv/civ1/
 share/freeciv/civ1.serv
@@ -669,22 +668,10 @@ share/freeciv/scenarios/europe_1900_WWI.sav.gz
 share/freeciv/scenarios/france-140x90-v2.sav.gz
 share/freeciv/scenarios/hagworld-120x60-v1.2.sav.gz
 share/freeciv/scenarios/iberian-peninsula-136x100-v1.0.sav.gz
-share/freeciv/scenarios/italy-100x100-v1.5.sav.gz
+share/freeciv/scenarios/italy-114x100-v2.0.sav.gz
 share/freeciv/scenarios/japan-88x100-v1.3.sav.gz
 share/freeciv/scenarios/north_america_116x100-v1.2.sav.gz
 share/freeciv/scenarios/tutorial.sav.gz
-@comment share/icons/
-@comment share/icons/hicolor/
-@comment share/icons/hicolor/128x128/
-@comment share/icons/hicolor/128x128/apps/
-@comment share/icons/hicolor/16x16/
-@comment share/icons/hicolor/16x16/apps/
-@comment share/icons/hicolor/32x32/
-@comment share/icons/hicolor/32x32/apps/
-@comment share/icons/hicolor/48x48/
-@comment share/icons/hicolor/48x48/apps/
-@comment share/icons/hicolor/64x64/
-@comment share/icons/hicolor/64x64/apps/
 share/locale/
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/

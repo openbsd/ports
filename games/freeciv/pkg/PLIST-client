@@ -3,23 +3,10 @@
 @pkgpath games/freeciv,-client,gtk2
 @bin bin/freeciv-gtk3
 @bin bin/freeciv-mp-gtk3
-@comment @man man/man6/freeciv-ftwl.6
-@comment lib/libfreeciv.a
-@comment lib/libfreeciv.la
 @man man/man6/freeciv-client.6
-@man man/man6/freeciv-gtk2.6
-@man man/man6/freeciv-gtk3.22.6
-@comment @man man/man6/freeciv-gtk3.6
 @man man/man6/freeciv-modpack.6
-@comment @man man/man6/freeciv-mp-cli.6
-@man man/man6/freeciv-mp-gtk2.6
-@comment man/man6/freeciv-mp-gtk3.6
-@comment man/man6/freeciv-mp-qt.6
-@comment @man man/man6/freeciv-qt.6
 @man man/man6/freeciv-ruledit.6
-@comment @man man/man6/freeciv-sdl.6
-@man man/man6/freeciv-sdl2.6
-@comment @man man/man6/freeciv-xaw.6
+@man man/man6/freeciv.6
 share/appdata/
 share/appdata/freeciv-gtk3.appdata.xml
 share/appdata/freeciv-mp-gtk3.appdata.xml

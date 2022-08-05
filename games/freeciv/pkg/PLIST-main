@@ -2,9 +2,6 @@
 @pkgpath games/freeciv
 @bin bin/freeciv-manual
 @bin bin/freeciv-server
-@comment lib/fcai/
-@comment lib/libfreeciv-srv.a
-@comment lib/libfreeciv-srv.la
 @man man/man6/freeciv-manual.6
 @man man/man6/freeciv-server.6
 share/appdata/

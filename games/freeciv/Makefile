@@ -2,7 +2,7 @@ COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
 COMMENT-share=	shared data files for Freeciv
 
-VERSION=	2.6.4
+VERSION=	2.6.7
 DISTNAME=	freeciv-${VERSION}
 PKGNAME-main=	freeciv-server-${VERSION}
 
@@ -16,18 +16,18 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeciv/}
 EXTRACT_SUFX=	.tar.bz2
 
-cWANTLIB += bz2 c crypto curl execinfo iconv intl lzma m nghttp2 pthread
-cWANTLIB += sqlite3 ssl z ${MODLUA_WANTLIB}
+cWANTLIB += bz2 c charset crypto curl execinfo iconv intl lzma m
+cWANTLIB += nghttp2 pthread sqlite3 ssl z ${MODLUA_WANTLIB}
 
 WANTLIB-main += readline ${cWANTLIB}
 
+WANTLIB-client += ${cWANTLIB}
 WANTLIB-client += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-client += Xrandr Xrender atk-1.0 atk-bridge-2.0 cairo cairo-gobject
 WANTLIB-client += epoxy expat fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0
-WANTLIB-client += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB-client += gthread-2.0 gtk-3 harfbuzz pango-1.0 pangocairo-1.0
-WANTLIB-client += pangoft2-1.0 pixman-1 png xcb xcb-render xcb-shm
-WANTLIB-client += ${cWANTLIB}
+WANTLIB-client += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB-client += gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-client += xcb
 
 WANTLIB-share=
 
@@ -87,5 +87,8 @@ PKG_ARCH-share=	*
 
 post-install:
 	mv ${WRKINST}/etc/freeciv ${PREFIX}/share/examples/
+	cd ${PREFIX}/man/man6 && \
+	    rm freeciv-{gtk2,gtk3*,mp-cli,mp-gtk*,mp-qt,qt,sdl*,xaw}.6
+	rm ${PREFIX}/lib/*.{a,la}
 
 .include <bsd.port.mk>
