@@ -1,0 +1,17 @@
+Backport https://github.com/rstudio/rstudio/commit/872e2806f74e922a25e0f9586faa6624883728ca
+to fix build with newer R.
+
+Index: src/cpp/r/session/RSession.cpp
+--- src/cpp/r/session/RSession.cpp.orig
++++ src/cpp/r/session/RSession.cpp
+@@ -67,6 +67,10 @@
+ 
+ #include <gsl/gsl>
+ 
++extern "C" {
++int Rf_countContexts(int, int);
++}
++
+ #define CTXT_BROWSER 16
+ 
+ // get rid of windows TRUE and FALSE definitions
