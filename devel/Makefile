@@ -259,6 +259,7 @@
      SUBDIR += libconfuse
      SUBDIR += libdaemon
      SUBDIR += libdisorder
+     SUBDIR += libdispatch
      SUBDIR += libdockapp
      SUBDIR += libdshconfig
      SUBDIR += libdvdread
