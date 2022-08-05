@@ -1,8 +1,6 @@
 COMMENT =		create and manage complex tmux sessions easily
 
-DISTNAME =		tmuxinator-1.1.3
-REVISION =		3
-FULLPKGNAME =		${DISTNAME}
+DISTNAME =		tmuxinator-3.0.5
 CATEGORIES =		sysutils
 
 # MIT
