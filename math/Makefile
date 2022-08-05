@@ -15,6 +15,7 @@
      SUBDIR += cgal
      SUBDIR += cglm
      SUBDIR += coq
+     SUBDIR += datamash
      SUBDIR += dieharder
      SUBDIR += double-conversion
      SUBDIR += ecm
