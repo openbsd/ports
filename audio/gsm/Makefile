@@ -1,7 +1,8 @@
 COMMENT=	GSM audio codec library and converter
 
-DISTNAME=	gsm-1.0.21
-WRKDIST=	${WRKDIR}/gsm-1.0-pl21
+V=		gsm-1.0-pl22
+DISTNAME=	${V:S/-pl/./}
+WRKDIST=	${WRKDIR}/${V}
 
 SHARED_LIBS=	gsm	1.0
 
@@ -14,6 +15,8 @@ MASTER_SITES=	https://www.quut.com/gsm/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MAKE_FLAGS=	CC="${CC}" DEBUG="${CFLAGS}" LDINC='-L$$(LIB)' \
 		LIBgsm_VERSION=${LIBgsm_VERSION}

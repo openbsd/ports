@@ -10,7 +10,7 @@ Index: Makefile
  
  LD 		= $(CC)
  
-@@ -83,7 +83,7 @@ VERSION = 1.0-pl20
+@@ -80,7 +80,7 @@ INSTALL_ROOT	=
  
  GSM_INSTALL_ROOT = $(INSTALL_ROOT)
  GSM_INSTALL_LIB = $(GSM_INSTALL_ROOT)/lib
@@ -19,7 +19,7 @@ Index: Makefile
  GSM_INSTALL_MAN = $(GSM_INSTALL_ROOT)/man/man3
  
  
-@@ -110,6 +110,8 @@ COMPRESSFLAGS 	= 
+@@ -107,6 +107,8 @@ COMPRESSFLAGS 	= 
  # RANLIB 	= true
  RANLIB	 	= ranlib
  
@@ -28,7 +28,7 @@ Index: Makefile
  #
  #    You shouldn't have to configure below this line if you're porting.
  # 
-@@ -139,11 +141,16 @@ CFLAGS	= $(CCFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST
+@@ -136,11 +138,16 @@ CFLAGS	= $(CCFLAGS) $(SASR) $(DEBUG) $(MULHACK) $(FAST
  LFLAGS	= $(LDFLAGS) $(LDINC)
  ######### It's $(LD) $(LFLAGS)
  
@@ -45,7 +45,7 @@ Index: Makefile
  TOAST	= $(BIN)/toast
  UNTOAST	= $(BIN)/untoast
  TCAT	= $(BIN)/tcat
-@@ -261,6 +268,7 @@ STUFF = 	ChangeLog			\
+@@ -258,6 +265,7 @@ STUFF = 	ChangeLog			\
  
  GSM_INSTALL_TARGETS =	\
  		$(GSM_INSTALL_LIB)/libgsm.a		\
@@ -53,7 +53,7 @@ Index: Makefile
  		$(GSM_INSTALL_INC)/gsm.h		\
  		$(GSM_INSTALL_MAN)/gsm.3		\
  		$(GSM_INSTALL_MAN)/gsm_explode.3	\
-@@ -280,9 +288,12 @@ TOAST_INSTALL_TARGETS =	\
+@@ -277,9 +285,12 @@ TOAST_INSTALL_TARGETS =	\
  		$(CC) $(CFLAGS) $?
  		@-mv `$(BASENAME) $@` $@ > /dev/null 2>&1
  
@@ -67,7 +67,7 @@ Index: Makefile
  		@-echo $(ROOT): Done.
  
  tst:		$(TST)/lin2cod $(TST)/cod2lin $(TOAST) $(TST)/test-result
-@@ -302,6 +313,9 @@ install:	toastinstall gsminstall
+@@ -299,6 +310,9 @@ install:	toastinstall gsminstall
  
  # The basic API: libgsm
  
@@ -77,7 +77,7 @@ Index: Makefile
  $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
  		-rm $(RMFLAGS) $(LIBGSM)
  		$(AR) $(ARFLAGS) $(LIBGSM) $(GSM_OBJECTS)
-@@ -311,7 +325,7 @@ $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
+@@ -308,7 +322,7 @@ $(LIBGSM):	$(LIB) $(GSM_OBJECTS)
  # Toast, Untoast and Tcat -- the compress-like frontends to gsm.
  
  $(TOAST):	$(BIN) $(TOAST_OBJECTS) $(LIBGSM)
@@ -86,7 +86,7 @@ Index: Makefile
  
  $(UNTOAST):	$(BIN) $(TOAST)
  		-rm $(RMFLAGS) $(UNTOAST)
-@@ -354,9 +368,7 @@ toastuninstall:
+@@ -351,9 +365,7 @@ toastuninstall:
  		fi
  
  $(TOAST_INSTALL_BIN)/toast:	$(TOAST)
@@ -97,7 +97,7 @@ Index: Makefile
  
  $(TOAST_INSTALL_BIN)/untoast:	$(TOAST_INSTALL_BIN)/toast
  		-rm $(RMFLAGS) $@
-@@ -401,7 +413,10 @@ $(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
+@@ -398,7 +410,10 @@ $(GSM_INSTALL_LIB)/libgsm.a:	$(LIBGSM)
  		cp $? $@
  		chmod 444 $@
  
@@ -108,7 +108,7 @@ Index: Makefile
  # Distribution
  
  dist:		gsm-1.0.tar.gz
-@@ -425,7 +440,7 @@ semi-clean:
+@@ -422,7 +437,7 @@ semi-clean:
  			$(TST)/gsm2cod 			\
  			$(TST)/*.*.*
  		-$(FIND) . \( -name core -o -name foo \) \
