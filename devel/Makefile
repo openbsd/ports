@@ -47,7 +47,6 @@
      SUBDIR += bats
      SUBDIR += bison
      SUBDIR += blame
-     SUBDIR += blocksruntime
      SUBDIR += boehm-gc
      SUBDIR += boost
      SUBDIR += boris

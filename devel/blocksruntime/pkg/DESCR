@@ -1,3 +1,0 @@
-A clone of the BlocksRuntime library portion of the compiler-rt library
-(http://compiler-rt.llvm.org/) for use with the clang compiler's -fblocks
-option.
