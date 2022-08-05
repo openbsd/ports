@@ -1,6 +1,6 @@
 add an implementation for max for long (ssize_t are long typedef'ed).
 Otherwise it will fail in parallel_partition.h:185 due to an ambiguous
-call.
+call.  Backport of https://github.com/embree/embree/pull/379
 
 Index: thirdparty/embree/common/math/math.h
 --- thirdparty/embree/common/math/math.h.orig

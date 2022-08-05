@@ -1,3 +1,5 @@
+Backport of https://github.com/embree/embree/pull/379
+
 1. we don't seem to have pthread_getaffinity_np in pthread_np.h; use sysctl
    like macos and android then.
 2. just fake getExecutableFileName and get{Virtual,Resident}MemoryBytes

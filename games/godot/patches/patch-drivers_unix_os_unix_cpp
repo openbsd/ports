@@ -1,16 +1,27 @@
+fix get_executable_path on OpenBSD; backport of
+https://github.com/godotengine/godot/pull/61540
+
 Index: drivers/unix/os_unix.cpp
 --- drivers/unix/os_unix.cpp.orig
 +++ drivers/unix/os_unix.cpp
-@@ -483,11 +483,7 @@ String OS_Unix::get_executable_path() const {
+@@ -482,12 +482,6 @@ String OS_Unix::get_executable_path() const {
+ 		return OS::get_executable_path();
  	}
  	return b;
- #elif defined(__OpenBSD__) || defined(__NetBSD__)
+-#elif defined(__OpenBSD__) || defined(__NetBSD__)
 -	char resolved_path[MAXPATHLEN];
 -
 -	realpath(OS::get_executable_path().utf8().get_data(), resolved_path);
 -
 -	return String(resolved_path);
-+	return OS::get_executable_path();
  #elif defined(__FreeBSD__)
  	int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
  	char buf[MAXPATHLEN];
+@@ -514,7 +508,6 @@ String OS_Unix::get_executable_path() const {
+ 
+ 	return path;
+ #else
+-	ERR_PRINT("Warning, don't know how to obtain executable path on this OS! Please override this function properly.");
+ 	return OS::get_executable_path();
+ #endif
+ }

@@ -3,18 +3,16 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
-V =		3.4.4
+V =		3.4.5
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
-REVISION-main =	3
-REVISION-tools = 1
 
 CATEGORIES =	games
 
 HOMEPAGE =	https://godotengine.org/
 
-MAINTAINER =	Omar Polo <op@omarpolo.com>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -22,10 +20,12 @@ PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -tools
 
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
-WANTLIB += LinearMath GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
-WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio steam_api theora
-WANTLIB += theoradec usbhid vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
+WANTLIB += GL LinearMath X11 X11-xcb Xau Xcursor Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm c drm enet execinfo
+WANTLIB += freetype intl m mbedcrypto mbedtls mbedx509 mpcdec
+WANTLIB += ogg opus opusfile pcre2-32 png sndio steam_api theora
+WANTLIB += theoradec usbhid vorbis vorbisfile vpx webp xcb xcb-dri2
+WANTLIB += xcb-glx z zstd
 
 WANTLIB-tools = ${WANTLIB}
 
@@ -39,7 +39,7 @@ DISTFILES =     ${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_SUFX =	.tar.xz
 DIST_SUBDIR =   ${PKGNAME}
 
-MODULES =		devel/scons
+MODULES =	devel/scons
 
 # Building with module_mono_enabled requires msbuild and to fix the
 # sharedlib_ext in modules/mono/config.py to '.so.1.0'

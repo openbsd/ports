@@ -35,8 +35,8 @@ Index: platform/x11/detect.py
 -
      ## Architecture
  
-     is64 = sys.maxsize > 2 ** 32
-@@ -331,6 +308,10 @@ def configure(env):
+     is64 = sys.maxsize > 2**32
+@@ -332,6 +309,10 @@ def configure(env):
      else:
          print("Warning: ALSA libraries not found. Disabling the ALSA audio driver.")
  
@@ -47,7 +47,7 @@ Index: platform/x11/detect.py
      if env["pulseaudio"]:
          if os.system("pkg-config --exists libpulse") == 0:  # 0 means found
              env.Append(CPPDEFINES=["PULSEAUDIO_ENABLED"])
-@@ -348,6 +329,9 @@ def configure(env):
+@@ -350,6 +331,9 @@ def configure(env):
      else:
          env["udev"] = False  # Linux specific
  
@@ -57,7 +57,7 @@ Index: platform/x11/detect.py
      # Linkflags below this line should typically stay the last ones
      if not env["builtin_zlib"]:
          env.ParseConfig("pkg-config zlib --cflags --libs")
-@@ -375,11 +359,6 @@ def configure(env):
+@@ -380,11 +364,6 @@ def configure(env):
              print(
                  "Warning: Creating template binaries enabled for PCK embedding is currently only supported with GNU ld, not gold or LLD."
              )
