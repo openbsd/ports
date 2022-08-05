@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1406 2022/08/04 15:11:54 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1407 2022/08/05 16:13:15 op Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -732,6 +732,7 @@ my $stem_extensions = {
 	'py-chardet' => 'py3-chardet',
 	'chrome-gnome-shell' => 'gnome-browser-connector',
 	'tdesktop-qt6' => 'tdesktop',
+	'blocksruntime' => 'libdispatch',
 };
 
 my $obsolete_reason = {};
