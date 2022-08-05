@@ -1,0 +1,14 @@
+backport of https://github.com/apple/swift-corelibs-libdispatch/pull/559
+
+Index: src/io.c
+--- src/io.c.orig
++++ src/io.c
+@@ -2308,7 +2308,7 @@ _dispatch_operation_advise(dispatch_operation_t op, si
+ 		default: (void)dispatch_assume_zero(err); break;
+ 	}
+ #else
+-#error "_dispatch_operation_advise not implemented on this platform"
++	(void)err;
+ #endif // defined(F_RDADVISE)
+ #endif // defined(_WIN32)
+ }

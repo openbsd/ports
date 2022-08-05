@@ -1,0 +1,18 @@
+backport of https://github.com/apple/swift-corelibs-libdispatch/pull/559
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -183,6 +183,12 @@ set_tests_properties(dispatch_io_pipe_close PROPERTIES
+ add_unit_test(dispatch_c99 SOURCES dispatch_c99.c)
+ add_unit_test(dispatch_plusplus SOURCES dispatch_plusplus.cpp)
+ 
++if (DISPATCH_USE_INTERNAL_WORKQUEUE)
++  add_unit_test(dispatch_workqueue
++                SOURCES
++                  dispatch_workqueue.c)
++endif()
++
+ # test-specific link options
+ if(WIN32)
+   target_link_libraries(dispatch_io_muxed PRIVATE WS2_32)

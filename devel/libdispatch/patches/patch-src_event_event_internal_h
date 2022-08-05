@@ -1,0 +1,14 @@
+backport of https://github.com/apple/swift-corelibs-libdispatch/pull/559
+
+Index: src/event/event_internal.h
+--- src/event/event_internal.h.orig
++++ src/event/event_internal.h
+@@ -125,6 +125,8 @@ _dispatch_timer_flags_from_clock(dispatch_clock_t cloc
+ 
+ #if defined(_WIN32)
+ typedef uintptr_t dispatch_unote_ident_t;
++#elif defined(__OpenBSD__)
++typedef uintptr_t dispatch_unote_ident_t;
+ #else
+ typedef uint32_t dispatch_unote_ident_t;
+ #endif

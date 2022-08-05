@@ -1,0 +1,23 @@
+COMMENT =	Grand Central Dispatch
+
+PKGNAME =	libdispatch-$V
+V =		5.5
+
+GH_ACCOUNT =	apple
+GH_PROJECT =	swift-corelibs-libdispatch
+GH_TAGNAME =	swift-$V-RELEASE
+
+SHARED_LIBS +=	BlocksRuntime	0.0
+SHARED_LIBS +=	dispatch	0.0
+
+CATEGORIES =	devel
+
+# Apache 2.0
+PERMIT_PACKAGE =	Yes
+
+# C++11 (gnu++11)
+WANTLIB += ${COMPILER_LIBCXX} m
+
+MODULES =		devel/cmake
+
+.include <bsd.port.mk>
