@@ -1,6 +1,6 @@
 COMMENT=	G.729a voice codec for Asterisk
 DISTNAME=	asterisk-g72x-1.4.3
-REVISION=	4
+REVISION=	5
 PKGNAME=	${DISTNAME:S/g72x/g729/}
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	telephony
@@ -18,7 +18,7 @@ WANTLIB += bcg729
 NO_TEST=	Yes
 
 # keep in sync with telephony/asterisk
-COMPILER=	ports-gcc
+COMPILER=	base-clang ports-gcc
 
 AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.16
