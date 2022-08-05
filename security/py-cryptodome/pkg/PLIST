@@ -273,8 +273,11 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}RSA.${
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/${MODPY_PYCACHE}_openssh.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ec_ws${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ed25519${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_ed448${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_openssh.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_openssh.pyi
+@so lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_x25519${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Random/__init__.pyi
@@ -419,14 +422,18 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_DSA.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_25519.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_448.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ECC_NIST.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_ElGamal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_RSA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_DSA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_ECC.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/${MODPY_PYCACHE}test_import_RSA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_DSA.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_25519.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_448.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ECC_NIST.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_ElGamal.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_RSA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/PublicKey/test_import_DSA.py
@@ -443,9 +450,11 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/${MODPY_PYCACHE}test_dss.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/${MODPY_PYCACHE}test_eddsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/${MODPY_PYCACHE}test_pkcs1_15.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/${MODPY_PYCACHE}test_pss.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/test_dss.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/test_eddsa.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/test_pkcs1_15.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Signature/test_pss.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Util/
@@ -486,8 +495,11 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}DSS.${
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}PKCS1_PSS.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}PKCS1_v1_5.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}eddsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}pkcs1_15.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/${MODPY_PYCACHE}pss.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/eddsa.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/eddsa.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pkcs1_15.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pkcs1_15.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Signature/pss.py
