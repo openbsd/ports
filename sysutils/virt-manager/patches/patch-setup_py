@@ -1,15 +1,6 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -71,7 +71,7 @@ class my_build_i18n(setuptools.Command):
-     ]
- 
-     def initialize_options(self):
--        self.merge_po = False
-+        self.merge_po = True
-     def finalize_options(self):
-         pass
- 
 @@ -182,7 +182,7 @@ from %(pkgname)s import %(filename)s
              open(newpath, "wb").write(out)
  

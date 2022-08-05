@@ -1,6 +1,6 @@
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-4.0.0
+DISTNAME=		virt-manager-4.1.0
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://virt-manager.org/
