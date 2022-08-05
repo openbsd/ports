@@ -1,0 +1,16 @@
+gcab-1.5/meson.build:11:2: ERROR: Command "/usr/local/bin/git describe --abbrev=4 --dirty" failed with status 128.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -6,10 +6,6 @@ project('gcab', 'c',
+ )
+ 
+ git_version = []
+-git = find_program('git', required: false)
+-if git.found()
+-  git_version = run_command(git, 'describe', '--abbrev=4', '--dirty', check: true).stdout().strip().split('-')
+-endif
+ 
+ # libtool versioning
+ lt_current = 2
