@@ -31,28 +31,12 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 DPB_PROPERTIES=	parallel
 
 # Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
-# However -fblocks fails:
-#
-# - configure test fails on ld.bfd arches:
-#
-#    echo 'int main(){return ^{return 42;}();}' | \
-#         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
-#
-# -> undefined reference to `_NSConcreteGlobalBlock' (also can be tested
-# on ld.lld arches by adding "-fuse-ld=bfd")
-#
-# - runtime fails on ld.lld arches: dlopen()ing the .so modules results in
-# undefined symbols from the BlocksRuntime lib (_NSConcreteStackBlock,
-# _Block_object_dispose, _Block_object_assign, etc); Asterisk appears to
-# start up but without modules loaded it is useless.
-#
-# So, as things stand, this requires building with gcc.
-#
-# If this is fixed and moved to clang, update telephony/asterisk-g729 in sync.
-COMPILER=		ports-gcc
+
+# Keep telephony/asterisk-g729 in sync.
+COMPILER=		base-clang ports-gcc
 # XXX bsd.port.arch.mk is included below, before compiler.port.mk can set
 # ONLY_FOR_ARCHS
-ONLY_FOR_ARCHS=		${GCC49_ARCHS}
+ONLY_FOR_ARCHS=		${CLANG_ARCHS} ${GCC49_ARCHS}
 
 SHARED_LIBS+=		asteriskssl ${SHLIB_V}
 SHARED_LIBS+=		asteriskpj ${SHLIB_V}
@@ -179,14 +163,14 @@ CFLAGS +=		-DHAVE_OPENSSL_BIO_METHOD
 
 .include <bsd.port.arch.mk>
 
-#.if ${PROPERTIES:Mclang}
-#BUILD_DEPENDS +=	devel/blocksruntime
-#LDFLAGS +=		-lBlocksRuntime
-#WANTLIB-main +=		${COMPILER_LIBCXX}
-#.else
+.if ${PROPERTIES:Mclang}
+LDFLAGS +=		-lBlocksRuntime
+BLOCKSLIBDEP =		devel/libdispatch 
+BLOCKSWANTLIB =		BlocksRuntime
+.else
 CFLAGS +=		-ftrampolines
 WANTLIB-main +=		${MODGCC4_CPPWANTLIB}
-#.endif
+.endif
 
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
@@ -312,9 +296,13 @@ EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 
 PKGSPEC-main=		asterisk-${VERSION_SPEC}
 
-.for i in ${MULTI_PACKAGES:N-main}
+.for i in ${MULTI_PACKAGES}
+.  if "$i" != "-main"
 PKGNAME$i ?=		asterisk$i-${VER}
 RUN_DEPENDS$i +=	telephony/asterisk/${SHORTVER}=${VER}
+.  endif
+LIB_DEPENDS$i +=	${BLOCKSLIBDEP}
+WANTLIB$i +=		${BLOCKSWANTLIB}
 .endfor
 
 # some of the patches have MS-DOS line endings which patch doesn't like.
