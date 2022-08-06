@@ -1,0 +1,18 @@
+Avoid conflict between soup-2.4 (which was pulled in here) and soup-3.0
+(pulled in via Gst).
+
+Possibly not squeaky clean but seems to work. Without this quodlibet-4.4.0
+was failing intermittently and quodlibet-4.5.0 failing every time.
+
+Index: quodlibet/_init.py
+--- quodlibet/_init.py.orig
++++ quodlibet/_init.py
+@@ -243,7 +243,7 @@ def _init_gtk():
+     gi.require_version("Gtk", "3.0")
+     gi.require_version("Gdk", "3.0")
+     gi.require_version("Pango", "1.0")
+-    gi.require_version('Soup', '2.4')
++    gi.require_version('Soup', '3.0')
+     gi.require_version('PangoCairo', "1.0")
+ 
+     from gi.repository import Gtk
