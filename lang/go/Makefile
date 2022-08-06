@@ -144,4 +144,25 @@ do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/${GOTOOLS}
 	${INSTALL_PROGRAM} -p ${WRKDIST}/${GOTOOLS}/* ${GOROOT}/${GOTOOLS}
 
+bootstrap: clean patch
+.if !${FLAVOR:Mnative_bootstrap}
+	@echo "bootstrap requires FLAVOR=native_bootstrap"
+	@exit 1
+.endif
+.	for arch in ${BIN_BOOTSTRAP_GOARCHS}
+		@echo "Building binary bootstrap for openbsd/${arch}..."
+		@cd ${WRKSRC} && \
+			${SETENV} ${MAKE_ENV} \
+			CGO_ENABLED=0 \
+			GOCACHE=${WRKDIST}/go-cache \
+			GOOS=openbsd GOARCH="${arch}" \
+			${_PBUILD} ./bootstrap.bash
+		@echo "Repacking archive..."; \
+			BOOTSTRAPTBZ="${WRKDIR}/go-openbsd-${arch}-bootstrap.tbz"; \
+			BOOTSTRAPTGZ="${WRKDIR}/go-openbsd-${arch}-bootstrap-${VERSION}.tar.gz"; \
+			bzcat $${BOOTSTRAPTBZ} \
+				| ${_PBUILD} gzip -o $${BOOTSTRAPTGZ} && \
+			ls -l $${BOOTSTRAPTGZ}
+.	endfor
+
 .include <bsd.port.mk>
