@@ -2,11 +2,29 @@ fix adding caldav calendar
 
 cf https://bugzilla.mozilla.org/show_bug.cgi?id=1737507
 https://bugzilla.mozilla.org/attachment.cgi?id=9282952
+https://hg.mozilla.org/comm-central/rev/da4bc023a082
+https://hg.mozilla.org/comm-central/rev/a4fc161fdb64
+https://hg.mozilla.org/comm-central/rev/ea86b9abe390
+
 Index: comm/mail/modules/DNS.jsm
 --- comm/mail/modules/DNS.jsm.orig
 +++ comm/mail/modules/DNS.jsm
-@@ -38,11 +38,22 @@ load_libresolv.prototype = {
-   _open() {
+@@ -27,22 +27,33 @@ var NS_T_SRV = 33; // DNS_TYPE_SRV
+ var NS_T_MX = 15; // DNS_TYPE_MX
+ 
+ // For Linux and Mac.
+-function load_libresolv() {
+-  this._open();
++function load_libresolv(os) {
++  this._open(os);
+ }
+ 
+ load_libresolv.prototype = {
+   library: null,
+ 
+   // Tries to find and load library.
+-  _open() {
++  _open(os) {
      function findLibrary() {
        let lastException = null;
 -      let candidates = [
@@ -15,11 +33,11 @@ Index: comm/mail/modules/DNS.jsm
 -        { name: "resolv", suffix: "" },
 -      ];
 +      let candidates = [];
-+      if(Services.appinfo.OS.toLowerCase() == "freebsd") {
++      if(os == "FreeBSD") {
 +        candidates = [
 +          { name: "c", suffix: ".7" },
 +        ]
-+      } else if(Services.appinfo.OS.toLowerCase() == "openbsd") {
++      } else if(os == "OpenBSD") {
 +        candidates = [
 +          { name: "c", suffix: "" },
 +        ]
@@ -49,3 +67,12 @@ Index: comm/mail/modules/DNS.jsm
        ctypes.default_abi,
        ctypes.unsigned_long,
        ctypes.unsigned_char.ptr
+@@ -436,7 +447,7 @@ if (typeof Components === "undefined") {
+ 
+   // eslint-disable-next-line no-unused-vars
+   function execute(aOS, aMethod, aArgs) {
+-    let DNS = aOS == "WINNT" ? new load_dnsapi() : new load_libresolv();
++    let DNS = aOS == "WINNT" ? new load_dnsapi() : new load_libresolv(aOS);
+     return DNS[aMethod].apply(DNS, aArgs);
+   }
+ } else {
