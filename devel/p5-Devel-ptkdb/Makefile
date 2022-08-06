@@ -1,6 +1,6 @@
 COMMENT=	perl debugger built with a PerlTk GUI
 
-DISTNAME=	Devel-ptkdb-1.233
+DISTNAME =	Devel-ptkdb-1.234
 EPOCH =		0
 CATEGORIES=	devel
 
