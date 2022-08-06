@@ -1,9 +1,9 @@
 COMMENT=	stack-based interpreter for terminal applications
 
-DISTNAME=	slang-2.3.2
+DISTNAME=	slang-2.3.3
 PKGNAME=	lib${DISTNAME}
 EXTRACT_SUFX=	.tar.bz2
-SHARED_LIBS=	slang 16.1
+SHARED_LIBS=	slang 17.0
 
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jedsoft.org/releases/slang/ \

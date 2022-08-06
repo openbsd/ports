@@ -1,7 +1,7 @@
 Index: autoconf/aclocal.m4
 --- autoconf/aclocal.m4.orig
 +++ autoconf/aclocal.m4
-@@ -600,13 +600,13 @@ fi
+@@ -604,13 +604,13 @@ fi
  
  dnl #Some defaults
  ELFLIB="lib\$(THIS_LIB).so"
@@ -18,31 +18,3 @@ Index: autoconf/aclocal.m4
  INSTALL_MODULE="\$(INSTALL)"
  SLANG_DLL_CFLAGS=""
  M_LIB="-lm"
-@@ -742,6 +742,27 @@ case "$host_os" in
-     ELF_DEP_LIBS="\$(DL_LIB)"
-     CC_SHARED_FLAGS="-shared -fPIC"
-     CC_SHARED="\$(CC) $CC_SHARED_FLAGS \$(CFLAGS)"
-+    ;;
-+   *openbsd* )
-+      case `arch -s` in
-+        sparc64)
-+          PIC_FLAG="-fPIC"
-+         ;;
-+        *)
-+          PIC_FLAG="-fpic"
-+         ;;
-+      esac
-+      DYNAMIC_LINK_FLAGS=""
-+      ELF_CC="$CC"
-+      ELF_CFLAGS="$CFLAGS $PIC_FLAG"
-+      ELF_LINK="$CC -shared $ELF_CFLAGS"
-+      ELF_LINK_CMD="\$(ELF_LINK)"
-+      ELF_DEP_LIBS=
-+      CC_SHARED_FLAGS="-shared $PIC_FLAG"
-+      CC_SHARED="$CC $CC_SHARED_FLAGS $CFLAGS"
-+      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
-+        DYNAMIC_LINK_FLAGS="-Wl,-E"
-+      fi
-     ;;
-   * )
-     echo "Note: ELF compiler for host_os=$host_os may be wrong"
