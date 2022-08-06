@@ -1,10 +1,4 @@
-../epiphany-42.1/lib/safe-browsing/ephy-gsb-service.c:121:45: warning: format specifies type 'long' but the argument has type 'gint64' (aka 'long long') [-Wformat]
-
-../epiphany-42.1/lib/safe-browsing/ephy-gsb-service.c:170:48: warning: format specifies type 'long' but the argument has type 'gint64' (aka 'long long') [-Wformat]
-
-../epiphany-42.1/lib/safe-browsing/ephy-gsb-service.c:591:10: warning: format specifies type 'long' but the argument has type 'long long' [-Wformat]
-
-../epiphany-42.1/lib/safe-browsing/ephy-gsb-service.c:597:10: warning: format specifies type 'long' but the argument has type 'long long' [-Wformat]
+64bit time_t
 
 Index: lib/safe-browsing/ephy-gsb-service.c
 --- lib/safe-browsing/ephy-gsb-service.c.orig
