@@ -3,8 +3,8 @@ USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	17.0.3
-PATCH_VER=	7
+BASE_VER=	17.0.4
+PATCH_VER=	8
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/jdk17u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
-BOOTJDK_DATE=	20210615
+BOOTJDK_DATE=	20220806
 
 CATEGORIES=	devel/jdk java
 
@@ -41,9 +41,9 @@ WANTLIB += harfbuzz iconv jpeg lcms2 m png pthread z
 
 NO_TEST=	Yes
 
-SUPDISTFILES+=	openjdk-jdk16u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
-		openjdk-jdk16u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
-		openjdk-jdk16u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1
+SUPDISTFILES+=	openjdk-jdk17u-bootjdk-i386-${BOOTJDK_DATE}.tar.gz:1  \
+		openjdk-jdk17u-bootjdk-amd64-${BOOTJDK_DATE}.tar.gz:1 \
+		openjdk-jdk17u-bootjdk-aarch64-${BOOTJDK_DATE}.tar.gz:1
 
 COMPILER=	base-clang ports-gcc
 
@@ -57,7 +57,7 @@ ERRORS += "Fatal: This flavor requires an installed jdk-17 package"
 BUILD_DEPENDS+=	jdk->=17v0,<18v0:devel/jdk/17
 BOOT_JDK=	${LOCALBASE}/jdk-17
 .else
-BOOT_JDK_DIST=	openjdk-jdk16u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
+BOOT_JDK_DIST=	openjdk-jdk17u-bootjdk-${MACHINE_ARCH}-${BOOTJDK_DATE}.tar.gz
 .  if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386) || (${MACHINE_ARCH}==aarch64)
 DISTFILES+=	${BOOT_JDK_DIST}:1
 .  endif
@@ -142,8 +142,6 @@ WRKTMP=		${WRKDIR}/tmp
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
 	chmod +x ${WRKDIST}/configure
-	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.1 ${WRKDIR}/bootjdk-libs/ # XXX
 
 .if ${PROPERTIES:Mdebuginfo}
 post-build:
