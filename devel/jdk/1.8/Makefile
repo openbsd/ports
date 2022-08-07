@@ -4,8 +4,8 @@ DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${V}
 BASE_VER=	1.8.0
-UPDATE_VER=	332
-BUILD_VER=	b09
+UPDATE_VER=	342
+BUILD_VER=	b07
 BSD_PORT_REL=	1
 V=		${BASE_VER}.${UPDATE_VER}.${BUILD_VER}.${BSD_PORT_REL}
 PKGNAME=	jdk-${V}
@@ -14,7 +14,7 @@ EPOCH=		0
 
 DIST_SUBDIR=	jdk
 DISTNAME=	jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
-BOOTJDK_DATE=	20210615
+BOOTJDK_DATE=	20220805
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/jdk8u-jdk8u${UPDATE_VER}-${BUILD_VER}.${BSD_PORT_REL}
 
@@ -128,8 +128,6 @@ SUBST_VARS=	JDKHOME LIBARCH
 
 post-extract:
 	chmod +x ${WRKDIST}/configure
-	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.1 ${WRKDIR}/bootjdk-libs/ # XXX
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8
@@ -157,6 +155,9 @@ build-bootjdk: build
 	@cd ${WRKTMP}/bootjdk/jre/lib/${LIBARCH} && \
 		${_PBUILD} rm libnpt.so libinstrument.so libsplashscreen.so \
 		libjsound.so libawt_xawt.so
+	@find ${WRKTMP}/bootjdk/jre/lib ${WRKTMP}/bootjdk/jre/bin \
+		-exec sh -c 'file {} | grep -q ELF && \
+		${_PBUILD} strip -S {}' \;
 	@LD_LIBRARY_PATH="${WRKTMP}/bootjdk/jre/lib/${LIBARCH}:${WRKTMP}/bootjdk/jre/lib/${LIBARCH}/server" \
 		find ${WRKTMP}/bootjdk -type f -exec ldd {} + 2>/dev/null | \
 		grep rlib | cut -d"/" -f 2-20 | sort -u | grep -v "\.so$$" | \
