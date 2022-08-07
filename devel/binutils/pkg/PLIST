@@ -1,0 +1,28 @@
+@bin bin/gaddr2line
+@bin bin/gar
+@bin bin/gc++filt
+@bin bin/gelfedit
+@bin bin/gnm
+@bin bin/gobjcopy
+@bin bin/gobjdump
+@bin bin/granlib
+@bin bin/greadelf
+@bin bin/gsize
+@bin bin/gstrings
+@bin bin/gstrip
+@info info/binutils.info
+@man man/man1/gaddr2line.1
+@man man/man1/gar.1
+@man man/man1/gc++filt.1
+@comment @man man/man1/gdlltool.1
+@man man/man1/gelfedit.1
+@man man/man1/gnm.1
+@man man/man1/gobjcopy.1
+@man man/man1/gobjdump.1
+@man man/man1/granlib.1
+@man man/man1/greadelf.1
+@man man/man1/gsize.1
+@man man/man1/gstrings.1
+@man man/man1/gstrip.1
+@comment @man man/man1/gwindmc.1
+@comment @man man/man1/gwindres.1
