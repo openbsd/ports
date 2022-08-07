@@ -122,7 +122,11 @@ CONFIGURE_ARGS +=	--with-fpectl \
 .if ${VERSION} != "2.7"
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
 .  if ${PROPERTIES:Mlld}
-CONFIGURE_ARGS +=	--with-lto --enable-optimizations
+CONFIGURE_ARGS +=	--with-lto
+.    if ${MACHINE_ARCH} != "powerpc"
+# On powerpc, the python binary would crash by "Segmentation fault".
+CONFIGURE_ARGS +=	--enable-optimizations
+.    endif
 .  endif
 TEST_IS_INTERACTIVE =	Yes
 .endif
