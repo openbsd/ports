@@ -42,4 +42,13 @@ AUTORECONF=	./autogen.sh
 #	cd ${WRKSRC}; ${MAKE_PROGRAM} astconv CPPFLAGS=-I${LOCALBASE}/include \
 #	    CFLAGS="${CFLAGS} -D_GNU_SOURCE -Wall -rdynamic" LDFLAGS=-lm
 
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mclang}
+CFLAGS +=	-fblocks
+LDFLAGS +=	-lBlocksRuntime
+LIB_DEPENDS +=	devel/libdispatch
+WANTLIB +=	BlocksRuntime
+.endif
+
 .include <bsd.port.mk>
