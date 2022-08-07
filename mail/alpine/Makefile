@@ -17,12 +17,12 @@ PICO_V=			5.09
 # grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
 PILOT_V=		2.99
 
-REVISION-main=		2
-REVISION-pico=		25
-REVISION-pilot=		25
-REVISION-c-client=	3
-REVISION-mailutil=	1
-REVISION-imap=		1
+REVISION-main=		3
+REVISION-pico=		26
+REVISION-pilot=		26
+REVISION-c-client=	4
+REVISION-mailutil=	2
+REVISION-imap=		2
 
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}
@@ -41,13 +41,14 @@ CATEGORIES-c-client=	devel mail
 CATEGORIES-pico=	editors
 CATEGORIES-pilot=	sysutils
 
-HOMEPAGE=		https://alpine.x10host.com/
+HOMEPAGE=		https://alpineapp.email/
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes
 
 # repo at https://repo.or.cz/alpine.git
-MASTER_SITES=		https://alpine.x10host.com/alpine/release/src/
+MASTER_SITES=		https://alpineapp.email/alpine/release/src/ \
+			https://alpineapp.email/alpine/release/src/Old/
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
