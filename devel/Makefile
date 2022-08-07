@@ -45,6 +45,7 @@
      SUBDIR += bamf
      SUBDIR += bashunit
      SUBDIR += bats
+     SUBDIR += binutils
      SUBDIR += bison
      SUBDIR += blame
      SUBDIR += boehm-gc
