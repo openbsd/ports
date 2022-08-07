@@ -108,9 +108,10 @@ videos, install the "ffmpeg" package:
 
 WebRTC support
 ==============
-For WebRTC to work properly, you need to enable audio recording:
+For WebRTC to work properly, you need to enable audio and video recording:
 
 # sysctl kern.audio.record=1
+# sysctl kern.video.record=1
 
 You will also need to change the ownership and/or permissions of the
 relevant video(4) device so that your user can access the webcam
