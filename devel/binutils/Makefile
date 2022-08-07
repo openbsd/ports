@@ -1,0 +1,35 @@
+COMMENT =	GNU binary utilities
+
+DISTNAME =	binutils-2.39
+
+CATEGORIES =	devel
+
+HOMEPAGE =	https://sourceware.org/binutils/
+
+MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+
+# GPLv3+
+PERMIT_PACKAGE =	Yes
+
+WANTLIB += c z
+
+MASTER_SITES =	${MASTER_SITE_GNU:=binutils/}
+
+CONFIGURE_STYLE =	gnu
+
+CONFIGURE_ARGS +=	--disable-gas \
+			--disable-gprof \
+			--disable-ld \
+			--disable-libctf \
+			--disable-nls \
+			--disable-install-libbfd \
+			--program-prefix=g \
+			--with-system-zlib
+
+USE_GMAKE =	Yes
+
+post-install:
+	@rm ${PREFIX}/info/bfd.info	# Installed by devel/gas
+	@rm -rf ${PREFIX}/*-unknown-openbsd${OSREV}
+
+.include <bsd.port.mk>
