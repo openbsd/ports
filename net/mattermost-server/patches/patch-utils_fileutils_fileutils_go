@@ -1,15 +1,16 @@
 Index: utils/fileutils/fileutils.go
 --- utils/fileutils/fileutils.go.orig
 +++ utils/fileutils/fileutils.go
-@@ -10,10 +10,7 @@ import (
+@@ -10,11 +10,7 @@ import (
  
- var (
- 	commonBaseSearchPaths = []string{
+ func CommonBaseSearchPaths() []string {
+ 	paths := []string{
 -		".",
 -		"..",
 -		"../..",
 -		"../../..",
+-		"../../../..",
 +		"${PREFIX}/share/mattermost",
  	}
- )
  
+ 	// this enables the server to be used in tests from a different repository
