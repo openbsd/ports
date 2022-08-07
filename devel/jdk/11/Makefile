@@ -3,8 +3,8 @@ USE_WXNEEDED=	Yes
 DPB_PROPERTIES=	parallel
 
 COMMENT=	OpenJDK Software Development Kit v${VERSION_STR}
-BASE_VER=	11.0.15
-PATCH_VER=	10
+BASE_VER=	11.0.16
+PATCH_VER=	8
 BSD_PORT_REL=	1
 VERSION_STR=	${BASE_VER}+${PATCH_VER}-${BSD_PORT_REL}
 PACKAGE_VER=	${BASE_VER}.${PATCH_VER}.${BSD_PORT_REL}
@@ -16,7 +16,7 @@ DIST_SUBDIR=	jdk
 DISTNAME=	jdk-${VERSION_STR}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=	${WRKDIR}/jdk11u-jdk-${BASE_VER}-${PATCH_VER}-${BSD_PORT_REL}
-BOOTJDK_DATE=	20210615
+BOOTJDK_DATE=	20220805
 
 CATEGORIES=	devel/jdk java
 
@@ -152,8 +152,6 @@ WRKTMP=		${WRKDIR}/tmp
 post-extract:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKDIST}/configure
 	chmod +x ${WRKDIST}/configure
-	chmod 644 ${WRKDIR}/bootjdk-libs/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.1 ${WRKDIR}/bootjdk-libs/ # XXX
 
 .if ${PROPERTIES:Mdebuginfo}
 post-build:
