@@ -1,8 +1,8 @@
 COMMENT=	full suite pictographic icons
 
-VERSION =	6.1.1
-PKGNAME =	font-awesome-${VERSION}
-DISTNAME =	fontawesome-free-${VERSION}-desktop
+V =		6.1.2
+PKGNAME =	font-awesome-${V}
+DISTNAME =	fontawesome-free-${V}-desktop
 
 CATEGORIES=	fonts
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://fontawesome.com
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-MASTER_SITES =	https://github.com/FortAwesome/Font-Awesome/releases/download/${VERSION}/
+MASTER_SITES =	https://github.com/FortAwesome/Font-Awesome/releases/download/${V}/
 EXTRACT_SUFX =	.zip
 
 # SIL OFL 1.1
