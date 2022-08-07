@@ -3,7 +3,7 @@ ARM uses compiler intrinsics, so don't require GNU as.
 Index: build/cmake/aom_configure.cmake
 --- build/cmake/aom_configure.cmake.orig
 +++ build/cmake/aom_configure.cmake
-@@ -160,17 +160,6 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
+@@ -183,17 +183,6 @@ elseif(AOM_TARGET_CPU MATCHES "arm")
        set(AS_EXECUTABLE as)
      endif()
    endif()
