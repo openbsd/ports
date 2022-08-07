@@ -1,7 +1,7 @@
 COMMENT=	x86 machine simulator
 
 DISTNAME=	bochs-2.7
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
@@ -17,6 +17,7 @@ COMPILER =	base-clang ports-gcc base-gcc
 CONFIGURE_STYLE= gnu autoconf no-autoheader
 CONFIGURE_ARGS=	--disable-docbook \
 		--enable-all-optimizations \
+		--enable-clgd54xx \
 		--enable-avx \
 		--enable-e1000 \
 		--enable-es1370 \
