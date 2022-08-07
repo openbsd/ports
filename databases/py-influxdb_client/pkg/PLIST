@@ -50,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}query_api_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}tasks_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}users_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}write_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/${MODPY_PYCACHE}write_api_async.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/_base.py
@@ -82,6 +83,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/date_utils.
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/date_utils_pandas.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/helpers.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/util/multiprocessing_helper.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/warnings.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/influxdb_client/client/write/${MODPY_PYCACHE}/

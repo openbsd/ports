@@ -1,6 +1,6 @@
 COMMENT =	Python client library for InfluxDB 1.8/2.0+/Cloud
 
-MODPY_EGG_VERSION =	1.30.0
+MODPY_EGG_VERSION =	1.31.0
 DISTNAME =	influxdb_client-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -20,9 +20,9 @@ MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =	devel/py-certifi${MODPY_FLAVOR} \
-				devel/py-dateutil${MODPY_FLAVOR} \
-				devel/py-rx${MODPY_FLAVOR} \
-				www/py-urllib3${MODPY_FLAVOR}
+		devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-rx${MODPY_FLAVOR} \
+		www/py-urllib3${MODPY_FLAVOR}
 
 # tests requires new packages: randomize, aioresponses
 NO_TEST =	Yes
