@@ -67,7 +67,7 @@ Index: configure
  
  	     ;;
  	  esac
-@@ -32085,6 +32093,7 @@ netbsd)
+@@ -32083,6 +32091,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -75,7 +75,7 @@ Index: configure
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -32103,6 +32112,7 @@ openbsd)
+@@ -32101,6 +32110,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"
