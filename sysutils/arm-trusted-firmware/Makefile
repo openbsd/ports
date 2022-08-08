@@ -4,10 +4,9 @@ COMMENT=	ARM Trusted Firmware
 
 GH_ACCOUNT=	ARM-software
 GH_PROJECT=	arm-trusted-firmware
-GH_TAGNAME=	v2.5
+GH_TAGNAME=	v2.7.0
 
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	sysutils
 
