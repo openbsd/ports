@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1683,7 +1683,7 @@ nano_SOURCES = \
+@@ -1685,7 +1685,7 @@ nano_SOURCES = \
  		utils.c \
  		winio.c
  
@@ -10,12 +10,12 @@ Index: src/Makefile.in
  		$(LIB_CLOCK_GETTIME) $(LIBTHREAD)
  
  all: all-am
-@@ -2056,7 +2056,7 @@ winio.o: revision.h
+@@ -2058,7 +2058,7 @@ winio.o: revision.h
  
  # Always run the commands in this rule.  But update the target
  # only when the revision actually changed.
 -revision.h: FORCE
 +revision.h:
  	@[ -f $@ ] || touch $@
- 	@echo "#define $(SOMETHING)" | cmp -s $@ - || \
- 			echo "#define $(SOMETHING)" > $@
+ 	@! git describe >/dev/null 2>&1 || \
+ 			echo "#define $(SOMETHING)" | cmp -s $@ - || \
