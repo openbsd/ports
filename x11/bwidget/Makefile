@@ -1,14 +1,15 @@
 COMMENT =		high-level widget set for Tcl/Tk
 
-DISTNAME =		bwidget-1.9.12
+DISTNAME =		bwidget-1.9.15
 CATEGORIES =		x11
-HOMEPAGE =		http://sourceforge.net/projects/tcllib/
+HOMEPAGE =		https://core.tcl-lang.org/bwidget/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
+EXTRACT_SUFX =		.tar.bz2
 MODULES =		x11/tk
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 TEST_DEPENDS =		${MODTK_BUILD_DEPENDS}
