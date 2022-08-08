@@ -3527,6 +3527,7 @@ go/src/cmd/go/testdata/script/work.txt
 go/src/cmd/go/testdata/script/work_build_no_modules.txt
 go/src/cmd/go/testdata/script/work_edit.txt
 go/src/cmd/go/testdata/script/work_env.txt
+go/src/cmd/go/testdata/script/work_goproxy_off.txt
 go/src/cmd/go/testdata/script/work_gowork.txt
 go/src/cmd/go/testdata/script/work_init_gowork.txt
 go/src/cmd/go/testdata/script/work_init_path.txt
@@ -6727,6 +6728,7 @@ go/src/internal/cpu/cpu_arm64_darwin.go
 go/src/internal/cpu/cpu_arm64_freebsd.go
 go/src/internal/cpu/cpu_arm64_hwcap.go
 go/src/internal/cpu/cpu_arm64_linux.go
+go/src/internal/cpu/cpu_arm64_openbsd.go
 go/src/internal/cpu/cpu_arm64_other.go
 go/src/internal/cpu/cpu_mips.go
 go/src/internal/cpu/cpu_mips64x.go
@@ -12046,6 +12048,7 @@ go/test/fixedbugs/issue5291.dir/
 go/test/fixedbugs/issue5291.dir/pkg1.go
 go/test/fixedbugs/issue5291.dir/prog.go
 go/test/fixedbugs/issue5291.go
+go/test/fixedbugs/issue52953.go
 go/test/fixedbugs/issue53137.dir/
 go/test/fixedbugs/issue53137.dir/main.go
 go/test/fixedbugs/issue53137.go
@@ -12975,7 +12978,6 @@ go/test/typeparam/issue51836.dir/a.go
 go/test/typeparam/issue51836.dir/aa.go
 go/test/typeparam/issue51836.dir/p.go
 go/test/typeparam/issue51836.go
-go/test/typeparam/issue51840.go
 go/test/typeparam/issue52026.go
 go/test/typeparam/issue52117.dir/
 go/test/typeparam/issue52117.dir/a.go
@@ -12983,7 +12985,6 @@ go/test/typeparam/issue52117.dir/b.go
 go/test/typeparam/issue52117.go
 go/test/typeparam/issue52228.go
 go/test/typeparam/issue52241.go
-go/test/typeparam/issue53309.go
 go/test/typeparam/issue53419.go
 go/test/typeparam/issue53477.go
 go/test/typeparam/list.go
