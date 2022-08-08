@@ -1,12 +1,11 @@
 COMMENT=	tool to handle the administration of MySQL over the web
 
-V=		5.1.3
+V=		5.2.0
 
 PKGNAME=	phpMyAdmin-$V
 DISTNAME=	phpMyAdmin-$V-all-languages
 CATEGORIES=	www
 HOMEPAGE=	http://www.phpmyadmin.net/
-REVISION=	0
 
 PORTROACH=	site:https://www.phpmyadmin.net/files/
 
