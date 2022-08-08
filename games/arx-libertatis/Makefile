@@ -39,6 +39,12 @@ CONFIGURE_ARGS =	-DBUILD_CRASHHANDLER=OFF \
 			-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/arx \
 			-DUNITY_BUILD=OFF
 
+# ld: error: linking module flags 'SmallDataLimit': IDs have conflicting values in
+# 'CMakeFiles/common.dir/src/io/log/ConsoleLogger.cpp.o' and 'ld-temp.o'
+.if ${MACHINE_ARCH} == "riscv64"
+CONFIGURE_ARGS +=	-DUSE_LTO=OFF
+.endif
+
 MODCMAKE_LDFLAGS =		-lpthread
 
 PORTHOME =	${WRKDIR}
