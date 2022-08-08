@@ -1,6 +1,6 @@
 PORTROACH=		limit:^6
 
-VERSION=		6.27.0
+VERSION=		6.28.0
 
 MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 
