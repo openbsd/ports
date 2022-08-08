@@ -1,7 +1,7 @@
 COMMENT-main=		helper library for geocoding services
 COMMENT-icons=		common icons for geocode-glib
 
-GNOME_VERSION=		3.26.3
+GNOME_VERSION=		3.26.4
 GNOME_PROJECT=		geocode-glib
 
 PKGNAME-main=		${GNOME_PROJECT}-${GNOME_VERSION}
