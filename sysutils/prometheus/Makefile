@@ -4,6 +4,7 @@ V =			2.36.2
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
 GH_TAGNAME =		v${V}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
