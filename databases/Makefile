@@ -168,7 +168,6 @@
      SUBDIR += py-ldap0,python3
      SUBDIR += py-ldap3,python3
      SUBDIR += py-minidb,python3
-     SUBDIR += py-mongo
      SUBDIR += py-mongo,python3
      SUBDIR += py-mysqlclient,python3
      SUBDIR += py-odbc,python3

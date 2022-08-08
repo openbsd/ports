@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1407 2022/08/05 16:13:15 op Exp $
+# $OpenBSD: Quirks.pm,v 1.1408 2022/08/08 07:43:06 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -733,6 +733,7 @@ my $stem_extensions = {
 	'chrome-gnome-shell' => 'gnome-browser-connector',
 	'tdesktop-qt6' => 'tdesktop',
 	'blocksruntime' => 'libdispatch',
+	'py-mongo' => 'py3-mongo',
 };
 
 my $obsolete_reason = {};

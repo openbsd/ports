@@ -1,7 +1,6 @@
 COMMENT =	Python driver for mongodb
 
-# 4.x drops py2; currently used in test target in databases/mongodb
-MODPY_EGG_VERSION = 3.12.0
+MODPY_EGG_VERSION = 4.2.0
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
 
@@ -18,10 +17,13 @@ MODPY_PI =	Yes
 
 MODULES =	lang/python
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
+
+# unported dep
+MODPY_PYTEST_ARGS =	--ignore test/mockupdb
 
 # needs a running mongodb instance in 127.0.0.1:27017,
 # and increased kern.somaxconn
