@@ -1,8 +1,7 @@
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-2.2.6
+DISTNAME=	mutt-2.2.7
 EPOCH=		3
-REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
