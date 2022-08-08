@@ -11,7 +11,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.36.5
+V =			2.36.6
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 
