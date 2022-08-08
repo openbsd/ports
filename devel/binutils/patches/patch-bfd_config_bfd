@@ -1,0 +1,17 @@
+Add OpenBSD AArch64 Little Endian BFD support.
+
+Index: bfd/config.bfd
+--- bfd/config.bfd.orig
++++ bfd/config.bfd
+@@ -259,6 +259,11 @@ case "${targ}" in
+     targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
+     want64=true
+     ;;
++  aarch64-*-openbsd*)
++    targ_defvec=aarch64_elf64_le_vec
++    targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
++    want64=true
++    ;;
+   aarch64-*-fuchsia*)
+     targ_defvec=aarch64_elf64_le_vec
+     targ_selvecs="aarch64_elf64_be_vec arm_elf32_le_vec arm_elf32_be_vec"
