@@ -3,7 +3,7 @@ COMMENT-gtk =		GTK+-based modules for baresip
 
 GH_ACCOUNT =	baresip
 GH_PROJECT =	baresip
-GH_TAGNAME =	v2.4.0
+GH_TAGNAME =	v2.6.0
 
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
@@ -13,18 +13,17 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 WANTLIB-main += X11 Xext avcodec avdevice avfilter avformat avutil
-WANTLIB-main += c gsm m mosquitto mp3lame mpg123 opus png postproc
+WANTLIB-main += c m mosquitto mp3lame mpg123 opus png postproc
 WANTLIB-main += pthread re rem sndfile sndio spandsp speexdsp swresample
 WANTLIB-main += swscale twolame v4l2 vpx opencore-amrnb
 
 WANTLIB-gtk += atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB-gtk += glib-2.0 gobject-2.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0
+WANTLIB-gtk += glib-2.0 gobject-2.0 gstreamer-1.0
 WANTLIB-gtk += gtk-3 harfbuzz intl pango-1.0 pangocairo-1.0
 WANTLIB-gtk += re
 
 BUILD_DEPENDS =		telephony/libzrtp>=0.20170512
-LIB_DEPENDS-main =	audio/gsm \
-			audio/libsndfile \
+LIB_DEPENDS-main =	audio/libsndfile \
 			audio/opencore-amr \
 			audio/opus \
 			audio/twolame \
@@ -36,7 +35,7 @@ LIB_DEPENDS-main =	audio/gsm \
 			telephony/baresip/re>=2.4.0 \
 			telephony/baresip/rem>=2.4.0 \
 			telephony/spandsp
-LIB_DEPENDS-gtk =	multimedia/gstreamer1/plugins-base \
+LIB_DEPENDS-gtk =	multimedia/gstreamer1/core \
 			telephony/baresip/re>=2.4.0 \
 			x11/gtk+3,-main
 RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main>=1.1.0
@@ -62,7 +61,6 @@ MAKE_FLAGS +=		MOD_AUTODETECT= \
 			USE_G726=yes \
 			USE_GSM=yes \
 			USE_GST= \
-			USE_GST_VIDEO= \
 			USE_H265=yes \
 			USE_L16=yes \
 			USE_MPA=yes \
@@ -95,7 +93,6 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk}
 .if ${BUILD_PACKAGES:M-gtk}
 MAKE_FLAGS +=		USE_CAIRO=yes \
 			USE_GST=yes \
-			USE_GST_VIDEO=yes \
 			USE_GTK=yes
 .endif
 

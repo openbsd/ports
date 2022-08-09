@@ -3,7 +3,7 @@ otherwise echo tries to link twice its objfile and that results in conflicting e
 Index: mk/modules.mk
 --- mk/modules.mk.orig
 +++ mk/modules.mk
-@@ -181,7 +181,6 @@ MODULES   += contact
+@@ -175,7 +175,6 @@ MODULES   += contact
  MODULES   += ctrl_tcp
  MODULES   += debug_cmd
  MODULES   += ebuacip

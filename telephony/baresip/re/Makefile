@@ -2,13 +2,13 @@ COMMENT =		portable library for real-time communications
 
 GH_ACCOUNT =	baresip
 GH_PROJECT =	re
-GH_TAGNAME =	v2.4.0
+GH_TAGNAME =	v2.6.1
 
 # C11
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-SHARED_LIBS =		re	7.0
+SHARED_LIBS =		re	8.0
 CATEGORIES +=		devel
 
 WANTLIB = crypto pthread ssl z

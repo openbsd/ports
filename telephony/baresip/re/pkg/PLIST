@@ -23,7 +23,6 @@ include/re/re_ice.h
 include/re/re_jbuf.h
 include/re/re_json.h
 include/re/re_list.h
-include/re/re_lock.h
 include/re/re_main.h
 include/re/re_mbuf.h
 include/re/re_md5.h

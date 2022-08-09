@@ -22,7 +22,6 @@ lib/baresip/modules/
 @so lib/baresip/modules/g711.so
 @so lib/baresip/modules/g722.so
 @so lib/baresip/modules/g726.so
-@so lib/baresip/modules/gsm.so
 @so lib/baresip/modules/httpd.so
 @so lib/baresip/modules/ice.so
 @so lib/baresip/modules/l16.so

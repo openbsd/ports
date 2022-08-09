@@ -2,13 +2,13 @@ COMMENT =		library for real-time audio and video processing
 
 GH_ACCOUNT =	baresip
 GH_PROJECT =	rem
-GH_TAGNAME =	v2.4.0
-SHARED_LIBS =		rem	2.0
+GH_TAGNAME =	v2.6.0
+SHARED_LIBS =		rem	3.0
 CATEGORIES +=		multimedia devel
 
 WANTLIB += m re
 
-LIB_DEPENDS =		telephony/baresip/re>=2.4.0
+LIB_DEPENDS =		telephony/baresip/re>=2.6.0
 
 MAKE_FLAGS =		LIB_SUFFIX=.so.${LIBrem_VERSION}
 MAKE_ENV +=		LIBS="-lm -lre" V=1
