@@ -1,0 +1,17 @@
+3edc93673f94604c203be1c899dffb25575985db:
+
+There are probably more used in the public link interface, but these
+were enough to fix building dependents with cmake 3.24.0-rc3, which
+seems to be stricter than 3.23.x.
+
+Index: messageviewer/KF5MessageViewerConfig.cmake.in
+--- messageviewer/KF5MessageViewerConfig.cmake.in.orig
++++ messageviewer/KF5MessageViewerConfig.cmake.in
+@@ -3,6 +3,7 @@ include(CMakeFindDependencyMacro)
+ find_dependency(KF5PimCommon "@PIMCOMMON_LIB_VERSION@")
+ find_dependency(KF5MessageCore "@MESSAGELIB_LIB_VERSION@")
+ find_dependency(KF5MimeTreeParser "@MESSAGELIB_LIB_VERSION@")
++find_dependency(KF5WebEngineViewer "@MESSAGELIB_LIB_VERSION@")
+ find_dependency(KF5Akonadi "@AKONADI_VERSION@")
+ find_dependency(KF5Mime "@KMIME_LIB_VERSION@")
+ find_dependency(KF5Contacts "@KF5_MIN_VERSION@")
