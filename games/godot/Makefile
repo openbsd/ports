@@ -99,6 +99,15 @@ NO_TEST =		Yes
 
 DPB_PROPERTIES =	parallel
 
+.include <bsd.port.arch.mk>
+.if ${MACHINE_ARCH} == "riscv64"
+BINSUFFIX =		rv64
+.elif ${PROPERTIES:Mlp64}
+BINSUFFIX =		64
+.else
+BINSUFFIX =		32
+.endif
+
 .if ${MACHINE_ARCH:Mhppa}
 LDFLAGS +=     -latomic
 WANTLIB +=     atomic
@@ -123,9 +132,9 @@ do-build:
 	@${MODSCONS_BUILD_TARGET} tools=yes target=release_debug
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.[36]* \
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.${BINSUFFIX} \
 		${PREFIX}/bin/godot
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.tools.* \
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/godot.x11.opt.tools.${BINSUFFIX} \
 		${PREFIX}/bin/godot-tools
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man6
 	${INSTALL_MAN} ${WRKSRC}/misc/dist/linux/godot.6 \
