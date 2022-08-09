@@ -1,6 +1,6 @@
 COMMENT =	simple, lightweight XMPP C library
 
-V =		0.12.1
+V =		0.12.2
 DISTNAME =	libstrophe-${V}
 
 SHARED_LIBS =	strophe                 4.0 # 12.1
