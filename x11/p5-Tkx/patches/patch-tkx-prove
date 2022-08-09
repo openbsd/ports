@@ -1,6 +1,7 @@
---- tkx-prove.orig	Sun Nov 29 15:34:20 2009
-+++ tkx-prove	Thu May  7 05:46:07 2015
-@@ -112,8 +112,7 @@ sub set_dir {
+Index: tkx-prove
+--- tkx-prove.orig
++++ tkx-prove
+@@ -113,8 +113,7 @@ sub set_dir {
      }, "$dir/t");
  }
  
@@ -10,7 +11,7 @@
  
  $tree->g_bind("<<TreeviewSelect>>", \&tree_select);
  
-@@ -134,16 +133,19 @@ sub run_tests {
+@@ -135,16 +134,19 @@ sub run_tests {
  	$tree->set($item, "time", "-");
  	Tkx::update();
  

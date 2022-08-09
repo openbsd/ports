@@ -1,9 +1,8 @@
-COMMENT =		Tk extension module for Perl
+COMMENT =		Perl interface to the Tk graphical toolkit
 
-DISTNAME =		Tkx-1.09
+DISTNAME =		Tkx-1.10
 CATEGORIES =		x11 devel
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
