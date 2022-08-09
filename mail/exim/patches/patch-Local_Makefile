@@ -88,7 +88,7 @@ Index: Local/Makefile
  # LOOKUP_PGSQL=yes
  # LOOKUP_REDIS=yes
  # LOOKUP_SQLITE=yes
-@@ -514,7 +514,7 @@ SUPPORT_DANE=yes
+@@ -521,7 +521,7 @@ SUPPORT_DANE=yes
  # and the MIME ACL. Please read the documentation to learn more about these
  # features.
  
@@ -97,7 +97,7 @@ Index: Local/Makefile
  
  # If you have content scanning you may wish to only include some of the scanner
  # interfaces.  Uncomment any of these lines to remove that code.
-@@ -607,9 +607,9 @@ DISABLE_MAL_MKS=yes
+@@ -604,9 +604,9 @@ DISABLE_MAL_MKS=yes
  # using libopendmarc libraries. You must have SPF and DKIM support enabled also.
  # Library version libopendmarc-1.4.1-1.fc33.x86_64  (on Fedora 33) is known broken;
  # 1.3.2-3 works.  I seems that the OpenDMARC project broke their API.
@@ -110,7 +110,7 @@ Index: Local/Makefile
  # Uncomment the following if you need to change the default. You can
  # override it at runtime (main config option dmarc_tld_file)
  # DMARC_TLD_FILE=/etc/exim/opendmarc.tlds
-@@ -764,18 +764,18 @@ ALLOW_INSECURE_TAINTED_DATA=yes
+@@ -754,18 +754,18 @@ FIXED_NEVER_USERS=root
  # included in the Exim binary. You will then need to set up the run time
  # configuration to make use of the mechanism(s) selected.
  
@@ -134,7 +134,7 @@ Index: Local/Makefile
  
  # Heimdal through 1.5 required pkg-config 'heimdal-gssapi'; Heimdal 7.1
  # requires multiple pkg-config files to work with Exim, so the second example
-@@ -822,7 +822,7 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -812,7 +812,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # the Sieve filter support. For those OS where iconv() is known to be installed
  # as standard, the file in OS/Makefile-xxxx contains
  #
@@ -143,7 +143,7 @@ Index: Local/Makefile
  #
  # If you are not using one of those systems, but have installed iconv(), you
  # need to uncomment that line above. In some cases, you may find that iconv()
-@@ -911,7 +911,7 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -901,7 +901,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -152,7 +152,7 @@ Index: Local/Makefile
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -983,7 +983,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -973,7 +973,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # (version 5.004 or later) installed, set EXIM_PERL to perl.o. Using embedded
  # Perl costs quite a lot of resources. Only do this if you really need it.
  
@@ -161,7 +161,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1044,9 +1044,9 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1034,9 +1034,9 @@ ZCAT_COMMAND=/usr/bin/zcat
  # installed on your system (www.libspf2.org). Depending on where it is installed
  # you may have to edit the CFLAGS and LDFLAGS lines.
  
@@ -173,7 +173,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1111,7 +1111,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1101,7 +1101,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # group. Once you have installed saslauthd, you should arrange for it to be
  # started by root at boot time.
  
@@ -182,7 +182,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1159,7 +1159,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1149,7 +1149,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # aliases). The following setting can be changed to specify a different
  # location for the system alias file.
  
@@ -191,7 +191,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1424,7 +1424,7 @@ EXIM_TMPDIR="/tmp"
+@@ -1414,7 +1414,7 @@ EXIM_TMPDIR="/tmp"
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
