@@ -3,18 +3,18 @@ Install to OpenBSD locations and adjust pkgIndex.tcl accordingly.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -432,8 +432,8 @@ install-lib-binaries: binaries
- 		echo " $(RANLIB) $$p"; \
- 		$(RANLIB) $$p; \
- 	    fi; \
+@@ -451,8 +451,8 @@ install-lib-binaries: binaries
+ 	@$(INSTALL_DATA_DIR) "$(DESTDIR)$(pkglibdir)"
+ 	@list='$(lib_BINARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
 -	    echo " $(INSTALL_LIBRARY) $$p $(DESTDIR)$(pkglibdir)/$$p"; \
--	    $(INSTALL_LIBRARY) $$p $(DESTDIR)$(pkglibdir)/$$p; \
+-	    $(INSTALL_LIBRARY) $$p "$(DESTDIR)$(pkglibdir)/$$p"; \
 +	    echo " $(INSTALL_LIBRARY) $$p $(DESTDIR)$(libdir)/$$p"; \
-+	    $(INSTALL_LIBRARY) $$p $(DESTDIR)$(libdir)/$$p; \
- 	    stub=`echo $$p|sed -e "s/.*\(stub\).*/\1/"`; \
++	    $(INSTALL_LIBRARY) $$p "$(DESTDIR)$(libdir)/$$p"; \
  	    ext=`echo $$p|sed -e "s/.*\.//"`; \
  	    if test "x$$ext" = "xdll"; then \
-@@ -445,8 +445,8 @@ install-lib-binaries: binaries
+ 		lib=`basename $$p|sed -e 's/.[^.]*$$//'`.lib; \
+@@ -463,8 +463,8 @@ install-lib-binaries: binaries
  	    fi; \
  	  fi; \
  	done
@@ -25,11 +25,11 @@ Index: Makefile.in
  	@list='$(PKG_TCL_SOURCES)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
  	    destp=`basename $$p`; \
-@@ -456,6 +456,7 @@ install-lib-binaries: binaries
+@@ -474,6 +474,7 @@ install-lib-binaries: binaries
  	done
  	@if test "x$(SHARED_BUILD)" = "x1"; then \
- 	    echo " Install pkgIndex.tcl $(DESTDIR)$(pkglibdir)"; \
+ 	    echo "Installing pkgIndex.tcl $(DESTDIR)$(pkglibdir)"; \
 +	    perl -pi -e 's!dir lib!dir .. .. lib!' pkgIndex.tcl; \
- 	    $(INSTALL_DATA) pkgIndex.tcl $(DESTDIR)$(pkglibdir); \
+ 	    $(INSTALL_DATA) pkgIndex.tcl "$(DESTDIR)$(pkglibdir)"; \
  	fi
  

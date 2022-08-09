@@ -1,6 +1,6 @@
 COMMENT =		fast XML/DOM/XPath/XSLT/HTML/JSON extension for Tcl
 
-V =			0.9.1
+V =			0.9.3
 VER =			${V:S/.//g}
 
 DISTNAME =		tdom-${V}
@@ -9,7 +9,7 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://www.tdom.org/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
-# MPL 1.1
+# MPL 2.0
 PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =		${HOMEPAGE:=downloads/}
@@ -24,9 +24,7 @@ BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 
 FAKE_FLAGS =		PKG_DIR=tdom \
-			pkglibdir='$$(libdir)/tcl/$$(PKG_DIR)' \
-			'INSTALL_PROGRAM = $${INSTALL} -m 755' \
-			'INSTALL_DATA    = $${INSTALL} -m 644'
+			pkglibdir='$$(libdir)/tcl/$$(PKG_DIR)'
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
@@ -38,6 +36,8 @@ CONFIGURE_ARGS +=	--with-tcl=${MODTCL_LIBDIR} \
 
 TEST_TARGET =		test
 SUBST_VARS =		VER
+
+WRKDIST =		${WRKDIR}/${DISTNAME}-src
 
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${MODTCL_MODDIR}/86
