@@ -6,19 +6,19 @@ Index: configure.ac
  m4_define([magick_git_revision],
            m4_esyscmd([
 -            h=$(git rev-parse --short HEAD)
--            d=$(git log -1 --format=:%cd --date=format:%Y%m%d || date -u +%Y%m%d -r ./ChangeLog.md)
+-            d=$(git log -1 --format=:%cd --date=format:%Y%m%d || date -u +%Y%m%d -r ./m4/version.m4)
 -            printf %s "$h$d"
-+            d=$(stat -t %Y%m%d -f %Sm ./ChangeLog.md)
++            d=$(stat -t %Y%m%d -f %Sm ./m4/version.m4)
 +            printf %s "$d"
            ]))
  m4_define([magick_release_date],
            m4_esyscmd([
--            d=$(git log -1 --format=%cd --date=format:%Y-%m-%d || date -u +%F -r ./ChangeLog.md)
-+            d=$(stat -t %Y-%m-%d -f %Sm ./ChangeLog.md)
+-            d=$(git log -1 --format=%cd --date=format:%Y-%m-%d || date -u +%F -r ./m4/version.m4)
++            d=$(stat -t %Y-%m-%d -f %Sm ./m4/version.m4)
              printf %s "$d"
            ]))
  
-@@ -1179,7 +1178,7 @@ fi
+@@ -1165,7 +1164,7 @@ fi
  
  # Assume that delegate headers reside under same directory as ImageMagick
  # installation prefix.
@@ -27,7 +27,7 @@ Index: configure.ac
  
  #
  # Find the X11 RGB database
-@@ -2929,7 +2928,7 @@ AC_SUBST([PERLMAINCC])
+@@ -2914,7 +2913,7 @@ AC_SUBST([PERLMAINCC])
  #
  
  # Path to ImageMagick header files
@@ -36,7 +36,7 @@ Index: configure.ac
  INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}"
  DEFINE_INCLUDE_PATH="${INCLUDE_DIR}/${INCLUDE_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -2952,7 +2951,7 @@ AC_DEFINE_UNQUOTED([INCLUDEARCH_PATH],["$DEFINE_INCLUD
+@@ -2937,7 +2936,7 @@ AC_DEFINE_UNQUOTED([INCLUDEARCH_PATH],["$DEFINE_INCLUD
  AC_SUBST([INCLUDEARCH_PATH])
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -45,7 +45,7 @@ Index: configure.ac
  AC_DEFINE_UNQUOTED([LIBRARY_RELATIVE_PATH],["$LIBRARY_RELATIVE_PATH"],[Subdirectory of lib where ImageMagick architecture dependent files are installed.])
  
  # Path to ImageMagick bin directory
-@@ -3043,7 +3042,7 @@ AC_SUBST([FILTER_PATH])
+@@ -3028,7 +3027,7 @@ AC_SUBST([FILTER_PATH])
  
  #
  # Path to ImageMagick documentation files
@@ -54,7 +54,7 @@ Index: configure.ac
  DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}"
  DEFINE_DOCUMENTATION_PATH="${DOC_DIR}/${DOCUMENTATION_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -3063,7 +3062,7 @@ AC_ARG_ENABLE([docs],
+@@ -3048,7 +3047,7 @@ AC_ARG_ENABLE([docs],
  AM_CONDITIONAL([INSTALL_DOC],[test "$wantdocs" = "yes"])
  
  # Subdirectory to place architecture-dependent configuration files
@@ -63,7 +63,7 @@ Index: configure.ac
  AC_DEFINE_UNQUOTED([CONFIGURE_RELATIVE_PATH],"$CONFIGURE_RELATIVE_PATH",[Subdirectory of lib where architecture-dependent configuration files live.])
  CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
  DEFINE_CONFIGURE_PATH="${SYSCONF_DIR}/${CONFIGURE_RELATIVE_PATH}/"
-@@ -3076,7 +3075,7 @@ AC_DEFINE_UNQUOTED([CONFIGURE_PATH],"$DEFINE_CONFIGURE
+@@ -3061,7 +3060,7 @@ AC_DEFINE_UNQUOTED([CONFIGURE_PATH],"$DEFINE_CONFIGURE
  AC_SUBST([CONFIGURE_PATH])
  
  # Subdirectory to place architecture-independent configuration files

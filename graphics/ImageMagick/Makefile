@@ -3,21 +3,21 @@ BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 COMMENT=		image processing tools
 
 VER=			6.9.12
-DASHVER=		46
+DASHVER=		60
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-PORTROACH=		site:https://imagemagick.org/download/ limit:6.*
+PORTROACH=		site:https://imagemagick.org/archive/releases/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     8.0      # 6.0
-SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 6.0
-SHARED_LIBS +=	Magick++-6.Q16       5.2      # 8.0
+SHARED_LIBS +=	MagickCore-6.Q16     8.1      # 7.0
+SHARED_LIBS +=	MagickWand-6.Q16     4.2      # 7.0
+SHARED_LIBS +=	Magick++-6.Q16       5.2      # 9.0
 
 CATEGORIES=		graphics
 
 HOMEPAGE=		https://imagemagick.org/
 
-MASTER_SITES=		https://imagemagick.org/download/releases/ \
+MASTER_SITES=		https://imagemagick.org/archive/releases/ \
 			https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/ \
 			ftp://sunsite.icm.edu.pl/packages/ImageMagick/
 
@@ -25,7 +25,7 @@ MASTER_SITES=		https://imagemagick.org/download/releases/ \
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt aom
-WANTLIB += bz2 c dav1d de265 djvulibre expat fftw3 fontconfig
+WANTLIB += bz2 c dav1d de265 djvulibre expat fontconfig
 WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
 WANTLIB += perl png raw_r tiff webp webpdemux webpmux x265 xcb
 WANTLIB += xml2 z zstd
@@ -44,7 +44,6 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
-			math/fftw3 \
 			multimedia/aom \
 			multimedia/dav1d \
 			multimedia/libde265 \
@@ -57,7 +56,7 @@ ALL_TARGET=		all perl-build
 
 CONFIGURE_STYLE=	autoconf
 LIBTOOL_FLAGS=		--tag=disable-static
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 USE_GMAKE=		Yes
 CONFIGURE_ARGS+=	--without-gcc-arch \
 			--with-gs-font-dir=${LOCALBASE}/share/fonts/ghostscript \
