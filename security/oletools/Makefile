@@ -21,7 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 EXTRACT_SUFX =	.zip
 
 RUN_DEPENDS +=	${MODPY_TKINTER_DEPENDS} \
-		devel/py-parsing
+		devel/py2-parsing
 
 MODPY_ADJ_FILES = oletools/*.py
 

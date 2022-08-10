@@ -1452,7 +1452,7 @@
      SUBDIR += py-ordered-set,python3
      SUBDIR += py-parallel,python3
      SUBDIR += py-parsedatetime,python3
-     SUBDIR += py-parsing
+     SUBDIR += py2-parsing
      SUBDIR += py-parsing,python3
      SUBDIR += py-parso,python3
      SUBDIR += py-path.py,python3

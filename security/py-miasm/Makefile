@@ -26,7 +26,7 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 
 RUN_DEPENDS =	security/py-elfesteem \
 		devel/py-llvmlite \
-		devel/py-parsing
+		devel/py2-parsing
 
 TEST_DEPENDS =	devel/py-cparser
 

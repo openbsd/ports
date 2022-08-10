@@ -1,0 +1,8 @@
+@pkgpath devel/${MODPY_PY_PREFIX}parsing
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyparsing.py
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}pyc
