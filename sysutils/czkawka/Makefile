@@ -1,5 +1,5 @@
-COMMENT-main =		remove unnecessary files
-COMMENT-gui =		GUI to remove unnecessary files
+COMMENT-main =		remove unnecessary/duplicate files
+COMMENT-gui =		GUI to remove unnecessary/duplicate files
 
 PKGNAME-main =		czkawka-${GH_TAGNAME}
 PKGNAME-gui =		czkawka-gui-${GH_TAGNAME}
@@ -7,7 +7,7 @@ PKGNAME-gui =		czkawka-gui-${GH_TAGNAME}
 GH_ACCOUNT =		qarmin
 GH_PROJECT =		czkawka
 GH_TAGNAME =		4.1.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
