@@ -1,8 +1,7 @@
 COMMENT =	non-blocking I/O as lambda calculus
 
-DISTNAME =	IO-Lambda-1.30
+DISTNAME =	IO-Lambda-1.31
 CATEGORIES =	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes

@@ -13,6 +13,7 @@ ${P5SITE}/IO/Lambda/HTTP/Authen/Negotiate.pm
 ${P5SITE}/IO/Lambda/HTTP/Client.pm
 ${P5SITE}/IO/Lambda/HTTP/HTTPS.pm
 ${P5SITE}/IO/Lambda/HTTP/Server.pm
+${P5SITE}/IO/Lambda/HTTP/UserAgent.pm
 ${P5SITE}/IO/Lambda/Loop/
 ${P5SITE}/IO/Lambda/Loop/AnyEvent.pm
 ${P5SITE}/IO/Lambda/Loop/Glib.pm
@@ -38,6 +39,7 @@ ${P5SITE}/IO/Lambda/Throttle.pm
 @man man/man3p/IO::Lambda::HTTP::Client.3p
 @man man/man3p/IO::Lambda::HTTP::HTTPS.3p
 @man man/man3p/IO::Lambda::HTTP::Server.3p
+@man man/man3p/IO::Lambda::HTTP::UserAgent.3p
 @man man/man3p/IO::Lambda::Loop::AnyEvent.3p
 @man man/man3p/IO::Lambda::Loop::Glib.3p
 @man man/man3p/IO::Lambda::Loop::POE.3p
