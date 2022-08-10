@@ -3,7 +3,7 @@ COMMENT=	creates DVD file structures
 DISTNAME=	dvdauthor-0.7.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dvdauthor/}
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://dvdauthor.sourceforge.net/
 
@@ -11,7 +11,7 @@ HOMEPAGE=	http://dvdauthor.sourceforge.net/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 SM X11 Xext Xt bz2 c djvulibre
-WANTLIB += dvdread expat fftw3 fontconfig freetype fribidi iconv
+WANTLIB += dvdread expat fontconfig freetype fribidi iconv
 WANTLIB += jbig jpeg lcms2 lzma m openjp2 png pthread
 WANTLIB += tiff webp xcb xml2 z
 WANTLIB += aom dav1d de265 heif jasper raw_r webpdemux webpmux x265 zstd

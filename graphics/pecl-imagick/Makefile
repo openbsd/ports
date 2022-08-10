@@ -2,16 +2,16 @@ COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-3.7.0
 CATEGORIES=	graphics
-REVISION=	0
+REVISION=	1
 
 # PHP
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
-WANTLIB += aom bz2 dav1d de265 djvulibre expat fftw3 fontconfig
-WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
-WANTLIB += png pthread raw_r tiff webp webpdemux webpmux x265
-WANTLIB += xcb xml2 z zstd
+WANTLIB += aom bz2 dav1d de265 djvulibre expat fontconfig freetype
+WANTLIB += heif iconv jasper jbig jpeg lcms2 lzma m openjp2 png
+WANTLIB += pthread raw_r tiff webp webpdemux webpmux x265 xcb
+WANTLIB += xml2 z zstd
 
 MODULES=	lang/php/pecl
 CONFIGURE_STYLE= gnu
