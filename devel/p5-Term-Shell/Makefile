@@ -4,7 +4,7 @@ COMMENT =	simple command-line shell framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Term-Shell-0.12
+DISTNAME =	Term-Shell-0.13
 CATEGORIES =	devel
 
 # Perl
