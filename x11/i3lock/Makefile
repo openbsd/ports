@@ -13,6 +13,10 @@ MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# c11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MASTER_SITES =		https://i3wm.org/i3lock/
 EXTRACT_SUFX =		.tar.xz
 
