@@ -1,3 +1,4 @@
+@pkgpath net/py-idna
 lib/python${MODPY_VERSION}/site-packages/idna/
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/idna-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -20,4 +21,5 @@ lib/python${MODPY_VERSION}/site-packages/idna/core.py
 lib/python${MODPY_VERSION}/site-packages/idna/idnadata.py
 lib/python${MODPY_VERSION}/site-packages/idna/intranges.py
 lib/python${MODPY_VERSION}/site-packages/idna/package_data.py
+lib/python${MODPY_VERSION}/site-packages/idna/py.typed
 lib/python${MODPY_VERSION}/site-packages/idna/uts46data.py
