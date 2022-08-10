@@ -20,7 +20,9 @@ FLAVOR =		python3
 MODPY_PYTEST_ARGS =	--ignore tests/test_diagram.py tests
 
 #MODPY_PEP517 =		flit_core
-BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR} \
+			devel/py-installer${MODPY_FLAVOR} \
+			devel/py-pip${MODPY_FLAVOR}
 do-build:
 	cd ${WRKSRC} && pip wheel -v --no-index --no-cache --no-deps --no-build-isolation .
 
