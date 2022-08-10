@@ -1,9 +1,8 @@
 COMMENT =	modern GPS tracking platform
-V =		5.2
+V =		5.3
 PKGNAME =	traccar-${V}
 DISTNAME =	traccar-other-${V}
 EXTRACT_SUFX =	.zip
-WRKDIST =	${WRKDIR}
 
 CATEGORIES =	geo
 HOMEPAGE =	https://www.traccar.org/
@@ -18,7 +17,10 @@ MASTER_SITES = https://github.com/traccar/traccar/releases/download/v${V}/
 MODULES =               java
 MODJAVA_VER =           11+
 
-RUN_DEPENDS=		java/javaPathHelper
+RUN_DEPENDS =		java/javaPathHelper
+
+EXTRACT_CASES +=	traccar*.zip) \
+	${UNZIP} -oq ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
 
 NO_BUILD =              Yes
 NO_TEST =               Yes
@@ -28,8 +30,7 @@ do-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/traccar/
-	cd ${WRKSRC}; cp -r conf lib schema templates web tracker-server.jar \
-	    ${PREFIX}/share/traccar/
+	cp -r ${WRKSRC}/* ${PREFIX}/share/traccar/
 	rm ${PREFIX}/share/traccar/conf/{default,traccar}.xml.*
 
 .include <bsd.port.mk>
