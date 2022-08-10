@@ -1,6 +1,6 @@
 COMMENT =	recursively scan Perl code for dependencies
 
-DISTNAME =	Module-ScanDeps-1.29
+DISTNAME =	Module-ScanDeps-1.31
 
 CATEGORIES =	devel
 
