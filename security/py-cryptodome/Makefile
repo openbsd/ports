@@ -34,4 +34,8 @@ PKG_ARGS+= -Daesni=1
 PKG_ARGS+= -Daesni=0
 .endif
 
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
