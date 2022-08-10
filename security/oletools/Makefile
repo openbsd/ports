@@ -2,7 +2,7 @@ COMMENT =	python tools to analyze OLE files
 
 MODPY_EGG_VERSION = 0.53.1
 DISTNAME =	oletools-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
