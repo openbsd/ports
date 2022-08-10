@@ -1,5 +1,9 @@
 COMMENT =		3D printing host suite
 
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+# 2.0 release candidates are available which should work with Python 3.x,
+# but they want py-wxWidgets 4.x.
+
 MODPY_EGG_VERSION =	1.6.0
 DISTNAME =		printrun-${MODPY_EGG_VERSION}
 
@@ -19,7 +23,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-gobject \
