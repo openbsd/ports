@@ -1,33 +1,34 @@
 COMMENT=		simple scripting language for web browsing
 
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
-
-DISTNAME=		twill-0.9
-REVISION=		8
+MODPY_EGG_VERSION=	3.0.2
+DISTNAME=		twill-${MODPY_EGG_VERSION}
 CATEGORIES=		www
 
 HOMEPAGE=		https://twill-tools.github.io/twill/
-PORTROACH=		site:https://github.com/twill-tools/twill/releases/
-MASTER_SITES=		http://darcs.idyll.org/~t/projects/
 
 # MIT
-# Includes patched versions of:
-# 	py-clientform (BSD-like or ZPL)
-# 	py-mechanize (BSD-like or ZPL)
-# 	py-parsing (BSD-like)
-# 	py-beautifulsoup (PSF)
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
-NO_TEST=		Yes
+MODPY_PI=		Yes
+
+# needs unported wsgi_intercept
+MODPY_PYTEST_ARGS=	--ignore tests/test_wsgi_intercept.py
+
+BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
+USE_GMAKE=		Yes
+
+RUN_DEPENDS=		textproc/py-lxml${MODPY_FLAVOR}>=4.6,<5 \
+			www/py-requests${MODPY_FLAVOR}>=2.25,<3 \
+			devel/py-parsing${MODPY_FLAVOR}>=2.4,<4
+
+TEST_DEPENDS=		www/py-quixote${MODPY_FLAVOR}
+
+post-build:
+	cd ${WRKSRC}/docs && ${MAKE_PROGRAM} man
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/twill
-	cd ${WRKSRC}/doc && \
-		find . -type f -maxdepth 1 -name "*.txt" \
-		\! \( -name "ANNOUNCE*" -o -name "ChangeLog" \) \
-		-exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/twill/{} \;
-	rm -fr ${WRKSRC}/twill.egg-info
+	${INSTALL_MAN} ${WRKBUILD}/docs/_build/man/twill.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
