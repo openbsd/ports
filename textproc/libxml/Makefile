@@ -7,6 +7,8 @@ GNOME_PROJECT=		libxml2
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
 
+REVISION-main=		0
+
 SHARED_LIBS +=  xml2                 17.1     # 11.14
 
 CATEGORIES=		textproc

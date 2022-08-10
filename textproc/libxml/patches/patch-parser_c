@@ -1,0 +1,31 @@
+From ecba4cbd4335b31aa7a815701971ed09cfffea9b Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Tue, 28 Jun 2022 19:22:31 +0200
+Subject: [PATCH] Avoid double-free if malloc fails in inputPush
+
+From ca2c91f139426f63646292da58a15a1511dccc0f Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Tue, 28 Jun 2022 19:24:14 +0200
+Subject: [PATCH] Fix memory leak in xmlLoadEntityContent error path
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -1761,9 +1761,7 @@ inputPush(xmlParserCtxtPtr ctxt, xmlParserInputPtr val
+                                              sizeof(ctxt->inputTab[0]));
+         if (ctxt->inputTab == NULL) {
+             xmlErrMemory(ctxt, NULL);
+-	    xmlFreeInputStream(value);
+ 	    ctxt->inputMax /= 2;
+-	    value = NULL;
+             return (-1);
+         }
+     }
+@@ -8094,6 +8092,7 @@ xmlLoadEntityContent(xmlParserCtxtPtr ctxt, xmlEntityP
+      */
+     if (xmlPushInput(ctxt, input) < 0) {
+         xmlBufferFree(buf);
++	xmlFreeInputStream(input);
+ 	return(-1);
+     }
+ 
