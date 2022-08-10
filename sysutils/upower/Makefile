@@ -2,15 +2,15 @@ ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-V =		0.99.13
-DISTNAME =	upower-UPOWER_${V:S/./_/g}
-PKGNAME =	upower-${V}
+V =	v1.90.0
+DISTNAME =	upower-${V}
+PKGNAME =	upower-${V:S/v//}
 
 CATEGORIES =	sysutils
-SHARED_LIBS +=  upower-glib          2.1      # 3.1
+SHARED_LIBS +=  upower-glib          3.0
 
 HOMEPAGE =	https://upower.freedesktop.org/
-MASTER_SITES =	https://gitlab.freedesktop.org/upower/upower/-/archive/UPOWER_${V:S/./_/g}/
+MASTER_SITES =	https://gitlab.freedesktop.org/upower/upower/-/archive/${V}/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -19,21 +19,17 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.16
-CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ARGS +=	--enable-introspection \
-			--enable-man-pages \
-			--with-historydir=/var/db/upower \
-			--with-backend=openbsd \
-			--without-idevice
+MODULES =	devel/meson
+CONFIGURE_ARGS =-Dintrospection=enabled \
+		-Dhistorydir=/var/db/upower \
+		-Dos_backend=openbsd \
+		-Dudevrulesdir=disabled \
+		-Dudevhwdbdir=disabled \
+		-Dsystemdsystemunitdir=no \
+		-Didevice=disabled
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/upower
-
-USE_GMAKE =	Yes
+# gtk-doc is disabled because otherwise xsltproc fetches from net
+CONFIGURE_ARGS +=-Dgtk-doc=false
 
 LIB_DEPENDS =	devel/glib2
 BUILD_DEPENDS =	devel/gettext,-tools \
@@ -44,7 +40,10 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 # /usr/local/share/dbus-1/system-services/
 RUN_DEPENDS +=	x11/dbus,-suid
 
-post-extract:
-	touch ${WRKSRC}/gtk-doc.make
+post-install:
+	# stupid udev rules
+	rm -Rf ${PREFIX}/disabled
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/upower/
+	mv ${WRKINST}${SYSCONFDIR}/UPower ${PREFIX}/share/examples/upower/
 
 .include <bsd.port.mk>
