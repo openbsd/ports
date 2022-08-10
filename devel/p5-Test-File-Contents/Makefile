@@ -1,18 +1,15 @@
-COMMENT=		perl test framework for file contents
+COMMENT =		perl test framework for file contents
 
-MODULES=		cpan
-PKG_ARCH=		*
-DISTNAME =		Test-File-Contents-0.23
-CATEGORIES=		devel
-REVISION =		0
+MODULES =		cpan
+PKG_ARCH =		*
+DISTNAME =		Test-File-Contents-0.241
+CATEGORIES =		devel
 
 # perl
-PERMIT_PACKAGE=	Yes
-
-CONFIGURE_STYLE=	modbuild
+PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =		textproc/p5-Text-Diff
 
-MAKE_ENV=		TEST_POD=Yes
+MAKE_ENV =		TEST_POD=Yes
 
 .include <bsd.port.mk>
