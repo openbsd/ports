@@ -4,6 +4,8 @@ MODPY_EGG_VERSION = 1.26.11
 DISTNAME =	urllib3-${MODPY_EGG_VERSION}
 PKGNAME =	py-urllib3-${MODPY_EGG_VERSION}
 
+REVISION =	0
+
 CATEGORIES =	www
 
 # MIT
@@ -11,19 +13,17 @@ PERMIT_PACKAGE = Yes
 
 MODULES =	lang/python
 
-FLAVORS =		python3
-FLAVOR ?=
+FLAVORS =	python3
+FLAVOR =	python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PI =	Yes
+MODPY_SETUPTOOLS = Yes
+MODPY_PYTEST =	Yes
 
-.if ${FLAVOR:Mpython3}
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			net/py-socks${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			security/py-trustme${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}
-.endif
+TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
+		net/py-socks${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR} \
+		security/py-trustme${MODPY_FLAVOR} \
+		www/py-tornado${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

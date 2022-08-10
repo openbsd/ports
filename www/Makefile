@@ -468,7 +468,6 @@
      SUBDIR += py-treq,python3
      SUBDIR += py-uritemplate,python3
      SUBDIR += py-urlgrabber,python3
-     SUBDIR += py-urllib3
      SUBDIR += py-urllib3,python3
      SUBDIR += py-vcrpy,python3
      SUBDIR += py-waitress,python3
