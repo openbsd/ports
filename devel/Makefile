@@ -1562,7 +1562,6 @@
      SUBDIR += py-traitlets,python3
      SUBDIR += py-twisted,python3
      SUBDIR += py-txaio,python3
-     SUBDIR += py-typing
      SUBDIR += py-typing-extensions,python3
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal,python3
