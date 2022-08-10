@@ -3,7 +3,7 @@ COMMENT =		tools for handling data matrix barcodes
 GH_ACCOUNT =		dmtx
 GH_PROJECT =		dmtx-utils
 GH_TAGNAME =		v0.7.6
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics
 
@@ -12,11 +12,11 @@ MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE MagickCore-6.Q16 MagickWand-6.Q16
-WANTLIB += SM X11 Xext Xt bz2 c djvulibre dmtx expat fontconfig
-WANTLIB += freetype iconv jasper jbig jpeg lcms2 lzma m openjp2
-WANTLIB += png raw_r tiff webp webpmux xcb xml2 z
-WANTLIB += aom dav1d de265 heif webpdemux x265 zstd
+WANTLIB += ICE MagickCore-6.Q16 MagickWand-6.Q16 SM X11 Xext Xt
+WANTLIB += aom bz2 c dav1d de265 djvulibre dmtx expat fontconfig
+WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
+WANTLIB += png pthread raw_r tiff webp webpdemux webpmux x265
+WANTLIB += xcb xml2 z zstd
 
 LIB_DEPENDS +=		converters/libiconv \
 			graphics/ImageMagick \
