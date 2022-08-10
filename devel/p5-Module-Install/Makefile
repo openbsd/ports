@@ -2,9 +2,8 @@ COMMENT=	standalone extensible Perl module installer
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Module-Install-1.18
+DISTNAME =	Module-Install-1.19
 CATEGORIES=	devel
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes
