@@ -1,22 +1,22 @@
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
-VERSION=	20200610
+VERSION=	20201003
 DISTNAME=	foo2zjs-${VERSION}
 
 CATEGORIES=	print
 
-HOMEPAGE=	http://foo2zjs.rkkda.com/
+# http://foo2zjs.rkkda.com/ seems dead
+HOMEPAGE=	https://www.openprinting.org/driver/foo2zjs
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c cups m pthread
+WANTLIB += c cups jbig m pthread
 
-# unversioned distfile
-# http://foo2zjs.rkkda.com/foo2zjs.tar.gz
-MASTER_SITES=	https://distfiles.bsdfrog.org/
+# most patches are also from Fedora
+MASTER_SITES=	https://src.fedoraproject.org/repo/pkgs/foo2zjs/${DISTFILES}/sha512/786ddac87e75bb8515ca4afbffdb39e1fad133403d2ffbca5bd615744c9e2bbd6ac2ec4746b86f24b1523aeb3e25c53d798e41b578aa514546a9db0745ac7b3c/
 
 USE_GMAKE=	Yes
 
@@ -24,7 +24,8 @@ WRKDIST=	${WRKDIR}/foo2zjs
 
 BUILD_DEPENDS=	print/ghostscript/gnu # ps2pdf
 
-LIB_DEPENDS=	print/cups,-libs
+LIB_DEPENDS=	graphics/jbigkit \
+		print/cups,-libs
 
 # foomatic-rip(1), foomatic-db(-engine)
 RUN_DEPENDS +=	print/cups-filters
@@ -46,7 +47,7 @@ post-patch:
 pre-configure:
 	sed -i 's,/usr/bin,${PREFIX}/bin,g' \
 		${WRKSRC}/*.1in
-	${SUBST_CMD} ${WRKSRC}/getweb.in
+	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/getweb.in
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/{getweb,msexpand} \

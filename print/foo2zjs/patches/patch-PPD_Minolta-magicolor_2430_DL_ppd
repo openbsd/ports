@@ -1,0 +1,11 @@
+Index: PPD/Minolta-magicolor_2430_DL.ppd
+--- PPD/Minolta-magicolor_2430_DL.ppd.orig
++++ PPD/Minolta-magicolor_2430_DL.ppd
+@@ -61,6 +61,7 @@
+ *Throughput:	"1"
+ *LandscapeOrientation: Plus90
+ *TTRasterizer:	Type42
++*1284DeviceID: "MANUFACTURER:KONICA MINOLTA;MODEL:magicolor 2430 DL;COMMAND SET:ZJS,PJL;DRV:Dfoo2zjs,R1,M0,TF;"
+ *1284DeviceID: "MANUFACTURER:MINOLTA-QMS;MODEL:magicolor 2430 DL;COMMAND SET:ZJS,PJL;DRV:Dfoo2zjs,R1,M0,TF;"
+ 
+ *driverName foo2zjs: ""

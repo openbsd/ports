@@ -1,0 +1,17 @@
+Index: foomatic-db/printer/Xerox-WorkCentre_3045.xml
+--- foomatic-db/printer/Xerox-WorkCentre_3045.xml.orig
++++ foomatic-db/printer/Xerox-WorkCentre_3045.xml
+@@ -55,6 +55,13 @@
+ 	<snmp>
+ 	    <description>Xerox WorkCentre 3045</description>
+ 	</snmp>
++        <usb>
++          <ieee1284>MFG:Xerox;CMD:HBPL;MDL:WorkCentre 3045B;CLS:Printer;DES:Xerox WorkCentre 3045B;</ieee1284>
++          <manufacturer>Xerox</manufacturer>
++          <model>WorkCentre 3045B</model>
++          <commandset>HBPL</commandset>
++          <description>Xerox WorkCentre 3045B</description>
++        </usb>
+     </autodetect>
+     <functionality>C</functionality>
+     <driver>foo2hbpl2</driver>

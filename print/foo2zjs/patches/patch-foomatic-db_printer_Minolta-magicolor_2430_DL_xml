@@ -1,0 +1,21 @@
+Index: foomatic-db/printer/Minolta-magicolor_2430_DL.xml
+--- foomatic-db/printer/Minolta-magicolor_2430_DL.xml.orig
++++ foomatic-db/printer/Minolta-magicolor_2430_DL.xml
+@@ -46,8 +46,17 @@
+ 	    <model>magicolor 2430 DL</model>
+ 	    <commandset>ZJS,PJL</commandset>
+ 	</parallel>
++	<parallel>
++	    <ieee1284>CLASS:PRINTER;MODEL:magicolor 2430 DL;MANUFACTURER:KONICA MINOLTA;COMMAND SET:ZJS,PJL;</ieee1284>
++	    <manufacturer>KONICA MINOLTA</manufacturer>
++	    <model>magicolor 2430 DL</model>
++	    <commandset>ZJS,PJL</commandset>
++	</parallel>
+ 	<snmp>
+ 	    <description>MINOLTA-QMS magicolor 2430 DL</description>
++	</snmp>
++	<snmp>
++	    <description>KONICA MINOLTA magicolor 2430 DL</description>
+ 	</snmp>
+     </autodetect>
+     <functionality>B</functionality>

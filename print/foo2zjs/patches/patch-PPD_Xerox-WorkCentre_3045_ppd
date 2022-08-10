@@ -1,0 +1,11 @@
+Index: PPD/Xerox-WorkCentre_3045.ppd
+--- PPD/Xerox-WorkCentre_3045.ppd.orig
++++ PPD/Xerox-WorkCentre_3045.ppd
+@@ -61,6 +61,7 @@
+ *Throughput:	"1"
+ *LandscapeOrientation: Plus90
+ *TTRasterizer:	Type42
++*1284DeviceID: "MFG:Xerox;CMD:HBPL;MDL:WorkCentre 3045B;CLS:Printer;DES:Xerox WorkCentre 3045B;"
+ *1284DeviceID: "DRV:Dfoo2hbpl2,R1,M0,TF;"
+ 
+ *driverName foo2hbpl2: ""

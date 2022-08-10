@@ -3,7 +3,7 @@ Index: getweb.in
 +++ getweb.in
 @@ -11,7 +11,7 @@
  
- VERSION='20200610'
+ VERSION='20201003'
  
 -WGETOPTS="--passive-ftp -q"
 +WGETOPTS="-V"

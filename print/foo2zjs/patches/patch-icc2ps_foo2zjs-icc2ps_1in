@@ -1,0 +1,23 @@
+Index: icc2ps/foo2zjs-icc2ps.1in
+--- icc2ps/foo2zjs-icc2ps.1in.orig
++++ icc2ps/foo2zjs-icc2ps.1in
+@@ -27,7 +27,7 @@ Input profile: Generates Color Space Array (CSA).
+ Alternate way to set precision, number of CLUT points (CRD only)
+ .TP
+ .BI \-o\  profile
+-.p
++.P
+ Output profile: Generates Color Rendering Dictionary(CRD).
+ .TP
+ .B \-t <0,1,2,3>
+@@ -48,7 +48,7 @@ Do NOT generate resource name on CRD.
+ Rick Richardson <rick.richardson@comcast.net>
+ .br
+ http://foo2zjs.rkkda.com/
+-'/"
+-'/"
+-'/"
++'\"
++'\"
++'\"
+ .em pdf_outline

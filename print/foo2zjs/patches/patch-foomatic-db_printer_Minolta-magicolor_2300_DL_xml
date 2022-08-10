@@ -1,0 +1,21 @@
+Index: foomatic-db/printer/Minolta-magicolor_2300_DL.xml
+--- foomatic-db/printer/Minolta-magicolor_2300_DL.xml.orig
++++ foomatic-db/printer/Minolta-magicolor_2300_DL.xml
+@@ -48,8 +48,17 @@
+ 	    <model>magicolor 2300 DL</model>
+ 	    <commandset>ZJS,PJL</commandset>
+ 	</parallel>
++	<parallel>
++	    <ieee1284>CLASS:PRINTER;MODEL:magicolor 2300 DL;MANUFACTURER:KONICA MINOLTA;COMMAND SET:ZJS,PJL;</ieee1284>
++	    <manufacturer>KONICA MINOLTA</manufacturer>
++	    <model>magicolor 2300 DL</model>
++	    <commandset>ZJS,PJL</commandset>
++	</parallel>
+ 	<snmp>
+ 	    <description>MINOLTA-QMS magicolor 2300 DL</description>
++	</snmp>
++	<snmp>
++	    <description>KONICA MINOLTA magicolor 2300 DL</description>
+ 	</snmp>
+     </autodetect>
+     <functionality>B</functionality>
