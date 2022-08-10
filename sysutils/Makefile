@@ -295,7 +295,6 @@
      SUBDIR += py-joblib,python3
      SUBDIR += py-lockfile,python3
      SUBDIR += py-mitogen,python3
-     SUBDIR += py-packaging
      SUBDIR += py-packaging,python3
      SUBDIR += py-parallel-ssh,python3
      SUBDIR += py-prometheus_client,python3

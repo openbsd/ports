@@ -1,3 +1,4 @@
+@pkgpath sysutils/py-packaging
 lib/python${MODPY_VERSION}/site-packages/packaging/
 lib/python${MODPY_VERSION}/site-packages/packaging-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/packaging-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,18 +11,18 @@ lib/python${MODPY_VERSION}/site-packages/packaging/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_manylinux.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_musllinux.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_structures.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}markers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}requirements.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}specifiers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}tags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/packaging/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/packaging/_compat.py
+lib/python${MODPY_VERSION}/site-packages/packaging/_manylinux.py
+lib/python${MODPY_VERSION}/site-packages/packaging/_musllinux.py
 lib/python${MODPY_VERSION}/site-packages/packaging/_structures.py
-lib/python${MODPY_VERSION}/site-packages/packaging/_typing.py
 lib/python${MODPY_VERSION}/site-packages/packaging/markers.py
 lib/python${MODPY_VERSION}/site-packages/packaging/py.typed
 lib/python${MODPY_VERSION}/site-packages/packaging/requirements.py
