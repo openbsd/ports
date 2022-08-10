@@ -1,7 +1,6 @@
 COMMENT =	simple, intuitive interface to the fork() system call
 
-DISTNAME =	Proc-Fork-0.806
-REVISION =	0
+DISTNAME =	Proc-Fork-0.807
 
 CATEGORIES =	devel
 
