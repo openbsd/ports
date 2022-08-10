@@ -3,11 +3,21 @@ Fix CVE-2018-1000035: buffer overflow for password-protected archives
 https://security-tracker.debian.org/tracker/CVE-2018-1000035
 Fix CVE-2019-13232: a zip bomb using overlapped entries
 https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
+Fix CVE-2022-0529 and CVE-2022-0530
+https://bugs.debian.org/1010355
 
 Index: fileio.c
 --- fileio.c.orig
 +++ fileio.c
-@@ -176,6 +176,8 @@ static ZCONST char Far FilenameTooLongTrunc[] =
+@@ -171,11 +171,15 @@ static ZCONST char Far ReadError[] = "error:  zipfile 
+ static ZCONST char Far FilenameTooLongTrunc[] =
+   "warning:  filename too long--truncating.\n";
+ #ifdef UNICODE_SUPPORT
++   static ZCONST char Far UFilenameCorrupt[] =
++     "error: Unicode filename corrupt.\n";
+    static ZCONST char Far UFilenameTooLongTrunc[] =
+-     "warning:  Converted unicode filename too long--truncating.\n";
++     "warning:  Converted Unicode filename too long--truncating.\n";
  #endif
  static ZCONST char Far ExtraFieldTooLong[] =
    "warning:  extra field too long (%d).  Ignoring...\n";
@@ -16,7 +26,7 @@ Index: fileio.c
  
  #ifdef WINDLL
     static ZCONST char Far DiskFullQuery[] =
-@@ -530,8 +532,10 @@ void undefer_input(__G)
+@@ -530,8 +534,10 @@ void undefer_input(__G)
           * This condition was checked when G.incnt_leftover was set > 0 in
           * defer_leftover_input(), and it is NOT allowed to touch G.csize
           * before calling undefer_input() when (G.incnt_leftover > 0)
@@ -28,7 +38,7 @@ Index: fileio.c
          G.incnt = G.incnt_leftover + (int)G.csize;
          G.inptr = G.inptr_leftover - (int)G.csize;
          G.incnt_leftover = 0;
-@@ -1580,7 +1584,11 @@ int UZ_EXP UzpPassword (pG, rcnt, pwbuf, size, zfn, ef
+@@ -1580,7 +1586,11 @@ int UZ_EXP UzpPassword (pG, rcnt, pwbuf, size, zfn, ef
      int r = IZ_PW_ENTERED;
      char *m;
      char *prompt;
@@ -41,7 +51,7 @@ Index: fileio.c
  #ifndef REENTRANT
      /* tell picky compilers to shut up about "unused variable" warnings */
      pG = pG;
-@@ -1588,7 +1596,15 @@ int UZ_EXP UzpPassword (pG, rcnt, pwbuf, size, zfn, ef
+@@ -1588,7 +1598,15 @@ int UZ_EXP UzpPassword (pG, rcnt, pwbuf, size, zfn, ef
  
      if (*rcnt == 0) {           /* First call for current entry */
          *rcnt = 2;
@@ -58,7 +68,7 @@ Index: fileio.c
              sprintf(prompt, LoadFarString(PasswPrompt),
                      FnFilter1(zfn), FnFilter2(efn));
              m = prompt;
-@@ -2295,7 +2311,12 @@ int do_string(__G__ length, option)   /* return PK-typ
+@@ -2295,7 +2313,12 @@ int do_string(__G__ length, option)   /* return PK-typ
              if (readbuf(__G__ (char *)G.extra_field, length) == 0)
                  return PK_EOF;
              /* Looks like here is where extra fields are read */
@@ -72,3 +82,42 @@ Index: fileio.c
  #ifdef UNICODE_SUPPORT
              G.unipath_filename = NULL;
              if (G.UzO.U_flag < 2) {
+@@ -2340,16 +2363,30 @@ int do_string(__G__ length, option)   /* return PK-typ
+                   /* convert UTF-8 to local character set */
+                   fn = utf8_to_local_string(G.unipath_filename,
+                                             G.unicode_escape_all);
+-                  /* make sure filename is short enough */
+-                  if (strlen(fn) >= FILNAMSIZ) {
+-                    fn[FILNAMSIZ - 1] = '\0';
++
++                  /* 2022-07-22 SMS, et al.  CVE-2022-0530
++                   * Detect conversion failure, emit message.
++                   * Continue with unconverted name.
++                   */
++                  if (fn == NULL)
++                  {
+                     Info(slide, 0x401, ((char *)slide,
+-                      LoadFarString(UFilenameTooLongTrunc)));
+-                    error = PK_WARN;
++                     LoadFarString(UFilenameCorrupt)));
++                    error = PK_ERR;
+                   }
+-                  /* replace filename with converted UTF-8 */
+-                  strcpy(G.filename, fn);
+-                  free(fn);
++                  else
++                  {
++                    /* make sure filename is short enough */
++                    if (strlen(fn) >= FILNAMSIZ) {
++                      fn[FILNAMSIZ - 1] = '\0';
++                      Info(slide, 0x401, ((char *)slide,
++                        LoadFarString(UFilenameTooLongTrunc)));
++                      error = PK_WARN;
++                    }
++                    /* replace filename with converted UTF-8 */
++                    strcpy(G.filename, fn);
++                    free(fn);
++                  }
+                 }
+ # endif /* UNICODE_WCHAR */
+                 if (G.unipath_filename != G.filename_full)

@@ -9,6 +9,8 @@ Fix: restore uid and gid information when requested
 Fix CVE-2019-13232: a zip bomb using overlapped entries
 https://github.com/madler/unzip/commit/47b3ceae397d21bf822bc2ac73052a4b1daf8e1c
 https://github.com/madler/unzip/commit/6d351831be705cc26d897db44f878a978f4138fc
+Fix CVE-2022-0529 and CVE-2022-0530
+https://bugs.debian.org/1010355
 
 Index: process.c
 --- process.c.orig
@@ -20,7 +22,16 @@ Index: process.c
  
    See the accompanying file LICENSE, version 2009-Jan-02 or later
    (the contents of which are also included in unzip.h) for terms of use.
-@@ -637,6 +637,13 @@ void free_G_buffers(__G)     /* releases all memory al
+@@ -222,6 +222,8 @@ static ZCONST char Far ZipfileCommTrunc1[] =
+      "\nwarning:  Unicode Path version > 1\n";
+    static ZCONST char Far UnicodeMismatchError[] =
+      "\nwarning:  Unicode Path checksum invalid\n";
++   static ZCONST char Far UFilenameTooLongTrunc[] =
++     "warning:  filename too long (P1) -- truncating.\n";
+ #endif
+ 
+ 
+@@ -637,6 +639,13 @@ void free_G_buffers(__G)     /* releases all memory al
      }
  #endif
  
@@ -34,7 +45,7 @@ Index: process.c
  } /* end function free_G_buffers() */
  
  
-@@ -1401,6 +1408,10 @@ static int find_ecrec64(__G__ searchlen)         /* re
+@@ -1401,6 +1410,10 @@ static int find_ecrec64(__G__ searchlen)         /* re
  
      /* Now, we are (almost) sure that we have a Zip64 archive. */
      G.ecrec.have_ecr64 = 1;
@@ -45,7 +56,7 @@ Index: process.c
  
      /* Update the "end-of-central-dir offset" for later checks. */
      G.real_ecrec_offset = ecrec64_start_offset;
-@@ -1535,6 +1546,8 @@ static int find_ecrec(__G__ searchlen)          /* ret
+@@ -1535,6 +1548,8 @@ static int find_ecrec(__G__ searchlen)          /* ret
        makelong(&byterec[OFFSET_START_CENTRAL_DIRECTORY]);
      G.ecrec.zipfile_comment_length =
        makeword(&byterec[ZIPFILE_COMMENT_LENGTH]);
@@ -54,7 +65,7 @@ Index: process.c
  
      /* Now, we have to read the archive comment, BEFORE the file pointer
         is moved away backwards to seek for a Zip64 ECLOC64 structure.
-@@ -1729,6 +1742,13 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
+@@ -1729,6 +1744,13 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
      else if (uO.L_flag > 1)   /* let -LL force lower case for all names */
          G.pInfo->lcflag = 1;
  
@@ -68,7 +79,7 @@ Index: process.c
      /* do Amigas (AMIGA_) also have volume labels? */
      if (IS_VOLID(G.crec.external_file_attributes) &&
          (G.pInfo->hostnum == FS_FAT_ || G.pInfo->hostnum == FS_HPFS_ ||
-@@ -1751,6 +1771,12 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
+@@ -1751,6 +1773,12 @@ int process_cdir_file_hdr(__G)    /* return PK-type er
          = (G.crec.general_purpose_bit_flag & (1 << 11)) == (1 << 11);
  #endif
  
@@ -81,12 +92,12 @@ Index: process.c
      return PK_COOL;
  
  } /* end function process_cdir_file_hdr() */
-@@ -1888,48 +1914,84 @@ int getZip64Data(__G__ ef_buf, ef_len)
+@@ -1888,48 +1916,85 @@ int getZip64Data(__G__ ef_buf, ef_len)
      and a 4-byte version of disk start number.
      Sets both local header and central header fields.  Not terribly clever,
      but it means that this procedure is only called in one place.
 +
-+    2014-12-05 SMS.
++    2014-12-05 SMS.  (oCERT.org report.)  CVE-2014-8141.
 +    Added checks to ensure that enough data are available before calling
 +    makeint64() or makelong().  Replaced various sizeof() values with
 +    simple ("4" or "8") constants.  (The Zip64 structures do not depend
@@ -122,10 +133,11 @@ Index: process.c
              break;
          }
 -        if (eb_id == EF_PKSZ64) {
--
+ 
+-          int offset = EB_HEADSIZE;
 +        if (eb_id == EF_PKSZ64)
 +        {
-           int offset = EB_HEADSIZE;
++          unsigned offset = EB_HEADSIZE;
  
 -          if (G.crec.ucsize == 0xffffffff || G.lrec.ucsize == 0xffffffff){
 -            G.lrec.ucsize = G.crec.ucsize = makeint64(offset + ef_buf);
@@ -182,7 +194,16 @@ Index: process.c
          ef_buf += (eb_len + EB_HEADSIZE);
          ef_len -= (eb_len + EB_HEADSIZE);
      }
-@@ -2037,6 +2099,8 @@ int getUnicodeData(__G__ ef_buf, ef_len)
+@@ -1984,7 +2049,7 @@ int getUnicodeData(__G__ ef_buf, ef_len)
+         }
+         if (eb_id == EF_UNIPATH) {
+ 
+-          int offset = EB_HEADSIZE;
++          unsigned offset = EB_HEADSIZE;
+           ush ULen = eb_len - 5;
+           ulg chksum = CRCVAL_INITIAL;
+ 
+@@ -2037,6 +2102,8 @@ int getUnicodeData(__G__ ef_buf, ef_len)
                      (ZCONST char *)(offset + ef_buf), ULen);
              G.unipath_filename[ULen] = '\0';
            }
@@ -191,7 +212,81 @@ Index: process.c
          }
  
          /* Skip this extra field block */
-@@ -2867,10 +2931,13 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2440,16 +2507,17 @@ char *wide_to_local_string(wide_string, escape_all)
+   int state_dependent;
+   int wsize = 0;
+   int max_bytes = MB_CUR_MAX;
+-  char buf[9];
++  char buf[ MB_CUR_MAX+ 1];             /* ("+1" not really needed?) */
+   char *buffer = NULL;
+   char *local_string = NULL;
++  size_t buffer_size;                   /* CVE-2022-0529 */
+ 
+   for (wsize = 0; wide_string[wsize]; wsize++) ;
+ 
+   if (max_bytes < MAX_ESCAPE_BYTES)
+     max_bytes = MAX_ESCAPE_BYTES;
+-
+-  if ((buffer = (char *)malloc(wsize * max_bytes + 1)) == NULL) {
++  buffer_size = wsize * max_bytes + 1;          /* Reused below. */
++  if ((buffer = (char *)malloc( buffer_size)) == NULL) {
+     return NULL;
+   }
+ 
+@@ -2487,8 +2555,28 @@ char *wide_to_local_string(wide_string, escape_all)
+     } else {
+       /* no MB for this wide */
+         /* use escape for wide character */
+-        char *escape_string = wide_to_escape_string(wide_string[i]);
+-        strcat(buffer, escape_string);
++        size_t buffer_len;
++        size_t escape_string_len;
++        char *escape_string;
++        int err_msg = 0;
++
++        escape_string = wide_to_escape_string(wide_string[i]);
++        buffer_len = strlen( buffer);
++        escape_string_len = strlen( escape_string);
++
++        /* Append escape string, as space allows. */
++        /* 2022-07-18 SMS, et al.  CVE-2022-0529 */
++        if (escape_string_len > buffer_size- buffer_len- 1)
++        {
++            escape_string_len = buffer_size- buffer_len- 1;
++            if (err_msg == 0)
++            {
++                err_msg = 1;
++                Info(slide, 0x401, ((char *)slide,
++                 LoadFarString( UFilenameTooLongTrunc)));
++            }
++        }
++        strncat( buffer, escape_string, escape_string_len);
+         free(escape_string);
+     }
+   }
+@@ -2540,9 +2628,18 @@ char *utf8_to_local_string(utf8_string, escape_all)
+   ZCONST char *utf8_string;
+   int escape_all;
+ {
+-  zwchar *wide = utf8_to_wide_string(utf8_string);
+-  char *loc = wide_to_local_string(wide, escape_all);
+-  free(wide);
++  zwchar *wide;
++  char *loc = NULL;
++
++  wide = utf8_to_wide_string( utf8_string);
++
++  /* 2022-07-25 SMS, et al.  CVE-2022-0530 */
++  if (wide != NULL)
++  {
++    loc = wide_to_local_string( wide, escape_all);
++    free( wide);
++  }
++
+   return loc;
+ }
+ 
+@@ -2867,10 +2964,13 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
              break;
  
            case EF_IZUNIX2:
@@ -207,7 +302,7 @@ Index: process.c
  #ifdef IZ_HAVE_UXUIDGID
              if (have_new_type_eb > 1)
                  break;          /* IZUNIX3 overrides IZUNIX2 e.f. block ! */
-@@ -2886,6 +2953,8 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2886,6 +2986,8 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
              /* new 3rd generation Unix ef */
              have_new_type_eb = 2;
  
@@ -216,7 +311,7 @@ Index: process.c
          /*
            Version       1 byte      version of this extra field, currently 1
            UIDSize       1 byte      Size of UID field
-@@ -2897,7 +2966,7 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2897,7 +2999,7 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
  #ifdef IZ_HAVE_UXUIDGID
              if (eb_len >= EB_UX3_MINLEN
                  && z_uidgid != NULL
@@ -225,7 +320,7 @@ Index: process.c
                      /* only know about version 1 */
              {
                  uch uid_size;
-@@ -2906,13 +2975,11 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
+@@ -2906,13 +3008,11 @@ unsigned ef_scan_for_izux(ef_buf, ef_len, ef_is_c, dos
                  uid_size = *((EB_HEADSIZE + 1) + ef_buf);
                  gid_size = *((EB_HEADSIZE + uid_size + 2) + ef_buf);
  
