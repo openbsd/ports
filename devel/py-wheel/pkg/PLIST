@@ -1,5 +1,6 @@
+@pkgpath devel/py-wheel
 @conflict py-wheel-<0.34.2p1
-bin/wheel${MODPY_BIN_SUFFIX}
+bin/wheel
 lib/python${MODPY_VERSION}/site-packages/wheel/
 lib/python${MODPY_VERSION}/site-packages/wheel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/wheel-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

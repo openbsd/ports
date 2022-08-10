@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1408 2022/08/08 07:43:06 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1409 2022/08/10 13:25:11 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -734,6 +734,7 @@ my $stem_extensions = {
 	'tdesktop-qt6' => 'tdesktop',
 	'blocksruntime' => 'libdispatch',
 	'py-mongo' => 'py3-mongo',
+	'py-wheel' => 'py3-wheel',
 };
 
 my $obsolete_reason = {};

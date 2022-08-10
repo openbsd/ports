@@ -1578,7 +1578,6 @@
      SUBDIR += py-wbem,python3
      SUBDIR += py-wcmatch,python3
      SUBDIR += py-wcwidth,python3
-     SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
      SUBDIR += py-wheezy.template,python3
      SUBDIR += py-wrapt,python3
