@@ -2,9 +2,8 @@ COMMENT=		parse and create MySQL date objects
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		DateTime-Format-MySQL-0.06
+DISTNAME =		DateTime-Format-MySQL-0.0701
 CATEGORIES=		devel converters
-REVISION =		0
 
 # perl
 PERMIT_PACKAGE=	Yes
