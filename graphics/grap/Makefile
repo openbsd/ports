@@ -1,7 +1,6 @@
 COMMENT =	language for typesetting graphs
 
-DISTNAME =	grap-1.45
-REVISION =	3
+DISTNAME =	grap-1.46
 CATEGORIES =	textproc graphics
 
 HOMEPAGE =	http://lunabase.org/~faber/Vault/software/grap/
