@@ -276,10 +276,12 @@
      SUBDIR += radeontop
      SUBDIR += rawstudio
      SUBDIR += rawtherapee
+     SUBDIR += ruby-chunky_png
      SUBDIR += ruby-color
      SUBDIR += ruby-gruff
      SUBDIR += ruby-rmagick,ruby30
      SUBDIR += ruby-rmagick,ruby31
+     SUBDIR += ruby-rqrcode
      SUBDIR += ruby-rqrcode-core,ruby30
      SUBDIR += ruby-rqrcode-core,ruby31
      SUBDIR += s10sh
