@@ -1,0 +1,36 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ruby.yml
+@comment ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rspec
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
+${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/_config.yml
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/setup
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/
+@comment ${GEM_LIB}/gems/${DISTNAME}/bin/console
+${GEM_LIB}/gems/${DISTNAME}/images/
+${GEM_LIB}/gems/${DISTNAME}/images/ansi-screen-shot.png
+${GEM_LIB}/gems/${DISTNAME}/images/github-qrcode.png
+${GEM_LIB}/gems/${DISTNAME}/images/github-qrcode.svg
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/export/
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/export.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/export/ansi.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/export/html.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/export/png.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/export/svg.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/qrcode/
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/qrcode.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/qrcode/qrcode.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rqrcode/version.rb
+${GEM_LIB}/gems/${DISTNAME}/rqrcode.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
