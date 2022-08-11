@@ -1,6 +1,6 @@
 COMMENT =	handle .env files
 
-MODPY_EGG_VERSION =	0.19.2
+MODPY_EGG_VERSION =	0.20.0
 
 DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
@@ -20,7 +20,10 @@ FLAVOR =		python3
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+PORTHOME =		${WRKDIR}
+TEST_DEPENDS =		${BUILD_PKGPATH} \
+			devel/py-click${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR} \
 			devel/py-sh${MODPY_FLAVOR} \
 			devel/ipython${MODPY_FLAVOR}
 
