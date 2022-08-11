@@ -1,6 +1,6 @@
 COMMENT =		2D mission-based space shooter
 
-V =			1.5.0
+V =			1.5.1
 DISTNAME =		tbftss-$V.src
 PKGNAME =		tbftss-$V
 
