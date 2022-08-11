@@ -3,7 +3,7 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
-V =		3.4.5
+V =		3.5
 GODOTSTEAM_V =	g34-s152-gs311
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
@@ -22,10 +22,10 @@ MULTI_PACKAGES =	-main -tools
 WANTLIB += ${COMPILER_LIBCXX} BulletCollision BulletDynamics BulletSoftBody
 WANTLIB += GL LinearMath X11 X11-xcb Xau Xcursor Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm c drm enet execinfo
-WANTLIB += freetype intl m mbedcrypto mbedtls mbedx509 mpcdec
-WANTLIB += ogg opus opusfile pcre2-32 png sndio steam_api theora
-WANTLIB += theoradec usbhid vorbis vorbisfile vpx webp xcb xcb-dri2
-WANTLIB += xcb-glx z zstd
+WANTLIB += intl m mbedcrypto mbedtls mbedx509 mpcdec ogg opus
+WANTLIB += opusfile pcre2-32 sndio steam_api theora theoradec
+WANTLIB += usbhid vorbis vorbisfile vpx webp xcb xcb-dri2 xcb-glx
+WANTLIB += zstd
 
 WANTLIB-tools = ${WANTLIB}
 
@@ -50,7 +50,6 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec -lusbhid" \
 			builtin_bullet=no \
 			builtin_enet=no \
-			builtin_freetype=no \
 			builtin_glew=no \
 			builtin_libmpcdec=no \
 			builtin_libogg=no \
@@ -71,6 +70,9 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			warnings=extra \
 			werror=no
 
+# requires freetype with Brotli support
+MODSCONS_FLAGS += builtin_freetype=yes
+
 # The raycast module requires embree which is enabled on all 64bit
 # arches but actually supports only amd64.
 .if ! ${MACHINE_ARCH:Mamd64}
@@ -86,7 +88,6 @@ LIB_DEPENDS =		archivers/zstd \
 			devel/pcre2 \
 			games/goldberg_emulator \
 			graphics/libwebp \
-			graphics/png \
 			multimedia/libtheora \
 			multimedia/libvpx \
 			net/enet \

@@ -66,7 +66,7 @@ private:
 	};
 
 	struct Joypad {
-		InputDefault::JoyAxis curr_axis[MAX_ABS];
+		float curr_axis[MAX_ABS];
 		int key_map[MAX_KEY];
 		int abs_map[MAX_ABS];
 		int dpad;
@@ -114,7 +114,7 @@ private:
 	void joypad_vibration_start(int p_id, float p_weak_magnitude, float p_strong_magnitude, float p_duration, uint64_t p_timestamp);
 	void joypad_vibration_stop(int p_id, uint64_t p_timestamp);
 
-	InputDefault::JoyAxis axis_correct(int min, int max, int p_value) const;
+	float axis_correct(int min, int max, int p_value) const;
 };
 
 #endif
