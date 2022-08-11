@@ -12,6 +12,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}compression.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}copc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}extradims.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}file.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}lib.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}typehints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/laspy/compression.py
+lib/python${MODPY_VERSION}/site-packages/laspy/copc.py
 lib/python${MODPY_VERSION}/site-packages/laspy/errors.py
 lib/python${MODPY_VERSION}/site-packages/laspy/extradims.py
 lib/python${MODPY_VERSION}/site-packages/laspy/file.py

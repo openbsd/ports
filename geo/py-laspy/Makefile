@@ -1,6 +1,6 @@
 COMMENT =		library for reading, modifying and creating LAS LiDAR files
 
-MODPY_EGG_VERSION=	2.1.2
+MODPY_EGG_VERSION=	2.2.0
 DISTNAME=		laspy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
