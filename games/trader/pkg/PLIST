@@ -25,3 +25,5 @@ share/locale/pt_BR/LC_MESSAGES/trader.mo
 share/locale/ru/LC_MESSAGES/trader.mo
 share/locale/sr/LC_MESSAGES/trader.mo
 share/locale/sv/LC_MESSAGES/trader.mo
+share/metainfo/
+share/metainfo/trader.appdata.xml
