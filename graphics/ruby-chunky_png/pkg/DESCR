@@ -1,0 +1,5 @@
+This pure Ruby library can read and write PNG images without depending
+on an external image library, like RMagick. It tries to be memory
+efficient and reasonably fast.  It supports reading and writing all
+PNG variants that are defined in the specification, with one
+limitation: only 8-bit color depth is supported.
