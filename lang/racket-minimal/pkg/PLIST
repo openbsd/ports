@@ -1,5 +1,6 @@
 @conflict racket-<6.2
 @pkgpath lang/racket
+@pkgpath lang/racket-minimal,no_jit
 @bin bin/racket
 bin/racket-system-info
 bin/racket-user-bin-paths

@@ -97,7 +97,6 @@
      SUBDIR += qbe
      SUBDIR += quickjs
      SUBDIR += racket-minimal
-     SUBDIR += racket-minimal,no_jit
      SUBDIR += rakudo
      SUBDIR += regina
      SUBDIR += rsm
