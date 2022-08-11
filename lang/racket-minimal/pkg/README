@@ -5,16 +5,9 @@
 Limitations
 ===========
 
-- Racket's JIT only supports CPUs with SSE2 extensions, ARMv7 or PowerPC CPUs.
-  There is a "no_jit" flavor for arm, amd64, i386 and powerpc.
-- DrRacket doesn't work correctly with the "no_jit" flavor.
-- Racket is slightly broken here and there on aarch64, arm, powerpc
-  and sparc64.
-- FFI is broken on sparc64.
+- FFI is broken on some architectures.
 - Never run "raco pkg" commands as root, even when the commands are suggested
   by upstream. You're going to break the racket package.
-- Racket "places" and "futures" (using threads instead of processes) is
-  only supported on amd64 and i386.
 
 FAQ
 ===
@@ -60,7 +53,7 @@ I installed DrRacket but I don't see the launcher. Where is it?
 
 The binaries of the raco packages are installed to a directory in your $HOME
 ($HOME/.racket/VERSION/bin). For your convenience, this port includes the script
-"racket-user-bin-paths" to get the correct path. You only to need modify your
+"racket-user-bin-paths" to get the correct path. You only need to modify your
 $PATH:
 
 if [ -x ${TRUEPREFIX}/bin/racket-user-bin-paths ]; then
@@ -78,6 +71,8 @@ Where can I find a list of installable packages?
 - Install the raco package "gui-pkg-manager" and run "racket-package-manager"
   (don't change the default package scope in "Settings", it could break the
   installation).
+
+- DrRacket
 
 Can I create a port which installs a raco package?
 --------------------------------------------------

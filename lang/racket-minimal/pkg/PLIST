@@ -1,11 +1,13 @@
 @conflict racket-<6.2
 @pkgpath lang/racket
-%%bc%%
 @bin bin/racket
 bin/racket-system-info
 bin/racket-user-bin-paths
 bin/raco
 include/racket/
+include/racket/chezscheme.h
+include/racket/racketcs.h
+include/racket/racketcsboot.h
 lib/racket/
 lib/racket/compiled/
 lib/racket/compiled/usr/
@@ -101,10 +103,6 @@ lib/racket/compiled/usr/local/share/racket/collects/data/compiled/integer-set_rk
 lib/racket/compiled/usr/local/share/racket/collects/data/compiled/integer-set_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/data/compiled/queue_rkt.dep
 lib/racket/compiled/usr/local/share/racket/collects/data/compiled/queue_rkt.zo
-lib/racket/compiled/usr/local/share/racket/collects/data/private/
-lib/racket/compiled/usr/local/share/racket/collects/data/private/compiled/
-lib/racket/compiled/usr/local/share/racket/collects/data/private/compiled/count-bits-in-fixnum_rkt.dep
-lib/racket/compiled/usr/local/share/racket/collects/data/private/compiled/count-bits-in-fixnum_rkt.zo
 lib/racket/compiled/usr/local/share/racket/collects/db/
 lib/racket/compiled/usr/local/share/racket/collects/db/private/
 lib/racket/compiled/usr/local/share/racket/collects/db/private/compiled/
@@ -1412,7 +1410,6 @@ lib/racket/compiled/usr/local/share/racket/collects/xml/private/compiled/xexpr_r
 @bin lib/racket/gracket
 lib/racket/launchers.rktd
 lib/racket/mans.rktd
-%%cs%%
 @bin lib/racket/starter
 lib/racket/starter-sh
 lib/racket/system.rktd
@@ -1476,8 +1473,6 @@ share/racket/collects/compiler/private/xform.rkt
 share/racket/collects/data/
 share/racket/collects/data/bit-vector.rkt
 share/racket/collects/data/integer-set.rkt
-share/racket/collects/data/private/
-share/racket/collects/data/private/count-bits-in-fixnum.rkt
 share/racket/collects/data/queue.rkt
 share/racket/collects/db/
 share/racket/collects/db/private/
