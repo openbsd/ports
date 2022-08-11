@@ -513,6 +513,7 @@ share/help/zh_CN/glade/legal.xml
 share/icons/hicolor/scalable/apps/org.gnome.Glade.svg
 share/icons/hicolor/symbolic/apps/glade-brand-symbolic.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Glade-symbolic.svg
+share/locale/ab/LC_MESSAGES/glade.mo
 share/locale/ar/LC_MESSAGES/glade.mo
 share/locale/ast/LC_MESSAGES/glade.mo
 share/locale/az/LC_MESSAGES/glade.mo
@@ -545,6 +546,7 @@ share/locale/hy/LC_MESSAGES/glade.mo
 share/locale/id/LC_MESSAGES/glade.mo
 share/locale/it/LC_MESSAGES/glade.mo
 share/locale/ja/LC_MESSAGES/glade.mo
+share/locale/ka/LC_MESSAGES/glade.mo
 share/locale/kk/LC_MESSAGES/glade.mo
 share/locale/km/LC_MESSAGES/glade.mo
 share/locale/ko/LC_MESSAGES/glade.mo

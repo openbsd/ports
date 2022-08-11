@@ -1,12 +1,11 @@
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_PROJECT= 	glade
-GNOME_VERSION=	3.38.2
-REVISION=       1
+GNOME_VERSION=	3.40.0
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  gladeui-2                 2.0 # 0.0
+SHARED_LIBS += gladeui-2                 2.0 # 13.1.0
 
 HOMEPAGE=	http://glade.gnome.org/
 
