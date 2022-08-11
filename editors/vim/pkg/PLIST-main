@@ -23,6 +23,7 @@ share/vim/${P}/autoload/README.txt
 share/vim/${P}/autoload/RstFold.vim
 share/vim/${P}/autoload/ada.vim
 share/vim/${P}/autoload/adacomplete.vim
+share/vim/${P}/autoload/bitbake.vim
 share/vim/${P}/autoload/ccomplete.vim
 share/vim/${P}/autoload/clojurecomplete.vim
 share/vim/${P}/autoload/context.vim
@@ -46,6 +47,7 @@ share/vim/${P}/autoload/netrwSettings.vim
 share/vim/${P}/autoload/netrw_gitignore.vim
 share/vim/${P}/autoload/paste.vim
 share/vim/${P}/autoload/phpcomplete.vim
+share/vim/${P}/autoload/python.vim
 share/vim/${P}/autoload/python3complete.vim
 share/vim/${P}/autoload/pythoncomplete.vim
 share/vim/${P}/autoload/rubycomplete.vim
@@ -84,6 +86,7 @@ share/vim/${P}/colors/delek.vim
 share/vim/${P}/colors/desert.vim
 share/vim/${P}/colors/elflord.vim
 share/vim/${P}/colors/evening.vim
+share/vim/${P}/colors/habamax.vim
 share/vim/${P}/colors/industry.vim
 share/vim/${P}/colors/koehler.vim
 share/vim/${P}/colors/legacy/
@@ -112,6 +115,7 @@ share/vim/${P}/colors/morning.vim
 share/vim/${P}/colors/murphy.vim
 share/vim/${P}/colors/pablo.vim
 share/vim/${P}/colors/peachpuff.vim
+share/vim/${P}/colors/quiet.vim
 share/vim/${P}/colors/ron.vim
 share/vim/${P}/colors/shine.vim
 share/vim/${P}/colors/slate.vim
@@ -395,6 +399,7 @@ share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
 share/vim/${P}/ftplugin/basic.vim
 share/vim/${P}/ftplugin/bdf.vim
+share/vim/${P}/ftplugin/bitbake.vim
 share/vim/${P}/ftplugin/bst.vim
 share/vim/${P}/ftplugin/btm.vim
 share/vim/${P}/ftplugin/bzl.vim
@@ -423,6 +428,7 @@ share/vim/${P}/ftplugin/cvsrc.vim
 share/vim/${P}/ftplugin/debchangelog.vim
 share/vim/${P}/ftplugin/debcontrol.vim
 share/vim/${P}/ftplugin/denyhosts.vim
+share/vim/${P}/ftplugin/desktop.vim
 share/vim/${P}/ftplugin/dictconf.vim
 share/vim/${P}/ftplugin/dictdconf.vim
 share/vim/${P}/ftplugin/diff.vim
@@ -441,6 +447,7 @@ share/vim/${P}/ftplugin/elm.vim
 share/vim/${P}/ftplugin/erlang.vim
 share/vim/${P}/ftplugin/eruby.vim
 share/vim/${P}/ftplugin/eterm.vim
+share/vim/${P}/ftplugin/expect.vim
 share/vim/${P}/ftplugin/falcon.vim
 share/vim/${P}/ftplugin/fennel.vim
 share/vim/${P}/ftplugin/fetchmail.vim
@@ -596,6 +603,7 @@ share/vim/${P}/ftplugin/sql.vim
 share/vim/${P}/ftplugin/sshconfig.vim
 share/vim/${P}/ftplugin/sudoers.vim
 share/vim/${P}/ftplugin/svg.vim
+share/vim/${P}/ftplugin/swayconfig.vim
 share/vim/${P}/ftplugin/swift.vim
 share/vim/${P}/ftplugin/swiftgyb.vim
 share/vim/${P}/ftplugin/sysctl.vim
@@ -623,6 +631,7 @@ share/vim/${P}/ftplugin/verilog.vim
 share/vim/${P}/ftplugin/vhdl.vim
 share/vim/${P}/ftplugin/vim.vim
 share/vim/${P}/ftplugin/vroom.vim
+share/vim/${P}/ftplugin/vue.vim
 share/vim/${P}/ftplugin/wast.vim
 share/vim/${P}/ftplugin/wget.vim
 share/vim/${P}/ftplugin/wget2.vim
@@ -654,6 +663,7 @@ share/vim/${P}/indent/awk.vim
 share/vim/${P}/indent/bash.vim
 share/vim/${P}/indent/basic.vim
 share/vim/${P}/indent/bib.vim
+share/vim/${P}/indent/bitbake.vim
 share/vim/${P}/indent/bst.vim
 share/vim/${P}/indent/bzl.vim
 share/vim/${P}/indent/c.vim
@@ -685,6 +695,7 @@ share/vim/${P}/indent/elm.vim
 share/vim/${P}/indent/erlang.vim
 share/vim/${P}/indent/eruby.vim
 share/vim/${P}/indent/eterm.vim
+share/vim/${P}/indent/expect.vim
 share/vim/${P}/indent/falcon.vim
 share/vim/${P}/indent/fennel.vim
 share/vim/${P}/indent/fortran.vim
@@ -1058,6 +1069,7 @@ share/vim/${P}/syntax/bc.vim
 share/vim/${P}/syntax/bdf.vim
 share/vim/${P}/syntax/bib.vim
 share/vim/${P}/syntax/bindzone.vim
+share/vim/${P}/syntax/bitbake.vim
 share/vim/${P}/syntax/blank.vim
 share/vim/${P}/syntax/bsdl.vim
 share/vim/${P}/syntax/bst.vim
@@ -1549,6 +1561,7 @@ share/vim/${P}/syntax/structurizr.vim
 share/vim/${P}/syntax/sudoers.vim
 share/vim/${P}/syntax/svg.vim
 share/vim/${P}/syntax/svn.vim
+share/vim/${P}/syntax/swayconfig.vim
 share/vim/${P}/syntax/swift.vim
 share/vim/${P}/syntax/swiftgyb.vim
 share/vim/${P}/syntax/syncolor.vim

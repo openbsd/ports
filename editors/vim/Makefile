@@ -2,7 +2,7 @@ COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 # if updating, regen plists with a gui flavour so -lang isn't messed up
-V=		8.2.5172
+V=		9.0.0192
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -11,9 +11,8 @@ MASTER_SITES0=	https://github.com/vim/colorschemes/archive/
 DISTFILES=	${GH_DISTFILE} \
 		vim-colorschemes-20220522{9d3d216b72dd77a2ce4c27e8746708b916864645}.tar.gz:0
 
-T=		${V:C/\.0+/./}
-PKGNAME=	vim-$T
-FULLPKGNAME-lang= vim-lang-$T
+PKGNAME=	vim-$V
+FULLPKGNAME-lang= vim-lang-$V
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
@@ -129,7 +128,7 @@ WANTLIB-lang=
 WRKSRC=		${WRKDIST}/src
 SUBST_VARS=	P
 
-.if ${P} != vim82
+.if ${P} != vim90
 ERRORS=		"Fatal: Major version was updated; sync editors/vim-spell and update this check"
 .endif
 
