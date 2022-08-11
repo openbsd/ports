@@ -1,8 +1,7 @@
 COMMENT =	charset Informations for MIME
 
-DISTNAME =	MIME-Charset-1.012.2
+DISTNAME =	MIME-Charset-1.013
 CATEGORIES =	mail
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
