@@ -1,6 +1,6 @@
 COMMENT =		interface with Tuya WiFi smart devices
 
-MODPY_EGG_VERSION =	1.6.4
+MODPY_EGG_VERSION =	1.6.5
 DISTNAME =		tinytuya-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinytuya-${MODPY_EGG_VERSION}
 
@@ -23,12 +23,10 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
 			security/py-cryptodome${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
-
-RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 # tests require actual devices and editing the test file
 NO_TEST = 		Yes
