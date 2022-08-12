@@ -4,6 +4,7 @@ COMMENT-gtk =		GTK+-based modules for baresip
 GH_ACCOUNT =	baresip
 GH_PROJECT =	baresip
 GH_TAGNAME =	v2.6.0
+REVISION =	0
 
 PKGNAME-main =		baresip-${GH_TAGNAME:C/^v//}
 PKGNAME-gtk =		baresip-gtk-${GH_TAGNAME:C/^v//}
@@ -65,6 +66,7 @@ MAKE_FLAGS +=		MOD_AUTODETECT= \
 			USE_L16=yes \
 			USE_MPA=yes \
 			USE_MPG123=yes \
+			USE_NETROAM=yes \
 			USE_OPUS=yes \
 			USE_PLC=yes \
 			USE_SDL2=yes \
