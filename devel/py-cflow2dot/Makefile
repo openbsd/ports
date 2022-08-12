@@ -1,9 +1,8 @@
 COMMENT =		C call graphs using Cflow producing linked PDF
 
-MODPY_EGG_VERSION =	0.2.2
+MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		pycflow2dot-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
 
 CATEGORIES =		devel
 
