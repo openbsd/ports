@@ -322,6 +322,7 @@
      SUBDIR += vulkan-tools
      SUBDIR += vulkan-validation-layers
      SUBDIR += waffle
+     SUBDIR += webp-pixbuf-loader
      SUBDIR += wmicons
      SUBDIR += xanim
      SUBDIR += xaos
