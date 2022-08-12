@@ -9,9 +9,9 @@ PKGNAME =		protobuf-${V:S/-//g}
 
 WRKDIST =		${WRKDIR}/protobuf-${V}
 
-SHARED_LIBS +=		protobuf-lite	17.0    # 32.4
-SHARED_LIBS +=		protobuf	19.0    # 32.4
-SHARED_LIBS +=		protoc		19.0    # 32.4
+SHARED_LIBS +=		protobuf-lite	17.0    # 32.5
+SHARED_LIBS +=		protobuf	19.0    # 32.5
+SHARED_LIBS +=		protoc		19.0    # 32.5
 
 CATEGORIES =		devel
 
