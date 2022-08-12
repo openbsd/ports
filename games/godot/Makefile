@@ -70,7 +70,8 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			warnings=extra \
 			werror=no
 
-# requires freetype with Brotli support
+# requires freetype with Brotli support, see
+# https://github.com/godotengine/godot/issues/64090
 MODSCONS_FLAGS += builtin_freetype=yes
 
 # The raycast module requires embree which is enabled on all 64bit
