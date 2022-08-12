@@ -213,6 +213,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupstorage/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupstorage/2018-04-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupstorage/2018-04-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupstorage/2018-04-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/examples-1.json
@@ -1364,6 +1368,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pricing/2017-10-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/2021-12-03/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/2021-12-03/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/privatenetworks/2021-12-03/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/2020-07-20/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/proton/2020-07-20/examples-1.json
