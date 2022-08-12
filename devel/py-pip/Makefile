@@ -1,6 +1,6 @@
 COMMENT =		tool for installing Python packages
 
-MODPY_EGG_VERSION =	22.2.1
+MODPY_EGG_VERSION =	22.2.2
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -20,5 +20,7 @@ FLAVOR =		python3
 
 # No test suites in pypi tarball
 NO_TEST =		Yes
+
+# This port must have no/minimal deps and cannot use MODPY_PEP517.
 
 .include <bsd.port.mk>
