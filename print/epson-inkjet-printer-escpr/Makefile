@@ -1,11 +1,11 @@
 # MASTER_SITES changes at each version; when looking for updates, try searching
 # ${HOMEPAGE} for a linux driver, for e.g. sx200
 PORTROACH=		ignore:1
-MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/13/76/45/5ac2ea8f9cf94a48abd64afd0f967f98c4fc24aa/
+MASTER_SITES=		https://download3.ebz.epson.net/dsc/f/03/00/13/77/93/e85dc2dc266e96fdc242bd95758bd88d1a51963e/
 
 COMMENT=		printer driver for Epson ESC/P-R inkjets
 
-DISTNAME=		epson-inkjet-printer-escpr-1.7.20
+DISTNAME=		epson-inkjet-printer-escpr-1.7.21
 EXTRACT_SUFX=		-1lsb3.2.tar.gz
 
 SHARED_LIBS +=  escpr                0.0      # 1.0

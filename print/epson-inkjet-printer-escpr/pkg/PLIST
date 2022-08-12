@@ -448,6 +448,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-WF-2830_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-WF-2840_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-WF-2850_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-WF-2870_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-WF-2910_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-WF-2930_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-WF-2950_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-WF-3010_Series-epson-escpr-en.ppd
@@ -539,6 +540,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-XP-211_214_216_Series-epson-escpr-en.
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-212_213_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-2150_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-215_217_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-XP-2200_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-220_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-225_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-235_Series-epson-escpr-en.ppd
@@ -551,6 +553,7 @@ share/ppd/epson-inkjet-printer-escpr/Epson-XP-3100_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-310_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-312_313_315_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-3150_Series-epson-escpr-en.ppd
+share/ppd/epson-inkjet-printer-escpr/Epson-XP-3200_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-320_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-322_323_325_Series-epson-escpr-en.ppd
 share/ppd/epson-inkjet-printer-escpr/Epson-XP-330_Series-epson-escpr-en.ppd
