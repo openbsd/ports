@@ -2,14 +2,14 @@ COMMENT =		bundle of plugins for gmpc
 
 VERSION =		11.8.16
 DISTNAME =		gmpc-plugins-${VERSION}
-REVISION =		13
+REVISION =		14
 
 CATEGORIES =		audio
 
 MAINTAINER =		Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =		http://gmpclient.org/plugins
-MASTER_SITES =		http://www.musicpd.org/download/gmpc-plugins/${VERSION}/
+HOMEPAGE =		https://gmpc.fandom.com/wiki/Plugins
+MASTER_SITES =		https://www.musicpd.org/download/gmpc-plugins/${VERSION}/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
