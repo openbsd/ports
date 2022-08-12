@@ -1,0 +1,94 @@
+Our capstone port renames a mips struct member to avoid a name clash.
+
+Index: librz/analysis/p/analysis_mips_cs.c
+--- librz/analysis/p/analysis_mips_cs.c.orig
++++ librz/analysis/p/analysis_mips_cs.c
+@@ -9,14 +9,14 @@
+ static ut64 t9_pre = UT64_MAX;
+ // http://www.mrc.uidaho.edu/mrc/people/jff/digital/MIPSir.html
+ 
+-#define OPERAND(x)  insn->detail->mips.operands[x]
+-#define REGID(x)    insn->detail->mips.operands[x].reg
+-#define REG(x)      cs_reg_name(*handle, insn->detail->mips.operands[x].reg)
+-#define IMM(x)      insn->detail->mips.operands[x].imm
+-#define MEMBASE(x)  cs_reg_name(*handle, insn->detail->mips.operands[x].mem.base)
+-#define MEMINDEX(x) insn->detail->mips.operands[x].mem.index
+-#define MEMDISP(x)  insn->detail->mips.operands[x].mem.disp
+-#define OPCOUNT()   insn->detail->mips.op_count
++#define OPERAND(x)  insn->detail->mipsen.operands[x]
++#define REGID(x)    insn->detail->mipsen.operands[x].reg
++#define REG(x)      cs_reg_name(*handle, insn->detail->mipsen.operands[x].reg)
++#define IMM(x)      insn->detail->mipsen.operands[x].imm
++#define MEMBASE(x)  cs_reg_name(*handle, insn->detail->mipsen.operands[x].mem.base)
++#define MEMINDEX(x) insn->detail->mipsen.operands[x].mem.index
++#define MEMDISP(x)  insn->detail->mipsen.operands[x].mem.disp
++#define OPCOUNT()   insn->detail->mipsen.op_count
+ // TODO scale and disp
+ 
+ #define SET_VAL(op, i) \
+@@ -132,7 +132,7 @@ static void opex(RzStrBuf *buf, csh handle, cs_insn *i
+ 	}
+ 	pj_o(pj);
+ 	pj_ka(pj, "operands");
+-	cs_mips *x = &insn->detail->mips;
++	cs_mips *x = &insn->detail->mipsen;
+ 	for (i = 0; i < x->op_count; i++) {
+ 		cs_mips_op *op = x->operands + i;
+ 		pj_o(pj);
+@@ -168,30 +168,30 @@ static void opex(RzStrBuf *buf, csh handle, cs_insn *i
+ 
+ static const char *arg(csh *handle, cs_insn *insn, char *buf, int n) {
+ 	*buf = 0;
+-	switch (insn->detail->mips.operands[n].type) {
++	switch (insn->detail->mipsen.operands[n].type) {
+ 	case MIPS_OP_INVALID:
+ 		break;
+ 	case MIPS_OP_REG:
+ 		sprintf(buf, "%s",
+ 			cs_reg_name(*handle,
+-				insn->detail->mips.operands[n].reg));
++				insn->detail->mipsen.operands[n].reg));
+ 		break;
+ 	case MIPS_OP_IMM: {
+-		st64 x = (st64)insn->detail->mips.operands[n].imm;
++		st64 x = (st64)insn->detail->mipsen.operands[n].imm;
+ 		sprintf(buf, "%" PFMT64d, x);
+ 	} break;
+ 	case MIPS_OP_MEM: {
+-		int disp = insn->detail->mips.operands[n].mem.disp;
++		int disp = insn->detail->mipsen.operands[n].mem.disp;
+ 		if (disp < 0) {
+ 			sprintf(buf, "%" PFMT64d ",%s,-",
+-				(ut64)-insn->detail->mips.operands[n].mem.disp,
++				(ut64)-insn->detail->mipsen.operands[n].mem.disp,
+ 				cs_reg_name(*handle,
+-					insn->detail->mips.operands[n].mem.base));
++					insn->detail->mipsen.operands[n].mem.base));
+ 		} else {
+ 			sprintf(buf, "0x%" PFMT64x ",%s,+",
+-				(ut64)insn->detail->mips.operands[n].mem.disp,
++				(ut64)insn->detail->mipsen.operands[n].mem.disp,
+ 				cs_reg_name(*handle,
+-					insn->detail->mips.operands[n].mem.base));
++					insn->detail->mipsen.operands[n].mem.base));
+ 		}
+ 	} break;
+ 	}
+@@ -209,7 +209,7 @@ static int analop_esil(RzAnalysis *a, RzAnalysisOp *op
+ 
+ 	if (insn) {
+ 		// caching operands
+-		for (i = 0; i < insn->detail->mips.op_count && i < 8; i++) {
++		for (i = 0; i < insn->detail->mipsen.op_count && i < 8; i++) {
+ 			*str[i] = 0;
+ 			ARG(i);
+ 		}
+@@ -1035,7 +1035,7 @@ static int analop(RzAnalysis *analysis, RzAnalysisOp *
+ 		op->type = RZ_ANALYSIS_OP_TYPE_RJMP;
+ 		op->delay = 1;
+ 		// register is $ra, so jmp is a return
+-		if (insn->detail->mips.operands[0].reg == MIPS_REG_RA) {
++		if (insn->detail->mipsen.operands[0].reg == MIPS_REG_RA) {
+ 			op->type = RZ_ANALYSIS_OP_TYPE_RET;
+ 			t9_pre = UT64_MAX;
+ 		}
