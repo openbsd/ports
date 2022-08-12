@@ -294,6 +294,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dubai
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dushanbe
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Famagusta
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Gaza
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hanoi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Harbin
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hebron
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ho_Chi_Minh
@@ -485,6 +486,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Jersey
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kaliningrad
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kiev
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kirov
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Kyiv
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Lisbon
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/Ljubljana
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Europe/London
