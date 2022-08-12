@@ -4,12 +4,12 @@ and this interferes badly with lld
 Index: binr/rules.mk
 --- binr/rules.mk.orig
 +++ binr/rules.mk
-@@ -3,7 +3,7 @@ include ../../libr/config.mk
- include ../../shlr/zip/deps.mk
+@@ -13,7 +13,7 @@ endif
+ endif
  
- ifeq (,$(findstring tcc,${CC}))
+ ifeq ($(USE_PIE),1)
 -CFLAGS+=-pie
 +#CFLAGS+=-pie
  endif
- CFLAGS+=-I$(LTOP)/include
+ CFLAGS:=-I$(LTOP)/include -I$(LTOP)/include/sdb $(CFLAGS)
  
