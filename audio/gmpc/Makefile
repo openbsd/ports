@@ -2,13 +2,13 @@ COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		18
+REVISION =		19
 
 CATEGORIES=		audio
 
 MAINTAINER=		Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =		http://gmpclient.org/
+HOMEPAGE =		https://gmpc.fandom.com/wiki/Gnome_Music_Player_Client
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -24,7 +24,7 @@ WANTLIB += Xau Xdmcp brotlicommon brotlidec execinfo fribidi
 WANTLIB += idn2 jpeg psl unistring
 WANTLIB += ${COMPILER_LIBCXX}
 
-MASTER_SITES=		http://www.musicpd.org/download/gmpc/${VERSION}/
+MASTER_SITES=		https://www.musicpd.org/download/gmpc/${VERSION}/
 
 MODULES=		textproc/intltool x11/gnome
 
