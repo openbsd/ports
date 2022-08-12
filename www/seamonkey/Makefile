@@ -13,8 +13,9 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.13
 EPOCH-lightning =	0
+REVISION =	0
 
-HOMEPAGE =	http://www.seamonkey-project.org/
+HOMEPAGE =	https://www.seamonkey-project.org/
 
 SO_VERSION =	47.0
 # NOTE: Must bump minor version if any shlib's are removed from the
