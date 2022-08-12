@@ -5,10 +5,11 @@ COMMENT =	geospatial routing extension for PostgreSQL
 V =		3.3.1
 DISTNAME =	pgrouting-${V}
 MASTER_SITES =	https://github.com/pgRouting/pgrouting/releases/download/v${V}/
+REVISION =	0
 
 CATEGORIES =	geo databases
 
-HOMEPAGE =	http://pgrouting.org/
+HOMEPAGE =	https://pgrouting.org/
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
