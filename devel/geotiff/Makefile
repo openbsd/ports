@@ -4,8 +4,9 @@ DISTNAME=	libgeotiff-1.7.1
 CATEGORIES=	devel geo
 SHARED_LIBS=	geotiff 3.1 # 6.0
 WRKSRC=	${WRKDIR}/${DISTNAME:S/rc2//}
+REVISION=	0
 
-HOMEPAGE=	http://trac.osgeo.org/geotiff/
+HOMEPAGE=	https://trac.osgeo.org/geotiff/
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
