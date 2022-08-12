@@ -1,6 +1,6 @@
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	5.9.0
+MODPY_EGG_VERSION =	5.10.0
 DISTNAME =		pbr-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^/py-/}
 CATEGORIES =		devel
