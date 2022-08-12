@@ -213,6 +213,7 @@
      SUBDIR += help2man
      SUBDIR += http-parser
      SUBDIR += hub
+     SUBDIR += iaito
      SUBDIR += id-utils
      SUBDIR += imake
      SUBDIR += imake-cf
