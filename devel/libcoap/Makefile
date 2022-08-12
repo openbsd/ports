@@ -39,6 +39,9 @@ CONFIGURE_ARGS=		--disable-doxygen \
 			--enable-tests \
 			--with-tinydtls
 
+# --disable-doxygen is not taken into account by ext/tinydtls/configure
+CONFIGURE_ENV +=	ac_cv_path_DOXYGEN=:
+
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 AUTORECONF=		./autogen.sh
