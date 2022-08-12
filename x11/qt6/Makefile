@@ -14,7 +14,7 @@
      #SUBDIR += qtwebsockets
      #SUBDIR += qtwebengine
      #SUBDIR += qtwebchannel
-     #SUBDIR += qtwayland
+     SUBDIR += qtwayland
      #SUBDIR += qtvirtualkeyboard
      #SUBDIR += qtserialport
      #SUBDIR += qtserialbus
