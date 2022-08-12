@@ -3,12 +3,13 @@ COMMENT=	cartographic projection utilities
 DISTNAME=	proj-9.0.1
 CATEGORIES=	devel geo
 SHARED_LIBS=	proj 16.3 # 23.1
+REVISION=	0
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		proj-datumgrid-1.8${EXTRACT_SUFX}
 # 500Mb		proj-data-1.0${EXTRACT_SUFX}
 
-HOMEPAGE=	http://proj.org
+HOMEPAGE=	https://proj.org
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
