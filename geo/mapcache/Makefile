@@ -2,10 +2,11 @@ COMMENT=	GIS WMTS/TMS tile caching server
 
 DISTNAME =	mapcache-1.12.1
 SHARED_LIBS +=	mapcache 3.2
+REVISION =	0
 
 CATEGORIES=	geo www
 
-HOMEPAGE=	http://www.mapserver.org/
+HOMEPAGE=	https://www.mapserver.org/
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
 # MIT
