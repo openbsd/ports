@@ -4,11 +4,11 @@ VERSION=		11.8.17
 DISTNAME=		libmpd-${VERSION}
 SHARED_LIBS=		mpd	3.2	#.3.0
 CATEGORIES=		audio
-REVISION =		4
+REVISION =		5
 
 MAINTAINER=		Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =		http://gmpclient.org/
+HOMEPAGE =		https://gmpc.fandom.com/wiki/Libmpd
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
