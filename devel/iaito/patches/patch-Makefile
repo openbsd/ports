@@ -1,0 +1,17 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -26,11 +26,11 @@ iaito: translations
+ 	$(MAKE) -C build -j4
+ 
+ translations: build src/translations/README.md
+-	$(MAKE) -C src/translations
++#	$(MAKE) -C src/translations
+ #	lrelease src/Iaito.pro
+ 
+ src/translations/README.md:
+-	git submodule update --init
++#	git submodule update --init
+ 
+ # force qt5 build when QtCreator is installed in user's home
+ ifeq ($(shell test -x ~/Qt/5.12.3/clang_64/bin/qmake || echo err),)

@@ -1,0 +1,27 @@
+Make man page lint.
+
+Index: src/iaito.1
+--- src/iaito.1.orig
++++ src/iaito.1
+@@ -1,12 +1,12 @@
+-.TH IAITO "1" "iaito" "User Commands"
++.TH IAITO "1" "July 31, 2022" "iaito" "User Commands"
+ .SH NAME
+-iaito \- manual page for iaito
++iaito \- GUI for iaito
+ .SH SYNOPSIS
+ .B iaito
+ [\fI\,options\/\fR] \fI\,filename\/\fR
+ .SH DESCRIPTION
+ A Qt and C++ GUI for radare2 reverse engineering framework.
+-The iaito is the continuation of the 
++The iaito is the continuation of the
+ .UR "https://cutter.re"
+ .BR "Cutter"
+ before the fork of
+@@ -76,4 +76,5 @@ The full documentation for
+ is maintained as docs folder in the source
+ .UR "https://github.com/radareorg/iaito/tree/master/docs"
+ .BR "https://github.com/radareorg/iaito/tree/master/docs"
++.UE
+ In your distribution you might find it compiled in separate iaiato-doc package.
