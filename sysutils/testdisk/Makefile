@@ -3,8 +3,9 @@ COMMENT =	data recovery software
 VERSION =	7.1
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
+REVISION =	0
 
-HOMEPAGE =	http://www.cgsecurity.org/
+HOMEPAGE =	https://www.cgsecurity.org/
 MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tar.bz2
 
