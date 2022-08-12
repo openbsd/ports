@@ -12,7 +12,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}charsets.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}escape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}graphics.${MODPY_PYC_MAGIC_TAG}pyc
@@ -20,7 +19,6 @@ lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}modes.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}screens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/${MODPY_PYCACHE}streams.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyte/charsets.py
-lib/python${MODPY_VERSION}/site-packages/pyte/compat.py
 lib/python${MODPY_VERSION}/site-packages/pyte/control.py
 lib/python${MODPY_VERSION}/site-packages/pyte/escape.py
 lib/python${MODPY_VERSION}/site-packages/pyte/graphics.py
