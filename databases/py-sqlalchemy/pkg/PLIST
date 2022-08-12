@@ -630,6 +630,7 @@ share/doc/py-sqlalchemy/_modules/examples/vertical/dictlike.html
 share/doc/py-sqlalchemy/_modules/index.html
 share/doc/py-sqlalchemy/_static/
 share/doc/py-sqlalchemy/_static/_sphinx_javascript_frameworks_compat.js
+share/doc/py-sqlalchemy/_static/annotated.png
 share/doc/py-sqlalchemy/_static/basic.css
 share/doc/py-sqlalchemy/_static/changelog.css
 share/doc/py-sqlalchemy/_static/clipboard.min.js
@@ -649,6 +650,7 @@ share/doc/py-sqlalchemy/_static/jquery-3.6.0.js
 share/doc/py-sqlalchemy/_static/jquery.js
 share/doc/py-sqlalchemy/_static/language_data.js
 share/doc/py-sqlalchemy/_static/minus.png
+share/doc/py-sqlalchemy/_static/nonannotated.png
 share/doc/py-sqlalchemy/_static/plus.png
 share/doc/py-sqlalchemy/_static/pygments.css
 share/doc/py-sqlalchemy/_static/searchtools.js
