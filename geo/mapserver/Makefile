@@ -7,7 +7,7 @@ COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
 V=		7.6.4
-REVISION-python= 0
+REVISION=	1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -19,7 +19,7 @@ SHARED_LIBS +=	mapserver 5.0
 
 CATEGORIES=	geo www
 
-HOMEPAGE=	http://www.mapserver.org/
+HOMEPAGE=	https://www.mapserver.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes
