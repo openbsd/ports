@@ -3,7 +3,7 @@ Unbreak joystick detection.
 Index: src/fs-uae/main.c
 --- src/fs-uae/main.c.orig
 +++ src/fs-uae/main.c
-@@ -921,6 +921,7 @@ static void list_joysticks()
+@@ -922,6 +922,7 @@ static void list_joysticks()
      }
      printf("# SDL_NumJoysticks(): %d\n", SDL_NumJoysticks());
      for(int i = 0; i < SDL_NumJoysticks(); i++) {

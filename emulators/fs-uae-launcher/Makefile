@@ -1,22 +1,20 @@
 COMMENT =		launcher for the FS-UAE Amiga emulator
 
-MODPY_EGG_VERSION =	3.0.5
+MODPY_EGG_VERSION =	3.1.68
 DISTNAME =		fs-uae-launcher-${MODPY_EGG_VERSION}
+EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		emulators x11
-HOMEPAGE =		http://fs-uae.net
+HOMEPAGE =		http://fs-uae.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
-REVISION =		0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES =		https://fs-uae.net/stable/${MODPY_EGG_VERSION}/
+MASTER_SITES =		${HOMEPAGE}files/FS-UAE-Launcher/Stable/${MODPY_EGG_VERSION}/
 
 MODULES =		lang/python
 
 # The fs-uae-launcher distfile contains some bundled Python deps:
-#
-#  - OpenGL: We use py-opengl from the ports tree instead.
 #
 #  - A modified (stripped down) version amitools: For now we do use this, but
 #    if a dedicated port of amitools appears later, we can use it instead.
@@ -42,6 +40,11 @@ SUBST_VARS += FS_PYTHONPATH
 
 post-install:
 	${SUBST_CMD} ${PREFIX}/bin/fs-uae-launcher
+	rm -rf ${PREFIX}/share/fs-uae-launcher/python${MODPY_VERSION}/fsgs/res/input/{windows,macos}
+	find ${PREFIX}/share/fs-uae-launcher/python${MODPY_VERSION} \
+		\( -name '*windows.conf' -or -name '*macos.conf' -or \
+		   -name '*macosx.conf' -or -name '*for_windows*.ini' \) \
+		-delete
 
 NO_TEST =		Yes
 

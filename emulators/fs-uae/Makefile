@@ -5,9 +5,10 @@ BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 USE_WXNEEDED =		Yes
 
 COMMENT =		modern Amiga emulator
-V =			3.0.5
+V =			3.1.66
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
+EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		emulators
 
 HOMEPAGE =		https://fs-uae.net/
@@ -21,7 +22,7 @@ WANTLIB += openal png pthread ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_SITES =		${HOMEPAGE}stable/$V/
+MASTER_SITES =		${HOMEPAGE}files/FS-UAE/Stable/$V/
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			archivers/zip
