@@ -1,7 +1,7 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		3
-PROTOBUF_VERSION =	21.4
+PROTOBUF_VERSION =	21.5
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-cpp-${V}
