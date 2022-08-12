@@ -1,6 +1,6 @@
 COMMENT =		pure Python chess library
 
-MODPY_EGG_VERSION =	1.9.1
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME =		chess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
