@@ -1,6 +1,6 @@
 COMMENT =	super-lightweight exception framework
 
-DISTNAME =	X-Tiny-0.21
+DISTNAME =	X-Tiny-0.22
 
 CATEGORIES =	devel
 
