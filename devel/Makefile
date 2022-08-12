@@ -1627,6 +1627,7 @@
      SUBDIR += rgbds
      SUBDIR += riscv-elf
      SUBDIR += riscv32-esp-elf
+     SUBDIR += rizin
      SUBDIR += rlog
      SUBDIR += robin-hood-hashing
      SUBDIR += robin-map
