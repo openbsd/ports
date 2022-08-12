@@ -1,6 +1,6 @@
 COMMENT =		Python subprocess interface
 
-MODPY_EGG_VERSION =	1.14.2
+MODPY_EGG_VERSION =	1.14.3
 DISTNAME =		sh-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
