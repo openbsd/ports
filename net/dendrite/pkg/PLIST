@@ -12,10 +12,10 @@
 @bin bin/dendrite-polylith-multi
 @comment bin/dendritejs
 @comment bin/federation-api-proxy
+@comment bin/goose
 @comment bin/dendrite-upgrade-tests
 @comment bin/dendritejs-pinecone
 @comment bin/furl
-@comment bin/goose
 @comment bin/resolve-state
 share/dendrite/
 share/dendrite/dendrite.yaml
