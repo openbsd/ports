@@ -2,7 +2,7 @@ COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.13.4
+V =		2.13.5
 
 GH_PROJECT =	icinga2
 GH_TAGNAME =	v$V
@@ -38,9 +38,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_context-mt boost_coroutine-mt boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt c curses edit execinfo m
-WANTLIB += crypto ssl
+WANTLIB += boost_filesystem-mt boost_iostreams-mt
+WANTLIB += boost_program_options-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt
+WANTLIB += c curses edit execinfo m crypto ssl
 
 MODULES =		devel/cmake
 
