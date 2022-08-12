@@ -2,12 +2,13 @@ COMMENT =	GVfs mountpoint manager
 
 XFCE_VERSION =	0.5.2
 XFCE_GOODIE =	gigolo
+REVISION =	0
 
 CATEGORIES =	x11
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =	http://www.uvena.de/gigolo/
+HOMEPAGE =	https://www.uvena.de/gigolo/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
