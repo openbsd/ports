@@ -7890,6 +7890,8 @@ share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMB.step
 share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMB.wrl
 share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMC.step
 share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMC.wrl
+share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMF.step
+share/kicad/3dmodels/Diode_SMD.3dshapes/D_SMF.wrl
 share/kicad/3dmodels/Diode_SMD.3dshapes/D_SOD-110.step
 share/kicad/3dmodels/Diode_SMD.3dshapes/D_SOD-110.wrl
 share/kicad/3dmodels/Diode_SMD.3dshapes/D_SOD-123.step
@@ -12313,6 +12315,8 @@ share/kicad/3dmodels/Transformer_THT.3dshapes/Transformer_NF_ETAL_P1165.wrl
 share/kicad/3dmodels/Transistor_Power_Module.3dshapes/
 share/kicad/3dmodels/Transistor_Power_Module.3dshapes/Infineon_EasyPIM-2B.step
 share/kicad/3dmodels/Transistor_Power_Module.3dshapes/Infineon_EasyPIM-2B.wrl
+share/kicad/3dmodels/Transistor_Power_Module.3dshapes/ST_ACEPACK-2-CIB.step
+share/kicad/3dmodels/Transistor_Power_Module.3dshapes/ST_ACEPACK-2-CIB.wrl
 share/kicad/3dmodels/Transistor_Power_Module.3dshapes/ST_SDIP-25L.step
 share/kicad/3dmodels/Transistor_Power_Module.3dshapes/ST_SDIP-25L.wrl
 share/kicad/3dmodels/Valve.3dshapes/
