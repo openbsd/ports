@@ -196,7 +196,7 @@ BUILD_DEPENDS +=	devel/py-installer${MODPY_FLAVOR} \
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517:L:Mflit}
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517:L:Mhatch}
+.  elif ${MODPY_PEP517:L:Mhatchling}
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  endif
 .else
