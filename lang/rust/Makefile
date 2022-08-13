@@ -11,14 +11,14 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.62.0
+V =			1.63.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.62.0-20220629
-BV-amd64 =		1.62.0-20220628
-BV-i386 =		1.62.0-20220628
-BV-sparc64 =		1.61.0-20220531
+BV-aarch64 =		1.63.0-20220810
+BV-amd64 =		1.63.0-20220809
+BV-i386 =		1.63.0-20220809
+BV-sparc64 =		1.62.0-20220707
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -143,11 +143,6 @@ MAKE_ENV +=	CARGO_HOME=${WRKBUILD}/cargo-home \
 		TMPDIR=${WRKBUILD} \
 		LIBSSH2_SYS_USE_PKG_CONFIG=1
 
-# cargo assert() on i386 with standard libz
-.if "${MACHINE_ARCH}" == "i386"
-MAKE_ENV += 	LIBZ_SYS_STATIC=1
-.endif
-
 TEST_ENV +=	RUST_BACKTRACE=0
 
 .ifdef DEBUG
@@ -156,7 +151,6 @@ MAKE_ENV +=	RUST_LOG=info
 .endif
 
 # build/configuration variables
-PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
