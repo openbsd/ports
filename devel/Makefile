@@ -1360,6 +1360,7 @@
      SUBDIR += py-dtfabric,python3
      SUBDIR += py-dulwich,python3
      SUBDIR += py-easyprocess,python3
+     SUBDIR += py-editables,python3
      SUBDIR += py-extension-helpers,python3
      SUBDIR += py-elftools,python3
      SUBDIR += py-enrich,python3
@@ -1395,6 +1396,7 @@
      SUBDIR += py-gobject3,python3
      SUBDIR += py-greenlet,python3
      SUBDIR += py-hamcrest,python3
+     SUBDIR += py-hatchling,python3
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar,python3
