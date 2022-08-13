@@ -1,3 +1,4 @@
+BROKEN =		lang/rust 1.63.0 fails to build it
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
 
 COMMENT-main =		Mozilla application suite
