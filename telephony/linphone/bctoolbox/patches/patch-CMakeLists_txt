@@ -3,7 +3,7 @@ Hunk #3: ensure that libexecinfo symbols are resolved (fix the build on ld.bfd a
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -60,9 +60,7 @@ if(NOT CPACK_GENERATOR AND NOT CMAKE_INSTALL_RPATH AND
+@@ -69,9 +69,7 @@ if(NOT CPACK_GENERATOR AND NOT CMAKE_INSTALL_RPATH AND
  	message(STATUS "Setting install rpath to ${CMAKE_INSTALL_RPATH}")
  endif()
  
@@ -14,7 +14,7 @@ Index: CMakeLists.txt
  
  if(ENABLE_MBEDTLS)
  	find_package(MbedTLS)
-@@ -151,7 +149,11 @@ set(EXPORT_TARGETS_NAME "bctoolbox")
+@@ -166,7 +164,11 @@ set(EXPORT_TARGETS_NAME "bctoolbox")
  
  check_library_exists("rt" "clock_gettime" "" HAVE_LIBRT)
  check_library_exists("dl" "dladdr" "" HAVE_LIBDL)

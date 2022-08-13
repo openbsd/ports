@@ -14,7 +14,7 @@ Index: src/dns/dns.c
  
  	return resconf;
  error:
-@@ -9175,6 +9177,7 @@ static struct dns_resolv_conf *resconf(void) {
+@@ -9179,6 +9181,7 @@ static struct dns_resolv_conf *resconf(void) {
  			panic("%s: %s", path, dns_strerror(error));
  	}
  
@@ -22,7 +22,7 @@ Index: src/dns/dns.c
  	for (i = 0; i < MAIN.nssconf.count; i++) {
  		path	= MAIN.nssconf.path[i];
  
-@@ -9195,7 +9198,7 @@ static struct dns_resolv_conf *resconf(void) {
+@@ -9199,7 +9202,7 @@ static struct dns_resolv_conf *resconf(void) {
  		else if (error != ENOENT)
  			panic("%s: %s", path, dns_strerror(error));
  	}

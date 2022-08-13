@@ -1,4 +1,10 @@
 @bin bin/linphone
+include/LinphoneApp/
+include/LinphoneApp/LinphonePlugin.hpp
+include/LinphoneApp/PluginDataAPI.hpp
+include/LinphoneApp/PluginExample.json
+include/LinphoneApp/PluginNetworkHelper.hpp
+@so lib/libapp-plugin.so
 share/applications/linphone.desktop
 share/icons/hicolor/128x128/apps/linphone.png
 share/icons/hicolor/16x16/apps/linphone.png

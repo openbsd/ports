@@ -2,6 +2,7 @@
 include/ortp/
 include/ortp/b64.h
 include/ortp/event.h
+include/ortp/fecstream.h
 include/ortp/logging.h
 include/ortp/nack.h
 include/ortp/ortp.h

@@ -1,7 +1,6 @@
 COMMENT =	graphical audio and video SIP phone
 
-V =		4.2.5
-REVISION =	0
+V =		4.4.8
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
 
@@ -25,7 +24,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5TextToSpeech Qt5Widgets bctoolbox belcard
+WANTLIB += Qt5Svg Qt5Test Qt5TextToSpeech Qt5Widgets bctoolbox belcard
 WANTLIB += c linphone linphone++ m mediastreamer ortp
 
 post-patch:
@@ -33,7 +32,7 @@ post-patch:
 
 # from https://salsa.debian.org/pkg-voip-team/linphone-stack/linphone-desktop/-/blob/master/debian/rules#L14
 post-configure:
-	sed -i '/linphone-sdk/d' ${WRKBUILD}/linphone-app/cmake_builder/linphone_package/cmake_install.cmake
+	sed -i '/INSTALL.*linphone-sdk/d' ${WRKBUILD}/linphone-app/cmake_builder/linphone_package/cmake_install.cmake
 	sed -i "s|${WRKBUILD}/OUTPUT|${TRUEPREFIX}|" ${WRKBUILD}/linphone-app/cmake_install.cmake
 	sed -i "s|${WRKBUILD}/OUTPUT|${TRUEPREFIX}|" ${WRKBUILD}/cmake_install.cmake
 .include <bsd.port.mk>

@@ -13,6 +13,7 @@ include/mediastreamer2/formats.h
 include/mediastreamer2/ice.h
 include/mediastreamer2/mediastream.h
 include/mediastreamer2/ms_srtp.h
+include/mediastreamer2/msanalysedisplay.h
 include/mediastreamer2/msasync.h
 include/mediastreamer2/msaudiomixer.h
 include/mediastreamer2/mschanadapter.h
@@ -32,6 +33,8 @@ include/mediastreamer2/msitc.h
 include/mediastreamer2/msjava.h
 include/mediastreamer2/msjpegwriter.h
 include/mediastreamer2/msmediaplayer.h
+include/mediastreamer2/msmediarecorder.h
+include/mediastreamer2/msmire.h
 include/mediastreamer2/msogl.h
 include/mediastreamer2/msogl_functions.h
 include/mediastreamer2/mspcapfileplayer.h

@@ -20,5 +20,5 @@ Index: linphone-app/CMakeLists.txt
 -
 -project(linphoneqt VERSION "${version_major}.${version_minor}.${version_patch}")
  
+ 
  if(ENABLE_BUILD_VERBOSE)
- 	#message("CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH}")

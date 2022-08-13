@@ -1,6 +1,5 @@
 COMMENT =	language recognition library
 
-V =		5.0.0-alpha
 PKGNAME =	${MODULE}-${V:S/-alpha//}
 MODULE =	belr
 

@@ -1,9 +1,8 @@
 COMMENT =	streaming engine for voice/video telephony applications
 
 MODULE =	mediastreamer2
-REVISION =	1
 
-SHARED_LIBS += mediastreamer 0.0 # 11
+SHARED_LIBS += mediastreamer 1.0 # 11
 
 CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 		-DENABLE_DOC=NO \

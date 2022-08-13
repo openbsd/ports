@@ -1,6 +1,5 @@
 COMMENT =	library to manipulate VCard standard format
 
-V =		4.5.22
 MODULE =	belcard
 
 SHARED_LIBS +=  belcard 0.0 # 1
