@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 gnome-shell like dashboard
 
 XFCE_GOODIE =	xfdashboard
-XFCE_VERSION =	0.9.91
+XFCE_VERSION =	1.0.0
 SHARED_LIBS +=	xfdashboard	1.0 # 900.0
 
 # GPLv2
