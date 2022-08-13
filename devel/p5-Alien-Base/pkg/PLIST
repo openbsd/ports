@@ -94,6 +94,7 @@ ${P5SITE}/Alien/Build/Version/
 ${P5SITE}/Alien/Build/Version/Basic.pm
 ${P5SITE}/Alien/Build/rc.pm
 ${P5SITE}/Alien/Role.pm
+${P5SITE}/Alien/Util.pm
 ${P5SITE}/Test/
 ${P5SITE}/Test/Alien/
 ${P5SITE}/Test/Alien.pm
@@ -181,6 +182,7 @@ ${P5SITE}/alienfile.pm
 @man man/man3p/Alien::Build::Version::Basic.3p
 @man man/man3p/Alien::Build::rc.3p
 @man man/man3p/Alien::Role.3p
+@man man/man3p/Alien::Util.3p
 @man man/man3p/Test::Alien.3p
 @man man/man3p/Test::Alien::Build.3p
 @man man/man3p/Test::Alien::CanCompile.3p
