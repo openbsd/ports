@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portgen,v 1.5 2022/01/05 09:12:50 espie Exp $
+# $OpenBSD: portgen,v 1.6 2022/08/13 07:14:24 kmos Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -43,7 +43,6 @@ my ( $type, $module ) = @ARGV;
 
 my $map = {
 	p5 => 'CPAN',
-	py => 'PyPI',
 	ruby => 'Ruby',
 	go => 'Go',
 };
