@@ -294,7 +294,6 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dubai
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dushanbe
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Famagusta
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Gaza
-lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hanoi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Harbin
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hebron
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ho_Chi_Minh
