@@ -1,6 +1,6 @@
 COMMENT =		fixed size round-robin style database
 
-MODPY_EGG_VERSION =	1.1.8
+MODPY_EGG_VERSION =	1.1.10
 
 DISTNAME =		whisper-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
