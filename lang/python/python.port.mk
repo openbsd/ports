@@ -146,8 +146,23 @@ RUN_DEPENDS +=		${MODPY_RUN_DEPENDS}
 TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 .endif
 
+MODPY_SETUPTOOLS ?=
+MODPY_SETUPUTILS ?=
+MODPY_PEP517 ?=		No
+MODPY_PI ?=
+
 _MODPY_PRE_BUILD_STEPS = :
-.if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:L} == "yes"
+
+.if ${MODPY_PEP517:L} == "no"
+_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
+	! grep -q ^build-backend.*setuptools ${WRKSRC}/pyproject.toml; then \
+	printf "\n***\n\nOpenBSD ports: should this use MODPY_PEP517?\n"; \
+	grep ^build-backend ${WRKSRC}/pyproject.toml || true; \
+	printf "\n***\n\n"; fi
+.endif
+
+
+.if ${MODPY_SETUPTOOLS:L} == "yes"
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
 .  if ${MODPY_MAJOR_VERSION} == 2
@@ -159,6 +174,7 @@ MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}
 MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 MODPY_SETUPUTILS =	Yes
+
 # The setuptools uses test target
 TEST_TARGET ?=	test
 _MODPY_USERBASE =
@@ -173,6 +189,16 @@ _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 # that plugin will cause failure at the end of build.
 # In the absence of a targetted means of disabling this, use a big hammer:
 DPB_PROPERTIES +=	nojunk
+.elif ${MODPY_PEP517:L} != no
+BUILD_DEPENDS +=	devel/py-installer${MODPY_FLAVOR} \
+			devel/py-pip${MODPY_FLAVOR}
+.  if ${MODPY_PEP517:L:Mflit_core}
+BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
+.  elif ${MODPY_PEP517:L:Mflit}
+BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
+.  elif ${MODPY_PEP517:L:Mhatch}
+BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
+.  endif
 .else
 # Try to detect the case where a port will build regardless of setuptools
 # but the final plist will be different if it's present.
@@ -191,7 +217,7 @@ MODPY_SETUPUTILS =	No
 _MODPY_USERBASE =	${WRKDIR}
 .endif
 
-.if defined(MODPY_PI) && ${MODPY_PI:L} == "yes"
+.if ${MODPY_PI:L} == "yes"
 _MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_EGG_VERSION}//}
 MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}
 MASTER_SITES =		${MASTER_SITE_PYPI:=${MODPY_PI_DIR}/}
@@ -267,6 +293,17 @@ MODPY_ADJ_FILES ?=
 MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 .endif
 
+.if ${MODPY_PEP517:L} != no
+MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
+	cd ${WRKSRC} && pip wheel -v --no-index --no-cache --no-deps --no-build-isolation .
+MODPY_INSTALL_TARGET = \
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/*.whl
+MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
+.  if ${MODPY_PYTEST:L} == "yes"
+MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
+.  endif
+.else
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
 MODPY_INSTALL_TARGET = \
@@ -274,10 +311,11 @@ MODPY_INSTALL_TARGET = \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 
 MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
-.if ${MODPY_PYTEST:L} == "yes"
+.  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
-.elif ${MODPY_SETUPUTILS:L} == "yes"
+.  elif ${MODPY_SETUPUTILS:L} == "yes"
 MODPY_TEST_TARGET +=	${TEST_TARGET}
+.  endif
 .endif
 
 # dirty way to do it with no modifications in bsd.port.mk
