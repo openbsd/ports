@@ -1,7 +1,6 @@
 COMMENT =	Python bindings for rrdtool
 
-MODPY_EGG_VERSION =	0.1.15
-REVISION =	4
+MODPY_EGG_VERSION =	0.1.16
 
 DISTNAME =	rrdtool-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
