@@ -817,6 +817,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/Butto
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/CharacterSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/CheckBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ColorEditor.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ColorEditorPopup.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ColorLine.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ColorLogic.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/ColorPalette.qml
