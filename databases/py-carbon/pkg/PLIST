@@ -9,6 +9,12 @@ bin/carbon-relay.py
 bin/validate-storage-schemas.py
 lib/python${MODPY_VERSION}/site-packages/carbon/
 lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/
+lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/carbon/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/carbon/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

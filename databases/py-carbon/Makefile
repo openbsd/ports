@@ -1,6 +1,6 @@
 COMMENT=		backend data caching and persistence daemon for Graphite
 
-MODPY_EGG_VERSION=	1.1.8
+MODPY_EGG_VERSION=	1.1.10
 
 DISTNAME=		carbon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
