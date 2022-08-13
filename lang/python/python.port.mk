@@ -198,7 +198,7 @@ BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517:L:Mhatchling}
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
-.  else
+.  elif !${MODPY_PEP517:L:Myes}
 ERRORS +=		"Fatal: unknown MODPY_PEP517 value"
 .  endif
 .else
