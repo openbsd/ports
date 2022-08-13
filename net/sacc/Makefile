@@ -1,6 +1,5 @@
 COMMENT =	simple console gopher client
-DISTNAME =	sacc-1.01
-EXTRACT_SUFX =	.tgz
+DISTNAME =	sacc-1.06
 CATEGORIES =	net
 
 HOMEPAGE =	gopher://bitreich.org/1/scm/sacc
@@ -9,7 +8,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses
+WANTLIB += c curses tls
 
 MASTER_SITES =	ftp://bitreich.org/releases/sacc/
 
