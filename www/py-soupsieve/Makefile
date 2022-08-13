@@ -1,7 +1,6 @@
 COMMENT =		modern CSS selector implementation for Beautiful Soup
 
-# XXX 2.3.2 uses hatch; not yet supported in ports
-MODPY_EGG_VERSION =	2.3.1
+MODPY_EGG_VERSION =	2.3.2
 EPOCH =			0
 DISTNAME =		soupsieve-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -16,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		hatchling
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
