@@ -1,7 +1,7 @@
 COMMENT =	lil' TOML writer
 
 MODPY_EGG_VERSION =	1.0.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	tomli_w-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -21,14 +21,6 @@ FLAVORS =	python3
 
 NO_TEST =	Yes
 
-BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
-		devel/py-installer${MODPY_FLAVOR}
-
-do-build:
-	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
-
-do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
-	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
+MODPY_PEP517 =		flit_core
 
 .include <bsd.port.mk>
