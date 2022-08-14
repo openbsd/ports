@@ -19,15 +19,6 @@ FLAVOR =		python3
 # test_diagram needs railroad
 MODPY_PYTEST_ARGS =	--ignore tests/test_diagram.py tests
 
-#MODPY_PEP517 =		flit_core
-BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR} \
-			devel/py-installer${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR}
-do-build:
-	cd ${WRKSRC} && pip wheel -v --no-index --no-cache --no-deps --no-build-isolation .
-
-do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
-	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/*.whl
+MODPY_PEP517 =		flit_core
 
 .include <bsd.port.mk>
