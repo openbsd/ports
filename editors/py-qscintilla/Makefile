@@ -1,10 +1,9 @@
 COMMENT =		Python binding for the Scintilla source code editor
 
-VERSION =		2.11.6
+VERSION =		2.13.3
 MODPY_EGG_VERSION =	${VERSION}
-DISTNAME =		QScintilla-${VERSION}
+DISTNAME =		QScintilla_src-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
-REVISION =		1
 
 CATEGORIES =		editors x11 devel
 
@@ -39,10 +38,10 @@ NO_TEST =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/sip-build
-CONFIGURE_ARGS =	--verbose \
-			--qmake ${MODQT5_QMAKE} \
-			--jobs ${MAKE_JOBS} \
-			--no-make
+
+CONFIGURE_ARGS =	--verbose
+
+WRKSRC =	${WRKDIST}/Python
 
 MAKE_FLAGS =	-C build \
 		CC=${CC} \
@@ -53,5 +52,10 @@ MAKE_FLAGS =	-C build \
 FAKE_FLAGS =	INSTALL_ROOT=${DESTDIR}
 
 SUBST_VARS +=	QTVER PYQTVER
+
+post-extract:
+	# Needed to run sip-6.5+ sip-build
+	ln -sf ${MODQT5_QMAKE} ${WRKDIR}/bin/qmake
+	cp ${WRKSRC}/pyproject-qt5.toml ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

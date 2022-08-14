@@ -1,0 +1,12 @@
+Index: src/qscintilla.pro
+--- src/qscintilla.pro.orig
++++ src/qscintilla.pro
+@@ -70,7 +70,7 @@ unix:!macx {
+ # Scintilla namespace rather than pollute the global namespace.
+ #DEFINES += SCI_NAMESPACE
+ 
+-target.path = $$[QT_INSTALL_LIBS]
++target.path =  ${LOCALBASE}/lib
+ INSTALLS += target
+ 
+ header.path = $$[QT_INSTALL_HEADERS]

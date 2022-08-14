@@ -2,10 +2,9 @@ COMMENT=	Python bindings for Qt5
 
 DPB_PROPERTIES=	parallel
 
-MODPY_EGG_VERSION= 5.15.6
+MODPY_EGG_VERSION= 5.15.7
 DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -29,10 +28,12 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
+		devel/py-ply${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR}
 
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
 		x11/py-sip-qt5${MODPY_FLAVOR}>=12.8 \
+		devel/py-ply${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR}
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
@@ -62,11 +63,7 @@ MODPY_PI=	Yes
 # https://www.riverbankcomputing.com/static/Docs/PyQt5/installation.html#building-pyqt5
 CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= ${LOCALBASE}/bin/sip-build
-CONFIGURE_ARGS=	--verbose \
-		--qmake ${MODQT5_QMAKE} \
-		--jobs ${MAKE_JOBS} \
-		--no-make \
-		--confirm-license
+CONFIGURE_ARGS =	--verbose --confirm-license
 
 MAKE_FLAGS=	-C build \
 		CC=${CC} \
@@ -75,6 +72,10 @@ MAKE_FLAGS=	-C build \
 		CXXOPTS="${CXXFLAGS}"
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
+
+post-extract:
+	# Needed to run sip-6.5+ sip-build
+	ln -sf ${MODQT5_QMAKE} ${WRKDIR}/bin/qmake
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

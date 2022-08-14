@@ -78,6 +78,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtBluetooth/qpybluetooth
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/QtCore.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/QtCoremod.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/pyqt-gpl.sip5
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/qabstractanimation.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/qabstracteventdispatcher.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt5/bindings/QtCore/qabstractitemmodel.sip

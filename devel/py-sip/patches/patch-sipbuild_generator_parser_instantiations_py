@@ -1,0 +1,14 @@
+https://github.com/qgis/QGIS/issues/49214
+
+Index: sipbuild/generator/parser/instantiations.py
+--- sipbuild/generator/parser/instantiations.py.orig
++++ sipbuild/generator/parser/instantiations.py
+@@ -434,7 +434,7 @@ def _instantiate_value(proto_value, expansions):
+         proto_name = proto_value.value.result.definition
+ 
+         if proto_name.is_simple:
+-            i_name = ScopedName.parse(template_string(proto_name, expansions))
++            i_name = ScopedName.parse(template_string(proto_name.base_name, expansions))
+             i_result = Argument(type=ArgumentType.DEFINED, definition=i_name)
+             i_fcall = FunctionCall(result=i_result,
+                     args=proto_value.value.args)

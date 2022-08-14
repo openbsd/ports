@@ -3,12 +3,11 @@ COMMENT=	automatically generate Python bindings for C and C++ libs
 # The following ports often usually need updating together:
 # devel/py-sip, www/py-qtwebengine, x11/py-qt5, x11/py-sip-qt5
 # API changes fairly often, be sure to test dependent ports when updating.
-MODPY_EGG_VERSION=	6.4.0
+MODPY_EGG_VERSION=	6.6.2
 
 DISTNAME=	sip-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,7 +16,7 @@ HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/intro
 # SIP license (Python like) or GPLv2/v3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	m ${COMPILER_LIBCXX}
+WANTLIB += pthread
 
 COMPILER=	base-clang ports-gcc
 

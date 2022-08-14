@@ -1,9 +1,8 @@
 COMMENT =	python Qt5WebEngine bindings
 
-MODPY_EGG_VERSION =	5.15.5
+MODPY_EGG_VERSION =	5.15.6
 DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
 PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -42,10 +41,7 @@ SUBST_VARS +=		QTVER PYQTVER
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/sip-build
-CONFIGURE_ARGS =	--verbose \
-			--qmake ${MODQT5_QMAKE} \
-			--jobs ${MAKE_JOBS} \
-			--no-make
+CONFIGURE_ARGS =	--verbose
 
 MAKE_FLAGS =		-C build \
 			CC=${CC} \
@@ -56,5 +52,9 @@ MAKE_FLAGS =		-C build \
 FAKE_FLAGS =		INSTALL_ROOT=${DESTDIR}
 
 NO_TEST =		Yes
+
+post-extract:
+	# Needed to run sip-6.5+ sip-build
+	ln -sf ${MODQT5_QMAKE} ${WRKDIR}/bin/qmake
 
 .include <bsd.port.mk>

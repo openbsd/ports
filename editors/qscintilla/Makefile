@@ -1,9 +1,9 @@
 COMMENT =	Qt port of the Scintilla source code editor
 
 # XXX update py-qscintilla alongside this port (same distfile).
-VERSION =	2.11.6
-DISTNAME =	QScintilla-${VERSION}
-PKGNAME =	${DISTNAME:L}
+VERSION =	2.13.3
+DISTNAME =	QScintilla_src-${VERSION}
+PKGNAME =	qscintilla-${VERSION}
 
 CATEGORIES =	editors x11
 
@@ -26,7 +26,7 @@ SEPARATE_BUILD =	No
 
 CONFIGURE_ENV =	HOME=${WRKDIR}
 
-WRKSRC =	${WRKDIST}/Qt4Qt5
+WRKSRC =	${WRKDIST}/src
 
 NO_TEST =	Yes
 

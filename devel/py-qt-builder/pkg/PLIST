@@ -49,14 +49,10 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/msvc-64/vcruntime
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/msvc-64/vcruntime140_1.dll
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-32/
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-32/libcrypto-1_1.dll
-lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-32/libeay32.dll
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-32/libssl-1_1.dll
-lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-32/ssleay32.dll
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-64/
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-64/libcrypto-1_1-x64.dll
-lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-64/libeay32.dll
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-64/libssl-1_1-x64.dll
-lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/dlls/openssl-64/ssleay32.dll
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}/
