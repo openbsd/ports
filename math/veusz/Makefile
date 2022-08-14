@@ -1,3 +1,6 @@
+# https://github.com/veusz/veusz/issues/595
+BROKEN = Can not build with py-sip
+
 COMMENT =	scientific plotting and graphing package
 MODPY_EGG_VERSION =	3.4
 DISTNAME =	veusz-${MODPY_EGG_VERSION}
