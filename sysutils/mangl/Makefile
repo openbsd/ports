@@ -3,7 +3,7 @@ CATEGORIES =	sysutils x11
 
 GH_ACCOUNT =	zigalenarcic
 GH_PROJECT =	mangl
-GH_TAGNAME =	v1.1.1
+GH_TAGNAME =	v1.1.2
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -23,10 +23,6 @@ ALL_TARGET =	mangl
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_TEST =	Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mangl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mangl.1 ${PREFIX}/man/man1
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
