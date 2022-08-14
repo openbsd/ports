@@ -123,7 +123,8 @@ CONFIGURE_ARGS +=	--with-fpectl \
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
 .  if ${PROPERTIES:Mlld}
 CONFIGURE_ARGS +=	--with-lto
-.    if ${MACHINE_ARCH} != "powerpc"
+.    if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "powerpc"
+# On armv7, clang errors out due to lack of memory.
 # On powerpc, the python binary would crash by "Segmentation fault".
 CONFIGURE_ARGS +=	--enable-optimizations
 .    endif
