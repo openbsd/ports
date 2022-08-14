@@ -163,6 +163,9 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 
 
 .if ${MODPY_SETUPTOOLS:L} == "yes"
+.  if ${MODPY_PEP517:L} != "no"
+ERRORS +=		"Fatal: don't set both MODPY_PEP517 and MODPY_SETUPTOOLS"
+.  endif
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
 .  if ${MODPY_MAJOR_VERSION} == 2
@@ -333,7 +336,10 @@ do-install:
 	@${MODPY_INSTALL_TARGET}
 .  endif
 
-# setuptools supports regress testing from setup.py using a standard target
+# setuptools supports regress testing from setup.py using a standard target,
+# though this is deprecated and in most cases MODPY_PYTEST should be used
+# (possibly with MODPY_PYTEST_ARGS pointed at test dirs/files if the automatic
+# search picks up files in lib/).
 .  if !target(do-test) && \
       (${MODPY_SETUPUTILS:L} == "yes" || ${MODPY_PYTEST:L} == "yes")
 do-test:
