@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		sphinx-notfound-page-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -21,12 +21,10 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		flit_core
 
 RUN_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 
 NO_TEST =		Yes
-
-MODPY_PEP517 =		flit_core
 
 .include <bsd.port.mk>
