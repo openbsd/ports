@@ -9,7 +9,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Declarative
 WANTLIB += KF5GuiAddons KF5I18n KF5ItemViews KF5Package KF5QuickAddons
 WANTLIB += KF5Service KF5WidgetsAddons KF5XmlGui Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Widgets Qt5Xml m
+WANTLIB += Qt5Widgets Qt5Xml c m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt5/qtquickcontrols

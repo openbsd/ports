@@ -106,7 +106,6 @@ lib/qt5/qml/org/kde/kirigami.2/private/EdgeShadow.qml
 lib/qt5/qml/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
 lib/qt5/qml/org/kde/kirigami.2/private/PageActionPropertyGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/private/PrivateActionToolButton.qml
-lib/qt5/qml/org/kde/kirigami.2/private/RefreshableScrollView.qml
 lib/qt5/qml/org/kde/kirigami.2/private/SwipeItemEventFilter.qml
 lib/qt5/qml/org/kde/kirigami.2/private/globaltoolbar/
 lib/qt5/qml/org/kde/kirigami.2/private/globaltoolbar/AbstractPageHeader.qml
@@ -163,7 +162,6 @@ lib/qt5/qml/org/kde/kirigami.2/templates/private/GenericDrawerIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/IconPropertiesGroup.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/MenuIcon.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/private/PassiveNotification.qml
-lib/qt5/qml/org/kde/kirigami.2/templates/private/ScrollView.qml
 lib/qt5/qml/org/kde/kirigami.2/templates/qmldir
 share/kdevappwizard/
 share/kdevappwizard/templates/

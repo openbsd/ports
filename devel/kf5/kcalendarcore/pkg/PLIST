@@ -11,6 +11,7 @@ include/KF5/KCalendarCore/KCalCore/CalFormat
 include/KF5/KCalendarCore/KCalCore/CalStorage
 include/KF5/KCalendarCore/KCalCore/Calendar
 include/KF5/KCalendarCore/KCalCore/CalendarPlugin
+include/KF5/KCalendarCore/KCalCore/CalendarPluginLoader
 include/KF5/KCalendarCore/KCalCore/Conference
 include/KF5/KCalendarCore/KCalCore/CustomProperties
 include/KF5/KCalendarCore/KCalCore/Duration
@@ -44,6 +45,7 @@ include/KF5/KCalendarCore/KCalendarCore/CalFormat
 include/KF5/KCalendarCore/KCalendarCore/CalStorage
 include/KF5/KCalendarCore/KCalendarCore/Calendar
 include/KF5/KCalendarCore/KCalendarCore/CalendarPlugin
+include/KF5/KCalendarCore/KCalendarCore/CalendarPluginLoader
 include/KF5/KCalendarCore/KCalendarCore/Conference
 include/KF5/KCalendarCore/KCalendarCore/CustomProperties
 include/KF5/KCalendarCore/KCalendarCore/Duration
@@ -74,6 +76,7 @@ include/KF5/KCalendarCore/kcalcore/attachment.h
 include/KF5/KCalendarCore/kcalcore/attendee.h
 include/KF5/KCalendarCore/kcalcore/calendar.h
 include/KF5/KCalendarCore/kcalcore/calendarplugin.h
+include/KF5/KCalendarCore/kcalcore/calendarpluginloader.h
 include/KF5/KCalendarCore/kcalcore/calfilter.h
 include/KF5/KCalendarCore/kcalcore/calformat.h
 include/KF5/KCalendarCore/kcalcore/calstorage.h
@@ -108,6 +111,7 @@ include/KF5/KCalendarCore/kcalendarcore/attachment.h
 include/KF5/KCalendarCore/kcalendarcore/attendee.h
 include/KF5/KCalendarCore/kcalendarcore/calendar.h
 include/KF5/KCalendarCore/kcalendarcore/calendarplugin.h
+include/KF5/KCalendarCore/kcalendarcore/calendarpluginloader.h
 include/KF5/KCalendarCore/kcalendarcore/calfilter.h
 include/KF5/KCalendarCore/kcalendarcore/calformat.h
 include/KF5/KCalendarCore/kcalendarcore/calstorage.h

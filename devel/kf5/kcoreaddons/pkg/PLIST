@@ -30,6 +30,7 @@ include/KF5/KCoreAddons/KProcess
 include/KF5/KCoreAddons/KProcessList
 include/KF5/KCoreAddons/KRandom
 include/KF5/KCoreAddons/KRandomSequence
+include/KF5/KCoreAddons/KRuntimePlatform
 include/KF5/KCoreAddons/KSandbox
 include/KF5/KCoreAddons/KSharedDataCache
 include/KF5/KCoreAddons/KShell
@@ -75,6 +76,7 @@ include/KF5/KCoreAddons/kprocess.h
 include/KF5/KCoreAddons/kprocesslist.h
 include/KF5/KCoreAddons/krandom.h
 include/KF5/KCoreAddons/krandomsequence.h
+include/KF5/KCoreAddons/kruntimeplatform.h
 include/KF5/KCoreAddons/ksandbox.h
 include/KF5/KCoreAddons/kshareddatacache.h
 include/KF5/KCoreAddons/kshell.h
@@ -135,6 +137,7 @@ share/locale/cs/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/cs/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/csb/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/cy/LC_MESSAGES/kcoreaddons5_qt.qm
+share/locale/cy/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/da/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/da/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/de/LC_MESSAGES/kcoreaddons5_qt.qm

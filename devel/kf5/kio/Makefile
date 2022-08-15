@@ -3,9 +3,9 @@
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
 
-SHARED_LIBS =	KF5KIOCore		10.2 # 5.20
-SHARED_LIBS +=	KF5KIOGui		11.2 # 5.20
-SHARED_LIBS +=	KF5KIOFileWidgets	8.6 # 5.20
+SHARED_LIBS =	KF5KIOCore		10.3 # 5.20
+SHARED_LIBS +=	KF5KIOGui		11.3 # 5.20
+SHARED_LIBS +=	KF5KIOFileWidgets	8.7 # 5.20
 SHARED_LIBS +=	KF5KIONTLM		7.0 # 5.20
 SHARED_LIBS +=	KF5KIOWidgets		8.9 # 5.20
 

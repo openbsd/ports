@@ -1,7 +1,6 @@
 COMMENT =	QtQuick based components set
 DISTNAME =	kirigami2-${VERSION}
 PKGNAME =	kf5-${DISTNAME}
-REVISION =	0
 
 HOMEPAGE =	https://api.kde.org/frameworks/kirigami/html/index.html
 

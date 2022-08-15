@@ -55,10 +55,6 @@ lib/qt5/qml/org/kde/people/
 lib/qt5/qml/org/kde/people/qmldir
 share/kf5/mkspecs/qt_KPeople.pri
 share/kf5/mkspecs/qt_KPeopleWidgets.pri
-share/kservicetypes5/
-share/kservicetypes5/kpeople_data_source.desktop
-share/kservicetypes5/kpeople_plugin.desktop
-share/kservicetypes5/persondetailsplugin.desktop
 share/locale/ar/LC_MESSAGES/kpeople5.mo
 share/locale/az/LC_MESSAGES/kpeople5.mo
 share/locale/bs/LC_MESSAGES/kpeople5.mo

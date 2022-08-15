@@ -50,6 +50,7 @@ lib/qt5/plugins/kf5/kfilemetadata/
 @so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_office2007extractor.so
 @so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_officeextractor.so
 @so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_plaintextextractor.so
+@so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_pngextractor.so
 @so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_poextractor.so
 @so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_popplerextractor.so
 @so lib/qt5/plugins/kf5/kfilemetadata/kfilemetadata_postscriptdscextractor.so
