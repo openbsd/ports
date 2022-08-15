@@ -1,18 +1,18 @@
 COMMENT =	fd.o-compliant menu editor
 
-MODPY_EGG_VERSION =	2.1.3
+MODPY_EGG_VERSION =	2.3.0
 DISTNAME =	menulibre-${MODPY_EGG_VERSION}
+GH_ACCOUNT =	bluesabre
+GH_PROJECT =	menulibre
+GH_TAGNAME =	menulibre-${MODPY_EGG_VERSION}
 CATEGORIES =	sysutils x11
-REVISION =	7
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =	http://smdavis.us/projects/menulibre/
+HOMEPAGE =	https://bluesable.org/projects/menulibre/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
-
-MASTER_SITES =	https://launchpad.net/menulibre/2.1/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
 
@@ -30,5 +30,8 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
+
+post-extract:
+	rm ${WRKSRC}/uninstall.py
 
 .include <bsd.port.mk>

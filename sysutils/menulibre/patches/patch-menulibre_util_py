@@ -1,16 +1,24 @@
---- menulibre/util.py.orig	Fri Oct  9 00:39:41 2015
-+++ menulibre/util.py	Fri Oct 30 13:36:56 2015
-@@ -19,8 +19,6 @@ import os
- import re
+Index: menulibre/util.py
+--- menulibre/util.py.orig
++++ menulibre/util.py
+@@ -21,7 +21,6 @@ import re
+ import subprocess
  
  import getpass
 -import psutil
+ import shutil
+ 
+ from locale import gettext as _
+@@ -31,7 +30,6 @@ from gi.repository import GLib, Gdk
+ import logging
+ logger = logging.getLogger('menulibre')
+ 
 -old_psutil_format = isinstance(psutil.Process.username, property)
  
- from gi.repository import GLib, Gdk
  
-@@ -40,58 +38,6 @@ MenuItemTypes = enum(
- )
+ def enum(**enums):
+@@ -102,58 +100,6 @@ def escapeText(text):
+     return GLib.markup_escape_text(text)
  
  
 -def getProcessUsername(process):
@@ -22,7 +30,7 @@
 -            username = process.username
 -        else:
 -            username = process.username()
--    except:
+-    except:  # noqa
 -        pass
 -
 -    return username
@@ -37,7 +45,7 @@
 -            p_name = process.name
 -        else:
 -            p_name = process.name()
--    except:
+-    except:  # noqa
 -        pass
 -
 -    return p_name
@@ -59,37 +67,52 @@
 -                p_name = getProcessName(process)
 -                if p_name is not None and p_name not in processes:
 -                    processes.append(p_name)
--        except:
+-        except:  # noqa
 -            pass
 -    processes.sort()
 -    return processes
 -
 -
- def getBasename(filename):
+ def getRelativeName(filename):
      if filename.endswith('.desktop'):
          basename = filename.split('/applications/', 1)[1]
-@@ -102,23 +48,7 @@ def getBasename(filename):
+@@ -195,38 +141,7 @@ def getDefaultMenuName():
  
- def getDefaultMenuPrefix():
+ def getDefaultMenuPrefix(): # noqa
      """Return the default menu prefix."""
 -    prefix = os.environ.get('XDG_MENU_PREFIX', '')
 -
--    # Cinnamon doesn't set this variable
+-    # Cinnamon and MATE don't set this variable
 -    if prefix == "":
 -        if 'cinnamon' in os.environ.get('DESKTOP_SESSION', ''):
 -            prefix = 'cinnamon-'
+-        elif 'mate' in os.environ.get('DESKTOP_SESSION', ''):
+-            prefix = 'mate-'
+-        # Somehow the XDG_MENU_PREFIX isn't exposed in Ubuntu Unity
+-        elif 'unity' in os.environ.get('DESKTOP_SESSION', ''):
+-            prefix = 'gnome-'
+-
+-    if prefix == "":
+-        desktop = getCurrentDesktop()
+-        if desktop == 'plasma':
+-            prefix = 'kf5-'
+-        elif desktop == 'kde':
+-            prefix = 'kde4-'
 -
 -    if prefix == "":
 -        processes = getProcessList()
 -        if 'xfce4-panel' in processes:
 -            prefix = 'xfce-'
+-        elif 'mate-panel' in processes:
+-            prefix = 'mate-'
 -
 -    if len(prefix) == 0:
 -        logger.warning("No menu prefix found, MenuLibre will not function "
 -                       "properly.")
 -
 -    return prefix
+-
 +    return os.environ.get('XDG_MENU_PREFIX', '')
  
- 
- def getItemPath(file_id):
+ def getMenuDiagnostics():
+     diagnostics = {}
