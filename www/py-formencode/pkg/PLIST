@@ -1,4 +1,5 @@
 @pkgpath www/py-formencode
+LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/FormEncode-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -20,9 +21,10 @@ lib/python${MODPY_VERSION}/site-packages/docs/modules.txt
 lib/python${MODPY_VERSION}/site-packages/docs/whatsnew-0-to-1.2.4.txt
 lib/python${MODPY_VERSION}/site-packages/docs/whatsnew-1.2.5.txt
 lib/python${MODPY_VERSION}/site-packages/docs/whatsnew-1.3.txt
+lib/python${MODPY_VERSION}/site-packages/docs/whatsnew-2.0.txt
 lib/python${MODPY_VERSION}/site-packages/formencode/
 lib/python${MODPY_VERSION}/site-packages/formencode/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/formencode/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/formencode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/formencode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/${MODPY_PYCACHE}compound.${MODPY_PYC_MAGIC_TAG}pyc
@@ -104,6 +106,10 @@ lib/python${MODPY_VERSION}/site-packages/formencode/i18n/lt/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/lt/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/lt/LC_MESSAGES/FormEncode.mo
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/lt/LC_MESSAGES/FormEncode.po
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/mk/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/mk/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/mk/LC_MESSAGES/FormEncode.mo
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/mk/LC_MESSAGES/FormEncode.po
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/nb_NO/LC_MESSAGES/FormEncode.mo
@@ -140,6 +146,10 @@ lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr/LC_MESSAGES/FormEncode.mo
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr/LC_MESSAGES/FormEncode.po
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr@latin/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr@latin/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr@latin/LC_MESSAGES/FormEncode.mo
+lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sr@latin/LC_MESSAGES/FormEncode.po
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sv/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sv/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/formencode/i18n/sv/LC_MESSAGES/FormEncode.mo
@@ -164,7 +174,7 @@ lib/python${MODPY_VERSION}/site-packages/formencode/rewritingparser.py
 lib/python${MODPY_VERSION}/site-packages/formencode/schema.py
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_cc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_compound.${MODPY_PYC_MAGIC_TAG}pyc
@@ -174,6 +184,7 @@ lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_d
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_doctests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_email.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_htmlfill.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_htmlfill_control.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_htmlgen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_htmlrename.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/${MODPY_PYCACHE}test_i18n.${MODPY_PYC_MAGIC_TAG}pyc
@@ -199,6 +210,7 @@ lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_doctest_xml_compa
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_doctests.py
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_email.py
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_htmlfill.py
+lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_htmlfill_control.py
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_htmlgen.py
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_htmlrename.py
 lib/python${MODPY_VERSION}/site-packages/formencode/tests/test_i18n.py
@@ -211,18 +223,26 @@ lib/python${MODPY_VERSION}/site-packages/formencode/validators.py
 lib/python${MODPY_VERSION}/site-packages/formencode/variabledecode.py
 share/doc/${MODPY_PY_PREFIX}formencode/
 share/doc/${MODPY_PY_PREFIX}formencode/Design.txt
+share/doc/${MODPY_PY_PREFIX}formencode/Makefile
 share/doc/${MODPY_PY_PREFIX}formencode/ToDo.txt
 share/doc/${MODPY_PY_PREFIX}formencode/Validator.txt
+share/doc/${MODPY_PY_PREFIX}formencode/_static/
+share/doc/${MODPY_PY_PREFIX}formencode/_static/bitbucket.png
+share/doc/${MODPY_PY_PREFIX}formencode/_static/github.png
+share/doc/${MODPY_PY_PREFIX}formencode/_static/sourceforge.png
 share/doc/${MODPY_PY_PREFIX}formencode/_themes/
 share/doc/${MODPY_PY_PREFIX}formencode/_themes/old/
 share/doc/${MODPY_PY_PREFIX}formencode/_themes/old/static/
 share/doc/${MODPY_PY_PREFIX}formencode/_themes/old/static/old.css
+share/doc/${MODPY_PY_PREFIX}formencode/_themes/old/theme.conf
 share/doc/${MODPY_PY_PREFIX}formencode/community.txt
+share/doc/${MODPY_PY_PREFIX}formencode/conf.py
 share/doc/${MODPY_PY_PREFIX}formencode/download.txt
 share/doc/${MODPY_PY_PREFIX}formencode/history.txt
 share/doc/${MODPY_PY_PREFIX}formencode/htmlfill.txt
 share/doc/${MODPY_PY_PREFIX}formencode/i18n.txt
 share/doc/${MODPY_PY_PREFIX}formencode/index.txt
+share/doc/${MODPY_PY_PREFIX}formencode/make.bat
 share/doc/${MODPY_PY_PREFIX}formencode/modules/
 share/doc/${MODPY_PY_PREFIX}formencode/modules.txt
 share/doc/${MODPY_PY_PREFIX}formencode/modules/api.txt
@@ -242,3 +262,4 @@ share/doc/${MODPY_PY_PREFIX}formencode/modules/variabledecode.txt
 share/doc/${MODPY_PY_PREFIX}formencode/whatsnew-0-to-1.2.4.txt
 share/doc/${MODPY_PY_PREFIX}formencode/whatsnew-1.2.5.txt
 share/doc/${MODPY_PY_PREFIX}formencode/whatsnew-1.3.txt
+share/doc/${MODPY_PY_PREFIX}formencode/whatsnew-2.0.txt
