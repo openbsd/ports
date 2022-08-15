@@ -10,7 +10,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-#MODPY_SETUPTOOLS =	Yes
 MODPY_PEP517 =		setuptools
 MODPY_PYTEST =		Yes
 
@@ -19,7 +18,7 @@ FLAVOR =		python3
 
 RUN_DEPENDS +=		textproc/py-tomli${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR}
-BUILD_DEPENDS +=	textproc/py-tomli${MODPY_FLAVOR}
+BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
