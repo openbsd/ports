@@ -4,7 +4,7 @@ DISTNAME =		demjson-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.2.4
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =	textproc devel
 
@@ -19,8 +19,10 @@ MODPY_SETUPTOOLS =	Yes
 
 TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH}
 
+post-patch:
+	cd ${WRKSRC} && 2to3 -w test/test_demjson.py jsonlint demjson.py
+
 do-test:
-	cd ${WRKSRC}/test && 2to3-${MODPY_VERSION} -w test_demjson.py
 	cd ${WRKSRC}/test && ${MODPY_BIN} -m unittest test_demjson
 
 .include <bsd.port.mk>

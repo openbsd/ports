@@ -1,6 +1,7 @@
-@pkgpath textproc/py-demjson
 @conflict py-demjson-<2.2.4p3
+@pkgpath textproc/py-demjson
 bin/jsonlint
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}demjson.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/demjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/demjson-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
