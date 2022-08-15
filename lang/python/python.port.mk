@@ -155,6 +155,7 @@ _MODPY_PRE_BUILD_STEPS = :
 
 .if ${MODPY_PEP517:L} == "no"
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
+	grep -q ^build-backend ${WRKSRC}/pyproject.toml && \
 	! grep -q ^build-backend.*setuptools ${WRKSRC}/pyproject.toml; then \
 	printf "\n***\n\nOpenBSD ports: should this use MODPY_PEP517?\n"; \
 	grep ^build-backend ${WRKSRC}/pyproject.toml || true; \
