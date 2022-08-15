@@ -1,7 +1,6 @@
 COMMENT =	introspect/set max threads in native libraries like BLAS
 
-MODPY_EGG_VERSION =	3.0.0
-REVISION =		0
+MODPY_EGG_VERSION =	3.1.0
 
 DISTNAME =		threadpoolctl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
