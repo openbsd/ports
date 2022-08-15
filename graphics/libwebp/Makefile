@@ -2,7 +2,7 @@ COMMENT=	Google WebP image format conversion tool
 
 GH_ACCOUNT=	webmproject
 GH_PROJECT=	libwebp
-GH_TAGNAME=	v1.2.2
+GH_TAGNAME=	v1.2.4
 CATEGORIES=	graphics
 
 SHARED_LIBS +=  webp                 4.3      # 6.0
