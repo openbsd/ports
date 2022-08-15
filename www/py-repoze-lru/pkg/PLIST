@@ -5,7 +5,6 @@ lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/repoze.lru-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
@@ -16,5 +15,3 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/repoze/lru/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/lru/tests.py
-share/doc/${MODPY_PY_PREFIX}repoze-lru/
-share/doc/${MODPY_PY_PREFIX}repoze-lru/README.txt

@@ -1,9 +1,8 @@
 COMMENT =	tiny LRU cache implementation and decorator
 
-MODPY_EGG_VERSION = 0.6
+MODPY_EGG_VERSION = 0.7
 DISTNAME =	repoze.lru-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	5
 
 CATEGORIES =	www devel
 
@@ -17,10 +16,6 @@ FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}repoze-lru
-	${INSTALL_DATA} ${WRKSRC}/README.txt \
-	    ${PREFIX}/share/doc/${MODPY_PY_PREFIX}repoze-lru
+MODPY_PYTEST_ARGS =	repoze/lru/tests.py
 
 .include <bsd.port.mk>
