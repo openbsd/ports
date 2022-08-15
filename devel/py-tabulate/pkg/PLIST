@@ -1,5 +1,6 @@
 @conflict py-tabulate-<0.8.7p1
 bin/tabulate${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}tabulate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tabulate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tabulate-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
