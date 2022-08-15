@@ -37,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqlite_ext.${
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqlite_udf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}sqliteq.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/playhouse/${MODPY_PYCACHE}test_utils.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/playhouse/_sqlite_ext.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/playhouse/_sqlite_udf.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/playhouse/apsw_ext.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/cockroachdb.py
 lib/python${MODPY_VERSION}/site-packages/playhouse/dataset.py
@@ -141,6 +143,7 @@ share/examples/${MODPY_PY_PREFIX}peewee/analytics/app.py
 share/examples/${MODPY_PY_PREFIX}peewee/analytics/reports.py
 share/examples/${MODPY_PY_PREFIX}peewee/analytics/requirements.txt
 share/examples/${MODPY_PY_PREFIX}peewee/analytics/run_example.py
+share/examples/${MODPY_PY_PREFIX}peewee/anomaly_detection.py
 share/examples/${MODPY_PY_PREFIX}peewee/blog/
 share/examples/${MODPY_PY_PREFIX}peewee/blog/app.py
 share/examples/${MODPY_PY_PREFIX}peewee/blog/requirements.txt
@@ -171,6 +174,7 @@ share/examples/${MODPY_PY_PREFIX}peewee/diary.py
 share/examples/${MODPY_PY_PREFIX}peewee/graph.py
 share/examples/${MODPY_PY_PREFIX}peewee/hexastore.py
 share/examples/${MODPY_PY_PREFIX}peewee/reddit_ranking.py
+share/examples/${MODPY_PY_PREFIX}peewee/sqlite_fts_compression.py
 share/examples/${MODPY_PY_PREFIX}peewee/twitter/
 share/examples/${MODPY_PY_PREFIX}peewee/twitter/app.py
 share/examples/${MODPY_PY_PREFIX}peewee/twitter/requirements.txt

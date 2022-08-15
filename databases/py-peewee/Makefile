@@ -1,9 +1,8 @@
 COMMENT=		small expressive ORM
 
-MODPY_EGG_VERSION=	3.14.8
+MODPY_EGG_VERSION=	3.15.1
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 GH_ACCOUNT=		coleifer
 GH_PROJECT=		peewee
@@ -16,10 +15,11 @@ HOMEPAGE=		https://docs.peewee-orm.com/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2
+WANTLIB += pthread sqlite3
 
-TEST_DEPENDS=		databases/py-psycopg2${MODPY_FLAVOR} \
-			databases/sqlite3
+BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2
+LIB_DEPENDS=		databases/sqlite3
+TEST_DEPENDS=		databases/py-psycopg2${MODPY_FLAVOR}
 
 FLAVORS=		python3
 FLAVOR=			python3
@@ -33,7 +33,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPOSTGRESQL_TEST_DBNAME=	peewee_test
 MODPOSTGRESQL_TEST_CMD=		cd ${WRKSRC} && ${MODPY_BIN} runtests.py
 
-MAKE_ENV +=	PYTHONPATH=${WRKSRC}
+MAKE_ENV +=	PYTHONPATH=${WRKSRC} CPPFLAGS="-I${LOCALBASE}/include"
 DOCSRC =	${WRKSRC}/docs
 DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}peewee
 EXAMPLES =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}peewee
