@@ -1,9 +1,8 @@
-COMMENT =		python implementation of mustache templating system
+COMMENT =		Python implementation of Mustache templating system
 
-MODPY_EGG_VERSION =	0.5.4
+MODPY_EGG_VERSION =	0.6.0
 DISTNAME =		pystache-${MODPY_EGG_VERSION}
 PKGNAME =		py-stache-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -14,13 +13,9 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST_ARGS =	pystache/tests
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	cd ${WRKSRC}/lib; ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} -v
 
 .include <bsd.port.mk>
