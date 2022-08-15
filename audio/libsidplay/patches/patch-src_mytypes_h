@@ -1,0 +1,14 @@
+Index: src/mytypes.h
+--- src/mytypes.h.orig
++++ src/mytypes.h
+@@ -31,8 +31,8 @@ typedef signed short int sword;
+ typedef unsigned short int uword;
+ 
+ // Wanted: 32-bit signed/unsigned.
+-typedef signed long int sdword;
+-typedef unsigned long int udword;
++typedef signed int sdword;
++typedef unsigned int udword;
+ 
+ 
+ // Some common type shortcuts.

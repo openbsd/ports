@@ -1,14 +1,15 @@
---- configure.orig	Sun Apr 16 10:48:30 2017
-+++ configure	Sun Apr 16 10:48:52 2017
-@@ -1279,8 +1279,9 @@ else
- #line 1280 "configure"
- #include "confdefs.h"
+Index: configure
+--- configure.orig
++++ configure
+@@ -2869,8 +2869,9 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
  
 -#include <iostream.h>
 -#include <fstream.h>
 +#include <iostream>
 +#include <fstream>
 +using namespace std;
-             
- int main() {
  
+ int
+ main ()
