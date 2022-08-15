@@ -1,4 +1,5 @@
 share/arduino/
+share/arduino/README.md
 share/arduino/boards.txt
 share/arduino/bootloaders/
 share/arduino/bootloaders/atmega/
@@ -149,6 +150,7 @@ share/arduino/cores/arduino/abi.cpp
 share/arduino/cores/arduino/binary.h
 share/arduino/cores/arduino/hooks.c
 share/arduino/cores/arduino/main.cpp
+share/arduino/cores/arduino/new
 share/arduino/cores/arduino/new.cpp
 share/arduino/cores/arduino/new.h
 share/arduino/cores/arduino/wiring.c
@@ -158,6 +160,64 @@ share/arduino/cores/arduino/wiring_private.h
 share/arduino/cores/arduino/wiring_pulse.S
 share/arduino/cores/arduino/wiring_pulse.c
 share/arduino/cores/arduino/wiring_shift.c
+share/arduino/drivers/
+share/arduino/drivers/AdafruitCircuitPlayground.cat
+share/arduino/drivers/AdafruitCircuitPlayground.inf
+share/arduino/drivers/FTDI USB Drivers/
+share/arduino/drivers/FTDI USB Drivers/Static/
+share/arduino/drivers/FTDI USB Drivers/Static/amd64/
+share/arduino/drivers/FTDI USB Drivers/Static/amd64/ftd2xx.lib
+share/arduino/drivers/FTDI USB Drivers/Static/i386/
+share/arduino/drivers/FTDI USB Drivers/Static/i386/ftd2xx.lib
+share/arduino/drivers/FTDI USB Drivers/amd64/
+share/arduino/drivers/FTDI USB Drivers/amd64/ftbusui.dll
+share/arduino/drivers/FTDI USB Drivers/amd64/ftcserco.dll
+share/arduino/drivers/FTDI USB Drivers/amd64/ftd2xx.lib
+share/arduino/drivers/FTDI USB Drivers/amd64/ftd2xx64.dll
+share/arduino/drivers/FTDI USB Drivers/amd64/ftdibus.sys
+share/arduino/drivers/FTDI USB Drivers/amd64/ftlang.dll
+share/arduino/drivers/FTDI USB Drivers/amd64/ftser2k.sys
+share/arduino/drivers/FTDI USB Drivers/amd64/ftserui2.dll
+share/arduino/drivers/FTDI USB Drivers/ftd2xx.h
+share/arduino/drivers/FTDI USB Drivers/ftdibus.cat
+share/arduino/drivers/FTDI USB Drivers/ftdibus.inf
+share/arduino/drivers/FTDI USB Drivers/ftdiport.cat
+share/arduino/drivers/FTDI USB Drivers/ftdiport.inf
+share/arduino/drivers/FTDI USB Drivers/i386/
+share/arduino/drivers/FTDI USB Drivers/i386/ftbusui.dll
+share/arduino/drivers/FTDI USB Drivers/i386/ftcserco.dll
+share/arduino/drivers/FTDI USB Drivers/i386/ftd2xx.dll
+share/arduino/drivers/FTDI USB Drivers/i386/ftd2xx.lib
+share/arduino/drivers/FTDI USB Drivers/i386/ftdibus.sys
+share/arduino/drivers/FTDI USB Drivers/i386/ftlang.dll
+share/arduino/drivers/FTDI USB Drivers/i386/ftser2k.sys
+share/arduino/drivers/FTDI USB Drivers/i386/ftserui2.dll
+share/arduino/drivers/arduino-org.cat
+share/arduino/drivers/arduino-org.inf
+share/arduino/drivers/arduino.cat
+share/arduino/drivers/arduino.inf
+share/arduino/drivers/dpinst-amd64.exe
+share/arduino/drivers/dpinst-x86.exe
+share/arduino/drivers/gemma/
+share/arduino/drivers/gemma/amd64/
+share/arduino/drivers/gemma/amd64/libusb0.dll
+share/arduino/drivers/gemma/amd64/libusb0.sys
+share/arduino/drivers/gemma/arduino_gemma.cat
+share/arduino/drivers/gemma/arduino_gemma.inf
+share/arduino/drivers/gemma/ia64/
+share/arduino/drivers/gemma/ia64/libusb0.dll
+share/arduino/drivers/gemma/ia64/libusb0.sys
+share/arduino/drivers/gemma/license/
+share/arduino/drivers/gemma/license/libusb0/
+share/arduino/drivers/gemma/license/libusb0/installer_license.txt
+share/arduino/drivers/gemma/x86/
+share/arduino/drivers/gemma/x86/libusb0.sys
+share/arduino/drivers/gemma/x86/libusb0_x86.dll
+share/arduino/drivers/genuino.cat
+share/arduino/drivers/genuino.inf
+share/arduino/drivers/linino-boards_amd64.cat
+share/arduino/drivers/linino-boards_x86.cat
+share/arduino/drivers/linino.inf
 share/arduino/extras/
 share/arduino/extras/pack.hourlybuild.bash
 share/arduino/extras/pack.pullrequest.bash
@@ -676,6 +736,7 @@ share/arduino/libraries/Wire/utility/
 share/arduino/libraries/Wire/utility/twi.c
 share/arduino/libraries/Wire/utility/twi.h
 share/arduino/platform.txt
+share/arduino/post_install.bat
 share/arduino/programmers.txt
 share/arduino/variants/
 share/arduino/variants/adafruit32u4/

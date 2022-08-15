@@ -1,8 +1,9 @@
 COMMENT=	open-source electronics prototyping platform
 
-V=		1.8.10
-AVR_V=		1.8.2
-ADAFRUIT_BOARDS_V= 0dad98d190ebd0e22e7be08f114d27a94784b7d8
+V=		1.8.19
+AVR_V=		1.8.5
+EX_V=		4ee37f686d647733dd46fac3074b9011e7dc5ef9
+ADAFRUIT_BOARDS_V= 3751f438bb2cff9b5970d1056c4a2e91876a93f0
 GH_ACCOUNT=	arduino
 GH_PROJECT=	arduino
 GH_TAGNAME=	${V}
@@ -10,7 +11,8 @@ EPOCH=		0
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
 		ArduinoCore-avr-{arduino/ArduinoCore-avr/archive/}${AVR_V}${EXTRACT_SUFX}:0 \
-		Adafruit_Arduino_Boards-{adafruit/Adafruit_Arduino_Boards/archive/}${ADAFRUIT_BOARDS_V}${EXTRACT_SUFX}:0
+		Adafruit_Arduino_Boards-{adafruit/Adafruit_Arduino_Boards/archive/}${ADAFRUIT_BOARDS_V}${EXTRACT_SUFX}:0 \
+		arduino-examples-{arduino/arduino-examples/archive/}${EX_V}${EXTRACT_SUFX}:0
 
 CATEGORIES=	devel
 HOMEPAGE=	https://www.arduino.cc/
@@ -32,6 +34,7 @@ PKG_ARCH=       *
 WRKDIST=	${WRKDIR}/Arduino-${V}
 AVR_WRKDIST=	${WRKDIR}/ArduinoCore-avr-${AVR_V}
 ADAFRUIT_WRKDIST= ${WRKDIR}/Adafruit_Arduino_Boards-${ADAFRUIT_BOARDS_V}
+EX_WRKDIST=	${WRKDIR}/arduino-examples-${EX_V}/examples
 
 post-extract:
 	cd ${ADAFRUIT_WRKDIST} && tar -cf - bootloaders libraries variants | \
@@ -40,7 +43,7 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/arduino
-	cp -r ${WRKSRC}/build/shared/examples/* ${PREFIX}/share/examples/arduino
+	cp -r ${EX_WRKDIST}/* ${PREFIX}/share/examples/arduino
 	cp -r ${WRKSRC}/{license.txt,README.md} ${PREFIX}/share/doc/arduino
 	cp -r ${AVR_WRKDIST}/* ${PREFIX}/share/arduino
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
