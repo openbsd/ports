@@ -20,9 +20,12 @@ lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}he
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}timeout.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}ver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/${MODPY_PYCACHE}with.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/cmd.py
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/hello.py
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/log.py
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/timeout.py
 lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/ver.py
+lib/python${MODPY_VERSION}/site-packages/easyprocess/examples/with.py
+lib/python${MODPY_VERSION}/site-packages/easyprocess/py.typed
 lib/python${MODPY_VERSION}/site-packages/easyprocess/unicodeutil.py
