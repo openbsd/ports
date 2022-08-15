@@ -1,9 +1,8 @@
 COMMENT =		Python wrapper for Xvfb, Xephyr and Xvnc
 
-MODPY_EGG_VERSION =	2.2
+MODPY_EGG_VERSION =	3.0
 DISTNAME =		PyVirtualDisplay-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L:S/^py/py-/}
-REVISION =		0
 
 CATEGORIES =		x11
 
@@ -15,7 +14,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS	 = Yes
+# disabled tests needs entrypoint2, vncdotool and stop other tests running
+MODPY_PYTEST_ARGS =	--ignore tests/vagrant/vagrant_boxes.py \
+			--ignore tests/test_race.py \
+			--ignore tests/test_xvnc.py
+MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

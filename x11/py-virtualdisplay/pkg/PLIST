@@ -4,7 +4,6 @@ lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-p
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/PyVirtualDisplay-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/__init__.py
@@ -38,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/nested.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/screenshot.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/threadsafe.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/examples/vncserver.py
+lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/py.typed
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/smartdisplay.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/util.py
 lib/python${MODPY_VERSION}/site-packages/pyvirtualdisplay/xauth.py
