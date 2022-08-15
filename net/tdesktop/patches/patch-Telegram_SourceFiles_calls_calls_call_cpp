@@ -21,7 +21,7 @@ Index: Telegram/SourceFiles/calls/calls_call.cpp
  
  [[nodiscard]] base::flat_set<int64> CollectEndpointIds(
  		const QVector<MTPPhoneConnection> &list) {
-@@ -1318,7 +1315,6 @@ Call::~Call() {
+@@ -1322,7 +1319,6 @@ Call::~Call() {
  }
  
  void UpdateConfig(const std::string &data) {
