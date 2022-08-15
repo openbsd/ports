@@ -1,0 +1,24 @@
+From 8c1ebea5f601b0b5247535dcdfd01755f3e6e1a6 Mon Sep 17 00:00:00 2001
+From: Andrew Wolfers <aswolfers@chromium.org>
+Date: Tue, 19 Jul 2022 15:01:25 +0000
+Subject: [PATCH] [x11][ozone] Fix X11 screensaver suspension.
+
+Index: ui/ozone/public/platform_screen.cc
+--- ui/ozone/public/platform_screen.cc.orig
++++ ui/ozone/public/platform_screen.cc
+@@ -30,9 +30,13 @@ std::string PlatformScreen::GetCurrentWorkspace() {
+   return {};
+ }
+ 
+-bool PlatformScreen::SetScreenSaverSuspended(bool suspend) {
++PlatformScreen::PlatformScreenSaverSuspender::~PlatformScreenSaverSuspender() =
++    default;
++
++std::unique_ptr<PlatformScreen::PlatformScreenSaverSuspender>
++PlatformScreen::SuspendScreenSaver() {
+   NOTIMPLEMENTED_LOG_ONCE();
+-  return false;
++  return nullptr;
+ }
+ 
+ bool PlatformScreen::IsScreenSaverActive() const {
