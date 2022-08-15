@@ -1,8 +1,9 @@
 COMMENT =	lil' TOML parser
 
-MODPY_EGG_VERSION =	1.2.3
-REVISION =	1
+MODPY_EGG_VERSION =	2.0.1
 
+# generally won't be needed with Python 3.11+ as this will then essentially
+# provide a backport of tomllib.
 DISTNAME =	tomli-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
