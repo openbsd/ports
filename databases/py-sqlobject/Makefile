@@ -27,8 +27,4 @@ TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
 
 MODPY_SETUPTOOLS =	Yes
 
-post-install:
-	mv ${PREFIX}/bin/sqlobject-admin ${PREFIX}/bin/sqlobject-admin${MODPY_BIN_SUFFIX}
-	mv ${PREFIX}/bin/sqlobject-convertOldURI ${PREFIX}/bin/sqlobject-convertOldURI${MODPY_BIN_SUFFIX}
-
 .include <bsd.port.mk>
