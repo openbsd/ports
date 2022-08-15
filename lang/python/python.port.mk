@@ -203,7 +203,8 @@ BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == hatchling
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == setuptools
-BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
+			devel/py-wheel${MODPY_FLAVOR}
 MODPY_RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 .  elif !${MODPY_PEP517:L:Myes}
 ERRORS +=		"Fatal: unknown MODPY_PEP517 value"
