@@ -44,4 +44,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/extensions/tdomhtml/tdomhtml.tcl \
 		${DESTDIR}${MODTCL_MODDIR}/86/tdomhtml-0.1.0.tm
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
