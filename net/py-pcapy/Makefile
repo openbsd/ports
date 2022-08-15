@@ -1,11 +1,16 @@
 COMMENT =		libpcap module for Python
 
-MODPY_EGG_VERSION =	0.11.5
+# XXX unless development resumes, replace with pcapy-ng; dependent
+# ports will need syncing. this will fail with py3.10.
+# https://github.com/stamparm/pcapy-ng
+
+
+MODPY_EGG_VERSION =	0.11.5.dev0
 GH_ACCOUNT =		helpsystems
 GH_PROJECT =		pcapy
-GH_TAGNAME =		${MODPY_EGG_VERSION}
+GH_TAGNAME =		${MODPY_EGG_VERSION:S/.dev0//}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net devel
 
