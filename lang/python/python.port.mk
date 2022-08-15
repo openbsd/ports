@@ -196,12 +196,15 @@ DPB_PROPERTIES +=	nojunk
 .elif ${MODPY_PEP517:L} != no
 BUILD_DEPENDS +=	devel/py-installer${MODPY_FLAVOR} \
 			devel/py-pip${MODPY_FLAVOR}
-.  if ${MODPY_PEP517:L:Mflit_core}
+.  if ${MODPY_PEP517} == flit_core
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517:L:Mflit}
+.  elif ${MODPY_PEP517} == flit
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517:L:Mhatchling}
+.  elif ${MODPY_PEP517} == hatchling
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
+.  elif ${MODPY_PEP517} == setuptools
+BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+MODPY_RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 .  elif !${MODPY_PEP517:L:Myes}
 ERRORS +=		"Fatal: unknown MODPY_PEP517 value"
 .  endif
