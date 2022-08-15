@@ -4,10 +4,10 @@ CATEGORIES =	x11
 
 GH_ACCOUNT =	Swordfish90
 GH_PROJECT =	cool-retro-term
-GH_TAGNAME =	1.1.1
-REVISION =	2
+GH_TAGNAME =	1.2.0
 
-QMLTERMWIDGET =	48274c75660e28d44af7c195e79accdf1bd44963
+# check version in submodule at https://github.com/Swordfish90/cool-retro-term
+QMLTERMWIDGET =	63228027e1f97c24abb907550b22ee91836929c5
 MASTER_SITES0 =	https://github.com/Swordfish90/qmltermwidget/archive/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		qmltermwidget-{}${QMLTERMWIDGET}.tar.gz:0
@@ -19,9 +19,9 @@ HOMEPAGE =	https://github.com/Swordfish90/cool-retro-term
 # GPLv3 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5Sql
-WANTLIB += Qt5Widgets Qt5QmlModels c m pthread
 WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += GL Qt5Core Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick
+WANTLIB += Qt5QuickControls2 Qt5Sql Qt5Widgets c m
 
 MODULES =	devel/qmake x11/qt5
 
@@ -30,7 +30,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/qt5/qtgraphicaleffects \
 		x11/qt5/qtquickcontrols
 
-LIB_DEPENDS =	x11/qt5/qtdeclarative
+# (yes, both qtquickcontrols + qtquickcontrols2)
+LIB_DEPENDS =	x11/qt5/qtdeclarative \
+		x11/qt5/qtquickcontrols2
 
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -fPIC -std=c++11"
 

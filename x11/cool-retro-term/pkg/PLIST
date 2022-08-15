@@ -2,9 +2,9 @@
 lib/qt5/qml/QMLTermWidget/
 lib/qt5/qml/QMLTermWidget/QMLTermScrollbar.qml
 lib/qt5/qml/QMLTermWidget/color-schemes/
-lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnLightYellow.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnLightYellow.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnRandomLight.colorscheme
-lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnWhite.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/BlackOnWhite.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/BreezeModified.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/DarkPastels.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/GreenOnBlack.colorscheme
@@ -13,8 +13,8 @@ lib/qt5/qml/QMLTermWidget/color-schemes/Solarized.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/SolarizedLight.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/Tango.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/Ubuntu.colorscheme
-lib/qt5/qml/QMLTermWidget/color-schemes/WhiteOnBlack.schema
-lib/qt5/qml/QMLTermWidget/color-schemes/cool-retro-term.schema
+lib/qt5/qml/QMLTermWidget/color-schemes/WhiteOnBlack.colorscheme
+lib/qt5/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
 lib/qt5/qml/QMLTermWidget/color-schemes/historic/
 lib/qt5/qml/QMLTermWidget/color-schemes/historic/BlackOnLightColor.schema
 lib/qt5/qml/QMLTermWidget/color-schemes/historic/DarkPicture.schema
@@ -43,7 +43,7 @@ lib/qt5/qml/QMLTermWidget/kb-layouts/linux.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/macbook.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/solaris.keytab
 lib/qt5/qml/QMLTermWidget/kb-layouts/vt420pc.keytab
-lib/qt5/qml/QMLTermWidget/libqmltermwidget.so
+@so lib/qt5/qml/QMLTermWidget/libqmltermwidget.so
 lib/qt5/qml/QMLTermWidget/qmldir
 share/applications/cool-retro-term.desktop
 share/icons/hicolor/128x128/apps/cool-retro-term.png
