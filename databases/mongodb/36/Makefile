@@ -1,8 +1,11 @@
 PORTROACH =	limitw:^3\.6\.
 
-# db upgrades are only supported across one major version (3.2-3.4,
-# 3.4-3.6, 3.6-4.0, etc) and mongodump wasn't in ports until after
-# OpenBSD-7.1, so holding off on >3.6 until after OpenBSD 7.2.
+# DB upgrades are only supported across one major version.
+#
+# If removing this version, we'll either need to add a "one major version"
+# upgrade instead (3.6->4.0->4.2->4.4) or provide some docs on how to
+# dump/restore using mongodump from databases/mongo-tools (which was added
+# to ports between 7.1 and 7.2).
 V =		3.6.23
 REVISION =	1
 
