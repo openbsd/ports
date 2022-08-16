@@ -29,10 +29,9 @@ bool audioDriver::Open(udword inFreq, int inPrecision, int inChannels,
 	frequency = inFreq;
 	channels = inChannels;
 	precision = inPrecision;
-	encoding = retpar.sig ? SIDEMU_SIGNED_PCM :  SIDEMU_UNSIGNED_PCM;
 
 	sio_initpar(&askpar);
-	if (precision == SIDEMU_8BIT)
+	if (precision == SIDEMU_16BIT)
 	{
 		askpar.le = SIO_LE_NATIVE;
 		askpar.bits = 16;
@@ -60,6 +59,7 @@ bool audioDriver::Open(udword inFreq, int inPrecision, int inChannels,
 		goto bad_close;
 	}
 	blockSize = retpar.round;
+	encoding = retpar.sig ? SIDEMU_SIGNED_PCM :  SIDEMU_UNSIGNED_PCM;
 
 	if (!sio_start(hdl))
 	{

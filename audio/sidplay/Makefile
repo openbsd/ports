@@ -2,7 +2,7 @@ COMMENT=	Commodore 64 music player and SID chip emulator
 
 DISTNAME=	sidplay-base-1.0.9
 PKGNAME=	${DISTNAME:S/-base//}
-REVISION =	6
+REVISION =	7
 CATEGORIES=	audio
 
 # GPL
@@ -20,6 +20,8 @@ LIB_DEPENDS=	audio/libsidplay
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \
 		--with-sidplay-library=${LOCALBASE}/lib
+
+REORDER_DEPENDENCIES=	${PORTSDIR}/infrastructure/mk/automake.dep
 
 post-extract:
 	@mkdir -p ${WRKSRC}/audio/sndio
