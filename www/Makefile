@@ -112,6 +112,7 @@
      SUBDIR += nostromo
      SUBDIR += odoo
      SUBDIR += openradtool
+     SUBDIR += opensearch-dashboards
      SUBDIR += otter-browser
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Any-URI-Escape
