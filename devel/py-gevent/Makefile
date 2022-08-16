@@ -3,6 +3,7 @@ COMMENT =		network library for easy and scalable concurrency
 MODPY_EGG_VERSION =	21.12.0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 HOMEPAGE =		https://www.gevent.org/
@@ -29,7 +30,9 @@ BUILD_DEPENDS =		devel/libev:configure \
 			devel/py-cffi${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/libev \
 			net/libcares
-RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
+			devel/py-zopeevent${MODPY_FLAVOR} \
+			devel/py-zopeinterface${MODPY_FLAVOR}
 
 MAKE_ENV =		GEVENTSETUP_EMBED_CARES=0 \
 			GEVENTSETUP_EMBED_LIBEV=0
@@ -53,8 +56,6 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-coveralls${MODPY_FLAVOR} \
 			devel/py-objgraph${MODPY_FLAVOR} \
-			devel/py-zopeevent${MODPY_FLAVOR} \
-			devel/py-zopeinterface${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
