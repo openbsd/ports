@@ -1,0 +1,33 @@
+From 9e21e8d36d3b401d9e3a0620cb6ffcbc20df08cc Mon Sep 17 00:00:00 2001
+From: Romain Thomas <me@romainthomas.fr>
+Date: Sat, 13 Aug 2022 04:03:24 +0200
+Subject: [PATCH] Resolve #770
+
+(fix with newer setuptools)
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -9,8 +9,9 @@ import copy
+ import distutils
+ from pkg_resources import Distribution, get_distribution
+ from setuptools import setup, Extension
+-from setuptools.command.build_ext import build_ext, copy_file
++from setuptools.command.build_ext import build_ext
+ from distutils import log
++from shutil import copy2
+ 
+ from distutils.version import LooseVersion
+ 
+@@ -311,9 +312,8 @@ class BuildLibrary(build_ext):
+             os.makedirs(self.build_lib)
+ 
+         log.info("Copying {} into {}".format(pylief_path, pylief_dst))
+-        copy_file(
+-                pylief_path, pylief_dst, verbose=self.verbose,
+-                dry_run=self.dry_run)
++        if not self.dry_run:
++            copy2(pylief_path, pylief_dst)
+ 
+ 
+         # SDK
