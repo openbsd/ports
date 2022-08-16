@@ -30,15 +30,7 @@ MODPY_PYTEST =	Yes
 TEST_DEPENDS =	devel/py-testpath${MODPY_FLAVOR} \
 		www/py-responses${MODPY_FLAVOR}
 
-BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
-		devel/py-installer${MODPY_FLAVOR}
-
-do-build:
-	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
-
-do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
-	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
+MODPY_PEP517 =	flit_core
 
 pre-test:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
