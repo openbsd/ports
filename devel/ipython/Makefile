@@ -1,9 +1,8 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	7.31.0
+MODPY_EGG_VERSION =	8.4.0
 DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -13,6 +12,7 @@ HOMEPAGE =		https://ipython.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_PEP517 =		setuptools
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	IPython
@@ -28,6 +28,7 @@ RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.16 \
 			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
 			devel/py-prompt_toolkit${MODPY_FLAVOR}>=2.0.0v1,<3.1.0v1 \
+			devel/py-stack_data${MODPY_FLAVOR} \
 			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
 			graphics/py-matplotlib-inline${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR}
@@ -48,7 +49,7 @@ PORTHOME =		${WRKDIR}
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
-APPS_DIR = 	${PREFIX}/share/applications/
+APPS_DIR =	${PREFIX}/share/applications/
 
 post-install:
 	${INSTALL_DATA_DIR} ${APPS_DIR}
