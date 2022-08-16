@@ -36,6 +36,10 @@ LIB_DEPENDS =		devel/capstone/main \
 			archivers/lz4 \
 			archivers/libzip
 
+# Used during build if detected during configure time,
+# so list as a BDEP to avoid DPB junking.
+BUILD_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR}
+
 # The release tarball is vendored and has a lot of dependencies bundled. We
 # "unbundle" them where possible with `-Duse_sys_*=enabled`. When updating, the
 # port, check `meson.build` for new dependencies that cen be unbundled.
