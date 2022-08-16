@@ -81,5 +81,3 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_config.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_middleware.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_restrict.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/utils.py
-share/doc/${MODPY_PY_PREFIX}repoze-who/
-share/doc/${MODPY_PY_PREFIX}repoze-who/README.rst

@@ -1,9 +1,8 @@
 COMMENT =	identification and authentication framework for WSGI
 
-MODPY_EGG_VERSION = 2.2
+MODPY_EGG_VERSION = 2.4.1
 DISTNAME =	repoze.who-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	5
 
 CATEGORIES =	www devel
 
@@ -17,10 +16,8 @@ FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST_ARGS =	repoze/who/tests
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}repoze-who
-	${INSTALL_DATA} ${WRKSRC}/README.rst \
-		${PREFIX}/share/doc/${MODPY_PY_PREFIX}repoze-who
+RUN_DEPENDS =		www/py-webob${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
