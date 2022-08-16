@@ -1,0 +1,19 @@
+Index: config/opensearch_dashboards.yml
+--- config/opensearch_dashboards.yml.orig
++++ config/opensearch_dashboards.yml
+@@ -101,13 +101,13 @@
+ # pid.file: /var/run/opensearchDashboards.pid
+ 
+ # Enables you to specify a file where OpenSearch Dashboards stores log output.
+-# logging.dest: stdout
++logging.dest: /var/log/opensearch-dashboards/opensearch-dashboards.log
+ 
+ # Set the value of this setting to true to suppress all logging output.
+ # logging.silent: false
+ 
+ # Set the value of this setting to true to suppress all logging output other than error messages.
+-# logging.quiet: false
++logging.quiet: true
+ 
+ # Set the value of this setting to true to log all events, including system usage information
+ # and all requests.

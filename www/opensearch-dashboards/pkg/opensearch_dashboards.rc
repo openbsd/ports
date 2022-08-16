@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/opensearch-dashboards/bin/opensearch-dashboards"
+daemon_user="_opensearch-dashboards"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/bin/node ${TRUEPREFIX}/opensearch-dashboards/bin/../src/cli/dist${daemon_flags:+ ${daemon_flags}}"
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1
