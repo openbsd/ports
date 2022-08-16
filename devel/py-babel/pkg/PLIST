@@ -13,7 +13,6 @@ lib/python${MODPY_VERSION}/site-packages/babel/
 lib/python${MODPY_VERSION}/site-packages/babel/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}dates.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}languages.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,7 +23,6 @@ lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}plural.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}support.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}units.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/babel/_compat.py
 lib/python${MODPY_VERSION}/site-packages/babel/core.py
 lib/python${MODPY_VERSION}/site-packages/babel/dates.py
 lib/python${MODPY_VERSION}/site-packages/babel/global.dat
@@ -84,6 +82,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/bas.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/bas_CM.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/be.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/be_BY.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/be_TARASK.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/bem.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/bem_ZM.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/bez.dat
@@ -129,8 +128,6 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ckb_IQ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ckb_IR.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/cs.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/cs_CZ.dat
-lib/python${MODPY_VERSION}/site-packages/babel/locale-data/cu.dat
-lib/python${MODPY_VERSION}/site-packages/babel/locale-data/cu_RU.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/cy.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/cy_GB.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/da.dat
@@ -148,6 +145,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/de_LI.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/de_LU.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/dje.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/dje_NE.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/doi.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/doi_IN.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/dsb.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/dsb_DE.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/dua.dat
@@ -226,6 +225,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MP.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MS.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MT.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MU.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MV.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MW.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_MY.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/en_NA.dat
@@ -423,6 +423,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/he.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/he_IL.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hi.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hi_IN.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hi_Latn.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hi_Latn_IN.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hr.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hr_BA.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/hr_HR.dat
@@ -465,6 +467,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kde.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kde_TZ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kea.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kea_CV.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kgp.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kgp_BR.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/khq.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/khq_ML.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ki.dat
@@ -489,6 +493,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/kok_IN.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ks.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ks_Arab.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ks_Arab_IN.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ks_Deva.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ks_Deva_IN.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ksb.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ksb_TZ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ksf.dat
@@ -597,6 +603,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nn.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nn_NO.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nnh.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nnh_CM.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/no.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nus.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nus_SS.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/nyn.dat
@@ -618,8 +625,6 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pcm.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pcm_NG.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pl.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/pl_PL.dat
-lib/python${MODPY_VERSION}/site-packages/babel/locale-data/prg.dat
-lib/python${MODPY_VERSION}/site-packages/babel/locale-data/prg_001.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ps.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ps_AF.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/ps_PK.dat
@@ -661,6 +666,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/rw.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/rw_RW.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/rwk.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/rwk_TZ.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sa.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sa_IN.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sah.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sah_RU.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/saq.dat
@@ -670,6 +677,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sat_Olck.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sat_Olck_IN.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sbp.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sbp_TZ.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sc.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sc_IT.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sd.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sd_Arab.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/sd_Arab_PK.dat
@@ -783,8 +792,6 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vai_Vaii.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vai_Vaii_LR.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vi.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vi_VN.dat
-lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vo.dat
-lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vo_001.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vun.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/vun_TZ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/wae.dat
@@ -802,6 +809,10 @@ lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yi_001.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yo.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yo_BJ.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yo_NG.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yrl.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yrl_BR.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yrl_CO.dat
+lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yrl_VE.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yue.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yue_Hans.dat
 lib/python${MODPY_VERSION}/site-packages/babel/locale-data/yue_Hans_CN.dat
