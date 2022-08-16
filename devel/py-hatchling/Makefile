@@ -28,15 +28,6 @@ RUN_DEPENDS=	devel/py-editables${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-tomli${MODPY_FLAVOR}
 
-#MODPY_PEP517=	Yes
-BUILD_DEPENDS +=        devel/py-installer${MODPY_FLAVOR} \
-                        devel/py-pip${MODPY_FLAVOR}
-
-do-build:
-	cd ${WRKSRC} && pip wheel -v --no-index --no-cache --no-deps --no-build-isolation .
-
-do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
-	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/*.whl
+MODPY_PEP517=	Yes
 
 .include <bsd.port.mk>
