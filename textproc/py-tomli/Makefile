@@ -1,6 +1,7 @@
 COMMENT =	lil' TOML parser
 
 MODPY_EGG_VERSION =	2.0.1
+REVISION =	0
 
 # generally won't be needed with Python 3.11+ as this will then essentially
 # provide a backport of tomllib.
@@ -22,6 +23,17 @@ NO_TEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_PEP517 =		flit_core
+# this port is used as a BDEP by python.port.mk for ports using
+# MODPY_PEP517, so cannot use MODPY_PEP517 itself.
+
+BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
+		devel/py-installer${MODPY_FLAVOR}
+
+do-build:
+	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel
+
+do-install:
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
 
 .include <bsd.port.mk>
