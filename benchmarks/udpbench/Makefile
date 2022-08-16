@@ -1,6 +1,6 @@
 COMMENT =	udp network benchmarking tool
 
-VERSION =	1.03
+VERSION =	1.04
 DISTNAME =	udpbench-${VERSION}
 
 CATEGORIES =	benchmarks
