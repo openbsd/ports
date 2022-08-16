@@ -21,6 +21,4 @@ FLAVOR =		python3
 # No test suites in pypi tarball
 NO_TEST =		Yes
 
-# This port must have no/minimal deps and cannot use MODPY_PEP517.
-
 .include <bsd.port.mk>
