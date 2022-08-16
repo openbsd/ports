@@ -24,7 +24,7 @@ Index: Makefile
  	cp $(JANET_TARGET) '$(DESTDIR)$(BINDIR)/janet'
  	mkdir -p '$(DESTDIR)$(INCLUDEDIR)/janet'
  	cp -r build/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet'
--	ln -sf '$(DESTDIR)$(INCLUDEDIR)/janet/janet.h' '$(DESTDIR)$(INCLUDEDIR)/janet.h'
+-	ln -sf -T ./janet/janet.h '$(DESTDIR)$(INCLUDEDIR)/janet.h' || true #fixme bsd
 +	cp -r '$(DESTDIR)$(INCLUDEDIR)/janet/janet.h' '$(DESTDIR)$(INCLUDEDIR)/janet.h'
  	mkdir -p '$(DESTDIR)$(JANET_PATH)'
  	mkdir -p '$(DESTDIR)$(LIBDIR)'
@@ -43,7 +43,7 @@ Index: Makefile
  	cp janet.1 '$(DESTDIR)$(JANET_MANPATH)'
  	mkdir -p '$(DESTDIR)$(JANET_PKG_CONFIG_PATH)'
  	cp build/janet.pc '$(DESTDIR)$(JANET_PKG_CONFIG_PATH)/janet.pc'
--	[ -z '$(DESTDIR)' ] && $(LDCONFIG) || true
+-	[ -z '$(DESTDIR)' ] && $(LDCONFIG) || echo "You can ignore this error for non-Linux systems or local installs"
  
  install-jpm-git: $(JANET_TARGET)
  	mkdir -p build
