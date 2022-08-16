@@ -9,5 +9,5 @@ lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_EGG_VERSION}-py${
 lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_forked-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_forked/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_forked/${MODPY_PYCACHE}
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_forked/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_forked/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
