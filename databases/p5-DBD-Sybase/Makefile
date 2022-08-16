@@ -1,6 +1,6 @@
 COMMENT=	Sybase database driver for the DBI module
 
-V=		1.18
+V=		1.20
 DISTNAME=	DBD-Sybase-$V
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	databases
