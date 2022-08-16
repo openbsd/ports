@@ -195,8 +195,8 @@ _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 # In the absence of a targetted means of disabling this, use a big hammer:
 DPB_PROPERTIES +=	nojunk
 .elif ${MODPY_PEP517:L} != no
-BUILD_DEPENDS +=	devel/py-installer${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-build${MODPY_FLAVOR} \
+			devel/py-installer${MODPY_FLAVOR}
 .  if ${MODPY_PEP517} == flit_core
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == flit
@@ -306,10 +306,10 @@ MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 
 .if ${MODPY_PEP517:L} != no
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
-	cd ${WRKSRC} && pip wheel -v --no-index --no-cache --no-deps --no-build-isolation .
+	cd ${WRKSRC} && ${MODPY_BIN} -sBm build -w --no-isolation
 MODPY_INSTALL_TARGET = \
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
-	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/*.whl
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
 MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
