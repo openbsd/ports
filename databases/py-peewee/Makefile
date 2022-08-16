@@ -17,7 +17,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread sqlite3
 
-BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2
+BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2 \
+			lang/cython${MODPY_FLAVOR}
 LIB_DEPENDS=		databases/sqlite3
 TEST_DEPENDS=		databases/py-psycopg2${MODPY_FLAVOR}
 
