@@ -2,10 +2,9 @@ COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.9.3
-REVISION=	0
+GH_TAGNAME=	v1.9.4
 
-SHARED_LIBS=	lz4                       3.1
+SHARED_LIBS=	lz4                       3.2
 
 CATEGORIES=	archivers
 
