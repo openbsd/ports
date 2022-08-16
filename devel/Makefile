@@ -1298,6 +1298,7 @@
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules,python3
      SUBDIR += py-astroid,python3
+     SUBDIR += py-asttokens,python3
      SUBDIR += py-astunparse,python3
      SUBDIR += py-async-timeout,python3
      SUBDIR += py-atomicwrites,python3
@@ -1361,6 +1362,7 @@
      SUBDIR += py-dulwich,python3
      SUBDIR += py-easyprocess,python3
      SUBDIR += py-editables,python3
+     SUBDIR += py-executing,python3
      SUBDIR += py-extension-helpers,python3
      SUBDIR += py-elftools,python3
      SUBDIR += py-enrich,python3
@@ -1426,6 +1428,7 @@
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch,python3
      SUBDIR += py-lief,python3
+     SUBDIR += py-littleutils,python3
      SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common,python3
@@ -1478,6 +1481,7 @@
      SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protobuf,python3
      SUBDIR += py-ptyprocess,python3
+     SUBDIR += py-pure_eval,python3
      SUBDIR += py-puremagic,python3
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
@@ -1524,11 +1528,13 @@
      SUBDIR += py-sortedcontainers,python3
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-speg,python3
+     SUBDIR += py-stack_data,python3
      SUBDIR += py-stdnum,python3
      SUBDIR += py-straight.plugin,python3
      SUBDIR += py-suds
      SUBDIR += py-sure,python3
      SUBDIR += py-tabulate
+     SUBDIR += py-typeguard,python3
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora,python3
      SUBDIR += py-tenacity,python3
