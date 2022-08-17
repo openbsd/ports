@@ -2,7 +2,7 @@ COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
 GNOME_VERSION=		42.2
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -34,6 +34,9 @@ LIB_DEPENDS=		geo/geocode-glib \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts \
 			x11/libhandy
+
+# gkbd-keyboard-display
+RUN_DEPENDS +=		x11/gnome/libgnomekbd
 
 # runs gnome-tour at the end of an initial setup run
 RUN_DEPENDS +=		x11/gnome/tour
