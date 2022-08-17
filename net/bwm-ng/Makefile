@@ -1,10 +1,9 @@
 COMMENT=	realtime bandwidth monitoring of interfaces
 
-DISTNAME=	bwm-ng-0.6.1
-REVISION=	3
+DISTNAME=	bwm-ng-0.6.3
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bwmng/}
-HOMEPAGE=	http://www.gropp.org/
+MASTER_SITES=	https://www.gropp.org/bwm-ng/
+HOMEPAGE=	https://www.gropp.org/?id=projects&sub=bwm-ng
 
 # GPLv2+
 PERMIT_PACKAGE=   Yes
@@ -12,9 +11,12 @@ PERMIT_PACKAGE=   Yes
 # uses pledge()
 WANTLIB=	c curses
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS+=	--without-libstatgrab \
 			--without-netstatbsd
+
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bwm-ng

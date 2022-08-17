@@ -4,7 +4,7 @@ route: retrieves interface stats via sysctl
 Index: src/bwm-ng.c
 --- src/bwm-ng.c.orig
 +++ src/bwm-ng.c
-@@ -211,6 +211,13 @@ int main (int argc, char *argv[]) {
+@@ -210,6 +210,13 @@ int main (int argc, char *argv[]) {
  	/* end of init curses, now set a sigint handler to deinit the screen on ctrl-break */
  	signal(SIGINT,sigint);
  	signal(SIGTERM,sigint);
