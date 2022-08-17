@@ -5,6 +5,7 @@ ONLY_FOR_ARCHS = amd64 i386
 COMMENT =	free and open source reverse engineering framework
 
 V =		0.4.0
+REVISION =	0
 DISTNAME =	rizin-src-v${V}
 EXTRACT_SUFX =	.tar.xz
 PKGNAME =	rizin-${V}
@@ -30,7 +31,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c capstone crypto kvm lz4 m magic pthread ssl uv xxhash
 WANTLIB += z zip
 
-MODULES =		devel/meson
+MODULES =		devel/meson \
+			lang/python
+MODPY_RUNDEP =		No
 
 # Dependencies
 LIB_DEPENDS =		devel/capstone/main \
