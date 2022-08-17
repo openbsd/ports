@@ -1,8 +1,7 @@
 COMMENT=	browse or page through a text file
 
-DISTNAME=	most-5.1.0
+DISTNAME=	most-5.2.0
 CATEGORIES=	misc
-REVISION=	0
 
 HOMEPAGE=	https://www.jedsoft.org/most/
 
