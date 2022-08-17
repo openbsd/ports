@@ -606,6 +606,7 @@
      SUBDIR += py-txtorcon,python3
      SUBDIR += py-u-msgpack,python3
      SUBDIR += py-websocket-client,python3
+     SUBDIR += py-websockets,python3
      SUBDIR += py-zeroconf,python3
      SUBDIR += py-zmq,python3
      SUBDIR += qbittorrent
