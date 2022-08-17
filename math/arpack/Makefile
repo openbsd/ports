@@ -7,7 +7,7 @@ PKGNAME =	arpack-${GH_TAGNAME}
 GH_ACCOUNT =	opencollab
 GH_PROJECT =	arpack-ng
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 MULTI_PACKAGES =	-main -mpi
 FLAVORS =		no_mpi
@@ -22,6 +22,8 @@ HOMEPAGE =	https://github.com/opencollab/arpack-ng
 
 # BSD 3-Clause
 PERMIT_PACKAGE =	Yes
+
+COMPILER =		base-clang ports-gcc
 
 MODULES =	fortran \
 		devel/cmake
