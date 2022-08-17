@@ -2,7 +2,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20220506
+GH_TAGNAME =	20220807
 
 CATEGORIES =	audio x11
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://schismtracker.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL X11 Xext Xv c m pthread
+WANTLIB +=	SDL2 X11 Xext Xv c m
 
 MODULES =	lang/python
 
@@ -19,7 +19,7 @@ MODPY_RUNDEP =	No
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-LIB_DEPENDS =	devel/sdl
+LIB_DEPENDS =	devel/sdl2
 
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
