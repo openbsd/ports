@@ -27,7 +27,8 @@ BUILD_DEPENDS=		lang/rust
 LIB_DEPENDS=		x11/gnome/libadwaita
 
 # don't rebuild the gettext crate
-MAKE_ENV=		GETTEXT_DIR=${LOCALBASE}
+MAKE_ENV=		GETTEXT_DIR=${LOCALBASE} \
+			CARGO_BUILD_JOBS=${MAKE_JOBS}
 
 pre-configure:
 	mkdir -p ${WRKBUILD}/.cargo
