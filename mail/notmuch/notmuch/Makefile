@@ -4,8 +4,6 @@ COMMENT-emacs =		Emacs bindings for notmuch
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
 
-REVISION-main =		0
-
 SHARED_LIBS +=		notmuch	1.2
 
 MULTI_PACKAGES =	-main -emacs

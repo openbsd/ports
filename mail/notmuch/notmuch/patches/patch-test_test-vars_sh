@@ -1,0 +1,13 @@
+We don't have libdl.
+
+Index: test/test-vars.sh
+--- test/test-vars.sh.orig
++++ test/test-vars.sh
+@@ -33,7 +33,6 @@ TEST_GDB=${TEST_GDB:-gdb}
+ TEST_CC=${TEST_CC:-cc}
+ TEST_CFLAGS=${TEST_CFLAGS:-"-g -O0"}
+ TEST_SHIM_CFLAGS=${TEST_SHIM_CFLAGS:-"-fpic -shared"}
+-TEST_SHIM_LDFLAGS=${TEST_SHIM_LDFLAGS:-"-ldl"}
+ 
+ # Protect ourselves from common misconfiguration to export
+ # CDPATH into the environment
