@@ -203,6 +203,8 @@ BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == hatchling
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
+.  elif ${MODPY_PEP517} == poetry-core
+BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == setuptools
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
