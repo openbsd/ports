@@ -1,12 +1,11 @@
 COMMENT =	Python module implementing Base64 without "=" padding
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	2.1.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	python-unpaddedbase64
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 PKGNAME =	py-unpaddedbase64-${MODPY_EGG_VERSION}
-REVISION =	2
 
 CATEGORIES =		textproc
 
@@ -16,10 +15,10 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_PEP517 =		poetry-core
+MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
