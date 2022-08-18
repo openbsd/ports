@@ -286,6 +286,7 @@
      SUBDIR += py-croniter,python3
      SUBDIR += py-daemon,python3
      SUBDIR += py-daemonize,python3
+     SUBDIR += py-distlib,python3
      SUBDIR += py-distro,python3
      SUBDIR += py-dotenv,python3
      SUBDIR += py-elasticsearch-curator	# unflavoured (standalone?) but uses python3
@@ -298,6 +299,7 @@
      SUBDIR += py-mitogen,python3
      SUBDIR += py-packaging,python3
      SUBDIR += py-parallel-ssh,python3
+     SUBDIR += py-platformdirs,python3
      SUBDIR += py-prometheus_client,python3
      SUBDIR += py-psutil
      SUBDIR += py-psutil,python3
