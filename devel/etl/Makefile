@@ -11,7 +11,9 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
+MASTER_SITES =		https://github.com/synfig/synfig/releases/download/v${V}/
+
+BUILD_DEPENDS =		devel/glib2mm
 
 CONFIGURE_STYLE =	gnu
 
