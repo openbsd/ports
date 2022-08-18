@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1415 2022/08/18 14:33:53 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1416 2022/08/18 16:01:26 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1693,6 +1693,7 @@ setup_obsolete_reason(
 	31 => 'py-typing',
 	6 => 'py-funcsigs',
 	6 => 'py-statistics',
+	31 => 'pyrex',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

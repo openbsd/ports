@@ -1612,7 +1612,6 @@
      SUBDIR += pygame
      SUBDIR += pygame,python3
      SUBDIR += pylint,python3
-     SUBDIR += pyrex
      SUBDIR += pystring			# not python ;)
      SUBDIR += pyusb,python3
      SUBDIR += qbs
