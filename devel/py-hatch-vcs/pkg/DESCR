@@ -1,1 +1,2 @@
-Hatchling is the extensible, standards compliant build backend used by Hatch.
+This provides a plugin for Hatch that uses your preferred version
+control system (like Git) to determine project versions.
