@@ -13,16 +13,7 @@ ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/appveyor.yml
 ${GEM_LIB}/gems/${DISTNAME}/bench/
-${GEM_LIB}/gems/${DISTNAME}/bench/pack.rb
-${GEM_LIB}/gems/${DISTNAME}/bench/pack_log.rb
-${GEM_LIB}/gems/${DISTNAME}/bench/pack_log_long.rb
-${GEM_LIB}/gems/${DISTNAME}/bench/pack_symbols.rb
-${GEM_LIB}/gems/${DISTNAME}/bench/run.sh
-${GEM_LIB}/gems/${DISTNAME}/bench/run_long.sh
-${GEM_LIB}/gems/${DISTNAME}/bench/run_symbols.sh
-${GEM_LIB}/gems/${DISTNAME}/bench/unpack.rb
-${GEM_LIB}/gems/${DISTNAME}/bench/unpack_log.rb
-${GEM_LIB}/gems/${DISTNAME}/bench/unpack_log_long.rb
+${GEM_LIB}/gems/${DISTNAME}/bench/bench.rb
 ${GEM_LIB}/gems/${DISTNAME}/doclib/
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack/
 ${GEM_LIB}/gems/${DISTNAME}/doclib/msgpack.rb
