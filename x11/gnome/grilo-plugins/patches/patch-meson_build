@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -84,7 +84,7 @@ lua_dep = dependency('lua', version: '>= 5.3.0', requi
+@@ -98,7 +98,7 @@ lua_dep = dependency('lua', version: '>= 5.3.0', requi
  if not lua_dep.found()
      lua_dep = dependency('lua5.3', version: '>= 5.3.0', required: false)
      if not lua_dep.found()

@@ -3,8 +3,7 @@
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.3.14
-REVISION=	3
+GNOME_VERSION=	0.3.15
 
 API=		0.3
 SUBST_VARS=	API
@@ -45,8 +44,6 @@ MODLUA_VERSION=	5.3
 
 LUA_V=		${MODLUA_VERSION:S/.//}
 SUBST_VARS +=	LUA_V
-
-CONFIGURE_ARGS=	-Denable-tracker=no
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/meson.build
