@@ -1,8 +1,7 @@
-VER=		18.13.0
-PJ_V=		2.12
+VER=		18.14.0
+PJ_V=		2.12.1
 SHLIB_V=	0.0
 VERSION_SPEC=	>=18.0,<19.0
 PORTROACH=	limit:^18\.
-REVISION=	1
 
 .include <bsd.port.mk>
