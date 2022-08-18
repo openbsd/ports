@@ -1,10 +1,12 @@
 USE_WXNEEDED =	Yes
+
 COMMENT =	video effects library
 
-V =		1.2.0
-DISTNAME =	webvfx-$V
-DISTFILES = 	webvfx-{}$V${EXTRACT_SUFX}
-REVISION =	0
+GH_ACCOUNT =	mltframework
+GH_PROJECT =	webvfx
+GH_TAGNAME =	1.2.0
+
+REVISION =	1
 
 SHARED_LIBS +=  webvfx                    0.0 # 1.2
 
@@ -12,9 +14,8 @@ CATEGORIES =	multimedia
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-MASTER_SITES = https://github.com/mltframework/webvfx/archive/
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5Qml Qt5Quick Qt5WebKit Qt5WebKitWidgets Qt5Widgets
@@ -26,7 +27,7 @@ MODULES =		devel/qmake \
 
 LIB_DEPENDS =		multimedia/mlt \
 			x11/qt5/qtdeclarative \
- 			x11/qt5/qtwebkit
+			x11/qt5/qtwebkit
 
 CONFIGURE_STYLE =	qmake
 
