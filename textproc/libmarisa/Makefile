@@ -10,7 +10,7 @@ PKGNAME-python =	py3-libmarisa-${V}
 PKGNAME-ruby =		ruby-libmarisa-${V}
 
 REVISION-main =		1
-REVISION-python =	1
+REVISION-python =	2
 REVISION-ruby =		0
 
 GH_ACCOUNT =	s-yata
@@ -49,6 +49,7 @@ WANTLIB-perl =		c marisa perl
 
 .if ${BUILD_PACKAGES:M-python}
 MODULES +=		lang/python
+MODPY_SETUPTOOLS =	Yes
 LIB_DEPENDS-python =	${BUILD_PKGPATH},-main=${V}
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 WANTLIB-python =	${COMPILER_LIBCXX} m marisa
