@@ -3,14 +3,14 @@
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.3.14
+GNOME_VERSION=	0.3.15
 API=		0.3
 
 SUBST_VARS=	API
 
-SHARED_LIBS += grilo-0.3                 0.2 # 0.314.1
-SHARED_LIBS += grlnet-0.3                0.0 # 0.314.0
-SHARED_LIBS += grlpls-0.3                0.0 # 0.314.0
+SHARED_LIBS += grilo-0.3                 0.2 # 0.315.1
+SHARED_LIBS += grlnet-0.3                0.0 # 0.315.0
+SHARED_LIBS += grlpls-0.3                0.0 # 0.315.0
 
 CATEGORIES+=	multimedia
 
@@ -33,6 +33,11 @@ LIB_DEPENDS=	devel/libsoup \
 MODGNOME_TOOLS=	gobject-introspection vala
 
 CONFIGURE_ARGS=	-Denable-gtk-doc=false
+
+# XXX this allows building the opensubtitles and youtube plugins in
+# x11/gnome/grilo-plugins and prevents issues when apps are using both libsoup2
+# and libsoup3
+CONFIGURE_ARGS +=	-Dsoup3=false
 
 # Own the grilo plugins directory to prevent warnings that this
 # directory does not exist when no plugin is installed.
