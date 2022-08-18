@@ -286,7 +286,6 @@
      SUBDIR += py-dfwinreg,python3
      SUBDIR += py-duo_client,python3
      SUBDIR += py-duo_universal,python3
-     SUBDIR += py-ecdsa
      SUBDIR += py-ecdsa,python3
      SUBDIR += py-elfesteem
      SUBDIR += py-fastecdsa,python3

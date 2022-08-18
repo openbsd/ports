@@ -1,6 +1,7 @@
 COMMENT =		Python implementation of ECDSA cryptography
 
 MODPY_EGG_VERSION = 	0.18.0
+REVISION =		0
 DISTNAME = 		ecdsa-${MODPY_EGG_VERSION}
 PKGNAME = 		py-${DISTNAME}
 CATEGORIES = 		security
@@ -19,9 +20,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	src/ecdsa
 
-# used by py2-dnspython
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
