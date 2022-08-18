@@ -53,6 +53,7 @@ share/asymptote/GUI/res/icons/android-radio-button-on.svg
 share/asymptote/GUI/res/icons/android-refresh.svg
 share/asymptote/GUI/res/icons/arrow-move.svg
 share/asymptote/GUI/res/icons/arrow-resize.svg
+share/asymptote/GUI/res/icons/brush.svg
 share/asymptote/GUI/res/icons/bucket.svg
 share/asymptote/GUI/res/icons/center.svg
 share/asymptote/GUI/res/icons/centerorigin.svg
@@ -72,11 +73,13 @@ share/asymptote/GUI/res/icons/magnifying-glass.svg
 share/asymptote/GUI/res/icons/opencurve.svg
 share/asymptote/GUI/res/icons/openpolygon.svg
 share/asymptote/GUI/res/icons/plus-round.svg
+share/asymptote/GUI/res/icons/redo.svg
 share/asymptote/GUI/res/icons/save.svg
 share/asymptote/GUI/res/icons/social-python.svg
 share/asymptote/GUI/res/icons/subdirectory-left.svg
 share/asymptote/GUI/res/icons/text.svg
 share/asymptote/GUI/res/icons/triangle-stroked-15.svg
+share/asymptote/GUI/res/icons/undo.svg
 share/asymptote/GUI/setup.py
 share/asymptote/GUI/xasy.py
 share/asymptote/GUI/xasy2asy.py
@@ -156,8 +159,17 @@ share/asymptote/rationalSimplex.asy
 share/asymptote/reload.js
 share/asymptote/roundedpath.asy
 share/asymptote/shaders/
+share/asymptote/shaders/blend.glsl
+share/asymptote/shaders/compress.glsl
+share/asymptote/shaders/count.glsl
 share/asymptote/shaders/fragment.glsl
+share/asymptote/shaders/screen.glsl
+share/asymptote/shaders/sum1.glsl
+share/asymptote/shaders/sum2.glsl
+share/asymptote/shaders/sum2fast.glsl
+share/asymptote/shaders/sum3.glsl
 share/asymptote/shaders/vertex.glsl
+share/asymptote/shaders/zero.glsl
 share/asymptote/simplex.asy
 share/asymptote/size10.asy
 share/asymptote/size11.asy
@@ -177,6 +189,9 @@ share/asymptote/three_tube.asy
 share/asymptote/tree.asy
 share/asymptote/trembling.asy
 share/asymptote/tube.asy
+share/asymptote/v3d.asy
+share/asymptote/v3dheadertypes.asy
+share/asymptote/v3dtypes.asy
 share/asymptote/version.asy
 share/asymptote/webgl/
 share/asymptote/webgl/asygl.js
@@ -203,6 +218,7 @@ share/examples/asymptote/
 share/examples/asymptote/100d.pdb1
 share/examples/asymptote/100d.views
 share/examples/asymptote/1overx.asy
+share/examples/asymptote/AiryDisk.asy
 share/examples/asymptote/BezierPatch.asy
 share/examples/asymptote/BezierSaddle.asy
 share/examples/asymptote/BezierSurface.asy
@@ -333,6 +349,7 @@ share/examples/asymptote/generalaxis3.asy
 share/examples/asymptote/genusthree.asy
 share/examples/asymptote/genustwo.asy
 share/examples/asymptote/graphmarkers.asy
+share/examples/asymptote/graphwithderiv.asy
 share/examples/asymptote/grid.asy
 share/examples/asymptote/grid3xyz.asy
 share/examples/asymptote/hatch.asy
@@ -484,6 +501,7 @@ share/examples/asymptote/subpictures.asy
 share/examples/asymptote/superpath.asy
 share/examples/asymptote/tanh.asy
 share/examples/asymptote/teapot.asy
+share/examples/asymptote/teapotIBL.asy
 share/examples/asymptote/tensor.asy
 share/examples/asymptote/tetra.asy
 share/examples/asymptote/textpath.asy
@@ -505,6 +523,7 @@ share/examples/asymptote/trumpet.asy
 share/examples/asymptote/truncatedIcosahedron.asy
 share/examples/asymptote/tvgen.asy
 share/examples/asymptote/twistedtubes.asy
+share/examples/asymptote/twoSpheres.asy
 share/examples/asymptote/unitcircle.asy
 share/examples/asymptote/unitcircle3.asy
 share/examples/asymptote/unitoctant.asy
@@ -541,5 +560,4 @@ share/texmf-local/tex/latex/asymptote/
 share/texmf-local/tex/latex/asymptote/asycolors.sty
 share/texmf-local/tex/latex/asymptote/asymptote.sty
 share/texmf-local/tex/latex/asymptote/latexmkrc
-share/texmf-local/tex/latex/asymptote/ocg.sty
 @tag mktexlsr-local

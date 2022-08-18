@@ -2,8 +2,7 @@ BROKEN-riscv64=		assertion "q.pre == 0 && q.piv != 0" failed: file "knot.cc", li
 
 COMMENT=		powerful descriptive vector graphics language
 
-DISTNAME=		asymptote-2.70
-REVISION=		4
+DISTNAME=		asymptote-2.82
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
 
@@ -24,7 +23,10 @@ COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS=		graphics/glm \
 			print/texinfo \
 			print/texlive/base \
-			print/texlive/texmf,-main
+			print/texlive/texmf,-main \
+			print/texlive/texmf,-full \
+			math/eigen3 \
+			x11/py-qt5${MODPY_FLAVOR}
 RUN_DEPENDS=		print/texlive/texmf,-full \
 			math/py-numpy${MODPY_FLAVOR} \
 			textproc/py-cson${MODPY_FLAVOR} \
