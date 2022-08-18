@@ -1,0 +1,3 @@
+path (aka path pie, formerly path.py) implements path objects as
+first-class entities, allowing common operations on files to be invoked
+on those path objects directly.
