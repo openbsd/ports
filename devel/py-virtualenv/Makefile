@@ -1,7 +1,6 @@
 COMMENT =		virtual Python environment builder
 
-# more current virtualenv versions need additional py2 RDEPs
-MODPY_EGG_VERSION =	16.7.10
+MODPY_EGG_VERSION =	20.16.3
 DISTNAME =		virtualenv-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -16,19 +15,23 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
-.if ${FLAVOR:Mpython3}
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
-.endif
-
-post-install:
-	mv ${PREFIX}/bin/virtualenv{,${MODPY_BIN_SUFFIX}}
+BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
+RUN_DEPENDS =		sysutils/py-distlib${MODPY_FLAVOR} \
+			sysutils/py-filelock${MODPY_FLAVOR} \
+			sysutils/py-platformdirs${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-flaky${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-test-mock${MODPY_FLAVOR} \
+			devel/py-test-timeout${MODPY_FLAVOR} \
+			sysutils/py-packaging${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

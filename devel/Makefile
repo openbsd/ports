@@ -1582,7 +1582,6 @@
      SUBDIR += py-urwid,python3
      SUBDIR += py-uv,python3
      SUBDIR += py-vcversioner,python3
-     SUBDIR += py-virtualenv
      SUBDIR += py-virtualenv,python3
      SUBDIR += py-voluptuous,python3
      SUBDIR += py-vulture,python3
