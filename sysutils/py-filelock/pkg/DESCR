@@ -1,0 +1,3 @@
+This package contains a single module, which implements a platform
+independent file lock in Python, which provides a simple way of
+inter-process communication.
