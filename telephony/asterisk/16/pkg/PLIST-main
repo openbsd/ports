@@ -148,6 +148,7 @@ include/asterisk/presencestate.h
 include/asterisk/privacy.h
 include/asterisk/pval.h
 include/asterisk/res_fax.h
+include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
 include/asterisk/res_odbc_transaction.h
@@ -449,6 +450,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_format_attr_siren14.so
 @so lib/asterisk/modules/res_format_attr_siren7.so
 @so lib/asterisk/modules/res_format_attr_vp8.so
+@so lib/asterisk/modules/res_geolocation.so
 @so lib/asterisk/modules/res_hep.so
 @so lib/asterisk/modules/res_hep_pjsip.so
 @so lib/asterisk/modules/res_hep_rtcp.so
@@ -478,6 +480,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_pjsip_endpoint_identifier_ip.so
 @so lib/asterisk/modules/res_pjsip_endpoint_identifier_user.so
 @so lib/asterisk/modules/res_pjsip_exten_state.so
+@so lib/asterisk/modules/res_pjsip_geolocation.so
 @so lib/asterisk/modules/res_pjsip_header_funcs.so
 @so lib/asterisk/modules/res_pjsip_history.so
 @so lib/asterisk/modules/res_pjsip_logger.so
@@ -692,6 +695,7 @@ share/examples/asterisk/default/extensions_minivm.conf
 share/examples/asterisk/default/features.conf
 share/examples/asterisk/default/festival.conf
 share/examples/asterisk/default/followme.conf
+share/examples/asterisk/default/geolocation.conf
 share/examples/asterisk/default/hep.conf
 share/examples/asterisk/default/http.conf
 share/examples/asterisk/default/iax.conf
