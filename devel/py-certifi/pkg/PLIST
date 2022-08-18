@@ -1,3 +1,4 @@
+@pkgpath devel/py-certifi
 lib/python${MODPY_VERSION}/site-packages/certifi/
 lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/certifi-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO

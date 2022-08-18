@@ -1320,7 +1320,6 @@
      SUBDIR += py-cached-property,python3
      SUBDIR += py-cachetools,python3
      SUBDIR += py-cairocffi,python3
-     SUBDIR += py-certifi
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi,python3
      SUBDIR += py-cflow2dot,python3
