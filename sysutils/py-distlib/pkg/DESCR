@@ -1,0 +1,2 @@
+Low-level components of distutils2/packaging, augmented with
+higher-level APIs for making packaging easier.
