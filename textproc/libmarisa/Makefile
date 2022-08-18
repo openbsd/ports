@@ -10,7 +10,7 @@ PKGNAME-python =	py3-libmarisa-${V}
 PKGNAME-ruby =		ruby-libmarisa-${V}
 
 REVISION-main =		1
-REVISION-python =	0
+REVISION-python =	1
 REVISION-ruby =		0
 
 GH_ACCOUNT =	s-yata

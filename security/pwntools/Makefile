@@ -2,7 +2,7 @@ COMMENT =	Pwntools CTF framework and exploit development library
 
 MODPY_EGG_VERSION =	4.3.1
 DISTNAME =	pwntools-${MODPY_EGG_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
@@ -36,9 +36,5 @@ RUN_DEPENDS =		devel/capstone/python${MODPY_FLAVOR} \
 # Remove code to check for and apply updates
 post-extract:
 	rm ${WRKSRC}/pwnlib/update.py
-
-# ???
-post-install:
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/requirements.txt
 
 .include <bsd.port.mk>

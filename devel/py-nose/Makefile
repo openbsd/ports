@@ -4,9 +4,9 @@ MODPY_EGG_VERSION=	1.3.7
 DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		9
+REVISION=		10
 
-HOMEPAGE=		http://readthedocs.org/docs/nose/en/latest/
+HOMEPAGE=		https://nose.readthedocs.io/en/latest/
 
 # LGPL
 PERMIT_PACKAGE=	Yes
@@ -36,7 +36,6 @@ post-install:
 			${PREFIX}/share/examples/${MODPY_PY_PREFIX}nose/{} \; && \
 		find . ! -type d -exec ${INSTALL_DATA} {} \
 			${PREFIX}/share/examples/${MODPY_PY_PREFIX}nose/{} \;
-	rm ${PREFIX}/bin/nosetests-${MODPY_VERSION}
 	mv ${PREFIX}/bin/nosetests \
 		${PREFIX}/bin/nosetests${MODPY_BIN_SUFFIX}
 	mv ${PREFIX}/man/man1/nosetests.1 \

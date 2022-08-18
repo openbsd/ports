@@ -1,12 +1,11 @@
 COMMENT =		library to generate, and check strengh of passwords
 
-V =			1.4.4
-SUBST_VARS =		V
+MODPY_EGG_VERSION =	1.4.4
 GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
-GH_TAGNAME =		libpwquality-${V}
-DISTNAME =		libpwquality-${V}
-REVISION =		1
+GH_TAGNAME =		libpwquality-${MODPY_EGG_VERSION}
+DISTNAME =		libpwquality-${MODPY_EGG_VERSION}
+REVISION =		2
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 

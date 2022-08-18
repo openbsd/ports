@@ -3,6 +3,8 @@ COMMENT =	high performance network IDS, IPS and security monitoring
 SURICATA_V =	6.0.4
 SUPDATE_V =	1.2.3
 
+REVISION =	0
+
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
 SHARED_LIBS +=	htp                       0.0 # 2.0

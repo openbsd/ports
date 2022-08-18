@@ -2,7 +2,7 @@ COMMENT=		video DVDs and CDs creation tool
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 DISTNAME=		devede-${MODPY_EGG_VERSION}
-REVISION=		4
+REVISION=		5
 
 GH_TAGNAME=		4.8.9
 GH_ACCOUNT=		rastersoft

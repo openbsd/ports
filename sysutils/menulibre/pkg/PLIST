@@ -1,7 +1,11 @@
 bin/menulibre
 bin/menulibre-menu-validate
 lib/python${MODPY_VERSION}/site-packages/menulibre/
-lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/menulibre-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/menulibre/Dialogs.py
 lib/python${MODPY_VERSION}/site-packages/menulibre/MenuEditor.py
 lib/python${MODPY_VERSION}/site-packages/menulibre/MenulibreApplication.py

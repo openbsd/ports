@@ -1,7 +1,12 @@
 bin/remotinator
 bin/terminator
 bin/terminator.wrapper
-lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/terminatorlib/${MODPY_PYCACHE}/

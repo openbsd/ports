@@ -2,9 +2,13 @@ bin/copy_files_verbose.py
 bin/devede
 bin/devede_ng.py
 lib/python${MODPY_VERSION}/site-packages/devedeng/
-lib/python${MODPY_VERSION}/site-packages/devedeng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/devedeng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/devedeng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/devedeng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/devedeng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/devedeng-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/devedeng/__init__.py
-lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/devedeng/${MODPY_PYCACHE}add_files.${MODPY_PYC_MAGIC_TAG}pyc

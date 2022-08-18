@@ -1,9 +1,9 @@
+@comment CHANGELOG.md
+@comment CONTRIBUTING.md
+@comment LICENSE-pwntools.txt
+@comment README.md
+@comment TESTING.md
 bin/pwn
-lib/python${MODPY_VERSION}/site-packages/CHANGELOG.md
-lib/python${MODPY_VERSION}/site-packages/CONTRIBUTING.md
-lib/python${MODPY_VERSION}/site-packages/LICENSE-pwntools.txt
-lib/python${MODPY_VERSION}/site-packages/README.md
-lib/python${MODPY_VERSION}/site-packages/TESTING.md
 lib/python${MODPY_VERSION}/site-packages/pwn/
 lib/python${MODPY_VERSION}/site-packages/pwn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwn/${MODPY_PYCACHE}/
@@ -7031,3 +7031,4 @@ lib/python${MODPY_VERSION}/site-packages/pwntools-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/pwntools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/pwntools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/pwntools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+@comment requirements.txt

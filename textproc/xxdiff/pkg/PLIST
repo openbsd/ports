@@ -1,4 +1,5 @@
 bin/svn-foreign
+@comment bin/termdiff
 bin/xx-cond-replace
 bin/xx-cvs-diff
 bin/xx-cvs-revcmp
@@ -96,5 +97,9 @@ lib/python${MODPY_VERSION}/site-packages/xxdiff/scripts/svnresolve.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/selectfiles.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/utils.py
 lib/python${MODPY_VERSION}/site-packages/xxdiff/xformloop.py
-lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/xxdiff_scripts-5.0b1-py${MODPY_VERSION}.egg-info/top_level.txt
 @man man/man1/xxdiff.1

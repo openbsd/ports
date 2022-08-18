@@ -1,6 +1,15 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
+@@ -1955,7 +1955,7 @@ all-local: .stamp-distutils-in-builddir config.py cups
+ 
+ # Use distutils to install the module.
+ install-exec-local: .stamp-distutils-in-builddir
+-	$(PYTHON) setup.py install --prefix=$(DESTDIR)$(prefix)
++	$(PYTHON) setup.py install --root=$(DESTDIR) --single-version-externally-managed
+ 
+ # Uninstall the module, crossing our fingers that we know enough
+ # about how distutils works to do this.  Unfortunately, distutils
 @@ -2028,7 +2028,7 @@ update-po: missing-languages
  	$(MAKE) -C po update-po
  

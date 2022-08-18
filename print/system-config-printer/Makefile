@@ -3,6 +3,8 @@ COMMENT=		printer (CUPS) administration tool
 V=			1.5.16
 DISTNAME=		system-config-printer-${V}
 
+REVISION=		0
+
 CATEGORIES=		print sysutils
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
