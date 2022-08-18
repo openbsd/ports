@@ -134,7 +134,6 @@
      SUBDIR += haproxy
      SUBDIR += headscale
      SUBDIR += hexchat
-     SUBDIR += honeyd
      SUBDIR += hping
      SUBDIR += httptunnel
      SUBDIR += i2p
