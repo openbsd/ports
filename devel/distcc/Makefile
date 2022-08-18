@@ -8,9 +8,8 @@ VERSION =		3.3.5
 DISTNAME =		distcc-${VERSION}
 EPOCH =			0
 CATEGORIES =		devel net
-REVISION-gtk =		0
-REVISION-main =		1
-REVISION-server =	0
+
+REVISION =		2
 
 HOMEPAGE =		https://distcc.github.io/
 
@@ -23,6 +22,7 @@ MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		lang/python
 MODPY_EGG_VERSION =	${VERSION}
+MODPY_SETUPTOOLS =	Yes
 
 # Only -main needs an RDEP
 MODPY_RUNDEP =		No
