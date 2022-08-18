@@ -1,7 +1,6 @@
 COMMENT =		C++ class and template library
 
-V =			1.2.1
-REVISION =		0
+V =			1.5.1
 DISTNAME =		ETL-${V}
 PKGNAME =		etl-${V}
 
@@ -12,7 +11,7 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=synfig/}
+MASTER_SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
 
 CONFIGURE_STYLE =	gnu
 

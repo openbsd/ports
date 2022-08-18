@@ -1,0 +1,9 @@
+Index: images/splash_screen_development.sh
+--- images/splash_screen_development.sh.orig
++++ images/splash_screen_development.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -x
+ 
