@@ -1416,7 +1416,9 @@
      SUBDIR += py-iso639,python3
      SUBDIR += py-isodate,python3
      SUBDIR += py-isort,python3
+     SUBDIR += py-jaraco-envs,python3
      SUBDIR += py-jaraco-functools,python3
+     SUBDIR += py-jaraco-path,python3
      SUBDIR += py-jedi,python3
      SUBDIR += py-jeepney,python3
      SUBDIR += py-jmespath,python3
@@ -1461,6 +1463,7 @@
      SUBDIR += py2-parsing
      SUBDIR += py-parsing,python3
      SUBDIR += py-parso,python3
+     SUBDIR += py-path,python3
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr,python3
