@@ -76,7 +76,6 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			LOCALBASE="${LOCALBASE}" \
 			NSS_ENABLE_ECC=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
-BUILD_DEPENDS +=	devel/py-virtualenv
 
 RUN_DEPENDS +=		net/tor>=0.4.7.8
 
