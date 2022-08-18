@@ -22,6 +22,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # notes in codecs/ilbc/LICENSE_ADDENDUM.
 PERMIT_PACKAGE=	Yes
 
+WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-main += c crypto curl curses edit gsm iconv iksemel
 WANTLIB-main += jansson m ogg portaudio pthread radcli spandsp
 WANTLIB-main += sqlite3 srtp2 ssl tiff uriparser unbound uuid
@@ -115,6 +116,9 @@ CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-pjproject-bundled
 CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
+.if defined(LLD_EMUL)
+MAKE_ENV+=		LLD_EMUL="-Wl,${LLD_EMUL}"
+.endif
 
 CONFIGURE_ARGS+=	--with-SDL_image=no \
 			--with-asound=no \
