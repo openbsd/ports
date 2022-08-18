@@ -83,6 +83,7 @@
      SUBDIR += ripmime
      SUBDIR += rpm2cpio
      SUBDIR += ruby-multi_json
+     SUBDIR += ruby-oj
      SUBDIR += sqlite2mdoc
      SUBDIR += schema2ldif
      SUBDIR += trans
