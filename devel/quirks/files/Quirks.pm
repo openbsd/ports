@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1417 2022/08/18 17:53:55 jturner Exp $
+# $OpenBSD: Quirks.pm,v 1.1418 2022/08/18 23:37:05 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -740,6 +740,7 @@ my $stem_extensions = {
 	'py-packaging' => 'py3-packaging',
 	'py-certifi' => 'py3-certifi',
 	'py-ecdsa' => 'py3-ecdsa',
+	'py-virtualenv' => 'py3-virtualenv',
 };
 
 my $obsolete_reason = {};
@@ -1695,6 +1696,7 @@ setup_obsolete_reason(
 	6 => 'py-statistics',
 	31 => 'pyrex',
 	3 => 'luasoldout',
+	3 => 'honeyd',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
