@@ -1,0 +1,9 @@
+A small Python module for determining appropriate platform-specific dirs,
+e.g. system and user directories for data, config, cache, logs, etc.
+
+When writing desktop application, finding the right location for these
+varies per platform. Even for single-platform apps, there may by plenty
+of nuances in figuring out the right location (e.g. they vary between
+different versions of Windows, etc).
+
+platformdirs will help you choose an appropriate directory.
