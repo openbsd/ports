@@ -1382,7 +1382,6 @@
      SUBDIR += py-flit_core,python3
      SUBDIR += py-freezegun,python3
      SUBDIR += py-frozendict,python3
-     SUBDIR += py-funcsigs
      SUBDIR += py-funcy
      SUBDIR += py-funcy,python3
      SUBDIR += py-future

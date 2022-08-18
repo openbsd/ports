@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1414 2022/08/18 14:20:05 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1415 2022/08/18 14:33:53 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1691,6 +1691,8 @@ setup_obsolete_reason(
 	3 => 'gnome-books',
 	46 => 'go-bootstrap',
 	31 => 'py-typing',
+	6 => 'py-funcsigs',
+	6 => 'py-statistics',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

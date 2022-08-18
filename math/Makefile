@@ -143,7 +143,6 @@
      SUBDIR += py-scipy,python3
      SUBDIR += py-scs,python3
      SUBDIR += py-snuggs,python3
-     SUBDIR += py-statistics
      SUBDIR += py-sympy,python3
      SUBDIR += py-tables,python3
      SUBDIR += py2-numpy
