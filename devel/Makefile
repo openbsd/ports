@@ -1458,6 +1458,7 @@
      SUBDIR += py-olefile,python3
      SUBDIR += py-ordered-set,python3
      SUBDIR += py-parallel,python3
+     SUBDIR += py-parameterized,python3
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py2-parsing
      SUBDIR += py-parsing,python3
