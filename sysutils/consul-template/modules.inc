@@ -1,15 +1,15 @@
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.34.0 \
-	github.com/!burnt!sushi/toml				 v0.3.1 \
+	github.com/!burnt!sushi/toml				 v1.2.0 \
 	github.com/!data!dog/datadog-go				 v3.2.0+incompatible \
-	github.com/!masterminds/goutils				 v1.1.0 \
+	github.com/!masterminds/goutils				 v1.1.1 \
 	github.com/!masterminds/semver				 v1.5.0 \
 	github.com/!masterminds/sprig				 v2.22.0+incompatible \
 	github.com/alecthomas/template				 v0.0.0-20190718012654-fb15b899a751 \
 	github.com/alecthomas/units				 v0.0.0-20190717042225-c3de453c63f4 \
 	github.com/antihax/optional				 v1.0.0 \
 	github.com/armon/circbuf				 v0.0.0-20150827004946-bbbad097214e \
-	github.com/armon/go-metrics				 v0.3.9 \
+	github.com/armon/go-metrics				 v0.3.10 \
 	github.com/armon/go-radix				 v1.0.0 \
 	github.com/beorn7/perks					 v1.0.1 \
 	github.com/bgentry/speakeasy				 v0.1.0 \
@@ -43,18 +43,18 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf				 v1.5.2 \
 	github.com/golang/snappy				 v0.0.4 \
 	github.com/google/btree					 v1.0.0 \
-	github.com/google/go-cmp				 v0.5.5 \
+	github.com/google/go-cmp				 v0.5.7 \
 	github.com/google/gofuzz				 v1.0.0 \
 	github.com/google/uuid					 v1.1.2 \
-	github.com/gorilla/websocket				 v1.4.2 \
+	github.com/gorilla/websocket				 v1.5.0 \
 	github.com/grpc-ecosystem/grpc-gateway			 v1.16.0 \
-	github.com/hashicorp/consul/api				 v1.4.0 \
-	github.com/hashicorp/consul/sdk				 v0.4.1-0.20200910203702-bb2b5dd871ca \
+	github.com/hashicorp/consul/api				 v1.14.0 \
+	github.com/hashicorp/consul/sdk				 v0.11.0 \
 	github.com/hashicorp/cronexpr				 v1.1.1 \
 	github.com/hashicorp/errwrap				 v1.1.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
 	github.com/hashicorp/go-gatedio				 v0.5.0 \
-	github.com/hashicorp/go-hclog				 v1.0.0 \
+	github.com/hashicorp/go-hclog				 v1.2.2 \
 	github.com/hashicorp/go-immutable-radix			 v1.3.1 \
 	github.com/hashicorp/go-kms-wrapping/entropy		 v0.1.0 \
 	github.com/hashicorp/go-msgpack				 v0.5.5 \
@@ -64,28 +64,27 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-rootcerts			 v1.0.2 \
 	github.com/hashicorp/go-secure-stdlib/base62		 v0.1.1 \
 	github.com/hashicorp/go-secure-stdlib/mlock		 v0.1.1 \
-	github.com/hashicorp/go-secure-stdlib/parseutil		 v0.1.1 \
+	github.com/hashicorp/go-secure-stdlib/parseutil		 v0.1.6 \
 	github.com/hashicorp/go-secure-stdlib/password		 v0.1.1 \
-	github.com/hashicorp/go-secure-stdlib/strutil		 v0.1.1 \
+	github.com/hashicorp/go-secure-stdlib/strutil		 v0.1.2 \
 	github.com/hashicorp/go-secure-stdlib/tlsutil		 v0.1.1 \
 	github.com/hashicorp/go-sockaddr			 v1.0.2 \
 	github.com/hashicorp/go-syslog				 v1.0.0 \
 	github.com/hashicorp/go-uuid				 v1.0.2 \
 	github.com/hashicorp/go-version				 v1.2.0 \
-	github.com/hashicorp/go.net				 v0.0.1 \
 	github.com/hashicorp/golang-lru				 v0.5.4 \
 	github.com/hashicorp/hcl				 v1.0.0 \
 	github.com/hashicorp/logutils				 v1.0.0 \
-	github.com/hashicorp/mdns				 v1.0.1 \
-	github.com/hashicorp/memberlist				 v0.2.2 \
-	github.com/hashicorp/nomad/api				 v0.0.0-20220407202126-2eba643965c4 \
-	github.com/hashicorp/serf				 v0.9.4 \
-	github.com/hashicorp/vault/api				 v1.3.0 \
-	github.com/hashicorp/vault/api/auth/kubernetes		 v0.1.0 \
-	github.com/hashicorp/vault/sdk				 v0.3.0 \
+	github.com/hashicorp/mdns				 v1.0.4 \
+	github.com/hashicorp/memberlist				 v0.3.1 \
+	github.com/hashicorp/nomad/api				 v0.0.0-20220707195938-75f4c2237b28 \
+	github.com/hashicorp/serf				 v0.9.7 \
+	github.com/hashicorp/vault/api				 v1.7.2 \
+	github.com/hashicorp/vault/api/auth/kubernetes		 v0.2.0 \
+	github.com/hashicorp/vault/sdk				 v0.5.1 \
 	github.com/hashicorp/yamux				 v0.0.0-20180604194846-3520598351bb \
 	github.com/huandu/xstrings				 v1.2.0 \
-	github.com/imdario/mergo				 v0.3.12 \
+	github.com/imdario/mergo				 v0.3.13 \
 	github.com/jessevdk/go-flags				 v1.4.0 \
 	github.com/jhump/protoreflect				 v1.6.0 \
 	github.com/json-iterator/go				 v1.1.9 \
@@ -98,16 +97,14 @@ MODGO_MODULES =	\
 	github.com/mattn/go-colorable				 v0.1.12 \
 	github.com/mattn/go-isatty				 v0.0.14 \
 	github.com/matttproud/golang_protobuf_extensions	 v1.0.1 \
-	github.com/miekg/dns					 v1.1.26 \
+	github.com/miekg/dns					 v1.1.41 \
 	github.com/mitchellh/cli				 v1.1.0 \
 	github.com/mitchellh/copystructure			 v1.0.0 \
 	github.com/mitchellh/go-homedir				 v1.1.0 \
 	github.com/mitchellh/go-testing-interface		 v1.14.1 \
 	github.com/mitchellh/go-wordwrap			 v1.0.0 \
-	github.com/mitchellh/gox				 v0.4.0 \
-	github.com/mitchellh/hashstructure			 v1.0.0 \
-	github.com/mitchellh/iochan				 v1.0.0 \
-	github.com/mitchellh/mapstructure			 v1.4.3 \
+	github.com/mitchellh/hashstructure			 v1.1.0 \
+	github.com/mitchellh/mapstructure			 v1.5.0 \
 	github.com/mitchellh/reflectwalk			 v1.0.0 \
 	github.com/modern-go/concurrent				 v0.0.0-20180306012644-bacd9c7ef1dd \
 	github.com/modern-go/reflect2				 v1.0.1 \
@@ -128,18 +125,18 @@ MODGO_MODULES =	\
 	github.com/ryanuber/go-glob				 v1.0.0 \
 	github.com/sean-/seed					 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/sirupsen/logrus				 v1.4.2 \
-	github.com/stretchr/objx				 v0.1.1 \
-	github.com/stretchr/testify				 v1.7.1 \
+	github.com/stretchr/objx				 v0.4.0 \
+	github.com/stretchr/testify				 v1.8.0 \
 	github.com/tv42/httpunix				 v0.0.0-20150427012821-b75d8614f926 \
 	go.opentelemetry.io/proto/otlp				 v0.7.0 \
 	go.uber.org/atomic					 v1.9.0 \
 	golang.org/x/crypto					 v0.0.0-20220622213112-05595931fe9d \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/lint					 v0.0.0-20190313153728-d0100b6bd8b3 \
-	golang.org/x/net					 v0.0.0-20211112202133-69e39bad7dc2 \
+	golang.org/x/net					 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2					 v0.0.0-20200107190931-bf48bf16ab8d \
-	golang.org/x/sync					 v0.0.0-20190911185100-cd5d95a43a6e \
-	golang.org/x/sys					 v0.0.0-20211216021012-1d35b9e2eb4e \
+	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
+	golang.org/x/sys					 v0.0.0-20220503163025-988cb79eb6c6 \
 	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text					 v0.3.6 \
 	golang.org/x/time					 v0.0.0-20200630173020-3af7569d3a1e \
@@ -152,15 +149,17 @@ MODGO_MODULES =	\
 	gopkg.in/alecthomas/kingpin.v2				 v2.2.6 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/square/go-jose.v2				 v2.5.1 \
-	gopkg.in/yaml.v2					 v2.3.0 \
-	gopkg.in/yaml.v3					 v3.0.0-20200313102051-9f266ea9e77c \
+	gopkg.in/yaml.v2					 v2.4.0 \
+	gopkg.in/yaml.v3					 v3.0.1 \
 	honnef.co/go/tools					 v0.0.0-20190523083050-ea95bdfd59fc
 
 MODGO_MODFILES =	\
 	cloud.google.com/go				 v0.26.0 \
+	github.com/!burnt!sushi/toml			 v0.3.1 \
 	github.com/alecthomas/template			 v0.0.0-20160405071501-a0175ee3bccc \
 	github.com/alecthomas/units			 v0.0.0-20151022065526-2efee857e7cf \
 	github.com/armon/go-metrics			 v0.0.0-20180917152333-f0300d1749da \
+	github.com/armon/go-metrics			 v0.3.9 \
 	github.com/armon/go-radix			 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/beorn7/perks				 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks				 v1.0.0 \
@@ -195,7 +194,9 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp			 v0.3.1 \
 	github.com/google/go-cmp			 v0.4.0 \
 	github.com/google/go-cmp			 v0.5.0 \
-	github.com/hashicorp/consul/sdk			 v0.4.0 \
+	github.com/google/go-cmp			 v0.5.5 \
+	github.com/gorilla/websocket			 v1.4.2 \
+	github.com/hashicorp/consul/sdk			 v0.10.0 \
 	github.com/hashicorp/errwrap			 v1.0.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.1 \
@@ -204,18 +205,19 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-hclog			 v0.16.2 \
 	github.com/hashicorp/go-hclog			 v0.9.2 \
 	github.com/hashicorp/go-immutable-radix		 v1.0.0 \
+	github.com/hashicorp/go-immutable-radix		 v1.3.0 \
 	github.com/hashicorp/go-msgpack			 v0.5.3 \
 	github.com/hashicorp/go-multierror		 v1.0.0 \
 	github.com/hashicorp/go-multierror		 v1.1.0 \
 	github.com/hashicorp/go-retryablehttp		 v0.5.3 \
 	github.com/hashicorp/go-retryablehttp		 v0.6.6 \
+	github.com/hashicorp/go-secure-stdlib/parseutil	 v0.1.1 \
+	github.com/hashicorp/go-secure-stdlib/strutil	 v0.1.1 \
 	github.com/hashicorp/go-sockaddr		 v1.0.0 \
 	github.com/hashicorp/go-uuid			 v1.0.0 \
 	github.com/hashicorp/go-uuid			 v1.0.1 \
 	github.com/hashicorp/golang-lru			 v0.5.0 \
-	github.com/hashicorp/mdns			 v1.0.0 \
-	github.com/hashicorp/memberlist			 v0.1.3 \
-	github.com/hashicorp/serf			 v0.8.2 \
+	github.com/hashicorp/memberlist			 v0.3.0 \
 	github.com/json-iterator/go			 v1.1.6 \
 	github.com/kr/pretty				 v0.1.0 \
 	github.com/kr/pretty				 v0.2.0 \
@@ -230,14 +232,13 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty			 v0.0.12 \
 	github.com/mattn/go-isatty			 v0.0.3 \
 	github.com/mattn/go-isatty			 v0.0.8 \
-	github.com/miekg/dns				 v1.0.14 \
+	github.com/miekg/dns				 v1.1.26 \
 	github.com/mitchellh/cli			 v1.0.0 \
 	github.com/mitchellh/go-testing-interface	 v0.0.0-20171004221916-a61a99592b77 \
 	github.com/mitchellh/go-testing-interface	 v1.0.0 \
 	github.com/mitchellh/mapstructure		 v0.0.0-20160808181253-ca63d7c062ee \
-	github.com/mitchellh/mapstructure		 v1.1.2 \
 	github.com/mitchellh/mapstructure		 v1.4.1 \
-	github.com/mitchellh/mapstructure		 v1.4.2 \
+	github.com/mitchellh/mapstructure		 v1.4.3 \
 	github.com/modern-go/concurrent			 v0.0.0-20180228061459-e0a39a4cb421 \
 	github.com/modern-go/reflect2			 v0.0.0-20180701023420-4b7aa43c6742 \
 	github.com/pascaldekloe/goe			 v0.0.0-20180627143212-57f6aae5913c \
@@ -255,13 +256,15 @@ MODGO_MODFILES =	\
 	github.com/ryanuber/columnize			 v0.0.0-20160712163229-9b3edd62028f \
 	github.com/sirupsen/logrus			 v1.2.0 \
 	github.com/stretchr/objx			 v0.1.0 \
+	github.com/stretchr/objx			 v0.1.1 \
 	github.com/stretchr/testify			 v1.2.2 \
 	github.com/stretchr/testify			 v1.3.0 \
 	github.com/stretchr/testify			 v1.4.0 \
 	github.com/stretchr/testify			 v1.5.1 \
 	github.com/stretchr/testify			 v1.7.0 \
+	github.com/stretchr/testify			 v1.7.1 \
+	github.com/stretchr/testify			 v1.7.2 \
 	golang.org/x/crypto				 v0.0.0-20180904163835-0709b304e793 \
-	golang.org/x/crypto				 v0.0.0-20181029021203-45a5f77698d3 \
 	golang.org/x/crypto				 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto				 v0.0.0-20190923035154-9ee001bba392 \
 	golang.org/x/crypto				 v0.0.0-20200622213623-75b288015ac9 \
@@ -271,9 +274,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.0.0-20180530234432-1e491301e022 \
 	golang.org/x/net				 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net				 v0.0.0-20180826012351-8a410e7b638d \
-	golang.org/x/net				 v0.0.0-20181023162649-9b4f9f5ad519 \
 	golang.org/x/net				 v0.0.0-20181114220301-adae6a3d119a \
-	golang.org/x/net				 v0.0.0-20181201002055-351d144fa1fc \
 	golang.org/x/net				 v0.0.0-20190108225652-1e06a53dbb7e \
 	golang.org/x/net				 v0.0.0-20190213061140-3a22650c66bd \
 	golang.org/x/net				 v0.0.0-20190311183353-d8887717615a \
@@ -283,15 +284,17 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.0.0-20190923162816-aa69164e4478 \
 	golang.org/x/net				 v0.0.0-20200822124328-c89045814202 \
 	golang.org/x/net				 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net				 v0.0.0-20210410081132-afb366fc7cd1 \
+	golang.org/x/net				 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/oauth2				 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/sync				 v0.0.0-20180314180146-1d60e4601c6f \
 	golang.org/x/sync				 v0.0.0-20181108010431-42b317875d0f \
 	golang.org/x/sync				 v0.0.0-20181221193216-37e7f081c4d4 \
 	golang.org/x/sync				 v0.0.0-20190423024810-112230192c58 \
+	golang.org/x/sync				 v0.0.0-20190911185100-cd5d95a43a6e \
 	golang.org/x/sys				 v0.0.0-20180823144017-11551d06cbcc \
 	golang.org/x/sys				 v0.0.0-20180830151530-49385e6e1522 \
 	golang.org/x/sys				 v0.0.0-20180905080454-ebe1bf3edb33 \
-	golang.org/x/sys				 v0.0.0-20181026203630-95b1ffbd15a5 \
 	golang.org/x/sys				 v0.0.0-20181116152217-5ac8a444bdc5 \
 	golang.org/x/sys				 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys				 v0.0.0-20190222072716-a9d3bda3a223 \
@@ -303,14 +306,16 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20191026070338-33540a1f6037 \
 	golang.org/x/sys				 v0.0.0-20200116001909-b77594299b42 \
 	golang.org/x/sys				 v0.0.0-20200122134326-e047566fdf82 \
-	golang.org/x/sys				 v0.0.0-20200124204421-9fbb57f87de9 \
 	golang.org/x/sys				 v0.0.0-20200223170610-d5e6a3e2c0ae \
 	golang.org/x/sys				 v0.0.0-20200323222414-85ca7c5b95cd \
 	golang.org/x/sys				 v0.0.0-20201119102817-f84b799fce68 \
+	golang.org/x/sys				 v0.0.0-20210303074136-134d130e1a04 \
+	golang.org/x/sys				 v0.0.0-20210330210617-4fbd30eecc44 \
 	golang.org/x/sys				 v0.0.0-20210423082822-04245dca01da \
 	golang.org/x/sys				 v0.0.0-20210615035016-665e8c7367d1 \
 	golang.org/x/sys				 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys				 v0.0.0-20210927094055-39ccf1dd6fa6 \
+	golang.org/x/sys				 v0.0.0-20220412211240-33da011f77ad \
 	golang.org/x/text				 v0.3.0 \
 	golang.org/x/text				 v0.3.2 \
 	golang.org/x/text				 v0.3.3 \
@@ -352,4 +357,6 @@ MODGO_MODFILES =	\
 	gopkg.in/yaml.v2				 v2.2.4 \
 	gopkg.in/yaml.v2				 v2.2.5 \
 	gopkg.in/yaml.v2				 v2.2.8 \
+	gopkg.in/yaml.v3				 v3.0.0 \
+	gopkg.in/yaml.v3				 v3.0.0-20200313102051-9f266ea9e77c \
 	honnef.co/go/tools				 v0.0.0-20190102054323-c2f93a96b099
