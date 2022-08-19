@@ -8795,8 +8795,6 @@ nextcloud/apps/activity/l10n/ia.js
 nextcloud/apps/activity/l10n/ia.json
 nextcloud/apps/activity/l10n/id.js
 nextcloud/apps/activity/l10n/id.json
-nextcloud/apps/activity/l10n/ig.js
-nextcloud/apps/activity/l10n/ig.json
 nextcloud/apps/activity/l10n/is.js
 nextcloud/apps/activity/l10n/is.json
 nextcloud/apps/activity/l10n/it.js
@@ -8878,8 +8876,6 @@ nextcloud/apps/activity/l10n/tk.js
 nextcloud/apps/activity/l10n/tk.json
 nextcloud/apps/activity/l10n/tr.js
 nextcloud/apps/activity/l10n/tr.json
-nextcloud/apps/activity/l10n/ug.js
-nextcloud/apps/activity/l10n/ug.json
 nextcloud/apps/activity/l10n/uk.js
 nextcloud/apps/activity/l10n/uk.json
 nextcloud/apps/activity/l10n/uz.js
@@ -10333,6 +10329,8 @@ nextcloud/apps/dashboard/l10n/lt_LT.js
 nextcloud/apps/dashboard/l10n/lt_LT.json
 nextcloud/apps/dashboard/l10n/mk.js
 nextcloud/apps/dashboard/l10n/mk.json
+nextcloud/apps/dashboard/l10n/nb.js
+nextcloud/apps/dashboard/l10n/nb.json
 nextcloud/apps/dashboard/l10n/nl.js
 nextcloud/apps/dashboard/l10n/nl.json
 nextcloud/apps/dashboard/l10n/oc.js
@@ -16612,6 +16610,8 @@ nextcloud/apps/settings/l10n/nb.js
 nextcloud/apps/settings/l10n/nb.json
 nextcloud/apps/settings/l10n/nl.js
 nextcloud/apps/settings/l10n/nl.json
+nextcloud/apps/settings/l10n/nn_NO.js
+nextcloud/apps/settings/l10n/nn_NO.json
 nextcloud/apps/settings/l10n/oc.js
 nextcloud/apps/settings/l10n/oc.json
 nextcloud/apps/settings/l10n/pl.js
@@ -18014,8 +18014,6 @@ nextcloud/apps/text/l10n/ja.js
 nextcloud/apps/text/l10n/ja.json
 nextcloud/apps/text/l10n/ka_GE.js
 nextcloud/apps/text/l10n/ka_GE.json
-nextcloud/apps/text/l10n/km.js
-nextcloud/apps/text/l10n/km.json
 nextcloud/apps/text/l10n/kn.js
 nextcloud/apps/text/l10n/kn.json
 nextcloud/apps/text/l10n/ko.js
@@ -18030,8 +18028,6 @@ nextcloud/apps/text/l10n/mk.js
 nextcloud/apps/text/l10n/mk.json
 nextcloud/apps/text/l10n/mn.js
 nextcloud/apps/text/l10n/mn.json
-nextcloud/apps/text/l10n/ms_MY.js
-nextcloud/apps/text/l10n/ms_MY.json
 nextcloud/apps/text/l10n/nb.js
 nextcloud/apps/text/l10n/nb.json
 nextcloud/apps/text/l10n/nl.js
@@ -22055,6 +22051,7 @@ nextcloud/lib/private/Http/Client/LocalAddressChecker.php
 nextcloud/lib/private/Http/Client/NegativeDnsCache.php
 nextcloud/lib/private/Http/Client/Response.php
 nextcloud/lib/private/Http/CookieHelper.php
+nextcloud/lib/private/Http/IpUtils.php
 nextcloud/lib/private/Http/WellKnown/
 nextcloud/lib/private/Http/WellKnown/RequestManager.php
 nextcloud/lib/private/InitialStateService.php
