@@ -1,4 +1,5 @@
 @bin bin/shotcut
+@so lib/libCuteLogger.so
 @man man/man1/shotcut.1
 share/applications/org.shotcut.Shotcut.desktop
 share/icons/hicolor/128x128/apps/org.shotcut.Shotcut.png
@@ -8,6 +9,13 @@ share/metainfo/org.shotcut.Shotcut.metainfo.xml
 share/mime/packages/org.shotcut.Shotcut.xml
 share/shotcut/
 share/shotcut/qml/
+share/shotcut/qml/export-chapters/
+share/shotcut/qml/export-chapters/export-chapters.js
+share/shotcut/qml/export-chapters/main.js
+share/shotcut/qml/export-chapters/mlt2chapters.js
+share/shotcut/qml/export-chapters/package.json
+share/shotcut/qml/export-chapters/rebuild.sh
+share/shotcut/qml/export-chapters/test-node.js
 share/shotcut/qml/export-edl/
 share/shotcut/qml/export-edl/export-edl.js
 share/shotcut/qml/export-edl/main.js
@@ -40,6 +48,15 @@ share/shotcut/qml/filters/audio_compressor/ui.qml
 share/shotcut/qml/filters/audio_delay/
 share/shotcut/qml/filters/audio_delay/meta.qml
 share/shotcut/qml/filters/audio_delay/ui.qml
+share/shotcut/qml/filters/audio_eq15band/
+share/shotcut/qml/filters/audio_eq15band/meta.qml
+share/shotcut/qml/filters/audio_eq15band/ui.qml
+share/shotcut/qml/filters/audio_eq3band/
+share/shotcut/qml/filters/audio_eq3band/meta.qml
+share/shotcut/qml/filters/audio_eq3band/ui.qml
+share/shotcut/qml/filters/audio_eqparametric/
+share/shotcut/qml/filters/audio_eqparametric/meta.qml
+share/shotcut/qml/filters/audio_eqparametric/ui.qml
 share/shotcut/qml/filters/audio_expander/
 share/shotcut/qml/filters/audio_expander/meta.qml
 share/shotcut/qml/filters/audio_expander/ui.qml
@@ -89,9 +106,16 @@ share/shotcut/qml/filters/audio_pitch/ui.qml
 share/shotcut/qml/filters/audio_reverb/
 share/shotcut/qml/filters/audio_reverb/meta.qml
 share/shotcut/qml/filters/audio_reverb/ui.qml
+share/shotcut/qml/filters/audio_stereoenhance/
+share/shotcut/qml/filters/audio_stereoenhance/meta.qml
+share/shotcut/qml/filters/audio_stereoenhance/ui.qml
 share/shotcut/qml/filters/audio_swapchannels/
 share/shotcut/qml/filters/audio_swapchannels/meta.qml
 share/shotcut/qml/filters/audio_swapchannels/ui.qml
+share/shotcut/qml/filters/audiolevelgraph/
+share/shotcut/qml/filters/audiolevelgraph/meta.qml
+share/shotcut/qml/filters/audiolevelgraph/ui.qml
+share/shotcut/qml/filters/audiolevelgraph/vui.qml
 share/shotcut/qml/filters/bigsh0t_eq_mask/
 share/shotcut/qml/filters/bigsh0t_eq_mask/meta.qml
 share/shotcut/qml/filters/bigsh0t_eq_mask/ui.qml
@@ -123,8 +147,10 @@ share/shotcut/qml/filters/bluescreen0r/
 share/shotcut/qml/filters/bluescreen0r/meta.qml
 share/shotcut/qml/filters/bluescreen0r/ui.qml
 share/shotcut/qml/filters/blur/
+share/shotcut/qml/filters/blur/meta_box_blur.qml
 share/shotcut/qml/filters/blur/meta_boxblur.qml
 share/shotcut/qml/filters/blur/meta_movit.qml
+share/shotcut/qml/filters/blur/ui_box_blur.qml
 share/shotcut/qml/filters/blur/ui_boxblur.qml
 share/shotcut/qml/filters/blur/ui_movit.qml
 share/shotcut/qml/filters/blur_exponential/
@@ -132,7 +158,9 @@ share/shotcut/qml/filters/blur_exponential/meta.qml
 share/shotcut/qml/filters/blur_exponential/ui.qml
 share/shotcut/qml/filters/blur_gaussian/
 share/shotcut/qml/filters/blur_gaussian/meta.qml
-share/shotcut/qml/filters/blur_gaussian/ui.qml
+share/shotcut/qml/filters/blur_gaussian/meta_av.qml
+share/shotcut/qml/filters/blur_gaussian/ui_av.qml
+share/shotcut/qml/filters/blur_gaussian/ui_frei0r.qml
 share/shotcut/qml/filters/blur_lowpass/
 share/shotcut/qml/filters/blur_lowpass/meta.qml
 share/shotcut/qml/filters/blur_lowpass/ui.qml
@@ -277,6 +305,9 @@ share/shotcut/qml/filters/mask_apply/ui.qml
 share/shotcut/qml/filters/mask_chromakey/
 share/shotcut/qml/filters/mask_chromakey/meta.qml
 share/shotcut/qml/filters/mask_chromakey/ui.qml
+share/shotcut/qml/filters/mask_glaxnimate/
+share/shotcut/qml/filters/mask_glaxnimate/meta.qml
+share/shotcut/qml/filters/mask_glaxnimate/ui.qml
 share/shotcut/qml/filters/mask_shape/
 share/shotcut/qml/filters/mask_shape/meta.qml
 share/shotcut/qml/filters/mask_shape/ui.qml
@@ -421,6 +452,7 @@ share/shotcut/qml/filters/white/ui.qml
 share/shotcut/qml/modules/
 share/shotcut/qml/modules/Shotcut/
 share/shotcut/qml/modules/Shotcut/Controls/
+share/shotcut/qml/modules/Shotcut/Controls/AutoSizeMenu.qml
 share/shotcut/qml/modules/Shotcut/Controls/Button.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
 share/shotcut/qml/modules/Shotcut/Controls/ComboBox.qml
