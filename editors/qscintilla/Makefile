@@ -33,4 +33,13 @@ NO_TEST =	Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/qscintilla.pro
 
+.include <bsd.port.arch.mk>
+
+.if ! ${PROPERTIES:Mlp64}
+# ports depending on this fail, e.g. py-qscintilla, octave, openscad
+# due to undefined symbols.
+# if fixing this removes the symbols, remember the shlib major bump
+BROKEN+=	undefined symbols in produced library on 32-bit archs, needs fixing
+.endif
+
 .include <bsd.port.mk>
