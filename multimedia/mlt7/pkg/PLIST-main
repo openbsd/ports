@@ -1,3 +1,4 @@
+@pkgpath multimedia/mlt,-main
 @bin bin/melt-7
 include/mlt-7/
 include/mlt-7/framework/
@@ -98,6 +99,7 @@ share/mlt-7/core/
 share/mlt-7/core/consumer_multi.yml
 share/mlt-7/core/filter_audiomap.yml
 share/mlt-7/core/filter_audiowave.yml
+share/mlt-7/core/filter_box_blur.yml
 share/mlt-7/core/filter_brightness.yml
 share/mlt-7/core/filter_channelcopy.yml
 share/mlt-7/core/filter_choppy.yml
@@ -112,6 +114,7 @@ share/mlt-7/core/filter_mirror.yml
 share/mlt-7/core/filter_mono.yml
 share/mlt-7/core/filter_obscure.yml
 share/mlt-7/core/filter_panner.yml
+share/mlt-7/core/filter_pillar_echo.yml
 share/mlt-7/core/filter_rescale.yml
 share/mlt-7/core/filter_resize.yml
 share/mlt-7/core/filter_transition.yml
@@ -186,7 +189,6 @@ share/mlt-7/plus/filter_lift_gamma_gain.yml
 share/mlt-7/plus/filter_loudness.yml
 share/mlt-7/plus/filter_loudness_meter.yml
 share/mlt-7/plus/filter_lumakey.yml
-share/mlt-7/plus/filter_pillar_echo.yml
 share/mlt-7/plus/filter_rgblut.yml
 share/mlt-7/plus/filter_sepia.yml
 share/mlt-7/plus/filter_shape.yml
@@ -415,6 +417,7 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
+share/mlt-7/qt/filter_audiolevelgraph.yml
 share/mlt-7/sdl/
 share/mlt-7/sdl/consumer_sdl.yml
 share/mlt-7/sdl/consumer_sdl_audio.yml

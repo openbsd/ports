@@ -1,3 +1,4 @@
+@pkgpath multimedia/mlt,-gpl2
 @so lib/mlt-7/libmltnormalize.so
 @so lib/mlt-7/libmltplusgpl.so
 @so lib/mlt-7/libmltqt.so
