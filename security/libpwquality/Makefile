@@ -5,7 +5,7 @@ GH_PROJECT =		libpwquality
 GH_ACCOUNT =		libpwquality
 GH_TAGNAME =		libpwquality-${MODPY_EGG_VERSION}
 DISTNAME =		libpwquality-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=  pwquality            1.0      # 1.2
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c crack iconv intl pthread z
 
 MODULES =		lang/python
+MODPY_SETUPTOOLS =	Yes
 
 USE_GMAKE =		Yes
 
