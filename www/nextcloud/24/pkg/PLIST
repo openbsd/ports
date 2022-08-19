@@ -6931,6 +6931,7 @@ nextcloud/3rdparty/sabre/dav/lib/DAV/Auth/Backend/BasicCallBack.php
 nextcloud/3rdparty/sabre/dav/lib/DAV/Auth/Backend/File.php
 nextcloud/3rdparty/sabre/dav/lib/DAV/Auth/Backend/IMAP.php
 nextcloud/3rdparty/sabre/dav/lib/DAV/Auth/Backend/PDO.php
+nextcloud/3rdparty/sabre/dav/lib/DAV/Auth/Backend/PDOBasicAuth.php
 nextcloud/3rdparty/sabre/dav/lib/DAV/Auth/Plugin.php
 nextcloud/3rdparty/sabre/dav/lib/DAV/Browser/
 nextcloud/3rdparty/sabre/dav/lib/DAV/Browser/GuessContentType.php
@@ -8815,8 +8816,6 @@ nextcloud/apps/activity/l10n/ia.js
 nextcloud/apps/activity/l10n/ia.json
 nextcloud/apps/activity/l10n/id.js
 nextcloud/apps/activity/l10n/id.json
-nextcloud/apps/activity/l10n/ig.js
-nextcloud/apps/activity/l10n/ig.json
 nextcloud/apps/activity/l10n/is.js
 nextcloud/apps/activity/l10n/is.json
 nextcloud/apps/activity/l10n/it.js
@@ -8898,8 +8897,6 @@ nextcloud/apps/activity/l10n/tk.js
 nextcloud/apps/activity/l10n/tk.json
 nextcloud/apps/activity/l10n/tr.js
 nextcloud/apps/activity/l10n/tr.json
-nextcloud/apps/activity/l10n/ug.js
-nextcloud/apps/activity/l10n/ug.json
 nextcloud/apps/activity/l10n/uk.js
 nextcloud/apps/activity/l10n/uk.json
 nextcloud/apps/activity/l10n/uz.js
@@ -9685,6 +9682,8 @@ nextcloud/apps/circles/lib/Search/FederatedUsers.php
 nextcloud/apps/circles/lib/Search/GlobalScaleUsers.php
 nextcloud/apps/circles/lib/Search/LocalGroups.php
 nextcloud/apps/circles/lib/Search/LocalUsers.php
+nextcloud/apps/circles/lib/Search/UnifiedSearchProvider.php
+nextcloud/apps/circles/lib/Search/UnifiedSearchResult.php
 nextcloud/apps/circles/lib/Service/
 nextcloud/apps/circles/lib/Service/CircleService.php
 nextcloud/apps/circles/lib/Service/CirclesService.php
@@ -10305,6 +10304,8 @@ nextcloud/apps/dashboard/l10n/lt_LT.js
 nextcloud/apps/dashboard/l10n/lt_LT.json
 nextcloud/apps/dashboard/l10n/mk.js
 nextcloud/apps/dashboard/l10n/mk.json
+nextcloud/apps/dashboard/l10n/nb.js
+nextcloud/apps/dashboard/l10n/nb.json
 nextcloud/apps/dashboard/l10n/nl.js
 nextcloud/apps/dashboard/l10n/nl.json
 nextcloud/apps/dashboard/l10n/oc.js
@@ -10730,6 +10731,7 @@ nextcloud/apps/dav/lib/DAV/Sharing/Xml/
 nextcloud/apps/dav/lib/DAV/Sharing/Xml/Invite.php
 nextcloud/apps/dav/lib/DAV/Sharing/Xml/ShareRequest.php
 nextcloud/apps/dav/lib/DAV/SystemPrincipalBackend.php
+nextcloud/apps/dav/lib/DAV/ViewOnlyPlugin.php
 nextcloud/apps/dav/lib/Db/
 nextcloud/apps/dav/lib/Db/Direct.php
 nextcloud/apps/dav/lib/Db/DirectMapper.php
@@ -13340,6 +13342,7 @@ nextcloud/apps/files_sharing/lib/ShareBackend/Folder.php
 nextcloud/apps/files_sharing/lib/SharedMount.php
 nextcloud/apps/files_sharing/lib/SharedStorage.php
 nextcloud/apps/files_sharing/lib/Updater.php
+nextcloud/apps/files_sharing/lib/ViewOnly.php
 nextcloud/apps/files_sharing/list.php
 nextcloud/apps/files_sharing/public.php
 nextcloud/apps/files_sharing/templates/
@@ -16287,6 +16290,8 @@ nextcloud/apps/settings/l10n/nb.js
 nextcloud/apps/settings/l10n/nb.json
 nextcloud/apps/settings/l10n/nl.js
 nextcloud/apps/settings/l10n/nl.json
+nextcloud/apps/settings/l10n/nn_NO.js
+nextcloud/apps/settings/l10n/nn_NO.json
 nextcloud/apps/settings/l10n/oc.js
 nextcloud/apps/settings/l10n/oc.json
 nextcloud/apps/settings/l10n/pl.js
@@ -17663,8 +17668,6 @@ nextcloud/apps/text/l10n/ja.js
 nextcloud/apps/text/l10n/ja.json
 nextcloud/apps/text/l10n/ka_GE.js
 nextcloud/apps/text/l10n/ka_GE.json
-nextcloud/apps/text/l10n/km.js
-nextcloud/apps/text/l10n/km.json
 nextcloud/apps/text/l10n/kn.js
 nextcloud/apps/text/l10n/kn.json
 nextcloud/apps/text/l10n/ko.js
@@ -17679,8 +17682,6 @@ nextcloud/apps/text/l10n/mk.js
 nextcloud/apps/text/l10n/mk.json
 nextcloud/apps/text/l10n/mn.js
 nextcloud/apps/text/l10n/mn.json
-nextcloud/apps/text/l10n/ms_MY.js
-nextcloud/apps/text/l10n/ms_MY.json
 nextcloud/apps/text/l10n/nb.js
 nextcloud/apps/text/l10n/nb.json
 nextcloud/apps/text/l10n/nl.js
@@ -21760,6 +21761,7 @@ nextcloud/lib/private/Http/Client/LocalAddressChecker.php
 nextcloud/lib/private/Http/Client/NegativeDnsCache.php
 nextcloud/lib/private/Http/Client/Response.php
 nextcloud/lib/private/Http/CookieHelper.php
+nextcloud/lib/private/Http/IpUtils.php
 nextcloud/lib/private/Http/WellKnown/
 nextcloud/lib/private/Http/WellKnown/RequestManager.php
 nextcloud/lib/private/InitialStateService.php
@@ -22071,6 +22073,7 @@ nextcloud/lib/private/Share20/LegacyHooks.php
 nextcloud/lib/private/Share20/Manager.php
 nextcloud/lib/private/Share20/ProviderFactory.php
 nextcloud/lib/private/Share20/Share.php
+nextcloud/lib/private/Share20/ShareAttributes.php
 nextcloud/lib/private/Share20/ShareHelper.php
 nextcloud/lib/private/Share20/UserRemovedListener.php
 nextcloud/lib/private/StreamImage.php
@@ -22453,8 +22456,10 @@ nextcloud/lib/public/Files/Config/IUserMountCache.php
 nextcloud/lib/public/Files/EmptyFileNameException.php
 nextcloud/lib/public/Files/EntityTooLargeException.php
 nextcloud/lib/public/Files/Events/
+nextcloud/lib/public/Files/Events/BeforeDirectFileDownloadEvent.php
 nextcloud/lib/public/Files/Events/BeforeFileScannedEvent.php
 nextcloud/lib/public/Files/Events/BeforeFolderScannedEvent.php
+nextcloud/lib/public/Files/Events/BeforeZipCreatedEvent.php
 nextcloud/lib/public/Files/Events/FileCacheUpdated.php
 nextcloud/lib/public/Files/Events/FileScannedEvent.php
 nextcloud/lib/public/Files/Events/FolderScannedEvent.php
@@ -22776,6 +22781,7 @@ nextcloud/lib/public/Share/Exceptions/AlreadySharedException.php
 nextcloud/lib/public/Share/Exceptions/GenericShareException.php
 nextcloud/lib/public/Share/Exceptions/IllegalIDChangeException.php
 nextcloud/lib/public/Share/Exceptions/ShareNotFound.php
+nextcloud/lib/public/Share/IAttributes.php
 nextcloud/lib/public/Share/IManager.php
 nextcloud/lib/public/Share/IProviderFactory.php
 nextcloud/lib/public/Share/IShare.php
