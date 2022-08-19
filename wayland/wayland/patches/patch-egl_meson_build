@@ -1,0 +1,14 @@
+https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/256
+
+Index: egl/meson.build
+--- egl/meson.build.orig
++++ egl/meson.build
+@@ -11,7 +11,7 @@ wayland_egl = library(
+ 
+ executable('wayland-egl-abi-check', 'wayland-egl-abi-check.c')
+ 
+-nm_path = find_program('nm').full_path()
++nm_path = find_program(['llvm-nm', 'nm']).full_path()
+ 
+ test(
+ 	'wayland-egl symbols check',

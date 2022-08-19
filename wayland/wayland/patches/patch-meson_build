@@ -1,34 +1,23 @@
+https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/256
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -26,7 +26,14 @@ add_project_arguments(
- 	language: 'c'
- )
+@@ -16,7 +16,7 @@ config_h.set_quoted('PACKAGE', meson.project_name())
+ config_h.set_quoted('PACKAGE_VERSION', meson.project_version())
  
--foreach h: [ 'sys/prctl.h' ]
-+have_headers = [
-+	 'signal.h',
-+	 'sys/epoll.h',
-+	 'sys/prctl.h',
-+	 'sys/ucred.h',
-+	]
-+
-+foreach h: have_headers
- 	config_h.set('HAVE_' + h.underscorify().to_upper(), cc.has_header(h))
- endforeach
- 
-@@ -37,12 +44,14 @@ have_funcs = [
- 	'prctl',
- 	'memfd_create',
- 	'strndup',
-+	'waitid',
- ]
- foreach f: have_funcs
- 	config_h.set('HAVE_' + f.underscorify().to_upper(), cc.has_function(f))
- endforeach
+ cc_args = []
+-if host_machine.system() != 'freebsd'
++if host_machine.system() not in ['freebsd', 'openbsd']
+ 	cc_args += ['-D_POSIX_C_SOURCE=200809L']
+ endif
+ add_project_arguments(cc_args, language: 'c')
+@@ -69,7 +69,7 @@ endif
+ config_h.set10('HAVE_BROKEN_MSG_CMSG_CLOEXEC', have_broken_msg_cmsg_cloexec)
  
  if get_option('libraries')
-+	epoll_dep = dependency('epoll-shim', required: true)
- 	ffi_dep = dependency('libffi')
- 
- 	decls = [
+-	if host_machine.system() == 'freebsd'
++	if host_machine.system() in ['freebsd', 'openbsd']
+ 		# When building for FreeBSD, epoll(7) is provided by a userspace
+ 		# wrapper around kqueue(2).
+ 		epoll_dep = dependency('epoll-shim')

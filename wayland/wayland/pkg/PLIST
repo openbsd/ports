@@ -21,7 +21,6 @@ lib/pkgconfig/wayland-egl-backend.pc
 lib/pkgconfig/wayland-egl.pc
 lib/pkgconfig/wayland-scanner.pc
 lib/pkgconfig/wayland-server.pc
-share/aclocal/
 share/aclocal/wayland-scanner.m4
 share/wayland/
 share/wayland/wayland-scanner.mk

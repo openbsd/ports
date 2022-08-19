@@ -10,6 +10,10 @@ share/wayland-protocols/stable/xdg-shell/xdg-shell.xml
 share/wayland-protocols/staging/
 share/wayland-protocols/staging/drm-lease/
 share/wayland-protocols/staging/drm-lease/drm-lease-v1.xml
+share/wayland-protocols/staging/ext-session-lock/
+share/wayland-protocols/staging/ext-session-lock/ext-session-lock-v1.xml
+share/wayland-protocols/staging/single-pixel-buffer/
+share/wayland-protocols/staging/single-pixel-buffer/single-pixel-buffer-v1.xml
 share/wayland-protocols/staging/xdg-activation/
 share/wayland-protocols/staging/xdg-activation/xdg-activation-v1.xml
 share/wayland-protocols/unstable/

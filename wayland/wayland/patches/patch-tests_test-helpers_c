@@ -1,49 +1,39 @@
+https://gitlab.freedesktop.org/wayland/wayland/-/merge_requests/256
+
 Index: tests/test-helpers.c
 --- tests/test-helpers.c.orig
 +++ tests/test-helpers.c
-@@ -25,6 +25,8 @@
- 
- #include "config.h"
- 
-+#include "../config.h"
+@@ -61,6 +61,33 @@ count_open_fds(void)
+ 	assert(error == 0 && "sysctl KERN_PROC_NFDS failed.");
+ 	return nfds;
+ }
++#elif defined(__OpenBSD__)
++#include <sys/sysctl.h>
 +
- #include <assert.h>
- #include <errno.h>
- #include <dirent.h>
-@@ -41,6 +43,16 @@
- 
- #include "test-runner.h"
- 
-+#ifdef __OpenBSD__
-+/* OpenBSD uses fdescfs (which must be mounted using:
-+ *    mount -t fdescfs fdescfs /dev/fd
-+ * before the test suite can be run). */
-+#define OPEN_FDS_DIR "/dev/fd"
-+#else
-+/* Linux. */
-+#define OPEN_FDS_DIR "/proc/self/fd"
-+#endif
++/*
++ * On OpenBSD, get file descriptor information using sysctl()
++ */
++int
++count_open_fds(void)
++{
++	int error;
++	int mib[6];
++	size_t size;
 +
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_FILE;
++	mib[2] = KERN_FILE_BYPID;
++	mib[3] = getpid();
++	mib[4] = sizeof(struct kinfo_file);
++	mib[5] = 0;
++
++	/* find the size required to store all the entries */
++	error = sysctl(mib, 6, NULL, &size, NULL, 0);
++	assert(error != -1 && "sysctl KERN_FILE_BYPID failed.");
++
++	/* return the current number of entries */
++	return size / sizeof(struct kinfo_file);
++}
+ #else
  int
  count_open_fds(void)
- {
-@@ -48,8 +60,8 @@ count_open_fds(void)
- 	struct dirent *ent;
- 	int count = 0;
- 
--	dir = opendir("/proc/self/fd");
--	assert(dir && "opening /proc/self/fd failed.");
-+	dir = opendir(OPEN_FDS_DIR);
-+	assert(dir && "opening " OPEN_FDS_DIR " failed.");
- 
- 	errno = 0;
- 	while ((ent = readdir(dir))) {
-@@ -58,7 +70,7 @@ count_open_fds(void)
- 			continue;
- 		count++;
- 	}
--	assert(errno == 0 && "reading /proc/self/fd failed.");
-+	assert(errno == 0 && "reading " OPEN_FDS_DIR " failed.");
- 
- 	closedir(dir);
- 
