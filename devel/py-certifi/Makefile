@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2021.10.8
 DISTNAME =		certifi-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel security
+REVISION =		0
 
 HOMEPAGE =		https://certifi.io/
 
