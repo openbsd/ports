@@ -1,21 +1,7 @@
 Index: src/devedeng/configuration_data.py
 --- src/devedeng/configuration_data.py.orig
 +++ src/devedeng/configuration_data.py
-@@ -43,11 +43,8 @@ class configuration(GObject.GObject):
-     def fill_config(self):
- 
-         self.cores = 0
--        proc_file = open("/proc/cpuinfo", "r")
--        for line in proc_file:
--            if (line.startswith("processor")):
--                self.cores += 1
--        proc_file.close()
-+        if (os.name == "posix"):
-+            self.cores = os.cpu_count()
- 
-         is_local = None
-         self.log = ""
-@@ -62,7 +59,7 @@ class configuration(GObject.GObject):
+@@ -69,7 +69,7 @@ class configuration(GObject.GObject):
  
          if is_local is None:
              try:
@@ -24,7 +10,7 @@ Index: src/devedeng/configuration_data.py
                  is_local = True
              except:
                  pass
-@@ -73,12 +70,12 @@ class configuration(GObject.GObject):
+@@ -80,12 +80,12 @@ class configuration(GObject.GObject):
              if (is_local):
                  # locales must be always at /usr/share/locale because
                  # Gtk.Builder always search there
