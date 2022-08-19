@@ -1938,6 +1938,7 @@ share/gitea/templates/repo/branch/
 share/gitea/templates/repo/branch/list.tmpl
 share/gitea/templates/repo/branch_dropdown.tmpl
 share/gitea/templates/repo/clone_buttons.tmpl
+share/gitea/templates/repo/clone_script.tmpl
 share/gitea/templates/repo/commit_page.tmpl
 share/gitea/templates/repo/commit_status.tmpl
 share/gitea/templates/repo/commit_statuses.tmpl

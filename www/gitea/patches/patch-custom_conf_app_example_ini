@@ -218,7 +218,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable the ability to interact with repositories using the HTTP protocol
  ;DISABLE_HTTP_GIT = false
-@@ -908,16 +908,16 @@ ROUTER = console
+@@ -911,16 +911,16 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -238,7 +238,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -925,7 +925,7 @@ ROUTER = console
+@@ -928,7 +928,7 @@ ROUTER = console
  ;ENABLED = true
  ;;
  ;; Path for uploads. Defaults to `data/tmp/uploads` (content gets deleted on gitea restart)
@@ -247,7 +247,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Comma-separated list of allowed file extensions (`.zip`), mime types (`text/plain`) or wildcard type (`image/*`, `audio/*`, `video/*`). Empty value or `*/*` allows all types.
  ;ALLOWED_TYPES =
-@@ -1084,7 +1084,7 @@ ROUTER = console
+@@ -1087,7 +1087,7 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -256,7 +256,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1115,7 +1115,7 @@ ROUTER = console
+@@ -1118,7 +1118,7 @@ ROUTER = console
  ;MAX_DISPLAY_FILE_SIZE = 8388608
  ;;
  ;; Whether the email of the user should be shown in the Explore Users page
@@ -265,7 +265,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Set the default theme for the Gitea install
  ;DEFAULT_THEME = auto
-@@ -1250,7 +1250,7 @@ ROUTER = console
+@@ -1253,7 +1253,7 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -274,7 +274,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1261,7 +1261,7 @@ ROUTER = console
+@@ -1264,7 +1264,7 @@ ROUTER = console
  ;ISSUE_INDEXER_TYPE = bleve
  ;;
  ;; Issue indexer storage path, available when ISSUE_INDEXER_TYPE is bleve
@@ -283,7 +283,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Issue indexer connection string, available when ISSUE_INDEXER_TYPE is elasticsearch
  ;ISSUE_INDEXER_CONN_STR = http://elastic:changeme@localhost:9200
-@@ -1279,7 +1279,7 @@ ROUTER = console
+@@ -1282,7 +1282,7 @@ ROUTER = console
  ;; When ISSUE_INDEXER_QUEUE_TYPE is levelqueue, this will be the path where the queue will be saved.
  ;; This can be overridden by `ISSUE_INDEXER_QUEUE_CONN_STR`.
  ;; default is queues/common
@@ -292,7 +292,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; When `ISSUE_INDEXER_QUEUE_TYPE` is `redis`, this will store the redis connection string.
  ;; When `ISSUE_INDEXER_QUEUE_TYPE` is `levelqueue`, this is a directory or additional options of
-@@ -1300,7 +1300,7 @@ ROUTER = console
+@@ -1303,7 +1303,7 @@ ROUTER = console
  ;REPO_INDEXER_TYPE = bleve
  ;;
  ;; Index file used for code search. available when `REPO_INDEXER_TYPE` is bleve
@@ -301,7 +301,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Code indexer connection string, available when `REPO_INDEXER_TYPE` is elasticsearch. i.e. http://elastic:changeme@localhost:9200
  ;REPO_INDEXER_CONN_STR =
-@@ -1380,19 +1380,19 @@ ROUTER = console
+@@ -1383,19 +1383,19 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -324,7 +324,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1413,7 +1413,7 @@ ROUTER = console
+@@ -1416,7 +1416,7 @@ ROUTER = console
  ;;  - <username>.livejournal.com
  ;;
  ;; Whether to allow signin in via OpenID
@@ -333,7 +333,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Whether to allow registering via OpenID
  ;; Do not include to rely on rhw DISABLE_REGISTRATION setting
-@@ -1498,7 +1498,7 @@ ROUTER = console
+@@ -1501,7 +1501,7 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -342,7 +342,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1515,7 +1515,7 @@ ROUTER = console
+@@ -1518,7 +1518,7 @@ ROUTER = console
  ;; QQ: smtp.qq.com:465
  ;; As per RFC 8314 using Implicit TLS/SMTPS on port 465 (if supported) is recommended,
  ;; otherwise STARTTLS on port 587 should be used.
@@ -351,7 +351,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Disable HELO operation when hostnames are different.
  ;DISABLE_HELO =
-@@ -1528,15 +1528,15 @@ ROUTER = console
+@@ -1531,15 +1531,15 @@ ROUTER = console
  ;;
  ;; Use client certificate
  ;USE_CERTIFICATE = false
@@ -370,7 +370,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Sometimes it is helpful to use a different address on the envelope. Set this to use ENVELOPE_FROM as the from on the envelope. Set to `<>` to send an empty address.
  ;ENVELOPE_FROM =
-@@ -1549,13 +1549,13 @@ ROUTER = console
+@@ -1552,13 +1552,13 @@ ROUTER = console
  ;PASSWD =
  ;;
  ;; Send mails as plain text
@@ -386,7 +386,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Specify any extra sendmail arguments
  ;; WARNING: if your sendmail program interprets options you should set this to "--" or terminate these args with "--"
-@@ -1611,20 +1611,20 @@ ROUTER = console
+@@ -1614,20 +1614,20 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -410,7 +410,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Session cookie name
  ;COOKIE_NAME = i_like_gitea
-@@ -1643,12 +1643,12 @@ ROUTER = console
+@@ -1646,12 +1646,12 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -426,7 +426,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; How Gitea deals with missing repository avatars
  ;; none = no avatar will be displayed; random = random avatar will be displayed; image = default image will be used
-@@ -1673,7 +1673,7 @@ ROUTER = console
+@@ -1676,7 +1676,7 @@ ROUTER = console
  ;GRAVATAR_SOURCE = gravatar
  ;;
  ;; This value will always be true in offline mode.
@@ -435,7 +435,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Federated avatar lookup uses DNS to discover avatar associated
  ;; with emails, see https://www.libravatar.org
-@@ -1682,7 +1682,7 @@ ROUTER = console
+@@ -1685,7 +1685,7 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -444,7 +444,7 @@ Index: custom/conf/app.example.ini
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;
-@@ -1707,7 +1707,7 @@ ROUTER = console
+@@ -1710,7 +1710,7 @@ ROUTER = console
  ;SERVE_DIRECT = false
  ;;
  ;; Path for attachments. Defaults to `data/attachments` only available when STORAGE_TYPE is `local`
@@ -453,7 +453,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Minio endpoint to connect only available when STORAGE_TYPE is `minio`
  ;MINIO_ENDPOINT = localhost:9000
-@@ -1732,14 +1732,14 @@ ROUTER = console
+@@ -1735,14 +1735,14 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -470,7 +470,7 @@ Index: custom/conf/app.example.ini
  ;;
  ;; Location the UI time display i.e. Asia/Shanghai
  ;; Empty means server's location setting
-@@ -2140,14 +2140,14 @@ ROUTER = console
+@@ -2143,14 +2143,14 @@ ROUTER = console
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -488,7 +488,7 @@ Index: custom/conf/app.example.ini
  
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@@ -2265,7 +2265,7 @@ ROUTER = console
+@@ -2268,7 +2268,7 @@ ROUTER = console
  ;ENABLED = true
  ;;
  ;; Path for chunked uploads. Defaults to APP_DATA_PATH + `tmp/package-upload`
@@ -497,7 +497,7 @@ Index: custom/conf/app.example.ini
  
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
  ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-@@ -2295,7 +2295,7 @@ ROUTER = console
+@@ -2298,7 +2298,7 @@ ROUTER = console
  ;STORAGE_TYPE = local
  ;;
  ;; Where your lfs files reside, default is data/lfs.
