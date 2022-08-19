@@ -3,7 +3,7 @@ COMMENT=		printer (CUPS) administration tool
 V=			1.5.16
 DISTNAME=		system-config-printer-${V}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print sysutils
 
@@ -15,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=		https://github.com/OpenPrinting/system-config-printer/releases/download/v${V}/
 
 MODULES=		lang/python
+MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			textproc/xmlto
