@@ -44,6 +44,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-jit=no \
 		--program-suffix=${V}
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS+=--disable-lto
+.endif
+
 post-install:
 	install -d ${PREFIX}/share/guile/site/${V}/
 	# fix conflict with devel/guile{,2}
