@@ -1,7 +1,7 @@
 COMMENT=	Hatch plugin for versioning with your preferred VCS
 
 MODPY_EGG_VERSION=	0.2.0
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	hatch_vcs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
@@ -19,5 +19,7 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 MODPY_PEP517=	hatchling
+
+RUN_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
