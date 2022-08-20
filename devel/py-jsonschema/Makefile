@@ -1,9 +1,8 @@
 COMMENT =		implementation of JSON Schema validation for Python
 
-MODPY_EGG_VERSION =	4.1.2
+MODPY_EGG_VERSION =	4.13.0
 DISTNAME =		jsonschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -14,17 +13,16 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		hatchling
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	jsonschema
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		devel/py-vcversioner${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			devel/py-setuptools_scm${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR} \
+			devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
+
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-pyrsistent${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
