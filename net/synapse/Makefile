@@ -1,7 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.54.0
-REVISION =	0
+MODPY_EGG_VERSION =	1.65.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -17,20 +16,18 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
-
-MODPY_DISTUTILS_INSTALLARGS = --install-scripts ${LOCALBASE}/share/synapse
+MODPY_PEP517 =	poetry-core
 
 RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
-		textproc/py-unpaddedbase64${MODPY_FLAVOR} \
+		textproc/py-unpaddedbase64${MODPY_FLAVOR}>=2.1.0 \
 		textproc/py-signedjson${MODPY_FLAVOR} \
-		textproc/py-canonicaljson${MODPY_FLAVOR} \
+		textproc/py-canonicaljson${MODPY_FLAVOR}>=1.6.2 \
 		textproc/py-ijson${MODPY_FLAVOR} \
 		devel/py-asn1${MODPY_FLAVOR} \
 		devel/py-blist${MODPY_FLAVOR} \
 		devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
-		devel/py-matrix-common${MODPY_FLAVOR} \
+		devel/py-matrix-common${MODPY_FLAVOR}>=1.2.1 \
 		devel/py-twisted${MODPY_FLAVOR} \
 		devel/py-simplejson${MODPY_FLAVOR} \
 		devel/py-typing-extensions${MODPY_FLAVOR} \
@@ -62,17 +59,11 @@ RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-parameterized${MODPY_FLAVOR} \
 		devel/py-twisted${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} PYTHONPATH=. ${LOCALBASE}/bin/trial tests
-
-post-install:
-	cd ${WRKSRC} && \
-		${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-			${PREFIX}/share/synapse/generate_signing_key.py; \
-		${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
-			${PREFIX}/share/synapse/move_remote_media_to_new_store.py
 
 .include <bsd.port.mk>

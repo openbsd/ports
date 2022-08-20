@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${PREFIX}/share/synapse/synctl"
+daemon="${PREFIX}/bin/synctl"
 daemon_user="_synapse"
 daemon_flags="${LOCALSTATEDIR}/synapse/homeserver.yaml"
 
