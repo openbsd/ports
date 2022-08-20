@@ -3,7 +3,7 @@ remove hardcoded -O{0,2} flags
 Index: cmake/toolchain-gcc.cmake
 --- cmake/toolchain-gcc.cmake.orig
 +++ cmake/toolchain-gcc.cmake
-@@ -108,9 +108,9 @@ if(SUPPORTS_STRINGOP_TRUNCATION)
+@@ -113,9 +113,9 @@ if(SUPPORTS_STRINGOP_TRUNCATION)
  	set(COMPILER_FLAGS "${COMPILER_FLAGS} -Wno-stringop-overflow")
  endif()
  

@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =	open source game engine based on FreeSpace 2
 
-V =		21.4.1
+V =		22.2.0
 DISTNAME =	fs2open-${V}
 GH_ACCOUNT =	scp-fs2open
 GH_PROJECT =	fs2open.github.com
