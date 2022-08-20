@@ -10,6 +10,9 @@ MAINTAINER =		Paul Irofti <paul@irofti.net>
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
+# C++11
+COMPILER =		base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} m pthread
 
 MODULES =		lang/python
