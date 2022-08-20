@@ -18,7 +18,8 @@ MODPY_PEP517 =		hatchling
 MODPY_PYTEST =		Yes
 MODPY_TEST_LIBDIR =	src
 
-BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR} \
+			devel/py-setuptools_scm${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR} \
 			devel/py-test-mock${MODPY_FLAVOR}
 
