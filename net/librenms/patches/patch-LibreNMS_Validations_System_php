@@ -1,0 +1,14 @@
+OpenBSD (and NetBSD) whereis don't support -b
+
+Index: LibreNMS/Validations/System.php
+--- LibreNMS/Validations/System.php.orig
++++ LibreNMS/Validations/System.php
+@@ -40,7 +40,7 @@ class System extends BaseValidation
+     {
+         $install_dir = $validator->getBaseDir();
+ 
+-        $lnms = str_replace('lnms:', '', rtrim(`whereis -b lnms 2>/dev/null`));
++        $lnms = str_replace('lnms:', '', rtrim(`whereis lnms 2>/dev/null`));
+         $path = rtrim(`echo "\$PATH"`);
+ 
+         // if couldn't find lnms and we have PATH

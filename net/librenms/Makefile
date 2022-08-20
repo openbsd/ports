@@ -3,7 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.7.0
+GH_TAGNAME=	22.8.0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
@@ -23,6 +23,7 @@ MASTER_SITES0=	https://spacehopper.org/mirrors/
 MODULES=	lang/php \
 		lang/python
 MODPY_BUILDDEP= No
+MODPHP_VERSION=	8.1
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
@@ -50,6 +51,7 @@ SUBST_VARS=	INSTDIR
 UPDATE_PLIST_ARGS += -i MODPHP_VERSION
 
 R =	s,^\#!( )?(/usr/bin/env |/bin/)bash,\#!${LOCALBASE}/bin/bash,;
+R +=	s,^\#!( )?/usr/bin/(env )?php.*,\#!${MODPHP_BIN},;
 R +=	s,^\#!( )?/usr/bin/(env )?python.*,\#!${MODPY_BIN},;
 R +=	s,/opt/librenms,/var/www/librenms,g;
 R +=	s,/var/www/librenms,${TRUEPREFIX}/librenms,g;
@@ -66,8 +68,16 @@ post-extract:
 	find ${WRKSRC} -type f -exec perl -pi -e '$R' {} +
 	sed -i \
 	    -e 's, librenms *, _librenms ,' \
+	    -e 's, php *, ${MODPHP_BIN} ,' \
 	    -e 's,/var/www/librenms/cronic,-n,' \
 	    ${WRKSRC}/librenms.nonroot.cron
+
+pre-configure:
+	cd ${WRKSRC}; ${SUBST_CMD} daily.sh \
+	    LibreNMS/__init__.py \
+	    LibreNMS/wrapper.py \
+	    LibreNMS/Validations/Php.php \
+	    LibreNMS/Exceptions/UnserializableRouteCache.php
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR} \

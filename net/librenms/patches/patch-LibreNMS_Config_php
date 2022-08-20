@@ -1,21 +1,14 @@
-openbsd (and netbsd) whereis don't support -b, neither do they prefix the
-output with the name of the searched command.
+OpenBSD (and NetBSD) whereis don't support -b
 
 Index: LibreNMS/Config.php
 --- LibreNMS/Config.php.orig
 +++ LibreNMS/Config.php
-@@ -521,8 +521,12 @@ class Config
+@@ -521,7 +521,7 @@ class Config
      public static function locateBinary($binary)
      {
          if (! Str::contains($binary, '/')) {
 -            $output = `whereis -b $binary`;
--            $list = trim(substr($output, strpos($output, ':') + 1));
 +            $output = `whereis $binary`;
-+            if (strpos($output, ':')) {
-+                $list = trim(substr($output, strpos($output, ':') + 1));
-+            } else {
-+                $list = trim($output);
-+            }
+             $list = trim(substr($output, strpos($output, ':') + 1));
              $targets = explode(' ', $list);
              foreach ($targets as $target) {
-                 if (is_executable($target)) {
