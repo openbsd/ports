@@ -85,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}k
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}mturk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}opsworks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}opsworkscm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}overridesslcommonname.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}paginate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}preview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}putmetricdata.${MODPY_PYC_MAGIC_TAG}pyc
@@ -377,6 +378,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/kms.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/mturk.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworks.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/opsworkscm.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/overridesslcommonname.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/paginate.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/preview.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/putmetricdata.py
@@ -2816,6 +2818,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/upload-multipar
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-exists.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/glacier/wait/vault-not-exists.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/global_options.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/global_synopsis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/add-custom-routing-endpoints.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/globalaccelerator/advertise-byoip-cidr.rst
