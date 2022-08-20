@@ -1,6 +1,6 @@
 COMMENT=		setuptools Rust extension plugin
 
-MODPY_EGG_VERSION=	1.2.0
+MODPY_EGG_VERSION=	1.5.1
 DISTNAME=		setuptools-rust-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PEP517=		setuptools
 MODPY_PYTEST_ARGS=	setuptools_rust
 
 FLAVORS=		python3
