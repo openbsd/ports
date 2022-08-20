@@ -6,12 +6,12 @@ COMMENT=	manage and configure devices that support IPMI
 # and MASTER_SITES0 can go too.
 GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
-GH_COMMIT=	4d25a93f4922885c3d557bf4f9a83968ad2edee9
-DISTNAME=	ipmitool-1.8.18pl20220331
+GH_COMMIT=	a1dc78c4566734075c433ca61e71bd18c7058c6d
+DISTNAME=	ipmitool-1.8.18pl20220805
 DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
 # XXX can't use GH_DISTFILE since EXTRACT_ONLY expects filenames instead of
 # DISTFILES filename{url}sufx patterns
-EXTRACT_ONLY=		${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
 
 #V=		1.8.18
 #DISTNAME=	ipmitool-$V
@@ -28,7 +28,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	m curses edit crypto c
 
 # -std=gnu11
-COMPILER = 	base-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 #MASTER_SITES=	https://github.com/ipmitool/ipmitool/releases/download/IPMITOOL_${V:C/\./_/g}/
 MASTER_SITES0=	https://spacehopper.org/mirrors/
