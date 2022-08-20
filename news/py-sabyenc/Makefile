@@ -1,6 +1,6 @@
 COMMENT =		yEnc Module for Python modified for SABnzbd
 
-MODPY_EGG_VERSION =	5.4.2
+MODPY_EGG_VERSION =	5.4.3
 EPOCH =			0
 DISTNAME =		sabyenc3-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabyenc-${MODPY_EGG_VERSION}
