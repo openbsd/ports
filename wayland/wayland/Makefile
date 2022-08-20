@@ -17,6 +17,9 @@ WANTLIB += c epoll-shim expat ffi xml2
 # MIT
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MASTER_SITES =		https://gitlab.freedesktop.org/wayland/wayland/-/releases/${V}/downloads/
 EXTRACT_SUFX =		.tar.xz
 
