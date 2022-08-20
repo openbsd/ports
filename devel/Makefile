@@ -1396,6 +1396,7 @@
      SUBDIR += py-gobject3,python3
      SUBDIR += py-greenlet,python3
      SUBDIR += py-hamcrest,python3
+     SUBDIR += py-hatch-fancy-pypi-readme,python3
      SUBDIR += py-hatch-vcs,python3
      SUBDIR += py-hatchling,python3
      SUBDIR += py-html5lib,python3
