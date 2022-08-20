@@ -6,7 +6,7 @@ DISTNAME =	arp-scan-1.9.7pl20220622
 COMMENT-main =	ARP scanning and fingerprinting tool
 PKGNAME-main =	${DISTNAME}
 
-M =		20220331
+M =		20220820
 COMMENT-mac =	MAC address vendor list
 PKGNAME-mac =	mac-vendor-$M
 
