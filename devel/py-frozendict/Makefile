@@ -19,4 +19,9 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
+.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mclang}
+CFLAGS +=	-std=gnu99
+.endif
+
 .include <bsd.port.mk>
