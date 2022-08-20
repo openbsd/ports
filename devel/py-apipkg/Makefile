@@ -1,14 +1,13 @@
 COMMENT =	namespace control and lazy-import mechanism for Python
 
 DISTNAME =		apipkg-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	1.4
+MODPY_EGG_VERSION =	3.0.1
 MODPY_PI =		Yes
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
 
 CATEGORIES =	devel
 
-HOMEPAGE =	https://bitbucket.org/hpk42/apipkg
+HOMEPAGE =	https://github.com/pytest-dev/apipkg
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -17,7 +16,9 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		hatchling
+NO_TEST =		Yes
+
+BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
