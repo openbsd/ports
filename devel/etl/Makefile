@@ -11,6 +11,9 @@ HOMEPAGE =		https://www.synfig.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
+# C++11
+COMPILER =		base-clang ports-gcc
+
 MASTER_SITES =		https://github.com/synfig/synfig/releases/download/v${V}/
 
 BUILD_DEPENDS =		devel/glib2mm
