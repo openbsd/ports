@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1418 2022/08/18 23:37:05 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1419 2022/08/20 11:16:57 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1697,6 +1697,7 @@ setup_obsolete_reason(
 	31 => 'pyrex',
 	3 => 'luasoldout',
 	3 => 'honeyd',
+	47 => 'totd',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1756,6 +1757,7 @@ my $obsolete_message = {
 	44 => "qucs-s Qt4 UI not working correctly, suggest xschem or kicad's eeschema instead",
 	45 => "crashes in many different ways at runtime",
 	46 => "moved to binary bootstraps",
+	47 => "DNS network daemon running as root and not using random source ports. use DNS64 support in unbound or isc-bind",
 };
 
 # ->is_base_system($handle, $state):

@@ -715,7 +715,6 @@
      SUBDIR += toot
      SUBDIR += tor
      SUBDIR += torsocks
-     SUBDIR += totd
      SUBDIR += toxcore
      SUBDIR += toxic
      SUBDIR += toxic,no_x11

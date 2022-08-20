@@ -1,7 +1,0 @@
-Totd is a small DNS proxy nameserver that supports IPv6 only hosts/networks
-that communicate with the IPv4 world using some translation mechanism, for
-example application level translators such as the old KAME faithd(8) which
-was formerly present in OpenBSD, and PF's af-to feature.
-
-Note that for new configurations, it is generally preferred to use a
-DNS64-capable recursive name server, e.g. later versions of BIND 9.

@@ -1,6 +1,0 @@
-@man man/man8/totd.8
-@bin sbin/totd
-share/totd/
-share/totd/totd.conf.sample
-@sample ${SYSCONFDIR}/totd.conf
-@rcscript ${RCDIR}/totd
