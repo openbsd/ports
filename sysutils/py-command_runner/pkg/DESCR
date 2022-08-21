@@ -1,0 +1,17 @@
+command_runner's purpose is to run external commands from Python, just
+like "subprocess" on which it relies, while solving various problems a
+developer may face, including:
+
+- Handling of all possible subprocess.popen / subprocess.check_output
+scenarios / python versions in one handy function without encoding /
+timeout hassle.
+
+- Allow stdout/stderr stream output to be redirected to callback
+functions / output queues / files so you get to handle output in your
+application while commands are running.
+
+- Callback to optional stop check so we can stop execution from outside
+command_runner.
+
+- Callback with optional process information so we get to control the
+process from outside command_runner.
