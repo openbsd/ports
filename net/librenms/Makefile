@@ -8,6 +8,7 @@ GH_TAGNAME=	22.8.0
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
 EPOCH=		0
+REVISION=	0
 
 CATEGORIES=	net www
 
@@ -32,6 +33,7 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-snmp \
 		databases/py-pymysql${MODPY_FLAVOR} \
 		databases/py-redis${MODPY_FLAVOR} \
+		sysutils/py-command_runner${MODPY_FLAVOR} \
 		sysutils/py-dotenv${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR}>=5.6.0 \
 		net/fping \
