@@ -61,6 +61,9 @@ MASTER_SITES =		https://download.samba.org/pub/samba/stable/ \
 MULTI_PACKAGES =	-main -docs
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =		lang/python perl
 
 BUILD_DEPENDS =		converters/p5-JSON \
