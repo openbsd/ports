@@ -281,6 +281,7 @@
      SUBDIR += py-analyzemft
      SUBDIR += py-augeas,python3
      SUBDIR += py-blessed,python3
+     SUBDIR += py-command_runner,python3
      SUBDIR += py-consul,python3
      SUBDIR += py-cpuinfo,python3
      SUBDIR += py-croniter,python3
