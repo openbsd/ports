@@ -1,3 +1,5 @@
+https://github.com/netinvent/command_runner/pull/19
+
 Index: command_runner/__init__.py
 --- command_runner/__init__.py.orig
 +++ command_runner/__init__.py

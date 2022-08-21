@@ -1,3 +1,11 @@
+From 41df37eb00197567768f9e82ee9c0006f8dbcb1d Mon Sep 17 00:00:00 2001
+From: Stuart Henderson <sthen@users.noreply.github.com>
+Date: Sat, 20 Aug 2022 10:59:45 +0000
+Subject: [PATCH] use standard ping(8) arguments in tests
+
+Change the command line for ping in tests.
+Traditional UNIX ping only accepts flags before the address.
+
 Index: tests/test_command_runner.py
 --- tests/test_command_runner.py.orig
 +++ tests/test_command_runner.py
