@@ -1,6 +1,6 @@
 include/yaml.h
 @lib lib/libyaml-0.so.${LIByaml-0_VERSION}
-lib/libyaml.a
+@static-lib lib/libyaml.a
 lib/libyaml.la
 @lib lib/libyaml.so.${LIByaml_VERSION}
 lib/pkgconfig/yaml-0.1.pc

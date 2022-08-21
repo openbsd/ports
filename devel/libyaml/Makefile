@@ -1,6 +1,6 @@
 COMMENT=	YAML 1.1 parser and emitter written in C
 
-DISTNAME=	yaml-0.2.2
+DISTNAME=	yaml-0.2.5
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=	devel
 
@@ -17,5 +17,6 @@ PERMIT_PACKAGE=	Yes
 MASTER_SITES=	https://pyyaml.org/download/libyaml/
 
 CONFIGURE_STYLE=gnu
+USE_GMAKE=	Yes
 
 .include <bsd.port.mk>
