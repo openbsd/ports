@@ -1,8 +1,8 @@
 COMMENT =		infinite-world block sandbox game
 
-V =			5.5.0
-GAME_V =		5.5.0
-IRRLICHTMT_V =		1.9.0mt4
+V =			5.6.0
+GAME_V =		5.6.0
+IRRLICHTMT_V =		1.9.0mt7
 
 DISTNAME =		minetest-${V}
 CATEGORIES =		games x11
@@ -12,10 +12,10 @@ HOMEPAGE =		https://www.minetest.net/
 # source LGPLv2.1/ datas CC BY-SA 3.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 Xext
-WANTLIB += Xxf86vm c curl curses form freetype gmp iconv intl
-WANTLIB += jsoncpp jpeg ${MODLUA_WANTLIB} m ogg openal png pq
-WANTLIB += spatialindex sqlite3 vorbis vorbisfile z zstd
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE SM X11 Xext Xi c curl
+WANTLIB += curses form freetype gmp iconv intl jpeg jsoncpp lua5.1
+WANTLIB += m ogg openal png pq spatialindex sqlite3 vorbis vorbisfile
+WANTLIB += z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
