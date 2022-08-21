@@ -11,15 +11,23 @@ lib/pkgconfig/rofi.pc
 @man man/man1/rofi-sensible-terminal.1
 @man man/man1/rofi-theme-selector.1
 @man man/man1/rofi.1
+@man man/man5/rofi-debugging.5
 @man man/man5/rofi-dmenu.5
 @man man/man5/rofi-keys.5
 @man man/man5/rofi-script.5
 @man man/man5/rofi-theme.5
+share/applications/
+share/applications/rofi-theme-selector.desktop
+share/applications/rofi.desktop
 share/examples/rofi/
 share/examples/rofi/i3_empty_workspace.sh
 share/examples/rofi/i3_switch_workspaces.sh
 share/examples/rofi/rofi-file-browser.sh
 share/examples/rofi/test_script_mode.sh
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/apps/
+share/icons/hicolor/apps/rofi.svg
 share/rofi/
 share/rofi/themes/
 share/rofi/themes/Adapta-Nokto.rasi
@@ -29,7 +37,6 @@ share/rofi/themes/DarkBlue.rasi
 share/rofi/themes/Indego.rasi
 share/rofi/themes/Monokai.rasi
 share/rofi/themes/Paper.rasi
-share/rofi/themes/Pop-Dark.rasi
 share/rofi/themes/android_notification.rasi
 share/rofi/themes/arthur.rasi
 share/rofi/themes/blue.rasi
@@ -50,6 +57,9 @@ share/rofi/themes/iggy.rasi
 share/rofi/themes/lb.rasi
 share/rofi/themes/paper-float.rasi
 share/rofi/themes/purple.rasi
+share/rofi/themes/sidebar-v2.rasi
 share/rofi/themes/sidebar.rasi
 share/rofi/themes/solarized.rasi
 share/rofi/themes/solarized_alternate.rasi
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

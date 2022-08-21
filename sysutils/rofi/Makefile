@@ -1,6 +1,6 @@
 COMMENT =		window switcher, run dialog and dmenu replacement
 
-V =			1.7.3
+V =			1.7.5
 DISTNAME =		rofi-${V}
 
 CATEGORIES =		sysutils x11
@@ -27,6 +27,8 @@ LIB_DEPENDS =		devel/pango \
 			devel/startup-notification \
 			graphics/gdk-pixbuf2 \
 			x11/xkbcommon
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+3,-guic
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-check
