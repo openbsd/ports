@@ -2,7 +2,7 @@ SHARED_LIBS +=  scamperfile               3.0 # 2.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20211212
+V =		20211212b
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-$V
 
