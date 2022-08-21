@@ -146,6 +146,7 @@ include/mysql/server/mysqld_ername.h
 include/mysql/server/mysqld_error.h
 include/mysql/server/pack.h
 include/mysql/server/private/
+include/mysql/server/private/aligned.h
 include/mysql/server/private/aria_backup.h
 include/mysql/server/private/assume_aligned.h
 include/mysql/server/private/atomic/
