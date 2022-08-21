@@ -6,7 +6,7 @@ COMMENT =		ncurses Spotify client
 
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
-GH_TAGNAME =		v0.10.1
+GH_TAGNAME =		v0.11.0
 
 CATEGORIES =		audio
 
@@ -28,7 +28,7 @@ NO_TEST =		Yes
 CONFIGURE_STYLE =	cargo
 
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
-MODCARGO_FEATURES =	cursive/pancurses-backend \
+MODCARGO_FEATURES =	cursive/termion-backend \
 			mpris \
 			portaudio_backend
 
