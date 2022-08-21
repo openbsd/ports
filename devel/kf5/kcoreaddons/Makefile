@@ -1,5 +1,6 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5CoreAddons		7.9
 
@@ -12,6 +13,8 @@ LIB_DEPENDS =	sysutils/gamin
 # for tests
 PORTHOME =		${WRKDIR}
 TESTS_IS_INTERACTIVE =	X11
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 #The following tests FAILED:
 #5 - kformattest (Failed)

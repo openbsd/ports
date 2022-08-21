@@ -1,5 +1,6 @@
 COMMENT =		KDE item models extending the Qt model-view framework
 DISTNAME =		kitemmodels-${VERSION}
+REVISION =		0
 
 SHARED_LIBS =		KF5ItemModels		6.1
 
@@ -14,5 +15,7 @@ RUN_DEPENDS =	x11/qt5/qtquickcontrols \
 LIB_DEPENDS =	x11/qt5/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
-COMMENT =		KDE framework for Plasma runners
-DISTNAME =		krunner-${VERSION}
+COMMENT =	KDE framework for Plasma runners
+DISTNAME =	krunner-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =		KF5Runner		8.3
 
@@ -23,5 +24,7 @@ LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
 
 # sucks (dbus)
 TEST_IS_INTERACTIVE =	X11
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

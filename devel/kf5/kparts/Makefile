@@ -1,5 +1,6 @@
-COMMENT =		KDE plugin framework for user interface components
-DISTNAME =		kparts-${VERSION}
+COMMENT =	KDE plugin framework for user interface components
+DISTNAME =	kparts-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =		KF5Parts	7.0
 
@@ -28,5 +29,7 @@ LIB_DEPENDS =	devel/kf5/kconfig>=${MODKF5_VERSION} \
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

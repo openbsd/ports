@@ -1,5 +1,6 @@
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdeinit5_klauncher	6.0
 
@@ -23,5 +24,7 @@ LIB_DEPENDS =		devel/kf5/kconfig>=${MODKF5_VERSION} \
 			devel/kf5/kwindowsystem>=${MODKF5_VERSION}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Libcap=ON
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

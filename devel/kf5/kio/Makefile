@@ -2,6 +2,7 @@
 
 COMMENT =	network transparent access to files and data in KDE
 DISTNAME =	kio-${VERSION}
+REVISION =	0
 
 SHARED_LIBS =	KF5KIOCore		10.3 # 5.20
 SHARED_LIBS +=	KF5KIOGui		11.3 # 5.20
@@ -61,6 +62,8 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_ACL=ON \
 PORTHOME =		${WRKDIR}
 TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-extract:
 	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
