@@ -1,7 +1,7 @@
 Index: SCons/Tool/__init__.py
 --- SCons/Tool/__init__.py.orig
 +++ SCons/Tool/__init__.py
-@@ -763,9 +763,9 @@ def tool_list(platform, env):
+@@ -757,9 +757,9 @@ def tool_list(platform, env):
      else:
          "prefer GNU tools on all other platforms"
          linkers = ['gnulink', 'ilink']

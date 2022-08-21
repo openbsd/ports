@@ -1,7 +1,7 @@
 Index: SCons/Tool/gxx.py
 --- SCons/Tool/gxx.py.orig
 +++ SCons/Tool/gxx.py
-@@ -40,7 +40,7 @@ import SCons.Util
+@@ -38,7 +38,7 @@ import SCons.Util
  from . import gcc
  from . import cxx
  
