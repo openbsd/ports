@@ -1,6 +1,6 @@
 COMMENT =		xpath 1.0/2.0 parsers and selectors for elementtree
 
-MODPY_EGG_VERSION =	2.5.3
+MODPY_EGG_VERSION =	3.0.2
 DISTNAME =		elementpath-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
