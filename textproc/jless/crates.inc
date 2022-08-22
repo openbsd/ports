@@ -1,5 +1,3 @@
-===>  Generating configure for jless-0.8.0
-===>  Configuring for jless-0.8.0
 MODCARGO_CRATES +=	aho-corasick	0.7.18	# Unlicense/MIT
 MODCARGO_CRATES +=	atty	0.2.14	# MIT
 MODCARGO_CRATES +=	autocfg	1.0.1	# Apache-2.0 OR MIT
