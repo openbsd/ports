@@ -1,34 +1,34 @@
-COMMENT =		argon2 password hashing for Python
+COMMENT =	argon2 password hashing for Python
 
+# 21.2.0+ moves the CFFI bindings to a separate project
+# (argon2-cffi-bindings), and changes PEP517 backend to flit_core
 MODPY_EGG_VERSION =	21.1.0
-DISTNAME =		argon2-cffi-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+REVISION =	0
+DISTNAME =	argon2-cffi-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
 
-CATEGORIES =		security
+CATEGORIES =	security
 
-HOMEPAGE =		https://argon2-cffi.readthedocs.io/
+HOMEPAGE =	https://argon2-cffi.readthedocs.io/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		argon2 pthread
+WANTLIB =	argon2 pthread
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-FLAVORS =		python3
-FLAVOR  =		python3
+FLAVORS =	python3
+FLAVOR  =	python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PI =	Yes
+MODPY_PEP517 =	setuptools
 
-BUILD_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-cffi${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-cffi${MODPY_FLAVOR}
 
-RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+LIB_DEPENDS =	security/argon2
 
-LIB_DEPENDS =		security/argon2
-
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-hypothesis${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
