@@ -26,5 +26,3 @@ lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/types.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/types.pyc
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.py
 lib/python${MODPY_VERSION}/site-packages/pysqlite2/test/userfunctions.pyc
-share/doc/${MODPY_PY_PREFIX}sqlite2/
-share/doc/${MODPY_PY_PREFIX}sqlite2/sqlite3.txt

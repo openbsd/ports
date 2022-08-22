@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	2.8.3
 DISTNAME =	pysqlite-${MODPY_EGG_VERSION}
 PKGNAME =	py-sqlite2-${MODPY_EGG_VERSION}
 CATEGORIES =	databases devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://github.com/ghaering/pysqlite/
 
@@ -17,20 +17,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread sqlite3>=8.6
 
-BUILD_DEPENDS =	textproc/py-sphinx,python3
-
 MODULES =	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
-post-build:
-	cd ${WRKSRC} && \
-		${LOCALBASE}/bin/sphinx-build -N -b text doc/sphinx \
-		build/doc
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlite2
-	${INSTALL_DATA} ${WRKSRC}/build/doc/sqlite3.txt \
-		${PREFIX}/share/doc/py-sqlite2/
 
 do-test: fake
 	@cd ${WRKDIR} && \
