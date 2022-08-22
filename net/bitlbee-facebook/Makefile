@@ -2,6 +2,7 @@ COMMENT=		Facebook Messenger protocol plugin for bitlbee
 
 V=			1.2.2
 DISTNAME=		bitlbee-facebook-$V
+REVISION=		0
 
 CATEGORIES=		net
 
