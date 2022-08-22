@@ -99,9 +99,15 @@ MODPY_ABI3SO =		.abi3
 MODPY_PYOEXTENSION ?=	opt-1.pyc
 .endif
 
-# If MODPY_PYTEST_ARGS are set, it implies we want MODPY_PYTEST = Yes
+MODPY_SETUPTOOLS ?=
+MODPY_SETUPUTILS ?=
+MODPY_PEP517 ?=		No
+MODPY_PI ?=
+
+# If MODPY_PYTEST_ARGS are set, or if using PEP517, it implies that
+# we want MODPY_PYTEST = Yes
 MODPY_PYTEST_ARGS ?=
-.if empty(MODPY_PYTEST_ARGS)
+.if empty(MODPY_PYTEST_ARGS) && ${MODPY_PEP517:L} == no
 MODPY_PYTEST ?=		No
 .else
 MODPY_PYTEST ?=		Yes
@@ -145,11 +151,6 @@ RUN_DEPENDS +=		${MODPY_RUN_DEPENDS}
 .if ${MODPY_TESTDEP:L} == "yes"
 TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 .endif
-
-MODPY_SETUPTOOLS ?=
-MODPY_SETUPUTILS ?=
-MODPY_PEP517 ?=		No
-MODPY_PI ?=
 
 _MODPY_PRE_BUILD_STEPS = :
 
