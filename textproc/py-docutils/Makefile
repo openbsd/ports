@@ -1,6 +1,6 @@
 COMMENT =	process plaintext documentation into other formats
 
-MODPY_EGG_VERSION = 0.17.1
+MODPY_EGG_VERSION = 0.19
 DISTNAME =	docutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	textproc
@@ -13,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =	Yes
+MODPY_PEP517 =	setuptools
 
 RUN_DEPENDS =	textproc/py-pygments${MODPY_FLAVOR}
 
