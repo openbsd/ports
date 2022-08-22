@@ -1,6 +1,6 @@
 COMMENT =		implementation of JSON Schema validation for Python
 
-MODPY_EGG_VERSION =	4.13.0
+MODPY_EGG_VERSION =	4.14.0
 DISTNAME =		jsonschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -26,6 +26,7 @@ BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR} \
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-pyrsistent${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
+			devel/py-pip${MODPY_FLAVOR} \
 			devel/py-twisted${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
