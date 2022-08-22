@@ -1,4 +1,7 @@
-https://gitlab.gnome.org/GNOME/gnome-todo/merge_requests/39
+From 5d4f2a66e4923fa4a92c2c4ebc536f09318fcec3 Mon Sep 17 00:00:00 2001
+From: Jamie Murphy <hello@itsjamie.dev>
+Date: Tue, 12 Jul 2022 09:06:23 -0700
+Subject: [PATCH] Define _XOPEN_SOURCE to 700 for strptime(3)
 
 Index: src/plugins/todoist/gtd-provider-todoist.c
 --- src/plugins/todoist/gtd-provider-todoist.c.orig
