@@ -1,7 +1,8 @@
 COMMENT=	GNUstep gui library
 
-DISTNAME =	gnustep-gui-0.29.0
-REVISION =	0
+VERSION =	0.29.0
+DISTNAME =	gnustep-gui-${VERSION}
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -37,7 +38,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-x \
 		--enable-speech
 
-LIBDIR =	lib/GNUstep/Libraries/gnustep-gui/Versions/${LIBgnustep-gui_VERSION}
+LIBDIR =	lib/GNUstep/Libraries/gnustep-gui/Versions/${VERSION:R}
 SUBST_VARS +=	LIBDIR
 
 MAKE_FLAGS +=	libgnustep-gui_INTERFACE_VERSION=${LIBgnustep-gui_VERSION}
