@@ -1,9 +1,8 @@
 COMMENT =		objects and routines pertaining to date and time
 
-MODPY_EGG_VERSION =	4.1.2
+MODPY_EGG_VERSION =	5.0.2
 DISTNAME =		tempora-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,9 +16,8 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-
-MODPY_PYTEST_ARGS =	lib/tempora/tests
+MODPY_PEP517 =		setuptools
+MODPY_PYTEST_ARGS =	tempora/tests
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
 RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
