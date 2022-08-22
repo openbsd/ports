@@ -1,6 +1,6 @@
 COMMENT =		an XML Schema validator and decoder
 
-MODPY_EGG_VERSION =	1.9.2
+MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		xmlschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 RUN_DEPENDS =		textproc/py-elementpath${MODPY_FLAVOR}
 
