@@ -1,6 +1,6 @@
 COMMENT =		Python documentation generator
 
-MODPY_EGG_VERSION =	5.0.2
+MODPY_EGG_VERSION =	5.1.1
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
 
@@ -17,8 +17,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 # remove after updating python to 3.10+
 RUN_DEPENDS +=		devel/py-importlib-metadata${MODPY_FLAVOR}
@@ -26,8 +25,8 @@ RUN_DEPENDS +=		devel/py-importlib-metadata${MODPY_FLAVOR}
 RUN_DEPENDS +=		devel/py-babel${MODPY_FLAVOR} \
 			graphics/py-imagesize${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-alabaster${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR}<0.18 \
+			textproc/py-alabaster${MODPY_FLAVOR}<0.8 \
+			textproc/py-docutils${MODPY_FLAVOR}<0.20 \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			textproc/py-snowballstemmer${MODPY_FLAVOR} \
 			textproc/py-sphinxcontrib/applehelp${MODPY_FLAVOR} \
