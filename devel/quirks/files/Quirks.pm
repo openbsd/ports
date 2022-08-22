@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1419 2022/08/20 11:16:57 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1420 2022/08/22 11:52:48 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1698,6 +1698,7 @@ setup_obsolete_reason(
 	3 => 'luasoldout',
 	3 => 'honeyd',
 	47 => 'totd',
+	6 => 'py3-importlib_resources',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

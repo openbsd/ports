@@ -1403,7 +1403,6 @@
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar,python3
      SUBDIR += py-importlib-metadata,python3
-     SUBDIR += py-importlib_resources,python3
      SUBDIR += py-incremental,python3
      SUBDIR += py-installer,python3
      SUBDIR += py-intervaltree
