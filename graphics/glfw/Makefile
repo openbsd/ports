@@ -1,6 +1,6 @@
 COMMENT =	open source, multi-platform library for creating windows
 
-V =		3.3.7
+V =		3.3.8
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
 
