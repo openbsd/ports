@@ -294,6 +294,7 @@
      SUBDIR += py-gnupg,python3
      SUBDIR += py-hkdf,python3
      SUBDIR += py-hvac,python3
+     SUBDIR += py-in-toto,python3
      SUBDIR += py-josepy,python3
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl,python3
@@ -316,6 +317,7 @@
      SUBDIR += py-scp,python3
      SUBDIR += py-scrypt,python3
      SUBDIR += py-secretstorage,python3
+     SUBDIR += py-securesystemslib,python3
      SUBDIR += py-service_identity,python3
      SUBDIR += py-spake2,python3
      SUBDIR += py-tlsfuzzer,python3
