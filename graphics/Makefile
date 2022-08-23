@@ -121,6 +121,7 @@
      SUBDIR += kcolorpicker
      SUBDIR += kdiagram
      SUBDIR += kimageannotator
+     SUBDIR += kplot
      SUBDIR += kquickimageeditor
      SUBDIR += krita
      SUBDIR += krita-gmic-plugin
@@ -152,6 +153,7 @@
      SUBDIR += libplacebo
      SUBDIR += libqrencode
      SUBDIR += libraw
+     SUBDIR += librtprocess
      SUBDIR += libsixel
      SUBDIR += libspiro
      SUBDIR += libvidcap
