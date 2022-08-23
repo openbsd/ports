@@ -1,0 +1,16 @@
+use OpenBSD package instead of some included bundle
+
+Index: Makefile.PL
+--- Makefile.PL.orig
++++ Makefile.PL
+@@ -13,8 +13,8 @@ BEGIN
+     }
+ }
+ 
+-use inc::latest 'Capture::Tiny';
+-use inc::latest 'Config::AutoConf';
++use Capture::Tiny;
++use Config::AutoConf;
+ 
+ unless (-f "META.yml")
+ {

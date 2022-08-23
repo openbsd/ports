@@ -1,8 +1,11 @@
 ${P5ARCH}/
 ${P5ARCH}/Params/
+${P5ARCH}/Params/Util/
 ${P5ARCH}/Params/Util.pm
+${P5ARCH}/Params/Util/PP.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Params/
 ${P5ARCH}/auto/Params/Util/
-${P5ARCH}/auto/Params/Util/Util.so
+@so ${P5ARCH}/auto/Params/Util/Util.so
 @man man/man3p/Params::Util.3p
+@man man/man3p/Params::Util::PP.3p
