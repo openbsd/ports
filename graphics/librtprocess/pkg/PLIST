@@ -1,0 +1,9 @@
+include/rtprocess/
+include/rtprocess/librtprocess.h
+lib/cmake/
+lib/cmake/rtprocess/
+lib/cmake/rtprocess/rtprocess-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/rtprocess/rtprocess-config-version.cmake
+lib/cmake/rtprocess/rtprocess-config.cmake
+@lib lib/librtprocess.so.${LIBrtprocess_VERSION}
+lib/pkgconfig/rtprocess.pc

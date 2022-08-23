@@ -1,0 +1,18 @@
+This project's goal is to make some of RawTherapee's highly optimized
+raw processing routines readily available for other FOSS photo
+editing software.
+
+The following routines are available:
+- ahd_demosaic
+- amaze_demosaic
+- bayerfast_demosaic
+- dcb_demosaic
+- hphd_demosaic
+- igv_demosaic
+- lmmse_demosaic
+- rcd_demosaic
+- vng4_demosaic
+- markesteijn_demosaic
+- xtransfast_demosaic
+- CA_correct
+- HLRecovery_inpaint
