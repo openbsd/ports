@@ -2,10 +2,10 @@
 include/iconv.h
 include/libcharset.h
 include/localcharset.h
-lib/libcharset.a
+@static-lib lib/libcharset.a
 lib/libcharset.la
 @lib lib/libcharset.so.${LIBcharset_VERSION}
-lib/libiconv.a
+@static-lib lib/libiconv.a
 lib/libiconv.la
 @lib lib/libiconv.so.${LIBiconv_VERSION}
 @man man/man1/iconv.1

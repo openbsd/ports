@@ -1,18 +1,17 @@
 COMMENT=	character set conversion library
 
-DISTNAME=	libiconv-1.16
+DISTNAME=	libiconv-1.17
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libiconv/}
-REVISION=	0
 
 SHARED_LIBS=	charset		1.1 \
-		iconv		7.0
+		iconv		7.1
 
 HOMEPAGE=	https://www.gnu.org/software/libiconv/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# LGPLv2 and GPLv3
+# LGPLv2.1 and GPLv3
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
@@ -24,5 +23,7 @@ CONFIGURE_ARGS= --disable-nls \
 		--docdir="${PREFIX}/share/doc/libiconv" \
 		--enable-extra-encodings \
 		--enable-static
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
