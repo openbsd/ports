@@ -1,0 +1,4 @@
+in-toto provides a framework to protect the integrity of the software
+supply chain. It does so by verifying that each task in the chain
+is carried out as planned, by authorized personnel only, and that
+the product is not tampered with in transit.
