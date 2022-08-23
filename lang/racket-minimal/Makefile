@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			8.6
-REVISION =		0
+REVISION =		1
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}
@@ -48,7 +48,6 @@ WRKSRC =		${WRKDIST}/src
 
 # The tests are installed from raco as a package
 NO_TEST =		Yes
-SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
@@ -81,6 +80,10 @@ CONFIGURE_ARGS +=	--enable-pb
 USE_WXNEEDED =		Yes
 LDFLAGS_WXNEEDED =	-Wl,-z,wxneeded
 .endif
+
+do-build:
+	ulimit -s 12288 && cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_PROGRAM} ${MAKE_FLAGS} ${ALL_TARGET}
 
 post-install:
 	@find ${PREFIX} -type f -name '*.orig' -delete
