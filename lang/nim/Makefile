@@ -1,8 +1,8 @@
-ONLY_FOR_ARCHS =	i386 amd64
+ONLY_FOR_ARCHS =	amd64 arm64 i386
 
 COMMENT =		statically typed, imperative programming language
 
-DISTNAME =		nim-1.6.4
+DISTNAME =		nim-1.6.6
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
@@ -20,6 +20,8 @@ MODULES =		lang/python
 PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		archivers/p7zip,-main \
 			archivers/unzip \
+			devel/boehm-gc \
+			devel/pcre \
 			lang/node \
 			multimedia/sfml
 

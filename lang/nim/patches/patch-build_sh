@@ -1,5 +1,4 @@
- - don't hardcode -O3
- - fix wrong usage of test(1)
+- don't hardcode -O3
 
 Index: build.sh
 --- build.sh.orig
@@ -13,12 +12,4 @@ Index: build.sh
  LINK_FLAGS="${LDFLAGS:-} "
  PS4=""
  # platform detection
-@@ -163,7 +163,7 @@ esac
- 
- case $ucpu in
-   *i386* | *i486* | *i586* | *i686* | *bepc* | *i86pc* )
--    if [ isOpenIndiana -eq "yes" ] ; then
-+    if [ isOpenIndiana == "yes" ] ; then
-       mycpu="amd64"
-     else
-       mycpu="i386"
+
