@@ -21,9 +21,6 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/images/puma-general-arch.png
 ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/
 ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/README.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/
-${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/README.md
-${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/puma
-${GEM_LIB}/gems/${DISTNAME}/docs/jungle/rc.d/puma.conf
 ${GEM_LIB}/gems/${DISTNAME}/docs/kubernetes.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/nginx.md
 ${GEM_LIB}/gems/${DISTNAME}/docs/plugins.md
@@ -54,7 +51,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puma/error_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/events.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/io_buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/jruby_restart.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/puma/json.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puma/json_serialization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/launcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puma/minissl.rb

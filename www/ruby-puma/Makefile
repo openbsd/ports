@@ -1,8 +1,7 @@
 COMMENT =		simple, fast, threaded webserver for rack applications
 
-DISTNAME =		puma-5.3.2
+DISTNAME =		puma-5.6.5
 CATEGORIES =		www
-REVISION =		0
 
 HOMEPAGE =		https://puma.io/
 
