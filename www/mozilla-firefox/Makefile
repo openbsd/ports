@@ -3,7 +3,8 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	103.0.2
+MOZILLA_VERSION =	104.0
+MOZILLA_PROFDATA_TASKID=etJgDqZQRoCNCuHUq5GXvg
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -55,6 +56,7 @@ CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
+CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 
