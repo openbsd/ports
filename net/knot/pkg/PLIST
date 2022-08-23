@@ -68,13 +68,16 @@ include/libknot/rrtype/opt.h
 include/libknot/rrtype/rdname.h
 include/libknot/rrtype/rrsig.h
 include/libknot/rrtype/soa.h
+include/libknot/rrtype/svcb.h
 include/libknot/rrtype/tsig.h
 include/libknot/rrtype/zonemd.h
 include/libknot/tsig-op.h
 include/libknot/tsig.h
 include/libknot/version.h
 include/libknot/wire.h
+include/libknot/xdp/
 include/libknot/xdp.h
+include/libknot/xdp/tcp_iobuf.h
 include/libknot/yparser/
 include/libknot/yparser/yparser.h
 include/libknot/yparser/ypformat.h

@@ -1,10 +1,10 @@
 COMMENT =		authoritative DNS server
 
 # update net/py-libknot when updating this
-DISTNAME =		knot-3.1.9
+DISTNAME =		knot-3.2.0
 
-SHARED_LIBS +=	dnssec               3.1      # .8.0
-SHARED_LIBS +=	knot                 7.3      # .12.0
+SHARED_LIBS +=	dnssec               3.1      # .9.0
+SHARED_LIBS +=	knot                 8.0      # .13.0
 SHARED_LIBS +=	zscanner             1.1      # .4.0
 
 CATEGORIES =		net
