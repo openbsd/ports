@@ -1,9 +1,6 @@
 fix(tests): network is not instant 
 https://github.com/open62541/open62541/commit/d40ce0724b82a22228b7e5c32b4bb401cb8e7a1c
 
-fix(client) connect iterate without timeout 
-https://github.com/open62541/open62541/pull/5204
-
 Index: tests/client/check_client_async_connect.c
 --- tests/client/check_client_async_connect.c.orig
 +++ tests/client/check_client_async_connect.c
@@ -25,37 +22,3 @@ Index: tests/client/check_client_async_connect.c
      UA_Server_run_iterate(server, false);
      retval |= UA_Client_run_iterate(client, 0); /* Send HEL */
      UA_Server_run_iterate(server, false);
-@@ -169,6 +171,25 @@ START_TEST(Client_without_run_iterate) {
- }
- END_TEST
- 
-+START_TEST(Client_run_iterate) {
-+    UA_StatusCode retval;
-+    UA_Client *client = UA_Client_new();
-+    UA_ClientConfig *cc = UA_Client_getConfig(client);
-+    UA_ClientConfig_setDefault(cc);
-+    cc->stateCallback = currentState;
-+    connected = false;
-+    retval = UA_Client_connectAsync(client, "opc.tcp://localhost:4840");
-+    ck_assert_uint_eq(retval, UA_STATUSCODE_GOOD);
-+    while (!connected) {
-+        UA_Server_run_iterate(server, false);
-+        retval = UA_Client_run_iterate(client, 0);
-+        ck_assert_uint_eq(retval, UA_STATUSCODE_GOOD);
-+        sleep(0);
-+    }
-+    UA_Client_delete(client);
-+}
-+END_TEST
-+
- static Suite* testSuite_Client(void) {
-     Suite *s = suite_create("Client");
-     TCase *tc_client_connect = tcase_create("Client Connect Async");
-@@ -177,6 +198,7 @@ static Suite* testSuite_Client(void) {
-     tcase_add_test(tc_client_connect, Client_connect_async_abort);
-     tcase_add_test(tc_client_connect, Client_no_connection);
-     tcase_add_test(tc_client_connect, Client_without_run_iterate);
-+    tcase_add_test(tc_client_connect, Client_run_iterate);
-     suite_add_tcase(s,tc_client_connect);
-     return s;
- }
