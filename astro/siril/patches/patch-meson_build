@@ -1,0 +1,29 @@
+right, because comparing versions numerically has always worked
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -55,9 +55,7 @@ siril_version_micro = version_array[2]
+ stable = (siril_version_minor % 2 == 0)
+ 
+ ## Get version from git
+-git = find_program('git', required: false)
+-
+-if not git.found()
++if true
+   message('Git not installed or git directory not found!')
+   git_version = 'Unknown'
+   git_last_commit_year = 'Unknown'
+@@ -416,13 +414,6 @@ endif
+ 
+ if wcslib_dep.found()
+   conf_data.set('HAVE_WCSLIB', true, description : 'Using wcslib.')
+-  if wcslib_dep.version() < '7.7'
+-  wcslib_warning = '''
+-        wcslib lower than version 7.7 is known to crash when
+-        updating wcsdata in files. Please update
+-  '''
+-  warnings += wcslib_warning
+-endif
+ else 
+   conf_data.set('HAVE_WCSLIB', false, description : 'Using wcslib.')
+   warning('wcslib not found. Not using WCS API.')
