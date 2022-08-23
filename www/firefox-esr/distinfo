@@ -1,2 +1,4 @@
-SHA256 (mozilla/firefox-102.1.0esr.source.tar.xz) = Y3tucn0bgVu8brOa6wTG4UQFbus8YospjLFt6ztXlGA=
-SIZE (mozilla/firefox-102.1.0esr.source.tar.xz) = 486756700
+SHA256 (mozilla/firefox-102.2.0esr.source-profdata.tar.xz) = +Wio/peS/VtwI+GJ4tJM8tKkq/t/iMu6xjMBrxkvITQ=
+SHA256 (mozilla/firefox-102.2.0esr.source.tar.xz) = AU2R0Uq09T6TcoJztFrGAigT1a3jX4Quciv4e3R8l/8=
+SIZE (mozilla/firefox-102.2.0esr.source-profdata.tar.xz) = 14354740
+SIZE (mozilla/firefox-102.2.0esr.source.tar.xz) = 479840072
