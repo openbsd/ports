@@ -1,0 +1,59 @@
+Extra glue that siril wants
+Index: draw.c
+--- draw.c.orig
++++ draw.c
+@@ -27,6 +27,12 @@
+ #include "kplot.h"
+ #include "extern.h"
+ 
++static double dimx = 0.0;
++static double dimy = 0.0;
++static double offsx = 0.0;
++static double offsy = 0.0;
++
++
+ /*
+  * Simple function to check that the double-precision values in the
+  * kpair are valid: normal (or 0.0) values.
+@@ -766,8 +772,10 @@ kplot_draw(struct kplot *p, double w, double h, cairo_
+ 	kplotctx_border_init(&ctx);
+ 	kplotctx_tic_init(&ctx);
+ 	
+-	ctx.h = ctx.dims.y;
+-	ctx.w = ctx.dims.x;
++	dimy = ctx.h = ctx.dims.y;
++	dimx = ctx.w = ctx.dims.x;
++	offsx = ctx.offs.x;
++	offsy = ctx.offs.y;
+ 
+ 	for (i = 0; i < p->datasz; i++) {
+ 		d = &p->datas[i];
+@@ -908,4 +916,28 @@ kplotcfg_default_palette(struct kplotccfg **pp, size_t
+ 	(*pp)[6].rgba[2] = 0x10 / 255.0;
+ 
+ 	return(1);
++}
++
++double
++get_dimx()
++{
++	return dimx;
++}
++
++double
++get_dimy()
++{
++	return dimy;
++}
++
++double
++get_offsx()
++{
++	return offsx;
++}
++
++double
++get_offsy()
++{
++	return offsy;
+ }

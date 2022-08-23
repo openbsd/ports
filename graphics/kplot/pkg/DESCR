@@ -1,0 +1,8 @@
+kplot is a programming library for plotting graphs on a Cairo
+surface. It handles drawing margins, axis labels, tic labels, tics,
+borders, grids, and the data itself. Data may be specified structurally
+as finite buckets, range histograms, arrays, and vectors. Data may
+also be computed from other sources, such as the mean and standard
+deviation.
+
+This version has been patched to work with siril

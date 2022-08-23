@@ -1,0 +1,80 @@
+# ex:filetype=make:
+
+CPPFLAGS != pkg-config --cflags cairo
+CPPFLAGS += -I${.CURDIR}
+LDADD 	!= pkg-config --libs cairo
+
+.PATH: ${.CURDIR}/man
+MAN		= kdata_array_alloc.3 \
+		  kdata_array_fill.3 \
+		  kdata_bucket_alloc.3 \
+		  kdata_bucket_add.3 \
+		  kdata_buffer_alloc.3 \
+		  kdata_buffer_copy.3 \
+		  kdata_destroy.3 \
+		  kdata_get.3 \
+		  kdata_hist_alloc.3 \
+		  kdata_hist_add.3 \
+		  kdata_mean_alloc.3 \
+		  kdata_mean_attach.3 \
+		  kdata_pmfmean.3 \
+		  kdata_pmfstddev.3 \
+		  kdata_pmfvar.3 \
+		  kdata_stddev_alloc.3 \
+		  kdata_stddev_attach.3 \
+		  kdata_vector_append.3 \
+		  kdata_vector_alloc.3 \
+		  kdata_xmax.3 \
+		  kdata_xmean.3 \
+		  kdata_xmin.3 \
+		  kdata_xstddev.3 \
+		  kdatacfg_defaults.3 \
+		  kplot.3 \
+		  kplot_alloc.3 \
+		  kplot_attach_data.3 \
+		  kplot_attach_datas.3 \
+		  kplot_attach_smooth.3 \
+		  kplot_detach.3 \
+		  kplot_draw.3 \
+		  kplot_free.3 \
+		  kplot_get_datacfg.3 \
+		  kplot_get_plotcfg.3 \
+	 	  kplotcfg_defaults.3
+
+LIB = kplot
+LIBDIR =	${TRUEPREFIX}/lib
+MANDIR =	${TRUEPREFIX}/man/man
+SRCS = 	array.c \
+	border.c \
+	bucket.c \
+	buffer.c \
+	colours.c \
+	draw.c \
+	grid.c \
+	hist.c \
+	label.c \
+	kdata.c \
+	kplot.c \
+	margin.c \
+	mean.c \
+	plotctx.c \
+	stddev.c \
+	tic.c \
+	vector.c
+
+NOPROFILE =
+
+PROGS = example0 example1 example2 example3 example4 example5 \
+	example6 example7 example8 example9 example10 example11 \
+	example12 example13
+
+.for p in ${PROGS}
+test: $p.png
+$p.png: $p
+	LD_LIBRARY_PATH=. ./$p
+
+$p: $p.o
+	${CC} ${CFLAGS} -o $p $p.o ${LDADD} -L${.CURDIR} -lkplot -lm
+.endfor
+
+.include <bsd.lib.mk>

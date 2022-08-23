@@ -1,0 +1,17 @@
+Extra glue that siril wants
+Index: kplot.h
+--- kplot.h.orig
++++ kplot.h
+@@ -240,6 +240,12 @@ int		 kplot_get_datacfg(struct kplot *, size_t,
+ 			struct kdatacfg **, size_t *);
+ struct kplotcfg	*kplot_get_plotcfg(struct kplot *);
+ 
++/* getters needed for siril for now */
++double get_dimx(void);
++double get_dimy(void);
++double get_offsx(void);
++double get_offsy(void);
++
+ 
+ __END_DECLS
+ 

@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: kplot
+Description: plotting library for cairo
+Version: ${VERSION}
+
+Requires:
+Libs: -L${libdir} -lkplot
+Cflags: -I${includedir}
+
