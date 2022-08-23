@@ -16,6 +16,7 @@
      SUBDIR += py-metar,python3
      SUBDIR += py-sgp4,python3
      SUBDIR += py-skyfield,python3
+     SUBDIR += siril
      SUBDIR += stellarium
      SUBDIR += sunclock
      SUBDIR += wcslib
