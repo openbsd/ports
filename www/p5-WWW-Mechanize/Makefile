@@ -1,6 +1,6 @@
 COMMENT =	handy web browsing in a Perl object
 
-DISTNAME =	WWW-Mechanize-2.13
+DISTNAME =	WWW-Mechanize-2.14
 
 CATEGORIES =	www
 
@@ -10,7 +10,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-RUN_DEPENDS =		www/p5-HTML-Form>=1.00 \
+RUN_DEPENDS =		www/p5-HTML-Form>=6.08 \
 			www/p5-HTML-Parser \
 			www/p5-HTML-Tree>=5 \
 			www/p5-HTTP-Cookies \
