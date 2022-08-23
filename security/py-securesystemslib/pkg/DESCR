@@ -1,0 +1,3 @@
+A library that provides cryptographic and general-purpose functions
+for Secure Systems Lab projects at New York University. The routines
+are general enough to be usable by other projects.
