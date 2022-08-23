@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS = i386 amd64 powerpc powerpc64 arm
 
 COMMENT =	Atari ST/STE/TT/Falcon emulator
 
-V =		2.4.0
+V =		2.4.1
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
 
