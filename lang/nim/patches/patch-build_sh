@@ -12,4 +12,3 @@ Index: build.sh
  LINK_FLAGS="${LDFLAGS:-} "
  PS4=""
  # platform detection
-

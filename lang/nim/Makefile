@@ -1,9 +1,9 @@
 ONLY_FOR_ARCHS =	amd64 arm64 i386
 
-COMMENT =		statically typed, imperative programming language
+COMMENT =		statically typed systems programming language
 
 DISTNAME =		nim-1.6.6
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		lang
