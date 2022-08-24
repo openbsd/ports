@@ -1,4 +1,4 @@
-V =		0.1.9
+V =		0.1.10
 COMMENT =	comic book plugin for zathura
 PROJECT =	zathura-cb
 
