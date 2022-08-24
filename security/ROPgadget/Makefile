@@ -1,6 +1,6 @@
 COMMENT =	Gadgets finder and auto-roper
 
-MODPY_EGG_VERSION =	6.8
+MODPY_EGG_VERSION =	6.9
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 GH_PROJECT =	ROPGadget
 GH_ACCOUNT =	JonathanSalwan
