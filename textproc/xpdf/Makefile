@@ -3,7 +3,7 @@ COMMENT=	PDF viewer for X11
 DISTNAME=	xpdf-3.04
 CATEGORIES=	textproc x11
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES=	https://xpdfreader-dl.s3.amazonaws.com/old/
 

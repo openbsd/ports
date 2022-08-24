@@ -1,0 +1,22 @@
+Security fix for CVE-2022-38171.
+Extracted from upstream 4.04
+
+Index: xpdf/JBIG2Stream.cc
+--- xpdf/JBIG2Stream.cc.orig
++++ xpdf/JBIG2Stream.cc
+@@ -1977,7 +1977,14 @@ void JBIG2Stream::readTextRegionSeg(Guint segNum, GBoo
+   for (i = 0; i < nRefSegs; ++i) {
+     if ((seg = findSegment(refSegs[i]))) {
+       if (seg->getType() == jbig2SegSymbolDict) {
+-	numSyms += ((JBIG2SymbolDict *)seg)->getSize();
++	Guint segSize = ((JBIG2SymbolDict *)seg)->getSize();
++	if (segSize > INT_MAX || numSyms > INT_MAX - segSize) {
++	  error(errSyntaxError, getPos(),
++		"Too many symbols in JBIG2 text region");
++	  delete codeTables;
++	  return;
++	}
++	numSyms += segSize;
+       } else if (seg->getType() == jbig2SegCodeTable) {
+ 	codeTables->append(seg);
+       }
