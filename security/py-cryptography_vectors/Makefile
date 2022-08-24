@@ -1,6 +1,6 @@
 COMMENT=	test vectors for py-cryptography
 
-MODPY_EGG_VERSION=	37.0.1
+MODPY_EGG_VERSION=	37.0.4
 DISTNAME=	cryptography_vectors-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
 CATEGORIES=	security
@@ -11,9 +11,10 @@ HOMEPAGE=	https://cryptography.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PEP517=	setuptools
 MODPY_PI=	Yes
 MODPY_PI_DIR=	c/cryptography-vectors
+NO_TEST=	Yes
 
 FLAVORS=	python3
 FLAVOR=		python3
