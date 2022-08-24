@@ -1,10 +1,9 @@
 COMMENT =	C-style structs for Python
 
-MODPY_EGG_VERSION =	1.8
+MODPY_EGG_VERSION =	2.2
 
 DISTNAME =	cstruct-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
 
 CATEGORIES =	devel
 
@@ -20,5 +19,9 @@ MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
 FLAVOR =	python3
+
+# XXX:
+# Distribution lacks several files for the test to run (e.g. 'mbr').
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
