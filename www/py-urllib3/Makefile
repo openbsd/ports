@@ -1,10 +1,8 @@
 COMMENT =	HTTP library for Python
 
-MODPY_EGG_VERSION = 1.26.11
+MODPY_EGG_VERSION = 1.26.12
 DISTNAME =	urllib3-${MODPY_EGG_VERSION}
 PKGNAME =	py-urllib3-${MODPY_EGG_VERSION}
-
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -17,8 +15,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
-MODPY_PYTEST =	Yes
+MODPY_PEP517 =	setuptools
 
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
 		net/py-socks${MODPY_FLAVOR} \
