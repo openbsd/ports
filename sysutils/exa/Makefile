@@ -3,7 +3,7 @@ COMMENT =		ls alternative written in Rust
 GH_ACCOUNT =		ogham
 GH_PROJECT =		exa
 GH_TAGNAME =		v0.10.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -19,7 +19,7 @@ MODULES =		devel/cargo
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
-BUILD_DEPENDS +=	textproc/pandoc
+BUILD_DEPENDS =		textproc/lowdown
 
 LIB_DEPENDS +=		devel/libgit2/libgit2
 WANTLIB +=		c c++abi m pthread git2
@@ -29,8 +29,8 @@ MODCARGO_CRATES_UPDATE =	cc libc
 MODCARGO_FEATURES =	git
 
 post-install:
-	pandoc --standalone -f markdown -t man ${WRKSRC}/man/exa.1.md > ${PREFIX}/man/man1/exa.1
-	pandoc --standalone -f markdown -t man ${WRKSRC}/man/exa_colors.5.md > ${PREFIX}/man/man5/exa_colors.5
+	lowdown -s -tman -m section=1 -mtitle=exa -mvolume='' ${WRKSRC}/man/exa.1.md > ${PREFIX}/man/man1/exa.1
+	lowdown -s -tman -m section=5 -mtitle=exa_colors -mvolume='' ${WRKSRC}/man/exa_colors.5.md > ${PREFIX}/man/man5/exa_colors.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/completions.fish ${PREFIX}/share/fish/completions/exa.fish
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
