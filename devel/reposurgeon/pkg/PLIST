@@ -1,24 +1,26 @@
-@bin bin/cyreposurgeon
-bin/repocutter
-bin/repodiffer
-bin/repomapper
-bin/reposurgeon
-bin/repotool
+bin/repobench
+@bin bin/repocutter
+@bin bin/repomapper
+@bin bin/reposurgeon
+@bin bin/repotool
+@man man/man1/repobench.1
 @man man/man1/repocutter.1
-@man man/man1/repodiffer.1
 @man man/man1/repomapper.1
 @man man/man1/reposurgeon.1
 @man man/man1/repotool.1
 share/doc/reposurgeon/
-share/doc/reposurgeon/NEWS
-share/doc/reposurgeon/README.md
-share/doc/reposurgeon/TODO
-share/doc/reposurgeon/dvcs-migration-guide.html
-share/doc/reposurgeon/features.html
+share/doc/reposurgeon/COPYING
+share/doc/reposurgeon/INSTALL.adoc
+share/doc/reposurgeon/INSTALL.html
+share/doc/reposurgeon/NEWS.adoc
+share/doc/reposurgeon/NEWS.html
+share/doc/reposurgeon/README.adoc
+share/doc/reposurgeon/README.html
+share/doc/reposurgeon/oops.svg
+share/doc/reposurgeon/repobench.html
 share/doc/reposurgeon/repocutter.html
-share/doc/reposurgeon/repodiffer.html
 share/doc/reposurgeon/repomapper.html
-share/doc/reposurgeon/reporting-bugs.html
+share/doc/reposurgeon/repository-editing.html
 share/doc/reposurgeon/reposurgeon-git-aliases
 share/doc/reposurgeon/reposurgeon.html
 share/doc/reposurgeon/repotool.html
