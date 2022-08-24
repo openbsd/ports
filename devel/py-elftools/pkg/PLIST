@@ -52,9 +52,11 @@ lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}aranges.
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}callframe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}compileunit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}datatype_cpp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}descriptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}die.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}dwarf_expr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}dwarf_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}dwarfinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/${MODPY_PYCACHE}lineprogram.${MODPY_PYC_MAGIC_TAG}pyc
@@ -67,9 +69,11 @@ lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/aranges.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/callframe.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/compileunit.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/constants.py
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/datatype_cpp.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/descriptions.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/die.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/dwarf_expr.py
+lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/dwarf_util.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/dwarfinfo.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/enums.py
 lib/python${MODPY_VERSION}/site-packages/elftools/dwarf/lineprogram.py

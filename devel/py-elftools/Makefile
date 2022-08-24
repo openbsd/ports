@@ -1,6 +1,6 @@
 COMMENT =		ELF and DWARF parser library for Python
 
-MODPY_EGG_VERSION =	0.28
+MODPY_EGG_VERSION =	0.29
 DISTNAME =		pyelftools-${MODPY_EGG_VERSION}
 PKGNAME =		py-elftools-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
