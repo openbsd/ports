@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			8.6
-REVISION =		1
+REVISION =		2
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}
@@ -74,7 +74,7 @@ FLAVOR ?=
 
 # - Use portable bitcode where there is not native support.
 # - CS without -pb requires wxneeded.
-.if ${FLAVOR:Mpb} || (${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386")
+.if ${FLAVOR:Mpb} || ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS +=	--enable-pb
 .else
 USE_WXNEEDED =		Yes
