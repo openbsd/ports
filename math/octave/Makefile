@@ -1,14 +1,13 @@
 COMMENT =      Scientific Programming Language
 
-VERSION =	7.1.0
+VERSION =	7.2.0
 DISTNAME =	octave-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
-REVISION =	1
 
-SHARED_LIBS +=	octave		14.0
-SHARED_LIBS +=	octgui		8.0
-SHARED_LIBS +=	octinterp	13.0
+SHARED_LIBS +=	octave		15.0
+SHARED_LIBS +=	octgui		9.0
+SHARED_LIBS +=	octinterp	14.0
 
 HOMEPAGE =	https://www.gnu.org/software/octave/
 
