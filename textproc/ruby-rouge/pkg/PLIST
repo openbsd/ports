@@ -99,6 +99,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/ini
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/io
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/irb_output
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/isabelle
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/isbl
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/j
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/janet
@@ -130,6 +131,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/markdown
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mason
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mathematica
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/matlab
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/meson
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/minizinc
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/moonscript
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mosel
@@ -138,6 +140,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/mxml
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nasm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nesasm
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nginx
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nial
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nim
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/nix
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/demos/objective_c
@@ -341,6 +344,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/igorpro.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/ini.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/io.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/irb.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isabelle.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/isbl/builtins.rb
@@ -385,6 +389,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/builtins.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/matlab/keywords.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/meson.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/minizinc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/moonscript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mosel.rb
@@ -393,6 +398,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/mxml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nasm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nesasm.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nginx.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nial.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nim.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/nix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rouge/lexers/objective_c/
