@@ -1,7 +1,7 @@
 Index: src/dynamic-preprocessors/Makefile.in
 --- src/dynamic-preprocessors/Makefile.in.orig
 +++ src/dynamic-preprocessors/Makefile.in
-@@ -1655,19 +1655,8 @@ clean-local:
+@@ -1658,19 +1658,8 @@ clean-local:
  	rm -rf include build
  
  install-data-local:

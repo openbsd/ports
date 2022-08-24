@@ -1,7 +1,7 @@
 Index: src/preprocessors/Stream6/snort_stream_tcp.c
 --- src/preprocessors/Stream6/snort_stream_tcp.c.orig
 +++ src/preprocessors/Stream6/snort_stream_tcp.c
-@@ -8939,7 +8939,7 @@ static int ProcessTcp(SessionControlBlock *scb, Packet
+@@ -8953,7 +8953,7 @@ static int ProcessTcp(SessionControlBlock *scb, Packet
                          char src_addr[17];
                          char dst_addr[17];
                          memset((char *)timestamp, 0, TIMEBUF_SIZE);
