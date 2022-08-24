@@ -1,3 +1,6 @@
+# uses the rust "libc" crate, version 0.2.107 (needs at least 0.2.113)
+NOT_FOR_ARCHS =	powerpc64 riscv64
+
 COMMENT =	high performance network IDS, IPS and security monitoring
 
 SURICATA_V =	6.0.4
