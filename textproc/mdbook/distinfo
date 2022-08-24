@@ -80,7 +80,7 @@ SHA256 (cargo/itoa-0.4.8.tar.gz) = txmR/1YpSqkitFATnuCLO/xwmCxrLHVidxN1z3NULdQ=
 SHA256 (cargo/kernel32-sys-0.2.2.tar.gz) = dQdiSylINDHAui2Crs6Mps26k4K/9N3Q90kFYMBWCY0=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
 SHA256 (cargo/lazycell-1.3.0.tar.gz) = gw0Izh0dlB5rMGRfGg61ZDAT2DXON3ml/CCCYdvhD1U=
-SHA256 (cargo/libc-0.2.100.tar.gz) = ofqM3cj7vuESJ+8ZS1MX7QFLisvxUTm9cWoYrT/pnsU=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/log-0.4.14.tar.gz) = Ubm75sR9Ufw+GpuUWWWUa0xEFCq4eSxQg1qYDTYsJxA=
 SHA256 (cargo/mac-0.1.1.tar.gz) = xB4MT++GlhrG1vioJgn1XzGwXk/OFJrFcQ5Dnfdhm6Q=
 SHA256 (cargo/maplit-1.0.2.tar.gz) = Pi5loaLkPPy0eolcTIsQ0fSmEJf58lTxg67mDK2cZR0=
@@ -298,7 +298,7 @@ SIZE (cargo/itoa-0.4.8.tar.gz) = 11926
 SIZE (cargo/kernel32-sys-0.2.2.tar.gz) = 24537
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/lazycell-1.3.0.tar.gz) = 12502
-SIZE (cargo/libc-0.2.100.tar.gz) = 528168
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/log-0.4.14.tar.gz) = 34582
 SIZE (cargo/mac-0.1.1.tar.gz) = 4838
 SIZE (cargo/maplit-1.0.2.tar.gz) = 8871

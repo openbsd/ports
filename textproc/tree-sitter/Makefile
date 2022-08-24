@@ -3,6 +3,7 @@ COMMENT =	parser generator tool and incremental parsing library
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
 GH_TAGNAME =		v0.20.6
+REVISION =		0
 
 SHARED_LIBS +=		tree-sitter	2.0 # 0.20.6
 
@@ -23,6 +24,8 @@ DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cargo
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 
 .include "crates.inc"
 

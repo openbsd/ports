@@ -7,7 +7,7 @@ SHA256 (cargo/autocfg-1.0.1.tar.gz) = zbAx3XjihzHYfVbMj/70qPNsomw4/i3nAFQ+Yn+KRk
 SHA256 (cargo/backtrace-0.3.54.tar.gz) = K6rTRrLU6UokNHre7px6k/QS7pS5zCbltZ3qI4SOnyg=
 SHA256 (cargo/bitflags-1.2.1.tar.gz) = zx3i/ox1vBRaL1d63ZUfgTSIm0eV1HRmpUpchG1pFpM=
 SHA256 (cargo/byteorder-1.3.4.tar.gz) = CMSKrhEtSO2fBpszU46p4+kKomPPo9HCQwlhKx90ct4=
-SHA256 (cargo/cc-1.0.61.tar.gz) = 7WfL3gg1YjjnX8Rla+R0lIHu/7CeGfMgolI31SIcmF0=
+SHA256 (cargo/cc-1.0.73.tar.gz) = L/8qaSezu4f5WV1nGWpwST9idoenHYeg1pIkLDP1jBE=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/core-foundation-0.7.0.tar.gz) = V9JMehPEPocON8FVa3RVVDeHCgRRT3aF9bNU4JBWcXE=
@@ -28,7 +28,7 @@ SHA256 (cargo/ipconfig-0.2.2.tar.gz) = 9+LxiuzpcJCUVzqfJPSDxPZcqkKY4veuG3HMZdhT+
 SHA256 (cargo/itoa-0.4.6.tar.gz) = 3G8617nRGgwAhC/43htg7lhmEEjrgEntM8c1lPNZ1+Y=
 SHA256 (cargo/json-0.12.4.tar.gz) = B44oXq/ftsS0NODTHoz8tRFbZRSW+spXSbiPr9TyO/0=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.80.tar.gz) = TVjRtwsASIj3ZN+/aiajsDQqFjLTOWjkoXnYARx2BhQ=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/log-0.4.11.tar.gz) = T6vtF12kL+0foHRrDqcfQSqp01526V5ZsZLGS53Cv4s=
 SHA256 (cargo/miniz_oxide-0.4.3.tar.gz) = Dy0m7DMJeI5CPPv2itGADwYWOAmNdqg2ga+XncTtoZ0=
 SHA256 (cargo/native-tls-0.2.4.tar.gz) = Kw2IwG/pDV7pQEi6QECe8dkxXYb284wu/arU+1DFiy0=
@@ -82,7 +82,7 @@ SIZE (cargo/autocfg-1.0.1.tar.gz) = 12908
 SIZE (cargo/backtrace-0.3.54.tar.gz) = 72827
 SIZE (cargo/bitflags-1.2.1.tar.gz) = 16745
 SIZE (cargo/byteorder-1.3.4.tar.gz) = 21943
-SIZE (cargo/cc-1.0.61.tar.gz) = 53454
+SIZE (cargo/cc-1.0.73.tar.gz) = 57880
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/core-foundation-0.7.0.tar.gz) = 25384
@@ -103,7 +103,7 @@ SIZE (cargo/ipconfig-0.2.2.tar.gz) = 23017
 SIZE (cargo/itoa-0.4.6.tar.gz) = 12167
 SIZE (cargo/json-0.12.4.tar.gz) = 105942
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.80.tar.gz) = 513503
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/log-0.4.11.tar.gz) = 36276
 SIZE (cargo/miniz_oxide-0.4.3.tar.gz) = 50058
 SIZE (cargo/native-tls-0.2.4.tar.gz) = 32170

@@ -3,6 +3,7 @@ COMMENT =		ls alternative written in Rust
 GH_ACCOUNT =		ogham
 GH_PROJECT =		exa
 GH_TAGNAME =		v0.10.1
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -23,6 +24,8 @@ BUILD_DEPENDS +=	textproc/pandoc
 LIB_DEPENDS +=		devel/libgit2/libgit2
 WANTLIB +=		c c++abi m pthread git2
 
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 MODCARGO_FEATURES =	git
 
 post-install:

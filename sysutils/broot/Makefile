@@ -3,6 +3,7 @@ COMMENT =		new way to see and navigate directory trees
 GH_ACCOUNT =		Canop
 GH_PROJECT =		broot
 GH_TAGNAME =		v1.9.1
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -17,6 +18,8 @@ WANTLIB += c c++abi git2 m onig pthread
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 
 CONFIGURE_STYLE =	cargo
 

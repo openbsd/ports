@@ -3,6 +3,7 @@ COMMENT =		cat(1) clone with wings
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		bat
 GH_TAGNAME =		v0.21.0
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -13,6 +14,8 @@ PERMIT_PACKAGE =	Yes
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc
 
 WANTLIB += c c++abi git2 m onig pthread
 

@@ -3,7 +3,7 @@ COMMENT =		line oriented search tool using Rust's regex library #'
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
 GH_TAGNAME =		13.0.0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc sysutils
 
@@ -23,6 +23,8 @@ CONFIGURE_STYLE =	cargo
 PATCHORIG =		.openbsd.orig
 SEPARATE_BUILD =	Yes
 
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 MODCARGO_RUSTFLAGS =	-C debuginfo=0
 
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release

@@ -3,7 +3,7 @@ COMMENT =		command-line DNS lookup tool
 GH_ACCOUNT =		ogham
 GH_PROJECT =		dog
 GH_TAGNAME =		v0.1.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -23,6 +23,9 @@ MASTER_SITES0 =		https://github.com/ogham/dog/releases/download/${GH_TAGNAME}/
 DISTFILES +=            ${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} \
 			dog-${GH_TAGNAME}-x86_64-apple-darwin.zip:0
 
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
+
 # some entries from modcargo-gen-crates dropped;
 #
 # dns, dns-transport: these don't come from crates.io, they are in the
@@ -40,7 +43,7 @@ MODCARGO_CRATES +=	autocfg	1.0.1	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	backtrace	0.3.54	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	1.2.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	byteorder	1.3.4	# Unlicense OR MIT
-MODCARGO_CRATES +=	cc	1.0.61	# MIT/Apache-2.0
+MODCARGO_CRATES +=	cc	1.0.73	# MIT/Apache-2.0
 MODCARGO_CRATES +=	cfg-if	0.1.10	# MIT/Apache-2.0
 MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	core-foundation	0.7.0	# MIT / Apache-2.0
@@ -61,7 +64,7 @@ MODCARGO_CRATES +=	ipconfig	0.2.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	itoa	0.4.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	json	0.12.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.80	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.132	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	log	0.4.11	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	miniz_oxide	0.4.3	# MIT OR Zlib OR Apache-2.0
 MODCARGO_CRATES +=	native-tls	0.2.4	# MIT/Apache-2.0

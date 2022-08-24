@@ -3,6 +3,7 @@ COMMENT =	W3C webdriver for Gecko-based browsers
 GH_ACCOUNT =	mozilla
 GH_PROJECT =	geckodriver
 GH_TAGNAME =	v0.27.0
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -16,7 +17,7 @@ MODULES =		devel/cargo
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-# keep libc >=0.2.63 for sparc64 support
+# for riscv64 and powerpc64, please keep: libc >= 0.2.113
 MODCARGO_CRATES_UPDATE +=	libc
 
 MODCARGO_CRATES +=	adler 0.2.3	# 0BSD OR MIT OR Apache-2.0
@@ -73,7 +74,7 @@ MODCARGO_CRATES +=	iovec 0.1.4	# MIT/Apache-2.0
 MODCARGO_CRATES +=	itoa 0.4.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys 0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static 1.4.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc 0.2.79	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc 0.2.132	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	line-wrap 0.1.1	# Apache-2.0
 MODCARGO_CRATES +=	linked-hash-map 0.5.3	# MIT/Apache-2.0
 MODCARGO_CRATES +=	log 0.4.11	# MIT OR Apache-2.0

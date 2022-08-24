@@ -3,7 +3,7 @@ COMMENT =		JSON viewer
 GH_ACCOUNT =		PaulJuliusMartinez
 GH_PROJECT =		jless
 GH_TAGNAME =		v0.8.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -19,6 +19,8 @@ MODULES =		devel/cargo \
 DISTFILES +=		${GH_DISTFILE}
 
 CONFIGURE_STYLE =	cargo
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 MODCARGO_RUSTFLAGS =	-L/usr/X11R6/lib
 MODPY_RUNDEP =		No
 

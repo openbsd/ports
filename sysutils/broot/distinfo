@@ -19,7 +19,7 @@ SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3c
 SHA256 (cargo/bstr-0.2.17.tar.gz) = ujVp84Po8VmESfGkI+cumVaRN7R3QLHaEe8Zrz1cMiM=
 SHA256 (cargo/bytemuck-1.7.2.tar.gz) = cpVyRsQduCuO+IpUhhQ4MK3rgifvmDd0C97GdyTPLFs=
 SHA256 (cargo/byteorder-1.4.3.tar.gz) = FMGJxT0JiUVJnN+n7MY1Z884hrMzKzEqW0WF2NOmphA=
-SHA256 (cargo/cc-1.0.72.tar.gz) = IqkTe5XqBoZOAYN1tyrft9tub2jPyN9aBNACiAUEhe4=
+SHA256 (cargo/cc-1.0.73.tar.gz) = L/8qaSezu4f5WV1nGWpwST9idoenHYeg1pIkLDP1jBE=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/char_reader-0.1.1.tar.gz) = N6WbIt7CHKfWwXO9VD7qtM0vNs8h8DmkE0kFA0yH7To=
 SHA256 (cargo/chrono-0.4.19.tar.gz) = ZwrWjJCIwqljqqKYyzaWiM8/lGXOXi1MoQ5uAJihznM=
@@ -82,7 +82,7 @@ SHA256 (cargo/lazy-regex-proc_macros-2.2.2.tar.gz) = X75r8KBK9RwHl2Yl1QB+de2bi5V
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
 SHA256 (cargo/lazycell-1.3.0.tar.gz) = gw0Izh0dlB5rMGRfGg61ZDAT2DXON3ml/CCCYdvhD1U=
 SHA256 (cargo/lfs-core-0.4.2.tar.gz) = 3fAZUr1VsStR/Nnrp5ZEOyAJzoPVWh7tP6E8L2NcIyw=
-SHA256 (cargo/libc-0.2.107.tar.gz) = ++XiNATaW09VXvhevtmPtAg+VaAMMXgAvCpQ7enz0hk=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/libgit2-sys-0.12.25+1.3.0.tar.gz) = j2gWnvCNZRmy/hM+zGN0CNkzwBdLI7gLsveYKJZvuqs=
 SHA256 (cargo/libsqlite3-sys-0.20.1.tar.gz) = ZNMQWfIpNebDGDDbUkm6K37NVP1zqZCShvCmeqVcL70=
 SHA256 (cargo/libz-sys-1.1.3.tar.gz) = 3lQ1uFScFtQj7QwD26r+V89sM0R0TxJCUg1Zydjs7GY=
@@ -222,7 +222,7 @@ SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bstr-0.2.17.tar.gz) = 330350
 SIZE (cargo/bytemuck-1.7.2.tar.gz) = 27489
 SIZE (cargo/byteorder-1.4.3.tar.gz) = 22512
-SIZE (cargo/cc-1.0.72.tar.gz) = 57495
+SIZE (cargo/cc-1.0.73.tar.gz) = 57880
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/char_reader-0.1.1.tar.gz) = 4896
 SIZE (cargo/chrono-0.4.19.tar.gz) = 155663
@@ -285,7 +285,7 @@ SIZE (cargo/lazy-regex-proc_macros-2.2.2.tar.gz) = 3230
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
 SIZE (cargo/lazycell-1.3.0.tar.gz) = 12502
 SIZE (cargo/lfs-core-0.4.2.tar.gz) = 6384
-SIZE (cargo/libc-0.2.107.tar.gz) = 554639
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/libgit2-sys-0.12.25+1.3.0.tar.gz) = 1476839
 SIZE (cargo/libsqlite3-sys-0.20.1.tar.gz) = 2306064
 SIZE (cargo/libz-sys-1.1.3.tar.gz) = 1341394

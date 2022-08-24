@@ -3,6 +3,7 @@ COMMENT =		viewer for git and diff output
 GH_ACCOUNT =		dandavison
 GH_PROJECT =		delta
 GH_TAGNAME =		0.13.0
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -17,6 +18,8 @@ WANTLIB +=		c c++abi git2 m onig pthread
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			textproc/oniguruma

@@ -17,7 +17,7 @@ SHA256 (cargo/bytelines-2.2.2.tar.gz) = eR5OQNE+FGPe5TeyVCJcEsRuxzKPGBfGJkhzvBZv
 SHA256 (cargo/bytemuck-1.7.3.tar.gz) = Q5mJ5rjDjRtlcKOE7x5JyISBKPWpfzkUuu8CkghCcS8=
 SHA256 (cargo/byteorder-1.3.4.tar.gz) = CMSKrhEtSO2fBpszU46p4+kKomPPo9HCQwlhKx90ct4=
 SHA256 (cargo/bytesize-1.1.0.tar.gz) = bFjsNqrFBm1coX31Gz5wJ59WcKchAvV1LLfnyFat/HA=
-SHA256 (cargo/cc-1.0.66.tar.gz) = TASWg2qE+NBJV1hRa4YhpiK+t3wP7UGFcOUHZAk87Ug=
+SHA256 (cargo/cc-1.0.73.tar.gz) = L/8qaSezu4f5WV1nGWpwST9idoenHYeg1pIkLDP1jBE=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/chrono-0.4.19.tar.gz) = ZwrWjJCIwqljqqKYyzaWiM8/lGXOXi1MoQ5uAJihznM=
@@ -67,7 +67,7 @@ SHA256 (cargo/itoa-0.4.7.tar.gz) = 3SUDYCGw3oigr/a4UAUVY8ZRbQv1P4Y4k47bud5zJzY=
 SHA256 (cargo/itoa-1.0.1.tar.gz) = GquPw2dYi4nc7oOrD9ZrcrULcvoZBNcJUEWs4rDIHDU=
 SHA256 (cargo/jobserver-0.1.21.tar.gz) = XHExPruUOfdLANnS3Ow2RAvq9XpqoGIwaEQd182Bp/I=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.112.tar.gz) = GwPRfzZKOgQtXl1GsFO7v4LJLJQwxZLdTAZNxu6ZcSU=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/libgit2-sys-0.13.2+1.4.2.tar.gz) = OkLemlGlwS4A/A5MprwupDWC/GQYSI6PYV6QXYhvJYs=
 SHA256 (cargo/libz-sys-1.1.2.tar.gz) = YCETGSsI2484eWxOhcOelgwUWWUUDpGAGLzeGVJCllU=
 SHA256 (cargo/line-wrap-0.1.1.tar.gz) = 8wNENQoqUdpUwdU76T+t6KI35UXbzEvb5jVBPyEXyrk=
@@ -189,7 +189,7 @@ SIZE (cargo/bytelines-2.2.2.tar.gz) = 4218
 SIZE (cargo/bytemuck-1.7.3.tar.gz) = 27879
 SIZE (cargo/byteorder-1.3.4.tar.gz) = 21943
 SIZE (cargo/bytesize-1.1.0.tar.gz) = 9370
-SIZE (cargo/cc-1.0.66.tar.gz) = 53454
+SIZE (cargo/cc-1.0.73.tar.gz) = 57880
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/chrono-0.4.19.tar.gz) = 155663
@@ -239,7 +239,7 @@ SIZE (cargo/itoa-0.4.7.tar.gz) = 12099
 SIZE (cargo/itoa-1.0.1.tar.gz) = 11059
 SIZE (cargo/jobserver-0.1.21.tar.gz) = 21228
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.112.tar.gz) = 571445
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/libgit2-sys-0.13.2+1.4.2.tar.gz) = 1492799
 SIZE (cargo/libz-sys-1.1.2.tar.gz) = 1339299
 SIZE (cargo/line-wrap-0.1.1.tar.gz) = 10010

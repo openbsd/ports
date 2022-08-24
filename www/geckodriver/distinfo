@@ -52,7 +52,7 @@ SHA256 (cargo/iovec-0.1.4.tar.gz) = srPqb/leF1Rz+P/mp+t8ANBUJAMhuExXBRF1/jweB14=
 SHA256 (cargo/itoa-0.4.6.tar.gz) = 3G8617nRGgwAhC/43htg7lhmEEjrgEntM8c1lPNZ1+Y=
 SHA256 (cargo/kernel32-sys-0.2.2.tar.gz) = dQdiSylINDHAui2Crs6Mps26k4K/9N3Q90kFYMBWCY0=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.79.tar.gz) = JEj2Bm6A47/HkunJi/cFtLD8bo71tD5Yia/w6qnFh0M=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/line-wrap-0.1.1.tar.gz) = 8wNENQoqUdpUwdU76T+t6KI35UXbzEvb5jVBPyEXyrk=
 SHA256 (cargo/linked-hash-map-0.5.3.tar.gz) = jdWm1ZmdmQfNqO1nu9E306+AhSFsKsYt5b6GC9QfMEo=
 SHA256 (cargo/log-0.4.11.tar.gz) = T6vtF12kL+0foHRrDqcfQSqp01526V5ZsZLGS53Cv4s=
@@ -207,7 +207,7 @@ SIZE (cargo/iovec-0.1.4.tar.gz) = 8720
 SIZE (cargo/itoa-0.4.6.tar.gz) = 12167
 SIZE (cargo/kernel32-sys-0.2.2.tar.gz) = 24537
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.79.tar.gz) = 511752
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/line-wrap-0.1.1.tar.gz) = 10010
 SIZE (cargo/linked-hash-map-0.5.3.tar.gz) = 16130
 SIZE (cargo/log-0.4.11.tar.gz) = 36276

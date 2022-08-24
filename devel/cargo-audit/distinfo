@@ -25,7 +25,7 @@ SHA256 (cargo/canonical-path-2.0.2.tar.gz) = 5ungEyfmyG6S7HKxx5jUqUgQ8Ucgm74/+ra
 SHA256 (cargo/cargo-edit-0.7.0.tar.gz) = XhNLKJC/mZhALHgf4YeY88grxVXe4k6Lol5s0MQMew0=
 SHA256 (cargo/cargo-lock-6.0.0.tar.gz) = utAECOVvd4M1gC6iQLjXC+v26mxDx1COu2JZQxtfFsI=
 SHA256 (cargo/cargo_metadata-0.11.4.tar.gz) = o6VnwkuGdU1imt3C24njQKyTmNB7WHXvz/g344eOF+w=
-SHA256 (cargo/cc-1.0.61.tar.gz) = 7WfL3gg1YjjnX8Rla+R0lIHu/7CeGfMgolI31SIcmF0=
+SHA256 (cargo/cc-1.0.73.tar.gz) = L/8qaSezu4f5WV1nGWpwST9idoenHYeg1pIkLDP1jBE=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/chrono-0.4.19.tar.gz) = ZwrWjJCIwqljqqKYyzaWiM8/lGXOXi1MoQ5uAJihznM=
@@ -95,7 +95,7 @@ SHA256 (cargo/jobserver-0.1.21.tar.gz) = XHExPruUOfdLANnS3Ow2RAvq9XpqoGIwaEQd182
 SHA256 (cargo/js-sys-0.3.45.tar.gz) = ygWegdlIZmjxLUVaTqbapgC9QIE0zRfj0/taMtHwFvg=
 SHA256 (cargo/kernel32-sys-0.2.2.tar.gz) = dQdiSylINDHAui2Crs6Mps26k4K/9N3Q90kFYMBWCY0=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.80.tar.gz) = TVjRtwsASIj3ZN+/aiajsDQqFjLTOWjkoXnYARx2BhQ=
+SHA256 (cargo/libc-0.2.132.tar.gz) = g3Hk5TQcOpbbEn6yRlrGgc7UxDPgHdDpOK2+8mupO6U=
 SHA256 (cargo/libgit2-sys-0.12.14+1.1.0.tar.gz) = jyWvWOZJX3yvKRnQjyEt5VDPo+0vXnRJiJOOopK59Uk=
 SHA256 (cargo/libssh2-sys-0.2.19.tar.gz) = ykYiCFO6HFEvyCgm0INNh7BrzTwqQiQbfecvPS/hcFY=
 SHA256 (cargo/libz-sys-1.1.2.tar.gz) = YCETGSsI2484eWxOhcOelgwUWWUUDpGAGLzeGVJCllU=
@@ -270,7 +270,7 @@ SIZE (cargo/canonical-path-2.0.2.tar.gz) = 5536
 SIZE (cargo/cargo-edit-0.7.0.tar.gz) = 57596
 SIZE (cargo/cargo-lock-6.0.0.tar.gz) = 62842
 SIZE (cargo/cargo_metadata-0.11.4.tar.gz) = 16419
-SIZE (cargo/cc-1.0.61.tar.gz) = 53454
+SIZE (cargo/cc-1.0.73.tar.gz) = 57880
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/chrono-0.4.19.tar.gz) = 155663
@@ -340,7 +340,7 @@ SIZE (cargo/jobserver-0.1.21.tar.gz) = 21228
 SIZE (cargo/js-sys-0.3.45.tar.gz) = 67143
 SIZE (cargo/kernel32-sys-0.2.2.tar.gz) = 24537
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.80.tar.gz) = 513503
+SIZE (cargo/libc-0.2.132.tar.gz) = 595317
 SIZE (cargo/libgit2-sys-0.12.14+1.1.0.tar.gz) = 1603930
 SIZE (cargo/libssh2-sys-0.2.19.tar.gz) = 473458
 SIZE (cargo/libz-sys-1.1.2.tar.gz) = 1339299

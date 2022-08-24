@@ -3,6 +3,7 @@ COMMENT =		create books from markdown files
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
 GH_TAGNAME =            v0.4.13
+REVISION =		0
 PKGNAME =               ${DISTNAME:L}
 
 CATEGORIES =		textproc www
@@ -17,6 +18,9 @@ WANTLIB += c c++abi m pthread
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 
 MODULES =		devel/cargo
+
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	libc
 
 MODCARGO_CRATES +=	aho-corasick	0.7.18	# Unlicense/MIT
 MODCARGO_CRATES +=	ammonia	3.1.2	# MIT OR Apache-2.0
@@ -100,7 +104,7 @@ MODCARGO_CRATES +=	itoa	0.4.8	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	kernel32-sys	0.2.2	# MIT
 MODCARGO_CRATES +=	lazy_static	1.4.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	lazycell	1.3.0	# MIT/Apache-2.0
-MODCARGO_CRATES +=	libc	0.2.100	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libc	0.2.132	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	log	0.4.14	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	mac	0.1.1	# MIT/Apache-2.0
 MODCARGO_CRATES +=	maplit	1.0.2	# MIT/Apache-2.0

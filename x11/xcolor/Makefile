@@ -5,7 +5,7 @@ COMMENT =	lightweight color picker
 GH_ACCOUNT =	Soft
 GH_PROJECT =	xcolor
 GH_TAGNAME =	0.5.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -31,6 +31,8 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 MODCARGO_RUSTFLAGS =	-L${X11BASE}/lib
 
 post-install:
