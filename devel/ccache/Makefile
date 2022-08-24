@@ -1,6 +1,6 @@
 COMMENT =	C/C++ compiler front-end to cache compiled object code
 
-V =		4.6.1
+V =		4.6.2
 DISTNAME =	ccache-$V
 
 CATEGORIES =	devel
