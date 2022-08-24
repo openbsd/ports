@@ -1,8 +1,8 @@
 COMMENT =	QuakeWorld server
 
-GH_ACCOUNT =	deurk
+GH_ACCOUNT =	QW-Group
 GH_PROJECT =	mvdsv
-GH_TAGNAME =	0.34
+GH_TAGNAME =	0.35
 
 CATEGORIES =	games
 
@@ -23,13 +23,10 @@ DISTFILES =	mvdsv-{}${GH_TAGNAME}.tar.gz \
 		qwprogs-${QWP_VERSION}{qwprogs}.dat:0
 EXTRACT_ONLY =	mvdsv-${GH_TAGNAME}.tar.gz
 
-MODULES =	devel/meson
+MODULES =	devel/cmake
 
 LIB_DEPENDS =	devel/pcre \
 		net/curl
-
-# help ld.bfd find libnghttp2
-LDFLAGS =	-L${LOCALBASE}/lib
 
 NO_TEST =	Yes
 
