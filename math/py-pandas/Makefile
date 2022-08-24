@@ -1,9 +1,8 @@
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	1.3.4
+MODPY_EGG_VERSION =	1.4.3
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		math
 
@@ -12,16 +11,17 @@ HOMEPAGE =		https://pandas.pydata.org/
 # BSD 3-Clause
 PERMIT_PACKAGE =	Yes
 
+WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
+
 FLAVORS =		python3
 FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	pandas
-
-WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
+# test_dst.py: ValueError: could not convert string to float: '2022.2.1'
+MODPY_PYTEST_ARGS =	pandas \
+			--ignore pandas/tests/tseries/offsets/test_dst.py
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -56,9 +56,9 @@ PORTHOME =		${WRKDIR}
 TEST_ENV +=		TZ=UTC
 
 # XXX tarball does not include all files required for the test suite, as such
-# numerous tests fail. pytest 5.0.1 is also needed.
+# numerous tests fail.
 do-test:
-	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
+	#cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace
 	@${MODPY_TEST_TARGET}
 
 .include <bsd.port.mk>
