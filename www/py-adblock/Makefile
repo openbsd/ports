@@ -1,3 +1,6 @@
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
+
 BROKEN-i386 =	fatal runtime error: Rust cannot catch foreign exceptions
 #.if ${MACHINE_ARCH} == i386
 #DPB_PROPERTIES = lonesome

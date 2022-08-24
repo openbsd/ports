@@ -1,4 +1,5 @@
-BROKEN-sparc64 =	ring-0.6.20 does not build on sparc64
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
 
 COMMENT =		RPKI "relying party" software
 

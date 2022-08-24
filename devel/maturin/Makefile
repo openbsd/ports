@@ -1,4 +1,5 @@
-BROKEN-sparc64 =	ring-v0.16.20 does not support sparc64; re-check if an update uses newer ring
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 
 COMMENT =	develop crates with pyo3, rust-cpython and cffi bindings
 

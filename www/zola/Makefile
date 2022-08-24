@@ -1,5 +1,5 @@
-BROKEN-sparc64 =	ring-0.16.11 module fails build on sparc64 arch
-BROKEN-aarch64 =	ring-0.16.11 module fails build on aarch64
+# ring-v0.16.11 does not support those archs
+NOT_FOR_ARCHS =	aarch64 powerpc64 riscv64 sparc64
 
 COMMENT =	static site generator
 

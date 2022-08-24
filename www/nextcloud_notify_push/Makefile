@@ -1,9 +1,10 @@
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS = powerpc64 riscv64 sparc64
+
 # 20220112 - build often fails due to out of memory
 # memory allocation of 402653184 bytes failed
 # error: could not compile `notify_push`
-NOT_FOR_ARCHS= =	i386
-
-BROKEN-sparc64 =        ring-0.16.20 does not build on sparc64
+NOT_FOR_ARCHS+=		i386
 
 COMMENT =		update notifications for nextcloud clients
 

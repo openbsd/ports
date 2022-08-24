@@ -1,6 +1,7 @@
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
+
 BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
-BROKEN-sparc64=	ring build-script error: called `Option::unwrap()` on a `None` value
-BROKEN-aarch64=	ring-0.16.11 module fails build on aarch64
 
 COMMENT =	semi-automatic OSINT framework and package manager
 

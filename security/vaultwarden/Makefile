@@ -1,4 +1,6 @@
-BROKEN-sparc64 =	ring-0.16.20 does not build on sparc64
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS =		powerpc64 riscv64 sparc64
+
 BROKEN-i386 =		raw-cpuid-10.2.0/src/lib.rs:80:37 "could not find `arch` in `self`"
 
 COMMENT =		unofficial bitwarden compatible server
