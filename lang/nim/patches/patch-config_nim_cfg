@@ -1,5 +1,7 @@
- - use clang
- - don't hardcode -O3 and respect ${CFLAGS}
+- use clang
+- don't hardcode -O3 and respect ${CFLAGS}
+- don't hardcode /usr/local and /usr/X11R6
+- remove /usr/pkg tentacles
 
 Index: config/nim.cfg
 --- config/nim.cfg.orig
@@ -22,7 +24,41 @@ Index: config/nim.cfg
    @elif haiku:
      gcc.options.linker = "-Wl,--as-needed -lnetwork"
      gcc.cpp.options.linker = "-Wl,--as-needed -lnetwork"
-@@ -229,15 +229,15 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+@@ -195,21 +195,27 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
+ 
+ # Options for FreeBSD, OpenBSD, NetBSD linker to add locations for searching
+ # shared libraries.
+-@if freebsd or openbsd or netbsd:
++@if openbsd:
++  gcc.options.linker = "-Wl,-rpath=.:${LOCALBASE}/lib:${X11BASE}/lib"
++  gcc.cpp.options.linker = "-Wl,-rpath=.:${LOCALBASE}/lib:${X11BASE}/lib"
++  llvm_gcc.options.linker = "-Wl,-rpath=.:${LOCALBASE}/lib:${X11BASE}/lib"
++  llvm_gcc.cpp.options.linker = "-Wl,-rpath=.:${LOCALBASE}/lib:${X11BASE}/lib"
++  clang.options.linker = "-Wl,-rpath=.:${LOCALBASE}/lib:${X11BASE}/lib"
++  clang.cpp.options.linker = "-Wl,-rpath=.:${LOCALBASE}/lib:${X11BASE}/lib"
++@end
++
++@if freebsd or netbsd:
+   gcc.options.linker = "-Wl,-rpath=.:/usr/local/lib:/usr/pkg/lib:/usr/X11R6/lib"
+   gcc.cpp.options.linker = "-Wl,-rpath=.:/usr/local/lib:/usr/pkg/lib:/usr/X11R6/lib"
+   llvm_gcc.options.linker = "-Wl,-rpath=.:/usr/local/lib:/usr/pkg/lib:/usr/X11R6/lib"
+   llvm_gcc.cpp.options.linker = "-Wl,-rpath=.:/usr/local/lib:/usr/pkg/lib:/usr/X11R6/lib"
+   clang.options.linker = "-Wl,-rpath=.:/usr/local/lib:/usr/pkg/lib:/usr/X11R6/lib"
+   clang.cpp.options.linker = "-Wl,-rpath=.:/usr/local/lib:/usr/pkg/lib:/usr/X11R6/lib"
+-
+-  cincludes: "/usr/local/include"
+-  clibdir: "/usr/local/lib"
+ @end
+ 
+ @if freebsd or openbsd:
+-  cincludes: "/usr/local/include"
+-  clibdir: "/usr/local/lib"
++  cincludes: "${LOCALBASE}/include"
++  clibdir: "${LOCALBASE}/lib"
+ @elif netbsd:
+   cincludes: "/usr/pkg/include"
+   clibdir: "/usr/pkg/lib"
+@@ -229,15 +235,15 @@ clang.objc.options.linker = "-lobjc -lgnustep-base"
    gcc.options.linker %= "-L $WIND_BASE/target/lib/usr/lib/ppc/PPC32/common -mrtp -fno-strict-aliasing -D_C99 -D_HAS_C9X -std=c99 -fasm -Wall -Wno-write-strings"
  @end
  
@@ -42,7 +78,7 @@ Index: config/nim.cfg
  gcc.cpp.options.debug = "-g3 -Og"
  #passl = "-pg"
  
-@@ -251,8 +251,8 @@ llvm_gcc.options.size = "-Os"
+@@ -251,8 +257,8 @@ llvm_gcc.options.size = "-Os"
  clang.options.debug = "-g"
  clang.cpp.options.debug = "-g"
  clang.options.always = "-w -ferror-limit=3"
