@@ -3,7 +3,7 @@ BROKEN-hppa=	ICE on filter/pdftopdf/qpdf_pdftopdf.cc:147
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.28.15
+DISTNAME=	cups-filters-1.28.16
 
 CATEGORIES=	print
 
@@ -18,8 +18,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common avahi-glib
-WANTLIB += brotlidec brotlienc c crypto cups dbus-1 execinfo expat
-WANTLIB += ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += brotlidec brotlienc c crypto cups dbus-1 execinfo exif
+WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gnutls gobject-2.0 hogweed iconv idn2 intl jpeg
 WANTLIB += lcms2 lzma m nettle openjp2 p11-kit pcre png poppler
 WANTLIB += poppler-cpp qpdf ssl tasn1 tiff unistring z zstd
@@ -41,7 +41,8 @@ BUILD_DEPENDS=	print/ghostscript/gnu \
 RUN_DEPENDS=	print/ghostscript/gnu \
 		print/poppler,-utils
 
-LIB_DEPENDS=	net/avahi,-glib \
+LIB_DEPENDS=	graphics/libexif \
+		net/avahi,-glib \
 		print/cups,-libs \
 		print/poppler \
 		print/qpdf
