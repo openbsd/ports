@@ -1692,6 +1692,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sts/2011-06-15/examples-1
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sts/2011-06-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sts/2011-06-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/support/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/support-app/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/support-app/2021-08-20/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/support-app/2021-08-20/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/support-app/2021-08-20/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/support/2013-04-15/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/support/2013-04-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/support/2013-04-15/paginators-1.json
