@@ -3,26 +3,26 @@
 @lib lib/libkorganizer_core.so.${LIBkorganizer_core_VERSION}
 @lib lib/libkorganizer_interfaces.so.${LIBkorganizer_interfaces_VERSION}
 @lib lib/libkorganizerprivate.so.${LIBkorganizerprivate_VERSION}
-lib/qt5/plugins/kontact5/
-@so lib/qt5/plugins/kontact5/kontact_journalplugin.so
-@so lib/qt5/plugins/kontact5/kontact_korganizerplugin.so
-@so lib/qt5/plugins/kontact5/kontact_specialdatesplugin.so
-@so lib/qt5/plugins/kontact5/kontact_todoplugin.so
 @so lib/qt5/plugins/korganizerpart.so
-lib/qt5/plugins/pim/kcms/korganizer/
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configcolorsandfonts.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configdesignerfields.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configfreebusy.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configgroupscheduling.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configmain.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configplugins.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configtime.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_configviews.so
-@so lib/qt5/plugins/pim/kcms/korganizer/korganizer_userfeedback.so
-lib/qt5/plugins/pim/kcms/summary/
-@so lib/qt5/plugins/pim/kcms/summary/kcmapptsummary.so
-@so lib/qt5/plugins/pim/kcms/summary/kcmsdsummary.so
-@so lib/qt5/plugins/pim/kcms/summary/kcmtodosummary.so
+lib/qt5/plugins/pim5/kcms/korganizer/
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configcolorsandfonts.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configdesignerfields.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configfreebusy.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configgroupscheduling.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configmain.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configplugins.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configtime.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_configviews.so
+@so lib/qt5/plugins/pim5/kcms/korganizer/korganizer_userfeedback.so
+lib/qt5/plugins/pim5/kcms/summary/
+@so lib/qt5/plugins/pim5/kcms/summary/kcmapptsummary.so
+@so lib/qt5/plugins/pim5/kcms/summary/kcmsdsummary.so
+@so lib/qt5/plugins/pim5/kcms/summary/kcmtodosummary.so
+lib/qt5/plugins/pim5/kontact/
+@so lib/qt5/plugins/pim5/kontact/kontact_journalplugin.so
+@so lib/qt5/plugins/pim5/kontact/kontact_korganizerplugin.so
+@so lib/qt5/plugins/pim5/kontact/kontact_specialdatesplugin.so
+@so lib/qt5/plugins/pim5/kontact/kontact_todoplugin.so
 share/applications/korganizer-import.desktop
 share/applications/korganizer-view.desktop
 share/applications/org.kde.korganizer.desktop
@@ -166,6 +166,7 @@ share/locale/hi/LC_MESSAGES/korganizer.mo
 share/locale/hr/LC_MESSAGES/korganizer.mo
 share/locale/hu/LC_MESSAGES/korganizer.mo
 share/locale/ia/LC_MESSAGES/korganizer.mo
+share/locale/id/LC_MESSAGES/korganizer.mo
 share/locale/is/LC_MESSAGES/korganizer.mo
 share/locale/it/LC_MESSAGES/korganizer.mo
 share/locale/ja/LC_MESSAGES/korganizer.mo

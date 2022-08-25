@@ -5,24 +5,23 @@ COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 CATEGORIES =	devel x11
 
 DISTNAME =	kdevelop-${MODKDE_VERSION}
-REVISION =	1
 
 HOMEPAGE =	https://www.kdevelop.org/
 
-SHARED_LIBS +=  KDevPlatformDebugger      3.0 # 5.2
-SHARED_LIBS +=  KDevPlatformDocumentation 2.0 # 5.2
-SHARED_LIBS +=  KDevPlatformInterfaces    2.1 # 5.2
-SHARED_LIBS +=  KDevPlatformLanguage      4.1 # 5.2
+SHARED_LIBS +=  KDevPlatformDebugger      4.0 # 5.2
+SHARED_LIBS +=  KDevPlatformDocumentation 3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformInterfaces    3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformLanguage      5.0 # 5.2
 SHARED_LIBS +=  KDevPlatformOutputView    2.0 # 5.2
 SHARED_LIBS +=  KDevPlatformProject       3.0 # 5.2
-SHARED_LIBS +=  KDevPlatformSerialization 3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformSerialization 4.0 # 5.2
 SHARED_LIBS +=  KDevPlatformShell         4.0 # 5.2
 SHARED_LIBS +=  KDevPlatformSublime       3.0 # 5.2
 SHARED_LIBS +=  KDevPlatformTests         4.0 # 5.2
-SHARED_LIBS +=  KDevPlatformUtil          3.0 # 5.2
+SHARED_LIBS +=  KDevPlatformUtil          3.1 # 5.2
 SHARED_LIBS +=  KDevPlatformVcs           3.0 # 5.2
-SHARED_LIBS +=  KDevClangPrivate          1.0 # 5.5
-SHARED_LIBS +=  KDevCMakeCommon           1.0 # 5.5
+SHARED_LIBS +=  KDevClangPrivate          1.1 # 5.5
+SHARED_LIBS +=  KDevCMakeCommon           2.0 # 5.5
 SHARED_LIBS +=  KDevCompileAnalyzerCommon 0.0 # 5.5
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>

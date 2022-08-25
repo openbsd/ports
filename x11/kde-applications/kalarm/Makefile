@@ -2,7 +2,16 @@ COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
 
-SHARED_LIBS +=  kalarmprivate             1.0 # 0.0
+SHARED_LIBS +=  kalarmcalendar           1.0 # 0.0
+SHARED_LIBS +=  kalarmplugin             1.0 # 0.0
+
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+MODKDE5_TRANSLATIONS = yes
+MODKDE5_DOCS = yes
+
+MODKF5_L10N_CONFLICT = yes
+MODKF5_I18N_CONFLICT = yes
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Auth
@@ -14,19 +23,11 @@ WANTLIB += KF5Holidays KF5I18n KF5IdentityManagement KF5IdentityManagementWidget
 WANTLIB += KF5IdleTime KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5MailTransport KF5MailTransportAkonadi KF5Mime KF5Notifications
-WANTLIB += KF5NotifyConfig KF5PimCommon KF5PimTextEdit KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5NotifyConfig KF5PimTextEdit KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5Wallet KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5X11Extras Qt5Xml X11
 WANTLIB += c m phonon4qt5
-
-MODKDE5_DESKTOP_FILE = yes
-MODKDE5_ICON_CACHE = yes
-MODKDE5_TRANSLATIONS = yes
-MODKDE5_DOCS = yes
-
-MODKF5_L10N_CONFLICT = yes
-MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon
@@ -72,8 +73,10 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/pimcommon \
 		x11/qt5/qtx11extras
+
+CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/qgpgme
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/gpgme++
 
 pre-configure:
 	find ${WRKSRC} -type f \( -name \*.cpp -o -name \*.h \) -exec \

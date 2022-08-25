@@ -5,7 +5,6 @@ include/KF5/EventViews/EventViews/CalendarDecoration
 include/KF5/EventViews/EventViews/ConfigDialogInterface
 include/KF5/EventViews/EventViews/EventView
 include/KF5/EventViews/EventViews/Helper
-include/KF5/EventViews/EventViews/IncidenceTreeModel
 include/KF5/EventViews/EventViews/JournalView
 include/KF5/EventViews/EventViews/ListView
 include/KF5/EventViews/EventViews/MonthView
@@ -29,7 +28,6 @@ include/KF5/EventViews/eventviews/configdialoginterface.h
 include/KF5/EventViews/eventviews/eventview.h
 include/KF5/EventViews/eventviews/eventviews_export.h
 include/KF5/EventViews/eventviews/helper.h
-include/KF5/EventViews/eventviews/incidencetreemodel.h
 include/KF5/EventViews/eventviews/journalview.h
 include/KF5/EventViews/eventviews/listview.h
 include/KF5/EventViews/eventviews/monthview.h
@@ -50,6 +48,7 @@ lib/cmake/KF5EventViews/KF5EventViewsTargets.cmake
 share/kf5/mkspecs/qt_EventViews.pri
 share/kservicetypes5/calendardecoration.desktop
 share/locale/ar/LC_MESSAGES/libeventviews.mo
+share/locale/bg/LC_MESSAGES/libeventviews.mo
 share/locale/bs/LC_MESSAGES/libeventviews.mo
 share/locale/ca/LC_MESSAGES/libeventviews.mo
 share/locale/ca@valencia/LC_MESSAGES/libeventviews.mo
@@ -86,6 +85,7 @@ share/locale/ru/LC_MESSAGES/libeventviews.mo
 share/locale/sk/LC_MESSAGES/libeventviews.mo
 share/locale/sl/LC_MESSAGES/libeventviews.mo
 share/locale/sv/LC_MESSAGES/libeventviews.mo
+share/locale/ta/LC_MESSAGES/libeventviews.mo
 share/locale/tr/LC_MESSAGES/libeventviews.mo
 share/locale/ug/LC_MESSAGES/libeventviews.mo
 share/locale/uk/LC_MESSAGES/libeventviews.mo

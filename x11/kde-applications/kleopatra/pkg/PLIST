@@ -3,10 +3,9 @@
 @bin bin/kwatchgnupg
 @lib lib/libkleopatraclientcore.so.${LIBkleopatraclientcore_VERSION}
 @lib lib/libkleopatraclientgui.so.${LIBkleopatraclientgui_VERSION}
-lib/qt5/plugins/pim/
-lib/qt5/plugins/pim/kcms/
-lib/qt5/plugins/pim/kcms/kleopatra/
-@so lib/qt5/plugins/pim/kcms/kleopatra/kleopatra_config_gnupgsystem.so
+lib/qt5/plugins/pim5/kcms/
+lib/qt5/plugins/pim5/kcms/kleopatra/
+@so lib/qt5/plugins/pim5/kcms/kleopatra/kleopatra_config_gnupgsystem.so
 share/applications/kleopatra_import.desktop
 share/applications/org.kde.kleopatra.desktop
 share/doc/HTML/ca/kleopatra/
@@ -63,6 +62,12 @@ share/doc/HTML/pt_BR/kleopatra/index.docbook
 share/doc/HTML/pt_BR/kwatchgnupg/
 share/doc/HTML/pt_BR/kwatchgnupg/index.cache.bz2
 share/doc/HTML/pt_BR/kwatchgnupg/index.docbook
+share/doc/HTML/ru/kleopatra/
+share/doc/HTML/ru/kleopatra/index.cache.bz2
+share/doc/HTML/ru/kleopatra/index.docbook
+share/doc/HTML/ru/kwatchgnupg/
+share/doc/HTML/ru/kwatchgnupg/index.cache.bz2
+share/doc/HTML/ru/kwatchgnupg/index.docbook
 share/doc/HTML/sv/kleopatra/
 share/doc/HTML/sv/kleopatra/index.cache.bz2
 share/doc/HTML/sv/kleopatra/index.docbook
@@ -96,7 +101,6 @@ share/kleopatra/pics/kleopatra_splashscreen.png
 share/kleopatra/pics/kleopatra_splashscreen.svgz
 share/kleopatra/pics/kleopatra_wizard.png
 share/kleopatra/pics/kleopatra_wizard.svgz
-share/kservices5/kleopatra_config_gnupgsystem.desktop
 share/kwatchgnupg/
 share/kwatchgnupg/pics/
 share/kwatchgnupg/pics/kwatchgnupg.png

@@ -11,9 +11,10 @@ WANTLIB += KF5I18n KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5NewStuff KF5NewStuffCore KF5Notifications KF5Purpose
 WANTLIB += KF5PurposeWidgets KF5Service KF5Solid KF5WaylandClient
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5X11Extras Qt5Xml X11 c m xcb xcb-cursor xcb-image
-WANTLIB += xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c kImageAnnotator
+WANTLIB += m xcb xcb-cursor xcb-image xcb-render xcb-shape xcb-shm
+WANTLIB += xcb-util xcb-xfixes
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -22,7 +23,8 @@ MODKDE5_DOCS = yes
 
 MODULES +=	lang/python
 
-LIB_DEPENDS =	devel/kf5/attica \
+LIB_DEPENDS =	graphics/kimageannotator>=0.6.0 \
+		devel/kf5/attica \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

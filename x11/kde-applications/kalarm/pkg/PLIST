@@ -1,6 +1,9 @@
 @bin bin/kalarm
 @bin bin/kalarmautostart
-@lib lib/libkalarmprivate.so.${LIBkalarmprivate_VERSION}
+@lib lib/libkalarmcalendar.so.${LIBkalarmcalendar_VERSION}
+@lib lib/libkalarmplugin.so.${LIBkalarmplugin_VERSION}
+lib/qt5/plugins/pim5/kalarm/
+@so lib/qt5/plugins/pim5/kalarm/akonadiplugin.so
 @bin libexec/kauth/kalarm_helper
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg

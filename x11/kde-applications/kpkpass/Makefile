@@ -2,7 +2,7 @@ COMMENT =	KDE PIM Apple wallet file support library
 DISTNAME =	kpkpass-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPimPkPass      1.0 # 5.13.2
+SHARED_LIBS +=  KPimPkPass      1.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive Qt5Core Qt5Gui m
 

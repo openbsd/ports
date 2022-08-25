@@ -42,15 +42,15 @@ lib/cmake/KF5AkonadiSearch/KF5AkonadiSearchTargets.cmake
 @lib lib/libKF5AkonadiSearchDebug.so.${LIBKF5AkonadiSearchDebug_VERSION}
 @lib lib/libKF5AkonadiSearchPIM.so.${LIBKF5AkonadiSearchPIM_VERSION}
 @lib lib/libKF5AkonadiSearchXapian.so.${LIBKF5AkonadiSearchXapian_VERSION}
-@so lib/qt5/plugins/akonadi/akonadi_search_plugin.so
-@so lib/qt5/plugins/akonadi/calendarsearchstore.so
-@so lib/qt5/plugins/akonadi/contactsearchstore.so
-@so lib/qt5/plugins/akonadi/emailsearchstore.so
-@so lib/qt5/plugins/akonadi/notesearchstore.so
 lib/qt5/plugins/kf5/krunner/
 lib/qt5/plugins/kf5/krunner/kcms/
 @so lib/qt5/plugins/kf5/krunner/kcms/kcm_krunner_pimcontacts.so
 @so lib/qt5/plugins/kf5/krunner/krunner_pimcontacts.so
+@so lib/qt5/plugins/pim5/akonadi/akonadi_search_plugin.so
+@so lib/qt5/plugins/pim5/akonadi/calendarsearchstore.so
+@so lib/qt5/plugins/pim5/akonadi/contactsearchstore.so
+@so lib/qt5/plugins/pim5/akonadi/emailsearchstore.so
+@so lib/qt5/plugins/pim5/akonadi/notesearchstore.so
 share/akonadi/agents/akonadiindexingagent.desktop
 share/locale/ar/LC_MESSAGES/akonadi_search.mo
 share/locale/az/LC_MESSAGES/akonadi_search.mo

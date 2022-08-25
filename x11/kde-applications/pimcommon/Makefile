@@ -2,7 +2,7 @@ COMMENT =	common libraries for KDE PIM
 DISTNAME =	pimcommon-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5PimCommon              3.0 # 5.13.3
+SHARED_LIBS +=  KF5PimCommon              4.0 # 5.13.3
 SHARED_LIBS +=  KF5PimCommonAkonadi       6.0 # 5.13.3
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
@@ -12,11 +12,11 @@ WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5Contacts KF5CoreAddons KF5GrantleeTheme KF5I18n
 WANTLIB += KF5IMAP KF5ItemModels KF5ItemViews KF5JobWidgets KF5KCMUtils
 WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Ldap KF5Libkdepim
-WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5PimTextEdit
-WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5Solid KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += X11 m
+WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5PimTextEdit KF5Purpose KF5PurposeWidgets KF5Service
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml X11 m
 
 MODKDE5_TRANSLATIONS = yes
 

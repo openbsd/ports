@@ -4,7 +4,7 @@ COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
 
-SHARED_LIBS +=  kontactprivate       1.0 # 5.13.2
+SHARED_LIBS +=  kontactprivate       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Auth KF5AuthCore
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui

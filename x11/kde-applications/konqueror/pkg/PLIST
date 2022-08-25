@@ -27,9 +27,9 @@ lib/cmake/KF5Konq/KF5KonqTargets.cmake
 @so lib/qt5/plugins/akregatorkonqfeedicon.so
 @so lib/qt5/plugins/autorefresh.so
 @so lib/qt5/plugins/babelfishplugin.so
-@so lib/qt5/plugins/dirfilterplugin.so
 lib/qt5/plugins/dolphinpart/
 lib/qt5/plugins/dolphinpart/kpartplugins/
+@so lib/qt5/plugins/dolphinpart/kpartplugins/dirfilterplugin.so
 @so lib/qt5/plugins/dolphinpart/kpartplugins/kimgallery.so
 @so lib/qt5/plugins/dolphinpart/kpartplugins/konq_shellcmdplugin.so
 lib/qt5/plugins/kf5/kfileitemaction/
@@ -43,7 +43,6 @@ lib/qt5/plugins/khtml/kpartplugins/
 @so lib/qt5/plugins/khtml/kpartplugins/akregatorkonqfeediconkhtml_kpartplugins.so
 @so lib/qt5/plugins/khtml/kpartplugins/autorefreshkhtml_kpartplugins.so
 @so lib/qt5/plugins/khtml/kpartplugins/babelfishpluginkhtml_kpartplugins.so
-@so lib/qt5/plugins/khtml/kpartplugins/dirfilterpluginkhtml_kpartplugins.so
 @so lib/qt5/plugins/khtml/kpartplugins/khtmlsettingspluginkhtml_kpartplugins.so
 @so lib/qt5/plugins/khtml/kpartplugins/khtmlttspluginkhtml_kpartplugins.so
 @so lib/qt5/plugins/khtml/kpartplugins/konqueror_kget_browser_integrationkhtml_kpartplugins.so
@@ -74,7 +73,6 @@ lib/qt5/plugins/kwebkitpart/kpartplugins/
 @so lib/qt5/plugins/kwebkitpart/kpartplugins/akregatorkonqfeediconkwebkitpart_kpartplugins.so
 @so lib/qt5/plugins/kwebkitpart/kpartplugins/autorefreshkwebkitpart_kpartplugins.so
 @so lib/qt5/plugins/kwebkitpart/kpartplugins/babelfishpluginkwebkitpart_kpartplugins.so
-@so lib/qt5/plugins/kwebkitpart/kpartplugins/dirfilterpluginkwebkitpart_kpartplugins.so
 @so lib/qt5/plugins/kwebkitpart/kpartplugins/khtmlsettingspluginkwebkitpart_kpartplugins.so
 @so lib/qt5/plugins/kwebkitpart/kpartplugins/khtmlttspluginkwebkitpart_kpartplugins.so
 @so lib/qt5/plugins/kwebkitpart/kpartplugins/konqueror_kget_browser_integrationkwebkitpart_kpartplugins.so
@@ -88,7 +86,6 @@ lib/qt5/plugins/webenginepart/kpartplugins/
 @so lib/qt5/plugins/webenginepart/kpartplugins/akregatorkonqfeediconwebenginepart_kpartplugins.so
 @so lib/qt5/plugins/webenginepart/kpartplugins/autorefreshwebenginepart_kpartplugins.so
 @so lib/qt5/plugins/webenginepart/kpartplugins/babelfishpluginwebenginepart_kpartplugins.so
-@so lib/qt5/plugins/webenginepart/kpartplugins/dirfilterpluginwebenginepart_kpartplugins.so
 @so lib/qt5/plugins/webenginepart/kpartplugins/khtmlsettingspluginwebenginepart_kpartplugins.so
 @so lib/qt5/plugins/webenginepart/kpartplugins/khtmlttspluginwebenginepart_kpartplugins.so
 @so lib/qt5/plugins/webenginepart/kpartplugins/konqueror_kget_browser_integrationwebenginepart_kpartplugins.so
@@ -102,6 +99,7 @@ share/applications/kfmclient_dir.desktop
 share/applications/kfmclient_html.desktop
 share/applications/kfmclient_war.desktop
 share/applications/konqbrowser.desktop
+share/applications/org.kde.konqueror.desktop
 share/config.kcfg/
 share/config.kcfg/kcreatewebarchive.kcfg
 share/config.kcfg/konqueror.kcfg
@@ -2120,6 +2118,7 @@ share/locale/zh_TW/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo
 share/locale/zh_TW/LC_MESSAGES/searchbarplugin.mo
 share/locale/zh_TW/LC_MESSAGES/uachangerplugin.mo
+share/locale/zh_TW/LC_MESSAGES/webarchiver.mo
 share/locale/zh_TW/LC_MESSAGES/webenginepart.mo
 share/metainfo/
 share/metainfo/org.kde.konqueror.appdata.xml

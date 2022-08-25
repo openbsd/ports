@@ -1,15 +1,14 @@
 COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
 
-SHARED_LIBS +=  KF5MessageComposer       10.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageComposer       11.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           3.1 # 5.13.2
-SHARED_LIBS +=  KF5MessageList           5.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageViewer         6.1 # 5.13.2
-SHARED_LIBS +=  KF5MimeTreeParser        4.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageList           6.0 # 5.13.2
+SHARED_LIBS +=  KF5MessageViewer         6.2 # 5.13.2
+SHARED_LIBS +=  KF5MimeTreeParser        4.1 # 5.13.2
 SHARED_LIBS +=  KF5TemplateParser        3.0 # 5.13.2
-SHARED_LIBS +=  KF5WebEngineViewer       6.1 # 5.13.2
+SHARED_LIBS +=  KF5WebEngineViewer       7.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM KF5AkonadiWidgets
@@ -82,8 +81,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 
 TEST_IS_INTERACTIVE =	X11
 
-CFLAGS +=		-I${LOCALBASE}/include
-CXXFLAGS +=		-I${LOCALBASE}/include
+CXXFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/QGpgME -I${LOCALBASE}/include/gpgme++
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Inotify=On

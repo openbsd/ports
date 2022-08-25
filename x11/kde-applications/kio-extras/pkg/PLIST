@@ -10,6 +10,7 @@ lib/cmake/KioArchive/KioArchiveTargets.cmake
 @so lib/qt5/plugins/kf5/kded/recentdocumentsnotifier.so
 @so lib/qt5/plugins/kf5/kded/smbwatcher.so
 lib/qt5/plugins/kf5/kfileitemaction/
+@so lib/qt5/plugins/kf5/kfileitemaction/forgetfileitemaction.so
 @so lib/qt5/plugins/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 @so lib/qt5/plugins/kf5/kio/about.so
 @so lib/qt5/plugins/kf5/kio/activities.so

@@ -3,13 +3,12 @@ DISTNAME =	kdenetwork-filesharing-${VERSION}
 PKGNAME =	kdenetwork-filesharing-kf5-${VERSION}
 CATEGORIES =	devel
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Completion
-WANTLIB += KF5ConfigCore KF5CoreAddons KF5Declarative KF5I18n
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Package
-WANTLIB += KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets X11
-WANTLIB += c m
+WANTLIB += ${COMPILER_LIBCXX} KF5AuthCore KF5Completion KF5ConfigCore
+WANTLIB += KF5CoreAddons KF5Declarative KF5I18n KF5JobWidgets
+WANTLIB += KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Package KF5Service
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets X11 c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes

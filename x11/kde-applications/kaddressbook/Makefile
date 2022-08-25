@@ -2,7 +2,7 @@ COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  kaddressbookprivate         2.0 # 5.13.2
+SHARED_LIBS +=  kaddressbookprivate         3.0 # 5.13.2
 SHARED_LIBS +=  KPimAddressbookImportExport 0.1 # 5.16.1
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact

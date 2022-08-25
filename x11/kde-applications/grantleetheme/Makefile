@@ -7,9 +7,9 @@ SHARED_LIBS +=  KF5GrantleeTheme          2.0 # 5.9
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5GuiAddons KF5I18n KF5IconThemes KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Service KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += m
+WANTLIB += KF5NewStuffCore KF5NewStuffWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
+WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes

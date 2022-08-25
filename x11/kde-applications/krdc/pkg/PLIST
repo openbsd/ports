@@ -102,9 +102,9 @@ share/doc/HTML/sv/krdc/index.docbook
 share/doc/HTML/uk/krdc/
 share/doc/HTML/uk/krdc/index.cache.bz2
 share/doc/HTML/uk/krdc/index.docbook
-share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/smb2rdc.desktop
-share/kservicetypes5/krdc_plugin.desktop
+share/kio/
+share/kio/servicemenus/
+share/kio/servicemenus/smb2rdc.desktop
 share/locale/ar/LC_MESSAGES/krdc.mo
 share/locale/be/LC_MESSAGES/krdc.mo
 share/locale/bg/LC_MESSAGES/krdc.mo

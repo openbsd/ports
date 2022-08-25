@@ -4,8 +4,8 @@ COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
 
-SHARED_LIBS +=  akregatorinterfaces       1.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          2.1 # 5.13.2
+SHARED_LIBS +=  akregatorinterfaces       2.0 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          3.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5Auth KF5AuthCore KF5Codecs KF5Completion

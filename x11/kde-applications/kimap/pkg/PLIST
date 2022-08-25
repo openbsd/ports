@@ -129,9 +129,10 @@ include/KF5/KIMAP/kimap/storejob.h
 include/KF5/KIMAP/kimap/subscribejob.h
 include/KF5/KIMAP/kimap/unsubscribejob.h
 include/KF5/KIMAP/kimap_version.h
-include/KF5/kimaptest/
-include/KF5/kimaptest/fakeserver.h
-include/KF5/kimaptest/mockjob.h
+include/KF5/KIMAPTest/
+include/KF5/KIMAPTest/kimaptest/
+include/KF5/KIMAPTest/kimaptest/fakeserver.h
+include/KF5/KIMAPTest/kimaptest/mockjob.h
 lib/cmake/KF5IMAP/
 lib/cmake/KF5IMAP/KF5IMAPConfig.cmake
 lib/cmake/KF5IMAP/KF5IMAPConfigVersion.cmake

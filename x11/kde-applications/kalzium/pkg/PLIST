@@ -5,10 +5,10 @@ include/libkdeedu/element.h
 include/libkdeedu/elementparser.h
 include/libkdeedu/isotope.h
 include/libkdeedu/isotopeparser.h
-include/libkdeedu/libkdeedu_science_export.h
 include/libkdeedu/moleculeparser.h
 include/libkdeedu/parser.h
 include/libkdeedu/psetables.h
+include/libkdeedu/science_export.h
 include/libkdeedu/spectrum.h
 include/libkdeedu/spectrumparser.h
 @lib lib/libscience.so.${LIBscience_VERSION}

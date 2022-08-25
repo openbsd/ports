@@ -2,12 +2,13 @@ COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  KF5Libkleo                8.0 # 5.10
+SHARED_LIBS +=  KF5Libkleo                9.0 # 5.10
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5CoreAddons KF5I18n KF5ItemModels KF5PimTextEdit
-WANTLIB += KF5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets assuan gpgme
-WANTLIB += gpgmepp m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
+WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
+WANTLIB += KF5I18n KF5ItemModels KF5PimTextEdit KF5WidgetsAddons
+WANTLIB += Qt5Core Qt5Gui Qt5Widgets Qt5Xml assuan gpgme gpgmepp
+WANTLIB += m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes

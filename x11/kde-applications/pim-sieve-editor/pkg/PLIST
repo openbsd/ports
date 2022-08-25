@@ -35,6 +35,9 @@ share/doc/HTML/pt/sieveeditor/index.docbook
 share/doc/HTML/pt_BR/sieveeditor/
 share/doc/HTML/pt_BR/sieveeditor/index.cache.bz2
 share/doc/HTML/pt_BR/sieveeditor/index.docbook
+share/doc/HTML/ru/sieveeditor/
+share/doc/HTML/ru/sieveeditor/index.cache.bz2
+share/doc/HTML/ru/sieveeditor/index.docbook
 share/doc/HTML/sv/sieveeditor/
 share/doc/HTML/sv/sieveeditor/index.cache.bz2
 share/doc/HTML/sv/sieveeditor/index.docbook
@@ -42,6 +45,7 @@ share/doc/HTML/uk/sieveeditor/
 share/doc/HTML/uk/sieveeditor/index.cache.bz2
 share/doc/HTML/uk/sieveeditor/index.docbook
 share/locale/ar/LC_MESSAGES/sieveeditor.mo
+share/locale/az/LC_MESSAGES/sieveeditor.mo
 share/locale/bg/LC_MESSAGES/sieveeditor.mo
 share/locale/bs/LC_MESSAGES/sieveeditor.mo
 share/locale/ca/LC_MESSAGES/sieveeditor.mo

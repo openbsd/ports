@@ -26,25 +26,25 @@
 @lib lib/libfolderarchivesettings.so.${LIBfolderarchivesettings_VERSION}
 @lib lib/libkmindexreader.so.${LIBkmindexreader_VERSION}
 @lib lib/libmaildir.so.${LIBmaildir_VERSION}
-lib/qt5/plugins/akonadi/config/
-@so lib/qt5/plugins/akonadi/config/akonotesconfig.so
-@so lib/qt5/plugins/akonadi/config/birthdaysconfig.so
-@so lib/qt5/plugins/akonadi/config/contactsconfig.so
-@so lib/qt5/plugins/akonadi/config/icalconfig.so
-@so lib/qt5/plugins/akonadi/config/icaldirconfig.so
-@so lib/qt5/plugins/akonadi/config/maildirconfig.so
-@so lib/qt5/plugins/akonadi/config/maildispatcherconfig.so
-@so lib/qt5/plugins/akonadi/config/mboxconfig.so
-@so lib/qt5/plugins/akonadi/config/mixedmaildirconfig.so
-@so lib/qt5/plugins/akonadi/config/newmailnotifierconfig.so
-@so lib/qt5/plugins/akonadi/config/notesconfig.so
-@so lib/qt5/plugins/akonadi/config/openxchangeconfig.so
-@so lib/qt5/plugins/akonadi/config/pop3config.so
-@so lib/qt5/plugins/akonadi/config/tomboynotesconfig.so
-@so lib/qt5/plugins/akonadi/config/vcardconfig.so
-@so lib/qt5/plugins/akonadi/config/vcarddirconfig.so
 @so lib/qt5/plugins/kf5/kio/akonadi.so
-@so lib/qt5/plugins/pim/kcms/kaddressbook/kcm_ldap.so
+lib/qt5/plugins/pim5/akonadi/config/
+@so lib/qt5/plugins/pim5/akonadi/config/akonotesconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/birthdaysconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/contactsconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/icalconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/icaldirconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/maildirconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/maildispatcherconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/mboxconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/mixedmaildirconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/newmailnotifierconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/notesconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/openxchangeconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/pop3config.so
+@so lib/qt5/plugins/pim5/akonadi/config/tomboynotesconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/vcardconfig.so
+@so lib/qt5/plugins/pim5/akonadi/config/vcarddirconfig.so
+@so lib/qt5/plugins/pim5/kcms/kaddressbook/kcm_ldap.so
 share/akonadi/accountwizard/
 share/akonadi/accountwizard/contacts/
 share/akonadi/accountwizard/contacts/contactswizard.desktop
@@ -105,6 +105,9 @@ share/akonadi/firstrun/birthdaycalendar
 share/akonadi/firstrun/defaultaddressbook
 share/akonadi/firstrun/defaultcalendar
 share/akonadi/firstrun/defaultnotebook
+share/applications/org.kde.akonadi_davgroupware_resource.desktop
+share/applications/org.kde.akonadi_google_resource.desktop
+share/applications/org.kde.akonadi_imap_resource.desktop
 share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
 share/doc/HTML/ca/kioslave5/pop3/
@@ -190,7 +193,6 @@ share/kservices5/akonadi/davgroupware-providers/sogo.desktop
 share/kservices5/akonadi/davgroupware-providers/yahoo.desktop
 share/kservices5/akonadi/davgroupware-providers/zarafa.desktop
 share/kservices5/akonadi/davgroupware-providers/zimbra.desktop
-share/kservices5/kcmldap.desktop
 share/kservicetypes5/davgroupwareprovider.desktop
 share/locale/ar/LC_MESSAGES/accountwizard_contacts.mo
 share/locale/ar/LC_MESSAGES/accountwizard_ews.mo
@@ -1538,6 +1540,7 @@ share/locale/sv/LC_MESSAGES/gid-migrator.mo
 share/locale/sv/LC_MESSAGES/kio_akonadi.mo
 share/locale/sv/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/tr/LC_MESSAGES/accountwizard_contacts.mo
+share/locale/tr/LC_MESSAGES/accountwizard_ews.mo
 share/locale/tr/LC_MESSAGES/accountwizard_ical.mo
 share/locale/tr/LC_MESSAGES/accountwizard_imap.mo
 share/locale/tr/LC_MESSAGES/accountwizard_kolab.mo
@@ -1550,6 +1553,8 @@ share/locale/tr/LC_MESSAGES/akonadi-filestore.mo
 share/locale/tr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/tr/LC_MESSAGES/akonadi_etesync_resource.mo
+share/locale/tr/LC_MESSAGES/akonadi_ews_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_google_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_ical_resource.mo
@@ -1680,6 +1685,7 @@ share/locale/zh_TW/LC_MESSAGES/akonadi-filestore.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/zh_TW/LC_MESSAGES/akonadi_etesync_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_ews_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_facebook_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_google_resource.mo
@@ -1706,3 +1712,4 @@ share/qlogging-categories5/kdepim-runtime.categories
 share/qlogging-categories5/kdepim-runtime.renamecategories
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
+@tag update-desktop-database

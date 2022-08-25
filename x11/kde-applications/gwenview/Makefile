@@ -2,19 +2,19 @@ COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
 
-SHARED_LIBS +=  gwenviewlib               59.0 # 4.97
+SHARED_LIBS +=  gwenviewlib               59.1 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5FileMetaData
 WANTLIB += KF5GuiAddons KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
 WANTLIB += KF5JobWidgets KF5KDcraw KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts
-WANTLIB += KF5Purpose KF5PurposeWidgets KF5Service KF5Solid KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml X11 c cfitsio
-WANTLIB += exiv2 jpeg lcms2 m phonon4qt5 png tiff z
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5Parts KF5Purpose
+WANTLIB += KF5PurposeWidgets KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg
+WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c cfitsio exiv2
+WANTLIB += jpeg kImageAnnotator lcms2 m phonon4qt5 png tiff z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -56,6 +56,7 @@ LIB_DEPENDS =	devel/kf5/baloo \
 		graphics/png \
 		math/cfitsio \
 		x11/kde-applications/libkdcraw \
+		graphics/kimageannotator \
 		x11/qt5/qtsvg \
 		x11/qt5/qtx11extras \
 		multimedia/phonon

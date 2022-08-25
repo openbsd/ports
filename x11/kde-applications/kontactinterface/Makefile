@@ -2,7 +2,7 @@ COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5KontactInterface       1.0 # 5.13.2
+SHARED_LIBS +=  KF5KontactInterface       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5Completion
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons

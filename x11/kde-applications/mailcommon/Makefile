@@ -2,7 +2,7 @@ COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5MailCommon       3.1 # 5.13.2
+SHARED_LIBS +=  KF5MailCommon       4.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiWidgets KF5Archive
@@ -61,9 +61,5 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
-
-#pre-configure:
-#	find ${WRKSRC} -type f \( -name \*.cpp -o -name \*.h \) -exec \
-#		sed -i -e 's,#include <phonon,#include <phonon4qt5/phonon,g' {} +
 
 .include <bsd.port.mk>

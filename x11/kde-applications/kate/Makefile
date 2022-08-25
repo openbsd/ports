@@ -4,13 +4,15 @@ CATEGORIES =	editors
 
 HOMEPAGE =	https://kate-editor.org/
 
+SHARED_LIBS +=  kateprivate               1.0 # 0.0
+
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GuiAddons KF5I18n KF5IconThemes KF5ItemViews
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Package
-WANTLIB += KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
+WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5Package KF5Parts KF5Plasma KF5Service KF5Solid KF5SonnetUi
 WANTLIB += KF5SyntaxHighlighting KF5TextEditor KF5TextWidgets
 WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent

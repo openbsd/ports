@@ -2,9 +2,9 @@ COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
 
-SHARED_LIBS +=  korganizer_core         2.0 # 5.13.2
+SHARED_LIBS +=  korganizer_core         3.0 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.0 # 5.13.2
-SHARED_LIBS +=  korganizerprivate       6.0 # 5.13.2
+SHARED_LIBS +=  korganizerprivate       6.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL Grantlee_Templates KF5AkonadiCalendar
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes
@@ -16,13 +16,13 @@ WANTLIB += KF5Holidays KF5I18n KF5IMAP KF5IconThemes KF5IdentityManagement
 WANTLIB += KF5IncidenceEditor KF5ItemModels KF5ItemViews KF5JobWidgets
 WANTLIB += KF5KCMUtils KF5KIOCore KF5KIOGui KF5KIOWidgets KF5KontactInterface
 WANTLIB += KF5Ldap KF5Libkdepim KF5MailTransport KF5MailTransportAkonadi
-WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5Notifications
-WANTLIB += KF5Parts KF5PimCommon KF5PimCommonAkonadi KF5PimTextEdit
-WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KUserFeedbackCore
-WANTLIB += KUserFeedbackWidgets Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml
-WANTLIB += X11 c m
+WANTLIB += KF5Mime KF5NewStuff KF5NewStuffCore KF5NewStuffWidgets
+WANTLIB += KF5Notifications KF5Parts KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5PimTextEdit KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5Wallet KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += KUserFeedbackCore KUserFeedbackWidgets Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
+WANTLIB += Qt5Xml X11 c m
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes

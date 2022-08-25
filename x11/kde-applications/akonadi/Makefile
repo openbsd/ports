@@ -5,9 +5,9 @@ CATEGORIES =	databases productivity
 HOMEPAGE =	https://kontact.kde.org/
 
 SHARED_LIBS +=  KF5AkonadiAgentBase       2.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiCore            3.1 # 5.6
+SHARED_LIBS +=  KF5AkonadiCore            3.2 # 5.6
 SHARED_LIBS +=  KF5AkonadiPrivate         2.0 # 5.6
-SHARED_LIBS +=  KF5AkonadiWidgets         2.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiWidgets         2.1 # 5.6
 SHARED_LIBS +=  KF5AkonadiXml             1.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

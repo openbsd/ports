@@ -9,6 +9,8 @@ lib/cmake/kImageAnnotator/kImageAnnotatorConfig.cmake
 @lib lib/libkImageAnnotator.so.${LIBkImageAnnotator_VERSION}
 share/kImageAnnotator/
 share/kImageAnnotator/translations/
+share/kImageAnnotator/translations/kImageAnnotator_ar.qm
+share/kImageAnnotator/translations/kImageAnnotator_ca.qm
 share/kImageAnnotator/translations/kImageAnnotator_cs.qm
 share/kImageAnnotator/translations/kImageAnnotator_da.qm
 share/kImageAnnotator/translations/kImageAnnotator_de.qm
@@ -18,16 +20,21 @@ share/kImageAnnotator/translations/kImageAnnotator_eu.qm
 share/kImageAnnotator/translations/kImageAnnotator_fr.qm
 share/kImageAnnotator/translations/kImageAnnotator_fr_CA.qm
 share/kImageAnnotator/translations/kImageAnnotator_gl.qm
+share/kImageAnnotator/translations/kImageAnnotator_hr.qm
 share/kImageAnnotator/translations/kImageAnnotator_hu.qm
 share/kImageAnnotator/translations/kImageAnnotator_id.qm
 share/kImageAnnotator/translations/kImageAnnotator_it.qm
 share/kImageAnnotator/translations/kImageAnnotator_ja.qm
+share/kImageAnnotator/translations/kImageAnnotator_ko.qm
 share/kImageAnnotator/translations/kImageAnnotator_nl.qm
 share/kImageAnnotator/translations/kImageAnnotator_no.qm
 share/kImageAnnotator/translations/kImageAnnotator_pl.qm
 share/kImageAnnotator/translations/kImageAnnotator_pt.qm
 share/kImageAnnotator/translations/kImageAnnotator_pt_BR.qm
+share/kImageAnnotator/translations/kImageAnnotator_ro.qm
 share/kImageAnnotator/translations/kImageAnnotator_ru.qm
+share/kImageAnnotator/translations/kImageAnnotator_si.qm
+share/kImageAnnotator/translations/kImageAnnotator_sq.qm
 share/kImageAnnotator/translations/kImageAnnotator_sv.qm
 share/kImageAnnotator/translations/kImageAnnotator_tr.qm
 share/kImageAnnotator/translations/kImageAnnotator_uk.qm

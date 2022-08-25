@@ -25,15 +25,15 @@ lib/cmake/KPimImportWizard/KPimImportWizardConfigVersion.cmake
 lib/cmake/KPimImportWizard/KPimImportWizardTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPimImportWizard/KPimImportWizardTargets.cmake
 @lib lib/libKPimImportWizard.so.${LIBKPimImportWizard_VERSION}
-lib/qt5/plugins/importwizard/
-@so lib/qt5/plugins/importwizard/balsaimporterplugin.so
-@so lib/qt5/plugins/importwizard/clawsmailimporterplugin.so
-@so lib/qt5/plugins/importwizard/evolutionv3importerplugin.so
-@so lib/qt5/plugins/importwizard/icedoveimporterplugin.so
-@so lib/qt5/plugins/importwizard/seamonkeyimporterplugin.so
-@so lib/qt5/plugins/importwizard/sylpheedimporterplugin.so
-@so lib/qt5/plugins/importwizard/thunderbirdimporterplugin.so
-@so lib/qt5/plugins/importwizard/trojitaimporterplugin.so
+lib/qt5/plugins/pim5/importwizard/
+@so lib/qt5/plugins/pim5/importwizard/balsaimporterplugin.so
+@so lib/qt5/plugins/pim5/importwizard/clawsmailimporterplugin.so
+@so lib/qt5/plugins/pim5/importwizard/evolutionv3importerplugin.so
+@so lib/qt5/plugins/pim5/importwizard/icedoveimporterplugin.so
+@so lib/qt5/plugins/pim5/importwizard/seamonkeyimporterplugin.so
+@so lib/qt5/plugins/pim5/importwizard/sylpheedimporterplugin.so
+@so lib/qt5/plugins/pim5/importwizard/thunderbirdimporterplugin.so
+@so lib/qt5/plugins/pim5/importwizard/trojitaimporterplugin.so
 share/applications/org.kde.akonadiimportwizard.desktop
 share/doc/HTML/ca/importwizard/
 share/doc/HTML/ca/importwizard/index.cache.bz2

@@ -2,8 +2,7 @@ COMMENT =	screenshot tool with annotations features
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	ksnip
-GH_TAGNAME =	v1.8.1
-REVISION =	0
+GH_TAGNAME =	v1.10.0
 
 CATEGORIES =	graphics
 
@@ -22,11 +21,11 @@ MODULES =		devel/kf5
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 
-LIB_DEPENDS =		graphics/kcolorpicker \
-			graphics/kimageannotator>=0.4.1 \
+LIB_DEPENDS =		graphics/kcolorpicker>=0.2.0 \
+			graphics/kimageannotator>=0.6.0 \
 			x11/qt5/qtx11extras
 
-CXXFLAGS +=	-I${LOCALBASE}/include
+CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

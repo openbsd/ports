@@ -426,7 +426,7 @@ share/khelpcenter/plugins/fundamentals.desktop
 share/khelpcenter/plugins/info.desktop
 share/khelpcenter/plugins/kcontrolmodules.desktop
 share/khelpcenter/plugins/kicmodules.desktop
-share/khelpcenter/plugins/kioslaves.desktop
+share/khelpcenter/plugins/kioworkers.desktop
 share/khelpcenter/plugins/konquerorcontrolmodules.desktop
 share/khelpcenter/plugins/onlinehelp.desktop
 share/khelpcenter/plugins/othercontrolmodules.desktop

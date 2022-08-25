@@ -4,7 +4,7 @@ COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
 
-SHARED_LIBS +=  kmailprivate       5.1 # 5.13.2
+SHARED_LIBS +=  kmailprivate       5.2 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiAgentBase
 WANTLIB += KF5AkonadiContact KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchDebug

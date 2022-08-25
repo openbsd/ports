@@ -2,7 +2,7 @@ COMMENT =	PIM Akonadi mime support library
 DISTNAME =	akonadi-mime-${VERSION}
 CATEGORIES =	devel productivity
 
-SHARED_LIBS +=  KF5AkonadiMime            2.0 # 5.6
+SHARED_LIBS +=  KF5AkonadiMime            3.0 # 5.6
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiPrivate
 WANTLIB += KF5AkonadiWidgets KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore

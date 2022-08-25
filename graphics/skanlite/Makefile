@@ -42,7 +42,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
-		x11/kde-applications/libksane
+		x11/kde-applications/libksane>=${MODKDE_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

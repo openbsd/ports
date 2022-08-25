@@ -3,7 +3,7 @@ DISTNAME =	audiocd-kio-${VERSION}
 PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
 
-SHARED_LIBS +=  audiocdplugins            2.0 # 5.0
+SHARED_LIBS +=  audiocdplugins            3.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC KF5Auth KF5AuthCore KF5Cddb
 WANTLIB += KF5Codecs KF5CompactDisc KF5ConfigCore KF5ConfigGui

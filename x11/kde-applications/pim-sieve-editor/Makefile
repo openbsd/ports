@@ -2,7 +2,7 @@ COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  sieveeditor       2.0 # 5.13.2
+SHARED_LIBS +=  sieveeditor       2.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets

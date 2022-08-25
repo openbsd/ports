@@ -38,6 +38,7 @@ lib/qt5/plugins/kdeconnect/kcms/
 @so lib/qt5/plugins/kdeconnect/kdeconnect_share.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_sms.so
 @so lib/qt5/plugins/kdeconnect/kdeconnect_telephony.so
+@so lib/qt5/plugins/kdeconnect/kdeconnect_virtualmonitor.so
 lib/qt5/plugins/kf5/kfileitemaction/
 @so lib/qt5/plugins/kf5/kfileitemaction/kdeconnectfileitemaction.so
 @so lib/qt5/plugins/kf5/kio/kdeconnect.so
@@ -786,6 +787,7 @@ share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/RemoteCommands.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/SMS.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Sftp.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/Share.qml
+share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/VirtualMonitor.qml
 share/plasma/plasmoids/org.kde.kdeconnect/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.desktop
 share/plasma/plasmoids/org.kde.kdeconnect/metadata.json

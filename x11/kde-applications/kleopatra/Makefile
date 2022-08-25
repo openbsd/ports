@@ -5,13 +5,15 @@ CATEGORIES =	security x11
 SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
 SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5Libkleo
-WANTLIB += KF5Mime KF5Notifications KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml X11 assuan c gpg-error gpgme gpgmepp m qgpgme
+WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCore KF5AkonadiMime KF5Auth
+WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
+WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5I18n KF5IconThemes
+WANTLIB += KF5IdentityManagement KF5ItemModels KF5Libkleo KF5MailTransport
+WANTLIB += KF5MailTransportAkonadi KF5Mime KF5Notifications KF5SonnetUi
+WANTLIB += KF5TextWidgets KF5Wallet KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport
+WANTLIB += Qt5Widgets Qt5Xml X11 assuan c gpg-error gpgme gpgmepp
+WANTLIB += m qgpgme
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -45,6 +47,10 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		security/gpgme,-qt \
 		security/libassuan \
 		security/libgpg-error \
+		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-mime \
+		x11/kde-applications/kidentitymanagement \
+		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kmime \
 		x11/kde-applications/libkleo
 

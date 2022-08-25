@@ -44,6 +44,7 @@ LIB_DEPENDS =	graphics/kdiagram \
 		x11/kde-applications/akonadi-calendar \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmime \
+		x11/kde-applications/pimcommon \
 		x11/kde-applications/kldap \
 		x11/kde-applications/kpimtextedit \
 		x11/kde-applications/libkdepim \

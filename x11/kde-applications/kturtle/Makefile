@@ -7,9 +7,10 @@ HOMEPAGE =	https://www.kde.org/applications/games/kturtle
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5I18n KF5KIOCore KF5NewStuff KF5NewStuffCore
-WANTLIB += KF5Service KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
-WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
-WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets Qt5Xml c m
+WANTLIB += KF5NewStuffWidgets KF5Service KF5SonnetUi KF5TextWidgets
+WANTLIB += KF5WidgetsAddons KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Svg Qt5Widgets
+WANTLIB += Qt5Xml c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

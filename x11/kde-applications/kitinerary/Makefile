@@ -2,12 +2,12 @@ COMMENT =	KDE itinerary data model and itinerary extraction library
 DISTNAME =	kitinerary-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KPimItinerary       4.0 # 5.13.2
+SHARED_LIBS +=  KPimItinerary       5.0 # 5.13.2
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CalendarCore KF5Contacts
-WANTLIB += KF5I18n KF5I18nLocaleData KF5Mime KPimPkPass Qt5Core
-WANTLIB += Qt5Gui Qt5Network Qt5Qml c crypto m phonenumber poppler
-WANTLIB += xml2 z
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5CalendarCore KF5Codecs
+WANTLIB += KF5Contacts KF5I18n KF5I18nLocaleData KF5Mime KPimPkPass
+WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5Qml c crypto m phonenumber
+WANTLIB += poppler xml2 z
 
 MODKDE5_TRANSLATIONS = yes
 

@@ -185,9 +185,6 @@ share/ksudoku/themes/ksudoku_egyptian.svg
 share/ksudoku/themes/ksudoku_scrible.desktop
 share/ksudoku/themes/ksudoku_scrible.svg
 share/ksudoku/themes/scribble_preview.png
-share/kxmlgui5/
-share/kxmlgui5/ksudoku/
-share/kxmlgui5/ksudoku/ksudokuui.rc
 share/locale/ar/LC_MESSAGES/ksudoku.mo
 share/locale/be/LC_MESSAGES/ksudoku.mo
 share/locale/bg/LC_MESSAGES/ksudoku.mo

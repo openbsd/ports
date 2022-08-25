@@ -2,7 +2,7 @@ COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  KF5AkonadiContact         1.0 # 5.13.2
+SHARED_LIBS +=  KF5AkonadiContact         1.1 # 5.13.2
 SHARED_LIBS +=  KF5ContactEditor          0.2 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiCore

@@ -31,10 +31,10 @@ lib/cmake/KPimAddressbookImportExport/KPimAddressbookImportExportTargets.cmake
 @lib lib/libKPimAddressbookImportExport.so.${LIBKPimAddressbookImportExport_VERSION}
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @so lib/qt5/plugins/kaddressbookpart.so
-lib/qt5/plugins/kontact5/
-@so lib/qt5/plugins/kontact5/kontact_kaddressbookplugin.so
-@so lib/qt5/plugins/pim/kcms/kaddressbook/kaddressbook_config_plugins.so
-@so lib/qt5/plugins/pim/kcms/kaddressbook/kaddressbook_config_userfeedback.so
+@so lib/qt5/plugins/pim5/kcms/kaddressbook/kaddressbook_config_plugins.so
+@so lib/qt5/plugins/pim5/kcms/kaddressbook/kaddressbook_config_userfeedback.so
+lib/qt5/plugins/pim5/kontact/
+@so lib/qt5/plugins/pim5/kontact/kontact_kaddressbookplugin.so
 share/applications/kaddressbook-importer.desktop
 share/applications/kaddressbook-view.desktop
 share/applications/org.kde.kaddressbook.desktop
@@ -287,10 +287,6 @@ share/kaddressbook/viewertemplates/default/contactgroup_embedded.html
 share/kaddressbook/viewertemplates/default/contactgroup_memberrow.html
 share/kaddressbook/viewertemplates/default/theme.desktop
 share/kf5/mkspecs/qt_KAddressbookImportExport.pri
-share/kservices5/kaddressbook_config_plugins.desktop
-share/kservices5/kaddressbook_config_userfeedback.desktop
-share/kservices5/kontact/
-share/kservices5/kontact/kaddressbookplugin.desktop
 share/locale/ar/LC_MESSAGES/kaddressbook.mo
 share/locale/az/LC_MESSAGES/kaddressbook.mo
 share/locale/be/LC_MESSAGES/kaddressbook.mo

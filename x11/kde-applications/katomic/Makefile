@@ -7,9 +7,10 @@ HOMEPAGE =	https://www.kde.org/applications/games/katomic
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5ConfigWidgets KF5CoreAddons
 WANTLIB += KF5Crash KF5DBusAddons KF5I18n KF5KDEGames KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5Service KF5WidgetsAddons KF5XmlGui
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml c m
+WANTLIB += KF5NewStuffCore KF5NewStuffWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml
+WANTLIB += Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes

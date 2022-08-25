@@ -4,19 +4,18 @@
 @bin bin/akregatorstorageexporter
 @lib lib/libakregatorinterfaces.so.${LIBakregatorinterfaces_VERSION}
 @lib lib/libakregatorprivate.so.${LIBakregatorprivate_VERSION}
-@so lib/qt5/plugins/akregator_mk4storage_plugin.so
 @so lib/qt5/plugins/akregatorpart.so
-lib/qt5/plugins/kontact5/
-@so lib/qt5/plugins/kontact5/kontact_akregatorplugin.so
-lib/qt5/plugins/pim/kcms/akregator/
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_advanced.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_appearance.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_archive.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_browser.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_general.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_plugins.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_security.so
-@so lib/qt5/plugins/pim/kcms/akregator/akregator_config_userfeedback.so
+lib/qt5/plugins/pim5/kcms/akregator/
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_advanced.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_appearance.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_archive.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_browser.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_general.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_plugins.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_security.so
+@so lib/qt5/plugins/pim5/kcms/akregator/akregator_config_userfeedback.so
+lib/qt5/plugins/pim5/kontact/
+@so lib/qt5/plugins/pim5/kontact/kontact_akregatorplugin.so
 share/akregator/
 share/akregator/grantleetheme/
 share/akregator/grantleetheme/5.2/
@@ -123,8 +122,6 @@ share/icons/hicolor/48x48/apps/akregator.png
 share/icons/hicolor/64x64/apps/akregator.png
 share/icons/hicolor/scalable/apps/akregator.svg
 share/knotifications5/akregator.notifyrc
-share/kservices5/akregator_mk4storage_plugin.desktop
-share/kservicetypes5/akregator_plugin.desktop
 share/locale/ar/LC_MESSAGES/akregator.mo
 share/locale/az/LC_MESSAGES/akregator.mo
 share/locale/be/LC_MESSAGES/akregator.mo

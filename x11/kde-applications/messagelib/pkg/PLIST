@@ -33,6 +33,9 @@ include/KF5/MessageComposer/MessageComposer/InfoPart
 include/KF5/MessageComposer/MessageComposer/InsertTextFileJob
 include/KF5/MessageComposer/MessageComposer/JobBase
 include/KF5/MessageComposer/MessageComposer/Kleo_Util
+include/KF5/MessageComposer/MessageComposer/MDNAdviceDialog
+include/KF5/MessageComposer/MessageComposer/MDNAdviceHelper
+include/KF5/MessageComposer/MessageComposer/MDNWarningWidgetJob
 include/KF5/MessageComposer/MessageComposer/MainTextJob
 include/KF5/MessageComposer/MessageComposer/MessageComposerSettings
 include/KF5/MessageComposer/MessageComposer/MessageFactoryNG
@@ -40,6 +43,7 @@ include/KF5/MessageComposer/MessageComposer/MessageHelper
 include/KF5/MessageComposer/MessageComposer/MessagePart
 include/KF5/MessageComposer/MessageComposer/MessageSender
 include/KF5/MessageComposer/MessageComposer/MultipartJob
+include/KF5/MessageComposer/MessageComposer/NearExpiryChecker
 include/KF5/MessageComposer/MessageComposer/PluginActionType
 include/KF5/MessageComposer/MessageComposer/PluginComposerInterface
 include/KF5/MessageComposer/MessageComposer/PluginEditor
@@ -114,6 +118,9 @@ include/KF5/MessageComposer/messagecomposer/inserttextfilejob.h
 include/KF5/MessageComposer/messagecomposer/jobbase.h
 include/KF5/MessageComposer/messagecomposer/kleo_util.h
 include/KF5/MessageComposer/messagecomposer/maintextjob.h
+include/KF5/MessageComposer/messagecomposer/mdnadvicedialog.h
+include/KF5/MessageComposer/messagecomposer/mdnadvicehelper.h
+include/KF5/MessageComposer/messagecomposer/mdnwarningwidgetjob.h
 include/KF5/MessageComposer/messagecomposer/messagecomposer_debug.h
 include/KF5/MessageComposer/messagecomposer/messagecomposer_export.h
 include/KF5/MessageComposer/messagecomposer/messagecomposersettings.h
@@ -123,6 +130,7 @@ include/KF5/MessageComposer/messagecomposer/messagehelper.h
 include/KF5/MessageComposer/messagecomposer/messagepart.h
 include/KF5/MessageComposer/messagecomposer/messagesender.h
 include/KF5/MessageComposer/messagecomposer/multipartjob.h
+include/KF5/MessageComposer/messagecomposer/nearexpirychecker.h
 include/KF5/MessageComposer/messagecomposer/pluginactiontype.h
 include/KF5/MessageComposer/messagecomposer/plugincomposerinterface.h
 include/KF5/MessageComposer/messagecomposer/plugineditor.h
@@ -276,6 +284,7 @@ include/KF5/MessageViewer/MessageViewer/HtmlWriter
 include/KF5/MessageViewer/MessageViewer/IconNameCache
 include/KF5/MessageViewer/MessageViewer/InvitationSettings
 include/KF5/MessageViewer/MessageViewer/KXFace
+include/KF5/MessageViewer/MessageViewer/MDNWarningWidget
 include/KF5/MessageViewer/MessageViewer/MailWebEnginePage
 include/KF5/MessageViewer/MessageViewer/MailWebEngineView
 include/KF5/MessageViewer/MessageViewer/MarkMessageReadHandler
@@ -358,6 +367,7 @@ include/KF5/MessageViewer/messageviewer/kxface.h
 include/KF5/MessageViewer/messageviewer/mailwebenginepage.h
 include/KF5/MessageViewer/messageviewer/mailwebengineview.h
 include/KF5/MessageViewer/messageviewer/markmessagereadhandler.h
+include/KF5/MessageViewer/messageviewer/mdnwarningwidget.h
 include/KF5/MessageViewer/messageviewer/messagepartrendererbase.h
 include/KF5/MessageViewer/messageviewer/messagepartrenderermanager.h
 include/KF5/MessageViewer/messageviewer/messagepartrenderplugin.h
@@ -573,12 +583,12 @@ lib/cmake/KF5WebEngineViewer/KF5WebEngineViewerTargets.cmake
 @lib lib/libKF5MimeTreeParser.so.${LIBKF5MimeTreeParser_VERSION}
 @lib lib/libKF5TemplateParser.so.${LIBKF5TemplateParser_VERSION}
 @lib lib/libKF5WebEngineViewer.so.${LIBKF5WebEngineViewer_VERSION}
-lib/qt5/plugins/messageviewer/
-lib/qt5/plugins/messageviewer/grantlee/
-lib/qt5/plugins/messageviewer/grantlee/5.0/
-@so lib/qt5/plugins/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
-lib/qt5/plugins/messageviewer/headerstyle/
-@so lib/qt5/plugins/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
+lib/qt5/plugins/pim5/messageviewer/
+lib/qt5/plugins/pim5/messageviewer/grantlee/
+lib/qt5/plugins/pim5/messageviewer/grantlee/5.0/
+@so lib/qt5/plugins/pim5/messageviewer/grantlee/5.0/messageviewer_grantlee_extension.so
+lib/qt5/plugins/pim5/messageviewer/headerstyle/
+@so lib/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/templatesconfiguration_kfg.kcfg
 share/kf5/mkspecs/qt_MessageComposer.pri

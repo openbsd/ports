@@ -1,13 +1,13 @@
 COMMENT =	tool for annotating images
 
-V =		0.4.1
+V =		0.6.0
 PKGNAME =	kimageannotator-${V}
 
 GH_ACCOUNT =	ksnip
 GH_PROJECT =	kImageAnnotator
 GH_TAGNAME =	v${V}
 
-SHARED_LIBS =	kImageAnnotator	1.0	# 0.4.1
+SHARED_LIBS =	kImageAnnotator	2.0	# 0.4.1
 
 CATEGORIES =	graphics
 
@@ -20,7 +20,7 @@ WANTLIB += kColorPicker
 MODULES =		devel/cmake \
 			x11/qt5
 
-LIB_DEPENDS =		graphics/kcolorpicker \
+LIB_DEPENDS =		graphics/kcolorpicker>=0.2.0 \
 			x11/qt5/qtsvg
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=Yes

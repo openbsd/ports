@@ -11,6 +11,7 @@ include/KF5/KF5KDEGames/KStandardGameAction
 include/KF5/KF5KDEGames/KgAudioScene
 include/KF5/KF5KDEGames/KgDeclarativeView
 include/KF5/KF5KDEGames/KgDifficulty
+include/KF5/KF5KDEGames/KgDifficultyLevel
 include/KF5/KF5KDEGames/KgSound
 include/KF5/KF5KDEGames/KgTheme
 include/KF5/KF5KDEGames/KgThemeProvider

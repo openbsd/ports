@@ -2,7 +2,7 @@ COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  pimdataexporterprivate       3.1 # 5.13.2
+SHARED_LIBS +=  pimdataexporterprivate       4.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiNotes KF5AkonadiWidgets

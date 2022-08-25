@@ -1,7 +1,7 @@
 @bin bin/kontact
 @lib lib/libkontactprivate.so.${LIBkontactprivate_VERSION}
-lib/qt5/plugins/pim/kcms/kontact/
-@so lib/qt5/plugins/pim/kcms/kontact/kcm_kontact.so
+lib/qt5/plugins/pim5/kcms/kontact/
+@so lib/qt5/plugins/pim5/kcms/kontact/kcm_kontact.so
 share/applications/org.kde.kontact.desktop
 share/config.kcfg/kontact.kcfg
 share/dbus-1/services/org.kde.kontact.service
@@ -66,7 +66,6 @@ share/icons/hicolor/32x32/apps/kontact.png
 share/icons/hicolor/48x48/apps/kontact.png
 share/icons/hicolor/64x64/apps/kontact.png
 share/icons/hicolor/scalable/apps/kontact.svg
-share/kservices5/kontactconfig.desktop
 share/locale/ar/LC_MESSAGES/kontact.mo
 share/locale/az/LC_MESSAGES/kontact.mo
 share/locale/be/LC_MESSAGES/kontact.mo
@@ -93,6 +92,7 @@ share/locale/hi/LC_MESSAGES/kontact.mo
 share/locale/hr/LC_MESSAGES/kontact.mo
 share/locale/hu/LC_MESSAGES/kontact.mo
 share/locale/ia/LC_MESSAGES/kontact.mo
+share/locale/id/LC_MESSAGES/kontact.mo
 share/locale/is/LC_MESSAGES/kontact.mo
 share/locale/it/LC_MESSAGES/kontact.mo
 share/locale/ja/LC_MESSAGES/kontact.mo

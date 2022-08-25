@@ -66,8 +66,8 @@ LIB_DEPENDS =	devel/kf5/attica \
 		multimedia/mlt7,-main \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtmultimedia \
-		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtnetworkauth \
+		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtsvg
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes

@@ -2,13 +2,6 @@
 @bin bin/kget
 @lib lib/libkgetcore.so.${LIBkgetcore_VERSION}
 lib/qt5/plugins/kget/
-lib/qt5/plugins/kget/kcms/
-@so lib/qt5/plugins/kget/kcms/kcm_kget_bittorrentfactory.so
-@so lib/qt5/plugins/kget/kcms/kcm_kget_checksumsearchfactory.so
-@so lib/qt5/plugins/kget/kcms/kcm_kget_metalinkfactory.so
-@so lib/qt5/plugins/kget/kcms/kcm_kget_mirrorsearchfactory.so
-@so lib/qt5/plugins/kget/kcms/kcm_kget_mmsfactory.so
-@so lib/qt5/plugins/kget/kcms/kcm_kget_multisegkiofactory.so
 @so lib/qt5/plugins/kget/kget_bittorrent.so
 @so lib/qt5/plugins/kget/kget_checksumsearchfactory.so
 @so lib/qt5/plugins/kget/kget_kio.so
@@ -16,6 +9,13 @@ lib/qt5/plugins/kget/kcms/
 @so lib/qt5/plugins/kget/kget_mirrorsearchfactory.so
 @so lib/qt5/plugins/kget/kget_mmsfactory.so
 @so lib/qt5/plugins/kget/kget_multisegkiofactory.so
+lib/qt5/plugins/kget_kcms/
+@so lib/qt5/plugins/kget_kcms/kcm_kget_bittorrentfactory.so
+@so lib/qt5/plugins/kget_kcms/kcm_kget_checksumsearchfactory.so
+@so lib/qt5/plugins/kget_kcms/kcm_kget_metalinkfactory.so
+@so lib/qt5/plugins/kget_kcms/kcm_kget_mirrorsearchfactory.so
+@so lib/qt5/plugins/kget_kcms/kcm_kget_mmsfactory.so
+@so lib/qt5/plugins/kget_kcms/kcm_kget_multisegkiofactory.so
 share/applications/org.kde.kget.desktop
 share/config.kcfg/kget.kcfg
 share/config.kcfg/kget_checksumsearchfactory.kcfg
