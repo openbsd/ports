@@ -1,4 +1,4 @@
-V =	3.2.2
+V =	3.2.3
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
