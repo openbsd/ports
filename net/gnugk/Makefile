@@ -2,12 +2,11 @@ BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.9
+V=			5.10
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
 PKGNAME=		gnugk-${V}
-REVISION=		2
 
 CATEGORIES=		net telephony
 
