@@ -67,6 +67,11 @@ CONFIGURE_ARGS=		--disable-tools
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 .endif
 
+.if ${PROPERTIES:Mrust}
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' ${WRKSRC}/vendor/*/.cargo-checksum.json
+.endif
+
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
 
