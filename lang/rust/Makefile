@@ -18,6 +18,8 @@ DISTNAME =		rustc-${V}-src
 BV-aarch64 =		1.63.0-20220810
 BV-amd64 =		1.63.0-20220809
 BV-i386 =		1.63.0-20220809
+BV-powerpc64 =		1.63.0-20220821
+BV-riscv64 =		1.63.0-20220821
 BV-sparc64 =		1.62.0-20220707
 BV =			${BV-${MACHINE_ARCH}}
 
@@ -70,8 +72,13 @@ SUPDISTFILES +=		${BOOTSTRAP-$m}
 TRIPLE_ARCH-aarch64 =	aarch64-unknown-openbsd
 TRIPLE_ARCH-amd64 =	x86_64-unknown-openbsd
 TRIPLE_ARCH-i386 =	i686-unknown-openbsd
+TRIPLE_ARCH-powerpc64 =	powerpc64-unknown-openbsd
+TRIPLE_ARCH-riscv64 =	riscv64-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
 TRIPLE_ARCH =	${TRIPLE_ARCH-${MACHINE_ARCH}}
+
+USE_EMB_LLVM-riscv64 =	Yes
+USE_EMB_LLVM =		${USE_EMB_LLVM-${MACHINE_ARCH}}
 
 SUBST_VARS +=		TRIPLE_ARCH \
 			V
@@ -126,9 +133,12 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS +=	devel/cmake
 BUILD_DEPENDS +=	shells/bash
-BUILD_DEPENDS +=	devel/llvm
 BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb
+
+.if !${USE_EMB_LLVM:L:Myes}
+BUILD_DEPENDS +=	devel/llvm
+.endif
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			net/curl \
@@ -159,13 +169,18 @@ TEST_DEPENDS +=		devel/git \
 
 # - disable vendor checksum checks
 # - SUBSTR cargo testsuite
-# - remove src/llvm-project
+# - remove src/llvm-project or patch it
 SUBST_VARS +=	WRKBUILD
 post-patch:
 	sed -i 's/"files":{[^}]*}/"files":{}/' \
 		${WRKSRC}/vendor/*/.cargo-checksum.json
 	${SUBST_CMD} ${WRKSRC}/src/tools/cargo/crates/cargo-test-support/src/paths.rs
+.if !${USE_EMB_LLVM:L:Myes}
 	rm -rf -- ${WRKSRC}/src/llvm-project/
+.else
+	sed -i 's/set(suffixes $${CMAKE_FIND_LIBRARY_SUFFIXES})/set(suffixes $${CMAKE_FIND_LIBRARY_SUFFIXES} ".so.[0-9]+.[0-9]+")/' \
+		${WRKSRC}/src/llvm-project/llvm/cmake/modules/GetLibraryName.cmake
+.endif
 
 # - check datasize limit before configuring (and building)
 pre-configure:
@@ -214,8 +229,10 @@ do-configure:
 	echo 'ninja = true' >>${WRKBUILD}/config.toml
 
 	echo '[target.${TRIPLE_ARCH}]' >>${WRKBUILD}/config.toml
+.if !${USE_EMB_LLVM:L:Myes}
 	echo 'llvm-config = "${LOCALBASE}/bin/llvm-config"' \
 		>>${WRKBUILD}/config.toml
+.endif
 
 BUILD_BIN = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	    ${MODPY_BIN} ${WRKSRC}/x.py

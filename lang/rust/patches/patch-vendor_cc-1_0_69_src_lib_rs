@@ -1,0 +1,19 @@
+Index: patches/patch-vendor_cc-1_0_69_src_lib_rs
+===================================================================
+RCS file: patches/patch-vendor_cc-1_0_69_src_lib_rs
+diff -N patches/patch-vendor_cc-1_0_69_src_lib_rs
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ patches/patch-vendor_cc-1_0_69_src_lib_rs	19 Aug 2022 22:00:46 -0000
+@@ -0,0 +1,12 @@
++Index: vendor/cc-1.0.69/src/lib.rs
++--- vendor/cc-1.0.69/src/lib.rs.orig
+++++ vendor/cc-1.0.69/src/lib.rs
++@@ -1697,7 +1697,7 @@ impl Build {
++                     let mut parts = target.split('-');
++                     if let Some(arch) = parts.next() {
++                         let arch = &arch[5..];
++-                        if target.contains("linux") && arch.starts_with("64") {
+++                        if (target.contains("linux") || target.contains("openbsd")) && arch.starts_with("64") {
++                             cmd.args.push(("-march=rv64gc").into());
++                             cmd.args.push("-mabi=lp64d".into());
++                         } else if target.contains("linux") && arch.starts_with("32") {
