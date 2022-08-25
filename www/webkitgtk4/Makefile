@@ -11,9 +11,10 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.36.6
+V =			2.36.7
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
