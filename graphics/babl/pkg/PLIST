@@ -1,3 +1,4 @@
+@bin bin/babl
 include/babl-${API_VERSION}/
 include/babl-${API_VERSION}/babl/
 include/babl-${API_VERSION}/babl/babl-introspect.h
