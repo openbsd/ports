@@ -1,9 +1,7 @@
 COMMENT=		printer (CUPS) administration tool
 
-V=			1.5.16
+V=			1.5.17
 DISTNAME=		system-config-printer-${V}
-
-REVISION=		1
 
 CATEGORIES=		print sysutils
 
@@ -26,7 +24,6 @@ BUILD_DEPENDS +=	devel/desktop-file-utils
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			graphics/py-cairo${MODPY_FLAVOR} \
-			net/py-curl${MODPY_FLAVOR} \
 			print/cups-pk-helper \
 			print/py-cups${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR}
