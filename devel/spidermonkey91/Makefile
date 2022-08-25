@@ -95,6 +95,9 @@ MAKE_ENV =		SHELL=/bin/sh \
 
 NO_TEST =		Yes
 
+post-patch:
+	sed -i 's/"files":{[^}]*}/"files":{}/' ${WRKDIST}/third_party/rust/*/.cargo-checksum.json
+
 pre-configure:
 	cd ${WRKSRC} && env -i AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 	${SUBST_CMD} ${WRKSRC}/build/moz.build
