@@ -175,8 +175,7 @@ RUN_DEPENDS-network = \
 	x11/kde-applications/kio-extras \
 	x11/kde-applications/kmailtransport \
 	x11/kde-applications/krdc \
-	x11/kde-applications/krfb \
-	x11/kde-applications/zeroconf-ioslave
+	x11/kde-applications/krfb
 
 # Not yet ported
 #x11/kde-applications/kopete
@@ -245,7 +244,6 @@ KDE_SDK = \
 	x11/kde-applications/kcachegrind \
 	x11/kde-applications/kde-dev-scripts \
 	x11/kde-applications/kde-dev-utils \
-	x11/kde-applications/kdesdk-kioslaves \
 	x11/kde-applications/kdesdk-thumbnailers \
 	x11/kde-applications/kompare \
 	x11/kde-applications/lokalize \
