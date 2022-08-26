@@ -1,9 +1,8 @@
 COMMENT =		extensible memoizing collections and decorators
 
-MODPY_EGG_VERSION =	4.2.4
+MODPY_EGG_VERSION =	5.2.0
 DISTNAME =		cachetools-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,8 +17,7 @@ FLAVOR =		python3
 FLAVORS =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}cachetools/
