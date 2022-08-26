@@ -991,11 +991,11 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}identifie
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}kubeclientservice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}latent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}lineboundaries.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}lru.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}maildir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}netstrings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}path_expand_user.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}pathmatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}poll.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}private_tempdir.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1029,11 +1029,11 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/identifiers.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/kubeclientservice.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/latent.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/lineboundaries.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/util/logger.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/lru.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/maildir.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/misc.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/netstrings.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/path_expand_user.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/pathmatch.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/poll.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/private_tempdir.py
