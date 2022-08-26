@@ -1,6 +1,6 @@
 COMMENT =		infer file type and MIME type
 
-MODPY_EGG_VERSION =	1.0.10
+MODPY_EGG_VERSION =	1.1.0
 
 DISTNAME =		filetype-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -15,9 +15,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
+# some tests fail as the distfile doesn't include files they need
 TEST_DEPENDS =		devel/flake8 \
 			devel/py-test-benchmark${MODPY_FLAVOR}
 
