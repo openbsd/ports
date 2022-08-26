@@ -1,11 +1,10 @@
-COMMENT =	non-web browser
+COMMENT =	terminal browser for gopher, gemini, and finger
 
 MODGO_MODNAME =	tildegit.org/sloum/bombadillo
-MODGO_VERSION =	v0.0.0-20201120043812-757305db6692
+MODGO_VERSION =	v0.0.0-20220306215042-30e550c183b1
 
 DISTNAME =	bombadillo-${MODGO_VERSION}
-PKGNAME =	bombadillo-2.3.3.20201120
-REVISION =	0
+PKGNAME =	bombadillo-2.4.0
 
 CATEGORIES =	net
 

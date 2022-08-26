@@ -1,2 +1,15 @@
-Bombadillo features a full terminal user interface, vim-like keybindings,
-document pager, configurable settings, and a robust command selection.
+Bombadillo is a non-web browser for the terminal that features a full
+terminal user interface, vim-like keybindings, document pager,
+configurable settings, and a robust command selection.
+
+Currently, Bombadillo supports the following protocols as first class
+citizens:
+
+ - gopher
+ - gemini
+ - finger
+ - local (a user's file system)
+
+Web support is opt-in (turned off by default).  Links can be opened in a
+user's default web browser when in a graphical environment or rendered
+directly in Bombadillo if Lynx, w3m, or elinks are available.
