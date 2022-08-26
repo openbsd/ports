@@ -4,6 +4,8 @@ MODPY_EGG_VERSION= 5.0.1
 DISTNAME=	acme-tiny-${MODPY_EGG_VERSION}
 EPOCH=		0
 
+REVISION=	0
+
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 
 # MIT
@@ -11,7 +13,6 @@ PERMIT_PACKAGE=	Yes
 
 MODPY_PI=	Yes
 MODPY_PI_DIR=	a/acme_tiny
-MODPY_SETUPTOOLS= Yes
 
 BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
 

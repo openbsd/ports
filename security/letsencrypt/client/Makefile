@@ -15,7 +15,6 @@ RUN_DEPENDS=	security/letsencrypt/py-acme${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
 		devel/py-zopecomponent${MODPY_FLAVOR} \
 		devel/py-zopeinterface${MODPY_FLAVOR}
 MODPY_PYTEST=	Yes
-#MODPY_PYTEST_ARGS=	tests
 
 do-configure:
 	sed -i -e 's,/etc,${SYSCONFDIR},' \
