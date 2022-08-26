@@ -1,12 +1,12 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -527,7 +527,7 @@ dnl Checks for library functions.
- AC_FUNC_STRFTIME
- AC_CHECK_FUNCS(strftime localtime gettimeofday ftime)
- AC_CHECK_FUNCS(stat signal)
--AC_CHECK_FUNCS(rand rand_r srand time)
-+AC_CHECK_FUNCS(arc4random rand rand_r srand time)
+@@ -484,7 +484,7 @@ echo Checking libraries
+ dnl Checks for library functions.
+ AC_CHECK_FUNCS(gettimeofday ftime)
+ AC_CHECK_FUNCS(stat)
+-AC_CHECK_FUNCS(rand_r)
++AC_CHECK_FUNCS(arc4random rand_r)
  AC_CHECK_FUNCS(isascii mmap munmap putenv)
  
  AH_VERBATIM([HAVE_MUNMAP_AFTER],[/* mmap() is no good without munmap() */
