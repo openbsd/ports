@@ -3,6 +3,7 @@ COMMENT=		dynamic pixel format conversion library
 V=			0.1.96
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
