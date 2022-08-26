@@ -1,13 +1,12 @@
 COMMENT =	framework to automate HTML forms
 
-DISTNAME =	WWW-Mechanize-FormFiller-0.12
-REVISION =	0
+DISTNAME =	WWW-Mechanize-FormFiller-0.13
 
 CATEGORIES =	www
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
