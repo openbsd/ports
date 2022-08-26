@@ -1,5 +1,5 @@
 COMMENT=		VI Editor Like Emacs
-DISTNAME=		vile-9.8u
+DISTNAME=		vile-9.8w
 CATEGORIES=		editors
 HOMEPAGE=		https://invisible-island.net/vile/
 
@@ -8,13 +8,14 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c curses iconv
 
-MASTER_SITES=		https://invisible-mirror.net/archives/vile/current/ \
-			ftp://ftp.invisible-island.net/vile/current/ \
-			ftp://dickey.his.com/vile/current/
+MASTER_SITES=		https://invisible-island.net/archives/vile/current/ \
+			https://invisible-mirror.net/archives/vile/current/ \
+			ftp://ftp.invisible-island.net/vile/current/
 
 EXTRACT_SUFX=	.tgz
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=	--with-builtin-filters --with-screen=ncursesw
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 

@@ -1,0 +1,72 @@
+--- configure.orig	Sat Aug 20 15:48:11 2022
++++ configure	Thu Aug 25 14:05:32 2022
+@@ -27603,8 +27603,8 @@
+ 		;;
+ 	(*)
+ 
+-echo "$as_me:27606: checking for crypt function" >&5
+-echo $ECHO_N "checking for crypt function... $ECHO_C" >&6
++echo "$as_me:27606: checking for broken_crypt function" >&5
++echo $ECHO_N "checking for broken_crypt function... $ECHO_C" >&6
+ if test "${cf_cv_crypt_func+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -27617,7 +27617,7 @@
+ int
+ main (void)
+ {
+-crypt()
++broken_crypt()
+   ;
+   return 0;
+ }
+@@ -27649,7 +27649,7 @@
+ int
+ main (void)
+ {
+-crypt()
++broken_crypt()
+   ;
+   return 0;
+ }
+@@ -27686,8 +27686,8 @@
+ if test "$cf_cv_crypt_func" != no ; then
+ 	cf_save_LIBS="$LIBS"
+ 	test "$cf_cv_crypt_func" != yes && LIBS="$cf_cv_crypt_func $LIBS"
+-echo "$as_me:27689: checking if crypt works" >&5
+-echo $ECHO_N "checking if crypt works... $ECHO_C" >&6
++echo "$as_me:27689: checking if broken_crypt works" >&5
++echo $ECHO_N "checking if broken_crypt works... $ECHO_C" >&6
+ if test "${cf_cv_crypt_works+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -27701,9 +27701,9 @@
+ #include "confdefs.h"
+ 
+ #include <string.h>
+-extern char *crypt();
++extern char *broken_crypt();
+ int main(void) {
+-	char *s = crypt("vi-crypt", "vi");
++	char *s = broken_crypt("vi-crypt", "vi");
+ 	${cf_cv_main_return:-return}(strcmp("vi6r2tczBYLvM", s) != 0);
+ }
+ 
+@@ -28114,7 +28114,7 @@
+ _nc_free_tinfo \
+ access \
+ alarm \
+-crypt \
++broken_crypt \
+ getcwd \
+ getegid \
+ geteuid \
+@@ -32763,7 +32763,7 @@
+ atoi \
+ chdir \
+ close \
+-crypt \
++broken_crypt \
+ dup \
+ execlp \
+ fclose \

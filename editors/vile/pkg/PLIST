@@ -6,89 +6,8 @@ lib/vile/
 @bin lib/vile/atr2ansi
 @bin lib/vile/atr2html
 @bin lib/vile/atr2text
-@bin lib/vile/vile-ada-filt
-@bin lib/vile/vile-as-filt
-@bin lib/vile/vile-asm-filt
-@bin lib/vile/vile-au3-filt
-@bin lib/vile/vile-awk-filt
-@bin lib/vile/vile-basic-filt
-@bin lib/vile/vile-bat-filt
-@bin lib/vile/vile-bnf-filt
-@bin lib/vile/vile-c-filt
-@bin lib/vile/vile-cfg-filt
-@bin lib/vile/vile-conf-filt
 @bin lib/vile/vile-crypt
-@bin lib/vile/vile-css-filt
-@bin lib/vile/vile-cweb-filt
-@bin lib/vile/vile-dcl-filt
-@bin lib/vile/vile-def-filt
-@bin lib/vile/vile-diff-filt
-@bin lib/vile/vile-ecl-filt
-@bin lib/vile/vile-erl-filt
-@bin lib/vile/vile-esql-filt
-@bin lib/vile/vile-est-filt
-@bin lib/vile/vile-fdl-filt
-@bin lib/vile/vile-hs-filt
-@bin lib/vile/vile-html-filt
-@bin lib/vile/vile-imake-filt
-@bin lib/vile/vile-info-filt
-@bin lib/vile/vile-ini-filt
-@bin lib/vile/vile-iss-filt
-@bin lib/vile/vile-json-filt
-@bin lib/vile/vile-key-filt
-@bin lib/vile/vile-latex-filt
-@bin lib/vile/vile-lex-filt
-@bin lib/vile/vile-lisp-filt
-@bin lib/vile/vile-lua-filt
-@bin lib/vile/vile-m4-filt
-@bin lib/vile/vile-mail-filt
-@bin lib/vile/vile-mailcap-filt
-@bin lib/vile/vile-make-filt
 @bin lib/vile/vile-manfilt
-@bin lib/vile/vile-mcrl-filt
-@bin lib/vile/vile-midl-filt
-@bin lib/vile/vile-mms-filt
-@bin lib/vile/vile-nmake-filt
-@bin lib/vile/vile-nr-filt
-@bin lib/vile/vile-pas-filt
-@bin lib/vile/vile-perl-filt
-@bin lib/vile/vile-perl6-filt
-@bin lib/vile/vile-php-filt
-@bin lib/vile/vile-pot-filt
-@bin lib/vile/vile-ps-filt
-@bin lib/vile/vile-ps1-filt
-@bin lib/vile/vile-py-filt
-@bin lib/vile/vile-rc-filt
-@bin lib/vile/vile-rcs-filt
-@bin lib/vile/vile-rexx-filt
-@bin lib/vile/vile-rpm-filt
-@bin lib/vile/vile-rtf-filt
-@bin lib/vile/vile-ruby-filt
-@bin lib/vile/vile-rust-filt
-@bin lib/vile/vile-sccs-filt
-@bin lib/vile/vile-scheme-filt
-@bin lib/vile/vile-sed-filt
-@bin lib/vile/vile-sh-filt
-@bin lib/vile/vile-sml-filt
-@bin lib/vile/vile-spell-filt
-@bin lib/vile/vile-sql-filt
-@bin lib/vile/vile-tags-filt
-@bin lib/vile/vile-tbl-filt
-@bin lib/vile/vile-tc-filt
-@bin lib/vile/vile-tcl-filt
-@bin lib/vile/vile-texi-filt
-@bin lib/vile/vile-ti-filt
-@bin lib/vile/vile-tpu-filt
-@bin lib/vile/vile-txt-filt
-@bin lib/vile/vile-vile-filt
-@bin lib/vile/vile-vlog-filt
-@bin lib/vile/vile-wbt-filt
-@bin lib/vile/vile-xml-filt
-@bin lib/vile/vile-xq-filt
-@bin lib/vile/vile-xres-filt
-@bin lib/vile/vile-xs-filt
-@bin lib/vile/vile-yacc-filt
-@bin lib/vile/vile-yaml-filt
 @man man/man1/vile-libdir-path.1
 @man man/man1/vile-pager.1
 @man man/man1/vile-to-html.1
@@ -149,6 +68,7 @@ share/vile/mailcap.keywords
 share/vile/make.keywords
 share/vile/manpage.rc
 share/vile/mcrl.keywords
+share/vile/md.keywords
 share/vile/midl.keywords
 share/vile/modes.rc
 share/vile/mvn.keywords
@@ -160,7 +80,6 @@ share/vile/palettes.rc
 share/vile/pas.keywords
 share/vile/pc.keywords
 share/vile/perl.keywords
-share/vile/perl6.keywords
 share/vile/php.keywords
 share/vile/pictmode.rc
 share/vile/pot.keywords
@@ -168,6 +87,7 @@ share/vile/prolog.keywords
 share/vile/ps.keywords
 share/vile/ps1.keywords
 share/vile/py.keywords
+share/vile/raku.keywords
 share/vile/rb.keywords
 share/vile/rc.keywords
 share/vile/rcs.keywords
