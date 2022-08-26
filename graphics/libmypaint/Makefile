@@ -3,6 +3,7 @@ COMMENT =	library for making brushstrokes
 V =		1.6.1
 DISTNAME =	libmypaint-$V
 EXTRACT_SUFX =	.tar.xz
+REVISION =	0
 
 SHARED_LIBS +=		mypaint-gegl	0.0 # 0.0
 SHARED_LIBS +=		mypaint		0.0 # 0.0
