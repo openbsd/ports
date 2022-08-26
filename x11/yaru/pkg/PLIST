@@ -7783,6 +7783,7 @@ share/icons/Yaru/16x16/mimetypes/text-x-install.png
 share/icons/Yaru/16x16/mimetypes/text-x-java-source.png
 share/icons/Yaru/16x16/mimetypes/text-x-java.png
 share/icons/Yaru/16x16/mimetypes/text-x-javascript.png
+share/icons/Yaru/16x16/mimetypes/text-x-kotlin.png
 share/icons/Yaru/16x16/mimetypes/text-x-lilypond.png
 share/icons/Yaru/16x16/mimetypes/text-x-log.png
 share/icons/Yaru/16x16/mimetypes/text-x-lua.png
@@ -8978,6 +8979,7 @@ share/icons/Yaru/16x16@2x/mimetypes/text-x-install.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-java-source.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-java.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-javascript.png
+share/icons/Yaru/16x16@2x/mimetypes/text-x-kotlin.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-lilypond.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-log.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-lua.png
@@ -11226,6 +11228,7 @@ share/icons/Yaru/24x24/mimetypes/text-x-install.png
 share/icons/Yaru/24x24/mimetypes/text-x-java-source.png
 share/icons/Yaru/24x24/mimetypes/text-x-java.png
 share/icons/Yaru/24x24/mimetypes/text-x-javascript.png
+share/icons/Yaru/24x24/mimetypes/text-x-kotlin.png
 share/icons/Yaru/24x24/mimetypes/text-x-lilypond.png
 share/icons/Yaru/24x24/mimetypes/text-x-log.png
 share/icons/Yaru/24x24/mimetypes/text-x-lua.png
@@ -12488,6 +12491,7 @@ share/icons/Yaru/24x24@2x/mimetypes/text-x-install.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-java-source.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-java.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-javascript.png
+share/icons/Yaru/24x24@2x/mimetypes/text-x-kotlin.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-lilypond.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-log.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-lua.png
@@ -13415,6 +13419,7 @@ share/icons/Yaru/256x256/mimetypes/text-x-install.png
 share/icons/Yaru/256x256/mimetypes/text-x-java-source.png
 share/icons/Yaru/256x256/mimetypes/text-x-java.png
 share/icons/Yaru/256x256/mimetypes/text-x-javascript.png
+share/icons/Yaru/256x256/mimetypes/text-x-kotlin.png
 share/icons/Yaru/256x256/mimetypes/text-x-lilypond.png
 share/icons/Yaru/256x256/mimetypes/text-x-log.png
 share/icons/Yaru/256x256/mimetypes/text-x-lua.png
@@ -14342,6 +14347,7 @@ share/icons/Yaru/256x256@2x/mimetypes/text-x-install.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-java-source.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-java.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-javascript.png
+share/icons/Yaru/256x256@2x/mimetypes/text-x-kotlin.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-lilypond.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-log.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-lua.png
@@ -15269,6 +15275,7 @@ share/icons/Yaru/32x32/mimetypes/text-x-install.png
 share/icons/Yaru/32x32/mimetypes/text-x-java-source.png
 share/icons/Yaru/32x32/mimetypes/text-x-java.png
 share/icons/Yaru/32x32/mimetypes/text-x-javascript.png
+share/icons/Yaru/32x32/mimetypes/text-x-kotlin.png
 share/icons/Yaru/32x32/mimetypes/text-x-lilypond.png
 share/icons/Yaru/32x32/mimetypes/text-x-log.png
 share/icons/Yaru/32x32/mimetypes/text-x-lua.png
@@ -16196,6 +16203,7 @@ share/icons/Yaru/32x32@2x/mimetypes/text-x-install.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-java-source.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-java.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-javascript.png
+share/icons/Yaru/32x32@2x/mimetypes/text-x-kotlin.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-lilypond.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-log.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-lua.png
@@ -17143,6 +17151,7 @@ share/icons/Yaru/48x48/mimetypes/text-x-install.png
 share/icons/Yaru/48x48/mimetypes/text-x-java-source.png
 share/icons/Yaru/48x48/mimetypes/text-x-java.png
 share/icons/Yaru/48x48/mimetypes/text-x-javascript.png
+share/icons/Yaru/48x48/mimetypes/text-x-kotlin.png
 share/icons/Yaru/48x48/mimetypes/text-x-lilypond.png
 share/icons/Yaru/48x48/mimetypes/text-x-log.png
 share/icons/Yaru/48x48/mimetypes/text-x-lua.png
@@ -18070,6 +18079,7 @@ share/icons/Yaru/48x48@2x/mimetypes/text-x-install.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-java-source.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-java.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-javascript.png
+share/icons/Yaru/48x48@2x/mimetypes/text-x-kotlin.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-lilypond.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-log.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-lua.png
@@ -18622,7 +18632,9 @@ share/icons/Yaru/scalable-max-32/status/process-working-symbolic.svg
 share/icons/Yaru/scalable/actions/
 share/icons/Yaru/scalable/actions/action-unavailable-symbolic.svg
 share/icons/Yaru/scalable/actions/address-book-new-symbolic.svg
+share/icons/Yaru/scalable/actions/adw-entry-apply-symbolic.svg
 share/icons/Yaru/scalable/actions/adw-expander-arrow-symbolic.svg
+share/icons/Yaru/scalable/actions/adw-mail-send-symbolic.svg
 share/icons/Yaru/scalable/actions/annotations-squiggly-symbolic.svg
 share/icons/Yaru/scalable/actions/annotations-text-symbolic.svg
 share/icons/Yaru/scalable/actions/application-exit-rtl-symbolic.svg
@@ -18931,6 +18943,7 @@ share/icons/Yaru/scalable/apps/evolution-symbolic.svg
 share/icons/Yaru/scalable/apps/extensions-symbolic.svg
 share/icons/Yaru/scalable/apps/file-roller-symbolic.svg
 share/icons/Yaru/scalable/apps/filemanager-app-symbolic.svg
+share/icons/Yaru/scalable/apps/flatpak-symbolic.svg
 share/icons/Yaru/scalable/apps/gallery-app-symbolic.svg
 share/icons/Yaru/scalable/apps/games-app-symbolic.svg
 share/icons/Yaru/scalable/apps/gedit-symbolic.svg
@@ -19076,6 +19089,7 @@ share/icons/Yaru/scalable/apps/session-properties-symbolic.svg
 share/icons/Yaru/scalable/apps/settings-app-symbolic.svg
 share/icons/Yaru/scalable/apps/shotwell-symbolic.svg
 share/icons/Yaru/scalable/apps/sm.puri.Chatty-symbolic.svg
+share/icons/Yaru/scalable/apps/snap-symbolic.svg
 share/icons/Yaru/scalable/apps/snapcraft-symbolic.svg
 share/icons/Yaru/scalable/apps/software-center-symbolic.svg
 share/icons/Yaru/scalable/apps/software-properties-gtk-symbolic.svg
@@ -19230,6 +19244,7 @@ share/icons/Yaru/scalable/devices/audio-speakers-bluetooth-symbolic.svg
 share/icons/Yaru/scalable/devices/audio-speakers-rtl-symbolic.svg
 share/icons/Yaru/scalable/devices/audio-speakers-symbolic-rtl.svg
 share/icons/Yaru/scalable/devices/audio-speakers-symbolic.svg
+share/icons/Yaru/scalable/devices/auth-face-symbolic.svg
 share/icons/Yaru/scalable/devices/auth-fingerprint-symbolic.svg
 share/icons/Yaru/scalable/devices/auth-sim-symbolic.svg
 share/icons/Yaru/scalable/devices/auth-smartcard-symbolic.svg
@@ -19300,6 +19315,7 @@ share/icons/Yaru/scalable/devices/ups-symbolic.svg
 share/icons/Yaru/scalable/devices/video-display-symbolic.svg
 share/icons/Yaru/scalable/emblems/
 share/icons/Yaru/scalable/emblems/adaptive-symbolic.svg
+share/icons/Yaru/scalable/emblems/adw-external-link-symbolic.svg
 share/icons/Yaru/scalable/emblems/app-installed-symbolic.svg
 share/icons/Yaru/scalable/emblems/app-remove-symbolic.svg
 share/icons/Yaru/scalable/emblems/desktop-symbolic.svg
@@ -19325,6 +19341,7 @@ share/icons/Yaru/scalable/emblems/pub-symbolic.svg
 share/icons/Yaru/scalable/emblems/safety-symbolic.svg
 share/icons/Yaru/scalable/emblems/sign-language-symbolic.svg
 share/icons/Yaru/scalable/emblems/test-pass-symbolic.svg
+share/icons/Yaru/scalable/emblems/test-symbolic.svg
 share/icons/Yaru/scalable/emblems/yelp-page-video-symbolic.svg
 share/icons/Yaru/scalable/emotes/
 share/icons/Yaru/scalable/emotes/emote-love-symbolic.svg
@@ -19353,6 +19370,7 @@ share/icons/Yaru/scalable/emotes/face-uncertain-symbolic.svg
 share/icons/Yaru/scalable/emotes/face-wink-symbolic.svg
 share/icons/Yaru/scalable/emotes/face-worried-symbolic.svg
 share/icons/Yaru/scalable/emotes/face-yawn-symbolic.svg
+share/icons/Yaru/scalable/emotes/hand-open-symbolic.svg
 share/icons/Yaru/scalable/generic-symbols/
 share/icons/Yaru/scalable/generic-symbols/chat-none-symbolic.svg
 share/icons/Yaru/scalable/generic-symbols/chat-symbolic.svg
@@ -19523,6 +19541,7 @@ share/icons/Yaru/scalable/status/changes-allow-symbolic.svg
 share/icons/Yaru/scalable/status/changes-prevent-symbolic.svg
 share/icons/Yaru/scalable/status/channel-insecure-symbolic.svg
 share/icons/Yaru/scalable/status/channel-secure-symbolic.svg
+share/icons/Yaru/scalable/status/community-none-symbolic.svg
 share/icons/Yaru/scalable/status/computer-fail-symbolic.svg
 share/icons/Yaru/scalable/status/content-loading-symbolic.svg
 share/icons/Yaru/scalable/status/daytime-sunrise-symbolic.svg
