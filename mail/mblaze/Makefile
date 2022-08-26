@@ -1,6 +1,7 @@
 COMMENT =	set of Maildir utilities
 
 DISTNAME =	mblaze-1.2
+REVISION =	0
 CATEGORIES =	mail
 
 HOMEPAGE =	https://git.vuxu.org/mblaze/
