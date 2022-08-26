@@ -1,6 +1,6 @@
 COMMENT=		XSLT C Library for GNOME
 
-VERSION=		1.1.35
+VERSION=		1.1.36
 DISTNAME=		libxslt-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
