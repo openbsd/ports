@@ -1,7 +1,6 @@
 COMMENT =		fast and thorough lazy object proxy
 
-MODPY_EGG_VERSION =	1.4.3
-REVISION =		1
+MODPY_EGG_VERSION =	1.7.1
 DISTNAME =		lazy-object-proxy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
@@ -19,8 +18,7 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 MODPY_PYTEST_ARGS =	--ignore=src
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
