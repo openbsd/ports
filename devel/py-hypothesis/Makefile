@@ -1,6 +1,7 @@
 COMMENT =		library for property based testing
 
-MODPY_EGG_VERSION =	6.46.11
+# newer versions required new dep 'exceptiongroup'
+MODPY_EGG_VERSION =	6.47.1
 DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
 PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
@@ -13,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
