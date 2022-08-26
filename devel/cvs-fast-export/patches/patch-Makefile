@@ -1,24 +1,11 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -41,10 +41,11 @@ CPPFLAGS += -DVERSION=\"$(VERSION)\"
+@@ -43,6 +43,7 @@ CPPFLAGS += -DVERSION=\"$(VERSION)\"
  
  # Enable this for multithreading.
  CFLAGS += -pthread
 +LDFLAGS += -pthread
  CPPFLAGS += -DTHREADS
  
- # Optimizing for speed. Comment this out for distribution builds
--CFLAGS += -march=native
-+#CFLAGS += -march=native
- 
- # To enable debugging of the Yacc grammar, uncomment the following line
- #CPPFLAGS += -DYYDEBUG=1
-@@ -78,7 +79,6 @@ CPPFLAGS+=-Drestrict=__restrict__
- # CFLAGS += -pg
- # Warning: Using -O3 has been seen to cause core dumps on repositories with
- # very long revision names - some bounds check gets optimized away. Don't do that.
--CFLAGS += -O2
- # If your toolchain supports link time optimization this is a cheap speedup
- # CFLAGS += -flto
- # CFLAGS += -g
+ # Optimizing for speed. Un-comment for testing Linux build
