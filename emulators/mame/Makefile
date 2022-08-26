@@ -1,5 +1,5 @@
 BROKEN-i386 =	broken on 32-bit; enum in src/frontend/mame/ui/videoopt.h starting at 0x80000000
-ONLY_FOR_ARCHS = amd64 i386
+ONLY_FOR_ARCHS = amd64 i386 aarch64
 DPB_PROPERTIES = parallel
 
 USE_WXNEEDED =	Yes
@@ -55,7 +55,7 @@ MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
 		USE_SYSTEM_LIB_PUGIXML=1 \
 		USE_QTDEBUG=0 # avoid depending on Qt
 
-.if ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "aarch64"
 MAKE_ENV +=	PTR64=1
 .endif
 
