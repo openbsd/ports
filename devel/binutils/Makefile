@@ -29,7 +29,7 @@ CONFIGURE_ARGS +=	--disable-gas \
 USE_GMAKE =	Yes
 
 post-install:
-	@rm ${PREFIX}/info/bfd.info	# Installed by devel/gas
+	@rm ${PREFIX}/info/bfd.info	# Installed by devel/gdb
 	@rm -rf ${PREFIX}/*-unknown-openbsd${OSREV}
 
 .include <bsd.port.mk>
