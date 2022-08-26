@@ -3,11 +3,10 @@
 
 COMMENT=		Foreign Function Interface for Python calling C code
 
-MODPY_EGG_VERSION=	1.13.2
+MODPY_EGG_VERSION=	1.15.1
 DISTNAME=		cffi-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		4
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -20,8 +19,7 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PEP517=		setuptools
 
 LIB_DEPENDS=		devel/libffi
 RUN_DEPENDS=		devel/py-cparser${MODPY_FLAVOR}
