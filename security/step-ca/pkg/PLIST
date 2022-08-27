@@ -1,0 +1,28 @@
+@newgroup _step-ca:883
+@newuser _step-ca:883:883::Step-ca Account:/var/empty:/sbin/nologin
+@rcscript ${RCDIR}/step_ca
+@mode 700
+@owner _step-ca
+@group _step-ca
+@sample ${LOCALSTATEDIR}/step-ca/
+@mode
+@owner
+@group
+@bin bin/step-awskms-init
+@bin bin/step-ca
+@bin bin/step-cloudkms-init
+@bin bin/step-pkcs11-init
+@bin bin/step-yubikey-init
+share/doc/step-ca/
+share/doc/step-ca/CONTRIBUTING.md
+share/doc/step-ca/GETTING_STARTED.md
+share/doc/step-ca/README.md
+share/doc/step-ca/acme.md
+share/doc/step-ca/cas.md
+share/doc/step-ca/database.md
+share/doc/step-ca/defaults.md
+share/doc/step-ca/docker.md
+share/doc/step-ca/kms.md
+share/doc/step-ca/provisioners.md
+share/doc/step-ca/questions.md
+share/doc/step-ca/revocation.md

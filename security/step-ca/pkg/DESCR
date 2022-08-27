@@ -1,0 +1,22 @@
+step-ca is an online certificate authority for secure, automated certificate
+management. It's the server counterpart to the step CLI tool.
+
+You can use it to:
+
+- Issue X.509 certificates for your internal infrastructure:
+  - HTTPS certificates that work in browsers (RFC5280 and CA/Browser Forum
+    compliance)
+  - TLS certificates for VMs, containers, APIs, mobile clients, database
+    connections, printers, wifi networks, toaster ovens...
+  - Client certificates to enable mutual TLS (mTLS) in your infra. mTLS is an
+    optional feature in TLS where both client and server authenticate each
+    other. Why add the complexity of a VPN when you can safely use mTLS over
+    the public internet?
+- Issue SSH certificates:
+  - For people, in exchange for single sign-on ID tokens
+  - For hosts, in exchange for cloud instance identity documents
+- Easily automate certificate management:
+  - It's an ACME v2 server
+  - It has a JSON API
+  - It comes with a Go wrapper
+  - ... and there's a command-line client you can use in scripts!
