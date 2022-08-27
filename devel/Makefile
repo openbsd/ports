@@ -1581,7 +1581,6 @@
      SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unicorn,python3
      SUBDIR += py-urwid,python3
-     SUBDIR += py-uv,python3
      SUBDIR += py-vcversioner,python3
      SUBDIR += py-virtualenv,python3
      SUBDIR += py-voluptuous,python3
