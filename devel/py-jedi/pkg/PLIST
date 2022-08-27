@@ -1184,10 +1184,10 @@ lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.7/
 lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.7/_py_abc.pyi
 lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.7/contextvars.pyi
 lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.7/dataclasses.pyi
-lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/${MODPY_VERSION}/graphlib.pyi
-lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/${MODPY_VERSION}/zoneinfo/
-lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/${MODPY_VERSION}/zoneinfo/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.9/
+lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.9/graphlib.pyi
+lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.9/zoneinfo/
+lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3.9/zoneinfo/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3/_ast.pyi
 lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3/_bootlocale.pyi
 lib/python${MODPY_VERSION}/site-packages/jedi/third_party/typeshed/stdlib/3/_compat_pickle.pyi
