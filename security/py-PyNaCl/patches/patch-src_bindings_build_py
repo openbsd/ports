@@ -1,7 +1,7 @@
 Index: src/bindings/build.py
 --- src/bindings/build.py.orig
 +++ src/bindings/build.py
-@@ -60,4 +60,4 @@ else:
+@@ -59,4 +59,4 @@ else:
      libraries = ["sodium"]
  
  # Set our source so that we can actually build our bindings to sodium.

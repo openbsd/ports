@@ -1,9 +1,8 @@
 COMMENT =		Python binding to the NaCl library
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		security
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
