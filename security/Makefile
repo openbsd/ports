@@ -382,6 +382,7 @@
      SUBDIR += stegdetect
      SUBDIR += steghide
      SUBDIR += stegseek
+     SUBDIR += step-ca
      SUBDIR += strobe
      SUBDIR += stunnel
      SUBDIR += sudo
