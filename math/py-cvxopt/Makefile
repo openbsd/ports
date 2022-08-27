@@ -1,10 +1,11 @@
 COMMENT =		convex optimization package
 
-MODPY_EGG_VERSION =	1.2.6
+MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		cvxopt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
+
+HOMEPAGE =		https://cvxopt.org/
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -19,8 +20,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		Yes
 
 LIB_DEPENDS =		math/lapack \
 			math/blas \
