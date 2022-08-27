@@ -1,10 +1,11 @@
 COMMENT =		better multiprocessing and multithreading in python
 
-MODPY_EGG_VERSION =	0.70.9
+MODPY_EGG_VERSION =	0.70.13
 DISTNAME =		multiprocess-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		2
+
+HOMEPAGE =		https://github.com/uqfoundation/multiprocess
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -16,8 +17,11 @@ MODULES =		lang/python
 RUN_DEPENDS =		devel/py-dill${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
+
+NO_TEST =		Yes
+# needs "test.support" from somewhere..?
+MODPY_PYTEST_ARGS =	py${MODPY_VERSION}/multiprocess/tests
 
 FLAVORS =               python3
 FLAVOR =                python3
