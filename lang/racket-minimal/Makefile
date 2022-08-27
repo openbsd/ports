@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 COMMENT =		multi-paradigm programming language
 
 V =			8.6
-REVISION =		2
+REVISION =		3
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}
@@ -74,11 +74,25 @@ FLAVOR ?=
 
 # - Use portable bitcode where there is not native support.
 # - CS without -pb requires wxneeded.
-.if ${FLAVOR:Mpb} || ${MACHINE_ARCH} != "amd64"
+.if ${FLAVOR:Mpb}
 CONFIGURE_ARGS +=	--enable-pb
-.else
+.elif ${MACHINE_ARCH} == "amd64"
 USE_WXNEEDED =		Yes
 LDFLAGS_WXNEEDED =	-Wl,-z,wxneeded
+.elif ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "sparc64"
+CONFIGURE_ARGS +=	--enable-pb \
+			--enable-mach=tpb64b
+.elif ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--enable-pb \
+			--enable-mach=tpb32b
+.elif ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "mips64el"
+CONFIGURE_ARGS +=	--enable-pb \
+			--enable-mach=tpb64l
+.elif ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386"
+CONFIGURE_ARGS +=	--enable-pb \
+			--enable-mach=tpb32l
+.else
+CONFIGURE_ARGS +=	--enable-pb
 .endif
 
 do-build:
