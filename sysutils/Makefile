@@ -430,6 +430,7 @@
      SUBDIR += usbutil
      SUBDIR += usbutils
      SUBDIR += usmb
+     SUBDIR += vifm
      SUBDIR += virt-manager
      SUBDIR += virt-what
      SUBDIR += vmdktool
