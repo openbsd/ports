@@ -3,7 +3,7 @@ COMMENT =	Python plugin support for Neovim
 MODPY_EGG_VERSION =	0.4.3
 DISTNAME =		pynvim-${MODPY_EGG_VERSION}
 PKGNAME =		py-neovim-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/pynvim
@@ -23,7 +23,6 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
-			devel/py-uv${MODPY_FLAVOR} \
 			devel/py-greenlet${MODPY_FLAVOR}
 TEST_DEPENDS =		editors/neovim
 
