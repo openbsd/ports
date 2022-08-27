@@ -4,8 +4,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
-GNOME_VERSION=		41.2
-REVISION=		0
+GNOME_VERSION=		41.3
 
 SHARED_LIBS += devhelp-3                 1.0 # 6.3.0
 

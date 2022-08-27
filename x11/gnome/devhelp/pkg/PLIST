@@ -104,6 +104,14 @@ share/help/fr/devhelp/index-file-format.page
 share/help/fr/devhelp/index.page
 share/help/fr/devhelp/installing-api-documentation.page
 share/help/fr/devhelp/search.page
+share/help/gl/devhelp/
+share/help/gl/devhelp/book-format.page
+share/help/gl/devhelp/figures/
+share/help/gl/devhelp/figures/org.gnome.Devhelp.svg
+share/help/gl/devhelp/index-file-format.page
+share/help/gl/devhelp/index.page
+share/help/gl/devhelp/installing-api-documentation.page
+share/help/gl/devhelp/search.page
 share/help/hr/
 share/help/hr/devhelp/
 share/help/hr/devhelp/book-format.page
