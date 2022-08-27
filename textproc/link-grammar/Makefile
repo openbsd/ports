@@ -5,7 +5,7 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.10.4
+VERSION =		5.10.5
 DISTNAME =		link-grammar-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
@@ -17,7 +17,7 @@ SHARED_LIBS +=  link-grammar-java    8.0       # 15.2
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		http://www.abisource.com/projects/link-grammar/
+HOMEPAGE =		https://www.abisource.com/projects/link-grammar/
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
@@ -31,7 +31,7 @@ WANTLIB-java += ${WANTLIB} link-grammar pthread
 WANTLIB-python += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-python += iconv intl link-grammar pthread util
 
-MASTER_SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
+MASTER_SITES =		https://www.abisource.com/downloads/link-grammar/${VERSION}/
 
 MODULES =		lang/python
 

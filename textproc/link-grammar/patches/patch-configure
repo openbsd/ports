@@ -1,0 +1,49 @@
+Avoid using a broken Python version check which comes from autoconf-archive,
+it fails with 3.10.
+
+This is fixed in newer autoconf-archive upstream but that's more complicated
+to patch, so let's just remove the check for now, hopefully upstream will have
+updated by the time this patch needs regen.
+
+(Patching the input files is more annoying).
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -21158,36 +21158,6 @@ $as_echo "yes" >&6; }
+ 	fi
+ 
+ 	#
+-	# if the macro parameter ``version'' is set, honour it
+-	#
+-	if test -n ">= '3.4'"; then
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for a version of Python >= '3.4'" >&5
+-$as_echo_n "checking for a version of Python >= '3.4'... " >&6; }
+-		ac_supports_python_ver=`$PYTHON -c "import sys; \
+-			ver = sys.version.split ()[0]; \
+-			print (ver >= '3.4')"`
+-		if test "$ac_supports_python_ver" = "True"; then
+-		   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-		else
+-			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-			lg_python_unusable=yes
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: this package requires Python >= '3.4'.
+-If you have it installed, but it isn't the default Python
+-interpreter in your system path, please pass the PYTHON_VERSION
+-variable to configure. See \`\`configure --help'' for reference.
+-" >&5
+-$as_echo "$as_me: this package requires Python >= '3.4'.
+-If you have it installed, but it isn't the default Python
+-interpreter in your system path, please pass the PYTHON_VERSION
+-variable to configure. See \`\`configure --help'' for reference.
+-" >&6;}
+-			PYTHON_VERSION=""
+-		fi
+-	fi
+-
+-	#
+ 	# Check if you have distutils, else fail
+ 	#
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for the distutils Python package" >&5

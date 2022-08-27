@@ -548,8 +548,10 @@ share/link-grammar/th/words/words.qf.lhs
 share/link-grammar/th/words/words.qf.rhs
 share/link-grammar/th/words/words.relpro.common
 share/link-grammar/th/words/words.sclmark
+share/link-grammar/th/words/words.sentsep
 share/link-grammar/th/words/words.v.attribute
 share/link-grammar/th/words/words.v.common
+share/link-grammar/th/words/words.v.evidential
 share/link-grammar/tr/
 share/link-grammar/tr/4.0.affix
 share/link-grammar/tr/4.0.constituent-knowledge
