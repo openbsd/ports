@@ -4419,7 +4419,7 @@ share/doc/cmake/html/_sources/release/3.5.rst.txt
 share/doc/cmake/html/_sources/release/3.6.rst.txt
 share/doc/cmake/html/_sources/release/3.7.rst.txt
 share/doc/cmake/html/_sources/release/3.8.rst.txt
-share/doc/cmake/html/_sources/release/${MODPY_VERSION}.rst.txt
+share/doc/cmake/html/_sources/release/3.9.rst.txt
 share/doc/cmake/html/_sources/release/index.rst.txt
 share/doc/cmake/html/_sources/variable/
 share/doc/cmake/html/_sources/variable/ANDROID.rst.txt
