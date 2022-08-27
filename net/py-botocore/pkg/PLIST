@@ -41,6 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}serialize.${MO
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}signers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}stub.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}tokens.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}translate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}validate.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1882,6 +1883,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/serialize.py
 lib/python${MODPY_VERSION}/site-packages/botocore/session.py
 lib/python${MODPY_VERSION}/site-packages/botocore/signers.py
 lib/python${MODPY_VERSION}/site-packages/botocore/stub.py
+lib/python${MODPY_VERSION}/site-packages/botocore/tokens.py
 lib/python${MODPY_VERSION}/site-packages/botocore/translate.py
 lib/python${MODPY_VERSION}/site-packages/botocore/utils.py
 lib/python${MODPY_VERSION}/site-packages/botocore/validate.py
