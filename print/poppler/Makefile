@@ -11,6 +11,8 @@ PKGNAME-utils=	poppler-utils-$V
 PKGNAME-qt5=	poppler-qt5-$V
 PKGNAME-qt6=	poppler-qt6-$V
 
+REVISION-main =	0
+
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=	poppler              73.0     # 116.0
