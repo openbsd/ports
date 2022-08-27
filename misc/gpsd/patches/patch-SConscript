@@ -7,9 +7,9 @@
 Index: SConscript
 --- SConscript.orig
 +++ SConscript
-@@ -209,8 +209,7 @@ api_version_minor = 14
+@@ -224,8 +224,7 @@ api_version_minor = 15
  libgps_version_current = 29
- libgps_version_revision = 0
+ libgps_version_revision = 1
  libgps_version_age = 0
 -libgps_version = "%d.%d.%d" % (libgps_version_current, libgps_version_age,
 -                               libgps_version_revision)
@@ -17,16 +17,16 @@ Index: SConscript
  #
  # Release identification ends here
  
-@@ -878,7 +877,7 @@ have_valgrind = False
- # per SCons 4.0.1 doc: Section 23.9. Not Configuring When Cleaning Targets
- if not cleaning and not helping:
-     # OS X aliases gcc to clang
+@@ -922,7 +921,7 @@ if not cleaning and not helping:
+     if (sys.platform != config.env['target_platform']):
+         announce("Target system is: %s" % config.env['target_platform'])
+ 
 -    announce("cc is %s, version %s" % (env['CC'], env['CCVERSION']))
 +    announce("cc is %s" % (env['CC']))
      # clang accepts -pthread, then warns it is unused.
      if not config.CheckCC():
          announce("ERROR: CC doesn't work")
-@@ -1348,6 +1347,10 @@ if not cleaning and not helping:
+@@ -1417,6 +1416,10 @@ if not cleaning and not helping:
      # if not, force qt to off
      if config.env["qt"]:
          qt_net_name = 'Qt%sNetwork' % config.env["qt_versioned"]
@@ -37,7 +37,7 @@ Index: SConscript
          qt_network = config.CheckPKG(qt_net_name)
          if not qt_network:
              config.env["qt"] = False
-@@ -1537,20 +1540,6 @@ if not cleaning and not helping and config.env['python
+@@ -1620,20 +1623,6 @@ if not cleaning and not helping and config.env['python
  
          config.env['xgps_deps'] = True
  
@@ -58,7 +58,7 @@ Index: SConscript
          # gtk+ needed by pygobject
          if not config.CheckPKG('gtk+-3.0'):
              config.env['xgps_deps'] = False
-@@ -1777,7 +1766,7 @@ libgpsd_static = env.StaticLibrary(
+@@ -1860,7 +1849,7 @@ libgpsd_static = env.StaticLibrary(
  packet_ffi_objects = [env.SharedObject(s) for s in packet_ffi_extension]
  packet_ffi_shared = env.SharedLibrary(target="gpsdpacket",
                                        source=packet_ffi_objects,

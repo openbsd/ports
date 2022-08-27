@@ -2,18 +2,17 @@ COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
 COMMENT-php=		web-based gpsd monitor in php
 
-VERSION=		3.23.1
+VERSION=		3.24
 DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
-REVISION-main=		0
 
-SHARED_LIBS +=		gps		22.1	# 29.0
-SHARED_LIBS +=		gpsdpacket	0.1	# 21.0
+SHARED_LIBS +=		gps		22.2
+SHARED_LIBS +=		gpsdpacket	0.1
 CATEGORIES=		misc geo
 
-HOMEPAGE =		https://gpsd.gitlab.io/gpsd/index.html
+HOMEPAGE =		https://gpsd.gitlab.io/gpsd/
 
 # BSD
 PERMIT_PACKAGE=		Yes
