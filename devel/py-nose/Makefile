@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	1.3.7
 DISTNAME=		nose-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		10
+REVISION=		11
 
 HOMEPAGE=		https://nose.readthedocs.io/en/latest/
 
@@ -26,6 +26,11 @@ NO_TEST=		Yes
 .endif
 
 MODPY_SETUPTOOLS=	Yes
+
+.if ${FLAVOR:Mpython3}
+post-patch:
+	cd ${WRKSRC} && 2to3 --no-diffs -w nose
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}nose
