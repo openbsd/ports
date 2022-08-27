@@ -1,0 +1,17 @@
+Skip checking atime.
+
+Index: tests/fileops/generic.c
+--- tests/fileops/generic.c.orig
++++ tests/fileops/generic.c
+@@ -244,7 +244,11 @@ perform_merge(int op)
+ #define st_atim st_atime
+ #define st_mtim st_mtime
+ #endif
++#ifndef __OpenBSD__
++		/* Whether this works actually depends on file-system and its mount
++		 * options. */
+ 		assert_success(memcmp(&src.st_atim, &dst.st_atim, sizeof(src.st_atim)));
++#endif
+ 		assert_success(memcmp(&src.st_mtim, &dst.st_mtim, sizeof(src.st_mtim)));
+ 		assert_success(memcmp(&src.st_mode, &dst.st_mode, sizeof(src.st_mode)));
+ 	}

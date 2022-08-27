@@ -1,0 +1,37 @@
+1. Rely on flags in `config.h`
+2. Improve detection of clang.
+
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
+@@ -143,8 +143,7 @@ override CFLAGS := $(CFLAGS) -MMD -MP -pipe \
+                    -Wall -Wno-char-subscripts \
+                    -Itest-support/ -Itest-support/stic/ \
+                    -include $(B)../build-aux/config.h \
+-                   -DTEST -D_XOPEN_SOURCE -D_XOPEN_SOURCE_EXTENDED \
+-                   -D_FILE_OFFSET_BITS=64
++                   -DTEST
+ override LDFLAGS := $(LDFLAGS)
+ ifdef unix_env
+     MF := $(abspath $(B)../src/Makefile)
+@@ -177,15 +176,18 @@ override CFLAGS += -fcommon
+ ifeq (,$(findstring -lpthread,$(LDFLAGS)))
+     override LDFLAGS += -pthread
+ endif
++
++# work around clang
++is_clang_cc := $(findstring clang,$(shell $(ACTUAL_CC) --version))
+ ifneq (,$(findstring --coverage, $(LDFLAGS)))
+-    ifeq (,$(findstring clang,$(CC)))
++    ifeq (,$(is_clang_cc))
+         # clang is inconvenient with regard to this flag, don't do coverage with
+         # it
+         override CFLAGS += --coverage
+         override LDFLAGS += --coverage
+     endif
+ endif
+-ifeq (,$(findstring clang,$(CC)))
++ifeq (,$(is_clang_cc))
+     # don't precompile header with clang (on OS X gcc is likely to be a symlink
+     # to clang) because it handles macros in a different way
+     ifneq (Darwin,$(shell uname -s))
