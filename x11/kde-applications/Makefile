@@ -118,7 +118,6 @@
      #SUBDIR += kopete
      SUBDIR += krdc
      SUBDIR += krfb
-     #SUBDIR += zeroconf-ioslave
 
      # pim
      SUBDIR += akregator
@@ -143,7 +142,6 @@
      SUBDIR += kcachegrind
      SUBDIR += kde-dev-scripts
      SUBDIR += kde-dev-utils
-     #SUBDIR += kdesdk-kioslaves
      SUBDIR += kdesdk-thumbnailers
      SUBDIR += kompare
      SUBDIR += lokalize
