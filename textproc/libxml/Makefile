@@ -7,6 +7,9 @@ GNOME_PROJECT=		libxml2
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
 
+REVISION-main=		0
+REVISION-python=	0
+
 SHARED_LIBS +=  xml2                 18.0     # 11.14
 
 CATEGORIES=		textproc
@@ -23,8 +26,9 @@ MODULES=		x11/gnome
 LIB_DEPENDS=		archivers/xz \
 			converters/libiconv
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS+=	--enable-static \
 			--with-html-dir="${PREFIX}/share/doc" \
 			--with-html-subdir="libxml2/html" \

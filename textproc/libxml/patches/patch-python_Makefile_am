@@ -1,0 +1,11 @@
+Index: python/Makefile.am
+--- python/Makefile.am.orig
++++ python/Makefile.am
+@@ -3,7 +3,6 @@
+ SUBDIRS = . tests
+ 
+ docsdir = $(docdir)/python
+-dist_docs_DATA = TODO
+ 
+ EXTRA_DIST = 			\
+ 	setup.py		\

@@ -1,7 +1,7 @@
-Index: python/tests/Makefile.in
---- python/tests/Makefile.in.orig
-+++ python/tests/Makefile.in
-@@ -413,7 +413,6 @@ PYTESTS = \
+Index: python/tests/Makefile.am
+--- python/tests/Makefile.am.orig
++++ python/tests/Makefile.am
+@@ -37,7 +37,6 @@ PYTESTS=	\
      readererr.py\
      relaxng.py	\
      schema.py	\
