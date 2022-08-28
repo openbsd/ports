@@ -1,6 +1,7 @@
 COMMENT=		python mocking and patching library for testing
 
 MODPY_EGG_VERSION=	4.0.3
+REVISION=		0
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
@@ -13,19 +14,12 @@ MAINTAINER=		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR}
 
 FLAVORS=		python3
-FLAVOR?=
+FLAVOR=			python3
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
-
-# Tests are currently missing from tarball
 MODPY_PYTEST=		Yes
-
-.if !${FLAVOR:Mpython3}
-RUN_DEPENDS +=		devel/py-funcsigs
-.endif
 
 .include <bsd.port.mk>
