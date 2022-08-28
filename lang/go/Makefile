@@ -124,20 +124,18 @@ do-test:
 do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
 
-.	for prog in go gofmt
-		${INSTALL_PROGRAM} -p ${WRKDIST}/bin/${prog} ${GOROOT}/bin
-		@ln -s ../go/bin/${prog} ${PREFIX}/bin/${prog}
-.	endfor
-
 	find ${WRKDIST} -maxdepth 1 -type f \
 		-exec ${INSTALL_DATA} -p {} ${GOROOT} \;
 
-.	for dir in api doc lib misc src pkg/include pkg/${GOCFG} test
-		cd ${WRKDIST} && \
-			find ${dir} -type d \
-				-exec ${INSTALL_DATA_DIR} ${GOROOT}/{} \; \
-			    -o -type f ! -name \*.orig \
-				-exec ${INSTALL_DATA} -p {} ${GOROOT}/{} \;
+	cd ${WRKDIST} && \
+		pax -rw -s '/^.*\.orig$$//' api doc lib misc src pkg/include \
+			pkg/${GOCFG} test ${GOROOT}
+	find ${GOROOT} -type d -exec chmod ${DIRMODE} {} +
+	find ${GOROOT} -type f -exec chmod ${SHAREMODE} {} +
+
+.	for prog in go gofmt
+		${INSTALL_PROGRAM} -p ${WRKDIST}/bin/${prog} ${GOROOT}/bin
+		@ln -s ../go/bin/${prog} ${PREFIX}/bin/${prog}
 .	endfor
 
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/${GOTOOLS}
