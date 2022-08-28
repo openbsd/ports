@@ -3,7 +3,7 @@ Fix parallel build. Taken from FreeBSD.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -3744,9 +3744,9 @@ doc/aclocal.1 doc/automake.1:
+@@ -3738,9 +3738,9 @@ doc/aclocal.1 doc/automake.1:
  	  && echo ".so man1/$$f-$(APIVERSION).1" > $@
  
  doc/aclocal-$(APIVERSION).1: $(aclocal_script) lib/Automake/Config.pm

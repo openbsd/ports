@@ -1,3 +1,10 @@
+Mostly adding suffixes.
+
+Last two hunks: patch to work with the older version of texinfo that we
+have in base (we don't want automake to depend on too many other ports..);
+the @subsection/@node one seems to be a bug in upstream's file which has
+since been fixed, the other is @geq which isn't supported in older texinfo.
+
 Index: doc/automake.texi
 --- doc/automake.texi.orig
 +++ doc/automake.texi
@@ -29,3 +36,22 @@ Index: doc/automake.texi
  @end direntry
  
  @titlepage
+@@ -6398,8 +6399,8 @@ fixed, and a parallel make could invoke more than one 
+ * Linking Multiple Yacc Parsers::
+ @end menu
+ 
+-@subsection Linking Multiple Yacc Parsers
+ @node Linking Multiple Yacc Parsers
++@subsection Linking Multiple Yacc Parsers
+ 
+ @cindex Linking multiple @command{yacc} parsers
+ 
+@@ -7865,7 +7866,7 @@ AM_PATH_PYTHON([2.5])
+ 
+ @noindent
+ This is fine when Python is an absolute requirement for the package.
+-If Python @geq{} 2.5 was only @emph{optional} for the package,
++If Python >= 2.5 was only @emph{optional} for the package,
+ @code{AM_PATH_PYTHON} could be called as follows.
+ 
+ @example

@@ -1,5 +1,5 @@
 VERSION=	1.16
-DISTNAME=	automake-${VERSION}.3
+DISTNAME=	automake-${VERSION}.5
 PKGSPEC=	automake->=${VERSION},<1.17
 EXTRACT_SUFX=	.tar.xz
 
@@ -38,7 +38,7 @@ TEST_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 do-test:
 	    ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	    @cd ${WRKBUILD} && \
-	    	exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
+		exec ${SETENV} ${MAKE_ENV} ${TEST_ENV} \
 		    ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} \
 		    -f ${MAKE_FILE} ${TEST_TARGET}
 

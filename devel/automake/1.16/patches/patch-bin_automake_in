@@ -1,7 +1,7 @@
 Index: bin/automake.in
 --- bin/automake.in.orig
 +++ bin/automake.in
-@@ -5246,6 +5246,7 @@ sub scan_autoconf_traces
+@@ -5272,6 +5272,7 @@ sub scan_autoconf_traces
  		_LT_AC_TAGCONFIG => 0,
  		m4_include => 1,
  		m4_sinclude => 1,
@@ -9,7 +9,7 @@ Index: bin/automake.in
  		sinclude => 1,
  	      );
  
-@@ -5274,6 +5275,7 @@ sub scan_autoconf_traces
+@@ -5300,6 +5301,7 @@ sub scan_autoconf_traces
        my ($here, $depth, @args) = split (/::/);
        $where = new Automake::Location $here;
        my $macro = $args[0];
