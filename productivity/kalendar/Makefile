@@ -1,15 +1,15 @@
 USE_WXNEEDED =	Yes
 
-COMMENT =		Akonadi calendar application
+COMMENT =	Akonadi calendar application
 
-DISTNAME =		kalendar-${MODKDE_VERSION}
-REVISION =		0
+DISTNAME =	kalendar-${MODKDE_VERSION}
+REVISION =	0
 
-CATEGORIES =		productivity x11
+CATEGORIES =	productivity x11
 
-HOMEPAGE =		https://apps.kde.org/kalendar/
+HOMEPAGE =	https://apps.kde.org/kalendar/
 
-MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # GPLv3+, LGPL-2.1+
 PERMIT_PACKAGE =	Yes
@@ -31,52 +31,48 @@ WANTLIB += Qt5Xml X11 c m
 MODULES =	x11/kde-applications \
 		devel/kf5
 
-CONFIGURE_STYLE =	cmake
+BUILD_DEPENDS =	devel/boost \
+		devel/gettext,-tools \
+		devel/kf5/kcompletion \
+		devel/kf5/kiconthemes \
+		devel/kf5/kio \
+		devel/kf5/kirigami2 \
+		devel/kf5/kitemviews \
+		devel/kf5/knotifications \
+		devel/kf5/kservice \
+		devel/kf5/ktextwidgets \
+		devel/kf5/plasma-framework \
+		devel/kf5/qqc2-desktop-style \
+		devel/kf5/solid \
+		devel/kf5/sonnet \
+		misc/shared-mime-info
 
-BUILD_DEPENDS =		devel/boost \
-			devel/gettext,-tools \
-			devel/kf5/kcompletion \
-			devel/kf5/kiconthemes \
-			devel/kf5/kio \
-			devel/kf5/kirigami2 \
-			devel/kf5/kitemviews \
-			devel/kf5/knotifications \
-			devel/kf5/kservice \
-			devel/kf5/ktextwidgets \
-			devel/kf5/plasma-framework \
-			devel/kf5/qqc2-desktop-style \
-			devel/kf5/solid \
-			devel/kf5/sonnet \
-			misc/shared-mime-info
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/kf5/kirigami2 \
+		devel/kf5/plasma-framework \
+		devel/kf5/qqc2-desktop-style \
+		x11/gtk+3,-guic
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/kf5/kirigami2 \
-			devel/kf5/plasma-framework \
-			devel/kf5/qqc2-desktop-style \
-			x11/gtk+3,-guic
-
-LIB_DEPENDS =		devel/kf5/kauth \
-			devel/kf5/kcodecs \
-			devel/kf5/kconfig \
-			devel/kf5/kconfigwidgets \
-			devel/kf5/kcontacts \
-			devel/kf5/kcoreaddons \
-			devel/kf5/kdbusaddons \
-			devel/kf5/ki18n\
-			devel/kf5/kitemmodels \
-			devel/kf5/kwidgetsaddons  \
-			devel/kf5/kxmlgui \
-			x11/kde-applications/akonadi \
-			x11/kde-applications/akonadi-calendar \
-			x11/kde-applications/calendarsupport \
-			x11/kde-applications/eventviews \
-			x11/kde-applications/grantleetheme \
-			x11/kde-applications/kcalutils \
-			x11/kde-applications/kidentitymanagement \
-			x11/kde-applications/kmime \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtsvg
-
-
+LIB_DEPENDS =	devel/kf5/kauth \
+		devel/kf5/kcodecs \
+		devel/kf5/kconfig \
+		devel/kf5/kconfigwidgets \
+		devel/kf5/kcontacts \
+		devel/kf5/kcoreaddons \
+		devel/kf5/kdbusaddons \
+		devel/kf5/ki18n\
+		devel/kf5/kitemmodels \
+		devel/kf5/kwidgetsaddons  \
+		devel/kf5/kxmlgui \
+		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-calendar \
+		x11/kde-applications/calendarsupport \
+		x11/kde-applications/eventviews \
+		x11/kde-applications/grantleetheme \
+		x11/kde-applications/kcalutils \
+		x11/kde-applications/kidentitymanagement \
+		x11/kde-applications/kmime \
+		x11/qt5/qtdeclarative \
+		x11/qt5/qtsvg
 
 .include <bsd.port.mk>
