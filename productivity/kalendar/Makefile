@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =		Akonadi calendar application
 
 DISTNAME =		kalendar-${MODKDE_VERSION}
+REVISION =		0
 
 CATEGORIES =		productivity x11
 
@@ -36,19 +37,21 @@ BUILD_DEPENDS =		devel/boost \
 			devel/gettext,-tools \
 			devel/kf5/kcompletion \
 			devel/kf5/kiconthemes \
+			devel/kf5/kio \
 			devel/kf5/kirigami2 \
 			devel/kf5/kitemviews \
+			devel/kf5/knotifications \
+			devel/kf5/kservice \
 			devel/kf5/ktextwidgets \
+			devel/kf5/plasma-framework \
 			devel/kf5/qqc2-desktop-style \
 			devel/kf5/solid \
 			devel/kf5/sonnet \
-			devel/kf5/kio \
-			devel/kf5/kservice \
-			devel/kf5/knotifications \
 			misc/shared-mime-info
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf5/kirigami2 \
+			devel/kf5/plasma-framework \
 			devel/kf5/qqc2-desktop-style \
 			x11/gtk+3,-guic
 
