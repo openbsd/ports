@@ -1,7 +1,7 @@
 COMMENT=	tool for editing version-control repository history
 
 DISTNAME=	reposurgeon-4.32
-#EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 #MASTER_SITES=	http://www.catb.org/esr/reposurgeon/
-# generated from upstream distfile with "go mod vendor"
+# generated from upstream distfile (.tar.xz) with "go mod vendor"
 MASTER_SITES=	https://spacehopper.org/mirrors/
 
 USE_GMAKE=	Yes
@@ -26,6 +26,7 @@ MODRUBY_RUNDEP=	No
 WRKSRC=		${WRKDIST}
 WRKBUILD=	${WRKDIST}
 MODGO_GOPATH=	${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}:${WRKSRC}/vendor
+MAKE_ENV=	GOFLAGS=-v GOMAXPROCS=${MAKE_JOBS}
 
 FAKE_FLAGS=	mandir=man
 

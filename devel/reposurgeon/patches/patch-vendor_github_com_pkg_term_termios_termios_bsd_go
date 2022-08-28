@@ -1,0 +1,26 @@
+Index: vendor/github.com/pkg/term/termios/termios_bsd.go
+--- vendor/github.com/pkg/term/termios/termios_bsd.go.orig
++++ vendor/github.com/pkg/term/termios/termios_bsd.go
+@@ -56,22 +56,6 @@ func Tcdrain(fd uintptr) error {
+ 	return unix.IoctlSetInt(int(fd), unix.TIOCDRAIN, 0)
+ }
+ 
+-// Tcflush discards data written to the object referred to by fd but not transmitted, or data received but not read, depending on the value of which.
+-func Tcflush(fd, which uintptr) error {
+-	var com int
+-	switch which {
+-	case unix.TCIFLUSH:
+-		com = FREAD
+-	case unix.TCOFLUSH:
+-		com = FWRITE
+-	case unix.TCIOFLUSH:
+-		com = FREAD | FWRITE
+-	default:
+-		return unix.EINVAL
+-	}
+-	return unix.IoctlSetPointerInt(int(fd), unix.TIOCFLUSH, com)
+-}
+-
+ // Cfgetispeed returns the input baud rate stored in the termios structure.
+ func Cfgetispeed(attr *unix.Termios) uint32 { return uint32(attr.Ispeed) }
+ 

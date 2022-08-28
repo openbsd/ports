@@ -1,0 +1,20 @@
+Index: vendor/github.com/pkg/term/termios/termios.go
+--- vendor/github.com/pkg/term/termios/termios.go.orig
++++ vendor/github.com/pkg/term/termios/termios.go
+@@ -16,16 +16,6 @@ func Tiocmset(fd uintptr, status int) error {
+ 	return unix.IoctlSetInt(int(fd), unix.TIOCMSET, status)
+ }
+ 
+-// Tiocmbis sets the indicated modem bits.
+-func Tiocmbis(fd uintptr, status int) error {
+-	return unix.IoctlSetPointerInt(int(fd), unix.TIOCMBIS, status)
+-}
+-
+-// Tiocmbic clears the indicated modem bits.
+-func Tiocmbic(fd uintptr, status int) error {
+-	return unix.IoctlSetPointerInt(int(fd), unix.TIOCMBIC, status)
+-}
+-
+ // Cfmakecbreak modifies attr for cbreak mode.
+ func Cfmakecbreak(attr *unix.Termios) {
+ 	attr.Lflag &^= unix.ECHO | unix.ICANON
