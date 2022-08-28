@@ -1,18 +1,16 @@
 Index: src/cmd/link/internal/ld/lib.go
 --- src/cmd/link/internal/ld/lib.go.orig
 +++ src/cmd/link/internal/ld/lib.go
-@@ -253,9 +253,12 @@ type Arch struct {
+@@ -252,8 +252,11 @@ type Arch struct {
  	PEreloc1       func(*sys.Arch, *OutBuf, *loader.Loader, loader.Sym, loader.ExtReloc, int64) bool
  	Xcoffreloc1    func(*sys.Arch, *OutBuf, *loader.Loader, loader.Sym, loader.ExtReloc, int64) bool
  
--	// Generate additional symbols for the native symbol table just prior to
--	// code generation.
-+	// Generate additional symbols just prior to output (before asmb).
- 	GenSymsLate func(*Link, *loader.Loader)
++	// Fix up symbols just prior to output (before asmb).
++	FixUpSyms func(*Link, *loader.Loader)
 +
-+	// Generate additional symbols for the native symbol table just prior to
+ 	// Generate additional symbols for the native symbol table just prior to
+-	// code generation.
 +	// code generation (before asmb2).
-+	GenSymsLate2 func(*Link, *loader.Loader)
+ 	GenSymsLate func(*Link, *loader.Loader)
  
  	// TLSIEtoLE converts a TLS Initial Executable relocation to
- 	// a TLS Local Executable relocation.

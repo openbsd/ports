@@ -5,7 +5,7 @@ BIN_BOOTSTRAP_VERSION = 1.18.4
 
 COMMENT =		Go programming language
 
-VERSION =		1.18.5
+VERSION =		1.19
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -95,7 +95,7 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
-		ulimit -d $$(ulimit -H -d) && \
+		ulimit -S -d $$(ulimit -H -d) && \
 		${SETENV} ${MAKE_ENV} \
 		CC="${CC}" \
 		CXX="${CXX}" \
@@ -110,7 +110,7 @@ do-build:
 # which breaks Go's (now rather fragile) os/exec tests.
 do-test:
 	@cd ${WRKSRC} && \
-		ulimit -d $$(ulimit -H -d) -n 256 && \
+		ulimit -S -d $$(ulimit -H -d) -n 256 && \
 		${SETENV} ${MAKE_ENV} \
 		CC="${CC}" \
 		CXX="${CXX}" \

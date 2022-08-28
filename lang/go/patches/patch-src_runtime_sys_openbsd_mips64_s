@@ -15,7 +15,7 @@ Index: src/runtime/sys_openbsd_mips64.s
  //
  
  #include "go_asm.h"
-@@ -14,387 +15,783 @@
+@@ -14,361 +15,782 @@
  #define CLOCK_REALTIME	$0
  #define	CLOCK_MONOTONIC	$3
  
@@ -27,13 +27,22 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	BEQ	R7, 3(PC)
 -	MOVV	$0, R2			// crash on syscall failure
 -	MOVV	R2, (R2)
+-	RET
 +// mstart_stub is the first function executed on a new thread started by pthread_create.
 +// It just does some low-level setup and then calls mstart.
 +// Note: called with the C calling convention.
 +TEXT runtime·mstart_stub(SB),NOSPLIT,$160
 +	// R4 points to the m.
 +	// We are already on m's g0 stack.
-+
+ 
+-// func exitThread(wait *uint32)
+-TEXT runtime·exitThread(SB),NOSPLIT,$0
+-	MOVV	wait+0(FP), R4		// arg 1 - notdead
+-	MOVV	$302, R2		// sys___threxit
+-	SYSCALL
+-	MOVV	$0, R2			// crash on syscall failure
+-	MOVV	R2, (R2)
+-	JMP	0(PC)
 +	// Save callee-save registers (R16..R23, R30, F24..F31).
 +	MOVV	R16, (1*8)(R29)
 +	MOVV	R17, (2*8)(R29)
@@ -52,7 +61,16 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVF	F29, (16*8)(R29)
 +	MOVF	F30, (17*8)(R29)
 +	MOVF	F31, (18*8)(R29)
-+
+ 
+-TEXT runtime·open(SB),NOSPLIT|NOFRAME,$0
+-	MOVV	name+0(FP), R4		// arg 1 - path
+-	MOVW	mode+8(FP), R5		// arg 2 - mode
+-	MOVW	perm+12(FP), R6		// arg 3 - perm
+-	MOVV	$5, R2			// sys_open
+-	SYSCALL
+-	BEQ	R7, 2(PC)
+-	MOVW	$-1, R2
+-	MOVW	R2, ret+16(FP)
 +	// Preserve RSB (aka gp)
 +	MOVV	RSB, (19*8)(R29)
 +
@@ -95,32 +113,31 @@ Index: src/runtime/sys_openbsd_mips64.s
 +
  	RET
  
--// func exitThread(wait *uint32)
--TEXT runtime·exitThread(SB),NOSPLIT,$0
--	MOVV	wait+0(FP), R4		// arg 1 - notdead
--	MOVV	$302, R2		// sys___threxit
+-TEXT runtime·closefd(SB),NOSPLIT|NOFRAME,$0
+-	MOVW	fd+0(FP), R4		// arg 1 - fd
+-	MOVV	$6, R2			// sys_close
 -	SYSCALL
--	MOVV	$0, R2			// crash on syscall failure
--	MOVV	R2, (R2)
--	JMP	0(PC)
+-	BEQ	R7, 2(PC)
+-	MOVW	$-1, R2
+-	MOVW	R2, ret+8(FP)
 +TEXT runtime·sigfwd(SB),NOSPLIT,$0-32
 +	MOVW	sig+8(FP), R4
 +	MOVV	info+16(FP), R5
 +	MOVV	ctx+24(FP), R6
 +	MOVV	fn+0(FP), R25		// Must use R25, needed for PIC code.
 +	CALL	(R25)
-+	RET
+ 	RET
  
--TEXT runtime·open(SB),NOSPLIT|NOFRAME,$0
--	MOVV	name+0(FP), R4		// arg 1 - path
--	MOVW	mode+8(FP), R5		// arg 2 - mode
--	MOVW	perm+12(FP), R6		// arg 3 - perm
--	MOVV	$5, R2			// sys_open
+-TEXT runtime·read(SB),NOSPLIT|NOFRAME,$0
+-	MOVW	fd+0(FP), R4		// arg 1 - fd
+-	MOVV	p+8(FP), R5		// arg 2 - buf
+-	MOVW	n+16(FP), R6		// arg 3 - nbyte
+-	MOVV	$3, R2			// sys_read
 -	SYSCALL
 -	BEQ	R7, 2(PC)
--	MOVW	$-1, R2
--	MOVW	R2, ret+16(FP)
-+TEXT runtime·sigtramp(SB),NOSPLIT,$176
+-	SUBVU	R2, R0, R2	// caller expects negative errno
+-	MOVW	R2, ret+24(FP)
++TEXT runtime·sigtramp(SB),NOSPLIT|TOPFRAME,$176
 +	// Save callee-save registers (R16..R23, R30, F24..F31).
 +	MOVV	R16, (4*8)(R29)
 +	MOVV	R17, (5*8)(R29)
@@ -182,59 +199,6 @@ Index: src/runtime/sys_openbsd_mips64.s
 +
  	RET
  
--TEXT runtime·closefd(SB),NOSPLIT|NOFRAME,$0
--	MOVW	fd+0(FP), R4		// arg 1 - fd
--	MOVV	$6, R2			// sys_close
--	SYSCALL
--	BEQ	R7, 2(PC)
--	MOVW	$-1, R2
--	MOVW	R2, ret+8(FP)
-+//
-+// These trampolines help convert from Go calling convention to C calling convention.
-+// They should be called with asmcgocall.
-+// A pointer to the arguments is passed in R0.
-+// A single int32 result is returned in R0.
-+// (For more results, make an args/results structure.)
-+TEXT runtime·pthread_attr_init_trampoline(SB),NOSPLIT,$8
-+	MOVV	RSB, 8(R29)
-+	MOVV	0(R4), R4		// arg 1 - attr
-+	CALL	libc_pthread_attr_init(SB)
-+	MOVV	8(R29), RSB
- 	RET
- 
--TEXT runtime·read(SB),NOSPLIT|NOFRAME,$0
--	MOVW	fd+0(FP), R4		// arg 1 - fd
--	MOVV	p+8(FP), R5		// arg 2 - buf
--	MOVW	n+16(FP), R6		// arg 3 - nbyte
--	MOVV	$3, R2			// sys_read
--	SYSCALL
--	BEQ	R7, 2(PC)
--	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, ret+24(FP)
-+TEXT runtime·pthread_attr_destroy_trampoline(SB),NOSPLIT,$8
-+	MOVV	RSB, 8(R29)
-+	MOVV	0(R4), R4		// arg 1 - attr
-+	CALL	libc_pthread_attr_destroy(SB)
-+	MOVV	8(R29), RSB
- 	RET
- 
--// func pipe() (r, w int32, errno int32)
--TEXT runtime·pipe(SB),NOSPLIT|NOFRAME,$0-12
--	MOVV	$r+0(FP), R4
--	MOVW	$0, R5
--	MOVV	$101, R2		// sys_pipe2
--	SYSCALL
--	BEQ	R7, 2(PC)
--	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, errno+8(FP)
-+TEXT runtime·pthread_attr_getstacksize_trampoline(SB),NOSPLIT,$8
-+	MOVV	RSB, 8(R29)
-+	MOVV	8(R4), R5		// arg 2 - size
-+	MOVV	0(R4), R4		// arg 1 - attr
-+	CALL	libc_pthread_attr_getstacksize(SB)
-+	MOVV	8(R29), RSB
- 	RET
- 
 -// func pipe2(flags int32) (r, w int32, errno int32)
 -TEXT runtime·pipe2(SB),NOSPLIT|NOFRAME,$0-20
 -	MOVV	$r+8(FP), R4
@@ -244,11 +208,15 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	BEQ	R7, 2(PC)
 -	SUBVU	R2, R0, R2	// caller expects negative errno
 -	MOVW	R2, errno+16(FP)
-+TEXT runtime·pthread_attr_setdetachstate_trampoline(SB),NOSPLIT,$8
++// These trampolines help convert from Go calling convention to C calling convention.
++// They should be called with asmcgocall.
++// A pointer to the arguments is passed in R4.
++// A single int32 result is returned in R2.
++// (For more results, make an args/results structure.)
++TEXT runtime·pthread_attr_init_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVV	8(R4), R5		// arg 2 - state
 +	MOVV	0(R4), R4		// arg 1 - attr
-+	CALL	libc_pthread_attr_setdetachstate(SB)
++	CALL	libc_pthread_attr_init(SB)
 +	MOVV	8(R29), RSB
  	RET
  
@@ -261,15 +229,10 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	BEQ	R7, 2(PC)
 -	SUBVU	R2, R0, R2	// caller expects negative errno
 -	MOVW	R2, ret+24(FP)
-+TEXT runtime·pthread_create_trampoline(SB),NOSPLIT,$8
++TEXT runtime·pthread_attr_destroy_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVV	0(R4), R5		// arg 2 - attr
-+	MOVV	8(R4), R6		// arg 3 - start
-+	MOVV	16(R4), R7		// arg 4 - arg
-+	ADDV	$-16, R29
-+	MOVV	R29, R4			// arg 1 - &threadid (discard)
-+	CALL	libc_pthread_create(SB)
-+	ADDV	$16, R29
++	MOVV	0(R4), R4		// arg 1 - attr
++	CALL	libc_pthread_attr_destroy(SB)
 +	MOVV	8(R29), RSB
  	RET
  
@@ -285,12 +248,11 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVV	LO, R4
 -	SUBVU	R4, R5
 -	MOVV	R5, 16(R29)		// tv_nsec
-+TEXT runtime·thrkill_trampoline(SB),NOSPLIT,$8
++TEXT runtime·pthread_attr_getstacksize_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVV	8(R4), R5		// arg 2 - signal
-+	MOVV	$0, R6			// arg 3 - tcb
-+	MOVW	0(R4), R4		// arg 1 - tid
-+	CALL	libc_thrkill(SB)
++	MOVV	8(R4), R5		// arg 2 - size
++	MOVV	0(R4), R4		// arg 1 - attr
++	CALL	libc_pthread_attr_getstacksize(SB)
 +	MOVV	8(R29), RSB
 +	RET
  
@@ -298,14 +260,11 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVV	$0, R5			// arg 2 - rmtp
 -	MOVV	$91, R2			// sys_nanosleep
 -	SYSCALL
-+TEXT runtime·thrsleep_trampoline(SB),NOSPLIT,$8
++TEXT runtime·pthread_attr_setdetachstate_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVW	8(R4), R5		// arg 2 - clock_id
-+	MOVV	16(R4), R6		// arg 3 - abstime
-+	MOVV	24(R4), R7		// arg 4 - lock
-+	MOVV	32(R4), R8		// arg 5 - abort
-+	MOVV	0(R4), R4		// arg 1 - id
-+	CALL	libc_thrsleep(SB)
++	MOVV	8(R4), R5		// arg 2 - state
++	MOVV	0(R4), R4		// arg 1 - attr
++	CALL	libc_pthread_attr_setdetachstate(SB)
 +	MOVV	8(R29), RSB
  	RET
  
@@ -313,11 +272,15 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVV	$299, R2		// sys_getthrid
 -	SYSCALL
 -	MOVW	R2, ret+0(FP)
-+TEXT runtime·thrwakeup_trampoline(SB),NOSPLIT,$8
++TEXT runtime·pthread_create_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVW	8(R4), R5		// arg 2 - count
-+	MOVV	0(R4), R4		// arg 1 - id
-+	CALL	libc_thrwakeup(SB)
++	MOVV	0(R4), R5		// arg 2 - attr
++	MOVV	8(R4), R6		// arg 3 - start
++	MOVV	16(R4), R7		// arg 4 - arg
++	ADDV	$-16, R29
++	MOVV	R29, R4			// arg 1 - &threadid (discard)
++	CALL	libc_pthread_create(SB)
++	ADDV	$16, R29
 +	MOVV	8(R29), RSB
  	RET
  
@@ -327,12 +290,12 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVW	$0, R6			// arg 3 - tcb
 -	MOVV	$119, R2		// sys_thrkill
 -	SYSCALL
-+TEXT runtime·exit_trampoline(SB),NOSPLIT,$8
++TEXT runtime·thrkill_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVW	0(R4), R4		// arg 1 - status
-+	CALL	libc_exit(SB)
-+	MOVV	$0, R2			// crash on failure
-+	MOVV	R2, (R2)
++	MOVV	8(R4), R5		// arg 2 - signal
++	MOVV	$0, R6			// arg 3 - tcb
++	MOVW	0(R4), R4		// arg 1 - tid
++	CALL	libc_thrkill(SB)
 +	MOVV	8(R29), RSB
  	RET
  
@@ -343,11 +306,14 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVW	sig+0(FP), R5		// arg 2 - signum
 -	MOVV	$122, R2		// sys_kill
 -	SYSCALL
-+TEXT runtime·getthrid_trampoline(SB),NOSPLIT,$8
++TEXT runtime·thrsleep_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
-+	MOVV	R4, R16			// pointer to args
-+	CALL	libc_getthrid(SB)
-+	MOVW	R2, 0(R16)		// return value
++	MOVW	8(R4), R5		// arg 2 - clock_id
++	MOVV	16(R4), R6		// arg 3 - abstime
++	MOVV	24(R4), R7		// arg 4 - lock
++	MOVV	32(R4), R8		// arg 5 - abort
++	MOVV	0(R4), R4		// arg 1 - id
++	CALL	libc_thrsleep(SB)
 +	MOVV	8(R29), RSB
  	RET
  
@@ -364,6 +330,56 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	MOVV	$0, R4
 -	BEQ	R7, 3(PC)
 -	MOVV	R2, R4			// if error, move to R4
+-	MOVV	$0, R2
+-	MOVV	R2, p+32(FP)
+-	MOVV	R4, err+40(FP)
++TEXT runtime·thrwakeup_trampoline(SB),NOSPLIT,$8
++	MOVV	RSB, 8(R29)
++	MOVW	8(R4), R5		// arg 2 - count
++	MOVV	0(R4), R4		// arg 1 - id
++	CALL	libc_thrwakeup(SB)
++	MOVV	8(R29), RSB
+ 	RET
+ 
+-TEXT runtime·munmap(SB),NOSPLIT,$0
+-	MOVV	addr+0(FP), R4		// arg 1 - addr
+-	MOVV	n+8(FP), R5		// arg 2 - len
+-	MOVV	$73, R2			// sys_munmap
+-	SYSCALL
+-	BEQ	R7, 3(PC)
+-	MOVV	$0, R2			// crash on syscall failure
++TEXT runtime·exit_trampoline(SB),NOSPLIT,$8
++	MOVV	RSB, 8(R29)
++	MOVW	0(R4), R4		// arg 1 - status
++	CALL	libc_exit(SB)
++	MOVV	$0, R2			// crash on failure
+ 	MOVV	R2, (R2)
++	MOVV	8(R29), RSB
+ 	RET
+ 
+-TEXT runtime·madvise(SB),NOSPLIT,$0
+-	MOVV	addr+0(FP), R4		// arg 1 - addr
+-	MOVV	n+8(FP), R5		// arg 2 - len
+-	MOVW	flags+16(FP), R6	// arg 2 - flags
+-	MOVV	$75, R2			// sys_madvise
+-	SYSCALL
+-	BEQ	R7, 2(PC)
+-	MOVW	$-1, R2
+-	MOVW	R2, ret+24(FP)
++TEXT runtime·getthrid_trampoline(SB),NOSPLIT,$8
++	MOVV	RSB, 8(R29)
++	MOVV	R4, R16			// pointer to args
++	CALL	libc_getthrid(SB)
++	MOVW	R2, 0(R16)		// return value
++	MOVV	8(R29), RSB
+ 	RET
+ 
+-TEXT runtime·setitimer(SB),NOSPLIT,$0
+-	MOVW	mode+0(FP), R4		// arg 1 - mode
+-	MOVV	new+8(FP), R5		// arg 2 - new value
+-	MOVV	old+16(FP), R6		// arg 3 - old value
+-	MOVV	$69, R2			// sys_setitimer
+-	SYSCALL
 +TEXT runtime·raiseproc_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	R4, R16			// pointer to args
@@ -372,14 +388,24 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVW	0(R16), R5		// arg 2 - signal
 +	CALL	libc_kill(SB)
 +	MOVV	8(R29), RSB
-+	RET
-+
+ 	RET
+ 
+-// func walltime() (sec int64, nsec int32)
+-TEXT runtime·walltime(SB), NOSPLIT, $32
+-	MOVW	CLOCK_REALTIME, R4	// arg 1 - clock_id
+-	MOVV	$8(R29), R5		// arg 2 - tp
+-	MOVV	$87, R2			// sys_clock_gettime
+-	SYSCALL
 +TEXT runtime·sched_yield_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	CALL	libc_sched_yield(SB)
 +	MOVV	8(R29), RSB
 +	RET
-+
+ 
+-	MOVV	8(R29), R4		// sec
+-	MOVV	16(R29), R5		// nsec
+-	MOVV	R4, sec+0(FP)
+-	MOVW	R5, nsec+8(FP)
 +TEXT runtime·mmap_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	R4, R16			// pointer to args
@@ -395,22 +421,13 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	BNE	R2, R4, noerr
 +	CALL	libc_errno(SB)
 +	MOVW	(R2), R3		// errno
- 	MOVV	$0, R2
--	MOVV	R2, p+32(FP)
--	MOVV	R4, err+40(FP)
++	MOVV	$0, R2
 +noerr:
 +	MOVV	R2, 32(R16)
 +	MOVV	R3, 40(R16)
 +	MOVV	8(R29), RSB
- 	RET
++	RET
  
--TEXT runtime·munmap(SB),NOSPLIT,$0
--	MOVV	addr+0(FP), R4		// arg 1 - addr
--	MOVV	n+8(FP), R5		// arg 2 - len
--	MOVV	$73, R2			// sys_munmap
--	SYSCALL
--	BEQ	R7, 3(PC)
--	MOVV	$0, R2			// crash on syscall failure
 +TEXT runtime·munmap_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - len
@@ -419,19 +436,17 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	$-1, R4
 +	BNE	R2, R4, 3(PC)
 +	MOVV	$0, R2			// crash on failure
- 	MOVV	R2, (R2)
++	MOVV	R2, (R2)
 +	MOVV	8(R29), RSB
  	RET
  
--TEXT runtime·madvise(SB),NOSPLIT,$0
--	MOVV	addr+0(FP), R4		// arg 1 - addr
--	MOVV	n+8(FP), R5		// arg 2 - len
--	MOVW	flags+16(FP), R6	// arg 2 - flags
--	MOVV	$75, R2			// sys_madvise
+-// int64 nanotime1(void) so really
+-// void nanotime1(int64 *nsec)
+-TEXT runtime·nanotime1(SB),NOSPLIT,$32
+-	MOVW	CLOCK_MONOTONIC, R4	// arg 1 - clock_id
+-	MOVV	$8(R29), R5		// arg 2 - tp
+-	MOVV	$87, R2			// sys_clock_gettime
 -	SYSCALL
--	BEQ	R7, 2(PC)
--	MOVW	$-1, R2
--	MOVW	R2, ret+24(FP)
 +TEXT runtime·madvise_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - len
@@ -440,14 +455,10 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	CALL	libc_madvise(SB)
 +	// ignore failure - maybe pages are locked
 +	MOVV	8(R29), RSB
- 	RET
++	RET
  
--TEXT runtime·setitimer(SB),NOSPLIT,$0
--	MOVW	mode+0(FP), R4		// arg 1 - mode
--	MOVV	new+8(FP), R5		// arg 2 - new value
--	MOVV	old+16(FP), R6		// arg 3 - old value
--	MOVV	$69, R2			// sys_setitimer
--	SYSCALL
+-	MOVV	8(R29), R3		// sec
+-	MOVV	16(R29), R5		// nsec
 +TEXT runtime·open_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVW	8(R4), R5		// arg 2 - flags
@@ -456,25 +467,29 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	$0, R7			// varargs
 +	CALL	libc_open(SB)
 +	MOVV	8(R29), RSB
- 	RET
++	RET
  
--// func walltime() (sec int64, nsec int32)
--TEXT runtime·walltime(SB), NOSPLIT, $32
--	MOVW	CLOCK_REALTIME, R4	// arg 1 - clock_id
--	MOVV	$8(R29), R5		// arg 2 - tp
--	MOVV	$87, R2			// sys_clock_gettime
--	SYSCALL
+-	MOVV	$1000000000, R4
+-	MULVU	R4, R3
+-	MOVV	LO, R3
+-	ADDVU	R5, R3
+-	MOVV	R3, ret+0(FP)
 +TEXT runtime·close_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVW	0(R4), R4		// arg 1 - fd
 +	CALL	libc_close(SB)
 +	MOVV	8(R29), RSB
-+	RET
+ 	RET
  
--	MOVV	8(R29), R4		// sec
--	MOVV	16(R29), R5		// nsec
--	MOVV	R4, sec+0(FP)
--	MOVW	R5, nsec+8(FP)
+-TEXT runtime·sigaction(SB),NOSPLIT,$0
+-	MOVW	sig+0(FP), R4		// arg 1 - signum
+-	MOVV	new+8(FP), R5		// arg 2 - new sigaction
+-	MOVV	old+16(FP), R6		// arg 3 - old sigaction
+-	MOVV	$46, R2			// sys_sigaction
+-	SYSCALL
+-	BEQ	R7, 3(PC)
+-	MOVV	$3, R2			// crash on syscall failure
+-	MOVV	R2, (R2)
 +TEXT runtime·read_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - buf
@@ -488,8 +503,17 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	SUBVU	R2, R0, R2		// caller expects negative errno
 +noerr:
 +	MOVV	8(R29), RSB
-+	RET
+ 	RET
  
+-TEXT runtime·obsdsigprocmask(SB),NOSPLIT,$0
+-	MOVW	how+0(FP), R4		// arg 1 - mode
+-	MOVW	new+4(FP), R5		// arg 2 - new
+-	MOVV	$48, R2			// sys_sigprocmask
+-	SYSCALL
+-	BEQ	R7, 3(PC)
+-	MOVV	$3, R2			// crash on syscall failure
+-	MOVV	R2, (R2)
+-	MOVW	R2, ret+8(FP)
 +TEXT runtime·write_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - buf
@@ -505,13 +529,12 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// int64 nanotime1(void) so really
--// void nanotime1(int64 *nsec)
--TEXT runtime·nanotime1(SB),NOSPLIT,$32
--	MOVW	CLOCK_MONOTONIC, R4	// arg 1 - clock_id
--	MOVV	$8(R29), R5		// arg 2 - tp
--	MOVV	$87, R2			// sys_clock_gettime
--	SYSCALL
+-TEXT runtime·sigfwd(SB),NOSPLIT,$0-32
+-	MOVW	sig+8(FP), R4
+-	MOVV	info+16(FP), R5
+-	MOVV	ctx+24(FP), R6
+-	MOVV	fn+0(FP), R25		// Must use R25, needed for PIC code.
+-	CALL	(R25)
 +TEXT runtime·pipe2_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVW	8(R4), R5		// arg 2 - flags
@@ -524,10 +547,13 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	SUBVU	R2, R0, R2		// caller expects negative errno
 +noerr:
 +	MOVV	8(R29), RSB
-+	RET
+ 	RET
  
--	MOVV	8(R29), R3		// sec
--	MOVV	16(R29), R5		// nsec
+-TEXT runtime·sigtramp(SB),NOSPLIT|TOPFRAME,$192
+-	// initialize REGSB = PC&0xffffffff00000000
+-	BGEZAL	R0, 1(PC)
+-	SRLV	$32, R31, RSB
+-	SLLV	$32, RSB
 +TEXT runtime·setitimer_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - new
@@ -537,27 +563,23 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
 +	RET
  
--	MOVV	$1000000000, R4
--	MULVU	R4, R3
--	MOVV	LO, R3
--	ADDVU	R5, R3
--	MOVV	R3, ret+0(FP)
+-	// this might be called in external code context,
+-	// where g is not set.
+-	MOVB	runtime·iscgo(SB), R1
+-	BEQ	R1, 2(PC)
+-	JAL	runtime·load_g(SB)
 +TEXT runtime·usleep_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVW	0(R4), R4		// arg 1 - usec
 +	CALL	libc_usleep(SB)
 +	MOVV	8(R29), RSB
- 	RET
++	RET
  
--TEXT runtime·sigaction(SB),NOSPLIT,$0
--	MOVW	sig+0(FP), R4		// arg 1 - signum
--	MOVV	new+8(FP), R5		// arg 2 - new sigaction
--	MOVV	old+16(FP), R6		// arg 3 - old sigaction
--	MOVV	$46, R2			// sys_sigaction
--	SYSCALL
--	BEQ	R7, 3(PC)
--	MOVV	$3, R2			// crash on syscall failure
--	MOVV	R2, (R2)
+-	MOVW	R4, 8(R29)
+-	MOVV	R5, 16(R29)
+-	MOVV	R6, 24(R29)
+-	MOVV	$runtime·sigtrampgo(SB), R1
+-	JAL	(R1)
 +TEXT runtime·sysctl_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVW	8(R4), R5		// arg 2 - miblen
@@ -570,19 +592,26 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--TEXT runtime·obsdsigprocmask(SB),NOSPLIT,$0
--	MOVW	how+0(FP), R4		// arg 1 - mode
--	MOVW	new+4(FP), R5		// arg 2 - new
--	MOVV	$48, R2			// sys_sigprocmask
--	SYSCALL
--	BEQ	R7, 3(PC)
--	MOVV	$3, R2			// crash on syscall failure
+-// int32 tfork(void *param, uintptr psize, M *mp, G *gp, void (*fn)(void));
+-TEXT runtime·tfork(SB),NOSPLIT,$0
 +TEXT runtime·kqueue_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	CALL	libc_kqueue(SB)
 +	MOVV	8(R29), RSB
 +	RET
-+
+ 
+-	// Copy mp, gp and fn off parent stack for use by child.
+-	MOVV	mm+16(FP), R16
+-	MOVV	gg+24(FP), R17
+-	MOVV	fn+32(FP), R18
+-
+-	MOVV	param+0(FP), R4		// arg 1 - param
+-	MOVV	psize+8(FP), R5		// arg 2 - psize
+-	MOVV	$8, R2			// sys___tfork
+-	SYSCALL
+-
+-	// Return if syscall failed.
+-	BEQ	R7, 4(PC)
 +TEXT runtime·kevent_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - keventt
@@ -596,11 +625,15 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	BNE	R2, R4, noerr
 +	CALL	libc_errno(SB)
 +	MOVW	(R2), R2		// errno
-+	SUBVU	R2, R0, R2		// caller expects negative errno
+ 	SUBVU	R2, R0, R2		// caller expects negative errno
+-	MOVW	R2, ret+40(FP)
 +noerr:
 +	MOVV	8(R29), RSB
-+	RET
-+
+ 	RET
+ 
+-	// In parent, return.
+-	BEQ	R2, 3(PC)
+-	MOVW	R2, ret+40(FP)
 +TEXT runtime·clock_gettime_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - tp
@@ -609,17 +642,13 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	$-1, R4
 +	BNE	R2, R4, 3(PC)
 +	MOVV	$0, R2			// crash on failure
- 	MOVV	R2, (R2)
--	MOVW	R2, ret+8(FP)
++	MOVV	R2, (R2)
 +	MOVV	8(R29), RSB
  	RET
  
--TEXT runtime·sigfwd(SB),NOSPLIT,$0-32
--	MOVW	sig+8(FP), R4
--	MOVV	info+16(FP), R5
--	MOVV	ctx+24(FP), R6
--	MOVV	fn+0(FP), R25		// Must use R25, needed for PIC code.
--	CALL	(R25)
+-	// Initialise m, g.
+-	MOVV	R17, g
+-	MOVV	R16, g_m(g)
 +TEXT runtime·fcntl_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVW	4(R4), R5		// arg 2 - cmd
@@ -628,13 +657,14 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	$0, R7			// vararg
 +	CALL	libc_fcntl(SB)
 +	MOVV	8(R29), RSB
- 	RET
++	RET
  
--TEXT runtime·sigtramp(SB),NOSPLIT,$192
--	// initialize REGSB = PC&0xffffffff00000000
--	BGEZAL	R0, 1(PC)
--	SRLV	$32, R31, RSB
--	SLLV	$32, RSB
+-	// Call fn.
+-	CALL	(R18)
+-
+-	// fn should never return.
+-	MOVV	$2, R8			// crash if reached
+-	MOVV	R8, (R8)
 +TEXT runtime·sigaction_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - new
@@ -646,13 +676,16 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	$0, R2			// crash on failure
 +	MOVV	R2, (R2)
 +	MOVV	8(R29), RSB
-+	RET
+ 	RET
  
--	// this might be called in external code context,
--	// where g is not set.
--	MOVB	runtime·iscgo(SB), R1
--	BEQ	R1, 2(PC)
--	JAL	runtime·load_g(SB)
+-TEXT runtime·sigaltstack(SB),NOSPLIT,$0
+-	MOVV	new+0(FP), R4		// arg 1 - new sigaltstack
+-	MOVV	old+8(FP), R5		// arg 2 - old sigaltstack
+-	MOVV	$288, R2		// sys_sigaltstack
+-	SYSCALL
+-	BEQ	R7, 3(PC)
+-	MOVV	$0, R8			// crash on syscall failure
+-	MOVV	R8, (R8)
 +TEXT runtime·sigprocmask_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - new
@@ -664,13 +697,11 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	$0, R2			// crash on failure
 +	MOVV	R2, (R2)
 +	MOVV	8(R29), RSB
-+	RET
+ 	RET
  
--	MOVW	R4, 8(R29)
--	MOVV	R5, 16(R29)
--	MOVV	R6, 24(R29)
--	MOVV	$runtime·sigtrampgo(SB), R1
--	JAL	(R1)
+-TEXT runtime·osyield(SB),NOSPLIT,$0
+-	MOVV	$298, R2		// sys_sched_yield
+-	SYSCALL
 +TEXT runtime·sigaltstack_trampoline(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	8(R4), R5		// arg 2 - old
@@ -683,8 +714,15 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// int32 tfork(void *param, uintptr psize, M *mp, G *gp, void (*fn)(void));
--TEXT runtime·tfork(SB),NOSPLIT,$0
+-TEXT runtime·thrsleep(SB),NOSPLIT,$0
+-	MOVV	ident+0(FP), R4		// arg 1 - ident
+-	MOVW	clock_id+8(FP), R5	// arg 2 - clock_id
+-	MOVV	tsp+16(FP), R6		// arg 3 - tsp
+-	MOVV	lock+24(FP), R7		// arg 4 - lock
+-	MOVV	abort+32(FP), R8	// arg 5 - abort
+-	MOVV	$94, R2			// sys___thrsleep
+-	SYSCALL
+-	MOVW	R2, ret+40(FP)
 +// syscall calls a function in libc on behalf of the syscall package.
 +// syscall takes a pointer to a struct like:
 +// struct {
@@ -704,34 +742,18 @@ Index: src/runtime/sys_openbsd_mips64.s
 +TEXT runtime·syscall(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	R4, R16			// pointer to args
- 
--	// Copy mp, gp and fn off parent stack for use by child.
--	MOVV	mm+16(FP), R16
--	MOVV	gg+24(FP), R17
--	MOVV	fn+32(FP), R18
++
 +	MOVV	(0*8)(R16), R25		// fn
 +	MOVV	(1*8)(R16), R4		// a1
 +	MOVV	(2*8)(R16), R5		// a2
 +	MOVV	(3*8)(R16), R6		// a3
 +	MOVV	$0, R7			// vararg
- 
--	MOVV	param+0(FP), R4		// arg 1 - param
--	MOVV	psize+8(FP), R5		// arg 2 - psize
--	MOVV	$8, R2			// sys___tfork
--	SYSCALL
++
 +	CALL	(R25)
- 
--	// Return if syscall failed.
--	BEQ	R7, 4(PC)
--	SUBVU	R2, R0, R2		// caller expects negative errno
--	MOVW	R2, ret+40(FP)
--	RET
++
 +	MOVV	R2, (4*8)(R16)		// r1
 +	MOVV	R3, (5*8)(R16)		// r2
- 
--	// In parent, return.
--	BEQ	R2, 3(PC)
--	MOVW	R2, ret+40(FP)
++
 +	// Standard libc functions return -1 on error
 +	// and set errno.
 +	MOVW	$-1, R4
@@ -746,9 +768,12 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--	// Initialise m, g.
--	MOVV	R17, g
--	MOVV	R16, g_m(g)
+-TEXT runtime·thrwakeup(SB),NOSPLIT,$0
+-	MOVV	ident+0(FP), R4		// arg 1 - ident
+-	MOVW	n+8(FP), R5		// arg 2 - n
+-	MOVV	$301, R2		// sys___thrwakeup
+-	SYSCALL
+-	MOVW	R2, ret+16(FP)
 +// syscallX calls a function in libc on behalf of the syscall package.
 +// syscallX takes a pointer to a struct like:
 +// struct {
@@ -768,63 +793,28 @@ Index: src/runtime/sys_openbsd_mips64.s
 +TEXT runtime·syscallX(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	R4, R16			// pointer to args
- 
--	// Call fn.
--	CALL	(R18)
++
 +	MOVV	(0*8)(R16), R25		// fn
 +	MOVV	(1*8)(R16), R4		// a1
 +	MOVV	(2*8)(R16), R5		// a2
 +	MOVV	(3*8)(R16), R6		// a3
 +	MOVV	$0, R7			// vararg
- 
--	// fn should never return.
--	MOVV	$2, R8			// crash if reached
--	MOVV	R8, (R8)
--	RET
++
 +	CALL	(R25)
- 
--TEXT runtime·sigaltstack(SB),NOSPLIT,$0
--	MOVV	new+0(FP), R4		// arg 1 - new sigaltstack
--	MOVV	old+8(FP), R5		// arg 2 - old sigaltstack
--	MOVV	$288, R2		// sys_sigaltstack
--	SYSCALL
--	BEQ	R7, 3(PC)
--	MOVV	$0, R8			// crash on syscall failure
--	MOVV	R8, (R8)
--	RET
++
 +	MOVV	R2, (4*8)(R16)		// r1
 +	MOVV	R3, (5*8)(R16)		// r2
- 
--TEXT runtime·osyield(SB),NOSPLIT,$0
--	MOVV	$298, R2		// sys_sched_yield
--	SYSCALL
--	RET
++
 +	// Standard libc functions return -1 on error
 +	// and set errno.
 +	MOVV	$-1, R4
 +	BNE	R2, R4, ok
- 
--TEXT runtime·thrsleep(SB),NOSPLIT,$0
--	MOVV	ident+0(FP), R4		// arg 1 - ident
--	MOVW	clock_id+8(FP), R5	// arg 2 - clock_id
--	MOVV	tsp+16(FP), R6		// arg 3 - tsp
--	MOVV	lock+24(FP), R7		// arg 4 - lock
--	MOVV	abort+32(FP), R8	// arg 5 - abort
--	MOVV	$94, R2			// sys___thrsleep
--	SYSCALL
--	MOVW	R2, ret+40(FP)
--	RET
++
 +	// Get error code from libc.
 +	CALL	libc_errno(SB)
 +	MOVW	(R2), R2
 +	MOVV	R2, (6*8)(R16)		// err
- 
--TEXT runtime·thrwakeup(SB),NOSPLIT,$0
--	MOVV	ident+0(FP), R4		// arg 1 - ident
--	MOVW	n+8(FP), R5		// arg 2 - n
--	MOVV	$301, R2		// sys___thrwakeup
--	SYSCALL
--	MOVW	R2, ret+16(FP)
++
 +ok:
 +	MOVV	8(R29), RSB
  	RET
@@ -841,7 +831,6 @@ Index: src/runtime/sys_openbsd_mips64.s
 -	BEQ	R7, 2(PC)
 -	SUBVU	R2, R0, R2	// caller expects negative errno
 -	MOVW	R2, ret+48(FP)
--	RET
 +// syscall6 calls a function in libc on behalf of the syscall package.
 +// syscall6 takes a pointer to a struct like:
 +// struct {
@@ -864,14 +853,7 @@ Index: src/runtime/sys_openbsd_mips64.s
 +TEXT runtime·syscall6(SB),NOSPLIT,$8
 +	MOVV	RSB, 8(R29)
 +	MOVV	R4, R16			// pointer to args
- 
--// int32 runtime·kqueue(void);
--TEXT runtime·kqueue(SB),NOSPLIT,$0
--	MOVV	$269, R2		// sys_kqueue
--	SYSCALL
--	BEQ	R7, 2(PC)
--	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, ret+0(FP)
++
 +	MOVV	(0*8)(R16), R25		// fn
 +	MOVV	(1*8)(R16), R4		// a1
 +	MOVV	(2*8)(R16), R5		// a2
@@ -900,19 +882,13 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// int32 runtime·kevent(int kq, Kevent *changelist, int nchanges, Kevent *eventlist, int nevents, Timespec *timeout);
--TEXT runtime·kevent(SB),NOSPLIT,$0
--	MOVW	kq+0(FP), R4		// arg 1 - kq
--	MOVV	ch+8(FP), R5		// arg 2 - changelist
--	MOVW	nch+16(FP), R6		// arg 3 - nchanges
--	MOVV	ev+24(FP), R7		// arg 4 - eventlist
--	MOVW	nev+32(FP), R8		// arg 5 - nevents
--	MOVV	ts+40(FP), R9		// arg 6 - timeout
--	MOVV	$72, R2			// sys_kevent
+-// int32 runtime·kqueue(void);
+-TEXT runtime·kqueue(SB),NOSPLIT,$0
+-	MOVV	$269, R2		// sys_kqueue
 -	SYSCALL
 -	BEQ	R7, 2(PC)
 -	SUBVU	R2, R0, R2	// caller expects negative errno
--	MOVW	R2, ret+48(FP)
+-	MOVW	R2, ret+0(FP)
 +// syscall6X calls a function in libc on behalf of the syscall package.
 +// syscall6X takes a pointer to a struct like:
 +// struct {
@@ -964,13 +940,19 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// func closeonexec(fd int32)
--TEXT runtime·closeonexec(SB),NOSPLIT,$0
--	MOVW	fd+0(FP), R4		// arg 1 - fd
--	MOVV	$2, R5			// arg 2 - cmd (F_SETFD)
--	MOVV	$1, R6			// arg 3 - arg (FD_CLOEXEC)
--	MOVV	$92, R2			// sys_fcntl
+-// int32 runtime·kevent(int kq, Kevent *changelist, int nchanges, Kevent *eventlist, int nevents, Timespec *timeout);
+-TEXT runtime·kevent(SB),NOSPLIT,$0
+-	MOVW	kq+0(FP), R4		// arg 1 - kq
+-	MOVV	ch+8(FP), R5		// arg 2 - changelist
+-	MOVW	nch+16(FP), R6		// arg 3 - nchanges
+-	MOVV	ev+24(FP), R7		// arg 4 - eventlist
+-	MOVW	nev+32(FP), R8		// arg 5 - nevents
+-	MOVV	ts+40(FP), R9		// arg 6 - timeout
+-	MOVV	$72, R2			// sys_kevent
 -	SYSCALL
+-	BEQ	R7, 2(PC)
+-	SUBVU	R2, R0, R2	// caller expects negative errno
+-	MOVW	R2, ret+48(FP)
 +// syscall10 calls a function in libc on behalf of the syscall package.
 +// syscall10 takes a pointer to a struct like:
 +// struct {
@@ -1032,17 +1014,11 @@ Index: src/runtime/sys_openbsd_mips64.s
 +	MOVV	8(R29), RSB
  	RET
  
--// func runtime·setNonblock(int32 fd)
--TEXT runtime·setNonblock(SB),NOSPLIT|NOFRAME,$0-4
+-// func closeonexec(fd int32)
+-TEXT runtime·closeonexec(SB),NOSPLIT,$0
 -	MOVW	fd+0(FP), R4		// arg 1 - fd
--	MOVV	$3, R5			// arg 2 - cmd (F_GETFL)
--	MOVV	$0, R6			// arg 3
--	MOVV	$92, R2			// sys_fcntl
--	SYSCALL
--	MOVV	$4, R6			// O_NONBLOCK
--	OR	R2, R6			// arg 3 - flags
--	MOVW	fd+0(FP), R4		// arg 1 - fd
--	MOVV	$4, R5			// arg 2 - cmd (F_SETFL)
+-	MOVV	$2, R5			// arg 2 - cmd (F_SETFD)
+-	MOVV	$1, R6			// arg 3 - arg (FD_CLOEXEC)
 -	MOVV	$92, R2			// sys_fcntl
 -	SYSCALL
 +// syscall10X calls a function in libc on behalf of the syscall package.

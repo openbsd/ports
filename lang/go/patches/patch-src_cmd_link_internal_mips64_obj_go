@@ -13,7 +13,7 @@ Index: src/cmd/link/internal/mips64/obj.go
  		ElfrelocSize:     24,
  		Elfsetupplt:      elfsetupplt,
  		Gentext:          gentext,
-+		GenSymsLate:      genSymsLate,
++		FixUpSyms:        fixUpSyms,
  		Machoreloc1:      machoreloc1,
  
 +		// TrampLimit is set such that we always run the trampoline
@@ -32,7 +32,7 @@ Index: src/cmd/link/internal/mips64/obj.go
  	}
 +
 +	// .dynsym always has one NULL entry prior to any symbols being added.
-+	mipsDynSymCount = 1
-+	mipsGOTLocalCount = 0
-+	mipsGOTSymIndex = 0
++	dynSymCount = 1
++	gotLocalCount = 0
++	gotSymIndex = 0
  }
