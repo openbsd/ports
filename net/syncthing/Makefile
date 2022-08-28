@@ -1,6 +1,8 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		1.20.4
+# Using a release candidate until there's a release that supports go-1.19.
+V =		1.21.0-rc.1
+PKGNAME =	syncthing-1.21.0rc1
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
