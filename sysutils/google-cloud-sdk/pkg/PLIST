@@ -34827,12 +34827,12 @@ google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.8/periodic-head.cfg
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.8/periodic.cfg
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.8/presubmit.cfg
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python${MODPY_VERSION}/
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python${MODPY_VERSION}/common.cfg
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python${MODPY_VERSION}/continuous.cfg
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python${MODPY_VERSION}/periodic-head.cfg
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python${MODPY_VERSION}/periodic.cfg
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python${MODPY_VERSION}/presubmit.cfg
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.9/
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.9/common.cfg
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.9/continuous.cfg
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.9/periodic-head.cfg
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.9/periodic.cfg
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/samples/python3.9/presubmit.cfg
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/test-samples-against-head.sh
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/test-samples-impl.sh
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/.kokoro/test-samples.sh
@@ -35103,7 +35103,7 @@ google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/constraints-3.6.txt
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/constraints-3.7.txt
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/constraints-3.8.txt
-google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/constraints-${MODPY_VERSION}.txt
+google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/constraints-3.9.txt
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/testing/requirements.txt
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/tests/
 google-cloud-sdk/platform/gsutil/third_party/google-auth-library-python/tests/__init__.py

@@ -25,6 +25,7 @@ MODPY_ADJ_FILES=	bin/dev_appserver.py \
 			bin/bootstrapping/install.py \
 			bin/bootstrapping/gsutil.py \
 			bin/bootstrapping/bq.py
+UPDATE_PLIST_ARGS=	-i MODPY_VERSION
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
