@@ -8,4 +8,4 @@ Index: python/Makefile.am
 -dist_docs_DATA = TODO
  
  EXTRA_DIST = 			\
- 	setup.py		\
+ 	generator.py		\

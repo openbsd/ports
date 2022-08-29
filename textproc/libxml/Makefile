@@ -1,16 +1,13 @@
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-GNOME_VERSION=		2.10.1
+GNOME_VERSION=		2.10.2
 GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${VERSION}
 PKGNAME-python=		py3-libxml-${VERSION}
 
-REVISION-main=		0
-REVISION-python=	0
-
-SHARED_LIBS +=  xml2                 18.0     # 11.14
+SHARED_LIBS +=  xml2                 18.0     # 12.2
 
 CATEGORIES=		textproc
 
@@ -30,8 +27,6 @@ CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS+=	--enable-static \
-			--with-html-dir="${PREFIX}/share/doc" \
-			--with-html-subdir="libxml2/html" \
 			--with-iconv="${LOCALBASE}" \
 			--with-lzma="${LOCALBASE}"
 
