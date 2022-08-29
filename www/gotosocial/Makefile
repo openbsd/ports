@@ -5,6 +5,7 @@ COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
 MODGO_VERSION =	v0.3.7
+REVISION =	0
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
