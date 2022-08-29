@@ -47,7 +47,6 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
-     SUBDIR += mlt
      SUBDIR += mlt7
      SUBDIR += motion
      SUBDIR += motion,mysql
@@ -87,7 +86,6 @@
      SUBDIR += transcode,lzo,mjpegtools
      SUBDIR += upplay
      SUBDIR += vitunes
-     SUBDIR += webvfx
      SUBDIR += x264
      SUBDIR += x265
      SUBDIR += xine-lib
