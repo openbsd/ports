@@ -1,9 +1,8 @@
 COMMENT =	compatibility API between asyncio/Twisted/Trollius
 
-MODPY_EGG_VERSION =	18.8.1
+MODPY_EGG_VERSION =	22.2.1
 DISTNAME =	txaio-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
 
 CATEGORIES =	devel
 
