@@ -3,6 +3,7 @@ COMMENT =	C++ coroutines for Qt
 GH_ACCOUNT =	danvratil
 GH_PROJECT =	qcoro
 GH_TAGNAME =	v0.6.0
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -12,6 +13,9 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+# Coroutines are part of C++ 20 and implemented in GCC 10
+COMPILER =	base-clang ports-clang
 
 MODULES =		devel/cmake \
 			x11/qt5
