@@ -1,7 +1,6 @@
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.7
-REVISION=		3
+DISTNAME=		awstats-7.8
 
 CATEGORIES=		www
 

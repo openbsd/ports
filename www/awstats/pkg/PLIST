@@ -235,6 +235,8 @@ awstats/wwwroot/cgi-bin/plugins/example/
 awstats/wwwroot/cgi-bin/plugins/example/example.pm
 awstats/wwwroot/cgi-bin/plugins/export_to_csv.pm
 awstats/wwwroot/cgi-bin/plugins/geoip.pm
+awstats/wwwroot/cgi-bin/plugins/geoip2_city.pm
+awstats/wwwroot/cgi-bin/plugins/geoip2_country.pm
 awstats/wwwroot/cgi-bin/plugins/geoip6.pm
 awstats/wwwroot/cgi-bin/plugins/geoip_asn_maxmind.pm
 awstats/wwwroot/cgi-bin/plugins/geoip_city_maxmind.pm
@@ -553,6 +555,7 @@ awstats/wwwroot/icon/flags/ma.png
 awstats/wwwroot/icon/flags/mc.png
 awstats/wwwroot/icon/flags/md.png
 awstats/wwwroot/icon/flags/me.png
+awstats/wwwroot/icon/flags/mf.png
 awstats/wwwroot/icon/flags/mg.png
 awstats/wwwroot/icon/flags/mil.png
 awstats/wwwroot/icon/flags/mk.png
@@ -624,6 +627,7 @@ awstats/wwwroot/icon/flags/sr.png
 awstats/wwwroot/icon/flags/st.png
 awstats/wwwroot/icon/flags/su.png
 awstats/wwwroot/icon/flags/sv.png
+awstats/wwwroot/icon/flags/sx.png
 awstats/wwwroot/icon/flags/sy.png
 awstats/wwwroot/icon/flags/sz.png
 awstats/wwwroot/icon/flags/tc.png
@@ -716,6 +720,22 @@ awstats/wwwroot/icon/mime/xsl.png
 awstats/wwwroot/icon/os/
 awstats/wwwroot/icon/os/aix.png
 awstats/wwwroot/icon/os/amigaos.png
+awstats/wwwroot/icon/os/android.png
+awstats/wwwroot/icon/os/android10.png
+awstats/wwwroot/icon/os/androidcupcake.png
+awstats/wwwroot/icon/os/androiddonut.png
+awstats/wwwroot/icon/os/androideclair.png
+awstats/wwwroot/icon/os/androidfroyo.png
+awstats/wwwroot/icon/os/androidgingerbread.png
+awstats/wwwroot/icon/os/androidhoneycomb.png
+awstats/wwwroot/icon/os/androidics.png
+awstats/wwwroot/icon/os/androidjellybean.png
+awstats/wwwroot/icon/os/androidkitkat.png
+awstats/wwwroot/icon/os/androidlollipop.png
+awstats/wwwroot/icon/os/androidmarshmallow.png
+awstats/wwwroot/icon/os/androidnougat.png
+awstats/wwwroot/icon/os/androidoreo.png
+awstats/wwwroot/icon/os/androidpie.png
 awstats/wwwroot/icon/os/apple.png
 awstats/wwwroot/icon/os/atari.png
 awstats/wwwroot/icon/os/beos.png
@@ -767,6 +787,9 @@ awstats/wwwroot/icon/os/macosx.png
 awstats/wwwroot/icon/os/macosx10.png
 awstats/wwwroot/icon/os/macosx11.png
 awstats/wwwroot/icon/os/macosx12.png
+awstats/wwwroot/icon/os/macosx13.png
+awstats/wwwroot/icon/os/macosx14.png
+awstats/wwwroot/icon/os/macosx15.png
 awstats/wwwroot/icon/os/macosx4.png
 awstats/wwwroot/icon/os/macosx5.png
 awstats/wwwroot/icon/os/macosx6.png
