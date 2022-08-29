@@ -4,7 +4,7 @@ ed4a5feb243a201b7890672f3d376b4586a16593
 Index: modules/access/v4l2/lib.c
 --- modules/access/v4l2/lib.c.orig
 +++ modules/access/v4l2/lib.c
-@@ -31,6 +31,16 @@
+@@ -31,6 +31,12 @@
  
  #include "v4l2.h"
  
@@ -14,14 +14,10 @@ Index: modules/access/v4l2/lib.c
 +#define V4L2_LIB "libv4l2.so.0"
 +#endif
 +
-+#ifndef RTLD_NOLOAD
-+#define RTLD_NOLOAD 0
-+#endif
-+
  static int fd_open (int fd, int flags)
  {
      (void) flags;
-@@ -56,7 +66,7 @@ static void v4l2_lib_load (void)
+@@ -56,7 +62,7 @@ static void v4l2_lib_load (void)
  
      h = dlopen ("libmediaclient.so", RTLD_LAZY | RTLD_LOCAL | RTLD_NOLOAD);
      if (h == NULL)
