@@ -1,7 +1,7 @@
 Index: common/CMakeLists.txt
 --- common/CMakeLists.txt.orig
 +++ common/CMakeLists.txt
-@@ -682,5 +682,5 @@ make_lexer(
+@@ -683,5 +683,5 @@ make_lexer(
  # This one gets made only when testing.
  # to build it, first enable #define STAND_ALONE at top of dsnlexer.cpp
  add_executable( dsntest EXCLUDE_FROM_ALL dsnlexer.cpp )

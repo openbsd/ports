@@ -1,7 +1,7 @@
 Index: pcbnew/CMakeLists.txt
 --- pcbnew/CMakeLists.txt.orig
 +++ pcbnew/CMakeLists.txt
-@@ -493,7 +493,7 @@ add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}
+@@ -495,7 +495,7 @@ add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}
      )
  
  if( UNIX AND NOT APPLE )

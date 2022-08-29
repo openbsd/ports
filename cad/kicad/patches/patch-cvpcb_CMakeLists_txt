@@ -1,7 +1,7 @@
 Index: cvpcb/CMakeLists.txt
 --- cvpcb/CMakeLists.txt.orig
 +++ cvpcb/CMakeLists.txt
-@@ -83,7 +83,7 @@ target_link_libraries( cvpcb_kiface ${Boost_LIBRARIES}
+@@ -85,7 +85,7 @@ target_link_libraries( cvpcb_kiface ${Boost_LIBRARIES}
  
  if( UNIX AND NOT APPLE )
      # -lrt must follow Boost
