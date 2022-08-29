@@ -1,16 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -1051,6 +1051,8 @@ class PyBuildExt(build_ext):
-                                                      'termcap'):
-                 readline_libs.append('termcap')
-             self.add(Extension('readline', ['readline.c'],
-+			       extra_compile_args=['-nostdinc'],
-+			       include_dirs=['/usr/include'],
-                                library_dirs=['/usr/lib/termcap'],
-                                extra_link_args=readline_extra_link_args,
-                                libraries=readline_libs))
-@@ -1778,7 +1780,7 @@ class PyBuildExt(build_ext):
+@@ -1778,7 +1778,7 @@ class PyBuildExt(build_ext):
          uuid_h = sysconfig.get_config_var("HAVE_UUID_H")
          uuid_uuid_h = sysconfig.get_config_var("HAVE_UUID_UUID_H")
          if uuid_h or uuid_uuid_h:

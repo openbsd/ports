@@ -8,7 +8,7 @@ SHARED_LIBS =		python3.9 0.0
 VERSION_SPEC =		>=3.9,<3.10
 PORTROACH =		limit:^3\.9
 
-REVISION =		2
+REVISION =		3
 
 # This is the MODPY_DEFAULT_VERSION_3 version of Python:
 # - override "@comment" setting so that bin/python3 etc are installed
