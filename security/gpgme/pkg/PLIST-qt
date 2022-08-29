@@ -31,6 +31,8 @@ include/QGpgME/QGpgMENewCryptoConfig
 include/QGpgME/QuickJob
 include/QGpgME/ReceiveKeysJob
 include/QGpgME/RefreshKeysJob
+include/QGpgME/RevokeKeyJob
+include/QGpgME/SetPrimaryUserIDJob
 include/QGpgME/SignEncryptJob
 include/QGpgME/SignJob
 include/QGpgME/SignKeyJob
@@ -61,6 +63,7 @@ include/gpgme++/gpggencardkeyinteractor.h
 include/gpgme++/gpgmefw.h
 include/gpgme++/gpgmepp_export.h
 include/gpgme++/gpgmepp_version.h
+include/gpgme++/gpgrevokekeyeditinteractor.h
 include/gpgme++/gpgsetexpirytimeeditinteractor.h
 include/gpgme++/gpgsetownertrusteditinteractor.h
 include/gpgme++/gpgsignkeyeditinteractor.h
@@ -119,6 +122,8 @@ include/qgpgme/qgpgmenewcryptoconfig.h
 include/qgpgme/quickjob.h
 include/qgpgme/receivekeysjob.h
 include/qgpgme/refreshkeysjob.h
+include/qgpgme/revokekeyjob.h
+include/qgpgme/setprimaryuseridjob.h
 include/qgpgme/signencryptjob.h
 include/qgpgme/signjob.h
 include/qgpgme/signkeyjob.h
