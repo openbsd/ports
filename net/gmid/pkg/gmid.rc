@@ -5,7 +5,7 @@ daemon_flags="-c ${SYSCONFDIR}/gmid.conf"
 
 . /etc/rc.d/rc.subr
 
-rc_pre() {
+rc_configtest() {
 	${daemon} -n ${daemon_flags}
 }
 

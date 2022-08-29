@@ -7,10 +7,13 @@ daemon_user="_icinga"
 
 pexp="${TRUEPREFIX}/lib/icinga2/sbin/icinga2 daemon.*"
 
+rc_configtest() {
+	${TRUEPREFIX}/sbin/icinga2 daemon --validate
+}
+
 rc_pre() {
 	install -d -o ${daemon_user} -g _icingaweb2 /var/www/var/run/icinga2{,/cmd}
 	ln -fs /var/www/var/run/icinga2 /var/run/icinga2
-	${TRUEPREFIX}/sbin/icinga2 daemon --validate
 }
 
 rc_cmd $1

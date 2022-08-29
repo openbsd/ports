@@ -11,6 +11,8 @@ PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
 EPOCH =		0
 
+REVISION-main =	0
+
 SHARED_LIBS +=	base                      0.0 # 2.6
 SHARED_LIBS +=	checker                   0.0 # 2.6
 SHARED_LIBS +=	cli                       0.0 # 2.6

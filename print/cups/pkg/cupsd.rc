@@ -6,11 +6,13 @@ daemon="${TRUEPREFIX}/sbin/cupsd"
 
 pexp="${daemon} .*"
 
+rc_configtest() {
+	rc_exec "${daemon} ${daemon_flags} -t"
+}
+
 rc_pre() {
 	# XXX cups-driverd(8) can crash when setting up a printer driver
 	rm -f /var/cache/cups/*
-
-	rc_exec "${daemon} ${daemon_flags} -t" || return 1
 
 	# no existing printcap means we're not running lpd(8) so link cups'
 	# printcap so base lp commands can find and use cups printers
