@@ -1,7 +1,6 @@
 COMMENT =	exporter with the features of Sub::Exporter
 
-DISTNAME =	Exporter-Tiny-1.002002
-REVISION =	0
+DISTNAME =	Exporter-Tiny-1.004000
 
 CATEGORIES =	devel
 
@@ -12,6 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Test-Fatal \
+			devel/p5-Test-Requires \
 			devel/p5-Test-Warnings
 
 PKG_ARCH =		*
