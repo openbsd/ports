@@ -3,11 +3,11 @@ CATEGORIES =	archivers
 
 GH_ACCOUNT =	stachenov
 GH_PROJECT =	quazip
-V =		0.8.1
+V =		1.3
 GH_TAGNAME =	v$V
 PKGNAME =	quazip-qt5-$V
 
-SHARED_LIBS +=	quazip5	3.0		# 1.0
+SHARED_LIBS +=  quazip1-qt5               0.0 # 0.0
 
 HOMEPAGE =	https://stachenov.github.io/quazip/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -17,23 +17,10 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core m z
 
-COMPILER =		base-clang ports-gcc base-gcc
-
 MODULES =		devel/cmake \
 			x11/qt5
 
-NO_TEST =		Yes
-
-# Add back devel/qmake to MODULES if fixing tests
-# qmake.port.mk is used for tests only
-#MODQMAKE_PROJECTS =	qztest/qztest.pro
-
-#do-test:
-#	mkdir -p ${WRKBUILD}/qztest
-#	ln -sf ../libquazip5.so.${LIBquazip5_VERSION} ${WRKBUILD}/quazip/libquazip5.so.${LIBquazip5_VERSION}
-#	${MODQMAKE_configure}
-#	${MODQMAKE_build}
-#	cd ${WRKBUILD}/qztest; \
-#	env LD_LIBRARY_PATH=${WRKBUILD}/quazip ./qztest
+CONFIGURE_ARGS +=	-DQUAZIP_ENABLE_TESTS=ON \
+			-DQUAZIP_QT_MAJOR_VERSION=5
 
 .include <bsd.port.mk>
