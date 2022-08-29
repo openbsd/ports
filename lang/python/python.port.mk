@@ -207,6 +207,7 @@ BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == setuptools
+DPB_PROPERTIES +=	nojunk
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
 MODPY_RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
