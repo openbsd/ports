@@ -3,6 +3,7 @@ COMMENT =	SIP library supporting voice/video calls and text messaging
 MODULE =	liblinphone
 V =		5.1.56
 KV =		5.1.55
+REVISION =	0
 
 SHARED_LIBS +=	linphone	1.0 \
 		linphone++	1.0 # 10
@@ -16,7 +17,7 @@ CONFIGURE_ARGS =-DENABLE_STATIC=NO \
 
 BUILD_DEPENDS = textproc/py-stache \
 		devel/py-six,python3 \
-		devel/doxygen
+		devel/doxygen>=1.9.5
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox>=${KV} \
 		telephony/linphone/mediastreamer2>=${KV} \
