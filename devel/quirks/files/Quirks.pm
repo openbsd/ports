@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1422 2022/08/27 15:18:15 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1423 2022/08/29 14:42:41 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1701,6 +1701,9 @@ setup_obsolete_reason(
 	6 => 'py3-importlib_resources',
 	3 => 'py3-uv',
 	6 => 'py3-blist',
+	6 => 'mlt',
+	6 => 'mlt-gpl',
+	6 => 'webvfx',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
