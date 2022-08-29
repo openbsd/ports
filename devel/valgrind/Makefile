@@ -1,3 +1,4 @@
+BROKEN =		syscall table and wrappers need to be updated to reflect reality
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		instrumentation framework for dynamic analysis tools
