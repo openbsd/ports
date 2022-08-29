@@ -6,9 +6,8 @@ daemon_timeout="60"
 
 . /etc/rc.d/rc.subr
 
-rc_reload() {
-	${daemon} ${daemon_flags} -t && \
-		pkill -HUP -T "${daemon_rtable}" -xf "${pexp}"
+rc_configtest() {
+	${daemon} ${daemon_flags} -t
 }
 
 rc_cmd $1

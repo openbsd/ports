@@ -2,13 +2,15 @@
 
 daemon="${PREFIX}/sbin/knotd -d"
 knotc="${PREFIX}/sbin/knotc"
-knotcheckconf="${knotc} conf-check"
 
 . /etc/rc.d/rc.subr
 
+rc_configtest() {
+	${knotc} conf-check
+}
+
 rc_pre() {
 	install -d -o _knot -g wheel -m 750 /var/run/knot/
-	${knotcheckconf}
 }
 
 rc_check() {
@@ -16,7 +18,7 @@ rc_check() {
 }
 
 rc_reload() {
-	${knotcheckconf} && ${knotc} reload
+	${knotc} reload
 }
 
 rc_stop() {

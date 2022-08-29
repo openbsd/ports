@@ -4,7 +4,7 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://puck.nether.net/sysmon/
 MAINTAINER =	George Rosamond <george@nycbug.org>
-REVISION =	3
+REVISION =	4
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
