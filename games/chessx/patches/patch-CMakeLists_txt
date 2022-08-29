@@ -1,0 +1,15 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -103,9 +103,10 @@ add_executable(chessx WIN32
+   ${OTHER_FILES}
+ )
+ 
++find_package(QuaZip-Qt5 REQUIRED)
+ target_link_libraries(chessx PRIVATE
+   qt_config
+-  quazip
++  QuaZip::QuaZip
+   bitboard
+   board
+   eco

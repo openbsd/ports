@@ -1,35 +1,43 @@
-COMMENT =		free chess database and analyzer
-DISTNAME =		chessx-1.4.6
-CATEGORIES =		games
-HOMEPAGE =		http://chessx.sourceforge.net/
-REVISION =		5
+COMMENT =	free chess database and analyzer
+
+V =		1.5.6
+GH_ACCOUNT =	Isarhamster
+GH_PROJECT =	chessx
+GH_TAGNAME =	v${V}-lw
+
+DISTNAME =	chessx-${V}
+
+CATEGORIES =	games
+
+HOMEPAGE =	https://chessx.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  GL Qt5Core Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m pthread quazip5 z
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Multimedia Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Svg Qt5TextToSpeech Qt5Widgets Qt5Xml
+WANTLIB += c m pulse pulse-mainloop-glib quazip1-qt5 z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=chessx/}
-EXTRACT_SUFX =		.tgz
+MODULES =	x11/qt5 \
+		devel/cmake
 
-MODULES =		x11/qt5 devel/qmake
-RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		archivers/quazip \
-			x11/qt5/qtmultimedia \
-			x11/qt5/qtsvg
+RUN_DEPENDS =	devel/desktop-file-utils
 
-NO_TEST =		Yes
+LIB_DEPENDS =	archivers/quazip>=1.3 \
+		x11/qt5/qtmultimedia \
+		x11/qt5/qtspeech \
+		x11/qt5/qtsvg
 
-CXXFLAGS +=		-I${LOCALBASE}/include/quazip5
+NO_TEST =	Yes
+
+CXXFLAGS +=	-I${LOCALBASE}/include/QuaZip-Qt5/quazip/
 
 # make sure bundled quazip is not picked up
 post-extract:
 	rm -R ${WRKDIST}/src/quazip
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/release/chessx ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/chessx ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/unix/chessx.desktop ${PREFIX}/share/applications/
 
