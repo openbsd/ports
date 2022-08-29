@@ -178,6 +178,8 @@ share/suricata/rules/smb-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/smb-events.rules
 share/suricata/rules/smtp-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/smtp-events.rules
+share/suricata/rules/ssh-events.rules
+@sample ${SYSCONFDIR}/suricata/rules/ssh-events.rules
 share/suricata/rules/stream-events.rules
 @sample ${SYSCONFDIR}/suricata/rules/stream-events.rules
 share/suricata/rules/tls-events.rules

@@ -9,7 +9,7 @@ about downloading rules.
 Index: suricata.yaml.in
 --- suricata.yaml.in.orig
 +++ suricata.yaml.in
-@@ -77,6 +77,7 @@ outputs:
+@@ -80,6 +80,7 @@ outputs:
    - fast:
        enabled: yes
        filename: fast.log
@@ -17,7 +17,7 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -85,6 +86,7 @@ outputs:
+@@ -88,6 +89,7 @@ outputs:
        enabled: @e_enable_evelog@
        filetype: regular #regular|syslog|unix_dgram|unix_stream|redis
        filename: eve.json
@@ -25,7 +25,7 @@ Index: suricata.yaml.in
        # Enable for multi-threaded eve.json output; output files are amended with
        # with an identifier, e.g., eve.9.json
        #threaded: false
-@@ -304,6 +306,7 @@ outputs:
+@@ -307,6 +309,7 @@ outputs:
    - http-log:
        enabled: no
        filename: http.log
@@ -33,7 +33,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # enable this for extended logging information
        #custom: yes       # enable the custom logging format (defined by customformat)
-@@ -314,6 +317,7 @@ outputs:
+@@ -317,6 +320,7 @@ outputs:
    - tls-log:
        enabled: no  # Log TLS connections.
        filename: tls.log # File to store TLS logs.
@@ -41,7 +41,7 @@ Index: suricata.yaml.in
        append: yes
        #extended: yes     # Log extended information like fingerprint
        #custom: yes       # enabled the custom logging format (defined by customformat)
-@@ -361,6 +365,7 @@ outputs:
+@@ -364,6 +368,7 @@ outputs:
    - pcap-log:
        enabled: no
        filename: log.pcap
@@ -49,7 +49,7 @@ Index: suricata.yaml.in
  
        # File size limit.  Can be specified in kb, mb, gb.  Just a number
        # is parsed as bytes.
-@@ -396,6 +401,7 @@ outputs:
+@@ -399,6 +404,7 @@ outputs:
    - alert-debug:
        enabled: no
        filename: alert-debug.log
@@ -57,7 +57,7 @@ Index: suricata.yaml.in
        append: yes
        #filetype: regular # 'regular', 'unix_stream' or 'unix_dgram'
  
-@@ -411,6 +417,7 @@ outputs:
+@@ -414,6 +420,7 @@ outputs:
    - stats:
        enabled: yes
        filename: stats.log
@@ -65,7 +65,7 @@ Index: suricata.yaml.in
        append: yes       # append to file (yes) or overwrite it (no)
        totals: yes       # stats for all threads merged together
        threads: no       # per thread stats
-@@ -504,6 +511,7 @@ outputs:
+@@ -507,6 +514,7 @@ outputs:
        enabled: no
        type: file
        filename: tcp-data.log
@@ -73,7 +73,7 @@ Index: suricata.yaml.in
  
    # Log HTTP body data after normalization, de-chunking and unzipping.
    # Two types: file or dir.
-@@ -517,6 +525,7 @@ outputs:
+@@ -520,6 +528,7 @@ outputs:
        enabled: no
        type: file
        filename: http-data.log
@@ -81,7 +81,7 @@ Index: suricata.yaml.in
  
    # Lua Output Support - execute lua script to generate alert and event
    # output.
-@@ -558,12 +567,12 @@ logging:
+@@ -566,12 +575,12 @@ logging:
        enabled: yes
        # type: json
    - file:
@@ -96,7 +96,7 @@ Index: suricata.yaml.in
        facility: local5
        format: "[%i] <%d> -- "
        # type: json
-@@ -994,9 +1003,9 @@ asn1-max-frames: 256
+@@ -1002,9 +1011,9 @@ asn1-max-frames: 256
  ##
  
  # Run Suricata with a specific user-id and group-id:
@@ -109,7 +109,7 @@ Index: suricata.yaml.in
  
  # Some logging modules will use that name in event as identifier. The default
  # value is the hostname
-@@ -1005,7 +1014,7 @@ asn1-max-frames: 256
+@@ -1013,7 +1022,7 @@ asn1-max-frames: 256
  # Default location of the pid file. The pid file is only used in
  # daemon mode (start Suricata with -D). If not running in daemon mode
  # the --pidfile command line option must be used to create a pid file.
@@ -118,7 +118,7 @@ Index: suricata.yaml.in
  
  # Daemon working directory
  # Suricata will change directory to this one if provided
-@@ -1865,14 +1874,38 @@ napatech:
+@@ -1885,14 +1894,38 @@ napatech:
      #
      hashmode: hash5tuplesorted
  

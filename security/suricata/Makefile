@@ -3,10 +3,8 @@ NOT_FOR_ARCHS =	powerpc64 riscv64
 
 COMMENT =	high performance network IDS, IPS and security monitoring
 
-SURICATA_V =	6.0.4
-SUPDATE_V =	1.2.3
-
-REVISION =	0
+SURICATA_V =	6.0.6
+SUPDATE_V =	1.2.4
 
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
