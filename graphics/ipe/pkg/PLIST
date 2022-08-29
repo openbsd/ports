@@ -72,6 +72,7 @@ lib/ipe/${V}/ipelets/symbols.lua
 share/doc/ipe/
 share/doc/ipe/annotated.html
 share/doc/ipe/bc_s.png
+share/doc/ipe/bc_sd.png
 share/doc/ipe/bdwn.png
 share/doc/ipe/blank.png
 share/doc/ipe/class_canvas-members.html
@@ -276,6 +277,7 @@ share/doc/ipe/dir_91a90e6e897462a7bb8a7a0fc103953b.html
 share/doc/ipe/dir_d44c64559bbebec7f509842c48db8b23.html
 share/doc/ipe/dir_e27e8af4fb4f24f00c2e8a69665fe110.html
 share/doc/ipe/doc.png
+share/doc/ipe/docd.png
 share/doc/ipe/doxygen.css
 share/doc/ipe/doxygen.svg
 share/doc/ipe/dynsections.js
@@ -470,8 +472,10 @@ share/doc/ipe/namespacemembers_func.html
 share/doc/ipe/namespacemembers_type.html
 share/doc/ipe/namespacemembers_vars.html
 share/doc/ipe/nav_f.png
+share/doc/ipe/nav_fd.png
 share/doc/ipe/nav_g.png
 share/doc/ipe/nav_h.png
+share/doc/ipe/nav_hd.png
 share/doc/ipe/next.png
 share/doc/ipe/onepage.html
 share/doc/ipe/onepage_2.html
@@ -483,6 +487,7 @@ share/doc/ipe/radgrad1.svg
 share/doc/ipe/radgrad2.svg
 share/doc/ipe/snaplines.svg
 share/doc/ipe/splitbar.png
+share/doc/ipe/splitbard.png
 share/doc/ipe/structipe_1_1_attribute_mapping-members.html
 share/doc/ipe/structipe_1_1_attribute_mapping.html
 share/doc/ipe/structipe_1_1_canvas_base_1_1_style-members.html
@@ -522,9 +527,13 @@ share/doc/ipe/structipe_1_1_tiling.html
 share/doc/ipe/sync_off.png
 share/doc/ipe/sync_on.png
 share/doc/ipe/tab_a.png
+share/doc/ipe/tab_ad.png
 share/doc/ipe/tab_b.png
+share/doc/ipe/tab_bd.png
 share/doc/ipe/tab_h.png
+share/doc/ipe/tab_hd.png
 share/doc/ipe/tab_s.png
+share/doc/ipe/tab_sd.png
 share/doc/ipe/tabs.css
 share/doc/ipe/up.png
 share/ipe/
