@@ -1,9 +1,9 @@
 Index: src/gui/RRulerQt.cpp
 --- src/gui/RRulerQt.cpp.orig
 +++ src/gui/RRulerQt.cpp
-@@ -25,6 +25,7 @@
- #include "RMdiChildQt.h"
+@@ -26,6 +26,7 @@
  
+ #include <QApplication>
  #include <QPainter>
 +#include <QPainterPath>
  

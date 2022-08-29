@@ -1,0 +1,15 @@
+disable searching outside of the source directory
+
+Index: qcad.pro
+--- qcad.pro.orig
++++ qcad.pro
+@@ -11,9 +11,6 @@ win32 {
+         SUBDIRS += ..\\$$dir
+     }
+ }
+-else {
+-    SUBDIRS += $$system("ls -d ../qcad?* 2>/dev/null | grep -v $(basename $(pwd))$")
+-}
+ 
+ !r_mobile {
+     exists(support) {

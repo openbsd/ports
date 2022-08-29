@@ -1,7 +1,7 @@
 Index: src/core/core.pro
 --- src/core/core.pro.orig
 +++ src/core/core.pro
-@@ -295,7 +295,7 @@ RC_FILE = core.rc
+@@ -309,7 +309,7 @@ RC_FILE = core.rc
  OTHER_FILES += core.dox math/math.dox
  DEFINES += QCADCORE_LIBRARY
  

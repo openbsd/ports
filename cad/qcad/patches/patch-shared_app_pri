@@ -1,7 +1,7 @@
 Index: shared_app.pri
 --- shared_app.pri.orig
 +++ shared_app.pri
-@@ -16,7 +16,7 @@ LIBS += \
+@@ -19,7 +19,7 @@ LIBS += \
  !r_no_opennurbs {
      LIBS += \
          -lopennurbs \

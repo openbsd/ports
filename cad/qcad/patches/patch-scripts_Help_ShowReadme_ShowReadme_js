@@ -1,0 +1,12 @@
+Index: scripts/Help/ShowReadme/ShowReadme.js
+--- scripts/Help/ShowReadme/ShowReadme.js.orig
++++ scripts/Help/ShowReadme/ShowReadme.js
+@@ -19,7 +19,7 @@
+ 
+ include("scripts/Help/Help.js");
+ 
+-ShowReadme.readmeFile = "readme.txt";
++ShowReadme.readmeFile = "${LOCALBASE}/share/qcadreadme.txt";
+ 
+ function ShowReadme(guiAction) {
+     Help.call(this, guiAction);

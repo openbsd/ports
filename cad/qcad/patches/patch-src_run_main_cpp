@@ -1,0 +1,18 @@
+don't overwrite the plugins directory: remove the applicationDir and add the pluginPaths
+
+Index: src/run/main.cpp
+--- src/run/main.cpp.orig
++++ src/run/main.cpp
+@@ -285,7 +285,11 @@ int main(int argc, char *argv[]) {
+         qWarning() << "No plugin paths found";
+         return -1;
+     }
+-    app->setLibraryPaths(pluginPaths);
++
++    app->removeLibraryPath(app->applicationDirPath());
++    foreach (const QString &path, pluginPaths)
++       app->addLibraryPath(path);
++
+ 
+     // make sure basic entities are initialized before loading plugins:
+     RDimStyleData::initDefaults();

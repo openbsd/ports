@@ -1,7 +1,7 @@
 Index: scripts/Help/About/About.js
 --- scripts/Help/About/About.js.orig
 +++ scripts/Help/About/About.js
-@@ -467,6 +467,9 @@ About.prototype.initAboutSystem = function(textEdit) {
+@@ -474,6 +474,9 @@ About.prototype.initAboutSystem = function(textEdit) {
      if (RS.getSystemId()==="solaris") {
          text += "Solaris";
      }

@@ -2,10 +2,9 @@ COMMENT =	Qt-based 2D CAD system
 
 GH_ACCOUNT =	qcad
 GH_PROJECT =	qcad
-GH_TAGNAME =	v3.24.3.0
-REVISION =	2
+GH_TAGNAME =	v3.27.6.7
 
-SO_VERSION =	1.0
+SO_VERSION =	2.0
 QCAD_LIBS =	qcadcore \
 		qcadecmaapi \
 		qcadentity \
@@ -38,7 +37,9 @@ MODULES =	devel/qmake \
 		x11/qt5
 
 BUILD_DEPENDS =	x11/qt5/qtimageformats
+
 RUN_DEPENDS =	devel/desktop-file-utils
+
 LIB_DEPENDS =	print/cups,-libs \
 		textproc/libstemmer \
 		x11/qt5/qtscript \
@@ -46,17 +47,22 @@ LIB_DEPENDS =	print/cups,-libs \
 		x11/qt5/qttools \
 		x11/qt5/qtxmlpatterns
 
-SEPARATE_BUILD =No
-USE_GMAKE =	Yes
-
-NO_TEST =	Yes
+SEPARATE_BUILD =	No
+USE_GMAKE =		Yes
+NO_TEST =		Yes
 
 pre-configure:
 	# Do not require specific Qt version
-	sed -i "s|\$$\$${QT_VERSION}|5.5.0|g" \
+	sed -i "s|\$$\$${QT_VERSION}|${MODQT5_VERSION}|g" \
 		${WRKSRC}/src/3rdparty/3rdparty.pro
+	mkdir ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${MODQT5_VERSION}
+	cp ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-5.15.2/qt-labs-qtscriptgenerator-5.15.2.pro \
+           ${WRKSRC}/src/3rdparty/qt-labs-qtscriptgenerator-${MODQT5_VERSION}/qt-labs-qtscriptgenerator-${MODQT5_VERSION}.pro
 	${SUBST_CMD} ${WRKSRC}/src/core/RS.cpp \
-		${WRKSRC}/src/core/RSettings.cpp
+		${WRKSRC}/src/core/RSettings.cpp \
+		${WRKSRC}/scripts/Help/ShowReadme/ShowReadme.js \
+		${WRKSRC}/scripts/Widgets/LibraryBrowser/LibraryBrowser.js
+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/release/qcad-bin ${PREFIX}/bin/qcad

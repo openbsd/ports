@@ -1,7 +1,7 @@
 Index: shared.pri
 --- shared.pri.orig
 +++ shared.pri
-@@ -164,7 +164,7 @@ else {
+@@ -193,7 +193,7 @@ else {
  
  CONFIG -= warn_off
  CONFIG += warn_on

@@ -1,0 +1,18 @@
+Index: scripts/Widgets/LibraryBrowser/LibraryBrowser.js
+--- scripts/Widgets/LibraryBrowser/LibraryBrowser.js.orig
++++ scripts/Widgets/LibraryBrowser/LibraryBrowser.js
+@@ -174,12 +174,12 @@ LibraryBrowser.getSourceList = function() {
+     var libs;
+ 
+     // no configuration: add all libraries available in libraries subdir:
+-    librariesDir = new QDir("libraries");
++    librariesDir = new QDir("${LOCALBASE}/share/qcad/libraries");
+     libs = librariesDir.entryList([], filters, sortFlags);
+     for (i=0; i<libs.length; i++) {
+         // always add default library if available:
+         if (libs[i]==="default" || noSourcesConfigured) {
+-            sourceList.push(QDir.fromNativeSeparators(new QDir("libraries/%1".arg(libs[i])).absolutePath()));
++            sourceList.push(QDir.fromNativeSeparators(new QDir("%1/%2".arg(librariesDir.absolutePath()).arg(libs[i])).absolutePath()));
+         }
+     }
+ 

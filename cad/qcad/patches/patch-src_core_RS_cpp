@@ -1,12 +1,13 @@
 Index: src/core/RS.cpp
 --- src/core/RS.cpp.orig
 +++ src/core/RS.cpp
-@@ -150,6 +150,8 @@ QStringList RS::getDirectoryList(const QString& subDir
+@@ -169,6 +169,9 @@ QStringList RS::getDirectoryList(const QString& subDir
      dirList.append(appDir + "/../Resources/" + subDirectory);
      dirList.append(appDir + "/../../../" + subDirectory);
      dirList.append(QDir::currentPath() + "/" + subDirectory);
 +#elif defined Q_OS_OPENBSD
 +    dirList.append("${LOCALBASE}/share/qcad/" + subDirectory);
++    dirList.append(QDir::homePath() + "/.qcad/" + subDirectory);
  #else
      dirList.append(appDir + "/" + subDirectory);
  #endif

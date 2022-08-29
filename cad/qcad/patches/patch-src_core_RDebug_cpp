@@ -4,7 +4,7 @@ have in our libc.
 Index: src/core/RDebug.cpp
 --- src/core/RDebug.cpp.orig
 +++ src/core/RDebug.cpp
-@@ -34,7 +34,7 @@ QMap<QString, int> RDebug::counter;
+@@ -35,7 +35,7 @@ QMap<QString, int> RDebug::counter;
  QString RDebug::prefix;
  
  void RDebug::printBacktrace(const QString& prefix) {

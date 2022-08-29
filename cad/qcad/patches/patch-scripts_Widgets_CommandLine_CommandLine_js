@@ -1,7 +1,7 @@
 Index: scripts/Widgets/CommandLine/CommandLine.js
 --- scripts/Widgets/CommandLine/CommandLine.js.orig
 +++ scripts/Widgets/CommandLine/CommandLine.js
-@@ -490,6 +490,9 @@ CommandLine.init = function(basePath) {
+@@ -498,6 +498,9 @@ CommandLine.init = function(basePath) {
      case "solaris":
          system = "Solaris";
          break;
