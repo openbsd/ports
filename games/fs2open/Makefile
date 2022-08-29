@@ -8,6 +8,7 @@ DISTNAME =	fs2open-${V}
 GH_ACCOUNT =	scp-fs2open
 GH_PROJECT =	fs2open.github.com
 GH_TAGNAME =	release_${V:S/./_/g}
+REVISION =	0
 
 CATEGORIES =	games
 
