@@ -22,6 +22,10 @@ daemon="${TRUEPREFIX}/bin/foobar"
 #rc_stop_signal=TERM
 #rc_usercheck= # (undefined or "NO")
 
+#rc_configtest() {
+#	return 0
+#}
+
 #rc_pre() {
 #}
 
