@@ -18,6 +18,7 @@ share/doc/orthanc/OrthancPlugin/OrthancCPlugin_8h_source.html
 share/doc/orthanc/OrthancPlugin/OrthancLogoDocumentation.png
 share/doc/orthanc/OrthancPlugin/annotated.html
 share/doc/orthanc/OrthancPlugin/bc_s.png
+share/doc/orthanc/OrthancPlugin/bc_sd.png
 share/doc/orthanc/OrthancPlugin/bdwn.png
 share/doc/orthanc/OrthancPlugin/classes.html
 share/doc/orthanc/OrthancPlugin/closed.png
@@ -28,6 +29,7 @@ share/doc/orthanc/OrthancPlugin/dir_8a0d447fe7aaf723da4d36caa8de6b31.html
 share/doc/orthanc/OrthancPlugin/dir_ddde61eb52d2d712e5147ece0844b740.html
 share/doc/orthanc/OrthancPlugin/dir_e73b30f829e3152d8d094d6a99e83774.html
 share/doc/orthanc/OrthancPlugin/doc.png
+share/doc/orthanc/OrthancPlugin/docd.png
 share/doc/orthanc/OrthancPlugin/doxygen.css
 share/doc/orthanc/OrthancPlugin/doxygen.svg
 share/doc/orthanc/OrthancPlugin/dynsections.js
@@ -49,11 +51,14 @@ share/doc/orthanc/OrthancPlugin/menu.js
 share/doc/orthanc/OrthancPlugin/menudata.js
 share/doc/orthanc/OrthancPlugin/modules.html
 share/doc/orthanc/OrthancPlugin/nav_f.png
+share/doc/orthanc/OrthancPlugin/nav_fd.png
 share/doc/orthanc/OrthancPlugin/nav_g.png
 share/doc/orthanc/OrthancPlugin/nav_h.png
+share/doc/orthanc/OrthancPlugin/nav_hd.png
 share/doc/orthanc/OrthancPlugin/open.png
 share/doc/orthanc/OrthancPlugin/pages.html
 share/doc/orthanc/OrthancPlugin/splitbar.png
+share/doc/orthanc/OrthancPlugin/splitbard.png
 share/doc/orthanc/OrthancPlugin/structOrthancPluginDictionaryEntry-members.html
 share/doc/orthanc/OrthancPlugin/structOrthancPluginDictionaryEntry.html
 share/doc/orthanc/OrthancPlugin/structOrthancPluginHttpRequest-members.html
@@ -65,9 +70,13 @@ share/doc/orthanc/OrthancPlugin/structOrthancPluginMemoryBuffer64.html
 share/doc/orthanc/OrthancPlugin/sync_off.png
 share/doc/orthanc/OrthancPlugin/sync_on.png
 share/doc/orthanc/OrthancPlugin/tab_a.png
+share/doc/orthanc/OrthancPlugin/tab_ad.png
 share/doc/orthanc/OrthancPlugin/tab_b.png
+share/doc/orthanc/OrthancPlugin/tab_bd.png
 share/doc/orthanc/OrthancPlugin/tab_h.png
+share/doc/orthanc/OrthancPlugin/tab_hd.png
 share/doc/orthanc/OrthancPlugin/tab_s.png
+share/doc/orthanc/OrthancPlugin/tab_sd.png
 share/doc/orthanc/OrthancPlugin/tabs.css
 share/examples/orthanc/
 @sample ${SYSCONFDIR}/orthanc/
