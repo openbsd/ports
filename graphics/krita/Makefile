@@ -1,34 +1,35 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.0.8
+VERSION =	5.1.0
 DISTNAME =	krita-${VERSION}
 
-SHARED_LIBS +=  kritabasicflakes          4.0 # 16.0
+SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                8.0 # 16.0
-SHARED_LIBS +=  kritapigment              7.0 # 16.0
-SHARED_LIBS +=  kritaplugin               2.0 # 16.0
-SHARED_LIBS +=  kritastore                3.0 # 16.0
+SHARED_LIBS +=  kritaflake                9.0 # 16.0
+SHARED_LIBS +=  kritapigment              8.0 # 16.0
+SHARED_LIBS +=  kritaplugin               3.0 # 16.0
+SHARED_LIBS +=  kritastore                4.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              6.1 # 16.0
-SHARED_LIBS +=  kritawidgetutils          6.0 # 16.0
+SHARED_LIBS +=  kritawidgets              7.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          7.0 # 16.0
 SHARED_LIBS +=  kritacommand              4.0 # 16.0
 SHARED_LIBS +=  kritaimpex                2.0 # 16.0
-SHARED_LIBS +=  kritalibkis               3.0 # 16.0
-SHARED_LIBS +=  kritalibkra               5.0 # 16.0
+SHARED_LIBS +=  kritalibkis               3.1 # 16.0
+SHARED_LIBS +=  kritalibkra               6.0 # 16.0
 SHARED_LIBS +=  kritaqml                  3.0 # 16.0
-SHARED_LIBS +=  kritametadata             1.0 # 18.0
-SHARED_LIBS +=  kritaqmicinterface        0.0 # 17.0
-SHARED_LIBS +=  kritaresources            2.0 # 17.0
-SHARED_LIBS +=  kritaresourcewidgets      0.0 # 17.0
+SHARED_LIBS +=  kritametadata             2.0 # 18.0
+SHARED_LIBS +=  kritaqmicinterface        1.0 # 17.0
+SHARED_LIBS +=  kritaresources            3.0 # 17.0
+SHARED_LIBS +=  kritaresourcewidgets      0.1 # 17.0
+SHARED_LIBS +=  kritapsdutils             0.0 # 0.0
 # XXX Version numbers from editors/calligra 2.x port
-SHARED_LIBS +=  kritapsd                  4.0 # 14.0
+SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
-SHARED_LIBS +=  kritaglobal               5.1 # 14.0
-SHARED_LIBS +=  kritaimage                63.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             58.0 # 0.0
-SHARED_LIBS +=  kritalibpaintop           57.0 # 0.0
-SHARED_LIBS +=  kritaui                   66.0 # 0.0
+SHARED_LIBS +=  kritaglobal               5.2 # 14.0
+SHARED_LIBS +=  kritaimage                64.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             59.0 # 0.0
+SHARED_LIBS +=  kritalibpaintop           58.0 # 0.0
+SHARED_LIBS +=  kritaui                   67.0 # 0.0
 
 CATEGORIES =	graphics
 
@@ -49,8 +50,8 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
 WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
 WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas heif
-WANTLIB += jpeg lcms2 m openjp2 png poppler poppler-qt5 quazip5
-WANTLIB += raw tiff webp z
+WANTLIB += jpeg lcms2 m mypaint openjp2 png poppler poppler-qt5
+WANTLIB += quazip1-qt5 raw tiff turbojpeg webp z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.xz
@@ -71,7 +72,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			math/eigen3 \
 			net/curl
 
-LIB_DEPENDS =		archivers/quazip \
+LIB_DEPENDS =		archivers/quazip>=1.3 \
 			devel/boost \
 			devel/gsl \
 			devel/kf5/kcompletion \
@@ -87,6 +88,7 @@ LIB_DEPENDS =		archivers/quazip \
 			graphics/giflib \
 			graphics/jpeg \
 			graphics/lcms2 \
+			graphics/libmypaint \
 			graphics/libraw \
 			graphics/libwebp \
 			graphics/opencolorio \
@@ -113,6 +115,9 @@ CONFIGURE_ARGS +=	-DENABLE_UPDATERS=OFF
 
 # Fix build with OpenEXR>=3 (Imath split)
 CXXFLAGS +=		-I${LOCALBASE}/include/Imath
+
+# mypaint
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 TEST_IS_INTERACTIVE =	X11
 

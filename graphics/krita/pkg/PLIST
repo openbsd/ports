@@ -44,6 +44,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaedgedetection.so
 @so lib/kritaplugins/kritaembossfilter.so
 @so lib/kritaplugins/kritaexample.so
+@so lib/kritaplugins/kritaexif.so
 @so lib/kritaplugins/kritaexperimentpaintop.so
 @so lib/kritaplugins/kritaexrexport.so
 @so lib/kritaplugins/kritaexrimport.so
@@ -70,6 +71,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritaimageenhancement.so
 @so lib/kritaplugins/kritaimagesplit.so
 @so lib/kritaplugins/kritaindexcolors.so
+@so lib/kritaplugins/kritaiptc.so
 @so lib/kritaplugins/kritajp2import.so
 @so lib/kritaplugins/kritajpegexport.so
 @so lib/kritaplugins/kritajpegimport.so
@@ -86,6 +88,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritametadataeditor.so
 @so lib/kritaplugins/kritamodifyselection.so
 @so lib/kritaplugins/kritamultigridpatterngenerator.so
+@so lib/kritaplugins/kritamypaintop.so
 @so lib/kritaplugins/kritanoisefilter.so
 @so lib/kritaplugins/kritanormalize.so
 @so lib/kritaplugins/kritaoffsetimage.so
@@ -144,6 +147,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritatoolSmartPatch.so
 @so lib/kritaplugins/kritatoolcrop.so
 @so lib/kritaplugins/kritatooldyna.so
+@so lib/kritaplugins/kritatoolencloseandfill.so
 @so lib/kritaplugins/kritatoollazybrush.so
 @so lib/kritaplugins/kritatoolpolygon.so
 @so lib/kritaplugins/kritatoolpolyline.so
@@ -155,6 +159,7 @@ lib/kritaplugins/
 @so lib/kritaplugins/kritawebpexport.so
 @so lib/kritaplugins/kritawebpimport.so
 @so lib/kritaplugins/kritaxcfimport.so
+@so lib/kritaplugins/kritaxmp.so
 @lib lib/libkritabasicflakes.so.${LIBkritabasicflakes_VERSION}
 @lib lib/libkritacolor.so.${LIBkritacolor_VERSION}
 @lib lib/libkritacolord.so.${LIBkritacolord_VERSION}
@@ -171,11 +176,13 @@ lib/kritaplugins/
 @lib lib/libkritapigment.so.${LIBkritapigment_VERSION}
 @lib lib/libkritaplugin.so.${LIBkritaplugin_VERSION}
 @lib lib/libkritapsd.so.${LIBkritapsd_VERSION}
+@lib lib/libkritapsdutils.so.${LIBkritapsdutils_VERSION}
 @lib lib/libkritaqmicinterface.so.${LIBkritaqmicinterface_VERSION}
 @lib lib/libkritaqml.so.${LIBkritaqml_VERSION}
 @lib lib/libkritaresources.so.${LIBkritaresources_VERSION}
 @lib lib/libkritaresourcewidgets.so.${LIBkritaresourcewidgets_VERSION}
 @lib lib/libkritastore.so.${LIBkritastore_VERSION}
+@so lib/libkritatiffpsd.so
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
@@ -247,6 +254,7 @@ share/color-schemes/
 share/color-schemes/KritaBlender.colors
 share/color-schemes/KritaBright.colors
 share/color-schemes/KritaDark.colors
+share/color-schemes/KritaDarkOrange.colors
 share/color-schemes/KritaDarker.colors
 share/color-schemes/KritaNeutral.colors
 share/color/icc/
@@ -274,6 +282,14 @@ share/color/icc/krita/README
 share/color/icc/krita/Rec2020-elle-V4-g10.icc
 share/color/icc/krita/WideRGB-elle-V2-g22.icc
 share/color/icc/krita/XYZ-D50-Identity-elle-V4.icc
+share/color/icc/krita/bt601-7_bt1886_ycbcr_v2.icc
+share/color/icc/krita/bt601-7_bt1886_ycbcr_v4.icc
+share/color/icc/krita/bt601-7_ycbcr_v2.icc
+share/color/icc/krita/bt601-7_ycbcr_v4.icc
+share/color/icc/krita/bt709-6_bt1886_ycbcr_v2.icc
+share/color/icc/krita/bt709-6_bt1886_ycbcr_v4.icc
+share/color/icc/krita/bt709-6_ycbcr_v2.icc
+share/color/icc/krita/bt709-6_ycbcr_v4.icc
 share/color/icc/krita/cmyk.icm
 share/color/icc/krita/krita25_lcms-builtin-sRGB_g100-truegamma.icc
 share/color/icc/krita/sRGB-elle-V2-g10.icc
@@ -311,6 +327,7 @@ share/krita/actions/InteractionTool.action
 share/krita/actions/KarbonCalligraphyTool.action
 share/krita/actions/KisAssistantTool.action
 share/krita/actions/KisToolCrop.action
+share/krita/actions/KisToolEncloseAndFill.action
 share/krita/actions/KisToolPath.action
 share/krita/actions/KisToolPencil.action
 share/krita/actions/KisToolPolygon.action
@@ -388,6 +405,7 @@ share/krita/images/krita-experiment.png
 share/krita/images/krita-filterop.png
 share/krita/images/krita-grid.png
 share/krita/images/krita-hatching.png
+share/krita/images/krita-mypaint.png
 share/krita/images/krita-paintbrush.png
 share/krita/images/krita-particle.png
 share/krita/images/krita-sketch.png
@@ -422,6 +440,20 @@ share/krita/paintoppresets/Sketch.tag
 share/krita/paintoppresets/Textures.tag
 share/krita/paintoppresets/a)_Eraser_Circle.kpp
 share/krita/paintoppresets/b)_Basic-5_Size_default.kpp
+share/krita/paintoppresets/c)_Pencil_1_Sketch_(mypaint).myb
+share/krita/paintoppresets/c)_Pencil_1_Sketch_(mypaint)_prev.png
+share/krita/paintoppresets/c)_Pencil_2b_(mypaint).myb
+share/krita/paintoppresets/c)_Pencil_2b_(mypaint)_prev.png
+share/krita/paintoppresets/d)_Ink_pen_(mypaint).myb
+share/krita/paintoppresets/d)_Ink_pen_(mypaint)_prev.png
+share/krita/paintoppresets/e)_Marker_Medium_(mypaint).myb
+share/krita/paintoppresets/e)_Marker_Medium_(mypaint)_prev.png
+share/krita/paintoppresets/e)_Marker_Plain_(mypaint).myb
+share/krita/paintoppresets/e)_Marker_Plain_(mypaint)_prev.png
+share/krita/paintoppresets/i)_Wet_Knife_Plus_(mypaint).myb
+share/krita/paintoppresets/i)_Wet_Knife_Plus_(mypaint)_prev.png
+share/krita/paintoppresets/i)_Wet_Paint_Plus_(mypaint).myb
+share/krita/paintoppresets/i)_Wet_Paint_Plus_(mypaint)_prev.png
 share/krita/paintoppresets/j)_WaterC_Basic_Lines-Dry.kpp
 share/krita/paintoppresets/j)_WaterC_Basic_Lines-Wet-Pattern.kpp
 share/krita/paintoppresets/j)_WaterC_Basic_Lines-Wet.kpp
@@ -886,6 +918,8 @@ share/krita/shortcuts/krita_default.shortcuts
 share/krita/shortcuts/paint_tool_sai_compatible.shortcuts
 share/krita/shortcuts/photoshop_compatible.shortcuts
 share/krita/shortcuts/tablet_pro.shortcuts
+share/krita/storyboard_templates/
+share/krita/storyboard_templates/storyboard_extemp_default.svg
 share/krita/styles/
 share/krita/styles/markers.svg
 share/krita/symbols/
