@@ -1,9 +1,8 @@
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
-MODPY_EGG_VERSION =	19.3.3
+MODPY_EGG_VERSION =	22.7.1
 DISTNAME =	autobahn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
 
 CATEGORIES =	www
 
