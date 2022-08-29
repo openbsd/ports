@@ -26,12 +26,3 @@ Index: utils/paths.h
  #define HELPER_PATH	". BIN_DIR"		/* Used by graphics drivers */
  
  /*
-@@ -58,7 +58,7 @@
- #  endif
- # endif
- #else
--# if defined(linux) || defined(__FreeBSD__)
-+# if defined(linux) || defined(__FreeBSD__) || defined(__OpenBSD__)
- #  define PAGERDIR "/usr/bin/more"
- # elif defined(CYGWIN)
- #  define PAGERDIR "./less"

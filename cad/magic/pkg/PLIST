@@ -82,6 +82,7 @@ share/doc/magic/html/
 share/doc/magic/html/Makefile
 share/doc/magic/html/addcommandentry.html
 share/doc/magic/html/addpath.html
+share/doc/magic/html/antennacheck.html
 share/doc/magic/html/array.html
 share/doc/magic/html/box.html
 share/doc/magic/html/calma.html
@@ -114,9 +115,11 @@ share/doc/magic/html/def.html
 share/doc/magic/html/delete.html
 share/doc/magic/html/deletecommandentry.html
 share/doc/magic/html/direction.html
+share/doc/magic/html/display.html
 share/doc/magic/html/distance.html
 share/doc/magic/html/down.html
 share/doc/magic/html/drc.html
+share/doc/magic/html/drop.html
 share/doc/magic/html/dump.html
 share/doc/magic/html/edit.html
 share/doc/magic/html/element.html
@@ -166,6 +169,7 @@ share/doc/magic/html/irsim.html
 share/doc/magic/html/label.html
 share/doc/magic/html/lef.html
 share/doc/magic/html/load.html
+share/doc/magic/html/locking.html
 share/doc/magic/html/logcommands.html
 share/doc/magic/html/macro.html
 share/doc/magic/html/maketoolbar.html
@@ -194,6 +198,7 @@ share/doc/magic/html/netlist/verify.html
 share/doc/magic/html/netlist/writeall.html
 share/doc/magic/html/openwindow.html
 share/doc/magic/html/openwrapper.html
+share/doc/magic/html/orient.html
 share/doc/magic/html/paint.html
 share/doc/magic/html/path.html
 share/doc/magic/html/peekbox.html
@@ -210,6 +215,8 @@ share/doc/magic/html/pushbox.html
 share/doc/magic/html/pushbutton.html
 share/doc/magic/html/pushstack.html
 share/doc/magic/html/quit.html
+share/doc/magic/html/random.html
+share/doc/magic/html/readspice.html
 share/doc/magic/html/redo.html
 share/doc/magic/html/redraw.html
 share/doc/magic/html/render3d.html
@@ -223,6 +230,7 @@ share/doc/magic/html/scroll.html
 share/doc/magic/html/search.html
 share/doc/magic/html/see.html
 share/doc/magic/html/select.html
+share/doc/magic/html/setlabel.html
 share/doc/magic/html/setpoint.html
 share/doc/magic/html/shell.html
 share/doc/magic/html/sideways.html
@@ -284,6 +292,7 @@ share/doc/magic/html/wizard/winddebug.html
 share/doc/magic/html/wizard/winddump.html
 share/doc/magic/html/writeall.html
 share/doc/magic/html/xload.html
+share/doc/magic/html/xor.html
 share/doc/magic/html/xview.html
 share/doc/magic/html/zoom.html
 share/doc/magic/introduction.ps

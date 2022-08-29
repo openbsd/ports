@@ -1,5 +1,5 @@
 COMMENT =	interactive system for VLSI circuit layouts
-DISTNAME =	magic-8.3.137
+DISTNAME =	magic-8.3.316
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	cad
@@ -7,38 +7,42 @@ HOMEPAGE =	http://opencircuitdesign.com/magic/
 MAINTAINER =	Alessandro De Laurenzis <just22@atlantide.mooo.com>
 
 # MIT (Magic, scmos), GPLv2 only (readline)
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
-WANTLIB =	${MODTK_WANTLIB} c cairo fontconfig freetype m GL GLU X11
+WANTLIB =	${MODTK_WANTLIB} GL GLU X11 Xext Xi Xmu c cairo fontconfig \
+		freetype m z
 
 MASTER_SITES =	http://opencircuitdesign.com/magic/archive/
 
-# The cpp preprocessor is used to generate .tech files; clang's breaks
-# newlines: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=698760
-COMPILER =	ports-gcc
+COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c
 
-MODULES =	x11/tk
+MODULES =	lang/python \
+		x11/tk
+MODPY_RUNDEP =	No
 
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS} \
 		graphics/cairo
 
 RUN_DEPENDS =	shells/bash
 
-WRKCONF =		${WRKSRC}/scripts
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--with-distdir=${PREFIX} \
-			--with-tcl=${MODTCL_LIBDIR} \
-			--with-tk=${MODTK_LIBDIR} \
-			--with-cairo=${LOCALBASE}/include \
-			--enable-cairo-offscreen
+WRKCONF =	${WRKSRC}/scripts
 
-USE_GMAKE =	Yes
+USE_GMAKE=	Yes
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--enable-cairo-offscreen \
+			--with-distdir=${PREFIX} \
+			--with-tcl=${MODTCL_LIBDIR} \
+			--with-tk=${MODTK_LIBDIR}
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+# Not so noisy with Clang
+CFLAGS +=	-Wno-parentheses
 
 NO_TEST =	Yes
 
 post-patch:
-	@${SUBST_CMD} ${WRKSRC}/scripts/configure
 	@${SUBST_CMD} ${WRKSRC}/utils/paths.h
 
 post-install:
