@@ -3,6 +3,7 @@ COMMENT =	small and fast Qt image viewer
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
 GH_TAGNAME =	3.17.2206
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5PrintSupport Qt5Svg Qt5Widgets c exiv2 lcms2 m opencv_core
-WANTLIB += opencv_imgproc quazip5 raw tiff
+WANTLIB += opencv_imgproc quazip1-qt5 raw tiff z
 
 MODULES =		devel/cmake \
 			x11/qt5 \
@@ -26,7 +27,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic \
 			x11/qt5/qtimageformats
 
-LIB_DEPENDS =		archivers/quazip \
+LIB_DEPENDS =		archivers/quazip>=1.3 \
 			graphics/exiv2 \
 			graphics/lcms2 \
 			graphics/libraw \
@@ -42,8 +43,10 @@ WRKDIST =		${WRKDIR}/${PKGNAME}/ImageLounge
 
 NO_TEST =		Yes
 
+CXXFLAGS +=		-I${LOCALBASE}/include/QuaZip-Qt5/
+
 pre-configure:
 	find ${WRKSRC} -type f -name "*.cpp" -exec sed -i \
-		's,<quazip/JlCompress.h>,<quazip5/JlCompress.h>,' {} \;
+	's,<quazip5/JlCompress.h>,<quazip/JlCompress.h>,' {} \;
 
 .include <bsd.port.mk>
