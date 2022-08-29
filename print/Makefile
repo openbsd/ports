@@ -32,7 +32,6 @@
      SUBDIR += l2a
      SUBDIR += latex-mk
      SUBDIR += lcdf-typetools
-     SUBDIR += libXp
      SUBDIR += libharu
      SUBDIR += libpaper
      SUBDIR += libspectre
