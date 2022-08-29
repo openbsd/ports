@@ -8,9 +8,9 @@ Index: tools/build/src/tools/gcc.jam
 -toolset.flags gcc.compile OPTIONS <optimization>speed : -O3 ;
 +toolset.flags gcc.compile OPTIONS <optimization>speed : ;
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
- 
- toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
-@@ -1207,7 +1207,7 @@ cpu-flags gcc OPTIONS : x86 : c7 : -march=c7 ;
+ toolset.flags gcc.compile OPTIONS <optimization>minimal : -O1 ;
+ toolset.flags gcc.compile OPTIONS <optimization>debug : -Og ;
+@@ -1213,7 +1213,7 @@ cpu-flags gcc OPTIONS : x86 : c7 : -march=c7 ;
  ##
  cpu-flags gcc OPTIONS : x86 : atom : -march=atom ;
  # Sparc

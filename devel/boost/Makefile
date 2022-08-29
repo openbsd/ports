@@ -3,8 +3,7 @@ NOT_FOR_ARCHS-md = alpha hppa sparc64
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.79.0
-REVISION=	0
+VERSION=	1.80.0
 EPOCH =		0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
@@ -13,7 +12,7 @@ MASTER_SITES=	https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/sour
 EXTRACT_SUFX=	.tar.bz2
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-SO_VERSION=	20.0
+SO_VERSION=	21.0
 BOOST_LIBS=	boost_atomic-mt \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
@@ -68,7 +67,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com> \
 # Boost
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} bz2 icudata icui18n icuuc m z
+WANTLIB=	${COMPILER_LIBCXX} bz2 c icudata icui18n icuuc m z
 WANTLIB-md=	${COMPILER_LIBCXX} boost_filesystem-mt m
 
 COMPILER=	base-clang ports-gcc
@@ -108,7 +107,7 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		threading=single,multi \
 		toolset=${TOOLSET}
 
-BOOTSTRAP=	--with-bjam=${WRKSRC}/bjam \
+BOOTSTRAP=	--with-bjam=${WRKSRC}/b2 \
 		--with-toolset=${TOOLSET} \
 		--with-python=${MODPY_BIN}
 .if !${BUILD_PACKAGES:M-md}
@@ -130,11 +129,10 @@ SUBST_VARS+=	SO_VERSION
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/src/user-config.jam
 	${SUBST_CMD} ${WRKSRC}/Jamroot
-	${SUBST_CMD} ${WRKSRC}/tools/build/src/engine/startup.cpp
 	@cd ${WRKSRC}/libs/config && \
 		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
 	@cd ${WRKSRC}/tools/build/src/engine && ${SETENV} ${CONFIGURE_ENV} \
-		/bin/sh ./build.sh ${TOOLSET} && cp b2 bjam ${WRKSRC}
+		/bin/sh ./build.sh ${TOOLSET} && cp b2 ${WRKSRC}
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./bootstrap.sh ${BOOTSTRAP}
 
 do-build:
@@ -149,15 +147,15 @@ do-install:
 	find ${PREFIX}/include/boost -type d -exec chmod ${DIRMODE} {} +
 	find ${PREFIX}/include/boost -type f -exec chmod ${SHAREMODE} {} +
 	# boost-build:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/src/engine/{b2,bjam} \
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/src/engine/b2 \
 		${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/boost-build
+	${INSTALL_DATA_DIR} ${PREFIX}/share/b2
 	@cd ${WRKSRC}/tools/build/src && \
-		pax -r -w -p pm -s ':^./engine.*$$::' -s ':^.*\.py$$::' \
-		-s ':^.*\.orig$$::' . ${PREFIX}/share/boost-build
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/boost-build
+		pax -r -w -p pm -s ':^./engine.*$$::' -s ':^.*\.orig$$::' . \
+		${PREFIX}/share/b2
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/b2
 	@cd ${WRKSRC}/tools/build/example && \
-		pax -r -w -p pm -s ':^./python_modules.*$$::' \
-		-s ':^.*\.orig$$::' . ${PREFIX}/share/examples/boost-build
+		pax -r -w -p pm -s ':^.*\.orig$$::' . \
+		${PREFIX}/share/examples/b2
 
 .include <bsd.port.mk>
