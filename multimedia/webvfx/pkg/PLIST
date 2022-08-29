@@ -1,6 +1,0 @@
-@bin bin/webvfx_browser
-@bin bin/webvfx_render
-@bin bin/webvfx_viewer
-@lib lib/libwebvfx.so.${LIBwebvfx_VERSION}
-lib/mlt/
-@so lib/mlt/libmltwebvfx.so
