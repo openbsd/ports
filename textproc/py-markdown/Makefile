@@ -1,6 +1,6 @@
 COMMENT=		text-to-HTML conversion tool
 
-MODPY_EGG_VERSION=	3.3.7
+MODPY_EGG_VERSION=	3.4.1
 DISTNAME=		Markdown-${MODPY_EGG_VERSION}
 PKGNAME=		py-markdown-${MODPY_EGG_VERSION}
 
@@ -11,15 +11,14 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PEP517=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3
 
 RUN_DEPENDS=		devel/py-importlib-metadata${MODPY_FLAVOR}
 
-TEST_DEPENDS=		${BUILD_PKGPATH}=${MODPY_EGG_VERSION} \
-			devel/py-coverage${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR}
 
 do-test:
