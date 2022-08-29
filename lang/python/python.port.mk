@@ -189,7 +189,7 @@ _MODPY_PRE_BUILD_STEPS += ;[ -e ${WRKSRC}/${MODPY_SETUP} ] || \
 			'from setuptools import setup; setup()' \
 			> ${WRKSRC}/${MODPY_SETUP}; \
 			echo '*** generating minimal setup.py')
-_MODPY_PRE_BUILD_STEPS += ;${MODPY_SETUPCMD} egg_info || true
+_MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 # Setuptools opportunistically picks up plugins. If it picks one up that
 # uses finalize_distribution_options (usually setuptools_scm), junking
 # that plugin will cause failure at the end of build.
@@ -268,8 +268,11 @@ CONFIGURE_ENV +=	ac_cv_prog_PYTHON="${MODPY_BIN}" \
 			ac_cv_path_PYTHON="${MODPY_BIN}"
 .endif
 
-MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN}
-MODPY_SETUPCMD = ${MODPY_CMD} ./${MODPY_SETUP} ${MODPY_SETUP_ARGS}
+_MODPY_RUNBIN =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN}
+
+MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+			${MODPY_BIN} ./${MODPY_SETUP} \
+			${MODPY_SETUP_ARGS}
 
 MODPY_TEST_DIR ?=	${WRKSRC}
 
@@ -309,19 +312,19 @@ MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 
 .if ${MODPY_PEP517:L} != no
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
-	${MODPY_CMD} -sBm build -w --no-isolation
+	${_MODPY_RUNBIN} -sBm build -w --no-isolation
 MODPY_INSTALL_TARGET = \
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
-	${MODPY_CMD} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
+	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
 MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 .  endif
 .else
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
-	${MODPY_SETUPCMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
+	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS}
 MODPY_INSTALL_TARGET = \
-	${MODPY_SETUPCMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
+	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 
 MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
