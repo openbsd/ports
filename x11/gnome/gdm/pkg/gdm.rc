@@ -13,7 +13,7 @@ rc_pre() {
 }
 
 rc_post() {
-	pkill -f gdm-session-worker
+	pkill -T "${daemon_rtable}" -f gdm-session-worker
 	# /etc/X11/xenodm/TakeConsole, fbtab(5)
 	if [[ -c /dev/dri/card0 ]]; then
 		chown root /dev/dri/card0

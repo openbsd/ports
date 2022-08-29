@@ -2,7 +2,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		42.0
-REVISION=		0
+REVISION=		1
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
