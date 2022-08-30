@@ -1,0 +1,3 @@
+Qt Remote Objects (QtRO) is an Inter-Process Communication (IPC) module
+developed for Qt. This module extends Qt's existing functionalities to enable
+information exchange between processes or computers, easily.
