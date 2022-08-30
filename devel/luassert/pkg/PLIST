@@ -14,6 +14,7 @@ share/lua/${MODLUA_VERSION}/luassert/languages/ar.lua
 share/lua/${MODLUA_VERSION}/luassert/languages/de.lua
 share/lua/${MODLUA_VERSION}/luassert/languages/en.lua
 share/lua/${MODLUA_VERSION}/luassert/languages/fr.lua
+share/lua/${MODLUA_VERSION}/luassert/languages/is.lua
 share/lua/${MODLUA_VERSION}/luassert/languages/ja.lua
 share/lua/${MODLUA_VERSION}/luassert/languages/nl.lua
 share/lua/${MODLUA_VERSION}/luassert/languages/ru.lua
