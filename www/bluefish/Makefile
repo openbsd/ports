@@ -1,11 +1,12 @@
 COMMENT=		HTML editor for experienced web designers
+MODPY_VERSION=3.10
 
 DISTNAME=		bluefish-2.2.12
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www editors
 
-HOMEPAGE=		http://bluefish.openoffice.nl/
+HOMEPAGE=		https://bluefish.openoffice.nl/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -33,7 +34,10 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		textproc/enchant2 \
 			x11/gnome/gucharmap
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoreconf
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--with-freedesktop_org-menu='${PREFIX}/share/applications/' \
