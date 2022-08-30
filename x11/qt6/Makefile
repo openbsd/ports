@@ -15,21 +15,21 @@
      #SUBDIR += qtwebengine
      #SUBDIR += qtwebchannel
      SUBDIR += qtwayland
-     #SUBDIR += qtvirtualkeyboard
-     #SUBDIR += qtserialport
-     #SUBDIR += qtserialbus
-     #SUBDIR += qtsensors
-     #SUBDIR += qtscxml
-     #SUBDIR += qtremoteobjects
-     #SUBDIR += qtpositioning
-     #SUBDIR += qtnetworkauth
+     SUBDIR += qtvirtualkeyboard
+     SUBDIR += qtserialport
+     SUBDIR += qtserialbus
+     SUBDIR += qtsensors
+     SUBDIR += qtscxml
+     SUBDIR += qtremoteobjects
+     SUBDIR += qtpositioning
+     SUBDIR += qtnetworkauth
      SUBDIR += qtmultimedia
-     #SUBDIR += qtlottie
+     SUBDIR += qtlottie
      SUBDIR += qtimageformats
-     #SUBDIR += qtdatavis3d
-     #SUBDIR += qtconnectivity
-     #SUBDIR += qtcharts
-     #SUBDIR += qt3d
+     SUBDIR += qtdatavis3d
+     SUBDIR += qtconnectivity
+     SUBDIR += qtcharts
+     SUBDIR += qt3d
 
 # Windows only
 #     SUBDIR += qtactiveqt
