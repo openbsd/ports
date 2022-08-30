@@ -1,3 +1,6 @@
+BROKEN-i386 = github.com/go-piv/piv-go@v1.10.0/piv/pcsc_openbsd.go:29:15: 0x8010002E (untyped int constant 2148532270) overflows int32
+BROKEN-armv7 = github.com/go-piv/piv-go@v1.10.0/piv/pcsc_openbsd.go:29:15: 0x8010002E (untyped int constant 2148532270) overflows int32
+
 COMMENT =	private certificate authority and ACME server
 
 V =		0.22.0
