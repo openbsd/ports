@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -40537,7 +40537,7 @@ fi
+@@ -40538,7 +40538,7 @@ fi
  $as_echo "$acl_cv_rpath" >&6; }
    wl="$acl_cv_wl"
    acl_libext="$acl_cv_libext"
