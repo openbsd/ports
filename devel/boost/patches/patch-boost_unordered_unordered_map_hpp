@@ -1,0 +1,28 @@
+Boost.Unordered containers are not in a valid state after moving
+https://github.com/boostorg/unordered/issues/139
+
+Index: boost/unordered/unordered_map.hpp
+--- boost/unordered/unordered_map.hpp.orig
++++ boost/unordered/unordered_map.hpp
+@@ -2069,6 +2069,10 @@ namespace boost {
+     template <class K, class T, class H, class P, class A>
+     float unordered_map<K, T, H, P, A>::load_factor() const BOOST_NOEXCEPT
+     {
++      if (table_.size_ == 0) {
++        return 0.0f;
++      }
++
+       BOOST_ASSERT(table_.bucket_count() != 0);
+       return static_cast<float>(table_.size_) /
+              static_cast<float>(table_.bucket_count());
+@@ -2506,6 +2510,10 @@ namespace boost {
+     template <class K, class T, class H, class P, class A>
+     float unordered_multimap<K, T, H, P, A>::load_factor() const BOOST_NOEXCEPT
+     {
++      if (table_.size_ == 0) {
++        return 0.0f;
++      }
++
+       BOOST_ASSERT(table_.bucket_count() != 0);
+       return static_cast<float>(table_.size_) /
+              static_cast<float>(table_.bucket_count());

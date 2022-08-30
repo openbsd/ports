@@ -1,0 +1,28 @@
+Boost.Unordered containers are not in a valid state after moving
+https://github.com/boostorg/unordered/issues/139
+
+Index: boost/unordered/unordered_set.hpp
+--- boost/unordered/unordered_set.hpp.orig
++++ boost/unordered/unordered_set.hpp
+@@ -1586,6 +1586,10 @@ namespace boost {
+     template <class T, class H, class P, class A>
+     float unordered_set<T, H, P, A>::load_factor() const BOOST_NOEXCEPT
+     {
++      if (table_.size_ == 0) {
++        return 0.0f;
++      }
++
+       BOOST_ASSERT(table_.bucket_count() != 0);
+       return static_cast<float>(table_.size_) /
+              static_cast<float>(table_.bucket_count());
+@@ -1986,6 +1990,10 @@ namespace boost {
+     template <class T, class H, class P, class A>
+     float unordered_multiset<T, H, P, A>::load_factor() const BOOST_NOEXCEPT
+     {
++      if (table_.size_ == 0) {
++        return 0.0f;
++      }
++
+       BOOST_ASSERT(table_.bucket_count() != 0);
+       return static_cast<float>(table_.size_) /
+              static_cast<float>(table_.bucket_count());

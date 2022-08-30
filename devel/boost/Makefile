@@ -2,6 +2,7 @@ NOT_FOR_ARCHS-md = alpha hppa sparc64
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
+REVISION-main=	0
 
 VERSION=	1.80.0
 EPOCH =		0

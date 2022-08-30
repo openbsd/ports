@@ -1,0 +1,84 @@
+Boost.Unordered containers are not in a valid state after moving
+https://github.com/boostorg/unordered/issues/139
+
+Index: boost/unordered/detail/implementation.hpp
+--- boost/unordered/detail/implementation.hpp.orig
++++ boost/unordered/detail/implementation.hpp
+@@ -2054,12 +2054,14 @@ namespace boost {
+ 
+         std::size_t bucket_size(std::size_t index) const
+         {
+-          bucket_iterator itb = buckets_.at(index);
+-          node_pointer n = itb->next;
+           std::size_t count = 0;
+-          while (n) {
+-            ++count;
+-            n = n->next;
++          if (size_ > 0) {
++            bucket_iterator itb = buckets_.at(index);
++            node_pointer n = itb->next;
++            while (n) {
++              ++count;
++              n = n->next;
++            }
+           }
+           return count;
+         }
+@@ -2420,11 +2422,14 @@ namespace boost {
+         node_pointer find_node_impl(
+           Key const& x, bucket_iterator itb) const
+         {
+-          key_equal const& pred = this->key_eq();
+-          node_pointer p = itb->next;
+-          for (; p; p = p->next) {
+-            if (pred(x, extractor::extract(p->value()))) {
+-              break;
++          node_pointer p = node_pointer();
++          if (itb != buckets_.end()) {
++            key_equal const& pred = this->key_eq();
++            p = itb->next;
++            for (; p; p = p->next) {
++              if (pred(x, extractor::extract(p->value()))) {
++                break;
++              }
+             }
+           }
+           return p;
+@@ -2453,11 +2458,13 @@ namespace boost {
+         inline iterator transparent_find(
+           Key const& k, Hash const& h, Pred const& pred) const
+         {
+-          std::size_t const key_hash = h(k);
+-          bucket_iterator itb = buckets_.at(buckets_.position(key_hash));
+-          for (node_pointer p = itb->next; p; p = p->next) {
+-            if (BOOST_LIKELY(pred(k, extractor::extract(p->value())))) {
+-              return iterator(p, itb);
++          if (size_ > 0) {
++            std::size_t const key_hash = h(k);
++            bucket_iterator itb = buckets_.at(buckets_.position(key_hash));
++            for (node_pointer p = itb->next; p; p = p->next) {
++              if (BOOST_LIKELY(pred(k, extractor::extract(p->value())))) {
++                return iterator(p, itb);
++              }
+             }
+           }
+ 
+@@ -2467,11 +2474,13 @@ namespace boost {
+         template <class Key>
+         node_pointer* find_prev(Key const& key, bucket_iterator itb)
+         {
+-          key_equal pred = this->key_eq();
+-          for (node_pointer* pp = boost::addressof(itb->next); *pp;
+-               pp = boost::addressof((*pp)->next)) {
+-            if (pred(key, extractor::extract((*pp)->value()))) {
+-              return pp;
++          if (size_ > 0) {
++            key_equal pred = this->key_eq();
++            for (node_pointer* pp = boost::addressof(itb->next); *pp;
++                pp = boost::addressof((*pp)->next)) {
++              if (pred(key, extractor::extract((*pp)->value()))) {
++                return pp;
++              }
+             }
+           }
+           typedef node_pointer* node_pointer_pointer;
