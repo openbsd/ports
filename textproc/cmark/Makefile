@@ -3,6 +3,7 @@ COMMENT =	CommonMark parsing and rendering library and program in C
 GH_ACCOUNT =	commonmark
 GH_PROJECT =	cmark
 GH_TAGNAME =	0.30.2
+REVISION =	0
 
 SHARED_LIBS +=	cmark                     0.1 # 0.29
 
@@ -17,6 +18,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake \
+		lang/python
+
+# tests only
+MODPY_RUNDEP =		No
 
 .include <bsd.port.mk>
