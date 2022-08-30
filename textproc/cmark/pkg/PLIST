@@ -3,9 +3,12 @@ include/cmark.h
 include/cmark_export.h
 include/cmark_version.h
 lib/cmake/
-lib/cmake/cmark${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/cmark.cmake
-lib/libcmark.a
+lib/cmake/cmark/
+lib/cmake/cmark/cmark-config-version.cmake
+lib/cmake/cmark/cmark-config.cmake
+lib/cmake/cmark/cmark-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cmark/cmark-targets.cmake
+@static-lib lib/libcmark.a
 @lib lib/libcmark.so.${LIBcmark_VERSION}
 lib/pkgconfig/libcmark.pc
 @man man/man1/cmark.1

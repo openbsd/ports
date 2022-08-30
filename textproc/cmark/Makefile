@@ -2,9 +2,9 @@ COMMENT =	CommonMark parsing and rendering library and program in C
 
 GH_ACCOUNT =	commonmark
 GH_PROJECT =	cmark
-GH_TAGNAME =	0.29.0
+GH_TAGNAME =	0.30.2
 
-SHARED_LIBS +=	cmark                     0.0 # 0.29
+SHARED_LIBS +=	cmark                     0.1 # 0.29
 
 CATEGORIES =	textproc
 
