@@ -3,6 +3,7 @@ COMMENT-atomic=	access to hardware provided atomic memory operations
 
 VERSION=	8.0.4
 LIBAO_VERSION=	7.6.10
+REVISION=	0
 # has various machine-dependent parts; updates definitely need
 # tests on more than just amd64.
 
@@ -49,6 +50,12 @@ CONFIGURE_ARGS= --with-libatomic-ops=no \
 		--enable-threads=pthreads \
 		--enable-mmap \
 		--enable-static=yes
+
+.if ${MACHINE_ARCH} == "arm"
+# Needs unwind symbols.  We use MAKE_FLAGS because configure.ac doesn't respect
+# UNWINDLIBS passed in CONFIGURE_ENV.
+MAKE_FLAGS +=	UNWINDLIBS="-lc++abi"
+.endif
 
 post-extract:
 	@perl -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/doc/gc.man
