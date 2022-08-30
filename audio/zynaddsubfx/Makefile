@@ -1,6 +1,3 @@
-# XXX builds with sse/sse2; maybe possible to fix
-ONLY_FOR_ARCHS=	i386 amd64
-
 COMMENT=	synth capable of making a countless number of instruments
 
 DISTNAME=	zynaddsubfx-3.0.6
