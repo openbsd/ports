@@ -14,7 +14,7 @@ EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION}
-DISTNAME =		src-firefox-tor-browser-91.12.0esr-11.5-1-build1
+DISTNAME =		src-firefox-tor-browser-91.13.0esr-11.5-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -77,11 +77,12 @@ MAKE_ENV +=		BUILD_OPT=1 \
 			NSS_ENABLE_ECC=1 \
 			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
-RUN_DEPENDS +=		net/tor>=0.4.7.8
+RUN_DEPENDS +=		net/tor>=0.4.7.10
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
+CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 # remove post 96
 CONFIGURE_ARGS +=	--disable-necko-wifi
