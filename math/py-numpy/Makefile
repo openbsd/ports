@@ -1,7 +1,7 @@
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.19.5
-REVISION=		1
+REVISION=		2
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
@@ -11,16 +11,18 @@ CATEGORIES=		math devel
 HOMEPAGE=		https://www.numpy.org/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${MODPY_WANTLIB} m pthread
 
 MODULES=		lang/python
 
 FLAVORS=		python3
-FLAVOR =		python3
+FLAVOR=			python3
 
-MODPY_PI =		Yes
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/gas \
@@ -38,7 +40,7 @@ LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
 			math/lapack
 WANTLIB+=		${MODFORTRAN_WANTLIB} blas cblas lapack
-MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
+MODPY_DISTUTILS_BUILDARGS= --fcompiler=gnu95
 .endif
 
 # Cython 0.28.* uses __attribute__((optimize("Os"))) which
