@@ -45,6 +45,7 @@ ${APPID_COMMENT}@so lib/snort_dynamicpreprocessor/libsf_appid_preproc.so
 @so lib/snort_dynamicpreprocessor/libsf_ssh_preproc.so
 @comment lib/snort_dynamicpreprocessor/libsf_ssl_preproc.la
 @so lib/snort_dynamicpreprocessor/libsf_ssl_preproc.so
+lib/snort_dynamicrules/
 @man man/man8/snort.8
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/snort/

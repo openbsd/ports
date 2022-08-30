@@ -1,6 +1,7 @@
 COMMENT =		highly flexible sniffer/NIDS
 
 DISTNAME =		snort-2.9.20
+REVISION =		0
 RULESV =		29200
 SUBST_VARS =		RULESV APPID_COMMENT
 
@@ -61,7 +62,8 @@ pre-configure:
 	@cd ${WRKSRC}; ${SUBST_CMD} etc/snort.conf tools/appid_detector_builder.sh
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/snort \
+	    ${PREFIX}/lib/snort_dynamicrules/
 .for i in ${CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/etc/${i} ${PREFIX}/share/examples/snort
 .endfor
