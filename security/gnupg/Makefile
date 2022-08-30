@@ -2,8 +2,7 @@ PORTROACH =	limitw:1,even
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.36
-REVISION =	0
+DISTNAME =	gnupg-2.2.37
 
 CATEGORIES =	security
 
@@ -46,14 +45,11 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 RUN_DEPENDS =		security/pinentry
 
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 PORTHOME =		${WRKDIR}
-
-USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 CONFIGURE_ARGS +=	--enable-gpgtar \
 			--enable-wks-tools
 

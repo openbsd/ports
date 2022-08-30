@@ -58,6 +58,7 @@ share/doc/gnupg/examples/README
 share/doc/gnupg/examples/VS-NfD.prf
 share/doc/gnupg/examples/debug.prf
 share/doc/gnupg/examples/gpgconf.conf
+share/doc/gnupg/examples/gpgconf.rnames
 share/doc/gnupg/examples/pwpattern.list
 share/doc/gnupg/examples/scd-event
 share/doc/gnupg/examples/trustlist.txt
