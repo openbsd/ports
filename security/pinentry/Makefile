@@ -2,11 +2,10 @@ COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)
 
-VERSION = 	1.2.0
+VERSION = 	1.2.1
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
 
 MASTER_SITES = 	${MASTER_SITE_GNUPG:=pinentry/}
 
@@ -22,6 +21,8 @@ WANTLIB += curses secret-1
 
 # C++11
 COMPILER =		base-clang ports-gcc
+
+USE_GMAKE =		Yes
 
 LIB_DEPENDS =		security/libassuan \
 			x11/gnome/libsecret
