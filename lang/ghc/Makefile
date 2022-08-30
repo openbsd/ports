@@ -9,10 +9,10 @@ DPB_PROPERTIES =	parallel
 NO_CCACHE =		Yes
 
 GHC_VERSION =		9.2.4
+REVISION =		0
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
-
 
 # Version of the precompiled binaries
 BIN_VER =		8.10.7.20220419
@@ -109,19 +109,10 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			--with-system-libffi \
 			CC="${CC}"
 
-# Don't autodetect ld.lld. It fails at some point during the build
-# with /usr/bin/ld.lld: error: cannot preempt symbol: memcpy
-CONFIGURE_ARGS +=	--disable-ld-override
-
 CONFIGURE_ENV += SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
 
 # Do not pick up gpatch
 CONFIGURE_ENV +=	ac_cv_path_PatchCmd=/usr/bin/patch
-
-# Since ghc-7.10, ghc does not run without HOME defined and pointing to
-# a writable directory, which would cause configure to fail (because it
-# still builds ghc-pwd). Set HOME to let a 7.10-bootstrapper work.
-CONFIGURE_ENV +=	HOME=${PORTHOME}
 
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
