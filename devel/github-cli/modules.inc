@@ -1,5 +1,3 @@
-MODGO_VERSION =	v2.14.7
-
 MODGO_MODULES =	\
 	cloud.google.com/go					 v0.65.0 \
 	cloud.google.com/go/bigquery				 v1.8.0 \
