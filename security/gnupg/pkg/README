@@ -38,5 +38,5 @@ Configure scdaemon(1) smartcard daemon to use this reader:
 
 Check if the YubiKey is recognized by GnuPG:
 
-    $ gpg2 --card-status
+    $ gpg --card-status
     Reader ...........: Yubico Yubikey 4 OTP U2F CCID 00 00

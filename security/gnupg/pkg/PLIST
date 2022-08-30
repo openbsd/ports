@@ -7,7 +7,6 @@
 @bin bin/gpg-agent
 @bin bin/gpg-connect-agent
 @bin bin/gpg-wks-server
-bin/gpg2
 @bin bin/gpgconf
 @bin bin/gpgparsemail
 @bin bin/gpgscm
@@ -15,7 +14,6 @@ bin/gpg2
 @bin bin/gpgsplit
 @bin bin/gpgtar
 @bin bin/gpgv
-bin/gpgv2
 @bin bin/kbxutil
 @bin bin/watchgnupg
 @info info/gnupg.info

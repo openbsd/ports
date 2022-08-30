@@ -3,6 +3,7 @@ PORTROACH =	limitw:1,even
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.2.36
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -56,10 +57,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS +=	--enable-gpgtar \
 			--enable-wks-tools
 
-# compat symlinks, remove for OpenBSD 7.0?
 post-install:
-	ln -sf gpg ${PREFIX}/bin/gpg2
-	ln -sf gpgv ${PREFIX}/bin/gpgv2
 	rm -rf ${PREFIX}/share/doc/gnupg/examples/systemd-user
 
 .include <bsd.port.mk>
