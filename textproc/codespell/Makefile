@@ -1,9 +1,8 @@
 COMMENT =		source code spelling checker
 
-MODPY_EGG_VERSION =	2.1.0
+MODPY_EGG_VERSION =	2.2.1
 
 DISTNAME =		codespell-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel textproc
 
