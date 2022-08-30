@@ -3,10 +3,7 @@ CATEGORIES=	devel
 
 GH_ACCOUNT=	Olivine-Labs
 GH_PROJECT=	say
-GH_TAGNAME=	v1.3-1
-REVISION=	0
-
-PKGNAME =	lua-say-1.3.1
+GH_TAGNAME=	v1.4.1
 
 MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
@@ -24,6 +21,6 @@ NO_TEST=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR} \
 		${MODLUA_DATADIR}/say
-	${INSTALL_DATA} ${WRKSRC}/src/*.lua ${MODLUA_DATADIR}/say/
+	${INSTALL_DATA} ${WRKSRC}/src/say/*.lua ${MODLUA_DATADIR}/say/
 
 .include <bsd.port.mk>
