@@ -1,7 +1,7 @@
 Index: external/liblangtag/ExternalProject_liblangtag.mk
 --- external/liblangtag/ExternalProject_liblangtag.mk.orig
 +++ external/liblangtag/ExternalProject_liblangtag.mk
-@@ -38,7 +38,7 @@ $(call gb_ExternalProject_get_state_target,liblangtag,
+@@ -36,7 +36,7 @@ $(call gb_ExternalProject_get_state_target,liblangtag,
  		LIBXML2_CFLAGS="$(LIBXML_CFLAGS)" \
  		LIBXML2_LIBS="$(if $(filter WNT,$(OS)),-L$(call gb_UnpackedTarball_get_dir,libxml2)/win32/bin.msvc -llibxml2,$(LIBXML_LIBS))" \
  		$(if $(filter MACOSX,$(OS)),--prefix=/@.__________________________________________________URELIB) \

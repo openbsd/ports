@@ -1,19 +1,19 @@
 Index: solenv/gbuild/platform/com_GCC_defs.mk
 --- solenv/gbuild/platform/com_GCC_defs.mk.orig
 +++ solenv/gbuild/platform/com_GCC_defs.mk
-@@ -69,6 +69,7 @@ gb_CFLAGS_COMMON := \
+@@ -73,6 +73,7 @@ gb_CFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \
  	-pipe \
  	$(if $(filter EMSCRIPTEN,$(OS)),-fno-stack-protector,-fstack-protector-strong) \
- 	$(if $(gb_COLOR),-fdiagnostics-color=always) \
-@@ -87,6 +88,7 @@ gb_CXXFLAGS_COMMON := \
+ 
+@@ -90,6 +91,7 @@ gb_CXXFLAGS_COMMON := \
  	-finput-charset=UTF-8 \
  	-fmessage-length=0 \
  	-fno-common \
 +	-fno-stack-protector \
  	-pipe \
  	$(if $(filter EMSCRIPTEN,$(OS)),-fno-stack-protector,-fstack-protector-strong) \
- 	$(if $(gb_COLOR),-fdiagnostics-color=always) \
+ 

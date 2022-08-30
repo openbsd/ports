@@ -7,9 +7,9 @@ Index: external/libwps/ExternalProject_libwps.mk
  
 +libwps_CPPFLAGS+=-fPIC
 +
- libwps_CXXFLAGS=$(gb_CXXFLAGS) $(if $(ENABLE_OPTIMIZED),$(gb_COMPILEROPTFLAGS),$(gb_COMPILERNOOPTFLAGS))
+ libwps_CXXFLAGS=$(gb_CXXFLAGS) $(call gb_ExternalProject_get_build_flags,libwps)
  
- libwps_LDFLAGS=
+ libwps_LDFLAGS=$(call gb_ExternalProject_get_link_flags,libwps)
 -ifeq ($(OS),LINUX)
 +ifeq ($(OS),OPENBSD)
  ifeq ($(SYSTEM_REVENGE),)

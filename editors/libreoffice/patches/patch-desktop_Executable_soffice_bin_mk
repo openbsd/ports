@@ -1,7 +1,7 @@
 Index: desktop/Executable_soffice_bin.mk
 --- desktop/Executable_soffice_bin.mk.orig
 +++ desktop/Executable_soffice_bin.mk
-@@ -19,6 +19,8 @@ $(eval $(call gb_Executable_use_libraries,soffice_bin,
+@@ -23,6 +23,8 @@ $(eval $(call gb_Executable_use_libraries,soffice_bin,
      sofficeapp \
  ))
  

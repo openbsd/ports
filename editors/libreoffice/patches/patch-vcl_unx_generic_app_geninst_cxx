@@ -10,10 +10,10 @@ Index: vcl/unx/generic/app/geninst.cxx
  #  include <sys/utsname.h>
  #endif
  
-@@ -73,11 +73,15 @@ OUString SalGenericInstance::getOSVersion()
+@@ -72,11 +72,15 @@ OUString SalGenericInstance::getOSVersion()
+         }
          fclose( pVersion );
      }
-     return aKernelVer;
 -#elif defined(__FreeBSD__)
 +#elif defined(__FreeBSD__) || defined(__OpenBSD__)
      struct utsname stName;
@@ -27,12 +27,11 @@ Index: vcl/unx/generic/app/geninst.cxx
      sal_Int32 nDots = 0;
      sal_Int32 nIndex = 0;
      aKernelVer = OUString::createFromAscii( stName.release );
-@@ -89,7 +93,7 @@ OUString SalGenericInstance::getOSVersion()
+@@ -87,6 +91,7 @@ OUString SalGenericInstance::getOSVersion()
+             break;
      }
-     return OUString::createFromAscii( stName.sysname ) + " " +
-         aKernelVer.copy( 0, nIndex );
--#else
+     aKernelVer = OUString::createFromAscii(stName.sysname) + " " + aKernelVer.copy(0, nIndex);
 +#endif
-     return aKernelVer;
- #endif
- }
+ #elif defined(EMSCRIPTEN)
+ #define str(s) #s
+ #define xstr(s) str(s)

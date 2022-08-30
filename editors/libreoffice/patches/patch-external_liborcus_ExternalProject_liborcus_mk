@@ -20,7 +20,7 @@ Index: external/liborcus/ExternalProject_liborcus.mk
  #
  # OSes that use the GNU C++ library need to use -D_GLIBCXX_DEBUG in
  # sync with the rest of LibreOffice, i.e. depending on
-@@ -73,6 +76,9 @@ endif
+@@ -75,6 +78,9 @@ endif
  ifneq (,$(PTHREAD_LIBS))
  liborcus_LDFLAGS+=$(PTHREAD_LIBS)
  endif

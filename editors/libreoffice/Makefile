@@ -23,8 +23,8 @@ SHARED_LIBS +=  wpd-0.10-lo               10.3 # 10.3
 SHARED_LIBS +=  wpg-0.3-lo                3.3 # 3.3
 SHARED_LIBS +=  wps-0.4-lo                4.12 # 4.12
 
-BV=		7.3
-VERSION=	${BV}.5.2
+BV=		7.4
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -96,6 +96,7 @@ DISTFILES += alef-1.001.tar.gz:0
 DISTFILES += commons-logging-1.2-src.tar.gz:0
 DISTFILES += cppunit-1.15.1.tar.gz:0
 DISTFILES += culmus-0.133.tar.gz:0
+DISTFILES += dragonbox-1.1.0.tar.gz:0
 DISTFILES += dtoa-20180411.tgz:0
 DISTFILES += language-subtag-registry-2021-12-29.tar.bz2:0
 DISTFILES += libabw-0.1.3.tar.xz:0
@@ -126,13 +127,13 @@ DISTFILES += libwps-0.4.12.tar.xz:0
 DISTFILES += libzmf-0.0.2.tar.xz:0
 DISTFILES += mdds-2.0.3.tar.bz2:0
 DISTFILES += noto-fonts-20171024.tar.gz:0
-DISTFILES += pdfium-4699.tar.bz2:0
-DISTFILES += skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:0
+DISTFILES += pdfium-5058.tar.bz2:0
+DISTFILES += skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:0
 DISTFILES += source-serif-pro-3.000R.tar.gz:0
 DISTFILES += ttf-kacst_2.01+mry.tar.gz:0
-DISTFILES += xmlsec1-1.2.33.tar.gz:0
+DISTFILES += xmlsec1-1.2.34.tar.gz:0
 DISTFILES += libnumbertext-1.0.10.tar.xz:0
-DISTFILES += box2d-2.3.1.tar.gz:0
+DISTFILES += box2d-2.4.1.tar.gz:0
 DISTFILES += zxing-cpp-1.2.0.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
@@ -197,6 +198,8 @@ LIB_DEPENDS-main=databases/openldap \
 		devel/pango \
 		graphics/lcms2 \
 		graphics/graphite2 \
+		graphics/libwebp \
+		graphics/tiff \
 		${MODGCC4_CPPLIBDEP} \
 		multimedia/gstreamer1/plugins-base \
 		print/cups,-libs \
@@ -226,8 +229,9 @@ WANTLIB-main+=	boost_system boost_system-mt boost_date_time-mt
 WANTLIB-main+=	lber ldap ${MODPY_WANTLIB}
 WANTLIB-main+=	X11-xcb
 WANTLIB-main+=	gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstpbutils-1.0
-WANTLIB-main+=	gsttag-1.0 gstvideo-1.0
+WANTLIB-main+=	gstvideo-1.0
 WANTLIB-main+=	boost_atomic-mt poppler-cpp
+WANTLIB-main+=	tiff webp
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/xdg-utils \
@@ -325,6 +329,8 @@ CONFIGURE_ARGS+=\
 		--with-system-jpeg \
 		--with-system-lcms2 \
 		--with-system-libpng \
+		--with-system-libtiff \
+		--with-system-libwebp \
 		--with-system-mariadb \
 		--with-system-nss \
 		--with-system-openldap \
@@ -376,7 +382,7 @@ OA=		x86
 OA=		x86_64
 .endif
 
-SUBST_VARS+=	BV OA MODPY_DEFAULT_VERSION_3
+SUBST_VARS+=	BV OA
 
 pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum

@@ -1,9 +1,9 @@
 Index: external/libnumbertext/ExternalProject_libnumbertext.mk
 --- external/libnumbertext/ExternalProject_libnumbertext.mk.orig
 +++ external/libnumbertext/ExternalProject_libnumbertext.mk
-@@ -20,6 +20,8 @@ libnumbertext_CXXFLAGS=$(CXXFLAGS) $(CXXFLAGS_CXX11)
+@@ -20,6 +20,8 @@ libnumbertext_CXXFLAGS=$(CXXFLAGS) $(CXXFLAGS_CXX11) $
  
- libnumbertext_CPPFLAGS+=$(gb_COMPILERDEFS_STDLIB_DEBUG)
+ libnumbertext_CPPFLAGS+=$(gb_COMPILERDEFS_STDLIB_DEBUG) $(gb_EMSCRIPTEN_CPPFLAGS)
  
 +libnumbertext_CPPFLAGS+=-fPIC
 +

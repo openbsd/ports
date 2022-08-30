@@ -1,7 +1,7 @@
 Index: idl/source/objects/types.cxx
 --- idl/source/objects/types.cxx.orig
 +++ idl/source/objects/types.cxx
-@@ -251,7 +251,7 @@ void SvMetaType::WriteSfxItem(
+@@ -249,7 +249,7 @@ void SvMetaType::WriteSfxItem(
  
      // write the implementation part
      rOutStm.WriteCharPtr( "#ifdef SFX_TYPEMAP" ) << endl;

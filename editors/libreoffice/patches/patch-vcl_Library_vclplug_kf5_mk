@@ -1,7 +1,7 @@
 Index: vcl/Library_vclplug_kf5.mk
 --- vcl/Library_vclplug_kf5.mk.orig
 +++ vcl/Library_vclplug_kf5.mk
-@@ -73,6 +73,12 @@ $(eval $(call gb_Library_add_libs,vclplug_kf5,\
+@@ -74,6 +74,12 @@ $(eval $(call gb_Library_add_libs,vclplug_kf5,\
  ))
  endif
  
