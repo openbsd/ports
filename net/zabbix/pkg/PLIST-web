@@ -431,6 +431,7 @@ zabbix/app/views/js/configuration.templategroup.list.js.php
 zabbix/app/views/js/monitoring.charts.view.js.php
 zabbix/app/views/js/monitoring.dashboard.print.js.php
 zabbix/app/views/js/monitoring.dashboard.view.js.php
+zabbix/app/views/js/monitoring.dashboard.widget.edit.js.php
 zabbix/app/views/js/monitoring.host.dashboard.view.js.php
 zabbix/app/views/js/monitoring.host.view.js.php
 zabbix/app/views/js/monitoring.latest.view.js.php
