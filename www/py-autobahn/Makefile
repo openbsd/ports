@@ -20,6 +20,7 @@ FLAVORS =	python3
 FLAVOR  =	python3
 
 BUILD_DEPENDS =	devel/py-txaio${MODPY_FLAVOR}>=18.8.1 \
+		devel/py-cffi${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
 # requires an update to unittest and then traceback2 and linecache2
