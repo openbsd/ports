@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += abc
+     SUBDIR += coil64
      SUBDIR += dxf2gcode
      SUBDIR += fritzing
      SUBDIR += geda-gaf
