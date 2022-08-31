@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.31 2022/02/17 17:21:50 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.32 2022/08/31 08:55:54 jca Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -23,6 +23,7 @@
 .poison EXTRACT_SUFFIX
 .poison GH_COMMENT
 .poison GH_TAG
+.poison LIB_DEPEDNS
 .poison LIB_DEPEND
 .poison MASTER_SITE_SOURCEFORGET
 .poison MODGCC3_ARCHES
