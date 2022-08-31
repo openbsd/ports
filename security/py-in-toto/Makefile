@@ -4,10 +4,13 @@ MODPY_EGG_VERSION =	1.2.0
 
 DISTNAME =	in-toto-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://in-toto.io/
+
+MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

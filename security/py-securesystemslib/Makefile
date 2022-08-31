@@ -4,10 +4,13 @@ MODPY_EGG_VERSION =	0.23.0
 
 DISTNAME =	securesystemslib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/secure-systems-lab/securesystemslib/
+
+MAINTAINER =	George Rosamond <george@nycbug.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
