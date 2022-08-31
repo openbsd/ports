@@ -1,4 +1,5 @@
 COMMENT=	library of Fortran linear algebra subroutines
+DPB_PROPERTIES=	parallel
 
 VERSION=	3.8.0
 DISTNAME=	lapack-${VERSION}
