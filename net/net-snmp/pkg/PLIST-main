@@ -1,4 +1,5 @@
 @conflict p5-SNMP-*
+@conflict lldpd-<1.0.15p0
 @pkgpath net/net-snmp
 @pkgpath net/net-snmp,-perl
 @newgroup _netsnmp:760
@@ -531,7 +532,9 @@ share/snmp/mibs/
 @comment no checksum
 share/snmp/mibs/.index
 share/snmp/mibs/AGENTX-MIB.txt
+share/snmp/mibs/ASTERISK-MIB.txt
 share/snmp/mibs/BRIDGE-MIB.txt
+share/snmp/mibs/DIGIUM-MIB.txt
 share/snmp/mibs/DISMAN-EVENT-MIB.txt
 share/snmp/mibs/DISMAN-SCHEDULE-MIB.txt
 share/snmp/mibs/DISMAN-SCRIPT-MIB.txt
@@ -554,6 +557,7 @@ share/snmp/mibs/IPV6-MIB.txt
 share/snmp/mibs/IPV6-TC.txt
 share/snmp/mibs/IPV6-TCP-MIB.txt
 share/snmp/mibs/IPV6-UDP-MIB.txt
+share/snmp/mibs/LLDP-MIB.txt
 share/snmp/mibs/MTA-MIB.txt
 share/snmp/mibs/NET-SNMP-AGENT-MIB.txt
 share/snmp/mibs/NET-SNMP-EXAMPLES-MIB.txt

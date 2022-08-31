@@ -6,7 +6,7 @@ DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-REVISION-main=	0
+REVISION-main=	1
 
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
@@ -96,6 +96,9 @@ post-install:
 	    ${PREFIX}/share/examples/net-snmp
 .for i j in man5 snmpd.conf.5 man8 snmpd.8
 	mv ${PREFIX}/man/$i/$j ${PREFIX}/man/$i/netsnmp-$j
+.endfor
+.for i in ASTERISK-MIB DIGIUM-MIB LLDP-MIB
+	${INSTALL_DATA} ${FILESDIR}/$i.txt ${PREFIX}/share/snmp/mibs
 .endfor
 
 .include <bsd.port.mk>
