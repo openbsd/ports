@@ -1,0 +1,14 @@
+$OpenBSD: patch-EXAMPLE_conf_def,v 1.1 2022/08/31 15:06:34 martijn Exp $
+
+Index: EXAMPLE.conf.def
+--- EXAMPLE.conf.def.orig
++++ EXAMPLE.conf.def
+@@ -188,6 +188,8 @@ linkUpDownNotifications  yes
+ #
+                                            #  Run as an AgentX master agent
+  master          agentx
++                                           #  Make AgentX master socket permissions identical to base snmpd
++ agentXPerms     660 755 root _agentx
+                                            #  Listen for network connections (from localhost)
+                                            #    rather than the default named socket /var/agentx/master
+ #agentXSocket    tcp:localhost:705
