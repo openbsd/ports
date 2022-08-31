@@ -35,7 +35,7 @@ CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-Wno-dev
 
 CFLAGS +=		-I${LOCALBASE}/include
-MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib -liconv -lintl
+LDFLAGS =		-L${LOCALBASE}/lib -liconv -lintl
 
 FLAVORS += 		mysql pgsql
 FLAVOR ?=
