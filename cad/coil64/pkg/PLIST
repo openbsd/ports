@@ -1,0 +1,25 @@
+bin/Coil64
+bin/coil64/
+@bin bin/coil64/Coil64
+bin/coil64/Data/
+bin/coil64/Data/15-Material-Fair-Rite.csv
+bin/coil64/Data/20-Material-Fair-Rite.csv
+bin/coil64/Data/31-Material-Fair-Rite.csv
+bin/coil64/Data/43-Material-Fair-Rite.csv
+bin/coil64/Data/44-Material-Fair-Rite.csv
+bin/coil64/Data/46-Material-Fair-Rite.csv
+bin/coil64/Data/51-Material-Fair-Rite.csv
+bin/coil64/Data/52-Material-Fair-Rite.csv
+bin/coil64/Data/61-Material-Fair-Rite.csv
+bin/coil64/Data/67-Material-Fair-Rite.csv
+bin/coil64/Data/68-Material-Fair-Rite.csv
+bin/coil64/Data/73-Material-Fair-Rite.csv
+bin/coil64/Data/75-Material-Fair-Rite.csv
+bin/coil64/Data/76-Material-Fair-Rite.csv
+bin/coil64/Data/77-Material-Fair-Rite.csv
+bin/coil64/Data/78-Material-Fair-Rite.csv
+bin/coil64/Data/79-Material-Fair-Rite.csv
+bin/coil64/Data/80-Material-Fair-Rite.csv
+bin/coil64/Data/95-Material-Fair-Rite.csv
+bin/coil64/Data/97-Material-Fair-Rite.csv
+bin/coil64/Data/98-Material-Fair-Rite.csv

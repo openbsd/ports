@@ -1,0 +1,37 @@
+Get our user's home directory
+
+Index: system_functions.cpp
+--- system_functions.cpp.orig
++++ system_functions.cpp
+@@ -413,18 +413,18 @@ bool isAppPortable(){
+ }
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ void defineAppSettings(QSettings *&settings){
+-#if defined(Q_OS_MAC) || defined(Q_WS_X11) || defined(Q_OS_LINUX)
++#if defined(Q_OS_MAC) || defined(Q_WS_X11) || defined(Q_OS_LINUX) || defined(Q_OS_OPENBSD)
+     if (isAppPortable())
+-        settings = new QSettings(qApp->applicationDirPath() + "/Coil64.conf", QSettings::IniFormat);
++        settings = new QSettings(QDir::homePath() + PORTABLE_SAVE_LOCATION + "/Coil64.conf", QSettings::IniFormat);
+     else
+-        settings = new QSettings(QSettings::NativeFormat, QSettings::UserScope, QCoreApplication::applicationName(),QCoreApplication::applicationName());
++        settings = new QSettings(QDir::homePath() + PORTABLE_SAVE_LOCATION + "/Coil64.conf", QSettings::IniFormat);
+ #elif defined(Q_WS_WIN) || defined(Q_OS_WIN)
+     if (isAppPortable())
+         settings = new QSettings(qApp->applicationDirPath() + "/Coil64.ini", QSettings::IniFormat);
+     else
+         settings = new QSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::applicationName(),QCoreApplication::applicationName());
+ #else
+-    settings = new QSettings(qApp->applicationDirPath() + "/Coil64.conf", QSettings::IniFormat);
++        settings = new QSettings(QDir::homePath() + PORTABLE_SAVE_LOCATION + "/Coil64.conf", QSettings::IniFormat);
+ #endif
+ }
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@@ -434,7 +434,7 @@ QString defineSavePath(){
+     settings->beginGroup( "GUI" );
+     QString savePath;
+     if (isAppPortable())
+-        savePath = settings->value("SaveDir", qApp->applicationDirPath() + PORTABLE_SAVE_LOCATION).toString();
++        savePath = settings->value("SaveDir", QDir::homePath() + PORTABLE_SAVE_LOCATION).toString();
+     else
+         savePath = settings->value("SaveDir", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation).toUtf8() + USER_SAVE_LOCATION).toString();
+     settings->endGroup();
