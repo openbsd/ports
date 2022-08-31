@@ -1,0 +1,19 @@
+Collected c41c478eb9003eaa9fc8081a0039652448124f5d out of ghc
+repository to be removed in ghc 9.4 era.
+
+Index: utils/genprimopcode/Main.hs
+--- utils/genprimopcode/Main.hs.orig
++++ utils/genprimopcode/Main.hs
+@@ -668,7 +668,11 @@ gen_primop_list (Info _ entries)
+         map (\p -> "   , " ++ cons p) rest
+         ++
+         [     "   ]"     ]
+-     ) where (first:rest) = concatMap desugarVectorSpec (filter is_primop entries)
++     ) where
++         (first,rest) =
++           case concatMap desugarVectorSpec (filter is_primop entries) of
++             x:xs -> (x,xs)
++             [] -> error "gen_primop_list: no primops"
+ 
+ mIN_VECTOR_UNIQUE :: Int
+ mIN_VECTOR_UNIQUE = 300
