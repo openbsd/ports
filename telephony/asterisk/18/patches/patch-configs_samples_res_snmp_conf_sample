@@ -1,0 +1,14 @@
+Index: configs/samples/res_snmp.conf.sample
+--- configs/samples/res_snmp.conf.sample.orig
++++ configs/samples/res_snmp.conf.sample
+@@ -8,7 +8,9 @@
+ ; /etc/snmp on many systems.
+ ;
+ ; If you use the subagent model, you need to enable agentx in snmpd.conf
+-; Note that you can only run one Asterisk on the system in this case.
++; Note that you can only run one copy of Asterisk on the system in this case.
++; To work with standard permissions on the agentx socket in OpenBSD's
++; snmpd(8), add the "_asterisk" user to the _agentx group.
+ ;
+ ; See https://wiki.asterisk.org/wiki/display/AST/Simple+Network+Management+Protocol+(SNMP)+Support
+ ; to get more information about
