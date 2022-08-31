@@ -1,0 +1,16 @@
+Avoids picking up non-existent FFI headers. The logic for their
+inclusion into bindist should be conditional, but we don't care about
+fixing this better. In ghc 9.4 bindist is bulit via Hadrian and so
+this patch becomes irrelevant.
+
+Index: ghc.mk
+--- ghc.mk.orig
++++ ghc.mk
+@@ -1049,7 +1049,6 @@ $(eval $(call bindist-list,.,\
+     $(includes_1_H_VERSION) \
+     $(includes_DERIVEDCONSTANTS) \
+     $(includes_GHCCONSTANTS) \
+-    $(libffi_HEADERS) \
+     $(INSTALL_LIBEXECS) \
+     $(INSTALL_LIBEXEC_SCRIPTS) \
+     $(INSTALL_BINS) \

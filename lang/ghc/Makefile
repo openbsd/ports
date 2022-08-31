@@ -170,7 +170,7 @@ do-test:
 # It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20210429
+BOOTSTRAP_DATE =	20220830
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
@@ -180,8 +180,8 @@ bootstrap: patch
 		echo Please install autoconf-${AUTOCONF_VERSION}.; \
 		false; \
 	fi
-	@if [ ! -x ${LOCALBASE}/bin/automake-1.4 ]; then \
-		echo Please install automake-1.4.; \
+	@if [ ! -x ${LOCALBASE}/bin/automake-${AUTOMAKE_VERSION} ]; then \
+		echo Please install automake-${AUTOMAKE_VERSION}; \
 		false; \
 	fi
 
@@ -190,29 +190,12 @@ bootstrap: patch
 	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
 
 	${MAKE} build ALL_TARGET="all binary-dist" \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=1.4
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
 	$(_PBUILD) $(MAKE) _bootstrap_finish
 
 _bootstrap_prepare:
-	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
-	echo GhcLibHcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
-	echo GhcStage1HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
-	echo GhcStage2HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
-	echo SplitObjs=NO >> ${WRKSRC}/mk/build.mk
-	echo GhcLibWays=v >> ${WRKSRC}/mk/build.mk
-	echo GhcRTSWays=thr >> ${WRKSRC}/mk/build.mk
-	echo GhcWithInterpreter=NO >> ${WRKSRC}/mk/build.mk
-	echo GhcThreaded=YES >> ${WRKSRC}/mk/build.mk
-	echo INTEGER_LIBRARY=integer-simple >> ${WRKSRC}/mk/build.mk
-	echo SRC_CC_OPTS+=-g -O0 >> ${WRKSRC}/mk/build.mk
-	echo HADDOCK_DOCS=NO >> ${WRKSRC}/mk/build.mk
-	echo BUILD_SPHINX_HTML=NO >> ${WRKSRC}/mk/build.mk
-	echo BUILD_SPHINX_PDF=NO >> ${WRKSRC}/mk/build.mk
-	echo GhcWithSMP=NO >> ${WRKSRC}/mk/build.mk
-	echo LD_OPTS=-optl-static -optl-s >> ${WRKSRC}/mk/build.mk
-	echo DYNAMIC_GHC_PROGRAMS=No >> ${WRKSRC}/mk/build.mk
-
+	cp ${FILESDIR}/bootstrap.mk ${WRKSRC}/mk/build.mk
 	echo ${BOOTSTRAP_DATE} > ${WRKSRC}/VERSION_DATE
 
 _bootstrap_finish:
