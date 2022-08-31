@@ -5,7 +5,7 @@ COMMENT-webkit = wxWebView class for wxWidgets
 V =		3.0.5.1
 REVISION-main =	2
 REVISION-media = 0
-REVISION-webkit = 0
+REVISION-webkit = 1
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
@@ -78,7 +78,7 @@ WANTLIB-media += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz iconv
 WANTLIB-media += intl jpeg m notify pango-1.0 pangocairo-1.0 png tiff
 WANTLIB-media += wx_baseu-3.0 wx_gtk3u_core-3.0 z
 
-LIB_DEPENDS-webkit =	${LIB_DEPEDNS} \
+LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
 			www/webkitgtk4 \
 			${BASE_PKGPATH},-main>=${V}
 
