@@ -781,8 +781,10 @@ share/osinfo/os/redhat.com/rhel-8.3.xml
 share/osinfo/os/redhat.com/rhel-8.4.xml
 share/osinfo/os/redhat.com/rhel-8.5.xml
 share/osinfo/os/redhat.com/rhel-8.6.xml
+share/osinfo/os/redhat.com/rhel-8.7.xml
 share/osinfo/os/redhat.com/rhel-9-unknown.xml
 share/osinfo/os/redhat.com/rhel-9.0.xml
+share/osinfo/os/redhat.com/rhel-9.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.0.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.1.xml
 share/osinfo/os/redhat.com/rhel-atomic-7.2.xml
@@ -814,8 +816,10 @@ share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-8.4.xml
 share/osinfo/os/rockylinux.org/rocky-8.5.xml
 share/osinfo/os/rockylinux.org/rocky-8.6.xml
+share/osinfo/os/rockylinux.org/rocky-8.xml
 share/osinfo/os/rockylinux.org/rocky-9-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-9.0.xml
+share/osinfo/os/rockylinux.org/rocky-9.xml
 share/osinfo/os/rockylinux.org/rocky-unknown.xml
 share/osinfo/os/scientificlinux.org/
 share/osinfo/os/scientificlinux.org/scientificlinux-5.0.xml
@@ -943,6 +947,7 @@ share/osinfo/os/ubuntu.com/ubuntu-20.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-21.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-21.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-22.04.xml
+share/osinfo/os/ubuntu.com/ubuntu-22.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-4.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-5.10.xml
@@ -954,6 +959,13 @@ share/osinfo/os/ubuntu.com/ubuntu-8.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-8.10.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-9.10.xml
+share/osinfo/os/univention.de/
+share/osinfo/os/univention.de/ucs-4.0.xml
+share/osinfo/os/univention.de/ucs-4.1.xml
+share/osinfo/os/univention.de/ucs-4.2.xml
+share/osinfo/os/univention.de/ucs-4.3.xml
+share/osinfo/os/univention.de/ucs-4.4.xml
+share/osinfo/os/univention.de/ucs-5.0.xml
 share/osinfo/os/voidlinux.org/
 share/osinfo/os/voidlinux.org/voidlinux-rolling.xml
 share/osinfo/platform/
