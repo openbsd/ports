@@ -1,21 +1,13 @@
 COMMENT=	manage and configure devices that support IPMI
 
-# use a git archive for now, the last release is rather old
-# https://github.com/ipmitool/ipmitool/issues/303
-# if changing back to a release when available, check if post-configure
-# and MASTER_SITES0 can go too.
+V=		1.8.19
 GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
-GH_COMMIT=	a1dc78c4566734075c433ca61e71bd18c7058c6d
-DISTNAME=	ipmitool-1.8.18pl20220805
+GH_TAGNAME=	IPMITOOL_${V:S/./_/g}
+PKGNAME=	ipmitool-$V
 DISTFILES=	${GH_DISTFILE} enterprise-numbers.20220204.gz:0
-# XXX can't use GH_DISTFILE since EXTRACT_ONLY expects filenames instead of
-# DISTFILES filename{url}sufx patterns
-EXTRACT_ONLY=	${DISTNAME}-${GH_COMMIT:C/(........).*/\1/}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${GH_DISTFILE}
 
-#V=		1.8.18
-#DISTNAME=	ipmitool-$V
-#EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	https://github.com/ipmitool/ipmitool
@@ -30,7 +22,6 @@ WANTLIB=	m curses edit crypto c
 # -std=gnu11
 COMPILER =	base-clang ports-gcc
 
-#MASTER_SITES=	https://github.com/ipmitool/ipmitool/releases/download/IPMITOOL_${V:C/\./_/g}/
 MASTER_SITES0=	https://spacehopper.org/mirrors/
 
 SEPARATE_BUILD=	Yes
@@ -59,8 +50,6 @@ CONFIGURE_ARGS+=	--disable-intf-open
 pre-configure:
 	cd ${WRKSRC}/contrib; sed -i 's,^#!/bin/bash,#!/bin/sh,' bmclanconf *.sh
 
-# hopefully there is a bundled file when there's a new release and
-# we can get rid of this mess
 CONFIGURE_ENV+=	ac_cv_prog_CURL=curl
 post-configure:
 	gzcat < ${FULLDISTDIR}/enterprise-numbers.20220204.gz > ${WRKBUILD}/enterprise-numbers
