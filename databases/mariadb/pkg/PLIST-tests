@@ -3530,6 +3530,14 @@ share/mysql-test/plugin/connect/connect/t/xml_mdev5261.test
 share/mysql-test/plugin/connect/connect/t/xml_mult.test
 share/mysql-test/plugin/connect/connect/t/xml_zip.test
 share/mysql-test/plugin/connect/connect/t/zip.test
+share/mysql-test/plugin/disks/
+share/mysql-test/plugin/disks/disks/
+share/mysql-test/plugin/disks/disks/disks.result
+share/mysql-test/plugin/disks/disks/disks.test
+share/mysql-test/plugin/disks/disks/disks_notembedded.result
+share/mysql-test/plugin/disks/disks/disks_notembedded.test
+share/mysql-test/plugin/disks/disks/suite.opt
+share/mysql-test/plugin/disks/disks/suite.pm
 share/mysql-test/plugin/example/
 share/mysql-test/plugin/example/README
 share/mysql-test/plugin/example/mtr/

@@ -490,6 +490,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/debug_key_management.so
 @so lib/mysql/plugin/dialog.so
 @so lib/mysql/plugin/dialog_examples.so
+@so lib/mysql/plugin/disks.so
 @so lib/mysql/plugin/example_key_management.so
 @so lib/mysql/plugin/file_key_management.so
 @so lib/mysql/plugin/ha_archive.so
