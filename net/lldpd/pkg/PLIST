@@ -1,6 +1,5 @@
 @newgroup _lldpd:720
 @newuser _lldpd:720:_lldpd:daemon:lldpd user:/nonexistent:/sbin/nologin
-%%snmp%%
 @rcscript ${RCDIR}/lldpd
 include/lldp-const.h
 include/lldpctl.h

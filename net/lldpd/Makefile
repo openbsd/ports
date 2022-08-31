@@ -1,9 +1,7 @@
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 DISTNAME=	lldpd-1.0.15
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		LLDP-MIB-200505060000Z.mib:0
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+REVISION=	0
 
 SHARED_LIBS +=	lldpctl                   2.3 # 13.0
 
@@ -13,9 +11,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://lldpd.github.io/
 
-# Program: ISC. Bundled MIB is from IEEE 802.1AB-2005; "Users of this
-# standard may freely reproduce the MIB contained in this subclause so
-# that it can be used for its intended purpose."
+# ISC
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses event_core event_extra pthread readline
@@ -53,11 +49,6 @@ CONFIGURE_ARGS+=	--with-snmp
 LIB_DEPENDS+=		net/net-snmp
 WANTLIB += netsnmp netsnmpagent netsnmpmibs
 WANTLIB += crypto kvm m perl
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs/
-	${INSTALL_DATA} ${FULLDISTDIR}/LLDP-MIB-200505060000Z.mib \
-		${PREFIX}/share/snmp/mibs/LLDP-MIB.txt
 .endif
 
 .include <bsd.port.mk>
