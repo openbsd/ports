@@ -1,6 +1,6 @@
 COMMENT=		printer (CUPS) administration tool
 
-V=			1.5.17
+V=			1.5.18
 DISTNAME=		system-config-printer-${V}
 
 CATEGORIES=		print sysutils
@@ -31,7 +31,10 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 # pygobject introspections (not provided by indirect dependencies)
 RUN_DEPENDS +=		devel/libnotify \
 			x11/gnome/libsecret \
-			x11/gtk+3
+			x11/gtk+3 \
+
+# GNOME dark mode; not enforcing since it's installed as part of GNOME
+#RUN_DEPENDS +=		x11/libhandy
 
 # only useful if cups is installed but don't enforce the dependency because
 # gnome-control-center requires system-config-printer and we may not want cups
@@ -40,7 +43,7 @@ RUN_DEPENDS +=		devel/libnotify \
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	CPPFLAGS=-I${LOCALBASE}/include \
+CONFIGURE_ENV=		CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
 FAKE_FLAGS=		dbusdir=${PREFIX}/share/examples/system-config-printer/dbus-1/system.d/ \
