@@ -1,5 +1,3 @@
-ONLY_FOR_ARCHS =	amd64
-
 COMMENT =	cross-platform, GPU-accelerated terminal emulator
 # devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
@@ -10,6 +8,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
 GH_TAGNAME =	v0.10.0
+REVISION =	0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -19,6 +18,8 @@ WANTLIB += c c++abi fontconfig freetype m pthread util xcb
 MODULES =	devel/cargo \
 		lang/python
 
+# for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
+MODCARGO_CRATES_UPDATE =	cc libc
 MODCARGO_RUSTFLAGS += -L${PREFIX}/lib
 
 # Disable wayland feature. Breaks the build if libxkbcommon is absent
