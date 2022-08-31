@@ -1,6 +1,6 @@
 COMMENT =		owncloud sync client
 
-V = 			2.10.1.7389
+V = 			2.11.0.8354
 DISTNAME =		ownCloud-${V}
 PKGNAME =  		owncloudclient-${V}
 
