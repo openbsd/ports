@@ -1,6 +1,7 @@
 COMMENT =	certificate manager and a universal crypto GUI
 DISTNAME =	kleopatra-${VERSION}
 CATEGORIES =	security x11
+REVISION =	0
 
 SHARED_LIBS +=  kleopatraclientcore     1.0 # 1.3.0
 SHARED_LIBS +=  kleopatraclientgui      1.0 # 1.3.0
@@ -53,5 +54,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kmime \
 		x11/kde-applications/libkleo
+
 
 .include <bsd.port.mk>
