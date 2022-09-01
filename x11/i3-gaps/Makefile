@@ -74,5 +74,4 @@ post-install:
 	rm ${WRKINST}/etc/i3/*.{orig,beforesubst}
 	mv ${WRKINST}/etc/i3 ${PREFIX}/share/examples/
 
-
 .include <bsd.port.mk>
