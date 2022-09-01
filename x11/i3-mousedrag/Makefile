@@ -1,11 +1,11 @@
-# see https://github.com/i3/i3/issues/3085 / orestisfl:issue-2643
+# now merged into main i3; this port can be merged into the next x11/i3 update
 COMMENT=	improved dynamic tiling window manager, fork with mouse drag
 
-GH_ACCOUNT=	orestisfl
+GH_ACCOUNT=	i3
 GH_PROJECT=	i3
-GH_COMMIT=	ec693d0d776e385509453456c49e404017d9d9c9
+GH_COMMIT=	ebcd1d43ea9fd08a1dbb1212fb61e42f05a22684
 
-DISTNAME=	i3-mousedrag-4.20.1pl20212061
+DISTNAME=	i3-mousedrag-4.20.1pl20220728
 
 CATEGORIES=	x11
 
