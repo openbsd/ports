@@ -1,9 +1,8 @@
 COMMENT =		os.path wrapper for Python
 
-MODPY_EGG_VERSION =	10.3.1
+MODPY_EGG_VERSION =	12.5.0
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
 
 CATEGORIES =		devel
 
@@ -15,12 +14,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	--ignore=lib
+MODPY_PEP517 =		setuptools
+NO_TEST =		Yes
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-appdirs${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-path${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3
