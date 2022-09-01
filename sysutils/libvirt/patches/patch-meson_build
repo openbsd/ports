@@ -71,7 +71,7 @@ Index: meson.build
      error('You must have dlfcn.h / dlopen() support to build driver modules')
    endif
    driver_modules_flags = libvirt_export_dynamic
-@@ -2286,7 +2283,7 @@ libs_summary = {
+@@ -2279,7 +2276,7 @@ libs_summary = {
    'capng': capng_dep.found(),
    'curl': curl_dep.found(),
    'devmapper': devmapper_dep.found(),
