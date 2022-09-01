@@ -16,6 +16,9 @@ HOMEPAGE=		http://xmlsoft.org/
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB=		iconv lzma m z
 
 MODULES=		x11/gnome
