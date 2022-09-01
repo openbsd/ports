@@ -1,13 +1,16 @@
 QT6NAME =		QtPositioning
 COMMENT =		Qt Positioning API
+REVISION =		0
 
 SHARED_LIBS +=  Qt6Positioning            0.0 # 0.0
 SHARED_LIBS +=  Qt6PositioningQuick       0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick c m xkbcommon
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6SerialPort
+WANTLIB += c m xkbcommon
 
-LIB_DEPENDS =		x11/qt6/qtdeclarative
+LIB_DEPENDS =		x11/qt6/qtdeclarative \
+			x11/qt6/qtserialport
 
 BUILD_DEPENDS =		graphics/vulkan-loader
 
