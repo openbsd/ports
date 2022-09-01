@@ -1,6 +1,6 @@
 COMMENT =	pytest plugin for managing processes across test runs
 
-MODPY_EGG_VERSION =	0.19.0
+MODPY_EGG_VERSION =	0.20.0
 
 DISTNAME =	pytest-xprocess-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -26,7 +25,7 @@ RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			sysutils/py-psutil${MODPY_FLAVOR}
 
 # process spawned in test_interruption_clean_up.py doesn't find self
-# just from the default PYTHONPATH setting
+# with just the default PYTHONPATH setting
 TEST_DEPENDS =		${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
