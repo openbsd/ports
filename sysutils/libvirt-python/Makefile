@@ -1,6 +1,6 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	8.6.0
+MODPY_EGG_VERSION =	8.7.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
 
@@ -13,7 +13,7 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += pthread virt virt-lxc virt-qemu
+WANTLIB += virt virt-lxc virt-qemu
 
 MASTER_SITES =		https://libvirt.org/sources/python/
 
