@@ -46,8 +46,6 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-ALL_TARGET =		all doc_pdf
-
 FLAVORS =		ns0_full
 FLAVOR ?=
 

@@ -1,0 +1,16 @@
+"Indicate that this target should be added to the default build target so that
+it will be run every time."
+https://cmake.org/cmake/help/latest/command/add_custom_target.html
+
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -74,7 +74,7 @@ add_custom_target(doc_latex ${SPHINX_EXECUTABLE}
+                   COMMENT "Building LaTeX sources for documentation with Sphinx")
+ add_dependencies(doc_latex open62541)
+ 
+-add_custom_target(doc_pdf ${PDFLATEX_COMPILER} -interaction=batchmode "open62541.tex"
++add_custom_target(doc_pdf ALL ${PDFLATEX_COMPILER} -interaction=batchmode "open62541.tex"
+                   WORKING_DIRECTORY ${DOC_LATEX_DIR}
+                   # compile it twice so that the contents pages are correct
+                   COMMAND ${PDFLATEX_COMPILER} -interaction=batchmode "open62541.tex"
