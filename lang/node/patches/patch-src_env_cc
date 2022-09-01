@@ -1,7 +1,7 @@
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc
-@@ -304,29 +304,7 @@ void Environment::CreateProperties() {
+@@ -695,29 +695,7 @@ void Environment::CreateProperties() {
  }
  
  std::string GetExecPath(const std::vector<std::string>& argv) {

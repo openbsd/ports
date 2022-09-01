@@ -1,6 +1,7 @@
---- tools/test.py.orig	Sat Jan  8 14:31:29 2022
-+++ tools/test.py	Sat Jan  8 14:32:47 2022
-@@ -925,9 +925,9 @@ class Context(object):
+Index: tools/test.py
+--- tools/test.py.orig
++++ tools/test.py
+@@ -938,9 +938,9 @@ class Context(object):
      if self.vm is not None:
        return self.vm
      if arch == 'none':

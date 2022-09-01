@@ -252,6 +252,7 @@ lib/node_modules/@npmcli/promise-spawn/package.json
 lib/node_modules/@npmcli/run-script/
 lib/node_modules/@npmcli/run-script/LICENSE
 lib/node_modules/@npmcli/run-script/lib/
+lib/node_modules/@npmcli/run-script/lib/escape.js
 lib/node_modules/@npmcli/run-script/lib/is-server-package.js
 lib/node_modules/@npmcli/run-script/lib/is-windows.js
 lib/node_modules/@npmcli/run-script/lib/make-spawn-args.js
@@ -507,6 +508,7 @@ lib/node_modules/console-control-strings/LICENSE
 lib/node_modules/console-control-strings/index.js
 lib/node_modules/console-control-strings/package.json
 lib/node_modules/corepack/
+lib/node_modules/corepack/CHANGELOG.md
 lib/node_modules/corepack/LICENSE.md
 lib/node_modules/corepack/README.md
 lib/node_modules/corepack/dist/
@@ -516,6 +518,7 @@ lib/node_modules/corepack/dist/npx.js
 lib/node_modules/corepack/dist/pnpm.js
 lib/node_modules/corepack/dist/pnpx.js
 lib/node_modules/corepack/dist/vcc.js
+lib/node_modules/corepack/dist/vendors-_yarn_berry_cache_proxy-agent-npm-5_0_0-41772f4b01-9_zip_node_modules_proxy-agent_index_js.js
 lib/node_modules/corepack/dist/yarn.js
 lib/node_modules/corepack/dist/yarnpkg.js
 lib/node_modules/corepack/package.json
@@ -539,9 +542,6 @@ lib/node_modules/corepack/shims/nodewin/pnpm.ps1
 lib/node_modules/corepack/shims/nodewin/pnpx
 lib/node_modules/corepack/shims/nodewin/pnpx.cmd
 lib/node_modules/corepack/shims/nodewin/pnpx.ps1
-lib/node_modules/corepack/shims/nodewin/vcc
-lib/node_modules/corepack/shims/nodewin/vcc.cmd
-lib/node_modules/corepack/shims/nodewin/vcc.ps1
 lib/node_modules/corepack/shims/nodewin/yarn
 lib/node_modules/corepack/shims/nodewin/yarn.cmd
 lib/node_modules/corepack/shims/nodewin/yarn.ps1
@@ -1001,6 +1001,7 @@ lib/node_modules/libnpmversion/lib/write-json.js
 lib/node_modules/libnpmversion/package.json
 lib/node_modules/lru-cache/
 lib/node_modules/lru-cache/LICENSE
+lib/node_modules/lru-cache/index.d.ts
 lib/node_modules/lru-cache/index.js
 lib/node_modules/lru-cache/package.json
 lib/node_modules/make-fetch-happen/
@@ -1061,6 +1062,7 @@ lib/node_modules/minipass-sized/index.js
 lib/node_modules/minipass-sized/package-lock.json
 lib/node_modules/minipass-sized/package.json
 lib/node_modules/minipass/LICENSE
+lib/node_modules/minipass/index.d.ts
 lib/node_modules/minipass/index.js
 lib/node_modules/minipass/package.json
 lib/node_modules/minizlib/
@@ -1504,6 +1506,7 @@ lib/node_modules/npm/docs/content/using-npm/config.md
 lib/node_modules/npm/docs/content/using-npm/developers.md
 lib/node_modules/npm/docs/content/using-npm/logging.md
 lib/node_modules/npm/docs/content/using-npm/orgs.md
+lib/node_modules/npm/docs/content/using-npm/package-spec.md
 lib/node_modules/npm/docs/content/using-npm/registry.md
 lib/node_modules/npm/docs/content/using-npm/removal.md
 lib/node_modules/npm/docs/content/using-npm/scope.md
@@ -1588,6 +1591,7 @@ lib/node_modules/npm/docs/output/using-npm/config.html
 lib/node_modules/npm/docs/output/using-npm/developers.html
 lib/node_modules/npm/docs/output/using-npm/logging.html
 lib/node_modules/npm/docs/output/using-npm/orgs.html
+lib/node_modules/npm/docs/output/using-npm/package-spec.html
 lib/node_modules/npm/docs/output/using-npm/registry.html
 lib/node_modules/npm/docs/output/using-npm/removal.html
 lib/node_modules/npm/docs/output/using-npm/scope.html
@@ -1703,6 +1707,7 @@ lib/node_modules/npm/lib/utils/is-windows.js
 lib/node_modules/npm/lib/utils/log-file.js
 lib/node_modules/npm/lib/utils/log-shim.js
 lib/node_modules/npm/lib/utils/npm-usage.js
+lib/node_modules/npm/lib/utils/open-url-prompt.js
 lib/node_modules/npm/lib/utils/open-url.js
 lib/node_modules/npm/lib/utils/otplease.js
 lib/node_modules/npm/lib/utils/ping.js
@@ -1716,8 +1721,10 @@ lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/utils/timers.js
 lib/node_modules/npm/lib/utils/update-notifier.js
 lib/node_modules/npm/lib/utils/validate-lockfile.js
+lib/node_modules/npm/lib/utils/web-auth.js
 lib/node_modules/npm/lib/workspaces/
 lib/node_modules/npm/lib/workspaces/get-workspaces.js
+lib/node_modules/npm/lib/workspaces/update-workspaces.js
 @mandir lib/node_modules/npm/man/
 lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-access.1
@@ -1797,6 +1804,7 @@ lib/node_modules/npm/man/man7/
 @man lib/node_modules/npm/man/man7/developers.7
 @man lib/node_modules/npm/man/man7/logging.7
 @man lib/node_modules/npm/man/man7/orgs.7
+@man lib/node_modules/npm/man/man7/package-spec.7
 @man lib/node_modules/npm/man/man7/registry.7
 @man lib/node_modules/npm/man/man7/removal.7
 @man lib/node_modules/npm/man/man7/scope.7
