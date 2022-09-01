@@ -1,6 +1,6 @@
 COMMENT=		Nagios plugin to check Microsoft SQL Server
 
-DISTNAME=		check_mssql_health-2.7.2.2
+DISTNAME=		check_mssql_health-2.7.4
 CATEGORIES=		net databases
 
 HOMEPAGE=		https://labs.consol.de/nagios/check_mssql_health/
