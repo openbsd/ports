@@ -1,6 +1,6 @@
 COMMENT =		hack to explicitly set up and tear down fixtures
 
-MODPY_EGG_VERSION =	0.1.2
+MODPY_EGG_VERSION =	0.2.0
 DISTNAME =		pytest-subtesthack-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-subtesthack-${MODPY_EGG_VERSION}
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
