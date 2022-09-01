@@ -1,4 +1,4 @@
-ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
+ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
