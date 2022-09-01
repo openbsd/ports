@@ -3,7 +3,7 @@ BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_in
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		25.0.3
+V=		25.0.4
 PORTROACH=	limit:^OTP-25\.
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
@@ -44,6 +44,12 @@ WANTLIB-wx += glib-2.0 intl
 LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
 LIB_DEPENDS-wx +=devel/glib2
 
+.if ${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "arm" && \
+	${MACHINE_ARCH} != "hppa"
+LIB_DEPENDS-wx +=x11/wxWidgets,-webkit
+WANTLIB-wx += wx_gtk3u_webview-3.0
+.endif
+
 RUN_DEPENDS-wx =${BASE_PKGPATH},-main>=${MAJ_V}
 
 DOC_DIR=	${PREFIX}/lib/erlang${MAJ_V}/
@@ -71,7 +77,7 @@ EUNIT_VSN       2.7.1 \
 FTP_VSN 1.1.1 \
 INETS_VSN       8.0 \
 JINTERFACE_VSN  1.13 \
-KERNEL_VSN      8.4.1 \
+KERNEL_VSN      8.4.2 \
 MEGACO_VSN      4.4 \
 MNESIA_VSN      4.21.1 \
 OBSERVER_VSN    2.12 \
@@ -91,6 +97,6 @@ TFTP_VSN        1.0.3 \
 TOOLS_VSN       3.5.3 \
 WX_VSN  2.2 \
 XMERL_VSN       1.3.29 \
-ERTS_VSN        13.0.3
+ERTS_VSN        13.0.4
 
 .include <bsd.port.mk>

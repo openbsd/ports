@@ -6,7 +6,8 @@ COMMENT-wx=	WxWidgets bindings for Erlang
 PORTROACH=	limit:^OTP-21\.
 
 V=		21.3.8.24
-REVISION-main=	0
+REVISION-main=	1
+REVISION-wx=	0
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
 PKGNAME-main=	erlang-$V
