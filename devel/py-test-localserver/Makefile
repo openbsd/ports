@@ -1,6 +1,6 @@
 COMMENT =		py.test plugin to test server connections locally
 
-MODPY_EGG_VERSION =	0.6.0
+MODPY_EGG_VERSION =	0.7.0
 DISTNAME =		pytest-localserver-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-localserver-${MODPY_EGG_VERSION}
 
@@ -11,17 +11,14 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	--ignore tests/test_smtp.py
+MODPY_PEP517 =		setuptools
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			www/py-werkzeug${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
+TEST_DEPENDS =		www/py-requests${MODPY_FLAVOR} \
 			www/py-werkzeug${MODPY_FLAVOR}
 
 FLAVORS =		python3
