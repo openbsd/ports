@@ -2,11 +2,11 @@ COMMENT =	framework for generation of reports in multiple formats
 
 VERSION =	3.2.0
 DISTNAME =	kreport-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.kexi-project.org/
+HOMEPAGE =	https://kexi-project.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
