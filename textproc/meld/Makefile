@@ -1,6 +1,7 @@
 COMMENT=		graphical diff and merge tool
 
 GNOME_VERSION=		3.21.3
+REVISION=		0
 GNOME_PROJECT=		meld
 
 CATEGORIES=		textproc
@@ -15,6 +16,8 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+MODPY_ADJ_FILES=	bin/meld
+
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
 
@@ -28,5 +31,8 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 
 # org.gnome.desktop.interface
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
+
+post-install:
+	chmod +x ${PREFIX}/bin/meld
 
 .include <bsd.port.mk>
