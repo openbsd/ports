@@ -25,8 +25,6 @@ LIB_DEPENDS =	net/curl \
 TEST_DEPENDS =	${BUILD_DEPENDS} \
 		shells/bash
 
-INSTALL_TARGET =	install install-doc
-
 do-extract:
 	mkdir ${WRKSRC} && \
 		tar -C ${WRKSRC} -zxf ${FULLDISTDIR}/${DISTNAME}.tar.gz

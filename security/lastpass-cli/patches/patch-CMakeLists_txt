@@ -1,3 +1,6 @@
+- Remove compiler flags
+- Build and install docs by default
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -10,3 +13,14 @@ Index: CMakeLists.txt
  if(APPLE)
    set(PROJECT_FLAGS "${PROJECT_FLAGS} -Wno-deprecated-declarations")
  endif()
+@@ -77,8 +77,9 @@ if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   target_link_libraries(${PROJECT_NAME} "-lkvm")
+ endif (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+ 
+-add_custom_command(OUTPUT lpass.1 DEPENDS ${CMAKE_SOURCE_DIR}/lpass.1.txt
++add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD DEPENDS ${CMAKE_SOURCE_DIR}/lpass.1.txt
+         COMMAND a2x -D ./ --no-xmllint -f manpage ${CMAKE_SOURCE_DIR}/lpass.1.txt)
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/lpass.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)
+ add_custom_command(OUTPUT lpass.1.html DEPENDS ${CMAKE_SOURCE_DIR}/lpass.1.txt
+         COMMAND asciidoc -b html5 -a data-uri -a icons -a toc2 -o lpass.1.html ${CMAKE_SOURCE_DIR}/lpass.1.txt)
+ 
