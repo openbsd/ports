@@ -4,7 +4,7 @@ Problem known upstream: https://bugs.libssh.org/T175
 Index: examples/sshd_direct-tcpip.c
 --- examples/sshd_direct-tcpip.c.orig
 +++ examples/sshd_direct-tcpip.c
-@@ -37,16 +37,16 @@ clients must be made or how a client should react.
+@@ -41,16 +41,16 @@ clients must be made or how a client should react.
  
  #define SAFE_FREE(x) do { if ((x) != NULL) {free(x); x=NULL;} } while(0)
  

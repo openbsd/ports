@@ -3,7 +3,7 @@ Fix exit code.
 Index: ConfigureChecks.cmake
 --- ConfigureChecks.cmake.orig
 +++ ConfigureChecks.cmake
-@@ -302,7 +302,7 @@ check_c_source_compiles("
+@@ -306,7 +306,7 @@ check_c_source_compiles("
  __thread int tls;
  
  int main(void) {
