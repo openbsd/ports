@@ -1,0 +1,12 @@
+Index: third_party/ruy/BUILD.gn
+--- third_party/ruy/BUILD.gn.orig
++++ third_party/ruy/BUILD.gn
+@@ -11,7 +11,7 @@ use_cpuinfo =
+     # cpuinfo is not supported on Windows on ARM yet.
+     !(is_win && current_cpu == "arm64") &&
+     # cpuinfo is not supported on fuchsia.
+-    !is_fuchsia &&
++    !is_fuchsia && !is_bsd &&
+     # There's a few arm architectures that are not supported by cpuinfo,
+     # especially amongst ChromeOS devices.
+     # See //third_party/cpuinfo/src/src/arm/linux/cp.h.

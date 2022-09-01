@@ -10,7 +10,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.ts
        /**
         * Whether to show the "Custom Chrome Frame" setting.
         */
-@@ -167,7 +167,7 @@ export class SettingsAppearancePageElement extends
+@@ -174,7 +174,7 @@ export class SettingsAppearancePageElement extends
        'themeChanged_(' +
            'prefs.extensions.theme.id.value, useSystemTheme_, isForcedTheme_)',
  
@@ -19,7 +19,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.ts
        // NOTE: this pref only exists on Linux.
        'useSystemThemePrefChanged_(prefs.extensions.theme.use_system.value)',
        // </if>
-@@ -186,7 +186,7 @@ export class SettingsAppearancePageElement extends
+@@ -194,7 +194,7 @@ export class SettingsAppearancePageElement extends
    private showReaderModeOption_: boolean;
    private isForcedTheme_: boolean;
  
@@ -28,7 +28,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.ts
    private showCustomChromeFrame_: boolean;
    // </if>
  
-@@ -264,7 +264,7 @@ export class SettingsAppearancePageElement extends
+@@ -272,7 +272,7 @@ export class SettingsAppearancePageElement extends
      this.appearanceBrowserProxy_.useDefaultTheme();
    }
  
@@ -37,7 +37,7 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.ts
    private useSystemThemePrefChanged_(useSystemTheme: boolean) {
      this.useSystemTheme_ = useSystemTheme;
    }
-@@ -325,10 +325,10 @@ export class SettingsAppearancePageElement extends
+@@ -333,10 +333,10 @@ export class SettingsAppearancePageElement extends
      }
  
      let i18nId;

@@ -10,7 +10,7 @@ Index: net/BUILD.gn
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1199,6 +1199,15 @@ component("net") {
+@@ -1193,6 +1193,15 @@ component("net") {
      ]
    }
  
@@ -26,16 +26,16 @@ Index: net/BUILD.gn
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1331,7 +1340,7 @@ component("net") {
+@@ -1325,7 +1334,7 @@ component("net") {
      }
    }
  
--  if (is_android || is_chromeos_ash) {
-+  if (is_android || is_chromeos_ash || is_bsd) {
+-  if (is_android || is_chromeos) {
++  if (is_android || is_chromeos || is_bsd) {
      sources += [
        "base/network_change_notifier_posix.cc",
        "base/network_change_notifier_posix.h",
-@@ -1364,7 +1373,7 @@ component("net") {
+@@ -1358,7 +1367,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -44,7 +44,7 @@ Index: net/BUILD.gn
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -4372,7 +4381,7 @@ test("net_unittests") {
+@@ -4363,7 +4372,7 @@ test("net_unittests") {
      ]
    }
  
@@ -53,7 +53,7 @@ Index: net/BUILD.gn
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -4447,6 +4456,10 @@ test("net_unittests") {
+@@ -4438,6 +4447,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -64,7 +64,7 @@ Index: net/BUILD.gn
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -4519,7 +4532,7 @@ test("net_unittests") {
+@@ -4509,7 +4522,7 @@ test("net_unittests") {
      ]
    }
  
@@ -73,7 +73,7 @@ Index: net/BUILD.gn
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -4661,7 +4674,7 @@ test("net_unittests") {
+@@ -4650,7 +4663,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

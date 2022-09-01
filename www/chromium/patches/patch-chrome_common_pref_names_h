@@ -28,7 +28,7 @@ Index: chrome/common/pref_names.h
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -707,7 +707,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -706,7 +706,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -37,7 +37,7 @@ Index: chrome/common/pref_names.h
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -846,7 +846,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -840,7 +840,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -46,7 +46,7 @@ Index: chrome/common/pref_names.h
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -1111,7 +1111,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1109,7 +1109,7 @@ extern const char kBlockAutoplayEnabled[];
  #endif
  extern const char kSandboxExternalProtocolBlocked[];
  

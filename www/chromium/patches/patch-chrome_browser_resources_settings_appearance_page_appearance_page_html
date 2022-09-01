@@ -19,10 +19,10 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_page.html
            <div class="settings-row continuation"
                hidden="[[!showThemesSecondary_(
                    prefs.extensions.theme.id.value, useSystemTheme_)]]"
-@@ -109,7 +109,7 @@
-             pref="{{prefs.bookmark_bar.show_on_all_tabs}}"
-             label="$i18n{showBookmarksBar}">
-         </settings-toggle-button>
+@@ -135,7 +135,7 @@
+           </div>
+         </template>
+ 
 -<if expr="is_linux">
 +<if expr="is_posix">
          <div class="hr" hidden="[[!pageVisibility.bookmarksBar]]"></div>

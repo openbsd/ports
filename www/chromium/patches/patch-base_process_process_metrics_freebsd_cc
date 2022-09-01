@@ -71,7 +71,7 @@ Index: base/process/process_metrics_freebsd.cc
    return mem_total - (mem_free*pagesize) - (mem_inactive*pagesize);
  }
  
-+int GetNumberOfThreads(ProcessHandle process) {
++int64_t GetNumberOfThreads(ProcessHandle process) {
 +  // Taken from FreeBSD top (usr.bin/top/machine.c)
 +
 +  kvm_t* kd = kvm_open(NULL, "/dev/null", NULL, O_RDONLY, "kvm_open");

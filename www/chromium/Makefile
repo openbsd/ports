@@ -6,8 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			104.0.5112.79
-REVISION=		1
+V=			105.0.5195.52
 
 DISTNAME=		chromium-${V}
 
@@ -229,8 +228,7 @@ pre-configure:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py \
-		${WRKSRC}/base/third_party/libevent/BUILD.gn
+		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 # Configuration consists of three steps:
 # 1. replace the specified bundled libraries with hooks to use the system libs

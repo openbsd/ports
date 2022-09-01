@@ -10,7 +10,7 @@ Index: chrome/app/chrome_main.cc
  #include "base/base_switches.h"
  #endif
  
-@@ -147,7 +147,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -152,7 +152,7 @@ int ChromeMain(int argc, const char** argv) {
      headless::SetUpCommandLine(command_line);
    } else {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

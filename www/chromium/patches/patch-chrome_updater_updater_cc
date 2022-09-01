@@ -1,7 +1,7 @@
 Index: chrome/updater/updater.cc
 --- chrome/updater/updater.cc.orig
 +++ chrome/updater/updater.cc
-@@ -41,7 +41,7 @@
+@@ -44,7 +44,7 @@
  #include "chrome/updater/win/win_util.h"
  #elif BUILDFLAG(IS_MAC)
  #include "chrome/updater/app/server/mac/server.h"

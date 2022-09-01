@@ -16,15 +16,15 @@ Index: content/browser/renderer_host/render_message_filter.cc
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RenderMessageFilter::SetThreadPriorityOnFileThread(
+ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
      base::PlatformThreadId ns_tid,
-     base::ThreadPriority priority) {
-@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadPriorityOnFileThrea
+     base::ThreadType thread_type) {
+@@ -149,7 +149,7 @@ void RenderMessageFilter::SetThreadTypeOnWorkerThread(
  }
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- void RenderMessageFilter::SetThreadPriority(int32_t ns_tid,
-                                             base::ThreadPriority priority) {
+ void RenderMessageFilter::SetThreadType(int32_t ns_tid,
+                                         base::ThreadType thread_type) {
    constexpr base::TaskTraits kTraits = {

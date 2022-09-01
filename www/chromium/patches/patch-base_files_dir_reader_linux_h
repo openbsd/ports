@@ -33,8 +33,8 @@ Index: base/files/dir_reader_linux.h
 +#if BUILDFLAG(IS_BSD)
 +    const int r = getdents(fd_, reinterpret_cast<char *>(buf_), sizeof(buf_));
 +#else
-     const int r = syscall(__NR_getdents64, fd_, buf_, sizeof(buf_));
+     const long r = syscall(__NR_getdents64, fd_, buf_, sizeof(buf_));
 +#endif
      if (r == 0)
        return false;
-     if (r == -1) {
+     if (r < 0) {

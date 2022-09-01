@@ -10,7 +10,7 @@ Index: components/feature_engagement/public/feature_constants.h
  extern const base::Feature kIPHDesktopSharedHighlightingFeature;
  extern const base::Feature kIPHDesktopTabGroupsNewGroupFeature;
  extern const base::Feature kIPHFocusHelpBubbleScreenReaderPromoFeature;
-@@ -180,7 +180,7 @@ extern const base::Feature kIPHPasswordSuggestionsFeat
+@@ -181,7 +181,7 @@ extern const base::Feature kIPHPasswordSuggestionsFeat
  extern const base::Feature kIPHFollowWhileBrowsingFeature;
  #endif  // BUILDFLAG(IS_IOS)
  

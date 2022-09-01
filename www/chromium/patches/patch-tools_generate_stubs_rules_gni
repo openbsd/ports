@@ -1,7 +1,7 @@
 Index: tools/generate_stubs/rules.gni
 --- tools/generate_stubs/rules.gni.orig
 +++ tools/generate_stubs/rules.gni
-@@ -96,7 +96,6 @@ template("generate_stubs") {
+@@ -110,7 +110,6 @@ template("generate_stubs") {
        "${target_gen_dir}/${invoker.output_name}.cc",
        "${target_gen_dir}/${invoker.output_name}.h",
      ]
