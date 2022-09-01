@@ -4,6 +4,7 @@ COMMENT-examples =	examples for Qt5, meta-package
 PKGNAME =		qt5-${MODQT5_VERSION}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-examples =	qt5-examples-${MODQT5_VERSION}
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -examples
 
@@ -41,6 +42,7 @@ RUN_DEPENDS-main =	\
 			x11/qt5/qttranslations=${MODQT5_VERSION} \
 			x11/qt5/qtvirtualkeyboard,-main=${MODQT5_VERSION} \
 			x11/qt5/qtwebchannel,-main=${MODQT5_VERSION} \
+			x11/qt5/qtwayland=${MODQT5_VERSION} \
 			x11/qt5/qtwebkit \
 			x11/qt5/qtwebsockets,-main=${MODQT5_VERSION} \
 			x11/qt5/qtx11extras=${MODQT5_VERSION} \
