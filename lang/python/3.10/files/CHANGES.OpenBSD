@@ -12,14 +12,11 @@ functions.
 4.  Disable MULTIARCH check in configure.ac since OpenBSD is not a
 multi-arch platform and it causes build problems.
 
-5.  Make sure CPPFLAGS/LDFLAGS passed to ./configure don't end up
-in PY_CPPFLAGS/PY_LDFLAGS and thus leaking to python extensions.
-
-6.  Allow Python to build with LTO on OpenBSD clang architectures.
+5.  Allow Python to build with LTO on OpenBSD clang architectures.
 OpenBSD's version of llvm-ar is installed as /usr/bin/ar, and the
 compiler as passed to ports builds is /usr/bin/cc.
 
-7.  Use closefrom(2) instead of looping through all the file descriptors
+6.  Use closefrom(2) instead of looping through all the file descriptors
 and calling close(2) on them.
 
 These changes are available in the OpenBSD CVS repository
