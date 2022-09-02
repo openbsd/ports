@@ -165,5 +165,5 @@ MAKE_ENV += TERM=${TERM}
 MODCMAKE_VERBOSE ?= Yes
 
 .if ${MODCMAKE_VERBOSE:L} == "yes"
-#_MAKE_VERBOSE = --verbose
+_MAKE_VERBOSE = --verbose
 .endif
