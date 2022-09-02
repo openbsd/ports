@@ -89,9 +89,6 @@ CONFIGURE_ARGS += 	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 			-DBUILD_PYTHON_BINDINGS=ON \
 			-DCMAKE_INSTALL_MANDIR=${PREFIX}/man/man1
 
-# naddy reported a burp
-USE_NINJA =	No
-
 # XXX note that some of the tests WILL fail. You've got to love probabilistic
 # software...
 TEST_ENV = 	CTEST_OUTPUT_ON_FAILURE=1

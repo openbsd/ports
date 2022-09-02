@@ -38,9 +38,6 @@ myRUN_DEPENDS =	print/ghostscript/gnu-fonts
 
 MODULES +=	devel/cmake
 
-# Until the cmake ninja generator supports fortran
-USE_NINJA =		No
-
 CONFIGURE_ARGS =	-D ENABLE_ada=OFF \
 			-D ENABLE_cxx=ON \
 			-D ENABLE_d=OFF \
