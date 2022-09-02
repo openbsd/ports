@@ -4,6 +4,7 @@ CATEGORIES=	devel
 GH_ACCOUNT=	Olivine-Labs
 GH_PROJECT=	luassert
 GH_TAGNAME=	v1.9.0
+REVISION=	0
 
 MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
