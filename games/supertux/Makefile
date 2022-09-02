@@ -25,7 +25,6 @@ FIX_CRLF_FILES =	external/squirrel/CMakeLists.txt
 MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
 
 MODULES +=		devel/cmake
-USE_NINJA =		No
 COMPILER =		base-clang ports-gcc
 BUILD_DEPENDS =		graphics/glm
 RUN_DEPENDS =		devel/desktop-file-utils \
