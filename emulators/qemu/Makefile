@@ -10,7 +10,8 @@ CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-ga=	0
 
 HOMEPAGE=	https://www.qemu.org/
 
@@ -68,7 +69,7 @@ LIB_DEPENDS-ga=	${LIB_DEPENDS}
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -DBSD_GUEST_AGENT
+CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 # until the system headers are fixed properly.

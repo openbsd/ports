@@ -6,7 +6,7 @@ Revert..
 Index: plugins/meson.build
 --- plugins/meson.build.orig
 +++ plugins/meson.build
-@@ -1,15 +1,10 @@
+@@ -1,15 +1,8 @@
  plugin_ldflags = []
  # Modules need more symbols than just those in plugins/qemu-plugins.symbols
  if not enable_modules
@@ -21,8 +21,6 @@ Index: plugins/meson.build
 -    plugin_ldflags = ['-Xlinker', '--dynamic-list=' + (meson.project_source_root() / 'plugins/qemu-plugins.symbols')]
 +  if 'CONFIG_HAS_LD_DYNAMIC_LIST' in config_host
 +    plugin_ldflags = ['-Wl,--dynamic-list=qemu-plugins-ld.symbols']
-+  elif 'CONFIG_HAS_LD_EXPORTED_SYMBOLS_LIST' in config_host
-+    plugin_ldflags = ['-Wl,-exported_symbols_list,qemu-plugins-ld64.symbols']
    endif
  endif
  

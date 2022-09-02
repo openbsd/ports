@@ -15,7 +15,7 @@ Index: qga/commands-posix.c
  #include "qemu/cutils.h"
  #include "commands-common.h"
  
-+#ifdef BSD_GUEST_AGENT
++#ifdef CONFIG_BSD
 +#include <ifaddrs.h>
 +#include <arpa/inet.h>
 +#include <sys/socket.h>
@@ -48,13 +48,13 @@ Index: qga/commands-posix.c
  
      slog("guest-shutdown called, mode: %s", mode);
      if (!has_mode || strcmp(mode, "powerdown") == 0) {
-+#ifdef BSD_GUEST_AGENT
++#ifdef CONFIG_BSD
 +        shutdown_flag = "-p";
 +#else
          shutdown_flag = "-P";
 +#endif
      } else if (strcmp(mode, "halt") == 0) {
-+#ifdef BSD_GUEST_AGENT
++#ifdef CONFIG_BSD
 +        shutdown_flag = "-h";
 +#else
          shutdown_flag = "-H";
@@ -68,7 +68,7 @@ Index: qga/commands-posix.c
  
 +        shutdown_mode = g_strdup_printf("hypervisor initiated %s", mode);
 +
-+#ifdef BSD_GUEST_AGENT
++#ifdef CONFIG_BSD
 +        execle("/sbin/shutdown", "-h", shutdown_flag, "+0",
 +               shutdown_mode, (char*)NULL, environ);
 +#else
@@ -83,7 +83,7 @@ Index: qga/commands-posix.c
  void qmp_guest_set_time(bool has_time, int64_t time_ns, Error **errp)
  {
      int ret;
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
      int status;
      pid_t pid;
      Error *local_err = NULL;
@@ -95,7 +95,7 @@ Index: qga/commands-posix.c
          }
      }
  
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
      /* Now, if user has passed a time to set and the system time is set, we
       * just need to synchronize the hardware clock. However, if no time was
       * passed, user is requesting the opposite: set the system time from the
@@ -116,11 +116,11 @@ Index: qga/commands-posix.c
  
      fclose(fp);
  }
-@@ -2940,24 +2980,255 @@ void qmp_guest_suspend_hybrid(Error **errp)
+@@ -2940,24 +2980,260 @@ void qmp_guest_suspend_hybrid(Error **errp)
      error_setg(errp, QERR_UNSUPPORTED);
  }
  
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
  GuestNetworkInterfaceList *qmp_guest_network_get_interfaces(Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
@@ -306,9 +306,9 @@ Index: qga/commands-posix.c
 +    qapi_free_GuestNetworkInterfaceList(head);
 +    return NULL;
 +}
-+#endif // BSD_GUEST_AGENT
++#endif // CONFIG_BSD
 +
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
  GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
@@ -324,9 +324,14 @@ Index: qga/commands-posix.c
 +    int				Query[2];
 +    int				NumCpu = 0;
 +    size_t			Length = sizeof(NumCpu);
-+    Query[0] = CTL_HW;
-+    Query[1] = HW_NCPU;
  
++    Query[0] = CTL_HW;
++#ifdef HW_NCPUONLINE
++    Query[1] = HW_NCPUONLINE;
++#else
++    Query[1] = HW_NCPU;
++#endif
++
 +    current = 0;
 +    head = NULL;
 +    link = &head;
@@ -360,7 +365,7 @@ Index: qga/commands-posix.c
 +    error_propagate(errp, local_err);
 +    return NULL;
 +}
-+#endif // BSD_GUEST_AGENT
++#endif // CONFIG_BSD
 +
  int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
  {
@@ -368,11 +373,11 @@ Index: qga/commands-posix.c
      return -1;
  }
  
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
  void qmp_guest_set_user_password(const char *username,
                                   const char *password,
                                   bool crypted,
-@@ -2966,6 +3237,114 @@ void qmp_guest_set_user_password(const char *username,
+@@ -2966,6 +3242,114 @@ void qmp_guest_set_user_password(const char *username,
      error_setg(errp, QERR_UNSUPPORTED);
  }
  
@@ -482,16 +487,16 @@ Index: qga/commands-posix.c
 +        close(datafd[1]);
 +    }
 +}
-+#endif // BSD_GUEST_AGENT
++#endif // CONFIG_BSD
 +
  GuestMemoryBlockList *qmp_guest_get_memory_blocks(Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
-@@ -2989,12 +3368,258 @@ GuestMemoryBlockInfo *qmp_guest_get_memory_block_info(
+@@ -2989,12 +3373,258 @@ GuestMemoryBlockInfo *qmp_guest_get_memory_block_info(
  
  #if !defined(CONFIG_FSFREEZE)
  
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
  GuestFilesystemInfoList *qmp_guest_get_fsinfo(Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
@@ -741,20 +746,20 @@ Index: qga/commands-posix.c
 +    free_fs_mount_list(&mounts);
 +    return ret;
 +}
-+#endif // BSD_GUEST_AGENT
++#endif // CONFIG_BSD
 +
  GuestFsfreezeStatus qmp_guest_fsfreeze_status(Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
-@@ -3047,6 +3672,7 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3047,6 +3677,7 @@ GList *ga_command_blacklist_init(GList *blacklist)
  {
  #if !defined(__linux__)
      {
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
          const char *list[] = {
              "guest-suspend-disk", "guest-suspend-ram",
              "guest-suspend-hybrid", "guest-network-get-interfaces",
-@@ -3054,6 +3680,15 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3054,6 +3685,15 @@ GList *ga_command_blacklist_init(GList *blacklist)
              "guest-get-memory-blocks", "guest-set-memory-blocks",
              "guest-get-memory-block-size", "guest-get-memory-block-info",
              NULL};
@@ -766,15 +771,15 @@ Index: qga/commands-posix.c
 +            "guest-get-memory-blocks", "guest-set-memory-blocks",
 +            "guest-get-memory-block-size", "guest-get-memory-block-info",
 +            NULL};
-+#endif // BSD_GUEST_AGENT
++#endif // CONFIG_BSD
          char **p = (char **)list;
  
          while (*p) {
-@@ -3064,11 +3699,18 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3064,11 +3704,18 @@ GList *ga_command_blacklist_init(GList *blacklist)
  
  #if !defined(CONFIG_FSFREEZE)
      {
-+#ifndef BSD_GUEST_AGENT
++#ifndef CONFIG_BSD
          const char *list[] = {
              "guest-get-fsinfo", "guest-fsfreeze-status",
              "guest-fsfreeze-freeze", "guest-fsfreeze-freeze-list",
@@ -785,7 +790,7 @@ Index: qga/commands-posix.c
 +            "guest-fsfreeze-status",
 +            "guest-fsfreeze-freeze", "guest-fsfreeze-freeze-list",
 +            "guest-fsfreeze-thaw",  NULL};
-+#endif // BSD_GUEST_AGENT
++#endif // CONFIG_BSD
          char **p = (char **)list;
  
          while (*p) {

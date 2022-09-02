@@ -7,7 +7,7 @@ Index: qga/main.c
  #endif
  
  #ifndef _WIN32
-+#ifdef BSD_GUEST_AGENT
++#ifdef CONFIG_BSD
 +#define QGA_VIRTIO_PATH_DEFAULT "/dev/vtcon/org.qemu.guest_agent.0"
 +#define QGA_STATE_RELATIVE_DIR  "run"
 +#define QGA_SERIAL_PATH_DEFAULT "/dev/cua01"
@@ -23,7 +23,7 @@ Index: qga/main.c
      }
  
      if (config->method == NULL) {
-+#ifdef BSD_GUEST_AGENT
++#ifdef CONFIG_BSD
 +        config->method = g_strdup("isa-serial");
 +#else
          config->method = g_strdup("virtio-serial");
