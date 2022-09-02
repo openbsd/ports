@@ -6,7 +6,7 @@ Index: supervisor/skel/sample.conf
  
  [unix_http_server]
 -file=/tmp/supervisor.sock   ; the path to the socket file
-+file=${VARBASE}/run/supervisor/supervisor.sock   ; the path to the socket file
++file=${LOCALSTATEDIR}/run/supervisor/supervisor.sock   ; the path to the socket file
  ;chmod=0700                 ; socket file mode (default 0700)
  ;chown=nobody:nogroup       ; socket file uid:gid owner
  ;username=user              ; default is no username (open server)
@@ -15,12 +15,12 @@ Index: supervisor/skel/sample.conf
  
  [supervisord]
 -logfile=/tmp/supervisord.log ; main log file; default $CWD/supervisord.log
-+logfile=${VARBASE}/log/supervisord.log ; main log file; default $CWD/supervisord.log
++logfile=${LOCALSTATEDIR}/log/supervisord.log ; main log file; default $CWD/supervisord.log
  logfile_maxbytes=50MB        ; max main logfile bytes b4 rotation; default 50MB
  logfile_backups=10           ; # of main logfile backups; 0 means none, default 10
  loglevel=info                ; log level; default info; others: debug,warn,trace
 -pidfile=/tmp/supervisord.pid ; supervisord pidfile; default supervisord.pid
-+pidfile=${VARBASE}/run/supervisor/supervisord.pid ; supervisord pidfile; default supervisord.pid
++pidfile=${LOCALSTATEDIR}/run/supervisor/supervisord.pid ; supervisord pidfile; default supervisord.pid
  nodaemon=false               ; start in foreground if true; default false
  silent=false                 ; no logs to stdout if true; default false
  minfds=1024                  ; min. avail startup file descriptors; default 1024
@@ -29,7 +29,7 @@ Index: supervisor/skel/sample.conf
  
  [supervisorctl]
 -serverurl=unix:///tmp/supervisor.sock ; use a unix:// URL  for a unix socket
-+serverurl=unix://${VARBASE}/run/supervisor/supervisor.sock ; use a unix:// URL  for a unix socket
++serverurl=unix://${LOCALSTATEDIR}/run/supervisor/supervisor.sock ; use a unix:// URL  for a unix socket
  ;serverurl=http://127.0.0.1:9001 ; use an http:// url to specify an inet socket
  ;username=chris              ; should be same as in [*_http_server] if set
  ;password=123                ; should be same as in [*_http_server] if set

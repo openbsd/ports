@@ -1,23 +1,20 @@
-COMMENT=		system to monitor and control processes
+COMMENT=	system to monitor and control processes
 
-MODPY_EGG_VERSION =	4.2.1
-DISTNAME=		supervisor-${MODPY_EGG_VERSION}
-REVISION=		0
+MODPY_EGG_VERSION =	4.2.4
+DISTNAME=	supervisor-${MODPY_EGG_VERSION}
 
-CATEGORIES=		sysutils
+CATEGORIES=	sysutils
 
-HOMEPAGE=		http://supervisord.org/
+HOMEPAGE=	http://supervisord.org/
 
 # BSD-derived
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
-MODPY_PI =		Yes
+MODPY_PI =	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-MODPY_SETUPTOOLS=	Yes
-
-SUBST_VARS+=		VARBASE
+MODPY_PEP517=	setuptools
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/supervisor/skel/sample.conf
