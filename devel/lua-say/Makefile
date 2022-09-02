@@ -5,6 +5,8 @@ GH_ACCOUNT=	Olivine-Labs
 GH_PROJECT=	say
 GH_TAGNAME=	v1.4.1
 
+PKGNAME=	lua-say-${GH_TAGNAME:S/v//}
+
 MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
 # MIT
