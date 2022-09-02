@@ -1,6 +1,6 @@
 COMMENT=	full suite pictographic icons
 
-V =		6.1.2
+V =		6.2.0
 PKGNAME =	font-awesome-${V}
 DISTNAME =	fontawesome-free-${V}-desktop
 
