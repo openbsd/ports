@@ -4,6 +4,7 @@ GH_ACCOUNT=	sjvermeu
 GH_PROJECT=	cvechecker
 GH_TAGNAME=	cvechecker-4.0
 PKGNAME=	${GH_TAGNAME}
+REVISION=	0
 
 CATEGORIES=	security sysutils
 

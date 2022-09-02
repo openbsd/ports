@@ -1,7 +1,7 @@
 COMMENT =	cron-like daemon but reacting to filesystem events
 
 DISTNAME =	incron-0.5.10
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	sysutils
 

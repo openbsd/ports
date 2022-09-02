@@ -7,6 +7,7 @@ V=		2.2
 PKGNAME=	iucode-tool-$V
 DISTNAME=	iucode-tool_$V
 WRKDIST=	${WRKDIR}/${PKGNAME}
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.xz
 
