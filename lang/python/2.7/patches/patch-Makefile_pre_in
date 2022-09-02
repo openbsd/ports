@@ -1,15 +1,6 @@
 Index: Makefile.pre.in
 --- Makefile.pre.in.orig
 +++ Makefile.pre.in
-@@ -563,7 +563,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
- 
- SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
- $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)
--	$(INSTALL_DATA) $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
-+	cp $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
- 
- # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
- # minimal framework (not including the Lib directory and such) in the current
 @@ -1161,7 +1161,7 @@ libinstall:	build_all $(srcdir)/Lib/$(PLATDIR) $(srcdi
  		$(PYTHON_FOR_BUILD) -m lib2to3.pgen2.driver $(DESTDIR)$(LIBDEST)/lib2to3/PatternGrammar.txt
  
