@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -27,7 +27,7 @@ setup(name='visidata',
+@@ -28,7 +28,7 @@ setup(name='visidata',
        ],
        packages=['visidata',  'visidata.loaders', 'visidata.vendor', 'visidata.tests'],
        include_package_data=True,
