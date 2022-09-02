@@ -1,12 +1,16 @@
+disable backtrace for now. maybe possible to enable now that we have
+libexecinfo in base, but needs checking to make sure we don't end up
+with unresolved symbols.
+
 Index: numpy/core/setup_common.py
 --- numpy/core/setup_common.py.orig
 +++ numpy/core/setup_common.py
-@@ -108,7 +108,7 @@ OPTIONAL_STDFUNCS = ["expm1", "log1p", "acosh", "asinh
-         "rint", "trunc", "exp2", "log2", "hypot", "atan2", "pow",
-         "copysign", "nextafter", "ftello", "fseeko",
-         "strtoll", "strtoull", "cbrt", "strtold_l", "fallocate",
--        "backtrace", "madvise"]
-+        "madvise"]
+@@ -131,7 +131,7 @@ OPTIONAL_STDFUNCS = ["expm1", "log1p", "acosh", "asinh
+ 
+ OPTIONAL_LOCALE_FUNCS = ["strtold_l"]
+ OPTIONAL_FILE_FUNCS = ["ftello", "fseeko", "fallocate"]
+-OPTIONAL_MISC_FUNCS = ["backtrace", "madvise"]
++OPTIONAL_MISC_FUNCS = ["madvise"]
  
  
  OPTIONAL_HEADERS = [

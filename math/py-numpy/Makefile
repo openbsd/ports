@@ -1,10 +1,8 @@
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.19.5
-REVISION=		2
+MODPY_EGG_VERSION=	1.23.2
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-EXTRACT_SUFX=		.zip
 
 CATEGORIES=		math devel
 
@@ -40,7 +38,18 @@ LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
 			math/lapack
 WANTLIB+=		${MODFORTRAN_WANTLIB} blas cblas lapack
-MODPY_DISTUTILS_BUILDARGS= --fcompiler=gnu95
+MODPY_DISTUTILS_BUILDARGS+= --fcompiler=gnu95
+.endif
+
+# cpu optimizations (where supported) are runtime detected, but there's
+# some problem on i386 where they trigger segfaults in numpy's regression
+# tests, and in other programs using numpy (e.g. building makehuman).
+# tests look good on amd64 arm64 riscv64 as-is.
+# numpy's regressions tests result in segv on powerpc (and also did in
+# 1.19.5) but at lesat some normal runtime seems ok (makehuman builds).
+# https://github.com/numpy/numpy/issues/20799
+.if ${MACHINE_ARCH} == i386
+MODPY_DISTUTILS_BUILDARGS+= --disable-optimization
 .endif
 
 # Cython 0.28.* uses __attribute__((optimize("Os"))) which
