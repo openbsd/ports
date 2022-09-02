@@ -1,23 +1,14 @@
-COMMENT=	standalone version of argument parsing functions from GLIBC
+COMMENT=	standalone version of glibc's argument-parsing functions
 
-DISTNAME=	argp-standalone-1.3
-REVISION=	3
+GH_ACCOUNT=	argp-standalone
+GH_PROJECT=	argp-standalone
+GH_TAGNAME=	1.5.0
 
 CATEGORIES=	devel
 
-# GPL
+# LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=		https://www.lysator.liu.se/~nisse/misc/
-
-SEPARATE_BUILD=		Yes
-AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--disable-dependency-tracking
-CFLAGS+=		--std=gnu89
-
-do-install:
-	${INSTALL_DATA} ${WRKBUILD}/libargp.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/argp.h ${PREFIX}/include
+MODULES=	devel/meson
 
 .include <bsd.port.mk>

@@ -1,2 +1,2 @@
 include/argp.h
-lib/libargp.a
+@static-lib lib/libargp.a
