@@ -1,4 +1,3 @@
-@lib lib/libonigmo.so.${LIBonigmo_VERSION}
 share/examples/h2o/h2o_mruby/
 share/examples/h2o/h2o_mruby/h2o.conf
 share/examples/h2o/h2o_mruby/hello.rb

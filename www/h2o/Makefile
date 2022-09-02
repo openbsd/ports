@@ -2,14 +2,13 @@ COMMENT =	optimized HTTP server with support for HTTP/1.x and HTTP/2
 
 SHARED_LIBS +=  h2o-evloop           0.0
 SHARED_LIBS +=  h2o                  0.0
-SHARED_LIBS +=  onigmo               0.0      # 6.2
 
 CATEGORIES =	www
 
 GH_ACCOUNT =	h2o
 GH_PROJECT =	h2o
 GH_TAGNAME =	v2.2.6
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://h2o.examp1e.net/
 MAINTAINER =	Otto Moerbeek <otto@drijf.net>
@@ -44,19 +43,11 @@ MODULES +=		lang/ruby
 MODRUBY_RUNDEP =	No
 CONFIGURE_ARGS +=	-DWITH_MRUBY=ON
 
-# internal dep problem; "ninja: error: 'mruby/host/lib/libmruby.a',
-# needed by 'h2o', missing and no known rule to make it"
-USE_NINJA =		No
-
 pre-configure:
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
 .endif
 
 post-install:
-.if ${FLAVOR:Mmruby}
-	cd ${WRKBUILD}/mruby/host/mrbgems/mruby-onig-regexp; \
-	    ${INSTALL_DATA} onigmo-*/.libs/libonigmo.so.${LIBonigmo_VERSION} ${PREFIX}/lib/
-.endif
 	cd ${WRKSRC}/doc; pax -rw [a-z]* ${PREFIX}/share/doc/h2o/
 	mv ${PREFIX}/share/doc/h2o/examples ${PREFIX}/share/examples/h2o
 	${INSTALL_DATA} ${FILESDIR}/h2o.conf ${PREFIX}/share/examples/h2o/
