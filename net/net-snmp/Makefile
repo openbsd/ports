@@ -6,7 +6,7 @@ DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-REVISION-main=	1
+REVISION-main=	2
 
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib

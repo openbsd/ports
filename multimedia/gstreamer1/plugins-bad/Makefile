@@ -2,6 +2,7 @@ COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS += gsturidownloader-1.0      5.0 # 0.2003.0
 SHARED_LIBS += gstadaptivedemux-1.0      4.0 # 0.2003.0

@@ -8,6 +8,7 @@ WRKDIST=	${WRKDIR}/miniupnp-${GH_COMMIT}/miniupnpd
 ##
 
 DISTNAME=	miniupnpd-2.3.0pl20220601
+REVISION=	0
 
 # uses pledge()
 WANTLIB += c crypto kvm ssl

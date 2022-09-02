@@ -8,6 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/$V/
 DISTFILES=	warzone2100-${V}{warzone2100_src}${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://wz2100.net/
 

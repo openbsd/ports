@@ -13,6 +13,7 @@ HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	9.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 ipcclientcerts
+REVISION =	0
 
 CATEGORIES =	www
 

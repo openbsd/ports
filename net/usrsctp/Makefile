@@ -3,7 +3,7 @@ GH_ACCOUNT =		sctplab
 GH_PROJECT =		usrsctp
 GH_TAGNAME =		0.9.5.0
 CATEGORIES =		net
-REVISION =		3
+REVISION =		4
 
 MASTER_SITES0 =		https://github.com/sctplab/usrsctp/commit/
 PATCHFILES =		usrsctplib-link-pthread-{}40e35a7.patch:0 \
