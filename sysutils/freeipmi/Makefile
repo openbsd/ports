@@ -1,7 +1,6 @@
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-DISTNAME=	freeipmi-1.6.9
-REVISION=	0
+DISTNAME=	freeipmi-1.6.10
 
 SHARED_LIBS +=  freeipmi             7.0      # 19.3
 SHARED_LIBS +=  ipmiconsole          3.1      # 5.5
@@ -28,13 +27,15 @@ LIB_DEPENDS=	security/libgcrypt \
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 
-# modified m4 files
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 LIBTOOL_FLAGS=	--tag=disable-static
+
+# XXX fudge around the timestamp/date in the supplied doc/version-faq.texi file
+# to avoid running texinfo; the version in base doesn't cope with the input files
+MAKE_ENV=	TZ=GMT+2
 
 pre-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${SYSCONFDIR}/freeipmi
