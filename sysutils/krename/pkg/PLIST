@@ -1,15 +1,9 @@
 @pkgpath sysutils/krename-kde4
 @bin bin/krename
 share/applications/org.kde.krename.desktop
+share/icons/hicolor/16x16/apps/krename.png
 share/icons/hicolor/32x32/apps/krename.png
 share/icons/hicolor/48x48/apps/krename.png
-share/icons/locolor/
-share/icons/locolor/16x16/
-share/icons/locolor/16x16/apps/
-share/icons/locolor/16x16/apps/krename.png
-share/icons/locolor/32x32/
-share/icons/locolor/32x32/apps/
-share/icons/locolor/32x32/apps/krename.png
 share/kservices5/ServiceMenus/
 share/kservices5/ServiceMenus/krename_all_nonrec.desktop
 share/kservices5/ServiceMenus/krename_dir_rec.desktop
@@ -24,12 +18,14 @@ share/locale/de/LC_MESSAGES/krename.mo
 share/locale/el/LC_MESSAGES/krename.mo
 share/locale/en_GB/LC_MESSAGES/krename.mo
 share/locale/es/LC_MESSAGES/krename.mo
+share/locale/et/LC_MESSAGES/krename.mo
 share/locale/eu/LC_MESSAGES/krename.mo
 share/locale/fi/LC_MESSAGES/krename.mo
 share/locale/fr/LC_MESSAGES/krename.mo
 share/locale/gl/LC_MESSAGES/krename.mo
 share/locale/hu/LC_MESSAGES/krename.mo
 share/locale/ia/LC_MESSAGES/krename.mo
+share/locale/id/LC_MESSAGES/krename.mo
 share/locale/it/LC_MESSAGES/krename.mo
 share/locale/ja/LC_MESSAGES/krename.mo
 share/locale/ko/LC_MESSAGES/krename.mo
