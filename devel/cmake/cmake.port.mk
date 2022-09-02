@@ -16,26 +16,22 @@ MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
-BUILD_DEPENDS += devel/ninja>=1.5.1
-NINJA ?= ninja
-NINJA_FLAGS ?= -v -j ${MAKE_JOBS}
+BUILD_DEPENDS += devel/ninja
 .elif ${USE_NINJA:L} == "samurai"
 BUILD_DEPENDS += devel/samurai
-NINJA ?= samu
-NINJA_FLAGS ?= -v -j ${MAKE_JOBS}
-CONFIGURE_ARGS += -DCMAKE_MAKE_PROGRAM=${NINJA}
+CONFIGURE_ARGS += -DCMAKE_MAKE_PROGRAM=samu
 .endif
 
 .if ${USE_NINJA:L} == "yes" || ${USE_NINJA:L} == "samurai"
 _MODCMAKE_GEN = Ninja
 MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	${NINJA} ${NINJA_FLAGS} ${ALL_TARGET}
+	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
 
 MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	${FAKE_SETUP} ${NINJA} ${NINJA_FLAGS} ${FAKE_TARGET}
+	${FAKE_SETUP} cmake --install ${WRKBUILD}
 
 MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} \
-	${NINJA} ${NINJA_FLAGS} ${TEST_FLAGS} ${TEST_TARGET}
+	ctest ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
 
 .if !target(do-build)
 do-build:
@@ -99,7 +95,6 @@ CONFIGURE_ENV +=	MODTK_VERSION=${MODTK_VERSION} \
 			MODTK_LIB=${MODTK_LIB}
 .endif
 
-
 .if ! empty(MODCMAKE_LDFLAGS)
 # https://cmake.org/cmake/help/latest/envvar/LDFLAGS.html
 # Will only be used by CMake on the first configuration to determine the
@@ -120,9 +115,12 @@ MODCMAKE_configure =	cd ${WRKBUILD} && ${SETENV} \
 	CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
+		-B ${WRKBUILD} \
+		-S ${WRKSRC} \
+		-G ${_MODCMAKE_GEN} \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
 		-DCMAKE_SUPPRESS_REGENERATION=ON \
-		-G ${_MODCMAKE_GEN} ${CONFIGURE_ARGS} ${WRKSRC}
+		${CONFIGURE_ARGS}
 
 .if !defined(CONFIGURE_ARGS) || ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
 .  if ${MODCMAKE_DEBUG:L} == "yes"
@@ -136,11 +134,6 @@ MODCMAKE_BUILD_SUFFIX =	-release.cmake
 SUBST_VARS +=	MODCMAKE_BUILD_SUFFIX
 
 SEPARATE_BUILD ?=	Yes
-
-TEST_TARGET ?=	test
-
-MODCMAKE_WANTCOLOR ?= No
-MODCMAKE_VERBOSE ?= Yes
 
 # https://cmake.org/cmake/help/latest/command/enable_language.html
 # 3.23: Swift OBJCXX OBJC ISPC HIP Fortran CXX CUDA C
@@ -163,10 +156,14 @@ CONFIGURE_ARGS :=	-DCMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line \
 CONFIGURE_ENV += MODCMAKE_PORT_BUILD=yes
 MAKE_ENV += MODCMAKE_PORT_BUILD=yes
 
+MODCMAKE_WANTCOLOR ?= No
+
 .if ${MODCMAKE_WANTCOLOR:L} == "yes" && defined(TERM)
 MAKE_ENV += TERM=${TERM}
 .endif
 
+MODCMAKE_VERBOSE ?= Yes
+
 .if ${MODCMAKE_VERBOSE:L} == "yes"
-MAKE_ENV += VERBOSE=1
+#_MAKE_VERBOSE = --verbose
 .endif
