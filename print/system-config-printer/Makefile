@@ -16,6 +16,7 @@ MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/gettext,-tools \
+			print/cups,-libs \
 			textproc/xmlto
 
 # desktop-file-install(1)
