@@ -1,10 +1,10 @@
 # versions are in sync with FNA versions
-V =		22.01
+V =		22.08
 COMMENT =	XAudio reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	faudio-${V}
 
-SHARED_LIBS =	FAudio		3.0	# 21.08
+SHARED_LIBS =	FAudio		4.0	# 22.08
 
 CATEGORIES =	audio
 HOMEPAGE =	https://github.com/FNA-XNA/FAudio
@@ -13,8 +13,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL2 glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB +=	gstreamer-1.0 gsttag-1.0 intl
+WANTLIB +=	SDL2
 
 MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
 EXTRACT_SUFX =	.zip
@@ -23,14 +22,11 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	devel/sdl2 \
-		multimedia/gstreamer1/core \
-		multimedia/gstreamer1/plugins-base
+LIB_DEPENDS =	devel/sdl2
 
 USE_GMAKE =	Yes
 
-CONFIGURE_ARGS +=	-DBUILD_TESTS=ON \
-			-DGSTREAMER=ON
+CONFIGURE_ARGS +=	-DBUILD_TESTS=ON
 
 WRKDIST =		${WRKDIR}/FNA/lib/FAudio
 

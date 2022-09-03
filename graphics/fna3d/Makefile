@@ -1,5 +1,5 @@
 # versions are in sync with FNA versions
-V =		22.01
+V =		22.08
 COMMENT =	3D graphics library for FNA
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna3d-${V}
@@ -13,7 +13,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	SDL2 mojoshader
+WANTLIB +=	SDL2
 
 MASTER_SITES =	https://github.com/FNA-XNA/FNA/releases/download/${V}/
 EXTRACT_SUFX =	.zip
@@ -24,8 +24,7 @@ COMPILER_LANGS = 	c
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	devel/sdl2 \
-		graphics/mojoshader
+LIB_DEPENDS =	devel/sdl2
 
 USE_GMAKE =	Yes
 

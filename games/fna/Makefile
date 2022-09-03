@@ -1,4 +1,4 @@
-V =		22.01
+V =		22.08
 COMMENT =	XNA4 reimplementation for open platforms
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna-${V}
@@ -27,8 +27,7 @@ EXTRACT_SUFX =	.zip
 MODULES =	lang/mono
 RUN_DEPENDS =	audio/faudio \
 		devel/sdl2-image \
-		graphics/fna3d \
-		graphics/mojoshader
+		graphics/fna3d
 WRKDIST =	${WRKDIR}/FNA
 NO_TEST =	Yes
 ALL_TARGET =	release
