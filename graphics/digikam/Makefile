@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		7.7.0
+V =		7.8.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
@@ -15,8 +15,8 @@ HOMEPAGE =	https://www.digikam.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  digikamcore               4.0 # 7.3
-SHARED_LIBS +=  digikamdatabase           5.0 # 7.3
+SHARED_LIBS +=  digikamcore               5.0 # 7.3
+SHARED_LIBS +=  digikamdatabase           6.0 # 7.3
 SHARED_LIBS +=  digikamgui                4.0 # 7.3
 
 # LGPL, GPL and many others
@@ -36,11 +36,14 @@ WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Sql Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns SM X11
 WANTLIB += Xext avcodec avdevice avfilter avformat avutil c exiv2
-WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port intl jasper
-WANTLIB += jpeg lcms2 lensfun lqr-1 m marblewidget-qt5 opencv_calib3d
-WANTLIB += opencv_core opencv_dnn opencv_features2d opencv_flann
-WANTLIB += opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect
-WANTLIB += png swscale tiff usb-1.0 x265 xml2 xslt z
+WANTLIB += expat exslt glib-2.0 gphoto2 gphoto2_port heif intl
+WANTLIB += jasper jpeg lcms2 lensfun lqr-1 m marblewidget-qt5
+WANTLIB += opencv_calib3d opencv_core opencv_dnn opencv_features2d
+WANTLIB += opencv_flann opencv_imgcodecs opencv_imgproc opencv_ml
+WANTLIB += opencv_objdetect png swscale tiff usb-1.0 x265 xml2
+WANTLIB += xslt z
+
+WANTLIB += lib/qt5/QtAV lib/qt5/QtAVWidgets
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/digikam/${V}/}
 
@@ -56,13 +59,11 @@ BUILD_DEPENDS =	devel/bison \
 		devel/kf5/kdoctools \
 		math/eigen3 \
 		misc/shared-desktop-ontologies \
-		multimedia/qtav \
 		x11/qt5/qtwebview
 
 RUN_DEPENDS =	databases/sqlite3 \
 		devel/desktop-file-utils \
 		devel/kf5/kdoctools \
-		multimedia/qtav \
 		x11/gtk+3,-guic \
 		x11/qt5/qtwebview
 
@@ -98,6 +99,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		graphics/opencv \
 		graphics/png \
 		graphics/tiff \
+		multimedia/qtav \
 		multimedia/x265 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
@@ -113,12 +115,17 @@ LIB_DEPENDS =	devel/kf5/kauth \
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
-			-DENABLE_QWEBENGINE=ON
+			-DENABLE_KFILEMETADATASUPPORT=ON \
+			-DENABLE_AKONADICONTACTSUPPORT=ON \
+			-DENABLE_INTERNALMYSQL=OFF \
+			-DENABLE_MEDIAPLAYER=ON
 
 .if ${FLAVOR:Mmysql}
 BUILD_DEPENDS +=	databases/mariadb
 RUN_DEPENDS +=		databases/mariadb
 CONFIGURE_ARGS +=	-DENABLE_MYSQLSUPPORT=ON
+.else
+CONFIGURE_ARGS +=	-DENABLE_MYSQLSUPPORT=OFF
 .endif
 
 # XXX W^X binary outside wxallowed

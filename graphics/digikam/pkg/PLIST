@@ -252,6 +252,7 @@ lib/qt5/plugins/digikam/generic/
 @so lib/qt5/plugins/digikam/generic/Generic_SmugMug_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_TimeAdjust_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Twitter_Plugin.so
+@so lib/qt5/plugins/digikam/generic/Generic_VideoSlideShow_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
 @so lib/qt5/plugins/digikam/generic/Generic_iNaturalist_Plugin.so
 lib/qt5/plugins/digikam/rawimport/
