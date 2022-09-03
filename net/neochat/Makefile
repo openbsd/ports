@@ -1,5 +1,5 @@
 COMMENT =	client for Matrix chat
-VERSION =	22.04
+VERSION =	22.06
 DISTNAME =	neochat-${VERSION}
 
 CATEGORIES=	net
