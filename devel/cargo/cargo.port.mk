@@ -144,6 +144,16 @@ MODCARGO_post-extract += \
 	sed -i -e 's,find_library("lua5.2"),find_library("lua52"),' \
 		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build.rs ;
 
+.    elif "${_cratename}" == "lzma-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/xz-[0-9]* ;
+
+.    elif "${_cratename}" == "openssl-src"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/openssl ;
+
 .    elif "${_cratename}" == "openssl-sys"
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Patching ${_cratename}-${_cratever} for supporting -current" ; \
@@ -179,6 +189,13 @@ MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/{src,makefile.cargo} ;
 
+.    elif "${_cratename}" == "zstd-sys"
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
+	rm -rf -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/zstd ; \
+	${ECHO_MSG} "[modcargo] Patching ${_cratename}-${_cratever} to use archivers/zstd" ; \
+	sed -i -e 's,^fn main() {,fn main() { println!("cargo:rustc-link-lib=zstd"); return;,' \
+		${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/build.rs ;
 .    endif
 .  endfor
 .endif
