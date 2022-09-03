@@ -1,6 +1,6 @@
 PKG_ARCH =		*
 
-V =			3.000
+V =			4.000
 COMMENT =		New Tai Lue Unicode characters
 DISTNAME =		DaiBannaSIL-$V
 PKGNAME =		dai-banna-$V

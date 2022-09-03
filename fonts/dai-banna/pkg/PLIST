@@ -5,11 +5,13 @@ share/doc/dai-banna/OFL.txt
 share/doc/dai-banna/README.txt
 share/fonts/
 @fontdir share/fonts/dai-banna/
-share/fonts/dai-banna/DBSILBB.ttf
-share/fonts/dai-banna/DBSILBC.ttf
-share/fonts/dai-banna/DBSILBO.ttf
-share/fonts/dai-banna/DBSILBR.ttf
-share/fonts/dai-banna/DBSILLB.ttf
-share/fonts/dai-banna/DBSILLC.ttf
-share/fonts/dai-banna/DBSILLO.ttf
-share/fonts/dai-banna/DBSILLR.ttf
+share/fonts/dai-banna/DaiBannaSIL-Bold.ttf
+share/fonts/dai-banna/DaiBannaSIL-BoldItalic.ttf
+share/fonts/dai-banna/DaiBannaSIL-Italic.ttf
+share/fonts/dai-banna/DaiBannaSIL-Light.ttf
+share/fonts/dai-banna/DaiBannaSIL-LightItalic.ttf
+share/fonts/dai-banna/DaiBannaSIL-Medium.ttf
+share/fonts/dai-banna/DaiBannaSIL-MediumItalic.ttf
+share/fonts/dai-banna/DaiBannaSIL-Regular.ttf
+share/fonts/dai-banna/DaiBannaSIL-SemiBold.ttf
+share/fonts/dai-banna/DaiBannaSIL-SemiBoldItalic.ttf
