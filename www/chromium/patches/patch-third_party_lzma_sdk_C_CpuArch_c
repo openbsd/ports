@@ -1,0 +1,17 @@
+Index: third_party/lzma_sdk/C/CpuArch.c
+--- third_party/lzma_sdk/C/CpuArch.c.orig
++++ third_party/lzma_sdk/C/CpuArch.c
+@@ -415,11 +415,13 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
+ 
+ #else // __APPLE__
+ 
++#if !defined(__OpenBSD__) && !defined(__FreeBSD__)
+ #include <sys/auxv.h>
+ 
+ #if !defined(ARMV8_OS_FUCHSIA)
+ #define USE_HWCAP
+ #endif // !defined(ARMV8_OS_FUCHSIA)
++#endif
+ 
+ #ifdef USE_HWCAP
+ 
