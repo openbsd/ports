@@ -12,6 +12,7 @@
      SUBDIR += mupen64plus
      SUBDIR += python3
      SUBDIR += qt5
+     SUBDIR += qt6
      SUBDIR += tor-browser
      SUBDIR += xfce
      SUBDIR += zyn-fusion
