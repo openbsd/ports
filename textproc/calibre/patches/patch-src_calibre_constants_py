@@ -16,7 +16,7 @@ Index: src/calibre/constants.py
  ishaiku = 'haiku1' in _plat
  islinux   = not(iswindows or ismacos or isbsd or ishaiku)
  isfrozen  = hasattr(sys, 'frozen')
-@@ -256,7 +257,7 @@ class ExtensionsImporter:
+@@ -260,7 +261,7 @@ class ExtensionsImporter:
              extra = ('winutil', 'wpd', 'winfonts', 'winsapi')
          elif ismacos:
              extra = ('usbobserver', 'cocoa', 'libusb', 'libmtp')

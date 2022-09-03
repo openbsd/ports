@@ -1,6 +1,6 @@
 COMMENT =		ebook management application
 
-V =			5.43.0
+V =			5.44.0
 DISTNAME =		calibre-$V
 
 CATEGORIES =		textproc
@@ -15,7 +15,8 @@ WANTLIB += GL Qt5Core Qt5DBus Qt5Gui Qt5Widgets crypto fontconfig
 WANTLIB += freetype glib-2.0 gthread-2.0 hunspell-1.7 hyphen icudata
 WANTLIB += icui18n icuio icuuc intl m podofo stemmer z
 
-MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v${V}/
+MASTER_SITES =	https://download.calibre-ebook.com/$V/
+PORTROACH =	site:https://github.com/kovidgoyal/calibre/archive/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =	lang/python \

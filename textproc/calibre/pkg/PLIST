@@ -3843,6 +3843,7 @@ share/calibre/recipes/business_insider.png
 share/calibre/recipes/business_insider.recipe
 share/calibre/recipes/business_standard.png
 share/calibre/recipes/business_standard.recipe
+share/calibre/recipes/business_standard_print_edition.recipe
 share/calibre/recipes/business_today.recipe
 share/calibre/recipes/businessworldin.png
 share/calibre/recipes/businessworldin.recipe
@@ -5171,6 +5172,7 @@ share/calibre/recipes/nationalreviewonline.recipe
 share/calibre/recipes/nature.recipe
 share/calibre/recipes/nauka_w_polsce.png
 share/calibre/recipes/nauka_w_polsce.recipe
+share/calibre/recipes/nautilus.recipe
 share/calibre/recipes/navalny.png
 share/calibre/recipes/navalny.recipe
 share/calibre/recipes/navy_times.recipe
@@ -5524,6 +5526,7 @@ share/calibre/recipes/rbc_ru.recipe
 share/calibre/recipes/rds.png
 share/calibre/recipes/rds.recipe
 share/calibre/recipes/readers_digest.recipe
+share/calibre/recipes/readersdigest_thehealthy.recipe
 share/calibre/recipes/readitlater.png
 share/calibre/recipes/readitlater.recipe
 share/calibre/recipes/real_clear.recipe
@@ -5871,6 +5874,7 @@ share/calibre/recipes/theecocolapse.png
 share/calibre/recipes/theecocolapse.recipe
 share/calibre/recipes/theeconomictimes_india.png
 share/calibre/recipes/theeconomictimes_india.recipe
+share/calibre/recipes/theeconomictimes_india_print_edition.recipe
 share/calibre/recipes/theluminouslandscape.png
 share/calibre/recipes/theluminouslandscape.recipe
 share/calibre/recipes/themarketticker.png
