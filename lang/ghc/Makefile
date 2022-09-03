@@ -9,7 +9,7 @@ DPB_PROPERTIES =	parallel
 NO_CCACHE =		Yes
 
 GHC_VERSION =		9.2.4
-REVISION =		0
+REVISION =		1
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
@@ -133,7 +133,7 @@ post-extract:
 	mkdir -p System/OpenBSD && \
 	install -m 644 ${FILESDIR}/Process.hsc System/OpenBSD
 	chmod 644 ${WRKDIR}/ghc-*-shlibs-*/lib*.so* # XXX
-	cp /usr/lib/libc.so.96.1 ${WRKDIR}/ghc-*-shlibs-*/ # XXX
+	-cp /usr/lib/libc.so.96.1 ${WRKDIR}/ghc-*-shlibs-*/ # XXX
 
 BOOTSTRAP_SHLIBS =	${WRKDIR}/ghc-${BIN_VER}-shlibs-${MACHINE_ARCH}
 
