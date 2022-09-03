@@ -4,7 +4,7 @@ GH_ACCOUNT =	luakit
 GH_PROJECT =	luakit
 # used in MAKE_FLAGS
 GH_TAGNAME =	2.3.1
-REVISION =	0
+REVISION =	1
 
 EPOCH =		1
 

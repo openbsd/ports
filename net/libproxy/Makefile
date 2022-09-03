@@ -9,8 +9,8 @@ SUBST_VARS=		GH_TAGNAME
 PKGNAME-main=		${DISTNAME}
 PKGNAME-webkit=		${GH_PROJECT}-webkit-${GH_TAGNAME}
 
-REVISION-main=		0
-REVISION-webkit=	0
+REVISION-main=		1
+REVISION-webkit=	1
 
 CATEGORIES=		net
 

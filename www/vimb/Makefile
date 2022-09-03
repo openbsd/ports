@@ -3,7 +3,7 @@ COMMENT =	modal webkit-based browser inspired by vim
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
 GH_TAGNAME =	3.6.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www x11
 

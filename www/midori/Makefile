@@ -3,7 +3,7 @@ COMMENT =	lightweight web browser
 V =	9.0
 DISTNAME =	midori-v${V}
 PKGNAME =	midori-${V}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>

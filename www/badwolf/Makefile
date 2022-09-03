@@ -1,6 +1,6 @@
 COMMENT =	minimalist and privacy-oriented WebKitGTK+ browser
 DISTNAME =	badwolf-1.2.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
 HOMEPAGE =	https://hacktivis.me/projects/badwolf

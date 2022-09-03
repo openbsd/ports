@@ -3,9 +3,9 @@ COMMENT-media =	wxMediaCtrl class for wxWidgets
 COMMENT-webkit = wxWebView class for wxWidgets
 
 V =		3.0.5.1
-REVISION-main =	2
-REVISION-media = 0
-REVISION-webkit = 1
+REVISION-main =	3
+REVISION-media = 1
+REVISION-webkit = 2
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}

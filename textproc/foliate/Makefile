@@ -6,6 +6,7 @@ COMMENT=		simple and modern GTK eBook viewer
 GH_ACCOUNT=		johnfactotum
 GH_PROJECT=		foliate
 GH_TAGNAME=		2.6.4
+REVISION=		0
 
 CATEGORIES=		textproc graphics
 

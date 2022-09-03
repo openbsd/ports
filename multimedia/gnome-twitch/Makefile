@@ -6,7 +6,7 @@ CATEGORIES =	multimedia games x11
 GH_ACCOUNT =	vinszent
 GH_PROJECT =	gnome-twitch
 GH_TAGNAME =	v0.4.2
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://gnome-twitch.vinszent.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

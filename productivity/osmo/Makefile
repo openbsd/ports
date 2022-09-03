@@ -2,7 +2,7 @@ COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.4.4
 CATEGORIES=	productivity
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://clayo.org/osmo/
 

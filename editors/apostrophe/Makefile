@@ -5,6 +5,7 @@ GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
+REVISION=		0
 
 CATEGORIES=		editors
 

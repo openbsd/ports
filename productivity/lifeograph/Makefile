@@ -6,7 +6,7 @@ HOMEPAGE=	http://lifeograph.sourceforge.net
 
 V=		2.0.2
 DISTNAME=	lifeograph-${V}
-REVISION=	0
+REVISION=	1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
