@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1424 2022/08/29 18:04:21 matthieu Exp $
+# $OpenBSD: Quirks.pm,v 1.1425 2022/09/03 07:52:28 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -741,6 +741,7 @@ my $stem_extensions = {
 	'py-certifi' => 'py3-certifi',
 	'py-ecdsa' => 'py3-ecdsa',
 	'py-virtualenv' => 'py3-virtualenv',
+	'webkitgtk4' => 'webkitgtk40',
 };
 
 my $obsolete_reason = {};
