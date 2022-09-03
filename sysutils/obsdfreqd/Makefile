@@ -18,7 +18,7 @@ WANTLIB +=		c m
 MASTER_SITES =		https://tildegit.org/solene/obsdfreqd/archive/
 
 DISTFILES =		obsdfreqd-{}${V}${EXTRACT_SUFX}
-WRKSRC =		${WRKDIR}/obsdfreqd
+WRKDIST =		${WRKDIR}/obsdfreqd
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
