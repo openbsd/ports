@@ -6,7 +6,7 @@ CATEGORIES =		devel
 
 V =			3.10.1
 PV =			20160331
-REVISION =		19
+REVISION =		20
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 
@@ -16,8 +16,6 @@ PATCH_DIST_STRIP =	-p1
 PATCHFILES =		valgrind-${V}-openbsd-${PV}.patch:0
 
 HOMEPAGE =		http://www.valgrind.org/
-
-MAINTAINER =		Masao Uebayashi <uebayasi@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
