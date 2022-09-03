@@ -1,9 +1,8 @@
 COMMENT = 	C graph library
-V =		0.9.5
+V =		0.9.9
 DISTNAME =	igraph-$V
-REVISION =	0
 
-SHARED_LIBS =	igraph 0.0	# 0.0
+SHARED_LIBS =	igraph 1.0	# 0.0
 
 CATEGORIES =	math
 
@@ -31,7 +30,8 @@ LIB_DEPENDS = 	devel/glpk \
 # those are only needed to regenerate parsers in the development version
 # The release tarball doesn't even ship those .y/.l files
 CONFIGURE_ARGS += 	-DBUILD_SHARED_LIBS=ON \
-    			-DIGRAPH_ENABLE_TLS=ON
+    			-DIGRAPH_ENABLE_TLS=ON \
+    			-DIGRAPH_ENABLE_LTO=ON
 
 DEBUG_PACKAGES = 	${BUILD_PACKAGES}
 .include <bsd.port.mk>

@@ -1,7 +1,16 @@
 Index: etc/cmake/dependencies.cmake
 --- etc/cmake/dependencies.cmake.orig
 +++ etc/cmake/dependencies.cmake
-@@ -148,6 +148,7 @@ macro(find_dependencies)
+@@ -25,7 +25,7 @@ macro(find_dependencies)
+ 
+   # Declare dependencies
+   set(REQUIRED_DEPENDENCIES "")
+-  set(OPTIONAL_DEPENDENCIES FLEX BISON OpenMP)
++  set(OPTIONAL_DEPENDENCIES FLEX OpenMP)
+   set(VENDORED_DEPENDENCIES "")
+ 
+   # Declare minimum supported version for some dependencies
+@@ -156,6 +156,7 @@ macro(find_dependencies)
    endif()
  
    if(NEED_LINKING_AGAINST_LIBM)
