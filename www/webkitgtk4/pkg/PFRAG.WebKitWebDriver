@@ -1,0 +1,2 @@
+@conflict webkitgtk4-*
+@bin bin/WebKitWebDriver

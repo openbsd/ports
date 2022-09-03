@@ -582,6 +582,8 @@
      SUBDIR += wbox
      SUBDIR += webalizer
      SUBDIR += webkitgtk4
+     SUBDIR += webkitgtk4,webkitgtk41
+     SUBDIR += webkitgtk4,webkitgtk50
      SUBDIR += woob
      SUBDIR += wp-cli
      SUBDIR += wslay

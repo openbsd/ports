@@ -9,15 +9,14 @@ BROKEN-arm =		JavaScriptCore/runtime/MachineContext.h, various sigcontext-relate
 
 PORTROACH =		limitw:1,even
 
-COMMENT =		GTK+ port of the WebKit rendering engine
+COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
 V =			2.36.7
 DISTNAME =		webkitgtk-${V}
-PKGNAME =		webkitgtk4-${V}
-REVISION =		1
+PKGNAME =		webkitgtk${API:S/.//}-${V}
+FULLPKGNAME =		${PKGNAME}
 
 EXTRACT_SUFX =		.tar.xz
-API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
@@ -35,13 +34,13 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xcomposite Xdamage Xrender
 WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant-2 fontconfig
-WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += freetype gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu
+WANTLIB += gsttag-1.0 gstvideo-1.0 harfbuzz harfbuzz-icu
 WANTLIB += hyphen icudata icui18n icuuc intl jpeg lcms2 m notify
-WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 soup-2.4
-WANTLIB += sqlite3 tasn1 webp webpdemux woff2dec xml2 xslt z
+WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 sqlite3
+WANTLIB += tasn1 webp webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		https://webkitgtk.org/releases/
 
@@ -72,21 +71,18 @@ RUN_DEPENDS =		geo/geoclue2 \
 LIB_DEPENDS =		archivers/woff2 \
 			devel/harfbuzz,-icu \
 			devel/libnotify \
-			devel/libsoup \
 			graphics/libwebp \
 			graphics/openjp2 \
 			multimedia/gstreamer1/plugins-base \
 			textproc/enchant2 \
 			textproc/hyphen \
 			textproc/libxslt \
-			x11/gnome/libsecret \
-			x11/gtk+3
+			x11/gnome/libsecret
 
 CONFIGURE_ENV =		WK_USE_CCACHE=NO
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DENABLE_MINIBROWSER=ON \
-			-DENABLE_JOURNALD_LOG=OFF \
-			-DUSE_SOUP2=ON
+			-DENABLE_JOURNALD_LOG=OFF
 
 # XXX broken at run time
 #CONFIGURE_ARGS +=	-DUSE_SYSTEM_MALLOC=ON
@@ -142,11 +138,47 @@ DPB_PROPERTIES =       lonesome
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
+FLAVORS =		webkitgtk41 webkitgtk50
+FLAVOR ?=
+
+.if ${FLAVOR:Mwebkitgtk41}
+API =			4.1
+WANTLIB += gdk-3 gtk-3 soup-3.0
+LIB_DEPENDS +=		devel/libsoup3 \
+			x11/gtk+3
+CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF
+PKG_ARGS +=		-DWebKitWebDriver=0
+.elif ${FLAVOR:Mwebkitgtk50}
+API =			5.0
+WANTLIB += graphene-1.0 gtk-4 soup-3.0
+LIB_DEPENDS +=		devel/libsoup3 \
+			x11/gtk+4
+CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
+			-DUSE_GTK4=ON
+# only include WebKitWebDriver for the more recent version to prevent conflict;
+# could be revisited by using MULTI_PACKAGES but it's not worth the complexity;
+# see post-install
+PKG_ARGS +=		-DWebKitWebDriver=1
+.else
+API =			4.0
+REVISION =		2
+WANTLIB += gdk-3 gtk-3 soup-2.4
+LIB_DEPENDS +=		devel/libsoup \
+			x11/gtk+3
+CONFIGURE_ARGS +=	-DUSE_SOUP2=ON
+PKG_ARGS +=		-DWebKitWebDriver=0
+.endif
+
 post-extract:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake
+
+.if empty(FLAVOR) || ${FLAVOR:Mwebkitgtk41}
+post-install:
+	rm ${PREFIX}/bin/WebKitWebDriver
+.endif
 
 .include <bsd.port.mk>
