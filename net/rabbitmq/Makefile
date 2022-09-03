@@ -1,10 +1,9 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		3.10.6
+V =		3.10.7
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://www.rabbitmq.com/
 
@@ -66,8 +65,10 @@ post-install:
 	    ${INSTALL_DATA} *conf*example ${PREFIX}/share/examples/rabbitmq
 	mv ${PREFIX}/lib/rabbitmq/{INSTALL,LICENSE*} \
 	    ${PREFIX}/share/doc/rabbitmq
-	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rabbitmq.conf \
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rabbitmq-env.conf \
 	    ${PREFIX}/share/examples/rabbitmq/rabbitmq-env.conf
+	${SUBST_CMD} -m 0644 -c ${FILESDIR}/rabbitmq.conf \
+	    ${PREFIX}/share/examples/rabbitmq/rabbitmq.conf
 	sed -i 's,/usr/lib/rabbitmq/bin/rabbitmqctl,${PREFIX}/bin/rabbitmqctl,g' \
 	    ${PREFIX}/autocomplete/bash_autocomplete.sh
 	mv ${PREFIX}/autocomplete/bash_autocomplete.sh \
