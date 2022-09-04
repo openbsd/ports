@@ -1,0 +1,4 @@
+libshumate is a GTK widget displaying interactive maps. Various map sources can
+be used together with the possibility to draw custom overlays, markers and lines
+on top of the maps. Bindings to other languages are provided using GObject
+Introspection.
