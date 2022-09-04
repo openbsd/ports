@@ -143,6 +143,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mwebkitgtk41}
 API =			4.1
+REVISION =		0
 WANTLIB += gdk-3 gtk-3 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+3
@@ -150,6 +151,7 @@ CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF
 PKG_ARGS +=		-DWebKitWebDriver=0
 .elif ${FLAVOR:Mwebkitgtk50}
 API =			5.0
+REVISION =		0
 WANTLIB += graphene-1.0 gtk-4 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+4
@@ -161,7 +163,7 @@ CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
 PKG_ARGS +=		-DWebKitWebDriver=1
 .else
 API =			4.0
-REVISION =		2
+REVISION =		3
 WANTLIB += gdk-3 gtk-3 soup-2.4
 LIB_DEPENDS +=		devel/libsoup \
 			x11/gtk+3
