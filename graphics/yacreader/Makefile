@@ -1,15 +1,14 @@
 COMMENT =	read and manage your digital comic collection
 
-V =		9.8.2
-DISTNAME =	yacreader-${V}.2106195
-PORTROACH =	skipv:9.8.2.2106204	# windows installer fix
+V =		9.9.0
+DISTNAME =	yacreader-${V}.2209032
 PKGNAME =	yacreader-${V}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.yacreader.com/
 
-MAINTAINER =	Omar Polo <op@omarpolo.com>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
