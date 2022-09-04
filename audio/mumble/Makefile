@@ -1,11 +1,9 @@
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
 
-VERSION =		1.4.230
+VERSION =		1.4.274
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
-REVISION-main =		2
-REVISION-server =	2
 
 CATEGORIES =		audio net
 
@@ -14,12 +12,11 @@ HOMEPAGE =		https://www.mumble.info/
 MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/v${VERSION}/
 
 MASTER_SITES0 =		https://github.com/mumble-voip/mumble/commit/
-# all merged into master but not released yet
+# all merged into master but not released/merged into 1.4.x branch yet
 PATCHFILES =		mumble-kvm_getprocs-ALL_arg-{}42ad5ed.patch:0 \
 			mumble-kvm_getprocs-pass-elemsize-{}ccbacbf.patch:0 \
 			mumble-struct_procinfo-member_prefix-{}a707213.patch:0 \
 			mumble-audiowizard-fix_Werror-{}0c769d8.patch:0 \
-			mumble-use-system-rnnoise-{}d45318d.patch:0 \
 			mumble-enable-xinput2-{}904bae1.patch:0
 
 # pending "BUILD(cmake): Build/install celt as module"
@@ -36,7 +33,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 WANTLIB-main += ${COMPILER_LIBCXX} PocoFoundation PocoUtil PocoXML
 WANTLIB-main += PocoZip Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB-main += Qt5Sql Qt5Svg Qt5Widgets Qt5Xml X11 Xext Xi c crypto kvm
-WANTLIB-main += m protobuf rnnoise sndfile speex speexdsp ssl
+WANTLIB-main += m protobuf sndfile speex speexdsp ssl
 
 # dlopen()'ed
 WANTLIB-main += opus portaudio
@@ -44,7 +41,7 @@ WANTLIB-main += opus portaudio
 WANTLIB-server += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
 WANTLIB-server += Qt5Xml c crypto m protobuf ssl
 
-WRKDIST =		${WRKDIR}/${DISTNAME}.src
+WRKDIST =		${WRKDIR}/mumble-src
 
 MULTI_PACKAGES =	-main -server
 
@@ -59,7 +56,6 @@ BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS-main =	audio/libsndfile>=1.0.25p0 \
 			audio/opus \
 			audio/portaudio-svn \
-			audio/rnnoise \
 			audio/speex \
 			devel/protobuf \
 			net/poco \
@@ -76,7 +72,6 @@ CONFIGURE_ARGS +=	-Wno-dev
 
 # ${WRKSRC}/docs/dev/build-instructions/cmake_options.md
 CONFIGURE_ARGS +=	-Dbundled-opus=OFF \
-			-Dbundled-rnnoise=OFF \
 			-Dbundled-speex=OFF \
 			-Dice=OFF \
 			-Djackaudio=OFF \

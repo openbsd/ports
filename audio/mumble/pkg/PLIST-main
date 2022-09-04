@@ -3,10 +3,10 @@
 lib/mumble/
 @so lib/mumble/libcelt0.so
 @man man/man1/mumble.1
-share/applications/org.mumble_voip.mumble.desktop
+share/applications/info.mumble.Mumble.desktop
 share/icons/hicolor/256x256/apps/mumble.png
 share/icons/hicolor/scalable/apps/mumble.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/metainfo/
-share/metainfo/org.mumble_voip.mumble.appdata.xml
+share/metainfo/info.mumble.Mumble.appdata.xml

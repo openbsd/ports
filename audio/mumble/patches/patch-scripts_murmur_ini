@@ -48,7 +48,7 @@ Index: scripts/murmur.ini
  
  ; If set, Murmur will write its process ID to this file
  ; when running in daemon mode (when the -fg flag is not
-@@ -409,6 +409,6 @@ allowping=true
+@@ -438,6 +438,6 @@ allowping=true
  ; leave the defaults as they are.
  ; Please note that this section has to be last in the configuration file.
  ;
