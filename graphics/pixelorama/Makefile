@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS = amd64
 
 COMMENT =	pixel art editor
 
-V =		0.10.1
+V =		0.10.2
 DISTNAME =	pixelorama-$V
 
 CATEGORIES =	graphics
