@@ -1,9 +1,12 @@
+BROKEN-i386 =		compiling ChezScheme/s/format.ss nonrecoverable invalid memory reference
+BROKEN-sparc64 =	racket-v.boot environment-variables-ref: contract violation
+
 ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64el powerpc powerpc64 sparc64
 
 COMMENT =		multi-paradigm programming language
 
 V =			8.6
-REVISION =		3
+REVISION =		4
 PKGNAME =		racket-minimal-$V
 DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
 			racket-openbsd-2${EXTRACT_SUFX}
