@@ -60,6 +60,7 @@
      SUBDIR += libmediaart
      SUBDIR += librsvg
      SUBDIR += libsecret
+     SUBDIR += libshumate
      SUBDIR += libxklavier
      SUBDIR += libzapojit
      SUBDIR += mahjongg
