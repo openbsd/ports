@@ -1,3 +1,4 @@
+@pkgpath graphics/mojoshader
 include/FNA3D.h
 include/FNA3D_Image.h
 include/FNA3D_SysRenderer.h

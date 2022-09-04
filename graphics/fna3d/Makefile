@@ -3,6 +3,7 @@ V =		22.08
 COMMENT =	3D graphics library for FNA
 DISTNAME =	fna-${V:S/.//g}
 PKGNAME =	fna3d-${V}
+REVISION =	0
 
 SHARED_LIBS =	FNA3D		3.1	# 22.01
 

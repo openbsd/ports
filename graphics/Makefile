@@ -170,7 +170,6 @@
      SUBDIR += mapivi
      SUBDIR += mapnik
      SUBDIR += mhgui
-     SUBDIR += mojoshader
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
      SUBDIR += mscgen
