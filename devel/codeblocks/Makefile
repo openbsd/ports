@@ -3,7 +3,7 @@ COMMENT=	Code::Blocks C/C++ IDE
 
 R=		12751
 V=		20.03
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	codeblocks-${V}pl${R}
 EXTRACT_SUFX=	.tar.xz
@@ -39,7 +39,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xcomposite Xcursor
 WANTLIB += Xau Xdmcp Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xss
 WANTLIB += Xxf86vm atk-1.0 atk-bridge-2.0 boost_system bz2 c cairo
 WANTLIB += cairo-gobject curses epoxy execinfo expat ffi fontconfig
-WANTLIB += freetype fribidi gamin-1 gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz hunspell-1.7 iconv intl jpeg lzma m
 WANTLIB += mspack notify pango-1.0 pangocairo-1.0 pangoft2-1.0
@@ -53,7 +53,6 @@ BUILD_DEPENDS=	archivers/zip
 
 LIB_DEPENDS=	archivers/bzip2 \
 		devel/boost \
-		sysutils/gamin \
 		textproc/hunspell \
 		x11/wxWidgets>=3.0.4
 
@@ -76,7 +75,7 @@ AUTORECONF=	./bootstrap
 CXXFLAGS +=	-std=c++11
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-contrib-plugins=all
+CONFIGURE_ARGS=	--with-contrib-plugins=all,-FileManager
 CONFIGURE_ARGS += --enable-debug
 CONFIGURE_ARGS += --with-boost-libdir=${LOCALBASE}/lib
 

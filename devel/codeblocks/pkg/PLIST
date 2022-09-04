@@ -329,7 +329,6 @@ lib/codeblocks/plugins/
 @so lib/codeblocks/plugins/libDoxyBlocks.so
 @so lib/codeblocks/plugins/libEditorConfig.so
 @so lib/codeblocks/plugins/libEditorTweaks.so
-@so lib/codeblocks/plugins/libFileManager.so
 @so lib/codeblocks/plugins/libHexEditor.so
 @so lib/codeblocks/plugins/libIncrementalSearch.so
 @so lib/codeblocks/plugins/libMouseSap.so
@@ -437,7 +436,6 @@ share/codeblocks/Cscope.zip
 share/codeblocks/DoxyBlocks.zip
 share/codeblocks/EditorConfig.zip
 share/codeblocks/EditorTweaks.zip
-share/codeblocks/FileManager.zip
 share/codeblocks/HexEditor.zip
 share/codeblocks/IncrementalSearch.zip
 share/codeblocks/MouseSap.zip
