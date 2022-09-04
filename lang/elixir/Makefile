@@ -1,11 +1,12 @@
 COMMENT=		functional language for building scalable applications
 
-V=			1.13.4
+V=			1.14.0
 GH_ACCOUNT=		elixir-lang
 GH_PROJECT=		elixir
 GH_TAGNAME=		v$V
 DISTNAME=		${GH_PROJECT}-$V
 CATEGORIES=		lang
+MAINTAINER=		Volker Schlecht <openbsd-ports@schlecht.dev>
 
 HOMEPAGE=		https://elixir-lang.org/
 
