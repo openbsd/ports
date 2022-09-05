@@ -49,6 +49,9 @@ CONFIGURE_ARGS +=	-DFREETYPE_INCLUDE_DIRS="${X11BASE}/include/freetype2" \
 CXXFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
+# Random, intermittent failures with Ninja during fake.
+USE_NINJA =	No
+
 NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/openclonk-release-${V}-src
