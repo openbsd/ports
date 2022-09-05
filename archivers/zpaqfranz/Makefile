@@ -2,7 +2,7 @@ COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
 
 GH_ACCOUNT =	fcorbelli
 GH_PROJECT =	zpaqfranz
-GH_TAGNAME =	55.10
+GH_TAGNAME =	55.14
 
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
@@ -24,5 +24,8 @@ CPPFLAGS +=	-Dunix
 USE_WXNEEDED=	Yes
 
 NO_TEST =	yes
+
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/man/zpaqfranz.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
