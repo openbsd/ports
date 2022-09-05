@@ -1488,6 +1488,7 @@
      SUBDIR += py-puremagic,python3
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
+     SUBDIR += py-pydantic,python3
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree,python3
      SUBDIR += py-pyrsistent,python3
