@@ -30,6 +30,7 @@
      SUBDIR += file-roller
      SUBDIR += font-viewer
      SUBDIR += gcr
+     SUBDIR += gcr4
      SUBDIR += gdl
      SUBDIR += gdm
      SUBDIR += gedit
