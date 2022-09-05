@@ -16,7 +16,7 @@ daemon="${TRUEPREFIX}/bin/foobar"
 . /etc/rc.d/rc.subr
 
 #pexp="$(eval echo ${daemon}${daemon_flags:+ ${daemon_flags}})"
-#rc_bg= # (undefined or "NO")
+#rc_bg= # (undefined or "YES")
 #rc_reload= # (undefined or "NO")
 #rc_reload_signal=HUP
 #rc_stop_signal=TERM
