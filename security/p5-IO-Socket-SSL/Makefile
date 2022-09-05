@@ -1,12 +1,12 @@
 COMMENT =	Perl SSL sockets with IO::Socket interface
 
-DISTNAME =	IO-Socket-SSL-2.074
+DISTNAME =	IO-Socket-SSL-2.075
 
 CATEGORIES =	security
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-# perl
+# Perl
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
