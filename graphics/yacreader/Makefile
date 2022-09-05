@@ -3,6 +3,7 @@ COMMENT =	read and manage your digital comic collection
 V =		9.9.0
 DISTNAME =	yacreader-${V}.2209032
 PKGNAME =	yacreader-${V}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -14,8 +15,9 @@ MAINTAINER =	Omar Polo <op@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Sql Qt5Svg Qt5Widgets c m poppler-qt5 unarr
+WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
+WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets c m poppler-qt5
+WANTLIB += unarr
 
 MASTER_SITES = https://github.com/YACReader/yacreader/releases/download/${V}/
 
@@ -29,6 +31,7 @@ MODULES =		devel/qmake x11/qt5
 BUILD_DEPENDS =		archivers/xz
 LIB_DEPENDS =		archivers/unarr \
 			print/poppler,-qt5 \
+			x11/qt5/qtquickcontrols2 \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtsvg
 RUN_DEPENDS =		devel/desktop-file-utils \
