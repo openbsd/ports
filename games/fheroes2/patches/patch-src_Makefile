@@ -4,7 +4,7 @@ use bsd platform path
 Index: src/Makefile
 --- src/Makefile.orig
 +++ src/Makefile
-@@ -35,8 +35,6 @@ LDFLAGS := -pthread
+@@ -39,8 +39,6 @@ LDLIBS := $(LDLIBS)
  
  ifdef FHEROES2_WITH_DEBUG
  CCFLAGS := $(CCFLAGS) -O0 -g
@@ -13,7 +13,7 @@ Index: src/Makefile
  endif
  
  ifneq ($(or $(FHEROES2_WITH_ASAN),$(FHEROES2_WITH_TSAN)),)
-@@ -66,6 +64,9 @@ ifeq ($(OS),Windows_NT)
+@@ -70,6 +68,9 @@ ifeq ($(OS),Windows_NT)
  PLATFORM := mingw
  endif
  ifeq ($(OS),FreeBSD)

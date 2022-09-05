@@ -3,7 +3,7 @@ also build translation files (*.mo)
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -37,6 +37,7 @@ PROJECT_VERSION := 0.9.14
+@@ -37,6 +37,7 @@ PROJECT_VERSION := $(file < version.txt)
  
  all:
  	$(MAKE) -C src
