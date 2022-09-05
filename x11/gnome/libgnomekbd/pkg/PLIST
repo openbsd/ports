@@ -8,12 +8,16 @@ include/libgnomekbd/gkbd-keyboard-config.h
 include/libgnomekbd/gkbd-keyboard-drawing.h
 include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
+lib/girepository-1.0/Gkbd-3.0.typelib
 @lib lib/libgnomekbd.so.${LIBgnomekbd_VERSION}
 @lib lib/libgnomekbdui.so.${LIBgnomekbdui_VERSION}
+lib/pkgconfig/libgnomekbd.pc
+lib/pkgconfig/libgnomekbdui.pc
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/libgnomekbd.convert
 share/applications/gkbd-keyboard-display.desktop
+share/gir-1.0/Gkbd-3.0.gir
 share/glib-2.0/schemas/org.gnome.libgnomekbd.desktop.gschema.xml
 share/glib-2.0/schemas/org.gnome.libgnomekbd.gschema.xml
 share/glib-2.0/schemas/org.gnome.libgnomekbd.keyboard.gschema.xml

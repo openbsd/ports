@@ -1,10 +1,10 @@
 COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
-GNOME_VERSION=		3.28.0
+GNOME_VERSION=		3.28.1
 
-SHARED_LIBS += gnomekbd                  8.0 # 3.28.0
-SHARED_LIBS += gnomekbdui                8.0 # 3.28.0
+SHARED_LIBS += gnomekbd                  8.0 # 8.0.0
+SHARED_LIBS += gnomekbdui                8.0 # 8.0.0
 
 CATEGORIES=		devel
 
@@ -19,11 +19,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_TOOLS=		desktop-file-utils
-
-# XXX does not seem used (gir files not generated) but meson checks for it:
-# libgnomekbd/meson.build:gnome.generate_gir
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 
 LIB_DEPENDS=		x11/gnome/libxklavier \
 			x11/gtk+3
