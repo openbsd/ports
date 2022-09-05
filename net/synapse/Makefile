@@ -1,7 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.65.0
-REVISION =	0
+MODPY_EGG_VERSION =	1.66.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -34,6 +33,7 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		security/py-bcrypt${MODPY_FLAVOR} \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		devel/py-sortedcontainers${MODPY_FLAVOR} \
+		devel/py-pydantic${MODPY_FLAVOR} \
 		www/py-macaroons${MODPY_FLAVOR} \
 		net/py-msgpack${MODPY_FLAVOR} \
 		telephony/py-phonenumbers${MODPY_FLAVOR} \
@@ -42,7 +42,7 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		net/py-netaddr${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR} \
 		www/py-bleach${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR} \
+		devel/py-typing-extensions${MODPY_FLAVOR}>=4.3.0 \
 		security/py-cryptography${MODPY_FLAVOR} \
 		textproc/py-ijson${MODPY_FLAVOR} \
 		devel/py-matrix-common${MODPY_FLAVOR}>=1.2.1 \

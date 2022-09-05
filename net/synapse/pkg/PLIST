@@ -884,6 +884,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}health.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}health.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}well_known.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/${MODPY_PYCACHE}well_known.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/admin/
@@ -962,6 +964,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}log
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}login.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}logout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}logout.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}mutual_rooms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}mutual_rooms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}notifications.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1029,6 +1033,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/keys.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/knock.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/login.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/logout.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/models.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/mutual_rooms.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/notifications.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/openid.py
@@ -1129,6 +1134,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/media/v1/storage_provider.
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/media/v1/thumbnail_resource.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/media/v1/thumbnailer.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/media/v1/upload_resource.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/models.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/rest/synapse/${MODPY_PYCACHE}/
