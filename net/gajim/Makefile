@@ -1,17 +1,13 @@
 COMMENT=	fully-featured XMPP client written in Python
-MODPY_EGG_VERSION=	1.3.3
+MODPY_EGG_VERSION=	1.4.7
 DISTNAME=	gajim-${MODPY_EGG_VERSION}
 CATEGORIES=	net x11
 
 HOMEPAGE=	https://www.gajim.org
 
-MAINTAINER=	Paco Esteban <paco@openbsd.org>
+MAINTAINER=    Paco Esteban <paco@openbsd.org>
 
-MASTER_SITES=	${HOMEPAGE}/downloads/1.3/
-# upstream did not include the plugin installer on 1.3.3 again
-# and fixed it on 1.3.3-2
-# https://dev.gajim.org/gajim/gajim/-/issues/10719
-DISTFILES=	gajim-${MODPY_EGG_VERSION}-2${EXTRACT_SUFX}
+MASTER_SITES=	${HOMEPAGE}/downloads/1.4/
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -23,11 +19,13 @@ BUILD_DEPENDS=	devel/gettext,-tools
 
 RUN_DEPENDS=	audio/gsound \
 		devel/desktop-file-utils \
-		devel/glib2>=2.6.0 \
+		devel/glib2>=2.60.0 \
 		devel/libsoup \
+		devel/pango>=1.50.0 \
+		devel/py-gobject3 \
 		graphics/py-Pillow${MODPY_FLAVOR} \
 		graphics/py-cairo${MODPY_FLAVOR} \
-		net/py-nbxmpp${MODPY_FLAVOR}>=2.0.4 \
+		net/py-nbxmpp${MODPY_FLAVOR}>=3.1.1 \
 		security/py-cryptodome${MODPY_FLAVOR} \
 		security/py-gnupg${MODPY_FLAVOR} \
 		security/py-keyring${MODPY_FLAVOR} \
@@ -37,6 +35,7 @@ RUN_DEPENDS=	audio/gsound \
 		textproc/py-css-parser${MODPY_FLAVOR} \
 		textproc/py-precis_i18n${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR} \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/gtksourceview4
 
 .include <bsd.port.mk>
