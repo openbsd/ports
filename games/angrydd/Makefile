@@ -1,26 +1,26 @@
 COMMENT=	falling blocks puzzle game
 
-DISTNAME=	angrydd-1.0.1
-REVISION =	9
+DISTNAME=	angrydd-1.0.2
 CATEGORIES=	games
-
-HOMEPAGE=	http://www.sacredchao.net/~piman/angrydd/
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	${HOMEPAGE}
+# old upstream (http://www.sacredchao.net/~piman/angrydd/) is no more;
+# this distfile is forked from the old one with patches added from
+# https://salsa.debian.org/games-team/angrydd/-/raw/master/debian/patches/python3.patch
+MASTER_SITES=	https://dickman.org/openbsd/distfiles/
 
-RUN_DEPENDS=	devel/pygame>=1.7 \
-		math/py2-numpy
+BUILD_DEPENDS=	devel/pygame${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/pygame${MODPY_FLAVOR} \
+		math/py-numpy${MODPY_FLAVOR}
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-NO_BUILD=	Yes
+CONFIGURE_STYLE=none
+MODPY_ADJ_FILES=angrydd.py check.py
+
 NO_TEST=	Yes
 
-do-install:
-	perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' ${WRKSRC}/angrydd.py
-	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} install
+MAKE_FLAGS=	TO=share/angrydd PREFIX=${TRUEPREFIX}
 
 .include <bsd.port.mk>
