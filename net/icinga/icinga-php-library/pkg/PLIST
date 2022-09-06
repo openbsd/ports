@@ -116,6 +116,8 @@ icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-common-types/
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-common-types/package.json
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-free/
+icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-free/metadata/
+icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-free/metadata/icon-families.json
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-free/package.json
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-svg-core/
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/fontawesome-svg-core/package.json
@@ -126,6 +128,7 @@ icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/free-reg
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/free-solid-svg-icons/
 icinga-php/ipl/vendor/fortawesome/font-awesome/js-packages/@fortawesome/free-solid-svg-icons/package.json
 icinga-php/ipl/vendor/fortawesome/font-awesome/metadata/
+icinga-php/ipl/vendor/fortawesome/font-awesome/metadata/icon-families.json
 icinga-php/ipl/vendor/fortawesome/font-awesome/metadata/icons.json
 icinga-php/ipl/vendor/fortawesome/font-awesome/metadata/shims.json
 icinga-php/ipl/vendor/ipl/
