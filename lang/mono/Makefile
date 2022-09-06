@@ -2,10 +2,9 @@ USE_WXNEEDED=	Yes
 
 COMMENT=	cross platform, open source .NET developement framework
 
-V=		6.12.0.122
+V=		6.12.0.182
 
 DISTNAME=	mono-${V}
-REVISION=	1
 
 CATEGORIES=	lang devel
 

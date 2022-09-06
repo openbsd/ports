@@ -1,7 +1,7 @@
 Index: mono/native/Makefile.am
 --- mono/native/Makefile.am.orig
 +++ mono/native/Makefile.am
-@@ -79,6 +79,8 @@ freebsd_sources = $(unix_sources)
+@@ -86,6 +86,8 @@ freebsd_sources = $(unix_sources)
  
  netbsd_sources = $(unix_sources)
  
@@ -10,7 +10,7 @@ Index: mono/native/Makefile.am
  haiku_sources = $(unix_sources)
  
  android_sources = \
-@@ -119,7 +121,7 @@ ios_sources += $(gss_sources)
+@@ -126,7 +128,7 @@ ios_sources += $(gss_sources)
  android_sources += $(gss_sources)
  endif
  
@@ -19,7 +19,7 @@ Index: mono/native/Makefile.am
  
  if MONO_NATIVE_PLATFORM_MACOS
  platform_sources = $(macos_sources)
-@@ -142,8 +144,12 @@ else
+@@ -149,8 +151,12 @@ else
  if MONO_NATIVE_PLATFORM_NETBSD
  platform_sources = $(netbsd_sources)
  else
