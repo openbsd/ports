@@ -1,10 +1,10 @@
 COMMENT =	cli browser for keepassx databases
 
-DISTNAME =	kpcli-3.6
+DISTNAME =	kpcli-3.8.1
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
-HOMEPAGE =	http://kpcli.sourceforge.net/
+HOMEPAGE =	https://kpcli.sourceforge.io/
 
 # Perl
 PERMIT_PACKAGE =	Yes
