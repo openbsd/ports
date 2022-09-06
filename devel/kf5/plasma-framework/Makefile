@@ -18,6 +18,7 @@ WANTLIB += SM X11 Xext c m xcb xcb-composite xcb-damage xcb-render
 WANTLIB += xcb-shape xcb-xfixes
 
 BUILD_DEPENDS =	archivers/bzip2 \
+		archivers/gtar \
 		devel/gettext,-tools \
 		devel/kf5/kdbusaddons>=${MODKF5_VERSION} \
 		devel/kf5/kdesu>=${MODKF5_VERSION} \
