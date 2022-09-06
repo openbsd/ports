@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -13,7 +13,7 @@ setup(
+     author_email="marcin@threat9.com",
+     url="https://www.threat9.com",
+     download_url="https://github.com/threat9/routersploit/",
+-    packages=find_packages(),
++    packages=find_packages(exclude=['tests', 'tests.*']),
+     include_package_data=True,
+     scripts=('rsf.py',),
+     entry_points={},
