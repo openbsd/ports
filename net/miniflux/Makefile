@@ -1,12 +1,15 @@
 COMMENT =	minimalist and opinionated feed reader
 
 MODGO_MODNAME =	miniflux.app
-MODGO_VERSION =	v0.0.0-20211217010050-686dd92cb9e4
+MODGO_VERSION =	v0.0.0-20220813191517-1ca35e9364b1
 
 DISTNAME =	miniflux.app-${MODGO_VERSION}
-PKGNAME =	miniflux-2.0.34.20211217
+V =		2.0.38.20220813
+PKGNAME =	miniflux-${V}
 
 CATEGORIES =	net www
+
+MAINTAINER =	Paco Esteban <paco@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -16,6 +19,8 @@ WANTLIB += c pthread
 MODULES =		lang/go
 
 ALL_TARGET =		${MODGO_MODNAME}/...
+
+MODGO_LDFLAGS +=	-X miniflux.app/version.Version=${V}
 
 SUBST_VARS =		VARBASE \
 			SYSCONFDIR
