@@ -1,7 +1,6 @@
 COMMENT=	GDI+ comptible API
 
-DISTNAME=	libgdiplus-6.0.5
-REVISION=	0
+DISTNAME=	libgdiplus-6.1
 
 CATEGORIES=	x11 devel
 
