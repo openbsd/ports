@@ -1,5 +1,3 @@
-BROKEN-i386=	/pobj/libreoffice-7.4.0.3/libreoffice-7.4.0.3/vcl/unx/generic/window/salframe.cxx:650:42: error: non-constant-expression cannot be narrowed from type 'unsigned int' to 'tools::Long' (aka 'long') in initializer list
-
 USE_WXNEEDED=	Yes
 
 ONLY_FOR_ARCHS= amd64 i386
