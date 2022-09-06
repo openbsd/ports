@@ -1,7 +1,6 @@
 COMMENT =		C library implementing server and client side SSH
-V =			0.10.1
+V =			0.10.3
 DISTNAME =		libssh-${V}
-REVISION =		0
 
 SHARED_LIBS +=		ssh		4.2 # 4.8
 
