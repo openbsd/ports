@@ -2,10 +2,11 @@ COMMENT=		VPN over an SSH tunnel
 
 MODPY_EGG_VERSION=	1.1.1
 DISTNAME=		sshuttle-${MODPY_EGG_VERSION}
+REVISION=		0
 
 FIX_EXTRACT_PERMISSIONS=Yes
 
-CATEGORIES=		net
+CATEGORIES=		net security
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
