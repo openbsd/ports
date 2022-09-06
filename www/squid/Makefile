@@ -1,12 +1,11 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		5.6
+V=		5.7
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
-REVISION=	0
 DPB_PROPERTIES=	parallel
 
 # subpackages aren't flavoured, so overwrite the default name/path
