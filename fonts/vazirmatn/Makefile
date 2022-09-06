@@ -1,7 +1,7 @@
 COMMENT =	simple Persian/Arabic font for web pages and applications
 
 TYPEFACE =	vazirmatn
-V =		33.001
+V =		33.003
 
 DISTFILES =	vazirmatn-v${V}.zip
 MASTER_SITES =	https://github.com/rastikerdar/vazirmatn/releases/download/v${V}/
