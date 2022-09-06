@@ -28,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}smacks.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}structs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}task.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}tcp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/addresses.py
@@ -62,11 +63,13 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}delimite
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}eme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}entity_caps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}entity_time.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}http_auth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}http_upload.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}ibb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}idle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}iq.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}last_activity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}location.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}mam.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
@@ -82,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}ping.${M
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}presence.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}pubsub.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}receipts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}roster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}rsm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}security_labels.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}software_version.${MODPY_PYC_MAGIC_TAG}pyc
@@ -121,11 +125,13 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/delimiter.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/discovery.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/eme.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/entity_caps.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/entity_time.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/http_auth.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/http_upload.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/ibb.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/idle.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/iq.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/last_activity.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/location.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/mam.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/message.py
@@ -135,8 +141,10 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/${MODPY_PYCACHE}moderation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/${MODPY_PYCACHE}muc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/moderation.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/muc.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/util.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muclumbus.py
@@ -157,6 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/register/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/register/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/register/register.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/register/util.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/roster.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/rsm.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/security_labels.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/software_version.py
@@ -170,6 +179,7 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/old_dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/plugin.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/protocol.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/py.typed
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/simplexml.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/smacks.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/structs.py
@@ -181,5 +191,6 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbxmpp/third_party/${MO
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/third_party/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/third_party/${MODPY_PYCACHE}hsluv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/third_party/hsluv.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/types.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/util.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/websocket.py
