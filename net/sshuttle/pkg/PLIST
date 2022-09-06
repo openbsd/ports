@@ -1,5 +1,4 @@
 bin/sshuttle
-bin/sudoers-add
 lib/python${MODPY_VERSION}/site-packages/sshuttle/
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -25,7 +24,6 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}server.${MODPY
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}ssnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}ssyslog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}stresstest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}sudoers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/assembler.py
@@ -55,7 +53,6 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle/server.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/ssh.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/ssnet.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/ssyslog.py
-lib/python${MODPY_VERSION}/site-packages/sshuttle/stresstest.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/sudoers.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/version.py
 @man man/man1/sshuttle.1
