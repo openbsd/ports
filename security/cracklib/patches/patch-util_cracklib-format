@@ -1,17 +1,11 @@
-From a1379d0081e14958b2ada6dcc1fcb7f128e4bd94 Mon Sep 17 00:00:00 2001
-From: Fabrice Fontaine <fontaine.fabrice@gmail.com>
-Date: Mon, 11 Mar 2019 19:07:33 +0100
-Subject: [PATCH] Force grep to treat the input as text when formatting word files
-
-Index: util/cracklib-format
---- util/cracklib-format.orig
-+++ util/cracklib-format
-@@ -4,7 +4,7 @@
- # into cracklib-packer
+--- util/cracklib-format.old	Fri Jan 22 16:58:14 2021
++++ util/cracklib-format	Tue Sep  6 21:16:55 2022
+@@ -11,7 +11,7 @@
+ # cracklib-packer will generate "skipping line" warnings otherwise.
  #
  gzip -cdf "$@" |
--    grep -v '^\(#\|$\)' |
+-    grep -a -v '^#' |
 +    grep -a -v '^\(#\|$\)' |
      tr '[A-Z]' '[a-z]' |
      tr -cd '\012[a-z][0-9]' |
-     env LC_ALL=C sort -u
+     cut -c 1-1022 |
