@@ -1,9 +1,9 @@
 COMMENT=	HEIF and AVIF file format decoder and encoder
 
-V=		1.12.0
+V=		1.13.0
 DISTNAME=	libheif-$V
 
-SHARED_LIBS +=  heif                      1.2 # 9.0
+SHARED_LIBS +=  heif                      1.3 # 9.0
 
 CATEGORIES=	multimedia graphics
 
@@ -32,5 +32,7 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		multimedia/libde265 \
 		multimedia/x265
 RUN_DEPENDS=	misc/shared-mime-info
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
