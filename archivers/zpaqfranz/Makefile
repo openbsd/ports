@@ -23,9 +23,10 @@ MAKE_FLAGS +=	CXX="${CXX}" \
 CPPFLAGS +=	-Dunix
 USE_WXNEEDED=	Yes
 
-NO_TEST =	yes
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/man/zpaqfranz.1 ${PREFIX}/man/man1/
+
+do-test:
+	${WRKBUILD}/zpaqfranz autotest -all
 
 .include <bsd.port.mk>
