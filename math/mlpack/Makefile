@@ -1,3 +1,7 @@
+# setuptools picks up importlib_metadata
+# can probably go away after switching to Python 3.10
+DPB_PROPERTIES += nojunk
+
 BROKEN-arm =	llvm out of memory
 BROKEN-powerpc = virtual memory exhausted, even with -O1
 BROKEN-sparc64 = Exhausts virtual memory
