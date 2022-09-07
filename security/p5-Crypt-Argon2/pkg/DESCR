@@ -1,0 +1,5 @@
+This module implements the Argon2 key derivation function, which is
+suitable to convert any password into a cryptographic key. This is most
+often used to for secure storage of passwords but can also be used to
+derive an encryption key from a password. It offers variable time and
+memory costs as well as output size.
