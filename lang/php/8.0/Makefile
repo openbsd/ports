@@ -1,6 +1,7 @@
 PORTROACH=	limit:^8\.0
 PHP_VERSION=	8.0.23
 PHP_PKGSPEC=	>=8.0,<8.1
+REVISION-main=	0
 
 DEFAULT_PHP=	Yes
 

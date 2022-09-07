@@ -143,18 +143,24 @@ Socket paths for MariaDB
 ------------------------
 See mariadb's pkg-readme file for information.
 
-PHP's OpenSSL functions
------------------------
-Functions for making TLS connections usually need access to CA certificates,
-and key generation functions may need access to configuration files.
+Making network connections
+--------------------------
+To resolve DNS host names, you will need to copy /etc/resolv.conf
+into the ${CHROOT_DIR} chroot jail. To make TLS connections, you'll also
+need /etc/ssl/cert.pem for CA certificates.
+
+Additionally, if your scripts use PHP's key generation functions they
+may need access to /etc/ssl/openssl.cnf.
+
 To use these, copy the relevant files into the /var/www jail:
 
     # mkdir -p ${CHROOT_DIR}/etc/ssl
+    # install -m 444 -o root -g bin /etc/resolv.conf ${CHROOT_DIR}/etc/
     # install -m 444 -o root -g bin /etc/ssl/cert.pem /etc/ssl/openssl.cnf \
           ${CHROOT_DIR}/etc/ssl/
 
 As these files are updated from time to time, you might like to add
-the above "install" line to /etc/rc.local.
+the above "install" lines to /etc/rc.local.
 
 Executing other commands
 ------------------------
