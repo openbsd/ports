@@ -1,0 +1,3 @@
+${P5SITE}/Iterator/
+${P5SITE}/Iterator/Simple.pm
+@man man/man3p/Iterator::Simple.3p
