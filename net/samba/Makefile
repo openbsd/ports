@@ -8,6 +8,8 @@ COMMENT-docs =		additional documentation and examples for Samba
 PKGNAME-main =		${PKGNAME}
 PKGNAME-docs =		samba-docs-${VERSION}
 
+REVISION-main =		0
+
 PKG_ARCH-docs =		*
 
 SHARED_LIBS =		dcerpc			1.1 \
@@ -48,10 +50,10 @@ MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>, \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		${MODPY_WANTLIB}
-WANTLIB-main +=		avahi-client avahi-common cups c execinfo fam
+WANTLIB-main +=		avahi-client avahi-common cups c execinfo
 WANTLIB-main +=		iconv jansson lber ldap pam popt pthread gnutls
 WANTLIB-main +=		pytalloc-util.cpython-${MODPY_MAJORMINOR} readline
-WANTLIB-main +=		talloc tasn1 tdb z
+WANTLIB-main +=		talloc tasn1 tdb z lib/inotify/inotify
 
 WANTLIB-docs =
 
@@ -83,14 +85,14 @@ LIB_DEPENDS-main =	converters/libiconv \
 			databases/openldap \
 			databases/tdb>=1.4.6 \
 			devel/jansson \
+			devel/libinotify \
 			devel/libtalloc>=2.3.3 \
 			devel/libtalloc,-python \
 			devel/popt \
 			net/avahi,-libs \
 			print/cups,-libs \
 			security/gnutls \
-			security/openpam \
-			sysutils/gamin
+			security/openpam
 
 LIB_DEPENDS-docs =
 
@@ -122,7 +124,8 @@ CONFIGURE_ARGS =	--enable-fhs \
 			--disable-rpath \
 			--without-ad-dc \
 			--without-gpgme \
-			--without-ldb-lmdb
+			--without-ldb-lmdb \
+			--without-fam
 # hack for https://bugzilla.samba.org/show_bug.cgi?id=15030
 CONFIGURE_ARGS +=	--without-gettext
 
@@ -136,8 +139,8 @@ CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			CPP="/usr/libexec/cpp" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+			CPPFLAGS="-I${LOCALBASE}/include/inotify -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib/inotify -Wl,-rpath,${LOCALBASE}/lib/inotify -L${LOCALBASE}/lib ${LDFLAGS}"
 
 MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 			PYTHON=${MODPY_BIN} \
