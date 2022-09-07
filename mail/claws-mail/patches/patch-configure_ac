@@ -1,16 +1,29 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -176,7 +176,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
- 
- if test "$GCC" = "yes"
- then
--	CFLAGS="$CFLAGS -Wno-unused-function"
-+	CFLAGS="$CFLAGS -Wall"
- 	#CFLAGS="-g -Wall -Wno-unused-function"
+@@ -629,13 +629,6 @@ dnl enchant is used for spell checking
+ AC_MSG_CHECKING([whether to use enchant])
+ AC_MSG_RESULT($enable_enchant)
+ if test $enable_enchant = yes; then
+-	PKG_CHECK_MODULES(ENCHANT, enchant >= 1.4.0,
+-	[
+-		AC_DEFINE(USE_ENCHANT, 1, enchant)
+-		echo "Building with enchant"
+-		enable_enchant=yes
+-	],
+-	[
+ 		PKG_CHECK_MODULES(ENCHANT, enchant-2 >= 2.0.0,
+ 		[
+ 			AC_DEFINE(USE_ENCHANT, 1, enchant-2)
+@@ -646,7 +639,6 @@ if test $enable_enchant = yes; then
+ 			echo "Building without enchant-notification"
+ 			enable_enchant=no
+ 		])
+-	])
+ 	AC_SUBST(ENCHANT_CFLAGS)
+ 	AC_SUBST(ENCHANT_LIBS)
  fi
- 
-@@ -797,6 +797,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -835,6 +827,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -18,7 +31,7 @@ Index: configure.ac
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -869,7 +870,7 @@ if test x"$enable_alternate_addressbook" = xno; then
+@@ -907,7 +900,7 @@ if test x"$enable_alternate_addressbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  

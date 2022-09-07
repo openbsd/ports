@@ -4,16 +4,13 @@ COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
-V=			4.0.0
+V=			4.1.0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
 PKGNAME-gdata=		claws-mail-gdata-${V}
-
-REVISION=		1
-REVISION-main=		2
 
 CATEGORIES=		mail news
 
@@ -23,8 +20,6 @@ HOMEPAGE=		https://www.claws-mail.org/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.claws-mail.org/releases/
-
-DIST_SUBDIR=		claws
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -50,12 +45,12 @@ WANTLIB += sasl2 ssl xcb xcb-render xcb-shm z epoxy
 WANTLIB += ${COMPILER_LIBCXX}
 
 WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb archive assuan b2 bz2 c canberra canberra-gtk3
-WANTLIB-main += charset db dbus-1 dbus-glib-1 enchant gmp gnutls gpg-error
-WANTLIB-main += gpgme gthread-2.0 gumbo hogweed ical icalss icalvcal
-WANTLIB-main += icudata icui18n icuuc idn2 ltdl lz4 lzma nettle notify
-WANTLIB-main += ogg p11-kit perl rsvg-2 startup-notification-1 tasn1
-WANTLIB-main += unistring vorbis vorbisfile xcb-util xml2 zstd
+WANTLIB-main += ICE SM X11-xcb archive aspell assuan b2 bz2 c canberra
+WANTLIB-main += canberra-gtk3 db dbus-1 dbus-glib-1 enchant-2 gmp gnutls
+WANTLIB-main += gpg-error gpgme gthread-2.0 gumbo hogweed ical icalss
+WANTLIB-main += icalvcal icudata icui18n icuuc idn2 ltdl lz4 lzma nettle
+WANTLIB-main += notify ogg p11-kit perl rsvg-2 startup-notification-1
+WANTLIB-main += tasn1 unistring vorbis vorbisfile xcb-util xml2 zstd
 WANTLIB-main += brotlidec brotlienc db_cxx
 
 WANTLIB-gdata = ${WANTLIB}
@@ -88,7 +83,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			security/gpgme \
 			security/libb2 \
 			security/libnettle \
-			textproc/enchant \
+			textproc/enchant2 \
 			textproc/libical \
 			www/gumbo \
 			x11/dbus-glib \
@@ -161,6 +156,11 @@ TOOLS=		acroread2claws-mail.pl \
 		kdeservicemenu/claws-mail-kdeservicemenu.pl \
 		kdeservicemenu/install.sh \
 		kdeservicemenu/README
+
+# src/plugins/litehtml_viewer build breaks; tries to pull in this
+# file instead of the C++ header /usr/include/c++/v1/version
+pre-build:
+	rm ${WRKSRC}/version
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps

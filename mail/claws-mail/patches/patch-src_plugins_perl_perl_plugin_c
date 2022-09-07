@@ -3,7 +3,7 @@ stop trying to use XSRETURN as an expression
 Index: src/plugins/perl/perl_plugin.c
 --- src/plugins/perl/perl_plugin.c.orig
 +++ src/plugins/perl/perl_plugin.c
-@@ -573,47 +573,50 @@ static XS(XS_ClawsMail_filter_init)
+@@ -577,47 +577,50 @@ static XS(XS_ClawsMail_filter_init)
  
      /* msginfo */
    case  1:
@@ -74,7 +74,7 @@ Index: src/plugins/perl/perl_plugin.c
    case 20:
      if((charp = procmsg_get_message_file_path(msginfo)) != NULL) {
        strncpy2(buf,charp,sizeof(buf));
-@@ -623,19 +626,30 @@ static XS(XS_ClawsMail_filter_init)
+@@ -627,19 +630,30 @@ static XS(XS_ClawsMail_filter_init)
      else
        XSRETURN_UNDEF;
    case 21:
@@ -114,7 +114,7 @@ Index: src/plugins/perl/perl_plugin.c
  
      /* general */
    case 100:
-@@ -896,7 +910,10 @@ static XS(XS_ClawsMail_tagged)
+@@ -900,7 +914,10 @@ static XS(XS_ClawsMail_tagged)
      XSRETURN_UNDEF;
    }
  

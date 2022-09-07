@@ -113,7 +113,6 @@ include/claws-mail/gtk/about.h
 include/claws-mail/gtk/authors.h
 include/claws-mail/gtk/claws-marshal.h
 include/claws-mail/gtk/colorlabel.h
-include/claws-mail/gtk/colorsel.h
 include/claws-mail/gtk/combobox.h
 include/claws-mail/gtk/description_window.h
 include/claws-mail/gtk/filesel.h
@@ -263,6 +262,8 @@ lib/claws-mail/plugins/dillo.la
 @so lib/claws-mail/plugins/dillo.so
 lib/claws-mail/plugins/fetchinfo.la
 @so lib/claws-mail/plugins/fetchinfo.so
+lib/claws-mail/plugins/keyword_warner.la
+@so lib/claws-mail/plugins/keyword_warner.so
 lib/claws-mail/plugins/libravatar.la
 @so lib/claws-mail/plugins/libravatar.so
 lib/claws-mail/plugins/litehtml_viewer.la
