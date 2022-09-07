@@ -1,6 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	37.0.4
+MODPY_EGG_VERSION=	38.0.0
 DISTNAME=	cryptography-${MODPY_EGG_VERSION}
 DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -56,7 +56,7 @@ do-configure:
 	@${MODCARGO_configure}
 
 do-build:
-	@${MODCARGO_BUILD_TARGET}
+	#@${MODCARGO_BUILD_TARGET}
 	@${MODPY_BUILD_TARGET}
 
 .include <bsd.port.mk>
