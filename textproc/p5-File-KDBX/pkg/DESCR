@@ -1,0 +1,15 @@
+File::KDBX provides everything you need to work with KDBX databases. A KDBX
+database is a hierarchical object database which is commonly used to store
+secret information securely. It was developed for the KeePass password safe.
+
+This module lets you query entries, create new entries, delete entries, modify
+entries and more. The distribution also includes various parsers and generators
+for serializing and persisting databases.
+
+The design of this software was influenced by the KeePassXC implementation of
+KeePass as well as the File::KeePass module. File::KeePass is an alternative
+module that works well in most cases but has a small backlog of bugs and
+security issues and also does not work with newer KDBX version 4 files. If
+you're coming here from the File::KeePass world, you might be interested in
+File::KeePass::KDBX that is a drop-in replacement for File::KeePass that uses
+File::KDBX for storage.

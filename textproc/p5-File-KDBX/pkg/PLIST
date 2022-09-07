@@ -1,0 +1,84 @@
+${P5SITE}/File/
+${P5SITE}/File/KDBX/
+${P5SITE}/File/KDBX.pm
+${P5SITE}/File/KDBX/Cipher/
+${P5SITE}/File/KDBX/Cipher.pm
+${P5SITE}/File/KDBX/Cipher/CBC.pm
+${P5SITE}/File/KDBX/Cipher/Stream.pm
+${P5SITE}/File/KDBX/Constants.pm
+${P5SITE}/File/KDBX/Dumper/
+${P5SITE}/File/KDBX/Dumper.pm
+${P5SITE}/File/KDBX/Dumper/KDB.pm
+${P5SITE}/File/KDBX/Dumper/Raw.pm
+${P5SITE}/File/KDBX/Dumper/V3.pm
+${P5SITE}/File/KDBX/Dumper/V4.pm
+${P5SITE}/File/KDBX/Dumper/XML.pm
+${P5SITE}/File/KDBX/Entry.pm
+${P5SITE}/File/KDBX/Error.pm
+${P5SITE}/File/KDBX/Group.pm
+${P5SITE}/File/KDBX/IO/
+${P5SITE}/File/KDBX/IO.pm
+${P5SITE}/File/KDBX/IO/Crypt.pm
+${P5SITE}/File/KDBX/IO/HashBlock.pm
+${P5SITE}/File/KDBX/IO/HmacBlock.pm
+${P5SITE}/File/KDBX/Iterator.pm
+${P5SITE}/File/KDBX/KDF/
+${P5SITE}/File/KDBX/KDF.pm
+${P5SITE}/File/KDBX/KDF/AES.pm
+${P5SITE}/File/KDBX/KDF/Argon2.pm
+${P5SITE}/File/KDBX/Key/
+${P5SITE}/File/KDBX/Key.pm
+${P5SITE}/File/KDBX/Key/ChallengeResponse.pm
+${P5SITE}/File/KDBX/Key/Composite.pm
+${P5SITE}/File/KDBX/Key/File.pm
+${P5SITE}/File/KDBX/Key/Password.pm
+${P5SITE}/File/KDBX/Key/YubiKey.pm
+${P5SITE}/File/KDBX/Loader/
+${P5SITE}/File/KDBX/Loader.pm
+${P5SITE}/File/KDBX/Loader/KDB.pm
+${P5SITE}/File/KDBX/Loader/Raw.pm
+${P5SITE}/File/KDBX/Loader/V3.pm
+${P5SITE}/File/KDBX/Loader/V4.pm
+${P5SITE}/File/KDBX/Loader/XML.pm
+${P5SITE}/File/KDBX/Object.pm
+${P5SITE}/File/KDBX/Safe.pm
+${P5SITE}/File/KDBX/Transaction.pm
+${P5SITE}/File/KDBX/Util.pm
+@man man/man3p/File::KDBX.3p
+@man man/man3p/File::KDBX::Cipher.3p
+@man man/man3p/File::KDBX::Cipher::CBC.3p
+@man man/man3p/File::KDBX::Cipher::Stream.3p
+@man man/man3p/File::KDBX::Constants.3p
+@man man/man3p/File::KDBX::Dumper.3p
+@man man/man3p/File::KDBX::Dumper::KDB.3p
+@man man/man3p/File::KDBX::Dumper::Raw.3p
+@man man/man3p/File::KDBX::Dumper::V3.3p
+@man man/man3p/File::KDBX::Dumper::V4.3p
+@man man/man3p/File::KDBX::Dumper::XML.3p
+@man man/man3p/File::KDBX::Entry.3p
+@man man/man3p/File::KDBX::Error.3p
+@man man/man3p/File::KDBX::Group.3p
+@man man/man3p/File::KDBX::IO.3p
+@man man/man3p/File::KDBX::IO::Crypt.3p
+@man man/man3p/File::KDBX::IO::HashBlock.3p
+@man man/man3p/File::KDBX::IO::HmacBlock.3p
+@man man/man3p/File::KDBX::Iterator.3p
+@man man/man3p/File::KDBX::KDF.3p
+@man man/man3p/File::KDBX::KDF::AES.3p
+@man man/man3p/File::KDBX::KDF::Argon2.3p
+@man man/man3p/File::KDBX::Key.3p
+@man man/man3p/File::KDBX::Key::ChallengeResponse.3p
+@man man/man3p/File::KDBX::Key::Composite.3p
+@man man/man3p/File::KDBX::Key::File.3p
+@man man/man3p/File::KDBX::Key::Password.3p
+@man man/man3p/File::KDBX::Key::YubiKey.3p
+@man man/man3p/File::KDBX::Loader.3p
+@man man/man3p/File::KDBX::Loader::KDB.3p
+@man man/man3p/File::KDBX::Loader::Raw.3p
+@man man/man3p/File::KDBX::Loader::V3.3p
+@man man/man3p/File::KDBX::Loader::V4.3p
+@man man/man3p/File::KDBX::Loader::XML.3p
+@man man/man3p/File::KDBX::Object.3p
+@man man/man3p/File::KDBX::Safe.3p
+@man man/man3p/File::KDBX::Transaction.3p
+@man man/man3p/File::KDBX::Util.3p
