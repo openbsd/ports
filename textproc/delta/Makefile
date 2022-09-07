@@ -2,8 +2,7 @@ COMMENT =		viewer for git and diff output
 
 GH_ACCOUNT =		dandavison
 GH_PROJECT =		delta
-GH_TAGNAME =		0.13.0
-REVISION =		0
+GH_TAGNAME =		0.14.0
 
 CATEGORIES =		textproc
 
