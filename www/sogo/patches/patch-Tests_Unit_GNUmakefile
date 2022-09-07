@@ -2,7 +2,7 @@ Do not hardcode libobjc library name, ask GNUstep what to use.
 Index: Tests/Unit/GNUmakefile
 --- Tests/Unit/GNUmakefile.orig
 +++ Tests/Unit/GNUmakefile
-@@ -45,8 +45,8 @@ $(TEST_TOOL)_CPPFLAGS += \
+@@ -46,8 +46,8 @@ $(TEST_TOOL)_CPPFLAGS += \
  	-Wall -D_GNU_SOURCE -I../../SOPE/ -I../../SoObjects/ -I../../UI/ -I../../OpenChange
  
  ADDITIONAL_LIB_DIRS += \
