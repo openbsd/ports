@@ -2,7 +2,7 @@ COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		5.5.1
+VERSION =		5.7.1
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -18,7 +18,7 @@ SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 
 CATEGORIES=	www
 HOMEPAGE=	https://sogo.nu
-MASTER_SITES=	${HOMEPAGE}/files/downloads/SOGo/Sources/
+MASTER_SITES=	https://packages.sogo.nu/sources/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # LGPLv2 or later
