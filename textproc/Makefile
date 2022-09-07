@@ -181,6 +181,7 @@
      SUBDIR += p5-Encode-Detect
      SUBDIR += p5-Encode-HanExtra
      SUBDIR += p5-Encode-Locale
+     SUBDIR += p5-File-KDBX
      SUBDIR += p5-File-KeePass
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF

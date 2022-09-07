@@ -170,6 +170,7 @@
      SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
      SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
      SUBDIR += p5-Chipcard-PCSC
+     SUBDIR += p5-Crypt-Argon2
      SUBDIR += p5-Crypt-Blowfish
      SUBDIR += p5-Crypt-Blowfish_PP
      SUBDIR += p5-Crypt-CAST5_PP

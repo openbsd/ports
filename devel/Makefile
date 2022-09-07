@@ -823,6 +823,7 @@
      SUBDIR += p5-Inline
      SUBDIR += p5-Internals
      SUBDIR += p5-Iterator
+     SUBDIR += p5-Iterator-Simple
      SUBDIR += p5-Iterator-Util
      SUBDIR += p5-Lchown
      SUBDIR += p5-Lexical-Persistence
