@@ -2,7 +2,7 @@ COMMENT =	command-line based markdown presentation tool
 
 GH_ACCOUNT =	visit1985
 GH_PROJECT =	mdp
-GH_TAGNAME =	1.0.12
+GH_TAGNAME =	1.0.15
 
 CATEGORIES =	textproc
 
