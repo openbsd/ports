@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1425 2022/09/03 07:52:28 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1426 2022/09/07 08:22:36 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1706,6 +1706,7 @@ setup_obsolete_reason(
 	6 => 'mlt-gpl',
 	6 => 'webvfx',
 	6 => 'libXp',
+	5 => 'gamin',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

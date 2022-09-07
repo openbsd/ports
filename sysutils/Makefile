@@ -114,7 +114,6 @@
      SUBDIR += fwa
      SUBDIR += fzf
      SUBDIR += galleon
-     SUBDIR += gamin
      SUBDIR += gdmap
      SUBDIR += ggrep
      SUBDIR += gitlab-runner

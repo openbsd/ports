@@ -1,9 +1,0 @@
-# Configuration file for gamin.
-# See http://www.gnome.org/~veillard/gamin/config.html for details.
-
-# reduce polling frequency to once per 10 seconds for NFS file systems
-# in order to lower CPU load
-fsset nfs poll 10
-
-# disable monitoring on ffs
-#fsset ffs none
