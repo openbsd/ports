@@ -1,6 +1,7 @@
---- src/coccigrep.py.orig	Mon Sep 10 15:50:20 2012
-+++ src/coccigrep.py	Sat Dec  8 10:05:31 2012
-@@ -79,7 +79,7 @@ class CocciRunException(CocciException):
+Index: src/coccigrep.py
+--- src/coccigrep.py.orig
++++ src/coccigrep.py
+@@ -83,7 +83,7 @@ class CocciRunException(CocciException):
  _CONF_FILES = tuple((path.join(dirname, name_format % 'coccigrep')
      for dirname, name_format in
      ((path.dirname(__file__), '%s.cfg'),
