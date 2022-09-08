@@ -1,6 +1,6 @@
 COMMENT =		hierarchical schematic capture program
 
-DISTNAME =		xschem-3.0.0
+DISTNAME =		xschem-3.1.0
 
 CATEGORIES =		cad
 
@@ -11,8 +11,8 @@ MAINTAINER =		Hannu Vuolasaho <vuokkosetae@gmail.com>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${MODTK_WANTLIB} X11 X11-xcb Xpm Xrender
-WANTLIB +=		c cairo m xcb xcb-render
+WANTLIB =		${MODTK_WANTLIB} X11 Xpm
+WANTLIB +=		c cairo m 
 
 MASTER_SITES =		http://repo.hu/projects/xschem/releases/
 
