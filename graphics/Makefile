@@ -338,6 +338,7 @@
      SUBDIR += xzgv
      SUBDIR += yacreader
      SUBDIR += zbar
+     SUBDIR += zimg
      SUBDIR += zint
      SUBDIR += zxing
 
