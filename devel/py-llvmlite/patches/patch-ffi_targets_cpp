@@ -1,0 +1,13 @@
+Index: ffi/targets.cpp
+--- ffi/targets.cpp.orig
++++ ffi/targets.cpp
+@@ -204,7 +204,9 @@ LLVMPY_CreateTargetMachine(LLVMTargetRef T, const char
+         rm = Reloc::DynamicNoPIC;
+ 
+     TargetOptions opt;
++#if LLVM_VERSION_MAJOR < 12
+     opt.PrintMachineCode = PrintMC;
++#endif
+     opt.MCOptions.ABIName = ABIName;
+ 
+     bool jit = JIT;

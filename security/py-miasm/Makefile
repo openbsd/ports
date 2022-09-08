@@ -1,4 +1,5 @@
 BROKEN-i386 =	uint128_t
+BROKEN =	Needs to be updated for py-llvmlite-0.39.0
 
 COMMENT =	reverse engineering framework in Python
 

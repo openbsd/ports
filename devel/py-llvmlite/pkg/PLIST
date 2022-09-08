@@ -1,10 +1,10 @@
+@pkgpath devel/py-llvmlite
 lib/python${MODPY_VERSION}/site-packages/llvmlite/
 lib/python${MODPY_VERSION}/site-packages/llvmlite-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/llvmlite/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/llvmlite/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/llvmlite/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/llvmlite/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/_version.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/
@@ -33,7 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/dylib.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/executionengine.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/ffi.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/initfini.py
-lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/libllvmlite.so
+@so lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/libllvmlite.so
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/linker.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/module.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/binding/object_file.py
@@ -70,7 +70,6 @@ lib/python${MODPY_VERSION}/site-packages/llvmlite/llvmpy/${MODPY_PYCACHE}core.${
 lib/python${MODPY_VERSION}/site-packages/llvmlite/llvmpy/${MODPY_PYCACHE}passes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/llvmpy/core.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/llvmpy/passes.py
-lib/python${MODPY_VERSION}/site-packages/llvmlite/six.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/__main__.py
@@ -78,13 +77,17 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}customize.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}refprune_proto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}test_binding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}test_ir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}test_llvmpy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}test_refprune.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/${MODPY_PYCACHE}test_valuerepr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/customize.py
+lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/refprune_proto.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/test_binding.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/test_ir.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/test_llvmpy.py
+lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/test_refprune.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/tests/test_valuerepr.py
 lib/python${MODPY_VERSION}/site-packages/llvmlite/utils.py

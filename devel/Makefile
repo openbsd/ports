@@ -1430,7 +1430,6 @@
      SUBDIR += py-liblarch,python3
      SUBDIR += py-lief,python3
      SUBDIR += py-littleutils,python3
-     SUBDIR += py-llvmlite
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logilab-common,python3
      SUBDIR += py-magic,python3

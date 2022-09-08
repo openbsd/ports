@@ -1,0 +1,13 @@
+Index: ffi/passmanagers.cpp
+--- ffi/passmanagers.cpp.orig
++++ ffi/passmanagers.cpp
+@@ -17,9 +17,6 @@
+ #include "llvm-c/Transforms/IPO.h"
+ #include "llvm-c/Transforms/Scalar.h"
+ #include "llvm/IR/LegacyPassManager.h"
+-#if LLVM_VERSION_MAJOR > 11
+-#include "llvm/IR/RemarkStreamer.h"
+-#endif
+ #include "llvm/IR/LLVMRemarkStreamer.h"
+ #include "llvm/Remarks/RemarkStreamer.h"
+ #include "llvm/Transforms/IPO.h"
