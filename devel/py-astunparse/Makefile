@@ -4,7 +4,7 @@ COMMENT=		AST unparser for Python
 MODPY_EGG_VERSION=	1.6.3
 DISTNAME=		astunparse-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -25,5 +25,8 @@ MODPY_SETUPTOOLS=	Yes
 
 MODPY_PYTEST=		Yes
 TEST_ENV=		PYTHONPATH="${WRKSRC}/lib"
+
+RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
+			devel/py-wheel${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
