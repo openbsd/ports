@@ -1,49 +1,47 @@
-BROKEN-sparc64 =	"/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
-			"/usr/bin/ld: cannot find -lpyml_stubs"
+BROKEN-sparc64 ="/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
+		"/usr/bin/ld: cannot find -lpyml_stubs"
 
 COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.6
-REVISION =	6
-EXTRACT_SUFX =	.tgz
+
+GH_ACCOUNT =	coccinelle
+GH_PROJECT =	coccinelle
+GH_TAGNAME =	1.1.1
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://coccinelle.lip6.fr/
+HOMEPAGE =	https://coccinelle.gitlabpages.inria.fr/website/
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses m pthread pcre ${MODPY_WANTLIB}
+WANTLIB += c m pcre ${MODPY_WANTLIB}
 
-MASTER_SITES = ${HOMEPAGE}distrib/
+MODULES =	lang/ocaml \
+		lang/python
 
-MODULES =		lang/ocaml \
-			lang/python
-
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			print/texlive/base \
-			textproc/hevea \
-			devel/ocaml-menhir \
-			math/ocaml-num \
-			textproc/latexmk
-RUN_DEPENDS =		devel/ocaml-parmap \
-			devel/ocaml-pcre \
-			sysutils/findlib \
-			sysutils/ggrep \
-			textproc/gdiff
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		print/texlive/base \
+		sysutils/findlib \
+		textproc/hevea \
+		textproc/latexmk
+RUN_DEPENDS =	sysutils/ggrep \
+		textproc/gdiff
 
 # asks questions at the end if it does better than expected
 TEST_IS_INTERACTIVE = Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
 CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
-# The PKG_CHECK_MODULES autoconf macro doesn't have a way to use .private
-CONFIGURE_ENV +=	PYTHON_LIBS="`pkg-config --static --libs python`" \
-			ac_cv_path_PATCH="patch -z.ccorig"
-CONFIGURE_ARGS =	--with-python=${MODPY_BIN}
+CONFIGURE_ENV +=	ac_cv_path_PATCH="patch -z.ccorig"
+CONFIGURE_ARGS =	--with-python=${MODPY_BIN} \
+			--libdir=${PREFIX}/lib \
+			--enable-ocaml
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
@@ -55,7 +53,7 @@ CONFIGURE_ARGS +=	--disable-opt
 USE_GMAKE =	Yes
 PORTHOME =	${WRKDIR}
 
-ALL_TARGET =		all-release
+ALL_TARGET =	all-release
 
 TEST_TARGET =	test
 TEST_DEPENDS =	${FULLPKGPATH}
@@ -75,7 +73,7 @@ post-install:
 		${PREFIX}/lib/ocaml/stublibs/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinelle
 	${INSTALL_DATA} \
-		${WRKSRC}/docs/manual/*.{html,css,gif} \
+		${WRKSRC}/docs/manual/*.{html,css,svg} \
 		${PREFIX}/share/doc/coccinelle/
 
 .include <bsd.port.mk>
