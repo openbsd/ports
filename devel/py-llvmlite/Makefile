@@ -1,3 +1,5 @@
+COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
+
 MODPY_EGG_VERSION =	0.39.0
 GH_ACCOUNT =	numba
 GH_PROJECT =	llvmlite
