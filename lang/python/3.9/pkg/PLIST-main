@@ -101,6 +101,7 @@ include/python3.9/internal/pycore_hashtable.h
 include/python3.9/internal/pycore_import.h
 include/python3.9/internal/pycore_initconfig.h
 include/python3.9/internal/pycore_interp.h
+include/python3.9/internal/pycore_long.h
 include/python3.9/internal/pycore_object.h
 include/python3.9/internal/pycore_pathconfig.h
 include/python3.9/internal/pycore_pyerrors.h
