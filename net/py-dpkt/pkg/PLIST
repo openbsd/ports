@@ -1,3 +1,4 @@
+@pkgpath net/py-dpkt
 lib/python${MODPY_VERSION}/site-packages/dpkt/
 lib/python${MODPY_VERSION}/site-packages/dpkt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/dpkt/__init__.py

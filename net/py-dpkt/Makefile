@@ -3,7 +3,7 @@ COMMENT =		python network packet manipulation library
 MODPY_EGG_VERSION =	1.9.1
 DISTNAME =		dpkt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =     1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 NO_TEST =		Yes
 

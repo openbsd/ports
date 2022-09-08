@@ -555,7 +555,7 @@
      SUBDIR += py-dnslib,python3
      SUBDIR += py2-dnspython
      SUBDIR += py-dnspython,python3
-     SUBDIR += py-dpkt
+     SUBDIR += py-dpkt,python3
      SUBDIR += py-eapi,python3
      SUBDIR += py-engineio,python3
      SUBDIR += py-ftpdlib,python3
