@@ -1,6 +1,7 @@
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-6.1
+REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -18,11 +19,15 @@ COMPILER_LANGS=	c
 
 WANTLIB =  X11 Xau Xdmcp Xext Xrender cairo exif expat fontconfig
 WANTLIB += freetype gif glib-2.0 iconv intl jpeg lzma m pcre pixman-1
-WANTLIB += png pthread tiff xcb xcb-render xcb-shm z zstd
+WANTLIB += png pthread tiff xcb xcb-render xcb-shm z zstd graphite2
+WANTLIB += ${COMPILER_LIBCXX} ffi gio-2.0 gmodule-2.0 gobject-2.0 z
+WANTLIB += fribidi harfbuzz intl pango-1.0 pangocairo-1.0 pangoft2-1.0
 
 MASTER_SITES=	http://download.mono-project.com/sources/libgdiplus/
 
 LIB_DEPENDS=	devel/gettext,-runtime \
+		devel/harfbuzz \
+		devel/pango \
 		graphics/cairo \
 		graphics/tiff \
 		graphics/libexif \
