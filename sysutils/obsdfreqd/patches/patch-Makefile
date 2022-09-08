@@ -1,0 +1,9 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -16,5 +16,4 @@ clean:
+ 
+ install: obsdfreqd
+ 	install -o root -g wheel -m 555 obsdfreqd ${PREFIX}/sbin/obsdfreqd
+-	install -o root -g wheel -m 555 obsdfreqd.rc ${DESTDIR}/etc/rc.d/obsdfreqd
+ 	install -o root -g wheel -m 444 obsdfreqd.1 ${PREFIX}/man/man1/obsdfreqd.1

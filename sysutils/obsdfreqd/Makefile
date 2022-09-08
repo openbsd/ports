@@ -1,6 +1,6 @@
 COMMENT =		userland daemon to manage CPU frequency
 V =			1.0.1
-REVISION =		1
+REVISION =		2
 DISTNAME =		obsdfreqd-${V}
 
 CATEGORIES =		sysutils
