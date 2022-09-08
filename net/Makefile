@@ -138,6 +138,7 @@
      SUBDIR += httptunnel
      SUBDIR += i2p
      SUBDIR += i2pd
+     SUBDIR += iblock
      SUBDIR += icbd
      SUBDIR += icbirc
      SUBDIR += icecast
