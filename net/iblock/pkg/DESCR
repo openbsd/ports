@@ -1,0 +1,4 @@
+iblock is an inetd program adding the client IP to a Packet Filter
+table. It is meant to be listening on a port with inetd and receive
+connections with PF redirecting connections from a list of ports
+you want to block.

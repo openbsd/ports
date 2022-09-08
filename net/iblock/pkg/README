@@ -1,0 +1,55 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Add doas permission
+===================
+
+```
+# /etc/doas.conf
+permit nopass _iblock cmd /sbin/pfctl
+```
+
+Configure inetd
+===============
+
+In order to run iblock, you need to modify /etc/inetd.conf:
+
+```
+# inetd.conf
+666 stream tcp  nowait _iblock ${LOCALBASE}/sbin/iblock iblock iblocked
+666 stream tcp6 nowait _iblock ${LOCALBASE}/sbin/iblock iblock iblocked
+```
+
+Enable inetd service
+====================
+
+You need to enable and start inetd.
+
+```
+$ rcctl enable inetd
+$ rcctl start inetd
+```
+
+Firewall configuration
+======================
+
+```
+# /etc/pf.conf
+
+table <iblocked> persist
+iblock_services="{ 20 21 23 53 88 110 143 445 3306 6697 25565 }"
+block in quick from <iblocked> label iblock
+pass in quick on egress inet  proto tcp to port $iblock_services \
+	rdr-to 127.0.0.1 port 666 label "block_$dstport"
+pass in quick on egress inet6 proto tcp to port $iblock_services \
+	rdr-to ::1 port 666 label "block6_dstport"
+```
+
+The label keyword allows displaying blocking statistics with pfctl -s labels
+
+Usage
+=====
+
+Upon connection on the inetd port, iblock will run pfctl to add the
+IP to a PF table that you can block.
