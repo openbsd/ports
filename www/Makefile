@@ -103,6 +103,7 @@
      SUBDIR += minitube
      SUBDIR += moinmoin
      SUBDIR += mozilla-firefox
+     SUBDIR += mycorrhiza
      SUBDIR += netsurf
      SUBDIR += newsboat
      SUBDIR += nextcloud
