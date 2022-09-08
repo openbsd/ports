@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/mycorrhiza"
+daemon_flags="${LOCALSTATEDIR}/mycorrhiza"
+daemon_user="_mycorrhiza"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

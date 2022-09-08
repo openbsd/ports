@@ -1,0 +1,9 @@
+Mycorrhiza can be used for personal wikis, digital gardens and wikis
+for small teams or communities. It doesn't require a database,
+everything is stored as plain-text files. Content is stored as
+hyphas which can be just text articles or media such as pictures
+and videos. History of changes is managed using git in automated
+fashion - mycorrhiza creates and manages git repository for you.
+
+One can serve mycorrhiza to be accessible via http, it's web ready.
+It also features few authentication options and user management.

@@ -1,0 +1,9 @@
+@newgroup _mycorrhiza:885
+@newuser _mycorrhiza:885:_mycorrhiza::Mycorrhiza User:${LOCALSTATEDIR}/mycorrhiza:/sbin/nologin
+@rcscript ${RCDIR}/mycorrhiza
+@bin bin/mycorrhiza
+share/doc/pkg-readmes/${PKGSTEM}
+@mode 0755
+@owner _mycorrhiza
+@group _mycorrhiza
+@sample ${LOCALSTATEDIR}/mycorrhiza/

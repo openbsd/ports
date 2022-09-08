@@ -1,0 +1,76 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Initial setup
+=============
+
+By default, Mycorrhiza listens on localhost:1737.  To make it reachable
+as a web service, it needs to be put behind a TLS terminating proxy.
+Here's a sample httpd(8) and relayd(8) configuration provided for
+reference:
+
+/etc/httpd.conf:
+
+	server "mycorrhiza.example.com" {
+		listen on * port http
+		location "/.well-known/acme-challenge/*" {
+			root "/acme"
+			request strip 2
+		}
+		location "*" {
+			block return 302 "https://$HTTP_HOST$REQUEST_URI"
+		}
+	}
+
+
+/etc/relayd.conf:
+
+	ext_ip="123.45.67.89"
+	ext_ip6="1234:5678:dead:beef"
+	mycorrhiza_port="1737"
+	table <mycorrhiza> { 127.0.0.1 ::1 }
+
+	http protocol https {
+		match request header append "X-Forwarded-For" \
+			value "$REMOTE_ADDR"
+		match request header append "X-Forwarded-By" \
+			value "$SERVER_ADDR:$SERVER_PORT"
+		match request header set "Connection" value "close"
+
+		match request header "Host" value "mycorrhiza.*" \
+			forward to <mycorrhiza>
+
+		tcp { sack, backlog 128 }
+		tls keypair mycorrhiza.example.com
+	}
+
+	relay https {
+		listen on $ext_ip port https tls
+		listen on $ext_ip6 port https tls
+		protocol https
+		forward to <mycorrhiza> port $mycorrhiza_port check tcp
+	}
+
+Don't forget to set up a TLS certificate (for example using
+acme-client(1)) and start httpd(8) and relayd(8):
+
+	# rcctl enable httpd relayd
+	# rcctl start httpd relayd
+
+
+Setup
+=====
+
+See the official documentation for details about configuration and
+deployment.  Be sure to set up proper authentication.
+
+By default the wiki will be created in ${LOCALSTATEDIR}/mycorrhiza, but
+it's possible to change it by overwriting the daemon flags with rcctl(8)
+
+	# rcctl set mycorrhiza flags '/path/to/wiki/dir'
+
+Finally, enable and start the daemon:
+
+	# rcctl enable mycorrhiza
+	# rcctl start mycorrhiza
