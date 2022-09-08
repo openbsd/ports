@@ -2,7 +2,7 @@ COMMENT =	generate access/prefix lists for BGP config (fork of bgpq3)
 
 GH_ACCOUNT =		bgp
 GH_PROJECT =		bgpq4
-GH_TAGNAME =		1.5
+GH_TAGNAME =		1.6
 
 CATEGORIES =		net
 
