@@ -1,0 +1,2 @@
+Game of Trees Web Daemon (gotwebd) is a Fast-CGI server which displays
+Git repository data and is designed to work with httpd(8).

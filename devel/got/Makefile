@@ -1,9 +1,11 @@
 COMMENT-main =		game of trees version control system
-COMMENT-web =		game of trees repository server for web browsers
+COMMENT-web =		game of trees repository cgi script
+COMMENT-webd =		game of trees repository fast-cgi server
 
-V =			0.74
+V =			0.75
 DISTNAME =		got-${V}
 PKGNAME-web =		gotweb-${V}
+PKGNAME-webd =		gotwebd-${V}
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
@@ -11,19 +13,21 @@ MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 
-MULTI_PACKAGES =	-main -web
+MULTI_PACKAGES =	-main -web -webd
 
 # uses pledge()
 WANTLIB-main =		c curses m panel pthread util z
 WANTLIB-web =		c util z
+WANTLIB-webd =		c util z
 
 MAKE_FLAGS =		CC="${CC}"
-ALL_TARGET =		all web
-INSTALL_TARGET =	install web-install
+ALL_TARGET =		all web webd
+INSTALL_TARGET =	install web-install webd-install
 
 MASTER_SITES =		https://gameoftrees.org/releases/
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+# no debug package for -webd because build-debug-info does not work with it
+DEBUG_PACKAGES =	-main -web
 
 BUILD_DEPENDS =		www/kcgi>=0.12.0
 
@@ -33,6 +37,7 @@ TEST_DEPENDS =		devel/git \
 			${PKGPATH}=${V}
 
 PREFIX-web =		${VARBASE}/www
+PREFIX-webd =		${VARBASE}/www
 TEST_TARGET =		regress
 FAKE_FLAGS =		MANDIR=${PREFIX}/man/man CHROOT_DIR=${VARBASE}/www
 

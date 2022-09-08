@@ -1,0 +1,29 @@
+@rcscript ${RCDIR}/gotwebd
+bin/gotwebd/
+bin/gotwebd/libexec/
+@bin bin/gotwebd/libexec/got-read-blob
+@bin bin/gotwebd/libexec/got-read-commit
+@bin bin/gotwebd/libexec/got-read-gitconfig
+@bin bin/gotwebd/libexec/got-read-gotconfig
+@bin bin/gotwebd/libexec/got-read-object
+@bin bin/gotwebd/libexec/got-read-pack
+@bin bin/gotwebd/libexec/got-read-tag
+@bin bin/gotwebd/libexec/got-read-tree
+htdocs/gotwebd/
+htdocs/gotwebd/android-chrome-192x192.png
+htdocs/gotwebd/android-chrome-384x384.png
+htdocs/gotwebd/apple-touch-icon.png
+htdocs/gotwebd/browserconfig.xml
+htdocs/gotwebd/favicon-16x16.png
+htdocs/gotwebd/favicon-32x32.png
+htdocs/gotwebd/favicon.ico
+htdocs/gotwebd/got.png
+htdocs/gotwebd/got_large.png
+htdocs/gotwebd/gotweb.css
+htdocs/gotwebd/mstile-150x150.png
+htdocs/gotwebd/safari-pinned-tab.svg
+htdocs/gotwebd/site.webmanifest
+@cwd ${LOCALBASE}
+@man man/man5/gotwebd.conf.5
+@man man/man8/gotwebd.8
+@bin sbin/gotwebd
