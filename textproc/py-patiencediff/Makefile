@@ -1,9 +1,8 @@
 COMMENT =		Python implementation of the patiencediff algorithm
 
-MODPY_EGG_VERSION =	0.2.2
+MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		patiencediff-${MODPY_EGG_VERSION}
 PKGNAME =		py-patiencediff-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -16,10 +15,7 @@ WANTLIB +=		${MODPY_WANTLIB} pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	patiencediff
-MODPY_SETUPTOOLS =	Yes
-MODPY_TEST_DIR =	${WRKSRC}/lib*
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
