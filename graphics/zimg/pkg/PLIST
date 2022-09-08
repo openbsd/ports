@@ -1,0 +1,25 @@
+include/zimg++.hpp
+include/zimg.h
+@static-lib lib/libzimg.a
+lib/libzimg.la
+@lib lib/libzimg.so.${LIBzimg_VERSION}
+lib/pkgconfig/zimg.pc
+share/doc/zimg/
+share/doc/zimg/COPYING
+share/doc/zimg/ChangeLog
+share/doc/zimg/README.md
+share/examples/zimg/
+share/examples/zimg/Makefile
+share/examples/zimg/api_example.cpp
+share/examples/zimg/api_example_c.c
+share/examples/zimg/hdr_example.cpp
+share/examples/zimg/interlace_example.cpp
+share/examples/zimg/misc/
+share/examples/zimg/misc/aligned_malloc.h
+share/examples/zimg/misc/argparse.cpp
+share/examples/zimg/misc/argparse.h
+share/examples/zimg/misc/mmap.cpp
+share/examples/zimg/misc/mmap.h
+share/examples/zimg/misc/win32_bitmap.cpp
+share/examples/zimg/misc/win32_bitmap.h
+share/examples/zimg/tile_example.cpp
