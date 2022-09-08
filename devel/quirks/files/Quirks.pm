@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1428 2022/09/08 10:10:38 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1429 2022/09/08 11:09:06 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1709,6 +1709,7 @@ setup_obsolete_reason(
 	6 => 'webvfx',
 	6 => 'libXp',
 	5 => 'gamin',
+	6 => 'py-futures',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

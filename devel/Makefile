@@ -1386,7 +1386,6 @@
      SUBDIR += py-funcy,python3
      SUBDIR += py-future
      SUBDIR += py-future,python3
-     SUBDIR += py-futures
      SUBDIR += py-gast,python3
      SUBDIR += py-gevent,python3
      SUBDIR += py-gevent-eventemitter,python3
