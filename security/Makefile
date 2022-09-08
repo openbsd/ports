@@ -203,7 +203,6 @@
      SUBDIR += p5-Crypt-Rijndael
      SUBDIR += p5-Crypt-SSLeay
      SUBDIR += p5-Crypt-SaltedHash
-     SUBDIR += p5-Crypt-Serpent
      SUBDIR += p5-Crypt-SmbHash
      SUBDIR += p5-Crypt-TripleDES
      SUBDIR += p5-Crypt-Twofish
