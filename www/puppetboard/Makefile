@@ -1,6 +1,6 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	3.6.1
+MODPY_EGG_VERSION=	4.0.3
 DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
 CATEGORIES=		www
 
@@ -16,9 +16,10 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=2.4.0 \
-			textproc/py-commonmark${MODPY_FLAVOR}>=0.7.2 \
-			www/py-flask-wtf${MODPY_FLAVOR}>=0.14.2 \
+RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=2.5.2 \
+			sysutils/py-packaging${MODPY_FLAVOR} \
+			textproc/py-commonmark${MODPY_FLAVOR} \
+			www/py-flask-wtf${MODPY_FLAVOR} \
 			www/py-gunicorn${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR}
 
