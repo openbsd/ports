@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 1.45.1
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 PORTROACH =	skipv:release-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 
@@ -19,9 +19,8 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
+MODPY_PEP517 =	setuptools
 MODPY_ADJ_FILES = docs/id3_frames_gen.py
-MODPY_PYTEST =	Yes
 SUBST_VARS =	MODPY_FLAVOR
 
 TEST_DEPENDS =	audio/faad \

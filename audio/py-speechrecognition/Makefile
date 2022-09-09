@@ -1,7 +1,7 @@
 COMMENT =	Python library for performing speech recognition
 
 PKGNAME =	py-speechrecognition-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	Uberi
 GH_PROJECT =	speech_recognition
@@ -18,8 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST = 	Yes
+MODPY_PEP517 =	setuptools
 
 RUN_DEPENDS =	audio/flac \
 		audio/py-audio${MODPY_FLAVOR}>=0.2.11

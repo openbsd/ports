@@ -1,6 +1,7 @@
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
 MODPY_EGG_VERSION =	2.8.3
+REVISION =		0
 DISTNAME =		picard-${MODPY_EGG_VERSION}
 
 CATEGORIES =		audio
@@ -15,7 +16,7 @@ WANTLIB =		${MODPY_WANTLIB} pthread
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 # msgfmt
 BUILD_DEPENDS =		devel/gettext,-tools

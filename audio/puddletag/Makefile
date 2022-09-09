@@ -1,6 +1,7 @@
 COMMENT =		spreadsheet-like audio file tagger
 
 MODPY_EGG_VERSION =	2.1.1
+REVISION =		0
 DISTNAME =		puddletag-${MODPY_EGG_VERSION}
 
 CATEGORIES =		audio
@@ -13,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 RUN_DEPENDS =		audio/py-mutagen${MODPY_FLAVOR} \
 			devel/desktop-file-utils \

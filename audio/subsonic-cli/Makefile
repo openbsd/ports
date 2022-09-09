@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.2.1
 
 DISTNAME =		subsonic-cli-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
@@ -18,6 +18,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 .include <bsd.port.mk>

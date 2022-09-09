@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 0.7.1
 DISTNAME =	musicbrainzngs-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://python-musicbrainzngs.readthedocs.org/
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	5.0.1
 
 DISTNAME =	cplay-ng-${MODPY_EGG_VERSION}
 PKGNAME =	cplay-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 RUN_DEPENDS =		multimedia/mpv
 

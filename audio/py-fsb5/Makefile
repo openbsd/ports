@@ -7,7 +7,7 @@ GH_ACCOUNT =		HearthSim
 GH_PROJECT =		python-fsb5
 GH_TAGNAME =		b7bf605
 CATEGORIES =		audio
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 # requires audio/libogg and audio/libvorbis to decode ogg samples
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

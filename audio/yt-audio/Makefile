@@ -3,7 +3,7 @@ COMMENT =		youtube-dl wrapper to manage youtube audio
 MODPY_EGG_VERSION =	0.1
 DISTNAME =		yt-audio-${MODPY_EGG_VERSION}
 CATEGORIES =		audio
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -16,7 +16,6 @@ RUN_DEPENDS =		www/youtube-dl \
 			graphics/ffmpeg
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 .include <bsd.port.mk>

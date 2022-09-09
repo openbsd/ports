@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.2.11
 DISTNAME =	PyAudio-${MODPY_EGG_VERSION}
 PKGNAME =	py-audio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio devel
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 
@@ -19,7 +19,7 @@ FLAVORS =	python3
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PEP517 =	setuptools
 
 LIB_DEPENDS =	audio/portaudio-svn
 

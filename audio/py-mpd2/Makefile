@@ -3,7 +3,7 @@ COMMENT =		Python client interface for MPD
 MODPY_EGG_VERSION =	3.0.4
 DISTNAME =		python-mpd2-${MODPY_EGG_VERSION}
 PKGNAME =		py-mpd2-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
@@ -14,8 +14,7 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 MODPY_PYTEST_ARGS =	mpd/tests.py
 
 FLAVORS =		python3

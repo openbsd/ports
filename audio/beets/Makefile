@@ -1,6 +1,7 @@
 COMMENT=	CLI tools to manage music collections
 
 MODPY_EGG_VERSION= 1.6.0
+REVISION=	0
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 
@@ -10,9 +11,8 @@ HOMEPAGE=	https://beets.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PEP517=	setuptools
 MODPY_PI=	Yes
-MODPY_PYTEST=	Yes
 
 RUN_DEPENDS+=	audio/py-discogs-client${MODPY_FLAVOR}>=2.0.2 \
 		audio/py-last${MODPY_FLAVOR} \

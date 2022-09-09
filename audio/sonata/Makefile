@@ -6,7 +6,7 @@ GH_ACCOUNT=	multani
 GH_PROJECT=	sonata
 DISTNAME=	sonata-${MODPY_EGG_VERSION}
 EPOCH=		1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PEP517=	setuptools
 
 BUILD_DEPENDS=	devel/gettext,-tools
 

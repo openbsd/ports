@@ -1,7 +1,7 @@
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
 GH_TAGNAME =	1.1.2
-REVISION =	6
+REVISION =	7
 
 COMMENT =	Pandora client for GNOME
 CATEGORIES =	audio x11
@@ -15,7 +15,7 @@ HOMEPAGE =	http://pithos.github.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
 		devel/desktop-file-utils \

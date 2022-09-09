@@ -3,7 +3,7 @@ COMMENT =		Python binding of libdiscid
 MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		discid-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		audio
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 RUN_DEPENDS =		audio/libdiscid
 

@@ -1,6 +1,7 @@
 COMMENT =		audio normalization
 
 MODPY_EGG_VERSION =	1.23.0
+REVISION =		0
 DISTNAME =		ffmpeg-normalize-${MODPY_EGG_VERSION}
 
 CATEGORIES =		audio multimedia
@@ -13,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 MODPY_PYTEST_ARGS =	test/test.py
 
 RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \

@@ -2,7 +2,7 @@ MODPY_EGG_VERSION =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
 DISTNAME =	curseradio-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
-REVISION =	2
+REVISION =	3
 
 GH_ACCOUNT =	chronitis
 GH_PROJECT =	curseradio
@@ -14,7 +14,8 @@ MAINTAINER =	Krystian Lewandowski <k.lewandowski@me.com>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS =	Yes
+
+MODPY_PEP517 =	setuptools
 
 RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
