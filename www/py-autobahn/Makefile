@@ -3,6 +3,7 @@ COMMENT =	WebSocket client & server library, WAMP real-time framework
 MODPY_EGG_VERSION =	22.7.1
 DISTNAME =	autobahn-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES =	www
 
@@ -14,8 +15,15 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
+MODPY_PEP517 =	setuptools
 
-MODPY_SETUPTOOLS = Yes
+# asyncio tests require extra dep (pytest.mark.asyncio)
+# wamp tests using twisted have various problems which look like an
+# incompatible version of twisted?
+MODPY_PYTEST_ARGS = autobahn \
+		--ignore autobahn/asyncio/test \
+		--ignore autobahn/wamp/test
+
 FLAVORS =	python3
 FLAVOR  =	python3
 
@@ -31,7 +39,7 @@ PKG_ARGS =	-Dnvx=0
 MAKE_ENV =	AUTOBAHN_USE_NVX=0
 .endif
 
-# requires an update to unittest and then traceback2 and linecache2
-NO_TEST =	Yes
+TEST_DEPENDS =	devel/py-twisted${MODPY_FLAVOR} \
+		security/py-PyNaCl${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

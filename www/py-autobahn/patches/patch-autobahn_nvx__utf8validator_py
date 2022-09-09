@@ -1,0 +1,14 @@
+compile type must not depend on cpu features on the package build machine
+
+Index: autobahn/nvx/_utf8validator.py
+--- autobahn/nvx/_utf8validator.py.orig
++++ autobahn/nvx/_utf8validator.py
+@@ -54,7 +54,7 @@ with open(os.path.join(os.path.dirname(__file__), '_ut
+         "_nvx_utf8validator",
+         c_source,
+         libraries=[],
+-        extra_compile_args=['-std=c99', '-Wall', '-Wno-strict-prototypes', '-O3', '-march=native'],
++        extra_compile_args=['-std=c99', '-Wall', '-Wno-strict-prototypes', '-msse2'],
+         optional=optional
+     )
+ 
