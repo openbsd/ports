@@ -3841,6 +3841,10 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/disconnect-custom-k
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/enable-key-rotation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/enable-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/encrypt.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key-pair-without-plaintext.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key-pair.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key-without-plaintext.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-data-key.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/generate-random.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/kms/get-key-rotation-status.rst
