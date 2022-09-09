@@ -299,6 +299,7 @@
      SUBDIR += py-mitogen,python3
      SUBDIR += py-packaging,python3
      SUBDIR += py-parallel-ssh,python3
+     SUBDIR += py-pipx,python3
      SUBDIR += py-platformdirs,python3
      SUBDIR += py-prometheus_client,python3
      SUBDIR += py-psutil
@@ -310,6 +311,7 @@
      SUBDIR += py-statgrab,python3
      SUBDIR += py-threadpoolctl,python3
      SUBDIR += py-tsk,python3
+     SUBDIR += py-userpath,python3
      SUBDIR += py-vmomi,python3
      SUBDIR += py-vsphere-automation,python3
      SUBDIR += py-zabbix-api,python3
