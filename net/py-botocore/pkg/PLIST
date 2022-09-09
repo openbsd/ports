@@ -544,6 +544,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/2017-07-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/2017-07-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/2017-07-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/dataexchange/2017-07-25/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datapipeline/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datapipeline/2012-10-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/datapipeline/2012-10-29/examples-1.json
