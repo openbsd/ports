@@ -3,7 +3,7 @@
 bin/wamp
 bin/xbrnetwork
 bin/xbrnetwork-ui
-@so lib/python${MODPY_VERSION}/site-packages/_nvx_utf8validator${MODPY_ABI3SO}.so
+%%nvx%%
 lib/python${MODPY_VERSION}/site-packages/autobahn/
 lib/python${MODPY_VERSION}/site-packages/autobahn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/autobahn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
