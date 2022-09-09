@@ -2,7 +2,7 @@ PORTROACH=		limit:^2
 
 COMMENT=		C++ wrapper for the libxml XML parser library
 
-GNOME_VERSION=		2.42.1
+GNOME_VERSION=		2.42.2
 GNOME_PROJECT=		libxml++
 
 SHARED_LIBS += xml++-2.6                 2.1 # 2.0.7
