@@ -1,6 +1,6 @@
 COMMENT=		C++ bindings for libxml2
 
-GNOME_VERSION=		5.0.1
+GNOME_VERSION=		5.0.2
 GNOME_PROJECT=		libxml++
 PKGNAME=		libxml++50-${GNOME_VERSION}
 
