@@ -50,6 +50,7 @@
 @man man/man7/coredns-tls.7
 @man man/man7/coredns-trace.7
 @man man/man7/coredns-transfer.7
+@man man/man7/coredns-tsig.7
 @man man/man7/coredns-whoami.7
 share/examples/coredns/
 @sample ${SYSCONFDIR}/coredns/
