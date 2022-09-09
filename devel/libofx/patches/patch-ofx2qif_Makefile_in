@@ -1,0 +1,14 @@
+revert https://github.com/libofx/libofx/commit/75952c113d642319f3a3f46edb70ee5bc6b23009
+
+Index: ofx2qif/Makefile.in
+--- ofx2qif/Makefile.in.orig
++++ ofx2qif/Makefile.in
+@@ -327,7 +327,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-ofx2qif_LDADD = $(top_builddir)/lib/libofx.la -lstdc++
++ofx2qif_LDADD = $(top_builddir)/lib/libofx.la
+ ofx2qif_SOURCES = ofx2qif.c
+ AM_CPPFLAGS = \
+ 	-I${top_builddir}/inc

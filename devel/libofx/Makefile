@@ -1,6 +1,6 @@
 COMMENT=	opensource implementation of the OFX specification
 
-DISTNAME=	libofx-0.10.4
+DISTNAME=	libofx-0.10.7
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libofx.sourceforge.net/
