@@ -3869,6 +3869,10 @@ share/wesnoth/data/core/images/help/l10n/vi/
 share/wesnoth/data/core/images/help/l10n/vi/hpxp.png
 share/wesnoth/data/core/images/help/l10n/vi/recruit.png
 share/wesnoth/data/core/images/help/l10n/vi/tooltip.png
+share/wesnoth/data/core/images/help/l10n/zh_CN/
+share/wesnoth/data/core/images/help/l10n/zh_CN/hpxp.png
+share/wesnoth/data/core/images/help/l10n/zh_CN/recruit.png
+share/wesnoth/data/core/images/help/l10n/zh_CN/tooltip.png
 share/wesnoth/data/core/images/help/moving1.png
 share/wesnoth/data/core/images/help/moving2.png
 share/wesnoth/data/core/images/help/orb-blue.png
