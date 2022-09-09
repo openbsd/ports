@@ -1,21 +1,21 @@
-COMMENT=		speaking ascii cow
+COMMENT=	speaking ascii cow
 
-GH_ACCOUNT = tnalpgge
-GH_PROJECT = rank-amateur-cowsay
-GH_COMMIT = d66b866cf136502054e081b8714b09f7e43cd39f
+GH_ACCOUNT=	tnalpgge
+GH_PROJECT=	rank-amateur-cowsay
+GH_COMMIT=	d66b866cf136502054e081b8714b09f7e43cd39f
 
-DISTNAME=		cowsay-3.04
+DISTNAME=	cowsay-3.04
 
-CATEGORIES=		games
+CATEGORIES=	games
 
-HOMEPAGE=		https://web.archive.org/web/20071026043648/http://www.nog.net/~tony/warez/cowsay.shtml
+HOMEPAGE=	https://web.archive.org/web/20071026043648/http://www.nog.net/~tony/warez/cowsay.shtml
 
 # perl (we're using the commit before the change to GPLv3)
 PERMIT_PACKAGE=	Yes
 
-NO_TEST=		Yes
-NO_BUILD=		Yes
-PKG_ARCH=		*
+NO_TEST=	Yes
+NO_BUILD=	Yes
+PKG_ARCH=	*
 
 do-configure:
 	sed -i -e 's@%BANGPERL%@!/usr/bin/perl@; \
