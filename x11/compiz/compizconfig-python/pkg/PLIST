@@ -1,2 +1,0 @@
-lib/pkgconfig/compizconfig-python.pc
-@so lib/python${MODPY_VERSION}/site-packages/compizconfig.so

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1430 2022/09/08 20:22:07 bluhm Exp $
+# $OpenBSD: Quirks.pm,v 1.1431 2022/09/09 20:46:32 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1711,6 +1711,12 @@ setup_obsolete_reason(
 	5 => 'gamin',
 	6 => 'py-futures',
 	0 => 'p5-Crypt-Serpent',
+	5 => 'compiz-bcop',
+	5 => 'ccsm',
+	5 => 'compizconfig-python',
+	5 => 'compiz',
+	5 => 'libcompizconfig',
+	5 => 'compiz-plugins-main',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
