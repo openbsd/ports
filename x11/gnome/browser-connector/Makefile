@@ -1,10 +1,9 @@
 COMMENT=		GNOME Shell browser connector
 
-V=			42.0
+V=			42.1
 GNOME_PROJECT=		gnome-browser-connector
 GNOME_VERSION=		v${V}
 PKGNAME=		${GNOME_PROJECT}-${V}
-REVISION=		0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/nE0sIghT/${GNOME_PROJECT}/-/archive/${GNOME_VERSION}/
