@@ -1,0 +1,27 @@
+@conflict py-dbus-common-*
+@conflict py-dbus-*
+@pkgpath x11/dbus-python,-common
+@pkgpath x11/dbus-python,-main
+include/dbus-1.0/dbus/dbus-python.h
+lib/pkgconfig/dbus-python.pc
+@so lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/dbus/
+lib/python${MODPY_VERSION}/site-packages/dbus/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dbus/_compat.py
+lib/python${MODPY_VERSION}/site-packages/dbus/_dbus.py
+lib/python${MODPY_VERSION}/site-packages/dbus/_expat_introspect_parser.py
+lib/python${MODPY_VERSION}/site-packages/dbus/bus.py
+lib/python${MODPY_VERSION}/site-packages/dbus/connection.py
+lib/python${MODPY_VERSION}/site-packages/dbus/decorators.py
+lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/dbus/gi_service.py
+lib/python${MODPY_VERSION}/site-packages/dbus/glib.py
+lib/python${MODPY_VERSION}/site-packages/dbus/lowlevel.py
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/__init__.py
+lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/glib.py
+lib/python${MODPY_VERSION}/site-packages/dbus/proxies.py
+lib/python${MODPY_VERSION}/site-packages/dbus/server.py
+lib/python${MODPY_VERSION}/site-packages/dbus/service.py
+lib/python${MODPY_VERSION}/site-packages/dbus/types.py

@@ -44,7 +44,6 @@
      SUBDIR += dbus
      SUBDIR += dbus-glib
      SUBDIR += dbus-intf
-     SUBDIR += dbus-python
      SUBDIR += dbus-python,python3
      SUBDIR += dbus-tcl
      SUBDIR += dbusmenu-qt
