@@ -106,6 +106,7 @@
      SUBDIR += mycorrhiza
      SUBDIR += netsurf
      SUBDIR += newsboat
+     SUBDIR += newsraft
      SUBDIR += nextcloud
      SUBDIR += nextcloud_notify_push
      SUBDIR += nghttp2
