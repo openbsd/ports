@@ -2,8 +2,7 @@ COMMENT =	desktop client for Matrix using Qt and C++17
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
-GH_TAGNAME =	v0.9.3
-REVISION =	0
+GH_TAGNAME =	v0.10.1
 
 CATEGORIES=	net
 
@@ -24,6 +23,7 @@ MODULES =	devel/cmake \
 COMPILER =	base-clang ports-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/qt5/qtgraphicaleffects \
 		x11/gtk+3,-guic
 
 BUILD_DEPENDS = databases/lmdbxx \
