@@ -16,7 +16,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 REVISION-libpurple=0
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS=	jabber		0.0 \
 		purple		7.1 \

@@ -19,7 +19,7 @@ PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
 REVISION-python=	4
-REVISION-gui=		6
+REVISION-gui=		7
 REVISION-gtk3=		3
 REVISION-main=		8
 REVISION-libs=		2

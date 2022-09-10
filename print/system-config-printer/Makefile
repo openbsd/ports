@@ -2,6 +2,7 @@ COMMENT=		printer (CUPS) administration tool
 
 V=			1.5.18
 DISTNAME=		system-config-printer-${V}
+REVISION=		0
 
 CATEGORIES=		print sysutils
 

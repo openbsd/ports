@@ -6,6 +6,8 @@ EXTRACT_SUFX=		.tar.bz2
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
 
+REVISION=		0
+
 # https://github.com/Netatalk/Netatalk/pull/174
 MASTER_SITES0=		https://src.fedoraproject.org/rpms/netatalk/raw/rawhide/f/
 PATCHFILES=		netatalk_add_entry.patch:0
