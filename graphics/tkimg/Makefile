@@ -1,55 +1,39 @@
-COMMENT =	image extension for Tcl/Tk
+COMMENT =		image extension for Tcl/Tk
 
-V =		1.4.2
-DISTNAME =	tkimg$V
-PKGNAME =	tkimg-$V
-SHLIB_VERSION =	0.0
-.for _lib in tkimgbmp142 tkimg142 tkimggif142 tkimgico142 tkimgjpeg142 \
-	tkimgpcx142 tkimgpixmap142 tkimgpng142 tkimgppm142 tkimgps142 \
-	tkimgsgi142 tkimgsun142 tkimgtga142 tkimgtiff142 tkimgwindow142 \
-	tkimgxbm142 tkimgxpm142 tkimgraw142 tkimgdted142 zlibtcl128 \
-	jpegtcl84 pngtcl1412 tifftcl394
-SHARED_LIBS +=	${_lib} ${SHLIB_VERSION}
-.endfor
-REVISION =	0
+V =			1.4.13
 
-CATEGORIES =	graphics
-
-HOMEPAGE = 	http://tkimg.sourceforge.net/
-
-MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
+DISTNAME =		Img-${V}-Source
+PKGNAME =		tkimg-${V}
+CATEGORIES =		graphics
+HOMEPAGE = 		http://tkimg.sourceforge.net/
+MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE =		Yes
-
-WANTLIB += X11 Xext Xft Xss fontconfig m
-
+PERMIT_PACKAGE =	Yes
+WANTLIB =		X11 Xext Xft Xss fontconfig m
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkimg/}
-
 MODULES =		x11/tk
+
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
 			devel/tcllib
-RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
-TEST_DEPENDS =	${PKGPATH}
 
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
+
+FAKE_FLAGS =		INSTALL_ROOT=${DESTDIR} \
+			LIB_RUNTIME_DIR=${MODTCL_TCLDIR}/tkimg
+
+TEST_FLAGS =		libdir=${WRKBUILD}
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS= --libdir=${MODTCL_TCLDIR} \
-		--with-tcl=${MODTCL_LIBDIR} \
-		--with-tclinclude=$(MODTCL_INCDIR) \
-		--with-tk=${MODTK_LIBDIR} \
-		--with-tkinclude=${MODTK_INCDIR} \
-		--with-x \
-		--x-includes=${X11BASE}/include	
-WRKDIST =	${WRKDIR}/tkimg1.4
-TEST_IS_INTERACTIVE = X11
-TEST_TARGET =	test
-INSTALL_TARGET =	collate
-FAKE_FLAGS =		INSTALL_ROOT=${DESTDIR} LIB_RUNTIME_DIR=${MODTCL_TCLDIR}/tkimg
-CONFIGURE_ENV = 	SHLIB_VERSION=${SHLIB_VERSION}
 
-post-install:
-	echo 'set auto_path [concat $$auto_path $$dir]' > \
-		${DESTDIR}${MODTCL_TCLDIR}/tkimg/pkgIndex.tcl 
+CONFIGURE_ARGS =	--libdir=${MODTCL_TCLDIR}/tkimg \
+			--includedir=${PREFIX}/include/tkimg \
+			--with-tcl=${MODTCL_LIBDIR} \
+			--with-tk=${MODTK_LIBDIR} \
+			--with-x
+
+TEST_IS_INTERACTIVE =	X11
+WRKDIST =		${WRKDIR}/Img-${V}
+TEST_TARGET =		test
 
 .include <bsd.port.mk>
