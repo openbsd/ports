@@ -145,6 +145,7 @@ CONFIGURE_ARGS +=	-no-vulkan
 # disabled
 CONFIGURE_ARGS +=	-no-ccache \
 			-no-compile-examples \
+			-no-inotify \
 			-no-journald \
 			-no-mimetype-database \
 			-no-mtdev \
