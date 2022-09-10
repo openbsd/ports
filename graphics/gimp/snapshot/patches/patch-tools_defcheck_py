@@ -1,0 +1,12 @@
+uses nm options that arent supported by our nm
+Index: tools/defcheck.py
+--- tools/defcheck.py.orig
++++ tools/defcheck.py
+@@ -46,6 +46,7 @@ def_files = (
+ )
+ 
+ have_errors = 0
++sys.exit (have_errors)
+ 
+ srcdir = None
+ if len(sys.argv) > 1:
