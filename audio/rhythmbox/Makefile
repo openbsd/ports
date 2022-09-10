@@ -2,6 +2,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.6
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -13,7 +14,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2 with exception clause
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 atk-1.0 c cairo dmapsharing-3.0 gdk-3 gdk_pixbuf-2.0
+WANTLIB += X11 atk-1.0 c cairo dmapsharing-4.0 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gobject-2.0 grilo-0.3
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstcontroller-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gtk-3 intl json-glib-1.0 m
@@ -37,7 +38,7 @@ LIB_DEPENDS=		databases/tdb \
 			devel/libpeas \
 			multimedia/gstreamer1/plugins-base \
 			x11/gnome/grilo \
-			x11/gnome/libdmapsharing \
+			x11/gnome/libdmapsharing4 \
 			x11/gnome/totem-pl-parser
 
 # context plugin
