@@ -1,6 +1,5 @@
 MODPY_EGG_VERSION =	1.2.2
-
-WANTLIB =		pthread
+REVISION =		0
 
 BUILD_DEPENDS =		devel/py-pkgconfig${MODPY_FLAVOR}
 RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR}

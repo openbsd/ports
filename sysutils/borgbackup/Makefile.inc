@@ -14,10 +14,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		crypto lz4 xxhash zstd
 
 MODULES =		lang/python
+MODPY_PEP517 =		setuptools
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_TEST_DIR =	${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
+MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
 
 LIB_DEPENDS +=		archivers/lz4 \
 			archivers/zstd \
