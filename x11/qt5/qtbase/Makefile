@@ -7,9 +7,6 @@ COMMENT-mysql =		MySQL plugin for Qt5
 COMMENT-psql =		PostgresSQL plugin for Qt5
 COMMENT-tds =		TDS plugin for Qt5
 
-REVISION-main =		10
-REVISION-examples =	0
-
 PKGNAME-mysql =		qt5-mysql-${VERSION}
 PKGNAME-global =	qt5-global-${VERSION}
 PKGNAME-psql =		qt5-postgresql-${VERSION}
@@ -20,21 +17,21 @@ PKG_ARCH-examples =	*
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  Qt5Concurrent                3.0 # 5.9
-SHARED_LIBS +=  Qt5Core                      3.1 # 5.9
-SHARED_LIBS +=  Qt5DBus                      3.0 # 5.9
-SHARED_LIBS +=  Qt5Gui                       3.0 # 5.9
-SHARED_LIBS +=  Qt5Network                   4.0 # 5.9
-SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.9
-SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.9
-SHARED_LIBS +=  Qt5Sql                       3.0 # 5.9
-SHARED_LIBS +=  Qt5Test                      3.1 # 5.9
-SHARED_LIBS +=  Qt5Widgets                   4.0 # 5.9
-SHARED_LIBS +=  Qt5Xml                       3.0 # 5.9
-SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.9
-SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.9
-SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.13
-SHARED_LIBS +=  Qt5XcbQpa                    0.0 # 5.13
+SHARED_LIBS +=  Qt5Concurrent                4.0 # 5.15
+SHARED_LIBS +=  Qt5Core                      4.0 # 5.15
+SHARED_LIBS +=  Qt5DBus                      3.0 # 5.15
+SHARED_LIBS +=  Qt5Gui                       3.0 # 5.15
+SHARED_LIBS +=  Qt5Network                   4.0 # 5.15
+SHARED_LIBS +=  Qt5OpenGL                    3.0 # 5.15
+SHARED_LIBS +=  Qt5PrintSupport              3.0 # 5.15
+SHARED_LIBS +=  Qt5Sql                       3.0 # 5.15
+SHARED_LIBS +=  Qt5Test                      3.1 # 5.15
+SHARED_LIBS +=  Qt5Widgets                   4.0 # 5.15
+SHARED_LIBS +=  Qt5Xml                       3.0 # 5.15
+SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.15
+SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.15
+SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.15
+SHARED_LIBS +=  Qt5XcbQpa                    0.1 # 5.15
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
 WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion
