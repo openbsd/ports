@@ -37,8 +37,11 @@ COMPILER=	base-clang ports-gcc
 
 MODULES=	textproc/intltool \
 		devel/meson \
+		lang/lua \
 		lang/python
 SUBST_VARS +=	V
+MODLUA_RUNDEP=	No
+MODLUA_BUILDDEP=No
 
 COMMON_DEPENDS=	archivers/lzip/lzlib \
 		archivers/libarchive \
@@ -99,6 +102,9 @@ CONFIGURE_ARGS=-Dmng=disabled \
 		-Djpeg-xl=disabled
 
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/extensions/goat-exercises/goat-exercise-lua.lua
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/

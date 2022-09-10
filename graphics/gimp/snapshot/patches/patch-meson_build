@@ -10,15 +10,6 @@ Index: meson.build
  rpc               = platform_windows ? cc.find_library('rpcrt4') : no_dep
  dbghelp           = platform_windows ? cc.find_library('dbghelp') : no_dep
  winsock           = platform_windows ? cc.find_library('ws2_32') : no_dep
-@@ -1003,7 +1003,7 @@ endif
- 
- have_lua = get_option('lua')
- if have_lua
--  lua = find_program('luajit', required: false)
-+  lua = find_program('luajit51', required: false)
-   if not lua.found()
-     lua_warning = '''
-     Luajit was not found.
 @@ -1341,6 +1341,7 @@ conf.set('NO_FD_SET',
    not platform_windows
    and not cc.compiles('''
