@@ -1,9 +1,9 @@
 COMMENT =	Double Ratchet cryptographic ratchet in C++
-V =		3.2.6
+V =		3.2.12
 DISTNAME =	olm-${V}
 CATEGORIES =	devel security
 
-SHARED_LIBS +=	olm       1.1 # 3.2.6
+SHARED_LIBS +=	olm	2.0 # 3.2.6
 
 MASTER_SITES =	https://gitlab.matrix.org/matrix-org/olm/-/archive/${V}/
 
