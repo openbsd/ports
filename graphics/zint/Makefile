@@ -5,12 +5,14 @@ V = 			2.11.1
 DISTNAME =		zint-${V}-src
 PKGNAME-main = 		zint-${V}
 PKGNAME-x11 = 		zint-gui-${V}
+REVISION-main =         0
+REVISION-x11 =          0
 
 SHARED_LIBS += 		zint	5.0
 
 CATEGORIES =		graphics
 
-HOMEPAGE = 		http://www.zint.org.uk/
+HOMEPAGE = 		https://www.zint.org.uk/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
