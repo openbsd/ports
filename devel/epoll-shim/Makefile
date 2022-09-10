@@ -2,11 +2,10 @@ COMMENT=	small epoll implementation using kqueue
 
 GH_ACCOUNT=	jiixyj
 GH_PROJECT=	epoll-shim
-GH_TAGNAME=	v0.0.20210418
-
-REVISION=	0
+GH_TAGNAME=	v0.0.20220703
 
 SHARED_LIBS=	epoll-shim 0.1
+SHARED_LIBS +=	epoll-shim-interpose 0.0
 
 CATEGORIES=	devel
 

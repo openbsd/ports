@@ -15,5 +15,7 @@ lib/cmake/epoll-shim/
 lib/cmake/epoll-shim/epoll-shim-config.cmake
 lib/cmake/epoll-shim/epoll-shim-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/epoll-shim/epoll-shim-targets.cmake
+@lib lib/libepoll-shim-interpose.so.${LIBepoll-shim-interpose_VERSION}
 @lib lib/libepoll-shim.so.${LIBepoll-shim_VERSION}
+lib/pkgconfig/epoll-shim-interpose.pc
 lib/pkgconfig/epoll-shim.pc
