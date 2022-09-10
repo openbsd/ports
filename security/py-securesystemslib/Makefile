@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.23.0
 
 DISTNAME =	securesystemslib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 MODPY_PYTEST_ARGS =	tests
 
 FLAVOR =		python3

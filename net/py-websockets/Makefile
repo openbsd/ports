@@ -5,6 +5,8 @@ MODPY_EGG_VERSION =	10.3
 DISTNAME =		websockets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
+REVISION =		0
+
 CATEGORIES =		net
 
 HOMEPAGE =		https://websockets.readthedocs.io/en/stable/
@@ -19,7 +21,8 @@ WANTLIB +=		pthread
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
+
 FLAVOR =		python3
 FLAVORS =		python3
 
