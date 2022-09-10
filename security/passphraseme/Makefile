@@ -1,6 +1,7 @@
 COMMENT =	passphrase generator using EFF's wordlists
 
 MODPY_EGG_VERSION=	0.1.5
+REVISION =		0
 
 GH_ACCOUNT =	micahflee
 GH_PROJECT =	passphraseme
@@ -19,7 +20,7 @@ MAINTAINER =	George Rosamond <george@nycbug.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =	setuptools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/passphraseme
