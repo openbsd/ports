@@ -3,7 +3,7 @@ COMMENT =	Python interface to libarchive
 DISTNAME =	libarchive-c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	archivers devel
-REVISION =	3
+REVISION =	4
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -13,10 +13,9 @@ PERMIT_PACKAGE =	Yes
 FLAVORS =	python3
 FLAVOR  =	python3
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PEP517 =	setuptools
 
 RUN_DEPENDS =	archivers/libarchive
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR}

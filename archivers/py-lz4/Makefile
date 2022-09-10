@@ -18,8 +18,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests/block tests/frame
+# MODPY_PEP517=setuptools needs work with tests
+MODPY_PYTEST_ARGS =	--ignore tests/stream
 
 FLAVORS =		python3
 FLAVOR =		python3

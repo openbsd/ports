@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4
 DISTNAME =		pymetar-${MODPY_EGG_VERSION}
 PKGNAME =		py-metar-${MODPY_EGG_VERSION}
 CATEGORIES =		astro
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.schwarzvogel.de/software/pymetar/
 
@@ -18,12 +18,12 @@ MASTER_SITES =		https://www.schwarzvogel.de/pkgs/
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 NO_TEST =		Yes
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS =		python3
+FLAVOR =		python3
 
 pre-build:
 	cp ${WRKSRC}/bin/pymetar ${WRKSRC}/bin/pymet
