@@ -33,6 +33,7 @@ HOMEPAGE=	https://hboehm.info/gc/
 # currently works only on most ELF archs
 NOT_FOR_ARCHS=	m88k
 
+# HP MIT-like license
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += m pthread ${COMPILER_LIBCXX}
