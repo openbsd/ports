@@ -1,12 +1,11 @@
 COMMENT =	simple async wrapper around CURL for C++
 CATEGORIES =	devel
 
-V =		v0.2.0
+V =		v0.2.1
 DISTNAME =	coeurl-${V}
 PKGNAME =	${DISTNAME:S/v//}
-REVISION =	0
 
-SHARED_LIBS +=  coeurl                    0.0 # 0.2.0
+SHARED_LIBS +=  coeurl                    0.1 # 0.2.0
 
 MASTER_SITES =	https://nheko.im/nheko-reborn/coeurl/-/archive/${V}/
 
