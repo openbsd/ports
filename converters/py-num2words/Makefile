@@ -1,8 +1,9 @@
 COMMENT =	convert numbers to words
 
 MODPY_EGG_VERSION =	0.5.11
-DISTNAME =		num2words-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+REVISION =	0
+DISTNAME =	num2words-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	converters
 
@@ -17,8 +18,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 # needs delegator.py
 MODPY_PYTEST_ARGS =	--ignore tests/test_cli.py
 

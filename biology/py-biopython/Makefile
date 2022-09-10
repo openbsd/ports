@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =              Yes
-MODPY_SETUPTOOLS =      Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

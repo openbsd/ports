@@ -1,6 +1,7 @@
 COMMENT =		Library for working with Valve's VDF text format
 
 MODPY_EGG_VERSION =	3.4
+REVISION =		0
 DISTNAME =		vdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		converters
@@ -11,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

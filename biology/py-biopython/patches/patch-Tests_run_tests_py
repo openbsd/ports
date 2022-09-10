@@ -1,7 +1,7 @@
 Index: Tests/run_tests.py
 --- Tests/run_tests.py.orig
 +++ Tests/run_tests.py
-@@ -150,13 +150,10 @@ def main(argv):
+@@ -149,13 +149,10 @@ def main(argv):
      # A. Because Martel may not be in ../build/lib.*
      test_path = sys.path[0] or "."
      source_path = os.path.abspath("%s/.." % test_path)

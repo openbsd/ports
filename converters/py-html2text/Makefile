@@ -3,7 +3,7 @@ COMMENT =		HTML to markdown-formatted text converter
 MODPY_EGG_VERSION =	2020.1.16
 DISTNAME =		html2text-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		converters
 HOMEPAGE =		http://alir3z4.github.io/html2text/
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
