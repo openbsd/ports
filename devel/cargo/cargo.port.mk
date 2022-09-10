@@ -56,7 +56,7 @@ DISTFILES +=	${_MODCARGO_DIST_SUBDIR}${_cratename}-${_cratever}.tar.gz{${_craten
 # It will put all crates in the local crates directory.
 MODCARGO_post-extract = \
 	${ECHO_MSG} "[modcargo] moving crates to ${MODCARGO_VENDOR_DIR}" ; \
-	mkdir ${MODCARGO_VENDOR_DIR} ;
+	mkdir -p ${MODCARGO_VENDOR_DIR} ;
 .for _cratename _cratever in ${MODCARGO_CRATES}
 MODCARGO_post-extract += \
 	mv ${WRKDIR}/${_cratename}-${_cratever} ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever} ;
