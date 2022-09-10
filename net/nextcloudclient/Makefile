@@ -4,6 +4,7 @@ COMMENT =	desktop sync client for Nextcloud
 
 V =		3.6.0
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -13,8 +14,8 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync             4.0 # 3.5.2
-SHARED_LIBS +=  nextcloud_csync           2.1 # 3.5.1
+SHARED_LIBS +=  nextcloudsync             5.0 # 3.6.0
+SHARED_LIBS +=  nextcloud_csync           2.2 # 3.6.0
 SHARED_LIBS +=  nextcloudsync_vfs_suffix  0.0 # 3.5.3
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
