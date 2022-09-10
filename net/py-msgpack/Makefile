@@ -1,6 +1,7 @@
 COMMENT =		messagepack (de)serializer
 
 MODPY_EGG_VERSION =	1.0.4
+REVISION =		0
 EPOCH =			0
 DISTNAME =		msgpack-${MODPY_EGG_VERSION}
 PKGNAME =		py-msgpack-${MODPY_EGG_VERSION}
@@ -19,9 +20,8 @@ WANTLIB =		${COMPILER_LIBCXX} m
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
+MODPY_PEP517 =		setuptools
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
