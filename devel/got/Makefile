@@ -6,6 +6,7 @@ V =			0.75
 DISTNAME =		got-${V}
 PKGNAME-web =		gotweb-${V}
 PKGNAME-webd =		gotwebd-${V}
+REVISION-webd =		0
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>

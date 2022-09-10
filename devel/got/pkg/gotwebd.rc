@@ -4,4 +4,8 @@ daemon="${TRUEPREFIX}/sbin/gotwebd"
 
 . /etc/rc.d/rc.subr
 
+rc_configtest() {
+	${daemon} -n ${daemon_flags}
+}
+
 rc_cmd $1
