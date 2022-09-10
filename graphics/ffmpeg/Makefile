@@ -2,7 +2,7 @@ COMMENT=	audio/video converter and streamer
 
 V=		4.4.2
 DISTNAME=	ffmpeg-${V}
-REVISION=	2
+REVISION=	3
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://ffmpeg.org/releases/
@@ -210,5 +210,7 @@ post-install:
 .for doc in ${HTML_DOCS}
 	${INSTALL_DATA} ${WRKBUILD}/doc/${doc}.html ${PREFIX}/share/doc/ffmpeg
 .endfor
+	mv -f ${PREFIX}/share/ffmpeg/examples/* ${PREFIX}/share/examples/ffmpeg
+	-rmdir ${PREFIX}/share/ffmpeg/examples
 
 .include <bsd.port.mk>
