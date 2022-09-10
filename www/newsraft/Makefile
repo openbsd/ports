@@ -1,0 +1,30 @@
+COMMENT=	lightweight feed reader for text terminals
+
+DISTNAME=	newsraft-0.9
+WRKDIST=	${WRKDIR}/newsraft
+
+CATEGORIES=	www
+
+HOMEPAGE=	https://codeberg.org/grisha/newsraft
+
+# MIT
+PERMIT_PACKAGE=	Yes
+
+WANTLIB += c curl curses expat gumbo pthread sqlite3 yajl
+
+MASTER_SITES=	https://codeberg.org/grisha/newsraft/archive/
+
+BUILD_DEPENDS=	textproc/scdoc
+LIB_DEPENDS=	databases/sqlite3 \
+		net/curl \
+		devel/libyajl \
+		www/gumbo
+
+NO_TEST=	Yes
+
+MAKE_FILE=	makefile
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>

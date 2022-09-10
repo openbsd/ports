@@ -1,0 +1,9 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To use newsraft, copy the example configuration and feeds files
+to $XDG_CONFIG_HOME or your home directory and modify as required:
+
+$ mkdir -p ~/.config/newsraft
+$ cp ${TRUEPREFIX}/share/examples/newsraft/{config,feeds} ~/.config/newsraft/
