@@ -2,6 +2,7 @@
 @conflict py-dbus-*
 @pkgpath x11/dbus-python,-common
 @pkgpath x11/dbus-python,-main
+@pkgpath x11/dbus-python,-main,python3
 include/dbus-1.0/dbus/dbus-python.h
 lib/pkgconfig/dbus-python.pc
 @so lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.${MODPY_PYC_MAGIC_TAG}so

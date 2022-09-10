@@ -3,6 +3,7 @@ COMMENT =		dbus bindings for Python
 V =			1.3.2
 DISTNAME =		dbus-python-${V}
 PKGNAME =		py-dbus-${V}
+REVISION =		0
 
 CATEGORIES =		x11
 
@@ -29,8 +30,6 @@ LIB_DEPENDS =		devel/glib2 \
 RUN_DEPENDS =		x11/dbus
 
 TEST_DEPENDS =		devel/py-gobject3${MODPY_FLAVOR}
-
-#TEST_FLAGS =		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	sed -i "s,/bin/bash,/bin/sh,g" \
