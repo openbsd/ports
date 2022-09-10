@@ -11,7 +11,7 @@ GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun
 GH_TAGNAME=	${DISTNAME}
 EPOCH=		0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	print
 
@@ -30,9 +30,11 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		math/py2-numpy \
 		sysutils/py-psutil \
 		textproc/py-lxml \
-		x11/dbus-python,-main \
 		x11/py-pyglet \
-		x11/py-wxPython \
+		x11/py-wxPython
+
+# requires py3 support
+#RUN_DEPENDS +=	x11/dbus-python${MODPY_FLAVOR}
 
 BUILD_DEPENDS=	devel/py-serial \
 		lang/cython
