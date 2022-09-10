@@ -3,7 +3,7 @@ COMMENT-gui=	GUI for flent (test network latency under load via netperf)
 
 MODPY_EGG_VERSION= 2.0.1
 DISTNAME=	flent-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	benchmarks net
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES=	-main -gui
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
+MODPY_PEP517=	setuptools
 
 MODULES=	lang/python
 
