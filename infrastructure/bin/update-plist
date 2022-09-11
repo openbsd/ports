@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.209 2022/03/07 16:34:26 espie Exp $
+# $OpenBSD: update-plist,v 1.210 2022/09/11 08:28:21 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -972,9 +972,7 @@ sub known_objects
 
 sub scan_fake_dir
 {
-	my $self = shift;
-	# XXX we assume all subpackage are under the same destdir (-B option)
-	my $base = $self->{lists}[0]->{state}{base};
+	my ($self, $base) = @_;
 
 	# now we ask the file system what exists, and fill file 
 	# objects according to that.
@@ -1429,9 +1427,9 @@ sub try_pkglocate
 }
 
 my $self = UpdatePlist->new;
-OpenBSD::UpdatePlistReader->parse_args($self);
+my $base = OpenBSD::UpdatePlistReader->parse_args($self);
 $self->known_objects;
-$self->scan_fake_dir;
+$self->scan_fake_dir($base);
 $self->zap_debug_files;
 $self->handle_annotations;
 $self->copy_objects;
