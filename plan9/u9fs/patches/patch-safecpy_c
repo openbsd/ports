@@ -1,8 +1,0 @@
---- safecpy.c.orig	Tue Mar 15 14:41:45 2011
-+++ safecpy.c	Tue Mar 15 14:41:53 2011
-@@ -1,4 +1,5 @@
- #include <stdio.h>
-+#include <string.h>
- 
- void
- safecpy(char *to, char *from, int tolen)

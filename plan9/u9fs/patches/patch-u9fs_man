@@ -1,0 +1,43 @@
+- change the section: 8 is more appropriate
+- adjust the inetd example
+
+Index: u9fs.man
+--- u9fs.man.orig
++++ u9fs.man
+@@ -1,4 +1,4 @@
+-.TH U9FS 4
++.TH U9FS 8
+ .SH NAME
+ u9fs \- serve 9P from Unix
+ .SH SYNOPSIS
+@@ -217,29 +217,11 @@ device access may produce unpredictable
+ results if the block size of the device is greater than 8192,
+ the maximum data size of a 9P message.
+ .PP
+-The source to
+-.I u9fs
+-is in the Plan 9 directory
+-.BR /sys/src/cmd/unix/u9fs .
+-To install
+-.I u9fs
+-on a Unix system with an ANSI C compiler, copy the source to a directory on that system
+-and run
+-.BR make .
+-Then install the binary in
+-.BR /usr/etc/u9fs .
+ Add this line to
+ .BR inetd.conf :
+ .IP
+ .EX
+-9fs     stream  tcp     nowait  root   /usr/etc/u9fs   u9fs
+-.EE
+-.PP
+-and this to
+-.BR services :
+-.IP
+-.EX
+-9fs     564/tcp       9fs  # Plan 9 fs
++564 stream tcp nowait root /usr/local/sbin/u9fs u9fs
+ .EE
+ .LP
+ Due to a bug in their
