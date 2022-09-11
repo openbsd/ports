@@ -11,6 +11,9 @@ HOMEPAGE=		https://www.numpy.org/
 # BSD
 PERMIT_PACKAGE=		Yes
 
+# C++
+COMPILER=		base-clang ports-gcc
+
 WANTLIB += ${MODPY_WANTLIB} m pthread
 
 MODULES=		lang/python
