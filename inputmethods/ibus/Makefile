@@ -7,19 +7,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.26
+GH_TAGNAME =		1.5.27
 
 PKGNAME-main =		ibus-${GH_TAGNAME}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME}
 
-REVISION-main =		3
-REVISION-gtk2 =		0
-REVISION-gtk3 =		0
-REVISION-gtk4 =		0
-
-SHARED_LIBS +=  ibus-1.0             4.3      # 5.526
+SHARED_LIBS +=  ibus-1.0             4.4      # 5.527
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -39,7 +34,7 @@ WANTLIB += xcb-shm z execinfo jpeg
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
-WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite
+WANTLIB-main += gdk-3 gthread-2.0 gtk-3 Xcomposite notify
 
 WANTLIB-gtk2 += ${WANTLIB}
 WANTLIB-gtk2 += atk-1.0 dbus-1 gdk-x11-2.0 gtk-x11-2.0 ibus-1.0
@@ -70,7 +65,8 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 # MODPY_LIBDIR/gi/overrides/
 RUN_DEPENDS-main +=	devel/py-gobject3${MODPY_FLAVOR}
 
-LIB_DEPENDS-main =	x11/gtk+3
+LIB_DEPENDS-main =	devel/libnotify \
+			x11/gtk+3
 
 RUN_DEPENDS-gtk2 =	# empty
 LIB_DEPENDS-gtk2 =	${BASE_PKGPATH},-main \
