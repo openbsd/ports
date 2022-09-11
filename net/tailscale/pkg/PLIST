@@ -12,4 +12,5 @@
 @bin bin/tailscale
 @bin bin/tailscaled
 @comment bin/testcontrol
+@comment bin/tsconnect
 @comment bin/viewer
