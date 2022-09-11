@@ -1,6 +1,6 @@
 COMMENT =		emoji for Python
 
-MODPY_EGG_VERSION =	1.6.3
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		emoji-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -14,9 +14,8 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
