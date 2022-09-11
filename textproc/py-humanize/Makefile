@@ -1,9 +1,8 @@
 COMMENT =		python number humanization utilities
 
-MODPY_EGG_VERSION =	2.6.0
+MODPY_EGG_VERSION =	4.3.0
 DISTNAME =		humanize-${MODPY_EGG_VERSION}
 PKGNAME =		py-humanize-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -15,9 +14,8 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
