@@ -3,7 +3,7 @@ COMMENT =		tools for testing processes
 MODPY_EGG_VERSION =	2.0.2
 DISTNAME =		process-tests-${MODPY_EGG_VERSION}
 PKGNAME =		py-process-tests-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -15,8 +15,8 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

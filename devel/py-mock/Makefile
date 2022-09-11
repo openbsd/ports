@@ -1,7 +1,7 @@
 COMMENT=		python mocking and patching library for testing
 
 MODPY_EGG_VERSION=	4.0.3
-REVISION=		0
+REVISION=		1
 DISTNAME=		mock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
@@ -19,7 +19,6 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PEP517=		setuptools
 
 .include <bsd.port.mk>

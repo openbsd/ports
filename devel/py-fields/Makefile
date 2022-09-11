@@ -3,7 +3,7 @@ COMMENT =		container class boilerplate killer
 MODPY_EGG_VERSION =	5.0.0
 DISTNAME =		fields-${MODPY_EGG_VERSION}
 PKGNAME =		py-fields-${MODPY_EGG_VERSION}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
@@ -15,9 +15,8 @@ MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -29,6 +28,5 @@ TEST_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
 			devel/py-test-benchmark${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-tox${MODPY_FLAVOR}
-TEST_ENV =		PYTHONPATH="${WRKSRC}/lib"
 
 .include <bsd.port.mk>
