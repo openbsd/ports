@@ -225,6 +225,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/ans
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}cli_command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}cli_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}grpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}net_banner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}net_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}net_get.${MODPY_PYC_MAGIC_TAG}pyc
@@ -248,6 +249,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/${MODPY_PYCACHE}telnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/cli_command.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/cli_config.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/grpc.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/net_banner.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/net_base.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/action/net_get.py
@@ -285,12 +287,14 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}grpc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}httpapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}libssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}napalm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}netconf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}network_cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/${MODPY_PYCACHE}persistent.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/grpc.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/httpapi.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/libssh.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/connection/napalm.py
@@ -366,6 +370,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/common/rm_base/resource_module.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/common/rm_base/resource_module_base.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/common/utils.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/grpc/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/grpc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/grpc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/grpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/grpc/${MODPY_PYCACHE}grpc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/grpc/grpc.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/netconf/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/netconf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/module_utils/network/netconf/${MODPY_PYCACHE}/
@@ -388,6 +398,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/ans
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}cli_command.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}cli_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}grpc_config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}grpc_get.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}net_banner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}net_get.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}net_interface.${MODPY_PYC_MAGIC_TAG}pyc
@@ -413,6 +425,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/${MODPY_PYCACHE}telnet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/cli_command.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/cli_config.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/grpc_config.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/grpc_get.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/net_banner.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/net_get.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/modules/net_interface.py
@@ -465,6 +479,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/cli_parser/native_parser.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/cli_parser/ntc_templates_parser.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/cli_parser/pyats_parser.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/grpc/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/grpc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/grpc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/grpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/grpc/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/plugins/sub_plugins/grpc/base.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/pyproject.toml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/requirements.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ansible/netcommon/test-requirements.txt
@@ -6350,12 +6370,26 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/cis
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/netconf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/netconf/${MODPY_PYCACHE}iosxr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/netconf/iosxr.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/${MODPY_PYCACHE}iosxr.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/iosxr.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/pb/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/pb/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/pb/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/pb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/pb/${MODPY_PYCACHE}ems_grpc_pb2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/sub_plugins/grpc/pb/ems_grpc_pb2.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/terminal/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/terminal/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/terminal/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/terminal/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/terminal/${MODPY_PYCACHE}iosxr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/plugins/terminal/iosxr.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/pyproject.toml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/requirements.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/test-requirements.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/cisco/iosxr/tox.ini
@@ -10328,12 +10362,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/ciscosmb/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/ciscosmb/plugins/terminal/ciscosmb.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/ciscosmb/requirements-dev.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/Apache-2.0.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/CHANGELOG.rst
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/FILES.json
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/LICENSES/Apache-2.0.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/LICENSES/BSD-2-Clause.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/LICENSES/BSD-3-Clause.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/LICENSES/GPL-3.0-or-later.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/LICENSES/PSF-2.0.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/MANIFEST.json
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/PSF-license.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/README.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/meta/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/meta/ee-bindep.txt
@@ -10535,7 +10573,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/pl
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/plugins/plugin_utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/plugins/plugin_utils/${MODPY_PYCACHE}action_module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/plugins/plugin_utils/action_module.py
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/crypto/simplified_bsd.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/CHANGELOG.rst
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/COPYING
@@ -10678,6 +10715,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitaloc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/digitalocean/scripts/inventory/digital_ocean.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/CHANGELOG.rst
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/CHANGELOG.rst.license
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/CODE_OF_CONDUCT.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/FILES.json
@@ -10836,6 +10874,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/plugi
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/plugins/plugin_utils/public_suffix.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/plugins/plugin_utils/templated_options.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/plugins/public_suffix_list.dat
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/plugins/public_suffix_list.dat.license
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/update-docs-fragments.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/dns/update-psl.sh
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/docker/
@@ -11033,11 +11072,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/fortios/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/fortios/plugins/modules/fmgr_secprof_web.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/CHANGELOG.rst
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/CHANGELOG.rst.license
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/FILES.json
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/LICENSES/BSD-2-Clause.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/LICENSES/GPL-3.0-or-later.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/LICENSES/MIT.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/LICENSES/PSF-2.0.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/MANIFEST.json
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/PSF-license.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/README.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/commit-rights.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/meta/
@@ -11231,6 +11275,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}counter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}crc32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}dict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}dict_kv.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}from_csv.${MODPY_PYC_MAGIC_TAG}pyc
@@ -11244,6 +11289,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}unicode_normalize.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/${MODPY_PYCACHE}version_sort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/counter.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/crc32.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/dict.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/dict_kv.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/filter/from_csv.py
@@ -11387,6 +11433,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}oneview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}online.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}opennebula.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}pipx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}proxmox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}pure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/${MODPY_PYCACHE}rax.${MODPY_PYC_MAGIC_TAG}pyc
@@ -11467,6 +11514,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/oracle/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/oracle/${MODPY_PYCACHE}oci_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/oracle/oci_utils.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/pipx.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/proxmox.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/pure.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/module_utils/rax.py
@@ -12760,7 +12808,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/p
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/test/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/test/${MODPY_PYCACHE}a_module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/plugins/test/a_module.py
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/general/simplified_bsd.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/google/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/google/CHANGELOG.rst
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/google/FILES.json
@@ -12932,6 +12979,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vau
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_auth_method_approle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_auth_method_aws_iam.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_auth_method_azure.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_auth_method_cert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_auth_method_jwt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_auth_method_ldap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -12944,6 +12992,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vau
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/${MODPY_PYCACHE}_hashi_vault_module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/_auth_method_approle.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/_auth_method_aws_iam.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/_auth_method_azure.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/_auth_method_cert.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/_auth_method_jwt.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/module_utils/_auth_method_ldap.py
@@ -12978,6 +13027,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vau
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hashi_vault/plugins/plugin_utils/_hashi_vault_plugin.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hrobot/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hrobot/CHANGELOG.rst
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hrobot/CHANGELOG.rst.license
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hrobot/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hrobot/FILES.json
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/hrobot/LICENSES/
@@ -13033,7 +13083,6 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/C
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/FILES.json
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/MAINTAINERS
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/MAINTAINING.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/libvirt/MANIFEST.json
@@ -13419,6 +13468,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plu
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/modules/mysql_role.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/modules/mysql_user.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/plugins/modules/mysql_variables.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/mysql/simplified_bsd.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/network/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/network/103-nclu-check-diff.yaml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/network/CHANGELOG.rst
@@ -15197,9 +15247,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/skydive/t
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/skydive/tox.ini
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/CHANGELOG.rst
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/CHANGELOG.rst.license
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/FILES.json
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/LICENSES/BSD-2-Clause.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/LICENSES/GPL-3.0-or-later.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/MANIFEST.json
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/README.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/codecov.yml
@@ -15242,12 +15296,14 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/plug
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/plugins/vars/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/plugins/vars/${MODPY_PYCACHE}sops.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/plugins/vars/sops.py
-lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/sops/simplified_bsd.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/CHANGELOG.rst
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/COPYING
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/FILES.json
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/LICENSES/
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/LICENSES/BSD-2-Clause.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/LICENSES/GPL-3.0-or-later.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/MANIFEST.json
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/README.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/vmware/meta/
@@ -15937,6 +15993,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/CO
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/FILES.json
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/MAINTAINERS
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/MANIFEST.json
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/PSF-license.txt
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/README.md
@@ -16044,6 +16101,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_template.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_template_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_user.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_user_directory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_user_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_usergroup.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/${MODPY_PYCACHE}zabbix_valuemap.${MODPY_PYC_MAGIC_TAG}pyc
@@ -16072,6 +16130,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_template.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_template_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_user.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_user_directory.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_user_info.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_usergroup.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/plugins/modules/zabbix_valuemap.py
@@ -16134,6 +16193,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/ro
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_agent/vars/Sangoma.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_agent/vars/Suse.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_agent/vars/Windows.yml
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_agent/vars/main.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_agent/vars/zabbix.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_javagateway/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_javagateway/README.md
@@ -16179,6 +16239,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/ro
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/templates/zabbix_proxy.conf.j2
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/vars/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/vars/Amazon.yml
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/vars/Debian.yml
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/vars/RedHat.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/vars/main.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_proxy/vars/zabbix.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/community/zabbix/roles/zabbix_server/
@@ -20746,7 +20808,9 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/${MODPY_PYCACHE}comparison.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/${MODPY_PYCACHE}data_post_processor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/${MODPY_PYCACHE}fortios.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/${MODPY_PYCACHE}secret_field.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/argspec/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/argspec/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/argspec/${MODPY_PYCACHE}/
@@ -20764,6 +20828,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/argspec/system/${MODPY_PYCACHE}system.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/argspec/system/system.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/comparison.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/data_post_processor.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/facts/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/facts/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/facts/${MODPY_PYCACHE}/
@@ -20777,6 +20842,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/facts/system/${MODPY_PYCACHE}system.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/facts/system/system.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/fortios.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/module_utils/fortios/secret_field.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}/
@@ -20796,6 +20862,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_authentication_rule.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_authentication_scheme.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_authentication_setting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_automation_setting.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_certificate_ca.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_certificate_crl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_certificate_local.${MODPY_PYC_MAGIC_TAG}pyc
@@ -20804,9 +20871,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_cifs_profile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_configuration_fact.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_credential_store_domain_controller.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_data_type.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_dictionary.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_filepattern.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_fp_doc_source.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_fp_sensitivity.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_profile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_sensitivity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_sensor.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_dlp_settings.${MODPY_PYC_MAGIC_TAG}pyc
@@ -20956,6 +21026,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_hardware_npu_np6_sse_stats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_icap_profile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_icap_server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_icap_server_group.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_ips_custom.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_ips_decoder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_ips_global.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21164,6 +21235,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_fortiai.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_fortiguard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_fortimanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_fortindr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_fortisandbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_fsso_polling.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_ftm_push.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21247,6 +21319,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_smc_ntp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_sms_server.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_snmp_community.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_snmp_mib_view.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_snmp_sysinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_snmp_user.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/${MODPY_PYCACHE}fortios_system_speed_test_schedule.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21428,6 +21501,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_authentication_rule.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_authentication_scheme.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_authentication_setting.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_automation_setting.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_certificate_ca.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_certificate_crl.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_certificate_local.py
@@ -21436,9 +21510,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_cifs_profile.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_configuration_fact.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_credential_store_domain_controller.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_data_type.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_dictionary.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_filepattern.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_fp_doc_source.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_fp_sensitivity.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_profile.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_sensitivity.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_sensor.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_dlp_settings.py
@@ -21588,6 +21665,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_hardware_npu_np6_sse_stats.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_icap_profile.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_icap_server.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_icap_server_group.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_ips_custom.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_ips_decoder.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_ips_global.py
@@ -21796,6 +21874,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_fortiai.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_fortiguard.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_fortimanager.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_fortindr.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_fortisandbox.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_fsso_polling.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_ftm_push.py
@@ -21879,6 +21958,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/pl
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_smc_ntp.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_sms_server.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_snmp_community.py
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_snmp_mib_view.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_snmp_sysinfo.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_snmp_user.py
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/fortinet/fortios/plugins/modules/fortios_system_speed_test_schedule.py
@@ -26572,6 +26652,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/h
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/pre_checks/validate_services_status.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/pre_checks/validate_vcpus_count.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/restore_backup.yml
+lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/restore_host_redeploy.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/search_available_network_subnet.yaml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/sync_on_engine_machine.yml
 lib/python${MODPY_VERSION}/site-packages/ansible_collections/ovirt/ovirt/roles/hosted_engine_setup/tasks/validate_ip_prefix.yml
