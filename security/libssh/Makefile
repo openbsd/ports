@@ -13,6 +13,9 @@ EXTRACT_SUFX =		.tar.xz
 # LGPL v2.1
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += crypto z
 
 MODULES =		devel/cmake
