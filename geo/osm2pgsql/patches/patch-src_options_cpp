@@ -1,7 +1,7 @@
 Index: src/options.cpp
 --- src/options.cpp.orig
 +++ src/options.cpp
-@@ -138,7 +138,7 @@ Common options:\n\
+@@ -137,7 +137,7 @@ Common options:\n\
                      required if you want to update with --append later.\n\
          --drop      Only with --slim: drop temporary tables after import\n\
                      (no updates are possible).\n\

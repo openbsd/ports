@@ -1,12 +1,12 @@
 Index: src/options.hpp
 --- src/options.hpp.orig
 +++ src/options.hpp
-@@ -97,7 +97,7 @@ class options_t (public)
-     std::shared_ptr<reprojection> projection; ///< SRS of projection
-     bool append = false;                      ///< Append to existing data
-     bool slim = false;                        ///< In slim mode
--    int cache = 800;                          ///< Memory usable for cache in MB
-+    int cache = 100;                          ///< Memory usable for cache in MB
+@@ -145,7 +145,7 @@ class options_t (public)
+     /// Minimum zoom level for tile expiry list
+     uint32_t expire_tiles_zoom_min = 0;
  
-     /// Pg Tablespace to store indexes on main tables (no default TABLESPACE)
-     std::string tblsmain_index{};
+-    int cache = 800; ///< Memory usable for cache in MB
++    int cache = 100; ///< Memory usable for cache in MB
+ 
+     unsigned int num_procs;
+ 
