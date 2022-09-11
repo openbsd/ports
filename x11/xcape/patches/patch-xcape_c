@@ -1,0 +1,18 @@
+pledge it
+
+Index: xcape.c
+--- xcape.c.orig
++++ xcape.c
+@@ -191,6 +191,12 @@ int main (int argc, char **argv)
+     if (self->debug != True)
+         daemon (0, 0);
+ 
++    if (pledge ("stdio", NULL) == -1)
++    {
++        fprintf (stderr, "pledge: %s\n", strerror(errno));
++        exit (EXIT_FAILURE);
++    }
++
+     sigemptyset (&self->sigset);
+     sigaddset (&self->sigset, SIGINT);
+     sigaddset (&self->sigset, SIGTERM);
