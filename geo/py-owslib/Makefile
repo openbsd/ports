@@ -1,6 +1,6 @@
 COMMENT =		library for accessing OGC Web Services
 
-MODPY_EGG_VERSION =	0.26.0
+MODPY_EGG_VERSION =	0.27.2
 DISTNAME =		OWSLib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
@@ -16,7 +16,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
