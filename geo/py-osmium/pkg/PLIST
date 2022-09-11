@@ -1,17 +1,19 @@
 bin/pyosmium-get-changes
 bin/pyosmium-up-to-date
 lib/python${MODPY_VERSION}/site-packages/osmium/
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}.dist-info/LICENSE.TXT
+lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/osmium-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/osmium/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/osmium/_osmium.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/osmium/geom.${MODPY_PYC_MAGIC_TAG}so
@@ -21,15 +23,20 @@ lib/python${MODPY_VERSION}/site-packages/osmium/helper.py
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}mutable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/${MODPY_PYCACHE}mutable.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/osmium/osm/_osm.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/osmium/osm/mutable.py
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/osmium/replication/_replication.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/server.py

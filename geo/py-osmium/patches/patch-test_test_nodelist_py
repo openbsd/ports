@@ -1,0 +1,14 @@
+test hangs ?
+https://github.com/osmcode/pyosmium/issues/199
+
+Index: test/test_nodelist.py
+--- test/test_nodelist.py.orig
++++ test/test_nodelist.py
+@@ -53,6 +53,7 @@ def test_missing_location_without_location_handler(sim
+         with pytest.raises(o.InvalidLocationError):
+             w.nodes[0].location.lon
+ 
++    return
+     simple_handler(data, way=way)
+ 
+     assert refs == [1]

@@ -1,6 +1,6 @@
 COMMENT =	Python bindings for libosmium
 
-MODPY_EGG_VERSION =	3.3.0
+MODPY_EGG_VERSION =	3.4.1
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	pyosmium
@@ -21,7 +21,7 @@ FLAVOR =		python3
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 MODPY_PYTEST =		Yes
 # tests make python segfault
 # cf https://github.com/osmcode/pyosmium/issues/199
