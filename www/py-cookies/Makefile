@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.2.1
 
 DISTNAME =		cookies-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -18,9 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	lib
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
