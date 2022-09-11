@@ -1,9 +1,8 @@
 COMMENT =	munkres algorithm for the Assignment Problem
 
-MODPY_EGG_VERSION =	1.1.2
+MODPY_EGG_VERSION =	1.1.4
 DISTNAME =		munkres-${MODPY_EGG_VERSION}
 PKGNAME = 		py-algorithm-${DISTNAME}
-REVISION =              2
 
 CATEGORIES =		devel
 
@@ -14,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS = 	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 = 		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
