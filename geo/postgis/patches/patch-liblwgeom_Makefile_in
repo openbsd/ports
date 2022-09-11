@@ -3,7 +3,7 @@ our libtool doesnt link the contents of libryu.a ?
 Index: liblwgeom/Makefile.in
 --- liblwgeom/Makefile.in.orig
 +++ liblwgeom/Makefile.in
-@@ -181,7 +181,7 @@ $(RYU_LIBPATH): ../deps/ryu/d2s.c
+@@ -187,7 +187,7 @@ $(RYU_LIBPATH): ../deps/ryu/d2s.c
  	$(MAKE) -C ../deps/ryu @RYU_LIB@
  
  liblwgeom.la: $(LT_OBJS) $(RYU_LIBPATH)
