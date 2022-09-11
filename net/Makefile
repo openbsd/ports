@@ -736,7 +736,6 @@
      SUBDIR += unison,no_x11
      SUBDIR += unworkable
      SUBDIR += usockets
-     SUBDIR += usrsctp
      SUBDIR += utox
      SUBDIR += uucp
      SUBDIR += uucpd

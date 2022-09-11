@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1432 2022/09/09 20:49:06 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1433 2022/09/11 18:29:22 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1718,6 +1718,7 @@ setup_obsolete_reason(
 	5 => 'compiz',
 	5 => 'libcompizconfig',
 	5 => 'compiz-plugins-main',
+	5 => 'usrsctp',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
