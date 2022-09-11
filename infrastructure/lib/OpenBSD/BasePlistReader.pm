@@ -1,4 +1,4 @@
-# $OpenBSD: BasePlistReader.pm,v 1.1 2022/01/19 14:46:00 espie Exp $
+# $OpenBSD: BasePlistReader.pm,v 1.2 2022/09/11 08:27:21 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -36,13 +36,19 @@ sub olist
 
 sub process_next_subpackage
 {
-	my ($class, $o) = @_;
+	my ($self, $o) = @_;
 
-	my $r = $class->new;
+	my $r = ref($self)->new;
 
-	my $s = $class->stateclass->new($class->command_name, $o->{state});
+	my $s = $self->stateclass->new($self->command_name, $o->{state});
 	$r->{state} = $s;
 	$s->handle_options;
+	$self->{base} //= $s->{base};
+	if ($self->{base} ne $s->{base}) {
+		$o->{state}->fatal(
+		    "Inconsistent -B option for distinct subpackages: #1 vs #2",
+		    $self->{base}, $s->{base});
+	}
 	$s->{opt}{q} = 1;
 	$r->{base_plists} = $s->{contents};
 	my $pkg = shift @ARGV;
@@ -63,12 +69,14 @@ sub parse_args
 	if (@ARGV == 0) {
 		$o->{state}->usage;
 	}
+	my $c = bless { base => undef }, $class;
 	# we read all plists using the exact same code as pkg_create
 	# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
 	# options1 pkgname1 options2 pkgname2 ...
 	while (@ARGV > 0) {
-		$class->process_next_subpackage($o);
+		$c->process_next_subpackage($o);
 	}
+	return $c->{base};
 }
 
 # specialized state
