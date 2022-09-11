@@ -1,6 +1,6 @@
 COMMENT =	manipulation and analysis of planar geometric objects
 
-MODPY_EGG_VERSION =	1.8.2
+MODPY_EGG_VERSION =	1.8.4
 GH_TAGNAME =	${MODPY_EGG_VERSION}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
@@ -18,8 +18,7 @@ FLAVOR =		python3
 
 MODULES =	lang/python
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PEP517 =		setuptools
 # cython and numpy needed to build _vectorized.so
 BUILD_DEPENDS +=${RUN_DEPENDS} \
 		math/py-numpy${MODPY_FLAVOR} \
@@ -33,7 +32,7 @@ post-patch:
 
 pre-test:
 	# gross
-	cp ${WRKSRC}/${MODPY_TEST_LIBDIR}/shapely/vectorized/_vectorized*.so \
+	cp ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}/shapely/vectorized/_vectorized*.so \
 		${WRKSRC}/shapely/vectorized/
 
 .include <bsd.port.mk>
