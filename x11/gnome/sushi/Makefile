@@ -2,7 +2,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	42.0
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -16,12 +16,12 @@ MODULES=	devel/meson \
 
 LIB_DEPENDS=	evince-*-!light:graphics/evince
 
-BUILD_DEPENDS=	www/webkitgtk4 \
+BUILD_DEPENDS=	www/webkitgtk4,webkitgtk41 \
 		x11/gnome/gjs \
 		x11/gtksourceview4
 
 RUN_DEPENDS=	devel/libsoup \
-		www/webkitgtk4 \
+		www/webkitgtk4,webkitgtk41 \
 		x11/gnome/gjs \
 		x11/gtksourceview4
 
