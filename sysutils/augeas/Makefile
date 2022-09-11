@@ -1,7 +1,7 @@
 COMMENT=		configuration editing tool and API
 
 DISTNAME=		augeas-1.12.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		sysutils devel
 
@@ -9,8 +9,6 @@ SHARED_LIBS +=  augeas                    0.2 # 24.0
 SHARED_LIBS +=  fa                        0.0 # 5.4
 
 HOMEPAGE=		https://augeas.net/
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes

@@ -4,7 +4,7 @@ GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
-REVISION =	5
+REVISION =	6
 
 MASTER_SITES0 =	https://github.com/tmate-io/tmate/commit/
 PATCHFILES =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch:0 \
@@ -12,8 +12,6 @@ PATCHFILES =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.pat
 PATCH_DIST_STRIP =	-p1
 
 HOMEPAGE =	https://tmate.io
-
-MAINTAINER =	Klemens Nanni <kn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

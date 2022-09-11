@@ -2,12 +2,10 @@ COMMENT=	provider bindings for Augeas
 
 DISTNAME=	ruby-augeas-0.5.0
 PKGNAME=	${DISTNAME:S/ruby-//}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://augeas.net/
-
-MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes

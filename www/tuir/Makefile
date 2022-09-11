@@ -3,13 +3,11 @@ COMMENT =		terminal UI for Reddit
 MODPY_EGG_VERSION =	1.29.0
 
 DISTNAME =		tuir-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://gitlab.com/ajak/tuir
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

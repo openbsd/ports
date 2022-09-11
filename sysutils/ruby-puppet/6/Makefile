@@ -1,8 +1,7 @@
 PORTROACH=		limit:^6
 
 VERSION=		6.28.0
-
-MAINTAINER=		Klemens Nanni <kn@openbsd.org>
+REVISION=		0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
