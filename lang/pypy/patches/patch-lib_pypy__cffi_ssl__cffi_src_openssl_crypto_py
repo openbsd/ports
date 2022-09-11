@@ -1,0 +1,16 @@
+LibreSSL now provides OPENSSL_cleanup()
+
+Index: lib_pypy/_cffi_ssl/_cffi_src/openssl/crypto.py
+--- lib_pypy/_cffi_ssl/_cffi_src/openssl/crypto.py.orig
++++ lib_pypy/_cffi_ssl/_cffi_src/openssl/crypto.py
+@@ -92,9 +92,7 @@ static const long Cryptography_HAS_LOCKING_CALLBACKS =
+ #endif
+ 
+ #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_110
+-static const long Cryptography_HAS_OPENSSL_CLEANUP = 0;
+-
+-void (*OPENSSL_cleanup)(void) = NULL;
++static const long Cryptography_HAS_OPENSSL_CLEANUP = 1;
+ 
+ /* This function has a significantly different signature pre-1.1.0. since it is
+  * for testing only, we don't bother to expose it on older OpenSSLs.
