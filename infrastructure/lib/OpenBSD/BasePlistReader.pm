@@ -1,4 +1,4 @@
-# $OpenBSD: BasePlistReader.pm,v 1.2 2022/09/11 08:27:21 espie Exp $
+# $OpenBSD: BasePlistReader.pm,v 1.3 2022/09/11 08:40:41 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -19,6 +19,9 @@
 # - handling debug names mogrification
 
 use OpenBSD::PkgCreate;
+
+# PlistReader is "just" a specialized version of the PkgCreate algorithm
+# which does mimic what PkgCreate reader does with a few specialized methods
 package OpenBSD::BasePlistReader;
 our @ISA = qw(OpenBSD::PkgCreate);
 
@@ -34,11 +37,25 @@ sub olist
 	return $self->{olist};
 }
 
+# ... and since we will scan several plists, we build each of them through
+# a factory that will repeatedly parse args and scan
+package OpenBSD::BasePlistFactory;
+
+sub stateclass
+{
+	return 'OpenBSD::BasePlistReader::State';
+}
+
+sub readerclass
+{
+	return 'OpenBSD::BasePlistReader';
+}
+
 sub process_next_subpackage
 {
 	my ($self, $o) = @_;
 
-	my $r = ref($self)->new;
+	my $r = $self->readerclass->new;
 
 	my $s = $self->stateclass->new($self->command_name, $o->{state});
 	$r->{state} = $s;

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.210 2022/09/11 08:28:21 espie Exp $
+# $OpenBSD: update-plist,v 1.211 2022/09/11 08:40:40 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -1427,7 +1427,7 @@ sub try_pkglocate
 }
 
 my $self = UpdatePlist->new;
-my $base = OpenBSD::UpdatePlistReader->parse_args($self);
+my $base = OpenBSD::UpdatePlistFactory->parse_args($self);
 $self->known_objects;
 $self->scan_fake_dir($base);
 $self->zap_debug_files;

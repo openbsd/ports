@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: UpdatePlistReader.pm,v 1.3 2022/03/07 08:57:10 espie Exp $
+# $OpenBSD: UpdatePlistReader.pm,v 1.4 2022/09/11 08:40:41 espie Exp $
 # Copyright (c) 2018-2022 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -20,36 +20,21 @@ use warnings;
 use OpenBSD::BasePlistReader;
 use OpenBSD::ReverseSubst;
 
-# UpdatePlistReader is "just" a specialized version of PkgCreate algorithm
-# that does mimic what PkgCreate reader does with a few specialized methods
-package OpenBSD::UpdatePlistReader;
-our @ISA = qw(OpenBSD::BasePlistReader);
-
-use File::Path qw(make_path);
-use File::Basename;
-
-sub new
-{
-	my $class = shift;
-	my $o = $class->SUPER::new;
-	$o->{nlist} = OpenBSD::PackingList->new;
-	return $o;
-}
-
+package OpenBSD::UpdatePlistFactory;
+our @ISA = qw(OpenBSD::BasePlistFactory);
 sub stateclass
 {
 	return 'OpenBSD::UpdatePlistReader::State';
 }
 
+sub readerclass
+{
+	return 'OpenBSD::UpdatePlistReader';
+}
+
 sub command_name
 {
 	return 'update-plist';
-}
-
-sub nlist
-{
-	my $self = shift;
-	return $self->{nlist};
 }
 
 sub process_next_subpackage
@@ -68,6 +53,27 @@ sub process_next_subpackage
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $r->{state}{prefix});
 	$r->add_extra_info($r->olist, $r->{state});
 }
+
+package OpenBSD::UpdatePlistReader;
+our @ISA = qw(OpenBSD::BasePlistReader);
+
+use File::Path qw(make_path);
+use File::Basename;
+
+sub new
+{
+	my $class = shift;
+	my $o = $class->SUPER::new;
+	$o->{nlist} = OpenBSD::PackingList->new;
+	return $o;
+}
+
+sub nlist
+{
+	my $self = shift;
+	return $self->{nlist};
+}
+
 
 sub strip_prefix
 {
