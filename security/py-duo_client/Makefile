@@ -2,6 +2,8 @@ COMMENT =		Python library for interacting with Duo APIs
 
 MODPY_EGG_VERSION =	4.4.0
 
+REVISION =		0
+
 DISTNAME =		duo_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -15,9 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-
+MODPY_PEP517 =		setuptools
 FLAVOR =		python3
 FLAVORS =		python3
 
