@@ -1,0 +1,27 @@
+COMMENT =	alternative private front-end to Reddit
+
+GH_ACCOUNT =	spikecodes
+GH_PROJECT =	libreddit
+GH_TAGNAME =	v0.22.9
+
+CATEGORIES =	www
+
+MAINTAINER =	Lucas Raab <tuftedocelot@fastmail.fm>
+
+# AGPL3
+PERMIT_PACKAGE =	Yes
+
+WANTLIB =	c c++abi m pthread
+
+MODULES =	devel/cargo
+BUILD_DEPENDS =	lang/rust
+
+SEPARATE_BUILD =	Yes
+NO_TEST =	Yes
+DISTFILES +=	${DISTNAME}${EXTRACT_SUFX}
+
+CONFIGURE_STYLE =	cargo
+
+.include "crates.inc"
+
+.include <bsd.port.mk>
