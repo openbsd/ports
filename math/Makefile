@@ -134,6 +134,7 @@
      SUBDIR += py-networkx,python3
      SUBDIR += py-numexpr,python3
      SUBDIR += py-numpy,python3
+     SUBDIR += py-oldest-supported-numpy,python3
      SUBDIR += py-osqp,python3
      SUBDIR += py-pandas,python3
      SUBDIR += py-patsy,python3
