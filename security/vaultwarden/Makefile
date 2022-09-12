@@ -35,7 +35,7 @@ SEPARATE_BUILD =	Yes
 
 RUN_DEPENDS =		www/vaultwarden-web
 
-MODCARGO_CRATES_SQLITE3_BUNDLED = Yes
+MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 MODCARGO_FEATURES =	sqlite
 .if ${FLAVOR:Mmysql}
 MODCARGO_FEATURES +=	mysql

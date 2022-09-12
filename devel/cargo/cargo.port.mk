@@ -44,8 +44,8 @@ _MODCARGO_DIST_SUBDIR = ${MODCARGO_DIST_SUBDIR}/
 MODCARGO_MASTER_SITESN ?= 9
 MASTER_SITES${MODCARGO_MASTER_SITESN} ?= ${MASTER_SITES_CRATESIO}
 
-# per crates options
-MODCARGO_CRATES_SQLITE3_BUNDLED ?= No
+# allow override default configuration, and keep all files
+MODCARGO_CRATES_KEEP ?=
 
 # Generated list of DISTFILES.
 .for _cratename _cratever in ${MODCARGO_CRATES}
@@ -68,7 +68,11 @@ MODCARGO_CRATES_BUILDDEP ?=	Yes
 .if ${MODCARGO_CRATES_BUILDDEP:L} == "yes"
 .  for _cratename _cratever in ${MODCARGO_CRATES}
 
-.    if "${_cratename}" == "pkg-config"
+.    if ${MODCARGO_CRATES_KEEP:M${_cratename}} || ${MODCARGO_CRATES_KEEP:M${_cratename}-${_cratever}}
+MODCARGO_post-extract += \
+	${ECHO_MSG} "[modcargo] Keeping ${_cratename}-${_cratever} as it" ;
+
+.    elif "${_cratename}" == "pkg-config"
 # configure to build no static by default
 MODCARGO_ENV +=	PKG_CONFIG_ALL_DYNAMIC=1
 
@@ -114,10 +118,6 @@ MODCARGO_ENV +=	SODIUM_SHARED=1
 MODCARGO_post-extract += \
 	${ECHO_MSG} "[modcargo] Removing libsrc for ${_cratename}-${_cratever}" ; \
 	rm -f -- ${MODCARGO_VENDOR_DIR}/${_cratename}-${_cratever}/libsodium-*.tar.gz ;
-
-.    elif "${_cratename}" == "libsqlite3-sys" && ${MODCARGO_CRATES_SQLITE3_BUNDLED:L} == "yes"
-MODCARGO_post-extract += \
-	${ECHO_MSG} "[modcargo] Keeping libsrc for ${_cratename}-${_cratever}" ;	
 
 .    elif "${_cratename}" == "libsqlite3-sys"
 MODCARGO_post-extract += \
