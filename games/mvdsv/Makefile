@@ -1,3 +1,5 @@
+BROKEN-sparc64 = target_compile_definitions called with invalid arguments BIG_ENDIAN
+
 COMMENT =	QuakeWorld server
 
 GH_ACCOUNT =	QW-Group
