@@ -23,6 +23,8 @@ MODULES =		lang/python
 MODPY_PEP517 =		setuptools
 MODPY_PI =		Yes
 
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+
 FLAVORS =		python3
 FLAVOR =		python3
 
