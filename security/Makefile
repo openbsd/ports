@@ -325,6 +325,7 @@
      SUBDIR += py-viv_utils
      SUBDIR += py-vivisect
      SUBDIR += py-yaswfp,python3
+     SUBDIR += py-zxcvbn,python3
      SUBDIR += qca-qt5
      SUBDIR += qdigidoc4
      SUBDIR += qtkeychain
