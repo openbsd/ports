@@ -1,7 +1,5 @@
-lib/php-${MODPHP_VERSION}/modules/
 lib/php-${MODPHP_VERSION}/modules/mapscript.php
 @so lib/php-${MODPHP_VERSION}/modules/php_mapscriptng.so
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/php-${MODPHP_VERSION}/
 share/examples/php-${MODPHP_VERSION}/mapscriptng.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscriptng.ini

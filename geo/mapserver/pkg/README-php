@@ -14,5 +14,5 @@ sure to copy the libs needed by mapscriptng.so file binary from ${LOCALBASE}/lib
 but also the projection definitions from proj package to the chroot:
 chroot:
 
-# mkdir -p /var/www/${LOCALBASE}/share/proj
-# cp ${LOCALBASE}/share/proj/* /var/www/${LOCALBASE}/share/proj
+# mkdir -p /var/www${LOCALBASE}/share/proj
+# cp ${LOCALBASE}/share/proj/* /var/www${LOCALBASE}/share/proj

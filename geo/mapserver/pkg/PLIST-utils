@@ -1,7 +1,8 @@
+@bin bin/coshp
 @bin bin/legend
+@bin bin/map2img
 @bin bin/msencrypt
 @bin bin/scalebar
-@bin bin/shp2img
 @bin bin/shptree
 @bin bin/shptreetst
 @bin bin/shptreevis
@@ -19,12 +20,16 @@ include/mapserver/mapcopy.h
 include/mapserver/mapentities.h
 include/mapserver/maperror.h
 include/mapserver/mapfile.h
+include/mapserver/mapflatgeobuf.h
 include/mapserver/mapgml.h
+include/mapserver/mapgraph.h
 include/mapserver/maphash.h
 include/mapserver/maphttp.h
+include/mapserver/mapiconv.h
 include/mapserver/mapio.h
 include/mapserver/mapkmlrenderer.h
 include/mapserver/maplibxml2.h
+include/mapserver/mapogcapi.h
 include/mapserver/mapogcfilter.h
 include/mapserver/mapogcsld.h
 include/mapserver/mapoglcontext.h
@@ -38,6 +43,7 @@ include/mapserver/mapproject.h
 include/mapserver/mapraster.h
 include/mapserver/mapregex.h
 include/mapserver/mapresample.h
+include/mapserver/mapserv-config.h
 include/mapserver/mapserv.h
 include/mapserver/mapserver-api.h
 include/mapserver/mapserver-config.h

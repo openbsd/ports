@@ -6,8 +6,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V=		7.6.4
-REVISION=	1
+V=		8.0.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -15,7 +14,7 @@ PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 PKGNAME-python=	py3-mapscript-${V}
 
-SHARED_LIBS +=	mapserver 5.0
+SHARED_LIBS +=	mapserver 6.0
 
 CATEGORIES=	geo www
 
@@ -31,7 +30,6 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/php lang/python devel/cmake
-MODPHP_VERSION=	7.4
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 MODPY_SETUPTOOLS=	Yes
