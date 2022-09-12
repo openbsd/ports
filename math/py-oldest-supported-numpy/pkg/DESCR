@@ -1,0 +1,11 @@
+This is a Python meta-package which can be used in pyproject.toml files
+to automatically provide as a build-time dependency on Numpy.
+
+Normally it is used to depend on the oldest version that supports the
+given Python version and platform where a pre-built Numpy wheel is
+available, such that compiled extensions are ABI-compatible with a
+wider range of Numpy versions.
+
+For OpenBSD packages where we manage dependencies internally and
+don't use upstream pre-built wheels, this is modified to allow any
+version.

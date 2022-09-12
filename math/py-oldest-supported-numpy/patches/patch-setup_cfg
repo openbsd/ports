@@ -1,0 +1,43 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -11,38 +11,7 @@ version = 2022.8.16
+ [options]
+ python_requires = >=3.5
+ install_requires = 
+-	
+-	numpy==1.16.0; python_version=='3.5' and platform_system=='AIX'
+-	numpy==1.16.0; python_version=='3.6' and platform_system=='AIX'
+-	numpy==1.16.0; python_version=='3.7' and platform_system=='AIX'
+-	
+-	numpy==1.18.5; python_version=='3.5' and platform_machine=='aarch64' and platform_python_implementation != 'PyPy'
+-	numpy==1.19.2; python_version=='3.6' and platform_machine=='aarch64' and platform_python_implementation != 'PyPy'
+-	numpy==1.19.2; python_version=='3.7' and platform_machine=='aarch64' and platform_python_implementation != 'PyPy'
+-	numpy==1.19.2; python_version=='3.8' and platform_machine=='aarch64' and platform_python_implementation != 'PyPy'
+-	
+-	numpy==1.21.0; python_version=='3.7' and platform_machine=='arm64' and platform_system=='Darwin'
+-	numpy==1.21.0; python_version=='3.8' and platform_machine=='arm64' and platform_system=='Darwin'
+-	numpy==1.21.0; python_version=='3.9' and platform_machine=='arm64' and platform_system=='Darwin'
+-	
+-	numpy==1.17.5; python_version=='3.8' and platform_machine=='s390x' and platform_python_implementation != 'PyPy'
+-	
+-	numpy==1.22.2; platform_machine=='loongarch64' and python_version<'3.11'
+-	
+-	numpy==1.13.3; python_version=='3.5' and platform_machine not in 'aarch64|loongarch64' and platform_system!='AIX'
+-	numpy==1.13.3; python_version=='3.6' and platform_machine not in 'aarch64|loongarch64' and platform_system!='AIX' and platform_python_implementation != 'PyPy'
+-	numpy==1.14.5; python_version=='3.7' and platform_machine not in 'arm64|aarch64|loongarch64' and platform_system!='AIX' and platform_python_implementation != 'PyPy'
+-	numpy==1.17.3; python_version=='3.8' and platform_machine not in 'arm64|aarch64|s390x|loongarch64' and platform_python_implementation != 'PyPy'
+-	numpy==1.19.3; python_version=='3.9' and platform_machine not in 'arm64|loongarch64' and platform_python_implementation != 'PyPy'
+-	numpy==1.21.6; python_version=='3.10' and platform_machine!='loongarch64' and platform_python_implementation != 'PyPy'
+-	numpy==1.23.2; python_version=='3.11' and platform_python_implementation != 'PyPy'
+-	
+-	numpy==1.19.0; python_version=='3.6' and platform_machine!='loongarch64' and platform_python_implementation=='PyPy'
+-	numpy==1.20.0; python_version=='3.7' and platform_machine!='loongarch64' and platform_python_implementation=='PyPy'
+-	numpy==1.22.2; python_version=='3.8' and platform_machine!='loongarch64' and platform_python_implementation=='PyPy'
+-	
+-	numpy; python_version>='3.12'
+-	numpy; python_version>='3.9' and platform_python_implementation=='PyPy'
++	numpy; platform_system=='OpenBSD'
+ 
+ [egg_info]
+ tag_build = 
