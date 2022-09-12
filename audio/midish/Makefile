@@ -1,7 +1,7 @@
 COMMENT=		command line MIDI sequencer and filter
-DISTNAME=		midish-1.3.0
+DISTNAME=		midish-1.3.2
 CATEGORIES=		audio
-HOMEPAGE=		http://www.midish.org/
+HOMEPAGE=		https://midish.org/
 MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
 
 # BSD
