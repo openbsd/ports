@@ -25,7 +25,6 @@
      SUBDIR += binwalk
      SUBDIR += bitrot
      SUBDIR += blackbox_exporter
-     SUBDIR += boar
      SUBDIR += borgbackup
      SUBDIR += borgmatic
      SUBDIR += broot
