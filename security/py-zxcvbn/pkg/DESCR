@@ -1,0 +1,15 @@
+A realistic password strength estimator.
+
+This is a Python implementation of the library created by the team at
+Dropbox. The original library, written for JavaScript, can be found
+at https://github.com/dropbox/zxcvbn.
+
+- Accepts user data to be added to the dictionaries that are tested
+against (name, birthdate, etc)
+
+- Gives a score to the password, from 0 (terrible) to 4 (great)
+
+- Provides feedback on the password and ways to improve it
+
+- Returns time estimates on how long it would take to guess the password
+in different situations
