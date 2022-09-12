@@ -1,6 +1,6 @@
 COMMENT=	resource manager for PC/SC
 
-V=		1.9.7
+V=		1.9.8
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
@@ -54,7 +54,7 @@ do-test:
 	${WRKBUILD}/src/testpcsc
 
 post-install:
-	rm ${PREFIX}/share/doc/pcsc-lite/README.polkit
+	rm ${PREFIX}/share/doc/pcsc-lite/{README.polkit,*install_spy.sh}
 	rmdir ${PREFIX}/share/doc/pcsc-lite
 
 .include <bsd.port.mk>
