@@ -268,7 +268,6 @@
      SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
-     SUBDIR += shapezio
      SUBDIR += shockolate
      SUBDIR += singularity
      SUBDIR += ski
