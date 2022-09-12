@@ -16,6 +16,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}__about__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}audit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}auto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}clean.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
@@ -23,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}detecter.${
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pass_import/audit.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/auto.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/clean.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/core.py
@@ -84,6 +86,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}ke
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}lastpass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}myki.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}networkmanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}nordpass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}onepassword.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}padlock.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}passman.${MODPY_PYC_MAGIC_TAG}pyc
@@ -93,7 +96,9 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}pa
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}pwsafe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}revelation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}roboform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}safeincloud.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}saferpass.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}sphinx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}upm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/${MODPY_PYCACHE}zoho.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/aegis.py
@@ -123,6 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/managers/keeper.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/lastpass.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/myki.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/networkmanager.py
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/nordpass.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/onepassword.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/padlock.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/passman.py
@@ -132,7 +138,9 @@ lib/python${MODPY_VERSION}/site-packages/pass_import/managers/passwordstore.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/pwsafe.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/revelation.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/roboform.py
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/safeincloud.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/saferpass.py
+lib/python${MODPY_VERSION}/site-packages/pass_import/managers/sphinx.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/upm.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/managers/zoho.py
 lib/python${MODPY_VERSION}/site-packages/pass_import/tools.py
