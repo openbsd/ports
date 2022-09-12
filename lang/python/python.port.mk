@@ -206,11 +206,14 @@ BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PEP517} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517} == setuptools
+.  elif ${MODPY_PEP517} == setuptools || ${MODPY_PEP517} == setuptools_scm
 DPB_PROPERTIES +=	nojunk
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
 MODPY_RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+.    if ${MODPY_PEP517} == setuptools_scm
+BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
+.    endif
 .  elif !${MODPY_PEP517:L:Myes}
 ERRORS +=		"Fatal: unknown MODPY_PEP517 value"
 .  endif
