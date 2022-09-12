@@ -1,10 +1,9 @@
 COMMENT =		library for creating a custom Minecraft launcher
 
-MODPY_EGG_VERSION =	4.5
+MODPY_EGG_VERSION =	5.2
 
 DISTNAME =		minecraft-launcher-lib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

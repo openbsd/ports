@@ -3,7 +3,7 @@ JVM install doesn't support OpenBSD so patch it out
 Index: minecraft_launcher_lib/install.py
 --- minecraft_launcher_lib/install.py.orig
 +++ minecraft_launcher_lib/install.py
-@@ -117,11 +117,6 @@ def do_version_install(versionid: str, path: str, call
+@@ -124,11 +124,6 @@ def do_version_install(versionid: str, path: str, call
      if not os.path.isfile(os.path.join(path, "versions", versiondata["id"], versiondata["id"] + ".jar")) and "inheritsFrom" in versiondata:
          inheritsFrom = versiondata["inheritsFrom"]
          shutil.copyfile(os.path.join(path, "versions", versiondata["id"], versiondata["id"] + ".jar"), os.path.join(path, "versions", inheritsFrom, inheritsFrom + ".jar"))
@@ -14,4 +14,4 @@ Index: minecraft_launcher_lib/install.py
 -    callback.get("setStatus", empty)("Installation complete")
  
  
- def install_minecraft_version(versionid: str, minecraft_directory: Union[str, os.PathLike], callback: Dict[str, Callable] = None) -> NoReturn:
+ def install_minecraft_version(versionid: str, minecraft_directory: Union[str, os.PathLike], callback: Optional[CallbackDict] = None) -> None:
