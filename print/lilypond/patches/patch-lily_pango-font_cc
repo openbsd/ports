@@ -1,6 +1,7 @@
---- lily/pango-font.cc.orig	Tue May 13 10:22:35 2014
-+++ lily/pango-font.cc	Tue May 13 10:26:47 2014
-@@ -116,19 +116,21 @@ Pango_font::derived_mark () const
+Index: lily/pango-font.cc
+--- lily/pango-font.cc.orig
++++ lily/pango-font.cc
+@@ -169,19 +169,21 @@ Pango_font::derived_mark () const
  
  void
  get_glyph_index_name (char *s,
@@ -25,7 +26,7 @@
  }
  
  Box
-@@ -265,7 +267,7 @@ Pango_font::pango_item_string_stencil (PangoGlyphItem 
+@@ -317,7 +319,7 @@ Pango_font::pango_item_string_stencil (PangoGlyphItem 
            && cmap->find (pg) != cmap->end ())
          {
            FT_ULong char_code = cmap->find (pg)->second;
@@ -34,7 +35,7 @@
          }
  
        if (glyph_name[0] == '\0' && has_glyph_names)
-@@ -281,7 +283,7 @@ Pango_font::pango_item_string_stencil (PangoGlyphItem 
+@@ -333,7 +335,7 @@ Pango_font::pango_item_string_stencil (PangoGlyphItem 
  
        if (glyph_name[0] == '\0' && is_ttf)
          // Access by glyph index directly.

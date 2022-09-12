@@ -1,6 +1,7 @@
---- lily/ttf.cc.orig	Tue May 13 10:25:46 2014
-+++ lily/ttf.cc	Tue May 13 10:26:24 2014
-@@ -439,7 +439,7 @@ print_trailer (void *out,
+Index: lily/ttf.cc
+--- lily/ttf.cc.orig
++++ lily/ttf.cc
+@@ -427,7 +427,7 @@ print_trailer (std::ostream &stream, FT_Face face)
        if (!glyph_name[0] && ic_map.find (i) != ic_map.end ())
          {
            FT_ULong ucode = ic_map[i];
@@ -9,7 +10,7 @@
          }
  
        if (i == 0)
-@@ -448,7 +448,7 @@ print_trailer (void *out,
+@@ -436,7 +436,7 @@ print_trailer (std::ostream &stream, FT_Face face)
          glyph_name[0] = '\0';
  
        if (!glyph_name[0])

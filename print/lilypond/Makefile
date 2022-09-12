@@ -1,49 +1,53 @@
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.18.2
+VERSION=		2.22.2
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
-REVISION-main=		4
-REVISION-docs=		2
 
-DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
-EXTRACT_ONLY=		${DISTNAME}.tar.gz
+URW_V=			20200910
+DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0 urw-base35-fonts-${URW_V}.tar.gz:1
+EXTRACT_ONLY=		${DISTNAME}.tar.gz urw-base35-fonts-${URW_V}.tar.gz
 
 MULTI_PACKAGES=		-main -docs
 
-HOMEPAGE=		http://lilypond.org/web/
+HOMEPAGE=		https://lilypond.org/
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
-# GPLv3+
+# GPLv3+, for urw-base35-fonts: AGPLv3 with font exception
 PERMIT_PACKAGE=	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MASTER_BASE=		http://download.linuxaudio.org/lilypond/
-MASTER_SITES=		${MASTER_BASE}sources/v${VERSION:C,\.[0-9]*$,,}/
+MASTER_BASE=		https://lilypond.org/download/
+MASTER_SITES=		${MASTER_BASE}source/v${VERSION:C,\.[0-9]*$,,}/
 MASTER_SITES0=		${MASTER_BASE}binaries/documentation/
+MASTER_SITES1=		https://github.com/ArtifexSoftware/urw-base35-fonts/archive/${URW_V}/
 
 # We don't use the standard autoconf mechanisms from the ports
 # system, because it doesn't work for lilypond. Instead, we use
 # autogen.sh and add AUTOCONV_VERSION to the environment.
-AUTOCONF_VERSION=	2.63
+AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	gnu
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			BASH=/bin/sh \
 			GREP=/usr/bin/grep \
 			LDFLAGS=-L${LOCALBASE}/lib
+TEXGYREDIR=		${LOCALBASE}/share/texmf-dist/fonts/opentype/public/tex-gyre
+URWDIR=			${WRKDIR}/urw-base35-fonts-${URW_V}/fonts
 CONFIGURE_ARGS+=	--disable-debugging \
 			--disable-documentation \
 			--disable-optimising \
 			--disable-pipe \
 			--with-ncsb-dir=${LOCALBASE}/share/fonts/ghostscript \
-			--with-python-include=${MODPY_INCDIR}
+			--with-python-include=${MODPY_INCDIR} \
+			--with-texgyre-dir=${TEXGYREDIR} \
+			--with-urwotf-dir=${URWDIR}
 USE_GMAKE=		Yes
 MAKE_FILE=		GNUmakefile
 
@@ -56,17 +60,19 @@ WANTLIB-docs =
 LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
-WANTLIB-main=		c fontconfig freetype glib-2.0 gmp gobject-2.0 \
-			guile intl ltdl m pango-1.0 pangoft2-1.0 pthread z \
+WANTLIB-main=		c fontconfig freetype gc glib-2.0 gobject-2.0 \
+			guile-2.2 harfbuzz intl m pango-1.0 \
+			pangoft2-1.0 pthread \
 			${COMPILER_LIBCXX}
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 LIB_DEPENDS-main=	devel/gettext,-runtime \
-			lang/guile \
+			lang/guile2 \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
 BUILD_DEPENDS= 		print/mftrace \
+			print/texlive/texmf \
 			devel/bison \
 			devel/gettext,-tools \
 			archivers/bzip2 \

@@ -1,24 +1,16 @@
-- Fix version comparision for large version numbers.
+Fix version check of fontforge.
 
-- Allow older (buggy?) metapost.
-
---- aclocal.m4.orig	Mon Mar 17 16:29:16 2014
-+++ aclocal.m4	Thu May 22 20:15:38 2014
-@@ -116,7 +116,7 @@ AC_DEFUN(STEPMAKE_CHECK_VERSION, [
-     num=`STEPMAKE_NUMERIC_VERSION($ver)`
-     req=`STEPMAKE_NUMERIC_VERSION($3)`
-     AC_MSG_RESULT([$ver])
--    if test "$num" -lt "$req"; then
-+    if test $(dc -e "[[1]] sa 0 $num $req <a p") = 0; then
- 	STEPMAKE_ADD_ENTRY($2, ["$r >= $3 (installed: $ver)"])
+Index: aclocal.m4
+--- aclocal.m4.orig
++++ aclocal.m4
+@@ -61,9 +61,7 @@ AC_DEFUN(STEPMAKE_GET_VERSION, [
+     if test -z "$_ver"; then
+         ## If empty, try date [fontforge]
+         eval _ver=\"\`("$1" --version || "$1" -V) 2>&1 \
+-        | grep '\(^\|[^0-9a-f]\)[0-9]\{6,8\}\([^0-9a-f]\|$\)' \
+-        | head -n 1 \
+-        | sed -e 's/^[^.0-9]*//' -e 's/[^.0-9]*$//'\`\"
++        | sed -ne 's/^libfontforge //p'\`\"
      fi
-     vervar="`echo $1 | tr '[a-z]' '[A-Z]'`_VERSION"
-@@ -1171,7 +1171,7 @@ AC_DEFUN(STEPMAKE_TEXMF, [
- 	ver=`STEPMAKE_GET_VERSION($METAPOST)`
- 	num=`STEPMAKE_NUMERIC_VERSION($ver)`
- 	# Avoid buggy metapost versions: 1.600 <= x < 1.803
--	if test "$num" -ge "1600000" -a "$num" -lt "1803000"; then
-+	if test "$num" -ge "1600000" -a "$num" -lt "1801000"; then
-             STEPMAKE_ADD_ENTRY($1, ["mpost (due to a bug in metapost, versions 1.600 <= x < 1.803 are not supported; installed: $ver)"])
- 	fi
-     fi
+     echo "$_ver"
+     changequote([, ])#dnl
