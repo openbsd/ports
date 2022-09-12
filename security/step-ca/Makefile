@@ -23,6 +23,13 @@ MODULES =		lang/go
 
 MODGO_LDFLAGS +=	-X "main.Version=${V}"
 
+do-build:
+	-cd ${WRKSRC} && ${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/...
+	cd ${WRKDIR}/go/pkg/mod/github.com/newrelic/go-agent/v3@*/internal/sysinfo; \
+	    mv memtotal_openbsd_amd64.go memtotal_openbsd.go
+	GOCACHE="${MODGO_GOCACHE}" go clean -cache
+	cd ${WRKSRC} && ${MODGO_BUILD_CMD} ${ALL_TARGET}/cmd/...
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/step-ca
 	${INSTALL_DATA} ${WRKSRC}/docs/*.md ${PREFIX}/share/doc/step-ca
