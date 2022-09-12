@@ -61,13 +61,13 @@ COMPILER =		base-clang ports-gcc base-gcc
 RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
 LIB_DEPENDS =
 
-LIB_DEPENDS-main =	${MODGCC4_CPPLIBDEP} \
+LIB_DEPENDS-main +=	${MODGCC4_CPPLIBDEP} \
 			archivers/bzip2 \
 			databases/sqlite3 \
 			devel/libffi \
 			devel/gettext,-runtime
 RUN_DEPENDS-main =
-WANTLIB-main =		bz2 c crypto expat ffi intl m curses panel pthread \
+WANTLIB-main +=		bz2 c crypto expat ffi intl m curses panel pthread \
 			readline sqlite3 ssl util z
 .if ${VERSION} != "2.7"
 LIB_DEPENDS-main +=	archivers/xz
