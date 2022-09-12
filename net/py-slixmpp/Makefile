@@ -1,10 +1,9 @@
 COMMENT =		slixmpp is an elegant Python library for XMPP
 
-MODPY_EGG_VERSION =	1.7.1
+MODPY_EGG_VERSION =	1.8.2
 DISTNAME =		slixmpp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		0
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
@@ -14,9 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests/*.py
+MODPY_PEP517 =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
