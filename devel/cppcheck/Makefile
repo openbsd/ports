@@ -28,7 +28,7 @@ MAKE_FLAGS =		BIN=${PREFIX}/bin HAVE_RULES=yes \
 			FILESDIR=${PREFIX}/share/cppcheck \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -std=c++11" \
 			CPPFLAGS="-DTIXML_USE_STL -isystem lib -isystem ${PREFIX}/include" \
-			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo"
+			LDFLAGS="-L${PREFIX}/lib -lpcre -lexecinfo -lpthread"
 
 MODULES =		lang/python
 
