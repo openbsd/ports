@@ -1,7 +1,6 @@
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-7.0.2
-REVISION =		1
+DISTNAME =		varnish-7.1.1
 
 CATEGORIES =		www
 
@@ -22,7 +21,7 @@ WANTLIB += c curses execinfo m pcre2-8 pthread readline
 
 MODULES =		lang/python
 MODPY_RUNDEP =		No
-MODPY_ADJ_FILES =	lib/libvcc/{vsc,vmod}tool.py
+MODPY_ADJ_FILES =	lib/libvcc/vmodtool.py
 
 BUILD_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}

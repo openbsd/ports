@@ -32,6 +32,7 @@ include/varnish/tbl/boc_state.h
 include/varnish/tbl/body_status.h
 include/varnish/tbl/cli_cmds.h
 include/varnish/tbl/debug_bits.h
+include/varnish/tbl/experimental_bits.h
 include/varnish/tbl/feature_bits.h
 include/varnish/tbl/h2_error.h
 include/varnish/tbl/h2_frames.h
