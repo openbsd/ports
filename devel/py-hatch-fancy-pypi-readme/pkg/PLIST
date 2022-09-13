@@ -23,12 +23,8 @@ lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_fragments.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_fragments.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_humanize_validation_errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_humanize_validation_errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_substitutions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_substitutions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_validators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}_validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -37,9 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_builder.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_cli.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_config.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_fragments.py
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_humanize_validation_errors.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_substitutions.py
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/_validators.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/hooks.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/py.typed
