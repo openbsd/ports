@@ -1,0 +1,6 @@
+datedelta.datedelta is datetime.timedelta for date arithmetic.
+
+It accounts for oddities of the Gregorian calendar.
+
+It's convenient for computing yearly, monthly, or weekly subscriptions
+periods.
