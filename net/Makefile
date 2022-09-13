@@ -184,6 +184,7 @@
      SUBDIR += isc-bind,geoip
      SUBDIR += isc-dhcp
      SUBDIR += jftpgw
+     SUBDIR += jitsi
      SUBDIR += jnettop
      SUBDIR += kdeconnect-kde
      SUBDIR += kdsoap
