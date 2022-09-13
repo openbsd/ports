@@ -14,7 +14,7 @@ Index: configure
  
  rm -f config.log
  
-@@ -1538,7 +1539,6 @@ if test "$static" = "yes" ; then
+@@ -1354,7 +1355,6 @@ if test "$static" = "yes" ; then
      plugins="no"
    fi
  fi
@@ -22,7 +22,7 @@ Index: configure
  
  cat > $TMPC << EOF
  
-@@ -2144,6 +2144,56 @@ EOF
+@@ -1511,6 +1511,56 @@ if ! has "$pkg_config_exe"; then
  fi
  
  ##########################################
@@ -78,8 +78,8 @@ Index: configure
 +##########################################
  # glib support probe
  
- glib_req_ver=2.56
-@@ -2917,6 +2967,15 @@ fi
+ # When bumping glib_req_ver, please check also whether we should increase
+@@ -2481,6 +2531,15 @@ fi
  
  if test "$plugins" = "yes" ; then
      echo "CONFIG_PLUGIN=y" >> $config_host_mak

@@ -3,7 +3,7 @@ sndio module
 Index: audio/sndioaudio.c
 --- audio/sndioaudio.c.orig
 +++ audio/sndioaudio.c
-@@ -0,0 +1,555 @@
+@@ -0,0 +1,566 @@
 +/*
 + * SPDX-License-Identifier: ISC
 + *
@@ -23,7 +23,7 @@ Index: audio/sndioaudio.c
 +#include <poll.h>
 +#include <sndio.h>
 +#include "qemu/osdep.h"
-+#include "qemu-common.h"
++#include "qemu/help-texts.h"
 +#include "qemu/main-loop.h"
 +#include "audio.h"
 +#include "trace.h"
@@ -222,6 +222,16 @@ Index: audio/sndioaudio.c
 +    if (self->enabled) {
 +        sndio_poll_wait(self);
 +    }
++}
++
++/*
++ * return the upper limit of the amount of free play buffer space
++ */
++static size_t sndio_buffer_get_free(HWVoiceOut *hw)
++{
++    SndioVoice *self = (SndioVoice *) hw;
++
++    return self->buf_size - self->qemu_pos;
 +}
 +
 +/*
@@ -530,6 +540,7 @@ Index: audio/sndioaudio.c
 +    .fini_out       = sndio_fini_out,
 +    .enable_out     = sndio_enable_out,
 +    .write          = audio_generic_write,
++    .buffer_get_free = sndio_buffer_get_free,
 +    .get_buffer_out = sndio_get_buffer_out,
 +    .put_buffer_out = sndio_put_buffer_out,
 +    .init_in        = sndio_init_in,

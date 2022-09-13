@@ -4,14 +4,11 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	7.0.0
+VERSION=	7.1.0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
-
-REVISION-main=	1
-REVISION-ga=	0
 
 HOMEPAGE=	https://www.qemu.org/
 
@@ -28,6 +25,7 @@ WANTLIB-main=	${COMPILER_LIBCXX} ${WANTLIB} SDL2 X11 bz2 cairo capstone curl \
 WANTLIB-ga=	${WANTLIB}
 
 MULTI_PACKAGES=	-main -ga
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Using TLS emulation layer
 COMPILER=	base-clang ports-gcc
@@ -88,7 +86,7 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
 		--cc="${CC}" \
 		--cxx="${CXX}" \
 		--host-cc="${CC}" \
-		--enable-capstone=system \
+		--enable-capstone \
 		--disable-auth-pam \
 		--disable-bsd-user \
 		--disable-jack \

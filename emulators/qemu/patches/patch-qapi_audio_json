@@ -19,7 +19,7 @@ Index: qapi/audio.json
 +#
 +# @latency: play buffer size (in microseconds)
 +#
-+# Since: 7.1
++# Since: 7.2
 +##
 +{ 'struct': 'AudiodevSndioOptions',
 +  'data': {
@@ -32,7 +32,7 @@ Index: qapi/audio.json
  # @AudiodevCoreaudioPerDirectionOptions:
  #
  # Options of the Core Audio backend that are used for both playback and
-@@ -388,7 +410,7 @@
+@@ -387,7 +409,7 @@
  ##
  { 'enum': 'AudiodevDriver',
    'data': [ 'none', 'alsa', 'coreaudio', 'dbus', 'dsound', 'jack', 'oss', 'pa',
@@ -41,7 +41,7 @@ Index: qapi/audio.json
  
  ##
  # @Audiodev:
-@@ -419,5 +441,6 @@
+@@ -418,5 +440,6 @@
      'oss':       'AudiodevOssOptions',
      'pa':        'AudiodevPaOptions',
      'sdl':       'AudiodevSdlOptions',

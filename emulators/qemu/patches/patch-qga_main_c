@@ -19,7 +19,7 @@ Index: qga/main.c
  #else
  #define QGA_VIRTIO_PATH_DEFAULT "\\\\.\\Global\\org.qemu.guest_agent.0"
  #define QGA_STATE_RELATIVE_DIR  "qemu-ga"
-@@ -1470,7 +1476,11 @@ int main(int argc, char **argv)
+@@ -1475,7 +1481,11 @@ int main(int argc, char **argv)
      }
  
      if (config->method == NULL) {

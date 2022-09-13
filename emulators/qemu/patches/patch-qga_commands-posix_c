@@ -11,75 +11,42 @@ Setting user password is not supported on OpenBSD.
 Index: qga/commands-posix.c
 --- qga/commands-posix.c.orig
 +++ qga/commands-posix.c
-@@ -28,6 +28,26 @@
- #include "qemu/cutils.h"
- #include "commands-common.h"
- 
-+#ifdef CONFIG_BSD
-+#include <ifaddrs.h>
-+#include <arpa/inet.h>
-+#include <sys/socket.h>
-+#include <sys/sysctl.h>
-+#include <net/if.h>
-+#include <sys/socket.h>
-+#include <ifaddrs.h>
-+#include <sys/statvfs.h>
+@@ -57,11 +57,20 @@
+ #include <net/if.h>
+ #include <sys/types.h>
+ #include <ifaddrs.h>
+-#ifdef CONFIG_SOLARIS
++#if defined(__OpenBSD__)
 +#include <net/if_dl.h>
 +#include <net/if_types.h>
 +#include <netinet/if_ether.h>
-+#include <net/if_var.h>
-+
-+#ifdef __OpenBSD__
-+#define SIOCGIFLLADDR   _IOWR('i', 32, struct ifreq)     /* get link level addr */
-+#define SIOCGHWADDR     SIOCGIFLLADDR
-+#endif
-+#endif
-+
- #ifdef HAVE_UTMPX
- #include <utmpx.h>
++#elif defined CONFIG_SOLARIS
+ #include <sys/sockio.h>
  #endif
-@@ -85,14 +105,23 @@ void qmp_guest_shutdown(bool has_mode, const char *mod
+ #endif
+ 
++#ifdef CONFIG_BSD
++#include <sys/sysctl.h>
++#include <sys/statvfs.h>
++#endif
++
+ static void ga_wait_child(pid_t pid, int *status, Error **errp)
  {
-     const char *shutdown_flag;
-     Error *local_err = NULL;
-+    char *shutdown_mode;
+     pid_t rpid;
+@@ -88,7 +97,11 @@ void qmp_guest_shutdown(bool has_mode, const char *mod
      pid_t pid;
      int status;
  
-     slog("guest-shutdown called, mode: %s", mode);
-     if (!has_mode || strcmp(mode, "powerdown") == 0) {
+-#ifdef CONFIG_SOLARIS
 +#ifdef CONFIG_BSD
-+        shutdown_flag = "-p";
-+#else
-         shutdown_flag = "-P";
-+#endif
-     } else if (strcmp(mode, "halt") == 0) {
-+#ifdef CONFIG_BSD
-+        shutdown_flag = "-h";
-+#else
-         shutdown_flag = "-H";
-+#endif
-     } else if (strcmp(mode, "reboot") == 0) {
-         shutdown_flag = "-r";
-     } else {
-@@ -109,8 +138,15 @@ void qmp_guest_shutdown(bool has_mode, const char *mod
-         reopen_fd_to_null(1);
-         reopen_fd_to_null(2);
- 
-+        shutdown_mode = g_strdup_printf("hypervisor initiated %s", mode);
-+
-+#ifdef CONFIG_BSD
-+        execle("/sbin/shutdown", "-h", shutdown_flag, "+0",
-+               shutdown_mode, (char*)NULL, environ);
-+#else
-         execle("/sbin/shutdown", "shutdown", "-h", shutdown_flag, "+0",
--               "hypervisor initiated shutdown", (char *)NULL, environ);
-+               shutdown_mode, (char *)NULL, environ);
-+#endif
-         _exit(EXIT_FAILURE);
-     } else if (pid < 0) {
-         error_setg_errno(errp, errno, "failed to create child process");
-@@ -153,9 +189,11 @@ int64_t qmp_guest_get_time(Error **errp)
++    const char *powerdown_flag = "-p";
++    const char *halt_flag = "-h";
++    const char *reboot_flag = "-r";
++#elif defined (CONFIG_SOLARIS)
+     const char *powerdown_flag = "-i5";
+     const char *halt_flag = "-i0";
+     const char *reboot_flag = "-i6";
+@@ -154,9 +167,11 @@ void qmp_guest_shutdown(bool has_mode, const char *mod
  void qmp_guest_set_time(bool has_time, int64_t time_ns, Error **errp)
  {
      int ret;
@@ -91,7 +58,7 @@ Index: qga/commands-posix.c
      struct timeval tv;
      static const char hwclock_path[] = "/sbin/hwclock";
      static int hwclock_available = -1;
-@@ -194,6 +232,7 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
+@@ -195,6 +210,7 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
          }
      }
  
@@ -99,7 +66,7 @@ Index: qga/commands-posix.c
      /* Now, if user has passed a time to set and the system time is set, we
       * just need to synchronize the hardware clock. However, if no time was
       * passed, user is requesting the opposite: set the system time from the
-@@ -230,6 +269,7 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
+@@ -230,6 +246,7 @@ void qmp_guest_set_time(bool has_time, int64_t time_ns
          error_setg(errp, "hwclock failed to set hardware clock to system time");
          return;
      }
@@ -107,224 +74,27 @@ Index: qga/commands-posix.c
  }
  
  typedef enum {
-@@ -789,7 +829,7 @@ static void build_fs_mount_list(FsMountList *mounts, E
- 
-         QTAILQ_INSERT_TAIL(mounts, mount, next);
-     }
--    free(line);
-+    g_free(line);
- 
-     fclose(fp);
- }
-@@ -2940,24 +2980,260 @@ void qmp_guest_suspend_hybrid(Error **errp)
-     error_setg(errp, QERR_UNSUPPORTED);
+@@ -2985,7 +3002,7 @@ GuestCpuStatsList *qmp_guest_get_cpustats(Error **errp
+     return head;
  }
  
-+#ifndef CONFIG_BSD
- GuestNetworkInterfaceList *qmp_guest_network_get_interfaces(Error **errp)
+-#else /* defined(__linux__) */
++#elif defined(CONFIG_BSD)
+ 
+ void qmp_guest_suspend_disk(Error **errp)
  {
-     error_setg(errp, QERR_UNSUPPORTED);
-     return NULL;
- }
-+#else
-+static GuestNetworkInterfaceList *
-+guest_find_interface(GuestNetworkInterfaceList *head,
-+                     const char *name)
-+{
-+    for (; head; head = head->next) {
-+        if (strcmp(head->value->name, name) == 0) {
-+            break;
-+        }
-+    }
-+    return head;
-+}
+@@ -3004,10 +3021,209 @@ void qmp_guest_suspend_hybrid(Error **errp)
  
-+static int guest_get_network_stats(const char *name,
-+                       GuestNetworkInterfaceStat *stats)
-+{
-+	return -1;
-+}
-+
-+GuestNetworkInterfaceList *qmp_guest_network_get_interfaces(Error **errp)
-+{
-+    GuestNetworkInterfaceList *head = NULL, *cur_item = NULL;
-+    struct ifaddrs *ifap, *ifa;
-+
-+    if (getifaddrs(&ifap) < 0) {
-+        error_setg_errno(errp, errno, "getifaddrs failed");
-+        goto error;
-+    }
-+
-+    for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
-+        GuestNetworkInterfaceList *info;
-+        GuestIpAddressList **address_list = NULL, *address_item = NULL;
-+        GuestNetworkInterfaceStat  *interface_stat = NULL;
-+        char addr4[INET_ADDRSTRLEN];
-+        char addr6[INET6_ADDRSTRLEN];
-+        int sock;
-+        struct ifreq ifr;
-+        // struct ifnet ifp;
-+        // struct if_data ifd;
-+        // unsigned char *mac_addr;
-+        char mac_addr[18]="00:00:00:00:00:00"; // = char[18];
-+        void *p;
-+
-+        g_debug("Processing %s interface", ifa->ifa_name);
-+
-+        info = guest_find_interface(head, ifa->ifa_name);
-+
-+        if (!info) {
-+            info = g_malloc0(sizeof(*info));
-+            info->value = g_malloc0(sizeof(*info->value));
-+            info->value->name = g_strdup(ifa->ifa_name);
-+
-+            if (!cur_item) {
-+                head = cur_item = info;
-+            } else {
-+                cur_item->next = info;
-+                cur_item = info;
-+            }
-+        }
-+
-+        if (!info->value->has_hardware_address &&
-+            ifa->ifa_flags & SIOCGHWADDR) {
-+            /* we haven't obtained HW address yet */
-+            sock = socket(PF_INET, SOCK_STREAM, 0);
-+            if (sock == -1) {
-+                error_setg_errno(errp, errno, "failed to create socket");
-+                goto error;
-+            }
-+            close(sock);
-+
-+            memset(&ifr, 0, sizeof(ifr));
-+            pstrcpy(ifr.ifr_name, IF_NAMESIZE, info->value->name);
-+            // memset(&ifp, 0, sizeof(ifp));
-+            // memset(&ifd, 0, sizeof(ifd));
-+
-+            if (ifa->ifa_addr->sa_family == AF_LINK) {
-+            	struct sockaddr_dl *sdl =
-+            			(struct sockaddr_dl *)ifa->ifa_addr;
-+
-+                info->value->has_hardware_address = false;
-+
-+                if (sdl->sdl_type == IFT_ETHER &&
-+                		sdl->sdl_alen == ETHER_ADDR_LEN) {
-+                        snprintf(mac_addr, 18, "%s", ether_ntoa((struct ether_addr *)LLADDR(sdl)));
-+                        info->value->has_hardware_address = true;
-+                }
-+                else
-+                {
-+                    info->value->has_hardware_address = true;
-+                }
-+                info->value->hardware_address = g_strdup_printf("%s", mac_addr);
-+             }
-+
-+        }
-+
-+        if (ifa->ifa_addr &&
-+            ifa->ifa_addr->sa_family == AF_INET) {
-+            /* interface with IPv4 address */
-+            p = &((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
-+            if (!inet_ntop(AF_INET, p, addr4, sizeof(addr4))) {
-+                error_setg_errno(errp, errno, "inet_ntop failed");
-+                goto error;
-+            }
-+
-+            address_item = g_malloc0(sizeof(*address_item));
-+            address_item->value = g_malloc0(sizeof(*address_item->value));
-+            address_item->value->ip_address = g_strdup(addr4);
-+            address_item->value->ip_address_type = GUEST_IP_ADDRESS_TYPE_IPV4;
-+
-+            if (ifa->ifa_netmask) {
-+                /* Count the number of set bits in netmask.
-+                 * This is safe as '1' and '0' cannot be shuffled in netmask. */
-+                p = &((struct sockaddr_in *)ifa->ifa_netmask)->sin_addr;
-+                address_item->value->prefix = ctpop32(((uint32_t *) p)[0]);
-+            }
-+        } else if (ifa->ifa_addr &&
-+                   ifa->ifa_addr->sa_family == AF_INET6) {
-+            /* interface with IPv6 address */
-+            p = &((struct sockaddr_in6 *)ifa->ifa_addr)->sin6_addr;
-+            if (!inet_ntop(AF_INET6, p, addr6, sizeof(addr6))) {
-+                error_setg_errno(errp, errno, "inet_ntop failed");
-+                goto error;
-+            }
-+
-+            address_item = g_malloc0(sizeof(*address_item));
-+            address_item->value = g_malloc0(sizeof(*address_item->value));
-+            address_item->value->ip_address = g_strdup(addr6);
-+            address_item->value->ip_address_type = GUEST_IP_ADDRESS_TYPE_IPV6;
-+
-+            if (ifa->ifa_netmask) {
-+                /* Count the number of set bits in netmask.
-+                 * This is safe as '1' and '0' cannot be shuffled in netmask. */
-+                p = &((struct sockaddr_in6 *)ifa->ifa_netmask)->sin6_addr;
-+                address_item->value->prefix =
-+                    ctpop32(((uint32_t *) p)[0]) +
-+                    ctpop32(((uint32_t *) p)[1]) +
-+                    ctpop32(((uint32_t *) p)[2]) +
-+                    ctpop32(((uint32_t *) p)[3]);
-+            }
-+        }
-+
-+        if (!address_item) {
-+            continue;
-+        }
-+
-+        address_list = &info->value->ip_addresses;
-+
-+        while (*address_list && (*address_list)->next) {
-+            address_list = &(*address_list)->next;
-+        }
-+
-+        if (!*address_list) {
-+            *address_list = address_item;
-+        } else {
-+            (*address_list)->next = address_item;
-+        }
-+
-+        info->value->has_ip_addresses = true;
-+
-+        if (!info->value->has_statistics) {
-+            interface_stat = g_malloc0(sizeof(*interface_stat));
-+            if (guest_get_network_stats(info->value->name,
-+                interface_stat) == -1) {
-+                info->value->has_statistics = false;
-+                g_free(interface_stat);
-+            } else {
-+                info->value->statistics = interface_stat;
-+                info->value->has_statistics = true;
-+            }
-+        }
-+    }
-+
-+    freeifaddrs(ifap);
-+    return head;
-+
-+error:
-+    freeifaddrs(ifap);
-+    qapi_free_GuestNetworkInterfaceList(head);
-+    return NULL;
-+}
-+#endif // CONFIG_BSD
-+
-+#ifndef CONFIG_BSD
  GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
  {
-     error_setg(errp, QERR_UNSUPPORTED);
-     return NULL;
- }
-+#else
-+GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
-+{
 +    int64_t current;
 +    GuestLogicalProcessorList *head, **link;
 +    long sc_max;
 +    Error *local_err = NULL;
-+    int				Query[2];
-+    int				NumCpu = 0;
-+    size_t			Length = sizeof(NumCpu);
- 
++    int Query[2];
++    int NumCpu = 0;
++    size_t Length = sizeof(NumCpu);
++
 +    Query[0] = CTL_HW;
 +#ifdef HW_NCPUONLINE
 +    Query[1] = HW_NCPUONLINE;
@@ -365,23 +135,13 @@ Index: qga/commands-posix.c
 +    error_propagate(errp, local_err);
 +    return NULL;
 +}
-+#endif // CONFIG_BSD
 +
- int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
- {
++int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
++{
      error_setg(errp, QERR_UNSUPPORTED);
-     return -1;
- }
- 
-+#ifndef CONFIG_BSD
- void qmp_guest_set_user_password(const char *username,
-                                  const char *password,
-                                  bool crypted,
-@@ -2966,6 +3242,114 @@ void qmp_guest_set_user_password(const char *username,
-     error_setg(errp, QERR_UNSUPPORTED);
- }
- 
-+#else
++    return -1;
++}
++
 +void qmp_guest_set_user_password(const char *username,
 +                                 const char *password,
 +                                 bool crypted,
@@ -441,9 +201,9 @@ Index: qga/commands-posix.c
 +        reopen_fd_to_null(2);
 +
 +        if (crypted) {
-+            execle(pw_path, "pw", "usermod", username, "-H", "0", (char*)NULL, environ);
++            execl(pw_path, "pw", "usermod", username, "-H", "0", (char*)NULL);
 +        } else {
-+            execle(pw_path, "pw", "usermod", username, "-h", "0", (char*)NULL, environ);
++            execl(pw_path, "pw", "usermod", username, "-h", "0", (char*)NULL);
 +        }
 +        _exit(EXIT_FAILURE);
 +    } else if (pid < 0) {
@@ -487,24 +247,104 @@ Index: qga/commands-posix.c
 +        close(datafd[1]);
 +    }
 +}
-+#endif // CONFIG_BSD
 +
- GuestMemoryBlockList *qmp_guest_get_memory_blocks(Error **errp)
- {
-     error_setg(errp, QERR_UNSUPPORTED);
-@@ -2989,12 +3373,258 @@ GuestMemoryBlockInfo *qmp_guest_get_memory_block_info(
- 
- #if !defined(CONFIG_FSFREEZE)
- 
-+#ifndef CONFIG_BSD
- GuestFilesystemInfoList *qmp_guest_get_fsinfo(Error **errp)
- {
-     error_setg(errp, QERR_UNSUPPORTED);
++GuestMemoryBlockList *qmp_guest_get_memory_blocks(Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
      return NULL;
  }
  
++GuestMemoryBlockResponseList *
++qmp_guest_set_memory_blocks(GuestMemoryBlockList *mem_blks, Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
++    return NULL;
++}
++
++GuestMemoryBlockInfo *qmp_guest_get_memory_block_info(Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
++    return NULL;
++}
++
++#else /* defined(CONFIG_BSD) */
++
++void qmp_guest_suspend_disk(Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
++}
++
++void qmp_guest_suspend_ram(Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
++}
++
++void qmp_guest_suspend_hybrid(Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
++}
++
++GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
++{
++    error_setg(errp, QERR_UNSUPPORTED);
++    return NULL;
++}
++
+ int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
+ {
+     error_setg(errp, QERR_UNSUPPORTED);
+@@ -3144,9 +3360,13 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+         GuestNetworkInterfaceStat *interface_stat = NULL;
+         char addr4[INET_ADDRSTRLEN];
+         char addr6[INET6_ADDRSTRLEN];
++#ifdef __OpenBSD__
++        char mac_addr[18] = "00:00:00:00:00:00";
 +#else
-+/* ===================================================================== */
+         int sock;
+         struct ifreq ifr;
+         unsigned char *mac_addr;
++#endif
+         void *p;
+ 
+         g_debug("Processing %s interface", ifa->ifa_name);
+@@ -3162,6 +3382,24 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+ 
+         if (!info->has_hardware_address) {
+             /* we haven't obtained HW address yet */
++#ifdef __OpenBSD__
++            if (ifa->ifa_addr != NULL &&
++                ifa->ifa_addr->sa_family == AF_LINK) {
++                struct sockaddr_dl *sdl =
++                                (struct sockaddr_dl *)ifa->ifa_addr;
++
++                if (sdl->sdl_alen == ETHER_ADDR_LEN &&
++                    (sdl->sdl_type == IFT_ETHER ||
++                    sdl->sdl_type == IFT_CARP)) {
++                        g_snprintf(mac_addr, 18, "%s",
++                                 ether_ntoa((struct ether_addr *)LLADDR(sdl)));
++                        info->has_hardware_address = true;
++                } else {
++                    info->has_hardware_address = true;
++                }
++                info->hardware_address = g_strdup_printf("%s", mac_addr);
++            }
++#else
+             sock = socket(PF_INET, SOCK_STREAM, 0);
+             if (sock == -1) {
+                 error_setg_errno(errp, errno, "failed to create socket");
+@@ -3200,6 +3438,7 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+                 info->has_hardware_address = true;
+             }
+             close(sock);
++#endif
+         }
+ 
+         if (ifa->ifa_addr &&
+@@ -3291,11 +3530,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+ 
+ #if !defined(CONFIG_FSFREEZE)
+ 
++#ifdef CONFIG_BSD
 +typedef struct FsMount {
 +    char *dirname;
 +    char *devtype;
@@ -540,9 +380,6 @@ Index: qga/commands-posix.c
 +     }
 +}
 +
-+
-+//#define BUFSIZE 2048
-+
 +static void build_fs_mount_list(FsMountList *mounts, Error **errp)
 +{
 +    FsMount *mount;
@@ -551,19 +388,15 @@ Index: qga/commands-posix.c
 +#else // defined(__OpenBSD__)
 +    char const *dfcmd = "/bin/df -hT";
 +#endif // defined(__OpenBSD__)
-+    //char buf[BUFSIZE];
 +
 +    FILE *fp;
 +    char *line = NULL;
-+    //, *dash;
 +    size_t n;
 +    int ret;
-+    //, dir_s, dir_e, type_s, type_e, dev_s, dev_e;
 +    char dev_name[128], size[12], used[12], free[12], load[10], mounted[128];
 +#ifndef __OpenBSD__
 +    char fstype[12] = "";
 +#endif // !defined(__OpenBSD__)
-+    //int dev_name, fstype, size, used, free, load, mounted;
 +
 +    if ((fp = popen(dfcmd, "r")) == NULL) {
 +        g_debug("Cannot open '%s'!!\n", dfcmd);
@@ -673,9 +506,6 @@ Index: qga/commands-posix.c
 +
 +#endif // defined(__OpenBSD__)
 +
-+/* ======================================================= */
-+
-+
 +/* Return a list of the disk device(s)' info which @mount lies on */
 +static GuestFilesystemInfo *build_guest_fsinfo(struct FsMount *mount,
 +                                               Error **errp)
@@ -704,8 +534,8 @@ Index: qga/commands-posix.c
 +    return fs;
 +}
 +
-+GuestFilesystemInfoList *qmp_guest_get_fsinfo(Error **errp)
-+{
+ GuestFilesystemInfoList *qmp_guest_get_fsinfo(Error **errp)
+ {
 +    FsMountList mounts;
 +    struct FsMount *mount;
 +    GuestFilesystemInfoList *new, *ret = NULL;
@@ -746,51 +576,55 @@ Index: qga/commands-posix.c
 +    free_fs_mount_list(&mounts);
 +    return ret;
 +}
-+#endif // CONFIG_BSD
-+
++#else
++GuestFilesystemInfoList *qmp_guest_get_fsinfo(Error **errp)
++{
+     error_setg(errp, QERR_UNSUPPORTED);
+     return NULL;
+ }
++#endif /* CONFIG_BSD */
+ 
  GuestFsfreezeStatus qmp_guest_fsfreeze_status(Error **errp)
  {
-     error_setg(errp, QERR_UNSUPPORTED);
-@@ -3047,6 +3677,7 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3361,12 +3834,21 @@ GList *ga_command_blacklist_init(GList *blacklist)
  {
  #if !defined(__linux__)
      {
-+#ifndef CONFIG_BSD
++#ifdef CONFIG_BSD
          const char *list[] = {
              "guest-suspend-disk", "guest-suspend-ram",
-             "guest-suspend-hybrid", "guest-network-get-interfaces",
-@@ -3054,6 +3685,15 @@ GList *ga_command_blacklist_init(GList *blacklist)
-             "guest-get-memory-blocks", "guest-set-memory-blocks",
-             "guest-get-memory-block-size", "guest-get-memory-block-info",
-             NULL};
-+#else
-+        const char *list[] = {
-+            "guest-suspend-disk", "guest-suspend-ram",
-+            "guest-suspend-hybrid",
-+            "guest-set-vcpus",
++            "guest-suspend-hybrid", "guest-set-vcpus",
 +            "guest-get-memory-blocks", "guest-set-memory-blocks",
 +            "guest-get-memory-block-size", "guest-get-memory-block-info",
 +            NULL};
-+#endif // CONFIG_BSD
++#else
++        const char *list[] = {
++            "guest-suspend-disk", "guest-suspend-ram",
+             "guest-suspend-hybrid", "guest-get-vcpus", "guest-set-vcpus",
+             "guest-get-memory-blocks", "guest-set-memory-blocks",
+             "guest-get-memory-block-size", "guest-get-memory-block-info",
+             NULL};
++#endif /* CONFIG_BSD */
          char **p = (char **)list;
  
          while (*p) {
-@@ -3064,11 +3704,18 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3382,11 +3864,19 @@ GList *ga_command_blacklist_init(GList *blacklist)
  
  #if !defined(CONFIG_FSFREEZE)
      {
-+#ifndef CONFIG_BSD
++#ifdef CONFIG_BSD
          const char *list[] = {
++            "guest-fsfreeze-status",
++            "guest-fsfreeze-freeze", "guest-fsfreeze-freeze-list",
++            "guest-fsfreeze-thaw",
++            "guest-get-disks", NULL};
++#else
++        const char *list[] = {
              "guest-get-fsinfo", "guest-fsfreeze-status",
              "guest-fsfreeze-freeze", "guest-fsfreeze-freeze-list",
              "guest-fsfreeze-thaw", "guest-get-fsinfo",
              "guest-get-disks", NULL};
-+#else
-+        const char *list[] = {
-+            "guest-fsfreeze-status",
-+            "guest-fsfreeze-freeze", "guest-fsfreeze-freeze-list",
-+            "guest-fsfreeze-thaw",  NULL};
-+#endif // CONFIG_BSD
++#endif /* CONFIG_BSD */
          char **p = (char **)list;
  
          while (*p) {
