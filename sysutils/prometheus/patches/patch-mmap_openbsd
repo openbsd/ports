@@ -1,21 +1,24 @@
-Diff from https://github.com/prometheus/prometheus/issues/8877
-to make tsdb only use mmap and not hit missing UBC issues.
+Diff from https://github.com/prometheus/prometheus/issues/8799
+and https://github.com/prometheus/prometheus/pull/9085
+to make tsdb only use mmap and work around missing UBC support.
 
-Index: go.mod
---- go.mod.orig
+diff --git go.mod go.mod
+index 39c3fcb5b..760b39a8b 100644
+--- go.mod
 +++ go.mod
 @@ -13,7 +13,6 @@ require (
  	github.com/dgryski/go-sip13 v0.0.0-20200911182023-62edffca9245
- 	github.com/digitalocean/godo v1.80.0
- 	github.com/docker/docker v20.10.16+incompatible
+ 	github.com/digitalocean/godo v1.81.0
+ 	github.com/docker/docker v20.10.17+incompatible
 -	github.com/edsrzf/mmap-go v1.1.0
- 	github.com/envoyproxy/go-control-plane v0.10.2-0.20220325020618-49ff273808a1
+ 	github.com/envoyproxy/go-control-plane v0.10.3
  	github.com/envoyproxy/protoc-gen-validate v0.6.7
  	github.com/fsnotify/fsnotify v1.5.4
-Index: go.sum
---- go.sum.orig
+diff --git go.sum go.sum
+index e7aee4a9b..6b323945d 100644
+--- go.sum
 +++ go.sum
-@@ -195,8 +195,6 @@ github.com/eapache/go-resiliency v1.1.0/go.mod h1:kFI+
+@@ -202,8 +202,6 @@ github.com/eapache/go-resiliency v1.1.0/go.mod h1:kFI+JgMyC7bLPUVY133qvEBtVayf5m
  github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21/go.mod h1:+020luEh2TKB4/GOp8oxxtq0Daoen/Cii55CzbTV6DU=
  github.com/eapache/queue v1.1.0/go.mod h1:6eCeP0CKFpHLu8blIFXhExK/dRa7WDZfr6jVFPTqq+I=
  github.com/edsrzf/mmap-go v1.0.0/go.mod h1:YO35OhQPt3KJa3ryjFM5Bs14WD66h8eGKpfaBNrHW5M=
@@ -23,9 +26,10 @@ Index: go.sum
 -github.com/edsrzf/mmap-go v1.1.0/go.mod h1:19H/e8pUPLicwkyNgOykDXkJ9F0MHE+Z52B8EIth78Q=
  github.com/elazarl/goproxy v0.0.0-20180725130230-947c36da3153/go.mod h1:/Zj4wYkgs4iZTTu3o/KG3Itv/qCCa8VVMlb3i9OVuzc=
  github.com/emicklei/go-restful v0.0.0-20170410110728-ff4f55a20633/go.mod h1:otzb+WCGbkyDHkqmQmT5YD2WR4BBwUdeQoFo8l/7tVs=
- github.com/emicklei/go-restful v2.9.5+incompatible h1:spTtZBk5DYEvbxMVutUuTyh1Ao2r4iyvLdACqsl/Ljk=
-Index: promql/query_logger.go
---- promql/query_logger.go.orig
+ github.com/emicklei/go-restful v2.9.5+incompatible/go.mod h1:otzb+WCGbkyDHkqmQmT5YD2WR4BBwUdeQoFo8l/7tVs=
+diff --git promql/query_logger.go promql/query_logger.go
+index 716e7749b..8eb1afce0 100644
+--- promql/query_logger.go
 +++ promql/query_logger.go
 @@ -22,13 +22,13 @@ import (
  	"time"
@@ -43,7 +47,7 @@ Index: promql/query_logger.go
  	getNextIndex  chan int
  	logger        log.Logger
  	maxConcurrent int
-@@ -80,7 +80,7 @@ func logUnfinishedQueries(filename string, filesize in
+@@ -81,7 +81,7 @@ func logUnfinishedQueries(filename string, filesize int, logger log.Logger) {
  	}
  }
  
@@ -52,19 +56,19 @@ Index: promql/query_logger.go
  	file, err := os.OpenFile(filename, os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0o666)
  	if err != nil {
  		absPath, pathErr := filepath.Abs(filename)
-@@ -91,19 +91,13 @@ func getMMapedFile(filename string, filesize int, logg
+@@ -92,19 +92,13 @@ func getMMapedFile(filename string, filesize int, logger log.Logger) ([]byte, er
  		return nil, err
  	}
  
 -	err = file.Truncate(int64(filesize))
-+	mw, err := fileutil.NewMmapWriterWithSize(file, filesize)
- 	if err != nil {
+-	if err != nil {
 -		level.Error(logger).Log("msg", "Error setting filesize.", "filesize", filesize, "err", err)
 -		return nil, err
 -	}
 -
 -	fileAsBytes, err := mmap.Map(file, mmap.RDWR, 0)
--	if err != nil {
++	mw, err := fileutil.NewMmapWriterWithSize(file, filesize)
+ 	if err != nil {
  		level.Error(logger).Log("msg", "Failed to mmap", "file", filename, "Attempted size", filesize, "err", err)
  		return nil, err
  	}
@@ -74,7 +78,7 @@ Index: promql/query_logger.go
  }
  
  func NewActiveQueryTracker(localStoragePath string, maxConcurrent int, logger log.Logger) *ActiveQueryTracker {
-@@ -115,14 +109,17 @@ func NewActiveQueryTracker(localStoragePath string, ma
+@@ -116,14 +110,17 @@ func NewActiveQueryTracker(localStoragePath string, maxConcurrent int, logger lo
  	filename, filesize := filepath.Join(localStoragePath, "queries.active"), 1+maxConcurrent*entrySize
  	logUnfinishedQueries(filename, filesize, logger)
  
@@ -95,7 +99,7 @@ Index: promql/query_logger.go
  		getNextIndex:  make(chan int, maxConcurrent),
  		logger:        logger,
  		maxConcurrent: maxConcurrent,
-@@ -179,19 +176,27 @@ func (tracker ActiveQueryTracker) GetMaxConcurrent() i
+@@ -180,19 +177,27 @@ func (tracker ActiveQueryTracker) GetMaxConcurrent() int {
  }
  
  func (tracker ActiveQueryTracker) Delete(insertIndex int) {
@@ -127,8 +131,9 @@ Index: promql/query_logger.go
  		return i, nil
  	case <-ctx.Done():
  		return 0, ctx.Err()
-Index: promql/query_logger_test.go
---- promql/query_logger_test.go.orig
+diff --git promql/query_logger_test.go promql/query_logger_test.go
+index ad76fb992..bd92b81af 100644
+--- promql/query_logger_test.go
 +++ promql/query_logger_test.go
 @@ -19,13 +19,22 @@ import (
  	"testing"
@@ -206,10 +211,11 @@ Index: promql/query_logger_test.go
  
  	f, err := os.Open(filename)
  	require.NoError(t, err)
-Index: tsdb/fileutil/mmap.go
---- tsdb/fileutil/mmap.go.orig
+diff --git tsdb/fileutil/mmap.go tsdb/fileutil/mmap.go
+index 4dbca4f97..e1c522472 100644
+--- tsdb/fileutil/mmap.go
 +++ tsdb/fileutil/mmap.go
-@@ -20,10 +20,33 @@ import (
+@@ -20,8 +20,31 @@ import (
  )
  
  type MmapFile struct {
@@ -219,8 +225,8 @@ Index: tsdb/fileutil/mmap.go
 +	b         []byte
 +	rw        bool
 +	closeFile bool
- }
- 
++}
++
 +func OpenRwMmapFromFile(f *os.File, size int) (mf *MmapFile, retErr error) {
 +	defer func() {
 +		if retErr != nil {
@@ -240,12 +246,10 @@ Index: tsdb/fileutil/mmap.go
 +		return nil, errors.Wrapf(err, "mmap, size %d", size)
 +	}
 +	return &MmapFile{f: f, b: b, rw: true}, nil
-+}
-+
- func OpenMmapFile(path string) (*MmapFile, error) {
- 	return OpenMmapFileWithSize(path, 0)
  }
-@@ -46,22 +69,53 @@ func OpenMmapFileWithSize(path string, size int) (mf *
+ 
+ func OpenMmapFile(path string) (*MmapFile, error) {
+@@ -46,22 +69,53 @@ func OpenMmapFileWithSize(path string, size int) (mf *MmapFile, retErr error) {
  		size = int(info.Size())
  	}
  
@@ -293,20 +297,22 @@ Index: tsdb/fileutil/mmap.go
  	if err0 != nil {
 -		return err0
 +		return errors.Wrap(err0, "close sync")
- 	}
--	return err1
++	}
 +	if err1 != nil {
 +		return errors.Wrap(err1, "close munmap")
 +	}
 +	if err2 != nil {
 +		return errors.Wrap(err2, "close file")
-+	}
+ 	}
+-	return err1
 +	return nil
  }
  
  func (f *MmapFile) File() *os.File {
-Index: tsdb/fileutil/mmap_openbsd.go
---- tsdb/fileutil/mmap_openbsd.go.orig
+diff --git tsdb/fileutil/mmap_openbsd.go tsdb/fileutil/mmap_openbsd.go
+new file mode 100644
+index 000000000..39b590ee5
+--- /dev/null
 +++ tsdb/fileutil/mmap_openbsd.go
 @@ -0,0 +1,25 @@
 +// Copyright 2021 The Prometheus Authors
@@ -334,8 +340,10 @@ Index: tsdb/fileutil/mmap_openbsd.go
 +func (f *MmapFile) Sync() error {
 +	return unix.Msync(f.b, unix.MS_SYNC)
 +}
-Index: tsdb/fileutil/mmap_sync.go
---- tsdb/fileutil/mmap_sync.go.orig
+diff --git tsdb/fileutil/mmap_sync.go tsdb/fileutil/mmap_sync.go
+new file mode 100644
+index 000000000..31fd98e6d
+--- /dev/null
 +++ tsdb/fileutil/mmap_sync.go
 @@ -0,0 +1,21 @@
 +// Copyright 2021 The Prometheus Authors
@@ -359,25 +367,29 @@ Index: tsdb/fileutil/mmap_sync.go
 +func (f *MmapFile) Sync() error {
 +	return nil
 +}
-Index: tsdb/fileutil/mmap_unix.go
---- tsdb/fileutil/mmap_unix.go.orig
+diff --git tsdb/fileutil/mmap_unix.go tsdb/fileutil/mmap_unix.go
+index 1fd7f48ff..c83a32011 100644
+--- tsdb/fileutil/mmap_unix.go
 +++ tsdb/fileutil/mmap_unix.go
-@@ -22,8 +22,12 @@ import (
+@@ -22,10 +22,14 @@ import (
  	"golang.org/x/sys/unix"
  )
  
 -func mmap(f *os.File, length int) ([]byte, error) {
 +func mmapRo(f *os.File, length int) ([]byte, error) {
  	return unix.Mmap(int(f.Fd()), 0, length, unix.PROT_READ, unix.MAP_SHARED)
-+}
-+
-+func mmapRw(f *os.File, length int) ([]byte, error) {
-+	return unix.Mmap(int(f.Fd()), 0, length, unix.PROT_READ|unix.PROT_WRITE, unix.MAP_SHARED)
  }
  
++func mmapRw(f *os.File, length int) ([]byte, error) {
++	return unix.Mmap(int(f.Fd()), 0, length, unix.PROT_READ|unix.PROT_WRITE, unix.MAP_SHARED)
++}
++
  func munmap(b []byte) (err error) {
-Index: tsdb/fileutil/mmap_windows.go
---- tsdb/fileutil/mmap_windows.go.orig
+ 	return unix.Munmap(b)
+ }
+diff --git tsdb/fileutil/mmap_windows.go tsdb/fileutil/mmap_windows.go
+index b94226412..9caf36622 100644
+--- tsdb/fileutil/mmap_windows.go
 +++ tsdb/fileutil/mmap_windows.go
 @@ -19,7 +19,26 @@ import (
  	"unsafe"
@@ -407,8 +419,10 @@ Index: tsdb/fileutil/mmap_windows.go
  	low, high := uint32(size), uint32(size>>32)
  	h, errno := syscall.CreateFileMapping(syscall.Handle(f.Fd()), nil, syscall.PAGE_READONLY, high, low, nil)
  	if h == 0 {
-Index: tsdb/fileutil/writer.go
---- tsdb/fileutil/writer.go.orig
+diff --git tsdb/fileutil/writer.go tsdb/fileutil/writer.go
+new file mode 100644
+index 000000000..86c1504e4
+--- /dev/null
 +++ tsdb/fileutil/writer.go
 @@ -0,0 +1,156 @@
 +// Copyright 2021 The Prometheus Authors
@@ -567,8 +581,9 @@ Index: tsdb/fileutil/writer.go
 +	err = mw.Sync()
 +	return
 +}
-Index: tsdb/index/index.go
---- tsdb/index/index.go.orig
+diff --git tsdb/index/index.go tsdb/index/index.go
+index 29295c45f..451c80582 100644
+--- tsdb/index/index.go
 +++ tsdb/index/index.go
 @@ -257,6 +257,7 @@ func (w *Writer) addPadding(size int) error {
  type FileWriter struct {
@@ -600,7 +615,7 @@ Index: tsdb/index/index.go
  func (fw *FileWriter) Pos() uint64 {
  	return fw.pos
  }
-@@ -304,7 +311,7 @@ func (fw *FileWriter) WriteAt(buf []byte, pos uint64) 
+@@ -304,7 +311,7 @@ func (fw *FileWriter) WriteAt(buf []byte, pos uint64) error {
  	if err := fw.Flush(); err != nil {
  		return err
  	}
