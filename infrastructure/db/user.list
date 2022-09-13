@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.409 2022/09/12 20:35:31 sthen Exp $
+$OpenBSD: user.list,v 1.410 2022/09/13 14:24:20 landry Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -41,8 +41,8 @@ id  user		group		port
 530 _vscan		_vscan		mail/amavisd-new
 531 _cnupm		_cnupm		net/cnupm
 532 _milter-spamd	_milter-spamd	mail/milter-spamd
-#533 _jabberd		_jabberd	net/jabberd
-#534 _zope		_zope		www/zope
+533 _jicofo		_jicofo		net/jitsi/jicofo
+534 _jvb		_jvb		net/jitsi/videobridge
 535 _symon		_symon		sysutils/symon
 536 _nostromo		_nostromo	www/nostromo
 537 _maradns		_maradns	net/maradns
