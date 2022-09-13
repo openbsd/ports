@@ -1,0 +1,36 @@
+@newgroup _jvb:534
+@newuser _jvb:534:534::Jitsi Videobridge Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/jvb
+bin/jvb
+@mode 750
+@group _jvb
+@sample ${SYSCONFDIR}/jvb/
+@mode
+@group
+share/java/
+share/java/classes/
+share/java/classes/jitsi-videobridge.jar
+share/jvb/
+share/jvb/jvb.conf.sample
+@mode 640
+@group _jvb
+@sample ${SYSCONFDIR}/jvb/jvb.conf
+@mode
+@group
+share/jvb/jvb.in.sh.sample
+@mode 640
+@group _jvb
+@sample ${SYSCONFDIR}/jvb/jvb.in.sh
+@mode
+@group
+share/jvb/lib/
+share/jvb/lib/logging.properties.sample
+@mode 640
+@group _jvb
+@sample share/jvb/lib/logging.properties
+@mode
+@group
+share/jvb/lib/sip-communicator.properties.sample
+@mode 640
+@group _jvb
+@sample ${SYSCONFDIR}/jvb/sip-communicator.properties
