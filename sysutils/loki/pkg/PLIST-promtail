@@ -1,27 +1,9 @@
+@conflict loki-<=2.4.2
 @newgroup _loki:848
 @newuser _loki:848:848:daemon:Loki Daemon:/var/empty:/sbin/nologin
-@extraunexec rm -rf /var/loki/
 @extraunexec rm -rf /var/promtail/
-@rcscript ${RCDIR}/loki
 @rcscript ${RCDIR}/promtail
-@bin bin/logcli
-@bin bin/loki
-@bin bin/loki-canary
 @bin bin/promtail
-share/examples/loki/
-@mode 0755
-@owner root
-@group _loki
-@sample ${SYSCONFDIR}/loki/
-@mode
-@owner
-@group
-share/examples/loki/loki-local-config.yaml
-@mode 0640
-@group _loki
-@sample ${SYSCONFDIR}/loki/loki-config.yaml
-@mode
-@group
 share/examples/promtail/
 @mode 0755
 @owner root
@@ -36,5 +18,4 @@ share/examples/promtail/promtail-local-config.yaml
 @sample ${SYSCONFDIR}/promtail/promtail-config.yaml
 @mode 0750
 @owner _loki
-@sample /var/loki/
 @sample /var/promtail/

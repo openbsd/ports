@@ -1,6 +1,7 @@
+Index: cmd/loki/loki-local-config.yaml
 --- cmd/loki/loki-local-config.yaml.orig
 +++ cmd/loki/loki-local-config.yaml
-@@ -5,11 +5,11 @@
+@@ -5,11 +5,11 @@ server:
    grpc_listen_port: 9096
  
  common:

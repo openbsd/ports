@@ -1,0 +1,1 @@
+agent which tails log files and pushes them to Loki

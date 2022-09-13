@@ -1,0 +1,24 @@
+@pkgpath sysutils/loki
+@newgroup _loki:848
+@newuser _loki:848:848:daemon:Loki Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/loki/
+@rcscript ${RCDIR}/loki
+@bin bin/logcli
+@bin bin/loki
+@bin bin/loki-canary
+share/examples/loki/
+@mode 0755
+@owner root
+@group _loki
+@sample ${SYSCONFDIR}/loki/
+@mode
+@owner
+@group
+share/examples/loki/loki-local-config.yaml
+@mode 0640
+@group _loki
+@sample ${SYSCONFDIR}/loki/loki-config.yaml
+@mode 0750
+@owner _loki
+@group
+@sample /var/loki/
