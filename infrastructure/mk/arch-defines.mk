@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.90 2022/08/25 12:22:26 semarie Exp $
+# $OpenBSD: arch-defines.mk,v 1.91 2022/09/13 20:33:09 jca Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -38,7 +38,7 @@ LLD_ARCHS = aarch64 amd64 arm i386 powerpc powerpc64 riscv64
 # as well as available for PROPERTIES checks.
 LLVM_ARCHS = aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 # arches where ports-gcc >4.9 exists.  To be used again for modules
-GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc powerpc64 sparc64
+GCC49_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el powerpc powerpc64 riscv64 sparc64
 
 # arches where there is a C++11 compiler, either clang in base or ports-gcc
 CXX11_ARCHS = ${CLANG_ARCHS} ${GCC49_ARCHS}
