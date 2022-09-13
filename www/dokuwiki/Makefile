@@ -1,12 +1,10 @@
 COMMENT =	standards compliant, simple to use Wiki
 
-VERSION =	2020-07-29
-MODPHP_VERSION = 7.4
+VERSION =	2022-07-31a
 DISTNAME =	dokuwiki-${VERSION}
 PKGNAME =	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
 HOMEPAGE =	https://www.dokuwiki.org/dokuwiki
-REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
