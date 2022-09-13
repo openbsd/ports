@@ -1,0 +1,4 @@
+step is an easy-to-use CLI tool for building, operating, and automating Public
+Key Infrastructure (PKI) systems and workflows. It's the client counterpart to
+the step-ca online Certificate Authority (CA). You can use it for many common
+crypto and X.509 operations either independently, or with an online CA.
