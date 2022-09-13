@@ -18,9 +18,12 @@ include/qpdf/Pl_Count.hh
 include/qpdf/Pl_DCT.hh
 include/qpdf/Pl_Discard.hh
 include/qpdf/Pl_Flate.hh
+include/qpdf/Pl_Function.hh
+include/qpdf/Pl_OStream.hh
 include/qpdf/Pl_QPDFTokenizer.hh
 include/qpdf/Pl_RunLength.hh
 include/qpdf/Pl_StdioFile.hh
+include/qpdf/Pl_String.hh
 include/qpdf/PointerHolder.hh
 include/qpdf/QIntC.hh
 include/qpdf/QPDF.hh
@@ -35,6 +38,7 @@ include/qpdf/QPDFExc.hh
 include/qpdf/QPDFFileSpecObjectHelper.hh
 include/qpdf/QPDFFormFieldObjectHelper.hh
 include/qpdf/QPDFJob.hh
+include/qpdf/QPDFLogger.hh
 include/qpdf/QPDFMatrix.hh
 include/qpdf/QPDFNameTreeObjectHelper.hh
 include/qpdf/QPDFNumberTreeObjectHelper.hh
@@ -65,8 +69,13 @@ include/qpdf/auto_job_c_pages.hh
 include/qpdf/auto_job_c_uo.hh
 include/qpdf/qpdf-c.h
 include/qpdf/qpdfjob-c.h
+include/qpdf/qpdflogger-c.h
+lib/cmake/qpdf/
+lib/cmake/qpdf/libqpdfTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/qpdf/libqpdfTargets.cmake
+lib/cmake/qpdf/qpdfConfig.cmake
+lib/cmake/qpdf/qpdfConfigVersion.cmake
 @static-lib lib/libqpdf.a
-lib/libqpdf.la
 @lib lib/libqpdf.so.${LIBqpdf_VERSION}
 lib/pkgconfig/libqpdf.pc
 @man man/man1/fix-qdf.1
@@ -74,3 +83,25 @@ lib/pkgconfig/libqpdf.pc
 @man man/man1/zlib-flate.1
 share/doc/qpdf/
 share/doc/qpdf/README-doc.txt
+share/doc/qpdf/examples/
+share/doc/qpdf/examples/pdf-attach-file.cc
+share/doc/qpdf/examples/pdf-bookmarks.cc
+share/doc/qpdf/examples/pdf-c-objects.c
+share/doc/qpdf/examples/pdf-count-strings.cc
+share/doc/qpdf/examples/pdf-create.cc
+share/doc/qpdf/examples/pdf-custom-filter.cc
+share/doc/qpdf/examples/pdf-double-page-size.cc
+share/doc/qpdf/examples/pdf-filter-tokens.cc
+share/doc/qpdf/examples/pdf-invert-images.cc
+share/doc/qpdf/examples/pdf-linearize.c
+share/doc/qpdf/examples/pdf-mod-info.cc
+share/doc/qpdf/examples/pdf-name-number-tree.cc
+share/doc/qpdf/examples/pdf-npages.cc
+share/doc/qpdf/examples/pdf-overlay-page.cc
+share/doc/qpdf/examples/pdf-parse-content.cc
+share/doc/qpdf/examples/pdf-set-form-values.cc
+share/doc/qpdf/examples/pdf-split-pages.cc
+share/doc/qpdf/examples/qpdf-job.cc
+share/doc/qpdf/examples/qpdfjob-c-save-attachment.c
+share/doc/qpdf/examples/qpdfjob-c.c
+share/doc/qpdf/examples/qpdfjob-save-attachment.cc
