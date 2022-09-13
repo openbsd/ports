@@ -96,7 +96,28 @@ Index: gcc/config.gcc
  i[34567]86-*-linux* | i[34567]86-*-kfreebsd*-gnu | i[34567]86-*-gnu* | i[34567]86-*-kopensolaris*-gnu)
  			# Intel 80386's running GNU/*
  			# with ELF format using glibc 2
-@@ -2394,6 +2432,18 @@ pdp11-*-*)
+@@ -2113,6 +2151,20 @@ riscv*-*-freebsd*)
+ 	# automatically detect that GAS supports it, yet we require it.
+ 	gcc_cv_initfini_array=yes
+ 	;;
++riscv64-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h"
++	tm_file="${tm_file} openbsd-stdint.h"
++	tm_file="${tm_file} openbsd.h riscv/openbsd.h openbsd-libpthread.h"
++	tmake_file="${tmake_file} riscv/t-riscv"
++	extra_options="${extra_options} openbsd.opt"
++	# Force .init_array support.  The configure script cannot always
++	# automatically detect that GAS supports it, yet we require it.
++	gcc_cv_initfini_array=yes
++	# Also force this, can't hurt...
++	cpu_is_64bit=yes
++	gnu_ld=yes
++	gas=yes
++	;;
+ mips*-*-netbsd*)			# NetBSD/mips, either endian.
+ 	target_cpu_default="MASK_ABICALLS"
+ 	tm_file="elfos.h ${tm_file} mips/elf.h ${nbsd_tm_file} mips/netbsd.h"
+@@ -2394,6 +2446,18 @@ pdp11-*-*)
  #	tmake_file="${tmake_file} rs6000/t-fprules"
  #	extra_headers=
  #	;;
@@ -115,7 +136,7 @@ Index: gcc/config.gcc
  powerpc-*-darwin*)
  	extra_options="${extra_options} ${cpu_type}/darwin.opt"
  	case ${target} in
-@@ -2994,10 +3044,10 @@ sparc64-*-netbsd*)
+@@ -2994,10 +3058,10 @@ sparc64-*-netbsd*)
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
  sparc64-*-openbsd*)
@@ -127,7 +148,7 @@ Index: gcc/config.gcc
  	gas=yes gnu_ld=yes
  	with_cpu=ultrasparc
  	tmake_file="${tmake_file} sparc/t-sparc"
-@@ -3226,6 +3276,12 @@ case ${target} in
+@@ -3226,6 +3290,12 @@ case ${target} in
      else
        arch=i386
      fi

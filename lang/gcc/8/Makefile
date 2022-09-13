@@ -1,5 +1,5 @@
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
-	powerpc powerpc64 sparc64
+	powerpc powerpc64 riscv64 sparc64
 
 # XXX: sparc64
 ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
@@ -64,7 +64,7 @@ EXTRACT_ONLY =	${DISTNAME}.tar.xz
 BUILD_DEPENDS +=	devel/bison
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "arm" || \
-    ${MACHINE_ARCH} == "powerpc64"
+    ${MACHINE_ARCH} == "powerpc64" || ${MACHINE_ARCH} == "riscv64"
 # would be helpful on i386/amd64 too, but some ports also need the old
 # ld.bfd in base which can't cope with new gas.
 BUILD_DEPENDS +=	devel/gas
@@ -133,9 +133,14 @@ CONFIGURE_ARGS += \
 	--with-gmp="${LOCALBASE}" \
 	--enable-languages=${LANGS} \
 	--disable-libstdcxx-pch \
-	--enable-default-ssp \
 	--enable-default-pie \
 	--without-isl
+
+# Enable the stack protector by default where supported
+.if ${MACHINE_ARCH} != "riscv64"
+CONFIGURE_ARGS += \
+	--enable-default-ssp
+.endif
 
 # This is needed, as internal cpp is no longer compatible with the
 # visible beast
@@ -203,6 +208,13 @@ LIB_DEPENDS-libs =
 
 .if ${MACHINE_ARCH:Mamd64}
 CONFIG = x86_64-unknown-openbsd${OSREV}
+.endif
+
+.if ${MACHINE_ARCH} == "riscv64"
+# lld complains about .gcc_except_table referencing
+# symbols in discarded sections.  Tell gcc to split .gcc_except_table
+# so that its unused parts can also be discarded.
+EXTRA_ENV +=	PORTS_FORCE_SPLIT_SECTIONS="-ffunction-sections -fdata-sections"
 .endif
 
 post-extract:
