@@ -28,6 +28,6 @@ RUN_DEPENDS=	devel/py-editables${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		textproc/py-tomli${MODPY_FLAVOR}
 
-MODPY_PEP517=	Yes
+MODPY_PYBUILD=	Yes
 
 .include <bsd.port.mk>

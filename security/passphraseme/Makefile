@@ -20,7 +20,7 @@ MAINTAINER =	George Rosamond <george@nycbug.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/passphraseme

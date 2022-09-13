@@ -18,7 +18,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
 
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	audio/flac \
 		audio/py-audio${MODPY_FLAVOR}>=0.2.11

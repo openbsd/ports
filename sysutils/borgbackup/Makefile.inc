@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		crypto lz4 xxhash zstd
 
 MODULES =		lang/python
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
 

@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PEP517=	setuptools
+MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-importlib-metadata${MODPY_FLAVOR}

@@ -16,7 +16,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \

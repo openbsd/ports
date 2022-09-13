@@ -19,6 +19,6 @@ MODPY_PYTEST =		Yes
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_PEP517 =		flit_core
+MODPY_PYBUILD =		flit_core
 
 .include <bsd.port.mk>

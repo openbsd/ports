@@ -15,7 +15,7 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_PEP517 =	poetry-core
+MODPY_PYBUILD =	poetry-core
 
 # in same order as in pyproject.toml: mandatory section
 RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \

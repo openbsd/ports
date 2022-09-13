@@ -15,7 +15,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PEP517 =		poetry-core
+MODPY_PYBUILD =		poetry-core
 MODPY_PYTEST =		Yes
 
 FLAVORS =		python3

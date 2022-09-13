@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		textproc/py-cssselect${MODPY_FLAVOR} \
 			textproc/py-lxml${MODPY_FLAVOR}

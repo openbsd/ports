@@ -16,7 +16,7 @@ RUN_DEPENDS =	devel/coccinelle
 NO_TEST =	Yes
 
 #MODPY_SETUPTOOLS = Yes
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/src/coccigrep.py

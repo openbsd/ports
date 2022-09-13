@@ -21,7 +21,7 @@ MODULES =	lang/python
 # exists on PyPI but has no tests
 #MODPY_PI =	Yes
 
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 MODPY_PYTEST =	Yes
 
 FLAVORS =	python3

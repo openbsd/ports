@@ -13,7 +13,7 @@ HOMEPAGE =		https://github.com/micktwomey/pyiso8601
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PEP517 =		poetry-core
+MODPY_PYBUILD =		poetry-core
 MODPY_PI =		Yes
 
 FLAVORS =		python3

@@ -24,7 +24,7 @@ WANTLIB +=		${COMPILER_LIBCXX} m
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	python/
 
 FLAVORS =		python3

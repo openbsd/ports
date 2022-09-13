@@ -14,7 +14,7 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	mpd/tests.py
 
 FLAVORS =		python3

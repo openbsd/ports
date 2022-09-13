@@ -24,7 +24,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 # this port is used as a BDEP by python.port.mk for ports using
-# MODPY_PEP517, so cannot use MODPY_PEP517 itself.
+# MODPY_PYBUILD, so cannot use MODPY_PYBUILD itself.
 
 BUILD_DEPENDS += devel/py-flit_core${MODPY_FLAVOR} \
 		devel/py-installer${MODPY_FLAVOR}

@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-typing-extensions${MODPY_FLAVOR}

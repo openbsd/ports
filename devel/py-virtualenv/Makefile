@@ -15,7 +15,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX

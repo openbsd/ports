@@ -20,6 +20,6 @@ FLAVORS =	python3
 
 NO_TEST =	Yes
 
-MODPY_PEP517 =	Yes
+MODPY_PYBUILD =	Yes
 
 .include <bsd.port.mk>

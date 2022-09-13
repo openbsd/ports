@@ -19,7 +19,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODULES =	lang/python
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 MODPY_ADJ_FILES = docs/id3_frames_gen.py
 SUBST_VARS =	MODPY_FLAVOR
 

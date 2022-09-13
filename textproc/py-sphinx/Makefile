@@ -17,7 +17,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 # remove after updating python to 3.10+
 RUN_DEPENDS +=		devel/py-importlib-metadata${MODPY_FLAVOR}

@@ -17,7 +17,7 @@ MODULES =		lang/python
 RUN_DEPENDS =		devel/py-dill${MODPY_FLAVOR}
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
 # needs "test.support" from somewhere..?

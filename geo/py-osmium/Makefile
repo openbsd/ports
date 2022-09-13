@@ -21,7 +21,7 @@ FLAVOR =		python3
 
 MODULES =	lang/python
 
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
 # tests make python segfault
 # cf https://github.com/osmcode/pyosmium/issues/199

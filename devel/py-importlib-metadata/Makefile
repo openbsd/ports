@@ -18,7 +18,7 @@ RUN_DEPENDS =		devel/py-zipp${MODPY_FLAVOR}
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 # disables tests needing pyfakefs and pytest-perf (not in ports)
 MODPY_PYTEST_ARGS =	--ignore tests/test_main.py \

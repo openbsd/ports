@@ -28,7 +28,7 @@ COMPILER_LANGS=	c
 MODULES=	devel/cargo \
 		lang/python
 
-MODPY_PEP517=	setuptools
+MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 MODCARGO_CARGOTOML= ${WRKSRC}/src/rust/Cargo.toml

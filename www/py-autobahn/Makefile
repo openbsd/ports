@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =	Yes
 
 MODULES =	lang/python
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 # asyncio tests require extra dep (pytest.mark.asyncio)
 # wamp tests using twisted have various problems which look like an

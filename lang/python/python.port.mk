@@ -101,13 +101,13 @@ MODPY_PYOEXTENSION ?=	opt-1.pyc
 
 MODPY_SETUPTOOLS ?=
 MODPY_SETUPUTILS ?=
-MODPY_PEP517 ?=		No
+MODPY_PYBUILD ?=	No
 MODPY_PI ?=
 
-# If MODPY_PYTEST_ARGS are set, or if using PEP517, it implies that
+# If MODPY_PYTEST_ARGS are set, or if using MODPY_PYBUILD, it implies that
 # we want MODPY_PYTEST = Yes
 MODPY_PYTEST_ARGS ?=
-.if empty(MODPY_PYTEST_ARGS) && ${MODPY_PEP517:L} == no
+.if empty(MODPY_PYTEST_ARGS) && ${MODPY_PYBUILD:L} == no
 MODPY_PYTEST ?=		No
 .else
 MODPY_PYTEST ?=		Yes
@@ -154,19 +154,19 @@ TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 
 _MODPY_PRE_BUILD_STEPS = :
 
-.if ${MODPY_PEP517:L} == "no"
+.if ${MODPY_PYBUILD:L} == "no"
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 	grep -q ^build-backend ${WRKSRC}/pyproject.toml && \
 	! grep -q ^build-backend.*setuptools ${WRKSRC}/pyproject.toml; then \
-	printf "\n***\n\nOpenBSD ports: should this use MODPY_PEP517?\n"; \
+	printf "\n***\n\nOpenBSD ports: should this use MODPY_PYBUILD?\n"; \
 	grep ^build-backend ${WRKSRC}/pyproject.toml || true; \
 	printf "\n***\n\n"; fi
 .endif
 
 
 .if ${MODPY_SETUPTOOLS:L} == "yes"
-.  if ${MODPY_PEP517:L} != "no"
-ERRORS +=		"Fatal: don't set both MODPY_PEP517 and MODPY_SETUPTOOLS"
+.  if ${MODPY_PYBUILD:L} != "no"
+ERRORS +=		"Fatal: don't set both MODPY_PYBUILD and MODPY_SETUPTOOLS"
 .  endif
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
@@ -195,27 +195,27 @@ _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 # that plugin will cause failure at the end of build.
 # In the absence of a targetted means of disabling this, use a big hammer:
 DPB_PROPERTIES +=	nojunk
-.elif ${MODPY_PEP517:L} != no
+.elif ${MODPY_PYBUILD:L} != no
 BUILD_DEPENDS +=	devel/py-build${MODPY_FLAVOR} \
 			devel/py-installer${MODPY_FLAVOR}
-.  if ${MODPY_PEP517} == flit_core
+.  if ${MODPY_PYBUILD} == flit_core
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517} == flit
+.  elif ${MODPY_PYBUILD} == flit
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517} == hatchling
+.  elif ${MODPY_PYBUILD} == hatchling
 BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517} == poetry-core
+.  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
-.  elif ${MODPY_PEP517} == setuptools || ${MODPY_PEP517} == setuptools_scm
+.  elif ${MODPY_PYBUILD} == setuptools || ${MODPY_PYBUILD} == setuptools_scm
 DPB_PROPERTIES +=	nojunk
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
 MODPY_RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
-.    if ${MODPY_PEP517} == setuptools_scm
+.    if ${MODPY_PYBUILD} == setuptools_scm
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 .    endif
-.  elif !${MODPY_PEP517:L:Myes}
-ERRORS +=		"Fatal: unknown MODPY_PEP517 value"
+.  elif !${MODPY_PYBUILD:L:Myes}
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value"
 .  endif
 .else
 # Try to detect the case where a port will build regardless of setuptools
@@ -313,7 +313,7 @@ MODPY_ADJ_FILES ?=
 MODPYTHON_pre-configure += cd ${WRKSRC} && ${MODPY_BIN_ADJ} ${MODPY_ADJ_FILES}
 .endif
 
-.if ${MODPY_PEP517:L} != no
+.if ${MODPY_PYBUILD:L} != no
 MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 	${_MODPY_RUNBIN} -sBm build -w --no-isolation
 MODPY_INSTALL_TARGET = \

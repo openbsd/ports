@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		poetry-core
+MODPY_PYBUILD =		poetry-core
 FLAVOR =		python3
 FLAVORS =		python3
 

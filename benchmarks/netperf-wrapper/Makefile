@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 MULTI_PACKAGES=	-main -gui
 
 MODPY_PI=	Yes
-MODPY_PEP517=	setuptools
+MODPY_PYBUILD=	setuptools
 
 MODULES=	lang/python
 

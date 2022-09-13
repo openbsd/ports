@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		hatchling
+MODPY_PYBUILD =		hatchling
 
 FLAVORS =		python3
 FLAVOR =		python3

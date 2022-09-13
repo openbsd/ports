@@ -16,7 +16,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODULES =		lang/python
-MODPY_PEP517 =		hatchling
+MODPY_PYBUILD =		hatchling
 NO_TEST =		Yes
 
 BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR}

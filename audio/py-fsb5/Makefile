@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 # requires audio/libogg and audio/libvorbis to decode ogg samples
 MODULES =		lang/python
 
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3

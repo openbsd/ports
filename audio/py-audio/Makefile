@@ -19,7 +19,7 @@ FLAVORS =	python3
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 LIB_DEPENDS =	audio/portaudio-svn
 

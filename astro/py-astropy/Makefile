@@ -21,7 +21,7 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-# MODPY_PEP517: pinned cython==0.29.30, also needs "oldest-supported-numpy"
+# MODPY_PYBUILD: pinned cython==0.29.30, also needs "oldest-supported-numpy"
 MODPY_PYTEST_ARGS =	astropy
 
 BUILD_DEPENDS =		devel/py-extension-helpers${MODPY_FLAVOR} \

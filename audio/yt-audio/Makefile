@@ -16,6 +16,6 @@ RUN_DEPENDS =		www/youtube-dl \
 			graphics/ffmpeg
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 .include <bsd.port.mk>

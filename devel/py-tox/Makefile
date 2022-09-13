@@ -14,7 +14,7 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_PYTEST =	Yes
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-py${MODPY_FLAVOR} \

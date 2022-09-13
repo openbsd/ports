@@ -14,7 +14,7 @@ MODPY_PI =	Yes
 
 MODULES=	lang/python
 
-MODPY_PEP517=	setuptools
+MODPY_PYBUILD=	setuptools
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/supervisor/skel/sample.conf

@@ -20,7 +20,7 @@ WANTLIB =		${COMPILER_LIBCXX} m
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		lang/python
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}

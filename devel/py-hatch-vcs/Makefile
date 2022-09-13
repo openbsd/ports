@@ -18,7 +18,7 @@ MODPY_PYTEST=	Yes
 FLAVORS=	python3
 FLAVOR=		python3
 
-MODPY_PEP517=	hatchling
+MODPY_PYBUILD=	hatchling
 
 RUN_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
 

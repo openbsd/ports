@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \

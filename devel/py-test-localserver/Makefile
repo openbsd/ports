@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 

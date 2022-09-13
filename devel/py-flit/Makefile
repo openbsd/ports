@@ -30,7 +30,7 @@ MODPY_PYTEST =	Yes
 TEST_DEPENDS =	devel/py-testpath${MODPY_FLAVOR} \
 		www/py-responses${MODPY_FLAVOR}
 
-MODPY_PEP517 =	flit_core
+MODPY_PYBUILD =	flit_core
 
 pre-test:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python

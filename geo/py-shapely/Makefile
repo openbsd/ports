@@ -18,7 +18,7 @@ FLAVOR =		python3
 
 MODULES =	lang/python
 
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 # cython and numpy needed to build _vectorized.so
 BUILD_DEPENDS +=${RUN_DEPENDS} \
 		math/py-numpy${MODPY_FLAVOR} \

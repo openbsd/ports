@@ -18,7 +18,7 @@ MASTER_SITES =		https://www.schwarzvogel.de/pkgs/
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
 

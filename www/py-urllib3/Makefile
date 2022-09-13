@@ -15,7 +15,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODPY_PI =	Yes
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
 		net/py-socks${MODPY_FLAVOR} \

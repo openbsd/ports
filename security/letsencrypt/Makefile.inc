@@ -1,7 +1,7 @@
 CATEGORIES?=		security/letsencrypt security
 
 MODPY_PI?=		Yes
-MODPY_PEP517?=		setuptools
+MODPY_PYBUILD?=		setuptools
 
 MODPY_EGG_VERSION?=	1.30.0
 

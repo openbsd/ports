@@ -18,7 +18,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-#MODPY_PEP517 needs poetry (not poetry-core)
+#MODPY_PYBUILD needs poetry (not poetry-core)
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}

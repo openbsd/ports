@@ -15,7 +15,7 @@ HOMEPAGE =	http://pithos.github.io/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
 		devel/desktop-file-utils \

@@ -11,7 +11,7 @@ HOMEPAGE=	https://cryptography.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PEP517=	setuptools
+MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 MODPY_PI_DIR=	c/cryptography-vectors
 NO_TEST=	Yes

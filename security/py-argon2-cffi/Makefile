@@ -22,7 +22,7 @@ FLAVORS =	python3
 FLAVOR  =	python3
 
 MODPY_PI =	Yes
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/py-cffi${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-cffi${MODPY_FLAVOR}

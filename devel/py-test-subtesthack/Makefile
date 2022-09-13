@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}

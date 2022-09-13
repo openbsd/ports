@@ -15,7 +15,7 @@ FLAVOR  =	python3
 
 MODULES =	lang/python
 MODPY_PI =	Yes
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	archivers/libarchive
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR}

@@ -19,7 +19,7 @@ MODULES =	lang/python
 FLAVORS =	python3
 FLAVOR  =	python3
 
-MODPY_PEP517 =	setuptools
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	audio/chromaprint \
 		www/py-requests${MODPY_FLAVOR}

@@ -17,7 +17,7 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_PEP517 =		setuptools
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}
 

@@ -20,7 +20,7 @@ FLAVOR =		python3
 # test_diagram needs railroad
 MODPY_PYTEST_ARGS =	--ignore tests/test_diagram.py tests
 
-# can't use MODPY_PEP517=flit_core because that pulls in py-build
+# can't use MODPY_PYBUILD=flit_core because that pulls in py-build
 # which depends on this.
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR} \
 			devel/py-installer${MODPY_FLAVOR} \

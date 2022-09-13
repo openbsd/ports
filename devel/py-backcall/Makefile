@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
-MODPY_PEP517 =		flit_core
+MODPY_PYBUILD =		flit_core
 
 FLAVORS =		python3
 FLAVOR =		python3

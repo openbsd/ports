@@ -19,7 +19,7 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
-MODPY_PEP517=		setuptools
+MODPY_PYBUILD=		setuptools
 
 LIB_DEPENDS=		devel/libffi
 RUN_DEPENDS=		devel/py-cparser${MODPY_FLAVOR}
