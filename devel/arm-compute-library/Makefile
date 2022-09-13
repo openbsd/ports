@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	aarch64
 
 COMMENT =	Arm compute library
 
-V = 		22.05
+V = 		22.08
 PKGNAME =	arm-compute-library-${V}
 
 GH_ACCOUNT =	ARM-software
@@ -15,12 +15,13 @@ HOMEPAGE =	https://github.com/ARM-software/ComputeLibrary
 
 MAINTAINER = 	Kevin Lo <kevlo@openbsd.org>
 
-SO_VERSION =	2.0
-COMPUTE_SO_V =	3.0
+CORE_SO_V =	2.0
+GRAPH_SO_V =	2.1
+COMPUTE_SO_V =	3.1
 
 SHARED_LIBS +=	arm_compute ${COMPUTE_SO_V}
-SHARED_LIBS +=	arm_compute_core ${SO_VERSION}
-SHARED_LIBS +=	arm_compute_graph ${SO_VERSION}
+SHARED_LIBS +=	arm_compute_core ${CORE_SO_V}
+SHARED_LIBS +=	arm_compute_graph ${GRAPH_SO_V}
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -49,9 +50,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/build/libarm_compute.so \
                 ${PREFIX}/lib/libarm_compute.so.${COMPUTE_SO_V}
 	${INSTALL_DATA} ${WRKSRC}/build/libarm_compute_core.so \
-                ${PREFIX}/lib/libarm_compute_core.so.${SO_VERSION}
+                ${PREFIX}/lib/libarm_compute_core.so.${CORE_SO_V}
 	${INSTALL_DATA} ${WRKSRC}/build/libarm_compute_graph.so \
-                ${PREFIX}/lib/libarm_compute_graph.so.${SO_VERSION}
+                ${PREFIX}/lib/libarm_compute_graph.so.${GRAPH_SO_V}
 	${INSTALL_DATA} ${WRKSRC}/build/*.a ${PREFIX}/lib
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/arm-compute-library
 	${INSTALL_DATA} ${WRKSRC}/examples/*.{h,cpp} \

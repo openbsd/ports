@@ -1,7 +1,7 @@
 Index: SConstruct
 --- SConstruct.orig
 +++ SConstruct
-@@ -228,17 +228,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
+@@ -244,17 +244,8 @@ c_compiler = os.environ.get('CC', default_c_compiler)
  if env['os'] == 'android' and ( 'clang++' not in cpp_compiler or 'clang' not in c_compiler ):
      print( "WARNING: Only clang is officially supported to build the Compute Library for Android")
  
@@ -20,7 +20,7 @@ Index: SConstruct
  if env['cppthreads']:
      env.Append(CPPDEFINES = [('ARM_COMPUTE_CPP_SCHEDULER', 1)])
  
-@@ -373,25 +364,6 @@ if not GetOption("help"):
+@@ -406,25 +397,6 @@ if not GetOption("help"):
      except OSError:
          print("ERROR: Compiler '%s' not found" % env['CXX'])
          Exit(1)
@@ -44,5 +44,5 @@ Index: SConstruct
 -        if not version_at_least(compiler_ver, '7.0.0') and env['os'] == 'bare_metal':
 -            env.Append(LINKFLAGS = ['-fstack-protector-strong'])
  
-     # For NDK >= r21, clang 9 or above is used
-     if env['os'] == 'android' and version_at_least(compiler_ver, '9.0.0'):
+     # Add Android NDK toolchain specific flags
+     if 'clang++' in cpp_compiler and env['os'] == 'android':
