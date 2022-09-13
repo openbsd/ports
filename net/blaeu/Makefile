@@ -1,6 +1,6 @@
 COMMENT =	create measurements on RIPE Atlas probes
 
-MODPY_EGG_VERSION = 1.1.8
+MODPY_EGG_VERSION = 1.1.9
 DISTNAME =	blaeu-${MODPY_EGG_VERSION}
 CATEGORIES =	net
 
