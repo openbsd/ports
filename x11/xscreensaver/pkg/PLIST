@@ -1060,13 +1060,5 @@ share/xscreensaver/config/xmatrix.xml
 share/xscreensaver/config/xrayswarm.xml
 share/xscreensaver/config/xspirograph.xml
 share/xscreensaver/config/zoom.xml
-share/xscreensaver/ui/
-share/xscreensaver/ui/screensaver-cmndln.png
-share/xscreensaver/ui/screensaver-colorselector.png
-share/xscreensaver/ui/screensaver-diagnostic.png
-share/xscreensaver/ui/screensaver-locking.png
-share/xscreensaver/ui/screensaver-power.png
-share/xscreensaver/ui/screensaver-snap.png
-share/xscreensaver/ui/xscreensaver.ui
 @tag update-desktop-database
 share/xscreensaver/xscreensaver.service
