@@ -384,6 +384,7 @@
      SUBDIR += steghide
      SUBDIR += stegseek
      SUBDIR += step-ca
+     SUBDIR += step-cli
      SUBDIR += strobe
      SUBDIR += stunnel
      SUBDIR += sudo
