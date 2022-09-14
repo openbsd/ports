@@ -40,7 +40,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
            || url.host_piece() == chrome::kChromeUILinuxProxyConfigHost
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -1130,7 +1130,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -1132,7 +1132,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
  #endif  // !defined(USE_REAL_DBUS_CLIENTS)
  #endif  // !defined(OFFICIAL_BUILD)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -49,7 +49,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
    if (url.host_piece() == chrome::kChromeUIWebUIJsErrorHost)
      return &NewWebUI<WebUIJsErrorUI>;
  #endif
-@@ -1188,7 +1188,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -1190,7 +1190,7 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    if (url.host_piece() == chrome::kChromeUINaClHost)
      return &NewWebUI<NaClUI>;
  #endif
@@ -58,7 +58,7 @@ Index: chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
    if (url.host_piece() == chrome::kChromeUITabModalConfirmDialogHost)
-@@ -1248,27 +1248,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
+@@ -1250,27 +1250,27 @@ WebUIFactoryFunction GetWebUIFactoryFunction(WebUI* we
    }
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
