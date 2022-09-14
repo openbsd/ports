@@ -293,13 +293,11 @@ Index: qga/commands-posix.c
  int64_t qmp_guest_set_vcpus(GuestLogicalProcessorList *vcpus, Error **errp)
  {
      error_setg(errp, QERR_UNSUPPORTED);
-@@ -3144,9 +3360,13 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+@@ -3144,9 +3360,11 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
          GuestNetworkInterfaceStat *interface_stat = NULL;
          char addr4[INET_ADDRSTRLEN];
          char addr6[INET6_ADDRSTRLEN];
-+#ifdef __OpenBSD__
-+        char mac_addr[18] = "00:00:00:00:00:00";
-+#else
++#ifndef __OpenBSD__
          int sock;
          struct ifreq ifr;
          unsigned char *mac_addr;
@@ -307,7 +305,7 @@ Index: qga/commands-posix.c
          void *p;
  
          g_debug("Processing %s interface", ifa->ifa_name);
-@@ -3162,6 +3382,24 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+@@ -3162,6 +3380,23 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
  
          if (!info->has_hardware_address) {
              /* we haven't obtained HW address yet */
@@ -320,19 +318,18 @@ Index: qga/commands-posix.c
 +                if (sdl->sdl_alen == ETHER_ADDR_LEN &&
 +                    (sdl->sdl_type == IFT_ETHER ||
 +                    sdl->sdl_type == IFT_CARP)) {
-+                        g_snprintf(mac_addr, 18, "%s",
-+                                 ether_ntoa((struct ether_addr *)LLADDR(sdl)));
++                        info->hardware_address =
++                            g_strdup_printf("%s",
++                                            ether_ntoa((struct ether_addr *)LLADDR(sdl)));
++
 +                        info->has_hardware_address = true;
-+                } else {
-+                    info->has_hardware_address = true;
 +                }
-+                info->hardware_address = g_strdup_printf("%s", mac_addr);
 +            }
 +#else
              sock = socket(PF_INET, SOCK_STREAM, 0);
              if (sock == -1) {
                  error_setg_errno(errp, errno, "failed to create socket");
-@@ -3200,6 +3438,7 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+@@ -3200,6 +3435,7 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
                  info->has_hardware_address = true;
              }
              close(sock);
@@ -340,7 +337,7 @@ Index: qga/commands-posix.c
          }
  
          if (ifa->ifa_addr &&
-@@ -3291,11 +3530,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
+@@ -3291,11 +3527,245 @@ GuestNetworkInterfaceList *qmp_guest_network_get_inter
  
  #if !defined(CONFIG_FSFREEZE)
  
@@ -586,7 +583,7 @@ Index: qga/commands-posix.c
  
  GuestFsfreezeStatus qmp_guest_fsfreeze_status(Error **errp)
  {
-@@ -3361,12 +3834,21 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3361,12 +3831,21 @@ GList *ga_command_blacklist_init(GList *blacklist)
  {
  #if !defined(__linux__)
      {
@@ -608,7 +605,7 @@ Index: qga/commands-posix.c
          char **p = (char **)list;
  
          while (*p) {
-@@ -3382,11 +3864,19 @@ GList *ga_command_blacklist_init(GList *blacklist)
+@@ -3382,11 +3861,19 @@ GList *ga_command_blacklist_init(GList *blacklist)
  
  #if !defined(CONFIG_FSFREEZE)
      {
