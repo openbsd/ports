@@ -2,9 +2,11 @@
 include/gusb-1/
 include/gusb-1/gusb/
 include/gusb-1/gusb.h
-include/gusb-1/gusb/gusb-autocleanups.h
+include/gusb-1/gusb/gusb-bos-descriptor-private.h
+include/gusb-1/gusb/gusb-bos-descriptor.h
 include/gusb-1/gusb/gusb-context-private.h
 include/gusb-1/gusb/gusb-context.h
+include/gusb-1/gusb/gusb-device-event.h
 include/gusb-1/gusb/gusb-device-list.h
 include/gusb-1/gusb/gusb-device-private.h
 include/gusb-1/gusb/gusb-device.h
