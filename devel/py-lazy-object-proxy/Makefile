@@ -18,10 +18,8 @@ FLAVORS =		python3
 FLAVOR  =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	--ignore=src
-
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-benchmark${MODPY_FLAVOR}
 

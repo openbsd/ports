@@ -14,13 +14,11 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		setuptools_scm
 MODPY_PYTEST_ARGS=	setuptools_rust
 
 FLAVORS=		python3
 FLAVOR =		python3
-
-BUILD_DEPENDS=		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS=		devel/py-semantic-version${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR} \

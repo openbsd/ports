@@ -14,10 +14,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST =		Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR}

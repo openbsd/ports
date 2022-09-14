@@ -15,7 +15,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	tests
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 
 # messes up naming of packaged wheels
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
@@ -23,7 +23,6 @@ UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
 FLAVORS =		python3
 FLAVOR =		python3
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		sysutils/py-distlib${MODPY_FLAVOR} \
 			sysutils/py-filelock${MODPY_FLAVOR} \
 			sysutils/py-platformdirs${MODPY_FLAVOR}

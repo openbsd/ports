@@ -14,10 +14,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 NO_TEST =		Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-path${MODPY_FLAVOR}
 
 FLAVORS =		python3

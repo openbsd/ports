@@ -13,12 +13,11 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 # Apache Software License
 PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-zipp${MODPY_FLAVOR}
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 
 # disables tests needing pyfakefs and pytest-perf (not in ports)
 MODPY_PYTEST_ARGS =	--ignore tests/test_main.py \

@@ -16,10 +16,9 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	tempora/tests
 
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}>=1.15.0
 RUN_DEPENDS =		devel/py-jaraco-functools${MODPY_FLAVOR}>=1.2.0 \
 			devel/py-tz${MODPY_FLAVOR}
 

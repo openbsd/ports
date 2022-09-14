@@ -14,14 +14,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		crypto lz4 xxhash zstd
 
 MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
 
 LIB_DEPENDS +=		archivers/lz4 \
 			archivers/zstd \
 			sysutils/xxhash
-BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 RUN_DEPENDS +=		sysutils/py-packaging${MODPY_FLAVOR}
 TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-test-benchmark${MODPY_FLAVOR}
