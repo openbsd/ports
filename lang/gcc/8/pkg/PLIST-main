@@ -459,6 +459,7 @@ lib/gcc/${CONFIG}/${V}/plugin/libcp1plugin.la
 %%mips64%%
 %%mips64el%%
 %%powerpc%%
+%%riscv64%%
 %%sparc64%%
 %%X86%%
 %%ITM%%
