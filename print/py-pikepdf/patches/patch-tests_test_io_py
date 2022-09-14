@@ -1,7 +1,7 @@
 Index: tests/test_io.py
 --- tests/test_io.py.orig
 +++ tests/test_io.py
-@@ -96,7 +96,7 @@ def test_invalid_output_stream(sandwich, bio_class, ex
+@@ -102,7 +102,7 @@ def test_invalid_output_stream(sandwich, bio_class, ex
  
  @pytest.fixture
  def file_descriptor_is_open_for():

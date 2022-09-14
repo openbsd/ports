@@ -9,14 +9,19 @@ lib/python${MODPY_VERSION}/site-packages/pikepdf-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/pikepdf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_augments.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_cpphelpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_methods.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}_xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}jbig2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}objects.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pikepdf/_augments.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/_cpphelpers.py
+lib/python${MODPY_VERSION}/site-packages/pikepdf/_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/_methods.py
 @so lib/python${MODPY_VERSION}/site-packages/pikepdf/_qpdf.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pikepdf/_qpdf.pyi
@@ -44,3 +49,4 @@ lib/python${MODPY_VERSION}/site-packages/pikepdf/models/metadata.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/models/outlines.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/objects.py
 lib/python${MODPY_VERSION}/site-packages/pikepdf/py.typed
+lib/python${MODPY_VERSION}/site-packages/pikepdf/settings.py
