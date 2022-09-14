@@ -1,0 +1,24 @@
+Index: lib/shell.c
+--- lib/shell.c.orig
++++ lib/shell.c
+@@ -72,6 +72,8 @@ mc_shell_get_installed_in_system (void)
+         mc_shell->path = g_strdup ("/bin/dash");
+     else if (access ("/bin/busybox", X_OK) == 0)
+         mc_shell->path = g_strdup ("/bin/busybox");
++    else if (access ("/bin/ksh", X_OK) == 0)
++        mc_shell->path = g_strdup ("/bin/ksh");
+     else if (access ("/bin/zsh", X_OK) == 0)
+         mc_shell->path = g_strdup ("/bin/zsh");
+     else if (access ("/bin/tcsh", X_OK) == 0)
+@@ -201,6 +203,11 @@ mc_shell_recognize_path (mc_shell_t * mc_shell)
+     {
+         mc_shell->type = SHELL_BASH;
+         mc_shell->name = "bash";
++    }
++    else if (strstr (mc_shell->path, "/ksh") != NULL || getenv ("KSH_VERSION") != NULL)
++    {
++        mc_shell->type = SHELL_KSH;
++        mc_shell->name = "ksh";
+     }
+     else if (strstr (mc_shell->path, "/sh") != NULL || getenv ("SH") != NULL)
+     {

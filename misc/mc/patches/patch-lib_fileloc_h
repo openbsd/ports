@@ -1,0 +1,11 @@
+Index: lib/fileloc.h
+--- lib/fileloc.h.orig
++++ lib/fileloc.h
+@@ -53,6 +53,7 @@
+ 
+ #define MC_BASHRC_FILE          "bashrc"
+ #define MC_ZSHRC_FILE           ".zshrc"
++#define MC_KSHRC_FILE           "kshrc"
+ #define MC_ASHRC_FILE           "ashrc"
+ #define MC_INPUTRC_FILE         "inputrc"
+ #define MC_CONFIG_FILE          "ini"
