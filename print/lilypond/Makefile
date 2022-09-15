@@ -8,6 +8,8 @@ PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
 CATEGORIES=		print
 
+REVISION-main=		0
+
 URW_V=			20200910
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0 urw-base35-fonts-${URW_V}.tar.gz:1
 EXTRACT_ONLY=		${DISTNAME}.tar.gz urw-base35-fonts-${URW_V}.tar.gz
@@ -37,6 +39,7 @@ CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			BASH=/bin/sh \
 			GREP=/usr/bin/grep \
+			GUILE_FLAVOR=guile-2.2 \
 			LDFLAGS=-L${LOCALBASE}/lib
 TEXGYREDIR=		${LOCALBASE}/share/texmf-dist/fonts/opentype/public/tex-gyre
 URWDIR=			${WRKDIR}/urw-base35-fonts-${URW_V}/fonts
