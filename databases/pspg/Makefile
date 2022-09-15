@@ -2,7 +2,7 @@ COMMENT =	UNIX pager optimized for tabular data
 
 GH_ACCOUNT =	okbob
 GH_PROJECT =	pspg
-GH_TAGNAME =	5.5.6
+GH_TAGNAME =	5.5.7
 
 CATEGORIES =	databases
 
@@ -21,7 +21,7 @@ USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS =	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 
 NO_TEST =		Yes
 
