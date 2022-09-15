@@ -1,6 +1,6 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		2.2.0
+V =		2.3.0
 DISTNAME =	opensearch-$V-linux-x64
 PKGNAME =	opensearch-$V
 
@@ -19,7 +19,7 @@ FIX_EXTRACT_PERMISSIONS = Yes
 PERMIT_PACKAGE =	Yes
 
 MODULES =	java
-MODJAVA_VER =	17
+MODJAVA_VER =	11
 
 RUN_DEPENDS =	java/javaPathHelper \
 		java/jna \
