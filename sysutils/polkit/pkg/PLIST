@@ -71,8 +71,6 @@ share/examples/polkit/polkit-1/rules.d/
 @sample ${SYSCONFDIR}/polkit-1/rules.d/
 @mode
 @owner
-share/examples/polkit/polkit-1/rules.d/50-default.rules
-@sample ${SYSCONFDIR}/polkit-1/rules.d/50-default.rules
 share/gettext/its/polkit.its
 share/gettext/its/polkit.loc
 share/gir-1.0/
@@ -101,6 +99,7 @@ share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.policykit.policy
 share/polkit-1/policyconfig-1.dtd
+share/polkit-1/rules.d/50-default.rules
 @mode 0700
 @owner _polkitd
 share/polkit-1/rules.d/

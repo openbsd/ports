@@ -3,6 +3,7 @@ COMMENT=		framework for granting privileged operations to users
 V=			121
 DISTNAME=		polkit-${V}
 WRKDIST=		${WRKDIR}/polkit-v.${V}
+REVISION=		0
 
 SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
 SHARED_LIBS += polkit-agent-1            2.0 # 0.0.0
