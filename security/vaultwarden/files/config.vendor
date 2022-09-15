@@ -1,7 +1,0 @@
-[source."https://github.com/BlackDex/job_scheduler"]
-git = "https://github.com/BlackDex/job_scheduler"
-rev = "9100fc596a083fd9c0b560f8f11f108e0a19d07e"
-replace-with = "vendored-sources"
-
-[source.vendored-sources]
-directory = "${WRKSRC}/myvendordir"

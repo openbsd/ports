@@ -7,7 +7,7 @@ COMMENT =		unofficial bitwarden compatible server
 
 GH_ACCOUNT =		dani-garcia
 GH_PROJECT =		vaultwarden
-GH_TAGNAME =		1.25.0
+GH_TAGNAME =		1.25.2
 
 CATEGORIES =		security
 
@@ -20,9 +20,6 @@ FLAVORS =		mysql postgresql
 FLAVOR ?=
 
 WANTLIB +=		c c++abi crypto m pthread ssl
-
-MASTER_SITES7 =		https://files.bsd.ac/openbsd-distfiles/
-DISTFILES +=		vaultwarden-${GH_TAGNAME}.vendor.tgz:7
 
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
@@ -49,11 +46,6 @@ LIB_DEPENDS +=		databases/postgresql
 .endif
 
 SUBST_VARS +=		WRKSRC VARBASE
-
-post-configure:
-	mv ${WRKDIR}/myvendordir ${WRKSRC}
-	${SUBST_CMD} -m 644 -c ${FILESDIR}/config.vendor ${WRKDIR}/config.vendor
-	cat ${WRKDIR}/config.vendor >> ${WRKDIR}/.cargo/config
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vaultwarden
