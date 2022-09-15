@@ -420,7 +420,7 @@ jruby/lib/ruby/gems/1.8/specifications/
 jruby/lib/ruby/gems/1.8/specifications/default/
 jruby/lib/ruby/gems/1.8/specifications/default/bundler-2.2.29.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/cmath-1.0.0.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/csv-3.1.2.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/csv-3.2.5.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/e2mmap-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ffi-1.15.4-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/fileutils-1.4.1.gemspec
@@ -437,7 +437,7 @@ jruby/lib/ruby/gems/1.8/specifications/default/matrix-0.3.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/mutex_m-0.1.0.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/ostruct-0.5.5.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/prime-0.1.0.gemspec
-jruby/lib/ruby/gems/1.8/specifications/default/psych-3.3.2-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/psych-3.3.3-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/racc-1.5.2-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rake-ant-1.0.4.gemspec
 jruby/lib/ruby/gems/1.8/specifications/default/rdoc-6.1.2.1.gemspec
@@ -842,9 +842,8 @@ jruby/lib/ruby/stdlib/csv.rb
 jruby/lib/ruby/stdlib/csv/core_ext/
 jruby/lib/ruby/stdlib/csv/core_ext/array.rb
 jruby/lib/ruby/stdlib/csv/core_ext/string.rb
-jruby/lib/ruby/stdlib/csv/delete_suffix.rb
 jruby/lib/ruby/stdlib/csv/fields_converter.rb
-jruby/lib/ruby/stdlib/csv/match_p.rb
+jruby/lib/ruby/stdlib/csv/input_record_separator.rb
 jruby/lib/ruby/stdlib/csv/parser.rb
 jruby/lib/ruby/stdlib/csv/row.rb
 jruby/lib/ruby/stdlib/csv/table.rb
@@ -1165,8 +1164,8 @@ jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/1.68/
 jruby/lib/ruby/stdlib/org/bouncycastle/bctls-jdk15on/1.68/bctls-jdk15on-1.68.jar
 jruby/lib/ruby/stdlib/org/yaml/
 jruby/lib/ruby/stdlib/org/yaml/snakeyaml/
-jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.28/
-jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.28/snakeyaml-1.28.jar
+jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.31/
+jruby/lib/ruby/stdlib/org/yaml/snakeyaml/1.31/snakeyaml-1.31.jar
 jruby/lib/ruby/stdlib/org/yaml/snakeyaml/maven-metadata-local.xml
 jruby/lib/ruby/stdlib/ostruct.rb
 jruby/lib/ruby/stdlib/pathname.rb
