@@ -1,3 +1,5 @@
+- Fix path to /usr/local/share
+
 - Don't fail if unrecognised autoconf command-line flags are present
 (avoid problem with --disable-gtk-doc)
 
@@ -22,6 +24,15 @@ Index: configure
  ###############################################################################
  #
  #       Autoheader stuff
+@@ -15029,7 +15024,7 @@ printf "%s\n" "$ac_cv_gtk_config_libs" >&6; }
+ 
+   GTK_DATADIR=""
+   if test "$have_gtk" = yes; then
+-    GTK_DATADIR=`$pkg_config --variable=prefix gtk+-2.0`
++    GTK_DATADIR=`$pkg_config --variable=prefix gtk+-3.0`
+     GTK_DATADIR="$GTK_DATADIR/share"
+   fi
+ 
 @@ -15060,9 +15055,9 @@ fi
  
  # Check for the various Gnome help and URL loading programs.
