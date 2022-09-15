@@ -1,10 +1,11 @@
 Use ${MODPY_VERSION} to pick up the correct python .pc file
 Use ${LOCALBASE} instead of hard-coded /usr/local
+fix typo: the variable is `enable_gdk_pixbuf' not `enable_pixbuf'
 
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -100,7 +100,7 @@ elif test "x$enable_python_plugins" != xno; then
+@@ -104,7 +104,7 @@ elif test "x$enable_python_plugins" != xno; then
          rm -f Python.framework
          ln -s $PYTHON_FRAMEWORK Python.framework ])
      PKG_CHECK_MODULES([python], [python-embed], [PYTHON_CONFIG_EXISTS=yes], [PYTHON_CONFIG_EXISTS=no])
@@ -13,7 +14,7 @@ Index: configure.ac
      if test "$PYTHON_CONFIG_EXISTS" = "yes" || test "$PYTHON3_CONFIG_EXISTS" = "yes"; then
          AM_CONDITIONAL([BUILD_PYTHON_API], [true])
          AC_DEFINE([HAVE_PYTHON], [1], [Python support])
-@@ -219,10 +219,10 @@ AS_IF([test "x$PLATFORM" = xosx],
+@@ -223,10 +223,10 @@ AS_IF([test "x$PLATFORM" = xosx],
          [AC_MSG_ERROR([libreadline is required for profanity. Install it with Homebrew, MacPorts, or manually into /usr/local])])],
  
        [test "x$PLATFORM" = xopenbsd],
@@ -27,3 +28,17 @@ Index: configure.ac
                AC_SUBST(AM_LDFLAGS)])],
  
      [AC_CHECK_LIB([readline], [main], [],
+@@ -311,11 +311,11 @@ if test "x$enable_otr" != xno; then
+ fi
+ 
+ dnl feature: pixbuf / used for scaling avatars before uploading via `/avatar set`
+-AS_IF([test "x$enable_pixbuf" != xno],
++AS_IF([test "x$enable_gdk_pixbuf" != xno],
+     [PKG_CHECK_MODULES([gdk_pixbuf], [gdk-pixbuf-2.0 >= 2.4],
+         [AC_DEFINE([HAVE_PIXBUF], [1], [gdk-pixbuf module])
+          LIBS="$gdk_pixbuf_LIBS $LIBS" CFLAGS="$gdk_pixbuf_CFLAGS $CFLAGS"],
+-        [AS_IF([test "x$enable_pixbuf" = xyes],
++        [AS_IF([test "x$enable_gdk_pixbuf" = xyes],
+                [AC_MSG_ERROR([gdk-pixbuf-2.0 >= 2.4 is required to scale avatars before uploading])],
+                [AC_MSG_NOTICE([gdk-pixbuf-2.0 >= 2.4 not found, GDK Pixbuf support not enabled])])])])
+ 

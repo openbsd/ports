@@ -1,5 +1,5 @@
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.12.1
+DISTNAME =	profanity-0.13.0
 CATEGORIES =	net
 
 HOMEPAGE =	https://profanity-im.github.io/
@@ -13,16 +13,18 @@ PERMIT_PACKAGE =	Yes
 
 MASTER_SITES =	https://profanity-im.github.io/tarballs/
 
-WANTLIB += assuan c crypto curl curses ereadline expat ffi gcrypt
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gpgme iconv intl m strophe nghttp2 otr pcre pthread
-WANTLIB += ${MODPY_WANTLIB} signal-protocol-c sqlite3 ssl util z
+WANTLIB += X11 Xext Xss assuan c crypto curl curses ereadline
+WANTLIB += expat ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error gpgme iconv intl m nghttp2 otr pcre pthread
+WANTLIB += ${MODPY_WANTLIB} qrencode signal-protocol-c sqlite3 ssl
+WANTLIB += strophe util xcb z
 
 MODULES +=	lang/python
 
 LIB_DEPENDS +=	databases/sqlite3 \
 		devel/glib2 \
 		devel/readline \
+		graphics/libqrencode \
 		net/curl \
 		net/libstrophe \
 		net/libsignal-protocol-c \
@@ -34,13 +36,14 @@ LIB_DEPENDS +=	databases/sqlite3 \
 BUILD_DEPENDS +=	devel/cmocka
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS +=	--with-xscreensaver=no \
+			--enable-gdk-pixbuf=no \
 			--enable-icons-and-clipboard=no \
 			--enable-notifications=no \
 			--enable-plugins=yes \

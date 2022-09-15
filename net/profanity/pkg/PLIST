@@ -59,6 +59,7 @@ lib/libprofanity.la
 @man man/man1/profanity-os.1
 @man man/man1/profanity-otr.1
 @man man/man1/profanity-outtype.1
+@man man/man1/profanity-ox-setup.1
 @man man/man1/profanity-ox.1
 @man man/man1/profanity-paste.1
 @man man/man1/profanity-pgp.1
@@ -86,6 +87,7 @@ lib/libprofanity.la
 @man man/man1/profanity-slashguard.1
 @man man/man1/profanity-software.1
 @man man/man1/profanity-splash.1
+@man man/man1/profanity-stamp.1
 @man man/man1/profanity-states.1
 @man man/man1/profanity-status.1
 @man man/man1/profanity-statusbar.1
@@ -123,6 +125,7 @@ share/profanity/themes/forest
 share/profanity/themes/gruvbox
 share/profanity/themes/hacker
 share/profanity/themes/headache
+share/profanity/themes/irssi
 share/profanity/themes/joker
 share/profanity/themes/jubalian
 share/profanity/themes/mono
