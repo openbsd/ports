@@ -1,7 +1,7 @@
 COMMENT-main =		low-latency voice chat client
 COMMENT-server =	low-latency voice chat server
 
-VERSION =		1.4.274
+VERSION =		1.4.287
 DISTNAME =		mumble-${VERSION}
 PKGNAME-server =	murmur-${VERSION}
 
@@ -12,7 +12,8 @@ HOMEPAGE =		https://www.mumble.info/
 MASTER_SITES =		https://github.com/mumble-voip/mumble/releases/download/v${VERSION}/
 
 MASTER_SITES0 =		https://github.com/mumble-voip/mumble/commit/
-# all merged into master but not released/merged into 1.4.x branch yet
+# "Bug fixes on master missing in 1.4.x branch"
+# https://github.com/mumble-voip/mumble/issues/5888
 PATCHFILES =		mumble-kvm_getprocs-ALL_arg-{}42ad5ed.patch:0 \
 			mumble-kvm_getprocs-pass-elemsize-{}ccbacbf.patch:0 \
 			mumble-struct_procinfo-member_prefix-{}a707213.patch:0 \
@@ -41,7 +42,7 @@ WANTLIB-main += opus portaudio
 WANTLIB-server += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Network Qt5Sql
 WANTLIB-server += Qt5Xml c crypto m protobuf ssl
 
-WRKDIST =		${WRKDIR}/mumble-src
+WRKDIST =		${WRKDIR}/mumble-${VERSION}.src
 
 MULTI_PACKAGES =	-main -server
 
