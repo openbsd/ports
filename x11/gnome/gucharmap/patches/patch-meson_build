@@ -20,10 +20,10 @@ Index: meson.build
 -  assert(cc.has_function(func, dependencies: libdl_dep), func + ' not found')
 -endforeach
 -
- # Compiler flags
+ # Asserts must not be disabled
  
- compiler_flags_common = [
-@@ -221,14 +209,16 @@ add_project_arguments(global_cflags, language: 'c',)
+ assert(get_option('b_ndebug') == 'false', 'assertions may not be disabled')
+@@ -229,14 +217,16 @@ add_project_arguments(global_cflags, language: 'c',)
  
  # Linker flags
  
