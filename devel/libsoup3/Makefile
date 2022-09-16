@@ -1,10 +1,10 @@
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		3.0.8
+GNOME_VERSION =		3.2.0
 PKGNAME=		libsoup3-${GNOME_VERSION}
 
-SHARED_LIBS += soup-3.0                  0.1 # 0.0.6
+SHARED_LIBS += soup-3.0                  0.2 # 0.6.0
 
 API_VERSION =		3.0
 SUBST_VARS =		API_VERSION
@@ -23,7 +23,7 @@ WANTLIB += intl nghttp2 psl sqlite3 z
 MODULES =		devel/meson \
 			x11/gnome
 
-MODGNOME_TOOLS =	gobject-introspection vala
+MODGNOME_TOOLS =	gi-docgen gobject-introspection vala
 
 RUN_DEPENDS =		net/glib2-networking
 
@@ -41,7 +41,6 @@ CONFIGURE_ARGS =	-Dgssapi=disabled \
 # requires unported wstest and dependency on apache2, python quart, gnutls...
 CONFIGURE_ARGS +=	-Dautobahn=disabled \
 			-Dtests=false \
-			-Dhttp2_tests=disabled \
 			-Dpkcs11_tests=disabled
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
