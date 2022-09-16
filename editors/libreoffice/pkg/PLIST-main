@@ -2669,6 +2669,7 @@ lib/libreoffice/help/main_transform.xsl
 lib/libreoffice/help/media/
 lib/libreoffice/help/media/files/
 lib/libreoffice/help/media/files/scalc/
+lib/libreoffice/help/media/files/scalc/function_fourier.ods
 lib/libreoffice/help/media/files/scalc/functions_ifs.ods
 lib/libreoffice/help/media/files/scalc/imtrigon.ods
 lib/libreoffice/help/media/files/scalc/pivot.ods
@@ -11046,6 +11047,7 @@ lib/libreoffice/share/fonts/truetype/NotoSerifHebrew-Bold.ttf
 lib/libreoffice/share/fonts/truetype/NotoSerifHebrew-Regular.ttf
 lib/libreoffice/share/fonts/truetype/NotoSerifLao-Bold.ttf
 lib/libreoffice/share/fonts/truetype/NotoSerifLao-Regular.ttf
+lib/libreoffice/share/fonts/truetype/ReemKufi-Bold.ttf
 lib/libreoffice/share/fonts/truetype/ReemKufi-Regular.ttf
 lib/libreoffice/share/fonts/truetype/Rubik-Bold.ttf
 lib/libreoffice/share/fonts/truetype/Rubik-BoldItalic.ttf
