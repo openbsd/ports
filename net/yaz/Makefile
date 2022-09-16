@@ -1,7 +1,7 @@
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-5.31.1
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS+=		yaz		1.2	# 5.0
 SHARED_LIBS+=		yaz_icu		1.3	# 5.0
@@ -27,7 +27,8 @@ LIB_DEPENDS=		textproc/libxml \
 			textproc/icu4c
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--without-gnutls
+CONFIGURE_ARGS+=	--without-gnutls \
+			--without-memcached
 CONFIGURE_ENV+=		LIBS="-lexecinfo"
 
 .include <bsd.port.mk>
