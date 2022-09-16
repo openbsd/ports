@@ -362,12 +362,16 @@ lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}conftest
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}conftest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_commands.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_date.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_date.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_edittext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_edittext.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/${MODPY_PYCACHE}test_path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/conftest.py
+lib/python${MODPY_VERSION}/site-packages/visidata/tests/sample.tsv
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/test_commands.py
+lib/python${MODPY_VERSION}/site-packages/visidata/tests/test_date.py
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/test_edittext.py
 lib/python${MODPY_VERSION}/site-packages/visidata/tests/test_path.py
 lib/python${MODPY_VERSION}/site-packages/visidata/textsheet.py
