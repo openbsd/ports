@@ -337,6 +337,10 @@ share/gtksourceview-4/
 share/gtksourceview-4/styles/
 share/gtksourceview-4/styles/Yaru-dark.xml
 share/gtksourceview-4/styles/Yaru.xml
+share/gtksourceview-5/
+share/gtksourceview-5/styles/
+share/gtksourceview-5/styles/Yaru-dark.xml
+share/gtksourceview-5/styles/Yaru.xml
 share/icons/Yaru/
 share/icons/Yaru-bark/
 share/icons/Yaru-bark-dark/
@@ -7049,6 +7053,7 @@ share/icons/Yaru/16x16/apps/org.gnome.Documents.png
 share/icons/Yaru/16x16/apps/org.gnome.Epiphany.png
 share/icons/Yaru/16x16/apps/org.gnome.Evince.png
 share/icons/Yaru/16x16/apps/org.gnome.Extensions.png
+share/icons/Yaru/16x16/apps/org.gnome.FileRoller.png
 share/icons/Yaru/16x16/apps/org.gnome.Gedit.png
 share/icons/Yaru/16x16/apps/org.gnome.Logs.png
 share/icons/Yaru/16x16/apps/org.gnome.Mahjongg.png
@@ -7059,6 +7064,7 @@ share/icons/Yaru/16x16/apps/org.gnome.Nautilus.png
 share/icons/Yaru/16x16/apps/org.gnome.Photos.png
 share/icons/Yaru/16x16/apps/org.gnome.PowerStats.png
 share/icons/Yaru/16x16/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/16x16/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/16x16/apps/org.gnome.Screenshot.png
 share/icons/Yaru/16x16/apps/org.gnome.Settings.png
 share/icons/Yaru/16x16/apps/org.gnome.Shell.Extensions.png
@@ -7075,6 +7081,7 @@ share/icons/Yaru/16x16/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/16x16/apps/org.gnome.Sudoku.png
 share/icons/Yaru/16x16/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/16x16/apps/org.gnome.Terminal.png
+share/icons/Yaru/16x16/apps/org.gnome.TextEditor.png
 share/icons/Yaru/16x16/apps/org.gnome.Todo.png
 share/icons/Yaru/16x16/apps/org.gnome.Totem.png
 share/icons/Yaru/16x16/apps/org.gnome.Tweaks.png
@@ -8455,6 +8462,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.Documents.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Epiphany.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Evince.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Extensions.png
+share/icons/Yaru/16x16@2x/apps/org.gnome.FileRoller.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Gedit.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Logs.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Mahjongg.png
@@ -8465,6 +8473,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.Nautilus.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/16x16@2x/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Screenshot.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Shell.Extensions.png
@@ -8481,6 +8490,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Sudoku.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Terminal.png
+share/icons/Yaru/16x16@2x/apps/org.gnome.TextEditor.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Todo.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Totem.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Tweaks.png
@@ -10648,6 +10658,7 @@ share/icons/Yaru/24x24/apps/org.gnome.Documents.png
 share/icons/Yaru/24x24/apps/org.gnome.Epiphany.png
 share/icons/Yaru/24x24/apps/org.gnome.Evince.png
 share/icons/Yaru/24x24/apps/org.gnome.Extensions.png
+share/icons/Yaru/24x24/apps/org.gnome.FileRoller.png
 share/icons/Yaru/24x24/apps/org.gnome.Gedit.png
 share/icons/Yaru/24x24/apps/org.gnome.Logs.png
 share/icons/Yaru/24x24/apps/org.gnome.Mahjongg.png
@@ -10658,6 +10669,7 @@ share/icons/Yaru/24x24/apps/org.gnome.Nautilus.png
 share/icons/Yaru/24x24/apps/org.gnome.Photos.png
 share/icons/Yaru/24x24/apps/org.gnome.PowerStats.png
 share/icons/Yaru/24x24/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/24x24/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/24x24/apps/org.gnome.Screenshot.png
 share/icons/Yaru/24x24/apps/org.gnome.Settings.png
 share/icons/Yaru/24x24/apps/org.gnome.Shell.Extensions.png
@@ -10674,6 +10686,7 @@ share/icons/Yaru/24x24/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/24x24/apps/org.gnome.Sudoku.png
 share/icons/Yaru/24x24/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/24x24/apps/org.gnome.Terminal.png
+share/icons/Yaru/24x24/apps/org.gnome.TextEditor.png
 share/icons/Yaru/24x24/apps/org.gnome.Todo.png
 share/icons/Yaru/24x24/apps/org.gnome.Totem.png
 share/icons/Yaru/24x24/apps/org.gnome.Tweaks.png
@@ -11967,6 +11980,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.Documents.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Epiphany.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Evince.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Extensions.png
+share/icons/Yaru/24x24@2x/apps/org.gnome.FileRoller.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Gedit.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Logs.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Mahjongg.png
@@ -11977,6 +11991,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.Nautilus.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/24x24@2x/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Screenshot.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Shell.Extensions.png
@@ -11993,6 +12008,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Sudoku.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Terminal.png
+share/icons/Yaru/24x24@2x/apps/org.gnome.TextEditor.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Todo.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Totem.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Tweaks.png
@@ -12895,6 +12911,7 @@ share/icons/Yaru/256x256/apps/org.gnome.Documents.png
 share/icons/Yaru/256x256/apps/org.gnome.Epiphany.png
 share/icons/Yaru/256x256/apps/org.gnome.Evince.png
 share/icons/Yaru/256x256/apps/org.gnome.Extensions.png
+share/icons/Yaru/256x256/apps/org.gnome.FileRoller.png
 share/icons/Yaru/256x256/apps/org.gnome.Gedit.png
 share/icons/Yaru/256x256/apps/org.gnome.Logs.png
 share/icons/Yaru/256x256/apps/org.gnome.Mahjongg.png
@@ -12905,6 +12922,7 @@ share/icons/Yaru/256x256/apps/org.gnome.Nautilus.png
 share/icons/Yaru/256x256/apps/org.gnome.Photos.png
 share/icons/Yaru/256x256/apps/org.gnome.PowerStats.png
 share/icons/Yaru/256x256/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/256x256/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/256x256/apps/org.gnome.Screenshot.png
 share/icons/Yaru/256x256/apps/org.gnome.Settings.png
 share/icons/Yaru/256x256/apps/org.gnome.Shell.Extensions.png
@@ -12921,6 +12939,7 @@ share/icons/Yaru/256x256/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/256x256/apps/org.gnome.Sudoku.png
 share/icons/Yaru/256x256/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/256x256/apps/org.gnome.Terminal.png
+share/icons/Yaru/256x256/apps/org.gnome.TextEditor.png
 share/icons/Yaru/256x256/apps/org.gnome.Todo.png
 share/icons/Yaru/256x256/apps/org.gnome.Totem.png
 share/icons/Yaru/256x256/apps/org.gnome.Tweaks.png
@@ -13823,6 +13842,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.Documents.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Epiphany.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Evince.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Extensions.png
+share/icons/Yaru/256x256@2x/apps/org.gnome.FileRoller.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Gedit.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Logs.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Mahjongg.png
@@ -13833,6 +13853,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.Nautilus.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/256x256@2x/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Screenshot.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Shell.Extensions.png
@@ -13849,6 +13870,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Sudoku.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Terminal.png
+share/icons/Yaru/256x256@2x/apps/org.gnome.TextEditor.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Todo.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Totem.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Tweaks.png
@@ -14751,6 +14773,7 @@ share/icons/Yaru/32x32/apps/org.gnome.Documents.png
 share/icons/Yaru/32x32/apps/org.gnome.Epiphany.png
 share/icons/Yaru/32x32/apps/org.gnome.Evince.png
 share/icons/Yaru/32x32/apps/org.gnome.Extensions.png
+share/icons/Yaru/32x32/apps/org.gnome.FileRoller.png
 share/icons/Yaru/32x32/apps/org.gnome.Gedit.png
 share/icons/Yaru/32x32/apps/org.gnome.Logs.png
 share/icons/Yaru/32x32/apps/org.gnome.Mahjongg.png
@@ -14761,6 +14784,7 @@ share/icons/Yaru/32x32/apps/org.gnome.Nautilus.png
 share/icons/Yaru/32x32/apps/org.gnome.Photos.png
 share/icons/Yaru/32x32/apps/org.gnome.PowerStats.png
 share/icons/Yaru/32x32/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/32x32/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/32x32/apps/org.gnome.Screenshot.png
 share/icons/Yaru/32x32/apps/org.gnome.Settings.png
 share/icons/Yaru/32x32/apps/org.gnome.Shell.Extensions.png
@@ -14777,6 +14801,7 @@ share/icons/Yaru/32x32/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/32x32/apps/org.gnome.Sudoku.png
 share/icons/Yaru/32x32/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/32x32/apps/org.gnome.Terminal.png
+share/icons/Yaru/32x32/apps/org.gnome.TextEditor.png
 share/icons/Yaru/32x32/apps/org.gnome.Todo.png
 share/icons/Yaru/32x32/apps/org.gnome.Totem.png
 share/icons/Yaru/32x32/apps/org.gnome.Tweaks.png
@@ -15679,6 +15704,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.Documents.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Epiphany.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Evince.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Extensions.png
+share/icons/Yaru/32x32@2x/apps/org.gnome.FileRoller.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Gedit.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Logs.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Mahjongg.png
@@ -15689,6 +15715,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.Nautilus.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/32x32@2x/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Screenshot.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Shell.Extensions.png
@@ -15705,6 +15732,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Sudoku.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Terminal.png
+share/icons/Yaru/32x32@2x/apps/org.gnome.TextEditor.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Todo.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Totem.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Tweaks.png
@@ -16607,6 +16635,7 @@ share/icons/Yaru/48x48/apps/org.gnome.Documents.png
 share/icons/Yaru/48x48/apps/org.gnome.Epiphany.png
 share/icons/Yaru/48x48/apps/org.gnome.Evince.png
 share/icons/Yaru/48x48/apps/org.gnome.Extensions.png
+share/icons/Yaru/48x48/apps/org.gnome.FileRoller.png
 share/icons/Yaru/48x48/apps/org.gnome.Gedit.png
 share/icons/Yaru/48x48/apps/org.gnome.Logs.png
 share/icons/Yaru/48x48/apps/org.gnome.Mahjongg.png
@@ -16617,6 +16646,7 @@ share/icons/Yaru/48x48/apps/org.gnome.Nautilus.png
 share/icons/Yaru/48x48/apps/org.gnome.Photos.png
 share/icons/Yaru/48x48/apps/org.gnome.PowerStats.png
 share/icons/Yaru/48x48/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/48x48/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/48x48/apps/org.gnome.Screenshot.png
 share/icons/Yaru/48x48/apps/org.gnome.Settings.png
 share/icons/Yaru/48x48/apps/org.gnome.Shell.Extensions.png
@@ -16633,6 +16663,7 @@ share/icons/Yaru/48x48/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/48x48/apps/org.gnome.Sudoku.png
 share/icons/Yaru/48x48/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/48x48/apps/org.gnome.Terminal.png
+share/icons/Yaru/48x48/apps/org.gnome.TextEditor.png
 share/icons/Yaru/48x48/apps/org.gnome.Todo.png
 share/icons/Yaru/48x48/apps/org.gnome.Totem.png
 share/icons/Yaru/48x48/apps/org.gnome.Tweaks.png
@@ -17555,6 +17586,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.Documents.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Epiphany.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Evince.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Extensions.png
+share/icons/Yaru/48x48@2x/apps/org.gnome.FileRoller.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Gedit.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Logs.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Mahjongg.png
@@ -17565,6 +17597,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.Nautilus.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Photos.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.PowerStats.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Rhythmbox.png
+share/icons/Yaru/48x48@2x/apps/org.gnome.Rhythmbox3.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Screenshot.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Shell.Extensions.png
@@ -17581,6 +17614,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Sudoku.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Terminal.png
+share/icons/Yaru/48x48@2x/apps/org.gnome.TextEditor.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Todo.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Totem.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Tweaks.png
@@ -19021,6 +19055,7 @@ share/icons/Yaru/scalable/apps/org.gnome.Disks-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Documents-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Epiphany-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Evince-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.FileRoller-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Gedit-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Logs-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Lollypop-artists-list-symbolic.svg
@@ -19038,6 +19073,7 @@ share/icons/Yaru/scalable/apps/org.gnome.Nautilus-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Photos-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.PowerStats-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Rhythmbox-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.Rhythmbox3-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Screenshot-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Settings-multitasking-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Settings-symbolic.svg
@@ -19048,6 +19084,7 @@ share/icons/Yaru/scalable/apps/org.gnome.Software-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Sudoku-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.SystemMonitor-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Terminal-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.TextEditor-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Todo-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Totem-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Tweaks-symbolic.svg
@@ -19208,7 +19245,7 @@ share/icons/Yaru/scalable/categories/org.gnome.Settings-power-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-printers-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-region-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-removable-media-symbolic.svg
-share/icons/Yaru/scalable/categories/org.gnome.Settings-screen-lock-symbolic.svg
+share/icons/Yaru/scalable/categories/org.gnome.Settings-screen-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-search-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-sharing-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-sound-symbolic.svg
