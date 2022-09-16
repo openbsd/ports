@@ -2,7 +2,7 @@ COMMENT =		Unicode Character Database (UCD)
 
 # XXX: make sure the major version of this port matches
 #      x11/gnome/gucharmap
-V =			14.0.0
+V =			15.0.0
 DISTNAME =		UCD
 PKGNAME =		unicode-ucd-$V
 CATEGORIES =		textproc
