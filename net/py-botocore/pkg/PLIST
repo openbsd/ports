@@ -21,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configprovider
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}endpoint_provider.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}errorfactory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}eventstream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
@@ -1325,6 +1326,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partitions.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/
@@ -1850,6 +1852,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/docs/sharedexample.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/utils.py
 lib/python${MODPY_VERSION}/site-packages/botocore/docs/waiter.py
 lib/python${MODPY_VERSION}/site-packages/botocore/endpoint.py
+lib/python${MODPY_VERSION}/site-packages/botocore/endpoint_provider.py
 lib/python${MODPY_VERSION}/site-packages/botocore/errorfactory.py
 lib/python${MODPY_VERSION}/site-packages/botocore/eventstream.py
 lib/python${MODPY_VERSION}/site-packages/botocore/exceptions.py
