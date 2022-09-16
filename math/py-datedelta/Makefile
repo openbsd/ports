@@ -4,10 +4,13 @@ MODPY_EGG_VERSION =	1.4
 
 DISTNAME =		datedelta-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 
 HOMEPAGE =		https://github.com/aaugustin/datedelta/
+MAINTAINER =		George Rosamond <george@nycbug.org>
+
 
 # BSD3
 PERMIT_PACKAGE =	Yes
