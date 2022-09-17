@@ -3,14 +3,14 @@ BROKEN-hppa=		no atomic primitives
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			5.1.0
+V=			5.2.0
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS += harfbuzz                  17.7 # 0.50100.0
-SHARED_LIBS += harfbuzz-subset           2.2 # 0.50100.0
-SHARED_LIBS += harfbuzz-icu              2.0 # 0.50100.0
-SHARED_LIBS += harfbuzz-gobject          1.0 # 0.50100.0
+SHARED_LIBS += harfbuzz                  17.8 # 0.50200.0
+SHARED_LIBS += harfbuzz-subset           2.2 # 0.50200.0
+SHARED_LIBS += harfbuzz-icu              2.0 # 0.50200.0
+SHARED_LIBS += harfbuzz-gobject          1.0 # 0.50200.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -48,11 +48,16 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
 LIB_DEPENDS-main +=	${LIB_DEPENDS}
 .endif
 
-CONFIGURE_ARGS=		-Dgraphite2=enabled \
-			-Ddocs=disabled
+CONFIGURE_ARGS=		-Dgraphite2=enabled
 
-# bloat: requires ImageMagick
+# bloat: needs gtk-doc
+CONFIGURE_ARGS +=	-Ddocs=disabled
+
+# bloat: requires ImageMagick, libwebp...
 CONFIGURE_ARGS +=	-Dchafa=disabled
+
+# XXX: infinite loop
+CONFIGURE_ARGS +=	-Dtests=disabled
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/check-symbols.py
