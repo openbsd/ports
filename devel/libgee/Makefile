@@ -1,7 +1,7 @@
 COMMENT=		GObject based collection library
 
 GNOME_PROJECT=		libgee
-GNOME_VERSION=		0.20.5
+GNOME_VERSION=		0.20.6
 
 SHARED_LIBS +=  gee-0.8              3.1      # 8.1
 
