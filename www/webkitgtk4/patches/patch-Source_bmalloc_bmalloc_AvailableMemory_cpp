@@ -1,15 +1,16 @@
 Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
 --- Source/bmalloc/bmalloc/AvailableMemory.cpp.orig
 +++ Source/bmalloc/bmalloc/AvailableMemory.cpp
-@@ -44,11 +44,15 @@
+@@ -44,13 +44,15 @@
  #import <mach/mach_error.h>
  #import <math.h>
  #elif BOS(UNIX)
+-#if BOS(FREEBSD) || BOS(LINUX)
 +#if BOS(OPENBSD)
 +#include <kvm.h>
-+#else
++#elif BOS(FREEBSD) || BOS(LINUX)
  #include <sys/sysinfo.h>
-+#endif
+ #endif
  #if BOS(LINUX)
  #include <algorithm>
  #include <fcntl.h>
@@ -18,7 +19,7 @@ Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
  #include "VMAllocate.h"
  #include <sys/sysctl.h>
  #include <sys/types.h>
-@@ -164,6 +168,24 @@ static size_t computeAvailableMemory()
+@@ -166,6 +168,24 @@ static size_t computeAvailableMemory()
      if (!sysinfo(&info))
          return info.totalram * info.mem_unit;
      return availableMemoryGuess;
@@ -43,7 +44,7 @@ Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
  #elif BOS(UNIX)
      long pages = sysconf(_SC_PHYS_PAGES);
      long pageSize = sysconf(_SC_PAGE_SIZE);
-@@ -178,14 +200,19 @@ static size_t computeAvailableMemory()
+@@ -180,14 +200,19 @@ static size_t computeAvailableMemory()
  size_t availableMemory()
  {
      static size_t availableMemory;
@@ -64,7 +65,7 @@ Index: Source/bmalloc/bmalloc/AvailableMemory.cpp
  MemoryStatus memoryStatus()
  {
  #if BPLATFORM(IOS_FAMILY)
-@@ -211,6 +238,22 @@ MemoryStatus memoryStatus()
+@@ -213,6 +238,22 @@ MemoryStatus memoryStatus()
      size_t memoryFootprint = 0;
      if (!sysctl(mib, 4, &info, &infolen, nullptr, 0))
          memoryFootprint = static_cast<size_t>(info.ki_rssize) * vmPageSize();

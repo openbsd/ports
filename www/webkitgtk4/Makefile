@@ -11,7 +11,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.36.7
+V =			2.38.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -20,8 +20,8 @@ EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     3.6 # 18.13.3
-SHARED_LIBS +=  webkit2gtk-${API}            3.6 # 37.37.2
+SHARED_LIBS +=  javascriptcoregtk-${API}     3.7
+SHARED_LIBS +=  webkit2gtk-${API}            3.7
 
 CATEGORIES =		www
 
@@ -34,13 +34,13 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xcomposite Xdamage Xrender
 WANTLIB += Xt atk-1.0 c cairo cairo-gobject enchant-2 fontconfig
-WANTLIB += freetype gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error gstapp-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 harfbuzz harfbuzz-icu
-WANTLIB += hyphen icudata icui18n icuuc intl jpeg lcms2 m notify
-WANTLIB += openjp2 pango-1.0 pangocairo-1.0 png secret-1 sqlite3
-WANTLIB += tasn1 webp webpdemux woff2dec xml2 xslt z
+WANTLIB += freetype gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error gstallocators-1.0 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz harfbuzz-icu
+WANTLIB += hyphen icudata icui18n icuuc intl jpeg lcms2 m openjp2
+WANTLIB += pango-1.0 pangocairo-1.0 png secret-1 sqlite3 tasn1
+WANTLIB += webp webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		https://webkitgtk.org/releases/
 
@@ -54,7 +54,7 @@ COMPILER =		base-clang ports-gcc
 MODRUBY_RUNDEP =	No
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	Tools/glib/generate-inspector-gresource-manifest.py
-MODGNOME_TOOLS =	gobject-introspection
+MODGNOME_TOOLS =	gi-docgen gobject-introspection
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -70,7 +70,6 @@ RUN_DEPENDS =		geo/geoclue2 \
 
 LIB_DEPENDS =		archivers/woff2 \
 			devel/harfbuzz,-icu \
-			devel/libnotify \
 			graphics/libwebp \
 			graphics/openjp2 \
 			multimedia/gstreamer1/plugins-base \
@@ -93,6 +92,7 @@ CPUARCH =		x86_64
 .else
 CPUARCH =		${ARCH}
 .endif
+#XXXTODO CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}; OpenBSD ${ARCH}"
 CONFIGURE_ARGS +=	-DUSER_AGENT_BRANDING="Linux ${CPUARCH}"
 
 # needs Wayland (libwpe -> WPEBackend-fdo -> Wayland)
@@ -118,7 +118,7 @@ CXXFLAGS +=		-DFIXED_EXECUTABLE_MEMORY_POOL_SIZE_IN_MB=384
 .endif
 CXXFLAGS +=		-DSTRUCTURE_HEAP_ADDRESS_SIZE_IN_MB=256
 
-# XXX fatal error: 'X11/Xlib.h' file not found
+# fatal error: 'X11/Xlib.h' file not found
 CXXFLAGS +=		-I${X11BASE}/include
 
 .include <bsd.port.arch.mk>
@@ -143,32 +143,23 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mwebkitgtk41}
 API =			4.1
-REVISION =		0
 WANTLIB += gdk-3 gtk-3 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF
-PKG_ARGS +=		-DWebKitWebDriver=0
 .elif ${FLAVOR:Mwebkitgtk50}
 API =			5.0
-REVISION =		0
 WANTLIB += graphene-1.0 gtk-4 soup-3.0
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+4
 CONFIGURE_ARGS +=	-DUSE_SOUP2=OFF \
 			-DUSE_GTK4=ON
-# only include WebKitWebDriver for the more recent version to prevent conflict;
-# could be revisited by using MULTI_PACKAGES but it's not worth the complexity;
-# see post-install
-PKG_ARGS +=		-DWebKitWebDriver=1
 .else
 API =			4.0
-REVISION =		3
 WANTLIB += gdk-3 gtk-3 soup-2.4
 LIB_DEPENDS +=		devel/libsoup \
 			x11/gtk+3
 CONFIGURE_ARGS +=	-DUSE_SOUP2=ON
-PKG_ARGS +=		-DWebKitWebDriver=0
 .endif
 
 post-extract:
@@ -178,7 +169,9 @@ post-extract:
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/cmake/WebKitCommon.cmake
 
-.if empty(FLAVOR) || ${FLAVOR:Mwebkitgtk41}
+# only include WebKitWebDriver for the more recent version to prevent conflict;
+# could be revisited by using MULTI_PACKAGES but it's not worth the complexity;
+.if empty(FLAVOR) || !${FLAVOR:Mwebkitgtk50}
 post-install:
 	rm ${PREFIX}/bin/WebKitWebDriver
 .endif
