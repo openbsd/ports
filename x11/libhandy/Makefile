@@ -1,7 +1,7 @@
 COMMENT =		building blocks for modern adaptive GNOME apps
 
 GNOME_PROJECT =		libhandy
-GNOME_VERSION =		1.6.3
+GNOME_VERSION =		1.8.0
 CATEGORIES =		x11
 
 API_V =			1
