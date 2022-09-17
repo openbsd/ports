@@ -3103,6 +3103,7 @@ go/src/cmd/go/testdata/script/help.txt
 go/src/cmd/go/testdata/script/import_cycle.txt
 go/src/cmd/go/testdata/script/import_ignore.txt
 go/src/cmd/go/testdata/script/import_main.txt
+go/src/cmd/go/testdata/script/import_unix_tag.txt
 go/src/cmd/go/testdata/script/index.txt
 go/src/cmd/go/testdata/script/install_cgo_excluded.txt
 go/src/cmd/go/testdata/script/install_cleans_build.txt
@@ -3571,6 +3572,7 @@ go/src/cmd/go/testdata/script/test_race.txt
 go/src/cmd/go/testdata/script/test_race_cover_mode_issue20435.txt
 go/src/cmd/go/testdata/script/test_race_install.txt
 go/src/cmd/go/testdata/script/test_race_install_cgo.txt
+go/src/cmd/go/testdata/script/test_race_tag.txt
 go/src/cmd/go/testdata/script/test_rebuildall.txt
 go/src/cmd/go/testdata/script/test_regexps.txt
 go/src/cmd/go/testdata/script/test_relative_cmdline.txt
@@ -12492,7 +12494,12 @@ go/test/fixedbugs/issue53619.go
 go/test/fixedbugs/issue53635.go
 go/test/fixedbugs/issue53653.go
 go/test/fixedbugs/issue53653.out
+go/test/fixedbugs/issue53702.go
 go/test/fixedbugs/issue5373.go
+go/test/fixedbugs/issue53982.go
+go/test/fixedbugs/issue54220.go
+go/test/fixedbugs/issue54467.go
+go/test/fixedbugs/issue54638.go
 go/test/fixedbugs/issue5470.dir/
 go/test/fixedbugs/issue5470.dir/a.go
 go/test/fixedbugs/issue5470.dir/b.go
@@ -13435,6 +13442,10 @@ go/test/typeparam/issue53419.go
 go/test/typeparam/issue53477.go
 go/test/typeparam/issue53762.go
 go/test/typeparam/issue54135.go
+go/test/typeparam/issue54302.dir/
+go/test/typeparam/issue54302.dir/a.go
+go/test/typeparam/issue54302.dir/main.go
+go/test/typeparam/issue54302.go
 go/test/typeparam/list.go
 go/test/typeparam/list2.go
 go/test/typeparam/listimp.dir/
