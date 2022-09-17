@@ -152,7 +152,7 @@ bootstrap: clean patch
 			${SETENV} ${MAKE_ENV} \
 			CGO_ENABLED=0 \
 			GOCACHE=${WRKDIST}/go-cache \
-			GOOS=openbsd GOARCH="${arch}" \
+			GOOS=openbsd GOARCH="${arch}" GOARM=7 \
 			${_PBUILD} ./bootstrap.bash
 		@echo "Repacking archive..."; \
 			BOOTSTRAPTBZ="${WRKDIR}/go-openbsd-${arch}-bootstrap.tbz"; \
