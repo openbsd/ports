@@ -1,7 +1,7 @@
 COMMENT=		D-Bus exploration tool
 
-GNOME_VERSION=		1.2.1
-GNOME_PROJECT=		dspy
+GNOME_VERSION=		1.4.0
+GNOME_PROJECT=		d-spy
 
 SHARED_LIBS += dspy-1                    0.0 # 1.0.0
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=		x11/gnome/libadwaita
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
+CFLAGS +=		-std=gnu99
 .endif
 
 .include <bsd.port.mk>
