@@ -1,10 +1,10 @@
 COMMENT=		efficient search engine and triplestore
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		3.3.3
+GNOME_VERSION=		3.4.0
 PKGNAME=		tracker3-${GNOME_VERSION}
 
-SHARED_LIBS += tracker-sparql-3.0        0.2 # 0.303.0
+SHARED_LIBS += tracker-sparql-3.0        0.2 # 0.400.0
 
 # LGPLv2.1+ - GPLv2+ - BSD-3-clause
 PERMIT_PACKAGE=		Yes
@@ -17,7 +17,7 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection
 
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
@@ -38,7 +38,6 @@ TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_ARGS=		-Dsystemd_user_services=false \
-			-Ddocs=false \
 			-Dsoup=soup3
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
