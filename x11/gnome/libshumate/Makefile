@@ -2,6 +2,7 @@ COMMENT=		GTK4 widget to display maps
 
 GNOME_PROJECT=		libshumate
 GNOME_VERSION=		1.0.0
+REVISION=		0
 
 SHARED_LIBS += shumate-1.0               0.0 # 1.0
 
@@ -13,8 +14,7 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 graphene-1.0
 WANTLIB += gtk-4 intl m soup-3.0 sqlite3
 
-MODULES=		devel/dconf \
-			devel/meson \
+MODULES=		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
