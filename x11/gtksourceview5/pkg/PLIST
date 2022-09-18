@@ -217,6 +217,7 @@ share/gtksourceview-5/language-specs/terraform.lang
 share/gtksourceview-5/language-specs/texinfo.lang
 share/gtksourceview-5/language-specs/thrift.lang
 share/gtksourceview-5/language-specs/toml.lang
+share/gtksourceview-5/language-specs/twig.lang
 share/gtksourceview-5/language-specs/typescript-js-expressions.lang
 share/gtksourceview-5/language-specs/typescript-js-functions-classes.lang
 share/gtksourceview-5/language-specs/typescript-js-literals.lang
@@ -268,6 +269,7 @@ share/icons/hicolor/scalable/actions/lang-struct-symbolic.svg
 share/icons/hicolor/scalable/actions/lang-typedef-symbolic.svg
 share/icons/hicolor/scalable/actions/lang-union-symbolic.svg
 share/icons/hicolor/scalable/actions/lang-variable-symbolic.svg
+share/locale/ab/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ar/LC_MESSAGES/gtksourceview-5.mo
 share/locale/as/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ast/LC_MESSAGES/gtksourceview-5.mo
@@ -307,6 +309,7 @@ share/locale/id/LC_MESSAGES/gtksourceview-5.mo
 share/locale/is/LC_MESSAGES/gtksourceview-5.mo
 share/locale/it/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ja/LC_MESSAGES/gtksourceview-5.mo
+share/locale/ka/LC_MESSAGES/gtksourceview-5.mo
 share/locale/kk/LC_MESSAGES/gtksourceview-5.mo
 share/locale/kn/LC_MESSAGES/gtksourceview-5.mo
 share/locale/ko/LC_MESSAGES/gtksourceview-5.mo
