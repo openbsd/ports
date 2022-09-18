@@ -1,8 +1,8 @@
 COMMENT =		elegant unit testing framework for C
 
-DISTNAME =		cmocka-1.1.3
+DISTNAME =		cmocka-1.1.5
 
-SHARED_LIBS +=		cmocka                    0.3 # 0.5
+SHARED_LIBS +=		cmocka                    0.4 # 0.5
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ Avoid a conflicting typedef on 32-bit arch.
 Index: include/cmocka.h
 --- include/cmocka.h.orig
 +++ include/cmocka.h
-@@ -57,7 +57,7 @@ int __stdcall IsDebuggerPresent();
+@@ -58,7 +58,7 @@ int __stdcall IsDebuggerPresent();
  
  /* If __WORDSIZE is not set, try to figure it out and default to 32 bit. */
  #ifndef __WORDSIZE
@@ -12,7 +12,7 @@ Index: include/cmocka.h
  #  define __WORDSIZE 64
  # else
  #  define __WORDSIZE 32
-@@ -110,6 +110,9 @@ typedef uintmax_t LargestIntegralType;
+@@ -115,6 +115,9 @@ typedef uintmax_t LargestIntegralType;
  #define cast_to_largest_integral_type(value) \
      ((LargestIntegralType)(value))
  
@@ -22,7 +22,7 @@ Index: include/cmocka.h
  /* Smallest integral type capable of holding a pointer. */
  #if !defined(_UINTPTR_T) && !defined(_UINTPTR_T_DEFINED)
  # if defined(_WIN32)
-@@ -138,6 +141,7 @@ typedef uintmax_t LargestIntegralType;
+@@ -143,6 +146,7 @@ typedef uintmax_t LargestIntegralType;
  # define _UINTPTR_T
  # define _UINTPTR_T_DEFINED
  #endif /* !defined(_UINTPTR_T) || !defined(_UINTPTR_T_DEFINED) */
