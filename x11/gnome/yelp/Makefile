@@ -1,8 +1,7 @@
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
-GNOME_VERSION=		42.1
-REVISION=		1
+GNOME_VERSION=		42.2
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -20,11 +19,11 @@ WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gtk-3 handy-1 harfbuzz harfbuzz-icu hyphen iconv icudata
 WANTLIB += icui18n icuuc idn2 intl javascriptcoregtk-4.1 jpeg
-WANTLIB += lcms2 lzma m nghttp2 notify openjp2 orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png psl secret-1
-WANTLIB += soup-3.0 sqlite3 tasn1 unistring webkit2gtk-4.1 webp
-WANTLIB += webpdemux woff2common woff2dec xcb xcb-dri2 xcb-dri3
-WANTLIB += xcb-glx xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
+WANTLIB += lcms2 lzma m nghttp2 openjp2 orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png psl secret-1 soup-3.0
+WANTLIB += sqlite3 tasn1 unistring webkit2gtk-4.1 webp webpdemux
+WANTLIB += woff2common woff2dec xcb xcb-dri2 xcb-dri3 xcb-glx
+WANTLIB += xcb-present xcb-render xcb-shm xcb-sync xcb-xfixes
 WANTLIB += xml2 xshmfence xslt z
 
 COMPILER=		base-clang ports-gcc base-gcc

@@ -28,6 +28,7 @@ share/applications/yelp.desktop
 share/glib-2.0/schemas/org.gnome.yelp.gschema.xml
 share/icons/hicolor/scalable/apps/org.gnome.Yelp.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Yelp-symbolic.svg
+share/locale/ab/LC_MESSAGES/yelp.mo
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/an/LC_MESSAGES/yelp.mo
