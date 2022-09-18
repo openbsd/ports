@@ -1,3 +1,4 @@
+@conflict dspy-*
 @bin bin/d-spy
 include/dspy-1/
 include/dspy-1/dspy-connection-button.h
