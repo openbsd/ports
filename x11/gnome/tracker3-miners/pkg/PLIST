@@ -68,6 +68,7 @@ share/glib-2.0/schemas/org.freedesktop.Tracker3.Extract.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker3.FTS.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.Tracker3.Miner.Files.gschema.xml
 share/glib-2.0/schemas/org.freedesktop.TrackerMiners3.enums.xml
+share/locale/ab/LC_MESSAGES/tracker3-miners.mo
 share/locale/ar/LC_MESSAGES/tracker3-miners.mo
 share/locale/as/LC_MESSAGES/tracker3-miners.mo
 share/locale/be/LC_MESSAGES/tracker3-miners.mo
@@ -96,6 +97,7 @@ share/locale/hu/LC_MESSAGES/tracker3-miners.mo
 share/locale/id/LC_MESSAGES/tracker3-miners.mo
 share/locale/it/LC_MESSAGES/tracker3-miners.mo
 share/locale/ja/LC_MESSAGES/tracker3-miners.mo
+share/locale/ka/LC_MESSAGES/tracker3-miners.mo
 share/locale/kk/LC_MESSAGES/tracker3-miners.mo
 share/locale/ko/LC_MESSAGES/tracker3-miners.mo
 share/locale/lt/LC_MESSAGES/tracker3-miners.mo
