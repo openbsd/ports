@@ -23,6 +23,8 @@ CONFIGURE_ARGS=	--without-libplot	\
 		--without-swf		\
 		--without-magick	\
 		--disable-docs
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 WANTLIB=	c ${COMPILER_LIBCXX} m
 
 # c++14
