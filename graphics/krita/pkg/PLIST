@@ -182,7 +182,7 @@ lib/kritaplugins/
 @lib lib/libkritaresources.so.${LIBkritaresources_VERSION}
 @lib lib/libkritaresourcewidgets.so.${LIBkritaresourcewidgets_VERSION}
 @lib lib/libkritastore.so.${LIBkritastore_VERSION}
-@so lib/libkritatiffpsd.so
+@lib lib/libkritatiffpsd.so.${LIBkritatiffpsd_VERSION}
 @lib lib/libkritaui.so.${LIBkritaui_VERSION}
 @lib lib/libkritaversion.so.${LIBkritaversion_VERSION}
 @lib lib/libkritawidgets.so.${LIBkritawidgets_VERSION}
@@ -1066,6 +1066,7 @@ share/locale/id/LC_MESSAGES/krita.mo
 share/locale/is/LC_MESSAGES/krita.mo
 share/locale/it/LC_MESSAGES/krita.mo
 share/locale/ja/LC_MESSAGES/krita.mo
+share/locale/ka/LC_MESSAGES/krita.mo
 share/locale/kk/LC_MESSAGES/krita.mo
 share/locale/km/LC_MESSAGES/krita.mo
 share/locale/ko/LC_MESSAGES/krita.mo

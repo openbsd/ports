@@ -1,6 +1,6 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.1.0
+VERSION =	5.1.1
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
@@ -22,6 +22,7 @@ SHARED_LIBS +=  kritaqmicinterface        1.0 # 17.0
 SHARED_LIBS +=  kritaresources            3.0 # 17.0
 SHARED_LIBS +=  kritaresourcewidgets      0.1 # 17.0
 SHARED_LIBS +=  kritapsdutils             0.0 # 0.0
+SHARED_LIBS +=  kritatiffpsd              0.0 # 0.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
