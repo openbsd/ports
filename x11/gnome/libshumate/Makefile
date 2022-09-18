@@ -1,9 +1,7 @@
 COMMENT=		GTK4 widget to display maps
 
-V=			1.0.0
 GNOME_PROJECT=		libshumate
-GNOME_VERSION=		${V}.beta
-PKGNAME=		${GNOME_PROJECT}-${V}beta
+GNOME_VERSION=		1.0.0
 
 SHARED_LIBS += shumate-1.0               0.0 # 1.0
 
@@ -30,7 +28,7 @@ TEST_IS_INTERACTIVE=	x11
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
+CFLAGS +=		-std=gnu99
 .endif
 
 .include <bsd.port.mk>

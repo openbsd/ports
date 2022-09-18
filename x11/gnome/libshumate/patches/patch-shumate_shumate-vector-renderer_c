@@ -4,7 +4,7 @@
 Index: shumate/shumate-vector-renderer.c
 --- shumate/shumate-vector-renderer.c.orig
 +++ shumate/shumate-vector-renderer.c
-@@ -462,7 +462,6 @@ shumate_vector_renderer_set_sprite_sheet_data (Shumate
+@@ -465,7 +465,6 @@ shumate_vector_renderer_set_sprite_sheet_data (Shumate
                 SHUMATE_STYLE_ERROR,
                 SHUMATE_STYLE_ERROR_SUPPORT_OMITTED,
                 "Libshumate was compiled without support for vector tiles.");
