@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		XSLT stylesheets for yelp
 
 GNOME_PROJECT=		yelp-xsl
-GNOME_VERSION=		42.0
+GNOME_VERSION=		42.1
 
 # GPLv2 - LGPLv2.1 - MIT
 PERMIT_PACKAGE=		Yes
