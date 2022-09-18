@@ -60,6 +60,7 @@
      SUBDIR += libgnomekbd
      SUBDIR += libgweather4
      SUBDIR += libmediaart
+     SUBDIR += libpanel
      SUBDIR += librsvg
      SUBDIR += libsecret
      SUBDIR += libshumate
