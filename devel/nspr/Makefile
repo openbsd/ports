@@ -1,6 +1,6 @@
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.34.1
+VER=			4.35
 DISTNAME=		nspr-${VER}
 
 SO_VERSION=		24.1
