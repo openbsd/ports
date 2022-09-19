@@ -30,8 +30,12 @@ LIB_DEPENDS = 	devel/glpk \
 # those are only needed to regenerate parsers in the development version
 # The release tarball doesn't even ship those .y/.l files
 CONFIGURE_ARGS += 	-DBUILD_SHARED_LIBS=ON \
-    			-DIGRAPH_ENABLE_TLS=ON \
-    			-DIGRAPH_ENABLE_LTO=ON
+    			-DIGRAPH_ENABLE_TLS=ON
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+CONFIGURE_ARGS += 	-DIGRAPH_ENABLE_LTO=ON
+.endif
 
 DEBUG_PACKAGES = 	${BUILD_PACKAGES}
 .include <bsd.port.mk>
