@@ -44,13 +44,23 @@ Index: libgcc/config.host
  mips*-*-linux*)				# Linux MIPS, either endian.
  	extra_parts="$extra_parts crtfastmath.o"
  	tmake_file="${tmake_file} t-crtfm"
-@@ -1159,6 +1177,9 @@ powerpc*-*-freebsd*)
- 	;;
+@@ -1160,6 +1178,9 @@ powerpc*-*-freebsd*)
  powerpc-*-netbsd*)
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
-+	;;
+ 	;;
 +powerpc*-*-openbsd*)
 +	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-crtstuff rs6000/t-openbsd"
- 	;;
++	;;
  powerpc-*-eabispe*)
  	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"
+ 	extra_parts="$extra_parts crtbegin.o crtend.o crtbeginS.o crtendS.o crtbeginT.o ecrti.o ecrtn.o ncrti.o ncrtn.o"
+@@ -1279,6 +1300,9 @@ riscv*-*-linux*)
+ riscv*-*-freebsd*)
+ 	tmake_file="${tmake_file} riscv/t-softfp${host_address} t-softfp riscv/t-elf riscv/t-elf${host_address} t-slibgcc-libgcc"
+ 	extra_parts="$extra_parts crtbegin.o crtend.o crti.o crtn.o crtendS.o crtbeginT.o"
++	;;
++riscv64-*-openbsd*)
++	tmake_file="${tmake_file} riscv/t-softfp${host_address} t-softfp riscv/t-elf riscv/t-elf${host_address}"
+ 	;;
+ riscv*-*-*)
+ 	tmake_file="${tmake_file} riscv/t-softfp${host_address} t-softfp riscv/t-elf riscv/t-elf${host_address}"

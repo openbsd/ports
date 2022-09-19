@@ -1,0 +1,15 @@
+lld doesn't support -mrelax.
+XXX check lld 15
+
+Index: gcc/config/riscv/riscv.opt
+--- gcc/config/riscv/riscv.opt.orig
++++ gcc/config/riscv/riscv.opt
+@@ -128,7 +128,7 @@ Target Mask(EXPLICIT_RELOCS)
+ Use %reloc() operators, rather than assembly macros, to load addresses.
+ 
+ mrelax
+-Target Bool Var(riscv_mrelax) Init(1)
++Target Bool Var(riscv_mrelax) Init(0)
+ Take advantage of linker relaxations to reduce the number of instructions
+ required to materialize symbol addresses.
+ 

@@ -109,7 +109,27 @@ Index: gcc/config.gcc
  i[34567]86-*-linux* | i[34567]86-*-kfreebsd*-gnu | i[34567]86-*-gnu* | i[34567]86-*-kopensolaris*-gnu)
  			# Intel 80386's running GNU/*
  			# with ELF format using glibc 2
-@@ -2891,6 +2929,18 @@ pdp11-*-*)
+@@ -2532,6 +2570,19 @@ mips*-*-netbsd*)			# NetBSD/mips, either endian.
+ 	tm_file="elfos.h ${tm_file} mips/elf.h ${nbsd_tm_file} mips/netbsd.h"
+ 	extra_options="${extra_options} netbsd.opt netbsd-elf.opt"
+ 	;;
++riscv64-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h"
++	tm_file="${tm_file} openbsd-stdint.h"
++	tm_file="${tm_file} openbsd.h riscv/openbsd.h openbsd-libpthread.h"
++	tmake_file="${tmake_file} riscv/t-riscv"
++	extra_options="${extra_options} openbsd.opt"
++	# Force .init_array support.  The configure script cannot always
++	# automatically detect that GAS supports it, yet we require it.
++	gcc_cv_initfini_array=yes
++	# Also force this, shouldn't hurt...
++	gnu_ld=yes
++	gas=yes
++	;;
+ mips*-img-linux*)
+ 	tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h ${tm_file} mips/gnu-user.h mips/linux.h mips/linux-common.h mips/mti-linux.h"
+ 	extra_options="${extra_options} linux-android.opt"
+@@ -2891,6 +2942,18 @@ pdp11-*-*)
  #	tmake_file="${tmake_file} rs6000/t-fprules"
  #	extra_headers=
  #	;;
@@ -128,7 +148,7 @@ Index: gcc/config.gcc
  powerpc-*-darwin*)
  	extra_options="${extra_options} ${cpu_type}/darwin.opt"
  	case ${target} in
-@@ -3452,10 +3502,10 @@ sparc64-*-netbsd*)
+@@ -3452,10 +3515,10 @@ sparc64-*-netbsd*)
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
  sparc64-*-openbsd*)
@@ -140,7 +160,7 @@ Index: gcc/config.gcc
  	gas=yes gnu_ld=yes
  	with_cpu=ultrasparc
  	tmake_file="${tmake_file} sparc/t-sparc"
-@@ -3682,6 +3732,12 @@ case ${target} in
+@@ -3682,6 +3745,12 @@ case ${target} in
      else
        arch=i386
      fi
