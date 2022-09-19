@@ -4,7 +4,7 @@ daemon="${LOCALBASE}/bin/step-ca"
 daemon_flags="config/ca.json"
 daemon_user="_step-ca"
 daemon_logger=daemon.info
-daemon_execdir="${VARBASE}/step-ca"
+daemon_execdir="${LOCALSTATEDIR}/step-ca"
 
 . /etc/rc.d/rc.subr
 

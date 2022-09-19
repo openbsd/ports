@@ -8,6 +8,8 @@ MODGO_MODNAME =	github.com/smallstep/certificates
 MODGO_VERSION =	v${V}
 DISTNAME =	step-ca-${V}
 
+REVISION =	0
+
 CATEGORIES =	security
 
 HOMEPAGE =	https://smallstep.com/certificates
