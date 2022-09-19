@@ -1,6 +1,5 @@
 COMMENT =	KDE hardware abstraction layer
 DISTNAME =	solid-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	KF5Solid		7.1
 

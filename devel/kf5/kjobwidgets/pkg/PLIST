@@ -21,7 +21,6 @@ lib/cmake/KF5JobWidgets/KF5JobWidgetsConfigVersion.cmake
 lib/cmake/KF5JobWidgets/KF5JobWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5JobWidgets/KF5JobWidgetsTargets.cmake
 @lib lib/libKF5JobWidgets.so.${LIBKF5JobWidgets_VERSION}
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/kf5_org.kde.JobView.xml
 share/dbus-1/interfaces/kf5_org.kde.JobViewServer.xml
 share/dbus-1/interfaces/kf5_org.kde.JobViewV2.xml

@@ -20,7 +20,6 @@ lib/cmake/KF5GlobalAccel/KF5GlobalAccelTargets.cmake
 lib/qt5/plugins/org.kde.kglobalaccel5.platforms/
 @so lib/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 lib/systemd/user/plasma-kglobalaccel.service
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/kf5_org.kde.KGlobalAccel.xml
 share/dbus-1/interfaces/kf5_org.kde.kglobalaccel.Component.xml
 share/dbus-1/services/org.kde.kglobalaccel.service

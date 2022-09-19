@@ -1,6 +1,5 @@
 COMMENT =	KDE convenience classes for DBus
 DISTNAME =	kdbusaddons-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	KF5DBusAddons		6.1
 

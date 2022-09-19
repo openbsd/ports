@@ -5,7 +5,6 @@ lib/cmake/KDED/KDEDConfigVersion.cmake
 lib/systemd/user/plasma-kded.service
 @man man/man8/kded5.8
 share/applications/org.kde.kded5.desktop
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.kde.kded5.xml
 share/dbus-1/services/org.kde.kded5.service
 share/kservicetypes5/kdedmodule.desktop

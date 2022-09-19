@@ -1,6 +1,5 @@
 COMMENT =	speed up for applications inside KDE workspaces
 DISTNAME =	kinit-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kdeinit5_klauncher	6.0
 

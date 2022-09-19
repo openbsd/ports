@@ -96,9 +96,6 @@ lib/cmake/KF5CoreAddons/KF5CoreAddonsTargets.cmake
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF5CoreAddons/KF5CoreAddonsToolingTargets.cmake
 @lib lib/libKF5CoreAddons.so.${LIBKF5CoreAddons_VERSION}
-lib/qt5/plugins/namespace/
-@so lib/qt5/plugins/namespace/jsonplugin_cmake_macro.so
-@so lib/qt5/plugins/namespace/pluginwithoutmetadata.so
 share/kf5/
 share/kf5/licenses/
 share/kf5/licenses/ARTISTIC
@@ -121,6 +118,7 @@ share/locale/az/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/be/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/be/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/be@latin/LC_MESSAGES/kcoreaddons5_qt.qm
+share/locale/be@latin/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/bg/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/bg/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/bn/LC_MESSAGES/kcoreaddons5_qt.qm
@@ -198,6 +196,7 @@ share/locale/it/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/ja/LC_MESSAGES/kcoreaddons5_qt.qm
 share/locale/ja/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/ka/LC_MESSAGES/kcoreaddons5_qt.qm
+share/locale/ka/LC_MESSAGES/kde5_xml_mimetypes.qm
 share/locale/kab/
 share/locale/kab/LC_MESSAGES/
 share/locale/kab/LC_MESSAGES/kcoreaddons5_qt.qm

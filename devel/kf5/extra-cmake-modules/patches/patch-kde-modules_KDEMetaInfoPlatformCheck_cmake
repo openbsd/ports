@@ -15,4 +15,4 @@ Index: kde-modules/KDEMetaInfoPlatformCheck.cmake
 +                if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
                      set(_MetainfoFoundSupportedPlatform true)
                  endif()
-             elseif (${CMAKE_MATCH_1} STREQUAL "Windows")
+             elseif (${CMAKE_MATCH_1} STREQUAL "OpenBSD")

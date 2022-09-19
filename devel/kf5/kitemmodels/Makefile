@@ -1,6 +1,5 @@
 COMMENT =		KDE item models extending the Qt model-view framework
 DISTNAME =		kitemmodels-${VERSION}
-REVISION =		0
 
 SHARED_LIBS =		KF5ItemModels		6.1
 

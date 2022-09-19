@@ -79,6 +79,8 @@ share/locale/it/LC_MESSAGES/kwallet-query.mo
 share/locale/it/LC_MESSAGES/kwalletd5.mo
 share/locale/ja/LC_MESSAGES/kwallet-query.mo
 share/locale/ja/LC_MESSAGES/kwalletd5.mo
+share/locale/ka/LC_MESSAGES/kwallet-query.mo
+share/locale/ka/LC_MESSAGES/kwalletd5.mo
 share/locale/kk/LC_MESSAGES/kwalletd5.mo
 share/locale/km/LC_MESSAGES/kwalletd5.mo
 share/locale/kn/LC_MESSAGES/kwalletd5.mo

@@ -1,6 +1,5 @@
 COMMENT =	KDE plugin framework for user interface components
 DISTNAME =	kparts-${VERSION}
-REVISION =	0
 
 SHARED_LIBS =		KF5Parts	7.0
 
