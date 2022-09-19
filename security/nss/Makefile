@@ -1,8 +1,8 @@
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.82
+VERSION=		3.83
 # from https://hg.mozilla.org/projects/nss/file/tip/automation/release/nspr-version.txt
-NSPR_VERSION=		4.34
+NSPR_VERSION=		4.34.1
 DISTNAME=		nss-${VERSION}
 
 SO_VERSION=		58.13
