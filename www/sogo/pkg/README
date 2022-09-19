@@ -203,6 +203,7 @@ sogod OCSSessionsFolderURL postgresql://_sogo:sogo@localhost:5432/sogo/sogo_sess
 sogod SOGoACLsSendEMailNotifications YES
 sogod SOGoAppointmentSendEMailNotifications YES
 sogod WOWorkersCount 4
+sogod WOPort 127.0.0.1:20000
 sogod SOGoDraftsFolderName INBOX.Drafts
 sogod SOGoTrashFolderName INBOX.Trash
 sogod SOGoSentFolderName INBOX.Sent
@@ -215,14 +216,6 @@ Update the files in the chroot environment of apache as root:
 # rm -rf ${VARBASE}/www/lib/sogo
 # mkdir -p ${VARBASE}/www/lib/sogo
 # cp -R ${TRUEPREFIX}/lib/GNUstep/SOGo/WebServerResources ${VARBASE}/www/lib/sogo/www
-
-Upgrade SOGo from < 2.1.1
-=========================
-With version 2.1.0, the WOPort default changed from listening on *:20000
-to 127.0.0.1:20000. To get back the old behaviour, run the following
-command:
-
-# su _sogo "defaults write sogod WOPort *:20000"
 
 Upgrade SOGo from < 2.3.0
 ==========================
@@ -255,3 +248,12 @@ based on your database backend. The scripts will ask you for the database creden
 
 # su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-3.2.10_to_4.0.0.sh"
 # su _sogo "${TRUEPREFIX}/share/doc/sogo/sql-update-3.2.10_to_4.0.0-mysql.sh"
+
+Upgrade SOGo from < 5.7.1
+=========================
+With version 5.7.1, the WOPort default has to be set, as it now tries to 
+listen on IPv4 and IPv6 in parallel, which fails on OpenBSD.
+The prior default was to listen on 127.0.0.1:20000. To get back the old behaviour,
+run the following command:
+
+# su _sogo "defaults write sogod WOPort 127.0.0.1:20000"
