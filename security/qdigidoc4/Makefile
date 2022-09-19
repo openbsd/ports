@@ -29,13 +29,12 @@ DISTFILES +=		eu-lotl-pivot-300.xml:1
 CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 
 MASTER_SITES2 =		https://github.com/open-eid/DigiDoc4-Client/
-# all pending
+# merged but after 4.2.12 release
 PATCHFILES +=		bsd-{pull/}1072.patch:2
 
 MASTER_SITES3 =		https://github.com/open-eid/qt-common/
 # merged but after 4.2.12 release
 PATCHFILES +=		qt-common-fix-i386-{pull/}124.patch:3
-# all pending
 PATCHFILES +=		qt-common-pcsc-lite-{pull/}121.patch:3
 PATCH_CASES +=		qt-common-*.patch) \
 				${PATCH} ${PATCH_DIST_ARGS} < $$patchfile \
