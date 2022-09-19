@@ -1,6 +1,6 @@
 COMMENT =		GUI tool to rearrange and modify PDF files
 
-MODPY_EGG_VERSION =	1.8.2
+MODPY_EGG_VERSION =	1.9.0
 GH_ACCOUNT =		pdfarranger
 GH_PROJECT =		pdfarranger
 GH_TAGNAME =		${MODPY_EGG_VERSION}
@@ -12,8 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python \
 			textproc/intltool
-
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 # Tests write to HOME
 PORTHOME =		${WRKDIR}
