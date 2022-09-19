@@ -21,6 +21,7 @@ RUN_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
 # img2pdf and autodetected at runtime; we don't have it in ports yet)
 MODPY_PYTEST =		Yes
 TEST_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR} \
-			math/py-scipy${MODPY_FLAVOR}
+			math/py-scipy${MODPY_FLAVOR} \
+			graphics/p5-Image-ExifTool
 
 .include <bsd.port.mk>
