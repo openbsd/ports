@@ -1,5 +1,6 @@
 COMMENT =		Python library for reading and writing PDF files
 
+# please check pdfarranger if updating, it breaks often
 V =			6.0.0
 MODPY_EGG_VERSION =	${V}.post1
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
