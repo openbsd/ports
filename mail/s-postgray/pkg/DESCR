@@ -5,6 +5,11 @@ Graylisting defers message acceptance (for a specific recipient / sender
 via a standardized SMTP response (see allow(5), RFC 5321), which does
 not prevent message delivery from SMTP M(ail) T(ransfer) A(gent)s,
 but can help against simple spam producing programs.
-s-postgray is started via spawn(8), with the given user credentials,
-therefore the built-in DB store path is /tmp -- you surely want to
-change this via configuration file or command line option.
+
+s-postgray clients are started via spawn(8), as shown in the manual.
+The server is started by clients as necessary, but it can be --startup
+also since v0.8.0.
+
+s-postgray needs to be configured as the builtin DB store path is /tmp
+(see manual), user and group settings are inherited from spawn(8) (or
+the environment which uses --startup).
