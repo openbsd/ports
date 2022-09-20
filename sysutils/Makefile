@@ -352,6 +352,8 @@
      SUBDIR += ruby-r10k
      SUBDIR += ruby-shadow,ruby30
      SUBDIR += ruby-shadow,ruby31
+     SUBDIR += ruby-serverengine
+     SUBDIR += ruby-sigdump
      SUBDIR += ruby-tzinfo
      SUBDIR += ruby-vlad
      SUBDIR += rundeck
