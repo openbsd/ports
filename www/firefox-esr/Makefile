@@ -1,8 +1,8 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
-MOZILLA_VERSION =	102.2.0esr
-MOZILLA_PROFDATA_TASKID=WF3EhaFCRDuhqowwuHXgNA
+MOZILLA_VERSION =	102.3.0esr
+MOZILLA_PROFDATA_TASKID=GSQqlLsyTg6jt1PGEuop6Q
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
@@ -13,7 +13,6 @@ HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
 SO_VERSION =	9.0
 MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 ipcclientcerts
-REVISION =	0
 
 CATEGORIES =	www
 
