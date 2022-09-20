@@ -352,6 +352,7 @@
      SUBDIR += ruby-openid
      SUBDIR += ruby-pledge,ruby30
      SUBDIR += ruby-pledge,ruby31
+     SUBDIR += ruby-rotp
      SUBDIR += samdump2
      SUBDIR += scanlogd
      SUBDIR += scanssh
