@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/elf.go
 --- src/cmd/link/internal/ld/elf.go.orig
 +++ src/cmd/link/internal/ld/elf.go
-@@ -1475,6 +1475,15 @@ func (ctxt *Link) doelf() {
+@@ -1475,11 +1475,20 @@ func (ctxt *Link) doelf() {
  		dynamic := ldr.CreateSymForUpdate(".dynamic", 0)
  		dynamic.SetType(sym.SELFSECT) // writable
  
@@ -17,6 +17,12 @@ Index: src/cmd/link/internal/ld/elf.go
  		if ctxt.IsS390X() {
  			// S390X uses .got instead of .got.plt
  			gotplt = got
+ 		}
+-		thearch.Elfsetupplt(ctxt, plt, gotplt, dynamic.Sym())
++		thearch.Elfsetupplt(ctxt, ctxt.loader, plt, gotplt, dynamic.Sym())
+ 
+ 		/*
+ 		 * .dynamic table
 @@ -1524,6 +1533,7 @@ func (ctxt *Link) doelf() {
  		// DT_JMPREL is emitted so we have to defer generation of elf.DT_PLTREL,
  		// DT_PLTRELSZ, and elf.DT_JMPREL dynamic entries until after we know the

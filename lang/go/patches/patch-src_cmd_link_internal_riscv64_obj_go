@@ -1,0 +1,33 @@
+Index: src/cmd/link/internal/riscv64/obj.go
+--- src/cmd/link/internal/riscv64/obj.go.orig
++++ src/cmd/link/internal/riscv64/obj.go
+@@ -20,6 +20,7 @@ func Init() (*sys.Arch, ld.Arch) {
+ 		Dwarfregsp: dwarfRegSP,
+ 		Dwarfreglr: dwarfRegLR,
+ 
++		Adddynrel:        adddynrel,
+ 		Archinit:         archinit,
+ 		Archreloc:        archreloc,
+ 		Archrelocvariant: archrelocvariant,
+@@ -41,10 +42,10 @@ func Init() (*sys.Arch, ld.Arch) {
+ 
+ 		Linuxdynld: "/lib/ld.so.1",
+ 
++		Dragonflydynld: "XXX",
+ 		Freebsddynld:   "XXX",
+ 		Netbsddynld:    "XXX",
+-		Openbsddynld:   "XXX",
+-		Dragonflydynld: "XXX",
++		Openbsddynld:   "/usr/libexec/ld.so",
+ 		Solarisdynld:   "XXX",
+ 	}
+ 
+@@ -53,7 +54,7 @@ func Init() (*sys.Arch, ld.Arch) {
+ 
+ func archinit(ctxt *ld.Link) {
+ 	switch ctxt.HeadType {
+-	case objabi.Hlinux:
++	case objabi.Hlinux, objabi.Hopenbsd:
+ 		ld.Elfinit(ctxt)
+ 		ld.HEADR = ld.ELFRESERVE
+ 		if *ld.FlagTextAddr == -1 {

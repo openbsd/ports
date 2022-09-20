@@ -4440,6 +4440,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/asm_linux_ppc64x.s
 go/src/cmd/vendor/golang.org/x/sys/unix/asm_linux_riscv64.s
 go/src/cmd/vendor/golang.org/x/sys/unix/asm_linux_s390x.s
 go/src/cmd/vendor/golang.org/x/sys/unix/asm_openbsd_mips64.s
+go/src/cmd/vendor/golang.org/x/sys/unix/asm_openbsd_riscv64.s
 go/src/cmd/vendor/golang.org/x/sys/unix/asm_solaris_amd64.s
 go/src/cmd/vendor/golang.org/x/sys/unix/asm_zos_s390x.s
 go/src/cmd/vendor/golang.org/x/sys/unix/bluetooth_linux.go
@@ -4540,6 +4541,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_arm.go
 go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_mips64.go
+go/src/cmd/vendor/golang.org/x/sys/unix/syscall_openbsd_riscv64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/syscall_solaris.go
 go/src/cmd/vendor/golang.org/x/sys/unix/syscall_solaris_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/syscall_unix.go
@@ -4586,6 +4588,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_arm.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_mips64.go
+go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_openbsd_riscv64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_solaris_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zerrors_zos_s390x.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zptrace_armnn_linux.go
@@ -4636,6 +4639,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_openbsd_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_openbsd_arm.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_openbsd_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_openbsd_mips64.go
+go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_openbsd_riscv64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_solaris_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsyscall_zos_s390x.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysctl_openbsd_386.go
@@ -4643,6 +4647,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/zsysctl_openbsd_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysctl_openbsd_arm.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysctl_openbsd_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysctl_openbsd_mips64.go
+go/src/cmd/vendor/golang.org/x/sys/unix/zsysctl_openbsd_riscv64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_darwin_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_darwin_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_dragonfly_amd64.go
@@ -4674,6 +4679,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_openbsd_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_openbsd_arm.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_openbsd_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_openbsd_mips64.go
+go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_openbsd_riscv64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/zsysnum_zos_s390x.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_aix_ppc.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_aix_ppc64.go
@@ -4710,6 +4716,7 @@ go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_arm.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_arm64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_mips64.go
+go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_openbsd_riscv64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_solaris_amd64.go
 go/src/cmd/vendor/golang.org/x/sys/unix/ztypes_zos_s390x.go
 go/src/cmd/vendor/golang.org/x/sys/windows/
@@ -8509,6 +8516,7 @@ go/src/runtime/cgo/gcc_openbsd_amd64.c
 go/src/runtime/cgo/gcc_openbsd_arm.c
 go/src/runtime/cgo/gcc_openbsd_arm64.c
 go/src/runtime/cgo/gcc_openbsd_mips64.c
+go/src/runtime/cgo/gcc_openbsd_riscv64.c
 go/src/runtime/cgo/gcc_ppc64x.c
 go/src/runtime/cgo/gcc_riscv64.S
 go/src/runtime/cgo/gcc_s390x.S
@@ -8625,6 +8633,7 @@ go/src/runtime/defs_openbsd_amd64.go
 go/src/runtime/defs_openbsd_arm.go
 go/src/runtime/defs_openbsd_arm64.go
 go/src/runtime/defs_openbsd_mips64.go
+go/src/runtime/defs_openbsd_riscv64.go
 go/src/runtime/defs_plan9_386.go
 go/src/runtime/defs_plan9_amd64.go
 go/src/runtime/defs_plan9_arm.go
@@ -9065,6 +9074,7 @@ go/src/runtime/rt0_openbsd_amd64.s
 go/src/runtime/rt0_openbsd_arm.s
 go/src/runtime/rt0_openbsd_arm64.s
 go/src/runtime/rt0_openbsd_mips64.s
+go/src/runtime/rt0_openbsd_riscv64.s
 go/src/runtime/rt0_plan9_386.s
 go/src/runtime/rt0_plan9_amd64.s
 go/src/runtime/rt0_plan9_arm.s
@@ -9130,6 +9140,7 @@ go/src/runtime/signal_openbsd_amd64.go
 go/src/runtime/signal_openbsd_arm.go
 go/src/runtime/signal_openbsd_arm64.go
 go/src/runtime/signal_openbsd_mips64.go
+go/src/runtime/signal_openbsd_riscv64.go
 go/src/runtime/signal_plan9.go
 go/src/runtime/signal_ppc64x.go
 go/src/runtime/signal_riscv64.go
@@ -9212,6 +9223,7 @@ go/src/runtime/sys_openbsd_amd64.s
 go/src/runtime/sys_openbsd_arm.s
 go/src/runtime/sys_openbsd_arm64.s
 go/src/runtime/sys_openbsd_mips64.s
+go/src/runtime/sys_openbsd_riscv64.s
 go/src/runtime/sys_plan9_386.s
 go/src/runtime/sys_plan9_amd64.s
 go/src/runtime/sys_plan9_arm.s
@@ -9516,6 +9528,7 @@ go/src/syscall/asm_openbsd_amd64.s
 go/src/syscall/asm_openbsd_arm.s
 go/src/syscall/asm_openbsd_arm64.s
 go/src/syscall/asm_openbsd_mips64.s
+go/src/syscall/asm_openbsd_riscv64.s
 go/src/syscall/asm_plan9_386.s
 go/src/syscall/asm_plan9_amd64.s
 go/src/syscall/asm_plan9_arm.s
@@ -9650,6 +9663,7 @@ go/src/syscall/syscall_openbsd_arm.go
 go/src/syscall/syscall_openbsd_arm64.go
 go/src/syscall/syscall_openbsd_libc.go
 go/src/syscall/syscall_openbsd_mips64.go
+go/src/syscall/syscall_openbsd_riscv64.go
 go/src/syscall/syscall_plan9.go
 go/src/syscall/syscall_plan9_test.go
 go/src/syscall/syscall_ptrace_test.go
@@ -9708,6 +9722,7 @@ go/src/syscall/zerrors_openbsd_amd64.go
 go/src/syscall/zerrors_openbsd_arm.go
 go/src/syscall/zerrors_openbsd_arm64.go
 go/src/syscall/zerrors_openbsd_mips64.go
+go/src/syscall/zerrors_openbsd_riscv64.go
 go/src/syscall/zerrors_solaris_amd64.go
 go/src/syscall/zerrors_windows.go
 go/src/syscall/zsyscall_aix_ppc64.go
@@ -9747,6 +9762,8 @@ go/src/syscall/zsyscall_openbsd_arm64.go
 go/src/syscall/zsyscall_openbsd_arm64.s
 go/src/syscall/zsyscall_openbsd_mips64.go
 go/src/syscall/zsyscall_openbsd_mips64.s
+go/src/syscall/zsyscall_openbsd_riscv64.go
+go/src/syscall/zsyscall_openbsd_riscv64.s
 go/src/syscall/zsyscall_plan9_386.go
 go/src/syscall/zsyscall_plan9_amd64.go
 go/src/syscall/zsyscall_plan9_arm.go
@@ -9782,6 +9799,7 @@ go/src/syscall/zsysnum_openbsd_amd64.go
 go/src/syscall/zsysnum_openbsd_arm.go
 go/src/syscall/zsysnum_openbsd_arm64.go
 go/src/syscall/zsysnum_openbsd_mips64.go
+go/src/syscall/zsysnum_openbsd_riscv64.go
 go/src/syscall/zsysnum_plan9.go
 go/src/syscall/zsysnum_solaris_amd64.go
 go/src/syscall/ztypes_aix_ppc64.go
@@ -9814,6 +9832,7 @@ go/src/syscall/ztypes_openbsd_amd64.go
 go/src/syscall/ztypes_openbsd_arm.go
 go/src/syscall/ztypes_openbsd_arm64.go
 go/src/syscall/ztypes_openbsd_mips64.go
+go/src/syscall/ztypes_openbsd_riscv64.go
 go/src/syscall/ztypes_solaris_amd64.go
 go/src/testdata/
 go/src/testdata/Isaac.Newton-Opticks.txt
@@ -10130,6 +10149,7 @@ go/src/vendor/golang.org/x/sys/cpu/cpu_netbsd_arm64.go
 go/src/vendor/golang.org/x/sys/cpu/cpu_other_arm.go
 go/src/vendor/golang.org/x/sys/cpu/cpu_other_arm64.go
 go/src/vendor/golang.org/x/sys/cpu/cpu_other_mips64x.go
+go/src/vendor/golang.org/x/sys/cpu/cpu_other_riscv64.go
 go/src/vendor/golang.org/x/sys/cpu/cpu_ppc64x.go
 go/src/vendor/golang.org/x/sys/cpu/cpu_riscv64.go
 go/src/vendor/golang.org/x/sys/cpu/cpu_s390x.go

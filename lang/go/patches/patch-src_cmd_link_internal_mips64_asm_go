@@ -134,7 +134,7 @@ Index: src/cmd/link/internal/mips64/asm.go
  		return false
  	case objabi.R_ADDR, objabi.R_DWARFSECREF:
  		switch r.Size {
-@@ -85,9 +193,16 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+@@ -85,23 +193,193 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
  			// via the external linker.
  			addend += 0x7000
  		}
@@ -153,11 +153,12 @@ Index: src/cmd/link/internal/mips64/asm.go
  	}
  	out.Write64(uint64(addend))
  
-@@ -95,13 +210,176 @@ func elfreloc1(ctxt *ld.Link, out *ld.OutBuf, ldr *loa
+ 	return true
  }
  
- func elfsetupplt(ctxt *ld.Link, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
+-func elfsetupplt(ctxt *ld.Link, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
 -	return
++func elfsetupplt(ctxt *ld.Link, ldr *loader.Loader, plt, gotplt *loader.SymbolBuilder, dynamic loader.Sym) {
 +	if plt.Size() != 0 {
 +		return
 +	}
