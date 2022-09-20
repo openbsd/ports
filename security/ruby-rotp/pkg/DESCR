@@ -1,0 +1,2 @@
+Ruby OTP library that Works for both HOTP and TOTP. It includes QR
+Code provisioning.

@@ -1,0 +1,66 @@
+${GEM_BIN}/rotp${GEM_BIN_SUFFIX}
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.dockerignore
+@comment ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+@comment ${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+@comment ${GEM_LIB}/gems/${DISTNAME}/Dockerfile-2.3
+@comment ${GEM_LIB}/gems/${DISTNAME}/Dockerfile-2.5
+@comment ${GEM_LIB}/gems/${DISTNAME}/Dockerfile-2.6
+@comment ${GEM_LIB}/gems/${DISTNAME}/Dockerfile-2.7
+@comment ${GEM_LIB}/gems/${DISTNAME}/Dockerfile-3.0-rc
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/Guardfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/rotp
+${GEM_LIB}/gems/${DISTNAME}/doc/
+${GEM_LIB}/gems/${DISTNAME}/doc/ROTP/
+${GEM_LIB}/gems/${DISTNAME}/doc/ROTP/HOTP.html
+${GEM_LIB}/gems/${DISTNAME}/doc/ROTP/OTP.html
+${GEM_LIB}/gems/${DISTNAME}/doc/ROTP/TOTP.html
+${GEM_LIB}/gems/${DISTNAME}/doc/Rotp.html
+${GEM_LIB}/gems/${DISTNAME}/doc/_index.html
+${GEM_LIB}/gems/${DISTNAME}/doc/class_list.html
+${GEM_LIB}/gems/${DISTNAME}/doc/css/
+${GEM_LIB}/gems/${DISTNAME}/doc/css/common.css
+${GEM_LIB}/gems/${DISTNAME}/doc/css/full_list.css
+${GEM_LIB}/gems/${DISTNAME}/doc/css/style.css
+${GEM_LIB}/gems/${DISTNAME}/doc/file.README.html
+${GEM_LIB}/gems/${DISTNAME}/doc/file_list.html
+${GEM_LIB}/gems/${DISTNAME}/doc/frames.html
+${GEM_LIB}/gems/${DISTNAME}/doc/index.html
+${GEM_LIB}/gems/${DISTNAME}/doc/js/
+${GEM_LIB}/gems/${DISTNAME}/doc/js/app.js
+${GEM_LIB}/gems/${DISTNAME}/doc/js/full_list.js
+${GEM_LIB}/gems/${DISTNAME}/doc/js/jquery.js
+${GEM_LIB}/gems/${DISTNAME}/doc/method_list.html
+${GEM_LIB}/gems/${DISTNAME}/doc/top-level-namespace.html
+@comment ${GEM_LIB}/gems/${DISTNAME}/docker-compose.yml
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/arguments.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/base32.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/cli.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/hotp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/otp/
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/otp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/otp/uri.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/totp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rotp/version.rb
+${GEM_LIB}/gems/${DISTNAME}/rotp.gemspec
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/arguments_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/base32_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/cli_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/hotp_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/otp/
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/otp/uri_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/lib/rotp/totp_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
