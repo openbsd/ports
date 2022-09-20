@@ -2,11 +2,9 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.8.4
+VERSION=	10.9.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION-server= 1
-REVISION-tests=	0
 EPOCH=		1
 
 CATEGORIES=	databases
@@ -44,7 +42,7 @@ BUILD_DEPENDS=	devel/bison \
 		devel/fmt
 
 LIB_DEPENDS-main=	${LIB_DEPENDS}
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.8v1,<10.9v1 \
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.9v1,<10.10v1 \
 			databases/p5-DBD-MariaDB
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
@@ -56,7 +54,7 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			devel/pcre2 \
 			net/curl \
 			textproc/libxml
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.8v1,<10.9v1
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.9v1,<10.10v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			devel/pcre2
 

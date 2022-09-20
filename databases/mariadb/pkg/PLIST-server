@@ -217,6 +217,7 @@ include/mysql/server/private/json_table.h
 include/mysql/server/private/key.h
 include/mysql/server/private/keycaches.h
 include/mysql/server/private/lex.h
+include/mysql/server/private/lex_charset.h
 include/mysql/server/private/lex_string.h
 include/mysql/server/private/lex_symbol.h
 include/mysql/server/private/lf.h
@@ -460,11 +461,13 @@ include/mysql/server/private/wsrep_high_priority_service.h
 include/mysql/server/private/wsrep_mutex.h
 include/mysql/server/private/wsrep_mysqld.h
 include/mysql/server/private/wsrep_mysqld_c.h
+include/mysql/server/private/wsrep_on.h
 include/mysql/server/private/wsrep_priv.h
 include/mysql/server/private/wsrep_schema.h
 include/mysql/server/private/wsrep_server_service.h
 include/mysql/server/private/wsrep_server_state.h
 include/mysql/server/private/wsrep_sst.h
+include/mysql/server/private/wsrep_status.h
 include/mysql/server/private/wsrep_storage_service.h
 include/mysql/server/private/wsrep_thd.h
 include/mysql/server/private/wsrep_trans_observer.h
@@ -504,6 +507,7 @@ lib/mysql/plugin/daemon_example.ini
 @so lib/mysql/plugin/ha_spider.so
 @so lib/mysql/plugin/ha_test_sql_discovery.so
 @so lib/mysql/plugin/handlersocket.so
+@so lib/mysql/plugin/hashicorp_key_management.so
 @so lib/mysql/plugin/libdaemon_example.so
 @so lib/mysql/plugin/locales.so
 @so lib/mysql/plugin/metadata_lock_info.so
@@ -581,6 +585,7 @@ share/doc/mysql/INSTALL-BINARY
 share/doc/mysql/README-wsrep
 share/doc/mysql/README.md
 share/doc/mysql/THIRDPARTY
+share/doc/mysql/hashicorp_key_management.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/login.conf.d/mysqld
 @sample ${SYSCONFDIR}/login.conf.d/mysqld
