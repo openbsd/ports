@@ -20,6 +20,7 @@ MODGO_MODULES =	\
 	github.com/!azure/go-autorest/tracing				 v0.6.0 \
 	github.com/!burnt!sushi/toml					 v0.3.1 \
 	github.com/!burnt!sushi/xgb					 v0.0.0-20160522181843-27f122750802 \
+	github.com/!d!a!t!a-!d!o!g/go-sqlmock				 v1.3.3 \
 	github.com/!data!dog/datadog-agent/pkg/obfuscate		 v0.0.0-20211129110424-6491aa3bf583 \
 	github.com/!data!dog/datadog-go					 v4.8.2+incompatible \
 	github.com/!data!dog/datadog-go/v5				 v5.0.2 \
@@ -42,6 +43,7 @@ MODGO_MODULES =	\
 	github.com/andreyvit/diff					 v0.0.0-20170406064948-c7f18ee00883 \
 	github.com/andybalholm/brotli					 v1.0.4 \
 	github.com/antihax/optional					 v1.0.0 \
+	github.com/antonmedv/expr					 v1.9.0 \
 	github.com/apache/thrift					 v0.12.0 \
 	github.com/apparentlymart/go-cidr				 v1.1.0 \
 	github.com/arbovm/levenshtein					 v0.0.0-20160628152529-48b4e1c0c4d0 \
@@ -50,7 +52,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-radix					 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/armon/go-socks5					 v0.0.0-20160902184237-e75332964ef5 \
 	github.com/asaskevich/govalidator				 v0.0.0-20190424111038-f61b66f89f4a \
-	github.com/aws/aws-sdk-go					 v1.44.91 \
+	github.com/aws/aws-sdk-go					 v1.44.95 \
 	github.com/aws/aws-sdk-go-v2					 v1.0.0 \
 	github.com/aws/aws-sdk-go-v2/config				 v1.0.0 \
 	github.com/aws/aws-sdk-go-v2/credentials			 v1.0.0 \
@@ -117,6 +119,8 @@ MODGO_MODULES =	\
 	github.com/frankban/quicktest					 v1.13.0 \
 	github.com/fsnotify/fsnotify					 v1.4.9 \
 	github.com/garyburd/redigo					 v1.6.3 \
+	github.com/gdamore/encoding					 v1.0.0 \
+	github.com/gdamore/tcell					 v1.3.0 \
 	github.com/getkin/kin-openapi					 v0.76.0 \
 	github.com/ghodss/yaml						 v1.0.0 \
 	github.com/gin-contrib/sse					 v0.1.0 \
@@ -261,11 +265,13 @@ MODGO_MODULES =	\
 	github.com/leodido/go-urn					 v1.2.0 \
 	github.com/lib/pq						 v1.10.2 \
 	github.com/logrusorgru/aurora					 v0.0.0-20200102142835-e9ef32dff381 \
+	github.com/lucasb-eyer/go-colorful				 v1.0.3 \
 	github.com/lyft/protoc-gen-validate				 v0.0.13 \
 	github.com/mailru/easyjson					 v0.7.7 \
 	github.com/matryer/moq						 v0.0.0-20200106131100-75d0ddfc0007 \
 	github.com/mattn/go-colorable					 v0.1.11 \
 	github.com/mattn/go-isatty					 v0.0.14 \
+	github.com/mattn/go-runewidth					 v0.0.8 \
 	github.com/mattn/go-sqlite3					 v1.14.12 \
 	github.com/matttproud/golang_protobuf_extensions		 v1.0.1 \
 	github.com/miekg/dns						 v1.1.50 \
@@ -313,6 +319,8 @@ MODGO_MODULES =	\
 	github.com/prometheus/procfs					 v0.8.0 \
 	github.com/rabbitmq/amqp091-go					 v1.1.0 \
 	github.com/rcrowley/go-metrics					 v0.0.0-20201227073835-cf1acfcdf475 \
+	github.com/rivo/tview						 v0.0.0-20200219210816-cd38d7432498 \
+	github.com/rivo/uniseg						 v0.1.0 \
 	github.com/rogpeppe/fastuuid					 v1.2.0 \
 	github.com/rogpeppe/go-internal					 v1.3.0 \
 	github.com/rs/cors						 v1.6.0 \
@@ -321,6 +329,7 @@ MODGO_MODULES =	\
 	github.com/russross/blackfriday/v2				 v2.0.1 \
 	github.com/ryanuber/columnize					 v2.1.0+incompatible \
 	github.com/ryanuber/go-glob					 v1.0.0 \
+	github.com/sanity-io/litter					 v1.2.0 \
 	github.com/satori/go.uuid					 v1.2.0 \
 	github.com/sean-/seed						 v0.0.0-20170313163322-e2103e2c3529 \
 	github.com/segmentio/kafka-go					 v0.4.29 \
@@ -402,7 +411,7 @@ MODGO_MODULES =	\
 	golang.org/x/time						 v0.0.0-20220210224613-90d013bbcef8 \
 	golang.org/x/tools						 v0.1.12 \
 	golang.org/x/xerrors						 v0.0.0-20220609144429-65e65417b02f \
-	google.golang.org/api						 v0.94.0 \
+	google.golang.org/api						 v0.95.0 \
 	google.golang.org/appengine					 v1.6.7 \
 	google.golang.org/genproto					 v0.0.0-20220624142145-8cd45d7dbd1f \
 	google.golang.org/grpc						 v1.49.0 \
@@ -433,7 +442,7 @@ MODGO_MODULES =	\
 	k8s.io/client-go						 v0.24.4 \
 	k8s.io/gengo							 v0.0.0-20210813121822-485abfe95c7c \
 	k8s.io/klog							 v1.0.0 \
-	k8s.io/klog/v2							 v2.80.0 \
+	k8s.io/klog/v2							 v2.80.1 \
 	k8s.io/kube-openapi						 v0.0.0-20220803162953-67bda5d908f1 \
 	k8s.io/utils							 v0.0.0-20220728103510-ee6ede2d64ed \
 	mellium.im/sasl							 v0.2.1 \
@@ -537,6 +546,7 @@ MODGO_MODFILES =	\
 	github.com/coreos/go-systemd				 v0.0.0-20190321100706-95778dfbb74e \
 	github.com/creack/pty					 v1.1.7 \
 	github.com/davecgh/go-spew				 v0.0.0-20151105211317-5215b55f46b2 \
+	github.com/davecgh/go-spew				 v0.0.0-20161028175848-04cdfd42973b \
 	github.com/davecgh/go-spew				 v1.1.0 \
 	github.com/denisenkom/go-mssqldb			 v0.0.0-20190515213511-eb9f6a1743f3 \
 	github.com/denisenkom/go-mssqldb			 v0.0.0-20200428022330-06a60b6afbbc \
@@ -751,6 +761,7 @@ MODGO_MODFILES =	\
 	github.com/lib/pq					 v1.1.1 \
 	github.com/lib/pq					 v1.2.0 \
 	github.com/lib/pq					 v1.3.0 \
+	github.com/lucasb-eyer/go-colorful			 v1.0.2 \
 	github.com/mailru/easyjson				 v0.0.0-20160728113105-d5b7844b561a \
 	github.com/mailru/easyjson				 v0.0.0-20180730094502-03f2033d19d5 \
 	github.com/mailru/easyjson				 v0.0.0-20190614124828-94de47d64c63 \
@@ -770,6 +781,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty				 v0.0.7 \
 	github.com/mattn/go-isatty				 v0.0.8 \
 	github.com/mattn/go-isatty				 v0.0.9 \
+	github.com/mattn/go-runewidth				 v0.0.4 \
 	github.com/mattn/go-sqlite3				 v1.10.0 \
 	github.com/mattn/go-sqlite3				 v1.9.0 \
 	github.com/miekg/dns					 v1.0.14 \
@@ -854,6 +866,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/objx				 v0.1.0 \
 	github.com/stretchr/objx				 v0.1.1 \
 	github.com/stretchr/testify				 v0.0.0-20151208002404-e3a8ff8ce365 \
+	github.com/stretchr/testify				 v0.0.0-20161117074351-18a02ba4a312 \
 	github.com/stretchr/testify				 v1.2.1 \
 	github.com/stretchr/testify				 v1.2.2 \
 	github.com/stretchr/testify				 v1.3.0 \
@@ -1078,6 +1091,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys					 v0.0.0-20190507160741-ecd444e8653b \
 	golang.org/x/sys					 v0.0.0-20190606165138-5da285871e9c \
 	golang.org/x/sys					 v0.0.0-20190624142023-c5567b49c5d0 \
+	golang.org/x/sys					 v0.0.0-20190626150813-e07cf5db2756 \
 	golang.org/x/sys					 v0.0.0-20190726091711-fc99dfbffb4e \
 	golang.org/x/sys					 v0.0.0-20190813064441-fde4db37ae7a \
 	golang.org/x/sys					 v0.0.0-20190826190057-c7b8b68b1456 \
