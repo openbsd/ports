@@ -1,4 +1,6 @@
-avoid pledge sysctl 4: 1 55 29028 1 ?
+avoid pledge sysctl 4: 1 55 29028 1 without 'ps' pledge
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=1790419
 
 Index: xpcom/build/BinaryPath.h
 --- xpcom/build/BinaryPath.h.orig

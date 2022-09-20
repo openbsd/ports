@@ -54,7 +54,6 @@ lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility
 lib/${MOZILLA_PROJECT}/browser/defaults/preferences/unveil.utility-audioDecoder
 @sample ${SYSCONFDIR}/${MOZILLA_PROJECT}/unveil.utility-audioDecoder
 lib/${MOZILLA_PROJECT}/browser/features/
-lib/${MOZILLA_PROJECT}/browser/features/doh-rollout@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/formautofill@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/pictureinpicture@mozilla.org.xpi
 lib/${MOZILLA_PROJECT}/browser/features/screenshots@mozilla.org.xpi

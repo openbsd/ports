@@ -3,15 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	104.0.2
-MOZILLA_PROFDATA_TASKID=RdI3YsFgTLifc0gV5jqW5Q
+MOZILLA_VERSION =	105.0
+MOZILLA_PROFDATA_TASKID=BTu29xb-RIaxYnQ_ZoMlSQ
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	117.0
+SO_VERSION =	118.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3 ipcclientcerts
@@ -52,6 +52,7 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
+CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
 
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
@@ -68,9 +69,6 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
-
-show-commit:
-	@curl -s https://releases.mozilla.org/pub/mozilla.org/firefox/releases/${MOZILLA_VERSION}/SOURCE| awk -F / '/^https:\/\/hg/ {print $$7 }'
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \

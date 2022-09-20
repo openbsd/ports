@@ -3,7 +3,7 @@ Make sure DownloadUIHelper.strings.downloadsFolder isnt translated
 Index: toolkit/components/downloads/DownloadUIHelper.jsm
 --- toolkit/components/downloads/DownloadUIHelper.jsm.orig
 +++ toolkit/components/downloads/DownloadUIHelper.jsm
-@@ -154,6 +154,7 @@ XPCOMUtils.defineLazyGetter(DownloadUIHelper, "strings
+@@ -151,6 +151,7 @@ XPCOMUtils.defineLazyGetter(DownloadUIHelper, "strings
        strings[stringName] = string.value;
      }
    }
