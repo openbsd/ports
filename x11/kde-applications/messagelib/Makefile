@@ -5,10 +5,10 @@ CATEGORIES =	devel
 SHARED_LIBS +=  KF5MessageComposer       11.0 # 5.13.2
 SHARED_LIBS +=  KF5MessageCore           3.1 # 5.13.2
 SHARED_LIBS +=  KF5MessageList           6.0 # 5.13.2
-SHARED_LIBS +=  KF5MessageViewer         6.2 # 5.13.2
+SHARED_LIBS +=  KF5MessageViewer         6.3 # 5.13.2
 SHARED_LIBS +=  KF5MimeTreeParser        4.1 # 5.13.2
 SHARED_LIBS +=  KF5TemplateParser        3.0 # 5.13.2
-SHARED_LIBS +=  KF5WebEngineViewer       7.0 # 5.13.2
+SHARED_LIBS +=  KF5WebEngineViewer       7.1 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5AkonadiContact
 WANTLIB += KF5AkonadiCore KF5AkonadiMime KF5AkonadiSearchPIM KF5AkonadiWidgets

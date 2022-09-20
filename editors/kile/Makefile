@@ -3,7 +3,7 @@ COMMENT =	user-friendly TeX/LaTeX editor for KDE
 CATEGORIES =	editors
 
 DISTNAME =	kile-2.9.93
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://kile.sourceforge.io
 

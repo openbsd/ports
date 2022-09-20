@@ -335,6 +335,17 @@ share/doc/HTML/ru/akonadi_followupreminder_agent/index.docbook
 share/doc/HTML/ru/akonadi_sendlater_agent/
 share/doc/HTML/ru/akonadi_sendlater_agent/index.cache.bz2
 share/doc/HTML/ru/akonadi_sendlater_agent/index.docbook
+share/doc/HTML/ru/kmail2/
+share/doc/HTML/ru/kmail2/configure.docbook
+share/doc/HTML/ru/kmail2/credits-and-licenses.docbook
+share/doc/HTML/ru/kmail2/faq.docbook
+share/doc/HTML/ru/kmail2/getting-started.docbook
+share/doc/HTML/ru/kmail2/index.cache.bz2
+share/doc/HTML/ru/kmail2/index.docbook
+share/doc/HTML/ru/kmail2/intro.docbook
+share/doc/HTML/ru/kmail2/menus.docbook
+share/doc/HTML/ru/kmail2/troubleshooting.docbook
+share/doc/HTML/ru/kmail2/using-kmail.docbook
 share/doc/HTML/ru/ktnef/
 share/doc/HTML/ru/ktnef/index.cache.bz2
 share/doc/HTML/ru/ktnef/index.docbook
