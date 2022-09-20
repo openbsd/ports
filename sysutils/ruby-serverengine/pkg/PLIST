@@ -1,0 +1,57 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/linux.yml
+@comment ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/windows.yml
+@comment ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.rspec
+${GEM_LIB}/gems/${DISTNAME}/Changelog
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/NOTICE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/examples/
+${GEM_LIB}/gems/${DISTNAME}/examples/server.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/spawn_worker_script.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/blocking_flag.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/command_sender.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/config_loader.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/daemon.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/daemon_logger.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/embedded_server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/multi_process_server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/multi_spawn_server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/multi_thread_server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/multi_worker_server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/privilege.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/process_manager.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/server.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/signal_thread.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/signals.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/socket_manager.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/socket_manager_unix.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/socket_manager_win.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/supervisor.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/utils.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/winsock.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/serverengine/worker.rb
+${GEM_LIB}/gems/${DISTNAME}/serverengine.gemspec
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/blocking_flag_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/daemon_logger_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/daemon_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/multi_process_server_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/multi_spawn_server_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/server_worker_context.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/signal_thread_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/socket_manager_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/supervisor_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/winsock_spec.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
