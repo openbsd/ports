@@ -2,7 +2,7 @@ COMMENT=	twin panel file manager for KDE
 
 VERSION=	2.7.2
 DISTNAME=	krusader-${VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
