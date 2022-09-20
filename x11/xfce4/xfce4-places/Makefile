@@ -1,7 +1,6 @@
 COMMENT=	Xfce4 places panel plugin
 
-XFCE_VERSION=	1.8.1
-REVISION=	2
+XFCE_VERSION=	1.8.2
 XFCE_PLUGIN=	places
 
 # GPLv2
