@@ -23,7 +23,10 @@ MODULES=		devel/meson \
 			x11/gnome
 
 # c++11
-COMPILER =		base-clang ports-gcc
+COMPILER=		base-clang ports-gcc
+
+# optional but prevent dpb(1) from junking it if found at configure time
+BUILD_DEPENDS=		graphics/vulkan-loader
 
 LIB_DEPENDS=		devel/pangomm248 \
 			x11/gtk+4
