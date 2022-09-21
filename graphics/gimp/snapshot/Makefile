@@ -55,7 +55,8 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		textproc/gi-docgen \
 		lang/vala \
-		shells/bash
+		shells/bash \
+		textproc/libxslt
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
