@@ -3,12 +3,11 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	22.8.0
+GH_TAGNAME=	22.9.0
 
 DISTFILES=	${GH_DISTFILE} \
 		${PKGNAME}-vendor.tar.xz:0
 EPOCH=		0
-REVISION=	0
 
 CATEGORIES=	net www
 
