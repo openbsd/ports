@@ -3,7 +3,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.72.2
+GNOME_VERSION=		1.72.3
 
 SHARED_LIBS += gjs                       6.1 # 0.0.0
 
