@@ -1,6 +1,6 @@
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.72.0
+GNOME_VERSION=		1.72.1
 GNOME_PROJECT=		gobject-introspection
 
 CATEGORIES=		devel
