@@ -27,8 +27,7 @@ INSTALL_TARGET =	install web-install webd-install
 
 MASTER_SITES =		https://gameoftrees.org/releases/
 
-# no debug package for -webd because build-debug-info does not work with it
-DEBUG_PACKAGES =	-main -web
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		www/kcgi>=0.12.0
 
