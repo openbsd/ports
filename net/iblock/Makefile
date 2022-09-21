@@ -1,5 +1,5 @@
 COMMENT =		inetd program to blackhole IPs connecting to it
-V =			1.0.1
+V =			1.1.2
 DISTNAME =		iblock-${V}
 
 CATEGORIES =		net

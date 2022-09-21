@@ -43,7 +43,7 @@ block in quick from <iblocked> label iblock
 pass in quick on egress inet  proto tcp to port $iblock_services \
 	rdr-to 127.0.0.1 port 666 label "block_$dstport"
 pass in quick on egress inet6 proto tcp to port $iblock_services \
-	rdr-to ::1 port 666 label "block6_dstport"
+	rdr-to ::1 port 666 label "block6_$dstport"
 ```
 
 The label keyword allows displaying blocking statistics with pfctl -s labels
