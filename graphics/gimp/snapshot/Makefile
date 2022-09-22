@@ -1,6 +1,6 @@
 COMMENT=	GNU Image Manipulation Program
-V=2.99
-DISTNAME =	gimp-${V}.12
+V=		2.99
+DISTNAME=	gimp-${V}.12
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -11,8 +11,7 @@ CATEGORIES=	graphics
 
 DIR=		gimp/v${V}
 MASTER_SITES=	https://download.gimp.org/pub/${DIR}/ \
-		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/ \
-		http://mirrors.go-parts.com/gimp/${DIR}/
+		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/
 
 HOMEPAGE=	https://www.gimp.org/
 

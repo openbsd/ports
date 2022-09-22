@@ -1,0 +1,29 @@
+raise datasize rlimit to max
+
+Index: app/main.c
+--- app/main.c.orig
++++ app/main.c
+@@ -17,6 +17,7 @@
+ 
+ #include "config.h"
+ 
++#include <sys/resource.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -416,10 +417,15 @@ main (int    argc,
+   GFile          *user_gimprc_file   = NULL;
+   gchar          *backtrace_file     = NULL;
+   gint            i;
++  struct  rlimit limit;
+ 
+ #ifdef ENABLE_WIN32_DEBUG_CONSOLE
+   gimp_open_console_window ();
+ #endif
++  if (getrlimit (RLIMIT_DATA, &limit) != -1) {
++    limit.rlim_cur = limit.rlim_max;
++    (void)setrlimit (RLIMIT_DATA, &limit);
++  }
+ #if defined(ENABLE_RELOCATABLE_RESOURCES) && defined(__APPLE__)
+   /* remove MacOS session identifier from the command line args */
+   gint newargc = 0;

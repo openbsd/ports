@@ -1,0 +1,29 @@
+cap memory size based on datasize limit; this is used to set the
+default values for tile-cache-size (app/config/gimpgeglconfig.c)
+and undo-size (app/config/gimpcoreconfig.c)
+
+Index: app/core/gimp-utils.c
+--- app/core/gimp-utils.c.orig
++++ app/core/gimp-utils.c
+@@ -17,6 +17,7 @@
+ 
+ #include "config.h"
+ 
++#include <sys/resource.h>
+ #include <errno.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -79,7 +80,12 @@ gimp_get_physical_memory_size (void)
+ {
+ #ifdef G_OS_UNIX
+ #if defined(HAVE_UNISTD_H) && defined(_SC_PHYS_PAGES) && defined (_SC_PAGE_SIZE)
+-  return (guint64) sysconf (_SC_PHYS_PAGES) * sysconf (_SC_PAGE_SIZE);
++  struct rlimit limit;
++  guint64 mem, rlmem;
++  mem = sysconf (_SC_PHYS_PAGES) * sysconf (_SC_PAGE_SIZE);
++  if (getrlimit(RLIMIT_DATA, &limit) != -1)
++    return (limit.rlim_cur < mem) ? limit.rlim_cur : mem;
++  return mem;
+ #endif
+ #endif
+ 

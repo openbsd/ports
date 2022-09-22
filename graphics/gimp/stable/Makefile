@@ -1,7 +1,7 @@
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.32
-REVISION =	0
+REVISION =	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets
@@ -12,8 +12,7 @@ CATEGORIES=	graphics
 
 DIR=		gimp/v2.10
 MASTER_SITES=	https://download.gimp.org/pub/${DIR}/ \
-		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/ \
-		http://mirrors.go-parts.com/gimp/${DIR}/
+		https://www.mirrorservice.org/sites/ftp.gimp.org/pub/${DIR}/
 
 HOMEPAGE=	https://www.gimp.org/
 
