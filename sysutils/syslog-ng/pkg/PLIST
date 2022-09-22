@@ -90,6 +90,7 @@ include/syslog-ng/filter/filter-pri.h
 include/syslog-ng/filter/filter-re.h
 include/syslog-ng/filter/filter-tags.h
 include/syslog-ng/find-crlf.h
+include/syslog-ng/generic-number.h
 include/syslog-ng/gprocess.h
 include/syslog-ng/gsockaddr.h
 include/syslog-ng/gsocket.h
@@ -184,11 +185,13 @@ include/syslog-ng/rewrite/rewrite-expr.h
 include/syslog-ng/rewrite/rewrite-groupset.h
 include/syslog-ng/rewrite/rewrite-rename.h
 include/syslog-ng/rewrite/rewrite-set-facility.h
+include/syslog-ng/rewrite/rewrite-set-matches.h
 include/syslog-ng/rewrite/rewrite-set-pri.h
 include/syslog-ng/rewrite/rewrite-set-severity.h
 include/syslog-ng/rewrite/rewrite-set-tag.h
 include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h
+include/syslog-ng/rewrite/rewrite-unset-matches.h
 include/syslog-ng/rewrite/rewrite-unset.h
 include/syslog-ng/ringbuffer.h
 include/syslog-ng/run-id.h
@@ -285,22 +288,22 @@ include/syslog-ng/value-pairs/transforms.h
 include/syslog-ng/value-pairs/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/window-size-counter.h
-@lib lib/libevtlog-3.36.so.${LIBevtlog-3.36_VERSION}
+@lib lib/libevtlog-3.38.so.${LIBevtlog-3.38_VERSION}
 @static-lib lib/libevtlog.a
 lib/libevtlog.la
 @lib lib/libevtlog.so.${LIBevtlog_VERSION}
-@lib lib/libloggen_helper-3.36.so.${LIBloggen_helper-3.36_VERSION}
+@lib lib/libloggen_helper-3.38.so.${LIBloggen_helper-3.38_VERSION}
 @static-lib lib/libloggen_helper.a
 lib/libloggen_helper.la
 @lib lib/libloggen_helper.so.${LIBloggen_helper_VERSION}
-@lib lib/libloggen_plugin-3.36.so.${LIBloggen_plugin-3.36_VERSION}
+@lib lib/libloggen_plugin-3.38.so.${LIBloggen_plugin-3.38_VERSION}
 @static-lib lib/libloggen_plugin.a
 lib/libloggen_plugin.la
 @lib lib/libloggen_plugin.so.${LIBloggen_plugin_VERSION}
 @static-lib lib/libsecret-storage.a
 lib/libsecret-storage.la
 @lib lib/libsecret-storage.so.${LIBsecret-storage_VERSION}
-@lib lib/libsyslog-ng-3.36.so.${LIBsyslog-ng-3.36_VERSION}
+@lib lib/libsyslog-ng-3.38.so.${LIBsyslog-ng-3.38_VERSION}
 @static-lib lib/libsyslog-ng-native-connector.a
 @static-lib lib/libsyslog-ng.a
 lib/libsyslog-ng.la
@@ -415,6 +418,8 @@ share/syslog-ng/include/scl/junos/plugin.conf
 share/syslog-ng/include/scl/kafka/
 share/syslog-ng/include/scl/kafka/kafka-java.conf
 share/syslog-ng/include/scl/kafka/kafka.conf
+share/syslog-ng/include/scl/kubernetes/
+share/syslog-ng/include/scl/kubernetes/kubernetes.conf
 share/syslog-ng/include/scl/linux-audit/
 share/syslog-ng/include/scl/linux-audit/linux-audit.conf
 share/syslog-ng/include/scl/loadbalancer/
@@ -424,6 +429,8 @@ share/syslog-ng/include/scl/loggly/
 share/syslog-ng/include/scl/loggly/loggly.conf
 share/syslog-ng/include/scl/logmatic/
 share/syslog-ng/include/scl/logmatic/logmatic.conf
+share/syslog-ng/include/scl/mariadb/
+share/syslog-ng/include/scl/mariadb/audit.conf
 share/syslog-ng/include/scl/mbox/
 share/syslog-ng/include/scl/mbox/mbox.conf
 share/syslog-ng/include/scl/netskope/
