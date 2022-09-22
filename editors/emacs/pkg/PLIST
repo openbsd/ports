@@ -3810,6 +3810,8 @@ share/emacs/${VERSION}/lisp/term/common-win.el.gz
 share/emacs/${VERSION}/lisp/term/common-win.elc
 share/emacs/${VERSION}/lisp/term/cygwin.el.gz
 share/emacs/${VERSION}/lisp/term/cygwin.elc
+share/emacs/${VERSION}/lisp/term/fbterm.el.gz
+share/emacs/${VERSION}/lisp/term/fbterm.elc
 share/emacs/${VERSION}/lisp/term/internal.el.gz
 share/emacs/${VERSION}/lisp/term/internal.elc
 share/emacs/${VERSION}/lisp/term/iris-ansi.el.gz

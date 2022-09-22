@@ -3,7 +3,7 @@ Don't use printf %n.
 Index: src/emacs.c
 --- src/emacs.c.orig
 +++ src/emacs.c
-@@ -2742,21 +2742,13 @@ shut_down_emacs (int sig, Lisp_Object stuff)
+@@ -2746,21 +2746,13 @@ shut_down_emacs (int sig, Lisp_Object stuff)
        reset_all_sys_modes ();
        if (sig && sig != SIGTERM)
  	{

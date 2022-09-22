@@ -3,7 +3,7 @@
 Index: lisp/files.el
 --- lisp/files.el.orig
 +++ lisp/files.el
-@@ -2918,6 +2918,7 @@ ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|CB
+@@ -2925,6 +2925,7 @@ ARC\\|ZIP\\|LZH\\|LHA\\|ZOO\\|[JEW]AR\\|XPI\\|RAR\\|CB
       ("\\.\\(as\\|mi\\|sm\\)2\\'" . snmpv2-mode)
       ("\\.\\(diffs?\\|patch\\|rej\\)\\'" . diff-mode)
       ("\\.\\(dif\\|pat\\)\\'" . diff-mode) ; for MS-DOS

@@ -1,6 +1,6 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-VERSION=		28.1
+VERSION=		28.2
 DISTNAME=		emacs-${VERSION}
 
 CATEGORIES=		editors
@@ -78,7 +78,7 @@ WANTLIB += xcb
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xft Xi Xinerama Xpm Xrandr Xrender atk-1.0 cairo
+WANTLIB += Xfixes Xi Xinerama Xpm Xrandr Xrender atk-1.0 cairo
 WANTLIB += dbus-1 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gif gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz
 WANTLIB += intl jpeg lcms2 m17n-core m17n-flt otf pango-1.0 pangocairo-1.0
@@ -86,7 +86,7 @@ WANTLIB += pangoft2-1.0 png rsvg-2 tiff xcb
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
-WANTLIB += ICE SM X11 X11-xcb Xext Xfixes Xft Xinerama Xpm Xrandr
+WANTLIB += ICE SM X11 X11-xcb Xext Xfixes Xinerama Xpm Xrandr
 WANTLIB += Xrender atk-1.0 cairo cairo-gobject dbus-1 fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 harfbuzz intl jpeg lcms2 m17n-core
