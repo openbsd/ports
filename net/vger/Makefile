@@ -1,5 +1,5 @@
 COMMENT =		gemini server written in C used with inetd
-V =			1.10
+V =			2.0.0
 DISTNAME =		vger-${V}
 
 CATEGORIES =		net
@@ -20,6 +20,6 @@ MASTER_SITES =		https://tildegit.org/solene/vger/archive/
 CFLAGS +=		-std=gnu99
 
 DISTFILES =		vger-{}${V}${EXTRACT_SUFX}
-WRKSRC =		${WRKDIR}/vger
+WRKDIST =		${WRKDIR}/vger
 
 .include <bsd.port.mk>
