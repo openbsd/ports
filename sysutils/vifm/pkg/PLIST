@@ -21,6 +21,9 @@ share/doc/vifm/INSTALL
 share/doc/vifm/NEWS
 share/doc/vifm/README
 share/doc/vifm/TODO
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/vifm.fish
 @comment share/pixmaps/
 @comment share/pixmaps/vifm.png
 share/vifm/
