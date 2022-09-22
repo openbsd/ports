@@ -2,7 +2,7 @@ PORTROACH=		limitw:1,even
 
 COMMENT=		C++ interface for cairo
 
-V=			1.16.1
+V=			1.16.2
 DISTNAME=		cairomm-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		cairomm16-${V}
