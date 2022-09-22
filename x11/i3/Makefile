@@ -1,6 +1,6 @@
 COMMENT=	improved dynamic tiling window manager
 
-DISTNAME=	i3-4.20.1
+DISTNAME=	i3-4.21
 
 CATEGORIES=	x11
 
@@ -12,13 +12,15 @@ PERMIT_PACKAGE=	Yes
 # XXX use of pledge has been neutered. For more details see
 # https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
-WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
+WANTLIB += pcre2-8 startup-notification-1 xcb xcb-cursor xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
 WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
 
 # C11
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 MASTER_SITES=	${HOMEPAGE}/downloads/
 EXTRACT_SUFX=	.tar.xz
@@ -27,7 +29,7 @@ DEBUG_PACKAGES= ${BUILD_PACKAGES}
 LIB_DEPENDS=	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
-		devel/pcre \
+		devel/pcre2 \
 		devel/startup-notification \
 		x11/xkbcommon
 RUN_DEPENDS=	devel/desktop-file-utils \
