@@ -9,10 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/tinytuya/BulbDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Cloud.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/IRRemoteControlDevice.py
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/SocketDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/ThermostatDevice.py
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}IRRemoteControlDevice.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}SocketDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}ThermostatDevice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/Contrib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tinytuya/CoverDevice.py
