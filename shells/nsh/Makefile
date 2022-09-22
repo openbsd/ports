@@ -1,10 +1,10 @@
 COMMENT =	network switch style shell
 
-DISTNAME =	nsh-1.0.20210509
+DISTNAME =	nsh-1.0.20220919
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
-GH_COMMIT =	a18420dac8fa3aea55b9b9e9388ac07438816274
+GH_COMMIT =	fcad0f6af197ab0c96e2c5410c546ad90027f7a1
 
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
@@ -32,6 +32,7 @@ NO_TEST=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/nsh ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIST}/nsh.8 ${PREFIX}/man/man8/
 .for i in save-ro.sh save-rw.sh
 	${INSTALL_SCRIPT} ${WRKDIST}/${i} ${PREFIX}/bin
 .endfor

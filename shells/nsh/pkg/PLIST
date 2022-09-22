@@ -8,6 +8,7 @@ bin/save-rw.sh
 @mode
 @owner
 @group
+@man man/man8/nsh.8
 share/doc/nsh/
 share/doc/nsh/COPYRIGHT
 share/doc/nsh/MANUAL
