@@ -1,6 +1,6 @@
 COMMENT =	check that a library is available for FFI
 
-DISTNAME =	FFI-CheckLib-0.28
+DISTNAME =	FFI-CheckLib-0.30
 
 CATEGORIES =	devel
 
@@ -11,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 TEST_DEPENDS =		devel/p5-Test-Exit \
-			devel/p5-Test2-Suite>=0.000060
+			devel/p5-Test2-Suite>=0.000121
 
 PKG_ARCH =		*
 
