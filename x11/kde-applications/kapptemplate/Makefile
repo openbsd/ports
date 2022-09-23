@@ -1,6 +1,7 @@
 COMMENT =	app template generator for KDE development
 DISTNAME =	kapptemplate-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kapptemplate
 
@@ -18,6 +19,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
+BUILD_DEPENDS =		archivers/gtar
+
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -30,5 +33,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kio \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>
