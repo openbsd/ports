@@ -1,5 +1,5 @@
 @newgroup _honk:833
-@newuser _honk:833:_honk:daemon:Honk User:${VARBASE}/honk:/sbin/nologin
+@newuser _honk:833:_honk:daemon:Honk User:${LOCALSTATEDIR}/honk:/sbin/nologin
 @rcscript ${RCDIR}/honk
 @bin bin/autobonker
 @bin bin/gettoken
@@ -19,11 +19,11 @@
 @mode 750
 @owner _honk
 @group _honk
-@sample ${VARBASE}/honk/
-@sample ${VARBASE}/honk/docs/
-@sample ${VARBASE}/honk/emus/
-@sample ${VARBASE}/honk/memes/
-@sample ${VARBASE}/honk/views/
+@sample ${LOCALSTATEDIR}/honk/
+@sample ${LOCALSTATEDIR}/honk/docs/
+@sample ${LOCALSTATEDIR}/honk/emus/
+@sample ${LOCALSTATEDIR}/honk/memes/
+@sample ${LOCALSTATEDIR}/honk/views/
 @mode
 @owner
 @group
@@ -31,75 +31,79 @@ share/doc/honk/
 share/doc/honk/LICENSE
 share/doc/honk/README
 share/doc/honk/activitypub.7.html
-@sample ${VARBASE}/honk/docs/activitypub.7.html
+@sample ${LOCALSTATEDIR}/honk/docs/activitypub.7.html
 share/doc/honk/changelog.txt
 share/doc/honk/hfcs.1.html
-@sample ${VARBASE}/honk/docs/hfcs.1.html
+@sample ${LOCALSTATEDIR}/honk/docs/hfcs.1.html
 share/doc/honk/honk.1.html
-@sample ${VARBASE}/honk/docs/honk.1.html
+@sample ${LOCALSTATEDIR}/honk/docs/honk.1.html
 share/doc/honk/honk.3.html
-@sample ${VARBASE}/honk/docs/honk.3.html
+@sample ${LOCALSTATEDIR}/honk/docs/honk.3.html
 share/doc/honk/honk.5.html
-@sample ${VARBASE}/honk/docs/honk.5.html
+@sample ${LOCALSTATEDIR}/honk/docs/honk.5.html
 share/doc/honk/honk.8.html
-@sample ${VARBASE}/honk/docs/honk.8.html
+@sample ${LOCALSTATEDIR}/honk/docs/honk.8.html
 share/doc/honk/intro.1.html
-@sample ${VARBASE}/honk/docs/intro.1.html
+@sample ${LOCALSTATEDIR}/honk/docs/intro.1.html
 share/doc/honk/mandoc.css
-@sample ${VARBASE}/honk/docs/mandoc.css
+@sample ${LOCALSTATEDIR}/honk/docs/mandoc.css
 share/doc/honk/ping.txt
 share/doc/honk/screenshot-afterpost.jpg
-@sample ${VARBASE}/honk/docs/screenshot-afterpost.jpg
+@sample ${LOCALSTATEDIR}/honk/docs/screenshot-afterpost.jpg
 share/doc/honk/screenshot-compose.png
-@sample ${VARBASE}/honk/docs/screenshot-compose.png
+@sample ${LOCALSTATEDIR}/honk/docs/screenshot-compose.png
 share/doc/honk/screenshot-honk.png
-@sample ${VARBASE}/honk/docs/screenshot-honk.png
+@sample ${LOCALSTATEDIR}/honk/docs/screenshot-honk.png
 share/doc/honk/toys/
 share/doc/honk/toys/README
 share/doc/honk/vim.3.html
-@sample ${VARBASE}/honk/docs/vim.3.html
+@sample ${LOCALSTATEDIR}/honk/docs/vim.3.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/honk/
 share/examples/honk/schema.sql
-@sample ${VARBASE}/honk/schema.sql
+@sample ${LOCALSTATEDIR}/honk/schema.sql
 share/examples/honk/views/
 share/examples/honk/views/about.html
-@sample ${VARBASE}/honk/views/about.html
+@sample ${LOCALSTATEDIR}/honk/views/about.html
 share/examples/honk/views/account.html
-@sample ${VARBASE}/honk/views/account.html
+@sample ${LOCALSTATEDIR}/honk/views/account.html
 share/examples/honk/views/chatter.html
-@sample ${VARBASE}/honk/views/chatter.html
+@sample ${LOCALSTATEDIR}/honk/views/chatter.html
 share/examples/honk/views/combos.html
-@sample ${VARBASE}/honk/views/combos.html
+@sample ${LOCALSTATEDIR}/honk/views/combos.html
+share/examples/honk/views/favicon.ico
+@sample ${LOCALSTATEDIR}/honk/views/favicon.ico
 share/examples/honk/views/funzone.html
-@sample ${VARBASE}/honk/views/funzone.html
+@sample ${LOCALSTATEDIR}/honk/views/funzone.html
 share/examples/honk/views/header.html
-@sample ${VARBASE}/honk/views/header.html
+@sample ${LOCALSTATEDIR}/honk/views/header.html
 share/examples/honk/views/hfcs.html
-@sample ${VARBASE}/honk/views/hfcs.html
+@sample ${LOCALSTATEDIR}/honk/views/hfcs.html
 share/examples/honk/views/honk.html
-@sample ${VARBASE}/honk/views/honk.html
+@sample ${LOCALSTATEDIR}/honk/views/honk.html
 share/examples/honk/views/honkers.html
-@sample ${VARBASE}/honk/views/honkers.html
+@sample ${LOCALSTATEDIR}/honk/views/honkers.html
 share/examples/honk/views/honkform.html
-@sample ${VARBASE}/honk/views/honkform.html
+@sample ${LOCALSTATEDIR}/honk/views/honkform.html
 share/examples/honk/views/honkfrags.html
-@sample ${VARBASE}/honk/views/honkfrags.html
+@sample ${LOCALSTATEDIR}/honk/views/honkfrags.html
 share/examples/honk/views/honkpage.html
-@sample ${VARBASE}/honk/views/honkpage.html
+@sample ${LOCALSTATEDIR}/honk/views/honkpage.html
 share/examples/honk/views/honkpage.js
-@sample ${VARBASE}/honk/views/honkpage.js
+@sample ${LOCALSTATEDIR}/honk/views/honkpage.js
+share/examples/honk/views/icon.png
+@sample ${LOCALSTATEDIR}/honk/views/icon.png
 share/examples/honk/views/login.html
-@sample ${VARBASE}/honk/views/login.html
+@sample ${LOCALSTATEDIR}/honk/views/login.html
 share/examples/honk/views/msg.html
-@sample ${VARBASE}/honk/views/msg.html
+@sample ${LOCALSTATEDIR}/honk/views/msg.html
 share/examples/honk/views/onts.html
-@sample ${VARBASE}/honk/views/onts.html
+@sample ${LOCALSTATEDIR}/honk/views/onts.html
 share/examples/honk/views/pleroma.css
-@sample ${VARBASE}/honk/views/pleroma.css
+@sample ${LOCALSTATEDIR}/honk/views/pleroma.css
 share/examples/honk/views/style.css
-@sample ${VARBASE}/honk/views/style.css
+@sample ${LOCALSTATEDIR}/honk/views/style.css
 share/examples/honk/views/wonk.js
-@sample ${VARBASE}/honk/views/wonk.js
+@sample ${LOCALSTATEDIR}/honk/views/wonk.js
 share/examples/honk/views/xzone.html
-@sample ${VARBASE}/honk/views/xzone.html
+@sample ${LOCALSTATEDIR}/honk/views/xzone.html

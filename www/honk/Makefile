@@ -1,6 +1,6 @@
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-0.9.7
+DISTNAME =		honk-0.9.8
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -13,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		c pthread sqlite3
 
 MASTER_SITES =		${HOMEPAGE}/d/
+DISTFILES =		${EXTRACT_ONLY} honk-{../v/tip/d/views/}icon.png
+EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tgz
 
 MODULES =		lang/go
@@ -21,8 +23,7 @@ LIB_DEPENDS =		databases/sqlite3
 NO_TEST =		Yes
 ALL_TARGET =		humungus.tedunangst.com/r/honk
 
-SUBST_VARS +=		VARBASE \
-			SYSCONFDIR
+SUBST_VARS +=		SYSCONFDIR
 
 DOCDIR ?=		${PREFIX}/share/doc/honk
 EXAMPLESDIR = 		${PREFIX}/share/examples/honk
@@ -53,5 +54,7 @@ post-install:
 		${EXAMPLESDIR}/views/
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/schema.sql \
 		${EXAMPLESDIR}/
+	${INSTALL_DATA} ${DISTDIR}/honk-icon.png ${EXAMPLESDIR}/views/favicon.ico
+	${INSTALL_DATA} ${DISTDIR}/honk-icon.png ${EXAMPLESDIR}/views/icon.png
 
 .include <bsd.port.mk>

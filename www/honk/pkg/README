@@ -9,108 +9,73 @@ honk expects to be fronted by a TLS terminating reverse proxy.
 Make sure to pass the Host header for nginx(8)
 	proxy_set_header Host $http_host;
 
-Icon and favicon
-----------------
-
-honk# mkdir ${VARBASE}/www/htdocs/honk
-honk# ftp -o ${VARBASE}/www/htdocs/honk/icon.png \
-  https://honk.tedunangst.com/icon.png
-honk# ftp -o ${VARBASE}/www/htdocs/honk/favicon.ico \
-  https://honk.tedunangst.com/favicon.ico
-
-httpd(8)
---------
-
-# httpd.conf(5)
-server "honk.example.com" {
-  listen on * port http
-  location "/.well-known/acme-challenge/*" {
-    root "/acme"
-    request strip 2
-  }
-  location "/*icon.*" {
-    root "/htdocs/honk"
-  }
-  location "*" {
-    block return 302 "https://$HTTP_HOST$REQUEST_URI"
-  }
-}
-
-honk# rcctl enable httpd
-honk# rcctl start httpd
-
-acme-client(1)
---------------
-
-# acme-client.conf(5)
-domain honk.example.com {
-  domain key "${SYSCONFDIR}/ssl/private/honk.example.com.key"
-  domain full chain certificate "${SYSCONFDIR}/ssl/honk.example.com.crt"
-  sign with letsencrypt
-}
-
-honk# acme-client -v honk.example.com
-honk# ocspcheck -vNo /etc/ssl/honk.example.com.{ocsp,crt}
-
-relayd(8)
----------
-
-# relayd.conf(5)
-ext_ip="203.0.113.4"
-ext_ip2="2001:0db8::4"
-honk_port="31337"
-table <honk> { 127.0.0.1 ::1 }
-table <localhost> { 127.0.0.1 ::1 }
-
-http protocol "https" {
-  match request header append "X-Forwarded-For" value "$REMOTE_ADDR"
-  match request header append "X-Forwarded-By" \
-    value "$SERVER_ADDR:$SERVER_PORT"
-  match request header set "Connection" value "close"
-
-  match request header "Host" value "honk.*" forward to <honk>
-  match request path "/*icon.*" forward to <localhost>
-
-  tcp { sack, backlog 128 }
-  tls keypair honk.example.com
-}
-relay "https" {
-  listen on $ext_ip port https tls
-  protocol "https"
-  forward to <localhost> port http check http "/icon.png" code 200
-  forward to <honk> port $honk_port check tcp
-}
-relay "https2" {
-  listen on $ext_ip2 port https tls
-  protocol "https"
-  forward to <localhost> port http check http "/icon.png" code 200
-  forward to <honk> port $honk_port check tcp
-}
-
-honk# rcctl enable relayd
-honk# rcctl start relayd
-
-pf(4)
------
-
-# pf.conf(5)
-anchor "relayd/*"
-
-honk# pfctl -f ${SYSCONFDIR}/pf.conf
-
 Setup
 =====
 
 Please see ${LOCALBASE}/share/doc/honk
 
+honk(8)
+-------
+
 honk# doas -su _honk
-honk$ umask 077; cd ${VARBASE}/honk && honk init
+honk$ umask 077; cd ${LOCALSTATEDIR}/honk && honk init
 listenaddr: localhost:31337
 servername: honk.example.com
-honk$ touch ${VARBASE}/honk/savedinbox.json
+honk$ touch ${LOCALSTATEDIR}/honk/savedinbox.json
 honk$ exit
 
 honk# rcctl enable honk
 honk# rcctl start honk
 
 Honk at https://honk.example.com
+
+Customization
+=============
+
+Site CSS may be overridden by creating a views/local.css file in the
+${LOCALSTATEDIR}/honk directory. Site JS may similarly be included by creating
+views/local.js. A restart is required after changes.
+
+e.g. add this snippet to open all links in honks in new tabs.
+
+function adjusttargets() {
+        var els = document.querySelectorAll("p.content a")
+        for (var i = 0; i < els.length; i++) {
+                var e = els[i]
+                e.target = "_blank"
+        }
+}
+document.addEventListener('DOMContentLoaded', adjusttargets, false);
+
+Maintenance
+===========
+
+The cleanup [days] command exists to purge old external data, by default 30
+days. This removes unreferenced, unsaved posts and attachments. It does not
+remove any original content.
+
+honk# crontab -eu _honk
+
+# crontab(5)
+MAILTO=root
+@daily ${LOCALBASE}/bin/honk cleanup
+
+Database Upgrade
+================
+
+If you are upgrading from a version before 0.9.7, you will need to upgrade
+the database format:
+
+Stop the old honk process.
+honk# rcctl stop honk
+
+Backup the database.
+honk# doas -su _honk
+honk$ umask 077; cd ${LOCALSTATEDIR}/honk && honk backup `date +backup-%F`
+
+Perform the upgrade with the upgrade command.
+honk$ honk upgrade
+honk$ exit
+
+Restart.
+honk# rcctl start honk

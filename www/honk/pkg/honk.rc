@@ -1,7 +1,7 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/honk"
-daemon_flags="-datadir ${VARBASE}/honk -viewdir ${VARBASE}/honk"
+daemon_flags="-datadir ${LOCALSTATEDIR}/honk -viewdir ${LOCALSTATEDIR}/honk"
 daemon_logger="daemon.info"
 daemon_user="_honk"
 
