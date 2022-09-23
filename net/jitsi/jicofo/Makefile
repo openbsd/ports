@@ -4,6 +4,7 @@ CATEGORIES =	net
 
 VERSION =	2.0.7648
 PKGNAME =	jicofo-${VERSION}
+REVISION =	0
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jicofo

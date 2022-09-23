@@ -6,7 +6,7 @@ daemon_user="_jicofo"
 
 . /etc/rc.d/rc.subr
 
-pexp="$(${LOCALBASE}/bin/javaPathHelper -c jicofo) .*-cp ${TRUEPREFIX}/share/java/classes/jicofo.jar.* ${daemon_flags}"
+pexp="$(${LOCALBASE}/bin/javaPathHelper -c jicofo) .*-cp ${TRUEPREFIX}/share/java/classes/jicofo.jar.*${daemon_flags:+ ${daemon_flags}}"
 
 rc_reload=NO
 rc_bg=YES
