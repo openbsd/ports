@@ -1,6 +1,4 @@
-ONLY_FOR_ARCHS =	amd64 i386 powerpc
-BROKEN-i386 =		various "invalid operand for instruction", OpenBSD-386-asm.S
-BROKEN-powerpc =	threading issues
+ONLY_FOR_ARCHS =	amd64 i386 powerpc powerpc64
 
 COMMENT =		Plan 9 from user space
 
