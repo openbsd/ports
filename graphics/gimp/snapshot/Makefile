@@ -1,5 +1,6 @@
 COMMENT=	GNU Image Manipulation Program
 V=		2.99
+REVISION=	0
 DISTNAME=	gimp-${V}.12
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
