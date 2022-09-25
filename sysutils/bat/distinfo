@@ -15,7 +15,7 @@ SHA256 (cargo/bstr-0.2.17.tar.gz) = ujVp84Po8VmESfGkI+cumVaRN7R3QLHaEe8Zrz1cMiM=
 SHA256 (cargo/bugreport-0.5.0.tar.gz) = U1EguBglR4CAgaZvH3emRTPHgLI9omdj4O4037lPmMk=
 SHA256 (cargo/bytemuck-1.7.3.tar.gz) = Q5mJ5rjDjRtlcKOE7x5JyISBKPWpfzkUuu8CkghCcS8=
 SHA256 (cargo/bytesize-1.1.0.tar.gz) = bFjsNqrFBm1coX31Gz5wJ59WcKchAvV1LLfnyFat/HA=
-SHA256 (cargo/cc-1.0.72.tar.gz) = IqkTe5XqBoZOAYN1tyrft9tub2jPyN9aBNACiAUEhe4=
+SHA256 (cargo/cc-1.0.73.tar.gz) = L/8qaSezu4f5WV1nGWpwST9idoenHYeg1pIkLDP1jBE=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/clap-3.2.20.tar.gz) = I7ccPOmbdhEBEhezZtkj8dCn4HqSuy2/HoRQjGc8o70=
 SHA256 (cargo/clap_lex-0.2.4.tar.gz) = KFDy9agsv0N91a9NSYSPvfwnwVfD0BA0V3b5UnZSYcU=
@@ -161,7 +161,7 @@ SIZE (cargo/bstr-0.2.17.tar.gz) = 330350
 SIZE (cargo/bugreport-0.5.0.tar.gz) = 16149
 SIZE (cargo/bytemuck-1.7.3.tar.gz) = 27879
 SIZE (cargo/bytesize-1.1.0.tar.gz) = 9370
-SIZE (cargo/cc-1.0.72.tar.gz) = 57495
+SIZE (cargo/cc-1.0.73.tar.gz) = 57880
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/clap-3.2.20.tar.gz) = 214114
 SIZE (cargo/clap_lex-0.2.4.tar.gz) = 9652
