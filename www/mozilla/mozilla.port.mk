@@ -155,3 +155,4 @@ CONFIGURE_ENV +=	ac_cv_path_ax_enable_builddir_sed=/usr/bin/sed
 CONFIGURE_ENV +=	ac_cv_path_SED=/usr/bin/sed
 CONFIGURE_ENV +=	ac_cv_path_mkdir=/bin/mkdir
 CONFIGURE_ENV +=	ac_cv_prog_AWK=/usr/bin/awk
+CONFIGURE_ENV +=	AWK=/usr/bin/awk
