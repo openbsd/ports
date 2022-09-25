@@ -1,5 +1,6 @@
 Remove link to dl as it is in OpenBSD's libc
 Have Cmake find and link to devel/pcre if installed, otherwise fall back to bundled pcre.
+Prevent error in target_compile_definitions when big-endian
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
@@ -63,6 +64,15 @@ Index: CMakeLists.txt
  else()
  	target_link_libraries(${PROJECT_NAME} ws2_32)
  	target_link_libraries(${PROJECT_NAME} winmm)
+@@ -135,7 +152,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE USE
+ include (TestBigEndian)
+ TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
+ if(IS_BIG_ENDIAN)
+-	target_compile_definitions(${PROJECT_NAME} __BIG_ENDIAN__Q__)
++	target_compile_definitions(${PROJECT_NAME} PRIVATE __BIG_ENDIAN__Q__)
+ 	message(STATUS "BIG_ENDIAN")
+ else()
+ 	target_compile_definitions(${PROJECT_NAME} PRIVATE __LITTLE_ENDIAN__Q__)
 @@ -147,6 +164,9 @@ if(CURL_FOUND)
  	target_link_libraries(${PROJECT_NAME} ${CURL_LIBRARIES})
  endif()
