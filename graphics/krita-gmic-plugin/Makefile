@@ -1,11 +1,11 @@
 COMMENT =	krita gmic plugin
 
-V =		3.1.4.3
+V =		3.1.6.1
 DISTNAME =	krita-gmic-plugin-${V}
 
 CATEGORIES =	graphics
 
-HOMEPAGE =	https://kde.org/krita
+HOMEPAGE =	https://krita.org
 
 MAINTAINER =	Stefan Hagen <sh+ports@codevoid.de>
 
