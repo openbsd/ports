@@ -873,8 +873,6 @@ zabbix/include/classes/html/CLabel.php
 zabbix/include/classes/html/CLink.php
 zabbix/include/classes/html/CLinkAction.php
 zabbix/include/classes/html/CList.php
-zabbix/include/classes/html/CListBox.php
-zabbix/include/classes/html/CListBoxItem.php
 zabbix/include/classes/html/CListItem.php
 zabbix/include/classes/html/CMacroValue.php
 zabbix/include/classes/html/CMenu.php
@@ -1461,6 +1459,10 @@ zabbix/locale/cs/
 zabbix/locale/cs/LC_MESSAGES/
 zabbix/locale/cs/LC_MESSAGES/frontend.mo
 zabbix/locale/cs/LC_MESSAGES/frontend.po
+zabbix/locale/da/
+zabbix/locale/da/LC_MESSAGES/
+zabbix/locale/da/LC_MESSAGES/frontend.mo
+zabbix/locale/da/LC_MESSAGES/frontend.po
 zabbix/locale/de/
 zabbix/locale/de/LC_MESSAGES/
 zabbix/locale/de/LC_MESSAGES/frontend.mo
