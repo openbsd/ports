@@ -1,23 +1,24 @@
-COMMENT =		Hamcrest matchers for Python
+COMMENT =	Hamcrest matchers for Python
 
-MODPY_EGG_VERSION =	2.0.2
-DISTNAME =		PyHamcrest-${MODPY_EGG_VERSION}
-PKGNAME =		py-hamcrest-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	2.0.3
+DISTNAME =	PyHamcrest-${MODPY_EGG_VERSION}
+PKGNAME =	py-hamcrest-${MODPY_EGG_VERSION}
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
-HOMEPAGE =		http://hamcrest.org/
+HOMEPAGE =	http://hamcrest.org/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-FLAVORS =		python3
-FLAVOR =		python3
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
-MODPY_SETUPTOOLS =	Yes
+FLAVORS =	python3
+FLAVOR =	python3
 
-NO_TEST =		Yes
+TEST_DEPENDS =	devel/py-test-xdist${MODPY_FLAVOR} \
+		devel/py-coverage${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
