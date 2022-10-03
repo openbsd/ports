@@ -1178,6 +1178,7 @@ webapps/docs/api/org/apache/el/stream/package-summary.html
 webapps/docs/api/org/apache/el/stream/package-tree.html
 webapps/docs/api/org/apache/el/util/
 webapps/docs/api/org/apache/el/util/ConcurrentCache.html
+webapps/docs/api/org/apache/el/util/ExceptionUtils.html
 webapps/docs/api/org/apache/el/util/JreCompat.html
 webapps/docs/api/org/apache/el/util/MessageFactory.html
 webapps/docs/api/org/apache/el/util/ReflectionUtil.html
@@ -1242,6 +1243,7 @@ webapps/docs/api/org/apache/jasper/el/ELResolverImpl.html
 webapps/docs/api/org/apache/jasper/el/ExpressionEvaluatorImpl.html
 webapps/docs/api/org/apache/jasper/el/ExpressionImpl.html
 webapps/docs/api/org/apache/jasper/el/FunctionMapperImpl.html
+webapps/docs/api/org/apache/jasper/el/JasperELResolver.GraalBeanELResolver.html
 webapps/docs/api/org/apache/jasper/el/JasperELResolver.html
 webapps/docs/api/org/apache/jasper/el/JspELException.html
 webapps/docs/api/org/apache/jasper/el/JspMethodExpression.html
@@ -1323,14 +1325,13 @@ webapps/docs/api/org/apache/jasper/util/UniqueAttributesImpl.html
 webapps/docs/api/org/apache/jasper/util/package-summary.html
 webapps/docs/api/org/apache/jasper/util/package-tree.html
 webapps/docs/api/org/apache/juli/
-webapps/docs/api/org/apache/juli/AsyncFileHandler.LogEntry.html
-webapps/docs/api/org/apache/juli/AsyncFileHandler.LoggerThread.html
 webapps/docs/api/org/apache/juli/AsyncFileHandler.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.LogNode.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.RootLogger.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.html
 webapps/docs/api/org/apache/juli/DateFormatCache.html
+webapps/docs/api/org/apache/juli/FileHandler.ThreadFactory.html
 webapps/docs/api/org/apache/juli/FileHandler.html
 webapps/docs/api/org/apache/juli/JdkLoggerFormatter.html
 webapps/docs/api/org/apache/juli/OneLineFormatter.html
@@ -1405,6 +1406,7 @@ webapps/docs/api/org/apache/tomcat/PeriodicEventListener.html
 webapps/docs/api/org/apache/tomcat/SimpleInstanceManager.html
 webapps/docs/api/org/apache/tomcat/buildutil/
 webapps/docs/api/org/apache/tomcat/buildutil/CheckEol.html
+webapps/docs/api/org/apache/tomcat/buildutil/ForceUtcTimeZone.html
 webapps/docs/api/org/apache/tomcat/buildutil/RepeatableArchive.html
 webapps/docs/api/org/apache/tomcat/buildutil/Txt2Html.html
 webapps/docs/api/org/apache/tomcat/buildutil/Utils.html
@@ -2105,6 +2107,7 @@ webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapper.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperNonSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/AsyncChannelWrapperSecure.html
 webapps/docs/api/org/apache/tomcat/websocket/AuthenticationException.html
+webapps/docs/api/org/apache/tomcat/websocket/AuthenticationType.html
 webapps/docs/api/org/apache/tomcat/websocket/Authenticator.html
 webapps/docs/api/org/apache/tomcat/websocket/AuthenticatorFactory.html
 webapps/docs/api/org/apache/tomcat/websocket/BackgroundProcess.html
