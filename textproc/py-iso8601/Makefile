@@ -1,7 +1,6 @@
 COMMENT =		Python module to parse ISO 8601 dates
 
-MODPY_EGG_VERSION =	1.0.2
-REVISION =		0
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		iso8601-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,5 +17,7 @@ MODPY_PI =		Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
+
+TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
