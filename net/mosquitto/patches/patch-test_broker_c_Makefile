@@ -1,7 +1,7 @@
 Index: test/broker/c/Makefile
 --- test/broker/c/Makefile.orig
 +++ test/broker/c/Makefile
-@@ -36,7 +36,7 @@ ${PLUGINS} : %.so: %.c
+@@ -37,7 +37,7 @@ ${PLUGINS} : %.so: %.c
  
  
  ${TESTS} : %.test: %.c

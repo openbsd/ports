@@ -5,7 +5,7 @@
 Index: test/broker/Makefile
 --- test/broker/Makefile.orig
 +++ test/broker/Makefile
-@@ -54,7 +54,7 @@ msg_sequence_test:
+@@ -55,7 +55,7 @@ msg_sequence_test:
  	./02-subpub-qos1-oversize-payload.py
  	./02-subpub-qos1.py
  	./02-subpub-qos2-1322.py
@@ -14,7 +14,7 @@ Index: test/broker/Makefile
  	./02-subpub-qos2-pubrec-error.py
  	./02-subpub-qos2-receive-maximum-1.py
  	./02-subpub-qos2-receive-maximum-2.py
-@@ -145,8 +145,8 @@ msg_sequence_test:
+@@ -146,8 +146,8 @@ msg_sequence_test:
  ifeq ($(WITH_TLS),yes)
  	./08-ssl-bridge.py
  	./08-ssl-connect-cert-auth-crl.py

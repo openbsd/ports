@@ -10,8 +10,8 @@ Index: man/CMakeLists.txt
 -	if(XSLTPROC)
 +	if(FALSE)
  		function(compile_manpage page)
- 			add_custom_command(OUTPUT ${CMAKE_SOURCE_DIR}/man/${page}
- 				COMMAND xsltproc ${CMAKE_SOURCE_DIR}/man/${page}.xml -o ${CMAKE_SOURCE_DIR}/man/
+ 			add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/man/${page}
+ 				COMMAND xsltproc ${PROJECT_SOURCE_DIR}/man/${page}.xml -o ${PROJECT_SOURCE_DIR}/man/
 @@ -25,8 +25,6 @@ if(NOT WIN32)
  		compile_manpage("mosquitto-tls.7")
  		compile_manpage("mqtt.7")

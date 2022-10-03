@@ -1,7 +1,7 @@
 Index: test/lib/c/Makefile
 --- test/lib/c/Makefile.orig
 +++ test/lib/c/Makefile
-@@ -1,7 +1,7 @@
+@@ -3,7 +3,7 @@ include ../../../config.mk
  .PHONY: all clean reallyclean
  
  CFLAGS=-I../../../include -Werror
