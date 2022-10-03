@@ -77,6 +77,13 @@ share/help/gl/gpl/
 share/help/gl/gpl/index.docbook
 share/help/gl/lgpl/
 share/help/gl/lgpl/index.docbook
+share/help/hr/
+share/help/hr/fdl/
+share/help/hr/fdl/index.docbook
+share/help/hr/gpl/
+share/help/hr/gpl/index.docbook
+share/help/hr/lgpl/
+share/help/hr/lgpl/index.docbook
 share/help/hu/
 share/help/hu/fdl/
 share/help/hu/fdl/index.docbook
