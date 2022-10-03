@@ -1,34 +1,34 @@
-COMMENT=		small expressive ORM
+COMMENT=	small expressive ORM
 
-MODPY_EGG_VERSION=	3.15.1
-DISTNAME=		peewee-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
+MODPY_EGG_VERSION=	3.15.3
+DISTNAME=	peewee-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-GH_ACCOUNT=		coleifer
-GH_PROJECT=		peewee
-GH_TAGNAME=		${MODPY_EGG_VERSION}
+GH_ACCOUNT=	coleifer
+GH_PROJECT=	peewee
+GH_TAGNAME=	${MODPY_EGG_VERSION}
 
-CATEGORIES=		databases
+CATEGORIES=	databases
 
-HOMEPAGE=		https://docs.peewee-orm.com/
+HOMEPAGE=	https://docs.peewee-orm.com/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread sqlite3
 
-BUILD_DEPENDS=		textproc/py-sphinx,python3>=4.0.2 \
-			lang/cython${MODPY_FLAVOR}
-LIB_DEPENDS=		databases/sqlite3
-TEST_DEPENDS=		databases/py-psycopg2${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-sphinx,python3>=4.0.2 \
+		lang/cython${MODPY_FLAVOR}
+LIB_DEPENDS=	databases/sqlite3
+TEST_DEPENDS=	databases/py-psycopg2${MODPY_FLAVOR}
 
-FLAVORS=		python3
-FLAVOR=			python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODULES=		databases/postgresql \
-			lang/python
+MODULES=	databases/postgresql \
+		lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=	setuptools
 
 # required to run tests with postgresql support
 MODPOSTGRESQL_TEST_DBNAME=	peewee_test
