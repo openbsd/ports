@@ -1,19 +1,17 @@
-COMMENT =		non-validating SQL parser
+COMMENT =	non-validating SQL parser
 
-MODPY_EGG_VERSION =	0.4.2
-DISTNAME =		sqlparse-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION =	0.4.3
+DISTNAME =	sqlparse-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
 
-CATEGORIES =		databases
+CATEGORIES =	databases
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	tests/
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3
