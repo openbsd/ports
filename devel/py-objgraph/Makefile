@@ -1,9 +1,8 @@
 COMMENT =		draw Python object reference graphs
 
-MODPY_EGG_VERSION =	3.4.1
+MODPY_EGG_VERSION =	3.5.0
 DISTNAME =		objgraph-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		devel
 
@@ -17,8 +16,8 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
+MODPY_PYTEST_ARGS =	tests.py
 
 RUN_DEPENDS =		math/py-graphviz${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
