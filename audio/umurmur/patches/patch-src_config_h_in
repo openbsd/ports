@@ -5,7 +5,7 @@ Index: src/config.h.in
  
  #cmakedefine USE_SHAREDMEMORY_API
  
--#define DEFAULT_CONFIG "${CMAKE_INSTALL_SYSCONFDIR}/etc/umurmur.conf"
+-#define DEFAULT_CONFIG "${CMAKE_INSTALL_FULL_SYSCONFDIR}/umurmur.conf"
 +#define DEFAULT_CONFIG "${SYSCONFDIR}/umurmur/umurmur.conf"
  
  #endif // CONFIG_H

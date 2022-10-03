@@ -2,17 +2,16 @@ COMMENT =		minimalistic Mumble server
 
 GH_ACCOUNT =		umurmur
 GH_PROJECT =		umurmur
-GH_TAGNAME =		0.2.18
+GH_TAGNAME =		0.2.20
+
 CATEGORIES =		audio
 
 HOMEPAGE =		https://umurmur.net/
 
-MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
-
 # BSD
 PERMIT_PACKAGE =	Yes
 
-WANTLIB = 		c config crypto protobuf-c>=1.0 ssl
+WANTLIB =		c config crypto protobuf-c>=1.0 ssl
 
 MODULES =		devel/cmake
 
