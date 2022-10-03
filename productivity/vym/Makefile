@@ -2,9 +2,9 @@ COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-2.6.0
 CATEGORIES=	productivity x11
-REVISION=	2
+REVISION=	3
 
-HOMEPAGE=	http://www.insilmaril.de/vym/
+HOMEPAGE=	https://www.insilmaril.de/vym/
 
 # modified GPLv2
 PERMIT_PACKAGE=	Yes
