@@ -1,6 +1,6 @@
 COMMENT =		c protocol buffers
 
-V =			1.4.0
+V =			1.4.1
 DISTNAME =		protobuf-c-$V
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
@@ -10,8 +10,6 @@ CATEGORIES =		devel
 HOMEPAGE =		https://github.com/protobuf-c/protobuf-c/wiki
 
 MASTER_SITES=		https://github.com/protobuf-c/protobuf-c/releases/download/v$V/
-
-MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
 # New BSD
 PERMIT_PACKAGE =	Yes
