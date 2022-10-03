@@ -1,23 +1,22 @@
-COMMENT=		simple WSGI-framework for small web-applications
+COMMENT=	simple WSGI-framework for small web-applications
 
-MODPY_EGG_VERSION=	0.12.21
-DISTNAME=		bottle-${MODPY_EGG_VERSION}
-PKGNAME=		py-bottle-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	0.12.23
+DISTNAME=	bottle-${MODPY_EGG_VERSION}
+PKGNAME=	py-bottle-${MODPY_EGG_VERSION}
 
-CATEGORIES=		www
+CATEGORIES=	www
 
-HOMEPAGE=		https://bottlepy.org
+HOMEPAGE=	https://bottlepy.org
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST=		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 .include <bsd.port.mk>
