@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-V=			1.14.0
+V=			1.14.2
 DISTNAME=		dbus-${V}
 EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
@@ -44,10 +44,11 @@ BUILD_DEPENDS=		textproc/xmlto
 
 LIB_DEPENDS-suid=	${BASE_PKGPATH},-main
 
-AUTOCONF_VERSION=	2.71
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS=		--with-dbus-user=_dbus \
 			--disable-doxygen-docs \
 			--disable-ducktype-docs \
