@@ -1,20 +1,20 @@
 COMMENT=		Python module dependency analysis tool
 
-MODPY_EGG_VERSION=	0.17
+MODPY_EGG_VERSION=	0.19.3
 DISTNAME=		modulegraph-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
 
 CATEGORIES=		devel
 
 # MIT
-PERMIT_PACKAGE=   	Yes
+PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS=	Yes
 
+# math/prover9/p9m4 still uses py2
 FLAVORS =		python3
 FLAVOR ?=
 
