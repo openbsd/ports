@@ -1,9 +1,8 @@
 COMMENT =	lightweight in-process concurrent programming
 
-MODPY_EGG_VERSION = 1.1.2
+MODPY_EGG_VERSION = 1.1.3
 DISTNAME =	greenlet-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
@@ -15,9 +14,10 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} pthread m
 MODPY_PI =	Yes
 
 MODULES =	lang/python
-MODPY_SETUPTOOLS = Yes
-MODPY_PYTEST =	Yes
-TEST_ENV =	PY_IGNORE_IMPORTMISMATCH=1
+MODPY_PYBUILD =	setuptools
+
+# XXX ModuleNotFoundError: No module named 'greenlet._greenlet'
+NO_TEST =	Yes
 
 FLAVORS =	python3
 FLAVOR =	python3
