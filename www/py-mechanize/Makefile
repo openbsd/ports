@@ -1,12 +1,12 @@
-COMMENT=		stateful programmatic web browsing module
+COMMENT=	stateful programmatic web browsing module
 
-MODPY_EGG_VERSION=	0.4.7
-DISTNAME=		mechanize-${MODPY_EGG_VERSION}
-PKGNAME=		py-${DISTNAME}
+MODPY_EGG_VERSION=	0.4.8
+DISTNAME=	mechanize-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES=		www
+CATEGORIES=	www
 
-HOMEPAGE=		https://mechanize.readthedocs.io/
+HOMEPAGE=	https://mechanize.readthedocs.io/
 
 # BSD or Zope Public License v2.1
 PERMIT_PACKAGE=	Yes
@@ -15,9 +15,8 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
 MODPY_PI=	Yes
-MODPY_PYTEST=	Yes
+MODPY_PYBUILD=	setuptools
 MODPY_TEST_LIBDIR= ${WRKSRC}/test-tools
 
 RUN_DEPENDS=	devel/py-html5lib${MODPY_FLAVOR}
