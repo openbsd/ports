@@ -1,26 +1,25 @@
-COMMENT=		simple Python framework for web-based applications
+COMMENT=	simple Python framework for web-based applications
 
-MODPY_EGG_VERSION=	3.5
-DISTNAME=		Quixote-${MODPY_EGG_VERSION}
-PKGNAME=		py-quixote-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	3.6
+DISTNAME=	Quixote-${MODPY_EGG_VERSION}
+PKGNAME=	py-quixote-${MODPY_EGG_VERSION}
 
-CATEGORIES=		www
+CATEGORIES=	www
 
-HOMEPAGE=		http://quixote.ca/
-MASTER_SITES=		${HOMEPAGE}releases/
+HOMEPAGE=	http://quixote.ca/
+MASTER_SITES=	${HOMEPAGE}releases/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-FLAVOR=			python3
-FLAVORS=		python3
+FLAVOR=		python3
+FLAVORS=	python3
 
-MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
-MODPY_PI=		Yes
-MODPY_PYTEST=		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-quixote
