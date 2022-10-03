@@ -1,6 +1,6 @@
 COMMENT =		cross-project testing tool for Python
 
-MODPY_EGG_VERSION =	7.1.2
+MODPY_EGG_VERSION =	7.1.3
 DISTNAME =		pytest-${MODPY_EGG_VERSION}
 PKGNAME =		py-test-${MODPY_EGG_VERSION}
 
@@ -14,13 +14,11 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	testing
 
 FLAVORS =		python3
 FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
 
 RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}>=17.4.0 \
 			devel/py-pluggy${MODPY_FLAVOR}>=0.9 \
