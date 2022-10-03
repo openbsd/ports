@@ -1,0 +1,3 @@
+The Networking and Cryptography (NaCl) library provides a high-level
+toolkit for building cryptographic systems and protocols. rbnacl
+provides a ruby interface to libsodium/NaCl.
