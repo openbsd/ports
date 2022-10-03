@@ -48,6 +48,7 @@ include/i2pd/SAM.h
 include/i2pd/SOCKS.h
 include/i2pd/SSU.h
 include/i2pd/SSU2.h
+include/i2pd/SSU2Session.h
 include/i2pd/SSUData.h
 include/i2pd/SSUSession.h
 include/i2pd/Signature.h
@@ -108,6 +109,12 @@ share/examples/i2pd/certificates/family/mca2-i2p.crt
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/mca2-i2p.crt
 @owner
 @group
+share/examples/i2pd/certificates/family/stormycloud.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/family/stormycloud.crt
+@owner
+@group
 share/examples/i2pd/certificates/family/volatile.crt
 @owner _i2pd
 @group _i2pd
@@ -154,6 +161,12 @@ share/examples/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
+@owner
+@group
+share/examples/i2pd/certificates/reseed/i2p-reseed_at_mk16.de.crt
+@owner _i2pd
+@group _i2pd
+@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/i2p-reseed_at_mk16.de.crt
 @owner
 @group
 share/examples/i2pd/certificates/reseed/igor_at_novg.net.crt
