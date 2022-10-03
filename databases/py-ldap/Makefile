@@ -1,6 +1,6 @@
 COMMENT=		LDAP client API for Python
 
-MODPY_EGG_VERSION =	3.4.2
+MODPY_EGG_VERSION =	3.4.3
 DISTNAME=		python-ldap-${MODPY_EGG_VERSION}
 PKGNAME=		py-ldap-${MODPY_EGG_VERSION}
 
@@ -19,7 +19,7 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			databases/openldap
