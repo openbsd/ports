@@ -1,7 +1,7 @@
 COMMENT=		thumbnailer for EPub and MOBI books
 
 GNOME_PROJECT=		gnome-epub-thumbnailer
-GNOME_VERSION=		1.6
+GNOME_VERSION=		1.7
 
 CATEGORIES=		graphics
 
@@ -9,13 +9,12 @@ CATEGORIES=		graphics
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += archive c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += xml2 intl
+WANTLIB += xml2
 
-MODULES=		x11/gnome
+MODULES=		devel/meson \
+			x11/gnome
 
 LIB_DEPENDS=		archivers/libarchive \
 			graphics/gdk-pixbuf2
-
-CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
