@@ -398,7 +398,7 @@ WANTLIB-shmop=		pthread
 COMMENT-snmp=		snmp protocol extensions for php
 HOMEPAGE-snmp=		https://www.php.net/snmp
 LIB_DEPENDS-snmp=	net/net-snmp
-WANTLIB-snmp=		crypto m netsnmp pthread
+WANTLIB-snmp=		crypto m netsnmp pthread ssl
 .if ${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 .endif
