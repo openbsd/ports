@@ -1,10 +1,9 @@
 COMMENT =	Pythonic task execution
 
-MODPY_EGG_VERSION =	1.6.0
+MODPY_EGG_VERSION =	1.7.1
 
 DISTNAME =	invoke-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -13,16 +12,15 @@ HOMEPAGE =	https://www.pyinvoke.org/
 # BSD
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 # some failures, possibly related to running under ports test framework
 # with captured stdio etc.
-MODPY_PYTEST =		Yes
-TEST_DEPENDS =		devel/py-test-relaxed${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test-relaxed${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR}
 
 FLAVORS =	python3
 FLAVOR =	python3
