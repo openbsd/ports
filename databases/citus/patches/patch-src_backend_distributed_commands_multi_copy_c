@@ -1,9 +1,9 @@
-Fix missing S_IRUSR and S_IWUSR constants.
+S_IRUSR and S_IWUSR constants.
 
 Index: src/backend/distributed/commands/multi_copy.c
 --- src/backend/distributed/commands/multi_copy.c.orig
 +++ src/backend/distributed/commands/multi_copy.c
-@@ -55,6 +55,7 @@
+@@ -51,6 +51,7 @@
  #include <arpa/inet.h> /* for htons */
  #include <netinet/in.h> /* for htons */
  #include <string.h>
