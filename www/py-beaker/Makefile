@@ -1,19 +1,18 @@
 COMMENT =	session and caching library with wsgi middleware
 
-MODPY_EGG_VERSION = 1.10.0
+MODPY_EGG_VERSION = 1.11.0
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	4
 
 CATEGORIES =	www devel
 
-HOMEPAGE =	http://beaker.readthedocs.org/
+HOMEPAGE =	https://beaker.readthedocs.io/
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS = Yes
+MODPY_PYBUILD =	setuptools
 
 MODULES =	lang/python
 
