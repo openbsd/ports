@@ -386,10 +386,14 @@ share/locale/he/LC_MESSAGES/libpanel.mo
 share/locale/hr/LC_MESSAGES/libpanel.mo
 share/locale/hu/LC_MESSAGES/libpanel.mo
 share/locale/id/LC_MESSAGES/libpanel.mo
+share/locale/it/LC_MESSAGES/libpanel.mo
+share/locale/ka/LC_MESSAGES/libpanel.mo
 share/locale/lt/LC_MESSAGES/libpanel.mo
+share/locale/ne/LC_MESSAGES/libpanel.mo
 share/locale/oc/LC_MESSAGES/libpanel.mo
 share/locale/pl/LC_MESSAGES/libpanel.mo
 share/locale/pt/LC_MESSAGES/libpanel.mo
+share/locale/pt_BR/LC_MESSAGES/libpanel.mo
 share/locale/ru/LC_MESSAGES/libpanel.mo
 share/locale/sl/LC_MESSAGES/libpanel.mo
 share/locale/sv/LC_MESSAGES/libpanel.mo
