@@ -13,8 +13,11 @@ ROUTINATOR_UI_VERSION =	0.3.4
 MASTER_SITES0 =	${ROUTINATOR_UI_URL}/v${ROUTINATOR_UI_VERSION}/
 DISTFILES +=	routinator-ui-${ROUTINATOR_UI_VERSION}{routinator-ui-build}.tar.gz:0
 
-SUBST_VARS +=		ROUTINATOR_UI_VERSION
-SUBST_VARS +=		DISTDIR
+# The routinator-ui crate expects its Vue.js parts to be in ../dist
+EXTRACT_CASES +=	routinator-ui-*.tar.gz) \
+	mkdir -p ${MODCARGO_VENDOR_DIR}/dist; \
+	${GZIP_CMD} -d <${FULLDISTDIR}/$$archive | \
+	${TAR} -C ${MODCARGO_VENDOR_DIR}/dist -xf - -- ${EXTRACT_FILES};;
 
 CATEGORIES =		net
 
@@ -38,9 +41,6 @@ FIX_EXTRACT_PERMISSIONS = Yes
 DISTFILES +=		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX}
 
 .include "crates.inc"
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/modcargo-crates/routinator-ui-${ROUTINATOR_UI_VERSION}/build.rs
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/routinator
