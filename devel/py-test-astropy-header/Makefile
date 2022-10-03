@@ -1,27 +1,25 @@
-COMMENT =	add diagnostic information to pytest's output
+COMMENT=	add diagnostic information to pytest's output
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION=	0.2.2
 
-DISTNAME =	pytest-astropy-header-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:S/py//}
+DISTNAME=	pytest-astropy-header-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME:S/py//}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/astropy/pytest-astropy-header
+HOMEPAGE=	https://github.com/astropy/pytest-astropy-header
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools_scm
 
-FLAVOR =	python3
-FLAVORS =	python3
+FLAVOR=		python3
+FLAVORS=	python3
 
-BUILD_DEPENDS =	devel/py-setuptools_scm${MODPY_FLAVOR}
-RUN_DEPENDS =	devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-test${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
