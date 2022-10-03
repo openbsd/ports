@@ -1,10 +1,9 @@
 COMMENT =		Python wrapper for pandoc
 
-MODPY_EGG_VERSION =	1.6.4
+MODPY_EGG_VERSION =	1.8
 
 DISTNAME =		pypandoc-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -16,7 +15,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		poetry-core
+MODPY_PYTEST_ARGS =	tests.py
 
 FLAVORS =		python3
 FLAVOR =		python3
@@ -25,10 +25,7 @@ RUN_DEPENDS =		textproc/pandoc
 
 PORTHOME =		${WRKDIR}
 
-# 23 tests pass
-TEST_DEPENDS =		devel/py-pip${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			print/texlive/texmf,-main \
+TEST_DEPENDS =		print/texlive/texmf,-main \
 			textproc/pandoc
 
 .include <bsd.port.mk>
