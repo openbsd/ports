@@ -1,10 +1,9 @@
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	22.3.0
+MODPY_EGG_VERSION =	24.0.1
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 EPOCH =			0
-REVISION =		0
 
 CATEGORIES =		net devel
 
@@ -24,13 +23,12 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 			net/zeromq
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_DISTUTILS_BUILDARGS =	--zmq=${LOCALBASE}
 MAKE_ENV =		LC_CTYPE=en_US.UTF-8
-MODPY_PYTEST =		Yes
 # verbose because we've seen cores in some cases and they're hard to
 # identify in a large test_XXX file
-MODPY_PYTEST_ARGS =	-v lib.*
+MODPY_PYTEST_ARGS =	-v build/lib.*
 
 # ulimit -n 1024
 TEST_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
