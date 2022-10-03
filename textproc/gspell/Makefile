@@ -1,11 +1,11 @@
 COMMENT=		spell-checking library for GTK+
 
 GNOME_PROJECT=		gspell
-GNOME_VERSION=		1.10.0
+GNOME_VERSION=		1.12.0
 
 CATEGORIES=		textproc
 
-SHARED_LIBS +=  gspell-1             4.0      # 5.1
+SHARED_LIBS +=  gspell-1             4.0      # 5.2
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

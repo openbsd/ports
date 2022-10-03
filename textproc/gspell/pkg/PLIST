@@ -14,7 +14,6 @@ include/gspell-1/gspell/gspell-navigator-text-view.h
 include/gspell-1/gspell/gspell-navigator.h
 include/gspell-1/gspell/gspell-text-buffer.h
 include/gspell-1/gspell/gspell-text-view.h
-include/gspell-1/gspell/gspell-version.h
 include/gspell-1/gspell/gspell.h
 lib/girepository-1.0/Gspell-1.typelib
 @static-lib lib/libgspell-1.a
@@ -86,6 +85,7 @@ share/locale/id/LC_MESSAGES/gspell-1.mo
 share/locale/is/LC_MESSAGES/gspell-1.mo
 share/locale/it/LC_MESSAGES/gspell-1.mo
 share/locale/ja/LC_MESSAGES/gspell-1.mo
+share/locale/ka/LC_MESSAGES/gspell-1.mo
 share/locale/kk/LC_MESSAGES/gspell-1.mo
 share/locale/ko/LC_MESSAGES/gspell-1.mo
 share/locale/lt/LC_MESSAGES/gspell-1.mo
