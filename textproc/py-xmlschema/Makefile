@@ -1,6 +1,6 @@
 COMMENT =		an XML Schema validator and decoder
 
-MODPY_EGG_VERSION =	2.0.2
+MODPY_EGG_VERSION =	2.1.1
 DISTNAME =		xmlschema-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
