@@ -1,6 +1,6 @@
 COMMENT =		pytest plugin for measuring coverage
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	4.0.0
 DISTNAME =		pytest-cov-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -13,8 +13,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	-v
-MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
 FLAVOR =		python3
