@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}compat.${MODP
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}currency.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}currency.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_AM.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_AM.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_AR.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_AR.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_CZ.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EN.${MOD
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EN.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EN_IN.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EN_IN.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EO.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_ES.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_ES.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_ES_CO.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -40,6 +44,8 @@ lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_ES_VE.${
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_ES_VE.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EU.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_EU.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_FA.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_FA.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_FI.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_FI.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_FR.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -92,6 +98,8 @@ lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_SV.${MOD
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_SV.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TE.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TE.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TG.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TG.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TH.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TH.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}lang_TR.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -105,17 +113,20 @@ lib/python${MODPY_VERSION}/site-packages/num2words/${MODPY_PYCACHE}utils.${MODPY
 lib/python${MODPY_VERSION}/site-packages/num2words/base.py
 lib/python${MODPY_VERSION}/site-packages/num2words/compat.py
 lib/python${MODPY_VERSION}/site-packages/num2words/currency.py
+lib/python${MODPY_VERSION}/site-packages/num2words/lang_AM.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_AR.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_CZ.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_DE.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_DK.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_EN.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_EN_IN.py
+lib/python${MODPY_VERSION}/site-packages/num2words/lang_EO.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_ES.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_ES_CO.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_ES_NI.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_ES_VE.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_EU.py
+lib/python${MODPY_VERSION}/site-packages/num2words/lang_FA.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_FI.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_FR.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_FR_BE.py
@@ -142,6 +153,7 @@ lib/python${MODPY_VERSION}/site-packages/num2words/lang_SL.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_SR.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_SV.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_TE.py
+lib/python${MODPY_VERSION}/site-packages/num2words/lang_TG.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_TH.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_TR.py
 lib/python${MODPY_VERSION}/site-packages/num2words/lang_UK.py

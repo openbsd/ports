@@ -1,7 +1,6 @@
 COMMENT =	convert numbers to words
 
-MODPY_EGG_VERSION =	0.5.11
-REVISION =	0
+MODPY_EGG_VERSION =	0.5.12
 DISTNAME =	num2words-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
