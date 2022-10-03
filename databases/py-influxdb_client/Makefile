@@ -1,6 +1,6 @@
 COMMENT =	Python client library for InfluxDB 1.8/2.0+/Cloud
 
-MODPY_EGG_VERSION =	1.31.0
+MODPY_EGG_VERSION =	1.33.0
 DISTNAME =	influxdb_client-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -17,7 +17,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODPY_PI =	Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-certifi${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
