@@ -1,7 +1,7 @@
 Index: bindings/perl/Makefile.in
 --- bindings/perl/Makefile.in.orig
 +++ bindings/perl/Makefile.in
-@@ -433,7 +433,8 @@ clinkgrammar_la_CPPFLAGS = \
+@@ -439,7 +439,8 @@ clinkgrammar_la_CPPFLAGS = \
  
  @OS_NETBSD_TRUE@AVOID_VERSION = -avoid-version
  @OS_WIN32_TRUE@AVOID_VERSION = -avoid-version

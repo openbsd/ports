@@ -2,6 +2,7 @@
 @bin bin/link-parser
 include/link-grammar/
 include/link-grammar/dict-api.h
+include/link-grammar/dict-atomese.h
 include/link-grammar/dict-defines.h
 include/link-grammar/dict-structures.h
 include/link-grammar/link-features.h
@@ -10,6 +11,7 @@ include/link-grammar/link-includes.h
 lib/liblink-grammar.la
 @lib lib/liblink-grammar.so.${LIBlink-grammar_VERSION}
 lib/pkgconfig/link-grammar.pc
+lib/python${MODPY_VERSION}/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.pm
 @so libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.so
@@ -79,6 +81,10 @@ share/link-grammar/de/4.0.constituent-knowledge
 share/link-grammar/de/4.0.dict
 share/link-grammar/de/4.0.knowledge
 share/link-grammar/de/4.0.regex
+share/link-grammar/demo-atomese/
+share/link-grammar/demo-atomese/4.0.affix
+share/link-grammar/demo-atomese/atomese-dict.scm
+share/link-grammar/demo-atomese/storage.dict
 share/link-grammar/demo-sql/
 share/link-grammar/demo-sql/4.0.affix
 share/link-grammar/demo-sql/4.0.constituent-knowledge
