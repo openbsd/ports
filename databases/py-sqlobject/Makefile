@@ -1,9 +1,8 @@
-COMMENT =		Object Relational Manager
+COMMENT =		ORM (Object Relational Manager) for Python
 
-MODPY_EGG_VERSION =	3.9.1
+MODPY_EGG_VERSION =	3.10.0
 DISTNAME =		SQLObject-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlobject-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		databases
 
@@ -16,15 +15,11 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	sqlobject/tests
 
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-formencode${MODPY_FLAVOR} \
 			devel/py-dispatcher${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-py${MODPY_FLAVOR}
-
-MODPY_SETUPTOOLS =	Yes
 
 .include <bsd.port.mk>
