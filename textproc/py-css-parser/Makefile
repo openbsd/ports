@@ -1,23 +1,25 @@
-COMMENT =		python package for parsing and building CSS
+COMMENT =	python package for parsing and building CSS
 
-CATEGORIES =		textproc
+CATEGORIES =	textproc
 
-MODPY_EGG_VERSION =	1.0.7
-DISTNAME =		css-parser-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-MODPY_PI =		Yes
+MODPY_EGG_VERSION =	1.0.8
+DISTNAME =	css-parser-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
+MODPY_PI =	Yes
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 
-MODPY_SETUPTOOLS =	Yes
+RUN_DEPENDS =	textproc/py-chardet${MODPY_FLAVOR}
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS =	python3
+FLAVOR =	python3
 
-# No tests present in pypi tarball
-NO_TEST =		yes
+# pytest needs jaraco.test
+do-test:
+	cd ${WRKSRC}; ${MODPY_BIN} run_tests.py
 
 .include <bsd.port.mk>
