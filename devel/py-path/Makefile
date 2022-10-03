@@ -1,6 +1,6 @@
 COMMENT =		module wrapper for os.path
 
-MODPY_EGG_VERSION =	16.4.0
+MODPY_EGG_VERSION =	16.5.0
 DISTNAME =		path-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
