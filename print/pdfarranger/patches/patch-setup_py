@@ -1,10 +1,3 @@
-#2:
-
-From 6a53d54c7f3e19ca066ea7382f843ad093c80f15 Mon Sep 17 00:00:00 2001
-From: =?UTF-8?q?J=C3=A9r=C3=B4me=20Robert?= <jeromerobert@gmx.com>
-Date: Sat, 17 Sep 2022 19:42:02 +0200
-Subject: [PATCH] Fix NotImplementedError with PikePDF 6
-
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
@@ -17,12 +10,3 @@ Index: setup.py
      ('share/metainfo', ['data/com.github.jeromerobert.pdfarranger.metainfo.xml']),
  ]
  
-@@ -51,7 +51,7 @@ setup(
-     entry_points={
-         'console_scripts': ['pdfarranger=pdfarranger.pdfarranger:main']
-     },
--    install_requires=['pikepdf>=1.17.0,<6','python-dateutil>=2.4.0'],
-+    install_requires=['pikepdf>=1.17.0','python-dateutil>=2.4.0'],
-     extras_require={
-         'image': ['img2pdf>=0.3.4'],
-     },
