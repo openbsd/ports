@@ -1,6 +1,6 @@
 COMMENT =	computes positions for the stars, planets, and satellites
 
-MODPY_EGG_VERSION =	1.43.1
+MODPY_EGG_VERSION =	1.45
 
 DISTNAME =	skyfield-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -13,7 +13,7 @@ HOMEPAGE =	http://github.com/brandon-rhodes/python-skyfield/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
+MODPY_PYBUILD=	setuptools
 MODPY_PI =	Yes
 # tests require "assay"
 NO_TEST =	Yes
