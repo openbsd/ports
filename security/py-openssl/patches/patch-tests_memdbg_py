@@ -1,7 +1,7 @@
 Index: tests/memdbg.py
 --- tests/memdbg.py.orig
 +++ tests/memdbg.py
-@@ -18,17 +18,12 @@ _ffi.cdef(
+@@ -17,17 +17,12 @@ _ffi.cdef(
  
      int  CRYPTO_set_mem_functions(
          void *(*m)(size_t),void *(*r)(void *,size_t), void (*f)(void *));
@@ -19,7 +19,7 @@ Index: tests/memdbg.py
      """,
      libraries=["crypto"],
  )
-@@ -43,12 +38,7 @@ def log(s):
+@@ -42,12 +37,7 @@ def log(s):
  
  
  def _backtrace():
