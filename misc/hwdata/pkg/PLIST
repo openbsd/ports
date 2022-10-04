@@ -4,3 +4,4 @@ share/hwdata/oui.txt
 share/hwdata/pci.ids
 share/hwdata/pnp.ids
 share/hwdata/usb.ids
+share/pkgconfig/hwdata.pc

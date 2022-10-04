@@ -2,7 +2,7 @@ COMMENT=		hardware identification and configuration data
 
 GH_ACCOUNT=		vcrhonek
 GH_PROJECT=		hwdata
-GH_TAGNAME=		v0.362
+GH_TAGNAME=		v0.363
 
 CATEGORIES=		misc
 
@@ -15,12 +15,15 @@ PKG_ARCH=		*
 NO_BUILD=		Yes
 NO_TEST=		Yes
 
-# grep ^IDFILES ${WRKSRC}/Makefile
-IDFILES=		pci.ids usb.ids oui.txt iab.txt pnp.ids
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/hwdata
-.for i in ${IDFILES}
-	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/hwdata
-.endfor
+USE_GMAKE=		Yes
+
+CONFIGURE_STYLE=	simple
+
+CONFIGURE_ARGS=		--prefix=${TRUEPREFIX} \
+			--datarootdir=${TRUEPREFIX}/share \
+			--sysconfdir=${SYSCONFDIR}
+
+# modprobe blacklist; linux only
+CONFIGURE_ARGS +=	--disable-blacklist
 
 .include <bsd.port.mk>
