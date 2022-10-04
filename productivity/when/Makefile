@@ -15,7 +15,7 @@ PKG_ARCH=		*
 
 WRKDIST=		${WRKDIR}/when_dist
 
- # Requires interactive terminal and other hoops not worth going through.
+# Requires interactive terminal and other hoops not worth going through.
 NO_TEST=		Yes
 
 do-configure:
