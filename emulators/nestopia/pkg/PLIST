@@ -2,7 +2,6 @@
 @bin bin/nestopia
 share/applications/nestopia.desktop
 share/doc/nestopia/
-share/doc/nestopia/AUTHORS
 share/doc/nestopia/ChangeLog
 share/doc/nestopia/README.md
 share/doc/nestopia/readme.html
