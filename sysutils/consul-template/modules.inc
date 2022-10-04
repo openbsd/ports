@@ -48,15 +48,15 @@ MODGO_MODULES =	\
 	github.com/google/uuid					 v1.1.2 \
 	github.com/gorilla/websocket				 v1.5.0 \
 	github.com/grpc-ecosystem/grpc-gateway			 v1.16.0 \
-	github.com/hashicorp/consul/api				 v1.14.0 \
+	github.com/hashicorp/consul/api				 v1.15.2 \
 	github.com/hashicorp/consul/sdk				 v0.11.0 \
 	github.com/hashicorp/cronexpr				 v1.1.1 \
 	github.com/hashicorp/errwrap				 v1.1.0 \
 	github.com/hashicorp/go-cleanhttp			 v0.5.2 \
 	github.com/hashicorp/go-gatedio				 v0.5.0 \
-	github.com/hashicorp/go-hclog				 v1.2.2 \
+	github.com/hashicorp/go-hclog				 v1.3.1 \
 	github.com/hashicorp/go-immutable-radix			 v1.3.1 \
-	github.com/hashicorp/go-kms-wrapping/entropy		 v0.1.0 \
+	github.com/hashicorp/go-kms-wrapping/entropy/v2		 v2.0.0 \
 	github.com/hashicorp/go-msgpack				 v0.5.5 \
 	github.com/hashicorp/go-multierror			 v1.1.1 \
 	github.com/hashicorp/go-plugin				 v1.4.3 \
@@ -79,9 +79,9 @@ MODGO_MODULES =	\
 	github.com/hashicorp/memberlist				 v0.3.1 \
 	github.com/hashicorp/nomad/api				 v0.0.0-20220707195938-75f4c2237b28 \
 	github.com/hashicorp/serf				 v0.9.7 \
-	github.com/hashicorp/vault/api				 v1.7.2 \
-	github.com/hashicorp/vault/api/auth/kubernetes		 v0.2.0 \
-	github.com/hashicorp/vault/sdk				 v0.5.1 \
+	github.com/hashicorp/vault/api				 v1.8.0 \
+	github.com/hashicorp/vault/api/auth/kubernetes		 v0.3.0 \
+	github.com/hashicorp/vault/sdk				 v0.6.0 \
 	github.com/hashicorp/yamux				 v0.0.0-20180604194846-3520598351bb \
 	github.com/huandu/xstrings				 v1.2.0 \
 	github.com/imdario/mergo				 v0.3.13 \
@@ -133,12 +133,12 @@ MODGO_MODULES =	\
 	golang.org/x/crypto					 v0.0.0-20220622213112-05595931fe9d \
 	golang.org/x/exp					 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/lint					 v0.0.0-20190313153728-d0100b6bd8b3 \
-	golang.org/x/net					 v0.0.0-20211216030914-fe4d6282115f \
+	golang.org/x/net					 v0.0.0-20220906165146-f3363e06e74c \
 	golang.org/x/oauth2					 v0.0.0-20200107190931-bf48bf16ab8d \
 	golang.org/x/sync					 v0.0.0-20210220032951-036812b2e83c \
-	golang.org/x/sys					 v0.0.0-20220503163025-988cb79eb6c6 \
-	golang.org/x/term					 v0.0.0-20201126162022-7de9c90e9dd1 \
-	golang.org/x/text					 v0.3.6 \
+	golang.org/x/sys					 v0.0.0-20220728004956-3c1f35247d10 \
+	golang.org/x/term					 v0.0.0-20210927222741-03fcf44c2211 \
+	golang.org/x/text					 v0.3.7 \
 	golang.org/x/time					 v0.0.0-20200630173020-3af7569d3a1e \
 	golang.org/x/tools					 v0.0.0-20190907020128-2ca718005c18 \
 	golang.org/x/xerrors					 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -196,7 +196,6 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp			 v0.5.0 \
 	github.com/google/go-cmp			 v0.5.5 \
 	github.com/gorilla/websocket			 v1.4.2 \
-	github.com/hashicorp/consul/sdk			 v0.10.0 \
 	github.com/hashicorp/errwrap			 v1.0.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp		 v0.5.1 \
@@ -286,6 +285,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net				 v0.0.0-20210410081132-afb366fc7cd1 \
 	golang.org/x/net				 v0.0.0-20211112202133-69e39bad7dc2 \
+	golang.org/x/net				 v0.0.0-20211216030914-fe4d6282115f \
 	golang.org/x/oauth2				 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/sync				 v0.0.0-20180314180146-1d60e4601c6f \
 	golang.org/x/sync				 v0.0.0-20181108010431-42b317875d0f \
@@ -316,9 +316,12 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20210630005230-0f9fa26af87c \
 	golang.org/x/sys				 v0.0.0-20210927094055-39ccf1dd6fa6 \
 	golang.org/x/sys				 v0.0.0-20220412211240-33da011f77ad \
+	golang.org/x/sys				 v0.0.0-20220503163025-988cb79eb6c6 \
+	golang.org/x/term				 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/text				 v0.3.0 \
 	golang.org/x/text				 v0.3.2 \
 	golang.org/x/text				 v0.3.3 \
+	golang.org/x/text				 v0.3.6 \
 	golang.org/x/time				 v0.0.0-20200416051211-89c76fbcd5d1 \
 	golang.org/x/tools				 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools				 v0.0.0-20190114222345-bf090417da8b \
