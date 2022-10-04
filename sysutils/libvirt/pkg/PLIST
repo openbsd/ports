@@ -470,6 +470,7 @@ share/libvirt/cpu_map/arm_Falkor.xml
 share/libvirt/cpu_map/arm_Kunpeng-920.xml
 share/libvirt/cpu_map/arm_Tengyun-S2500.xml
 share/libvirt/cpu_map/arm_ThunderX299xx.xml
+share/libvirt/cpu_map/arm_a64fx.xml
 share/libvirt/cpu_map/arm_cortex-a53.xml
 share/libvirt/cpu_map/arm_cortex-a57.xml
 share/libvirt/cpu_map/arm_cortex-a72.xml
@@ -554,7 +555,9 @@ share/libvirt/schemas/domainbackup.rng
 share/libvirt/schemas/domaincaps.rng
 share/libvirt/schemas/domaincheckpoint.rng
 share/libvirt/schemas/domaincommon.rng
+share/libvirt/schemas/domainoverrides.rng
 share/libvirt/schemas/domainsnapshot.rng
+share/libvirt/schemas/inactiveDomain.rng
 share/libvirt/schemas/interface.rng
 share/libvirt/schemas/network.rng
 share/libvirt/schemas/networkcommon.rng

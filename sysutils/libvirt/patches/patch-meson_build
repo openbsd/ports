@@ -62,7 +62,7 @@ Index: meson.build
  fuse_version = '3.1.0'
  fuse_dep = dependency('fuse3', version: '>=' + fuse_version, required: false)
  if fuse_dep.found()
-@@ -1964,7 +1961,7 @@ endif
+@@ -1941,7 +1938,7 @@ endif
  
  driver_modules_flags = []
  if conf.has('WITH_LIBVIRTD')
@@ -71,7 +71,7 @@ Index: meson.build
      error('You must have dlfcn.h / dlopen() support to build driver modules')
    endif
    driver_modules_flags = libvirt_export_dynamic
-@@ -2279,7 +2276,7 @@ libs_summary = {
+@@ -2255,7 +2252,7 @@ libs_summary = {
    'capng': capng_dep.found(),
    'curl': curl_dep.found(),
    'devmapper': devmapper_dep.found(),

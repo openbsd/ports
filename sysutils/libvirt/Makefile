@@ -1,13 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-8.7.0
+DISTNAME=		libvirt-8.8.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.4 # 0.8007.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.8007.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.8007.0
-SHARED_LIBS += virt-admin                2.2 # 0.8007.0
+SHARED_LIBS += virt                      2.4 # 0.8008.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.8008.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.8008.0
+SHARED_LIBS += virt-admin                2.2 # 0.8008.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -76,8 +76,7 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 # storage
 DISABLED_FEATURES +=	storage_disk storage_fs storage_gluster storage_iscsi \
 			storage_iscsi_direct storage_lvm storage_mpath \
-			storage_rbd storage_sheepdog storage_vstorage \
-			storage_zfs
+			storage_rbd storage_vstorage storage_zfs
 
 CONFIGURE_ARGS=		-Dinit_script=none
 
