@@ -12,4 +12,6 @@ RUN_DEPENDS =	mail/notmuch/notmuch
 
 WRKSRC =	${WRKDIST}/bindings/python
 
+NO_TEST =	Yes
+
 .include <bsd.port.mk>

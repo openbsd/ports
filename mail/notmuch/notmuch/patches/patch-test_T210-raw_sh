@@ -1,0 +1,16 @@
+Index: test/T210-raw.sh
+--- test/T210-raw.sh.orig
++++ test/T210-raw.sh
+@@ -69,10 +69,10 @@ ID=87r2ecrr6x.fsf@zephyr.silentflame.com
+ test_begin_subtest "raw content, duplicate files"
+ rm -f OUTPUT.raw
+ for dup in {1..5}; do
+-    notmuch show --format=raw --duplicate=${dup} --format=raw id:${ID} | md5sum | cut -f1 -d' '  >> OUTPUT.raw
++    notmuch show --format=raw --duplicate=${dup} --format=raw id:${ID} | gmd5sum | cut -f1 -d' '  >> OUTPUT.raw
+ done
+ sort OUTPUT.raw > OUTPUT
+-notmuch search --output=files id:${ID} | xargs md5sum | cut -f1 -d ' ' | sort > EXPECTED
++notmuch search --output=files id:${ID} | xargs gmd5sum | cut -f1 -d ' ' | sort > EXPECTED
+ test_expect_equal_file_nonempty EXPECTED OUTPUT
+ 
+ test_done

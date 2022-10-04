@@ -1,4 +1,4 @@
-V =			0.36
+V =			0.37
 DISTNAME =		notmuch-$V
 EXTRACT_SUFX =		.tar.xz
 
