@@ -1,6 +1,6 @@
 COMMENT=	Python library for one-time passwords
 
-MODPY_EGG_VERSION=	2.6.0
+MODPY_EGG_VERSION=	2.7.0
 
 DISTNAME=	pyotp-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
@@ -16,7 +16,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 
-MODPY_SETUPTOOLS=  Yes
+MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
 
 FLAVOR=		python3
