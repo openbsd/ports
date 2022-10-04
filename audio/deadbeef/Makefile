@@ -1,36 +1,34 @@
 COMMENT =		DeaDBeeF is an audio player
-DISTNAME =		deadbeef-0.7.2
-REVISION =		14
+DISTNAME =		deadbeef-1.9.2
 CATEGORIES =		audio
 
-HOMEPAGE =		http://deadbeef.sourceforge.net/
+HOMEPAGE =		https://deadbeef.sourceforge.io/
 
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC Imlib2 X11 Xcomposite
-WANTLIB += Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi avcodec avformat avutil
-WANTLIB += bz2 c cairo cairo-gobject cddb cdio crypto curl dbus-1
-WANTLIB += epoxy expat faad ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gsm gthread-2.0 gtk-3 harfbuzz iconv intl jansson m
-WANTLIB += mad mms mp3lame mp4ff mpcdec nghttp2 ogg opus pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += sndfile sndio speex ssl swresample vorbis vorbisenc
-WANTLIB += vorbisfile vpx wavpack x264 x265 xcb xcb-render xcb-shm
-WANTLIB += xvidcore z zip fribidi Xau Xdmcp
-WANTLIB += aom dav1d execinfo jpeg lzma theoradec theoraenc xml2 zstd
+WANTLIB += ${COMPILER_LIBCXX} BlocksRuntime FLAC X11 Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender aom atk-1.0 atk-bridge-2.0 avcodec avformat
+WANTLIB += avutil bz2 c cairo cairo-gobject cddb cdio crypto curl
+WANTLIB += dav1d dbus-1 dispatch epoxy execinfo expat faad ffi
+WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gsm gthread-2.0
+WANTLIB += gtk-3 harfbuzz iconv intl jansson jpeg lzma m mms mp3lame
+WANTLIB += mpcdec mpg123 nghttp2 ogg opus opusfile pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pulse
+WANTLIB += pulse-simple sndfile speex ssl swresample theoradec
+WANTLIB += theoraenc vorbis vorbisenc vorbisfile vpx wavpack x264
+WANTLIB += x265 xcb xcb-render xcb-shm xml2 xvidcore z zip zstd
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=deadbeef/}
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		textproc/intltool
-
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS +=	devel/yasm
@@ -42,19 +40,20 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		archivers/libzip \
 			audio/faad \
 			audio/flac \
+			audio/libcddb \
 			audio/libcdio \
-			audio/libmad \
 			audio/libogg \
 			audio/libsndfile \
 			audio/libvorbis \
 			audio/musepack \
+			audio/opusfile \
+			audio/pulseaudio \
 			audio/wavpack \
 			devel/jansson \
+			devel/libdispatch \
 			graphics/ffmpeg \
-			graphics/imlib2 \
 			multimedia/libmms \
 			net/curl \
-			x11/dbus \
 			x11/gtk+3
 
 USE_GMAKE =		Yes
@@ -63,9 +62,9 @@ LIBTOOL_FLAGS =		--tag=disable-static
 NO_TEST =		Yes
 
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
+AUTOMAKE_VERSION =	1.16
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-static \
 			--disable-abstract-socket \
 			--disable-adplug \
@@ -73,16 +72,20 @@ CONFIGURE_ARGS +=	--disable-static \
 			--disable-coreaudio \
 			--disable-gme \
 			--disable-gtk2 \
-			--disable-libmpg123 \
+			--disable-libmad \
 			--disable-mono2stereo \
 			--disable-oss \
-			--disable-pulse \
 			--disable-sid \
 			--disable-src \
 			--disable-supereq \
 			--disable-wildmidi \
 			--disable-wma \
 			--disable-cdda-paranoia
+
+# sndio code worked with 0.7.2 but needs further changes for 1.9.2
+CONFIGURE_ARGS +=	--enable-pulse \
+			--disable-sndio
+
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 				  -I${X11BASE}/include \
 				  -I${WRKSRC}/plugins/dumb/dumb-kode54/include' \
@@ -91,13 +94,12 @@ CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 CONFIGURE_ENV +=	ax_cv_c_flags__msse2='no'
 .endif
 
+# XXX: why is this even needed?
+MAKE_FLAGS +=		INTL_LIBS=-lintl
+
 post-patch:
-	@mkdir -p ${WRKSRC}/m4 # XXX need for autoreconf
 	@mkdir -p ${WRKSRC}/plugins/sndio
 	@cp ${FILESDIR}/{Makefile.am,sndio.c} ${WRKSRC}/plugins/sndio
-
-pre-configure:
-	@cd ${WRKSRC} && ${AUTOCONF_ENV} autoreconf
 
 post-install:
 	@rm ${PREFIX}/lib/deadbeef/*.la

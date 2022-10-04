@@ -7,34 +7,13 @@ junklib: fix pointer going out of scope bug
 Index: junklib.c
 --- junklib.c.orig
 +++ junklib.c
-@@ -33,7 +33,6 @@
+@@ -32,9 +32,6 @@
+ #include <stdlib.h>
  #include <string.h>
- #undef HAVE_ICI
  #if HAVE_ICONV
+-  #ifndef __MINGW32__
 -  #define LIBICONV_PLUG
+-  #endif
    #include <iconv.h>
  #elif HAVE_ICU
    #warning icu
-@@ -586,7 +585,7 @@ junk_iconv (const char *in, int inlen, char *out, int 
-     if (cd == (iconv_t)-1) {
-         return -1;
-     }
--#ifdef __linux__
-+#if defined(__linux__) || defined (__OpenBSD__)
-     char *pin = (char*)in;
- #else
-     const char *pin = in;
-@@ -1025,11 +1024,12 @@ junk_id3v1_read_int (playItem_t *it, char *buffer, con
-         return -1;
-     }
- 
-+    const char *cs = NULL;
-+
-     if (it) {
-         if (memcmp (buffer, "TAG", 3)) {
-             return -1; // no tag
-         }
--        const char *cs = NULL;
-         charset = &cs;
-         int res = junk_id3v1_read_int (NULL, buffer, charset);
-         if (res) {
