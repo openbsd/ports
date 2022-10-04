@@ -2,6 +2,8 @@ COMMENT=		Google data interchange format (protocol buffers)
 
 PYMAJOR=		4
 PROTOBUF_VERSION=	21.7
+REVISION=		0
+
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
 TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
@@ -23,13 +25,11 @@ MODULES=		lang/python
 HOMEPAGE=		https://github.com/protocolbuffers/protobuf/
 MASTER_SITES=		https://github.com/protocolbuffers/protobuf/releases/download/${TAG}/
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
+
+BUILD_DEPENDS=		devel/protobuf
 
 FLAVORS=		python3
 FLAVOR=			python3
-
-BUILD_DEPENDS=		devel/protobuf \
-			devel/py-wheel${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-six${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
