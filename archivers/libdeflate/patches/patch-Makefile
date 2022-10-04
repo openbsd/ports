@@ -6,7 +6,7 @@ Index: Makefile
  
  override CFLAGS :=							\
 -	-O2 -fomit-frame-pointer -std=c99 -I. -Wall -Wundef		\
-+	-std=c99 -I. -Wall -Wundef					\
- 	$(call cc-option,-Wpedantic)					\
++	-std=c99 -I. -Wall -Wundef		\
  	$(call cc-option,-Wdeclaration-after-statement)			\
+ 	$(call cc-option,-Wimplicit-fallthrough)			\
  	$(call cc-option,-Wmissing-prototypes)				\
