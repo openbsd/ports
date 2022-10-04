@@ -1,8 +1,8 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -115,7 +115,9 @@ all_platforms="${all_platforms} armv7s-darwin-gcc"
- all_platforms="${all_platforms} armv8-linux-gcc"
+@@ -118,7 +118,9 @@ all_platforms="${all_platforms} loongarch32-linux-gcc"
+ all_platforms="${all_platforms} loongarch64-linux-gcc"
  all_platforms="${all_platforms} mips32-linux-gcc"
  all_platforms="${all_platforms} mips64-linux-gcc"
 +all_platforms="${all_platforms} ppc-linux-gcc"
@@ -11,7 +11,7 @@ Index: configure
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
-@@ -171,7 +173,7 @@ for t in ${all_targets}; do
+@@ -177,7 +179,7 @@ for t in ${all_targets}; do
      [ -f "${source_path}/${t}.mk" ] && enable_feature ${t}
  done
  
@@ -20,7 +20,7 @@ Index: configure
    die "diff missing: Try installing diffutils via your package manager."
  fi
  
-@@ -186,19 +188,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
+@@ -192,19 +194,6 @@ if [ "`cd \"${source_path}\" && pwd`" != "`pwd`" ]; th
    fi
  fi
  
@@ -40,7 +40,7 @@ Index: configure
  # disable codecs when their source directory does not exist
  [ -d "${source_path}/vp8" ] || disable_codec vp8
  [ -d "${source_path}/vp9" ] || disable_codec vp9
-@@ -533,7 +522,7 @@ process_detect() {
+@@ -542,7 +531,7 @@ process_detect() {
          # here rather than at option parse time because the target auto-detect
          # magic happens after the command line has been parsed.
          case "${tgt_os}" in

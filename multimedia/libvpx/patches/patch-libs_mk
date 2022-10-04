@@ -1,7 +1,7 @@
 Index: libs.mk
 --- libs.mk.orig
 +++ libs.mk
-@@ -322,22 +322,17 @@ EXPORT_FILE             := libvpx.def
+@@ -335,22 +335,17 @@ EXPORT_FILE             := libvpx.def
  LIBVPX_SO_SYMLINKS      :=
  LIBVPX_SO_IMPLIB        := libvpx_dll.a
  else
@@ -25,7 +25,7 @@ Index: libs.mk
  $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.def: $(call enabled,CODEC_EXPORTS)
-@@ -360,15 +355,7 @@ $(1): $(2)
+@@ -373,15 +368,7 @@ $(1): $(2)
  	$(qexec)ln -sf $(2) $$@
  endef
  

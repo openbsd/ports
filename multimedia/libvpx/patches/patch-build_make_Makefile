@@ -1,7 +1,7 @@
 Index: build/make/Makefile
 --- build/make/Makefile.orig
 +++ build/make/Makefile
-@@ -306,8 +306,7 @@ define so_template
+@@ -312,8 +312,7 @@ define so_template
  # This needs further abstraction for dealing with non-GNU linkers.
  $(1):
  	$(if $(quiet),@echo "    [LD] $$@")
@@ -11,7 +11,7 @@ Index: build/make/Makefile
              -Wl,--version-script,$$(EXPORTS_FILE) -o $$@ \
              $$(filter %.o,$$^) $$(extralibs)
  endef
-@@ -392,7 +391,7 @@ LIBS=$(call enabled,LIBS)
+@@ -398,7 +397,7 @@ LIBS=$(call enabled,LIBS)
  .libs: $(LIBS)
  	@touch $@
  $(foreach lib,$(filter %_g.a,$(LIBS)),$(eval $(call archive_template,$(lib))))
