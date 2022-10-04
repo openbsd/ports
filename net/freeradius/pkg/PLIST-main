@@ -227,6 +227,7 @@ share/doc/freeradius/deployment/performance-testing
 share/doc/freeradius/deployment/supervise-radiusd.rst
 share/doc/freeradius/deployment/tuning_guide
 share/doc/freeradius/developer/
+share/doc/freeradius/developer/autotools.md
 share/doc/freeradius/developer/coding-methods.rst
 share/doc/freeradius/developer/contributing.rst
 share/doc/freeradius/developer/module_interface.rst
@@ -554,6 +555,10 @@ share/examples/freeradius/mods-config/preprocess/hints
 @sample ${FREERADIUS_ETC}/mods-config/preprocess/hints
 share/examples/freeradius/mods-config/preprocess/huntgroups
 @sample ${FREERADIUS_ETC}/mods-config/preprocess/huntgroups
+share/examples/freeradius/mods-config/realm/
+@sample ${FREERADIUS_ETC}/mods-config/realm/
+share/examples/freeradius/mods-config/realm/freeradius-naptr-to-home-server.sh
+@sample ${FREERADIUS_ETC}/mods-config/realm/freeradius-naptr-to-home-server.sh
 share/examples/freeradius/mods-config/sql/
 @sample ${FREERADIUS_ETC}/mods-config/sql/
 share/examples/freeradius/mods-config/sql/counter/
@@ -614,8 +619,10 @@ share/examples/freeradius/mods-config/sql/main/
 @comment @sample ${FREERADIUS_ETC}/mods-config/sql/main/mongo/queries.conf
 share/examples/freeradius/mods-config/sql/main/sqlite/
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/
-share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-refresh.sh
-@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-refresh.sh
+share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-close-after-reload.pl
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-close-after-reload.pl
+share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-new-data-usage-period.sh
+@sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-new-data-usage-period.sh
 share/examples/freeradius/mods-config/sql/main/sqlite/process-radacct-schema.sql
 @sample ${FREERADIUS_ETC}/mods-config/sql/main/sqlite/process-radacct-schema.sql
 share/examples/freeradius/mods-config/sql/main/sqlite/queries.conf
@@ -703,6 +710,8 @@ share/examples/freeradius/sites-available/abfab-tls
 @sample ${FREERADIUS_ETC}/sites-available/abfab-tls
 share/examples/freeradius/sites-available/abfab-tr-idp
 @sample ${FREERADIUS_ETC}/sites-available/abfab-tr-idp
+share/examples/freeradius/sites-available/aws-nlb
+@sample ${FREERADIUS_ETC}/sites-available/aws-nlb
 share/examples/freeradius/sites-available/buffered-sql
 @sample ${FREERADIUS_ETC}/sites-available/buffered-sql
 share/examples/freeradius/sites-available/challenge
@@ -813,6 +822,7 @@ share/freeradius/dictionary.camiant
 share/freeradius/dictionary.centec
 share/freeradius/dictionary.checkpoint
 share/freeradius/dictionary.chillispot
+share/freeradius/dictionary.ciena
 share/freeradius/dictionary.cisco
 share/freeradius/dictionary.cisco.asa
 share/freeradius/dictionary.cisco.bbsm
@@ -894,6 +904,7 @@ share/freeradius/dictionary.netelastic
 share/freeradius/dictionary.netscreen
 share/freeradius/dictionary.networkphysics
 share/freeradius/dictionary.nexans
+share/freeradius/dictionary.nile
 share/freeradius/dictionary.nokia
 share/freeradius/dictionary.nokia.conflict
 share/freeradius/dictionary.nomadix

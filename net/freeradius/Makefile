@@ -8,7 +8,7 @@ COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python=	freeradius python rlm addon
 COMMENT-python3= freeradius python3 rlm addon (experimental)
 
-V=		3.2.0
+V=		3.2.1
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 

@@ -1,8 +1,9 @@
 Don't hide command lines.
 
---- scripts/libtool.mk.orig	Wed Nov 11 15:50:54 2015
-+++ scripts/libtool.mk	Wed Nov 11 15:51:19 2015
-@@ -69,11 +69,11 @@ clean: .libs_clean
+Index: scripts/libtool.mk
+--- scripts/libtool.mk.orig
++++ scripts/libtool.mk
+@@ -74,11 +74,11 @@ clean: .libs_clean
  # Re-define compilers and linkers
  #
  OBJ_EXT = lo
