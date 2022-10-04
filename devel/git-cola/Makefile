@@ -1,6 +1,6 @@
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION =	4.0.1
+MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		git-cola-${MODPY_EGG_VERSION}
 
 CATEGORIES =	devel x11
@@ -14,13 +14,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools_scm
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/git \
 		devel/git,-x11 \
-		devel/py-setuptools_scm${MODPY_FLAVOR} \
 		textproc/xxdiff \
 		x11/py-qt5${MODPY_FLAVOR} \
 		x11/py-qtpy${MODPY_FLAVOR}
@@ -34,8 +32,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/py-qtpy${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR}
-
-USE_GMAKE =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cola/app.py
