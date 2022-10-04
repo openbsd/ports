@@ -61,6 +61,7 @@ firmware/amdgpu/cyan_skillfish2_pfp.bin
 firmware/amdgpu/cyan_skillfish2_rlc.bin
 firmware/amdgpu/cyan_skillfish2_sdma.bin
 firmware/amdgpu/cyan_skillfish2_sdma1.bin
+firmware/amdgpu/dcn_3_1_5_dmcub.bin
 firmware/amdgpu/dcn_3_1_6_dmcub.bin
 firmware/amdgpu/dimgrey_cavefish_ce.bin
 firmware/amdgpu/dimgrey_cavefish_dmcub.bin
@@ -86,6 +87,12 @@ firmware/amdgpu/fiji_sdma1.bin
 firmware/amdgpu/fiji_smc.bin
 firmware/amdgpu/fiji_uvd.bin
 firmware/amdgpu/fiji_vce.bin
+firmware/amdgpu/gc_10_3_6_ce.bin
+firmware/amdgpu/gc_10_3_6_me.bin
+firmware/amdgpu/gc_10_3_6_mec.bin
+firmware/amdgpu/gc_10_3_6_mec2.bin
+firmware/amdgpu/gc_10_3_6_pfp.bin
+firmware/amdgpu/gc_10_3_6_rlc.bin
 firmware/amdgpu/gc_10_3_7_ce.bin
 firmware/amdgpu/gc_10_3_7_me.bin
 firmware/amdgpu/gc_10_3_7_mec.bin
@@ -300,6 +307,9 @@ firmware/amdgpu/polaris12_sdma1.bin
 firmware/amdgpu/polaris12_smc.bin
 firmware/amdgpu/polaris12_uvd.bin
 firmware/amdgpu/polaris12_vce.bin
+firmware/amdgpu/psp_13_0_5_asd.bin
+firmware/amdgpu/psp_13_0_5_ta.bin
+firmware/amdgpu/psp_13_0_5_toc.bin
 firmware/amdgpu/psp_13_0_8_asd.bin
 firmware/amdgpu/psp_13_0_8_ta.bin
 firmware/amdgpu/psp_13_0_8_toc.bin
@@ -339,6 +349,7 @@ firmware/amdgpu/renoir_rlc.bin
 firmware/amdgpu/renoir_sdma.bin
 firmware/amdgpu/renoir_ta.bin
 firmware/amdgpu/renoir_vcn.bin
+firmware/amdgpu/sdma_5_2_6.bin
 firmware/amdgpu/sdma_5_2_7.bin
 firmware/amdgpu/si58_mc.bin
 firmware/amdgpu/sienna_cichlid_ce.bin
@@ -404,6 +415,7 @@ firmware/amdgpu/vangogh_rlc.bin
 firmware/amdgpu/vangogh_sdma.bin
 firmware/amdgpu/vangogh_toc.bin
 firmware/amdgpu/vangogh_vcn.bin
+firmware/amdgpu/vcn_3_1_2.bin
 firmware/amdgpu/vega10_acg_smc.bin
 firmware/amdgpu/vega10_asd.bin
 firmware/amdgpu/vega10_ce.bin
