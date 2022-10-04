@@ -1,0 +1,7 @@
+# needed for chromium
+/etc/ungoogled-chromium r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+~/.sndio rwc

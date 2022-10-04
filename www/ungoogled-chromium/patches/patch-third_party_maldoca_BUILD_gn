@@ -1,0 +1,14 @@
+Index: third_party/maldoca/BUILD.gn
+--- third_party/maldoca/BUILD.gn.orig
++++ third_party/maldoca/BUILD.gn
+@@ -299,6 +299,10 @@ static_library("maldoca") {
+     ":maldoca_chromium_config",
+     ":maldoca_flags",
+   ]
++
++  if (is_bsd) {
++    libs = [ "iconv" ]
++  }
+ }
+ 
+ fuzzer_test("process_doc_fuzzer") {

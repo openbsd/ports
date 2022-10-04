@@ -1,0 +1,8 @@
+# needed for chromium
+/etc/ungoogled-chromium r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# needed for video(4)
+/dev/video rw

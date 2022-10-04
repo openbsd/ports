@@ -1,0 +1,16 @@
+# needed for chromium
+/etc/ungoogled-chromium r
+
+# needed for dbus
+/etc/machine-id r
+
+# needed for IPC communication, X.Org, etc.
+/tmp rwc
+
+# misc. files and libraries
+/usr/local/lib r
+
+~/.pki rwc
+
+~/.cache/ungoogled-chromium rwc
+~/.config/ungoogled-chromium rwc

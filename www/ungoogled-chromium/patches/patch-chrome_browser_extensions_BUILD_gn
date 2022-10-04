@@ -1,0 +1,14 @@
+Index: chrome/browser/extensions/BUILD.gn
+--- chrome/browser/extensions/BUILD.gn.orig
++++ chrome/browser/extensions/BUILD.gn
+@@ -1326,6 +1326,10 @@ static_library("extensions") {
+     deps += [ "//chrome/services/printing/public/mojom" ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [ "api/image_writer_private/removable_storage_provider_linux.cc" ]
++  }
++
+   if (enable_service_discovery) {
+     sources += [
+       "api/mdns/mdns_api.cc",

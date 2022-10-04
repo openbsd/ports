@@ -1,0 +1,13 @@
+Index: extensions/common/api/runtime.json
+--- extensions/common/api/runtime.json.orig
++++ extensions/common/api/runtime.json
+@@ -86,7 +86,8 @@
+           "cros",
+           "linux",
+           "openbsd",
+-          "fuchsia"
++          "fuchsia",
++          "freebsd"
+         ]
+       },
+       {

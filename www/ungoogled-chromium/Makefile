@@ -1,0 +1,338 @@
+BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
+
+USE_WXNEEDED=		Yes
+
+DPB_PROPERTIES=		parallel parallel2
+
+COMMENT=		Chromium browser sans integration with Google
+
+V=			106.0.5249.91
+UGV=			${V}-1
+
+DISTNAME=		ungoogled-chromium-${V}
+
+DISTFILES+=		${CHROMIUM_DISTFILES} \
+			${UGOOGLE_DISTFILES}:0 \
+			${REGRESS_DISTFILES}
+
+CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
+UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
+REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX} \
+			test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz:0
+
+EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
+			${UGOOGLE_DISTFILES}
+
+CATEGORIES=		www
+
+HOMEPAGE=		https://github.com/ungoogled-software/ungoogled-chromium
+
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
+
+EXTRACT_SUFX=		.tar.xz
+
+FLAVORS=		component
+PSEUDO_FLAVORS=		debug lto
+FLAVOR?=
+
+# BSD-like
+PERMIT_PACKAGE =	Yes
+
+MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES0=	http://nerd.hu/distfiles/
+
+MODULES=	lang/python
+
+COMPILER =	base-clang ports-clang ports-gcc
+
+MODPY_RUNDEP=		No
+MODPY_SETUPTOOLS=	Yes
+
+PATCHORIG=	.orig.port
+
+# uses pledge()
+WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
+WANTLIB+=	Xrender Xtst atk-1.0 atk-bridge-2.0 atspi c c++ c++abi cairo
+WANTLIB+=	cbor crypto cups dbus-1 drm event execinfo expat ffi fido2
+WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
+WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm lzo2 m
+WANTLIB+=	nspr4 nss3 nssutil3 openh264 pango-1.0 pangocairo-1.0
+WANTLIB+=	pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread smime3
+WANTLIB+=	snappy sndio usbhid util xcb xcb-render xcb-shm xkbcommon xml2
+WANTLIB+=	xshmfence xslt z
+
+RUN_DEPENDS=	devel/xdg-utils \
+		devel/desktop-file-utils \
+		fonts/noto/fonts \
+		graphics/libexif \
+		x11/gtk+3,-main \
+		x11/gtk+3,-guic \
+		x11/gtk+3,-cups
+BUILD_DEPENDS=	archivers/bzip2 \
+		devel/gperf \
+		devel/bison \
+		lang/node \
+		shells/bash \
+		sysutils/flock \
+		sysutils/pciutils \
+		devel/ninja \
+		x11/py-xcbgen${MODPY_FLAVOR} \
+		${MODGCC4_CPPDEP} \
+		${RUN_DEPENDS}
+LIB_DEPENDS=	archivers/snappy \
+		devel/pango \
+		graphics/jpeg \
+		multimedia/openh264 \
+		security/nss \
+		textproc/icu4c \
+		textproc/libxslt \
+		x11/gnome/at-spi2-atk \
+		x11/xkbcommon \
+		print/cups,-libs \
+		${MODGCC4_CPPLIBDEP}
+
+.include <bsd.own.mk>
+
+# Set BUILDTYPE to Release
+BUILDTYPE=	Release
+
+SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
+
+ALL_TARGET=		chrome chromedriver
+TEST_TARGET=		base_unittests \
+			blink_unittests \
+			chromedriver_unittests \
+			components_unittests \
+			content_unittests \
+			crypto_unittests \
+			gl_tests \
+			gpu_unittests \
+			headless_unittests \
+			media_unittests \
+			mojo_unittests \
+			net_unittests \
+			printing_unittests \
+			skia_unittests \
+			url_unittests \
+			wm_unittests
+
+DIST_TARGET_DIR=	ungoogled-chromium
+
+CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
+
+WRKDIST=	${WRKDIR}/chromium-${V}
+BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
+
+# These libraries are used from the system and the build infrastructure
+# removes them from the bundled third_party directory and replaces them
+# with hooks to use them from the system.
+GN_SYSTEM_LIBS=	icu \
+		libevent \
+		libjpeg \
+		libpng \
+		libxml \
+		libxslt \
+		openh264 \
+		snappy
+
+GN_ARGS=	is_official_build=true \
+		is_debug=false \
+		is_cfi=false \
+		optimize_webui=true \
+		use_bundled_fontconfig=false \
+		use_kerberos=false \
+		use_sndio=true \
+		use_cups=true \
+		use_system_libdrm=true \
+		use_system_libjpeg=true \
+		use_system_harfbuzz=true \
+		use_system_freetype=false \
+		use_gnome_keyring=false \
+		icu_use_data_file=false \
+		is_clang=true \
+		use_sysroot=false \
+		use_allocator=\"none\" \
+		use_allocator_shim=false \
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		fatal_linker_warnings=false \
+		use_custom_libcxx=false \
+		use_udev=false
+
+# notyet
+GN_ARGS+=	use_vaapi=false
+
+.if ${MACHINE_ARCH} == "i386"
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
+.else
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+.endif
+
+.if ${MACHINE_ARCH} == "aarch64"
+PKG_ARGS+=	-Dswiftshader=0
+.else
+PKG_ARGS+=	-Dswiftshader=1
+.endif
+
+GN_ARGS+=	ffmpeg_branding=\"Chrome\" \
+		proprietary_codecs=true
+
+# XXX dwz doesn't work with chromium yet
+DWZ = :
+
+.if ${FLAVOR:Mdebug}
+GN_ARGS+=	symbol_level=1
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
+.else
+GN_ARGS+=	symbol_level=0
+.endif
+
+.if ${FLAVOR:Mcomponent}
+GN_ARGS+=	is_component_build=true
+.else
+GN_ARGS+=	is_component_build=false
+.endif
+
+.if ${FLAVOR:Mlto}
+GN_ARGS+=	extra_cflags=\"-fno-ret-protector -mno-retpoline\" \
+		extra_cxxflags=\"-fno-ret-protector -mno-retpoline\" \
+		use_thin_lto=true \
+		thin_lto_enable_optimizations=true
+.else
+GN_ARGS+=	use_thin_lto=false \
+		thin_lto_enable_optimizations=true
+.endif
+
+# sync with flags.gni
+GN_ARGS+=	build_with_tflite_lib=false \
+		chrome_pgo_phase=0 \
+		clang_use_chrome_plugins=false \
+		disable_fieldtrial_testing_config=true \
+		enable_hangout_services_extension=false \
+		enable_js_type_check=false \
+		enable_mdns=false \
+		enable_mse_mpeg2ts_stream_parser=true \
+		enable_nacl=false \
+		enable_reading_list=false \
+		enable_remoting=false \
+		enable_reporting=false \
+		enable_service_discovery=false \
+		exclude_unwind_tables=true \
+		google_api_key=\"\" \
+		google_default_client_id=\"\" \
+		google_default_client_secret=\"\" \
+		safe_browsing_mode=0 \
+		treat_warnings_as_errors=false \
+		use_official_google_api_keys=false \
+		use_unofficial_version_number=false
+
+pre-patch:
+	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
+		utils/prune_binaries.py ${WRKSRC} pruning.list
+	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
+		PATCH_BIN=gpatch utils/patches.py apply ${WRKSRC} patches
+	cd ${WRKDIR}/ungoogled-chromium-${UGV} && \
+		utils/domain_substitution.py apply -r domain_regex.list -f \
+		domain_substitution.list -c ${WRKSRC}/domsubcache.tar.gz ${WRKSRC}
+
+pre-configure:
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+.for _arch in x64 ia32 arm64
+.  for _dir in avcodec avformat avutil
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
+.  endfor
+.endfor
+	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
+	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
+		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+
+# Configuration consists of three steps:
+# 1. replace the specified bundled libraries with hooks to use the system libs
+# 2. bootstrap gn, the tool to generate ninja files
+# 3. run gn with the appropriate configuration arguments
+do-configure:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
+		--system-libraries ${GN_SYSTEM_LIBS}
+	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
+		--no-clean -s --gn-gen-args "${GN_ARGS}"
+	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
+		gen --args="${GN_ARGS}" out/${BUILDTYPE}
+
+do-build:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/${DIST_TARGET_DIR}/ungoogled-chromium
+	${SUBST_PROGRAM} ${FILESDIR}/${DIST_TARGET_DIR} ${PREFIX}/bin/${DIST_TARGET_DIR}
+	${INSTALL_PROGRAM} ${BUILDDIR}/chromedriver ${PREFIX}/bin/ungoogled-chromedriver
+	${INSTALL_MAN} ${WRKSRC}/chrome/app/resources/manpage.1.in ${PREFIX}/man/man1/ungoogled-chromium.1
+	@perl -pi -e "s,\@\@PACKAGE\@\@,chromium,g;s,\@\@MENUNAME\@\@,Chromium Web Browser,g" \
+		${PREFIX}/man/man1/ungoogled-chrome.1
+	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/${DIST_TARGET_DIR}
+
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/locales
+	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/${DIST_TARGET_DIR}/locales
+	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/${DIST_TARGET_DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/${DIST_TARGET_DIR}/resources
+	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/${DIST_TARGET_DIR}/resources
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DIST_TARGET_DIR}/resources
+.for f in snapshot_blob.bin v8_context_snapshot.bin
+	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/${DIST_TARGET_DIR}
+.endfor
+
+	# ANGLE, EGL, Vk
+.for f in libEGL libGLESv2
+	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
+.endfor
+.for f in libVkICD_mock_icd
+	${INSTALL_DATA} ${BUILDDIR}/${f}.so ${PREFIX}/${DIST_TARGET_DIR}
+.endfor
+	${INSTALL_DATA} ${BUILDDIR}/libvulkan.so.1 \
+		${PREFIX}/${DIST_TARGET_DIR}/libvulkan.so
+
+.if ${MACHINE_ARCH} != "aarch64"
+	# SwiftShader
+	${INSTALL_DATA} ${BUILDDIR}/libvk_swiftshader.so ${PREFIX}/${DIST_TARGET_DIR}
+.endif
+
+.if ${FLAVOR:Mcomponent}
+	cp -Rp ${BUILDDIR}/*.so ${BUILDDIR}/*.so.[0-9] ${PREFIX}/${DIST_TARGET_DIR}/
+.endif
+
+.for s in 22_mono 24 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/ungoogled-chromium.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/ungoogled-chromium.desktop \
+		${PREFIX}/share/applications/ungoogled-chromium.desktop
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ungoogled-chromium
+.for f in pledge.main pledge.utility_audio pledge.utility_network pledge.utility_video \
+    unveil.gpu unveil.main unveil.plugin unveil.renderer unveil.utility unveil.utility_audio \
+    unveil.utility_network unveil.utility_video
+	${INSTALL_DATA} ${FILESDIR}/${f} ${PREFIX}/share/examples/ungoogled-chromium
+.endfor
+
+pre-test:
+.for _d in ${REGRESS_DISTFILES:C/:[0-9]$//}
+	@${ECHO_MSG} "Extracting ${_d}"
+	@case ${_d} in \
+	*testdata*.tar.xz) \
+		xzdec <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIR} -xf -;; \
+	*font*.tar.gz) \
+		${GZIP_CMD} -d <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIST}/third_party/test_fonts -xf -;; \
+	esac;
+.endfor
+
+do-test:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${TEST_TARGET}
+
+.include <bsd.port.mk>

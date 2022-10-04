@@ -1,0 +1,16 @@
+Index: sandbox/policy/mojom/sandbox.mojom
+--- sandbox/policy/mojom/sandbox.mojom.orig
++++ sandbox/policy/mojom/sandbox.mojom
+@@ -72,6 +72,12 @@ enum Sandbox {
+   [EnableIf=is_fuchsia]
+   kVideoCapture,
+ 
++  [EnableIf=is_openbsd]
++  kVideoCapture,
++
++  [EnableIf=is_freebsd]
++  kVideoCapture,
++
+   // Allows access to file contents and Windows APIs for parsing icons from PE
+   // files.
+   [EnableIf=is_win]
