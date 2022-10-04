@@ -4,6 +4,7 @@ include/libfilezilla/aio/aio.hpp
 include/libfilezilla/aio/reader.hpp
 include/libfilezilla/aio/writer.hpp
 include/libfilezilla/apply.hpp
+include/libfilezilla/ascii_layer.hpp
 include/libfilezilla/buffer.hpp
 include/libfilezilla/encode.hpp
 include/libfilezilla/encryption.hpp
