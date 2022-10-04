@@ -8,7 +8,6 @@
 @bin bin/recsel
 @bin bin/recset
 include/rec.h
-@info info/rec-mode.info
 @info info/recutils.info
 @static-lib lib/librec.a
 lib/librec.la

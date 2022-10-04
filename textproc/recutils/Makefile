@@ -1,9 +1,8 @@
 COMMENT =	tools to access human-editable plaintext record files
 
-DISTNAME =	recutils-1.8
-REVISION =	0
+DISTNAME =	recutils-1.9
 
-SHARED_LIBS +=  rec                       0.0 # 1.0
+SHARED_LIBS +=  rec                       1.0 # 1.0
 
 CATEGORIES =	textproc
 
