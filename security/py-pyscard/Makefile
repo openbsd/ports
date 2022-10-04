@@ -1,24 +1,23 @@
 COMMENT =	smartcard package for Python
 
-MODPY_EGG_VERSION =	2.0.3
-DISTNAME =		pyscard-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION =	2.0.5
+DISTNAME =	pyscard-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
 
-WANTLIB =  pthread
 CATEGORIES =	security
 
 HOMEPAGE =	https://pyscard.sourceforge.io/
 
 # LGPLv2.1+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
-MODULES =		lang/python
-FLAVOR =		python3
-FLAVORS =		python3
+MODULES =	lang/python
+FLAVOR =	python3
+FLAVORS =	python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
+MODPY_PYTEST =	Yes
 
 BUILD_DEPENDS =	devel/swig \
 		security/pcsc-lite
