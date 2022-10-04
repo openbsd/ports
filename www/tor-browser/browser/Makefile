@@ -5,6 +5,8 @@
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 ONLY_FOR_ARCHS =	amd64
 
+BROKEN=			fail to build with lang/rust 1.64.0
+
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
