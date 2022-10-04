@@ -1751,6 +1751,7 @@
      SUBDIR += sdl2-net
      SUBDIR += sdl2-ttf
      SUBDIR += sdlmm
+     SUBDIR += seergdb
      SUBDIR += serd
      SUBDIR += sfio
      SUBDIR += shapelib
