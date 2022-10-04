@@ -1,7 +1,7 @@
 Index: include/defaults.h
 --- include/defaults.h.orig
 +++ include/defaults.h
-@@ -48,16 +48,21 @@
+@@ -47,16 +47,21 @@
   * AUTOMODPATH = directory for autoloaded modules
   */
  

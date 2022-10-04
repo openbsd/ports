@@ -1,7 +1,7 @@
 Index: include/stdinc.h
 --- include/stdinc.h.orig
 +++ include/stdinc.h
-@@ -49,6 +49,8 @@
+@@ -48,6 +48,8 @@
  #include <stdarg.h>
  #include <signal.h>
  #include <ctype.h>

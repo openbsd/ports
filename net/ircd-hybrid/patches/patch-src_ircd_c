@@ -1,7 +1,7 @@
 Index: src/ircd.c
 --- src/ircd.c.orig
 +++ src/ircd.c
-@@ -330,7 +330,6 @@ make_daemon(void)
+@@ -328,7 +328,6 @@ make_daemon(void)
    }
    else if (pid > 0)
    {
@@ -9,7 +9,7 @@ Index: src/ircd.c
      exit(EXIT_SUCCESS);
    }
  
-@@ -343,8 +342,19 @@ main(int argc, char *argv[])
+@@ -341,8 +340,19 @@ main(int argc, char *argv[])
    /* Check to see if the user is running us as root, which is a nono */
    if (geteuid() == 0)
    {

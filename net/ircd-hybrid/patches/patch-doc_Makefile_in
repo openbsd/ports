@@ -1,7 +1,7 @@
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -401,25 +401,25 @@ uninstall-man8:
+@@ -402,25 +402,25 @@ uninstall-man8:
  	dir='$(DESTDIR)$(man8dir)'; $(am__uninstall_files_from_dir)
  install-dist_sysconfDATA: $(dist_sysconf_DATA)
  	@$(NORMAL_INSTALL)
@@ -34,7 +34,7 @@ Index: doc/Makefile.in
  tags TAGS:
  
  ctags CTAGS:
-@@ -463,7 +463,7 @@ check-am: all-am
+@@ -464,7 +464,7 @@ check-am: all-am
  check: check-am
  all-am: Makefile $(MANS) $(DATA)
  installdirs:

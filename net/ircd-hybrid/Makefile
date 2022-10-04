@@ -1,6 +1,6 @@
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.2.41
+DISTNAME =	ircd-hybrid-8.2.43
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
