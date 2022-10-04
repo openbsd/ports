@@ -4,8 +4,8 @@ breaks the build.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -12416,35 +12416,6 @@ fi
- 
+@@ -12764,35 +12764,6 @@ fi
+ # Checks for programs.
  
  
 -# Copied from http://stackoverflow.com/a/10682813/9832 and tweaked for C (as
@@ -17,8 +17,8 @@ Index: configure
 -# if so, they are added to the CXXFLAGS
 -
 -
--  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether compiler accepts \"-fms-extensions\"" >&5
--$as_echo_n "checking whether compiler accepts \"-fms-extensions\"... " >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether compiler accepts \"-fms-extensions\"" >&5
+-printf %s "checking whether compiler accepts \"-fms-extensions\"... " >&6; }
 -  cat > conftest.c << EOF
 -  int main(){
 -    return 0;
@@ -26,13 +26,13 @@ Index: configure
 -EOF
 -  if $CC $CFLAGS -o conftest.o conftest.c -fms-extensions > /dev/null 2>&1
 -  then
--    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
--$as_echo "yes" >&6; }
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-printf "%s\n" "yes" >&6; }
 -    CFLAGS="${CFLAGS} -fms-extensions"
 -
 -  else
--    { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -
 -  fi
 -
