@@ -1,12 +1,12 @@
 COMMENT =	interactive, extensible binary editor
 
-DISTNAME =	poke-1.0
+DISTNAME =	poke-2.4
 
 SHARED_LIBS +=  poke                      0.0 # 0.0
 
 CATEGORIES =	editors
 
-HOMEPAGE =	http://www.jemarch.net/poke
+HOMEPAGE =	https://www.jemarch.net/poke
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
