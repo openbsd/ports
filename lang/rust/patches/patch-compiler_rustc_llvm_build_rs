@@ -1,7 +1,7 @@
 Index: compiler/rustc_llvm/build.rs
 --- compiler/rustc_llvm/build.rs.orig
 +++ compiler/rustc_llvm/build.rs
-@@ -339,10 +339,10 @@ fn main() {
+@@ -335,10 +335,10 @@ fn main() {
      };
  
      // RISC-V GCC erroneously requires libatomic for sub-word

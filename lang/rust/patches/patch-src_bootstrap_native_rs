@@ -1,7 +1,7 @@
 Index: src/bootstrap/native.rs
 --- src/bootstrap/native.rs.orig
 +++ src/bootstrap/native.rs
-@@ -350,12 +350,13 @@ impl Step for Llvm {
+@@ -358,12 +358,13 @@ impl Step for Llvm {
              cfg.define("LLVM_LINK_LLVM_DYLIB", "ON");
          }
  

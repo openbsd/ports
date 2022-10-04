@@ -3,7 +3,7 @@ Add more openbsd archs
 Index: compiler/rustc_target/src/spec/mod.rs
 --- compiler/rustc_target/src/spec/mod.rs.orig
 +++ compiler/rustc_target/src/spec/mod.rs
-@@ -890,9 +890,11 @@ supported_targets! {
+@@ -893,9 +893,11 @@ supported_targets! {
  
      ("aarch64-unknown-openbsd", aarch64_unknown_openbsd),
      ("i686-unknown-openbsd", i686_unknown_openbsd),

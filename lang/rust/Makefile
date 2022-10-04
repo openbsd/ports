@@ -11,14 +11,13 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.63.0
-REVISION =		0
+V =			1.64.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.63.0-20220810
-BV-amd64 =		1.63.0-20220809
-BV-i386 =		1.63.0-20220809
+BV-aarch64 =		1.64.0-20220922
+BV-amd64 =		1.64.0-20220920
+BV-i386 =		1.64.0-20220920
 BV-powerpc64 =		1.63.0-20220821
 BV-riscv64 =		1.63.0-20220821
 BV-sparc64 =		1.63.0-20220822
@@ -209,6 +208,8 @@ do-configure:
 	echo 'tools = ["cargo", "clippy", "rustfmt"]' >>${WRKBUILD}/config.toml
 	echo 'docs = false' >>${WRKBUILD}/config.toml
 	echo 'verbose = 2' >>${WRKBUILD}/config.toml
+	echo 'host = ["${TRIPLE_ARCH}"]' >>${WRKBUILD}/config.toml
+	echo 'target = ["${TRIPLE_ARCH}"]' >>${WRKBUILD}/config.toml
 
 	echo '[install]' >>${WRKBUILD}/config.toml
 	echo 'prefix = "${LOCALBASE}"' >>${WRKBUILD}/config.toml
