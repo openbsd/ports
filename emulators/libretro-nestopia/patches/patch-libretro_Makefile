@@ -1,0 +1,12 @@
+Index: libretro/Makefile
+--- libretro/Makefile.orig
++++ libretro/Makefile
+@@ -63,7 +63,7 @@ unixcygpath = /$(subst :,,$(call unixpath,$1))
+ ifeq ($(platform), unix)
+ 	TARGET := $(TARGET_NAME)_libretro.so
+ 	fpic := -fPIC
+-	SHARED := -shared -Wl,-version-script=link.T -Wl,-no-undefined
++	SHARED := -shared -Wl,-version-script=link.T
+ ifeq ($(shell uname -s), Haiku)
+ 	LDFLAGS += -lroot
+ endif
