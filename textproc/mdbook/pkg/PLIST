@@ -18,6 +18,7 @@ share/doc/mdbook/book.js
 share/doc/mdbook/cli/
 share/doc/mdbook/cli/build.html
 share/doc/mdbook/cli/clean.html
+share/doc/mdbook/cli/completions.html
 share/doc/mdbook/cli/index.html
 share/doc/mdbook/cli/init.html
 share/doc/mdbook/cli/serve.html
@@ -66,7 +67,10 @@ share/doc/mdbook/format/configuration/index.html
 share/doc/mdbook/format/configuration/preprocessors.html
 share/doc/mdbook/format/configuration/renderers.html
 share/doc/mdbook/format/example.rs
+share/doc/mdbook/format/images/
+share/doc/mdbook/format/images/rust-logo-blk.svg
 share/doc/mdbook/format/index.html
+share/doc/mdbook/format/markdown.html
 share/doc/mdbook/format/mathjax.html
 share/doc/mdbook/format/mdbook.html
 share/doc/mdbook/format/summary.html
@@ -75,6 +79,10 @@ share/doc/mdbook/format/theme/editor.html
 share/doc/mdbook/format/theme/index-hbs.html
 share/doc/mdbook/format/theme/index.html
 share/doc/mdbook/format/theme/syntax-highlighting.html
+share/doc/mdbook/guide/
+share/doc/mdbook/guide/creating.html
+share/doc/mdbook/guide/installation.html
+share/doc/mdbook/guide/reading.html
 share/doc/mdbook/highlight.css
 share/doc/mdbook/highlight.js
 share/doc/mdbook/index.html
