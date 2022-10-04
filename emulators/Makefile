@@ -29,6 +29,7 @@
      SUBDIR += hatari
      SUBDIR += higan
      SUBDIR += libretro-genesis-plus-gx
+     SUBDIR += libretro-nestopia
      SUBDIR += libretro-pcsx-rearmed
      SUBDIR += mame
      SUBDIR += mednafen
