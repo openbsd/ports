@@ -1,6 +1,6 @@
 COMMENT=	C implementation of the Frame Streams protocol
 
-DISTNAME=	fstrm-0.5.0
+DISTNAME=	fstrm-0.6.1
 CATEGORIES=	net devel
 
 SHARED_LIBS +=  fstrm                0.0

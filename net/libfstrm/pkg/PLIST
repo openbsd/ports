@@ -11,7 +11,7 @@ include/fstrm/reader.h
 include/fstrm/tcp_writer.h
 include/fstrm/unix_writer.h
 include/fstrm/writer.h
-lib/libfstrm.a
+@static-lib lib/libfstrm.a
 lib/libfstrm.la
 @lib lib/libfstrm.so.${LIBfstrm_VERSION}
 lib/pkgconfig/libfstrm.pc
