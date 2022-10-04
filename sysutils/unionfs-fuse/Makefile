@@ -2,7 +2,7 @@ COMMENT =	unionfs filesystem implementation
 
 GH_ACCOUNT =	rpodgorny
 GH_PROJECT =	unionfs-fuse
-GH_TAGNAME =	v2.2
+GH_TAGNAME =	v3.2
 
 CATEGORIES =	sysutils
 
@@ -12,6 +12,9 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c fuse pthread
+
+MAKE_FLAGS =	CPPFLAGS="-DFUSE_USE_VERSION=29 -DDISABLE_XATTR" \
+		LIB="-lfuse -lpthread"
 
 ALL_TARGET =	build
 
