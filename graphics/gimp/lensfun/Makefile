@@ -7,7 +7,7 @@ GH_ACCOUNT = seebk
 GH_PROJECT = GIMP-Lensfun
 GH_TAGNAME = $V
 
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 

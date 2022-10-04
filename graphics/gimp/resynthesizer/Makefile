@@ -6,6 +6,7 @@ GH_PROJECT = resynthesizer
 GH_TAGNAME = v$V
 
 PKGNAME = 	gimp-resynthesizer-plugin-$V
+REVISION =      0
 
 CATEGORIES = 	graphics
 

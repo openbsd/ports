@@ -2,6 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 DISTNAME =	gimp-2.10.32
 REVISION =	1
+PKGSPEC =	gimp->=2,<2.99
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets

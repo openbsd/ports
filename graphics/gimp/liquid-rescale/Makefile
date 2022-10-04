@@ -5,6 +5,7 @@ HOMEPAGE = 			http://liquidrescale.wikidot.com/
 DISTNAME = 			gimp-lqr-plugin-0.7.2
 MASTER_SITES =			${HOMEPAGE}local--files/en%3Adownload-page-sources/
 EXTRACT_SUFX =			.tar.bz2
+REVISION =                      0
 
 # GPLv2
 PERMIT_PACKAGE =		Yes

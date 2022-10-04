@@ -3,7 +3,7 @@
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ufraw/}
@@ -29,7 +29,7 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-LIB_DEPENDS=	gimp->=2,<3:graphics/gimp/stable \
+LIB_DEPENDS=	graphics/gimp/stable \
 		graphics/lcms2 \
 		archivers/bzip2 \
 		graphics/exiv2 \

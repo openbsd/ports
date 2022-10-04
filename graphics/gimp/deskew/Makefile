@@ -3,7 +3,7 @@ DISTNAME =		gimp-deskew-plugin-0.0.20141025
 GH_ACCOUNT =		prokoudine
 GH_PROJECT =		gimp-deskew-plugin
 GH_COMMIT =		b9214ddc8acf9ff5b01afdd44a9bdf96fe7d6e8e
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		graphics x11
 
