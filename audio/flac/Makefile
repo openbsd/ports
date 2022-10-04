@@ -1,11 +1,10 @@
 COMMENT=	free lossless audio codec
 
-DISTNAME=	flac-1.3.4
-REVISION=	0
+DISTNAME=	flac-1.4.1
 CATEGORIES=	audio archivers
 HOMEPAGE=	https://www.xiph.org/flac/
-SHARED_LIBS +=  FLAC                 12.0     # 11.0
-SHARED_LIBS +=  FLAC++               10.0     # 9.0
+SHARED_LIBS +=  FLAC                 13.0     # 12.0
+SHARED_LIBS +=  FLAC++               11.0     # 10.0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -38,9 +37,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS += --disable-vsx
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-
-post-install:
-	${SUBST_CMD} ${PREFIX}/man/man1/flac.1
-	rm ${PREFIX}/man/man1/flac.1.beforesubst
 
 .include <bsd.port.mk>
