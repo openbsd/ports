@@ -1,7 +1,7 @@
 Index: alc/alconfig.cpp
 --- alc/alconfig.cpp.orig
 +++ alc/alconfig.cpp
-@@ -318,7 +318,7 @@ void ReadALConfig()
+@@ -364,7 +364,7 @@ void ReadALConfig()
  
  void ReadALConfig()
  {

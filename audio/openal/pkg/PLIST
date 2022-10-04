@@ -9,8 +9,9 @@ include/AL/efx-presets.h
 include/AL/efx.h
 lib/cmake/
 lib/cmake/OpenAL/
-lib/cmake/OpenAL/OpenALConfig-openbsd.cmake
 lib/cmake/OpenAL/OpenALConfig.cmake
+lib/cmake/OpenAL/OpenALTargets-openbsd.cmake
+lib/cmake/OpenAL/OpenALTargets.cmake
 @lib lib/libopenal.so.${LIBopenal_VERSION}
 lib/pkgconfig/openal.pc
 share/examples/openal/

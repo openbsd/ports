@@ -1,13 +1,12 @@
 COMMENT =	cross-platform 3D audio API
 
-V =		1.21.1
-EPOCH =		0
+V =		1.22.2
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
-REVISION =	3
+EPOCH =		0
 CATEGORIES =	audio
 
-SHARED_LIBS =	openal	4.1
+SHARED_LIBS =	openal	4.2
 
 HOMEPAGE =	https://openal-soft.org/
 
@@ -29,6 +28,8 @@ CONFIGURE_ARGS =-DCMAKE_BUILD_TYPE=OpenBSD \
 		-DALSOFT_UTILS=On \
 		-DALSOFT_EXAMPLES=Off \
 		-DALSOFT_REQUIRE_SNDIO=On \
+		-DALSOFT_RTKIT=Off \
+		-DALSOFT_BACKEND_PIPEWIRE=Off \
 		-DALSOFT_BACKEND_WAVE=Off \
 		-DALSOFT_CPUEXT_SSE=Off \
 		-DALSOFT_CPUEXT_SSE2=Off \
