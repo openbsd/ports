@@ -3,7 +3,7 @@ BROKEN-i386 =	mixasm.c:94: this directive must appear between .cfi_startproc and
 
 COMMENT =	UNIX port of Open Cubic Player
 
-DISTNAME =	ocp-0.2.99
+DISTNAME =	ocp-0.2.100
 CATEGORIES =	audio
 
 HOMEPAGE =	https://stian.cubic.org/project-ocp.php
@@ -37,7 +37,9 @@ LIB_DEPENDS =	archivers/bzip2 \
 		graphics/jpeg \
 		graphics/png
 
-CFLAGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libbinio
+CFLAGS +=	-I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/SDL2 \
+		-I${LOCALBASE}/include/libbinio
 CXXFLAGS +=	${CFLAGS}
 
 CONFIGURE_STYLE = gnu
@@ -49,7 +51,7 @@ CONFIGURE_ARGS = --with-dir-suffix="" \
 		 --without-alsa \
 		 --without-oss \
 		 --without-x11 \
-		 --with-unifontdir=${PREFIX}/share/fonts/unifont
+		 --with-unifontdir-ttf=${PREFIX}/share/fonts/unifont
 
 USE_GMAKE =	Yes
 

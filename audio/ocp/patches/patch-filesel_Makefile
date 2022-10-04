@@ -1,7 +1,7 @@
 Index: filesel/Makefile
 --- filesel/Makefile.orig
 +++ filesel/Makefile
-@@ -54,7 +54,7 @@ cdrom$(LIB_SUFFIX): $(cdrom_so)
+@@ -23,7 +23,7 @@ cdrom$(LIB_SUFFIX): $(cdrom_so)
  	$(CC) $(SHARED_FLAGS) -o $@ $^ $(PTHREAD_LIBS) $(LIBDISCID_LIBS)
  
  pfilesel$(LIB_SUFFIX): $(pfilesel_so)

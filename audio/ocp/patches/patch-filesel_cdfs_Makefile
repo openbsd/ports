@@ -1,10 +1,10 @@
 Index: filesel/cdfs/Makefile
 --- filesel/cdfs/Makefile.orig
 +++ filesel/cdfs/Makefile
-@@ -19,7 +19,7 @@ endif
+@@ -24,7 +24,7 @@ endif
  .PHONY: all clean install uninstall
  
- cdfs$(LIB_SUFFIX): audio.o cdfs.o cue.o iso9660.o main.o toc.o udf.o wave.o
+ cdfs$(LIB_SUFFIX): $(cdfs_so)
 -	$(CC) $(SHARED_FLAGS) $(ICONV_LIBS) -o $@ $^ $(LIBDISCID_LIBS)
 +	$(CC) $(LDFLAGS) $(SHARED_FLAGS) $(ICONV_LIBS) -o $@ $^ $(LIBDISCID_LIBS)
  
