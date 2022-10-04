@@ -12,8 +12,8 @@ MAINTAINER=	Stefan Hagen <sh+ports@codevoid.de>
 
 MASTER_SITES=	https://github.com/teeworlds/teeworlds/releases/download/${V}/
 # maps repo without tags/releases on https://github.com/teeworlds/teeworlds-maps
-# therefore hosted as archive on perso.pw
-MASTER_SITES0=	http://distfiles-openbsd.perso.pw/
+# therefore hosted as archive.
+MASTER_SITES0=	http://si3t.ch/pub/openbsd/distfiles/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		teeworlds-${V}-data.tar.gz{teeworlds-data.tar.gz}:0
