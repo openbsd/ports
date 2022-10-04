@@ -3,17 +3,14 @@ PORTROACH = 	limitw:1,even
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.69
-DISTNAME =	munin-$V
-PKGNAME-main =	munin-node-$V
-PKGNAME-server =munin-server-$V
+GH_ACCOUNT = 	munin-monitoring
+GH_PROJECT = 	munin
+GH_TAGNAME =	2.0.71
+PKGNAME-main =	munin-node-${GH_TAGNAME}
+PKGNAME-server =munin-server-${GH_TAGNAME}
 CATEGORIES =	net
 
-REVISION-main =	1
-REVISION-server =	0
-
 HOMEPAGE =	https://munin-monitoring.org/
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=munin/}
 
 # Mostly GPLv2.
 # DejaVuSans.ttf and DejaVuSansMono.ttf has a non-restrictive license.
@@ -27,7 +24,6 @@ MULTI_PACKAGES =	-main -server
 # Only very minor optional munin plugins use these languages so they
 # aren't forced as dependencies (same for bash).
 MODULES =		lang/python lang/ruby
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 # No need for MODx_RUNDEP as we already override RUN_DEPENDS-{main,server}
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
