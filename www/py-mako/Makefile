@@ -1,6 +1,6 @@
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION =	1.2.0
+MODPY_EGG_VERSION =	1.2.3
 DISTNAME =		Mako-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 FIX_EXTRACT_PERMISSIONS = Yes
@@ -12,13 +12,10 @@ HOMEPAGE =		https://www.makotemplates.org/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 # lingua not yet ported
-pre-test:
-	rm ${WRKSRC}/test/ext/test_linguaplugin.py
+MODPY_PYTEST_ARGS =	--ignore test/ext/test_linguaplugin.pyYes
 
 MODULES =		lang/python
 
