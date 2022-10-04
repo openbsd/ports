@@ -1,0 +1,14 @@
+use egdb by default
+
+Index: src/SeerGdbConfigPage.cpp
+--- src/SeerGdbConfigPage.cpp.orig
++++ src/SeerGdbConfigPage.cpp
+@@ -133,7 +133,7 @@ void SeerGdbConfigPage::setDprintfChannel (const QStri
+ 
+ void SeerGdbConfigPage::reset () {
+ 
+-    setGdbProgram("/usr/bin/gdb");
++    setGdbProgram("${LOCALBASE}/bin/egdb");
+     setGdbArguments("--interpreter=mi");
+     setGdbAsyncMode(true);
+     setGdbHandleTerminatingException(true);

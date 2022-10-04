@@ -1,0 +1,14 @@
+use egdb by default
+
+Index: src/SeerMainWindow.cpp
+--- src/SeerMainWindow.cpp.orig
++++ src/SeerMainWindow.cpp
+@@ -904,7 +904,7 @@ void SeerMainWindow::readConfigSettings () {
+     QSettings settings;
+ 
+     settings.beginGroup("gdb"); {
+-        gdbWidget->setGdbProgram(settings.value("program", "/usr/bin/gdb").toString());
++        gdbWidget->setGdbProgram(settings.value("program", "${LOCALBASE}/bin/egdb").toString());
+         gdbWidget->setGdbArguments(settings.value("arguments", "--interpreter=mi").toString());
+         gdbWidget->setGdbAsyncMode(settings.value("asyncmode", true).toBool());
+         gdbWidget->setGdbHandleTerminatingException(settings.value("handleterminatingexception", true).toBool());

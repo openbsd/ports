@@ -1,0 +1,14 @@
+use egdb by default
+
+Index: src/SeerGdbWidget.cpp
+--- src/SeerGdbWidget.cpp.orig
++++ src/SeerGdbWidget.cpp
+@@ -46,7 +46,7 @@ SeerGdbWidget::SeerGdbWidget (QWidget* parent) : QWidg
+     _catchpointsBrowserWidget           = 0;
+     _gdbOutputLog                       = 0;
+     _seerOutputLog                      = 0;
+-    _gdbProgram                         = "/usr/bin/gdb";
++    _gdbProgram                         = "${LOCALBASE}/bin/egdb";
+     _gdbArguments                       = "--interpreter=mi";
+     _gdbASyncMode                       = true;
+     _assemblyShowAssemblyTabOnStartup   = false;
