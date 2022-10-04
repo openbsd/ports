@@ -1,7 +1,7 @@
 COMMENT =	read and manage your digital comic collection
 
-V =		9.9.1
-DISTNAME =	yacreader-${V}.2209046
+V =		9.9.2
+DISTNAME =	yacreader-${V}.2210021
 PKGNAME =	yacreader-${V}
 
 CATEGORIES =	graphics
