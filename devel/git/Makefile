@@ -2,7 +2,7 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.37.3
+V =		2.38.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
@@ -129,8 +129,6 @@ post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
 	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD}/contrib/subtree \
 		${MAKE_FLAGS} install install-man
-	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKBUILD}/gitweb \
-		gitwebdir=${TRUEPREFIX}/share/gitweb install
 	perl -pi -e "s|${WRKINST}||g" ${PREFIX}/share/gitweb/gitweb.cgi
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 	${MODTCL_WISH_ADJ} ${PREFIX}/libexec/git/git-gui--askpass

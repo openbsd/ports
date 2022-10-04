@@ -9,6 +9,7 @@ bin/git-cvsserver
 @shell bin/git-shell
 @bin bin/git-upload-archive
 @bin bin/git-upload-pack
+@bin bin/scalar
 @static-lib lib/libgit.a
 ${P5SITE}/Git/
 ${P5SITE}/Git.pm
@@ -62,6 +63,7 @@ libexec/git/git-cvsimport
 libexec/git/git-cvsserver
 @bin libexec/git/git-daemon
 @bin libexec/git/git-describe
+@bin libexec/git/git-diagnose
 @bin libexec/git/git-diff
 @bin libexec/git/git-diff-files
 @bin libexec/git/git-diff-index
@@ -187,6 +189,7 @@ libexec/git/git-subtree
 @bin libexec/git/git-verify-commit
 @bin libexec/git/git-verify-pack
 @bin libexec/git/git-verify-tag
+@bin libexec/git/git-version
 libexec/git/git-web--browse
 @bin libexec/git/git-whatchanged
 @bin libexec/git/git-worktree
@@ -215,6 +218,7 @@ libexec/git/mergetools/tortoisemerge
 libexec/git/mergetools/vimdiff
 libexec/git/mergetools/winmerge
 libexec/git/mergetools/xxdiff
+@bin libexec/git/scalar
 @man man/man1/git-add.1
 @man man/man1/git-am.1
 @man man/man1/git-annotate.1
@@ -252,6 +256,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-cvsserver.1
 @man man/man1/git-daemon.1
 @man man/man1/git-describe.1
+@man man/man1/git-diagnose.1
 @man man/man1/git-diff-files.1
 @man man/man1/git-diff-index.1
 @man man/man1/git-diff-tree.1
@@ -372,11 +377,23 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-write-tree.1
 @man man/man1/git.1
 @man man/man1/gitweb.1
+@man man/man1/scalar.1
 @man man/man5/gitattributes.5
+@man man/man5/gitformat-bundle.5
+@man man/man5/gitformat-chunk.5
+@man man/man5/gitformat-commit-graph.5
+@man man/man5/gitformat-index.5
+@man man/man5/gitformat-pack.5
+@man man/man5/gitformat-signature.5
 @man man/man5/githooks.5
 @man man/man5/gitignore.5
 @man man/man5/gitmailmap.5
 @man man/man5/gitmodules.5
+@man man/man5/gitprotocol-capabilities.5
+@man man/man5/gitprotocol-common.5
+@man man/man5/gitprotocol-http.5
+@man man/man5/gitprotocol-pack.5
+@man man/man5/gitprotocol-v2.5
 @man man/man5/gitrepository-layout.5
 @man man/man5/gitweb.conf.5
 @man man/man7/gitcli.7
