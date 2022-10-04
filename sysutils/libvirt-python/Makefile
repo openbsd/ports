@@ -1,6 +1,6 @@
 COMMENT =		libvirt virtualization API python bindings
 
-MODPY_EGG_VERSION =	8.7.0
+MODPY_EGG_VERSION =	8.8.0
 DISTNAME =		libvirt-python-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-python-/-/}
 
