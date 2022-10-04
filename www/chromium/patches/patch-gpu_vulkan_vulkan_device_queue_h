@@ -1,7 +1,7 @@
 Index: gpu/vulkan/vulkan_device_queue.h
 --- gpu/vulkan/vulkan_device_queue.h.orig
 +++ gpu/vulkan/vulkan_device_queue.h
-@@ -155,7 +155,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
+@@ -158,7 +158,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
  
    bool allow_protected_memory_ = false;
  

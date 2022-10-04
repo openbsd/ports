@@ -33,7 +33,7 @@ Index: base/process/process_metrics.cc
  }
  
 -#if !BUILDFLAG(IS_FREEBSD) || !BUILDFLAG(IS_POSIX)
-+#if !BUILDFLAG(IS_BSD) || !BUILDFLAG(IS_POSIX)
++#if !BUILDFLAG(IS_FREEBSD)
  double ProcessMetrics::GetPlatformIndependentCPUUsage() {
    TimeDelta cumulative_cpu = GetCumulativeCPUUsage();
    TimeTicks time = TimeTicks::Now();

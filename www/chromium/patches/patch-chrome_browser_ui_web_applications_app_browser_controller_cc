@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/web_applications/app_browser_controller.cc
 --- chrome/browser/ui/web_applications/app_browser_controller.cc.orig
 +++ chrome/browser/ui/web_applications/app_browser_controller.cc
-@@ -408,7 +408,7 @@ CustomThemeSupplier* AppBrowserController::GetThemeSup
+@@ -428,7 +428,7 @@ CustomThemeSupplier* AppBrowserController::GetThemeSup
  }
  
  bool AppBrowserController::ShouldUseSystemTheme() const {

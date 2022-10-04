@@ -9,4 +9,4 @@ Index: ui/strings/translations/app_locale_settings_ml.xtb
 +<if expr="is_posix">
    <translation id="IDS_WEB_FONT_FAMILY">Arial,AnjaliOldLipi,Rachana,Kartika,sans-serif</translation>
  </if>
- <if expr="chromeos_ash or chromeos_lacros">
+ <if expr="is_chromeos">

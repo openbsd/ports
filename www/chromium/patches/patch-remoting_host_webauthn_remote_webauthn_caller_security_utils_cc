@@ -27,4 +27,4 @@ Index: remoting/host/webauthn/remote_webauthn_caller_security_utils.cc
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    base::ProcessId parent_pid =
        base::GetParentProcessId(base::GetCurrentProcessHandle());
-   base::FilePath parent_image_path = GetProcessImagePath(parent_pid);
+   // Note that on Linux the process image may no longer exist in its original

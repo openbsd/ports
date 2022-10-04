@@ -37,7 +37,7 @@ Index: content/gpu/gpu_main.cc
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -396,7 +396,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -401,7 +401,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  

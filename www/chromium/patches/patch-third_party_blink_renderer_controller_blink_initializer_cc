@@ -25,8 +25,8 @@ Index: third_party/blink/renderer/controller/blink_initializer.cc
    // Initialize UserLevelMemoryPressureSignalGenerator so it starts monitoring.
    if (UserLevelMemoryPressureSignalGenerator::Enabled())
      UserLevelMemoryPressureSignalGenerator::Instance();
-@@ -251,7 +251,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
-       main_thread->GetTaskRunner());
+@@ -253,7 +253,7 @@ void BlinkInitializer::RegisterInterfaces(mojo::Binder
+       main_thread_task_runner);
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

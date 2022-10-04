@@ -10,7 +10,7 @@ Index: chrome/browser/ui/chrome_pages.h
  namespace web_app {
  enum class AppSettingsPageEntryPoint;
  }  // namespace web_app
-@@ -210,7 +210,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
+@@ -213,7 +213,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

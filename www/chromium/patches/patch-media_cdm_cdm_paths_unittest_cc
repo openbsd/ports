@@ -9,4 +9,4 @@ Index: media/cdm/cdm_paths_unittest.cc
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      "linux";
  #else
-     "unsupported_platform";
+ #error unsupported platform

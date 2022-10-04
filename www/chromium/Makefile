@@ -6,7 +6,7 @@ DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			105.0.5195.125
+V=			106.0.5249.91
 
 DISTNAME=		chromium-${V}
 
@@ -162,7 +162,6 @@ GN_ARGS=	enable_nacl=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=false \
-		enable_wmax_tokens=false \
 		use_udev=false
 
 # notyet

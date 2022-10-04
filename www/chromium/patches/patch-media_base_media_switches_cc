@@ -37,7 +37,7 @@ Index: media/base/media_switches.cc
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  const base::Feature kVaapiVideoDecodeLinux{"VaapiVideoDecoder",
-@@ -947,7 +947,7 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
+@@ -942,7 +942,7 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
      "DeprecateLowUsageCodecs", base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

@@ -1,7 +1,7 @@
 Index: content/test/BUILD.gn
 --- content/test/BUILD.gn.orig
 +++ content/test/BUILD.gn
-@@ -2037,7 +2037,7 @@ static_library("run_all_unittests") {
+@@ -2055,7 +2055,7 @@ static_library("run_all_unittests") {
      ":test_support",
      "//base/test:test_support",
    ]
@@ -10,7 +10,7 @@ Index: content/test/BUILD.gn
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -3006,7 +3006,7 @@ test("content_unittests") {
+@@ -3025,7 +3025,7 @@ test("content_unittests") {
      deps += [ "//third_party/boringssl" ]
    }
  

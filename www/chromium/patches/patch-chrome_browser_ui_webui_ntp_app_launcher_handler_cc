@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/ntp/app_launcher_handler.cc
    is_deprecated_app =
        extensions::IsExtensionUnsupportedDeprecatedApp(context, extension->id());
  #endif
-@@ -1426,7 +1426,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
+@@ -1427,7 +1427,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
    options.os_hooks[web_app::OsHookType::kUninstallationViaOsSettings] =
        web_app->CanUserUninstallWebApp();
  

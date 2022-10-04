@@ -14,8 +14,8 @@ Index: chrome/app/settings_strings.grdp
        Use Classic
      </message>
    </if>
--  <if expr="not is_linux or chromeos_ash or chromeos_lacros or is_fuchsia">
-+  <if expr="not is_posix or chromeos_ash or chromeos_lacros or is_fuchsia">
+-  <if expr="not is_linux or is_chromeos or is_fuchsia">
++  <if expr="not is_posix or is_chromeos or is_fuchsia">
      <message name="IDS_SETTINGS_RESET_TO_DEFAULT_THEME" desc="Name of the control which resets the browser theme back to the default theme.">
        Reset to default
      </message>

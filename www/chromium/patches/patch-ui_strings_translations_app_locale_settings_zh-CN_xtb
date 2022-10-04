@@ -9,4 +9,4 @@ Index: ui/strings/translations/app_locale_settings_zh-CN.xtb
 +<if expr="is_posix">
    <translation id="IDS_WEB_FONT_FAMILY">Noto Sans CJK SC, WenQuanYi Zen Hei, sans-serif</translation>
  </if>
- <if expr="chromeos_ash or chromeos_lacros">
+ <if expr="is_chromeos">

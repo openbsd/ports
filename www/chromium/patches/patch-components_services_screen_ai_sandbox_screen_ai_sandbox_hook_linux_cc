@@ -3,7 +3,7 @@ Index: components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc
 +++ components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.cc
 @@ -36,6 +36,7 @@ bool ScreenAIPreSandboxHook(sandbox::policy::SandboxLi
    }
-   screen_ai::SetPreloadedLibraryFilePath(library_path);
+   screen_ai::StoreComponentBinaryPath(library_path);
  
 +#if !BUILDFLAG(IS_BSD)
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();

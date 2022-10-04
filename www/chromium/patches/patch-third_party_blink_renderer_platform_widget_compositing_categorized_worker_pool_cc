@@ -8,5 +8,5 @@ Index: third_party/blink/renderer/platform/widget/compositing/categorized_worker
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    thread->SetBackgroundingCallback(
-       Thread::MainThread()->GetTaskRunner(),
+       Thread::MainThread()->GetDeprecatedTaskRunner(),
        base::BindOnce([](base::PlatformThreadId thread_id) {
