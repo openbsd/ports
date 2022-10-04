@@ -1,0 +1,18 @@
+_L conflicts with ctype.h
+
+https://github.com/rspamd/rspamd/issues/4293
+
+Index: src/libserver/symcache/symcache_internal.hxx
+--- src/libserver/symcache/symcache_internal.hxx.orig
++++ src/libserver/symcache/symcache_internal.hxx
+@@ -139,8 +139,8 @@ struct delayed_cache_condition {
+ 	int cbref;
+ 	lua_State *L;
+ public:
+-	delayed_cache_condition(std::string_view _sym, int _cbref, lua_State *_L) :
+-		sym(_sym), cbref(_cbref), L(_L) {}
++	delayed_cache_condition(std::string_view _sym, int _cbref, lua_State *_LS) :
++		sym(_sym), cbref(_cbref), L(_LS) {}
+ };
+ 
+ class delayed_symbol_elt {

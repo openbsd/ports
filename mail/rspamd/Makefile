@@ -2,7 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.2
+GH_TAGNAME=	3.3
 
 CATEGORIES=	mail
 
@@ -73,7 +73,8 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRSPAMD_USER="_rspamd"
 
 CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
-		-DSYSTEM_ZSTD=ON
+		-DSYSTEM_ZSTD=ON \
+		-DENABLE_JEMALLOC=OFF
 
 # to line up @samples in plist
 ETC=		${SYSCONFDIR}
