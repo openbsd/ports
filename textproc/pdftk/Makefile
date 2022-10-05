@@ -1,8 +1,8 @@
 COMMENT=	pdf swiss army knife
 
-V=		3.3.2
+V=		3.3.3
 # https://www.bouncycastle.org/latest_releases.html
-BC=		170
+BC=		171
 # https://commons.apache.org/proper/commons-lang/
 CL3=		3.12.0
 DISTNAME=	pdftk-v$V
@@ -24,7 +24,7 @@ MASTER_SITES0=	${MASTER_SITE_APACHE:=commons/lang/binaries/}
 MASTER_SITES1=	https://www.bouncycastle.org/download/
 DISTFILES=	pdftk-v$V.tar.gz \
 		commons-lang3-${CL3}-bin.tar.gz:0 \
-		bcprov-jdk15on-${BC}.jar:1
+		bcprov-jdk18on-${BC}.jar:1
 
 MODULES=	java
 MODJAVA_VER=	1.8+
@@ -35,7 +35,7 @@ RUN_DEPENDS+=	java/javaPathHelper
 
 post-extract:
 	mkdir ${WRKSRC}/lib
-	cp ${FULLDISTDIR}/bcprov-jdk15on-${BC}.jar ${WRKSRC}/lib/bcprov.jar
+	cp ${FULLDISTDIR}/bcprov-jdk18on-${BC}.jar ${WRKSRC}/lib/bcprov.jar
 	cp ${WRKDIR}/commons-lang3-${CL3}/commons-lang3-${CL3}.jar ${WRKSRC}/lib/commons-lang3.jar
 
 do-install:
