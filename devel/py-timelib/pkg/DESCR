@@ -1,0 +1,10 @@
+timelib is a short wrapper around a bundled copy of PHP's internal
+timelib module.
+
+>>> import time, timelib
+>>> timelib.strtodatetime('today'.encode('utf-8'))
+datetime.datetime(2022, 10, 4, 0, 0)
+>>> timelib.strtodatetime('next friday'.encode('utf-8'))
+datetime.datetime(2022, 10, 7, 0, 0)
+>>> time.ctime(timelib.strtotime("29 feb 2008 -108 years".encode('utf-8')))
+'Thu Mar  1 00:00:00 1900'
