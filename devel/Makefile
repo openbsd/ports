@@ -1567,6 +1567,7 @@
      SUBDIR += py-test-xprocess,python3
      SUBDIR += py-testpath,python3
      SUBDIR += py-testtools,python3
+     SUBDIR += py-timelib,python3
      SUBDIR += py-toolz,python3
      SUBDIR += py-toposort,python3
      SUBDIR += py-tox,python3
