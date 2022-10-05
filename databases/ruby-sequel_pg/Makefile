@@ -1,6 +1,6 @@
 COMMENT =	faster SELECTs when using ruby-sequel with ruby-pg
 
-DISTNAME =	sequel_pg-1.16.0
+DISTNAME =	sequel_pg-1.17.0
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
