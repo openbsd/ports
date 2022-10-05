@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.67.0
+MODPY_EGG_VERSION =	1.68.0
 
 GH_ACCOUNT =	matrix-org
 GH_PROJECT =	synapse
@@ -14,8 +14,22 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODULES =	lang/python
+MODULES =	devel/cargo \
+		lang/python
+
+WANTLIB +=	${COMPILER_LIBCXX}
+
 MODPY_PYBUILD =	poetry-core
+
+MODCARGO_BUILD =	No
+MODCARGO_INSTALL =	No
+MODCARGO_TEST =		No
+
+MAKE_ENV +=		${MODCARGO_ENV}
+
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+
+BUILD_DEPENDS += devel/py-setuptools-rust${MODPY_FLAVOR}>=1.3.0
 
 # in same order as in pyproject.toml: mandatory section
 RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
@@ -45,7 +59,7 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		devel/py-typing-extensions${MODPY_FLAVOR}>=4.3.0 \
 		security/py-cryptography${MODPY_FLAVOR} \
 		textproc/py-ijson${MODPY_FLAVOR} \
-		devel/py-matrix-common${MODPY_FLAVOR}>=1.2.1 \
+		devel/py-matrix-common${MODPY_FLAVOR}->=1.3.0,<2.0.0 \
 		sysutils/py-packaging${MODPY_FLAVOR}
 # optional section
 RUN_DEPENDS +=	textproc/py-lxml${MODPY_FLAVOR}
@@ -57,4 +71,8 @@ TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-parameterized${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR}
 
+do-configure:
+	@${MODCARGO_configure}
+
+.include "modules.inc"
 .include <bsd.port.mk>

@@ -1900,10 +1900,24 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/03
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/03remove_groups.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/04drop_column_application_services_state_last_txn.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/04drop_column_application_services_state_last_txn.sql.sqlite
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/05receipts_event_stream_ordering.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/05remove_unstable_private_read_receipts.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/06add_consent_ts_to_users.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/06thread_notifications.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/07force_update_current_state_events_membership.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/07thread_receipts.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/07thread_receipts.sql.sqlite
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/08begin_cache_invalidation_seq_at_2.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/08thread_receipts.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/09partial_indices.sql.sqlite
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/${MODPY_PYCACHE}03bg_populate_events_columns.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/${MODPY_PYCACHE}03bg_populate_events_columns.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/${MODPY_PYCACHE}07force_update_current_state_events_membership.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/72/${MODPY_PYCACHE}07force_update_current_state_events_membership.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/01event_failed_pull_attempts.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/73/02room_id_indexes_for_purging.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/16/application_services.sql
@@ -1928,8 +1942,6 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/23/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/23/drop_state_index.sql
-lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/30/
-lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/30/state_stream.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/32/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/32/remove_state_indices.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/35/
@@ -1978,6 +1990,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/streams/${MODPY_PYCACHE}events.
 lib/python${MODPY_VERSION}/site-packages/synapse/streams/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/streams/config.py
 lib/python${MODPY_VERSION}/site-packages/synapse/streams/events.py
+@so lib/python${MODPY_VERSION}/site-packages/synapse/synapse_rust${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/synapse/types.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/
 lib/python${MODPY_VERSION}/site-packages/synapse/util/__init__.py
@@ -2032,6 +2045,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}retryutils
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}retryutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}rlimit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}rlimit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}stringutils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}stringutils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}templates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2099,6 +2114,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/util/patch_inline_callbacks.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/ratelimitutils.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/retryutils.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/rlimit.py
+lib/python${MODPY_VERSION}/site-packages/synapse/util/rust.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/stringutils.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/templates.py
 lib/python${MODPY_VERSION}/site-packages/synapse/util/threepids.py
