@@ -42,6 +42,7 @@
      SUBDIR += mftrace
      SUBDIR += mpage
      SUBDIR += muttprint
+     SUBDIR += ocrmypdf
      SUBDIR += openclipart
      SUBDIR += p5-Poppler
      SUBDIR += p5-PostScript-MailLabels
