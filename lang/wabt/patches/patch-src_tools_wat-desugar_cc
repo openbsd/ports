@@ -8,9 +8,9 @@ Index: src/tools/wat-desugar.cc
 +#include <err.h>
 +#include <unistd.h>
 +
- #include "config.h"
+ #include "wabt/config.h"
  
- #include "src/apply-names.h"
+ #include "wabt/apply-names.h"
 @@ -83,6 +86,13 @@ static void ParseOptions(int argc, char** argv) {
  int ProgramMain(int argc, char** argv) {
    InitStdio();

@@ -8,9 +8,9 @@ Index: src/tools/wasm-strip.cc
 +#include <err.h>
 +#include <unistd.h>
 +
- #include "src/binary-reader-nop.h"
- #include "src/binary-reader.h"
- #include "src/binary.h"
+ #include "wabt/binary-reader-nop.h"
+ #include "wabt/binary-reader.h"
+ #include "wabt/binary.h"
 @@ -87,6 +90,11 @@ int ProgramMain(int argc, char** argv) {
    InitStdio();
    ParseOptions(argc, argv);

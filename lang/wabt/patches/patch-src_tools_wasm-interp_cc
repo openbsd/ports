@@ -8,9 +8,9 @@ Index: src/tools/wasm-interp.cc
 +#include <err.h>
 +#include <unistd.h>
 +
- #include "src/binary-reader.h"
- #include "src/error-formatter.h"
- #include "src/feature.h"
+ #include "wabt/binary-reader.h"
+ #include "wabt/error-formatter.h"
+ #include "wabt/feature.h"
 @@ -326,6 +329,11 @@ int ProgramMain(int argc, char** argv) {
    ParseOptions(argc, argv);
    s_store.setFeatures(s_features);

@@ -8,9 +8,9 @@ Index: src/tools/wast2json.cc
 +#include <err.h>
 +#include <unistd.h>
 +
- #include "config.h"
+ #include "wabt/config.h"
  
- #include "src/binary-writer-spec.h"
+ #include "wabt/binary-writer-spec.h"
 @@ -102,6 +105,9 @@ int ProgramMain(int argc, char** argv) {
  
    ParseOptions(argc, argv);

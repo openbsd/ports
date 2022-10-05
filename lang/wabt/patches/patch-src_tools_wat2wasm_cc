@@ -8,9 +8,9 @@ Index: src/tools/wat2wasm.cc
 +#include <err.h>
 +#include <unistd.h>
 +
- #include "config.h"
+ #include "wabt/config.h"
  
- #include "src/binary-writer.h"
+ #include "wabt/binary-writer.h"
 @@ -130,6 +133,13 @@ int ProgramMain(int argc, char** argv) {
    InitStdio();
  
