@@ -2,7 +2,7 @@ COMMENT =	desktop client for Matrix using Qt and C++17
 
 GH_ACCOUNT =	Nheko-Reborn
 GH_PROJECT =	nheko
-GH_TAGNAME =	v0.10.1
+GH_TAGNAME =	v0.10.2
 
 CATEGORIES=	net
 
