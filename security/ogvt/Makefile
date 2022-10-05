@@ -2,7 +2,7 @@ COMMENT =		simple tool for verifying gpg signatures
 
 MODGO_MODNAME =		suah.dev/ogvt
 MODGO_VERSION =		v1.2.0
-REVISON =		0
+REVISION =		0
 
 DISTNAME =		 ogvt-${MODGO_VERSION}
 
