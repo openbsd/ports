@@ -30,7 +30,7 @@ Index: source3/wscript
                      headers='sys/types.h dirent.h',
                      msg='Checking whether seekdir returns void')
  
-@@ -1785,7 +1787,7 @@ main() {
+@@ -1802,7 +1804,7 @@ main() {
          else:
              conf.fatal('AFS headers not available, but --with-fake-kaserver was specified')
  
