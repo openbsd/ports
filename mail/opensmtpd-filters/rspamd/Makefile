@@ -7,14 +7,13 @@ MODGO_MODNAME =	github.com/poolpOrg/filter-rspamd
 MODGO_VERSION =	v${V}
 
 DISTNAME =	filter-rspamd-${MODGO_VERSION:S/v//}
-REVISION =	0
+REVISION =	1
 
 FILTER_NAME =	rspamd
 
 CATEGORIES =	mail
 HOMEPAGE =	https://github.com/poolpOrg/filter-rspamd/
 
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # ISC
 PERMIT_PACKAGE =	Yes
 

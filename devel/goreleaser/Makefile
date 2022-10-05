@@ -7,10 +7,8 @@ MODGO_VERSION =	v1.7.0
 
 HOMEPAGE =	https://goreleaser.com/
 
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
-
 DISTNAME =	goreleaser-${MODGO_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

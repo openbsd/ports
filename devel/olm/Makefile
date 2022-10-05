@@ -2,14 +2,13 @@ COMMENT =	Double Ratchet cryptographic ratchet in C++
 V =		3.2.12
 DISTNAME =	olm-${V}
 CATEGORIES =	devel security
+REVISION =	0
 
 SHARED_LIBS +=	olm	2.0 # 3.2.6
 
 MASTER_SITES =	https://gitlab.matrix.org/matrix-org/olm/-/archive/${V}/
 
 HOMEPAGE =	https://git.matrix.org/git/olm
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

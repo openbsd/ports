@@ -4,12 +4,11 @@ NOT_FOR_ARCHS =	powerpc64 riscv64 sparc64
 COMMENT =	command line BitWarden client
 
 DISTNAME =	rbw-1.4.3
+REVISION =	0
 
 CATEGORIES =	security
 
 MASTER_SITES =	https://git.tozt.net/rbw/snapshot/
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # MIT X11
 PERMIT_PACKAGE =	Yes

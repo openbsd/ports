@@ -3,11 +3,9 @@ COMMENT =	AirPlay audio player
 GH_ACCOUNT =	mikebrady
 GH_PROJECT =	shairport-sync
 GH_TAGNAME =	3.3.9
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # BSD?
 PERMIT_PACKAGE =	Yes

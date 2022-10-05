@@ -2,12 +2,11 @@ COMMENT =	git in your tmux status bar
 
 MODGO_MODNAME =	github.com/arl/gitmux
 MODGO_VERSION =	v0.7.9
+REVISION =	0
 
 DISTNAME =	gitmux-${MODGO_VERSION}
 
 CATEGORIES =	sysutils devel
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 HOMEPAGE =	https://github.com/arl/gitmux
 

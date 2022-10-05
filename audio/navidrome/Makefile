@@ -2,15 +2,13 @@ COMMENT =	modern music server and streamer
 
 MODGO_MODNAME =	github.com/navidrome/navidrome
 MODGO_VERSION =	v0.47.5
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	navidrome-${MODGO_VERSION}
 
 CATEGORIES =	audio
 
 HOMEPAGE =	https://www.navidrome.org/
-
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 
 # Built by running "npm i; npm run build" in ${WRKSRC}/ui;
 # rm -rf ${WRKSRC}/ui/node_modules; 

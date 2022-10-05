@@ -2,6 +2,7 @@ COMMENT =	matrix homeserver written in Go
 
 MODGO_MODNAME =	github.com/matrix-org/dendrite
 MODGO_VERSION =	v0.9.2
+REVISION =	0
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
@@ -9,7 +10,6 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/matrix-org/dendrite
 
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

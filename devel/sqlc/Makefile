@@ -5,12 +5,12 @@ COMMENT =	create type safe go from SQL
 
 MODGO_MODNAME =	github.com/kyleconroy/sqlc
 MODGO_VERSION =	v1.12.0
+REVISION =	0
 
 DISTNAME =	sqlc-${MODGO_VERSION}
 
 CATEGORIES =	devel
 
-MAINTAINER =	Aaron Bieber <abieber@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 

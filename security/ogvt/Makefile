@@ -2,6 +2,7 @@ COMMENT =		simple tool for verifying gpg signatures
 
 MODGO_MODNAME =		suah.dev/ogvt
 MODGO_VERSION =		v1.2.0
+REVISON =		0
 
 DISTNAME =		 ogvt-${MODGO_VERSION}
 
@@ -9,7 +10,6 @@ CATEGORIES =		security
 
 HOMEPAGE =		https://git.sr.ht/~qbit/ogvt
 
-MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 # BSD
 PERMIT_PACKAGE =	Yes
 

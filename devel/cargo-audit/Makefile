@@ -2,7 +2,7 @@ COMMENT =		audit Cargo.lock files for security vulnerabilities
 
 # https://github.com/rustsec/rustsec/issues/429
 V =			0.13.1
-REVISION =		0
+REVISION =		1
 CRATE =			cargo-audit
 PKGNAME =		${CRATE}-${V}
 
@@ -13,8 +13,6 @@ MASTER_SITES =		https://crates.io/api/v1/crates/
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/RustSec/rustsec/tree/main/cargo-audit
-
-MAINTAINER =		Aaron Bieber <abieber@openbsd.org>
 
 # Apache 2/MIT
 PERMIT_PACKAGE =	Yes
