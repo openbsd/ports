@@ -1,7 +1,7 @@
 Index: tools/gn/src/base/files/file_posix.cc
 --- tools/gn/src/base/files/file_posix.cc.orig
 +++ tools/gn/src/base/files/file_posix.cc
-@@ -369,7 +369,7 @@ void File::DoInitialize(const FilePath& path, uint32_t
+@@ -371,7 +371,7 @@ void File::DoInitialize(const FilePath& path, uint32_t
  bool File::Flush() {
    DCHECK(IsValid());
  

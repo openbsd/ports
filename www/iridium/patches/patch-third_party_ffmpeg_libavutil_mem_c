@@ -9,5 +9,5 @@ Index: third_party/ffmpeg/libavutil/mem.c
 -#include <malloc.h>
 -#endif
  
- #include "avutil.h"
- #include "common.h"
+ #include "attributes.h"
+ #include "avassert.h"

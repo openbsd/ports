@@ -1,7 +1,7 @@
 Index: headless/lib/browser/policy/headless_browser_policy_connector.cc
 --- headless/lib/browser/policy/headless_browser_policy_connector.cc.orig
 +++ headless/lib/browser/policy/headless_browser_policy_connector.cc
-@@ -148,8 +148,10 @@ HeadlessBrowserPolicyConnector::CreatePlatformProvider
+@@ -150,8 +150,10 @@ HeadlessBrowserPolicyConnector::CreatePlatformProvider
    // chrome/common/chrome_paths.cc
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
    base::FilePath config_dir_path(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));

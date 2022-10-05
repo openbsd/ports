@@ -1,7 +1,7 @@
 Index: headless/lib/headless_content_main_delegate.cc
 --- headless/lib/headless_content_main_delegate.cc.orig
 +++ headless/lib/headless_content_main_delegate.cc
-@@ -336,7 +336,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
+@@ -337,7 +337,7 @@ void HeadlessContentMainDelegate::InitCrashReporter(
    if (process_type != switches::kZygoteProcess) {
      g_headless_crash_client.Pointer()->set_crash_dumps_dir(
          options()->crash_dumps_dir);

@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
  #include "chrome/browser/shell_integration_linux.h"
  #endif
  
-@@ -56,7 +56,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
+@@ -55,7 +55,7 @@ void ChromeNativeAppWindowViewsAura::OnBeforeWidgetIni
      const AppWindow::CreateParams& create_params,
      views::Widget::InitParams* init_params,
      views::Widget* widget) {

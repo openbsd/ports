@@ -5,8 +5,8 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_browser_prox
  
    useDefaultTheme(): void;
  
--  // <if expr="is_linux and not chromeos">
-+  // <if expr="is_bsd and not chromeos">
+-  // <if expr="is_linux">
++  // <if expr="is_bsd">
    useSystemTheme(): void;
    // </if>
  
@@ -14,8 +14,8 @@ Index: chrome/browser/resources/settings/appearance_page/appearance_browser_prox
      chrome.send('useDefaultTheme');
    }
  
--  // <if expr="is_linux and not chromeos">
-+  // <if expr="is_bsd and not chromeos">
+-  // <if expr="is_linux">
++  // <if expr="is_bsd">
    useSystemTheme() {
      chrome.send('useSystemTheme');
    }

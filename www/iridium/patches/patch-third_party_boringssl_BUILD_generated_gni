@@ -1,7 +1,7 @@
 Index: third_party/boringssl/BUILD.generated.gni
 --- third_party/boringssl/BUILD.generated.gni.orig
 +++ third_party/boringssl/BUILD.generated.gni
-@@ -81,6 +81,7 @@ crypto_sources = [
+@@ -78,6 +78,7 @@ crypto_sources = [
    "src/crypto/cpu_aarch64_apple.c",
    "src/crypto/cpu_aarch64_fuchsia.c",
    "src/crypto/cpu_aarch64_linux.c",

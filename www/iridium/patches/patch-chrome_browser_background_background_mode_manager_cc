@@ -1,24 +1,7 @@
-revert:
-
-commit 4fcae18fd17165b76f0e8665e171881651acd8d7
-Author: Jan Engelhardt <jengelh@inai.de>
-Date:   Sat Sep 13 16:59:10 2014 +0200
-
-    prefs: disable background mode by default
-
 Index: chrome/browser/background/background_mode_manager.cc
 --- chrome/browser/background/background_mode_manager.cc.orig
 +++ chrome/browser/background/background_mode_manager.cc
-@@ -376,7 +376,7 @@ void BackgroundModeManager::RegisterPrefs(PrefRegistry
-   registry->RegisterBooleanPref(prefs::kChromeCreatedLoginItem, false);
-   registry->RegisterBooleanPref(prefs::kMigratedLoginItemPref, false);
- #endif
--  registry->RegisterBooleanPref(prefs::kBackgroundModeEnabled, false);
-+  registry->RegisterBooleanPref(prefs::kBackgroundModeEnabled, true);
- }
- 
- void BackgroundModeManager::RegisterProfile(Profile* profile) {
-@@ -899,7 +899,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
+@@ -894,7 +894,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
      return gfx::ImageSkia();
  
    return family->CreateExact(size).AsImageSkia();

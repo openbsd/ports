@@ -5,7 +5,6 @@ iridium/chrome_100_percent.pak
 iridium/chrome_200_percent.pak
 iridium/headless_lib_data.pak
 iridium/headless_lib_strings.pak
-iridium/icudtl.dat
 %%component%%
 @bin iridium/iridium
 @so iridium/libEGL.so
@@ -13,6 +12,8 @@ iridium/icudtl.dat
 @so iridium/libVkICD_mock_icd.so
 @so iridium/libvulkan.so
 iridium/locales/
+iridium/locales/af.pak
+iridium/locales/af.pak.info
 iridium/locales/am.pak
 iridium/locales/am.pak.info
 iridium/locales/ar.pak
@@ -113,6 +114,8 @@ iridium/locales/tr.pak
 iridium/locales/tr.pak.info
 iridium/locales/uk.pak
 iridium/locales/uk.pak.info
+iridium/locales/ur.pak
+iridium/locales/ur.pak.info
 iridium/locales/vi.pak
 iridium/locales/vi.pak.info
 iridium/locales/zh-CN.pak

@@ -19,7 +19,7 @@ Index: chrome/common/chrome_paths.h
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -105,7 +105,7 @@ enum {
+@@ -117,7 +117,7 @@ enum {
    DIR_CHROMEOS_CUSTOM_WALLPAPERS,     // Directory where custom wallpapers
                                        // reside.
  #endif

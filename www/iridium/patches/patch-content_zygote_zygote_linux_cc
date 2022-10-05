@@ -9,7 +9,7 @@ Index: content/zygote/zygote_linux.cc
  
  #include "content/zygote/zygote_linux.h"
  
-@@ -650,3 +651,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
+@@ -653,3 +654,4 @@ bool Zygote::HandleGetSandboxStatus(int fd, base::Pick
  }
  
  }  // namespace content

@@ -10,7 +10,7 @@ Index: base/process/process_metrics_posix.cc
  #else
  #include <malloc.h>
  #endif
-@@ -133,7 +135,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+@@ -135,7 +137,7 @@ size_t ProcessMetrics::GetMallocUsage() {
    return stats.size_in_use;
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
    return GetMallocUsageMallinfo();

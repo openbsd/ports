@@ -1,7 +1,7 @@
 Index: content/public/common/content_features.h
 --- content/public/common/content_features.h.orig
 +++ content/public/common/content_features.h
-@@ -258,7 +258,7 @@ CONTENT_EXPORT extern const base::Feature kV8VmFuture;
+@@ -282,7 +282,7 @@ CONTENT_EXPORT extern const base::Feature kV8VmFuture;
  CONTENT_EXPORT extern const base::Feature kWebAppWindowControlsOverlay;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyBaseline;
  CONTENT_EXPORT extern const base::Feature kWebAssemblyCodeProtection;

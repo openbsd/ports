@@ -9,4 +9,4 @@ Index: extensions/browser/browser_context_keyed_service_factories.cc
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    NetworkingPrivateEventRouterFactory::GetInstance();
  #endif
-   PowerAPI::GetFactoryInstance();
+   OffscreenDocumentManager::GetFactory();

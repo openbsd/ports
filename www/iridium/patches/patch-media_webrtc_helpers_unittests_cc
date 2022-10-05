@@ -10,7 +10,7 @@ Index: media/webrtc/helpers_unittests.cc
    EXPECT_TRUE(config.gain_controller2.enabled);
  #else
    EXPECT_FALSE(config.gain_controller2.enabled);
-@@ -94,7 +94,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
+@@ -98,7 +98,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
  
    // Check that either AGC1 digital or AGC2 digital is used based on the
    // platforms where the Hybrid AGC is enabled by default.

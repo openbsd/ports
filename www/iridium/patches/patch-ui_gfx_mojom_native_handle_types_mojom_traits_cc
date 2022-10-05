@@ -31,5 +31,5 @@ Index: ui/gfx/mojom/native_handle_types_mojom_traits.cc
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    out->modifier = data.modifier();
- #endif
- 
+   out->supports_zero_copy_webgpu_import =
+       data.supports_zero_copy_webgpu_import();

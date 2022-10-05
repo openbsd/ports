@@ -8,5 +8,5 @@ Index: chrome/browser/ui/webui/settings/appearance_handler.h
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
    // Changes the UI theme of the browser to the system (GTK+) theme.
-   void HandleUseSystemTheme(base::Value::ConstListView args);
+   void HandleUseSystemTheme(const base::Value::List& args);
  #endif

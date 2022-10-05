@@ -10,7 +10,7 @@ Index: extensions/browser/api/messaging/message_service.cc
  const char kMissingPermissionError[] =
      "Access to native messaging requires nativeMessaging permission.";
  const char kProhibitedByPoliciesError[] =
-@@ -447,7 +447,7 @@ void MessageService::OpenChannelToNativeApp(
+@@ -437,7 +437,7 @@ void MessageService::OpenChannelToNativeApp(
      return;
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

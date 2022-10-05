@@ -1,7 +1,7 @@
 Index: third_party/webrtc/rtc_base/network.cc
 --- third_party/webrtc/rtc_base/network.cc.orig
 +++ third_party/webrtc/rtc_base/network.cc
-@@ -258,7 +258,12 @@ AdapterType GetAdapterTypeFromName(const char* network
+@@ -269,7 +269,12 @@ AdapterType GetAdapterTypeFromName(absl::string_view n
    }
  #endif
  
@@ -13,4 +13,4 @@ Index: third_party/webrtc/rtc_base/network.cc
 +#endif
  }
  
- NetworkManager::NetworkManager() {}
+ NetworkManager::EnumerationPermission NetworkManager::enumeration_permission()
