@@ -31,6 +31,7 @@ CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
 
 EPOCH=		0
+REVISION-main=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

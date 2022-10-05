@@ -10710,9 +10710,6 @@ lib/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 lib/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 lib/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
 lib/libreoffice/share/extensions/dict-es/RLA-ES.png
-lib/libreoffice/share/extensions/dict-pt-BR/test_compile_rules.py
-lib/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.dat
-lib/libreoffice/share/extensions/dict-pt-BR/th_pt_BR.idx
 lib/libreoffice/share/filter/
 lib/libreoffice/share/filter/oox-drawingml-adj-names
 lib/libreoffice/share/filter/oox-drawingml-cs-presets
