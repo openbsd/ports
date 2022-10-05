@@ -1,6 +1,6 @@
 COMMENT =		common utilities for Synapse, Sydent and Sygnal
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	1.3.0
 
 DISTNAME =		matrix_common-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -15,8 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
 FLAVOR =		python3
