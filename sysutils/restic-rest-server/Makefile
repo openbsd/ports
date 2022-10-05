@@ -2,12 +2,14 @@ COMMENT =	REST backend for the restic backup tool
 
 MODGO_MODNAME =	github.com/restic/rest-server
 MODGO_VERSION =	v0.11.0
-REVISION =	1
+REVISION =	2
 
 DISTNAME =	rest-server-${MODGO_VERSION}
 PKGNAME =	restic-${DISTNAME:S/-v/-/}
 
 CATEGORIES =	sysutils
+
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

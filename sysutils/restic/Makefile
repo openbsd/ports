@@ -2,13 +2,15 @@ COMMENT =	fast, efficient and secure backup program
 
 MODGO_MODNAME =	github.com/restic/restic
 MODGO_VERSION =	v0.14.0
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	restic-${MODGO_VERSION}
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://restic.net/
+
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
