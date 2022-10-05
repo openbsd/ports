@@ -4,7 +4,6 @@ include/rnp/
 include/rnp/rnp.h
 include/rnp/rnp_err.h
 include/rnp/rnp_export.h
-lib/cmake/
 lib/cmake/rnp/
 lib/cmake/rnp/rnp-config-version.cmake
 lib/cmake/rnp/rnp-config.cmake
