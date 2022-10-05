@@ -1,7 +1,7 @@
 Index: rawshark.c
 --- rawshark.c.orig
 +++ rawshark.c
-@@ -566,7 +566,11 @@ main(int argc, char *argv[])
+@@ -570,7 +570,11 @@ main(int argc, char *argv[])
                  limit.rlim_cur = get_positive_int(ws_optarg, "memory limit");
                  limit.rlim_max = get_positive_int(ws_optarg, "memory limit");
  

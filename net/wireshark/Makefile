@@ -4,7 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES =	parallel
-V =		3.6.8
+V =		4.0.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -25,16 +25,17 @@ EXTRACT_SUFX =	.tar.xz
 # tools/pidl is GPLv3 or later. See COPYING.
 PERMIT_PACKAGE = Yes
 
-cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0 m pcap z
+cWANTLIB +=	c gcrypt glib-2.0 gmodule-2.0 m pcap pcre2-8 z
 
 MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 MULTI_PACKAGES = -text -main
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 PSEUDO_FLAVORS = no_x11
 
 .if ${MACHINE_ARCH} == "arm"
-# no qt5 -- won't be for m88k/sh either but those are already knocked out by COMPILER
+# no qt -- won't be for m88k/sh either but those are already knocked out by COMPILER
 FLAVOR ?=	no_x11
 .else
 FLAVOR ?=
@@ -55,7 +56,8 @@ WANTLIB-text += opus smi snappy spandsp speexdsp ssh xml2 zstd
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += minizip speexdsp wireshark wiretap wsutil
-WANTLIB-main += Qt5Core Qt5Gui Qt5Multimedia Qt5PrintSupport Qt5Widgets
+WANTLIB-main += Qt6Core Qt6Core5Compat Qt6Gui Qt6Multimedia Qt6PrintSupport
+WANTLIB-main += Qt6Widgets
 
 MASTER_SITES =		https://www.wireshark.org/download/src/all-versions/
 
@@ -68,7 +70,8 @@ BUILD_DEPENDS +=	devel/bison \
 			textproc/libxml \
 			textproc/libxslt \
 			devel/xdg-utils \
-			textproc/asciidoctor
+			textproc/asciidoctor \
+			x11/qt6/qttools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils \
 			misc/shared-mime-info \
@@ -82,6 +85,7 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 			audio/opus \
 			audio/speexdsp \
 			devel/glib2 \
+			devel/pcre2 \
 			net/libcares \
 			net/libmaxminddb  \
 			net/libsmi \
@@ -96,25 +100,34 @@ LIB_DEPENDS-text =	${MODLUA_LIB_DEPENDS} \
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			tshark-$V:${BUILD_PKGPATH:S/,$//},-text \
 			archivers/minizip \
-			x11/qt5/qtmultimedia
+			x11/qt6/qt5compat \
+			x11/qt6/qtmultimedia
 # required for displaying language icons at Preferences; see a5abaa81ad9
-RUN_DEPENDS-main +=	x11/qt5/qtsvg
+RUN_DEPENDS-main +=	x11/qt6/qtsvg
 
 MODULES +=		devel/cmake
+CFLAGS +=		-I${X11BASE}/include
+CXXFLAGS +=		-I${X11BASE}/include
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ENV +=	WIRESHARK_VERSION_EXTRA=" from OpenBSD packages"
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR=${TRUEPREFIX}/man \
+			-DUSE_qt6=true \
 			-DENABLE_SBC=false \
 			-DENABLE_ILBC=false \
-			-DCOMPILER_CAN_HANDLE_SSE4_2=false
+			-DCOMPILER_CAN_HANDLE_SSE4_2=false \
+			-DVCSVERSION_OVERRIDE="Git v$V packaged as ${FULLPKGNAME-main}"
 
 .include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-DENABLE_LTO=true
+.endif
 
 .if ${FLAVOR:Mno_x11}
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-main}
 .endif
 .if ${BUILD_PACKAGES:M-main}
-MODULES +=	x11/qt5
+MODULES +=	x11/qt6
 .else
 CONFIGURE_ARGS +=	-DBUILD_wireshark=false
 .endif
