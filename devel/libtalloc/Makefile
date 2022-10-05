@@ -2,12 +2,11 @@ COMMENT-main=	hierarchical memory pool system with destructors
 COMMENT-python=	Python ${MODPY_VERSION} bindings for talloc
 
 # Keep in sync with the version bundled in net/samba
-V=		2.3.3
+V=		2.3.4
 
 DISTNAME=	talloc-$V
 PKGNAME-main=	lib${DISTNAME}
 PKGNAME-python=	py3-${DISTNAME}
-REVISION-python= 0
 
 MULTI_PACKAGES=	-main -python
 
