@@ -1,4 +1,3 @@
-BROKEN =		lang/rust 1.63.0 fails to build it
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
 
 COMMENT-main =		Mozilla application suite
@@ -6,15 +5,14 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.13
+MOZILLA_VERSION =	2.53.14
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.13
+PKGNAME-lightning =	lightning-seamonkey-5.8.14
 EPOCH-lightning =	0
-REVISION =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
 
@@ -60,16 +58,12 @@ WANTLIB += Xcursor Xi harfbuzz Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=
 
-MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd,encoding_rs"
+MAKE_ENV +=	RUSTC_BOOTSTRAP="packed_simd_2,encoding_rs"
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
 # remove post 96
 CONFIGURE_ARGS +=	--disable-necko-wifi
-
-post-configure:
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/packed_simd/.cargo-checksum.json
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

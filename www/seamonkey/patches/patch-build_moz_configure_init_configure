@@ -1,0 +1,27 @@
+fix configure by hacking python build system
+
+Index: build/moz.configure/init.configure
+--- build/moz.configure/init.configure.orig
++++ build/moz.configure/init.configure
+@@ -260,18 +260,16 @@ def virtualenv_python2(env_python, build_env, mozconfi
+     if normsep(sys.executable) != normsep(manager.python_path):
+         sys.path.insert(
+             0, os.path.join(topsrcdir, 'third_party', 'python', 'backports'))
++        sys.path.insert(
++            0, os.path.join(topsrcdir, 'testing', 'mozbase', 'mozfile', 'mozfile'))
+ 
++
+     if python:
+         found_python = find_program(python)
+         if not found_python:
+             die('The PYTHON environment variable does not contain '
+                 'a valid path. Cannot find %s', python)
+         python = found_python
+-        try:
+-            version = python_executable_version(python).version
+-        except Exception as e:
+-            raise FatalCheckError(
+-                'could not determine version of given PYTHON: %s' % e)
+     else:
+         python = sys.executable
+ 
