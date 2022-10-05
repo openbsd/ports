@@ -1,7 +1,7 @@
 COMMENT=	start subprocess with envvar populated from Consul and Vault
 
 MODGO_MODNAME=	github.com/hashicorp/envconsul
-MODGO_VERSION=	v0.13.0
+MODGO_VERSION=	v0.13.1
 DISTNAME=	envconsul-${MODGO_VERSION}
 
 CATEGORIES=	sysutils
