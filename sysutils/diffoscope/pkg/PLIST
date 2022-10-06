@@ -101,6 +101,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}tar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}uimage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}vmlinuz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}wasm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/${MODPY_PYCACHE}xmlb.${MODPY_PYC_MAGIC_TAG}pyc
@@ -199,6 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/fuzzy.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/libarchive.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/operation.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/utils/specialize.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/vmlinuz.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/wasm.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xml.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/comparators/xmlb.py
@@ -253,6 +255,8 @@ lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}json
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/json.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/readers/utils.py
+lib/python${MODPY_VERSION}/site-packages/diffoscope/scripts/
+lib/python${MODPY_VERSION}/site-packages/diffoscope/scripts/extract-vmlinux
 lib/python${MODPY_VERSION}/site-packages/diffoscope/tempfiles.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/tools.py
 lib/python${MODPY_VERSION}/site-packages/diffoscope/utils.py
