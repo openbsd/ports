@@ -1,0 +1,5 @@
+libgrapheme is an extremely simple C99 library providing utilities for
+properly handling Unicode strings made up of user-perceived characters
+('grapheme clusters') according to the Unicode standard. While providing
+convenience functions to operate on UTF-8-encoded strings, you can also
+use libgrapheme for any other encoding as well.

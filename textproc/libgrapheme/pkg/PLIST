@@ -1,0 +1,8 @@
+include/grapheme.h
+@static-lib lib/libgrapheme.a
+@lib lib/libgrapheme.so.${LIBgrapheme_VERSION}
+@man man/man3/grapheme_decode_utf8.3
+@man man/man3/grapheme_encode_utf8.3
+@man man/man3/grapheme_is_character_break.3
+@man man/man3/grapheme_next_character_break.3
+@man man/man7/libgrapheme.7
