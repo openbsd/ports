@@ -1,6 +1,7 @@
 COMMENT =		fast elliptic curve digital signatures
 
 MODPY_EGG_VERSION =	2.2.3
+REVISION =		0
 
 DISTNAME =		fastecdsa-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -15,7 +16,7 @@ MAINTAINER =		Theo Buehler <tb@openbsd.org>
 # Avoid fetching test cases from the internet during 'make test'
 MASTER_SITES0 =		https://tools.ietf.org/rfc/
 DISTFILES +=		rfc6979.txt:0
-EXTRACT_CASES =		*.txt)	cp ${FULLDISTDIR}/$$archive ${WRKSRC};;
+EXTRACT_CASES =		*.txt)	cp ${FULLDISTDIR}/$$archive ${MODPY_TEST_DIR};;
 
 # Unlicense
 PERMIT_PACKAGE =	Yes
@@ -25,7 +26,10 @@ WANTLIB =		gmp pthread
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
+MODPY_TEST_DIR =	${WRKSRC}/fastecdsa/tests
+MODPY_PYTEST_ARGS =	--pyargs fastecdsa
+
 FLAVORS =		python3
 FLAVOR =		python3
 
