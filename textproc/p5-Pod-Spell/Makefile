@@ -3,9 +3,8 @@ COMMENT =	formatter for spellchecking pod
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	Pod-Spell-1.20
+DISTNAME =	Pod-Spell-1.25
 CATEGORIES =	textproc
-REVISION =	2
 
 # Perl
 PERMIT_PACKAGE =	Yes
