@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	2.0.1
 
 DISTNAME =	termcolor-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -18,6 +19,8 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
+FLAVOR =		python3
+FLAVORS =		python3
 
 BUILD_DEPENDS =		devel/py-hatch-vcs${MODPY_FLAVOR}
 
