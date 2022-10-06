@@ -3,7 +3,7 @@ BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_in
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		25.0.4
+V=		25.1.1
 PORTROACH=	limit:^OTP-25\.
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
@@ -59,44 +59,44 @@ AUTOCONF_VERSION = 2.69
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
-ASN1_VSN        5.0.19 \
-COMMON_TEST_VSN 1.23 \
-COMPILER_VSN    8.2 \
-CRYPTO_VSN      5.1.1 \
+ASN1_VSN        5.0.21 \
+COMMON_TEST_VSN 1.23.1 \
+COMPILER_VSN    8.2.1 \
+CRYPTO_VSN      5.1.2 \
 DEBUGGER_VSN    5.3 \
-DIALYZER_VSN    5.0.1 \
-DIAMETER_VSN    2.2.6 \
+DIALYZER_VSN    5.0.3 \
+DIAMETER_VSN    2.2.7 \
 EDOC_VSN        1.2 \
 EI_VSN  5.3 \
 ELDAP_VSN       1.2.10 \
 EMACS_VSN       2.7.0 \
-ERL_DOCGEN_VSN  1.3 \
+ERL_DOCGEN_VSN  1.4 \
 ERL_INTERFACE_VSN       5.3 \
 ET_VSN  1.6.5 \
-EUNIT_VSN       2.7.1 \
+EUNIT_VSN       2.8.1 \
 FTP_VSN 1.1.1 \
-INETS_VSN       8.0 \
-JINTERFACE_VSN  1.13 \
-KERNEL_VSN      8.4.2 \
-MEGACO_VSN      4.4 \
+INETS_VSN       8.1 \
+JINTERFACE_VSN  1.13.1 \
+KERNEL_VSN      8.5.1 \
+MEGACO_VSN      4.4.1 \
 MNESIA_VSN      4.21.1 \
-OBSERVER_VSN    2.12 \
+OBSERVER_VSN    2.13 \
 ODBC_VSN        2.14 \
 OS_MON_VSN      2.7.1 \
-PARSETOOLS_VSN  2.4 \
-PUBLIC_KEY_VSN  1.13 \
+PARSETOOLS_VSN  2.4.1 \
+PUBLIC_KEY_VSN  1.13.1 \
 RELTOOL_VSN     0.9 \
 RUNTIME_TOOLS_VSN       1.19 \
 SASL_VSN        4.2 \
-SNMP_VSN        5.13 \
-SSH_VSN 4.14.1 \
-SSL_VSN 10.8.3 \
-STDLIB_VSN      4.0.1 \
+SNMP_VSN        5.13.1 \
+SSH_VSN 4.15 \
+SSL_VSN 10.8.5 \
+STDLIB_VSN      4.1.1 \
 SYNTAX_TOOLS_VSN        3.0 \
 TFTP_VSN        1.0.3 \
 TOOLS_VSN       3.5.3 \
 WX_VSN  2.2 \
-XMERL_VSN       1.3.29 \
-ERTS_VSN        13.0.4
+XMERL_VSN       1.3.30 \
+ERTS_VSN        13.1.1
 
 .include <bsd.port.mk>
