@@ -1,0 +1,5 @@
+dragon is a lightweight drag-and-drop source for X where you can run:
+
+	dragon file.tar.gz
+
+to get a window with just that file in it, ready to be dragged where you need.
