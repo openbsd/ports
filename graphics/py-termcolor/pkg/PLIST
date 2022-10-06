@@ -1,0 +1,15 @@
+lib/python${MODPY_VERSION}/site-packages/termcolor/
+lib/python${MODPY_VERSION}/site-packages/termcolor-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/termcolor-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/termcolor-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/termcolor-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/termcolor-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/termcolor-${MODPY_EGG_VERSION}.dist-info/licenses/COPYING.txt
+lib/python${MODPY_VERSION}/site-packages/termcolor/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/termcolor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/termcolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/termcolor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/termcolor/${MODPY_PYCACHE}termcolor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/termcolor/${MODPY_PYCACHE}termcolor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/termcolor/py.typed
+lib/python${MODPY_VERSION}/site-packages/termcolor/termcolor.py
