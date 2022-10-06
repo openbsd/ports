@@ -1,6 +1,6 @@
 COMMENT =	PEP517 build backend
 
-MODPY_EGG_VERSION =	1.0.8
+MODPY_EGG_VERSION =	1.3.1
 
 DISTNAME =	poetry-core-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
@@ -18,8 +18,11 @@ MODPY_PI =	Yes
 FLAVOR =	python3
 FLAVORS =	python3
 
-NO_TEST =	Yes
-
 MODPY_PYBUILD =	Yes
+
+pre-build:
+	@if [ -d ${MODPY_SITEPKG}/poetry/core ]; then \
+	  echo 'Build may fail ("BackendInvalid") with an older version of poetry-core installed'; \
+	fi
 
 .include <bsd.port.mk>
