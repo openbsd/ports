@@ -1,5 +1,5 @@
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix-20211217
+DISTNAME =		acpica-unix-20220331
 PKGNAME =		${DISTNAME:S/-unix//}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
