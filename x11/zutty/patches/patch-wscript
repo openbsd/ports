@@ -3,7 +3,7 @@ Respect CXXFLAGS/LDFLAGS.
 Index: wscript
 --- wscript.orig
 +++ wscript
-@@ -69,10 +69,6 @@ def configure(cfg):
+@@ -73,10 +73,6 @@ def configure(cfg):
             ['-DDEBUG', '-Og', '-g', '-ggdb'])
      else:
          cfg.env.target = 'zutty'

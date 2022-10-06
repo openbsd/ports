@@ -2,7 +2,7 @@ COMMENT =	X terminal which uses OpenGL ES Compute Shaders
 
 GH_ACCOUNT =	tomszilagyi
 GH_PROJECT =	zutty
-GH_TAGNAME =	0.12
+GH_TAGNAME =	0.13
 
 CATEGORIES =	x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GLESv2 ICE SM X11 Xau Xdmcp
-WANTLIB += Xext Xmu Xt c freetype m xcb z
+WANTLIB += Xext Xmu Xt c freetype m xcb
 
 COMPILER=	base-clang ports-gcc
 
