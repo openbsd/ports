@@ -1,9 +1,8 @@
 COMMENT=	web search application
 
-V=		1.4.20
+V=		1.4.21
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-omega-${V}
-REVISION =	0
 
 CATEGORIES=	www textproc
 
