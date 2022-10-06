@@ -6,7 +6,7 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.2204.1
+V =			8.2208.0
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
