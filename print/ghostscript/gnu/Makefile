@@ -1,12 +1,13 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	9.56.1
-DISTNAME =	ghostscript-${VERSION}
+VERSION =	10.00.0
+DISTVSN =	10.0.0
+DISTNAME =	ghostscript-${DISTVSN}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
-SHARED_LIBS =	gs 17.0
+SHARED_LIBS =	gs 18.0
 
-MASTER_SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
+MASTER_SITES =	https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${DISTVSN:S/.//g}/
 
 PORTROACH =	site:https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/
 
