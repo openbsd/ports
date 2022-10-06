@@ -90,7 +90,7 @@ CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 				  -I${X11BASE}/include \
 				  -I${WRKSRC}/plugins/dumb/dumb-kode54/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
-.if ${MACHINE_ARCH} != "amd64"
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ENV +=	ax_cv_c_flags__msse2='no'
 .endif
 
