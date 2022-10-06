@@ -7,7 +7,7 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-V=			1.14.2
+V=			1.14.4
 DISTNAME=		dbus-${V}
 EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
@@ -15,7 +15,7 @@ EPOCH-main=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
 
-SHARED_LIBS +=  dbus-1               11.3     # 35.0
+SHARED_LIBS +=  dbus-1               11.3     # 35.1
 
 CATEGORIES=		x11
 
