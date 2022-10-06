@@ -48,6 +48,7 @@
      SUBDIR += dbus-tcl
      SUBDIR += dbusmenu-qt
      SUBDIR += dmenu
+     SUBDIR += dragon-drop
      SUBDIR += driconf
      SUBDIR += dstat
      SUBDIR += dunst
