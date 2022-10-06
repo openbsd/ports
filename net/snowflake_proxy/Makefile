@@ -1,8 +1,7 @@
 COMMENT=	proxy providing Tor access to others with censored net
 
 MODGO_MODNAME=	git.torproject.org/pluggable-transports/snowflake.git/v2
-V=		2.1.0
-REVISION=	3
+V=		2.3.1
 MODGO_VERSION=	v$V
 
 DISTNAME=	snowflake.git-${MODGO_VERSION}
