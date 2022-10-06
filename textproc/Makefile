@@ -105,6 +105,7 @@
      SUBDIR += lgrind
      SUBDIR += libebml
      SUBDIR += libexttextcat
+     SUBDIR += libgrapheme
      SUBDIR += libical
      SUBDIR += liblrdf
      SUBDIR += libmarisa
