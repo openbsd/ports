@@ -1,15 +1,6 @@
 Index: src/ptclib/pssl.cxx
 --- src/ptclib/pssl.cxx.orig
 +++ src/ptclib/pssl.cxx
-@@ -156,7 +156,7 @@ PFACTORY_CREATE_SINGLETON(PProcessStartupFactory, PSSL
- class PSSL_BIO
- {
-   public:
--#if OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined(LIBRESSL_VERSION_NUMBER)
-+#if OPENSSL_VERSION_NUMBER >= 0x10100000L
-     PSSL_BIO(const BIO_METHOD *method = BIO_s_file())
- #else
-     PSSL_BIO(BIO_METHOD *method = BIO_s_file_internal())
 @@ -647,7 +647,7 @@ PSSLDiffieHellman::PSSLDiffieHellman(const BYTE * pDat
    if (dh == NULL)
      return;

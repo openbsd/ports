@@ -2,9 +2,8 @@ COMMENT=		portable tools library
 
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
-GH_TAGNAME=		v2_10_9_4
+GH_TAGNAME=		v2_10_9_5
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		0
 EPOCH=			0
 
 CATEGORIES=		devel telephony

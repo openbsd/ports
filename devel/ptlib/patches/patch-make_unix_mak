@@ -1,7 +1,7 @@
 Index: make/unix.mak
 --- make/unix.mak.orig
 +++ make/unix.mak
-@@ -252,11 +252,19 @@ ifeq ($(MACHTYPE),x86)
+@@ -263,11 +263,19 @@ ifeq ($(MACHTYPE),x86)
  #STDCCFLAGS	+= -m486
  endif
  
@@ -22,7 +22,7 @@ Index: make/unix.mak
  
  endif # OpenBSD
  
-@@ -710,7 +718,9 @@ ifneq ($(OSTYPE),Darwin)
+@@ -721,7 +729,9 @@ ifneq ($(OSTYPE),Darwin)
        STDCCFLAGS	+= -xO3
      endif
    else
