@@ -561,6 +561,7 @@
      SUBDIR += py-eapi,python3
      SUBDIR += py-engineio,python3
      SUBDIR += py-ftpdlib,python3
+     SUBDIR += py-gevent-websocket,python3
      SUBDIR += py-geventhttpclient,python3
      SUBDIR += py-idna,python3
      SUBDIR += py-ifaddr,python3
