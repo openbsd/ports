@@ -517,6 +517,10 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectparticipant/2018-09-07/examples-1.json
@@ -968,6 +972,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleethub/2020-11-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleethub/2020-11-03/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleethub/2020-11-03/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleethub/2020-11-03/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleetwise/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleetwise/2021-06-17/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleetwise/2021-06-17/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleetwise/2021-06-17/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iotfleetwise/2021-06-17/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/2018-10-05/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotsecuretunneling/2018-10-05/examples-1.json
@@ -1246,6 +1255,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhub-config/2019-06-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhuborchestrator/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhuborchestrator/2021-08-28/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhuborchestrator/2021-08-28/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhuborchestrator/2021-08-28/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhuborchestrator/2021-08-28/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/migrationhubstrategy/2020-02-19/examples-1.json
