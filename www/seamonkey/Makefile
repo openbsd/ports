@@ -45,6 +45,8 @@ WANTLIB +=	hunspell-1.7
 # option removed in 62, cf #1460600
 CONFIGURE_ARGS +=	--with-system-hunspell
 
+BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
+
 # lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=2"
