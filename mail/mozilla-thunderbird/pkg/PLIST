@@ -34,15 +34,12 @@ lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
-@lib lib/${MOZILLA_PROJECT}/librnp.so.${LIBrnp_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}/omni.ja
 @bin lib/${MOZILLA_PROJECT}/pingsender
 lib/${MOZILLA_PROJECT}/platform.ini
 @bin lib/${MOZILLA_PROJECT}/plugin-container
 lib/${MOZILLA_PROJECT}/removed-files
-@bin lib/${MOZILLA_PROJECT}/rnp-cli
-@bin lib/${MOZILLA_PROJECT}/rnpkeys
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
 share/applications/${MOZILLA_PROJECT}.desktop

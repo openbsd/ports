@@ -3,7 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	102.3.1
+MOZILLA_VERSION =	102.3.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -19,7 +19,7 @@ SO_VERSION =	37.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = lgpllibs mozgtk mozsqlite3 rnp xul
+MOZILLA_LIBS = lgpllibs mozgtk mozsqlite3 xul
 
 CATEGORIES=	mail news
 
@@ -64,10 +64,8 @@ CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 # #1664111
 CONFIGURE_ARGS +=	--with-system-ffi
-# #1634963
-CONFIGURE_ARGS +=	--with-system-botan \
-			--with-system-jsonc \
-			--with-system-bz2=${LOCALBASE}
+# #1732809
+CONFIGURE_ARGS +=	--with-system-librnp
 # --enable-debug does too much, this defaults to -g (which is 3 times larger than using -ggdb1)
 CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
@@ -75,11 +73,10 @@ DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
-LIB_DEPENDS +=	security/botan2 \
-		devel/libffi \
-		devel/json-c
+LIB_DEPENDS +=	security/rnp \
+		devel/libffi
 
-WANTLIB += X11-xcb Xcursor Xi Xrandr Xtst botan-2 bz2 ffi harfbuzz intl json-c xcb xcb-shm
+WANTLIB += X11-xcb Xcursor Xi Xrandr Xtst ffi harfbuzz intl xcb xcb-shm
 
 ALL_TARGET =	default
 
