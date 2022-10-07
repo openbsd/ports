@@ -1,8 +1,8 @@
 COMMENT=	unicode string library
 
-DISTNAME=	libgrapheme-1
+DISTNAME=	libgrapheme-2.0.0
 
-SHARED_LIBS=	grapheme	0.0
+SHARED_LIBS=	grapheme	1.0	# 2.0.0
 
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://dl.suckless.org/libgrapheme/
@@ -13,10 +13,11 @@ MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 # ISC
 PERMIT_PACKAGE=	Yes
 
-FAKE_FLAGS=	MANPREFIX=${PREFIX}/man
+SOFLAGS=	-shared -Wl,--soname=libgrapheme.so.$(LIBgrapheme_VERSION)
+MAKE_FLAGS=	SOFLAGS="${SOFLAGS}"
 
-post-install:
-	mv ${PREFIX}/lib/libgrapheme.so \
-	   ${PREFIX}/lib/libgrapheme.so.${LIBgrapheme_VERSION}
+FAKE_FLAGS=	LDCONFIG=: \
+		MANPREFIX=${PREFIX}/man \
+		VERSION=${LIBgrapheme_VERSION}
 
 .include <bsd.port.mk>
