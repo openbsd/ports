@@ -2,9 +2,8 @@ COMMENT =	perl module for getting image information
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Image-Info-1.42
+DISTNAME =	Image-Info-1.43
 CATEGORIES =	graphics
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
