@@ -1,5 +1,7 @@
 BROKEN-sparc64 ="/usr/bin/ld: skipping incompatible pyml-current/libpyml_stubs.a when searching for -lpyml_stubs" \
 		"/usr/bin/ld: cannot find -lpyml_stubs"
+# ocamlfind: Not supported in your configuration: ocamlopt
+ONLY_FOR_ARCHS = ${OCAML_NATIVE_ARCHS}
 
 COMMENT =	program matching and transformation engine
 
