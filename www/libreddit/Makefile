@@ -1,3 +1,6 @@
+# ring-v0.16.20 does not support those archs
+NOT_FOR_ARCHS = powerpc64 riscv64 sparc64
+
 COMMENT =	alternative private front-end to Reddit
 
 GH_ACCOUNT =	spikecodes
