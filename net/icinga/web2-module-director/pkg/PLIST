@@ -1033,6 +1033,7 @@ icinga-web2/modules/director/schema/mysql-migrations/upgrade_177.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_178.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_179.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_180.sql
+icinga-web2/modules/director/schema/mysql-migrations/upgrade_182.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_63.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_64.sql
 icinga-web2/modules/director/schema/mysql-migrations/upgrade_65.sql
@@ -1155,6 +1156,7 @@ icinga-web2/modules/director/schema/pgsql-migrations/upgrade_178.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_179.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_180.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_181.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_182.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_77.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_78.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_79.sql
