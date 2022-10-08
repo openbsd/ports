@@ -1,6 +1,5 @@
 # keep in sync with list from cad/kicad/Makefile
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
-BROKEN-riscv64 =	kicad-5.1.10/include/system/libcontext.h:93:36: error: expected ';' after top level declarator
 
 NOT_FOR_ARCHS =		powerpc
 
