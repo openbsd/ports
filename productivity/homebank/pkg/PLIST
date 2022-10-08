@@ -1,6 +1,4 @@
 @bin bin/homebank
-share/appdata/
-share/appdata/homebank.appdata.xml
 share/application-registry/
 share/application-registry/homebank.applications
 share/applications/homebank.desktop
@@ -346,6 +344,8 @@ share/locale/uk/LC_MESSAGES/homebank.mo
 share/locale/vi/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
 share/locale/zh_TW/LC_MESSAGES/homebank.mo
+share/metainfo/
+share/metainfo/homebank.appdata.xml
 share/mime-info/
 share/mime-info/homebank.keys
 share/mime-info/homebank.mime
