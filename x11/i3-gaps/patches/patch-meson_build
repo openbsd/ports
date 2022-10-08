@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -607,7 +607,7 @@ install_headers(
+@@ -608,7 +608,7 @@ install_headers(
  # because configure_file strips the backslash in e.g. \@display,
  # resulting in @display, breaking our Perl code:
  # https://github.com/mesonbuild/meson/issues/7165

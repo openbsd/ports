@@ -1,8 +1,7 @@
 COMMENT =	improved dynamic tiling window manager, fork with gaps
 
-V =		4.20.1
+V =		4.21
 DISTNAME =	i3-gaps-${V}
-REVISION =	0
 
 CATEGORIES =	x11
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 # XXX use of pledge has been neutered. For more details see
 # https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
-WANTLIB += pcre startup-notification-1 xcb xcb-cursor xcb-icccm
+WANTLIB += pcre2-8 startup-notification-1 xcb xcb-cursor xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
 WANTLIB += xcb-xkb xcb-xrm xkbcommon xkbcommon-x11 yajl
 
@@ -34,7 +33,7 @@ MODULES =	devel/meson
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pango \
-		devel/pcre \
+		devel/pcre2 \
 		devel/startup-notification \
 		x11/xkbcommon
 

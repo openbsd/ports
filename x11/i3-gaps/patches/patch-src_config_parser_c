@@ -1,7 +1,7 @@
 Index: src/config_parser.c
 --- src/config_parser.c.orig
 +++ src/config_parser.c
-@@ -752,8 +752,8 @@ static char *migrate_config(char *input, off_t size) {
+@@ -745,8 +745,8 @@ static char *migrate_config(char *input, off_t size) {
   */
  void start_config_error_nagbar(const char *configpath, bool has_errors) {
      char *editaction, *pageraction;
