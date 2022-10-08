@@ -1,0 +1,21 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -119,7 +119,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
+ helpdir = join_paths(prefix, gq_helpdir)
+ htmldir = join_paths(prefix, gq_htmldir)
+ icondir = join_paths(datadir, 'pixmaps')
+-mandir1 = join_paths(datadir, 'man', 'man1')
++mandir1 = join_paths(prefix, 'man', 'man1')
+ 
+ podir = join_paths(meson.source_root(), 'po')
+ 
+@@ -401,7 +401,7 @@ endif
+ tiff_dep = []
+ option = get_option('tiff')
+ if not option.disabled()
+-    tiff_dep = cc.find_library('libtiff', required: get_option('tiff'))
++    tiff_dep = dependency('libtiff-4', required: get_option('tiff'))
+     if tiff_dep.found()
+         if cc.has_function('TIFFClientOpen', dependencies : tiff_dep)
+             conf_data.set('HAVE_TIFF', 1)

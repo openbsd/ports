@@ -1,5 +1,3 @@
-Second chunk upstream commit 5ef5596d879a28a9876271fb2d54e1021430aba7
-
 Index: src/layout_util.c
 --- src/layout_util.c.orig
 +++ src/layout_util.c
@@ -11,17 +9,3 @@ Index: src/layout_util.c
  #include "main.h"
  #include "layout_util.h"
  
-@@ -4167,10 +4167,12 @@ void layout_bars_close(LayoutWindow *lw)
- 	layout_bar_close(lw);
- }
- 
--static void layout_exif_window_destroy(GtkWidget *widget, gpointer data)
-+static gboolean layout_exif_window_destroy(GtkWidget *widget, gpointer data)
- {
- 	LayoutWindow *lw = data;
- 	lw->exif_window = NULL;
-+
-+	return TRUE;
- }
- 
- void layout_exif_window_new(LayoutWindow *lw)
