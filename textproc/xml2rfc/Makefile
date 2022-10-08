@@ -1,6 +1,6 @@
 COMMENT=	convert memos written in XML to the RFC format
 
-MODPY_EGG_VERSION=	3.13.0
+MODPY_EGG_VERSION=	3.15.0
 DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
 
 CATEGORIES=	textproc
@@ -10,9 +10,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST_ARGS=	test.py
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+MODPY_PYTEST_ARGS= test.py
 
 RUN_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
 		devel/py-configargparse${MODPY_FLAVOR} \
