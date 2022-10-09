@@ -3,7 +3,7 @@ COMMENT =		command-line DNS lookup tool
 GH_ACCOUNT =		ogham
 GH_PROJECT =		dog
 GH_TAGNAME =		v0.1.0
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 

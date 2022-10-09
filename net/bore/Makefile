@@ -1,7 +1,7 @@
 COMMENT =		DNS query tool
 WRKDIST =		${WRKDIR}/delan-nonymous-f13a461049f4
 V =			0.4.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		bore-${V}
 CATEGORIES =		net sysutils
 MAINTAINER =		Delan Azabani <delan@azabani.com>

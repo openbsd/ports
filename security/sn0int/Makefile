@@ -8,6 +8,7 @@ COMMENT =	semi-automatic OSINT framework and package manager
 GH_ACCOUNT =	kpcyrd
 GH_PROJECT =	sn0int
 GH_TAGNAME =	v0.24.1
+REVISION =	0
 
 CATEGORIES =	security
 
