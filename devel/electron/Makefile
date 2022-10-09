@@ -1,6 +1,7 @@
 .include <bsd.port.arch.mk>
 
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
+BROKEN-riscv64 =	error: Please add support for your architecture in build_config.h
 
 USE_WXNEEDED=		Yes
 
