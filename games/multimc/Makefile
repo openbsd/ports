@@ -3,12 +3,11 @@ COMMENT =		free and open-source launcher for Minecraft
 # git clone --recurse-submodules -b 0.6.12 https://github.com/MultiMC/MultiMC5
 DISTNAME =		multimc-0.6.12
 MASTER_SITES =		https://distfiles.yukiisbo.red/
+REVISION =		0
 
 CATEGORIES =		games
 
 HOMEPAGE =		https://multimc.org
-
-MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes

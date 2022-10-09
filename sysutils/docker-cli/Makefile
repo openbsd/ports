@@ -6,13 +6,12 @@ GH_ACCOUNT =		docker
 GH_PROJECT =		cli
 GH_TAGNAME =		v${V}
 PKGNAME =		docker-${DISTNAME}
-
+REVISION =		0
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://docs.docker.com/engine/reference/commandline/cli/
 
-MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

@@ -5,13 +5,11 @@ PKGNAME =		moonlight-qt-${V}
 
 DISTNAME =		MoonlightSrc-${V}
 MASTER_SITES =		https://github.com/moonlight-stream/moonlight-qt/releases/download/v${V}/
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
 HOMEPAGE =		https://moonlight-stream.org
-
-MAINTAINER =		Muhammad Kaisar Arkhan <hi@yukiisbo.red>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
