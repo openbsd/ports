@@ -9,25 +9,3 @@ Index: configure
                     need_pragma=yes ;
  
  $as_echo "#define P_PTHREADS 1" >>confdefs.h
-@@ -4676,8 +4675,11 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
-         LIB64=1
- 	;;
- 
--   sparc | sparc64 )
-+   sparc )
- 	MACHTYPE=sparc
-+	;;
-+   sparc64 )
-+	MACHTYPE=sparc
- 	P_64BIT=1
-         LIB64=1
- 	;;
-@@ -7800,7 +7802,7 @@ $as_echo "$as_me: OpenLDAP support disabled due to dis
-                                                         ptlib_openldap_libs="-lposix4"
-                             ;;
-                             * )
--                            ptlib_openldap_libs="-llber -lldap_r"
-+                            ptlib_openldap_libs="-llber -lldap"
-             esac
- 
-             if test "x${with_ldap_dir}" != "x"; then

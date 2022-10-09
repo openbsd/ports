@@ -4,6 +4,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
 GH_TAGNAME=		v2_10_9_5
 PKGNAME=		${DISTNAME:S/_/./g}
+REVISION=		0
 EPOCH=			0
 
 CATEGORIES=		devel telephony
@@ -18,14 +19,13 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL 1.0
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto lber ldap m sasl2
-WANTLIB += sndio ssl
+WANTLIB += ${COMPILER_LIBCXX} c crypto m sasl2 sndio ssl
 
 COMPILER=		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS=		devel/bison
 
-LIB_DEPENDS=		databases/openldap
+LIB_DEPENDS=		security/cyrus-sasl2
 
 ALL_TARGET=		default #${WRKSRC}/Makefile
 USE_GMAKE=		Yes
@@ -47,6 +47,7 @@ CONFIGURE_ARGS=		--enable-plugins \
 			--disable-oss \
 			--disable-pulse \
 			--disable-odbc \
+			--disable-openldap \
 			--disable-sdl \
 			--disable-expat \
 			--disable-v8
