@@ -1,7 +1,7 @@
 Index: libraries/source/spidermonkey/build.sh
 --- libraries/source/spidermonkey/build.sh.orig
 +++ libraries/source/spidermonkey/build.sh
-@@ -113,8 +113,8 @@ else
+@@ -128,8 +128,8 @@ else
    cd "$FOLDER"
  fi
  
@@ -12,7 +12,7 @@ Index: libraries/source/spidermonkey/build.sh
    mkdir -p build-debug
    cd build-debug
    # SM configure checks for autoconf, but we don't actually need it.
-@@ -156,7 +156,7 @@ else
+@@ -171,7 +171,7 @@ else
    STATIC_LIB_SUFFIX=.a
    if [ "`uname -s`" = "OpenBSD" ];
    then
@@ -21,7 +21,7 @@ Index: libraries/source/spidermonkey/build.sh
    elif [ "`uname -s`" = "Darwin" ];
    then
      LIB_SUFFIX=.a
-@@ -182,7 +182,7 @@ fi
+@@ -197,7 +197,7 @@ fi
  mkdir -p "${INCLUDE_DIR_RELEASE}"
  cp -R -L "${FOLDER}"/build-release/dist/include/* "${INCLUDE_DIR_RELEASE}/"
  
@@ -30,7 +30,7 @@ Index: libraries/source/spidermonkey/build.sh
    mkdir -p "${INCLUDE_DIR_DEBUG}"
    cp -R -L "${FOLDER}"/build-debug/dist/include/* "${INCLUDE_DIR_DEBUG}/"
  fi
-@@ -223,7 +223,7 @@ else
+@@ -238,7 +238,7 @@ else
    # Copy shared libs to both lib/ and binaries/ so the compiler and executable (resp.) can find them.
    cp -L "${FOLDER}/build-${REL}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"
    cp -L "${FOLDER}/build-${REL}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "../../../binaries/system/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"

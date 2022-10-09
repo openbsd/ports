@@ -3,15 +3,13 @@ COMMENT =		historical real-time strategy game
 DISTNAME =		0ad-${V}-alpha-unix-build
 PKGNAME =		0ad-${V}
 
-REVISION =		0
-
 USE_WXNEEDED =		Yes
 
 SO_VERSION =	0.0
 SHARED_LIBS +=  mozjs78-ps-release        ${SO_VERSION}
 
-WANTLIB += ${COMPILER_LIBCXX} GL SDL2 X11 boost_filesystem
-WANTLIB += boost_system c crypto curl enet execinfo fmt gloox iconv
+WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 boost_filesystem
+WANTLIB += boost_system c crypto curl enet execinfo fmt freetype gloox iconv
 WANTLIB += icudata icui18n icuuc idn m miniupnpc ogg openal
 WANTLIB += png sodium ssl vorbis vorbisfile xml2 z
 

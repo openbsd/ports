@@ -3,6 +3,7 @@ bin/0ad
 @so lib/libCollada.so
 @static-lib lib/libatlas.a
 @static-lib lib/libengine.a
+@static-lib lib/libgladwrapper.a
 @static-lib lib/libglooxwrapper.a
 @static-lib lib/libgraphics.a
 @static-lib lib/libgui.a
@@ -185,6 +186,7 @@ share/0ad/mods/_test.tex/art/textures/a/demo-dxt5.dds
 share/0ad/mods/_test.tex/art/textures/a/demo.png
 share/0ad/mods/_test.tex/art/textures/a/demo.tga
 share/0ad/mods/_test.tex/art/textures/b/
+share/0ad/mods/_test.tex/art/textures/b/npot.png
 share/0ad/mods/_test.tex/art/textures/b/test.png
 share/0ad/mods/_test.xero/
 share/0ad/mods/_test.xero/a/

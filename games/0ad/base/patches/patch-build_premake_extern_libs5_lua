@@ -1,0 +1,12 @@
+Index: build/premake/extern_libs5.lua
+--- build/premake/extern_libs5.lua.orig
++++ build/premake/extern_libs5.lua
+@@ -675,7 +675,7 @@ extern_lib_defs = {
+ 				-- TODO: We need to force linking with these as currently
+ 				-- they need to be loaded explicitly on execution
+ 				add_default_links({
+-					unix_names = { "ogg", "vorbis" },
++					unix_names = { "ogg", "vorbis", "vorbisfile" },
+ 				})
+ 			else
+ 				pkgconfig.add_links("vorbisfile")
