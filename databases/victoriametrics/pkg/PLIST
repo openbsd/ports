@@ -20,6 +20,9 @@ share/doc/vmetrics/vmalert_ha.png
 share/doc/vmetrics/vmalert_multicluster.png
 share/doc/vmetrics/vmalert_multiple_rw.png
 share/doc/vmetrics/vmalert_single.png
+share/doc/vmetrics/vmalert_state.png
+share/doc/vmetrics/vmalert_ts_data_delay.gif
+share/doc/vmetrics/vmalert_ts_normal.gif
 share/doc/vmetrics/vmanomaly-holtwinters-example.png
 share/doc/vmetrics/vmanomaly-prophet-example.png
 share/doc/vmetrics/vmanomaly.md
