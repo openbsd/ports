@@ -14,7 +14,7 @@ Index: src/bootstrap/bootstrap.py
          env["PATH"] = os.path.join(self.bin_root(), "bin") + \
              os.pathsep + env["PATH"]
          if not os.path.isfile(self.cargo()):
-@@ -774,7 +774,8 @@ class RustBuild(object):
+@@ -771,7 +774,8 @@ class RustBuild(object):
          elif color == "never":
              args.append("--color=never")
  
