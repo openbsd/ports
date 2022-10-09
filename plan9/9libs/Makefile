@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS= 	i386 sparc64
 COMMENT=		Plan 9 compatibility libraries
 
 DISTNAME=		9libs-1.0
-REVISION=		9
+REVISION=		10
 CATEGORIES=		plan9 devel
 SHARED_LIBS=		Xg	0.0 \
 			frame	0.0 \
@@ -13,7 +13,7 @@ MODGNU_SHARED_LIBS=	Xg	'' \
 			frame	'' \
 			plan9c	''
 
-HOMEPAGE=		http://www.netlib.org/research/9libs/
+HOMEPAGE=		https://netlib.org/research/9libs/
 
 # BSD licence
 PERMIT_PACKAGE=	Yes
