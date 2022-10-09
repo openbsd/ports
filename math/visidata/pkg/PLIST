@@ -117,6 +117,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}pyobj.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}pyobj.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}regex.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}repeat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}repeat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}save.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}save.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/${MODPY_PYCACHE}search.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -270,6 +272,8 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vcf.${
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vcf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vds.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vdx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}vdx.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}xlsb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}xlsb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/${MODPY_PYCACHE}xlsx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -318,6 +322,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/loaders/unzip_http.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/usv.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/vcf.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/vds.py
+lib/python${MODPY_VERSION}/site-packages/visidata/loaders/vdx.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xlsb.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xlsx.py
 lib/python${MODPY_VERSION}/site-packages/visidata/loaders/xml.py
@@ -344,6 +349,7 @@ lib/python${MODPY_VERSION}/site-packages/visidata/pivot.py
 lib/python${MODPY_VERSION}/site-packages/visidata/plugins.py
 lib/python${MODPY_VERSION}/site-packages/visidata/pyobj.py
 lib/python${MODPY_VERSION}/site-packages/visidata/regex.py
+lib/python${MODPY_VERSION}/site-packages/visidata/repeat.py
 lib/python${MODPY_VERSION}/site-packages/visidata/save.py
 lib/python${MODPY_VERSION}/site-packages/visidata/search.py
 lib/python${MODPY_VERSION}/site-packages/visidata/selection.py
