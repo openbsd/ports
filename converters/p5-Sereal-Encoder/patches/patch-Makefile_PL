@@ -1,7 +1,7 @@
 Index: Makefile.PL
 --- Makefile.PL.orig
 +++ Makefile.PL
-@@ -89,8 +89,9 @@ inc::Sereal::BuildTools::WriteMakefile(
+@@ -99,8 +99,9 @@ inc::Sereal::BuildTools::WriteMakefile(
      ABSTRACT_FROM => 'lib/Sereal/Encoder.pm',
      AUTHOR        => 'Steffen Mueller <smueller@cpan.org>, Yves Orton <yves@cpan.org>',
      LIBS          => [$libs],                                                          # e.g., '-lm'
