@@ -1,6 +1,6 @@
 COMMENT=	unicode string library
 
-DISTNAME=	libgrapheme-2.0.0
+DISTNAME=	libgrapheme-2.0.1
 
 SHARED_LIBS=	grapheme	1.0	# 2.0.0
 
@@ -13,11 +13,14 @@ MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 # ISC
 PERMIT_PACKAGE=	Yes
 
-SOFLAGS=	-shared -Wl,--soname=libgrapheme.so.$(LIBgrapheme_VERSION)
-MAKE_FLAGS=	SOFLAGS="${SOFLAGS}"
+SONAME=		libgrapheme.so.$(LIBgrapheme_VERSION)
+SOFLAGS=	-shared -Wl,--soname=${SONAME}
 
-FAKE_FLAGS=	LDCONFIG=: \
+MAKE_FLAGS=	SOFLAGS="${SOFLAGS}" \
+		SONAME="${SONAME}"
+
+FAKE_FLAGS=	LDCONFIG= \
 		MANPREFIX=${PREFIX}/man \
-		VERSION=${LIBgrapheme_VERSION}
+		SOSYMLINK=false
 
 .include <bsd.port.mk>
