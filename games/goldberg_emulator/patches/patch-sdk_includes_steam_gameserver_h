@@ -1,0 +1,15 @@
+remove duplicate function definition with only different return type
+
+Index: sdk_includes/steam_gameserver.h
+--- sdk_includes/steam_gameserver.h.orig
++++ sdk_includes/steam_gameserver.h
+@@ -62,9 +62,6 @@ const uint16 STEAMGAMESERVER_QUERY_PORT_SHARED = 0xfff
+ //		ISteamGameServer::GetNextOutgoingPacket.)
+ // - The version string should be in the form x.x.x.x, and is used by the master server to detect when the
+ //		server is out of date.  (Only servers with the latest version will be listed.)
+-#ifndef STEAM_API_EXPORTS
+-S_API steam_bool SteamGameServer_Init( uint32 unIP, uint16 usSteamPort, uint16 usGamePort, uint16 usQueryPort, EServerMode eServerMode, const char *pchVersionString );
+-#endif
+ S_API steam_bool S_CALLTYPE SteamInternal_GameServer_Init( uint32 unIP, uint16 usPort, uint16 usGamePort, uint16 usQueryPort, EServerMode eServerMode, const char *pchVersionString );
+ 
+ // Shutdown SteamGameSeverXxx interfaces, log out, and free resources.

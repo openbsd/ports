@@ -3,8 +3,8 @@ add OpenBSD includes
 Index: dll/common_includes.h
 --- dll/common_includes.h.orig
 +++ dll/common_includes.h
-@@ -105,7 +105,7 @@ inline std::wstring utf8_decode(const std::string &str
-     return wstrTo;
+@@ -104,7 +104,7 @@ inline void reset_LastError()
+     SetLastError(0);
  }
  
 -#elif defined(__LINUX__)
@@ -12,20 +12,20 @@ Index: dll/common_includes.h
      #include <arpa/inet.h>
  
      #include <sys/types.h>
-@@ -118,7 +118,11 @@ inline std::wstring utf8_decode(const std::string &str
-     #include <sys/time.h>
+@@ -118,7 +118,11 @@ inline void reset_LastError()
  
      #include <netinet/in.h>
+     #include <netinet/tcp.h>
 -    #include <linux/netdevice.h>
 +    #if defined(__LINUX__)
 +        #include <linux/netdevice.h>
 +    #elif defined(__OpenBSD__)
-+        #include <net/if.h>
++    	#include <net/if.h>
 +    #endif
  
      #include <fcntl.h>
      #include <unistd.h>
-@@ -198,4 +202,4 @@ inline std::wstring utf8_decode(const std::string &str
+@@ -205,4 +209,4 @@ inline std::string ascii_to_lowercase(std::string data
  
  #define LOBBY_CONNECT_APPID ((uint32)-2)
  

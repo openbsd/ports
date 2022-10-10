@@ -33,6 +33,7 @@ include/goldberg_emulator/steam/isteamcontroller005.h
 include/goldberg_emulator/steam/isteamcontroller006.h
 include/goldberg_emulator/steam/isteamcontroller007.h
 include/goldberg_emulator/steam/isteamfriends.h
+include/goldberg_emulator/steam/isteamfriends003.h
 include/goldberg_emulator/steam/isteamfriends004.h
 include/goldberg_emulator/steam/isteamfriends005.h
 include/goldberg_emulator/steam/isteamfriends006.h
@@ -48,6 +49,7 @@ include/goldberg_emulator/steam/isteamfriends015.h
 include/goldberg_emulator/steam/isteamfriends016.h
 include/goldberg_emulator/steam/isteamgamecoordinator.h
 include/goldberg_emulator/steam/isteamgameserver.h
+include/goldberg_emulator/steam/isteamgameserver004.h
 include/goldberg_emulator/steam/isteamgameserver005.h
 include/goldberg_emulator/steam/isteamgameserver008.h
 include/goldberg_emulator/steam/isteamgameserver009.h
@@ -67,11 +69,16 @@ include/goldberg_emulator/steam/isteamhttp002.h
 include/goldberg_emulator/steam/isteaminput.h
 include/goldberg_emulator/steam/isteaminput001.h
 include/goldberg_emulator/steam/isteaminput002.h
+include/goldberg_emulator/steam/isteaminput005.h
 include/goldberg_emulator/steam/isteaminventory.h
 include/goldberg_emulator/steam/isteaminventory001.h
 include/goldberg_emulator/steam/isteaminventory002.h
 include/goldberg_emulator/steam/isteammasterserverupdater.h
 include/goldberg_emulator/steam/isteammatchmaking.h
+include/goldberg_emulator/steam/isteammatchmaking002.h
+include/goldberg_emulator/steam/isteammatchmaking003.h
+include/goldberg_emulator/steam/isteammatchmaking004.h
+include/goldberg_emulator/steam/isteammatchmaking005.h
 include/goldberg_emulator/steam/isteammatchmaking006.h
 include/goldberg_emulator/steam/isteammatchmaking007.h
 include/goldberg_emulator/steam/isteammatchmaking008.h
@@ -96,6 +103,7 @@ include/goldberg_emulator/steam/isteamnetworkingsocketsserialized.h
 include/goldberg_emulator/steam/isteamnetworkingutils.h
 include/goldberg_emulator/steam/isteamnetworkingutils001.h
 include/goldberg_emulator/steam/isteamnetworkingutils002.h
+include/goldberg_emulator/steam/isteamnetworkingutils003.h
 include/goldberg_emulator/steam/isteamparentalsettings.h
 include/goldberg_emulator/steam/isteamps3overlayrenderer.h
 include/goldberg_emulator/steam/isteamremoteplay.h
@@ -130,6 +138,7 @@ include/goldberg_emulator/steam/isteamugc010.h
 include/goldberg_emulator/steam/isteamugc012.h
 include/goldberg_emulator/steam/isteamugc013.h
 include/goldberg_emulator/steam/isteamugc014.h
+include/goldberg_emulator/steam/isteamugc015.h
 include/goldberg_emulator/steam/isteamunifiedmessages.h
 include/goldberg_emulator/steam/isteamuser.h
 include/goldberg_emulator/steam/isteamuser009.h
@@ -177,6 +186,7 @@ include/goldberg_emulator/steam/steamdatagram_ticketgen.h
 include/goldberg_emulator/steam/steamdatagram_tickets.h
 include/goldberg_emulator/steam/steamencryptedappticket.h
 include/goldberg_emulator/steam/steamhttpenums.h
+include/goldberg_emulator/steam/steamnetworkingfakeip.h
 include/goldberg_emulator/steam/steamnetworkingsockets.h
 include/goldberg_emulator/steam/steamnetworkingtypes.h
 include/goldberg_emulator/steam/steamps3params.h

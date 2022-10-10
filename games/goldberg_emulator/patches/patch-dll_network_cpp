@@ -3,7 +3,7 @@ enable get_broadcast_info for OpenBSD
 Index: dll/network.cpp
 --- dll/network.cpp.orig
 +++ dll/network.cpp
-@@ -120,7 +120,7 @@ static void get_broadcast_info(uint16 port)
+@@ -122,7 +122,7 @@ static void get_broadcast_info(uint16 port)
      }
  }
  

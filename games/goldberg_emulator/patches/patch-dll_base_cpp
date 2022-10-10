@@ -4,7 +4,7 @@ return "." for get_lib_path
 Index: dll/base.cpp
 --- dll/base.cpp.orig
 +++ dll/base.cpp
-@@ -188,6 +188,10 @@ std::string get_lib_path() {
+@@ -201,6 +201,10 @@ std::string get_lib_path() {
  
    return ".";
  }
@@ -15,7 +15,7 @@ Index: dll/base.cpp
  #endif
  
  std::string get_full_lib_path()
-@@ -224,6 +228,9 @@ std::string get_current_path()
+@@ -237,6 +241,9 @@ std::string get_current_path()
      std::string path;
  #if defined(STEAM_WIN32)
      char *buffer = _getcwd( NULL, 0 );
@@ -25,7 +25,7 @@ Index: dll/base.cpp
  #else
      char *buffer = get_current_dir_name();
  #endif
-@@ -246,7 +253,13 @@ std::string canonical_path(std::string path)
+@@ -259,7 +266,13 @@ std::string canonical_path(std::string path)
          free(buffer);
      }
  #else

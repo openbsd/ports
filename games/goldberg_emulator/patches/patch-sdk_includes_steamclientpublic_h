@@ -3,7 +3,7 @@ fix error on 32bit arches with size of ValvePackingSentinel_t
 Index: sdk_includes/steamclientpublic.h
 --- sdk_includes/steamclientpublic.h.orig
 +++ sdk_includes/steamclientpublic.h
-@@ -1481,7 +1481,7 @@ enum ESteamIPv6ConnectivityState
+@@ -1521,7 +1521,7 @@ enum ESteamIPv6ConnectivityState
  // Define compile time assert macros to let us validate the structure sizes.
  #define VALVE_COMPILE_TIME_ASSERT( pred ) typedef char compile_time_assert_type[(pred) ? 1 : -1];
  
