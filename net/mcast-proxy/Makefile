@@ -1,21 +1,26 @@
 COMMENT =		multicast proxy daemon
 
-DISTNAME =		mcast-proxy-1.0
-CATEGORIES =		net
-REVISION =		3
+GH_ACCOUNT =		Esdenera
+GH_PROJECT =		mcast-proxy
+GH_TAGNAME =		v1.0
+REVISION =		4
 
-MASTER_SITES =		http://www.weirdnet.nl/openbsd/code/mcast-proxy/
+CATEGORIES =		net
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>
 
 # ISC
 PERMIT_PACKAGE =	Yes
 
-# uses pledge()
 WANTLIB =		c event
+
+FAKE_FLAGS =		BINDIR="${PREFIX}/sbin" \
+			MANDIR="${PREFIX}/man/man"
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 
-FAKE_FLAGS =		BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
+WRKSRC =		${WRKDIST}/usr.sbin/mcast-proxy
 
 .include <bsd.port.mk>
