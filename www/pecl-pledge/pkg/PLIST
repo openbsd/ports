@@ -1,7 +1,7 @@
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php72
 ${MODPECL_DEFAULTV}@pkgpath www/pecl-pledge,php73
 @extra ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini 
-lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+@so lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
