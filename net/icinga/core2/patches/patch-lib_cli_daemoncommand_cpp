@@ -1,26 +1,43 @@
-Add patches from https://github.com/Icinga/icinga2/pull/9518;
-this changes things so that icinga reloads work properly with OpenBSD
-(which doesn't fill in si_pid in siginfo_t so that icinga doesn't know
-which process exited).
+From df9008bfc4aba3715044f88fe3ae9ee441b0143b Mon Sep 17 00:00:00 2001
+From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
+Date: Wed, 7 Sep 2022 11:46:46 +0200
+Subject: [PATCH 1/4] StartUnixWorker(): watch forked child via waitpid(), not
+ SIGCHLD handler
 
-[PATCH 1/3] StartUnixWorker(): watch forked child via waitpid(), not SIGCHLD handler
-[PATCH 2/3] Remove unused UnixWorkerState::Failed
-[PATCH 3/3] icinga2 daemon: remove no-op SIGCHLD handling
+From 3de714489c063bf2b0b66f5ac1d2e2d523ed1afb Mon Sep 17 00:00:00 2001
+From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
+Date: Wed, 7 Sep 2022 12:08:33 +0200
+Subject: [PATCH 2/4] Remove unused UnixWorkerState::Failed
+
+From 22bfcf9ac52b37437804906a1e26b0e00461572f Mon Sep 17 00:00:00 2001
+From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
+Date: Wed, 7 Sep 2022 12:12:09 +0200
+Subject: [PATCH 3/4] icinga2 daemon: remove no-op SIGCHLD handling
+
+From 61f7e029cbad5fc2ddeafffa59e7f487b5b64f9a Mon Sep 17 00:00:00 2001
+From: "Alexander A. Klimov" <alexander.klimov@icinga.com>
+Date: Fri, 7 Oct 2022 15:14:33 +0200
+Subject: [PATCH 4/4] Replace two-variants enum with bool
 
 Index: lib/cli/daemoncommand.cpp
 --- lib/cli/daemoncommand.cpp.orig
 +++ lib/cli/daemoncommand.cpp
-@@ -330,8 +330,7 @@ int RunWorker(const std::vector<std::string>& configs,
- enum class UnixWorkerState : uint_fast8_t
- {
- 	Pending,
+@@ -324,22 +324,11 @@ int RunWorker(const std::vector<std::string>& configs,
+ }
+ 
+ #ifndef _WIN32
+-/**
+- * The possible states of a seamless worker being started by StartUnixWorker().
+- */
+-enum class UnixWorkerState : uint_fast8_t
+-{
+-	Pending,
 -	LoadedConfig,
 -	Failed
-+	LoadedConfig
- };
- 
+-};
+-
  // The signals to block temporarily in StartUnixWorker().
-@@ -339,7 +338,6 @@ static const sigset_t l_UnixWorkerSignals = ([]() -> s
+ static const sigset_t l_UnixWorkerSignals = ([]() -> sigset_t {
  	sigset_t s;
  
  	(void)sigemptyset(&s);
@@ -28,8 +45,25 @@ Index: lib/cli/daemoncommand.cpp
  	(void)sigaddset(&s, SIGUSR1);
  	(void)sigaddset(&s, SIGUSR2);
  	(void)sigaddset(&s, SIGINT);
-@@ -381,13 +379,6 @@ static void UmbrellaSignalHandler(int num, siginfo_t *
- 				l_CurrentlyStartingUnixWorkerState.store(UnixWorkerState::LoadedConfig);
+@@ -353,7 +342,7 @@ static const sigset_t l_UnixWorkerSignals = ([]() -> s
+ static Atomic<pid_t> l_CurrentlyStartingUnixWorkerPid (-1);
+ 
+ // The state of the seamless worker currently being started by StartUnixWorker()
+-static Atomic<UnixWorkerState> l_CurrentlyStartingUnixWorkerState (UnixWorkerState::Pending);
++static Atomic<bool> l_CurrentlyStartingUnixWorkerReady (false);
+ 
+ // The last temination signal we received
+ static Atomic<int> l_TermSignal (-1);
+@@ -375,19 +364,12 @@ static void UmbrellaSignalHandler(int num, siginfo_t *
+ 			l_RequestedReopenLogs.store(true);
+ 			break;
+ 		case SIGUSR2:
+-			if (l_CurrentlyStartingUnixWorkerState.load() == UnixWorkerState::Pending
++			if (!l_CurrentlyStartingUnixWorkerReady.load()
+ 				&& (info->si_pid == 0 || info->si_pid == l_CurrentlyStartingUnixWorkerPid.load()) ) {
+ 				// The seamless worker currently being started by StartUnixWorker() successfully loaded its config
+-				l_CurrentlyStartingUnixWorkerState.store(UnixWorkerState::LoadedConfig);
++				l_CurrentlyStartingUnixWorkerReady.store(true);
  			}
  			break;
 -		case SIGCHLD:
@@ -42,7 +76,7 @@ Index: lib/cli/daemoncommand.cpp
  		case SIGINT:
  		case SIGTERM:
  			// Someone requested our termination
-@@ -483,7 +474,7 @@ static pid_t StartUnixWorker(const std::vector<std::st
+@@ -483,7 +465,7 @@ static pid_t StartUnixWorker(const std::vector<std::st
  	}
  
  	/* Block the signal handlers we'd like to change in the child process until we changed them.
@@ -51,7 +85,7 @@ Index: lib/cli/daemoncommand.cpp
  	 */
  	(void)sigprocmask(SIG_BLOCK, &l_UnixWorkerSignals, nullptr);
  
-@@ -513,7 +504,6 @@ static pid_t StartUnixWorker(const std::vector<std::st
+@@ -513,7 +495,6 @@ static pid_t StartUnixWorker(const std::vector<std::st
  
  					sa.sa_handler = SIG_DFL;
  
@@ -59,7 +93,7 @@ Index: lib/cli/daemoncommand.cpp
  					(void)sigaction(SIGUSR1, &sa, nullptr);
  					(void)sigaction(SIGHUP, &sa, nullptr);
  				}
-@@ -570,28 +560,21 @@ static pid_t StartUnixWorker(const std::vector<std::st
+@@ -570,33 +551,26 @@ static pid_t StartUnixWorker(const std::vector<std::st
  				NotifyWatchdog();
  #endif /* HAVE_SYSTEMD */
  
@@ -90,7 +124,7 @@ Index: lib/cli/daemoncommand.cpp
  				}
  
 -				break;
-+				if (l_CurrentlyStartingUnixWorkerState.load() == UnixWorkerState::LoadedConfig) {
++				if (l_CurrentlyStartingUnixWorkerReady.load()) {
 +					Log(LogNotice, "cli")
 +						<< "Worker process successfully loaded its config";
 +					break;
@@ -100,7 +134,13 @@ Index: lib/cli/daemoncommand.cpp
  			}
  
  			// Reset flags for the next time
-@@ -734,7 +717,6 @@ int DaemonCommand::Run(const po::variables_map& vm, co
+ 			l_CurrentlyStartingUnixWorkerPid.store(-1);
+-			l_CurrentlyStartingUnixWorkerState.store(UnixWorkerState::Pending);
++			l_CurrentlyStartingUnixWorkerReady.store(false);
+ 
+ 			try {
+ 				Application::InitializeBase();
+@@ -734,7 +708,6 @@ int DaemonCommand::Run(const po::variables_map& vm, co
  		sa.sa_sigaction = &UmbrellaSignalHandler;
  		sa.sa_flags = SA_NOCLDSTOP | SA_RESTART | SA_SIGINFO;
  
