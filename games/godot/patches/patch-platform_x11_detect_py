@@ -57,7 +57,7 @@ Index: platform/x11/detect.py
      # Linkflags below this line should typically stay the last ones
      if not env["builtin_zlib"]:
          env.ParseConfig("pkg-config zlib --cflags --libs")
-@@ -411,11 +395,6 @@ def configure(env):
+@@ -413,11 +397,6 @@ def configure(env):
              print(
                  "Warning: Creating template binaries enabled for PCK embedding is currently only supported with GNU ld, not gold or LLD."
              )

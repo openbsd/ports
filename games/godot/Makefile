@@ -3,8 +3,10 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 
-V =		3.5
-GODOTSTEAM_V =	g34-s152-gs311
+V =		3.5.1
+# Later versions of GodotSteam need isteamdualsense.h.
+# Can only update once that is part of games/goldberg_emulator
+GODOTSTEAM_V =	g35-s155-gs3171
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 
@@ -63,7 +65,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			builtin_pcre2=no \
 			builtin_zlib=no \
 			builtin_zstd=no \
-			custom_modules=${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam \
+			custom_modules=${WRKSRC}/GodotSteam/godotsteam \
 			progress=no \
 			pulseaudio=no \
 			verbose=yes \
@@ -117,17 +119,15 @@ WANTLIB +=     atomic
 
 CFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
 
+# symlink to allow patching GodotSteam
 post-extract:
 	cp -R	${FILESDIR}/sndio ${WRKDIST}/drivers
 	cp	${FILESDIR}/ujoy/joypad_openbsd.{cpp,h} \
 		${WRKDIST}/platform/x11/
+	ln -sf	${WRKDIR}/GodotSteam-${GODOTSTEAM_V} ${WRKSRC}/GodotSteam
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/misc/dist/linux/*.desktop
-	sed -E -i 's/ISteamHTMLSurface:://g' \
-		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.cpp
-	sed -E -i 's/Connection_DEPRECATED/Connection/g' \
-		${WRKDIR}/GodotSteam-${GODOTSTEAM_V}/godotsteam/godotsteam.cpp
 
 do-build:
 	@${MODSCONS_BUILD_TARGET} tools=no  target=release
