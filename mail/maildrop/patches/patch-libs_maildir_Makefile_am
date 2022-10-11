@@ -1,7 +1,7 @@
 Index: libs/maildir/Makefile.am
 --- libs/maildir/Makefile.am.orig
 +++ libs/maildir/Makefile.am
-@@ -125,16 +125,16 @@ mailbot.h: config.status
+@@ -133,16 +133,16 @@ mailbot.h: config.status
  	echo '#define MAILBOT "@MAILBOT@"' >mailbot.h
  
  maildirsharedrc.h: config.status

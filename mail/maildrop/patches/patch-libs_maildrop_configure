@@ -1,22 +1,15 @@
 Index: libs/maildrop/configure
 --- libs/maildrop/configure.orig
 +++ libs/maildrop/configure
-@@ -18629,16 +18629,12 @@ fi
- $as_echo "$maildrop_cv_SYS_INSTALL_RESET_GID" >&6; }
- 
- # Check whether --with-default-maildrop was given.
--if test "${with_default_maildrop+set}" = set; then :
-+if false; then :
-   withval=$with_default_maildrop; maildrop_cv_SYS_INSTALL_MBOXDIR="$withval"
- else
+@@ -19762,10 +19762,7 @@ then :
+ else $as_nop
    # Courier defaults to ./Maildir
  
 -	if test -d $srcdir/../../courier
 -	then
 -		maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
 -	fi
--
 +  maildrop_cv_SYS_INSTALL_MBOXDIR=./Maildir
- fi
  
+ fi
  
