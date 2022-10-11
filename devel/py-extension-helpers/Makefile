@@ -1,6 +1,6 @@
 COMMENT=	build-time package to simplify C/Cython extensions
 
-MODPY_EGG_VERSION= 0.1
+MODPY_EGG_VERSION= 1.0.0
 
 DISTNAME=	extension-helpers-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
@@ -15,12 +15,9 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_SETUPTOOLS= Yes
-BUILD_DEPENDS=	devel/py-setuptools_scm${MODPY_FLAVOR}
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST_ARGS= extension_helpers/tests
-
-# wants py-coverage<5
-NO_TEST=	Yes
+PORTHOME=	${WRKDIR}
 
 FLAVOR=		python3
 FLAVORS=	python3
