@@ -1,6 +1,6 @@
 COMMENT =		classes without boilerplate
 
-MODPY_EGG_VERSION =	21.4.0
+MODPY_EGG_VERSION =	22.1.0
 
 DISTNAME =		attrs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-six${MODPY_FLAVOR} \
