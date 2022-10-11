@@ -1,16 +1,16 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -898,7 +898,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
+@@ -911,7 +911,7 @@ authdaemondprog_LDADD = $(LIBLTDL) libcourierauthcommo
  	libs/libhmac/libhmac.la libs/md5/libmd5.la libs/sha1/libsha1.la \
  	libs/rfc822/libencode.la libs/numlib/libnumlib.la
  
--authdaemondprog_LDFLAGS = -export-dynamic $(modules:%=-dlopen %) @NETLIBS@
-+authdaemondprog_LDFLAGS = -export-dynamic $(modules:%=-dlopen %) -lpthread @NETLIBS@
+-authdaemondprog_LDFLAGS = -export-dynamic $(modules:%=-dlopen %) \
++authdaemondprog_LDFLAGS = -export-dynamic $(modules:%=-dlopen %) -lpthread \
+ 	-rpath $(pkglibdir) @NETLIBS@
+ 
  authdaemontest_SOURCES = authdaemontest.c
- authdaemontest_DEPENDENCIES = libcourierauthcommon.la
- authdaemontest_LDADD = libcourierauthcommon.la @NETLIBS@
-@@ -2255,8 +2255,6 @@ install-exec-hook:
+@@ -2279,8 +2279,6 @@ install-exec-hook:
  	-chown @mailuser@ $(DESTDIR)$(pkglibexecdir)
  	-chgrp @mailgroup@ $(DESTDIR)$(pkglibexecdir)
  	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) authdaemondprog $(DESTDIR)$(pkglibexecdir)/authdaemond

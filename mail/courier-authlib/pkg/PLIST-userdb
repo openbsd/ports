@@ -9,5 +9,4 @@
 sbin/makeuserdb
 sbin/pw2userdb
 sbin/userdb
-sbin/userdb-test-cram-md5
 @bin sbin/userdbpw
