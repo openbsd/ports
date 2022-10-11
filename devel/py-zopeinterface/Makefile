@@ -1,11 +1,10 @@
 COMMENT=	object interface infrastructure from Zope
 
-MODPY_EGG_VERSION=	5.4.0
+MODPY_EGG_VERSION=	5.5.0
 
 DISTNAME=	zope.interface-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeinterface-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	0
 
 # Zope Public License
 PERMIT_PACKAGE=	Yes
@@ -13,12 +12,14 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += pthread
 
-MODPY_PI=	Yes
-
 MODULES=	lang/python
-TEST_DEPENDS=	devel/py-zopeevent${MODPY_FLAVOR}
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+#MODPY_PYTEST_ARGS= src/zope
+TEST_ENV=	PY_IGNORE_IMPORTMISMATCH=1
 
-MODPY_SETUPTOOLS=	Yes
+TEST_DEPENDS=	devel/py-zopeevent${MODPY_FLAVOR} \
+		devel/py-zopetesting${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR=		python3
