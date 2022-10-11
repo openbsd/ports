@@ -17,7 +17,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
 			devel/py-zopeinterface${MODPY_FLAVOR}
 
 FLAVORS =		python3
