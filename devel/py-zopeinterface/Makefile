@@ -15,7 +15,6 @@ WANTLIB += pthread
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-#MODPY_PYTEST_ARGS= src/zope
 TEST_ENV=	PY_IGNORE_IMPORTMISMATCH=1
 
 TEST_DEPENDS=	devel/py-zopeevent${MODPY_FLAVOR} \
