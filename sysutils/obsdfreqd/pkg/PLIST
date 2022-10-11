@@ -1,3 +1,5 @@
 @rcscript ${RCDIR}/obsdfreqd
 @man man/man1/obsdfreqd.1
 @bin sbin/obsdfreqd
+share/examples/login.conf.d/obsdfreqd
+@sample ${SYSCONFDIR}/login.conf.d/obsdfreqd
