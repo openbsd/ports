@@ -44,9 +44,7 @@ share/doc/courier/AUTHORS
 share/doc/courier/ChangeLog
 share/doc/courier/INSTALL
 share/doc/courier/NEWS
-share/doc/courier/README
 share/doc/courier/README.couriertls
-share/doc/courier/README.imap.txt
 share/doc/courier/README.imapkeywords.html
 share/doc/courier/README.maildirfilter.html
 share/doc/courier/README.maildirquota.txt

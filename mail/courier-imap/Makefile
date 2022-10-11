@@ -1,14 +1,11 @@
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
-V=			5.1.7
+V=			5.1.8
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
-
-REVISION-main=		2
-REVISION-pop3=		2
 
 CATEGORIES=		mail
 
@@ -72,7 +69,7 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 
 DOCS=			AUTHORS INSTALL \
 			NEWS libs/imap/ChangeLog \
-			libs/imap/README libs/imap/README.proxy \
+			libs/imap/README.proxy \
 			libs/maildir/README.imapkeywords.html \
 			libs/maildir/README.maildirfilter.html \
 			libs/maildir/README.maildirquota.txt \
@@ -125,8 +122,6 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier
-	${INSTALL_DATA} ${WRKSRC}/libs/imap/README \
-	    ${PREFIX}/share/doc/courier/README.imap.txt
 .	for i in ${DOCS}
 	     ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/courier
 .	endfor
