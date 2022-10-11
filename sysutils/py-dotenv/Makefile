@@ -1,6 +1,6 @@
 COMMENT =	handle .env files
 
-MODPY_EGG_VERSION =	0.20.0
+MODPY_EGG_VERSION =	0.21.0
 
 DISTNAME =	python-dotenv-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/python-/py-/}
@@ -12,19 +12,19 @@ HOMEPAGE =	https://github.com/pedroburon/dotenv
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS =	python3
+FLAVOR =	python3
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-PORTHOME =		${WRKDIR}
-TEST_DEPENDS =		${BUILD_PKGPATH} \
-			devel/py-click${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-sh${MODPY_FLAVOR} \
-			devel/ipython${MODPY_FLAVOR}
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
+MODPY_PYTEST =	Yes
+PORTHOME =	${WRKDIR}
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-click${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-sh${MODPY_FLAVOR} \
+		devel/ipython${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
