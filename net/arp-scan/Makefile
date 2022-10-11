@@ -1,12 +1,12 @@
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
-GH_COMMIT =	840373f7dfe23167cbea3f77f06d5143a3ff81d5
-DISTNAME =	arp-scan-1.9.7pl20220622
+GH_COMMIT =	923f123a281139f1ec3daceb1db4bc7317ec6978
+DISTNAME =	arp-scan-1.9.7pl20221010
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 PKGNAME-main =	${DISTNAME}
 
-M =		20220820
+M =		20221011
 COMMENT-mac =	MAC address vendor list
 PKGNAME-mac =	mac-vendor-$M
 
@@ -22,6 +22,7 @@ DISTFILES =	${GH_DISTFILE} \
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB-main =		c pcap
 RUN_DEPENDS-main =	${BASE_PKGPATH},-mac
 

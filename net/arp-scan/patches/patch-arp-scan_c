@@ -1,7 +1,7 @@
 Index: arp-scan.c
 --- arp-scan.c.orig
 +++ arp-scan.c
-@@ -131,6 +131,10 @@ main(int argc, char *argv[]) {
+@@ -144,6 +144,10 @@ main(int argc, char *argv[]) {
   *      Process options.
   */
     process_options(argc, argv);
@@ -11,4 +11,16 @@ Index: arp-scan.c
 +   }
  /*
   *      Get program start time for statistics displayed on completion.
+  */
+@@ -466,6 +470,11 @@ main(int argc, char *argv[]) {
+       if (write_pkt_to_file == -1)
+          err_sys("open %s", pkt_filename);
+    }
++/*
++ *      setup is done at this point, so it's a natural point to pledge()
++ */
++   if (pledge("stdio dns bpf", NULL) == -1)
++      err_sys("pledge");
+ /*
+  *      Create and initialise array of pointers to host entries.
   */
