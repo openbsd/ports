@@ -267,6 +267,7 @@
      SUBDIR += pftop
      SUBDIR += pick
      SUBDIR += pkg_mgr
+     SUBDIR += planor
      SUBDIR += polkit
      SUBDIR += portroach-cli
      SUBDIR += prometheus
