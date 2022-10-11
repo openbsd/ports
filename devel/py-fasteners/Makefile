@@ -1,30 +1,28 @@
-COMMENT =		python package that provides useful locks
+COMMENT =	Python package that provides useful locks
 
-MODPY_EGG_VERSION =	0.15
-DISTNAME =		fasteners-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+MODPY_EGG_VERSION =	0.18
+DISTNAME =	fasteners-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
-HOMEPAGE =		https://github.com/harlowja/fasteners
+HOMEPAGE =	https://github.com/harlowja/fasteners
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	fasteners
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS =	python3
+FLAVOR =	python3
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-pbr${MODPY_FLAVOR} \
-			devel/py-testtools${MODPY_FLAVOR}
+# not in pypi release
+NO_TEST =	Yes
+#MODPY_PYTEST_ARGS =	fasteners
+#TEST_DEPENDS =	devel/py-pbr${MODPY_FLAVOR} \
+#		devel/py-testtools${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
