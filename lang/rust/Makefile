@@ -1,14 +1,12 @@
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
-BROKEN-aarch64 =	new bootstrap needed
 BROKEN-powerpc64 =	new bootstrap needed
-BROKEN-riscv64 =	new bootstrap needed
 BROKEN-sparc64 =	new bootstrap needed
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
 .else
-DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel parallel2
 .endif
 
 COMMENT-main =		compiler for Rust Language
@@ -21,11 +19,11 @@ REVISION =		0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.64.0-20220922
+BV-aarch64 =		1.64.0-20221010
 BV-amd64 =		1.64.0-20221009
 BV-i386 =		1.64.0-20221009
 BV-powerpc64 =		1.63.0-20220821
-BV-riscv64 =		1.63.0-20220821
+BV-riscv64 =		1.64.0-20221010
 BV-sparc64 =		1.63.0-20220822
 BV =			${BV-${MACHINE_ARCH}}
 
