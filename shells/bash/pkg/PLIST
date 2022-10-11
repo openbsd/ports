@@ -23,6 +23,7 @@ include/bash/config.h
 include/bash/conftypes.h
 include/bash/dispose_cmd.h
 include/bash/error.h
+include/bash/execute_cmd.h
 include/bash/externs.h
 include/bash/general.h
 include/bash/hashlib.h
@@ -65,13 +66,16 @@ include/bash/y.tab.h
 @info info/bash.info
 lib/bash/
 lib/bash/Makefile.inc
+lib/bash/Makefile.sample
 @bin lib/bash/accept
 @bin lib/bash/basename
 @bin lib/bash/csv
 @bin lib/bash/cut
 @bin lib/bash/dirname
+@bin lib/bash/dsv
 @bin lib/bash/fdflags
 @bin lib/bash/finfo
+@bin lib/bash/getconf
 @bin lib/bash/head
 @bin lib/bash/id
 @bin lib/bash/ln
@@ -91,6 +95,7 @@ lib/bash/loadables.h
 @bin lib/bash/seq
 @bin lib/bash/setpgid
 @bin lib/bash/sleep
+@bin lib/bash/stat
 @bin lib/bash/strftime
 @bin lib/bash/sync
 @bin lib/bash/tee

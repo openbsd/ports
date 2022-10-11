@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -364,7 +364,7 @@ INTL_LIBDIR = $(dot)/$(LIBSUBDIR)/intl
+@@ -372,7 +372,7 @@ INTL_LIBDIR = $(dot)/$(LIBSUBDIR)/intl
  INTL_ABSSRC = ${topdir}/$(INTL_LIB)
  INTL_BUILDDIR = ${LIBBUILD}/intl
  
