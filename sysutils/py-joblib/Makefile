@@ -1,12 +1,12 @@
 COMMENT =	lightweight pipelining: using Python functions as pipeline
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.2.0
 DISTNAME =		joblib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
+# https://github.com/joblib/joblib
 HOMEPAGE =		https://joblib.readthedocs.io
 
 # BSD-3
@@ -18,7 +18,7 @@ FLAVOR =		python3
 FLAVORS =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
