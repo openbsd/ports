@@ -540,7 +540,6 @@ phpldapadmin/htdocs/welcome.php
 phpldapadmin/index.php
 phpldapadmin/lib/
 phpldapadmin/lib/AJAXTree.php
-phpldapadmin/lib/Attribute.php
 phpldapadmin/lib/AttributeFactory.php
 phpldapadmin/lib/BinaryAttribute.php
 phpldapadmin/lib/DateAttribute.php
@@ -551,6 +550,7 @@ phpldapadmin/lib/JpegAttribute.php
 phpldapadmin/lib/MassRender.php
 phpldapadmin/lib/MultiLineAttribute.php
 phpldapadmin/lib/ObjectClassAttribute.php
+phpldapadmin/lib/PLAAttribute.php
 phpldapadmin/lib/PageRender.php
 phpldapadmin/lib/PasswordAttribute.php
 phpldapadmin/lib/Query.php
