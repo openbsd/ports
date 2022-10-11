@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.91 2022/09/13 20:33:09 jca Exp $
+# $OpenBSD: arch-defines.mk,v 1.92 2022/10/11 11:54:14 jca Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -26,7 +26,7 @@ GCC3_ARCHS = m88k
 MONO_ARCHS = aarch64 amd64 i386
 OCAML_NATIVE_ARCHS = aarch64 amd64 i386
 OCAML_NATIVE_DYNLINK_ARCHS = aarch64 amd64 i386
-GO_ARCHS = aarch64 amd64 arm armv7 i386 mips64
+GO_ARCHS = aarch64 amd64 arm armv7 i386 mips64 riscv64
 RUST_ARCHS = aarch64 amd64 i386 powerpc64 riscv64 sparc64
 
 # arches where the base compiler is clang
