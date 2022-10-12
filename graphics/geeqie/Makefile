@@ -24,7 +24,9 @@ MASTER_SITES=		https://github.com/BestImageViewer/geeqie/releases/download/v${V}
 
 MODULES=		devel/meson
 
-BUILD_DEPENDS=		devel/gettext,-tools
+# vim is needed for xxd
+BUILD_DEPENDS=		devel/gettext,-tools \
+			editors/vim,-main
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
 			graphics/ImageMagick \
