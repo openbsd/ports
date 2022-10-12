@@ -15,6 +15,8 @@ CATEGORIES =		net
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
+REVISION-web =		0
+
 HOMEPAGE =		http://www.zabbix.com/
 
 MAINTAINER =		Robert Nagy <robert@openbsd.org>
@@ -25,7 +27,6 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://cdn.zabbix.com/zabbix/sources/stable/${MAJV}/
 
 MODULES =		lang/php
-MODPHP_VERSION =	7.4
 MODPHP_BUILDDEP =	No
 
 MULTI_PACKAGES =	-main -web
