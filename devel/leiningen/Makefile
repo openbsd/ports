@@ -2,8 +2,7 @@ COMMENT =		Clojure project automation
 
 GH_ACCOUNT =		technomancy
 GH_PROJECT =		leiningen
-GH_TAGNAME =		2.9.8
-REVISION =		0
+GH_TAGNAME =		2.9.10
 
 JAR_FILE =		${DISTNAME}-standalone.jar
 
