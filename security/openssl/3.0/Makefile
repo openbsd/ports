@@ -1,9 +1,10 @@
 # bump mail/postfix/stable and mail/postfix/snapshots if updating
 # (static linked)
 PORTROACH=	limit:^3
-V=		3.0.6
+V=		3.0.5
 PKGNAME=	openssl-${V}
-PKGSPEC=	openssl->=3,<3.1
+PKGSPEC=	openssl->=3v0,<3.1v0
+EPOCH=		0
 
 SHLIBVER=	12.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
