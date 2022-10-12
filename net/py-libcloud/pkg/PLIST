@@ -470,6 +470,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}nimbus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}ninefold.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}oss.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}ovh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}rgw.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/${MODPY_PYCACHE}scaleway.${MODPY_PYC_MAGIC_TAG}pyc
@@ -487,6 +488,7 @@ lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/minio.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/nimbus.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/ninefold.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/oss.py
+lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/ovh.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/rgw.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/s3.py
 lib/python${MODPY_VERSION}/site-packages/libcloud/storage/drivers/scaleway.py
