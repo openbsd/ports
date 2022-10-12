@@ -15,6 +15,15 @@ include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqti18nhelper.h
 include/Fcitx5Qt5/Fcitx5QtWidgetsAddons/fcitxqtkeysequencewidget.h
 include/Fcitx5Qt5/fcitx5qt5dbusaddons_version.h
 include/Fcitx5Qt5/fcitx5qt5widgetsaddons_version.h
+include/Fcitx5Qt6/
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/fcitx5qt6dbusaddons_export.h
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/fcitxqtcontrollerproxy.h
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/fcitxqtdbustypes.h
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/fcitxqtinputcontextproxy.h
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/fcitxqtinputmethodproxy.h
+include/Fcitx5Qt6/Fcitx5Qt6DBusAddons/fcitxqtwatcher.h
+include/Fcitx5Qt6/fcitx5qt6dbusaddons_version.h
 lib/cmake/Fcitx5Qt5DBusAddons/
 lib/cmake/Fcitx5Qt5DBusAddons/Fcitx5Qt5DBusAddonsConfig.cmake
 lib/cmake/Fcitx5Qt5DBusAddons/Fcitx5Qt5DBusAddonsConfigVersion.cmake
@@ -25,11 +34,18 @@ lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsConfig.cmake
 lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsConfigVersion.cmake
 lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Fcitx5Qt5WidgetsAddons/Fcitx5Qt5WidgetsAddonsTargets.cmake
+lib/cmake/Fcitx5Qt6DBusAddons/
+lib/cmake/Fcitx5Qt6DBusAddons/Fcitx5Qt6DBusAddonsConfig.cmake
+lib/cmake/Fcitx5Qt6DBusAddons/Fcitx5Qt6DBusAddonsConfigVersion.cmake
+lib/cmake/Fcitx5Qt6DBusAddons/Fcitx5Qt6DBusAddonsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Fcitx5Qt6DBusAddons/Fcitx5Qt6DBusAddonsTargets.cmake
 lib/fcitx5/qt5/
 @so lib/fcitx5/qt5/libfcitx-quickphrase-editor5.so
 @lib lib/libFcitx5Qt5DBusAddons.so.${LIBFcitx5Qt5DBusAddons_VERSION}
 @lib lib/libFcitx5Qt5WidgetsAddons.so.${LIBFcitx5Qt5WidgetsAddons_VERSION}
+@lib lib/libFcitx5Qt6DBusAddons.so.${LIBFcitx5Qt6DBusAddons_VERSION}
 @so lib/qt5/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
+@so lib/qt6/plugins/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 @bin libexec/fcitx5-qt5-gui-wrapper
 share/locale/ca/LC_MESSAGES/fcitx5-qt.mo
 share/locale/da/LC_MESSAGES/fcitx5-qt.mo
