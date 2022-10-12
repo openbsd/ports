@@ -1,10 +1,10 @@
 COMMENT=		error codes for GnuPG related software
 
-DISTNAME=		libgpg-error-1.45
+DISTNAME=		libgpg-error-1.46
 CATEGORIES=		security devel
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  gpg-error            3.24     # 33.0
+SHARED_LIBS +=  gpg-error            3.24     # 33.1
 
 HOMEPAGE=		https://www.gnupg.org/software/libgpg-error/index.html
 
@@ -24,5 +24,8 @@ LIB_DEPENDS=		devel/gettext,-runtime
 CONFIGURE_STYLE=	gnu
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+# needed by (at least) multimedia/libbdplus and security/gpgme
+CONFIGURE_ARGS +=	--enable-install-gpg-error-config
 
 .include <bsd.port.mk>
