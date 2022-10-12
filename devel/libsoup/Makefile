@@ -3,7 +3,7 @@ PORTROACH=		limit:^2
 COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.74.2
+GNOME_VERSION =		2.74.3
 
 SHARED_LIBS += soup-2.4                  10.6 # 1.11.2
 SHARED_LIBS += soup-gnome-2.4            8.1 # 1.11.2
