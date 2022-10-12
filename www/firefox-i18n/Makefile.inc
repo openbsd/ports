@@ -9,6 +9,7 @@ PKG_ARCH =	*
 FV =		105.0.2
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -3,6 +3,7 @@ COMMENT =	fast, reliable, and secure dependency management for node.js
 V =		v1.22.18
 DISTNAME =	yarn-${V}
 PKGNAME =	yarn-${V:S/v//}
+REVISION =	0
 
 CATEGORIES =	devel
 

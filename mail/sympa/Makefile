@@ -2,7 +2,7 @@ COMMENT =	mailing list manager with web interface
 
 VERSION =	6.2.16
 DISTNAME =	sympa-${VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	mail www
 

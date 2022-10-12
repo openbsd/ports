@@ -4,6 +4,7 @@ MAINTAINER=	Caspar Schutijser <caspar@schutijser.com>
 
 PKGNAME=	tor-browser-11.5.2
 ONLY_FOR_ARCHS =	amd64
+REVISION=	0
 
 RUN_DEPENDS=	www/tor-browser/browser>=11.5.2 \
 		www/tor-browser/noscript>=11.4.6 \

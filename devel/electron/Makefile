@@ -14,7 +14,7 @@ COMMENT=		cross-platform desktop applications
 
 ECV=			80.0.3987.158
 ELECTRON_V=		8.2.0
-REVISION=		5
+REVISION=		6
 
 DISTFILES+=		chromium-${ECV}${EXTRACT_SUFX} \
 			electron-${ELECTRON_V}_${ECV}${EXTRACT_SUFX}:0 \

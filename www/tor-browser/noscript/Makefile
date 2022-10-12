@@ -1,5 +1,6 @@
 ADDON_NAME =		noscript
 V =			11.4.9
+REVISION =		0
 COMMENT =		Tor Browser add-on: flexible JS blocker
 HOMEPAGE =		https://noscript.net
 MASTER_SITES =		https://secure.informaction.com/download/releases/

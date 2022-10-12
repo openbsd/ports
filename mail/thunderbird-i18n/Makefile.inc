@@ -6,6 +6,7 @@ PKG_ARCH =	*
 FV =		102.3.3
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
+REVISION =	0
 
 CATEGORIES =	mail
 

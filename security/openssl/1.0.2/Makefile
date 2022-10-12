@@ -1,7 +1,7 @@
 PORTROACH=	limit:^1\.0\.
 V=		1.0.2u
-REVISION=	4
-PKGSPEC=	openssl-<1.1.0
+REVISION=	5
+PKGSPEC=	openssl-<1.1.0v0
 
 SHLIBVER=	6.2
 SHARED_LIBS=	crypto ${SHLIBVER} \
