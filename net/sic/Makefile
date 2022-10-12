@@ -1,7 +1,6 @@
 COMMENT=		simple irc client
 
-DISTNAME=		sic-1.2
-REVISION=		1
+DISTNAME=		sic-1.3
 
 CATEGORIES=		net
 

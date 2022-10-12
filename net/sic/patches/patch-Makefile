@@ -1,40 +1,33 @@
---- Makefile.orig	Sun Jun 16 08:03:32 2013
-+++ Makefile	Fri Aug 23 08:31:32 2013
-@@ -14,14 +14,12 @@ options:
- 	@echo "CC       = ${CC}"
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -4,8 +4,8 @@ NAME = sic
+ VERSION = 1.3
  
- .c.o:
--	@echo CC $<
--	@${CC} -c ${CFLAGS} $<
-+	${CC} -c ${CFLAGS} $<
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local                                                                                      
++MANPREFIX = ${PREFIX}/man
  
- ${OBJ}: config.mk util.c
- 
- sic: ${OBJ}
--	@echo CC -o $@
--	@${CC} -o $@ ${OBJ} ${LDFLAGS}
-+	${CC} -o $@ ${OBJ} ${LDFLAGS}
- 
- clean:
- 	@echo cleaning
-@@ -36,14 +34,12 @@ dist: clean
- 	@rm -rf sic-${VERSION}
+ # use system flags.
+ SIC_CFLAGS = ${CFLAGS}
+@@ -44,12 +44,12 @@ dist:
+ 	rm -rf "${NAME}-${VERSION}"
  
  install: all
--	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
--	@mkdir -p ${DESTDIR}${PREFIX}/bin
--	@cp -f sic ${DESTDIR}${PREFIX}/bin
--	@chmod 755 ${DESTDIR}${PREFIX}/bin/sic
--	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
--	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
--	@sed "s/VERSION/${VERSION}/g" < sic.1 > ${DESTDIR}${MANPREFIX}/man1/sic.1
--	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/sic.1
+-	mkdir -p ${DESTDIR}${PREFIX}/bin
+-	cp -f ${BIN} "${DESTDIR}${PREFIX}/bin"
+-	chmod 755 "${DESTDIR}${PREFIX}/bin/${BIN}"
+-	mkdir -p "${DESTDIR}${MANPREFIX}/man1"
+-	sed "s/VERSION/${VERSION}/g" < ${MAN1} > "${DESTDIR}${MANPREFIX}/man1/${MAN1}"
+-	chmod 644 "${DESTDIR}${MANPREFIX}/man1/${MAN1}"
 +	${BSD_INSTALL_PROGRAM_DIR} ${DESTDIR}${PREFIX}/bin
-+	${BSD_INSTALL_PROGRAM} sic ${DESTDIR}${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} ${BIN} ${DESTDIR}${PREFIX}/bin
 +	${BSD_INSTALL_MAN_DIR} ${DESTDIR}${MANPREFIX}/man1
-+	sed "s/VERSION/${VERSION}/g" < sic.1 > sic.1.tmp
-+	mv sic.1.tmp sic.1
-+	${BSD_INSTALL_MAN} sic.1 ${DESTDIR}${MANPREFIX}/man1
++	sed "s/VERSION/${VERSION}/g" < ${MAN1} > ${MAN1}.tmp
++	mv ${MAN1}.tmp ${MAN1}
++	${BSD_INSTALL_MAN} ${MAN1} ${DESTDIR}${MANPREFIX}/man1
  
  uninstall:
- 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
+ 	rm -f \
