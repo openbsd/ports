@@ -1,6 +1,6 @@
 COMMENT=		simple X terminal
 
-V=			0.8.5
+V=			0.9
 DISTNAME=		st-${V}
 
 CATEGORIES=		x11
