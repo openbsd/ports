@@ -1,4 +1,4 @@
-PORTROACH=		skipv:3.90.0,3.92.0
+PORTROACH=		limit:^3 skipv:3.90.0,3.92.0
 
 COMMENT=		library for bits of crypto UI and parsing
 
