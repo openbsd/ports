@@ -28,3 +28,18 @@ Index: src/libopensc/sc.c
  #endif
  
  	return p;
+@@ -927,10 +931,14 @@ void *sc_mem_secure_alloc(size_t len)
+ 
+ void sc_mem_secure_free(void *ptr, size_t len)
+ {
++#ifdef HAVE_CALLOC_CONCEAL
++	/* do nothing */
++#else
+ #ifdef _WIN32
+ 	VirtualUnlock(ptr, len);
+ #else
+ 	munlock(ptr, len);
++#endif
+ #endif
+ 	free(ptr);
+ }
