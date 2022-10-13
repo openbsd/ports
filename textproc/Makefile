@@ -387,6 +387,7 @@
      SUBDIR += py-css-parser,python3
      SUBDIR += py-cssselect
      SUBDIR += py-cssselect,python3
+     SUBDIR += py-cssselect2,python3
      SUBDIR += py-cssutils,python3
      SUBDIR += py-defusedxml,python3
      SUBDIR += py-demjson,python3
@@ -432,6 +433,7 @@
      SUBDIR += py-pygments,python3
      SUBDIR += py-pykwalify,python3
      SUBDIR += py-pypandoc,python3
+     SUBDIR += py-pyphen,python3
      SUBDIR += py-rebulk,python3
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml,python3
@@ -451,6 +453,7 @@
      SUBDIR += py-stache,python3
      SUBDIR += py-stemmer,python3
      SUBDIR += py-textfsm,python3
+     SUBDIR += py-tinycss2,python3
      SUBDIR += py-toml,python3
      SUBDIR += py-tomli,python3
      SUBDIR += py-tomli_w,python3
