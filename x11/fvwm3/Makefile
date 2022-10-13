@@ -1,6 +1,6 @@
 COMMENT=	multiple virtual desktop window manager
 
-VERSION=	1.0.4
+VERSION=	1.0.5
 DISTNAME=	fvwm3-${VERSION}
 
 CATEGORIES=     x11
@@ -24,13 +24,6 @@ LIB_DEPENDS+=	graphics/png \
 		x11/gnome/librsvg \
 		devel/libevent2
 
-FLAVORS=	debug
-FLAVOR?=
-
-.if ${FLAVOR:Mdebug}
-CONFIGURE_ARGS+= --enable-debug-msgs
-.endif
-
 SUBST_VARS=	VERSION
 
 SEPARATE_BUILD=		Yes
@@ -43,7 +36,8 @@ CONFIGURE_ARGS+=	--enable-mandoc \
 
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+DEBUG_PACKAGES =       ${BUILD_PACKAGES}
 
 post-install:
 	mv ${WRKINST}/${TRUEPREFIX}/bin/FvwmCommand{,3}
