@@ -1,0 +1,2 @@
+Pyphen is a pure Python module to hyphenate words using included or
+external Hunspell hyphenation dictionaries.
