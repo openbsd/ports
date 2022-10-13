@@ -8,8 +8,6 @@ COMMENT-pulse=		pulseaudio(1) element for GStreamer
 DISTNAME=		gst-plugins-good-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
-REVISION-main=		0
-
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
