@@ -1,4 +1,5 @@
-cast clock_t to long long and use %lld to print it
+cast clock_t to long long and use %lld to print it, backport of
+https://github.com/fvwmorg/fvwm3/pull/719
 
 Index: fvwm/ewmh.c
 --- fvwm/ewmh.c.orig

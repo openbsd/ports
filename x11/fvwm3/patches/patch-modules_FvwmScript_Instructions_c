@@ -1,3 +1,5 @@
+fix time_t cast, backport of https://github.com/fvwmorg/fvwm3/pull/719
+
 Index: modules/FvwmScript/Instructions.c
 --- modules/FvwmScript/Instructions.c.orig
 +++ modules/FvwmScript/Instructions.c
