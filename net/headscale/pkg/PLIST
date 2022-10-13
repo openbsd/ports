@@ -1,5 +1,5 @@
 @newgroup _headscale:869
-@newuser _headscale:869:_headscale:daemon:headscale user:/nonexistent:/sbin/nologin
+@newuser _headscale:869:_headscale::headscale user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/headscale
 @mode 770
 @group _headscale
