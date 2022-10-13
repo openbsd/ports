@@ -123,8 +123,8 @@ THIRD_SRC =		${WRKSRC}/src/third_party
 post-extract:
 	# hook up prefetched submodules
 	rmdir ${THIRD_SRC}/{crc32c/src,libyuv}
-	ln -s ${WRKDIR}/crc32c-${CRC32C_COMMIT} ${THIRD_SRC}/crc32c/src
-	ln -s ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
+	mv ${WRKDIR}/crc32c-${CRC32C_COMMIT} ${THIRD_SRC}/crc32c/src
+	mv ${WRKDIR}/libyuv-${LIBYUV_COMMIT} ${THIRD_SRC}/libyuv
 	# All bundles:
 	@cd ${THIRD_SRC}/ && ls -x
 	# Needed bundles (others are removed to prevent accidential use):
