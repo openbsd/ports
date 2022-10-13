@@ -1,0 +1,7 @@
+rset(1) operates by staging files on a remote system, then executing
+instructions embedded in the pln(5) files.  Any interpreter capable of
+running scripts read over a pipe may be specified.
+
+The bundled utilities rinstall(1) and rsub(1) provide an easy means of
+installing and modifying configuration files, and capabilities are added
+by writing utility scripts which are sent along with configuration data.
