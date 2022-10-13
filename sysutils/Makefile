@@ -337,6 +337,7 @@
      SUBDIR += riscv-pk
      SUBDIR += rofi
      SUBDIR += rpl
+     SUBDIR += rset
      SUBDIR += rsyslog
      SUBDIR += rtty
      SUBDIR += ruby-augeas,ruby30
