@@ -1,7 +1,7 @@
 COMMENT=		GNOME password manager (Keepass)
 
 GNOME_PROJECT=		secrets
-GNOME_VERSION=		6.5
+GNOME_VERSION=		7.0
 
 # override gnome MODULE
 MASTER_SITES=		https://gitlab.gnome.org/World/secrets/-/archive/${GNOME_VERSION}/
@@ -17,16 +17,18 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		security/libpwquality \
+BUILD_DEPENDS=		devel/py-validators${MODPY_FLAVOR} \
 			security/py-pykeepass${MODPY_FLAVOR} \
 			security/py-pyotp${MODPY_FLAVOR} \
+			security/py-zxcvbn${MODPY_FLAVOR} \
 			x11/gnome/libadwaita \
 			x11/gtk+4
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			security/libpwquality \
+			devel/py-validators${MODPY_FLAVOR} \
 			security/py-pykeepass${MODPY_FLAVOR} \
 			security/py-pyotp${MODPY_FLAVOR} \
+			security/py-zxcvbn${MODPY_FLAVOR} \
 			x11/gnome/libadwaita \
 			x11/gtk+4
 
