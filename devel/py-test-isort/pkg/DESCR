@@ -1,0 +1,2 @@
+The pytest-isort plugin extends py.test to check import ordering using
+isort.
