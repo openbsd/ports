@@ -56,6 +56,7 @@
      SUBDIR += py-lz4,python3
      SUBDIR += py-rarfile,python3
      SUBDIR += py-vpk,python3
+     SUBDIR += py-zopfli,python3
      SUBDIR += quazip
      SUBDIR += ripole
      SUBDIR += ruby-minitar
