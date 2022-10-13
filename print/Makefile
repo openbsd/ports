@@ -56,8 +56,10 @@
      SUBDIR += psutils
      SUBDIR += ptouch-driver
      SUBDIR += py-cups,python3
+     SUBDIR += py-fonttools,python3
      SUBDIR += py-pikepdf,python3
      SUBDIR += py-pylatex,python3
+     SUBDIR += py-pydyf,python3
      SUBDIR += py-relatorio,python3
      SUBDIR += py-reportlab
      SUBDIR += py-reportlab,python3
@@ -71,6 +73,7 @@
      SUBDIR += texlive
      SUBDIR += transfig
      SUBDIR += unpaper
+     SUBDIR += weasyprint,python3
      SUBDIR += xournal
      SUBDIR += xprintproto
 
