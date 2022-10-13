@@ -11,15 +11,14 @@ COMMENT =		WebRTC build for Telegram
 GH_ACCOUNT =		desktop-app
 GH_PROJECT =		tg_owt
 # no releases or tags, use latest master
-GH_COMMIT =		10d5f4bf77333ef6b43516f90d2ce13273255f41
-DISTNAME =		${GH_PROJECT}-0.0.0.20220507
-REVISION =		0
+GH_COMMIT =		621f3da55331733bf0d1b223786b96b68c03dca1
+DISTNAME =		${GH_PROJECT}-0.0.0.20220909
 DISTFILES =		${GH_DISTFILE}
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	3.0	# 0.0.0
+SHARED_LIBS =		tg_owt	4.0	# 0.0.0
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -28,10 +27,10 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use Andrew's mirror to get stable tarballs for latest master
 MASTER_SITES0 =		https://github.com/noiseless/libyuv/archive/
-LIBYUV_COMMIT =		966768e899c0eb932e1cd72935d37e15284daec0
-DISTFILES +=		libyuv-20220513-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
+LIBYUV_COMMIT =		3e38ce50589d9319badc0501f96d6c5b2b177472
+DISTFILES +=		libyuv-20220817-{}${LIBYUV_COMMIT}${EXTRACT_SUFX}:0
 
-# no releases but old tags
+# no releases but old tags, use latest HEAD
 MASTER_SITES2 =		https://github.com/google/crc32c/archive/
 CRC32C_COMMIT =		21fc8ef30415a635e7351ffa0e5d5367943d4a94
 DISTFILES +=		crc32c-20220208-{}${CRC32C_COMMIT}${EXTRACT_SUFX}:2

@@ -2,11 +2,11 @@ SHA256 (tg_owt/crc32c-20220208-21fc8ef30415a635e7351ffa0e5d5367943d4a94.tar.gz) 
 SHA256 (tg_owt/defer-third-party-sources-f95ce167.patch) = AR5Y5n/Q1GYcvVK8yMccbpVj1gp5g/wJQ6wpE3FUNy8=
 SHA256 (tg_owt/libabsl-use-includes-fb12b4bd.patch) = oBg0O/NkbgRwkKkoLwPL/GgomRlOJupJiT8JxlZuzX4=
 SHA256 (tg_owt/libsrtp-libressl-fix-531dd25e.patch) = 5cqyYHhvMA4i69TaZ87QGiWW9qstBSojDNaqU9sSLv8=
-SHA256 (tg_owt/libyuv-20220513-966768e899c0eb932e1cd72935d37e15284daec0.tar.gz) = F+S5lmPP7HYeoc2IUBfbQI8EwbgOlj0xrnY/3zXPgsc=
-SHA256 (tg_owt/tg_owt-0.0.0.20220507-10d5f4bf.tar.gz) = oyHpm7JFNpLy0EXGqcX+q53gfEC9viBZNxUONLrpATs=
+SHA256 (tg_owt/libyuv-20220817-3e38ce50589d9319badc0501f96d6c5b2b177472.tar.gz) = EEcCG/on/u/EVFr6dIZNdEltm/ocnPtKszyBzB3++ck=
+SHA256 (tg_owt/tg_owt-0.0.0.20220909-621f3da5.tar.gz) = 1WuA+2dUhjPGJRFJi/534vTstbahwKeA0ZEaZ4xsYGQ=
 SIZE (tg_owt/crc32c-20220208-21fc8ef30415a635e7351ffa0e5d5367943d4a94.tar.gz) = 29820
 SIZE (tg_owt/defer-third-party-sources-f95ce167.patch) = 2130
 SIZE (tg_owt/libabsl-use-includes-fb12b4bd.patch) = 3401
 SIZE (tg_owt/libsrtp-libressl-fix-531dd25e.patch) = 3532
-SIZE (tg_owt/libyuv-20220513-966768e899c0eb932e1cd72935d37e15284daec0.tar.gz) = 549238
-SIZE (tg_owt/tg_owt-0.0.0.20220507-10d5f4bf.tar.gz) = 15799740
+SIZE (tg_owt/libyuv-20220817-3e38ce50589d9319badc0501f96d6c5b2b177472.tar.gz) = 558136
+SIZE (tg_owt/tg_owt-0.0.0.20220909-621f3da5.tar.gz) = 15805257
