@@ -1550,8 +1550,10 @@
      SUBDIR += py-test-doctestplus,python3
      SUBDIR += py-test-expect,python3
      SUBDIR += py-test-filter-subpackage,python3
+     SUBDIR += py-test-flake8,python3
      SUBDIR += py-test-forked,python3
      SUBDIR += py-test-httpbin,python3
+     SUBDIR += py-test-isort,python3
      SUBDIR += py-test-lazy-fixture,python3
      SUBDIR += py-test-localserver,python3
      SUBDIR += py-test-mock,python3
