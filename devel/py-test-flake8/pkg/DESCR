@@ -1,0 +1,2 @@
+The pytest-flake8 plugin extends py.test to efficiently check PEP8
+compliance
