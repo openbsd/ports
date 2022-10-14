@@ -18,7 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 MODPY_PYTEST =		Yes
-NO_TESTS =		Yes
+NO_TEST =		Yes
 
 RUN_DEPENDS =		devel/py-isort${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR}
