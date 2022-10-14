@@ -16,6 +16,8 @@ MODPY_PI =	yes
 FLAVORS =		python3
 FLAVOR =		python3
 
+BUILD_DEPENDS =		textproc/py-webencodings${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-webencodings${MODPY_FLAVOR}
 TEST_DEPENDS +=		devel/py-test-flake8${MODPY_FLAVOR} \
 			devel/py-test-isort${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
