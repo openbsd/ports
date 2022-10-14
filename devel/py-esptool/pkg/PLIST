@@ -55,6 +55,18 @@ lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c3/emulate_efuse_co
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c3/fields.py
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c3/mem_definition.py
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c3/operations.py
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/${MODPY_PYCACHE}emulate_efuse_controller.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/${MODPY_PYCACHE}fields.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/${MODPY_PYCACHE}mem_definition.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/${MODPY_PYCACHE}operations.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/emulate_efuse_controller.py
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/fields.py
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/mem_definition.py
+lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32c6/operations.py
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32h2beta1/
 lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32h2beta1/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/espefuse/efuse/esp32h2beta1/${MODPY_PYCACHE}/
@@ -137,6 +149,7 @@ lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32c2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32c3.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32c6.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32c6beta.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32h2beta1.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp32h2beta2.${MODPY_PYC_MAGIC_TAG}pyc
@@ -147,6 +160,7 @@ lib/python${MODPY_VERSION}/site-packages/esptool/targets/${MODPY_PYCACHE}esp8266
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32.py
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32c2.py
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32c3.py
+lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32c6.py
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32c6beta.py
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32h2beta1.py
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/esp32h2beta2.py
@@ -158,6 +172,7 @@ lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32.json
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32c2.json
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32c3.json
+lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32c6.json
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32c6beta.json
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32h2beta1.json
 lib/python${MODPY_VERSION}/site-packages/esptool/targets/stub_flasher/stub_flasher_32h2beta2.json

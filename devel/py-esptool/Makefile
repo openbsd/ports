@@ -1,6 +1,6 @@
 COMMENT =		esp8266 and esp32 rom bootloader communication tool
 
-MODPY_EGG_VERSION =	4.2.1
+MODPY_EGG_VERSION =	4.3
 DISTNAME =		esptool-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
