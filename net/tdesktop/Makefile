@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			4.1.1
+V =			4.2.4
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -24,7 +24,7 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # rlottie: LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6Gui Qt6Network
+WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Svg Qt6Widgets absl_strings
 WANTLIB += avcodec avformat avutil c crypto dispatch gio-2.0 giomm-2.4
 WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 hunspell-1.7 jpeg lz4
@@ -56,7 +56,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/libsigc++-2 \
 			graphics/ffmpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20220507 \
+			net/tg_owt>=0.0.0.20220909 \
 			sysutils/xxhash \
 			textproc/hunspell
 
@@ -91,6 +91,9 @@ CFLAGS +=		-DIOAPI_NO_64
 
 # unported and required
 NEEDED_BUNDLES +=	rlottie tgcalls
+
+# devel/kf5/kcoreaddons is Qt5 only, tdesktop uses Qt6
+NEEDED_BUNDLES +=	kcoreaddons
 
 MODULES +=		x11/qt6
 LIB_DEPENDS +=		x11/qt6/qt5compat \
