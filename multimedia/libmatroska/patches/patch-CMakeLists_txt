@@ -3,14 +3,14 @@ Add options for building and installing shared, static libraries
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -4,6 +4,8 @@ project(matroska VERSION 1.6.3)
+@@ -4,6 +4,8 @@ project(matroska VERSION 1.7.1)
  
  option(DISABLE_PKGCONFIG "Disable PkgConfig module generation" OFF)
  option(DISABLE_CMAKE_CONFIG "Disable CMake package config module generation" OFF)
 +option(DISABLE_SHARED_LIBS "Disable build and install shared libraries" OFF)
 +option(DISABLE_STATIC_LIBS "Disable build and install static libraries" OFF)
  
- find_package(EBML 1.4.2 REQUIRED)
+ find_package(EBML 1.4.3 REQUIRED)
  
 @@ -62,44 +64,69 @@ set (libmatroska_C_PUBLIC_HEADERS
    matroska/c/libmatroska.h
@@ -113,7 +113,7 @@ Index: CMakeLists.txt
  
  if(NOT DISABLE_PKGCONFIG)
    set(prefix ${CMAKE_INSTALL_PREFIX})
-@@ -117,7 +144,9 @@ if(NOT DISABLE_CMAKE_CONFIG)
+@@ -125,7 +152,9 @@ if(NOT DISABLE_CMAKE_CONFIG)
    configure_package_config_file(MatroskaConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/MatroskaConfig.cmake
      INSTALL_DESTINATION ${CMAKE_INSTALL_PACKAGEDIR})
    write_basic_package_version_file(MatroskaConfigVersion.cmake COMPATIBILITY SameMajorVersion)
