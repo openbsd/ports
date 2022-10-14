@@ -1,0 +1,16 @@
+glm-0.9.9.8/glm-0.9.9.8/glm/../glm/gtc/../ext/quaternion_common.inl:107:29: error: implicit conversion from 'int' to 'float' may lose precision [-Werror,-Wimplicit-int-float-conversion]
+            T phi = angle + k * glm::pi<T>();
+                            ^ ~
+
+Index: glm/ext/quaternion_common.inl
+--- glm/ext/quaternion_common.inl.orig
++++ glm/ext/quaternion_common.inl
+@@ -104,7 +104,7 @@ namespace glm
+         {
+             // Graphics Gems III, page 96
+             T angle = acos(cosTheta);
+-            T phi = angle + k * glm::pi<T>();
++            T phi = angle + static_cast<T>(k) * glm::pi<T>();
+             return (sin(angle - a * phi)* x + sin(a * phi) * z) / sin(angle);
+         }
+     }

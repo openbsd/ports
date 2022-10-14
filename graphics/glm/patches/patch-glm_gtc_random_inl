@@ -1,0 +1,17 @@
+From 63a229359efd1b8ad35c63110027687a42343112 Mon Sep 17 00:00:00 2001
+From: Baldvin Kovacs <baldvin.kovacs@gmail.com>
+Date: Thu, 10 Feb 2022 22:12:46 +0100
+Subject: [PATCH] Fix implicit conversion compiler error in glm/gtc/random.inl
+
+Index: glm/gtc/random.inl
+--- glm/gtc/random.inl.orig
++++ glm/gtc/random.inl
+@@ -22,7 +22,7 @@ namespace detail
+ 		GLM_FUNC_QUALIFIER static vec<1, uint8, P> call()
+ 		{
+ 			return vec<1, uint8, P>(
+-				std::rand() % std::numeric_limits<uint8>::max());
++				static_cast<uint8>(std::rand() % std::numeric_limits<uint8>::max()));
+ 		}
+ 	};
+ 
