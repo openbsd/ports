@@ -1,28 +1,37 @@
-COMMENT =	tool to automatically build BGP route server configurations
+COMMENT=	tool to automatically build BGP route server configurations
 
-MODPY_EGG_VERSION =	1.17.0
-DISTNAME =	arouteserver-${MODPY_EGG_VERSION}
+# pypi sdist doesn't include tests
+GH_ACCOUNT=	pierky
+GH_PROJECT=	arouteserver
+GH_TAGNAME=	v${MODPY_EGG_VERSION}
 
-CATEGORIES =	net
+MODPY_EGG_VERSION=	1.17.1
+DISTNAME=	arouteserver-${MODPY_EGG_VERSION}
 
-HOMEPAGE =	https://arouteserver.readthedocs.org/
+CATEGORIES=	net
+
+HOMEPAGE=	https://arouteserver.readthedocs.org/
 
 # GPLv3+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-RUN_DEPENDS =		net/aggregate6 \
-			net/bgpq4 \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=	net/aggregate6 \
+		net/bgpq4 \
+		sysutils/py-packaging${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
+		www/py-jinja2${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR} \
+		www/py-urllib3${MODPY_FLAVOR}
+TEST_DEPENDS=	www/py-requests-mock${MODPY_FLAVOR} \
+		net/bgpq3
 
-NO_TEST =		Yes # needs work
-
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD=	setuptools
+#MODPY_PYTEST_DIR= tests
+MODPY_PYTEST_ARGS= \
+		--ignore pierky/arouteserver/tests/live_tests \
+		--ignore tests/real \
+		--ignore tests/live_tests
 
 .include <bsd.port.mk>
