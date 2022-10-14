@@ -1,0 +1,72 @@
+@bin bin/copyq
+lib/copyq/
+lib/copyq/plugins/
+@so lib/copyq/plugins/libitemencrypted.so
+@so lib/copyq/plugins/libitemfakevim.so
+@so lib/copyq/plugins/libitemimage.so
+@so lib/copyq/plugins/libitemnotes.so
+@so lib/copyq/plugins/libitempinned.so
+@so lib/copyq/plugins/libitemsync.so
+@so lib/copyq/plugins/libitemtags.so
+@so lib/copyq/plugins/libitemtext.so
+@man man/man1/copyq.1
+share/applications/com.github.hluk.copyq.desktop
+share/bash-completion/completions/copyq
+share/copyq/
+share/copyq/themes/
+share/copyq/themes/dark.ini
+share/copyq/themes/forest.ini
+share/copyq/themes/items.css
+share/copyq/themes/light.ini
+share/copyq/themes/main_window.css
+share/copyq/themes/main_window_simple.css
+share/copyq/themes/menu.css
+share/copyq/themes/notification.css
+share/copyq/themes/paper.ini
+share/copyq/themes/simple.ini
+share/copyq/themes/solarized-dark.ini
+share/copyq/themes/solarized-light.ini
+share/copyq/themes/tooltip.css
+share/copyq/themes/wine.ini
+share/copyq/translations/
+share/copyq/translations/copyq_ar.qm
+share/copyq/translations/copyq_cs.qm
+share/copyq/translations/copyq_da.qm
+share/copyq/translations/copyq_de.qm
+share/copyq/translations/copyq_el.qm
+share/copyq/translations/copyq_es.qm
+share/copyq/translations/copyq_fa.qm
+share/copyq/translations/copyq_fi.qm
+share/copyq/translations/copyq_fr.qm
+share/copyq/translations/copyq_hr.qm
+share/copyq/translations/copyq_hu.qm
+share/copyq/translations/copyq_id.qm
+share/copyq/translations/copyq_it.qm
+share/copyq/translations/copyq_ja.qm
+share/copyq/translations/copyq_ko.qm
+share/copyq/translations/copyq_lt.qm
+share/copyq/translations/copyq_nb.qm
+share/copyq/translations/copyq_nl.qm
+share/copyq/translations/copyq_pl.qm
+share/copyq/translations/copyq_pt_BR.qm
+share/copyq/translations/copyq_pt_PT.qm
+share/copyq/translations/copyq_ru.qm
+share/copyq/translations/copyq_sk.qm
+share/copyq/translations/copyq_sv.qm
+share/copyq/translations/copyq_tr.qm
+share/copyq/translations/copyq_uk.qm
+share/copyq/translations/copyq_zh_CN.qm
+share/copyq/translations/copyq_zh_TW.qm
+share/icons/hicolor/128x128/apps/copyq.png
+share/icons/hicolor/16x16/apps/copyq.png
+share/icons/hicolor/22x22/apps/copyq.png
+share/icons/hicolor/24x24/apps/copyq.png
+share/icons/hicolor/32x32/apps/copyq.png
+share/icons/hicolor/48x48/apps/copyq.png
+share/icons/hicolor/64x64/apps/copyq.png
+share/icons/hicolor/scalable/apps/copyq.svg
+share/icons/hicolor/scalable/apps/copyq_mask.svg
+share/metainfo/
+share/metainfo/com.github.hluk.copyq.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
