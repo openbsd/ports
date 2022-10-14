@@ -1,6 +1,6 @@
 COMMENT=		count lines of code
 
-V=			1.90
+V=			1.94
 DISTNAME=		cloc-${V}
 
 CATEGORIES=		textproc devel
