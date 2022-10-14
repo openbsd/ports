@@ -1,6 +1,6 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-70.0.0
+DISTNAME=	mkvtoolnix-71.1.0
 
 CATEGORIES=	multimedia x11
 
@@ -47,9 +47,9 @@ LIB_DEPENDS=	audio/flac \
 		devel/gettext,-runtime \
 		devel/gmp \
 		devel/libdvdread \
-		multimedia/libmatroska>=1.6.2 \
+		multimedia/libmatroska>=1.7.1 \
 		textproc/cmark \
-		textproc/libebml>=1.4.0 \
+		textproc/libebml>=1.4.4 \
 		textproc/pugixml \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg
