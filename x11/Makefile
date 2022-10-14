@@ -40,6 +40,7 @@
      SUBDIR += coma
      SUBDIR += compton
      SUBDIR += cool-retro-term
+     SUBDIR += copyq
      SUBDIR += ctwm
      SUBDIR += dbus
      SUBDIR += dbus-glib
