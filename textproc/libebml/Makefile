@@ -1,6 +1,6 @@
 COMMENT=	Extensible Binary Meta Language library
 
-DISTNAME=	libebml-1.4.2
+DISTNAME=	libebml-1.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	https://dl.matroska.org/downloads/libebml/
 EXTRACT_SUFX=	.tar.xz
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES +=	devel/cmake
 

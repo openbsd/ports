@@ -3,7 +3,7 @@ Add options for building and installing shared, static libraries
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -5,6 +5,8 @@ project(ebml VERSION 1.4.2)
+@@ -5,6 +5,8 @@ project(ebml VERSION 1.4.3)
  option(DISABLE_PKGCONFIG "Disable PkgConfig module generation" OFF)
  option(DISABLE_CMAKE_CONFIG "Disable CMake package config module generation" OFF)
  option(ENABLE_WIN32_IO "Build the Windows I/O helper class" OFF)
@@ -131,7 +131,7 @@ Index: CMakeLists.txt
  
  if(NOT DISABLE_PKGCONFIG)
    set(prefix ${CMAKE_INSTALL_PREFIX})
-@@ -126,7 +160,7 @@ if(NOT DISABLE_PKGCONFIG)
+@@ -134,7 +168,7 @@ if(NOT DISABLE_PKGCONFIG)
    if (HAVE_WINAPIFAMILY_H)
      set(WINAPIFAMILY_PC -DHAVE_WINAPIFAMILY_H)
    endif()
@@ -140,7 +140,7 @@ Index: CMakeLists.txt
      set(STATIC_DEFINE_CFLAGS -DEBML_STATIC_DEFINE)
    endif()
    configure_file(libebml.pc.in libebml.pc @ONLY)
-@@ -139,7 +173,9 @@ if(NOT DISABLE_CMAKE_CONFIG)
+@@ -147,7 +181,9 @@ if(NOT DISABLE_CMAKE_CONFIG)
    configure_package_config_file(EBMLConfig.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/EBMLConfig.cmake
      INSTALL_DESTINATION ${CMAKE_INSTALL_PACKAGEDIR})
    write_basic_package_version_file(EBMLConfigVersion.cmake COMPATIBILITY SameMajorVersion)
