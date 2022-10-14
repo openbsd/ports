@@ -1,7 +1,7 @@
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -107,7 +107,7 @@ if(ICONV_LIBRARY)
+@@ -116,7 +116,7 @@ if(ICONV_LIBRARY)
    list(APPEND EXTRA_LIBS ${ICONV_LIBRARY})
  endif()
  
