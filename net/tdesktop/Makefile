@@ -100,6 +100,13 @@ LIB_DEPENDS +=		x11/qt6/qt5compat \
 			x11/qt6/qtsvg
 RUN_DEPENDS +=		x11/qt6/qtimageformats
 
+post-patch:
+	# XXX fix the following on every source file
+	# warning: unknown warning option '-Wno-maybe-uninitialized'
+	# warning: argument unused during compilation: '-fstack-clash-protection'
+	sed -i -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
+	    ${WRKSRC}/cmake/options_linux.cmake
+
 post-extract:
 	# All bundles:
 	@cd ${WRKSRC}/Telegram/ThirdParty/ && ls -x
