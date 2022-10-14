@@ -23,6 +23,9 @@
 /usr/X11R6/share r
 /var/run r
 
+# security devices, e.g. OpenSC's PKCS #11 module, may talk to this socket
+/var/run/pcscd/pcscd.comm rw
+
 # printing
 /usr/bin/lpr rx
 
