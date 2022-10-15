@@ -1,6 +1,88 @@
---- src/librtlsdr.c.orig	Sat Apr 13 15:00:44 2013
-+++ src/librtlsdr.c	Sat Apr 13 15:00:50 2013
-@@ -1340,10 +1340,12 @@ int rtlsdr_open(rtlsdr_dev_t **out_dev, uint32_t index
+First chunks:
+From 92df068dc5acae9e671eefe1f80626319819c52b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ji=C5=99=C3=AD=20Pinkava?= <j-pi@seznam.cz>
+Date: Tue, 17 Mar 2015 13:21:09 +0100
+Subject: [PATCH] New functions rtlsdr_set_tuner_bandwidth()
+
+Index: src/librtlsdr.c
+--- src/librtlsdr.c.orig
++++ src/librtlsdr.c
+@@ -85,6 +85,7 @@ struct rtlsdr_dev {
+ 	rtlsdr_tuner_iface_t *tuner;
+ 	uint32_t tun_xtal; /* Hz */
+ 	uint32_t freq; /* Hz */
++	uint32_t bw;
+ 	uint32_t offs_freq; /* Hz */
+ 	int corr; /* ppm */
+ 	int gain; /* tenth dB */
+@@ -906,6 +907,24 @@ int rtlsdr_get_tuner_gains(rtlsdr_dev_t *dev, int *gai
+ 	}
+ }
+ 
++int rtlsdr_set_tuner_bandwidth(rtlsdr_dev_t *dev, uint32_t bw)
++{
++	int r = 0;
++
++	if (!dev || !dev->tuner)
++		return -1;
++
++	if (dev->tuner->set_bw) {
++		rtlsdr_set_i2c_repeater(dev, 1);
++		r = dev->tuner->set_bw(dev, bw > 0 ? bw : dev->rate);
++		rtlsdr_set_i2c_repeater(dev, 0);
++		if (r)
++			return r;
++		dev->bw = bw;
++	}
++	return r;
++}
++
+ int rtlsdr_set_tuner_gain(rtlsdr_dev_t *dev, int gain)
+ {
+ 	int r = 0;
+@@ -989,14 +1008,14 @@ int rtlsdr_set_sample_rate(rtlsdr_dev_t *dev, uint32_t
+ 	if ( ((double)samp_rate) != real_rate )
+ 		fprintf(stderr, "Exact sample rate is: %f Hz\n", real_rate);
+ 
++	dev->rate = (uint32_t)real_rate;
++
+ 	if (dev->tuner && dev->tuner->set_bw) {
+ 		rtlsdr_set_i2c_repeater(dev, 1);
+-		dev->tuner->set_bw(dev, (int)real_rate);
++		dev->tuner->set_bw(dev, dev->bw > 0 ? dev->bw : dev->rate);
+ 		rtlsdr_set_i2c_repeater(dev, 0);
+ 	}
+ 
+-	dev->rate = (uint32_t)real_rate;
+-
+ 	tmp = (rsamp_ratio >> 16);
+ 	r |= rtlsdr_demod_write_reg(dev, 1, 0x9f, tmp, 2);
+ 	tmp = rsamp_ratio & 0xffff;
+@@ -1112,6 +1131,7 @@ int rtlsdr_get_direct_sampling(rtlsdr_dev_t *dev)
+ int rtlsdr_set_offset_tuning(rtlsdr_dev_t *dev, int on)
+ {
+ 	int r = 0;
++	int bw;
+ 
+ 	if (!dev)
+ 		return -1;
+@@ -1128,7 +1148,14 @@ int rtlsdr_set_offset_tuning(rtlsdr_dev_t *dev, int on
+ 
+ 	if (dev->tuner && dev->tuner->set_bw) {
+ 		rtlsdr_set_i2c_repeater(dev, 1);
+-		dev->tuner->set_bw(dev, on ? (2 * dev->offs_freq) : dev->rate);
++		if (on) {
++			bw = 2 * dev->offs_freq;
++		} else if (dev->bw > 0) {
++			bw = dev->bw;
++		} else {
++			bw = dev->rate;
++		}
++		dev->tuner->set_bw(dev, bw);
+ 		rtlsdr_set_i2c_repeater(dev, 0);
+ 	}
+ 
+@@ -1340,10 +1367,12 @@ int rtlsdr_open(rtlsdr_dev_t **out_dev, uint32_t index
  	r = libusb_open(device, &dev->devh);
  	if (r < 0) {
  		libusb_free_device_list(list, 1);

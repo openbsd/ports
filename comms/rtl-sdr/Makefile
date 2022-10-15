@@ -1,9 +1,9 @@
 COMMENT=	software to turn RTL2832U into an SDR
 
 DISTNAME=	rtl-sdr-0.20130412
-REVISION=	2
+REVISION=	3
 
-SHARED_LIBS=	rtlsdr 0.0
+SHARED_LIBS=	rtlsdr 0.1
 
 CATEGORIES=	comms
 

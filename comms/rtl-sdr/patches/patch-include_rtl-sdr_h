@@ -1,0 +1,24 @@
+From 92df068dc5acae9e671eefe1f80626319819c52b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ji=C5=99=C3=AD=20Pinkava?= <j-pi@seznam.cz>
+Date: Tue, 17 Mar 2015 13:21:09 +0100
+Subject: [PATCH] New functions rtlsdr_set_tuner_bandwidth()
+
+Index: include/rtl-sdr.h
+--- include/rtl-sdr.h.orig
++++ include/rtl-sdr.h
+@@ -215,6 +215,15 @@ RTLSDR_API int rtlsdr_get_tuner_gains(rtlsdr_dev_t *de
+ RTLSDR_API int rtlsdr_set_tuner_gain(rtlsdr_dev_t *dev, int gain);
+ 
+ /*!
++ * Set the bandwidth for the device.
++ *
++ * \param dev the device handle given by rtlsdr_open()
++ * \param bw bandwidth in Hz. Zero means automatic BW selection.
++ * \return 0 on success
++ */
++RTLSDR_API int rtlsdr_set_tuner_bandwidth(rtlsdr_dev_t *dev, uint32_t bw);
++
++/*!
+  * Get actual gain the device is configured to.
+  *
+  * \param dev the device handle given by rtlsdr_open()
