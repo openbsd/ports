@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		free open source planetarium
 
-GH_TAGNAME=		v0.22.2
+GH_TAGNAME=		v1.0
 GH_ACCOUNT=		Stellarium
 GH_PROJECT=		stellarium
 
@@ -15,21 +15,25 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Charts Qt5Concurrent Qt5Core
+WANTLIB += ${COMPILER_LIBCXX} QXlsx Qt5Charts Qt5Concurrent Qt5Core
 WANTLIB += Qt5Gui Qt5Multimedia Qt5MultimediaWidgets Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Script Qt5SerialPort Qt5WebChannel Qt5WebEngine
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets c m
-WANTLIB += z
+WANTLIB += Qt5OpenGL Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
+WANTLIB += Qt5Quick Qt5Script Qt5SerialPort Qt5WebChannel Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets c gps m z
 
 MODULES=		devel/cmake \
 			lang/python \
 			x11/qt5
 
+MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
 MODPY_RUNDEP=		No
 
-LIB_DEPENDS=		x11/qt5/qtcharts \
-			x11/qt5/qtlocation \
+BUILD_DEPENDS=		astro/calcmysky \
+			devel/indi,-libs
+
+LIB_DEPENDS=		misc/gpsd \
+			textproc/qxlsx \
+			x11/qt5/qtcharts \
 			x11/qt5/qtmultimedia \
 			x11/qt5/qtscript \
 			x11/qt5/qtserialport \
@@ -42,15 +46,17 @@ RUN_DEPENDS=		net/curl \
 			x11/gtk+3,-guic
 
 CONFIGURE_ENV=		HOME=${WRKDIR}
+PORTHOME=		${WRKDIR}
 
 CONFIGURE_ARGS=		-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
-			-DENABLE_LIBGPS=0 \
 			-DSTELLARIUM_RELEASE_BUILD=1
+
+# needs Qt6 WebEngineWidgets;
+# !!! sync Qt version with astro/calcmysky and textproc/qxlsx
+CONFIGURE_ARGS +=	-DENABLE_QT6=OFF
 
 CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
-
-PORTHOME=		${WRKDIR}
 
 NO_TEST=		Yes
 
