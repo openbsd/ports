@@ -1,0 +1,147 @@
+@bin bin/indi_aaf2_focus
+@bin bin/indi_activefocuser_focus
+@bin bin/indi_arduinost4
+@bin bin/indi_astromech_lpm
+@bin bin/indi_astrometry
+@bin bin/indi_astrotrac_telescope
+@bin bin/indi_baader_dome
+@bin bin/indi_celestron_gps
+@bin bin/indi_celestron_sct_focus
+@bin bin/indi_crux_mount
+@bin bin/indi_ddw_dome
+@bin bin/indi_deepskydad_af1_focus
+@bin bin/indi_deepskydad_af2_focus
+@bin bin/indi_deepskydad_af3_focus
+@bin bin/indi_deepskydad_fp1
+@bin bin/indi_deepskydad_fr1
+@bin bin/indi_dmfc_focus
+@bin bin/indi_domepro2_dome
+@bin bin/indi_dsc_telescope
+@bin bin/indi_efa_focus
+bin/indi_eq500x_telescope
+@bin bin/indi_esattoarco_focus
+@bin bin/indi_eval
+@bin bin/indi_falcon_rotator
+@bin bin/indi_fcusb_focus
+@bin bin/indi_flipflat
+@bin bin/indi_gemini_focus
+@bin bin/indi_getprop
+@bin bin/indi_gpusb
+@bin bin/indi_hid_test
+@bin bin/indi_hitecastrodc_focus
+@bin bin/indi_ieq_telescope
+@bin bin/indi_ieqlegacy_telescope
+@bin bin/indi_imager_agent
+@bin bin/indi_integra_focus
+bin/indi_ioptronHC8406
+@bin bin/indi_ioptronv3_telescope
+@bin bin/indi_lacerta_mfoc_focus
+@bin bin/indi_lakeside_focus
+bin/indi_lx200_10micron
+bin/indi_lx200_16
+bin/indi_lx200_OnStep
+@bin bin/indi_lx200_TeenAstro
+bin/indi_lx200am5
+bin/indi_lx200ap
+bin/indi_lx200ap_gtocp2
+bin/indi_lx200ap_v2
+bin/indi_lx200autostar
+@bin bin/indi_lx200basic
+bin/indi_lx200classic
+bin/indi_lx200fs2
+bin/indi_lx200gemini
+@bin bin/indi_lx200generic
+bin/indi_lx200gotonova
+bin/indi_lx200gps
+bin/indi_lx200pulsar2
+bin/indi_lx200ss2000pc
+bin/indi_lx200zeq25
+@bin bin/indi_lynx_focus
+@bin bin/indi_manual_wheel
+@bin bin/indi_mbox_weather
+@bin bin/indi_meta_weather
+@bin bin/indi_microtouch_focus
+@bin bin/indi_moonlite_focus
+@bin bin/indi_moonlitedro_focus
+@bin bin/indi_myfocuserpro2_focus
+@bin bin/indi_nexdome_beaver
+@bin bin/indi_nfocus
+@bin bin/indi_nframe_rotator
+@bin bin/indi_nightcrawler_focus
+@bin bin/indi_nstep_focus
+@bin bin/indi_onfocus_focus
+@bin bin/indi_openweathermap_weather
+@bin bin/indi_optec_wheel
+@bin bin/indi_paramount_telescope
+@bin bin/indi_pegasus_flatmaster
+@bin bin/indi_pegasus_focuscube
+@bin bin/indi_pegasus_ppb
+@bin bin/indi_pegasus_ppba
+@bin bin/indi_pegasus_prodigyMF
+@bin bin/indi_pegasus_scopsoag
+@bin bin/indi_pegasus_uch
+@bin bin/indi_pegasus_upb
+@bin bin/indi_perfectstar_focus
+@bin bin/indi_planewave_deltat
+@bin bin/indi_pmc8_telescope
+@bin bin/indi_pyxis_rotator
+@bin bin/indi_qhycfw1_wheel
+@bin bin/indi_qhycfw2_wheel
+@bin bin/indi_qhycfw3_wheel
+@bin bin/indi_quantum_wheel
+@bin bin/indi_rainbow_telescope
+@bin bin/indi_rainbowrsf_focus
+@bin bin/indi_rbfocus_focus
+@bin bin/indi_rigel_dome
+@bin bin/indi_robo_focus
+@bin bin/indi_rolloff_dome
+@bin bin/indi_rtlsdr
+@bin bin/indi_scopedome_dome
+@bin bin/indi_script_dome
+@bin bin/indi_script_telescope
+@bin bin/indi_sestosenso2_focus
+@bin bin/indi_sestosenso_focus
+@bin bin/indi_setprop
+@bin bin/indi_siefs_focus
+@bin bin/indi_simulator_ccd
+@bin bin/indi_simulator_dome
+@bin bin/indi_simulator_focus
+@bin bin/indi_simulator_gps
+@bin bin/indi_simulator_guide
+@bin bin/indi_simulator_lightpanel
+@bin bin/indi_simulator_receiver
+@bin bin/indi_simulator_rotator
+@bin bin/indi_simulator_sqm
+@bin bin/indi_simulator_telescope
+@bin bin/indi_simulator_weather
+@bin bin/indi_simulator_wheel
+@bin bin/indi_skycommander_telescope
+@bin bin/indi_skysafari
+@bin bin/indi_skywatcherAltAzMount
+@bin bin/indi_smartfocus_focus
+@bin bin/indi_snapcap
+@bin bin/indi_sqm_weather
+@bin bin/indi_star2000
+@bin bin/indi_steeldrive2_focus
+@bin bin/indi_steeldrive_focus
+@bin bin/indi_synscan_telescope
+@bin bin/indi_synscanlegacy_telescope
+bin/indi_tcfs3_focus
+@bin bin/indi_tcfs_focus
+@bin bin/indi_teenastro_focus
+@bin bin/indi_temma_telescope
+@bin bin/indi_trutech_wheel
+@bin bin/indi_usbdewpoint
+@bin bin/indi_usbfocusv3_focus
+@bin bin/indi_v4l2_ccd
+@bin bin/indi_vantage_weather
+@bin bin/indi_wanderer_cover
+@bin bin/indi_wanderer_lite_rotator
+@bin bin/indi_watchdog
+@bin bin/indi_watcher_weather
+@bin bin/indi_weather_safety_proxy
+@bin bin/indi_xagyl_wheel
+@bin bin/indiserver
+share/indi/
+share/indi/drivers.xml
+share/indi/indi_tcfs_sk.xml

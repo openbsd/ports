@@ -1,0 +1,15 @@
+Index: libs/webcam/v4l2_base.h
+--- libs/webcam/v4l2_base.h.orig
++++ libs/webcam/v4l2_base.h
+@@ -39,7 +39,11 @@
+ #include <map>
+ 
+ #include <dirent.h>
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ #define VIDEO_COMPRESSION_LEVEL 4
+ 

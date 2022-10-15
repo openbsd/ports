@@ -1,0 +1,15 @@
+Index: libs/webcam/v4l2_decode/v4l2_decode.h
+--- libs/webcam/v4l2_decode/v4l2_decode.h.orig
++++ libs/webcam/v4l2_decode/v4l2_decode.h
+@@ -29,7 +29,11 @@
+ #include <stdio.h>
+ #include <cstdlib>
+ 
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ class V4L2_Decoder
+ {

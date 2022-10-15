@@ -1,0 +1,12 @@
+Index: drivers/telescope/lx200driver.cpp
+--- drivers/telescope/lx200driver.cpp.orig
++++ drivers/telescope/lx200driver.cpp
+@@ -34,7 +34,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Bos
+ #include <termios.h>
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <string.h>
+ #endif
+ 

@@ -1,0 +1,76 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -368,9 +368,9 @@ include_directories( ${NOVA_INCLUDE_DIR})
+ include_directories( ${USB1_INCLUDE_DIRS})
+ include_directories( ${GSL_INCLUDE_DIRS})
+ include_directories( ${JPEG_INCLUDE_DIR})
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+     include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/libs/webcam)
+-ENDIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
++ENDIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config-usb.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-usb.h)
+ 
+@@ -420,7 +420,7 @@ ENDIF(OGGTHEORA_FOUND)
+         ENABLE_UNITY_BUILD(libstream libstream_CXX_SRC 10 cpp)
+     ENDIF ()
+ 
+-    IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
++    IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+         SET(libwebcam_C_SRC
+             ${CMAKE_CURRENT_SOURCE_DIR}/libs/webcam/v4l2_colorspace.c)
+         SET(libwebcam_CXX_SRC
+@@ -432,7 +432,7 @@ ENDIF(OGGTHEORA_FOUND)
+             ENABLE_UNITY_BUILD(libwebcam libwebcam_C_SRC 10 c)
+             ENABLE_UNITY_BUILD(libwebcam libwebcam_CXX_SRC 10 cpp)
+         ENDIF (UNITY_BUILD)
+-    ENDIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
++    ENDIF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+ ENDIF(UNIX)
+ 
+ SET(libdsp_C_SRC
+@@ -585,13 +585,13 @@ install(TARGETS indidriver LIBRARY DESTINATION ${CMAKE
+ set(PKG_CONFIG_LIBS "${PKG_CONFIG_LIBS} -lindidriver -lindiAlignmentDriver")
+ endif(CYGWIN)
+ 
+-IF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++IF (CMAKE_SYSTEM_NAME MATCHES "FreeBSD|OpenBSD")
+     # FreeBSD needs to find the correct GNU iconv library.
+     find_package(Iconv REQUIRED)
+     # The indidriver library is defined earlier in the file before the
+     # find has been run. Add an explicit link to avoid runtime errors.
+     target_link_libraries(indidriver ${ICONV_LIBRARIES})
+-ENDIF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
++ENDIF(CMAKE_SYSTEM_NAME MATCHES "FreeBSD|OpenBSD")
+ 
+ CHECK_FUNCTION_EXISTS(mremap HAVE_MREMAP)
+ 
+@@ -716,6 +716,8 @@ ENDIF ()
+ add_executable(indi_lx200generic ${lx200generic_SRCS})
+ if (CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
+     target_compile_definitions(indi_lx200generic PRIVATE -D_XOPEN_SOURCE=700)
++ELSEIF(CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++    target_compile_definitions(indi_lx200generic PRIVATE)
+ ELSE()
+     target_compile_definitions(indi_lx200generic PRIVATE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200809L)
+ ENDIF()
+@@ -1600,7 +1602,7 @@ install(TARGETS indi_nexdome_beaver RUNTIME DESTINATIO
+ #########################################
+ 
+ ########### INDI::CCD V4L Driver ###############
+-IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
++IF (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+     SET(v4l2driverccd_SRC
+         ${CMAKE_CURRENT_SOURCE_DIR}/libs/lx/Lx.cpp
+         ${CMAKE_CURRENT_SOURCE_DIR}/drivers/video/v4l2driver.cpp
+@@ -2079,7 +2081,7 @@ if (UNIX)
+             ${CMAKE_CURRENT_SOURCE_DIR}/libs/stream/recorder/recorderinterface.h
+             ${CMAKE_CURRENT_SOURCE_DIR}/libs/stream/recorder/serrecorder.h
+             DESTINATION ${INCLUDE_INSTALL_DIR}/libindi/stream/recorder COMPONENT Devel)
+-    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD")
++    if (${CMAKE_SYSTEM_NAME} MATCHES "Linux|FreeBSD|OpenBSD")
+     INSTALL(FILES
+             ${CMAKE_CURRENT_SOURCE_DIR}/libs/webcam/v4l2_decode/v4l2_decode.h
+             ${CMAKE_CURRENT_SOURCE_DIR}/libs/webcam/v4l2_decode/v4l2_builtin_decoder.h

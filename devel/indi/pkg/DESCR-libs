@@ -1,0 +1,5 @@
+INDI is a standard for astronomical instrumentation control. INDI Library is an
+Open Source POSIX implementation of the Instrument-Neutral-Device-Interface
+protocol.
+
+This package includes the cross-platform POSIX client libraries.

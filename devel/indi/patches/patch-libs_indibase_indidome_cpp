@@ -1,0 +1,120 @@
+Index: libs/indibase/indidome.cpp
+--- libs/indibase/indidome.cpp.orig
++++ libs/indibase/indidome.cpp
+@@ -35,7 +35,11 @@
+ #include <cerrno>
+ #include <cmath>
+ #include <cstring>
++#ifdef __OpenBSD__
++#include <glob.h>
++#else
+ #include <wordexp.h>
++#endif
+ #include <pwd.h>
+ #include <unistd.h>
+ #include <limits>
+@@ -1672,7 +1676,11 @@ bool Dome::InitPark()
+ 
+ const char * Dome::LoadParkXML()
+ {
++#ifdef __OpenBSD__
++    glob_t wexp;
++#else
+     wordexp_t wexp;
++#endif
+     FILE * fp;
+     LilXML * lp;
+     static char errmsg[512];
+@@ -1687,18 +1695,33 @@ const char * Dome::LoadParkXML()
+     ParkpositionXml      = nullptr;
+     ParkpositionAxis1Xml = nullptr;
+ 
+-    if (wordexp(ParkDataFileName.c_str(), &wexp, 0))
++#ifdef __OpenBSD__
++    if (glob(ParkDataFileName.c_str(), GLOB_ERR, NULL, &wexp))
+     {
+-        wordfree(&wexp);
++        globfree(&wexp);
+         return "Badly formed filename.";
+     }
+ 
+-    if (!(fp = fopen(wexp.we_wordv[0], "r")))
++    if (!(fp = fopen(wexp.gl_pathv[0], "r")))
+     {
+-        wordfree(&wexp);
++        globfree(&wexp);
+         return strerror(errno);
+     }
+-    wordfree(&wexp);
++    globfree(&wexp);
++#else
++    if (wordexp(ParkDataFileName.c_str(), &wexp, 0))                            
++    {                                                                           
++        wordfree(&wexp);                                                        
++        return "Badly formed filename.";                                        
++    }                                                                           
++                                                                                
++    if (!(fp = fopen(wexp.we_wordv[0], "r")))                                   
++    {                                                                           
++        wordfree(&wexp);                                                        
++        return strerror(errno);                                                 
++    }                                                                           
++    wordfree(&wexp);                                                            
++#endif
+ 
+     lp = newLilXML();
+ 
+@@ -1793,11 +1816,33 @@ bool Dome::WriteParkData()
+     if (LoadParkXML() != nullptr)
+         LOG_DEBUG("Failed to refresh parking data.");
+ 
++#ifdef __OpenBSD__
++    glob_t wexp;
++#else
+     wordexp_t wexp;
++#endif
+     FILE * fp;
+     char pcdata[30];
+     ParkDeviceName = getDeviceName();
+ 
++#ifdef __OpenBSD__
++    if (glob(ParkDataFileName.c_str(), GLOB_ERR, NULL, &wexp))
++    {
++        globfree(&wexp);
++        LOGF_INFO("WriteParkData: can not write file %s: Badly formed filename.",
++                  ParkDataFileName.c_str());
++        return false;
++    }
++
++    if (!(fp = fopen(wexp.gl_pathv[0], "w")))
++    {
++        globfree(&wexp);
++        LOGF_INFO("WriteParkData: can not write file %s: %s", ParkDataFileName.c_str(),
++                  strerror(errno));
++        return false;
++    }
++    globfree(&wexp);
++#else
+     if (wordexp(ParkDataFileName.c_str(), &wexp, 0))
+     {
+         wordfree(&wexp);
+@@ -1813,6 +1858,7 @@ bool Dome::WriteParkData()
+                   strerror(errno));
+         return false;
+     }
++#endif
+ 
+     if (!ParkdataXmlRoot)
+         ParkdataXmlRoot = addXMLEle(nullptr, "parkdata");
+@@ -1843,7 +1889,11 @@ bool Dome::WriteParkData()
+ 
+     prXMLEle(fp, ParkdataXmlRoot, 0);
+     fclose(fp);
++#ifdef __OpenBSD__
++    globfree(&wexp);
++#else
+     wordfree(&wexp);
++#endif
+ 
+     return true;
+ }

@@ -1,0 +1,15 @@
+Index: libs/webcam/v4l2_colorspace.h
+--- libs/webcam/v4l2_colorspace.h.orig
++++ libs/webcam/v4l2_colorspace.h
+@@ -1,7 +1,11 @@
+ 
+ #pragma once
+ 
++#ifdef __OpenBSD__
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ 
+ #ifdef __cplusplus
+ extern "C" {

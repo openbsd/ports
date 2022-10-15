@@ -1,0 +1,19 @@
+Index: indiserver.cpp
+--- indiserver.cpp.orig
++++ indiserver.cpp
+@@ -1497,9 +1497,14 @@ void UnixServer::accept()
+     if (verbose > 0)
+     {
+ #ifdef SO_PEERCRED
++#ifdef __OpenBSD__
++        struct sockpeercred ucred;
++        socklen_t len = sizeof(struct sockpeercred);
++#else
+         struct ucred ucred;
+-
+         socklen_t len = sizeof(struct ucred);
++#endif
++
+         if (getsockopt(cli_fd, SOL_SOCKET, SO_PEERCRED, &ucred, &len) == -1)
+         {
+             log(fmt("getsockopt failed: %s\n", strerror(errno)));

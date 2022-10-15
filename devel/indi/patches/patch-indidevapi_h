@@ -1,0 +1,12 @@
+Index: indidevapi.h
+--- indidevapi.h.orig
++++ indidevapi.h
+@@ -95,6 +95,8 @@ after all, the framework must know how to call the cal
+ 
+ */
+ 
++#include <stdarg.h> /* va_list */
++
+ /*******************************************************************************
+  * get the data structures
+  */

@@ -1,0 +1,12 @@
+Index: libs/indibase/alignment/CMakeLists.txt
+--- libs/indibase/alignment/CMakeLists.txt.orig
++++ libs/indibase/alignment/CMakeLists.txt
+@@ -43,7 +43,7 @@ ELSE ()
+     ELSE ()
+         # Force linking all referenced libraries because of libgsl is not linked against cblas library on Linux
+         SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-as-needed")
+-        target_link_libraries(AlignmentDriver dl ${GSL_LIBRARIES})
++        target_link_libraries(AlignmentDriver ${GSL_LIBRARIES})
+     ENDIF ()
+ ENDIF ()
+ 

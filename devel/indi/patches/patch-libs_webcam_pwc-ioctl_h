@@ -1,0 +1,12 @@
+Index: libs/webcam/pwc-ioctl.h
+--- libs/webcam/pwc-ioctl.h.orig
++++ libs/webcam/pwc-ioctl.h
+@@ -51,7 +51,7 @@
+ 
+ #pragma once
+ 
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <linux/types.h>
+ #else
+ #include <stdint.h>

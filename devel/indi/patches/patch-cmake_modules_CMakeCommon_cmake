@@ -1,0 +1,12 @@
+Index: cmake_modules/CMakeCommon.cmake
+--- cmake_modules/CMakeCommon.cmake.orig
++++ cmake_modules/CMakeCommon.cmake
+@@ -46,7 +46,7 @@ IF (UNIX OR APPLE OR ANDROID)
+     SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${SEC_COMP_FLAGS}")
+     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEC_COMP_FLAGS}")
+     SET(SEC_LINK_FLAGS "")
+-    IF (NOT APPLE AND NOT CYGWIN AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    IF (NOT APPLE AND NOT CYGWIN AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD|OpenBSD")
+         SET(SEC_LINK_FLAGS "${SEC_LINK_FLAGS} -Wl,-z,nodump -Wl,-z,noexecstack -Wl,-z,relro -Wl,-z,now")
+     ENDIF ()
+     SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${SEC_LINK_FLAGS}")
