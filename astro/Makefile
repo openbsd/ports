@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += ansiweather
+     SUBDIR += calcmysky
      SUBDIR += celestia
      SUBDIR += dgpsip
      SUBDIR += gcal
