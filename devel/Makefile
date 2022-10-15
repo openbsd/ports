@@ -218,6 +218,7 @@
      SUBDIR += imake
      SUBDIR += imake-cf
      SUBDIR += include-what-you-use
+     SUBDIR += indi
      SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython,python3
