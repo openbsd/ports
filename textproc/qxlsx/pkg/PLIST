@@ -18,7 +18,6 @@ include/QXlsx/xlsxglobal.h
 include/QXlsx/xlsxrichstring.h
 include/QXlsx/xlsxworkbook.h
 include/QXlsx/xlsxworksheet.h
-lib/cmake/
 lib/cmake/QXlsx/
 lib/cmake/QXlsx/QXlsxConfig.cmake
 lib/cmake/QXlsx/QXlsxConfigVersion.cmake
