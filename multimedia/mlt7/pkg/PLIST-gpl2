@@ -15,6 +15,7 @@ share/mlt-7/plusgpl/filter_burningtv.yml
 share/mlt-7/plusgpl/filter_lumaliftgaingamma.yml
 share/mlt-7/plusgpl/filter_rotoscoping.yml
 share/mlt-7/qt/
+share/mlt-7/qt/filter_audiolevelgraph.yml
 share/mlt-7/qt/filter_audiospectrum.yml
 share/mlt-7/qt/filter_audiowaveform.yml
 share/mlt-7/qt/filter_lightshow.yml

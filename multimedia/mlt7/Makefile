@@ -4,6 +4,8 @@ VERSION =		7.8.0
 DISTNAME =		mlt-${VERSION}
 PKGNAME-main =		mlt7-${VERSION}
 PKGNAME-gpl2 =		mlt7-gpl2-${VERSION}
+REVISION-gpl2 =		0
+REVISION-main =		0
 
 CATEGORIES =		multimedia devel
 
@@ -63,12 +65,10 @@ LIB_DEPENDS-gpl2 =	${BUILD_PKGPATH},-main \
 			graphics/libexif \
 			x11/qt5/qtsvg
 
-
 CONFIGURE_ARGS =	-DMOD_RUBBERBAND=OFF
 
 # melt-7 is enough
 post-install:
 	rm ${WRKINST}/usr/local/bin/melt
-
 
 .include <bsd.port.mk>
