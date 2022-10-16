@@ -8,10 +8,12 @@ Subject: [PATCH] Don't force Qt definitions onto users
 Index: QXlsx/CMakeLists.txt
 --- QXlsx/CMakeLists.txt.orig
 +++ QXlsx/CMakeLists.txt
-@@ -14,6 +14,7 @@ set(CMAKE_AUTOMOC ON)
+@@ -13,7 +13,8 @@ set(CMAKE_AUTOMOC ON)
+ 
  include(GNUInstallDirs)
  
- find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Gui REQUIRED)
+-find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Gui REQUIRED)
++#find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Gui REQUIRED)
 +set(QT_VERSION_MAJOR 5)
  find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Gui REQUIRED)
  
