@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}exceptions.${
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}group.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}icons.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}pykeepass.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}setters.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/${MODPY_PYCACHE}xpath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pykeepass/attachment.py
@@ -41,5 +42,6 @@ lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/kdbx4.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/pytwofish.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/kdbx_parsing/twofish.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/pykeepass.py
+lib/python${MODPY_VERSION}/site-packages/pykeepass/setters.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/version.py
 lib/python${MODPY_VERSION}/site-packages/pykeepass/xpath.py

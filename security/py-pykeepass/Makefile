@@ -1,7 +1,6 @@
 COMMENT =	interact with keepass databases from Python
 
-MODPY_EGG_VERSION =	4.0.1
-REVISION =	1
+MODPY_EGG_VERSION =	4.0.3
 
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}

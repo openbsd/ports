@@ -4,11 +4,11 @@ Index: requirements.txt
 --- requirements.txt.orig
 +++ requirements.txt
 @@ -1,6 +1,6 @@
--lxml==4.6.3
--pycryptodomex==3.10.1
--construct==2.10.54
--argon2-cffi==20.1.0
--python-dateutil==2.8.1
+-lxml==4.8.0
+-pycryptodomex==3.14.1
+-construct==2.10.68
+-argon2-cffi==21.3.0
+-python-dateutil==2.8.2
 -future==0.18.2
 +lxml
 +pycryptodomex
