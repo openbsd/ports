@@ -2,9 +2,9 @@ COMMENT =	encrypted SQLite database
 
 GH_ACCOUNT =	sqlcipher
 GH_PROJECT =	sqlcipher
-GH_TAGNAME =	v4.5.1
+GH_TAGNAME =	v4.5.2
 
-SHARED_LIBS +=  sqlcipher                 0.2 # 8.6
+SHARED_LIBS +=  sqlcipher                 0.3 # 8.6
 
 CATEGORIES =	databases
 
@@ -25,7 +25,7 @@ CONFIGURE_ENV +=	TCLSH_CMD=${MODTCL_BIN}
 
 NO_TEST =		Yes
 
-CFLAGS +=		-DSQLITE_HAS_CODEC -DOMIT_MEMLOCK -DSQLITE_ENABLE_JSON1
+CFLAGS +=		-DSQLITE_HAS_CODEC -DOMIT_MEMLOCK
 
 MODULES =		lang/tcl
 MODTCL_VERSION =	8.6
