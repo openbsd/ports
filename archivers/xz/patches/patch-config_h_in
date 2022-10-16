@@ -1,7 +1,7 @@
 Index: config.h.in
 --- config.h.in.orig
 +++ config.h.in
-@@ -377,7 +377,11 @@
+@@ -385,7 +385,11 @@
  
  /* Define to 1 if the system supports fast unaligned access to 16-bit and
     32-bit integers. */
