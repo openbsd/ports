@@ -458,6 +458,7 @@
      SUBDIR += py-repoze-who,python3
      SUBDIR += py-requests,python3
      SUBDIR += py-requests-cache,python3
+     SUBDIR += py-requests-file,python3
      SUBDIR += py-requests-futures,python3
      SUBDIR += py-requests-mock,python3
      SUBDIR += py-requests-oauthlib,python3
