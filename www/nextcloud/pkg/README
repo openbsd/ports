@@ -74,6 +74,12 @@ server "domain.tld" {
 		pass
 	}
 
+	location "/nextcloud/dist/*" {
+		root "/nextcloud"
+		request strip 1
+		pass
+	}
+
 	location "/nextcloud/core/*" {
 		root "/nextcloud"
 		request strip 1
