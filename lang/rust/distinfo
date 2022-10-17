@@ -4,11 +4,11 @@ SHA256 (rust/rustc-bootstrap-amd64-1.64.0-20221009.tar.xz) = p1SPAQLR+9CV0r7h98n
 SHA256 (rust/rustc-bootstrap-i386-1.64.0-20221009.tar.xz) = VbBVGh2aMYIwMaxWG1HvkDpZwIrNUN50d6xdCGqpHGw=
 SHA256 (rust/rustc-bootstrap-powerpc64-1.64.0-20221011.tar.xz) = mpD2eUNZ1pCS3a5ATuYKsiN1ew26bG9KMynNLsUuJbA=
 SHA256 (rust/rustc-bootstrap-riscv64-1.64.0-20221010.tar.xz) = XKv6ucrSSmePAj4tRpSmRup64IVxa3uYU+Q29rYTIC0=
-SHA256 (rust/rustc-bootstrap-sparc64-1.63.0-20220822.tar.xz) = XCpM3Kgy3m4slFP5iYQnQ9Gj0JN/2Pa0c2m7AOa+Rm4=
+SHA256 (rust/rustc-bootstrap-sparc64-1.64.0-20221016.tar.xz) = E2X+MF8huzJusjS5XqqlVPt5yr/jmK4jYEuiJEODyqs=
 SIZE (rust/rustc-1.64.0-src.tar.xz) = 137841332
 SIZE (rust/rustc-bootstrap-aarch64-1.64.0-20221010.tar.xz) = 58346016
 SIZE (rust/rustc-bootstrap-amd64-1.64.0-20221009.tar.xz) = 64497020
 SIZE (rust/rustc-bootstrap-i386-1.64.0-20221009.tar.xz) = 66036724
 SIZE (rust/rustc-bootstrap-powerpc64-1.64.0-20221011.tar.xz) = 58564952
 SIZE (rust/rustc-bootstrap-riscv64-1.64.0-20221010.tar.xz) = 63889584
-SIZE (rust/rustc-bootstrap-sparc64-1.63.0-20220822.tar.xz) = 56881288
+SIZE (rust/rustc-bootstrap-sparc64-1.64.0-20221016.tar.xz) = 65184988
