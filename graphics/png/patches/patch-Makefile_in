@@ -3,7 +3,7 @@ Set the library soname to libpng instead of libpng@PNGLIB_MAJOR@@PNGLIB_MINOR@.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -761,7 +761,7 @@ EXTRA_SCRIPTS = libpng-config libpng@PNGLIB_MAJOR@@PNG
+@@ -764,7 +764,7 @@ EXTRA_SCRIPTS = libpng-config libpng@PNGLIB_MAJOR@@PNG
  bin_SCRIPTS = @binconfigs@
  
  # rules to build libpng, only build the old library on request
@@ -12,7 +12,7 @@ Index: Makefile.in
  # EXTRA_LTLIBRARIES= libpng.la
  libpng@PNGLIB_MAJOR@@PNGLIB_MINOR@_la_SOURCES = png.c pngerror.c \
  	pngget.c pngmem.c pngpread.c pngread.c pngrio.c pngrtran.c \
-@@ -1008,8 +1008,10 @@ powerpc/powerpc_init.lo: powerpc/$(am__dirstamp) \
+@@ -1011,8 +1011,10 @@ powerpc/powerpc_init.lo: powerpc/$(am__dirstamp) \
  powerpc/filter_vsx_intrinsics.lo: powerpc/$(am__dirstamp) \
  	powerpc/$(DEPDIR)/$(am__dirstamp)
  
@@ -24,7 +24,7 @@ Index: Makefile.in
  contrib/tools/$(am__dirstamp):
  	@$(MKDIR_P) contrib/tools
  	@: > contrib/tools/$(am__dirstamp)
-@@ -2383,9 +2385,9 @@ uninstall-libpng-pc:
+@@ -2388,9 +2390,9 @@ uninstall-libpng-pc:
  install-library-links:
  	@set -x; cd '$(DESTDIR)$(libdir)';\
  	for ext in $(EXT_LIST); do\

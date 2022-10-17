@@ -9,10 +9,10 @@ include/libpng16/pnglibconf.h
 include/png.h
 include/pngconf.h
 include/pnglibconf.h
-lib/libpng.a
+@static-lib lib/libpng.a
 lib/libpng.la
 @lib lib/libpng.so.${LIBpng_VERSION}
-lib/libpng16.a
+@static-lib lib/libpng16.a
 lib/libpng16.la
 @lib lib/libpng16.so.${LIBpng16_VERSION}
 lib/pkgconfig/libpng.pc

@@ -4,7 +4,7 @@ Index: libpng.pc.in
 @@ -7,6 +7,6 @@ Name: libpng
  Description: Loads and saves PNG files
  Version: @PNGLIB_VERSION@
- Requires: zlib
+ Requires.private: zlib
 -Libs: -L${libdir} -lpng@PNGLIB_MAJOR@@PNGLIB_MINOR@
 +Libs: -L${libdir} -lpng
  Libs.private: @LIBS@

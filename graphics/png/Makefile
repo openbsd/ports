@@ -1,9 +1,8 @@
 COMMENT=	library for manipulating PNG images
 
-VERSION=	1.6.37
+VERSION=	1.6.38
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
-REVISION=	0
 CATEGORIES=	graphics
 DPB_PROPERTIES=	parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libpng/}
