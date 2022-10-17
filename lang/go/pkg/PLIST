@@ -1251,6 +1251,7 @@ go/src/archive/tar/testdata/issue12435.tar
 go/src/archive/tar/testdata/neg-size.tar
 go/src/archive/tar/testdata/nil-uid.tar
 go/src/archive/tar/testdata/pax-bad-hdr-file.tar
+go/src/archive/tar/testdata/pax-bad-hdr-large.tar.bz2
 go/src/archive/tar/testdata/pax-bad-mtime-file.tar
 go/src/archive/tar/testdata/pax-global-records.tar
 go/src/archive/tar/testdata/pax-multi-hdrs.tar
@@ -12524,7 +12525,11 @@ go/test/fixedbugs/issue5470.dir/
 go/test/fixedbugs/issue5470.dir/a.go
 go/test/fixedbugs/issue5470.dir/b.go
 go/test/fixedbugs/issue5470.go
+go/test/fixedbugs/issue54911.go
 go/test/fixedbugs/issue5493.go
+go/test/fixedbugs/issue54991.go
+go/test/fixedbugs/issue55122.go
+go/test/fixedbugs/issue55122b.go
 go/test/fixedbugs/issue5515.go
 go/test/fixedbugs/issue5581.go
 go/test/fixedbugs/issue5607.go
@@ -13462,6 +13467,7 @@ go/test/typeparam/issue53419.go
 go/test/typeparam/issue53477.go
 go/test/typeparam/issue53762.go
 go/test/typeparam/issue54135.go
+go/test/typeparam/issue54225.go
 go/test/typeparam/issue54302.dir/
 go/test/typeparam/issue54302.dir/a.go
 go/test/typeparam/issue54302.dir/main.go

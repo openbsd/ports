@@ -5,8 +5,7 @@ BIN_BOOTSTRAP_VERSION = 1.18.4
 
 COMMENT =		Go programming language
 
-VERSION =		1.19.1
-REVISION =		0
+VERSION =		1.19.2
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
