@@ -9034,6 +9034,8 @@ nextcloud/apps/admin_audit/l10n/ko.js
 nextcloud/apps/admin_audit/l10n/ko.json
 nextcloud/apps/admin_audit/l10n/lt_LT.js
 nextcloud/apps/admin_audit/l10n/lt_LT.json
+nextcloud/apps/admin_audit/l10n/mk.js
+nextcloud/apps/admin_audit/l10n/mk.json
 nextcloud/apps/admin_audit/l10n/nb.js
 nextcloud/apps/admin_audit/l10n/nb.json
 nextcloud/apps/admin_audit/l10n/nl.js
@@ -9856,6 +9858,8 @@ nextcloud/apps/cloud_federation_api/l10n/sr.js
 nextcloud/apps/cloud_federation_api/l10n/sr.json
 nextcloud/apps/cloud_federation_api/l10n/tr.js
 nextcloud/apps/cloud_federation_api/l10n/tr.json
+nextcloud/apps/cloud_federation_api/l10n/uk.js
+nextcloud/apps/cloud_federation_api/l10n/uk.json
 nextcloud/apps/cloud_federation_api/l10n/zh_CN.js
 nextcloud/apps/cloud_federation_api/l10n/zh_CN.json
 nextcloud/apps/cloud_federation_api/l10n/zh_HK.js
@@ -14139,6 +14143,7 @@ nextcloud/apps/firstrunwizard/appinfo/info.xml
 nextcloud/apps/firstrunwizard/appinfo/routes.php
 nextcloud/apps/firstrunwizard/appinfo/signature.json
 nextcloud/apps/firstrunwizard/composer.json
+nextcloud/apps/firstrunwizard/composer.lock
 nextcloud/apps/firstrunwizard/css/
 nextcloud/apps/firstrunwizard/css/personalsettings.scss
 nextcloud/apps/firstrunwizard/img/
@@ -14712,6 +14717,8 @@ nextcloud/apps/lookup_server_connector/l10n/sr.js
 nextcloud/apps/lookup_server_connector/l10n/sr.json
 nextcloud/apps/lookup_server_connector/l10n/tr.js
 nextcloud/apps/lookup_server_connector/l10n/tr.json
+nextcloud/apps/lookup_server_connector/l10n/uk.js
+nextcloud/apps/lookup_server_connector/l10n/uk.json
 nextcloud/apps/lookup_server_connector/l10n/zh_CN.js
 nextcloud/apps/lookup_server_connector/l10n/zh_CN.json
 nextcloud/apps/lookup_server_connector/l10n/zh_HK.js
@@ -15643,8 +15650,6 @@ nextcloud/apps/photos/js/photos-vendors-node_modules_webdav_dist_node_index_js-n
 nextcloud/apps/photos/l10n/
 nextcloud/apps/photos/l10n/af.js
 nextcloud/apps/photos/l10n/af.json
-nextcloud/apps/photos/l10n/an.js
-nextcloud/apps/photos/l10n/an.json
 nextcloud/apps/photos/l10n/ar.js
 nextcloud/apps/photos/l10n/ar.json
 nextcloud/apps/photos/l10n/ast.js
@@ -15950,6 +15955,8 @@ nextcloud/apps/privacy/l10n/sv.js
 nextcloud/apps/privacy/l10n/sv.json
 nextcloud/apps/privacy/l10n/tr.js
 nextcloud/apps/privacy/l10n/tr.json
+nextcloud/apps/privacy/l10n/uk.js
+nextcloud/apps/privacy/l10n/uk.json
 nextcloud/apps/privacy/l10n/vi.js
 nextcloud/apps/privacy/l10n/vi.json
 nextcloud/apps/privacy/l10n/zh_CN.js
@@ -16048,6 +16055,8 @@ nextcloud/apps/provisioning_api/l10n/sl.js
 nextcloud/apps/provisioning_api/l10n/sl.json
 nextcloud/apps/provisioning_api/l10n/tr.js
 nextcloud/apps/provisioning_api/l10n/tr.json
+nextcloud/apps/provisioning_api/l10n/uk.js
+nextcloud/apps/provisioning_api/l10n/uk.json
 nextcloud/apps/provisioning_api/l10n/zh_CN.js
 nextcloud/apps/provisioning_api/l10n/zh_CN.json
 nextcloud/apps/provisioning_api/l10n/zh_HK.js
@@ -16925,6 +16934,8 @@ nextcloud/apps/sharebymail/l10n/sv.js
 nextcloud/apps/sharebymail/l10n/sv.json
 nextcloud/apps/sharebymail/l10n/tr.js
 nextcloud/apps/sharebymail/l10n/tr.json
+nextcloud/apps/sharebymail/l10n/uk.js
+nextcloud/apps/sharebymail/l10n/uk.json
 nextcloud/apps/sharebymail/l10n/zh_CN.js
 nextcloud/apps/sharebymail/l10n/zh_CN.json
 nextcloud/apps/sharebymail/l10n/zh_HK.js
@@ -19584,6 +19595,8 @@ nextcloud/apps/weather_status/l10n/de_DE.js
 nextcloud/apps/weather_status/l10n/de_DE.json
 nextcloud/apps/weather_status/l10n/el.js
 nextcloud/apps/weather_status/l10n/el.json
+nextcloud/apps/weather_status/l10n/eo.js
+nextcloud/apps/weather_status/l10n/eo.json
 nextcloud/apps/weather_status/l10n/es.js
 nextcloud/apps/weather_status/l10n/es.json
 nextcloud/apps/weather_status/l10n/eu.js
@@ -19636,6 +19649,8 @@ nextcloud/apps/weather_status/l10n/sv.js
 nextcloud/apps/weather_status/l10n/sv.json
 nextcloud/apps/weather_status/l10n/tr.js
 nextcloud/apps/weather_status/l10n/tr.json
+nextcloud/apps/weather_status/l10n/uk.js
+nextcloud/apps/weather_status/l10n/uk.json
 nextcloud/apps/weather_status/l10n/zh_CN.js
 nextcloud/apps/weather_status/l10n/zh_CN.json
 nextcloud/apps/weather_status/l10n/zh_HK.js
@@ -19809,6 +19824,8 @@ nextcloud/apps/workflowengine/l10n/sv.js
 nextcloud/apps/workflowengine/l10n/sv.json
 nextcloud/apps/workflowengine/l10n/tr.js
 nextcloud/apps/workflowengine/l10n/tr.json
+nextcloud/apps/workflowengine/l10n/uk.js
+nextcloud/apps/workflowengine/l10n/uk.json
 nextcloud/apps/workflowengine/l10n/zh_CN.js
 nextcloud/apps/workflowengine/l10n/zh_CN.json
 nextcloud/apps/workflowengine/l10n/zh_HK.js
@@ -20412,6 +20429,7 @@ nextcloud/core/doc/admin/_static/social/rss.svg
 nextcloud/core/doc/admin/_static/social/twitter.svg
 nextcloud/core/doc/admin/_static/social/twitterround.png
 nextcloud/core/doc/admin/_static/social/youtube.svg
+nextcloud/core/doc/admin/_static/sphinx_highlight.js
 nextcloud/core/doc/admin/_static/underscore-1.13.1.js
 nextcloud/core/doc/admin/_static/underscore.js
 nextcloud/core/doc/admin/apps_management.html
@@ -20746,6 +20764,7 @@ nextcloud/core/doc/user/_static/social/rss.svg
 nextcloud/core/doc/user/_static/social/twitter.svg
 nextcloud/core/doc/user/_static/social/twitterround.png
 nextcloud/core/doc/user/_static/social/youtube.svg
+nextcloud/core/doc/user/_static/sphinx_highlight.js
 nextcloud/core/doc/user/_static/underscore-1.13.1.js
 nextcloud/core/doc/user/_static/underscore.js
 nextcloud/core/doc/user/contents.html
