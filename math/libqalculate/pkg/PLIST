@@ -23,6 +23,9 @@ share/locale/ca/LC_MESSAGES/libqalculate.mo
 share/locale/de/LC_MESSAGES/libqalculate.mo
 share/locale/es/LC_MESSAGES/libqalculate.mo
 share/locale/fr/LC_MESSAGES/libqalculate.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/libqalculate.mo
 share/locale/nl/LC_MESSAGES/libqalculate.mo
 share/locale/ru/LC_MESSAGES/libqalculate.mo
 share/locale/sv/LC_MESSAGES/libqalculate.mo
