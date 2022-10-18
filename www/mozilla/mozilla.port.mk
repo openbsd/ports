@@ -68,13 +68,13 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.80
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.84
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.34
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.35
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -99,12 +99,14 @@ MODMOZ_BUILD_DEPENDS +=	devel/nasm
 MODMOZ_BUILD_DEPENDS +=	lang/rust
 # stylo build needs LLVM
 MODMOZ_BUILD_DEPENDS +=	devel/llvm
+#1670807
+MODMOZ_BUILD_DEPENDS +=	devel/m4
 
-MODMOZ_WANTLIB +=	X11 Xcomposite Xdamage Xext Xfixes Xrender atk-1.0 c cairo \
-		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gobject-2.0 m \
-		pango-1.0 pangocairo-1.0 \
-		pthread sndio ${LIBCXX} z
+MODMOZ_WANTLIB +=	X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi Xrender \
+			atk-1.0 c cairo fontconfig freetype gdk_pixbuf-2.0 \
+			gio-2.0 glib-2.0 gobject-2.0 harfbuzz intl m \
+			pango-1.0 pangocairo-1.0 sndio z xcb xcb-shm
+MODMOZ_WANTLIB +=	${COMPILER_LIBCXX}
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
@@ -156,3 +158,4 @@ CONFIGURE_ENV +=	ac_cv_path_SED=/usr/bin/sed
 CONFIGURE_ENV +=	ac_cv_path_mkdir=/bin/mkdir
 CONFIGURE_ENV +=	ac_cv_prog_AWK=/usr/bin/awk
 CONFIGURE_ENV +=	AWK=/usr/bin/awk
+CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
