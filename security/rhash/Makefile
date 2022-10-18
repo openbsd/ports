@@ -1,9 +1,9 @@
 COMMENT =	utility and library for computing hash sums
 
-DISTNAME =	rhash-1.4.2-src
+DISTNAME =	rhash-1.4.3-src
 PKGNAME =	${DISTNAME:S/-src$//}
 
-SHARED_LIBS =	rhash 0.0
+SHARED_LIBS =	rhash 0.1
 
 CATEGORIES =	security
 
@@ -32,16 +32,16 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WRKDIST =	${WRKDIR}/${PKGNAME:S/^rhash/RHash/}
 
+post-extract:
+	sed -i 's,grep,ggrep,g' ${WRKSRC}/tests/test_rhash.sh
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/common_func.h \
 		${WRKSRC}/configure
 
-pre-test:
-	sed -i 's,grep,ggrep,g' ${WRKSRC}/tests/test_rhash.sh
-
 do-test:
 	cd ${WRKSRC}/tests && env \
 	LD_PRELOAD=${WRKBUILD}/librhash/librhash.so.${LIBrhash_VERSION} \
-		./test_rhash.sh --full
+		./test_rhash.sh --full ../rhash
 
 .include <bsd.port.mk>
