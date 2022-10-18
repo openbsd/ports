@@ -1,11 +1,9 @@
---- setup.cfg.orig	Sat Nov 17 16:12:55 2007
-+++ setup.cfg	Sat Nov 17 16:12:59 2007
-@@ -2,7 +2,7 @@
- # In this section you can specify which c extension modules should be built
+--- setup.cfg.orig	Sun Oct 16 14:38:35 2022
++++ setup.cfg	Tue Oct 18 09:37:50 2022
+@@ -1,5 +1,5 @@
+ [PyX]
+-build_t1code = 0
++build_t1code = 1
+ build_pykpathsea = 0
  
- # C extension module for fast t1font decoding and encoding
--build_t1code=0
-+build_t1code=1
- 
- # Python bindings for the kpathsea library. You need the kpathsea header
- # and library and you may need to specify their location below.
+ [build_ext]
