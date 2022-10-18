@@ -76,6 +76,7 @@
      SUBDIR += mblaze
      SUBDIR += mboxgrep
      SUBDIR += mdsort
+     SUBDIR += meli
      SUBDIR += metamail
      SUBDIR += mew
      SUBDIR += milter-checkrcpt
