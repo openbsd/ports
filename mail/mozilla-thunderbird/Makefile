@@ -9,7 +9,7 @@ MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-REVISION =		0
+REVISION =		1
 
 # XXX badly formed debug in libxul ?
 DWZ = :
@@ -44,8 +44,6 @@ BUILD_DEPENDS +=	devel/cbindgen
 # 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
 .endif
-#1670807
-BUILD_DEPENDS +=	devel/m4
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxxabi \
@@ -72,12 +70,11 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
-CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 LIB_DEPENDS +=	security/rnp \
 		devel/libffi
 
-WANTLIB += X11-xcb Xcursor Xi Xrandr Xtst ffi harfbuzz intl xcb xcb-shm
+WANTLIB +=	Xrandr Xtst ffi
 
 ALL_TARGET =	default
 
