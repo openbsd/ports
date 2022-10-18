@@ -1,0 +1,24 @@
+https://patch-diff.githubusercontent.com/raw/rust-lang/libc/pull/2965.diff
+
+Index: modcargo-crates/libc-0.2.126/src/unix/bsd/netbsdlike/openbsd/mod.rs
+--- modcargo-crates/libc-0.2.126/src/unix/bsd/netbsdlike/openbsd/mod.rs.orig
++++ modcargo-crates/libc-0.2.126/src/unix/bsd/netbsdlike/openbsd/mod.rs
+@@ -1628,6 +1628,18 @@ pub const EPROC_SLEADER: i32 = 0x02; // session leader
+ pub const EPROC_UNVEIL: i32 = 0x04; // has unveil settings
+ pub const EPROC_LKUNVEIL: i32 = 0x08; // unveil is locked
+ 
++pub const LC_COLLATE_MASK: ::c_int = 1 << ::LC_COLLATE;
++pub const LC_CTYPE_MASK: ::c_int = 1 << ::LC_CTYPE;
++pub const LC_MONETARY_MASK: ::c_int = 1 << ::LC_MONETARY;
++pub const LC_NUMERIC_MASK: ::c_int = 1 << ::LC_NUMERIC;
++pub const LC_TIME_MASK: ::c_int = 1 << ::LC_TIME;
++pub const LC_MESSAGES_MASK: ::c_int = 1 << ::LC_MESSAGES;
++
++const _LC_LAST: ::c_int = 7;
++pub const LC_ALL_MASK: ::c_int = (1 << _LC_LAST) - 2;
++
++pub const LC_GLOBAL_LOCALE: ::locale_t = -1isize as ::locale_t;
++
+ const_fn! {
+     {const} fn _ALIGN(p: usize) -> usize {
+         (p + _ALIGNBYTES) & !_ALIGNBYTES

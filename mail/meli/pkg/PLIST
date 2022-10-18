@@ -1,0 +1,5 @@
+@bin bin/meli
+@man man/man1/meli.1
+@man man/man5/meli-themes.5
+@man man/man5/meli.conf.5
+@man man/man7/meli.7
