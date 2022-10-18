@@ -1,26 +1,31 @@
-COMMENT =		Python utility / library to sort Python imports
+COMMENT=	Python utility / library to sort Python imports
 
-MODPY_EGG_VERSION =	4.2.15
-DISTNAME =		isort-${MODPY_EGG_VERSION}
-PKGNAME =		py-isort-${MODPY_EGG_VERSION}
-REVISION =		6
+MODPY_EGG_VERSION=	5.10.1
+DISTNAME=	isort-${MODPY_EGG_VERSION}
+PKGNAME=	py-isort-${MODPY_EGG_VERSION}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/timothycrosley/isort
+HOMEPAGE=	https://github.com/timothycrosley/isort
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	poetry-core
 
-FLAVORS =		python3
-FLAVOR =	python3
+MODPY_PYTEST_ARGS= \
+		--ignore tests/integration/test_hypothesmith.py \
+		--ignore tests/unit/test_pylama_isort.py
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+FLAVORS=	python3
+FLAVOR=		python3
+
+# at least some black tests are failing, possibly due to our old
+# version of black.
+TEST_DEPENDS=	devel/py-test-mock${MODPY_FLAVOR} \
+		textproc/py-black${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
