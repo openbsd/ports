@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/$V/
 DISTFILES=	warzone2100-${V}{warzone2100_src}${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://wz2100.net/
 
@@ -44,6 +44,8 @@ BUILD_DEPENDS=	archivers/unzip \
 		textproc/asciidoctor
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+3,-guic
+
+MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 WRKDIST =	${WRKDIR}/warzone2100
 
