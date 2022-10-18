@@ -1,6 +1,7 @@
 COMMENT = 	X.509 library
 
 DISTNAME = 	libksba-1.6.2
+REVISION =	0
 CATEGORIES = 	security
 
 SHARED_LIBS = 	ksba 2.0	# 22.0
@@ -9,7 +10,7 @@ MASTER_SITES =	${MASTER_SITE_GNUPG:=libksba/}
 
 HOMEPAGE = 	https://www.gnupg.org/software/libksba/index.html
 
-MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER = 	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
