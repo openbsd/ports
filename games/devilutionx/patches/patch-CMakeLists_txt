@@ -1,0 +1,12 @@
+EXPERIMENTAL: don't link SDL2::SDL2main (removed in SDL 2.24.0)
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -479,7 +479,6 @@ foreach(target devilution ${BIN_TARGET})
+     target_compile_definitions(${target} PRIVATE USE_SDL1)
+   else()
+     target_link_libraries(${target} PRIVATE
+-      SDL2::SDL2main
+       SDL2::SDL2_ttf
+       SDL2::SDL2_mixer)
+   endif()

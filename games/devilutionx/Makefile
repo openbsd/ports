@@ -5,6 +5,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
 GH_TAGNAME =	1.1.0
+REVISION =	0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -26,7 +27,8 @@ LIB_DEPENDS =	devel/sdl2-mixer \
 CONFIGURE_ARGS =	-DBINARY_RELEASE=ON \
 			-DDEBUG=OFF \
 			-DDISABLE_LTO=ON \
-			-DVERSION_NUM="${GH_TAGNAME}"
+			-DVERSION_NUM="${GH_TAGNAME}" \
+			-DSDL2_INCLUDE_DIR=${LOCALBASE}/include/SDL2
 
 NO_TEST =	Yes
 

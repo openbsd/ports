@@ -1,0 +1,14 @@
+comment out set_property to avoid error "set_property can not be used on an
+ALIAS target" 
+
+Index: CMake/FindSDL2.cmake
+--- CMake/FindSDL2.cmake.orig
++++ CMake/FindSDL2.cmake
+@@ -251,5 +251,5 @@ mark_as_advanced(SDL2_LIBRARY
+ 	SDL2_MWINDOWS_LIBRARY)
+ 
+ find_package(Threads REQUIRED)
+-set_property(TARGET SDL2::SDL2 APPEND PROPERTY
+-	INTERFACE_LINK_LIBRARIES Threads::Threads)
++#set_property(TARGET SDL2::SDL2 APPEND PROPERTY
++#	INTERFACE_LINK_LIBRARIES Threads::Threads)
