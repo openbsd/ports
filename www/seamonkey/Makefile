@@ -13,6 +13,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.14
 EPOCH-lightning =	0
+REVISION-main =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
 
@@ -55,8 +56,7 @@ CONFIGURE_ENV +=	ac_cv_needs_atomic=no
 .endif
 
 RUN_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
-WANTLIB += X11-xcb intl xcb xcb-shm
-WANTLIB += Xcursor Xi harfbuzz Xt gthread-2.0 pangoft2-1.0
+WANTLIB += Xt gthread-2.0 pangoft2-1.0
 
 WANTLIB-lightning=
 
