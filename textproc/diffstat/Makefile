@@ -1,6 +1,6 @@
 COMMENT=		accumulates and displays statistics from a diff file
 
-DISTNAME=		diffstat-1.64
+DISTNAME=		diffstat-1.65
 
 CATEGORIES=		textproc
 
