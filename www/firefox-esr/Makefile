@@ -1,13 +1,12 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64
 
-MOZILLA_VERSION =	102.3.0esr
-MOZILLA_PROFDATA_TASKID=GSQqlLsyTg6jt1PGEuop6Q
+MOZILLA_VERSION =	102.4.0esr
+MOZILLA_PROFDATA_TASKID=ONw0p-i1RiyniZMS1ysXzg
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
-REVISION =		1
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -31,8 +30,6 @@ COMPILER =	ports-clang
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
-#1670807
-BUILD_DEPENDS +=	devel/m4
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxxabi \
@@ -40,8 +37,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-libc
 
 # uses pledge()
-WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
-WANTLIB += Xcomposite Xdamage Xfixes Xrandr Xtst
+WANTLIB += Xrandr Xtst
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -50,7 +46,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
-CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
+CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
 
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
