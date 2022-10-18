@@ -4,7 +4,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
 GH_TAGNAME=		v2_10_9_5
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		0
+REVISION=		1
 EPOCH=			0
 
 CATEGORIES=		devel telephony
