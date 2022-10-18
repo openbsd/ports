@@ -11,7 +11,7 @@ MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 TL_VERSION =		0.2.37
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 PATCHORIG =		.pat.orig
@@ -50,13 +50,10 @@ MOZILLA_USE_BUNDLED_NSS =	Yes
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.19.0
-#1670807
-BUILD_DEPENDS +=	devel/m4
 
 # uses pledge()
 # Extra:  Xcomposite.4 Xdamage.4 Xfixes.6 gdk-x11-2.0.2400 gtk-x11-2.0.2400
-WANTLIB += X11-xcb Xt gthread-2.0 harfbuzz intl pangoft2-1.0
-WANTLIB += xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += Xt gthread-2.0 pangoft2-1.0
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =		Yes
@@ -67,7 +64,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
-CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
