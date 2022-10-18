@@ -15,7 +15,7 @@ MODGO_MODULES =	\
 	github.com/!azure/azure-storage-blob-go			 v0.15.0 \
 	github.com/!azure/go-autorest				 v14.2.0+incompatible \
 	github.com/!azure/go-autorest/autorest			 v0.11.28 \
-	github.com/!azure/go-autorest/autorest/adal		 v0.9.18 \
+	github.com/!azure/go-autorest/autorest/adal		 v0.9.20 \
 	github.com/!azure/go-autorest/autorest/azure/auth	 v0.5.11 \
 	github.com/!azure/go-autorest/autorest/azure/cli	 v0.4.5 \
 	github.com/!azure/go-autorest/autorest/date		 v0.3.0 \
@@ -72,7 +72,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/harmonica			 v0.2.0 \
 	github.com/charmbracelet/lipgloss			 v0.6.0 \
 	github.com/cheggaaa/pb					 v1.0.29 \
-	github.com/cheggaaa/pb/v3				 v3.0.8 \
+	github.com/cheggaaa/pb/v3				 v3.1.0 \
 	github.com/chzyer/logex					 v1.1.10 \
 	github.com/chzyer/readline				 v1.5.0 \
 	github.com/chzyer/test					 v0.0.0-20180213035817-a1ea475d72b1 \
@@ -119,7 +119,7 @@ MODGO_MODULES =	\
 	github.com/fatih/structs				 v1.1.0 \
 	github.com/felixge/fgprof				 v0.9.3 \
 	github.com/flynn/go-shlex				 v0.0.0-20150515145356-3f9db97f8568 \
-	github.com/form3tech-oss/jwt-go				 v3.2.3+incompatible \
+	github.com/form3tech-oss/jwt-go				 v3.2.2+incompatible \
 	github.com/fortytw2/leaktest				 v1.3.0 \
 	github.com/frankban/quicktest				 v1.14.0 \
 	github.com/fraugster/parquet-go				 v0.12.0 \
@@ -243,7 +243,7 @@ MODGO_MODULES =	\
 	github.com/karrick/godirwalk				 v1.10.3 \
 	github.com/kisielk/errcheck				 v1.5.0 \
 	github.com/kisielk/gotool				 v1.0.0 \
-	github.com/klauspost/compress				 v1.15.10 \
+	github.com/klauspost/compress				 v1.15.11 \
 	github.com/klauspost/cpuid				 v1.3.1 \
 	github.com/klauspost/cpuid/v2				 v2.1.1 \
 	github.com/klauspost/pgzip				 v1.2.5 \
@@ -283,19 +283,19 @@ MODGO_MODULES =	\
 	github.com/minio/argon2					 v1.0.0 \
 	github.com/minio/cli					 v1.24.0 \
 	github.com/minio/colorjson				 v1.0.2 \
-	github.com/minio/console				 v0.20.6-0.20221003060434-413870e995a9 \
+	github.com/minio/console				 v0.21.0 \
 	github.com/minio/csvparser				 v1.0.0 \
 	github.com/minio/directpv				 v1.4.4-0.20220805090942-948ca4731651 \
 	github.com/minio/dperf					 v0.4.2 \
 	github.com/minio/filepath				 v1.0.0 \
 	github.com/minio/highwayhash				 v1.0.2 \
 	github.com/minio/kes					 v0.21.0 \
-	github.com/minio/madmin-go				 v1.5.3 \
-	github.com/minio/mc					 v0.0.0-20221001175248-68ca2bf457e4 \
+	github.com/minio/madmin-go				 v1.6.3 \
+	github.com/minio/mc					 v0.0.0-20221007160339-ec8687d57e36 \
 	github.com/minio/md5-simd				 v1.1.2 \
-	github.com/minio/minio-go/v7				 v7.0.40-0.20220928095841-8848d8affe8a \
+	github.com/minio/minio-go/v7				 v7.0.41-0.20221013203648-8257e7003b5e \
 	github.com/minio/operator				 v0.0.0-20220902184351-21e4073132b0 \
-	github.com/minio/pkg					 v1.5.0 \
+	github.com/minio/pkg					 v1.5.2 \
 	github.com/minio/selfupdate				 v0.5.0 \
 	github.com/minio/sha256-simd				 v1.0.0 \
 	github.com/minio/simdjson-go				 v0.4.2 \
@@ -431,7 +431,7 @@ MODGO_MODULES =	\
 	go.uber.org/goleak					 v1.1.12 \
 	go.uber.org/multierr					 v1.8.0 \
 	go.uber.org/zap						 v1.23.0 \
-	golang.org/x/crypto					 v0.0.0-20220829220503-c86fa9a7ed90 \
+	golang.org/x/crypto					 v0.0.0-20221005025214-4161e89ecf1b \
 	golang.org/x/exp					 v0.0.0-20200224162631-6cc2880d07d6 \
 	golang.org/x/image					 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/lint					 v0.0.0-20210508222113-6edffad5e616 \
@@ -442,7 +442,7 @@ MODGO_MODULES =	\
 	golang.org/x/sync					 v0.0.0-20220907140024-f12130a52804 \
 	golang.org/x/sys					 v0.0.0-20220915200043-7b5979e65e41 \
 	golang.org/x/term					 v0.0.0-20220722155259-a9ba230a4035 \
-	golang.org/x/text					 v0.3.7 \
+	golang.org/x/text					 v0.3.8 \
 	golang.org/x/time					 v0.0.0-20220722155302-e5dcc9cfc0b9 \
 	golang.org/x/tools					 v0.1.12 \
 	golang.org/x/xerrors					 v0.0.0-20220907171357-04be3eba64a2 \
@@ -465,13 +465,13 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v2					 v2.4.0 \
 	gopkg.in/yaml.v3					 v3.0.1 \
 	honnef.co/go/tools					 v0.0.1-2020.1.4 \
-	k8s.io/api						 v0.25.0 \
+	k8s.io/api						 v0.25.2 \
 	k8s.io/apiextensions-apiserver				 v0.24.3 \
-	k8s.io/apimachinery					 v0.25.0 \
-	k8s.io/client-go					 v0.24.4 \
-	k8s.io/klog/v2						 v2.80.0 \
+	k8s.io/apimachinery					 v0.25.2 \
+	k8s.io/client-go					 v0.25.2 \
+	k8s.io/klog/v2						 v2.80.1 \
 	k8s.io/kube-openapi					 v0.0.0-20220803162953-67bda5d908f1 \
-	k8s.io/utils						 v0.0.0-20220728103510-ee6ede2d64ed \
+	k8s.io/utils						 v0.0.0-20220922133306-665eaaec4324 \
 	rsc.io/binaryregexp					 v0.2.0 \
 	rsc.io/quote/v3						 v3.1.0 \
 	rsc.io/sampler						 v1.3.0 \
@@ -536,9 +536,10 @@ MODGO_MODFILES =	\
 	cloud.google.com/go/storage				 v1.6.0 \
 	cloud.google.com/go/storage				 v1.8.0 \
 	github.com/!azure/go-autorest/autorest			 v0.11.17 \
-	github.com/!azure/go-autorest/autorest			 v0.11.18 \
+	github.com/!azure/go-autorest/autorest			 v0.11.27 \
 	github.com/!azure/go-autorest/autorest/adal		 v0.9.11 \
 	github.com/!azure/go-autorest/autorest/adal		 v0.9.13 \
+	github.com/!azure/go-autorest/autorest/adal		 v0.9.18 \
 	github.com/!azure/go-autorest/autorest/azure/auth	 v0.5.7 \
 	github.com/!azure/go-autorest/autorest/azure/cli	 v0.4.2 \
 	github.com/!azure/go-autorest/logger			 v0.2.0 \
@@ -592,7 +593,6 @@ MODGO_MODFILES =	\
 	github.com/fatih/color					 v1.12.0 \
 	github.com/fatih/color					 v1.7.0 \
 	github.com/fatih/color					 v1.9.0 \
-	github.com/form3tech-oss/jwt-go				 v3.2.2+incompatible \
 	github.com/fsnotify/fsnotify				 v1.4.7 \
 	github.com/fsnotify/fsnotify				 v1.4.9 \
 	github.com/gdamore/tcell/v2				 v2.4.1-0.20210905002822-f057f0a857a1 \
@@ -603,7 +603,6 @@ MODGO_MODFILES =	\
 	github.com/go-logfmt/logfmt				 v0.4.0 \
 	github.com/go-logfmt/logfmt				 v0.5.0 \
 	github.com/go-logr/logr					 v1.2.0 \
-	github.com/go-logr/logr					 v1.2.2 \
 	github.com/go-ole/go-ole				 v1.2.4 \
 	github.com/go-openapi/analysis				 v0.21.2 \
 	github.com/go-openapi/errors				 v0.19.8 \
@@ -613,9 +612,7 @@ MODGO_MODFILES =	\
 	github.com/go-openapi/jsonreference			 v0.19.5 \
 	github.com/go-openapi/jsonreference			 v0.19.6 \
 	github.com/go-openapi/loads				 v0.21.1 \
-	github.com/go-openapi/runtime				 v0.23.3 \
 	github.com/go-openapi/spec				 v0.20.4 \
-	github.com/go-openapi/spec				 v0.20.5 \
 	github.com/go-openapi/spec				 v0.20.6 \
 	github.com/go-openapi/strfmt				 v0.21.0 \
 	github.com/go-openapi/strfmt				 v0.21.1 \
@@ -797,16 +794,18 @@ MODGO_MODFILES =	\
 	github.com/miekg/dns					 v1.0.14 \
 	github.com/miekg/dns					 v1.1.48 \
 	github.com/minio/highwayhash				 v1.0.1 \
-	github.com/minio/kes					 v0.19.2 \
 	github.com/minio/madmin-go				 v1.3.5 \
 	github.com/minio/madmin-go				 v1.4.15 \
-	github.com/minio/madmin-go				 v1.5.2 \
+	github.com/minio/madmin-go				 v1.6.0 \
 	github.com/minio/md5-simd				 v1.1.0 \
 	github.com/minio/minio-go/v7				 v7.0.23 \
 	github.com/minio/minio-go/v7				 v7.0.30 \
+	github.com/minio/minio-go/v7				 v7.0.40 \
+	github.com/minio/minio-go/v7				 v7.0.40-0.20220928095841-8848d8affe8a \
 	github.com/minio/pkg					 v1.1.14 \
 	github.com/minio/pkg					 v1.1.20 \
-	github.com/minio/pkg					 v1.4.3 \
+	github.com/minio/pkg					 v1.4.5 \
+	github.com/minio/pkg					 v1.5.1 \
 	github.com/minio/selfupdate				 v0.4.0 \
 	github.com/minio/sha256-simd				 v0.1.1 \
 	github.com/mitchellh/go-homedir				 v1.0.0 \
@@ -910,7 +909,6 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify				 v1.7.1 \
 	github.com/stretchr/testify				 v1.7.2 \
 	github.com/tidwall/gjson				 v1.12.1 \
-	github.com/tidwall/gjson				 v1.14.2 \
 	github.com/tidwall/pretty				 v1.0.0 \
 	github.com/tinylib/msgp					 v1.1.2 \
 	github.com/tinylib/msgp					 v1.1.3 \
@@ -919,7 +917,6 @@ MODGO_MODFILES =	\
 	github.com/tklauser/go-sysconf				 v0.3.6 \
 	github.com/tklauser/numcpus				 v0.2.2 \
 	github.com/tklauser/numcpus				 v0.4.0 \
-	github.com/unrolled/secure				 v1.10.0 \
 	github.com/xdg-go/scram					 v1.0.2 \
 	github.com/xdg-go/stringprep				 v1.0.2 \
 	github.com/yuin/goldmark				 v1.1.25 \
@@ -939,7 +936,6 @@ MODGO_MODFILES =	\
 	go.mongodb.org/mongo-driver				 v1.7.3 \
 	go.mongodb.org/mongo-driver				 v1.7.5 \
 	go.mongodb.org/mongo-driver				 v1.8.3 \
-	go.mongodb.org/mongo-driver				 v1.9.1 \
 	go.opencensus.io					 v0.21.0 \
 	go.opencensus.io					 v0.22.0 \
 	go.opencensus.io					 v0.22.2 \
@@ -1007,7 +1003,6 @@ MODGO_MODFILES =	\
 	golang.org/x/mod					 v0.4.0 \
 	golang.org/x/mod					 v0.4.1 \
 	golang.org/x/mod					 v0.4.2 \
-	golang.org/x/mod					 v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 \
 	golang.org/x/net					 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net					 v0.0.0-20180826012351-8a410e7b638d \
 	golang.org/x/net					 v0.0.0-20181023162649-9b4f9f5ad519 \
@@ -1219,6 +1214,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text					 v0.3.4 \
 	golang.org/x/text					 v0.3.5 \
 	golang.org/x/text					 v0.3.6 \
+	golang.org/x/text					 v0.3.7 \
 	golang.org/x/time					 v0.0.0-20181108054448-85acf8d2951c \
 	golang.org/x/time					 v0.0.0-20190308202827-9d24e82272b4 \
 	golang.org/x/time					 v0.0.0-20191024005414-555d28b269f0 \
@@ -1285,7 +1281,6 @@ MODGO_MODFILES =	\
 	golang.org/x/tools					 v0.0.0-20210114065538-d78b04bdf963 \
 	golang.org/x/tools					 v0.1.0 \
 	golang.org/x/tools					 v0.1.1 \
-	golang.org/x/tools					 v0.1.10 \
 	golang.org/x/tools					 v0.1.2 \
 	golang.org/x/tools					 v0.1.3 \
 	golang.org/x/tools					 v0.1.4 \
@@ -1509,14 +1504,11 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools					 v0.0.0-20190523083050-ea95bdfd59fc \
 	honnef.co/go/tools					 v0.0.1-2019.2.3 \
 	honnef.co/go/tools					 v0.0.1-2020.1.3 \
-	k8s.io/api						 v0.24.3 \
-	k8s.io/apimachinery					 v0.24.3 \
-	k8s.io/client-go					 v0.24.3 \
+	k8s.io/api						 v0.25.0 \
+	k8s.io/apimachinery					 v0.25.0 \
+	k8s.io/client-go					 v0.24.4 \
 	k8s.io/klog/v2						 v2.30.0 \
-	k8s.io/klog/v2						 v2.60.1 \
-	k8s.io/kube-openapi					 v0.0.0-20220627174259-011e075b9cb8 \
-	k8s.io/utils						 v0.0.0-20220210201930-3a6ce19ff2f9 \
-	sigs.k8s.io/json					 v0.0.0-20211208200746-9f7c6b3444d2 \
-	sigs.k8s.io/structured-merge-diff/v4			 v4.2.1 \
+	k8s.io/klog/v2						 v2.80.0 \
+	k8s.io/utils						 v0.0.0-20220728103510-ee6ede2d64ed \
 	sigs.k8s.io/yaml					 v1.2.0
 
