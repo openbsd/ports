@@ -3,8 +3,8 @@ BROKEN-i386 =	pkg/disk/stat_other.go:40:91: cannot use st.Atim.Nsec (type int32)
 
 COMMENT =	cli for minio
 
-V =		2022-10-09T21-10-59Z
-CID =		27322636ae33611cf193a0fe4b5de18f3b096549
+V =		2022-10-12T18-12-50Z
+CID =		3fe6778ee739504b169743cf43fa7b3010e05b99
 SHORTCID =	${CID:C/(............).*/\1/}
 
 MODGO_MODNAME =	github.com/minio/mc

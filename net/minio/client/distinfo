@@ -435,8 +435,8 @@ SHA256 (go_modules/github.com/minio/filepath/@v/v1.0.0.mod) = pbdHmRv6qNaxkSVSGU
 SHA256 (go_modules/github.com/minio/filepath/@v/v1.0.0.zip) = Drzz/VMniT6CyzkEtDvSzAz/jIzL3hKu8+X3yZ1Fr60=
 SHA256 (go_modules/github.com/minio/madmin-go/@v/v1.3.5.mod) = YhiYpBkus2yvb0cnQFkr32RRLeTFdSvX3EG8I9Krh5s=
 SHA256 (go_modules/github.com/minio/madmin-go/@v/v1.4.15.mod) = Z+KOeONhgL2iTqlqn92sYrrbqcmOc03Qfex4NUZSav0=
-SHA256 (go_modules/github.com/minio/madmin-go/@v/v1.6.0.mod) = Z+KOeONhgL2iTqlqn92sYrrbqcmOc03Qfex4NUZSav0=
-SHA256 (go_modules/github.com/minio/madmin-go/@v/v1.6.0.zip) = LiL+dKe4f1NYo3GeoXhMIqvAHBiDEJ5AO6I7BzJgHGw=
+SHA256 (go_modules/github.com/minio/madmin-go/@v/v1.6.4.mod) = Z4z4EztvPsBwqIle8qc1VyAT4UWN2ewpEbe3ruvHnNI=
+SHA256 (go_modules/github.com/minio/madmin-go/@v/v1.6.4.zip) = coJQbJZpRKQpM0DVBsyJS0SihC2tYldCwAWydjaU49E=
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.0.mod) = ON/bxXveO/W35XJQOfTbrXMTOUh7CK7DPmxw5fpUHCc=
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.2.mod) = dmXwdbg8y4HGbemA2l8j5U4UeUcqrdQWbfwm+BSKL6M=
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.2.zip) = +CnTWm5ol9tBWviIjEsHTRolOu4Oj7cFS02VR3qBw9Y=
@@ -1124,7 +1124,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (mc-v0.0.0-20221009211059-27322636ae33.zip) = esC9nAHZe41zPoTKAjh7XqRek61erzTtbLBRCMVu3Co=
+SHA256 (mc-v0.0.0-20221012181250-3fe6778ee739.zip) = vmJYB7nzDXW0sshkzhRzfjUN2DtiVJYTrHylU9k3hD4=
 SIZE (go_modules/cloud.google.com/go/@v/v0.26.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.34.0.mod) = 27
 SIZE (go_modules/cloud.google.com/go/@v/v0.38.0.mod) = 1006
@@ -1562,8 +1562,8 @@ SIZE (go_modules/github.com/minio/filepath/@v/v1.0.0.mod) = 33
 SIZE (go_modules/github.com/minio/filepath/@v/v1.0.0.zip) = 1871
 SIZE (go_modules/github.com/minio/madmin-go/@v/v1.3.5.mod) = 1541
 SIZE (go_modules/github.com/minio/madmin-go/@v/v1.4.15.mod) = 1509
-SIZE (go_modules/github.com/minio/madmin-go/@v/v1.6.0.mod) = 1509
-SIZE (go_modules/github.com/minio/madmin-go/@v/v1.6.0.zip) = 194330
+SIZE (go_modules/github.com/minio/madmin-go/@v/v1.6.4.mod) = 1540
+SIZE (go_modules/github.com/minio/madmin-go/@v/v1.6.4.zip) = 196688
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.0.mod) = 90
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.2.mod) = 88
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.2.zip) = 109171
@@ -2251,4 +2251,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (mc-v0.0.0-20221009211059-27322636ae33.zip) = 906111
+SIZE (mc-v0.0.0-20221012181250-3fe6778ee739.zip) = 906206
