@@ -2,21 +2,21 @@ COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	3.8.0
 DISTNAME=	blas-${VERSION}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	blas	2.1
 
 CATEGORIES=	math
 DISTFILES=	${DISTNAME}.tgz manpages.tgz:0
 
-HOMEPAGE=	http://www.netlib.org/blas/
+HOMEPAGE=	https://netlib.org/blas/
 
 MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
 
 # freely available
 PERMIT_PACKAGE=	Yes
 
-MASTER_SITES=	https://www.netlib.org/blas/
+MASTER_SITES=	https://netlib.org/blas/
 MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${DISTNAME}
