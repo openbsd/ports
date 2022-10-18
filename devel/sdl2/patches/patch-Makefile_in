@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -133,7 +133,7 @@ LT_AGE      = @LT_AGE@
+@@ -135,7 +135,7 @@ LT_AGE      = @LT_AGE@
  LT_CURRENT  = @LT_CURRENT@
  LT_RELEASE  = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@

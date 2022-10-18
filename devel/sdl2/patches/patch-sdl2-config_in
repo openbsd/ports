@@ -1,7 +1,7 @@
 Index: sdl2-config.in
 --- sdl2-config.in.orig
 +++ sdl2-config.in
-@@ -42,10 +42,10 @@ while test $# -gt 0; do
+@@ -46,10 +46,10 @@ while test $# -gt 0; do
        echo @SDL_VERSION@
        ;;
      --cflags)

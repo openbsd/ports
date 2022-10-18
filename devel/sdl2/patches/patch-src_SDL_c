@@ -1,10 +1,10 @@
-Disable breaking if no haptic feedback support which disallows gamecontroller API
-allow custom SDL GetPlatform name with env var SDL_PLATFORM
+- Disable breaking if no haptic feedback support which disallows gamecontroller API
+- Allow custom SDL GetPlatform name with env var SDL_PLATFORM
 
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -279,9 +279,6 @@ SDL_InitSubSystem(Uint32 flags)
+@@ -301,9 +301,6 @@ SDL_InitSubSystem(Uint32 flags)
          }
          SDL_PrivateSubsystemRefCountIncr(SDL_INIT_GAMECONTROLLER);
          flags_initialized |= SDL_INIT_GAMECONTROLLER;
@@ -14,13 +14,12 @@ Index: src/SDL.c
  #endif
      }
  
-@@ -508,6 +505,11 @@ SDL_GetRevisionNumber(void)
+@@ -533,6 +530,10 @@ SDL_GetRevisionNumber(void)
  const char *
  SDL_GetPlatform(void)
  {
 +    const char *platform;
 +    if (platform = SDL_getenv("SDL_PLATFORM")) {
-+        printf("Custom SDL_PLATFORM: %s\n", platform);
 +        return platform;
 +    }
  #if __AIX__

@@ -1,8 +1,8 @@
-assign buttons correctly
-get GUID using USB_GET_DEVICEINFO
-detect newer (XInput-style) gamecontroller if hitem.logical_maximum is
-> 255; if so invert y axes
-use ujoy(4) devices
+- Assign buttons correctly
+- Get GUID using USB_GET_DEVICEINFO
+- detect newer (XInput-style) gamecontroller if hitem.logical_maximum is > 255;
+  if so invert y axes
+- Use ujoy(4) devices
 
 Index: src/joystick/bsd/SDL_bsdjoystick.c
 --- src/joystick/bsd/SDL_bsdjoystick.c.orig
@@ -43,7 +43,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
  
          joynames[numjoysticks] = SDL_strdup(s);
  
-@@ -356,6 +365,9 @@ BSD_JoystickOpen(SDL_Joystick *joy, int device_index)
+@@ -362,6 +371,9 @@ BSD_JoystickOpen(SDL_Joystick *joy, int device_index)
  #endif
      int fd;
      int i;
@@ -53,7 +53,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
  
      fd = open(path, O_RDONLY | O_CLOEXEC);
      if (fd == -1) {
-@@ -434,6 +446,17 @@ BSD_JoystickOpen(SDL_Joystick *joy, int device_index)
+@@ -440,6 +452,17 @@ BSD_JoystickOpen(SDL_Joystick *joy, int device_index)
      }
  desc_failed:
  #endif
@@ -71,7 +71,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
      if (report_alloc(rep, hw->repdesc, REPORT_INPUT) < 0) {
          goto usberr;
      }
-@@ -544,6 +567,7 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
+@@ -550,6 +573,7 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
      Sint32 v;
  #ifdef __OpenBSD__
      Sint32 dpad[4] = {0, 0, 0, 0};
@@ -79,7 +79,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
  #endif
  
  #if defined(__FREEBSD__) || SDL_HAVE_MACHINE_JOYSTICK_H || defined(__FreeBSD_kernel__) || defined(__DragonFly_)
-@@ -618,6 +642,18 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
+@@ -624,6 +648,18 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
                              naxe = joy->hwdata->axis_map[joyaxe];
                              /* scaleaxe */
                              v = (Sint32) hid_get_data(REP_BUF_DATA(rep), &hitem);
@@ -98,7 +98,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
                              v -= (hitem.logical_maximum +
                                    hitem.logical_minimum + 1) / 2;
                              v *= 32768 /
-@@ -652,7 +688,12 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
+@@ -658,7 +694,12 @@ BSD_JoystickUpdate(SDL_Joystick *joy)
                      }
                  case HUP_BUTTON:
                      v = (Sint32) hid_get_data(REP_BUF_DATA(rep), &hitem);
@@ -111,7 +111,7 @@ Index: src/joystick/bsd/SDL_bsdjoystick.c
                      nbutton++;
                      break;
                  default:
-@@ -697,11 +738,16 @@ static SDL_JoystickGUID
+@@ -703,11 +744,16 @@ static SDL_JoystickGUID
  BSD_JoystickGetDeviceGUID( int device_index )
  {
      SDL_JoystickGUID guid;

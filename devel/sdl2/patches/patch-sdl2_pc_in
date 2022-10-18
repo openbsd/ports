@@ -6,6 +6,6 @@ Index: sdl2.pc.in
  Requires:
  Conflicts:
 -Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@ @PKGCONFIG_LIBS_PRIV@ @SDL_STATIC_LIBS@
--Cflags: -I${includedir}/SDL2 @SDL_CFLAGS@
+-Cflags: -I${includedir} -I${includedir}/SDL2 @SDL_CFLAGS@
 +Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@ @X_LIBS@
 +Cflags: -I${includedir}/SDL2 @SDL_CFLAGS@ @X_CFLAGS@

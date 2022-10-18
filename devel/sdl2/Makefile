@@ -1,13 +1,12 @@
 COMMENT=	cross-platform multimedia library
 
-V=		2.0.20
+V=		2.24.1
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
-REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/release/
 
-SHARED_LIBS=	SDL2		0.11	# 0.18
+SHARED_LIBS=	SDL2		0.12	# 0.18
 
 HOMEPAGE=	https://www.libsdl.org/
 
@@ -18,8 +17,8 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # zlib
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	X11 Xcursor Xext Xfixes Xi Xinerama Xrandr Xrender Xss
-WANTLIB+=	Xxf86vm m pthread samplerate sndio usbhid xcb
+WANTLIB+=	X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss m pthread samplerate
+WANTLIB+=	sndio usbhid xcb
 # GL library is dlopen'd
 WANTLIB+=	GL
 
@@ -62,5 +61,8 @@ CONFIGURE_ARGS+= --enable-altivec=no
 
 # tests in test subdir, but interactive and not hooked up to build
 NO_TEST=	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/sdl2-config.cmake.in
 
 .include <bsd.port.mk>
