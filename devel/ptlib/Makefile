@@ -4,7 +4,7 @@ GH_ACCOUNT=		willamowius
 GH_PROJECT=		ptlib
 GH_TAGNAME=		v2_10_9_5
 PKGNAME=		${DISTNAME:S/_/./g}
-REVISION=		1
+REVISION=		2
 EPOCH=			0
 
 CATEGORIES=		devel telephony
@@ -19,7 +19,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MPL 1.0
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto m sasl2 ssl
+WANTLIB += ${COMPILER_LIBCXX} c crypto m sasl2 sndio ssl
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -51,11 +51,6 @@ CONFIGURE_ARGS=		--enable-plugins \
 			--disable-sdl \
 			--disable-expat \
 			--disable-v8
-
-# for now disable all audio/video (will also disable sndio);
-# PTlib is only used by net/h323plus for net/gnugk
-CONFIGURE_ARGS +=	--disable-audio \
-			--disable-video
 
 # XXX needs /proc/net/if_inet6
 CONFIGURE_ARGS +=	--disable-ipv6
