@@ -3,16 +3,15 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	105.0.2
-MOZILLA_PROFDATA_TASKID=ddAkcOlrRBy33XBj68jK-Q
+MOZILLA_VERSION =	106.0
+MOZILLA_PROFDATA_TASKID=RqsO-1gbRqOGJaxpuO9frQ
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =		1
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	118.0
+SO_VERSION =	119.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3 ipcclientcerts
@@ -33,8 +32,6 @@ COMPILER =	ports-clang
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
-#1670807
-BUILD_DEPENDS +=	devel/m4
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxxabi \
@@ -42,8 +39,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-libc
 
 # uses pledge()
-WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
-WANTLIB += Xcomposite Xdamage Xfixes Xrandr Xtst
+WANTLIB += Xrandr Xtst
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -52,7 +48,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
-CONFIGURE_ENV +=	M4=/usr/local/bin/gm4
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
 
 CONFIGURE_ARGS +=	--enable-release #1386371
@@ -67,9 +62,6 @@ DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/xpcom/build/BinaryPath.h
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \

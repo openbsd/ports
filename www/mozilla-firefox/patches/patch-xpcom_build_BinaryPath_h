@@ -1,15 +1,38 @@
-avoid pledge sysctl 4: 1 55 29028 1 without 'ps' pledge
-
-https://bugzilla.mozilla.org/show_bug.cgi?id=1790419
+https://phabricator.services.mozilla.com/D157554
 
 Index: xpcom/build/BinaryPath.h
 --- xpcom/build/BinaryPath.h.orig
 +++ xpcom/build/BinaryPath.h
-@@ -204,6 +204,7 @@ class BinaryPath {
+@@ -199,7 +199,16 @@ class BinaryPath {
+ 
+ #elif defined(__OpenBSD__)
+   static nsresult Get(char aResult[MAXPATHLEN]) {
++    static bool cached = false;
++    static char cachedPath[MAXPATHLEN];
++    nsresult r;
+     int mib[4];
++    if (cached) {
++      if (strlcpy(aResult, cachedPath, MAXPATHLEN) >= MAXPATHLEN) {
++        return NS_ERROR_FAILURE;
++      }
++      return NS_OK;
++    }
+     mib[0] = CTL_KERN;
      mib[1] = KERN_PROC_ARGS;
      mib[2] = getpid();
-     mib[3] = KERN_PROC_ARGV;
-+    return GetFromArgv0("${TRUEPREFIX}/lib/${MOZILLA_PROJECT}/firefox", aResult);
+@@ -215,7 +224,14 @@ class BinaryPath {
+       return NS_ERROR_FAILURE;
+     }
  
-     size_t len = 0;
-     if (sysctl(mib, 4, nullptr, &len, nullptr, 0) < 0) {
+-    return GetFromArgv0(argv[0], aResult);
++    r = GetFromArgv0(argv[0], aResult);
++    if (r == NS_OK) {
++      if (strlcpy(cachedPath, aResult, MAXPATHLEN) >= MAXPATHLEN) {
++        return NS_ERROR_FAILURE;
++      }
++      cached = true;
++    }
++    return r;
+   }
+ 
+   static nsresult GetFromArgv0(const char* aArgv0, char aResult[MAXPATHLEN]) {
