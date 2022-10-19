@@ -1,6 +1,6 @@
 COMMENT =	maildir sort
 
-V =		11.4.0
+V =		11.5.0
 DISTNAME =	mdsort-${V}
 
 CATEGORIES =	mail
