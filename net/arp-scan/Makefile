@@ -1,7 +1,7 @@
 GH_ACCOUNT =	royhills
 GH_PROJECT =	arp-scan
-GH_COMMIT =	923f123a281139f1ec3daceb1db4bc7317ec6978
-DISTNAME =	arp-scan-1.9.7pl20221010
+GH_COMMIT =	995c1cc37df8c5f8491a45e814f42c3b0cd683f3
+DISTNAME =	arp-scan-1.9.9pre20221011
 
 COMMENT-main =	ARP scanning and fingerprinting tool
 PKGNAME-main =	${DISTNAME}
