@@ -73,7 +73,7 @@ CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} \
 
 NO_TEST =		Yes
 
-# Pending "Update plugin for KDE Plasma"
+# merged but after 4.2.12 release "Update plugin for KDE Plasma"
 # https://github.com/open-eid/digidoc-extensions/pull/21
 post-install:
 	# fix program name in KDE extension
