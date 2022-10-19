@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS = amd64
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.3.7
-REVISION =	0
+MODGO_VERSION =	v0.5.2
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
@@ -22,11 +21,20 @@ MASTER_SITES0 =	https://github.com/superseriousbusiness/gotosocial/releases/down
 # AGPL-3.0+
 PERMIT_PACKAGE =	yes
 
-WANTLIB += 	c pthread
+WANTLIB += c pthread
 
 MODULES =	lang/go
 
 WRKDIST =	${WRKSRC}
+
+MODGO_LDFLAGS += -X 'main.Version=${MODGO_VERSION:S/v//}'
+
+# test currently fails:
+# codeberg.org/gruf/go-logger/v2@v2.0.6 requires
+#	codeberg.org/gruf/go-middleware@v1.1.0 requires
+#	codeberg.org/gruf/go-ulid@v1.0.0: [...] no such file or directory
+TEST_ENV +=	GTS_DB_ADDRESS=":memory:" \
+		GTS_DB_TYPE="sqlite"
 
 PREFIX =	${VARBASE}
 INSTDIR =	${PREFIX}/gotosocial
@@ -39,7 +47,7 @@ post-patch:
 	${SUBST_CMD} ${WRKSRC}/example/config.yaml
 
 pre-build:
-	 rm -rf ${WRKSRC}/vendor
+	rm -rf ${WRKSRC}/vendor
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/gotosocial \
