@@ -1,9 +1,8 @@
 COMMENT =		tiny CSS parser
 
-MODPY_EGG_VERSION =	1.1.1
+MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		tinycss2-${MODPY_EGG_VERSION}
 PKGNAME =		py-tinycss2-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =		textproc
 
@@ -12,7 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PYBUILD =		flit_core
-MODPY_PI =	yes
+MODPY_PI =		yes
 
 FLAVORS =		python3
 FLAVOR =		python3
