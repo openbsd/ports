@@ -13,6 +13,9 @@ The code in this package was extracted from the Bazaar code base.
 The package comes with two implementations:
 
 - A Python implementation (_patiencediff_py.py); this implementation only
-  requires a Python interpreter and is the more readable version of the two
-- A C implementation implementation (_patiencediff_c.c); this implementation is
-  faster, but requires a C compiler and is less readable
+  requires a Python interpreter and is the more readable version of the two.
+- A C implementation implementation (_patiencediff_c.c); this implementation
+  is faster, but requires a C compiler and is less readable.
+
+It may also be called from the command line:
+- python3 -m patiencediff file_a file_b
