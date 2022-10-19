@@ -1,0 +1,17 @@
+dirmngr: Fix build with no LDAP support.
+https://dev.gnupg.org/rGa5c3821664886ffffbe6a83aac088a6e0088a607
+
+Index: dirmngr/server.c
+--- dirmngr/server.c.orig
++++ dirmngr/server.c
+@@ -3135,8 +3135,10 @@ start_command_handler (assuan_fd_t fd, unsigned int se
+                ctrl->refcount);
+   else
+     {
++#if USE_LDAP
+       ks_ldap_free_state (ctrl->ks_get_state);
+       ctrl->ks_get_state = NULL;
++#endif
+       release_ctrl_ocsp_certs (ctrl);
+       xfree (ctrl->server_local);
+       dirmngr_deinit_default_ctrl (ctrl);
