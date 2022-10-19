@@ -1,0 +1,16 @@
+depending on install-all here results in install being called without
+setting PREFIX to the fake-dir. we already call install-all from port
+building anyway.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -65,7 +65,7 @@ check-style:
+ .PHONY: reindent check-style
+ 
+ # depend on install-all so that downgrade scripts are installed as well
+-check: all install-all
++check: all
+ 	$(MAKE) -C src/test/regress check-full
+ 
+ .PHONY: all check clean install install-downgrades install-all
